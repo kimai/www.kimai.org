@@ -1,5 +1,8 @@
 ---
+feed_entries: 10
 permalink: /feed.xml
+redirect_from:
+  - /plugins/news/rss.php
 ---
 
 <?xml version="1.0" encoding="utf-8"?>
@@ -29,24 +32,26 @@ permalink: /feed.xml
             <height>184</height>
         </image>
         {% for post in site.posts %}
-        <item>
-            <title>{{ post.title | xml_escape}}</title>
-            <link>http://www.kimai.org{{ post.url }}</link>
-            <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-            <dc:creator>{{ post.author }}</dc:creator>
-            {% for tag in post.tags %}
-            <category>{{ tag | xml_escape }}</category>
-            {% endfor %}
-            {% for cat in post.categories %}
-            <category>{{ cat | xml_escape }}</category>
-            {% endfor %}
-            <guid isPermaLink="true">http://www.kimai.org{{ post.url }}</guid>
-            <description>
-                <![CDATA[
-                    {{ post.excerpt }}
-                ]]>
-            </description>
-        </item>
+            {% if forloop.index <= page.feed_entries %}
+            <item>
+                <title>{{ post.title | xml_escape}}</title>
+                <link>http://www.kimai.org{{ post.url }}</link>
+                <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+                <dc:creator>{{ post.author }}</dc:creator>
+                {% for tag in post.tags %}
+                <category>{{ tag | xml_escape }}</category>
+                {% endfor %}
+                {% for cat in post.categories %}
+                <category>{{ cat | xml_escape }}</category>
+                {% endfor %}
+                <guid isPermaLink="true">http://www.kimai.org{{ post.url }}</guid>
+                <description>
+                    <![CDATA[
+                        {{ post.excerpt }}
+                    ]]>
+                </description>
+            </item>
+            {% endif %}
         {% endfor %}
     </channel>
 </rss>
