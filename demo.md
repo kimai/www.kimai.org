@@ -2,7 +2,10 @@
 layout: kimai
 title: Demo Installation - Kimai Time-Tracking
 description: Demo - Test Kimai online
-permalink: /en/demo.html
+permalink: /demo/
+redirect_from:
+  - /en/demo.html
+  - /demo.html
 ---
 
 # Demo

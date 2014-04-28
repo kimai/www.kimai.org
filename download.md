@@ -2,7 +2,10 @@
 layout: kimai
 title: Downloads - Kimai Time-Tracking
 description: Download - Kimai Time-Tracking versions
-permalink: /en/download.html
+permalink: /download/
+redirect_from:
+  - /en/download.html
+  - /download.html
 ---
 
 # Downloads

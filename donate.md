@@ -2,7 +2,10 @@
 layout: kimai
 title: Donations - Kimai Time-Tracking
 description: Donate - contribute and help Kimai
-permalink: /en/donate.html
+permalink: /donate/
+redirect_from:
+  - /en/donate.html
+  - /spenden.html
 ---
 
 # Donations
