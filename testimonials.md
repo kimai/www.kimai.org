@@ -2,7 +2,10 @@
 layout: kimai
 title: Testimonials - Kimai Time-Tracking
 description: Testimonials - User feedback about Kimai
-permalink: /en/feedback.html
+permalink: /testimonials/
+redirect_from:
+  - /meinungen.html
+  - /en/feedback.html
 ---
 
 # Testimonials
