@@ -1,0 +1,35 @@
+---
+layout: news
+title: News
+description: News - Blog about Kimai, the Time-Tracking software
+permalink: /blog/
+author: all
+full_posts: 5
+---
+
+{% for post in site.posts %}
+    {% if forloop.index < page.full_posts %}
+        <article>
+            <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+            <p class="post-meta">
+                {{ post.date | date_to_string }} by
+                {% if post.author == 'torsten' %}
+                    {{ post.author }}
+                {% else %}
+                    <a href="https://github.com/{{ post.author }}" class="post-author">{{ post.author }}</a>
+                {% endif %}
+            </p>
+            {{ post.excerpt }}
+        </article>
+    {% else %}
+        {% if forloop.index == page.full_posts %}
+        <h2>Older Posts</h2>
+        <table class="post-list">
+        {% endif %}
+        <tr>
+            <td><a href='{{ post.url }}'>{{ post.title }}</a></td>
+            <td class="post-date">{{ post.date | date_to_string }}</td>
+        </tr>
+    {% endif %}
+{% endfor %}
+        </table>
