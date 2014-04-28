@@ -5,6 +5,7 @@ description: Testimonials - User feedback about Kimai
 permalink: /testimonials/
 redirect_from:
   - /meinungen.html
+  - /feedback.html
   - /en/feedback.html
 ---
 
