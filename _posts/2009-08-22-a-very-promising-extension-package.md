@@ -7,4 +7,4 @@ author: torsten
 
 ... was developed by Severin Leonhardt and can be found in this forum thread:
 
-[http://forum.kimai.org/index.php?topic=311.0](http://forum.kimai.org/index.php?topic=311.0)
+[{{ site.forum_url }}index.php?topic=311.0]({{ site.forum_url }}index.php?topic=311.0)

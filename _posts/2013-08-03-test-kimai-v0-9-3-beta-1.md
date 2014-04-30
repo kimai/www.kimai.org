@@ -43,6 +43,6 @@ Here is the release announcement at GitHub: [Release v0.9.3-beta.1](https://git
 
 And here is the ZIP Download: [kimai_0.9.3.beta.zip](https://github.com/kimai/kimai/releases/download/v0.9.3-beta.1/kimai_0.9.3.beta.zip)
 
-Plese post your feedback in [our forum](/en/forum/) or open a [bug ticket in our issue tracker](https://github.com/kimai/kimai/issues).
+Plese post your feedback in [our forum]({{ site.forum_url }}) or open a [bug ticket in our issue tracker]({{ site.issues_url }}).
 
  

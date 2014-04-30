@@ -10,7 +10,7 @@ We are proud to announce a preview of the the next Kimai version 0.9.1. This is 
 After a longer development process we now want to share a preview of the next Kimai version with you, so you can see all the
 exiting new features and test out our bugfixes.
 
-Please download and install this version and [give us your feedback](http://forum.kimai.org/index.php?board=21.0)!
+Please download and install this version and [give us your feedback]({{ site.forum_url }}index.php?board=21.0)!
 
 DOWNLOAD: [kimai_0.9.1.0272.zip](https://sourceforge.net/projects/kimai/files/0.9.x/kimai_0.9.1.0272.zip/download) from Sourceforge.
 

@@ -11,22 +11,27 @@ redirect_from:
 # Downloads
 
 <section id="downloads">
-      <a href="http://sourceforge.net/projects/kimai/files/0.9.x/kimai.0.9.2.1306-3.zip/download"><span>Stable<br/>0.9.2</span></a>
-      <a href="https://github.com/kimai/kimai/releases/download/v0.9.3-beta.1/kimai_0.9.3.beta.zip"><span>Beta<br/>0.9.3</span></a>
+      <a href="{{ site.stable_url }}"><span>Stable<br/>0.9.2</span></a>
+      <a href="{{ site.nightly_url }}"><span>RC<br/>0.9.3</span></a>
       <a href="https://github.com/kimai/manuals/zipball/master"><span>DEV<br/>0.9.x</span></a>
       <a href="https://github.com/kimai/manuals/raw/master/documentation.pdf"><span>Docu<br/>PDF</span></a>
 </section>
 <div class="clearleft"></div>
 
 <!-- a href="/en/latest.html" title="Download Public Beta"><img src="/images/download2008.gif" title="Download Public Beta" style="margin-right: 20px" align="left" /></a -->
-We keep an eye on server compatibility, requirements for Kimai are only:<br/>**MySQL 4.1** and **PHP 5.2**
+We keep an eye on server compatibility, requirements for Kimai are only:<br/>**MySQL 4.1** and **PHP 5.1**
 
 <div class="clearleft"></div>
 
-## Latest Beta
+## RC - Release Candidate
 
-If you are really inquisitive, you could [download the latest beta](https://github.com/kimai/kimai/releases/download/v0.9.3-beta.1/kimai_0.9.3.beta.zip).
+A Release Candidate is a version that we consider as stable, but we would like to give it a last test run in the wild: on your server!
+
+So, if you are a user of Kimai and have the resources to test or just like to play with brand new features,
+you can [download the latest test version]({{ site.nightly_url }}).
 It includes many of the features you see at the [demo site](/en/demo.html), which are not yet available in the stable release.
+
+Please help us, test it and [give us your feedback]({{ site.issues_url }}) if you find any problems.
 
 The system requirements changed to **MySQL 4.3** and **PHP 5.3**.
 

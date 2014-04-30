@@ -53,4 +53,4 @@ Diese App wurde entwickelt um die mobile Verwendung einer bestehenden Kimai Inst
 
 * * *
 
-Know more apps? Create a [new issue](https://github.com/kimai/kimai/issues) or [forum post](http://forum.kimai.org) and we will update this page.
+Know more apps? Create a [new issue]({{ site.issues_url }}) or [forum post]({{ site.forum_url }}) and we will update this page.
