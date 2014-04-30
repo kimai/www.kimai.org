@@ -12,14 +12,15 @@ Okay, finally we achieved something that we self did not expect any more ;-) a w
 ... and its by far not complete:
 
 - new skin: Nordic
-- New or updated translations by contributors: - Icelandic
-- Polish
-- Czech
-- Hungarian
-- Dutch
-- Brazilian
-- French
-- German and English are maintained by the core team
+- New or updated translations by contributors:
+    - Icelandic
+    - Polish
+    - Czech
+    - Hungarian
+    - Dutch
+    - Brazilian
+    - French
+    - German and English are maintained by the core team
 - New flexible permission system
 - Configurable status values for timesheet entries
 - New description field for timesheet entries
