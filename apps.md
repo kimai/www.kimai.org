@@ -44,12 +44,15 @@ It is built with jQuery Mobile support and works as a developer demonstration fo
 
 * * *
 
-## Kimai Time Tracker <i class="fa fa-android"></i>
+## Kimai Time Tracker (Android) <i class="fa fa-android"></i>
 
-Android-App für die Zeitmanagment Anwendung Kimai.
-Diese App wurde entwickelt um die mobile Verwendung einer bestehenden Kimai Installation zu vereinfachen.
+Client for the time managment software Kimai. This app makes mobile tracking and logging into your kimai existing installation easier. 
+If you want to be auto logged in after application start check the appropiate box.
 
-[Visit Google Playstore](#)
+Normally you have to open your browser, go to favourites, click your kimai page, input data. Now you only have to do the last step every time you want to add entries.
+
+[Visit Github](https://github.com/de-live-gdev/kimai-android)
+[Visit F-Droid](https://f-droid.org/repository/browse/?fdid=de.live.gdev.timetracker)
 
 * * *
 
