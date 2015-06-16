@@ -13,7 +13,7 @@ redirect_from:
 <section id="downloads">
       <a href="{{ site.stable_url }}"><span>Stable<br/>0.9.2</span></a>
       <a href="{{ site.nightly_url }}"><span>RC<br/>0.9.3</span></a>
-      <a href="https://github.com/kimai/manuals/zipball/master"><span>DEV<br/>0.9.x</span></a>
+      <a href="https://github.com/kimai/kimai/zipball/master"><span>DEV<br/>0.9.x</span></a>
       <a href="https://github.com/kimai/manuals/raw/master/documentation.pdf"><span>Docu<br/>PDF</span></a>
 </section>
 <div class="clearleft"></div>
