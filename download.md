@@ -12,20 +12,20 @@ redirect_from:
 
 <section id="downloads">
       <a href="{{ site.stable_url }}"><span>Stable<br/>0.9.3</span></a>
-      <!--a href="{{ site.nightly_url }}"><span>RC<br/>0.9.3</span></a-->
       <a href="https://github.com/kimai/kimai/zipball/master"><span>DEV<br/>0.9.x</span></a>
       <a href="https://github.com/kimai/manuals/raw/master/documentation.pdf"><span>Docu<br/>PDF</span></a>
 </section>
 <div class="clearleft"></div>
 
-<!-- a href="/en/latest.html" title="Download Public Beta"><img src="/images/download2008.gif" title="Download Public Beta" style="margin-right: 20px" align="left" /></a -->
-We keep an eye on server compatibility, requirements for Kimai are only:<br/>**MySQL 4.3** and **PHP 5.3** (with Mysql extension enabled, PDO is not supported)
+We keep an eye on server compatibility, requirements for Kimai are only:
+<br/>**MySQL 4.3** and **PHP 5.3** (with Mysql extension enabled, PDO is not supported)
 
 <div class="clearleft"></div>
 
 ## DEV - Development version
 
-A development version is the latest package we are currently working on, it might have new features, but it might be broken as well!
+A development version is the latest package we are currently working on. 
+It might have new features, but it might be broken as well!
 
 If you are an experienced user of Kimai and have the resources to help us with testing or just like to play with brand new features,
 you can [download the latest development version](https://github.com/kimai/kimai/zipball/master).
