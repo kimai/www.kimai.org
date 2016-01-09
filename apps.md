@@ -56,4 +56,20 @@ Normally you have to open your browser, go to favourites, click your kimai page,
 
 * * *
 
+## TimeTrapp <i class="fa fa-apple"></i> <i class="fa fa-windows"></i> <i class="fa fa-android"></i>
+
+Stop documenting the time used for tasks days or weeks after you have actually done them. TimeTrapp allows you to record your time anywhere you go.
+While beeing a generic App, TimeTrapp also supports Kimai as backend. So storing entries in your favorite timetracker is easier than ever.
+
+TimeTrapp supports:
+* Adding new records to your timesheet, documenting what you have done when
+* Listing all previous entries
+* Creating filtered summaries per project
+
+[Visit Apple App Store](https://geo.itunes.apple.com/at/app/timetrapp/id1059376948?mt=8)
+[Visit Windows Store](https://www.microsoft.com/store/apps/9nblggh6ctdk)
+[Visit Google Play](https://play.google.com/store/apps/details?id=at.senegate.app.timetrapp)
+
+* * *
+
 Know more apps? Create a [new issue]({{ site.issues_url }}) or [forum post]({{ site.forum_url }}) and we will update this page.
