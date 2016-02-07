@@ -12,13 +12,13 @@ redirect_from:
 
 <section id="downloads">
       <a href="{{ site.stable_url }}"><span>Stable<br/>0.9.3</span></a>
-      <a href="https://github.com/kimai/kimai/zipball/master"><span>DEV<br/>0.9.x</span></a>
+      <a href="https://github.com/kimai/kimai/zipball/master"><span>DEV<br/>0.9.4</span></a>
       <a href="https://github.com/kimai/manuals/raw/master/documentation.pdf"><span>Docu<br/>PDF</span></a>
 </section>
 <div class="clearleft"></div>
 
 We keep an eye on server compatibility, requirements for Kimai are only:
-<br/>**MySQL 4.3** and **PHP 5.3** (with Mysql extension enabled, PDO is not supported)
+<br/>**MySQL 4.3** and **PHP 5.4** (required extensions: mysqli and iconv)
 
 <div class="clearleft"></div>
 
@@ -38,7 +38,7 @@ Please help us, test it and [give us your feedback]({{ site.issues_url }}) if yo
 ## Installation
 
 1.  Use a **modern** Browser
-2.  You need PHP 5.3 and access to a MySQL (or other) database.
+2.  You need PHP 5.4 and access to a MySQL database.
 3.  Start your browser and go to your Kimai directory.
 4.  Kimai has a step-by-step installation program, just follow the instructions of the installer.
 
