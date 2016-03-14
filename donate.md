@@ -13,21 +13,23 @@ redirect_from:
 Developing a free software like Kimai takes a lot of time and effort. If you like Kimai, if you use it on a daily basis or in your company, consider to donate. By doing so, you support further development. Thank you!
 
 <table class="donations" cellspacing="1" cellpadding="1" border="0">
-    <tbody>
-        <tr>
-
-            <td valign="top" style="text-align:center">
-                <p>Severin</p>
-                <a href="http://www.amazon.de/wishlist/238HI7KQSJ118"><img src="{{ site.url }}/assets/amazon_whishlist.gif" /></a>
-            </td>
-            <td valign="top" style="text-align:center">
-                <p>Kevin</p>
-                <a href="http://www.amazon.de/wishlist/2CCJSMUYFLD6T/"><img src="{{ site.url }}/assets/amazon_whishlist.gif" /></a>
-            </td>
-        </tr>
-    </tbody>
+	<tbody>
+		<tr>
+			<td valign="top" style="text-align:center">
+				<p>Kevin</p>
+				<a href="http://www.amazon.de/wishlist/2CCJSMUYFLD6T/"><img src="{{ site.url }}/assets/amazon_whishlist.gif" alt="Amazon Wishlist" /></a>
+			</td>
+			<td valign="top" style="text-align:center">
+				<p>Simon</p>
+				<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MQQN8Z953WV8Q"><img src="https://www.paypalobjects.com/webstatic/en_US/btn/btn_donate_pp_142x27.png" alt="Donate with PayPal" /></a>
+			</td>
+			<td valign="top" style="text-align:center">
+				<p>Severin</p>
+				<a href="http://www.amazon.de/wishlist/238HI7KQSJ118"><img src="{{ site.url }}/assets/amazon_whishlist.gif" alt="Amazon Wishlist" /></a>
+			</td>
+		</tr>
+	</tbody>
 </table>
-
 
 ## Why would I donate to Kimai?
 
