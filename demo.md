@@ -31,7 +31,7 @@ following "admin" account:
 
 ## Note
 
-The demo is always created from the latest [development version]({{ site.docu_url }}developer/README.html).
+The demo is always created from the latest [development version]({{ site.docu_url }}developer/index.html).
 It's possible, that you find bugs, which will not be available in a release version.
 The Kimai Demo will be reinstalled multiple times a day, that's why you cannot perform long-time tests.
 
