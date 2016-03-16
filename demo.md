@@ -12,8 +12,8 @@ redirect_from:
 
 This page leads you to a [demo installation](http://demo.kimai.org/) of Kimai, where you can get a first
 impression on how this software feels and which functionality it provides.
-If you encounter any problem, we kindly ask you to send us a [message in the forum]({{ site.forum_url }}index.php?board=4.0).
-Please notice, that the Demo will be reinstalled on a regular base and all entered data will be removed.
+If you encounter any problem, we would kindly ask you to send us a [message in our issue tracker]({{ site.issues_url }}).
+Please notice, that the Demo will be reinstalled on a regular schedule and all entered data will be removed.
 
 Current state:
 
