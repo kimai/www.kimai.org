@@ -29,7 +29,7 @@ It might have new features, but it might be broken as well!
 
 If you are an experienced user of Kimai and have the resources to help us with testing or just like to play with brand new features,
 you can [download the latest development version](https://github.com/kimai/kimai/archive/master.zip).
-It includes many of the features you see at the [demo site](/demo.html), which are not yet available in a stable release.
+It includes many of the features you see at the [demo site](/demo/), which are not yet available in a stable release.
 
 Please help us, test it and [give us your feedback]({{ site.issues_url }}) if you find any problems.
 
