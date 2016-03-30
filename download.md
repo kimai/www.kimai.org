@@ -48,9 +48,7 @@ Please help us, test it and [give us your feedback]({{ site.issues_url }}) if yo
 
 When you update an existing installation, just replace the entire Kimai folder on your server. Additionally you need to make all ‘compile’ folders (also inside all extension subfolders!) writable for PHP. Writing permission must also be granted to the ‘temporary’ folder and the included ‘logfile.txt’.
 
-For current versions (&gt;0.8.0) when you installed Kimai via the UI-Installer (not by  editing the ‘conf.php’) you need to keep the file  ‘autoconf.php’. For older versions (at least version 0.7) keep the file ‘includes/conf.php’.
-
-When Kimai doesn’t start the reason is probably wrong writing permissions on the mentioned files and folders! Users also encountered problems with older PDO version – see support forum for more detail.
+When Kimai doesn’t start the reason is probably wrong writing permissions on the mentioned files and folders!
 
 * * *
 
