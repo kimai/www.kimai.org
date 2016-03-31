@@ -56,7 +56,7 @@ When Kimai doesn’t start the reason is probably wrong writing permissions on t
 
 ## More Downloads
 
-Our documentation has information about fetching the [latest development version]({{ site.docu_url }}developer/README.html).
+Our documentation has information about fetching the [latest development version]({{ site.docu_url }}developer/index.html).
 
 You can find all old versions at the [archived download page](https://sourceforge.net/projects/kimai/files/) at Sourceforge.
 
