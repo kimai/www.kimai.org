@@ -11,9 +11,9 @@ redirect_from:
 # Downloads
 
 <section id="downloads">
-  <a href="{{ site.stable_url }}"><span>Stable<br/>0.9.3</span></a>
-  <a href="https://github.com/kimai/kimai/archive/master.zip"><span>DEV<br/>0.9.4</span></a>
-  <a href="https://github.com/kimai/manuals/raw/master/documentation.pdf"><span>Docu<br/>PDF</span></a>
+      <a href="{{ site.stable_url }}"><span>Stable<br/>1.0.1</span></a>
+      <a href="https://github.com/kimai/kimai/zipball/develop"><span>DEV<br/>1.x</span></a>
+      <a href="https://github.com/kimai/manuals/raw/master/documentation.pdf"><span>Docu<br/>PDF</span></a>
 </section>
 <div class="clearleft"></div>
 
@@ -28,7 +28,7 @@ A development version is the latest package we are currently working on.
 It might have new features, but it might be broken as well!
 
 If you are an experienced user of Kimai and have the resources to help us with testing or just like to play with brand new features,
-you can [download the latest development version](https://github.com/kimai/kimai/archive/master.zip).
+you can [download the latest development version](https://github.com/kimai/kimai/zipball/develop).
 It includes many of the features you see at the [demo site](/demo/), which are not yet available in a stable release.
 
 Please help us, test it and [give us your feedback]({{ site.issues_url }}) if you find any problems.
