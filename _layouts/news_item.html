@@ -7,7 +7,7 @@ layout: news
     <div class="post-meta">
         {{ page.date | date_to_string }} by
         {% if page.author_git %}
-            <a href="https://github.com/{{ page.author_git }}" class="post-author">{{ page.author }} {{ post.author_git }}</a>
+            <a href="https://github.com/{{ page.author_git }}" class="post-author">{{ page.author }}</a>
         {% else %}
             <a href="https://github.com/{{ page.author }}" class="post-author">{{ page.author }}</a>
         {% endif %}
