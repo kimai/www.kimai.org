@@ -14,10 +14,10 @@ full_posts: 5
             <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
             <p class="post-meta">
                 {{ post.date | date_to_string }} by
-                {% if post.author == 'torsten' %}
-                    {{ post.author }}
+                {% if post.author_git %}
+                <a href="https://github.com/{{ post.author_git }}" class="post-author">{{ post.author }}</a>
                 {% else %}
-                    <a href="https://github.com/{{ post.author }}" class="post-author">{{ post.author }}</a>
+                <a href="https://github.com/{{ post.author }}" class="post-author">{{ post.author }}</a>
                 {% endif %}
             </p>
             {{ post.excerpt }}
