@@ -2,7 +2,7 @@
 layout: news_item
 title: "The backend of Kimai"
 date: "2007-01-14 21:18:41 +0200"
-author: torsten
+author: skilleven
 ---
 
 At this moment we are radically rewriting the core of Kimai.

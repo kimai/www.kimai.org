@@ -2,7 +2,7 @@
 layout: news_item
 title: "Kimai comes redesigned in 0.8"
 date: "2008-02-19 20:34:56 +0200"
-author: torsten
+author: skilleven
 ---
 
 Just to give you a little apetizer... We're preparing an entirely re-designed frontend.

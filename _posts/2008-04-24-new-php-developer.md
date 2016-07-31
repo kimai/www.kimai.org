@@ -2,7 +2,7 @@
 layout: news_item
 title: "New PHP-Developer"
 date: "2008-04-24 16:17:45 +0200"
-author: torsten
+author: skilleven
 ---
 
 Only four days after Tom's exit we are very happy to announce that Oleg Britvin joints as new PHP Core-Developer.

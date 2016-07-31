@@ -2,7 +2,7 @@
 layout: news_item
 title: "Kimai Blog"
 date: "2006-12-12 17:16:30 +0200"
-author: torsten
+author: skilleven
 ---
 
 On the Kimai Blog we will keep you posted on everything Kimai.

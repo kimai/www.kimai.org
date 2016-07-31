@@ -2,7 +2,7 @@
 layout: news_item
 title: "The Kimai front-end plans"
 date: "2007-01-14 13:06:47 +0200"
-author: torsten
+author: skilleven
 ---
 
 There are some major changes planned for the front-end part (HTML and JavaScript) of Kimai.

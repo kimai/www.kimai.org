@@ -2,7 +2,7 @@
 layout: news_item
 title: "PDO Problems in 0.8.0"
 date: "2008-09-03 09:53:00 +0200"
-author: torsten
+author: skilleven
 ---
 
 Since release day I get flooded with mails and forum posts that report installing and update problems...

@@ -2,7 +2,7 @@
 layout: news_item
 title: "It could be called YASH (Yet Another Stats Hack) ..."
 date: "2007-10-20 23:21:11 +0200"
-author: torsten
+author: skilleven
 ---
 
 ...but Martin Klemkow named it "Simplestats". This extension is really nice!

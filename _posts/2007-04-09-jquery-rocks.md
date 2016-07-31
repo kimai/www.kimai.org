@@ -2,7 +2,7 @@
 layout: news_item
 title: "jQuery rocks!"
 date: "2007-04-09 08:38:47 +0200"
-author: torsten
+author: skilleven
 ---
 
 I confess, this is very technical. But I'm bound to say that implementing the jQuery lib was a very good decision.

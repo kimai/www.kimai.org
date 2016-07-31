@@ -2,7 +2,7 @@
 layout: news_item
 title: "CSV Export"
 date: "2007-08-27 15:30:07 +0200"
-author: torsten
+author: skilleven
 ---
 
 Urs Gerig wrote a little extension to Kimai to export his timesheets as CSV.

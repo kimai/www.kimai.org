@@ -2,7 +2,7 @@
 layout: news_item
 title: "Bye bye folks ..."
 date: "2009-06-19 21:35:00 +0200"
-author: torsten
+author: skilleven
 ---
 
 Like some users might already have noticed - there is not much going on around Kimai lately.

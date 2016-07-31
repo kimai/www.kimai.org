@@ -2,7 +2,7 @@
 layout: news_item
 title: "Statistics Extension"
 date: "2007-09-24 19:05:45 +0200"
-author: torsten
+author: skilleven
 ---
 
 The first extension is available for Kimai.

@@ -2,7 +2,7 @@
 layout: news_item
 title: "Subversion and Bugtracker"
 date: "2007-10-29 21:50:55 +0200"
-author: torsten
+author: skilleven
 ---
 
 As some of you may have noticed we have set up a public bugtracker lately.

@@ -2,7 +2,7 @@
 layout: news_item
 title: "New Website Online"
 date: "2008-04-20 12:08:52 +0200"
-author: torsten
+author: skilleven
 ---
 
 The redesign of our website is finally online.
