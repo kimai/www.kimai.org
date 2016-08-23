@@ -11,7 +11,7 @@ redirect_from:
 # Downloads
 
 <section id="downloads">
-      <a href="{{ site.stable_url }}"><span>Stable<br/>1.0.1</span></a>
+      <a href="{{ site.stable_url }}"><span>Stable<br/>1.1.0</span></a>
       <a href="https://github.com/kimai/kimai/zipball/develop"><span>DEV<br/>1.x</span></a>
       <a href="https://github.com/kimai/manuals/raw/master/documentation.pdf"><span>Docu<br/>PDF</span></a>
 </section>
@@ -24,7 +24,7 @@ We keep an eye on server compatibility, requirements for Kimai are only:
 
 ## DEV - Development version
 
-A development version is the latest package we are currently working on. 
+A development version is the latest package we are currently working on.
 It might have new features, but it might be broken as well!
 
 If you are an experienced user of Kimai and have the resources to help us with testing or just like to play with brand new features,
