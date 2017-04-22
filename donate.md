@@ -23,10 +23,6 @@ Developing a free software like Kimai takes a lot of time and effort. If you lik
 				<p>Simon</p>
 				<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MQQN8Z953WV8Q"><img src="https://www.paypalobjects.com/webstatic/en_US/btn/btn_donate_pp_142x27.png" alt="Donate with PayPal" /></a>
 			</td>
-			<td valign="top" style="text-align:center">
-				<p>Severin</p>
-				<a href="http://www.amazon.de/wishlist/238HI7KQSJ118"><img src="{{ site.url }}/assets/amazon_whishlist.gif" alt="Amazon Wishlist" /></a>
-			</td>
 		</tr>
 	</tbody>
 </table>
