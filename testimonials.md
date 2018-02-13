@@ -37,3 +37,4 @@ _“I have search and searched and searched for a timesheet program. And even th
 
 _“…As mentioned before also, I’m also tracking my sleep time and other personal time, so Kimai to me is not just a “Time Tracker” but a “Life Tracker”. This is what I’m hoping to get out of Kimai so I can try to get some of the time in my life back…”_
 
+ 
