@@ -33,6 +33,7 @@ Welcome to the documentation for the Kimai time-tracking application.
 * [Invoice templates](invoice-templates/)
 * [Authenticator](authenticator/)
 * [Extensions](extensions/)
+* [Team stuff](team/)
 
 ## Download for offline usage
 
