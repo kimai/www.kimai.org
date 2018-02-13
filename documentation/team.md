@@ -43,7 +43,7 @@ ant build
 - Edit the GitHub release and add a link to the blog post
 - Let the rest of the team know and spread the word (Twitter, Facebook ...)
 
-## How to publish a new blog article on the Kimai website
+## How to publish a new blog article
 
 Writing a new blog post is a simple as:
  
