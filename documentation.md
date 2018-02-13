@@ -11,10 +11,10 @@ redirect_from:
 
 Thanks for visiting, our documentation moved.
 
-Please visit the following link: [{{ site.docu_url }}]({{ site.docu_url }})
+Please visit the following link: [{{site.docu_url}}]({{site.docu_url}})
 
 You will be automatically redirected in the next seconds.
 
 <script type="text/javascript">
-location.href = '{{ site.docu_url }}';
+location.href = '{{site.docu_url}}';
 </script>

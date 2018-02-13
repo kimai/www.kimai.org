@@ -10,7 +10,7 @@ We are pleased to announce the release of Kimai 0.9.1.
 Please look through the beta version announcements to get a list of all changes.
 This version brings so many bugfixes and new features that we can't list them all ;D
 
-[Grab a copy]({{ site.download_url }}) of this release and let us know what you think either here or in our [Time-Tracking forum]({{ site.forum_url }}).
+[Grab a copy]({{site.download_url}}) of this release and let us know what you think either here or in our [Time-Tracking forum]({{site.forum_url}}).
 
 We hope you enjoy this package!
 

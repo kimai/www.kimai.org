@@ -21,4 +21,4 @@ The installation will then be performed in non-PDO mode.
 
 
 
-[Download]({{ site.download_url }})
+[Download]({{site.download_url}})
