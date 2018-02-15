@@ -2,6 +2,8 @@
 layout: kimai
 title: Documentation for Kimai
 description: Documentation for Kimai Time-Tracking
+redirect_from:
+  - /manual/rates.html
 ---
 # Rates
 
