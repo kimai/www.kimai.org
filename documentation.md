@@ -4,6 +4,7 @@ title: Documentation for Kimai
 description: Documentation for Kimai Time-Tracking
 permalink: /documentation/
 redirect_from:
+  - /documentation/manual/index.html
   - /en/documentation/
   - /dokumentation/
 ---
