@@ -86,23 +86,19 @@ This is a basic recommended setup for best performance and increased
 functionality:
 
 * Apache with mod_expires enabled
-
 * MySQL 5.5 or newer
-
 * PHP
   * version 7.0 or later
   * memory_limit set to at least 128M
   * max_execution_time set to at least 60s
   * max_input_vars set to at least 1500
-
 * Additional PHP extensions:
   * PHP opcode cache, i.e.: apc, xcache, eaccelerator, Zend Optimizer, wincache (in case of an IIS installation)
   * apcu caching (with at least 100 MB of memory available)
   * mbstring
-
-* PHP access to /dev/urandom or /dev/random on Unix-like platforms for
-  increased security. Make sure to add "/dev/random:/dev/urandom" to
-  open_basedir settings if you use it. If these paths are unavailable, Kimai
+* PHP access to `/dev/urandom` or `/dev/random` on Unix-like platforms for
+  increased security. Make sure to add `/dev/random:/dev/urandom` to
+  `open_basedir` settings if you use it. If these paths are unavailable, Kimai
   will attempt to simulate random number generation. This is less secure,
   reduces performance and throws out warnings in the Kimai log.
 
@@ -110,14 +106,22 @@ functionality:
 
 If you have SSH access to your webserver, this is the recommended way of setting up Kimai:
 
-* Uncompress the zip file on the Document
-  Root of your Web server:
-```
-/var/www/html/kimai $ unzip kimai.zip
-```
+Uncompress the zip file on the Document root of your web-server:
 
-* Important: If you use GIT to fetch the sources, use the following command:
 ```
+cd /var/www/
+mkdir kimai
+cd kimai
+wget https://github.com/kimai/kimai/releases/download/1.2.2/kimai_1.2.2.zip
+unzip kimai_1.2.2.zip
+```
+Replace 1.2.2 with the latest available [release TAG](https://github.com/kimai/kimai/releases)
+
+
+Important: If you use GIT to fetch the sources, use the following command:
+
+```
+cd /var/www/
 git clone https://github.com/kimai/kimai.git
 git fetch
 git checkout 1.2.2
@@ -134,9 +138,9 @@ Please note that this is not a recommended setup!
 
 * Uncompress `kimai.zip` locally
 * Delete all files except:
-  * ```includes/autoconf.php```
-  * any self made invoice templates under ```extensions/ki_invoice/invoices/```
-  * any self written extensions under ```extensions/```
+  * `includes/autoconf.php`
+  * any self made invoice templates under `extensions/ki_invoice/invoices/`
+  * any self written extensions under `extensions/`
 * Upload all files and subdirectories directly in your Document Root
   (where files that are served by your webserver are located).
 
@@ -150,9 +154,8 @@ It will check if your environment conforms to the minimum system requirements
 and gives you some suggestions on what to change in case there are any
 discrepancies.
 
-* Remove the “install” directory after the installation
-* Remove the “updater” directory after the installation
-* Remove the “updater” directory after the installation
+* Remove the `install` directory after the installation
+* Remove the `updater` directory after the installation
 
 
 ## Installation on Ubuntu
@@ -160,7 +163,7 @@ discrepancies.
 * Install apache (or any other webserver)
 * Install mysqli
 * Install php
-* Install additional required module php-xml with ``sudo apt-get install php-xml``
+* Install additional required module php-xml with `sudo apt-get install php-xml`
 
 Extract the Kimai release zip/tarball into a server directory accessible from the outside and navigate to this location using your browser. A step-by-step installation program is included with every new release of Kimai. Follow the instructions of the installer and correct missing or incorrect permissions using your FTP or shell account. 
 If the step-by-step installer does not work, [please report this error]({{ site.issues_url }}).
