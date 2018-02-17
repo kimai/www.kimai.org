@@ -4,6 +4,7 @@ title: Documentation for Kimai
 description: Documentation for Kimai Time-Tracking
 redirect_from:
   - /documentation/developer/documentation.html
+  - /documentation/developer/introduction.html
 ---
 # Introduction
 

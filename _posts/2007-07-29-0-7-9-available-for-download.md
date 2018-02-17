@@ -6,6 +6,6 @@ author: skilleven
 ---
 
 For all users of 0.6.1 - PLEASE, backup your existing data before using the new version (an instruction how this can be done, here:
-[FAQ page]({{ site.docu_url }}FAQ.html)).
+[update]({{ site.docu_url }}/updates/)).
 Please use UTF-8 (utf8\_unicode\_ci) for fresh installments.
 Have fun. [Get it here]({{ site.download_url }}).
