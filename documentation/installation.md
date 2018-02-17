@@ -122,10 +122,12 @@ Important: If you use GIT to fetch the sources, use the following command:
 
 ```
 cd /var/www/
-git clone https://github.com/kimai/kimai.git
-git fetch
-git checkout 1.2.2
+git clone -b 1.2.2 --depth 1 https://github.com/kimai/kimai.git
+cd kimai
+composer install --no-dev
 ```
+In this case git will just clone a single commit without any history. If you want the full repo, simply leave out `--depth 1`.
+
 Replace 1.2.2 with the latest available [release TAG](https://github.com/kimai/kimai/releases)
 
 ### No SSH possible (not recommended)
