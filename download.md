@@ -18,7 +18,7 @@ redirect_from:
 <div class="clearleft"></div>
 
 We keep an eye on server compatibility, requirements for Kimai are only:
-<br/>**MySQL 4.3** and **PHP 5.4** (required extensions: mysqli, iconv, php-xml)
+<br/>**MySQL 4.3** and **PHP 5.5** (required extensions: mysqli, iconv, php-xml)
 
 <div class="clearleft"></div>
 
@@ -38,7 +38,7 @@ Please help us, test it and [give us your feedback]({{ site.issues_url }}) if yo
 ## Installation
 
 1.  Use a **modern** Browser
-2.  You need at least PHP 5.4 and access to a MySQL database.
+2.  You need at least PHP 5.5 and access to a MySQL database.
 3.  Start your browser and go to your Kimai directory.
 4.  Kimai has a step-by-step installation program, just follow the instructions of the installer.
 
