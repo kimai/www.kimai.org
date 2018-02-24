@@ -17,7 +17,7 @@ Please notice, that the Demo will be reinstalled on a regular schedule and all e
 
 Current state:
 
-<iframe class="demoframe" src="https://demo.kimai.org/status.php"></iframe>
+<script src="https://demo.kimai.org/status.php"></script>
 
 ## Login
 
