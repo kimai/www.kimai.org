@@ -30,6 +30,7 @@ Welcome to the documentation for the Kimai time-tracking application.
 ## Kimai Setup
 * [Administration](administration/)
 * [Authenticator](authenticator/)
+* [SAML Authentication](saml/)
 * [Email](email/)
 
 ## Developer
