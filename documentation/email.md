@@ -1,10 +1,10 @@
 # Email
 
-Currently kimai only uses email to send users an email if they have forgotten their password.  It is also currently only implemented for the kimai_auth authenticator.  This is reasonable as the other authentication methods do not allow kimai to change passwords (an LDAP user must goto to the LDAP administrator if they forget their password.
+Currently Kimai only uses email to send users an email if they have forgotten their password.  It is also currently only implemented for the kimai_auth authenticator.  This is reasonable as the other authentication methods do not allow Kimai to change passwords, e.g. LDAP user must go to the LDAP administrator if they forget their password.
 
 ## Configuration
 
-Currently configuring email requires the use of the ``includes/autoconf.php`` file and the configuration is performed on installation.  The values can be changed there later if necessary. 
+Currently configuring email requires the use of the ``includes/autoconf.php`` file and the configuration is performed during installation.  The values can be changed there later if necessary. 
 
 ```php
 $mail_transport = "sendmail";
@@ -24,7 +24,7 @@ Set the parameters according to the email documentation below.
 ### Configuration-parameters
 
 * **mail_transport:** This defines the Zend Mail transport mechanism used.  Default is **sendmail** (requires no further configuration).  **smtp** requires the following variables to be set as required by your smtp server
-* **smtp_name:** The DNS server name of your smtp server
+* **smtp_name:** The DNS name of your smtp server
 * **smtp_host:** The DNS or IP address or your SMTP Server
 * **smtp_port:** The port that your smtp server supports (examples: 25, 465, 587)
 * **smtp_auth:** The authentication mechanism to use with the smtp server. **plain**, **login** or **crammd5**
