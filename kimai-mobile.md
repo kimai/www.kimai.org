@@ -9,9 +9,12 @@ permalink: /kimai-mobile/
 
 jQuery mobile time tracking frontend for Kimai, optimized for usage on mobile devices
 
-This repository contains an mobile optimized interface of Kimai. 
-Its a small website that lets you start and stop your time record from 
-mobile devices.
+<section id="downloads">
+      <a href="https://github.com/kimai/kimai-mobile/zipball/master"><span>Download<br/>.zip file</span></a>
+</section>
+<div class="clearleft"></div>
+
+Its a small website that lets you start and stop your time record from mobile devices.
 
 It is built with jQuery Mobile support and works as a developer demonstration
 for the Kimai Remote API. For now its has the following features:
@@ -28,11 +31,13 @@ Javascript files and some spicy CSS sugar on top.
 
 Please note, that this is ONLY a experimental release and many features of the 
 complete version are missing. We don't have plans to add more features, but we'd like to hear 
-your about thoughts and feature requests at [the issue tracker](https://github.com/kimai/kimai-mobile/issues).
+your thoughts,feature requests at [the issue tracker](https://github.com/kimai/kimai-mobile/issues) 
+and especially [pull requests](https://github.com/kimai/kimai-mobile/pulls) from frontend developers.
 
 ## Installation
 
 To install this mobile interface:
+
 - copy all the files into a sub-directory of your Kimai installation (e.g. mobile/)
 - point your browser to https://www.example.com/mobile/ 
 - log in with your existing Kimai account
