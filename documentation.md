@@ -26,14 +26,17 @@ Welcome to the documentation for the Kimai time-tracking application.
 * [Invoices](invoices/)
 * [Rates](rates/)
 * [Fees](fees/)
+
+## Kimai Setup
 * [Administration](administration/)
+* [Authenticator](authenticator/)
+* [Email](email/)
 
 ## Developer
 
 * [Developer](developer/)
 * [Translations](translations/)
 * [Invoice templates](invoice-templates/)
-* [Authenticator](authenticator/)
 * [Extensions](extensions/)
 * [Team stuff](team/)
 
