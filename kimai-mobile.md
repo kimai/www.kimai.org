@@ -10,7 +10,7 @@ permalink: /kimai-mobile/
 jQuery mobile time tracking frontend for Kimai, optimized for usage on mobile devices
 
 <section id="downloads">
-      <a href="https://github.com/kimai/kimai-mobile/zipball/master"><span>Download<br/>.zip file</span></a>
+      <a href="https://github.com/kimai/kimai-mobile/zipball/master"><span>.zip file</span></a>
 </section>
 <div class="clearleft"></div>
 
@@ -54,12 +54,12 @@ We would love to get input from all developer out there:
 2. Create a branch (`git checkout -b my_kimai_mobile`)
 3. Commit your changes (`git commit -am "Added foobar"`)
 4. Push to the branch (`git push origin my_kimai_mobile`)
-5. Create an [Issue][1] with a link to your branch
+5. Create an [Pull request][1] from your branch
 6. Now enjoy the latest episode of Big Bang Theory while we review your changes
 
 ### Links
 
 Thanks to the [jQuery mobile Team][2]!
 
-[1]: https://github.com/kimai/kimai-mobile/issues
+[1]: https://github.com/kimai/kimai-mobile/pulls
 [2]: http://jquerymobile.com/

@@ -21,6 +21,8 @@ A very simple mobile optimized interface of Kimai. It lets you start and stop yo
 
 It is built with jQuery Mobile support and works as a developer demonstration for the Kimai Remote API.
 
+
+[Visit website](/kimai-mobile/)
 [Visit GitHub](https://github.com/kimai/kimai-mobile)
 
 * * *
