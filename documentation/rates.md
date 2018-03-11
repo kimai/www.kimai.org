@@ -3,7 +3,8 @@ layout: kimai
 title: Documentation for Kimai
 description: Documentation for Kimai Time-Tracking
 redirect_from:
-  - /manual/rates.html
+- /manual/rates.html
+- /manual/manual/rates.html
 ---
 # Rates
 
