@@ -30,7 +30,7 @@ full_posts: 5
         <table class="post-list">
         {% endif %}
         <tr>
-            <td><a href='{{ post.url }}'>{{ post.title }}</a></td>
+            <td><a href="{{ post.url }}">{{ post.title }}</a></td>
             <td class="post-date">{{ post.date | date_to_string }}</td>
         </tr>
     {% endif %}
