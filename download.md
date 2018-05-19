@@ -46,10 +46,9 @@ Please help us, test it and [give us your feedback]({{ site.issues_url }}) if yo
 ### Update
 
 When you update an existing installation, just replace the entire Kimai folder on your server. 
-Additionally you need to make all ‘compile’ folders (also inside all extension subfolders!) writable for PHP. 
-Writing permission must also be granted to the ‘temporary’ folder and the included ‘logfile.txt’.
+Writing permission must be granted to the ‘temporary’ folder.
 
-When Kimai doesn’t start the reason is probably wrong writing permissions on the mentioned files and folders!
+When Kimai doesn't start, the reason is probably wrong writing permissions on the mentioned files and folders!
 
 * * *
 
