@@ -11,7 +11,7 @@ redirect_from:
 
 # Testimonials
 
-_“Kimai is my favorite software for tracking time spent on projects I have discovered. I have tried lots of different other solutions, i.e. Sugar CRM, but Kimai's sweet and neat Web 2.0 usability beats them all. It's user interface is an inspiring example for every Web developer out there.  If you are not tracking time yet, because it seems so complicated, give Kimai a try. You will love it!“_ – Max (surfnext.com)
+_“Kimai is my favorite software for tracking time spent on projects I have discovered. I have tried lots of different other solutions, i.e. Sugar CRM, but Kimai's sweet and neat Web 2.0 usability beats them all. It's user interface is an inspiring example for every Web developer out there. If you are not tracking time yet, because it seems so complicated, give Kimai a try. You will love it!“_ – Max (surfnext.com)
 
 * * *
 
@@ -23,7 +23,7 @@ _“Auf der Suche nach einem, möglichst einfachen (und Webbasierten) Zeiterfass
 
 * * *
 
-_“In 2009 I  started researching web-based time tracking software. First, I checked out  some of the commercial/proprietary offerings. Then, I looked at all the free  solutions available on the web. I tried some of them out and decided to go  with Kimai. Over the past 2+ years Kimai has served me well. It is easy to  install, easy to upgrade and it works great. The interface is aesthetically  pleasing and the feature set has everything I need and then some. In my  opinion, this is by far the best time tracking software for managing time  cards and keeping track of time spent on projects. Not only is it the best, it  is also free as in freedom, open source software. If you are using Kimai and  haven't sent a donation yet, please do so because these guys deserve it.  Thanks for keeping it GPL!”_ – Sean (couponsdealuxe.com)
+_“In 2009 I started researching web-based time tracking software. First, I checked out some of the commercial/proprietary offerings. Then, I looked at all the free solutions available on the web. I tried some of them out and decided to go with Kimai. Over the past 2+ years Kimai has served me well. It is easy to install, easy to upgrade and it works great. The interface is aesthetically pleasing and the feature set has everything I need and then some. In my opinion, this is by far the best time tracking software for managing time cards and keeping track of time spent on projects. Not only is it the best, it is also free as in freedom, open source software. If you are using Kimai and haven't sent a donation yet, please do so because these guys deserve it. Thanks for keeping it GPL!”_ – Sean (couponsdealuxe.com)
 
 * * *
 

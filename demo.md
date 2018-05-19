@@ -10,10 +10,10 @@ redirect_from:
 
 # Demo
 
-This page leads you to a [demo installation](http://demo.kimai.org/) of Kimai, where you can get a first
+This page leads you to a [demo installation](https://demo.kimai.org/) of Kimai, where you can get a first
 impression on how this software feels and which functionality it provides.
 If you encounter any problem, we would kindly ask you to send us a [message in our issue tracker]({{site.issues_url}}).
-Please notice, that the Demo will be reinstalled on a regular schedule and all entered data will be removed.
+Please note, that the Demo will be reinstalled on a regular schedule and all entered data will be removed.
 
 Current state:
 
@@ -22,16 +22,16 @@ Current state:
 ## Login
 
 As Kimai forbids multiple sessions for the same user, the previously logged-in user will be logged out, if another
-login occurs for that  account. Therefor is it recommended to create your own test-account instead of using the
+login occurs for that account. Therefor is it recommended to create your own test-account instead of using the
 following "admin" account:
 
-*   Website: [http://demo.kimai.org/](http://demo.kimai.org/)
-*   Username: admin
-*   Password:&nbsp;changeme
+* Website: [https://demo.kimai.org](https://demo.kimai.org/)
+* Username: admin
+* Password: changeme
 
 ## Note
 
-The demo is always created from the latest [development version]({{site.docu_url}}developer/index.html).
+The demo is always created from the current master branch.
 It's possible, that you find bugs, which will not be available in a release version.
 The Kimai Demo will be reinstalled multiple times a day, that's why you cannot perform long-time tests.
 
