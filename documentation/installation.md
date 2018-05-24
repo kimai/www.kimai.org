@@ -112,23 +112,23 @@ Uncompress the zip file on the Document root of your web-server:
 cd /var/www/
 mkdir kimai
 cd kimai
-wget https://github.com/kimai/kimai/releases/download/1.2.2/kimai_1.2.2.zip
-unzip kimai_1.2.2.zip
+wget https://github.com/kimai/kimai/releases/download/{{ site.kimai_version }}/kimai_{{ site.kimai_version }}.zip
+unzip kimai_{{ site.kimai_version }}.zip
 ```
-Replace 1.2.2 with the latest available [release TAG](https://github.com/kimai/kimai/releases)
+Replace {{ site.kimai_version }} with the latest available [release TAG](https://github.com/kimai/kimai/releases)
 
 
 Important: If you use GIT to fetch the sources, use the following command:
 
 ```
 cd /var/www/
-git clone -b 1.2.2 --depth 1 https://github.com/kimai/kimai.git
+git clone -b {{ site.kimai_version }} --depth 1 https://github.com/kimai/kimai.git
 cd kimai
 composer install --no-dev
 ```
 In this case git will just clone a single commit without any history. If you want the full repo, simply leave out `--depth 1`.
 
-Replace 1.2.2 with the latest available [release TAG](https://github.com/kimai/kimai/releases)
+Replace {{ site.kimai_version }} with the latest available [release TAG](https://github.com/kimai/kimai/releases)
 
 ### No SSH possible (not recommended)
 

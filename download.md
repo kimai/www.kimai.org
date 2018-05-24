@@ -11,7 +11,7 @@ redirect_from:
 # Downloads
 
 <section id="downloads">
-      <a href="{{ site.stable_url }}"><span>Release<br/>1.3.1</span></a>
+      <a href="https://github.com/kimai/kimai/releases/download/{{ site.kimai_version }}/kimai_{{ site.kimai_version }}.zip"><span>Release<br/>{{ site.kimai_version }}</span></a>
       <a href="https://github.com/kimai/kimai/zipball/master"><span>Stable<br/>1.x</span></a>
       <a href="https://github.com/kimai/manuals/raw/master/documentation.pdf"><span>Docu<br/>PDF</span></a>
 </section>
