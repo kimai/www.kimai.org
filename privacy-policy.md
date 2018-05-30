@@ -4,4 +4,4 @@ title: Privacy Policy
 description: Privacy policy for www.kimai.org
 permalink: /privacy-policy/
 ---
-{% include core/privacy.md github=true fonts=true %}
+{% include core/privacy.md github=true %}
