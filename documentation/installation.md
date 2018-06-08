@@ -64,21 +64,15 @@ The MySQL user needs a least the following privileges on the Kimai database:
 Your PHP needs to support the following extensions. Install will
 check if these are available.
 
-* These are usually part of the standard PHP package on most distributions:
-  * filter
-  * hash
-  * pcre >= 8.30
-  * session
-  * soap
-  * SPL
-  * standard
+* Please make sure all of these php modules are activated:
+  * dom
+  * mysqli
   * xml
   * zip
   * zlib
-
-* These might have to be installed separately:
-  * json
-  * mysqli
+  
+* In case you want to make use of the SOAP API, please also activate this module:
+  * soap
 
 ### Recommended setup
 
@@ -134,7 +128,7 @@ Replace {{ site.kimai_version }} with the latest available [release TAG](https:/
 
 In case you only have FTP or SFTP access to your hosting environment, you
 can still install Kimai, but you won't easily be able to upgrade your
-installation once a new patch-level release is out.
+installation once a new release is out.
 
 Please note that this is not a recommended setup!
 
@@ -167,7 +161,9 @@ discrepancies.
 * Install php
 * Install additional required module php-xml with `sudo apt-get install php-xml`
 
-Extract the Kimai release zip/tarball into a server directory accessible from the outside and navigate to this location using your browser. A step-by-step installation program is included with every new release of Kimai. Follow the instructions of the installer and correct missing or incorrect permissions using your FTP or shell account. 
+Extract the Kimai release zip/tarball into a server directory accessible from the outside and navigate to this location 
+using your browser. A step-by-step installation program is included with every new release of Kimai. Follow the 
+instructions of the installer and correct missing or incorrect permissions using your FTP or shell account. 
 If the step-by-step installer does not work, [please report this error]({{ site.issues_url }}).
 
 

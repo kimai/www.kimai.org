@@ -1,7 +1,7 @@
 ---
 layout: kimai
-title: Documentation for Kimai
-description: Documentation for Kimai Time-Tracking
+title: Documentation for Kimai update
+description: Documentation for updating Kimai
 redirect_from:
   - /documentation/installation/updates.html
 ---
@@ -26,17 +26,19 @@ For Linux that could be:
 ```
 chmod -R 777 temporary/
 ```
-It would be even better, if you give writing permission to your PHP or Webserver user only, instead of making it world writable. The last can be or is a risk, especially in shared hosting environments.
+It would be even better, if you give writing permission to your PHP or Webserver user only, instead of making it world 
+writable. The last can be or is a risk, especially in shared hosting environments.
 
 ## Step 3
 
 Ready for update:
 
 Visit your Kimai installation with your web browser and the auto update process will perform all necessary tasks
-(eg. http://www.example.com/kimai/index.php - do **NOT** execute the installer!).
+(eg. http://kimai.example.com/ - do **NOT** execute the installer!).
 
-A new version updates the database automatically. Before that a backup of your data will be created. Normally you'll not even notice this process. If anything goes wrong during the database-update you can recover the data via phpMyAdmin.
-
+A new version of kimai will update the database automatically. Before any database migrations will be done, a backup of 
+your tables will be created in the same database with a timestamp.
+For a recovery it is still better to use the original backup that you hopefully created before.
 
 ## Step 4
 
