@@ -85,26 +85,37 @@ Response:
 
 
 ## SOAP API
+...
 
 ## API Methods 
 
+Here is the full list of all available methods on the current API:
+
  - authenticate :
 Authenticates a user and returns the API key. The result is either an empty string (not allowed or need to login first via web-interface) or a string with max 30 character, representing the users API key.
- - getVersion :
+ -getVersion :
 Returns the current version & revision of kimai, useful for e.g. having version dependant features
- - startRecord :
+ -startRecord :
 The user started the recording of an activity via the buzzer. If this method is called while another recording is running the first one will be stopped. If $projectId and $activityId are empty the last activity will be restarted.
- - stopRecord :
+ -stopRecord :
 Stops the currently running recording. If $entryId is empty the current activity will be stopped.
- - getUsers :
+ -getUsers :
 Return a list of users. Customers are not shown any users. The type of the current user decides which users are shown to him. Returns false if the call could not be executed, null if no users could be found or an array of users.
- - getCustomers :
+ -getCustomers :
 Return a list of customers. A customer can only see himself.
- - getProjects :
+ -getProjects :
 Return a list of projects. Customers are only shown their projects.
- - getTasks :
+ -getTasks :
 Return a list of tasks. Customers are only shown tasks which are used for them. If a project is set as filter via the project parameter only tasks for that project are shown.
- - getActiveRecording :
+ -getActiveRecording :
 Returns an array with values of the currently active recording.
- - updateActiveRecording :
+ -updateActiveRecording :
 updateActiveRecording Updates an already running timer, this function allows you to change a project, activity description, comment and start time. If you add an end time this will stop the activity, as per Kimai's normal process Note: you can edit a recording if timeEntryID defined in parameters
+ -getTimesheet :Returns a list of recorded times.
+ -getTimesheetRecord :@param string $apiKey
+ -setTimesheetRecord :@param string $apiKey
+ -removeTimesheetRecord :@param string $apiKey
+ -getExpenses :Returns a list of expenses.
+ -getExpenseRecord :@param string $apiKey
+ -setExpenseRecord :@param string $apiKey
+ -removeExpenseRecord :@param string $apiKey
