@@ -26,16 +26,6 @@ We keep an eye on server compatibility, requirements for Kimai are only:
 
 <div class="clearleft"></div>
 
-## DEV - Development version
-
-A development version is the latest package we are currently working on.
-It might have new features, but it might be broken as well!
-
-If you are an experienced user of Kimai and have the resources to help us with testing or just like to play with brand new features,
-you can [download the latest development version](https://github.com/kimai/kimai/zipball/develop).
-
-Please help us, test it and [give us your feedback]({{ site.issues_url }}) if you find any problems.
-
 * * *
 
 ## Installation
@@ -57,6 +47,16 @@ When Kimai doesn't start, the reason is probably wrong writing permissions on th
 **IMPORTANT**: Remove the ‘installer’ directory when you’ve successfully updated Kimai.
 
 * * *
+
+## Development version
+
+A development version is the latest package we are currently working on.
+It might have new features, but it might be broken as well!
+
+If you are an experienced user of Kimai and have the resources to help us with testing or just like to play with brand new features,
+you can [download the latest development version](https://github.com/kimai/kimai/zipball/develop).
+
+Please help us, test it and [give us your feedback]({{ site.issues_url }}) if you find any problems.
 
 ## More Downloads
 
