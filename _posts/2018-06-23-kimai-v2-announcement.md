@@ -5,9 +5,7 @@ date: "2018-06-23 22:00:00 +0200"
 author: kevinpapst
 ---
 
-Welcome to a long overdue blog posting with an announcement, which some of you didn't believe it will ever come ;-)
-
-But here it is ...
+Welcome to a long overdue blog posting with a major announcement!
 
 ## Today I am thrilled to announce that we are officially working on a brand new Kimai version
 
@@ -19,7 +17,7 @@ Before I start with some background information, here is a list of links about K
 - After testing, please leave us your [feedback](https://github.com/kevinpapst/kimai2/issues/) at GitHub, 
 so we can shape the future development roadmap together
 
-## Some background information
+## What happened so far
 
 Simon and I discussed about writing a new Kimai version for a long time and it was also 
 [requested by the community for many years](https://github.com/kimai/kimai/issues/259).
@@ -36,9 +34,9 @@ Also Kimai v1 was never meant to be used on modern devices and even though there
 the support for mobile usage was not ideal - to say at least.
 
 So it was finally time "to let go" and start working on the next generation of Kimai and inspirational as developers are: 
-we call it "Kimai v2" for now ;-)
+we call it "Kimai v2" for now.
 
-I choose to use Symfony 4.1 as technical core layer and a bootstrap based theme, to be up-to-date with the latest 
+I choose to use Symfony as technical core layer and a bootstrap based theme, to be up-to-date with the latest 
 and greatest features from the open-source world and to be ready for another 10 years of Kimai.
 
 You can find a lot of technical detail information [at Github](https://github.com/kevinpapst/kimai2/) and in 
@@ -46,26 +44,22 @@ the [developer documentation](https://github.com/kevinpapst/kimai2/blob/master/v
 
 ## Current status
 
-The status of the development is early and a lot of the advanced features from Kimai v1 are still missing.
-
-Its already used in production by myself to find all the small quirks in order to improve the everyday usage, 
-especially on mobile devices.
+The status of the development is in an early stage and a lot of the advanced features from Kimai v1 are still missing.
 
 Installation process is done in some minutes (you need PHP 7.1.3 or higher) and we already added support for 
 importing your data from Kimai v1. 
 
-But we will very likely not call it "production ready" until the end of the year, as we have a lot of improvements in the pipeline 
-which we consider "must-haves" for a time-tracking software in 2018. 
-Until then we will fully support Kimai v1.
+But we will very likely not call it "production ready" until the end of the year, as we have a lot of improvements 
+in the pipeline which we consider "must-haves" for a time-tracking software in 2018. Until then we will fully support Kimai v1.
 
-It might be a good idea to check-out Kimai v2 early, in order to talk with us and sent in your requests, we don't want 
-to break your workflows (especially regarding export and invoicing). 
+Try it out and give us feedback! You should test Kimai v2 early, in order to talk with us and sent in your requests, 
+we don't want to break your workflows (especially regarding export and invoicing). 
 
 ## Thanks for reading
 
-I hope that some of you will join us as early adopters and we can together start improving Kimai v2 to shape the best open-source timetracking software.
+Join us as early adopters, so we can start shaping the best open-source timetracking software together!
 
-We are [waiting for your feedback](https://github.com/kevinpapst/kimai2/issues/) as we want to build Kimai v2 in close contact with you, the community!
+We are [waiting for your feedback](https://github.com/kevinpapst/kimai2/issues/) as we want to build Kimai v2 in close contact with you.
 
 Cheers,
 Kevin  
