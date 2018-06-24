@@ -13,7 +13,7 @@ But here it is ...
 
 Before I start with some background information, here is a list of links about Kimai v2:
 
-- You can find the new website at [https://v2.kimai.org](https://v2.kimai.org)
+- You can find the new website for now at [https://v2.kimai.org](https://v2.kimai.org)
 - The project is developed at [at Github](https://github.com/kevinpapst/kimai2/)
 - We have a [demo site](https://v2.kimai.org/demo/) that is waiting for your tests
 - After testing, please leave us your [feedback](https://github.com/kevinpapst/kimai2/issues/) at GitHub, 
@@ -25,10 +25,10 @@ Simon and I discussed about writing a new Kimai version for a long time and it w
 [requested by the community for many years](https://github.com/kimai/kimai/issues/259).
 
 We were always unsure whether the effort would pay out. Writing a brand new timetracking software in a modern framework would 
-basically mean writing a new software, that would only share the same name, the same developer and probably the same approach 
+basically mean writing a new software which would only share the same name, the same developer and probably the same approach 
 of tracking and managing timesheets.
 
-But there was a point when it became clear that Kimai v1 was overhauled and barerly manageable any longer. 
+But there was a point when it became clear that Kimai v1 was overhauled and barely manageable any longer. 
 Writing new features for Kimai v1 felt wrong and painful, as the main codebase is more than 10 years old and less than ideal 
 considering the great toolkits the PHP community has to offer in 2018.
 
@@ -51,15 +51,19 @@ The status of the development is early and a lot of the advanced features from K
 Its already used in production by myself to find all the small quirks in order to improve the everyday usage, 
 especially on mobile devices.
 
-Installation process is done in some minutes (you need PHP 7.1.3 or higher) and we already added support to import your 
-data from Kimai v1. 
+Installation process is done in some minutes (you need PHP 7.1.3 or higher) and we already added support for 
+importing your data from Kimai v1. 
 
 But we will very likely not call it "production ready" until the end of the year, as we have a lot of improvements in the pipeline 
 which we consider "must-haves" for a time-tracking software in 2018. 
+Until then we will fully support Kimai v1.
+
+It might be a good idea to check-out Kimai v2 early, in order to talk with us and sent in your requests, we don't want 
+to break your workflows (especially regarding export and invoicing). 
 
 ## Thanks for reading
 
-I hope that some of you will join us as early adopters and we can together start improving Kimai and shape the best open-source timetracking software.
+I hope that some of you will join us as early adopters and we can together start improving Kimai v2 to shape the best open-source timetracking software.
 
 We are [waiting for your feedback](https://github.com/kevinpapst/kimai2/issues/) as we want to build Kimai v2 in close contact with you, the community!
 
