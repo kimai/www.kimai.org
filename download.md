@@ -24,6 +24,8 @@ redirect_from:
 We keep an eye on server compatibility, requirements for Kimai are only:
 <br/>**MySQL 4.3** and **PHP 5.5** (required extensions: mysqli, iconv, php-xml)
 
+Please [visit us at GitHub](https://github.com/kimai/kimai/) to find out more.
+
 <div class="clearleft"></div>
 
 * * *
@@ -65,4 +67,4 @@ Our documentation has information about fetching the [latest development version
 ### Deprecated
 
 A couple of years ago we hosted Kimai at Sourceforge, you can find all old versions there. 
-But thats ONLY for informational purpose, so we advise: DON'T! That why we don't provide a link... its completely outdated. 
+But thats ONLY for informational purpose, so we advise: DON'T! That why we don't provide a link anymore ... its completely outdated. 
