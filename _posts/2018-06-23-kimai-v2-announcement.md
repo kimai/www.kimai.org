@@ -39,15 +39,15 @@ we call it "Kimai v2" for now.
 I choose to use Symfony as technical core layer and a bootstrap based theme, to be up-to-date with the latest 
 and greatest features from the open-source world and to be ready for another 10 years of Kimai.
 
-You can find a lot of technical detail information [at Github](https://github.com/kevinpapst/kimai2/) and in 
+You can find more technical details [at Github](https://github.com/kevinpapst/kimai2/) and in 
 the [developer documentation](https://github.com/kevinpapst/kimai2/blob/master/var/docs/developers.md).
 
 ## Current status
 
-The status of the development is in an early stage and a lot of the advanced features from Kimai v1 are still missing.
+The status of the development is in an early stage and some of the advanced features from Kimai v1 are still missing.
 
-Installation process is done in some minutes (you need PHP 7.1.3 or higher) and we already added support for 
-importing your data from Kimai v1. 
+The installation process is quick and done in a couple minutes (you need PHP 7.1.3 or higher) and we already added 
+support for importing your data from Kimai v1. 
 
 But we will very likely not call it "production ready" until the end of the year, as we have a lot of improvements 
 in the pipeline which we consider "must-haves" for a time-tracking software in 2018. Until then we will fully support Kimai v1.
@@ -58,7 +58,6 @@ we don't want to break your workflows (especially regarding export and invoicing
 ## Thanks for reading
 
 Join us as early adopters, so we can start shaping the best open-source timetracking software together!
-
 We are [waiting for your feedback](https://github.com/kevinpapst/kimai2/issues/) as we want to build Kimai v2 in close contact with you.
 
 Cheers,
