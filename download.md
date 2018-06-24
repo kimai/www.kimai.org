@@ -17,6 +17,10 @@ redirect_from:
 </section>
 <div class="clearleft"></div>
 <br>
+
+- Release: Contains all the files that are required to install Kimai directly
+- Stable: is the developer version of a release, needs some post-install work (like `composer install --no-dev`)
+
 We keep an eye on server compatibility, requirements for Kimai are only:
 <br/>**MySQL 4.3** and **PHP 5.5** (required extensions: mysqli, iconv, php-xml)
 
@@ -41,7 +45,7 @@ Please help us, test it and [give us your feedback]({{ site.issues_url }}) if yo
 3. Start your browser and go to your Kimai directory.
 4. Kimai has a step-by-step installer, just follow the instructions.
 
-**IMPORTANT** Remove the ‘installer’ directory when you’ve successfully installed Kimai.
+**IMPORTANT**: Remove the ‘installer’ directory when you’ve successfully installed Kimai.
 
 ### Update
 
@@ -50,10 +54,15 @@ Writing permission must be granted to the ‘temporary’ folder.
 
 When Kimai doesn't start, the reason is probably wrong writing permissions on the mentioned files and folders!
 
+**IMPORTANT**: Remove the ‘installer’ directory when you’ve successfully updated Kimai.
+
 * * *
 
 ## More Downloads
 
 Our documentation has information about fetching the [latest development version]({{ site.docu_url }}developer/index.html).
 
-You can find all old versions at the [archived download page](https://sourceforge.net/projects/kimai/files/) at Sourceforge.
+### Deprecated
+
+A couple of years ago we hosted Kimai at Sourceforge, you can find all old versions there. 
+But thats ONLY for informational purpose, so we advise: DON'T! That why we don't provide a link... its completely outdated. 
