@@ -32,6 +32,7 @@ cd kimai-master
 git tag -a -f -m 'Tagged version x.x.x' x.x.x
 git push origin x.x.x
 composer install --no-dev
+ant build
 ```
 
 - Now open GitHub, [create a new "Release"](https://github.com/kimai/kimai/releases) as Draft and upload the release ZIP from /tmp/kimai/kimai_xxx.zip to this draft
