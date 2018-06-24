@@ -57,7 +57,7 @@ we don't want to break your workflows (especially regarding export and invoicing
 
 ## Thanks for reading
 
-Join us as early adopters, so we can start shaping the best open-source timetracking software together!
+Join us as early adopters so we can start shaping the best open-source timetracking software together!
 We are [waiting for your feedback](https://github.com/kevinpapst/kimai2/issues/) as we want to build Kimai v2 in close contact with you.
 
 Cheers,
