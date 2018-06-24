@@ -12,7 +12,7 @@ Welcome to a long overdue blog posting with a major announcement!
 Before I start with some background information, here is a list of links about Kimai v2:
 
 - You can find the new website for now at [https://v2.kimai.org](https://v2.kimai.org)
-- The project is developed at [at Github](https://github.com/kevinpapst/kimai2/)
+- The project is developed at [Github](https://github.com/kevinpapst/kimai2/)
 - We have a [demo site](https://v2.kimai.org/demo/) that is waiting for your tests
 - After testing, please leave us your [feedback](https://github.com/kevinpapst/kimai2/issues/) at GitHub, 
 so we can shape the future development roadmap together
