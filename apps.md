@@ -77,4 +77,20 @@ TimeTrapp supports:
 
 * * *
 
+## Kimai-widget - Rainmeter skin <i class="fa fa-windows"></i>
+
+Rainmeter skin for Kimai, you can start and stop the timer for a selected project and activity. Requires Rainmeter, a desktop customization tool for Windows. More info on Github.
+
+[Visit Github](https://github.com/infeeeee/kimai-widget)
+
+* * *
+
+## Kimai-cmd <i class="fa fa-windows"></i> <i class="fa fa-linux"></i> <i class="fa fa-apple"></i>
+
+A command line client for Kimai. Start and stop a timer from the terminal.
+
+[Visit Github](https://github.com/infeeeee/kimai-cmd)
+
+* * *
+
 Know more apps? Create a [new issue]({{ site.issues_url }}) and we will update this page.
