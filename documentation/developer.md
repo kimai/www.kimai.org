@@ -57,7 +57,7 @@ After a successfull login the user is redirected to `/core/kimai.php`. Here all 
 
 When you develop an extension you have to think of a name and a so called key. This key should be prepended to every javascript method, class, id, … just anything that is used within your extension to prevent conflicting names.
 
-Every extensions needs a compile folder. This is where the smarty template engine stores the files which are passed to the client based on the template files from the templates folder. Floaters get their seperate folder under the templates folders. The folder css is obviously for CSS files which are needed by the extension. The js folder usually contains two javascript files. An `_init.js` and a `_func.js` file. The first should contain code to setup the extension. The second should only contains javascript functions which are used within this extension.
+Floaters get their seperate folder under the templates folders. The folder css is obviously for CSS files which are needed by the extension. The js folder usually contains two javascript files. An `_init.js` and a `_func.js` file. The first should contain code to setup the extension. The second should only contains javascript functions which are used within this extension.
 
 Only after an extension/tab is selected its content is being loaded. This is handled by the init.php file in the extensions folder. The processor.php file handles AJAX calls and floater.php creates those dragable windows.
 
