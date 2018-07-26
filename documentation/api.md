@@ -114,4 +114,4 @@ Please make sure that your are NOT using HTTP in production, you do not want to 
 
 ## SOAP API
 
-Sorry, no example yet. If you want to add one, please let us knw in the issue tracker!
+Sorry, no example yet. If you want to add one, please let us know in the issue tracker!
