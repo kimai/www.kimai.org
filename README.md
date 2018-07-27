@@ -1,4 +1,4 @@
-# Kimai's awesome website.
+# Kimai's awesome website
 
 Directory structure:
 
