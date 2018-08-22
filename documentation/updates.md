@@ -7,29 +7,44 @@ redirect_from:
 ---
 # Updates
 
-## Step 1
+## Step 1 - **Create a full backup!** 
 
-**Create a full backup!** 
+You need to backup both: your Kimai **database** and the **folder containing your Kimai installation**, especially the file `includes/autoconf.php`. To backup the folder holding your Kimai installation you can rename it and create a new folder for the new version. For thes instructions we will use the folders `public_html` and `public_html-backup`. If your webhosting use a different name adjust the instructions below as needed.
 
-You need to backup both: your **database** and your file system, especially the file **includes/autoconf.php**.
+## Step 2 - Download and unzip
+Change to the folder were you will be installing the new version of Kimai and download the newest version with something like:
+```
+wget https://github.com/kimai/kimai/releases/download/1.3.1/kimai_1.3.1.zip
+```
+The link to the newest version can be found on the [Downloads](/download/) page.
 
-## Step 2
+Unzip it with something like this:
+```
+unzip kimai_1.3.1.zip
+```
+## Step 3 - copy configuration
 
-To install a new version just replace the entire directory with the new package and **KEEP** the file **autoconf.php** which can be found inside the /includes folder.
+Copy `autoconfig.php` from the old version to the new version of Kimai with something like this:
+```
+cp public_html-backup/includes/autoconfig.php public_html/includes/
+```
 
-Additionally you have to set write permissions to the **temporary/** folder.
+## Step 4 - Set correct permissions
 
-Attention: Kimai will NOT work with wrong permissions!
+Insure that `temporary` folder has write permissions.
 
-For Linux that could be:
+**Attention: The Kimai Updater will NOT work with wrong permissions!**
 
+You can set write permissions to the 'temporary' folder with:
+```
+chmod -R og+w temporary/
+```
+This will give write permissons to the owner and group. The best is to only give the write permissions to PHP and the webserver in this way instead of giving all users write permissions. This can be or is a risk, especially in shared hosting environments.
+If setting the permissions with the command above does not work you can give every user write permissions with:
 ```
 chmod -R 777 temporary/
 ```
-It would be even better, if you give writing permission to your PHP or Webserver user only, instead of making it world 
-writable. The last can be or is a risk, especially in shared hosting environments.
-
-## Step 3
+## Step 5 - Run the updater.php
 
 Ready for update:
 
