@@ -48,8 +48,7 @@ chmod -R 777 temporary/
 
 Ready for update:
 
-Visit your Kimai installation with your web browser and the auto update process will perform all necessary tasks
-(eg. http://kimai.example.com/ - do **NOT** execute the installer!).
+Visit your Kimai installation (eg. http://kimai.example.com/) with your web browser and the auto update process will perform all necessary tasks. You should see the **updater**. If you see the **installer** do not continue. Check that you have copied the `includes/autoconfig.php` from your old installation to the new. Do **NOT** execute the installer, as doing so will misconfigure the new installation and you will need to restore the backup of the database and start the update process again.
 
 A new version of kimai will update the database automatically. Before any database migrations will be done, a backup of 
 your tables will be created in the same database with a timestamp.
