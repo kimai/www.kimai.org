@@ -9,16 +9,16 @@ redirect_from:
 
 ## Step 1 - **Create a full backup!** 
 
-You need to backup both: your Kimai **database** and the **folder containing your Kimai installation**, especially the file `includes/autoconf.php`. To backup the folder holding your Kimai installation you can rename it and create a new folder for the new version. For thes instructions we will use the folders `public_html` and `public_html-backup`. If your webhosting use a different name adjust the instructions below as needed.
+You need to backup both: your Kimai **database** and the **folder containing your Kimai installation**, especially the file `includes/autoconf.php`. To backup the folder holding your Kimai installation you can rename it and create a new folder for the new version. For these instructions we will use the folders `public_html` and `public_html-backup`. If your webhosting uses a different name adjust the instructions below as needed.
 
 ## Step 2 - Download and unzip
-Change to the folder were you will be installing the new version of Kimai and download the newest version with something like:
+Change to the folder were you will be installing the new version of Kimai and download the newest version with something like this (the filename will change with the version):
 ```
 wget https://github.com/kimai/kimai/releases/download/1.3.1/kimai_1.3.1.zip
 ```
 The link to the newest version can be found on the [Downloads](/download/) page.
 
-Unzip it with something like this:
+Unzip it with something like this (the filename will change with the version):
 ```
 unzip kimai_1.3.1.zip
 ```
@@ -31,7 +31,7 @@ cp public_html-backup/includes/autoconfig.php public_html/includes/
 
 ## Step 4 - Set correct permissions
 
-Insure that `temporary` folder has write permissions.
+Ensure that `temporary` folder has write permissions.
 
 **Attention: The Kimai Updater will NOT work with wrong permissions!**
 
@@ -48,7 +48,7 @@ chmod -R 777 temporary/
 
 Ready for update:
 
-Visit your Kimai installation (eg. http://kimai.example.com/) with your web browser and the auto update process will perform all necessary tasks. You should see the **updater**. If you see the **installer** do not continue. Check that you have copied the `includes/autoconfig.php` from your old installation to the new. Do **NOT** execute the installer, as doing so will misconfigure the new installation and you will need to restore the backup of the database and start the update process again.
+Visit your Kimai installation (eg. http://kimai.example.com/) with your web browser and the auto update process will perform all necessary tasks. You should see the **updater**. If you see the **installer** do not continue. Check that you have copied the file `includes/autoconfig.php` from your old installation to the new. Do **NOT** execute the installer, as doing so will misconfigure the new installation and you will need to restore the backup of the database and start the update process again.
 
 A new version of kimai will update the database automatically. Before any database migrations will be done, a backup of 
 your tables will be created in the same database with a timestamp.
