@@ -58,8 +58,3 @@ Please help us, test it and [give us your feedback]({{ site.issues_url }}) if yo
 ## More Downloads
 
 Our documentation has information about fetching the [latest development version]({{ site.docu_url }}developer/index.html).
-
-### Deprecated
-
-A couple of years ago we hosted Kimai at Sourceforge, you can find all old versions there. 
-But thats ONLY for informational purpose, so we advise: DON'T! That why we don't provide a link anymore ... its completely outdated. 
