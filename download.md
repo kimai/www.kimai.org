@@ -35,7 +35,7 @@ Requirements for Kimai are only:<br/>
 3. Start your browser and go to your Kimai directory.
 4. Kimai has a step-by-step installer, just follow the instructions.
 
-**IMPORTANT**: Remove the ‘installer’ directory when you’ve successfully installed Kimai.
+**IMPORTANT**: Remove the `installer` directory when you’ve successfully installed Kimai.
 
 ### Update
 
