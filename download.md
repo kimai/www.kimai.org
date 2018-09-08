@@ -21,10 +21,8 @@ redirect_from:
 - Release: Contains all the files that are required to install Kimai directly
 - Stable: is the developer version of a release, needs some post-install work (like `composer install --no-dev`)
 
-We keep an eye on server compatibility, requirements for Kimai are only:
-<br/>**MySQL 4.3** and **PHP 5.5** (required extensions: mysqli, iconv, php-xml)
-
-Please [visit us at GitHub](https://github.com/kimai/kimai/) to find out more.
+Requirements for Kimai are only:<br/>
+**MySQL 4.3** and **PHP 5.5** (required extensions: mysqli, iconv, php-xml)
 
 <div class="clearleft"></div>
 
