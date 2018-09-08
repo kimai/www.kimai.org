@@ -41,12 +41,7 @@ Please [visit us at GitHub](https://github.com/kimai/kimai/) to find out more.
 
 ### Update
 
-When you update an existing installation, just replace the entire Kimai folder on your server. 
-Writing permission must be granted to the ‘temporary’ folder.
-
-When Kimai doesn't start, the reason is probably wrong writing permissions on the mentioned files and folders!
-
-**IMPORTANT**: Remove the ‘installer’ directory when you’ve successfully updated Kimai.
+Please see the [Update documentation](/documentation/updates/) for more information on how to update to a newer version of Kimai.
 
 * * *
 

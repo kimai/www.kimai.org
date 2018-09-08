@@ -7,43 +7,71 @@ redirect_from:
 ---
 # Updates
 
-## Step 1
+## Step 1 - **Create a full backup!** 
 
-**Create a full backup!** 
+You need to backup both: your Kimai **database** and the **folder containing your Kimai installation**, especially the file `includes/autoconf.php`. To backup the folder holding your Kimai installation you can rename it and create a new folder for the new version. For these instructions we will use the folders `public_html` and `public_html-backup`. If your webhosting uses a different name adjust the instructions below as needed.
 
-You need to backup both: your **database** and your file system, especially the file **includes/autoconf.php**.
+## Step 2 - Download and unzip
 
-## Step 2
+Change to the folder where you will be installing the new version of Kimai and download the newest version with something like this (the filename will change with the version):
 
-To install a new version just replace the entire directory with the new package and **KEEP** the file **autoconf.php** which can be found inside the /includes folder.
+```
+wget https://github.com/kimai/kimai/releases/download/1.3.1/kimai_1.3.1.zip
+```
 
-Additionally you have to set write permissions to the **temporary/** folder.
+The link to the newest version can be found on the [Downloads](/download/) page.
 
-Attention: Kimai will NOT work with wrong permissions!
+Unzip it with something like this (the filename will change with the version):
 
-For Linux that could be:
+```
+unzip kimai_1.3.1.zip
+```
+
+## Step 3 - copy configuration
+
+Copy `autoconfig.php` from the old version to the new version of Kimai with something like this:
+
+```
+cp public_html-backup/includes/autoconfig.php public_html/includes/
+```
+
+## Step 4 - Set correct permissions
+
+Ensure that `temporary` folder has write permissions.
+
+For webhosters who only give you FTP access, this step can be ignored as the permissions will be set for you automatically.
+
+**Attention: The Kimai Updater will NOT work with wrong permissions!**
+
+If you have SSH access to your webserver, you can set write permissions to the 'temporary' folder with:
+
+```
+chmod -R og+w temporary/
+```
+
+This will give write permissons to the owner and group. The best is to only give the write permissions to PHP and the webserver in this way instead of giving all users write permissions. This can be or is a risk, especially in shared hosting environments.
+If setting the permissions with the command above does not work you can give every user write permissions with:
 
 ```
 chmod -R 777 temporary/
 ```
-It would be even better, if you give writing permission to your PHP or Webserver user only, instead of making it world 
-writable. The last can be or is a risk, especially in shared hosting environments.
 
-## Step 3
+## Step 5 - Run the updater.php
 
 Ready for update:
 
-Visit your Kimai installation with your web browser and the auto update process will perform all necessary tasks
-(eg. http://kimai.example.com/ - do **NOT** execute the installer!).
+Visit your Kimai installation (eg. http://kimai.example.com/) with your web browser and the auto update process will perform all necessary tasks. You should see the **updater**. If you see the **installer** do not continue. Check that you have copied the file `includes/autoconfig.php` from your old installation to the new. Do **NOT** execute the installer, as doing so will misconfigure the new installation and you will need to restore the backup of the database and start the update process again.
 
 A new version of kimai will update the database automatically. Before any database migrations will be done, a backup of 
 your tables will be created in the same database with a timestamp.
-For a recovery it is still better to use the original backup that you hopefully created before.
+
+For a recovery it is still better to use the original backup that you created before.
 
 ## Step 4
 
 If the update was successful, finalize everything by removing the **updater** and **installer** folder.
-For Linux that could be:
+
+For Linux that will be:
 
 ```
 rm -rf updater
