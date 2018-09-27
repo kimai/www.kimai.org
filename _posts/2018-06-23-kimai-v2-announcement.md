@@ -46,7 +46,7 @@ the [developer documentation](https://github.com/kevinpapst/kimai2/blob/master/v
 
 The status of the development is in an early stage and some of the advanced features from Kimai v1 are still missing.
 
-The installation process is quick and done in a couple minutes (you need PHP 7.1.3 or higher) and we already added 
+The installation process is quick and done in a couple of minutes (you need PHP 7.1.3 or higher) and we already added 
 support for importing your data from Kimai v1. 
 
 But we will very likely not call it "production ready" until the end of the year, as we have a lot of improvements 
