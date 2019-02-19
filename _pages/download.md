@@ -19,7 +19,7 @@ Server requirements for Kimai are:
 
 If you are unsure, you can test your servers compatibility with the [Symfony requirements-checker](http://symfony.com/doc/current/reference/requirements.html).
 
-<a href="{{ site.kimai_v2_repo }}/releases/tag/0.7" class="btn btn-primary"><i class="fas fa-download"></i> Latest (0.7)</a>
+<a href="{{ site.kimai_v2_repo }}/releases/tag/{{ site.kimai_v2_version }}" class="btn btn-primary"><i class="fas fa-download"></i> Latest ({{ site.kimai_v2_version }})</a>
 <a href="{{ site.kimai_v2_repo }}/zipball/master" class="btn btn-secondary"><i class="fas fa-download"></i> Development</a>
 <a href="{{ site.kimai_v2_repo }}/releases" class="btn btn-secondary"><i class="fab fa-github"></i> All releases </a>
 

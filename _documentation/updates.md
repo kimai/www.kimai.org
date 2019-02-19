@@ -19,7 +19,8 @@ instead of a server. Read the [installation docu]({% link _documentation/install
 Change into your Kimai 2 installation directory, then fetch the latest code and install all dependencies:
 
 ```bash
-git pull origin master
+git fetch --tags
+git checkout {{ site.kimai_v2_version }}
 sudo -u www-data composer install --no-dev --optimize-autoloader
 ```
 

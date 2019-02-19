@@ -4,23 +4,27 @@ description: Running Kimai inside docker
 toc: true
 ---
 
-The Dockerfile supplied with this application is a development or demonstration docker. 
-It runs a self contained version of Kimai 2 using a SQLite database in the docker container.
+## Production docker
 
-There is an official docker repo for Kimai 2 that includes the Docker file from this repo and a docker file suitable for running in a production environment.
+There is an docker repo for Kimai 2 that includes the Docker file from this repo and a docker file suitable for running in a production environment.
 
 - You find this docker repo at: [https://github.com/tobybatch/kimai2](https://github.com/tobybatch/kimai2)
 - The repo at dockerhub auto-building the prod and dev containers: [https://hub.docker.com/r/kimai/kimai2](https://hub.docker.com/r/kimai/kimai2).
  
 Any issues with the container rather than the application itself should be raised [here](https://github.com/tobybatch/kimai2/issues).
 
-## Build the docker
+## Development docker
+The [Dockerfile]({{ site.kimai_v2_file}}/Dockerfile) supplied with Kimai 2 is suitable mainly for development. 
+It runs a self contained version of Kimai 2 using a SQLite database in the docker container. Be careful, the recorded data can easily 
+be lost when running updates or other tasks.
+
+### Build the docker
 
 ```bash
 docker build -t kimai/kimai2:dev .
 ```
 
-## Run the docker
+### Run the docker
 
 ```bash
 docker run -ti -p 8001:8001 --name kimai2 --rm kimai/kimai2:dev
@@ -34,7 +38,7 @@ You can then access the site on http://127.0.0.1:8001. If that doesn't work chec
 
 You can find Kimai at that IP on port 8001.
 
-### Mac using docker-machine
+#### Mac using docker-machine
 
 When using dock-machine on your Mac, you need to use the IP of your machine. 
 Considering you started the machine named `default`, you find the IP with:
@@ -43,7 +47,7 @@ Considering you started the machine named `default`, you find the IP with:
 docker-machine ip default
 ```
 
-## Running commands in the docker
+### Running commands in the docker
 
 You can run any command in the container in this fashion once it is started.  Add `-ti` to attach a terminal.
 
@@ -51,7 +55,7 @@ You can run any command in the container in this fashion once it is started.  Ad
 docker exec -ti kimai2 bash
 ```
 
-### Create a user and dummy data
+#### Create a user and dummy data
 
 See the docs [here]({% link _documentation/installation.md %}) for full instructions, but this creates a user admin/admin with all privileges.
 
@@ -65,7 +69,7 @@ To install the fixtures:
 docker exec kimai2 bin/console kimai:reset-dev
 ```
 
-## Developing against the docker
+### Developing against the docker
 
 It is possible to mount your source tree and sqlite DB into the container at run time.  
 **N.B. The sqlite database needs to writable by the www-data user.** 

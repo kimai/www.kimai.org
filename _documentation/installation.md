@@ -11,10 +11,10 @@ The recommended way to install Kimai v2 is via SSH, you need GIT and [Composer](
 To install Kimai 2 in your production environment, connect with SSH to your server and change to your webservers (document) root directory.
 You need to install Git and [Composer](https://getcomposer.org/doc/00-intro.md) if you haven't already. 
 
-First clone this repo (replace 0.7 with the [latest available release tag]({{ site.kimai_v2_repo }}/releases)):
+First clone this repo ({{ site.kimai_v2_version }} is the [latest available release]({{ site.kimai_v2_repo }}/releases)):
 
 ```bash
-git clone -b 0.7 --depth 1 https://github.com/kevinpapst/kimai2.git
+git clone -b {{ site.kimai_v2_version }} --depth 1 https://github.com/kevinpapst/kimai2.git
 cd kimai2/
 ```
 
@@ -76,7 +76,7 @@ Installation complete: enjoy time-tracking :-)
 
 ## Docker
 
-There is a dedicated about [our Docker setup]({% link _documentation/docker.md %}), which is primarily meant for use in development. 
+There is a dedicated article about [Docker setups]({% link _documentation/docker.md %}) for Kimai, suitable for development and production. 
 
 ## Hosting and 1-click installations
 
@@ -207,7 +207,7 @@ yarn install
 npm run prod
 ```
 
-## FAQ
+## Installation FAQ
 
 ### Malformed parameter "url"
 
