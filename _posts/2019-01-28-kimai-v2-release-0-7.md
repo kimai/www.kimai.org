@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Kimai v2 - Release 0.7"
+title: "Release 0.7 - Permissions"
 date: "2019-01-28 02:00:00 +0200"
 author: kevinpapst
 ---
