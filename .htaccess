@@ -1,8 +1,12 @@
 ---
+layout: none
 ---
-{% for page in site.pages %}{% if page.redirect_from != nil %}{% for redirect in page.redirect_from %}
+{%- for collection in site.collections -%}
+{%- for page in site[collection.label] -%}
+{%- if page.redirect_from != nil -%}
+{%- for redirect in page.redirect_from -%}
 rewrite ^{{ redirect }}$ {% if page.permalink == nil %}{{ page.url }}{% else %}{{ page.permalink }}{% endif %} permanent;
-{% endfor %}{% endif %}{% endfor %}
-{% for post in site.posts %}{% if post.redirect_from != nil %}{% for redirect in post.redirect_from %}
-rewrite ^{{ redirect }}$ {{ post.url }} permanent;
-{% endfor %}{% endif %}{% endfor %}
+{% endfor %}
+{%- endif -%}
+{%- endfor -%}
+{%- endfor -%}

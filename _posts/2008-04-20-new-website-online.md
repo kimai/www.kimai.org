@@ -1,5 +1,5 @@
 ---
-layout: news_item
+layout: post
 title: "New Website Online"
 date: "2008-04-20 12:08:52 +0200"
 author: skilleven

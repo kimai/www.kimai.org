@@ -1,9 +1,8 @@
 ---
-layout: news_item
+layout: post
 title: "Update for Kimai 0.7.121"
 date: "2009-03-07 16:08:00 +0200"
-author: Beny Walujo
-author_git: kimai
+author: beny
 ---
 
 I just found out that I forgot to add the code to disable "regular user" to add new Customers/Projects/Tasks.

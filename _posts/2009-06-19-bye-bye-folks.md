@@ -1,5 +1,5 @@
 ---
-layout: news_item
+layout: post
 title: "Bye bye folks ..."
 date: "2009-06-19 21:35:00 +0200"
 author: skilleven

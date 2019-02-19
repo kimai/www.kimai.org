@@ -1,11 +1,13 @@
 ---
-layout: news_item
+layout: post
 title: "External Kimai Apps"
 date: "2014-04-30 14:00:00 +0200"
 author: kevinpapst
 ---
 
-Just to let our reader (via RSS feed) know, I created a page for [external applications](http://www.kimai.org/apps/) which make use of our API.
+Just to let our reader (via RSS feed) know, I created a [page for external applications]({% link _v1/apps.md %}) which make use of our API.
+
+You find that new page at [{% link _v1/apps.md %}]({% link _v1/apps.md %})
 
 These apps could simplify your time-tracking process :)
 

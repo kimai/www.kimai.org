@@ -1,5 +1,5 @@
 ---
-layout: news_item
+layout: post
 title: "New Team Members"
 date: "2007-05-29 22:11:00 +0200"
 author: skilleven

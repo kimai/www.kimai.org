@@ -1,5 +1,5 @@
 ---
-layout: news_item
+layout: post
 title: "The backend of Kimai"
 date: "2007-01-14 21:18:41 +0200"
 author: skilleven

@@ -1,5 +1,5 @@
 ---
-layout: news_item
+layout: post
 title: "Beta Testers Wanted For v0.8 "
 date: "2008-07-27 08:00:56 +0200"
 author: skilleven

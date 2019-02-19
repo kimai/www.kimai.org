@@ -1,0 +1,74 @@
+---
+layout: default
+expire_warning: false
+upgrade_notice: false
+---
+{% assign collectionMenu = layout.menu %}
+{% assign collectionType = layout.type %}
+{% assign headerTitle = page.header | default: layout.title | default: page.title | default: "Documentation" %}
+{% assign headerSubTitle = page.subtitle | default: layout.subtitle | default: page.description %}
+
+<div class="container">
+	{% include page-title.html title=headerTitle subtitle=headerSubTitle %}
+
+	<div class="row">
+		<div class="col-lg-3 order-lg-1 mb-4 sidebar">
+			{% if layout.github != nil %}
+			<a href="{{ site[layout.github] }}" class="btn btn-block btn-primary mb-6">
+				<i class="fab fa-github"></i> Browse source code
+			</a>
+			{% endif %}
+
+			{% for group in site.data[collectionMenu] %}
+			<strong>{{ group.title }}</strong>
+			<div class="list-group list-group-transparent mb-0">
+				{% for p in group.pages %}
+				{% assign doc = site[collectionType] | where: "slug", p | first %}
+				<a href="{{ doc.url }}" class="list-group-item list-group-item-action{% if page.url == doc.url %} active{% endif %}"><span class="icon mr-3"><i class="{{ doc.icon }}"></i></span>{{ doc.title }}</a>
+				{% endfor %}
+			</div>
+			{% endfor %}
+
+			<div class="d-none d-lg-block mt-6">
+				<a href="{{ site.kimai_v2_website }}/blob/master/{{ page.path }}" class="text-muted">Edit this page</a>
+			</div>
+		</div>
+		<div class="col-lg-9">
+			<div class="card">
+				<div class="card-body">
+
+					<div class="text-wrap p-lg-6">
+						<h2 class="mt-0 mb-4">{{ page.title }}</h2>
+
+						{% if layout.expire_warning %}
+						<div class="alert alert-warning" role="alert">
+							We expect <a href="{% link _posts/2018-06-23-kimai-v2-announcement.md %}">Kimai v2</a> to be in a stable feature state by mid of 2019.
+							Consider <a href="{% link _documentation/migration-v1.md %}">upgrading to v2</a>, as our support for v1 will slowly expire until end of 2019.
+						</div>
+						{% endif %}
+
+						{% if layout.upgrade_notice %}
+						<div class="alert alert-warning" role="alert">
+							This is the documentation for Kimai v2. If you are still a user of Kimai v1, consider <a href="{% link _documentation/migration-v1.md %}">upgrading to Kimai v2</a>.
+							Meanwhile, head over to our documentation for <a href="{% link _v1/index.md %}">Kimai v1</a>.
+						</div>
+						{% endif %}
+
+						{% if page.in_progress %}
+						<div class="alert alert-primary mt-5 mb-6">
+							<div><strong>Work in progress!</strong> More detailed documentation is hopefully coming soon.</div>
+						</div>
+						{% endif %}
+
+						{% if page.toc %}
+						{{ page.content | toc_only }}
+						{% endif %}
+
+						{{ page.content }}
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,29 @@
+{% assign article = include.article | default: site.posts[0] %}
+{% assign type = include.type | default: 'none' %}
+{% assign author = site.data.users[article.author] %}
+{% assign liked = include.liked | default: false %}
+{% assign truncate = include.truncate | default: 100 %}
+
+<div class="card{% if type == 'aside' %} card-aside{% endif %}">
+	{% if type == 'image' %}
+	<a href="#"><img class="card-img-top" src="{{ site.base }}/{{ site.data.photos[article.image].small }}" alt="{{ article.title | escape}}"></a>
+	{% endif %}
+
+	{% if type == 'aside' %}
+	<a href="#" class="card-aside-column{% if include.aside-class %} {{ include.aside-class }}{% endif %}" style="background-image: url({{ site.base }}/{{ site.data.photos[article.image].small }})"></a>
+	{% endif %}
+
+	<div class="card-body d-flex flex-column">
+		<h4><a href="{{ article.url | absolute_url }}">{{ article.title }}</a></h4>
+
+		<div class="text-muted">{{ article.excerpt | truncate: truncate }}</div>
+
+		<div class="d-flex align-items-center pt-5 mt-auto">
+			<div class="avatar avatar-md mr-3" style="background-image: url({{ author.photo }})"></div>
+			<div>
+				<a href="{{ author.profile }}" class="text-default">{{ author.name }}</a>
+				<small class="d-block text-muted">{{ article.date | date_to_string }}</small>
+			</div>
+		</div>
+	</div>
+</div>

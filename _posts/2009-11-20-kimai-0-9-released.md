@@ -1,5 +1,5 @@
 ---
-layout: news_item
+layout: post
 title: "Kimai 0.9 released"
 date: "2009-11-20 00:15:00 +0200"
 author: kevinpapst
@@ -17,9 +17,9 @@ and... an invoice extension (beta and disabled by default) were added.
 
 ## What to do?
 
-Please [download]({{site.download_url}}) the new Kimai package and upgrade your system soon!
+Please [download]({{ site.download_url }}) the new Kimai package and upgrade your system soon!
 
-If you have any questions, don't hesitate to contact us in the [Forum]({{site.forum_url}}).
+If you have any questions, don't hesitate to contact us in the [Forum]({{ site.kimai_v1_repo }}/issues).
 
  If you like Kimai please help us to spread the word.
 Follow us at [Twitter](http://twitter.com/kimai_org), write a blog post - just let us know what you think!

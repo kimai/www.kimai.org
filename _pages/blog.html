@@ -1,0 +1,83 @@
+---
+layout: default
+title: Kimai News - the time-tracking blog
+description: News about Kimai, the time-tracking software
+redirect_from:
+    - /en/blog/
+    - /en/blog/Kimai-Blog.html
+sitemap:
+    priority: 1.0
+    lastmod: 2017-11-02
+    changefreq: weekly
+---
+
+<div class="container">
+
+	{% include page-title.html title="Kimai News" subtitle="News about the open-source time-tracking app Kimai" options='<a href="/feed.xml" class="btn btn-option"><i class="fa fa-rss"></i></a>' %}
+
+	<div class="row row-cards row-deck">
+
+		{% for article in site.posts %}
+		{% assign mod3 = forloop.index | modulo: 3 %}
+		<div class="col-lg-4">
+			{% include card-blog-single.html article=article id=forloop.index %}
+		</div>
+		{% if mod3 == 0 %}
+	</div>
+	<div class="row row-cards row-deck">
+		{% endif %}
+		{% endfor %}
+
+		{% if mod3 == 1 %}
+		<div class="col-lg-8"></div>
+		{% else if mod3 == 2 %}
+		<div class="col-lg-4"></div>
+		{% endif %}
+
+	</div>
+</div>
+
+{% comment %}
+	{% if paginator.total_pages > 1 %}
+	<footer>
+		<div class="pagination">
+			{% if paginator.previous_page %}
+				<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="previous">Previous</a>
+			{% else %}
+				<span class="previous">Previous</span>
+			{% endif %}
+
+			{% for page in (1..paginator.total_pages) %}
+				{% if page == paginator.page %}
+					<span class="page active">{{ page }}</span>
+				{% elsif page == 1 %}
+					<a href="{% link _pages/blog.html %}" class="page">{{ page }}</a>
+				{% else %}
+					<a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}" class="page">{{ page }}</a>
+				{% endif %}
+			{% endfor %}
+
+			{% if paginator.next_page %}
+				<a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="next">Next</a>
+			{% else %}
+				<span class="next">Next</span>
+			{% endif %}
+		</div>
+	</footer>
+	{% endif %}
+
+	<section>
+		<h2>Older Posts</h2>
+		<table class="post-list">
+			{% for post in site.posts %}
+				{% if forloop.index > 3 %}
+					<tr>
+						<td><a href="{{ post.url }}">{{ post.title }}</a></td>
+						<td class="post-date">{{ post.date | date_to_string }}</td>
+					</tr>
+				{% endif %}
+			{% endfor %}
+		</table>
+	</section>
+
+{% endcomment %}

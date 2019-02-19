@@ -1,5 +1,5 @@
 ---
-layout: news_item
+layout: post
 title: "PDO Problems in 0.8.0"
 date: "2008-09-03 09:53:00 +0200"
 author: skilleven

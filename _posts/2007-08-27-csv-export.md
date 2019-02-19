@@ -1,5 +1,5 @@
 ---
-layout: news_item
+layout: post
 title: "CSV Export"
 date: "2007-08-27 15:30:07 +0200"
 author: skilleven

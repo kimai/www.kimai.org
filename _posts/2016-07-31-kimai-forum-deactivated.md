@@ -1,5 +1,5 @@
 ---
-layout: news_item
+layout: post
 title: "Deactivated Kimai Forum"
 date: "2016-07-31 13:30:00 +0200"
 author: kevinpapst

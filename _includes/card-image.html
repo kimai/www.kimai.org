@@ -1,0 +1,16 @@
+{% if include.image %}
+{% assign image = site.data.photos[include.image] %}
+<div class="card">
+	<a href="{{ image.large }}">
+		<img class="card-img-top" src="{{ image.small }}" alt="{{ image.alt | default: image.title }}">
+	</a>
+	<div class="card-body">
+		<h4 class="card-title">{{ image.title }}</h4>
+		<div class="card-subtitle">{{ image.description }}</div>
+		{% comment %}<p class="card-text">{{ image.description }}</p>{% endcomment %}
+		{% if include.url %}
+			<a href="{{ include.url }}" class="btn btn-primary">Read more</a>
+		{% endif %}
+	</div>
+</div>
+{% endif %}

@@ -1,0 +1,28 @@
+---
+layout: default
+menu: docs
+---
+
+<div class="container">
+	{% if page.intro == nil or page.intro == true %}
+	{% include page-title.html title=page.title subtitle=page.subtitle options=page.options %}
+	{% endif %}
+
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="card">
+				<div class="card-body">
+
+					<div class="text-wrap p-lg-6">
+
+						{% if page.toc %}
+						{{ content | toc_only }}
+						{% endif %}
+
+						{{ content | toc_generate }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

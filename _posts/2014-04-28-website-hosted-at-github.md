@@ -1,5 +1,5 @@
 ---
-layout: news_item
+layout: post
 title: "Website hosting changed"
 date: "2014-04-28 17:30:00 +0200"
 author: kevinpapst
@@ -24,4 +24,4 @@ the new one is based on GitBook and [hosted here](http://www.kimai.org/documenta
 You can simply fork [the repository](https://github.com/kimai/documentation) and send us pull requests. We will publish them to the gh-pages branch after merging.
 
 For all of you waiting for the next release: we are working on it! If you could offer your help in testing, that would be great.
-If you could offer your help in fixing [open issues]({{ site.issues_url }}) that would be even better :)
+If you could offer your help in fixing [open issues]({{ site.kimai_v1_repo }}/issues) that would be even better :)

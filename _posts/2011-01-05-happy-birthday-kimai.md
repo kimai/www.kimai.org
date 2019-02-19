@@ -1,5 +1,5 @@
 ---
-layout: news_item
+layout: post
 title: "Happy Birthday Kimai"
 date: "2011-01-05 11:34:00 +0200"
 author: kevinpapst
@@ -15,7 +15,7 @@ contributing with patches, graphics - now or in the past ...
 *Thank you for using and improving Kimai together with us!*
 
 Please let us know how you are using Kimai, how it improves your workflow.
-We would like to put up a Testimonial page and you could be part of it. Contact us in [our forum]({{ site.forum_url }}).
+We would like to put up a Testimonial page and you could be part of it. Contact us in [our forum]({{ site.kimai_v1_repo }}/issues).
 
 That would be a great birthday present ;)
 

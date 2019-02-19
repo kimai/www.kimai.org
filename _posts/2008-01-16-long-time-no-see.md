@@ -1,9 +1,8 @@
 ---
-layout: news_item
+layout: post
 title: "Long Time No See"
 date: "2008-01-16 22:48:51 +0200"
 author: jk
-author_git: kimai
 ---
 
 Wow, what a pathetic headline.... A little late - but nonetheless a happy new year to you, folks ;)

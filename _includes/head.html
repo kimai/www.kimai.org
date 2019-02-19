@@ -1,0 +1,22 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta http-equiv="Content-Language" content="en" />
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#4188c9">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="robots" content="{{ page.robots | default: "index, follow" }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/icon/apple-touch-icon.png' | absolute_url }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/icon/icon_32x32.png' | absolute_url }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/icon/icon_16x16.png' | absolute_url }}">
+<link rel="shortcut icon" href="{{ '/assets/icon/favicon.ico' | absolute_url }}">
+<title>{{ page.title }}</title>
+<meta name="description" content="{{ page.description | default: page.excerpt | strip_html | strip_newlines | strip }}">
+<link href="{{ '/assets/css/bundle.css' | absolute_url }}" rel="stylesheet" />
+<script src="{{ '/assets/js/jquery-3.2.1.min.js' | absolute_url }}"></script>
+<script src="{{ '/assets/js/bootstrap.bundle.min.js' | absolute_url }}"></script>
+<link type="application/atom+xml" rel="alternate" href="{% link feed.xml %}" title="Kimai Time-Tracking" />

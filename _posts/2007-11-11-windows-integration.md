@@ -1,5 +1,5 @@
 ---
-layout: news_item
+layout: post
 title: "Windows Integration"
 date: "2007-11-11 15:32:00 +0200"
 author: skilleven

@@ -1,5 +1,5 @@
 ---
-layout: news_item
+layout: post
 title: "New PHP-Developer"
 date: "2008-04-24 16:17:45 +0200"
 author: skilleven

@@ -1,0 +1,73 @@
+---
+---
+
+@import 'variables';
+@import 'bootstrap/scss/bootstrap';
+@import 'source-sans-pro';
+@import 'font-awesome/fontawesome';
+@import 'font-awesome/regular';
+@import 'font-awesome/solid';
+@import 'font-awesome/brands';
+@import 'dashboard/dashboard';
+
+.container {
+    padding-left: 0;
+    padding-right: 0;
+}
+.page-header {
+    padding-left: $grid-gutter-width / 2;
+    margin: 1rem 0 1rem;
+}
+.sidebar {
+    padding-left: $card-spacer-x;
+    padding-right: $card-spacer-x;
+}
+
+.btn-list {
+    margin-top: $grid-gutter-width / 2;
+}
+.card {
+    border-left-width: 0;
+    border-right-width: 0;
+}
+.footer {
+    padding: $grid-gutter-width / 2;
+}
+.header {
+    padding: $grid-gutter-width / 2;
+}
+.nav-tabs {
+    margin: 0;
+}
+
+.header-toggler {
+    margin-left: 0 !important;
+}
+
+@media (min-width: map-get($grid-breakpoints, "sm")) {
+    .nav-tabs {
+        margin: unquote("0 -#{$grid-gutter-width / 2}");
+    }
+    .card {
+        border-left-width: 1px;
+        border-right-width: 1px;
+    }
+    .container {
+        padding-left: $grid-gutter-width / 2;
+        padding-right: $grid-gutter-width / 2;
+    }
+    .footer {
+        padding: 1.25rem 0;
+    }
+    .header {
+        padding: 0;
+    }
+    .sidebar {
+        padding-left: $grid-gutter-width / 2;
+        padding-right: $grid-gutter-width / 2;
+    }
+    .page-header {
+        padding-left: 0;
+        margin: $grid-gutter-width 0 $grid-gutter-width;
+    }
+}

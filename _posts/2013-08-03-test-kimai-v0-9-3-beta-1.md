@@ -1,5 +1,5 @@
 ---
-layout: news_item
+layout: post
 title: "Test Kimai v0.9.3-beta.1"
 date: "2013-08-03 10:48:00 +0200"
 author: kevinpapst
@@ -39,10 +39,10 @@ Okay, finally we achieved something that we self did not expect any more ;-) a w
 
 ## Links
 
-Here is the release announcement at GitHub: [Release v0.9.3-beta.1](https://github.com/kimai/kimai/releases/tag/v0.9.3-beta.1)
+Here is the release announcement at GitHub: [Release v0.9.3-beta.1]({{ site.kimai_v1_repo }}/releases/tag/v0.9.3-beta.1)
 
-And here is the ZIP Download: [kimai_0.9.3.beta.zip](https://github.com/kimai/kimai/releases/download/v0.9.3-beta.1/kimai_0.9.3.beta.zip)
+And here is the ZIP Download: [kimai_0.9.3.beta.zip]({{ site.kimai_v1_repo }}/releases/download/v0.9.3-beta.1/kimai_0.9.3.beta.zip)
 
-Plese post your feedback in [our forum]({{ site.forum_url }}) or open a [bug ticket in our issue tracker]({{ site.issues_url }}).
+Please post your feedback in [our issue tracker]({{ site.kimai_v1_repo }}/issues).
 
  

@@ -1,0 +1,5 @@
+{% assign alertType = include.type | default: 'primary' %}
+<div class="alert {% if include.icon %}alert-icon {% endif %}alert-{{ alertType }}" role="alert">
+	{% if include.icon %}<i class="{{ include.icon }}" aria-hidden="true"></i>{% endif %}
+	{{ include.alert | default: "No alert content given" }}
+</div>

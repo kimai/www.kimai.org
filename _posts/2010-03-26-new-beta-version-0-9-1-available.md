@@ -1,5 +1,5 @@
 ---
-layout: news_item
+layout: post
 title: "New Beta version 0.9.1 available"
 date: "2010-03-26 10:48:00 +0200"
 author: kevinpapst
@@ -10,7 +10,7 @@ We are proud to announce a preview of the the next Kimai version 0.9.1. This is 
 After a longer development process we now want to share a preview of the next Kimai version with you, so you can see all the
 exiting new features and test out our bugfixes.
 
-Please download and install this version and [give us your feedback]({{ site.forum_url }}index.php?board=21.0)!
+Please download and install this version and [give us your feedback]({{ site.kimai_v1_repo }}/issues)!
 
 DOWNLOAD: [kimai_0.9.1.0272.zip](https://sourceforge.net/projects/kimai/files/0.9.x/kimai_0.9.1.0272.zip/download) from Sourceforge.
 

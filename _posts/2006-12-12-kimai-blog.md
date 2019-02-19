@@ -1,5 +1,5 @@
 ---
-layout: news_item
+layout: post
 title: "Kimai Blog"
 date: "2006-12-12 17:16:30 +0200"
 author: skilleven
