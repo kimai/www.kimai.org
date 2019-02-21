@@ -13,8 +13,8 @@ All you need is:
 - PHP extensions: `PDO-SQLite`, `intl`, `zip`, `gd`, `mbstring`, `xml`
 
 You can install php 7.2 and all dependencies on debian based linux with this command: 
-```
-apt install php7.2 php7.2-sqlite3 php7.2-intl php7.2-zip php7.2-gd php7.2-mbstring php7.2-xml 
+```bash
+apt install php7.2 php7.2-sqlite3 php7.2-intl php7.2-zip php7.2-gd php7.2-mbstring php7.2-xml
 ```
 
 Optional requirement:
@@ -194,11 +194,13 @@ Both follow the default naming syntax and you can link your bundle here instead 
 You should NOT add them in `config/packages/kimai.yaml` but in your own bundle or the `local.yaml` [config]({% link _documentation/configurations.md %}), 
 otherwise they might get lost during an update.
 
-## Adding documents for invoice rendering 
+## Invoices 
+
+### Adding documents for invoice rendering 
 
 In the config `kimai.invoice.documents`, you can add a list of directories with the locations of your invoice document templates ([read more]({% link _documentation/invoices.md %})).
 
-## Adding invoice calculator
+### Adding invoice calculator
 
 An invoice calculator is a class implementing `App\Invoice\CalculatorInterface` and it is responsible for calculating 
 invoice rates, taxes and taking care of all timesheet entries that should be displayed.   
@@ -210,7 +212,7 @@ character as it will be stored in a database column.
 
 Translations are stored in the `invoice-calculator.xx.xliff`.
 
-## Adding invoice-number generator
+### Adding invoice-number generator
 
 An invoice-number generator is a class implementing `App\Invoice\NumberGeneratorInterface` and its only task is to generate 
 a number for the invoice. In most cases you do not want to mix multiple invoice-number generators throughout your invoices.   
@@ -222,7 +224,7 @@ character as it will be stored in a database column.
 
 Translations are stored in the `invoice-numbergenerator.xx.xliff`.
 
-## Adding invoice renderer
+### Adding invoice renderer
 
 An invoice renderer is a class implementing `App\Invoice\RendererInterface` and it is responsible to convert an `InvoiceModel` (the actual data) 
 with the use of an `InvoiceDocument` (the template file) into a downloadable/printable document. 
