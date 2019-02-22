@@ -1,0 +1,54 @@
+{% assign products = include.products | default: site.data.store %}
+
+<div class="card">
+	<table class="table card-table table-vcenter">
+		{% for product in products %}
+			{% assign featured = false %}
+		    {% assign iconSize = "fa-2x" %}
+			{% assign imageSize = 'class="h-8"' %}
+			{% if product.featured %}
+				{% assign featured = true %}
+		    	{% assign iconSize = "fa-3x" %}
+				{% assign imageSize = 'style="width: 15rem"' %}
+			{% endif %}
+			{% assign icon = product.icon | default: "fas fa-question" %}
+			{% assign developer = site.developer | where: "name", product.developer | first %}
+			<tr class="{% if featured %}featured-article{% endif %}{% for tag in product.tags %} tag-{{ tag | slugify }}{% endfor %}">
+				<td class="text-center">
+					{% if product.image %}
+					<img src="{{ product.image }}" alt="Product logo" {{ imageSize }}>
+					{% else %}
+					<i class="{{ icon }} {{ iconSize }}"></i>
+					{% endif %}
+				</td>
+				{% if featured %}
+					<td>
+						<h4 class="mb-5"><a href="{{ product.url | absolute_url }}">{{ product.name }}</a></h4>
+
+						<div class="row text-muted">
+							{% for feature in product.features%}
+							<div class="col-lg-6">{{ feature }}</div>
+							{% endfor %}
+						</div>
+					</td>
+				{% else %}
+					<td>
+						<a href="{{ product.url | absolute_url }}">{{ product.name }}</a>
+
+						{% if product.new %}
+						<div class="badge badge-default badge-md">New</div>
+						{% endif %}
+					</td>
+				{% endif %}
+				<td class="text-right text-muted d-none d-md-table-cell text-nowrap">
+					{% for tag in product.tags %}
+						<div class="badge badge-default badge-md">{{ tag }}</div>
+					{% endfor %}
+				</td>
+				<td class="text-right">
+					<strong>{{ product.price }}</strong>
+				</td>
+			</tr>
+		{% endfor %}
+	</table>
+</div>

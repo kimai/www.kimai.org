@@ -1,0 +1,63 @@
+---
+layout: default
+---
+{% assign developer = site.developer | where: "name", page.developer | first %}
+{% assign items = site.store | where: "developer", page.developer %}
+{% assign icon = page.icon | default: "fas fa-question" %}
+{% capture options %}<a href="{% link _pages/store.html %}" class="btn btn-option">Back to Store <i class="fas fa-arrow-circle-right"></i></a>{% endcapture %}
+
+<div class="container">
+
+	{% include page-title.html title=page.name options=options %}
+
+	<div class="row row-cards">
+		<div class="col-lg-3">
+			<div class="row">
+				<div class="col-md-6 col-lg-12">
+					{% include store-developer.html developer=page.developer %}
+					{% if page.screenshot %}
+					<div class="card">
+						<img src="{{ page.screenshot }}" class="card-img-top" alt="">
+						<div class="card-body text-center">
+							<a href="{{ page.screenshot }}" class="btn btn-link" target="_blank">Show Screenshot</a>
+						</div>
+					</div>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-9">
+			<div class="card">
+				<div class="card-header">
+					<div class="d-flex align-items-center px-2">
+						{% if page.image %}
+						<div class="avatar avatar-md mr-3" style="background-image: url({{ product.image }})"></div>
+						{% else %}
+						<i class="{{ icon }} fa-2x mr-3"></i>
+						{% endif %}
+						<div>
+							<div>{{ page.intro }}</div>
+							<small class="d-block text-muted">
+								{% if page.version %}
+								Version:  {{ page.version }} -
+								{% endif %}
+								Last update: {{ page.date | date_to_string }}
+							</small>
+						</div>
+					</div>
+				</div>
+				<div class="card-body">
+					{{ content }}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row row-cards">
+		<div class="col-lg-3"></div>
+		<div class="col-lg-9">
+			<h4>All items by {{ developer.name }}</h4>
+			{% include store-list.html products=items %}
+		</div>
+	</div>
+</div>

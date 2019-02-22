@@ -1,0 +1,30 @@
+{% assign developer = site.developer | where: "name", include.developer | first %}
+
+<div class="card">
+	<div class="card-body text-center">
+		<div class="mb-4">
+			<img src="{{ developer.image }}" alt="Logo - {{ developer.name }}" class="avatar avatar-xxl">
+		</div>
+		<h3 class="mb-3">{{ developer.name }}</h3>
+		<p class="mb-4">
+			{{ developer.intro }}
+		</p>
+		<ul class="social-links list-inline mb-0 mt-2">
+			{% if developer.homepage %}
+			<li class="list-inline-item">
+				<a href="{{ developer.homepage }}" title="Homepage" target="_blank"><i class="fa fa-home"></i></a>
+			</li>
+			{% endif %}
+			{% if developer.github %}
+			<li class="list-inline-item">
+				<a href="{{ developer.github }}" title="Github" target="_blank"><i class="fab fa-github"></i></a>
+			</li>
+			{% endif %}
+			{% if developer.twitter %}
+			<li class="list-inline-item">
+				<a href="{{ developer.twitter }}" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+			</li>
+			{% endif %}
+		</ul>
+	</div>
+</div>
