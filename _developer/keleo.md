@@ -4,7 +4,7 @@ image: https://avatars2.githubusercontent.com/u/7362599?s=200&v=4
 homepage: https://www.keleo.de
 github: https://github.com/keleo
 twitter: http://twitter.com/keleo
-intro: Software development agency founded by Kevin Papst
+intro: Software development company founded by Kevin Papst
 ---
 
 Keleo is a commercial software development agency founded by Kevin Papst,

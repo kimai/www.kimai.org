@@ -15,11 +15,18 @@ layout: default
 			<div class="row">
 				<div class="col-md-6 col-lg-12">
 					{% include store-developer.html developer=page.developer %}
-					{% if page.screenshot %}
+					{% if page.screenshot or page.download or page.github %}
 					<div class="card">
-						<img src="{{ page.screenshot }}" class="card-img-top" alt="">
+						{% if page.screenshot %}
+						<a href="{{ page.screenshot }}"><img src="{{ page.screenshot }}" class="card-img-top" alt=""></a>
+						{% endif %}
 						<div class="card-body text-center">
-							<a href="{{ page.screenshot }}" class="btn btn-link" target="_blank">Show Screenshot</a>
+							{% if page.download %}
+							<a href="{{ page.download }}" class="card-link">Download</a>
+							{% endif %}
+							{% if page.github %}
+							<a href="{{ page.github }}" class="card-link">Github</a>
+							{% endif %}
 						</div>
 					</div>
 					{% endif %}
@@ -31,20 +38,22 @@ layout: default
 				<div class="card-header">
 					<div class="d-flex align-items-center px-2">
 						{% if page.image %}
-						<div class="avatar avatar-md mr-3" style="background-image: url({{ product.image }})"></div>
+						<div class="avatar avatar-md mr-3" style="background-image: url({{ page.image }})"></div>
 						{% else %}
 						<i class="{{ icon }} fa-2x mr-3"></i>
 						{% endif %}
 						<div>
 							<div>{{ page.intro }}</div>
 							<small class="d-block text-muted">
-								{% if page.version %}
-								Version:  {{ page.version }} -
-								{% endif %}
 								Last update: {{ page.date | date_to_string }}
 							</small>
 						</div>
 					</div>
+					{% if page.download %}
+					<div class="card-options">
+						<a href="{{ page.download }}" class="btn btn-outline-primary"><i class="fas fa-download"></i> Download{% if page.version %} {{ page.version }}{% endif %}</a>
+					</div>
+					{% endif %}
 				</div>
 				<div class="card-body">
 					{{ content }}
