@@ -10,7 +10,7 @@ tags:
   - development
 ---
 
-If you need special extensions for Kimai, I am here to develop them for you! 
+If you need an extension for Kimai, I am here to develop it for you. 
 
 For example if you want to: 
 
@@ -18,13 +18,13 @@ For example if you want to:
 - send regular reports to your customers
 - have additional statistics for the work of your users and projects
 
-I'd love to create that for you. Please contact me via [info@keleo.de](mailto:info@keleo.de).
+I'd love to create that for you. Please contact me via [info@keleo.de](mailto:info@keleo.de) for any inquiry.
 
 ### Pricing
 
-I charge 90€/h + VAT. Some extensions can be developed on a fixed price basis, if you have the exact specifications upfront.
+Some extensions can be developed on a fixed price basis, if you can provide exact specifications upfront.
 
 If you give your permission to release the extension for the community as part of the Kimai core product, 
-then we can discuss special pricing.  
+we can discuss special pricing.  
 
 
