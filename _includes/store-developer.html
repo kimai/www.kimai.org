@@ -1,4 +1,4 @@
-{% assign developer = site.developer | where: "name", include.developer | first %}
+{% assign developer = site.data.developer[include.developer] %}
 
 <div class="card">
 	<div class="card-body text-center">
@@ -7,7 +7,7 @@
 		</div>
 		<h3 class="mb-3">{{ developer.name }}</h3>
 		<p class="mb-4">
-			{{ developer.intro }}
+			{{ developer.description }}
 		</p>
 		<ul class="social-links list-inline mb-0 mt-2">
 			{% if developer.homepage %}

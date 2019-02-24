@@ -1,8 +1,7 @@
 ---
 name: "Installation & Update support"
 intro: "Want to use Kimai but don't know how to install it on your server?"
-developer: Keleo
-version: 0.1
+developer: keleo
 url: https://www.keleo.de/kimai/
 icon: fas fa-shipping-fast
 price: 100€

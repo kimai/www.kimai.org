@@ -1,13 +1,13 @@
 ---
-name: CSS Custom Bundle
+name: CSS Custom Plugin
 intro: "A Kimai 2 plugin, which allows to edit custom CSS rules through an administration screen."
-developer: Keleo
-version: 0.1
+developer: keleo
 date: "2019-02-21 20:00:00 +0200"
-download: https://github.com/Keleo/CustomCSSBundle/archive/master.zip
-github: https://github.com/Keleo/CustomCSSBundle
 icon: fab fa-css3
 price: free
+version: 0.1
+download: https://github.com/Keleo/CustomCSSBundle/archive/master.zip
+github: https://github.com/Keleo/CustomCSSBundle
 screenshot: https://raw.githubusercontent.com/Keleo/CustomCSSBundle/master/screenshot.jpg
 featured: true
 new: true

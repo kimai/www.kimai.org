@@ -12,7 +12,7 @@
 				{% assign imageSize = 'style="width: 15rem"' %}
 			{% endif %}
 			{% assign icon = product.icon | default: "fas fa-question" %}
-			{% assign developer = site.developer | where: "name", product.developer | first %}
+			{% assign developer = site.data.developer[product.developer] %}
 			<tr class="{% if featured %}featured-article{% endif %}{% for tag in product.tags %} tag-{{ tag | slugify }}{% endfor %}">
 				<td class="text-center">
 					{% if product.image %}

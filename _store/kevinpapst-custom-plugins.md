@@ -1,13 +1,13 @@
 ---
 name: Custom plugin development
 intro: "Want to have a special feature, which is not available in Kimai? I can develop it for you!"
-developer: Kevin Papst
+developer: kevinpapst
 date: "2019-02-22 20:00:00 +0200"
 icon: far fa-file-code
-new: true
 tags:
   - kimai 2
   - development
+  - support
 ---
 
 If you need an extension for Kimai, I am here to develop it for you. 

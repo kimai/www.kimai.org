@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{% assign developer = site.developer | where: "name", page.developer | first %}
+{% assign developer = site.data.developer[page.developer] %}
 {% assign items = site.store | where: "developer", page.developer %}
 {% assign icon = page.icon | default: "fas fa-question" %}
 {% capture options %}<a href="{% link _pages/store.html %}" class="btn btn-option">Back to Store <i class="fas fa-arrow-circle-right"></i></a>{% endcapture %}
