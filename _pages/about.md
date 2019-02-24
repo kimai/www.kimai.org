@@ -3,7 +3,7 @@ title: "About Kimai"
 description: What is behind the time-tracking app Kimai? Find out about it, its history and developer.
 sitemap:
     priority: 0.7
-    lastmod: 2018-03-03
+    lastmod: 2019-02-20
     changefreq: weekly
 ---
 

@@ -1,0 +1,17 @@
+{% assign product = include.product %}
+
+{% if product.screenshot or product.download or product.github %}
+<div class="card">
+	{% if product.screenshot %}
+	<a href="{{ product.screenshot }}"><img src="{{ product.screenshot }}" class="card-img-top" alt=""></a>
+	{% endif %}
+	<div class="card-body text-center">
+		{% if product.download %}
+		<a href="{{ product.download }}" class="card-link">Download</a>
+		{% endif %}
+		{% if product.github %}
+		<a href="{{ product.github }}" class="card-link">Github</a>
+		{% endif %}
+	</div>
+</div>
+{% endif %}

@@ -1,0 +1,66 @@
+---
+layout: default
+title: Marketplace
+description: Find extensions and commercial support for Kimai
+sitemap:
+    priority: 1.0
+    lastmod: 2019-02-21
+    changefreq: weekly
+---
+
+<div class="container">
+	{% include page-title.html title="Enhance your time-tracking experience!" %}
+
+	<div class="row row-cards">
+		<div class="col-lg-3">
+			<div class="row">
+				<div class="col-md-6 col-lg-12">
+					<div class="card">
+						<div class="card-body">
+							<div class="mb-4 text-center">
+								<i class="fas fa-shopping-cart fa-4x"></i>
+							</div>
+							<h3 class="card-title text-center">Kimai Marketplace</h3>
+							<div class="card-subtitle">
+								<p>
+									The central place to find new plugins and commercial support for Kimai.
+								</p>
+								<p>
+									Any bundle, plugin and Kimai extension in here does only work with Kimai 0.9 and above,
+									as the plugin mechanism was not existing before.
+								</p>
+								</p>
+									Due to this constraint and the fact, that 0.9 was at the time of this writing (2019-02-24)
+									not even released, the amount of items in here is limited.
+								</p>
+								</p>
+									If you want to test plugins, you have to use the latest master version or wait for 0.9.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-12">
+					<div class="card">
+						<div class="card-body">
+							<h4 class="card-title">Contribute</h4>
+							<div class="card-subtitle">
+								<p>
+									If you are a developer and want to create a new plugin,
+									read the <a href="{% link _documentation/plugins.md %}">plugin documentation</a>.
+								</p>
+								<p>
+									If you created a new piece of software (plugin, application ...) around Kimai 2 and want to
+									see it listed here in the Store, read the <a href="{% link _documentation/store.md %}">store documentation</a>.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-9">
+			{% include store-list.html products=site.store %}
+		</div>
+	</div>
+</div>

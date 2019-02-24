@@ -36,7 +36,7 @@ If you want to adjust a setting from any of these files, use `local.yaml` (see b
 ## Overwriting local configs (local.yaml)
 
 You should NOT edit the file `config/packages/kimai.yaml` directly, as it contains default settings and will be overwritten during an update.
-Instead create the file `config/packages/local.yaml` and store your own settings in there. This file will NEVER be shipped with Kimai.
+Instead create the file `config/packages/local.yaml` and save your own settings in there. This file will NEVER be shipped with Kimai.
 Having your custom settings in `local.yaml` allows you to easily update Kimai. This is the same concept which is used for the `.env` file.
 
 An example `config/packages/local.yaml` file might look like this:

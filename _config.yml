@@ -22,6 +22,9 @@ collections:
   error:
     output: true
     permalink: /:name.html
+  store:
+    output: true
+    permalink: /store/:name.html
 
 defaults:
   - scope:
@@ -51,6 +54,11 @@ defaults:
       type: documentation
     values:
       layout: documentation
+  - scope:
+      path: ""
+      type: store
+    values:
+      layout: store-item
 
 # Jekyll
 markdown:           kramdown
