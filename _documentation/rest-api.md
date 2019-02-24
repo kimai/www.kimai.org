@@ -8,7 +8,7 @@ Read the Swagger documentation of the Kimai 2 API in your Kimai installation at 
 As example you can have a look at the API docs for the demo installation at [https://demo-v2.kimai.org/api/doc]({{ site.kimai_v2_demo }}/api/doc).
 You need to login to see them, credentials can be [found here]({% link _pages/demo.md %}).
 
-Or you can export the JSON collection by visiting `/api/doc.json`. Store the result in a file, which can be imported with Postman.
+Or you can export the JSON collection by visiting `/api/doc.json`. Save the result in a file, which can be imported with Postman.
 
 ## Authentication
 

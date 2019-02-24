@@ -16,12 +16,12 @@ For example if you want to:
 
 - connect your token based hardware login system with Kimai 
 - send regular reports to your customers
-- have additional statistics for the work of your users and projects
+- generate additional statistics for the work of your users and projects
 
-I'd love to create that for you. Please contact me via [info@keleo.de](mailto:info@keleo.de) for any inquiry.
+Please contact me via [info@keleo.de](mailto:info@keleo.de) for any inquiry.
 
 ### Pricing
-
+ 
 Some extensions can be developed on a fixed price basis, if you can provide exact specifications upfront.
 
 If you give your permission to release the extension for the community as part of the Kimai core product, 

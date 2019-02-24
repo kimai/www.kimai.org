@@ -100,13 +100,13 @@ which serves as demo with:
 - Translations
 - Data storage in `%kimai.data_dir%`
 
-## List your plugin in the store
+## List your plugin in the {{ site.data.menu.store.name }}
 
-If you created a plugin or any other kind of software around Kimai 2 which you want to see listed in the Store, head over 
-to the [store documentation]({% link _documentation/store.md %}) to find out how.
+If you created a plugin or any other kind of software around Kimai 2 which you want to see listed in the {{ site.data.menu.store.name }}, head over 
+to the [{{ site.data.menu.store.name }} documentation]({% link _documentation/store.md %}) to find out how.
 
 ## Links
 
-- Check out the [Store]({% link _pages/store.html %}) to find out more free plugins for code demonstrations
+- Check out the [{{ site.data.menu.store.name }}]({% link _pages/store.html %}) to find out more free plugins for code demonstrations
 - Read the [Symfony bundle documentation](https://symfony.com/doc/current/bundles.html) if this is your first time writing a Symfony bundle
  
