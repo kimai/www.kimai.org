@@ -25,8 +25,7 @@ You have to:
 
 The information about yourself or your company comes from the [developer.yml file]({{ site.kimai_v2_website }}/tree/master/_data/developer.yml).
 
-It starts by defining your company ID (which should be the lowercased version of your name, only alphabetical, remove all special chars and spaces) 
-and then adding the following keys:
+It starts by defining your company/developer ID and then adding the following keys:
 
 - `name` - your company or personal name (**mandatory**)
 - `description` - a short self description in one sentence (**mandatory**)
@@ -35,7 +34,9 @@ and then adding the following keys:
 - `github` - your GitHub organization or profile URL (optional)
 - `twitter` - full URL to your twitter profile (optional)
 
-For example my own entry (at the time of writing):
+The ID should be built from the lowercased version of your name: use only alphabetical character and remove all special chars and spaces.
+
+For example my own entry (`kevinpapst` being my developer ID):
 
 ```
 kevinpapst:
@@ -56,7 +57,7 @@ Within the Jekyll [Front Matter](https://jekyllrb.com/docs/front-matter/) you ha
 
 - `name` - a name for your store entry, will be used in the list view and in the title of the detail screen (**mandatory**)
 - `intro` - a descriptive sentence for this entry, will be used in the detail screen (**mandatory**)
-- `developer` - keleo (**mandatory**)
+- `developer` - your company/developer ID (**mandatory**)
 - `date` - date of the last release (**mandatory**)
 - `image` - product image (optional)
 - `icon` - fontawesome icon class (optional, but should be given when no image is supplied - a fallback icon will be used if not given)
