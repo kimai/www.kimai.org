@@ -6,7 +6,7 @@ sitemap: false
 {%- for page in site[collection.label] -%}
 {%- if page.redirect_from != nil -%}
 {%- for redirect in page.redirect_from -%}
-rewrite ^{{ redirect }}$ {% if page.permalink == nil %}{{ page.url }}{% else %}{{ page.permalink }}{% endif %} permanent;
+rewrite ^{{ redirect }}$ {{ page.url }} permanent;
 {% endfor %}
 {%- endif -%}
 {%- endfor -%}
