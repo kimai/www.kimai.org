@@ -71,9 +71,9 @@ The permission-names were chosen to be self-explanatory. In the hope that it wor
 | edit_invoice_template | INVOICE_TEMPLATE  |   | -  |
 | delete_invoice_template | INVOICE_TEMPLATE  |   | -  |
 | view_own_timesheet | TIMESHEET  | X  | -  |
-| start_own_timesheet | TIMESHEET  |   | -  |
+| start_own_timesheet | TIMESHEET  |   | allows to create a running timesheet record (e.g. restart or create without end)  |
 | stop_own_timesheet | TIMESHEET  |   | -  |
-| create_own_timesheet | TIMESHEET  | X  | -  |
+| create_own_timesheet | TIMESHEET  | X  | allows to create a new timesheet record  |
 | edit_own_timesheet | TIMESHEET  | X  | -  |
 | export_own_timesheet | TIMESHEET  |   | export your own timesheet in the timesheet panel  |
 | delete_own_timesheet | TIMESHEET  |   | -  |

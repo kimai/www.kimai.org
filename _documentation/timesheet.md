@@ -94,10 +94,13 @@ Rounding rules are used to round the begin & end dates and the duration for time
 4. If you set one of "begin", "end", "duration" to 0 no rounding will be applied for that field and the exact time (including seconds) is used for calculation
 5. The values of the rules are minutes (not the minute of an hour), so 5 for "begin" means we round down to the previous multiple of five
 6. You can define different rules for different days of the week
-7. "begin" will always be rounded to the floor (down) and "end" & "duration" to the ceiling (up)
-8. Rounding rules will be applied on stopped timesheet records only, so you might see an un-rounded value for the start time and duration until you stop the record
+7. Rounding rules will be applied on stopped timesheet records only, so you might see an un-rounded value for the start time and duration until you stop the record
 
 You can configure your `rounding` rules by changing the configuration file [local.yaml]({% link _documentation/configurations.md %}).
+
+There are two different rounding modes:
+- `default`: `"begin" will always be rounded to the floor (down) and "end" & "duration" to the ceiling (up)
+- `closest`: `"begin" and "end" will be rounded in a mathematical way, always to the nearest value
 
 ### Examples
 
@@ -112,6 +115,7 @@ kimai:
                 begin: 1
                 end: 1
                 duration: 60
+                mode: closest
 ```
 
 A rule which is often used is to round up to a mulitple of 10: 
@@ -125,6 +129,7 @@ kimai:
                 begin: 10
                 end: 10
                 duration: 0
+                mode: default
 ```
 
 ## Rate calculation
