@@ -4,6 +4,7 @@ description: Site notice for www.kimai.org
 redirect_from: 
 - /impressum.html
 robots: "noindex, nofollow"
+sitemap: false
 ---
 {% include core/impressum-en.md %}
 
