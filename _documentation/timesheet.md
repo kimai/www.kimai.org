@@ -47,13 +47,16 @@ kimai:
 
 The `duration` field supports entering data in the following formats:
 
-| Name | Format | Description | Examples |
-|---|---|---|---|
-| Colons | {hours}:{minutes}[:{seconds}] | Seconds are optional, overflow is supported for every field | `2:27` = 2 Hours, 27 Minutes / `3:143:13` = 5 Hours, 23 Minutes, 13 Seconds|
-| Natural | {hours}h{minutes}m[{seconds}s] | Seconds are optional, overflow is supported for every field | `2h27m` = 2 Hours, 27 Minutes / `3h143m13s` = 5 Hours, 23 Minutes, 13 Seconds |
-| Seconds | {seconds} | | `3600` = 1 Hour / `8820` = 2 Hours, 27 Minutes |
+| Format | Description | Examples |
+|---|---|---|
+| {hours}:{minutes}[:{seconds}] | Seconds are optional, overflow is supported for every field | `2:27` = 2 Hours, 27 Minutes / `3:143:13` = 5 Hours, 23 Minutes, 13 Seconds|
+| {hours}h{minutes}m{seconds}s | Each section is optional, overflow is supported for every field | `2h` = 2 Hours / `147m` = 2 Hours, 27 Minutes / `3h14m13s` = 3 Hours, 14 Minutes, 13 Seconds |
+| {seconds} | | `3600` = 1 Hour / `8820` = 2 Hours, 27 Minutes |
 
-Please note: if time rounding is activated (which is the default behaviour), then your entered seconds might be removed after submitting the form.
+Please note: 
+- if time rounding is activated (which is the default behaviour), then your entered seconds might be removed after submitting the form.
+- using `0` or `00:00` as duration will also stop the entry with a duration of zero seconds
+- to create a running entry the `duration` field needs to be empty
 
 ## Limit active entries
 
@@ -73,7 +76,11 @@ The `hard_limit` is used to detect how many active records are allowed per user 
 If `hard_limit` is 1, the active record is automatically stopped when a new one is started.
 When `hard_limit` is greater than 1 and as soon as the limit is reached, the user has to manually stop at least one active 
 entry (an error message is shown, indicating why it is not possible to start another one).
- 
+
+## 12-hour am/pm format
+
+Want to use the 12 hour format? Read the [i18n docu]({% link _documentation/translations.md %}).
+
 ## Descriptions with Markdown
 
 The description for every timesheet entry can be formatted in two different ways, configured with the `markdown_content` setting.

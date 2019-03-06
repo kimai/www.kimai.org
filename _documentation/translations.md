@@ -1,6 +1,7 @@
 ---
 title: Translations
 description: i18n, language specific configurations and the translation files
+toc: true
 ---
 
 Languages and translations in Kimai are completely configurable. 
@@ -66,6 +67,25 @@ It also uses the configurations to convert between javascript components (e.g. t
 so they must create the same output. 
 
 The settings ending with `_type` are the ones used in PHP where the ones ending with `_picker` are used in javascript.
+
+## 12-hour format
+
+Kimai uses 24 hour format by default. If you want to use the 12 hour am/pm format, you have to adjust your config like this:
+
+```yaml
+kimai:
+    languages:
+        en:
+            date_time_type: 'yyyy-MM-dd hh:mm a'
+            date_time_picker: 'YYYY-MM-DD hh:mm A'
+            date_type: 'yyyy-MM-dd'
+            date_picker: 'YYYY-MM-DD'
+            date: 'Y-m-d'
+            date_time: 'm-d H:i'
+            duration: '%%h:%%m h'
+            time: 'h:i a'
+            24_hours: false
+```
 
 ## Check for missing translations
 
