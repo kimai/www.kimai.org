@@ -26,13 +26,13 @@ permalink: /
 
 	<div class="row row-cards">
 		<div class="col-sm-6 col-lg-4">
-			{% include card-image.html image=0 %}
+			{% include card-image.html image="timesheet" %}
 		</div>
 		<div class="col-sm-6 col-lg-4">
-			{% include card-image.html image=1 %}
+			{% include card-image.html image="invoice" %}
 		</div>
 		<div class="col-sm-6 col-lg-4">
-			{% include card-image.html image=2 %}
+			{% include card-image.html image="dashboard" %}
 		</div>
 	</div>
 
@@ -57,138 +57,33 @@ permalink: /
 
 	<h2>Feature list</h2>
 	<p>
-		The following list is not complete, but it should give you a quick overview of some features that Kimai v2 offers.
+		The following list is **not** complete, but instead it should highlight some of the exciting features which Kimai v2 offers.
 	</p>
 
 	<table class="table table-striped table-responsive-sm">
 		<thead>
 		<tr>
-			<th>Name</th>
+			<th class="text-nowrap">Name</th>
 			<th>Description</th>
 			<th style="text-align:center">Free version</th>
 		</tr>
 		</thead>
 		<tbody>
-		<tr>
-			<td>Multi-user</td>
-			<td>Kimai v2 can be used by as many users as you want: each installation supports unlimited users with different roles (see permissions)</td>
-			<td style="text-align:center"><i class="fas fa-check"></i></td>
-		</tr>
-		<tr>
-			<td>Mobile ready</td>
-			<td>The layout is fully responsive, based on bootstrap and made for desktop and mobile usage. Every user can configure the data columns that should be shown.</td>
-			<td style="text-align:center"><i class="fas fa-check"></i></td>
-		</tr>
-		<tr>
-			<td>Print invoices</td>
-			<td>Different templates, calculator, invoice number generator and you can add your own templates, in the file formats: XLSX, ODS, CSV, DOCX</td>
-			<td style="text-align:center"><i class="fas fa-check"></i></td>
-		</tr>
-		<tr>
-			<td>Manage customers</td>
-			<td>Manage your customers and set address, contacts, country, currency, visibility (for archiving) and many more fields</td>
-			<td style="text-align:center"><i class="fas fa-check"></i></td>
-		</tr>
-		<tr>
-			<td>Manage projects</td>
-			<td>Manage projects for each customer with order number, budget and visibility (for archiving)</td>
-			<td style="text-align:center"><i class="fas fa-check"></i></td>
-		</tr>
-		<tr>
-			<td>Manage activities</td>
-			<td>Activities are used to record timesheet entries. Manage activities for each project with order number, budget and visibility (for archiving). Activities can be global, no more duplications necessary.</td>
-			<td style="text-align:center"><i class="fas fa-check"></i></td>
-		</tr>
-		<tr>
-			<td>JSON API</td>
-			<td>Featuring a JSON API so external apps can be created to communicate with your favorite time-tracker!</td>
-			<td style="text-align:center"><i class="fas fa-check"></i></td>
-		</tr>
-		<tr>
-			<td>Docker support</td>
-			<td>The release includes a docker image for development and we have a separate docker-compose setup for production</td>
-			<td style="text-align:center"><i class="fas fa-check"></i></td>
-		</tr>
-		<tr>
-			<td>Archiving</td>
-			<td>After a long usage a lot of entries can pile up in your dropdowns - now you can hide customers, projects and activities</td>
-			<td style="text-align:center"><i class="fas fa-check"></i></td>
-		</tr>
-		<tr>
-			<td>Duration only</td>
-			<td>If your local laws require you to only show durations instead of start and end date-time, you can activate that mode globally</td>
-			<td style="text-align:center"><i class="fas fa-check"></i></td>
-		</tr>
-		<tr>
-			<td>User registration</td>
-			<td>Kimai supports user self-registration with email activation and additionally passwort reset functionality</td>
-			<td style="text-align:center"><i class="fas fa-check"></i></td>
-		</tr>
-		<tr>
-			<td>Weekend rates</td>
-			<td>You can configure global settings for rate factors on single weekdays, e.g. 150% for saturday and sunday</td>
-			<td style="text-align:center"><i class="fas fa-check"></i></td>
-		</tr>
-		<tr>
-			<td>Statistics</td>
-			<td>Your dashboard will show you several statistics about recorded times and the amount of collected data. We can add more charts, <a href="{{ site.kimai_v2_repo }}">just ask us</a>!</td>
-			<td style="text-align:center"><i class="fas fa-check"></i></td>
-		</tr>
-		<tr>
-			<td>Export timesheets</td>
-			<td>User can be export their timesheets for keeping offline record of their worktime</td>
-			<td style="text-align:center"><i class="fas fa-check"></i></td>
-		</tr>
-		<tr>
-			<td>Rate calculation</td>
-			<td>Rates can be calculated based on hourly and fixed amounts, configurable for customers, projects, activities and each timesheet record individually.</td>
-			<td style="text-align:center"><i class="fas fa-check"></i></td>
-		</tr>
-		<tr>
-			<td>Multiple records</td>
-			<td>You can record as many times as you want in parallel, the limit can be configured</td>
-			<td style="text-align:center"><i class="fas fa-check"></i></td>
-		</tr>
-		<tr>
-			<td>Permissions</td>
-			<td>Assign different roles to your user: User can record times, teamleads can print invoices and configure project/activities, admins can configure users and customers (<a href="{% link _documentation/users.md %}">read more</a>)</td>
-			<td style="text-align:center"><i class="fas fa-check"></i></td>
-		</tr>
-		<tr>
-			<td>Filter times</td>
-			<td>You can filter all times by user, project, activity and date</td>
-			<td style="text-align:center"><i class="fas fa-check"></i></td>
-		</tr>
-		<tr>
-			<td>Different themes</td>
-			<td>Kimai bundles different color themes and display settings, so every user can tweak it to his personal flavour</td>
-			<td style="text-align:center"><i class="fas fa-check"></i></td>
-		</tr>
-		<tr>
-			<td>User profile</td>
-			<td>Personal statistics and per user settings for hourly rate, Kimai theme, password and avatar</td>
-			<td style="text-align:center"><i class="fas fa-check"></i></td>
-		</tr>
-		<tr>
-			<td>Migrate from v1</td>
-			<td>Data from Kimai v1 can be imported, for a seamless migration of your time-tracker (<a href="{% link _documentation/migration-v1.md %}">read more</a>)</td>
-			<td style="text-align:center"><i class="fas fa-check"></i></td>
-		</tr>
-		<tr>
-			<td>Extendable</td>
-			<td>Kimai v2 was built with extendability in mind, it is extendable with Symfony bundles and has <a href="{% link _documentation/developers.md %}">many extension points</a></td>
-			<td style="text-align:center"><i class="fas fa-check"></i></td>
-		</tr>
-		<tr>
-			<td>Modern technologies</td>
-			<td>Based on newest technologies and frameworks: PHP7, Symfony 4, Doctrine, Flex, Bootstrap, Webpack and many more...</td>
-			<td style="text-align:center"><i class="fas fa-check"></i></td>
-		</tr>
-		<tr>
-			<td>SQLite support</td>
-			<td>No database setup required, Kimai has SQLite support out-of-the-box. And we support MySQL/MariaDB as well.</td>
-			<td style="text-align:center"><i class="fas fa-check"></i></td>
-		</tr>
+			{% assign features = site.features | sort:"order" %}
+			{% for feature in features %}
+				<tr>
+					<td class="text-nowrap">
+						{% if feature.documentation != nil %}
+							{% assign url = feature.documentation | replace: '_documentation/', '/documentation/' | replace: '.md', '.html' %}
+							<a href="{{ url }}">{{ feature.title }}</a>
+						{% else %}
+							{{ feature.title }}
+						{% endif %}
+					</td>
+					<td>{{ feature.excerpt }}</td>
+					<td style="text-align:center"><i class="fas fa-check"></i></td>
+				</tr>
+			{% endfor %}
 		</tbody>
 	</table>
 
