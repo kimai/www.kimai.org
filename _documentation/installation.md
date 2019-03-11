@@ -130,6 +130,11 @@ bin/console kimai:create-user username admin@example.com ROLE_SUPER_ADMIN
 ```
 But you could also use the *register user* function in the login screen later, as the first user will get `SUPER_ADMIN` permissions.
 
+Finally delete the cache files, as they are OS dependent:
+```bash
+rm -rf var/cache/*
+```
+
 Now you can upload the `kimai2/` directory to your hosting environment and point your domain (document root) to `kimai2/public/`.
 
 ### Use MySQL database 
@@ -201,11 +206,16 @@ bin/console server:run
 This command will start a web server for Kimai. Now you can access the application in your browser at <http://127.0.0.1:8000/>.
 You can stop the built-in web server by pressing `Ctrl + C` while you're in the terminal.
 
+### Frontend assets 
+ 
 To re-generate the frontend assets ([more information here]({% link _documentation/developers.md %})), execute:
 ```bash
 yarn install
 npm run prod
 ```
+
+
+
 
 ## Installation FAQ
 
