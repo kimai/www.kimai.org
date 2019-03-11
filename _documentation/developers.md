@@ -54,6 +54,15 @@ If you want to run Kimai in a subdirectory, you have to rebuild the frontend ass
 Edit the file [webpack.config.js]({{ site.kimai_v2_file }}/webpack.config.js) and change `.setPublicPath('/build/')` to your needs.
 After that re-compile the assets (see above).
 
+## local.yaml
+
+Beware: if you use the `local.yaml` (as proposed in [configurations]({% link _documentation/configurations.md %})) then don't put it 
+in `config/packages/` as all configs in there are used when running the PHPUnit testsuite.
+
+The (integration) tests are written to work with the default configuration of Kimai and locally changed configs might unexpectedly break the tests.
+
+Therefor put your `local.yaml` into the `dev/` folder: `config/packages/dev/local.yaml`.
+
 ## Tests suites with PHPUnit
 
 Kimai tries to adopt a very high test and code coverage. Whenever changing code, you have to make sure 
