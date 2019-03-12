@@ -48,12 +48,6 @@ You can find more information at:
 - https://symfony.com/doc/current/frontend/encore/installation.html
 - https://symfony.com/doc/current/frontend.html
 
-### Rebuilding assets for use in a subdirectory
-
-If you want to run Kimai in a subdirectory, you have to rebuild the frontend assets with a different webpack configuration.
-Edit the file [webpack.config.js]({{ site.kimai_v2_file }}/webpack.config.js) and change `.setPublicPath('/build/')` to your needs.
-After that re-compile the assets (see above).
-
 ## local.yaml
 
 Beware: if you use the `local.yaml` (as proposed in [configurations]({% link _documentation/configurations.md %})) then don't put it 
