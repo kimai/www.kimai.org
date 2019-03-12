@@ -16,7 +16,6 @@ The basic settings, which are required for Kimai to work are stored in the `.env
 - `MAILER_FROM` - application specific "from" address for all emails
 - `APP_ENV` - environment for the runtime (use `prod` if you are unsure)
 - `DATABASE_URL` - database connection for storing all application data
-- `DATABASE_PREFIX` - precix for any Kimai table in the configured database
 - `APP_SECRET` - secret used for hashing user passwords (don't change it, if you have user accounts in your database) 
 
 ## Config files

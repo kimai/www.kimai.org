@@ -155,9 +155,8 @@ composer install
 
 The default installation uses a SQLite database, so there is no need to create a database for your first tests.
 Our default settings will work out-of-the-box, but you might want to adjust the `.env` values to your needs.
-You can configure your database in your `.env` file, e.g.:
+You configure the database connection and environment in your `.env` file, e.g.:
 ```
-DATABASE_PREFIX=kimai2_
 DATABASE_URL=sqlite:///%kernel.project_dir%/var/data/kimai.sqlite
 APP_ENV=dev
 ```
