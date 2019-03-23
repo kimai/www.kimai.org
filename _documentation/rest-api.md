@@ -5,7 +5,7 @@ toc: true
 ---
 
 Read the Swagger documentation of the Kimai 2 API in your Kimai installation at `/api/doc`.
-As example you can have a look at the API docs for the demo installation at [https://demo-v2.kimai.org/api/doc]({{ site.kimai_v2_demo }}/api/doc).
+As example you can have a look at the API docs for the demo installation at [{{ site.kimai_v2_demo }}/api/doc]({{ site.kimai_v2_demo }}/api/doc).
 You need to login to see them, credentials can be [found here]({% link _pages/demo.md %}).
 
 Or you can export the JSON collection by visiting `/api/doc.json`. Save the result in a file, which can be imported with Postman.

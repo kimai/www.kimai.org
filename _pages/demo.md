@@ -36,7 +36,7 @@ The following user are available for your tests. Please create your own test use
 
 The demo url is: [{{ site.kimai_v2_demo }}]({{ site.kimai_v2_demo }})
 
-<script src="https://demo-v2.kimai.org/status.php"></script>
+<script src="{{ site.kimai_v2_demo }}/status.php"></script>
 
 You can register your own account in the [demo login form]({{ site.kimai_v2_demo }}).
 
