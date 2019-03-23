@@ -20,3 +20,4 @@ Documentation for project maintainer.
   - Create a new version [announcement post]({{ site.kimai_v2_website }}), including the release notes
 - Post a new issue at [YunoHost tracker for Kimai 2](https://github.com/YunoHost-Apps/kimai2_ynh)
 - Post a new issue at [Docker for Kimai 2](https://github.com/tobybatch/kimai2)
+- Reinstall the stable-demo and change tag version in install.sh

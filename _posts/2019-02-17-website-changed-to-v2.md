@@ -8,7 +8,7 @@ author: kevinpapst
 I have spent the last days changing the website again, to include all available information and documentation for Kimai v1 and Kimai v2.
 
 After having the [website dedicated to Kimai 2]({% link _posts/2018-02-10-a-new-website.md %}) for about a year now at 
-https://v2.kimai.org and the main website still showing the years old version dedicated to Kimai v1, it was finally time to 
+a subdomain and the main website still showing the years old version dedicated to Kimai v1, it was finally time to 
 show everyone that Kimai 2 is on a good track to be used in production - so the main content is now focused on Kimai v2.
 
 Lets hope that the clean approach and responsiveness will lead to some more SEO love from Google. 
