@@ -1,0 +1,14 @@
+<div class="card">
+	<div class="card-body">
+		<h4 class="card-title">
+			{{ include.title }}
+		</h4>
+		<div class="card-subtitle">
+			<script src="{{ include.url }}/status.php"></script>
+		</div>
+		<p class="card-text">
+			{{ include.description|raw }}
+		</p>
+		<a href="{{ include.url }}" target="_blank" class="btn btn-primary">Access demo</a>
+	</div>
+</div>
