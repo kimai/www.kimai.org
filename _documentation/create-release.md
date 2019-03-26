@@ -1,10 +1,8 @@
 ---
-title: "Team & Internal"
+title: "Creating a release"
 ---
 
-Documentation for project maintainer.
-
-## Create a release
+## Documentation for project maintainer
 
 - Prepare a GitHub release-draft `x.x`
 - Change version constants in [src/Constants.php]({{ site.kimai_v2_file}}/src/Constants.php)

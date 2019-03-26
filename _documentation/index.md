@@ -28,5 +28,17 @@ This is the official documentation for the Kimai time-tracking application v2.
 </ul>
 {% endfor %}
 
+## How-To articles
+
+{% for group in site.data.menu-howto %}
+<h3>{{ group.title }}</h3>
+<ul>
+    {% for p in group.pages %}
+    {% assign doc = site.documentation | where: "slug", p | first %}
+    <li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
+    {% endfor %}
+</ul>
+{% endfor %}
+
 Need help and can't find what you are looking for? 
 Create a new ticket in our [support forum]({{ site.kimai_v2_repo }}/issues) and ask for help.
