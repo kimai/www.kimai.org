@@ -25,6 +25,7 @@ Before starting with the migration, please read the following FAQs:
 - You have to supply a default password, which will be used for every imported user(!)
   - due to security issues we cannot import the original passwords
   - let your users reset it afterwards with the [Password reset]({% link _documentation/users.md %}) function
+- The import will fail, if a user from v1 has either an empty email OR the same email is used for multiple users
 - Data which was deleted in Kimai v1 (user, customer, projects, activities) will be imported and set to `invisible`
   - if you don't want that, you have to delete all entries that have the value `1` in the `trash` column before importing
 
@@ -61,3 +62,14 @@ bin/console doctrine:schema:drop --force && bin/console doctrine:schema:create &
 ```
 That will drop the configured Kimai v2 database schema and re-create it, before importing the data from the `mysql` database at `127.0.0.1` on port `3306` authenticating the user `kimai` with the password `test` for import.
 The connection will use the charset `latin1` and the default table prefix `kimai_` for reading data. Imported users can login with the password `test123` and all customer will have the country `CH` and the currency `CHF` assigned.
+
+## Known issues
+
+If you see an error like this:
+```
+[ERROR] Object(App\Entity\User).email:                                                                                 
+            This value should not be blank. (code c1051bb4-d103-4f74-8988-acbcafc7fdc3)                                
+
+[ERROR] Failed to import users: Failed to validate user: admin                                                         
+``` 
+you have to edit the named user (here `admin`) and supply a unique email address.
