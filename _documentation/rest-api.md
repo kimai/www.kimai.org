@@ -17,7 +17,29 @@ When calling the API you have to submit two additional header with every call fo
 - `X-AUTH-USER` - holds the username or email
 - `X-AUTH-TOKEN` - holds the users API password, which he can set in his profile
 
-{% include alert.html type="danger" alert="Make sure to ONLY call the Kimai 2 API via `https` to protect the users credentials and data. Time-tracking data includes very private and sensitive information!" %}
+{% include alert.html type="danger" alert="Make sure to ONLY call the Kimai 2 API via `https` to protect the users credentials and data. Time-tracking data includes private / sensitive information!" %}
+
+## DateTime formats (ISO 8601 and HTML5)
+
+TL;DR
+- the API returns ISO 8601
+- the API expects HTML5 "local date and time" format
+
+The API returns ISO 8601 formatted datetime strings in the users local time, including the timezone offset. 
+
+When `POST`ing or `PATCH`ing timesheet records, you MUST use the HTML5 format (see [RFC 3336](https://tools.ietf.org/html/rfc3339) as well).
+Even if the API might allow different formats, only this one is guaranteed to work in the future.
+It is also the only format that works correct, adding a timezone might and will result in unexpected and wrong records. 
+
+Please read [this article](http://w3c.github.io/html-reference/datatypes.html#form.data.datetime-local) to find out more 
+about the "local date and time" pattern.
+
+- PHP pattern: `yyyy-MM-dd'T'HH:mm:ss` or `Y-m-d\TH:m:s` (for example `2019-04-20T14:00:00`).
+- moment.js pattern: `YYYY-MM-DDTHH:mm:ss` or `moment.HTML5_FMT.DATETIME_LOCAL_SECONDS`.
+
+Be aware: Kimai treats the given datetime as local time and adds the configured users timezone without changing the given time.
+
+Read [this comment](https://github.com/kevinpapst/kimai2/issues/701#issuecomment-485564359) to understand the backgrounds about that decision.
 
 ## Calling the API with Javascript
 

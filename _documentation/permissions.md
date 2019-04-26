@@ -92,16 +92,14 @@ The permission-names were chosen to be self-explanatory. In the hope that it wor
 | create_export | EXPORT  |  allows to create an export from the selected timesheet data  |
 | edit_export_own_timesheet | EXPORT  |  set the export state of your own timesheet record  |
 | edit_export_other_timesheet | EXPORT  |  set the export state of for other users timesheet records  |
-| view_own_profile | PROFILE  | allows access to the own profile view - without this permission, users cannot access any of their profile settings or passwords  |
-| edit_own_profile | PROFILE  | grants access to edit the own profile  |
-| delete_own_profile | PROFILE  | grants access to delete the own profile  |
-| password_own_profile | PROFILE  | grants access to change the own password  |
+| view_own_profile | PROFILE  | _virtual permission, which is always true_ |
+| edit_own_profile | PROFILE  | _virtual permission, which is always true_  |
+| password_own_profile | PROFILE  | _virtual permission, which is always true_  |
+| preferences_own_profile | PROFILE  | _virtual permission, which is always true_  |
 | roles_own_profile | PROFILE  | SECURITY ALERT: grants access to the own roles  |
-| preferences_own_profile | PROFILE  | grants access to the own preferences  |
 | api-token_own_profile | PROFILE  | grants access to change the own API token  |
 | view_other_profile | PROFILE_OTHER  | allows to view the other users profile  |
 | edit_other_profile | PROFILE_OTHER  | SECURITY ALERT: allows to edit the profile for another user  |
-| delete_other_profile | PROFILE_OTHER  | SECURITY ALERT: allows to delete users  |
 | password_other_profile | PROFILE_OTHER  | allows to change the password for another user  |
 | roles_other_profile | PROFILE_OTHER  | SECURITY ALERT: allows to change roles for other users |
 | preferences_other_profile | PROFILE_OTHER  | allows to change the preferences for another user  |
@@ -111,6 +109,10 @@ The permission-names were chosen to be self-explanatory. In the hope that it wor
 | view_user | USER  |  allows to access the User administration and see the list of all users  |
 | create_user | USER  | allows to create new users  |
 | delete_user | USER  | allows to delete existing users  |
+| system_information | -  | allows to enter the system-information (about) screen  |
+| system_actions | -  | allows to execute system relevant actions in the system-information (about) screen (depends on system_information)  |
+| system_configuration | -  | Configure global Kimai settings  |
+| plugins | -  | see all installed plugins  |
 
 ## Configure permissions
 

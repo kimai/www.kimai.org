@@ -213,8 +213,16 @@ yarn install
 npm run prod
 ```
 
+### Installation on MacOS
 
-
+cd ~/Sites
+wget XXXXXXXX/kimai-release-{{ site.kimai_v2_version }}.zip
+unzip kimai-release-{{ site.kimai_v2_version }}.zip
+cd kimai-release-{{ site.kimai_v2_version }}
+chown -R :_www .
+chmod g+x .
+chmod -R g+r .
+chmod -R g+rw var/
 
 ## Installation FAQ
 
