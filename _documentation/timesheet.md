@@ -107,7 +107,9 @@ You can configure your `rounding` rules by changing the configuration file [loca
 
 There are two different rounding modes:
 - `default`: `"begin" will always be rounded to the floor (down) and "end" & "duration" to the ceiling (up)
-- `closest`: `"begin" and "end" will be rounded in a mathematical way, always to the nearest value
+- `closest`: `"begin", "end" and "duration" will be rounded in a mathematical way, always to the nearest value
+- `floor`: `"begin", "end" and "duration" will be always rounded down to nearest value
+- `ceil`: `"begin", "end" and "duration" will be always rounded up to nearest value
 
 ### Examples
 
