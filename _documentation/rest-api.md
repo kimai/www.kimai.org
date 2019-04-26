@@ -43,8 +43,8 @@ Read [this comment](https://github.com/kevinpapst/kimai2/issues/701#issuecomment
 
 ## Calling the API with Javascript
 
-If you develop your own extension and need to use the API for logged-in user, then you have to set the header `X-AUTH-SESSION` 
-which will allow Kimai to use the current user session and not look for the default token based API authentication.
+If you develop your own [plugin]({% link _documentation/plugins.md %}) and need to use the API for logged-in user, then you have to 
+set the header `X-AUTH-SESSION` which will allow Kimai to use the current user session and not look for the default token based API authentication.
 
 ### Demo
 
@@ -60,8 +60,7 @@ You can execute some sample requests and see the JSON result.
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://getbootstrap.com/docs/4.3/examples/floating-labels/floating-labels.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css">
-	<link rel="stylesheet"
-		  href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.min.css">
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -69,13 +68,8 @@ You can execute some sample requests and see the JSON result.
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-json.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 	<style>
-		body {
-			display: block;
-		}
-
-		.codePreview {
-			margin-top: 30px;
-		}
+		body { display: block; }
+		.codePreview { margin-top: 30px; }
 	</style>
 	<script>
         function callKimaiApi(method, successHandler, errorHandler) {
@@ -125,7 +119,9 @@ You can execute some sample requests and see the JSON result.
                 var breakAttr = $(this).attr('data-attribute-break');
                 $('#loginButton').text('Loading...');
 
-                callKimaiApi(apiMethod, function (result) {
+                callKimaiApi(
+                    apiMethod, 
+                    function (result) {
                         $('#loginButton').text('Success!');
                         var jsonBeauty = JSON.stringify(result).trim();
                         if (breakAttr === "true") {
@@ -175,6 +171,9 @@ You can execute some sample requests and see the JSON result.
 			<button type="button" class="btn btn-primary" data-api="ping" data-attribute-break="true">Ping</button>
 			<button type="button" class="btn btn-secondary" data-api="version" data-attribute-break="true">Version</button>
 			<button type="button" class="btn btn-primary" data-api="timesheets" data-attribute-break="false">Timesheet</button>
+			<button type="button" class="btn btn-primary" data-api="activities" data-attribute-break="false">Activities</button>
+			<button type="button" class="btn btn-primary" data-api="projects" data-attribute-break="false">Projects</button>
+			<button type="button" class="btn btn-primary" data-api="customers" data-attribute-break="false">Customers</button>
 			<button type="button" class="btn btn-secondary" data-api="config/i18n" data-attribute-break="true">i18n</button>
 		</div>
 	</div>
