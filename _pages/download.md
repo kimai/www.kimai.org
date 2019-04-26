@@ -13,7 +13,7 @@ redirect_from:
 
 Server requirements for Kimai are: 
 
-- PHP 7.1.3 or higher 
+- PHP 7.2 or higher 
 - one of the PHP extensions `PDO-SQLite` or `PDO-MySQL`
 - the PHP extensions `mbstring`, `gd`, `intl`, `xml` and `zip` 
 

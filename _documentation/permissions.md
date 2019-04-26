@@ -111,6 +111,10 @@ The permission-names were chosen to be self-explanatory. In the hope that it wor
 | view_user | USER  |  allows to access the User administration and see the list of all users  |
 | create_user | USER  | allows to create new users  |
 | delete_user | USER  | allows to delete existing users  |
+| system_information | -  | allows to enter the system-information (about) screen  |
+| system_actions | -  | allows to execute system relevant actions in the system-information (about) screen (depends on system_information)  |
+| system_configuration | -  | Configure global Kimai settings  |
+| plugins | -  | see all installed plugins  |
 
 ## Configure permissions
 

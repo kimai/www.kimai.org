@@ -76,21 +76,21 @@ bin/phpunit
 
 ## Coding styles
 
-You can run the code sniffer with a built-in command like that:
+You can run the code formatter with the built-in command like that:
 
  ```bash
-bin/console kimai:phpcs
+bin/console kimai:codestyle
 ```
 
 You can also automatically fix the violations by running: 
 
  ```bash
-bin/console kimai:phpcs --fix
+bin/console kimai:codestyle --fix
 ```
 
 Be aware that this command will modify all files with violations in the directories `src/` and `tests/`, so its a good idea to commit first.
 
-Our code-styles are configured in [.php_cs.dist]({{ site.kimai_v2_file }}/.php_cs.dist).
+Kimai code-styles are configured in [.php_cs.dist]({{ site.kimai_v2_file }}/.php_cs.dist).
 
 ## Translations 
 
