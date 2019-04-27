@@ -30,12 +30,16 @@ The files in `translations/` as a quick overview:
 
 As example I choose a new hypothetical language with the locale `xx`. 
 
-Copy each translation file from `translations/*.en.xliff` and rename them to `translations/*.xx.xliff`.
+### Add translations
 
-Adjust the `target-language` in the file header, as example for the new file `exceptions.xx.xliff`:
+Copy each translation file from it's english version `translations/*.en.xliff` and rename them to `translations/*.xx.xliff`.
+
+Adjust the `date` and `target-language` attributes in the file header, as example for the new file `exceptions.xx.xliff`:
 ```yml
 <file date="2018-08-01T20:00:00Z" source-language="en" target-language="xx" datatype="plaintext" original="exceptions.en.xliff">`
 ```
+
+### Configure locale formats
 
 Adjust the file `config/packages/kimai.yaml` and add the language settings below the key `kimai.languages`: 
 ```yaml
@@ -52,12 +56,32 @@ kimai:
             duration: '%%h:%%m h'
 ```
 
+### Register locale
+
 Append the new locale in the file `config/services.yaml` at `parameters.app_locales` divided by a pipe:
 
 ```yaml
 parameters:
     locale: en
     app_locales: en|de|ru|it|xx
+```
+
+### Import frontend locales
+
+Make sure the new locale is included in the frontend dependencies. For example Kimai includes moment.js, which ships its own translations.
+Kimai ONLY compiles the moment.js locales which are needed. 
+Check and adapt the JS files in the `assets/` directory, e.g. [app.js](https://github.com/kevinpapst/kimai2/blob/master/assets/app.js):
+
+```
+const Moment = require('moment');
+global.moment = Moment;
+require('moment/locale/xx');
+```
+
+and
+```
+require('fullcalendar');
+require('fullcalendar/dist/locale/xx');
 ```
 
 ### Date and time formats
