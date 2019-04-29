@@ -16,15 +16,25 @@ We try to keep the number of language files small, in order to make it easier to
 
 The files in `translations/` as a quick overview:
 
-- `exceptions` only holds translations of error pages and exception handlers
-- `flashmessages` hold all success and error messages, that will be shown as results from action calls after page reload
-- `messages` holds most of the visible application translations (like all the static UI elements and form translations)
-- `pagerfanta` includes the translations for the pagination component
-- `sidebar` holds all the translations of the right sidebar
-- `validators` only holds translations related to violations/validation of submitted form data (or API calls)
-- `invoice-calculator` holds translations of calculator types (see `Adding invoice calculator` in [developers]({% link _documentation/developers.md %})-section)
-- `invoice-numbergenerator` holds translations of the invoice calculator (see `Adding invoice-number generator ` in [developers]({% link _documentation/developers.md %})-section)
-- `invoice-renderer` holds translations of all invoice templates ([read more]({% link _documentation/invoices.md %}))
+- `about` - the about screen with license information
+- `daterangepicker` - the daterange picker dialog to choose a timeframe in screens with data-tables
+- `exceptions` - error pages and exception handlers
+- `flashmessages` - success and error messages (alerts), whichwill be shown after submitting data
+- `invoice-calculator` - invoice calculator types (see `Adding invoice calculator` in [developers]({% link _documentation/developers.md %})-section)
+- `invoice-numbergenerator` - invoice calculator (see `Adding invoice-number generator ` in [developers]({% link _documentation/developers.md %})-section)
+- `invoice-renderer` - holds translations of all invoice templates ([read more]({% link _documentation/invoices.md %}))
+- `messages` - most of the visible application translations (like menu, buttons and forms)
+- `pagerfanta` - includes the translations for the pagination component below data-tables
+- `plugins` - the plugin screen
+- `system-configuration` - all system configuration, which can be changed through the UI
+- `validators` - related to violations/validation of submitted form data (or API calls)
+
+### Authentication screens
+
+The authentication screens (login, registration, register account) are translated through the theme bundle which is used in Kimai.
+The bundle can be [found here](https://github.com/kevinpapst/AdminLTEBundle) and the translations [in this directory](https://github.com/kevinpapst/AdminLTEBundle/tree/master/Resources/translations).
+
+When you create a new translation, please open another PR there as well.
 
 ## Adding a new language
 
@@ -32,12 +42,14 @@ As example I choose a new hypothetical language with the locale `xx`.
 
 ### Add translations
 
-Copy each translation file from it's english version `translations/*.en.xliff` and rename them to `translations/*.xx.xliff`.
+Copy each translation from it's english version `translations/*.en.xliff` and rename them to `translations/*.xx.xliff`.
 
 Adjust the `date` and `target-language` attributes in the file header, as example for the new file `exceptions.xx.xliff`:
 ```yml
 <file date="2018-08-01T20:00:00Z" source-language="en" target-language="xx" datatype="plaintext" original="exceptions.en.xliff">`
 ```
+
+https://github.com/kevinpapst/AdminLTEBundle/tree/master/Resources/translations
 
 ### Configure locale formats
 
