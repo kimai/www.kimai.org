@@ -48,9 +48,7 @@ kimai:
         # copy all settings from 'en' and adjust them to your language
         xx:
             date_time_type: 'yyyy-MM-dd HH:mm'
-            date_time_picker: 'YYYY-MM-DD HH:mm'
             date_type: 'yyyy-MM-dd'
-            date_picker: 'YYYY-MM-DD'
             date: 'Y-m-d'
             date_time: 'm-d H:i'
             duration: '%%h:%%m h'
@@ -90,20 +88,16 @@ Kimai uses the configurations in `kimai.yaml` to format the values in the fronte
 It also uses the configurations to convert between javascript components (e.g. the date-picker) and the PHP backend,
 so they must create the same output. 
 
-The settings ending with `_type` are the ones used in PHP where the ones ending with `_picker` are used in javascript.
-
 ## 12-hour format
 
-Kimai uses 24 hour format by default. If you want to use the 12 hour am/pm format, you have to adjust your config like this:
+Kimai uses 24 hour format by default. If you want to use the 12 hour am/pm format, you have to adjust the locale config at the key `24_hours` like this:
 
 ```yaml
 kimai:
     languages:
         en:
             date_time_type: 'yyyy-MM-dd hh:mm a'
-            date_time_picker: 'YYYY-MM-DD hh:mm A'
             date_type: 'yyyy-MM-dd'
-            date_picker: 'YYYY-MM-DD'
             date: 'Y-m-d'
             date_time: 'm-d H:i'
             duration: '%%h:%%m h'
@@ -113,8 +107,7 @@ kimai:
 
 ## Check for missing translations
 
-When you search for missing keys, please use this command:
+You can search for missing keys by issuing this command (replace `de` with your locale):
 ```bash
 bin/console debug:translation --only-missing de
 ```
-and replace `de` with your locale. 
