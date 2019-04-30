@@ -71,7 +71,7 @@ bin/console kimai:test-integration
 
 Or you simply run all tests with: 
 ```bash
-bin/phpunit
+vendor/bin/phpunit
 ```
 
 ## Coding styles
