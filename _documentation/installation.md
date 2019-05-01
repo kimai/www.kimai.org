@@ -82,6 +82,11 @@ There is a dedicated article about [Docker setups]({% link _documentation/docker
 
 These platforms adopted Kimai 2 to be compatible with their one-click installation systems:
 
+### Vesta Control Panel
+
+Be aware that VestaCP uses the `admin` user instead of `www-data`. Replace the names in the permission commands above.
+Read [this issues](https://github.com/kevinpapst/kimai2/issues/743) if you have further questions. 
+
 ### YunoHost
 
 [![Install kimai2 with YunoHost](https://install-app.yunohost.org/install-with-yunohost.png)](https://install-app.yunohost.org/?app=kimai2)
@@ -212,17 +217,6 @@ To re-generate the frontend assets ([more information here]({% link _documentati
 yarn install
 npm run prod
 ```
-
-### Installation on MacOS
-
-cd ~/Sites
-wget XXXXXXXX/kimai-release-{{ site.kimai_v2_version }}.zip
-unzip kimai-release-{{ site.kimai_v2_version }}.zip
-cd kimai-release-{{ site.kimai_v2_version }}
-chown -R :_www .
-chmod g+x .
-chmod -R g+r .
-chmod -R g+rw var/
 
 ## Installation FAQ
 
