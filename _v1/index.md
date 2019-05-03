@@ -11,7 +11,6 @@ sitemap:
 ---
 <a href="{{ site.kimai_v1_repo }}/releases/download/1.3.1/kimai_1.3.1.zip" class="btn btn-primary"><i class="fas fa-download"></i> Download 1.3.1</a>
 <a href="{{ site.kimai_v1_repo }}" class="btn btn-primary"><i class="fab fa-github"></i> GitHub</a>
-<a href="demo.html" class="btn btn-primary"><i class="fas fa-desktop"></i> Demo</a>
 <a href="https://github.com/kimai/manuals/" class="btn btn-primary"><i class="fas fa-book"></i> PDF manuals</a>
 <a href="{% link _v1/apps.md %}" class="btn btn-primary"><i class="fas fa-cubes"></i> Applications</a>
 
