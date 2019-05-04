@@ -18,3 +18,12 @@ kimai:
             country: GB
             currency: GBP
 ```
+
+This can also be configured directly in the System configuration within Kimai.
+
+## Customer colors
+
+Each customer can be assigned its own color, for easier identification in the timesheets.
+
+If a project or an activity linked to the customer does not have its own color, the customers color will be used.
+The default color code is `#d2d6de`.
