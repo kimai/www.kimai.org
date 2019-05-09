@@ -10,7 +10,7 @@ You find the theme specific documentation [here](https://github.com/kevinpapst/A
 All Kimai specific theme settings will be available in the twig templates with the global `kimai_context` key, e.g.
 
 ```twig
-{% raw %}{{ kimai_context.box_color }}{% endraw %}
+{% raw %}{{ kimai_context.select_type }}{% endraw %}
 ``` 
 
 ## Searchable input types
@@ -37,9 +37,22 @@ A small colored warning sign will be shown, if a user has more than X active tim
 
 The amount `X` is configured in your `local.yaml` with the setting `timesheet.active_entries.soft_limit` (see [configurations.md]({% link _documentation/configurations.md %})).
 
+## Icons
+
+Kimai allows you to configure icons in several places (provided by [Font Awesome 5](https://fontawesome.com/icons)) and ships 
+with a pre-defined list of icon aliases to guarantee a consistent look.  
+
+The pre-defined icons aliases can be found in this [TwigExtension]({{ site.kimai_v2_file }}/src/Twig/Extensions.php).
+
+Icon aliases can be used by applying the `icon` filter, e.g.
+
+```
+{% raw %}<i class="{{ 'money'|icon }}"></i>{% endraw %}
+```
+
 ## Colors
 
-Kimai allows you to configure colors in several places throughout the theme. 
+Kimai allows you to use different color schemes in several places. 
 
 Possible values are:
 
@@ -51,40 +64,3 @@ Possible values are:
 - `purple`
 - `red`
 - `yellow`
-
-### Fallback color
-
-Whenever a color is required but none is configured, Kimai uses a fallback color from the config key `kimai.theme.box_color`.
-
-You can change the default color `green` to any one from the above in your `local.yaml`:
-
-```yaml
-kimai:
-    theme:
-        box_color: 'blue'
-```
-
-The fallback color should be applied whenever an optional color is configurable by the user:
-
-```twig
-{% raw %}<div class="info-box bg-{{ color|default(kimai_context.box_color) }}"></div>{% endraw %}
-```
-
-## Icons
-
-Kimai allows you to configure icons in several places (provided by [Font Awesome 5](https://fontawesome.com/icons)) and ships 
-with a pre-defined list of icon aliases to guarantee a consistent look.  
-
-The pre-defined icons aliases are (at the time of this writing):
-
-`activity`, `admin`, `calendar`, `customer`, `create`,`dashboard`, `delete`, `download`, `duration`, `edit`, `filter`, 
-`help`, `invoice`, `list`, `logout`, `manual`, `money`, `print`, `project`, `repeat`, `start`, `start-small`, `stop`, 
-`stop-small`, `timesheet`, `trash`, `user`, `visibility`
-
-The full list can be found in this [TwigExtension]({{ site.kimai_v2_file }}/src/Twig/Extensions.php).
-
-Icon aliases can be used by applying the `icon` filter, e.g.
-
-```
-{% raw %}<i class="{{ 'money'|icon }}"></i>{% endraw %}
-```
