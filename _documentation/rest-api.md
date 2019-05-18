@@ -34,7 +34,7 @@ It is also the only format that works correct, adding a timezone might and will 
 Please read [this article](http://w3c.github.io/html-reference/datatypes.html#form.data.datetime-local) to find out more 
 about the "local date and time" pattern.
 
-- PHP pattern: `yyyy-MM-dd'T'HH:mm:ss` or `Y-m-d\TH:m:s` (for example `2019-04-20T14:00:00`).
+- PHP pattern: `yyyy-MM-dd'T'HH:mm:ss` or `Y-m-d\TH:i:s` (for example `2019-04-20T14:00:00`).
 - moment.js pattern: `YYYY-MM-DDTHH:mm:ss` or `moment.HTML5_FMT.DATETIME_LOCAL_SECONDS`.
 
 Be aware: Kimai treats the given datetime as local time and adds the configured users timezone without changing the given time.
