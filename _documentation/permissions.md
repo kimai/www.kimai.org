@@ -113,6 +113,8 @@ The permission-names were chosen to be self-explanatory. In the hope that it wor
 | system_actions | -  | allows to execute system relevant actions in the system-information (about) screen (depends on system_information)  |
 | system_configuration | -  | Configure global Kimai settings  |
 | plugins | -  | see all installed plugins  |
+| view_tag | TAGS  | use tag administration (since 1.0)  |
+| delete_tag | TAGS  | delete existing tags (since 1.0)  |
 
 ## Configure permissions
 
