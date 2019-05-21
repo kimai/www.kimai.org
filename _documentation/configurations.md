@@ -70,3 +70,10 @@ bin/console cache:warmup --env=prod
 
 Depending on your setup it might be necessary to execute these commands as webserver user, 
 please read the [Installation docs]({% link _documentation/installation.md %}) for more details.
+
+## System-configuration screen
+
+With version 0.9 a new system configuration screen was introduced. This screen allows you to change 
+some of the most important configurations directly from within Kimai. 
+
+This screen is only visible to users with the permission `system_configuration` which is by default given to `ROLE_SUPER_ADMIN`.

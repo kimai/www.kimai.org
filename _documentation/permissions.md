@@ -53,9 +53,9 @@ The permission-names were chosen to be self-explanatory. In the hope that it wor
 | Permission name | Set name | Description |
 |---|---|---|
 | view_activity | ACTIVITIES  | allows access to the activity administration  |
-| create_activity | ACTIVITIES  | -  |
-| edit_activity | ACTIVITIES  | -  |
-| delete_activity | ACTIVITIES  | -  |
+| create_activity | ACTIVITIES  | allows to create a new activity  |
+| edit_activity | ACTIVITIES  | allows to edit existing activities  |
+| delete_activity | ACTIVITIES  | allows to delete activities  |
 | view_project | PROJECTS  | allows access to the project administration  |
 | create_project | PROJECTS  | -  |
 | edit_project | PROJECTS  | -  |
@@ -109,12 +109,13 @@ The permission-names were chosen to be self-explanatory. In the hope that it wor
 | view_user | USER  |  allows to access the User administration and see the list of all users  |
 | create_user | USER  | allows to create new users  |
 | delete_user | USER  | allows to delete existing users  |
-| system_information | -  | allows to enter the system-information (about) screen  |
-| system_actions | -  | allows to execute system relevant actions in the system-information (about) screen (depends on system_information)  |
-| system_configuration | -  | Configure global Kimai settings  |
-| plugins | -  | see all installed plugins  |
+| system_information | -  | allows to enter the system-information (about) screen (since 0.9) |
+| system_actions | -  | allows to execute system relevant actions in the about screen (since 0.9)  |
+| system_configuration | -  | Configure global Kimai settings (since 0.9) |
+| plugins | -  | see all installed plugins (since 0.9)  |
 | view_tag | TAGS  | use tag administration (since 1.0)  |
 | delete_tag | TAGS  | delete existing tags (since 1.0)  |
+| edit_exported_timesheet | -  | allows to edit and delete records which were exported (since 1.0)  |
 
 ## Configure permissions
 

@@ -7,7 +7,8 @@ toc: true
 Kimai 2 provides a calendar view, which displays your timesheet entries in a easy readable format.
 You can choose between a monthly, weekly and daily view.
 
-The calendar view look and feel is configured with the config keys below `kimai.calendar` in `kimai.yaml` / your [local.yaml]({% link _documentation/configurations.md %}):  
+The calendar view look and feel is configured with the config keys below `kimai.calendar` in `kimai.yaml` 
+(see [configurations]({% link _documentation/configurations.md %})) or in the system configurations screen:  
 
 ```yaml
 kimai:
@@ -42,7 +43,7 @@ Available options are: `month`, `agendaWeek`, `agendaDay` (these might be called
 
 ## Initial view after login
 
-If a user configured it preference `login.initial_view` to `calendar`, the timesheet icon in the top navigation bar 
+If a user configured the preference `login.initial_view` to `calendar`, the timesheet icon in the top navigation bar 
 will be replaced by a link to the calendar.  
 
 ## Integrating google calender

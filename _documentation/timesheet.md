@@ -67,12 +67,12 @@ kimai:
     timesheet:
         active_entries:
             soft_limit: 1
-            hard_limit: 3
+            hard_limit: 1
 ```
 
 The `soft_limit` is used as theme setting (formerly "kimai.theme.active_warning") to display a warning if the user has at least X active recordings.
 
-The `hard_limit` is used to detect how many active records are allowed per user (by default 3 active time-records are allowed). 
+The `hard_limit` is used to detect how many active records are allowed per user. 
 If `hard_limit` is 1, the active record is automatically stopped when a new one is started.
 When `hard_limit` is greater than 1 and as soon as the limit is reached, the user has to manually stop at least one active 
 entry (an error message is shown, indicating why it is not possible to start another one).
@@ -202,3 +202,12 @@ kimai:
                 days: ['saturday','sunday']
                 factor: 1.5
 ```
+
+## Exported records
+
+Exported records will be locked to prevent manipulation of cleared data.
+ 
+There is the permission `edit_exported_timesheet` which allows to edit and delete these locked entries nevertheless, 
+which by default is given to users with `ROLE_ADMIN` and `ROLE_SUPER_ADMIN`. 
+
+Available since: 1.0

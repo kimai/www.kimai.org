@@ -21,3 +21,7 @@ There are a couple of differences in these two Kimai modules, the most important
 So giving a user the permission to export data allows to basically see everything inside Kimai.
 So all customer, projects, activities, all hourly rates, the personal time worked and the money earned becomes visible!
 
+## Exported records are locked
+
+Exported records cannot be edited or deleted any longer. 
+For further information read the [timesheet documentation]({% link _documentation/timesheet.md %}).
