@@ -5,7 +5,6 @@ developer: keleo
 url: https://www.keleo.de/kimai/
 icon: fas fa-shipping-fast
 tags:
-  - kimai 1
   - kimai 2
   - support
 ---

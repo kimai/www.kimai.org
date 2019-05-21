@@ -23,3 +23,5 @@ Your donation goes directly into supporting the project. I am a professional sof
 Most importantly, by helping support the development of Kimai you are contributing to an effort that makes your life easier. Now isn't that sweet?
 
 Thank you for using Kimai and supporting the development!
+
+Please note, this donation is not directed towards a non-profit and thus not deductible on your taxes.

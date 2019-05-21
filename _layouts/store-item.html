@@ -56,6 +56,10 @@ layout: default
 					<div class="card-options">
 						<a href="{{ page.download }}" class="btn btn-outline-primary"><i class="fas fa-download"></i> Download{% if page.version %} {{ page.version }}{% endif %}</a>
 					</div>
+					{% else if page.buy %}
+					<div class="card-options">
+						<a href="{{ page.buy }}" class="btn btn-outline-primary"><i class="fas fa-shopping-cart"></i> Purchase now</a>
+					</div>
 					{% endif %}
 				</div>
 				<div class="card-body">
