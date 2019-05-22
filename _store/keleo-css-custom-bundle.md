@@ -1,5 +1,6 @@
 ---
-name: CSS Custom Plugin
+title: Custom CSS Plugin for Kimai 2
+name: Custom CSS Plugin
 intro: "A Kimai 2 plugin, which allows to edit custom CSS rules through an administration screen."
 developer: keleo
 date: "2019-02-21 20:00:00 +0200"
@@ -8,9 +9,9 @@ price: free
 version: 0.1
 download: https://github.com/Keleo/CustomCSSBundle/archive/master.zip
 github: https://github.com/Keleo/CustomCSSBundle
-screenshot: https://raw.githubusercontent.com/Keleo/CustomCSSBundle/master/screenshot.jpg
-featured: true
-new: true
+screenshot: 
+  - https://raw.githubusercontent.com/Keleo/CustomCSSBundle/master/screenshot.jpg
+featured: 20
 features:
   - change Kimai look for all users
   - pre-made css rules included 
@@ -22,6 +23,8 @@ tags:
 ---
 
 This bundle ships with some pre-defined CSS rules, which can be added with a button click.
+
+You can test the Plugin in the [Plugin demo]({% link _pages/demo.md %}).
 
 ## Installation
 

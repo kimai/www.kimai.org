@@ -2,7 +2,7 @@
 name: Custom plugin development
 intro: "Want to have a special feature, which is not available in Kimai? I can develop it for you!"
 developer: kevinpapst
-date: "2019-02-22 20:00:00 +0200"
+date: "2019-02-20 20:00:00 +0200"
 icon: far fa-file-code
 tags:
   - kimai 2

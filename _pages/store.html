@@ -53,7 +53,8 @@ sitemap:
 			</div>
 		</div>
 		<div class="col-lg-9">
-			{% include store-list.html products=site.store %}
+			{% assign products = site.store | sort: 'featured,date' | reverse %}
+			{% include store-list.html products=products %}
 		</div>
 	</div>
 </div>
