@@ -43,6 +43,11 @@
 .header-toggler {
     margin-left: 0 !important;
 }
+@media (max-width: map-get($grid-breakpoints, "md")) {
+    .card-options a.btn span {
+        display: none;
+    }
+}
 
 @media (min-width: map-get($grid-breakpoints, "sm")) {
     .nav-tabs {

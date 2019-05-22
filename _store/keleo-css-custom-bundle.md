@@ -5,8 +5,7 @@ intro: "A Kimai 2 plugin, which allows to edit custom CSS rules through an admin
 developer: keleo
 date: "2019-02-21 20:00:00 +0200"
 icon: fab fa-css3
-price: free
-version: 0.1
+price: "0"
 download: https://github.com/Keleo/CustomCSSBundle/archive/master.zip
 github: https://github.com/Keleo/CustomCSSBundle
 screenshot: 

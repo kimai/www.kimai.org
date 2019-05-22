@@ -46,7 +46,15 @@
 					{% endfor %}
 				</td>
 				<td class="text-right">
-					<strong>{{ product.price }}</strong>
+					<strong>
+						{% if product.price == nil %}
+							upon request
+						{% elsif product.price == '0' %}
+							free
+						{% else %}
+							{{ product.price }}
+						{% endif %}
+					</strong>
 				</td>
 			</tr>
 		{% endfor %}

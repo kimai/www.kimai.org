@@ -1,10 +1,12 @@
 ---
+title: "Installation & Update support for Kimai 2"
 name: "Installation & Update support"
 intro: "Want to use Kimai but don't know how to install it on your server?"
 developer: keleo
 date: "2019-02-20 18:00:00 +0200"
 url: https://www.keleo.de/kimai/
 icon: fas fa-shipping-fast
+email: info@keleo.de
 tags:
   - kimai 2
   - support
