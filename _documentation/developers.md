@@ -65,12 +65,13 @@ that the tests are still running. New code needs additional tests, otherwise you
 You can run the unit and integration tests with built-in commands:
 
  ```bash
-bin/console kimai:test-unit
-bin/console kimai:test-integration
+composer tests-unit
+composer tests-integration
 ```
 
 Or you simply run all tests with: 
 ```bash
+composer tests
 vendor/bin/phpunit
 ```
 
@@ -79,13 +80,13 @@ vendor/bin/phpunit
 You can run the code formatter with the built-in command like that:
 
  ```bash
-bin/console kimai:codestyle
+composer codestyle
 ```
 
 You can also automatically fix the violations by running: 
 
  ```bash
-bin/console kimai:codestyle --fix
+composer codestyle-fix
 ```
 
 Be aware that this command will modify all files with violations in the directories `src/` and `tests/`, so its a good idea to commit first.
@@ -174,28 +175,6 @@ class MyDashboardSubscriber implements EventSubscriberInterface
 }
 ```
 For more details check this [dashboard subscriber]({{ site.kimai_v2_file }}/src/EventSubscriber/DashboardSubscriber.php).
-
-## Adding tabs to the "control sidebar"
-
-We use the AdminLTE bundle to render the control sidebar tabs, so adding another tab is as easy as adding a new config entry:
-
-```yaml
-admin_lte:
-    options:
-        control_sidebar:
-            # these are the "official" Kimai tabs
-            settings:
-                icon: "fas fa-cogs"
-                controller: 'App\Controller\SidebarController::settingsAction'
-            home:
-                icon: "fas fa-question-circle"
-                template: sidebar/home.html.twig
-```
-
-You have to define the `icon` ([read more]({% link _documentation/theme.md %})) to be used and then either `controller` action or twig `template`. 
-Both follow the default naming syntax and you can link your bundle here instead of existing application controller or templates.
-You should NOT add them in `config/packages/kimai.yaml` but in your own bundle or the `local.yaml` [config]({% link _documentation/configurations.md %}), 
-otherwise they might get lost during an update.
 
 ## Invoices 
 

@@ -7,6 +7,7 @@ title: "Creating a release"
 - Prepare a GitHub release-draft `x.x`
 - Change version constants in [src/Constants.php]({{ site.kimai_v2_file}}/src/Constants.php)
 - Adjust the file [UPGRADING.md]({{ site.kimai_v2_file}}/UPGRADING.md) with version specific information
+- Adjust the versions in [SECURITY.md]({{ site.kimai_v2_file}}/SECURITY.md)
 - Create [CHANGELOG.md]({{ site.kimai_v2_file}}/CHANGELOG.md):
   - Change [.github_changelog_generator]({{ site.kimai_v2_file}}/.github_changelog_generator) config accordingly to new release tag (increase future release)
   - Run [github-changelog-generator](https://github.com/github-changelog-generator/github-changelog-generator) with `github_changelog_generator kevinpapst/kimai2`
