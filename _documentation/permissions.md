@@ -11,14 +11,14 @@ can be adapted through your [local.yaml]({% link _documentation/configurations.m
 
 Before you learn to configure the permission system, you have to understand the three involved config types:
 
-1. `Permission sets` - a re-usable mapping of a free choosable name (e.g. "TEST") to a list of: 
-  - one or more "permission names" (e.g. "test")
-  - one or more "permission sets" (e.g. "@TEST")
-  - one or more "negated permission names" (e.g. "!test")
-2. `Permission maps` - a mapping of a role name to a list of "permission sets" (e.g. "TEST)
+1. `Permission sets` - a re-usable mapping of a free choosable name (e.g. `TEST`) to a list of: 
+  - one or more "permission names" (e.g. `test`)
+  - one or more "permission sets" (linking other sets can be achieved by prepending an `@`, e.g. `@TEST`)
+  - one or more "negated permission names" (prepend an `!` to negate a permission, e.g. `!test`)
+2. `Permission maps` - a mapping of a role name to a list of "permission sets" (no `@` required here, e.g. `TEST`)
 3. `Permissions` - a mapping of a role name to a list of:
-  - one or more "permission names" (e.g. "test")
-  - one or more "negated permission names" (e.g. "!test")
+  - one or more "permission names" (e.g. `test`)
+  - one or more "negated permission names" (e.g. `!test`)
 
 An example and its explanation:
 
@@ -92,18 +92,8 @@ kimai:
 ```
 As you overwrite the default map `ROLE_USER` by defining it, you have to apply the default set `ROLE_USER` and append the set `TAGS` (see below in "Existing maps").
 
-You cannot extend existing sets, if you define them, they will be overwritten with your config.
-Therefor it is **not** recommended to overwrite any existing `set` but create new ones. 
-Please start their name with a prefix like 'CUSTOM_':
-```yaml
-kimai:
-    permissions:
-        sets:
-            CUSTOM_ROLE_USER: ['ROLE_USER', 'TAGS']
-        maps:
-            ROLE_USER: ['CUSTOM_ROLE_USER']
-```
-
+Customizing sets is generally not recommended, as you should be able to achieve everything with `maps` and `permissions`. 
+See below in "Existing sets". 
 
 ### Before 1.0
 
@@ -115,6 +105,23 @@ you should start by copying the default permissions from `kimai.yaml`.
 
 Be aware: if you configure your own permission definition, you have to overwrite the complete 
 node (`sets`, `maps` or`roles`) that you edited and define all SETS and/or ROLES.
+
+## Existing sets
+
+Existing sets can be seen in `kimai.yaml`. I will not go into details here, as their customization 
+is generally not necessary.
+
+You cannot extend existing sets, if you define them, they will be overwritten with your config.
+Therefor it is **not** recommended to overwrite any existing `set` but create new ones. 
+Please start their name with a prefix like 'CUSTOM_':
+```yaml
+kimai:
+    permissions:
+        sets:
+            CUSTOM_ROLE_USER: ['@ROLE_USER', '@TAGS']
+        maps:
+            ROLE_USER: ['CUSTOM_ROLE_USER']
+```
 
 ## Existing maps
 
