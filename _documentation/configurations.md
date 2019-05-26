@@ -77,3 +77,12 @@ With version 0.9 a new system configuration screen was introduced. This screen a
 some of the most important configurations directly from within Kimai. 
 
 This screen is only visible to users with the permission `system_configuration` which is by default given to `ROLE_SUPER_ADMIN`.
+
+Each setting in this screen is also available in the config file (`config/packages/kimai.yaml`) where you might find 
+additional information or links to the correct documentation chapter.
+
+## User preferences vs. system settings
+
+A user has several preferences, which change the behaviour how he interacts with Kimai.
+
+Check out the [user preferences documentation]({% link _documentation/user-preferences.md %}) to find out more.

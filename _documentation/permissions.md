@@ -67,6 +67,9 @@ Yes, that could have been easier ;-) but I wanted to demonstrate all possibiliti
 Knowing that many companies need a different combination of allowed permissions than the default ones, 
 you might also want to change the pre-configured permission.
 
+After changing the permission, you maybe want to check the compiled result, which can be done via the users administration 
+screen (for example in the [demo installation](https://demo.kimai.org/en/admin/user/permissions)).
+
 ### With 1.0 and later
 
 In most cases you just want to adjust single permissions, like remove or add single permissions them to a user role. 
@@ -106,40 +109,9 @@ you should start by copying the default permissions from `kimai.yaml`.
 Be aware: if you configure your own permission definition, you have to overwrite the complete 
 node (`sets`, `maps` or`roles`) that you edited and define all SETS and/or ROLES.
 
-## Existing sets
-
-Existing sets can be seen in `kimai.yaml`. I will not go into details here, as their customization 
-is generally not necessary.
-
-You cannot extend existing sets, if you define them, they will be overwritten with your config.
-Therefor it is **not** recommended to overwrite any existing `set` but create new ones. 
-Please start their name with a prefix like 'CUSTOM_':
-```yaml
-kimai:
-    permissions:
-        sets:
-            CUSTOM_ROLE_USER: ['@ROLE_USER', '@TAGS']
-        maps:
-            ROLE_USER: ['CUSTOM_ROLE_USER']
-```
-
-## Existing maps
-
-By default each roles owns only one set, which is called like the user role itself:
-
-```yaml
-kimai:
-    permissions:
-        maps:
-            ROLE_USER: ['ROLE_USER']
-            ROLE_TEAMLEAD: ['ROLE_TEAMLEAD']
-            ROLE_ADMIN: ['ROLE_ADMIN']
-            ROLE_SUPER_ADMIN: ['ROLE_SUPER_ADMIN']
-```
-
 ## Existing permissions
 
-The permission-names were chosen to be self-explanatory. Here is the full list of existing permissions with short descriptions:
+This is the full list of existing permissions with short descriptions:
 
 | Permission name               | Description |
 |---                            |---|
@@ -211,3 +183,34 @@ The permission-names were chosen to be self-explanatory. Here is the full list o
 **Be aware**
 There are other business rules which might limit access to certain functionalities, so these permissions are not the only checks in place.
 For example timesheet records which were exported cannot be edited any longer, even if a user has the "edit_own_timesheet" or "edit_other_timesheet" permission. 
+
+### Existing sets
+
+Existing sets can be seen in `kimai.yaml`. I will not go into details here, as their customization 
+is generally not necessary.
+
+You cannot extend existing sets, if you define them, they will be overwritten with your config.
+Therefor it is **not** recommended to overwrite any existing `set` but create new ones. 
+Please start their name with a prefix like 'CUSTOM_':
+```yaml
+kimai:
+    permissions:
+        sets:
+            CUSTOM_ROLE_USER: ['@ROLE_USER', '@TAGS']
+        maps:
+            ROLE_USER: ['CUSTOM_ROLE_USER']
+```
+
+### Existing maps
+
+By default each role owns only one set, which is called like the user role itself:
+
+```yaml
+kimai:
+    permissions:
+        maps:
+            ROLE_USER: ['ROLE_USER']
+            ROLE_TEAMLEAD: ['ROLE_TEAMLEAD']
+            ROLE_ADMIN: ['ROLE_ADMIN']
+            ROLE_SUPER_ADMIN: ['ROLE_SUPER_ADMIN']
+```

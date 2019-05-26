@@ -8,13 +8,15 @@ toc: true
 
 There are multiple pre-defined roles in Kimai, which define the ACLs/permissions.
 
-| Role name | extends | Description |
-|---|---|---|
-| ROLE_CUSTOMER | -  | Currently not used, reserved for future features |
-| ROLE_USER | ROLE_CUSTOMER  | Normal user that wants to track working times |
-| ROLE_TEAMLEAD | ROLE_USER  | This role manages teams of ROLE_USER (this feature is not yet implemented, but planned for the future) and has further permissions on invoices |
-| ROLE_ADMIN | ROLE_TEAMLEAD | Admins can do almost everything in Kimai, except some user specific tasks |
-| ROLE_SUPER_ADMIN | ROLE_ADMIN  | Evey Super-Admin can do anything Kimai |
+| Role name         | Description |
+|---                |---|
+| ROLE_USER         | Normal user that wants to track working times |
+| ROLE_TEAMLEAD     | Manages teams of normal users (this feature is not yet implemented, but planned for the future) and has further permissions on invoices and access to all timesheets |
+| ROLE_ADMIN        | Admins can manage all timesheet related data, but lack user administration and system privileges |
+| ROLE_SUPER_ADMIN  | Super-Admin can do everything in Kimai, including user administration and system configuration |
+
+The applied permissions of your Kimai installation can be seen via the user administration, 
+e.g. [https://demo.kimai.org/en/admin/user/permissions](https://demo.kimai.org/en/admin/user/permissions).
 
 ### Permissions
 
