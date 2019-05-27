@@ -11,6 +11,14 @@ redirect_from:
 Please check your logfile at `var/log/prod.log`. Many problems reveal themselves after checking it.
 
 If that doesn't help, open a new issue at [GitHub]({{ site.kimai_v2_repo }}/issues/) and we try to find a solution.
+Please include the last ~ 20-50 lines of the log file, which were written around the time the error happened.  
+
+## Recorded times are wrong
+
+Please read the [user preferences documentation]({% link _documentation/user-preferences.md %}) especially the part 
+about **timezones**.
+
+Don't mix it up with the system specific configuration for new customers.
 
 ## Changed configs/templates do not load
 
