@@ -52,19 +52,21 @@ Now you [can upgrade]({% link _documentation/updates.md %}) :-)
 
 ## Pitfall version change
 
-You restored Kimai as documented above, but have problems when accessing it?
+You restored Kimai (as documented above), but have problems when accessing it?
 
-The reason: you missed upgrade steps, which you would have done when executing a [normal upgrade]({% link _documentation/updates.md %}).
+Maybe you have have missed an upgrade steps, which you would have done when executing a [normal upgrade]({% link _documentation/updates.md %}).
 
-Please check the [UPGRADING]({{ site.kimai_v2_file }}/UPGRADING.md) guide for version specific tasks that you might have missed.
+Please check the [UPGRADING]({{ site.kimai_v2_file }}/UPGRADING.md) guide and make sure you executed all version specific tasks.
 
 ### Database
 
 If Kimai will not load properly (e.g. you only see a white screen, maybe some pages work) the database could be the reason.
 
-This problem can happen when you install a different (newer) version that has a different database structure then your backup. 
+This problem can happen when you install a different (newer) version that has a different database structure then your backup.
 
-Solution 1: execute the missing database migrations with `bin/console doctrine:migrations:migrate`.
+Check your database if you have the `migration_versions` table. If not, go back to "Restore". 
+
+If so: try to execute the missing database migrations with `bin/console doctrine:migrations:migrate`.
 
 ### Configuration
 
