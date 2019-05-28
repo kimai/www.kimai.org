@@ -27,17 +27,26 @@ Write down the exact version of your Kimai installation:
 
 ## Restore 
 
-The easiest way:
-- install Kimai [as documented]({% link _documentation/installation.md %})
-- restore the database backup
-- restore `.env` (adjust it to match the new database) 
+- install Kimai [as documented]({% link _documentation/installation.md %}) in the **exact same version**, which you used when you created the backup
+- make sure it works
+- restore the database backup in an empty database
+- point `.env` to your imported database
+- execute `bin/console cache:clear` 
 
-At this step: test Kimai and don't proceed before it works as expected!
+At this step: test Kimai again and don't proceed before it works as expected!
 
 Working properly? Fine, then go ahead and restore all other files:
+
 - invoice templates
 - plugins
 - `local.yaml`
+
+Still not satisfied and want to upgrade to the latest version?
+
+Great! Make sure you have the `migration_versions` table in your database backup, 
+before you upgrade. If not, execute `bin/console doctrine:migrations:version --add --all` 
+beforehand and read the [installation docs]({% link _documentation/installation.md %}) again, 
+if you might have missed other points as well.
 
 ## Pitfall version change
 
