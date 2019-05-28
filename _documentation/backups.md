@@ -48,6 +48,8 @@ before you upgrade. If not, execute `bin/console doctrine:migrations:version --a
 beforehand and read the [installation docs]({% link _documentation/installation.md %}) again, 
 if you might have missed other points as well.
 
+Now you [can upgrade]({% link _documentation/updates.md %}) :-)
+
 ## Pitfall version change
 
 You restored Kimai as documented above, but have problems when accessing it?
