@@ -13,11 +13,13 @@ upgrade_notice: false
 
 	<div class="row">
 		<div class="col-lg-3 order-lg-1 mb-4 sidebar">
+			{% comment %}
 			{% if layout.github != nil %}
 			<a href="{{ site[layout.github] }}" class="btn btn-block btn-primary mb-6">
 				<i class="fab fa-github"></i> Browse source code
 			</a>
 			{% endif %}
+			{% endcomment %}
 
 			{% for group in site.data[collectionMenu] %}
 			<strong>{{ group.title }}</strong>
@@ -38,7 +40,15 @@ upgrade_notice: false
 				<div class="card-body">
 
 					<div class="text-wrap p-lg-6">
-						<h2 class="mt-0 mb-4">{{ page.title }}</h2>
+						<h2 class="mt-0 mb-4">
+							{{ page.title }}
+							{% if page.since_version != nil %}
+							<span class="tag" style="float: right">
+								Feature added with
+								<span class="tag-addon">v {{ page.since_version }}</span>
+							</span>
+							{% endif %}
+						</h2>
 
 						{% if layout.expire_warning %}
 						<div class="alert alert-warning" role="alert">

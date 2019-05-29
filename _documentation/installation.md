@@ -38,7 +38,7 @@ Now install all dependencies for Kimai 2:
 ```bash
 sudo -u www-data composer install --no-dev --optimize-autoloader
 ```
-If you see a `Malformed patameter "url"` error, see below in the FAQ.
+If you see a `Malformed parameter "url"` error, see below in the FAQ.
 
 Optionally create the database:
 ```bash

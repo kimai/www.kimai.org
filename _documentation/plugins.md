@@ -2,6 +2,7 @@
 title: Plugins
 description: How to create a Kimai plugin 
 toc: true
+since_version: 0.9
 ---
 
 A Kimai plugin is from a technical perspective _only_ a Symfony bundle, with some minor modifications.
