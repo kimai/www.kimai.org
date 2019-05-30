@@ -73,22 +73,33 @@ There are two steps involved:
 
 If a configured attribute does not exist in the LDAP result, it will be ignored.
 
-**Passwords are not stored**
+**Password handling**
 
 Obviously Kimai does not store the users password when logged-in via LDAP.
 There is no fallback mechanism, if your LDAP is not available, the user will not be able to login.
 
-But: the user can change the internal password either via the user profile or via [forgot password]({% link _documentation/users.md %}).
-This manually chosen password will not be overwritten.  
+But: with the default configuration users can change the internal password either via the user profile or via [forgot password]({% link _documentation/users.md %}).
+This manually chosen password would not be overwritten by the LDAP plugin.
+
+To prevent such mis-use, you should configure Kimai to disable the [password reset]({% link _documentation/users.md %}) function.
+Additionally, you should disallow Users to change their own password through the UI with the UI:
+```yaml
+kimai:
+    permissions:
+        roles:
+            ROLE_USER: ['!password_own_profile']
+            ROLE_TEAMLEAD: ['!password_own_profile']
+```
+Read about `password_own_profile` and `password_other_profile` [permissions]({% link _documentation/permissions.md %}).
+
+{% include alert.html type="danger" alert="Deactivate the user if you want to safely prevent further access. Disabling access via LDAP might not be enough, depending on your configuration." %}
 
 **DN caching**
 
 On the first successful bind, Kimai stores the users DN. On subsequent logins, Kimai will first 
 lookup the username in its database and use the cached DN for the `bind`.
 
-If the users `dn` changed for some reason, the user will not be able to login and you have to delete the cached `dn`.
-
-Find it with:
+If the users `dn` changed for some reason, the user will not be able to login and you have to delete the cached `dn`:
 ```sql
 SELECT pref.* FROM kimai2_user_preferences pref 
 JOIN kimai2_users user ON pref.user_id = user.id 
@@ -98,8 +109,6 @@ WHERE user.username = 'foo' AND pref.name = 'ldap.dn'
 ### User attributes
 
 Kimai does not rely on an `objectClass`, but maps single LDAP attributes to the User entity by configuration.
-
-{% include alert.html type="warning" alert="You need to configure the attributes in lower-case, otherwise they won't be processed." %}
 
 An example could look like this:
 
@@ -113,6 +122,7 @@ kimai:
                 - { ldap_attr: cn, user_method: setAlias }
                 - { ldap_attr: memberof, user_method: addLdapGroup }
 ```
+{% include alert.html type="warning" alert="You need to configure the attributes in lower-case, otherwise they won't be processed." %}
 
 This will tell Kimai to sync the following fields:
 - `uid` will be the username in Kimai (will fail with a 500 if not unique)
@@ -122,13 +132,13 @@ This will tell Kimai to sync the following fields:
 
 #### Known limitation: email address
 
-Kimai requires that every user account has an email address.
-If you do not configure an attribute for email, the username will be used as fallback for the email during the initial import of the user account.
+Kimai requires that every user account has an email address. If you do not configure an attribute for email, 
+the username will be used as fallback for the email during the initial import of the user account.
 
-This will lead to problems, when you try to update a user profile in Kimai - you will see an error stating 
+This will lead to problems, when you try to update a user profile in Kimai - you will see an error saying
 that the email is not valid, even if you only tried to change the user roles.
 
-- Bad solution: change the users email address manually, it will not be overwritten
+- Bad solution: change the users email address manually, it will not be overwritten by the sync
 - Good solution: sync the users email address to Kimai
 
 #### Known limitation: manual profile changes will be overwritten
