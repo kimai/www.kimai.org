@@ -18,9 +18,9 @@ kimai:
     ldap:
         active: true  # default: false
         
+        # more infos about the connection params can be found at:
+        # https://docs.zendframework.com/zend-ldap/api/
         connection:
-            # more infos about the connection params can be found at:
-            # https://docs.zendframework.com/zend-ldap/api/
             host: 127.0.0.1
             #port: 389
             #useSsl: false                      # Enable SSL negotiation
@@ -29,7 +29,7 @@ kimai:
             #password: bar
             #bindRequiresDn: false
             #baseDn: ou=users, dc=kimai, dc=org # will use "user.baseDn" if not given
-            #accountFilterFormat: (&(uid=%s))   # sprintf format where %s will be the username
+            #accountFilterFormat: (&(uid=%s))   # %s will be replaced with the username
             #allowEmptyPassword: false
             #optReferrals: false
             #tryUsernameSplit: 
@@ -39,9 +39,9 @@ kimai:
             #accountDomainNameShort: HOST
 
         user:
-            baseDn: ou=users, dc=kimai, dc=org      # baseDn to query for users
-            #filter: (&(ObjectClass=Person))        # extended filter for the search for user attributes
-            #usernameAttribute: uid                 # field used in the LDAP bind for the given "login username" 
+            baseDn: ou=users, dc=kimai, dc=org        # baseDn to query for users
+            #filter: (&(ObjectClass=Person)(uid=%s))  # extended search filter, %s will be replaced with the username
+            #usernameAttribute: uid                   # field used in the LDAP bind for the given "login username" 
 
             # Mapping LDAP attributes to user entity
             attributes:
@@ -81,10 +81,10 @@ There are 2-3 steps involved:
 Obviously Kimai does not store the users password when logged-in via LDAP.
 There is no fallback mechanism, if your LDAP is not available, the user will not be able to login.
 
-But: with the default configuration users can change the internal password either via the user profile or via [forgot password]({% link _documentation/users.md %}).
-This manually chosen password would not be overwritten by the LDAP plugin. This would allow a user to login, 
-if if you removed him from LDAP. To prevent such mis-use:
-- disable the [password reset]({% link _documentation/users.md %}) function
+{% include alert.html type="danger" alert="The default configuration allows a user to change the internal password. This manually chosen password is not overwritten by the LDAP plugin and would allow a user to login, if if you removed him from LDAP." %} 
+
+To prevent that problem:
+- disable the "[Password reset]({% link _documentation/users.md %})" function
 - disable the "change my own password" permission for each role:
 
 ```yaml
@@ -97,19 +97,7 @@ kimai:
 ```
 Read more about `password_own_profile` and `password_other_profile` [permissions]({% link _documentation/permissions.md %}).
 
-{% include alert.html type="danger" alert="Deactivate the user if you want to safely prevent further access. Disabling access via LDAP might not be enough, depending on your configuration." %}
-
-**DN caching**
-
-On the first successful bind, Kimai stores the users DN. On subsequent logins, Kimai will first 
-lookup the username in its database and use the cached DN for the `bind`.
-
-If the users `dn` changed for some reason, the user will not be able to login and you have to delete the cached `dn`:
-```sql
-SELECT pref.* FROM kimai2_user_preferences pref 
-JOIN kimai2_users user ON pref.user_id = user.id 
-WHERE user.username = 'foo' AND pref.name = 'ldap.dn'
-```
+If you don't adjust your configuration, you have to deactivate users manually in Kimai.
 
 ### User attributes
 
@@ -140,7 +128,7 @@ Available methods on the User entity are: `setUsername(string)`, `setEmail(strin
 Kimai can use your LDAP groups and map them to [user roles]({% link _documentation/users.md %}).
 If configured, it will execute another `search` against your LDAP after authentication and importing user attributes.
 
-{% include alert.html type="warning" alert="Every user automatically owns the ROLE_USER role, you don't need to map that." %}
+{% include alert.html type="warning" alert="Every user automatically owns the ROLE_USER role, you don't have to create a mapping for it." %}
 
 Assuming this `role` configuration:
 ```yaml
@@ -148,21 +136,21 @@ kimai:
     ldap:
         role:
             baseDn: ou=groups, dc=kimai, dc=org
-            #filter: (&(objectClass=groupOfNames))
-            #userDnAttribute: member
-            #nameAttribute: cn
+            #filter: (&(objectClass=groupOfNames))  # additional group filter
+            #userDnAttribute: member                # field to lookup the users
+            #nameAttribute: cn                      # group name to match
             groups:
                 - { ldap_value: group1, role: ROLE_TEAMLEAD }
                 - { ldap_value: kimai_admin, role: ROLE_ADMIN }
                 - { ldap_value: administrator, role: ROLE_SUPER_ADMIN }
 ```
 
-Kimai will search the `baseDn` with the additional `filter` querying for `userDnAttribute=user['dn']` and extract the 
+Kimai will search the `baseDn` with `userDnAttribute=user['dn']` (e.g. `member=uid=user1,ou=users,dc=kimai,dc=org`) and extract the 
 group names from the result-sets attribute `nameAttribute`. 
 
 After finding a list of group names, they will be converted to Kimai roles:
-- first step is to lookup in `groups`, if there is a configured mapping that matches the `ldap_value` and if so, use the `role` without further processing 
-- if no mapping was found, the group name will be UPPERCASED and prefixed with `ROLE_`, so `admin` will become `ROLE_ADMIN`
+- first step is to lookup in `groups` mapping, if there is a match in `ldap_value` and uses the `role` value without further processing 
+- if no mapping was found, the group name will be UPPERCASED and prefixed with `ROLE_` => e.g. `admin` will become `ROLE_ADMIN`
 
 These converted names will validated and [only existing roles]({% link _documentation/users.md %}) will pass to the user profile.  
 
@@ -199,7 +187,28 @@ The rule is: either manage all roles in Kimai or in LDAP, mixing is not possible
 
 ## Examples
 
-### Local OpenLDAP
+{% include alert.html type="info" alert="Before you start to configure your LDAP, switch to 'dev' environment and tail 'var/log/dev.log'." %}
+
+### Minimal OpenLDAP
+
+A minimal setup with a local OpenLDAP without roles sync:
+
+```yaml
+    ldap:
+        active: true
+        connection:
+            host: 127.0.0.1
+            bindRequiresDn: true
+        user:
+            baseDn: ou=users, dc=kimai, dc=org
+            attributes:
+                - { ldap_attr: uid, user_method: setUsername }
+                - { ldap_attr: mail, user_method: setEmail }
+```
+
+Please start with a minimal setup. Only if that works: start extending your config.
+
+### OpenLDAP with group sync
 
 A secured local OpenLDAP on port 543 with roles sync for the objectClass `inetOrgPerson` users:
 
@@ -215,7 +224,7 @@ A secured local OpenLDAP on port 543 with roles sync for the objectClass `inetOr
             baseDn: dc=kimai, dc=org
         user:
             baseDn: ou=users, dc=kimai, dc=org
-            filter: (&(objectClass=inetOrgPerson))
+            filter: (&(objectClass=inetOrgPerson)(uid=%s))
             usernameAttribute: uid
             attributes:
                 - { ldap_attr: uid, user_method: setUsername }
@@ -252,6 +261,6 @@ kimai:
                 - { ldap_attr: samaccountname,  user_method: setUsername }
 ```
 
-{% include alert.html type="warning" alert="Disclosure: I have never worked with AD, please contact me at GitHub if you want or already use Kimai - I'd like to add more examples here." %}
+{% include alert.html type="warning" alert="I have never worked with AD, please contact me at GitHub if you can provide further examples." %}
 
 Internally Kimai uses the [FR3DLdapBundle](https://github.com/Maks3w/FR3DLdapBundle) - Kudos to @Maks3w!
