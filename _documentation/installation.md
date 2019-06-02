@@ -18,61 +18,63 @@ git clone -b {{ site.kimai_v2_version }} --depth 1 https://github.com/kevinpapst
 cd kimai2/
 ```
 
-Make sure the [file permissions are correct](https://symfony.com/doc/current/setup/file_permissions.html) and create your `.env` file:
+Make sure the [file permissions are correct](https://symfony.com/doc/current/setup/file_permissions.html) (you might have to use another group):
 ```bash
 chown -R :www-data .
 chmod -R g+r .
 chmod -R g+rw var/
-cp .env.dist .env
 ```
 
-Configure the database connection string in your the `.env` file (Kimai v2 supports MySQL/MariaDB and SQLite):
+Configure the database connection in the `.env` file (defaults to SQLite, but MySQL/MariaDB is recommended):
 ```
 # adjust all settings in .env to your needs
 APP_ENV=prod
 DATABASE_URL=mysql://user:password@127.0.0.1:3306/database
 ```
-SQLite is not recommended for production usage, check FAQ below. 
 
-Now install all dependencies for Kimai 2:
+Now install all dependencies, you might have to do this as webserver user (prefix with `sudo -u www-data`):
 ```bash
-sudo -u www-data composer install --no-dev --optimize-autoloader
+composer install --no-dev --optimize-autoloader
 ```
-If you see a `Malformed parameter "url"` error, see below in the FAQ.
 
-Optionally create the database:
+### Database
+
+Create the database if you haven't done it before with a DB administration tool (like PHPMyAdmin):
 ```bash
 bin/console doctrine:database:create
 ```
 
-Create all schema tables:
+Create all required tables for Kimai 2:
 ```bash
 bin/console doctrine:schema:create
 ```
-You can safely ignore the message: *This operation should not be executed in a production environment*!
 
-Make sure that upcoming updates can be correctly applied by setting the initial database version:
+Set the initial database version, otherwise you might run into troubles during updates:
 ```bash
-bin/console doctrine:migrations:version --add --all
+bin/console doctrine:migrations:version --add --all -n
 ```
 
-Warm up the cache (as webserver user):
+Warm up the cache, you might have to do this as webserver user (prefix with `sudo -u www-data`):
 ```bash
-sudo -u www-data bin/console cache:warmup --env=prod
+bin/console cache:warmup --env=prod
 ```
 
-Create your first user with the following command. You will be asked to enter a password afterwards:
-```bash
-bin/console kimai:create-user username admin@example.com ROLE_SUPER_ADMIN
-```
-_Tip: You can skip the "create user" step, if you are going to [import data from Kimai v1]({% link _documentation/migration-v1.md %})._
+### Create your first user
 
-For available roles, please refer to the [user documentation]({% link _documentation/users.md %}).
+There are several options to create your first user:
 
-> If you want to use a fully-featured web server (like Nginx or Apache) to run Kimai, configure it to point its DocumentRoot at the `public/` directory.
-> For more details, see [https://symfony.com/doc/current/setup/web_server_configuration.html](https://symfony.com/doc/current/setup/web_server_configuration.html)
+- via command: `bin/console kimai:create-user username admin@example.com ROLE_SUPER_ADMIN`
+- via UI: you can register a user, the first one will be promoted to the role `ROLE_SUPER_ADMIN`
+- you can skip the "create user" step, if you are going to [import data from Kimai v1]({% link _documentation/migration-v1.md %})
+- you can [configure LDAP]({% link _documentation/ldap.md %}) for authentication 
 
-Installation complete: enjoy time-tracking :-)
+### Webserver
+
+If you want to use a fully-featured web server (like Nginx or Apache) to run Kimai, configure it to point its DocumentRoot at the `public/` directory.
+For more details, see the [Webserver How-To]({% link _documentation/webserver-configuration.md %}) 
+and [this](https://symfony.com/doc/current/setup/web_server_configuration.html).
+
+{% include alert.html type="success" alert="Installation complete: enjoy time-tracking :-)" %}
 
 ## Docker
 
@@ -80,12 +82,12 @@ There is a dedicated article about [Docker setups]({% link _documentation/docker
 
 ## Hosting and 1-click installations
 
-These platforms adopted Kimai 2 to be compatible with their one-click installation systems:
+The following platforms adopted Kimai 2 to be compatible with their one-click installation systems.
 
 ### Vesta Control Panel
 
 Be aware that VestaCP uses the `admin` user instead of `www-data`. Replace the names in the permission commands above.
-Read [this issues](https://github.com/kevinpapst/kimai2/issues/743) if you have further questions. 
+Read [this issue](https://github.com/kevinpapst/kimai2/issues/743) if you have further questions. 
 
 ### YunoHost
 
@@ -98,7 +100,7 @@ Kimai 2 [package](https://github.com/YunoHost-Apps/kimai2_ynh) for [YunoHost](ht
 If you have no SSH access to your server (e.g. when you use a shared hosting package) then you need to install Kimai locally and upload it afterwards.
 
 Before I start to explain how to apply this workaround let me briefly explain the problem:
-Kimai has no [web-based installer]({{ site.kimai_v2_repo }}/issues/209) for now and you have to create the database tables with a console command.
+**Kimai has no [web-based installer]({{ site.kimai_v2_repo }}/issues/209)** for now and you have to create the database tables with a console command.
 It also does not come as pre-built ZIP file, so you have to install the dependencies manually.
 
 These are the steps you have to perform:
@@ -108,14 +110,6 @@ git clone https://github.com/kevinpapst/kimai2.git
 cd kimai2/
 ```
 
-Create the `.env` file (as copy from `.env.dist`), using the `prod` environment and adjust the database connection if needed:
-```
-# you need all settings from .env.dist, but these two need to be adjusted!
-APP_ENV=prod
-DATABASE_URL=sqlite:///%kernel.project_dir%/var/data/kimai.sqlite
-```
-The file `var/data/kimai.sqlite` will hold all your data, so make sure to **include it in your backups**!
-
 Prepare the environment by installing all dependencies:
 
 ```bash
@@ -124,23 +118,21 @@ composer install --no-dev
 
 Create the database schemas:
 ```bash
+bin/console doctrine:database:create
 bin/console doctrine:schema:create
-bin/console doctrine:migrations:version --add --all
+bin/console doctrine:migrations:version --add --all -n
 ```
 
-Optionally, you may create your first user with the following command (you will be prompted for a password).
+The file `var/data/kimai.sqlite` will hold all your data, so make sure to **include it in your backups**.
 
-```bash
-bin/console kimai:create-user username admin@example.com ROLE_SUPER_ADMIN
-```
-But you could also use the *register user* function in the login screen later, as the first user will get `SUPER_ADMIN` permissions.
-
-Finally delete the cache files, as they are OS dependent:
+Delete the cache files, as they are OS dependent:
 ```bash
 rm -rf var/cache/*
 ```
 
 Now you can upload the `kimai2/` directory to your hosting environment and point your domain (document root) to `kimai2/public/`.
+
+Use the *register user* function in the login screen to create the first user, which will automatically become `SUPER_ADMIN` permissions.
 
 ### Use MySQL database 
 
@@ -162,8 +154,8 @@ The default installation uses a SQLite database, so there is no need to create a
 Our default settings will work out-of-the-box, but you might want to adjust the `.env` values to your needs.
 You configure the database connection and environment in your `.env` file, e.g.:
 ```
-DATABASE_URL=sqlite:///%kernel.project_dir%/var/data/kimai.sqlite
 APP_ENV=dev
+DATABASE_URL=sqlite:///%kernel.project_dir%/var/data/kimai.sqlite
 ```
 
 The next commands will create the database and the schema:
@@ -222,7 +214,7 @@ npm run prod
 
 ### SQLite not recommended for production usage
 
-SQLite is a great database engine for testing, but when it comes to production usage it is imperfect due to several reasons:
+SQLite is a great database engine for testing, but when it comes to production usage it is not recommended:
 
 - It does not support ALTER TABLE commands and makes update procedures very clunky and problematic (we still try to support updates, but they are heavy on large databases)
 - It does [not support FOREIGN KEY](https://www.sqlite.org/quirks.html#foreign_key_enforcement_is_off_by_default) constraints [out of the box](https://www.sqlite.org/foreignkeys.html#fk_enable), which can lead to critical bugs when deleting users/activities/projects/customers
