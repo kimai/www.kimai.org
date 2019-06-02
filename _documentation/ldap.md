@@ -39,9 +39,9 @@ kimai:
             #accountDomainNameShort: HOST
 
         user:
-            baseDn: ou=users, dc=kimai, dc=org        # baseDn to query for users
-            #filter: (&(ObjectClass=Person)(uid=%s))  # extended search filter, %s will be replaced with the username
-            #usernameAttribute: uid                   # field used in the LDAP bind for the given "login username" 
+            baseDn: ou=users, dc=kimai, dc=org    # baseDn to query for users
+            #filter: (&(ObjectClass=Person))      # extended search filter for users
+            #usernameAttribute: uid               # field used in the LDAP bind for the given "login username" 
 
             # Mapping LDAP attributes to user entity
             attributes:
@@ -224,7 +224,7 @@ A secured local OpenLDAP on port 543 with roles sync for the objectClass `inetOr
             baseDn: dc=kimai, dc=org
         user:
             baseDn: ou=users, dc=kimai, dc=org
-            filter: (&(objectClass=inetOrgPerson)(uid=%s))
+            filter: (&(objectClass=inetOrgPerson))
             usernameAttribute: uid
             attributes:
                 - { ldap_attr: uid, user_method: setUsername }
@@ -263,4 +263,4 @@ kimai:
 
 {% include alert.html type="warning" alert="I have never worked with AD, please contact me at GitHub if you can provide further examples." %}
 
-Internally Kimai uses the [FR3DLdapBundle](https://github.com/Maks3w/FR3DLdapBundle) - Kudos to @Maks3w!
+The LDAP connection is based on [FR3DLdapBundle](https://github.com/Maks3w/FR3DLdapBundle), thanks to @Maks3w for sharing!
