@@ -53,7 +53,7 @@ More info in the [installation docs]({% link _documentation/installation.md %}).
 ## Development version
 
 A development version is the latest package we are currently working on AKA the `master`. 
-It will have new features and bugfixes included, but it might have not be as stable as an official release.
+It will have new features and bugfixes included, but it might not be as stable as an official release.
 
 If you are an experienced user of Kimai and have the resources to help us with testing or just like to play with brand new features,
 you can [download the latest development version]({{ site.kimai_v2_repo }}/zipball/master).
