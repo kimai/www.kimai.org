@@ -27,7 +27,6 @@ chmod -R g+rw var/
 
 Configure the database connection in the `.env` file (defaults to SQLite, but MySQL/MariaDB is recommended):
 ```
-# adjust all settings in .env to your needs
 APP_ENV=prod
 DATABASE_URL=mysql://user:password@127.0.0.1:3306/database
 ```
@@ -44,12 +43,12 @@ Create the database if you haven't done it before with a DB administration tool 
 bin/console doctrine:database:create
 ```
 
-Create all required tables for Kimai 2:
+Create the required tables:
 ```bash
 bin/console doctrine:schema:create
 ```
 
-Set the initial database version, otherwise you might run into troubles during updates:
+Set the initial database version, you will run into troubles during updates without that:
 ```bash
 bin/console doctrine:migrations:version --add --all -n
 ```
@@ -64,17 +63,18 @@ bin/console cache:warmup --env=prod
 There are several options to create your first user:
 
 - via command: `bin/console kimai:create-user username admin@example.com ROLE_SUPER_ADMIN`
-- via UI: you can register a user, the first one will be promoted to the role `ROLE_SUPER_ADMIN`
-- you can skip the "create user" step, if you are going to [import data from Kimai v1]({% link _documentation/migration-v1.md %})
+- via login screen: you can register a user, the first one will be promoted to the role `ROLE_SUPER_ADMIN`
 - you can [configure LDAP]({% link _documentation/ldap.md %}) for authentication 
+
+If you are going to [import data from Kimai v1]({% link _documentation/migration-v1.md %}) use a different username & email
 
 ### Webserver
 
-If you want to use a fully-featured web server (like Nginx or Apache) to run Kimai, configure it to point its DocumentRoot at the `public/` directory.
+Configure your web server (like Nginx or Apache) to point its DocumentRoot at the `public/` directory.
 For more details, see the [Webserver How-To]({% link _documentation/webserver-configuration.md %}) 
-and [this](https://symfony.com/doc/current/setup/web_server_configuration.html).
+and [this article](https://symfony.com/doc/current/setup/web_server_configuration.html).
 
-{% include alert.html type="success" alert="Installation complete: enjoy time-tracking :-)" %}
+{% include alert.html icon="far fa-smile-beam" type="success" alert="Installation complete: enjoy time-tracking!" %}
 
 ## Docker
 
@@ -84,61 +84,42 @@ There is a dedicated article about [Docker setups]({% link _documentation/docker
 
 The following platforms adopted Kimai 2 to be compatible with their one-click installation systems.
 
-### Vesta Control Panel
-
-Be aware that VestaCP uses the `admin` user instead of `www-data`. Replace the names in the permission commands above.
-Read [this issue](https://github.com/kevinpapst/kimai2/issues/743) if you have further questions. 
-
 ### YunoHost
 
 [![Install kimai2 with YunoHost](https://install-app.yunohost.org/install-with-yunohost.png)](https://install-app.yunohost.org/?app=kimai2)
 
 Kimai 2 [package](https://github.com/YunoHost-Apps/kimai2_ynh) for [YunoHost](https://yunohost.org).
  
+### Vesta Control Panel
+
+Be aware that VestaCP uses the `admin` user instead of `www-data`. Replace the names in the permission commands above.
+Read [this issue](https://github.com/kevinpapst/kimai2/issues/743) if you have further questions. 
+
 ## FTP installation
 
-If you have no SSH access to your server (e.g. when you use a shared hosting package) then you need to install Kimai locally and upload it afterwards.
+{% include alert.html type="warning" alert="FTP installation is only possible, if your hosting includes SQLite support!" %}
+ 
+If you have no SSH access to your server (e.g. when you use a shared hosting package) then you can [download a package]({% link _pages/download.md %}), 
+which includes a pre-installed Kimai version.
 
-Before I start to explain how to apply this workaround let me briefly explain the problem:
-**Kimai has no [web-based installer]({{ site.kimai_v2_repo }}/issues/209)** for now and you have to create the database tables with a console command.
-It also does not come as pre-built ZIP file, so you have to install the dependencies manually.
+You install it via FTP like this:
+- [download]({% link _pages/download.md %}) the latest release package for FTP 
+- extract it locally and upload all files
+- point your domain (document root) to the `public/` directory   
+- register your first user in the login screen, you will automatically become `SUPER_ADMIN`
+  
+The file `var/data/kimai.sqlite` will hold all your data, please include it in your backups.
 
-These are the steps you have to perform:
+**Unfortunately there is no support for updates yet. This feature will be included in the future.**
 
-```
-git clone https://github.com/kevinpapst/kimai2.git
-cd kimai2/
-```
+{% capture support %}
+I know that you probably don't have the technical background for managing a server yourself and need to rely 
+on a shared hosting package. If you thought about switching to a managed server before (they are affordable these days) 
+you can contact me, [I offer paid setup support]({% link _store/keleo-installation-support.md %}).
+{% endcapture %}
+{% assign support = support|markdownify %}
 
-Prepare the environment by installing all dependencies:
-
-```bash
-composer install --no-dev
-```
-
-Create the database schemas:
-```bash
-bin/console doctrine:database:create
-bin/console doctrine:schema:create
-bin/console doctrine:migrations:version --add --all -n
-```
-
-The file `var/data/kimai.sqlite` will hold all your data, so make sure to **include it in your backups**.
-
-Delete the cache files, as they are OS dependent:
-```bash
-rm -rf var/cache/*
-```
-
-Now you can upload the `kimai2/` directory to your hosting environment and point your domain (document root) to `kimai2/public/`.
-
-Use the *register user* function in the login screen to create the first user, which will automatically become `SUPER_ADMIN` permissions.
-
-### Use MySQL database 
-
-You might be able to use the MySQL instance in your shared hosting, if you can reconfigure the database user to allow access from your own computer.
-If that is allowed with your hoster, you can change your `.env` and point the `DATABASE_URL` to your MySQL before creating the database schema.
-It is worth a try, as using SQLite, especially without SSH access might be problematic during updates.
+{% include alert.html type="info" alert=support %}
 
 ## Development installation
 
@@ -150,26 +131,25 @@ cd kimai2/
 composer install
 ```
 
-The default installation uses a SQLite database, so there is no need to create a database for your first tests.
-Our default settings will work out-of-the-box, but you might want to adjust the `.env` values to your needs.
-You configure the database connection and environment in your `.env` file, e.g.:
+Kimai uses a SQLite database by default, which will work out-of-the-box. But you have to change your 
+environment to `dev` in your `.env` file. You can also configure a MySQL database if you prefer that:
 ```
 APP_ENV=dev
-DATABASE_URL=sqlite:///%kernel.project_dir%/var/data/kimai.sqlite
+DATABASE_URL=mysql://db_user:db_password@127.0.0.1:3306/db_name
 ```
 
-The next commands will create the database and the schema:
-```bash
-bin/console doctrine:database:create
-bin/console doctrine:schema:create
-```
-
-Lets bootstrap your environment by executing this command (which is only available in dev environment):
+The next command will import demo data, to test the application in its full beauty - with different user accounts, 
+customers, projects, activities and several thousand timesheet records. Lets bootstrap your database 
+(command only available in `dev` environment): 
 ```bash
 bin/console kimai:reset-dev
 ```
 
-You just imported demo data, to test the application in its full beauty and with several different user accounts and permission sets.
+Finally you start a web server, you can access Kimai in your browser at <http://127.0.0.1:8000/>.
+Stop the built-in web server by pressing `Ctrl + C` while you're in the terminal.
+```bash
+bin/console server:run
+```
 
 You can now login with these accounts:
 
@@ -183,24 +163,14 @@ You can now login with these accounts:
 | susan_super| kitten | api_kitten |Super-Administrator |
 
 Demo data can always be deleted by dropping the schema and re-creating it.
-The `kimai:reset-dev` command can always be executed later on to reset your dev database and cache.
+The `kimai:reset-dev` command will do that automatically and can always be executed later on to reset your dev database and cache.
 
-ATTENTION - if you don't want the test data, then erase it and create a empty schema:
+If you want to test with an empty installation, erase the database and re-create an empty schema:
 
 ```bash
 bin/console doctrine:schema:drop --force
 bin/console doctrine:schema:create
 ```
-
-There is no need to configure a virtual host in your web server to access the application for testing.
-Just use the built-in web server for your first tests:
-
-```bash
-bin/console server:run
-```
-
-This command will start a web server for Kimai. Now you can access the application in your browser at <http://127.0.0.1:8000/>.
-You can stop the built-in web server by pressing `Ctrl + C` while you're in the terminal.
 
 ### Frontend assets 
  
