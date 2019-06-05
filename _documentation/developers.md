@@ -59,12 +59,12 @@ Therefor put your `local.yaml` into the `dev/` folder: `config/packages/dev/loca
 
 ## Tests suites with PHPUnit
 
-Kimai tries to adopt a very high test and code coverage. Whenever changing code, you have to make sure 
+Kimai tries to adopt a high test and code coverage. Whenever changing code, you have to make sure 
 that the tests are still running. New code needs additional tests, otherwise your pull request might be declined. 
 
 You can run the unit and integration tests with built-in commands:
 
- ```bash
+```bash
 composer tests-unit
 composer tests-integration
 ```
@@ -75,11 +75,20 @@ composer tests
 vendor/bin/phpunit
 ```
 
+## Static code analysis via PHPStan
+
+Besides automated tests Kimai relies on PHPStan to detect code problems.
+
+You can run the checks before CI process kicks in via: 
+
+```bash
+composer kimai:phpstan
+```
 ## Coding styles
 
 You can run the code formatter with the built-in command like that:
 
- ```bash
+```bash
 composer codestyle
 ```
 
@@ -187,7 +196,9 @@ In the config `kimai.invoice.documents`, you can add a list of directories with 
 An invoice calculator is a class implementing `App\Invoice\CalculatorInterface` and it is responsible for calculating 
 invoice rates, taxes and taking care of all timesheet entries that should be displayed.   
 
-Every invoice calculator class will be automatically available when refreshing the application cache by the [InvoiceServiceCompilerPass]({{ site.kimai_v2_file }}/src/DependencyInjection/Compiler/InvoiceServiceCompilerPass.php):
+Every invoice calculator class will be automatically available, after refreshing the application cache with `bin/console cache:clear`.
+This "magic" happens in the [InvoiceServiceCompilerPass]({{ site.kimai_v2_file }}/src/DependencyInjection/Compiler/InvoiceServiceCompilerPass.php), 
+which finds the classes by the interface `CalculatorInterface`.
 
 The ID of the calculator must be unique, please prefix it with your vendor or bundle name and make sure it only contains
 character as it will be stored in a database column.
@@ -199,7 +210,9 @@ Translations are stored in the `invoice-calculator.xx.xliff`.
 An invoice-number generator is a class implementing `App\Invoice\NumberGeneratorInterface` and its only task is to generate 
 a number for the invoice. In most cases you do not want to mix multiple invoice-number generators throughout your invoices.   
 
-Every invoice number-generator class will be automatically available up when refreshing the application cache by the [InvoiceServiceCompilerPass]({{ site.kimai_v2_file }}/src/DependencyInjection/Compiler/InvoiceServiceCompilerPass.php):
+Every invoice number-generator class will be automatically available, after refreshing the application cache with `bin/console cache:clear`.
+This "magic" happens in the [InvoiceServiceCompilerPass]({{ site.kimai_v2_file }}/src/DependencyInjection/Compiler/InvoiceServiceCompilerPass.php), 
+which finds the classes by the interface `NumberGeneratorInterface`.
 
 The ID of the number generator must be unique, please prefix it with your vendor or bundle name and make sure it only contains
 character as it will be stored in a database column.
@@ -211,7 +224,9 @@ Translations are stored in the `invoice-numbergenerator.xx.xliff`.
 An invoice renderer is a class implementing `App\Invoice\RendererInterface` and it is responsible to convert an `InvoiceModel` (the actual data) 
 with the use of an `InvoiceDocument` (the template file) into a downloadable/printable document. 
 
-Every invoice renderer class will be automatically available when refreshing the application cache by the [InvoiceServiceCompilerPass]({{ site.kimai_v2_file }}/src/DependencyInjection/Compiler/InvoiceServiceCompilerPass.php):
+Every invoice renderer class will be automatically available, after refreshing the application cache with `bin/console cache:clear`.
+This "magic" happens in the [InvoiceServiceCompilerPass]({{ site.kimai_v2_file }}/src/DependencyInjection/Compiler/InvoiceServiceCompilerPass.php), 
+which finds the classes by the interface `RendererInterface`.
 
 ## Adding export renderer
 
