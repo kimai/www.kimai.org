@@ -34,3 +34,8 @@ The customers currency is used when displaying the recorded entries in the times
 
 It is also used for printing invoices, which is the reason while the invoice screen needs one applied customer filter 
 before any data will be shown. 
+
+## Time budget
+{% include new_since.html version="1.0" %}
+
+{% include time_budget.md %}
