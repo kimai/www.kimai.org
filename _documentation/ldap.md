@@ -70,12 +70,12 @@ kimai:
             # it is used to search for the user and fetch its "dn" for the "bind".
             # defaults to "uid" 
             usernameAttribute: uid
-            # search filter for users, used to retrieve the DN before bind.
-            # the result of the search filter must return 1 result only!
-            # Substring %s will be replaced with the username.
+            # search filter for users, used to retrieve the user (users DN) by username.
+            # the result of the search filter must return 1 result only.
+            # The substring %s will be replaced with the username.
             # default: (&(usernameAttribute=%s))
-            # default, if usernameAttribute is not set: (&(uid=%s))
-            filter: (&(uid=%s))
+            # default, if usernameAttribute is not changed: (&(uid=%s))
+            filter: (&(objectClass=inetOrgPerson)(uid=%s))
 
             # Configure the mapping between LDAP attributes and user entity
             attributes:
@@ -146,7 +146,7 @@ User data is synchronized on each login, fetching the latest data from your LDAP
 Obviously Kimai does not store the users password when logged-in via LDAP and there is 
 no fallback mechanism implemented, if your LDAP is not available (currently only ONE server can be configured).
 
-{% include alert.html type="danger" alert="The default configuration allows a user to change the internal password. This manually chosen password is not overwritten by the LDAP plugin and would allow a user to login, if if you removed him from LDAP." %} 
+{% include alert.html type="danger" alert="The default configuration allows a user to change the internal password. This manually chosen password is not overwritten by the LDAP plugin and would allow a user to login, even after you removed him from LDAP." %} 
 
 To prevent that problem:
 - disable the "[Password reset]({% link _documentation/users.md %})" function
@@ -193,12 +193,13 @@ In this example we tell Kimai to sync the following fields:
 - `mail` will be the account email address (read "known limitations" below)
 - `cn` will be used for the display name in Kimai
 
-Available methods on the User entity are: `setUsername(string)`, `setEmail(string)`, `setAlias(string)`, `setAvatar(url)`, `setTitle(string)`, `setEnabled(bool)`, `setSuperAdmin(bool)`, `addRole(string)` 
+Available methods on the User entity are: `setUsername(string)`, `setEmail(string)`, `setAlias(string)`, `setAvatar(url)`, `setTitle(string)`.
+Its unlikely that you will need those, but they also exist: `setEnabled(bool)`, `setSuperAdmin(bool)`, `addRole(string)`.
 
 ### Groups / Roles import
 
 Kimai can use your LDAP groups and map them to [user roles]({% link _documentation/users.md %}).
-If configured, it will execute another `search` against your LDAP after authentication and importing user attributes.
+If configured, it will execute another `search` against your LDAP after authentication and importing the user attributes.
 
 {% include alert.html type="warning" alert="Every user automatically owns the ROLE_USER role, you don't have to create a mapping for it." %}
 
@@ -265,7 +266,7 @@ Another simple solution to debug the generated queries is to start your OpenLDAP
 
 ### Minimal OpenLDAP
 
-A minimal setup with a local OpenLDAP without roles sync.
+A minimal setup with a local OpenLDAP with roles sync.
 This will only work for very basic LDAP setups, but it demonstrates the power of default values.
 
 ```yaml
@@ -297,7 +298,11 @@ SRCH base="ou=groups,dc=kimai,dc=org" scope=2 deref=0 filter="(&(member=uid=foo,
 SRCH attr=cn + *
 ```
 
-Always start start with a minimal config. And only if that doesn't throw errors: start extending your config.
+The Kimai account will have the username and email set to the `uid`, because we did not configure 
+another usernameAttribute (like `cn`) or a mapping for the email.
+
+If the role search would have returned groups with the `cn` value `admin`, `super_admin` or `teamlead`, 
+the new account would have been promoted into these roles.
 
 ### OpenLDAP with group sync
 
