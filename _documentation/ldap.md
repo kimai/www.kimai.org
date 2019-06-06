@@ -16,20 +16,20 @@ This is the full available configuration, with some examples and all optional se
 ```yaml
 kimai:
     ldap:
-        active: true  # default: false
+        # whether LDAP authentication should be used
+        active: true                            # default: false
         
         # more infos about the connection params can be found at:
         # https://docs.zendframework.com/zend-ldap/api/
+        
         connection:
             host: 127.0.0.1
-            #port: 389
+            #port: 389                          # LDAP port, default is 389
             #useSsl: false                      # Enable SSL negotiation
             #useStartTls: false                 # Enable TLS negotiation
             #username: foo
             #password: bar
             #bindRequiresDn: false
-            #baseDn: ou=users, dc=kimai, dc=org # will use "user.baseDn" if not given
-            #accountFilterFormat: (&(uid=%s))   # %s will be replaced with the username
             #allowEmptyPassword: false
             #optReferrals: false
             #tryUsernameSplit: 
@@ -39,21 +39,35 @@ kimai:
             #accountDomainNameShort: HOST
 
         user:
-            baseDn: ou=users, dc=kimai, dc=org    # baseDn to query for users
-            #filter: (&(ObjectClass=Person))      # extended search filter for users
-            #usernameAttribute: uid               # field used in the LDAP bind for the given "login username" 
+            baseDn: ou=users, dc=kimai, dc=org  # baseDn to query for users
+            #filter: (&(uid=%s))                # search filter for users
+                                                # defaults to (&(usernameAttribute=%s)) 
+                                                # this search filter must return 1 result only 
+                                                # %s will be replaced with the username
+                                                
+            #usernameAttribute: uid             # field used in bind for the "login username"
+                                                # defaults to "uid" 
 
             # Mapping LDAP attributes to user entity
-            attributes:
-                - { ldap_attr: uid, user_method: setUsername }
+            # defaults to:
+            # - { ldap_attr: "usernameAttribute", user_method: setUsername }
+            # - { ldap_attr: "usernameAttribute", user_method: setEmail }
+            
+            #attributes:
             #    - { ldap_attr: mail, user_method: setEmail }
             #    - { ldap_attr: cn, user_method: setAlias }
 
+        # If you want to use the LDAP groups to Kimai role import, you have to
+        # uncomment at least "role" and "role.baseDn"
+         
         #role:
-            #baseDn: ou=groups, dc=kimai, dc=org    # baseDn to query for groups - MUST be set, if "role" is uncommented
-            #filter: (&(objectClass=groupOfNames))  # additional filter to query the groups
-            #nameAttribute: cn                      # the group name
-            #userDnAttribute: member                # field to look in for the users dn 
+            #baseDn: ou=groups, dc=kimai, dc=org    # baseDn to query for groups
+                                                    # MUST be set to activate "group import"
+                                                    
+            #filter: (&(objectClass=groupOfNames))  # additional filter to query user groups
+                                                    # defaults to userDnAttribute=usersDn
+            #nameAttribute: cn                      # field that holds the group name
+            #userDnAttribute: member                # field that holds the users dn 
             
             # Convert LDAP group name (nameAttribute) to Kimai role
             #groups:
@@ -70,34 +84,42 @@ User data is synchronized on each login, fetching the latest data from your LDAP
 
 **How it works**
 
-There are 2-3 steps involved:
-- the login is performed by a `bind`
+- if `bindRequiredDn` is active, a `search` is executed to find the users DN by the given username
+- the authentication is checked with a `bind`
 - if the `bind` was successful:
-  - a `search` is executed to find and map LDAP attributes to the Kimai profile
-  - if configured, another `search` is executed to sync the user groups
+    - another `bind` using the service account (connection.username/connection.password) is executed and under that scope:
+      - a `search` is executed to find and map LDAP attributes to the Kimai profile
+      - if configured, another `search` is executed to sync and map the users LDAP groups to Kimai roles 
 
 **Password handling**
 
-Obviously Kimai does not store the users password when logged-in via LDAP.
-There is no fallback mechanism, if your LDAP is not available, the user will not be able to login.
+Obviously Kimai does not store the users password when logged-in via LDAP and there is 
+no fallback mechanism implemented, if your LDAP is not available (currently only ONE server can be configured).
 
 {% include alert.html type="danger" alert="The default configuration allows a user to change the internal password. This manually chosen password is not overwritten by the LDAP plugin and would allow a user to login, if if you removed him from LDAP." %} 
 
 To prevent that problem:
 - disable the "[Password reset]({% link _documentation/users.md %})" function
-- disable the "change my own password" permission for each role:
-
 ```yaml
 kimai:
+    user:
+        registration: false
+        password_reset: false
+```
+- disable the "change my own password" permission for each role:
+```yaml
     permissions:
         roles:
             ROLE_USER: ['!password_own_profile']
             ROLE_TEAMLEAD: ['!password_own_profile']
             ROLE_ADMIN: ['!password_own_profile']
 ```
+
 Read more about `password_own_profile` and `password_other_profile` [permissions]({% link _documentation/permissions.md %}).
 
-If you don't adjust your configuration, you have to deactivate users manually in Kimai.
+If you don't adjust your configuration, you have to:
+- either deactivate users manually in Kimai after deleting their LDAP account
+- or use a attribute mapping to set the user deactivated flag via `setEnabled()`
 
 ### User attributes
 
@@ -116,7 +138,7 @@ kimai:
 ```
 {% include alert.html type="warning" alert="You need to configure the attributes in lower-case, otherwise they won't be processed." %}
 
-This will tell Kimai to sync the following fields:
+In this example we tell Kimai to sync the following fields:
 - `uid` will be the username in Kimai (will fail with a 500 if not unique)
 - `mail` will be the account email address (read "known limitations" below)
 - `cn` will be used for the display name in Kimai
@@ -180,8 +202,8 @@ But: fields which are not synced, won't be changed during the user login.
 
 If you configured the group sync, the assigned user roles in Kimai will be overwritten on login.
 
-As the roles are resetted and replaced with the LDAP groups during authentication, 
-you cannot demote or promote a User permanently to another role in Kimai.
+Roles are not merged, but replaced during authentication, so you cannot  
+demote or promote a User permanently to another role in Kimai.
 
 The rule is: either manage all roles in Kimai or in LDAP, mixing is not possible.
 
@@ -194,6 +216,7 @@ The rule is: either manage all roles in Kimai or in LDAP, mixing is not possible
 A minimal setup with a local OpenLDAP without roles sync:
 
 ```yaml
+kimai:
     ldap:
         active: true
         connection:
@@ -201,6 +224,7 @@ A minimal setup with a local OpenLDAP without roles sync:
             bindRequiresDn: true
         user:
             baseDn: ou=users, dc=kimai, dc=org
+            filter: (&(objectClass=inetOrgPerson))
             attributes:
                 - { ldap_attr: uid, user_method: setUsername }
                 - { ldap_attr: mail, user_method: setEmail }
@@ -213,6 +237,7 @@ Please start with a minimal setup. Only if that works: start extending your conf
 A secured local OpenLDAP on port 543 with roles sync for the objectClass `inetOrgPerson` users:
 
 ```yaml
+kimai:
     ldap:
         active: true
         connection:
