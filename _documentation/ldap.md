@@ -5,13 +5,15 @@ toc: true
 since_version: 1.0
 ---
 
-Kimai supports connecting with your companies directory server (LDAP or AD).
+Kimai supports authentication viayour companies directory server (LDAP or AD). 
+LDAP users will be imported during the first login and their attributes and groups 
+updated on each following login. 
 
 ## Configuration
 
 If you want to activate LDAP authentication, you have to adjust your [local.yaml]({% link _documentation/configurations.md %}).
 
-This is the full available configuration, with some examples and all optional settings commented:
+This is the full available configuration, most of the values are optional and their default values were carefully chosen for maximum compatibility:
 
 ```yaml
 kimai:
@@ -21,17 +23,38 @@ kimai:
         
         # more infos about the connection params can be found at:
         # https://docs.zendframework.com/zend-ldap/api/
-        
         connection:
+            # The default hostname of the LDAP server 
+            # this option is mandatory
             host: 127.0.0.1
-            #port: 389                          # LDAP port, default is 389
-            #useSsl: false                      # Enable SSL negotiation
-            #useStartTls: false                 # Enable TLS negotiation
-            #username: foo
-            #password: bar
-            #bindRequiresDn: false
-            #allowEmptyPassword: false
+            # Default port for your LDAP port server
+            # default: 389
+            port: 389
+            # Whether or not the LDAP client should use SSL encrypted transport. 
+            # The useSsl and useStartTls options are mutually exclusive.
+            # default: false
+            useSsl: false
+            # Enable TLS negotiation (should be favoured over useSsl).
+            # The useSsl and useStartTls options are mutually exclusive.
+            # default: false
+            useStartTls: false
+            # the default credentials username. Some servers require that this 
+            # be in DN form. It must be given in DN form if the LDAP server 
+            # requires a DN to bind and binding should be possible with simple 
+            # usernames, default: empty
+            username:
+            # default credentials password (for username above), default: empty
+            password:
+            # If true, this instructs Kimai to retrieve the DN for the account, 
+            # used to bind if the username is not already in DN form. 
+            # default: false
+            bindRequiresDn: false 
+            # If set to true, this option indicates to the LDAP client that 
+            # referrals should be followed, default: false
             #optReferrals: false
+            # for the next options please refer to
+            # see https://docs.zendframework.com/zend-ldap/api/ 
+            #allowEmptyPassword: false
             #tryUsernameSplit: 
             #networkTimeout: 
             #accountCanonicalForm: 3
@@ -39,36 +62,63 @@ kimai:
             #accountDomainNameShort: HOST
 
         user:
-            baseDn: ou=users, dc=kimai, dc=org  # baseDn to query for users
-            #filter: (&(uid=%s))                # search filter for users
-                                                # defaults to (&(usernameAttribute=%s)) 
-                                                # this search filter must return 1 result only 
-                                                # %s will be replaced with the username
-                                                
-            #usernameAttribute: uid             # field used in bind for the "login username"
-                                                # defaults to "uid" 
+            # baseDn to query for users
+            # this value is mandatory
+            baseDn: ou=users, dc=kimai, dc=org
+            # field used to match the username with your LDAP users
+            # if "bindRequiresDn: false" is set it is used in "bind", otherwise
+            # it is used to search for the user and fetch its "dn" for the "bind".
+            # defaults to "uid" 
+            usernameAttribute: uid
+            # search filter for users, used to retrieve the DN before bind.
+            # the result of the search filter must return 1 result only!
+            # Substring %s will be replaced with the username.
+            # default: (&(usernameAttribute=%s))
+            # default, if usernameAttribute is not set: (&(uid=%s))
+            filter: (&(uid=%s))
 
-            # Mapping LDAP attributes to user entity
-            # defaults to:
-            # - { ldap_attr: "usernameAttribute", user_method: setUsername }
-            # - { ldap_attr: "usernameAttribute", user_method: setEmail }
-            
-            #attributes:
-            #    - { ldap_attr: mail, user_method: setEmail }
-            #    - { ldap_attr: cn, user_method: setAlias }
+            # Configure the mapping between LDAP attributes and user entity
+            attributes:
+                # this rule is automatically prepended and can be overwritten
+                # username is set to the value of the configured 
+                # "usernameAttribute" field (see above)
+                - { ldap_attr: "usernameAttribute", user_method: setUsername }
+                # only applied if you don't configure a mapping for setEmail()
+                - { ldap_attr: "usernameAttribute", user_method: setEmail }
+                # an example which will set the display name in Kimai from the 
+                # value of the "common name" field in your LDAP
+                - { ldap_attr: cn, user_method: setAlias }
 
-        # If you want to use the LDAP groups to Kimai role import, you have to
-        # uncomment at least "role" and "role.baseDn"
-         
-        #role:
-            #baseDn: ou=groups, dc=kimai, dc=org    # baseDn to query for groups
-                                                    # MUST be set to activate "group import"
-                                                    
-            #filter: (&(objectClass=groupOfNames))  # additional filter to query user groups
-                                                    # defaults to userDnAttribute=usersDn
-            #nameAttribute: cn                      # field that holds the group name
-            #userDnAttribute: member                # field that holds the users dn 
-            
+        # You can comment the following section, if you don't want to manage
+        # user roles in Kimai via LDAP groups. If you want to user the group
+        # sync, you have to set at least the "role.baseDn" config
+        # default: deactivated as baseDn "role.baseDn" is empty by default
+        role:
+            # baseDn to query for groups, MUST be set to activate the 
+            # "group import" feature
+            # default: empty (deactivated)
+            baseDn: ou=groups, dc=kimai, dc=org
+            # filter to query user groups, all results will be matched against 
+            # the configured "groups" mapping below.
+            # default: empty
+            # The filter will ALWAYS be generated like this:
+            # (&%filter(userDnAttribute=valueOfUsernameAttribute)) 
+            # the following example rule will be expanded to:
+            # (&(&(objectClass=groupOfNames))(member=valueOfUsernameAttribute))
+            filter: (&(objectClass=groupOfNames))  
+            # the following field is taken from the LDAP user entry and its 
+            # value is used in the filter above as "valueOfUsernameAttribute"
+            # the example below uses "posix group style memberUid". 
+            # default: dn
+            usernameAttribute: uid
+            # field that holds the group name, which will be used to map the 
+            # found groups with Kimai roles (see groups mapping below)
+            # default: cn
+            nameAttribute: cn
+            # field that holds the users dn in your LDAP group definition.
+            # value of this configuration is used in the filter (see above)
+            # default: member
+            userDnAttribute: member
             # Convert LDAP group name (nameAttribute) to Kimai role
             #groups:
             #    - { ldap_value: group1, role: ROLE_TEAMLEAD }
@@ -211,9 +261,12 @@ The rule is: either manage all roles in Kimai or in LDAP, mixing is not possible
 
 {% include alert.html type="info" alert="Before you start to configure your LDAP, switch to 'dev' environment and tail 'var/log/dev.log'." %}
 
+Another simple solution to debug the generated queries is to start your OpenLDAP with `sudo /usr/libexec/slapd -d256`.
+
 ### Minimal OpenLDAP
 
-A minimal setup with a local OpenLDAP without roles sync:
+A minimal setup with a local OpenLDAP without roles sync.
+This will only work for very basic LDAP setups, but it demonstrates the power of default values.
 
 ```yaml
 kimai:
@@ -224,13 +277,27 @@ kimai:
             bindRequiresDn: true
         user:
             baseDn: ou=users, dc=kimai, dc=org
-            filter: (&(objectClass=inetOrgPerson))
-            attributes:
-                - { ldap_attr: uid, user_method: setUsername }
-                - { ldap_attr: mail, user_method: setEmail }
+        role:
+            baseDn: ou=groups, dc=kimai, dc=org
 ```
 
-Please start with a minimal setup. Only if that works: start extending your config.
+The generated query to find the users DN looks like this:
+```
+SRCH base="ou=users,dc=kimai,dc=org" scope=2 deref=0 filter="(&(uid=foo))"
+SRCH attr=dn
+```
+The query to find all user attributes looks like this:
+```
+SRCH base="uid=foo,ou=users,dc=kimai,dc=org" scope=2 deref=0 filter="(objectClass=*)"
+SRCH attr=+ *
+```
+The generated query for the group-to-role mapping: 
+```
+SRCH base="ou=groups,dc=kimai,dc=org" scope=2 deref=0 filter="(&(member=uid=foo,ou=users,dc=kimai,dc=org))"
+SRCH attr=cn + *
+```
+
+Always start start with a minimal config. And only if that doesn't throw errors: start extending your config.
 
 ### OpenLDAP with group sync
 
@@ -246,10 +313,9 @@ kimai:
             user: kimai
             password: serverToken
             bindRequiresDn: true
-            baseDn: dc=kimai, dc=org
         user:
             baseDn: ou=users, dc=kimai, dc=org
-            filter: (&(objectClass=inetOrgPerson))
+            filter: (&(objectClass=inetOrgPerson)(uid=%s))
             usernameAttribute: uid
             attributes:
                 - { ldap_attr: uid, user_method: setUsername }
@@ -259,6 +325,7 @@ kimai:
             baseDn: ou=groups, dc=kimai, dc=org
             filter: (&(objectClass=groupOfNames)(|(cn=teamlead)(cn=manager)(cn=devops)))
             userDnAttribute: member
+            usernameAttribute: uid
             groups:
                 - { ldap_value: teamlead, role: ROLE_TEAMLEAD }
                 - { ldap_value: manager, role: ROLE_ADMIN }
