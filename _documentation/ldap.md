@@ -58,9 +58,19 @@ kimai:
             
             # LDAP search filter to find the user (%s will be replaced by the username).
             # Should be set, to be compatible with your object structure.
-            # default, if bindRequiresDn is true: (&(uid=%s))
-            # default, if bindRequiresDn is false: (&(objectClass=user)(sAMAccountName=%s))
-            accountFilterFormat: (&(objectClass=inetOrgPerson)(uid=%s))
+            # You don not need to set this filter, unless you have a very special setup 
+            # or use Microsofts Active directory.
+            #
+            # Defaults:
+            # - if bindRequiresDn is false: (&(objectClass=user)(sAMAccountName=%s))
+            # - if bindRequiresDn is true: (&%filter%(uid=%s))
+            #   - %filter% = empty 
+            #     accountFilterFormat = (&(usernameAttribute=%s))
+            #   - %filter% = (&(objectClass=inetOrgPerson)) 
+            #     accountFilterFormat = (&(objectClass=inetOrgPerson))(&(usernameAttribute=%s))
+            #
+            # Here %filter% is the "filter" configuration defined below in the "user" section
+            #accountFilterFormat: (&(objectClass=inetOrgPerson)(uid=%s))
             
             # If true, this instructs Kimai to retrieve the DN for the account, 
             # used to bind if the username is not already in DN form. 
@@ -342,7 +352,8 @@ kimai:
             port: 543
             user: kimai
             password: serverToken
-            accountFilterFormat: (&(objectClass=posixAccount)(uid=%s))
+            # auto generated fallback is the same, no need to set it explicit:
+            #accountFilterFormat: (&(objectClass=posixAccount)(uid=%s))
         user:
             baseDn: ou=users, dc=kimai, dc=org
             filter: (&(objectClass=posixAccount))
