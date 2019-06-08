@@ -65,13 +65,13 @@ that the tests are still running. New code needs additional tests, otherwise you
 You can run the unit and integration tests with built-in commands:
 
 ```bash
-composer tests-unit
-composer tests-integration
+composer kimai:tests-unit
+composer kimai:tests-integration
 ```
 
 Or you simply run all tests with: 
 ```bash
-composer tests
+composer kimai:tests
 vendor/bin/phpunit
 ```
 
@@ -89,13 +89,13 @@ composer kimai:phpstan
 You can run the code formatter with the built-in command like that:
 
 ```bash
-composer codestyle
+composer kimai:codestyle
 ```
 
 You can also automatically fix the violations by running: 
 
  ```bash
-composer codestyle-fix
+composer kimai:codestyle-fix
 ```
 
 Be aware that this command will modify all files with violations in the directories `src/` and `tests/`, so its a good idea to commit first.
