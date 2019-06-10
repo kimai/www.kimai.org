@@ -26,15 +26,15 @@ security:
     providers:
         chain_provider:
             chain:
-                providers: [fos_userbundle, kimai_ldap]
+                providers: [kimai_ldap]
     firewalls:
         secured_area:
             kimai_ldap: ~
 ```  
 
-Following that, you need to re-build the cache as described in the [configurations chapter]({% link _documentation/configurations.md %}). 
+After that, you need to adjust the LDAP config (see below) and at the end re-build the cache as described in the [configurations chapter]({% link _documentation/configurations.md %}). 
 
-You deactivate it the other way around, delete or comment the lines above and clear the cache. 
+You can deactivate it the other way around, delete or comment the lines above and clear the cache. 
 
 ### Configuration
 
