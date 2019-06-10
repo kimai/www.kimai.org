@@ -9,7 +9,34 @@ Kimai supports authentication viayour companies directory server (LDAP or AD).
 LDAP users will be imported during the first login and their attributes and groups 
 updated on each following login. 
 
-## Configuration
+## Installation
+
+In order to use the LDAP authentication module of Kimai, you have to install the ZendFramework LDAP library:
+```bash
+composer require zendframework/zend-ldap
+```
+
+### Activate LDAP authentication
+
+You activate the LDAP authentication by adding the following code to the end of your 
+[local.yaml]({% link _documentation/configurations.md %}):
+
+```yaml
+security:
+    providers:
+        chain_provider:
+            chain:
+                providers: [fos_userbundle, kimai_ldap]
+    firewalls:
+        secured_area:
+            kimai_ldap: ~
+```  
+
+Following that, you need to re-build the cache as described in the [configurations chapter]({% link _documentation/configurations.md %}). 
+
+You deactivate it the other way around, delete or comment the lines above and clear the cache. 
+
+### Configuration
 
 If you want to activate LDAP authentication, you have to adjust your [local.yaml]({% link _documentation/configurations.md %}).
 
@@ -18,10 +45,6 @@ This is the full available configuration, most of the values are optional and th
 ```yaml
 kimai:
     ldap:
-        # You have to activate LDAP authentication by setting this to true.
-        # default: false
-        active: true
-        
         # more infos about the connection params can be found at:
         # https://docs.zendframework.com/zend-ldap/api/
         connection:
@@ -307,7 +330,6 @@ This will only work for very basic LDAP setups, but it demonstrates the power of
 ```yaml
 kimai:
     ldap:
-        active: true
         connection:
             host: 127.0.0.1
         user:
@@ -345,7 +367,6 @@ A secured local OpenLDAP on port 543 with roles sync for the objectClass `posixA
 ```yaml
 kimai:
     ldap:
-        active: true
         connection:
             host: 127.0.0.1
             useSsl: true
@@ -380,7 +401,6 @@ Just an example how you might be able to connect to your AD.
 ```yaml
 kimai:
     ldap:
-        active: true
         connection:
             host: ad.example.com
             username: user@ad.example.com
