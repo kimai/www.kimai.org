@@ -89,10 +89,10 @@ kimai:
             # - if bindRequiresDn is true: (&%filter%(uid=%s))
             #   - %filter% = empty 
             #     accountFilterFormat = (&(usernameAttribute=%s))
-            #   - %filter% = (&(objectClass=inetOrgPerson)) 
-            #     accountFilterFormat = (&(objectClass=inetOrgPerson))(&(usernameAttribute=%s))
+            #   - %filter% = (&(objectClass=posixAccount)) 
+            #     accountFilterFormat = (&(objectClass=posixAccount))(&(usernameAttribute=%s))
             #
-            # Here %filter% is the "filter" configuration defined below in the "user" section
+            # %filter% is the "filter" configuration defined below in the "user" section
             #accountFilterFormat: (&(objectClass=inetOrgPerson)(uid=%s))
             
             # If true, this instructs Kimai to retrieve the DN for the account, 
@@ -186,6 +186,8 @@ kimai:
 Kimai uses the Zend Framework LDAP module and uses the configured `connection` parameters without modification. 
 Find out more about the settings in the [detailed documentation](https://docs.zendframework.com/zend-ldap/api/). 
 
+Remember to re-build the cache for changes to take effect, see [configurations chapter]({% link _documentation/configurations.md %}). 
+
 ## User synchronization
 
 User data is synchronized on each login, fetching the latest data from your LDAP.
@@ -216,6 +218,7 @@ kimai:
 ```
 - disable the "change my own password" permission for each role:
 ```yaml
+kimai:
     permissions:
         roles:
             ROLE_USER: ['!password_own_profile']
