@@ -5,10 +5,12 @@ date: "2019-06-11 20:00:00 +0200"
 author: kevinpapst
 ---
 
-The title might be a bit misleading, as Kimai will not really run as native app.
+Thanks to the Kimai user Roman, who wrote me about that topic, I can share a nice inspiration with you today. 
 
+The title might be a bit misleading, as Kimai will not really run as native app.
 You still have to have your server installation at hand, but with so many fantastic projects out there, 
 it is really easy nowadays to pack Kimai into an Electron container, simulating a native app.
+
 No more browser tabs required, open Kimai inside an application container which almost feels like a native app, 
 which will gets its own place in your system tray.
 
