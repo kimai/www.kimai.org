@@ -17,7 +17,7 @@ We use [nativefier](https://github.com/jiahaog/nativefier) to bundle the app wit
 ```bash
 npm install nativefier -g
 wget https://demo.kimai.org/touch-icon-192x192.png
-nativefier --icon touch-icon-192x192.png --name "Kimai 2 - Demo" "https://demo.kimai.org/"
+nativefier --icon touch-icon-192x192.png --name "Kimai 2 - Demo" "https://demo.kimai.org/" --disable-dev-tools
 ``` 
 
 And that's it already. You will have a new directory with an executable inside.
@@ -26,5 +26,7 @@ Using this method, an administrator could even distribute the software to all hi
 
 ## Caveats
 
-There are some minor issues: after restarting the app, you have to re-login ... but who will close a time-tracker anyways!?
-Cookies do not seem to be stored across sessions, so column filters will be reset as well.
+There are some minor issues: 
+- after restarting the app, you have to re-login ... but who will close a time-tracker anyways!?
+- Cookies do not seem to be stored across sessions, so column filters will be reset as well.
+- File downloads are buggy :-( so export and invoice might not work as expected
