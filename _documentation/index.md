@@ -34,8 +34,11 @@ This is the official documentation for the Kimai time-tracking application v2.
 <ul>
     {% for p in group.pages %}
     {% assign doc = site.documentation | where: "slug", p | first %}
-    <li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
+        <li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
     {% endfor %}
+    {% if forloop.last %}
+        <li><a href="{% link _posts/2019-06-11-using-kimai-as-native-app.md %}">Using Kimai as native app</a></li>
+    {% endif %}
 </ul>
 {% endfor %}
 
