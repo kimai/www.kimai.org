@@ -30,6 +30,7 @@ The files in `translations/` as a quick overview:
 - `pagerfanta` - includes the translations for the pagination component below data-tables
 - `plugins` - the plugin screen
 - `system-configuration` - all system configuration, which can be changed through the UI
+- `tags` - the tags administration screen
 - `validators` - related to violations/validation of submitted form data (or API calls)
 
 ### Authentication screens
