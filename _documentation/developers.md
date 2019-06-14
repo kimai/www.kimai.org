@@ -185,6 +185,28 @@ class MyDashboardSubscriber implements EventSubscriberInterface
 ```
 For more details check this [dashboard subscriber]({{ site.kimai_v2_file }}/src/EventSubscriber/DashboardSubscriber.php).
 
+### Adding new widget types
+
+You can add your own widgets via plugin by adding two classes:
+- a widget implementing `\App\Widget\WidgetInterface`
+  - or for the lazy folks extending `\App\Widget\Type\AbstractWidgetType`
+- a widget renderer implementing `\App\Widget\WidgetRendererInterface`
+  - if you want to use twig to render your widget, extend `\App\Widget\Renderer\AbstractTwigRenderer`
+
+These widgets can now be injected to the Dashboard as explained above with the `MyDashboardSubscriber`.
+
+### Display widgets in your template
+ 
+You can also use widgets in your twig templates like this:
+{% raw %}
+```twig
+{{ render_widget('DailyWorkingTimeChart', {'type': 'line', 'begin': 'monday this week 00:00:00', 'end': 'friday this week 23:59:59'}) }}
+{{ render_widget('userAmountMonth', {'color': 'blue', 'icon': 'user'}) }}
+```
+{% endraw %}
+
+Widgets are referenced by their ID.
+
 ## Invoices 
 
 ### Adding documents for invoice rendering 
