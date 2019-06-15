@@ -70,7 +70,24 @@ Be aware: users with the [permission]({% link _documentation/permissions.md %}) 
 start time and by a simple calculation the end time, if they open each entry manually. If your country has work regulations 
 that should limit access to this data, make sure to remove this permission for persons without special access regulations (e.g. your HR department).
 
-#### Duration format
+### Duration with fixed start time
+{% include new_since.html version="1.0" %}
+
+The `duration_fixed_start` mode removes the begin and end datetime fields and uses a default start time  (see it as a partial anonymization).
+The user is not limited in defining the entries duration. 
+
+All logged entries for one day will start at the same time, which can be configured like this:
+```yaml
+kimai:
+    timesheet:
+        default_begin: 07:30
+```
+By default this is configured to `now` which is most likely not what you want.
+ 
+You can read more about the accepted formats [here](https://www.php.net/manual/en/datetime.formats.php) and especially in 
+the [time formats](https://www.php.net/manual/en/datetime.formats.time.php) chapter.
+
+## Duration format
 
 {% include duration_format.md %}
 
@@ -225,10 +242,9 @@ kimai:
 ```
 
 ## Exported records
+{% include new_since.html version="1.0" %}
 
 Exported records will be locked to prevent manipulation of cleared data.
  
 There is the permission `edit_exported_timesheet` which allows to edit and delete these locked entries nevertheless, 
 which by default is given to users with `ROLE_ADMIN` and `ROLE_SUPER_ADMIN`. 
-
-Available since: 1.0
