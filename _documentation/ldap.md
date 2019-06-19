@@ -131,8 +131,9 @@ kimai:
             filter: (&(objectClass=inetOrgPerson))
 
             # Configure the mapping between LDAP attributes and user entity
+            # The ldap_attr must be given in lowercase!
             attributes:
-                # This rule is automatically prepended and can be overwritten.
+                # The following 2 rules are automatically prepended and can be overwritten.
                 # Username is set to the value of the configured "usernameAttribute" field 
                 - { ldap_attr: "usernameAttribute", user_method: setUsername }
                 # Only applied if you don't configure a mapping for setEmail()
@@ -161,6 +162,7 @@ kimai:
               
             # The following field is taken from the LDAP user entry and its 
             # value is used in the filter above as "valueOfUsernameAttribute".
+            # The attribute must be given in lowercase!
             # The example below uses "posix group style memberUid". 
             # default: dn
             #usernameAttribute: uid
@@ -414,9 +416,11 @@ kimai:
         user:
             baseDn: dc=ad,dc=example,dc=com
             filter: (&(objectClass=Person))
+            usernameAttribute: samaccountname
             attributes:
                 - { ldap_attr: samaccountname,  user_method: setUsername }
 ```
+{% include alert.html type="warning" alert="You need to configure the attributes in lower-case, otherwise they won't be processed." %}
 
 {% include alert.html type="warning" alert="I have never worked with AD, please contact me at GitHub if you can provide further examples." %}
 
