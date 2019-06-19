@@ -401,7 +401,7 @@ kimai:
 
 ### Connect to Active Directory
 
-Just an example how you might be able to connect to your AD.
+This is an [example](https://gist.github.com/firegore/b12d43ef679bd8020a7b5ffa4a556083) how you can connect your AD with Kimai.
  
 ```yaml
 kimai:
@@ -418,10 +418,17 @@ kimai:
             filter: (&(objectClass=Person))
             usernameAttribute: samaccountname
             attributes:
+                - { ldap_attr: mail, user_method: setEmail }
+                - { ldap_attr: displayname, user_method: setAlias }
                 - { ldap_attr: samaccountname,  user_method: setUsername }
+        role:
+            baseDn: dc=ad,dc=example,dc=com
+            filter: (&(objectClass=group))
+            groups:
+                - { ldap_value: Leads, role: ROLE_TEAMLEAD }
+                - { ldap_value: Sysadmins, role: ROLE_SUPER_ADMIN }
+                - { ldap_value: Users, role: ROLE_USER }
 ```
 {% include alert.html type="warning" alert="You need to configure the attributes in lower-case, otherwise they won't be processed." %}
-
-{% include alert.html type="warning" alert="I have never worked with AD, please contact me at GitHub if you can provide further examples." %}
 
 The LDAP code is based on [the work](https://github.com/Maks3w/FR3DLdapBundle) by @Maks3w , thanks for sharing!
