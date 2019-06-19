@@ -43,10 +43,7 @@ To rebuild all assets you have to execute:
 yarn run prod
 ```
 
-You can find more information at:
-
-- https://symfony.com/doc/current/frontend/encore/installation.html
-- https://symfony.com/doc/current/frontend.html
+You can find more information [here](https://symfony.com/doc/current/frontend/encore/installation.html) and [here](https://symfony.com/doc/current/frontend.html).
 
 ## local.yaml
 
@@ -69,30 +66,26 @@ composer kimai:tests-unit
 composer kimai:tests-integration
 ```
 
-Or you simply run all tests with: 
-```bash
-composer kimai:tests
-vendor/bin/phpunit
-```
+Or you simply run all tests with one of: 
+- `composer kimai:tests`
+- `vendor/bin/phpunit`
 
 ## Static code analysis via PHPStan
 
 Besides automated tests Kimai relies on PHPStan to detect code problems.
-
-You can run the checks before CI process kicks in via: 
 
 ```bash
 composer kimai:phpstan
 ```
 ## Coding styles
 
-You can run the code formatter with the built-in command like that:
+You can run the code sniffer with the built-in command like that:
 
 ```bash
 composer kimai:codestyle
 ```
 
-You can also automatically fix the violations by running: 
+And you can also automatically fix the violations by running: 
 
  ```bash
 composer kimai:codestyle-fix
@@ -271,3 +264,158 @@ You can apply several rules in your config file [local.yaml]({% link _documentat
 The configuration for "rounding rules" can be fetched from the container parameter `kimai.timesheet.rounding`.
 
 The configuration for "hourly-rates multiplication factors" can be fetched from the container parameter `kimai.timesheet.rates`.
+
+## Adding custom fields
+{% include new_since.html version="1.0" %}
+
+Kimai supports custom fields for literally every object:
+- `User` via `UserPreference`
+- `Timesheet` via `TimesheetMeta` 
+- `Customer` via `CustomerMeta` 
+- `Project` via `ProjectMeta` 
+- `Activity` via `ActivityMeta`
+
+Using the fields for internal reasons (eg. importing and linking to IDs of external apps) is simple.
+You can add these fields programmatically at any time:
+```php
+$externalId = (new TimesheetMeta())->setName('externalID')->setValue(1);
+$timesheet = new Timesheet();
+$timesheet->setMetaField($externalId);
+``` 
+
+But what if you want the field to be editable by users?
+
+Well, this is possible through the registration via an EventSubscriber, where you add your custom fields.
+
+### UserPreference
+
+Adding a new user preference is simple as that:
+
+```php
+use App\Entity\UserPreference;
+use App\Event\UserPreferenceEvent;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+
+class UserProfileSubscriber implements EventSubscriberInterface
+{
+    public static function getSubscribedEvents(): array
+    {
+        return [
+            UserPreferenceEvent::CONFIGURE => ['loadUserPreferences', 200]
+        ];
+    }
+
+    public function loadUserPreferences(UserPreferenceEvent $event)
+    {
+        if (null === ($user = $event->getUser())) {
+            return;
+        }
+
+        // You attach every field to the event and all the heavy lifting is done by Kimai.
+        // The value is the default as long as the user has not yet updated his preferences,
+        // otherwise it will be overwritten with the users choice, stored in the database.
+        $event->addUserPreference(
+            (new UserPreference())
+                ->setName('fooooo-bar')
+                ->setValue(false)
+                ->setType(CheckboxType::class)
+        );
+    }
+}
+```
+
+### Custom field for other entities
+
+The following example adds a custom fields to each entity type:
+- `Timesheet` via `TimesheetMeta` 
+- `Customer` via `CustomerMeta` 
+- `Project` via `ProjectMeta` 
+- `Activity` via `ActivityMeta`
+
+This example might seem a little awkward first, as I wanted to add only one example for all 
+possible entity types and that definitely doesn't make the code prettier ;-)
+But I hope you get the point and see in `prepareEntity` what needs to be done to setup new 
+custom fields, which can be edited by the user. 
+
+```php
+use App\Entity\ActivityMeta;
+use App\Entity\CustomerMeta;
+use App\Entity\EntityWithMetaFields;
+use App\Entity\MetaTableTypeInterface;
+use App\Entity\ProjectMeta;
+use App\Entity\TimesheetMeta;
+use App\Event\ActivityMetaDefinitionEvent;
+use App\Event\CustomerMetaDefinitionEvent;
+use App\Event\ProjectMetaDefinitionEvent;
+use App\Event\TimesheetMetaDefinitionEvent;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Validator\Constraints\Length;
+
+class MetaFieldSubscriber implements EventSubscriberInterface
+{
+    public static function getSubscribedEvents(): array
+    {
+        return [
+            TimesheetMetaDefinitionEvent::class => ['loadTimesheetMeta', 200],
+            CustomerMetaDefinitionEvent::class => ['loadCustomerMeta', 200],
+            ProjectMetaDefinitionEvent::class => ['loadProjectMeta', 200],
+            ActivityMetaDefinitionEvent::class => ['loadActivityMeta', 200],
+        ];
+    }
+
+    public function loadTimesheetMeta(TimesheetMetaDefinitionEvent $event)
+    {
+        $this->prepareEntity($event->getEntity(), new TimesheetMeta());
+    }
+
+    public function loadCustomerMeta(CustomerMetaDefinitionEvent $event)
+    {
+        $this->prepareEntity($event->getEntity(), new CustomerMeta());
+    }
+
+    public function loadProjectMeta(ProjectMetaDefinitionEvent $event)
+    {
+        $this->prepareEntity($event->getEntity(), new ProjectMeta());
+    }
+
+    public function loadActivityMeta(ActivityMetaDefinitionEvent $event)
+    {
+        $this->prepareEntity($event->getEntity(), new ActivityMeta());
+    }
+
+    private function prepareLocationField(MetaTableTypeInterface $entity)
+    {
+        return $entity
+            ->setName('location')
+            ->setType(TextType::class)
+            ->addConstraint(new Length(['max' => 100]))
+            ->setIsPublicVisible(false);
+    }
+
+    private function prepareEntity(EntityWithMetaFields $entity, MetaTableTypeInterface $meta)
+    {
+        $definition = $this->prepareLocationField($meta);
+        $current = $entity->getMetaField($definition->getName());
+
+        // Compared with UserPreferences, the handling of custom fields needs a little bit 
+        // setup logic. That allows you, to create arbitrary complicated field setups,
+        // eg. adding fields only to timesheets for a certain customer.    
+
+        // If the field is not yet existing, you can simply attach the new definition
+        if (null === $current) {
+            $entity->setMetaField($definition);
+            return;
+        }
+
+        // But if the field already exist in the entity, you have to merge 
+        // the form definition with the existing field data
+        $current
+            ->setType($definition->getType())
+            ->setConstraints($definition->getConstraints())
+            ->setIsRequired($definition->isRequired())
+            ->setIsPublicVisible($definition->isPublicVisible());
+    }
+}
+```
