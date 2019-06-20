@@ -385,37 +385,15 @@ class MetaFieldSubscriber implements EventSubscriberInterface
         $this->prepareEntity($event->getEntity(), new ActivityMeta());
     }
 
-    private function prepareLocationField(MetaTableTypeInterface $entity)
+    private function prepareEntity(EntityWithMetaFields $entity, MetaTableTypeInterface $definition)
     {
-        return $entity
-            ->setName('location')
+        $definition
+            ->setName('location2')
             ->setType(TextType::class)
-            ->addConstraint(new Length(['max' => 100]))
+            ->addConstraint(new Length(['max' => 255]))
             ->setIsPublicVisible(false);
-    }
 
-    private function prepareEntity(EntityWithMetaFields $entity, MetaTableTypeInterface $meta)
-    {
-        $definition = $this->prepareLocationField($meta);
-        $current = $entity->getMetaField($definition->getName());
-
-        // Compared with UserPreferences, the handling of custom fields needs a little bit 
-        // setup logic. That allows you, to create arbitrary complicated field setups,
-        // eg. adding fields only to timesheets for a certain customer.    
-
-        // If the field is not yet existing, you can simply attach the new definition
-        if (null === $current) {
-            $entity->setMetaField($definition);
-            return;
-        }
-
-        // But if the field already exist in the entity, you have to merge 
-        // the form definition with the existing field data
-        $current
-            ->setType($definition->getType())
-            ->setConstraints($definition->getConstraints())
-            ->setIsRequired($definition->isRequired())
-            ->setIsPublicVisible($definition->isPublicVisible());
+        $entity->setMetaField($definition);
     }
 }
 ```
