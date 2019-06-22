@@ -209,14 +209,14 @@ In the config `kimai.invoice.documents`, you can add a list of directories with 
 ### Adding invoice calculator
 
 An invoice calculator is a class implementing `App\Invoice\CalculatorInterface` and it is responsible for calculating 
-invoice rates, taxes and taking care of all timesheet entries that should be displayed.   
+invoice rates, taxes and taking care to aggregate all timesheet entries that should be displayed.   
 
 Every invoice calculator class will be automatically available, after refreshing the application cache with `bin/console cache:clear`.
 This "magic" happens in the [InvoiceServiceCompilerPass]({{ site.kimai_v2_file }}/src/DependencyInjection/Compiler/InvoiceServiceCompilerPass.php), 
 which finds the classes by the interface `CalculatorInterface`.
 
 The ID of the calculator must be unique, please prefix it with your vendor or bundle name and make sure it only contains
-character as it will be stored in a database column.
+alpha-numeric characters, as it will be stored in a database column.
 
 Translations are stored in the `invoice-calculator.xx.xliff`.
 
@@ -230,7 +230,7 @@ This "magic" happens in the [InvoiceServiceCompilerPass]({{ site.kimai_v2_file }
 which finds the classes by the interface `NumberGeneratorInterface`.
 
 The ID of the number generator must be unique, please prefix it with your vendor or bundle name and make sure it only contains
-character as it will be stored in a database column.
+alpha-numeric characters, as it will be stored in a database column.
 
 Translations are stored in the `invoice-numbergenerator.xx.xliff`.
 
@@ -245,10 +245,7 @@ which finds the classes by the interface `RendererInterface`.
 
 ## Adding export renderer
 
-An export renderer is a class implementing `App\Export\RendererInterface` and it is responsible to convert ar array of `Timesheet` objects  
-into a downloadable/printable document. 
-
-Every export renderer class will be automatically available when refreshing the application cache by the [ExportServiceCompilerPass]({{ site.kimai_v2_file }}/src/DependencyInjection/Compiler/ExportServiceCompilerPass.php):
+See [export]({% link _documentation/export.md %}) documentation.
 
 ## Adding timesheet calculator
 
@@ -265,135 +262,10 @@ The configuration for "rounding rules" can be fetched from the container paramet
 
 The configuration for "hourly-rates multiplication factors" can be fetched from the container parameter `kimai.timesheet.rates`.
 
-## Adding custom fields
-{% include new_since.html version="1.0" %}
+## Adding custom fields (meta fields)
 
-Kimai supports custom fields for literally every object:
-- `User` via `UserPreference`
-- `Timesheet` via `TimesheetMeta` 
-- `Customer` via `CustomerMeta` 
-- `Project` via `ProjectMeta` 
-- `Activity` via `ActivityMeta`
+See [meta fields]({% link _documentation/meta-fields.md %}) documentation.
 
-Using the fields for internal reasons (eg. importing and linking to IDs of external apps) is simple.
-You can add these fields programmatically at any time:
-```php
-$externalId = (new TimesheetMeta())->setName('externalID')->setValue(1);
-$timesheet = new Timesheet();
-$timesheet->setMetaField($externalId);
-``` 
+## Adding UserPreference
 
-But what if you want the field to be editable by users?
-
-Well, this is possible through the registration via an EventSubscriber, where you add your custom fields.
-
-### UserPreference
-
-Adding a new user preference is simple as that:
-
-```php
-use App\Entity\UserPreference;
-use App\Event\UserPreferenceEvent;
-use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
-
-class UserProfileSubscriber implements EventSubscriberInterface
-{
-    public static function getSubscribedEvents(): array
-    {
-        return [
-            UserPreferenceEvent::CONFIGURE => ['loadUserPreferences', 200]
-        ];
-    }
-
-    public function loadUserPreferences(UserPreferenceEvent $event)
-    {
-        if (null === ($user = $event->getUser())) {
-            return;
-        }
-
-        // You attach every field to the event and all the heavy lifting is done by Kimai.
-        // The value is the default as long as the user has not yet updated his preferences,
-        // otherwise it will be overwritten with the users choice, stored in the database.
-        $event->addUserPreference(
-            (new UserPreference())
-                ->setName('fooooo-bar')
-                ->setValue(false)
-                ->setType(CheckboxType::class)
-        );
-    }
-}
-```
-
-### Custom field for other entities
-
-The following example adds a custom fields to each entity type:
-- `Timesheet` via `TimesheetMeta` 
-- `Customer` via `CustomerMeta` 
-- `Project` via `ProjectMeta` 
-- `Activity` via `ActivityMeta`
-
-This example might seem a little awkward first, as I wanted to add only one example for all 
-possible entity types and that definitely doesn't make the code prettier ;-)
-But I hope you get the point and see in `prepareEntity` what needs to be done to setup new 
-custom fields, which can be edited by the user. 
-
-```php
-use App\Entity\ActivityMeta;
-use App\Entity\CustomerMeta;
-use App\Entity\EntityWithMetaFields;
-use App\Entity\MetaTableTypeInterface;
-use App\Entity\ProjectMeta;
-use App\Entity\TimesheetMeta;
-use App\Event\ActivityMetaDefinitionEvent;
-use App\Event\CustomerMetaDefinitionEvent;
-use App\Event\ProjectMetaDefinitionEvent;
-use App\Event\TimesheetMetaDefinitionEvent;
-use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Validator\Constraints\Length;
-
-class MetaFieldSubscriber implements EventSubscriberInterface
-{
-    public static function getSubscribedEvents(): array
-    {
-        return [
-            TimesheetMetaDefinitionEvent::class => ['loadTimesheetMeta', 200],
-            CustomerMetaDefinitionEvent::class => ['loadCustomerMeta', 200],
-            ProjectMetaDefinitionEvent::class => ['loadProjectMeta', 200],
-            ActivityMetaDefinitionEvent::class => ['loadActivityMeta', 200],
-        ];
-    }
-
-    public function loadTimesheetMeta(TimesheetMetaDefinitionEvent $event)
-    {
-        $this->prepareEntity($event->getEntity(), new TimesheetMeta());
-    }
-
-    public function loadCustomerMeta(CustomerMetaDefinitionEvent $event)
-    {
-        $this->prepareEntity($event->getEntity(), new CustomerMeta());
-    }
-
-    public function loadProjectMeta(ProjectMetaDefinitionEvent $event)
-    {
-        $this->prepareEntity($event->getEntity(), new ProjectMeta());
-    }
-
-    public function loadActivityMeta(ActivityMetaDefinitionEvent $event)
-    {
-        $this->prepareEntity($event->getEntity(), new ActivityMeta());
-    }
-
-    private function prepareEntity(EntityWithMetaFields $entity, MetaTableTypeInterface $definition)
-    {
-        $definition
-            ->setName('location2')
-            ->setType(TextType::class)
-            ->addConstraint(new Length(['max' => 255]))
-            ->setIsPublicVisible(false);
-
-        $entity->setMetaField($definition);
-    }
-}
-```
+See [user preferences]({% link _documentation/user-preferences.md %}) documentation.
