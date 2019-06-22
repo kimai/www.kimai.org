@@ -124,11 +124,20 @@ kimai:
             # default: uid 
             usernameAttribute: uid
             
-            # LDAP search base filter to find the user.
+            # LDAP search base filter to find the user / the users DN.
             # Do NOT include the rule (&(usernameAttribute=%s)), it will be appended
             # automatically. The result of the search filter must return 1 result only.
             # default: empty (results in (&(uid=%s)) with default usernameAttribute)
             filter: (&(objectClass=inetOrgPerson))
+
+            # LDAP search base filter to find the user attributes.
+            # This is used for a slightly different query than the one above, which is used
+            # to query the users DN only.
+            # Active directory users might have too many results (Exchange activesync devices 
+            # attributes) and therefor an incompatible result structure if not changed.
+            # See https://github.com/kevinpapst/kimai2/issues/875   
+            # default: (objectClass=*)
+            #attributesFilter: (objectClass=Person)
 
             # Configure the mapping between LDAP attributes and user entity
             # The ldap_attr must be given in lowercase!
@@ -417,6 +426,7 @@ kimai:
             baseDn: dc=ad,dc=example,dc=com
             filter: (&(objectClass=Person))
             usernameAttribute: samaccountname
+            attributesFilter: (&(objectClass=Person))
             attributes:
                 - { ldap_attr: mail, user_method: setEmail }
                 - { ldap_attr: displayname, user_method: setAlias }
