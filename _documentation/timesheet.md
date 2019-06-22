@@ -246,5 +246,5 @@ kimai:
 
 Exported records will be locked to prevent manipulation of cleared data.
  
-There is the permission `edit_exported_timesheet` which allows to edit and delete these locked entries nevertheless, 
-which by default is given to users with `ROLE_ADMIN` and `ROLE_SUPER_ADMIN`. 
+The [permission]({% link _documentation/permissions.md %}) `edit_exported_timesheet` does allow to edit and delete these 
+locked entries nevertheless, which by default is given to users with `ROLE_ADMIN` and `ROLE_SUPER_ADMIN`. 
