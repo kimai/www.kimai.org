@@ -131,9 +131,9 @@ kimai:
             filter: (&(objectClass=inetOrgPerson))
 
             # LDAP search base filter to find the user attributes.
-            # This is used for a slightly different query than the one above, which is used
-            # to query the users DN only.
-            # Active directory users might have too many results (Exchange activesync devices 
+            # This is used for a slightly different query than the one above, which is 
+            # used to query the users DN only.
+            # AD users might have too many results (Exchange activesync devices 
             # attributes) and therefor an incompatible result structure if not changed.
             # See https://github.com/kevinpapst/kimai2/issues/875   
             # default: (objectClass=*)
@@ -426,7 +426,7 @@ kimai:
             baseDn: dc=ad,dc=example,dc=com
             filter: (&(objectClass=Person))
             usernameAttribute: samaccountname
-            attributesFilter: (&(objectClass=Person))
+            attributesFilter: (objectClass=Person)
             attributes:
                 - { ldap_attr: mail, user_method: setEmail }
                 - { ldap_attr: displayname, user_method: setAlias }
