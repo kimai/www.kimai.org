@@ -99,3 +99,18 @@ class MetaFieldSubscriber implements EventSubscriberInterface
     }
 }
 ```
+
+## Visibility
+
+Each meta field has its own visibility, which determines whether the field will be exposed
+in the following places:
+
+- Export
+- Invoice
+- API
+
+The default visibility is `false` (hidden). If you want to use the meta fields value 
+in your invoices, then you have to set its visibility to true (see EventSubscriber example above).
+
+Be aware: the visibility is stored with the meta field, so changing its value via the EventSubscriber 
+does NOT change the visibility of already saved meta fields, just for new ones. 
