@@ -2,6 +2,7 @@
 title: Export
 description: Export your timesheet data with Kimai into several different formats
 since_version: 0.8
+toc: true
 ---
 
 The export module allows you to export filtered timesheet data into several formats.
@@ -26,3 +27,54 @@ So all customer, projects, activities, all hourly rates, the personal time worke
 
 Exported records cannot be edited or deleted any longer. 
 For further information read the [timesheet documentation]({% link _documentation/timesheet.md %}).
+
+## Adding export renderer
+
+An export renderer is a class implementing `App\Export\RendererInterface` and it is responsible to convert an array of 
+`Timesheet` objects into a downloadable/printable document. 
+
+Every export renderer class will be automatically available when refreshing the application cache, thanks to the  
+[ExportServiceCompilerPass]({{ site.kimai_v2_file }}/src/DependencyInjection/Compiler/ExportServiceCompilerPass.php).
+
+Each renderer is represented by a "button" below the datatable on the export screen.
+
+A simple example, which only shows the IDs of the included timesheet records could look like this: 
+
+```php
+use App\Entity\Timesheet;
+use App\Export\RendererInterface;
+use App\Repository\Query\TimesheetQuery;
+use Symfony\Component\HttpFoundation\Response;
+
+final class TimesheetIdRenderer implements RendererInterface
+{
+    public function render(array $timesheets, TimesheetQuery $query): Response
+    {
+        $ids = array_map(function(Timesheet $timesheet) {
+            return $timesheet->getId();
+        }, $timesheets);
+
+        $response = new Response();
+        $response->setContent(sprintf('Included IDs: %s', implode(', ', $ids)));
+
+        return $response;
+    }
+
+    public function getId(): string
+    {
+        return 'ext_array_dump';
+    }
+
+    public function getIcon(): string
+    {
+        return 'fas fa-file-code';
+    }
+
+    public function getTitle(): string
+    {
+        return 'Show IDs';
+    }
+}
+```
+
+All you need to do is to register it as a service in the Symfony DI container.

@@ -71,3 +71,41 @@ on mobile devices will be replaced by a link to the calendar.
 ## Show daily statistics in timesheet
 
 If activated, the personal timesheet visually groups and shows statistics for all records within one day.
+
+## Adding new UserPreference
+
+Developers can register new user preferences from within [their plugin]({% link _documentation/plugins.md %}) as easy as that:
+
+```php
+use App\Entity\UserPreference;
+use App\Event\UserPreferenceEvent;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+
+class UserProfileSubscriber implements EventSubscriberInterface
+{
+    public static function getSubscribedEvents(): array
+    {
+        return [
+            UserPreferenceEvent::CONFIGURE => ['loadUserPreferences', 200]
+        ];
+    }
+
+    public function loadUserPreferences(UserPreferenceEvent $event)
+    {
+        if (null === ($user = $event->getUser())) {
+            return;
+        }
+
+        // You attach every field to the event and all the heavy lifting is done by Kimai.
+        // The value is the default as long as the user has not yet updated his preferences,
+        // otherwise it will be overwritten with the users choice, stored in the database.
+        $event->addUserPreference(
+            (new UserPreference())
+                ->setName('fooooo-bar')
+                ->setValue(false)
+                ->setType(CheckboxType::class)
+        );
+    }
+}
+```

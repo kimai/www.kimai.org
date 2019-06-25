@@ -43,10 +43,7 @@ To rebuild all assets you have to execute:
 yarn run prod
 ```
 
-You can find more information at:
-
-- https://symfony.com/doc/current/frontend/encore/installation.html
-- https://symfony.com/doc/current/frontend.html
+You can find more information [here](https://symfony.com/doc/current/frontend/encore/installation.html) and [here](https://symfony.com/doc/current/frontend.html).
 
 ## local.yaml
 
@@ -69,30 +66,26 @@ composer kimai:tests-unit
 composer kimai:tests-integration
 ```
 
-Or you simply run all tests with: 
-```bash
-composer kimai:tests
-vendor/bin/phpunit
-```
+Or you simply run all tests with one of: 
+- `composer kimai:tests`
+- `vendor/bin/phpunit`
 
 ## Static code analysis via PHPStan
 
 Besides automated tests Kimai relies on PHPStan to detect code problems.
-
-You can run the checks before CI process kicks in via: 
 
 ```bash
 composer kimai:phpstan
 ```
 ## Coding styles
 
-You can run the code formatter with the built-in command like that:
+You can run the code sniffer with the built-in command like that:
 
 ```bash
 composer kimai:codestyle
 ```
 
-You can also automatically fix the violations by running: 
+And you can also automatically fix the violations by running: 
 
  ```bash
 composer kimai:codestyle-fix
@@ -216,14 +209,14 @@ In the config `kimai.invoice.documents`, you can add a list of directories with 
 ### Adding invoice calculator
 
 An invoice calculator is a class implementing `App\Invoice\CalculatorInterface` and it is responsible for calculating 
-invoice rates, taxes and taking care of all timesheet entries that should be displayed.   
+invoice rates, taxes and taking care to aggregate all timesheet entries that should be displayed.   
 
 Every invoice calculator class will be automatically available, after refreshing the application cache with `bin/console cache:clear`.
 This "magic" happens in the [InvoiceServiceCompilerPass]({{ site.kimai_v2_file }}/src/DependencyInjection/Compiler/InvoiceServiceCompilerPass.php), 
 which finds the classes by the interface `CalculatorInterface`.
 
 The ID of the calculator must be unique, please prefix it with your vendor or bundle name and make sure it only contains
-character as it will be stored in a database column.
+alpha-numeric characters, as it will be stored in a database column.
 
 Translations are stored in the `invoice-calculator.xx.xliff`.
 
@@ -237,7 +230,7 @@ This "magic" happens in the [InvoiceServiceCompilerPass]({{ site.kimai_v2_file }
 which finds the classes by the interface `NumberGeneratorInterface`.
 
 The ID of the number generator must be unique, please prefix it with your vendor or bundle name and make sure it only contains
-character as it will be stored in a database column.
+alpha-numeric characters, as it will be stored in a database column.
 
 Translations are stored in the `invoice-numbergenerator.xx.xliff`.
 
@@ -252,10 +245,7 @@ which finds the classes by the interface `RendererInterface`.
 
 ## Adding export renderer
 
-An export renderer is a class implementing `App\Export\RendererInterface` and it is responsible to convert ar array of `Timesheet` objects  
-into a downloadable/printable document. 
-
-Every export renderer class will be automatically available when refreshing the application cache by the [ExportServiceCompilerPass]({{ site.kimai_v2_file }}/src/DependencyInjection/Compiler/ExportServiceCompilerPass.php):
+See [export]({% link _documentation/export.md %}) documentation.
 
 ## Adding timesheet calculator
 
@@ -271,3 +261,11 @@ You can apply several rules in your config file [local.yaml]({% link _documentat
 The configuration for "rounding rules" can be fetched from the container parameter `kimai.timesheet.rounding`.
 
 The configuration for "hourly-rates multiplication factors" can be fetched from the container parameter `kimai.timesheet.rates`.
+
+## Adding custom fields (meta fields)
+
+See [meta fields]({% link _documentation/meta-fields.md %}) documentation.
+
+## Adding UserPreference
+
+See [user preferences]({% link _documentation/user-preferences.md %}) documentation.
