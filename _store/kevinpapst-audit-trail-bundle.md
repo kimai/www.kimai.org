@@ -11,13 +11,8 @@ screenshot:
   - /images/marketplace/audit-trail-screenshot.jpg
   - /images/marketplace/audit-trail-button.jpg
 buy: /documentation/buy-a-plugin.html
-featured: 11
+featured: Records detailed change/audit logs for timesheets, customers, projects and activities and displays them in a per-item timeline. 
 new: true
-features:
-  - records all timesheet changes
-  - more features coming soon
-  - audit trails for ...
-  - ... customer, projects and activities
 tags:
   - plugin
   - kimai 2
