@@ -23,12 +23,17 @@
 				</td>
 				{% if featured %}
 					<td>
-						<h4 class="mb-5"><a href="{{ product.url | absolute_url }}">{{ product.name }}</a></h4>
+						<h4 class="mb-5">
+							<a href="{{ product.url | absolute_url }}">{{ product.name }}</a>
+							{% if product.new %}
+							<div class="badge badge-default badge-md">New</div>
+							{% endif %}
+						</h4>
 
 						<div class="row text-muted">
-							{% for feature in product.features%}
-							<div class="col-lg-6">{{ feature }}</div>
-							{% endfor %}
+							<div class="col-lg-12">
+							{{ product.featured }}
+							</div>
 						</div>
 					</td>
 				{% else %}
