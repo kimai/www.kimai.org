@@ -1,14 +1,12 @@
 ---
 title: How to buy a plugin
 description: A brief explanation of the payment process and license options
-upgrade_notice: nil
-expire_warning: nil
 ---
 
 Thanks for taking the time and your interest in a payed Kimai plugin.
 
 Currently I am working on many different parts around Kimai and have not yet been able to 
-setup a proper ecommerce solution.
+setup a proper e-commerce solution.
 
 I know this is probably not what you expect ;-) but I promise once I have setup a better 
 system, I will import all licenses there and provide you with the same quality you are used 
@@ -22,18 +20,16 @@ Please write an email to [info@keleo.de](mailto:info@keleo.de) and ask for the d
 
 ## Quick license overview
 
-In short here is what you get:
+The short version:
 
-- A license will grant you access to a private GitHub repository, where 
+- A license will grant you access to a private GitHub repository, where: 
   - You get support via the GitHub Issues 
   - You can download the code as often as you want and get instant access to new versions 
   - You can leave your feedback and feature requests
 - You are granted one year of access to the repository 
   - After that period, you will have to renew the license to get further support or downloads
-- You are allowed to use the plugin in one production installation
-
-And here is the most important rule what you might NOT do:
-- You are not allowed to redistribute or sell the code in any way
+- You are allowed to use the plugin in one test and one production installation
+- You are NOT allowed to redistribute or sell the code in any way
 
 And here comes the full version...
 
