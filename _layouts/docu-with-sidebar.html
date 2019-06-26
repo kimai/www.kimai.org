@@ -13,11 +13,13 @@ upgrade_notice: false
 
 	<div class="row">
 		<div class="col-lg-3 order-lg-1 mb-4 sidebar">
+			{% comment %}
 			{% if layout.github != nil %}
 			<a href="{{ site[layout.github] }}" class="btn btn-block btn-primary mb-6">
 				<i class="fab fa-github"></i> Browse source code
 			</a>
 			{% endif %}
+			{% endcomment %}
 
 			{% for group in site.data[collectionMenu] %}
 			<strong>{{ group.title }}</strong>
@@ -38,19 +40,26 @@ upgrade_notice: false
 				<div class="card-body">
 
 					<div class="text-wrap p-lg-6">
-						<h2 class="mt-0 mb-4">{{ page.title }}</h2>
+						<h2 class="mt-0 mb-4">
+							{{ page.title }}
+							{% if page.since_version != nil %}
+							<span class="tag" style="float: right">
+								Feature added with
+								<span class="tag-addon">v {{ page.since_version }}</span>
+							</span>
+							{% endif %}
+						</h2>
 
 						{% if layout.expire_warning %}
 						<div class="alert alert-warning" role="alert">
 							We expect <a href="{% link _posts/2018-06-23-kimai-v2-announcement.md %}">Kimai v2</a> to be in a stable feature state by mid of 2019.
-							Consider <a href="{% link _documentation/migration-v1.md %}">upgrading to v2</a>, as our support for v1 will slowly expire until end of 2019.
+							Consider <a href="{% link _documentation/migration-v1.md %}">upgrading to v2</a>, as our support for v1 will expire soon at the same time.
 						</div>
 						{% endif %}
 
 						{% if layout.upgrade_notice %}
 						<div class="alert alert-warning" role="alert">
-							This is the documentation for Kimai v2. If you are still a user of Kimai v1, consider <a href="{% link _documentation/migration-v1.md %}">upgrading to Kimai v2</a>.
-							Meanwhile, head over to our documentation for <a href="{% link _v1/index.md %}">Kimai v1</a>.
+							This is the documentation for Kimai v2. If you are still a user of <a href="{% link _v1/index.md %}">Kimai v1</a>, consider <a href="{% link _documentation/migration-v1.md %}">upgrading to Kimai v2</a>.
 						</div>
 						{% endif %}
 

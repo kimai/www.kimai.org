@@ -34,18 +34,6 @@ kimai:
 - `visibleHours.begin` - the start time of the calendars week and day view (default: 00:00)
 - `visibleHours.end` - the end time of the calendars week and day view (default: 24:00)
 
-## Initial view
-
-The initial view for the calendar is `month`.
-It is a user specific setting and each user can configure it in his _User profile_ at _Preferences_.  
-
-Available options are: `month`, `agendaWeek`, `agendaDay` (these might be called different if a translation is available)
-
-## Initial view after login
-
-If a user configured the preference `login.initial_view` to `calendar`, the timesheet icon in the top navigation bar 
-will be replaced by a link to the calendar.  
-
 ## Integrating google calender
 
 If you want to embed Google calendars e.g. to display regional holidays or company events you can import (multiple) Google calendars.
@@ -67,3 +55,7 @@ kimai:
                     id: 'de.german#holiday@group.v.calendar.google.com'
                     color: '#cc0000'
 ```
+
+## User preferences
+
+A user can change the initial view for the calendar, see [user preferences documentation]({% link _documentation/user-preferences.md %}).

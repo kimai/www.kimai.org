@@ -43,10 +43,7 @@ To rebuild all assets you have to execute:
 yarn run prod
 ```
 
-You can find more information at:
-
-- https://symfony.com/doc/current/frontend/encore/installation.html
-- https://symfony.com/doc/current/frontend.html
+You can find more information [here](https://symfony.com/doc/current/frontend/encore/installation.html) and [here](https://symfony.com/doc/current/frontend.html).
 
 ## local.yaml
 
@@ -59,33 +56,39 @@ Therefor put your `local.yaml` into the `dev/` folder: `config/packages/dev/loca
 
 ## Tests suites with PHPUnit
 
-Kimai tries to adopt a very high test and code coverage. Whenever changing code, you have to make sure 
+Kimai tries to adopt a high test and code coverage. Whenever changing code, you have to make sure 
 that the tests are still running. New code needs additional tests, otherwise your pull request might be declined. 
 
 You can run the unit and integration tests with built-in commands:
 
- ```bash
-bin/console kimai:test-unit
-bin/console kimai:test-integration
-```
-
-Or you simply run all tests with: 
 ```bash
-vendor/bin/phpunit
+composer kimai:tests-unit
+composer kimai:tests-integration
 ```
 
+Or you simply run all tests with one of: 
+- `composer kimai:tests`
+- `vendor/bin/phpunit`
+
+## Static code analysis via PHPStan
+
+Besides automated tests Kimai relies on PHPStan to detect code problems.
+
+```bash
+composer kimai:phpstan
+```
 ## Coding styles
 
-You can run the code formatter with the built-in command like that:
+You can run the code sniffer with the built-in command like that:
 
- ```bash
-bin/console kimai:codestyle
+```bash
+composer kimai:codestyle
 ```
 
-You can also automatically fix the violations by running: 
+And you can also automatically fix the violations by running: 
 
  ```bash
-bin/console kimai:codestyle --fix
+composer kimai:codestyle-fix
 ```
 
 Be aware that this command will modify all files with violations in the directories `src/` and `tests/`, so its a good idea to commit first.
@@ -175,27 +178,27 @@ class MyDashboardSubscriber implements EventSubscriberInterface
 ```
 For more details check this [dashboard subscriber]({{ site.kimai_v2_file }}/src/EventSubscriber/DashboardSubscriber.php).
 
-## Adding tabs to the "control sidebar"
+### Adding new widget types
 
-We use the AdminLTE bundle to render the control sidebar tabs, so adding another tab is as easy as adding a new config entry:
+You can add your own widgets via plugin by adding two classes:
+- a widget implementing `\App\Widget\WidgetInterface`
+  - or for the lazy folks extending `\App\Widget\Type\AbstractWidgetType`
+- a widget renderer implementing `\App\Widget\WidgetRendererInterface`
+  - if you want to use twig to render your widget, extend `\App\Widget\Renderer\AbstractTwigRenderer`
 
-```yaml
-admin_lte:
-    options:
-        control_sidebar:
-            # these are the "official" Kimai tabs
-            settings:
-                icon: "fas fa-cogs"
-                controller: 'App\Controller\SidebarController::settingsAction'
-            home:
-                icon: "fas fa-question-circle"
-                template: sidebar/home.html.twig
+These widgets can now be injected to the Dashboard as explained above with the `MyDashboardSubscriber`.
+
+### Display widgets in your template
+ 
+You can also use widgets in your twig templates like this:
+{% raw %}
+```twig
+{{ render_widget('DailyWorkingTimeChart', {'type': 'line', 'begin': 'monday this week 00:00:00', 'end': 'friday this week 23:59:59'}) }}
+{{ render_widget('userAmountMonth', {'color': 'blue', 'icon': 'user'}) }}
 ```
+{% endraw %}
 
-You have to define the `icon` ([read more]({% link _documentation/theme.md %})) to be used and then either `controller` action or twig `template`. 
-Both follow the default naming syntax and you can link your bundle here instead of existing application controller or templates.
-You should NOT add them in `config/packages/kimai.yaml` but in your own bundle or the `local.yaml` [config]({% link _documentation/configurations.md %}), 
-otherwise they might get lost during an update.
+Widgets are referenced by their ID.
 
 ## Invoices 
 
@@ -206,12 +209,14 @@ In the config `kimai.invoice.documents`, you can add a list of directories with 
 ### Adding invoice calculator
 
 An invoice calculator is a class implementing `App\Invoice\CalculatorInterface` and it is responsible for calculating 
-invoice rates, taxes and taking care of all timesheet entries that should be displayed.   
+invoice rates, taxes and taking care to aggregate all timesheet entries that should be displayed.   
 
-Every invoice calculator class will be automatically available when refreshing the application cache by the [InvoiceServiceCompilerPass]({{ site.kimai_v2_file }}/src/DependencyInjection/Compiler/InvoiceServiceCompilerPass.php):
+Every invoice calculator class will be automatically available, after refreshing the application cache with `bin/console cache:clear`.
+This "magic" happens in the [InvoiceServiceCompilerPass]({{ site.kimai_v2_file }}/src/DependencyInjection/Compiler/InvoiceServiceCompilerPass.php), 
+which finds the classes by the interface `CalculatorInterface`.
 
 The ID of the calculator must be unique, please prefix it with your vendor or bundle name and make sure it only contains
-character as it will be stored in a database column.
+alpha-numeric characters, as it will be stored in a database column.
 
 Translations are stored in the `invoice-calculator.xx.xliff`.
 
@@ -220,10 +225,12 @@ Translations are stored in the `invoice-calculator.xx.xliff`.
 An invoice-number generator is a class implementing `App\Invoice\NumberGeneratorInterface` and its only task is to generate 
 a number for the invoice. In most cases you do not want to mix multiple invoice-number generators throughout your invoices.   
 
-Every invoice number-generator class will be automatically available up when refreshing the application cache by the [InvoiceServiceCompilerPass]({{ site.kimai_v2_file }}/src/DependencyInjection/Compiler/InvoiceServiceCompilerPass.php):
+Every invoice number-generator class will be automatically available, after refreshing the application cache with `bin/console cache:clear`.
+This "magic" happens in the [InvoiceServiceCompilerPass]({{ site.kimai_v2_file }}/src/DependencyInjection/Compiler/InvoiceServiceCompilerPass.php), 
+which finds the classes by the interface `NumberGeneratorInterface`.
 
 The ID of the number generator must be unique, please prefix it with your vendor or bundle name and make sure it only contains
-character as it will be stored in a database column.
+alpha-numeric characters, as it will be stored in a database column.
 
 Translations are stored in the `invoice-numbergenerator.xx.xliff`.
 
@@ -232,14 +239,13 @@ Translations are stored in the `invoice-numbergenerator.xx.xliff`.
 An invoice renderer is a class implementing `App\Invoice\RendererInterface` and it is responsible to convert an `InvoiceModel` (the actual data) 
 with the use of an `InvoiceDocument` (the template file) into a downloadable/printable document. 
 
-Every invoice renderer class will be automatically available when refreshing the application cache by the [InvoiceServiceCompilerPass]({{ site.kimai_v2_file }}/src/DependencyInjection/Compiler/InvoiceServiceCompilerPass.php):
+Every invoice renderer class will be automatically available, after refreshing the application cache with `bin/console cache:clear`.
+This "magic" happens in the [InvoiceServiceCompilerPass]({{ site.kimai_v2_file }}/src/DependencyInjection/Compiler/InvoiceServiceCompilerPass.php), 
+which finds the classes by the interface `RendererInterface`.
 
 ## Adding export renderer
 
-An export renderer is a class implementing `App\Export\RendererInterface` and it is responsible to convert ar array of `Timesheet` objects  
-into a downloadable/printable document. 
-
-Every export renderer class will be automatically available when refreshing the application cache by the [ExportServiceCompilerPass]({{ site.kimai_v2_file }}/src/DependencyInjection/Compiler/ExportServiceCompilerPass.php):
+See [export]({% link _documentation/export.md %}) documentation.
 
 ## Adding timesheet calculator
 
@@ -255,3 +261,11 @@ You can apply several rules in your config file [local.yaml]({% link _documentat
 The configuration for "rounding rules" can be fetched from the container parameter `kimai.timesheet.rounding`.
 
 The configuration for "hourly-rates multiplication factors" can be fetched from the container parameter `kimai.timesheet.rates`.
+
+## Adding custom fields (meta fields)
+
+See [meta fields]({% link _documentation/meta-fields.md %}) documentation.
+
+## Adding UserPreference
+
+See [user preferences]({% link _documentation/user-preferences.md %}) documentation.

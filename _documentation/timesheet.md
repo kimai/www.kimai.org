@@ -10,48 +10,86 @@ User manual on the timesheet tables, actions and configuration.
 
 Kimai 2 provides also a [calendar view]({% link _documentation/calendar.md %}), which displays your timesheet entries in an easy readable format.
 
-## Starting records
+## Starting and stopping records
 
-You can start new timesheet records like so:
-- Click the **redo** button in the "last activities" dropdown in the upper toolbar
-- Click the **redo** button from one of the activities in your timesheet
-- Start a completely new activity, by clicking the big **play** button in the toolbar
+### Re-start timesheet records
+- Click one of your **last activities** in the dropdown in the upper toolbar - this will start a record for the same customer/project & activity "now" 
+- Click the **restart** action from one of the records in your timesheet - this will start a record for the same customer/project & activity "now" and copy description and tags
 
-## Stopping records
+### Start new records
+- Clicking the big **play** button in the toolbar (if no record is active right now)
+- Click the "+" action is the upper right page actions to open the "edit new record" modal
+- Select a time-range in the calendar (deactivated if the timeclock-mode is active)
+- Click a day in the calendar (deactivated if the timeclock-mode is active)
 
-You can stop timesheet records like so:
+### Stop records
 - Click the **stop** button in the "active records" dropdown in the upper toolbar
-- Click the **stop** button from one of the running activities in your timesheet
-- Edit a running activity, add an end date and save
+- Click the **stop** action in the running record in your timesheet
+- Save a running record after setting an end date (deactivated if the timeclock-mode is active)
 
-## Duration only mode
+## Tracking modes
 
-Kimai supports two modes for displaying and recording timesheet entries:
+Kimai supports multiple time-tracking modes, which can be changed via configuration setting.
+This mode is not user specific, but applies for all users.
 
-- `begin` and `end` time (default)
-- `date` and `duration` (the so called `duration_only` mode)
+The different modes are changing the way how start and end times are recorded_
 
-When activating the `duration_only` mode all timesheet tables will only display the `date` and `duration` of all records.
+- Default: `begin` and `end` time can be edited
+- Time-clock: `begin` and `end` cannot be edited by regular users
+- Duration only: `begin` and `duration` can be edited (start and end times are hidden in the UI)
+
+### Default mode
+
+The default tracking mode is not limiting the user is any way, a user can especially edit  
+the start and stop times completely on his side.
+
+### Time-clock mode
+
+The time-clock mode is primarily for companies, who don't want their users to add arbitrary records.
+It removes the ability to choose `begin` and `end` for the regular user / in the users timesheet screens.
+
+Be aware: the admin/team timesheets screens still include these fields, as you might have to correct wrong or add 
+forgotten entries on behalf of the user.
+You can limit access to these screens with the `edit_other_timesheet` [permission]({% link _documentation/permissions.md %}).
+
+### Duration only mode
+
+When the `duration_only` mode is active, all timesheet tables will only display the `date` and `duration` for all records.
 In addition, the "edit timesheet" forms will be changed and instead of displaying the `end` date you will see a field for `duration`.
-The `start` date is only visible in these forms when editing an active or starting a new record. 
 
-You can activate the `duration_only` mode by switching the configuration key `kimai.timesheet.duration_only` to `true` in your `local.yaml`:
+You can activate the `duration_only` mode by switching the configuration key `kimai.timesheet.mode` to `duration_only` in 
+your `local.yaml` or directly from within the [System-configuration screen]({% link _documentation/configurations.md %}):
 
 ```yaml
 kimai:
     timesheet:
-        duration_only: true
+        mode: duration_only
 ```
 
-### Duration format
+Be aware: users with the [permission]({% link _documentation/permissions.md %}) `edit_other_timesheet` can still see the 
+start time and by a simple calculation the end time, if they open each entry manually. If your country has work regulations 
+that should limit access to this data, make sure to remove this permission for persons without special access regulations (e.g. your HR department).
 
-The `duration` field supports entering data in the following formats:
+### Duration with fixed start time
+{% include new_since.html version="1.0" %}
 
-| Format | Description | Examples |
-|---|---|---|
-| {hours}:{minutes}[:{seconds}] | Seconds are optional, overflow is supported for every field | `2:27` = 2 Hours, 27 Minutes / `3:143:13` = 5 Hours, 23 Minutes, 13 Seconds|
-| {hours}h{minutes}m{seconds}s | Each section is optional, overflow is supported for every field | `2h` = 2 Hours / `147m` = 2 Hours, 27 Minutes / `3h14m13s` = 3 Hours, 14 Minutes, 13 Seconds |
-| {seconds} | | `3600` = 1 Hour / `8820` = 2 Hours, 27 Minutes |
+The `duration_fixed_start` mode removes the begin and end datetime fields and uses a default start time  (see it as a partial anonymization).
+The user is not limited in defining the entries duration. 
+
+All logged entries for one day will start at the same time, which can be configured like this:
+```yaml
+kimai:
+    timesheet:
+        default_begin: 07:30
+```
+By default this is configured to `now` which is most likely not what you want.
+ 
+You can read more about the accepted formats [here](https://www.php.net/manual/en/datetime.formats.php) and especially in 
+the [time formats](https://www.php.net/manual/en/datetime.formats.time.php) chapter.
+
+## Duration format
+
+{% include duration_format.md %}
 
 Please note: 
 - if time rounding is activated (which is the default behaviour), then your entered seconds might be removed after submitting the form.
@@ -204,10 +242,9 @@ kimai:
 ```
 
 ## Exported records
+{% include new_since.html version="1.0" %}
 
 Exported records will be locked to prevent manipulation of cleared data.
  
-There is the permission `edit_exported_timesheet` which allows to edit and delete these locked entries nevertheless, 
-which by default is given to users with `ROLE_ADMIN` and `ROLE_SUPER_ADMIN`. 
-
-Available since: 1.0
+The [permission]({% link _documentation/permissions.md %}) `edit_exported_timesheet` does allow to edit and delete these 
+locked entries nevertheless, which by default is given to users with `ROLE_ADMIN` and `ROLE_SUPER_ADMIN`. 

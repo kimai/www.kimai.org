@@ -7,6 +7,6 @@ hosted: true
 order: 110
 ---
 
-Timesheet data can be exported for usage in other programs, passing them to different departments or simply for having an offline record of your work. 
-
-Possible formats are: PDF, CSV, HTML, ODS (Open Office Spreadsheet) and XLSX (Excel)
+Timesheet data can be exported for usage in other programs or for sharing them with different departments in the  
+formats: PDF, CSV, HTML, ODS (Open Office Spreadsheet) and XLSX (Excel).
+On top of that, exported records are locked and protected against further changes.

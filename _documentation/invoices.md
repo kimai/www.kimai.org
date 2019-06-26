@@ -147,6 +147,7 @@ If a customer was selected the following values exist as well:
 | ${customer.country} | The customer country |
 | ${customer.homepage} | The customer homepage |
 | ${customer.comment} | The customer comment |
+| ${customer.meta.X} | The customer [meta field]({% link _documentation/meta-fields.md %}) named `X` (if visible)  |
 
 If a project was selected the following values exist as well:
 
@@ -156,6 +157,16 @@ If a project was selected the following values exist as well:
 | ${project.name} | The project name |
 | ${project.comment} | The project name |
 | ${project.order_number} | The project order number |
+| ${project.meta.X} | The project [meta field]({% link _documentation/meta-fields.md %}) named `X` (if visible)  |
+
+If an activity was selected the following values exist as well:
+
+| Key | Description |
+|---|---|
+| ${activity.id} | The activity ID |
+| ${activity.name} | The activity name |
+| ${activity.comment} | The activity name |
+| ${activity.meta.X} | The activity [meta field]({% link _documentation/meta-fields.md %}) named `X` (if visible)  |
 
 ### Timesheet entry variables 
 
@@ -187,6 +198,7 @@ For each timesheet entry you can use the variables from the following table.
 | ${entry.project_id} | Project ID | 10 |
 | ${entry.customer} | Customer name | Acme Studios |
 | ${entry.customer_id} | Customer ID | 3 |
+| ${entry.meta.X} | The [meta field]({% link _documentation/meta-fields.md %}) named `X` (if visible)  |
 
 ## Configure search path
 

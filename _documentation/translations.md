@@ -4,8 +4,11 @@ description: i18n, language specific configurations and the translation files
 toc: true
 ---
 
+
 Languages and translations in Kimai are completely configurable. 
 Read below how to add a new language and configure the output formats for date and time values.  
+
+{{ site.features.multi-language }}
 
 ## Language files
 
@@ -27,6 +30,7 @@ The files in `translations/` as a quick overview:
 - `pagerfanta` - includes the translations for the pagination component below data-tables
 - `plugins` - the plugin screen
 - `system-configuration` - all system configuration, which can be changed through the UI
+- `tags` - the tags administration screen
 - `validators` - related to violations/validation of submitted form data (or API calls)
 
 ### Authentication screens
@@ -80,7 +84,8 @@ parameters:
 
 Make sure the new locale is included in the frontend dependencies. For example Kimai includes moment.js, which ships its own translations.
 Kimai ONLY compiles the moment.js locales which are needed. 
-Check and adapt the JS files in the `assets/` directory, e.g. [app.js](https://github.com/kevinpapst/kimai2/blob/master/assets/app.js):
+Check and adapt the JS files in the `assets/` directory:
+- [app.js](https://github.com/kevinpapst/kimai2/blob/master/assets/app.js) 
 
 ```
 const Moment = require('moment');
@@ -88,7 +93,7 @@ global.moment = Moment;
 require('moment/locale/xx');
 ```
 
-and
+- [calendar.js](https://github.com/kevinpapst/kimai2/blob/master/assets/calendar.js) 
 ```
 require('fullcalendar');
 require('fullcalendar/dist/locale/xx');
@@ -96,18 +101,18 @@ require('fullcalendar/dist/locale/xx');
 
 ### Date and time formats
 
-Kimai uses the configurations in `kimai.yaml` to format the values in the frontend. 
+Kimai uses configurations from `kimai.yaml` to format the values in the frontend. 
 It also uses the configurations to convert between javascript components (e.g. the date-picker) and the PHP backend,
 so they must create the same output. 
 
 ## 12-hour format
 
-Kimai uses 24 hour format by default. If you want to use the 12 hour am/pm format, you have to adjust the locale config at the key `24_hours` like this:
+Kimai uses 24 hour format by default. If your locale typically uses the 12 hour am/pm format, you have to adjust the locale config at the key `24_hours` like this:
 
 ```yaml
 kimai:
     languages:
-        en:
+        xx:
             date_time_type: 'yyyy-MM-dd hh:mm a'
             date_type: 'yyyy-MM-dd'
             date: 'Y-m-d'
@@ -119,7 +124,12 @@ kimai:
 
 ## Check for missing translations
 
-You can search for missing keys by issuing this command (replace `de` with your locale):
+You can search for missing keys by issuing this command (replace `xx` with your locale):
 ```bash
 bin/console debug:translation --only-missing de
 ```
+
+## Finalization
+
+- Sent in a PR with your changes
+- [Update the documentation](https://github.com/kimai/www.kimai.org/blob/master/_features/multi-language.md), which states all available translations

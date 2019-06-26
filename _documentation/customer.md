@@ -27,3 +27,15 @@ Each customer can be assigned its own color, for easier identification in the ti
 
 If a project or an activity linked to the customer does not have its own color, the customers color will be used.
 The default color code is `#d2d6de`.
+
+## Currency
+
+The customers currency is used when displaying the recorded entries in the timesheets.
+
+It is also used for printing invoices, which is the reason while the invoice screen needs one applied customer filter 
+before any data will be shown. 
+
+## Time budget
+{% include new_since.html version="1.0" %}
+
+{% include time_budget.md %}

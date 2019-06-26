@@ -3,32 +3,34 @@ title: Updates
 description: How to update Kimai 2 to the next release version
 ---
 
-1. It is important that you don't execute the [installation steps]({% link _documentation/installation.md %}) before or after your update
+## Pre-requisites
+
+1. Don't execute anything from the [installation steps]({% link _documentation/installation.md %}) before or after your update
 2. Make sure that you have a working database backup before you start the update
-3. Read the [UPGRADING]({{ site.kimai_v2_file }}/UPGRADING.md) guide and the [release information]({{ site.kimai_v2_repo }}/releases) to check if there are further steps required
+3. Read the [UPGRADING]({{ site.kimai_v2_file }}/UPGRADING.md) guide and the [release information]({{ site.kimai_v2_repo }}/releases) to check if there are further manual steps required for one of the version between yours and the new one 
 
 ### Update process 
 
 {% capture alert_note %}
-Some tweaks may be necessary to these instructions if you are using FTP, developing or updating on your local computer 
+Some tweaks may be necessary to these instructions if you have a developer setup or update on your local computer 
 instead of a server. Read the [installation docu]({% link _documentation/installation.md %}) for more information.
 {% endcapture %}
 {% assign alert_note = alert_note| markdownify %}
 {% include alert.html type="info" alert=alert_note %} 
 
-Change into your Kimai 2 installation directory, then fetch the latest code and install all dependencies:
+Change into your Kimai directory, then fetch the latest code and install all dependencies.
+You might have to prefix the `composer` and `bin/console` commands with `sudo -u www-data` (depends on your setup):
 
 ```bash
 git fetch --tags
 git checkout {{ site.kimai_v2_version }}
-sudo -u www-data composer install --no-dev --optimize-autoloader
+composer install --no-dev --optimize-autoloader
 ```
 
 Refresh your cache:
-
 ```bash
-sudo -u www-data bin/console cache:clear --env=prod
-sudo -u www-data bin/console cache:warmup --env=prod
+bin/console cache:clear --env=prod
+bin/console cache:warmup --env=prod
 ```
 
 And upgrade your database:
@@ -37,6 +39,6 @@ And upgrade your database:
 bin/console doctrine:migrations:migrate
 ```
 
-Remember to check the [UPGRADING]({{ site.kimai_v2_file }}/UPGRADING.md) guide for version specific tasks. 
-
-Done! Enjoy the latest version of Kimai :-) 
+Now execute the version specific tasks from the [UPGRADING]({{ site.kimai_v2_file }}/UPGRADING.md) guide - that's important! 
+ 
+{% include alert.html icon="far fa-smile-beam" type="success" alert="Done, enjoy the latest version of Kimai!" %}

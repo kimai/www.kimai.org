@@ -19,6 +19,43 @@ When calling the API you have to submit two additional header with every call fo
 
 {% include alert.html type="danger" alert="Make sure to ONLY call the Kimai 2 API via `https` to protect the users credentials and data. Time-tracking data includes private / sensitive information!" %}
 
+## Swagger file and Postman
+
+The API calls can be exported in a Swagger file format, which can be imported into Postman.
+You find the link in the API docs (the URL is `api/doc.json`).
+
+The imported collection is pointing to your current installation (e.g. localhost).
+If you want to point it to another location (e.g. the Kimai demo), edit the file `config/packages/nelmio_api_doc.yaml` 
+and replace the following lines:
+
+```yaml
+nelmio_api_doc:
+    documentation:
+        host: 'demo.kimai.org'
+        schemes: ['https']
+```
+Then export the swagger file again and import into Postman. 
+
+You could even use this method to generate a collection utilizing Postman variables:
+```yaml
+nelmio_api_doc:
+    documentation:
+        host: '{{hostname}}'
+        schemes: ['https']
+```
+The variable `hostname` can then be changed for the complete collection in Postman.
+Using Postman environments, you can even switch the API location via a simple change of the environments drop-down.
+
+### Authentication in Postman
+
+After importing the collection into Postman, edit the collection and switch to the `Pre-request Scripts` tab.
+You can add the following script to have a global authentication in-place, which you can still overwrite per call. 
+
+```javascript
+pm.request.headers.add({key: 'X-AUTH-USER', value: 'susan_super' });
+pm.request.headers.add({key: 'X-AUTH-TOKEN', value: 'api_kitten' });
+```
+
 ## DateTime formats (ISO 8601 and HTML5)
 
 TL;DR
