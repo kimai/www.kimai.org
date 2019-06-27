@@ -26,12 +26,17 @@ You can test the Plugin in the [Plugin demo](https://www.kimai.org/demo/).
 
 ## Features
 
-Configure additional (optional and mandatory) fields in various formats for the following data types:
+Configure additional fields in various formats for the following data types:
 
 - `Timesheets`
 - `Customers`
 - `Projects`
 - `Activities`
+
+You can create as many fields as you want for each data type:
+- each field can be optional or mandatory
+- each field has its own visibility (see below)
+- each field can be restricted to a certain area (eg. location field only for customer X in project Y)  
 
 The custom fields will be shown on the "create and edit entity" forms and can have the following types:
 - `string`
@@ -121,5 +126,6 @@ This bundle ships a new administration screen, which will be available for the f
 ```sql
 DROP TABLE kimai2_meta_field_rules
 ```
+- [Reload your cache](https://www.kimai.org/documentation/configurations.html) with the cache command
 
 Be aware: the stored meta fields and their values are still available in your Kimai database!

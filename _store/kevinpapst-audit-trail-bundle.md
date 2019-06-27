@@ -133,20 +133,9 @@ You access an objects audit trail via the data-table "Actions" dropdown:
 
 ## Uninstall
 
-Delete the package:
-```bash
-cd kimai2/
-rm -r var/plugins/AuditTrailBundle
+- Delete the extension directory `var/plugins/AuditTrailBundle/`
+- If you don't want to keep the audit history, you can remove the database table (create a backup first!):
+```sql
+DROP TABLE kimai2_ext_log_entries
 ```
-
-Rebuild the cache:
-```
-cd kimai2/
-bin/console cache:clear
-bin/console cache:warmup
-```
-
-If you don't want to keep the audit history, you can remove the database table:
-```
-DROP TABLE kimai2_ext_log_entries;
-```
+- [Reload your cache](https://www.kimai.org/documentation/configurations.html) with the cache command
