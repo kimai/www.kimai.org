@@ -13,6 +13,35 @@ All Kimai specific theme settings will be available in the twig templates with t
 {% raw %}{{ kimai_context.select_type }}{% endraw %}
 ``` 
 
+## Default theme color
+{% include new_since.html version="1.0" %}
+
+The default theme colors can be changed to one of the following choices:
+
+- skin-blue
+- skin-blue-light
+- skin-yellow
+- skin-yellow-light
+- skin-green
+- skin-green-light
+- skin-purple
+- skin-purple-light
+- skin-red
+- skin-red-light
+- skin-black
+- skin-black-light
+
+Add this to your [local.yaml]({% link _documentation/configurations.md %}).
+
+```yaml
+admin_lte:
+    options:
+        skin: skin-blue-light
+```
+
+Please note: unless you change the [permissions]({% link _documentation/permissions.md %}), users can still change the theme color to their wish.
+It is recommended to leave the choice to the user, as colors and contrasts are not only a matter of personal choice but might also be necessary for people with visual impairments. 
+
 ## Searchable input types
 
 The select boxes for customer, project and activity are by default the OS standard UI elements. 
