@@ -157,7 +157,7 @@ This is the full list of existing permissions with short descriptions:
 | edit_export_other_timesheet   | set the export state of for other users timesheet records  |
 | view_own_profile              | _virtual permission, which is always true_ |
 | edit_own_profile              | _virtual permission, which is always true_  |
-| preferences_own_profile       | _virtual permission, which is always true_  |
+| preferences_own_profile       | allows a user to edit the own preferences  |
 | password_own_profile          | whether a user is allowed to change own password (should be deactivated when [LDAP]({% link _documentation/ldap.md %}) is used)  |
 | roles_own_profile             | SECURITY ALERT: grants access to the own roles  |
 | api-token_own_profile         | grants access to change the own API token  |

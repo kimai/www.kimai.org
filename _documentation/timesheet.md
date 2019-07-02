@@ -44,6 +44,7 @@ The default tracking mode is not limiting the user is any way, a user can especi
 the start and stop times completely on his side.
 
 ### Time-clock mode
+{% include new_since.html version="1.0" %}
 
 The time-clock mode is primarily for companies, who don't want their users to add arbitrary records.
 It removes the ability to choose `begin` and `end` for the regular user / in the users timesheet screens.

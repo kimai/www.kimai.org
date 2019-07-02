@@ -11,12 +11,12 @@ title: "Creating a release"
 - Create [CHANGELOG.md]({{ site.kimai_v2_file}}/CHANGELOG.md):
   - Change [.github_changelog_generator]({{ site.kimai_v2_file}}/.github_changelog_generator) config accordingly to new release tag (increase future release)
   - Run [github-changelog-generator](https://github.com/github-changelog-generator/github-changelog-generator) with `github_changelog_generator kevinpapst/kimai2`
-- Edit the release-draft and add the "Full changelog" link + everything from [CHANGELOG.md]({{ site.kimai_v2_file}}/CHANGELOG.md) related to the new version
+- Edit the release-draft and add the "Full changelog" link + everything new from [CHANGELOG.md]({{ site.kimai_v2_file}}/CHANGELOG.md)
 - Push a release branch called `release-x.x` and merge it as last PR into master
+- Publish the release
 - Create the release ZIP for FTP users: 
   - `bin/console kimai:create-release --release=0.9`
-  - Upload the ZIP to the GitHub release draft
-- Publish the release
+  - Edit the GitHub release and upload the created ZIP
 - Adjust Kimai website:
   - Change version in file [_config.yml]({{ site.kimai_v2_website }}/blob/master/_config.yml) and key `kimai_v2_version`  
   - Create a new version [announcement post]({{ site.kimai_v2_website }}), including the release notes
