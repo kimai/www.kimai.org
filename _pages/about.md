@@ -30,9 +30,7 @@ Now, we could write so much more about its features and the benefits it will bri
 a small organization or a company with hundreds of employees - but we think, that giving you the option to test it directly is even better than a thousand words from us:
 So be our guest and test Kimai online with our [demo installation]({% link _pages/demo.md %}). If you are a friend of hard facts, we also have a compiled [feature list]({% link _pages/index.html %}).
 
-And last but not least - probably the most important fact: Kimai is open-source, you can download it for free and you will never be charged a license fee for any future update.
-
-<a href="{% link _pages/testimonials.md %}" class="btn btn-primary"><i class="far fa-comments"></i> Testimonials</a>
+And last but not least - probably the most important fact: **Kimai is open-source, you can download it for free and you will never be charged a license fee for any future update**.
 
 ## History of Kimai
 
