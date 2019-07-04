@@ -1,6 +1,6 @@
 ---
-title: Audit Trail Plugin for Kimai 2
-name: Audit Trail Plugin
+title: Audit-Trail plugin for Kimai 2
+name: Audit-Trail plugin
 intro: "A Kimai 2 plugin, which records all changes of timesheets, customers, projects and activities."
 developer: keleo
 date: "2019-05-21 20:00:00 +0200"
@@ -20,42 +20,48 @@ tags:
 
 A Kimai 2 plugin to record and visualize the changes on `timesheets`, `customers`, `projects` and `activities`.
 
-You can test the Plugin in the [Plugin demo](https://www.kimai.org/demo/).
+You can test it in the ["Plugins" demo](https://www.kimai.org/demo/).
 
 ## Features
 
-- Adds new actions to each of the following items in the admin section:
+Adds new actions to each of the following items in the admin section:
   - Timesheets
   - Customers
   - Projects
   - Activities
-- A new screen with the Audit log including all changes for the selected item
-- Each log entry contains: the username, date-time and type of change
+
+Introduces a new screen for each of the above items, with all recorded changes and each log entry containing the following information:
+
+- username
+- date-time
+- type of change (create, update)
+- changed fields (see list below)
 
 The following fields are recorded for changes:
 - Timesheet: `begin`, `end`, `duration`, `timezone`, `user`, `activity`, `project`, `description`, `rate`, `fixedRate`, `hourlyRate`, `exported` 
-- Activity: `project`, `name`, `comment`, `visible`, `fixedRate`, `hourlyRate`, `color`
-- Project: `customer`, `name`, `orderNumber`, `comment`, `visible`, `budget`, `fixedRate`, `hourlyRate`, `color`
-- Customer: `name`, `number`, `comment`, `visible`, `company`, `contact`, `address`, `country`, `currency`, `phone`, `fax`, `mobile`, `email`, `homepage`, `timezone`, `fixedRate`, `color` 
+- Activity: `project`, `name`, `comment`, `visible`, `fixedRate`, `hourlyRate`, `color`, `budget`, `timeBudget`
+- Project: `customer`, `name`, `orderNumber`, `comment`, `visible`, `budget`, `fixedRate`, `hourlyRate`, `color`, `budget`, `timeBudget`
+- Customer: `name`, `number`, `comment`, `visible`, `company`, `contact`, `address`, `country`, `currency`, `phone`, `fax`, `mobile`, `email`, `homepage`, `timezone`, `fixedRate`, `color`, `budget`, `timeBudget` 
 
 **Be aware**:
-History is only available for all changes from the moment on when this bundle was installed, previous changes are not available.
+- History is only available for all changes from the moment on when this bundle was installed, previous changes are not available.
+- Not all fields (eg. tags and custom fields) are recorded, please read the above list carefully.
 
-## Roadmap
+### Roadmap
 
 The following features will be added in the future:
 
-- Record changes on System configurations
 - Global audit log page using datatables (list user, date-time, item type, link to detail page)
+- Record changes on System configurations
 - Revert to a revision
-- Command or admin screen to install databases
+- Record changes for custom fields
 
-**Further ideas**
+Further ideas:
 
-- Notification emails on timesheet changes after entry was stopped
+- Notification emails on timesheet changes after entry was changed
+- Remove old revisions to limit database size
 - Show deleted items
 - Support to revert deleted items
-- Remove old revisions to limit database size
 
 ## Installation
 
@@ -64,12 +70,12 @@ The following features will be added in the future:
 Create the required tables for your database engine.
 
 Either MySQL / MariaDB:
-```
+```sql
 CREATE TABLE kimai2_ext_log_entries (id INT AUTO_INCREMENT NOT NULL, action VARCHAR(8) NOT NULL, logged_at DATETIME NOT NULL COMMENT \'(DC2Type:datetime)\', object_id VARCHAR(64) DEFAULT NULL, object_class VARCHAR(255) NOT NULL, version INT NOT NULL, data LONGTEXT DEFAULT NULL COMMENT \'(DC2Type:array)\', username VARCHAR(255) DEFAULT NULL, INDEX log_class_lookup_idx (object_class), INDEX log_date_lookup_idx (logged_at), INDEX log_user_lookup_idx (username), INDEX log_version_lookup_idx (object_id, object_class, version), PRIMARY KEY(id));
 ```
 
 or SQLite:
-```
+```sql
 CREATE TABLE kimai2_ext_log_entries (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "action" VARCHAR(8) NOT NULL, logged_at DATETIME NOT NULL, object_id VARCHAR(64) DEFAULT NULL, object_class VARCHAR(255) NOT NULL, version INTEGER NOT NULL, data CLOB DEFAULT NULL, username VARCHAR(255) DEFAULT NULL);
 CREATE INDEX log_class_lookup_idx ON kimai2_ext_log_entries (object_class);
 CREATE INDEX log_date_lookup_idx ON kimai2_ext_log_entries (logged_at);
@@ -77,9 +83,41 @@ CREATE INDEX log_user_lookup_idx ON kimai2_ext_log_entries (username);
 CREATE INDEX log_version_lookup_idx ON kimai2_ext_log_entries (object_id, object_class, version);
 ```
 
-## Permissions
+### Files
 
-This bundle ships new administration sections, which are available for the following users:
+Extract the ZIP file and upload the included directory and all files to your Kimai installation to the new directory:  
+`var/plugins/AuditTrailBundle/`
+
+The file structure needs to like like this afterwards:
+
+```
+var/plugins/
+├── AuditTrailBundle
+│   ├── AuditTrailBundle.php
+|   └ ... more files and directories follow here ... 
+```
+
+### Rebuild the cache
+
+After uploading the files, Kimai needs to know about the new plugin. It will be found, when the cache is re-build:
+
+```
+cd kimai2/
+bin/console cache:clear --env=prod
+bin/console cache:warmup --env=prod
+```
+
+or when using FTP: delete the folder `var/cache/prod/`.
+
+### First test
+
+When logged in as `SUPER_ADMIN`, you should now see the audit log screens (find the links in the "actions" dropdown menus).
+
+If this was successful, you can now think about giving permissions to other users as well.
+
+### Permissions
+
+This bundle ships new administration screens, which are available for the following users:
 
 - `ROLE_SUPER_ADMIN` - every super administrator has access to all audit logs
 - `audit_customer` - everyone with this permission can see all changes for the customer objects
@@ -88,7 +126,8 @@ This bundle ships new administration sections, which are available for the follo
 - `audit_own_timesheet` -  everyone with this permission can see all changes for his own timesheets (only via team timesheets)
 - `audit_other_timesheet` -  everyone with this permission can see all changes of other users timesheets (only via team timesheets)
 
-You can add the new permissions to your `local.yml` [as described in the documentation](https://www.kimai.org/documentation/configurations.html):
+You can add the new permissions to your [local.yml](https://www.kimai.org/documentation/configurations.html). 
+For more information, read the [permissions](https://www.kimai.org/documentation/permissions.html) documentation.
 
 ```yaml
 kimai:
@@ -100,27 +139,9 @@ kimai:
             ROLE_SUPER_ADMIN: [...,AUDIT]
 ```
 
-### Files
+After changing the permissions, you need to clear the cache one more time.
 
-Extract the ZIP file and upload the included directory and all files to your Kimai installation. 
-The file structure needs to like like this afterwards:
-
-```
-kimai2/var/plugins/
-├── AuditTrailBundle
-│   ├── AuditTrailBundle.php
-|   └ ... more files and directories follow here ... 
-```
-
-### Rebuild the cache
-
-```
-cd kimai2/
-bin/console cache:clear
-bin/console cache:warmup
-```
-
-## Screenshot
+## Screenshots
 
 A audit trail can look like this, but each change will be recorded and you might see more entries in a object timeline:
 
@@ -129,13 +150,3 @@ A audit trail can look like this, but each change will be recorded and you might
 You access an objects audit trail via the data-table "Actions" dropdown:
 
 ![Screenshot](https://www.kimai.org/images/marketplace/audit-trail-button.jpg)
-
-
-## Uninstall
-
-- Delete the extension directory `var/plugins/AuditTrailBundle/`
-- If you don't want to keep the audit history, you can remove the database table (create a backup first!):
-```sql
-DROP TABLE kimai2_ext_log_entries
-```
-- [Reload your cache](https://www.kimai.org/documentation/configurations.html) with the cache command

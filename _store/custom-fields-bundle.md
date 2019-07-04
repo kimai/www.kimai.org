@@ -1,11 +1,11 @@
 ---
-title: Custom Fields Plugin for Kimai 2
-name: Custom fields Plugin
+title: Custom-fields plugin for Kimai 2
+name: Custom-fields plugin
 intro: "Create free configurable additional fields for timesheets, customers, projects and activities."
 developer: keleo
 date: "2019-06-25 20:00:00 +0200"
 icon: fas fa-keyboard
-price: "100€"
+price: "85€"
 version: 1.0
 screenshot: 
   - /images/marketplace/meta-fields-screenshot.jpg
@@ -22,7 +22,7 @@ tags:
 
 A Kimai 2 plugin, which allows to configure additional fields for timesheets, customers, projects and activities.
 
-You can test the Plugin in the [Plugin demo](https://www.kimai.org/demo/).
+You can test it in the ["Plugins" demo](https://www.kimai.org/demo/).
 
 ## Features
 
@@ -33,10 +33,13 @@ Configure additional fields in various formats for the following data types:
 - `Projects`
 - `Activities`
 
-You can create as many fields as you want for each data type:
-- each field can be optional or mandatory
-- each field has its own visibility (see below)
-- each field can be restricted to a certain area (eg. location field only for customer X in project Y)  
+You can create as many fields as you want for each data type, where each field:
+- is either optional or mandatory
+- has its own visibility (see below)
+- can be restricted to certain combinations (eg. a "location" field will only be shown for customer X and project Y)  
+
+Be aware, that restricted fields won't be visible on the create forms, as Kimai initially can't know if the rule will apply.
+In these cases the form will only be shown in the edit forms.
 
 The custom fields will be shown on the "create and edit entity" forms and can have the following types:
 - `string`
@@ -51,12 +54,12 @@ The custom fields will be shown on the "create and edit entity" forms and can ha
 - `country`
 - `color`
 
-The entered values are available in:
+The custom fields / the entered values are available in:
 - Invoice templates (custom templates only)
-- Export module (spreadsheets and custom renderer)
+- Export module (spreadsheets and custom renderer show them automatically)
 - API (collections and entities)
 
-You can configure sensitive data as "invisible", so it doesnÄt show up in the above mentioned places.
+Sensitive data can be configured as "invisible", so it will not show up in the above mentioned places.
 
 More information about custom fields can be found in the [documentation](https://www.kimai.org/documentation/meta-fields.html).
 
@@ -64,9 +67,9 @@ More information about custom fields can be found in the [documentation](https:/
 
 ### Database
 
-This bundle stores the rules in a new database table, which needs to be created. Choose the statements for your database:
+Create the required tables for your database engine.
 
-MySQL:
+Either MySQL / MariaDB:
 ```sql
 CREATE TABLE kimai2_meta_field_rules (id INT AUTO_INCREMENT NOT NULL, customer_id INT DEFAULT NULL, project_id INT DEFAULT NULL, activity_id INT DEFAULT NULL, entity_type VARCHAR(100) NOT NULL, name VARCHAR(50) NOT NULL, value VARCHAR(255) DEFAULT NULL, type VARCHAR(100) NOT NULL, visible TINYINT(1) NOT NULL, required TINYINT(1) NOT NULL, INDEX IDX_C7D8A2619395C3F3 (customer_id), INDEX IDX_C7D8A261166D1F9C (project_id), INDEX IDX_C7D8A26181C06096 (activity_id), INDEX meta_field_rule_entity_type_idx (entity_type), UNIQUE INDEX UNIQ_C7D8A261C412EE025E237E06 (entity_type, name), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE = InnoDB;
 ALTER TABLE kimai2_meta_field_rules ADD CONSTRAINT FK_C7D8A2619395C3F3 FOREIGN KEY (customer_id) REFERENCES kimai2_customers (id) ON DELETE CASCADE;
@@ -74,7 +77,7 @@ ALTER TABLE kimai2_meta_field_rules ADD CONSTRAINT FK_C7D8A261166D1F9C FOREIGN K
 ALTER TABLE kimai2_meta_field_rules ADD CONSTRAINT FK_C7D8A26181C06096 FOREIGN KEY (activity_id) REFERENCES kimai2_activities (id) ON DELETE CASCADE;
 ```
 
-SQLite:
+or SQLite:
 ```sql
 CREATE TABLE kimai2_meta_field_rules (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, customer_id INTEGER DEFAULT NULL, project_id INTEGER DEFAULT NULL, activity_id INTEGER DEFAULT NULL, entity_type VARCHAR(100) NOT NULL, name VARCHAR(50) NOT NULL, value VARCHAR(255) DEFAULT NULL, type VARCHAR(100) NOT NULL, visible BOOLEAN NOT NULL, required BOOLEAN NOT NULL);
 CREATE INDEX IDX_C7D8A2619395C3F3 ON kimai2_meta_field_rules (customer_id);
@@ -84,48 +87,57 @@ CREATE INDEX meta_field_rule_entity_type_idx ON kimai2_meta_field_rules (entity_
 CREATE UNIQUE INDEX UNIQ_C7D8A261C412EE025E237E06 ON kimai2_meta_field_rules (entity_type, name);
 ```
 
-### Plugin files 
+### Files 
 
-First clone it to your Kimai installation `plugins` directory:
-```
-cd /kimai/var/plugins/
-git clone https://github.com/kevinpapst/MetaFieldsBundle.git
-```
+Extract the ZIP file and upload the included directory and all files to your Kimai installation to the new directory:  
+`var/plugins/MetaFieldsBundle/`
 
-And then rebuild the cache: 
-```
-cd /kimai/
-bin/console cache:clear
-bin/console cache:warmup
-```
-
-Or [download it as zip](https://github.com/kevinpapst/MetaFieldsBundle/archive/master.zip) and upload the directory to your Kimai installation:
+The file structure needs to like like this afterwards:
 
 ```
-kimai/var/plugins/
+var/plugins/
 ├── MetaFieldsBundle
 │   ├── MetaFieldsBundle.php
 |   └ ... more files and directories follow here ... 
 ```
+
+### Rebuild the cache
+
+After uploading the files, Kimai needs to know about the new plugin. It will be found, when the cache is re-build:
+
+```
+cd kimai2/
+bin/console cache:clear --env=prod
+bin/console cache:warmup --env=prod
+```
+
+or when using FTP: delete the folder `var/cache/prod/`.
+
+### First test
+
+When logged in as `SUPER_ADMIN`, you should now see the custom-fields administration screen.
+
+If this was successful, you can now think about giving permissions to other users as well.
 
 ## Permissions
 
 This bundle ships a new administration screen, which will be available for the following users:
 
 - `ROLE_SUPER_ADMIN` - every super administrator
-- `configure_meta_fields` - every use that owns this permission 
+- `configure_meta_fields` - allows to adminstrate the custom field definitions
+ 
+You can add the new permissions to your [local.yml](https://www.kimai.org/documentation/configurations.html). 
+For more information, read the [permissions](https://www.kimai.org/documentation/permissions.html) documentation.
+
+```yaml
+    permissions:
+        roles:
+            ROLE_ADMIN: ['configure_meta_fields']
+```
+ 
+After changing the permissions, you need to clear the cache one more time.
  
 ## Screenshot
 
 ![Screenshot](https://www.kimai.org/images/marketplace/meta-fields-screenshot.jpg)
-
-## Uninstall
-
-- Delete the extension directory `var/plugins/MetaFieldsBundle/`
-- Remove the database table (create a backup first!):
-```sql
-DROP TABLE kimai2_meta_field_rules
-```
-- [Reload your cache](https://www.kimai.org/documentation/configurations.html) with the cache command
-
-Be aware: the stored meta fields and their values are still available in your Kimai database!
+ 
