@@ -49,9 +49,10 @@ The default period for the `Remember me` option can be changed in the config fil
 
 User registration with instant approval is activated by default, so users can register and will be able to login and start time-tracking instantly.
 
-If you want to disable the registration or enable email verification, read further below under _Configurations_.
+If you want to disable the registration or enable email verification, read on ...
 
 ### Email activation
+
 If you want your new users to use [email]({% link _documentation/emails.md %}) based activation add this to your `local.yaml`:
 
 ```yaml

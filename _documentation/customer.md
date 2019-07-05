@@ -1,6 +1,7 @@
 ---
 title: Customer
 description: Customers in Kimai
+toc: true
 ---
 
 Customers in Kimai are used to manage project and activities, which are then used for time-records.
@@ -19,7 +20,7 @@ kimai:
             currency: GBP
 ```
 
-This can also be configured directly in the System configuration within Kimai.
+These settings can also be configured directly at `System / Settings` within Kimai.
 
 ## Customer colors
 
