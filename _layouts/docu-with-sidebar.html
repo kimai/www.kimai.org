@@ -23,10 +23,10 @@ upgrade_notice: false
 
 			{% for group in site.data[collectionMenu] %}
 			<strong>{{ group.title }}</strong>
-			<div class="list-group list-group-transparent mb-0">
+			<div class="list-group list-group-transparent mb-3">
 				{% for p in group.pages %}
 				{% assign doc = site[collectionType] | where: "slug", p | first %}
-				<a href="{{ doc.url }}" class="list-group-item list-group-item-action{% if page.url == doc.url %} active{% endif %}"><span class="icon mr-3"><i class="{{ doc.icon }}"></i></span>{{ doc.title }}</a>
+				<a href="{{ doc.url }}" class="list-group-item list-group-item-action{% if page.url == doc.url %} active{% endif %}">{{ doc.title }}</a>
 				{% endfor %}
 			</div>
 			{% endfor %}

@@ -76,6 +76,8 @@ and [this article](https://symfony.com/doc/current/setup/web_server_configuratio
 
 {% include alert.html icon="far fa-smile-beam" type="success" alert="Installation complete: enjoy time-tracking!" %}
 
+Oh ... wait! Before you leave, please read the [initial setup guide]({% link _documentation/inital-setup.md %}).
+
 ## Docker
 
 There is a dedicated article about [Docker setups]({% link _documentation/docker.md %}) for Kimai, suitable for development and production. 

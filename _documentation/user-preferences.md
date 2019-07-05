@@ -6,8 +6,25 @@ toc: true
 
 A user has several preferences, which changes the behaviour how he interacts with Kimai.
 
-These settings can be edited by the user or by another user owning the `preferences_other_profile` [permission]({% link _documentation/permissions.md %}).
-The user preferences can be access via the users menu in the upper-right, or via the user administration (needs `view_user` permission). 
+These settings can be edited by:
+- the user with `preferences_own_profile` permission for himself 
+- by users owning the `preferences_other_profile` [permission]({% link _documentation/permissions.md %}) for every user
+
+The user preferences can be accessed via the users menu in the upper-right or via the user administration (needs `view_user` permission). 
+
+## Default preferences
+
+You can configure default values for new users in your [local.yaml]({% link _documentation/configurations.md %}) like this: 
+```yaml
+kimai:
+    defaults:
+        user:
+            timezone: Europe/London
+            language: de
+            theme: purple
+```
+
+These settings can also be configured directly in the `System / Settings` within Kimai.
 
 ## Hourly rate
 
