@@ -17,7 +17,10 @@
 					</p>
 				</div>
 				<nav class="d-flex text-muted">
-					<a href="{{ author.paypal }}" class="btn btn-primary" role="button">Donate with PayPal</a>
+					<a href="{{ author.paypal }}" class="btn btn-primary" role="button" style="margin-right: 10px">Donate with PayPal</a>
+					{% if author.amazon %}
+					<a href="{{ author.amazon }}" class="btn btn-primary" role="button">Buy from wishlist (German Amazon)</a>
+					{% endif %}
 				</nav>
 			</div>
 		</article>
