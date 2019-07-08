@@ -1,6 +1,7 @@
 ---
 title: Activities
 description: Activities in Kimai 2
+toc: true
 ---
 
 Activities in Kimai are defining the current task you are working on.
