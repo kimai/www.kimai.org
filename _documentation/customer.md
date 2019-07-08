@@ -40,3 +40,25 @@ before any data will be shown.
 {% include new_since.html version="1.0" %}
 
 {% include time_budget.md %}
+
+## Visibility
+
+By toggling the visibility on a customer, you:
+- hide the customer from all drop-downs
+- hide the customer from the default list in the customer administration
+- hide all projects for this customer from all drop-downs, regardless of their visibility state
+- hide all projects for this customer from the default list in the projects administration
+- hide the activities for all customer projects from all drop-downs, regardless of their visibility state
+- hide the activities for all customer projects from the default list in the activities administration
+
+Please note:
+- all currently linked objects will still show the customer in the dropdown as pre-selected option
+  - you can still change the customer on timesheet records and projects, which used it before
+  - you cannot create new projects for this customer
+  - you cannot create new timesheet records for this customer 
+- you can still access the hidden entries by changing the visibility filter on the the toolbars 
+
+The visibility filter in the toolbar has three state: 
+- Visible: Yes (all customers that are visible)
+- Visible: No (all customers that are invisible)
+- Visible "empty" (all customers, not filtering on their visibility)
