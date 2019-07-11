@@ -15,7 +15,7 @@ sitemap:
     changefreq: weekly
 ---
 
-This is the official documentation for the Kimai time-tracking application v2.
+This is the official documentation for the time-tracking application Kimai 2.
   
 {% for group in site.data.menu-documentation %}
 <h3>{{ group.title }}</h3>

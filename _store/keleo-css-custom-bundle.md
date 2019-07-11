@@ -10,15 +10,8 @@ download: https://github.com/Keleo/CustomCSSBundle/archive/master.zip
 github: https://github.com/Keleo/CustomCSSBundle
 screenshot: 
   - https://raw.githubusercontent.com/Keleo/CustomCSSBundle/master/screenshot.jpg
-featured: 20
-features:
-  - change Kimai look for all users
-  - pre-made css rules included 
-  - hide header on mobile
-  - change application title
 tags:
   - plugin
-  - kimai 2
 ---
 
 This bundle ships with some pre-defined CSS rules, which can be added with a button click.
