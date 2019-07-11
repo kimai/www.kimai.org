@@ -12,7 +12,6 @@ screenshot:
   - https://raw.githubusercontent.com/Keleo/CustomCSSBundle/master/screenshot.jpg
 tags:
   - plugin
-  - kimai 2
 ---
 
 This bundle ships with some pre-defined CSS rules, which can be added with a button click.

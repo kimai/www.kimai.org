@@ -10,7 +10,6 @@ download: https://github.com/Keleo/RecalculateRatesBundle/archive/master.zip
 github: https://github.com/Keleo/RecalculateRatesBundle
 tags:
   - plugin
-  - kimai 2
 ---
 
 A Kimai 2 plugin, which forces a recalculation of the hourly and fixed rates for timesheet records on every update.

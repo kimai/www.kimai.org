@@ -8,7 +8,6 @@ url: https://www.keleo.de/kimai/
 icon: fas fa-shipping-fast
 email: info@keleo.de
 tags:
-  - kimai 2
   - support
 ---
 

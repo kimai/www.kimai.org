@@ -5,19 +5,18 @@ intro: "Create free configurable additional fields for timesheets, customers, pr
 developer: keleo
 date: "2019-06-25 20:00:00 +0200"
 icon: fas fa-keyboard
-price: "85€"
+price: "49€"
 version: 1.0
 screenshot: 
   - /images/marketplace/meta-fields-screenshot.jpg
   - /images/marketplace/meta-fields-create.jpg
   - /images/marketplace/meta-fields-example.jpg
   - /images/marketplace/meta-fields-example2.jpg
-buy: /documentation/buy-a-plugin.html
+gumroad: kimai2-custom-fields
 featured: Create free configurable additional (optional and mandatory) fields for timesheets, customers, projects and activities in various formats. 
 new: true
 tags:
   - plugin
-  - kimai 2
 ---
 
 A Kimai 2 plugin, which allows to configure additional fields for timesheets, customers, projects and activities.

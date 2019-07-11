@@ -1,24 +1,23 @@
 ---
 title: Audit-Trail plugin for Kimai 2
 name: Audit-Trail plugin
-intro: "A Kimai 2 plugin, which records all changes of timesheets, customers, projects and activities."
+intro: "Record all changes of timesheets, customers, projects and activities."
 developer: keleo
 date: "2019-05-21 20:00:00 +0200"
 icon: fas fa-history
-price: "40€"
+price: "29€"
 version: 1.0
 screenshot: 
   - /images/marketplace/audit-trail-screenshot.jpg
   - /images/marketplace/audit-trail-button.jpg
-buy: /documentation/buy-a-plugin.html
+gumroad: kimai2-audit-trail
 featured: Records detailed change/audit logs for timesheets, customers, projects and activities and displays them in a per-item timeline. 
 new: true
 tags:
   - plugin
-  - kimai 2
 ---
 
-A Kimai 2 plugin to record and visualize the changes on `timesheets`, `customers`, `projects` and `activities`.
+Find out who changed their records, what and when: a Kimai 2 plugin to record and visualize the changes on `timesheets`, `customers`, `projects` and `activities`.
 
 You can test it in the ["Plugins" demo](https://www.kimai.org/demo/).
 
@@ -71,7 +70,7 @@ Create the required tables for your database engine.
 
 Either MySQL / MariaDB:
 ```sql
-CREATE TABLE kimai2_ext_log_entries (id INT AUTO_INCREMENT NOT NULL, action VARCHAR(8) NOT NULL, logged_at DATETIME NOT NULL COMMENT \'(DC2Type:datetime)\', object_id VARCHAR(64) DEFAULT NULL, object_class VARCHAR(255) NOT NULL, version INT NOT NULL, data LONGTEXT DEFAULT NULL COMMENT \'(DC2Type:array)\', username VARCHAR(255) DEFAULT NULL, INDEX log_class_lookup_idx (object_class), INDEX log_date_lookup_idx (logged_at), INDEX log_user_lookup_idx (username), INDEX log_version_lookup_idx (object_id, object_class, version), PRIMARY KEY(id));
+CREATE TABLE kimai2_ext_log_entries (id INT AUTO_INCREMENT NOT NULL, action VARCHAR(8) NOT NULL, logged_at DATETIME NOT NULL COMMENT '(DC2Type:datetime)', object_id VARCHAR(64) DEFAULT NULL, object_class VARCHAR(255) NOT NULL, version INT NOT NULL, data LONGTEXT DEFAULT NULL COMMENT '(DC2Type:array)', username VARCHAR(255) DEFAULT NULL, INDEX log_class_lookup_idx (object_class), INDEX log_date_lookup_idx (logged_at), INDEX log_user_lookup_idx (username), INDEX log_version_lookup_idx (object_id, object_class, version), PRIMARY KEY(id));
 ```
 
 or SQLite:
