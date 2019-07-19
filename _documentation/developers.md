@@ -153,6 +153,7 @@ And that's how to use it:
 use App\Event\DashboardEvent;
 use App\Model\DashboardSection;
 use App\Model\Widget;
+use KimaiPlugin\YourCustomBundle\Widget\Type\CustomWidget;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class MyDashboardSubscriber implements EventSubscriberInterface
@@ -164,15 +165,17 @@ class MyDashboardSubscriber implements EventSubscriberInterface
     
     public function onDashboardEvent(DashboardEvent $event)
     {
-        $section = new DashboardSection('optional.row.title');
-        $widget = new Widget('A title', 100);
-        $widget
-            ->setIcon('duration')
-            ->setColor('purple')
-            ->setType(Widget::TYPE_COUNTER)
-        ;
-        $section->addWidget($widget);
-        $event->addSection($section);
+        $section = new CompoundRow();
+        $section->setTitle('Section title');
+        $section->setOrder(1);
+
+        $section->addWidget((new CustomWidget())
+                    ->setId('custom-widget-id')
+                    ->setTitle('Custom widget title')
+                    ->setData(['foo' => 'bar'])
+                    ->setOptions([]));
+
+       $event->addSection($section);
     }
 }
 ```
