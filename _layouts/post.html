@@ -32,10 +32,10 @@ menu: docs
 					<div class="text-wrap p-lg-6">
 
 						{% if page.toc %}
-						{{ content | toc_only }}
+						{% include toc.html html=page.content class="section-nav" h_max=3 %}
 						{% endif %}
 
-						{{ content | toc_generate }}
+						{{ content }}
 					</div>
 				</div>
 				<div class="card-footer">

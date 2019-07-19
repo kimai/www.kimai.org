@@ -62,7 +62,7 @@ expire_warning: false
 						{% endif %}
 
 						{% if page.toc %}
-						{{ page.content | toc_only }}
+						{% include toc.html html=page.content class="section-nav" h_min=2 h_max=3 %}
 						{% endif %}
 
 						{{ page.content }}

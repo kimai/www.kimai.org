@@ -151,8 +151,8 @@ And that's how to use it:
 
 ```php
 use App\Event\DashboardEvent;
-use App\Model\DashboardSection;
 use App\Model\Widget;
+use App\Widget\Type\CompoundRow;
 use KimaiPlugin\YourCustomBundle\Widget\Type\CustomWidget;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
@@ -169,11 +169,13 @@ class MyDashboardSubscriber implements EventSubscriberInterface
         $section->setTitle('Section title');
         $section->setOrder(1);
 
-        $section->addWidget((new CustomWidget())
-                    ->setId('custom-widget-id')
-                    ->setTitle('Custom widget title')
-                    ->setData(['foo' => 'bar'])
-                    ->setOptions([]));
+        $section->addWidget(
+            (new CustomWidget())
+                ->setId('custom-widget-id')
+                ->setTitle('Custom widget title')
+                ->setData(['foo' => 'bar'])
+                ->setOptions([])
+        );
 
        $event->addSection($section);
     }

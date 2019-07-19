@@ -1,13 +1,14 @@
 # Site
-title:              Kimai Time-Tracking
-bio:                'Kimai time-tracking'
-description:        "Kimai time-tracking app - a free and open-source PHP based time-tracker for agencies and freelancer"
-locale:             en_US
-baseurl:            "" # the subpath of your site, e.g. /blog
+title:        "Kimai Time-Tracking"
+bio:          "Kimai Time-Tracking"
+description:  "Kimai time-tracking app - a free and open-source PHP based time-tracker for agencies and freelancer"
+locale:       "en_US"
+lang:         "en_US"
+baseurl:      ""
 
 # jekyll-sitemap: base hostname & protocol for your site
-url:                "https://www.kimai.org"
-bing-id:            "874E17F27A8EABE9DDAED762FC498BC4"
+url:          "https://www.kimai.org"
+bing-id:      "874E17F27A8EABE9DDAED762FC498BC4"
 
 collections:
   documentation:
@@ -65,19 +66,16 @@ defaults:
 
 # Jekyll
 markdown:           kramdown
-highlighter:        rouge
 kramdown:
   auto_ids:         true
   footnote_nr:      1
   entity_output:    as_char
   toc_levels:       1..6
   enable_coderay:   false
-  syntax_highlighter: rouge
   syntax_highlighter_opts:
     css_class: ''
     span:
       line_numbers: false
-mathjax:            true
 sass:
   sass_dir:         assets/sass
   style:            compressed
@@ -87,11 +85,6 @@ plugins:
   - jekyll-sitemap
   - jekyll-mentions
   - jekyll-paginate
-  - jekyll-toc
-
-toc:
-  min_level: 2
-  max_level: 3
 
 jekyll-mentions:
     base_url: https://github.com
@@ -105,12 +98,6 @@ base_color: '#467fcf'
 author:
    name: Kevin Papst
    url: https://www.kevinpapst.de
-
-docs-menu:
-  - title: Getting started
-    pages: [index]
-  - title: Components
-    pages: [alerts, buttons, tags, typography]
 
 # Kimai exclusive
 use_pagination: false
