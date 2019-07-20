@@ -38,6 +38,21 @@ You can test your email configuration with the command `bin/console -vv swiftmai
 
 The email will be sent using the transport from your configured `MAILER_URL`.
 
+### MAILER_URL with special character 
+
+If your SMTP credentials contain special character like `@` or other ones which are not URL-safe, then they need to be urlencoded. 
+This can be done with one command, assuming your password is `mG0/d1@3aT.Z)s` then execute:
+
+```bash
+php -r "echo urlencode('mG0/d1@3aT.Z)s');"
+mG0%2Fd1%403aT.Z%29s
+```
+
+Your `MAILER_URL` might look like this:
+```
+MAILER_URL="smtp://user:mG0%2Fd1%403aT.Z%29s@localhost:25?encryption=&auth_mode="
+```
+
 ### SMTP does not accept emails
 
 If you have the following error in your logfile:
