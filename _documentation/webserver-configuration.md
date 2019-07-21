@@ -38,7 +38,7 @@ which needs to be allowed by Apache via `AllowOverride All`.
         AllowOverride All
 
         # If you see an error like the following in your logs:
-        # AH01630: client denied by server configuration: /var/www/kimai/public/
+        # AH01630: client denied by server configuration: /var/www/kimai2/public/
         # then you might have to exchange the "Order/Allow" rules with "Require" (see below)
         # More infos at https://httpd.apache.org/docs/2.4/de/upgrading.html
 
