@@ -33,12 +33,12 @@ which needs to be allowed by Apache via `AllowOverride All`.
     ServerName kimai.local
     ServerAlias www.kimai.local
 
-    DocumentRoot /var/www/kimai/public
-    <Directory /var/www/kimai/public>
+    DocumentRoot /var/www/kimai2/public
+    <Directory /var/www/kimai2/public>
         AllowOverride All
 
         # If you see an error like the following in your logs:
-        # AH01630: client denied by server configuration: /var/www/kimai/public/
+        # AH01630: client denied by server configuration: /var/www/kimai2/public/
         # then you might have to exchange the "Order/Allow" rules with "Require" (see below)
         # More infos at https://httpd.apache.org/docs/2.4/de/upgrading.html
 
@@ -52,14 +52,14 @@ which needs to be allowed by Apache via `AllowOverride All`.
         FallbackResource /index.php
     </Directory>
 
-    <Directory /var/www/kimai>
+    <Directory /var/www/kimai2>
         Options FollowSymlinks
     </Directory>
 
     # optionally disable the fallback resource for the asset directories
     # which will allow Apache to return a 404 error when files are
     # not found instead of passing the request to Symfony
-    <Directory /var/www/kimai/public/bundles>
+    <Directory /var/www/kimai2/public/bundles>
         FallbackResource disabled
     </Directory>
     
