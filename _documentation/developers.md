@@ -274,3 +274,31 @@ See [meta fields]({% link _documentation/meta-fields.md %}) documentation.
 ## Adding UserPreference
 
 See [user preferences]({% link _documentation/user-preferences.md %}) documentation.
+
+## Adding custom meta tags, stylesheets or javascript
+
+There are three available events which can be used to add your custom output to the rendered HTML:
+- App\Event\ThemeEvent::HTML_HEAD
+- App\Event\ThemeEvent::STYLESHEET
+- App\Event\ThemeEvent::JAVASCRIPT
+
+```php
+class ThemeEventSubscriber implements EventSubscriberInterface
+{
+    public static function getSubscribedEvents(): array
+    {
+        return [
+            ThemeEvent::STYLESHEET => ['renderStylesheet', 100],
+        ];
+    }
+
+    public function renderStylesheet(ThemeEvent $event)
+    {
+        $css = '<style type="text/css">body.login-page h3 { color:red !important; }</style>';
+        $event->addContent($css);
+    }
+}
+
+```
+
+These events are trigger on all pages, including the security layout.
