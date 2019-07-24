@@ -298,7 +298,6 @@ class ThemeEventSubscriber implements EventSubscriberInterface
         $event->addContent($css);
     }
 }
-
 ```
 
 These events are trigger on all pages, including the security layout.
