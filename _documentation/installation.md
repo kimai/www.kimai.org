@@ -25,15 +25,14 @@ chmod -R g+r .
 chmod -R g+rw var/
 ```
 
-Configure the database connection in the `.env` file (defaults to SQLite, but MySQL/MariaDB is recommended):
-```
-APP_ENV=prod
-DATABASE_URL=mysql://user:password@127.0.0.1:3306/database
-```
-
 Now install all dependencies, you might have to do this as webserver user (prefix with `sudo -u www-data`):
 ```bash
 composer install --no-dev --optimize-autoloader
+```
+
+Configure the database connection in the `.env` file (defaults to SQLite, but MySQL/MariaDB is recommended):
+```
+DATABASE_URL=mysql://user:password@127.0.0.1:3306/database
 ```
 
 ### Database
@@ -72,7 +71,7 @@ If you are going to [import data from Kimai v1]({% link _documentation/migration
 
 Configure your web server (like Nginx or Apache) to point its DocumentRoot at the `public/` directory.
 For more details, see the [Webserver How-To]({% link _documentation/webserver-configuration.md %}) 
-and [this article](https://symfony.com/doc/current/setup/web_server_configuration.html).
+and this [Symfony article](https://symfony.com/doc/current/setup/web_server_configuration.html).
 
 {% include alert.html icon="far fa-smile-beam" type="success" alert="Installation complete: enjoy time-tracking!" %}
 
