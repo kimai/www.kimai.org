@@ -39,6 +39,6 @@ And upgrade your database:
 bin/console doctrine:migrations:migrate
 ```
 
-Now execute the version specific tasks from the [UPGRADING]({{ site.kimai_v2_file }}/UPGRADING.md) guide - that's important! 
+Important: Finally execute the version specific tasks from the [UPGRADING]({{ site.kimai_v2_file }}/UPGRADING.md) guide. 
  
 {% include alert.html icon="far fa-smile-beam" type="success" alert="Done, enjoy the latest version of Kimai!" %}

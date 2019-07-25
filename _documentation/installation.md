@@ -18,43 +18,26 @@ git clone -b {{ site.kimai_v2_version }} --depth 1 https://github.com/kevinpapst
 cd kimai2/
 ```
 
-Make sure the [file permissions are correct](https://symfony.com/doc/current/setup/file_permissions.html) (`www-data` is an example, which works for Debian based distributions):
+Now install all dependencies:
+```bash
+composer install --no-dev --optimize-autoloader
+```
+
+Make sure the [file permissions are correct](https://symfony.com/doc/current/setup/file_permissions.html), this example works for Debian based distributions:
 ```bash
 chown -R :www-data .
 chmod -R g+r .
 chmod -R g+rw var/
 ```
 
-Now install all dependencies, you might have to do this as webserver user (prefix with `sudo -u www-data`):
-```bash
-composer install --no-dev --optimize-autoloader
-```
-
-Configure the database connection in the `.env` file (defaults to SQLite, but MySQL/MariaDB is recommended):
+Configure the database connection in the `.env` file:
 ```
 DATABASE_URL=mysql://user:password@127.0.0.1:3306/database
 ```
 
-### Database
-
-Create the database if you haven't done it before with a DB administration tool (like PHPMyAdmin):
+And run the Kimai installer:
 ```bash
-bin/console doctrine:database:create
-```
-
-Create the required tables:
-```bash
-bin/console doctrine:schema:create
-```
-
-Set the initial database version, you will run into troubles during updates without that:
-```bash
-bin/console doctrine:migrations:version --add --all -n
-```
-
-Warm up the cache, you might have to do this as webserver user (prefix with `sudo -u www-data`):
-```bash
-bin/console cache:warmup --env=prod
+bin/console kimai:install -n
 ```
 
 ### Create your first user
@@ -193,6 +176,8 @@ SQLite is a great database engine for testing, but when it comes to production u
 Kimai works around the Foreign Keys issue by using a 
 [Doctrine PostConnect EventSubscriber]({{ site.kimai_v2_file }}/src/Doctrine/SqliteSessionInitSubscriber.php) since v0.8.1, 
 but it is not guaranteed that SQLite handles everything as expected.
+
+If you insist on using SQLite: make a copy of the database file BEFORE each update, to prevent possible data loss.
 
 ### Malformed parameter "url"
 
