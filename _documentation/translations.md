@@ -48,9 +48,9 @@ As example I choose a new hypothetical language with the locale `xx`.
 
 Copy each translation from it's english version `translations/*.en.xliff` and rename them to `translations/*.xx.xliff`.
 
-Adjust the `date` and `target-language` attributes in the file header, as example for the new file `exceptions.xx.xliff`:
+Adjust the `target-language` attributes in the file header, as example for the new file `exceptions.xx.xliff`:
 ```yml
-<file date="2018-08-01T20:00:00Z" source-language="en" target-language="xx" datatype="plaintext" original="exceptions.en.xliff">`
+<file source-language="en" target-language="xx" datatype="plaintext" original="exceptions.en.xliff">`
 ```
 
 https://github.com/kevinpapst/AdminLTEBundle/tree/master/Resources/translations
@@ -127,6 +127,11 @@ kimai:
 You can search for missing keys by issuing this command (replace `xx` with your locale):
 ```bash
 bin/console debug:translation --only-missing de
+```
+
+or
+```
+bin/console translation:update --dump-messages --force de
 ```
 
 ## Finalization
