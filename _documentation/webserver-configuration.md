@@ -99,3 +99,11 @@ The same goes for the `mod_rewrite` module, which is required for Kimai to work:
 ```
 LoadModule rewrite_module libexec/apache2/mod_rewrite.so
 ```
+
+## IIS on Windows or Azure
+
+This is not officially supported, basically because I have no way to test it...
+
+But there is a [discussion in the issue tracker](https://github.com/kevinpapst/kimai2/issues/979#issuecomment-514895906) and a 
+[Symfony documentation page](https://symfony.com/doc/3.4/deployment/azure-website.html#configure-the-web-server) which could help.
+ 
