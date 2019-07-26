@@ -3,6 +3,7 @@ layout: post
 title: "Happy Birthday Kimai"
 date: "2011-01-05 11:34:00 +0200"
 author: kevinpapst
+tags: [v1]
 ---
 
 Oh what a shame, we all forgot our own birthday... Okay, I have to admit I didn't knew the date - but Torsten told me that Kimai is now 4 Years old ;)

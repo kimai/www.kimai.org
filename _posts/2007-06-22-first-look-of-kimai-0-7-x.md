@@ -3,6 +3,7 @@ layout: post
 title: "First Look of Kimai 0.7.x"
 date: "2007-06-22 08:10:38 +0200"
 author: skilleven
+tags: [v1]
 ---
 
 After countless hours of development work, Kimai is finally at a stage of development that allows us to offer you a first look of our next release.

@@ -3,6 +3,7 @@ layout: post
 title: "Update for Kimai 0.7.121"
 date: "2009-03-07 16:08:00 +0200"
 author: beny
+tags: [v1]
 ---
 
 I just found out that I forgot to add the code to disable "regular user" to add new Customers/Projects/Tasks.

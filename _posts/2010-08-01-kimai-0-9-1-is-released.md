@@ -5,6 +5,7 @@ date: "2010-08-01 15:46:00 +0200"
 author: kevinpapst
 redirect_from:
   - /en/blog/kimai-0.9.1-is-released.html
+tags: [v1]
 ---
 
 We are pleased to announce the release of Kimai 0.9.1.

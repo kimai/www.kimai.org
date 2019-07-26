@@ -3,6 +3,7 @@ layout: post
 title: "Update Problem..."
 date: "2007-08-08 20:48:43 +0200"
 author: skilleven
+tags: [v1]
 ---
 
 I noticed today that users will face a little problem when updating from version 0.6.1 to 0.7.9.

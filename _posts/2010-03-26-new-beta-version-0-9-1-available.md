@@ -3,6 +3,7 @@ layout: post
 title: "New Beta version 0.9.1 available"
 date: "2010-03-26 10:48:00 +0200"
 author: kevinpapst
+tags: [v1]
 ---
 
 We are proud to announce a preview of the the next Kimai version 0.9.1. This is a beta release and is not yet meant for production usage.

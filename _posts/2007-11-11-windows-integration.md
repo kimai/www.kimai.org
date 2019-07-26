@@ -3,6 +3,7 @@ layout: post
 title: "Windows Integration"
 date: "2007-11-11 15:32:00 +0200"
 author: skilleven
+tags: [v1]
 ---
 
 The .NET-Developer David Tielke is going to join the team by January 2008.

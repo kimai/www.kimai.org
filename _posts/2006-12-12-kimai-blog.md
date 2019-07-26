@@ -3,6 +3,7 @@ layout: post
 title: "Kimai Blog"
 date: "2006-12-12 17:16:30 +0200"
 author: skilleven
+tags: [Website]
 ---
 
 On the Kimai Blog we will keep you posted on everything Kimai.

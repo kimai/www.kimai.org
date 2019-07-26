@@ -3,6 +3,8 @@ layout: post
 title: "The backend of Kimai"
 date: "2007-01-14 21:18:41 +0200"
 author: skilleven
+tags: [v1]
+tags: [v1]
 ---
 
 At this moment we are radically rewriting the core of Kimai.

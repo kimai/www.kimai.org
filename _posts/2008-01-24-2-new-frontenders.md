@@ -3,6 +3,7 @@ layout: post
 title: "2 New Frontenders"
 date: "2008-01-24 01:04:36 +0200"
 author: skilleven
+tags: [Team]
 ---
 
 We welcome two new developers on the team! Martin 'mort' Klemkow and Enrico Thies join the core team as JavaScript and ExtJS developers.

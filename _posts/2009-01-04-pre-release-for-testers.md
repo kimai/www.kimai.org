@@ -3,6 +3,7 @@ layout: post
 title: "Pre-Release For Testers"
 date: "2009-01-04 12:32:00 +0200"
 author: skilleven
+tags: [v1]
 ---
 
 v0.8.0.805 is ready for download.

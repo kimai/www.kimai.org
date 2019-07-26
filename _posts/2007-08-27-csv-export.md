@@ -3,6 +3,7 @@ layout: post
 title: "CSV Export"
 date: "2007-08-27 15:30:07 +0200"
 author: skilleven
+tags: [v1]
 ---
 
 Urs Gerig wrote a little extension to Kimai to export his timesheets as CSV.

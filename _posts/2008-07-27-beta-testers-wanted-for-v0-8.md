@@ -3,6 +3,7 @@ layout: post
 title: "Beta Testers Wanted For v0.8 "
 date: "2008-07-27 08:00:56 +0200"
 author: skilleven
+tags: [v1]
 ---
 
 We're very busy developing the third generation of Kimai which will (hopefully) be released within the next month.

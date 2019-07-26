@@ -3,6 +3,7 @@ layout: post
 title: "Kimai 0.9 released"
 date: "2009-11-20 00:15:00 +0200"
 author: kevinpapst
+tags: [v1]
 ---
 
 Here is the latest release version of Kimai with a big bag of wonderful new features and bug fixes.

@@ -3,6 +3,7 @@ layout: post
 title: "0.8.0.819 For Testers (PDO-Only)"
 date: "2009-02-07 22:04:00 +0200"
 author: skilleven
+tags: [v1]
 ---
 
 v 0.8.0.819 is ready for download.

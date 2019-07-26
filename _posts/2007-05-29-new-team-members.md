@@ -3,6 +3,7 @@ layout: post
 title: "New Team Members"
 date: "2007-05-29 22:11:00 +0200"
 author: skilleven
+tags: [Team]
 ---
 
 We welcome Torben Boe from HamBug as Quality Management Representative.

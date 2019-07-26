@@ -3,6 +3,7 @@ layout: post
 title: "Version 0.7.10 released"
 date: "2007-08-26 01:35:06 +0200"
 author: skilleven
+tags: [v1]
 ---
 
 This version corrects a bug that appears when your Kimai installment makes use of the database prefix (which is the case by default).

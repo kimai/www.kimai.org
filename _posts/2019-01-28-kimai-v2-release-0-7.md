@@ -3,7 +3,9 @@ layout: post
 title: "Release 0.7 - Permissions"
 date: "2019-01-28 02:00:00 +0200"
 author: kevinpapst
+tags: [Release]
 ---
+
 Sorry for the long period of silence! The release of this version took a longer then expected, 
 as I moved to a new city and had troubles getting my provider to setup the internet connection. 
 

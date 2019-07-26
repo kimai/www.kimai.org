@@ -3,6 +3,7 @@ layout: post
 title: "Wanted: Extension Developers"
 date: "2008-04-26 20:09:31 +0200"
 author: skilleven
+tags: [v1]
 ---
 
 If you'd like to code an extension: You get the development-version via subversion repository on syncom.org.

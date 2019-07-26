@@ -3,6 +3,7 @@ layout: post
 title: "Release 1.1 - Continuous improvements"
 date: "2019-07-24 19:40:00 +0200"
 author: kevinpapst
+tags: [Release]
 ---
 
 I'd like to publish new features more often, so lets see if I can keep on releasing quicker in the future.
