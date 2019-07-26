@@ -57,7 +57,7 @@ And the additional jail.local for Kimai2:
 #/etc/fail2ban/jail.local
 [kimai2]
 enabled   = true
-filter    = symfony
+filter    = kimai2
 logpath   = /var/www/kimai2/var/log/fail2ban.log
 port      = http,https
 bantime   = 600
