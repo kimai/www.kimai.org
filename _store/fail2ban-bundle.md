@@ -67,6 +67,6 @@ maxretry  = 3
 
 ## Credits
 
-- Bundle inspired by the blog entry: https://www.nomisoft.co.uk/articles/symfony-fail2ban-ip-blocking
-- Thanks also to [@BeckeBauer](https://github.com/kevinpapst/kimai2/issues/951) for the inspiration and the initial try
-- http://www.fail2ban.org/wiki/index.php/Main_Page
+- Bundle inspired by [this blog entry](https://www.nomisoft.co.uk/articles/symfony-fail2ban-ip-blocking) 
+- Thanks also to [@BeckeBauer](https://github.com/kevinpapst/kimai2/issues/951) for the idea and the initial try
+- Find config documentation in the [fail2ban wiki](http://www.fail2ban.org/wiki/index.php/Main_Page)
