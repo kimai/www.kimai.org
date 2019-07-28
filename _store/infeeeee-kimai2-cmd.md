@@ -1,6 +1,6 @@
 ---
 title: Command line client for Kimai2
-name: Kimai2-cmd
+name: Kimai2-cmd terminal client
 intro: "Cross platform command line client for Kimai2"
 developer: infeeeee
 date: "2019-07-27 12:00:00 +0200"
