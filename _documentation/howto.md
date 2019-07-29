@@ -15,6 +15,7 @@ These are official How-TOs for Kimai 2, which don't fit into the regular documen
     {% endfor %}
     {% if forloop.last %}
         <li><a href="{% link _posts/2019-06-11-using-kimai-as-native-app.md %}">Using Kimai as native app</a></li>
+        <li><a href="{% link _documentation/fresh-ubuntu-18.md %}">Install Kimai on a fresh Ubuntu 18.04 LTS</a></li>
     {% endif %}
 </ul>
 {% endfor %}
