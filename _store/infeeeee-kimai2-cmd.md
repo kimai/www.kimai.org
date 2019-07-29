@@ -18,7 +18,7 @@ Command line client for Kimai2
 
 ![interactive start gif](https://raw.githubusercontent.com/infeeeee/kimai2-cmd/master/assets/interactive-start.gif)
 
-## Fetaures
+## Features
 
 This client is not intended to replace the Kimai webUI, so only basic functions
 
