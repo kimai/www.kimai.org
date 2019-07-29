@@ -17,7 +17,6 @@ If an activity linked to the project does not have its own color, the projects c
 See [customer documentation]({% link _documentation/customer.md %}) for the default color.
 
 ## Time budget
-{% include new_since.html version="1.0" %}
 
 {% include time_budget.md %}
 

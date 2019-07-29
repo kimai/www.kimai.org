@@ -44,7 +44,6 @@ The default tracking mode is not limiting the user is any way, a user can especi
 the start and stop times completely on his side.
 
 ### Time-clock mode
-{% include new_since.html version="1.0" %}
 
 The time-clock mode is primarily for companies, who don't want their users to add arbitrary records.
 It removes the ability to choose `begin` and `end` for the regular user / in the users timesheet screens.
@@ -72,7 +71,6 @@ start time and by a simple calculation the end time, if they open each entry man
 that should limit access to this data, make sure to remove this permission for persons without special access regulations (e.g. your HR department).
 
 ### Duration with fixed start time
-{% include new_since.html version="1.0" %}
 
 The `duration_fixed_start` mode removes the begin and end datetime fields and uses a default start time  (see it as a partial anonymization).
 The user is not limited in defining the entries duration. 
@@ -243,7 +241,6 @@ kimai:
 ```
 
 ## Exported records
-{% include new_since.html version="1.0" %}
 
 Exported records will be locked to prevent manipulation of cleared data.
  

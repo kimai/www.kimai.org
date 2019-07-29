@@ -37,7 +37,6 @@ It is also used for printing invoices, which is the reason while the invoice scr
 before any data will be shown. 
 
 ## Time budget
-{% include new_since.html version="1.0" %}
 
 {% include time_budget.md %}
 

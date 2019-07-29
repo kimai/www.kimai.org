@@ -65,14 +65,14 @@ Yes, that could have been easier ;-) but I wanted to demonstrate all possibiliti
 ## Configure permissions
 
 Knowing that many companies need a different combination of allowed permissions than the default ones, 
-you might also want to change the pre-configured permission.
+you might also want to change the pre-configured permission settings.
 
-After changing the permission, you maybe want to check the compiled result, which can be done via the users administration 
+After changing the permission, you can check the compiled result via the users administration 
 screen (for example in the [demo installation](https://demo.kimai.org/en/admin/user/permissions)).
 
-### With 1.0 and later
+### Changing permissions
 
-In most cases you just want to adjust single permissions, like remove or add single permissions them to a user role. 
+In most cases you just want to adjust single permissions, like remove from or add single permissions to a user role. 
 This can be done by adding something like this to your [local.yaml]({% link _documentation/configurations.md %}):
 
 ```yaml
@@ -97,17 +97,6 @@ As you overwrite the default map `ROLE_USER` by defining it, you have to apply t
 
 Customizing sets is generally not recommended, as you should be able to achieve everything with `maps` and `permissions`. 
 See below in "Existing sets". 
-
-### Before 1.0
-
-The following applied to Kimai 0.9 and before. You can ignore it if you are using Kimai 1.0 or above!
-
-You can adjust the permissions in your [local.yaml]({% link _documentation/configurations.md %}). 
-Define the permissions like we did in the above mentioned example, 
-you should start by copying the default permissions from `kimai.yaml`.
-
-Be aware: if you configure your own permission definition, you have to overwrite the complete 
-node (`sets`, `maps` or`roles`) that you edited and define all SETS and/or ROLES.
 
 ## Existing permissions
 

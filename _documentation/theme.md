@@ -14,7 +14,6 @@ All Kimai specific theme settings will be available in the twig templates with t
 ``` 
 
 ## Default theme color
-{% include new_since.html version="1.0" %}
 
 The default theme colors can be changed to one of the following choices:
 

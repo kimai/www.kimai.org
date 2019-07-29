@@ -174,7 +174,7 @@ SQLite is a great database engine for testing, but when it comes to production u
 - It does [not support FOREIGN KEY](https://www.sqlite.org/quirks.html#foreign_key_enforcement_is_off_by_default) constraints [out of the box](https://www.sqlite.org/foreignkeys.html#fk_enable), which can lead to critical bugs when deleting users/activities/projects/customers
 
 Kimai works around the Foreign Keys issue by using a 
-[Doctrine PostConnect EventSubscriber]({{ site.kimai_v2_file }}/src/Doctrine/SqliteSessionInitSubscriber.php) since v0.8.1, 
+[Doctrine PostConnect EventSubscriber]({{ site.kimai_v2_file }}/src/Doctrine/SqliteSessionInitSubscriber.php), 
 but it is not guaranteed that SQLite handles everything as expected.
 
 If you insist on using SQLite: make a copy of the database file BEFORE each update, to prevent possible data loss.
