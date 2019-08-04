@@ -6,7 +6,7 @@ redirect_from:
   - /spenden.html
 ---
 
-# Support Kimai
+# ♥♥♥ Support Kimai ♥♥♥
 
 {% include alert.html icon="far fa-smile" alert="By donating to Kimai and sponsoring the development you help us to improve your time-tracking experience!" %}
 
