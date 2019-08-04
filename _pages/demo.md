@@ -36,11 +36,11 @@ If you encounter any problem, I would kindly ask you to drop a message in the [i
 
 These accounts are available for your tests. Or you create your own test user in the login form of each demo, if the following don't work:
 
-| Username | Password | Role | Description |
-|---|:---:|:---:|---|
-| john_user | kitten | User | |
-| chris_user | kitten | User | deactivated |
-| tony_teamlead | kitten | Teamlead | |
-| anna_admin | kitten | Administrator | |
-| susan_super | kitten | Super-Administrator | |
-| admin | password | Super-Administrator | no records |
+| Username | Password | API Password | Role | Description |
+|---|:---:|:---:|:---:|---|
+| john_user | kitten | api_kitten | User | |
+| chris_user | kitten | api_kitten | User | deactivated |
+| tony_teamlead | kitten | api_kitten | Teamlead | |
+| anna_admin | kitten | api_kitten | Administrator | |
+| susan_super | kitten | api_kitten | Super-Administrator | |
+| admin | password | - | Super-Administrator | no records |
