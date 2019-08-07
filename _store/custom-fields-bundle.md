@@ -1,12 +1,12 @@
 ---
 title: Custom-fields plugin for Kimai 2
 name: Custom-fields plugin
-intro: "Create free configurable additional fields for timesheets, customers, projects and activities."
+intro: "Create free configurable additional fields for timesheets, customers, projects, activities and users."
 developer: keleo
 date: "2019-06-25 20:00:00 +0200"
 icon: fas fa-keyboard
 price: "49€"
-version: 1.0
+version: 1.1
 screenshot: 
   - /images/marketplace/meta-fields-screenshot.jpg
   - /images/marketplace/meta-fields-create.jpg
@@ -31,14 +31,13 @@ Configure additional fields in various formats for the following data types:
 - `Customers`
 - `Projects`
 - `Activities`
+- `User`
 
 You can create as many fields as you want for each data type, where each field:
+
 - is either optional or mandatory
 - has its own visibility (see below)
 - can be restricted to certain combinations (eg. a "location" field will only be shown for customer X and project Y)  
-
-Be aware, that restricted fields won't be visible on the create forms, as Kimai initially can't know if the rule will apply.
-In these cases the form will only be shown in the edit forms.
 
 The custom fields will be shown on the "create and edit entity" forms and can have the following types:
 - `string`
@@ -46,19 +45,22 @@ The custom fields will be shown on the "create and edit entity" forms and can ha
 - `number`
 - `duration`
 - `money`
-- `date`
 - `checkbox`
 - `language`
 - `currency`
 - `country`
 - `color`
 
-The custom fields / the entered values are available in:
+The custom fields data is then available in:
 - Invoice templates (custom templates only)
 - Export module (spreadsheets and custom renderer show them automatically)
 - API (collections and entities)
 
-Sensitive data can be configured as "invisible", so it will not show up in the above mentioned places.
+Be aware:
+
+- Restricted fields won't be visible on the create forms, as Kimai initially can't know if the rule will apply. In these cases the form will only be shown in the edit forms.
+- Sensitive data can be configured as "invisible", so it will not show up in the above mentioned places.
+- User preferences are currently not exposed, don't respect visibility and are always mandatory  
 
 More information about custom fields can be found in the [documentation](https://www.kimai.org/documentation/meta-fields.html).
 
