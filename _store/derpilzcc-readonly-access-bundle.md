@@ -16,6 +16,26 @@ tags:
 
 This bundle adds a special admin screen where the role can be assigned to an existing Kimai user.
 
+Imagein the following:
+
+If you are a contract worker for some different customers and if you are using Kimai for time-tracking.
+
+Than you can do it that way: Create in Kimai the different Companies: Comp1 and Comp2
+Create the different Projects you are working on: ProjC1A and ProjC1B for Comp1, ProjC2A for Comp2
+And record your times.
+
+At the end of the month, you create a bill for Comp1 and Comp2 and send it to them. Now you wait for your money.
+But sometimes no money comes back, but some discussions will start: why do you charge that mouch for ProjC1A,
+why was adjusting the loginscreen that expensive,
+why did you do that... and that...
+
+So, what if you can create some other user-accounts in Kimai, lets say UserComp1 and UserComp2. And now you can assign
+UserComp1 to Comp1 and UserComp2 to Comp2.
+
+With that user-accounts someone responsible at Company1 and Company2 can login into Kamai and track instantly your times. Because UserComp1 can 
+see (and only see!!) the times entered for Company1 from anyone who can record some times in Kamai.
+
+Whould that be great? 
 
 
 ## Installation
@@ -31,8 +51,8 @@ You could also [download it as zip](https://github.com/fungus75/ReadOnlyAccessBu
 
 ```
 /kimai/var/plugins/
-├── CustomCSSBundle
-│   ├── CustomCSSBundle.php
+├── ReadOnlyAccessBundle
+│   ├── ReadOnlyAccessBundle.php
 |   └ ... more files and directories follow here ...
 ```
 
