@@ -37,23 +37,6 @@ You could also [download it as zip](https://github.com/fungus75/ReadOnlyAccessBu
 ```
 
 
-
-Create (or add if still exist) the file config/packages/local.yml
-with this content:
-```
-kimai:
-    permissions:
-        sets:
-            READONLYACCESSPLUGIN: ['edit_readonly_user', 'view_readonly_customer']
-            READONLYACCESSPLUGINADMIN: ['@READONLYACCESSPLUGIN']
-            READONLYACCESSPLUGINUSER:  ['@READONLYACCESSPLUGIN','!edit_readonly_user']
-        maps:
-            ROLE_READONLYACCESS_ADMIN: ['READONLYACCESSPLUGINADMIN']
-            ROLE_READONLYACCESS_USER:  ['READONLYACCESSPLUGINUSER']
-```
-Make sure that you just use spaces and no tabs!
-
-
 And then rebuild the cache: 
 ```
 cd /kimai/
@@ -68,9 +51,10 @@ This bundle ships a new administration screen, which will be available for the f
 - `ROLE_SUPER_ADMIN` - every super administrator
 - `edit_readonly_user` - every use that owns this permission 
 
-This bundle also ships a new user-screen, which is available for users with teh following permission:
+This bundle also ships a new user-screen, which is available for users that are configured in the new admin-screen.
 
-- `view_readonly_customer`
+## Requires
 
-In the new administration screen, this permission can be set to an existing user.
+Kimai 2, V1.1
+
 
