@@ -45,6 +45,22 @@ environments.
 
 The default period for the `Remember me` option can be changed in the config file [security.yaml]({{ site.kimai_v2_file }}/config/packages/security.yaml). 
 
+### Session lifetime
+
+If you want to change the session lifetime, you have to configure the framework configuration in 
+`config/packages/framework.yaml` and add the key `framework.session.cookie_lifetime`.
+
+So something along the lines:
+```yaml
+framework:
+    session:
+        handler_id:  session.handler.native_file
+        save_path:   "%kernel.project_dir%/var/sessions/%kernel.environment%"
+        cookie_lifetime: 60
+```
+
+See also: [Symfony documentation](https://symfony.com/doc/current/reference/configuration/framework.html#cookie-lifetime)
+
 ## User registration
 
 User registration with instant approval is activated by default, so users can register and will be able to login and start time-tracking instantly.
@@ -107,19 +123,3 @@ admin_lte:
     routes:
         adminlte_password_reset: ~
 ```
-
-### Session lifetime
-
-If you want to change the session lifetime, you have to configure the framework configuration in 
-`config/packages/framework.yaml` and add the key `framework.session.cookie_lifetime`.
-
-So something along the lines:
-```yaml
-framework:
-    session:
-        handler_id:  session.handler.native_file
-        save_path:   "%kernel.project_dir%/var/sessions/%kernel.environment%"
-        cookie_lifetime: 60
-```
-
-See also: [Symfony documentation](https://symfony.com/doc/current/reference/configuration/framework.html#cookie-lifetime)
