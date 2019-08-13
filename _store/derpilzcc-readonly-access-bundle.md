@@ -4,7 +4,7 @@ name: Readonly access plugin
 intro: "A plugin, which allows to create readonly users, that can read times recorded for a special company."
 developer: derpilzcc
 date: "2019-08-09 20:00:00 +0200"
-icon: fas fa-mouse-pointer
+icon: fas fa-book
 price: "0"
 download: https://github.com/fungus75/ReadOnlyAccessBundle/archive/master.zip
 github: https://github.com/fungus75/ReadOnlyAccessBundle
