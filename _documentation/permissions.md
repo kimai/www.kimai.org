@@ -7,6 +7,9 @@ toc: true
 Kimai 2 provides a flexible permissions system, which is based on [user roles]({% link _documentation/users.md %}) and 
 can be adapted through your [local.yaml]({% link _documentation/configurations.md %}) config file.
 
+This permission system limits access to the functionality of Kimai. If you are looking for a way to limit access to  
+timesheets, activities, projects and customers read the [Team permission documentation]({% link _documentation/teams.md %}). 
+
 ## Understanding permission structure
 
 Before you learn to configure the permission system, you have to understand the three involved config types:
@@ -161,16 +164,38 @@ This is the full list of existing permissions with short descriptions:
 | view_user                     | allows to access the User administration and see the list of all users  |
 | create_user                   | allows to create new users  |
 | delete_user                   | allows to delete existing users  |
-| system_information            | allows to enter the system-information (about) screen (since 0.9) |
-| system_configuration          | Configure global Kimai settings (since 0.9) |
-| plugins                       | see all installed plugins (since 0.9)  |
-| view_tag                      | use tag administration (since 1.0)  |
-| delete_tag                    | delete existing tags (since 1.0)  |
-| edit_exported_timesheet       | allows to edit and delete records which were exported (since 1.0)  |
-| role_permissions              | view the calculated permissions for user roles (since 1.0)  |
+| system_information            | allows to enter the system-information (about) screen  |
+| system_configuration          | Configure global Kimai settings |
+| plugins                       | see all installed plugins  |
+| view_tag                      | use tag administration  |
+| delete_tag                    | delete existing tags  |
+| edit_exported_timesheet       | allows to edit and delete records which were exported  |
+| role_permissions              | view the calculated permissions for user roles  |
+| edit_teamlead_activity        | allows teamleads to edit activities for assigned projects/customers (since 1.2)  |
+| budget_teamlead_activity      | allows teamleads to see the budget reports for activities of assigned projects/customers (since 1.2)  |
+| delete_teamlead_activity      | allows teamleads to delete activities of assigned projects/customers (since 1.2)  |
+| edit_team_activity            | allows team-members to edit activities of assigned projects/customers (since 1.2)  |
+| budget_team_activity          | allows team-members to see the budget reports for activities of assigned projects/customers (since 1.2)  |
+| delete_team_activity          | allows team-members to delete activities of assigned projects/customers (since 1.2)  |
+| edit_teamlead_project         | allows teamleads to edit assigned projects or projects for assigned customers (since 1.2)  |
+| budget_teamlead_project       | allows teamleads to see the budget reports for assigned projects or projects of assigned customers (since 1.2)  |
+| permissions_teamlead_project  | allows teamleads to edit the teams for assigned projects or projects of assigned customers (since 1.2)  |
+| delete_teamlead_project       | allows teamleads to delete assigned projects or projects for assigned customers (since 1.2)  |
+| edit_team_project             | allows team-members to edit assigned projects or projects for assigned customers (since 1.2)  |
+| budget_team_project           | allows team-members to see the budget reports for assigned projects or projects of assigned customers (since 1.2)  |
+| permissions_team_project      | allows team-members to edit the teams for assigned projects or projects of assigned customers (since 1.2)  |
+| delete_team_project           | allows team-members to delete assigned projects or projects for assigned customers (since 1.2)  |
+| edit_teamlead_customer        | allows teamleads to edit assigned customers (since 1.2)  |
+| budget_teamlead_customer      | allows teamleads to see the budget reports for assigned customers (since 1.2)  |
+| permissions_teamlead_customer | allows teamleads to edit the teams for assigned customers (since 1.2)  |
+| delete_teamlead_customer      | allows teamleads to delete assigned customers (since 1.2)  |
+| edit_team_customer            | allows team-members to edit assigned customers (since 1.2)  |
+| budget_team_customer          | allows team-members to see the budget reports for assigned customers (since 1.2)  |
+| permissions_team_customer     | allows team-members to edit the teams for assigned customers (since 1.2)  |
+| delete_team_customer          | allows team-members to delete assigned customers (since 1.2)  |
 
 **Be aware**
-There are other business rules which might limit access to certain functionalities, so these permissions are not the only checks in place.
+There are other business rules which might limit access to certain functions, so these permissions are not the only checks in place.
 For example timesheet records which were exported cannot be edited any longer, even if a user has the "edit_own_timesheet" or "edit_other_timesheet" permission. 
 
 ### Existing sets
