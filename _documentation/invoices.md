@@ -118,6 +118,7 @@ The documents which are rendered passively (ODS, XLSX, CSV, DOCX) can use the fo
 | ${invoice.number} | The generated invoice number |
 | ${invoice.currency} | The invoice currency |
 | ${invoice.total_time} | The total working time (entries with a fixed rate are always calculated with 1) |
+| ${invoice.duration_decimal} | The total working time as decimal value |
 | ${invoice.total} | The invoices total (including tax) |
 | ${invoice.subtotal} | The invoices subtotal (excluding tax) |
 | ${invoice.currency} | The invoices currency as string (like EUR or USD) |
@@ -132,6 +133,8 @@ The documents which are rendered passively (ODS, XLSX, CSV, DOCX) can use the fo
 | ${query.begin} | The query begin as formatted short date |
 | ${query.end} | The query end as formatted short date |
 | ${query.month} | The month for this query (begin date) |
+| ${query.month_number} | The numerical value for the month (with leading zero) |
+| ${query.day} | The day for the queries begin as numerical value with leading zero |
 | ${query.year} | The year for this query (begin date) |
 
 If a customer was selected the following values exist as well:
@@ -181,6 +184,7 @@ For each timesheet entry you can use the variables from the following table.
 | ${entry.total} | The total rate for this entry | 278,33 |
 | ${entry.currency} | The currency for this record as string (like EUR or USD) | EUR |
 | ${entry.duration} | The duration in seconds | 10020 |
+| ${entry.duration_decimal} | The duration in decimal format (with localized separator) | 2.78 |
 | ${entry.duration_minutes} | The duration in minutes with no decimals | 167 |
 | ${entry.begin} | The begin date (format depends on the users language) | 27.10.2018 |
 | ${entry.begin_time} | The formatted time for the begin of this entry | 14:57 |
