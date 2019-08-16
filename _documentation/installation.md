@@ -179,6 +179,13 @@ but it is not guaranteed that SQLite handles everything as expected.
 
 If you insist on using SQLite: make a copy of the database file BEFORE each update, to prevent possible data loss.
 
+### SQLSTATE[HY000] [2006] MySQL server has gone away
+
+That usually means that your `DATABASE_URL` is wrong. You can run a command like `bin/console doctrine:schema:validate` to check, 
+if the software can connect successfully to your database. 
+
+If that gives you the same error, it is configuration issue which you need to solve first, before you are able to install Kimai. 
+
 ### Malformed parameter "url"
 
 If you see an error message like this, then you have a special character in your `DATABASE_URL`. 
