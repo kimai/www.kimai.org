@@ -8,7 +8,7 @@ icon: fab fa-android
 price: "0,99€"
 download: https://play.google.com/store/apps/details?id=de.hmrit.kimai2app
 tags:
-  - plugin
+  - app
 ---
 
 Synchronize customers, projects and activities on your smartphone and 
