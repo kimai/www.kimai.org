@@ -121,10 +121,7 @@ This is the full list of existing permissions with short descriptions:
 | delete_customer               | allows to delete existing customers  |
 | view_invoice                  | allows access to the invoice section  |
 | create_invoice                | allows to create a new invoice  |
-| view_invoice_template         | allows access to the invoice and invoice template section  |
-| create_invoice_template       | allows to create a new invoice template |
-| edit_invoice_template         | allows to edit existing invoice templates |
-| delete_invoice_template       | allows to delete existing invoice templates  |
+| manage_invoice_template       | administrate invoice templates |
 | view_own_timesheet            | allows access to the own timesheet views  |
 | start_own_timesheet           | allows to create a running timesheet record (restart and create)  |
 | stop_own_timesheet            | allows to stop the own running timesheets records  |

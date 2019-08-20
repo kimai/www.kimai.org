@@ -150,6 +150,8 @@ If a customer was selected the following values exist as well:
 | ${customer.country} | The customer country |
 | ${customer.homepage} | The customer homepage |
 | ${customer.comment} | The customer comment |
+| ${customer.fixed_rate} | Fixed rate for this customer |
+| ${customer.hourly_rate} | Hourly rate for this customer |
 | ${customer.meta.X} | The customer [meta field]({% link _documentation/meta-fields.md %}) named `X` (if visible)  |
 
 If a project was selected the following values exist as well:
@@ -160,6 +162,8 @@ If a project was selected the following values exist as well:
 | ${project.name} | The project name |
 | ${project.comment} | The project name |
 | ${project.order_number} | The project order number |
+| ${project.fixed_rate} | Fixed rate for this project |
+| ${project.hourly_rate} | Hourly rate for this project |
 | ${project.meta.X} | The project [meta field]({% link _documentation/meta-fields.md %}) named `X` (if visible)  |
 
 If an activity was selected the following values exist as well:
@@ -169,6 +173,8 @@ If an activity was selected the following values exist as well:
 | ${activity.id} | The activity ID |
 | ${activity.name} | The activity name |
 | ${activity.comment} | The activity name |
+| ${activity.fixed_rate} | Fixed rate for this activity |
+| ${activity.hourly_rate} | Hourly rate for this activity |
 | ${activity.meta.X} | The activity [meta field]({% link _documentation/meta-fields.md %}) named `X` (if visible)  |
 
 ### Timesheet entry variables 

@@ -4,23 +4,55 @@ description: User, roles and the authentication, registration and security syste
 toc: true
 ---
 
+## Permissions
+
+The permission system is configurable through a configuration file. You can find further information in the [permissions]({% link _documentation/permissions.md %}) chapter.
+
+## Teams 
+
+A user can be part of a team, which can limit/extend the visibility of data where timesheets can be recorded for. See the [team documentation]({% link _documentation/teams.md %}) to find out more. 
+
 ## Roles
 
 There are multiple pre-defined roles in Kimai, which define the ACLs/permissions.
 
 | Role name         | Description |
 |---                |---|
-| ROLE_USER         | Normal user that wants to track working times |
-| ROLE_TEAMLEAD     | Manages teams of normal users (this feature is not yet implemented, but planned for the future) and has further permissions on invoices and access to all timesheets |
-| ROLE_ADMIN        | Admins can manage all timesheet related data, but lack user administration and system privileges |
-| ROLE_SUPER_ADMIN  | Super-Admin can do everything in Kimai, including user administration and system configuration |
+| ROLE_USER         | Normal user can track their working times, see basic reports and change their own preferences |
+| ROLE_TEAMLEAD     | Manages [teams of users]({% link _documentation/teams.md %}) and has further permissions on invoices and access to all timesheets |
+| ROLE_ADMIN        | Can manage all content and timesheet related data, but lack user administration and system privileges |
+| ROLE_SUPER_ADMIN  | Has permissions to manage everything in Kimai, from content to timesheets to users, plugins and system configurations |
 
 The applied permissions of your Kimai installation can be seen via the user administration, 
 e.g. [https://demo.kimai.org/en/admin/user/permissions](https://demo.kimai.org/en/admin/user/permissions).
 
-### Permissions
+### Creating new roles
 
-The permission system is configurable through a configuration file. You can find further information in the [permissions]({% link _documentation/permissions.md %}) chapter. 
+If the pre-defined roles are not sufficient for your use-case and you need more roles, you can create them by changing two files:
+- in `config/packages/security.yaml` at `security.role_hierarchy`
+- in `config/packages/local.yaml` at `kimai.permissions`
+
+Lets create the new role `ROLE_SALES`:
+
+```yaml
+# config/packages/security.yaml
+security:
+    role_hierarchy:
+        ROLE_SALES:       ~
+        ROLE_TEAMLEAD:    ROLE_USER
+        ROLE_ADMIN:       ROLE_TEAMLEAD
+        ROLE_SUPER_ADMIN: ROLE_ADMIN
+```
+and:
+```yaml
+# config/packages/local.yaml
+kimai:
+    permissions:
+        sets:
+            ROLE_SALES: ['@ROLE_USER', '@TAGS']
+        maps:
+            ROLE_SALES: ['ROLE_SALES']
+```
 
 ## Login
 
