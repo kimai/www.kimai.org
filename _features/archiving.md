@@ -5,4 +5,4 @@ hosted: false
 order: 300
 ---
 
-After a long usage a lot of entries can pile up in your dropdowns - now you can hide customers, projects and activities.
+Long term users know that old data can pile up in your dropdowns - don't worry: you can hide them by limiting the visibility of customers, projects and activities.

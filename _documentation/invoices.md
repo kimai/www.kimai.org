@@ -37,6 +37,13 @@ The invoice system currently supports the following formats:
 
 **Be aware**: the default templates were created and tested ONLY with LibreOffice!
 
+## Export state
+
+Invoices and exports share the export state, which is used to mark timesheet records a processed. 
+These records cannot be edited any longer by regular users and are excluded by default from further invoices and exports.
+ 
+For further information read the [timesheet documentation]({% link _documentation/timesheet.md %}).
+
 ## Create your own invoice document
 
 Invoice documents are searched in two locations:
