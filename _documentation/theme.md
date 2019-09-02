@@ -70,7 +70,7 @@ The amount `X` is configured in your `local.yaml` with the setting `timesheet.ac
 Kimai allows you to configure icons in several places (provided by [Font Awesome 5](https://fontawesome.com/icons)) and ships 
 with a pre-defined list of icon aliases to guarantee a consistent look.  
 
-The pre-defined icons aliases can be found in this [TwigExtension]({{ site.kimai_v2_file }}/src/Twig/Extensions.php).
+The pre-defined icons aliases can be found in this [IconExtension]({{ site.kimai_v2_file }}/src/Twig/IconExtension.php).
 
 Icon aliases can be used by applying the `icon` filter, e.g.
 
