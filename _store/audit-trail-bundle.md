@@ -54,6 +54,7 @@ The following features will be added in the future:
 - Record changes on System configurations
 - Revert to a revision
 - Record changes for custom fields
+- Record timezone of change
 
 Further ideas:
 
@@ -64,23 +65,19 @@ Further ideas:
 
 ## Installation
 
-### Database
+AuditTrailBundle is compatible with the following Kimai releases:
 
-Create the required tables for your database engine.
+| Bundle version    | Kimai 2 version   |
+| ---               |---                |
+| 1.2               | 1.2               |
+| 1.1.1             | 1.1               |
+| 1.0               | 1.0, 1.0.1        |
 
-Either MySQL / MariaDB:
-```sql
-CREATE TABLE kimai2_ext_log_entries (id INT AUTO_INCREMENT NOT NULL, action VARCHAR(8) NOT NULL, logged_at DATETIME NOT NULL COMMENT '(DC2Type:datetime)', object_id VARCHAR(64) DEFAULT NULL, object_class VARCHAR(255) NOT NULL, version INT NOT NULL, data LONGTEXT DEFAULT NULL COMMENT '(DC2Type:array)', username VARCHAR(255) DEFAULT NULL, INDEX log_class_lookup_idx (object_class), INDEX log_date_lookup_idx (logged_at), INDEX log_user_lookup_idx (username), INDEX log_version_lookup_idx (object_id, object_class, version), PRIMARY KEY(id));
-```
+The installation steps need to be executed in the given order:
 
-or SQLite:
-```sql
-CREATE TABLE kimai2_ext_log_entries (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "action" VARCHAR(8) NOT NULL, logged_at DATETIME NOT NULL, object_id VARCHAR(64) DEFAULT NULL, object_class VARCHAR(255) NOT NULL, version INTEGER NOT NULL, data CLOB DEFAULT NULL, username VARCHAR(255) DEFAULT NULL);
-CREATE INDEX log_class_lookup_idx ON kimai2_ext_log_entries (object_class);
-CREATE INDEX log_date_lookup_idx ON kimai2_ext_log_entries (logged_at);
-CREATE INDEX log_user_lookup_idx ON kimai2_ext_log_entries (username);
-CREATE INDEX log_version_lookup_idx ON kimai2_ext_log_entries (object_id, object_class, version);
-```
+- Copy files
+- Clear cache
+- Install database
 
 ### Files
 
@@ -96,7 +93,7 @@ var/plugins/
 |   └ ... more files and directories follow here ... 
 ```
 
-### Rebuild the cache
+### Cache
 
 After uploading the files, Kimai needs to know about the new plugin. It will be found, when the cache is re-build:
 
@@ -107,6 +104,16 @@ bin/console cache:warmup --env=prod
 ```
 
 or when using FTP: delete the folder `var/cache/prod/`.
+
+### Database
+
+Run the following command:
+
+```bash
+bin/console kimai:bundle:audittrail:install
+```
+
+This will install all required databases.
 
 ### First test
 
