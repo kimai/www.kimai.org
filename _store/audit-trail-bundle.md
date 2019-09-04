@@ -73,18 +73,12 @@ AuditTrailBundle is compatible with the following Kimai releases:
 | 1.1.1             | 1.1               |
 | 1.0               | 1.0, 1.0.1        |
 
-The installation steps need to be executed in the given order:
-
-- Copy files
-- Clear cache
-- Install database
-
 ### Files
 
 Extract the ZIP file and upload the included directory and all files to your Kimai installation to the new directory:  
 `var/plugins/AuditTrailBundle/`
 
-The file structure needs to like like this afterwards:
+The file structure needs to look like this afterwards:
 
 ```
 var/plugins/
