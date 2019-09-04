@@ -248,3 +248,31 @@ The [permission]({% link _documentation/permissions.md %}) `edit_exported_timesh
 locked entries nevertheless, which by default is given to users with `ROLE_ADMIN` and `ROLE_SUPER_ADMIN`. 
 
 The export state can be set manually by admins or via the [invoice]({% link _documentation/invoices.md %}) and [export]({% link _documentation/export.md %}) screens.
+
+## Filter and search 
+
+The search drop-down supports filtering by the fields:
+- `user` (only in team timesheets)
+- `daterange`
+- `customer`
+- `project`
+- `activity`
+- `tags`
+- `state` (running / stopped)
+
+Besides these filters, you can query for a free search term, which will be searched in the fields:
+- `description`
+
+Additionally you can filter for [custom fields]({% link _documentation/meta-fields.md %}) by using a search phrase like `location:homeoffice`.
+This would find all timesheets with the custom field `location` matching the term `homeoffice`.
+
+The search terms will be found within the full value, so searching for `office` would find:
+- `I love working in my office`
+- `Office` 
+- `This office is beautiful`
+- `Our offices are very noisy`
+
+You can mix the search term and use multiple meta-field queries:
+- `location:homeoffice hello world` - find all timesheets matching the search term `hello world` with the custom field `location` matching the term `homeoffice` 
+- `location:homeoffice contract:foo foo` - find all timesheets matching the search term `foo` with the custom field combination: `location` matching the term `homeoffice` and `contract` matching the term `foo` 
+- `location:homeoffice contract:foo` - find all timesheets with the custom field combination: `location` matching the term `homeoffice` and `contract` matching the term `foo`

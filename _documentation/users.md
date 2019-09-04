@@ -155,3 +155,30 @@ admin_lte:
     routes:
         adminlte_password_reset: ~
 ```
+
+
+## Filter and search 
+
+The search drop-down supports filtering by the fields:
+- `role`
+- `state` (active, deactivated, all)
+
+Besides these filters, you can query for a free search term, which will be searched in the fields:
+- `username`
+- `alias`
+- `title`
+- `email`
+
+Additionally you can filter for [user preferences]({% link _documentation/user-preferences.md %}) by using a search phrase like `location:homeoffice`.
+This would find all users with the custom field `location` matching the term `homeoffice`.
+
+The search terms will be found within the full value, so searching for `office` would find:
+- `I love working in my office`
+- `Office` 
+- `This office is beautiful`
+- `Our offices are very noisy`
+
+You can mix the search term and use multiple meta-field queries:
+- `location:homeoffice hello world` - find all users matching the search term `hello world` with the user-preference `location` matching the term `homeoffice` 
+- `location:homeoffice contract:foo foo` - find all users matching the search term `foo` with the user-preference combination: `location` matching the term `homeoffice` and `contract` matching the term `foo` 
+- `location:homeoffice contract:foo` - find all users with the user-preference combination: `location` matching the term `homeoffice` and `contract` matching the term `foo`
