@@ -37,3 +37,8 @@ Contents:
 ## Create a team
 
 Team creation is limited to the user roles `System-Admin` and `Administrator`.
+
+## Filter and search 
+
+You can query for a free search term, which will be searched in the fields:
+- `name`

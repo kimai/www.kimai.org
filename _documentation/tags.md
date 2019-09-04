@@ -29,4 +29,8 @@ There are two tag related [permissions available]({% link _documentation/permiss
 
 - `view_tag` - users with a role owning this permission can see the tag administration
 - `delete_tag` - users with a role owning this permission can delete existing tags
- 
+
+## Filter and search 
+
+You can query for a free search term, which will be searched in the fields:
+- `name`
