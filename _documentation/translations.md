@@ -4,11 +4,14 @@ description: i18n, language specific configurations and the translation files
 toc: true
 ---
 
+{% assign feature = site.features 
+    | where_exp:"feature", "feature.title == 'Multi language'" 
+    | first %}
+
+{{ feature.content }}
 
 Languages and translations in Kimai are completely configurable. 
 Read below how to add a new language and configure the output formats for date and time values.  
-
-{{ site.features.multi-language }}
 
 ## Language files
 
