@@ -46,7 +46,7 @@ You could also [download it as zip](https://github.com/hmr-it/EmptyDescriptionCh
 ### Usage
 
 To generate the emails to notify the users about missing descriptions just click the paper-plane at the right top button bar!
-Make sure that you have fully configured mail sending as it is written in the [documentation](https://www.kimai.org/documentation/emails.html)!
+Make sure that you have fully configured mail sending as it is written in the [documentation]({% link _documentation/emails.md %})!
 
 ### Exclude users, projects, or customers from this plugin
 
