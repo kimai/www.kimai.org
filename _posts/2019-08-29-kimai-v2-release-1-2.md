@@ -10,9 +10,9 @@ One release a month, so far working out... the update on my personal Kimai insta
 so I hope nobody is stressed by decreasing the time between releases. 
 
 In the meantime a couple of new addons were added to the Marketplace:
-- Kimai2 [Android app for offline tracking](https://www.kimai.org/store/hmr-it-android-offline-tracker.html)
-- the [command line tools](https://www.kimai.org/store/infeeeee-kimai2-cmd.html) and [argos client](https://www.kimai.org/store/infeeeee-kimai2-cmd-argos.html)
-- the [Readonly access plugin](https://www.kimai.org/store/derpilzcc-readonly-access-bundle.html)
+- Kimai2 [Android app for offline tracking]({% link _store/hmr-it-android-offline-tracker.md %})
+- the [command line tools]({% link _store/infeeeee-kimai2-cmd.md %}) and [argos client]({% link _store/infeeeee-kimai2-cmd-argos.md %})
+- the [Readonly access plugin]({% link _store/derpilzcc-readonly-access-bundle.md %})
 
 Thanks to all of you, especially:
 - all clients and donators, you guys rock and help me to keep up the work for Kimai!!!
@@ -20,7 +20,7 @@ Thanks to all of you, especially:
 - the guys at Cloudron, which now [support Kimai 2](https://cloudron.io/store/org.kimai.cloudronapp.html)
 - everyone else contributing at GitHub, too many to name you all ...
 
-This release is mainly about the new introduced [team permissions](https://www.kimai.org/documentation/teams.html).
+This release is mainly about the new introduced [team permissions]({%link _documentation/teams.md %}).
 Also about invoice refactoring and an improved export dialog.  
 Oh and did you know, Kimai is now translated to Korean?! Still waiting for a contribution from the community in India.
 

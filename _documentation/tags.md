@@ -23,13 +23,6 @@ a preset tag filter.
 When a tag is deleted, only the tag and all links to it are deleted.
 The linked timesheet records are NOT touched. 
 
-## Permissions
-
-There are two tag related [permissions available]({% link _documentation/permissions.md %}):
-
-- `view_tag` - users with a role owning this permission can see the tag administration
-- `delete_tag` - users with a role owning this permission can delete existing tags
-
 ## Filter and search 
 
 You can query for a free search term, which will be searched in the fields:

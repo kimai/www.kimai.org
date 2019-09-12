@@ -165,6 +165,7 @@ This is the full list of existing permissions with short descriptions:
 | system_configuration          | Configure global Kimai settings |
 | plugins                       | see all installed plugins  |
 | view_tag                      | use tag administration  |
+| manage_tag                    | edit existing and create new tags in the administration  |
 | delete_tag                    | delete existing tags  |
 | edit_exported_timesheet       | allows to edit and delete records which were exported  |
 | role_permissions              | view the calculated permissions for user roles  |
