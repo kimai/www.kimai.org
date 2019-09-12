@@ -144,6 +144,7 @@ Clone Kimai and set proper file permissions:
 ```bash
 cd /var/www/
 git clone -b 1.1 --depth 1 https://github.com/kevinpapst/kimai2.git
+cd kimai2/
 chown -R :www-data .
 chmod -R g+r .
 chmod -R g+rw var/
