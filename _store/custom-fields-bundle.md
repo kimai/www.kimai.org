@@ -8,7 +8,7 @@ icon: fas fa-keyboard
 price: "49€"
 version: 1.1
 screenshot: 
-  - /images/marketplace/meta-fields-screenshot.jpg
+  - /images/marketplace/meta-fields-screenshot.png
   - /images/marketplace/meta-fields-create.jpg
   - /images/marketplace/meta-fields-example.jpg
   - /images/marketplace/meta-fields-example2.jpg
@@ -140,5 +140,5 @@ After changing the permissions, you need to clear the cache one more time.
  
 ## Screenshot
 
-![Screenshot](https://www.kimai.org/images/marketplace/meta-fields-screenshot.jpg)
+![Screenshot](https://www.kimai.org/images/marketplace/meta-fields-screenshot.png)
  
