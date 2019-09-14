@@ -23,3 +23,6 @@ Kimai 2, V1.1+
 
 You can [download it at Apple's App Store](https://apps.apple.com/de/app/kimai-2-offline-zeiterfassung/id1459757165).
 
+## Feature requests + bug reports
+
+[Issue tracker](https://gitlab.com/hmr-it/kimai2plugins/kimai2-offline-tracker-app/issues)
