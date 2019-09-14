@@ -9,6 +9,7 @@ price: "29€"
 version: 1.0
 screenshot: 
   - /images/marketplace/audit-trail-screenshot.jpg
+  - /images/marketplace/audit-trail-screenshot-2.png
   - /images/marketplace/audit-trail-button.jpg
 gumroad: kimai2-audit-trail
 featured: Records detailed change/audit logs for timesheets, customers, projects and activities and displays them in a per-item timeline. 
@@ -22,6 +23,8 @@ Find out who changed their records, what and when: a Kimai 2 plugin to record an
 You can test it in the ["Plugins" demo](https://www.kimai.org/demo/).
 
 ## Features
+
+Adds a global audit-trail page, listing all recorded changes with username, change datetime, item type and link to detail page.
 
 Adds new actions to each of the following items in the admin section:
   - Timesheets
@@ -48,30 +51,22 @@ The following fields are recorded for changes:
 
 ### Roadmap
 
-The following features will be added in the future:
+The following features are planned for the future:
 
-- Global audit log page using datatables (list user, date-time, item type, link to detail page)
-- Record changes on System configurations
 - Revert to a revision
-- Record changes for custom fields
 - Record timezone of change
-
-Further ideas:
-
-- Notification emails on timesheet changes after entry was changed
+- Support for showing deleted items
+- Record changes for more objects:
+  - System configurations
+  - Custom fields
+  - User and preferences
 - Remove old revisions to limit database size
-- Show deleted items
-- Support to revert deleted items
+- Notification emails on timesheet changes
 
 ## Installation
 
-AuditTrailBundle is compatible with the following Kimai releases:
-
-| Bundle version    | Kimai 2 version   |
-| ---               |---                |
-| 1.2               | 1.2               |
-| 1.1.1             | 1.1               |
-| 1.0               | 1.0, 1.0.1        |
+There are compatible AuditTrailBundle version for the following Kimai releases:
+`1.3`, `1.2`, `1.1`, `1.0`
 
 ### Files
 
@@ -142,6 +137,10 @@ kimai:
 After changing the permissions, you need to clear the cache one more time.
 
 ## Screenshots
+
+The overview page of all audit trail logs:
+
+![Screenshot](https://www.kimai.org/images/marketplace/audit-trail-screenshot-2.png)
 
 A audit trail can look like this, but each change will be recorded and you might see more entries in a object timeline:
 
