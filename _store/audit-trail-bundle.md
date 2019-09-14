@@ -13,7 +13,7 @@ screenshot:
   - /images/marketplace/audit-trail-button.jpg
 gumroad: kimai2-audit-trail
 featured: Records detailed change/audit logs for timesheets, customers, projects and activities and displays them in a per-item timeline. 
-new: true
+new: false
 tags:
   - plugin
 ---
@@ -49,23 +49,13 @@ The following fields are recorded for changes:
 - History is only available for all changes from the moment on when this bundle was installed, previous changes are not available.
 - Not all fields (eg. tags and custom fields) are recorded, please read the above list carefully.
 
-### Roadmap
+## Purchase
 
-The following features are planned for the future:
-
-- Revert to a revision
-- Record timezone of change
-- Support for showing deleted items
-- Record changes for more objects:
-  - System configurations
-  - Custom fields
-  - User and preferences
-- Remove old revisions to limit database size
-- Notification emails on timesheet changes
+{% include store-gumroad-and-support.html %}
 
 ## Installation
 
-There are compatible AuditTrailBundle version for the following Kimai releases:
+There are compatible plugin versions for the following Kimai releases:
 `1.3`, `1.2`, `1.1`, `1.0`
 
 ### Files
@@ -146,6 +136,6 @@ A audit trail can look like this, but each change will be recorded and you might
 
 ![Screenshot](https://www.kimai.org/images/marketplace/audit-trail-screenshot.jpg)
 
-You access an objects audit trail via the data-table "Actions" dropdown:
+You access an objects audit trail either via the overview page or the data-table "Actions" dropdown of each item:
 
 ![Screenshot](https://www.kimai.org/images/marketplace/audit-trail-button.jpg)

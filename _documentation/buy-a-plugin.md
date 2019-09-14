@@ -15,7 +15,7 @@ Please write an email to [info@keleo.de](mailto:info@keleo.de) and ask for the b
 After successful purchase, you get access to the plugin files, which need to be installed in your existing Kimai 2 installation.
 You get access either through Gumroad directly or in case of a bank-transfer payment via email.
 
-Support is provided via email.
+{% include store-private-repo-support.html %}
 
 ### License terms for payed plugins 
 

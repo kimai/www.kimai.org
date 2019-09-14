@@ -14,7 +14,7 @@ screenshot:
   - /images/marketplace/meta-fields-example2.jpg
 gumroad: kimai2-custom-fields
 featured: Create free configurable additional (optional and mandatory) fields for timesheets, customers, projects and activities in various formats. 
-new: true
+new: false
 tags:
   - plugin
 ---
@@ -52,9 +52,9 @@ The custom fields will be shown on the "create and edit entity" forms and can ha
 - `color`
 
 The custom fields data is then available in:
-- Invoice templates (custom templates only)
-- Export module (spreadsheets and custom renderer show them automatically)
+- Export module (spreadsheets and custom renderer show timesheet fields automatically)
 - API (collections and entities)
+- Invoice templates (custom templates only)
 
 Be aware:
 
@@ -64,7 +64,14 @@ Be aware:
 
 More information about custom fields can be found in the [documentation](https://www.kimai.org/documentation/meta-fields.html).
 
+## Purchase
+
+{% include store-gumroad-and-support.html %}
+
 ## Installation
+
+There are compatible plugin versions for the following Kimai releases:
+`1.3`, `1.2`, `1.1`, `1.0`
 
 ### Database
 
