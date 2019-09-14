@@ -23,3 +23,6 @@ Kimai 2, V1.1+
 
 You can [download it at Google Playstore](https://play.google.com/store/apps/details?id=de.hmrit.kimai2app).
 
+## Feature requests + bug reports
+
+[Issue tracker](https://gitlab.com/hmr-it/kimai2plugins/kimai2-offline-tracker-app/issues)
