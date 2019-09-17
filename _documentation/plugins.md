@@ -43,21 +43,26 @@ There are some differences to Symfony bundles, which were added to prevent the a
 The namespace is pre-registered in composer with the vendor segment locked to `KimaiPlugin`, 
 pointing to `var/plugins/` to prevent that users have to dump a new autoloader after installing a plugin. 
 
-### Directory structure
+## Directory structure
 
 The minimal directory structure must look like this:
 
 ```
-/kimai/var/plugins/
-├── YourBundle
-│   ├── YourBundle.php
-│   ├── composer.json
-|   └ ... more files and directories follow here ... 
+var/plugins/YourBundle
+├── DependencyInjection
+│   └── YourExtension.php
+├── Resources
+│   └── config
+│       └── services.yaml
+├── YourBundle.php
+├── composer.json
+└ ... more files and directories follow here ... 
 ```
 
-### Bundle class 
+Even though its called **plugin** in Kimai, the namespace and classes still need to follow the official 
+[Symfony bundle naming conventions](https://symfony.com/doc/current/bundles/best_practices.html#bundles-naming-conventions). 
 
-And the bundle class looking like this:
+### YourBundle.php
 
 ```php
 namespace KimaiPlugin\YourBundle;
@@ -71,8 +76,44 @@ class YourBundle extends Bundle implements PluginInterface
 }
 ```
 
-Even though its called **plugin** in Kimai, the namespace and classes still need to follow the official 
-[Symfony bundle naming conventions](https://symfony.com/doc/current/bundles/best_practices.html#bundles-naming-conventions). 
+### DependencyInjection/YourExtension.php
+
+```php
+namespace KimaiPlugin\YourBundle\DependencyInjection;
+
+use Symfony\Component\Config\FileLocator;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Loader;
+use Symfony\Component\HttpKernel\DependencyInjection\Extension;
+
+class YourExtension extends Extension
+{
+    public function load(array $configs, ContainerBuilder $container)
+    {
+        try {
+            $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
+            $loader->load('services.yaml');
+        } catch (\Exception $e) {
+            echo '[YourBundle] invalid services config found: ' . $e->getMessage();
+        }
+    }
+}
+```
+
+### Resources/config/services.yaml
+
+```yaml
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+        bind:
+
+    KimaiPlugin\YourBundle\:
+        resource: '../../*'
+        exclude: '../../{Resources}'
+```
 
 ### composer.json
 
@@ -81,26 +122,35 @@ Kimai will read values from it for extended information in the plugins admin pan
 
 A minimal `composer.json` could look like this:
 
-```
+```json
 {
-    "name": "keleo/custom-css-bundle",
-    "description": "A Kimai 2 plugin which allows to edit custom CSS rules through an administration screen.",
-    "homepage": "https://www.kimai.org/store/keleo-css-custom-bundle.html",
+    "name": "foo/your-bundle",
+    "description": "A Kimai 2 demo plugin which does nothing",
+    "homepage": "https://www.kimai.org/",
     "type": "kimai-plugin",
+    "version": "0.1",
     "require": {
         "kimai/kimai2-composer": "*"
     },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kevin Papst",
+            "email": "kpapst@gmx.net",
+            "homepage": "https://www.kimai.org"
+        }
+    ],
     "extra": {
         "kimai": {
-            "require": "0.9",
-            "version": "1.0",
-            "name": "CustomCSSBundle"
+            "require": "1.3",
+            "version": "0.1",
+            "name": "YourBundle"
         }
     }
 }
 ```
 
-The `type` (kimai-plugin) )is required for proper installation if composer is used, as well as the `require` package `kimai/kimai2-composer`.
+The `type` (kimai-plugin)is required for proper installation if composer is used, as well as the `require` package `kimai/kimai2-composer`.
 The `homepage` will be used for a backlink in the admin panel. 
 
 The values in the `extra.kimai` section are used for:
