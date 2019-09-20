@@ -29,14 +29,15 @@ Well, this is possible through the registration via an EventSubscriber, where yo
 
 ## Add editable custom fields
 
-The following example adds a custom fields to each entity types "edit" and "create" forms:
+The following example adds a custom field to each entity type, which can be edited in the "edit" and "create" forms:
+
 - `Timesheet` via `TimesheetMeta` 
 - `Customer` via `CustomerMeta` 
 - `Project` via `ProjectMeta` 
 - `Activity` via `ActivityMeta`
 
-This example supports all possible entity types adds a new `Location` field.
-See in `prepareEntity` what needs to be done to setup new custom fields, which can be edited by the user. 
+This example supports all possible entity types and adds the new `Location` field.
+See in `prepareEntity()` what needs to be done to setup new custom fields, which can be edited by the user. 
 
 ```php
 use App\Entity\ActivityMeta;
@@ -89,6 +90,7 @@ class MetaFieldSubscriber implements EventSubscriberInterface
     {
         $definition
             ->setLabel('Working place')
+            ->setOptions(['help' => 'Enter the place you work from here'])
             ->setName('location')
             ->setType(TextType::class)
             ->addConstraint(new Length(['max' => 255]))
@@ -99,11 +101,13 @@ class MetaFieldSubscriber implements EventSubscriberInterface
 }
 ```
 
-Attention: `setLabel()` will be added with 1.4.
+Attention: `setLabel()` and `setOptions()` will be added with 1.4.
 
-### Show meta field columns
+### Displaying and exporting custom fields
 
-With Kimai 1.4 you can display columns in the data-tables for each visible field. 
+With Kimai 1.4 you can display and export custom fields. 
+Supported fields will be shown as new columns in the the data-tables for timesheets, customers, projects and activities. 
+Additionally these fields will be added to HTML and Spreadsheet exports. 
 
 As Kimai cannot query all existing records for possible custom fields, you need to listen to new events and 
 register the desired fields. 
@@ -115,54 +119,52 @@ use App\Entity\EntityWithMetaFields;
 use App\Entity\MetaTableTypeInterface;
 use App\Entity\ProjectMeta;
 use App\Entity\TimesheetMeta;
-use App\Event\ActivityMetaQueryEvent;
-use App\Event\CustomerMetaQueryEvent;
-use App\Event\ProjectMetaQueryEvent;
-use App\Event\TimesheetMetaQueryEvent;
+use App\Event\ActivityMetaDisplayEvent;
+use App\Event\CustomerMetaDisplayEvent;
+use App\Event\ProjectMetaDisplayEvent;
+use App\Event\TimesheetMetaDisplayEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Validator\Constraints\Length;
 
-class MetaFieldColumnSubscriber implements EventSubscriberInterface
+class MetaFieldDisplaySubscriber implements EventSubscriberInterface
 {
     public static function getSubscribedEvents(): array
     {
         return [
-            TimesheetMetaQueryEvent::class => ['loadTimesheetField', 200],
-            CustomerMetaQueryEvent::class => ['loadCustomerField', 200],
-            ProjectMetaQueryEvent::class => ['loadProjectField', 200],
-            ActivityMetaQueryEvent::class => ['loadActivityField', 200],
+            TimesheetMetaDisplayEvent::class => ['loadTimesheetField', 200],
+            CustomerMetaDisplayEvent::class => ['loadCustomerField', 200],
+            ProjectMetaDisplayEvent::class => ['loadProjectField', 200],
+            ActivityMetaDisplayEvent::class => ['loadActivityField', 200],
         ];
     }
 
-    public function loadTimesheetField(TimesheetMetaQueryEvent $event)
+    public function loadTimesheetField(TimesheetMetaDisplayEvent $event)
     {
-        $event->addField($this->prepareEntity(new TimesheetMeta()));
+        $event->addField($this->prepareField(new TimesheetMeta()));
     }
 
-    public function loadCustomerField(CustomerMetaQueryEvent $event)
+    public function loadCustomerField(CustomerMetaDisplayEvent $event)
     {
-        $event->addField($this->prepareEntity(new CustomerMeta()));
+        $event->addField($this->prepareField(new CustomerMeta()));
     }
 
-    public function loadProjectField(ProjectMetaQueryEvent $event)
+    public function loadProjectField(ProjectMetaDisplayEvent $event)
     {
-        $event->addField($this->prepareEntity(new ProjectMeta()));
+        $event->addField($this->prepareField(new ProjectMeta()));
     }
 
-    public function loadActivityField(ActivityMetaQueryEvent $event)
+    public function loadActivityField(ActivityMetaDisplayEvent $event)
     {
-        $event->addField($this->prepareEntity(new ActivityMeta()));
+        $event->addField($this->prepareField(new ActivityMeta()));
     }
 
-    private function prepareEntity(MetaTableTypeInterface $definition)
+    private function prepareField(MetaTableTypeInterface $definition)
     {
         $definition
             ->setLabel('Working place')
             ->setName('location')
-            ->setType(TextType::class)
-            ->addConstraint(new Length(['max' => 255]))
-            ->setIsVisible(true);
+            ->setType(TextType::class);
 
         return $definition;
     }
