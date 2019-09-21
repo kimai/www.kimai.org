@@ -1,7 +1,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Language" content="{{ page.lang }}" />
 <meta name="msapplication-TileColor" content="#2d89ef">
 <meta name="theme-color" content="#4188c9">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
@@ -20,3 +20,11 @@
 <script src="{{ '/assets/js/jquery-3.2.1.min.js' | absolute_url }}"></script>
 <script src="{{ '/assets/js/bootstrap.bundle.min.js' | absolute_url }}"></script>
 <link type="application/atom+xml" rel="alternate" href="{% link feed.xml %}" title="Kimai Time-Tracking" />
+{%- if page.lang-ref != nil %}
+{%- assign langPages = site.pages | where: "lang-ref", page.lang-ref %}
+{%- if langPages.size > 1 %}
+{%- for langPage in langPages %}
+<link rel="alternate" hreflang="{{ langPage.lang }}" href="{{ langPage.url | absolute_url }}">
+{%- endfor %}
+{%- endif %}
+{%- endif %}

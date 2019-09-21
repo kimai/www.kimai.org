@@ -1,8 +1,10 @@
 ---
 title: Site notice
 description: Site notice for www.kimai.org
+lang: en
+lang-ref: notice
 redirect_from: 
-- /impressum.html
+  - /impressum.html
 robots: "noindex, nofollow"
 sitemap: false
 ---

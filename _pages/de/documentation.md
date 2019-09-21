@@ -1,21 +1,20 @@
 ---
-title: Documentation for Kimai
-description: Support information, user manual and other documentation for Kimai time-tracking
-subtitle: "Time-tracking reloaded"
+title: "Dokumentation für Kimai"
+description: "Supportinformationen, Benutzerhandbuch und andere Dokumentationen für die Kimai-Zeiterfassung"
+subtitle: "Zeiterfassung neu gedacht"
+lang: de
+lang-ref: documentation
 header: Kimai v2
 icon: fas fa-book
-permalink: /documentation/
+layout: documentation
+permalink: /de/dokumentation/
 redirect_from:
-  - /documentation/manual/index.html
   - /dokumentation/
-  - /en/documentation/
-sitemap:
-    priority: 0.7
-    lastmod: 2018-02-02
-    changefreq: weekly
 ---
 
-This is the official documentation for the time-tracking application Kimai 2.
+Dies ist die offizielle Dokumentation für die Zeiterfassungsanwendung Kimai 2.
+
+**ACHTUNG: Alle Inhalte momentan nur auf englisch verfügbar!**
   
 {% for group in site.data.menu-documentation %}
 <h3>{{ group.title }}</h3>
@@ -27,7 +26,7 @@ This is the official documentation for the time-tracking application Kimai 2.
 </ul>
 {% endfor %}
 
-## How-To articles
+## How-To Artikel
 
 {% for group in site.data.menu-howto %}
 <h3>{{ group.title }}</h3>
@@ -42,5 +41,5 @@ This is the official documentation for the time-tracking application Kimai 2.
 </ul>
 {% endfor %}
 
-Need help and can't find what you are looking for? 
-Create a new ticket in our [support forum]({{ site.kimai_v2_repo }}/issues) and ask for help.
+Sie benötigen Hilfe und können nicht finden, wonach Sie suchen? 
+Erstelle ein neues Ticket in unserem [Supportforum]({{ site.kimai_v2_repo }}/issues) und frage nach Hilfe.

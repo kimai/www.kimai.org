@@ -1,12 +1,13 @@
 ---
 title: Donations
 description: Donate to Kimai and become a time-tracking sponsor
+lang: en
+lang-ref: donation
 redirect_from:
   - /en/donate.html
-  - /spenden.html
 ---
 
-# ♥♥♥ Support Kimai ♥♥♥
+# Support Kimai
 
 {% include alert.html icon="far fa-smile" alert="By donating to Kimai and sponsoring the development you help us to improve your time-tracking experience!" %}
 

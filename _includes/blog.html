@@ -1,0 +1,60 @@
+{% assign title = include.title | default: "Kimai News" %}
+{% assign subtitle = include.subtitle | default: "News about the open-source time-tracking app Kimai" %}
+{% assign date = include.date | default: "%Y-%m-%d" %}
+{% assign jump_to = include.jump_to | default: "Jump to tag" %}
+{% assign archive = include.archive | default: "Archive" %}
+
+<div class="container">
+
+	{% include page-title.html title=title subtitle=subtitle options='<a href="/feed.xml" class="btn btn-option"><i class="fa fa-rss"></i></a>' %}
+
+	<div class="row row-cards row-deck">
+
+		{% for article in site.posts limit:6 %}
+		{% assign mod3 = forloop.index | modulo: 3 %}
+		<div class="col-lg-4">
+			{% include card-blog-single.html article=article id=forloop.index %}
+		</div>
+		{% if mod3 == 0 %}
+	</div>
+	<div class="row row-cards row-deck">
+		{% endif %}
+		{% endfor %}
+
+		{% if mod3 == 1 %}
+		<div class="col-lg-8"></div>
+		{% elsif mod3 == 2 %}
+		<div class="col-lg-4"></div>
+		{% endif %}
+
+	</div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="text-wrap p-lg-6">
+                        <h1>{{ archive }}</h1>
+                        <p>
+                            {{ jump_to }}:&nbsp;
+                            {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+                            {% assign sortedTags = site_tags | split:',' | sort %}
+                            {% for tag in sortedTags %}
+                            <a href="#{{ tag | cgi_escape }}" class="tag">{{ tag }} </a>
+                            {% endfor %}
+                        </p>
+                        {% for tag in sortedTags %}
+                        <h3 id="{{ tag | cgi_escape }}">{{ tag }}</h3>
+                        <ul> 
+                            {% for post in site.tags[tag] %}
+                            <li><a href="{{ site.baseurl }}{{ post.url }}" rel="bookmark">{{ post.title }}</a> <span class="text-muted"> — <time class="published" datetime="{{ post.date | date: date }}">{{ post.date | date: date }}</time></span></li>
+                            {% endfor %}
+                        </ul>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

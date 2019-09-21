@@ -2,9 +2,9 @@
 title: Testimonials
 description: Testimonials - User feedback about Kimai
 subtitle: Find out what others have to say about us
+lang: en
+lang-ref: testimonial
 redirect_from:
-  - /meinungen.html
-  - /feedback.html
   - /en/feedback.html
   - /about/testimonials.html
 ---

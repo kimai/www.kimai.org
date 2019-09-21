@@ -186,13 +186,13 @@ Please have a look at the [CustomCSSBundle](https://github.com/keleo/CustomCSSBu
 - Translations
 - Data storage in `%kimai.data_dir%`
 
-## List your plugin in the {{ site.data.menu.store.name }}
+## List your plugin in the {{ site.data.trans[page.lang].store }}
 
-If you created a plugin or any other kind of software around Kimai 2 which you want to see listed in the {{ site.data.menu.store.name }}, head over 
-to the [{{ site.data.menu.store.name }} documentation]({% link _documentation/store.md %}) to find out how.
+If you created a plugin or any other kind of software around Kimai 2 which you want to see listed in the {{ site.data.trans[page.lang].store }}, head over 
+to the [{{ site.data.trans[page.lang].store }} documentation]({% link _documentation/store.md %}) to find out how.
 
 ## Links
 
-- Check out the [{{ site.data.menu.store.name }}]({% link _pages/store.html %}) to find out more free plugins for code demonstrations
+- Check out the [{{ site.data.trans[page.lang].store }}]({% link _pages/store.html %}) to find out more free plugins for code demonstrations
 - Read the [Symfony bundle documentation](https://symfony.com/doc/current/bundles.html) if this is your first time writing a Symfony bundle
  

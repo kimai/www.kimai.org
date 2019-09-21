@@ -10,10 +10,6 @@
 @import 'font-awesome/brands';
 @import 'dashboard/dashboard';
 
-.container {
-    padding-left: 0;
-    padding-right: 0;
-}
 .page-header {
     padding-left: $grid-gutter-width / 2;
     margin: 1rem 0 1rem;
@@ -60,10 +56,6 @@
         border-left-width: 1px;
         border-right-width: 1px;
     }
-    .container {
-        padding-left: $grid-gutter-width / 2;
-        padding-right: $grid-gutter-width / 2;
-    }
     .footer {
         padding: 1.25rem 0;
     }
@@ -79,6 +71,7 @@
         margin: $grid-gutter-width 0 $grid-gutter-width;
     }
 }
+
 tr.featured-article td {
     strong {
         font-weight: 700;
@@ -94,4 +87,25 @@ tr.featured-article td {
     color: red;
     font-size: 1.5rem;
     transition: font-size 0.35s ease;
+}
+
+.language-switch {
+    a, span {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    span {
+        cursor: auto;
+    }
+    .first:after {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        content: "|"
+    }
+}
+
+footer.footer {
+    .row {
+        
+    }
 }

@@ -13,7 +13,7 @@
 						{% comment %}<small class="float-right text-muted">31 minutes ago</small>{% endcomment %}
 					</p>
 					<p>
-						{{ author.intro | replace: "%github%", site.kimai_v2_repo }}
+						{{ author.intro[page.lang] | replace: "%github%", site.kimai_v2_repo }}
 					</p>
 				</div>
 				<nav class="d-flex text-muted">
