@@ -40,8 +40,8 @@ These accounts are available for your tests. Or you create your own test user in
 
 | Username | Password | API |
 |---|:---:|:---:|
-| **john_user** (Benutzer) | **kitten** | api_kitten |
-| **tony_teamlead** (Teamleiter) | **kitten** | api_kitten |
+| **john_user** (User) | **kitten** | api_kitten |
+| **tony_teamlead** (Teamlead) | **kitten** | api_kitten |
 | **anna_admin** (Admin) | **kitten** | api_kitten |
 | **susan_super** (Super-Admin) | **kitten** | api_kitten |
 | **admin** (Super-Admin) | **password** | - |
