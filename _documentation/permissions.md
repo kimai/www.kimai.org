@@ -158,6 +158,8 @@ This is the full list of existing permissions with short descriptions:
 | api-token_other_profile       | allows to set the API login token for other users  |
 | hourly-rate_own_profile       | allows to edit the own user specific hourly rate  |
 | hourly-rate_other_profile     | allows to edit other users specific hourly rate  |
+| teams_own_profile             | allows to edit team assignments in own user profile (since 1.2)  |
+| teams_other_profile           | allows to edit team assignments in other user profile (since 1.2)  |
 | view_user                     | allows to access the User administration and see the list of all users  |
 | create_user                   | allows to create new users  |
 | delete_user                   | allows to delete existing users  |
@@ -191,6 +193,11 @@ This is the full list of existing permissions with short descriptions:
 | budget_team_customer          | allows team-members to see the budget reports for assigned customers (since 1.2)  |
 | permissions_team_customer     | allows team-members to edit the teams for assigned customers (since 1.2)  |
 | delete_team_customer          | allows team-members to delete assigned customers (since 1.2)  |
+| view_team                     | see team management (since 1.2)  |
+| edit_team                     | edit team assignments (since 1.2)  |
+| create_team                   | create new teams (since 1.2)  |
+| delete_team                   | delete existing teams (since 1.2)  |
+| view_team_member              | view the teamlead and members for the teams of the current user (since 1.4)  |
 
 **Be aware**
 There are other business rules which might limit access to certain functions, so these permissions are not the only checks in place.
