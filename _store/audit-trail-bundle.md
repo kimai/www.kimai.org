@@ -55,8 +55,7 @@ The following fields are recorded for changes:
 
 ## Installation
 
-There are compatible plugin versions for the following Kimai releases:
-`1.3`, `1.2`, `1.1`, `1.0`
+This plugin is compatible with Kimai 2, v1.0 and higher.
 
 ### Files
 

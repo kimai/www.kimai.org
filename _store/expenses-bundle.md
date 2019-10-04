@@ -55,8 +55,7 @@ Each expense is linked to a:
 
 ## Installation
 
-There are compatible plugin versions for the following Kimai releases:
-`1.3`
+This plugin is compatible with Kimai 2, v1.3 and higher.
 
 ### Copy the files 
 
@@ -90,6 +89,16 @@ bin/console kimai:bundle:expenses:install
 ```
 
 This will install all required databases.
+
+## Updating the plugin
+
+Updating the bundle works the same way as the installation does. 
+
+- Delete the directory `var/plugins/MetaFieldsBundle/` (to remove deleted files)
+- Execute all installation steps again:
+  - Copy files
+  - Clear cache
+  - Update database with `bin/console kimai:bundle:metafields:install` 
 
 ### First test
 
