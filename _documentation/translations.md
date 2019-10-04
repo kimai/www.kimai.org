@@ -89,7 +89,6 @@ Make sure the new locale is included in the frontend dependencies. For example K
 Kimai ONLY compiles the moment.js locales which are needed. 
 Check and adapt the JS files in the `assets/` directory:
 - [app.js](https://github.com/kevinpapst/kimai2/blob/master/assets/app.js) 
-
 ```
 const Moment = require('moment');
 global.moment = Moment;

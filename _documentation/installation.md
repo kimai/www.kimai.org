@@ -33,12 +33,13 @@ And run the Kimai installer:
 bin/console kimai:install -n
 ```
 
-The webserver needs write permissions for several directories below `var/`, so make sure the 
+The webserver needs write permissions for several directories, so make sure the 
 [file permissions are correct](https://symfony.com/doc/current/setup/file_permissions.html) (here an example for Debian based OS):
 ```bash
 chown -R :www-data .
 chmod -R g+r .
 chmod -R g+rw var/
+chmod -R g+rw public/avatars/
 ```
 
 ### Create your first user
