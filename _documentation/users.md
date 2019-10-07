@@ -12,6 +12,14 @@ The permission system is configurable through a configuration file. You can find
 
 A user can be part of a team, which can limit/extend the visibility of data where timesheets can be recorded for. See the [team documentation]({% link _documentation/teams.md %}) to find out more. 
 
+## Avatars
+
+There are three type of user avatars:
+
+- self chosen: user configures an avatar URL in its profile
+- auto generated avatar: colored background + username initials (required dependencies: `gd` extension with freetype-support + write permission on avatar directory)
+- fallback avatar: if neither the self chosen url is set nor the avatar could be auto generated  
+
 ## Roles
 
 There are multiple pre-defined roles in Kimai, which define the ACLs/permissions.
@@ -19,7 +27,7 @@ There are multiple pre-defined roles in Kimai, which define the ACLs/permissions
 | Role name         | Description |
 |---                |---|
 | ROLE_USER         | Normal user can track their working times, see basic reports and change their own preferences |
-| ROLE_TEAMLEAD     | Manages [teams of users]({% link _documentation/teams.md %}) and has further permissions on invoices and access to all timesheets |
+| ROLE_TEAMLEAD     | Manages [teams of users]({% link _documentation/teams.md %}) and has further permissions on invoices and access to all team timesheets |
 | ROLE_ADMIN        | Can manage all content and timesheet related data, but lack user administration and system privileges |
 | ROLE_SUPER_ADMIN  | Has permissions to manage everything in Kimai, from content to timesheets to users, plugins and system configurations |
 
