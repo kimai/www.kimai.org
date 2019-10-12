@@ -39,7 +39,8 @@ And upgrade your database:
 bin/console doctrine:migrations:migrate
 ```
 
-Remember to fix the file permissions if necessary (here an example for Debian based OS):
+Remember to fix the file permissions if necessary (likely not required in a shared-hosting environment). Try if Kimai works without before executing this. 
+Here is an example (for Debian based OS):
 ```bash
 chown -R :www-data .
 chmod -R g+r .

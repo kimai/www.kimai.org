@@ -34,7 +34,9 @@ bin/console kimai:install -n
 ```
 
 The webserver needs write permissions for several directories, so make sure the 
-[file permissions are correct](https://symfony.com/doc/current/setup/file_permissions.html) (here an example for Debian based OS):
+[file permissions are correct](https://symfony.com/doc/current/setup/file_permissions.html).
+This is likely not required in a shared-hosting environment. Try if Kimai works without before executing this. 
+Here is an example (for Debian based OS):
 ```bash
 chown -R :www-data .
 chmod -R g+r .
