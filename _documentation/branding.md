@@ -8,6 +8,8 @@ Kimai offers some basic configuration settings, to adapt the branding to your co
 > Ask yourself: which paid software allows such an option?  
 > If you use these options, you should really consider [to donate]({% link _pages/donate.md %}) something back to Kimai.
 
+**Since 1.5 you can customize these settings directly from the System configurations screen.**
+
 ## What can be customized?
 
 - You can change the login screen and add your `logo`
