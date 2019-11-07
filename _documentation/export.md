@@ -80,3 +80,16 @@ final class TimesheetIdRenderer implements RendererInterface
 ```
 
 All you need to do is to register it as a service in the Symfony DI container.
+
+## Adding timesheet export renderer
+
+**Feature available since 1.6**
+
+Timesheet exporter (implementing the interface `App\Export\TimesheetExportInterface`) are almost the same as export renderer, 
+except that they don't have the methods `getIcon()` and `getTitle()`.
+
+If you already wrote an export renderer, all you need to add is the second interface and you can export the filtered data 
+from the user and admin timesheet screen.
+
+Be aware, that you should add more permission (eg. `view_rate_own_timesheet`) checks to these renderer, as they are available for every user!
+ 
