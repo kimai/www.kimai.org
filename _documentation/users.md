@@ -31,7 +31,7 @@ There are four pre-defined roles in Kimai, which define the ACLs/permissions.
 | ROLE_ADMIN        | Can manage all content and timesheet related data, but lack user administration and system privileges                         |
 | ROLE_SUPER_ADMIN  | Has permissions to manage everything in Kimai, from content to timesheets to users, plugins and system configurations         |
 
-{% include alert.html type="warning" alert="Every user is automatically member of the ROLE_USER, this behaviour cannot be changed." %}
+{% include alert.html type="success" alert="Every user is automatically member of the ROLE_USER, this behaviour cannot be changed." %}
 
 The applied permissions of your Kimai installation can be seen via the user administration, 
 e.g. [https://demo.kimai.org/en/admin/permissions](https://demo.kimai.org/en/admin/permissions).
@@ -39,6 +39,8 @@ e.g. [https://demo.kimai.org/en/admin/permissions](https://demo.kimai.org/en/adm
 ### Creating new roles
 
 If the pre-defined roles are not sufficient for your use-case and you need more roles, you can create new ones.
+
+{% include alert.html type="warning" alert="Allowed character are: `A-Z` and `_`. If you use different character, you might experience strange bugs." %}
 
 #### Kimai 1.6 and above
 
