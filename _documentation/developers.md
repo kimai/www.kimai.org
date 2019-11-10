@@ -301,3 +301,39 @@ class ThemeEventSubscriber implements EventSubscriberInterface
 ```
 
 These events are trigger on all pages, including the security layout.
+
+## Adding permissions
+
+New plugins usually ship with a set of own permissions. You should always assign these permissions at least to the `ROLE_SUPER_ADMIN`.
+By doing so, you register the permission in the system and they become available in the [permission admin screen]({% link _documentation/permissions.md %}). 
+
+You register new permission through your [plugins extension class]({% link _documentation/plugins.md %}), by using the `PrependExtensionInterface`:
+
+```php
+namespace KimaiPlugin\YourBundle\DependencyInjection;
+
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
+use Symfony\Component\HttpKernel\DependencyInjection\Extension;
+
+class YourExtension extends Extension implements PrependExtensionInterface
+{
+    // ... other methods .... 
+
+    public function prepend(ContainerBuilder $container)
+    {
+        $container->prependExtensionConfig('kimai', [
+            'permissions' => [
+                'roles' => [
+                    'ROLE_SUPER_ADMIN' => [
+                        'my_awesomer_permission',
+                    ],
+                ],
+            ],
+        ]);
+    }
+}
+```
+
+If you don't register your permissions, your users will have to edit their [local.yaml]({% link _documentation/configurations.md %}), please avoid that!
+ 

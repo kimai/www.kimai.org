@@ -4,13 +4,126 @@ description: Configure the permission system which is based on user roles
 toc: true
 ---
 
-Kimai 2 provides a flexible permissions system, which is based on [user roles]({% link _documentation/users.md %}) and 
-can be adapted through your [local.yaml]({% link _documentation/configurations.md %}) config file.
+Kimai 2 provides a flexible permissions system, which is based on [user roles]({% link _documentation/users.md %}).
 
 This permission system limits access to the functionality of Kimai. If you are looking for a way to limit access to  
 timesheets, activities, projects and customers read the [Team permission documentation]({% link _documentation/teams.md %}). 
 
-## Understanding permission structure
+There are three ways to change the permissions:
+
+- through the administration screens in the admin user section (needs `role_permissions`, since Kimai 1.6)
+- through your [local.yaml]({% link _documentation/configurations.md %}) config file (see below)
+- for developer: through your plugin, see [Developers documentation]({% link _documentation/developers.md %})
+
+## Existing permissions
+
+This is the full list of existing permissions with short descriptions:
+
+| Permission name               | Description |
+|---                            |---|
+| view_activity                 | Allows access to the activity administration  |
+| create_activity               | Create a new activity  |
+| edit_activity                 | Edit existing activities  |
+| delete_activity               | Delete activities  |
+| view_project                  | Allows access to the project administration  |
+| create_project                | Create a new project  |
+| edit_project                  | Edit existing projects  |
+| delete_project                | Delete existing projects  |
+| view_customer                 | Allows access to the customer administration  |
+| create_customer               | Create new customers  |
+| edit_customer                 | Edit existing customers  |
+| delete_customer               | Delete existing customers  |
+| view_invoice                  | Allows access to the invoice section  |
+| create_invoice                | Create a new invoice  |
+| manage_invoice_template       | Administrate invoice templates |
+| view_own_timesheet            | Allows access to the own timesheet views  |
+| start_own_timesheet           | Create a _running_ timesheet record (restart and create)  |
+| stop_own_timesheet            | Stop the own _running_ timesheets records  |
+| create_own_timesheet          | Create a new timesheet record with the dialog |
+| edit_own_timesheet            | Edit own timesheet records  |
+| export_own_timesheet          | Export your own timesheet in the timesheet panel  |
+| delete_own_timesheet          | Delete own timesheet records  |
+| view_other_timesheet          | Allows access to the timesheet admin panel, listing records for all users |
+| start_other_timesheet         | Start _running_ timesheet records for other users  |
+| stop_other_timesheet          | Stop _running_ timesheet records of other users  |
+| create_other_timesheet        | Create a new timesheet record in the name of another user  |
+| edit_other_timesheet          | Edit existing records of other users  |
+| export_other_timesheet        | Export timesheet in the timesheet admin panel  |
+| delete_other_timesheet        | Delete timesheets of other users  |
+| view_rate_own_timesheet       | View the rates for own timesheet records (fixed, hourly and total)  |
+| edit_rate_own_timesheet       | Edit the rates for own timesheet records (fixed, hourly and total) |
+| view_rate_other_timesheet     | View the rates for other users timesheet records (fixed, hourly and total)  |
+| edit_rate_other_timesheet     | Edit the rates for other users timesheet records (fixed, hourly and total) |
+| view_export                   | Allows access to the export module|
+| create_export                 | Create an export from the selected timesheet data  |
+| edit_export_own_timesheet     | Set the export state of your own timesheet record  |
+| edit_export_other_timesheet   | Set the export state of for other users timesheet records  |
+| view_own_profile              | View own user profile and statistics |
+| edit_own_profile              | Edit own user profile/account  |
+| preferences_own_profile       | Allows a user to edit the own preferences  |
+| password_own_profile          | Change own password (should be deactivated when [LDAP]({% link _documentation/ldap.md %}) is used)  |
+| roles_own_profile             | SECURITY ALERT: change the own user roles  |
+| api-token_own_profile         | Change the own API token  |
+| view_other_profile            | View other user profiles  |
+| edit_other_profile            | SECURITY ALERT: edit the profile for another user  |
+| password_other_profile        | Change the password for another user  |
+| roles_other_profile           | SECURITY ALERT: change roles for other users |
+| preferences_other_profile     | Change the preferences for another user  |
+| api-token_other_profile       | Change the API token for other users  |
+| hourly-rate_own_profile       | Edit the own (user specific) hourly rate  |
+| hourly-rate_other_profile     | Edit other (users specific) hourly rate  |
+| teams_own_profile             | Edit team assignments in own user profile (since 1.2)  |
+| teams_other_profile           | Edit team assignments in other user profile (since 1.2)  |
+| view_user                     | Access the User administration and see the list of all users  |
+| create_user                   | Create new users  |
+| delete_user                   | SECURITY ALERT: Delete existing users  |
+| system_information            | Enter the system-information (about) screen  |
+| system_configuration          | Configure global Kimai settings |
+| plugins                       | Access the plugin administration  |
+| view_tag                      | Access the tag administration  |
+| manage_tag                    | Edit existing and create new tags in the administration  |
+| delete_tag                    | Delete existing tags  |
+| edit_exported_timesheet       | Edit and delete timesheet records which were exported  |
+| role_permissions              | SECURITY ALERT: view and change permissions for user roles, create and delete user roles  |
+| edit_teamlead_activity        | Allows teamleads to edit activities for assigned projects/customers (since 1.2)  |
+| budget_teamlead_activity      | Allows teamleads to see the budget reports for activities of assigned projects/customers (since 1.2)  |
+| delete_teamlead_activity      | Allows teamleads to delete activities of assigned projects/customers (since 1.2)  |
+| edit_team_activity            | Allows team-members to edit activities of assigned projects/customers (since 1.2)  |
+| budget_team_activity          | Allows team-members to see the budget reports for activities of assigned projects/customers (since 1.2)  |
+| delete_team_activity          | Allows team-members to delete activities of assigned projects/customers (since 1.2)  |
+| edit_teamlead_project         | Allows teamleads to edit assigned projects or projects for assigned customers (since 1.2)  |
+| budget_teamlead_project       | Allows teamleads to see the budget reports for assigned projects or projects of assigned customers (since 1.2)  |
+| permissions_teamlead_project  | Allows teamleads to edit the teams for assigned projects or projects of assigned customers (since 1.2)  |
+| delete_teamlead_project       | Allows teamleads to delete assigned projects or projects for assigned customers (since 1.2)  |
+| edit_team_project             | Allows team-members to edit assigned projects or projects for assigned customers (since 1.2)  |
+| budget_team_project           | Allows team-members to see the budget reports for assigned projects or projects of assigned customers (since 1.2)  |
+| permissions_team_project      | Allows team-members to edit the teams for assigned projects or projects of assigned customers (since 1.2)  |
+| delete_team_project           | Allows team-members to delete assigned projects or projects for assigned customers (since 1.2)  |
+| edit_teamlead_customer        | Allows teamleads to edit assigned customers (since 1.2)  |
+| budget_teamlead_customer      | Allows teamleads to see the budget reports for assigned customers (since 1.2)  |
+| permissions_teamlead_customer | Allows teamleads to edit the teams for assigned customers (since 1.2)  |
+| delete_teamlead_customer      | Allows teamleads to delete assigned customers (since 1.2)  |
+| edit_team_customer            | Allows team-members to edit assigned customers (since 1.2)  |
+| budget_team_customer          | Allows team-members to see the budget reports for assigned customers (since 1.2)  |
+| permissions_team_customer     | Allows team-members to edit the teams for assigned customers (since 1.2)  |
+| delete_team_customer          | Allows team-members to delete assigned customers (since 1.2)  |
+| view_team                     | See team management (since 1.2)  |
+| edit_team                     | Edit team assignments (since 1.2)  |
+| create_team                   | Create new teams (since 1.2)  |
+| delete_team                   | Delete existing teams (since 1.2)  |
+| view_team_member              | View the teamlead and members for the teams of the current user (since 1.4)  |
+
+**Be aware**
+There are other business rules which might limit access to certain functions, so these permissions are not the only checks in place.
+For example timesheet records which were exported cannot be edited any longer, even if a user has the `edit_own_timesheet` 
+or `edit_other_timesheet` permission. 
+
+## Permission configuration in local.yaml
+
+Since Kimai 1.6 there is generally no reason for changing the default permission through the [local.yaml]({% link _documentation/configurations.md %}).
+It can be considered bad practice, as it could lead to problems with future updates.
+
+### Understanding permission structure
 
 Before you learn to configure the permission system, you have to understand the three involved config types:
 
@@ -65,14 +178,6 @@ At the end the system calculated the final list of permissions:
 
 Yes, that could have been easier ;-) but I wanted to demonstrate all possibilities!
 
-## Configure permissions
-
-Knowing that many companies need a different combination of allowed permissions than the default ones, 
-you might also want to change the pre-configured permission settings.
-
-After changing the permission, you can check the compiled result via the users administration 
-screen (for example in the [demo installation](https://demo.kimai.org/en/admin/user/permissions)).
-
 ### Changing permissions
 
 In most cases you just want to adjust single permissions, like remove from or add single permissions to a user role. 
@@ -100,108 +205,6 @@ As you overwrite the default map `ROLE_USER` by defining it, you have to apply t
 
 Customizing sets is generally not recommended, as you should be able to achieve everything with `maps` and `permissions`. 
 See below in "Existing sets". 
-
-## Existing permissions
-
-This is the full list of existing permissions with short descriptions:
-
-| Permission name               | Description |
-|---                            |---|
-| view_activity                 | allows access to the activity administration  |
-| create_activity               | allows to create a new activity  |
-| edit_activity                 | allows to edit existing activities  |
-| delete_activity               | allows to delete activities  |
-| view_project                  | allows access to the project administration  |
-| create_project                | allows to create a new project  |
-| edit_project                  | allows to edit existing projects  |
-| delete_project                | allows to delete existing projects  |
-| view_customer                 | allows access to the customer administration  |
-| create_customer               | allows to create new customers  |
-| edit_customer                 | allows to edit existing customers  |
-| delete_customer               | allows to delete existing customers  |
-| view_invoice                  | allows access to the invoice section  |
-| create_invoice                | allows to create a new invoice  |
-| manage_invoice_template       | administrate invoice templates |
-| view_own_timesheet            | allows access to the own timesheet views  |
-| start_own_timesheet           | allows to create a running timesheet record (restart and create)  |
-| stop_own_timesheet            | allows to stop the own running timesheets records  |
-| create_own_timesheet          | allows to create a new timesheet record  |
-| edit_own_timesheet            | allows to edit own timesheet records  |
-| export_own_timesheet          | export your own timesheet in the timesheet panel  |
-| delete_own_timesheet          | delete own timesheet records  |
-| view_other_timesheet          | allows access to the timesheet view listing records for all users |
-| start_other_timesheet         | start timesheet records for other users  |
-| stop_other_timesheet          | stop running timesheet records of other users  |
-| create_other_timesheet        | create a new timesheet record in the name of another user  |
-| edit_other_timesheet          | edit existing records of other users  |
-| export_other_timesheet        | export timesheet in the timesheet admin panel  |
-| delete_other_timesheet        | allows to delete timesheets of other users  |
-| view_rate_own_timesheet       | view the rates for own timesheet records (fixed, hourly and total)  |
-| edit_rate_own_timesheet       | edit the rates for own timesheet records (fixed, hourly and total) |
-| view_rate_other_timesheet     | view the rates for other users timesheet records (fixed, hourly and total)  |
-| edit_rate_other_timesheet     | edit the rates for other users timesheet records (fixed, hourly and total) |
-| view_export                   | allows access to the export module|
-| create_export                 | allows to create an export from the selected timesheet data  |
-| edit_export_own_timesheet     | set the export state of your own timesheet record  |
-| edit_export_other_timesheet   | set the export state of for other users timesheet records  |
-| view_own_profile              | _virtual permission, which is always true_ |
-| edit_own_profile              | _virtual permission, which is always true_  |
-| preferences_own_profile       | allows a user to edit the own preferences  |
-| password_own_profile          | whether a user is allowed to change own password (should be deactivated when [LDAP]({% link _documentation/ldap.md %}) is used)  |
-| roles_own_profile             | SECURITY ALERT: grants access to the own roles  |
-| api-token_own_profile         | grants access to change the own API token  |
-| view_other_profile            | allows to view the other users profile  |
-| edit_other_profile            | SECURITY ALERT: allows to edit the profile for another user  |
-| password_other_profile        | allows to change the password for another user  |
-| roles_other_profile           | SECURITY ALERT: allows to change roles for other users |
-| preferences_other_profile     | allows to change the preferences for another user  |
-| api-token_other_profile       | allows to set the API login token for other users  |
-| hourly-rate_own_profile       | allows to edit the own user specific hourly rate  |
-| hourly-rate_other_profile     | allows to edit other users specific hourly rate  |
-| teams_own_profile             | allows to edit team assignments in own user profile (since 1.2)  |
-| teams_other_profile           | allows to edit team assignments in other user profile (since 1.2)  |
-| view_user                     | allows to access the User administration and see the list of all users  |
-| create_user                   | allows to create new users  |
-| delete_user                   | allows to delete existing users  |
-| system_information            | allows to enter the system-information (about) screen  |
-| system_configuration          | Configure global Kimai settings |
-| plugins                       | see all installed plugins  |
-| view_tag                      | use tag administration  |
-| manage_tag                    | edit existing and create new tags in the administration  |
-| delete_tag                    | delete existing tags  |
-| edit_exported_timesheet       | allows to edit and delete records which were exported  |
-| role_permissions              | view the calculated permissions for user roles  |
-| edit_teamlead_activity        | allows teamleads to edit activities for assigned projects/customers (since 1.2)  |
-| budget_teamlead_activity      | allows teamleads to see the budget reports for activities of assigned projects/customers (since 1.2)  |
-| delete_teamlead_activity      | allows teamleads to delete activities of assigned projects/customers (since 1.2)  |
-| edit_team_activity            | allows team-members to edit activities of assigned projects/customers (since 1.2)  |
-| budget_team_activity          | allows team-members to see the budget reports for activities of assigned projects/customers (since 1.2)  |
-| delete_team_activity          | allows team-members to delete activities of assigned projects/customers (since 1.2)  |
-| edit_teamlead_project         | allows teamleads to edit assigned projects or projects for assigned customers (since 1.2)  |
-| budget_teamlead_project       | allows teamleads to see the budget reports for assigned projects or projects of assigned customers (since 1.2)  |
-| permissions_teamlead_project  | allows teamleads to edit the teams for assigned projects or projects of assigned customers (since 1.2)  |
-| delete_teamlead_project       | allows teamleads to delete assigned projects or projects for assigned customers (since 1.2)  |
-| edit_team_project             | allows team-members to edit assigned projects or projects for assigned customers (since 1.2)  |
-| budget_team_project           | allows team-members to see the budget reports for assigned projects or projects of assigned customers (since 1.2)  |
-| permissions_team_project      | allows team-members to edit the teams for assigned projects or projects of assigned customers (since 1.2)  |
-| delete_team_project           | allows team-members to delete assigned projects or projects for assigned customers (since 1.2)  |
-| edit_teamlead_customer        | allows teamleads to edit assigned customers (since 1.2)  |
-| budget_teamlead_customer      | allows teamleads to see the budget reports for assigned customers (since 1.2)  |
-| permissions_teamlead_customer | allows teamleads to edit the teams for assigned customers (since 1.2)  |
-| delete_teamlead_customer      | allows teamleads to delete assigned customers (since 1.2)  |
-| edit_team_customer            | allows team-members to edit assigned customers (since 1.2)  |
-| budget_team_customer          | allows team-members to see the budget reports for assigned customers (since 1.2)  |
-| permissions_team_customer     | allows team-members to edit the teams for assigned customers (since 1.2)  |
-| delete_team_customer          | allows team-members to delete assigned customers (since 1.2)  |
-| view_team                     | see team management (since 1.2)  |
-| edit_team                     | edit team assignments (since 1.2)  |
-| create_team                   | create new teams (since 1.2)  |
-| delete_team                   | delete existing teams (since 1.2)  |
-| view_team_member              | view the teamlead and members for the teams of the current user (since 1.4)  |
-
-**Be aware**
-There are other business rules which might limit access to certain functions, so these permissions are not the only checks in place.
-For example timesheet records which were exported cannot be edited any longer, even if a user has the "edit_own_timesheet" or "edit_other_timesheet" permission. 
 
 ### Existing sets
 
