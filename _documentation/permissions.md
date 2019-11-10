@@ -58,8 +58,8 @@ This is the full list of existing permissions with short descriptions:
 | create_export                 | Create an export from the selected timesheet data  |
 | edit_export_own_timesheet     | Set the export state of your own timesheet record  |
 | edit_export_other_timesheet   | Set the export state of for other users timesheet records  |
-| view_own_profile              | _virtual permission, which is always true_ |
-| edit_own_profile              | _virtual permission, which is always true_  |
+| view_own_profile              | View own user profile and statistics |
+| edit_own_profile              | Edit own user profile/account  |
 | preferences_own_profile       | Allows a user to edit the own preferences  |
 | password_own_profile          | Change own password (should be deactivated when [LDAP]({% link _documentation/ldap.md %}) is used)  |
 | roles_own_profile             | SECURITY ALERT: change the own user roles  |
