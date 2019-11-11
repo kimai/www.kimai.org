@@ -3,11 +3,12 @@ title: Command line client for Kimai2
 name: Kimai2-cmd terminal client
 intro: "Cross platform command line client for Kimai2"
 developer: infeeeee
-date: "2019-11-11 12:00:00 +0200"
+date: "2019-11-11 10:00:00 +0200"
 version: "1.0.0"
 icon: fas fa-terminal
 price: "0"
-screenshot: https://raw.githubusercontent.com/infeeeee/kimai2-cmd/master/assets/interactive-restart.gif
+screenshot: 
+  - https://raw.githubusercontent.com/infeeeee/kimai2-cmd/master/assets/interactive-restart.gif
 download: https://github.com/infeeeee/kimai2-cmd/releases/latest
 github: https://github.com/infeeeee/kimai2-cmd
 tags:
