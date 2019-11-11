@@ -23,13 +23,6 @@ Now install all dependencies:
 composer install --no-dev --optimize-autoloader
 ```
 
-Make sure the [file permissions are correct](https://symfony.com/doc/current/setup/file_permissions.html), this example works for Debian based distributions:
-```bash
-chown -R :www-data .
-chmod -R g+r .
-chmod -R g+rw var/
-```
-
 Configure the database connection in the `.env` file:
 ```
 DATABASE_URL=mysql://user:password@127.0.0.1:3306/database
@@ -38,6 +31,17 @@ DATABASE_URL=mysql://user:password@127.0.0.1:3306/database
 And run the Kimai installer:
 ```bash
 bin/console kimai:install -n
+```
+
+The webserver needs write permissions for several directories, so make sure the 
+[file permissions are correct](https://symfony.com/doc/current/setup/file_permissions.html).
+This is likely not required in a shared-hosting environment. Try if Kimai works without before executing this. 
+Here is an example (for Debian based OS):
+```bash
+chown -R :www-data .
+chmod -R g+r .
+chmod -R g+rw var/
+chmod -R g+rw public/avatars/
 ```
 
 ### Create your first user
@@ -73,6 +77,12 @@ The following platforms adopted Kimai 2 to be compatible with their one-click in
 [![Install kimai2 with YunoHost](https://install-app.yunohost.org/install-with-yunohost.png)](https://install-app.yunohost.org/?app=kimai2)
 
 Kimai 2 [package](https://github.com/YunoHost-Apps/kimai2_ynh) for [YunoHost](https://yunohost.org).
+
+### Cloudron
+
+[Cloudron](https://cloudron.io) provides a secure and ready to use Kimai package, which will be kept up-to-date automatically.
+
+[![Install Kimai with Cloudron](https://cloudron.io/img/button32.png)](https://cloudron.io/button.html?app=org.kimai.cloudronapp)
  
 ### Vesta Control Panel
 
@@ -174,10 +184,17 @@ SQLite is a great database engine for testing, but when it comes to production u
 - It does [not support FOREIGN KEY](https://www.sqlite.org/quirks.html#foreign_key_enforcement_is_off_by_default) constraints [out of the box](https://www.sqlite.org/foreignkeys.html#fk_enable), which can lead to critical bugs when deleting users/activities/projects/customers
 
 Kimai works around the Foreign Keys issue by using a 
-[Doctrine PostConnect EventSubscriber]({{ site.kimai_v2_file }}/src/Doctrine/SqliteSessionInitSubscriber.php) since v0.8.1, 
+[Doctrine PostConnect EventSubscriber]({{ site.kimai_v2_file }}/src/Doctrine/SqliteSessionInitSubscriber.php), 
 but it is not guaranteed that SQLite handles everything as expected.
 
 If you insist on using SQLite: make a copy of the database file BEFORE each update, to prevent possible data loss.
+
+### SQLSTATE[HY000] [2006] MySQL server has gone away
+
+That usually means that your `DATABASE_URL` is wrong. You can run a command like `bin/console doctrine:schema:validate` to check, 
+if the software can connect successfully to your database. 
+
+If that gives you the same error, it is configuration issue which you need to solve first, before you are able to install Kimai. 
 
 ### Malformed parameter "url"
 

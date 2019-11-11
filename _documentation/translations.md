@@ -4,11 +4,14 @@ description: i18n, language specific configurations and the translation files
 toc: true
 ---
 
+{% assign feature = site.features 
+    | where_exp:"feature", "feature.title == 'Multi language'" 
+    | first %}
+
+{{ feature.content }}
 
 Languages and translations in Kimai are completely configurable. 
 Read below how to add a new language and configure the output formats for date and time values.  
-
-{{ site.features.multi-language }}
 
 ## Language files
 
@@ -86,7 +89,6 @@ Make sure the new locale is included in the frontend dependencies. For example K
 Kimai ONLY compiles the moment.js locales which are needed. 
 Check and adapt the JS files in the `assets/` directory:
 - [app.js](https://github.com/kevinpapst/kimai2/blob/master/assets/app.js) 
-
 ```
 const Moment = require('moment');
 global.moment = Moment;

@@ -27,7 +27,7 @@ Change to the folder where you will be installing the new version of Kimai and d
 wget {{ site.kimai_v1_repo }}/releases/download/1.3.1/kimai_1.3.1.zip
 ```
 
-The link to the newest version can be found on the [Downloads]({% link _v1/index.md %}) page.
+The link to the newest version can be found on the [Downloads]({% link _pages/v1.md %}) page.
 
 Unzip it with something like this (the filename will change with the version):
 

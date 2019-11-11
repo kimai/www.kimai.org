@@ -44,7 +44,6 @@ The default tracking mode is not limiting the user is any way, a user can especi
 the start and stop times completely on his side.
 
 ### Time-clock mode
-{% include new_since.html version="1.0" %}
 
 The time-clock mode is primarily for companies, who don't want their users to add arbitrary records.
 It removes the ability to choose `begin` and `end` for the regular user / in the users timesheet screens.
@@ -72,7 +71,6 @@ start time and by a simple calculation the end time, if they open each entry man
 that should limit access to this data, make sure to remove this permission for persons without special access regulations (e.g. your HR department).
 
 ### Duration with fixed start time
-{% include new_since.html version="1.0" %}
 
 The `duration_fixed_start` mode removes the begin and end datetime fields and uses a default start time  (see it as a partial anonymization).
 The user is not limited in defining the entries duration. 
@@ -243,9 +241,38 @@ kimai:
 ```
 
 ## Exported records
-{% include new_since.html version="1.0" %}
 
 Exported records will be locked to prevent manipulation of cleared data.
  
 The [permission]({% link _documentation/permissions.md %}) `edit_exported_timesheet` does allow to edit and delete these 
 locked entries nevertheless, which by default is given to users with `ROLE_ADMIN` and `ROLE_SUPER_ADMIN`. 
+
+The export state can be set manually by admins or via the [invoice]({% link _documentation/invoices.md %}) and [export]({% link _documentation/export.md %}) screens.
+
+## Filter and search 
+
+The search drop-down supports filtering by the fields:
+- `user` (only in team timesheets)
+- `daterange`
+- `customer`
+- `project`
+- `activity`
+- `tags`
+- `state` (running / stopped)
+
+Besides these filters, you can query for a free search term, which will be searched in the fields:
+- `description`
+
+Additionally you can filter for [custom fields]({% link _documentation/meta-fields.md %}) by using a search phrase like `location:homeoffice`.
+This would find all timesheets with the custom field `location` matching the term `homeoffice`.
+
+The search terms will be found within the full value, so searching for `office` would find:
+- `I love working in my office`
+- `Office` 
+- `This office is beautiful`
+- `Our offices are very noisy`
+
+You can mix the search term and use multiple meta-field queries:
+- `location:homeoffice hello world` - find all timesheets matching the search term `hello world` with the custom field `location` matching the term `homeoffice` 
+- `location:homeoffice contract:foo foo` - find all timesheets matching the search term `foo` with the custom field combination: `location` matching the term `homeoffice` and `contract` matching the term `foo` 
+- `location:homeoffice contract:foo` - find all timesheets with the custom field combination: `location` matching the term `homeoffice` and `contract` matching the term `foo`

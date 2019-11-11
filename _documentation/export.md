@@ -13,8 +13,8 @@ There are a couple of differences in these two Kimai modules, the most important
 
 - Invoices can only be created for a dedicated customer, where export can be done without selecting a customer
 - Export state is saved with each timesheet record, so you can filter whether already exported items should be included or not
-- Invoices do more calculation (e.g. tax) and support self-created templates (e.g. XLSX, ODS, DOCX)
-- Invoices set duration to 1 in case of a fixed rate, export shows the real duration
+- Invoices do more calculation (e.g. tax) 
+- Invoices support self-created templates (e.g. XLSX, ODS, DOCX)
 
 ## Security and privacy
 
@@ -23,9 +23,11 @@ There are a couple of differences in these two Kimai modules, the most important
 So giving a user the permission to export data allows to basically see everything inside Kimai.
 So all customer, projects, activities, all hourly rates, the personal time worked and the money earned becomes visible!
 
-## Exported records are locked
+## Export state
 
-Exported records cannot be edited or deleted any longer. 
+Invoices and exports share the export state, which is used to mark timesheet records a processed. 
+These records cannot be edited any longer by regular users and are excluded by default from further invoices and exports.
+ 
 For further information read the [timesheet documentation]({% link _documentation/timesheet.md %}).
 
 ## Adding export renderer
@@ -78,3 +80,16 @@ final class TimesheetIdRenderer implements RendererInterface
 ```
 
 All you need to do is to register it as a service in the Symfony DI container.
+
+## Adding timesheet export renderer
+
+**Feature available since 1.6**
+
+Timesheet exporter (implementing the interface `App\Export\TimesheetExportInterface`) are almost the same as export renderer, 
+except that they don't have the methods `getIcon()` and `getTitle()`.
+
+If you already wrote an export renderer, all you need to add is the second interface and you can export the filtered data 
+from the user and admin timesheet screen.
+
+Be aware, that you should add more permission (eg. `view_rate_own_timesheet`) checks to these renderer, as they are available for every user!
+ 

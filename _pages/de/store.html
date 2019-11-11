@@ -1,0 +1,85 @@
+---
+layout: default
+title: Marktplatz
+description: Erweiterungen und Dienstleistungen für Kimai
+lang: de
+lang-ref: store
+permalink: /de/store/
+---
+
+<div class="container">
+	{% include page-title.html title="Erweitern Sie Ihre Zeiterfassung" subtitle="Achtung: Inhalte bisher nur auf englisch verfügbar" %}
+
+	<div class="row row-cards">
+		<div class="col-lg-9">
+			{% assign products = site.store | where_exp:"product", "product.featured != nil" | sort: 'name' %}
+			{% include store-list.html products=products %}
+
+			{% assign products = site.store | where_exp:"product", "product.featured == nil" | sort: 'name' %}
+			{% include store-list.html products=products %}
+		</div>
+		<div class="col-lg-3">
+			<div class="row">
+				<div class="col-md-6 col-lg-12">
+					<div class="card">
+						<div class="card-body">
+							<div class="mb-4 text-center">
+								<i class="fas fa-shopping-cart fa-4x"></i>
+							</div>
+							<h3 class="card-title text-center">Kimai Marktplatz</h3>
+							<div class="card-subtitle">
+								<p>
+									Der zentrale Ort, um neue Plugins und kommerziellen Support für Kimai zu finden.
+								</p>
+								<p>
+									Jede aufgelistete Kimai-Erweiterung funktioniert nur mit Kimai 1.0 oder höher.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-12">
+					<div class="card">
+						<div class="card-body">
+							<h4 class="card-title">Beitragen</h4>
+							<div class="card-subtitle">
+								<p>
+									Bist Du ein Entwickler? Dann lies wie Du:
+								<ul>
+									<li>
+										<a href="{% link _documentation/plugins.md %}">ein Plugin erstellst</a>
+									</li>
+									<li>
+										<a href="{% link _documentation/store.md %}">Dein Plugin hier anzeigst</a>
+									</li>
+									</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-12">
+					<div class="card">
+						<div class="card-body">
+							<h4 class="card-title">Finde weitere Plugins</h4>
+							<div class="card-subtitle">
+								<p>
+									Sie können die folgenden Github-Themen durchsuchen, um weitere Plugins zu finden:
+								<ul>
+									<li>
+										<a href="https://github.com/topics/kimai2" target="_blank">kimai2</a>
+									</li>
+									<li>
+										<a href="https://github.com/topics/kimai-plugin" target="_blank">kimai-plugin</a>
+									</li>
+									<li>
+										<a href="https://github.com/topics/kimai-bundle" target="_blank">kimai-bundle</a>
+									</li>
+									</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

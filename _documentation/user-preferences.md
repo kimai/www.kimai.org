@@ -117,7 +117,47 @@ class UserProfileSubscriber implements EventSubscriberInterface
         // You attach every field to the event and all the heavy lifting is done by Kimai.
         // The value is the default as long as the user has not yet updated his preferences,
         // otherwise it will be overwritten with the users choice, stored in the database.
-        $event->addUserPreference(
+        $event->addPreference(
+            (new UserPreference())
+                ->setName('fooooo-bar')
+                ->setValue(false)
+                ->setType(CheckboxType::class)
+        );
+    }
+}
+```
+
+### Displaying and exporting UserPreferences 
+
+With Kimai 1.4 you can display and export user preferences. 
+Supported fields will be shown as new columns in the the data-table for users.
+Additionally these preferences will be added to HTML and Spreadsheet exports. 
+
+As Kimai cannot query all existing users for possible preferences, you need to listen to a new event and register the desired preference. 
+
+
+```php
+use App\Entity\UserPreference;
+use App\Event\UserPreferenceDisplayEvent;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+
+class UserProfileSubscriber implements EventSubscriberInterface
+{
+    public static function getSubscribedEvents(): array
+    {
+        return [
+            UserPreferenceDisplayEvent::class => ['loadUserPreferences', 200]
+        ];
+    }
+
+    public function loadUserPreferences(UserPreferenceDisplayEvent $event)
+    {
+
+        // You attach every field to the event and all the heavy lifting is done by Kimai.
+        // The value is the default as long as the user has not yet updated his preferences,
+        // otherwise it will be overwritten with the users choice, stored in the database.
+        $event->addPreference(
             (new UserPreference())
                 ->setName('fooooo-bar')
                 ->setValue(false)

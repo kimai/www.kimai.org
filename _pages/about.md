@@ -1,10 +1,8 @@
 ---
 title: "About Kimai"
 description: What is behind the time-tracking app Kimai? Find out about it, its history and developer.
-sitemap:
-    priority: 0.7
-    lastmod: 2019-02-20
-    changefreq: weekly
+lang: en
+lang-ref: about
 ---
 
 # What is Kimai?
@@ -13,7 +11,7 @@ sitemap:
 
 ![Kimai logo]({% link /images/kimai_logo.png %}){:class="float-right" style="margin-left: 20px" }
 
-Kimai is a time-tracking app with a long history. Its first version was released more than 10 years ago. Why do we mention that? 
+Kimai is a time-tracking app with a long history. Its first version was released 2006. Why do we mention that? 
 Because we have seen so many services come and go in the last decade - trust us when we say: we'll stick around. 
 We never made a living from Kimai, it's the fun that keeps us motivated to improve Kimai. We believe that's one of the main reasons for Kimai's success.
 
@@ -47,12 +45,11 @@ That's why the idea of rewriting Kimai with modern frameworks was there for a ve
 In the end of 2017 Symfony 4.0 was released along with a neat frontend built stack called _Webpack-Encore_.
 That's when Kevin took the opportunity and started the development of the next evolutional step: Kimai v2 reloaded was born.
 
-The original Kimai is more than 10 years old and is used by people all around the world. We are proud of that and about its great community. 
+The original Kimai is more than 13 years old and is used by people all around the world. We are proud of that and about its great community. 
 That's why we would like to thank each and everyone who contributed to Kimai.
 There were way too many people to name them all, so this list is only a small compilation of the people who contributed huge amounts of time, code, thoughts and help to Kimai and its community:
  
-- Torsten Höltge - the inventor of Kimai 1
+- Torsten Höltge - inventor of Kimai 1
 - [Severin Leonhardt](https://github.com/ServiusHack) - a core maintainer of Kimai for a long time
 - [Simon Schaufelberger](https://github.com/simonschaufi) - core developer for a very long time ... and on-going!
-- You can find a list of all [contributors]({{ site.kimai_v1_repo }}/graphs/contributors) at GitHub
-- Kimai v1 was also highly influenced by Oleg Britvin, Martin Klemkow, Vasilis van Gemert, Maximilian Kern, Enrico Ties, Thomas Wensing, Kelvin Luck, Urs Gerig, Willem van Gemert, Torben Boe and HamBug Studios, Klaus Franken, Chris (Urban Willi), Andreas Berndt, Niels Hoffmann, Günter Hengsbach, Paul Brand, Joaquín G. de la Zerda, Allesandro Bertoldo, José Ricardo Cardoso, RRZE 
+- Kimai v1 was also influenced by Oleg Britvin, Martin Klemkow, Vasilis van Gemert, Maximilian Kern, Enrico Ties, Thomas Wensing, Kelvin Luck, Urs Gerig, Willem van Gemert, Torben Boe and HamBug Studios, Klaus Franken, Chris (Urban Willi), Andreas Berndt, Niels Hoffmann, Günter Hengsbach, Paul Brand, Joaquín G. de la Zerda, Allesandro Bertoldo, José Ricardo Cardoso, RRZE 

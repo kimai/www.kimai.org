@@ -1,7 +1,9 @@
 ---
 layout: page
 title: Download
-description: Download - Kimai Time-Tracking versions
+description: Download - Kimai Zeiterfassung
+lang: en
+lang-ref: download
 redirect_from:
   - /en/download.html
   - /download.html
@@ -28,24 +30,28 @@ These requirements are provided by almost all hosting companies:
 
 ## Installation with SSH 
 
-**The recommended way to install Kimai**: 
-no need for downloading Kimai manually, you will use `git` and `composer` for the [installation]({% link _documentation/installation.md %}).
+**The recommended way to install Kimai!** 
+
+You will use `git` and `composer` for the [installation]({% link _documentation/installation.md %}), which will be executed directly on the target system. 
+
+Please read the [installation instructions]({% link _documentation/installation.md %}) carefully, there is really no reason to download Kimai manually.
+But a download page without button would not be the same 😜 therefore:
  
 <a href="{{ site.kimai_v2_repo }}/archive/{{ site.kimai_v2_version }}.zip" class="btn btn-primary"><i class="fas fa-download"></i> Version {{ site.kimai_v2_version }} (source code only)</a>
 <a href="{{ site.kimai_v2_repo }}/zipball/master" class="btn btn-secondary"><i class="fas fa-download"></i> Development</a>
 
 ## Shared hosting / FTP
 
-This way is not recommended nor properly supported. 
-Kimai does not yet ship a web-installer like other web-apps.
+This way is not recommended, as Kimai does neither support updates in this mode nor ships a web-installer like other web-apps.
 You have to read the [documentation]({% link _documentation/installation.md %}) carefully.
-That said, here is the installation package for the latest Kimai release, for file uploads with FTP or SCP: 
+
+Here is the experimental installation package for all the brave FTP users: 
 
 <a href="{{ site.kimai_v2_repo }}/releases/download/{{ site.kimai_v2_version }}/kimai-release-{{ site.kimai_v2_version }}.zip" class="btn btn-primary"><i class="fas fa-download"></i> Version {{ site.kimai_v2_version }} (pre-installed for FTP)</a>
 
 ## Development version
 
-A development version is the latest package we are currently working on AKA the `master`. 
+A development version is the latest package we are currently working on, also referred to as the `master`. 
 It will have new features and bugfixes included (see [demo site]({% link _pages/demo.md %})), but it might not be as stable as an official release.
 If you are an experienced user of Kimai and have the resources to help us with testing or just like to play with brand new features, you should [install the latest development version]({% link _documentation/installation.md %}#development-installation).
 

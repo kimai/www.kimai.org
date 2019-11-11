@@ -9,10 +9,11 @@ price: "29€"
 version: 1.0
 screenshot: 
   - /images/marketplace/audit-trail-screenshot.jpg
+  - /images/marketplace/audit-trail-screenshot-2.png
   - /images/marketplace/audit-trail-button.jpg
 gumroad: kimai2-audit-trail
 featured: Records detailed change/audit logs for timesheets, customers, projects and activities and displays them in a per-item timeline. 
-new: true
+new: false
 tags:
   - plugin
 ---
@@ -22,6 +23,8 @@ Find out who changed their records, what and when: a Kimai 2 plugin to record an
 You can test it in the ["Plugins" demo](https://www.kimai.org/demo/).
 
 ## Features
+
+Adds a global audit-trail page, listing all recorded changes with username, change datetime, item type and link to detail page.
 
 Adds new actions to each of the following items in the admin section:
   - Timesheets
@@ -46,48 +49,20 @@ The following fields are recorded for changes:
 - History is only available for all changes from the moment on when this bundle was installed, previous changes are not available.
 - Not all fields (eg. tags and custom fields) are recorded, please read the above list carefully.
 
-### Roadmap
+## Purchase
 
-The following features will be added in the future:
-
-- Global audit log page using datatables (list user, date-time, item type, link to detail page)
-- Record changes on System configurations
-- Revert to a revision
-- Record changes for custom fields
-
-Further ideas:
-
-- Notification emails on timesheet changes after entry was changed
-- Remove old revisions to limit database size
-- Show deleted items
-- Support to revert deleted items
+{% include store-gumroad-and-support.html %}
 
 ## Installation
 
-### Database
-
-Create the required tables for your database engine.
-
-Either MySQL / MariaDB:
-```sql
-CREATE TABLE kimai2_ext_log_entries (id INT AUTO_INCREMENT NOT NULL, action VARCHAR(8) NOT NULL, logged_at DATETIME NOT NULL COMMENT '(DC2Type:datetime)', object_id VARCHAR(64) DEFAULT NULL, object_class VARCHAR(255) NOT NULL, version INT NOT NULL, data LONGTEXT DEFAULT NULL COMMENT '(DC2Type:array)', username VARCHAR(255) DEFAULT NULL, INDEX log_class_lookup_idx (object_class), INDEX log_date_lookup_idx (logged_at), INDEX log_user_lookup_idx (username), INDEX log_version_lookup_idx (object_id, object_class, version), PRIMARY KEY(id));
-```
-
-or SQLite:
-```sql
-CREATE TABLE kimai2_ext_log_entries (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "action" VARCHAR(8) NOT NULL, logged_at DATETIME NOT NULL, object_id VARCHAR(64) DEFAULT NULL, object_class VARCHAR(255) NOT NULL, version INTEGER NOT NULL, data CLOB DEFAULT NULL, username VARCHAR(255) DEFAULT NULL);
-CREATE INDEX log_class_lookup_idx ON kimai2_ext_log_entries (object_class);
-CREATE INDEX log_date_lookup_idx ON kimai2_ext_log_entries (logged_at);
-CREATE INDEX log_user_lookup_idx ON kimai2_ext_log_entries (username);
-CREATE INDEX log_version_lookup_idx ON kimai2_ext_log_entries (object_id, object_class, version);
-```
+This plugin is compatible with Kimai 2, v1.0 and higher.
 
 ### Files
 
 Extract the ZIP file and upload the included directory and all files to your Kimai installation to the new directory:  
 `var/plugins/AuditTrailBundle/`
 
-The file structure needs to like like this afterwards:
+The file structure needs to look like this afterwards:
 
 ```
 var/plugins/
@@ -96,7 +71,7 @@ var/plugins/
 |   └ ... more files and directories follow here ... 
 ```
 
-### Rebuild the cache
+### Cache
 
 After uploading the files, Kimai needs to know about the new plugin. It will be found, when the cache is re-build:
 
@@ -107,6 +82,16 @@ bin/console cache:warmup --env=prod
 ```
 
 or when using FTP: delete the folder `var/cache/prod/`.
+
+### Database
+
+Run the following command:
+
+```bash
+bin/console kimai:bundle:audittrail:install
+```
+
+This will install all required databases.
 
 ### First test
 
@@ -142,10 +127,14 @@ After changing the permissions, you need to clear the cache one more time.
 
 ## Screenshots
 
+The overview page of all audit trail logs:
+
+![Screenshot](https://www.kimai.org/images/marketplace/audit-trail-screenshot-2.png)
+
 A audit trail can look like this, but each change will be recorded and you might see more entries in a object timeline:
 
 ![Screenshot](https://www.kimai.org/images/marketplace/audit-trail-screenshot.jpg)
 
-You access an objects audit trail via the data-table "Actions" dropdown:
+You access an objects audit trail either via the overview page or the data-table "Actions" dropdown of each item:
 
 ![Screenshot](https://www.kimai.org/images/marketplace/audit-trail-button.jpg)

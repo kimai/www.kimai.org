@@ -39,6 +39,19 @@ And upgrade your database:
 bin/console doctrine:migrations:migrate
 ```
 
-Important: Finally execute the version specific tasks from the [UPGRADING]({{ site.kimai_v2_file }}/UPGRADING.md) guide. 
- 
-{% include alert.html icon="far fa-smile-beam" type="success" alert="Done, enjoy the latest version of Kimai!" %}
+Remember to fix the file permissions if necessary (likely not required in a shared-hosting environment). Try if Kimai works without before executing this. 
+Here is an example (for Debian based OS):
+```bash
+chown -R :www-data .
+chmod -R g+r .
+chmod -R g+rw var/
+chmod -R g+rw public/avatars/
+```
+
+{% capture upgrading_note %}
+Important: Finally execute the version specific tasks from the [UPGRADING]({{ site.kimai_v2_file }}/UPGRADING.md) guide.
+{% endcapture %}
+{% assign upgrading_note = upgrading_note| markdownify %}
+{% include alert.html icon="fas fa-exclamation" type="warning" alert=upgrading_note %}
+
+That's it, Kimai is running the most current version. Enjoy the latest time-tracking features!

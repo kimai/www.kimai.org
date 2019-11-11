@@ -1,28 +1,17 @@
 ---
-menu: index
-title: Kimai - open source time-tracking app
+title: Kimai - Free Time-Tracking App (open-source)
 description: Kimai - free and easy time-tracking for freelancer, agencies and companies with user and invoice handling.
-redirect_from:
-- /en/
-sitemap:
-priority: 1.0
-lastmod: 2017-11-02
-changefreq: weekly
+lang: en
+lang-ref: home
 permalink: /
+redirect_from:
+  - /en/
 ---
 
-	<div class="alert alert-success alert-dismissible">
-		<h4>Free time-tracking for everyone</h4>
-		<p>
-			Kimai is a free & open source timetracker. It tracks work time and prints out a summary of your activities on demand.
-			Yearly, monthly, daily, by customer, by project …
-			It’s simplicity is its strength. Due to Kimai’s browser based interface it runs cross-platform, even on your mobile device.
-		</p>
-		<div class="btn-list">
-			<a href="{% link _pages/download.md %}" class="btn btn-primary">Get it now!</a>
-			<a href="{% link _pages/demo.md %}" class="btn btn-secondary">Try first</a>
-		</div>
-	</div>
+	<blockquote>
+		With Kimai, the boring process of feeding Excel spreadsheets with your working hours is not only simplified,
+		it also offers dozens of other exciting features that you don't even know you're missing so far!
+	</blockquote>
 
 	<div class="row row-cards">
 		<div class="col-sm-6 col-lg-4">
@@ -35,17 +24,26 @@ permalink: /
 			{% include card-image.html image="dashboard" %}
 		</div>
 	</div>
-
-	<blockquote cite="Torsten Höltge">
-		While there are many programs one can use for time and project tracking, they tend to be overkill for my rather simple needs.
-		Kimai came about because I was tired to feed lame boring excel tables …
-	</blockquote>
-
+ 
 	<p>
 		Kimai does not have to run while recording, you can even quit your browser.
 		Your time is still recording until you stop it from any web browser that has access to your installation.
 		It is designed to hold lots of users, but you can also use it for a single user if you want to.
 	</p>
+
+	<div class="alert alert-success">
+		<h4>Free time-tracking for everyone</h4>
+		<p>
+			Kimai is a free & open source timetracker. It tracks work time and prints out a summary of your activities on demand.
+			Yearly, monthly, daily, by customer, by project …
+			It’s simplicity is its strength. Due to Kimai’s browser based interface it runs cross-platform, even on your mobile device.
+		</p>
+		<div class="btn-list">
+			<a href="{% link _pages/download.md %}" class="btn btn-primary">Get it now!</a>
+			<a href="{% link _pages/demo.md %}" class="btn btn-secondary">Try first</a>
+		</div>
+	</div>
+
 	<p>
 		And if want to know what others have to say about us, check out <a href="{% link _pages/testimonials.md %}">the testimonials</a>.
 	</p>
@@ -68,7 +66,7 @@ permalink: /
 				<tr>
 					<td class="text-nowrap">
 						{% if feature.documentation != nil %}
-							{% assign url = feature.documentation | replace: '_documentation/', '/documentation/' | replace: '.md', '.html' %}
+							{% assign url = feature.documentation | replace: '_store/', '/store/' | replace: '_documentation/', '/documentation/' | replace: '.md', '.html' %}
 							<a href="{{ url }}">{{ feature.title }}</a>
 						{% else %}
 							{{ feature.title }}

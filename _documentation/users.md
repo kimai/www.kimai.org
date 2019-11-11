@@ -4,23 +4,147 @@ description: User, roles and the authentication, registration and security syste
 toc: true
 ---
 
+## Permissions
+
+The permission system is configurable through user roles. Find further information in the [permissions]({% link _documentation/permissions.md %}) chapter.
+
+## Teams 
+
+A user can be part of a team, which can limit/extend the visibility of data. See the [team documentation]({% link _documentation/teams.md %}) to find out more. 
+
+## Avatars
+
+There are three type of user avatars:
+
+- Self chosen: user configures an avatar URL in its profile (e.g. to Github, Google, Youtube, Dropbox, Gravatar and many other sources. Make sure to explain the privacy implications when using this method.)  
+- Auto generated avatar: colored background + username initials (required dependencies: `gd` extension with freetype-support + write permission on avatar directory)
+- Fallback avatar: a static icon, which will be used if the user didnÄt choose a custom icon and the avatar generation failed  
+
 ## Roles
 
-There are multiple pre-defined roles in Kimai, which define the ACLs/permissions.
+There are four pre-defined roles in Kimai, which define the ACLs/permissions.
 
-| Role name         | Description |
-|---                |---|
-| ROLE_USER         | Normal user that wants to track working times |
-| ROLE_TEAMLEAD     | Manages teams of normal users (this feature is not yet implemented, but planned for the future) and has further permissions on invoices and access to all timesheets |
-| ROLE_ADMIN        | Admins can manage all timesheet related data, but lack user administration and system privileges |
-| ROLE_SUPER_ADMIN  | Super-Admin can do everything in Kimai, including user administration and system configuration |
+| Role name         | Description                                                                                                                   |
+|---                |---                                                                                                                            |
+| ROLE_USER         | Normal user can track their working times, see basic reports and change their own preferences                                 |
+| ROLE_TEAMLEAD     | Manages [teams]({% link _documentation/teams.md %}) with permissions for invoices and access to all team timesheets           |
+| ROLE_ADMIN        | Can manage all content and timesheet related data, but lack user administration and system privileges                         |
+| ROLE_SUPER_ADMIN  | Has permissions to manage everything in Kimai, from content to timesheets to users, plugins and system configurations         |
+
+{% include alert.html type="success" alert="Every user is automatically member of the ROLE_USER, this behaviour cannot be changed." %}
 
 The applied permissions of your Kimai installation can be seen via the user administration, 
-e.g. [https://demo.kimai.org/en/admin/user/permissions](https://demo.kimai.org/en/admin/user/permissions).
+e.g. [https://demo.kimai.org/en/admin/permissions](https://demo.kimai.org/en/admin/permissions).
 
-### Permissions
+### Creating new roles
 
-The permission system is configurable through a configuration file. You can find further information in the [permissions]({% link _documentation/permissions.md %}) chapter. 
+If the pre-defined roles are not sufficient for your use-case and you need more roles, you can create new ones.
+
+{% include alert.html type="warning" alert="Allowed character are: `A-Z` and `_`. If you use different character, you might experience strange bugs." %}
+
+#### Kimai 1.6 and above
+
+Every user with the [permission]({% link _documentation/permissions.md %}) `role_permissions` can create new user roles 
+through the user administration. Navigate to the user role permission screen and check the pages action. 
+
+There is a button that will open a new modal, to enter a role name. This new role will show up in the table after saving.
+
+By clicking the `Yes` and `No` labels, you can toggle all permissions. 
+
+> If you created new roles through the `local.yaml` before, please remove them and use the admin screen exclusively. 
+
+#### Kimai 1.5 and below
+
+Lets create the new role `ROLE_SALES` by editing your `local.yaml`:
+
+```yaml
+kimai:
+    permissions:
+        sets:
+            ROLE_SALES: ['@ROLE_USER', '@TAGS']
+        maps:
+            ROLE_SALES: ['ROLE_SALES']
+
+security:
+    role_hierarchy:
+        ROLE_SALES:       ~
+```
+
+## Filter and search 
+
+The search drop-down supports filtering by the fields:
+- `role`
+- `state` (active, deactivated, all)
+
+Besides these filters, you can query for a free search term, which will be searched in the fields:
+- `username`
+- `alias`
+- `title`
+- `email`
+
+Additionally you can filter for [user preferences]({% link _documentation/user-preferences.md %}) by using a search phrase like `location:homeoffice`.
+This would find all users with the custom field `location` matching the term `homeoffice`.
+
+The search terms will be found within the full value, so searching for `office` would find:
+- `I love working in my office`
+- `Office` 
+- `This office is beautiful`
+- `Our offices are very noisy`
+
+You can mix the search term and use multiple meta-field queries:
+- `location:homeoffice hello world` - find all users matching the search term `hello world` with the user-preference `location` matching the term `homeoffice` 
+- `location:homeoffice contract:foo foo` - find all users matching the search term `foo` with the user-preference combination: `location` matching the term `homeoffice` and `contract` matching the term `foo` 
+- `location:homeoffice contract:foo` - find all users with the user-preference combination: `location` matching the term `homeoffice` and `contract` matching the term `foo`
+
+## User registration
+
+User registration with instant approval is activated by default, so users can register and will be able to login and start time-tracking instantly.
+
+If you want your new users to use [email verification]({% link _documentation/emails.md %}) add this to your `local.yaml`:
+
+```yaml
+fos_user:
+    registration:
+        confirmation:
+            enabled: true
+```
+
+If you want to disable the user registration, add this your `local.yaml`: 
+```yaml
+kimai:
+    user:
+        registration: false
+```
+
+If you only want to hide the link from the login form but keep the functionality, add this your `local.yaml`: 
+```yaml
+admin_lte:
+    routes:
+        adminlte_registration: ~
+```
+
+## Password reset
+
+The reset password function is enabled by default, but you need to activate [email]({% link _documentation/emails.md %}) support if you want to use it.
+
+If you want to disable the password reset, add this your `local.yaml`: 
+```yaml
+kimai:
+    user:
+        password_reset: false
+```
+
+If you only want to hide the link from the login form but keep the functionality, add this your `local.yaml`: 
+```yaml
+admin_lte:
+    routes:
+        adminlte_password_reset: ~
+```
+
+If you want to configure the behaviour (like the allowed time between multiple retries) then configure the settings:
+
+- in `config/packages/fos_user.yaml` the key below `fos_user.registration.resetting` (see [documentation](https://symfony.com/doc/current/bundles/FOSUserBundle/configuration_reference.html))
+- the values `retry_ttl` and `token_ttl` are configured in seconds (7220 = 2 hours) 
 
 ## Login
 
@@ -45,66 +169,18 @@ environments.
 
 The default period for the `Remember me` option can be changed in the config file [security.yaml]({{ site.kimai_v2_file }}/config/packages/security.yaml). 
 
-## User registration
+### Session lifetime
 
-User registration with instant approval is activated by default, so users can register and will be able to login and start time-tracking instantly.
+If you want to change the session lifetime, you have to configure the framework configuration in 
+`config/packages/framework.yaml` and add the key `framework.session.cookie_lifetime`.
 
-If you want to disable the registration or enable email verification, read on ...
-
-### Email activation
-
-If you want your new users to use [email]({% link _documentation/emails.md %}) based activation add this to your `local.yaml`:
-
+So something along the lines:
 ```yaml
-fos_user:
-    registration:
-        confirmation:
-            enabled: true
+framework:
+    session:
+        handler_id:  session.handler.native_file
+        save_path:   "%kernel.project_dir%/var/sessions/%kernel.environment%"
+        cookie_lifetime: 60
 ```
 
-### Disable user registration 
-
-If you want to disable the user registration, add this your `local.yaml`: 
-```yaml
-kimai:
-    user:
-        registration: false
-```
-
-If you only want to hide the link from the login form but keep the functionality, add this your `local.yaml`: 
-```yaml
-admin_lte:
-    routes:
-        adminlte_registration: ~
-```
-
-## Password reset
-
-The reset password function is enabled by default, but you need to activate [email]({% link _documentation/emails.md %}) support if you want to use it.
-
-If you want to deactivate this feature you have to change the following configs:
-
-- in `config/packages/admin_lte.yaml` remove the route alias `admin_lte.routes.adminlte_password_reset` (this will remove the link from the login form)
-- in `config/routes.yaml` remove the block `fos_user_resetting` (this will deactivate the functionality)
-
-If you want to configure the behaviour (like the allowed time between multiple retries) then configure the settings:
-
-- in `config/packages/fos_user.yaml` the key below `fos_user.registration.resetting` (see [documentation](https://symfony.com/doc/current/bundles/FOSUserBundle/configuration_reference.html))
-- the values `retry_ttl` and `token_ttl` are configured in seconds (7220 = 2 hours) 
-
-### Disable password reset 
-
-If you want to disable the password reset, add this your `local.yaml`: 
-```yaml
-kimai:
-    user:
-        password_reset: false
-```
-
-If you only want to hide the link from the login form but keep the functionality, add this your `local.yaml`: 
-```yaml
-admin_lte:
-    routes:
-        adminlte_password_reset: ~
-```
-
+See also: [Symfony documentation](https://symfony.com/doc/current/reference/configuration/framework.html#cookie-lifetime)

@@ -13,7 +13,7 @@ a subdomain and the main website still showing the years old version dedicated t
 show everyone that Kimai 2 is on a good track to be used in production - so the main content is now focused on Kimai v2.
 
 Lets hope that the clean approach and responsiveness will lead to some more SEO love from Google. 
-While cleaning up the content, I also moved the [complete documentation]({% link _documentation/index.md %}) from the Kimai v2 repository to this website.
+While cleaning up the content, I also moved the [complete documentation]({% link _pages/documentation.md %}) from the Kimai v2 repository to this website.
 It is still shipped with the next release of Kimai, but will be removed from the GitHub repository in the near future.
 
 As Kimai v1 is still used by many users, I incorporated almost the complete content from the old website. 

@@ -1,87 +1,32 @@
 <div class="header py-4">
 	<div class="container">
 		<div class="d-flex">
-			<a class="header-brand" href="{% link _pages/index.html %}">
-				<img src="{{ '/assets/icon/apple-touch-icon.png' | absolute_url }}" class="header-brand-img" alt="Kimai logo"> Kimai time-tracker
+			<a class="header-brand" href="{{ site.data.trans-menu[page.lang].home.url }}">
+				<img src="{{ '/assets/icon/apple-touch-icon.png' | absolute_url }}" class="header-brand-img" alt="Kimai logo"> {{ site.data.trans[page.lang].kimai-time-tracker }}
 			</a>
 
 			<div class="d-flex order-lg-2 ml-auto">
-				<div class="d-none d-sm-flex">
-					<a href="{% link _pages/donate.md %}" title="Donate to Kimai" class="nav-link icon donation"><i class="icon-donation fas fa-donate"></i></a>
+				<div class="d-none d-sm-flex language-switch">
+					{% if page.lang == 'en' %}
+					<a href="{{ site.data.trans-menu['de'].home.url }}" title="{{ site.data.trans-menu['de'].home.title }}" class="first nav-link">DE</a>
+					<span class="nav-link">EN</span> 
+					{% else %}
+					<span class="first nav-link">DE</span>
+					<a href="{{ site.data.trans-menu['en'].home.url }}" title="{{ site.data.trans-menu['en'].home.title }}" class="nav-link">EN</a>
+					{% endif %}
 				</div>
 				<div class="d-none d-sm-flex">
-					<a href="https://twitter.com/kimai_org" title="Follow us on Twitter" class="nav-link icon" target="_blank"><i class="fab fa-twitter"></i></a>
+					<a href="{{ site.data.trans-menu[page.lang].donate.url }}" title="{{ site.data.trans-menu[page.lang].donate.title }}" class="nav-link icon donation"><i class="icon-donation {{ site.data.trans-menu[page.lang].donate.icon }}"></i></a>
+				</div>
+				<div class="d-none d-sm-flex">
+					<a href="{{ site.data.trans-menu[page.lang].twitter.url }}" title="{{ site.data.trans-menu[page.lang].twitter.title }}" class="nav-link icon" target="_blank"><i class="{{ site.data.trans-menu[page.lang].twitter.icon }}"></i></a>
 				</div>
 				<div class="d-flex d-sm-none">
-					<a href="{% link _pages/download.md %}" title="Download Kimai" class="nav-link icon"><i class="fas fa-download"></i></a>
+					<a href="{{ site.data.trans-menu[page.lang].download.url }}" title="{{ site.data.trans-menu[page.lang].download.title }}" class="nav-link icon"><i class="{{ site.data.trans-menu[page.lang].download.icon }}"></i></a>
 				</div>
 				<div class="nav-item d-none d-sm-flex">
-					<a href="{% link _pages/download.md %}" class="btn btn-sm btn-outline-primary" title="Download Kimai"> Download</a>
+					<a href="{{ site.data.trans-menu[page.lang].download.url }}" title="{{ site.data.trans-menu[page.lang].download.title }}" class="btn btn-sm btn-outline-primary"> {{ site.data.trans-menu[page.lang].download.name }}</a>
 				</div>
-				{% comment %}
-							<div class="dropdown d-none d-md-flex">
-								<a class="nav-link icon" data-toggle="dropdown">
-									<i class="fe fe-bell"></i>
-									<span class="nav-unread"></span>
-								</a>
-								<div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-									<a href="#" class="dropdown-item d-flex">
-										<span class="avatar mr-3 align-self-center" style="background-image: url({{ site.data.users[1].photo }})"></span>
-										<div>
-											<strong>{{ site.data.users[1].name }}</strong> pushed new commit: Fix page load performance issue.
-											<div class="small text-muted">10 minutes ago</div>
-										</div>
-									</a>
-									<a href="#" class="dropdown-item d-flex">
-										<span class="avatar mr-3 align-self-center" style="background-image: url({{ site.data.users[2].photo }})"></span>
-										<div>
-											<strong>{{ site.data.users[2].name }}</strong> started new task: Tabler UI design.
-											<div class="small text-muted">1 hour ago</div>
-										</div>
-									</a>
-									<a href="#" class="dropdown-item d-flex">
-										<span class="avatar mr-3 align-self-center" style="background-image: url({{ site.data.users[3].photo }})"></span>
-										<div>
-											<strong>{{ site.data.users[3].name }}</strong> deployed new version of NodeJS REST Api V3
-											<div class="small text-muted">2 hours ago</div>
-										</div>
-									</a>
-									<div class="dropdown-divider"></div>
-									<a href="#" class="dropdown-item text-center">Mark all as read</a>
-								</div>
-							</div>
-							<div class="dropdown">
-								<a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
-									<span class="avatar" style="background-image: url({{ site.base }}/{{ user.photo }})"></span>
-									<span class="ml-2 d-none d-lg-block">
-										<span class="text-default">{{ user.name }}</span>
-										<small class="text-muted d-block mt-1">Administrator</small>
-									</span>
-								</a>
-								<div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-									<a class="dropdown-item" href="#">
-										<i class="dropdown-icon fe fe-user"></i> Profile
-									</a>
-									<a class="dropdown-item" href="#">
-										<i class="dropdown-icon fe fe-settings"></i> Settings
-									</a>
-									<a class="dropdown-item" href="#">
-										<span class="float-right"><span class="badge badge-primary">6</span></span>
-										<i class="dropdown-icon fe fe-mail"></i> Inbox
-									</a>
-									<a class="dropdown-item" href="#">
-										<i class="dropdown-icon fe fe-send"></i> Message
-									</a>
-									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#">
-										<i class="dropdown-icon fe fe-help-circle"></i> Need help?
-									</a>
-									<a class="dropdown-item" href="#">
-										<i class="dropdown-icon fe fe-log-out"></i> Sign out
-									</a>
-								</div>
-							</div>
-				{% endcomment %}
 			</div>
 
 			<a href="#" class="header-toggler d-lg-none ml-3 ml-lg-0" data-toggle="collapse" data-target="#headerMenuCollapse">

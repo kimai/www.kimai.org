@@ -37,6 +37,13 @@ The invoice system currently supports the following formats:
 
 **Be aware**: the default templates were created and tested ONLY with LibreOffice!
 
+## Export state
+
+Invoices and exports share the export state, which is used to mark timesheet records a processed. 
+These records cannot be edited any longer by regular users and are excluded by default from further invoices and exports.
+ 
+For further information read the [timesheet documentation]({% link _documentation/timesheet.md %}).
+
 ## Create your own invoice document
 
 Invoice documents are searched in two locations:
@@ -118,6 +125,7 @@ The documents which are rendered passively (ODS, XLSX, CSV, DOCX) can use the fo
 | ${invoice.number} | The generated invoice number |
 | ${invoice.currency} | The invoice currency |
 | ${invoice.total_time} | The total working time (entries with a fixed rate are always calculated with 1) |
+| ${invoice.duration_decimal} | The total working time as decimal value |
 | ${invoice.total} | The invoices total (including tax) |
 | ${invoice.subtotal} | The invoices subtotal (excluding tax) |
 | ${invoice.currency} | The invoices currency as string (like EUR or USD) |
@@ -132,6 +140,8 @@ The documents which are rendered passively (ODS, XLSX, CSV, DOCX) can use the fo
 | ${query.begin} | The query begin as formatted short date |
 | ${query.end} | The query end as formatted short date |
 | ${query.month} | The month for this query (begin date) |
+| ${query.month_number} | The numerical value for the month (with leading zero) |
+| ${query.day} | The day for the queries begin as numerical value with leading zero |
 | ${query.year} | The year for this query (begin date) |
 
 If a customer was selected the following values exist as well:
@@ -147,6 +157,8 @@ If a customer was selected the following values exist as well:
 | ${customer.country} | The customer country |
 | ${customer.homepage} | The customer homepage |
 | ${customer.comment} | The customer comment |
+| ${customer.fixed_rate} | Fixed rate for this customer |
+| ${customer.hourly_rate} | Hourly rate for this customer |
 | ${customer.meta.X} | The customer [meta field]({% link _documentation/meta-fields.md %}) named `X` (if visible)  |
 
 If a project was selected the following values exist as well:
@@ -157,6 +169,8 @@ If a project was selected the following values exist as well:
 | ${project.name} | The project name |
 | ${project.comment} | The project name |
 | ${project.order_number} | The project order number |
+| ${project.fixed_rate} | Fixed rate for this project |
+| ${project.hourly_rate} | Hourly rate for this project |
 | ${project.meta.X} | The project [meta field]({% link _documentation/meta-fields.md %}) named `X` (if visible)  |
 
 If an activity was selected the following values exist as well:
@@ -166,6 +180,8 @@ If an activity was selected the following values exist as well:
 | ${activity.id} | The activity ID |
 | ${activity.name} | The activity name |
 | ${activity.comment} | The activity name |
+| ${activity.fixed_rate} | Fixed rate for this activity |
+| ${activity.hourly_rate} | Hourly rate for this activity |
 | ${activity.meta.X} | The activity [meta field]({% link _documentation/meta-fields.md %}) named `X` (if visible)  |
 
 ### Timesheet entry variables 
@@ -181,6 +197,7 @@ For each timesheet entry you can use the variables from the following table.
 | ${entry.total} | The total rate for this entry | 278,33 |
 | ${entry.currency} | The currency for this record as string (like EUR or USD) | EUR |
 | ${entry.duration} | The duration in seconds | 10020 |
+| ${entry.duration_decimal} | The duration in decimal format (with localized separator) | 2.78 |
 | ${entry.duration_minutes} | The duration in minutes with no decimals | 167 |
 | ${entry.begin} | The begin date (format depends on the users language) | 27.10.2018 |
 | ${entry.begin_time} | The formatted time for the begin of this entry | 14:57 |

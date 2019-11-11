@@ -16,6 +16,7 @@ kimai:
         week_numbers: true
         weekends: true
         day_limit: 4
+        slot_duration: '00:30:00'
         businessHours:
             days: [1, 2, 3, 4, 5]
             begin: '08:00'
@@ -28,6 +29,7 @@ kimai:
 - `week_numbers` - whether week numbers should be displayed in the monthly view (default: true)
 - `weekends` - whether weekends should be displayed (default: true)
 - `day_limit` - defined the max amount of items to be displayed for one day in the monthly view (default: 4)
+- `slot_duration` - defines the duration for each calendar slot (row) in the week and day views (default: 00:30:00 = 30 minutes)
 - `businessHours.days` - defines your working days, which will be highlighted in the weekly and daily view. counting starts with sunday and the index 0, so 1 = monday, ..., 6 = saturday. (default: 1-5 / monday to friday) 
 - `businessHours.begin` - the start time of your working day, which will be highlighted in the weekly and daily view (default: 08:00)
 - `businessHours.end` - the end time of your working day, which will be highlighted in the weekly and daily view (default: 18:00)

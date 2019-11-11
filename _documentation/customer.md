@@ -37,7 +37,6 @@ It is also used for printing invoices, which is the reason while the invoice scr
 before any data will be shown. 
 
 ## Time budget
-{% include new_since.html version="1.0" %}
 
 {% include time_budget.md %}
 
@@ -62,3 +61,31 @@ The visibility filter in the toolbar has three state:
 - Visible: Yes (all customers that are visible)
 - Visible: No (all customers that are invisible)
 - Visible "empty" (all customers, not filtering on their visibility)
+
+## Filter and search 
+
+The search drop-down supports filtering by the fields:
+- `visibility`
+
+Besides these filters, you can query for a free search term, which will be searched in the fields:
+- `name`
+- `comment`
+- `number`
+- `contact`
+- `email`
+- `phone`
+- `address`
+
+Additionally you can filter for [custom fields]({% link _documentation/meta-fields.md %}) by using a search phrase like `location:homeoffice`.
+This would find all customers with the custom field `location` matching the term `homeoffice`.
+
+The search terms will be found within the full value, so searching for `office` would find:
+- `I love working in my office`
+- `Office` 
+- `This office is beautiful`
+- `Our offices are very noisy`
+
+You can mix the search term and use multiple meta-field queries:
+- `location:homeoffice customername foo` - find all customers matching the search term `customername foo` with the custom field `location` matching the term `homeoffice` 
+- `location:homeoffice contract:foo customername` - find all customers matching the search term `customername` with the custom field combination: `location` matching the term `homeoffice` and `contract` matching the term `foo` 
+- `location:homeoffice contract:foo` - find all customers with the custom field combination: `location` matching the term `homeoffice` and `contract` matching the term `foo`

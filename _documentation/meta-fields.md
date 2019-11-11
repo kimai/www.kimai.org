@@ -29,16 +29,15 @@ Well, this is possible through the registration via an EventSubscriber, where yo
 
 ## Add editable custom fields
 
-The following example adds a custom fields to each entity types "edit" and "create" forms:
+The following example adds a custom field to each entity type, which can be edited in the "edit" and "create" forms:
+
 - `Timesheet` via `TimesheetMeta` 
 - `Customer` via `CustomerMeta` 
 - `Project` via `ProjectMeta` 
 - `Activity` via `ActivityMeta`
 
-This example might seem a little awkward first, as I wanted to add only one example for all 
-possible entity types and that definitely doesn't make the code prettier ;-)
-But I hope you get the point and see in `prepareEntity` what needs to be done to setup new 
-custom fields, which can be edited by the user. 
+This example supports all possible entity types and adds the new `Location` field.
+See in `prepareEntity()` what needs to be done to setup new custom fields, which can be edited by the user. 
 
 ```php
 use App\Entity\ActivityMeta;
@@ -90,12 +89,84 @@ class MetaFieldSubscriber implements EventSubscriberInterface
     private function prepareEntity(EntityWithMetaFields $entity, MetaTableTypeInterface $definition)
     {
         $definition
-            ->setName('Location')
+            ->setLabel('Working place')
+            ->setOptions(['help' => 'Enter the place you work from here'])
+            ->setName('location')
             ->setType(TextType::class)
             ->addConstraint(new Length(['max' => 255]))
             ->setIsVisible(true);
 
         $entity->setMetaField($definition);
+    }
+}
+```
+
+Attention: `setLabel()` and `setOptions()` will be added with 1.4.
+
+### Displaying and exporting custom fields
+
+With Kimai 1.4 you can display and export custom fields. 
+Supported fields will be shown as new columns in the the data-tables for timesheets, customers, projects and activities. 
+Additionally these fields will be added to HTML and Spreadsheet exports. 
+
+As Kimai cannot query all existing records for possible custom fields, you need to listen to new events and 
+register the desired fields. 
+
+```php
+use App\Entity\ActivityMeta;
+use App\Entity\CustomerMeta;
+use App\Entity\EntityWithMetaFields;
+use App\Entity\MetaTableTypeInterface;
+use App\Entity\ProjectMeta;
+use App\Entity\TimesheetMeta;
+use App\Event\ActivityMetaDisplayEvent;
+use App\Event\CustomerMetaDisplayEvent;
+use App\Event\ProjectMetaDisplayEvent;
+use App\Event\TimesheetMetaDisplayEvent;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Validator\Constraints\Length;
+
+class MetaFieldDisplaySubscriber implements EventSubscriberInterface
+{
+    public static function getSubscribedEvents(): array
+    {
+        return [
+            TimesheetMetaDisplayEvent::class => ['loadTimesheetField', 200],
+            CustomerMetaDisplayEvent::class => ['loadCustomerField', 200],
+            ProjectMetaDisplayEvent::class => ['loadProjectField', 200],
+            ActivityMetaDisplayEvent::class => ['loadActivityField', 200],
+        ];
+    }
+
+    public function loadTimesheetField(TimesheetMetaDisplayEvent $event)
+    {
+        $event->addField($this->prepareField(new TimesheetMeta()));
+    }
+
+    public function loadCustomerField(CustomerMetaDisplayEvent $event)
+    {
+        $event->addField($this->prepareField(new CustomerMeta()));
+    }
+
+    public function loadProjectField(ProjectMetaDisplayEvent $event)
+    {
+        $event->addField($this->prepareField(new ProjectMeta()));
+    }
+
+    public function loadActivityField(ActivityMetaDisplayEvent $event)
+    {
+        $event->addField($this->prepareField(new ActivityMeta()));
+    }
+
+    private function prepareField(MetaTableTypeInterface $definition)
+    {
+        $definition
+            ->setLabel('Working place')
+            ->setName('location')
+            ->setType(TextType::class);
+
+        return $definition;
     }
 }
 ```
@@ -108,9 +179,10 @@ in the following places:
 - Export
 - Invoice
 - API
+- Datatables
 
-The default visibility is `false` (hidden). If you want to use the meta fields value 
-in your invoices, then you have to set its visibility to true (see EventSubscriber example above).
+The default visibility is `false` (hidden). If you want to use the meta fields value in your invoices or show them in 
+the data tables (eg. timesheets), then you have to set its visibility to true (see EventSubscriber example above).
 
 Be aware: the visibility is stored with the meta field, so changing its value via the EventSubscriber 
 does NOT change the visibility of already saved meta fields, just for new ones. 

@@ -27,7 +27,6 @@ If no color is applied, the project color will be used.
 See [customer documentation]({% link _documentation/customer.md %}) for the default color.
 
 ## Time budget
-{% include new_since.html version="1.0" %}
 
 {% include time_budget.md %}
 
@@ -47,3 +46,29 @@ The visibility filter in the toolbar has three state:
 - Visible: Yes (all activities that are "really" visible, meaning: the activity, linked project and customer are visible)
 - Visible: No (all activities that are exclusively invisible by their own visibility state)
 - Visible "empty" (all activities: not filtering on their own, the projects or customers visibility)
+
+## Filter and search 
+
+The search drop-down supports filtering by the fields:
+- `customer`
+- `project`
+- `global` / `non-global`
+- `visibility`
+
+Besides these filters, you can query for a free search term, which will be searched in the fields:
+- `name`
+- `comment`
+
+Additionally you can filter for [custom fields]({% link _documentation/meta-fields.md %}) by using a search phrase like `location:homeoffice`.
+This would find all activities with the custom field `location` matching the term `homeoffice`.
+
+The search terms will be found within the full value, so searching for `office` would find:
+- `I love working in my office`
+- `Office` 
+- `This office is beautiful`
+- `Our offices are very noisy`
+
+You can mix the search term and use multiple meta-field queries:
+- `location:homeoffice activityname foo` - find all activities matching the search term `activityname foo` with the custom field `location` matching the term `homeoffice` 
+- `location:homeoffice contract:foo activityname` - find all activities matching the search term `activityname` with the custom field combination: `location` matching the term `homeoffice` and `contract` matching the term `foo` 
+- `location:homeoffice contract:foo` - find all activities with the custom field combination: `location` matching the term `homeoffice` and `contract` matching the term `foo`

@@ -6,5 +6,5 @@ hosted: true
 order: 30
 ---
 
-Kimai can be localized to any language and is already translated to **english, german, italian, french, spanish, russian, arabic, hungarian, portuguese (brazilian), swedish, japanese and slovakian**.
+Kimai can be localized to any language and is already translated to **english, german, italian, french, spanish, russian, arabic, hungarian, portuguese (brazilian), swedish, japanese, slovakian, korean and czech**.
 Feel free to send your self-made language files – we’re looking for translators and would appreciate your support!

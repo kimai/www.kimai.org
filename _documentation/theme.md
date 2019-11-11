@@ -14,7 +14,6 @@ All Kimai specific theme settings will be available in the twig templates with t
 ``` 
 
 ## Default theme color
-{% include new_since.html version="1.0" %}
 
 The default theme colors can be changed to one of the following choices:
 
@@ -44,21 +43,17 @@ It is recommended to leave the choice to the user, as colors and contrasts are n
 
 ## Searchable input types
 
-The select boxes for customer, project and activity are by default the OS standard UI elements. 
-This might be a limit for users with a long list of active and non-hidden elements.
+The select boxes for customer, project and activity are by default (since 1.4) searchable Javascript components. 
 
-Therefor a test is currently running, which can be activated setting the the following configuration:  
+If you don't like the way this component behaves (eg. if you want native elements on mobile) you can deactivate it by setting the following config  
 
 ```yaml
 kimai:
     theme:
-        select_type: selectpicker
+        select_type: ~
 ```
 
-This will turn the select boxes into javascript elements with quick search option. 
-
-Why is this a beta test? It's not clear, if we keep on using this javascript library or activate it by default.
-Therefor your feedback is highly welcome, please post your opinion at GitHub.   
+This will turn the select-boxes into native select elements. 
 
 ## Active entries warning
 
@@ -71,7 +66,7 @@ The amount `X` is configured in your `local.yaml` with the setting `timesheet.ac
 Kimai allows you to configure icons in several places (provided by [Font Awesome 5](https://fontawesome.com/icons)) and ships 
 with a pre-defined list of icon aliases to guarantee a consistent look.  
 
-The pre-defined icons aliases can be found in this [TwigExtension]({{ site.kimai_v2_file }}/src/Twig/Extensions.php).
+The pre-defined icons aliases can be found in this [IconExtension]({{ site.kimai_v2_file }}/src/Twig/IconExtension.php).
 
 Icon aliases can be used by applying the `icon` filter, e.g.
 
