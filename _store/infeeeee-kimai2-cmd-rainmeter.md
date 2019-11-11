@@ -46,7 +46,7 @@ If you have an idea of another variant, just [open an issue](https://github.com/
 
 ## Usage
 
-- Click on the Kimai logo to open your Kimai webui in you default browser
+- Click on the Kimai logo to open your Kimai webui in your default browser
 - Click on the name of the current active recording or on the 'No active recording' text to show your recent measurements
 - Click on one of a recent measurement to restart it
 - Click on the ▶️ play button to restart your latest measurement
