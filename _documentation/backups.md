@@ -31,7 +31,10 @@ Write down the exact version of your Kimai installation:
 - make sure it works
 - restore the database backup in an empty database
 - point `.env` to your imported database
-- execute `bin/console cache:clear` 
+
+Now refresh your cache:
+
+{% include cache-refresh.html %}  
 
 At this step: test Kimai again and don't proceed before it works as expected!
 

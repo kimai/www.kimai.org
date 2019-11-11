@@ -28,10 +28,7 @@ composer install --no-dev --optimize-autoloader
 ```
 
 Refresh your cache:
-```bash
-bin/console cache:clear --env=prod
-bin/console cache:warmup --env=prod
-```
+{% include cache-refresh.html %} 
 
 And upgrade your database:
 

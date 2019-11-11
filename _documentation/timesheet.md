@@ -142,11 +142,11 @@ Rounding rules are used to round the begin & end dates and the duration for time
 
 You can configure your `rounding` rules by changing the configuration file [local.yaml]({% link _documentation/configurations.md %}).
 
-There are two different rounding modes:
-- `default`: `"begin" will always be rounded to the floor (down) and "end" & "duration" to the ceiling (up)
-- `closest`: `"begin", "end" and "duration" will be rounded in a mathematical way, always to the nearest value
-- `floor`: `"begin", "end" and "duration" will be always rounded down to nearest value
-- `ceil`: `"begin", "end" and "duration" will be always rounded up to nearest value
+These are the existing rounding modes:
+- `default`: "begin" will always be rounded to the floor (down) and "end" & "duration" to the ceiling (up)
+- `closest`: "begin", "end" and "duration" will be rounded in a mathematical way, always to the nearest value
+- `floor`: "begin", "end" and "duration" will be always rounded down to nearest value
+- `ceil`: "begin", "end" and "duration" will be always rounded up to nearest value
 
 ### Examples
 

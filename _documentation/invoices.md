@@ -62,7 +62,9 @@ Be aware of the following rules:
   - hide the default templates
   - add additional template source directories
   - see below in `Configure search path` to find out how
-- After you created a new or updated an existing template, you might have to clear the cache with `bin/console cache:clear` to see the results
+
+After you created a new or updated an existing template, you might have to clear the cache to see the results:
+{% include cache-refresh.html %} 
 
 ### Twig templates
 
