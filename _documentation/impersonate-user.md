@@ -18,7 +18,7 @@ add the following line to the `secured_area` firewall:
 switch_user: true
 ``` 
 
-It must lok like this:
+It must look like this:
 
 ```yaml
 security:
@@ -41,7 +41,7 @@ security:
         ROLE_SUPER_ADMIN: [ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 ```
 
-Last step is to refresh your cache:
+Finally refresh your cache:
 {% include cache-refresh.html %}
 
 To switch to another user, add a query string with the `_switch_user` parameter and the username as the value to the current URL (you must 
@@ -51,7 +51,7 @@ be logged-in as a super admin to use this feature):
 https://example.com/en/dashboard/?_switch_user=anna_admin
 ```
 
-To switch back to the original user, use the special _exit username:
+To switch back to the original user, use the special `_exit` username:
 
 ```
 https://example.com/en/dashboard/?_switch_user=_exit
