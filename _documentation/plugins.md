@@ -178,7 +178,9 @@ There is another parameter called `%kimai.plugin_dir%`, which is pointing to the
 
 ## Example plugin
 
-Please have a look at the [CustomCSSBundle](https://github.com/keleo/CustomCSSBundle) which serves as bundle demo:
+There is an [official demo bundle](https://github.com/Keleo/DemoBundle) which has multiple features, you might be interested in.
+
+You can also have a look at the [CustomCSSBundle](https://github.com/keleo/CustomCSSBundle) which serves as bundle demo:
 - A bundle with an extension to load service definitions
 - Additional routes
 - An admin controller with form usage, flash messages and an additional view

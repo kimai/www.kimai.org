@@ -63,10 +63,7 @@ this specific configuration key to your `local.yaml` in order to overwrite the d
 When you change a configuration file, Kimai will not see this change immediately. 
 You can reload the configs after you are done by rebuilding the Symfony cache with:
 
-```bash
-bin/console cache:clear --env=prod
-bin/console cache:warmup --env=prod
-```
+{% include cache-refresh.html %} 
 
 Depending on your setup it might be necessary to execute these commands as webserver user, 
 please read the [Installation docs]({% link _documentation/installation.md %}) for more details.
@@ -86,3 +83,7 @@ additional information or links to the correct documentation chapter.
 A user has several preferences, which change the behaviour how he interacts with Kimai.
 
 Check out the [user preferences documentation]({% link _documentation/user-preferences.md %}) to find out more.
+
+## Adding system configuration
+
+As plugin developer you can add your own sections to the system configuration screen, see [developer documentation]({% link _documentation/developers.md %}).

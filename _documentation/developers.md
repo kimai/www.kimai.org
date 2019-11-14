@@ -337,3 +337,92 @@ class YourExtension extends Extension implements PrependExtensionInterface
 
 If you don't register your permissions, your users will have to edit their [local.yaml]({% link _documentation/configurations.md %}), please avoid that!
  
+
+## Adding system configuration
+
+As plugin developer you can add your own sections to the system configuration screen by using a code like this:
+
+```php
+namespace KimaiPlugin\YourBundle\EventSubscriber;
+
+use App\Event\SystemConfigurationEvent;
+use App\Form\Model\Configuration;
+use App\Form\Model\SystemConfiguration as SystemConfigurationModel;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+
+class MySubscriber implements EventSubscriberInterface
+{
+    public static function getSubscribedEvents()
+    {
+        return [
+            SystemConfigurationEvent::class => ['onSystemConfiguration', 100],
+        ];
+    }
+    
+    public function onSystemConfiguration(SystemConfigurationEvent $event)
+    {
+        $event->addConfiguration((new SystemConfigurationModel())
+            ->setSection('your_bundle')
+            ->setConfiguration([
+                (new Configuration())
+                    ->setName('your.setting')
+                    ->setTranslationDomain('your')
+                    ->setRequired(false)
+                    ->setType(TextType::class),
+            ])
+        );
+    }
+}
+```
+
+This assumes that your bundle uses its own Configuration (class) and registers its configs with
+`\App\Plugin\AbstractPluginExtension::registerBundleConfiguration()`:
+
+```php
+namespace KimaiPlugin\YourBundle\DependencyInjection;
+
+use App\Plugin\AbstractPluginExtension;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+
+class YourExtension extends AbstractPluginExtension
+{
+    public function load(array $configs, ContainerBuilder $container)
+    {
+        $configuration = new Configuration();
+        $config = $this->processConfiguration($configuration, $configs);
+        $this->registerBundleConfiguration($container, $config);
+    }
+}
+``` 
+
+And your configuration class looking like this:
+```php
+
+namespace KimaiPlugin\YourBundle\DependencyInjection;
+
+use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
+use Symfony\Component\Config\Definition\Builder\TreeBuilder;
+use Symfony\Component\Config\Definition\ConfigurationInterface;
+
+class Configuration implements ConfigurationInterface
+{
+    public function getConfigTreeBuilder()
+    {
+        $treeBuilder = new TreeBuilder('your');
+        /** @var ArrayNodeDefinition $rootNode */
+        $rootNode = $treeBuilder->getRootNode();
+
+        $rootNode
+            ->addDefaultsIfNotSet()
+            ->children()
+                ->scalarNode('setting')
+                    ->defaultValue('foo')
+                ->end()
+            ->end()
+        ->end();
+
+        return $treeBuilder;
+    }
+}
+```
