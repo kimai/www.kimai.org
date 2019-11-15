@@ -128,11 +128,14 @@ The documents which are rendered passively (ODS, XLSX, CSV, DOCX) can use the fo
 | ${invoice.currency} | The invoice currency |
 | ${invoice.total_time} | The total working time (entries with a fixed rate are always calculated with 1) |
 | ${invoice.duration_decimal} | The total working time as decimal value |
-| ${invoice.total} | The invoices total (including tax) |
-| ${invoice.subtotal} | The invoices subtotal (excluding tax) |
+| ${invoice.total} | The invoices total (including tax) with currency |
+| ${invoice.total_nc} | The invoices total (including tax) without currency (since 1.6) |
+| ${invoice.subtotal} | The invoices subtotal (excluding tax) with currency |
+| ${invoice.subtotal_nc} | The invoices subtotal (excluding tax) without currency (since 1.6) |
 | ${invoice.currency} | The invoices currency as string (like EUR or USD) |
 | ${invoice.vat} | The VAT in percent for this invoice |
-| ${invoice.tax} | The tax of the invoice amount |
+| ${invoice.tax} | The tax of the invoice amount with currency |
+| ${invoice.tax_nc} | The tax of the invoice amount without currency (since 1.6) |
 | ${template.name} | The invoice name, as configured in your template |
 | ${template.company} | The company name, as configured in your template |
 | ${template.address} | The invoicing address, as configured in your template |
@@ -195,8 +198,10 @@ For each timesheet entry you can use the variables from the following table.
 | ${entry.row} | An empty string, used as template row for docx | |
 | ${entry.description} | The entries description | _foo bar_ |
 | ${entry.amount} | The format duration/amount for this entry | 02:47 h |
-| ${entry.rate} | The rate for one unit of the entry (normally one hour) | 100 |
-| ${entry.total} | The total rate for this entry | 278,33 |
+| ${entry.rate} | The rate for one unit of the entry (normally one hour) with currency | 100 EUR |
+| ${entry.rate_nc} | The rate for one unit of the entry (normally one hour) without currency (since 1.6) | 100 |
+| ${entry.total} | The total rate for this entry with currency | 278,33 EUR |
+| ${entry.total_nc} | The total rate for this entry without currency (since 1.6) | 278,33 |
 | ${entry.currency} | The currency for this record as string (like EUR or USD) | EUR |
 | ${entry.duration} | The duration in seconds | 10020 |
 | ${entry.duration_decimal} | The duration in decimal format (with localized separator) | 2.78 |
