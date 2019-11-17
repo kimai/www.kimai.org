@@ -54,6 +54,7 @@ The custom fields will be shown on the "create and edit entity" forms and can ha
 - `color`
 - `date`
 - `datetime`
+- `boolean` (use: 1 = checked/true or 0 = unchecked/false)
 - `choice-list` (add entries comma separated into default-value field)
 
 The custom-field data is then available in:
@@ -68,7 +69,6 @@ Be aware:
 
 - Restricted fields won't be visible on the create forms, as Kimai initially can't know if the rule will apply. In these cases the form will only be shown in the edit forms.
 - Sensitive data can be configured as "invisible", so it will not show up in the above mentioned places.
-- User preferences are currently not exposed (don't support the visibility flag) and are always mandatory
 
 More information about custom fields can be found in the [documentation](https://www.kimai.org/documentation/meta-fields.html).
 
