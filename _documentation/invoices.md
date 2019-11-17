@@ -39,8 +39,10 @@ The invoice system currently supports the following formats:
 
 ## Export state
 
-Invoices and exports share the export state, which is used to mark timesheet records a processed. 
+Invoices and exports share the export state, which is used to mark timesheet records as processed. 
 These records cannot be edited any longer by regular users and are excluded by default from further invoices and exports.
+
+You need to tick the checkbox before printing the invoice, to automatically set the export state on all included records.
  
 For further information read the [timesheet documentation]({% link _documentation/timesheet.md %}).
 
@@ -66,9 +68,20 @@ Be aware of the following rules:
 After you created a new or updated an existing template, you might have to clear the cache to see the results:
 {% include cache-refresh.html %} 
 
-### Twig templates
+#### Configure search path
 
-If you are looking for a way to set the advanced contact data, see below in _Configure contact data_.
+An example configuration in [local.yaml]({% link _documentation/configurations.md %}) might look like this:
+
+```yaml
+kimai:
+    invoice:
+        documents:
+            - 'var/invoices/'
+```
+
+This would disable the default documents, as Kimai will only look in the directory `var/invoices/` for files.
+
+### Twig templates
 
 Generally speaking, you should use only the variable `model` in your template which is an instance of `App\Model\InvoiceModel`.
 
@@ -140,8 +153,11 @@ The documents which are rendered passively (ODS, XLSX, CSV, DOCX) can use the fo
 | ${template.company} | The company name, as configured in your template |
 | ${template.address} | The invoicing address, as configured in your template |
 | ${template.title} | The invoice title, as configured in your template |
-| ${template.payment_terms} | Your payment terms, usage might differ from template to template |
+| ${template.payment_terms} | Your payment terms, might be multiple lines |
 | ${template.due_days} | The amount of days for the payment, starting with the day of creating the invoice |
+| ${template.vat_id} | The Vat ID for this invoice (since 1.6) |
+| ${template.contact} | Extended contact information, might be multiple lines (since 1.6) |
+| ${template.payment_details} | Extended payment details like bank accounts, might be multiple lines (since 1.6) |
 | ${query.begin} | The query begin as formatted short date |
 | ${query.end} | The query end as formatted short date |
 | ${query.month} | The month for this query (begin date) |
@@ -149,7 +165,7 @@ The documents which are rendered passively (ODS, XLSX, CSV, DOCX) can use the fo
 | ${query.day} | The day for the queries begin as numerical value with leading zero |
 | ${query.year} | The year for this query (begin date) |
 
-If a customer was selected the following values exist as well:
+The following values exist for the customer:
 
 | Key | Description |
 |---|---|
@@ -158,6 +174,7 @@ If a customer was selected the following values exist as well:
 | ${customer.name} | The customer name |
 | ${customer.contact} | The customer contact |
 | ${customer.company} | The customer company |
+| ${customer.vat} | The customer Vat ID |
 | ${customer.number} | The customer number |
 | ${customer.country} | The customer country |
 | ${customer.homepage} | The customer homepage |
@@ -223,41 +240,3 @@ For each timesheet entry you can use the variables from the following table.
 | ${entry.customer} | Customer name | Acme Studios |
 | ${entry.customer_id} | Customer ID | 3 |
 | ${entry.meta.X} | The [meta field]({% link _documentation/meta-fields.md %}) named `X` (if visible)  |
-
-## Configure search path
-
-An example configuration in [local.yaml]({% link _documentation/configurations.md %}) might look like this:
-
-```yaml
-kimai:
-    invoice:
-        documents:
-            - 'var/invoices/'
-```
-
-This would disable the default documents, as Kimai will only look in the directory `var/invoices/` for files.
-
-## Configure contact data
-
-Some HTML invoice templates need additional data, that can't be edited through the UI.
-These values should be added to your [local.yaml]({% link _documentation/configurations.md %}):
-```yaml
-twig:
-    globals:
-        company:
-            name: 'Kimai Inc.',
-            homepage: 'www.kimai.org',
-            email: 'kimai@example.com',
-            phone: '0123-4567890',
-            tax_number: 'YourTaxNumber',
-            signature: '/build/images/signature.png',
-            address: 'Kimai Inc.
-                Example road 42
-                D – 12345 City
-            ',
-            bank_account: '
-                Kimai Inc.
-                IBAN: DE00 0000 0000 0000 0000 00
-                BIC: XXXXXXXX (a bank name)
-            '
-```
