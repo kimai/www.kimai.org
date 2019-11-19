@@ -14,26 +14,28 @@ The invoice system currently supports the following formats:
   - through the use of Twig templates
   - filename must end with `.html.twig` 
   - Pros: no need for additional software, print or convert to PDF from your browser (if supported)
+  - **the recommended invoice document format**
 - `DOCX`
   - OOXML - Open Office XML Text
   - Microsoft Word 2007-2013 XML
   - filename must end with `.docx` 
-  - Pros: simple customization and possibility to edit the invoice later on
-  - our recommended invoice document format
-- `CSV`
-  - Comma-separated file with UTF-8 encoding and double-quotes around each field 
-  - filename must end with `.csv` 
-  - Pros: good for exporting and creating enhanced reports with an office software package
-  - our recommended export format
-- `XLSX`
-  - Microsoft Excel™ 2007 shipped with a new file format, namely Microsoft Office Open XML SpreadsheetML, and Excel 2010 extended this still further with new features. 
-  - file extension: filename must end with `.xlsx` 
-  - PRO: good for exporting, creating enhanced reports with an office software package
+  - Pro: simple customization and possibility to edit the invoice later on
+  - Contra: Non-free software required 
 - `ODS`
   - Open Document Spreadsheet or OASIS, is the OpenOffice.org XML file format for spreadsheets supported by OpenOffice, LibreOffice, StarCalc, Microsoft and others 
   - file extension: filename must end with `.ods` 
-  - Pros: open format - good for exporting, creating enhanced reports with an office software package
-  - our recommended spreadsheet format
+  - Pros: open format, good for exporting and creating enhanced reports with an office software package
+  - Contra: not ideal format for invoices
+- `XLSX`
+  - Microsoft Excel™ 2007 shipped with a new file format, namely Microsoft Office Open XML SpreadsheetML, and Excel 2010 extended this still further with new features. 
+  - file extension: filename must end with `.xlsx` 
+  - PRO: good for creating enhanced reports with an office software package
+  - Contra: Non-free software required, not ideal format for invoices
+- `CSV`
+  - Comma-separated file with UTF-8 encoding and double-quotes around each field 
+  - filename must end with `.csv` 
+  - Pro: good for exporting and creating enhanced reports with an office software package
+  - Contra: only row based information possible (meta information can't be used properly)
 
 **Be aware**: the default templates were created and tested ONLY with LibreOffice!
 
@@ -47,6 +49,9 @@ You need to tick the checkbox before printing the invoice, to automatically set 
 For further information read the [timesheet documentation]({% link _documentation/timesheet.md %}).
 
 ## Create your own invoice document
+
+There is another repository with some invoice document examples in different formats. 
+If you need ideas how to start with yours, have a look at [https://github.com/Keleo/kimai2-invoice-templates](https://github.com/Keleo/kimai2-invoice-templates). 
 
 Invoice documents are searched in two locations:
 
