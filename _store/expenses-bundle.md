@@ -30,22 +30,20 @@ You can test it in the ["Plugins" demo](https://www.kimai.org/demo/).
   - The data can be searched- and filtered (see screenshots)  
 - All (refundable) expenses will be automatically included in your invoices
 
-Expenses are sorted into free configurable categories, which consist of:
-- a name 
+Expenses are sorted into free configurable types (categories). Each type has a:
+- name 
 - visibility flag
+- default cost
 
-Each expense is linked to a:
+Each expense has the following fields:
 - category 
 - user 
 - project (and customer)
 - activity
-
-... and has also the following fields:
-- a begin date
-- an end date (eg. for staying overnight)
+- a begin and end date
 - a free description
-- the sum (cost / expense)
-- a multiplier (if you want to charge your customer a higher sum, increase this eg. from 1.0 to 1.3)
+- the cost (can be hidden for default user, if you use default cost via category types)
+- an amount (you can see it as mathematial multipler, use 1 if you want to charge the cost only)
 - a flag whether this expense is refundable (non-refundable will not be added to your invoices)
 - an export flag, to make sure each expense is invoiced only once
 
@@ -90,16 +88,6 @@ bin/console kimai:bundle:expenses:install
 
 This will install all required databases.
 
-## Updating the plugin
-
-Updating the bundle works the same way as the installation does. 
-
-- Delete the directory `var/plugins/MetaFieldsBundle/` (to remove deleted files)
-- Execute all installation steps again:
-  - Copy files
-  - Clear cache
-  - Update database with `bin/console kimai:bundle:metafields:install` 
-
 ### First test
 
 When logged in as `SUPER_ADMIN`, you will now see the expenses administration screen at `/en/expenses/`.
@@ -113,27 +101,42 @@ You will be redirected to the category creation screen if Kimai doesn't find one
 
 ## Permissions
 
-This bundle ships a new administration screen, which will be available for the following users:
+This bundle ships a couple of new permissions, which limit access to certain functionalities:
 
-- `ROLE_SUPER_ADMIN` - every super administrator
-- `view_expense` - allows to see the new expenses screen
-- `edit_expense` - allows to edit existing expenses
-- `create_expense` - allows to create new expenses
-- `delete_expense` - allows to delete existing expenses
-- `manage_expense_category` - manage the expense categories 
+- `view_expense` - allows access to the expenses screen
+- `view_expense_other` -see other users expenses
+- `edit_expense` - edit existing expenses
+- `edit_expense_cost` - edit the cost of a single expense (can be deactivated for user, when the category has a default cost)
+- `create_expense` - create new expenses
+- `delete_expense` - delete existing expenses
+- `manage_expense_category` - manage expense types 
 
 You can add the new permissions to your [local.yml](https://www.kimai.org/documentation/configurations.html). 
 For more information, read the [permissions](https://www.kimai.org/documentation/permissions.html) documentation.
 
 ```yaml
+kimai:
     permissions:
         roles:
-            ROLE_ADMIN: ['view_expense', 'edit_expense', 'create_expense', 'delete_expense', 'manage_expense_category']
-            ROLE_TEAMLEAD: ['view_expense', 'edit_expense', 'create_expense']
-            ROLE_USER: ['view_expense', 'create_expense']
+            ROLE_SUPER_ADMIN: ['view_expense', 'view_expense_other', 'edit_expense', 'create_expense', 'delete_expense', 'manage_expense_category', 'edit_expense_cost']
+            ROLE_ADMIN: ['view_expense', 'view_expense_other', 'edit_expense', 'create_expense', 'delete_expense', 'manage_expense_category', 'edit_expense_cost']
+            ROLE_TEAMLEAD: ['view_expense', 'view_expense_other', 'edit_expense', 'create_expense', 'delete_expense']
+            ROLE_USER: ['view_expense', 'edit_expense', 'create_expense', 'delete_expense']
 ```
+
+If you want your user to be able to edit the cost and amount add the `edit_expense_cost` permission to `ROLE_TEAMLEAD` and `ROLE_USER`.
  
-After changing the permissions, you need to clear the cache one more time.
+After changing the permissions, you need to clear the cache again.
+
+## Updating the plugin
+
+Updating the bundle works the same way as the installation does. 
+
+- Delete the directory `var/plugins/ExpensesBundle/` (to remove deleted files)
+- Execute all installation steps again:
+  - Copy files
+  - Clear cache
+  - Update database with `bin/console kimai:bundle:expenses:install` 
 
 ## Screenshots
 
