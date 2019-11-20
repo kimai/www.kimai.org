@@ -89,6 +89,17 @@ Kimai 2 [package](https://github.com/YunoHost-Apps/kimai2_ynh) for [YunoHost](ht
 Be aware that VestaCP uses the `admin` user instead of `www-data`. Replace the names in the permission commands above.
 Read [this issue](https://github.com/kevinpapst/kimai2/issues/743) if you have further questions. 
 
+## Shared hosting
+
+Some short hints for installation at 1&1 / Ionos, but these tipps will likely help with other shared hosters as well:
+
+- GIT is normally pre-installed and can be used via SSH
+- composer has to be installed manually
+- The default PHP version is often too low (PHP 5.x) - you can check that with `php -v`
+  - If it is lower than 7.2, you have to prefix all commands with the proper version, eg. `/usr/bin/php7.3-cli` (even composer) - ask your hoster if you can't find the correct version
+  - Example composer: `/usr/bin/php7.3-cli composer.phar install --no-dev --optimize-autoloader`
+  - Example installation: `/usr/bin/php7.3-cli bin/console kimai:install -n`
+
 ## FTP installation
 
 {% include alert.html type="warning" alert="FTP installation is only possible, if your hosting includes SQLite support!" %}
