@@ -43,7 +43,7 @@ But a download page without button would not be the same 😜 therefore:
 ## Shared hosting / FTP
 
 This way is not recommended, as Kimai does neither support updates in this mode nor ships a web-installer like other web-apps.
-You have to read the [documentation]({% link _documentation/installation.md %}) carefully.
+You have to read the [documentation]({% link _documentation/ftp.md %}) carefully.
 
 Here is the experimental installation package for all the brave FTP users: 
 

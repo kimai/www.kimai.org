@@ -102,29 +102,12 @@ Some short hints for installation at 1&1 / Ionos, but these tipps will likely he
 
 ## FTP installation
 
-{% include alert.html type="warning" alert="FTP installation is only possible, if your hosting includes SQLite support!" %}
- 
-If you have no SSH access to your server (e.g. when you use a shared hosting package) then you can [download a package]({% link _pages/download.md %}), 
-which includes a pre-installed Kimai version.
+This is NOT recommended, but still widely used ... 
 
-You install it via FTP like this:
-- [download]({% link _pages/download.md %}) the latest release package for FTP 
-- extract it locally and upload all files
-- point your domain (document root) to the `public/` directory   
-- register your first user in the login screen, you will automatically become `SUPER_ADMIN`
-  
-The file `var/data/kimai.sqlite` will hold all your data, please include it in your backups.
+Please, do yourself a favour and get a hoster that includes SSH access, it is not 2002 anymore! 
+Nowadays even cheap contracts should support SSH.
 
-**Unfortunately there is no support for updates yet. This feature will be included in the future.**
-
-{% capture support %}
-I know that you probably don't have the technical background for managing a server yourself and need to rely 
-on a shared hosting package. If you thought about switching to a managed server before (they are affordable these days) 
-you can contact me, [I offer paid setup support]({% link _store/keleo-installation-support.md %}).
-{% endcapture %}
-{% assign support = support|markdownify %}
-
-{% include alert.html type="info" alert=support %}
+Now read on: [Kimai FTP installation + tips andtricks]({% link _documentation/ftp.md %}). 
 
 ## Development installation
 
