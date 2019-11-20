@@ -33,6 +33,7 @@ kimai:
 The dashboard has the following default sections:
 
 - `user_duration` - order 10
+- `user_teams` - order 15
 - `user_rates` - order 20
 - `duration` - order 30
 - `active_users` - order 40
@@ -49,6 +50,7 @@ kimai:
     dashboard:
         user_duration: { widgets: [] }
         user_rates: { widgets: [] }
+        user_teams: { widgets: [] }
         duration: { widgets: [] }
         active_users: { widgets: [] }
         rates: { widgets: [] }
@@ -62,6 +64,19 @@ kimai:
         user_duration:
             title: 'some fancy widgets'
             widgets: [userDurationWeek, userDurationMonth, userDurationYear]
+```
+
+Want to hide some rows or show them to a different group of users? Easy! Change the [permissions]({% link _documentation/permissions.md %}):
+
+```yaml
+kimai:
+    dashboard:
+        duration:
+            permission: ROLE_ADMIN
+        active_users:
+            permission: system_configuration
+        rates:
+            permission: ROLE_SUPER_ADMIN
 ```
 
 ### Reorder sections
