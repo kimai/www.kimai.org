@@ -426,3 +426,8 @@ class Configuration implements ConfigurationInterface
     }
 }
 ```
+
+## Adding API methods
+
+There is no example existing right now, but you can have a look at this (german) blog post:
+[https://www.kevinpapst.de/blog/fosrestbundle-via-bundle.html](https://www.kevinpapst.de/blog/fosrestbundle-via-bundle.html)
