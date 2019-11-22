@@ -106,4 +106,51 @@ This is not officially supported, basically because I have no way to test it...
 
 But there is a [discussion in the issue tracker](https://github.com/kevinpapst/kimai2/issues/979#issuecomment-514895906) and a 
 [Symfony documentation page](https://symfony.com/doc/3.4/deployment/azure-website.html#configure-the-web-server) which could help.
+
+## Reverse Proxy and subdirectory usage
+
+Kimai was made to be hosted on the domain level, so running it inside a subdirectory is not perfectly supported.
+Nevertheless, there are some workarounds that enable the usage behind a Reverse Prox and inside a subdirectory.
+
+The easy part is fixing asset URLs. Edit your local.yaml and paste this code inside:
+```yaml
+framework:
+    assets:
+        base_path: "/kimai2
+```
+This will prepend `/kimai` to all assets URLs (CSS, Javascript, Images).
+
+Now, lets move on to configure the the webserver (here nginx is used as reverse proxy).
  
+Lets assume Kimai is running on `192.168.0.100` on port `8080`, your host is `example.com` and it 
+should run in the subdirectory directory `kimai2/`:
+
+```
+server {
+    listen       80;
+    server_name  example.com;
+
+    location /kimai2 {
+        proxy_pass http://192.168.0.100:8080;
+    }
+}
+```
+
+The important part here is the "missing" trailing slash!
+
+You are almost there, the only real "workaround" you have to apply is that you have to create a symlink within the `public/`
+directory of kimai, pointing to itself with the name being the same as the above `location` (here: kimai2):
+
+```bash
+cd /var/www/kmai2/public/
+ln -s . kimai2
+``` 
+
+In a docker context it could look like this:
+```
+docker exec -it kimai2 bash ln -s /opt/kimai/public /opt/kimai/public/kimai2 
+``` 
+
+And you are good to go: Kimai is now running behind a Reverse Proxy.
+
+Read [this GitHub issue](https://github.com/kevinpapst/kimai2/issues/1006) for more information (start at the bottom).
