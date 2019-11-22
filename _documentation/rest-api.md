@@ -19,22 +19,32 @@ When calling the API you have to submit two additional header with every call fo
 
 {% include alert.html type="danger" alert="Make sure to ONLY call the Kimai 2 API via `https` to protect the users credentials and data. Time-tracking data includes private / sensitive information!" %}
 
+## Using the Swagger UI
+
+When you want to use the interactive functions of the Swagger UI, you will probably notice that its not working due to a wrong URL being used.
+The Swagger UI currently doesn't use the current hostname, but always points to `localhost` on port 80.
+Therefor you have to configure the values used manually. 
+
+Please add these lines to your local.yaml (adapt them to your needs):
+```yaml
+parameters:
+    router.request_context.host: '127.0.0.1'
+    router.request_context.port: '8050'
+    router.request_context.scheme: 'http'
+    router.request_context.base_url: ''
+
+# the next lines are only necessary, if you use a port other than 80
+nelmio_api_doc:
+    documentation:
+        host: '%router.request_context.host%:%router.request_context.port%'
+```  
+
 ## Swagger file and Postman
 
 The API calls can be exported in a Swagger file format, which can be imported into Postman.
 You find the link in the API docs (the URL is `api/doc.json`).
 
-The imported collection is pointing to your current installation (e.g. localhost).
-If you want to point it to another location (e.g. the Kimai demo), edit the file `config/packages/nelmio_api_doc.yaml` 
-and replace the following lines:
-
-```yaml
-nelmio_api_doc:
-    documentation:
-        host: 'demo.kimai.org'
-        schemes: ['https']
-```
-Then export the swagger file again and import into Postman. 
+Simply export the swagger file again and import into Postman. 
 
 You could even use this method to generate a collection utilizing Postman variables:
 ```yaml
