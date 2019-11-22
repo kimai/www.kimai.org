@@ -142,7 +142,7 @@ You are almost there, the only real "workaround" you have to apply is that you h
 directory of kimai, pointing to itself with the name being the same as the above `location` (here: kimai2):
 
 ```bash
-cd /var/www/kmai2/public/
+cd /var/www/kimai2/public/
 ln -s . kimai2
 ``` 
 
