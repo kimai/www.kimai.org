@@ -50,7 +50,7 @@ You could even use this method to generate a collection utilizing Postman variab
 ```yaml
 nelmio_api_doc:
     documentation:
-        host: '{{hostname}}'
+        host: '{%raw%}{{hostname}}{%endraw%}'
         schemes: ['https']
 ```
 The variable `hostname` can then be changed for the complete collection in Postman.
