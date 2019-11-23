@@ -1,6 +1,6 @@
 ---
 title: Developers
-description: Developer documentation: run, develop, extend and build for Kimai 
+description: Developer documentation - run, develop, extend and build for Kimai 
 toc: true
 ---
 
@@ -16,9 +16,6 @@ You can install php 7.2 and all dependencies on debian based linux with this com
 ```bash
 apt install php7.2 php7.2-sqlite3 php7.2-intl php7.2-zip php7.2-gd php7.2-mbstring php7.2-xml
 ```
-
-FIXME {% link _documentation/sdfsdf.md %} FIXME
-
 
 Optional requirement:
 - a MySQL/MariaDB instance
