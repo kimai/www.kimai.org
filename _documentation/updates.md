@@ -27,23 +27,13 @@ git checkout {{ site.kimai_v2_version }}
 composer install --no-dev --optimize-autoloader
 ```
 
-Refresh your cache:
-{% include cache-refresh.html %} 
-
-And upgrade your database:
-
+And run the Kimai updater:
 ```bash
-bin/console doctrine:migrations:migrate
+bin/console kimai:update
 ```
 
-Remember to fix the file permissions if necessary (likely not required in a shared-hosting environment). Try if Kimai works without before executing this. 
-Here is an example (for Debian based OS):
-```bash
-chown -R :www-data .
-chmod -R g+r .
-chmod -R g+rw var/
-chmod -R g+rw public/avatars/
-```
+Remember to adjust the file permissions if necessary.
+{% include file-permissions.html %} 
 
 {% capture upgrading_note %}
 Important: Finally execute the version specific tasks from the [UPGRADING]({{ site.kimai_v2_file }}/UPGRADING.md) guide.

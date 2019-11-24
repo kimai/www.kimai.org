@@ -67,9 +67,9 @@ The connection will use the charset `latin1` and the default table prefix `kimai
 
 If you see an error like this:
 ```
-[ERROR] Object(App\Entity\User).email:                                                                                 
-            This value should not be blank. (code c1051bb4-d103-4f74-8988-acbcafc7fdc3)                                
+[ERROR] Object(App\Entity\User).email:
+            This value should not be blank. (code c1051bb4-d103-4f74-8988-acbcafc7fdc3)
 
-[ERROR] Failed to import users: Failed to validate user: admin                                                         
+[ERROR] Failed to import users: Failed to validate user: admin
 ``` 
 you have to edit the named user (here `admin`) and supply a unique email address.

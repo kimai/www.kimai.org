@@ -78,7 +78,6 @@ Only some specific keys may need to be changed for this variant, and its possibl
 </xliff>
 ```
 
-
 ### Configure locale formats
 
 Adjust the file `config/packages/kimai.yaml` and add the language (or the language variant) settings below the key `kimai.languages`: 
@@ -124,18 +123,15 @@ require('fullcalendar/dist/locale/xx');
 
 Be careful with the naming of language variants, in JS the variants are written like xx-yy, not xx_YY. To be sure please check https://github.com/moment/moment/tree/develop/locale
 
-
 ### Number formats
 
 The number formats on the Kimai frontend as well as in the invoices are defined by the frontend locales. If you get wrong decimal separator or thousands separator keys, please import the correct frontend locale as described above.
-
 
 ### Date and time formats
 
 Kimai uses configurations from `kimai.yaml` to format the values in the frontend. 
 It also uses the configurations to convert between javascript components (e.g. the date-picker) and the PHP backend,
 so they must create the same output. 
-
 
 ## 12-hour format
 

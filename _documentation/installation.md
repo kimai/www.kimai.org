@@ -35,14 +35,7 @@ bin/console kimai:install -n
 
 The webserver needs write permissions for several directories, so make sure the 
 [file permissions are correct](https://symfony.com/doc/current/setup/file_permissions.html).
-This is likely not required in a shared-hosting environment. Try if Kimai works without before executing this. 
-Here is an example (for Debian based OS):
-```bash
-chown -R :www-data .
-chmod -R g+r .
-chmod -R g+rw var/
-chmod -R g+rw public/avatars/
-```
+{% include file-permissions.html %} 
 
 ### Create your first user
 
@@ -107,7 +100,7 @@ This is NOT recommended, but still widely used ...
 Please, do yourself a favour and get a hoster that includes SSH access, it is not 2002 anymore! 
 Nowadays even cheap contracts should support SSH.
 
-Now read on: [Kimai FTP installation + tips andtricks]({% link _documentation/ftp.md %}). 
+Now read on: [Kimai FTP installation + tips and tricks]({% link _documentation/ftp.md %}). 
 
 ## Development installation
 

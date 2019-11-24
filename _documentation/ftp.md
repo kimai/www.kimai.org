@@ -35,10 +35,6 @@ You install it via FTP like this:
   
 The file `var/data/kimai.sqlite` will hold all your data, please include it in your backups.
 
-## FTP updates
-
-**Unfortunately there is no built-in support for updates yet. This feature will hopefully be included in the future.**
-
 ## Clear cache
 
 When working with [configuration files]({% link _documentation/configurations.md %}) you cannot run the normally commands to clear the cache.
@@ -49,3 +45,24 @@ If possible, use your hoster Management UI. They tend to be must faster and more
 Kimai will re-create a fresh cache when you open it again in your browser.
 
 Make sure that you don't open a Kimai while you are deleting the cache!       
+
+## FTP updates
+
+**Unfortunately there is no built-in support for updates yet. This feature will hopefully be included in the future.**
+
+The problem is, that there is currently no support for upgrading your database automatically. 
+You can only do it manually and please don't expect support for that method. You have been warned!   
+
+### Manual update
+
+Currently the way to upgrade Kimai via FTP includes several manual steps:
+
+- Install Kimai via GIT locally
+- Download the SQLite database from your server to your local Kimai installation
+  - Configure your local Kimai to use this SQLite database
+- Execute the [update as documented]({% link _documentation/updates.md %})
+- Backup/Rename/Delete your FTP installation
+- Install the latest FTP package
+- Upload the locally upgraded SQLite database to your new FTP installation 
+  - Add `.env`, `local.yaml` and other adjusted files back to this new installation
+  - Clear your cache

@@ -1,6 +1,6 @@
 ---
-title: Branding
-description: Customize Kimai title and logo
+title: Branding your Kimai
+description: Customize Kimai with your company name and logo
 ---
 
 Kimai offers some basic configuration settings, to adapt the branding to your company.

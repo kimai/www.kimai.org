@@ -116,7 +116,7 @@ The easy part is fixing asset URLs. Edit your local.yaml and paste this code ins
 ```yaml
 framework:
     assets:
-        base_path: "/kimai2
+        base_path: "/kimai2"
 ```
 This will prepend `/kimai` to all assets URLs (CSS, Javascript, Images).
 
