@@ -46,6 +46,20 @@ Help:
   Supported column names: Name, Customer, Comment, OrderNumber, OrderDate
 ```
 
+Minimum content for a CSV file (using the delimiter `;`):
+
+```
+Name;Customer
+Project name;Customer name
+```
+
+Full content for a CSV file (using default delimiter `,`):
+
+```
+Name,Customer,Comment,OrderNumber,OrderDate
+Project name,Customer name,a longer comment,1234567890,2019-08-29
+```
+
 ## Importing timesheets
 
 This will import timesheets and create on the fly:

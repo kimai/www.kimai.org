@@ -9,6 +9,19 @@ A Kimai plugin is from a technical perspective _only_ a Symfony bundle, with som
 
 Within the external communication it is called **plugin** instead of **bundle**, as this is the wording most users know. 
 
+Kimai plugins are stored in `var/plugins/`, for example `var/plugins/YourBundle/`.
+The contents in `var/plugins/*` are listed in the [.gitignore]({{ site.kimai_v2_file }}/.gitignore) file to prevent update problems.
+
+## Plugin installation
+
+Installation should be done with `git clone` or with a copy task.
+
+Make sure that you copy it into the appropriate subdirectory in `var/plugins/`. 
+For the plugin `CustomCSSBundle` this would be `var/plugins/CustomCSSBundle/`.
+
+After the plugin was installed you need to clear the cache:
+{% include cache-refresh.html %}
+
 ## Kimai plugins vs. pure Symfony bundles
 
 The reason for using a slightly different approach than the proposed Symfony way is the recommended way 
@@ -19,22 +32,10 @@ into problems when performing the next update (with changes in: `bundles.php`, `
 
 The application Kernel was slightly modified to allow dynamic plugin and route loading, to prevent this from happening.
 
-## Plugin location
-
-Kimai plugins are stored in `var/plugins/`, for example `var/plugins/YourBundle/`.
-The contents in `var/plugins/*` are listed in the [.gitignore]({{ site.kimai_v2_file }}/.gitignore) file to prevent update problems.
-
-### Plugin installation
-
-Due to the changed plugin location, installation should be done with `git clone` (recommended way) or with a copy task, 
-but composer can be used as well (leading to the mentioned update problems).
-
-## Difference between Kimai plugin and Symfony bundle
-
-There are some differences to Symfony bundles, which were added to prevent the above mentioned update problems:
+There are some differences to Symfony bundles, which were added to prevent problems during core updates:
 
 - Kimai plugins are stored in `var/plugins/` instead of `vendor/`
-- Kimai plugins are loaded automatically in **each** environment (don't modify `config/bundles.php`)
+- Kimai plugins are loaded automatically in **each** environment (no need to modify `config/bundles.php`)
 - Routes are automatically loaded with the search pattern:  
 `var/plugins/YourBundle/Resources/config/routes.{php,xml,yaml,yml}`
 - Your Bundle class needs to be namespaced with the vendor segment `KimaiPlugin`
