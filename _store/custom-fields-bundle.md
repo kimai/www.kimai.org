@@ -78,7 +78,18 @@ More information about custom fields can be found in the [documentation](https:/
 
 ## Installation
 
-This plugin is compatible with Kimai 2, v1.0 and higher.
+This plugin is compatible with the following Kimai releases:
+
+| Bundle version    | Kimai 2 version           |
+| ---               |---                        |
+| 1.5               | 1.6                       |
+| 1.4.1             | 1.4                       |
+| 1.4               | 1.6 (due to a mistake)    |
+| 1.3.2             | 1.4                       |
+| 1.2               | 1.1, 1.2, 1.3             |
+| 1.1.1             | 1.1                       |
+| 1.0               | 1.0, 1.0.1                |
+{: .table }
 
 ### Copy files
 
@@ -122,21 +133,25 @@ If this was successful, you can now think about giving permissions to other user
 
 ## Permissions
 
-This bundle ships a new administration screen, which will be available for the following users:
+This bundle ships a new permission, which limit access to certain functions:
 
-- `ROLE_SUPER_ADMIN` - every super administrator
-- `configure_meta_fields` - allows to adminstrate the custom field definitions
- 
-You can add the new permissions to your [local.yml](https://www.kimai.org/documentation/configurations.html). 
-For more information, read the [permissions](https://www.kimai.org/documentation/permissions.html) documentation.
+- `configure_meta_fields` - allows to administrate the custom field definitions
 
+By default, it is assigned to each user with the role `ROLE_SUPER_ADMIN`.
+
+{% include alert.html icon="fas fa-exclamation" type="warning" alert="You don't need the following since Kimai 1.6. Please adjust all permission settings in your administration." %}
+
+Read how to assign these permission to your user roles in the [permission documentation](https://www.kimai.org/documentation/permissions.html).
+
+This is a proposal if you use the bundle in a multi-user environment:
 ```yaml
     permissions:
         roles:
+            ROLE_SUPER_ADMIN: ['configure_meta_fields']
             ROLE_ADMIN: ['configure_meta_fields']
 ```
- 
-After changing the permissions, you need to clear the cache one more time.
+
+After changing the permissions in local.yaml, you need to clear the application cache.
 
 ## Screenshot
 

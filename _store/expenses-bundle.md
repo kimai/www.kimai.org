@@ -29,6 +29,7 @@ You can test it in the ["Plugins" demo](https://www.kimai.org/demo/).
 - Record all your expenses and show them in a table view
   - The data can be searched- and filtered (see screenshots)  
 - All (refundable) expenses will be automatically included in your invoices
+- Manage expenses via API
 
 Expenses are sorted into free configurable types (categories). Each type has a:
 - name 
@@ -53,7 +54,16 @@ Each expense has the following fields:
 
 ## Installation
 
-This plugin is compatible with Kimai 2, v1.3 and higher.
+This plugin is compatible with the following Kimai releases:
+
+| Bundle version    | Kimai 2 version  |
+|---                |---               |
+| 1.4               | 1.6.1            |
+| 1.3               | 1.6              |
+| 1.2               | 1.4              |
+| 1.1               | 1.4              |
+| 1.0               | 1.3              |
+{: .table }
 
 ### Copy the files 
 
@@ -111,9 +121,13 @@ This bundle ships a couple of new permissions, which limit access to certain fun
 - `delete_expense` - delete existing expenses
 - `manage_expense_category` - manage expense types 
 
-You can add the new permissions to your [local.yml](https://www.kimai.org/documentation/configurations.html). 
-For more information, read the [permissions](https://www.kimai.org/documentation/permissions.html) documentation.
+By default, these are assigned to each user with the role `ROLE_SUPER_ADMIN`.
 
+{% include alert.html icon="fas fa-exclamation" type="warning" alert="You don't need the following since Kimai 1.6. Please adjust all permission settings in your administration." %}
+
+Read how to assign these permission to your user roles in the [permission documentation](https://www.kimai.org/documentation/permissions.html).
+
+This example is for customers who have a restricted setup and want to provide default costs via the expense types:
 ```yaml
 kimai:
     permissions:
@@ -126,7 +140,7 @@ kimai:
 
 If you want your user to be able to edit the cost and amount add the `edit_expense_cost` permission to `ROLE_TEAMLEAD` and `ROLE_USER`.
  
-After changing the permissions, you need to clear the cache again.
+After changing the permissions in local.yaml, you need to clear the application cache.
 
 ## Updating the plugin
 

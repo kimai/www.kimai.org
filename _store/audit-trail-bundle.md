@@ -55,7 +55,17 @@ The following fields are recorded for changes:
 
 ## Installation
 
-This plugin is compatible with Kimai 2, v1.0 and higher.
+This plugin is compatible with the following Kimai releases:
+
+| Bundle version    | Kimai 2 version               |
+| ---               |---                            |
+| 1.5               | 1.6                           |
+| 1.4               | 1.4                           |
+| 1.3               | 1.3                           |
+| 1.2               | 1.2                           |
+| 1.1.1             | 1.1                           |
+| 1.0               | 1.0, 1.0.1                    |
+{: .table }
 
 ### Files
 
@@ -101,29 +111,33 @@ If this was successful, you can now think about giving permissions to other user
 
 ### Permissions
 
-This bundle ships new administration screens, which are available for the following users:
+This bundle ships a couple of new permissions, which limit access to certain functionalities:
 
-- `ROLE_SUPER_ADMIN` - every super administrator has access to all audit logs
-- `audit_customer` - everyone with this permission can see all changes for the customer objects
-- `audit_project` -  everyone with this permission can see all changes for the project objects
-- `audit_activity` -  everyone with this permission can see all changes for the activity objects
-- `audit_own_timesheet` -  everyone with this permission can see all changes for his own timesheets (only via team timesheets)
-- `audit_other_timesheet` -  everyone with this permission can see all changes of other users timesheets (only via team timesheets)
+- `audit_logs` - see the audit log page with all entries
+- `audit_customer` - see all changes for the customer objects
+- `audit_project` -  see all changes for the project objects
+- `audit_activity` -  see all changes for the activity objects
+- `audit_own_timesheet` -  see all changes for own timesheet records (only via team timesheets, audit logs are **not** shown in user timesheet panel)
+- `audit_other_timesheet` -  see all changes in other users timesheet records (only via team timesheets, audit logs are **not** shown in user timesheet panel)
 
-You can add the new permissions to your [local.yml](https://www.kimai.org/documentation/configurations.html). 
-For more information, read the [permissions](https://www.kimai.org/documentation/permissions.html) documentation.
+By default, these are assigned to each user with the role `ROLE_SUPER_ADMIN`.
 
+{% include alert.html icon="fas fa-exclamation" type="warning" alert="You don't need the following since Kimai 1.6. Please adjust all permission settings in your administration." %}
+
+Read how to assign these permission to your user roles in the [permission documentation](https://www.kimai.org/documentation/permissions.html).
+
+This is a proposal if you use the bundle in a multi-user environment:
 ```yaml
 kimai:
     permissions:
         sets:
-            AUDIT: [audit_customer,audit_project,audit_activity,audit_own_timesheet,audit_other_timesheet]
+            AUDIT: [audit_logs,audit_customer,audit_project,audit_activity,audit_own_timesheet,audit_other_timesheet]
         maps:
             ROLE_ADMIN: [...,AUDIT]
             ROLE_SUPER_ADMIN: [...,AUDIT]
 ```
 
-After changing the permissions, you need to clear the cache one more time.
+After changing the permissions in local.yaml, you need to clear the application cache.
 
 ## Screenshots
 
