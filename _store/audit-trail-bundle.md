@@ -130,11 +130,9 @@ This is a proposal if you use the bundle in a multi-user environment:
 ```yaml
 kimai:
     permissions:
-        sets:
-            AUDIT: [audit_logs,audit_customer,audit_project,audit_activity,audit_own_timesheet,audit_other_timesheet]
-        maps:
-            ROLE_ADMIN: [...,AUDIT]
-            ROLE_SUPER_ADMIN: [...,AUDIT]
+        roles:
+            ROLE_SUPER_ADMIN: ['audit_logs','audit_customer','audit_project','audit_activity','audit_own_timesheet','audit_other_timesheet']
+            ROLE_ADMIN: ['audit_logs','audit_customer','audit_project','audit_activity','audit_own_timesheet','audit_other_timesheet']
 ```
 
 After changing the permissions in local.yaml, you need to clear the application cache.

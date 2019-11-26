@@ -145,6 +145,7 @@ Read how to assign these permission to your user roles in the [permission docume
 
 This is a proposal if you use the bundle in a multi-user environment:
 ```yaml
+kimai:
     permissions:
         roles:
             ROLE_SUPER_ADMIN: ['configure_meta_fields']
