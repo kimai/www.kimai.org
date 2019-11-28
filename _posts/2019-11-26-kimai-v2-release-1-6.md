@@ -10,7 +10,8 @@ The next release is out, as always containing various bugfixes and some exciting
 
 - Support for different export formats in "My times"
 - Enhanced search capabilities for dropdowns
-- Configure calendar slot length
+- Configure calendar slot length in System Configurations
+- Configure rounding options in System Configurations
 - New fields: VAT ID for customer, Vat ID for invoice, Payment details for invoice, Contact details for invoice
 - Improved "freelancer" and "default" HTML invoice templates
 - Multi-update and multi-delete for timesheets and tags
