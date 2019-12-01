@@ -64,11 +64,9 @@ Be aware of the following rules:
 - You can use every document name only once: so having `kimai.html.twig` and `kimai.docx` will lead to unpredictable results 
 - The first file to be found takes precedence 
 - Kimai looks first in `var/invoices/`, so you can overwrite default templates
-- You should store your templates in `var/invoices/` as this directory is not shipped with Kimai and not touched during updates
-- You can configure different search directories through the config key `kimai.invoice.documents` if you want to 
-  - hide the default templates
-  - add additional template source directories
-  - see below in `Configure search path` to find out how
+- You should store your templates in `var/invoices/` as this directory is not shipped with Kimai and not touched during updates (or in your own bundle)
+- You can configure different search directories through the config key `kimai.invoice.documents` if you want to add additional template source directories 
+- You can hide the default templates by setting the key `kimai.invoice.defaults` to an empty array / null
 
 After you created a new or updated an existing template, you might have to clear the cache to see the results:
 {% include cache-refresh.html %} 
@@ -80,11 +78,12 @@ An example configuration in [local.yaml]({% link _documentation/configurations.m
 ```yaml
 kimai:
     invoice:
+        # disable the default locations 
+        defaults: ~
+        # add a new search location
         documents:
-            - 'var/invoices/'
+            - 'var/my_invoices/'
 ```
-
-This would disable the default documents, as Kimai will only look in the directory `var/invoices/` for files.
 
 ### Twig templates
 
@@ -107,7 +106,9 @@ like [the template which renders the "My times" page]({{ site.kimai_v2_file }}/t
 Docx templates are powered by [PHPWord](https://github.com/PHPOffice/PHPWord) and its `TemplateProcessor`.
 
 **Important:** You have to add one of the variables - either `${entry.description}` or `${entry.row}` - in one table row, 
-otherwise the rendering process will fail! The row containing this variable will be cloned for every included timesheet record.
+otherwise the records will not be rendered (but only the global values)! 
+
+The row containing this variable will be cloned for every included (timesheet) record.
 
 If you do not use `${entry.description}` then a fallback for `${entry.row}` is used and will be removed in the rendering process, 
 it will not show up in the generated invoice.
@@ -144,16 +145,20 @@ The documents which are rendered passively (ODS, XLSX, CSV, DOCX) can use the fo
 | ${invoice.date} | The creation date of this invoice |
 | ${invoice.number} | The generated invoice number |
 | ${invoice.currency} | The invoice currency |
+| ${invoice.currency_symbol} | The invoice currency as symbol (if available) |
 | ${invoice.total_time} | The total working time (entries with a fixed rate are always calculated with 1) |
 | ${invoice.duration_decimal} | The total working time as decimal value |
 | ${invoice.total} | The invoices total (including tax) with currency |
 | ${invoice.total_nc} | The invoices total (including tax) without currency (since 1.6) |
+| ${invoice.total_plain} | The invoices total (including tax) as unformatted value (since 1.6.2) |
 | ${invoice.subtotal} | The invoices subtotal (excluding tax) with currency |
 | ${invoice.subtotal_nc} | The invoices subtotal (excluding tax) without currency (since 1.6) |
+| ${invoice.subtotal_plain} | The invoices subtotal (excluding tax) as unformatted value (since 1.6.2) |
 | ${invoice.currency} | The invoices currency as string (like EUR or USD) |
 | ${invoice.vat} | The VAT in percent for this invoice |
 | ${invoice.tax} | The tax of the invoice amount with currency |
 | ${invoice.tax_nc} | The tax of the invoice amount without currency (since 1.6) |
+| ${invoice.tax_plain} | The tax of the invoice amount as unformatted value (since 1.6.2) |
 | ${template.name} | The invoice name, as configured in your template |
 | ${template.company} | The company name, as configured in your template |
 | ${template.address} | The invoicing address, as configured in your template |
@@ -169,6 +174,11 @@ The documents which are rendered passively (ODS, XLSX, CSV, DOCX) can use the fo
 | ${query.month_number} | The numerical value for the month (with leading zero) |
 | ${query.day} | The day for the queries begin as numerical value with leading zero |
 | ${query.year} | The year for this query (begin date) |
+| ${user.name} | The current users name |
+| ${user.email} | The current users email  |
+| ${user.alias} | The current users alias  |
+| ${user.title} | The current users title  |
+| ${user.meta.X} | The current users [preference]({% link _documentation/user-preferences.md %}) named `X`  |
 
 The following values exist for the customer:
 
@@ -184,8 +194,12 @@ The following values exist for the customer:
 | ${customer.country} | The customer country |
 | ${customer.homepage} | The customer homepage |
 | ${customer.comment} | The customer comment |
-| ${customer.fixed_rate} | Fixed rate for this customer |
-| ${customer.hourly_rate} | Hourly rate for this customer |
+| ${customer.fixed_rate} | Fixed rate for this customer including currency |
+| ${customer.fixed_rate_nc} | Fixed rate for this customer without currency (since 1.6) |
+| ${customer.fixed_rate_plain} | Fixed rate for this customer as unformatted value (since 1.6.2) |
+| ${customer.hourly_rate} | Hourly rate for this customer including currency |
+| ${customer.hourly_rate_nc} | Hourly rate for this customer without currency (since 1.6) |
+| ${customer.hourly_rate_plain} | Hourly rate for this customer as unformatted value (since 1.6.2) |
 | ${customer.meta.X} | The customer [meta field]({% link _documentation/meta-fields.md %}) named `X` (if visible)  |
 
 If a project was selected the following values exist as well:
@@ -196,8 +210,12 @@ If a project was selected the following values exist as well:
 | ${project.name} | The project name |
 | ${project.comment} | The project name |
 | ${project.order_number} | The project order number |
-| ${project.fixed_rate} | Fixed rate for this project |
-| ${project.hourly_rate} | Hourly rate for this project |
+| ${project.fixed_rate} | Fixed rate for this project including currency |
+| ${project.fixed_rate_nc} | Fixed rate for this project without currency (since 1.6) |
+| ${project.fixed_rate_plain} | Fixed rate for this project as unformatted value (since 1.6.2) |
+| ${project.hourly_rate} | Hourly rate for this project including currency |
+| ${project.hourly_rate_nc} | Hourly rate for this project without currency (since 1.6) |
+| ${project.hourly_rate_plain} | Hourly rate for this project as unformatted value (since 1.6.2) |
 | ${project.meta.X} | The project [meta field]({% link _documentation/meta-fields.md %}) named `X` (if visible)  |
 
 If an activity was selected the following values exist as well:
@@ -207,8 +225,12 @@ If an activity was selected the following values exist as well:
 | ${activity.id} | The activity ID |
 | ${activity.name} | The activity name |
 | ${activity.comment} | The activity name |
-| ${activity.fixed_rate} | Fixed rate for this activity |
-| ${activity.hourly_rate} | Hourly rate for this activity |
+| ${activity.fixed_rate} | Fixed rate for this activity including currency |
+| ${activity.fixed_rate_nc} | Fixed rate for this activity without currency (since 1.6) |
+| ${activity.fixed_rate_plain} | Fixed rate for this activity as unformatted value (since 1.6.2) |
+| ${activity.hourly_rate} | Hourly rate for this activity including currency |
+| ${activity.hourly_rate_nc} | Hourly rate for this activity without currency (since 1.6) |
+| ${activity.hourly_rate_plain} | Hourly rate for this activity as unformatted value (since 1.6.2) |
 | ${activity.meta.X} | The activity [meta field]({% link _documentation/meta-fields.md %}) named `X` (if visible)  |
 
 ### Timesheet entry variables 
@@ -220,10 +242,12 @@ For each timesheet entry you can use the variables from the following table.
 | ${entry.row} | An empty string, used as template row for docx | |
 | ${entry.description} | The entries description | _foo bar_ |
 | ${entry.amount} | The format duration/amount for this entry | 02:47 h |
-| ${entry.rate} | The rate for one unit of the entry (normally one hour) with currency | 100 EUR |
-| ${entry.rate_nc} | The rate for one unit of the entry (normally one hour) without currency (since 1.6) | 100 |
-| ${entry.total} | The total rate for this entry with currency | 278,33 EUR |
-| ${entry.total_nc} | The total rate for this entry without currency (since 1.6) | 278,33 |
+| ${entry.rate} | The rate for one unit of the entry (normally one hour) with currency | 1.100,01 EUR |
+| ${entry.rate_nc} | The rate for one unit of the entry without currency (since 1.6) | 1100,01 |
+| ${entry.rate_plain} | The rate for one unit of the entry as unformatted value (since 1.6.2) | 1100.01 |
+| ${entry.total} | The total rate for this entry with currency | 1.278,33 EUR |
+| ${entry.total_nc} | The total rate for this entry without currency (since 1.6) | 1.278,33 |
+| ${entry.total_plain} | The total rate as unformatted value (since 1.6.2) | 1278.33 |
 | ${entry.currency} | The currency for this record as string (like EUR or USD) | EUR |
 | ${entry.duration} | The duration in seconds | 10020 |
 | ${entry.duration_decimal} | The duration in decimal format (with localized separator) | 2.78 |
@@ -245,3 +269,5 @@ For each timesheet entry you can use the variables from the following table.
 | ${entry.customer} | Customer name | Acme Studios |
 | ${entry.customer_id} | Customer ID | 3 |
 | ${entry.meta.X} | The [meta field]({% link _documentation/meta-fields.md %}) named `X` (if visible)  |
+| ${entry.type} | The type of this entry (plugins can add custom types) | timesheet |
+| ${entry.category} | The category of this entry (plugins can add custom types) | work |
