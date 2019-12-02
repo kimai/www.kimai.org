@@ -61,6 +61,10 @@ Oh ... wait! Before you leave, please read the [initial setup guide]({% link _do
 
 There is a dedicated article about [Docker setups]({% link _documentation/docker.md %}) for Kimai, suitable for development and production. 
 
+## Ansible
+
+[Webarchitects Co-operative](https://www.webarchitects.coop/) have written a [Kimai 2 Ansible Galaxy role](https://git.coop/webarch/kimai) for automatically installing and upgrading Kimai sites on their shared hosting servers.
+
 ## Hosting and 1-click installations
 
 The following platforms adopted Kimai 2 to be compatible with their one-click installation systems.
