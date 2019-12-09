@@ -60,9 +60,9 @@ https://github.com/kevinpapst/AdminLTEBundle/tree/master/Resources/translations
 
 ### Adding a language variant
 
-For a language variant `xx_YY`, the fallback will always be the base language xx. 
+For a language variant `xx_YY`, the fallback will always be the base language `xx` (here `de` for `de_CH`). 
 
-Only some specific keys may need to be changed for this variant, and its possible to add only the repective files like i.e. `translations/messages.de_CH.xliff` just including the changed key in it:
+Only some specific keys may need to be changed for this variant and its possible to add only the respective files like i.e. `translations/messages.de_CH.xliff` including only the changed translations:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -80,7 +80,8 @@ Only some specific keys may need to be changed for this variant, and its possibl
 
 ### Configure locale formats
 
-Adjust the file `config/packages/kimai.yaml` and add the language (or the language variant) settings below the key `kimai.languages`: 
+Adjust the file `config/packages/kimai.yaml` and add the language (or the language variant) settings below the key `kimai.languages`:
+ 
 ```yaml
 kimai:
     languages:
@@ -93,9 +94,20 @@ kimai:
             duration: '%%h:%%m h'
 ```
 
+This is not necessary if your language uses the same configuration like `en`, which will be used as fallback.
+You only have to overwrite the keys that are different, so if you new language `xx` only has a different duration format, then adding this is sufficient:
+
+```yaml
+kimai:
+    languages:
+        # copy all settings from 'en' and adjust them to your language
+        xx:
+            duration: '%%h hours and %%m minutes'
+```
+
 ### Register locale
 
-Append the new locale (or the locale variant) in the file `config/services.yaml` at `parameters.app_locales` divided by a pipe:
+Add the new locale (or the locale variant) in the file `config/services.yaml` at `parameters.app_locales` divided by a pipe:
 
 ```yaml
 parameters:
