@@ -55,10 +55,12 @@ Make sure its writable by your webserver! We don't use the recommended
 
 Currently backuped directories and files are:
 
+```
 .env
 config/packages/local.yaml
 var/data/
 var/plugins/
+```
 
 Todo: According to https://www.kimai.org/documentation/backups.html the kimai version should be saved to.
 This is not yet included! 
