@@ -80,4 +80,4 @@ mysqldump is available at this location. I will change it later on, but this sho
 
 ### This Plugin is in an early development phase
 
-If anyone will help me with testing or contributing it would be creat.
+If anyone will help me with testing or contributing it would be great.
