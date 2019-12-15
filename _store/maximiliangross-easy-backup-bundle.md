@@ -5,7 +5,9 @@ intro: "A Kimai 2 plugin, which allows you to backup your environment with a sin
 developer: maximiliangross
 date: "2019-12-15 10:53:00 +0200"
 icon: far fa-hdd
-email: info@maximiliangross.de
+price: "0"
+download: https://github.com/mxgross/EasyBackupBundle/archive/master.zip
+github: https://github.com/mxgross/EasyBackupBundle
 tags:
   - development
   - backup
