@@ -8,6 +8,8 @@ icon: far fa-hdd
 price: "0"
 download: https://github.com/mxgross/EasyBackupBundle/archive/master.zip
 github: https://github.com/mxgross/EasyBackupBundle
+screenshot: 
+  - https://raw.githubusercontent.com/mxgross/EasyBackupBundle/master/screesnhot.jpg
 tags:
   - development
   - backup
