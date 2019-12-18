@@ -9,7 +9,7 @@ price: "0"
 download: https://github.com/mxgross/EasyBackupBundle/archive/master.zip
 github: https://github.com/mxgross/EasyBackupBundle
 screenshot: 
-  - https://raw.githubusercontent.com/mxgross/EasyBackupBundle/master/screesnhot.jpg
+  - https://raw.githubusercontent.com/mxgross/EasyBackupBundle/master/screenshot.jpg
 tags:
   - development
   - backup
