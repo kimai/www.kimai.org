@@ -5,7 +5,7 @@ intro: "Kimai2 Android app for offline tracking"
 developer: hmr-it
 date: "2019-08-20 08:10:00"
 icon: fab fa-android
-price: "0,99€"
+price: "1,90€"
 download: https://play.google.com/store/apps/details?id=de.hmrit.kimai2app
 tags:
   - app
