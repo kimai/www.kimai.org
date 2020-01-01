@@ -6,7 +6,6 @@ developer: keleo
 date: "2019-09-14 10:00:00 +0200"
 icon: fas fa-money-check
 price: "49€"
-version: 1.0
 screenshot: 
   - /images/marketplace/expenses-screenshot.png
   - /images/marketplace/expenses-categories.png

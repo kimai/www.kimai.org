@@ -4,7 +4,6 @@ name: Kimai2-cmd-argos top bar client
 intro: "Put Kimai on your top bar!"
 developer: infeeeee
 date: "2019-07-11 12:00:00 +0200"
-version: "0.2.3"
 icon: fas fa-mouse-pointer
 price: "0"
 screenshot: 

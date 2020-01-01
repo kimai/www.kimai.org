@@ -6,7 +6,6 @@ developer: keleo
 date: "2019-06-25 20:00:00 +0200"
 icon: fas fa-keyboard
 price: "49€"
-version: 1.1
 screenshot: 
   - /images/marketplace/meta-fields-screenshot.png
   - /images/marketplace/meta-fields-create.jpg

@@ -6,7 +6,6 @@ developer: keleo
 date: "2019-05-21 20:00:00 +0200"
 icon: fas fa-history
 price: "29€"
-version: 1.0
 screenshot: 
   - /images/marketplace/audit-trail-screenshot.jpg
   - /images/marketplace/audit-trail-screenshot-2.png

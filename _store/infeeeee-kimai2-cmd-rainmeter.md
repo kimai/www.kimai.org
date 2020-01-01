@@ -4,7 +4,6 @@ name: Kimai2-cmd Rainmeter widget
 intro: "Kimai2 widget for Windows!"
 developer: infeeeee
 date: "2019-11-11 10:00:00 +0200"
-version: "0.0.1"
 icon: fab fa-windows
 price: "0"
 screenshot: https://raw.githubusercontent.com/infeeeee/kimai2-cmd-rainmeter/master/%40Resources/Screenshots/kimai-default-start.png
