@@ -11,9 +11,8 @@ github: https://github.com/mxgross/EasyBackupBundle
 screenshot: 
   - https://raw.githubusercontent.com/mxgross/EasyBackupBundle/master/screenshot.jpg
 tags:
-  - development
+  - plugin
   - backup
-  - security
 ---
 
 After the installation a new menu entry `EasyBackup` is created. There you can create a new backup
@@ -55,7 +54,7 @@ Make sure its writable by your webserver! We don't use the recommended
 
 ### What files are backed up?
 
-Currently backuped directories and files are:
+Currently these directories and files are included in the backup:
 
 ```
 .env
@@ -64,7 +63,7 @@ var/data/
 var/plugins/
 ```
 
-According to https://www.kimai.org/documentation/backups.html the kimai version should be saved to.
+According to [the backup docu](https://www.kimai.org/documentation/backups.html) the kimai version should be saved to.
 Also the current git head.
 Therefor a Readme.txt file with the mentioned information is written and added to the backup.
 
@@ -72,12 +71,12 @@ Therefor a Readme.txt file with the mentioned information is written and added t
 
 If you use sqlite, the database file is backuped because the `var/data` directory will be backuped by the plugin.
 
-If you use mysql/mariadb the plugin will regocnize it by readying the configured database connection url.
-Then it will execute a mysqldump command an create a sql dump file wich will be added to the backup zip.
+If you use mysql/mariadb the plugin will recognize it by reading the configured database connection url.
+Then it will execute a mysqldump command and create a sql dump file which will be added to the backup zip.
 
-Notice: Currently the mysqldump command is used as `/usr/bin/mysqldump`. This will only work on systems where
+**Please note**: Currently the mysqldump command is used as `/usr/bin/mysqldump`. This will only work on systems where
 mysqldump is available at this location. I will change it later on, but this should work on most environments.
 
-### This Plugin is in an early development phase
+### Early development phase
 
 If anyone will help me with testing or contributing it would be great.
