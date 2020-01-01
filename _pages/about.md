@@ -30,6 +30,21 @@ So be our guest and test Kimai online with our [demo installation]({% link _page
 
 And last but not least - probably the most important fact: **Kimai is open-source, you can download it for free and you will never be charged a license fee for any future update**.
 
+## Who is Kimai?
+
+There is a great and large community around Kimai and listing everyone is impossible. You find a brief list of former developers below.
+The [marketplace]({% link _pages/store.html %}) shows a list of plugins and their developers, this will give you a good idea of the developers  
+supporting the project with their knowledge.
+
+The main person behind Kimai 2, this website, the demo installations and some plugins is:
+
+{% include card-donate.html user="kevinpapst" %}
+
+There are also many people who contribute their free time and provide feedback, test reports and constructive questions. 
+Their names can be found regularly in the [GitHub issue tracker]({{ site.kimai_v2_repo }}/issues). 
+
+My greatest thanks go out to you all ❤️   
+
 ## History of Kimai
 
 Kimai has a long history and was way ahead of its time, when the team around Torsten Höltge started its development in 2006. 
@@ -42,7 +57,7 @@ In the meantime the PHP community made great steps forward and Kimai felt back, 
 It had also some major drawbacks, like limited capabilities of extending it and a problematic database design. After many years of development, the code base became hard to maintain and the logic was wildly spread among scripts, classes and the frontend layer.
  
 That's why the idea of rewriting Kimai with modern frameworks was there for a very long time, also driven by community requests, but we simply had no time to push these ideas forward.
-In the end of 2017 Symfony 4.0 was released along with a neat frontend built stack called _Webpack-Encore_.
+In the end of 2017 Symfony 4.0 was released along with a neat frontend built stack.
 That's when Kevin took the opportunity and started the development of the next evolutional step: Kimai v2 reloaded was born.
 
 The original Kimai is more than 13 years old and is used by people all around the world. We are proud of that and about its great community. 

@@ -36,6 +36,22 @@ Wenn Sie mit harten Fakten vertraut sind, haben wir auch eine [Funktionsübersic
 Und last but not least - wahrscheinlich das Wichtigste: 
 **Kimai ist Open-Source, Sie können es kostenlos herunterladen und Sie werden nie eine Lizenzgebühr für ein zukünftiges Update zahlen.**
 
+## Wer ist Kimai?
+
+Es gibt eine großartige und große Gemeinschaft rund um Kimai und es ist unmöglich, jeden Beteiligten aufzulisten. 
+Eine kurze Liste der ehemaligen Entwickler finden Sie unten.
+Der [Marktplatz]({% link _pages/de/store.html %}) enthält eine Liste von Plugins und deren Entwickler, dies gibt Ihnen eine gute Vorstellung von den Entwicklern 
+die das Projekt mit ihrem Wissen unterstützen.
+
+Die Hauptperson hinter Kimai 2, dieser Website, den Demo-Installationen und einigen Plugins ist:
+
+{% include card-donate.html user="kevinpapst" %}
+
+Es gibt auch viele Leute, die sich in ihrer Freizeit einbringen und Feedback geben, Testberichte liefern und konstruktive Fragen stellen. 
+Ihre Namen können Sie regelmäßig bei [GitHub]({{{{ site.kimai_v2_repo }}}/issues) finden. 
+
+Mein größter Dank gehört Euch allen ❤️   
+
 ## Geschichte von Kimai
 
 Kimai hat eine lange Geschichte und war seiner Zeit weit voraus, als das Team um Torsten Höltge 2006 mit der Entwicklung begann. 
