@@ -36,9 +36,11 @@ Configure additional fields in various formats for the following data types:
 You can create as many fields as you want for each data type, where each field:
 
 - is either optional or mandatory
-- has its own visibility (see below)
-- can be restricted to certain combinations (eg. a "location" field will only be shown for customer X and project Y)
+- has its own visibility, so the access can be restricted:
+    - to certain customer/project/activity combinations (eg. a "location" field will only be shown for customer X and project Y)
+    - to users with certain permissions or roles
 - can be described with a name and help text  
+- has a maximum length of 255 character
 
 The custom fields will be shown on the "create and edit entity" forms and can have the following types:
 
@@ -82,6 +84,8 @@ This plugin is compatible with the following Kimai releases:
 
 | Bundle version    | Kimai 2 version           |
 | ---               |---                        |
+| 1.7               | 1.6.2                     |
+| 1.6               | 1.6.2                     |
 | 1.5               | 1.6                       |
 | 1.4.1             | 1.4                       |
 | 1.4               | 1.6 (due to a mistake)    |

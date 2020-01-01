@@ -30,6 +30,7 @@ You can test it in the ["Plugins" demo](https://www.kimai.org/demo/).
   - The data can be searched- and filtered (see screenshots)  
 - All (refundable) expenses will be automatically included in your invoices
 - Manage expenses via API
+- Import expenses from Kimai 1
 
 Expenses are sorted into free configurable types (categories). Each type has a:
 - name 
@@ -37,16 +38,16 @@ Expenses are sorted into free configurable types (categories). Each type has a:
 - default cost
 
 Each expense has the following fields:
-- category 
+- a date-time 
+- category (see above) 
 - user 
 - project (and customer)
-- activity
-- a begin and end date
-- a free description
-- the cost (can be hidden for default user, if you use default cost via category types)
-- an amount (you can see it as mathematial multipler, use 1 if you want to charge the cost only)
-- a flag whether this expense is refundable (non-refundable will not be added to your invoices)
-- an export flag, to make sure each expense is invoiced only once
+- activity (optional)
+- description (free text field)
+- the cost (can be hidden for default user, if you use default cost via category)
+- an amount (see it as multiplier, use 1 if you want to charge the cost only)
+- refundable flag (non-refundable expenses will not be added to your invoices)
+- an export flag (to make sure, that each expense is invoiced only once)
 
 ## Purchase
 
@@ -58,6 +59,8 @@ This plugin is compatible with the following Kimai releases:
 
 | Bundle version    | Kimai 2 version  |
 |---                |---               |
+| 1.6               | 1.6.2            |
+| 1.5               | 1.6.2            |
 | 1.4               | 1.6.1            |
 | 1.3               | 1.6              |
 | 1.2               | 1.4              |
