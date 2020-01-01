@@ -48,7 +48,7 @@ Die Hauptperson hinter Kimai 2, dieser Website, den Demo-Installationen und eini
 {% include card-donate.html user="kevinpapst" %}
 
 Es gibt auch viele Leute, die sich in ihrer Freizeit einbringen und Feedback geben, Testberichte liefern und konstruktive Fragen stellen. 
-Ihre Namen können Sie regelmäßig bei [GitHub]({{{{ site.kimai_v2_repo }}}/issues) finden. 
+Ihre Namen können Sie regelmäßig bei [GitHub]({{ site.kimai_v2_repo }}/issues) finden. 
 
 Mein größter Dank gehört Euch allen ❤️   
 
