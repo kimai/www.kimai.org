@@ -14,8 +14,23 @@ lang-ref: store
 			{% assign products = site.store | where_exp:"product", "product.featured != nil" | sort: 'name' %}
 			{% include store-list.html products=products %}
 
-			{% assign products = site.store | where_exp:"product", "product.featured == nil" | sort: 'name' %}
-			{% include store-list.html products=products %}
+            {% assign temp = "" | split: "," %}
+            {% assign products = site.store | where_exp:"product", "product.featured == nil" | sort: 'name' %}
+            {% for product in products %}
+                {% if product.tags contains "support" %}
+                    {% assign temp = temp | push: product %}
+                {% endif %}
+            {% endfor %}
+            {% include store-list.html products=temp %}
+
+            {% assign temp = "" | split: "," %}
+            {% assign products = site.store | where_exp:"product", "product.featured == nil" | sort: 'name' %}
+            {% for product in products %}
+                {% unless product.tags contains "support" %}
+                    {% assign temp = temp | push: product %}
+                {% endunless %}
+            {% endfor %}
+            {% include store-list.html products=temp %}
 		</div>
 		<div class="col-lg-3">
 			<div class="row">
