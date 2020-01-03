@@ -5,6 +5,7 @@ intro: "Record all changes of timesheets, customers, projects and activities."
 developer: keleo
 date: "2019-05-21 20:00:00 +0200"
 icon: fas fa-history
+demo: true 
 price: "29€"
 screenshot: 
   - /images/marketplace/audit-trail-screenshot.jpg
@@ -18,8 +19,6 @@ tags:
 ---
 
 Find out who changed their records, what and when: a Kimai 2 plugin to record and visualize the changes on `timesheets`, `customers`, `projects` and `activities`.
-
-You can test it in the ["Plugins" demo](https://www.kimai.org/demo/).
 
 ## Features
 

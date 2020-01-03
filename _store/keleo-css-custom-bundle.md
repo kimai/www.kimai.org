@@ -47,9 +47,11 @@ You could also [download it as zip](https://github.com/keleo/CustomCSSBundle/arc
 This bundle ships a new administration screen, which will be available for the following users:
 
 - `ROLE_SUPER_ADMIN` - every super administrator
-- `edit_custom_css` - every use that owns this permission
+- `edit_custom_css` - every user that owns this permission
+
+{% include alert.html icon="fas fa-exclamation" type="warning" alert="Please adjust all permission settings in your administration." %}
 
 ## Storage
 
 This bundle stores the custom CSS rules in the file `var/data/custom-css-bundle.css`.
-Make sure its writable by your webserver!
+Make sure its writable by your webserver and included in your backups.
