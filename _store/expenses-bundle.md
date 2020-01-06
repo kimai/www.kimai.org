@@ -115,7 +115,6 @@ You will be redirected to the category creation screen if Kimai doesn't find one
 This bundle ships a couple of new permissions, which limit access to certain functionalities:
 
 - `view_expense` - allows access to the expenses screen
-- `view_expense_other` -see other users expenses
 - `edit_expense` - edit existing expenses
 - `edit_expense_cost` - edit the cost of a single expense (can be deactivated for user, when the category has a default cost)
 - `create_expense` - create new expenses
@@ -133,9 +132,9 @@ This example is for customers who have a restricted setup and want to provide de
 kimai:
     permissions:
         roles:
-            ROLE_SUPER_ADMIN: ['view_expense', 'view_expense_other', 'edit_expense', 'create_expense', 'delete_expense', 'manage_expense_category', 'edit_expense_cost']
-            ROLE_ADMIN: ['view_expense', 'view_expense_other', 'edit_expense', 'create_expense', 'delete_expense', 'manage_expense_category', 'edit_expense_cost']
-            ROLE_TEAMLEAD: ['view_expense', 'view_expense_other', 'edit_expense', 'create_expense', 'delete_expense']
+            ROLE_SUPER_ADMIN: ['view_expense', 'edit_expense', 'create_expense', 'delete_expense', 'manage_expense_category', 'edit_expense_cost']
+            ROLE_ADMIN: ['view_expense', 'edit_expense', 'create_expense', 'delete_expense', 'manage_expense_category', 'edit_expense_cost']
+            ROLE_TEAMLEAD: ['view_expense', 'edit_expense', 'create_expense', 'delete_expense']
             ROLE_USER: ['view_expense', 'edit_expense', 'create_expense', 'delete_expense']
 ```
 
