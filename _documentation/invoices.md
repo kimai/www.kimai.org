@@ -200,9 +200,9 @@ The following values exist for the customer:
 | ${customer.hourly_rate} | Hourly rate for this customer including currency |
 | ${customer.hourly_rate_nc} | Hourly rate for this customer without currency (since 1.6) |
 | ${customer.hourly_rate_plain} | Hourly rate for this customer as unformatted value (since 1.6.2) |
-| ${customer.meta.X} | The customer [meta field]({% link _documentation/meta-fields.md %}) named `X` (if visible)  |
+| ${customer.meta.x} | The customer [meta field]({% link _documentation/meta-fields.md %}) named `X`. The internal name `X` needs to be used in lowercase letters, eg. `FooBar` will be available as `${customer.meta.foobar}`. Only available if the field is visible.  |
 
-If a project was selected the following values exist as well:
+If a project was selected in the invoice filter the following values exist as well:
 
 | Key | Description |
 |---|---|
@@ -216,9 +216,9 @@ If a project was selected the following values exist as well:
 | ${project.hourly_rate} | Hourly rate for this project including currency |
 | ${project.hourly_rate_nc} | Hourly rate for this project without currency (since 1.6) |
 | ${project.hourly_rate_plain} | Hourly rate for this project as unformatted value (since 1.6.2) |
-| ${project.meta.X} | The project [meta field]({% link _documentation/meta-fields.md %}) named `X` (if visible)  |
+| ${project.meta.x} | The project [meta field]({% link _documentation/meta-fields.md %}) named `X`. The internal name `X` needs to be used in lowercase letters, eg. `FooBar` will be available as `${project.meta.foobar}`. Only available if the field is visible.  |
 
-If an activity was selected the following values exist as well:
+If an activity was selected in the invoice filter the following values exist as well:
 
 | Key | Description |
 |---|---|
@@ -231,7 +231,7 @@ If an activity was selected the following values exist as well:
 | ${activity.hourly_rate} | Hourly rate for this activity including currency |
 | ${activity.hourly_rate_nc} | Hourly rate for this activity without currency (since 1.6) |
 | ${activity.hourly_rate_plain} | Hourly rate for this activity as unformatted value (since 1.6.2) |
-| ${activity.meta.X} | The activity [meta field]({% link _documentation/meta-fields.md %}) named `X` (if visible)  |
+| ${activity.meta.x} | The activity [meta field]({% link _documentation/meta-fields.md %}) named `X`. The internal name `X` needs to be used in lowercase letters, eg. `FooBar` will be available as `${activity.meta.foobar}`. Only available if the field is visible.  |
 
 ### Timesheet entry variables 
 
