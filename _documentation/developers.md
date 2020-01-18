@@ -23,6 +23,60 @@ Optional requirement:
 
 Read how to [install Kimai v2 in your dev environment]({% link _documentation/installation.md %}). 
 
+## Development installation
+
+Clone the repository and install all dependencies:
+
+```bash
+git clone https://github.com/kevinpapst/kimai2.git
+cd kimai2/
+composer install
+```
+
+Kimai uses a SQLite database by default, which will work out-of-the-box. But you have to change your 
+environment to `dev` in your `.env` file. You can also configure a MySQL database if you prefer that:
+```
+APP_ENV=dev
+DATABASE_URL=mysql://db_user:db_password@127.0.0.1:3306/db_name
+```
+
+The next command will import demo data, to test the application in its full beauty - with different user accounts, 
+customers, projects, activities and several thousand timesheet records. Lets bootstrap your database 
+(command only available in `dev` environment): 
+```bash
+bin/console kimai:reset-dev
+```
+
+Almost there!
+
+Now you need to start a web server and can access Kimai in your browser.
+Its totally up to you how to achieve that, I can recommend the [Symfony local webserver](https://symfony.com/doc/current/setup/symfony_server.html)
+(it is fast and supports local https setup):
+```bash
+symfony serve --port=8010
+```
+
+You can now login with these accounts:
+
+| Username | Password | API Key | Role |
+|---|:---:|:---:|---|
+| clara_customer| kitten | api_kitten |Customer |
+| john_user| kitten | api_kitten |User |
+| chris_user| kitten | api_kitten |User (deactivated) |
+| tony_teamlead| kitten | api_kitten |Teamlead |
+| anna_admin| kitten | api_kitten |Administrator |
+| susan_super| kitten | api_kitten |Super-Administrator |
+
+Demo data can always be deleted by dropping the schema and re-creating it.
+The `kimai:reset-dev` command will do that automatically and can always be executed later on to reset your dev database and cache.
+
+If you want to test with an empty installation, erase the database and re-create an empty schema:
+
+```bash
+bin/console doctrine:schema:drop --force
+bin/console doctrine:schema:create
+```
+
 ## Frontend dependencies 
 
 If you want to make changes to CSS / Javascript, you need:
@@ -223,7 +277,7 @@ which finds the classes by the interface `CalculatorInterface`.
 The ID of the calculator must be unique, please prefix it with your vendor or bundle name and make sure it only contains
 alpha-numeric characters, as it will be stored in a database column.
 
-Translations are stored in the `invoice-calculator.xx.xliff`.
+Translations are stored in the `invoice-calculator.xx.xlf`.
 
 ### Adding invoice-number generator
 
@@ -237,7 +291,7 @@ which finds the classes by the interface `NumberGeneratorInterface`.
 The ID of the number generator must be unique, please prefix it with your vendor or bundle name and make sure it only contains
 alpha-numeric characters, as it will be stored in a database column.
 
-Translations are stored in the `invoice-numbergenerator.xx.xliff`.
+Translations are stored in the `invoice-numbergenerator.xx.xlf`.
 
 ### Adding invoice renderer
 

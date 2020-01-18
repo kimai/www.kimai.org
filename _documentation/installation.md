@@ -106,77 +106,18 @@ Now read on: [Kimai FTP installation + tips and tricks]({% link _documentation/f
 
 [Webarchitects Co-operative](https://www.webarchitects.coop/) have written a [Kimai 2 Ansible Galaxy role](https://git.coop/webarch/kimai) for automatically installing and upgrading Kimai sites on their shared hosting servers.
 
-## Development installation
-
-Clone the repository and install all dependencies:
-
-```bash
-git clone https://github.com/kevinpapst/kimai2.git
-cd kimai2/
-composer install
-```
-
-Kimai uses a SQLite database by default, which will work out-of-the-box. But you have to change your 
-environment to `dev` in your `.env` file. You can also configure a MySQL database if you prefer that:
-```
-APP_ENV=dev
-DATABASE_URL=mysql://db_user:db_password@127.0.0.1:3306/db_name
-```
-
-The next command will import demo data, to test the application in its full beauty - with different user accounts, 
-customers, projects, activities and several thousand timesheet records. Lets bootstrap your database 
-(command only available in `dev` environment): 
-```bash
-bin/console kimai:reset-dev
-```
-
-Finally you start a web server, you can access Kimai in your browser at <http://127.0.0.1:8000/>.
-Stop the built-in web server by pressing `Ctrl + C` while you're in the terminal.
-```bash
-bin/console server:run
-```
-
-You can now login with these accounts:
-
-| Username | Password | API Key | Role |
-|---|:---:|:---:|---|
-| clara_customer| kitten | api_kitten |Customer |
-| john_user| kitten | api_kitten |User |
-| chris_user| kitten | api_kitten |User (deactivated) |
-| tony_teamlead| kitten | api_kitten |Teamlead |
-| anna_admin| kitten | api_kitten |Administrator |
-| susan_super| kitten | api_kitten |Super-Administrator |
-
-Demo data can always be deleted by dropping the schema and re-creating it.
-The `kimai:reset-dev` command will do that automatically and can always be executed later on to reset your dev database and cache.
-
-If you want to test with an empty installation, erase the database and re-create an empty schema:
-
-```bash
-bin/console doctrine:schema:drop --force
-bin/console doctrine:schema:create
-```
-
-### Frontend assets 
- 
-To re-generate the frontend assets ([more information here]({% link _documentation/developers.md %})), execute:
-```bash
-yarn install
-npm run prod
-```
-
 ## Installation FAQ
 
 ### SQLite not recommended for production usage
 
-SQLite is a great database engine for testing, but when it comes to production usage it is not recommended:
+SQLite is a great database engine for testing, but when it comes to production usage it is not recommended for Kimai:
 
-- It does not support ALTER TABLE commands and makes update procedures very clunky and problematic (we still try to support updates, but they are heavy on large databases)
+- It does not support ALTER TABLE commands and makes update procedures very clunky and problematic (I try to support updates, but they are heavy on large databases)
 - It does [not support FOREIGN KEY](https://www.sqlite.org/quirks.html#foreign_key_enforcement_is_off_by_default) constraints [out of the box](https://www.sqlite.org/foreignkeys.html#fk_enable), which can lead to critical bugs when deleting users/activities/projects/customers
 
 Kimai works around the Foreign Keys issue by using a 
 [Doctrine PostConnect EventSubscriber]({{ site.kimai_v2_file }}/src/Doctrine/SqliteSessionInitSubscriber.php), 
-but it is not guaranteed that SQLite handles everything as expected.
+but this is not intended to be used in large production setups and it can't be guaranteed that SQLite handles everything as expected.
 
 If you insist on using SQLite: make a copy of the database file BEFORE each update, to prevent possible data loss.
 
