@@ -36,10 +36,21 @@ expire_warning: false
 		</div>
 		<div class="col-lg-9">
 			<div class="card">
-				<div class="card-body">
 
+                {% if page.url != '/documentation/' and page.url != '/de/dokumentation/' %}
+                <div class="card-header">
+                    <div class="d-flex align-items-center px-2">
+                            <a href="{% link _pages/documentation.md %}" class="btn btn-link">
+                                <i class="fas fa-arrow-circle-left"></i> Back to documentation
+                            </a>
+                    </div>
+                </div>
+                {% endif %}
+
+				<div class="card-body">
 					<div class="text-wrap p-lg-6">
-						<h2 class="mt-0 mb-4">
+
+                        <h2 class="mt-0 mb-4">
 							{{ page.title }}
 							{% if page.since_version != nil %}
 							<span class="tag" style="float: right">
@@ -69,6 +80,22 @@ expire_warning: false
 
 					</div>
 				</div>
+                {% comment %}
+                {% if page.url != '/documentation/' and page.url != '/de/dokumentation/' %}
+                <div class="card-footer">
+                    {% if page.previous.url %}
+                    <div class="d-flex align-items-center px-2">
+                        <a class="btn btn-link" href="{{page.previous.url}}"><i class="fas fa-arrow-circle-left"></i> {{page.previous.title}}</a>
+                    </div>
+                    {% endif %}
+                    {% if page.next.url %}
+                    <div class="card-options">
+                        <a class="btn btn-link" href="{{page.next.url}}">{{page.next.title}} <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                    {% endif %}
+                </div>
+                {% endif %}
+                {% endcomment %}
 			</div>
 		</div>
 	</div>

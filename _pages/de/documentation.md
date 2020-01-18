@@ -14,32 +14,48 @@ redirect_from:
 
 Dies ist die offizielle Dokumentation für die Zeiterfassungsanwendung Kimai 2.
 
-**ACHTUNG: Alle Inhalte momentan nur auf englisch verfügbar!**
-  
-{% for group in site.data.menu-documentation %}
-<h3>{{ group.title }}</h3>
-<ul>
-    {% for p in group.pages %}
-    {% assign doc = site.documentation | where: "slug", p | first %}
-    <li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
-    {% endfor %}
-</ul>
-{% endfor %}
+{% include alert.html type="warning" alert="Alle Inhalte sind nur auf englisch verfügbar, bei Auswahl wechseln Sie zur englischen Sprachversion der Webseite!" %}
 
-## How-To Artikel
+<div class="row">
+{% for group in site.data.menu-documentation %}
+    {% assign modulo = forloop.index0 | modulo: 2 %}
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-status bg-blue"></div>
+            <div class="card-header">
+                <h3 class="card-title">{{ group.title }}</h3>
+            </div>
+            <div class="card-body">
+                <ul>
+                    {% for p in group.pages %}
+                    {% assign doc = site.documentation | where: "slug", p | first %}
+                    <li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endfor %}
 
 {% for group in site.data.menu-howto %}
-<h3>{{ group.title }}</h3>
-<ul>
-    {% for p in group.pages %}
-    {% assign doc = site.documentation | where: "slug", p | first %}
-        <li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
-    {% endfor %}
-    {% if forloop.last %}
-        <li><a href="{% link _posts/2019-06-11-using-kimai-as-native-app.md %}">Using Kimai as native app</a></li>
-    {% endif %}
-</ul>
+<div class="col-md-6">
+    <div class="card">
+        <div class="card-status bg-blue"></div>
+        <div class="card-header">
+            <h3 class="card-title">{{ group.title }}</h3>
+        </div>
+        <div class="card-body">
+            <ul>
+                {% for p in group.pages %}
+                {% assign doc = site.documentation | where: "slug", p | first %}
+                    <li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
 {% endfor %}
+</div>
 
 Sie benötigen Hilfe und können nicht finden, wonach Sie suchen? 
-Erstelle ein neues Ticket in unserem [Supportforum]({{ site.kimai_v2_repo }}/issues) und frage nach Hilfe.
+Erstelle ein neues Ticket im [Kimai Support-Forum]({{ site.kimai_v2_repo }}/issues) und frage nach Hilfe.
