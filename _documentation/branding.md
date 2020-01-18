@@ -43,5 +43,5 @@ kimai:
             translation: my-company
 ```
 
-The you create a file `my-company.en.xliff` either in the `translations/` directory (should be avoided if possible) or in 
+The you create a file `my-company.en.xlf` either in the `translations/` directory (should be avoided if possible) or in 
 the translation directory of your company plugin at `Resources/translations/`.
