@@ -49,11 +49,11 @@ As example I choose a new hypothetical language with the locale `xx`.
 
 ### Add translations
 
-Copy each translation from it's english version `translations/*.en.xliff` and rename them to `translations/*.xx.xliff`.
+Copy each translation from it's english version `translations/*.en.xlf` and rename them to `translations/*.xx.xlf`.
 
-Adjust the `target-language` attributes in the file header, as example for the new file `exceptions.xx.xliff`:
+Adjust the `target-language` attributes in the file header, as example for the new file `exceptions.xx.xlf`:
 ```yml
-<file source-language="en" target-language="xx" datatype="plaintext" original="exceptions.en.xliff">`
+<file source-language="en" target-language="xx" datatype="plaintext" original="exceptions.en.xlf">`
 ```
 
 https://github.com/kevinpapst/AdminLTEBundle/tree/master/Resources/translations
@@ -62,12 +62,12 @@ https://github.com/kevinpapst/AdminLTEBundle/tree/master/Resources/translations
 
 For a language variant `xx_YY`, the fallback will always be the base language `xx` (here `de` for `de_CH`). 
 
-Only some specific keys may need to be changed for this variant and its possible to add only the respective files like i.e. `translations/messages.de_CH.xliff` including only the changed translations:
+Only some specific keys may need to be changed for this variant and its possible to add only the respective files like i.e. `translations/messages.de_CH.xlf` including only the changed translations:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-    <file source-language="de" target-language="de-CH" datatype="plaintext" original="messages.en.xliff">
+    <file source-language="de" target-language="de-CH" datatype="plaintext" original="messages.en.xlf">
         <body>
             <trans-unit id="action.close">
                 <source>action.close</source>
