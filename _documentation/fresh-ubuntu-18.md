@@ -163,6 +163,10 @@ bin/console kimai:install -n
 bin/console kimai:create-user admin admin@example.com ROLE_SUPER_ADMIN
 ```
 
+{% include file-permissions.html %} 
+Use `sudo` to run the commands to change file permissions.
+
+
 ## Configure webserver
 
 Good, now that we have done all these steps we only need the webserver and VirtualHost configuration: 
