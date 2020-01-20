@@ -190,11 +190,11 @@ You can follow the normal installation guide and only change these commands:
 
 ### White page after changes to .env
 
-If you are using "File Station" or another Synology tool for downloading/editing/uploading the `.env` file, 
+If you are using a network share (or any Synology app) for downloading/editing/uploading the `.env` file, 
 make sure that `group` permissions for the `http` group are preserved.
 
 ![file permissions](/images/documentation/synology-4.png "File station > Select file > Right clink > Properties")
 
 You can change them using:
 
-`File station > Select .env file in kimai2 directory > Right click > Properties`.
+`File station > change to kimai2 directory > Right click on .env > Properties`.
