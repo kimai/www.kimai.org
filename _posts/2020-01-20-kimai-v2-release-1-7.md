@@ -19,6 +19,9 @@ In the meantime two new addons were added to the marketplace:
 - the [Console client (PHAR)]({% link _store/console-phar.md %})
 - the [Easy backup]({% link _store/maximiliangross-easy-backup-bundle.md %})
 
+**ATTENTION: Users of the [ExpenseBundle]({%link _store/expenses-bundle.md %}) have to delete it before they upgrade to 1.7, 
+read [UPGRADING]({{ site.kimai_v2_file }}/UPGRADING.md).**
+
 Thanks to all of you for using and supporting Kimai, especially:
 - all clients and donators who help me to keep up the work for Kimai
 - the developers who contributed their time ...
