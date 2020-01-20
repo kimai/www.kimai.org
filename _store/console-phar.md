@@ -14,9 +14,6 @@ tags:
 
 PHP Command line client for Kimai.
 
-**DISCLAIMER:** the development just started. Every added feature is stable, but right now you can only list some contents.
-I published this plugin so early, to get feedback from the community. 
-
 ## Features
 
 This command line client should help work Kimai remotely via your favorite shell.
@@ -33,7 +30,10 @@ Commands:
 I cannot help with windows installs, this is only for Linux and Mac:
 
 ```bash
-wget curl -LJO https://github.com/kevinpapst/kimai2-console/releases/latest/download/kimai.phar
+curl -LO https://github.com/kevinpapst/kimai2-console/releases/latest/download/kimai.phar
+curl -LO https://github.com/kevinpapst/kimai2-console/releases/latest/download/kimai.phar.sha1
+sha1sum --check kimai.phar.sha1
+rm kimai.phar.sha1
 chmod +x kimai.phar
 mv kimai.phar /usr/local/bin/kimai
 ``` 
@@ -56,8 +56,8 @@ $ kimai
 $ kimai customer:list
 ```
 
-By default the configuration file targets the demo installation and will work ... but now its time to target your own Kimai, 
-so edit the config file and change the settings: URL, username and API token.
+By default the configuration file holds credentials for the demo installation ... but now its time to target your own Kimai installation! 
+Edit the config file and change the settings: URL, username and API token.
 
 You can find all options in the help:
 
@@ -70,7 +70,7 @@ $ kimai
 | . \ | || |  | |/ ___ \ | |   / __/
 |_|\_\___|_|  |_/_/   \_\___| |_____|
 
-Kimai 2 - Remote Console version 0.1.1 2019-12-30 13:36:37 UTC (#95f0009)
+Kimai 2 - Remote Console version 0.3 2020-01-05 17:56:49 UTC (#55c3766)
 
 Usage:
   command [options] [arguments]
@@ -83,18 +83,25 @@ Options:
       --no-ansi         Disable ANSI output
   -n, --no-interaction  Do not ask any interactive question
       --profile         Display timing and memory usage information
+      --csv             Render raw data instead of styled tables
   -v|vv|vvv, --verbose  Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
 
 Available commands:
-  help                  Displays help for a command
-  list                  Lists commands
-  version               Show the Kimai version
+  active         List active timesheets
+  configuration  Handle the Kimai configuration file
+  help           Displays help for a command
+  list           Lists commands
+  start          Starts a new timesheet
+  stop           Stops running timesheets
+  version        Show the Kimai version
  activity
-  activity:list         List available activities
- configuration
-  configuration:create  Create a default configuration file
+  activity:list  List available activities
  customer
-  customer:list         List available customers
+  customer:list  List available customers
  project
-  project:list          List available projects
+  project:list   List available projects
+ self
+  self:check     Checks for available updates
+  self:rollback  Rollback to the latest available version
+  self:update    Update to the latest available version
 ```
