@@ -31,7 +31,7 @@ After creating the VirtualHost the DSM changes file owner ship, so you might be 
 
 Clone Kimai as described in the main [installation]({% link _documentation/installation.md %}) docs.
 
-This examples uses the path `/volumes1/web/kimai2`
+This examples uses the path `/volume1/web/kimai2`
 
 Then download and install composer. Now install all dependencies:
 ```bash
@@ -164,15 +164,19 @@ That's it, Kimai should now run.
 
 ## Fixing file permissions
 
-The following commands must be run in the Kimai directory, here in `/volumes1/web/kimai2/`.
+The following commands must be run in the Kimai directory, here in `/volume1/web/kimai2/`.
 
 They must be run as `root` user (eg. by prefixing each line with `sudo`). 
-Be extremely careful, a wrong command can destroy your Synology ... you know: great power and great responsibility!
+Be extremely careful, a wrong command can destroy your Synology ... you know: with great power comes great responsibility!
 
-{% include file-permissions.html %} 
+```bash
+cd /volume1/web/kimai2/
 
-And remember, don't use `www-data` but `http`
- - `chown -R :http .` instead of `chown -R :www-data .`
+sudo chown -R :http .
+sudo chmod -R g+r .
+sudo chmod -R g+rw var/
+sudo chmod -R g+rw public/avatars/
+```
 
 ## Updating Kimai
 
@@ -181,3 +185,16 @@ You can follow the normal installation guide and only change these commands:
 - use `php73 composer install --no-dev --optimize-autoloader`
 - use `php73 bin/console kimai:update` 
 - use `chown -R :http .` 
+
+## Troubleshooting
+
+### White page after changes to .env
+
+If you are using "File Station" or another Synology tool for downloading/editing/uploading the `.env` file, 
+make sure that `group` permissions for the `http` group are preserved.
+
+![file permissions](/images/documentation/synology-4.png "File station > Select file > Right clink > Properties")
+
+You can change them using:
+
+`File station > Select .env file in kimai2 directory > Right click > Properties`.
