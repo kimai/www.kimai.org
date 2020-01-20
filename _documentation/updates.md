@@ -18,12 +18,16 @@ instead of a server. Read the [installation docu]({% link _documentation/install
 {% assign alert_note = alert_note| markdownify %}
 {% include alert.html type="info" alert=alert_note %} 
 
-Change into your Kimai directory, then fetch the latest code and install all dependencies.
-You might have to prefix the `composer` and `bin/console` commands with `sudo -u www-data` (depends on your setup):
-
+Change into your Kimai directory, then fetch the latest code and install all dependencies: 
 ```bash
 git fetch --tags
 git checkout {{ site.kimai_v2_version }}
+```
+
+You might have to prefix the the next commands with `sudo` and/or `php73` (depends on your environment):
+
+Update all composer dependencies:
+```bash
 composer install --no-dev --optimize-autoloader
 ```
 
