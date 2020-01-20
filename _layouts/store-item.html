@@ -95,7 +95,7 @@ layout: default
                     {% if page.demo %}
                     <div class="card">
                         <div class="card-body">
-                            <h3 class="mb-3 text-center">Demo installation</h3>
+                            <h3 class="mb-3 text-center">Try it</h3>
                             <p class="mb-4">
                                 You can test this plugin in our dedicated <a href="https://demo-plugins.kimai.org">plugin demo</a>:
                             </p>
@@ -191,7 +191,12 @@ layout: default
 					</div>
 				</div>
 				<div class="card-body">
-					{{ content }}
+
+                    {% if page.toc %}
+                    {% include toc.html html=page.content class="section-nav" h_min=2 h_max=3 %}
+                    {% endif %}
+
+                    {{ content }}
 				</div>
 			</div>
 		</div>

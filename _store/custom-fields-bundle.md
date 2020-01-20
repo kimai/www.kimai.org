@@ -15,6 +15,7 @@ screenshot:
 gumroad: kimai2-custom-fields
 featured: Create free configurable additional (optional and mandatory) fields for timesheets, customers, projects and activities in various formats. 
 new: false
+toc: true
 tags:
   - plugin
 ---
@@ -76,12 +77,13 @@ More information about custom fields can be found in the [documentation](https:/
 
 {% include store-gumroad-and-support.html %}
 
-## Installation
+### Compatibility
 
 This plugin is compatible with the following Kimai releases:
 
 | Bundle version    | Kimai 2 version           |
 | ---               |---                        |
+| 1.8               | 1.7                       |
 | 1.7               | 1.6.2                     |
 | 1.6               | 1.6.2                     |
 | 1.5               | 1.6                       |
@@ -93,29 +95,9 @@ This plugin is compatible with the following Kimai releases:
 | 1.0               | 1.0, 1.0.1                |
 {: .table }
 
-### Copy files
+## Installation
 
-Extract the ZIP file and upload the included directory and all files to your Kimai installation to the new directory:  
-`var/plugins/MetaFieldsBundle/`
-
-The file structure needs to like like this afterwards:
-
-```
-var/plugins/
-├── MetaFieldsBundle
-│   ├── MetaFieldsBundle.php
-|   └ ... more files and directories follow here ... 
-```
-
-### Clear cache
-
-After uploading the files, Kimai needs to know about the new plugin. It will be found, once the cache was re-built:
-
-```
-cd kimai2/
-bin/console cache:clear --env=prod
-bin/console cache:warmup --env=prod
-```
+{% include store-plugin-installation.md plugin="MetaFieldsBundle" %}
 
 ### Create database
 
@@ -127,13 +109,13 @@ bin/console kimai:bundle:metafields:install
 
 This will install all required databases.
 
-### First test
+## Usage
 
-When logged in as `SUPER_ADMIN`, you should now see the custom-fields administration screen.
+When logged in as `SUPER_ADMIN`, you should now see the custom-fields administration screen at `/en/expenses/`.
 
 If this was successful, you can now think about giving permissions to other users as well.
 
-## Permissions
+### Permissions
 
 This bundle ships a new permission, which limit access to certain functions:
 

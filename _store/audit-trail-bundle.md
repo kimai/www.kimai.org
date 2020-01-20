@@ -14,6 +14,7 @@ screenshot:
 gumroad: kimai2-audit-trail
 featured: Records detailed change/audit logs for timesheets, customers, projects and activities and displays them in a per-item timeline. 
 new: false
+toc: true
 tags:
   - plugin
 ---
@@ -51,12 +52,13 @@ The following fields are recorded for changes:
 
 {% include store-gumroad-and-support.html %}
 
-## Installation
+### Compatibility
 
 This plugin is compatible with the following Kimai releases:
 
 | Bundle version    | Kimai 2 version               |
 | ---               |---                            |
+| 1.6               | 1.7                       |
 | 1.5               | 1.6                           |
 | 1.4               | 1.4                           |
 | 1.3               | 1.3                           |
@@ -65,31 +67,9 @@ This plugin is compatible with the following Kimai releases:
 | 1.0               | 1.0, 1.0.1                    |
 {: .table }
 
-### Files
+## Installation
 
-Extract the ZIP file and upload the included directory and all files to your Kimai installation to the new directory:  
-`var/plugins/AuditTrailBundle/`
-
-The file structure needs to look like this afterwards:
-
-```
-var/plugins/
-├── AuditTrailBundle
-│   ├── AuditTrailBundle.php
-|   └ ... more files and directories follow here ... 
-```
-
-### Cache
-
-After uploading the files, Kimai needs to know about the new plugin. It will be found, when the cache is re-build:
-
-```
-cd kimai2/
-bin/console cache:clear --env=prod
-bin/console cache:warmup --env=prod
-```
-
-or when using FTP: delete the folder `var/cache/prod/`.
+{% include store-plugin-installation.md plugin="AuditTrailBundle" %}
 
 ### Database
 
@@ -101,9 +81,9 @@ bin/console kimai:bundle:audittrail:install
 
 This will install all required databases.
 
-### First test
+## Usage
 
-When logged in as `SUPER_ADMIN`, you should now see the audit log screens (find the links in the "actions" dropdown menus).
+When logged in as `SUPER_ADMIN`, you will now see the overview page at `/en/audit/` and the items audit log screens in the "action" dropdown menus.
 
 If this was successful, you can now think about giving permissions to other users as well.
 
