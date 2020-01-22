@@ -9,11 +9,11 @@ Kimai 2 provides a flexible permissions system, which is based on [user roles]({
 This permission system limits access to the functionality of Kimai. If you are looking for a way to limit access to  
 timesheets, activities, projects and customers read the [Team permission documentation]({% link _documentation/teams.md %}). 
 
-There are three ways to change the permissions:
+{% include alert.html icon="fas fa-exclamation" type="warning" alert="You can change the permissions with the administration screens in the admin user section." %}
 
-- through the administration screens in the admin user section (needs `role_permissions`, since Kimai 1.6)
-- through your [local.yaml]({% link _documentation/configurations.md %}) config file (see below)
-- for developer: through your plugin, see [Developers documentation]({% link _documentation/developers.md %})
+Your user needs the `role_permissions` to use it, this feature is available since Kimai 1.6.
+
+You find it by looking out for the button {% include demo-action-button.html icon="fas fa-user-lock" %} in the **users** page.
 
 ## Existing permissions
 
@@ -117,6 +117,10 @@ This is the full list of existing permissions with short descriptions:
 There are other business rules which might limit access to certain functions, so these permissions are not the only checks in place.
 For example timesheet records which were exported cannot be edited any longer, even if a user has the `edit_own_timesheet` 
 or `edit_other_timesheet` permission. 
+
+## Plugin permissions
+
+Developer can add/change permissions through plugins, see [Developers documentation]({% link _documentation/developers.md %}).
 
 ## Permission configuration in local.yaml
 
