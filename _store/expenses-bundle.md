@@ -14,7 +14,7 @@ screenshot:
   - /images/marketplace/expenses-create.png
 gumroad: kimai2-expenses
 featured: Keep track of your expenses based on customer, project and activity. These spendings can be categorized and included in your invoices.  
-new: true
+new: false
 toc: true
 tags:
   - plugin
@@ -95,35 +95,22 @@ You will be redirected to the category creation screen if Kimai doesn't find one
 
 ## Permissions
 
-This bundle ships a couple of new permissions, which limit access to certain functionalities:
+This bundle ships a couple of new permissions, which limits the access to certain functions:
 
-- `view_expense` - allows access to the expenses screen
-- `edit_expense` - edit existing expenses
-- `edit_expense_cost` - edit the cost of a single expense (can be deactivated for user, when the category has a default cost)
-- `create_expense` - create new expenses
-- `delete_expense` - delete existing expenses
-- `manage_expense_category` - manage expense types 
+| Permission Name           | Description |
+|---                        |--- |
+| `view_expense`            | allows access to the expenses screen |
+| `edit_expense`            | edit existing expenses |
+| `edit_expense_cost`       | edit the cost of a single expense (deactivate this, if you want to provide default costs via the category) |
+| `create_expense`          | create new expenses |
+| `export_expense`          | export expenses |
+| `delete_expense`          | delete existing expenses |
+| `manage_expense_category` | manage expense types | 
+{: .table }
 
 By default, these are assigned to each user with the role `ROLE_SUPER_ADMIN`.
 
-{% include alert.html icon="fas fa-exclamation" type="warning" alert="You don't need the following since Kimai 1.6. Please adjust all permission settings in your administration." %}
-
-Read how to assign these permission to your user roles in the [permission documentation](https://www.kimai.org/documentation/permissions.html).
-
-This example is for customers who have a restricted setup and want to provide default costs via the expense types:
-```yaml
-kimai:
-    permissions:
-        roles:
-            ROLE_SUPER_ADMIN: ['view_expense', 'edit_expense', 'create_expense', 'delete_expense', 'manage_expense_category', 'edit_expense_cost']
-            ROLE_ADMIN: ['view_expense', 'edit_expense', 'create_expense', 'delete_expense', 'manage_expense_category', 'edit_expense_cost']
-            ROLE_TEAMLEAD: ['view_expense', 'edit_expense', 'create_expense', 'delete_expense']
-            ROLE_USER: ['view_expense', 'edit_expense', 'create_expense', 'delete_expense']
-```
-
-If you want your user to be able to edit the cost and amount add the `edit_expense_cost` permission to `ROLE_TEAMLEAD` and `ROLE_USER`.
- 
-After changing the permissions in local.yaml, you need to clear the application cache.
+{% include store-howto-permissions.md %}
 
 ## Updating the plugin
 

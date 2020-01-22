@@ -1,7 +1,7 @@
 ---
 title: Audit-Trail plugin for Kimai 2
 name: Audit-Trail plugin
-intro: "Record all changes of timesheets, customers, projects and activities."
+intro: "Records detailed change/audit logs for timesheets, customers, projects and activities and displays them in a per-item timeline."
 developer: keleo
 date: "2019-05-21 20:00:00 +0200"
 icon: fas fa-history
@@ -12,7 +12,7 @@ screenshot:
   - /images/marketplace/audit-trail-screenshot-2.png
   - /images/marketplace/audit-trail-button.jpg
 gumroad: kimai2-audit-trail
-featured: Records detailed change/audit logs for timesheets, customers, projects and activities and displays them in a per-item timeline. 
+featured: "Records detailed change/audit logs for timesheets, customers, projects and activities and displays them in a per-item timeline."
 new: false
 toc: true
 tags:
@@ -89,32 +89,22 @@ If this was successful, you can now think about giving permissions to other user
 
 ### Permissions
 
-This bundle ships a couple of new permissions, which limit access to certain functionalities:
+This bundle ships a couple of new permissions, which limits the access to certain functions:
 
-- `audit_logs` - see the audit log page with all entries
-- `audit_customer` - see all changes for the customer objects
-- `audit_project` -  see all changes for the project objects
-- `audit_activity` -  see all changes for the activity objects
-- `audit_own_timesheet` -  see all changes for own timesheet records (only via team timesheets, audit logs are **not** shown in user timesheet panel)
-- `audit_other_timesheet` -  see all changes in other users timesheet records (only via team timesheets, audit logs are **not** shown in user timesheet panel)
+| Permission Name           | Description |
+|---                        |--- |
+| `audit_logs`              | see the audit log page with all entries |
+| `audit_customer`          | see all changes for the customer objects |
+| `audit_project`           |  see all changes for the project objects |
+| `audit_activity`          |  see all changes for the activity objects |
+| `audit_own_timesheet`     |  see all changes for own timesheet records (only via team timesheets, audit logs are **not** shown in user timesheet panel) |
+| `audit_other_timesheet`   |  see all changes in other users timesheet records (only via team timesheets, audit logs are **not** shown in user timesheet panel) |
+{: .table }
 
 By default, these are assigned to each user with the role `ROLE_SUPER_ADMIN`.
 
-{% include alert.html icon="fas fa-exclamation" type="warning" alert="You don't need the following since Kimai 1.6. Please adjust all permission settings in your administration." %}
-
-Read how to assign these permission to your user roles in the [permission documentation](https://www.kimai.org/documentation/permissions.html).
-
-This is a proposal if you use the bundle in a multi-user environment:
-```yaml
-kimai:
-    permissions:
-        roles:
-            ROLE_SUPER_ADMIN: ['audit_logs','audit_customer','audit_project','audit_activity','audit_own_timesheet','audit_other_timesheet']
-            ROLE_ADMIN: ['audit_logs','audit_customer','audit_project','audit_activity','audit_own_timesheet','audit_other_timesheet']
-```
-
-After changing the permissions in local.yaml, you need to clear the application cache.
-
+{% include store-howto-permissions.md %}
+ 
 ## Screenshots
 
 The overview page of all audit trail logs:
