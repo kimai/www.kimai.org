@@ -36,19 +36,19 @@ This app is not for offline tracking. It requires a connection to the API of you
 
 <p style="text-align:center">Use your <strong>favourite</strong> or <strong>recent</strong> activities to start tracking immediately</p>
 <p style="text-align:center">
-    <img src="https://kimaiapp.umws.de//images/screens/kimaiTracker_favourites.png" width="200" style="margin:0 10px">
-    <img src="https://kimaiapp.umws.de//images/screens/kimaiTracker_start_tracking.png" width="200" style="margin:0 10px">
-    <img src="https://kimaiapp.umws.de//images/screens/kimaiTracker_tracking.png" width="200" style="margin:0 10px">
+    <img src="https://kimaiapp.umws.de/images/screens/kimaiTracker_favourites.png" width="200" style="margin:0 10px">
+    <img src="https://kimaiapp.umws.de/images/screens/kimaiTracker_start_tracking.png" width="200" style="margin:0 10px">
+    <img src="https://kimaiapp.umws.de/images/screens/kimaiTracker_tracking.png" width="200" style="margin:0 10px">
 </p>    
 <p style="text-align:center">or browse all your <strong>customers</strong>, <strong>projects</strong> and <strong>activities</strong>.</p>
 <p style="text-align:center">
-    <img src="https://kimaiapp.umws.de//images/screens/kimaiTracker_customers.png" width="200" style="margin:0 10px">
-    <img src="https://kimaiapp.umws.de//images/screens/kimaiTracker_projects.png" width="200" style="margin:0 10px">
-    <img src="https://kimaiapp.umws.de//images/screens/kimaiTracker_activities.png" width="200" style="margin:0 10px">
+    <img src="https://kimaiapp.umws.de/images/screens/kimaiTracker_customers.png" width="200" style="margin:0 10px">
+    <img src="https://kimaiapp.umws.de/images/screens/kimaiTracker_projects.png" width="200" style="margin:0 10px">
+    <img src="https://kimaiapp.umws.de/images/screens/kimaiTracker_activities.png" width="200" style="margin:0 10px">
 </p>
 <p style="text-align:center">Various complication to show your tracked time directly at your wrist.</p>
 <p style="text-align:center">
-    <img src="https://kimaiapp.umws.de//images/screens/kimaiTracker_complication_1.png" width="200" style="margin:0 10px">
-    <img src="https://kimaiapp.umws.de//images/screens/kimaiTracker_complication_2.png" width="200" style="margin:0 10px">
+    <img src="https://kimaiapp.umws.de/images/screens/kimaiTracker_complication_1.png" width="200" style="margin:0 10px">
+    <img src="https://kimaiapp.umws.de/images/screens/kimaiTracker_complication_2.png" width="200" style="margin:0 10px">
 </p>
 <p>
