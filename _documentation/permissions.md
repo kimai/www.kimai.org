@@ -112,6 +112,10 @@ This is the full list of existing permissions with short descriptions:
 | create_team                   | Create new teams (since 1.2)  |
 | delete_team                   | Delete existing teams (since 1.2)  |
 | view_team_member              | View the teamlead and members for the teams of the current user (since 1.4)  |
+| details_customer              | View customer details (account number, vat, rates, meta-fields, assigned teams & users) (since 1.7)  |
+| comments_customer             | Show posted comments for customers. For adding/changing comments you need the `edit_customer` permission (since 1.7)  |
+| details_project               | View project details (Order number & date, start and end date, rates, assigned teams & users) (since 1.7)  |
+| comments_project              | Show posted comments for projects. For adding/changing comments you need the `edit_project` permission (since 1.7)  |
 
 **Be aware**
 There are other business rules which might limit access to certain functions, so these permissions are not the only checks in place.
