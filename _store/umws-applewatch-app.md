@@ -4,7 +4,7 @@ name: Apple Watch App
 intro: "Track your kimai times directly at your wrist!"
 developer: umws
 date: "2020-01-22 20:00:00 +0200"
-image: https://kimaiapp.umws.de/images/screens/kimaiTracker_tracking.png
+image: /images/marketplace/appleWatchApp_tracking.jpg
 icon: fab fa-apple
 price: 1,92€
 version: 1.0
@@ -36,19 +36,19 @@ This app is not for offline tracking. It requires a connection to the API of you
 
 <p style="text-align:center">Use your <strong>favourite</strong> or <strong>recent</strong> activities to start tracking immediately</p>
 <p style="text-align:center">
-    <img src="https://kimaiapp.umws.de//images/screens/kimaiTracker_favourites.png" width="200" style="margin:0 10px">
-    <img src="https://kimaiapp.umws.de//images/screens/kimaiTracker_start_tracking.png" width="200" style="margin:0 10px">
-    <img src="https://kimaiapp.umws.de//images/screens/kimaiTracker_tracking.png" width="200" style="margin:0 10px">
+    <img src="/images/marketplace/appleWatchApp_favourites.jpg" width="200" style="margin:0 10px">
+    <img src="/images/marketplace/appleWatchApp_start_tracking.jpg" width="200" style="margin:0 10px">
+    <img src="/images/marketplace/appleWatchApp_tracking.jpg" width="200" style="margin:0 10px">
 </p>    
 <p style="text-align:center">or browse all your <strong>customers</strong>, <strong>projects</strong> and <strong>activities</strong>.</p>
 <p style="text-align:center">
-    <img src="https://kimaiapp.umws.de//images/screens/kimaiTracker_customers.png" width="200" style="margin:0 10px">
-    <img src="https://kimaiapp.umws.de//images/screens/kimaiTracker_projects.png" width="200" style="margin:0 10px">
-    <img src="https://kimaiapp.umws.de//images/screens/kimaiTracker_activities.png" width="200" style="margin:0 10px">
+    <img src="/images/marketplace/appleWatchApp_customers.jpg" width="200" style="margin:0 10px">
+    <img src="/images/marketplace/appleWatchApp_projects.jpg" width="200" style="margin:0 10px">
+    <img src="/images/marketplace/appleWatchApp_activities.jpg" width="200" style="margin:0 10px">
 </p>
 <p style="text-align:center">Various complication to show your tracked time directly at your wrist.</p>
 <p style="text-align:center">
-    <img src="https://kimaiapp.umws.de//images/screens/kimaiTracker_complication_1.png" width="200" style="margin:0 10px">
-    <img src="https://kimaiapp.umws.de//images/screens/kimaiTracker_complication_2.png" width="200" style="margin:0 10px">
+    <img src="/images/marketplace/appleWatchApp_complication_1.jpg" width="200" style="margin:0 10px">
+    <img src="/images/marketplace/appleWatchApp_complication_2.jpg" width="200" style="margin:0 10px">
 </p>
 <p>
