@@ -5,7 +5,7 @@ toc: true
 since_version: 1.0
 ---
 
-Kimai supports authentication viayour companies directory server (LDAP or AD). 
+Kimai supports authentication against your company directory server (LDAP or AD). 
 LDAP users will be imported during the first login and their attributes and groups 
 updated on each following login. 
 
