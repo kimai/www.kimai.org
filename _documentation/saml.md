@@ -31,8 +31,9 @@ kimai:
         activate: true
         title: Login with Google
         mapping:
-            email: $Email
-            username: $Email
+            - { saml: $Email, kimai: email }
+            - { saml: $Email, kimai: username }
+            - { saml: $FullName, kimai: alias }
         roles:
             attribute: Roles
             mapping:
