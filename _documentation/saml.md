@@ -22,8 +22,6 @@ security:
                 check_path: saml_acs
                 login_path: saml_login
                 failure_path: fos_user_security_login
-                user_factory: App\Auth\User\SamlUserFactory
-                persist_user: true
 
 # YOU HAVE TO ADJUST "title", "mapping" and "roles"
 kimai:
@@ -124,7 +122,7 @@ A brief description of the available fields:
 - `mapping` (array) an array of attributes that will be synced with Kimai, the key (here `email`, `username` and `title`) is the name in Kimai, the value (here `$Email`, `$Email` and `SAML User`) is the attribute to be set. You can assign static values to every user (like `tiitle` = `SAML User`) or you fetch values from the SAML message (`$Email` refers to the SAML attribute `Email`).
 - `roles` (array) settings related to the group syncing
   - `attribute` (string) the SAML attribute whose values are used for syncing the groups
-  - `mapping` (array) an array of group name mappings, the key `saml` is your SAML group name (here `Admins` and `Management`) and the key `kimai` (here `ROLE_ADMIN` and `ROLE_TEAMLEAD`) is the group name in Kimai. Unmapped group names will be taken as is from the SAML message.  
+  - `mapping` (array) an array of role name mappings, the key `saml` is your SAML role name (here `Admins` and `Management`) and the key `kimai` (here `ROLE_ADMIN` and `ROLE_TEAMLEAD`) is the role name in Kimai. Unmapped roles from the SAML message will be IGNORED(!) even if they are existing in Kimai.  
 
 {% include alert.html type="warning" alert="Every user automatically owns the ROLE_USER role, you don't have to create a mapping for it." %}
 
