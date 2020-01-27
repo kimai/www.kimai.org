@@ -16,6 +16,10 @@ In order to use the SAML authentication, you have to add configurations changes 
 ```yaml
 # DO NOT MODIFY THE SETTINGS in "security"
 security:
+    providers:
+        chain_provider:
+            chain:
+                providers: [kimai_saml]
     firewalls:
         secured_area:
             saml:
@@ -30,7 +34,6 @@ kimai:
         title: Login with Google
         mapping:
             - { saml: $Email, kimai: email }
-            - { saml: $Email, kimai: username }
             - { saml: $FullName, kimai: alias }
         roles:
             attribute: Roles
@@ -106,9 +109,8 @@ kimai:
         activate: true
         title: Login with Google
         mapping:
-            email: $Email
-            username: $Email
-            title: SAML User
+            - { saml: $Email, kimai: email }
+            - { saml: $FullName, kimai: alias }
         roles:
             attribute: Roles
             mapping:
@@ -119,12 +121,14 @@ kimai:
 A brief description of the available fields:
 - `activate` (bool) activates the SAML authentication flow 
 - `title` (string) the name of the red Login button in the authentication screen
-- `mapping` (array) an array of attributes that will be synced with Kimai, the key (here `email`, `username` and `title`) is the name in Kimai, the value (here `$Email`, `$Email` and `SAML User`) is the attribute to be set. You can assign static values to every user (like `tiitle` = `SAML User`) or you fetch values from the SAML message (`$Email` refers to the SAML attribute `Email`).
+- `mapping` (array) an array of attributes that will be synced with Kimai, the key (here `email` and `title`) is the name in Kimai, the value (here `$Email` and `$FullName`) is the attribute from the SAML attributes. You can assign static values to every user (like `title` = `SAML User`) or you fetch values from the SAML message (`$Email` refers to the SAML attribute `Email`).
 - `roles` (array) settings related to the group syncing
   - `attribute` (string) the SAML attribute whose values are used for syncing the groups
   - `mapping` (array) an array of role name mappings, the key `saml` is your SAML role name (here `Admins` and `Management`) and the key `kimai` (here `ROLE_ADMIN` and `ROLE_TEAMLEAD`) is the role name in Kimai. Unmapped roles from the SAML message will be IGNORED(!) even if they are existing in Kimai.  
 
-{% include alert.html type="warning" alert="Every user automatically owns the ROLE_USER role, you don't have to create a mapping for it." %}
+{% include alert.html type="info" alert="Every user automatically owns the ROLE_USER role, you don't have to create a mapping for it." %}
+{% include alert.html type="warning" alert="Every user needs a username and email address. You cannot activate SAML without a mapping for the email." %}
+{% include alert.html type="warning" alert="The username cannot be set from SAML attributes, but will always be taken from the SAML request." %}
 
 Remember to re-build the cache for changes to take effect, see [configurations chapter]({% link _documentation/configurations.md %}). 
 
@@ -168,12 +172,3 @@ kimai:
 Read more about `password_own_profile` and `password_other_profile` [permissions]({% link _documentation/permissions.md %}).
 
 If you don't adjust your configuration, you have to deactivate SAML users manually in Kimai after deleting their SAML accounts.
-
-## Known limitations
-
-There are a couple of caveats that should be taken into account.
-
-### Missing email address
-
-Kimai requires that every user account has an `email` and `username`. If you do not configure an attribute for `username`, 
-the `email` will be used as fallback for the `username` during the initial import of the user account.
