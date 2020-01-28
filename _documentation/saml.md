@@ -14,20 +14,11 @@ In order to use the SAML authentication, you have to add configurations changes 
 [local.yaml]({% link _documentation/configurations.md %}) (this example is for G Suite accounts):
 
 ```yaml
-# DO NOT MODIFY THE SETTINGS in "security"
 security:
-    providers:
-        chain_provider:
-            chain:
-                providers: [kimai_saml]
     firewalls:
         secured_area:
-            saml:
-                check_path: saml_acs
-                login_path: saml_login
-                failure_path: fos_user_security_login
+            kimai_saml: ~
 
-# YOU HAVE TO ADJUST "title", "mapping" and "roles"
 kimai:
     saml:
         activate: true
@@ -40,68 +31,67 @@ kimai:
             mapping:
                 - { saml: Admins, kimai: ROLE_ADMIN }
                 - { saml: Management, kimai: ROLE_TEAMLEAD }
-
-# THESE SETTINGS NEED TO BE ADJUSTED FOR YOUR APPLICATION
-# YOU'LL GET THE REQUIRED VALUES FROM YOUR SAML IDENTITY PROVIDER
-hslavich_onelogin_saml:
-    # You SAML provider, here an example for Google
-    idp:
-        entityId: 'https://accounts.google.com/o/saml2?idpid=your-google-id'
-        singleSignOnService:
-            url: 'https://accounts.google.com/o/saml2/idp?idpid=your-google-id'
-            binding: 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect'
-        # google does not support single logout, so it needs to be commented
-        # the "single logout" feature was not yet tested, if you want to help, please let me know!
-        #singleLogoutService:
-        #    url: 'https://127.0.0.1:8010/logout'
-        #    binding: 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect'
-        x509cert: 'ADD YOU MULTI-LINE CERTIFICATE CONTENT'
-    # Your Kimai instance, replace https://127.0.0.1:8010 with your base URL
-    sp:
-        entityId: 'https://127.0.0.1:8010/auth/saml/metadata'
-        assertionConsumerService:
-            url: 'https://127.0.0.1:8010/auth/saml/acs'
-            binding: 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST'
-        singleLogoutService:
-            url: 'https://127.0.0.1:8010/auth/saml/logout'
-            binding: 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect'
-        #privateKey: ''
-    # only set this, if auto-detection doesn't work
-    #baseurl: ''
-    strict: true
-    debug: true
-    security:
-        nameIdEncrypted:       false
-        authnRequestsSigned:   false
-        logoutRequestSigned:   false
-        logoutResponseSigned:  false
-        wantMessagesSigned:    false
-        wantAssertionsSigned:  false
-        wantNameIdEncrypted:   false
-        requestedAuthnContext: true
-        signMetadata: false
-        wantXMLValidation: true
-        signatureAlgorithm: 'http://www.w3.org/2001/04/xmldsig-more#rsa-sha256'
-        digestAlgorithm: 'http://www.w3.org/2001/04/xmlenc#sha256'
-    contactPerson:
-        technical:
-            givenName: 'Kimai Admin'
-            emailAddress: 'kimai-tech@example.com'
-        support:
-            givenName: 'Kimai Support'
-            emailAddress: 'kimai-support@example.com'
-    organization:
-        en:
-            name: 'Kimai'
-            displayname: 'Kimai'
-            url: 'https://www.kimai.org'
+        connection:
+            # You SAML provider, here an example for Google
+            idp:
+                entityId: 'https://accounts.google.com/o/saml2?idpid=your-google-id'
+                singleSignOnService:
+                    url: 'https://accounts.google.com/o/saml2/idp?idpid=your-google-id'
+                    binding: 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect'
+                # google does not support single logout, so it needs to be commented
+                # the "single logout" feature was not yet tested, if you want to help, please let me know!
+                #singleLogoutService:
+                #    url: 'https://127.0.0.1:8010/logout'
+                #    binding: 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect'
+                x509cert: 'ADD YOUR MULTI-LINE CERTIFICATE CONTENT HERE
+                           ADD YOUR MULTI-LINE CERTIFICATE CONTENT HERE
+                           ADD YOUR MULTI-LINE CERTIFICATE CONTENT HERE
+                           ADD YOUR MULTI-LINE CERTIFICATE CONTENT HERE
+                           ADD YOUR MULTI-LINE CERTIFICATE CONTENT HERE'
+            # Your Kimai instance, replace https://127.0.0.1:8010 with your base URL
+            sp:
+                entityId: 'https://127.0.0.1:8010/auth/saml/metadata'
+                assertionConsumerService:
+                    url: 'https://127.0.0.1:8010/auth/saml/acs'
+                    binding: 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST'
+                singleLogoutService:
+                    url: 'https://127.0.0.1:8010/auth/saml/logout'
+                    binding: 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect'
+                #privateKey: ''
+            # only set baseurl, if auto-detection doesn't work
+            #baseurl: ''
+            strict: true
+            debug: true
+            security:
+                nameIdEncrypted:       false
+                authnRequestsSigned:   false
+                logoutRequestSigned:   false
+                logoutResponseSigned:  false
+                wantMessagesSigned:    false
+                wantAssertionsSigned:  false
+                wantNameIdEncrypted:   false
+                requestedAuthnContext: true
+                signMetadata: false
+                wantXMLValidation: true
+                signatureAlgorithm: 'http://www.w3.org/2001/04/xmldsig-more#rsa-sha256'
+                digestAlgorithm: 'http://www.w3.org/2001/04/xmlenc#sha256'
+            contactPerson:
+                technical:
+                    givenName: 'Kimai Admin'
+                    emailAddress: 'kimai-tech@example.com'
+                support:
+                    givenName: 'Kimai Support'
+                    emailAddress: 'kimai-support@example.com'
+            organization:
+                en:
+                    name: 'Kimai'
+                    displayname: 'Kimai'
+                    url: 'https://www.kimai.org'
 ```  
 
-After that, you need to re-build the cache as described in the [configurations chapter]({% link _documentation/configurations.md %}). 
+After changing the configuration you need to re-build the cache as described in the [configurations chapter]({% link _documentation/configurations.md %}). 
 
-You can deactivate SAML by removing (or commenting) at least the settings `kimai` and `security` nodes from above and then rebuild the cache. 
-
-### Configuration details
+## Configuration details
 
 ```yaml
 kimai:
@@ -126,11 +116,13 @@ A brief description of the available fields:
   - `attribute` (string) the SAML attribute whose values are used for syncing the groups
   - `mapping` (array) an array of role name mappings, the key `saml` is your SAML role name (here `Admins` and `Management`) and the key `kimai` (here `ROLE_ADMIN` and `ROLE_TEAMLEAD`) is the role name in Kimai. Unmapped roles from the SAML message will be IGNORED(!) even if they are existing in Kimai.  
 
+{% include alert.html type="info" alert="User data and roles are synchronized during each login." %}
 {% include alert.html type="info" alert="Every user automatically owns the ROLE_USER role, you don't have to create a mapping for it." %}
-{% include alert.html type="warning" alert="Every user needs a username and email address. You cannot activate SAML without a mapping for the email." %}
-{% include alert.html type="warning" alert="The username cannot be set from SAML attributes, but will always be taken from the SAML request." %}
+{% include alert.html type="warning" alert="Every user needs a username and email address, you cannot activate SAML without a mapping for the email. The username cannot be set from SAML attributes, but will always be taken from the SAML request." %}
 
-Remember to re-build the cache for changes to take effect, see [configurations chapter]({% link _documentation/configurations.md %}). 
+### Connection details
+
+You can find more information about the connection configs in the [onelogin/php-saml](https://github.com/onelogin/php-saml#how-it-works) library that is used for the SAML connections.
 
 ### G Suite and roles (or groups)
 
@@ -141,34 +133,7 @@ Links:
 - [Setup groups in G Suite](https://www.dynatrace.com/support/help/how-to-use-dynatrace/user-management-and-sso/manage-users-and-groups-with-saml/saml-gsuite/#preparing-group-mapping)
 - [Creating custom attributes using the user schema](https://support.google.com/cloudidentity/answer/6327792?hl=en&ref_topic=7558947)
 
-## User synchronization
+## Known limitations
 
-User data is synchronized during the first login.
-
-**Password handling**
-
-Obviously Kimai does not store the users password when logged-in via SAML and there is no fallback mechanism available, if your SAML IDP is not available.
-
-{% include alert.html type="danger" alert="The default configuration allows a user to change the internal password. This manually chosen password is not overwritten by the SAML plugin and would allow a user to login, even after you removed him from SAML." %} 
-
-To prevent that problem:
-- disable the "[Password reset]({% link _documentation/users.md %})" function
-```yaml
-kimai:
-    user:
-        registration: false
-        password_reset: false
-```
-- disable the "change my own password" permission for each role:
-```yaml
-kimai:
-    permissions:
-        roles:
-            ROLE_USER: ['!password_own_profile']
-            ROLE_TEAMLEAD: ['!password_own_profile']
-            ROLE_ADMIN: ['!password_own_profile']
-```
-
-Read more about `password_own_profile` and `password_other_profile` [permissions]({% link _documentation/permissions.md %}).
-
-If you don't adjust your configuration, you have to deactivate SAML users manually in Kimai after deleting their SAML accounts.
+A manually registered user cannot login via SAML. Changing an account to use SAML auth requires database changes.
+You need to update the `auth` column in the `kimai2_users` table and set the value to `saml` for these users.
