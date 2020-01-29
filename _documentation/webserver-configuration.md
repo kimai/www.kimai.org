@@ -107,10 +107,56 @@ This is not officially supported, basically because I have no way to test it...
 But there is a [discussion in the issue tracker](https://github.com/kevinpapst/kimai2/issues/979#issuecomment-514895906) and a 
 [Symfony documentation page](https://symfony.com/doc/3.4/deployment/azure-website.html#configure-the-web-server) which could help.
 
-## Reverse Proxy and subdirectory usage
+## Reverse proxy
+
+When you want to run Kimai behind a proxy, you have to provide all necessary `X-Forwarded-*` headers.
+Here is an example of a nginx proxy configuration, which terminates SSL on `kimai2.local` and forwards the request to Kimai running at `http://127.0.0.1:8010/`:  
+
+```
+server {
+    listen 443 ssl;
+    server_name                 kimai2.local;
+    ssl_certificate             /Users/kevin/Sites/_certs/kimai2.local.crt;
+    ssl_certificate_key         /Users/kevin/Sites/_certs/kimai2.local.key;
+    ssl_session_timeout         5m;
+    ssl_protocols               SSLv2 SSLv3 TLSv1;
+    ssl_ciphers                 HIGH:!aNULL:!MD5;
+    ssl_prefer_server_ciphers   on;
+
+    location / {
+          proxy_pass http://127.0.0.1:8010/;
+
+          proxy_set_header  Host $http_host;
+          proxy_set_header  X-Real-IP $remote_addr;
+          proxy_set_header  X-Forwarded-Host $host:$server_port;
+          proxy_set_header  X-Forwarded-Server $host;
+          proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+          proxy_set_header  X-Forwarded-Proto $scheme;
+          proxy_set_header  X-Forwarded-Port $server_port;
+      }
+}
+```
+
+Now, when you open `https://kimai2.local/` you wil be redirected to the login URL without `http`, here: `http://kimai2.local/en/login/`.
+Why is that? Well, because you have to tell Kimai (or the Symfony framework) that it should trust your proxy and take the headers into account 
+when generating URLs for links and redirects.
+
+To achieve that, set the environment variable `TRUSTED_PROXIES` to the name of your proxy, either via `.env` file:
+
+```
+TRUSTED_PROXIES=127.0.0.1,kimai2.local,localhost
+```
+
+or set it in your Kimai server definition (here nginx syntax):
+```
+fastcgi_param TRUSTED_PROXIES "127.0.0.1,kimai2.local,localhost";
+```
+
+
+### With subdirectory usage
 
 Kimai was made to be hosted on the domain level, so running it inside a subdirectory is not perfectly supported.
-Nevertheless, there are some workarounds that enable the usage behind a Reverse Prox and inside a subdirectory.
+Nevertheless, there are some workarounds that enable the usage behind a Reverse Proxy and inside a subdirectory.
 
 The easy part is fixing asset URLs. Edit your local.yaml and paste this code inside:
 ```yaml
