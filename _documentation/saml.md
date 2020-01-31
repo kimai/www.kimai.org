@@ -25,7 +25,7 @@ kimai:
         title: Login with Google
         mapping:
             - { saml: $Email, kimai: email }
-            - { saml: $FullName, kimai: alias }
+            - { saml: $FirstName $LastName, kimai: alias }
         roles:
             attribute: Roles
             mapping:
@@ -111,10 +111,10 @@ kimai:
 A brief description of the available fields:
 - `activate` (bool) activates the SAML authentication flow 
 - `title` (string) the name of the red Login button in the authentication screen
-- `mapping` (array) an array of attributes that will be synced with Kimai, the key (here `email` and `title`) is the name in Kimai, the value (here `$Email` and `$FullName`) is the attribute from the SAML attributes. You can assign static values to every user (like `title` = `SAML User`) or you fetch values from the SAML message (`$Email` refers to the SAML attribute `Email`).
-- `roles` (array) settings related to the group syncing
+- `mapping` (array) an array of attributes that will be synced with Kimai. The `kimai` value (`email` and `alias`) are the names in Kimai, the `saml` key (`$Email` and `$FirstName $LastName`) are the attributes from the SAML response. You can assign static values to every user (like `title` = `SAML User`) or you fetch one or more values from the SAML message (`$Email` refers to the SAML attribute `Email` and `$FirstName $LastName` refers to the two SAML attributes `$FirstName` and `$LastName`).
+- `roles` (array) settings related to the user roles syncing
   - `attribute` (string) the SAML attribute whose values are used for syncing the groups
-  - `mapping` (array) an array of role name mappings, the key `saml` is your SAML role name (here `Admins` and `Management`) and the key `kimai` (here `ROLE_ADMIN` and `ROLE_TEAMLEAD`) is the role name in Kimai. Unmapped roles from the SAML message will be IGNORED(!) even if they are existing in Kimai.  
+  - `mapping` (array) an array of role name mappings. The `saml` key is your SAML role name (here `Admins` and `Management`) and the key `kimai` (here `ROLE_ADMIN` and `ROLE_TEAMLEAD`) is the role name in Kimai. Unmapped roles from the SAML message will be IGNORED(!) even if they are existing in Kimai.  
 
 {% include alert.html type="info" alert="User data and roles are synchronized during each login." %}
 {% include alert.html type="info" alert="Every user automatically owns the ROLE_USER role, you don't have to create a mapping for it." %}
@@ -139,3 +139,14 @@ A manually registered user can login via SAML, but his account account is then m
 so he can't login via password any longer. 
 Additional all configured SAML attributes will be applied. 
 To change such an account back to "password login", you need to update the `auth` column in the `kimai2_users` table and set the value from `saml` to `kimai`.
+
+## Troubleshooting
+
+### Proxy and http vs https
+
+Error message:`
+- The response was received at `http://kimai-test.example.com/auth/saml/acs` instead of `https://kimai-test.example.com/auth/saml/acs`
+
+Solution: 
+- Use the `baseurl` configuration and set it to `https://kimai-test.example.com/auth/saml/` (and flush the cache!)
+
