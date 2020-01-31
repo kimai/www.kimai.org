@@ -100,7 +100,7 @@ kimai:
         title: Login with Google
         mapping:
             - { saml: $Email, kimai: email }
-            - { saml: $FullName, kimai: alias }
+            - { saml: $FirstName $LastName, kimai: alias }
         roles:
             attribute: Roles
             mapping:
