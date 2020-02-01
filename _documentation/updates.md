@@ -3,13 +3,10 @@ title: Updates
 description: How to update Kimai 2 to the next release version
 ---
 
-## Pre-requisites
+1. Make sure that you have a working [database backup]({% link _documentation/backups.md %}) before you start the update
+2. Check [UPGRADING]({{ site.kimai_v2_file }}/UPGRADING.md) for required manual changes between your current and the new version 
 
-1. Don't execute anything from the [installation steps]({% link _documentation/installation.md %}) before or after your update
-2. Make sure that you have a working database backup before you start the update
-3. Read the [UPGRADING]({{ site.kimai_v2_file }}/UPGRADING.md) guide and the [release information]({{ site.kimai_v2_repo }}/releases) to check if there are further manual steps required for one of the version between yours and the new one 
-
-### Update process 
+## Updating Kimai 
 
 {% capture alert_note %}
 Some tweaks may be necessary to these instructions if you have a developer setup or update on your local computer 

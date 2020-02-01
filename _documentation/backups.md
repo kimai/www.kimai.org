@@ -25,6 +25,20 @@ Write down the exact version of your Kimai installation:
 - `bin/console kimai:version`
 - `git rev-parse HEAD`
 
+## Create a database backup
+
+Here is a one liner that creates a database backup for MySQL/MariaDB (adjust connection to your needs):
+
+```
+mysqldump --single-transaction -u kimai2 -p -h 127.0.0.1 kimai2 > ~/kimai2-`date +%F_%H-%M`.sql
+```
+
+Or with SQLite
+
+```
+cp var/data/kimai.sqlite ~/kimai2-`date +%F_%H-%M`.sqllite
+```
+
 ## Restore 
 
 - install Kimai [as documented]({% link _documentation/installation.md %}) in the **exact same version**, which you used when you created the backup
@@ -64,12 +78,10 @@ Please check the [UPGRADING]({{ site.kimai_v2_file }}/UPGRADING.md) guide and ma
 ### Database
 
 If Kimai will not load properly (e.g. you only see a white screen, maybe some pages work) the database could be the reason.
-
 This problem can happen when you install a different (newer) version that has a different database structure then your backup.
 
 Check your database if you have the `migration_versions` table. If not, go back to "Restore". 
-
-If so: try to execute the missing database migrations with `bin/console doctrine:migrations:migrate`.
+If so: try to execute the missing database migrations with `bin/console kimai:update -n`.
 
 ### Configuration
 
