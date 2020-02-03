@@ -210,12 +210,21 @@ If a project was selected in the invoice filter the following values exist as we
 | ${project.name} | The project name |
 | ${project.comment} | The project name |
 | ${project.order_number} | The project order number |
+| ${project.start_date} | Projects start date-time (since 1.7) |
+| ${project.end_date} | Projects end date-time (since 1.7) |
+| ${project.order_date} | Projects order date-time (since 1.7) |
 | ${project.fixed_rate} | Fixed rate for this project including currency |
 | ${project.fixed_rate_nc} | Fixed rate for this project without currency (since 1.6) |
 | ${project.fixed_rate_plain} | Fixed rate for this project as unformatted value (since 1.6.2) |
 | ${project.hourly_rate} | Hourly rate for this project including currency |
 | ${project.hourly_rate_nc} | Hourly rate for this project without currency (since 1.6) |
 | ${project.hourly_rate_plain} | Hourly rate for this project as unformatted value (since 1.6.2) |
+| ${project.budget_money} | Projects budget including currency (since 1.7) |
+| ${project.budget_money_nc} | The projects budget without currency (since 1.7) |
+| ${project.budget_money_plain} | The projects budget as unformatted value (since 1.7) |
+| ${project.budget_time} | The projects time-budget as seconds (since 1.7) |
+| ${project.budget_time_decimal} | The projects time-budget in decimal format (with localized separator) (since 1.7) |
+| ${project.budget_time_minutes} | The projects time-budget in minutes with no decimals (since 1.7) |
 | ${project.meta.x} | The project [meta field]({% link _documentation/meta-fields.md %}) named `X`. The internal name `X` needs to be used in lowercase letters, eg. `FooBar` will be available as `${project.meta.foobar}`. Only available if the field is visible.  |
 
 If an activity was selected in the invoice filter the following values exist as well:
