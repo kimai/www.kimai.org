@@ -22,7 +22,7 @@ Full installation instructions can be found in our [documentation]({% link _docu
 
 These requirements are provided by almost all hosting companies:
 
-- PHP 7.2 or higher
+- PHP 7.2.9 or higher
     - PHP extensions: `mbstring`, `gd`, `intl`, `pdo`, `xml`, `zip` 
 - Database (MySQL, MariaDB, SQLite)
 - [Webserver](https://www.kimai.org/documentation/webserver-configuration.html) (nginx, Apache with mod_rewrite ...)
