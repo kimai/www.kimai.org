@@ -92,7 +92,7 @@ And restart the SSH Daemon:
 Lets start with all required software:
 ```bash
 apt-get update
-apt-get install php-fpm php-cli php-common php-json php-opcache php-readline php-xml php-zip php-intl php-gd php-mbstring php-mysql
+apt-get install php-fpm php-cli php-common php-json php-opcache php-readline php-xml php-zip php-intl php-gd php-mbstring php-mysql php-curl
 apt-get install mysql-server mysql-client
 apt-get install nginx
 apt-get install git unzip curl
@@ -119,10 +119,10 @@ mv composer.phar /usr/bin/composer
 
 ## Create database
 
-Connect to your database: 
-
+Connect to your database as root user: 
 
 ```bash
+sudo su
 mysql -u root
 ```
 
