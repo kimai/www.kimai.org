@@ -194,12 +194,6 @@ The following values exist for the customer:
 | ${customer.country} | The customer country |
 | ${customer.homepage} | The customer homepage |
 | ${customer.comment} | The customer comment |
-| ${customer.fixed_rate} | Fixed rate for this customer including currency |
-| ${customer.fixed_rate_nc} | Fixed rate for this customer without currency (since 1.6) |
-| ${customer.fixed_rate_plain} | Fixed rate for this customer as unformatted value (since 1.6.2) |
-| ${customer.hourly_rate} | Hourly rate for this customer including currency |
-| ${customer.hourly_rate_nc} | Hourly rate for this customer without currency (since 1.6) |
-| ${customer.hourly_rate_plain} | Hourly rate for this customer as unformatted value (since 1.6.2) |
 | ${customer.meta.x} | The customer [meta field]({% link _documentation/meta-fields.md %}) named `X`. The internal name `X` needs to be used in lowercase letters, eg. `FooBar` will be available as `${customer.meta.foobar}`. Only available if the field is visible.  |
 
 If a project was selected in the invoice filter the following values exist as well:
@@ -213,12 +207,6 @@ If a project was selected in the invoice filter the following values exist as we
 | ${project.start_date} | Projects start date-time (since 1.7) |
 | ${project.end_date} | Projects end date-time (since 1.7) |
 | ${project.order_date} | Projects order date-time (since 1.7) |
-| ${project.fixed_rate} | Fixed rate for this project including currency |
-| ${project.fixed_rate_nc} | Fixed rate for this project without currency (since 1.6) |
-| ${project.fixed_rate_plain} | Fixed rate for this project as unformatted value (since 1.6.2) |
-| ${project.hourly_rate} | Hourly rate for this project including currency |
-| ${project.hourly_rate_nc} | Hourly rate for this project without currency (since 1.6) |
-| ${project.hourly_rate_plain} | Hourly rate for this project as unformatted value (since 1.6.2) |
 | ${project.budget_money} | Projects budget including currency (since 1.7) |
 | ${project.budget_money_nc} | The projects budget without currency (since 1.7) |
 | ${project.budget_money_plain} | The projects budget as unformatted value (since 1.7) |
@@ -234,12 +222,6 @@ If an activity was selected in the invoice filter the following values exist as 
 | ${activity.id} | The activity ID |
 | ${activity.name} | The activity name |
 | ${activity.comment} | The activity name |
-| ${activity.fixed_rate} | Fixed rate for this activity including currency |
-| ${activity.fixed_rate_nc} | Fixed rate for this activity without currency (since 1.6) |
-| ${activity.fixed_rate_plain} | Fixed rate for this activity as unformatted value (since 1.6.2) |
-| ${activity.hourly_rate} | Hourly rate for this activity including currency |
-| ${activity.hourly_rate_nc} | Hourly rate for this activity without currency (since 1.6) |
-| ${activity.hourly_rate_plain} | Hourly rate for this activity as unformatted value (since 1.6.2) |
 | ${activity.meta.x} | The activity [meta field]({% link _documentation/meta-fields.md %}) named `X`. The internal name `X` needs to be used in lowercase letters, eg. `FooBar` will be available as `${activity.meta.foobar}`. Only available if the field is visible.  |
 
 ### Timesheet entry variables 
