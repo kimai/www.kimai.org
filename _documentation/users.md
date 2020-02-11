@@ -100,13 +100,6 @@ kimai:
         registration: false
 ```
 
-If you only want to hide the link from the login form but keep the functionality, add this your `local.yaml`: 
-```yaml
-admin_lte:
-    routes:
-        adminlte_registration: ~
-```
-
 ## Password reset
 
 The reset password function is enabled by default, but you need to activate [email]({% link _documentation/emails.md %}) support if you want to use it.
@@ -116,13 +109,6 @@ If you want to disable the password reset, add this your `local.yaml`:
 kimai:
     user:
         password_reset: false
-```
-
-If you only want to hide the link from the login form but keep the functionality, add this your `local.yaml`: 
-```yaml
-admin_lte:
-    routes:
-        adminlte_password_reset: ~
 ```
 
 If you want to configure the behaviour (like the allowed time between multiple retries) then configure the settings:
