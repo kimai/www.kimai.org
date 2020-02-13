@@ -22,6 +22,9 @@ For the plugin `CustomCSSBundle` this would be `var/plugins/CustomCSSBundle/`.
 After the plugin was installed you need to clear the cache:
 {% include cache-refresh.html %}
 
+Depending on your setup, the cache flush will create directories which cannot be written by your webserver:
+{% include file-permissions.html %}
+
 ## Kimai plugins vs. pure Symfony bundles
 
 The reason for using a slightly different approach than the proposed Symfony way is the recommended way 
