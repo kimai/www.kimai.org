@@ -50,8 +50,7 @@ If you are going to [import data from Kimai v1]({% link _documentation/migration
 ### Webserver
 
 Configure your web server (like Nginx or Apache) to point its DocumentRoot at the `public/` directory.
-For more details, see the [Webserver How-To]({% link _documentation/webserver-configuration.md %}) 
-and this [Symfony article](https://symfony.com/doc/current/setup/web_server_configuration.html).
+For more details, see the [Webserver How-To]({% link _documentation/webserver-configuration.md %}).
 
 {% include alert.html icon="far fa-smile-beam" type="success" alert="Installation complete: enjoy time-tracking!" %}
 

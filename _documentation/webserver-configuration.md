@@ -4,9 +4,6 @@ description: How to install Kimai 2 on your server with git, composer and SSH or
 toc: true
 ---
 
-There is an excellent documentation at the Symfony site, covering multiple webserver and environments setups, 
-[which you should definitely read](https://symfony.com/doc/current/setup/web_server_configuration.html).
-
 If you can't manage to get Kimai up and running, it is very likely not an issue with Kimai.
 - Check your server logs first and the the Kimai logs (at `var/logs/` inside the Kimai directory).
 - Try to find an answer at Stackoverflow, ServerFault or other online communities
@@ -15,6 +12,45 @@ The following configurations are meant to give you a first idea how your config 
 they either might be incompatible with your exact setup or might need further tweaking to work.
 
 I don't offer free support for such situations, but you can contact me about [paid installation support]({% link _store/keleo-installation-support.md %}). 
+
+## Nginx
+
+This is only an example, that needs to be adapted to your needs (eg. path and PHP-FPM version).
+ 
+```
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    server_name kimai.local www.kimai.local;
+    root /var/www/kimai2/public;
+    index index.php;
+
+    access_log off;
+    log_not_found off;
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+    location / {
+        try_files $uri /index.php$is_args$args;
+    }
+
+    location ~ ^/index\.php(/|$) {
+        fastcgi_pass unix:/run/php/php7.2-fpm.sock;
+        fastcgi_split_path_info ^(.+\.php)(/.*)$;
+        include fastcgi.conf;
+        fastcgi_param PHP_ADMIN_VALUE "open_basedir=$document_root/..:/tmp/";
+        internal;
+    }
+
+    location ~ \.php$ {
+        return 404;
+    }
+}
+```
+
+Read the [Ubuntu setup guide]({% link _documentation/fresh-ubuntu-18.md %}) to find out more. 
 
 ## Apache
 
@@ -72,6 +108,9 @@ which needs to be allowed by Apache via `AllowOverride All`.
     #SetEnv DATABASE_URL "mysql://db_user:db_pass@host:3306/db_name"
 </VirtualHost>
 ```
+
+{% include alert.html icon="fas fa-exclamation" type="warning" alert="Make sure to activate the correct block for your Apache version, find out with eg. 'apachectl -v'" %}
+
 
 ### Activate required modules PHP & Rewrite
 
@@ -152,7 +191,6 @@ or set it in your Kimai server definition (here nginx syntax):
 fastcgi_param TRUSTED_PROXIES "127.0.0.1,kimai2.local,localhost";
 ```
 
-
 ### With subdirectory usage
 
 Kimai was made to be hosted on the domain level, so running it inside a subdirectory is not perfectly supported.
@@ -200,3 +238,8 @@ docker exec -it kimai2 bash ln -s /opt/kimai/public /opt/kimai/public/kimai2
 And you are good to go: Kimai is now running behind a Reverse Proxy.
 
 Read [this GitHub issue](https://github.com/kevinpapst/kimai2/issues/1006) for more information (start at the bottom).
+
+## Links
+
+- The Symfony site is covering [multiple webserver and environments setups](https://symfony.com/doc/current/setup/web_server_configuration.html).
+- There is a full installation guide on how to [setup Kimai on Ubuntu 18.04]({% link _documentation/fresh-ubuntu-18.md %}) 
