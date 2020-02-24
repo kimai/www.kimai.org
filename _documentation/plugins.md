@@ -25,6 +25,8 @@ After the plugin was installed you need to clear the cache:
 Depending on your setup, the cache flush will create directories which cannot be written by your webserver:
 {% include file-permissions.html %}
 
+{% include alert.html icon="fas fa-exclamation" type="warning" alert="Additional installation steps might be required (eg. database creation). Please read the specific plugin docs!" %}
+
 ## Kimai plugins vs. pure Symfony bundles
 
 The reason for using a slightly different approach than the proposed Symfony way is the recommended way 
