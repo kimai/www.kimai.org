@@ -90,13 +90,19 @@ kimai:
 Generally speaking, you should use only the variable `model` in your template which is an instance of `App\Model\InvoiceModel`.
 
 Please see the [default templates]({{ site.kimai_v2_file }}/templates/invoice/renderer) at 
-GitHub to find out which variables can be used or debug it with:
+GitHub to find out which variables can be used. 
 
+Want to include an image in your template? Simply use an image tag. This points to the directory `public/images/my-logo.png`:
+ 
 ```twig
-{% raw %}{{ dump(model) }}{% endraw %}
+{% raw %}<img src="{{ asset('images/my-logo.png') }}">{% endraw %}
 ```
 
-The `dump()` method is only available in `dev` environment, check your `.env` if you are unsure. 
+Best is to host your images on your own domain
+
+```twig
+{% raw %}<img src="https://www.example.com/images/my-logo.png">{% endraw %}
+```
 
 If you want more examples of the available methods for a timesheet record, you can have a look in the other existing templates, 
 like [the template which renders the "My times" page]({{ site.kimai_v2_file }}/templates/timesheet/index.html.twig).
