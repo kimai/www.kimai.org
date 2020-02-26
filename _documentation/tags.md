@@ -7,9 +7,16 @@ toc: true
 
 ## Tagging timesheet records
 
-Kimai supports tagging timesheet records, which allows you to create arbitrary logical structures.
+Kimai supports tagging timesheet records, which allows you to create arbitrary logical structures, which can be used to filter records in exports/invoices and reports.
 
-Users can assign any number of tags to each timesheet entry, which you can use to filter records in exports/invoices and reports.
+### Tagging modes
+
+Kimai supports two tagging modes: 
+
+- free tagging: users can assign any number of tags to each timesheet entry
+- predefined: users can only select tags from a pre-defined list (since 1.8)
+
+The mode can be switched in the `Settings` screen in the `Theme` section (there is a checkbox).
 
 ## Tag administration
 
