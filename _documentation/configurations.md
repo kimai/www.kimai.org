@@ -16,7 +16,7 @@ The basic settings, which are required for Kimai to work are stored in the `.env
 - `MAILER_FROM` - application specific "from" address for all emails
 - `APP_ENV` - environment for the runtime (use `prod` if you are unsure)
 - `DATABASE_URL` - database connection for storing all application data
-- `APP_SECRET` - secret used for hashing user passwords (don't change it, if you have user accounts in your database) 
+- `APP_SECRET` - secret used when encrypting data  (don't change it after initial setup!) 
 
 ## Config files
 
@@ -32,7 +32,7 @@ There are several other configurations that could potentially be interesting for
 
 If you want to adjust a setting from any of these files, use `local.yaml` (see below).
 
-## Overwriting local configs (local.yaml)
+### Changing configurations
 
 You should NOT edit the file `config/packages/kimai.yaml` directly, as it contains default settings and will be overwritten during an update.
 Instead create the file `config/packages/local.yaml` and save your own settings in there. This file will NEVER be shipped with Kimai.
@@ -58,20 +58,28 @@ The `local.yaml` file will be imported as last configuration file, so you can ov
 Whenever the documentation asks you to edit a yaml file from the `config/packages/` directory, it means you should copy 
 this specific configuration key to your `local.yaml` in order to overwrite the default configuration.
 
-## Reload changed configurations
+{% include alert.html icon="fas fa-exclamation" type="warning" alert="Be consistent with the indentation and don't mix spaces and tabs, YAML is very sensitive about that!" %}
+
+### Reload changed configurations
 
 When you change a configuration file, Kimai will not see this change immediately. 
-You can reload the configs after you are done by rebuilding the Symfony cache with:
+You can reload the configs after you are done by rebuilding the cache with:
 
 {% include cache-refresh.html %} 
 
 Depending on your setup it might be necessary to execute these commands as webserver user, 
 please read the [Installation docs]({% link _documentation/installation.md %}) for more details.
 
+#### Fix file permissions
+
+Depending on your setup and the way you call the command, you have to allow the webserver to write to 
+`var/cache/prod/` and its subdirectories afterwards.
+
+{% include file-permissions.html %} 
+
 ## System-configuration screen
 
-With version 0.9 a new system configuration screen was introduced. This screen allows you to change 
-some of the most important configurations directly from within Kimai. 
+You can edit most of the configurations from the Kimai UI directly.
 
 This screen is only visible to users with the permission `system_configuration` which is by default given to `ROLE_SUPER_ADMIN`.
 

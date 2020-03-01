@@ -62,11 +62,13 @@ Be aware of the following rules:
 
 - Documents are addressed by their filename without extension (e.g. `kimai.html.twig` results in `kimai`) 
 - You can use every document name only once: so having `kimai.html.twig` and `kimai.docx` will lead to unpredictable results 
-- The first file to be found takes precedence 
+  - The first file to be found takes precedence 
 - Kimai looks first in `var/invoices/`, so you can overwrite default templates
 - You should store your templates in `var/invoices/` as this directory is not shipped with Kimai and not touched during updates (or in your own bundle)
 - You can configure different search directories through the config key `kimai.invoice.documents` if you want to add additional template source directories 
 - You can hide the default templates by setting the key `kimai.invoice.defaults` to an empty array / null
+
+New or updated templates can be uploaded via the UI. 
 
 After you created a new or updated an existing template, you might have to clear the cache to see the results:
 {% include cache-refresh.html %} 

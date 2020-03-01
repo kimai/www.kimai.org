@@ -182,27 +182,29 @@ kimai:
 
 There are two rate types:
 
-- __Fixed rate__: the value will be used to set the records rate, no matter how long the duration is
 - __Hourly rate__: will be used to calculate the records rate by multiplying it with the duration (see below)
+- __Fixed rate__: the value will be used to set the rate for every record, no matter how long the duration is 
 
 If any of the above is set to 0, the records rate will be set to 0.
 
-While calculating the rate of a timesheet entry, the first setting that is found will be used (in order of appearance):
+Calculating the rate for a timesheet entry is done by calculating scores, where the highest score wins:
 
-- Timesheet fixed rate
-- Activity fixed rate
-- Project fixed rate
-- Customer fixed rate
-- Timesheet hourly rate
-- Activity hourly rate
-- Project hourly rate
-- Customer hourly rate
-- Users hourly rate
+- Activity rate: 5 points
+- Project rate: 3 points
+- Customer rate: 1 points
+- User specific rate: +1 point
 
-If neither a fixed nor a hourly rate can be found, the users rate will be used to calculate the records rate.
-If that is the case and if the users rate is not set or equals 0, the records rate will be set to 0.
+This leads to the following decision matrix:
 
-The calculation is based on the following formula:
+|                           | Activity rate | Project rate  | Customer rate |
+|---                        |---            |---            |---            |
+| None-user rule            | 5             | 3             | 1             |
+| User specific             | 6             | 4             | 2             |
+
+If no rate can be found, the users hourly-rate will be used to calculate the records rate.
+In case that the users hourly-rate is not set or equals 0, the records rate will be set to 0.
+
+The timesheet rate calculation is based on the following formula:
 
 - __Fixed rate__: `$fixedRate`
 - __Hourly rate__: `$hourlyRate * ($durationInSeconds / 3600) * $factor`
@@ -247,7 +249,7 @@ Exported records will be locked to prevent manipulation of cleared data.
 The [permission]({% link _documentation/permissions.md %}) `edit_exported_timesheet` does allow to edit and delete these 
 locked entries nevertheless, which by default is given to users with `ROLE_ADMIN` and `ROLE_SUPER_ADMIN`. 
 
-The export state can be set manually by admins or via the [invoice]({% link _documentation/invoices.md %}) and [export]({% link _documentation/export.md %}) screens.
+The export state can be set manually or via the [invoice]({% link _documentation/invoices.md %}) and [export]({% link _documentation/export.md %}) screens.
 
 ## Filter and search 
 

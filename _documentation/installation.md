@@ -33,6 +33,8 @@ And run the Kimai installer:
 bin/console kimai:install -n
 ```
 
+### File permissions
+
 The webserver needs write permissions for several directories, so make sure the 
 [file permissions are correct](https://symfony.com/doc/current/setup/file_permissions.html).
 {% include file-permissions.html %} 
@@ -43,9 +45,9 @@ There are several options to create your first user:
 
 - via command: `bin/console kimai:create-user username admin@example.com ROLE_SUPER_ADMIN`
 - via login screen: you can register a user, the first one will be promoted to the role `ROLE_SUPER_ADMIN`
-- you can [configure LDAP]({% link _documentation/ldap.md %}) for authentication 
+- you can configure [LDAP]({% link _documentation/ldap.md %}) or [SAML]({% link _documentation/saml.md %}) for authentication 
 
-If you are going to [import data from Kimai v1]({% link _documentation/migration-v1.md %}) use a different username & email
+If you are going to [import data from Kimai v1]({% link _documentation/migration-v1.md %}) choose a username & email that was not used in v1.
 
 ### Webserver
 
@@ -118,7 +120,7 @@ Kimai works around the Foreign Keys issue by using a
 [Doctrine PostConnect EventSubscriber]({{ site.kimai_v2_file }}/src/Doctrine/SqliteSessionInitSubscriber.php), 
 but this is not intended to be used in large production setups and it can't be guaranteed that SQLite handles everything as expected.
 
-If you insist on using SQLite: make a copy of the database file BEFORE each update, to prevent possible data loss.
+If you insist on using SQLite: make a copy of the database file BEFORE each update, to prevent possible data loss ... and don't file any bug report - you have been warned!
 
 ### SQLSTATE[HY000] [2006] MySQL server has gone away
 
