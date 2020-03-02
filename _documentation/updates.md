@@ -5,6 +5,7 @@ description: How to update Kimai 2 to the next release version
 
 1. Make sure that you have a working [database backup]({% link _documentation/backups.md %}) before you start the update
 2. Check [UPGRADING]({{ site.kimai_v2_file }}/UPGRADING.md) for required manual changes between your current and the new version 
+3. You can upgrade multiple version at once, eg. from `1.6` to `1.8` while skipping `1.7`
 
 ## Updating Kimai 
 
