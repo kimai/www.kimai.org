@@ -1,7 +1,7 @@
 ---
 title: Kiosk & barcode plugin for Kimai 2
 name: Kiosk plugin
-intro: "Start and stop times with a barcode scanner for kiosk-like usage"
+intro: "Start and stop timesheets with a barcode scanner for attendance time-tracking"
 developer: keleo
 date: "2020-03-06 16:00:00 +0200"
 icon: fas fa-barcode
@@ -17,7 +17,7 @@ screenshot:
   - /images/marketplace/kiosk-login.png
   - /images/marketplace/kiosk-logout.png
 gumroad: kimai2-kiosk
-featured: "Start and stop times with a barcode scanner for kiosk usage. Pure time-tracking in an environment, where the user has no access to Kimai (eg. in a warehouse or at a front-desk)." 
+featured: "Attendance time-tracking in an environment, where the user has no access to Kimai (eg. in a warehouse) by using a barcode scanner to start and stop timesheets." 
 new: true
 toc: true
 tags:
