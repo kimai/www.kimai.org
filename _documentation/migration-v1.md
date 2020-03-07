@@ -28,6 +28,10 @@ Before starting with the migration, please read the following FAQs:
 - The import will fail, if a user from v1 has either an empty email OR the same email is used for multiple users
 - Data which was deleted in Kimai v1 (user, customer, projects, activities) will be imported and set to `invisible`
   - if you don't want that, you have to delete all entries that have the value `1` in the `trash` column before importing
+- Groups import
+  - The import will skip groups that have no members. 
+  - The import will always assign a teamlead to the project. If none of the users in Kimai v1 was assigned as the teamlead, the first member of the group is assigned as teamlead during import. 
+  - The groups that were trashed in Kimai v1 are not imported into Kimai 2 as hidden/trashed teams are not supported.
 
 ## Install Kimai 2
 
