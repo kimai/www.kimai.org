@@ -35,7 +35,7 @@ The invoice system currently supports the following formats:
   - Comma-separated file with UTF-8 encoding and double-quotes around each field 
   - filename must end with `.csv` 
   - Pro: good for exporting and creating enhanced reports with an office software package
-  - Contra: only row based information possible (meta information can't be used properly), UTF-8 is not properly supported when using Excel (see [this issue](https://github.com/kevinpapst/kimai2/issues/1537))
+  - Contra: only row based information possible (meta information can't be used properly), UTF-8 is not properly supported when using Excel (see [this issue]({{ site.kimai_v2_repo }}/issues/1537))
 
 **Be aware**: the default templates were created and tested ONLY with LibreOffice!
 

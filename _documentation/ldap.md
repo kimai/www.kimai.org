@@ -135,7 +135,7 @@ kimai:
             # used to query the users DN only.
             # AD users might have too many results (Exchange activesync devices 
             # attributes) and therefor an incompatible result structure if not changed.
-            # See https://github.com/kevinpapst/kimai2/issues/875   
+            # See {{ site.kimai_v2_repo }}/issues/875   
             # default: (objectClass=*)
             #attributesFilter: (objectClass=Person)
 

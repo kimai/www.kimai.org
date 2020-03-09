@@ -124,14 +124,14 @@ parameters:
 Make sure the new locale is included in the frontend dependencies. For example Kimai includes moment.js, which ships its own translations.
 Kimai ONLY compiles the moment.js locales which are needed. 
 Check and adapt the JS files in the `assets/` directory:
-- [app.js](https://github.com/kevinpapst/kimai2/blob/master/assets/app.js) 
+- [app.js]({{ site.kimai_v2_repo }}/blob/master/assets/app.js) 
 ```
 const Moment = require('moment');
 global.moment = Moment;
 require('moment/locale/xx');
 ```
 
-- [calendar.js](https://github.com/kevinpapst/kimai2/blob/master/assets/calendar.js) 
+- [calendar.js]({{ site.kimai_v2_repo }}/blob/master/assets/calendar.js) 
 ```
 require('fullcalendar');
 require('fullcalendar/dist/locale/xx');

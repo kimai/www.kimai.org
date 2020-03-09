@@ -59,7 +59,7 @@ the techniques, paths and commands according to your OS.
 
 ### Kimai .htaccess
 
-Kimai ships a default [.htaccess](https://github.com/kevinpapst/kimai2/blob/master/public/.htaccess), 
+Kimai ships a default [.htaccess]({{ site.kimai_v2_repo }}/blob/master/public/.htaccess), 
 which needs to be allowed by Apache via `AllowOverride All`.
 
 ### Create VirtualHost
@@ -143,7 +143,7 @@ LoadModule rewrite_module libexec/apache2/mod_rewrite.so
 
 This is not officially supported, basically because I have no way to test it...
 
-But there is a [discussion in the issue tracker](https://github.com/kevinpapst/kimai2/issues/979#issuecomment-514895906) and a 
+But there is a [discussion in the issue tracker]({{ site.kimai_v2_repo }}/issues/979#issuecomment-514895906) and a 
 [Symfony documentation page](https://symfony.com/doc/3.4/deployment/azure-website.html#configure-the-web-server) which could help.
 
 ## Reverse proxy
@@ -237,7 +237,7 @@ docker exec -it kimai2 bash ln -s /opt/kimai/public /opt/kimai/public/kimai2
 
 And you are good to go: Kimai is now running behind a Reverse Proxy.
 
-Read [this GitHub issue](https://github.com/kevinpapst/kimai2/issues/1006) for more information (start at the bottom).
+Read [this GitHub issue]({{ site.kimai_v2_repo }}/issues/1006) for more information (start at the bottom).
 
 ## Links
 

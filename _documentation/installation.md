@@ -81,7 +81,7 @@ Kimai 2 [package](https://github.com/YunoHost-Apps/kimai2_ynh) for [YunoHost](ht
 ### Vesta Control Panel
 
 Be aware that VestaCP uses the `admin` user instead of `www-data`. Replace the names in the permission commands above.
-Read [this issue](https://github.com/kevinpapst/kimai2/issues/743) if you have further questions. 
+Read [this issue]({{ site.kimai_v2_repo }}/issues/743) if you have further questions. 
 
 ## Shared hosting
 

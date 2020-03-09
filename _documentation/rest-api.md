@@ -86,7 +86,7 @@ about the "local date and time" pattern.
 
 Be aware: Kimai treats the given datetime as local time and adds the configured users timezone without changing the given time.
 
-Read [this comment](https://github.com/kevinpapst/kimai2/issues/701#issuecomment-485564359) to understand the backgrounds about that decision.
+Read [this comment]({{ site.kimai_v2_repo }}/issues/701#issuecomment-485564359) to understand the backgrounds about that decision.
 
 ## Calling the API with Javascript
 
