@@ -25,7 +25,7 @@ The invoice system currently supports the following formats:
   - Open Document Spreadsheet or OASIS, is the OpenOffice.org XML file format for spreadsheets supported by OpenOffice, LibreOffice, StarCalc, Microsoft and others 
   - file extension: filename must end with `.ods` 
   - Pros: open format, good for exporting and creating enhanced reports with an office software package
-  - Contra: not ideal format for invoices
+  - Contra: not ideal format for invoices (harder to customize)
 - `XLSX`
   - Microsoft Excel™ 2007 shipped with a new file format, namely Microsoft Office Open XML SpreadsheetML, and Excel 2010 extended this still further with new features. 
   - file extension: filename must end with `.xlsx` 
@@ -35,7 +35,7 @@ The invoice system currently supports the following formats:
   - Comma-separated file with UTF-8 encoding and double-quotes around each field 
   - filename must end with `.csv` 
   - Pro: good for exporting and creating enhanced reports with an office software package
-  - Contra: only row based information possible (meta information can't be used properly)
+  - Contra: only row based information possible (meta information can't be used properly), UTF-8 is not properly supported when using Excel (see [this issue](https://github.com/kevinpapst/kimai2/issues/1537))
 
 **Be aware**: the default templates were created and tested ONLY with LibreOffice!
 
