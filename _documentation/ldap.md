@@ -11,7 +11,12 @@ updated on each following login.
 
 ## Installation
 
-In order to use the LDAP authentication module of Kimai, you have to install the ZendFramework LDAP library:
+In order to use the LDAP authentication module of Kimai, you have to install the Laminas LDAP library (from Kimai 1.9 on):
+```bash
+composer require laminas/laminas-ldap
+```
+
+Up until Kimai 1.8 you need to run: 
 ```bash
 composer require zendframework/zend-ldap
 ```
@@ -46,7 +51,7 @@ This is the full available configuration, most of the values are optional and th
 kimai:
     ldap:
         # more infos about the connection params can be found at:
-        # https://docs.zendframework.com/zend-ldap/api/
+        # https://docs.laminas.dev/laminas-ldap/api/
         connection:
             # The default hostname of the LDAP server (mandatory setting). 
             # You can connect to multiple servers by setting their URLs like this:
@@ -105,7 +110,7 @@ kimai:
             #optReferrals: false
             
             # for the next options please refer to:
-            # https://docs.zendframework.com/zend-ldap/api/ 
+            # https://docs.laminas.dev/laminas-ldap/api/ 
             #allowEmptyPassword: false
             #tryUsernameSplit: 
             #networkTimeout: 
@@ -194,8 +199,8 @@ kimai:
             #    - { ldap_value: kimai_admin, role: ROLE_ADMIN }
 ``` 
 
-Kimai uses the Zend Framework LDAP module and uses the configured `connection` parameters without modification. 
-Find out more about the settings in the [detailed documentation](https://docs.zendframework.com/zend-ldap/api/). 
+Kimai uses the Laminas Framework LDAP module and uses the configured `connection` parameters without modification. 
+Find out more about the settings in the [detailed documentation](https://docs.laminas.dev/laminas-ldap/api/). 
 
 Remember to re-build the cache for changes to take effect, see [configurations chapter]({% link _documentation/configurations.md %}). 
 
