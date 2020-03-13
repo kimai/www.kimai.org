@@ -85,14 +85,36 @@ Read [this issue]({{ site.kimai_v2_repo }}/issues/743) if you have further quest
 
 ## Shared hosting
 
-Some short hints for installation at 1&1 / Ionos, but these tipps will likely help with other shared hosters as well:
+How to install Kimai at shared hosting companies. Please share our insights if you have managed to get it up and running with another company!
+
+If you can't find the correct version, ask your hoster! Or [let us help you]({% link _store/keleo-installation-support.md %}).
+
+### Ionos / 1&1
 
 - GIT is normally pre-installed and can be used via SSH
 - composer has to be installed manually
 - The default PHP version is often too low (PHP 5.x) - you can check that with `php -v`
-  - If it is lower than 7.2, you have to prefix all commands with the proper version, eg. `/usr/bin/php7.3-cli` (even composer) - ask your hoster if you can't find the correct version
+  - If it is lower than 7.2, you have to prefix all commands with the proper version, eg. `/usr/bin/php7.3-cli` (even composer)
   - Example composer: `/usr/bin/php7.3-cli composer.phar install --no-dev --optimize-autoloader`
   - Example installation: `/usr/bin/php7.3-cli bin/console kimai:install -n`
+
+### Strato 
+
+Strato has a special setup of PHP, you need to find the proper version first.
+
+- PHP-Directory: `/opt/RZphp{major}{minor}/bin/php-cli` (Shared Hosting)
+- PHP-Directory: `/usr/bin/php{major}{minor}` (Managed Server)
+
+For example, if you want to use PHP 7.3 use always the absolute path when running a PHP based command: so prefix all commands with eg. `/opt/RZphp73/bin/php-cli` in bash.
+
+How to install Kimai:
+- Install composer: `curl -sS https://getcomposer.org/installer | /opt/RZphp73/bin/php-cli`
+- Clone Kimai as stated above and then `cd kimai2`
+- Install composer packages with `/opt/RZphp73/bin/php-cli ../composer.phar install --no-dev --optimize-autoloader`
+- Configure your `.env` file, eg. with `nano .env`
+- Install Kimai database `/opt/RZphp73/bin/php-cli bin/console kimai:install -n`
+
+Reload your configuration `/opt/RZphp73/bin/php-cli bin/console kimai:reload`
 
 ## FTP installation
 
