@@ -180,11 +180,18 @@ sudo chmod -R g+rw public/avatars/
 
 ## Updating Kimai
 
-You can follow the normal installation guide and only change these commands:
+Please cross-check the normal [upgrade guide]({% link _documentation/updates.md %}) for more steps:
 
-- use `php73 composer install --no-dev --optimize-autoloader`
-- use `php73 bin/console kimai:update` 
-- use `chown -R :http .` 
+```bash
+cd /volume1/web/kimai2/
+git fetch --tags
+git checkout {{ site.kimai_v2_version }}
+php73 composer install --no-dev --optimize-autoloader
+php73 bin/console kimai:update
+chown -R :http .
+```
+
+{% include upgrading-note.html %} 
 
 ## Troubleshooting
 

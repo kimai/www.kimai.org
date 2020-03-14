@@ -37,10 +37,6 @@ bin/console kimai:update
 Remember to adjust the file permissions if necessary.
 {% include file-permissions.html %} 
 
-{% capture upgrading_note %}
-Important: Finally execute the version specific tasks from the [UPGRADING]({{ site.kimai_v2_file }}/UPGRADING.md) guide.
-{% endcapture %}
-{% assign upgrading_note = upgrading_note| markdownify %}
-{% include alert.html icon="fas fa-exclamation" type="warning" alert=upgrading_note %}
+{% include upgrading-note.html %} 
 
 That's it, Kimai is running the most current version. Enjoy the latest time-tracking features!
