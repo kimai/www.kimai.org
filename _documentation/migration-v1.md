@@ -51,25 +51,18 @@ bin/console kimai:import --help
 
 A full command would look like this:
 ```bash
-bin/console kimai:import-v1 "mysql://user:password@127.0.0.1:3306/database?charset=utf8" "db_prefix" "password" "country" "currency"
+bin/console kimai:import-v1 "mysql://user:password@127.0.0.1:3306/database?charset=utf8" "db_prefix" "password" "country" "currency" --timezone="timezone" --language="language" 
 ```
-The fields "country" and "currency" are optional and will be set to DE and EUR if not given. 
+
+The fields `country` and `currency` are optional and will be set to DE and EUR if not given.
+The flags `timezone` and `language` are used for imported users, in case they didn't set it in Kimai 1 (you should update the preference in Kimai 1 before importing, if you work across different timezones).
 
 It is recommended to test the import in a fresh database. You can test your import as often as you like and fix possible problems in your installation.
 A sample command could look like that:
 ```bash
-bin/console doctrine:schema:drop --force && bin/console doctrine:schema:create && bin/console kimai:import-v1 "mysql://kimai:test@127.0.0.1:3306/kimai?charset=latin1" "kimai_" "test123" "CH" "CHF"
+bin/console doctrine:schema:drop --force && \
+bin/console doctrine:schema:create && \
+bin/console kimai:import-v1 "mysql://kimai:test@127.0.0.1:3306/kimai?charset=latin1" "kimai_" "test123" "CH" "CHF" --timezone="Europe/Zurich" --language="ch"
 ```
 That will drop the configured Kimai v2 database schema and re-create it, before importing the data from the `mysql` database at `127.0.0.1` on port `3306` authenticating the user `kimai` with the password `test` for import.
 The connection will use the charset `latin1` and the default table prefix `kimai_` for reading data. Imported users can login with the password `test123` and all customer will have the country `CH` and the currency `CHF` assigned.
-
-## Known issues
-
-If you see an error like this:
-```
-[ERROR] Object(App\Entity\User).email:
-            This value should not be blank. (code c1051bb4-d103-4f74-8988-acbcafc7fdc3)
-
-[ERROR] Failed to import users: Failed to validate user: admin
-``` 
-you have to edit the named user (here `admin`) and supply a unique email address.
