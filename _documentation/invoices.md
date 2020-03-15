@@ -6,6 +6,40 @@ toc: true
 
 Kimai allows to create invoices from timesheet data in several formats. 
 
+## Invoice number format
+
+Since Kimai 1.9 you can configure the invoice number format. 
+You can mix arbitrary characters and the allowed replacer from the list below. 
+All examples represent the date `2019-07-09` (2019, July 9th):
+
+- `{date}` - shortcut for `ymd`. Example: `190709` (default format before Kimai 1.9)
+- `{c}` - counter for invoices of all times, starting from 1
+- `{cy}` - counter for invoices this year, starting from 1
+- `{cm}` - counter for invoices this month, starting from 1
+- `{cd}` - counter for invoices this day, starting from 1 
+- `{Y}` -  full numeric representation of a year (4 digits). Example: `2019` 
+- `{y}` - two digit representation of a year. Example: `19`
+- `{M}` - numeric representation of a month, with leading zeros. Example: `07`
+- `{m}` - numeric representation of a month, without leading zeros. Example: `7`
+- `{D}` - day of the month, 2 digits with leading zeros. Example: `09`
+- `{d}` - day of the month without leading zeros. Example: `9`
+
+Each replacer (x) can be combined with a length formatter, which will prepend (X) leading zeros, eg. `{x,X}`. 
+Example: to get a three digit long string with year counter use `{cy,3}`, which results in `001` for the first invoice of the year.
+
+Please note: the additional characters outside the replacer may NOT be the characters `{` and `}`.
+
+To change the format, look out for the {% include demo-action-button.html icon="fas fa-cog" %} icon in the invoice screen, or change it from the `System configurations`.
+
+## Export state
+
+Invoices and exports share the export state, which is used to mark timesheet records as processed. 
+These records cannot be edited any longer by regular users and are excluded by default from further invoices and exports.
+
+You need to tick the checkbox before saving (Kimai 1.9) / printing (Kimai 1.8 and below) the invoice, to automatically set the export state on all filtered timesheet records.
+ 
+For further information read the [timesheet documentation]({% link _documentation/timesheet.md %}).
+
 ## Invoice document
 
 The invoice system currently supports the following formats:
@@ -45,16 +79,7 @@ The invoice system currently supports the following formats:
 
 **Be aware**: the default templates were created and tested ONLY with LibreOffice!
 
-## Export state
-
-Invoices and exports share the export state, which is used to mark timesheet records as processed. 
-These records cannot be edited any longer by regular users and are excluded by default from further invoices and exports.
-
-You need to tick the checkbox before printing the invoice, to automatically set the export state on all included records.
- 
-For further information read the [timesheet documentation]({% link _documentation/timesheet.md %}).
-
-## Create your own invoice document
+### Create your own invoice document
 
 There is another repository with some invoice document examples in different formats. 
 If you need ideas how to start with yours, have a look at [https://github.com/Keleo/kimai2-invoice-templates](https://github.com/Keleo/kimai2-invoice-templates). 
@@ -70,10 +95,10 @@ Be aware of the following rules:
 - You can use every document name only once: so having `kimai.html.twig` and `kimai.docx` will lead to unpredictable results 
   - The first file to be found takes precedence 
 - Kimai looks first in `var/invoices/`, so you can overwrite default templates
-- You should store your templates in `var/invoices/` as this directory is not shipped with Kimai and not touched during updates (or in your own bundle)
+- You should store your templates in `var/invoices/`, as this directory is not shipped with Kimai and not touched during updates
 - You can configure different search directories through the config key `kimai.invoice.documents` if you want to add additional template source directories 
 - You can hide the default templates by setting the key `kimai.invoice.defaults` to an empty array / null
-
+ 
 New or updated templates can be uploaded via the UI. 
 
 After you created a new or updated an existing template, you might have to clear the cache to see the results:
@@ -81,7 +106,7 @@ After you created a new or updated an existing template, you might have to clear
 
 #### Configure search path
 
-An example configuration in [local.yaml]({% link _documentation/configurations.md %}) might look like this:
+An example configuration in [local.yaml]({% link _documentation/configurations.md %}) might look like this (this shouldn't be necessary in 90% of all use-cases):
 
 ```yaml
 kimai:
@@ -112,9 +137,6 @@ Best is to host your images on your own domain
 {% raw %}<img src="https://www.example.com/images/my-logo.png">{% endraw %}
 ```
 
-If you want more examples of the available methods for a timesheet record, you can have a look in the other existing templates, 
-like [the template which renders the "My times" page]({{ site.kimai_v2_file }}/templates/timesheet/index.html.twig).
-
 ### Docx templates
 
 Docx templates are powered by [PHPWord](https://github.com/PHPOffice/PHPWord) and its `TemplateProcessor`.
@@ -142,7 +164,7 @@ _Check the default templates if that doesn't make sense to you ;-)_
 
 This row will then be cloned for every timesheet entry. 
 
-See below in `Template variables` to find out which variables you can use in your CSV file.
+See below in `Template variables` to find out which variables you can use.
 
 ## Template variables
 
@@ -194,7 +216,7 @@ The documents which are rendered passively (ODS, XLSX, CSV, DOCX) can use the fo
 | ${user.title} | The current users title  |
 | ${user.meta.X} | The current users [preference]({% link _documentation/user-preferences.md %}) named `X`  |
 
-The following values exist for the customer:
+### Customer variables
 
 | Key | Description |
 |---|---|
@@ -209,34 +231,6 @@ The following values exist for the customer:
 | ${customer.homepage} | The customer homepage |
 | ${customer.comment} | The customer comment |
 | ${customer.meta.x} | The customer [meta field]({% link _documentation/meta-fields.md %}) named `X`. The internal name `X` needs to be used in lowercase letters, eg. `FooBar` will be available as `${customer.meta.foobar}`. Only available if the field is visible.  |
-
-If a project was selected in the invoice filter the following values exist as well:
-
-| Key | Description |
-|---|---|
-| ${project.id} | The project ID |
-| ${project.name} | The project name |
-| ${project.comment} | The project name |
-| ${project.order_number} | The project order number |
-| ${project.start_date} | Projects start date-time (since 1.7) |
-| ${project.end_date} | Projects end date-time (since 1.7) |
-| ${project.order_date} | Projects order date-time (since 1.7) |
-| ${project.budget_money} | Projects budget including currency (since 1.7) |
-| ${project.budget_money_nc} | The projects budget without currency (since 1.7) |
-| ${project.budget_money_plain} | The projects budget as unformatted value (since 1.7) |
-| ${project.budget_time} | The projects time-budget as seconds (since 1.7) |
-| ${project.budget_time_decimal} | The projects time-budget in decimal format (with localized separator) (since 1.7) |
-| ${project.budget_time_minutes} | The projects time-budget in minutes with no decimals (since 1.7) |
-| ${project.meta.x} | The project [meta field]({% link _documentation/meta-fields.md %}) named `X`. The internal name `X` needs to be used in lowercase letters, eg. `FooBar` will be available as `${project.meta.foobar}`. Only available if the field is visible.  |
-
-If an activity was selected in the invoice filter the following values exist as well:
-
-| Key | Description |
-|---|---|
-| ${activity.id} | The activity ID |
-| ${activity.name} | The activity name |
-| ${activity.comment} | The activity name |
-| ${activity.meta.x} | The activity [meta field]({% link _documentation/meta-fields.md %}) named `X`. The internal name `X` needs to be used in lowercase letters, eg. `FooBar` will be available as `${activity.meta.foobar}`. Only available if the field is visible.  |
 
 ### Timesheet entry variables 
 
@@ -276,3 +270,41 @@ For each timesheet entry you can use the variables from the following table.
 | ${entry.meta.X} | The [meta field]({% link _documentation/meta-fields.md %}) named `X` (if visible)  |
 | ${entry.type} | The type of this entry (plugins can add custom types) | timesheet |
 | ${entry.category} | The category of this entry (plugins can add custom types) | work |
+
+### Project variables
+
+If a project was selected in the invoice filter (search form) the following variables exist as well:
+
+| Key | Description |
+|---|---|
+| ${project.id} | The project ID |
+| ${project.name} | The project name |
+| ${project.comment} | The project name |
+| ${project.order_number} | The project order number |
+| ${project.start_date} | Projects start date-time (since 1.7) |
+| ${project.end_date} | Projects end date-time (since 1.7) |
+| ${project.order_date} | Projects order date-time (since 1.7) |
+| ${project.budget_money} | Projects budget including currency (since 1.7) |
+| ${project.budget_money_nc} | The projects budget without currency (since 1.7) |
+| ${project.budget_money_plain} | The projects budget as unformatted value (since 1.7) |
+| ${project.budget_time} | The projects time-budget as seconds (since 1.7) |
+| ${project.budget_time_decimal} | The projects time-budget in decimal format (with localized separator) (since 1.7) |
+| ${project.budget_time_minutes} | The projects time-budget in minutes with no decimals (since 1.7) |
+| ${project.meta.x} | The project [meta field]({% link _documentation/meta-fields.md %}) named `X`. The internal name `X` needs to be used in lowercase letters, eg. `FooBar` will be available as `${project.meta.foobar}`. Only available if the field is visible.  |
+
+If you selected more than one project in the search, you will have further variables called `${project.1.X}`, `${project.2.X}` and so on.
+The order is not guaranteed, so it is not recommended to rely on those variables.  
+
+### Activity variables
+
+If an activity was selected in the invoice filter (search form) the following variables exist as well:
+
+| Key | Description |
+|---|---|
+| ${activity.id} | The activity ID |
+| ${activity.name} | The activity name |
+| ${activity.comment} | The activity name |
+| ${activity.meta.x} | The activity [meta field]({% link _documentation/meta-fields.md %}) named `X`. The internal name `X` needs to be used in lowercase letters, eg. `FooBar` will be available as `${activity.meta.foobar}`. Only available if the field is visible.  |
+
+If you selected more than one project in the search, you will have further variables called `${activity.1.X}`, `${activity.2.X}` and so on.
+The order is not guaranteed, so it is not recommended to rely on those variables.  

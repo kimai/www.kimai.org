@@ -20,22 +20,22 @@ The basic settings, which are required for Kimai to work are stored in the `.env
 
 ## Config files
 
-Configuration of Kimai is spread in all files in the `config/`directory but mainly it these files:
+Configuration of Kimai is done through the files in the `config/` directory, the most important ones are:
 
-- `.env` - environment specific settings
-- `config/packages/kimai.yaml` - Kimai specific settings
-- `config/packages/admin_lte.yaml` - Kimai base theme
-- `config/packages/fos_user.yaml` - user management and email settings
-- `config/packages/local.yaml` - your configuration settings (file needs to be created by yourself)
+- `.env` - your environment and connection settings
+- `config/packages/kimai.yaml` - Kimai settings
+- `config/packages/fos_user.yaml` - user management
+- `config/packages/local.yaml` - additional Kimai configurations for your needs (file does not exist by default)
 
 There are several other configurations that could potentially be interesting for you in [config/packages/*.yaml]({{ site.kimai_v2_file }}/config/packages/).
 
-If you want to adjust a setting from any of these files, use `local.yaml` (see below).
+If you want to adjust a setting from any of these files, apply them through the use of your own `local.yaml` (see below).
 
 ### Changing configurations
 
 You should NOT edit the file `config/packages/kimai.yaml` directly, as it contains default settings and will be overwritten during an update.
 Instead create the file `config/packages/local.yaml` and save your own settings in there. This file will NEVER be shipped with Kimai.
+
 Having your custom settings in `local.yaml` allows you to easily update Kimai. This is the same concept which is used for the `.env` file.
 
 An example `config/packages/local.yaml` file might look like this:
@@ -63,18 +63,15 @@ this specific configuration key to your `local.yaml` in order to overwrite the d
 ### Reload changed configurations
 
 When you change a configuration file, Kimai will not see this change immediately. 
-You can reload the configs after you are done by rebuilding the cache with:
+You can reload the configurations by rebuilding the cache.
 
 {% include cache-refresh.html %} 
 
-Depending on your setup it might be necessary to execute these commands as webserver user, 
-please read the [Installation docs]({% link _documentation/installation.md %}) for more details.
+It might be necessary to execute these commands as webserver user, 
+read the [Installation docs]({% link _documentation/installation.md %}) for more details.
 
-#### Fix file permissions
-
-Depending on your setup and the way you call the command, you have to allow the webserver to write to 
-`var/cache/prod/` and its subdirectories afterwards.
-
+Depending on your setup and the way you call the cache command, you have to fix directory permissions afterwards. 
+ 
 {% include file-permissions.html %} 
 
 ## System-configuration screen

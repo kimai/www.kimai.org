@@ -20,14 +20,13 @@ var/plugins/
 
 ### Clear cache
 
-After uploading the files, Kimai needs to know about the new plugin. It will be found, once the cache was re-built:
+After uploading the files, Kimai needs to know about the new plugin. It will be found once the [cache was re-built]({% link _documentation/updates.md %}). 
+Call these commands from the Kimai directory:
 
-```
-cd kimai2/
-bin/console cache:clear --env=prod
-bin/console cache:warmup --env=prod
-```
+{% include cache-refresh.html %} 
 
-or when using FTP: delete the folder `var/cache/prod/`.
+You might have to set file permissions afterwards:
+
+{% include file-permissions.html %} 
 
 {% endif %}

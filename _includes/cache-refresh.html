@@ -1,4 +1,25 @@
+<div class="row row-cards row-deck">
+<div class="col-md-12">
+<div class="card">
+<div class="card-status bg-info"></div>
+<div class="card-header">
+<h4 class="card-title">How to reload Kimai cache</h4>
+</div>
+<div class="card-body" markdown="1">
+
 ```bash
 bin/console kimai:reload
 ```
+
 FTP users: please have a look at [this documentation]({%link _documentation/ftp.md %}).
+
+Before Kimai 1.8 you have to use:
+```bash
+bin/console cache:clear --env=prod
+bin/console cache:warmup --env=prod
+```
+
+</div>
+</div>
+</div>
+</div>

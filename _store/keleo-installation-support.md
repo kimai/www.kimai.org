@@ -11,7 +11,7 @@ tags:
   - support
 ---
 
-If you need help with the installation of Kimai or want to update Kimai to the latest version, I can be hired for paid support.
+If you need help with the installation of Kimai or want to update Kimai to the latest version, I am available for paid support.
 Even though all the necessary steps are documented ([here]({% link _documentation/installation.md %}) and [here]({% link _documentation/updates.md %})), 
 they might cause problems for users who are unfamiliar with server systems.
 
@@ -24,13 +24,18 @@ If you want to hire me for Kimai installation or updates, please contact me via 
 
 Depending on the type of setup, I might ask you for different types of credentials and information. These might be:
 
-- SSH / FTP connection details and user account
+- SSH connection details and user account
 - the database connection and account
 - a prepared domain with SSL certificate
+- login to your hosters web interface
 
 And if you use a shared hoster and don't know what all that means, don't worry - just drop an [email](mailto:info@keleo.de)
 
 ### Pricing
 
-I calculate the costs on an hourly basis and the amount of work depends on your setup. In most cases I can manage to install Kimai in one hour.
-Updates can often be applied even faster and we can talk about a recurring update service. 
+- Updates take roughly 30-60 minutes
+- Migration from Kimai v1 takes around 1 to 2 hours (not including the setup)
+- Installation takes between 1 to 3 hours (depending on your setup / hoster)
+- Costs will be calculated by an hourly price of 100 € 
+- I offer a recurring update service, so you always have the latest version of Kimai 
+- FTP installations are not offered
