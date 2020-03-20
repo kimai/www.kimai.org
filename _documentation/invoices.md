@@ -230,6 +230,10 @@ The documents which are rendered passively (ODS, XLSX, CSV, DOCX) can use the fo
 | ${customer.country} | The customer country |
 | ${customer.homepage} | The customer homepage |
 | ${customer.comment} | The customer comment |
+| ${customer.phone} | The customers phone number (since 1.9) |
+| ${customer.mobile} | The customers mobile number (since 1.9) |
+| ${customer.email} | The customers email address (since 1.9) |
+| ${customer.fax} | The customers fax number (since 1.9) |
 | ${customer.meta.x} | The customer [meta field]({% link _documentation/meta-fields.md %}) named `X`. The internal name `X` needs to be used in lowercase letters, eg. `FooBar` will be available as `${customer.meta.foobar}`. Only available if the field is visible.  |
 
 ### Timesheet entry variables 
@@ -308,3 +312,27 @@ If an activity was selected in the invoice filter (search form) the following va
 
 If you selected more than one project in the search, you will have further variables called `${activity.1.X}`, `${activity.2.X}` and so on.
 The order is not guaranteed, so it is not recommended to rely on those variables.  
+
+## Create invoices with cronjobs
+
+Since 1.9 Kimai comes with a new command, which allows you to create invoices from the command line.
+When combined with a cronjob, you can automate your invoice creation.
+ 
+Find all available options with the `--help` parameter:
+```bash
+bin/console kimai:invoice:create --help 
+```
+
+This command will create one invoice for every customer which had timesheets in this month.
+The invoice template that will be used is fetched from the customer meta-field `inv_tpl` (can be an ID or a template name):
+```bash
+bin/console kimai:invoice:create --user=susan_super --timezone=Europe/Berlin --by-customer --template-meta=inv_tpl 
+```
+
+This command will create one invoice for every project which had timesheets in January 2020.
+The invoice template that will be used for every invoice is `Freelancer (PDF)`:
+```bash
+bin/console kimai:invoice:create --user=susan_super --timezone=UTC --by-project --template="Freelancer (PDF)" --start=2020-01-02 --end=2020-01-31
+```
+
+
