@@ -98,7 +98,7 @@ Be aware of the following rules:
  
 New or updated templates can be uploaded via the UI. 
 
-After you created a new or updated an existing template, you might have to clear the cache to see the results:
+After you created a new or updated an existing template, you have to clear the cache to see the results:
 {% include cache-refresh.html %} 
 
 You can have a look at [https://github.com/Keleo/kimai2-invoice-templates](https://github.com/Keleo/kimai2-invoice-templates) to get some inspirations. 

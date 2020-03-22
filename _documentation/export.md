@@ -31,15 +31,35 @@ You need to tick the checkbox before creating the export, to automatically set t
 
 For further information read the [timesheet documentation]({% link _documentation/timesheet.md %}).
 
-## Adding export template
+## Adding export templates
 
 Since Kimai 1.9 you can add templates for PDF and HTML exports.
 
-New template files must be copied into the directory `var/export/` (this directory has to be created manually) 
-and the cache needs to be cleared after creating or changing a template.
+Export documents are searched in two locations:
 
-Please copy & paste the [default templates](https://github.com/kevinpapst/kimai2/tree/master/templates/export/renderer) to `var/export/` 
-as starting point. Rename it afterwards.
+- `var/export/`
+- `templates/export/renderer/`
+
+Be aware of the following rules:
+
+- HTML templates have the file extension `.html.twig`
+- PDF templates have the file extension `.pdf.twig`
+- Templates are addressed by their filename 
+- You can use every document name only once.
+  - Having `var/export/default.html.twig` and `templates/export/renderer/default.html.twig` will lead to unpredictable results 
+  - Use unique filenames and prefix them with your company name, eg `acme-export.html.twig` 
+- You should store your templates in `var/export/`, as this directory is not shipped with Kimai and not touched during updates
+- You can configure different search directories through the config key `kimai.export.documents` if you want to add additional template source directories 
+- You can hide the default templates by setting the key `kimai.export.defaults` to an empty array / null
+ 
+After you created a new or updated an existing template, you have to clear the cache to see the results:
+{% include cache-refresh.html %} 
+
+Please copy & paste one of [default templates](https://github.com/kevinpapst/kimai2/tree/master/templates/export/renderer) to `var/export/` 
+as starting point and rename it afterwards.
+
+You can translate the button for your template, by adding its name to the export translation file, eg. `translations/export.en.xlf`.
+Internally for each template a new ExportRenderer service is registered, called `exporter_renderer.filename_EXT_twig` (see `ExportServiceCompilerPass`).   
 
 ## Adding export renderer
 
