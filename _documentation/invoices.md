@@ -81,13 +81,10 @@ The invoice system currently supports the following formats:
 
 ### Create your own invoice document
 
-There is another repository with some invoice document examples in different formats. 
-If you need ideas how to start with yours, have a look at [https://github.com/Keleo/kimai2-invoice-templates](https://github.com/Keleo/kimai2-invoice-templates). 
-
 Invoice documents are searched in two locations:
 
-- `templates/invoice/renderer/`
 - `var/invoices/`
+- `templates/invoice/renderer/`
 
 Be aware of the following rules:
 
@@ -103,6 +100,8 @@ New or updated templates can be uploaded via the UI.
 
 After you created a new or updated an existing template, you might have to clear the cache to see the results:
 {% include cache-refresh.html %} 
+
+You can have a look at [https://github.com/Keleo/kimai2-invoice-templates](https://github.com/Keleo/kimai2-invoice-templates) to get some inspirations. 
 
 #### Configure search path
 
@@ -137,9 +136,14 @@ Best is to host your images on your own domain
 {% raw %}<img src="https://www.example.com/images/my-logo.png">{% endraw %}
 ```
 
+### PDF templates 
+
+These are basically the same as Twig templates. But the resulting HTML is processed by the [MPdf library](https://mpdf.github.io), 
+which will convert the HTML & CSS to PDF.
+
 ### Docx templates
 
-Docx templates are powered by [PHPWord](https://github.com/PHPOffice/PHPWord) and its `TemplateProcessor`.
+Docx templates are processed by [PHPWord](https://github.com/PHPOffice/PHPWord) and its `TemplateProcessor`.
 
 **Important:** You have to add one of the variables - either `${entry.description}` or `${entry.row}` - in one table row, 
 otherwise the records will not be rendered (but only the global values)! 

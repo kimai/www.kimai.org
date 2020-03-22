@@ -11,24 +11,35 @@ The export module allows you to export filtered timesheet data into several form
 
 There are a couple of differences in these two Kimai modules, the most important ones:
 
-- Invoices can only be created for a dedicated customer, where export can be done without selecting a customer
-- Export state is saved with each timesheet record, so you can filter whether already exported items should be included or not
+- Invoices can only be created for a dedicated customer, where an export can be created without selecting a customer
 - Invoices do more calculation (e.g. tax) 
-- Invoices support self-created templates (e.g. XLSX, ODS, DOCX)
+- Invoices support self-created templates in more formats (e.g. XLSX, ODS, DOCX)
 
 ## Security and privacy
 
 {% include alert.html type="danger" alert="The export extension DOES NOT check permissions, as this would defeat the purpose of an export." %}
 
-So giving a user the permission to export data allows to basically see everything inside Kimai.
-So all customer, projects, activities, all hourly rates, the personal time worked and the money earned becomes visible!
+So giving a user the permission to export data allows to see most time related data in Kimai 
+(like customer, projects, activities, rates, time worked per user and more).
 
 ## Export state
 
-Invoices and exports share the export state, which is used to mark timesheet records a processed. 
+Invoices and exports share the export state, which is used to mark timesheet records as processed. 
 These records cannot be edited any longer by regular users and are excluded by default from further invoices and exports.
  
+You need to tick the checkbox before creating the export, to automatically set the export state on all filtered timesheet records.
+
 For further information read the [timesheet documentation]({% link _documentation/timesheet.md %}).
+
+## Adding export template
+
+Since Kimai 1.9 you can add templates for PDF and HTML exports.
+
+New template files must be copied into the directory `var/export/` (this directory has to be created manually) 
+and the cache needs to be cleared after creating or changing a template.
+
+Please copy & paste the [default templates](https://github.com/kevinpapst/kimai2/tree/master/templates/export/renderer) to `var/export/` 
+as starting point. Rename it afterwards.
 
 ## Adding export renderer
 
