@@ -143,7 +143,8 @@ LoadModule rewrite_module libexec/apache2/mod_rewrite.so
 
 This is not officially supported, basically because I have no way to test it...
 
-But there is a [discussion in the issue tracker]({{ site.kimai_v2_repo }}/issues/979#issuecomment-514895906) and a 
+But there are some discussions in the issue tracker [here]({{ site.kimai_v2_repo }}/issues/979#issuecomment-514895906) and 
+[here]({{ site.kimai_v2_repo }}/issues/1583#issuecomment-604258299) and a 
 [Symfony documentation page](https://symfony.com/doc/3.4/deployment/azure-website.html#configure-the-web-server) which could help.
 
 ## Reverse proxy
