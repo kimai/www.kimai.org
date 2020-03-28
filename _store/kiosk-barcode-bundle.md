@@ -52,6 +52,7 @@ You can test it in the ["Plugins" demo](https://www.kimai.org/demo/).
   - Display current barcode (randomly generated if empty)
   - Regenerate random barcode
   - Re-use existing barcode for user
+- User specific settings for allowed start and end time (user can only clock in between these times)
 
 You need to configure a non-global activity for starting the record via this plugin. 
 This will be used for every recorded timesheet that is created using the kiosk mode.
@@ -66,7 +67,7 @@ This plugin is compatible with the following Kimai releases:
 
 | Bundle version    | Kimai 2 version           |
 | ---               |---                        |
-| 1.0, 1.1          | 1.8                       |
+| 1.0 - 1.3         | 1.8                       |
 {: .table }
 
 ## Installation
@@ -103,8 +104,10 @@ This bundle ships a new permission, which limit access to certain functions:
 
 - `barcode_own_profile` - allows to see and administrate barcode for the own user profile
 - `barcode_other_profile` - allows to see and administrate barcode for all user profiles
+- `kiosk_own_profile` - allows to configure user specific kiosk settings (eg. start and end time) for the own user profile 
+- `kiosk_other_profile` - allows to configure user specific kiosk settings (eg. start and end time) for all user profiles 
 
-By default, it is assigned to each user with the role `ROLE_SUPER_ADMIN`.
+By default these are granted to each user with the role `ROLE_SUPER_ADMIN`.
 
 **Please adjust all permission settings in your administration.** 
 
