@@ -154,3 +154,12 @@ framework:
 ```
 
 See also: [Symfony documentation](https://symfony.com/doc/current/reference/configuration/framework.html#cookie-lifetime)
+
+### Admin password forgotten
+
+If you lost your admin password and don't have another admin account to reset it and deactivated the "forgot password" function, 
+you can use the following console command:
+
+```bash
+bin/console fos:user:change-password
+```
