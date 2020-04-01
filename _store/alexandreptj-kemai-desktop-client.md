@@ -12,3 +12,12 @@ tags:
   - client
 new: true
 ---
+
+Kemai is a cross-platform desktop client for Kimai.
+
+## Features
+
+Kemai aims to ease regular task on Kimai :
+
+- Start / Stop activity
+- Basic management of clients, projects and activities (soon)
