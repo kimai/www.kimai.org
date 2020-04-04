@@ -11,16 +11,11 @@ The recommended way to install Kimai v2 is via SSH, you need GIT and [Composer](
 To install Kimai 2 in your production environment, connect with SSH to your server and change to your webservers (document) root directory.
 You need to install Git and [Composer](https://getcomposer.org/doc/00-intro.md) if you haven't already. 
 
-First clone this repo ({{ site.kimai_v2_version }} is the [latest stable release]({{ site.kimai_v2_repo }}/releases)):
+Create a new composer project ({{ site.kimai_v2_version }} is the [latest stable release]({{ site.kimai_v2_repo }}/releases)):
 
 ```bash
-git clone -b {{ site.kimai_v2_version }} --depth 1 https://github.com/kevinpapst/kimai2.git
+composer create-project "kevinpapst/kimai2:^{{ site.kimai_v2_version }}" kimai2
 cd kimai2/
-```
-
-Now install all dependencies:
-```bash
-composer install --no-dev --optimize-autoloader
 ```
 
 Configure the database connection in the `.env` file:
