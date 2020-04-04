@@ -14,7 +14,7 @@ You need to install Git and [Composer](https://getcomposer.org/doc/00-intro.md) 
 Create a new composer project ({{ site.kimai_v2_version }} is the [latest stable release]({{ site.kimai_v2_repo }}/releases)):
 
 ```bash
-composer create-project "kevinpapst/kimai2:^{{ site.kimai_v2_version }}" kimai2
+composer create-project "kevinpapst/kimai2:^{{ site.kimai_v2_version }}" kimai2 --no-dev
 cd kimai2/
 ```
 
