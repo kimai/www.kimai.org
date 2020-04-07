@@ -124,19 +124,27 @@ Generally speaking, you should use only the variable `model` in your template wh
 Please see the [default templates]({{ site.kimai_v2_file }}/templates/invoice/renderer) at 
 GitHub to find out which variables can be used. 
 
-Want to include an image in your template? Simply use an image tag. This points to the directory `public/images/my-logo.png`:
+Want to include an image in your template? Use the `asset` tag for referencing relative URLs (this example points to the directory `public/images/my-logo.png`):
  
 ```twig
 {% raw %}<img src="{{ asset('images/my-logo.png') }}">{% endraw %}
 ```
 
-Best is to host your images on your own domain
+But the safest way is to host your images on your own domain:
 
 ```twig
 {% raw %}<img src="https://www.example.com/images/my-logo.png">{% endraw %}
 ```
 
+Want to include a file in your template? 
+Use the twig include feature with the `@invoice` namespace . The following example references the file `bar.html.twig` in `var/invoices/foo/`:
+```
+{% raw %}{% include '@invoice/foo/bar.html.twig' %}{% endraw %}
+``` 
+
 ### PDF templates 
+
+PDF invoice templates are available since Kimai 1.9
 
 These are basically the same as Twig templates. But the resulting HTML is processed by the [MPdf library](https://mpdf.github.io), 
 which will convert the HTML & CSS to PDF.
