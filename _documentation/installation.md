@@ -116,6 +116,18 @@ How to install Kimai:
 
 Reload your configuration `/opt/RZphp73/bin/php-cli bin/console kimai:reload`
 
+### Netcup
+
+- Clone Kimai in the root folder as stated above and then `cd kimai2`
+- Install composer: `curl -sS https://getcomposer.org/installer | /usr/bin/php`
+- Install dependencies: `php composer.phar install --no-dev --optimize-autoloader`
+- configure your .env file, eg. `nano .env`
+- install kimai: `php bin/console kimai:install -n`
+- reload config: `php bin/console kimai:reload`
+- Configure Netcup (using the customer controlpanel) to use "/kimai2/public" as root folder for the domain (or subdomain) of your choice and add SSL (Letsencrypt) for this domain
+
+See issue [#1620](https://github.com/kevinpapst/kimai2/issues/1620).
+
 ## FTP installation
 
 This is NOT recommended, but still widely used ... 
