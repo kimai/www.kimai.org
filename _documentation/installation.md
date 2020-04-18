@@ -98,6 +98,15 @@ If you can't find the correct version, ask your hoster! Or [let us help you]({% 
   - Example composer: `/usr/bin/php7.3-cli composer.phar install --no-dev --optimize-autoloader`
   - Example installation: `/usr/bin/php7.3-cli bin/console kimai:install -n`
 
+### Domainfactory
+
+- GIT is normally pre-installed and can be used via SSH
+- composer has to be installed manually
+- The default PHP version is often too low (PHP 5.x) - you can check that with `php -v`
+  - If it is lower than 7.2, you have to prefix all commands with the proper version, eg. `/usr/local/bin/php7-73STABLE-CLI` (even composer)
+  - Example composer: `/usr/local/bin/php7-73STABLE-CLI composer.phar install --no-dev --optimize-autoloader`
+  - Example installation: `/usr/local/bin/php7-73STABLE-CLI bin/console kimai:install -n`
+
 ### Strato 
 
 Strato has a special setup of PHP, you need to find the proper version first.
