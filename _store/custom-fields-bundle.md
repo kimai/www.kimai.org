@@ -38,7 +38,7 @@ You can create as many fields as you want for each data type, where each field:
 - has its own visibility, so the access can be restricted:
     - to certain customer/project/activity combinations (eg. a "location" field will only be shown for customer X and project Y)
     - to users with certain permissions or roles
-- can be described with a name and help text  
+- can be described with a name and help text
 - has a maximum length of 255 character
 
 The custom fields will be shown on the "create and edit entity" forms and can have the following types:
@@ -48,14 +48,16 @@ The custom fields will be shown on the "create and edit entity" forms and can ha
 - `number`
 - `duration`
 - `money`
-- `checkbox`
 - `language`
 - `currency`
 - `country`
 - `color`
 - `date`
 - `datetime`
-- `boolean` (use: 1 = checked/true or 0 = unchecked/false)
+- `email`
+- `textarea`
+- `invoice template`
+- `checkbox` (boolean, use: 1 = checked/true or 0 = unchecked/false)
 - `choice-list` (add entries comma separated into default-value field)
 
 The custom-field data is then available in:
@@ -70,8 +72,7 @@ Be aware:
 
 - Restricted fields won't be visible on the create forms, as Kimai initially can't know if the rule will apply. In these cases the form will only be shown in the edit forms.
 - Sensitive data can be configured as "invisible", so it will not show up in the above mentioned places.
-
-More information about custom fields can be found in the [documentation](https://www.kimai.org/documentation/meta-fields.html).
+- Custom fields for users are not exported via the API (this is a limitation in the core application) 
 
 ## Purchase
 
@@ -81,18 +82,15 @@ More information about custom fields can be found in the [documentation](https:/
 
 This plugin is compatible with the following Kimai releases:
 
-| Bundle version    | Kimai 2 version           |
+| Bundle version    | Minimum Kimai 2 version   |
 | ---               |---                        |
-| 1.8               | 1.7                       |
-| 1.7               | 1.6.2                     |
-| 1.6               | 1.6.2                     |
+| 1.10              | 1.9                       |
+| 1.8 - 1.9         | 1.7                       |
+| 1.6 - 1.7         | 1.6.2                     |
 | 1.5               | 1.6                       |
-| 1.4.1             | 1.4                       |
-| 1.4               | 1.6 (due to a mistake)    |
-| 1.3.2             | 1.4                       |
-| 1.2               | 1.1, 1.2, 1.3             |
-| 1.1.1             | 1.1                       |
-| 1.0               | 1.0, 1.0.1                |
+| 1.3.2 - 1.4.1     | 1.4                       |
+| 1.1.1 - 1.2       | 1.1                       |
+| 1.0               | 1.0                       |
 {: .table }
 
 ## Installation

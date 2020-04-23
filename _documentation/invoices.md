@@ -196,6 +196,7 @@ The documents which are rendered passively (ODS, XLSX, CSV, DOCX) can use the fo
 | ${invoice.currency_symbol} | The invoice currency as symbol (if available) |
 | ${invoice.total_time} | The total working time (entries with a fixed rate are always calculated with 1) |
 | ${invoice.duration_decimal} | The total working time as decimal value |
+| ${invoice.language} | The invoices language as two character code (since 1.9) |
 | ${invoice.total} | The invoices total (including tax) with currency |
 | ${invoice.total_nc} | The invoices total (including tax) without currency (since 1.6) |
 | ${invoice.total_plain} | The invoices total (including tax) as unformatted value (since 1.6.2) |
@@ -218,10 +219,18 @@ The documents which are rendered passively (ODS, XLSX, CSV, DOCX) can use the fo
 | ${template.payment_details} | Extended payment details like bank accounts, might be multiple lines (since 1.6) |
 | ${query.begin} | The query begin as formatted short date |
 | ${query.end} | The query end as formatted short date |
-| ${query.month} | The month for this query (begin date) |
-| ${query.month_number} | The numerical value for the month (with leading zero) |
-| ${query.day} | The day for the queries begin as numerical value with leading zero |
-| ${query.year} | The year for this query (begin date) |
+| ${query.month} | The month for this query (begin date) **DEPRECATED** |
+| ${query.month_number} | The numerical value for the month (with leading zero) **DEPRECATED** |
+| ${query.day} | The day for the queries begin as numerical value with leading zero **DEPRECATED** |
+| ${query.year} | The year for this query (begin date) **DEPRECATED** |
+| ${query.begin_month} | The month for the queries begin date (since 1.9) |
+| ${query.begin_month_number} | The numerical value for the month of the queries begin date with leading zero (since 1.9) |
+| ${query.begin_day} | The day for the queries begin as numerical value with leading zero (since 1.9) |
+| ${query.begin_year} | The year for the queries begin date (since 1.9) |
+| ${query.end_month} | The month for the queries end date (since 1.9) |
+| ${query.end_month_number} | The numerical value for the month of the queries end date with leading zero (since 1.9) |
+| ${query.end_day} | The day for the queries end as numerical value with leading zero (since 1.9) |
+| ${query.end_year} | The year for the queries end date (since 1.9) |
 | ${user.name} | The current users name |
 | ${user.email} | The current users email  |
 | ${user.alias} | The current users alias  |

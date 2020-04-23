@@ -177,12 +177,11 @@ Each meta field has its own visibility, which determines whether the field will 
 in the following places:
 
 - Export
-- Invoice
 - API
 - Datatables
 
-The default visibility is `false` (hidden). If you want to use the meta fields value in your invoices or show them in 
-the data tables (eg. timesheets), then you have to set its visibility to true (see EventSubscriber example above).
+The default visibility is `false` (hidden). If you want to show the meta fields in the datatables (eg. timesheets), 
+then you have to set `visibility` to `true` (see EventSubscriber example above).
 
 Be aware: the visibility is stored with the meta field, so changing its value via the EventSubscriber 
 does NOT change the visibility of already saved meta fields, just for new ones. 
