@@ -152,18 +152,18 @@ Now read on: [Kimai FTP installation + tips and tricks]({% link _documentation/f
 
 ## Installation FAQ
 
-### SQLite not recommended for production usage
+### SQLite not supported for production usage
 
 SQLite is a great database engine for testing, but when it comes to production usage it is not recommended for Kimai:
 
-- It does not support ALTER TABLE commands and makes update procedures very clunky and problematic (I try to support updates, but they are heavy on large databases)
+- It does not support ALTER TABLE commands and makes update procedures clunky and problematic (I try to support updates, but they are heavy on large databases)
 - It does [not support FOREIGN KEY](https://www.sqlite.org/quirks.html#foreign_key_enforcement_is_off_by_default) constraints [out of the box](https://www.sqlite.org/foreignkeys.html#fk_enable), which can lead to critical bugs when deleting users/activities/projects/customers
 
-Kimai works around the Foreign Keys issue by using a 
+Kimai tries to work around the Foreign Keys issue by using a 
 [Doctrine PostConnect EventSubscriber]({{ site.kimai_v2_file }}/src/Doctrine/SqliteSessionInitSubscriber.php), 
-but this is not intended to be used in large production setups and it can't be guaranteed that SQLite handles everything as expected.
+but this does not work in all environments, it is not intended to be used in large production setups and it can't be guaranteed that SQLite handles everything as expected!
 
-If you insist on using SQLite: make a copy of the database file BEFORE each update, to prevent possible data loss ... and don't file any bug report - you have been warned!
+If you insist on using SQLite: make a copy of the database file BEFORE each update, to prevent possible data loss ... **and don't file any bug report - you have been warned!**
 
 ### SQLSTATE[HY000] [2006] MySQL server has gone away
 
@@ -210,7 +210,7 @@ You can try first leaving `sudo -u www-data` altogether in the relevant commands
 If you have permission errors, you can substitute it for `sudo -u $USER` in the relevant commands, where username is the 
 username that runs the server - if you don't know, it is likely your own username that you login with.
 
-### chown & chmod commands
+#### chown & chmod commands
 
 Further, `chown` and `chmod` commands should be for the username that runs the server instead of `www-data` (again, if you 
 don't know, it is likely your own username).
@@ -219,7 +219,7 @@ Also note that, depending on where you are installing Kimai 2 and how your compu
 "operation not permitted" errors when setting file permissions (`chown` and `chmod` commands). 
 In that case, prefix them with `sudo`.
 
-### Still doesn't work?
+#### Still doesn't work?
 
 These infos were added to give you some possible guidance if you run into troubles. The Linux (and Mac) filesystem 
 with its permission structure, especially when using server software, can be tricky and challenging.
