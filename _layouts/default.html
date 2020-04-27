@@ -33,8 +33,16 @@ layout: base
                     <div class="d-flex d-sm-none">
                         <a href="{{ site.data.trans-menu[page.lang].download.url }}" title="{{ site.data.trans-menu[page.lang].download.title }}" class="nav-link icon"><i class="{{ site.data.trans-menu[page.lang].download.icon }}"></i></a>
                     </div>
+                    <div class="d-flex d-sm-none">
+                        <a href="{{ site.data.trans-menu[page.lang].hosted.url }}" title="{{ site.data.trans-menu[page.lang].hosted.title }}" class="nav-link icon"><i class="{{ site.data.trans-menu[page.lang].hosted.icon }}"></i></a>
+                    </div>
+                    {% comment %}
                     <div class="nav-item d-none d-sm-flex">
                         <a href="{{ site.data.trans-menu[page.lang].download.url }}" title="{{ site.data.trans-menu[page.lang].download.title }}" class="btn btn-sm btn-outline-primary"> {{ site.data.trans-menu[page.lang].download.name }}</a>
+                    </div>
+                    {% endcomment %}
+                    <div class="nav-item d-none d-sm-flex">
+                        <a href="{{ site.data.trans-menu[page.lang].hosted.url }}" title="{{ site.data.trans-menu[page.lang].hosted.title }}" class="btn btn-sm btn-primary"> {{ site.data.trans-menu[page.lang].hosted.name }}</a>
                     </div>
                 </div>
 
@@ -87,6 +95,8 @@ layout: base
                 <div class="row align-items-center">
                     <div class="col-auto">
                         <ul class="list-inline list-inline-dots mb-0">
+                            <li class="list-inline-item"><a href="{{ site.data.trans-menu[page.lang].donate.url }}" title="{{ site.data.trans-menu[page.lang].donate.title }}">{{ site.data.trans-menu[page.lang].donate.name }}</a></li>
+                            <li class="list-inline-item"><a href="{{ site.data.trans-menu[page.lang].twitter.url }}" title="{{ site.data.trans-menu[page.lang].twitter.title }}">{{ site.data.trans-menu[page.lang].twitter.name }}</a></li>
                             <li class="list-inline-item"><a href="{{ site.data.trans-menu[page.lang].site-notice.url }}" rel="nofollow">{{ site.data.trans-menu[page.lang].site-notice.name }}</a></li>
                             <li class="list-inline-item"><a href="{{ site.data.trans-menu[page.lang].privacy-policy.url }}" rel="nofollow">{{ site.data.trans-menu[page.lang].privacy-policy.name }}</a></li>
                         </ul>
