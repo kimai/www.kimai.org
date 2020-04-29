@@ -100,12 +100,12 @@ If you can't find the correct version, ask your hoster! Or [let us help you]({% 
 
 ### Domainfactory
 
-- GIT is normally pre-installed and can be used via SSH
-- composer has to be installed manually
-- The default PHP version is often too low (PHP 5.x) - you can check that with `php -v`
-  - If it is lower than 7.2, you have to prefix all commands with the proper version, eg. `/usr/local/bin/php7-73STABLE-CLI` (even composer)
-  - Example composer: `/usr/local/bin/php7-73STABLE-CLI composer.phar install --no-dev --optimize-autoloader`
-  - Example installation: `/usr/local/bin/php7-73STABLE-CLI bin/console kimai:install -n`
+- GIT is pre-installed and can be used via SSH
+- composer has to be installed manually: `curl -sS https://getcomposer.org/installer | php7.3.5-cli`
+- The default PHP version is often too low (PHP 5.x or even PHP 4.x) - you can check that with `php -v`
+  - If it is lower than 7.2, you have to prefix all commands with the proper version, eg. `php7.3.5-cli` (even composer)
+  - Example composer: `php7.3.5-cli composer.phar install --no-dev --optimize-autoloader`
+  - Example installation: `php7.3.5-cli bin/console kimai:install -n`
 
 ### Strato 
 
