@@ -55,7 +55,7 @@ Please note:
   - you can still change the customer on timesheet records and projects, which used it before
   - you cannot create new projects for this customer
   - you cannot create new timesheet records for this customer 
-- you can still access the hidden entries by changing the visibility filter on the the toolbars 
+- you can still access the hidden entries by changing the visibility filter on the toolbars
 
 The visibility filter in the toolbar has three state: 
 - Visible: Yes (all customers that are visible)

@@ -33,7 +33,7 @@ Please note:
   - you can still change the project on timesheet records and activities, which used it before
   - you cannot create new activities for this project
   - you cannot create new timesheet records for this project 
-- you can still access the hidden entries by changing the visibility filter on the the toolbars 
+- you can still access the hidden entries by changing the visibility filter on the toolbars
 
 The visibility filter in the toolbar has three state: 
 - Visible: Yes (all projects that are "really" visible, meaning: the project and linked customer are visible)

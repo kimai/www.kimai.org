@@ -130,7 +130,7 @@ class UserProfileSubscriber implements EventSubscriberInterface
 ### Displaying and exporting UserPreferences 
 
 With Kimai 1.4 you can display and export user preferences. 
-Supported fields will be shown as new columns in the the data-table for users.
+Supported fields will be shown as new columns in the data-table for users.
 Additionally these preferences will be added to HTML and Spreadsheet exports. 
 
 As Kimai cannot query all existing users for possible preferences, you need to listen to a new event and register the desired preference. 

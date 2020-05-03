@@ -106,7 +106,7 @@ Attention: `setLabel()` and `setOptions()` will be added with 1.4.
 ### Displaying and exporting custom fields
 
 With Kimai 1.4 you can display and export custom fields. 
-Supported fields will be shown as new columns in the the data-tables for timesheets, customers, projects and activities. 
+Supported fields will be shown as new columns in the data-tables for timesheets, customers, projects and activities.
 Additionally these fields will be added to HTML and Spreadsheet exports. 
 
 As Kimai cannot query all existing records for possible custom fields, you need to listen to new events and 
