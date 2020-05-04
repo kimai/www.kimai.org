@@ -41,7 +41,7 @@ You can install it on the same server, but remember that you have to meet the se
 After Kimai 2 runs properly, the actual *migration* takes place, by importing the data from your Kimai 1 database into Kimai 2.
 You have to have SSH access to your server, as you will use a command shipped with Kimai 2, which will pull the data into the configured database from your `.env` file.
 
-The database does not have to be on the same server and the the database user (for the Kimai 1 tables) needs only read access.
+The database does not have to be on the same server and the database user (for the Kimai 1 tables) needs only read access.
      
 ## Database import
 

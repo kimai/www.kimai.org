@@ -75,7 +75,7 @@ Now you [can upgrade]({% link _documentation/updates.md %}) :-)
 
 You restored Kimai (as documented above), but have problems when accessing it?
 
-Maybe you have have missed an upgrade steps, which you would have done when executing a [normal upgrade]({% link _documentation/updates.md %}).
+Maybe you have missed an upgrade steps, which you would have done when executing a [normal upgrade]({% link _documentation/updates.md %}).
 
 Please check the [UPGRADING]({{ site.kimai_v2_file }}/UPGRADING.md) guide and make sure you executed all version specific tasks.
 

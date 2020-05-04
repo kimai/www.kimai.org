@@ -22,7 +22,7 @@ git fetch --tags
 git checkout {{ site.kimai_v2_version }}
 ```
 
-You might have to prefix the the next commands with `sudo` and/or `php73` (depends on your environment):
+You might have to prefix the next commands with `sudo` and/or `php73` (depends on your environment):
 
 Update all composer dependencies:
 ```bash

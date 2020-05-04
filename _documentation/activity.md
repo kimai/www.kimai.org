@@ -40,7 +40,7 @@ Please note:
 - all currently linked objects will still show the activity in the dropdown as pre-selected option
   - you can still change the activity on timesheet record, which used it before
   - you cannot create new timesheet records for this activity 
-- you can still access the hidden entries by changing the visibility filter on the the toolbars 
+- you can still access the hidden entries by changing the visibility filter on the toolbars
 
 The visibility filter in the toolbar has three state: 
 - Visible: Yes (all activities that are "really" visible, meaning: the activity, linked project and customer are visible)
