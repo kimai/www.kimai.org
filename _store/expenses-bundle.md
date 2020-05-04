@@ -58,9 +58,9 @@ This plugin is compatible with the following Kimai releases:
 
 | Bundle version    | Kimai 2 version  |
 |---                |---               |
-| 1.7               | 1.7              |
-| 1.6               | 1.6.2            |
-| 1.5               | 1.6.2            |
+| 1.11              | 1.9              |
+| 1.7 - 1.10        | 1.7              |
+| 1.5 - 1.6         | 1.6.2            |
 | 1.4               | 1.6.1            |
 | 1.3               | 1.6              |
 | 1.2               | 1.4              |
