@@ -82,9 +82,10 @@ This widget features the following UI elements (if permissions are set for the u
 
 This plugin is compatible with the following Kimai releases:
 
-| Bundle version    | Kimai 2 version           |
-| ---               |---                        |
-| 1.0               | 1.7                       |
+| Bundle version    | Kimai 2 version   |
+| ---               |---                |
+| 1.3               | 1.9               |
+| 1.0 - 1.2         | 1.7               |
 {: .table }
 
 ## Installation
