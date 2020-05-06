@@ -8,7 +8,7 @@ icon: fas fa-desktop
 price: "0"
 screenshot: 
   - /images/marketplace/kemai-running.jpg
-  - /images/marketplace/kemai-settings.png
+  - /images/marketplace/kemai-settings.jpg
   - /images/marketplace/kemai-add-project.jpg
 download: https://github.com/alexandreptj/kemai/releases/latest
 github: https://github.com/alexandreptj/kemai
