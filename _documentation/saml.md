@@ -140,6 +140,17 @@ so he can't login via password any longer.
 Additional all configured SAML attributes will be applied. 
 To change such an account back to "password login", you need to update the `auth` column in the `kimai2_users` table and set the value from `saml` to `kimai`.
 
+## Using SAML only
+
+Kimai does not support **SAML only** out of the box, but you can disable the normal login flow yb redirecting the URLs to the SAML login.
+
+This is an example for Apache: 
+
+```
+RewriteEngine On
+RewriteRule  /(..)/login /auth/saml/login [L,R=301]
+```
+
 ## Troubleshooting
 
 ### Proxy and http vs https
