@@ -29,4 +29,27 @@ You might have to set file permissions afterwards:
 
 {% include file-permissions.html %} 
 
+{% if include.command != nil %}
+
+### Create database
+
+Run the following command:
+
+```bash
+bin/console {{ include.command }}
+```
+
+This will install all required databases.
+{% endif %}
+
+{% if include.assets != nil %}
+
+### Install the bundle assets
+
+The following command will install the required assets (images, javascripts, styles):
+
+```bash
+bin/console assets:install
+```
+{% endif %}
 {% endif %}

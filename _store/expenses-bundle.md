@@ -30,6 +30,7 @@ These spendings can be categorized and included in your Kimai generated invoices
 - All (refundable) expenses will be automatically included in your invoices
 - Manage expenses via API
 - Import expenses from Kimai 1
+- Support for custom fields (see [Custom-fields plugin]({% link _store/custom-fields-bundle.md %}))
 
 Expenses are sorted into free configurable types (categories). Each type has a:
 - name 
@@ -54,33 +55,22 @@ Each expense has the following fields:
 
 ### Compatibility
 
-This plugin is compatible with the following Kimai releases:
+Please make sure to use the correct version of the plugin, which must be compatible with your Kimai version:
 
-| Bundle version    | Kimai 2 version  |
-|---                |---               |
-| 1.11              | 1.9              |
-| 1.7 - 1.10        | 1.7              |
-| 1.5 - 1.6         | 1.6.2            |
-| 1.4               | 1.6.1            |
-| 1.3               | 1.6              |
-| 1.2               | 1.4              |
-| 1.1               | 1.4              |
-| 1.0               | 1.3              |
+| Bundle version    | Minimum Kimai 2 version   |
+|---                |---                        |
+| 1.11 - 1.12       | 1.9                       |
+| 1.7 - 1.10        | 1.7 - 1.8                 |
+| 1.5 - 1.6         | 1.6.2                     |
+| 1.4               | 1.6.1                     |
+| 1.3               | 1.6                       |
+| 1.1 - 1.2         | 1.4 - 1.5                 |
+| 1.0               | 1.3                       |
 {: .table }
 
 ## Installation
 
-{% include store-plugin-installation.md plugin="ExpensesBundle" %}
-
-### Install the bundle database
-
-Run the following command:
-
-```bash
-bin/console kimai:bundle:expenses:install
-```
-
-This will install all required databases.
+{% include store-plugin-installation.md plugin="ExpensesBundle" command="kimai:bundle:expenses:install" %}
 
 ## Usage
 

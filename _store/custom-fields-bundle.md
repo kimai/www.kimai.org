@@ -31,6 +31,7 @@ Configure additional fields in various formats for the following data types:
 - `Projects`
 - `Activities`
 - `User`
+- `Expenses` - see [Expenses plugin]({% link _store/expenses-bundle.md %})
 
 You can create as many fields as you want for each data type, where each field:
 
@@ -80,32 +81,22 @@ Be aware:
 
 ### Compatibility
 
-This plugin is compatible with the following Kimai releases:
+Please make sure to use the correct version of the plugin, which must be compatible with your Kimai version:
 
 | Bundle version    | Minimum Kimai 2 version   |
 | ---               |---                        |
-| 1.10              | 1.9                       |
-| 1.8 - 1.9         | 1.7                       |
+| 1.10 - 1.11       | 1.9                       |
+| 1.8 - 1.9         | 1.7 - 1.8                 |
 | 1.6 - 1.7         | 1.6.2                     |
-| 1.5               | 1.6                       |
-| 1.3.2 - 1.4.1     | 1.4                       |
-| 1.1.1 - 1.2       | 1.1                       |
+| 1.5               | 1.6 - 1.6.1               |
+| 1.3.2 - 1.4.1     | 1.4 - 1.5                 |
+| 1.1.1 - 1.2       | 1.1 - 1.3                 |
 | 1.0               | 1.0                       |
 {: .table }
 
 ## Installation
 
-{% include store-plugin-installation.md plugin="MetaFieldsBundle" %}
-
-### Create database
-
-Run the following command:
-
-```bash
-bin/console kimai:bundle:metafields:install
-```
-
-This will install all required databases.
+{% include store-plugin-installation.md plugin="MetaFieldsBundle" command="kimai:bundle:metafields:install" %}
 
 ## Usage
 

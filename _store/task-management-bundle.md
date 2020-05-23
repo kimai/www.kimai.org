@@ -80,27 +80,17 @@ This widget features the following UI elements (if permissions are set for the u
 
 ### Compatibility
 
-This plugin is compatible with the following Kimai releases:
+Please make sure to use the correct version of the plugin, which must be compatible with your Kimai version:
 
-| Bundle version    | Kimai 2 version   |
-| ---               |---                |
-| 1.3               | 1.9               |
-| 1.0 - 1.2         | 1.7               |
+| Bundle version    | Minimum Kimai 2 version   |
+| ---               |---                        |
+| 1.3               | 1.9                       |
+| 1.0 - 1.2         | 1.7 - 1.8                 |
 {: .table }
 
 ## Installation
 
-{% include store-plugin-installation.md plugin="TaskManagementBundle" %}
-
-### Install the bundle database
-
-Run the following command:
-
-```bash
-bin/console kimai:bundle:tasks:install
-```
-
-This will install all required databases.
+{% include store-plugin-installation.md plugin="TaskManagementBundle" command="kimai:bundle:tasks:install" %}
 
 ## Permissions
 

@@ -63,27 +63,16 @@ This will be used for every recorded timesheet that is created using the kiosk m
 
 ### Compatibility
 
-This plugin is compatible with the following Kimai releases:
+Please make sure to use the correct version of the plugin, which must be compatible with your Kimai version:
 
-| Bundle version    | Kimai 2 version           |
+| Bundle version    | Minimum Kimai 2 version   |
 | ---               |---                        |
-| 1.0 - 1.3         | 1.8                       |
+| 1.0 - 1.3         | 1.8 - 1.9                 |
 {: .table }
 
 ## Installation
 
-{% include store-plugin-installation.md plugin="KioskBundle" %}
-
-### Install the bundle database and assets
-
-Run the following command:
-
-```bash
-bin/console kimai:bundle:kiosk:install
-bin/console assets:install
-```
-
-This will install all required databases and javascript libraries.
+{% include store-plugin-installation.md plugin="KioskBundle" command="kimai:bundle:kiosk:install" assets=true %}
 
 ## Configure the plugin
 
