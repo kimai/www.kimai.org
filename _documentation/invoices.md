@@ -89,16 +89,16 @@ Invoice documents are searched in two locations:
 Be aware of the following rules:
 
 - Documents are addressed by their filename without extension (e.g. `kimai.html.twig` results in `kimai`) 
-- You can use every document name only once: so having `kimai.html.twig` and `kimai.docx` will lead to unpredictable results 
-  - The first file to be found takes precedence 
-- Kimai looks first in `var/invoices/`, so you can overwrite default templates
+- You can use every document name only once: so having `kimai.html.twig` and `kimai.docx` will lead to unpredictable results (the first file to be found takes precedence) 
+- Kimai looks for templates in `var/invoices/` first, so you can overwrite default templates
 - You should store your templates in `var/invoices/`, as this directory is not shipped with Kimai and not touched during updates
 - You can configure different search directories through the config key `kimai.invoice.documents` if you want to add additional template source directories 
 - You can hide the default templates by setting the key `kimai.invoice.defaults` to an empty array / null
+- New or updated templates can be uploaded via the UI
  
-New or updated templates can be uploaded via the UI. 
-
-After you created a new or updated an existing template, you have to clear the cache to see the results:
+{% include alert.html icon="fas fa-exclamation" type="warning" alert="Do NOT change the default templates, but copy the file and save it (with a new filename) at var/invoices/" %}
+ 
+After you changed an invoice template, you have to clear the cache to see the results:
 {% include cache-refresh.html %} 
 
 You can have a look at [https://github.com/Keleo/kimai2-invoice-templates](https://github.com/Keleo/kimai2-invoice-templates) to get some inspirations. 
