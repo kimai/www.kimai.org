@@ -101,6 +101,25 @@ Help:
   Supported columns names: Date, From, To, Duration, Rate, User, Customer, Project, Activity, Description, Exported, Tags, Hourly rate, Fixed rate
 ```
 
+### Example
+
+```csv
+"Date","From","To","Duration","Rate","User","Customer","Project","Activity","Description","Exported","Tags","Hourly rate","Fixed rate"
+"2020-05-04","15:50","17:51","7260","231.92","user@example.com","Customer LLC","My project", "Testing","some work has been done","0","foo,bar","115.00","0"
+```
+
+- Date: format `Y-m-d`
+- From and To: should be given in 24h format
+- Duration: in seconds
+- Rate: A floating number of the records rate (optional, if you don't set the value it will be calculated)
+- Hourly Rate: A floating number for the hourly rate (optional, if you don't set the value it will be calculated)
+- Fixed Rate: A floating number for the fixed rate of this record (optional, you can skip this column)
+- Customer, Project and Activity: will be matched by name
+- User: will be matched by username or email
+- Exported: can be `0` or `1` (0 = new, 1 = exported)
+- Tags: comma separated list of tag names
+
+
 ## Links
 
 There is also a user contributed plugin for importing CSV data, which can be found here:
