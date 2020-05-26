@@ -5,6 +5,5 @@ hosted: false
 order: 1000
 ---
 
-No database setup required, Kimai has SQLite support out-of-the-box. 
-
-Kimai also supports MySQL and MariaDB as well!
+No database setup required for testing, Kimai has SQLite support out-of-the-box. 
+For production usage Kimai requires MariaDB (or MySQL)!

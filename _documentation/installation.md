@@ -154,16 +154,19 @@ Now read on: [Kimai FTP installation + tips and tricks]({% link _documentation/f
 
 ### SQLite not supported for production usage
 
-SQLite is a great database engine for testing, but when it comes to production usage it is not recommended for Kimai:
+SQLite is a great database engine for testing, but when it comes to **production usage it is not supported for Kimai**:
 
 - It does not support ALTER TABLE commands and makes update procedures clunky and problematic (I try to support updates, but they are heavy on large databases)
 - It does [not support FOREIGN KEY](https://www.sqlite.org/quirks.html#foreign_key_enforcement_is_off_by_default) constraints [out of the box](https://www.sqlite.org/foreignkeys.html#fk_enable), which can lead to critical bugs when deleting users/activities/projects/customers
 
 Kimai tries to work around the Foreign Keys issue by using a 
 [Doctrine PostConnect EventSubscriber]({{ site.kimai_v2_file }}/src/Doctrine/SqliteSessionInitSubscriber.php), 
-but this does not work in all environments, it is not intended to be used in large production setups and it can't be guaranteed that SQLite handles everything as expected!
+but this does not work in all environments (SQLite needs to be compiled with foreign support), 
+it is not intended to be used in production environments and it can't be guaranteed that SQLite handles everything as expected!
 
-If you insist on using SQLite: make a copy of the database file BEFORE each update, to prevent possible data loss ... **and don't file any bug report - you have been warned!**
+If you insist on using SQLite: make a copy of the database file BEFORE each update to prevent possible data loss and don't ever delete data that is already linked to other data (like customers/projects/activities used in timesheets) ... 
+
+**And don't file any bug report - you have been warned!**
 
 ### SQLSTATE[HY000] [2006] MySQL server has gone away
 
