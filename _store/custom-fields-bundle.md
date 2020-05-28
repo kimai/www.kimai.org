@@ -86,11 +86,11 @@ Please make sure to use the correct version of the plugin, which must be compati
 | Bundle version    | Minimum Kimai 2 version   |
 | ---               |---                        |
 | 1.10 - 1.11       | 1.9                       |
-| 1.8 - 1.9         | 1.7 - 1.8                 |
+| 1.8 - 1.9         | 1.7                       |
 | 1.6 - 1.7         | 1.6.2                     |
-| 1.5               | 1.6 - 1.6.1               |
-| 1.3.2 - 1.4.1     | 1.4 - 1.5                 |
-| 1.1.1 - 1.2       | 1.1 - 1.3                 |
+| 1.5               | 1.6                       |
+| 1.3.2 - 1.4.1     | 1.4                       |
+| 1.1.1 - 1.2       | 1.1                       |
 | 1.0               | 1.0                       |
 {: .table }
 

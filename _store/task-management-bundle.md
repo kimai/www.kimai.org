@@ -85,7 +85,7 @@ Please make sure to use the correct version of the plugin, which must be compati
 | Bundle version    | Minimum Kimai 2 version   |
 | ---               |---                        |
 | 1.3               | 1.9                       |
-| 1.0 - 1.2         | 1.7 - 1.8                 |
+| 1.0 - 1.2         | 1.7                       |
 {: .table }
 
 ## Installation
