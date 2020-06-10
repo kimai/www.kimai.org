@@ -43,11 +43,11 @@ The files in `translations/` as a quick overview:
 The authentication screens (login, registration, register account) are translated through the theme bundle which is used in Kimai.
 The bundle can be [found here](https://github.com/kevinpapst/AdminLTEBundle) and the translations [in this directory](https://github.com/kevinpapst/AdminLTEBundle/tree/master/Resources/translations).
 
-When you create a new translation, please open another PR there as well.
+When you create a new translation, please open a Pull Request in this repository as well.
 
 ## Adding a new language
 
-As example I choose a new hypothetical language with the locale `xx`. 
+In the next section I will explain how to add a new language with the (not existing) locale `xx`. 
 
 ### Add translations
 
@@ -58,11 +58,9 @@ Adjust the `target-language` attributes in the file header, as example for the n
 <file source-language="en" target-language="xx" datatype="plaintext" original="exceptions.en.xlf">`
 ```
 
-https://github.com/kevinpapst/AdminLTEBundle/tree/master/Resources/translations
-
 ### Adding a language variant
 
-For a language variant `xx_YY`, the fallback will always be the base language `xx` (here `de` for `de_CH`). 
+For a language variant `xx_YY`, the fallback will always be the base language `xx` (eg. `de` for `de_CH`). 
 
 Only some specific keys may need to be changed for this variant and its possible to add only the respective files like i.e. `translations/messages.de_CH.xlf` including only the changed translations:
 
@@ -137,7 +135,7 @@ require('fullcalendar');
 require('fullcalendar/dist/locale/xx');
 ```
 
-Be careful with the naming of language variants, in JS the variants are written like xx-yy, not xx_YY. To be sure please check https://github.com/moment/moment/tree/develop/locale
+Be careful with the naming of language variants, in JS the variants are written like xx-yy, not xx_YY. To be sure please check [the moment.js locales](https://github.com/moment/moment/tree/develop/locale).
 
 ### Number formats
 
@@ -149,22 +147,9 @@ Kimai uses configurations from `kimai.yaml` to format the values in the frontend
 It also uses the configurations to convert between javascript components (e.g. the date-picker) and the PHP backend,
 so they must create the same output. 
 
-## 12-hour format
+## AM/PM format
 
-Kimai uses 24 hour format by default. If your locale typically uses the 12 hour am/pm format, you have to adjust the locale config at the key `24_hours` like this:
-
-```yaml
-kimai:
-    languages:
-        xx:
-            date_time_type: 'yyyy-MM-dd hh:mm a'
-            date_type: 'yyyy-MM-dd'
-            date: 'Y-m-d'
-            date_time: 'm-d H:i'
-            duration: '%%h:%%m h'
-            time: 'h:i a'
-            24_hours: false
-```
+Kimai uses the 24-hour format by default but can be switched to use AM/PM instead, please read the [AM/PM format documentation]({% link _documentation/i18n-am-pm.md %}) to find out how.
 
 ## Validate your changes
 

@@ -16,7 +16,7 @@ The basic settings, which are required for Kimai to work are stored in the `.env
 - `MAILER_FROM` - application specific "from" address for all emails
 - `APP_ENV` - environment for the runtime (use `prod` if you are unsure)
 - `DATABASE_URL` - database connection for storing all application data
-- `APP_SECRET` - secret used when encrypting data  (don't change it after initial setup!) 
+- `APP_SECRET` - secret used to encrypt session cookies (users will be logged out if you change it) 
 
 ## Config files
 
@@ -25,17 +25,21 @@ Configuration of Kimai is done through the files in the `config/` directory, the
 - `.env` - your environment and connection settings
 - `config/packages/kimai.yaml` - Kimai settings
 - `config/packages/fos_user.yaml` - user management
-- `config/packages/local.yaml` - additional Kimai configurations for your needs (file does not exist by default)
+- `config/packages/local.yaml` - **additional Kimai configurations for your needs (does not exist by default - see below!)**
 
 There are several other configurations that could potentially be interesting for you in [config/packages/*.yaml]({{ site.kimai_v2_file }}/config/packages/).
 
 If you want to adjust a setting from any of these files, apply them through the use of your own `local.yaml` (see below).
 
-### Changing configurations
+## Changing configurations
 
-You should NOT edit the file `config/packages/kimai.yaml` directly, as it contains default settings and will be overwritten during an update.
-Instead create the file `config/packages/local.yaml` and save your own settings in there. This file will NEVER be shipped with Kimai.
+You should NOT edit any of the configuration files (eg. `config/packages/kimai.yaml`) directly, as they contains default settings and will be overwritten during an update.
 
+Instead create the file `config/packages/local.yaml` and save your own settings in there. 
+
+### local.yaml
+
+This file will NEVER be shipped with Kimai, you have to create it before you change settings the first time (eg. `touch config/packages/local.yaml`).
 Having your custom settings in `local.yaml` allows you to easily update Kimai. This is the same concept which is used for the `.env` file.
 
 An example `config/packages/local.yaml` file might look like this:
@@ -62,8 +66,8 @@ this specific configuration key to your `local.yaml` in order to overwrite the d
 
 ### Reload changed configurations
 
-When you change a configuration file, Kimai will not see this change immediately. 
-You can reload the configurations by rebuilding the cache.
+When you change your `local.yaml` configuration file, Kimai will not see this change immediately. 
+You have to reload the configurations by rebuilding the cache.
 
 {% include cache-refresh.html %} 
 
