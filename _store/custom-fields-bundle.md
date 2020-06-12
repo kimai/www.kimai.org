@@ -24,7 +24,7 @@ A Kimai 2 plugin, which allows to configure additional fields for timesheets, cu
 
 ## Features
 
-Configure additional fields in various formats for the following data types:
+Configure additional fields for the following entities:
 
 - `Timesheets`
 - `Customers`
@@ -32,6 +32,31 @@ Configure additional fields in various formats for the following data types:
 - `Activities`
 - `User`
 - `Expenses` - see [Expenses plugin]({% link _store/expenses-bundle.md %})
+
+The custom fields will be shown on the "create and edit entity" forms and can have the following types:
+
+- `string` (simple text field)
+- `integer` (number without decimal point)
+- `number` (number with decimal places)
+- `duration`
+- `money`
+- `language` (dropdown of languages, shown in the users language)
+- `currency` (dropdown of currencies, shown in the users language)
+- `country` (dropdown of countries, shown in the users language)
+- `color` (browser specific input element to select a color)
+- `date`
+- `datetime`
+- `email`
+- `textarea` (multi-line text field)
+- `invoice template` (dropdown)
+- `checkbox` (on/off)
+- `choice-list` (drop-down)
+
+## Purchase
+
+{% include store-gumroad-and-support.html %}
+
+## Documentation
 
 You can create as many fields as you want for each data type, where each field:
 
@@ -42,42 +67,43 @@ You can create as many fields as you want for each data type, where each field:
 - can be described with a name and help text
 - has a maximum length of 255 character
 
-The custom fields will be shown on the "create and edit entity" forms and can have the following types:
-
-- `string`
-- `integer`
-- `number`
-- `duration`
-- `money`
-- `language`
-- `currency`
-- `country`
-- `color`
-- `date`
-- `datetime`
-- `email`
-- `textarea`
-- `invoice template`
-- `checkbox` (boolean, use: 1 = checked/true or 0 = unchecked/false)
-- `choice-list` (add entries comma separated into default-value field)
-
 The custom-field data is then available in:
 
 - Data-tables will display all visible fields
 - Exports (HTML and Spreadsheets include all visible fields)
 - Timesheet exports (include visible timesheet fields)
 - API (collections and entities)
-- Invoice templates (custom templates only)
+- Invoice templates (custom templates have access to all fields)
 
 Be aware:
 
-- Restricted fields won't be visible on the create forms, as Kimai initially can't know if the rule will apply. In these cases the form will only be shown in the edit forms.
-- Sensitive data can be configured as "invisible", so it will not show up in the above mentioned places.
+- Restricted fields won't be visible on the create forms, as Kimai initially can't know if the rule will apply: in these cases the fields will only be shown in the edit forms
+- Sensitive data can be configured as "invisible", so it will not show up in the above mentioned places
 - Custom fields for users are not exported via the API (this is a limitation in the core application) 
 
-## Purchase
+### Field types
 
-{% include store-gumroad-and-support.html %}
+#### Invoice template
+
+A select box that is very useful if you want to generate automatic invoices via command line / cronjobs.
+
+The Kimai command `bin/console kimai:invoice:create` supports invoice templates via custom-field ([see docs](https://www.kimai.org/documentation/invoices.html#create-invoices-with-cronjobs)).
+The option parameter `--template-meta` takes the internal name of the custom field that will identify the invoice template to be used.
+
+#### Checkbox
+
+Use the value `1` as default value for a pre-checked box or `0` for an unchecked box.
+
+If a checkbox is marked as mandatory, the user has to check it in order to submit the form.
+
+#### Choice-list 
+
+Lets you create a dropdown. You have to add the entries as comma separated list into the default-value field.
+For example a list consisting of fruits would look like this: `Banana,Apple,Orange,Pineapple,Peach`.
+
+As the first entry is always pre-selected in that case, you can add a empty field to the dropdown by adding a leading `,` 
+to the list like this: `,Banana,Apple,Orange,Pineapple,Peach`. Combined with the mandatory flag, this will force your users to 
+select an entry from the list of fruits to be able to submit the form.
 
 ### Compatibility
 
