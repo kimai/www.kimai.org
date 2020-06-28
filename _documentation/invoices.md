@@ -283,8 +283,8 @@ For each timesheet entry you can use the variables from the following table.
 | ${entry.end_time} | The formatted time for the end of this entry | 17:44 |
 | ${entry.end_timestamp} | The timestamp for the end of this entry | 1542016273 |
 | ${entry.date} | The start date when this record was created | 27.10.2018 |
-| ${entry.week} | The start week number when this record was created | 39 |
-| ${entry.weekyear} | The corresponding year to the week number | 2018 |
+| ${entry.week} | The start week number when this record was created (since 1.10) | 39 |
+| ${entry.weekyear} | The corresponding year to the week number (since 1.10) | 2018 |
 | ${entry.user_id} | The user ID | 1 |
 | ${entry.user_name} | The username | susan_super |
 | ${entry.user_alias} | The user alias | Susan Miller |
