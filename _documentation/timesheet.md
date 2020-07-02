@@ -27,6 +27,37 @@ Kimai 2 provides also a [calendar view]({% link _documentation/calendar.md %}), 
 - Click the **stop** action in the running record in your timesheet
 - Save a running record after setting an end date (deactivated if the timeclock-mode is active)
 
+## Lockdown period
+
+Since version 1.10 you can configure a lockdown period, which will prevent your users from changing timesheet records in the past.
+
+The lockdown period consists of a `start` and `end` date and a `grace` period. The lockdown feature will only work if all of these fields are configured.
+These fields can be found in the [System configration screen]({% link _documentation/configurations.md %}) and take a [relative date format](https://www.php.net/manual/en/datetime.formats.relative.php) as input.  
+
+These rules apply: 
+- If the start date of a timesheet record is earlier than the lockdown start, it is not possible to edit it any longer
+- If the start date of a timesheet record is between the lockdown start and end, it can only be edited if "now" is within the grace period
+- If a user has the permission `lockdown_grace_timesheet` all records in the last lockdown period can be edited, even after the grace period ended
+- If a user has the permission `lockdown_override_timesheet` none of the lockdown rules apply
+
+_Configuration:_
+- The start is relative to now and you will likely want to configure a start of a month like `first day of last month 00:00:00` or `first day of -2 month 00:00:00`
+- The end is relative to now and you will likely want to configure the end of of a month like `last day of last month 23:59:59`, `last day of -2 month 23:59:59` or `first day of this month 00:00:00`
+- The grace period is relative to the lockdown end (the end date will always be appended, but it could still be overwritten by using the `of` modifier). In 99% you will want to use a relative period like `+10 days` or `+3 weeks`  
+
+**Example 1**
+
+We want to achieve that the last month goes into lockdown with the start of the current month, but we want to allow that 
+users can edit their records until the fifth day of the month (because invoices will be written on the seventh day of the month).
+
+_Configuration:_
+
+- Lockdown start: `first day of last month 00:00:00`  
+- Lockdown end: `last day of last month 23:59:59` (could also be written as `first day of this month 00:00:00`)
+- Grace period: `+5 days`
+
+Please read the [PHP documentation about relative date formats](https://www.php.net/manual/en/datetime.formats.relative.php).
+
 ## Tracking modes
 
 Kimai supports multiple time-tracking modes, which can be changed via configuration setting.
