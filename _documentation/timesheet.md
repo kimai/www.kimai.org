@@ -58,6 +58,9 @@ _Configuration:_
 
 Please read the [PHP documentation about relative date formats](https://www.php.net/manual/en/datetime.formats.relative.php).
 
+Some more examples of relative datetimes:
+- `first day of -3 month 00:00:00 +216 hours` executed in July 2020 will result in `2020-04-10 00:00:00` 
+
 ## Tracking modes
 
 Kimai supports multiple time-tracking modes, which can be changed via configuration setting.
