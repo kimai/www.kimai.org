@@ -116,6 +116,8 @@ This is the full list of existing permissions with short descriptions:
 | comments_customer             | Show posted comments for customers. For adding/changing comments you need the `edit_customer` permission (since 1.7)  |
 | details_project               | View project details (Order number & date, start and end date, rates, assigned teams & users) (since 1.7)  |
 | comments_project              | Show posted comments for projects. For adding/changing comments you need the `edit_project` permission (since 1.7)  |
+| lockdown_grace_timesheet      | All records in the last lockdown period can be edited, even after the grace period ended (since 1.10)  |
+| lockdown_override_timesheet   | None of the lockdown rules apply (since 1.10)  |
 
 **Be aware**
 There are other business rules which might limit access to certain functions, so these permissions are not the only checks in place.
