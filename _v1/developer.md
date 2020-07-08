@@ -1,11 +1,7 @@
 ---
 title: Developer introduction
 description: Developer docs for Kimai 1
-redirect_from:
-  - /documentation/developer/documentation.html
-  - /documentation/developer/introduction.html
-  - /documentation/developer/index.html
-  - /documentation/developer/
+url_v2: /documentation/developers.html
 ---
 
 This document gives an overview of how Kimai works. It is intended for developers (core and extensions).

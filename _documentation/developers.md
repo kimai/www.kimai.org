@@ -2,6 +2,11 @@
 title: Developers
 description: Developer documentation - run, develop, extend and build for Kimai 
 toc: true
+redirect_from:
+  - /documentation/developer/documentation.html
+  - /documentation/developer/introduction.html
+  - /documentation/developer/index.html
+  - /documentation/developer/
 ---
 
 This page is dedicated to all developers who want to contribute to Kimai. You are the best!
