@@ -18,6 +18,9 @@ new: false
 toc: true
 tags:
   - plugin
+redirect_from:
+  - /documentation/expenses/
+  - /v1/expenses.html
 ---
 
 A Kimai 2 plugin, which allows to keep track of your expenses based on customer, project and activity.
