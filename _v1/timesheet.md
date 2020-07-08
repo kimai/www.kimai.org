@@ -1,8 +1,6 @@
 ---
 title: Timesheet
-redirect_from: 
-  - /documentation/manual/timesheet.html
-  - /documentation/timesheet/
+url_v2: /documentation/timesheet.html
 ---
 
 Thats where you track your time. We hope the interface is easy to understand and use.

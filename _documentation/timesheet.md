@@ -2,6 +2,9 @@
 title: Timesheet
 description: View and manage your time-tracking data in the timesheet view
 toc: true
+redirect_from: 
+  - /documentation/manual/timesheet.html
+  - /documentation/timesheet/
 ---
 
 # Timesheet
