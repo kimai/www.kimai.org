@@ -51,8 +51,13 @@ expire_warning: false
 					<div class="text-wrap p-lg-6">
 
                         {% if layout.expire_warning %}
-                        <div class="alert alert-warning" role="alert">
-                            Consider <a href="{% link _documentation/migration-v1.md %}">upgrading to v2</a> soon, as Kimai v1 is not maintained any longer.
+                        <div class="alert alert-danger" role="alert">
+                            Consider <a href="{% link _documentation/migration-v1.md %}">upgrading to Kimai 2</a>, as Kimai v1 is not maintained any longer.
+                        </div>
+                        {% endif %}
+                        {% if page.url_v2 != nill %}
+                        <div class="alert alert-success" role="alert">
+                            This documentation page exists <a href="{{ page.url_v2 }}">for version 2 here</a>.
                         </div>
                         {% endif %}
 
