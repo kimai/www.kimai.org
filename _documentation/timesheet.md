@@ -5,6 +5,11 @@ toc: true
 redirect_from: 
   - /documentation/manual/timesheet.html
   - /documentation/timesheet/
+  - /manual/rates.html
+  - /manual/manual/rates.html
+  - /documentation/manual/rates.html
+  - /documentation/fees/
+  - /documentation/rates/
 ---
 
 # Timesheet

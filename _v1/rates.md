@@ -1,11 +1,6 @@
 ---
 title: Rates & Fees
-redirect_from:
-  - /manual/rates.html
-  - /manual/manual/rates.html
-  - /documentation/manual/rates.html
-  - /documentation/fees/
-  - /documentation/rates/
+url_v2: /documentation/timesheet.html
 ---
 
 Here is the order in which is checked if a rate exists. The first one found is then used:
