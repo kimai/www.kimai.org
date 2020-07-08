@@ -2,6 +2,8 @@
 title: Installation
 description: How to install Kimai 2 on your server with git, composer and SSH or FTP
 toc: true
+redirect_from:
+  - /documentation/installation/
 ---
 
 The recommended way to install Kimai v2 is via SSH, you need GIT and [Composer](https://getcomposer.org/doc/00-intro.md). 
