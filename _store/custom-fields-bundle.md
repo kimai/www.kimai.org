@@ -101,9 +101,9 @@ If a checkbox is marked as mandatory, the user has to check it in order to submi
 Lets you create a dropdown. You have to add the entries as comma separated list into the default-value field.
 For example a list consisting of fruits would look like this: `Banana,Apple,Orange,Pineapple,Peach`.
 
-As the first entry is always pre-selected in that case, you can add a empty field to the dropdown by adding a leading `,` 
-to the list like this: `,Banana,Apple,Orange,Pineapple,Peach`. Combined with the mandatory flag, this will force your users to 
-select an entry from the list of fruits to be able to submit the form.
+As the first entry is always pre-selected in that case, you can add an empty field to the dropdown by starting the list 
+with a leading `,` like this: `,Banana,Apple,Orange,Pineapple,Peach`. Combined with the mandatory flag, this will force 
+your users to select an entry from the list of fruits to be able to submit the form.
 
 ### Compatibility
 
