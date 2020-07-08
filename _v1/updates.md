@@ -1,9 +1,7 @@
 ---
 title: Updates
 description: Updating Kimai 1
-redirect_from:
-  - /documentation/installation/updates.html
-  - /documentation/updates/
+url_v2: /documentation/updates.html
 ---
 
 When you update an existing installation, just replace the entire Kimai folder on your server. 
