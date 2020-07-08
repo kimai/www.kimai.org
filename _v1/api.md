@@ -1,7 +1,6 @@
 ---
 title: Kimai Remote Api
-redirect_from:
-  - /documentation/api/
+url_v2: /documentation/rest-api.html
 ---
 
 This part of the documentation is dedicated for developers who want to make 3rd party applications that use Kimai as a backend. 
