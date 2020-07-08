@@ -1,7 +1,6 @@
 ---
 title: Invoices
-redirect_from:
-  - /documentation/invoices/
+url_v2: /documentation/invoices.html
 ---
 
 Create invoices for your clients. Use can choose between several templates.
