@@ -1,8 +1,7 @@
 ---
 title: Kimai for mobile
 description: jQuery mobile time tracking frontend for Kimai, optimized for usage on mobile devices
-redirect_from:
-  - /kimai-mobile/
+url_v2: /store/
 ---
 
 jQuery mobile time tracking frontend for Kimai, optimized for usage on mobile devices

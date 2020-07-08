@@ -1,8 +1,7 @@
 ---
 title: Apps for Kimai v1
 description: Application to use Kimai on desktop and mobile
-redirect_from:
-  - /apps/
+url_v2: /store/
 ---
 
 Thanks to many great developer out there we have several external applications, which allow you to use Kimai on your Desktop and mobile device.
