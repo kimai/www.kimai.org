@@ -1,5 +1,7 @@
 ---
 title: "Creating a release"
+redirect_from: 
+  - /documentation/team/
 ---
 
 ## Documentation for project maintainer

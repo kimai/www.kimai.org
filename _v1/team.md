@@ -1,7 +1,6 @@
 ---
 title: "Team / Internal"
-redirect_from: 
-  - /documentation/team/
+url_v2: /documentation/create-release.html
 ---
 
 This part of the documentation is related to the Kimai development team, you can safely skip this part 
