@@ -1,8 +1,6 @@
 ---
 title: Translations
-redirect_from:
-  - /documentation/developer/translations.html
-  - /documentation/translations/
+url_v2: /documentation/translations.html
 ---
 
 Kimai is continually evolving so translations get outdated pretty fast. Therefore we're always happy, if people invest their time into improving the translations. Translations to new languages are very welcome as well!
