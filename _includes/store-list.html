@@ -53,8 +53,8 @@
 				<td class="text-right">
 					<strong>
 						{% if product.price == nil %}
-							upon request
-						{% elsif product.price == '0' %}
+                            <i class="far fa-comments fa-lg"></i>
+                        {% elsif product.price == '0' %}
 							free
 						{% else %}
 							{{ product.price }}
