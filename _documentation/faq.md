@@ -13,6 +13,15 @@ Please check your logfile at `var/log/prod.log`. Many problems reveal themselves
 If that doesn't help, open a new issue at [GitHub]({{ site.kimai_v2_repo }}/issues/) and we try to find a solution.
 Please include the last ~ 20-50 lines of the log file, which were written around the time the error happened.  
 
+## Kimai is slow
+
+There are many factors that influence the performance of Kimai, the most important one is the server Kimai runs on.
+Shared hosts aren't known for their good performance, especially running modern PHP projects like Kimai that load a large amount of files per request.
+
+The second factor is your PHP configuration, which can lead to massively decreased performance when not tuned for production usage. 
+
+Please [read this issue](https://github.com/kevinpapst/kimai2/issues/1584#issuecomment-604048869).
+
 ## Recorded times are wrong
 
 Please read the [user preferences documentation]({% link _documentation/user-preferences.md %}) especially the part 
