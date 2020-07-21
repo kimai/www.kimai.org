@@ -20,20 +20,42 @@ All examples represent the date `2019-07-09` (2019, July 9th):
 - `{c}` - counter for invoices of all times, starting from 1
 - `{cy}` - counter for invoices this year, starting from 1
 - `{cm}` - counter for invoices this month, starting from 1
-- `{cd}` - counter for invoices this day, starting from 1 
+- `{cd}` - counter for invoices this day, starting from 1
 - `{Y}` -  full numeric representation of a year (4 digits). Example: `2019` 
 - `{y}` - two digit representation of a year. Example: `19`
 - `{M}` - numeric representation of a month, with leading zeros. Example: `07`
 - `{m}` - numeric representation of a month, without leading zeros. Example: `7`
 - `{D}` - day of the month, 2 digits with leading zeros. Example: `09`
 - `{d}` - day of the month without leading zeros. Example: `9`
+- `{cc}` - customer invoice counter for all times, starting from 1 (since 1.10)
+- `{ccy}` - customer invoice counter for this year, starting from 1 (since 1.10)
+- `{ccm}` - customer invoice counter for this month, starting from 1 (since 1.10)
+- `{ccd}` - customer invoice counter for this day, starting from 1 (since 1.10)
 
 Each replacer (x) can be combined with a length formatter, which will prepend (X) leading zeros, eg. `{x,X}`. 
 Example: to get a three digit long string with year counter use `{cy,3}`, which results in `001` for the first invoice of the year.
 
-Please note: the additional characters outside the replacer may NOT be the characters `{` and `}`.
+{% capture additional_chars %}
+Characters outside the replacer may **not** include `{` and `}`.
+{% endcapture %}
+{% assign additional_chars = additional_chars| markdownify %}
+{% include alert.html icon="fas fa-exclamation" type="warning" alert=additional_chars %}
 
 To change the format, look out for the {% include demo-action-button.html icon="fas fa-cog" %} icon in the invoice screen, or change it from the `System configurations`.
+
+### Incrementing the invoice counter
+
+Since 1.10 it is possible to increment the counter by a fixed value. You can add a number to the result. 
+By default Kimai takes the amount of found invoices and adds 1. But you can change the 1 to any arbitrary number.
+This works for the following replacer: `{c}` and `{cy}` and `{cm}` and `{cd}` and `{cc}` and `{ccy}` and `{ccm}` and `{ccd}`. 
+
+Simply use the `+` symbol after the replacer, eg. `{cy+72}`. This also works in combination with the length formatter, eg.: `{cy+72,3}` 
+
+### Examples
+
+Assume you already wrote 72 invoices this year (before you started to use Kimai) and your counter is an incrementing number 
+per year, which is prefix with the four digit year:
+- `{Y}/{cy+73,3}` would result in `2019/073` for your first invoice
 
 ## Export state
 
