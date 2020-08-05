@@ -90,23 +90,24 @@ This is the full list of existing permissions with short descriptions:
 | delete_teamlead_activity      | Allows teamleads to delete activities of assigned projects/customers (since 1.2)  |
 | edit_team_activity            | Allows team-members to edit activities of assigned projects/customers (since 1.2)  |
 | budget_team_activity          | Allows team-members to see the budget reports for activities of assigned projects/customers (since 1.2)  |
-| delete_team_activity          | Allows team-members to delete activities of assigned projects/customers (since 1.2)  |
+| permissions_project           | Allows to edit the teams for assigned projects or projects of assigned customers (since 1.2)  |
+| view_teamlead_project         | Allows teamleads to access projects administration (since 1.2)  |
 | edit_teamlead_project         | Allows teamleads to edit assigned projects or projects for assigned customers (since 1.2)  |
 | budget_teamlead_project       | Allows teamleads to see the budget reports for assigned projects or projects of assigned customers (since 1.2)  |
 | permissions_teamlead_project  | Allows teamleads to edit the teams for assigned projects or projects of assigned customers (since 1.2)  |
 | delete_teamlead_project       | Allows teamleads to delete assigned projects or projects for assigned customers (since 1.2)  |
+| view_team_project             | Allows team-members to access projects administration (since 1.2)  |
 | edit_team_project             | Allows team-members to edit assigned projects or projects for assigned customers (since 1.2)  |
 | budget_team_project           | Allows team-members to see the budget reports for assigned projects or projects of assigned customers (since 1.2)  |
-| permissions_team_project      | Allows team-members to edit the teams for assigned projects or projects of assigned customers (since 1.2)  |
-| delete_team_project           | Allows team-members to delete assigned projects or projects for assigned customers (since 1.2)  |
+| permissions_customer          | Allows to edit the teams for assigned customers (since 1.2)  |
+| view_teamlead_customer        | Allows teamleads to access project administration (since 1.2)  |
 | edit_teamlead_customer        | Allows teamleads to edit assigned customers (since 1.2)  |
 | budget_teamlead_customer      | Allows teamleads to see the budget reports for assigned customers (since 1.2)  |
 | permissions_teamlead_customer | Allows teamleads to edit the teams for assigned customers (since 1.2)  |
 | delete_teamlead_customer      | Allows teamleads to delete assigned customers (since 1.2)  |
+| view_team_customer            | Allows team-members to access project administration (since 1.2)  |
 | edit_team_customer            | Allows team-members to edit assigned customers (since 1.2)  |
 | budget_team_customer          | Allows team-members to see the budget reports for assigned customers (since 1.2)  |
-| permissions_team_customer     | Allows team-members to edit the teams for assigned customers (since 1.2)  |
-| delete_team_customer          | Allows team-members to delete assigned customers (since 1.2)  |
 | view_team                     | See team management (since 1.2)  |
 | edit_team                     | Edit team assignments (since 1.2)  |
 | create_team                   | Create new teams (since 1.2)  |
@@ -119,6 +120,10 @@ This is the full list of existing permissions with short descriptions:
 | lockdown_grace_timesheet      | All records in the last lockdown period can be edited, even after the grace period ended (since 1.10)  |
 | lockdown_override_timesheet   | None of the lockdown rules apply (since 1.10)  |
 | view_all_data                 | Allows to see all data (overwrites team permissions) - SUPER_ADMINS will always own that permission (since 1.10)  |
+| view_teamlead_activity        | Allows teamleads to access activity administration (since 1.10)  |
+| view_team_activity            | Allows team-members to access activity administration (since 1.10)  |
+| permissions_teamlead_activity | Allows teamleads to edit the teams for assigned activities (since 1.10)  |
+| permissions_activity          | Allows to edit the teams for assigned activities (since 1.10)  |
 
 **Be aware**
 There are other business rules which might limit access to certain functions, so these permissions are not the only checks in place.
