@@ -33,7 +33,7 @@ And last but not least - probably the most important fact: **Kimai is open-sourc
 ## Who is Kimai?
 
 There is a great and large community around Kimai and listing everyone is impossible. You find a brief list of former developers below.
-The [marketplace]({% link _pages/store.html %}) shows a list of plugins and their developers, this will give you a good idea of the developers  
+The [marketplace]({% link _pages/store.html %}) shows a list of plugins and their developers, this will give you a good idea of the developers 
 supporting the project with their knowledge.
 
 The main person behind Kimai 2, this website, the demo installations and some plugins is:
@@ -66,5 +66,5 @@ There were way too many people to name them all, so this list is only a small co
  
 - Torsten Höltge - inventor of Kimai 1
 - [Severin Leonhardt](https://github.com/ServiusHack) - a core maintainer of Kimai for a long time
-- [Simon Schaufelberger](https://github.com/simonschaufi) - core developer for a very long time ... and on-going!
+- [Simon Schaufelberger](https://github.com/simonschaufi) - core developer for a very long time ... and sometimes still active for v1
 - Kimai v1 was also influenced by Oleg Britvin, Martin Klemkow, Vasilis van Gemert, Maximilian Kern, Enrico Ties, Thomas Wensing, Kelvin Luck, Urs Gerig, Willem van Gemert, Torben Boe and HamBug Studios, Klaus Franken, Chris (Urban Willi), Andreas Berndt, Niels Hoffmann, Günter Hengsbach, Paul Brand, Joaquín G. de la Zerda, Allesandro Bertoldo, José Ricardo Cardoso, RRZE 
