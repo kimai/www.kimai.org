@@ -19,8 +19,8 @@ tags:
   - plugin
 ---
 
-A Kimai 2 plugin, which allows you to plan your work and distribute tasks among your users and teams.
-It features two new dashboard widgets and a new "Task management" view in the left navigation.
+A Kimai plugin, which allows you to plan your work and distribute tasks among your users and teams.
+It features two new dashboard widgets, and a new "Task management" view in the left navigation.
 
 ## Features
 
@@ -30,16 +30,16 @@ It features two new dashboard widgets and a new "Task management" view in the le
   - End date (optional)
   - User (optional: if left empty, the task can be self-assigned from the "pending tasks" widget)
   - Team (optional: if given, only users from this team see this task and can assign it)
-  - Customer (will be copied to the started timesheets)
-  - Project (will be copied to the started timesheets)
-  - Activity (will be copied to the started timesheets)
-  - Description (will be copied to the started timesheets)
+  - Customer (will be copied to the started timesheet)
+  - Project (will be copied to the started timesheet)
+  - Activity (will be copied to the started timesheet)
+  - Description (will be copied to the started timesheet)
 
 With the help of the dashboard widgets every user can manage their work. 
 
 Or you configure the permissions in a way, that the user only see the "My times widget". 
 A teamlead can then prepare a list of tasks / work schedule for the users, who then utilize the widget to start/pause/stop the tasks. 
-When the work on a task is finished, the user can either close the it (if allowed) or the teamlead does it after reviewing the results.  
+When the work on a task is finished, the user can either close it (if allowed) or the teamlead does it after reviewing the results.  
 
 ## Purchase
 
@@ -96,7 +96,7 @@ Please make sure to use the correct version of the plugin, which must be compati
 
 This bundle ships a couple of new permissions, which limits the access to certain functions:
 
-| Permission Name   | Description |
+| Permission Name   | Description |
 |---                |--- |
 | `task_edit_own`   | Create and edit tasks that are assigned to the currently logged-in user. |
 | `task_edit_other` | Allows to edit all tasks that are visible to the user. Create new unassigned tasks, assign team and user. |

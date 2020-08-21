@@ -20,7 +20,7 @@ tags:
   - plugin
 ---
 
-A Kimai 2 plugin, which allows to configure additional fields for timesheets, customers, projects and activities.
+A Kimai plugin, which allows the configuration of additional fields for timesheets, customers, projects and activities.
 
 ## Features
 
@@ -138,20 +138,7 @@ This bundle ships a new permission, which limit access to certain functions:
 
 By default, it is assigned to each user with the role `ROLE_SUPER_ADMIN`.
 
-{% include alert.html icon="fas fa-exclamation" type="warning" alert="You don't need the following since Kimai 1.6. Please adjust all permission settings in your administration." %}
-
-Read how to assign these permission to your user roles in the [permission documentation](https://www.kimai.org/documentation/permissions.html).
-
-This is a proposal if you use the bundle in a multi-user environment:
-```yaml
-kimai:
-    permissions:
-        roles:
-            ROLE_SUPER_ADMIN: ['configure_meta_fields']
-            ROLE_ADMIN: ['configure_meta_fields']
-```
-
-After changing the permissions in local.yaml, you need to clear the application cache.
+{% include store-howto-permissions.md %}
 
 ## Screenshot
 

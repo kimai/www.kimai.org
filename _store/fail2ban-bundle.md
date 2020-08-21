@@ -36,7 +36,7 @@ You could also [download it as zip](https://github.com/keleo/Fail2BanBundle/arch
 ```
 /kimai/var/plugins/
 ├── Fail2BanBundle
-│   ├── Fail2BanBundle.php
+│   ├── Fail2BanBundle.php
 |   └ ... more files and directories follow here ... 
 ```
 

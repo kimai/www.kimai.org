@@ -90,7 +90,7 @@ You will be redirected to the category creation screen if Kimai doesn't find one
 
 This bundle ships a couple of new permissions, which limits the access to certain functions:
 
-| Permission Name           | Description |
+| Permission Name           | Description |
 |---                        |--- |
 | `view_expense`            | allows access to the expenses screen |
 | `edit_expense`            | edit existing expenses |
