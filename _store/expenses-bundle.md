@@ -107,13 +107,7 @@ By default, these are assigned to each user with the role `ROLE_SUPER_ADMIN`.
 
 ## Updating the plugin
 
-Updating the bundle works the same way as the installation does. 
-
-- Delete the directory `var/plugins/ExpensesBundle/` (to remove deleted files)
-- Execute all installation steps again:
-  - Copy files
-  - Clear cache
-  - Update database with `bin/console kimai:bundle:expenses:install` 
+{% include store-plugin-update.md plugin="ExpensesBundle" command="kimai:bundle:expenses:install" %}
 
 ## Screenshots
 

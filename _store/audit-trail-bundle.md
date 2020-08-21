@@ -81,14 +81,14 @@ If this was successful, you can now think about giving permissions to other user
 
 This bundle ships a couple of new permissions, which limits the access to certain functions:
 
-| Permission Name           | Description |
+| Permission Name           | Description |
 |---                        |--- |
 | `audit_logs`              | see the audit log page with all entries |
 | `audit_customer`          | see all changes for the customer objects |
-| `audit_project`           |  see all changes for the project objects |
-| `audit_activity`          |  see all changes for the activity objects |
-| `audit_own_timesheet`     |  see all changes for own timesheet records (only via team timesheets, audit logs are **not** shown in user timesheet panel) |
-| `audit_other_timesheet`   |  see all changes in other users timesheet records (only via team timesheets, audit logs are **not** shown in user timesheet panel) |
+| `audit_project`           | see all changes for the project objects |
+| `audit_activity`          | see all changes for the activity objects |
+| `audit_own_timesheet`     | see all changes for own timesheet records (only via team timesheets, audit logs are **not** shown in user timesheet panel) |
+| `audit_other_timesheet`   | see all changes in other users timesheet records (only via team timesheets, audit logs are **not** shown in user timesheet panel) |
 {: .table }
 
 By default, these are assigned to each user with the role `ROLE_SUPER_ADMIN`.

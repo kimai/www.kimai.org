@@ -117,13 +117,7 @@ Be aware, that the data for non-admin users is additionally limited by the team 
 
 ## Updating the plugin
 
-Updating the bundle works the same way as the installation does. 
-
-- Delete the directory `var/plugins/TaskManagementBundle/`
-- Execute all installation steps again:
-  - Copy files
-  - Clear cache
-  - Update database with `bin/console kimai:bundle:tasks:install` 
+{% include store-plugin-update.md plugin="TaskManagementBundle" command="kimai:bundle:tasks:install" %}
 
 ## Screenshots
 

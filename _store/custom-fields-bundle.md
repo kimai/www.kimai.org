@@ -139,6 +139,10 @@ This bundle ships a new permission, which limit access to certain functions:
 By default, it is assigned to each user with the role `ROLE_SUPER_ADMIN`.
 
 {% include store-howto-permissions.md %}
+ 
+## Updating the plugin
+ 
+{% include store-plugin-update.md plugin="MetaFieldsBundle" command="kimai:bundle:metafields:install" %}
 
 ## Screenshot
 

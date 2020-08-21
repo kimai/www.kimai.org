@@ -14,7 +14,7 @@ The file structure needs to like like this afterwards:
 ```
 var/plugins/
 ├── {{ plugin }}
-│   ├── {{ plugin }}.php
+│   ├── {{ plugin }}.php
 |   └ ... more files and directories follow here ...
 ```
 
