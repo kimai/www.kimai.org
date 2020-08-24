@@ -1,0 +1,26 @@
+{% if include.plugin == nil %}
+    <div class="alert alert-danger" role="alert">
+    ATTENTION, this include needs the <strong>plugin</strong> variable!
+    </div>
+{% else %}
+    {% assign plugin = include.plugin %}
+
+    <p>Updating the plugin works exactly like the installation:</p>
+    <ul>
+        <li>Delete the directory <code class="language-plaintext highlighter-rouge">var/plugins/{{ plugin }}/</code>
+        <li>
+            Execute all installation steps again:
+            <ul>
+                <li>Copy files</li>
+                <li>Clear cache</li>
+                {%- if include.command != nil %}
+                <li>Update database with <code class="language-plaintext highlighter-rouge">bin/console {{ include.command }}</code>
+                {% endif %}
+                {%- if include.assets != nil %}
+                <li>Update assets with <code class="language-plaintext highlighter-rouge">bin/console assets:install</code></li>
+                {% endif %}
+            </ul>
+        </li>
+    </ul>
+
+{% endif %}
