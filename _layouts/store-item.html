@@ -217,13 +217,7 @@ layout: default
                     {{ content }}
 				</div>
 			</div>
-		</div>
-	</div>
-
-    {%- if page.gumroad and page.developer == 'keleo' %}
-        <div class="row row-cards">
-            <div class="col-lg-3"></div>
-            <div class="col-lg-9">
+            {%- if page.gumroad and page.developer == 'keleo' %}
                 <div class="card">
                     <div class="card-header">
                         <div class="d-flex align-items-center px-2">
@@ -243,88 +237,71 @@ layout: default
                         {% include store-gumroad-and-support.html %}
                     </div>
                 </div>
-            </div>
-        </div>
-    {% endif %}
-
-    {% if page.bundle %}
-        {% if page.bundle.screenshots %}
-        <div class="row row-cards">
-            <div class="col-lg-3"></div>
-            <div class="col-lg-9">
-                <div class="card">
-                    <div class="card-header">
-                        <div class="d-flex align-items-center px-2">
-                            <h3 id="screenshots" class="card-title">Screenshots</h3>
+            {% endif %}
+            {% if page.bundle %}
+                {% if page.bundle.screenshots %}
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="d-flex align-items-center px-2">
+                                <h3 id="screenshots" class="card-title">Screenshots</h3>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            {% include slider.html slides=page.bundle.screenshots %}
                         </div>
                     </div>
-                    <div class="card-body">
-                        {% include slider.html slides=page.bundle.screenshots %}
-                    </div>
-                </div>
-            </div>
-        </div>
-        {% endif %}
-
-        <div class="row row-cards">
-            <div class="col-lg-3"></div>
-            <div class="col-lg-9">
-                <div class="card">
-                    <div class="card-header">
-                        <div class="d-flex align-items-center px-2">
-                            <h3 id="installation" class="card-title">Installation</h3>
+                {% endif %}
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="d-flex align-items-center px-2">
+                                <h3 id="installation" class="card-title">Installation</h3>
+                            </div>
                         </div>
-                    </div>
-                    <div class="card-body">
-                        {% if page.bundle.versions %}
-                        <h3>Compatibility</h3>
+                        <div class="card-body">
+                            {% if page.bundle.versions %}
+                            <h3>Compatibility</h3>
 
-                        <p>The plugin is compatible with the following Kimai releases:</p>
+                            <p>The plugin is compatible with the following Kimai releases:</p>
 
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th>
-                                    Bundle version
-                                </th>
-                                <th>
-                                    Kimai version
-                                </th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                                {% for version in page.bundle.versions %}
+                            <table class="table">
+                                <thead>
                                 <tr>
-                                    <td>{{ version[0] }}</td>
-                                    <td>{{ version[1] }}</td>
+                                    <th>
+                                        Bundle version
+                                    </th>
+                                    <th>
+                                        Kimai version
+                                    </th>
                                 </tr>
-                                {% endfor %}
-                            </tbody>
-                        </table>
-                        {% endif %}
+                                </thead>
+                                <tbody>
+                                    {% for version in page.bundle.versions %}
+                                    <tr>
+                                        <td>{{ version[0] }}</td>
+                                        <td>{{ version[1] }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                            {% endif %}
 
-                        {% include store-plugin-installation.html clone=page.bundle.clone plugin=page.bundle.name command=page.bundle.command assets=page.bundle.assets %}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row row-cards">
-            <div class="col-lg-3"></div>
-            <div class="col-lg-9">
-                <div class="card">
-                    <div class="card-header">
-                        <div class="d-flex align-items-center px-2">
-                            <h3 id="updates" class="card-title">Updates</h3>
+                            {% include store-plugin-installation.html clone=page.bundle.clone plugin=page.bundle.name command=page.bundle.command assets=page.bundle.assets %}
                         </div>
                     </div>
-                    <div class="card-body">
-                        {% include store-plugin-update.html plugin=page.bundle.name command=page.bundle.command assets=page.bundle.assets %}
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="d-flex align-items-center px-2">
+                                <h3 id="updates" class="card-title">Updates</h3>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            {% include store-plugin-update.html plugin=page.bundle.name command=page.bundle.command assets=page.bundle.assets %}
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    {% endif %}
+            {% endif %}
+		</div>
+	</div>
 
     <div class="row row-cards">
 		<div class="col-lg-3"></div>

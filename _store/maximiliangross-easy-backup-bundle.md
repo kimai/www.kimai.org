@@ -8,40 +8,22 @@ icon: far fa-hdd
 price: "0"
 download: https://github.com/mxgross/EasyBackupBundle/archive/master.zip
 github: https://github.com/mxgross/EasyBackupBundle
-screenshot: 
-  - https://raw.githubusercontent.com/mxgross/EasyBackupBundle/master/screenshot.jpg
 tags:
   - plugin
   - backup
+bundle:
+    name: "EasyBackupBundle"
+    clone: "https://github.com/mxgross/EasyBackupBundle.git"
+    screenshots:
+      - 
+        src: "https://raw.githubusercontent.com/mxgross/EasyBackupBundle/master/screenshot.jpg"
+        title: Backup administration
+        description: The new administration page with backups 
 ---
 
 After the installation a new menu entry `EasyBackup` is created. There you can create a new backup
-by clicking the `Create Backup` button. Afterwards all created backups will be listet at the page
-and you can delete or download the createt backup as zip file.
-
-## Installation
-
-First clone it to your Kimai installation `plugins` directory:
-```
-cd /kimai/var/plugins/
-git clone https://github.com/mxgross/EasyBackupBundle.git
-```
-
-And then rebuild the cache:
-```
-cd /kimai/
-bin/console cache:clear
-bin/console cache:warmup
-```
-
-You could also [download it as zip](https://github.com/mxgross/EasyBackupBundle/archive/master.zip) and upload the directory via FTP:
-
-```
-/kimai/var/plugins/
-├── EasyBackupBundle
-│   ├── EasyBackupBundle.php
-|   └ ... more files and directories follow here ...
-```
+by clicking the `Create Backup` button. Afterwards all created backups will be listed at the page 
+and you can delete or download the created backup as zip file.
 
 Please contact me via [info@maximiliangross.de](mailto:info@maximiliangross.de) for any inquiry.
 
@@ -49,8 +31,7 @@ Please contact me via [info@maximiliangross.de](mailto:info@maximiliangross.de) 
 
 This bundle stores the backups zipped in the directory `var/easy_backup`.
 Make sure its writable by your webserver! We don't use the recommended 
-`var/data/` directory, because it will be part of the backuped files!
-
+`var/data/` directory, because it will be part of the backup'ed files!
 
 ### What files are backed up?
 
