@@ -35,6 +35,14 @@ And run the Kimai installer:
 bin/console kimai:install -n
 ```
 
+{% capture windows %}
+Windows users might have to prefix the composer and installation commands with `php`, eg.:  
+`php bin/console kimai:install -n`
+{% endcapture %}
+{% assign windows = windows|markdownify %}
+
+{% include alert.html icon="fab fa-windows" type="warning" alert=windows %}
+
 ### File permissions
 
 The webserver needs write permissions for several directories, so make sure the 
