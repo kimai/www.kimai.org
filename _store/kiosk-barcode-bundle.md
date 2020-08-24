@@ -1,31 +1,63 @@
 ---
-title: Kiosk & barcode plugin for Kimai 2
+title: Kiosk plugin for Kimai with Barcode and RFID support
 name: Kiosk plugin
-intro: "Start and stop timesheets with a barcode scanner for attendance time-tracking"
+intro: "Start and stop timesheets with a barcode or RFID scanner for attendance time-tracking"
 developer: keleo
 date: "2020-03-06 16:00:00 +0200"
 icon: fas fa-barcode
 demo: true 
 price: "199€"
-screenshot: 
-  - /images/marketplace/kiosk-plugins.png
-  - /images/marketplace/kiosk-preferences.png
-  - /images/marketplace/kiosk-user-listing.png
-  - /images/marketplace/kiosk-user-profile.png
-  - /images/marketplace/kiosk-scanner.png
-  - /images/marketplace/kiosk-webcam.png
-  - /images/marketplace/kiosk-login.png
-  - /images/marketplace/kiosk-logout.png
 gumroad: kimai2-kiosk
-featured: "Attendance time-tracking in an environment, where the user has no access to Kimai (eg. in a warehouse) by using a barcode scanner to start and stop timesheets." 
+featured: "Attendance time-tracking in an environment, where the user has no access to Kimai (eg. in a warehouse) by using a barcode or RFID scanner to start and stop timesheets." 
 new: true
-toc: true
 tags:
   - plugin
+bundle:
+    name: "KioskBundle"
+    command: "kimai:bundle:kiosk:install"
+    purchase: true
+    assets: true
+    versions: 
+      - ["1.4", "1.10"]
+      - ["1.0 - 1.3", "1.8"]
+    screenshots:
+      - 
+        src: "/images/marketplace/kiosk-listing.png"
+        title: "User listing"
+        description: "Displays the list of all users with their configured login code types"
+      - 
+        src: "/images/marketplace/kiosk-preferences.png"
+        title: "Configuration"
+        description: "Configure your Kiosk plugin to your needs, login mode and code format depend on each other"
+      - 
+        src: "/images/marketplace/kiosk-user-profile.png"
+        title: "User codes"
+        description: "This new barcode can now be printed and handed out to the user"
+      - 
+        src: "/images/marketplace/kiosk-scanner.png"
+        title: "USB scanner"
+        description: "The 'Barcode with USB scanner' login mode show a screen like this, the input field is pre-selected and the scanner will submit it after finding a code"
+      - 
+        src: "/images/marketplace/kiosk-webcam.png"
+        title: "Webcam scanner"
+        description: "The 'Barcode with device cam' login mode will show the camera video and scan constantly for barcodes"
+      - 
+        src: "/images/marketplace/kiosk-login.png"
+        title: "Login"
+        description: "Scanning an existing code for a user starts a new timesheet"
+      - 
+        src: "/images/marketplace/kiosk-logout.png"
+        title: "Logout"
+        description: "Or when a timesheet is already running it will be stopped"
 ---
 
-A Kimai 2 plugin, which allows to use barcodes for `punch-in` and `punch-out` time tracking with Kimai.
-You can use it with an attached barcode scanner or you run Kimai on a device (eg. tablet) with a built-in camera.   
+A Kimai plugin, which allows using barcodes for `punch-in` and `punch-out` time tracking with Kimai.
+You can use it with an attached barcode scanner, or you run Kimai on a device (eg. tablet) with a built-in camera.   
+
+It also supports a "freestyle" mode, which allows to enter any free configurable code (up to 120 characters), 
+so you can also use other devices for starting/stopping:
+- an electronic USB numpad (like door-locks)
+- an RFID scanner that acts as keyboard 
 
 If you want to use Kimai in a kiosk mode, where your users should only register their attendance time through  
 punch-in and punch-out mode when entering/leaving the building, then this bundle is the solution for you.
@@ -33,116 +65,73 @@ punch-in and punch-out mode when entering/leaving the building, then this bundle
 It could be as simple as:
 - Print the barcodes on your employee cards 
 - Mount a tablet to the wall in your entrance room
-- Let your users check-in & check-out when entering the building by scanning the barcode from the emplyoee card
+- Let your users check-in & check-out when entering the building by scanning the barcode of their employee card
 
 You can test it in the ["Plugins" demo](https://www.kimai.org/demo/).
 
 ## Features
 
-- Start/Stop work with device camera or a hardware barcode scanner (eg. via USB)
-- Upon starting/stopping a record via this plugin, the user will see a short overview screen with the entries of the current week, including some statistics
-- The following 1D barcodes are currently supported:
+- Start/Stop work with barcode scanner (eg. via USB), RFIS scanner (via USB) or a device camera (to scan barcode) 
+- Upon starting/stopping a record via this plugin, the user will see a short overview screen with the entries of the current week (including some statistics)
+- New user profile screen for the "codes"
+  - Display all codes for user
+  - Generate a random code (automatically done if none is existing yet for the active code-type)
+  - Re-use existing code for user by entering (or scanning) it manually
+- User specific settings to configured allowed start and end working time (user can only clock in between these times)
+- Supports the following 1D barcodes:
   - `Code 128`
   - `Code 39`
   - `UPC-A` (scanner needs to transmit check digit)
   - `Code 2 of 5`
   - `Code 2 of 5 interleaved`
   - `Codabar` (scanner needs to transmit start & stop digits)
-- New user profile screen for the "barcode"
-  - Display current barcode (randomly generated if empty)
-  - Regenerate random barcode
-  - Re-use existing barcode for user
-- User specific settings for allowed start and end time (user can only clock in between these times)
 
-You need to configure a non-global activity for starting the record via this plugin. 
+You need to configure **a non-global activity** for starting the record via this plugin. 
 This will be used for every recorded timesheet that is created using the kiosk mode.
 
-## Purchase
+### Hardware
 
-{% include store-gumroad-and-support.html %}
+This is NOT a hardware recommendation, but more an idea for possible use-cases.
 
-### Compatibility
+I tried the linked products and even though all scanner are rather cheap, they work without problems.
 
-Please make sure to use the correct version of the plugin, which must be compatible with your Kimai version:
+- [Raspberry PI](https://amzn.to/2Ye8LeK) setup with [touch screen](https://amzn.to/321jg6k) (eg. for wall mount)
+- [RFID scanner](https://amzn.to/3aM5yby) by Neuftech (desktop version)
+- [RFID scanner](https://amzn.to/3hfwDpK) by KKMoon (desktop version)
+- [Barcode scanner](https://amzn.to/3g6HzEU) which can also scan codes from mobile phones (desktop version)
+- [Barcode scanner](https://amzn.to/2Q9KWAy) classic hand-held version
 
-| Bundle version    | Minimum Kimai 2 version   |
-| ---               |---                        |
-| 1.0 - 1.3         | 1.8                       |
-{: .table }
+The above are affiliate links for Amazon (germany) where I bought them myself. 
 
-## Installation
+## Configuration
 
-{% include store-plugin-installation.md plugin="KioskBundle" command="kimai:bundle:kiosk:install" assets=true %}
 
-## Configure the plugin
-
-You have to configure the bundle before you can use it via the `Plugin` screen. 
-Click the actions dropdown and select `Preferences` (see screenshot).
+You have to configure the bundle before you can use it - you reach the configuration via 
+- the `Plugin` screen (`Preferences` in action dropdown behind the plugin)
+- the Kiosk administration (cogs icon in the upper right)
+- the System configuration (`Kiosk & Barcode` section)
 
 The following configurations are available:
 
-- `Login mode` - whether to use camera or usb mode
-- `Barcode format` - you have to decide which code format you want to use
-- `Barcode includes readable code` - whether the barcode in the user profile will include the human readable code
-- `Duration to display confirmation dialog (in seconds)` - how long the start/stop screens will be shown after a successful scan
-- `Activity` - the non-global activity that will be used to track the times 
+| Configuration           | Description |
+|---                      |--- |
+| `Login mode` | whether to use camera or usb mode
+| `Code format` | you have to decide which code format you want to use
+| `Barcode includes readable code` | whether the barcode in the user profile will include the human readable code
+| `Duration to display confirmation dialog (in seconds)` | how long the start/stop screens will be shown after a successful scan
+| `Activity`            | the non-global activity that will be used to track the times 
 
-## Permissions
+### Permissions
 
-This bundle ships a new permission, which limit access to certain functions:
+This bundle introduces new permissions, which limit access to certain functions:
 
-- `barcode_own_profile` - allows to see and administrate barcode for the own user profile
-- `barcode_other_profile` - allows to see and administrate barcode for all user profiles
-- `kiosk_own_profile` - allows to configure user specific kiosk settings (eg. start and end time) for the own user profile 
-- `kiosk_other_profile` - allows to configure user specific kiosk settings (eg. start and end time) for all user profiles 
+| Permission Name           | Description |
+|---                        |--- |
+| `barcode_own_profile`     | allows to see and administrate barcode for the own user profile |
+| `barcode_other_profile`   | allows to see and administrate barcode for all user profiles |
+| `kiosk_own_profile`       | allows to configure user specific kiosk settings (eg. start and end time) for the own user profile |
+| `kiosk_other_profile`     | allows to configure user specific kiosk settings (eg. start and end time) for all user profiles |
 
-By default these are granted to each user with the role `ROLE_SUPER_ADMIN`.
+By default, these are granted to each user with the role `ROLE_SUPER_ADMIN`.
 
-**Please adjust all permission settings in your administration.** 
-
-## Updating the plugin
-
-Updating the bundle works the same way as the installation does. 
-
-- Delete the directory `var/plugins/KioskBundle/` (to remove deleted files)
-- Execute all installation steps again:
-  - Copy files
-  - Clear cache
-  - Update database with `bin/console kimai:bundle:kiosk:install` 
-  - Update assets with `bin/console assets:install` 
-
-## Screenshots
-
-When logged in as `SUPER_ADMIN`, change to the `Plugins` menu: 
-
-![Screenshot](https://www.kimai.org/images/marketplace/kiosk-plugins.png)
-
-Open the plugins preferences, which you need to save once before you can use the plugin:
-
-![Screenshot](https://www.kimai.org/images/marketplace/kiosk-preferences.png)
-
-After updating the settings, change to the user menu. You will see a new entry in the action menu for every user:
-
-![Screenshot](https://www.kimai.org/images/marketplace/kiosk-user-listing.png)
-
-Choose `Barcode` to open the users barcode:  
-
-![Screenshot](https://www.kimai.org/images/marketplace/kiosk-user-profile.png)
-
-This new barcode can now be printed and handed out to the user.
-
-The `Barcode with USB scanner` login mode show a screen like this, the input field is pre-selected and the scanner will submit it after finding a code:
-
-![Screenshot](https://www.kimai.org/images/marketplace/kiosk-scanner.png)
-
-The `Barcode with device cam` login mode will show the camera video and scan constantly for barcodes:
-
-![Screenshot](https://www.kimai.org/images/marketplace/kiosk-webcam.png)
-
-When scanning an existing barcode and the user does not have a running record a new one will be started:
-
-![Screenshot](https://www.kimai.org/images/marketplace/kiosk-login.png)
-
-Or when a record is running, it will be stopped:
-
-![Screenshot](https://www.kimai.org/images/marketplace/kiosk-logout.png)
+{% include store-howto-permissions.md %}

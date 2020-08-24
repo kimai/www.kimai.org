@@ -10,7 +10,7 @@ toc: true
 This documentation covers all necessary steps to migrate from Kimai 1 to Kimai 2.
 
 {% capture upgrade_note %}
-You can <a href="{% link _store/keleo-installation-support.md %}">get professional support</a> if you are not sure about performing the upgrade yourself. 
+You can <a href="{% link _store/installation-support.md %}">get professional support</a> if you are not sure about performing the upgrade yourself. 
 {% endcapture %}
 
 {% include alert.html type="success" icon="fas fa-shipping-fast" alert=upgrade_note %} 

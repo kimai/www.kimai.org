@@ -15,7 +15,7 @@ layout: default
 
 <script src="https://gumroad.com/js/gumroad.js"></script>
 
-<div class="container">
+<div class="container store-item">
 
 	{% include page-title.html title=page.name options=options %}
 
@@ -63,6 +63,22 @@ layout: default
 						</div>
 					</div>
 
+                    {% if page.bundle %}
+                    <div class="card">
+                        <div class="card-body">
+                            <ul class="section-nav bundle-nav">
+                                <li><a href="#features">Features</a></li>
+                                {%- if page.gumroad and page.developer == 'keleo' %}
+                                <li><a href="#purchase">Purchase</a></li>
+                                {% endif %}
+                                <li><a href="#screenshots">Screenshots</a></li>
+                                <li><a href="#installation">Installation</a></li>
+                                <li><a href="#updates">Updates</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    {% endif %}
+
                     <div class="card">
                         <div class="card-body text-center">
                             <div class="mb-4">
@@ -96,7 +112,7 @@ layout: default
                     <div class="card">
                         <div class="card-body">
                             <h3 class="mb-3 text-center alert alert-info">
-                                    Try it
+                                Try it
                             </h3>
                             <p class="mb-4">
                                 You can test this plugin in our dedicated <a href="https://demo-plugins.kimai.org">plugin demo</a>:
@@ -201,10 +217,93 @@ layout: default
                     {{ content }}
 				</div>
 			</div>
+            {%- if page.gumroad and page.developer == 'keleo' %}
+                <div class="card">
+                    <div class="card-header">
+                        <div class="d-flex align-items-center px-2">
+                            <h3 id="purchase" class="card-title">Purchase</h3>
+                        </div>
+                        <div class="card-options">
+                            {% if page.gumroad %}
+                            <a href="https://gum.co/{{ page.gumroad }}" class="btn btn-success ml-2" target="_blank">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span class="text-nowrap">Buy now</span>
+                            </a>
+                            {% endif %}
+                        </div>
+
+                    </div>
+                    <div class="card-body">
+                        {% include store-gumroad-and-support.html %}
+                    </div>
+                </div>
+            {% endif %}
+            {% if page.bundle %}
+                {% if page.bundle.screenshots %}
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="d-flex align-items-center px-2">
+                                <h3 id="screenshots" class="card-title">Screenshots</h3>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            {% include slider.html slides=page.bundle.screenshots %}
+                        </div>
+                    </div>
+                {% endif %}
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="d-flex align-items-center px-2">
+                                <h3 id="installation" class="card-title">Installation</h3>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            {% if page.bundle.versions %}
+                            <h3>Compatibility</h3>
+
+                            <p>The plugin is compatible with the following Kimai releases:</p>
+
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>
+                                        Bundle version
+                                    </th>
+                                    <th>
+                                        Kimai version
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    {% for version in page.bundle.versions %}
+                                    <tr>
+                                        <td>{{ version[0] }}</td>
+                                        <td>{{ version[1] }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                            {% endif %}
+
+                            {% include store-plugin-installation.html clone=page.bundle.clone plugin=page.bundle.name command=page.bundle.command assets=page.bundle.assets %}
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="d-flex align-items-center px-2">
+                                <h3 id="updates" class="card-title">Updates</h3>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            {% include store-plugin-update.html plugin=page.bundle.name command=page.bundle.command assets=page.bundle.assets %}
+                        </div>
+                    </div>
+            {% endif %}
 		</div>
 	</div>
 
-	<div class="row row-cards">
+    <div class="row row-cards">
 		<div class="col-lg-3"></div>
 		<div class="col-lg-9">
 			<h4>All items by {{ developer.name }}</h4>

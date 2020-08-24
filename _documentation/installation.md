@@ -35,6 +35,14 @@ And run the Kimai installer:
 bin/console kimai:install -n
 ```
 
+{% capture windows %}
+Windows users might have to prefix the composer and installation commands with `php`, eg.:  
+`php bin/console kimai:install -n`
+{% endcapture %}
+{% assign windows = windows|markdownify %}
+
+{% include alert.html icon="fab fa-windows" type="warning" alert=windows %}
+
 ### File permissions
 
 The webserver needs write permissions for several directories, so make sure the 
@@ -92,7 +100,7 @@ Read [this issue]({{ site.kimai_v2_repo }}/issues/743) if you have further quest
 
 How to install Kimai at shared hosting companies. Please share our insights if you have managed to get it up and running with another company!
 
-If you can't find the correct version, ask your hoster! Or [let us help you]({% link _store/keleo-installation-support.md %}).
+If you can't find the correct version, ask your hoster! Or [let us help you]({% link _store/installation-support.md %}).
 
 ### Ionos / 1&1
 
