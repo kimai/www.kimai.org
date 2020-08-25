@@ -66,6 +66,13 @@ You need to tick the checkbox before saving (Kimai 1.9) / printing (Kimai 1.8 an
  
 For further information read the [timesheet documentation]({% link _documentation/timesheet.md %}).
 
+## Billable items only
+
+Since Kimai 1.10 only billable items will be included in invoices. By default, every timesheet records is billable but future 
+versions of Kimai will ship features to change that.  
+
+[Expense items]({% link _store/expenses-bundle.md %}) have a configurable billable flag per item and only the once marked as billable (refundable) will be included. 
+
 ## Invoice document
 
 The invoice system currently supports the following formats:
@@ -143,6 +150,16 @@ kimai:
             - 'var/my_invoices/'
 ```
 
+### Uploading invoice documents
+
+Sine Kimai 1.8 you can upload invoice documents via the UI at `/en/invoice/document_upload`.
+
+Due to security restriction currently only the upload of the following formats is allowed: `DOCX`, `ODS`, `XLSX`.
+
+There is a known bug in LibreOffice which exports DOCX files with a wrong mime-type. These files will not be accepted 
+by Kimai with the error `This file type is not allowed` ([read this issue](https://github.com/kevinpapst/kimai2/issues/1916) for more information). 
+The workaround is to change the document with another word processor - eg. Apple pages and Google Drive export DOCX files with correct mimetype.
+
 ### Twig templates
 
 Generally speaking, you should use only the variable `model` in your template which is an instance of `App\Model\InvoiceModel`.
@@ -170,7 +187,7 @@ Use the twig include feature with the `@invoice` namespace . The following examp
 
 ### PDF templates 
 
-PDF invoice templates are available since Kimai 1.9
+PDF invoice templates are available since Kimai 1.9. 
 
 These are basically the same as Twig templates. But the resulting HTML is processed by the [MPdf library](https://mpdf.github.io), 
 which will convert the HTML & CSS to PDF.
