@@ -158,7 +158,7 @@ Due to security restriction currently only the upload of the following formats i
 
 There is a known bug in LibreOffice which exports DOCX files with a wrong mime-type. These files will not be accepted 
 by Kimai with the error `This file type is not allowed` ([read this issue](https://github.com/kevinpapst/kimai2/issues/1916) for more information). 
-The workaround is to change the document with another word processor - eg. Apple pages and Google Drive export DOCX files with correct mimetype.
+The workaround is to change the document with another word processor: Apple pages, Google Drive and Microsoft 365 Online Office will export the DOCX files with the correct mimetype.
 
 ### Twig templates
 
