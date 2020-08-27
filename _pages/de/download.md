@@ -2,6 +2,7 @@
 layout: page
 title: Download
 description: Download - Kimai Zeiterfassung herunterladen
+options: '<a href="https://github.com/kevinpapst/kimai2/releases.atom" class="btn btn-option"><i class="fa fa-rss"></i></a>'
 lang: de
 lang-ref: download
 permalink: /de/download.html
