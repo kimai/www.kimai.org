@@ -14,7 +14,7 @@
 			{% assign icon = product.icon | default: "fas fa-question" %}
 			{% assign developer = site.data.developer[product.developer] %}
 			<tr class="{% if featured %}featured-article{% endif %}{% for tag in product.tags %} tag-{{ tag | slugify }}{% endfor %}">
-				<td class="text-center">
+				<td class="text-center product-icon">
 					{% if product.image %}
 					<img src="{{ product.image }}" alt="Product logo" {{ imageSize }}>
 					{% else %}

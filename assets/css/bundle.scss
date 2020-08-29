@@ -42,6 +42,10 @@
     }
 }
 
+.product-icon {
+    display: none;
+}
+
 .page-header {
     padding-left: $grid-gutter-width / 2;
     margin: 1rem 0 1rem;
@@ -81,6 +85,10 @@
 }
 
 @media (min-width: map-get($grid-breakpoints, "sm")) {
+    .product-icon {
+        display: table-cell;
+        width: 100px;
+    }
     .nav-tabs {
         margin: unquote("0 -#{$grid-gutter-width / 2}");
     }
