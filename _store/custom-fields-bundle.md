@@ -100,6 +100,8 @@ The custom-field data is then available in:
 - API (collections and entities)
 - Invoice templates (custom templates have access to all fields)
 
+You can change the "weight" of custom-fields, so they show up in the order you define. 
+
 Be aware:
 
 - Restricted fields won't be visible on the create forms, as Kimai initially can't know if the rule will apply: in these cases the fields will only be shown in the edit forms
