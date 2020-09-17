@@ -3,7 +3,7 @@ title: Controlling Plugin
 name: Controlling Plugin (German law, break time check, overtime, etc.)
 intro: "A plugin for Kimai 2 which checks if one of your users violated the German break time law + nominal and actual work time comparison + overtime view"
 developer: hmr-it
-date: "2019-09-27 20:00:00"
+date: "2020-09-17 14:30:00"
 icon: fa fa-gavel
 price: "99€"
 gumroad: iVspM
