@@ -76,3 +76,20 @@ bin/console kimai:import-v1 "mysql://kimai:test@127.0.0.1:3306/kimai?charset=lat
 ```
 That will drop the configured Kimai v2 database schema and re-create it, before importing the data from the `mysql` database at `127.0.0.1` on port `3306` authenticating the user `kimai` with the password `test` for import.
 The connection will use the charset `latin1` and the default table prefix `kimai_` for reading data. Imported users can login with the password `test123` and all customer will have the country `CH` and the currency `CHF` assigned.
+
+### Broken character
+
+Many Kimai 1 installations have broken special character (like german umlauts or other language specific non-ascii characters) in the database.
+
+This problem does not show up in the frontend og Kimai 1, as the database connection is using a different collation then the database. But you can see these problems, when you query the database directly (eg. with a tool like phpMyAdmin). 
+
+You can fix these broken entries (mainly timesheet descriptions) with SQL statements like these:
+```sql 
+SELECT * FROM `kimai2_timesheet` WHERE description like "%Ã¼%"; 
+```
+
+They cannot be fixed automatically by Kimai 2, but changing them is then just a matter of rewriting these SQL queries:
+```sql 
+UPDATE `kimai2_timesheet` SET description = REPLACE(description, "Ã¼", "ü") WHERE description like "%Ã¼%"; 
+UPDATE `kimai2_timesheet` SET description = REPLACE(description, "Ã¤", "ä") WHERE description like "%Ã¤%"; 
+```
