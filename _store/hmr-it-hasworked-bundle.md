@@ -4,7 +4,7 @@ name: HasWorked Plugin (notify users if they haven't entered times)
 intro: "A Kimai2 plugin to send emails not users that don't have any entries on the current day yet"
 developer: hmr-it
 date: "2020-09-17 13:30:00"
-icon: fa fa-gavel
+icon: fa fa-bell
 price: "29€"
 gumroad: wkBXaw
 new: true
