@@ -7,6 +7,7 @@ date: "2020-09-17 14:30:00"
 icon: fa fa-gavel
 price: "99€"
 gumroad: iVspM
+new: true
 tags:
   - plugin
 bundle:
