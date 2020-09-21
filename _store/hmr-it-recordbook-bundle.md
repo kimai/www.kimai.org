@@ -28,6 +28,10 @@ bundle:
 - Easy to use, just click download and print it
 - One pdf per week
 
+## Demo
+
+Click [here](https://cdn.hmr-it.de/f/kimai2_berichtsheft-beispiel_bd70976c-2b42-4c36-8946-2a5cf31e8c45.pdf) for a demo view of the generated pdf.
+
 ## Requires
 
 Kimai 2, V1.10+
