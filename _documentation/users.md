@@ -141,19 +141,37 @@ The default period for the `Remember me` option can be changed in the config fil
 
 ### Session lifetime
 
-If you want to change the session lifetime, you have to configure the framework configuration in 
-`config/packages/framework.yaml` and add the key `framework.session.cookie_lifetime`.
+By default, Kimai uses the PHP session lifetime configured on your server (normally in `php.ini`).
 
-So something along the lines:
+If you want to change the session lifetime (eg. to prevent automatic logout during the workday or to prevent CSRF errors), 
+you can either adjust the settings for PHP directly ([see PHP docs](https://www.php.net/manual/en/session.configuration.php)) 
+or you can explicitly set it for Kimai.
+
+You need to add the following settings to your [local.yaml]({% link _documentation/configurations.md %}):
+
 ```yaml
 framework:
     session:
-        handler_id:  session.handler.native_file
-        save_path:   "%kernel.project_dir%/var/sessions/%kernel.environment%"
-        cookie_lifetime: 60
+        gc_maxlifetime: 3600
+        cookie_lifetime: 3600
 ```
 
-See also: [Symfony documentation](https://symfony.com/doc/current/reference/configuration/framework.html#cookie-lifetime)
+The values above (here `3600`) are seconds, the above configuration would be rather strict and automatically logout the user after 1 hour.
+
+Another example would be:
+
+```yaml
+framework:
+    session:
+        gc_maxlifetime: 36000
+        cookie_lifetime: ~
+```
+
+Explanation: the session should last 10 hours with a session cookie that is deleted upon browser restart (every browser restart forces a new login).
+
+See also: 
+- [Symfony documentation](https://symfony.com/doc/current/reference/configuration/framework.html#session)
+- [PHP documentation](https://www.php.net/manual/en/session.configuration.php)
 
 ### Admin password forgotten
 
