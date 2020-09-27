@@ -45,17 +45,28 @@ To change the format, look out for the {% include demo-action-button.html icon="
 
 ### Incrementing the invoice counter
 
-Since 1.10 it is possible to increment the counter by a fixed value. You can add a number to the result. 
-By default Kimai takes the amount of found invoices and adds 1. But you can change the 1 to any arbitrary number.
+Since 1.10 it is possible to increment the counter by a fixed value: you can add a number to the result. 
+For evaluated counters, Kimai takes the amount of found invoices and adds 1, but you can replace `+1` with an addition like `+3`.
 This works for the following replacer: `{c}` and `{cy}` and `{cm}` and `{cd}` and `{cc}` and `{ccy}` and `{ccm}` and `{ccd}`. 
 
-Simply use the `+` symbol after the replacer, eg. `{cy+72}`. This also works in combination with the length formatter, eg.: `{cy+72,3}` 
+Simply use the plus (`+`) after the replacer, eg. `{cy+72}`. This also works in combination with the length formatter, eg.: `{cy+72,3}` 
+
+### Decrementing the invoice counter
+
+Since 1.11 it is possible to decrement the counter by a fixed value: you can subtract a number from the result. 
+For evaluated counters, Kimai takes the amount of found invoices and adds `+1`, but you can replace `+1` with a subtraction like `-12`.
+This works for the following replacer: `{c}` and `{cy}` and `{cm}` and `{cd}` and `{cc}` and `{ccy}` and `{ccm}` and `{ccd}`. 
+
+Simply use the minus (`-`) after the replacer, eg. `{cy-72}`. This also works in combination with the length formatter, eg.: `{cy-72,3}` 
 
 ### Examples
 
-Assume you already wrote 72 invoices this year (before you started to use Kimai) and your counter is an incrementing number 
-per year, which is prefix with the four digit year:
-- `{Y}/{cy+73,3}` would result in `2019/073` for your first invoice
+Assume you already wrote 72 invoices this year (before you started to use Kimai), and your counter is an incrementing number 
+per year, which is prefixed with the four digit year:
+- `{Y}/{cy+73,3}` would result in `2020/073` for your first invoice
+
+Assume that you want to change your invoice numbering and reset it to zero, you already wrote 72 invoices this year, and your counter is an incrementing number per year that should be prefixed with the four digit year:
+- `{Y}/{cy-72,3}` would result in `2020/001` for your first invoice
 
 ## Export state
 
