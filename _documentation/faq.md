@@ -29,6 +29,42 @@ about **timezones**.
 
 Don't mix it up with the system specific configuration for new customers.
 
+## Share an anonymized database dump
+
+1. Create a database dump (eg. with `mysqldump kimai2 > kimai.sql`)
+2. Import that dump into a new database (`CREATE DATABASE kimai2_anonymous;`, `mysql kimai2_anonymous < kimai.sql`)
+3. Run the following SQL: 
+```sql
+UPDATE kimai2_users SET username=concat('user', id), email=concat('email', id, '@example.com'), alias=concat('User ', id), title=null, avatar=null, password='$argon2id$v=19$m=65536,t=4,p=1$SgXu9HaM4kuQriSrWFyWmA$SouREL0yyxTyV/+YSTHWVc0UPwh5rROwOXgf96K94uM'; 
+UPDATE kimai2_users SET username_canonical=username, email_canonical=email,api_token=password; 
+UPDATE kimai2_customers SET name=concat('Customer ', id), comment=null, vat_id=null, company=null, address=null, email=null, contact=null, phone=null, fax=null, mobile=null, homepage=null; 
+UPDATE kimai2_projects SET name=concat('Project ', id), comment=null; 
+UPDATE kimai2_activities SET name=concat('Activity ', id), comment=null; 
+UPDATE kimai2_invoices SET invoice_filename=concat('invoice', id);
+UPDATE kimai2_invoice_templates SET address=concat('address', id), company=concat('company', id), vat_id=null, contact=null, payment_details=null, payment_terms=null;
+TRUNCATE kimai2_sessions;
+```
+The new user password is `kitten`.
+
+If you use plugins, you can `DROP` or `TRUNCATE` their tables.
+
+The table  `kimai2_user_preferences` needs to be checked manually.
+
+You can remove all data from the following tables if there is sensitive data:
+```sql
+TRUNCATE kimai2_timesheet_meta;
+TRUNCATE kimai2_activities_meta;
+TRUNCATE kimai2_customers_comments;
+TRUNCATE kimai2_customers_meta;
+TRUNCATE kimai2_projects_comments;
+TRUNCATE kimai2_projects_meta;
+```
+Please check first if there is nothing sensitive inside or delete the rows by using a `where` filter.
+The more data will be kept, the better it will be for testing. 
+
+This anonymized database can now be dumped again, then create a password-protected ZIP from it and upload it to 
+a cloud account (like Owncloud, Dropbox, Google Drive...) and share the URL via email/private chat.
+
 ## Changed configs/templates do not load
 
 Kimai is built on top of Symfony, a framework that optimizes its speed by caching most files.
