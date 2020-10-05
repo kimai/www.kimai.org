@@ -54,6 +54,7 @@ You can add your own views to the reporting panel by listening to the `Reporting
 namespace KimaiPlugin\DemoBundle\EventSubscriber;
 
 use App\Event\ReportingEvent;
+use App\Reporting\Report;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 
@@ -73,7 +74,7 @@ final class ReportingEventSubscriber implements EventSubscriberInterface
         ];
     }
 
-    public function onMainMenuConfigure(ReportingEvent $event)
+    public function onReportingMenu(ReportingEvent $event)
     {
         // perform your necessary permission checks
         if (!$this->security->isGranted('view_reporting')) {
