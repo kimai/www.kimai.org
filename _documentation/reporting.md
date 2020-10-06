@@ -25,6 +25,13 @@ Display a full month of working times for one user.
 
 You can change the displayed month and (in case you have the correct permissions) the user to display the report for.
 
+## Weekly view for all users
+
+Display a full week of working times for all users.
+All here doesn't mean "all users", but only "all users that you have access to" (see below in "Choosing a user").
+
+You can change the displayed week.
+
 ## Monthly view for all users
 
 Display a full month of working times for all users.
