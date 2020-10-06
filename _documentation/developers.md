@@ -15,7 +15,7 @@ This page is dedicated to all developers who want to contribute to Kimai. You ar
 
 All you need is:
 
-- PHP >= 7.1.3
+- PHP >= 7.2.9
 - PHP extensions: `PDO-SQLite`, `intl`, `zip`, `gd`, `mbstring`, `xml`
 - [Composer](https://getcomposer.org/download/)
 
