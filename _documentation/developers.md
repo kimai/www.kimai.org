@@ -50,12 +50,6 @@ APP_ENV=dev
 DATABASE_URL=mysql://db_user:db_password@127.0.0.1:3306/db_name
 ```
 
-Run the Kimai installer:
-
-```bash
-bin/console kimai:install -n
-```
-
 The next command will import demo data, to test the application in its full beauty - with different user accounts, 
 customers, projects, activities and several thousand timesheet records. Lets bootstrap your database 
 (command only available in `dev` environment): 
