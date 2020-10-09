@@ -26,6 +26,7 @@ Select a user, project, activity, date from and to, hours and minutes per day an
 
 - Insert a period of time for a single user or multiple users with just one work step
 - Optional time insert on weekends
+- Support for Tags
 
 ## Requires
 
