@@ -9,97 +9,163 @@ since_version: 1.6
 
 There is a dedicated chapter about [migrating data from Kimai v1]({% link _documentation/migration-v1.md %}).
 
+## Importing customer
+
+The `kimai:import:customer` command will import customer.
+
+```bash
+bin/console kimai:import:customer customer.csv
+```
+
+Supported attributes (field names are case-insensitive):
+
+| Customer attribute | Supported field names                                     |  
+| -----------------  | --------------------------------------------------------- |
+| Name               | project, projectname, project name, project-name, name    |
+| Account            | number, account, customer number, customer account        |
+| Company name       | company, company name, company-name                       |
+| Description        | description, comment                                      |
+| E-Mail             | email, e-mail, e mail                                     |
+| Country            | country                                                   |
+| Vat-ID             | vat, vat-id, vat id, tax-id, tax id                       |
+| Address            | address                                                   |
+| Contact            | contact                                                   |
+| Currency           | currency                                                  |
+| Timezone           | timezone                                                  |
+| Phone              | phone                                                     |
+| Mobile             | mobile                                                    | 
+| Fax                | fax                                                       |
+| Homepage           | homepage                                                  |
+| Color              | color                                                     |
+| Budget             | budget                                                    |
+| Time budget        | time budget, time-budget                                  |
+| Visible            | visible                                                   |
+| Meta fields        | meta.xxx                                                  |
+
+### Options
+
+Possible options:
+- `--importer=default` - the importer to use (supported: default, grandtotal) - default: default
+- `--reader=csv` - the reader to use (supported: csv, csv-semicolon) - default: csv
+- `--no-update` - if you want to create new customer, but not update existing ones
+
+You can see all option by calling `bin/console kimai:import:customer --help`.
+
+### Example 
+
+Import a minimum CSV example file (using semicolon as delimiter) with: 
+```bash
+bin/console kimai:import:customer customer.csv --reader=csv-semicolon
+```
+
+The `customer.csv` file:
+```
+Name;Company
+Acme,Acme university Ltd.
+```
+
+A multi column-example, which will leave existing customers alone during import:
+
+```bash
+bin/console kimai:import:customer customer.csv --reader=csv --no-update
+```
+
+The `customer.csv` file:
+```
+Name,Company,Number,Comment,Phone,Timezone,Meta.XYZ
+Acme,Acme university Ltd.,12367800,A longer comment to talk about the project,0011234567890,Europe/Berlin,hello foo 123
+```
+
+### Via Grandtotal
+
+There is a [plugin for Mac invoicing software Grandtotal]({% link _store/grandtotal-plugin-for-kimai.md %}), which adds support for Kimai.
+
+In case your leading system for customers is Grandtotal, you can import customers from a Grandtotal CSV export into Kimai.
+Grandtotal calls CSV exports `Numbers` in the export screen. 
+
+```bash
+bin/console kimai:import:customer grandtotal.csv --reader=csv-semicolon --importer=grandtotal
+```
+
+Attention: Grandtotal exports its data with column names in the UI language (just like Kimai). 
+Kimai only supports imports for GT exports from the languages english and german, so you might have to change it in `Settings / Languages / User interface`.
+
 ## Importing projects
 
-This will import projects and create missing customers on the fly.
+The `kimai:import:project` command will import projects and create missing customers on the fly.
 
-An empty team (with the projects name) can be created for each project, therefor the `teamlead` options needs to be set.
-These teams will be assigned to the projects, but not to the customers. 
-
-```bash
-bin/console kimai:import:customer --teamlead=anna_admin --delimiter=";" --comment="" ~/Downloads/import-customers.csv
-```
-
-### All options
-
-You can see all option by calling `bin/console kimai:import:customer --help` which will show:
+An empty team (with the projects name) can be created for each project, in which case the `teamlead` options needs to be set.
 
 ```bash
-Description:
-  Import projects from CSV file
-
-Usage:
-  kimai:import:customer [options] [--] <file>
-
-Arguments:
-  file                         The CSV file to be imported
-
-Options:
-      --teamlead=TEAMLEAD      If you want to create empty teams for each project, give the username of the teamlead to be assigned
-      --delimiter[=DELIMITER]  The CSV field delimiter [default: ","]
-      --comment[=COMMENT]      A description to be added to created customers and projects. %s will be replaced with the current datetime [default: "Imported at %s"]
-
-Help:
-  This command allows to import projects from a CSV file, creating customers (if not existing) and optional empty teams for each project.
-  Imported customer will be matched by name and optionally created on the fly.
-  Required column names: Name, Customer
-  Supported column names: Name, Customer, Comment, OrderNumber, OrderDate
+bin/console kimai:import:project project.csv
 ```
 
-Minimum content for a CSV file (using the delimiter `;`):
+Supported attributes (field names are case-insensitive):
 
+| Project attribute | Supported field names                                     |  
+| ----------------- | --------------------------------------------------------- |
+| Name              | project, projectname, project name, project-name, name    |
+| Customer name     | customer, customername, customer-name, customer name      |
+| Description        | description, comment                                      |
+| Order number      | ordernumber, order-number, order number                   | 
+| Order date        | orderdate, order-date, order date                         |
+| Color             | color                                                     |
+| Budget            | budget                                                    |
+| Time budget       | time budget, time-budget                                  |
+| Visible           | visible                                                   |
+| Meta fields       | meta.xxx                                                  |
+
+### Options
+
+Possible options:
+- `--importer=default` -  the importer to use (supported: default) - default: default
+- `--reader=csv` - the reader to use (supported: csv, csv-semicolon) - default: csv
+- `--teamlead=USERNAME` - if you want to create empty teams for each project pass an existing username for the new teamlead (teams will be assigned to the projects, but not to the customers)
+- `--no-update` - if you want to create new projects, but not update existing ones
+
+You can see all option by calling `bin/console kimai:import:project --help`.
+
+### Example
+
+Import a minimum CSV example file (using semicolon as delimiter) with: 
+```bash
+bin/console kimai:import:project project.csv --reader=csv-semicolon
+```
+
+The `project.csv` file:
 ```
 Name;Customer
-Project name;Customer name
+Test project;Test customer
 ```
 
-Full content for a CSV file (using default delimiter `,`):
+A multi column-example, creating teams for new projects and leaving existing projects alone will be imported with:
 
+```bash
+bin/console kimai:import:project project.csv --reader=csv --teamlead=anna_admin --no-update
 ```
-Name,Customer,Comment,OrderNumber,OrderDate
-Project name,Customer name,a longer comment,1234567890,2019-08-29
+
+The `project.csv` file:
+```
+Name,Customer,Comment,OrderNumber,OrderDate,Meta.XYZ
+My great project,Acme university,A longer comment to talk about the project,1234567890,2019-08-29,hello foo 123
 ```
 
 ## Importing timesheets
 
-This will import timesheets and create on the fly:
+This will import timesheets and create these elements on the fly:
 - missing customer
-- mising projects
+- missing projects
 - missing activities
 
-Users have to be existing before (mainly because the users timezone setting is used to import the timesheets).
+Users need to exist before (mainly because the user timezone setting will be used to import the timesheets).
 
 ```bash
 bin/console kimai:import:timesheet --timezone=UTC --activity=global --delimiter=";" --customer="Imported customer" ~/Downloads/import-timesheets.csv
 ```
 
-### All options
+### Options
 
-You can see all option by calling `bin/console kimai:import:timesheet --help` which will show:
-
-```bash
-Description:
-  Import timesheets from CSV file
-
-Usage:
-  kimai:import:timesheet [options] [--] <file>
-
-Arguments:
-  file                         The CSV file to be imported
-
-Options:
-      --timezone[=TIMEZONE]    The timezone to be used. Supports: "valid timezone names", the string "user" (using the configured users timezone) and the string "server" (PHP default timezone) [default: "user"]
-      --customer[=CUSTOMER]    A customer ID or name to assign for empty entries. Defaults to creating a new customer which is used for all un-linked projects
-      --activity[=ACTIVITY]    Whether new activities should be "global" or "project" specific. Allowed values are "global" and "project" [default: "project"]
-      --delimiter[=DELIMITER]  The CSV field delimiter [default: ","]
-      --begin[=BEGIN]          Default begin if none was provided in the format HH:MM [default: "00:00"]
-      --comment[=COMMENT]      A description to be added to created customers, projects and activities. %s will be replaced with the current datetime [default: "Imported at %s"]
-
-Help:
-  This command allows to import timesheets from a CSV file, which are formatted like CSV exports.
-  Imported customer, projects and activities will be matched by name.
-  Supported columns names: Date, From, To, Duration, Rate, User, Customer, Project, Activity, Description, Exported, Tags, Hourly rate, Fixed rate
-```
+You can see all option by calling `bin/console kimai:import:timesheet --help`.
 
 ### Example
 
