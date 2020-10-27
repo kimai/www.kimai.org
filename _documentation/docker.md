@@ -58,12 +58,12 @@ docker exec -ti kimai2 bash
 
 This creates a user admin/admin with all privileges. 
 ```bash
-docker exec kimai2 bin/console kimai:create-user admin admin@example.com ROLE_SUPER_ADMIN admin
+docker exec kimai2 /opt/kimai/bin/console kimai:create-user admin admin@example.com ROLE_SUPER_ADMIN admin
 ```
 
 To install the test data (fixtures):
 ```bash
-docker exec kimai2 bin/console kimai:reset-dev
+docker exec kimai2 /opt/kimai/bin/console kimai:reset-dev
 ```
 
 ### Using a custom local.yaml
