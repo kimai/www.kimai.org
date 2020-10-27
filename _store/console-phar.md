@@ -2,7 +2,7 @@
 title: PHP console client for Kimai
 name: Console client (PHAR)
 intro: Cross platform console client for Kimai
-developer: kevinpapst
+developer: keleo
 date: "2020-01-01 20:00:00 +0200"
 icon: fas fa-terminal
 price: "0"
@@ -20,10 +20,7 @@ This command line client should help work Kimai remotely via your favorite shell
 
 It is based on the PHAR technology, so you need PHP >= 7.3 installed on your machine to use it.
 
-Commands: 
-- List customers
-- List projects 
-- List activities
+You can find the [full documentation at GitHub]({{ page.github }}).
 
 ## Download and install
 

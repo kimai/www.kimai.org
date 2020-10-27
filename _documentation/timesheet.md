@@ -66,8 +66,9 @@ _Configuration:_
 
 Please read the [PHP documentation about relative date formats](https://www.php.net/manual/en/datetime.formats.relative.php).
 
-Some more examples of relative datetimes:
+Some more examples:
 - `first day of -3 month 00:00:00 +216 hours` executed in July 2020 will result in `2020-04-10 00:00:00` 
+- only allow editing for yesterday and today: start = `yesterday 00:00:00`, end = `today 23:59:59`, grace = `+1 days`
 
 ## Tracking modes
 

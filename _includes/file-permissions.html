@@ -1,26 +1,31 @@
 <div class="row row-cards row-deck">
-<div class="col-md-12">
-<div class="card">
-<div class="card-status bg-info"></div>
-<div class="card-header">
-<h4 class="card-title">Fix Kimai file permission</h4>
-</div>
-<div class="card-body" markdown="1">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-status bg-info"></div>
+            <div class="card-header">
+                <h4 class="card-title">Fix Kimai file permission</h4>
+            </div>
+            <div class="card-body">
+                <p>
+                    You have to allow PHP (your webserver process) to write to
+                    <code class="language-plaintext highlighter-rouge">var/</code> and it subdirectories.
+                </p>
 
-You have to allow PHP (your webserver process) to write to `var/` and it subdirectories.
+                <p>Here is an example for Debian/Ubuntu (to be executed inside the Kimai directory):</p>
 
-Here is an example for Debian/Ubuntu (to be executed inside the Kimai directory):
-```bash
+{% highlight plaintext %}
 chown -R :www-data .
 chmod -R g+r .
 chmod -R g+rw var/
 chmod -R g+rw public/avatars/
-```
+{% endhighlight %}
 
-Test Kimai before executing these commands (they are likely not required in a shared-hosting environment).
-You probably need to prefix them with `sudo` and the group might be called different than `www-data`.
-
-</div>
-</div>
-</div>
+                <p>
+                    Test Kimai before executing these commands (they are likely not required in a shared-hosting environment).
+                    You probably need to prefix them with <code class="language-plaintext highlighter-rouge">sudo</code> and
+                    the group might be called different than <code class="language-plaintext highlighter-rouge">www-data</code>.
+                </p>
+            </div>
+        </div>
+    </div>
 </div>

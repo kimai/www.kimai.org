@@ -1,4 +1,4 @@
-# Kimai's awesome website.
+# Kimai's website
 
 Directory structure:
 
@@ -13,3 +13,9 @@ Directory structure:
 - **images** contains ONLY images used in the content
 
 For more info read the [Jekyll documentation](http://jekyllrb.com/).
+
+
+Run it locally: 
+```
+bundle exec jekyll serve
+```

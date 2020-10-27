@@ -10,6 +10,42 @@
 @import 'font-awesome/brands';
 @import 'dashboard/dashboard';
 
+.store-item {
+    ul.section-nav.bundle-nav {
+        margin: 0;
+        padding: 0;
+        background-color: #fff;
+        border: none;
+    }
+}
+
+.store-screenshots-slider {
+    margin-bottom: 15px;
+    img.slider {
+        background: rgba(0,0,0,0.2);
+    }
+    .carousel-caption {
+        background: rgba(0,0,0,0.8);
+        padding: 20px;
+    }
+    .carousel-item {
+        max-height: 800px;
+    }
+    .carousel-item-background {
+        background: rgba(0,0,0,0.01);
+    }
+    .carousel-control-prev,
+    .carousel-control-next {
+        font-size: 30px;
+        color: #000;
+        opacity: 1;
+    }
+}
+
+.product-icon {
+    display: none;
+}
+
 .page-header {
     padding-left: $grid-gutter-width / 2;
     margin: 1rem 0 1rem;
@@ -49,6 +85,10 @@
 }
 
 @media (min-width: map-get($grid-breakpoints, "sm")) {
+    .product-icon {
+        display: table-cell;
+        width: 100px;
+    }
     .nav-tabs {
         margin: unquote("0 -#{$grid-gutter-width / 2}");
     }

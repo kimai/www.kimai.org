@@ -8,9 +8,9 @@ permalink: /de/store/
 ---
 
 <div class="container">
-	{% include page-title.html title="Erweitern Sie Ihre Zeiterfassung" subtitle="Achtung: Inhalte bisher nur auf englisch verfügbar" %}
+    {% include page-title.html title="Erweitern Sie Ihre Zeiterfassung" subtitle="Achtung: Inhalte bisher nur auf englisch verfügbar" %}
 
-	<div class="row row-cards">
+    <div class="row row-cards">
 		<div class="col-lg-9">
 			{% assign products = site.store | where_exp:"product", "product.featured != nil" | sort: 'name' %}
 			{% include store-list.html products=products %}
@@ -44,10 +44,13 @@ permalink: /de/store/
 							<h3 class="card-title text-center">Kimai Marktplatz</h3>
 							<div class="card-subtitle">
 								<p>
-									Der zentrale Ort, um neue Plugins und kommerziellen Support für Kimai zu finden.
+									Der zentrale Ort, um neue Plugins, Entwickler und kommerziellen Support für Kimai zu finden.
 								</p>
 								<p>
-									Jede aufgelistete Kimai-Erweiterung funktioniert nur mit Kimai 1.0 oder höher.
+                                    Mit dem Kauf eines Kimai-Plugins oder einer Kimai-App unterstützen Sie den Entwickler und unsere Community.
+								</p>
+								<p>
+                                    Und wussten Sie schon, dass die Unterstützung von Open-Source-Software gut für Ihr Karma ist? 😄
 								</p>
 							</div>
 						</div>

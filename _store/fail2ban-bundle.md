@@ -10,35 +10,14 @@ download: https://github.com/Keleo/Fail2BanBundle/archive/master.zip
 github: https://github.com/Keleo/Fail2BanBundle
 tags:
   - plugin
+bundle:
+    name: "Fail2BanBundle"
+    clone: "https://github.com/Keleo/Fail2BanBundle.git"
 ---
 
-A Kimai 2 plugin, which logs an error message for every failed login attempt to a dedicated logfile.
+A Kimai plugin, which logs an error message for every failed login attempt to a dedicated logfile.
 
 This logfile can be analyzed by `fail2ban` to block access and prevent authentication attacks.
-
-## Installation
-
-First clone it to your Kimai installation `plugins` directory:
-```
-cd /kimai/var/plugins/
-git clone https://github.com/Keleo/Fail2BanBundle.git
-```
-
-And then rebuild the cache: 
-```
-cd /kimai/
-bin/console cache:clear
-bin/console cache:warmup
-```
-
-You could also [download it as zip](https://github.com/keleo/Fail2BanBundle/archive/master.zip) and upload the directory via FTP:
-
-```
-/kimai/var/plugins/
-├── Fail2BanBundle
-│   ├── Fail2BanBundle.php
-|   └ ... more files and directories follow here ... 
-```
 
 ## Fail2Ban configurations
 

@@ -4,7 +4,7 @@ intro: "This plugin allows time to logged from ChromePlugin tickets into a Kimai
 developer: tobybatch
 date: "2020-07-10 10:00:00 +0200"
 icon: fab fa-chrome
-price: free
+price: '0'
 version: 1.0.0
 download: https://github.com/tobybatch/ChromeKimaiBridge/archive/v1.0.0.zip
 github: https://github.com/tobybatch/ChromeKimaiBridge

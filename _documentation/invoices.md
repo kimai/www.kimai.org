@@ -20,20 +20,53 @@ All examples represent the date `2019-07-09` (2019, July 9th):
 - `{c}` - counter for invoices of all times, starting from 1
 - `{cy}` - counter for invoices this year, starting from 1
 - `{cm}` - counter for invoices this month, starting from 1
-- `{cd}` - counter for invoices this day, starting from 1 
+- `{cd}` - counter for invoices this day, starting from 1
 - `{Y}` -  full numeric representation of a year (4 digits). Example: `2019` 
 - `{y}` - two digit representation of a year. Example: `19`
 - `{M}` - numeric representation of a month, with leading zeros. Example: `07`
 - `{m}` - numeric representation of a month, without leading zeros. Example: `7`
 - `{D}` - day of the month, 2 digits with leading zeros. Example: `09`
 - `{d}` - day of the month without leading zeros. Example: `9`
+- `{cc}` - customer invoice counter for all times, starting from 1 (since 1.10)
+- `{ccy}` - customer invoice counter for this year, starting from 1 (since 1.10)
+- `{ccm}` - customer invoice counter for this month, starting from 1 (since 1.10)
+- `{ccd}` - customer invoice counter for this day, starting from 1 (since 1.10)
 
 Each replacer (x) can be combined with a length formatter, which will prepend (X) leading zeros, eg. `{x,X}`. 
 Example: to get a three digit long string with year counter use `{cy,3}`, which results in `001` for the first invoice of the year.
 
-Please note: the additional characters outside the replacer may NOT be the characters `{` and `}`.
+{% capture additional_chars %}
+Characters outside the replacer may **not** include `{` and `}`.
+{% endcapture %}
+{% assign additional_chars = additional_chars| markdownify %}
+{% include alert.html icon="fas fa-exclamation" type="warning" alert=additional_chars %}
 
 To change the format, look out for the {% include demo-action-button.html icon="fas fa-cog" %} icon in the invoice screen, or change it from the `System configurations`.
+
+### Incrementing the invoice counter
+
+Since 1.10 it is possible to increment the counter by a fixed value: you can add a number to the result. 
+For evaluated counters, Kimai takes the amount of found invoices and adds 1, but you can replace `+1` with an addition like `+3`.
+This works for the following replacer: `{c}` and `{cy}` and `{cm}` and `{cd}` and `{cc}` and `{ccy}` and `{ccm}` and `{ccd}`. 
+
+Simply use the plus (`+`) after the replacer, eg. `{cy+72}`. This also works in combination with the length formatter, eg.: `{cy+72,3}` 
+
+### Decrementing the invoice counter
+
+Since 1.11 it is possible to decrement the counter by a fixed value: you can subtract a number from the result. 
+For evaluated counters, Kimai takes the amount of found invoices and adds `+1`, but you can replace `+1` with a subtraction like `-12`.
+This works for the following replacer: `{c}` and `{cy}` and `{cm}` and `{cd}` and `{cc}` and `{ccy}` and `{ccm}` and `{ccd}`. 
+
+Simply use the minus (`-`) after the replacer, eg. `{cy-72}`. This also works in combination with the length formatter, eg.: `{cy-72,3}` 
+
+### Examples
+
+Assume you already wrote 72 invoices this year (before you started to use Kimai), and your counter is an incrementing number 
+per year, which is prefixed with the four digit year:
+- `{Y}/{cy+73,3}` would result in `2020/073` for your first invoice
+
+Assume that you want to change your invoice numbering and reset it to zero, you already wrote 72 invoices this year, and your counter is an incrementing number per year that should be prefixed with the four digit year:
+- `{Y}/{cy-72,3}` would result in `2020/001` for your first invoice
 
 ## Export state
 
@@ -43,6 +76,13 @@ These records cannot be edited any longer by regular users and are excluded by d
 You need to tick the checkbox before saving (Kimai 1.9) / printing (Kimai 1.8 and below) the invoice, to automatically set the export state on all filtered timesheet records.
  
 For further information read the [timesheet documentation]({% link _documentation/timesheet.md %}).
+
+## Billable items only
+
+Since Kimai 1.10 only billable items will be included in invoices. By default, every timesheet records is billable but future 
+versions of Kimai will ship features to change that.  
+
+[Expense items]({% link _store/expenses-bundle.md %}) have a configurable billable flag per item and only the once marked as billable (refundable) will be included. 
 
 ## Invoice document
 
@@ -121,6 +161,16 @@ kimai:
             - 'var/my_invoices/'
 ```
 
+### Uploading invoice documents
+
+Sine Kimai 1.8 you can upload invoice documents via the UI at `/en/invoice/document_upload`.
+
+Due to security restriction currently only the upload of the following formats is allowed: `DOCX`, `ODS`, `XLSX`.
+
+There is a known bug in LibreOffice which exports DOCX files with a wrong mime-type. These files will not be accepted 
+by Kimai with the error `This file type is not allowed` ([read this issue](https://github.com/kevinpapst/kimai2/issues/1916) for more information). 
+The workaround is to change the document with another word processor: Apple pages, Google Drive and Microsoft 365 Online Office will export the DOCX files with the correct mimetype.
+
 ### Twig templates
 
 Generally speaking, you should use only the variable `model` in your template which is an instance of `App\Model\InvoiceModel`.
@@ -148,7 +198,7 @@ Use the twig include feature with the `@invoice` namespace . The following examp
 
 ### PDF templates 
 
-PDF invoice templates are available since Kimai 1.9
+PDF invoice templates are available since Kimai 1.9. 
 
 These are basically the same as Twig templates. But the resulting HTML is processed by the [MPdf library](https://mpdf.github.io), 
 which will convert the HTML & CSS to PDF.

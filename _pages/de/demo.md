@@ -20,13 +20,13 @@ Wählen Sie eine unserer Demo-Installationen von Kimai 2 aus, bei der Sie sich e
 
 <div class="row row-cards">
     <div class="col-sm-6 col-lg-4">
+        {% include card-demo.html title="Plugins" description=pluginsDescription url="https://demo-plugins.kimai.org" %}
+    </div>
+    <div class="col-sm-6 col-lg-4">
         {% include card-demo.html title="Entwicklungs-Version" description=masterDescription url=site.kimai_v2_demo %}
     </div>
     <div class="col-sm-6 col-lg-4">
         {% include card-demo.html title="Stabile Version" description=stableDescription url="https://demo-stable.kimai.org" %}
-    </div>
-    <div class="col-sm-6 col-lg-4">
-        {% include card-demo.html title="Plugins" description=pluginsDescription url="https://demo-plugins.kimai.org" %}
     </div>
 </div>
 

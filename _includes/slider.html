@@ -1,0 +1,35 @@
+{% if include.slides %}
+<div id="carousel-captions" class="carousel slide store-screenshots-slider" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {% for image in include.slides %}
+        <li data-target="#carousel-captions" data-slide-to="{{ forloop.index0 }}" {% if forloop.first %}class="active"{% endif %}></li>
+        {% endfor %}
+    </ol>
+    <div class="carousel-inner">
+        {% for image in include.slides %}
+        <div class="carousel-item{% if forloop.first %} active{% endif %}">
+            <img class="slider d-block w-100" alt="" src="{{ image.src }}" data-holder-rendered="true">
+            <div class="carousel-item-background d-none d-md-block"></div>
+            {% if image.title %}
+            <div class="carousel-caption d-none d-md-block">
+                <h4>{{ image.title }}</h4>
+                <p>
+                    {{ image.description }} (<a href="{{ image.src }}" target="_blank">fullscreen</a>)
+                </p>
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    {% comment %}
+    <a class="carousel-control-prev" href="#carousel-captions" role="button" data-slide="prev">
+        <i class="fas fa-chevron-left"></i>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel-captions" role="button" data-slide="next">
+        <i class="fas fa-chevron-right"></i>
+        <span class="sr-only">Next</span>
+    </a>
+    {% endcomment %}
+</div>
+{% endif %}

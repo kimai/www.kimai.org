@@ -7,25 +7,54 @@ date: "2019-06-25 20:00:00 +0200"
 icon: fas fa-keyboard
 demo: true 
 price: "49€"
-screenshot: 
-  - /images/marketplace/meta-fields-screenshot.png
-  - /images/marketplace/meta-fields-create.jpg
-  - /images/marketplace/meta-fields-example.jpg
-  - /images/marketplace/meta-fields-example2.jpg
 gumroad: kimai2-custom-fields
 featured: Create free configurable additional (optional and mandatory) fields for timesheets, customers, projects and activities in various formats. 
 new: false
-toc: true
+toc: false
 tags:
   - plugin
+bundle:
+    name: "MetaFieldsBundle"
+    command: "kimai:bundle:metafields:install"
+    purchase: true
+    versions: 
+      - ["1.14", "1.10.2"]
+      - ["1.10 - 1.13", "1.9"]
+      - ["1.8 - 1.9", "1.7"]
+      - ["1.6 - 1.7", "1.6.2"]
+      - ["1.5", "1.6"]
+      - ["1.3.2 - 1.4.1", "1.4"]
+      - ["1.1.1 - 1.2", "1.1"]
+      - ["1.0", "1.0"]
+    screenshots:
+      - 
+        src: "/images/marketplace/meta-fields-listing.png"
+        title: "Custom fields administration"
+        description: "The listing page shows all available item-types and their configured custom fields"
+      - 
+        src: "/images/marketplace/meta-fields-create.png"
+        title: "Create custom field (Customer)"
+        description: "The dialog to create a new custom field for Customers"
+      - 
+        src: "/images/marketplace/meta-fields-edit.png"
+        title: "Edit custom field (Project)"
+        description: "Editing an already existing custom field for Projects (type boolean, see default value)"
+      - 
+        src: "/images/marketplace/meta-fields-timesheet.png"
+        title: "Teams timesheets"
+        description: "The timesheet listing, displaying the visible custom field Location"
+      - 
+        src: "/images/marketplace/meta-fields-timesheet-edit.png"
+        title: "Edit timesheet"
+        description: "Editing a timesheet record with a new choice-list custom field"
 ---
 
-A Kimai 2 plugin, which allows to configure additional fields for timesheets, customers, projects and activities.
+A Kimai plugin, which allows configuring additional fields for timesheets, customers, projects, activities and expenses.
 
 ## Features
 
 Configure additional fields for the following entities:
-
+ 
 - `Timesheets`
 - `Customers`
 - `Projects`
@@ -52,10 +81,6 @@ The custom fields will be shown on the "create and edit entity" forms and can ha
 - `checkbox` (on/off)
 - `choice-list` (drop-down)
 
-## Purchase
-
-{% include store-gumroad-and-support.html %}
-
 ## Documentation
 
 You can create as many fields as you want for each data type, where each field:
@@ -75,6 +100,8 @@ The custom-field data is then available in:
 - API (collections and entities)
 - Invoice templates (custom templates have access to all fields)
 
+You can change the "weight" of custom-fields, so they show up in the order you define. 
+
 Be aware:
 
 - Restricted fields won't be visible on the create forms, as Kimai initially can't know if the rule will apply: in these cases the fields will only be shown in the edit forms
@@ -82,13 +109,6 @@ Be aware:
 - Custom fields for users are not exported via the API (this is a limitation in the core application) 
 
 ### Field types
-
-#### Invoice template
-
-A select box that is very useful if you want to generate automatic invoices via command line / cronjobs.
-
-The Kimai command `bin/console kimai:invoice:create` supports invoice templates via custom-field ([see docs](https://www.kimai.org/documentation/invoices.html#create-invoices-with-cronjobs)).
-The option parameter `--template-meta` takes the internal name of the custom field that will identify the invoice template to be used.
 
 #### Checkbox
 
@@ -98,31 +118,20 @@ If a checkbox is marked as mandatory, the user has to check it in order to submi
 
 #### Choice-list 
 
-Lets you create a dropdown. You have to add the entries as comma separated list into the default-value field.
+"Choice-list" is a different word for "Select-box" or "Drop-down". 
+You have to add the entries as comma separated list into the default-value field.
 For example a list consisting of fruits would look like this: `Banana,Apple,Orange,Pineapple,Peach`.
 
-As the first entry is always pre-selected in that case, you can add an empty field to the dropdown by starting the list 
-with a leading `,` like this: `,Banana,Apple,Orange,Pineapple,Peach`. Combined with the mandatory flag, this will force 
-your users to select an entry from the list of fruits to be able to submit the form.
+As the first entry is pre-selected, you can add an empty field to the dropdown by starting the list 
+with a leading `,` like this: `,Banana,Apple,Orange,Pineapple,Peach`. 
+Combined with the mandatory flag, this will force your users to select an entry from the list to be able to submit the form.
 
-### Compatibility
+#### Invoice template
 
-Please make sure to use the correct version of the plugin, which must be compatible with your Kimai version:
+A select box that is useful if you want to generate automatic invoices via command line / cronjobs.
 
-| Bundle version    | Minimum Kimai 2 version   |
-| ---               |---                        |
-| 1.10 - 1.11       | 1.9                       |
-| 1.8 - 1.9         | 1.7                       |
-| 1.6 - 1.7         | 1.6.2                     |
-| 1.5               | 1.6                       |
-| 1.3.2 - 1.4.1     | 1.4                       |
-| 1.1.1 - 1.2       | 1.1                       |
-| 1.0               | 1.0                       |
-{: .table }
-
-## Installation
-
-{% include store-plugin-installation.md plugin="MetaFieldsBundle" command="kimai:bundle:metafields:install" %}
+The Kimai command `bin/console kimai:invoice:create` supports invoice templates via custom-field ([see docs](https://www.kimai.org/documentation/invoices.html#create-invoices-with-cronjobs)).
+The option parameter `--template-meta` takes the internal name of the custom field that will identify the invoice template to be used.
 
 ## Usage
 
@@ -132,28 +141,13 @@ If this was successful, you can now think about giving permissions to other user
 
 ### Permissions
 
-This bundle ships a new permission, which limit access to certain functions:
+This bundle introduces new permissions, which limit access to certain functions:
 
-- `configure_meta_fields` - allows to administrate the custom field definitions
+| Permission Name           | Description |
+|---                        |--- |
+| `configure_meta_fields`   | allows to administrate the custom field definitions |
+{: .table }
 
-By default, it is assigned to each user with the role `ROLE_SUPER_ADMIN`.
+By default, these are assigned to each user with the role `ROLE_SUPER_ADMIN`.
 
-{% include alert.html icon="fas fa-exclamation" type="warning" alert="You don't need the following since Kimai 1.6. Please adjust all permission settings in your administration." %}
-
-Read how to assign these permission to your user roles in the [permission documentation](https://www.kimai.org/documentation/permissions.html).
-
-This is a proposal if you use the bundle in a multi-user environment:
-```yaml
-kimai:
-    permissions:
-        roles:
-            ROLE_SUPER_ADMIN: ['configure_meta_fields']
-            ROLE_ADMIN: ['configure_meta_fields']
-```
-
-After changing the permissions in local.yaml, you need to clear the application cache.
-
-## Screenshot
-
-![Screenshot](https://www.kimai.org/images/marketplace/meta-fields-screenshot.png)
- 
+{% include store-howto-permissions.md %}
