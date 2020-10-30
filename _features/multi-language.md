@@ -11,7 +11,7 @@ Kimai can be localized to any language and is already translated to
 Feel free to send your self-made language files or contributing to the weblate project below  – we’re looking for translators and would appreciate your support!
 
 | Language  | Status |
-| :-------: | :----: |
+| ------- | ---- |
 | Total | [![Translation status](https://hosted.weblate.org/widgets/kimai/-/svg-badge.svg)](https://hosted.weblate.org/engage/kimai/) |
 | Arabic  | [![Translation status](https://hosted.weblate.org/widgets/kimai/ar/svg-badge.svg)](https://hosted.weblate.org/engage/kimai/ar/)  |
 | Basque  | [![Translation status](https://hosted.weblate.org/widgets/kimai/eu/svg-badge.svg)](https://hosted.weblate.org/engage/kimai/eu/)  |
