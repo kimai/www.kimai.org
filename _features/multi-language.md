@@ -12,7 +12,6 @@ Feel free to send your self-made language files or contributing to the weblate p
 
 | Language  | Status |
 | ------- | ---- |
-| Total | [![Translation status](https://hosted.weblate.org/widgets/kimai/-/svg-badge.svg)](https://hosted.weblate.org/engage/kimai/) |
 | Arabic  | [![Translation status](https://hosted.weblate.org/widgets/kimai/ar/svg-badge.svg)](https://hosted.weblate.org/engage/kimai/ar/)  |
 | Basque  | [![Translation status](https://hosted.weblate.org/widgets/kimai/eu/svg-badge.svg)](https://hosted.weblate.org/engage/kimai/eu/)  |
 | Chinese  | [![Translation status](https://hosted.weblate.org/widgets/kimai/zh_Hans/svg-badge.svg)](https://hosted.weblate.org/engage/kimai/zh_Hans/)  |
