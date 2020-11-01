@@ -4,35 +4,43 @@ description: Activities in Kimai 2
 toc: true
 ---
 
-Activities in Kimai are defining the current task you are working on.
+Activities in Kimai are meant to explain the kind of work done for a specific task/timesheet.
 
-## Global activities vs project activities
+## Activity types
 
-Activities can be assigned to a project, which means you can only choose them if the linked project was chosen before.
-But activities can also be global, meaning they are not linked to a project and can be re-used with EVERY project and customer.
+Activities can have two different types: `global` and `project specific`.  
 
-Examples for global activities are things like:
+{% include alert.html icon="fas fa-exclamation" type="warning" alert="Activities cannot be linked to a customer, the customer field in the edit form is only a filter for the project list." %}
+
+### Project specific 
+
+Activities can be assigned to a project, which means you can only choose them if the linked project is active.
+
+### Global activities
+
+Activities can be global, meaning they are not linked to a project and can be used in combination with every project.
+
+Examples for global activities could be:
 - meetings
 - phone calls
 - administrative tasks
 
-So tasks which repeat in each of your projects.
+These examples might vary heavily between different industries, the main usage are recurring tasks throughout all of your projects.
 
 ## Activity colors
 
-Each activity can be assigned its own color, for easier identification in the timesheets.
+Each activity can be assigned its own color, for easier identification in various screens.
 
-If no color is applied, the project color will be used.
-
-See [customer documentation]({% link _documentation/customer.md %}) for the default color.
+If no color has been selected, the project color will be used. 
+If that is not defined as well, Kimai will fallback to the customer color and finally to the [default color]({% link _documentation/customer.md %}).
 
 ## Time budget
 
 {% include time_budget.md %}
 
 ## Visibility
-
-By toggling the visibility on a activity, you:
+ 
+By toggling the visibility on an activity, you:
 - hide the activity from all drop-downs, regardless of their visibility state
 - hide the activity from the default list in the activities administration
 
