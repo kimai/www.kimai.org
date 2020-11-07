@@ -15,6 +15,8 @@ The new release 1.11 was published, some of the highlights are:
 - Decrement invoice counter
 - Unified notifications by SweetAlert 2
 
+This version includes a bugfix for XSS vulnerabilities in some admin pages, which was found and reported by [SektionEins](https://sektioneins.de). Thank you! 
+
 Thanks to all of you for using and supporting Kimai, especially:
 - all clients and donors who help me to keep up the work for Kimai
 - the developers who contributed their time
