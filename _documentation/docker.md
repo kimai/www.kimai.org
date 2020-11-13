@@ -58,7 +58,7 @@ docker exec -ti kimai2 bash
 
 This creates a user admin/admin with all privileges. 
 ```bash
-docker exec kimai2 /opt/kimai/bin/console kimai:create-user admin admin@example.com ROLE_SUPER_ADMIN admin
+docker exec kimai2 /opt/kimai/bin/console kimai:create-user admin admin@example.com ROLE_SUPER_ADMIN password
 ```
 
 To install the test data (fixtures):
@@ -89,12 +89,3 @@ docker run --rm -d -p 8001:8001 \
 Now edits in your local files will be served by the container and all database changes will persist.
 
 The [official docker documentation](https://docs.docker.com/) has more options on running the container.
-
-## Further docker solutions
-
-As there are several approaches to docker images, you have multiple docker images to choose from. 
-They were built by the community, we do not support them - for question please ask in their repositories:
-
-- [dysonspherelab](https://hub.docker.com/r/dysonsphere/kimai2/) (for more infos [read this issue]({{ site.kimai_v2_repo }}/issues/284))
-- [felixhummel](https://github.com/felixhummel/kimai-in-docker/tree/kimai2)
-- [Haidy777](https://github.com/Haidy777/kimai2/blob/docker/Dockerfile) (for more infos [read this issue]({{ site.kimai_v2_repo }}/pull/311))
