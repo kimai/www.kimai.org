@@ -17,6 +17,7 @@ bundle:
     command: "kimai:bundle:tasks:install"
     purchase: true
     versions: 
+      - ["1.7 - 1.7.1", "1.11"]
       - ["1.4 - 1.6", "1.10"]
       - ["1.3", "1.9"]
       - ["1.0 - 1.2", "1.7"]

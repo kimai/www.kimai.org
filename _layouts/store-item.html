@@ -13,7 +13,9 @@ layout: default
 	{% assign buyLink = page.github %}
 {% endif %}
 
+{% comment %}
 <script src="https://gumroad.com/js/gumroad.js"></script>
+{% endcomment %}
 
 <div class="container store-item">
 
@@ -26,7 +28,7 @@ layout: default
 					<div class="card p-3">
 						<div class="d-flex align-items-center">
 							{% if page.gumroad %}
-							<a href="#" onclick="location.href='https://gum.co/{{ page.gumroad }}';return false;">
+							<a href="https://gum.co/{{ page.gumroad }}" onclick="location.href='https://gum.co/{{ page.gumroad }}';return false;">
 								<span class="stamp stamp-md bg-blue mr-3">
 								  <i class="fas fa-euro-sign"></i>
 								</span>
