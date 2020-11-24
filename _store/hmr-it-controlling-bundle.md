@@ -1,6 +1,6 @@
 ---
-title: Controlling Plugin
-name: Controlling Plugin (German law, break time check, overtime, etc.)
+title: Controlling plugin
+name: Controlling plugin (German law, break time check, overtime)
 intro: "A plugin for Kimai 2 which checks if one of your users violated the German break time law + nominal and actual work time comparison + overtime view"
 developer: hmr-it
 date: "2020-10-09 10:00:00"
@@ -57,18 +57,20 @@ bundle:
 - Check if they violate the German break time law "Arbeitszeitgesetz (ArbZG) § 4 Ruhepausen"
 - Users see how much overtimes or undertimes they have + how much they've worked already in the current month and how much they still have to work in the current month
 - Filter data per user, time period, and so on
-- E-Mail to user to notify him, that he has violated the German break time law
+- E-Mail to user to notify him, that he has violated the German break time law via cronjob
 - Overview for Administrators to see all calculated times in one view
 - Get notified if one of your user's birthday is coming soon
 - See all information in the dashboard
 - Get notified if one of your user has a anniversaries like 5 years in company
-- Handout for employees as pdf to see the worked hours of the month
-- Handout downloadable as a single pdf file for all employees or easy sendable via email to each employee (even to his private email account!)
+- Handout for employees as PDF to see the worked hours of the month
+- Handout downloadable as a single PDF file for all employees or easy sendable via email to each employee (even to his private email account!)
 - Detect overlapping times with one click
 - See if your users have missing days (no times entered on days where they had to work)
 - Fully configurable via GUI
-- See with one view in Billing/Export in Tabs how many invoices you have to create
+- See with one view in Billing/Export tabs a summery of all entries which are not cleared yet
 
 ## Requires
 
-Kimai 2, V1.10+
+- [Custom-fields plugin](https://www.kimai.org/store/custom-fields-bundle.html) to save the birthday of the user
+- Ability to create and run cronjobs
+- Kimai 2, V1.10+

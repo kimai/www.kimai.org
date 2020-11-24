@@ -1,6 +1,6 @@
 ---
-title: RecordBook Plugin
-name: RecordBook Plugin (Berichtsheft für Azubis)
+title: RecordBook plugin
+name: RecordBook plugin (Berichtsheft für Azubis)
 intro: "A plugin for Kimai 2 which generates a RecordBook (German: Berichtsheft) for trainees."
 developer: hmr-it
 date: "2020-09-21 09:00:00"
@@ -20,13 +20,14 @@ bundle:
      - 
         src: "/images/marketplace/hmr-it-recordbook-view.png"
         title: "Download view"
-        description: "Trainees see the weeks and can download the pdf"
+        description: "Trainees see the weeks and can download the PDF"
 ---
 
 ## Features
 
-- Easy to use, just click download and print it
-- One pdf per week
+- This plugin generates one PDF per week as a download with a single click
+- The PDF shows all descriptions of the timesheet entries of the selected week in a tabular form
+- The PDF has signature fields for: trainee, parent/legal guardian, school and trainee teacher
 
 ## Demo
 
