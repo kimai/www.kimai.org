@@ -4,13 +4,32 @@ description: Kimai configurations files and basic setup, local overwrites and th
 toc: true
 ---
 
-This is an introduction into the configuration options and files, which are used by Kimai and an explanation on how to change them. 
+This is an introduction into the configuration options and files, which are used by Kimai, and an explanation on how to change them. 
  
 Specific configuration settings are explained in the respective documentation chapters.
 
-## Environment specific settings (.env)
+## Configuration files
 
-The basic settings, which are required for Kimai to work are stored in the `.env` file:
+Configuration of Kimai is done through the files in the `config/` directory, the most important ones are:
+
+- `.env` - your environment and connection settings
+- `config/packages/kimai.yaml` - Kimai settings
+- `config/packages/fos_user.yaml` - user management
+- `config/packages/local.yaml` - **configure your own Kimai settings (does not exist by default)**
+
+There are several other configurations that could potentially be interesting for you in [config/packages/*.yaml]({{ site.kimai_v2_file }}/config/packages/).
+
+{% capture dont_edit_configs %}
+Don't edit any of the configuration files (eg. `config/packages/kimai.yaml`) directly, as they will be overwritten during an update.
+Adjust settings from any configuration file by adding them in your own configuration in `local.yaml` (see below).
+{% endcapture %}
+{% assign dont_edit_configs = dont_edit_configs|markdownify %}
+
+{% include alert.html icon="fas fa-exclamation" type="danger" alert=dont_edit_configs %}
+
+### .env
+
+These "environment specific settings" are required so Kimai can boot. They are stored in the `.env` file:
  
 - `MAILER_URL` - smtp connection for emails
 - `MAILER_FROM` - application specific "from" address for all emails
@@ -18,29 +37,12 @@ The basic settings, which are required for Kimai to work are stored in the `.env
 - `DATABASE_URL` - database connection for storing all application data
 - `APP_SECRET` - secret used to encrypt session cookies (users will be logged out if you change it) 
 
-## Config files
-
-Configuration of Kimai is done through the files in the `config/` directory, the most important ones are:
-
-- `.env` - your environment and connection settings
-- `config/packages/kimai.yaml` - Kimai settings
-- `config/packages/fos_user.yaml` - user management
-- `config/packages/local.yaml` - **additional Kimai configurations for your needs (does not exist by default - see below!)**
-
-There are several other configurations that could potentially be interesting for you in [config/packages/*.yaml]({{ site.kimai_v2_file }}/config/packages/).
-
-If you want to adjust a setting from any of these files, apply them through the use of your own `local.yaml` (see below).
-
-## Changing configurations
-
-You should NOT edit any of the configuration files (eg. `config/packages/kimai.yaml`) directly, as they contains default settings and will be overwritten during an update.
-
-Instead create the file `config/packages/local.yaml` and save your own settings in there. 
-
 ### local.yaml
 
-This file will NEVER be shipped with Kimai, you have to create it before you change settings the first time (eg. `touch config/packages/local.yaml`).
-Having your custom settings in `local.yaml` allows you to easily update Kimai. This is the same concept which is used for the `.env` file.
+The configuration file `config/packages/local.yaml` will NEVER be shipped with Kimai, 
+you have to create it before you change settings the first time (eg. `touch config/packages/local.yaml`).
+Having your custom settings in `local.yaml` allows you to easily update Kimai. 
+This is the same concept which is used for the `.env` file.
 
 An example `config/packages/local.yaml` file might look like this:
 
@@ -86,6 +88,20 @@ This screen is only visible to users with the permission `system_configuration` 
 
 Each setting in this screen is also available in the config file (`config/packages/kimai.yaml`) where you might find 
 additional information or links to the correct documentation chapter.
+
+### Data directory
+
+Inside the `data` directory Kimai and plugins will store newly created files.
+This location is by default `var/data/`, while files will be managed in sub-directories: eg. `var/data/invoices/` for generated invoices.
+
+The data directory can be changed by adapting the config key `data_dir` in your `local.yaml`:
+
+```yaml
+kimai:
+    data_dir: "/home/kimai/safe-place/"
+```
+
+After changing the data directory, you should move all existing data to the new location and then reload the cache.
 
 ## User preferences vs. system settings
 
