@@ -103,6 +103,10 @@ kimai:
 
 After changing the data directory, you should move all existing data to the new location and then reload the cache.
 
+### Branding
+
+Please read the [branding documentation]({% link _documentation/branding.md %}) to adapt title, login logo and more.
+
 ## User preferences vs. system settings
 
 A user has several preferences, which change the behaviour how he interacts with Kimai.
