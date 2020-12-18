@@ -14,8 +14,6 @@ tags:
 new: true
 ---
 
-docker run --rm --volume="$PWD:/srv/jekyll" -it jekyll/jekyll:4.1.1 jekyll build
-
 A Kimai 2 plugin that allows you to share your project timesheets with anyone you want to grant access to.
 
 ## Features
