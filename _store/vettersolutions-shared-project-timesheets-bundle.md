@@ -19,11 +19,15 @@ A Kimai 2 plugin that allows you to share your project timesheets with anyone yo
 ## Features
 
 - Create publicly accessible urls for the project timesheets you want to share
-- Manage the view and decide what will be exposed
-  - Password protection
-  - Show/hide user of records (name of user)
-  - Show/hide rates of records (hour rate, total rate)
-  - Define whether and how to merge records of a day
+- Access control feature
+  - protect the shared project timesheets with a password
+- View control feature
+  - show or hide user of records (name of user)
+  - show or hide rates of records (hour rate, total rate)
+  - show or hide chart with day comparison by selected month
+  - show or hide chart with month comparison by selected year
+- View customizations
+  - define whether and how to merge records of a day (e.g. merge records of one day, use description of last record)
 
 ## Installation
 
