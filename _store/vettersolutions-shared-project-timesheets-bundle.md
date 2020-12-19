@@ -24,8 +24,8 @@ A Kimai 2 plugin that allows you to share your project timesheets with anyone yo
 - View control feature
   - show or hide user of records (name of user)
   - show or hide rates of records (hour rate, total rate)
-  - show or hide chart with day comparison by selected month
-  - show or hide chart with month comparison by selected year
+  - show or hide chart with day comparison by selected month (coming soon)
+  - show or hide chart with month comparison by selected year (coming soon)
 - View customizations
   - define whether and how to merge records of a day (e.g. merge records of one day, use description of last record)
 
