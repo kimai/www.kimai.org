@@ -12,6 +12,11 @@ github: https://github.com/dexterity42/SharedProjectTimesheetsBundle
 tags:
 - plugin
 new: true
+bundle:
+    name: "SharedProjectTimesheetsBundle"
+    command: "kimai:bundle:shared-project-timesheets:install"
+    versions: 
+      - ["1.0", "1.11"]
 ---
 
 A Kimai 2 plugin that allows you to share your project timesheets with anyone you want to grant access to.
@@ -29,27 +34,8 @@ A Kimai 2 plugin that allows you to share your project timesheets with anyone yo
 - View customizations
   - define whether and how to merge records of a day (e.g. merge records of one day, use description of last record)
 
-## Installation
 
-First clone this plugin to your Kimai installation `plugins` directory:
-```
-cd /kimai/var/plugins/
-git clone https://github.com/dexterity42/SharedProjectTimesheetsBundle.git
-```
-
-Go back to the root of your Kimai installation and clear the cache:
-```
-cd /kimai/
-bin/console cache:clear
-bin/console cache:warmup
-```
-
-Execute database migrations:
-```
-bin/console kimai:bundle:shared-project-timesheets:install
-```
-
-You're done. Open up your browser and navigate to "Shared project timesheets".
+After installation: open Kimai in your browser and navigate to "Shared project timesheets".
 
 ## Permissions
 
@@ -57,6 +43,7 @@ Currently, there are no specific plugin permissions. The role `ROLE_SUPER_ADMIN`
 
 ## Contribute
 
-Please feel free to report bugs and suggest new features on Github: https://github.com/dexterity42/SharedProjectTimesheetsBundle/issues/new
+Please feel free to report bugs and suggest new features on Github: 
+[https://github.com/dexterity42/SharedProjectTimesheetsBundle/issues/new](https://github.com/dexterity42/SharedProjectTimesheetsBundle/issues/new)
 
 If you're a developer and want to contribute to this plugin, fork the repository and send me a pull request.
