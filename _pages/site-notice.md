@@ -13,10 +13,10 @@ sitemap: false
 
 Responsible for contents acc. to Sec. 55, para. 2 German Federal Broadcasting Agreement (RstV):
 
-Kevin Papst, Elfenstraße 27, 81739 München   
-Telephone: +49 (0) 89 / 12719092  
-Email: <kpapst@gmx.net>  
-VAT Id number according to Sec. 27 a German Value Added Tax Act: DE272564301
+Kevin Papst, Engerthstraße 171/13, 1020 Vienna (Austria)  
+Telephone: +49 (0)30 12087229  
+Email: <kevin@kevinpapst.de>  
+EU-VAT Id: ATU75657727
 
 ### Dispute resolution
 The European Commission provides a platform for online dispute resolution (OS): <a href="https://ec.europa.eu/consumers/odr" target="_blank">https://ec.europa.eu/consumers/odr</a>.

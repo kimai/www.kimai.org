@@ -58,9 +58,10 @@ Complete protection of your data from third-party access is not possible.
 
 The party responsible for processing data on this website is:
 
-Kevin Papst, Elfenstraße 27, 81739 München  
-Telephone: +49 (0) 89 / 12719092  
-Email: <kpapst@gmx.net>
+Kevin Papst, Engerthstraße 171/13, 1020 Vienna (Austria)  
+Telephone: +49 (0)30 12087229  
+Email: <kevin@kevinpapst.de>  
+EU-VAT Id: ATU75657727
 
 The responsible party is the natural or legal person who alone or jointly with others decides on the purposes and means 
 of processing personal data (names, email addresses, etc.).
