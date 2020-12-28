@@ -16,12 +16,12 @@ updated on each following login.
 
 In order to use the LDAP authentication module of Kimai, you have to install the Laminas LDAP library (from Kimai 1.9 on):
 ```bash
-composer require laminas/laminas-ldap
+composer require laminas/laminas-ldap --no-dev --optimize-autoloader
 ```
 
 Up until Kimai 1.8 you need to run: 
 ```bash
-composer require zendframework/zend-ldap
+composer require zendframework/zend-ldap --no-dev --optimize-autoloader
 ```
 
 ### Activate LDAP authentication
