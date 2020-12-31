@@ -70,6 +70,8 @@ A task can reach the "overdue" status, which means:
 - the task reached its end date without being finished
 - the duration of all logged entries is higher than the estimation of the task  
 
+Task can also be managed via the API. Documentation can be found in the [plugins demo](https://demo-plugins.kimai.org/api/doc) - credentials [here]({% link _pages/demo.md %}). 
+
 ## Dashboard widgets
 
 This bundle ships two new dashboard widgets (see screenshots).
