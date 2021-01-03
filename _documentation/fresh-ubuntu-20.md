@@ -1,6 +1,6 @@
 ---
-title: "Install Kimai on a fresh Ubuntu 18.04 LTS"
-description: "How to install Kimai 2 on a brand new Ubuntu 18.04 with database, webserver and SSL certificate"
+title: "Install Kimai on a fresh Ubuntu 20.04 LTS"
+description: "How to install Kimai 2 on a brand new Ubuntu 20.04 with database, webserver and SSL certificate"
 toc: true
 ---
 
@@ -53,7 +53,6 @@ Then edit your local SSH config:
 vim ~/.ssh/config
 ```
 
-
 And paste this:
 ```
 Host myserver
@@ -92,13 +91,12 @@ And restart the SSH Daemon:
 Lets start with all required software:
 ```bash
 apt-get update
+apt-get upgrade
+apt-get install git unzip curl vim
 apt-get install php-fpm php-cli php-common php-json php-opcache php-readline php-xml php-zip php-intl php-gd php-mbstring php-mysql php-curl
-apt-get install mysql-server mysql-client
+apt-get install mariadb-server mariadb-client
 apt-get install nginx
-apt-get install git unzip curl
 ```
-
-BTW: I'd use MariaDB, but Ubunutu 18.04 ships an outdated MariaDB which does not support JSON columns and which is therefor not compatible with Kimai 2. 
 
 ## Install composer
 
@@ -143,11 +141,8 @@ Clone Kimai and set proper file permissions:
 
 ```bash
 cd /var/www/
-git clone -b 1.1 --depth 1 https://github.com/kevinpapst/kimai2.git
+git clone -b 1.12 --depth 1 https://github.com/kevinpapst/kimai2.git
 cd kimai2/
-chown -R :www-data .
-chmod -R g+r .
-chmod -R g+rw var/
 composer install --no-dev --optimize-autoloader
 vim .env
 ```
@@ -166,7 +161,6 @@ bin/console kimai:create-user admin admin@example.com ROLE_SUPER_ADMIN
 {% include file-permissions.html %} 
 Use `sudo` to run the commands to change file permissions.
 
-
 ## Configure webserver
 
 Good, now that we have done all these steps we only need the webserver and VirtualHost configuration: 
@@ -175,8 +169,8 @@ Good, now that we have done all these steps we only need the webserver and Virtu
 
 This can be done with:
 ```
-vim /etc/php/7.2/fpm/pool.d/www.conf
-listen = /run/php/php7.2-fpm.sock <= search for this "listen" entry
+vim /etc/php/7.4/fpm/pool.d/www.conf
+listen = /run/php/php7.4-fpm.sock
 ```
 
 Edit/create the virtual host file:
@@ -205,7 +199,7 @@ server {
     }
 
     location ~ ^/index\.php(/|$) {
-        fastcgi_pass unix:/run/php/php7.2-fpm.sock;
+        fastcgi_pass unix:/run/php/php7.4-fpm.sock;
         fastcgi_split_path_info ^(.+\.php)(/.*)$;
         include fastcgi.conf;
         fastcgi_param PHP_ADMIN_VALUE "open_basedir=$document_root/..:/tmp/";
@@ -218,10 +212,10 @@ server {
 }
 ```
 
-Lets activate the site and remove the Ubuntu default host:
+Remove the Ubuntu default host and activate the site:
 ```bash
-ln -s /etc/nginx/sites-available/kimai2 /etc/nginx/sites-enabled/kimai2
 unlink /etc/nginx/sites-enabled/default
+ln -s /etc/nginx/sites-available/kimai2 /etc/nginx/sites-enabled/kimai2
 nginx -t && service nginx reload
 ```
 
@@ -230,11 +224,7 @@ nginx -t && service nginx reload
 Almost there, only the free Lets Encrypt SSL certificate is missing:
 
 ```bash
-apt-get install software-properties-common
-add-apt-repository universe
-add-apt-repository ppa:certbot/certbot
-apt-get update
-apt-get install certbot python-certbot-nginx
+apt-get install certbot python3-certbot-nginx
 certbot --nginx
 ```
 
