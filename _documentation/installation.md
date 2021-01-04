@@ -138,6 +138,75 @@ How to install Kimai:
 
 Reload your configuration `/opt/RZphp73/bin/php-cli bin/console kimai:reload`
 
+### Plesk
+
+If a subdomain has not yet been added, login to the plesk frontend and add a new
+subdomain, e.g. kimai.my-domain.com. Use the database tab of the new subdomain
+to create a new database for Kimai. Also check the selected PHP version for
+this subdomain in the development-tools section of the subdomain.
+
+Next, the actual installation needs to be done in the command line of the
+webserver directly.
+
+- Login to the web server via ssh
+
+- Locate the current PHP version. Plesk stores its PHP instances in the
+  directory `/opt/plesk/php`. Depending on which PHP version was configured for
+  Kimais subdomain, make sure to use this version during the installation. For
+  example, if using version 7.3, the path to PHP should be
+  `/opt/plesk/php/7.3/bin/php`.
+  
+- Switch user to be "root" (otherwise access to plesks subfolder is denied)
+  `su`.
+
+- Navigate to the root folder where plesk is hosting the websites from.
+  Typcially, the root is found at `/var/www/vhosts/<domain_name>`. For hosting
+  location on Windows, please refer to plesks [offical
+  documentation](https://docs.plesk.com/en-US/onyx/administrator-guide/web-hosting/website-directory-structure.68695/):
+  
+  ```
+  cd /var/www/vhosts/kimai.my-domain.com
+  ```
+  
+- Install composer: `curl -sS https://getcomposer.org/installer | /opt/plesk/php/7.3/bin/php`
+
+- Clone Kimai2: `git clone -b 1.12 --depth 1 https://github.com/kevinpapst/kimai2.git`
+
+- Enter kimai2 directory: `cd kimai2`
+
+- Install composer packages: `/opt/plesk/php/7.3/bin/php ../composer.phar install --no-dev --optimize-autoloader`
+
+- Configure `.env` file to have correct database credentials
+
+- Install Kimai database: `/opt/plesk/php/7.3/bin/php bin/console kimai:install -n`
+
+- Change ownership of `kimai2` folder:
+
+    ```
+    cd ..
+    chown -R psacln:psaserv kimai2
+    chmod -R g+r kimai2
+    chmod -R g+rw kimai2/var/
+    chmod -R g+rw kimai2/public/avatars/
+    ```
+
+- Switch user back to your normal user account (must not be root), e.g. 'user': `su -p user`
+
+- Restart kimai:
+
+    ```
+    cd kimai2
+    bin/console kimai:reload --env=prod
+    ```
+
+- Create first user: `bin/console kimai:create-user username admin@example.com ROLE_SUPER_ADMIN`
+
+- Adjust [Apache
+  configuration](https://www.kimai.org/documentation/webserver-configuration.html)
+  to point to the "public" subfolder of the kimai install, i.e. set the path to
+  `/var/www/vhosts/my-domain.com/kimai2/public`. Also ensure that `ServerName`
+  and `ServerAlias` are set to `kimai.my-domain.com` and `www.kimai.my-domain.com`.
+
 ### Netcup
 
 - Clone Kimai in the root folder as stated above and then `cd kimai2`
