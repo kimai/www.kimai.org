@@ -304,6 +304,20 @@ Also note that, depending on where you are installing Kimai 2 and how your compu
 "operation not permitted" errors when setting file permissions (`chown` and `chmod` commands). 
 In that case, prefix them with `sudo`.
 
+### Troubleshoot
+
+#### Internal Server Error 500
+
+This error can have several causes. Here is a small summary what to check for if
+this error occurs when trying to access the Kimai frontend:
+
+- There could be something wrong with your file permissions. Please check the
+  log `var/log/prod.log` from your kimai2 install folder.
+- Make sure not to start Kimai as *root* (e.g. via `bin/console kimai:restart
+  --env=prod`). The application will create folders and files. If *root* started
+  the process you most likely will have permission errors if the web-server is
+  not started as *root* as well.
+
 #### Still doesn't work?
 
 These infos were added to give you some possible guidance if you run into troubles. The Linux (and Mac) filesystem 
