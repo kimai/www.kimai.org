@@ -159,9 +159,9 @@ RewriteRule  /(..)/login /auth/saml/login [L,R=301]
 
 ### Proxy and http vs https
 
-Error message:`
-- The response was received at `http://kimai-test.example.com/auth/saml/acs` instead of `https://kimai-test.example.com/auth/saml/acs`
+**Error:**  
+The response was received at `http://kimai-test.example.com/auth/saml/acs` instead of `https://kimai-test.example.com/auth/saml/acs`
 
-Solution: 
-- Use the `baseurl` configuration and set it to `https://kimai-test.example.com/auth/saml/` (and flush the cache!)
+**Solution:**  
+Use the `baseurl` configuration and set it to `https://kimai-test.example.com/auth/saml/` (and flush the cache!)
 
