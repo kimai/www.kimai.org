@@ -68,6 +68,8 @@ bundle:
 - See if your users have missing days (no times entered on days where they had to work)
 - Fully configurable via GUI
 - See with one view in Billing/Export tabs a summery of all entries which are not cleared yet
+- Users can tag their time spent in home office. At the end of the year this plugin provides every user a comprehensive overview as PDF of the time spent in home office. This is
+  important for tax reasons.
 
 ## Requires
 
