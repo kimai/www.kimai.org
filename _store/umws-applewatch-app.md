@@ -9,7 +9,7 @@ icon: fab fa-apple
 price: 1,92€
 version: 1.0
 download: https://apps.apple.com/app/kimaitracker/id1494495700
-new: true
+new: false
 email: kimaiapp@umws.de
 tags:
   - app

@@ -7,7 +7,7 @@ date: "2020-09-21 09:00:00"
 icon: fa fa-book
 price: "29€"
 gumroad: mcUBr
-new: true
+new: false
 tags:
   - plugin
 bundle:
