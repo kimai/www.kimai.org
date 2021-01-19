@@ -57,6 +57,6 @@ bundle:
 
 ## Requires
 
-- [Custom-fields plugin](https://www.kimai.org/store/custom-fields-bundle.html) to save the vacation entitlement per user
+- [Custom-fields plugin]({% link _store/keleo-custom-fields-bundle.md %}) to save the vacation entitlement per user
 - Ability to create and run cronjobs
 - Kimai 2, V1.12+

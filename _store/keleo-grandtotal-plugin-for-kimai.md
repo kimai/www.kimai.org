@@ -2,6 +2,7 @@
 title: GrandTotal plugin for Kimai
 name: Grandtotal plugin
 intro: "A GrandTotal 6 plugin, which allows to import Kimai timesheets"
+slug: grandtotal-plugin-for-kimai
 developer: keleo
 date: "2020-06-07 21:00:00 +0200"
 icon: far fa-envelope

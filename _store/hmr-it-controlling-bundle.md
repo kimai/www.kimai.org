@@ -73,6 +73,6 @@ bundle:
 
 ## Requires
 
-- [Custom-fields plugin](https://www.kimai.org/store/custom-fields-bundle.html) to save the birthday of the user
+- [Custom-fields plugin]({% link _store/keleo-custom-fields-bundle.md %}) to save the birthday of the user
 - Ability to create and run cronjobs
 - Kimai 2, V1.10+

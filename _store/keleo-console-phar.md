@@ -2,6 +2,7 @@
 title: PHP console client for Kimai
 name: Console client (PHAR)
 intro: Cross platform console client for Kimai
+slug: console-phar
 developer: keleo
 date: "2020-01-01 20:00:00 +0200"
 icon: fas fa-terminal

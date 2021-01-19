@@ -100,7 +100,7 @@ Read [this issue]({{ site.kimai_v2_repo }}/issues/743) if you have further quest
 
 How to install Kimai at shared hosting companies. Please share our insights if you have managed to get it up and running with another company!
 
-If you can't find the correct version, ask your hoster! Or [let us help you]({% link _store/installation-support.md %}).
+If you can't find the correct version, ask your hoster! Or [let us help you]({% link _store/keleo-installation-support.md %}).
 
 ### Ionos / 1&1
 
