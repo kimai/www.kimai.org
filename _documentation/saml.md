@@ -135,9 +135,7 @@ Links:
 
 ### Azure
 
-For Azure, please check the [Azure SAML documentation]({% link _documentation/azure.md %}).
-
-SAML authentication with Azure accounts has proven to work, please [read this thread](https://github.com/kevinpapst/kimai2/issues/1975) for more information. 
+For Azure, please check the [Azure SAML documentation]({% link _documentation/azure.md %})
 
 ## Known limitations
 
