@@ -1,4 +1,9 @@
-
+---
+title: Azure SAML
+description: How to use Azure AD SAML identity provider with Kimai 2
+toc: true
+since_version: 1.8
+---
 ## Azure SAML
 
 ### Introduction
