@@ -33,13 +33,13 @@ Other languages are accessible through the Microsoft Documentation under:
 
 	**Note**: The name of the application does not affect any technical but could be displayed to users during login.
 5.	Click on **Overview** on the left navigation panel. Now click on the value under **Managed application in local directory**:
-![Picture](https://hierstinktes.de/azure-saml-pic1.png)
+![Picture](/images/documentation/azure-saml-pic1.png)
  
 6.	Now navigate to **Single sign-on** on the left navigation and choose **SAML** as your choice:
-![Picture](https://hierstinktes.de/azure-saml-pic2.png)
+![Picture](/images/documentation/azure-saml-pic2.png)
  
 7.	Edit the **Basic SAML Configuration** at the top and add the required **URLs**:
-![Picture](https://hierstinktes.de/azure-saml-pic3.png)
+![Picture](/images/documentation/azure-saml-pic3.png)
  
 | Setting |Value  |
 | ------------- | -----:|
@@ -49,10 +49,10 @@ Other languages are accessible through the Microsoft Documentation under:
 | Logout Url | https://timetracking.example.com/auth/saml/logout |
 
 8.	Edit the **User Attributes & Claims** and ensure the following settings: 
-![Picture](https://hierstinktes.de/azure-saml-pic4.png)
+![Picture](/images/documentation/azure-saml-pic4.png)
  
 	**Note**: It is likely, that you have a missing entry **displayname**, thus please add the claim by clicking **Add new claim** and set the following settings:  
-![Picture](https://hierstinktes.de/azure-saml-pic5.png)
+![Picture](/images/documentation/azure-saml-pic5.png)
 
 | Setting |Value  |
 | ------------- | -----:|
@@ -64,10 +64,10 @@ Other languages are accessible through the Microsoft Documentation under:
 After setting these settings, please hit **Save**.
 
 9.	Return to the **Single Sign-On**(Visible in the navigation panel on the left) and download **Certificate (Base64)**:
-![Picture](https://hierstinktes.de/azure-saml-pic6.png) 
+![Picture](/images/documentation/azure-saml-pic6.png) 
 
 10.	Copy the three values of **Set up Kimai**, as we will need them to configure Kimai:
-![Picture](https://hierstinktes.de/azure-saml-pic7.png)
+![Picture](/images/documentation/azure-saml-pic7.png)
 
 
 ### Setting Up Kimai
