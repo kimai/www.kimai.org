@@ -2,6 +2,7 @@
 title: Task management plugin for Kimai 2
 name: Task management plugin
 intro: "Create tasks, start/stop/pause them, assign them to users and teams and record times - a todo-list management plugin for Kimai 2 that adds two new dashboard widgets"
+slug: task-management-bundle
 developer: keleo
 date: "2020-01-22 07:00:00 +0200"
 icon: fas fa-clipboard-list

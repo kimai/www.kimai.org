@@ -100,7 +100,7 @@ Read [this issue]({{ site.kimai_v2_repo }}/issues/743) if you have further quest
 
 How to install Kimai at shared hosting companies. Please share our insights if you have managed to get it up and running with another company!
 
-If you can't find the correct version, ask your hoster! Or [let us help you]({% link _store/installation-support.md %}).
+If you can't find the correct version, ask your hoster! Or [let us help you]({% link _store/keleo-installation-support.md %}).
 
 ### Ionos / 1&1
 
@@ -221,12 +221,13 @@ See issue [#1620](https://github.com/kevinpapst/kimai2/issues/1620).
 
 ## FTP installation
 
-This is NOT recommended, but still widely used ... 
+Please: do yourself a favour and get a hoster that includes SSH access, it is not 2002 anymore. 
+Nowadays even cheap webhosting contracts support SSH. If not, change your hoster!
 
-Please, do yourself a favour and get a hoster that includes SSH access, it is not 2002 anymore! 
-Nowadays even cheap contracts should support SSH.
+You think you get a good deal with 3€ / month and then use a free software on top. 
+All problems solved with almost no money, right?!? Well, now think again if that is how you want to run your business...
 
-Now read on: [Kimai FTP installation + tips and tricks]({% link _documentation/ftp.md %}). 
+For everyone who thinks he knows better: [Kimai FTP installation sucks massively]({% link _documentation/ftp.md %}) 
 
 ## Ansible
 
@@ -246,7 +247,7 @@ Kimai tries to work around the Foreign Keys issue by using a
 but this does not work in all environments (SQLite needs to be compiled with foreign support), 
 it is not intended to be used in production environments and it can't be guaranteed that SQLite handles everything as expected!
 
-If you insist on using SQLite: make a copy of the database file BEFORE each update to prevent possible data loss and don't ever delete data that is already linked to other data (like customers/projects/activities used in timesheets) ... 
+If you insist on using SQLite: make a copy of the database file BEFORE each update to prevent possible data loss and don't ever delete data that is already linked to other data (like users/customers/projects/activities used in timesheets) ... 
 
 **And don't file any bug report - you have been warned!**
 

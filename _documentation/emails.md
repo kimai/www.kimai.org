@@ -20,6 +20,15 @@ You have to adapt two settings in your `.env` [configuration file]({% link _docu
 
 You can test your email configuration by registering a new account or using the password reset function.
 
+During your initial tests, you might try to use the `password reset` function over and over again.
+That will not work, as Kimai stores a timestamp when the last password reset was requested  and does not 
+allow another request in a certain timespan.
+
+To work around that waiting time, you can reset the timer by issuing the following command (replace the username with yours):
+```bash
+bin/console doctrine:query:dql "UPDATE App\Entity\User u SET u.passwordRequestedAt = null WHERE u.username = 'anna_admin'"
+```
+
 ### MAILER_URL with special character 
 
 If your SMTP credentials contain special character like `@` or other ones which are not URL-safe, then they need to be urlencoded. 

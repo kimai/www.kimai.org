@@ -2,6 +2,7 @@
 title: Fail2Ban plugin for Kimai 2
 name: Fail2Ban plugin
 intro: "A fail2ban compatible plugin, logging failed authentication requests"
+slug: fail2ban-bundle
 developer: keleo
 date: "2019-07-26 12:00:00 +0200"
 icon: fas fa-ban

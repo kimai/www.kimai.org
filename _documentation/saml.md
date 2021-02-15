@@ -135,7 +135,7 @@ Links:
 
 ### Azure
 
-SAML authentication with Azure accounts has proven to work, please [read this thread](https://github.com/kevinpapst/kimai2/issues/1975) for more information. 
+For Azure, please check the [Azure SAML documentation]({% link _documentation/azure.md %})
 
 ## Known limitations
 
@@ -159,9 +159,9 @@ RewriteRule  /(..)/login /auth/saml/login [L,R=301]
 
 ### Proxy and http vs https
 
-Error message:`
-- The response was received at `http://kimai-test.example.com/auth/saml/acs` instead of `https://kimai-test.example.com/auth/saml/acs`
+**Error:**  
+The response was received at `http://kimai-test.example.com/auth/saml/acs` instead of `https://kimai-test.example.com/auth/saml/acs`
 
-Solution: 
-- Use the `baseurl` configuration and set it to `https://kimai-test.example.com/auth/saml/` (and flush the cache!)
+**Solution:**  
+Use the `baseurl` configuration and set it to `https://kimai-test.example.com/auth/saml/` (and flush the cache!)
 

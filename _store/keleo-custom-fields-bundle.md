@@ -2,6 +2,7 @@
 title: Custom-fields plugin for Kimai 2
 name: Custom-fields plugin
 intro: "Create free configurable additional fields for timesheets, customers, projects, activities and users."
+slug: custom-fields-bundle
 developer: keleo
 date: "2019-06-25 20:00:00 +0200"
 icon: fas fa-keyboard
@@ -61,7 +62,7 @@ Configure additional fields for the following entities:
 - `Projects`
 - `Activities`
 - `User`
-- `Expenses` - see [Expenses plugin]({% link _store/expenses-bundle.md %})
+- `Expenses` - see [Expenses plugin]({% link _store/keleo-expenses-bundle.md %})
 
 The custom fields will be shown on the "create and edit entity" forms and can have the following types:
 

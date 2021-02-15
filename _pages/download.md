@@ -34,21 +34,14 @@ These requirements are provided by almost all hosting companies:
 **The recommended way to install Kimai!** 
 
 You will use `git` and `composer` for the [installation]({% link _documentation/installation.md %}), which will be executed directly on the target system. 
-
-Please read the [installation instructions]({% link _documentation/installation.md %}) carefully, there is really no reason to download Kimai manually.
-But a download page without button would not be the same 😜 therefore:
+Please read the [instructions]({% link _documentation/installation.md %}) carefully.
  
-<a href="{{ site.kimai_v2_repo }}/archive/{{ site.kimai_v2_version }}.zip" class="btn btn-primary"><i class="fas fa-download"></i> Version {{ site.kimai_v2_version }} (source code only)</a>
-<a href="{{ site.kimai_v2_repo }}/zipball/master" class="btn btn-secondary"><i class="fas fa-download"></i> Development</a>
+<a href="{% link _documentation/installation.md %}" class="btn btn-success"><i class="fas fa-book"></i> Read installation docs</a>
 
-## Shared hosting / FTP
+## Shared hosting with FTP
 
-This way is not recommended, as Kimai does neither support updates in this mode nor ships a web-installer like other web-apps.
-You have to read the [documentation]({% link _documentation/ftp.md %}) carefully.
-
-Here is the experimental installation package for all the brave FTP users: 
-
-<a href="{{ site.kimai_v2_repo }}/releases/download/{{ site.kimai_v2_version }}/kimai-release-{{ site.kimai_v2_version }}.zip" class="btn btn-primary"><i class="fas fa-download"></i> Version {{ site.kimai_v2_version }} (pre-installed for FTP)</a>
+This way is not supported! Kimai does neither support updates in this mode nor ships a web-installer like other web-apps.
+There [is a workaround]({% link _documentation/ftp.md %}), but you need to understand that you are on your own, only paid support possible.
 
 ## Development version
 
@@ -60,5 +53,7 @@ Please help us, test it and [leave some feedback]({{ site.kimai_v2_repo }}/issue
 
 ### More downloads
 
+<a href="{{ site.kimai_v2_repo }}/archive/{{ site.kimai_v2_version }}.zip" class="btn btn-secondary"><i class="fas fa-download"></i> Version {{ site.kimai_v2_version }} ZIP</a>
+<a href="{{ site.kimai_v2_repo }}/zipball/master" class="btn btn-secondary"><i class="fas fa-download"></i> Development ZIP</a>
 <a href="{{ site.kimai_v2_repo }}/releases/tag/{{ site.kimai_v2_version }}" class="btn btn-secondary"><i class="fab fa-github"></i> Release info {{ site.kimai_v2_version }} </a>
 <a href="{{ site.kimai_v2_repo }}/releases" class="btn btn-secondary"><i class="fab fa-github"></i> All releases </a>
