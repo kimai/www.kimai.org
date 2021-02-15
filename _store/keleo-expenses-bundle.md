@@ -2,6 +2,7 @@
 title: Expenses plugin for Kimai 2
 name: Expenses  plugin
 intro: "Keep track of your expenses and include them in your invoices."
+slug: expenses-bundle
 developer: keleo
 date: "2019-09-14 10:00:00 +0200"
 icon: fas fa-money-check
@@ -62,7 +63,7 @@ These expenses can be categorized and included in your invoices.
 - All (refundable) expenses will be automatically included in your invoices
 - Manage expenses via API
 - Export expenses in: PDF, HTML, CSV, Excel
-- Support for custom fields (see [Custom-fields plugin]({% link _store/custom-fields-bundle.md %}))
+- Support for custom fields (see [Custom-fields plugin]({% link _store/keleo-custom-fields-bundle.md %}))
 - Import expenses from Kimai 1
 
 Expenses will be assigned to free configurable categories and each category has:

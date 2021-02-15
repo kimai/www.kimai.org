@@ -69,16 +69,9 @@ this specific configuration key to your `local.yaml` in order to overwrite the d
 ### Reload changed configurations
 
 When you change your `local.yaml` configuration file, Kimai will not see this change immediately. 
-You have to reload the configurations by rebuilding the cache.
+You have to reload the configurations by rebuilding the cache. 
 
-{% include cache-refresh.html %} 
-
-It might be necessary to execute these commands as webserver user, 
-read the [Installation docs]({% link _documentation/installation.md %}) for more details.
-
-Depending on your setup and the way you call the cache command, you have to fix directory permissions afterwards. 
- 
-{% include file-permissions.html %} 
+Read the [cache documentation]({% link _documentation/cache.md %}) for more details.
 
 ## System-configuration screen
 
@@ -86,10 +79,9 @@ You can edit most of the configurations from the Kimai UI directly.
 
 This screen is only visible to users with the permission `system_configuration` which is by default given to `ROLE_SUPER_ADMIN`.
 
-Each setting in this screen is also available in the config file (`config/packages/kimai.yaml`) where you might find 
-additional information or links to the correct documentation chapter.
+Each setting in this screen can also be changed in the config file `config/packages/local.yaml`.
 
-### Data directory
+## Data directory
 
 Inside the `data` directory Kimai and plugins will store newly created files.
 This location is by default `var/data/`, while files will be managed in sub-directories: eg. `var/data/invoices/` for generated invoices.
@@ -102,10 +94,6 @@ kimai:
 ```
 
 After changing the data directory, you should move all existing data to the new location and then reload the cache.
-
-### Branding
-
-Please read the [branding documentation]({% link _documentation/branding.md %}) to adapt title, login logo and more.
 
 ## User preferences vs. system settings
 

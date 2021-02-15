@@ -10,7 +10,7 @@ toc: true
 This documentation covers all necessary steps to migrate from Kimai 1 to Kimai 2.
 
 {% capture upgrade_note %}
-You can <a href="{% link _store/installation-support.md %}">get professional support</a> if you are not sure about performing the upgrade yourself. 
+You can <a href="{% link _store/keleo-installation-support.md %}">get professional support</a> if you are not sure about performing the upgrade yourself. 
 {% endcapture %}
 
 {% include alert.html type="success" icon="fas fa-shipping-fast" alert=upgrade_note %} 
@@ -77,7 +77,15 @@ bin/console kimai:import-v1 "mysql://kimai:test@127.0.0.1:3306/kimai?charset=lat
 That will drop the configured Kimai v2 database schema and re-create it, before importing the data from the `mysql` database at `127.0.0.1` on port `3306` authenticating the user `kimai` with the password `test` for import.
 The connection will use the charset `latin1` and the default table prefix `kimai_` for reading data. Imported users can login with the password `test123` and all customer will have the country `CH` and the currency `CHF` assigned.
 
-### Broken character
+### Problems and solution
+
+Kimai 1 was written a long time ago, when MySQL was lacking proper UTF8 support and foreign keys (in shared hostings).
+While [migrating dozens of customers installations]({% link _store/keleo-installation-support.md %}) I stumbled upon some recurring problems, 
+that can be solved with some SQL commands.  
+
+{% include alert.html type="warning" alert="Be aware, depending on your Kimai 1 version the field names might be different in the following snippets" %} 
+
+#### Broken character
 
 Many Kimai 1 installations have broken special character (like german umlauts or other language specific non-ascii characters) in the database.
 
@@ -92,4 +100,19 @@ They cannot be fixed automatically by Kimai 2, but changing them is then just a 
 ```sql 
 UPDATE `kimai2_timesheet` SET description = REPLACE(description, "Ã¼", "ü") WHERE description like "%Ã¼%"; 
 UPDATE `kimai2_timesheet` SET description = REPLACE(description, "Ã¤", "ä") WHERE description like "%Ã¤%"; 
+```
+
+#### User accounts without email
+
+Find and update all users, that have no email address: 
+```sql
+select * from kimai_users where mail = '' or mail is null;
+update kimai_users set mail = concat(name, '@example.com') where mail = '' or mail is null;
+```
+
+#### Reset password for testing
+
+Update an account with a new `password` in your Kimai 1 database:
+```sql
+UPDATE kimai_users SET password = md5(concat('your-salt', 'new-password', 'your-salt')) WHERE userID = XYZ;
 ```

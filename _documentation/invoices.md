@@ -82,7 +82,7 @@ For further information read the [timesheet documentation]({% link _documentatio
 Since Kimai 1.10 only billable items will be included in invoices. By default, every timesheet records is billable but future 
 versions of Kimai will ship features to change that.  
 
-[Expense items]({% link _store/expenses-bundle.md %}) have a configurable billable flag per item and only the once marked as billable (refundable) will be included. 
+[Expense items]({% link _store/keleo-expenses-bundle.md %}) have a configurable billable flag per item and only the ones marked as billable (refundable) will be included. 
 
 ## Invoice document
 

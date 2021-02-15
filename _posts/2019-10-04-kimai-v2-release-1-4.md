@@ -15,7 +15,7 @@ This release contains various bugfixes and some new features:
 - show custom fields in data-tables
 
 In the meantime two new addons were added to the Marketplace:
-- the [Expense tracking plugin]({% link _store/expenses-bundle.md %})
+- the [Expense tracking plugin]({% link _store/keleo-expenses-bundle.md %})
 - the [Period insert plugin]({% link _store/hmr-it-period-insert-bundle.md %})
 
 Thanks to all of you for using and supporting Kimai, especially:

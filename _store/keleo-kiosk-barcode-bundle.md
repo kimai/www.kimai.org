@@ -2,6 +2,7 @@
 title: Kiosk plugin for Kimai with Barcode and RFID support
 name: Kiosk plugin
 intro: "Start and stop timesheets with a barcode or RFID scanner for attendance time-tracking"
+slug: kiosk-barcode-bundle
 developer: keleo
 date: "2020-03-06 16:00:00 +0200"
 icon: fas fa-barcode
@@ -9,7 +10,7 @@ demo: true
 price: "199€"
 gumroad: kimai2-kiosk
 featured: "Attendance time-tracking in an environment, where the user has no access to Kimai (eg. in a warehouse) by using a barcode or RFID scanner to start and stop timesheets." 
-new: true
+new: false
 tags:
   - plugin
 bundle:

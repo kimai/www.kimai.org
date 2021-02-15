@@ -100,7 +100,7 @@ Read [this issue]({{ site.kimai_v2_repo }}/issues/743) if you have further quest
 
 How to install Kimai at shared hosting companies. Please share our insights if you have managed to get it up and running with another company!
 
-If you can't find the correct version, ask your hoster! Or [let us help you]({% link _store/installation-support.md %}).
+If you can't find the correct version, ask your hoster! Or [let us help you]({% link _store/keleo-installation-support.md %}).
 
 ### Ionos / 1&1
 
@@ -138,6 +138,54 @@ How to install Kimai:
 
 Reload your configuration `/opt/RZphp73/bin/php-cli bin/console kimai:reload`
 
+### Plesk
+
+If a subdomain has not yet been added, login to the Plesk frontend and add a new
+subdomain, e.g. kimai.my-domain.com. Use the database tab of the new subdomain
+to create a new database for Kimai. Also check the selected PHP version for
+this subdomain in the development-tools section of the subdomain.
+
+Next, the actual installation needs to be done in the command line of the
+webserver directly.
+
+- Login to the web server via SSH
+- Locate the current PHP version. Plesk stores its PHP instances in the
+  directory `/opt/plesk/php`. Depending on which PHP version was configured for
+  Kimai subdomain, make sure to use this version during the installation. For
+  example, if using version 7.3, the path to PHP should be `/opt/plesk/php/7.3/bin/php`.
+- Switch user to be "root" (otherwise access to Plesk subfolder is denied) with `su`.
+- Navigate to the root folder where Plesk is hosting the websites from.
+  Typically, the root can be found at `/var/www/vhosts/<domain_name>`. For hosting
+  location on Windows, please refer to official [Plesk documentation](https://docs.plesk.com/en-US/onyx/administrator-guide/web-hosting/website-directory-structure.68695/):
+  ```bash
+  cd /var/www/vhosts/kimai.my-domain.com
+  ```
+- Install composer: `curl -sS https://getcomposer.org/installer | /opt/plesk/php/7.3/bin/php`
+- Clone Kimai: `git clone -b {{ site.kimai_v2_version }} --depth 1 https://github.com/kevinpapst/kimai2.git`
+- Enter Kimai directory: `cd kimai2`
+- Install composer packages: `/opt/plesk/php/7.3/bin/php ../composer.phar install --no-dev --optimize-autoloader`
+- Configure `.env` file to have correct database credentials
+- Install Kimai database: `/opt/plesk/php/7.3/bin/php bin/console kimai:install -n`
+- Change ownership of `kimai2` folder:
+    ```
+    cd ..
+    chown -R psacln:psaserv kimai2
+    chmod -R g+r kimai2
+    chmod -R g+rw kimai2/var/
+    chmod -R g+rw kimai2/public/avatars/
+    ```
+- Switch user back to your normal user account (must not be root), e.g. 'user': `su -p user`
+- Reload caches:
+    ```
+    cd kimai2
+    bin/console kimai:reload --env=prod
+    ```
+- Create first user: `bin/console kimai:create-user username admin@example.com ROLE_SUPER_ADMIN`
+- Adjust [Apache configuration](https://www.kimai.org/documentation/webserver-configuration.html)
+  to point to the "public" subfolder of the Kimai installation, i.e. set the path to
+  `/var/www/vhosts/my-domain.com/kimai2/public`. Also ensure that `ServerName`
+  and `ServerAlias` are set to `kimai.my-domain.com` and `www.kimai.my-domain.com`.
+
 ### Netcup
 
 - Clone Kimai in the root folder as stated above and then `cd kimai2`
@@ -152,12 +200,13 @@ See issue [#1620](https://github.com/kevinpapst/kimai2/issues/1620).
 
 ## FTP installation
 
-This is NOT recommended, but still widely used ... 
+Please: do yourself a favour and get a hoster that includes SSH access, it is not 2002 anymore. 
+Nowadays even cheap webhosting contracts support SSH. If not, change your hoster!
 
-Please, do yourself a favour and get a hoster that includes SSH access, it is not 2002 anymore! 
-Nowadays even cheap contracts should support SSH.
+You think you get a good deal with 3€ / month and then use a free software on top. 
+All problems solved with almost no money, right?!? Well, now think again if that is how you want to run your business...
 
-Now read on: [Kimai FTP installation + tips and tricks]({% link _documentation/ftp.md %}). 
+For everyone who thinks he knows better: [Kimai FTP installation sucks massively]({% link _documentation/ftp.md %}) 
 
 ## Ansible
 
@@ -177,7 +226,7 @@ Kimai tries to work around the Foreign Keys issue by using a
 but this does not work in all environments (SQLite needs to be compiled with foreign support), 
 it is not intended to be used in production environments and it can't be guaranteed that SQLite handles everything as expected!
 
-If you insist on using SQLite: make a copy of the database file BEFORE each update to prevent possible data loss and don't ever delete data that is already linked to other data (like customers/projects/activities used in timesheets) ... 
+If you insist on using SQLite: make a copy of the database file BEFORE each update to prevent possible data loss and don't ever delete data that is already linked to other data (like users/customers/projects/activities used in timesheets) ... 
 
 **And don't file any bug report - you have been warned!**
 
@@ -234,6 +283,20 @@ don't know, it is likely your own username).
 Also note that, depending on where you are installing Kimai 2 and how your computer is configured, you may also receive 
 "operation not permitted" errors when setting file permissions (`chown` and `chmod` commands). 
 In that case, prefix them with `sudo`.
+
+### Troubleshoot
+
+#### Internal Server Error 500
+
+This error can have several causes. Here is a small summary what to check for if
+this error occurs when trying to access the Kimai frontend:
+
+- There could be something wrong with your file permissions. Please check the
+  log `var/log/prod.log` in your installation directory.
+- Make sure not to reload Kimai as `root` (e.g. via `bin/console kimai:reload
+  --env=prod`). The application will create folders and files. If *root* started
+  the process you most likely will have permission errors if the web-server is
+  not started as `root` as well. [Fix file permissions]({% link _documentation/cache.md %})!
 
 #### Still doesn't work?
 
