@@ -34,22 +34,16 @@ Diese Anforderungen werden von nahezu allen Hosting-Anbietern erfüllt:
 
 **Der empfohlene Weg um Kimai zu installieren!** 
 
-Es werden lediglich `git` und `composer` für die [Installation]({% link _documentation/installation.md %}) benötigt, welche direkt auf dem Zielsystem ausgeführt werden.
-
-Bitte lesen Sie in Ruhe die [Installationsanleitung]({% link _documentation/installation.md %}), es gibt in Wahrheit gar keinen Grund Kimai manuell herunterzuladen. 
-Aber eine Download Seite ohne Button wäre nicht dasselbe 😜 daher:
+Sie benötigen `git` und `composer` für die [Installation]({% link _documentation/installation.md %}), welche auf dem Zielsystem ausgeführt werden.
+Bitte lesen Sie die [Installationsanleitung]({% link _documentation/installation.md %}) ausführlich. 
  
-<a href="{{ site.kimai_v2_repo }}/archive/{{ site.kimai_v2_version }}.zip" class="btn btn-primary"><i class="fas fa-download"></i> Version {{ site.kimai_v2_version }} (nur der Quellcode)</a>
-<a href="{{ site.kimai_v2_repo }}/zipball/master" class="btn btn-secondary"><i class="fas fa-download"></i> Entwicklungsversion</a>
+<a href="{% link _documentation/installation.md %}" class="btn btn-success"><i class="fas fa-book"></i> Installationsanleitung (englisch)</a>
 
-## Installation mit FTP
+## Shared Hosting mit FTP
 
-Dieser Weg wird nicht empfohlen, da Kimai in diesem Modus momentan weder Updates unterstützt noch einen Web-Installer wie andere Apps bietet.
-Sie sollten zunächst die [Dokumentation]({% link _documentation/installation.md %}) gründlich lesen.
-
-Dennoch gibt es für alle wagemutigen FTP Benutzer hier das experimentelle Installationspaket der neueste Kimai-Version:
-
-<a href="{{ site.kimai_v2_repo }}/releases/download/{{ site.kimai_v2_version }}/kimai-release-{{ site.kimai_v2_version }}.zip" class="btn btn-primary"><i class="fas fa-download"></i> Version {{ site.kimai_v2_version }} (vor installiert für FTP)</a>
+Dieser Weg wird nicht unterstützt! Kimai unterstützt weder Updates in diesem Modus noch liefert es einen Web-Installer wie andere Web-Apps. 
+Es gibt einen [Workaround]({% link _documentation/ftp.md %}), aber Sie müssen verstehen, dass Sie damit auf sich allein gestellt sind.
+Ausschließlich bezahlter Support möglich.
 
 ## Entwicklungsversion
 
@@ -61,5 +55,7 @@ Bitte helfen Sie mit, testen Sie Kimai und [benachrichtigen Sie uns]({{ site.kim
 
 ### Weitere Downloads
 
+<a href="{{ site.kimai_v2_repo }}/archive/{{ site.kimai_v2_version }}.zip" class="btn btn-secondary"><i class="fas fa-download"></i> Version {{ site.kimai_v2_version }} (ZIP)</a>
+<a href="{{ site.kimai_v2_repo }}/zipball/master" class="btn btn-secondary"><i class="fas fa-download"></i> Entwicklungsversion (ZIP)</a>
 <a href="{{ site.kimai_v2_repo }}/releases/tag/{{ site.kimai_v2_version }}" class="btn btn-secondary"><i class="fab fa-github"></i> Release info {{ site.kimai_v2_version }} </a>
 <a href="{{ site.kimai_v2_repo }}/releases" class="btn btn-secondary"><i class="fab fa-github"></i> Alle Releases </a>
