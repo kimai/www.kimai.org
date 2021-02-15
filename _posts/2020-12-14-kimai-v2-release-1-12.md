@@ -8,19 +8,32 @@ tags: [Release]
 
 The release 1.12 was published quite a while ago - sorry for the late release post! 
 
-This release was mainly a bugfix version, but some new features are in there as well:
+This release was mainly a bugfix version, which improves internals for plugin developer. Some highlights follow. 
 
-- Allow custom export repositories (eg. [Expenses]({% link _store/keleo-expenses-bundle.md %}) will be included in the global Export)
-- Allow to reassign timesheet from delete user dialog (historical data can be moved to a backup account upon user deletion)
-- A lot of new and updated translations, thanks to the [Weblate community](http://hosted.weblate.org/projects/kimai/)
-- Many internal updates for plugin developers
+### Export repositories
+
+Allow custom export repositories: eg. [Expenses]({% link _store/keleo-expenses-bundle.md %}) will be included in the global Export.
+
+### Reassign timesheets
+
+Allows reassigning of timesheet records from "delete user" dialog, so historical data can be moved to a backup account upon user deletion:
+
+![Confirm reassignment](/images/documentation/user/delete_user_reassign.png "Reassign timesheets when deleting account"){:height="250px"}
+
+### Translations
+
+Updated translations for Spanish, Turkish, Portuguese Brazil, Portuguese, Dutch, Romanian, Slovak, Russian, Esperanto, Hungarian, Arabic, French, Polish and Korean.
+
+### Security issues
 
 This version includes a bugfix for XSS vulnerabilities in some admin pages, which was found and reported by David Woodhouse from [Aegis9](https://www.aegis9.com.au). Thank you! 
+
+### Thank you!
 
 Thanks to all of you for using and supporting Kimai, especially:
 - all clients and donors who help me to keep up the work for Kimai
 - the developers who contributed their time
-- the translators at Weblate
+- the translators in our [Weblate community](http://hosted.weblate.org/projects/kimai/)
 - everyone else contributing at GitHub, too many to name you all 
 
 All of you guys rock ❤️ thanks for being part of the Kimai community!

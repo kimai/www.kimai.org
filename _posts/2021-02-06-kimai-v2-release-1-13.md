@@ -7,9 +7,6 @@ tags: [Release]
 ---
 
 The release 1.13 was published, containing a lot of bugfixes and some new features. 
-I am trying a new format this time for the news, including screenshots and some details to showcase the most important changes.
-
-I hope you like it, please let me know what you think via Twitter @kimai_org
 
 ### Timesheet tracking form
 
