@@ -8,7 +8,7 @@ tags: [Release]
 
 The release 1.12 was published quite a while ago - sorry for the late release post! 
 
-This release was mainly a bugfix version, which improves internals for plugin developer. Some highlights follow. 
+This release was mainly a bugfix version, which improves internals for plugin developer.
 
 ### Export repositories
 
