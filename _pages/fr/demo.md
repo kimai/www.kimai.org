@@ -4,9 +4,6 @@ description: Testez notre système de suivi du temps Kimai, directement en ligne
 lang: fr
 lang-ref: demo
 permalink: /fr/demo.html
-redirect_from:
-  - /en/demo.html
-  - /demo.html
 ---
 {% assign masterDescription = "Découvrez les dernières fonctionnalités ajoutées dans la version de développement qui sera incluse dans la prochaine version." %}
 {% assign stableDescription = "Présentation de la version stable actuelle. Le mieux pour ceux qui ne veulent pas prendre le risque d'avoir des bogues de développement. Version installée : "|append:site.kimai_v2_version %}

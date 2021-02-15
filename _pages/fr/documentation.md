@@ -8,8 +8,6 @@ header: Kimai v2
 icon: fas fa-book
 layout: documentation
 permalink: /fr/documentation/
-redirect_from:
-  - /documentation/
 ---
 
 Il s'agit de la documentation officielle de l'application de suivi du temps Kimai 2.

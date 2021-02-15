@@ -5,9 +5,6 @@ subtitle: Découvrez ce que les autres ont à dire sur nous
 lang: fr
 lang-ref: testimonial
 permalink: /fr/meinungen.html
-redirect_from:
-  - /meinungen.html
-  - /feedback.html
 ---
 
 # Témoignages
