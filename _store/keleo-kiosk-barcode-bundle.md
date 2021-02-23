@@ -40,6 +40,10 @@ bundle:
         title: "USB scanner"
         description: "The 'Barcode with USB scanner' login mode show a screen like this, the input field is pre-selected and the scanner will submit it after finding a code"
       - 
+        src: "/images/marketplace/kiosk-scanner-users.png"
+        title: "Login screen"
+        description: "The login screen with the optional user list being activated"
+      - 
         src: "/images/marketplace/kiosk-webcam.png"
         title: "Webcam scanner"
         description: "The 'Barcode with device cam' login mode will show the camera video and scan constantly for barcodes"
@@ -87,6 +91,8 @@ You can test it in the ["Plugins" demo](https://www.kimai.org/demo/).
   - `Code 2 of 5`
   - `Code 2 of 5 interleaved`
   - `Codabar` (scanner needs to transmit start & stop digits)
+- Optional: show active / inactive users in login screen
+- Many CSS classes to customize the look with [Custom CSS Bundle](https://www.kimai.org/store/keleo-css-custom-bundle.html)
 
 You need to configure **a non-global activity** for starting the record via this plugin. 
 This will be used for every recorded timesheet that is created using the kiosk mode.
