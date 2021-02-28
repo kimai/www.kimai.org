@@ -28,9 +28,9 @@ Choisissez l'une de nos installations de démonstration de Kimai 2, où vous pou
 </div>
 
 Notez que les démos sont réinstallées périodiquement et que toutes les données saisies sont supprimées.
-Mais pour votre commodité, ils sont préremplis de données aléatoires afin que vous puissiez commencer à tester les fonctionnalités (comme la facture ou l'exportation) immédiatement.
+Mais pour votre commodité, ils sont préremplis de données aléatoires afin que vous puissiez commencer à tester les fonctionnalités (comme la facture ou l'export) immédiatement.
 
-Si vous remarquez un problème, je vous demande de laisser un message [bei GitHub]({{ site.kimai_v2_repo }}/issues).
+Si vous remarquez un problème, je vous demande de laisser un message [sur GitHub]({{ site.kimai_v2_repo }}/issues).
 
 ## Utilisateurs de la démo
 
@@ -38,8 +38,8 @@ Ces comptes sont disponibles pour vos tests. Vous pouvez également créer votre
 
 | Nom d'utilisateur | Mot de passe | API |
 |---|:---:|:---:|
-| **john_user** (Benutzer) | **kitten** | api_kitten |
-| **tony_teamlead** (Teamleiter) | **kitten** | api_kitten |
+| **john_user** (Utilisateur) | **kitten** | api_kitten |
+| **tony_teamlead** (Chef d'équipe) | **kitten** | api_kitten |
 | **anna_admin** (Admin) | **kitten** | api_kitten |
 | **susan_super** (Super-Admin) | **kitten** | api_kitten |
 | **admin** (Super-Admin) | **password** | - |

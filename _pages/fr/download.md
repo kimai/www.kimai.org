@@ -11,7 +11,7 @@ permalink: /fr/download.html
 # Téléchargez Kimai - gratuitement !
 
 {% capture docText %}
-Vous trouverez un guide d'installation complet dans notre [Dokumentation]({% link _documentation/installation.md %}).
+Vous trouverez un guide d'installation complet dans notre [Documentation]({% link _documentation/installation.md %}) en anglais.
 {% endcapture %}
 
 {% assign docText = docText|markdownify %}
@@ -24,8 +24,8 @@ Ces exigences sont remplies par presque tous les fournisseurs d'hébergement :
 - PHP 7.2 ou supérieur
     - Extensions PHP : `mbstring`, `gd`, `intl`, `pdo`, `xml`, `zip`
 - Base de données (MySQL, MariaDB, SQLite)
-- [Webserver](https://www.kimai.org/documentation/webserver-configuration.html) (nginx, Apache mit mod_rewrite ...)
-- Un navigateur moderne (les anciennes versions, en particulier Safari et IEm, peuvent être buggées)
+- [Webserver](https://www.kimai.org/documentation/webserver-configuration.html) (nginx, Apache avec mod_rewrite ...)
+- Un navigateur moderne (les anciennes versions, en particulier Safari et IE, peuvent être buggées)
 
 ## Installation avec SSH
 
@@ -33,7 +33,7 @@ Ces exigences sont remplies par presque tous les fournisseurs d'hébergement :
 
 Seuls `git` et `composer` sont nécessaires pour l'[Installation]({% link _documentation/installation.md %}), qui sont exécutés directement sur le système cible.
 
-Merci de lire attentivement les [Installationsanleitung]({% link _documentation/installation.md %}), il n'y a aucune raison de télécharger Kimai manuellement.
+Merci de lire attentivement les [Instructions d'installation]({% link _documentation/installation.md %}), il n'y a aucune raison de télécharger Kimai manuellement.
 Mais une page de téléchargement sans bouton ne serait pas la même 😜 donc :
 
 <a href="{{ site.kimai_v2_repo }}/archive/{{ site.kimai_v2_version }}.zip" class="btn btn-primary"><i class="fas fa-download"></i> Version {{ site.kimai_v2_version }} (code source uniquement)</a>
@@ -42,9 +42,9 @@ Mais une page de téléchargement sans bouton ne serait pas la même 😜 donc :
 ## Installation avec FTP
 
 Cette méthode n'est pas recommandée, car Kimai ne prend actuellement pas en charge les mises à jour dans ce mode, ni ne propose un installateur web comme les autres applications.
-Vous devez d'abord lire attentivement la [Dokumentation]({% link _documentation/installation.md %}).
+Vous devez d'abord lire attentivement la [Documentation]({% link _documentation/installation.md %}).
 
-Néanmoins, pour tous les utilisateurs audacieux de FTP, voici le paquet d'installation expérimental de la dernière version de Kimai :
+Néanmoins, pour tous les utilisateurs audacieux avec FTP, voici le paquet d'installation expérimental de la dernière version de Kimai :
 
 <a href="{{ site.kimai_v2_repo }}/releases/download/{{ site.kimai_v2_version }}/kimai-release-{{ site.kimai_v2_version }}.zip" class="btn btn-primary"><i class="fas fa-download"></i> Version {{ site.kimai_v2_version }} (pré-installé pour le FTP)</a>
 
