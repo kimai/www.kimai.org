@@ -23,6 +23,22 @@ you can contact me, [I offer paid setup support]({% link _store/keleo-installati
 ## FTP installation
 
 {% include alert.html type="warning" alert="FTP installation is only possible, if your hosters PHP version has SQLite support!" %}
+
+### SQLite not supported for production usage
+
+SQLite is a great database engine for testing, but when it comes to **production usage it is not supported for Kimai**:
+
+- It does not support ALTER TABLE commands and makes update procedures clunky and problematic (I try to support updates, but they are heavy on large databases)
+- It does [not support FOREIGN KEY](https://www.sqlite.org/quirks.html#foreign_key_enforcement_is_off_by_default) constraints [out of the box](https://www.sqlite.org/foreignkeys.html#fk_enable), which can lead to critical bugs when deleting users/activities/projects/customers
+
+Kimai tries to work around the Foreign Keys issue by using a 
+[Doctrine PostConnect EventSubscriber]({{ site.kimai_v2_file }}/src/Doctrine/SqliteSessionInitSubscriber.php), 
+but this does not work in all environments (SQLite needs to be compiled with foreign support), 
+it is not intended to be used in production environments and it can't be guaranteed that SQLite handles everything as expected!
+
+If you insist on using SQLite: make a copy of the database file BEFORE each update to prevent possible data loss and don't ever delete data that is already linked to other data (like users/customers/projects/activities used in timesheets) ... 
+
+**And don't file any bug report - you have been warned!**
  
 If you have no SSH access to your server (e.g. when you use a shared hosting package) then you can create a package tha 
 includes a pre-installed Kimai version.
@@ -39,7 +55,7 @@ The file `var/data/kimai.sqlite` will hold all your data, include it in your bac
 ## Do not delete data
 
 Do not, under any circumstance delete data. It will cause problems. FTP version fo Kimai uses SQLite and that is (in connection with Kimai) an unreliable database system.
-Please read the `SQLIte not supported for production usage` warning in the [installation FAQ]({% link _documentation/installation.md %})!
+Please re-read the `SQLIte not supported for production usage` warning above!
 
 You can deactivate users and hide unused objects - don't ever delete data that is already linked to other data (like users/customers/projects/activities used in timesheets). 
 If you insist on playing with fire: make a copy of the database file BEFORE each delete to prevent data loss. 

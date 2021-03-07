@@ -33,12 +33,6 @@ Here is a one liner that creates a database backup for MySQL/MariaDB (adjust con
 mysqldump --single-transaction -u kimai2 -p -h 127.0.0.1 kimai2 > ~/kimai2-`date +%F_%H-%M`.sql
 ```
 
-Or with SQLite
-
-```
-cp var/data/kimai.sqlite ~/kimai2-`date +%F_%H-%M`.sqllite
-```
-
 ## Restore 
 
 - install Kimai [as documented]({% link _documentation/installation.md %}) in the **exact same version**, which you used when you created the backup
