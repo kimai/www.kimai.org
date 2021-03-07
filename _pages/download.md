@@ -38,9 +38,12 @@ Please read the [instructions]({% link _documentation/installation.md %}) carefu
  
 <a href="{% link _documentation/installation.md %}" class="btn btn-success"><i class="fas fa-book"></i> Read installation docs</a>
 
-## Shared hosting with FTP
+### More downloads
 
-This is not supported! Kimai cannot be installed via FTP.
+<a href="{{ site.kimai_v2_repo }}/archive/{{ site.kimai_v2_version }}.zip" class="btn btn-secondary"><i class="fas fa-download"></i> Version {{ site.kimai_v2_version }} (ZIP)</a>
+<a href="{{ site.kimai_v2_repo }}/zipball/master" class="btn btn-secondary"><i class="fas fa-download"></i> Development version (ZIP)</a>
+<a href="{{ site.kimai_v2_repo }}/releases/tag/{{ site.kimai_v2_version }}" class="btn btn-secondary"><i class="fab fa-github"></i> Release info {{ site.kimai_v2_version }} </a>
+<a href="{{ site.kimai_v2_repo }}/releases" class="btn btn-secondary"><i class="fab fa-github"></i> All releases </a>
 
 ## Development version
 
@@ -50,9 +53,6 @@ If you are an experienced user of Kimai and have the resources to help us with t
 
 Please help us, test it and [leave some feedback]({{ site.kimai_v2_repo }}/issues) if you find any problems.
 
-### More downloads
+## Shared hosting / FTP
 
-<a href="{{ site.kimai_v2_repo }}/archive/{{ site.kimai_v2_version }}.zip" class="btn btn-secondary"><i class="fas fa-download"></i> Version {{ site.kimai_v2_version }} (ZIP)</a>
-<a href="{{ site.kimai_v2_repo }}/zipball/master" class="btn btn-secondary"><i class="fas fa-download"></i> Development version (ZIP)</a>
-<a href="{{ site.kimai_v2_repo }}/releases/tag/{{ site.kimai_v2_version }}" class="btn btn-secondary"><i class="fab fa-github"></i> Release info {{ site.kimai_v2_version }} </a>
-<a href="{{ site.kimai_v2_repo }}/releases" class="btn btn-secondary"><i class="fab fa-github"></i> All releases </a>
+This is not supported! Kimai cannot be installed via FTP.
