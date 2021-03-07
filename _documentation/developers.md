@@ -9,28 +9,16 @@ redirect_from:
   - /documentation/developer/
 ---
 
-This page is dedicated to all developers who want to contribute to Kimai. You are the best!
+This page is for all developers who want to contribute to Kimai. You rock!
 
 # Setting up your environment
 
 All you need is:
 
 - PHP >= 7.2.9
-- PHP extensions: `PDO-SQLite`, `intl`, `zip`, `gd`, `mbstring`, `xml`
+- PHP extensions: `pdo-mysql`, `intl`, `zip`, `gd`, `mbstring`, `xml`
+- a MariaDB or MySQL instance
 - [Composer](https://getcomposer.org/download/)
-
-    You can install php 7.3 and all dependencies on debian based linux with this command: 
-
-```bash
-apt install php7.3 php7.3-sqlite3 php7.3-intl php7.3-zip php7.3-gd php7.3-mbstring php7.3-xml
-```
-
-Optional requirement:
-
-- a MySQL/MariaDB instance
-- PHP extension: `PDO-MySQL` enabled
-
-Read how to [install Kimai v2 in your dev environment]({% link _documentation/installation.md %}). 
 
 ## Development installation
 
@@ -42,16 +30,15 @@ cd kimai2/
 composer install
 ```
 
-Kimai uses a SQLite database by default, which will work out-of-the-box. But you have to change your 
-environment to `dev` in your `.env` file. You can also configure a MySQL database if you prefer that:
+You need to change your environment to `dev` and configure your database connection in your `.env` file:
 
 ```
 APP_ENV=dev
-DATABASE_URL=mysql://db_user:db_password@127.0.0.1:3306/db_name
+DATABASE_URL=mysql://user:password@127.0.0.1:3306/database?charset=utf8&serverVersion=5.7
 ```
 
 The next command will import demo data, to test the application in its full beauty - with different user accounts, 
-customers, projects, activities and several thousand timesheet records. Lets bootstrap your database 
+customers, projects, activities and several thousand timesheet records. Let's bootstrap your database 
 (command only available in `dev` environment): 
 
 ```bash

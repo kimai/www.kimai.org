@@ -25,7 +25,7 @@ These requirements are provided by almost all hosting companies:
 
 - PHP 7.2.9 or higher
     - PHP extensions: `mbstring`, `gd`, `intl`, `pdo`, `xml`, `zip`, `xsl`
-- Database (MySQL, MariaDB, SQLite)
+- Database: MariaDB or MySQL
 - [Webserver](https://www.kimai.org/documentation/webserver-configuration.html) (nginx, Apache with mod_rewrite ...)
 - A modern browser
 
@@ -40,8 +40,7 @@ Please read the [instructions]({% link _documentation/installation.md %}) carefu
 
 ## Shared hosting with FTP
 
-This way is not supported! Kimai does neither support updates in this mode nor ships a web-installer like other web-apps.
-There [is a workaround]({% link _documentation/ftp.md %}), but you need to understand that you are on your own, only paid support possible.
+This is not supported! Kimai cannot be installed via FTP.
 
 ## Development version
 

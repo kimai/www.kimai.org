@@ -200,35 +200,17 @@ See issue [#1620](https://github.com/kevinpapst/kimai2/issues/1620).
 
 ## FTP installation
 
-Please: do yourself a favour and get a hoster that includes SSH access, it is not 2002 anymore. 
-Nowadays even cheap webhosting contracts support SSH. If not, change your hoster!
+Installation via FTP is not supported. Kimai cannot be installed with FTP. 
 
-You think you get a good deal with 3€ / month and then use a free software on top. 
-All problems solved with almost no money, right?!? Well, now think again if that is how you want to run your business...
-
-For everyone who thinks he knows better: [Kimai FTP installation sucks massively]({% link _documentation/ftp.md %}) 
+You have two choices:
+- get a proper webhosting/virtual server with SSH support
+- use a [SaaS time-tracking software](https://www.kimai.cloud)
 
 ## Ansible
 
 [Webarchitects Co-operative](https://www.webarchitects.coop/) have written a [Kimai 2 Ansible Galaxy role](https://git.coop/webarch/kimai) for automatically installing and upgrading Kimai sites on their shared hosting servers.
 
 ## Installation FAQ
-
-### SQLite not supported for production usage
-
-SQLite is a great database engine for testing, but when it comes to **production usage it is not supported for Kimai**:
-
-- It does not support ALTER TABLE commands and makes update procedures clunky and problematic (I try to support updates, but they are heavy on large databases)
-- It does [not support FOREIGN KEY](https://www.sqlite.org/quirks.html#foreign_key_enforcement_is_off_by_default) constraints [out of the box](https://www.sqlite.org/foreignkeys.html#fk_enable), which can lead to critical bugs when deleting users/activities/projects/customers
-
-Kimai tries to work around the Foreign Keys issue by using a 
-[Doctrine PostConnect EventSubscriber]({{ site.kimai_v2_file }}/src/Doctrine/SqliteSessionInitSubscriber.php), 
-but this does not work in all environments (SQLite needs to be compiled with foreign support), 
-it is not intended to be used in production environments and it can't be guaranteed that SQLite handles everything as expected!
-
-If you insist on using SQLite: make a copy of the database file BEFORE each update to prevent possible data loss and don't ever delete data that is already linked to other data (like users/customers/projects/activities used in timesheets) ... 
-
-**And don't file any bug report - you have been warned!**
 
 ### SQLSTATE[HY000] [2006] MySQL server has gone away
 
