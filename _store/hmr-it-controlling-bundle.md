@@ -73,6 +73,42 @@ bundle:
 
 ## Requires
 
-- [Custom-fields plugin]({% link _store/keleo-custom-fields-bundle.md %}) to save the birthday of the user
+- [Custom-fields plugin]({% link _store/keleo-custom-fields-bundle.md %})
 - Ability to create and run cronjobs
 - Kimai 2, V1.10+
+
+## Permissions
+
+This bundle ships a new administration screen, which will be available for all users with the `ROLE_SUPER_ADMIN` role. All other users will only see the normal screen.
+
+## Help
+#### Menu
+The badge in the menu at the entry "Check" does:
+- For superAdmin: Breaktime Violations | Differences in overtimes
+- For normal users: Overtime | Worked time this month/Target hours this month
+
+## Configuration
+Create the following fields using the meta-fields plugin:
+- Timesheets:
+    - Ticket number (Integer)
+- User:
+    - Daily working time (Duration)
+    - First working day (Date)
+    - Private E-Mail (Text)
+    - Birthday (Date)
+
+Next click on check in the menu and select the settings tab and select the matching meta-fields from the dropdowns.
+
+### Users to exclude
+Here you can select a list of users that will be ignored in the breaktime-check.
+
+### Projects to exclude
+This lets you exclude projects from breaktime-checks. This can be used for vacation days for example.
+
+## Commands
+
+| Command                                | Description                                                                           |
+|----------------------------------------|---------------------------------------------------------------------------------------|
+| bin/console timesheet:sendpdf          | Send mails to users with their timesheet of the current month as an attachment |
+| bin/console rulebreakchecker:sendmails | If you want to send notification email to Admin and User who violated the Break Time Law then you can call following cli command. Make sure Execute cronjob only once when you want to send email because it will send email everytime it found Rule Break.|
+| bin/console birthday:sendmails         | Will send mails to all superadmins if any user has birthday on the current day |
