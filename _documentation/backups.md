@@ -6,10 +6,12 @@ toc: true
 
 ## Backup
 
-You have to backup the following files:
+Your back  should include the following files and directories:
 - `.env`
 - `config/packages/local.yaml`
 - the directory `var/data/`
+- the directory `var/plugins/` (if you use plugins)
+- the directories `var/export/` and `var/invoices/` (if existing, not everyone uses them) 
 
 The following stuff needs attention as well, backup if necessary:
 - all customized files
@@ -17,13 +19,18 @@ The following stuff needs attention as well, backup if necessary:
 - installed plugins at `var/plugins/`
 
 Database:
-- All tables starting with `kimai2_`
-- The table `migration_versions`
-- Best is to backup all tables in the database with all data!
+- Best option is to backup all tables in the database with all data!
+- In detail: 
+  - all tables starting with `kimai2_` 
+  - all tables starting with `bundle_migration_` 
+  - the table `migration_versions`
 
 Write down the exact version of your Kimai installation:
 - `bin/console kimai:version`
 - `git rev-parse HEAD`
+
+In most cases you don't need these versions. 
+But it's good to have the information in the unlikely case of a problem while restoring the backup.  
 
 ## Create a database backup
 
