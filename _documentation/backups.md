@@ -6,16 +6,15 @@ toc: true
 
 ## Backup
 
-Your back  should include the following files and directories:
+You need to backup the following files and directories:
 - `.env`
 - `config/packages/local.yaml`
-- the directory `var/data/`
-- the directory `var/plugins/` (if you use plugins)
-- the directories `var/export/` and `var/invoices/` (if existing, not everyone uses them) 
 
-The following stuff needs attention as well, backup if necessary:
+The following files need your attention as well, backup if necessary:
 - all customized files
-- all added invoice templates
+- the directory `var/data/` if some plugins uses the directory
+- all added invoice templates from `var/invoices/`
+- all added export templates from `var/export/`
 - installed plugins at `var/plugins/`
 
 Database:
@@ -138,6 +137,18 @@ mysqldump --defaults-file=$CONNECTION_CONFIG --single-transaction --no-tablespac
 cp $KIMAI_DIR/.env $BACKUP_TMP_DIR/
 cp -R $KIMAI_DIR/var/data/* $BACKUP_TMP_DIR/var/data/
 cp -R $KIMAI_DIR/var/plugins/* $BACKUP_TMP_DIR/var/plugins/
+
+if [[ -d "$KIMAI_DIR/var/invoices/" ]];
+then
+  mkdir -p $BACKUP_TMP_DIR/var/invoices/
+ cp -R $KIMAI_DIR/var/invoices/* $BACKUP_TMP_DIR/var/invoices/
+fi
+
+if [[ -d "$KIMAI_DIR/var/export/" ]];
+then
+  mkdir -p $BACKUP_TMP_DIR/var/export/
+ cp -R $KIMAI_DIR/var/export/* $BACKUP_TMP_DIR/var/export/
+fi
 
 pushd $BACKUP_TMP_DIR
 zip -r $BACKUP_STORAGE_DIR/$DATE.zip * .env
