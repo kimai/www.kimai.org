@@ -25,7 +25,7 @@ The available users to choose from are either all (if the user owns the permissi
 
 ## Available reports
 
-The following reports exist, but not necessarily in your Kimai installation, some are shipped with plugins. 
+The following reports exist in Kimai. Your installation might have more, as plugins can ship their own reports. 
 
 ### Weekly view for one user
 
@@ -33,7 +33,7 @@ Displays the working times for a week for one user.
 
 You can change the displayed calendar week and (if the user owns the `view_other_timesheet` permissions) the user to display the report for.
 
-- Required permission: `budget_project`
+- Required permission: `view_reporting`
 - Type of report: `Real times`  
 - Shipped with: `Kimai 1.10 and later`
 
@@ -43,7 +43,7 @@ Displays a full month of working times for one user.
 
 You can change the displayed month and (if the user owns the `view_other_timesheet` permissions) the user to display the report for.
 
-- Required permission: `budget_project`
+- Required permission: `view_reporting`
 - Type of report: `Real times`  
 - Shipped with: `Kimai 1.10 and later`
 
@@ -53,7 +53,7 @@ Displays a full month of working times for all users (that you have access to, s
 
 You can change the displayed month.
 
-- Required permission: `view_other_timesheet`
+- Required permission: `view_reporting` and `view_other_timesheet`
 - Type of report: `Real times`  
 - Shipped with: `Kimai 1.10 and later`
 
@@ -64,7 +64,7 @@ links to invoice and export screen.
 
 You can change the customer to filter the project list and decide to include projects without budgets and projects without recorded times.
 
-- Required permission: `budget_project`
+- Required permission: `view_reporting` and `budget_project`
 - Type of report: `Rounded times`  
 - Shipped with: `Kimai 1.14 and later`
 
@@ -78,17 +78,9 @@ namespace KimaiPlugin\DemoBundle\EventSubscriber;
 use App\Event\ReportingEvent;
 use App\Reporting\Report;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 
 final class ReportingEventSubscriber implements EventSubscriberInterface
 {
-    private $security;
-
-    public function __construct(AuthorizationCheckerInterface $security)
-    {
-        $this->security = $security;
-    }
-
     public static function getSubscribedEvents(): array
     {
         return [
@@ -98,13 +90,10 @@ final class ReportingEventSubscriber implements EventSubscriberInterface
 
     public function onReportingMenu(ReportingEvent $event)
     {
-        // perform your necessary permission checks
-        if (!$this->security->isGranted('view_reporting')) {
-            return;
-        }
         // add a report to the menu: unique id,      the route name,     the label to be translated
         $event->addReport(new Report('week_by_user', 'report_user_week', 'report_user_week'));
     }
 }
 ```
 Now all you need to do: create a controller that renders your report.
+Make sure to include an `@Security("is_granted('view_reporting')")` permission check.
