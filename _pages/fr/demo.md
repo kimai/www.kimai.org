@@ -28,7 +28,7 @@ Choisissez l'une de nos installations de démonstration de Kimai 2, où vous pou
 </div>
 
 Notez que les démos sont réinstallées périodiquement et que toutes les données saisies sont supprimées.
-Mais pour votre commodité, ils sont préremplis de données aléatoires afin que vous puissiez commencer à tester les fonctionnalités (comme la facture ou l'export) immédiatement.
+Mais pour votre commodité, elles sont préremplies de données aléatoires afin que vous puissiez commencer à tester les fonctionnalités (comme la facture ou l'export) immédiatement.
 
 Si vous remarquez un problème, je vous demande de laisser un message [sur GitHub]({{ site.kimai_v2_repo }}/issues).
 

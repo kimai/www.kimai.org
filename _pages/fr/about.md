@@ -8,7 +8,7 @@ permalink: /fr/apropos-kimai.html
 
 #  Qu'est-ce que Kimai ?
 
-{% include alert.html icon="far fa-thumbs-up" alert='Peut-être <strong>la meilleure application de suivi du temps libre et open source</strong> que vous trouverez ...' %}
+{% include alert.html icon="far fa-thumbs-up" alert='Peut-être <strong>la meilleure application de suivi du temps, libre et open source</strong>, que vous trouverez ...' %}
 
 ![Kimai logo]({% link /images/kimai_logo.png %}){:class="float-right" style="margin-left: 20px" }
 
@@ -28,8 +28,7 @@ Non seulement Kimai dispose de modèles de factures personnalisables, mais il pe
 Il est construit sur les frameworks les plus populaires et les plus modernes et dispose de nombreuses interfaces pour vos développeurs.
 
 Nous pourrions maintenant écrire beaucoup plus sur ses caractéristiques et les avantages qu'il vous apportera - que vous soyez indépendant,
-une petite organisation ou une entreprise de plusieurs centaines d'employés - mais nous pensons encore mieux,
-pour vous donner une chance de l'essayer par vous-même, mieux que mille mots de notre part :
+une petite organisation ou une entreprise de plusieurs centaines d'employés - mais nous pensons plutôt que l'essayer par vous-même vaut bien plus que  mille mots de notre part :
 Alors, soyez notre invité et testez Kimai en ligne avec notre [Installation de démo]({% link _pages/fr/demo.md %}).
 Si vous préférez les choses concrètes, nous avons compilé [une liste des principales fonctionnalités]({% link _pages/fr/index.html %}).
 
@@ -43,7 +42,7 @@ Vous trouverez ci-dessous une courte liste d'anciens développeurs.
 Le [Marketplace]({% link _pages/fr/store.html %}) contient une liste de plugins et de leurs développeurs, cela vous donne une bonne idée des développeurs
 qui soutiennent le projet grâce à leurs connaissances.
 
-La personne principale derrière Kimai 2, ce site web, les installations de démonstration et certains plugins est :
+L'auteur principal derrière Kimai 2, ce site web, les installations de démonstration et certains plugins est :
 
 {% include card-donate.html user="kevinpapst" %}
 
