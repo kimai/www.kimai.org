@@ -14,6 +14,7 @@ new: false
 tags:
   - plugin
 redirect_from:
+  - /store/expenses-bundle.html
   - /documentation/expenses/
   - /v1/expenses.html
 bundle:
