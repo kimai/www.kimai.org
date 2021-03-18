@@ -28,6 +28,7 @@ Diese Anforderungen werden von nahezu allen Hosting-Anbietern erfüllt:
     - PHP Erweiterungen: `mbstring`, `gd`, `intl`, `pdo`, `xml`, `zip` 
 - Datenbank: MariaDB oder MySQL
 - [Webserver](https://www.kimai.org/documentation/webserver-configuration.html) (nginx, Apache mit mod_rewrite ...)
+- Eine freie Subdomain (Verwendung im Unterordner wird nicht unterstützt)
 - Ein moderner Browser (ältere Versionen, insbesondere Safari und IEm, können fehlerhaft sein)
 
 ## Installation mit SSH 
