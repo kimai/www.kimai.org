@@ -39,8 +39,8 @@ server {
     location ~ ^/index\.php(/|$) {
         fastcgi_pass unix:/run/php/php7.2-fpm.sock;
         fastcgi_split_path_info ^(.+\.php)(/.*)$;
-        include fastcgi.conf; # Or you path to fascgi params file
-        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name; # If not put this line get error FastCGI "Primary script unknown" 
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
         fastcgi_param PHP_ADMIN_VALUE "open_basedir=$document_root/..:/tmp/";
         internal;
     }
