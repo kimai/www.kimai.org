@@ -19,7 +19,7 @@ bundle:
     command: "kimai:bundle:metafields:install"
     purchase: true
     versions: 
-      - ["1.15", "1.11"]
+      - ["1.15 - 1.16", "1.11"]
       - ["1.14", "1.10.2"]
       - ["1.10 - 1.13", "1.9"]
       - ["1.8 - 1.9", "1.7"]
@@ -127,6 +127,10 @@ For example a list consisting of fruits would look like this: `Banana,Apple,Oran
 As the first entry is pre-selected, you can add an empty field to the dropdown by starting the list 
 with a leading `,` like this: `,Banana,Apple,Orange,Pineapple,Peach`. 
 Combined with the mandatory flag, this will force your users to select an entry from the list to be able to submit the form.
+
+Choice list is also capable to configure title and values independently.
+Let's assume you have non-human friendly IDs for the value, but want to show a human friendly text, you can separate 
+each value from its title by using a pipe `|` character: `,01|Banana,02|Apple,Orange,foo|Pineapple,0815|Peach`.
 
 #### Invoice template
 
