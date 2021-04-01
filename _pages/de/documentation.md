@@ -8,13 +8,14 @@ header: Kimai v2
 icon: fas fa-book
 layout: documentation
 permalink: /de/dokumentation/
+skip_back: true
 redirect_from:
   - /dokumentation/
 ---
 
 Dies ist die offizielle Dokumentation für die Zeiterfassungsanwendung Kimai 2.
 
-{% include alert.html type="warning" alert="Alle Inhalte sind nur auf englisch verfügbar, bei Auswahl wechseln Sie zur englischen Sprachversion der Webseite!" %}
+{% include alert.html type="warning" alert="Alle Inhalte sind nur auf englisch verfügbar, bei Auswahl eines Themas wechseln Sie zur englischen Sprachversion!" %}
 
 <div class="row">
 {% for group in site.data.menu-documentation %}

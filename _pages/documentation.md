@@ -8,6 +8,7 @@ header: Kimai v2
 icon: fas fa-book
 layout: documentation
 permalink: /documentation/
+skip_back: true
 redirect_from:
   - /documentation/manual/index.html
   - /en/documentation/
