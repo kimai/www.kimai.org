@@ -59,45 +59,32 @@ bundle:
 ## Requires
 
 - [Custom-fields plugin]({% link _store/keleo-custom-fields-bundle.md %}) to save the vacation entitlement per user
-- Ability to create and run cronjobs
 - Kimai 2, V1.12+
 
 ## Documentation
-### Setup
-Create three custom fields for users using the custom-fields plugin:
-- One for the amount of vacation days in the first year in which the users started working (number)
-- The other for the amount of vacation days in all other years (number)
-- A third one for the daily working time (duration)
+## Setup
+
+Recommended Setup: watch the youtube video at the bottom!
+
+Create two custom fields for users using the custom-fields plugin:
+- One for the amount of vacation days in the first year in which the users started working (integer)
+- The other one for the daily working time (duration)
 
 If you're logged in as super-admin you will see an item in the menu called "Vacation view". In it there is a settings-tab.
 Here you can select the state for public holidays, the activities that will be used as public holidays and vacations.
 
-The last three inputs are dropdowns with all meta-fields. Select the ones you created earlier.
+The last two inputs are dropdowns with all meta-fields. Select the ones you created earlier.
 
-### How to add public holidays automatically
+## Permissions
+The install-command will create two permissions:
+- `vacation`
+- `vacation_admin`
 
-*Important: do the Setup before you run this script! You may want to create a backup before you run this script.*
+Users with none of the permissions won't see the vacation tab in the menu.
 
-You may have to adjust your path to composer and you may have to write `php` in front of `bin/console`
-Does only work if you use the `git version` of Kimai 2.
+If you assign the `vacation` permission to a user they will see the leave-application tab in the menu.
 
-Run the following commands:
-
-```bash
-cd var/plugins/VacationBundle
-bash __create_public_holidays.sh
-```
-
-### Roles
-The install-command will create two roles:
-- `ROLE_VACATION`
-- `ROLE_VACATION_ADMIN`
-
-Users with none of the roles won't see the vacation tab in the menu.
-
-If you assign the vacation-role to a user they will see the leave-application tab in the menu.
-
-Super-admins and users with the vacation-admin role have full control over this plugin.
+Super-admins and users with the `vacation_admin` permission have full control over this plugin.
 
 ## Updating the plugin
 
@@ -108,7 +95,6 @@ Updating the bundle works the same way as the installation does.
     - Copy files
     - Clear cache
     - Update database with `bin/console kimai:bundle:vacation:install`
-
-
+    
 ## Video Tutorial
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/LKWNDaq-wZw/0.jpg)](http://www.youtube.com/watch?v=LKWNDaq-wZw "Kimai 2 Vacation / Holiday Plugin Installation + Setup")
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/Z_LGqXVqPyo/0.jpg)](http://www.youtube.com/watch?v=Z_LGqXVqPyo "Kimai 2 Vacation / Holiday Plugin Installation + Setup")

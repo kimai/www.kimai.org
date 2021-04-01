@@ -71,13 +71,13 @@ Since 1.13 you can customize the following values from within your PDF templates
 
 ```
 {%raw%}
-{{- pdfContext.setOption('format', 'A4-L') -}}
-{{- pdfContext.setOption('filename', 'Timesheets_' ~ filenamePrefix|default('') ~ (query.customers|length == 1 ? query.customers.0.name|replace({' ': '-'}) ~ '_' : '') ~ query.begin|date_format('Y_m') ~ '.pdf') -}}
+{%- set customer = query.customers|length == 1 ? query.customers.0 : null -%}
+{%- set filename = 'ACME_' ~ (customer is not null ? customer.name|replace({' ': '-'}) ~ '_' : '') ~ query.begin|date_format('Y-m') -%}
+{%- set option = pdfContext.setOption('filename', filename) -%}
 {%endraw%}
 ```
 
-The variable name (here `format` and `filename`) must be one of the mPDF construtor options, ConfigVariables or FontVariables.
- 
+The variable name (here `format` and `filename`) must be one of the mPDF constructor options, ConfigVariables or FontVariables (see links above).
 
 ## Adding export renderer
 

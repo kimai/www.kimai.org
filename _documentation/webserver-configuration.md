@@ -39,7 +39,17 @@ server {
     location ~ ^/index\.php(/|$) {
         fastcgi_pass unix:/run/php/php7.2-fpm.sock;
         fastcgi_split_path_info ^(.+\.php)(/.*)$;
-        include fastcgi.conf;
+        include fastcgi_params;
+        # You can use the document root directly:
+        # fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+
+        # But this is not working in every situation. When you are using symlinks to link the document 
+        # root to the current version of your application, you should pass the real
+        # application path instead of the path to the symlink to PHP FPM.
+        # Otherwise, PHP's OPcache may not properly detect changes to your PHP files 
+        # (see https://github.com/zendtech/ZendOptimizerPlus/issues/126 for more information).
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        fastcgi_param DOCUMENT_ROOT $realpath_root;
         fastcgi_param PHP_ADMIN_VALUE "open_basedir=$document_root/..:/tmp/";
         internal;
     }
