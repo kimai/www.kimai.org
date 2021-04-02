@@ -22,6 +22,6 @@ redirect_from:
 - Adjust Kimai website:
   - Change version in file [_config.yml]({{ site.kimai_v2_website }}/blob/master/_config.yml) and key `kimai_v2_version`  
   - Create a new version [announcement post]({{ site.kimai_v2_website }}), including the release notes
-- Post a new issue at [YunoHost tracker for Kimai 2](https://github.com/YunoHost-Apps/kimai2_ynh)
-- Post a new issue at [Docker for Kimai 2](https://github.com/tobybatch/kimai2)
+- Post a new issue at [YunoHost tracker for Kimai](https://github.com/YunoHost-Apps/kimai2_ynh)
+- Post a new issue at [Docker for Kimai](https://github.com/tobybatch/kimai2)
 - Reinstall the stable-demo and change tag version in install.sh

@@ -1,6 +1,6 @@
 ---
 title: LDAP
-description: How to use an LDAP directory server with Kimai 2
+description: How to use an LDAP directory server with Kimai
 toc: true
 since_version: 1.0
 redirect_from: 

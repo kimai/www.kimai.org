@@ -1,6 +1,6 @@
 ---
 title: Activities
-description: Activities in Kimai 2
+description: Activities in Kimai
 toc: true
 ---
 

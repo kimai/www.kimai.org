@@ -6,7 +6,7 @@ toc: false
 
 {% include alert.html type="warning" alert="Installation via FTP is not supported, because most of Kimai's management tasks rely on the console." %}
 
-The recommended way to [install Kimai v2 is via SSH]({% link _documentation/installation.md %}).
+The recommended way to [install Kimai is via SSH]({% link _documentation/installation.md %}).
 
 {% capture support %}
 If you don't have the technical background for managing a server yourself and need to rely on a shared hosting package, 

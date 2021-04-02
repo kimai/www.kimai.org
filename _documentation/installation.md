@@ -1,16 +1,16 @@
 ---
 title: Installation
-description: How to install Kimai 2 on your server with git, composer and SSH or FTP
+description: How to install Kimai on your server with git, composer and SSH or FTP
 toc: true
 redirect_from:
   - /documentation/installation/
 ---
 
-The recommended way to install Kimai v2 is via SSH, you need GIT and [Composer](https://getcomposer.org/doc/00-intro.md). 
+The recommended way to install Kimai is via SSH, you need GIT and [Composer](https://getcomposer.org/doc/00-intro.md). 
 
 ## Recommended setup 
 
-To install Kimai 2 in your production environment, connect with SSH to your server and change to your webservers (document) root directory.
+To install Kimai in your production environment, connect with SSH to your server and change to your webservers (document) root directory.
 You need to install Git and [Composer](https://getcomposer.org/doc/00-intro.md) if you haven't already. 
 
 First clone this repo ({{ site.kimai_v2_version }} is the [latest stable release]({{ site.kimai_v2_repo }}/releases)):
@@ -74,13 +74,13 @@ There is a dedicated article about [Docker setups]({% link _documentation/docker
 
 ## Hosting and 1-click installations
 
-The following platforms adopted Kimai 2 to be compatible with their one-click installation systems.
+The following platforms adopted Kimai to be compatible with their one-click installation systems.
 
 ### YunoHost
 
 [![Install kimai2 with YunoHost](https://install-app.yunohost.org/install-with-yunohost.png)](https://install-app.yunohost.org/?app=kimai2)
 
-Kimai 2 [package](https://github.com/YunoHost-Apps/kimai2_ynh) for [YunoHost](https://yunohost.org).
+Kimai [package](https://github.com/YunoHost-Apps/kimai2_ynh) for [YunoHost](https://yunohost.org).
 
 ### Cloudron
 
@@ -208,7 +208,7 @@ You have two choices:
 
 ## Ansible
 
-[Webarchitects Co-operative](https://www.webarchitects.coop/) have written a [Kimai 2 Ansible Galaxy role](https://git.coop/webarch/kimai) for automatically installing and upgrading Kimai sites on their shared hosting servers.
+[Webarchitects Co-operative](https://www.webarchitects.coop/) have written a [Kimai Ansible Galaxy role](https://git.coop/webarch/kimai) for automatically installing and upgrading Kimai sites on their shared hosting servers.
 
 ## Installation FAQ
 
@@ -246,7 +246,7 @@ DATABASE_URL=mysql://root:mG0%2Fd1%403aT.Z%29s@127.0.0.1:3306/kimai2
 
 The installation instructions are intended primarily for server applications. 
 
-If you are installing Kimai 2 on your personal computer - maybe for use in a local network, but where the computer primarily 
+If you are installing Kimai on your personal computer - maybe for use in a local network, but where the computer primarily 
 serves as a single user computer - you will avoid permission errors by substituting `www-data` in the relevant commands with your username.
 
 In particular, `sudo -u www-data` is a command which grants the `www-data` user temporary administrator/super-user privileges). 
@@ -262,7 +262,7 @@ username that runs the server - if you don't know, it is likely your own usernam
 Further, `chown` and `chmod` commands should be for the username that runs the server instead of `www-data` (again, if you 
 don't know, it is likely your own username).
 
-Also note that, depending on where you are installing Kimai 2 and how your computer is configured, you may also receive 
+Also note that, depending on where you are installing Kimai and how your computer is configured, you may also receive 
 "operation not permitted" errors when setting file permissions (`chown` and `chmod` commands). 
 In that case, prefix them with `sudo`.
 

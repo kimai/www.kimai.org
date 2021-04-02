@@ -4,7 +4,7 @@ description: Configure the permission system which is based on user roles
 toc: true
 ---
 
-Kimai 2 provides a flexible permissions system, which is based on [user roles]({% link _documentation/users.md %}) and permissions, 
+Kimai provides a flexible permissions system, which is based on [user roles]({% link _documentation/users.md %}) and permissions, 
 which can be turned on and off for these roles. You need the `role_permissions` permission to access it.
 
 This permission system limits access to the functionality of Kimai. If you are looking for a way to limit access to  

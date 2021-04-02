@@ -42,7 +42,7 @@ Vous trouverez ci-dessous une courte liste d'anciens développeurs.
 Le [Marketplace]({% link _pages/fr/store.html %}) contient une liste de plugins et de leurs développeurs, cela vous donne une bonne idée des développeurs
 qui soutiennent le projet grâce à leurs connaissances.
 
-L'auteur principal derrière Kimai 2, ce site web, les installations de démonstration et certains plugins est :
+L'auteur principal derrière Kimai, ce site web, les installations de démonstration et certains plugins est :
 
 {% include card-donate.html user="kevinpapst" %}
 
@@ -67,7 +67,7 @@ et la couche frontale.
 C'est pourquoi, il y a eu l'idée de réécrire Kimai avec des frameworks modernes pendant très longtemps, également motivée par les demandes de la communauté,
 mais nous n'avons pas eu le temps de faire avancer ces idées.
 Fin 2017, Symfony 4.0 est sorti en même temps qu'une pile de construction frontale moderne appelée _Webpack-Encore_.
-Puis Kevin a saisi l'occasion et a commencé à développer la prochaine étape de l'évolution : Kimai v2 est né.
+Puis Kevin a saisi l'occasion et a commencé à développer la prochaine étape de l'évolution : Kimai 2 est né.
 
 Le première version de Kimai a plus de 13 ans et est utilisée par des gens du monde entier. Nous en sommes fiers, ainsi que de sa grande communauté.
 Nous tenons donc à remercier tous ceux qui ont contribué à Kimai.

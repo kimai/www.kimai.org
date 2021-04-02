@@ -36,7 +36,7 @@ There is a great and large community around Kimai and listing everyone is imposs
 The [marketplace]({% link _pages/store.html %}) shows a list of plugins and their developers, this will give you a good idea of the developers 
 supporting the project with their knowledge.
 
-The main person behind Kimai 2, this website, the demo installations and some plugins is:
+The main person behind Kimai, this website, the demo installations and some plugins is:
 
 {% include card-donate.html user="kevinpapst" %}
 
@@ -58,7 +58,7 @@ It had also some major drawbacks, like limited capabilities of extending it and 
  
 That's why the idea of rewriting Kimai with modern frameworks was there for a very long time, also driven by community requests, but we simply had no time to push these ideas forward.
 In the end of 2017 Symfony 4.0 was released along with a neat frontend built stack.
-That's when Kevin took the opportunity and started the development of the next evolutional step: Kimai v2 reloaded was born.
+That's when Kevin took the opportunity and started the development of the next evolutional step: Kimai 2 was born.
 
 The original Kimai is more than 13 years old and is used by people all around the world. We are proud of that and about its great community. 
 That's why we would like to thank each and everyone who contributed to Kimai.

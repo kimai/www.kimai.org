@@ -12,7 +12,7 @@ redirect_from:
 
 {% include alert.html icon="fas fa-desktop" alert='Try out the Kimai time-tracking demo and we promise: your next step will be the download!' %}
 
-Please choose one of our demo installations of Kimai 2, where you can get a first impression on how this software feels and which functionality it provides.
+Please choose one of our demo installations, to get a first impression on how Kimai feels and which functionality it provides.
 
 {% include pages/demo-boxes.html %}
 

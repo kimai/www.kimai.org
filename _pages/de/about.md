@@ -43,7 +43,7 @@ Eine kurze Liste der ehemaligen Entwickler finden Sie unten.
 Der [Marktplatz]({% link _pages/de/store.html %}) enthält eine Liste von Plugins und deren Entwickler, dies gibt Ihnen eine 
 gute Vorstellung von den Entwicklern, die das Projekt mit ihrem Wissen unterstützen.
 
-Die Hauptperson hinter Kimai 2, dieser Website, den Demo-Installationen und einigen Plugins ist:
+Die Hauptperson hinter Kimai, dieser Website, den Demo-Installationen und einigen Plugins ist:
 
 {% include card-donate.html user="kevinpapst" %}
 
@@ -69,7 +69,7 @@ Klassen und die Frontend-Schicht verteilt.
 Deshalb gab es schon sehr lange die Idee, Kimai mit modernen Frameworks umzuschreiben, auch angetrieben von Community-Anfragen, 
 aber wir hatten einfach keine Zeit, diese Ideen voranzutreiben.
 Ende 2017 wurde Symfony 4.0 zusammen mit einem modernen Frontend-Built-Stack namens _Webpack-Encore_ veröffentlicht.
-Dann nutzte Kevin die Gelegenheit und begann mit der Entwicklung des nächsten Evolutionsschrittes: Kimai v2 war geboren.
+Dann nutzte Kevin die Gelegenheit und begann mit der Entwicklung des nächsten Evolutionsschrittes: Kimai 2 war geboren.
 
 Das ursprüngliche Kimai wurde mehr als 13 Jahre lang von Menschen auf der ganzen Welt genutzt. Darauf sind wir stolz und auch auf seine große Gemeinschaft. 
 Deshalb möchten wir uns bei allen bedanken, die zu Kimai beigetragen haben.

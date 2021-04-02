@@ -10,7 +10,7 @@ permalink: /fr/demo.html
 
 {% include alert.html icon="fas fa-desktop" alert='Essayez la démo de suivi du temps de Kimai et nous vous le promettons : Votre prochaine étape sera de le télécharger !' %}
 
-Choisissez l'une de nos installations de démonstration de Kimai 2, où vous pourrez avoir une première impression sur ce logiciel et les fonctionnalités qu'il offre.
+Choisissez l'une de nos installations de démonstration de Kimai, où vous pourrez avoir une première impression sur ce logiciel et les fonctionnalités qu'il offre.
 
 {% include pages/demo-boxes.html %}
 

@@ -39,9 +39,9 @@ Before starting with the migration, please read the following FAQs:
   - The import will always assign a teamlead to the project. If none of the users in Kimai v1 was assigned as the teamlead, the first member of the group is assigned as teamlead during import. 
   - The groups that were trashed in Kimai v1 are not imported into Kimai 2 as hidden/trashed teams are not supported.
 
-## Install Kimai 2
+## Install Kimai
 
-You have to install Kimai v2, please read the [documentation]({% link _documentation/installation.md %}) first.
+You have to install Kimai, please read the [documentation]({% link _documentation/installation.md %}) first.
 You can install it on the same server, but remember that you have to meet the server requirements (see [downloads page]({% link _pages/download.md %})).
 
 After Kimai 2 runs properly, the actual *migration* takes place, by importing the data from your Kimai 1 database into Kimai 2.
@@ -74,7 +74,7 @@ bin/console doctrine:schema:drop --force && \
 bin/console doctrine:schema:create && \
 bin/console kimai:import-v1 "mysql://kimai:test@127.0.0.1:3306/kimai?charset=latin1" "kimai_" "test123" "CH" "CHF" --timezone="Europe/Zurich" --language="ch"
 ```
-That will drop the configured Kimai v2 database schema and re-create it, before importing the data from the `mysql` database at `127.0.0.1` on port `3306` authenticating the user `kimai` with the password `test` for import.
+That will drop the configured Kimai database schema and re-create it, before importing the data from the `mysql` database at `127.0.0.1` on port `3306` authenticating the user `kimai` with the password `test` for import.
 The connection will use the charset `latin1` and the default table prefix `kimai_` for reading data. Imported users can login with the password `test123` and all customer will have the country `CH` and the currency `CHF` assigned.
 
 ### Problems and solution
