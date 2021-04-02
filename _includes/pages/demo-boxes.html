@@ -1,0 +1,18 @@
+{% assign masterTitle = site.data.trans[page.lang].demo-master-title %}
+{% assign masterDescription = site.data.trans[page.lang].demo-master-description %}
+{% assign stableTitle = site.data.trans[page.lang].demo-stable-title %}
+{% assign stableDescription = site.data.trans[page.lang].demo-stable-description|append:site.kimai_v2_version %}
+{% assign pluginsTitle = site.data.trans[page.lang].demo-plugins-title %}
+{% assign pluginsDescription = site.data.trans[page.lang].demo-plugins-description %}
+
+<div class="row row-cards">
+    <div class="col-sm-6 col-lg-4">
+        {% include card-demo.html title=pluginsTitle description=pluginsDescription url="https://demo-plugins.kimai.org" %}
+    </div>
+    <div class="col-sm-6 col-lg-4">
+        {% include card-demo.html title=masterTitle description=masterDescription url=site.kimai_v2_demo %}
+    </div>
+    <div class="col-sm-6 col-lg-4">
+        {% include card-demo.html title=stableTitle description=stableDescription url="https://demo-stable.kimai.org" %}
+    </div>
+</div>
