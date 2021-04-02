@@ -1,6 +1,6 @@
 ---
 title: Webserver configuration
-description: How to install Kimai 2 on your server with git, composer and SSH or FTP
+description: How to install Kimai on your server with git, composer and SSH or FTP
 toc: true
 ---
 

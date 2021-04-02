@@ -198,7 +198,7 @@ You can also have a look at the [CustomCSSBundle](https://github.com/keleo/Custo
 
 ## List your plugin in the {{ site.data.trans[page.lang].store }}
 
-If you created a plugin or any other kind of software around Kimai 2 which you want to see listed in the {{ site.data.trans[page.lang].store }}, head over 
+If you created a plugin or any other kind of software around Kimai which you want to see listed in the {{ site.data.trans[page.lang].store }}, head over 
 to the [{{ site.data.trans[page.lang].store }} documentation]({% link _documentation/store.md %}) to find out how.
 
 ## Links

@@ -16,7 +16,7 @@ redirect_from:
 
 User manual on the timesheet tables, actions and configuration.
 
-Kimai 2 provides also a [calendar view]({% link _documentation/calendar.md %}), which displays your timesheet entries in an easy readable format.
+Kimai provides also a [calendar view]({% link _documentation/calendar.md %}), which displays your timesheet entries in an easy readable format.
 
 ## Starting and stopping records
 

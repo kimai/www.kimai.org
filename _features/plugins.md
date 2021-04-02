@@ -7,7 +7,7 @@ hosted: false
 order: 10
 ---
 
-Kimai v2 was built with extendability in mind, the feature set can be extended <a href="{% link _documentation/plugins.md %}">with plugins</a>.
+Kimai was built with extendability in mind, the feature set can be extended <a href="{% link _documentation/plugins.md %}">with plugins</a>.
 
 ## By developer and for developer
  

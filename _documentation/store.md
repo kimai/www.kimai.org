@@ -4,7 +4,7 @@ description: How to list your Kimai extension in the Marketplace
 toc: true
 ---
 
-If you created a plugin or any other kind of software around Kimai 2, which you want to see listed in the [{{ site.data.trans[page.lang].store }}]({% link _pages/store.html %}), 
+If you created a plugin or any other kind of software around Kimai, which you want to see listed in the [{{ site.data.trans[page.lang].store }}]({% link _pages/store.html %}), 
 follow these short guidelines and it will soon be published.
 
 ## Kimai website

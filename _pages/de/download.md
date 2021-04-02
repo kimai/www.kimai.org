@@ -14,7 +14,7 @@ redirect_from:
 # Kimai herunterladen - kostenlos!
 
 {% capture docText %}
-Eine vollständige Installationsanleitung finden Sie in in unserer [Dokumentation]({% link _documentation/installation.md %}).
+Eine vollständige Installationsanleitung finden Sie in in unserer [Dokumentation]({% link _documentation/installation.md %}) (englisch).
 {% endcapture %}
 
 {% assign docText = docText|markdownify %}

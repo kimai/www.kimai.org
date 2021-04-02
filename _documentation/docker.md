@@ -6,18 +6,12 @@ toc: true
 
 ## Production docker
 
-@tobybatch is managing the Kimai 2 Docker images, both for development and a docker-compose setup suitable for running in a production environment.
+@tobybatch is managing the Kimai Docker images, both for development and a docker-compose setup suitable for running in a production environment.
 
 - [https://github.com/tobybatch/kimai2](https://github.com/tobybatch/kimai2) - his repository with all the docker sources 
 - [https://hub.docker.com/r/kimai/kimai2](https://hub.docker.com/r/kimai/kimai2) - dockerhub repo, auto-building prod and dev containers
  
 Any issues with the container rather than the application itself should be raised [here](https://github.com/tobybatch/kimai2/issues).
-
-## Development docker
-
-The [Dockerfile]({{ site.kimai_v2_file}}/Dockerfile) that comes with Kimai 2 is suitable mainly for development. 
-It runs a self contained version of Kimai 2 using a SQLite database in the docker container. 
-Be careful, the recorded data can easily be lost when running docker updates or other tasks.
 
 ### Build the docker
 
