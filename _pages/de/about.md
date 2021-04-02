@@ -71,11 +71,8 @@ aber wir hatten einfach keine Zeit, diese Ideen voranzutreiben.
 Ende 2017 wurde Symfony 4.0 zusammen mit einem modernen Frontend-Built-Stack namens _Webpack-Encore_ veröffentlicht.
 Dann nutzte Kevin die Gelegenheit und begann mit der Entwicklung des nächsten Evolutionsschrittes: Kimai v2 war geboren.
 
-Das Original Kimai ist mehr als 13 Jahre alt und wird von Menschen auf der ganzen Welt benutzt. Darauf sind wir stolz und auch auf seine große Gemeinschaft. 
+Das ursprüngliche Kimai wurde mehr als 13 Jahre lang von Menschen auf der ganzen Welt genutzt. Darauf sind wir stolz und auch auf seine große Gemeinschaft. 
 Deshalb möchten wir uns bei allen bedanken, die zu Kimai beigetragen haben.
-Es gab viel zu viele Leute, um sie alle zu benennen, also ist diese Liste nur eine kleine Zusammenstellung der Leute, die viel Zeit, Code, Gedanken und Hilfe für Kimai und seine Gemeinschaft beigetragen haben:
+Es gab viel zu viele Leute, um sie alle zu benennen, diese Liste ist nur eine kleine Zusammenstellung derer, die viel zu Kimai 1 und seiner Gemeinschaft beigetragen haben:
 
-- Torsten Höltge - Erfinder von Kimai 1
-- [Severin Leonhardt](https://github.com/ServiusHack) - a core maintainer of Kimai for a long time
-- [Simon Schaufelberger](https://github.com/simonschaufi) - core developer for a very long time ... and on-going!
-- Kimai v1 wurde außerdem beeinflußt von Oleg Britvin, Martin Klemkow, Vasilis van Gemert, Maximilian Kern, Enrico Ties, Thomas Wensing, Kelvin Luck, Urs Gerig, Willem van Gemert, Torben Boe and HamBug Studios, Klaus Franken, Chris (Urban Willi), Andreas Berndt, Niels Hoffmann, Günter Hengsbach, Paul Brand, Joaquín G. de la Zerda, Allesandro Bertoldo, José Ricardo Cardoso, RRZE 
+{% include pages/about_contributors.md %} 

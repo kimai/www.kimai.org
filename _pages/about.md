@@ -62,9 +62,6 @@ That's when Kevin took the opportunity and started the development of the next e
 
 The original Kimai is more than 13 years old and is used by people all around the world. We are proud of that and about its great community. 
 That's why we would like to thank each and everyone who contributed to Kimai.
-There were way too many people to name them all, so this list is only a small compilation of the people who contributed huge amounts of time, code, thoughts and help to Kimai and its community:
- 
-- Torsten Höltge - inventor of Kimai 1
-- [Severin Leonhardt](https://github.com/ServiusHack) - a core maintainer of Kimai for a long time
-- [Simon Schaufelberger](https://github.com/simonschaufi) - core developer for a very long time ... and sometimes still active for v1
-- Kimai v1 was also influenced by Oleg Britvin, Martin Klemkow, Vasilis van Gemert, Maximilian Kern, Enrico Ties, Thomas Wensing, Kelvin Luck, Urs Gerig, Willem van Gemert, Torben Boe and HamBug Studios, Klaus Franken, Chris (Urban Willi), Andreas Berndt, Niels Hoffmann, Günter Hengsbach, Paul Brand, Joaquín G. de la Zerda, Allesandro Bertoldo, José Ricardo Cardoso, RRZE 
+There were way too many people to name them all, so this list is only a small compilation of the people who contributed huge amounts of time, code, thoughts and help to Kimai 1 and its community:
+
+{% include pages/about_contributors.md %} 
