@@ -40,9 +40,15 @@ expire_warning: false
                 {% if page.skip_back == nil %}
                 <div class="card-header">
                     <div class="d-flex align-items-center px-2">
-                            <a href="{% link {{ layout.main_page }} %}" class="btn btn-link">
+                        {% if layout.main_page == 'v1' %}
+                            <a href="{% link _pages/v1.md %}" class="btn btn-link">
+                                <i class="fas fa-arrow-circle-left"></i> Back to Kimai v1
+                            </a>
+                        {% else %}
+                            <a href="{% link _pages/documentation.md %}" class="btn btn-link">
                                 <i class="fas fa-arrow-circle-left"></i> Back to documentation
                             </a>
+                        {% endif %}
                     </div>
                 </div>
                 {% endif %}
