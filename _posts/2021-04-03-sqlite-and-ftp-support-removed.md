@@ -18,34 +18,34 @@ But before you complain, these two facts were always clearly communicated:
 - SQLite was NOT supported for production
 - FTP installations never had a chance to get updates
 
-I already updated the website weeks ago and nobody complained by now, so I hope that only a very few users are affected. 
+I already updated the website weeks ago and nobody complained by now, so I hope that only very few users are affected. 
 The good side: this will make time free for other features.
 Not only because a lot of code could be removed, but also because I answered support requests over and over again for 
 these two topics and this will now immediately stop. 
 
 ## FTP installation removed
 
-Most users will not recognize this change. After more than 1,5 years of having an FTP installation package, I decided to 
-not create further packages, the last available one is for 1.13.
-Several issues existed for the FTP package, which were never solved and had no chance to be cleared out, the most important ones being:
+Most users will not recognize this change. After more than 1.5 years of having a somewhat broken FTP package, 
+I decided to stop creating further packages. Several issues existed for the FTP packages, which were never solved and 
+had no chance to be cleared out. The most critical ones being:
 
-- No Kimai update possible
-- Only SQLite as database engine supported
+- No Kimai update was possible, so security issues could never be removed
+- Only SQLite as database engine was supported, which had critical bugs upon deleting items 
 
-As you will read in the next chapter: SQLite support is dropped, which was a pre-requirement for the FTP installation. 
+As you will read in the next chapter: SQLite support was dropped, which was a pre-requirement for the FTP installation. 
 So the FTP package will be removed as well, but not only because of the SQLite removal, but also because it is not acceptable 
-for me to publish a software package that is broken-by-design.
+for me to publish a broken software package any longer. Or in other words: the FTP test failed.
 
 If you are currently using an FTP installation of Kimai, you have several options for the future:
 
-- Get a hoster that supports SSH (shared hosting contracts are never a good idea for Kimai, but at least in the EU most large hosters have SSH support)
-- Use the [Kimai Cloud](https://www.kimai.cloud) (free for up to 5 users and with full backups in paid plans)
+- Get a hoster that supports SSH. Shared hosting is usually not the best idea for Kimai, but many modern hosters offer SSH support.
+- Use the [Kimai Cloud](https://www.kimai.cloud), which is free for up to 5 users and supports full backups in paid plans.
 
 ## Migrate from SQLite to MySQL
 
 It was always clearly communicated that SQLite is only meant for development installations and not for production.
-As many support requests showed over the past 18 month, this simple trutrh was ignored by many users and I fear that there 
-are still some SQLite installations existing that need to be updated soon.
+As many support requests showed in the past, this was either not communicated good enough or simply ignored by many users.
+My only fear is, that there are still too many SQLite installations existing that need to be updated soon.
 
 SERIOUSLY: **be aware** that you cannot upgrade to Kimai 1.14 before migrating the data from SQLite to MySQL!
 
@@ -54,7 +54,7 @@ If you know more, [please open a new discussion]({{ site.kimai_v2_forum }}).
 
 ### Manual migration
 
-Export from sqlite, import into mysql:
+In short the steps are: create mysql database structure, export from sqlite and import into mysql:
 
 - Use the sqlite console with its `.dump` command to export the data, more at [https://www.sqlitetutorial.net/sqlite-dump/](https://www.sqlitetutorial.net/sqlite-dump/)
 - Re-Install Kimai with MySQL, so the database structure is properly setup
@@ -63,6 +63,8 @@ Export from sqlite, import into mysql:
 - Open the dumped SQLite file and adjust it (only leave the INSERT commands, remove everything else)
 - Import the prepared file into MySQL
     - You should deactivate foreign keys during the import via `SET FOREIGN_KEY_CHECKS=0;`
+
+If you need help with the transition, I offer [paid migration support]({% link _store/keleo-installation-support.md %}).
 
 ### Data migration via Ruby
 
