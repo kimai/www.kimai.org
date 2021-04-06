@@ -49,8 +49,19 @@ My only fear is, that there are still too many SQLite installations existing tha
 
 SERIOUSLY: **be aware** that you cannot upgrade to Kimai 1.14 before migrating the data from SQLite to MySQL!
 
-For now there are two documented ways to perform that migration (see bewlo). 
+For now there are three documented ways to perform that migration (see bewlo). 
 If you know more, [please open a new discussion]({{ site.kimai_v2_forum }}).
+
+### Dump with SQLite browser
+
+The SQLite frontend [DB Browser for SQLite](https://sqlitebrowser.org) has an export module, that generates
+full inserts (including column names).
+
+- Go to `File` > `Export` > `Database to SQL file...`
+- Choose `Select All`
+- Select `Keep column names in INSERT INTO`
+- Choose `Export data only` in dropdown
+- Hit `Save`
 
 ### Manual migration
 
