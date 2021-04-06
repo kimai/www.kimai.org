@@ -24,7 +24,7 @@ Eine vollständige Installationsanleitung finden Sie in in unserer [Dokumentatio
 
 Diese Anforderungen werden von nahezu allen Hosting-Anbietern erfüllt:
 
-- PHP 7.2 oder höher
+- PHP 7.2 oder höher ([PHP 8 wird nicht unterstützt](https://github.com/kevinpapst/kimai2/pull/2158))
     - PHP Erweiterungen: `mbstring`, `gd`, `intl`, `pdo`, `xml`, `zip` 
 - Datenbank: MariaDB oder MySQL
 - [Webserver](https://www.kimai.org/documentation/webserver-configuration.html) (nginx, Apache mit mod_rewrite ...)
