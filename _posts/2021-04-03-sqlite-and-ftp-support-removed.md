@@ -102,4 +102,8 @@ task :migrate do
 end
 ```
 
+#### Ubuntu
 
+Update from @kosli who mentioned [here](https://github.com/kevinpapst/kimai2/issues/2484#issuecomment-814349874) that 
+using the above script on Ubuntu requires the packages `ruby-sequel ruby-mysql2 ruby-sqlite3`.
+With these packages installed the script needs to be changed from `Sequel.mysql` to `Sequel.mysql2`.
