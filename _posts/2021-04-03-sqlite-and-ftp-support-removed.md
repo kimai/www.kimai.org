@@ -79,7 +79,7 @@ If you need help with the transition, I offer [paid migration support]({% link _
 
 ### Data migration via Ruby
 
-The following script was submitted by @sixtyfive (save as `Rakefile.txt`):
+The following script was submitted by @sixtyfive (save as `Rakefile`):
 
 ```
 require 'sequel'
