@@ -47,6 +47,16 @@ You can change the displayed month and (if the user owns the `view_other_timeshe
 - Type of report: `Real times`  
 - Shipped with: `Kimai 1.10 and later`
 
+## Weekly view for all users
+
+ Displays a full week of working times for all users (that you have access to, see "Permissions").
+
+ You can change the displayed week.
+
+ - Required permission: `view_reporting` and `view_other_timesheet`
+ - Type of report: `Real times`  
+ - Shipped with: `Kimai 1.14 and later`
+ 
 ### Monthly view for all users
 
 Displays a full month of working times for all users (that you have access to, see "Permissions").
