@@ -27,10 +27,13 @@ You can change the displayed month and (in case you have the correct permissions
 
 ## Weekly view for all users
 
-Display a full week of working times for all users.
-All here doesn't mean "all users", but only "all users that you have access to" (see below in "Choosing a user").
+Displays a full week of working times for all users (that you have access to, see "Permissions").
 
 You can change the displayed week.
+
+- Required permission: `view_reporting` and `view_other_timesheet`
+- Type of report: `Real times`  
+- Shipped with: `Kimai 1.14 and later`
 
 ## Monthly view for all users
 
