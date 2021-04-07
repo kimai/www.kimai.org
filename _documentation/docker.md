@@ -67,19 +67,4 @@ You can mount a [custom configuration]({% link _documentation/configurations.md 
 docker run --rm -ti -p 8001:8001 --name kimai2 -v $(pwd)/config/packages/local.yaml:/opt/kimai/config/packages/local.yaml kimai/kimai2:dev
 ```
 
-### Developing against the docker
-
-It is possible to mount your source tree and sqlite DB into the container at run time.  
-**N.B. The sqlite database needs to writable by the www-data user.** 
-Use ```chown 33:33 kimai.sqlite``` on the host machine.
-
-```bash
-docker run --rm -d -p 8001:8001 \
-    -v $(pwd)/src:/opt/kimai/src \
-    -v $(pwd)/var/data/kimai.sqlite:/opt/kimai/var/data/kimai.sqlite \
-    --name kimai2 kimai/kimai2:dev
-```
-
-Now edits in your local files will be served by the container and all database changes will persist.
-
 The [official docker documentation](https://docs.docker.com/) has more options on running the container.
