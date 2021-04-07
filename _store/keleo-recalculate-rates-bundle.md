@@ -8,11 +8,16 @@ icon: far fa-money-bill-alt
 price: "0"
 download: https://github.com/Keleo/RecalculateRatesBundle/archive/master.zip
 github: https://github.com/Keleo/RecalculateRatesBundle
+redirect_from:
+  - /store/recalculate-rates-bundle.html
 tags:
   - plugin
 bundle:
     name: "RecalculateRatesBundle"
     clone: "https://github.com/Keleo/RecalculateRatesBundle.git"
+    versions: 
+      - ["0.2", "1.9"]
+      - ["0.1", "0.9"]
 ---
 
 A Kimai plugin, which forces a recalculation of the hourly and fixed rates for timesheet records on every update.

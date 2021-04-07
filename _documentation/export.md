@@ -39,8 +39,8 @@ Since Kimai 1.9 you can add templates for PDF and HTML exports.
 
 Export documents are searched in two locations:
 
-- `var/export/`
-- `templates/export/renderer/`
+- `var/export/` - does not exist by default, please create it when you add a new template
+- `templates/export/renderer/` - don't change files in here, will be overwritten with te next update
 
 Be aware of the following rules:
 
@@ -62,6 +62,22 @@ as starting point and rename it afterwards.
 
 You can translate the button for your template, by adding its name to the export translation file, eg. `translations/export.en.xlf`.
 Internally for each template a new ExportRenderer service is registered, called `exporter_renderer.filename_EXT_twig` (see `ExportServiceCompilerPass`).   
+
+### PDF Templates
+
+Since 1.13 you can customize the following values from within your PDF templates:
+ - many [mPDF options](https://mpdf.github.io/reference/mpdf-functions/construct.html) and [configurations](https://mpdf.github.io/reference/mpdf-variables/overview.html) like the page format
+ - the generated filename by using the option named `filename`
+
+```
+{%raw%}
+{%- set customer = query.customers|length == 1 ? query.customers.0 : null -%}
+{%- set filename = 'ACME_' ~ (customer is not null ? customer.name|replace({' ': '-'}) ~ '_' : '') ~ query.begin|date_format('Y-m') -%}
+{%- set option = pdfContext.setOption('filename', filename) -%}
+{%endraw%}
+```
+
+The variable name (here `format` and `filename`) must be one of the mPDF constructor options, ConfigVariables or FontVariables (see links above).
 
 ## Adding export renderer
 
@@ -125,4 +141,3 @@ If you already wrote an export renderer, all you need to add is the second inter
 from the user and admin timesheet screen.
 
 Be aware, that you should add more permission (eg. `view_rate_own_timesheet`) checks to these renderer, as they are available for every user!
- 

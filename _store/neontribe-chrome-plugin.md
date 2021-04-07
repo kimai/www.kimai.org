@@ -16,6 +16,8 @@ features:
 tags:
   - chrome
   - client
+bundle:
+    name: "ChromePluginBundle"
 ---
 
 # ChromePlugin to Kimai Bridge

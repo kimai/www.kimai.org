@@ -1,29 +1,35 @@
 ---
 title: Backups
-description: How to backup and restore a Kimai 2 installation
+description: How to backup and restore your Kimai installation
 toc: true
 ---
 
 ## Backup
 
-You have to backup the following files:
+You need to backup the following files and directories:
 - `.env`
 - `config/packages/local.yaml`
-- the directory `var/data/`
 
-The following stuff needs attention as well, backup if necessary:
+The following files need your attention as well, backup if necessary:
 - all customized files
-- all added invoice templates
+- the directory `var/data/` if some plugins uses the directory
+- all added invoice templates from `var/invoices/`
+- all added export templates from `var/export/`
 - installed plugins at `var/plugins/`
 
 Database:
-- All tables starting with `kimai2_`
-- The table `migration_versions`
-- Best is to backup all tables in the database with all data!
+- Best option is to backup all tables in the database with all data!
+- In detail: 
+  - all tables starting with `kimai2_` 
+  - all tables starting with `bundle_migration_` 
+  - the table `migration_versions`
 
 Write down the exact version of your Kimai installation:
 - `bin/console kimai:version`
 - `git rev-parse HEAD`
+
+In most cases you don't need these versions. 
+But it's good to have the information in the unlikely case of a problem while restoring the backup.  
 
 ## Create a database backup
 
@@ -31,12 +37,6 @@ Here is a one liner that creates a database backup for MySQL/MariaDB (adjust con
 
 ```
 mysqldump --single-transaction -u kimai2 -p -h 127.0.0.1 kimai2 > ~/kimai2-`date +%F_%H-%M`.sql
-```
-
-Or with SQLite
-
-```
-cp var/data/kimai.sqlite ~/kimai2-`date +%F_%H-%M`.sqllite
 ```
 
 ## Restore 
@@ -93,3 +93,71 @@ You see an error when executing `bin/console cache:clear`.
 
 This problem can happen when a configuration change is necessary in your `local.yaml`. 
 Please check the [UPGRADING]({{ site.kimai_v2_file }}/UPGRADING.md) guide. 
+
+## Backup script
+
+The following solution is a very simple, but working way to backup your Kimai installation. It will store the database, your environment file, 
+the installed plugins and generated data (eg. invoice files).
+
+I recommend to create a dedicated user on the server that will store the backups:
+```bash
+useradd -m -s /bin/bash backup
+```
+
+Create a MySQL configuration file to store the connection password for the Kimai database user at `/home/backup/.kimai2.cnf`:
+```bash
+[client]
+password=my-super-password
+```
+
+Make sure it can only be read by that user:
+```bash
+chmod 600 /home/backup/.kimai2.cnf
+```
+
+Create the backup script at `/home/backup/backup.sh` and adapt to your needs:
+```bash
+#!/bin/bash
+
+export CONNECTION_CONFIG=/home/backup/.kimai2.cnf
+export KIMAI_DIR=/var/www/kimai2
+export BACKUP_DIR=/home/backup
+
+export DATE=`date +%F_%H-%M`
+export BACKUP_STORAGE_DIR=$BACKUP_DIR/storage
+export BACKUP_TMP_DIR=$BACKUP_DIR/temp/$DATE
+
+mkdir -p $BACKUP_STORAGE_DIR
+mkdir -p $BACKUP_TMP_DIR
+mkdir -p $BACKUP_TMP_DIR/var/data/
+mkdir -p $BACKUP_TMP_DIR/var/plugins/
+
+mysqldump --defaults-file=$CONNECTION_CONFIG --single-transaction --no-tablespaces -u kimai2 -h 127.0.0.1 kimai2 > $BACKUP_TMP_DIR/kimai2-$DATE.sql
+
+cp $KIMAI_DIR/.env $BACKUP_TMP_DIR/
+cp -R $KIMAI_DIR/var/data/* $BACKUP_TMP_DIR/var/data/
+cp -R $KIMAI_DIR/var/plugins/* $BACKUP_TMP_DIR/var/plugins/
+
+if [[ -d "$KIMAI_DIR/var/invoices/" ]];
+then
+  mkdir -p $BACKUP_TMP_DIR/var/invoices/
+ cp -R $KIMAI_DIR/var/invoices/* $BACKUP_TMP_DIR/var/invoices/
+fi
+
+if [[ -d "$KIMAI_DIR/var/export/" ]];
+then
+  mkdir -p $BACKUP_TMP_DIR/var/export/
+ cp -R $KIMAI_DIR/var/export/* $BACKUP_TMP_DIR/var/export/
+fi
+
+pushd $BACKUP_TMP_DIR
+zip -r $BACKUP_STORAGE_DIR/$DATE.zip * .env
+popd
+```
+
+Now edit the servers crontab with `crontab -e` and add the following lines: 
+
+```bash
+10 1 * * * /home/backup/backup.sh >> /var/log/kimai-backup.log 2>&1
+20 2 * * * find /home/backup/storage/* -atime +60 -type f -delete
+```

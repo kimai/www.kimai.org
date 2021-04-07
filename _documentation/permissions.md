@@ -4,16 +4,13 @@ description: Configure the permission system which is based on user roles
 toc: true
 ---
 
-Kimai 2 provides a flexible permissions system, which is based on [user roles]({% link _documentation/users.md %}).
+Kimai provides a flexible permissions system, which is based on [user roles]({% link _documentation/users.md %}) and permissions, 
+which can be turned on and off for these roles. You need the `role_permissions` permission to access it.
 
 This permission system limits access to the functionality of Kimai. If you are looking for a way to limit access to  
 timesheets, activities, projects and customers read the [Team permission documentation]({% link _documentation/teams.md %}). 
 
-{% include alert.html icon="fas fa-exclamation" type="warning" alert="You can change the permissions with the administration screens in the admin user section." %}
-
-Your user needs the `role_permissions` to use it, this feature is available since Kimai 1.6.
-
-You find it by looking out for the button {% include demo-action-button.html icon="fas fa-user-lock" %} in the **users** page.
+{% include alert.html icon="fas fa-exclamation" type="warning" alert="You can change the permissions with the administration screens in the Roles admin page." %}
 
 ## Existing permissions
 
@@ -138,7 +135,7 @@ Developer can add/change permissions through plugins, see [Developers documentat
 ## Permission configuration in local.yaml
 
 Since Kimai 1.6 there is generally no reason for changing the default permission through the [local.yaml]({% link _documentation/configurations.md %}).
-It can be considered bad practice, as it could lead to problems with future updates.
+It can be considered bad practice, as it can lead to problems with future updates.
 
 ### Understanding permission structure
 
@@ -225,12 +222,9 @@ See below in "Existing sets".
 
 ### Existing sets
 
-Existing sets can be seen in `kimai.yaml`. I will not go into details here, as their customization 
-is generally not necessary.
-
+Existing sets can be seen in `kimai.yaml`, their customization is generally not necessary. 
 You cannot extend existing sets, if you define them, they will be overwritten with your config.
-Therefor it is **not** recommended to overwrite any existing `set` but create new ones. 
-Please start their name with a prefix like 'CUSTOM_':
+Therefor it is **not** recommended to overwrite any existing `set` but create new ones (start their name with a prefix like 'CUSTOM_'):
 ```yaml
 kimai:
     permissions:

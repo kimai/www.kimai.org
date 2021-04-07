@@ -16,7 +16,7 @@ redirect_from:
 
 User manual on the timesheet tables, actions and configuration.
 
-Kimai 2 provides also a [calendar view]({% link _documentation/calendar.md %}), which displays your timesheet entries in an easy readable format.
+Kimai provides also a [calendar view]({% link _documentation/calendar.md %}), which displays your timesheet entries in an easy readable format.
 
 ## Starting and stopping records
 
@@ -66,8 +66,9 @@ _Configuration:_
 
 Please read the [PHP documentation about relative date formats](https://www.php.net/manual/en/datetime.formats.relative.php).
 
-Some more examples of relative datetimes:
+Some more examples:
 - `first day of -3 month 00:00:00 +216 hours` executed in July 2020 will result in `2020-04-10 00:00:00` 
+- only allow editing for yesterday and today: start = `yesterday 00:00:00`, end = `today 23:59:59`, grace = `+1 days`
 
 ## Tracking modes
 

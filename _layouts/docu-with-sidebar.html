@@ -37,12 +37,18 @@ expire_warning: false
 		<div class="col-lg-9">
 			<div class="card">
 
-                {% if page.url != '/documentation/' and page.url != '/de/dokumentation/' %}
+                {% if page.skip_back == nil %}
                 <div class="card-header">
                     <div class="d-flex align-items-center px-2">
+                        {% if layout.main_page == 'v1' %}
+                            <a href="{% link _pages/v1.md %}" class="btn btn-link">
+                                <i class="fas fa-arrow-circle-left"></i> Back to Kimai v1
+                            </a>
+                        {% else %}
                             <a href="{% link _pages/documentation.md %}" class="btn btn-link">
                                 <i class="fas fa-arrow-circle-left"></i> Back to documentation
                             </a>
+                        {% endif %}
                     </div>
                 </div>
                 {% endif %}
@@ -52,7 +58,7 @@ expire_warning: false
 
                         {% if layout.expire_warning %}
                         <div class="alert alert-danger" role="alert">
-                            Consider <a href="{% link _documentation/migration-v1.md %}">upgrading to Kimai 2</a>, as Kimai v1 is not maintained any longer.
+                            Consider <a href="{% link _documentation/migration-v1.md %}">upgrading to Kimai 2</a>, as Kimai 1 is not maintained any longer.
                         </div>
                         {% endif %}
                         {% if page.url_v2 != nill %}

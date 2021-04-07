@@ -3,12 +3,7 @@ title: Branding your Kimai
 description: Customize Kimai with your company name and logo
 ---
 
-Kimai offers some basic configuration settings, to adapt the branding to your company.
-
-> Ask yourself: which paid software allows such an option?  
-> If you use these options, you should really consider [to donate]({% link _pages/donate.md %}) something back to Kimai.
-
-**Since 1.5 you can customize these settings directly from the System configurations screen.**
+Kimai offers the followinh configuration settings, to adapt the branding to your company.
 
 ## What can be customized?
 
@@ -16,6 +11,18 @@ Kimai offers some basic configuration settings, to adapt the branding to your co
 - You can replace the application name with your `company` name (approx. 15-20 character)
 - You can replace the `mini` version "KTT" with an abbreviation for your company name (3 chars max)
 - The browser `title` can be replaced as well
+
+If you remove the `logo`, the value of `company` will be used in the login screen.
+
+{% capture allowed_tags %}
+The settings for `company` and `mini` name can contain the HTML tags `<b><i><u><strong><em><img><svg>` for formatting. 
+{% endcapture %}
+{% assign allowed_tags = allowed_tags|markdownify %}
+{% include alert.html icon="fas fa-exclamation" type="warning" alert=allowed_tags %}
+
+If you want to show more character in `company`, you can use the [CustomCSS plugin]({% link _store/keleo-css-custom-bundle.md %}) to adapt eg. the font size.
+
+#### Configure via local.yaml
 
 ```yaml
 kimai:
@@ -27,14 +34,15 @@ kimai:
             title: Awesome!
 ```
 
-If you remove the `logo`, the value of `company` will be used in the login screen.
+## Translations
 
-If you need to show some more characters in the application name, you can use the [CustomCSS plugin]({% link _store/keleo-css-custom-bundle.md %}) to adapt the font size.
+If you want/need to replace some default translations (eg. they don't reflect your industry), then you can add a translation file 
+which will used as first translation source. 
 
-### Translations
+First you create a file `my-company.en.xlf` either in the `translations/` directory or in 
+the translation directory of your custom plugin at `Resources/translations/`.
 
-If you can't live with the default translations (eg. they don't reflect your industry), then you can add a single translation file,
-which will be queried always as first translation source. First you configure it like this:
+Then activate the file by changing your [local.yaml]({% link _documentation/configurations.md %}):
 
 ```yaml
 kimai:
@@ -42,6 +50,3 @@ kimai:
         branding:
             translation: my-company
 ```
-
-The you create a file `my-company.en.xlf` either in the `translations/` directory (should be avoided if possible) or in 
-the translation directory of your company plugin at `Resources/translations/`.

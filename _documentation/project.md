@@ -1,6 +1,6 @@
 ---
 title: Projects
-description: Projects in Kimai 2
+description: Projects in Kimai
 toc: true
 ---
 

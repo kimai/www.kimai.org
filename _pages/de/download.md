@@ -14,7 +14,7 @@ redirect_from:
 # Kimai herunterladen - kostenlos!
 
 {% capture docText %}
-Eine vollständige Installationsanleitung finden Sie in in unserer [Dokumentation]({% link _documentation/installation.md %}).
+Eine vollständige Installationsanleitung finden Sie in in unserer [Dokumentation]({% link _documentation/installation.md %}) (englisch).
 {% endcapture %}
 
 {% assign docText = docText|markdownify %}
@@ -24,32 +24,28 @@ Eine vollständige Installationsanleitung finden Sie in in unserer [Dokumentatio
 
 Diese Anforderungen werden von nahezu allen Hosting-Anbietern erfüllt:
 
-- PHP 7.2 oder höher
+- PHP 7.2 oder höher ([PHP 8 wird nicht unterstützt](https://github.com/kevinpapst/kimai2/pull/2158))
     - PHP Erweiterungen: `mbstring`, `gd`, `intl`, `pdo`, `xml`, `zip` 
-- Datenbank (MySQL, MariaDB, SQLite)
+- Datenbank: MariaDB oder MySQL
 - [Webserver](https://www.kimai.org/documentation/webserver-configuration.html) (nginx, Apache mit mod_rewrite ...)
+- Eine freie Subdomain (Verwendung im Unterordner wird nicht unterstützt)
 - Ein moderner Browser (ältere Versionen, insbesondere Safari und IEm, können fehlerhaft sein)
 
 ## Installation mit SSH 
 
 **Der empfohlene Weg um Kimai zu installieren!** 
 
-Es werden lediglich `git` und `composer` für die [Installation]({% link _documentation/installation.md %}) benötigt, welche direkt auf dem Zielsystem ausgeführt werden.
-
-Bitte lesen Sie in Ruhe die [Installationsanleitung]({% link _documentation/installation.md %}), es gibt in Wahrheit gar keinen Grund Kimai manuell herunterzuladen. 
-Aber eine Download Seite ohne Button wäre nicht dasselbe 😜 daher:
+Sie benötigen `git` und `composer` für die [Installation]({% link _documentation/installation.md %}), welche auf dem Zielsystem ausgeführt werden.
+Bitte lesen Sie die [Installationsanleitung]({% link _documentation/installation.md %}) ausführlich. 
  
-<a href="{{ site.kimai_v2_repo }}/archive/{{ site.kimai_v2_version }}.zip" class="btn btn-primary"><i class="fas fa-download"></i> Version {{ site.kimai_v2_version }} (nur der Quellcode)</a>
-<a href="{{ site.kimai_v2_repo }}/zipball/master" class="btn btn-secondary"><i class="fas fa-download"></i> Entwicklungsversion</a>
+<a href="{% link _documentation/installation.md %}" class="btn btn-success"><i class="fas fa-book"></i> Installationsanleitung (englisch)</a>
 
-## Installation mit FTP
+### Weitere Downloads
 
-Dieser Weg wird nicht empfohlen, da Kimai in diesem Modus momentan weder Updates unterstützt noch einen Web-Installer wie andere Apps bietet.
-Sie sollten zunächst die [Dokumentation]({% link _documentation/installation.md %}) gründlich lesen.
-
-Dennoch gibt es für alle wagemutigen FTP Benutzer hier das experimentelle Installationspaket der neueste Kimai-Version:
-
-<a href="{{ site.kimai_v2_repo }}/releases/download/{{ site.kimai_v2_version }}/kimai-release-{{ site.kimai_v2_version }}.zip" class="btn btn-primary"><i class="fas fa-download"></i> Version {{ site.kimai_v2_version }} (vor installiert für FTP)</a>
+<a href="{{ site.kimai_v2_repo }}/archive/{{ site.kimai_v2_version }}.zip" class="btn btn-secondary"><i class="fas fa-download"></i> Version {{ site.kimai_v2_version }} (ZIP)</a>
+<a href="{{ site.kimai_v2_repo }}/zipball/master" class="btn btn-secondary"><i class="fas fa-download"></i> Entwicklungsversion (ZIP)</a>
+<a href="{{ site.kimai_v2_repo }}/releases/tag/{{ site.kimai_v2_version }}" class="btn btn-secondary"><i class="fab fa-github"></i> Release info {{ site.kimai_v2_version }} </a>
+<a href="{{ site.kimai_v2_repo }}/releases" class="btn btn-secondary"><i class="fab fa-github"></i> Alle Releases </a>
 
 ## Entwicklungsversion
 
@@ -59,7 +55,6 @@ Wenn Sie ein erfahrener Benutzer von Kimai sind und über die Ressourcen verfüg
 
 Bitte helfen Sie mit, testen Sie Kimai und [benachrichtigen Sie uns]({{ site.kimai_v2_repo }}/issues) wenn Sie irgendwelche Probleme finden.
 
-### Weitere Downloads
+## Shared Hosting / FTP
 
-<a href="{{ site.kimai_v2_repo }}/releases/tag/{{ site.kimai_v2_version }}" class="btn btn-secondary"><i class="fab fa-github"></i> Release info {{ site.kimai_v2_version }} </a>
-<a href="{{ site.kimai_v2_repo }}/releases" class="btn btn-secondary"><i class="fab fa-github"></i> Alle Releases </a>
+Dies wird nicht unterstützt! Kimai kann nicht via FTP installiert werden.

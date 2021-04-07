@@ -9,24 +9,16 @@ redirect_from:
   - /documentation/developer/
 ---
 
-This page is dedicated to all developers who want to contribute to Kimai. You are the best!
+This page is for all developers who want to contribute to Kimai. You rock!
 
 # Setting up your environment
 
 All you need is:
-- PHP >= 7.1.3
-- PHP extensions: `PDO-SQLite`, `intl`, `zip`, `gd`, `mbstring`, `xml`
 
-You can install php 7.2 and all dependencies on debian based linux with this command: 
-```bash
-apt install php7.2 php7.2-sqlite3 php7.2-intl php7.2-zip php7.2-gd php7.2-mbstring php7.2-xml
-```
-
-Optional requirement:
-- a MySQL/MariaDB instance
-- PHP extension: `PDO-MySQL` enabled
-
-Read how to [install Kimai v2 in your dev environment]({% link _documentation/installation.md %}). 
+- PHP >= 7.2.9
+- PHP extensions: `pdo-mysql`, `intl`, `zip`, `gd`, `mbstring`, `xml`
+- a MariaDB or MySQL instance
+- [Composer](https://getcomposer.org/download/)
 
 ## Development installation
 
@@ -38,16 +30,17 @@ cd kimai2/
 composer install
 ```
 
-Kimai uses a SQLite database by default, which will work out-of-the-box. But you have to change your 
-environment to `dev` in your `.env` file. You can also configure a MySQL database if you prefer that:
+You need to change your environment to `dev` and configure your database connection in your `.env` file:
+
 ```
 APP_ENV=dev
-DATABASE_URL=mysql://db_user:db_password@127.0.0.1:3306/db_name
+DATABASE_URL=mysql://user:password@127.0.0.1:3306/database?charset=utf8&serverVersion=5.7
 ```
 
 The next command will import demo data, to test the application in its full beauty - with different user accounts, 
-customers, projects, activities and several thousand timesheet records. Lets bootstrap your database 
+customers, projects, activities and several thousand timesheet records. Let's bootstrap your database 
 (command only available in `dev` environment): 
+
 ```bash
 bin/console kimai:reset-dev
 ```
@@ -57,20 +50,21 @@ Almost there!
 Now you need to start a web server and can access Kimai in your browser.
 Its totally up to you how to achieve that, I can recommend the [Symfony local webserver](https://symfony.com/doc/current/setup/symfony_server.html)
 (it is fast and supports local https setup):
+
 ```bash
 symfony serve --port=8010
 ```
 
 You can now login with these accounts:
 
-| Username | Password | API Key | Role |
-|---|:---:|:---:|---|
-| clara_customer| kitten | api_kitten |Customer |
-| john_user| kitten | api_kitten |User |
-| chris_user| kitten | api_kitten |User (deactivated) |
-| tony_teamlead| kitten | api_kitten |Teamlead |
-| anna_admin| kitten | api_kitten |Administrator |
-| susan_super| kitten | api_kitten |Super-Administrator |
+| Username       | Password | API Key    | Role                |
+| -------------- |:--------:|:----------:| ------------------- |
+| clara_customer | kitten   | api_kitten | Customer            |
+| john_user      | kitten   | api_kitten | User                |
+| chris_user     | kitten   | api_kitten | User (deactivated)  |
+| tony_teamlead  | kitten   | api_kitten | Teamlead            |
+| anna_admin     | kitten   | api_kitten | Administrator       |
+| susan_super    | kitten   | api_kitten | Super-Administrator |
 
 Demo data can always be deleted by dropping the schema and re-creating it.
 The `kimai:reset-dev` command will do that automatically and can always be executed later on to reset your dev database and cache.
@@ -82,7 +76,7 @@ bin/console doctrine:schema:drop --force
 bin/console doctrine:schema:create
 ```
 
-## Frontend dependencies 
+## Frontend dependencies
 
 If you want to make changes to CSS / Javascript, you need:
 
@@ -98,6 +92,7 @@ yarn install
 ```
 
 To rebuild all assets you have to execute:
+
 ```bash
 yarn run prod
 ```
@@ -126,6 +121,7 @@ composer kimai:tests-integration
 ```
 
 Or you simply run all tests with one of: 
+
 - `composer kimai:tests`
 - `vendor/bin/phpunit`
 
@@ -136,6 +132,7 @@ Besides automated tests Kimai relies on PHPStan to detect code problems.
 ```bash
 composer kimai:phpstan
 ```
+
 ## Coding styles
 
 You can run the code sniffer with the built-in command like that:
@@ -146,7 +143,7 @@ composer kimai:codestyle
 
 And you can also automatically fix the violations by running: 
 
- ```bash
+```bash
 composer kimai:codestyle-fix
 ```
 
@@ -154,7 +151,7 @@ Be aware that this command will modify all files with violations in the director
 
 Kimai code-styles are configured in [.php_cs.dist]({{ site.kimai_v2_file }}/.php_cs.dist).
 
-## Translations 
+## Translations
 
 Read more about [languages and translations]({% link _documentation/translations.md %}).
 
@@ -182,7 +179,7 @@ class MyMenuSubscriber implements EventSubscriberInterface
             ConfigureAdminMenuEvent::CONFIGURE => ['onAdminMenuConfigure', 100],
         ];
     }
-    
+
     public function onMainMenuConfigure(ConfigureMainMenuEvent $event)
     {
         $event->getMenu()->addItem(
@@ -198,6 +195,7 @@ class MyMenuSubscriber implements EventSubscriberInterface
     }    
 }
 ```
+
 For more details check the [official menu subscriber]({{ site.kimai_v2_file }}/src/EventSubscriber/MenuSubscriber.php).
 
 ## Extending the dashboard with widgets
@@ -221,7 +219,7 @@ class MyDashboardSubscriber implements EventSubscriberInterface
     {
         return [DashboardEvent::DASHBOARD => ['onDashboardEvent', 200]];
     }
-    
+
     public function onDashboardEvent(DashboardEvent $event)
     {
         $section = new CompoundRow();
@@ -240,11 +238,13 @@ class MyDashboardSubscriber implements EventSubscriberInterface
     }
 }
 ```
+
 For more details check this [dashboard subscriber]({{ site.kimai_v2_file }}/src/EventSubscriber/DashboardSubscriber.php).
 
 ### Adding new widget types
 
 You can add your own widgets via plugin by adding two classes:
+
 - a widget implementing `\App\Widget\WidgetInterface`
   - or for the lazy folks extending `\App\Widget\Type\AbstractWidgetType`
 - a widget renderer implementing `\App\Widget\WidgetRendererInterface`
@@ -253,20 +253,22 @@ You can add your own widgets via plugin by adding two classes:
 These widgets can now be injected to the Dashboard as explained above with the `MyDashboardSubscriber`.
 
 ### Display widgets in your template
- 
+
 You can also use widgets in your twig templates like this:
 {% raw %}
+
 ```twig
 {{ render_widget('DailyWorkingTimeChart', {'type': 'line', 'begin': 'monday this week 00:00:00', 'end': 'friday this week 23:59:59'}) }}
 {{ render_widget('userAmountMonth', {'color': 'blue', 'icon': 'user'}) }}
 ```
+
 {% endraw %}
 
 Widgets are referenced by their ID.
 
-## Invoices 
+## Invoices
 
-### Adding documents for invoice rendering 
+### Adding documents for invoice rendering
 
 In the config `kimai.invoice.documents`, you can add a list of directories with the locations of your invoice document templates ([read more]({% link _documentation/invoices.md %})).
 
@@ -337,6 +339,7 @@ See [user preferences]({% link _documentation/user-preferences.md %}) documentat
 ## Adding custom meta tags, stylesheets or javascript
 
 There are three available events which can be used to add your custom output to the rendered HTML:
+
 - App\Event\ThemeEvent::HTML_HEAD
 - App\Event\ThemeEvent::STYLESHEET
 - App\Event\ThemeEvent::JAVASCRIPT
@@ -395,7 +398,6 @@ class YourExtension extends Extension implements PrependExtensionInterface
 ```
 
 If you don't register your permissions, your users will have to edit their [local.yaml]({% link _documentation/configurations.md %}), please avoid that!
- 
 
 ## Adding system configuration
 
@@ -418,7 +420,7 @@ class MySubscriber implements EventSubscriberInterface
             SystemConfigurationEvent::class => ['onSystemConfiguration', 100],
         ];
     }
-    
+
     public function onSystemConfiguration(SystemConfigurationEvent $event)
     {
         $event->addConfiguration((new SystemConfigurationModel())
@@ -453,11 +455,11 @@ class YourExtension extends AbstractPluginExtension
         $this->registerBundleConfiguration($container, $config);
     }
 }
-``` 
+```
 
 And your configuration class looking like this:
-```php
 
+```php
 namespace KimaiPlugin\YourBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;

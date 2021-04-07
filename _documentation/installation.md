@@ -1,16 +1,16 @@
 ---
 title: Installation
-description: How to install Kimai 2 on your server with git, composer and SSH or FTP
+description: How to install Kimai on your server with git, composer and SSH or FTP
 toc: true
 redirect_from:
   - /documentation/installation/
 ---
 
-The recommended way to install Kimai v2 is via SSH, you need GIT and [Composer](https://getcomposer.org/doc/00-intro.md). 
+The recommended way to install Kimai is via SSH, you need GIT and [Composer](https://getcomposer.org/doc/00-intro.md). 
 
 ## Recommended setup 
 
-To install Kimai 2 in your production environment, connect with SSH to your server and change to your webservers (document) root directory.
+To install Kimai in your production environment, connect with SSH to your server and change to your webservers (document) root directory.
 You need to install Git and [Composer](https://getcomposer.org/doc/00-intro.md) if you haven't already. 
 
 First clone this repo ({{ site.kimai_v2_version }} is the [latest stable release]({{ site.kimai_v2_repo }}/releases)):
@@ -74,13 +74,13 @@ There is a dedicated article about [Docker setups]({% link _documentation/docker
 
 ## Hosting and 1-click installations
 
-The following platforms adopted Kimai 2 to be compatible with their one-click installation systems.
+The following platforms adopted Kimai to be compatible with their one-click installation systems.
 
 ### YunoHost
 
 [![Install kimai2 with YunoHost](https://install-app.yunohost.org/install-with-yunohost.png)](https://install-app.yunohost.org/?app=kimai2)
 
-Kimai 2 [package](https://github.com/YunoHost-Apps/kimai2_ynh) for [YunoHost](https://yunohost.org).
+Kimai [package](https://github.com/YunoHost-Apps/kimai2_ynh) for [YunoHost](https://yunohost.org).
 
 ### Cloudron
 
@@ -100,7 +100,7 @@ Read [this issue]({{ site.kimai_v2_repo }}/issues/743) if you have further quest
 
 How to install Kimai at shared hosting companies. Please share our insights if you have managed to get it up and running with another company!
 
-If you can't find the correct version, ask your hoster! Or [let us help you]({% link _store/installation-support.md %}).
+If you can't find the correct version, ask your hoster! Or [let us help you]({% link _store/keleo-installation-support.md %}).
 
 ### Ionos / 1&1
 
@@ -138,6 +138,54 @@ How to install Kimai:
 
 Reload your configuration `/opt/RZphp73/bin/php-cli bin/console kimai:reload`
 
+### Plesk
+
+If a subdomain has not yet been added, login to the Plesk frontend and add a new
+subdomain, e.g. kimai.my-domain.com. Use the database tab of the new subdomain
+to create a new database for Kimai. Also check the selected PHP version for
+this subdomain in the development-tools section of the subdomain.
+
+Next, the actual installation needs to be done in the command line of the
+webserver directly.
+
+- Login to the web server via SSH
+- Locate the current PHP version. Plesk stores its PHP instances in the
+  directory `/opt/plesk/php`. Depending on which PHP version was configured for
+  Kimai subdomain, make sure to use this version during the installation. For
+  example, if using version 7.3, the path to PHP should be `/opt/plesk/php/7.3/bin/php`.
+- Switch user to be "root" (otherwise access to Plesk subfolder is denied) with `su`.
+- Navigate to the root folder where Plesk is hosting the websites from.
+  Typically, the root can be found at `/var/www/vhosts/<domain_name>`. For hosting
+  location on Windows, please refer to official [Plesk documentation](https://docs.plesk.com/en-US/onyx/administrator-guide/web-hosting/website-directory-structure.68695/):
+  ```bash
+  cd /var/www/vhosts/kimai.my-domain.com
+  ```
+- Install composer: `curl -sS https://getcomposer.org/installer | /opt/plesk/php/7.3/bin/php`
+- Clone Kimai: `git clone -b {{ site.kimai_v2_version }} --depth 1 https://github.com/kevinpapst/kimai2.git`
+- Enter Kimai directory: `cd kimai2`
+- Install composer packages: `/opt/plesk/php/7.3/bin/php ../composer.phar install --no-dev --optimize-autoloader`
+- Configure `.env` file to have correct database credentials
+- Install Kimai database: `/opt/plesk/php/7.3/bin/php bin/console kimai:install -n`
+- Change ownership of `kimai2` folder:
+    ```
+    cd ..
+    chown -R psacln:psaserv kimai2
+    chmod -R g+r kimai2
+    chmod -R g+rw kimai2/var/
+    chmod -R g+rw kimai2/public/avatars/
+    ```
+- Switch user back to your normal user account (must not be root), e.g. 'user': `su -p user`
+- Reload caches:
+    ```
+    cd kimai2
+    bin/console kimai:reload --env=prod
+    ```
+- Create first user: `bin/console kimai:create-user username admin@example.com ROLE_SUPER_ADMIN`
+- Adjust [Apache configuration](https://www.kimai.org/documentation/webserver-configuration.html)
+  to point to the "public" subfolder of the Kimai installation, i.e. set the path to
+  `/var/www/vhosts/my-domain.com/kimai2/public`. Also ensure that `ServerName`
+  and `ServerAlias` are set to `kimai.my-domain.com` and `www.kimai.my-domain.com`.
+
 ### Netcup
 
 - Clone Kimai in the root folder as stated above and then `cd kimai2`
@@ -152,34 +200,17 @@ See issue [#1620](https://github.com/kevinpapst/kimai2/issues/1620).
 
 ## FTP installation
 
-This is NOT recommended, but still widely used ... 
+Installation via FTP is not supported. Kimai cannot be installed with FTP. 
 
-Please, do yourself a favour and get a hoster that includes SSH access, it is not 2002 anymore! 
-Nowadays even cheap contracts should support SSH.
-
-Now read on: [Kimai FTP installation + tips and tricks]({% link _documentation/ftp.md %}). 
+You have two choices:
+- get a proper webhosting/virtual server with SSH support
+- use a [SaaS time-tracking software](https://www.kimai.cloud)
 
 ## Ansible
 
-[Webarchitects Co-operative](https://www.webarchitects.coop/) have written a [Kimai 2 Ansible Galaxy role](https://git.coop/webarch/kimai) for automatically installing and upgrading Kimai sites on their shared hosting servers.
+[Webarchitects Co-operative](https://www.webarchitects.coop/) have written a [Kimai Ansible Galaxy role](https://git.coop/webarch/kimai) for automatically installing and upgrading Kimai sites on their shared hosting servers.
 
 ## Installation FAQ
-
-### SQLite not supported for production usage
-
-SQLite is a great database engine for testing, but when it comes to **production usage it is not supported for Kimai**:
-
-- It does not support ALTER TABLE commands and makes update procedures clunky and problematic (I try to support updates, but they are heavy on large databases)
-- It does [not support FOREIGN KEY](https://www.sqlite.org/quirks.html#foreign_key_enforcement_is_off_by_default) constraints [out of the box](https://www.sqlite.org/foreignkeys.html#fk_enable), which can lead to critical bugs when deleting users/activities/projects/customers
-
-Kimai tries to work around the Foreign Keys issue by using a 
-[Doctrine PostConnect EventSubscriber]({{ site.kimai_v2_file }}/src/Doctrine/SqliteSessionInitSubscriber.php), 
-but this does not work in all environments (SQLite needs to be compiled with foreign support), 
-it is not intended to be used in production environments and it can't be guaranteed that SQLite handles everything as expected!
-
-If you insist on using SQLite: make a copy of the database file BEFORE each update to prevent possible data loss and don't ever delete data that is already linked to other data (like customers/projects/activities used in timesheets) ... 
-
-**And don't file any bug report - you have been warned!**
 
 ### SQLSTATE[HY000] [2006] MySQL server has gone away
 
@@ -215,7 +246,7 @@ DATABASE_URL=mysql://root:mG0%2Fd1%403aT.Z%29s@127.0.0.1:3306/kimai2
 
 The installation instructions are intended primarily for server applications. 
 
-If you are installing Kimai 2 on your personal computer - maybe for use in a local network, but where the computer primarily 
+If you are installing Kimai on your personal computer - maybe for use in a local network, but where the computer primarily 
 serves as a single user computer - you will avoid permission errors by substituting `www-data` in the relevant commands with your username.
 
 In particular, `sudo -u www-data` is a command which grants the `www-data` user temporary administrator/super-user privileges). 
@@ -231,9 +262,23 @@ username that runs the server - if you don't know, it is likely your own usernam
 Further, `chown` and `chmod` commands should be for the username that runs the server instead of `www-data` (again, if you 
 don't know, it is likely your own username).
 
-Also note that, depending on where you are installing Kimai 2 and how your computer is configured, you may also receive 
+Also note that, depending on where you are installing Kimai and how your computer is configured, you may also receive 
 "operation not permitted" errors when setting file permissions (`chown` and `chmod` commands). 
 In that case, prefix them with `sudo`.
+
+### Troubleshoot
+
+#### Internal Server Error 500
+
+This error can have several causes. Here is a small summary what to check for if
+this error occurs when trying to access the Kimai frontend:
+
+- There could be something wrong with your file permissions. Please check the
+  log `var/log/prod.log` in your installation directory.
+- Make sure not to reload Kimai as `root` (e.g. via `bin/console kimai:reload
+  --env=prod`). The application will create folders and files. If *root* started
+  the process you most likely will have permission errors if the web-server is
+  not started as `root` as well. [Fix file permissions]({% link _documentation/cache.md %})!
 
 #### Still doesn't work?
 

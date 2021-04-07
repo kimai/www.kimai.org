@@ -7,6 +7,7 @@ date: "2019-09-14 19:45:00 +0200"
 icon: fas fa-check-square
 price: "0"
 download: https://gitlab.com/hmr-it/kimai2plugins/EmptyDescriptionCheckerBundle/-/archive/master/EmptyDescriptionCheckerBundle-master.zip
+gitlab: https://gitlab.com/hmr-it/kimai2plugins/EmptyDescriptionCheckerBundle/
 tags:
   - plugin
 bundle:

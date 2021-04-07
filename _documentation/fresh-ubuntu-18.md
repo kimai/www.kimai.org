@@ -1,10 +1,10 @@
 ---
 title: "Install Kimai on a fresh Ubuntu 18.04 LTS"
-description: "How to install Kimai 2 on a brand new Ubunutu 18.04 with database, webserver and SSL certificate"
+description: "How to install Kimai on a brand new Ubuntu 18.04 with database, webserver and SSL certificate"
 toc: true
 ---
 
-This is a collection of snippets to help you with setting up a fresh Ubuntu 18.04 server for using with Kimai 2.
+This is a collection of snippets to help you with setting up a fresh Ubuntu 18.04 server for using with Kimai.
 It is neither a full fledged documentation, explaining each step, nor is it a bash tutorial. 
 
 Please see it as a personal snippet collection... in which I assume:
@@ -98,7 +98,7 @@ apt-get install nginx
 apt-get install git unzip curl
 ```
 
-BTW: I'd use MariaDB, but Ubunutu 18.04 ships an outdated MariaDB which does not support JSON columns and which is therefor not compatible with Kimai 2. 
+BTW: I'd use MariaDB, but Ubunutu 18.04 ships an outdated MariaDB which does not support JSON columns and which is therefor not compatible with Kimai. 
 
 ## Install composer
 

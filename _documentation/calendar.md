@@ -4,7 +4,7 @@ description: Manage your timesheet records in a calendar view
 toc: true
 ---
 
-Kimai 2 provides a calendar view, which displays your timesheet entries in a easy readable format.
+Kimai provides a calendar view, which displays your timesheet entries in a easy readable format.
 You can choose between a monthly, weekly and daily view.
 
 The calendar view look and feel is configured with the config keys below `kimai.calendar` in `kimai.yaml` 

@@ -13,7 +13,9 @@ layout: default
 	{% assign buyLink = page.github %}
 {% endif %}
 
+{% comment %}
 <script src="https://gumroad.com/js/gumroad.js"></script>
+{% endcomment %}
 
 <div class="container store-item">
 
@@ -26,7 +28,7 @@ layout: default
 					<div class="card p-3">
 						<div class="d-flex align-items-center">
 							{% if page.gumroad %}
-							<a href="#" onclick="location.href='https://gum.co/{{ page.gumroad }}';return false;">
+							<a href="https://gum.co/{{ page.gumroad }}" onclick="location.href='https://gum.co/{{ page.gumroad }}';return false;">
 								<span class="stamp stamp-md bg-blue mr-3">
 								  <i class="fas fa-euro-sign"></i>
 								</span>
@@ -81,6 +83,7 @@ layout: default
 
                     <div class="card">
                         <div class="card-body text-center">
+                            <h4 class="card-title text-center">Offered by</h4>
                             <div class="mb-4">
                                 <img src="{{ developer.image }}" alt="Logo - {{ developer.name }}" class="avatar avatar-xxl">
                             </div>
@@ -88,15 +91,38 @@ layout: default
                             <p class="mb-4">
                                 {{ developer.description }}
                             </p>
+                            <div class="mb-4">
+                                If you have any question,
+                                {% if developer.homepage %}
+                                visit the <a href="{{ developer.homepage }}" title="Homepage" target="_blank">developers homepage</a>
+                                {% endif %}
+                                {% if developer.homepage and developer.email %}
+                                or
+                                {% endif %}
+                                {% if developer.email %}
+                                use the <a href="mailto:{{ developer.email }}" title="Email">email for direct contact</a>
+                                {% endif %}
+                                .
+                            </div>
                             <ul class="social-links list-inline mb-0 mt-2">
                                 {% if developer.homepage %}
                                 <li class="list-inline-item">
                                     <a href="{{ developer.homepage }}" title="Homepage" target="_blank"><i class="fa fa-home"></i></a>
                                 </li>
                                 {% endif %}
+                                {% if developer.email %}
+                                <li class="list-inline-item">
+                                    <a href="mailto:{{ developer.email }}" title="Email"><i class="fa fa-envelope"></i></a>
+                                </li>
+                                {% endif %}
                                 {% if developer.github %}
                                 <li class="list-inline-item">
-                                    <a href="{{ developer.github }}" title="Github" target="_blank"><i class="fab fa-github"></i></a>
+                                    <a href="{{ developer.github }}" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+                                </li>
+                                {% endif %}
+                                {% if developer.gitlab %}
+                                <li class="list-inline-item">
+                                    <a href="{{ developer.gitlab }}" title="Gitlab" target="_blank"><i class="fab fa-gitlab"></i></a>
                                 </li>
                                 {% endif %}
                                 {% if developer.twitter %}
@@ -194,6 +220,12 @@ layout: default
 								<span class="text-nowrap">GitHub</span>
 							</a>
 						{% endif %}
+						{% if page.gitlab %}
+							<a href="{{ page.gitlab }}" class="btn btn-outline-primary">
+								<i class="fab fa-gitlab"></i>
+								<span class="text-nowrap">GitLab</span>
+							</a>
+						{% endif %}
 						{% if page.download %}
 							<a href="{{ page.download }}" class="btn btn-outline-primary ml-2">
 								<i class="fas fa-download"></i>
@@ -261,7 +293,9 @@ layout: default
                             {% if page.bundle.versions %}
                             <h3>Compatibility</h3>
 
-                            <p>The plugin is compatible with the following Kimai releases:</p>
+                            <p>
+                                Plugins should always be compatible with higher Kimai versions, the following list contains the plugin version and the required minimum Kimai version.
+                            </p>
 
                             <table class="table">
                                 <thead>
@@ -270,7 +304,7 @@ layout: default
                                         Bundle version
                                     </th>
                                     <th>
-                                        Kimai version
+                                        Minimum Kimai version
                                     </th>
                                 </tr>
                                 </thead>

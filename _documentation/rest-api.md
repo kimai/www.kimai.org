@@ -6,7 +6,7 @@ redirect_from:
   - /documentation/api/
 ---
 
-Read the Swagger documentation of the Kimai 2 API in your Kimai installation at `/api/doc`.
+Read the Swagger documentation of the Kimai API in your Kimai installation at `/api/doc`.
 As example you can have a look at the API docs for the demo installation at [{{ site.kimai_v2_demo }}/api/doc]({{ site.kimai_v2_demo }}/api/doc).
 You need to login to see them, credentials can be [found here]({% link _pages/demo.md %}).
 
@@ -19,7 +19,7 @@ When calling the API you have to submit two additional header with every call fo
 - `X-AUTH-USER` - holds the username or email
 - `X-AUTH-TOKEN` - holds the users API password, which he can set in his profile
 
-{% include alert.html type="danger" alert="Make sure to ONLY call the Kimai 2 API via `https` to protect the users credentials and data. Time-tracking data includes private / sensitive information!" %}
+{% include alert.html type="danger" alert="Make sure to ONLY call the Kimai API via `https` to protect the users credentials and data. Time-tracking data includes private / sensitive information!" %}
 
 ## Using the Swagger UI
 
@@ -105,7 +105,7 @@ You can execute some sample requests and see the JSON result.
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Kimai 2 - API demo</title>
+	<title>Kimai - API demo</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://getbootstrap.com/docs/4.3/examples/floating-labels/floating-labels.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css">

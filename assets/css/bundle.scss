@@ -69,7 +69,7 @@
     padding: $grid-gutter-width / 2;
 }
 .header {
-    padding: $grid-gutter-width / 2;
+    padding: $grid-gutter-width / 3;
 }
 .nav-tabs {
     margin: 0;
@@ -131,14 +131,19 @@ tr.featured-article td {
     a, span {
         padding-left: 0;
         padding-right: 0;
+        &:after {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            content: "|"
+        }
     }
     span {
         cursor: auto;
     }
-    .first:after {
+    .last:after {
         padding-left: 0.5rem;
         padding-right: 0.5rem;
-        content: "|"
+        content: ""
     }
 }
 

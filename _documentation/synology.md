@@ -1,6 +1,6 @@
 ---
 title: "Install Kimai on a Synology NAS"
-description: "How to install Kimai 2 on a Synology NAS"
+description: "How to install Kimai on a Synology NAS"
 toc: true
 ---
 

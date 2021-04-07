@@ -78,7 +78,7 @@ See also the [configurations docs]({% link _documentation/configurations.md %}).
 
 ## I have only FTP available
 
-So you want to install Kimai v2 but have no SSH access to your server? 
+So you want to install Kimai but have no SSH access to your server? 
 There is a workaround available, read the additional [installation instructions]({% link _documentation/installation.md %}). 
 
 ## Error on bin/console doctrine:schema:create
@@ -115,5 +115,5 @@ Stack trace:
 
 ```
 
-you are running PHP 7.0. Probably you were able to install Kimai v2, because your PHP-CLI uses a different PHP version than your webserver.
+you are running PHP 7.0. Probably you were able to install Kimai, because your PHP-CLI uses a different PHP version than your webserver.
 Upgrade PHP and the error will be gone.  

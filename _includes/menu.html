@@ -4,7 +4,7 @@
 	{% assign showIcons = false %}
 	{% assign homepage = site.data.trans-menu[page.lang].home %}
 
-	<li class="nav-item">
+	<li class="nav-item d-md-inline d-none">
 		<a href="{{ homepage.url }}" class="nav-link{% if page.url == homepage.url %} active{% endif %}">{% if showIcons %}<i class="fas fa-home"></i> {% endif %}{{ homepage.name }}</a>
 	</li>
 
@@ -12,25 +12,40 @@
 	<li class="nav-item{% if data.subpages %} dropdown{% endif %}">
 		{% assign data = site.data.trans-menu[page.lang][menuName] %}
 
-		<a href="{% if data.url %}{% if data.url != '#' %}{{ data.url | absolute_url }}{% else %}#{% endif %}{% else %}javascript:void(0){% endif %}" class="nav-link{% if page.url contains data.url %} active{% endif %}{% if data.disabled %} disabled{% endif %}"{% if data.subpages %} data-toggle="dropdown"{% endif %}>{% if showIcons && data.icon %}<i class="{{ data.icon }}"></i>{% endif %} {{ data.name }}{% if data.count %} <span class="badge badge-pill bg-primary text-white ml-2">{{ data.count }}</span>{% endif %}</a>
+		<a href="{% if data.url %}{% if data.url != '#' %}{{ data.url | absolute_url }}{% else %}#{% endif %}{% else %}javascript:void(0){% endif %}" class="nav-link{% if page.url contains data.url %} active{% endif %}{% if data.disabled %} disabled{% endif %}"{% if data.subpages %} data-toggle="dropdown"{% endif %}>{% if showIcons && data.icon %}<i class="{{ data.icon }}"></i>{% endif %} {{ data.name }}{% if data.count %} <span class="badge badge-pill bg-primary text-white ml-2">{{ data.count }}</span>{% endif %}</a>
 
 		{% if data.subpages %}
 			<div class="dropdown-menu dropdown-menu-arrow">
 				{% for subitem in data.subpages %}
 					{% assign subindex = subitem[0] %}
 					{% assign subdata = subitem[1] %}
-					<a href="{{ subdata.url | absolute_url }}" class="dropdown-item {% if menu_levels[1] == subindex %}active{% endif %}">{{ subdata.name }}</a>
+					<a href="{{ subdata.url | absolute_url }}" class="dropdown-item {% if menu_levels[1] == subindex %}active{% endif %}">{{ subdata.name }}</a>
 				{% endfor %}
 			</div>
 		{% endif %}
 	</li>
 	{% endfor %}
 
-	<li class="nav-item d-sm-none">
-		{% if page.lang == 'en' %}
-		<a href="{{ site.data.trans-menu['de'].home.url }}" title="{{ site.data.trans-menu['de'].home.title }}" class="first nav-link">Deutsch</a>
-		{% else %}
-		<a href="{{ site.data.trans-menu['en'].home.url }}" title="{{ site.data.trans-menu['en'].home.title }}" class="nav-link">English</a>
-		{% endif %}
-	</li>
+    {% if page.lang == 'fr' %}
+        <li class="nav-item d-sm-none">
+            <a href="{{ site.data.trans-menu['en'].home.url }}" title="{{ site.data.trans-menu['en'].home.title }}" class="first nav-link">English</a>
+        </li>
+        <li class="nav-item d-sm-none">
+            <a href="{{ site.data.trans-menu['de'].home.url }}" title="{{ site.data.trans-menu['de'].home.title }}" class="first nav-link">Deutsch</a>
+        </li>
+    {% elsif page.lang == 'de' %}
+        <li class="nav-item d-sm-none">
+            <a href="{{ site.data.trans-menu['en'].home.url }}" title="{{ site.data.trans-menu['en'].home.title }}" class="first nav-link">English</a>
+        </li>
+        <li class="nav-item d-sm-none">
+            <a href="{{ site.data.trans-menu['fr'].home.url }}" title="{{ site.data.trans-menu['fr'].home.title }}" class="first nav-link">Français</a>
+        </li>
+    {% else %}
+        <li class="nav-item d-sm-none">
+            <a href="{{ site.data.trans-menu['de'].home.url }}" title="{{ site.data.trans-menu['de'].home.title }}" class="first nav-link">Deutsch</a>
+        </li>
+        <li class="nav-item d-sm-none">
+            <a href="{{ site.data.trans-menu['fr'].home.url }}" title="{{ site.data.trans-menu['fr'].home.title }}" class="first nav-link">Français</a>
+        </li>
+    {% endif %}
 </ul>

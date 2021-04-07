@@ -27,10 +27,10 @@ All examples represent the date `2019-07-09` (2019, July 9th):
 - `{m}` - numeric representation of a month, without leading zeros. Example: `7`
 - `{D}` - day of the month, 2 digits with leading zeros. Example: `09`
 - `{d}` - day of the month without leading zeros. Example: `9`
-- `{cc}` - customer invoice counter for all times, starting from 1 (since 1.10)
-- `{ccy}` - customer invoice counter for this year, starting from 1 (since 1.10)
-- `{ccm}` - customer invoice counter for this month, starting from 1 (since 1.10)
-- `{ccd}` - customer invoice counter for this day, starting from 1 (since 1.10)
+- `{cc}` - per customer invoice counter for all times, starting from 1 (since 1.10)
+- `{ccy}` - per customer invoice counter for this year, starting from 1 (since 1.10)
+- `{ccm}` - per customer invoice counter for this month, starting from 1 (since 1.10)
+- `{ccd}` - per customer invoice counter for this day, starting from 1 (since 1.10)
 
 Each replacer (x) can be combined with a length formatter, which will prepend (X) leading zeros, eg. `{x,X}`. 
 Example: to get a three digit long string with year counter use `{cy,3}`, which results in `001` for the first invoice of the year.
@@ -82,7 +82,7 @@ For further information read the [timesheet documentation]({% link _documentatio
 Since Kimai 1.10 only billable items will be included in invoices. By default, every timesheet records is billable but future 
 versions of Kimai will ship features to change that.  
 
-[Expense items]({% link _store/expenses-bundle.md %}) have a configurable billable flag per item and only the once marked as billable (refundable) will be included. 
+[Expense items]({% link _store/keleo-expenses-bundle.md %}) have a configurable billable flag per item and only the ones marked as billable (refundable) will be included. 
 
 ## Invoice document
 
@@ -127,8 +127,8 @@ The invoice system currently supports the following formats:
 
 Invoice documents are searched in two locations:
 
-- `var/invoices/`
-- `templates/invoice/renderer/`
+- `var/invoices/` - does not exist by default, please create it when you add a new document
+- `templates/invoice/renderer/` - don't change files in here, will be overwritten with te next update
 
 Be aware of the following rules:
 

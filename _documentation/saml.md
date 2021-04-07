@@ -1,6 +1,6 @@
 ---
 title: SAML
-description: How to use SAML identity provider with Kimai 2
+description: How to use SAML identity provider with Kimai
 toc: true
 since_version: 1.8
 ---
@@ -133,6 +133,10 @@ Links:
 - [Setup groups in G Suite](https://www.dynatrace.com/support/help/how-to-use-dynatrace/user-management-and-sso/manage-users-and-groups-with-saml/saml-gsuite/#preparing-group-mapping)
 - [Creating custom attributes using the user schema](https://support.google.com/cloudidentity/answer/6327792?hl=en&ref_topic=7558947)
 
+### Azure
+
+For Azure, please check the [Azure SAML documentation]({% link _documentation/azure.md %})
+
 ## Known limitations
 
 A manually registered user can login via SAML, but his account account is then migrated to **SAML only**, 
@@ -155,9 +159,9 @@ RewriteRule  /(..)/login /auth/saml/login [L,R=301]
 
 ### Proxy and http vs https
 
-Error message:`
-- The response was received at `http://kimai-test.example.com/auth/saml/acs` instead of `https://kimai-test.example.com/auth/saml/acs`
+**Error:**  
+The response was received at `http://kimai-test.example.com/auth/saml/acs` instead of `https://kimai-test.example.com/auth/saml/acs`
 
-Solution: 
-- Use the `baseurl` configuration and set it to `https://kimai-test.example.com/auth/saml/` (and flush the cache!)
+**Solution:**  
+Use the `baseurl` configuration and set it to `https://kimai-test.example.com/auth/saml/` (and flush the cache!)
 
