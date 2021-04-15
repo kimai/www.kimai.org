@@ -89,30 +89,42 @@ that can be solved with some SQL commands.
 
 Many Kimai 1 installations have broken special character (like german umlauts or other language specific non-ascii characters) in the database.
 
-This problem does not show up in the frontend og Kimai 1, as the database connection is using a different collation then the database. But you can see these problems, when you query the database directly (eg. with a tool like phpMyAdmin). 
+This problem does not show up in the frontend og Kimai 1, as the database connection is using a different collation then the database. 
+But you can see these problems, when you query the database directly (eg. with a tool like phpMyAdmin). 
 
-You can fix these broken entries (mainly timesheet descriptions) with SQL statements like these:
+You can find these broken entries (mainly timesheet descriptions) with SQL statements like these (in the Kimai 1 database):
 ```sql 
-SELECT * FROM `kimai2_timesheet` WHERE description like "%Ã¼%"; 
+SELECT * FROM `kimai_timeSheet` WHERE comment like "%Ã¤%";
+SELECT * FROM `kimai_timeSheet` WHERE comment like "%Ã„%";
+SELECT * FROM `kimai_timeSheet` WHERE comment like "%Ã¼%";
+SELECT * FROM `kimai_timeSheet` WHERE comment like "%Ãœ%";
+SELECT * FROM `kimai_timeSheet` WHERE comment like "%Ã¶%";
+SELECT * FROM `kimai_timeSheet` WHERE comment like "%Ã–%";
+SELECT * FROM `kimai_timeSheet` WHERE comment like "%ÃŸ%";
 ```
 
-They cannot be fixed automatically by Kimai 2, but changing them is then just a matter of rewriting these SQL queries:
+They are not fixed automatically by Kimai, but changing them is then just a matter of rewriting these SQL queries:
 ```sql 
-UPDATE `kimai2_timesheet` SET description = REPLACE(description, "Ã¼", "ü") WHERE description like "%Ã¼%"; 
-UPDATE `kimai2_timesheet` SET description = REPLACE(description, "Ã¤", "ä") WHERE description like "%Ã¤%"; 
+UPDATE `kimai_timeSheet` SET comment = REPLACE(comment, "Ã¤", "ä") WHERE comment like "%Ã¤%";
+UPDATE `kimai_timeSheet` SET comment = REPLACE(comment, "Ã„", "Ä") WHERE comment like "%Ã„%";
+UPDATE `kimai_timeSheet` SET comment = REPLACE(comment, "Ã¼", "ü") WHERE comment like "%Ã¼%";
+UPDATE `kimai_timeSheet` SET comment = REPLACE(comment, "Ãœ", "Ü") WHERE comment like "%Ãœ%";
+UPDATE `kimai_timeSheet` SET comment = REPLACE(comment, "Ã¶", "ö") WHERE comment like "%Ã¶%";
+UPDATE `kimai_timeSheet` SET comment = REPLACE(comment, "Ã–", "Ö") WHERE comment like "%Ã–%";
+UPDATE `kimai_timeSheet` SET comment = REPLACE(comment, "ÃŸ", "ß") WHERE comment like "%ÃŸ%";
 ```
 
 #### User accounts without email
 
 Find and update all users, that have no email address: 
 ```sql
-select * from kimai_users where mail = '' or mail is null;
-update kimai_users set mail = concat(name, '@example.com') where mail = '' or mail is null;
+SELECT * FROM `kimai_users` WHERE mail = '' OR mail IS NULL;
+UPDATE `kimai_users` SET mail = concat(name, '@example.com') WHERE mail = '' OR mail IS NULL;
 ```
 
 #### Reset password for testing
 
 Update an account with a new `password` in your Kimai 1 database:
 ```sql
-UPDATE kimai_users SET password = md5(concat('your-salt', 'new-password', 'your-salt')) WHERE userID = XYZ;
+UPDATE `kimai_users` SET password = md5(concat('your-salt', 'new-password', 'your-salt')) WHERE userID = XYZ;
 ```
