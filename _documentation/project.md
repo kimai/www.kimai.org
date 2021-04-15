@@ -16,6 +16,14 @@ If an activity linked to the project does not have its own color, the projects c
 
 See [customer documentation]({% link _documentation/customer.md %}) for the default color.
 
+## Project start date / end date 
+
+Explicit dates for the project ordering, start and end can be provided. 
+
+Setting a date for project start or end will place an implicit restriction for project selection when creating a timesheet record. If the date of the record falls before the project start or after the project end the project will not be listed in the dropdown menu. 
+
+This behavior is intended to avoid ghost bookings on not yet started or already finished projects. Note, that the future booking of timesheet records (if activated in the system settings "Allow time entries in the future") is not possible in this case. If the booking of records is necessary, the team lead or admin can remove the date restriction in the project settings.
+
 ## Time budget
 
 {% include time_budget.md %}
