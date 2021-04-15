@@ -79,7 +79,12 @@ If you need help with the transition, I offer [paid migration support]({% link _
 
 ### Data migration via Ruby
 
-The following script was submitted by @sixtyfive (save as `Rakefile`):
+You need to have an empty Kimai MySQL database first:
+- edit `.env` and point to a MySQL database
+- run the installer `bin/console kimai:install -n`
+- copy & paste the script below (save as `Rakefile`) and adjust the credentials and file location
+- install the required ruby gems
+- run the script `rake`
 
 ```
 require 'sequel'
@@ -102,8 +107,42 @@ task :migrate do
 end
 ```
 
+Thanks @sixtyfive for this script, works like a charm!
+
 #### Ubuntu
 
 Update from @kosli who mentioned [here](https://github.com/kevinpapst/kimai2/issues/2484#issuecomment-814349874) that 
 using the above script on Ubuntu requires the packages `ruby-sequel ruby-mysql2 ruby-sqlite3`.
 With these packages installed the script needs to be changed from `Sequel.mysql` to `Sequel.mysql2`.
+
+#### Mac / Homebrew
+
+Before you start: you need Homebrew and ruby installed!
+
+Then copy and paste the above script into your clipboard, enter a console and 
+
+```bash
+cd ~
+mkdir migration
+cd migration
+pbpaste > Rakefile
+gem install sequel
+gem install mysql2 -- --with-mysql-dir=$(brew --prefix mariadb)
+gem install sqlite3
+```
+
+Edit `Rakefile` and replace the second line with this:
+```
+@new = Sequel.mysql2('database', user: 'root', password: 'password', socket: '/tmp/mysql.sock')
+``` 
+adjust the credentials and the file location in line 1. Save & exit.
+Run the script with `rake` and wait for a couple of seconds.
+
+#### Paid migration
+
+If all from above doesn't work or is simply impossible for you: I do a migration for a fixed price of 100€. 
+You sent me a SQLite file (and the Kimai version you are running) and get a MySQL dump in return, 
+which you can import (eg. with phpmyadmin).
+
+For 150€ you get the full service, I only need your server credentials / hoster login and you will get back a 
+working Kimai with MySQL database and migrated data from SQLite.
