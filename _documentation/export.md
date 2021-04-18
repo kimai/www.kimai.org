@@ -70,11 +70,12 @@ Since 1.13 you can customize the following values from within your PDF templates
  - the generated filename by using the option named `filename`
 
 ```
-{%raw%}
+{% raw %}
 {%- set customer = query.customers|length == 1 ? query.customers.0 : null -%}
 {%- set filename = 'ACME_' ~ (customer is not null ? customer.name|replace({' ': '-'}) ~ '_' : '') ~ query.begin|date_format('Y-m') -%}
 {%- set option = pdfContext.setOption('filename', filename) -%}
-{%endraw%}
+{%- set option = pdfContext.setOption('format', 'A4-L') -%}
+{% endraw %}
 ```
 
 The variable name (here `format` and `filename`) must be one of the mPDF constructor options, ConfigVariables or FontVariables (see links above).
