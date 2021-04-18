@@ -35,7 +35,7 @@ Kimai provides also a [calendar view]({% link _documentation/calendar.md %}), wh
 Since version 1.10 you can configure a lockdown period, which will prevent your users from changing timesheet records in the past.
 
 The lockdown period consists of a `start` and `end` date and a `grace` period. The lockdown feature will only work if all of these fields are configured.
-These fields can be found in the [System configration screen]({% link _documentation/configurations.md %}) and take a [relative date format](https://www.php.net/manual/en/datetime.formats.relative.php) as input.  
+These fields can be found in the [System configuration screen]({% link _documentation/configurations.md %}) and take a [relative date format](https://www.php.net/manual/en/datetime.formats.relative.php) as input.  
 
 These rules apply: 
 - If the start date of a timesheet record is earlier than the lockdown start, it is not possible to edit it any longer
@@ -44,8 +44,8 @@ These rules apply:
 - If a user has the permission `lockdown_override_timesheet` none of the lockdown rules apply
 
 _Configuration:_
-- The start is relative to now and you will likely want to configure a start of a month like `first day of last month 00:00:00` or `first day of -2 month 00:00:00`
-- The end is relative to now and you will likely want to configure the end of of a month like `last day of last month 23:59:59`, `last day of -2 month 23:59:59` or `first day of this month 00:00:00`
+- The start is `relative to now and you will likely want to configure a start of a month like `first day of last month 00:00:00` or `first day of -2 month 00:00:00`
+- The end is `relative to now` and you will likely want to configure the end of a month like `last day of last month 23:59:59`, `last day of -2 month 23:59:59` or `first day of this month 00:00:00`
 - The grace period is relative to the lockdown end (the end date will always be appended, but it could still be overwritten by using the `of` modifier). In 99% you will want to use a relative period like `+10 days` or `+3 weeks`  
 
 **Example 1**
@@ -167,7 +167,7 @@ Kimai will only apply the markdown in the user timesheet and not in the admin se
 
 ## Rounding of begin, end and duration
 
-Rounding rules are used to round the begin & end dates and the duration for timesheet records.
+Rounding rules are used to round the begin & end dates, and the duration for timesheet records.
 
 1. You can define as many rules as you want ("default" is only an example)
 2. Every matching rule will be applied, so be careful with overlapping rules
@@ -182,8 +182,8 @@ You can configure your `rounding` rules by changing the configuration file [loca
 These are the existing rounding modes:
 - `default`: "begin" will always be rounded to the floor (down) and "end" & "duration" to the ceiling (up)
 - `closest`: "begin", "end" and "duration" will be rounded in a mathematical way, always to the nearest value
-- `floor`: "begin", "end" and "duration" will be always rounded down to nearest value
-- `ceil`: "begin", "end" and "duration" will be always rounded up to nearest value
+- `floor`: "begin", "end" and "duration" will always be rounded down to the nearest value
+- `ceil`: "begin", "end" and "duration" will always be rounded up to the nearest value
 
 ### Examples
 
@@ -223,10 +223,16 @@ You can find the [documentation how rates are calculated here]({% link _document
 
 Exported records will be locked to prevent manipulation of cleared data.
  
-The [permission]({% link _documentation/permissions.md %}) `edit_exported_timesheet` does allow to edit and delete these 
+The [permission]({% link _documentation/permissions.md %}) `edit_exported_timesheet` does allow editing and deletion of these 
 locked entries nevertheless, which by default is given to users with `ROLE_ADMIN` and `ROLE_SUPER_ADMIN`. 
 
 The export state can be set manually or via the [invoice]({% link _documentation/invoices.md %}) and [export]({% link _documentation/export.md %}) screens.
+
+## Billable vs. not billable
+
+Since version 1.14 you can define whether a timesheet record is billable or not.
+
+None-billable timesheets are excluded from [invoices]({% link _documentation/invoices.md %}) and budget calculations.
 
 ## Filter and search 
 
@@ -242,7 +248,7 @@ The search drop-down supports filtering by the fields:
 Besides these filters, you can query for a free search term, which will be searched in the fields:
 - `description`
 
-Additionally you can filter for [custom fields]({% link _documentation/meta-fields.md %}) by using a search phrase like `location:homeoffice`.
+Additionally, you can filter for [custom fields]({% link _documentation/meta-fields.md %}) by using a search phrase like `location:homeoffice`.
 This would find all timesheets with the custom field `location` matching the term `homeoffice`.
 
 The search terms will be found within the full value, so searching for `office` would find:
