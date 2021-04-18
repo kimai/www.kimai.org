@@ -47,7 +47,7 @@ You can change the displayed month and (if the user owns the `view_other_timeshe
 - Type of report: `Real times`  
 - Shipped with: `Kimai 1.10 and later`
 
-## Weekly view for all users
+### Weekly view for all users
 
  Displays a full week of working times for all users (that you have access to, see "Permissions").
 
@@ -73,6 +73,16 @@ Display a reporting of all projects (you have access to) which summed up times a
 links to invoice and export screen.
 
 You can change the customer to filter the project list and decide to include projects without budgets and projects without recorded times.
+
+- Required permission: `view_reporting` and `budget_project`
+- Type of report: `Rounded times`  
+- Shipped with: `Kimai 1.14 and later`
+
+### Inactive projects
+
+Display a reporting of all inactive projects, layout is the same as the `Project overview` report.
+
+You can change the date that is used to filter inactive projects (date since last timesheet was recorded).
 
 - Required permission: `view_reporting` and `budget_project`
 - Type of report: `Rounded times`  
