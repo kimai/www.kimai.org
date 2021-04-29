@@ -50,7 +50,7 @@ docker exec -ti kimai2 bash
 
 #### Create a user and dummy data
 
-This creates a user admin/admin with all privileges. 
+This creates a user admin/password with all privileges. 
 ```bash
 docker exec kimai2 /opt/kimai/bin/console kimai:create-user admin admin@example.com ROLE_SUPER_ADMIN password
 ```
