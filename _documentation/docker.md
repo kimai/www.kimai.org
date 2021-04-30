@@ -16,13 +16,13 @@ Any issues with the container rather than the application itself should be raise
 ### Build the docker
 
 ```bash
-docker build -t kimai/kimai2:dev .
+docker build -t my-local-kimai .
 ```
 
 ### Run the docker
 
 ```bash
-docker run -ti -p 8001:8001 --name kimai2 --rm kimai/kimai2:dev
+docker run -ti -p 8001:8001 --name kimai2 --rm my-local-kimai
 ```
 
 You can then access the site on http://127.0.0.1:8001. If that doesn't work check the IP of your docker:
