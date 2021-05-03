@@ -44,9 +44,9 @@ These rules apply:
 - If a user has the permission `lockdown_override_timesheet` none of the lockdown rules apply
 
 _Configuration:_
-- The start is `relative to now and you will likely want to configure a start of a month like `first day of last month 00:00:00` or `first day of -2 month 00:00:00`
+- The start is `relative to now` and you will likely want to configure a start of a month like `first day of last month 00:00:00` or `first day of -2 month 00:00:00`
 - The end is `relative to now` and you will likely want to configure the end of a month like `last day of last month 23:59:59`, `last day of -2 month 23:59:59` or `first day of this month 00:00:00`
-- The grace period is relative to the lockdown end (the end date will always be appended, but it could still be overwritten by using the `of` modifier). In 99% you will want to use a relative period like `+10 days` or `+3 weeks`  
+- The grace period is relative to the lockdown end (the end date will always be appended, but it could still be overwritten by using the `of` modifier). In 99% you will want to use a relative period like `+12 hours`, `+10 days` or `+3 weeks`  
 
 **Example 1**
 
