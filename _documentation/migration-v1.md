@@ -112,6 +112,70 @@ UPDATE `kimai_timeSheet` SET comment = REPLACE(comment, "Ãœ", "Ü") WHERE comm
 UPDATE `kimai_timeSheet` SET comment = REPLACE(comment, "Ã¶", "ö") WHERE comment like "%Ã¶%";
 UPDATE `kimai_timeSheet` SET comment = REPLACE(comment, "Ã–", "Ö") WHERE comment like "%Ã–%";
 UPDATE `kimai_timeSheet` SET comment = REPLACE(comment, "ÃŸ", "ß") WHERE comment like "%ÃŸ%";
+
+UPDATE `kimai_timeSheet` SET description = REPLACE(description, "Ã¤", "ä") WHERE description like "%Ã¤%";
+UPDATE `kimai_timeSheet` SET description = REPLACE(description, "Ã„", "Ä") WHERE description like "%Ã„%";
+UPDATE `kimai_timeSheet` SET description = REPLACE(description, "Ã¼", "ü") WHERE description like "%Ã¼%";
+UPDATE `kimai_timeSheet` SET description = REPLACE(description, "Ãœ", "Ü") WHERE description like "%Ãœ%";
+UPDATE `kimai_timeSheet` SET description = REPLACE(description, "Ã¶", "ö") WHERE description like "%Ã¶%";
+UPDATE `kimai_timeSheet` SET description = REPLACE(description, "Ã–", "Ö") WHERE description like "%Ã–%";
+UPDATE `kimai_timeSheet` SET description = REPLACE(description, "ÃŸ", "ß") WHERE description like "%ÃŸ%";
+
+UPDATE `kimai_users` SET name = REPLACE(name, "Ã¤", "ä") WHERE name like "%Ã¤%";
+UPDATE `kimai_users` SET name = REPLACE(name, "Ã„", "Ä") WHERE name like "%Ã„%";
+UPDATE `kimai_users` SET name = REPLACE(name, "Ã¼", "ü") WHERE name like "%Ã¼%";
+UPDATE `kimai_users` SET name = REPLACE(name, "Ãœ", "Ü") WHERE name like "%Ãœ%";
+UPDATE `kimai_users` SET name = REPLACE(name, "Ã¶", "ö") WHERE name like "%Ã¶%";
+UPDATE `kimai_users` SET name = REPLACE(name, "Ã–", "Ö") WHERE name like "%Ã–%";
+UPDATE `kimai_users` SET name = REPLACE(name, "ÃŸ", "ß") WHERE name like "%ÃŸ%";
+
+UPDATE `kimai_activities` SET name = REPLACE(name, "Ã¤", "ä") WHERE name like "%Ã¤%";
+UPDATE `kimai_activities` SET name = REPLACE(name, "Ã„", "Ä") WHERE name like "%Ã„%";
+UPDATE `kimai_activities` SET name = REPLACE(name, "Ã¼", "ü") WHERE name like "%Ã¼%";
+UPDATE `kimai_activities` SET name = REPLACE(name, "Ãœ", "Ü") WHERE name like "%Ãœ%";
+UPDATE `kimai_activities` SET name = REPLACE(name, "Ã¶", "ö") WHERE name like "%Ã¶%";
+UPDATE `kimai_activities` SET name = REPLACE(name, "Ã–", "Ö") WHERE name like "%Ã–%";
+UPDATE `kimai_activities` SET name = REPLACE(name, "ÃŸ", "ß") WHERE name like "%ÃŸ%";
+
+UPDATE `kimai_projects` SET name = REPLACE(name, "Ã¤", "ä") WHERE name like "%Ã¤%";
+UPDATE `kimai_projects` SET name = REPLACE(name, "Ã„", "Ä") WHERE name like "%Ã„%";
+UPDATE `kimai_projects` SET name = REPLACE(name, "Ã¼", "ü") WHERE name like "%Ã¼%";
+UPDATE `kimai_projects` SET name = REPLACE(name, "Ãœ", "Ü") WHERE name like "%Ãœ%";
+UPDATE `kimai_projects` SET name = REPLACE(name, "Ã¶", "ö") WHERE name like "%Ã¶%";
+UPDATE `kimai_projects` SET name = REPLACE(name, "Ã–", "Ö") WHERE name like "%Ã–%";
+UPDATE `kimai_projects` SET name = REPLACE(name, "ÃŸ", "ß") WHERE name like "%ÃŸ%";
+
+UPDATE `kimai_projects` SET comment = REPLACE(comment, "Ã¤", "ä") WHERE comment like "%Ã¤%";
+UPDATE `kimai_projects` SET comment = REPLACE(comment, "Ã„", "Ä") WHERE comment like "%Ã„%";
+UPDATE `kimai_projects` SET comment = REPLACE(comment, "Ã¼", "ü") WHERE comment like "%Ã¼%";
+UPDATE `kimai_projects` SET comment = REPLACE(comment, "Ãœ", "Ü") WHERE comment like "%Ãœ%";
+UPDATE `kimai_projects` SET comment = REPLACE(comment, "Ã¶", "ö") WHERE comment like "%Ã¶%";
+UPDATE `kimai_projects` SET comment = REPLACE(comment, "Ã–", "Ö") WHERE comment like "%Ã–%";
+UPDATE `kimai_projects` SET comment = REPLACE(comment, "ÃŸ", "ß") WHERE comment like "%ÃŸ%";
+
+UPDATE `kimai_customers` SET name = REPLACE(name, "Ã¤", "ä") WHERE name like "%Ã¤%";
+UPDATE `kimai_customers` SET name = REPLACE(name, "Ã„", "Ä") WHERE name like "%Ã„%";
+UPDATE `kimai_customers` SET name = REPLACE(name, "Ã¼", "ü") WHERE name like "%Ã¼%";
+UPDATE `kimai_customers` SET name = REPLACE(name, "Ãœ", "Ü") WHERE name like "%Ãœ%";
+UPDATE `kimai_customers` SET name = REPLACE(name, "Ã¶", "ö") WHERE name like "%Ã¶%";
+UPDATE `kimai_customers` SET name = REPLACE(name, "Ã–", "Ö") WHERE name like "%Ã–%";
+UPDATE `kimai_customers` SET name = REPLACE(name, "ÃŸ", "ß") WHERE name like "%ÃŸ%";
+
+UPDATE `kimai_expenses` SET designation = REPLACE(designation, "Ã¤", "ä") WHERE designation like "%Ã¤%";
+UPDATE `kimai_expenses` SET designation = REPLACE(designation, "Ã„", "Ä") WHERE designation like "%Ã„%";
+UPDATE `kimai_expenses` SET designation = REPLACE(designation, "Ã¼", "ü") WHERE designation like "%Ã¼%";
+UPDATE `kimai_expenses` SET designation = REPLACE(designation, "Ãœ", "Ü") WHERE designation like "%Ãœ%";
+UPDATE `kimai_expenses` SET designation = REPLACE(designation, "Ã¶", "ö") WHERE designation like "%Ã¶%";
+UPDATE `kimai_expenses` SET designation = REPLACE(designation, "Ã–", "Ö") WHERE designation like "%Ã–%";
+UPDATE `kimai_expenses` SET designation = REPLACE(designation, "ÃŸ", "ß") WHERE designation like "%ÃŸ%";
+
+UPDATE `kimai_expenses` SET comment = REPLACE(comment, "Ã¤", "ä") WHERE comment like "%Ã¤%";
+UPDATE `kimai_expenses` SET comment = REPLACE(comment, "Ã„", "Ä") WHERE comment like "%Ã„%";
+UPDATE `kimai_expenses` SET comment = REPLACE(comment, "Ã¼", "ü") WHERE comment like "%Ã¼%";
+UPDATE `kimai_expenses` SET comment = REPLACE(comment, "Ãœ", "Ü") WHERE comment like "%Ãœ%";
+UPDATE `kimai_expenses` SET comment = REPLACE(comment, "Ã¶", "ö") WHERE comment like "%Ã¶%";
+UPDATE `kimai_expenses` SET comment = REPLACE(comment, "Ã–", "Ö") WHERE comment like "%Ã–%";
+UPDATE `kimai_expenses` SET comment = REPLACE(comment, "ÃŸ", "ß") WHERE comment like "%ÃŸ%";
 ```
 
 #### User accounts without email
