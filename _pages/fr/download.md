@@ -10,12 +10,6 @@ permalink: /fr/download.html
 
 # Téléchargez Kimai - gratuitement !
 
-{% capture docText %}
-Vous trouverez un guide d'installation complet dans notre [Documentation]({% link _documentation/installation.md %}) en anglais.
-{% endcapture %}
-
-{% assign docText = docText|markdownify %}
-{% include alert.html type="success" icon="fas fa-book" alert=docText %}
 
 ### Configuration requise pour le serveur
 
@@ -35,14 +29,12 @@ Ces exigences sont remplies par presque tous les fournisseurs d'hébergement :
 Seuls `git` et `composer` sont nécessaires pour l'[Installation]({% link _documentation/installation.md %}), qui sont exécutés directement sur le système cible.
 Merci de lire attentivement les [Instructions d'installation]({% link _documentation/installation.md %}), il n'y a aucune raison de télécharger Kimai manuellement.
 
-<a href="{% link _documentation/installation.md %}" class="btn btn-success"><i class="fas fa-book"></i> Guide d'installation (anglais)</a>
+{% capture docText %}
+Vous trouverez un guide d'installation complet dans notre [Documentation]({% link _documentation/installation.md %}) en anglais.
+{% endcapture %}
 
-### Plus de téléchargements
-
-<a href="{{ site.kimai_v2_repo }}/archive/{{ site.kimai_v2_version }}.zip" class="btn btn-secondary"><i class="fas fa-download"></i> Version {{ site.kimai_v2_version }} (ZIP)</a>
-<a href="{{ site.kimai_v2_repo }}/zipball/master" class="btn btn-secondary"><i class="fas fa-download"></i> Version de développement (ZIP)</a>
-<a href="{{ site.kimai_v2_repo }}/releases/tag/{{ site.kimai_v2_version }}" class="btn btn-secondary"><i class="fab fa-github"></i> Info version {{ site.kimai_v2_version }} </a>
-<a href="{{ site.kimai_v2_repo }}/releases" class="btn btn-secondary"><i class="fab fa-github"></i> Toutes les versions </a>
+{% assign docText = docText|markdownify %}
+{% include alert.html type="success" icon="fas fa-book" alert=docText %}
 
 ## Version de développement
 
@@ -52,6 +44,9 @@ Si vous êtes un utilisateur expérimenté de Kimai et que vous disposez des res
 
 Aidez-nous, testez Kimai et [informez-nous]({{ site.kimai_v2_repo }}/questions) si vous trouvez des problèmes.
 
-## Hébergement mutualisé / FTP
+### Plus de téléchargements
 
-Ceci n'est pas supporté ! Kimai ne peut pas être installé par FTP.
+<a href="{{ site.kimai_v2_repo }}/archive/{{ site.kimai_v2_version }}.zip" class="btn btn-secondary"><i class="fas fa-download"></i> Version {{ site.kimai_v2_version }} (ZIP)</a>
+<a href="{{ site.kimai_v2_repo }}/zipball/master" class="btn btn-secondary"><i class="fas fa-download"></i> Version de développement (ZIP)</a>
+<a href="{{ site.kimai_v2_repo }}/releases/tag/{{ site.kimai_v2_version }}" class="btn btn-secondary"><i class="fab fa-github"></i> Info version {{ site.kimai_v2_version }} </a>
+<a href="{{ site.kimai_v2_repo }}/releases" class="btn btn-secondary"><i class="fab fa-github"></i> Toutes les versions </a>

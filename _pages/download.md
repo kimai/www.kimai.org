@@ -12,6 +12,24 @@ redirect_from:
 
 # Download Kimai - it's FREE!
 
+<div class="row">
+<div class="col-sm-12 col-lg-8" markdown="1">
+
+### Server requirements
+
+These requirements are provided by almost all hosting companies:
+
+- PHP 7.2.9 or higher ([PHP 8 is not yet supported](https://github.com/kevinpapst/kimai2/pull/2158))
+- PHP extensions: `mbstring`, `gd`, `intl`, `pdo`, `xml`, `zip`, `xsl`
+- Database: MariaDB or MySQL
+- [Webserver](https://www.kimai.org/documentation/webserver-configuration.html) (nginx, Apache with mod_rewrite)
+- A free subdomain (use in sub-directory is not supported)
+- A modern browser
+
+## Installation with SSH
+
+The recommended way to [install Kimai]({% link _documentation/installation.md %}) is to use `git` and `composer` directly on the target system.
+
 {% capture docText %}
 Full installation instructions can be found in our [documentation]({% link _documentation/installation.md %}).
 {% endcapture %}
@@ -19,41 +37,64 @@ Full installation instructions can be found in our [documentation]({% link _docu
 {% assign docText = docText|markdownify %}
 {% include alert.html type="success" icon="fas fa-book" alert=docText %}
 
-### Server requirements 
+## Development version
 
-These requirements are provided by almost all hosting companies:
+A development version is the latest package we are currently working on, also referred to as the `master`.
+It will have new features and bugfixes included (see [demo site]({% link _pages/demo.md %})), but it might not be as stable as an official release.
+Experienced Kimai users can help us testing, by [installing the development version]({% link _documentation/installation.md %}#development-installation) 
+and [leaving feedback]({{ site.kimai_v2_repo }}/issues) if you encounter any problems.
 
-- PHP 7.2.9 or higher ([PHP 8 is not yet supported](https://github.com/kevinpapst/kimai2/pull/2158))
-    - PHP extensions: `mbstring`, `gd`, `intl`, `pdo`, `xml`, `zip`, `xsl`
-- Database: MariaDB or MySQL
-- [Webserver](https://www.kimai.org/documentation/webserver-configuration.html) (nginx, Apache with mod_rewrite ...)
-- A free subdomain (use in subdirectory is not supported)
-- A modern browser
-
-## Installation with SSH 
-
-**The recommended way to install Kimai!** 
-
-You will use `git` and `composer` for the [installation]({% link _documentation/installation.md %}), which will be executed directly on the target system. 
-Please read the [instructions]({% link _documentation/installation.md %}) carefully.
- 
-<a href="{% link _documentation/installation.md %}" class="btn btn-success"><i class="fas fa-book"></i> Read installation docs</a>
-
-### More downloads
+### Download links
 
 <a href="{{ site.kimai_v2_repo }}/archive/{{ site.kimai_v2_version }}.zip" class="btn btn-secondary"><i class="fas fa-download"></i> Version {{ site.kimai_v2_version }} (ZIP)</a>
 <a href="{{ site.kimai_v2_repo }}/zipball/master" class="btn btn-secondary"><i class="fas fa-download"></i> Development version (ZIP)</a>
 <a href="{{ site.kimai_v2_repo }}/releases/tag/{{ site.kimai_v2_version }}" class="btn btn-secondary"><i class="fab fa-github"></i> Release info {{ site.kimai_v2_version }} </a>
 <a href="{{ site.kimai_v2_repo }}/releases" class="btn btn-secondary"><i class="fab fa-github"></i> All releases </a>
 
-## Development version
+</div>
+<div class="col-sm-12 col-lg-4">
+    <div class="card card-md">
+        <div class="card-body text-center">
+            <h4>Kimai - Hosted</h4>
+            <ul class="list-unstyled lh-lg">
+                <li>
+                    Free TLS (SSL) certificate
+                    <i class="fas fa-check text-success"></i>
+                </li>
+                <li>
+                    Hosting & Updates
+                    <i class="fas fa-check text-success"></i>
+                </li>
+                <li>
+                    Backups
+                    <i class="fas fa-check text-success"></i>
+                </li>
+                <li>
+                    Custom-fields plugin
+                    <i class="fas fa-check text-success"></i>
+                </li>
+                <li>
+                    Task management plugin
+                    <i class="fas fa-check text-success"></i>
+                </li>
+                <li>
+                    Expenses plugin
+                    <i class="fas fa-check text-success"></i>
+                </li>
+                <li>
+                    Audit-Trail plugin
+                    <i class="fas fa-check text-success"></i>
+                </li>
+                <li>
+                    <br>
+                    Free plan available for <strong>5</strong> users
+                </li>
+            </ul>
+            <div class="text-center mt-4">
+                <a href="https://www.kimai.cloud/pricing" class="btn btn-primary w-100">Choose plan</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
 
-A development version is the latest package we are currently working on, also referred to as the `master`. 
-It will have new features and bugfixes included (see [demo site]({% link _pages/demo.md %})), but it might not be as stable as an official release.
-If you are an experienced user of Kimai and have the resources to help us with testing or just like to play with brand new features, you should [install the latest development version]({% link _documentation/installation.md %}#development-installation).
-
-Please help us, test it and [leave some feedback]({{ site.kimai_v2_repo }}/issues) if you find any problems.
-
-## Shared hosting / FTP
-
-This is not supported! Kimai cannot be installed via FTP.
