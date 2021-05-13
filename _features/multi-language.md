@@ -7,7 +7,7 @@ order: 30
 ---
 
 Kimai can be localized to any language and is already translated to 
-**Arabic, Basque, Chinese, Czech, Danish, Dutch, English, Esperanto, Finnish, French, German (including Austrian and Swiss), Hebrew, Hungarian, Italian, Japanse, Korean, Polish, Portuguese (Brazilian), Romanian, Russian, Slovakian, Spanish, Swedish, Turkish and Vietnamese**.
+**Arabic, Basque, Chinese, Czech, Danish, Dutch, English, Esperanto, Finnish, French, German (including Austrian and Swiss), Greek, Hebrew, Hungarian, Italian, Japanse, Korean, Polish, Portuguese (Brazilian), Romanian, Russian, Slovakian, Spanish, Swedish, Turkish and Vietnamese**.
 Feel free to send your self-made language files or contributing to the weblate project below  – we’re looking for translators and would appreciate your support!
 
 | Language  | Status |
