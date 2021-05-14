@@ -10,7 +10,8 @@ Each user can configure a personal default reporting screen (since Kimai 1.14) i
 
 There are two kind of report types:
 - `Rounded times` - uses the (rounded) duration, which will be used in invoice and exports as well
-- `Real times` - displays the real tracked times (like the dashboard working time widget) and NOT the rounded times
+- `Real times` - displays the real tracked times (like the dashboard working time widget) and NOT the rounded times, records which are passing midnight will be split into the two entries 
+- `Working times` - Like `Real times` with the difference that entries will not be split at midnight, but calculated for the day of the start time
 
 ## Permissions 
 
@@ -18,6 +19,7 @@ The following [permissions]({% link _documentation/permissions.md %}) are genera
  
 - `view_reporting` - to be able to see the report menu
 - `view_other_timesheet` - for choosing users
+- `view_other_reporting` - for seeing reports with other users  
 - `view_all_data` - see all user (otherwise team member)
 
 If the current user owns the `view_other_timesheet` permission the displayed username will be replaced by a user select box.
@@ -53,7 +55,7 @@ You can change the displayed month and (if the user owns the `view_other_timeshe
 
  You can change the displayed week.
 
- - Required permission: `view_reporting` and `view_other_timesheet`
+ - Required permission: `view_reporting` and `view_other_timesheet` and `view_other_reporting`
  - Type of report: `Real times`  
  - Shipped with: `Kimai 1.14 and later`
  
@@ -63,9 +65,21 @@ Displays a full month of working times for all users (that you have access to, s
 
 You can change the displayed month.
 
-- Required permission: `view_reporting` and `view_other_timesheet`
+- Required permission: `view_reporting` and `view_other_timesheet` and `view_other_reporting`
 - Type of report: `Real times`  
 - Shipped with: `Kimai 1.10 and later`
+ 
+### Yearly view for all users
+
+Displays a full year of working times for all users (that you have access to, see "Permissions").
+
+This report switches from calendar year to financial year, in case your company has configured a financial year. 
+
+You can change the displayed year.
+
+- Required permission: `view_reporting` and `view_other_timesheet` and `view_other_reporting`
+- Type of report: `Working times`  
+- Shipped with: `Kimai 1.15 and later`
 
 ### Project overview
 
