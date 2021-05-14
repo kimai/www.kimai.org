@@ -7,7 +7,7 @@ order: 30
 ---
 
 Kimai can be localized to any language and is already translated to 
-**Arabic, Basque, Chinese, Czech, Danish, Dutch, English, Esperanto, Finnish, French, German (including Austrian and Swiss), Hebrew, Hungarian, Italian, Japanse, Korean, Polish, Portuguese (Brazilian), Romanian, Russian, Slovakian, Spanish, Swedish, Turkish and Vietnamese**.
+**Arabic, Basque, Chinese, Czech, Danish, Dutch, English, Esperanto, Finnish, French, German (including Austrian and Swiss), Greek, Hebrew, Hungarian, Italian, Japanse, Korean, Polish, Portuguese (Brazilian), Romanian, Russian, Slovakian, Spanish, Swedish, Turkish and Vietnamese**.
 Feel free to send your self-made language files or contributing to the weblate project below  – we’re looking for translators and would appreciate your support!
 
 | Language  | Status |
@@ -23,6 +23,7 @@ Feel free to send your self-made language files or contributing to the weblate p
 | Finnish  | [![Translation status](https://hosted.weblate.org/widgets/kimai/fi/svg-badge.svg)](https://hosted.weblate.org/engage/kimai/fi/)  |
 | French  | [![Translation status](https://hosted.weblate.org/widgets/kimai/fr/svg-badge.svg)](https://hosted.weblate.org/engage/kimai/fr/)  |
 | German  | [![Translation status](https://hosted.weblate.org/widgets/kimai/de/svg-badge.svg)](https://hosted.weblate.org/engage/kimai/de/)  |
+| Greek  | [![Translation status](https://hosted.weblate.org/widgets/kimai/el/svg-badge.svg)](https://hosted.weblate.org/engage/kimai/el/)  |
 | Hebrew  | [![Translation status](https://hosted.weblate.org/widgets/kimai/he/svg-badge.svg)](https://hosted.weblate.org/engage/kimai/he/)  |
 | Hungarian  | [![Translation status](https://hosted.weblate.org/widgets/kimai/hu/svg-badge.svg)](https://hosted.weblate.org/engage/kimai/hu/)  |
 | Italian  | [![Translation status](https://hosted.weblate.org/widgets/kimai/it/svg-badge.svg)](https://hosted.weblate.org/engage/kimai/it/)  |
