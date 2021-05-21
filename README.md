@@ -9,7 +9,7 @@ Directory structure:
 - **_v1** contains the old Kimai v1 docs
 - **_documentation** contains the Kimai documentation
 - **_data** contains additional data files / collections that do not have a HTML page
-- **assets** contains all the nifty frontend stuff - SASS, CSS, Javascript, Font and Icon files
+- **assets** contains the frontend stuff - SASS, CSS, Javascript, Font and Icon files
 - **images** contains ONLY images used in the content
 
 For more info read the [Jekyll documentation](http://jekyllrb.com/).
