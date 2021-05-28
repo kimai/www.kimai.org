@@ -59,9 +59,9 @@ See the help for the import command and all its arguments by executing:
 bin/console kimai:import --help
 ```
 
-A full command would look like this:
+A full command could look like this:
 ```bash
-bin/console kimai:import-v1 --timezone="timezone" --language="language" --global "mysql://user:password@127.0.0.1:3306/database?charset=utf8" "db_prefix" "password" "country" "currency" 
+bin/console kimai:import-v1 --global --timezone="timezone" --language="language" "mysql://user:password@127.0.0.1:3306/database?charset=utf8" "db_prefix" "password" "country" "currency" 
 ```
 
 The fields `country` and `currency` are optional and will be set to DE and EUR if not given.
@@ -71,8 +71,8 @@ It is recommended to test the import in a fresh database. You can test your impo
 A sample command could look like that:
 ```bash
 bin/console doctrine:schema:drop --force && \
-bin/console doctrine:schema:create && \
-bin/console kimai:import-v1 --timezone="Europe/Zurich" --language="ch" --global "mysql://kimai:test@127.0.0.1:3306/kimai?charset=latin1" "kimai_" "test123" "CH" "CHF"
+bin/console kimai:install -n && \
+bin/console kimai:import-v1 --global --timezone="Europe/Zurich" --language="ch" "mysql://kimai:test@127.0.0.1:3306/kimai?charset=latin1" "kimai_" "NEW-PASSWORD-1234" "CH" "CHF"
 ```
 That will drop the configured Kimai database schema and re-create it, before importing the data from the `mysql` database at `127.0.0.1` on port `3306` authenticating the user `kimai` with the password `test` for import.
 The connection will use the charset `latin1` and the default table prefix `kimai_` for reading data. Imported users can login with the password `test123` and all customer will have the country `CH` and the currency `CHF` assigned.
