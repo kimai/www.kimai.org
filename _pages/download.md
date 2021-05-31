@@ -19,7 +19,7 @@ redirect_from:
 
 These requirements are provided by almost all hosting companies:
 
-- PHP 7.2.9 or higher ([PHP 8 is not yet supported](https://github.com/kevinpapst/kimai2/pull/2158))
+- PHP 7.3 or higher ([PHP 8 is not yet supported](https://github.com/kevinpapst/kimai2/pull/2158))
 - PHP extensions: `mbstring`, `gd`, `intl`, `pdo`, `xml`, `zip`, `xsl`
 - Database: MariaDB or MySQL
 - [Webserver](https://www.kimai.org/documentation/webserver-configuration.html) (nginx, Apache with mod_rewrite)
