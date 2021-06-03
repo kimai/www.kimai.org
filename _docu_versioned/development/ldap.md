@@ -2,14 +2,12 @@
 title: LDAP
 description: How to use an LDAP directory server with Kimai
 toc: true
-redirect_from: 
-  - /documentation/administrator/authenticator.html
-  - /documentation/authenticator/
+canonical: /documentation/ldap.html
 ---
 
 Kimai supports authentication against your company directory server (LDAP or AD). 
 LDAP users will be imported during the first login and their attributes and groups 
-updated on each following login. 
+updated on each following login.
 
 ## Installation
 
@@ -21,32 +19,12 @@ composer require laminas/laminas-ldap --optimize-autoloader
 ### Activate LDAP authentication
 
 You activate the LDAP authentication by adding the following code to the end of your 
-[local.yaml]({% link _documentation/configurations.md %}):
-
-```yaml
-security:
-    providers:
-        chain_provider:
-            chain:
-                providers: [kimai_ldap]
-    firewalls:
-        secured_area:
-            kimai_ldap: ~
-```  
-
-After that, you need to adjust the LDAP config (see below) and at the end re-build the cache as described in the [configurations chapter]({% link _documentation/configurations.md %}). 
-
-You can deactivate it the other way around, delete or comment the lines above and clear the cache. 
-
-### Configuration
-
-If you want to activate LDAP authentication, you have to adjust your [local.yaml]({% link _documentation/configurations.md %}).
-
-This is the full available configuration, most of the values are optional and their default values were chosen for maximum compatibility with OpenLDAP setup:
+[local.yaml]({% link _documentation/configurations.md %}) and [reloading the cache]({% link _documentation/cache.md %}) afterwards.
 
 ```yaml
 kimai:
     ldap:
+        activate: true
         # more infos about the connection params can be found at:
         # https://docs.laminas.dev/laminas-ldap/api/
         connection:
@@ -196,10 +174,11 @@ kimai:
             #    - { ldap_value: kimai_admin, role: ROLE_ADMIN }
 ``` 
 
+This is the full available configuration, most of the values are optional and their default values were chosen for maximum compatibility with OpenLDAP setup.
 Kimai uses the Laminas Framework LDAP module and uses the configured `connection` parameters without modification. 
 Find out more about the settings in the [detailed documentation](https://docs.laminas.dev/laminas-ldap/api/). 
 
-Remember to re-build the cache for changes to take effect, see [configurations chapter]({% link _documentation/configurations.md %}). 
+You need to re-build the cache for changes to take effect, see [configurations chapter]({% link _documentation/configurations.md %}). 
 
 ## User synchronization
 
@@ -346,6 +325,7 @@ This will only work for very basic LDAP setups, but it demonstrates the power of
 ```yaml
 kimai:
     ldap:
+        activate: true
         connection:
             host: 127.0.0.1
         user:
@@ -383,6 +363,7 @@ A secured local OpenLDAP on port 543 with roles sync for the objectClass `posixA
 ```yaml
 kimai:
     ldap:
+        activate: true
         connection:
             host: 127.0.0.1
             useSsl: true
@@ -417,6 +398,7 @@ This is an [example](https://gist.github.com/firegore/b12d43ef679bd8020a7b5ffa4a
 ```yaml
 kimai:
     ldap:
+        activate: true
         connection:
             host: ad.example.com
             username: user@ad.example.com

@@ -2,9 +2,8 @@
 title: LDAP
 description: How to use an LDAP directory server with Kimai
 toc: true
-redirect_from: 
-  - /documentation/administrator/authenticator.html
-  - /documentation/authenticator/
+since_version: 1.0
+canonical: /documentation/ldap.html
 ---
 
 Kimai supports authentication against your company directory server (LDAP or AD). 
@@ -15,7 +14,7 @@ updated on each following login.
 
 In order to use the LDAP authentication module of Kimai, you have to install the LDAP library:
 ```bash
-composer require laminas/laminas-ldap --optimize-autoloader
+composer require zendframework/zend-ldap --optimize-autoloader
 ```
 
 ### Activate LDAP authentication

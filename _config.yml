@@ -14,6 +14,9 @@ collections:
   documentation:
     output: true
     permalink: /:collection/:name.html
+  docu_versioned:
+    output: true
+    permalink: /documentation/:path.html
   v1:
     output: true
     permalink: /:collection/:name.html
@@ -60,6 +63,12 @@ defaults:
   - scope:
       path: ""
       type: documentation
+    values:
+      layout: documentation
+      lang: en
+  - scope:
+      path: ""
+      type: docu_versioned
     values:
       layout: documentation
       lang: en

@@ -1,6 +1,7 @@
 ---
 title: Reporting
 description: Reporting feature of Kimai
+canonical: /documentation/reporting.html
 toc: true
 ---
 
@@ -63,6 +64,17 @@ You can change the displayed month.
 
 - Required permission: `view_reporting` and `view_other_timesheet` and `view_other_reporting`
 - Type of report: `Real times`  
+ 
+### Yearly view for all users
+
+Displays a full year of working times for all users (that you have access to, see "Permissions").
+
+This report switches from calendar year to financial year, in case your company has configured a financial year. 
+
+You can change the displayed year.
+
+- Required permission: `view_reporting` and `view_other_timesheet` and `view_other_reporting`
+- Type of report: `Working times`  
 
 ### Project overview
 

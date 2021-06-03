@@ -69,12 +69,39 @@ expire_warning: false
 
                         <h2 class="mt-0 mb-4">
 							{{ page.title }}
-							{% if page.since_version != nil %}
-							<span class="tag" style="float: right">
-								Feature added with
-								<span class="tag-addon">v {{ page.since_version }}</span>
+                            <span style="float: right">
+                                {% if page.since_version != nil %}
+                                <span class="tag">
+                                    Feature added with
+                                    <span class="tag-addon">v {{ page.since_version }}</span>
+                                </span>
+                                {% endif %}
+                                {% assign versions = '' | split: ',' %}
+                                {% assign paths = '' | split: ',' %}
+                                {% assign items = site.docu_versioned | sort: 'path' | reverse %}
+                                {% for item in items %}
+                                {% if item.slug == page.slug %}
+                                        {% assign version = item.path | split:'/' %}
+                                        {% if version.size > 2 %}
+                                            {% assign versions = versions | push: version[1] %}
+                                            {% assign paths = paths | push: item.url %}
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% if versions.size > 0 %}
+                                <div class="dropdown">
+                                    <a class="btn btn-primary dropdown-toggle btn-sm" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Kimai version
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        {% for v in versions %}
+                                        <a class="dropdown-item" href="{{ paths[forloop.index0] }}">{{ v }}</a>
+                                        {% endfor %}
+                                        <a class="dropdown-item" href="/documentation/{{ page.slug }}.html">{{ site.kimai_v2_version }} (latest version)</a>
+                                    </div>
+                                </div>
+                                {% endif %}
 							</span>
-							{% endif %}
 						</h2>
 
 						{% if page.in_progress %}

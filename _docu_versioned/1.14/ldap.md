@@ -2,9 +2,7 @@
 title: LDAP
 description: How to use an LDAP directory server with Kimai
 toc: true
-redirect_from: 
-  - /documentation/administrator/authenticator.html
-  - /documentation/authenticator/
+canonical: /documentation/ldap.html
 ---
 
 Kimai supports authentication against your company directory server (LDAP or AD). 

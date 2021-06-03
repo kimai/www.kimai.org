@@ -18,16 +18,16 @@ layout: base
                     <div class="d-none d-sm-flex language-switch">
                         {% if page.lang == 'en' %}
                             <a href="{{ site.data.trans-menu['de'].home.url }}" title="{{ site.data.trans-menu['de'].home.title }}" class="nav-link">DE</a>
-                            <span class="nav-link">EN</span>
+                            <span class="nav-link" style="text-decoration: underline">EN</span>
                             <a href="{{ site.data.trans-menu['fr'].home.url }}" title="{{ site.data.trans-menu['fr'].home.title }}" class="last nav-link">FR</a>
                         {% elsif page.lang == 'de' %}
-                            <span class="nav-link">DE</span>
+                            <span class="nav-link" style="text-decoration: underline">DE</span>
                             <a href="{{ site.data.trans-menu['en'].home.url }}" title="{{ site.data.trans-menu['en'].home.title }}" class="nav-link">EN</a>
                             <a href="{{ site.data.trans-menu['fr'].home.url }}" title="{{ site.data.trans-menu['fr'].home.title }}" class="last nav-link">FR</a>
                         {% else %}
                             <a href="{{ site.data.trans-menu['de'].home.url }}" title="{{ site.data.trans-menu['de'].home.title }}" class="nav-link">DE</a>
                             <a href="{{ site.data.trans-menu['en'].home.url }}" title="{{ site.data.trans-menu['en'].home.title }}" class="nav-link">EN</a>
-                            <span class="last nav-link">FR</span>
+                            <span class="last nav-link" style="text-decoration: underline">FR</span>
                         {% endif %}
                     </div>
                     {% comment %}

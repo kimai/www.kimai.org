@@ -1,7 +1,9 @@
 ---
 title: Reporting
 description: Reporting feature of Kimai
+since_version: "1.10"
 toc: true
+canonical: /documentation/reporting.html
 ---
 
 Access to the reporting screens has every user with the `view_reporting` permission.
@@ -46,15 +48,6 @@ You can change the displayed month and (if the user owns the `view_other_timeshe
 - Required permission: `view_reporting`
 - Type of report: `Real times`  
 
-### Weekly view for all users
-
- Displays a full week of working times for all users (that you have access to, see "Permissions").
-
- You can change the displayed week.
-
- - Required permission: `view_reporting` and `view_other_timesheet` and `view_other_reporting`
- - Type of report: `Real times`  
- 
 ### Monthly view for all users
 
 Displays a full month of working times for all users (that you have access to, see "Permissions").
@@ -63,25 +56,6 @@ You can change the displayed month.
 
 - Required permission: `view_reporting` and `view_other_timesheet` and `view_other_reporting`
 - Type of report: `Real times`  
-
-### Project overview
-
-Display a reporting of all projects (you have access to) which summed up times and money, budget and time-budget progress bars, 
-links to invoice and export screen.
-
-You can change the customer to filter the project list and decide to include projects without budgets and projects without recorded times.
-
-- Required permission: `view_reporting` and `budget_project`
-- Type of report: `Rounded times`  
-
-### Inactive projects
-
-Display a reporting of all inactive projects, layout is the same as the `Project overview` report.
-
-You can change the date that is used to filter inactive projects (date since last timesheet was recorded).
-
-- Required permission: `view_reporting` and `budget_project`
-- Type of report: `Rounded times`  
 
 ## Extending the reports
 
