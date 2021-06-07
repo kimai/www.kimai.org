@@ -3,8 +3,6 @@ title: Installation
 description: How to install Kimai on your server with git, composer and SSH or FTP
 toc: true
 canonical: /documentation/installation.html
-redirect_from:
-  - /documentation/installation/
 ---
 
 The recommended way to install Kimai is via SSH, you need GIT and [Composer](https://getcomposer.org/doc/00-intro.md). 
@@ -54,7 +52,7 @@ The webserver needs write permissions for several directories, so make sure the
 
 There are several options to create your first user:
 
-- via command: `bin/console kimai:create-user username admin@example.com ROLE_SUPER_ADMIN`
+- via command: `bin/console kimai:user:create username admin@example.com ROLE_SUPER_ADMIN`
 - via login screen: you can register a user, the first one will be promoted to the role `ROLE_SUPER_ADMIN`
 - you can configure [LDAP]({% link _documentation/ldap.md %}) or [SAML]({% link _documentation/saml.md %}) for authentication 
 
@@ -181,7 +179,7 @@ webserver directly.
     cd kimai2
     bin/console kimai:reload --env=prod
     ```
-- Create first user: `bin/console kimai:create-user username admin@example.com ROLE_SUPER_ADMIN`
+- Create first user: `bin/console kimai:user:create username admin@example.com ROLE_SUPER_ADMIN`
 - Adjust [Apache configuration](https://www.kimai.org/documentation/webserver-configuration.html)
   to point to the "public" subfolder of the Kimai installation, i.e. set the path to
   `/var/www/vhosts/my-domain.com/kimai2/public`. Also ensure that `ServerName`

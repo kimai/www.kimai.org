@@ -3,9 +3,6 @@ title: Upgrade to Kimai 2 from v1
 description: Install Kimai 2 and import your existing timesheet data from Kimai 1
 toc: true
 canonical: /documentation/migration-v1.html
-redirect_from:
-  - /v1/upgrade-v2.html
-  - /documentation/upgrade-kimai-v1.html
 ---
 
 This documentation covers all necessary steps to migrate from Kimai 1 to Kimai 2.
@@ -62,7 +59,7 @@ bin/console kimai:import --help
 
 A full command could look like this:
 ```bash
-bin/console kimai:import-v1 --global --timezone="timezone" --language="language" "mysql://user:password@127.0.0.1:3306/database?charset=utf8" "db_prefix" "password" "country" "currency" 
+bin/console kimai:import:v1 --global --timezone="timezone" --language="language" "mysql://user:password@127.0.0.1:3306/database?charset=utf8" "db_prefix" "password" "country" "currency" 
 ```
 
 The fields `country` and `currency` are optional and will be set to DE and EUR if not given.
@@ -73,7 +70,7 @@ A sample command could look like that:
 ```bash
 bin/console doctrine:schema:drop --force && \
 bin/console kimai:install -n && \
-bin/console kimai:import-v1 --global --timezone="Europe/Zurich" --language="ch" "mysql://kimai:test@127.0.0.1:3306/kimai?charset=latin1" "kimai_" "NEW-PASSWORD-1234" "CH" "CHF"
+bin/console kimai:import:v1 --global --timezone="Europe/Zurich" --language="ch" "mysql://kimai:test@127.0.0.1:3306/kimai?charset=latin1" "kimai_" "NEW-PASSWORD-1234" "CH" "CHF"
 ```
 That will drop the configured Kimai database schema and re-create it, before importing the data from the `mysql` database at `127.0.0.1` on port `3306` authenticating the user `kimai` with the password `test` for import.
 The connection will use the charset `latin1` and the default table prefix `kimai_` for reading data. Imported users can login with the password `test123` and all customer will have the country `CH` and the currency `CHF` assigned.

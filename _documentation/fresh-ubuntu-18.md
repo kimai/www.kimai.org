@@ -2,6 +2,7 @@
 title: "Install Kimai on a fresh Ubuntu 18.04 LTS"
 description: "How to install Kimai on a brand new Ubuntu 18.04 with database, webserver and SSL certificate"
 toc: true
+canonical: /documentation/fresh-ubuntu-18.html
 ---
 
 This is a collection of snippets to help you with setting up a fresh Ubuntu 18.04 server for using with Kimai.

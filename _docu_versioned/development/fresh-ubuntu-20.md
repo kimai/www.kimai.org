@@ -156,7 +156,7 @@ DATABASE_URL=mysql://kimai2:my-super-secret-password@127.0.0.1:3306/kimai2
 And execute the Kimai installation:
 ```bash
 bin/console kimai:install -n
-bin/console kimai:create-user admin admin@example.com ROLE_SUPER_ADMIN
+bin/console kimai:user:create admin admin@example.com ROLE_SUPER_ADMIN
 ```
 
 {% include file-permissions.html %} 

@@ -67,7 +67,7 @@ Besides these filters, you can query for a free search term, which will be searc
 - `title`
 - `email`
 
-Additionally you can filter for [user preferences]({% link _documentation/user-preferences.md %}) by using a search phrase like `location:homeoffice`.
+Additionally, you can filter for [user preferences]({% link _documentation/user-preferences.md %}) by using a search phrase like `location:homeoffice`.
 This would find all users with the custom field `location` matching the term `homeoffice`.
 
 The search terms will be found within the full value, so searching for `office` would find:
@@ -83,51 +83,38 @@ You can mix the search term and use multiple meta-field queries:
 
 ## User registration
 
-User registration with instant approval is activated by default, so users can register and will be able to login and start time-tracking instantly.
+User registration is disabled by default, as most Kimai installations are available through the public internet.
 
-If you want your new users to use [email verification]({% link _documentation/emails.md %}) add this to your `local.yaml`:
+If your Kimai installation is protected otherwise (e.g. internal network or other authentication mechanism) you can 
+activate it through the `Settings` screen. It is then available via a link in the login screen.
 
-```yaml
-fos_user:
-    registration:
-        confirmation:
-            enabled: true
-```
+If a user enters his data (email, username and password) he will receive an email, with a confirmation link to activate the account.  
 
-If you want to disable the user registration, add this your `local.yaml`: 
-```yaml
-kimai:
-    user:
-        registration: false
-```
+You need to enable [email support]({% link _documentation/emails.md %}) to actually use this feature.
 
 ## Password reset
 
-The reset password function is enabled by default, but you need to activate [email]({% link _documentation/emails.md %}) support if you want to use it.
+The reset password function is enabled by default, you can deactivate it through the `Settings` screen.
 
-If you want to disable the password reset, add this your `local.yaml`: 
-```yaml
-kimai:
-    user:
-        password_reset: false
-```
+A user can reach it via a link from the login screen. After entering username or email-address, an email with a confirmation link will be sent.
+This link needs to be clicked, afterwards the user can enter a new password.
 
-If you want to configure the behaviour (like the allowed time between multiple retries) then configure the settings:
+You can configure two settings to influence the security:
 
-- in `config/packages/fos_user.yaml` the key below `fos_user.registration.resetting` (see [documentation](https://symfony.com/doc/current/bundles/FOSUserBundle/configuration_reference.html))
-- the values `retry_ttl` and `token_ttl` are configured in seconds (7220 = 2 hours) 
+- Token lifetime (in seconds: 3600 = 1 hour) - the allowed time before a link expires
+- Retry pause (in seconds: 3600 = 1 hour) - the allowed time between multiple retries
+  
+You need to enable [email support]({% link _documentation/emails.md %}) to actually use this feature.
 
 ## Login
 
-- User can login with username or email
-- If you activate the `Remember me` option, you can use use the most common functions within the next days without a new login
+User can log-in with username or email.
 
-Kimai uses the FOSUserBundle for security related tasks like user management. 
-Its configuration can be found in [fos_user.yaml]({{ site.kimai_v2_file }}/config/packages/fos_user.yaml).
+If you activate the `Remember me` option, you can use the most common functions within the next time without a new login.
 
 ### Remember me login
 
-If you have chosen to login with the `Remember me` option, your login will be extended to one week (default value).
+If you have chosen to log-in with the `Remember me` option, your login will be extended to one week (default value).
 After coming back and being remembered you have access to all the following features:
  
 - view your own timesheet
@@ -180,5 +167,5 @@ If you lost your admin password and don't have another admin account to reset it
 you can use the following console command:
 
 ```bash
-bin/console fos:user:change-password
+bin/console kimai:user:password
 ```

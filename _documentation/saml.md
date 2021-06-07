@@ -2,6 +2,7 @@
 title: SAML
 description: How to use SAML identity provider with Kimai
 toc: true
+canonical: /documentation/saml.html
 ---
 
 Kimai supports authentication via a SAML provider of your choice (for now it was tested with G Suite and MS Azure accounts). 

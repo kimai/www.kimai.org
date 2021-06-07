@@ -3,11 +3,6 @@ title: Developers
 description: Developer documentation - run, develop, extend and build for Kimai 
 toc: true
 canonical: /documentation/developers.html
-redirect_from:
-  - /documentation/developer/documentation.html
-  - /documentation/developer/introduction.html
-  - /documentation/developer/index.html
-  - /documentation/developer/
 ---
 
 This page is for all developers who want to contribute to Kimai. You rock!
@@ -43,7 +38,7 @@ customers, projects, activities and several thousand timesheet records. Let's bo
 (command only available in `dev` environment): 
 
 ```bash
-bin/console kimai:reset-dev
+bin/console kimai:reset:dev
 ```
 
 Almost there!
@@ -68,7 +63,7 @@ You can now login with these accounts:
 | susan_super    | kitten   | api_kitten | Super-Administrator |
 
 Demo data can always be deleted by dropping the schema and re-creating it.
-The `kimai:reset-dev` command will do that automatically and can always be executed later on to reset your dev database and cache.
+The `kimai:reset:dev` command will do that automatically and can always be executed later on to reset your dev database and cache.
 
 If you want to test with an empty installation, erase the database and re-create an empty schema:
 

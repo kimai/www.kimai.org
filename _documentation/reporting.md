@@ -2,6 +2,7 @@
 title: Reporting
 description: Reporting feature of Kimai
 toc: true
+canonical: /documentation/reporting.html
 ---
 
 Access to the reporting screens has every user with the `view_reporting` permission.
