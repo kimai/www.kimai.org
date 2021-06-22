@@ -56,11 +56,11 @@ kimai:
 
 This will turn the select-boxes into native select elements. 
 
-## Active entries warning
+## Max. active entries warning
 
-A small colored warning sign will be shown, if a user has more than X active timesheet entries.
+A small colored warning sign will be shown, if a user has an active timesheet.
 
-The amount `X` is configured in your `local.yaml` with the setting `timesheet.active_entries.soft_limit` (see [configurations.md]({% link _documentation/configurations.md %})).
+The maximum amount of active timesheets can be configured with the setting `timesheet.active_entries.hard_limit` (called `Permitted number of simultaneously running time entries`)  (see [configurations.md]({% link _documentation/configurations.md %})).
 
 ## Icons
 

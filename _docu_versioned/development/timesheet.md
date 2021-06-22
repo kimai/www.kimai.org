@@ -2,9 +2,6 @@
 title: Timesheet
 description: View and manage your time-tracking data in the timesheet view
 toc: true
-redirect_from: 
-  - /documentation/manual/timesheet.html
-  - /documentation/timesheet/
 canonical: /documentation/timesheet.html
 ---
 
@@ -135,17 +132,14 @@ Please note:
 
 ## Limit active entries
 
-To limit the amount of active entries each user can have, the configuration `active_entries` can be changed:
+To limit the amount of active entries for each user, the configuration `active_entries` can be changed:
 
 ```yaml
 kimai:
     timesheet:
         active_entries:
-            soft_limit: 1
             hard_limit: 1
 ```
-
-The `soft_limit` is used as theme setting (formerly "kimai.theme.active_warning") to display a warning if the user has at least X active recordings.
 
 The `hard_limit` is used to detect how many active records are allowed per user. 
 If `hard_limit` is 1, the active record is automatically stopped when a new one is started.
