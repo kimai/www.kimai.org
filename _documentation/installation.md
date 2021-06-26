@@ -213,7 +213,7 @@ You have two choices:
 
 ## Kubernetes
 
-Asterion Digital have written a guide and automated process for [deploying Kimai on Kubernetes](https://github.com/jmhbnz/kimai-gcp-deployment).
+[Asterion Digital](https://github.com/asterion-digital) have written a guide and automated process for [deploying Kimai on Kubernetes](https://github.com/asterion-digital/kimai-gcp-deployment).
 
 The guide is specifically oriented towards Google Kubernetes Engine, however the `.yaml` resource definition files in the `/config` directory of the respository can be easily applied to any conformant kubernetes cluster by running `kubectl apply -f config/*.yaml` after cloning the repository.
 
