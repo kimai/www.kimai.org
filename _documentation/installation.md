@@ -211,6 +211,12 @@ You have two choices:
 
 [Webarchitects Co-operative](https://www.webarchitects.coop/) have written a [Kimai Ansible Galaxy role](https://git.coop/webarch/kimai) for automatically installing and upgrading Kimai sites on their shared hosting servers.
 
+## Kubernetes
+
+[Asterion Digital](https://github.com/asterion-digital) have written a guide and automated process for [deploying Kimai on Kubernetes](https://github.com/asterion-digital/kimai-gcp-deployment).
+
+The guide is specifically oriented towards Google Kubernetes Engine, however the `.yaml` resource definition files in the `/config` directory of the respository can be easily applied to any conformant kubernetes cluster by running `kubectl apply -f config/*.yaml` after cloning the repository.
+
 ## Installation FAQ
 
 ### SQLSTATE[HY000] [2006] MySQL server has gone away
