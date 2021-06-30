@@ -3,13 +3,9 @@ title: Invoices
 description: Create invoices directly within Kimai from timesheet data in several formats 
 toc: true
 canonical: /documentation/invoices.html
-redirect_from:
-  - /documentation/invoices/
-  - /documentation/developer/invoice-templates.html
-  - /documentation/invoice-templates/
 ---
 
-Kimai allows to create invoices from timesheet data in several formats. 
+Kimai allows creating invoices from timesheet data in several formats. 
 
 ## Invoice number format
 
@@ -18,6 +14,8 @@ You can mix arbitrary characters and the allowed replacer from the list below.
 All examples represent the date `2019-07-09` (2019, July 9th):
 
 - `{date}` - shortcut for `ymd`. Example: `190709` (default format before Kimai 1.9)
+- `{cname}` - the customer name
+- `{cnumber}` - the customer number
 - `{c}` - counter for invoices of all times, starting from 1
 - `{cy}` - counter for invoices this year, starting from 1
 - `{cm}` - counter for invoices this month, starting from 1
