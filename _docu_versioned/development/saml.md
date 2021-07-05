@@ -133,9 +133,13 @@ Links:
 
 For Azure, please check the [Azure SAML documentation]({% link _documentation/azure.md %})
 
+### Keycloak
+
+For Keycloak, please check the [Keycloak SAML documentation]({% link _documentation/keycloak.md %})
+
 ## Known limitations
 
-A manually registered user can login via SAML, but his account account is then migrated to **SAML only**, 
+A manually registered user can login via SAML, but his account is then migrated to **SAML only**, 
 so he can't login via password any longer. 
 Additional all configured SAML attributes will be applied. 
 To change such an account back to "password login", you need to update the `auth` column in the `kimai2_users` table and set the value from `saml` to `kimai`.

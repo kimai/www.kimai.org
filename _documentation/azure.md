@@ -4,7 +4,8 @@ description: How to use Azure AD SAML identity provider with Kimai
 toc: true
 since_version: 1.8
 ---
-## Azure SAML
+
+Go [back to general SAML configuration]({% link _documentation/saml.md %}) for Kimai. 
 
 ### Introduction
 SAML authentication with Azure accounts has proven to work. It requires four phases to get SAML configured. We will call them:
