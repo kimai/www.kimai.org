@@ -116,6 +116,8 @@ A brief description of the available fields:
   - `attribute` (string) the SAML attribute whose values are used for syncing the groups
   - `mapping` (array) an array of role name mappings. The `saml` key is your SAML role name (here `Admins` and `Management`) and the key `kimai` (here `ROLE_ADMIN` and `ROLE_TEAMLEAD`) is the role name in Kimai. Unmapped roles from the SAML message will be IGNORED(!) even if they are existing in Kimai.  
 
+If you have troubles with your certificate you could [try to use this SAML online tool](https://www.samltool.com/format_x509cert.php) to find the correct formatting (whether you trust this tool is up to you!). You could use it with fake data, check the result format and then apply it to your certificate manually.
+
 {% include alert.html type="info" alert="User data and roles are synchronized during each login." %}
 {% include alert.html type="info" alert="Every user automatically owns the ROLE_USER role, you don't have to create a mapping for it." %}
 {% include alert.html type="warning" alert="Every user needs a username and email address, you cannot activate SAML without a mapping for the email. The username cannot be set from SAML attributes, but will always be taken from the SAML request." %}
