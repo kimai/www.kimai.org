@@ -138,11 +138,11 @@ exit;
 
 Clone Kimai and set proper file permissions:
 
-> Replace 1.1 with the latest available version, see: <https://www.kimai.org/documentation/installation.html>
+> Please compare with the latest version infos at: <https://www.kimai.org/documentation/installation.html>
 
 ```bash
 cd /var/www/
-git clone -b 1.12 --depth 1 https://github.com/kevinpapst/kimai2.git
+git clone -b {{ site.kimai_v2_version }} --depth 1 https://github.com/kevinpapst/kimai2.git
 cd kimai2/
 composer install --no-dev --optimize-autoloader
 vim .env
