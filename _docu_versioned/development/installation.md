@@ -119,6 +119,13 @@ If you can't find the correct version, ask your hoster! Or [let us help you]({% 
   - Example composer: `php7.3.5-cli composer.phar install --no-dev --optimize-autoloader`
   - Example installation: `php7.3.5-cli bin/console kimai:install -n`
 
+### All-Inkl 
+
+All-Inkl has several CLI versions of PHP available via `php73`, `php74` and so on.
+Composer is running at `/usr/bin/composer`, so you execute it like that:
+- `php74 /usr/bin/composer install --no-dev --optimize-autoloader` 
+- `php74 bin/console kimai:install -n` 
+
 ### Strato 
 
 Strato has a special setup of PHP, you need to find the proper version first.
