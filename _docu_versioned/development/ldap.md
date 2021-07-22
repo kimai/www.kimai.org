@@ -13,8 +13,14 @@ updated on each following login.
 
 In order to use the LDAP authentication module of Kimai, you have to install the LDAP library:
 ```bash
-composer require laminas/laminas-ldap --optimize-autoloader
+composer require laminas/laminas-ldap --optimize-autoloader --no-dev
 ```
+
+If you see an error message like this:
+```
+laminas/laminas-ldap requires ext-ldap * -> it is missing from your system. Install or enable PHP's ldap extension.
+```
+you have to install the PHP LDAP extension, e.g. on Ubuntu with `apt-get install php-ldap` first.
 
 ### Activate LDAP authentication
 
