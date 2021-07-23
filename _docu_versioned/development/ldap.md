@@ -13,7 +13,7 @@ updated on each following login.
 
 In order to use the LDAP authentication module of Kimai, you have to install the LDAP library:
 ```bash
-composer require laminas/laminas-ldap --optimize-autoloader --no-dev
+composer require laminas/laminas-ldap --optimize-autoloader
 ```
 
 If you see an error message like this:
@@ -67,7 +67,7 @@ kimai:
             
             # LDAP search filter to find the user (%s will be replaced by the username).
             # Should be set, to be compatible with your object structure.
-            # You don not need to set this filter, unless you have a very special setup 
+            # You might not need to set this filter, unless you have a special setup 
             # or use Microsofts Active directory.
             #
             # Defaults:
@@ -284,7 +284,9 @@ After finding a list of group names, they will be converted to Kimai roles:
 - first step is to lookup in `groups` mapping, if there is a match in `ldap_value` and uses the `role` value without further processing 
 - if no mapping was found, the group name will be UPPERCASED and prefixed with `ROLE_` => e.g. `admin` will become `ROLE_ADMIN`
 
-These converted names will validated and [only existing roles]({% link _documentation/users.md %}) will pass to the user profile.  
+These converted names will be validated and [only existing roles]({% link _documentation/users.md %}) will pass to the user profile.  
+
+{% include alert.html type="info" alert="Remove the entire roles configuration block to deactivate role sync!" %}
 
 ## Known limitations
 
