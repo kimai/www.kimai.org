@@ -8,9 +8,7 @@ canonical: /documentation/reporting.html
 Access to the reporting screens has every user with the `view_reporting` permission.
 Each user can configure a personal default reporting screen (since Kimai 1.14) in their user preferences (default: `Weekly view for one user`).
 
-Reports can use different views on the reported times:
-- `Rounded times` - uses the (rounded) duration, which will be used in invoice and exports as well
-- `Real times` - displays the real tracked times (like the dashboard working time widget) and NOT the rounded times, records which are passing midnight will be split into the two entries 
+Reports show the rounded data, which is used throughout Kimai (e.g. in invoice and exports as well). In previous versions, this was different.
 
 The following [permissions]({% link _documentation/permissions.md %}) are generally relevant for all reporting views:
  
@@ -33,7 +31,6 @@ Displays the working times for a week for one user.
 You can change the displayed calendar week and (if the user owns the `view_other_timesheet` permissions) the user to display the report for.
 
 - Required permission: `view_reporting`
-- Type of report: `Real times`  
 
 ### Monthly view for one user
 
@@ -42,7 +39,6 @@ Displays a full month of working times for one user.
 You can change the displayed month and (if the user owns the `view_other_timesheet` permissions) the user to display the report for.
 
 - Required permission: `view_reporting`
-- Type of report: `Real times`  
 
 ## List of users
 
@@ -53,7 +49,6 @@ You can change the displayed month and (if the user owns the `view_other_timeshe
  You can change the displayed week.
 
  - Required permission: `view_reporting` and `view_other_timesheet` and `view_other_reporting`
- - Type of report: `Rounded times`  
  
 ### Monthly view for all users
 
@@ -62,7 +57,6 @@ Displays a full month of working times for all users (that you have access to, s
 You can change the displayed month.
 
 - Required permission: `view_reporting` and `view_other_timesheet` and `view_other_reporting`
-- Type of report: `Rounded times`  
  
 ### Yearly view for all users
 
@@ -73,7 +67,6 @@ This report switches from calendar year to financial year, in case your company 
 You can change the displayed year.
 
 - Required permission: `view_reporting` and `view_other_timesheet` and `view_other_reporting`
-- Type of report: `Rounded times`  
 
 ## Projects
 
@@ -85,13 +78,11 @@ links to invoice and export screen.
 You can change the customer to filter the project list and decide to include projects without budgets and projects without recorded times.
 
 - Required permission: `view_reporting` and `budget_project`
-- Type of report: `Rounded times`  
 
 ### Project details
 
 Shows all kind of reports for the selected project and sums up the times grouped by various characteristics.
 
-- Type of report: `Rounded times`
 
 ### Monthly report
 
@@ -106,7 +97,6 @@ The displayed values are shown for the selected month:
 - the billable percentage is calculated from the values of the selected month
 
 - Required permission: `view_reporting` and `budget_project`
-- Type of report: `Rounded times`  
 
 ### Inactive projects
 
@@ -115,7 +105,6 @@ Display a reporting of all inactive projects, layout is the same as the `Project
 You can change the date that is used to filter inactive projects (date since last timesheet was recorded).
 
 - Required permission: `view_reporting` and `budget_project`
-- Type of report: `Rounded times`  
 
 ## Extending the reports
 
