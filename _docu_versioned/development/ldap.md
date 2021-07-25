@@ -286,7 +286,7 @@ After finding a list of group names, they will be converted to Kimai roles:
 
 These converted names will be validated and [only existing roles]({% link _documentation/users.md %}) will pass to the user profile.  
 
-{% include alert.html type="info" alert="Remove the entire roles configuration block to deactivate role sync!" %}
+{% include alert.html type="info" alert="Remove the entire 'role' configuration block to deactivate role sync!" %}
 
 ## Known limitations
 
