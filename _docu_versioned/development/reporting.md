@@ -83,16 +83,15 @@ You can change the customer to filter the project list and decide to include pro
 
 Shows all kind of reports for the selected project and sums up the times grouped by various characteristics.
 
-
 ### Monthly report
 
-Display a summary of all projects that have logged times for the selected month.
+Display a summary of all projects that are (or were) visible and active for the selected month.
 
-You can change the month that is used to filter logged times.
+You can change the month which is used to filter the projects.
 
 The displayed values are shown for the selected month:
 - monthly budget shows the progressbar of logged time for the selected month
-- full-time budgets show the state at the end of the selected month
+- projects with a regular (full-time) budget show the state for the end of the selected month (so you can see the budget history)
 - working hours and revenue are shown for the selected month
 - the billable percentage is calculated from the values of the selected month
 
