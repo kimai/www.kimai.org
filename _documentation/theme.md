@@ -14,6 +14,24 @@ All Kimai specific theme settings will be available in the twig templates with t
 {% raw %}{{ kimai_context.select_type }}{% endraw %}
 ``` 
 
+## Aligning data in tables
+
+Please stick to the following alignments in your listing:
+
+| Data type             | Alignment |
+|---                    |---|
+| Date                  | Left  |
+| Datetime              | Left  |
+| Time                  | Center  |
+| Money                 | Right  |
+| Duration              | Right  |
+| Boolean               | Center  |
+| Text                  | Left  |
+| Count (int)           | Center (badge)  |
+| Collections (Text)    | Left (label)  |
+
+Always align the table header to the content cell.
+
 ## Default theme color
 
 The default theme colors can be changed to one of the following choices:
