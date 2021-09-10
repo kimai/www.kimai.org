@@ -68,7 +68,7 @@ kimai:
                     binding: 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect'
                 #privateKey: ''
             # only set baseurl, if auto-detection doesn't work
-            #baseurl: 'https://kimai.domain.de'
+            #baseurl: 'https://kimai.domain.de/auth/saml/'
             strict: true
             debug: true
             security:
