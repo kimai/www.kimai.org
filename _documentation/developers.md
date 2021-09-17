@@ -16,7 +16,7 @@ This page is for all developers who want to contribute to Kimai. You rock!
 
 All you need is:
 
-- PHP >= 7.2.9
+- PHP >= 7.3
 - PHP extensions: `pdo-mysql`, `intl`, `zip`, `gd`, `mbstring`, `xml`
 - a MariaDB or MySQL instance
 - [Composer](https://getcomposer.org/download/)
@@ -38,12 +38,12 @@ APP_ENV=dev
 DATABASE_URL=mysql://user:password@127.0.0.1:3306/database?charset=utf8&serverVersion=5.7
 ```
 
-The next command will import demo data, to test the application in its full beauty - with different user accounts, 
-customers, projects, activities and several thousand timesheet records. Let's bootstrap your database 
-(command only available in `dev` environment): 
+The next command will import demo data, to test the application in its full beauty - with different user accounts,
+customers, projects, activities and several thousand timesheet records. Let's bootstrap your database
+(command only available in `dev` environment):
 
 ```bash
-bin/console kimai:reset-dev
+bin/console kimai:reset:dev
 ```
 
 Almost there!
@@ -68,7 +68,7 @@ You can now login with these accounts:
 | susan_super    | kitten   | api_kitten | Super-Administrator |
 
 Demo data can always be deleted by dropping the schema and re-creating it.
-The `kimai:reset-dev` command will do that automatically and can always be executed later on to reset your dev database and cache.
+The `kimai:reset:dev` command will do that automatically and can always be executed later on to reset your dev database and cache.
 
 If you want to test with an empty installation, erase the database and re-create an empty schema:
 
@@ -102,7 +102,7 @@ You can find more information [here](https://symfony.com/doc/current/frontend/en
 
 ## local.yaml
 
-Beware: if you use the `local.yaml` (as proposed in [configurations]({% link _documentation/configurations.md %})) then don't put it 
+Beware: if you use the `local.yaml` (as proposed in [configurations]({% link _documentation/configurations.md %})) then don't put it
 in `config/packages/` as all configs in there are used when running the PHPUnit testsuite.
 
 The (integration) tests are written to work with the default configuration of Kimai and locally changed configs might unexpectedly break the tests.
@@ -111,8 +111,8 @@ Therefor put your `local.yaml` into the `dev/` folder: `config/packages/dev/loca
 
 ## Tests suites with PHPUnit
 
-Kimai tries to adopt a high test and code coverage. Whenever changing code, you have to make sure 
-that the tests are still running. New code needs additional tests, otherwise your pull request might be declined. 
+Kimai tries to adopt a high test and code coverage. Whenever changing code, you have to make sure
+that the tests are still running. New code needs additional tests, otherwise your pull request might be declined.
 
 You can run the unit and integration tests with built-in commands:
 
@@ -121,7 +121,7 @@ composer kimai:tests-unit
 composer kimai:tests-integration
 ```
 
-Or you simply run all tests with one of: 
+Or you simply run all tests with one of:
 
 - `composer kimai:tests`
 - `vendor/bin/phpunit`
@@ -142,7 +142,7 @@ You can run the code sniffer with the built-in command like that:
 composer kimai:codestyle
 ```
 
-And you can also automatically fix the violations by running: 
+And you can also automatically fix the violations by running:
 
 ```bash
 composer kimai:codestyle-fix
@@ -247,9 +247,9 @@ For more details check this [dashboard subscriber]({{ site.kimai_v2_file }}/src/
 You can add your own widgets via plugin by adding two classes:
 
 - a widget implementing `\App\Widget\WidgetInterface`
-  - or for the lazy folks extending `\App\Widget\Type\AbstractWidgetType`
+    - or for the lazy folks extending `\App\Widget\Type\AbstractWidgetType`
 - a widget renderer implementing `\App\Widget\WidgetRendererInterface`
-  - if you want to use twig to render your widget, extend `\App\Widget\Renderer\AbstractTwigRenderer`
+    - if you want to use twig to render your widget, extend `\App\Widget\Renderer\AbstractTwigRenderer`
 
 These widgets can now be injected to the Dashboard as explained above with the `MyDashboardSubscriber`.
 
@@ -275,11 +275,11 @@ In the config `kimai.invoice.documents`, you can add a list of directories with 
 
 ### Adding invoice calculator
 
-An invoice calculator is a class implementing `App\Invoice\CalculatorInterface` and it is responsible for calculating 
-invoice rates, taxes and taking care to aggregate all timesheet entries that should be displayed.   
+An invoice calculator is a class implementing `App\Invoice\CalculatorInterface` and it is responsible for calculating
+invoice rates, taxes and taking care to aggregate all timesheet entries that should be displayed.
 
 Every invoice calculator class will be automatically available, after refreshing the application cache with `bin/console cache:clear`.
-This "magic" happens in the [InvoiceServiceCompilerPass]({{ site.kimai_v2_file }}/src/DependencyInjection/Compiler/InvoiceServiceCompilerPass.php), 
+This "magic" happens in the [InvoiceServiceCompilerPass]({{ site.kimai_v2_file }}/src/DependencyInjection/Compiler/InvoiceServiceCompilerPass.php),
 which finds the classes by the interface `CalculatorInterface`.
 
 The ID of the calculator must be unique, please prefix it with your vendor or bundle name and make sure it only contains
@@ -289,11 +289,11 @@ Translations are stored in the `invoice-calculator.xx.xlf`.
 
 ### Adding invoice-number generator
 
-An invoice-number generator is a class implementing `App\Invoice\NumberGeneratorInterface` and its only task is to generate 
-a number for the invoice. In most cases you do not want to mix multiple invoice-number generators throughout your invoices.   
+An invoice-number generator is a class implementing `App\Invoice\NumberGeneratorInterface` and its only task is to generate
+a number for the invoice. In most cases you do not want to mix multiple invoice-number generators throughout your invoices.
 
 Every invoice number-generator class will be automatically available, after refreshing the application cache with `bin/console cache:clear`.
-This "magic" happens in the [InvoiceServiceCompilerPass]({{ site.kimai_v2_file }}/src/DependencyInjection/Compiler/InvoiceServiceCompilerPass.php), 
+This "magic" happens in the [InvoiceServiceCompilerPass]({{ site.kimai_v2_file }}/src/DependencyInjection/Compiler/InvoiceServiceCompilerPass.php),
 which finds the classes by the interface `NumberGeneratorInterface`.
 
 The ID of the number generator must be unique, please prefix it with your vendor or bundle name and make sure it only contains
@@ -303,11 +303,11 @@ Translations are stored in the `invoice-numbergenerator.xx.xlf`.
 
 ### Adding invoice renderer
 
-An invoice renderer is a class implementing `App\Invoice\RendererInterface` and it is responsible to convert an `InvoiceModel` (the actual data) 
-with the use of an `InvoiceDocument` (the template file) into a downloadable/printable document. 
+An invoice renderer is a class implementing `App\Invoice\RendererInterface` and it is responsible to convert an `InvoiceModel` (the actual data)
+with the use of an `InvoiceDocument` (the template file) into a downloadable/printable document.
 
 Every invoice renderer class will be automatically available, after refreshing the application cache with `bin/console cache:clear`.
-This "magic" happens in the [InvoiceServiceCompilerPass]({{ site.kimai_v2_file }}/src/DependencyInjection/Compiler/InvoiceServiceCompilerPass.php), 
+This "magic" happens in the [InvoiceServiceCompilerPass]({{ site.kimai_v2_file }}/src/DependencyInjection/Compiler/InvoiceServiceCompilerPass.php),
 which finds the classes by the interface `RendererInterface`.
 
 ## Adding export renderer
@@ -373,14 +373,14 @@ Be aware, that you should add more permission (eg. `view_rate_own_timesheet`) ch
 
 ## Adding timesheet calculator
 
-A timesheet calculator will be called on stopped timesheet records. It can rewrite all values but will normally take care 
+A timesheet calculator will be called on stopped timesheet records. It can rewrite all values but will normally take care
 of the columns `begin`, `end`, `duration` and `rate` but could also be used to apply a default `description`.
 
-Timesheet calculator need to implement the interface `App\Timesheet\CalculatorInterface` and will be automatically tagged 
+Timesheet calculator need to implement the interface `App\Timesheet\CalculatorInterface` and will be automatically tagged
 as `timesheet.calculator` in the service container. They will be found and used *only* if you add them to the service container.
 
-You can apply several rules in your config file [local.yaml]({% link _documentation/configurations.md %}) for the existing 
-`DurationCalculator` and `RateCalculator` implementations.  Please read the [configurations chapter]({% link _documentation/configurations.md %}) to find out more. 
+You can apply several rules in your config file [local.yaml]({% link _documentation/configurations.md %}) for the existing
+`DurationCalculator` and `RateCalculator` implementations.  Please read the [configurations chapter]({% link _documentation/configurations.md %}) to find out more.
 
 The configuration for "rounding rules" can be fetched from the container parameter `kimai.timesheet.rounding`.
 
@@ -425,7 +425,7 @@ These events are trigger on all pages, including the security layout.
 ## Adding permissions
 
 New plugins usually ship with a set of own permissions. You should always assign these permissions at least to the `ROLE_SUPER_ADMIN`.
-By doing so, you register the permission in the system and they become available in the [permission admin screen]({% link _documentation/permissions.md %}). 
+By doing so, you register the permission in the system and they become available in the [permission admin screen]({% link _documentation/permissions.md %}).
 
 You register new permission through your [plugins extension class]({% link _documentation/plugins.md %}), by using the `PrependExtensionInterface`:
 
@@ -548,7 +548,7 @@ class Configuration implements ConfigurationInterface
 
 ## Adding API methods
 
-Please have a look at the [DemoBundle](https://github.com/Keleo/DemoBundle), it includes examples for an API controller with serialization. 
+Please have a look at the [DemoBundle](https://github.com/Keleo/DemoBundle), it includes examples for an API controller with serialization.
 
 There is also a (german) blog post that discuss the basics of adding a FOSRestBundle controller to your bundle:
 [https://www.kevinpapst.de/blog/fosrestbundle-via-bundle.html](https://www.kevinpapst.de/blog/fosrestbundle-via-bundle.html)
