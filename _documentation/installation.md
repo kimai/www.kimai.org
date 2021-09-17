@@ -7,12 +7,12 @@ redirect_from:
   - /documentation/installation/
 ---
 
-The recommended way to install Kimai is via SSH, you need GIT and [Composer](https://getcomposer.org/doc/00-intro.md). 
+The recommended way to install Kimai is via SSH, you need GIT and [Composer](https://getcomposer.org/doc/00-intro.md).
 
-## Recommended setup 
+## Recommended setup
 
 To install Kimai in your production environment, connect with SSH to your server and change to your webservers (document) root directory.
-You need to install Git and [Composer](https://getcomposer.org/doc/00-intro.md) if you haven't already. 
+You need to install Git and [Composer](https://getcomposer.org/doc/00-intro.md) if you haven't already.
 
 First clone this repo ({{ site.kimai_v2_version }} is the [latest stable release]({{ site.kimai_v2_repo }}/releases)):
 
@@ -46,17 +46,17 @@ Windows users might have to prefix the composer and installation commands with `
 
 ### File permissions
 
-The webserver needs write permissions for several directories, so make sure the 
+The webserver needs write permissions for several directories, so make sure the
 [file permissions are correct](https://symfony.com/doc/current/setup/file_permissions.html).
-{% include file-permissions.html %} 
+{% include file-permissions.html %}
 
 ### Create your first user
 
 There are several options to create your first user:
 
-- via command: `bin/console kimai:create-user username admin@example.com ROLE_SUPER_ADMIN`
+- via command: `bin/console kimai:user:create username admin@example.com ROLE_SUPER_ADMIN`
 - via login screen: you can register a user, the first one will be promoted to the role `ROLE_SUPER_ADMIN`
-- you can configure [LDAP]({% link _documentation/ldap.md %}) or [SAML]({% link _documentation/saml.md %}) for authentication 
+- you can configure [LDAP]({% link _documentation/ldap.md %}) or [SAML]({% link _documentation/saml.md %}) for authentication
 
 If you are going to [import data from Kimai v1]({% link _documentation/migration-v1.md %}) choose a username & email that was not used in v1.
 
@@ -71,7 +71,7 @@ Oh ... wait! Before you leave, please read the [initial setup guide]({% link _do
 
 ## Docker
 
-There is a dedicated article about [Docker setups]({% link _documentation/docker.md %}) for Kimai, suitable for development and production. 
+There is a dedicated article about [Docker setups]({% link _documentation/docker.md %}) for Kimai, suitable for development and production.
 
 ## Hosting and 1-click installations
 
@@ -88,11 +88,11 @@ Kimai [package](https://github.com/YunoHost-Apps/kimai2_ynh) for [YunoHost](http
 [Cloudron](https://cloudron.io) provides a secure and ready to use Kimai package, which will be kept up-to-date automatically.
 
 [![Install Kimai with Cloudron](https://cloudron.io/img/button32.png)](https://cloudron.io/button.html?app=org.kimai.cloudronapp)
- 
+
 ### Vesta Control Panel
 
 Be aware that VestaCP uses the `admin` user instead of `www-data`. Replace the names in the permission commands above.
-Read [this issue]({{ site.kimai_v2_repo }}/issues/743) if you have further questions. 
+Read [this issue]({{ site.kimai_v2_repo }}/issues/743) if you have further questions.
 
 ### Cloudjiffy
 [CloudJiffy](https://cloudjiffy.com/) provides a scalable, hourly billed and easy to use PaaS platform and the setup of Kimai is [only a click of a button away](https://cloudjiffy.com/blog/solutions/one-click-solutions/kimai-time-tracking-on-cloudjiffy). Kimai is always deployed from the latest Github branch, thus you can rest easy that your software will always be up-to-date.
@@ -108,20 +108,27 @@ If you can't find the correct version, ask your hoster! Or [let us help you]({% 
 - GIT is normally pre-installed and can be used via SSH
 - composer has to be installed manually
 - The default PHP version is often too low (PHP 5.x) - you can check that with `php -v`
-  - If it is lower than 7.2, you have to prefix all commands with the proper version, eg. `/usr/bin/php7.3-cli` (even composer)
-  - Example composer: `/usr/bin/php7.3-cli composer.phar install --no-dev --optimize-autoloader`
-  - Example installation: `/usr/bin/php7.3-cli bin/console kimai:install -n`
+    - If it is lower than 7.3, you have to prefix all commands with the proper version, eg. `/usr/bin/php7.3-cli` (even composer)
+    - Example composer: `/usr/bin/php7.3-cli composer.phar install --no-dev --optimize-autoloader`
+    - Example installation: `/usr/bin/php7.3-cli bin/console kimai:install -n`
 
 ### Domainfactory
 
 - GIT is pre-installed and can be used via SSH
 - composer has to be installed manually: `curl -sS https://getcomposer.org/installer | php7.3.5-cli`
 - The default PHP version is often too low (PHP 5.x or even PHP 4.x) - you can check that with `php -v`
-  - If it is lower than 7.2, you have to prefix all commands with the proper version, eg. `php7.3.5-cli` (even composer)
-  - Example composer: `php7.3.5-cli composer.phar install --no-dev --optimize-autoloader`
-  - Example installation: `php7.3.5-cli bin/console kimai:install -n`
+    - If it is lower than 7.3, you have to prefix all commands with the proper version, eg. `php7.3.5-cli` (even composer)
+    - Example composer: `php7.3.5-cli composer.phar install --no-dev --optimize-autoloader`
+    - Example installation: `php7.3.5-cli bin/console kimai:install -n`
 
-### Strato 
+### All-Inkl
+
+All-Inkl has several CLI versions of PHP available via `php73`, `php74` and so on.
+Composer is running at `/usr/bin/composer`, so you execute it like that:
+- `php74 /usr/bin/composer install --no-dev --optimize-autoloader`
+- `php74 bin/console kimai:install -n`
+
+### Strato
 
 Strato has a special setup of PHP, you need to find the proper version first.
 
@@ -181,7 +188,7 @@ webserver directly.
     cd kimai2
     bin/console kimai:reload --env=prod
     ```
-- Create first user: `bin/console kimai:create-user username admin@example.com ROLE_SUPER_ADMIN`
+- Create first user: `bin/console kimai:user:create username admin@example.com ROLE_SUPER_ADMIN`
 - Adjust [Apache configuration](https://www.kimai.org/documentation/webserver-configuration.html)
   to point to the "public" subfolder of the Kimai installation, i.e. set the path to
   `/var/www/vhosts/my-domain.com/kimai2/public`. Also ensure that `ServerName`
@@ -201,7 +208,7 @@ See issue [#1620](https://github.com/kevinpapst/kimai2/issues/1620).
 
 ## FTP installation
 
-Installation via FTP is not supported. Kimai cannot be installed with FTP. 
+Installation via FTP is not supported. Kimai cannot be installed with FTP.
 
 You have two choices:
 - get a proper webhosting/virtual server with SSH support
@@ -211,24 +218,18 @@ You have two choices:
 
 [Webarchitects Co-operative](https://www.webarchitects.coop/) have written a [Kimai Ansible Galaxy role](https://git.coop/webarch/kimai) for automatically installing and upgrading Kimai sites on their shared hosting servers.
 
-## Kubernetes
-
-[Asterion Digital](https://github.com/asterion-digital) have written a guide and automated process for [deploying Kimai on Kubernetes](https://github.com/asterion-digital/kimai-gcp-deployment).
-
-The guide is specifically oriented towards Google Kubernetes Engine, however the `.yaml` resource definition files in the `/config` directory of the respository can be easily applied to any conformant kubernetes cluster by running `kubectl apply -f config/*.yaml` after cloning the repository.
-
 ## Installation FAQ
 
 ### SQLSTATE[HY000] [2006] MySQL server has gone away
 
-That usually means that your `DATABASE_URL` is wrong. You can run a command like `bin/console doctrine:schema:validate` to check, 
-if the software can connect successfully to your database. 
+That usually means that your `DATABASE_URL` is wrong. You can run a command like `bin/console doctrine:schema:validate` to check,
+if the software can connect successfully to your database.
 
-If that gives you the same error, it is configuration issue which you need to solve first, before you are able to install Kimai. 
+If that gives you the same error, it is configuration issue which you need to solve first, before you are able to install Kimai.
 
 ### Malformed parameter "url"
 
-If you see an error message like this, then you have a special character in your `DATABASE_URL`. 
+If you see an error message like this, then you have a special character in your `DATABASE_URL`.
 ```
 !!  
 !!  In DriverManager.php line 259:
@@ -236,7 +237,7 @@ If you see an error message like this, then you have a special character in your
 !!    Malformed parameter "url".  
 !!
 ```
-This can be a character like `@` or `/` or some others, which need to be urlencoded. 
+This can be a character like `@` or `/` or some others, which need to be urlencoded.
 This can easily be done with one command, lets assume your password is `mG0/d1@3aT.Z)s` then you get your password like this:
 
 ```bash
@@ -251,26 +252,26 @@ DATABASE_URL=mysql://root:mG0%2Fd1%403aT.Z%29s@127.0.0.1:3306/kimai2
 
 ### Which user to use, www-data, httpd or your own?
 
-The installation instructions are intended primarily for server applications. 
+The installation instructions are intended primarily for server applications.
 
-If you are installing Kimai on your personal computer - maybe for use in a local network, but where the computer primarily 
+If you are installing Kimai on your personal computer - maybe for use in a local network, but where the computer primarily
 serves as a single user computer - you will avoid permission errors by substituting `www-data` in the relevant commands with your username.
 
-In particular, `sudo -u www-data` is a command which grants the `www-data` user temporary administrator/super-user privileges). 
-However, depending on the configuration of your particular computer, you may be able to avoid `sudo` altogether (your user 
+In particular, `sudo -u www-data` is a command which grants the `www-data` user temporary administrator/super-user privileges).
+However, depending on the configuration of your particular computer, you may be able to avoid `sudo` altogether (your user
 may already have adequate permissions). Or your webserver user is not called `www-data` but `httpd`.
 
-You can try first leaving `sudo -u www-data` altogether in the relevant commands. 
-If you have permission errors, you can substitute it for `sudo -u $USER` in the relevant commands, where username is the 
+You can try first leaving `sudo -u www-data` altogether in the relevant commands.
+If you have permission errors, you can substitute it for `sudo -u $USER` in the relevant commands, where username is the
 username that runs the server - if you don't know, it is likely your own username that you login with.
 
 #### chown & chmod commands
 
-Further, `chown` and `chmod` commands should be for the username that runs the server instead of `www-data` (again, if you 
+Further, `chown` and `chmod` commands should be for the username that runs the server instead of `www-data` (again, if you
 don't know, it is likely your own username).
 
-Also note that, depending on where you are installing Kimai and how your computer is configured, you may also receive 
-"operation not permitted" errors when setting file permissions (`chown` and `chmod` commands). 
+Also note that, depending on where you are installing Kimai and how your computer is configured, you may also receive
+"operation not permitted" errors when setting file permissions (`chown` and `chmod` commands).
 In that case, prefix them with `sudo`.
 
 ### Troubleshoot
@@ -289,8 +290,8 @@ this error occurs when trying to access the Kimai frontend:
 
 #### Still doesn't work?
 
-These infos were added to give you some possible guidance if you run into troubles. The Linux (and Mac) filesystem 
+These infos were added to give you some possible guidance if you run into troubles. The Linux (and Mac) filesystem
 with its permission structure, especially when using server software, can be tricky and challenging.
 
-But this has NOTHING to do with Kimai and we might not be able to help you in such situations ... it is your system and 
+But this has NOTHING to do with Kimai and we might not be able to help you in such situations ... it is your system and
 responsibility, be aware that wrong permissions might break Kimai and can also lead to security problems.

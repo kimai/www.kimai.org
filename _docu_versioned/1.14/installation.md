@@ -52,7 +52,7 @@ The webserver needs write permissions for several directories, so make sure the
 
 There are several options to create your first user:
 
-- via command: `bin/console kimai:user:create username admin@example.com ROLE_SUPER_ADMIN`
+- via command: `bin/console kimai:create-user username admin@example.com ROLE_SUPER_ADMIN`
 - via login screen: you can register a user, the first one will be promoted to the role `ROLE_SUPER_ADMIN`
 - you can configure [LDAP]({% link _documentation/ldap.md %}) or [SAML]({% link _documentation/saml.md %}) for authentication 
 
@@ -119,13 +119,6 @@ If you can't find the correct version, ask your hoster! Or [let us help you]({% 
   - Example composer: `php7.3.5-cli composer.phar install --no-dev --optimize-autoloader`
   - Example installation: `php7.3.5-cli bin/console kimai:install -n`
 
-### All-Inkl 
-
-All-Inkl has several CLI versions of PHP available via `php73`, `php74` and so on.
-Composer is running at `/usr/bin/composer`, so you execute it like that:
-- `php74 /usr/bin/composer install --no-dev --optimize-autoloader` 
-- `php74 bin/console kimai:install -n` 
-
 ### Strato 
 
 Strato has a special setup of PHP, you need to find the proper version first.
@@ -186,7 +179,7 @@ webserver directly.
     cd kimai2
     bin/console kimai:reload --env=prod
     ```
-- Create first user: `bin/console kimai:user:create username admin@example.com ROLE_SUPER_ADMIN`
+- Create first user: `bin/console kimai:create-user username admin@example.com ROLE_SUPER_ADMIN`
 - Adjust [Apache configuration](https://www.kimai.org/documentation/webserver-configuration.html)
   to point to the "public" subfolder of the Kimai installation, i.e. set the path to
   `/var/www/vhosts/my-domain.com/kimai2/public`. Also ensure that `ServerName`
@@ -215,6 +208,12 @@ You have two choices:
 ## Ansible
 
 [Webarchitects Co-operative](https://www.webarchitects.coop/) have written a [Kimai Ansible Galaxy role](https://git.coop/webarch/kimai) for automatically installing and upgrading Kimai sites on their shared hosting servers.
+
+## Kubernetes
+
+[Asterion Digital](https://github.com/asterion-digital) have written a guide and automated process for [deploying Kimai on Kubernetes](https://github.com/asterion-digital/kimai-gcp-deployment).
+
+The guide is specifically oriented towards Google Kubernetes Engine, however the `.yaml` resource definition files in the `/config` directory of the respository can be easily applied to any conformant kubernetes cluster by running `kubectl apply -f config/*.yaml` after cloning the repository.
 
 ## Installation FAQ
 
