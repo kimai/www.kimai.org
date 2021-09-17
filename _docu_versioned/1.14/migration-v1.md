@@ -24,12 +24,12 @@ Before starting with the migration, please read the following FAQs:
   - fixed-rates and hourly-rates and total rate for timesheet entries are imported
 - Customers in Kimai 2
   - are only used for recording, they cannot login and no user accounts will be created for them
-  - have a country code, which can be set during import or edited afterwards (Kimai v1 didn't know about country)
+  - have a country code, which can be set during import or edited afterwards (Kimai v1 doesn't know the country)
   - have a currency code, which can be set during import or edited afterwards (Kimai v1 only knows one global currency)
 - You have to supply a default password, which will be used for every imported user(!)
   - due to security issues we cannot import the original passwords
   - let your users reset it afterwards with the [Password reset]({% link _documentation/users.md %}) function
-- The import will fail, if a user from v1 has either an empty email, or the same email is used for multiple users. But you can automatically fix that by using the `--fix-email` option
+- The import will fail, if a user from v1 has either an empty email OR the same email is used for multiple users
 - Data which was deleted in Kimai v1 (user, customer, projects, activities) will be imported and set to `invisible`
   - if you don't want that, you have to delete all entries that have the value `1` in the `trash` column before importing
 - Groups import
@@ -39,21 +39,19 @@ Before starting with the migration, please read the following FAQs:
 
 ## Install Kimai
 
-Please read the [installation docs]({% link _documentation/installation.md %}) first and execute the installation.
-You can install it on the same server, but you have to meet the server requirements (see [downloads page]({% link _pages/download.md %})).
-
-The other option is to dump the old database and import it in the new server, the import does not need a running Kimai installation, but only the data!
+You have to install Kimai, please read the [documentation]({% link _documentation/installation.md %}) first.
+You can install it on the same server, but remember that you have to meet the server requirements (see [downloads page]({% link _pages/download.md %})).
 
 After Kimai 2 runs properly, the actual *migration* takes place, by importing the data from your Kimai 1 database into Kimai 2.
-You have to have SSH access to your server, as you will use a command shipped with Kimai 2, which will pull the data into the new database (configured in your `.env` file).
+You have to have SSH access to your server, as you will use a command shipped with Kimai 2, which will pull the data into the configured database from your `.env` file.
 
-The database does not have to be on the same server, and the database user (for the Kimai 1 tables) needs only read access.
+The database does not have to be on the same server and the database user (for the Kimai 1 tables) needs only read access.
      
 ## Database import
 
 {% include alert.html type="warning" alert="It is strongly recommended to test the import, as unexpected problems may occur. If you already created data (like users and customers), backup your Kimai 2 database before performing the first tests!" %} 
 
-See the help for the import command and all its options and arguments by executing:
+See the help for the import command and all its arguments by executing:
 
 ```bash
 bin/console kimai:import --help
@@ -61,40 +59,35 @@ bin/console kimai:import --help
 
 A full command could look like this:
 ```bash
-bin/console kimai:import:v1 --global --timezone="timezone" --language="language" --country="DE" --currency="EUR" --prefix="kimai1_" "mysql://user:password@127.0.0.1:3306/database?charset=utf8" "password" 
+bin/console kimai:import-v1 --global --timezone="timezone" --language="language" "mysql://user:password@127.0.0.1:3306/database?charset=utf8" "db_prefix" "password" "country" "currency" 
 ```
 
-All arguments (eg. `country`, `currency`, `timezone` and `language`) are optional and will be set to sensitive defaults if not provided.
-Most flags are used for imported customers and users, becuase they were optional or not existing in Kimai 1.
+The fields `country` and `currency` are optional and will be set to DE and EUR if not given.
+The flags `timezone` and `language` are used for imported users, in case they didn't set it in Kimai 1 (you should update the preference in Kimai 1 before importing, if you work across different timezones).
 
 It is recommended to test the import in a fresh database. You can test your import as often as you like and fix possible problems in your installation.
 A sample command could look like that:
 ```bash
 bin/console doctrine:schema:drop --force && \
 bin/console kimai:install -n && \
-bin/console kimai:import:v1 --global --timezone="Europe/Zurich" --country="CH" --language="ch" --currency="CHF" "mysql://kimai:test@127.0.0.1:3306/kimai?charset=latin1" "NEW-PASSWORD-1234"
+bin/console kimai:import-v1 --global --timezone="Europe/Zurich" --language="ch" "mysql://kimai:test@127.0.0.1:3306/kimai?charset=latin1" "kimai_" "NEW-PASSWORD-1234" "CH" "CHF"
 ```
 That will drop the configured Kimai database schema and re-create it, before importing the data from the `mysql` database at `127.0.0.1` on port `3306` authenticating the user `kimai` with the password `test` for import.
 The connection will use the charset `latin1` and the default table prefix `kimai_` for reading data. Imported users can login with the password `test123` and all customer will have the country `CH` and the currency `CHF` assigned.
 
 ### Problems and solution
 
-Kimai 1 was written a long time ago, when MySQL was lacking proper UTF8 support and foreign keys.
+Kimai 1 was written a long time ago, when MySQL was lacking proper UTF8 support and foreign keys (in shared hostings).
 While [migrating dozens of customers installations]({% link _store/keleo-installation-support.md %}) I stumbled upon some recurring problems, 
 that can be solved with some SQL commands.  
 
-You can either fix the problems manually as described below, or you let the importer handle all these problems by using the 
-arguments `--fix-email=example.com`, `--fix-utf8` and `--fix-timesheet`. The argument `--skip-error-rates` is also interesting.  
-
-If you want to work on these issues manually (for best results) you find infos and tips below.
+{% include alert.html type="warning" alert="Be aware, depending on your Kimai 1 version the field names might be different in the following snippets" %} 
 
 #### Broken character
 
-{% include alert.html type="warning" alert="Be aware, depending on your Kimai 1 version the field names might be different in the following snippets" %}
-
 Many Kimai 1 installations have broken special character (like german umlauts or other language specific non-ascii characters) in the database.
 
-This problem does not show up in the frontend of Kimai 1, as the database connection is using a different collation as the database, which leads to an implicit encoding change. 
+This problem does not show up in the frontend og Kimai 1, as the database connection is using a different collation then the database. 
 But you can see these problems, when you query the database directly (eg. with a tool like phpMyAdmin). 
 
 You can find these broken entries (mainly timesheet descriptions) with SQL statements like these (in the Kimai 1 database):
@@ -108,7 +101,7 @@ SELECT * FROM `kimai_timeSheet` WHERE comment like "%Ã–%";
 SELECT * FROM `kimai_timeSheet` WHERE comment like "%ÃŸ%";
 ```
 
-Changing them is can be done with SQL queries like these:
+They are not fixed automatically by Kimai, but changing them is then just a matter of rewriting these SQL queries:
 ```sql 
 UPDATE `kimai_timeSheet` SET comment = REPLACE(comment, "Ã¤", "ä") WHERE comment like "%Ã¤%";
 UPDATE `kimai_timeSheet` SET comment = REPLACE(comment, "Ã„", "Ä") WHERE comment like "%Ã„%";
