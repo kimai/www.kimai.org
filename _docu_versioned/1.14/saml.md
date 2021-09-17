@@ -6,12 +6,12 @@ since_version: 1.8
 canonical: /documentation/saml.html
 ---
 
-Kimai supports authentication via a SAML provider of your choice (for now it was tested with G Suite and MS Azure accounts). 
-SAML users will be imported during the first login with their attributes and groups. 
+Kimai supports authentication via a SAML provider of your choice (for now it was tested with G Suite and MS Azure accounts).
+SAML users will be imported during the first login with their attributes and groups.
 
 ## Installation
 
-In order to use the SAML authentication, you have to add configurations changes to your 
+In order to use the SAML authentication, you have to add configurations changes to your
 [local.yaml]({% link _documentation/configurations.md %}) (this example is for G Suite accounts):
 
 ```yaml
@@ -90,7 +90,7 @@ kimai:
                     url: 'https://www.kimai.org'
 ```  
 
-After changing the configuration you need to re-build the cache as described in the [configurations chapter]({% link _documentation/configurations.md %}). 
+After changing the configuration you need to re-build the cache as described in the [configurations chapter]({% link _documentation/configurations.md %}).
 
 ## Configuration details
 
@@ -110,12 +110,14 @@ kimai:
 ```
 
 A brief description of the available fields:
-- `activate` (bool) activates the SAML authentication flow 
+- `activate` (bool) activates the SAML authentication flow
 - `title` (string) the name of the red Login button in the authentication screen
 - `mapping` (array) an array of attributes that will be synced with Kimai. The `kimai` value (`email` and `alias`) are the names in Kimai, the `saml` key (`$Email` and `$FirstName $LastName`) are the attributes from the SAML response. You can assign static values to every user (like `title` = `SAML User`) or you fetch one or more values from the SAML message (`$Email` refers to the SAML attribute `Email` and `$FirstName $LastName` refers to the two SAML attributes `$FirstName` and `$LastName`).
 - `roles` (array) settings related to the user roles syncing
-  - `attribute` (string) the SAML attribute whose values are used for syncing the groups
-  - `mapping` (array) an array of role name mappings. The `saml` key is your SAML role name (here `Admins` and `Management`) and the key `kimai` (here `ROLE_ADMIN` and `ROLE_TEAMLEAD`) is the role name in Kimai. Unmapped roles from the SAML message will be IGNORED(!) even if they are existing in Kimai.  
+    - `attribute` (string) the SAML attribute whose values are used for syncing the groups
+    - `mapping` (array) an array of role name mappings. The `saml` key is your SAML role name (here `Admins` and `Management`) and the key `kimai` (here `ROLE_ADMIN` and `ROLE_TEAMLEAD`) is the role name in Kimai. Unmapped roles from the SAML message will be IGNORED(!) even if they are existing in Kimai.
+
+If you have troubles with your certificate you could [try to use this SAML online tool](https://www.samltool.com/format_x509cert.php) to find the correct formatting (whether you trust this tool is up to you!). You could use it with fake data, check the result format and then apply it to your certificate manually.
 
 {% include alert.html type="info" alert="User data and roles are synchronized during each login." %}
 {% include alert.html type="info" alert="Every user automatically owns the ROLE_USER role, you don't have to create a mapping for it." %}
@@ -127,7 +129,7 @@ You can find more information about the connection configs in the [onelogin/php-
 
 ### G Suite and roles (or groups)
 
-If you want to sync user-roles as well, you have to know that Google doesn't support that out-of-the-box. 
+If you want to sync user-roles as well, you have to know that Google doesn't support that out-of-the-box.
 You need to setup additional user attributes and add those to the SAML attributes of your application.
 
 Links:
@@ -138,18 +140,22 @@ Links:
 
 For Azure, please check the [Azure SAML documentation]({% link _documentation/azure.md %})
 
+### Keycloak
+
+For Keycloak, please check the [Keycloak SAML documentation]({% link _documentation/keycloak.md %})
+
 ## Known limitations
 
-A manually registered user can login via SAML, but his account account is then migrated to **SAML only**, 
-so he can't login via password any longer. 
-Additional all configured SAML attributes will be applied. 
+A manually registered user can login via SAML, but his account is then migrated to **SAML only**,
+so he can't login via password any longer.
+Additional all configured SAML attributes will be applied.
 To change such an account back to "password login", you need to update the `auth` column in the `kimai2_users` table and set the value from `saml` to `kimai`.
 
 ## Using SAML only
 
 Kimai does not support **SAML only** out of the box, but you can disable the normal login flow yb redirecting the URLs to the SAML login.
 
-This is an example for Apache: 
+This is an example for Apache:
 
 ```
 RewriteEngine On
