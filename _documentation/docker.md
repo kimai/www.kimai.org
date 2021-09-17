@@ -9,9 +9,9 @@ canonical: /documentation/docker.html
 
 @tobybatch is managing the Kimai Docker images, both for development and a docker-compose setup suitable for running in a production environment.
 
-- [https://github.com/tobybatch/kimai2](https://github.com/tobybatch/kimai2) - his repository with all the docker sources 
+- [https://github.com/tobybatch/kimai2](https://github.com/tobybatch/kimai2) - his repository with all the docker sources
 - [https://hub.docker.com/r/kimai/kimai2](https://hub.docker.com/r/kimai/kimai2) - dockerhub repo, auto-building prod and dev containers
- 
+
 Any issues with the container rather than the application itself should be raised [here](https://github.com/tobybatch/kimai2/issues).
 
 ### Build the docker
@@ -34,7 +34,7 @@ You can then access the site on http://127.0.0.1:8001. If that doesn't work chec
 
 #### Mac using docker-machine
 
-When using docker-machine on your Mac, you need to use the IP of your machine. 
+When using docker-machine on your Mac, you need to use the IP of your machine.
 Considering you started the machine named `default`, you find the IP with:
 
 ```bash
@@ -51,19 +51,19 @@ docker exec -ti kimai2 bash
 
 #### Create a user and dummy data
 
-This creates a user admin/password with all privileges. 
+This creates a user admin/password with all privileges.
 ```bash
-docker exec kimai2 /opt/kimai/bin/console kimai:create-user admin admin@example.com ROLE_SUPER_ADMIN password
+docker exec kimai2 /opt/kimai/bin/console kimai:user:create admin admin@example.com ROLE_SUPER_ADMIN password
 ```
 
 To install the test data (fixtures):
 ```bash
-docker exec kimai2 /opt/kimai/bin/console kimai:reset-dev
+docker exec kimai2 /opt/kimai/bin/console kimai:reset:dev
 ```
 
 ### Using a custom local.yaml
 
-You can mount a [custom configuration]({% link _documentation/configurations.md %}) into the container while starting it: 
+You can mount a [custom configuration]({% link _documentation/configurations.md %}) into the container while starting it:
 ```bash
 docker run --rm -ti -p 8001:8001 --name kimai2 -v $(pwd)/config/packages/local.yaml:/opt/kimai/config/packages/local.yaml kimai/kimai2:dev
 ```
