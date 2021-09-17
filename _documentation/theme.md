@@ -5,7 +5,7 @@ toc: true
 canonical: /documentation/theme.html
 ---
 
-Kimai uses the [AdminLTE theme](https://github.com/kevinpapst/AdminLTEBundle/) which can be configured in the file `config/packages/admin_lte.yaml`. 
+Kimai uses the [AdminLTE theme](https://github.com/kevinpapst/AdminLTEBundle/) which can be configured in the file `config/packages/admin_lte.yaml`.
 You find the theme specific documentation [here](https://github.com/kevinpapst/AdminLTEBundle/blob/master/Resources/docs/configurations.md).
 
 All Kimai specific theme settings will be available in the twig templates with the global `kimai_context` key, e.g.
@@ -34,7 +34,7 @@ Always align the table header to the content cell.
 
 ## Default theme color
 
-The default theme colors can be changed to one of the following choices:
+Kimai supports the AdminLTE themes:
 
 - skin-blue
 - skin-blue-light
@@ -49,22 +49,16 @@ The default theme colors can be changed to one of the following choices:
 - skin-black
 - skin-black-light
 
-Add this to your [local.yaml]({% link _documentation/configurations.md %}).
+Each user can change the theme color to their wish (if they have the permission to change their preferences).
+It is recommended to leave the choice to the user, as colors and contrasts are not only a matter of personal choice but might also be necessary for people with visual impairments.
 
-```yaml
-admin_lte:
-    options:
-        skin: skin-blue-light
-```
-
-Please note: unless you change the [permissions]({% link _documentation/permissions.md %}), users can still change the theme color to their wish.
-It is recommended to leave the choice to the user, as colors and contrasts are not only a matter of personal choice but might also be necessary for people with visual impairments. 
+The default theme for new created users can be configured in the system settings.
 
 ## Searchable input types
 
-The select boxes for customer, project and activity are by default (since 1.4) searchable Javascript components. 
+The select boxes for customer, project and activity are by default (since 1.4) searchable Javascript components.
 
-If you don't like the way this component behaves (eg. if you want native elements on mobile) you can deactivate it by setting the following config  
+If you don't like the way this component behaves (eg. if you want native elements on mobile) you can deactivate it by setting the following config
 
 ```yaml
 kimai:
@@ -72,18 +66,18 @@ kimai:
         select_type: ~
 ```
 
-This will turn the select-boxes into native select elements. 
+This will turn the select-boxes into native select elements.
 
-## Active entries warning
+## Max. active entries warning
 
-A small colored warning sign will be shown, if a user has more than X active timesheet entries.
+A small colored warning sign will be shown, if a user has an active timesheet.
 
-The amount `X` is configured in your `local.yaml` with the setting `timesheet.active_entries.soft_limit` (see [configurations.md]({% link _documentation/configurations.md %})).
+The maximum amount of active timesheets can be configured with the setting `timesheet.active_entries.hard_limit` (called `Permitted number of simultaneously running time entries`)  (see [configurations.md]({% link _documentation/configurations.md %})).
 
 ## Icons
 
-Kimai allows you to configure icons in several places (provided by [Font Awesome 5](https://fontawesome.com/icons)) and ships 
-with a pre-defined list of icon aliases to guarantee a consistent look.  
+Kimai allows you to configure icons in several places (provided by [Font Awesome 5](https://fontawesome.com/icons)) and ships
+with a pre-defined list of icon aliases to guarantee a consistent look.
 
 The pre-defined icons aliases can be found in this [IconExtension]({{ site.kimai_v2_file }}/src/Twig/IconExtension.php).
 
@@ -92,18 +86,3 @@ Icon aliases can be used by applying the `icon` filter, e.g.
 ```
 {% raw %}<i class="{{ 'money'|icon }}"></i>{% endraw %}
 ```
-
-## Colors
-
-Kimai allows you to use different color schemes in several places. 
-
-Possible values are:
-
-- `aqua`
-- `black`
-- `blue`
-- `gray`
-- `green`
-- `purple`
-- `red`
-- `yellow`

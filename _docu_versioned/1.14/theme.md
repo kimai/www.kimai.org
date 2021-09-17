@@ -14,6 +14,24 @@ All Kimai specific theme settings will be available in the twig templates with t
 {% raw %}{{ kimai_context.select_type }}{% endraw %}
 ``` 
 
+## Aligning data in tables
+
+Please stick to the following alignments in your listing:
+
+| Data type             | Alignment |
+|---                    |---|
+| Date                  | Left  |
+| Datetime              | Left  |
+| Time                  | Center  |
+| Money                 | Right  |
+| Duration              | Right  |
+| Boolean               | Center  |
+| Text                  | Left  |
+| Count (int)           | Center (badge)  |
+| Collections (Text)    | Left (label)  |
+
+Always align the table header to the content cell.
+
 ## Default theme color
 
 The default theme colors can be changed to one of the following choices:
@@ -56,11 +74,11 @@ kimai:
 
 This will turn the select-boxes into native select elements. 
 
-## Max. active entries warning
+## Active entries warning
 
-A small colored warning sign will be shown, if a user has an active timesheet.
+A small colored warning sign will be shown, if a user has more than X active timesheet entries.
 
-The maximum amount of active timesheets can be configured with the setting `timesheet.active_entries.hard_limit` (called `Permitted number of simultaneously running time entries`)  (see [configurations.md]({% link _documentation/configurations.md %})).
+The amount `X` is configured in your `local.yaml` with the setting `timesheet.active_entries.soft_limit` (see [configurations.md]({% link _documentation/configurations.md %})).
 
 ## Icons
 
