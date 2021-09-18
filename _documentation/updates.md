@@ -43,3 +43,21 @@ Remember to adjust the file permissions if necessary.
 {% include upgrading-note.html %} 
 
 That's it, Kimai is running the most current version. Enjoy the latest time-tracking features!
+
+## Troubleshooting
+
+If you experience an issue like this (file name can vary) while performing the `git update`: 
+
+```
+error: Your local changes to the following files would be overwritten by checkout:
+symfony.lock
+Please commit your changes or stash them before you switch branches.
+```
+
+It means you have changes in at least one of the files in your installation.
+This can happen by installation of the additional LDAP packages or a changed configuration file (which was not meant to be changed). 
+
+These changes need to be reverted before the update can be executed. 
+One possible solution is to use `git stash`, which will store your changes in a temporary location.
+If that fails for some reason, the other (rather extreme) option is to run `git reset --hard`, 
+which will wipe all local changes. 
