@@ -30,9 +30,10 @@ Kimai provides also a [calendar view]({% link _documentation/calendar.md %}), wh
 
 ## Lockdown period
 
-Since version 1.10 you can configure a lockdown period, which will prevent your users from changing timesheet records in the past.
+You can configure a lockdown period, which will prevent your users from changing timesheet records in the past.
 
-The lockdown period consists of a `start` and `end` date and a `grace` period. The lockdown feature will only work if all of these fields are configured.
+The lockdown period consists of a `start` and `end` date and a `grace` period. 
+The lockdown feature will only work if all of these fields are configured.
 These fields can be found in the [System configuration screen]({% link _documentation/configurations.md %}) and take a [relative date format](https://www.php.net/manual/en/datetime.formats.relative.php) as input.
 
 These rules apply:
