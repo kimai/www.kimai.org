@@ -4,8 +4,6 @@ redirect_from:
   - /documentation/team/
 ---
 
-## Documentation for project maintainer
-
 - Prepare a GitHub release-draft `x.x`
 - Change version constants in [src/Constants.php]({{ site.kimai_v2_file}}/src/Constants.php)
 - Adjust the file [UPGRADING.md]({{ site.kimai_v2_file}}/UPGRADING.md) with version specific information
