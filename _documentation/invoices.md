@@ -39,7 +39,7 @@ Each replacer (x) can be combined with a length formatter, which will prepend (X
 Example: to get a three digit long string with year counter use `{cy,3}`, which results in `001` for the first invoice of the year.
 
 {% capture additional_chars %}
-Characters outside the replacer may **not** include `{` and `}`.
+Characters outside the replacer **cannot** include `{` and `}`.
 {% endcapture %}
 {% assign additional_chars = additional_chars| markdownify %}
 {% include alert.html icon="fas fa-exclamation" type="warning" alert=additional_chars %}
@@ -88,21 +88,23 @@ By default, every timesheet records is billable, but users can set the billable 
 
 [Expense items]({% link _store/keleo-expenses-bundle.md %}) have a configurable billable flag per item and only the ones marked as billable (refundable) will be included.
 
+***
+
 ## Invoice document
 
 The invoice system currently supports the following formats:
 
-- `HTML`
-    - through the use of Twig templates
-    - filename must end with `.html.twig`
-    - Pro: no need for additional software, print or convert to PDF from your browser (if supported)
-    - Contra: you have to understand HTML and Twig
-    - **the recommended invoice document format**
 - `PDF` (since Kimai 1.9)
     - through the use of Twig templates
     - filename must end with `.pdf.twig`
     - Pro: no need for additional software
     - Contra: you have to understand HTML, Twig and the MPDF library
+    - **the recommended invoice document format**
+- `HTML`
+    - through the use of Twig templates
+    - filename must end with `.html.twig`
+    - Pro: no need for additional software, print or convert to PDF from your browser (if supported)
+    - Contra: you have to understand HTML and Twig
 - `DOCX`
     - OOXML - Open Office XML Text
     - Microsoft Word 2007-2013 XML
@@ -125,14 +127,12 @@ The invoice system currently supports the following formats:
     - Pro: good for exporting and creating enhanced reports with an office software package
     - Contra: only row based information possible (meta information can't be used properly), UTF-8 is not properly supported when using Excel (see [this issue]({{ site.kimai_v2_repo }}/issues/1537))
 
-**Be aware**: the default templates were created and tested ONLY with LibreOffice!
-
 ### Create your own invoice document
 
 Invoice documents are searched in two locations:
 
 - `var/invoices/` - does not exist by default, please create it when you add a new document
-- `templates/invoice/renderer/` - don't change files in here, will be overwritten with te next update
+- `templates/invoice/renderer/` - don't change files in here, will be overwritten with the next update
 
 Be aware of the following rules:
 
@@ -140,40 +140,13 @@ Be aware of the following rules:
 - You can use every document name only once: so having `kimai.html.twig` and `kimai.docx` will lead to unpredictable results (the first file to be found takes precedence)
 - Kimai looks for templates in `var/invoices/` first, so you can overwrite default templates
 - You should store your templates in `var/invoices/`, as this directory is not shipped with Kimai and not touched during updates
-- You can configure different search directories through the config key `kimai.invoice.documents` if you want to add additional template source directories
-- You can hide the default templates by setting the key `kimai.invoice.defaults` to an empty array / null
-- New or updated templates can be uploaded via the UI
+- You can [configure different search directories]({% link _documentation/local-yaml.md %}) through the config key `kimai.invoice.documents` if you want to add additional template source directories
 
 {% include alert.html icon="fas fa-exclamation" type="warning" alert="Do NOT change the default templates, but copy the file and save it (with a new filename) at var/invoices/" %}
 
-After you changed an invoice template, you have to clear the cache to see the results:
-{% include cache-refresh.html %}
+After you changed an invoice template, you have to [clear the cache]({% link _documentation/cache.md %}) to see the results.
 
-You can have a look at [https://github.com/Keleo/kimai2-invoice-templates](https://github.com/Keleo/kimai2-invoice-templates) to get some inspirations.
-
-#### Configure search path
-
-An example configuration in [local.yaml]({% link _documentation/configurations.md %}) might look like this (this shouldn't be necessary in 90% of all use-cases):
-
-```yaml
-kimai:
-    invoice:
-        # disable the default locations 
-        defaults: ~
-        # add a new search location
-        documents:
-            - 'var/my_invoices/'
-```
-
-### Uploading invoice documents
-
-Sine Kimai 1.8 you can upload invoice documents via the UI at `/en/invoice/document_upload`.
-
-Due to security restriction currently only the upload of the following formats is allowed: `DOCX`, `ODS`, `XLSX`.
-
-There is a known bug in LibreOffice which exports DOCX files with a wrong mime-type. These files will not be accepted
-by Kimai with the error `This file type is not allowed` ([read this issue](https://github.com/kevinpapst/kimai2/issues/1916) for more information).
-The workaround is to change the document with another word processor: Apple pages, Google Drive and Microsoft 365 Online Office will export the DOCX files with the correct mimetype.
+You can have a look at [https://github.com/Keleo/kimai2-invoice-templates](https://github.com/Keleo/kimai2-invoice-templates) to get some code inspirations.
 
 ### Twig templates
 
@@ -392,7 +365,17 @@ If an activity was selected in the invoice filter (search form) the following va
 | ${activity.meta.x} | The activity [meta field]({% link _documentation/meta-fields.md %}) named `X`. The internal name `X` needs to be used in lowercase letters, eg. `FooBar` will be available as `${activity.meta.foobar}`. Only available if the field is visible.  |
 
 If you selected more than one project in the search, you will have further variables called `${activity.1.X}`, `${activity.2.X}` and so on.
-The order is not guaranteed, so it is not recommended to rely on those variables.
+The order is not guaranteed, so it is not recommended relying on those variables.
+
+### Uploading invoice documents
+
+Sine Kimai 1.8 you can upload invoice documents via the UI at `/en/invoice/document_upload`.
+
+Due to security restriction currently only the upload of the following formats is allowed: `DOCX`, `ODS`, `XLSX`.
+
+There is a known bug in LibreOffice which exports DOCX files with a wrong mime-type. These files will not be accepted
+by Kimai with the error `This file type is not allowed` ([read this issue](https://github.com/kevinpapst/kimai2/issues/1916) for more information).
+The workaround is to change the document with another word processor: Apple pages, Google Drive and Microsoft 365 Online Office will export the DOCX files with the correct mimetype.
 
 ## Create invoices with cronjobs
 

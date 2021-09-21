@@ -49,7 +49,7 @@ The default theme colors can be changed to one of the following choices:
 - skin-black
 - skin-black-light
 
-Add this to your [local.yaml]({% link _documentation/configurations.md %}).
+Add this to your [local.yaml]({% link _documentation/local-yaml.md %}).
 
 ```yaml
 admin_lte:
@@ -78,7 +78,7 @@ This will turn the select-boxes into native select elements.
 
 A small colored warning sign will be shown, if a user has more than X active timesheet entries.
 
-The amount `X` is configured in your `local.yaml` with the setting `timesheet.active_entries.soft_limit` (see [configurations.md]({% link _documentation/configurations.md %})).
+The amount `X` is configured in your [local.yaml]({% link _documentation/configurations.md %}) with the setting `timesheet.active_entries.soft_limit`.
 
 ## Icons
 

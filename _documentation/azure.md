@@ -71,7 +71,7 @@ Other languages are accessible through the Microsoft Documentation under:
 ![Picture](/images/documentation/azure-saml-pic7.png)
 
 ### Setting Up Kimai
-Kimai uses a [local.yaml]({% link _documentation/configurations.md %}) configuration file for changes in the application. This configuration file has to be created by the user itself under `/config/packages/local.yaml`.
+Kimai uses a [local.yaml]({% link _documentation/local-yaml.md %}) configuration file for changes in the application. This configuration file has to be created by the user itself under `/config/packages/local.yaml`.
 
 Configuration Example:
 ```yaml

@@ -102,7 +102,7 @@ You can find more information [here](https://symfony.com/doc/current/frontend/en
 
 ## local.yaml
 
-Beware: if you use the `local.yaml` (as proposed in [configurations]({% link _documentation/configurations.md %})) then don't put it
+Beware: if you use the [local.yaml]({% link _documentation/local-yaml.md %}) then don't put it
 in `config/packages/` as all configs in there are used when running the PHPUnit testsuite.
 
 The (integration) tests are written to work with the default configuration of Kimai and locally changed configs might unexpectedly break the tests.
@@ -379,9 +379,6 @@ of the columns `begin`, `end`, `duration` and `rate` but could also be used to a
 Timesheet calculator need to implement the interface `App\Timesheet\CalculatorInterface` and will be automatically tagged
 as `timesheet.calculator` in the service container. They will be found and used *only* if you add them to the service container.
 
-You can apply several rules in your config file [local.yaml]({% link _documentation/configurations.md %}) for the existing
-`DurationCalculator` and `RateCalculator` implementations.  Please read the [configurations chapter]({% link _documentation/configurations.md %}) to find out more.
-
 The configuration for "rounding rules" can be fetched from the container parameter `kimai.timesheet.rounding`.
 
 The configuration for "hourly-rates multiplication factors" can be fetched from the container parameter `kimai.timesheet.rates`.
@@ -392,7 +389,81 @@ See [meta fields]({% link _documentation/meta-fields.md %}) documentation.
 
 ## Adding UserPreference
 
-See [user preferences]({% link _documentation/user-preferences.md %}) documentation.
+Developers can register new user preferences from within [their plugin]({% link _documentation/plugins.md %}) as easy as that:
+
+```php
+use App\Entity\UserPreference;
+use App\Event\UserPreferenceEvent;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+
+class UserProfileSubscriber implements EventSubscriberInterface
+{
+    public static function getSubscribedEvents(): array
+    {
+        return [
+            UserPreferenceEvent::CONFIGURE => ['loadUserPreferences', 200]
+        ];
+    }
+
+    public function loadUserPreferences(UserPreferenceEvent $event)
+    {
+        if (null === ($user = $event->getUser())) {
+            return;
+        }
+
+        // You attach every field to the event and all the heavy lifting is done by Kimai.
+        // The value is the default as long as the user has not yet updated his preferences,
+        // otherwise it will be overwritten with the users choice, stored in the database.
+        $event->addPreference(
+            (new UserPreference())
+                ->setName('fooooo-bar')
+                ->setValue(false)
+                ->setType(CheckboxType::class)
+        );
+    }
+}
+```
+
+### Displaying and exporting UserPreferences
+
+With Kimai 1.4 you can display and export user preferences.
+Supported fields will be shown as new columns in the data-table for users.
+Additionally these preferences will be added to HTML and Spreadsheet exports.
+
+As Kimai cannot query all existing users for possible preferences, you need to listen to a new event and register the desired preference.
+
+
+```php
+use App\Entity\UserPreference;
+use App\Event\UserPreferenceDisplayEvent;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+
+class UserProfileSubscriber implements EventSubscriberInterface
+{
+    public static function getSubscribedEvents(): array
+    {
+        return [
+            UserPreferenceDisplayEvent::class => ['loadUserPreferences', 200]
+        ];
+    }
+
+    public function loadUserPreferences(UserPreferenceDisplayEvent $event)
+    {
+
+        // You attach every field to the event and all the heavy lifting is done by Kimai.
+        // The value is the default as long as the user has not yet updated his preferences,
+        // otherwise it will be overwritten with the users choice, stored in the database.
+        $event->addPreference(
+            (new UserPreference())
+                ->setName('fooooo-bar')
+                ->setValue(false)
+                ->setType(CheckboxType::class)
+        );
+    }
+}
+```
 
 ## Adding custom meta tags, stylesheets or javascript
 
@@ -424,8 +495,9 @@ These events are trigger on all pages, including the security layout.
 
 ## Adding permissions
 
-New plugins usually ship with a set of own permissions. You should always assign these permissions at least to the `ROLE_SUPER_ADMIN`.
-By doing so, you register the permission in the system and they become available in the [permission admin screen]({% link _documentation/permissions.md %}).
+New plugins usually ship with a set of own permissions. 
+You should always assign these permissions at least to the `ROLE_SUPER_ADMIN`.
+By doing so, you register the permission in the system and they become available in the [permission administration]({% link _documentation/permissions.md %}).
 
 You register new permission through your [plugins extension class]({% link _documentation/plugins.md %}), by using the `PrependExtensionInterface`:
 
@@ -455,7 +527,9 @@ class YourExtension extends Extension implements PrependExtensionInterface
 }
 ```
 
-If you don't register your permissions, your users will have to edit their [local.yaml]({% link _documentation/configurations.md %}), please avoid that!
+If you don't register your permissions, your users will not be able to change them [via the UI]({% link _documentation/permissions.md %}).
+
+There is an introduction available, if you want to understand the [permission structure]({% link _documentation/permission-structure.md %}).
 
 ## Adding system configuration
 
@@ -546,9 +620,75 @@ class Configuration implements ConfigurationInterface
 }
 ```
 
+## Extending the reports
+
+You can add your own views to the reporting panel by listening to the `ReportingEvent`:
+
+```php
+namespace KimaiPlugin\DemoBundle\EventSubscriber;
+
+use App\Event\ReportingEvent;
+use App\Reporting\Report;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+
+final class ReportingEventSubscriber implements EventSubscriberInterface
+{
+    public static function getSubscribedEvents(): array
+    {
+        return [
+            ReportingEvent::class => ['onReportingMenu', 100],
+        ];
+    }
+
+    public function onReportingMenu(ReportingEvent $event)
+    {
+        // add a report to the menu: unique id,      the route name,     the label to be translated
+        $event->addReport(new Report('week_by_user', 'report_user_week', 'report_user_week'));
+    }
+}
+```
+Now all you need to do: create a controller that renders your report.
+Make sure to include an `@Security("is_granted('view_reporting')")` permission check.
+
+## JSON API (REST)
+
 ## Adding API methods
 
 Please have a look at the [DemoBundle](https://github.com/Keleo/DemoBundle), it includes examples for an API controller with serialization.
 
 There is also a (german) blog post that discuss the basics of adding a FOSRestBundle controller to your bundle:
 [https://www.kevinpapst.de/blog/fosrestbundle-via-bundle.html](https://www.kevinpapst.de/blog/fosrestbundle-via-bundle.html)
+
+## Using the Swagger UI
+
+When you want to use the interactive functions of the Swagger UI, you will probably notice that its not working due to a wrong URL being used.
+The Swagger UI currently doesn't use the current hostname, but always points to `localhost` on port 80.
+Therefor you have to configure the values used manually.
+
+Please add these lines to your local.yaml (adapt them to your needs):
+```yaml
+parameters:
+    router.request_context.host: '127.0.0.1'
+    router.request_context.port: '8050'
+    router.request_context.scheme: 'http'
+    router.request_context.base_url: ''
+
+# the next lines are only necessary, if you use a port other than 80
+nelmio_api_doc:
+    documentation:
+        host: '%router.request_context.host%:%router.request_context.port%'
+```  
+
+## Swagger file and Postman
+
+You could change your [local.yaml]({% link _documentation/local-yaml.md %}) and add this, which will cause the generated Swagger file to contain a variable instead of the hostname URL: 
+
+```yaml
+nelmio_api_doc:
+    documentation:
+        host: '{%raw%}{{hostname}}{%endraw%}'
+        schemes: ['https']
+```
+
+The variable `hostname` can then be changed for the complete collection in Postman.
+Using Postman environments, you can even switch the API location via a simple change of the environments drop-down.

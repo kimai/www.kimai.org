@@ -3,6 +3,11 @@ title: Installation
 description: How to install Kimai on your server with git, composer and SSH or FTP
 toc: true
 canonical: /documentation/installation.html
+related:
+  - fresh-ubuntu-18
+  - fresh-ubuntu-20
+  - webserver-configuration
+  - ftp
 redirect_from:
   - /documentation/installation/
 ---

@@ -1,5 +1,6 @@
 ---
 layout: base
+top_menu: true
 ---
 
 {% comment %}
@@ -7,6 +8,7 @@ layout: base
 {% endcomment %}
 
 <div class="flex-fill">
+    {% if layout.top_menu == true %}
     <div class="header py-4">
         <div class="container">
             <div class="d-flex">
@@ -52,6 +54,7 @@ layout: base
             </div>
         </div>
     </div>
+    {% endif %}
 
     <div class="header collapse d-lg-flex p-0" id="headerMenuCollapse">
         <div class="container">
@@ -67,7 +70,11 @@ layout: base
                 </div>
                 {% endcomment %}
                 <div class="col-lg order-lg-first">
-                    {% include menu.html %}
+                    {% if layout.main_menu != nil %}
+                        {% include menu-documentation.html %}
+                    {% else %}
+                        {% include menu.html %}
+                    {% endif %}
                 </div>
             </div>
         </div>

@@ -11,14 +11,13 @@ with the `ROLE_SUPER_ADMIN` role.
 The log mechanism is configured to collect, but not write logs. 
 Only in the case of an error, all collected logs for the request will be dumped to the logfile.  
 
-The logilfe is not rotated, which is critical to understand.
-Even if only errors are logged, its size will increase over the time.
+The logfile is not rotated, which is critical to understand: even if only errors are logged, the filesize will increase over time.
 
 To flush the logfile from time to time, you have several options:
 - you can create a cronjob to delete the file
 - you can configure log rotation via your OS
 - you can empty the file from the `Doctor` screen 
-- or you can reconfigure the logger, see below ...
+- or you can reconfigure the logger
 
 ## Changing the logging
 
@@ -26,7 +25,7 @@ Be aware, changing the logging will lead to a non-functional "logging" section i
 
 ### Log rotation
 
-The simplest way to achieve log-rotation by changing the logger config in your [local.yaml]({% link _documentation/configurations.md %}).
+The simplest way to achieve log-rotation by changing the logger config in your [local.yaml]({% link _documentation/local-yaml.md %}).
 Afterwards you need to [reload the cache]({% link _documentation/cache.md %}). 
 
 ```
@@ -42,7 +41,7 @@ monolog:
 
 The configuration process is the same as above:
 
-- Change the logger config in your [local.yaml]({% link _documentation/configurations.md %})
+- Change the logger config in your [local.yaml]({% link _documentation/local-yaml.md %})
 - Then [reload the cache]({% link _documentation/cache.md %}) 
 
 ```

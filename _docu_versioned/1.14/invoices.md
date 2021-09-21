@@ -126,7 +126,7 @@ The invoice system currently supports the following formats:
 Invoice documents are searched in two locations:
 
 - `var/invoices/` - does not exist by default, please create it when you add a new document
-- `templates/invoice/renderer/` - don't change files in here, will be overwritten with te next update
+- `templates/invoice/renderer/` - don't change files in here, will be overwritten with the next update
 
 Be aware of the following rules:
 
@@ -140,14 +140,13 @@ Be aware of the following rules:
  
 {% include alert.html icon="fas fa-exclamation" type="warning" alert="Do NOT change the default templates, but copy the file and save it (with a new filename) at var/invoices/" %}
  
-After you changed an invoice template, you have to clear the cache to see the results:
-{% include cache-refresh.html %} 
+After you changed an invoice template, you have to [clear the cache]({% link _documentation/cache.md %}) to see the results:
 
 You can have a look at [https://github.com/Keleo/kimai2-invoice-templates](https://github.com/Keleo/kimai2-invoice-templates) to get some inspirations. 
 
 #### Configure search path
 
-An example configuration in [local.yaml]({% link _documentation/configurations.md %}) might look like this (this shouldn't be necessary in 90% of all use-cases):
+An example configuration in [local.yaml]({% link _documentation/local-yaml.md %}) might look like this (this shouldn't be necessary in 90% of all use-cases):
 
 ```yaml
 kimai:

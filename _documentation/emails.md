@@ -11,7 +11,7 @@ Please read their documentation to find out more about possible connection detai
 
 ## Activating email
 
-You have to adapt two settings in your `.env` [configuration file]({% link _documentation/configurations.md %}):
+You have to adapt two settings in your `.env` [configuration file]({% link _documentation/local-yaml.md %}):
 
 - `MAILER_URL` - the connection details for sending emails
 - `MAILER_FROM` - an application wide "from" address for all emails

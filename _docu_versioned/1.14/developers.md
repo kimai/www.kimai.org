@@ -97,7 +97,7 @@ You can find more information [here](https://symfony.com/doc/current/frontend/en
 
 ## local.yaml
 
-Beware: if you use the `local.yaml` (as proposed in [configurations]({% link _documentation/configurations.md %})) then don't put it 
+Beware: if you use the [local.yaml]({% link _documentation/local-yaml.md %}) then don't put it 
 in `config/packages/` as all configs in there are used when running the PHPUnit testsuite.
 
 The (integration) tests are written to work with the default configuration of Kimai and locally changed configs might unexpectedly break the tests.
@@ -374,9 +374,6 @@ of the columns `begin`, `end`, `duration` and `rate` but could also be used to a
 Timesheet calculator need to implement the interface `App\Timesheet\CalculatorInterface` and will be automatically tagged 
 as `timesheet.calculator` in the service container. They will be found and used *only* if you add them to the service container.
 
-You can apply several rules in your config file [local.yaml]({% link _documentation/configurations.md %}) for the existing 
-`DurationCalculator` and `RateCalculator` implementations.  Please read the [configurations chapter]({% link _documentation/configurations.md %}) to find out more. 
-
 The configuration for "rounding rules" can be fetched from the container parameter `kimai.timesheet.rounding`.
 
 The configuration for "hourly-rates multiplication factors" can be fetched from the container parameter `kimai.timesheet.rates`.
@@ -450,7 +447,7 @@ class YourExtension extends Extension implements PrependExtensionInterface
 }
 ```
 
-If you don't register your permissions, your users will have to edit their [local.yaml]({% link _documentation/configurations.md %}), please avoid that!
+If you don't register your permissions, your users will not be able to change them [via the UI]({% link _documentation/permissions.md %}).
 
 ## Adding system configuration
 

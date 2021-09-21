@@ -7,7 +7,7 @@ toc: true
 If you created a plugin or any other kind of software around Kimai, which you want to see listed in the [{{ site.data.trans[page.lang].store }}]({% link _pages/store.html %}), 
 follow these short guidelines and it will soon be published.
 
-## Kimai website
+## Jekyll and GitHub pages
 
 The Kimai website is generated with [Jekyll](https://jekyllrb.com) and [managed at GitHub]({{ site.kimai_v2_website }}).
 As all {{ site.data.trans[page.lang].store }} entries are rendered from data collections, you can fork the repository and after changing the necessary files, 
@@ -15,7 +15,7 @@ create a pull request.
 
 Your changes will be published immediately after your PR was merged.
 
-## What you need to change
+## Adding a plugin
 
 You have to:
 - add your developer/company information to the `developer.yml` file

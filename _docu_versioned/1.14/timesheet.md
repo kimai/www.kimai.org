@@ -175,7 +175,7 @@ Rounding rules are used to round the begin & end dates, and the duration for tim
 6. You can define different rules for different days of the week
 7. Rounding rules will be applied on stopped timesheet records only, so you might see an un-rounded value for the start time and duration until you stop the record
 
-You can configure your `rounding` rules by changing the configuration file [local.yaml]({% link _documentation/configurations.md %}).
+You can configure your `rounding` rules by changing the configuration file [local.yaml]({% link _documentation/local-yaml.md %}).
 
 These are the existing rounding modes:
 - `default`: "begin" will always be rounded to the floor (down) and "end" & "duration" to the ceiling (up)

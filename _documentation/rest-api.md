@@ -7,8 +7,8 @@ redirect_from:
 ---
 
 Read the Swagger documentation of the Kimai API in your Kimai installation at `/api/doc`.
-As example you can have a look at the API docs for the demo installation at [{{ site.kimai_v2_demo }}/api/doc]({{ site.kimai_v2_demo }}/api/doc).
-You need to login to see them, credentials can be [found here]({% link _pages/demo.md %}).
+For example, you can have a look at the API docs for the demo installation at [{{ site.kimai_v2_demo }}/api/doc]({{ site.kimai_v2_demo }}/api/doc).
+You need to authenticate to see them, credentials can be [found here]({% link _pages/demo.md %}).
 
 Or you can export the JSON collection by visiting `/api/doc.json`. Save the result in a file, which can be imported with Postman.
 
@@ -19,44 +19,16 @@ When calling the API you have to submit two additional header with every call fo
 - `X-AUTH-USER` - holds the username or email
 - `X-AUTH-TOKEN` - holds the users API password, which he can set in his profile
 
-{% include alert.html type="danger" alert="Make sure to ONLY call the Kimai API via `https` to protect the users credentials and data. Time-tracking data includes private / sensitive information!" %}
+{% include alert.html type="success" alert="The API password is different from the normal user password and can be set in the user profile." %}
 
-## Using the Swagger UI
-
-When you want to use the interactive functions of the Swagger UI, you will probably notice that its not working due to a wrong URL being used.
-The Swagger UI currently doesn't use the current hostname, but always points to `localhost` on port 80.
-Therefor you have to configure the values used manually. 
-
-Please add these lines to your local.yaml (adapt them to your needs):
-```yaml
-parameters:
-    router.request_context.host: '127.0.0.1'
-    router.request_context.port: '8050'
-    router.request_context.scheme: 'http'
-    router.request_context.base_url: ''
-
-# the next lines are only necessary, if you use a port other than 80
-nelmio_api_doc:
-    documentation:
-        host: '%router.request_context.host%:%router.request_context.port%'
-```  
+{% include alert.html icon="fas fa-exclamation" type="warning" alert="Make sure to ONLY call the Kimai API via `https` to protect the users credentials and data, time-tracking data includes sensitive information." %}
 
 ## Swagger file and Postman
 
 The API calls can be exported in a Swagger file format, which can be imported into Postman.
 You find the link in the API docs (the URL is `api/doc.json`).
 
-Simply export the swagger file again and import into Postman. 
-
-You could even use this method to generate a collection utilizing Postman variables:
-```yaml
-nelmio_api_doc:
-    documentation:
-        host: '{%raw%}{{hostname}}{%endraw%}'
-        schemes: ['https']
-```
-The variable `hostname` can then be changed for the complete collection in Postman.
-Using Postman environments, you can even switch the API location via a simple change of the environments drop-down.
+Simply export the swagger file and import it into Postman. 
 
 ### Authentication in Postman
 
@@ -363,10 +335,3 @@ You can execute some sample requests and see the JSON result.
 </body>
 </html>
 ```
-
-## Adding API methods
-
-Please have a look at the [DemoBundle](https://github.com/Keleo/DemoBundle), it includes examples for an API controller with serialization. 
-
-There is also a (german) blog post that discuss the basics of adding a FOSRestBundle controller to your bundle:
-[https://www.kevinpapst.de/blog/fosrestbundle-via-bundle.html](https://www.kevinpapst.de/blog/fosrestbundle-via-bundle.html)

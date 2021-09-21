@@ -2,6 +2,8 @@
 title: Reloading cache
 description: How to reload the Kimai cache system
 toc: false
+related:
+  - local-yaml
 ---
 
 When running in the `prod` environment (which is always true unless you want to develop with Kimai) and you executed one 
@@ -9,7 +11,7 @@ of the following tasks within Kimai you need to reload its cache:
 
 - [installed Kimai]({% link _documentation/installation.md %})
 - [updated Kimai]({% link _documentation/updates.md %})
-- [updated a configuration]({% link _documentation/configurations.md %})
+- [updated a configuration]({% link _documentation/local-yaml.md %})
 - [installed a bundle]({% link _documentation/plugins.md %})
 - [updated a bundle]({% link _documentation/plugins.md %})
 

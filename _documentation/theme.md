@@ -72,7 +72,7 @@ This will turn the select-boxes into native select elements.
 
 A small colored warning sign will be shown, if a user has an active timesheet.
 
-The maximum amount of active timesheets can be configured with the setting `timesheet.active_entries.hard_limit` (called `Permitted number of simultaneously running time entries`)  (see [configurations.md]({% link _documentation/configurations.md %})).
+The maximum amount of active timesheets can be configured with the setting `timesheet.active_entries.hard_limit` (called `Permitted number of simultaneously running time entries`, see [System > Settings]({% link _documentation/configurations.md %})).
 
 ## Icons
 

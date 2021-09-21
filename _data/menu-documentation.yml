@@ -1,8 +1,25 @@
-- title: First steps
-  pages: [installation, inital-setup, updates, docker, backups]
-- title: User manual
-  pages: [timesheet, invoices, export, reporting, customer, project, activity, tags, users, user-preferences, teams]
-- title: Configuration
-  pages: [configurations, cache, calendar, dashboard, emails, permissions, ldap, saml, i18n-am-pm, logging]
-- title: Developer
-  pages: [developers, plugins, rest-api, meta-fields, translations, theme]
+- name: User manual
+  icon: fas fa-book
+  size: 6
+  description: Use Kimai, the UI and all the available features
+  pages: [timesheet, calendar, invoices, export, reporting, customer, project, activity, tags, users, user-preferences, permissions, teams, rates, configurations, rest-api]
+- name: Self-hosted
+  icon: fas fa-server
+  size: 6
+  description: Everything you need to host your Kimai on your own server
+  pages: [installation, inital-setup, updates, docker, backups, imports]
+- name: Configure Kimai
+  icon: fas fa-cogs
+  size: 6
+  description: How to configure the system to your needs
+  pages: [local-yaml, cache, dashboard, emails, ldap, saml, i18n-am-pm, logging, branding]
+- name: Customize Kimai
+  icon: fas fa-code
+  size: 6
+  description: Extending Kimai, plugin development and translations
+  pages: [developers, plugins, meta-fields, translations, theme, permission-structure, impersonate-user, store, create-release]
+- name: How-To
+  icon: fas fa-question
+  size: 12
+  description: Longer articles for the really curious ones
+  pages: [webserver-configuration, migration-v1, fresh-ubuntu-18, fresh-ubuntu-20, synology, redis]

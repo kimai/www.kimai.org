@@ -148,7 +148,7 @@ If you want to change the session lifetime (eg. to prevent automatic logout duri
 you can either adjust the settings for PHP directly ([see PHP docs](https://www.php.net/manual/en/session.configuration.php)) 
 or you can explicitly set it for Kimai.
 
-You need to add the following settings to your [local.yaml]({% link _documentation/configurations.md %}):
+You need to add the following settings to your [local.yaml]({% link _documentation/local-yaml.md %}):
 
 ```yaml
 framework:

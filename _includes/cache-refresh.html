@@ -10,11 +10,10 @@
 bin/console kimai:reload --env=prod
 {% endhighlight %}
 
-                <p>If you are running an older version (Kimai <= 1.7) you have to use:</p>
+                <p>It is not advised, but in case the above command fails you could try:</p>
 
 {% highlight plaintext %}
-bin/console cache:clear --env=prod
-bin/console cache:warmup --env=prod
+rm -r var/cache/prod/*
 {% endhighlight %}
             </div>
         </div>

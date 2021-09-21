@@ -34,7 +34,7 @@ You can configure a lockdown period, which will prevent your users from changing
 
 The lockdown period consists of a `start` and `end` date and a `grace` period. 
 The lockdown feature will only work if all of these fields are configured.
-These fields can be found in the [System configuration screen]({% link _documentation/configurations.md %}) and take a [relative date format](https://www.php.net/manual/en/datetime.formats.relative.php) as input.
+These fields can be found in [System > Settings]({% link _documentation/configurations.md %}) and take a [relative date format](https://www.php.net/manual/en/datetime.formats.relative.php) as input.
 
 These rules apply:
 - If the start date of a timesheet record is earlier than the lockdown start, it is not possible to edit it any longer
@@ -94,14 +94,7 @@ You can limit access to these screens with the `edit_other_timesheet` [permissio
 When the `duration_only` mode is active, all timesheet tables will only display the `date` and `duration` for all records.
 In addition, the "edit timesheet" forms will be changed and instead of displaying the `end` date you will see a field for `duration`.
 
-You can activate the `duration_only` mode by switching the configuration key `kimai.timesheet.mode` to `duration_only` in
-your `local.yaml` or directly from within the [System-configuration screen]({% link _documentation/configurations.md %}):
-
-```yaml
-kimai:
-    timesheet:
-        mode: duration_only
-```
+You can activate the `duration_only` mode by switching the configuration key `kimai.timesheet.mode` to `duration_only` in [System > Settings]({% link _documentation/configurations.md %}).
 
 Be aware: users with the [permission]({% link _documentation/permissions.md %}) `edit_other_timesheet` can still see the
 start time and by a simple calculation the end time, if they open each entry manually. If your country has work regulations
@@ -110,18 +103,12 @@ that should limit access to this data, make sure to remove this permission for p
 ### Duration with fixed start time
 
 The `duration_fixed_start` mode removes the begin and end datetime fields and uses a default start time  (see it as a partial anonymization).
-The user is not limited in defining the entries duration.
+The user is limited and can only define the entry duration, so all logged entries will start at the same time.
 
-All logged entries for one day will start at the same time, which can be configured like this:
-```yaml
-kimai:
-    timesheet:
-        default_begin: 07:30
-```
+The default start-time can be configured in [System > Settings]({% link _documentation/configurations.md %}).
 By default, this is configured to `now` which is most likely not what you want.
 
-You can read more about the accepted formats [here](https://www.php.net/manual/en/datetime.formats.php) and especially in
-the [time formats](https://www.php.net/manual/en/datetime.formats.time.php) chapter.
+You can read more about the accepted formats [here](https://www.php.net/manual/en/datetime.formats.php) and [here](https://www.php.net/manual/en/datetime.formats.time.php).
 
 ## Duration format
 
@@ -133,23 +120,9 @@ Please note:
 
 ## Limit active entries
 
-To limit the amount of active entries for each user, the configuration `active_entries` can be changed:
-
-```yaml
-kimai:
-    timesheet:
-        active_entries:
-            hard_limit: 1
-```
-
-The `hard_limit` is used to detect how many active records are allowed per user.
-If `hard_limit` is 1, the active record is automatically stopped when a new one is started.
-When `hard_limit` is greater than 1 and as soon as the limit is reached, the user has to manually stop at least one active
+If the `allowed amount of active entries per user` is 1, the currently running record is automatically stopped when a new one is started.
+When the setting is greater than 1 and as soon as the limit is reached, the user has to manually stop at least one active
 entry (an error message is shown, indicating why it is not possible to start another one).
-
-## 12-hour am/pm format
-
-Want to use the 12 hour format? Read the [i18n docu]({% link _documentation/translations.md %}).
 
 ## Descriptions with Markdown
 
@@ -173,43 +146,13 @@ Rounding rules are used to round the begin & end dates, and the duration for tim
 6. You can define different rules for different days of the week
 7. Rounding rules will be applied on stopped timesheet records only, so you might see an un-rounded value for the start time and duration until you stop the record
 
-You can configure your `rounding` rules by changing the configuration file [local.yaml]({% link _documentation/configurations.md %}).
+You can configure your `rounding` rules by changing the configuration file [local.yaml]({% link _documentation/local-yaml.md %}).
 
 These are the existing rounding modes:
-- `default`: "begin" will always be rounded to the floor (down) and "end" & "duration" to the ceiling (up)
-- `closest`: "begin", "end" and "duration" will be rounded in a mathematical way, always to the nearest value
-- `floor`: "begin", "end" and "duration" will always be rounded down to the nearest value
-- `ceil`: "begin", "end" and "duration" will always be rounded up to the nearest value
-
-### Examples
-
-A simple example to always charge at least 1 hour for weekend work (even if you only worked for 5 minutes) could look like this:
-
-```yaml
-kimai:
-    timesheet:
-        rounding:
-            weekend:
-                days: ['saturday','sunday']
-                begin: 1
-                end: 1
-                duration: 60
-                mode: closest
-```
-
-A rule which is often used is to round up to a mulitple of 10:
-
-```yaml
-kimai:
-    timesheet:
-        rounding:
-            workdays:
-                days: ['monday','tuesday','wednesday','thursday','friday','saturday','sunday']
-                begin: 10
-                end: 10
-                duration: 0
-                mode: default
-```
+- `default` - "begin" will always be rounded to the floor (down) and "end" & "duration" to the ceiling (up)
+- `closest` - "begin", "end" and "duration" will be rounded in a mathematical way, always to the nearest value
+- `floor` - "begin", "end" and "duration" will always be rounded down to the nearest value
+- `ceil` - "begin", "end" and "duration" will always be rounded up to the nearest value
 
 ## Rate calculation
 

@@ -20,7 +20,7 @@ composer require zendframework/zend-ldap --optimize-autoloader
 ### Activate LDAP authentication
 
 You activate the LDAP authentication by adding the following code to the end of your 
-[local.yaml]({% link _documentation/configurations.md %}):
+[local.yaml]({% link _documentation/local-yaml.md %}):
 
 ```yaml
 security:
@@ -33,13 +33,13 @@ security:
             kimai_ldap: ~
 ```  
 
-After that, you need to adjust the LDAP config (see below) and at the end re-build the cache as described in the [configurations chapter]({% link _documentation/configurations.md %}). 
+After that, you need to adjust the LDAP config (see below) and at the end [re-build the cache]({% link _documentation/cache.md %}). 
 
 You can deactivate it the other way around, delete or comment the lines above and clear the cache. 
 
 ### Configuration
 
-If you want to activate LDAP authentication, you have to adjust your [local.yaml]({% link _documentation/configurations.md %}).
+If you want to activate LDAP authentication, you have to adjust your [local.yaml]({% link _documentation/local-yaml.md %}).
 
 This is the full available configuration, most of the values are optional and their default values were chosen for maximum compatibility with OpenLDAP setup:
 
@@ -198,7 +198,7 @@ kimai:
 Kimai uses the Laminas Framework LDAP module and uses the configured `connection` parameters without modification. 
 Find out more about the settings in the [detailed documentation](https://docs.laminas.dev/laminas-ldap/api/). 
 
-Remember to re-build the cache for changes to take effect, see [configurations chapter]({% link _documentation/configurations.md %}). 
+Remember to [re-build the cache]({% link _documentation/cache.md %}) for changes to take effect. 
 
 ## User synchronization
 

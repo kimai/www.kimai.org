@@ -2,33 +2,25 @@
 title: User preferences
 description: Settings that change the users personal Kimai experience
 toc: true
+related:
+  - users
 ---
 
-A user has several preferences, which changes the behaviour how he interacts with Kimai.
+The user preferences can be accessed via any user profile (eg. in the upper right corner for your own user) and from `System > Users` (needs `view_user` permission) for every user.
 
 These settings can be edited by:
-- the user with `preferences_own_profile` permission for himself 
-- by users owning the `preferences_other_profile` [permission]({% link _documentation/permissions.md %}) for every user
-
-The user preferences can be accessed via the users menu in the upper-right or via the user administration (needs `view_user` permission). 
-
-## Default preferences
-
-You can configure default values for new users in your [local.yaml]({% link _documentation/configurations.md %}) like this: 
-```yaml
-kimai:
-    defaults:
-        user:
-            timezone: Europe/London
-            language: de
-            theme: purple
-```
-
-These settings can also be configured directly in the `System / Settings` within Kimai.
+- the user itself, when owning the `preferences_own_profile` permission 
+- every users owning the `preferences_other_profile` [permission]({% link _documentation/permissions.md %})
 
 ## Hourly rate
 
-A fallback for records without any customer/project/activity specific rate (see [rate calculation]({% link _documentation/timesheet.md %})).
+A fallback for records without any customer/project/activity specific [rate]({% link _documentation/rates.md %}).
+
+Needs `hourly-rate_own_profile` / `hourly-rate_other_profile` permission to see and edit.
+
+## Internal rate
+
+A fallback for records without any customer/project/activity specific internal [rate]({% link _documentation/rates.md %}).
 
 Needs `hourly-rate_own_profile` / `hourly-rate_other_profile` permission to see and edit.
 
@@ -36,7 +28,7 @@ Needs `hourly-rate_own_profile` / `hourly-rate_other_profile` permission to see 
 
 The user-specific timezone is used when recording users timesheet entries. 
 
-By default, this is the servers timezone (php.ini: date.timezone), which is often wrong or not matching the users real timezone (for technical reasons like shared hosting, docker, UTC).
+By default, this is the server timezone (php.ini: date.timezone), which is often wrong or not matching the users real timezone (for technical reasons like shared hosting, docker, UTC).
 If you experience wrong times when starting a record, please check this setting first and tell your users to do the same.
 
 Kimai can handle arbitrary timezones, so it is no problem to record the work of your global distributed team.
@@ -45,12 +37,28 @@ If you change the timezone while a record is running, it will only influence the
 
 Kimai saves times in UTC, including the timezone information, so it can calculate the correct time to display it in the frontend. 
 
-## Kimai Theme
+## Language
+
+Which language should be used as primary source for translations (if a specific translation is missing for your language, the fallback will always be english).
+
+## First day of the week
+
+While many countries in the world use `Monday` as start of the week, a lot of other countries use `Sunday`.
+This is the place to change between these two days.
+
+## Display: colors
 
 A Kimai theme is mainly a set of colors for the top bar and side navigation.
 This setting can be changed by the user to match the personal style.
 
-## Minimize sidebar
+## Display: layout
+
+The layout for your Kimai installation:
+
+- `fixed` - full screen layout  
+- `boxed` - max. 1250px width, goes very well with `Minimized sidebar`
+
+## Minimize the left sidebar
 
 This setting changes the behaviour of the left sidebar after a page (re-)load.
 
@@ -61,19 +69,26 @@ If activated, the sidebar is collapsed and only shown:
 
 This setting is useful for smaller screens (like tablets and laptops), which need more space.
 
-Small sreens like mobile phones will not see the sidebar, they always have to use the burger menu.
+Small screens like mobile phones will not see the sidebar, they always have to use the burger menu.
+
+## Update browser title
+
+If activated, the duration of running records will be displayed in the browsers title (tab). 
+This can be a benefit, as you can see the duration while working in other browser tabs. 
  
 ## Initial calendar view
 
 A user can decide which calendar view is most useful for personal work style:
 
-- `month`
+- `month` (default view)
 - `week`
 - `day`
 
-The initial view for the calendar is `month`.  
-
 If no translations are available for your language, the options might be called: `month`, `agendaWeek`, `agendaDay`.
+
+## Initial report 
+
+Which report should be shown, when the `Administration > Reports` menu is clicked.
 
 ## Initial view after login
 
@@ -89,80 +104,6 @@ on mobile devices will be replaced by a link to the calendar.
 
 If activated, the personal timesheet visually groups and shows statistics for all records within one day.
 
-## Adding new UserPreference
+# Use decimal duration in export
 
-Developers can register new user preferences from within [their plugin]({% link _documentation/plugins.md %}) as easy as that:
-
-```php
-use App\Entity\UserPreference;
-use App\Event\UserPreferenceEvent;
-use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
-
-class UserProfileSubscriber implements EventSubscriberInterface
-{
-    public static function getSubscribedEvents(): array
-    {
-        return [
-            UserPreferenceEvent::CONFIGURE => ['loadUserPreferences', 200]
-        ];
-    }
-
-    public function loadUserPreferences(UserPreferenceEvent $event)
-    {
-        if (null === ($user = $event->getUser())) {
-            return;
-        }
-
-        // You attach every field to the event and all the heavy lifting is done by Kimai.
-        // The value is the default as long as the user has not yet updated his preferences,
-        // otherwise it will be overwritten with the users choice, stored in the database.
-        $event->addPreference(
-            (new UserPreference())
-                ->setName('fooooo-bar')
-                ->setValue(false)
-                ->setType(CheckboxType::class)
-        );
-    }
-}
-```
-
-### Displaying and exporting UserPreferences 
-
-With Kimai 1.4 you can display and export user preferences. 
-Supported fields will be shown as new columns in the data-table for users.
-Additionally these preferences will be added to HTML and Spreadsheet exports. 
-
-As Kimai cannot query all existing users for possible preferences, you need to listen to a new event and register the desired preference. 
-
-
-```php
-use App\Entity\UserPreference;
-use App\Event\UserPreferenceDisplayEvent;
-use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
-
-class UserProfileSubscriber implements EventSubscriberInterface
-{
-    public static function getSubscribedEvents(): array
-    {
-        return [
-            UserPreferenceDisplayEvent::class => ['loadUserPreferences', 200]
-        ];
-    }
-
-    public function loadUserPreferences(UserPreferenceDisplayEvent $event)
-    {
-
-        // You attach every field to the event and all the heavy lifting is done by Kimai.
-        // The value is the default as long as the user has not yet updated his preferences,
-        // otherwise it will be overwritten with the users choice, stored in the database.
-        $event->addPreference(
-            (new UserPreference())
-                ->setName('fooooo-bar')
-                ->setValue(false)
-                ->setType(CheckboxType::class)
-        );
-    }
-}
-```
+If activated, the export templates render durations as decimal number instead of the human-readable clock format (e.g. `1.5` instead of `01:30 h`).

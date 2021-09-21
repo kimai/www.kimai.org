@@ -11,7 +11,7 @@ SAML users will be imported during the first login with their attributes and gro
 ## Installation
 
 In order to use the SAML authentication, you have to add configurations changes to your
-[local.yaml]({% link _documentation/configurations.md %}) (this example is for G Suite accounts)
+[local.yaml]({% link _documentation/local-yaml.md %}) (this example is for G Suite accounts)
 and [reload the cache]({% link _documentation/cache.md %}) afterwards.:
 
 ```yaml
@@ -85,7 +85,7 @@ kimai:
                     url: 'https://www.kimai.org'
 ```  
 
-After changing the configuration you need to re-build the cache as described in the [configurations chapter]({% link _documentation/configurations.md %}).
+After changing the configuration you need to [re-build the cache]({% link _documentation/cache.md %}).
 
 ## Configuration details
 

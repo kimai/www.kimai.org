@@ -63,7 +63,7 @@ docker exec kimai2 /opt/kimai/bin/console kimai:reset:dev
 
 ### Using a custom local.yaml
 
-You can mount a [custom configuration]({% link _documentation/configurations.md %}) into the container while starting it:
+You can mount a [custom configuration]({% link _documentation/local-yaml.md %}) into the container while starting it:
 ```bash
 docker run --rm -ti -p 8001:8001 --name kimai2 -v $(pwd)/config/packages/local.yaml:/opt/kimai/config/packages/local.yaml kimai/kimai2:dev
 ```

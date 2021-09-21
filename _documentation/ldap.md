@@ -28,7 +28,7 @@ you have to install the PHP LDAP extension, e.g. on Ubuntu with `apt-get install
 ### Activate LDAP authentication
 
 You activate the LDAP authentication by adding the following code to the end of your
-[local.yaml]({% link _documentation/configurations.md %}) and [reloading the cache]({% link _documentation/cache.md %}) afterwards.
+[local.yaml]({% link _documentation/local-yaml.md %}) and [reloading the cache]({% link _documentation/cache.md %}) afterwards.
 
 ```yaml
 kimai:
@@ -187,7 +187,7 @@ This is the full available configuration, most of the values are optional and th
 Kimai uses the Laminas Framework LDAP module and uses the configured `connection` parameters without modification.
 Find out more about the settings in the [detailed documentation](https://docs.laminas.dev/laminas-ldap/api/).
 
-You need to re-build the cache for changes to take effect, see [configurations chapter]({% link _documentation/configurations.md %}).
+You need to [re-build the cache]({% link _documentation/cache.md %}) for changes to take effect.
 
 ## User synchronization
 

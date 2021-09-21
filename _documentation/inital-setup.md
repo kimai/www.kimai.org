@@ -66,7 +66,7 @@ By default, user registration is enabled with auto activation, so everyone knowi
 If you use Kimai on a public server, you should change these settings!
 
 Please read more in the `User registration` chapter [here]({% link _documentation/users.md %}) and then adapt your 
-[local.yaml]({% link _documentation/configurations.md %}) if neccessary.
+[local.yaml]({% link _documentation/local-yaml.md %}) if necessary.
 
 {% include alert.html icon="far fa-smile-beam" type="success" alert="Setup complete: you can start time-tracking!" %}
 
