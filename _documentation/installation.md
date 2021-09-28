@@ -246,7 +246,7 @@ This can be a character like `@` or `/` or some others, which need to be urlenco
 This can easily be done with one command, lets assume your password is `mG0/d1@3aT.Z)s` then you get your password like this:
 
 ```bash
-php -r "echo urlencode('mG0/d1@3aT.Z)s');"
+php -r "echo urlencode('mG0/d1@3aT.Z)s');echo PHP_EOL;"
 mG0%2Fd1%403aT.Z%29s
 ```
 
