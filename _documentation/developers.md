@@ -240,7 +240,7 @@ class MyDashboardSubscriber implements EventSubscriberInterface
 }
 ```
 
-For more details check this [dashboard subscriber]({{ site.kimai_v2_file }}/src/EventSubscriber/DashboardSubscriber.php).
+For more details check this [dashboard subscriber](https://github.com/Keleo/DemoBundle/blob/master/EventSubscriber/DashboardSubscriber.php).
 
 ### Adding new widget types
 
