@@ -17,7 +17,9 @@ bundle:
     name: "AuditTrailBundle"
     command: "kimai:bundle:audittrail:install"
     purchase: true
-    versions: 
+    versions:
+      - ["1.12", "1.15"]
+      - ["1.11 - 1.11.1", "1.14"]
       - ["1.10", "1.11"]
       - ["1.9", "1.10"]
       - ["1.6 - 1.8", "1.7"]

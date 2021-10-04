@@ -18,7 +18,9 @@ bundle:
     name: "MetaFieldsBundle"
     command: "kimai:bundle:metafields:install"
     purchase: true
-    versions: 
+    versions:
+      - ["1.18", "1.15"]
+      - ["1.17", "1.14"]
       - ["1.15 - 1.16", "1.11"]
       - ["1.14", "1.10.2"]
       - ["1.10 - 1.13", "1.9"]

@@ -18,7 +18,9 @@ bundle:
     command: "kimai:bundle:kiosk:install"
     purchase: true
     assets: true
-    versions: 
+    versions:
+      - ["1.8", "1.15"]
+      - ["1.7", "1.14"]
       - ["1.5 - 1.6", "1.11"]
       - ["1.4", "1.10"]
       - ["1.0 - 1.3", "1.8"]
