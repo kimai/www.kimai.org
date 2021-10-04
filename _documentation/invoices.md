@@ -268,26 +268,6 @@ The documents which are rendered passively (ODS, XLSX, CSV, DOCX) can use the fo
 | ${user.title} | The current users title  |
 | ${user.meta.X} | The current users [preference]({% link _documentation/user-preferences.md %}) named `X`  |
 
-### Customer variables
-
-| Key | Description |
-|---|---|
-| ${customer.id} | The customer ID |
-| ${customer.address} | The customer address |
-| ${customer.name} | The customer name |
-| ${customer.contact} | The customer contact |
-| ${customer.company} | The customer company |
-| ${customer.vat} | The customer Vat ID |
-| ${customer.number} | The customer number |
-| ${customer.country} | The customer country |
-| ${customer.homepage} | The customer homepage |
-| ${customer.comment} | The customer comment |
-| ${customer.phone} | The customers phone number (since 1.9) |
-| ${customer.mobile} | The customers mobile number (since 1.9) |
-| ${customer.email} | The customers email address (since 1.9) |
-| ${customer.fax} | The customers fax number (since 1.9) |
-| ${customer.meta.x} | The customer [meta field]({% link _documentation/meta-fields.md %}) named `X`. The internal name `X` needs to be used in lowercase letters, eg. `FooBar` will be available as `${customer.meta.foobar}`. Only available if the field is visible.  |
-
 ### Timesheet entry variables
 
 For each timesheet entry you can use the variables from the following table.
@@ -329,6 +309,26 @@ For each timesheet entry you can use the variables from the following table.
 | ${entry.type} | The type of this entry (plugins can add custom types) | timesheet |
 | ${entry.category} | The category of this entry (plugins can add custom types) | work |
 
+### Customer variables
+
+| Key | Description |
+|---|---|
+| ${customer.id} | The customer ID |
+| ${customer.comment} | The description of this customer |
+| ${customer.address} | The customer address |
+| ${customer.name} | The customer name |
+| ${customer.contact} | The customer contact |
+| ${customer.company} | The customer company |
+| ${customer.vat} | The customer Vat ID |
+| ${customer.number} | The customer number |
+| ${customer.country} | The customer country |
+| ${customer.homepage} | The customer homepage |
+| ${customer.phone} | The customers phone number (since 1.9) |
+| ${customer.mobile} | The customers mobile number (since 1.9) |
+| ${customer.email} | The customers email address (since 1.9) |
+| ${customer.fax} | The customers fax number (since 1.9) |
+| ${customer.meta.x} | The customer [meta field]({% link _documentation/meta-fields.md %}) named `X`. The internal name `X` needs to be used in lowercase letters, eg. `FooBar` will be available as `${customer.meta.foobar}`. Only available if the field is visible.  |
+
 ### Project variables
 
 If a project was selected in the invoice filter (search form) the following variables exist as well:
@@ -337,7 +337,7 @@ If a project was selected in the invoice filter (search form) the following vari
 |---|---|
 | ${project.id} | The project ID |
 | ${project.name} | The project name |
-| ${project.comment} | The project name |
+| ${project.comment} | The description of this project |
 | ${project.order_number} | The project order number |
 | ${project.start_date} | Projects start date-time (since 1.7) |
 | ${project.end_date} | Projects end date-time (since 1.7) |
@@ -361,7 +361,7 @@ If an activity was selected in the invoice filter (search form) the following va
 |---|---|
 | ${activity.id} | The activity ID |
 | ${activity.name} | The activity name |
-| ${activity.comment} | The activity name |
+| ${activity.comment} | The description of this activity |
 | ${activity.meta.x} | The activity [meta field]({% link _documentation/meta-fields.md %}) named `X`. The internal name `X` needs to be used in lowercase letters, eg. `FooBar` will be available as `${activity.meta.foobar}`. Only available if the field is visible.  |
 
 If you selected more than one project in the search, you will have further variables called `${activity.1.X}`, `${activity.2.X}` and so on.
