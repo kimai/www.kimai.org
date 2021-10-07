@@ -2,7 +2,8 @@
 title: Bughunter
 ---
 
-Some answers to the most common reports that I receive from independent security researchers
+Some answers to the most common reports that I receive from independent security researchers, which I do **not** consider 
+to be security issues in Kimai or behavior that needs to be addressed.
 
 ## "Back" button that keeps working after logout
 
@@ -12,9 +13,7 @@ physical access to the machine, which exposes way worse security risks.
 
 Besides, the only known workaround for this behavior is to cache bust each and every page of the application, which is in no way acceptable.
 
-Please read the article at the [Google Bughunter University](https://sites.google.com/site/bughunteruniversity/nonvuln/cached-content-after-logout) for more information.
-
-Here is the most important excerpt:
+For the full article checkout the [Google Bughunter University](https://sites.google.com/site/bughunteruniversity/nonvuln/cached-content-after-logout):
 
 > Some of the vulnerability reporters notice that, after logging out of a web application but do not close their current browser tab, they are still able to use the "back" button in their browser to access cached documents. 
 >
@@ -36,11 +35,13 @@ A shortened version of [Google Bughunter University](https://sites.google.com/si
 ## Cross-site Scripting (XSS) in branding settings
 
 Some researchers find that you can inject HTML into the fields `theme.branding.company` and `theme.branding.mini`, 
-which allows injecting HTML attributes that execute Javascript. 
+which allows injecting HTML attributes to execute Javascript. 
 
 This is documented behavior, see [System > Setting](https://www.kimai.org/documentation/configurations.html) in the `My company` chapter
 
-> The settings for company and mini name can contain the HTML tags <b><i><u><strong><em><img><svg> for formatting.
+> The settings for company and mini name can contain the HTML tags &lt;b>&lt;i>&lt;u>&lt;strong>&lt;em>&lt;img>&lt;svg> for formatting.
 
-Besides, the only person able to update these settings is a System-Admin (likely the owner of the Kimai instance), 
-who can change and delete everything in Kimai. So this is not considered a security issue.
+The only person able to update these settings is a System-Admin (likely the owner of the Kimai instance), 
+who can already change and delete everything in Kimai: "With great power comes great responsibility".
+
+So this cannot be considered a security issue.
