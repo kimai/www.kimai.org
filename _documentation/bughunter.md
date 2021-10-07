@@ -1,6 +1,5 @@
 ---
-title: Bughunter and Security experts
-description: Some answers to the most common reports that I receive from independent security researchers 
+title: Bughunter
 ---
 
 Some answers to the most common reports that I receive from independent security researchers
