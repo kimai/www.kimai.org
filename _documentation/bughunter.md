@@ -32,3 +32,15 @@ A shortened version of [Google Bughunter University](https://sites.google.com/si
 > This issue should mitigated by the application which would be importing/interpreting data from an external source, as Microsoft Excel does (for example) by showing a warning. 
 > 
 > In other words, the proper fix should be applied when opening the CSV files, rather then when creating them.
+
+## Cross-site Scripting (XSS) in branding settings
+
+Some researchers find that you can inject HTML into the fields `theme.branding.company` and `theme.branding.mini`, 
+which allows injecting HTML attributes that execute Javascript. 
+
+This is documented behavior, see [System > Setting](https://www.kimai.org/documentation/configurations.html) in the `My company` chapter
+
+> The settings for company and mini name can contain the HTML tags <b><i><u><strong><em><img><svg> for formatting.
+
+Besides, the only person able to update these settings is a System-Admin (likely the owner of the Kimai instance), 
+who can change and delete everything in Kimai. So this is not considered a security issue.
