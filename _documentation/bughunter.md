@@ -6,7 +6,9 @@ Some answers to the most common reports that I receive from independent security
 
 ## "Back" button that keeps working after logout
 
-A shortened version of [Google Bughunter University](https://sites.google.com/site/bughunteruniversity/nonvuln/cached-content-after-logout):
+I do not consider this as a security risk, please read the article at the [Google Bughunter University](https://sites.google.com/site/bughunteruniversity/nonvuln/cached-content-after-logout) for more information.
+
+Here is the most important excerpt:
 
 > Some of the vulnerability reporters notice that, after logging out of a web application but do not close their current browser tab, they are still able to use the "back" button in their browser to access cached documents. 
 >
@@ -16,7 +18,7 @@ A shortened version of [Google Bughunter University](https://sites.google.com/si
 
 ## CSV Excel Formula injection
 
-Kimai does have a couple of code pieces in place to prevent simple `Dynamic Data Exchange` or `DDE payload` attacks.
+Kimai does have a couple of code pieces in place to prevent simple `Dynamic Data Exchange` or `DDE payload` attacks. 
 But in general I consider this to be a problem of Excel and not Kimai.
 
 A shortened version of [Google Bughunter University](https://sites.google.com/site/bughunteruniversity/nonvuln/csv-excel-formula-injection):
