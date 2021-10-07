@@ -6,7 +6,13 @@ Some answers to the most common reports that I receive from independent security
 
 ## "Back" button that keeps working after logout
 
-I do not consider this as a security risk, please read the article at the [Google Bughunter University](https://sites.google.com/site/bughunteruniversity/nonvuln/cached-content-after-logout) for more information.
+I do not consider this as a security risk. If a user leaves his browser unprotected, he has much more to worry about than a colleague
+browsing through the tab history of a browser in which Kimai was open. To me this is a theoretical problem because you need 
+physical access to the machine, which exposes way worse security risks. 
+
+Besides, the only known workaround for this behavior is to cache bust each and every page of the application, which is in no way acceptable.
+
+Please read the article at the [Google Bughunter University](https://sites.google.com/site/bughunteruniversity/nonvuln/cached-content-after-logout) for more information.
 
 Here is the most important excerpt:
 
