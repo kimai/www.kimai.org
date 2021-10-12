@@ -9,6 +9,10 @@ download: https://www.kimaimobile.com/
 new: true
 tags: 
   - mobile app
+screenshot:
+      - "/images/marketplace/cloudrizon-kimai-mobile-app-splash.png"
+      - "/images/marketplace/cloudrizon-kimai-mobile-app-timesheets.png"
+      - "/images/marketplace/cloudrizon-kimai-mobile-app-workspaces.png"
 ---
 
 ## Simplicity
@@ -19,16 +23,8 @@ For setting up Kimai Mobile, use your already installed Kimai Backend Service. C
 
 ## Additional information
 
-[How to connect Kimai Mobile to your Kimai Service](https://www.kimaimobile.com/kimai-mobile-guide/#1624276184721-4662a5b1-cf06).
+[How to connect Kimai Mobile to your Kimai Service](https://www.kimaimobile.com/kimai-mobile-guide/#1624276184721-4662a5b1-cf06)
 
 [Developer information](https://www.kimaimobile.com/developer-of-kimai-mobile/)
 
 [Contact us](https://www.kimaimobile.com/kimai-mobile-contact-us/)
-
-## App Screens
-
-<p style="text-align:center">
-    <img src="/images/marketplace/cloudrizon-kimai-mobile-app-splash.png" width="200" style="margin:0 10px">
-    <img src="/images/marketplace/cloudrizon-kimai-mobile-app-timesheets.png" width="200" style="margin:0 10px">
-    <img src="/images/marketplace/cloudrizon-kimai-mobile-app-workspaces.png" width="200" style="margin:0 10px">
-</p>
