@@ -31,9 +31,9 @@ Now install all dependencies:
 composer install --no-dev --optimize-autoloader
 ```
 
-Configure the database connection in the `.env` file:
+Configure the database connection and server version in the `.env` file:
 ```
-DATABASE_URL=mysql://user:password@127.0.0.1:3306/database
+DATABASE_URL=mysql://user:password@127.0.0.1:3306/database?charset=utf8&serverVersion=5.7
 ```
 
 And run the Kimai installer:
