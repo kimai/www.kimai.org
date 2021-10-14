@@ -1,7 +1,7 @@
 ---
-title: Rainmeter widget for Kimai2
-name: Kimai2-cmd Rainmeter widget
-intro: "Kimai2 widget for Windows!"
+title: Rainmeter widget for Kimai
+name: Rainmeter widget (kimai-cmd)
+intro: "Kimai widget for Windows!"
 developer: infeeeee
 date: "2019-11-11 10:00:00 +0200"
 icon: fab fa-windows
@@ -9,11 +9,14 @@ price: "0"
 screenshot: https://raw.githubusercontent.com/infeeeee/kimai2-cmd-rainmeter/master/%40Resources/Screenshots/kimai-default-start.png
 download: https://github.com/infeeeee/kimai2-cmd-rainmeter/releases/latest
 github: https://github.com/infeeeee/kimai2-cmd-rainmeter
+type: client
 tags:
-  - client
+  - Windows
+  - Rainmeter
+  - kimai-cmd
 ---
 
-Rainmeter widget for Kimai2
+Rainmeter widget for Kimai
 
 [Rainmeter](https://www.rainmeter.net/) is an open source desktop customization tool for Windows
 

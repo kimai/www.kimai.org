@@ -9,8 +9,11 @@ icon: fas fa-terminal
 price: "0"
 download: https://github.com/kevinpapst/kimai2-console/releases/latest
 github: https://github.com/kevinpapst/kimai2-console
+type: client
 tags:
-  - client
+  - bash
+  - PHP
+  - PHAR
 ---
 
 PHP Command line client for Kimai.

@@ -12,11 +12,12 @@ screenshot:
   - /images/marketplace/kemai-add-project.jpg
 download: https://github.com/alexandreptj/kemai/releases/latest
 github: https://github.com/alexandreptj/kemai
+type: client
 tags:
-  - client
-new: false
+  - QT
+  - Desktop
 ---
-
+ 
 Kemai is a cross-platform (Windows, OSX, Linux) desktop client for Kimai.
 
 ## Features

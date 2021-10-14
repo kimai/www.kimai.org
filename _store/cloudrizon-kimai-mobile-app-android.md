@@ -7,12 +7,22 @@ image: /images/marketplace/cloudrizon-kimai-mobile-app-logo.png
 price: 2,99€
 download: https://www.kimaimobile.com/
 new: true
+type: app 
 tags: 
-  - mobile app
-screenshot:
-      - "/images/marketplace/cloudrizon-kimai-mobile-app-splash.png"
-      - "/images/marketplace/cloudrizon-kimai-mobile-app-timesheets.png"
-      - "/images/marketplace/cloudrizon-kimai-mobile-app-workspaces.png"
+  - Android
+screenshots:
+  -
+    src: "/images/marketplace/cloudrizon-kimai-mobile-app-splash.png"
+    title: Splashscreen
+    description: "Start screen of the application"
+  -
+    src: "/images/marketplace/cloudrizon-kimai-mobile-app-timesheets.png"
+    title: Timesheets
+    description: "Simple list view for all your timesheet records"
+  -
+    src: "/images/marketplace/cloudrizon-kimai-mobile-app-workspaces.png"
+    title: Workspaces
+    description: "Allow configuring and switching between multiple Kimai instances"
 ---
 
 ## Simplicity

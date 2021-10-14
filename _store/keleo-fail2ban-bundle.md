@@ -9,6 +9,7 @@ icon: fas fa-ban
 price: "0"
 download: https://github.com/Keleo/Fail2BanBundle/archive/master.zip
 github: https://github.com/Keleo/Fail2BanBundle
+type: plugin
 tags:
   - plugin
 bundle:

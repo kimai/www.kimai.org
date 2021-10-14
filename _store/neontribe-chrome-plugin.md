@@ -13,9 +13,9 @@ features:
   - Allows a Kimai instace to be accessed from a browser pop up.
   - Log time attached to specific Trello card or Github issue.
   - View time logged against a card or issue.
+type: client
 tags:
-  - chrome
-  - client
+  - Chrome
 bundle:
     name: "ChromePluginBundle"
 ---

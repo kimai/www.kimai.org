@@ -6,26 +6,30 @@
 
     <div class="row row-cards">
         <div class="col-lg-9">
-            {% assign products = site.store | where_exp:"product", "product.featured != nil" | sort: 'name' %}
+            {% assign products = site.store | where_exp:"product", "product.type == 'featured'" | sort: 'name' %}
             {% include store-list.html products=products %}
 
-            {% assign temp = "" | split: "," %}
-            {% assign products = site.store | where_exp:"product", "product.featured == nil" | sort: 'name' %}
-            {% for product in products %}
-            {% if product.tags contains "support" %}
-            {% assign temp = temp | push: product %}
-            {% endif %}
-            {% endfor %}
-            {% include store-list.html products=temp %}
+            {% assign products = site.store | where_exp:"product", "product.type == 'support'" | sort: 'name' %}
+            {% include store-list.html products=products %}
 
-            {% assign temp = "" | split: "," %}
-            {% assign products = site.store | where_exp:"product", "product.featured == nil" | sort: 'name' %}
-            {% for product in products %}
-            {% unless product.tags contains "support" %}
-            {% assign temp = temp | push: product %}
-            {% endunless %}
-            {% endfor %}
-            {% include store-list.html products=temp %}
+            <h3>{{ site.data.trans[page.lang].store-category-apps }}</h3>
+
+            {% assign products = site.store | where_exp:"product", "product.type == 'app'" | sort: 'name' %}
+            {% include store-list.html products=products %}
+
+            <h3>{{ site.data.trans[page.lang].store-category-plugins }}</h3>
+
+            {% assign products = site.store | where_exp:"product", "product.type == 'plugin'" | sort: 'name' %}
+            {% include store-list.html products=products %}
+
+            <h3>{{ site.data.trans[page.lang].store-category-client }}</h3>
+
+            {% assign products = site.store | where_exp:"product", "product.type != 'featured'" %}
+            {% assign products = products | where_exp:"product", "product.type != 'support'" %}
+            {% assign products = products | where_exp:"product", "product.type != 'app'" %}
+            {% assign products = products | where_exp:"product", "product.type != 'plugin'" | sort: 'name' %}
+
+            {% include store-list.html products=products %}
         </div>
         <div class="col-lg-3">
             <div class="row">

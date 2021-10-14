@@ -7,48 +7,49 @@ date: "2020-10-09 10:00:00"
 icon: fa fa-gavel
 price: "99€"
 gumroad: iVspM
-new: true
+new: false
+type: plugin
 tags:
   - plugin
 bundle:
-    name: "ControllingBundle"
-    screenshots:
-      - 
-         src: "/images/marketplace/hmr-it-controlling-plugin-menu.png"
-         title: Menu item 
-         description: "Admins see a counter + Users see more detailed statistics" 
-      - 
-         src: "/images/marketplace/hmr-it-controlling-plugin-overview.png"
-         title: "Overview"
-         description: "See every users working time per month + it's red for undertime and green for overtime"
-      - 
-         src: "/images/marketplace/hmr-it-controlling-plugin-overtime.png"
-         title: "Overtime"
-         description: "See a summery of over- or undertime for every user since first day in the company"
-      - 
-         src: "/images/marketplace/hmr-it-controlling-plugin-breaktimecheck.png"
-         title: "Break times"
-         description: "See if users have violated the German break time law"
-      - 
-         src: "/images/marketplace/hmr-it-controlling-plugin-overlapping.png"
-         title: "Overlapping times"
-         description: "See if your users have overlapping times"
-      - 
-         src: "/images/marketplace/hmr-it-controlling-plugin-missingdays.png"
-         title: "Missing days"
-         description: "See if your users have missing days"
-      - 
-         src: "/images/marketplace/hmr-it-controlling-plugin-settings.png"
-         title: "Settings"
-         description: "Fully configurable via GUI"
-      - 
-         src: "/images/marketplace/hmr-it-controlling-plugin-handout.png"
-         title: "Handout"
-         description: "Handouts downloadable per Month"
-      - 
-         src: "/images/marketplace/hmr-it-controlling-plugin-handout-pdf.png"
-         title: "Handout"
-         description: "Handouts downloadable per Month"
+  name: "ControllingBundle"
+screenshots:
+  - 
+    src: "/images/marketplace/hmr-it-controlling-plugin-menu.png"
+    title: Menu item 
+    description: "Admins see a counter + Users see more detailed statistics" 
+  - 
+    src: "/images/marketplace/hmr-it-controlling-plugin-overview.png"
+    title: "Overview"
+    description: "See every users working time per month + it's red for undertime and green for overtime"
+  - 
+    src: "/images/marketplace/hmr-it-controlling-plugin-overtime.png"
+    title: "Overtime"
+    description: "See a summery of over- or undertime for every user since first day in the company"
+  - 
+    src: "/images/marketplace/hmr-it-controlling-plugin-breaktimecheck.png"
+    title: "Break times"
+    description: "See if users have violated the German break time law"
+  - 
+    src: "/images/marketplace/hmr-it-controlling-plugin-overlapping.png"
+    title: "Overlapping times"
+    description: "See if your users have overlapping times"
+  - 
+    src: "/images/marketplace/hmr-it-controlling-plugin-missingdays.png"
+    title: "Missing days"
+    description: "See if your users have missing days"
+  - 
+    src: "/images/marketplace/hmr-it-controlling-plugin-settings.png"
+    title: "Settings"
+    description: "Fully configurable via GUI"
+  - 
+    src: "/images/marketplace/hmr-it-controlling-plugin-handout.png"
+    title: "Handout"
+    description: "Handouts downloadable per Month"
+  - 
+    src: "/images/marketplace/hmr-it-controlling-plugin-handout-pdf.png"
+    title: "Handout"
+    description: "Handouts downloadable per Month"
 ---
 
 ## Features
@@ -84,8 +85,8 @@ This bundle ships a new administration screen, which will be available for all u
 ## Help
 #### Menu
 The badge in the menu at the entry "Check" does:
-- For superAdmin: Breaktime Violations | Differences in overtimes
-- For normal users: Overtime | Worked time this month/Target hours this month
+- For SuperAdmin: Breaktime Violations - Differences in overtimes
+- For normal users: Overtime - Worked time this month/Target hours this month
 
 ## Configuration
 Create the following fields using the meta-fields plugin:

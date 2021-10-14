@@ -9,9 +9,10 @@ price: "0"
 version: v1.0.0
 download: https://github.com/dexterity42/SharedProjectTimesheetsBundle/archive/master.zip
 github: https://github.com/dexterity42/SharedProjectTimesheetsBundle
+type: plugin
 tags:
-- plugin
-new: true
+  - plugin
+new: false
 bundle:
     name: "SharedProjectTimesheetsBundle"
     command: "kimai:bundle:shared-project-timesheets:install"

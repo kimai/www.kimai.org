@@ -1,14 +1,15 @@
 ---
-title: Kimai2 iOS offline tracker
-name: Kimai2 iOS app for offline tracking
-intro: "Kimai2 iOS app for offline tracking"
+title: iOS offline tracker for Kimai
+name: iOS app for offline tracking with Kimai
+intro: "iOS app for offline tracking with Kimai"
 developer: hmr-it
 date: "2019-08-20 08:10:00"
 icon: fab fa-app-store-ios
 price: "1,92€"
 download: https://apps.apple.com/de/app/kimai-2-offline-zeiterfassung/id1459757165
+type: app
 tags:
-  - app
+  - iOS
 ---
 
 Synchronize customers, projects and activities on your smartphone and 

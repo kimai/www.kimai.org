@@ -10,11 +10,12 @@ download: https://github.com/fungus75/ReadOnlyAccessBundle/archive/master.zip
 github: https://github.com/fungus75/ReadOnlyAccessBundle
 screenshot: 
   - https://raw.githubusercontent.com/fungus75/ReadOnlyAccessBundle/master/screenshot.jpg
-tags:
+type: plugin
+tags: 
   - plugin
 bundle:
-    name: "ReadOnlyAccessBundle"
-    clone: "https://github.com/fungus75/ReadOnlyAccessBundle.git"
+  name: "ReadOnlyAccessBundle"
+  clone: "https://github.com/fungus75/ReadOnlyAccessBundle.git"
 ---
 
 This bundle adds a special admin screen where the role can be assigned to an existing Kimai user.

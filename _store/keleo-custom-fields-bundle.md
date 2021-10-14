@@ -9,48 +9,49 @@ icon: fas fa-keyboard
 demo: true 
 price: "49€"
 gumroad: kimai2-custom-fields
-featured: Create free configurable additional (optional and mandatory) fields for timesheets, customers, projects and activities in various formats. 
+featured: Create free configurable additional fields for timesheets, customers, projects, activities and users in various formats. Fields can be optional or mandatory and restricted by permissions.
 new: false
 toc: false
+type: featured
 tags:
   - plugin
 bundle:
-    name: "MetaFieldsBundle"
-    command: "kimai:bundle:metafields:install"
-    purchase: true
-    versions:
-      - ["1.18", "1.15"]
-      - ["1.17", "1.14"]
-      - ["1.15 - 1.16", "1.11"]
-      - ["1.14", "1.10.2"]
-      - ["1.10 - 1.13", "1.9"]
-      - ["1.8 - 1.9", "1.7"]
-      - ["1.6 - 1.7", "1.6.2"]
-      - ["1.5", "1.6"]
-      - ["1.3.2 - 1.4.1", "1.4"]
-      - ["1.1.1 - 1.2", "1.1"]
-      - ["1.0", "1.0"]
-    screenshots:
-      - 
-        src: "/images/marketplace/meta-fields-listing.png"
-        title: "Custom fields administration"
-        description: "The listing page shows all available item-types and their configured custom fields"
-      - 
-        src: "/images/marketplace/meta-fields-create.png"
-        title: "Create custom field (Customer)"
-        description: "The dialog to create a new custom field for Customers"
-      - 
-        src: "/images/marketplace/meta-fields-edit.png"
-        title: "Edit custom field (Project)"
-        description: "Editing an already existing custom field for Projects (type boolean, see default value)"
-      - 
-        src: "/images/marketplace/meta-fields-timesheet.png"
-        title: "Teams timesheets"
-        description: "The timesheet listing, displaying the visible custom field Location"
-      - 
-        src: "/images/marketplace/meta-fields-timesheet-edit.png"
-        title: "Edit timesheet"
-        description: "Editing a timesheet record with a new choice-list custom field"
+  name: "MetaFieldsBundle"
+  command: "kimai:bundle:metafields:install"
+  purchase: true
+  versions:
+    - ["1.18", "1.15"]
+    - ["1.17", "1.14"]
+    - ["1.15 - 1.16", "1.11"]
+    - ["1.14", "1.10.2"]
+    - ["1.10 - 1.13", "1.9"]
+    - ["1.8 - 1.9", "1.7"]
+    - ["1.6 - 1.7", "1.6.2"]
+    - ["1.5", "1.6"]
+    - ["1.3.2 - 1.4.1", "1.4"]
+    - ["1.1.1 - 1.2", "1.1"]
+    - ["1.0", "1.0"]
+screenshots:
+  - 
+    src: "/images/marketplace/meta-fields-listing.png"
+    title: "Custom fields administration"
+    description: "The listing page shows all available item-types and their configured custom fields"
+  - 
+    src: "/images/marketplace/meta-fields-create.png"
+    title: "Create custom field (Customer)"
+    description: "The dialog to create a new custom field for Customers"
+  - 
+    src: "/images/marketplace/meta-fields-edit.png"
+    title: "Edit custom field (Project)"
+    description: "Editing an already existing custom field for Projects (type boolean, see default value)"
+  - 
+    src: "/images/marketplace/meta-fields-timesheet.png"
+    title: "Teams timesheets"
+    description: "The timesheet listing, displaying the visible custom field Location"
+  - 
+    src: "/images/marketplace/meta-fields-timesheet-edit.png"
+    title: "Edit timesheet"
+    description: "Editing a timesheet record with a new choice-list custom field"
 ---
 
 A Kimai plugin, which allows configuring additional fields for timesheets, customers, projects, activities and expenses.

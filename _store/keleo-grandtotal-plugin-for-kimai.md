@@ -9,8 +9,9 @@ icon: far fa-envelope
 price: "0"
 download: https://github.com/Keleo/kimai2-grandtotal/raw/master/Kimai2.grandtotalplugin.zip
 github: https://github.com/Keleo/kimai2-grandtotal
+type: client
 tags:
-  - 3rd party
+  - GrandTotal
 ---
 
 Attention: this is **NOT** a Kimai 2 bundle, but a plugin that can be installed inside GrandTotal.

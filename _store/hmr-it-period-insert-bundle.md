@@ -7,15 +7,16 @@ date: "2020-10-09 10:00:00"
 icon: fa fa-calendar
 price: "29€"
 gumroad: pSNcQ
+type: plugin
 tags:
   - plugin
 bundle:
     name: "PeriodInsertBundle"
-    screenshots:
-      - 
-        src: "/images/marketplace/hmr-it-period-insert-plugin.png"
-        title: Period-Insert screen 
-        description: The form to create the values for the records that will be created 
+screenshots:
+  - 
+    src: "/images/marketplace/hmr-it-period-insert-plugin.png"
+    title: Period-Insert screen 
+    description: The form to create the values for the records that will be created 
 ---
 
 With this plugin you can easily create many timesheet entries by a given date range.
