@@ -1,7 +1,7 @@
 ---
-title: Command line client for Kimai2
-name: Kimai2-cmd terminal client
-intro: "Cross platform command line client for Kimai2"
+title: Command line client for Kimai
+name: Terminal client (kimai-cmd)
+intro: "Cross platform command line client for Kimai, written with Node.js"
 developer: infeeeee
 date: "2019-11-11 10:00:00 +0200"
 icon: fas fa-terminal
@@ -10,11 +10,14 @@ screenshot:
   - https://raw.githubusercontent.com/infeeeee/kimai2-cmd/master/assets/interactive-restart.gif
 download: https://github.com/infeeeee/kimai2-cmd/releases/latest
 github: https://github.com/infeeeee/kimai2-cmd
+type: client
 tags:
-  - client
+  - bash
+  - Node.js
+  - kimai-cmd
 ---
 
-Command line client for Kimai2
+Command line client for Kimai
 
 ![interactive start gif](https://raw.githubusercontent.com/infeeeee/kimai2-cmd/master/assets/interactive-start.gif)
 
@@ -33,9 +36,9 @@ UI:
 
 Integration:
 - Portable executable for all three platforms
-- Installer for windows
-- Generate output for Rainmeter (Windows). More info here: [kimai2-cmd-rainmeter](https://github.com/infeeeee/kimai2-cmd-rainmeter)
-- Generate output for Argos/Kargos/Bitbar (Gnome, Kde, Mac). More info here: [kimai2-cmd-argos](https://github.com/infeeeee/kimai2-cmd-argos)
+- Installer forWwindows
+- Generate output for [Rainmeter (Windows)]({% link _store/infeeeee-kimai2-cmd-rainmeter.md %})
+- Generate output for [Argos/Kargos/Bitbar (Gnome, Kde, Mac)]({% link _store/infeeeee-kimai2-cmd-argos.md %})
 
 Requests for integrations with other softwares are welcomed! Just open an issue and show an example output, what you need.
 

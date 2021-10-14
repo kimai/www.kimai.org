@@ -6,21 +6,11 @@ toc: true
 
 Customers in Kimai are used to manage project and activities, which are then used for time-records.
 
-It is very common to have one _customer_ for your own company, to track times for administration and other internal work.
+It is common practice to have a customer for your own company, to track times for administration and other internal work.
  
 ## Creating customer
 
-You can configure default values for new customers in your [local.yaml]({% link _documentation/configurations.md %}) like this: 
-```yaml
-kimai:
-    defaults:
-        customer:
-            timezone: Europe/London
-            country: GB
-            currency: GBP
-```
-
-These settings can also be configured directly at `System / Settings` within Kimai.
+Default values for new customers can be configured at [System > Settings]({% link _documentation/configurations.md %}). 
 
 ## Customer colors
 

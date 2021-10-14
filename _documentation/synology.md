@@ -1,13 +1,11 @@
 ---
 title: "Install Kimai on a Synology NAS"
-description: "How to install Kimai 2 on a Synology NAS"
+description: "How to install Kimai on a Synology NAS"
 toc: true
 ---
 
 This HowTo does not explain every step for the installation of Kimai on a Synology NAS, 
-but rather concentrates on the differences from the default installation.
-
-When you install Kimai, watch out for the 
+but rather concentrates on the differences from the [default installation]({% link _documentation/installation.md %}).
 
 ## Important to know
 
@@ -23,17 +21,18 @@ php73 bin/console kimai:version
 
 The webserver user is called `http` and not `www-data`.
 
-The database conection uses a socket instead of a port.
+The database connection uses a socket instead of a port.
 
-After creating the VirtualHost the DSM changes file owner ship, so you might be forced to use `sudo` or switch to the root account for multiple commands.  
+After creating the VirtualHost the DSM changes file ownership, so you might be forced to use `sudo` or switch to the root account for multiple commands.  
 
 ## Installation process
 
-Clone Kimai as described in the main [installation]({% link _documentation/installation.md %}) docs.
+Clone Kimai as described in the main [installation]({% link _documentation/installation.md %}) docs. 
+If no git is installed, you can use the method described under the "updates" section. 
 
-This examples uses the path `/volume1/web/kimai2`
+This example uses the path `/volume1/web/kimai2`
 
-Then download and install composer. Now install all dependencies:
+Then [download and install composer](https://getcomposer.org/download/). Now install all dependencies:
 ```bash
 php73 composer.phar install --no-dev --optimize-autoloader
 ```
@@ -48,15 +47,15 @@ otherwise stick with lower and uppercase character and numbers.
 
 ### .env file and database connection
 
-Synology ships a MariaDB which is configured to use a socket connection an runs on a different port, 
-therefor the connection string in your `.env` file could look different than the one used in the 
+Synology ships a MariaDB which is configured to use a socket connection and runs on a different port, 
+therefore the connection string in your `.env` file could look different from the one used in the 
 default [installation]({% link _documentation/installation.md %}) docs:
 
 ```
 DATABASE_URL="mysql://kimai2:password@localhost:3307/kimai2?unix_socket=/run/mysqld/mysqld10.sock"
 ```
 
-BTW: You find the MariaDB executable at `/volume1/@appstore/MariaDB10/usr/local/mariadb10/bin` (Synology - WTF?).
+BTW: You find the MariaDB executable at `/volume1/@appstore/MariaDB10/usr/local/mariadb10/bin`.
 
 After editing the `.env` file, install Kimai:
 
@@ -166,7 +165,7 @@ That's it, Kimai should now run.
 
 The following commands must be run in the Kimai directory, here in `/volume1/web/kimai2/`.
 
-They must be run as `root` user (eg. by prefixing each line with `sudo`). 
+They must be run as `root` user (e.g. by prefixing each line with `sudo`). 
 Be extremely careful, a wrong command can destroy your Synology ... you know: with great power comes great responsibility!
 
 ```bash
@@ -192,6 +191,33 @@ chown -R :http .
 ```
 
 {% include upgrading-note.html %} 
+
+### Update without git
+
+```bash
+cd /volume1/web/
+wget https://github.com/kevinpapst/kimai2/archive/refs/tags/{{ site.kimai_v2_version }}.zip
+7z x 
+cp kimai2/.env kimai2-{{ site.kimai_v2_version }}/
+cp -R kimai2/var/invoices kimai2-{{ site.kimai_v2_version }}/var/
+cd kimai2-{{ site.kimai_v2_version }}/
+```
+
+Then [download and install composer](https://getcomposer.org/download/), followed by the installation:
+
+```bash
+php74 composer.phar install --no-dev --optimize-autoloader
+php74 bin/console kimai:update
+```
+
+Now a) switch your virtual host to the new directory or b) change the directory names:
+
+```bash
+cd /volume1/web/
+mv kimai2 kimai2-backup
+mv kimai2-{{ site.kimai_v2_version }} kimai2
+```
+{% include upgrading-note.html %}
 
 ## Troubleshooting
 

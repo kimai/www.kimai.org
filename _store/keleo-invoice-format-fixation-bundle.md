@@ -8,16 +8,17 @@ icon: fas fa-file-invoice-dollar
 price: "0"
 download: https://github.com/Keleo/InvoiceFormatFixationBundle/archive/master.zip
 github: https://github.com/Keleo/InvoiceFormatFixationBundle
+type: plugin
 tags:
   - plugin
 bundle:
-    name: "CustomCSSBundle"
-    clone: "https://github.com/Keleo/InvoiceFormatFixationBundle.git" 
-    screenshots:
-      - 
-        src: "https://raw.githubusercontent.com/Keleo/InvoiceFormatFixationBundle/master/screenshot.png"
-        title: Language configuration
-        description: Configure the language for formatting all invoice settings 
+  name: "InvoiceFormatFixationBundle"
+  clone: "https://github.com/Keleo/InvoiceFormatFixationBundle.git" 
+screenshots:
+  - 
+    src: "https://raw.githubusercontent.com/Keleo/InvoiceFormatFixationBundle/master/screenshot.png"
+    title: Language configuration
+    description: Configure the language for formatting all invoice settings 
 ---
 
 This bundle allows you to configure a global language, which is used to format all invoices.

@@ -7,6 +7,7 @@ developer: keleo
 date: "2019-02-20 20:00:00 +0200"
 icon: far fa-file-code
 email: info@keleo.de
+type: support
 tags:
   - development
   - support

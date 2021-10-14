@@ -8,19 +8,20 @@ icon: fa fa-book
 price: "29€"
 gumroad: mcUBr
 new: false
+type: plugin
 tags:
   - plugin
 bundle:
-    name: "RecordBook"
-    screenshots:
-     - 
-        src: "/images/marketplace/hmr-it-recordbook-pdf.png"
-        title: "PDF example" 
-        description: "PDF example" 
-     - 
-        src: "/images/marketplace/hmr-it-recordbook-view.png"
-        title: "Download view"
-        description: "Trainees see the weeks and can download the PDF"
+  name: "RecordBook"
+screenshots:
+  - 
+    src: "/images/marketplace/hmr-it-recordbook-pdf.png"
+    title: "PDF example" 
+    description: "PDF example" 
+  - 
+    src: "/images/marketplace/hmr-it-recordbook-view.png"
+    title: "Download view"
+    description: "Trainees see the weeks and can download the PDF"
 ---
 
 ## Features

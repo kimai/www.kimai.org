@@ -1,14 +1,15 @@
 ---
-title: Kimai2 Android offline tracker
-name: Kimai2 Android app for offline tracking
-intro: "Kimai2 Android app for offline tracking"
+title: Android offline tracker
+name: Android app for offline tracking
+intro: "Android app for offline tracking with Kimai"
 developer: hmr-it
 date: "2019-08-20 08:10:00"
 icon: fab fa-android
 price: "1,90€"
 download: https://play.google.com/store/apps/details?id=de.hmrit.kimai2app
-tags:
-  - app
+type: app
+tags: 
+  - Android
 ---
 
 Synchronize customers, projects and activities on your smartphone and 

@@ -11,30 +11,33 @@ price: "49€"
 gumroad: kimai2-tasks
 featured: "Create tasks, start/stop/pause them, assign them to users and teams - a todo-list management plugin that is connected to your time-tracker and adds two new dashboard widgets" 
 toc: false
+type: featured
 tags:
   - plugin
 bundle:
     name: "TaskManagementBundle"
     command: "kimai:bundle:tasks:install"
     purchase: true
-    versions: 
-      - ["1.7 - 1.7.1", "1.11"]
+    versions:
+      - ["1.10", "1.15"]
+      - ["1.9", "1.14"]
+      - ["1.7 - 1.8", "1.11"]
       - ["1.4 - 1.6", "1.10"]
       - ["1.3", "1.9"]
       - ["1.0 - 1.2", "1.7"]
-    screenshots:
-      - 
-        src: "/images/marketplace/tasks-screenshot.png"
-        title: "Task administration"
-        description: "The new administration page with an overview of all tasks with tracked times, status and assignments"
-      - 
-        src: "/images/marketplace/tasks-create.png"
-        title: Task widgets
-        description: "The new dashboard widgets for assigned and pending tasks"
-      - 
-        src: "/images/marketplace/tasks-widget.png"
-        title: "Edit a task"
-        description: "When creating or updating a task, you can record these fields"
+screenshots:
+  - 
+    src: "/images/marketplace/tasks-screenshot.png"
+    title: "Task administration"
+    description: "The new administration page with an overview of all tasks with tracked times, status and assignments"
+  - 
+    src: "/images/marketplace/tasks-create.png"
+    title: Task widgets
+    description: "The new dashboard widgets for assigned and pending tasks"
+  - 
+    src: "/images/marketplace/tasks-widget.png"
+    title: "Edit a task"
+    description: "When creating or updating a task, you can record these fields"
 ---
 
 A Kimai plugin, which allows you to plan your work and distribute tasks among your users and teams.

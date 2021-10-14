@@ -1,7 +1,6 @@
 ---
 title: Export
 description: Export your timesheet data with Kimai into several different formats
-since_version: 0.8
 toc: true
 redirect_from:
   - /documentation/export/
@@ -19,19 +18,21 @@ There are a couple of differences in these two Kimai modules, the most important
 
 ## Security and privacy
 
-{% include alert.html type="danger" alert="The export extension DOES NOT check permissions, as this would defeat the purpose of an export." %}
-
-So giving a user the permission to export data allows to see most time related data in Kimai 
+Giving a user the permission `create_export` to export data, allows him to see most time related data in Kimai 
 (like customer, projects, activities, rates, time worked per user and more).
+
+{% include alert.html type="warning" alert="The export extension might not check all available permissions, as this would defeat the purpose of an export." %}
 
 ## Export state
 
 Invoices and exports share the export state, which is used to mark timesheet records as processed. 
 These records cannot be edited any longer by regular users and are excluded by default from further invoices and exports.
  
-You need to tick the checkbox before creating the export, to automatically set the export state on all filtered timesheet records.
+You need to activate the checkbox before creating the export, to automatically set the export state on all filtered timesheet records.
 
 For further information read the [timesheet documentation]({% link _documentation/timesheet.md %}).
+
+***
 
 ## Adding export templates
 
@@ -70,74 +71,12 @@ Since 1.13 you can customize the following values from within your PDF templates
  - the generated filename by using the option named `filename`
 
 ```
-{%raw%}
+{% raw %}
 {%- set customer = query.customers|length == 1 ? query.customers.0 : null -%}
 {%- set filename = 'ACME_' ~ (customer is not null ? customer.name|replace({' ': '-'}) ~ '_' : '') ~ query.begin|date_format('Y-m') -%}
 {%- set option = pdfContext.setOption('filename', filename) -%}
-{%endraw%}
+{%- set option = pdfContext.setOption('format', 'A4-L') -%}
+{% endraw %}
 ```
 
 The variable name (here `format` and `filename`) must be one of the mPDF constructor options, ConfigVariables or FontVariables (see links above).
-
-## Adding export renderer
-
-An export renderer is a class implementing `App\Export\RendererInterface` and it is responsible to convert an array of 
-`Timesheet` objects into a downloadable/printable document. 
-
-Every export renderer class will be automatically available when refreshing the application cache, thanks to the  
-[ExportServiceCompilerPass]({{ site.kimai_v2_file }}/src/DependencyInjection/Compiler/ExportServiceCompilerPass.php).
-
-Each renderer is represented by a "button" below the datatable on the export screen.
-
-A simple example, which only shows the IDs of the included timesheet records could look like this: 
-
-```php
-use App\Entity\Timesheet;
-use App\Export\RendererInterface;
-use App\Repository\Query\TimesheetQuery;
-use Symfony\Component\HttpFoundation\Response;
-
-final class TimesheetIdRenderer implements RendererInterface
-{
-    public function render(array $timesheets, TimesheetQuery $query): Response
-    {
-        $ids = array_map(function(Timesheet $timesheet) {
-            return $timesheet->getId();
-        }, $timesheets);
-
-        $response = new Response();
-        $response->setContent(sprintf('Included IDs: %s', implode(', ', $ids)));
-
-        return $response;
-    }
-
-    public function getId(): string
-    {
-        return 'ext_array_dump';
-    }
-
-    public function getIcon(): string
-    {
-        return 'fas fa-file-code';
-    }
-
-    public function getTitle(): string
-    {
-        return 'Show IDs';
-    }
-}
-```
-
-All you need to do is to register it as a service in the Symfony DI container.
-
-## Adding timesheet export renderer
-
-**Feature available since 1.6**
-
-Timesheet exporter (implementing the interface `App\Export\TimesheetExportInterface`) are almost the same as export renderer, 
-except that they don't have the methods `getIcon()` and `getTitle()`.
-
-If you already wrote an export renderer, all you need to add is the second interface and you can export the filtered data 
-from the user and admin timesheet screen.
-
-Be aware, that you should add more permission (eg. `view_rate_own_timesheet`) checks to these renderer, as they are available for every user!

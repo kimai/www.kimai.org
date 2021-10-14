@@ -11,9 +11,9 @@ version: 1.0
 download: https://apps.apple.com/app/kimaitracker/id1494495700
 new: false
 email: kimaiapp@umws.de
+type: app
 tags:
-  - app
-  - Apple Watch
+  - watchOS 
 ---
 
 Start your Kimai time tracking right at your Apple Watch now!

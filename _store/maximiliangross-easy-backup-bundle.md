@@ -8,17 +8,17 @@ icon: far fa-hdd
 price: "0"
 download: https://github.com/mxgross/EasyBackupBundle/archive/master.zip
 github: https://github.com/mxgross/EasyBackupBundle
+type: plugin
 tags:
   - plugin
-  - backup
 bundle:
     name: "EasyBackupBundle"
     clone: "https://github.com/mxgross/EasyBackupBundle.git"
-    screenshots:
-      - 
-        src: "https://raw.githubusercontent.com/mxgross/EasyBackupBundle/master/screenshot.jpg"
-        title: Backup administration
-        description: The new administration page with backups 
+screenshots:
+  - 
+    src: "https://raw.githubusercontent.com/mxgross/EasyBackupBundle/master/screenshot.jpg"
+    title: Backup administration
+    description: The new administration page with backups 
 ---
 
 After the installation a new menu entry `EasyBackup` is created. There you can create a new backup

@@ -6,9 +6,9 @@ redirect_from:
   - /documentation/api/
 ---
 
-Read the Swagger documentation of the Kimai 2 API in your Kimai installation at `/api/doc`.
-As example you can have a look at the API docs for the demo installation at [{{ site.kimai_v2_demo }}/api/doc]({{ site.kimai_v2_demo }}/api/doc).
-You need to login to see them, credentials can be [found here]({% link _pages/demo.md %}).
+Read the Swagger documentation of the Kimai API in your Kimai installation at `/api/doc`.
+For example, you can have a look at the API docs for the demo installation at [{{ site.kimai_v2_demo }}/api/doc]({{ site.kimai_v2_demo }}/api/doc).
+You need to authenticate to see them, credentials can be [found here]({% link _pages/demo.md %}).
 
 Or you can export the JSON collection by visiting `/api/doc.json`. Save the result in a file, which can be imported with Postman.
 
@@ -19,44 +19,16 @@ When calling the API you have to submit two additional header with every call fo
 - `X-AUTH-USER` - holds the username or email
 - `X-AUTH-TOKEN` - holds the users API password, which he can set in his profile
 
-{% include alert.html type="danger" alert="Make sure to ONLY call the Kimai 2 API via `https` to protect the users credentials and data. Time-tracking data includes private / sensitive information!" %}
+{% include alert.html type="success" alert="The API password is different from the normal user password and can be set in the user profile." %}
 
-## Using the Swagger UI
-
-When you want to use the interactive functions of the Swagger UI, you will probably notice that its not working due to a wrong URL being used.
-The Swagger UI currently doesn't use the current hostname, but always points to `localhost` on port 80.
-Therefor you have to configure the values used manually. 
-
-Please add these lines to your local.yaml (adapt them to your needs):
-```yaml
-parameters:
-    router.request_context.host: '127.0.0.1'
-    router.request_context.port: '8050'
-    router.request_context.scheme: 'http'
-    router.request_context.base_url: ''
-
-# the next lines are only necessary, if you use a port other than 80
-nelmio_api_doc:
-    documentation:
-        host: '%router.request_context.host%:%router.request_context.port%'
-```  
+{% include alert.html icon="fas fa-exclamation" type="warning" alert="Make sure to ONLY call the Kimai API via `https` to protect the users credentials and data, time-tracking data includes sensitive information." %}
 
 ## Swagger file and Postman
 
 The API calls can be exported in a Swagger file format, which can be imported into Postman.
 You find the link in the API docs (the URL is `api/doc.json`).
 
-Simply export the swagger file again and import into Postman. 
-
-You could even use this method to generate a collection utilizing Postman variables:
-```yaml
-nelmio_api_doc:
-    documentation:
-        host: '{%raw%}{{hostname}}{%endraw%}'
-        schemes: ['https']
-```
-The variable `hostname` can then be changed for the complete collection in Postman.
-Using Postman environments, you can even switch the API location via a simple change of the environments drop-down.
+Simply export the swagger file and import it into Postman. 
 
 ### Authentication in Postman
 
@@ -90,6 +62,134 @@ Be aware: Kimai treats the given datetime as local time and adds the configured 
 
 Read [this comment]({{ site.kimai_v2_repo }}/issues/701#issuecomment-485564359) to understand the backgrounds about that decision.
 
+## Calling the API with PHP
+
+This example uses the API to import a list of customers, projects and activities from a CSV file.
+
+First create the following `composer.json` file and run `composer install` afterwards.
+
+```json
+{
+    "name": "kimai/api_demo",
+    "require": {
+        "guzzlehttp/guzzle": "^7.3",
+        "symfony/console": "^5.3",
+        "league/csv": "^9.7",
+        "ext-json": "*"
+    }
+}
+```
+
+Now create a file with the name `importer` and adjust the `KIMAI_API_*` constants to your installation:
+
+```php
+#!/usr/bin/env php
+<?php
+require __DIR__.'/vendor/autoload.php';
+
+define('KIMAI_API_URL', 'https://127.0.0.1:8010/api/');
+define('KIMAI_API_USER', 'susan_super');
+define('KIMAI_API_PWD', 'api_kitten');
+
+use GuzzleHttp\Client;
+use League\Csv\Reader;
+use Symfony\Component\Console\Helper\ProgressBar;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\SingleCommandApplication;
+use Symfony\Component\Console\Style\SymfonyStyle;
+
+(new SingleCommandApplication())
+    ->setName('Kimai - Simple activity importer')
+    ->setVersion('0.1')
+    ->addArgument('file', InputArgument::REQUIRED, 'The CSV file to import')
+    ->setCode(function (InputInterface $input, OutputInterface $output) {
+
+        $io = new SymfonyStyle($input, $output);
+
+        $file = $input->getArgument('file');
+        if (!file_exists($file)) {
+            $io->error('Cannot find file: ' . $file);
+            return 1;
+        }
+        if (!is_readable($file)) {
+            $io->error('Cannot read file: ' . $file);
+            return 2;
+        }
+
+        $csv = Reader::createFromPath($file, 'r');
+        $csv->setHeaderOffset(0);
+
+        $client = new Client([
+            'base_uri' => KIMAI_API_URL,
+            'verify' => false,
+            'headers' => ['X-AUTH-USER' => KIMAI_API_USER, 'X-AUTH-TOKEN' => KIMAI_API_PWD]
+        ]);
+
+        $customerIds = [];
+        $projectIds = [];
+        $activityIds = [];
+
+        $doPost = function (Client $client, string $endpoint, array $data) {
+            $response = $client->post($endpoint, ['json' => $data]);
+
+            return json_decode($response->getBody(), true);
+        };
+
+        $records = iterator_to_array($csv->getRecords());
+
+        $progressBar = new ProgressBar($output, count($records));
+
+        foreach($records as $record) {
+            $customerName = trim($record['Customer']);
+            $projectName = trim($record['Project']);
+            $activityName = trim($record['Activity']);
+
+            if (!array_key_exists($customerName, $customerIds)) {
+                $customer = $doPost($client, 'customers', ['name' => mb_substr($customerName, 0, 150), 'country' => 'IT', 'currency' => 'EUR', 'timezone' => 'Europe/Rome', 'visible' => true]);
+                $customerIds[$customerName] = $customer['id'];
+            }
+
+            $customerId = $customerIds[$customerName];
+
+            if (!array_key_exists($projectName, $projectIds)) {
+                $project = $doPost($client, 'projects', ['name' => mb_substr($projectName, 0, 150), 'customer' => (int) $customerId, 'visible' => true]);
+                $projectIds[$projectName] = $project['id'];
+            }
+
+            $projectId = $projectIds[$projectName];
+
+            $activity = $doPost($client, 'activities', ['name' => mb_substr($activityName, 0, 150), 'project' => (int) $projectId, 'visible' => true]);
+            $activityIds[$activityName] = $activity['id'];
+
+            $progressBar->advance();
+        }
+
+        $progressBar->finish();
+
+        $io->success('Created ' . count($customerIds) . ' customers');
+        $io->success('Created ' . count($projectIds) . ' projects');
+        $io->success('Created ' . count($activityIds) . ' activities');
+    })
+    ->run();
+```
+
+Set execute permission `chmod +x importer` and start it by passing the filename for your CSV `./importer ~/kimai-import.csv`, 
+which should be formatted like this:
+
+```
+Customer,Project,Activity
+DEMO,FOO,A long activity title
+DEMO,FOO,Demand management
+DEMO,BAR,Software as a service
+DEMO,BAR,Administration
+DEMO,BAR,Video conference 
+DEMO,BAR,Sales talk
+DEMO,Hello world,I see you
+DEMO,Hello world,Testing the API
+```
+
 ## Calling the API with Javascript
 
 If you develop your own [plugin]({% link _documentation/plugins.md %}) and need to use the API for logged-in user, then you have to 
@@ -105,7 +205,7 @@ You can execute some sample requests and see the JSON result.
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Kimai 2 - API demo</title>
+	<title>Kimai - API demo</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://getbootstrap.com/docs/4.3/examples/floating-labels/floating-labels.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css">
@@ -235,10 +335,3 @@ You can execute some sample requests and see the JSON result.
 </body>
 </html>
 ```
-
-## Adding API methods
-
-Please have a look at the [DemoBundle](https://github.com/Keleo/DemoBundle), it includes examples for an API controller with serialization. 
-
-There is also a (german) blog post that discuss the basics of adding a FOSRestBundle controller to your bundle:
-[https://www.kevinpapst.de/blog/fosrestbundle-via-bundle.html](https://www.kevinpapst.de/blog/fosrestbundle-via-bundle.html)

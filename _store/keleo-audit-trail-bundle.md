@@ -11,35 +11,38 @@ price: "29€"
 gumroad: kimai2-audit-trail
 featured: "Records detailed change/audit logs for timesheets, customers, projects and activities and displays them in a per-item timeline."
 new: false
+type: featured
 tags:
   - plugin
 bundle:
-    name: "AuditTrailBundle"
-    command: "kimai:bundle:audittrail:install"
-    purchase: true
-    versions: 
-      - ["1.10", "1.11"]
-      - ["1.9", "1.10"]
-      - ["1.6 - 1.8", "1.7"]
-      - ["1.5", "1.6"]
-      - ["1.4", "1.4"]
-      - ["1.3", "1.3"]
-      - ["1.2", "1.2"]
-      - ["1.1.1", "1.1"]
-      - ["1.0", "1.0"]
-    screenshots:
-      - 
-        src: '/images/marketplace/audit-listing.png'
-        title: Audit-logs
-        description: The overview page of all audit trail logs
-      -
-        src: '/images/marketplace/audit-details.png'
-        title: Audit detail view
-        description: An audit trail can look like this, each change will be recorded and you might see more entries in a object timeline
-      - 
-        src: '/images/marketplace/audit-action.png'
-        title: Access change history
-        description: You access a detailed audit log from the listing page or from the data-table "Actions" dropdown of each item
+  name: "AuditTrailBundle"
+  command: "kimai:bundle:audittrail:install"
+  purchase: true
+  versions:
+    - ["1.12", "1.15"]
+    - ["1.11 - 1.11.1", "1.14"]
+    - ["1.10", "1.11"]
+    - ["1.9", "1.10"]
+    - ["1.6 - 1.8", "1.7"]
+    - ["1.5", "1.6"]
+    - ["1.4", "1.4"]
+    - ["1.3", "1.3"]
+    - ["1.2", "1.2"]
+    - ["1.1.1", "1.1"]
+    - ["1.0", "1.0"]
+screenshots:
+  - 
+    src: '/images/marketplace/audit-listing.png'
+    title: Audit-logs
+    description: The overview page of all audit trail logs
+  -
+    src: '/images/marketplace/audit-details.png'
+    title: Audit detail view
+    description: An audit trail can look like this, each change will be recorded and you might see more entries in a object timeline
+  - 
+    src: '/images/marketplace/audit-action.png'
+    title: Access change history
+    description: You access a detailed audit log from the listing page or from the data-table "Actions" dropdown of each item
 ---
  
 Find out who changed what and when: a Kimai plugin to record and visualize the changes on `timesheets`, `customers`, `projects`, `activities`, `users`, `system configurations` and `invoices`.

@@ -1,11 +1,12 @@
 ---
-title: "Install Kimai on a fresh Ubuntu 18.04 LTS"
-description: "How to install Kimai 2 on a brand new Ubuntu 18.04 with database, webserver and SSL certificate"
+title: "Install Kimai on Ubuntu 18.04"
+description: "How to install Kimai on a brand new Ubuntu 18.04 with database, webserver and SSL certificate"
 toc: true
+canonical: /documentation/fresh-ubuntu-18.html
 ---
 
-This is a collection of snippets to help you with setting up a fresh Ubuntu 18.04 server for using with Kimai 2.
-It is neither a full fledged documentation, explaining each step, nor is it a bash tutorial. 
+This is a collection of snippets to help you with setting up a fresh Ubuntu 18.04 server for using with Kimai.
+It is neither a full fledged documentation, explaining each step, nor is it a bash tutorial.
 
 Please see it as a personal snippet collection... in which I assume:
 - that you are familiar with the Linux bash and have at least basic knowledge of vim
@@ -98,7 +99,7 @@ apt-get install nginx
 apt-get install git unzip curl
 ```
 
-BTW: I'd use MariaDB, but Ubunutu 18.04 ships an outdated MariaDB which does not support JSON columns and which is therefor not compatible with Kimai 2. 
+BTW: I'd use MariaDB, but Ubuntu 18.04 ships an outdated MariaDB which does not support JSON columns, thus not compatible with Kimai.
 
 ## Install composer
 
@@ -119,7 +120,7 @@ mv composer.phar /usr/bin/composer
 
 ## Create database
 
-Connect to your database as root user: 
+Connect to your database as root user:
 
 ```bash
 sudo su
@@ -160,16 +161,16 @@ DATABASE_URL=mysql://kimai2:my-super-secret-password@127.0.0.1:3306/kimai2
 And execute the Kimai installation:
 ```bash
 bin/console kimai:install -n
-bin/console kimai:create-user admin admin@example.com ROLE_SUPER_ADMIN
+bin/console kimai:user:create admin admin@example.com ROLE_SUPER_ADMIN
 ```
 
-{% include file-permissions.html %} 
+{% include file-permissions.html %}
 Use `sudo` to run the commands to change file permissions.
 
 
 ## Configure webserver
 
-Good, now that we have done all these steps we only need the webserver and VirtualHost configuration: 
+Good, now that we have done all these steps we only need the webserver and VirtualHost configuration:
 
 > Check your PHP-FPM config for the fastcgi_pass (eg. version and socket)
 

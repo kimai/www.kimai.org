@@ -1,6 +1,6 @@
 ---
 title: Activities
-description: Activities in Kimai 2
+description: Activities in Kimai
 toc: true
 ---
 
@@ -9,8 +9,6 @@ Activities in Kimai are meant to explain the kind of work done for a specific ta
 ## Activity types
 
 Activities can have two different types: `global` and `project specific`.  
-
-{% include alert.html icon="fas fa-exclamation" type="warning" alert="Activities cannot be linked to a customer, the customer field in the edit form is only a filter for the project list." %}
 
 ### Project specific 
 

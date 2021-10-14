@@ -1,106 +1,173 @@
 ---
-title: Configurations
-description: Kimai configurations files and basic setup, local overwrites and the cache
+title: Settings
+description: Kimai system configurations
 toc: true
+related: 
+  - user-preferences
+  - local-yaml
+redirect_from:
+  - /documentation/branding.html
 ---
 
-This is an introduction into the configuration options and files, which are used by Kimai, and an explanation on how to change them. 
- 
-Specific configuration settings are explained in the respective documentation chapters.
+Many features of your Kimai installation can be changed by editing the `System > Settings`. This screen is only visible to 
+users with the permission `system_configuration` (by default [ROLE_SUPER_ADMIN]({% link _documentation/permissions.md %})).
 
-## Configuration files
+## Timesheet
 
-Configuration of Kimai is done through the files in the `config/` directory, the most important ones are:
+- `Time-tracking mode` - see below
+- `Default start-time` - not used in all time-tracking modes, read more about the accepted formats [here](https://www.php.net/manual/en/datetime.formats.php) and [here](https://www.php.net/manual/en/datetime.formats.time.php)
+- `Allow time entries in the future` - 
+- `Allow overlapping time entries` - 
+- `Allow overbooking of stored budgets` - 
+- `Permitted number of simultaneously running time entries` - by default it is `1`, which will automatically stop the currently running record when a new one is started. 
+  If it is greater than 1 and as soon as the limit is reached, the user has to manually stop at least one active entry (an error message will be shown) and the 
+  global tick-tack clock will be replaced with a dropdown.
+- `Minute selection for From & To` - 
+- `Minute selection for Duration` - 
+- `Maximum duration of a timesheet record in minutes before saving is rejected` - maximum duration of a timesheet record (0 = deactivated)
 
-- `.env` - your environment and connection settings
-- `config/packages/kimai.yaml` - Kimai settings
-- `config/packages/fos_user.yaml` - user management
-- `config/packages/local.yaml` - **configure your own Kimai settings (does not exist by default)**
+### Time-tracking modes
 
-There are several other configurations that could potentially be interesting for you in [config/packages/*.yaml]({{ site.kimai_v2_file }}/config/packages/).
+#### Default mode
 
-{% capture dont_edit_configs %}
-Don't edit any of the configuration files (eg. `config/packages/kimai.yaml`) directly, as they will be overwritten during an update.
-Adjust settings from any configuration file by adding them in your own configuration in `local.yaml` (see below).
-{% endcapture %}
-{% assign dont_edit_configs = dont_edit_configs|markdownify %}
+The default tracking mode is not limiting the user is any way. Every user can edit the `begin` and `end` time and the `duration`.
 
-{% include alert.html icon="fas fa-exclamation" type="danger" alert=dont_edit_configs %}
+#### Time-clock mode
 
-### .env
+The time-clock mode is primarily for companies, who don't want their users to add arbitrary records.
+It removes the `begin` and `end` fields for the default timesheet forms. 
 
-These "environment specific settings" are required so Kimai can boot. They are stored in the `.env` file:
- 
-- `MAILER_URL` - smtp connection for emails
-- `MAILER_FROM` - application specific "from" address for all emails
-- `APP_ENV` - environment for the runtime (use `prod` if you are unsure)
-- `DATABASE_URL` - database connection for storing all application data
-- `APP_SECRET` - secret used to encrypt session cookies (users will be logged out if you change it) 
+The `Admin > Timesheets` screen still include these fields, as you might have to correct wrong/add forgotten entries on behalf of the user.
 
-### local.yaml
+#### Duration (no end time)
 
-The configuration file `config/packages/local.yaml` will NEVER be shipped with Kimai, 
-you have to create it before you change settings the first time (eg. `touch config/packages/local.yaml`).
-Having your custom settings in `local.yaml` allows you to easily update Kimai. 
-This is the same concept which is used for the `.env` file.
+Removes the `end` fields from the timesheet form, while the `duration` can be edited.
+All timesheet tables will only display the `date` and `duration` for all records, `start` and `end` time columns are hidden.
 
-An example `config/packages/local.yaml` file might look like this:
+Users with the `edit_other_timesheet` [permission]({% link _documentation/permissions.md %}) can still see the 
+`start` and `end` time in the `Admin > Timesheets` screen. If your country has work regulations that should limit access to this data, 
+make sure to remove this permission for persons without special access regulations (e.g. your HR department).
 
-```yaml
-kimai:
-    timesheet:
-        rounding:
-            default:
-                begin: 15
-                end: 15
+#### Duration (fixed start time)
 
-admin_lte:
-    options:
-        default_avatar: build/apple-touch-icon.png
-```
+The `begin` and `end` fields will be removed, only the `duration` can be edited. 
+As `start` time the `Default start-time` configuration is used (which is configured to `now` by default).
 
-The `local.yaml` file will be imported as last configuration file, so you can overwrite any setting from the `config/packages/` directory.
+Users with the `edit_other_timesheet` [permission]({% link _documentation/permissions.md %}) can still see the
+`start` and `end` time in the `Admin > Timesheets` screen. If your country has work regulations that should limit access to this data,
+make sure to remove this permission for persons without special access regulations (e.g. your HR department).
 
-Whenever the documentation asks you to edit a yaml file from the `config/packages/` directory, it means you should copy 
-this specific configuration key to your `local.yaml` in order to overwrite the default configuration.
+## Lockdown period
 
-{% include alert.html icon="fas fa-exclamation" type="warning" alert="Be consistent with the indentation and don't mix spaces and tabs, YAML is very sensitive about that!" %}
+- `Lockdown period start` - a PHP date-format string `relative to now` and you will likely want to configure a start of a month like `first day of last month 00:00:00` or `first day of -2 month 00:00:00`
+- `Lockdown period end` - a PHP date-format string `relative to now` and you will likely want to configure the end of a month like `last day of last month 23:59:59`, `last day of -2 month 23:59:59` or `first day of this month 00:00:00`
+- `Time zone` - the timezone will be used to calculate the dates (might be important if you have users across multiple timezones, if empty the timezone of the current user is used
+- `Lockdown grace period end (PHP relative date to lockdown period end)` - relative to the lockdown end (the end date will always be appended, but it could still be overwritten by using the `of` modifier), most users will likely want to use a relative period like `+12 hours`, `+10 days` or `+3 weeks`
 
-### Reload changed configurations
+The lockdown period (if activated) will prevent your users from changing timesheet records in the past.
 
-When you change your `local.yaml` configuration file, Kimai will not see this change immediately. 
-You have to reload the configurations by rebuilding the cache. 
+It consists of a `start` and `end` date and a `grace` period.
+The lockdown feature will only be activated if all of these fields are configured with a [relative date format](https://www.php.net/manual/en/datetime.formats.relative.php).
 
-Read the [cache documentation]({% link _documentation/cache.md %}) for more details.
+These rules apply:
+- If the start date of a timesheet record is earlier than the lockdown start, it is not possible to edit it any longer
+- If the start date of a timesheet record is between the lockdown start and end, it can only be edited if "now" is within the grace period
+- If a user has the permission `lockdown_grace_timesheet` all records in the last lockdown period can be edited, even after the grace period ended
+- If a user has the permission `lockdown_override_timesheet` none of the lockdown rules apply
 
-## System-configuration screen
+### Examples
 
-You can edit most of the configurations from the Kimai UI directly.
+We want to achieve that the last month goes into lockdown with the start of the current month, but we want to allow that
+users can edit their records until the fifth day of the month (because invoices will be written on the seventh day of the month).
 
-This screen is only visible to users with the permission `system_configuration` which is by default given to `ROLE_SUPER_ADMIN`.
+Configuration:
 
-Each setting in this screen can also be changed in the config file `config/packages/local.yaml`.
+- Lockdown start: `first day of last month 00:00:00`
+- Lockdown end: `last day of last month 23:59:59` (could also be written as `first day of this month 00:00:00`)
+- Grace period: `+5 days`
 
-## Data directory
+More examples:
+- `first day of -3 month 00:00:00 +216 hours` executed in July 2020 will result in `2020-04-10 00:00:00`
+- only allow editing for yesterday and today: start = `yesterday 00:00:00`, end = `today 23:59:59`, grace = `+1 days`
 
-Inside the `data` directory Kimai and plugins will store newly created files.
-This location is by default `var/data/`, while files will be managed in sub-directories: eg. `var/data/invoices/` for generated invoices.
+## Time rounding
 
-The data directory can be changed by adapting the config key `data_dir` in your `local.yaml`:
+- `Rounding mode` - see below
+- `Rounding of the start time` - in minutes, zero (0) deactivates this config 
+- `Rounding of the end time` - in minutes, zero (0) deactivates this config
+- `Rounding of the duration` - in minutes, zero (0) deactivates this config
+- `Days of the week when rounding will be applied` - on all other days, the real recorded values will be used
 
-```yaml
-kimai:
-    data_dir: "/home/kimai/safe-place/"
-```
+Rounding rules are used to round the `begin` and `end` times and the `duration` for timesheet records:
 
-After changing the data directory, you should move all existing data to the new location and then reload the cache.
+- The `end` date of timesheet records will be used to match the day (think of overnight entries)
+- If you set one of `begin`, `end`, `duration` to 0 no rounding will be applied for that field, the exact time (including seconds) is used for calculation
+- The values of the rules are minutes (not the minute of an hour), so 5 for "begin" means we round down to the previous multiple of five
+- Rounding rules will be applied on stopped timesheet records only, so you might see an un-rounded value for the start time and duration until you stop the record
 
-## User preferences vs. system settings
+These are the existing rounding modes:
+- `default` - "begin" will always be rounded to the floor (down) and "end" & "duration" to the ceiling (up)
+- `closest` - "begin", "end" and "duration" will be rounded in a mathematical way, always to the nearest value
+- `floor` - "begin", "end" and "duration" will always be rounded down to the nearest value
+- `ceil` - "begin", "end" and "duration" will always be rounded up to the nearest value
 
-A user has several preferences, which change the behaviour how he interacts with Kimai.
+## Invoices
 
-Check out the [user preferences documentation]({% link _documentation/user-preferences.md %}) to find out more.
+- `Invoice number format` - read more at [invoices]({% link _documentation/invoices.md %})
+- `Simple search` - displays a shorter search form, removing some fields which are used less often
 
-## Adding system configuration
+## Authentication
 
-As plugin developer you can add your own sections to the system configuration screen, see [developer documentation]({% link _documentation/developers.md %}).
+- `User registration` - 
+- `Forgot password` -
+- `Forgotten password` - number of seconds before a user can request the next e-mail
+- `Forgotten password` - number of seconds before a reset link expires
+
+## Create customer—default values
+
+- `Timezone` - default value for the "create customer" form
+- `Country` - default value for the "create customer" form
+- `Currency` - default value for the "create customer" form
+
+## User—default values
+
+- `Timezone` - default value for the "create user" form
+- `Country` - default value for the "create user" form
+- `Currency` - ONLY used to display the users hourly rate
+
+## Theme
+
+- `Minimum number of letters to start auto-completion` - 
+- `Allow markdown-formattings in descriptions and comments` - if activated, contents will be rendered with a markdown engine 
+  supporting simple lists and other HTML content. It will only be rendered in `My times` and not in `Admin > Timesheet` as
+  [security measure](https://github.com/erusev/parsedown/blob/master/README.md#security).  
+- `Tags: use auto-complete search and allow tag creation` - 
+- `Limit color choices` - 
+- `Allowed colors` - 
+- `Allow the use of URLs for avatar images` - 
+- `Use random colors for objects without assigned color` - 
+
+## Calendar 
+
+- `week_numbers` - whether week numbers should be displayed in the monthly view (default: true)
+- `weekends` - whether weekends should be displayed (default: true)
+- `day_limit` - defined the max amount of items to be displayed for one day in the monthly view (default: 4)
+- `slot_duration` - defines the duration for each calendar slot (row) in the week and day views (default: 00:30:00 = 30 minutes)
+- `businessHours.days` - defines your working days, which will be highlighted in the weekly and daily view. counting starts with sunday and the index 0, so 1 = monday, ..., 6 = saturday. (default: 1-5 / monday to friday)
+- `businessHours.begin` - the start time of your working day, which will be highlighted in the weekly and daily view (default: 08:00)
+- `businessHours.end` - the end time of your working day, which will be highlighted in the weekly and daily view (default: 18:00)
+- `visibleHours.begin` - the start time of the calendars week and day view (default: 00:00)
+- `visibleHours.end` - the end time of the calendars week and day view (default: 24:00)
+
+## My company
+
+Kimai offers some configuration settings to adapt the branding to your company:
+
+- `Logo URL` - an absolute URL to an image, which  replaces the company name in login screen
+- `Company name` - replace the application name with your `company` name (approx. 15-20 character)
+- `Mini Logo` - replace the mini version "KTT" with an abbreviation for your company name (3 chars max)
+- `Browser Title` - the browser title which by default shows the full application title 
+- `Financial year` - starts on **first of January** by default 
+
+If you don't set a `logo` but use a value in `company`, this will be used in the login screen.
+The settings for `company` and `mini` name can contain the HTML tags `<b><i><u><strong><em><img><svg>` for formatting.

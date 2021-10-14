@@ -1,0 +1,80 @@
+---
+title: Kimai - application de suivi du temps (open-source)
+description: Kimai - Suivi du temps de travail gratuit et facile à utiliser pour les indépendants, les agences et les entreprises.
+lang-ref: home
+lang: fr
+permalink: /fr/
+redirect_from:
+  - /fr/meinungen.html
+---
+
+	<blockquote>
+		Kimai simplifie non seulement le processus fastidieux consistant à alimenter des feuilles de calcul Excel avec vos heures de travail,
+		il offre également des dizaines d'autres fonctionnalités passionnantes dont vous ne saviez même pas qu'elles vous manquaient !
+	</blockquote>
+
+	<div class="row row-cards">
+		<div class="col-sm-6 col-lg-4">
+			{% include card-image.html image="timesheet" %}
+		</div>
+		<div class="col-sm-6 col-lg-4">
+			{% include card-image.html image="invoice" %}
+		</div>
+		<div class="col-sm-6 col-lg-4">
+			{% include card-image.html image="dashboard" %}
+		</div>
+	</div>
+
+	<p>
+		Kimai n'a pas besoin de fonctionner pendant l'enregistrement, vous pouvez même quitter votre navigateur.
+		Votre temps sera toujours enregistré jusqu'à ce que vous l'arrêtiez à partir d'un navigateur web qui a accès à votre installation.
+		Kimai est conçu pour de nombreux utilisateurs, mais vous pouvez aussi l'utiliser pour un seul utilisateur, comme vous le souhaitez.
+	</p>
+
+	<div class="alert alert-success">
+		<h4>Un suivi du temps libre pour tous</h4>
+		<p>
+			Kimai est un outil de suivi du temps gratuit et open source. Il enregistre vos heures de travail et imprime un résumé de toutes les activités si nécessaire.
+			Annuel, mensuel, quotidien, trié par clients ou projets... vous pouvez créer des factures, des exports ou suivre l'état d'avancement de vos projets.
+			La simplicité est la grande force de Kimai. Grâce à son interface basée sur un navigateur, il fonctionne sur toutes les plateformes, même sur votre téléphone portable.
+		</p>
+		<div class="btn-list">
+			<a href="{% link _pages/fr/download.md %}" class="btn btn-primary">Téléchargez maintenant !</a>
+			<a href="{% link _pages/fr/demo.md %}" class="btn btn-secondary">Essayer d'abord</a>
+		</div>
+	</div>
+
+	<h2>Liste des fonctionnalités</h2>
+	<p>
+		La liste suivante est <b>non</b> exhaustive et présente quelques-unes des caractéristiques les plus intéressantes de Kimai.
+	</p>
+
+	<table class="table table-striped table-responsive-sm">
+		<thead>
+		<tr>
+			<th class="text-nowrap">Nom</th>
+			<th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+			{% assign features = site.features | sort:"order" %}
+			{% for feature in features %}
+				<tr>
+					<td class="text-nowrap">
+						{% if feature.documentation != nil %}
+							{% assign url = feature.documentation | replace: '_store/', '/store/' | replace: '_documentation/', '/documentation/' | replace: '.md', '.html' %}
+							<a href="{{ url }}">{{ feature.title }}</a>
+						{% else %}
+							{{ feature.title }}
+						{% endif %}
+					</td>
+					<td>{{ feature.excerpt }}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	<p>
+		Cela vous semble intéressant ? Alors n'attendez plus et obtenez Kimai gratuitement dès maintenant :
+		<a href="{% link _pages/fr/download.md %}" class="btn btn-primary"><i class="fas fa-download"></i> Télécharger</a>
+	</p>

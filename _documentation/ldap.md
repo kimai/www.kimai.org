@@ -1,58 +1,39 @@
 ---
 title: LDAP
-description: How to use an LDAP directory server with Kimai 2
+description: How to use an LDAP directory server with Kimai
 toc: true
-since_version: 1.0
+canonical: /documentation/ldap.html
 redirect_from: 
   - /documentation/administrator/authenticator.html
   - /documentation/authenticator/
 ---
 
-Kimai supports authentication against your company directory server (LDAP or AD). 
-LDAP users will be imported during the first login and their attributes and groups 
-updated on each following login. 
+Kimai supports authentication against your company directory server (LDAP or AD).
+LDAP users will be imported during the first login and their attributes and groups
+updated on each following login.
 
 ## Installation
 
-In order to use the LDAP authentication module of Kimai, you have to install the Laminas LDAP library (from Kimai 1.9 on):
+In order to use the LDAP authentication module of Kimai, you have to install the LDAP library:
 ```bash
-composer require laminas/laminas-ldap --no-dev --optimize-autoloader
+composer require laminas/laminas-ldap --optimize-autoloader
 ```
 
-Up until Kimai 1.8 you need to run: 
-```bash
-composer require zendframework/zend-ldap --no-dev --optimize-autoloader
+If you see an error message like this:
 ```
+laminas/laminas-ldap requires ext-ldap * -> it is missing from your system. Install or enable PHP's ldap extension.
+```
+you have to install the PHP LDAP extension, e.g. on Ubuntu with `apt-get install php-ldap` first.
 
 ### Activate LDAP authentication
 
-You activate the LDAP authentication by adding the following code to the end of your 
-[local.yaml]({% link _documentation/configurations.md %}):
-
-```yaml
-security:
-    providers:
-        chain_provider:
-            chain:
-                providers: [kimai_ldap]
-    firewalls:
-        secured_area:
-            kimai_ldap: ~
-```  
-
-After that, you need to adjust the LDAP config (see below) and at the end re-build the cache as described in the [configurations chapter]({% link _documentation/configurations.md %}). 
-
-You can deactivate it the other way around, delete or comment the lines above and clear the cache. 
-
-### Configuration
-
-If you want to activate LDAP authentication, you have to adjust your [local.yaml]({% link _documentation/configurations.md %}).
-
-This is the full available configuration, most of the values are optional and their default values were chosen for maximum compatibility with OpenLDAP setup:
+You activate the LDAP authentication by adding the following code to the end of your
+[local.yaml]({% link _documentation/local-yaml.md %}) and [reloading the cache]({% link _documentation/cache.md %}) afterwards.
 
 ```yaml
 kimai:
     ldap:
+        activate: true
         # more infos about the connection params can be found at:
         # https://docs.laminas.dev/laminas-ldap/api/
         connection:
@@ -89,7 +70,7 @@ kimai:
             
             # LDAP search filter to find the user (%s will be replaced by the username).
             # Should be set, to be compatible with your object structure.
-            # You don not need to set this filter, unless you have a very special setup 
+            # You might not need to set this filter, unless you have a special setup 
             # or use Microsofts Active directory.
             #
             # Defaults:
@@ -202,10 +183,11 @@ kimai:
             #    - { ldap_value: kimai_admin, role: ROLE_ADMIN }
 ``` 
 
-Kimai uses the Laminas Framework LDAP module and uses the configured `connection` parameters without modification. 
-Find out more about the settings in the [detailed documentation](https://docs.laminas.dev/laminas-ldap/api/). 
+This is the full available configuration, most of the values are optional and their default values were chosen for maximum compatibility with OpenLDAP setup.
+Kimai uses the Laminas Framework LDAP module and uses the configured `connection` parameters without modification.
+Find out more about the settings in the [detailed documentation](https://docs.laminas.dev/laminas-ldap/api/).
 
-Remember to re-build the cache for changes to take effect, see [configurations chapter]({% link _documentation/configurations.md %}). 
+You need to [re-build the cache]({% link _documentation/cache.md %}) for changes to take effect.
 
 ## User synchronization
 
@@ -217,15 +199,15 @@ User data is synchronized on each login, fetching the latest data from your LDAP
 - the authentication is checked with a `bind`
 - if the `bind` was successful:
     - another `bind` using the service account (connection.username/connection.password) is executed and under that scope:
-      - a `search` is executed to find and map LDAP attributes to the Kimai profile
-      - if configured, another `search` is executed to sync and map the users LDAP groups to Kimai roles 
+        - a `search` is executed to find and map LDAP attributes to the Kimai profile
+        - if configured, another `search` is executed to sync and map the users LDAP groups to Kimai roles
 
 **Password handling**
 
-Obviously Kimai does not store the users password when logged-in via LDAP and there is 
+Obviously Kimai does not store the users password when logged-in via LDAP and there is
 no fallback mechanism implemented, if your LDAP is not available (currently only ONE server can be configured).
 
-{% include alert.html type="danger" alert="The default configuration allows a user to change the internal password. This manually chosen password is not overwritten by the LDAP plugin and would allow a user to login, even after you removed him from LDAP." %} 
+{% include alert.html type="danger" alert="The default configuration allows a user to change the internal password. This manually chosen password is not overwritten by the LDAP plugin and would allow a user to login, even after you removed him from LDAP." %}
 
 To prevent that problem:
 - disable the "[Password reset]({% link _documentation/users.md %})" function
@@ -298,14 +280,16 @@ kimai:
                 - { ldap_value: administrator, role: ROLE_SUPER_ADMIN }
 ```
 
-Kimai will search the `baseDn` with `userDnAttribute=user['dn']` (e.g. `member=uid=user1,ou=users,dc=kimai,dc=org`) and extract the 
-group names from the result-sets attribute `nameAttribute`. 
+Kimai will search the `baseDn` with `userDnAttribute=user['dn']` (e.g. `member=uid=user1,ou=users,dc=kimai,dc=org`) and extract the
+group names from the result-sets attribute `nameAttribute`.
 
 After finding a list of group names, they will be converted to Kimai roles:
-- first step is to lookup in `groups` mapping, if there is a match in `ldap_value` and uses the `role` value without further processing 
+- first step is to lookup in `groups` mapping, if there is a match in `ldap_value` and uses the `role` value without further processing
 - if no mapping was found, the group name will be UPPERCASED and prefixed with `ROLE_` => e.g. `admin` will become `ROLE_ADMIN`
 
-These converted names will validated and [only existing roles]({% link _documentation/users.md %}) will pass to the user profile.  
+These converted names will be validated and [only existing roles]({% link _documentation/users.md %}) will pass to the user profile.
+
+{% include alert.html type="info" alert="Remove the entire 'role' configuration block to deactivate role sync!" %}
 
 ## Known limitations
 
@@ -313,7 +297,7 @@ There are a couple of caveats that should be taken into account.
 
 ### Missing email address
 
-Kimai requires that every user account has an email address. If you do not configure an attribute for email, 
+Kimai requires that every user account has an email address. If you do not configure an attribute for email,
 the username will be used as fallback for the email during the initial import of the user account.
 
 This will lead to problems, when you try to update a user profile in Kimai - you will see an error saying
@@ -324,12 +308,12 @@ that the email is not valid, even if you only tried to change the user roles.
 
 ### Profile changes will be overwritten
 
-As all configured user attributes will be synchronized on every login, manual profile changes 
-in the internal user database won't be permanent. 
+As all configured user attributes will be synchronized on every login, manual profile changes
+in the internal user database won't be permanent.
 
 But: fields which are not synced, won't be changed during the user login.
 
-### Role changes will be overwritten 
+### Role changes will be overwritten
 
 If you configured the group sync, the assigned user roles in Kimai will be overwritten on login.
 
@@ -352,6 +336,7 @@ This will only work for very basic LDAP setups, but it demonstrates the power of
 ```yaml
 kimai:
     ldap:
+        activate: true
         connection:
             host: 127.0.0.1
         user:
@@ -370,16 +355,16 @@ The query to find all user attributes looks like this:
 SRCH base="uid=foo,ou=users,dc=kimai,dc=org" scope=2 deref=0 filter="(objectClass=*)"
 SRCH attr=+ *
 ```
-The generated query for the group-to-role mapping: 
+The generated query for the group-to-role mapping:
 ```
 SRCH base="ou=groups,dc=kimai,dc=org" scope=2 deref=0 filter="(&(member=uid=foo,ou=users,dc=kimai,dc=org))"
 SRCH attr=cn + *
 ```
 
-The Kimai account will have the username and email set to the `uid`, because we did not configure 
+The Kimai account will have the username and email set to the `uid`, because we did not configure
 another usernameAttribute (like `cn`) or a mapping for the email.
 
-If the role search would have returned groups with the `cn` value `admin`, `super_admin` or `teamlead`, 
+If the role search would have returned groups with the `cn` value `admin`, `super_admin` or `teamlead`,
 the new account would have been promoted into these roles.
 
 ### OpenLDAP with group sync
@@ -389,6 +374,7 @@ A secured local OpenLDAP on port 543 with roles sync for the objectClass `posixA
 ```yaml
 kimai:
     ldap:
+        activate: true
         connection:
             host: 127.0.0.1
             useSsl: true
@@ -419,10 +405,11 @@ kimai:
 ### Connect to Active Directory
 
 This is an [example](https://gist.github.com/firegore/b12d43ef679bd8020a7b5ffa4a556083) how you can connect your AD with Kimai.
- 
+
 ```yaml
 kimai:
     ldap:
+        activate: true
         connection:
             host: ad.example.com
             username: user@ad.example.com

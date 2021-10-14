@@ -91,6 +91,7 @@ layout: default
                             <p class="mb-4">
                                 {{ developer.description }}
                             </p>
+                            {% if developer.homepage or developer.email %}
                             <div class="mb-4">
                                 If you have any question,
                                 {% if developer.homepage %}
@@ -104,6 +105,7 @@ layout: default
                                 {% endif %}
                                 .
                             </div>
+                            {% endif %}
                             <ul class="social-links list-inline mb-0 mt-2">
                                 {% if developer.homepage %}
                                 <li class="list-inline-item">
@@ -270,19 +272,19 @@ layout: default
                     </div>
                 </div>
             {% endif %}
-            {% if page.bundle %}
-                {% if page.bundle.screenshots %}
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="d-flex align-items-center px-2">
-                                <h3 id="screenshots" class="card-title">Screenshots</h3>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            {% include slider.html slides=page.bundle.screenshots %}
-                        </div>
+            {% if page.screenshots %}
+            <div class="card">
+                <div class="card-header">
+                    <div class="d-flex align-items-center px-2">
+                        <h3 id="screenshots" class="card-title">Screenshots</h3>
                     </div>
-                {% endif %}
+                </div>
+                <div class="card-body">
+                    {% include slider.html slides=page.screenshots %}
+                </div>
+            </div>
+            {% endif %}
+            {% if page.bundle %}
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center px-2">

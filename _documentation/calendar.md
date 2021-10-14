@@ -2,62 +2,38 @@
 title: Calendar
 description: Manage your timesheet records in a calendar view
 toc: true
+related:
+  - timesheet
+  - weekly-times
 ---
 
-Kimai 2 provides a calendar view, which displays your timesheet entries in a easy readable format.
-You can choose between a monthly, weekly and daily view.
+Kimai provides a calendar view, which allows management of your timesheet entries in a calendar format, where you 
+can choose between a monthly, weekly and daily view.
 
-The calendar view look and feel is configured with the config keys below `kimai.calendar` in `kimai.yaml` 
-(see [configurations]({% link _documentation/configurations.md %})) or in the system configurations screen:  
+## Editing timesheets
 
-```yaml
-kimai:
-    calendar:
-        week_numbers: true
-        weekends: true
-        day_limit: 4
-        slot_duration: '00:30:00'
-        businessHours:
-            days: [1, 2, 3, 4, 5]
-            begin: '08:00'
-            end: '18:00'
-        visibleHours:
-            begin: '00:00'
-            end: '24:00'
-```
+- By clicking an existing timesheet in the calendar, you open the "edit timesheet" form
+- By selecting and then moving the entry on the calendar, you can shift the time of the entry (by changing `begin` and `end`, without changing the `duration`)
+- By clicking the handle (you will see it at the bottom of an entry when hovering it) of an existing record and then dragging it to another time (`end` and `duration` will be changed)  
 
-- `week_numbers` - whether week numbers should be displayed in the monthly view (default: true)
-- `weekends` - whether weekends should be displayed (default: true)
-- `day_limit` - defined the max amount of items to be displayed for one day in the monthly view (default: 4)
-- `slot_duration` - defines the duration for each calendar slot (row) in the week and day views (default: 00:30:00 = 30 minutes)
-- `businessHours.days` - defines your working days, which will be highlighted in the weekly and daily view. counting starts with sunday and the index 0, so 1 = monday, ..., 6 = saturday. (default: 1-5 / monday to friday) 
-- `businessHours.begin` - the start time of your working day, which will be highlighted in the weekly and daily view (default: 08:00)
-- `businessHours.end` - the end time of your working day, which will be highlighted in the weekly and daily view (default: 18:00)
-- `visibleHours.begin` - the start time of the calendars week and day view (default: 00:00)
-- `visibleHours.end` - the end time of the calendars week and day view (default: 24:00)
+## Creating timesheets
 
-## Integrating google calender
+There are a couple of ways you can create a new timesheet record in the calendar view:
 
-If you want to embed Google calendars e.g. to display regional holidays or company events you can import (multiple) Google calendars.
+- By clicking into the calendar you open a "create timesheet" form for a running entry with the correct day pre-selected (month, week and day view)
+- When you click and drag the selection, you open a "create timesheet" form for a completed timesheet (week and day view)
+- Drag & drop existing entries (recent activities) from the left side into the calendar (month, week and day view)
 
-- read how to obtain your [Google API key and find the Calender ID](https://fullcalendar.io/docs/google-calendar)
-- add the optional `kimai.calendar.google` configuration
-- you can add any number of sources under the `kimai.calendar.google.sources` node, each must have its own name (like `holidays` and `company` in this example)
+## Deleting timesheets
 
-```yaml
-kimai:
-    calendar:
-        google:
-            api_key: 'your-restricted-google-api-key'
-            sources:
-                holidays:
-                    id: 'de.german#holiday@group.v.calendar.google.com'
-                    color: '#ccc'
-                company:
-                    id: 'de.german#holiday@group.v.calendar.google.com'
-                    color: '#cc0000'
-```
+You can remove every timesheet record by drag & drop onto the "Delete" button:
+
+![Picture](/images/documentation/calendar-delete.png)
+
+## Calendar configurations
+
+The look and feel of the calendar can be customized via [System > Settings]({% link _documentation/configurations.md %}).
 
 ## User preferences
 
-A user can change the initial view for the calendar, see [user preferences documentation]({% link _documentation/user-preferences.md %}).
+A user can change the initial view for the calendar, see [user preferences]({% link _documentation/user-preferences.md %}).

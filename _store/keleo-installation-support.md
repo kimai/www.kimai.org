@@ -8,6 +8,7 @@ date: "2019-02-20 18:00:00 +0200"
 url: https://www.keleo.de/kimai/
 icon: fas fa-shipping-fast
 email: info@keleo.de
+type: support
 tags:
   - support
 redirect_from:

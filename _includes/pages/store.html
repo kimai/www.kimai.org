@@ -1,0 +1,101 @@
+
+<div class="container">
+    {% assign titleTrans = site.data.trans[page.lang].store-title %}
+    {% assign subtitleTrans = site.data.trans[page.lang].store-subtitle %}
+    {% include page-title.html title=titleTrans subtitle=subtitleTrans %}
+
+    <div class="row row-cards">
+        <div class="col-lg-9">
+            {% assign products = site.store | where_exp:"product", "product.type == 'featured'" | sort: 'name' %}
+            {% include store-list.html products=products %}
+
+            {% assign products = site.store | where_exp:"product", "product.type == 'support'" | sort: 'name' %}
+            {% include store-list.html products=products %}
+
+            <h3>{{ site.data.trans[page.lang].store-category-apps }}</h3>
+
+            {% assign products = site.store | where_exp:"product", "product.type == 'app'" | sort: 'name' %}
+            {% include store-list.html products=products %}
+
+            <h3>{{ site.data.trans[page.lang].store-category-plugins }}</h3>
+
+            {% assign products = site.store | where_exp:"product", "product.type == 'plugin'" | sort: 'name' %}
+            {% include store-list.html products=products %}
+
+            <h3>{{ site.data.trans[page.lang].store-category-client }}</h3>
+
+            {% assign products = site.store | where_exp:"product", "product.type != 'featured'" %}
+            {% assign products = products | where_exp:"product", "product.type != 'support'" %}
+            {% assign products = products | where_exp:"product", "product.type != 'app'" %}
+            {% assign products = products | where_exp:"product", "product.type != 'plugin'" | sort: 'name' %}
+
+            {% include store-list.html products=products %}
+        </div>
+        <div class="col-lg-3">
+            <div class="row">
+                <div class="col-md-6 col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="mb-4 text-center">
+                                <i class="fas fa-shopping-cart fa-4x"></i>
+                            </div>
+                            <h3 class="card-title text-center">{{ site.data.trans[page.lang].store-buy-title }}</h3>
+                            <div class="card-subtitle">
+                                <p>
+                                    {{ site.data.trans[page.lang].store-buy-marketplace }}
+                                </p>
+                                <p>
+                                    {{ site.data.trans[page.lang].store-buy-support }}
+                                </p>
+                                <p>
+                                    {{ site.data.trans[page.lang].store-buy-karma }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">{{ site.data.trans[page.lang].store-contribute-title }}</h4>
+                            <div class="card-subtitle">
+                                <p>
+                                    {{ site.data.trans[page.lang].store-contribute-subtitle }}:
+                                <ul>
+                                    <li>
+                                        <a href="{% link _documentation/plugins.md %}">{{ site.data.trans[page.lang].store-contribute-plugin }}</a>
+                                    </li>
+                                    <li>
+                                        <a href="{% link _documentation/store.md %}">{{ site.data.trans[page.lang].store-contribute-store }}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">{{ site.data.trans[page.lang].store-plugins-title }}</h4>
+                            <div class="card-subtitle">
+                                <p>
+                                    {{ site.data.trans[page.lang].store-plugins-subtitle }}:
+                                <ul>
+                                    <li>
+                                        <a href="https://github.com/topics/kimai2" target="_blank">kimai2</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://github.com/topics/kimai-plugin" target="_blank">kimai-plugin</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://github.com/topics/kimai-bundle" target="_blank">kimai-bundle</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

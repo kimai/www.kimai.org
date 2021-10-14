@@ -36,7 +36,7 @@
                     <div class="text-wrap p-lg-6">
                         <h1>{{ archive }}</h1>
                         <p>
-                            {{ jump_to }}:&nbsp;
+                            {{ jump_to }}:&nbsp;
                             {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
                             {% assign sortedTags = site_tags | split:',' | sort %}
                             {% for tag in sortedTags %}
@@ -45,7 +45,7 @@
                         </p>
                         {% for tag in sortedTags %}
                         <h3 id="{{ tag | cgi_escape }}">{{ tag }}</h3>
-                        <ul> 
+                        <ul>
                             {% for post in site.tags[tag] %}
                             <li><a href="{{ site.baseurl }}{{ post.url }}" rel="bookmark">{{ post.title }}</a> <span class="text-muted"> — <time class="published" datetime="{{ post.date | date: date }}">{{ post.date | date: date }}</time></span></li>
                             {% endfor %}

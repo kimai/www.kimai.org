@@ -1,5 +1,5 @@
 ---
-title: Buy a Kimai 2 plugin
+title: Buy a Kimai plugin
 description: A brief explanation of the payment process and license
 ---
 
@@ -12,7 +12,7 @@ Kimai plugins are sold through the processor Gumroad Inc., which accepts payment
 If you don't want or can't use this method, I offer direct bank-transfer payments as well.
 Please write an email to [info@keleo.de](mailto:info@keleo.de) and ask for the bank account.
 
-After successful purchase, you get access to the plugin files, which need to be installed in your existing Kimai 2 installation.
+After successful purchase, you get access to the plugin files, which need to be installed in your existing Kimai installation.
 You get access either through Gumroad directly or in case of a bank-transfer payment via email.
 
 {% include store-private-repo-support.html %}

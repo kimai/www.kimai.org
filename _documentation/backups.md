@@ -1,6 +1,6 @@
 ---
 title: Backups
-description: How to backup and restore a Kimai 2 installation
+description: How to backup and restore your Kimai installation
 toc: true
 ---
 

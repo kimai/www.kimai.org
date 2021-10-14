@@ -2,6 +2,7 @@
 title: Developers
 description: Developer documentation - run, develop, extend and build for Kimai 
 toc: true
+canonical: /documentation/developers.html
 redirect_from:
   - /documentation/developer/documentation.html
   - /documentation/developer/introduction.html
@@ -15,7 +16,7 @@ This page is for all developers who want to contribute to Kimai. You rock!
 
 All you need is:
 
-- PHP >= 7.2.9
+- PHP >= 7.3
 - PHP extensions: `pdo-mysql`, `intl`, `zip`, `gd`, `mbstring`, `xml`
 - a MariaDB or MySQL instance
 - [Composer](https://getcomposer.org/download/)
@@ -37,12 +38,12 @@ APP_ENV=dev
 DATABASE_URL=mysql://user:password@127.0.0.1:3306/database?charset=utf8&serverVersion=5.7
 ```
 
-The next command will import demo data, to test the application in its full beauty - with different user accounts, 
-customers, projects, activities and several thousand timesheet records. Let's bootstrap your database 
-(command only available in `dev` environment): 
+The next command will import demo data, to test the application in its full beauty - with different user accounts,
+customers, projects, activities and several thousand timesheet records. Let's bootstrap your database
+(command only available in `dev` environment):
 
 ```bash
-bin/console kimai:reset-dev
+bin/console kimai:reset:dev
 ```
 
 Almost there!
@@ -67,7 +68,7 @@ You can now login with these accounts:
 | susan_super    | kitten   | api_kitten | Super-Administrator |
 
 Demo data can always be deleted by dropping the schema and re-creating it.
-The `kimai:reset-dev` command will do that automatically and can always be executed later on to reset your dev database and cache.
+The `kimai:reset:dev` command will do that automatically and can always be executed later on to reset your dev database and cache.
 
 If you want to test with an empty installation, erase the database and re-create an empty schema:
 
@@ -101,7 +102,7 @@ You can find more information [here](https://symfony.com/doc/current/frontend/en
 
 ## local.yaml
 
-Beware: if you use the `local.yaml` (as proposed in [configurations]({% link _documentation/configurations.md %})) then don't put it 
+Beware: if you use the [local.yaml]({% link _documentation/local-yaml.md %}) then don't put it
 in `config/packages/` as all configs in there are used when running the PHPUnit testsuite.
 
 The (integration) tests are written to work with the default configuration of Kimai and locally changed configs might unexpectedly break the tests.
@@ -110,8 +111,8 @@ Therefor put your `local.yaml` into the `dev/` folder: `config/packages/dev/loca
 
 ## Tests suites with PHPUnit
 
-Kimai tries to adopt a high test and code coverage. Whenever changing code, you have to make sure 
-that the tests are still running. New code needs additional tests, otherwise your pull request might be declined. 
+Kimai tries to adopt a high test and code coverage. Whenever changing code, you have to make sure
+that the tests are still running. New code needs additional tests, otherwise your pull request might be declined.
 
 You can run the unit and integration tests with built-in commands:
 
@@ -120,7 +121,7 @@ composer kimai:tests-unit
 composer kimai:tests-integration
 ```
 
-Or you simply run all tests with one of: 
+Or you simply run all tests with one of:
 
 - `composer kimai:tests`
 - `vendor/bin/phpunit`
@@ -141,7 +142,7 @@ You can run the code sniffer with the built-in command like that:
 composer kimai:codestyle
 ```
 
-And you can also automatically fix the violations by running: 
+And you can also automatically fix the violations by running:
 
 ```bash
 composer kimai:codestyle-fix
@@ -239,16 +240,16 @@ class MyDashboardSubscriber implements EventSubscriberInterface
 }
 ```
 
-For more details check this [dashboard subscriber]({{ site.kimai_v2_file }}/src/EventSubscriber/DashboardSubscriber.php).
+For more details check this [dashboard subscriber](https://github.com/Keleo/DemoBundle/blob/master/EventSubscriber/DashboardSubscriber.php).
 
 ### Adding new widget types
 
 You can add your own widgets via plugin by adding two classes:
 
 - a widget implementing `\App\Widget\WidgetInterface`
-  - or for the lazy folks extending `\App\Widget\Type\AbstractWidgetType`
+    - or for the lazy folks extending `\App\Widget\Type\AbstractWidgetType`
 - a widget renderer implementing `\App\Widget\WidgetRendererInterface`
-  - if you want to use twig to render your widget, extend `\App\Widget\Renderer\AbstractTwigRenderer`
+    - if you want to use twig to render your widget, extend `\App\Widget\Renderer\AbstractTwigRenderer`
 
 These widgets can now be injected to the Dashboard as explained above with the `MyDashboardSubscriber`.
 
@@ -274,11 +275,11 @@ In the config `kimai.invoice.documents`, you can add a list of directories with 
 
 ### Adding invoice calculator
 
-An invoice calculator is a class implementing `App\Invoice\CalculatorInterface` and it is responsible for calculating 
-invoice rates, taxes and taking care to aggregate all timesheet entries that should be displayed.   
+An invoice calculator is a class implementing `App\Invoice\CalculatorInterface` and it is responsible for calculating
+invoice rates, taxes and taking care to aggregate all timesheet entries that should be displayed.
 
 Every invoice calculator class will be automatically available, after refreshing the application cache with `bin/console cache:clear`.
-This "magic" happens in the [InvoiceServiceCompilerPass]({{ site.kimai_v2_file }}/src/DependencyInjection/Compiler/InvoiceServiceCompilerPass.php), 
+This "magic" happens in the [InvoiceServiceCompilerPass]({{ site.kimai_v2_file }}/src/DependencyInjection/Compiler/InvoiceServiceCompilerPass.php),
 which finds the classes by the interface `CalculatorInterface`.
 
 The ID of the calculator must be unique, please prefix it with your vendor or bundle name and make sure it only contains
@@ -288,11 +289,11 @@ Translations are stored in the `invoice-calculator.xx.xlf`.
 
 ### Adding invoice-number generator
 
-An invoice-number generator is a class implementing `App\Invoice\NumberGeneratorInterface` and its only task is to generate 
-a number for the invoice. In most cases you do not want to mix multiple invoice-number generators throughout your invoices.   
+An invoice-number generator is a class implementing `App\Invoice\NumberGeneratorInterface` and its only task is to generate
+a number for the invoice. In most cases you do not want to mix multiple invoice-number generators throughout your invoices.
 
 Every invoice number-generator class will be automatically available, after refreshing the application cache with `bin/console cache:clear`.
-This "magic" happens in the [InvoiceServiceCompilerPass]({{ site.kimai_v2_file }}/src/DependencyInjection/Compiler/InvoiceServiceCompilerPass.php), 
+This "magic" happens in the [InvoiceServiceCompilerPass]({{ site.kimai_v2_file }}/src/DependencyInjection/Compiler/InvoiceServiceCompilerPass.php),
 which finds the classes by the interface `NumberGeneratorInterface`.
 
 The ID of the number generator must be unique, please prefix it with your vendor or bundle name and make sure it only contains
@@ -302,27 +303,81 @@ Translations are stored in the `invoice-numbergenerator.xx.xlf`.
 
 ### Adding invoice renderer
 
-An invoice renderer is a class implementing `App\Invoice\RendererInterface` and it is responsible to convert an `InvoiceModel` (the actual data) 
-with the use of an `InvoiceDocument` (the template file) into a downloadable/printable document. 
+An invoice renderer is a class implementing `App\Invoice\RendererInterface` and it is responsible to convert an `InvoiceModel` (the actual data)
+with the use of an `InvoiceDocument` (the template file) into a downloadable/printable document.
 
 Every invoice renderer class will be automatically available, after refreshing the application cache with `bin/console cache:clear`.
-This "magic" happens in the [InvoiceServiceCompilerPass]({{ site.kimai_v2_file }}/src/DependencyInjection/Compiler/InvoiceServiceCompilerPass.php), 
+This "magic" happens in the [InvoiceServiceCompilerPass]({{ site.kimai_v2_file }}/src/DependencyInjection/Compiler/InvoiceServiceCompilerPass.php),
 which finds the classes by the interface `RendererInterface`.
 
 ## Adding export renderer
 
-See [export]({% link _documentation/export.md %}) documentation.
+An export renderer is a class implementing `App\Export\RendererInterface` and it is responsible to convert an array of
+`Timesheet` objects into a downloadable/printable document.
+
+Every export renderer class will be automatically available when refreshing the application cache, thanks to the  
+[ExportServiceCompilerPass]({{ site.kimai_v2_file }}/src/DependencyInjection/Compiler/ExportServiceCompilerPass.php).
+
+Each renderer is represented by a "button" below the datatable on the export screen.
+
+A simple example, which only shows the IDs of the included timesheet records could look like this:
+
+```php
+use App\Entity\Timesheet;
+use App\Export\RendererInterface;
+use App\Repository\Query\TimesheetQuery;
+use Symfony\Component\HttpFoundation\Response;
+
+final class TimesheetIdRenderer implements RendererInterface
+{
+    public function render(array $timesheets, TimesheetQuery $query): Response
+    {
+        $ids = array_map(function(Timesheet $timesheet) {
+            return $timesheet->getId();
+        }, $timesheets);
+
+        $response = new Response();
+        $response->setContent(sprintf('Included IDs: %s', implode(', ', $ids)));
+
+        return $response;
+    }
+
+    public function getId(): string
+    {
+        return 'ext_array_dump';
+    }
+
+    public function getIcon(): string
+    {
+        return 'fas fa-file-code';
+    }
+
+    public function getTitle(): string
+    {
+        return 'Show IDs';
+    }
+}
+```
+
+All you need to do is to register it as a service in the Symfony DI container.
+
+### Adding timesheet export renderer
+
+Timesheet exporter (implementing the interface `App\Export\TimesheetExportInterface`) are almost the same as export renderer,
+except that they don't have the methods `getIcon()` and `getTitle()`.
+
+If you already wrote an export renderer, all you need to add is the second interface and you can export the filtered data
+from the user and admin timesheet screen.
+
+Be aware, that you should add more permission (eg. `view_rate_own_timesheet`) checks to these renderer, as they are available for every user!
 
 ## Adding timesheet calculator
 
-A timesheet calculator will be called on stopped timesheet records. It can rewrite all values but will normally take care 
+A timesheet calculator will be called on stopped timesheet records. It can rewrite all values but will normally take care
 of the columns `begin`, `end`, `duration` and `rate` but could also be used to apply a default `description`.
 
-Timesheet calculator need to implement the interface `App\Timesheet\CalculatorInterface` and will be automatically tagged 
+Timesheet calculator need to implement the interface `App\Timesheet\CalculatorInterface` and will be automatically tagged
 as `timesheet.calculator` in the service container. They will be found and used *only* if you add them to the service container.
-
-You can apply several rules in your config file [local.yaml]({% link _documentation/configurations.md %}) for the existing 
-`DurationCalculator` and `RateCalculator` implementations.  Please read the [configurations chapter]({% link _documentation/configurations.md %}) to find out more. 
 
 The configuration for "rounding rules" can be fetched from the container parameter `kimai.timesheet.rounding`.
 
@@ -334,7 +389,81 @@ See [meta fields]({% link _documentation/meta-fields.md %}) documentation.
 
 ## Adding UserPreference
 
-See [user preferences]({% link _documentation/user-preferences.md %}) documentation.
+Developers can register new user preferences from within [their plugin]({% link _documentation/plugins.md %}) as easy as that:
+
+```php
+use App\Entity\UserPreference;
+use App\Event\UserPreferenceEvent;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+
+class UserProfileSubscriber implements EventSubscriberInterface
+{
+    public static function getSubscribedEvents(): array
+    {
+        return [
+            UserPreferenceEvent::CONFIGURE => ['loadUserPreferences', 200]
+        ];
+    }
+
+    public function loadUserPreferences(UserPreferenceEvent $event)
+    {
+        if (null === ($user = $event->getUser())) {
+            return;
+        }
+
+        // You attach every field to the event and all the heavy lifting is done by Kimai.
+        // The value is the default as long as the user has not yet updated his preferences,
+        // otherwise it will be overwritten with the users choice, stored in the database.
+        $event->addPreference(
+            (new UserPreference())
+                ->setName('fooooo-bar')
+                ->setValue(false)
+                ->setType(CheckboxType::class)
+        );
+    }
+}
+```
+
+### Displaying and exporting UserPreferences
+
+With Kimai 1.4 you can display and export user preferences.
+Supported fields will be shown as new columns in the data-table for users.
+Additionally these preferences will be added to HTML and Spreadsheet exports.
+
+As Kimai cannot query all existing users for possible preferences, you need to listen to a new event and register the desired preference.
+
+
+```php
+use App\Entity\UserPreference;
+use App\Event\UserPreferenceDisplayEvent;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+
+class UserProfileSubscriber implements EventSubscriberInterface
+{
+    public static function getSubscribedEvents(): array
+    {
+        return [
+            UserPreferenceDisplayEvent::class => ['loadUserPreferences', 200]
+        ];
+    }
+
+    public function loadUserPreferences(UserPreferenceDisplayEvent $event)
+    {
+
+        // You attach every field to the event and all the heavy lifting is done by Kimai.
+        // The value is the default as long as the user has not yet updated his preferences,
+        // otherwise it will be overwritten with the users choice, stored in the database.
+        $event->addPreference(
+            (new UserPreference())
+                ->setName('fooooo-bar')
+                ->setValue(false)
+                ->setType(CheckboxType::class)
+        );
+    }
+}
+```
 
 ## Adding custom meta tags, stylesheets or javascript
 
@@ -366,8 +495,9 @@ These events are trigger on all pages, including the security layout.
 
 ## Adding permissions
 
-New plugins usually ship with a set of own permissions. You should always assign these permissions at least to the `ROLE_SUPER_ADMIN`.
-By doing so, you register the permission in the system and they become available in the [permission admin screen]({% link _documentation/permissions.md %}). 
+New plugins usually ship with a set of own permissions. 
+You should always assign these permissions at least to the `ROLE_SUPER_ADMIN`.
+By doing so, you register the permission in the system and they become available in the [permission administration]({% link _documentation/permissions.md %}).
 
 You register new permission through your [plugins extension class]({% link _documentation/plugins.md %}), by using the `PrependExtensionInterface`:
 
@@ -397,7 +527,9 @@ class YourExtension extends Extension implements PrependExtensionInterface
 }
 ```
 
-If you don't register your permissions, your users will have to edit their [local.yaml]({% link _documentation/configurations.md %}), please avoid that!
+If you don't register your permissions, your users will not be able to change them [via the UI]({% link _documentation/permissions.md %}).
+
+There is an introduction available, if you want to understand the [permission structure]({% link _documentation/permission-structure.md %}).
 
 ## Adding system configuration
 
@@ -488,9 +620,75 @@ class Configuration implements ConfigurationInterface
 }
 ```
 
+## Extending the reports
+
+You can add your own views to the reporting panel by listening to the `ReportingEvent`:
+
+```php
+namespace KimaiPlugin\DemoBundle\EventSubscriber;
+
+use App\Event\ReportingEvent;
+use App\Reporting\Report;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+
+final class ReportingEventSubscriber implements EventSubscriberInterface
+{
+    public static function getSubscribedEvents(): array
+    {
+        return [
+            ReportingEvent::class => ['onReportingMenu', 100],
+        ];
+    }
+
+    public function onReportingMenu(ReportingEvent $event)
+    {
+        // add a report to the menu: unique id,      the route name,     the label to be translated
+        $event->addReport(new Report('week_by_user', 'report_user_week', 'report_user_week'));
+    }
+}
+```
+Now all you need to do: create a controller that renders your report.
+Make sure to include an `@Security("is_granted('view_reporting')")` permission check.
+
+## JSON API (REST)
+
 ## Adding API methods
 
-Please have a look at the [DemoBundle](https://github.com/Keleo/DemoBundle), it includes examples for an API controller with serialization. 
+Please have a look at the [DemoBundle](https://github.com/Keleo/DemoBundle), it includes examples for an API controller with serialization.
 
 There is also a (german) blog post that discuss the basics of adding a FOSRestBundle controller to your bundle:
 [https://www.kevinpapst.de/blog/fosrestbundle-via-bundle.html](https://www.kevinpapst.de/blog/fosrestbundle-via-bundle.html)
+
+## Using the Swagger UI
+
+When you want to use the interactive functions of the Swagger UI, you will probably notice that its not working due to a wrong URL being used.
+The Swagger UI currently doesn't use the current hostname, but always points to `localhost` on port 80.
+Therefor you have to configure the values used manually.
+
+Please add these lines to your local.yaml (adapt them to your needs):
+```yaml
+parameters:
+    router.request_context.host: '127.0.0.1'
+    router.request_context.port: '8050'
+    router.request_context.scheme: 'http'
+    router.request_context.base_url: ''
+
+# the next lines are only necessary, if you use a port other than 80
+nelmio_api_doc:
+    documentation:
+        host: '%router.request_context.host%:%router.request_context.port%'
+```  
+
+## Swagger file and Postman
+
+You could change your [local.yaml]({% link _documentation/local-yaml.md %}) and add this, which will cause the generated Swagger file to contain a variable instead of the hostname URL: 
+
+```yaml
+nelmio_api_doc:
+    documentation:
+        host: '{%raw%}{{hostname}}{%endraw%}'
+        schemes: ['https']
+```
+
+The variable `hostname` can then be changed for the complete collection in Postman.
+Using Postman environments, you can even switch the API location via a simple change of the environments drop-down.

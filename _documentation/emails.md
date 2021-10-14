@@ -11,10 +11,23 @@ Please read their documentation to find out more about possible connection detai
 
 ## Activating email
 
-You have to adapt two settings in your `.env` [configuration file]({% link _documentation/configurations.md %}):
+You have to adapt two settings in your `.env` [configuration file]({% link _documentation/local-yaml.md %}):
 
 - `MAILER_URL` - the connection details for sending emails
 - `MAILER_FROM` - an application wide "from" address for all emails
+
+### MAILER_URL
+
+The following list of providers are supported, read more at [Symfony docs](https://symfony.com/doc/current/mailer.html): 
+
+- Deactivated: `null://null`
+- SMTP: `smtp://localhost:25?encryption=&auth_mode=`
+- Google: `gmail://username:password@default`
+- Amazon: `ses://ACCESS_KEY:SECRET_KEY@default?region=eu-west-1`
+- Mailchimp: `mandrill://KEY@default`
+- Mailgun: `mailgun://KEY:DOMAIN@default`
+- Postmark: `postmark://ID@default`
+- Sendgrid: `sendgrid://KEY@default`
 
 ## Troubleshooting
 
