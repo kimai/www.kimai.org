@@ -52,7 +52,7 @@ Click on `Sick Days` in the menu and select the `Settings` tab.
 
 Here you can select if PDFs are required for creating applications, and the activity for sick days (timesheet entries will be created using this).
 
-If you have the MetaFields plugin installed create a new field for users with `duration` as input field. The time you enter will be inserted into the users timesheet when creating applications.
+If you have the [Custom-fields plugin]({% link _store/keleo-custom-fields-bundle.md %}) installed create a new field for users with `duration` as input field. The time you enter will be inserted into the users timesheet when creating applications.
 
 Using the last input you can limit until when applications can be created. `1` for example, will only let users create applications until today minus 1 week.
 
