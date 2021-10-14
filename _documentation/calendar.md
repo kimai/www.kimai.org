@@ -2,6 +2,9 @@
 title: Calendar
 description: Manage your timesheet records in a calendar view
 toc: true
+related:
+  - timesheet
+  - weekly-times
 ---
 
 Kimai provides a calendar view, which allows management of your timesheet entries in a calendar format, where you 
