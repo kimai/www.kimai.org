@@ -1,5 +1,5 @@
 ---
-title: Shared Project Timesheets for Kimai 2
+title: Shared Project Timesheets for Kimai
 name: Shared Project Timesheets Plugin
 intro: Share project timesheets with anyone!
 developer: vettersolutions
@@ -14,13 +14,13 @@ tags:
   - plugin
 new: false
 bundle:
-    name: "SharedProjectTimesheetsBundle"
-    command: "kimai:bundle:shared-project-timesheets:install"
-    versions: 
-      - ["1.0", "1.11"]
+  name: "SharedProjectTimesheetsBundle"
+  command: "kimai:bundle:shared-project-timesheets:install"
+  versions: 
+    - ["1.0", "1.11"]
 ---
 
-A Kimai 2 plugin that allows you to share your project timesheets with anyone you want to grant access to.
+A Kimai plugin that allows you to share your project timesheets with anyone you want to grant access to.
 
 ## Features
 

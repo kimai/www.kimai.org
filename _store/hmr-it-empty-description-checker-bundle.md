@@ -1,7 +1,7 @@
 ---
-title: Empty description checker plugin for Kimai 2
+title: Empty description checker plugin for Kimai
 name: Empty description checker plugin
-intro: "A plugin for Kimai 2 which shows you all entries without a description + email notification for users to ask them to add a description."
+intro: "A plugin for Kimai which shows you all entries without a description + email notification for users to ask them to add a description."
 developer: hmr-it
 date: "2019-09-14 19:45:00 +0200"
 icon: fas fa-check-square
@@ -25,7 +25,7 @@ screenshots:
     description: "The listing page, that displays all records which are missing a description"
 ---
 
-A plugin for Kimai 2 which shows you all entries without a description + email notification for users to ask them to add a description.
+A plugin for Kimai which shows you all entries without a description + email notification for users to ask them to add a description.
 
 ## Installation, Usage, and so on
 

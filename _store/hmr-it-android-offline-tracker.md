@@ -14,11 +14,11 @@ tags:
 
 Synchronize customers, projects and activities on your smartphone and 
 track times directly on your smartphone - even without an Internet connection. 
-Once you have internet again, you can upload your times to your Kimai 2 server.
+Once you have internet again, you can upload your times to your Kimai server.
 
 ## Requires
 
-Kimai 2, V1.1+
+Kimai v1.1+
 
 ## Installation
 

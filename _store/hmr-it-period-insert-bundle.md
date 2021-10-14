@@ -31,4 +31,4 @@ Select a user, project, activity, date from and to, hours and minutes per day an
 
 ## Requires
 
-Kimai 2, V1.10+
+Kimai v1.10+

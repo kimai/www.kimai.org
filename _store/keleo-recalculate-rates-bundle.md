@@ -1,5 +1,5 @@
 ---
-title: Recalculate rates plugin for Kimai 2
+title: Recalculate rates plugin for Kimai
 name: Recalculate rates plugin
 intro: "A plugin which forces to recalculate the hourly/fixed rate on every timesheet update"
 developer: keleo

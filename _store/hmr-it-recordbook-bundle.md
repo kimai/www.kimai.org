@@ -1,7 +1,7 @@
 ---
 title: RecordBook plugin
 name: RecordBook plugin (Berichtsheft für Azubis)
-intro: "A plugin for Kimai 2 which generates a RecordBook (German: Berichtsheft) for trainees."
+intro: "A plugin for Kimai which generates a RecordBook (German: Berichtsheft) for trainees."
 developer: hmr-it
 date: "2020-09-21 09:00:00"
 icon: fa fa-book
@@ -36,4 +36,4 @@ Click [here](https://cdn.hmr-it.de/f/kimai2_berichtsheft-beispiel_bd70976c-2b42-
 
 ## Requires
 
-Kimai 2, V1.10+
+Kimai v1.10+

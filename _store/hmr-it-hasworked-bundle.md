@@ -34,4 +34,4 @@ screenshots:
 ## Requires
 
 - Ability to create and run cronjobs
-- Kimai 2, V1.10+
+- Kimai v1.10+

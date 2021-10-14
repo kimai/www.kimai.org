@@ -1,5 +1,5 @@
 ---
-title: Readonly access plugin for Kimai 2
+title: Readonly access plugin for Kimai
 name: Readonly access plugin
 intro: "A plugin, which allows to create readonly users, that can read times recorded for a special company."
 developer: derpilzcc
@@ -52,4 +52,4 @@ This bundle also ships a new user-screen, which is available for users that are 
 
 ## Requires
 
-Kimai 2, V1.1
+Kimai v1.1

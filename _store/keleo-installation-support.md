@@ -1,5 +1,5 @@
 ---
-title: "Installation & Update support for Kimai 2"
+title: "Installation & Update support for Kimai"
 name: "Installation & Update support"
 intro: "Want to use Kimai but don't know how to install it on your server?"
 slug: installation-support

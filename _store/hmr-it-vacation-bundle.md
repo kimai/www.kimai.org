@@ -1,7 +1,7 @@
 ---
 title: Vacation plugin
 name: Vacation plugin (vacation + official & local holidays)
-intro: "A plugin for Kimai 2 which adds the full workflow for vacation + official & local holidays"
+intro: "A plugin for Kimai which adds the full workflow for vacation + official & local holidays"
 developer: hmr-it
 date: "2021-01-18 10:00:00"
 icon: fa fa-plane
@@ -60,7 +60,7 @@ screenshots:
 ## Requires
 
 - [Custom-fields plugin]({% link _store/keleo-custom-fields-bundle.md %}) to save the vacation entitlement per user
-- Kimai 2, V1.12+
+- Kimai v1.12+
 
 ## Documentation
 ## Setup
@@ -88,4 +88,4 @@ If you assign the `vacation` permission to a user they will see the leave-applic
 Super-admins and users with the `vacation_admin` permission have full control over this plugin.
     
 ## Video Tutorial
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/Z_LGqXVqPyo/0.jpg)](http://www.youtube.com/watch?v=Z_LGqXVqPyo "Kimai 2 Vacation / Holiday Plugin Installation + Setup")
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/Z_LGqXVqPyo/0.jpg)](http://www.youtube.com/watch?v=Z_LGqXVqPyo "Kimai Vacation / Holiday Plugin Installation + Setup")

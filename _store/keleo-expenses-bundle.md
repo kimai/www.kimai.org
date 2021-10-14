@@ -1,5 +1,5 @@
 ---
-title: Expenses plugin for Kimai 2
+title: Expenses plugin for Kimai
 name: Expenses  plugin
 intro: "Keep track of your expenses and include them in your invoices."
 slug: expenses-bundle

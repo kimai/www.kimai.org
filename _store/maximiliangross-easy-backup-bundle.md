@@ -1,7 +1,7 @@
 ---
-title: "Backup plugin for Kimai 2"
+title: "Backup plugin for Kimai"
 name: Easy Backup
-intro: "A Kimai 2 plugin, which allows you to backup your environment with a single click."
+intro: "A Kimai plugin, which allows you to backup your environment with a single click."
 developer: maximiliangross
 date: "2019-12-15 10:53:00 +0200"
 icon: far fa-hdd

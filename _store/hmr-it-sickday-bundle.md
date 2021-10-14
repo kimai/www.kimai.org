@@ -36,7 +36,7 @@ screenshots:
 ## Features
 
 - Track the days of illness of your users
-- Upload sick certificate / incapacity certificate as PDF and archive it in Kimai 2
+- Upload sick certificate / incapacity certificate as PDF and archive it in Kimai
 - Automatically adds the times absent to the user's timesheet based on their daily working time
 
 ## Requirements

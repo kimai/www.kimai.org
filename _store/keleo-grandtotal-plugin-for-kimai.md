@@ -14,7 +14,7 @@ tags:
   - GrandTotal
 ---
 
-Attention: this is **NOT** a Kimai 2 bundle, but a plugin that can be installed inside GrandTotal.
+Attention: this is **NOT** a Kimai bundle, but a plugin that can be installed inside GrandTotal.
 
 ## Installation
 

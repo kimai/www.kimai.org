@@ -1,5 +1,5 @@
 ---
-title: Custom CSS plugin for Kimai 2
+title: Custom CSS plugin for Kimai
 name: Custom CSS plugin
 intro: "A plugin, which allows to edit custom CSS rules through an administration screen."
 developer: keleo

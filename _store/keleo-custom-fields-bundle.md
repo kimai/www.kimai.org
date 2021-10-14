@@ -1,5 +1,5 @@
 ---
-title: Custom-fields plugin for Kimai 2
+title: Custom-fields plugin for Kimai
 name: Custom-fields plugin
 intro: "Create free configurable additional fields for timesheets, customers, projects, activities and users."
 slug: custom-fields-bundle

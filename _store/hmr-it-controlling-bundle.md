@@ -1,7 +1,7 @@
 ---
 title: Controlling plugin
 name: Controlling plugin (German law, break time check, overtime)
-intro: "A plugin for Kimai 2 which checks if one of your users violated the German break time law + nominal and actual work time comparison + overtime view"
+intro: "A plugin for Kimai which checks if one of your users violated the German break time law + nominal and actual work time comparison + overtime view"
 developer: hmr-it
 date: "2020-10-09 10:00:00"
 icon: fa fa-gavel
@@ -76,7 +76,7 @@ screenshots:
 
 - [Custom-fields plugin]({% link _store/keleo-custom-fields-bundle.md %})
 - Ability to create and run cronjobs
-- Kimai 2, V1.10+
+- Kimai v1.10+
 
 ## Permissions
 
