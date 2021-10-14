@@ -4,10 +4,10 @@ description: Using AM/PM instead of 24h-format
 toc: false
 ---
 
-Kimai uses 24 hour format by default. 
+Kimai uses the 24-hour format by default.
 
 If you want to use the AM/PM format instead, you can set the locale config key `24_hours` to `false` to activate it.
-The changes need to be applied in your [local.yaml]({% link _documentation/local-yaml.md %}). 
+The changes need to be applied in your [local.yaml]({% link _documentation/local-yaml.md %}).
 
 This example uses the locale `en`:
 
