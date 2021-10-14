@@ -26,10 +26,15 @@ screenshots:
 ---
 
 ## Simplicity
+
 Kimai Mobile is easy to install and use. Above all the interface is user-friendly, and there is a broad functionality.
 
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/naqvBUzvzYs" title="Kimai Mobile introduction" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Connection 
-For setting up Kimai Mobile, use your already installed Kimai Backend Service. Create an API password and login with your credentials.
+
+For setting up Kimai Mobile, you need a running Kimai: this can be your own server, or a [Kimai Cloud](https://www.kimai.cloud/) account. 
+Create an API password and login with your credentials.
 
 ## Additional information
 
