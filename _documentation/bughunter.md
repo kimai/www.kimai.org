@@ -45,3 +45,14 @@ The only person able to update these settings is a System-Admin (likely the owne
 who can already change and delete everything in Kimai: "With great power comes great responsibility".
 
 So this cannot be considered a security issue.
+
+## Logout works without CSRF token
+
+The pure fact that the logout link works without any protection is not a vulnerability.
+If someone manages to get a hold of your Kimai URL and is able to make you open the logout link without knowing (eg. as URL of a hidden image in an email) - you would be logged out.
+That entire scenario is already unlikely, but if it happens it is only annoying.
+
+There are pages like superlogout.com (do not visit!) which will log you out of dozens of popular services.
+All of these linked sites do not work against this feature by making it overly-complicated to logout of their website/service.
+
+All in all: I do not consider this to be a security risk.
