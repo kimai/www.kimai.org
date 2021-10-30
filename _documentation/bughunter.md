@@ -53,6 +53,6 @@ If someone manages to get a hold of your Kimai URL and is able to make you open 
 That entire scenario is already unlikely, but if it happens it is only annoying.
 
 There are pages like superlogout.com (do not visit!) which will log you out of dozens of popular services.
-All of these linked sites do not work against this feature by making it overly-complicated to logout of their website/service.
+All of these linked sites [do not work against this feature](https://bughunters.google.com/learn/invalid-reports/web-platform/csrf-clickjacking/5072689380982784) by making it overly-complicated to logout of their website/service.
 
 All in all: I do not consider this to be a security risk.
