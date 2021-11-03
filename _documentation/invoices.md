@@ -17,23 +17,29 @@ Since Kimai 1.9 you can configure the invoice number format.
 You can mix arbitrary characters and the allowed replacer from the list below.
 All examples represent the date `2019-07-09` (2019, July 9th):
 
-- `{date}` - shortcut for `ymd`. Example: `190709` (default format before Kimai 1.9)
-- `{cname}` - the customer name
-- `{cnumber}` - the customer number
-- `{c}` - counter for invoices of all times, starting from 1
-- `{cy}` - counter for invoices this year, starting from 1
-- `{cm}` - counter for invoices this month, starting from 1
-- `{cd}` - counter for invoices this day, starting from 1
-- `{Y}` -  full numeric representation of a year (4 digits). Example: `2019`
-- `{y}` - two digit representation of a year. Example: `19`
-- `{M}` - numeric representation of a month, with leading zeros. Example: `07`
-- `{m}` - numeric representation of a month, without leading zeros. Example: `7`
-- `{D}` - day of the month, 2 digits with leading zeros. Example: `09`
-- `{d}` - day of the month without leading zeros. Example: `9`
-- `{cc}` - per customer invoice counter for all times, starting from 1 (since 1.10)
-- `{ccy}` - per customer invoice counter for this year, starting from 1 (since 1.10)
-- `{ccm}` - per customer invoice counter for this month, starting from 1 (since 1.10)
-- `{ccd}` - per customer invoice counter for this day, starting from 1 (since 1.10)
+- `{date}`      - shortcut for `ymd`. Example: `190709` (default format before Kimai 1.9)
+- `{cname}`     - the customer name
+- `{cnumber}`   - the customer number
+- `{c}`         - counter for invoices of all times, starting from 1
+- `{cy}`        - counter for invoices this year, starting from 1
+- `{cm}`        - counter for invoices this month, starting from 1
+- `{cd}`        - counter for invoices this day, starting from 1
+- `{Y}`         -  full numeric representation of a year (4 digits). Example: `2019`
+- `{y}`         - two digit representation of a year. Example: `19`
+- `{M}`         - numeric representation of a month, with leading zeros. Example: `07`
+- `{m}`         - numeric representation of a month, without leading zeros. Example: `7`
+- `{D}`         - day of the month, 2 digits with leading zeros. Example: `09`
+- `{d}`         - day of the month without leading zeros. Example: `9`
+- `{cc}`        - per customer invoice counter for all times, starting from 1 (since 1.10)
+- `{ccy}`       - per customer invoice counter for this year, starting from 1 (since 1.10)
+- `{ccm}`       - per customer invoice counter for this month, starting from 1 (since 1.10)
+- `{ccd}`       - per customer invoice counter for this day, starting from 1 (since 1.10)
+- `{cu}`        - per user (the one creating the invoice) invoice counter for all times, starting from 1 (since 1.16)
+- `{cuy}`       - per user (the one creating the invoice) invoice counter for this year, starting from 1 (since 1.16)
+- `{cum}`       - per user (the one creating the invoice) invoice counter for this month, starting from 1 (since 1.16)
+- `{cud}`       - per user (the one creating the invoice) invoice counter for this day, starting from 1 (since 1.16)
+- `{ustaff}`    - the user (the one creating the invoice) staff number, empty if not configured (since 1.16)
+- `{uid}`       - the internal user (the one creating the invoice) ID (since 1.16)
 
 Each replacer (x) can be combined with a length formatter, which will prepend (X) leading zeros, eg. `{x,X}`.
 Example: to get a three digit long string with year counter use `{cy,3}`, which results in `001` for the first invoice of the year.
