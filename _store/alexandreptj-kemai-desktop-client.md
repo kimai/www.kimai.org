@@ -26,4 +26,4 @@ Kemai aims to ease regular task on Kimai :
 
 - Start / Stop activity
 - Create customer, project and activity
-- Start / Close task from [Task Management](https://www.kimai.org/store/task-management-bundle.html) plugin
+- Start / Close task from [Task Management]({% link _store/keleo-task-management-bundle.md %}) plugin
