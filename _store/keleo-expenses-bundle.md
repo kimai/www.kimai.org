@@ -23,7 +23,7 @@ bundle:
   command: "kimai:bundle:expenses:install"
   purchase: true
   versions:
-    - ["1.21", "1.15"]
+    - ["1.21 - 1.22", "1.15"]
     - ["1.20", "1.14.1"]
     - ["1.19 - 1.19.1", "1.14"]
     - ["1.16 - 1.18.1", "1.12"]
