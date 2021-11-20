@@ -11,7 +11,8 @@ to check if the logged-in user can see the budgets.
 
 ### Budget type
 
-Kimai knows two budget types. The default budget type is `lifetime` (which is used if the `budget type` is empty) or `monthly`.
+Kimai knows two budget types. The default budget type is `lifetime` (which is used if the `budget type` is empty), 
+the other available budget type is `monthly`.
 
 - `Lifetime budget` - uses all records of all times to calculate progress and budget usage
 - `Monthly budget` - uses all records of the selected month to calculate progress and budget usage
