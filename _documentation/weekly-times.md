@@ -1,5 +1,5 @@
 ---
-title: Weekly times
+title: Weekly working hours
 description: Manage your time records in quick and easy weekly spreadsheet-like view.
 toc: true
 related:
