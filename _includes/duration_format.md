@@ -19,5 +19,3 @@ The `{{ fieldName }}` field supports entering data in the following formats:
 - Format: `{hours}`, `{hours,minutes in decimal}`, `{hours.minutes in decimal}`
 - Description: Duration in hours, for decimal separator both `.`  and `,` are supported, minutes need to be given as decimal portion (eg. 30 minutes = 0.5)
 - Examples: `1,5` = 1 hour and 30 minutes, `2` = 2 hours
-
-Attention: Before Kimai 1.13 this format was treated as seconds (a format unusable for humans) 

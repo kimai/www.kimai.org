@@ -26,9 +26,9 @@ The customers currency is used when displaying the recorded entries in the times
 It is also used for printing invoices, which is the reason while the invoice screen needs one applied customer filter 
 before any data will be shown. 
 
-## Time budget
+## Budgets
 
-{% include time_budget.md %}
+{% include budgets.md permission="customer" %} 
 
 ## Visibility
 
@@ -58,7 +58,7 @@ The search drop-down supports filtering by the fields:
 - `visibility`
 
 Besides these filters, you can query for a free search term, which will be searched in the fields:
-- `name`
+- `name` 
 - `comment`
 - `number`
 - `contact`

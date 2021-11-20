@@ -8,25 +8,23 @@ Projects in Kimai are assigned to customers and are linked to activities, which 
 
 ## Project colors
 
-Each project can be assigned its own color, for easier identification in the timesheets.
+Each project can be assigned its own color, for easier identification in many places throughout Kimai.
 
-If no color is applied, the customers color will be used.
-
-If an activity linked to the project does not have its own color, the projects color will be used (and as fallback again the customers color).
-
-See [customer documentation]({% link _documentation/customer.md %}) for the default color.
+If no color is applied, Kimai will fallback to the customers color and finally to the [default color]({% link _documentation/customer.md %}). 
 
 ## Project start date / end date 
 
-Explicit dates for the project ordering, start and end can be provided. 
+Having a project start and end date is optional, but it can help you to limit the project visibility in the "edit timesheet record" screen.
 
-Setting a date for project start or end will place an implicit restriction for project selection when creating a timesheet record. If the date of the record falls before the project start or after the project end the project will not be listed in the dropdown menu. 
+Setting a date for project start or end will place an implicit restriction for project selection when creating a timesheet record. 
+If the date of the record falls before the project start or after the project end the project will not be listed in the dropdown menu. 
 
-This behavior is intended to avoid ghost bookings on not yet started or already finished projects. Note, that the future booking of timesheet records (if activated in the system settings "Allow time entries in the future") is not possible in this case. If the booking of records is necessary, the team lead or admin can remove the date restriction in the project settings.
+This behavior is intended to avoid ghost bookings on not yet started or already finished projects. 
+If the booking of records is necessary, the team lead or admin can remove the date restriction in the project settings.
 
-## Time budget
+## Budgets
 
-{% include time_budget.md %}
+{% include budgets.md permission="project" %} 
 
 ## Visibility
 

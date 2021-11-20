@@ -16,8 +16,8 @@ users with the permission `system_configuration` (by default [ROLE_SUPER_ADMIN](
 
 - `Time-tracking mode` - see below
 - `Default start-time` - not used in all time-tracking modes, read more about the accepted formats [here](https://www.php.net/manual/en/datetime.formats.php) and [here](https://www.php.net/manual/en/datetime.formats.time.php)
-- `Allow time entries in the future` - 
-- `Allow overlapping time entries` - 
+- `Allow time entries in the future` - Whether future booking of timesheet records are possible or not (eg. pre-book meetings for next week)
+- `Allow overlapping time entries` - If not checked, you cannot have entries at the same time (even one minute overlap will be prevented)
 - `Allow overbooking of stored budgets` - 
 - `Permitted number of simultaneously running time entries` - by default it is `1`, which will automatically stop the currently running record when a new one is started. 
   If it is greater than 1 and as soon as the limit is reached, the user has to manually stop at least one active entry (an error message will be shown) and the 

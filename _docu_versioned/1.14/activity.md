@@ -34,9 +34,9 @@ Each activity can be assigned its own color, for easier identification in variou
 If no color has been selected, the project color will be used. 
 If that is not defined as well, Kimai will fallback to the customer color and finally to the [default color]({% link _documentation/customer.md %}).
 
-## Time budget
+## Budgets
 
-{% include time_budget.md %}
+{% include budgets.md %}
 
 ## Visibility
  
