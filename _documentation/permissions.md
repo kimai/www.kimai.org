@@ -1,5 +1,5 @@
 ---
-title: Permissions
+title: Roles & Permissions
 description: Configure the permission system which is based on user roles 
 toc: true
 ---
@@ -33,12 +33,12 @@ There is a button that will open a new modal, to enter a role name. This new rol
 
 {% include alert.html type="warning" alert="Allowed character are: `A-Z` and `_`. If you use different character, you might experience strange bugs." %}
 
-## Permission assignment
+## Permissions 
 
 By turning permissions `on` and `off` for specific roles, you widen or limit the access to certain features.
 Clicking the `Yes` and `No` labels in the table toggles the selected permission (row title) for the respective role (column title).
 
-## Existing permissions
+### Existing permissions
 
 This is the full list of existing permissions with short descriptions:
 
