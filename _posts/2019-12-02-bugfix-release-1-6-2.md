@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Bugfix release 1.6.2"
+title: "Release 1.6.2 - Important bugfixes"
 date: "2019-12-02 09:00:00 +0200"
 author: kevinpapst
 tags: [Release]
