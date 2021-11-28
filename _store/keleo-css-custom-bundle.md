@@ -29,20 +29,11 @@ screenshots:
     description: "Timesheet view with activated custom rules: highlight active records, hide overlapping records"
 ---
 
-This bundle allows you to add custom CSS rule to Kimai. It ships pre-defined rules, which can be added and removed with a button click.
-
 You can test the Plugin in the [Plugin demo]({% link _pages/demo.md %}).
 
-## Configuration
+Full documentation available [in the documentation]({% link _documentation/plugin-custom-css.md %}).
 
-### Permissions
-
-This bundle ships a new administration screen, which will be available for the following users:
-
-- `ROLE_SUPER_ADMIN` - every super administrator
-- `edit_custom_css` - every user that owns this permission
-
-{% include store-howto-permissions.md %}
+{% include plugins/custom-css.md %}
 
 ### Storage
 
