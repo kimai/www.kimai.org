@@ -13,6 +13,9 @@ The "weekly times" view shows one week in a simple table structure, which mimics
 Rows represent a customer/project and activity and a duration for each date.
 If you have multiple entries for the same day, there will be multiple rows for the same project/activity combination.
 
+The nature of this form is simple and fast "duration tracking". That means start and end time do not matter and therefor 
+all entries start at the same time. 
+
 ## Managing records 
 
 New users, without any previous timesheet, will see 3 empty rows. 
@@ -24,11 +27,17 @@ If the existing rows are not sufficient, you can `+ Add` new ones at any time.
 
 ### Creating records
 
-The start time of each new record is configured through `Default start-time` from [System > Settings]({% link _documentation/configurations.md %}).
+If you add multiple times for one day, they will start at the same time (configured through the above mentioned configuration) . 
+There is no way to detect the correct order of times, so instead of guessing start times by sequencing one after another, 
+they all intentionally start at the same time.
 
 ### Deleting records
 
 You can delete records from the view, by emptying the duration field. The record will be removed after saving the week data.
+
+## Configuration
+
+The start time of each new record is configured by the `Default start-time` from [System > Settings]({% link _documentation/configurations.md %}).
 
 ## Permissions
 
