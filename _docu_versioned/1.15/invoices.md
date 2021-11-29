@@ -2,43 +2,39 @@
 title: Invoices
 description: Create invoices directly within Kimai from timesheet data in several formats 
 toc: true
-canonical: /documentation/invoices.html
-redirect_from:
-  - /documentation/invoices/
-  - /documentation/developer/invoice-templates.html
-  - /documentation/invoice-templates/
 ---
 
 Kimai allows creating invoices from timesheet data in several formats.
 
 ## Invoice number format
 
+Since Kimai 1.9 you can configure the invoice number format.
 You can mix arbitrary characters and the allowed replacer from the list below.
 All examples represent the date `2019-07-09` (2019, July 9th):
 
 - `{date}`      - shortcut for `ymd`. Example: `190709` (default format before Kimai 1.9)
 - `{cname}`     - the customer name
 - `{cnumber}`   - the customer number
-- `{c}`         - counter for invoices of all times, starting at 1
-- `{cy}`        - counter for invoices this year, starting at 1
-- `{cm}`        - counter for invoices this month, starting at 1
-- `{cd}`        - counter for invoices this day, starting at 1
+- `{c}`         - counter for invoices of all times, starting from 1
+- `{cy}`        - counter for invoices this year, starting from 1
+- `{cm}`        - counter for invoices this month, starting from 1
+- `{cd}`        - counter for invoices this day, starting from 1
 - `{Y}`         -  full numeric representation of a year (4 digits). Example: `2019`
 - `{y}`         - two digit representation of a year. Example: `19`
 - `{M}`         - numeric representation of a month, with leading zeros. Example: `07`
 - `{m}`         - numeric representation of a month, without leading zeros. Example: `7`
 - `{D}`         - day of the month, 2 digits with leading zeros. Example: `09`
 - `{d}`         - day of the month without leading zeros. Example: `9`
-- `{cc}`        - per customer invoice counter for all times, starting at 1
-- `{ccy}`       - per customer invoice counter for this year, starting at 1
-- `{ccm}`       - per customer invoice counter for this month, starting at 1
-- `{ccd}`       - per customer invoice counter for this day, starting at 1
-- `{cu}`        - per user (the one creating the invoice) invoice counter for all times, starting at 1
-- `{cuy}`       - per user (the one creating the invoice) invoice counter for this year, starting at 1
-- `{cum}`       - per user (the one creating the invoice) invoice counter for this month, starting at 1
-- `{cud}`       - per user (the one creating the invoice) invoice counter for this day, starting at 1
-- `{ustaff}`    - the user (the one creating the invoice) staff number, empty if not configured
-- `{uid}`       - the internal user (the one creating the invoice) ID
+- `{cc}`        - per customer invoice counter for all times, starting from 1 (since 1.10)
+- `{ccy}`       - per customer invoice counter for this year, starting from 1 (since 1.10)
+- `{ccm}`       - per customer invoice counter for this month, starting from 1 (since 1.10)
+- `{ccd}`       - per customer invoice counter for this day, starting from 1 (since 1.10)
+- `{cu}`        - per user (the one creating the invoice) invoice counter for all times, starting from 1 (since 1.16)
+- `{cuy}`       - per user (the one creating the invoice) invoice counter for this year, starting from 1 (since 1.16)
+- `{cum}`       - per user (the one creating the invoice) invoice counter for this month, starting from 1 (since 1.16)
+- `{cud}`       - per user (the one creating the invoice) invoice counter for this day, starting from 1 (since 1.16)
+- `{ustaff}`    - the user (the one creating the invoice) staff number, empty if not configured (since 1.16)
+- `{uid}`       - the internal user (the one creating the invoice) ID (since 1.16)
 
 Each replacer (x) can be combined with a length formatter, which will prepend (X) leading zeros, eg. `{x,X}`.
 Example: to get a three digit long string with year counter use `{cy,3}`, which results in `001` for the first invoice of the year.
@@ -53,7 +49,7 @@ To change the format, look out for the {% include demo-action-button.html icon="
 
 ### Incrementing the invoice counter
 
-It is possible to increment the counter by adding a number to the result.
+Since 1.10 it is possible to increment the counter by a fixed value: you can add a number to the result.
 For evaluated counters, Kimai takes the amount of found invoices and adds 1, but you can replace `+1` with an addition like `+3`.
 This works for the following replacer: `{c}` and `{cy}` and `{cm}` and `{cd}` and `{cc}` and `{ccy}` and `{ccm}` and `{ccd}`.
 
@@ -61,7 +57,7 @@ Simply use the plus (`+`) after the replacer, eg. `{cy+72}`. This also works in 
 
 ### Decrementing the invoice counter
 
-You can decrement the counter subtracting a number from the result.
+Since 1.11 it is possible to decrement the counter by a fixed value: you can subtract a number from the result.
 For evaluated counters, Kimai takes the amount of found invoices and adds `+1`, but you can replace `+1` with a subtraction like `-12`.
 This works for the following replacer: `{c}` and `{cy}` and `{cm}` and `{cd}` and `{cc}` and `{ccy}` and `{ccm}` and `{ccd}`.
 
@@ -76,35 +72,12 @@ per year, which is prefixed with the four digit year:
 Assume that you want to change your invoice numbering and reset it to zero, you already wrote 72 invoices this year, and your counter is an incrementing number per year that should be prefixed with the four digit year:
 - `{Y}/{cy-72,3}` would result in `2020/001` for your first invoice
 
-## Invoice state
-
-Invoices can have multiple states:
-- `New` - the invoice was just created
-- `Waiting for payment` - the invoice was sent to the customer
-- `Invoice paid` - the invoice was paid (you have to choose a payment date)
-- `Canceled` - the invoice was accidentally created
-
-### Deleting invoices
-
-Invoices should not be deleted, because this can cause all kinds of weird problems in Kimai (depending on your invoice number format).
-
-You should instead "cancel" invalid invoices. Many users fear legal issues if they don't have consecutive invoice numbers, 
-please clarify that with your accountant - this is often not a legal requirement. Instead it is a completely regular workflow, 
-that invoices get canceled (the used invoice number will not be released).
-
-If you insist on deleting invoices, do NOT delete them if you already created invoices afterwards.
-This will cause troubles with your invoice counter, as Kimai is calculating invoice numbers from the amount of entries in the database.
-By deleting invoices you lower the amount of invoices in the database, and the next invoice number might be one that you already used.
-
-Invoice deletion is disabled by default, because of all known problems with deletion. 
-You can activate it enabling the [permissions]({% link _documentation/permissions.md %}) called `delete_invoice`.  
-
 ## Export state
 
 Invoices and exports share the export state, which is used to mark timesheet records as processed.
 These records cannot be edited any longer by regular users and are excluded by default from further invoices and exports.
 
-You need to tick the checkbox before saving the invoice, to automatically set the export state on all filtered timesheet records.
+You need to tick the checkbox before saving (Kimai 1.9) / printing (Kimai 1.8 and below) the invoice, to automatically set the export state on all filtered timesheet records.
 
 For further information read the [timesheet documentation]({% link _documentation/timesheet.md %}).
 
@@ -112,7 +85,7 @@ For further information read the [timesheet documentation]({% link _documentatio
 
 Only billable items will be included in invoices.
 
-By default, every timesheet records is billable, but users can set the billable flag on individual timesheets.
+By default, every timesheet records is billable, but users can set the billable flag on individual timesheets (since version 1.14).
 
 [Expense items]({% link _store/keleo-expenses-bundle.md %}) have a configurable billable flag per item and only the ones marked as billable (refundable) will be included.
 
@@ -122,7 +95,7 @@ By default, every timesheet records is billable, but users can set the billable 
 
 The invoice system currently supports the following formats:
 
-- `PDF`
+- `PDF` (since Kimai 1.9)
     - through the use of Twig templates
     - filename must end with `.pdf.twig`
     - Pro: no need for additional software
@@ -255,41 +228,41 @@ The documents which are rendered passively (ODS, XLSX, CSV, DOCX) can use the fo
 | ${invoice.currency_symbol} | The invoice currency as symbol (if available) |
 | ${invoice.total_time} | The total working time (entries with a fixed rate are always calculated with 1) |
 | ${invoice.duration_decimal} | The total working time as decimal value |
-| ${invoice.language} | The invoices language as two character code |
+| ${invoice.language} | The invoices language as two character code (since 1.9) |
 | ${invoice.total} | The invoices total (including tax) with currency |
-| ${invoice.total_nc} | The invoices total (including tax) without currency |
-| ${invoice.total_plain} | The invoices total (including tax) as unformatted value |
+| ${invoice.total_nc} | The invoices total (including tax) without currency (since 1.6) |
+| ${invoice.total_plain} | The invoices total (including tax) as unformatted value (since 1.6.2) |
 | ${invoice.subtotal} | The invoices subtotal (excluding tax) with currency |
-| ${invoice.subtotal_nc} | The invoices subtotal (excluding tax) without currency |
-| ${invoice.subtotal_plain} | The invoices subtotal (excluding tax) as unformatted value |
+| ${invoice.subtotal_nc} | The invoices subtotal (excluding tax) without currency (since 1.6) |
+| ${invoice.subtotal_plain} | The invoices subtotal (excluding tax) as unformatted value (since 1.6.2) |
 | ${invoice.currency} | The invoices currency as string (like EUR or USD) |
 | ${invoice.vat} | The VAT in percent for this invoice |
 | ${invoice.tax} | The tax of the invoice amount with currency |
-| ${invoice.tax_nc} | The tax of the invoice amount without currency |
-| ${invoice.tax_plain} | The tax of the invoice amount as unformatted value |
+| ${invoice.tax_nc} | The tax of the invoice amount without currency (since 1.6) |
+| ${invoice.tax_plain} | The tax of the invoice amount as unformatted value (since 1.6.2) |
 | ${template.name} | The invoice name, as configured in your template |
 | ${template.company} | The company name, as configured in your template |
 | ${template.address} | The invoicing address, as configured in your template |
 | ${template.title} | The invoice title, as configured in your template |
 | ${template.payment_terms} | Your payment terms, might be multiple lines |
 | ${template.due_days} | The amount of days for the payment, starting with the day of creating the invoice |
-| ${template.vat_id} | The Vat ID for this invoice |
-| ${template.contact} | Extended contact information, might be multiple lines |
-| ${template.payment_details} | Extended payment details like bank accounts, might be multiple lines |
+| ${template.vat_id} | The Vat ID for this invoice (since 1.6) |
+| ${template.contact} | Extended contact information, might be multiple lines (since 1.6) |
+| ${template.payment_details} | Extended payment details like bank accounts, might be multiple lines (since 1.6) |
 | ${query.begin} | The query begin as formatted short date |
 | ${query.end} | The query end as formatted short date |
 | ${query.month} | The month for this query (begin date) **DEPRECATED** |
 | ${query.month_number} | The numerical value for the month (with leading zero) **DEPRECATED** |
 | ${query.day} | The day for the queries begin as numerical value with leading zero **DEPRECATED** |
 | ${query.year} | The year for this query (begin date) **DEPRECATED** |
-| ${query.begin_month} | The month for the queries begin date |
-| ${query.begin_month_number} | The numerical value for the month of the queries begin date with leading zero |
-| ${query.begin_day} | The day for the queries begin as numerical value with leading zero |
-| ${query.begin_year} | The year for the queries begin date |
-| ${query.end_month} | The month for the queries end date |
-| ${query.end_month_number} | The numerical value for the month of the queries end date with leading zero |
-| ${query.end_day} | The day for the queries end as numerical value with leading zero |
-| ${query.end_year} | The year for the queries end date |
+| ${query.begin_month} | The month for the queries begin date (since 1.9) |
+| ${query.begin_month_number} | The numerical value for the month of the queries begin date with leading zero (since 1.9) |
+| ${query.begin_day} | The day for the queries begin as numerical value with leading zero (since 1.9) |
+| ${query.begin_year} | The year for the queries begin date (since 1.9) |
+| ${query.end_month} | The month for the queries end date (since 1.9) |
+| ${query.end_month_number} | The numerical value for the month of the queries end date with leading zero (since 1.9) |
+| ${query.end_day} | The day for the queries end as numerical value with leading zero (since 1.9) |
+| ${query.end_year} | The year for the queries end date (since 1.9) |
 | ${user.name} | The current users name |
 | ${user.email} | The current users email  |
 | ${user.alias} | The current users alias  |
@@ -306,11 +279,11 @@ For each timesheet entry you can use the variables from the following table.
 | ${entry.description} | The entries description | _foo bar_ |
 | ${entry.amount} | The format duration/amount for this entry | 02:47 h |
 | ${entry.rate} | The rate for one unit of the entry (normally one hour) with currency | 1.100,01 EUR |
-| ${entry.rate_nc} | The rate for one unit of the entry without currency | 1100,01 |
-| ${entry.rate_plain} | The rate for one unit of the entry as unformatted value | 1100.01 |
+| ${entry.rate_nc} | The rate for one unit of the entry without currency (since 1.6) | 1100,01 |
+| ${entry.rate_plain} | The rate for one unit of the entry as unformatted value (since 1.6.2) | 1100.01 |
 | ${entry.total} | The total rate for this entry with currency | 1.278,33 EUR |
-| ${entry.total_nc} | The total rate for this entry without currency | 1.278,33 |
-| ${entry.total_plain} | The total rate as unformatted value | 1278.33 |
+| ${entry.total_nc} | The total rate for this entry without currency (since 1.6) | 1.278,33 |
+| ${entry.total_plain} | The total rate as unformatted value (since 1.6.2) | 1278.33 |
 | ${entry.currency} | The currency for this record as string (like EUR or USD) | EUR |
 | ${entry.duration} | The duration in seconds | 10020 |
 | ${entry.duration_decimal} | The duration in decimal format (with localized separator) | 2.78 |
@@ -322,8 +295,8 @@ For each timesheet entry you can use the variables from the following table.
 | ${entry.end_time} | The formatted time for the end of this entry | 17:44 |
 | ${entry.end_timestamp} | The timestamp for the end of this entry | 1542016273 |
 | ${entry.date} | The start date when this record was created | 27.10.2018 |
-| ${entry.week} | The start week number when this record was created | 39 |
-| ${entry.weekyear} | The corresponding year to the week number | 2018 |
+| ${entry.week} | The start week number when this record was created (since 1.10) | 39 |
+| ${entry.weekyear} | The corresponding year to the week number (since 1.10) | 2018 |
 | ${entry.user_id} | The user ID | 1 |
 | ${entry.user_name} | The username | susan_super |
 | ${entry.user_alias} | The user alias | Susan Miller |
@@ -351,10 +324,10 @@ For each timesheet entry you can use the variables from the following table.
 | ${customer.number} | The customer number |
 | ${customer.country} | The customer country |
 | ${customer.homepage} | The customer homepage |
-| ${customer.phone} | The customers phone number |
-| ${customer.mobile} | The customers mobile number |
-| ${customer.email} | The customers email address |
-| ${customer.fax} | The customers fax number |
+| ${customer.phone} | The customers phone number (since 1.9) |
+| ${customer.mobile} | The customers mobile number (since 1.9) |
+| ${customer.email} | The customers email address (since 1.9) |
+| ${customer.fax} | The customers fax number (since 1.9) |
 | ${customer.meta.x} | The customer [meta field]({% link _documentation/meta-fields.md %}) named `X`. The internal name `X` needs to be used in lowercase letters, eg. `FooBar` will be available as `${customer.meta.foobar}`. Only available if the field is visible.  |
 
 ### Project variables
@@ -367,15 +340,15 @@ If a project was selected in the invoice filter (search form) the following vari
 | ${project.name} | The project name |
 | ${project.comment} | The description of this project |
 | ${project.order_number} | The project order number |
-| ${project.start_date} | Projects start date-time |
-| ${project.end_date} | Projects end date-time |
-| ${project.order_date} | Projects order date-time |
-| ${project.budget_money} | Projects budget including currency |
-| ${project.budget_money_nc} | The projects budget without currency |
-| ${project.budget_money_plain} | The projects budget as unformatted value |
-| ${project.budget_time} | The projects time-budget as seconds |
-| ${project.budget_time_decimal} | The projects time-budget in decimal format (with localized separator) |
-| ${project.budget_time_minutes} | The projects time-budget in minutes with no decimals |
+| ${project.start_date} | Projects start date-time (since 1.7) |
+| ${project.end_date} | Projects end date-time (since 1.7) |
+| ${project.order_date} | Projects order date-time (since 1.7) |
+| ${project.budget_money} | Projects budget including currency (since 1.7) |
+| ${project.budget_money_nc} | The projects budget without currency (since 1.7) |
+| ${project.budget_money_plain} | The projects budget as unformatted value (since 1.7) |
+| ${project.budget_time} | The projects time-budget as seconds (since 1.7) |
+| ${project.budget_time_decimal} | The projects time-budget in decimal format (with localized separator) (since 1.7) |
+| ${project.budget_time_minutes} | The projects time-budget in minutes with no decimals (since 1.7) |
 | ${project.meta.x} | The project [meta field]({% link _documentation/meta-fields.md %}) named `X`. The internal name `X` needs to be used in lowercase letters, eg. `FooBar` will be available as `${project.meta.foobar}`. Only available if the field is visible.  |
 
 If you selected more than one project in the search, you will have further variables called `${project.1.X}`, `${project.2.X}` and so on.

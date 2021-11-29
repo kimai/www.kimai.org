@@ -6,6 +6,7 @@ canonical: /documentation/timesheet.html
 related:
   - rates
   - calendar
+  - weekly-times
 redirect_from: 
   - /documentation/manual/timesheet.html
   - /documentation/timesheet/
