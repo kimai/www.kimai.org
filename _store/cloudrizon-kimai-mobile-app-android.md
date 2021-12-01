@@ -29,7 +29,7 @@ screenshots:
 
 Kimai Mobile is easy to install and use. Above all the interface is user-friendly, and there is a broad functionality.
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/naqvBUzvzYs" title="Kimai Mobile introduction" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{% include youtube-video.html id="naqvBUzvzYs" title="Kimai Mobile introduction" %}
 
 ## Connection 
 

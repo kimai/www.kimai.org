@@ -88,4 +88,6 @@ If you assign the `vacation` permission to a user they will see the leave-applic
 Super-admins and users with the `vacation_admin` permission have full control over this plugin.
     
 ## Video Tutorial
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/Z_LGqXVqPyo/0.jpg)](http://www.youtube.com/watch?v=Z_LGqXVqPyo "Kimai Vacation / Holiday Plugin Installation + Setup")
+
+{% include youtube-video.html id="Z_LGqXVqPyo" title="Kimai Vacation / Holiday Plugin Installation + Setup" %}
+
