@@ -11,6 +11,8 @@ redirect_from:
 
 Kimai allows creating invoices from timesheet data in several formats.
 
+{% include youtube-video.html id="wrXqR4uhN-Q" title="Your first Kimai invoice" %}
+
 ## Invoice number format
 
 You can mix arbitrary characters and the allowed replacer from the list below.
@@ -203,10 +205,11 @@ Use the twig include feature with the `@invoice` namespace . The following examp
 
 ### PDF templates
 
-PDF invoice templates are available since Kimai 1.9.
+PDF invoice templates are basically the same as Twig templates. 
+But the resulting HTML is processed by the [MPdf library](https://mpdf.github.io), which will convert the HTML & CSS to PDF.
+There are some additional contents, that will define eg. page heaader and footer. 
 
-These are basically the same as Twig templates. But the resulting HTML is processed by the [MPdf library](https://mpdf.github.io),
-which will convert the HTML & CSS to PDF.
+Please read the MPdf documentation and check the default PDF templates.
 
 ### Docx templates
 
@@ -397,7 +400,7 @@ The order is not guaranteed, so it is not recommended relying on those variables
 
 ### Uploading invoice documents
 
-Sine Kimai 1.8 you can upload invoice documents via the UI at `/en/invoice/document_upload`.
+You can upload invoice documents via the UI at `/en/invoice/document_upload`.
 
 Due to security restriction currently only the upload of the following formats is allowed: `DOCX`, `ODS`, `XLSX`.
 
@@ -407,7 +410,7 @@ The workaround is to change the document with another word processor: Apple page
 
 ## Create invoices with cronjobs
 
-Since 1.9 Kimai comes with a new command, which allows you to create invoices from the command line.
+Kimai comes with a new command, which allows you to create invoices from the command line.
 When combined with a cronjob, you can automate your invoice creation.
 
 Find all available options with the `--help` parameter:
