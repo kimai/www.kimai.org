@@ -28,7 +28,7 @@ Start your Kimai time tracking right at your Apple Watch now!
 
 
 **Note**:
-This app is not for offline tracking. It requires a connection to the API of your kimai server (v0.9 or higher - API v0.3).
+This app is not for offline tracking. It requires a connection to the API of your server (Kimai 0.9 or higher).
 
 <p style="text-align:center"><a href="https://kimaiapp.umws.de">kimaiapp.umws.de</a></p>
 

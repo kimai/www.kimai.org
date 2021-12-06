@@ -1,7 +1,7 @@
 ---
 title: Documentation
 description: Support information, user manual and other documentation for Kimai time-tracking
-subtitle: Official documentation for the time-tracking application Kimai
+subtitle: Online documentation for the time-tracking application Kimai
 lang: en
 lang-ref: documentation
 header: Kimai - Documentation
@@ -18,7 +18,9 @@ redirect_from:
 ---
 
 {% include pages/faq.md %}
+ 
+## Further questions?
 
 Need help and can't find what you are looking for? 
-Create a new ticket in the [Kimai support forum]({{ site.kimai_v2_repo }}/issues) and ask for help.
+Create a new ticket in the [Kimai support forum]({{ site.kimai_v2_repo }}/discussions) and ask for help.
  
