@@ -3,10 +3,10 @@ title: "Custom plugin development for Kimai"
 name: Custom plugin development
 intro: "Want to have a special feature, which is not available in Kimai? I can develop it for you!"
 slug: custom-plugins
-developer: keleo
+developer: kevinpapst
 date: "2019-02-20 20:00:00 +0200"
 icon: far fa-file-code
-email: info@keleo.de
+email: kevin@kevinpapst.de
 type: support
 tags:
   - development
@@ -23,7 +23,7 @@ For example if you want to:
 - send regular reports to your customers
 - generate additional statistics for the work of your users and projects
 
-Please contact me via [info@keleo.de](mailto:info@keleo.de) for any inquiry.
+Please contact me via [kevin@kevinpapst.de](mailto:kevin@kevinpapst.de) for any inquiry.
 
 ### Pricing
  

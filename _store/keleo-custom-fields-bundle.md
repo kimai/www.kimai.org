@@ -3,7 +3,7 @@ title: Custom-fields plugin for Kimai
 name: Custom-fields plugin
 intro: "Create free configurable additional fields for timesheets, customers, projects, activities and users."
 slug: custom-fields-bundle
-developer: keleo
+developer: kevinpapst
 date: "2019-06-25 20:00:00 +0200"
 icon: fas fa-keyboard
 demo: true 

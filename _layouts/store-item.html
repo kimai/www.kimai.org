@@ -5,12 +5,18 @@ layout: default
 {% assign icon = page.icon | default: "fas fa-question" %}
 {% capture options %}<a href="{% link _pages/store.html %}" class="btn btn-option">Back to {{ site.data.trans[page.lang].store }} <i class="fas fa-arrow-circle-right"></i></a>{% endcapture %}
 {% assign buyLink = '#' %}
+{% assign isPaidOwnerPlugin = false %}
 {% if page.download %}
 	{% assign buyLink = page.download %}
 {% elsif page.email %}
 	{% assign buyLink = 'mailto:' | append: page.email %}
 {% elsif page.github %}
 	{% assign buyLink = page.github %}
+{% endif %}
+{%- if page.gumroad %}
+    {% if page.developer == 'keleo' or page.developer == 'kevinpapst' %}
+	    {% assign isPaidOwnerPlugin = true %}
+    {% endif %}
 {% endif %}
 
 {% comment %}
@@ -55,7 +61,7 @@ layout: default
 									{% endif %}
 								</h4>
 								<small class="text-muted">
-									{%- if page.gumroad and page.developer == 'keleo' %}
+									{%- if isPaidOwnerPlugin %}
 										<a href="{% link _documentation/buy-a-plugin.md %}">License and purchase details</a>
 									{% else %}
 										Pricing for this item
@@ -70,7 +76,7 @@ layout: default
                         <div class="card-body">
                             <ul class="section-nav bundle-nav">
                                 <li><a href="#features">Features</a></li>
-                                {%- if page.gumroad and page.developer == 'keleo' %}
+                                {%- if isPaidOwnerPlugin %}
                                 <li><a href="#purchase">Purchase</a></li>
                                 {% endif %}
                                 <li><a href="#screenshots">Screenshots</a></li>
@@ -251,7 +257,7 @@ layout: default
                     {{ content }}
 				</div>
 			</div>
-            {%- if page.gumroad and page.developer == 'keleo' %}
+            {%- if isPaidOwnerPlugin %}
                 <div class="card">
                     <div class="card-header">
                         <div class="d-flex align-items-center px-2">

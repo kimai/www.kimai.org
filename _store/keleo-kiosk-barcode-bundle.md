@@ -3,7 +3,7 @@ title: Kiosk plugin for Kimai with Barcode and RFID support
 name: Kiosk plugin
 intro: "Start and stop timesheets with a barcode or RFID scanner for attendance time-tracking"
 slug: kiosk-barcode-bundle
-developer: keleo
+developer: kevinpapst
 date: "2020-03-06 16:00:00 +0200"
 icon: fas fa-barcode
 demo: true 
@@ -95,7 +95,7 @@ You can test it in the ["Plugins" demo](https://www.kimai.org/demo/).
   - `Code 2 of 5 interleaved`
   - `Codabar` (scanner needs to transmit start & stop digits)
 - Optional: show active / inactive users in login screen
-- Many CSS classes to customize the look with [Custom CSS Bundle](https://www.kimai.org/store/keleo-css-custom-bundle.html)
+- Many CSS classes to customize the look with [Custom CSS Bundle]({% link _store/keleo-css-custom-bundle.md %})
 
 You need to configure **a non-global activity** for starting the record via this plugin. 
 This will be used for every recorded timesheet that is created using the kiosk mode.

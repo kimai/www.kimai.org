@@ -3,7 +3,7 @@ title: Expenses plugin for Kimai
 name: Expenses  plugin
 intro: "Keep track of your expenses and include them in your invoices."
 slug: expenses-bundle
-developer: keleo
+developer: kevinpapst
 date: "2019-09-14 10:00:00 +0200"
 icon: fas fa-money-check
 demo: true 

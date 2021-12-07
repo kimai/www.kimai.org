@@ -3,7 +3,7 @@ title: Audit-Trail plugin for Kimai
 name: Audit-Trail plugin
 intro: "Records detailed change/audit logs for timesheets, customers, projects and activities and displays them in a per-item timeline."
 slug: audit-trail-bundle
-developer: keleo
+developer: kevinpapst
 date: "2019-05-21 20:00:00 +0200"
 icon: fas fa-history
 demo: true 

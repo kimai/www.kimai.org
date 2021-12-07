@@ -10,7 +10,7 @@ Thanks for your interest in a payed Kimai plugin.
 Kimai plugins are sold through the processor Gumroad Inc., which accepts payments via CreditCard and PayPal.
 
 If you don't want or can't use this method, I offer direct bank-transfer payments as well.
-Please write an email to [info@keleo.de](mailto:info@keleo.de) and ask for the bank account.
+Please write an email to [kevin@kevinpapst.de](mailto:kevin@kevinpapst.de) and ask for the bank account.
 
 After successful purchase, you get access to the plugin files, which need to be installed in your existing Kimai installation.
 You get access either through Gumroad directly or in case of a bank-transfer payment via email.

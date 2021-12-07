@@ -1,7 +1,7 @@
 ---
 title: Custom CSS plugin for Kimai
 name: Custom CSS plugin
-intro: "A plugin, which allows to edit custom CSS rules through an administration screen."
+intro: "A plugin, which allows editing custom CSS rules through an administration screen."
 developer: keleo
 date: "2019-02-21 20:00:00 +0200"
 icon: fab fa-css3
