@@ -359,6 +359,10 @@ For each timesheet entry you can use the variables from the following table.
 | ${customer.email} | The customers email address |
 | ${customer.fax} | The customers fax number |
 | ${customer.meta.x} | The customer [meta field]({% link _documentation/meta-fields.md %}) named `X`. The internal name `X` needs to be used in lowercase letters, eg. `FooBar` will be available as `${customer.meta.foobar}`. Only available if the field is visible.  |
+| ${customer.budget_open} | The open monetary budget for this customer at the end date of your filter query (formatted with currency) (since 1.16.7)  |
+| ${customer.budget_open_plain} | The open monetary budget for this customer at the end date of your filter query (plain float value) (since 1.16.7)  |
+| ${customer.time_budget_open} | The open time budget for this customer at the end date of your filter query (formatted) (since 1.16.7)  |
+| ${customer.time_budget_open_plain} | The open time budget for this customer at the end date of your filter query (integer value = seconds) (since 1.16.7)  |
 
 ### Project variables
 
@@ -380,9 +384,13 @@ If a project was selected in the invoice filter (search form) the following vari
 | ${project.budget_time_decimal} | The projects time-budget in decimal format (with localized separator) |
 | ${project.budget_time_minutes} | The projects time-budget in minutes with no decimals |
 | ${project.meta.x} | The project [meta field]({% link _documentation/meta-fields.md %}) named `X`. The internal name `X` needs to be used in lowercase letters, eg. `FooBar` will be available as `${project.meta.foobar}`. Only available if the field is visible.  |
+| ${project.budget_open} | The open monetary budget for this project at the end date of your filter query (formatted with currency) (since 1.16.7)  |
+| ${project.budget_open_plain} | The open monetary budget for this project at the end date of your filter query (plain float value) (since 1.16.7)  |
+| ${project.time_budget_open} | The open time budget for this project at the end date of your filter query (formatted) (since 1.16.7)  |
+| ${project.time_budget_open_plain} | The open time budget for this project at the end date of your filter query (integer value = seconds) (since 1.16.7)  |
 
-If you selected more than one project in the search, you will have further variables called `${project.1.X}`, `${project.2.X}` and so on.
-The order is not guaranteed, so it is not recommended to rely on those variables.
+If you selected more than one project in the search, you will have further variables (same list then above) called `${project.1.name}`, `${project.2.name}` and so on.
+The order is not guaranteed, so it is not recommended relying on those variables.
 
 ### Activity variables
 
@@ -394,8 +402,12 @@ If an activity was selected in the invoice filter (search form) the following va
 | ${activity.name} | The activity name |
 | ${activity.comment} | The description of this activity |
 | ${activity.meta.x} | The activity [meta field]({% link _documentation/meta-fields.md %}) named `X`. The internal name `X` needs to be used in lowercase letters, eg. `FooBar` will be available as `${activity.meta.foobar}`. Only available if the field is visible.  |
+| ${activity.budget_open} | The open monetary budget for this activity at the end date of your filter query (formatted with currency) (since 1.16.7)  |
+| ${activity.budget_open_plain} | The open monetary budget for this activity at the end date of your filter query (plain float value) (since 1.16.7)  |
+| ${activity.time_budget_open} | The open time budget for this activity at the end date of your filter query (formatted) (since 1.16.7)  |
+| ${activity.time_budget_open_plain} | The open time budget for this activity at the end date of your filter query (integer value = seconds) (since 1.16.7)  |
 
-If you selected more than one project in the search, you will have further variables called `${activity.1.X}`, `${activity.2.X}` and so on.
+If you selected more than one activity in the search, you will have further variables (same list then above) called `${activity.1.name}`, `${activity.2.name}` and so on.
 The order is not guaranteed, so it is not recommended relying on those variables.
 
 ### Uploading invoice documents
