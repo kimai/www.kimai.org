@@ -89,14 +89,24 @@ And restart the SSH Daemon:
 
 ## Install PHP, webserver and database
 
-Lets start with all required software:
+Let's start with all required software:
 ```bash
-apt-get update
-apt-get upgrade
-apt-get install git unzip curl vim
-apt-get install php-fpm php-cli php-common php-json php-opcache php-readline php-xml php-zip php-intl php-gd php-mbstring php-mysql php-curl
-apt-get install mariadb-server mariadb-client
-apt-get install nginx
+apt update
+apt upgrade
+apt install git unzip curl vim
+apt install mariadb-server mariadb-client
+apt install nginx
+```
+
+Now before we continue, we enable the well-known and respected Ondřej PPA by @oerdnj to use PHP 8:
+```bash
+apt install software-properties-common
+add-apt-repository ppa:ondrej/php
+```
+
+Now install PHP 8:
+```bash
+apt install php8.0-fpm php8.0-cli php8.0-common php8.0-opcache php8.0-readline php8.0-xml php8.0-zip php8.0-intl php8.0-gd php8.0-mbstring php8.0-mysql php8.0-curl
 ```
 
 ## Install composer
@@ -104,7 +114,7 @@ apt-get install nginx
 Grab the latest `hash` from the [composer download page](https://getcomposer.org/download/) and then execute:
 ```bash
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-php -r "if (hash_file('sha384', 'composer-setup.php') === '48e3236262b34d30969dca3c37281b3b4bbe3221bda826ac6a9a62d6444cdb0dcd0615698a5cbe587c3f0fe57a54d8f5') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php -r "if (hash_file('sha384', 'composer-setup.php') === '906a84df04cea2aa72f40b5f787e49f22d4c2f19492ac310e8cba5b96ac8b64115ac402c8cd292b8a03482574915d1a8') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
 ```
 
 Only proceed if you see: **Installer verified**!
@@ -138,22 +148,23 @@ exit;
 
 Clone Kimai and set proper file permissions:
 
-> Replace 1.1 with the latest available version, see: <https://www.kimai.org/documentation/installation.html>
+> Please check the lastest installation docs to check if something changed since writing these docs: <https://www.kimai.org/documentation/installation.html>
 
 ```bash
 cd /var/www/
-git clone -b 1.12 --depth 1 https://github.com/kevinpapst/kimai2.git
+git clone -b {{ site.kimai_v2_version }} --depth 1 https://github.com/kevinpapst/kimai2.git
 cd kimai2/
 composer install --no-dev --optimize-autoloader
 vim .env
 ```
 
-Configure the above created database credentials:
+Configure the database connection and adjust the settings to your needs (compare with the [original .env file](https://github.com/kevinpapst/kimai2/blob/1.16.8/.env.dist)):
 ```
-DATABASE_URL=mysql://kimai2:my-super-secret-password@127.0.0.1:3306/kimai2
+DATABASE_URL=mysql://kimai2:my-super-secret-password@127.0.0.1:3306/kimai2?charset=utf8&serverVersion=5.7
 ```
+ 
 
-And execute the Kimai installation:
+Then execute the Kimai installation:
 ```bash
 bin/console kimai:install -n
 bin/console kimai:user:create admin admin@example.com ROLE_SUPER_ADMIN
@@ -170,8 +181,8 @@ Good, now that we have done all these steps we only need the webserver and Virtu
 
 This can be done with:
 ```
-vim /etc/php/7.4/fpm/pool.d/www.conf
-listen = /run/php/php7.4-fpm.sock
+vim /etc/php/8.0/fpm/pool.d/www.conf
+listen = /run/php/php8.0-fpm.sock
 ```
 
 Edit/create the virtual host file:
@@ -200,7 +211,7 @@ server {
     }
 
     location ~ ^/index\.php(/|$) {
-        fastcgi_pass unix:/run/php/php7.4-fpm.sock;
+        fastcgi_pass unix:/run/php/php8.0-fpm.sock;
         fastcgi_split_path_info ^(.+\.php)(/.*)$;
         include fastcgi.conf;
         fastcgi_param PHP_ADMIN_VALUE "open_basedir=$document_root/..:/tmp/";
