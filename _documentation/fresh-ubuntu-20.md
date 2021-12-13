@@ -145,6 +145,7 @@ cd /var/www/
 git clone -b 1.12 --depth 1 https://github.com/kevinpapst/kimai2.git
 cd kimai2/
 composer install --no-dev --optimize-autoloader
+cp .env.dist .env
 vim .env
 ```
 
