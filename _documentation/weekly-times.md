@@ -21,6 +21,9 @@ all entries start at the same time.
 New users, without any previous timesheet, will see 3 empty rows. 
 Existing users will have up to 5 rows with the last recent activities pre-filled.
 
+The amount of `recent activities` can be configured since 1.16.10 as a global configuration, see the `Weekly working hours` 
+section in [System > Settings]({% link _documentation/configurations.md %}).
+
 ### Create further rows
 
 If the existing rows are not sufficient, you can `+ Add` new ones at any time.
