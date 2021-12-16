@@ -138,7 +138,7 @@ This is the full list of existing permissions with short descriptions:
 | **Timesheet (other)**             |  |
 | create_other_timesheet            | Create a new timesheet record in the name of another user  |
 | delete_other_timesheet            | Delete timesheets of other users  |
-| edit_export_other_timesheet       | Set the export state of for other users timesheet records  |
+| edit_export_other_timesheet       | Set the export state for other users timesheet records  |
 | edit_other_timesheet              | Edit existing records of other users  |
 | edit_rate_other_timesheet         | Edit the rates for other users timesheet records (fixed, hourly and total) |
 | export_other_timesheet            | Export timesheet in the timesheet admin panel  |
@@ -149,7 +149,7 @@ This is the full list of existing permissions with short descriptions:
 | **Timesheet (own)**               |  |
 | create_own_timesheet              | Create a new timesheet record with the dialog |
 | delete_own_timesheet              | Delete own timesheet records  |
-| edit_export_own_timesheet         | Set the export state of your own timesheet record  |
+| edit_export_own_timesheet         | Set the export state for your own timesheet record  |
 | edit_own_timesheet                | Edit own timesheet records  |
 | edit_rate_own_timesheet           | Edit the rates for own timesheet records (fixed, hourly and total) |
 | export_own_timesheet              | Export your own timesheet in the timesheet panel  |
