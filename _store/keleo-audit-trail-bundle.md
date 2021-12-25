@@ -7,7 +7,7 @@ developer: kevinpapst
 date: "2019-05-21 20:00:00 +0200"
 icon: fas fa-history
 demo: true 
-price: "29€"
+price: "39€"
 gumroad: kimai2-audit-trail
 featured: "Records detailed change/audit logs for timesheets, customers, projects and activities and displays them in a per-item timeline."
 new: false
