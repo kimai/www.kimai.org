@@ -1,20 +1,21 @@
 
-This bundle allows you to modify all translated contents in Kimai to your business needs.
+This bundle allows you to modify most translated contents in Kimai to your business needs.
+
+You can replace messages, form labels, menu items and many more into one or multiple language.
+It comes with a new "Translation" view to manage these changed translations.
 
 Often companies want to change some wordings in Kimai to better match it to their industry or usage of Kimai.
-
 One of the most requested modifications in Kimai is to change "Customers" to something else (eg. "Client", "Construction site", "Family"). 
-Now with this bundle it is as simple as searching the displayed text and then typing in a replacement.
+With this bundle it is as simple as searching the text to replace and then setting your preferred replacement.
 
-### Screenshots
+### What can be changed
 
-The main translation page show a listing of all translated contents, grouped by their language: 
+**Visible elements like form labels, headings, menu items, error messages, and many more can be changed.**
 
-![Listing](/images/marketplace/translation-listing.png "List all adjusted translations")
+Only the text from the following "domains" cannot be changed:
 
-The edit dialog allows to find a string by typing in the `Default translation` field and then entering your custom translation in `New translation`:
-
-![Edit](/images/marketplace/translation-edit.png "Select the text to change and enter your custom translation")
+- Security (Login, Password forgotten)
+- Names of export templates, invoice number-generators, invoice calculators and invoice renderer 
 
 ### Permissions
 
