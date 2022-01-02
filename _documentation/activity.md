@@ -36,6 +36,10 @@ If that is not defined as well, Kimai will fallback to the customer color and fi
 
 {% include budgets.md permission="activity" %} 
 
+## Rates
+
+{% include rates.md permission="activity" %}
+
 ## Visibility
  
 By toggling the visibility on an activity, you:

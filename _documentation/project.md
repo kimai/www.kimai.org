@@ -26,6 +26,10 @@ If the booking of records is necessary, the team lead or admin can remove the da
 
 {% include budgets.md permission="project" %} 
 
+## Rates
+
+{% include rates.md permission="project" %}
+
 ## Visibility
 
 By toggling the visibility on a project, you:

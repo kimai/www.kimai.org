@@ -30,6 +30,10 @@ before any data will be shown.
 
 {% include budgets.md permission="customer" %} 
 
+## Rates
+
+{% include rates.md permission="customer" %} 
+
 ## Visibility
 
 By toggling the visibility on a customer, you:
