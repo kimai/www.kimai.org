@@ -185,7 +185,7 @@ Please cross-check the normal [upgrade guide]({% link _documentation/updates.md 
 cd /volume1/web/kimai2/
 git fetch --tags
 git checkout {{ site.kimai_v2_version }}
-php73 composer install --no-dev --optimize-autoloader
+php73 composer install --no-dev --optimize-autoloader -n
 php73 bin/console kimai:update
 chown -R :http .
 ```

@@ -29,7 +29,7 @@ You might have to prefix the next commands with `sudo` and/or `php73` (depends o
 
 Update all composer dependencies:
 ```bash
-composer install --no-dev --optimize-autoloader
+composer install --no-dev --optimize-autoloader -n
 ```
 
 And run the Kimai updater:

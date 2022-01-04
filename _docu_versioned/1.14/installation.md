@@ -21,7 +21,7 @@ cd kimai2/
 
 Now install all dependencies:
 ```bash
-composer install --no-dev --optimize-autoloader
+composer install --no-dev --optimize-autoloader -n
 ```
 
 Configure the database connection in the `.env` file:

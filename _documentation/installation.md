@@ -28,7 +28,7 @@ cd kimai2/
 
 Now install all dependencies:
 ```bash
-composer install --no-dev --optimize-autoloader
+composer install --no-dev --optimize-autoloader -n
 ```
 
 Configure the database connection and server version in the `.env` file:
@@ -130,7 +130,7 @@ If you can't find the correct version, ask your hoster! Or [let us help you]({% 
 
 All-Inkl has several CLI versions of PHP available via `php73`, `php74` and so on.
 Composer is running at `/usr/bin/composer`, so you execute it like that:
-- `php74 /usr/bin/composer install --no-dev --optimize-autoloader`
+- `php74 /usr/bin/composer install --no-dev --optimize-autoloader -n`
 - `php74 bin/console kimai:install -n`
 
 ### Strato
