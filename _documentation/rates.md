@@ -45,7 +45,7 @@ The timesheet rate calculation is based on the following formula:
 - __Fixed rate__: `$fixedRate`
 - __Hourly rate__: `$hourlyRate * ($durationInSeconds / 3600) * $factor`
 
-Please see below to see how you can apply configurable multiplying factors based on day and time.
+Please read the [rate multiplier]({% link _documentation/local-yaml.md %}#rate-multiplier-for-specific-weekdays) documentation to see how you can apply configurable multiplying factors based on the day.
 
 ## Edit rates
 
