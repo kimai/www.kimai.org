@@ -16,7 +16,7 @@ bundle:
   clone: "https://github.com/digipolisgent/kimai_plugin_personal-calendar-pref.git" 
 ---
 
-A Kimai 2 plugin, which allows users to set a customized start and end time for
+A Kimai plugin, which allows users to set a customized start and end time for
 the calendar display in their personal preferences.
 
 ## Configuration
