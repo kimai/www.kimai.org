@@ -16,7 +16,7 @@ bundle:
   clone: "https://github.com/digipolisgent/kimai_plugin_archive-timesheets-command.git"
 ---
 
-A Kimai 2 plugin, which allows you to archive timesheets older than a specified timeframe, using a command.
+A Kimai plugin, which allows you to archive timesheets older than a specified timeframe, using a command.
 
 ## Configuration
 
