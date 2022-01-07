@@ -18,6 +18,9 @@ bundle:
 
 A Kimai plugin, which allows you to archive timesheets older than a specified timeframe, using a command.
 
+Note that archiving in this case means removing them from the database
+permanently. You will not be able to restore them.
+
 ## Configuration
 
 After installing the plugin, the `kimai:archive:timesheets` command will be 
