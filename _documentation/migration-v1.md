@@ -73,11 +73,11 @@ Most flags are used for imported customers and users, becuase they were optional
 It is recommended to test the import in a fresh database. You can test your import as often as you like and fix possible problems in your installation.
 A sample command could look like that:
 ```bash
-bin/console doctrine:schema:drop --force && \
+bin/console doctrine:schema:drop --full-database --force && \
 bin/console kimai:install -n && \
 bin/console kimai:import:v1 --global --timezone="Europe/Zurich" --country="CH" --language="ch" --currency="CHF" "mysql://kimai:test@127.0.0.1:3306/kimai?charset=latin1" "NEW-PASSWORD-1234"
 ```
-That will drop the configured Kimai database schema and re-create it, before importing the data from the `mysql` database at `127.0.0.1` on port `3306` authenticating the user `kimai` with the password `test` for import.
+That will drop all tables (including ones that are not created by Kimai) in the configured database and re-create it, before importing the data from the `mysql` database at `127.0.0.1` on port `3306` authenticating the user `kimai` with the password `test` for import.
 The connection will use the charset `latin1` and the default table prefix `kimai_` for reading data. Imported users can login with the password `test123` and all customer will have the country `CH` and the currency `CHF` assigned.
 
 ### Problems and solution
