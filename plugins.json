@@ -1,0 +1,28 @@
+---
+layout: none
+sitemap: false
+permalink: /plugins.json
+---
+{% assign products = site.store | sort: 'name' %}
+[
+    {%- for product in products -%}
+    {
+        {% assign icon = product.icon | default: "fas fa-question" -%}
+        {%- assign developer = site.data.developer[product.developer] -%}
+        "name": "{{ product.name }}",
+        "url": "{{ product.url | absolute_url }}",
+        "developer": {
+            "name": "{{ developer.name }}",
+            "homepage": {% if developer.homepage %}"{{ developer.homepage }}"{% else %}null{% endif %},
+        },
+        "icon": "{{ icon }}",
+        "image": {% if product.image %}"{{ product.image | absolute_url }}"{% else %}null{% endif %},
+        "featured": {% if product.featured %}"{{ product.featured }}"{% else %}null{% endif %},
+        "new": {% if product.new %}true{% else %}false{% endif %},
+        "tags": [{% for tag in product.tags -%}
+            "{{ tag }}"{% unless forloop.last %},{% endunless %}
+        {%- endfor %}],
+        "price": {% if product.price == nil %}null{% else %}"{{ product.price }}"{% endif %}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+]
