@@ -14,6 +14,7 @@ permalink: /plugins.json
             "name": "{{ developer.name }}",
             "homepage": {% if developer.homepage %}"{{ developer.homepage }}"{% else %}null{% endif %}
         },
+        "bundle": {% if product.bundle %}"{{product.bundle.name }}"{% else %}null{% endif %},
         "icon": "{{ product.icon | default: "fas fa-question" }}",
         "description": "{% if product.featured %}{{ product.featured }}{% else %}{{ product.intro }}{% endif %}",
         "new": {% if product.new %}true{% else %}false{% endif %},
