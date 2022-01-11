@@ -7,7 +7,6 @@ permalink: /plugins.json
 [
     {%- for product in products -%}
     {
-        {% assign icon = product.icon | default: "fas fa-question" -%}
         {%- assign developer = site.data.developer[product.developer] -%}
         "name": "{{ product.name }}",
         "url": "{{ product.url | absolute_url }}",
@@ -15,9 +14,8 @@ permalink: /plugins.json
             "name": "{{ developer.name }}",
             "homepage": {% if developer.homepage %}"{{ developer.homepage }}"{% else %}null{% endif %}
         },
-        "icon": "{{ icon }}",
-        "image": {% if product.image %}"{{ product.image | absolute_url }}"{% else %}null{% endif %},
-        "featured": {% if product.featured %}"{{ product.featured }}"{% else %}null{% endif %},
+        "icon": "{{ product.icon | default: "fas fa-question" }}",
+        "description": "{% if product.featured %}{{ product.featured }}{% else %}{{ product.intro }}{% endif %}",
         "new": {% if product.new %}true{% else %}false{% endif %},
         "tags": [{% for tag in product.tags -%}
             "{{ tag }}"{% unless forloop.last %},{% endunless %}

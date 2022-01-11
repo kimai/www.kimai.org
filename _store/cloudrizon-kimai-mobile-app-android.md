@@ -4,6 +4,7 @@ intro: "Kimai Mobile is an application that enables convenient usage of Kimai on
 developer: "cloudrizon"
 date: "2021-08-26 20:00:00 +0200"
 image: /images/marketplace/cloudrizon-kimai-mobile-app-logo.png
+icon: fab fa-android
 price: 2,99€
 download: https://www.kimaimobile.com/
 new: true
