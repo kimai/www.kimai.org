@@ -13,7 +13,7 @@ permalink: /plugins.json
         "url": "{{ product.url | absolute_url }}",
         "developer": {
             "name": "{{ developer.name }}",
-            "homepage": {% if developer.homepage %}"{{ developer.homepage }}"{% else %}null{% endif %},
+            "homepage": {% if developer.homepage %}"{{ developer.homepage }}"{% else %}null{% endif %}
         },
         "icon": "{{ icon }}",
         "image": {% if product.image %}"{{ product.image | absolute_url }}"{% else %}null{% endif %},
