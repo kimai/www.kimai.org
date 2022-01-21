@@ -87,7 +87,7 @@ Now create a file with the name `importer` and adjust the `KIMAI_API_*` constant
 <?php
 require __DIR__.'/vendor/autoload.php';
 
-define('KIMAI_API_URL', 'https://127.0.0.1:8010/api/');
+define('KIMAI_API_URL', 'https://127.0.0.1/api/');
 define('KIMAI_API_USER', 'susan_super');
 define('KIMAI_API_PWD', 'api_kitten');
 
@@ -96,14 +96,16 @@ use League\Csv\Reader;
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\SingleCommandApplication;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
 (new SingleCommandApplication())
     ->setName('Kimai - Simple activity importer')
-    ->setVersion('0.1')
+    ->setVersion('0.2')
     ->addArgument('file', InputArgument::REQUIRED, 'The CSV file to import')
+    ->addOption('delimiter', null, InputOption::VALUE_REQUIRED, 'The delimiter to use (by default comma ",")', ',')
     ->setCode(function (InputInterface $input, OutputInterface $output) {
 
         $io = new SymfonyStyle($input, $output);
@@ -118,7 +120,14 @@ use Symfony\Component\Console\Style\SymfonyStyle;
             return 2;
         }
 
+        $delimiter = $input->getOption('delimiter');
+        if (empty($delimiter)) {
+            $io->error('Cannot use empty delimiter');
+            return 3;
+        }
+
         $csv = Reader::createFromPath($file, 'r');
+        $csv->setDelimiter($delimiter);
         $csv->setHeaderOffset(0);
 
         $client = new Client([
@@ -127,6 +136,9 @@ use Symfony\Component\Console\Style\SymfonyStyle;
             'headers' => ['X-AUTH-USER' => KIMAI_API_USER, 'X-AUTH-TOKEN' => KIMAI_API_PWD]
         ]);
 
+        $customers = 0;
+        $projects = 0;
+        $activities = 0;
         $customerIds = [];
         $projectIds = [];
         $activityIds = [];
@@ -142,6 +154,19 @@ use Symfony\Component\Console\Style\SymfonyStyle;
         $progressBar = new ProgressBar($output, count($records));
 
         foreach($records as $record) {
+            if (!array_key_exists('Customer', $record)) {
+                $io->error('Cannot import row, missing field "Customer" in row: ' . implode($delimiter, $record));
+                return 4;
+            }
+            if (!array_key_exists('Project', $record)) {
+                $io->error('Cannot import row, missing field "Project" in row: ' . implode($delimiter, $record));
+                return 5;
+            }
+            if (!array_key_exists('Activity', $record)) {
+                $io->error('Cannot import row, missing field "Activity" in row: ' . implode($delimiter, $record));
+                return 6;
+            }
+
             $customerName = trim($record['Customer']);
             $projectName = trim($record['Project']);
             $activityName = trim($record['Activity']);
@@ -149,28 +174,41 @@ use Symfony\Component\Console\Style\SymfonyStyle;
             if (!array_key_exists($customerName, $customerIds)) {
                 $customer = $doPost($client, 'customers', ['name' => mb_substr($customerName, 0, 150), 'country' => 'IT', 'currency' => 'EUR', 'timezone' => 'Europe/Rome', 'visible' => true]);
                 $customerIds[$customerName] = $customer['id'];
+                $customers++;
             }
 
-            $customerId = $customerIds[$customerName];
+            $customerId = (int) $customerIds[$customerName];
 
-            if (!array_key_exists($projectName, $projectIds)) {
-                $project = $doPost($client, 'projects', ['name' => mb_substr($projectName, 0, 150), 'customer' => (int) $customerId, 'visible' => true]);
-                $projectIds[$projectName] = $project['id'];
+            if (!array_key_exists($customerId, $projectIds)) {
+                $projectIds[$customerId] = [];
             }
 
-            $projectId = $projectIds[$projectName];
+            if (!array_key_exists($projectName, $projectIds[$customerId])) {
+                $project = $doPost($client, 'projects', ['name' => mb_substr($projectName, 0, 150), 'customer' => $customerId, 'visible' => true]);
+                $projectIds[$customerId][$projectName] = $project['id'];
+                $projects++;
+            }
 
-            $activity = $doPost($client, 'activities', ['name' => mb_substr($activityName, 0, 150), 'project' => (int) $projectId, 'visible' => true]);
-            $activityIds[$activityName] = $activity['id'];
+            $projectId = (int) $projectIds[$customerId][$projectName];
+
+            if (!array_key_exists($projectId, $activityIds)) {
+                $activityIds[$projectId] = [];
+            }
+
+            if (!array_key_exists($activityName, $activityIds[$projectId])) {
+                $activity = $doPost($client, 'activities', ['name' => mb_substr($activityName, 0, 150), 'project' => $projectId, 'visible' => true]);
+                $activityIds[$projectId][$activityName] = $activity['id'];
+                $activities++;
+            }
 
             $progressBar->advance();
         }
 
         $progressBar->finish();
 
-        $io->success('Created ' . count($customerIds) . ' customers');
-        $io->success('Created ' . count($projectIds) . ' projects');
-        $io->success('Created ' . count($activityIds) . ' activities');
+        $io->success('Created ' . $customers . ' customers');
+        $io->success('Created ' . $projects . ' projects');
+        $io->success('Created ' . $activities . ' activities');
     })
     ->run();
 ```
