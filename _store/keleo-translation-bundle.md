@@ -9,7 +9,8 @@ icon: fas fa-language
 demo: true 
 price: "29€"
 gumroad: kimai-translation
-featured: "Change all visible elements (form labels, table header, menu items ...) in your Kimai installation with your own translations" 
+featured: "Change all visible elements (form labels, table header, menu items ...) in your Kimai installation with your own translations"
+new: true
 toc: false 
 type: featured
 documentation: plugin-translation

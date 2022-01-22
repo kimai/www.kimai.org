@@ -8,7 +8,6 @@ price: '0'
 version: 1.0.0
 download: https://github.com/tobybatch/ChromeKimaiBridge/archive/v1.0.0.zip
 github: https://github.com/tobybatch/ChromeKimaiBridge
-new: true
 features:
   - Allows a Kimai instace to be accessed from a browser pop up.
   - Log time attached to specific Trello card or Github issue.
