@@ -13,7 +13,6 @@ featured: "Change all visible elements (form labels, table header, menu items ..
 new: true
 toc: false 
 type: featured
-documentation: plugin-translation
 tags:
   - plugin
 bundle:
