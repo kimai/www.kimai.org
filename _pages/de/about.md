@@ -14,8 +14,8 @@ permalink: /de/ueber-kimai.html
 
 Kimai ist eine Zeiterfassungs-Software mit einer langen Geschichte. Die erste Version wurde 2006 veröffentlicht. 
 Warum erwähnen wir das? Weil wir in den letzten zehn Jahren viele Programme kommen und gehen gesehen haben – vertrauen Sie uns, wenn wir sagen: 
-Wir werden am Markt bleiben. Wir haben nie von Kimai gelebt, es ist der Spaß, der uns motiviert, Kimai zu verbessern. 
-Wir glauben, dass dies einer der Hauptgründe für den Erfolg von Kimai ist.
+Wir werden am Markt bleiben. Wir haben viele Jahre nichts mit Kimai verdient, es war stets der Spaß der uns motivierte Kimai zu verbessern. 
+Wir glauben, dass die Freude einer der Hauptgründe für den Erfolg von Kimai ist. 
 
 Wir bauen Kimai für einen Zweck: die Erfassung Ihrer Arbeitszeiten. Kimai unterstützt eine unbegrenzte Anzahl von Benutzern und Stundenzetteleinträgen, 
 sodass Sie alle Ihre Teams/Abteilungen in einer benutzerfreundlichen Installation verwalten können. 
@@ -25,9 +25,10 @@ Kimai wurde in mehreren Sprachen übersetzt und fehlende Übersetzungen können 
 
 Oh, und haben wir erwähnt, dass Sie Rechnungen aus Ihren Stundenzetteln in Ihrem Browser erstellen können? 
 Kimai verfügt nicht nur über anpassbare Rechnungsvorlagen, Kimai kann leicht auf verschiedene Arten erweitert werden. 
-Es basiert auf den beliebtesten und modernsten Frameworks und verfügt über viele Schnittstellen für Ihre Entwickler.
+Es basiert auf den beliebtesten und modernsten Frameworks und verfügt über eine aktive Community die viele Plugins produziert, welche 
+die Kernfunktionalität von Kimai erweitern.
 
-Jetzt könnten wir so viel mehr über seine Funktionen und die Vorteile schreiben, die es Ihnen bringen wird – ob Sie nun ein Freelancer, 
+Wir könnten so viel mehr über seine Funktionen und die Vorteile schreiben, die es Ihnen bringen wird – ob Sie nun ein Freelancer, 
 eine kleine Organisation oder ein Unternehmen mit Hunderten von Mitarbeitern sind – aber wir denken, dass es sogar besser ist, 
 Ihnen die Möglichkeit zu geben es direkt zu testen, besser als tausend Worte von uns: 
 Seien Sie also unser Gast und testen Sie Kimai online mit unserer [Demo-Installationen]({% link _pages/de/demo.md %}). 
