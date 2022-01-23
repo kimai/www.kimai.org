@@ -10,7 +10,7 @@ The release 1.16 was published in November 2021.
 
 ### Attention before upgrading 
 
-Remember that [release 1.14]({% link _posts/2021-09-17-kimai-release-1-15.md %}): 
+Remember that [release 1.15]({% link _posts/2021-09-17-kimai-release-1-15.md %}): 
 - [dropped support for PHP 7.2 and added support for PHP 8]({% link _posts/2021-05-31-php8-support-php72-dropped.md %})
 - LDAP & SAML config structure changed
 
@@ -26,8 +26,9 @@ Remember that [release 1.14]({% link _posts/2021-09-17-kimai-release-1-15.md %})
 
 ### Security issues
 
-Multiple possible CSRF and XSS attacks were found and patched. Thanks for the disclosure go out to the huntr.dev community, especially
-to @Haxatron and @Asura-N and @tdozbun-reno and @lethanhphuc.
+Some possible CSRF and XSS attacks were found and patched. Thanks for the disclosure go out to the huntr.dev community, especially
+to @Haxatron and @Asura-N and @tdozbun-reno and @noobpk.
+
 If you use Kimai in a multi-user environment, you are urged to update as soon as possible.
 
 ### Thank you!
