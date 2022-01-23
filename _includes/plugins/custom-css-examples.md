@@ -48,3 +48,42 @@ tr.recording {
     background-color: #ffa059 !important;
 }
 ```
+
+Hiding the billable field:
+```css
+label[for=timesheet_edit_form_billable] { display:none; }
+```
+
+Hiding the navigation icons:
+```css
+.sidebar-menu>li>ul>li>a>i, .sidebar-menu>li>a>i {
+    display: none;
+}
+body.sidebar-collapse .sidebar-menu>li>ul>li>a>i, body.sidebar-collapse .sidebar-menu>li>a>i {
+    display: inline-block;
+}
+```
+
+Remove the title on security screens (login, reset password):
+```css
+.login-logo, .register-logo { visibility: hidden; }
+```
+
+Setting a plain background color for security screens:
+```css
+.login-logo, .register-logo { visibility: hidden; }
+.layout-boxed body, .layout-boxed html, body, html { background: #000000; }
+.login-page, .register-page { background: none; }
+```
+
+Hide the header on mobile devices:
+```css
+@media (max-width: 767px) {
+    .main-header .logo {
+        display: none;
+    }
+    .fixed .content-wrapper, .fixed .right-side, .control-sidebar, .main-sidebar {
+        padding-top: 50px;
+    }
+}
+```
