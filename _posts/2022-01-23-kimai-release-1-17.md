@@ -1,0 +1,98 @@
+---
+layout: post
+title: "Release 1.17 - A bit of everything"
+date: "2022-01-23 14:00:00 +0200"
+author: kevinpapst
+tags: [Release]
+---
+
+The release 1.17 was published in January 2022.
+
+**This is the last release with [support for PHP 7.3 / 7.4](https://www.kimai.org/blog/2021/sunsetting-php-7/).**
+
+Between the latest release [1.16]({% link _posts/2021-11-16-kimai-release-1-16.md %}) there have been 10 minor releases, 
+fixing issues and introducing new features. You should watch the Github repository to be notified ASAP of these updates.
+Many users do not want to install these bugfix/minor versions, so it was time for a new major release :-)
+
+In the meantime 3 new plugins were released:
+- [Translation]({% link _store/keleo-translation-bundle.md %}) - translate and/or change the labels of visible UI elements
+- [Custom content]({% link _store/keleo-custom-content-bundle.md %}) - allows adding custom CSS, Javascript, a global warning message and a new content page
+- [Invoice]({% link _store/keleo-invoice-bundle.md %}) - enhanced invoicing features, that should not be part of the core system
+
+### Attention before upgrading 
+
+This is the last release with [support for PHP 7](https://www.kimai.org/blog/2021/sunsetting-php-7/).
+If not yet done: please upgrade to PHP 8 soon!   
+
+Release 1.15 already [dropped support for PHP 7.2]({% link _posts/2021-05-31-php8-support-php72-dropped.md %}) 
+and changed the config structure for LDAP & SAML.
+
+### Security issues
+
+Some possible CSRF and XSS attacks were found and patched. Thanks for the disclosure go out to the huntr.dev community, especially
+to @haxatron and @asura-n and @noobpk.
+
+If you use Kimai in a multi-user environment, you are urged to update as soon as possible!
+
+### Thank you!
+
+Thanks to all of you for using and supporting Kimai, especially:
+- everyone contributing financially, allowing me to spend so much time with Kimai
+- the community for all their input, discussions, feature requests and bug notices
+- the developers contributing their knowledge and time
+- the translators at Weblate
+- the security researcher who privately disclose any issue   
+
+Thanks for being part of the Kimai community ❤️
+
+> Want to upgrade? [Click here to find out how]({%link _documentation/updates.md %}).
+
+## Full changelog
+
+This changelist contains all changes between 1.16 and 1.17.
+
+You can find [all commits here](https://github.com/kevinpapst/kimai2/compare/1.16...1.17).
+
+### Implemented enhancements
+
+- improve permission handling for quick entry controller [\#3081](https://github.com/kevinpapst/kimai2/pull/3081)
+- Invoice events [\#3079](https://github.com/kevinpapst/kimai2/pull/3079)
+- Invoice meta fields [\#3077](https://github.com/kevinpapst/kimai2/pull/3077)
+- Bugfixes [\#3078](https://github.com/kevinpapst/kimai2/pull/3078)
+- shrink prod error messages [\#3091](https://github.com/kevinpapst/kimai2/pull/3091)
+- new export template [\#3082](https://github.com/kevinpapst/kimai2/pull/3082)
+- Translations update from Hosted Weblate [\#2951](https://github.com/kevinpapst/kimai2/pull/2951), [\#3013](https://github.com/kevinpapst/kimai2/pull/3013), [\#3032](https://github.com/kevinpapst/kimai2/pull/3032), [\#3048](https://github.com/kevinpapst/kimai2/pull/3048)
+- weekly hours form: allow to configure the amount of recent activity rows in an empty week [\#3026](https://github.com/kevinpapst/kimai2/pull/3026)
+- added comment field to invoice [\#3045](https://github.com/kevinpapst/kimai2/pull/3045)
+- improve export permission checks [\#3027](https://github.com/kevinpapst/kimai2/pull/3027)
+- new invoice template variables for budgets [\#3005](https://github.com/kevinpapst/kimai2/pull/3005)
+- new command to work with translation files [\#2993](https://github.com/kevinpapst/kimai2/pull/2993)
+- cleanup duplicate translation ids [\#3001](https://github.com/kevinpapst/kimai2/pull/3001)
+- improve translation test [\#2998](https://github.com/kevinpapst/kimai2/pull/2998)
+- prevent that lock files will be committed in PRs [\#2983](https://github.com/kevinpapst/kimai2/pull/2983) and [\#2992](https://github.com/kevinpapst/kimai2/pull/2992)
+- allow to delete invoice documents from within kimai [\#2968](https://github.com/kevinpapst/kimai2/pull/2968)
+- improve export filename [\#2958](https://github.com/kevinpapst/kimai2/pull/2958)
+- include calendar week in week chooser [\#2933](https://github.com/kevinpapst/kimai2/pull/2933)
+- bump dependencies [\#3089](https://github.com/kevinpapst/kimai2/pull/3089)
+- code improvements [\#3088](https://github.com/kevinpapst/kimai2/pull/3088)
+- phpstan improvements [\#3092](https://github.com/kevinpapst/kimai2/pull/3092)
+
+### Fixed bugs
+
+- Import from Kimai v1:  This timesheet is already exported [\#3061](https://github.com/kevinpapst/kimai2/issues/3061)
+- fix working time widget (dashboard) with "first day of week" = sunday [\#3047](https://github.com/kevinpapst/kimai2/issues/3047)
+- Fix projects are not filtered after submit [\#3016](https://github.com/kevinpapst/kimai2/issues/3016)
+- Fix invoice budget calculation [\#3024](https://github.com/kevinpapst/kimai2/issues/3024)
+- Fix "filter user timesheet" action display [\#3018](https://github.com/kevinpapst/kimai2/issues/3018)
+- fix selection of customer/project/activity in multi-step forms [\#2989](https://github.com/kevinpapst/kimai2/issues/2989)
+- more csrf protection for invoice and search [\#2984](https://github.com/kevinpapst/kimai2/issues/2984)
+- fix invoice create and search [\#2990](https://github.com/kevinpapst/kimai2/issues/2990)
+- fix HTML forms (two opening <form> tags) [\#2972](https://github.com/kevinpapst/kimai2/issues/2972)
+- fix deleting invoice documents [\#2980](https://github.com/kevinpapst/kimai2/issues/2980)
+- CSRF Tokens are not properly refreshed on some form submissions [\#2947](https://github.com/kevinpapst/kimai2/issues/2947) [\#2948](https://github.com/kevinpapst/kimai2/issues/2948)
+- escape customer, project and activity name in javascript [\#2959](https://github.com/kevinpapst/kimai2/issues/2959)
+- escape data in calendar popover [\#2960](https://github.com/kevinpapst/kimai2/issues/2960)
+- make sure that markdown uses safe mode [\#2961](https://github.com/kevinpapst/kimai2/issues/2961)
+- improve permission handling in invoice screen [\#2965](https://github.com/kevinpapst/kimai2/issues/2965)
+- drop default value to prevent error when server version is not set [\#2769](https://github.com/kevinpapst/kimai2/issues/2769) [\#2796](https://github.com/kevinpapst/kimai2/issues/2796) [\#2943](https://github.com/kevinpapst/kimai2/issues/2943)
+- Filtering the administrative project list by Visible=Both results in 500 Server Error [\#2941](https://github.com/kevinpapst/kimai2/issues/2941)
