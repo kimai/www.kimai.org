@@ -7,7 +7,6 @@ date: "2021-03-14 09:00:00"
 icon: fa fa-medkit
 price: "89€"
 gumroad: QtbRf
-new: true
 type: plugin
 tags:
   - plugin
