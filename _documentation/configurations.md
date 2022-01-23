@@ -48,6 +48,8 @@ Users with the `edit_other_timesheet` [permission]({% link _documentation/permis
 `start` and `end` time in the `Admin > Timesheets` screen. If your country has work regulations that should limit access to this data, 
 make sure to remove this permission for persons without special access regulations (e.g. your HR department).
 
+This mode does not use the `Default start-time` but always displays the current time as start for new entries.
+
 #### Duration (fixed start time)
 
 The `begin` and `end` fields will be removed, only the `duration` can be edited. 
