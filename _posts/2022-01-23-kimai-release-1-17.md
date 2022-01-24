@@ -10,9 +10,8 @@ The release 1.17 was published in January 2022.
 
 **This is the last release with [support for PHP 7.3 / 7.4](https://www.kimai.org/blog/2021/sunsetting-php-7/).**
 
-Between the latest release [1.16]({% link _posts/2021-11-16-kimai-release-1-16.md %}) there have been 10 minor releases, 
-fixing issues and introducing new features. You should watch the Github repository to be notified ASAP of these updates.
-Many users do not want to install these bugfix/minor versions, so it was time for a new major release :-)
+There have been 10 minor releases between the release [1.16]({% link _posts/2021-11-16-kimai-release-1-16.md %}) and this one. 
+You should use the "watch feature" in the Github repository to be notified ASAP of these updates.
 
 In the meantime 3 new plugins were released:
 - [Translation]({% link _store/keleo-translation-bundle.md %}) - translate and/or change the labels of visible UI elements
@@ -22,17 +21,15 @@ In the meantime 3 new plugins were released:
 ### Attention before upgrading 
 
 This is the last release with [support for PHP 7](https://www.kimai.org/blog/2021/sunsetting-php-7/).
-If not yet done: please upgrade to PHP 8 soon!   
+If not yet done: please upgrade to PHP 8 soon.
 
-Release 1.15 already [dropped support for PHP 7.2]({% link _posts/2021-05-31-php8-support-php72-dropped.md %}) 
-and changed the config structure for LDAP & SAML.
+Release 1.15 changed the config structure for LDAP & SAML and also [dropped support for PHP 7.2]({% link _posts/2021-05-31-php8-support-php72-dropped.md %}).
 
 ### Security issues
 
-Some possible CSRF and XSS attacks were found and patched. Thanks for the disclosure go out to the huntr.dev community, especially
-to @haxatron and @asura-n and @noobpk.
+Some possible CSRF and XSS attacks were found and patched. Thanks for the disclosure go out to @haxatron and @asura-n and @noobpk.
 
-If you use Kimai in a multi-user environment, you are urged to update as soon as possible!
+If you use Kimai in a multi-user environment, you are urged to update as soon as possible.
 
 ### Thank you!
 
