@@ -180,10 +180,46 @@ You can have a look at [https://github.com/Keleo/kimai2-invoice-templates](https
 
 ### Twig templates
 
-Generally speaking, you should use only the variable `model` in your template which is an instance of `App\Model\InvoiceModel`.
+Generally speaking, you have two main variables in your template which you should use:
+- `model` which is an instance of `App\Model\InvoiceModel`
+- `invoice` which is an array of variables (see `Template variables` below), just with a different syntax for access, e.g.: `{% raw %}{{ invoice['invoice.due_date'] }}{% endraw %}` instead of `{% raw %}${invoice.due_date}{% endraw %}` 
 
 Please see the [default templates]({{ site.kimai_v2_file }}/templates/invoice/renderer) at
 GitHub to find out which variables can be used.
+
+Use this debug template to find out which variables are available:
+```twig
+{% raw %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ model.invoiceNumber }}-{{ model.customer.company|default(model.customer.name)|u.snake }}</title>
+    <style type="text/css">
+        {{ encore_entry_css_source('invoice-pdf')|raw }}
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <p>Please note, that the available variables will change depending on your search. E.g. the {{ '{{ project }}' }} variables are only available if you selected a project in your search filter.</p>
+    <p>The following list of variables is available for this invoice:</p>
+    <table class="items">
+        <tr>
+            <th>Variable</th>
+            <th>Value</th>
+        </tr>
+        {% for name, value in invoice %}
+            <tr class="{{ cycle(['odd', 'even'], loop.index0) }}">
+                <td>{{ "{{ invoice['" ~ name ~ "'] }}" }}</td>
+                <td>{{ value }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>
+{% endraw %}
+```
 
 Want to include an image in your template? Use the `asset` tag for referencing relative URLs (this example points to the directory `public/images/my-logo.png`):
 
@@ -199,15 +235,24 @@ But the safest way is to host your images on your own domain:
 
 Want to include a file in your template?
 Use the twig include feature with the `@invoice` namespace . The following example references the file `bar.html.twig` in `var/invoices/foo/`:
-```
+```twig
 {% raw %}{% include '@invoice/foo/bar.html.twig' %}{% endraw %}
 ``` 
+
+Want to use a timesheet custom field in your template?
+```twig
+{% raw %}{% set metaField = entry.metaField('foo') %}
+{% if not metaField is null and metaField.value is not null %}
+    Foo: {{ metaField.value }}
+{% endif %}{% endraw %}
+``` 
+
 
 ### PDF templates
 
 PDF invoice templates are basically the same as Twig templates. 
 But the resulting HTML is processed by the [MPdf library](https://mpdf.github.io), which will convert the HTML & CSS to PDF.
-There are some additional contents, that will define eg. page heaader and footer. 
+There are some additional contents, that will define e.g. page header and footer. 
 
 Please read the MPdf documentation and check the default PDF templates.
 
