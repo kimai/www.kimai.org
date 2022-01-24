@@ -189,8 +189,7 @@ GitHub to find out which variables can be used.
 
 Use this debug template to find out which variables are available:
 ```twig
-{% raw %}
-<!DOCTYPE html>
+{% raw %}<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -217,8 +216,7 @@ Use this debug template to find out which variables are available:
     </table>
 </div>
 </body>
-</html>
-{% endraw %}
+</html>{% endraw %}
 ```
 
 Want to include an image in your template? Use the `asset` tag for referencing relative URLs (this example points to the directory `public/images/my-logo.png`):
