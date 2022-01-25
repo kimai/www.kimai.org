@@ -12,9 +12,9 @@ A Kimai plugin which allows adding custom content for:
 
 This bundle introduces new permissions, which limit access to certain functions:
 
-| Permission Name        | Description |
-|------------------------|--- |
-| `edit_custom_content`  | show the administration screen to edit custom content rules   |
+| Permission Name        | Description                                                 |
+|------------------------|-------------------------------------------------------------|
+| `edit_custom_content`  | show the administration screen to edit custom content rules |
 {: .table }
 
 By default, these are assigned to each user with the role `ROLE_SUPER_ADMIN`.
