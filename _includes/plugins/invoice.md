@@ -1,5 +1,4 @@
 
-
 This bundle has the following features: 
 
 - Automatic generation of a PDF with all contained timesheets  
@@ -18,6 +17,8 @@ You could generate the same PDF using the export function in Kimai, but that req
 - filtering the exact same timesheets
 - creating the export 
 - renaming the file to match the invoice
+
+The used "export template" for this feature can be configured.
 
 ### Data format language
 
