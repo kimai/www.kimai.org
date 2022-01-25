@@ -19,6 +19,7 @@ bundle:
   name: "CustomContentBundle"
   purchase: true
   versions:
+    - ["1.1", "1.17"]
     - ["1.0", "1.17"]
 screenshots:
   - 

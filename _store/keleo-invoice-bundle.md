@@ -19,6 +19,7 @@ bundle:
   name: "InvoiceBundle"
   purchase: true
   versions:
+    - ["1.1 - 1.2", "1.17.1"]
     - ["1.0", "1.17"]
 screenshots:
   - 
