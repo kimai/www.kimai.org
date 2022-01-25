@@ -125,10 +125,10 @@ These are the existing rounding modes:
 
 ## Authentication
 
-- `User registration` - 
-- `Forgot password` -
-- `Forgotten password` - number of seconds before a user can request the next e-mail
-- `Forgotten password` - number of seconds before a reset link expires
+- `User registration` - de-/activates the self-registration. Do NOT activate this, if your Kimai instance is public accessible.
+- `Forgot password` - de-/activates the password reset function, that sends an email with a "reset my password" link 
+- `Forgotten password - seconds before a user can request the next e-mail` - if a password-reset email was sent, you should not allow to request another one too soon (for security reasons) 
+- `Forgotten password - seconds before a reset link expires` - how long a user can use the password reset link, it is recommended to keep this value below 1 day
 
 ## Create customer—default values
 
@@ -149,10 +149,10 @@ These are the existing rounding modes:
   supporting simple lists and other HTML content. It will only be rendered in `My times` and not in `Admin > Timesheet` as
   [security measure](https://github.com/erusev/parsedown/blob/master/README.md#security).  
 - `Tags: use auto-complete search and allow tag creation` - 
-- `Limit color choices` - 
-- `Allowed colors` - 
-- `Allow the use of URLs for avatar images` - 
-- `Use random colors for objects without assigned color` - 
+- `Limit color choices` - whether you want to use a dropdown list of pre-defined colors or the native color chooser with unlimited colors
+- `Allowed colors` - if `Limit color choices` is active, these are the colors that can be chosen 
+- `Allow the use of URLs for avatar images` - you can allow using URLs for user avatars (not recommended) 
+- `Use random colors for objects without assigned color` - objects without an assigned color (projects, user ...) show a grey dot by default, but if this option is active a color is randomly chosen (the use of this random color is limited for now)
 
 ## Calendar 
 
