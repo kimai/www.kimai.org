@@ -7,7 +7,7 @@ developer: kevinpapst
 date: "2022-01-22 20:00:00 +0200"
 icon: fas fa-file-invoice-dollar
 demo: true 
-price: "??€"
+price: "0+€"
 gumroad: kimai-invoice
 featured: "Enhanced invoicing features: change format locale, automatic timesheet proof PDF for new invoices."
 new: true
@@ -28,10 +28,12 @@ screenshots:
     description: Configure the language for formatting all invoice settings
 ---
 
+{% include pay-what-you-want.md %}
+
 You can test the Plugin in the [Plugin demo]({% link _pages/demo.md %}).
 
 Full documentation available [in the documentation]({% link _documentation/plugin-invoice.md %}).
-
+  
 ## Features 
 
 {% include plugins/invoice.md %}
