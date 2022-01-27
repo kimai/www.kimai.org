@@ -237,18 +237,27 @@ Use the twig include feature with the `@invoice` namespace . The following examp
 {% raw %}{% include '@invoice/foo/bar.html.twig' %}{% endraw %}
 ``` 
 
+#### Custom fields
+
+Iterating above all entries (line items) in the invoice with `{% for id, entry in model.calculator.entries %}` 
+allows access to your custom fields.
+
 Want to use a **timesheet custom field** in your template?
 ```twig
-{% raw %}{% set metaField = entry.metaField('foo') %}
-{% if not metaField is null and metaField.value is not null %}
-    Foo: {{ metaField.value }}
+{% raw %}{% set meta = entry.getAdditionalField('foo') %}
+{% if meta is not null %}
+    Foo: {{ meta }}
 {% endif %}{% endraw %}
 ``` 
+Please be aware:
+- you can access timesheet custom fields only if you use the "sum calculation" standard, which creates one invoice line item per timesheet.
+- if you group timesheets e.g. by project, you loose access to their custom fields.
+- entries could be of type "expense" or other types (depending on your used plugins), you can test that with `{% if entry.type == 'timesheet' '%}` 
 
 Want to use a **customer custom field** in your template?
 ```twig
 {% raw %}{% set metaField = entry.customer.metaField('foo') %}
-{% if not metaField is null and metaField.value is not null %}
+{% if metaField is not null and metaField.value is not null %}
     Foo: {{ metaField.value }}
 {% endif %}{% endraw %}
 ``` 
@@ -256,16 +265,17 @@ Want to use a **customer custom field** in your template?
 Want to use a **project custom field** in your template?
 ```twig
 {% raw %}{% set metaField = entry.project.metaField('foo') %}
-{% if not metaField is null and metaField.value is not null %}
+{% if metaField is not null and metaField.value is not null %}
     Foo: {{ metaField.value }}
 {% endif %}{% endraw %}
 ``` 
 
 Want to use a **user preference** in your template?
 ```twig
-{% raw %}{% set metaValue = entry.user.getPreferenceValue('address_street') %}
-Foo: {{ metaValue }}
-{% endraw %}
+{% raw %}{% set meta = entry.user.getPreferenceValue('address_street') %}
+{% if meta is not null %}
+    Foo: {{ meta }}
+{% endif %}{% endraw %}
 ``` 
 
 ### PDF templates
