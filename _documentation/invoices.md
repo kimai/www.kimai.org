@@ -237,7 +237,7 @@ Use the twig include feature with the `@invoice` namespace . The following examp
 {% raw %}{% include '@invoice/foo/bar.html.twig' %}{% endraw %}
 ``` 
 
-Want to use a timesheet custom field in your template?
+Want to use a **timesheet custom field** in your template?
 ```twig
 {% raw %}{% set metaField = entry.metaField('foo') %}
 {% if not metaField is null and metaField.value is not null %}
@@ -245,6 +245,28 @@ Want to use a timesheet custom field in your template?
 {% endif %}{% endraw %}
 ``` 
 
+Want to use a **customer custom field** in your template?
+```twig
+{% raw %}{% set metaField = entry.customer.metaField('foo') %}
+{% if not metaField is null and metaField.value is not null %}
+    Foo: {{ metaField.value }}
+{% endif %}{% endraw %}
+``` 
+
+Want to use a **project custom field** in your template?
+```twig
+{% raw %}{% set metaField = entry.project.metaField('foo') %}
+{% if not metaField is null and metaField.value is not null %}
+    Foo: {{ metaField.value }}
+{% endif %}{% endraw %}
+``` 
+
+Want to use a **user preference** in your template?
+```twig
+{% raw %}{% set metaValue = entry.user.getPreferenceValue('address_street') %}
+Foo: {{ metaValue }}
+{% endraw %}
+``` 
 
 ### PDF templates
 
