@@ -239,7 +239,7 @@ Use the twig include feature with the `@invoice` namespace . The following examp
 
 #### Custom fields
 
-Iterating above all entries (line items) in the invoice with `{% for id, entry in model.calculator.entries %}` 
+Iterating above all entries (line items) in the invoice with `{% raw %}{% for id, entry in model.calculator.entries %}{% endraw %}` 
 allows access to your custom fields.
 
 Want to use a **timesheet custom field** in your template?
@@ -252,7 +252,7 @@ Want to use a **timesheet custom field** in your template?
 Please be aware:
 - you can access timesheet custom fields only if you use the "sum calculation" standard, which creates one invoice line item per timesheet.
 - if you group timesheets e.g. by project, you loose access to their custom fields.
-- entries could be of type "expense" or other types (depending on your used plugins), you can test that with `{% if entry.type == 'timesheet' '%}` 
+- entries could be of type "expense" or other types (depending on your used plugins), you can test that with `{% raw %}{% if entry.type == 'timesheet' '%}{% endraw %}` 
 
 Want to use a **customer custom field** in your template?
 ```twig
@@ -272,7 +272,7 @@ Want to use a **project custom field** in your template?
 
 Want to use a **user preference** in your template?
 ```twig
-{% raw %}{% set meta = entry.user.getPreferenceValue('address_street') %}
+{% raw %}{% set meta = entry.user.getPreferenceValue('foo') %}
 {% if meta is not null %}
     Foo: {{ meta }}
 {% endif %}{% endraw %}
