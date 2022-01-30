@@ -7,6 +7,8 @@ redirect_from:
   - /documentation/invoices/
   - /documentation/developer/invoice-templates.html
   - /documentation/invoice-templates/
+related:
+  - plugin-invoice
 ---
 
 Kimai allows creating invoices from timesheet data in several formats.
@@ -239,7 +241,7 @@ Use the twig include feature with the `@invoice` namespace . The following examp
 
 #### Custom fields
 
-Iterating above all entries (line items) in the invoice with `{% raw %}{% for id, entry in model.calculator.entries %}{% endraw %}` 
+Iterating all entries in the invoice with `{% raw %}{% for id, entry in model.calculator.entries %}{% endraw %}` 
 allows access to your custom fields.
 
 Want to use a **timesheet custom field** in your template?
