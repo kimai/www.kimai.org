@@ -19,9 +19,12 @@ Only the text from the following "domains" cannot be changed:
 
 ### Permissions
 
-The plugin creates this new permission:
+| Permission Name     | Description                                                                               |
+|---------------------|-------------------------------------------------------------------------------------------|
+| edit_translation    | access the translation screen and allow all actions: create, edit and delete translations |
+{: .table }
 
-- `edit_translation` - access the translation screen and allow all actions: create, edit and delete translations 
+By default, these are assigned to each user with the role `ROLE_SUPER_ADMIN`.
 
 {% include store-howto-permissions.md %}
 

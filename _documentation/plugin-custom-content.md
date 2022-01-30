@@ -6,6 +6,14 @@ toc: true
 
 {% include plugins/custom-content.md %}  
 
+## Custom content page
+
+You can edit two fields: 
+- The title is the name of the menu entry
+- The content for the page, markdown is supported for formatting.
+
+If the title is empty, the menu will be hidden.
+ 
 ## Examples
 
 ### Javascript
