@@ -4,6 +4,8 @@ This bundle has the following features:
 - Automatic generation of a PDF with all contained timesheets  
 - Configuration of a global language, which is used to format all invoices data (money, date, time).
 
+You configure both settings via the global [System > Settings]({% link _documentation/configurations.md %}) screen or from the “Invoice settings” screen.
+
 ### Automatic timesheet PDF
 
 When creating a new invoice, another PDF will be created, which contains a summary grouped-by-project (on the first page) 
@@ -18,7 +20,10 @@ You could generate the same PDF using the export function in Kimai, but that req
 - creating the export 
 - renaming the file to match the invoice
 
-The used "export template" for this feature can be configured.
+The used "export template" for this feature can be configured. 
+
+This feature needs to be activated by choosing an export template. 
+By selecting the empty entry it can be deactivated again. 
 
 ### Data format language
 
@@ -27,5 +32,4 @@ In the core system of Kimai, you configure the language for an invoice via its t
 This behavior might not be desired if you export invoice data e.g. to JSON and use that as input for further processing.
 Or if you translate your invoice to english for cross-country sales but still want to use your countries formats.
 
-You configure the format with the new `Language for formatting` configuration, 
-which can be configured via the global Settings screen or from within the “Invoice settings” screen.
+Without choosing a language the default behaviour is used. 
