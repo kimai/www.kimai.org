@@ -7,7 +7,7 @@ developer: kevinpapst
 date: "2022-01-22 20:00:00 +0200"
 icon: fas fa-file-invoice-dollar
 demo: true 
-price: "0+€"
+price: "0€"
 gumroad: kimai-invoice
 featured: "Enhanced invoicing features: change format locale, automatic timesheet proof PDF for new invoices."
 new: true
@@ -23,9 +23,13 @@ bundle:
     - ["1.0", "1.17"]
 screenshots:
   - 
-    src: "https://raw.githubusercontent.com/Keleo/InvoiceFormatFixationBundle/master/screenshot.png"
-    title: Language configuration
-    description: Configure the language for formatting all invoice settings
+    src: "/images/marketplace/invoice-fullscreen.png"
+    title: Invoice configuration
+    description: The new configuration settings for export template and format language
+  - 
+    src: "/images/marketplace/invoice-configuration.png"
+    title: Invoice configuration
+    description: Detail screenshot of the new invoice settings for format language and export template
 ---
 
 {% include pay-what-you-want.md %}
