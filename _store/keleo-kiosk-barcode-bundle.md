@@ -124,24 +124,26 @@ You have to configure the bundle before you can use it - you reach the configura
 
 The following configurations are available:
 
-| Configuration           | Description |
-|---                      |--- |
-| `Login mode` | whether to use camera or usb mode
-| `Code format` | you have to decide which code format you want to use
-| `Barcode includes readable code` | whether the barcode in the user profile will include the human readable code
-| `Duration to display confirmation dialog (in seconds)` | how long the start/stop screens will be shown after a successful scan
-| `Activity`            | the non-global activity that will be used to track the times 
+| Configuration                                          | Description                                                                  |
+|--------------------------------------------------------|------------------------------------------------------------------------------|
+| `Login mode`                                           | whether to use camera or usb mode                                            |
+| `Code format`                                          | you have to decide which code format you want to use                         |
+| `Barcode includes readable code`                       | whether the barcode in the user profile will include the human readable code |
+| `Duration to display confirmation dialog (in seconds)` | how long the start/stop screens will be shown after a successful scan        |
+| `Activity`                                             | the non-global activity that will be used to track the times                 |
+{: .table }
 
 ### Permissions
 
 This bundle introduces new permissions, which limit access to certain functions:
 
-| Permission Name           | Description |
-|---                        |--- |
-| `barcode_own_profile`     | allows to see and administrate barcode for the own user profile |
-| `barcode_other_profile`   | allows to see and administrate barcode for all user profiles |
-| `kiosk_own_profile`       | allows to configure user specific kiosk settings (eg. start and end time) for the own user profile |
-| `kiosk_other_profile`     | allows to configure user specific kiosk settings (eg. start and end time) for all user profiles |
+| Permission Name          | Description                                                                                        |
+|--------------------------|----------------------------------------------------------------------------------------------------|
+| `barcode_own_profile`    | allows to see and administrate barcode for the own user profile                                    |
+| `barcode_other_profile`  | allows to see and administrate barcode for all user profiles                                       |
+| `kiosk_own_profile`      | allows to configure user specific kiosk settings (eg. start and end time) for the own user profile |
+| `kiosk_other_profile`    | allows to configure user specific kiosk settings (eg. start and end time) for all user profiles    |
+{: .table }
 
 By default, these are granted to each user with the role `ROLE_SUPER_ADMIN`.
 
