@@ -23,7 +23,7 @@ bundle:
   command: "kimai:bundle:expenses:install"
   purchase: true
   versions:
-    - ["1.21 - 1.22", "1.15"]
+    - ["1.21 - 1.24", "1.15"]
     - ["1.20", "1.14.1"]
     - ["1.19 - 1.19.1", "1.14"]
     - ["1.16 - 1.18.1", "1.12"]
@@ -65,22 +65,24 @@ These expenses can be categorized and included in your invoices.
 ## Features
 
 - Record all your expenses and show them in a table view
-  - The data can be searched- and filtered (see screenshots)  
-- All (refundable) expenses will be automatically included in your invoices
+    - The data can be searched- and filtered (see screenshots)
+- All (billable) expenses will be automatically included in your invoices
+    - Negative amounts allow for complex bookings, budget and invoice adjustments
 - Manage expenses via API
-- Export expenses in: PDF, HTML, CSV, Excel
-- Support for custom fields (see [Custom-fields plugin]({% link _store/keleo-custom-fields-bundle.md %}))
+- Export expenses in: Excel, PDF, HTML
+- Support for custom-fields (see [Custom-fields plugin]({% link _store/keleo-custom-fields-bundle.md %}))
+- Include expenses in Kimai export module
 - Import expenses from Kimai 1
 
 Expenses will be assigned to free configurable categories and each category has:
-- name 
+- name
 - visibility flag
 - default cost
 
 Each expense has the following fields:
-- a date-time 
-- category (see above) 
-- user 
+- a date-time
+- category (see above)
+- user
 - project (and customer)
 - activity (optional)
 - description (free text field)
@@ -104,16 +106,16 @@ You should rename it during your first test!
 
 This bundle introduces new permissions, which limit access to certain functions:
 
-| Permission Name           | Description |
-|---                        |--- |
-| `view_expense`            | allows access to the expenses screen |
-| `edit_expense`            | edit existing expenses |
-| `edit_expense_cost`       | edit the cost of a single expense (deactivate this, if you want to provide default costs via the category) |
-| `export_expense`          | export expenses |
-| `create_expense`          | create new expenses |
-| `delete_expense`          | delete existing expenses |
-| `manage_expense_category` | manage expense types | 
-| `edit_exported_expense`   | allow to edit and delete exported expenses | 
+| Permission Name            | Description                                                                                                |
+|----------------------------|------------------------------------------------------------------------------------------------------------|
+| `view_expense`             | allows access to the expenses screen                                                                       |
+| `edit_expense`             | edit existing expenses                                                                                     |
+| `edit_expense_cost`        | edit the cost of a single expense (deactivate this, if you want to provide default costs via the category) |
+| `export_expense`           | export expenses                                                                                            |
+| `create_expense`           | create new expenses                                                                                        |
+| `delete_expense`           | delete existing expenses                                                                                   |
+| `manage_expense_category`  | manage expense types                                                                                       | 
+| `edit_exported_expense`    | allow to edit and delete exported expenses                                                                 | 
 {: .table }
 
 Pre-defined permissions are assigned to all default user roles.
