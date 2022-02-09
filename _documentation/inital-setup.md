@@ -75,5 +75,5 @@ Please read more in the `User registration` chapter [here]({% link _documentatio
 Something is not working as expected? 
 
 - Check your logfile at `var/log/prod.log`, as many problems reveal themselves after reading it
-- Still not working? Open a new issue at [GitHub]({{ site.kimai_v2_repo }}/issues/)
+- Still not working? Open a new discussion at [GitHub]({{ site.kimai_v2_repo }}/discussions/)
 

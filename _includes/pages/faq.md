@@ -5,7 +5,7 @@
 
 Please check your logfile at `var/log/prod.log`. Many problems reveal themselves after checking it.
 
-If that doesn't help, open a new issue at [GitHub]({{ site.kimai_v2_repo }}/issues/) and we try to find a solution.
+If that doesn't help, open a new discussion at [GitHub]({{ site.kimai_v2_repo }}/discussions/) and we try to find a solution.
 Please include the last ~ 20-50 lines of the log file, which were written around the time the error happened.  
 
 ## Kimai is slow
