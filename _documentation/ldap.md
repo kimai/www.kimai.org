@@ -210,28 +210,12 @@ no fallback mechanism implemented, if your LDAP is not available (currently only
 {% include alert.html type="danger" alert="The default configuration allows a user to change the internal password. This manually chosen password is not overwritten by the LDAP plugin and would allow a user to login, even after you removed him from LDAP." %}
 
 To prevent that problem:
-- disable the "[Password reset]({% link _documentation/users.md %})" function
-```yaml
-kimai:
-    user:
-        registration: false
-        password_reset: false
-```
-- disable the "change my own password" permission for each role:
-```yaml
-kimai:
-    permissions:
-        roles:
-            ROLE_USER: ['!password_own_profile']
-            ROLE_TEAMLEAD: ['!password_own_profile']
-            ROLE_ADMIN: ['!password_own_profile']
-```
-
-Read more about `password_own_profile` and `password_other_profile` [permissions]({% link _documentation/permissions.md %}).
+- Disable the "[Password reset]({% link _documentation/users.md %})" function via [System > Settings]({% link _documentation/configurations.md %})
+- Disable the `password_own_profile` and `password_other_profile` [permissions]({% link _documentation/permissions.md %}) for each role
 
 If you don't adjust your configuration, you have to:
 - either deactivate users manually in Kimai after deleting their LDAP account
-- or use a attribute mapping to set the user deactivated flag via `setEnabled()`
+- or use an attribute mapping to set the user deactivated flag via `setEnabled()`
 
 ### User attributes
 
