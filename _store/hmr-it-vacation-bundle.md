@@ -13,7 +13,7 @@ tags:
   - plugin
 bundle:
   name: "VacationBundle"
-  command: "bin/console kimai:bundle:vacation:install"
+  command: "kimai:bundle:vacation:install"
 screenshots:
   - 
      src: "/images/marketplace/hmr-it-vacation-plugin-public-holiday.png"
