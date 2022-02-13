@@ -2,7 +2,7 @@
 title: Period insert plugin
 name: Period insert plugin
 intro: "Create timesheet entries by date range"
-developer: hmr-it
+developer: mr-software
 date: "2020-10-09 10:00:00"
 icon: fa fa-calendar
 price: "29€"

@@ -2,7 +2,7 @@
 title: HasWorked plugin
 name: HasWorked plugin (notify users if they haven't entered times)
 intro: "A Kimai plugin to send an email notification to users if they don't have any entries on the current day"
-developer: hmr-it
+developer: mr-software
 date: "2020-09-17 13:30:00"
 icon: fa fa-bell
 price: "29€"
