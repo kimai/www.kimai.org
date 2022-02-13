@@ -6,7 +6,7 @@ developer: mr-software
 date: "2022-02-13 10:00:00 +0200"
 icon: fa fa-plane
 demo: false 
-price: "149€"
+price: "199€"
 gumroad: lVLXd
 new: false
 type: plugin

@@ -6,7 +6,7 @@ developer: mr-software
 date: "2022-02-13 10:00:00 +0200"
 icon: fas fa-gavel
 demo: false 
-price: "199€"
+price: "189€"
 gumroad: iVspM
 new: false
 type: plugin

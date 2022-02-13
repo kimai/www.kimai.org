@@ -6,7 +6,7 @@ developer: mr-software
 date: "2022-02-13 10:00:00 +0200"
 icon: fa fa-medkit
 demo: false 
-price: "89€"
+price: "149€"
 gumroad: QtbRf
 new: false
 type: plugin
