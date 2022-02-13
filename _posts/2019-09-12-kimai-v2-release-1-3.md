@@ -36,7 +36,7 @@ The next version will include:
 - Cookie Expiration should automatically lead to sign in page [\#1027](https://github.com/kevinpapst/kimai2/issues/1027)
 - customer specific translations [\#1099](https://github.com/kevinpapst/kimai2/pull/1099) ([kevinpapst](https://github.com/kevinpapst))
 - support multiple invoice repositories [\#1084](https://github.com/kevinpapst/kimai2/pull/1084) ([kevinpapst](https://github.com/kevinpapst))
-- added font-awesome paper-plane [\#1077](https://github.com/kevinpapst/kimai2/pull/1077) ([mr-software-jr](https://github.com/mr-software-jr))
+- added font-awesome paper-plane [\#1077](https://github.com/kevinpapst/kimai2/pull/1077) ([hmr-it-jr](https://github.com/hmr-it-jr))
 
 **Fixed bugs:**
 
