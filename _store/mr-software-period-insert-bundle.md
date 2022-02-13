@@ -14,7 +14,7 @@ bundle:
     name: "PeriodInsertBundle"
 screenshots:
   - 
-    src: "/images/marketplace/hmr-it-period-insert-plugin.png"
+    src: "/images/marketplace/mr-software-period-insert-plugin.png"
     title: Period-Insert screen 
     description: The form to create the values for the records that will be created 
 ---

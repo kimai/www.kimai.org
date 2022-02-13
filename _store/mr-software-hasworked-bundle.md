@@ -15,11 +15,11 @@ bundle:
     name: "HasWorkedBundle"
 screenshots:
   - 
-    src: "/images/marketplace/hmr-it-hasworked-bundle-mail.png"
+    src: "/images/marketplace/mr-software-hasworked-bundle-mail.png"
     title: "E-Mail notification" 
     description: "Users receive a notification via E-Mail" 
   - 
-    src: "/images/marketplace/hmr-it-hasworked-bundle-shell.png"
+    src: "/images/marketplace/mr-software-hasworked-bundle-shell.png"
     title: "Overview"
     description: "Just run one command and the users will be notified"
 ---

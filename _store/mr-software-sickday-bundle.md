@@ -15,19 +15,19 @@ bundle:
   command: "kimai:bundle:sickday:install"    
 screenshots:
   - 
-    src: "/images/marketplace/hmr-it-sickday-view-user.png"
+    src: "/images/marketplace/mr-software-sickday-view-user.png"
     title: "User view" 
     description: "User view"
   -
-    src: "/images/marketplace/hmr-it-sickday-view-admin.png"
+    src: "/images/marketplace/mr-software-sickday-view-admin.png"
     title: "Admin view"
     description: "Admin view"
   -
-    src: "/images/marketplace/hmr-it-sickday-overview.png"
+    src: "/images/marketplace/mr-software-sickday-overview.png"
     title: "Overview"
     description: "Overview"
   -
-    src: "/images/marketplace/hmr-it-sickday-settings.png"
+    src: "/images/marketplace/mr-software-sickday-settings.png"
     title: "Settings"
     description: "Settings"
 ---

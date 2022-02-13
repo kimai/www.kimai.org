@@ -15,11 +15,11 @@ bundle:
   name: "RecordBook"
 screenshots:
   - 
-    src: "/images/marketplace/hmr-it-recordbook-pdf.png"
+    src: "/images/marketplace/mr-software-recordbook-pdf.png"
     title: "PDF example" 
     description: "PDF example" 
   - 
-    src: "/images/marketplace/hmr-it-recordbook-view.png"
+    src: "/images/marketplace/mr-software-recordbook-view.png"
     title: "Download view"
     description: "Trainees see the weeks and can download the PDF"
 ---

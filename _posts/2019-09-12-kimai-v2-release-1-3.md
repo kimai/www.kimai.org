@@ -15,7 +15,7 @@ This release is mainly about:
 - improved tag management
 
 In the meantime a new addon was added to the Marketplace:
-- the [Empty description checker plugin]({% link _store/hmr-it-empty-description-checker-bundle.md %})
+- the [Empty description checker plugin]({% link _store/mr-software-empty-description-checker-bundle.md %})
 
 Thanks to all of you, especially:
 - all clients and donators, you guys rock and help me to keep up the work for Kimai!!!
@@ -36,7 +36,7 @@ The next version will include:
 - Cookie Expiration should automatically lead to sign in page [\#1027](https://github.com/kevinpapst/kimai2/issues/1027)
 - customer specific translations [\#1099](https://github.com/kevinpapst/kimai2/pull/1099) ([kevinpapst](https://github.com/kevinpapst))
 - support multiple invoice repositories [\#1084](https://github.com/kevinpapst/kimai2/pull/1084) ([kevinpapst](https://github.com/kevinpapst))
-- added font-awesome paper-plane [\#1077](https://github.com/kevinpapst/kimai2/pull/1077) ([hmr-it-jr](https://github.com/hmr-it-jr))
+- added font-awesome paper-plane [\#1077](https://github.com/kevinpapst/kimai2/pull/1077) ([mr-software-jr](https://github.com/mr-software-jr))
 
 **Fixed bugs:**
 

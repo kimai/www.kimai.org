@@ -102,7 +102,7 @@ If you enjoy the new release, here is the [donation page](https://www.kimai.org/
 - removed active flag in user preferences form for non admin user. \(\#694\) [\#696](https://github.com/kevinpapst/kimai2/pull/696) ([simone-gasparini](https://github.com/simone-gasparini))
 - added floor and ceil rounding with tests \(\#692\) [\#695](https://github.com/kevinpapst/kimai2/pull/695) ([simone-gasparini](https://github.com/simone-gasparini))
 - fixed activity-project assignment for kimai v1 importer [\#679](https://github.com/kevinpapst/kimai2/pull/679) ([kevinpapst](https://github.com/kevinpapst))
-- added content-type to allowed headers for api [\#672](https://github.com/kevinpapst/kimai2/pull/672) ([hmr-it-jr](https://github.com/hmr-it-jr))
+- added content-type to allowed headers for api [\#672](https://github.com/kevinpapst/kimai2/pull/672) ([mr-software-jr](https://github.com/mr-software-jr))
 - added plugin screen [\#671](https://github.com/kevinpapst/kimai2/pull/671) ([kevinpapst](https://github.com/kevinpapst))
 - Updated hungarian translation [\#661](https://github.com/kevinpapst/kimai2/pull/661) ([infeeeee](https://github.com/infeeeee))
 - remove mailer url from about debug info [\#657](https://github.com/kevinpapst/kimai2/pull/657) ([kevinpapst](https://github.com/kevinpapst))

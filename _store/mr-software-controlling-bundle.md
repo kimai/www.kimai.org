@@ -15,39 +15,39 @@ bundle:
   name: "ControllingBundle"
 screenshots:
   - 
-    src: "/images/marketplace/hmr-it-controlling-plugin-menu.png"
+    src: "/images/marketplace/mr-software-controlling-plugin-menu.png"
     title: Menu item 
     description: "Admins see a counter + Users see more detailed statistics" 
   - 
-    src: "/images/marketplace/hmr-it-controlling-plugin-overview.png"
+    src: "/images/marketplace/mr-software-controlling-plugin-overview.png"
     title: "Overview"
     description: "See every users working time per month + it's red for undertime and green for overtime"
   - 
-    src: "/images/marketplace/hmr-it-controlling-plugin-overtime.png"
+    src: "/images/marketplace/mr-software-controlling-plugin-overtime.png"
     title: "Overtime"
     description: "See a summery of over- or undertime for every user since first day in the company"
   - 
-    src: "/images/marketplace/hmr-it-controlling-plugin-breaktimecheck.png"
+    src: "/images/marketplace/mr-software-controlling-plugin-breaktimecheck.png"
     title: "Break times"
     description: "See if users have violated the German break time law"
   - 
-    src: "/images/marketplace/hmr-it-controlling-plugin-overlapping.png"
+    src: "/images/marketplace/mr-software-controlling-plugin-overlapping.png"
     title: "Overlapping times"
     description: "See if your users have overlapping times"
   - 
-    src: "/images/marketplace/hmr-it-controlling-plugin-missingdays.png"
+    src: "/images/marketplace/mr-software-controlling-plugin-missingdays.png"
     title: "Missing days"
     description: "See if your users have missing days"
   - 
-    src: "/images/marketplace/hmr-it-controlling-plugin-settings.png"
+    src: "/images/marketplace/mr-software-controlling-plugin-settings.png"
     title: "Settings"
     description: "Fully configurable via GUI"
   - 
-    src: "/images/marketplace/hmr-it-controlling-plugin-handout.png"
+    src: "/images/marketplace/mr-software-controlling-plugin-handout.png"
     title: "Handout"
     description: "Handouts downloadable per Month"
   - 
-    src: "/images/marketplace/hmr-it-controlling-plugin-handout-pdf.png"
+    src: "/images/marketplace/mr-software-controlling-plugin-handout-pdf.png"
     title: "Handout"
     description: "Handouts downloadable per Month"
 ---

@@ -10,7 +10,7 @@ One release a month, so far working out... the update on my personal Kimai insta
 so I hope nobody is stressed by decreasing the time between releases. 
 
 In the meantime a couple of new addons were added to the Marketplace:
-- Kimai2 [Android app for offline tracking]({% link _store/hmr-it-android-offline-tracker.md %})
+- Kimai2 [Android app for offline tracking]({% link _store/mr-software-android-offline-tracker.md %})
 - the [command line tools]({% link _store/infeeeee-kimai2-cmd.md %}) and [argos client]({% link _store/infeeeee-kimai2-cmd-argos.md %})
 - the [Readonly access plugin]({% link _store/derpilzcc-readonly-access-bundle.md %})
 

@@ -16,31 +16,31 @@ bundle:
   command: "kimai:bundle:vacation:install"
 screenshots:
   - 
-     src: "/images/marketplace/hmr-it-vacation-plugin-public-holiday.png"
+     src: "/images/marketplace/mr-software-vacation-plugin-public-holiday.png"
      title: "Admin area"
      description: "Admins see all public holidays" 
   - 
-     src: "/images/marketplace/hmr-it-vacation-plugin-settings.png"
+     src: "/images/marketplace/mr-software-vacation-plugin-settings.png"
      title: "Admin settings"
      description: "Admins can setup everything in the GUI"
   - 
-     src: "/images/marketplace/hmr-it-vacation-plugin-vacation-applications.png"
+     src: "/images/marketplace/mr-software-vacation-plugin-vacation-applications.png"
      title: "Admin POV"
      description: "Admins can view the vacation applications and grant or deny them"
   - 
-     src: "/images/marketplace/hmr-it-vacation-plugin-vacation-create.png"
+     src: "/images/marketplace/mr-software-vacation-plugin-vacation-create.png"
      title: "Vacation application creation"
      description: "The view of the creation of a vacation application"
   - 
-     src: "/images/marketplace/hmr-it-vacation-plugin-vacation-summary.png"
+     src: "/images/marketplace/mr-software-vacation-plugin-vacation-summary.png"
      title: "Summary"
      description: "Comprehensive summary of the vacation of all users"
   -
-    src: "/images/marketplace/hmr-it-vacation-history-pov.png"
+    src: "/images/marketplace/mr-software-vacation-history-pov.png"
     title: "History"
     description: "History of a single request"
   -
-    src: "/images/marketplace/hmr-it-vacation-plugin-user-pov.png"
+    src: "/images/marketplace/mr-software-vacation-plugin-user-pov.png"
     title: "User POV"
     description: "User POV"
 ---
