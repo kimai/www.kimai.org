@@ -18,7 +18,7 @@ bundle:
   purchase: true
   assets: false
   versions:
-    - ["1.22", "1.16.10"]
+    - ["1.23", "1.16.10"]
 screenshots:
   - 
     src: "/images/marketplace/mr-software-vacation-1.png"
