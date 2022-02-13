@@ -2,67 +2,57 @@
 title: Sick-Day plugin
 name: Sick-Day plugin (days of illness)
 intro: "A plugin for Kimai to track the sick-days of users."
-developer: hmr-it
-date: "2021-03-14 09:00:00"
+developer: mr-software
+date: "2022-02-13 10:00:00 +0200"
 icon: fa fa-medkit
+demo: false 
 price: "89€"
 gumroad: QtbRf
+new: false
 type: plugin
 tags:
   - plugin
 bundle:
   name: "SickDayBundle"
-  command: "kimai:bundle:sickday:install"    
+  command: "kimai:bundle:sickday:install"
+  purchase: true
+  assets: false
+  versions:
+    - ["1.22", "1.16.10"]
 screenshots:
   - 
-    src: "/images/marketplace/mr-software-sickday-view-user.png"
-    title: "User view" 
-    description: "User view"
-  -
-    src: "/images/marketplace/mr-software-sickday-view-admin.png"
-    title: "Admin view"
-    description: "Admin view"
-  -
-    src: "/images/marketplace/mr-software-sickday-overview.png"
-    title: "Overview"
-    description: "Overview"
-  -
-    src: "/images/marketplace/mr-software-sickday-settings.png"
-    title: "Settings"
-    description: "Settings"
+    src: "/images/marketplace/mr-software-sickday-1.png"
+    title: Menu item
+    description: "Admins see a summary of all sick days"
+  - 
+    src: "/images/marketplace/mr-software-sickday-2.png"
+    title: Menu item
+    description: "Admins can quickly navigate to the timesheets (sick days) of users"
+  - 
+    src: "/images/marketplace/mr-software-sickday-3.png"
+    title: Menu item
+    description: "Require PDF while creating a sick day"
 ---
+
+## Installation and demo video
+
+{% include youtube-video.html id="HjJClWQKzWY" title="Kimai 2 Vacation + Sick Day + Controlling Plugin Installation + Setup" %}
 
 ## Features
 
-- Track the days of illness of your users
-- Upload sick certificate / incapacity certificate as PDF and archive it in Kimai
-- Automatically adds the times absent to the user's timesheet based on their daily working time
+- See if your users have overtimes or undertimes (since first day in company, per month, per day)
+- Check if they violate the German break time law "Arbeitszeitgesetz (ArbZG) § 4 Ruhepausen"
+- Users see how much overtimes or undertimes they have + how much they've worked already in the current month and how much they still have to work in the current month
+- Overview for Administrators to see all calculated times in one view
+- See if one of your user's birthday is coming soon
+- Handout for employees as PDF to see the worked hours of the month
+- Handout downloadable as a single PDF file for all employees or easy sendable via email to each employee (even to his private email account!)
+- Detect overlapping times with one click
+- See if your users have missing days (no times entered on days where they had to work)
+- Users can tag their time spent in home office. At the end of the year this plugin provides every user a comprehensive overview as PDF of the time spent in home office. This is
+  important for tax reasons.
 
-## Requirements
+## Requires
 
-- Kimai v1.13 or higher
 - [Custom-fields plugin]({% link _store/keleo-custom-fields-bundle.md %})
-
-## Setup
-
-Create a customer, project and activity for sick days if you haven't already.
-
-Click on `Sick Days` in the menu and select the `Settings` tab.
-
-Here you can select if PDFs are required for creating applications, and the activity for sick days (timesheet entries will be created using this).
-
-If you have the [Custom-fields plugin]({% link _store/keleo-custom-fields-bundle.md %}) installed create a new field for users with `duration` as input field. The time you enter will be inserted into the users timesheet when creating applications.
-
-Using the last input you can limit until when applications can be created. `1` for example, will only let users create applications until today minus 1 week.
-
-## Help
-#### Menu
-
-The badge in the menu at the entry "Sick Days" will display the amount of sick days with the "notified" status.
-
-## Permissions
-
-The install-command will create the following permission:
-- `sickday_admin`
-
-Users with that permission can create sick days for other users, view the summary screen and change the settings.
+- Kimai v1.16.10+

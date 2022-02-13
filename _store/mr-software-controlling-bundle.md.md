@@ -16,7 +16,7 @@ bundle:
   name: "ControllingBundle"
   command: "kimai:bundle:controlling:install"
   purchase: true
-  assets: true
+  assets: false
   versions:
     - ["1.21", "1.16.10"]
 screenshots:
