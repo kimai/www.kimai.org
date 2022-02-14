@@ -1,8 +1,10 @@
 ---
 title: Period insert plugin
 name: Period insert plugin
+redirect_from:
+  - /store/hmr-it-period-insert-bundle.html
 intro: "Create timesheet entries by date range"
-developer: hmr-it
+developer: mr-software
 date: "2020-10-09 10:00:00"
 icon: fa fa-calendar
 price: "29€"
@@ -14,7 +16,7 @@ bundle:
     name: "PeriodInsertBundle"
 screenshots:
   - 
-    src: "/images/marketplace/hmr-it-period-insert-plugin.png"
+    src: "/images/marketplace/mr-software-period-insert-plugin.png"
     title: Period-Insert screen 
     description: The form to create the values for the records that will be created 
 ---

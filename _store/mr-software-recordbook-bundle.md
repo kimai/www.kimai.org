@@ -1,8 +1,10 @@
 ---
 title: RecordBook plugin
 name: RecordBook plugin (Berichtsheft für Azubis)
+redirect_from:
+  - /store/hmr-it-recordbook-bundle.html
 intro: "A plugin for Kimai which generates a RecordBook (German: Berichtsheft) for trainees."
-developer: hmr-it
+developer: mr-software
 date: "2020-09-21 09:00:00"
 icon: fa fa-book
 price: "29€"
@@ -15,11 +17,11 @@ bundle:
   name: "RecordBook"
 screenshots:
   - 
-    src: "/images/marketplace/hmr-it-recordbook-pdf.png"
+    src: "/images/marketplace/mr-software-recordbook-pdf.png"
     title: "PDF example" 
     description: "PDF example" 
   - 
-    src: "/images/marketplace/hmr-it-recordbook-view.png"
+    src: "/images/marketplace/mr-software-recordbook-view.png"
     title: "Download view"
     description: "Trainees see the weeks and can download the PDF"
 ---

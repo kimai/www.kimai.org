@@ -1,8 +1,10 @@
 ---
 title: Android offline tracker
 name: Android app for offline tracking
+redirect_from:
+  - /store/hmr-it-android-offline-tracker.html
 intro: "Android app for offline tracking with Kimai"
-developer: hmr-it
+developer: mr-software
 date: "2019-08-20 08:10:00"
 icon: fab fa-android
 price: "1,90€"

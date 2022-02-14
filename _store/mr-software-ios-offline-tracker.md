@@ -1,8 +1,10 @@
 ---
 title: iOS offline tracker for Kimai
 name: iOS app for offline tracking with Kimai
+redirect_from:
+  - /store/hmr-it-ios-offline-tracker.html
 intro: "iOS app for offline tracking with Kimai"
-developer: hmr-it
+developer: mr-software
 date: "2019-08-20 08:10:00"
 icon: fab fa-app-store-ios
 price: "1,92€"
