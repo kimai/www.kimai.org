@@ -1,6 +1,8 @@
 ---
 title: RecordBook plugin
 name: RecordBook plugin (Berichtsheft für Azubis)
+redirect_from:
+  - /store/hmr-it-recordbook-bundle.html
 intro: "A plugin for Kimai which generates a RecordBook (German: Berichtsheft) for trainees."
 developer: mr-software
 date: "2020-09-21 09:00:00"

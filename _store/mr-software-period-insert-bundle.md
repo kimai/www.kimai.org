@@ -1,6 +1,8 @@
 ---
 title: Period insert plugin
 name: Period insert plugin
+redirect_from:
+  - /store/hmr-it-period-insert-bundle.html
 intro: "Create timesheet entries by date range"
 developer: mr-software
 date: "2020-10-09 10:00:00"

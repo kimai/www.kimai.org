@@ -1,6 +1,8 @@
 ---
 title: Vacation plugin
 name: Vacation plugin (vacation + official & local holidays)
+redirect_from:
+  - /store/hmr-it-vacation-bundle.html
 intro: "A plugin for Kimai which adds the full workflow for vacation + official & local holidays"
 developer: mr-software
 date: "2022-02-13 10:00:00 +0200"
