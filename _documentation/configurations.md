@@ -5,8 +5,7 @@ toc: true
 related: 
   - user-preferences
   - local-yaml
-redirect_from:
-  - /documentation/branding.html
+redirect_from: /documentation/branding.html
 ---
 
 Many features of your Kimai installation can be changed by editing the `System > Settings`. This screen is only visible to 

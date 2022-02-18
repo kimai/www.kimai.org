@@ -8,8 +8,7 @@ related:
   - fresh-ubuntu-20
   - webserver-configuration
   - ftp
-redirect_from:
-  - /documentation/installation/
+redirect_from: /documentation/installation/
 ---
 
 The recommended way to install Kimai is via SSH, you need GIT and [Composer](https://getcomposer.org/doc/00-intro.md).

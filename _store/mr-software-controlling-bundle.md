@@ -1,8 +1,7 @@
 ---
 title: Controlling plugin
 name: Controlling plugin (German law, break time check, overtime)
-redirect_from:
-  - /store/hmr-it-controlling-bundle.html
+redirect_from: /store/hmr-it-controlling-bundle.html
 intro: "A plugin for Kimai which checks if one of your users violated the German break time law + nominal and actual work time comparison + overtime view"
 developer: mr-software
 date: "2022-02-13 10:00:00 +0200"

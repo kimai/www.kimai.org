@@ -9,8 +9,7 @@ icon: fas fa-book
 layout: documentation-index
 permalink: /de/dokumentation/
 skip_back: true
-redirect_from:
-  - /dokumentation/
+redirect_from: /dokumentation/
 ---
 
 {% include pages/faq.md %}

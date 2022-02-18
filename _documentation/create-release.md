@@ -1,7 +1,6 @@
 ---
 title: "Creating a release"
-redirect_from: 
-  - /documentation/team/
+redirect_from: /documentation/team/
 ---
 
 - Prepare a GitHub release-draft `x.x`
