@@ -58,6 +58,16 @@ screenshots:
 - Users can tag their time spent in home office. At the end of the year this plugin provides every user a comprehensive overview as PDF of the time spent in home office. This is
   important for tax reasons.
 
+## FAQ
+
+#### Reset the plugin
+
+Usually there's no need to do this, but if you encounter any configuration problems you can reset the plugin configuration by executing a single SQL command. Make sure that you know what are you're doing and before executing the command create a backup of your data.
+
+Show current configuration: `SELECT * FROM kimai2_configuration WHERE name LIKE 'controlling.%';`
+
+Reset configuration: `DELETE FROM kimai2_configuration WHERE name LIKE 'controlling.%';`
+
 ## Requires
 
 - [Custom-fields plugin]({% link _store/keleo-custom-fields-bundle.md %})
