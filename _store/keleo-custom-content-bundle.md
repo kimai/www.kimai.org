@@ -1,7 +1,7 @@
 ---
 title: Custom-content plugin for Kimai
 name: Custom-content plugin
-intro: "Create custom content for: stylesheets, javascript, a global warning message and a new page to render markdwon content for company news."
+intro: "Create custom content for: stylesheets, javascript, a global warning message and a new page to render markdown content for company news."
 slug: custom-content-bundle
 developer: kevinpapst
 date: "2022-01-21 20:00:00 +0200"
@@ -9,7 +9,7 @@ icon: fas fa-pencil-alt
 demo: true 
 price: "9€"
 gumroad: kimai-custom-content
-featured: "Create custom content for: stylesheets, javascript, a global warning message and a new page to render markdwon content for company news."
+featured: "Create custom content for: stylesheets, javascript, a global warning message and a new page to render markdown content for company news."
 new: true
 toc: false
 type: featured
