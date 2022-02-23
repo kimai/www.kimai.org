@@ -18,19 +18,14 @@ top_menu: true
 
                 <div class="d-flex order-lg-2 ml-auto">
                     <div class="d-none d-sm-flex language-switch">
-                        {% if page.lang == 'en' %}
-                            <a href="{{ site.data.trans-menu['de'].home.url }}" title="{{ site.data.trans-menu['de'].home.title }}" class="nav-link">DE</a>
-                            <span class="nav-link" style="text-decoration: underline">EN</span>
-                            <a href="{{ site.data.trans-menu['fr'].home.url }}" title="{{ site.data.trans-menu['fr'].home.title }}" class="last nav-link">FR</a>
-                        {% elsif page.lang == 'de' %}
-                            <span class="nav-link" style="text-decoration: underline">DE</span>
-                            <a href="{{ site.data.trans-menu['en'].home.url }}" title="{{ site.data.trans-menu['en'].home.title }}" class="nav-link">EN</a>
-                            <a href="{{ site.data.trans-menu['fr'].home.url }}" title="{{ site.data.trans-menu['fr'].home.title }}" class="last nav-link">FR</a>
-                        {% else %}
-                            <a href="{{ site.data.trans-menu['de'].home.url }}" title="{{ site.data.trans-menu['de'].home.title }}" class="nav-link">DE</a>
-                            <a href="{{ site.data.trans-menu['en'].home.url }}" title="{{ site.data.trans-menu['en'].home.title }}" class="nav-link">EN</a>
-                            <span class="last nav-link" style="text-decoration: underline">FR</span>
-                        {% endif %}
+                        {% for lang in site.languages %}
+                            {% assign targetUrl = site.data.trans-menu[lang].home.url %}
+                            {% if page.lang-ref != nil and page.lang != nil %}
+                                {% assign langPages = site.pages | where: "lang-ref", page.lang-ref | where: "lang", lang %}
+                                {% assign targetUrl = langPages[0].url %}
+                            {% endif %}
+                            <a href="{{ targetUrl }}" title="{{ site.language_names[lang] }} - {{ site.data.trans-menu[lang].home.title }}" {% if page.lang == lang %}class="nav-link text-dark text-uppercase" style="text-decoration: underline;"{% else %}class="nav-link text-uppercase"{% endif %}>{{ lang|capitalize }}</a>
+                        {% endfor %}
                     </div>
                     {% comment %}
                     <div class="d-none d-sm-flex">

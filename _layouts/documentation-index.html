@@ -16,7 +16,9 @@ main_menu: documentation
 
     {% if page.lang != 'en' %}
         {% assign alertMsg = site.data.trans[page.lang].docu-alert-english %}
-        {% include alert.html type="warning" alert=alertMsg %}
+        {% if alertMsg != nil %}
+            {% include alert.html type="warning" alert=alertMsg %}
+        {% endif %}
     {% endif %}
 
     <div class="row row-cards">
