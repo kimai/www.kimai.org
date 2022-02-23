@@ -10,8 +10,7 @@ email: kevin@kevinpapst.de
 type: support
 tags:
   - support
-redirect_from:
-  - /store/keleo-installation-support.html
+redirect_from: /store/keleo-installation-support.html
 ---
 
 If you need help with the installation of Kimai or want to update Kimai to the latest version, I am available for paid support.

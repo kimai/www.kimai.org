@@ -1,8 +1,7 @@
 ---
 title: Sick-Day plugin
 name: Sick-Day plugin (days of illness)
-redirect_from:
-  - /store/hmr-it-sickday-bundle.html
+redirect_from: /store/hmr-it-sickday-bundle.html
 intro: "A plugin for Kimai to track the sick-days of users."
 developer: mr-software
 date: "2022-02-13 10:00:00 +0200"

@@ -8,8 +8,7 @@ icon: far fa-money-bill-alt
 price: "0"
 download: https://github.com/Keleo/RecalculateRatesBundle/archive/master.zip
 github: https://github.com/Keleo/RecalculateRatesBundle
-redirect_from:
-  - /store/recalculate-rates-bundle.html
+redirect_from: /store/recalculate-rates-bundle.html
 type: plugin
 tags:
   - plugin

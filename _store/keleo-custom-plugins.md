@@ -11,8 +11,7 @@ type: support
 tags:
   - development
   - support
-redirect_from:
-  - /store/kevinpapst-custom-plugins.html
+redirect_from: /store/kevinpapst-custom-plugins.html
 ---
 
 If you need an extension for Kimai, I am here to develop it for you. 

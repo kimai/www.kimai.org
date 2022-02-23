@@ -2,8 +2,7 @@
 title: Rest API
 description: Access your time-tracking data via the REST API with Kimai
 toc: true
-redirect_from:
-  - /documentation/api/
+redirect_from: /documentation/api/
 ---
 
 Read the Swagger documentation of the Kimai API in your Kimai installation at `/api/doc`.

@@ -1,8 +1,7 @@
 ---
 title: HasWorked plugin
 name: HasWorked plugin (notify users if they haven't entered times)
-redirect_from:
-  - /store/hmr-it-hasworked-bundle.html
+redirect_from: /store/hmr-it-hasworked-bundle.html
 intro: "A Kimai plugin to send an email notification to users if they don't have any entries on the current day"
 developer: mr-software
 date: "2020-09-17 13:30:00"

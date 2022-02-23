@@ -1,8 +1,7 @@
 ---
 title: Controlling plugin
 name: Controlling plugin (German law, break time check, overtime)
-redirect_from:
-  - /store/hmr-it-controlling-bundle.html
+redirect_from: /store/hmr-it-controlling-bundle.html
 intro: "A plugin for Kimai which checks if one of your users violated the German break time law + nominal and actual work time comparison + overtime view"
 developer: mr-software
 date: "2022-02-13 10:00:00 +0200"
@@ -57,6 +56,16 @@ screenshots:
 - See if your users have missing days (no times entered on days where they had to work)
 - Users can tag their time spent in home office. At the end of the year this plugin provides every user a comprehensive overview as PDF of the time spent in home office. This is
   important for tax reasons.
+
+## FAQ
+
+#### Reset the plugin
+
+Usually there's no need to do this, but if you encounter any configuration problems you can reset the plugin configuration by executing a single SQL command. Make sure that you know what are you're doing and before executing the command create a backup of your data.
+
+Show current configuration: `SELECT * FROM kimai2_configuration WHERE name LIKE 'controlling.%';`
+
+Reset configuration: `DELETE FROM kimai2_configuration WHERE name LIKE 'controlling.%';`
 
 ## Requires
 
