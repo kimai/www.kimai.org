@@ -3,7 +3,7 @@ title: "O programu Kimai"
 description: Informacije o programu za evidentiranje vremena Kimai. Saznaj više o njemu, njegovoj povijesti i programeru.
 lang: hr
 lang-ref: about
-permalink: /hr/O-programu-Kimai.html
+permalink: /hr/o-programu-kimai.html
 ---
 
 # Što je Kimai?
@@ -52,7 +52,7 @@ Moju najveću zahvalnost upućujem svim doprinositeljima ❤️
 Kimai ima dugu povijest i bio je daleko ispred svog vremena, kad je tim oko Torstena Höltgea započeo razvoj programa 2006. godine.
 Imao je prilagodljiv dizajn (zahvaljujući javascript magijom) još u vrijeme kad ta riječ nije bila niti službeno izmišljena.
 
-Htio je [prekinuti razvoj programa]({% link _posts/2009-06-19-bye-bye-folks.md %}) iz osobnih razloga/vremenskog ograničenja. Tada je [Kevin preuzeo održavanje]({% link _posts /2009-07-20-the-condemned-live-longer.md %}).
+Htio je [prekinuti razvoj programa]({% link _posts/2009-06-19-bye-bye-folks.md %}) iz osobnih razloga/vremenskog ograničenja. Tada je [Kevin preuzeo održavanje]({% link _posts/2009-07-20-the-condemned-live-longer.md %}).
 Uz pomoć drugih volontera otvorenog koda uspio je održati program na životu i produžiti ga na više godina.
 
 U međuvremenu je PHP zajednica napravila velike korake naprijed i Kimai se osjećao zastarjalim, zbog svoje tehničke povijesti – izgrađene pomoću mnogih pojedinačnih PHP skripta koje su sve morale biti javno dostupne.

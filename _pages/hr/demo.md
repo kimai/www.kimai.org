@@ -4,9 +4,6 @@ description: Testiraj i ocijeni naš program za evidentiranje vremena Kimai, izr
 lang: hr
 lang-ref: demo
 permalink: /hr/demo.html
-redirect_from:
-  - /en/demo.html
-  - /demo.html
 ---
 
 # Testiraj Kimai u jednom od demonstracija

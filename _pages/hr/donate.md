@@ -4,8 +4,6 @@ description: Doniraj projektu Kimai i postani sponzor evidentiranja vremena
 lang: hr
 lang-ref: donation
 permalink: /hr/donacije.html
-redirect_from:
-  - /hr/donacije.html
 ---
 
 # Podrži Kimai

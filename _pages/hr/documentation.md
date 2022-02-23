@@ -9,12 +9,6 @@ icon: fas fa-book
 layout: documentation-index
 permalink: /hr/documentation/
 skip_back: true
-redirect_from:
-  - /documentation/manual/index.html
-  - /en/documentation/
-  - /en/documentation/
-  - /documentation/howto.html
-  - /documentation/faq.html
 ---
 
 {% include pages/faq.md %}

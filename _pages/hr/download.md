@@ -6,9 +6,6 @@ options: '<a href="https://github.com/kevinpapst/kimai2/releases.atom" class="bt
 lang: hr
 lang-ref: download
 permalink: /hr/download.html
-redirect_from:
-  - /en/download.html
-  - /download.html
 ---
 
 # Preuzmi Kimai – besplatno!
