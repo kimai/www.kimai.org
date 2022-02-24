@@ -6,21 +6,21 @@ lang-ref: demo
 permalink: /hr/demo.html
 ---
 
-# Testiraj Kimai u jednoj od demonstracija
+# Testiraj Kimai u jednoj od demo verzija
 
-{% include alert.html icon="fas fa-desktop" alert='Isprobaj Kimai demonstraciju za evidentiranje vremena i obećavamo ti: tvoj sljedeći korak bit će preuzimanje programa!' %}
+{% include alert.html icon="fas fa-desktop" alert='Isprobaj demo verziju programa za evidentiranje vremena Kimai i obećavamo ti: tvoj sljedeći korak bit će preuzimanje programa!' %}
 
 Odaberi jednu od naših demo instalacija za dobivanje dojma o tome kako se Kimai osjeća i koju funkcionalnost pruža.
 
 {% include pages/demo-boxes.html %}
 
-Imaj na umu da će se demonstracije ponovo instalirati prema redovnom rasporedu i svi uneseni podaci će se ukloniti. Iz praktičnih razloga, 
+Imaj na umu da će se demo verzije redovito ponovo instalirati i svi uneseni podaci će se ukloniti. Iz praktičnih razloga, 
 unaprijed su ispunjeni testnim podacima, tako da možeš izravno započeti testirati funkcije (poput računa ili izvoza).
 
-Ako naiđeš na bilo koju vrstu problema, pošalji poruku u [sustav za praćenja problema]({{ site.kimai_v2_repo }}/issues).
+Ako naiđeš na bilo koju vrstu problema, pošalji poruku na stranici [sustava za praćenja problema]({{ site.kimai_v2_repo }}/issues).
 
-## Korisnik demonstracije
+## Korisnik demo verzija
 
-Ovi su računi dostupni za tvoje testove. Vlastitog testnog korisnika možeš stvoriti i u obrascu za prijavu svake demonstracije:
+Ovi su računi dostupni za tvoje testove. Vlastitog testnog korisnika možeš stvoriti i u obrascu za prijavu svake demo verzije:
  
 {% include pages/demo-users.md user="Korisničko ime" password="Lozinka" api="API" role_user="Korisnik" role_admin="Administrator" role_super="Super-Admin" role_teamlead="Voditelj tima" %}
