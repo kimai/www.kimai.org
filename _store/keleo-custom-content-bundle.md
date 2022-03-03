@@ -19,7 +19,7 @@ bundle:
   name: "CustomContentBundle"
   purchase: true
   versions:
-    - ["1.0 - 1.1", "1.17"]
+    - ["1.0 - 1.2.1", "1.17"]
 screenshots:
   - 
     src: "/images/marketplace/custom-content-alert.png"
