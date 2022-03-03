@@ -20,7 +20,7 @@ bundle:
     command: "kimai:bundle:translation:install"
     purchase: true
     versions:
-      - ["1.2", "1.15"]
+      - ["1.2 -1.3", "1.15"]
 screenshots:
   -  
     src: "/images/marketplace/translation-listing.png"
