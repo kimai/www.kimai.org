@@ -1,7 +1,7 @@
 ---
 title: TimeKex - Timetracking - Kimai meets Excel
 name: TimeKex - Timetracking - Kimai meets Excel (Web Application - API utilization)
-intro: "Import your Excel maintained times into Kimai"
+intro: "Import your Excel maintained times into Kimai on a weekly basis. A flat customer/project/activity import from Excel is also available."
 developer: katjaglass
 date: "2022-03-04 12:00:00 +0100"
 icon: fas fa-file-excel
@@ -30,13 +30,9 @@ This WebApplication is designed to allow the tracking of working hours in Excel 
 
 The documentation of TimeKex as well as a running demonstration instance is accessible [here](https://katjaglassconsulting.github.io/TimeKex/).
 
-[Example excel](https://github.com/KatjaGlassConsulting/TimeKex/tree/main/exampleFiles) files are locted in the GitHub repository.
-
-## Status
-
-TimeKex is available in the current version which does not contain tests. The source code is available under the MIT license which allows a flexible and generic usage and modifications without warrenty.
-
 The demonstration is running on the stable Kimai demo instance. Be aware that this demo instances is regularily rebuild.
+
+[Example excel](https://github.com/KatjaGlassConsulting/TimeKex/tree/main/exampleFiles) files are locted in the GitHub repository.
 
 ## License
 
