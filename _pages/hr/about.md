@@ -27,7 +27,7 @@ Jesmo li već spomenuli da možeš izraditi račune iz tvojih vremenskih tablica
 predloške računa, Kimai se može jednostavno proširiti na razne načine. Izgrađen je s najpopularnijim i modernim okruženjima za razvoj programa i ima aktivnu zajednicu
 koja proizvodi mnoge dodatke koji proširuju osnovnu funkcionalnost programa Kimai.
     
-Sada bismo mogli napisati još više o njegovim značajkama i prednostima – bez obzira jeste li slobodnjak,
+Mogli bismo nabrojati još puno više o njegovim značajkama i prednostima – bez obzira jesi li slobodnjak,
 mala organizacija ili tvrtka sa stotinama zaposlenika – ali smatramo da je izravno testiranje najbolja mogućnost za upoznavanje programa:
 Stoga budi naš gost i testiraj Kimai na internetu s našom [demo instalacijom]({% link _pages/demo.md %}). Ako vjeruješ činjenicama, sastavili smo [popis značajki]({% link _pages/index.html %}).
 
@@ -36,7 +36,7 @@ Vjerojatno najbitnija činjenica: **Kimai je program otvorenog koda. Može se be
 ## Tko čini Kimai?
 
 Kimai padržava velika zajednica i nemoguće je nabrojati sve doprinositelje. Niže dolje se nalazi kratak popis bivših programera.
-[Tržnica]({% link _pages/store.html %}) prikazuje popis dodataka i njihovih programera koji doprinose projektu svojim znanjem.
+[Trgovina]({% link _pages/store.html %}) prikazuje popis dodataka i njihovih programera koji doprinose projektu svojim znanjem.
 
 Glavna osoba/autor Kimaija, ove web stranice, demo instalacija, [Saas verzije Kimaija](https://www.kimai.cloud) i dodataka je:
 
