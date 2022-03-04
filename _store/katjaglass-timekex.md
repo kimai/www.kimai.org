@@ -32,7 +32,7 @@ The documentation of TimeKex as well as a running demonstration instance is avai
 
 The demonstration is running on the stable Kimai demo instance. Be aware that this demo instances is regularily rebuild.
 
-[Example excel](https://github.com/KatjaGlassConsulting/TimeKex/tree/main/exampleFiles) files are locted in the GitHub repository.
+[Example excel](https://github.com/KatjaGlassConsulting/TimeKex/tree/main/exampleFiles) files are located in the GitHub repository.
 
 ## License
 
