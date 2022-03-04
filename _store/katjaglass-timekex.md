@@ -14,9 +14,6 @@ screenshot:
 github: https://github.com/KatjaGlassConsulting/TimeKex
 type: client
 new: true
-features:
-  - excel
-  - import
 tags:
   - Excel
   - Import
@@ -30,15 +27,13 @@ This application is designed to allow importing times, tracked in Excel, into Ki
 
 The documentation of TimeKex as well as a running demonstration instance is available [here](https://katjaglassconsulting.github.io/TimeKex/).
 
-The demonstration is running on the stable Kimai demo instance. Be aware that this demo instances is regularily rebuild.
+The demonstration is running against the stable Kimai demo instance. Be aware that [this demo]({% link _pages/demo.md %}) instances is regularly rebuild.
 
 [Example excel](https://github.com/KatjaGlassConsulting/TimeKex/tree/main/exampleFiles) files are located in the GitHub repository.
 
 ## License
 
-### Code & Scripts
-
-This project is using the [MIT](http://www.opensource.org/licenses/MIT "The MIT License | Open Source Initiative") license (see [`LICENSE`](LICENSE)) for code and scripts.
+This project is using the [MIT](http://www.opensource.org/licenses/MIT) license (see [LICENSE](https://github.com/KatjaGlassConsulting/TimeKex/blob/main/LICENSE)) for code and scripts.
 
 ## Local Development and Compilation
 
@@ -53,7 +48,7 @@ TimeKex is a ReactJS Web Application. To run a local development version, you ca
 
 ## Deployment
 
-The TimeKex web application is a simple static HTML fileset which can run locally or on any Webserver. When you have build the app, it can simply be started by opening "index.html".
+The TimeKex web application is a simple static HTML fileset which can run locally or on any Webserver. When you have build the app, it can simply be started by opening `index.html`.
 
 The final build folder contains next to the config.js also additional example configurations files which you might want to try. Just copy the content as config.js to apply the corresponding configuration. The current configuration files are using the Kimai demonstration server and users.
 
@@ -67,4 +62,4 @@ The Excel file is expected in a specific format. When the Excel file should cont
 
 The package [read-excel-file](https://gitlab.com/catamphetamine/read-excel-file) is used to read in the Excel file and use the corresponding schema for mapping. Please look into the package details to apply a different schema.
 
-For the Excel file it is very important that the first sheet contains the time data and that the first row starts with the column names. There can be additional sheets and additional columns in the Excel file. The column order is also not relevant. Example file is available under "./exampleFiles"
+For the Excel file it is very important that the first sheet contains the time data and that the first row starts with the column names. There can be additional sheets and additional columns in the Excel file. The column order is also not relevant. Example file is available under `./exampleFiles`.
