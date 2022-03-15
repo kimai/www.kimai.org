@@ -18,8 +18,12 @@
 		{% if data.pages %}
 			<div class="dropdown-menu dropdown-menu-arrow">
 				{% for p in data.pages %}
-                    {% assign doc = site.documentation | where: "slug", p | first %}
-					<a href="{{ doc.url }}" class="dropdown-item {% if page.url == doc.url %}active{% endif %}">{{ doc.title }}</a>
+                    {% if p == "-" %}
+                        <div class="dropdown-divider"></div>
+                    {% else %}
+                        {% assign doc = site.documentation | where: "slug", p | first %}
+                        <a href="{{ doc.url }}" class="dropdown-item {% if page.url == doc.url %}active{% endif %}">{{ doc.title }}</a>
+    				{% endif %}
 				{% endfor %}
 			</div>
 		{% endif %}
