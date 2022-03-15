@@ -54,20 +54,6 @@ It is recommended to leave the choice to the user, as colors and contrasts are n
 
 The default theme for new created users can be configured in the system settings.
 
-## Searchable input types
-
-The select boxes for customer, project and activity are by default (since 1.4) searchable Javascript components.
-
-If you don't like the way this component behaves (eg. if you want native elements on mobile) you can deactivate it by setting the following config
-
-```yaml
-kimai:
-    theme:
-        select_type: ~
-```
-
-This will turn the select-boxes into native select elements.
-
 ## Max. active entries warning
 
 A small colored warning sign will be shown, if a user has an active timesheet.
