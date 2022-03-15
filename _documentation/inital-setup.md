@@ -68,12 +68,4 @@ If you use Kimai on a public server, you should change these settings!
 Please read more in the `User registration` chapter [here]({% link _documentation/users.md %}) and then adapt your 
 [local.yaml]({% link _documentation/local-yaml.md %}) if necessary.
 
-{% include alert.html icon="far fa-smile-beam" type="success" alert="Setup complete: you can start time-tracking!" %}
-
-## Troubleshooting
-
-Something is not working as expected? 
-
-- Check your logfile at `var/log/prod.log`, as many problems reveal themselves after reading it
-- Still not working? Open a new discussion at [GitHub]({{ site.kimai_v2_repo }}/discussions/)
-
+{% include alert.html icon="far fa-smile-beam" type="success" alert="Your setup is complete: you can start time-tracking!" %}
