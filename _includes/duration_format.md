@@ -19,3 +19,8 @@ The `{{ fieldName }}` field supports entering data in the following formats:
 - Format: `{hours}`, `{hours,minutes in decimal}`, `{hours.minutes in decimal}`
 - Description: Duration in hours, for decimal separator both `.`  and `,` are supported, minutes need to be given as decimal portion (eg. 30 minutes = 0.5)
 - Examples: `1,5` = 1 hour and 30 minutes, `2` = 2 hours
+
+#### Duration drop-down
+
+If activated in [System > Settings]({% link _documentation/configurations.md %}), the duration field has a dropdown.
+The drop-down allows for simple selection of a duration, which will be entered in `Time span` format. 

@@ -31,9 +31,9 @@ redirect_from:
 
 ## Duration format
 
-{% include duration_format.md %}
+Please read the full documentation about accepted inputs for the [duration format]({% link _documentation/duration-format.md %}).
 
-Please note:
+Important:
 - using `0` or `00:00` as duration will also stop the entry with a duration of zero seconds
 - to create a running entry the `end` and `duration` field needs to be empty
 
