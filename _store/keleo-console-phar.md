@@ -43,7 +43,7 @@ Before using it the first time, you have to create a configuration file, which h
 By default this config file will be located at `~/.kimai2-console.json`:
 
 ```bash
-kimai configuration:create
+kimai configuration
 ```
 Make sure the file is only readable for your own user:
 
