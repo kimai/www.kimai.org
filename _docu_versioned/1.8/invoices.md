@@ -3,10 +3,8 @@ title: Invoices
 description: Create invoices directly within Kimai from timesheet data in several formats 
 toc: true
 canonical: /documentation/invoices.html
-redirect_from:
-  - /documentation/invoices/
-  - /documentation/developer/invoice-templates.html
-  - /documentation/invoice-templates/
+related:
+  - plugin-invoice
 ---
 
 Kimai allows creating invoices from timesheet data in several formats.
@@ -244,7 +242,7 @@ allows access to your custom fields.
 
 Want to use a **timesheet custom field** in your template?
 ```twig
-{% raw %}{% set meta = entry.getMetaFieldValue('foo') %}
+{% raw %}{% set meta = entry.getAdditionalField('foo') %}
 {% if meta is not null %}
     Foo: {{ meta }}
 {% endif %}{% endraw %}
@@ -256,23 +254,23 @@ Please be aware:
 
 Want to use a **customer custom field** in your template?
 ```twig
-{% raw %}{% set meta = entry.customer.getMetaFieldValue('foo') %}
-{% if meta is not null %}
-    Foo: {{ meta }}
+{% raw %}{% set metaField = entry.customer.metaField('foo') %}
+{% if metaField is not null and metaField.value is not null %}
+    Foo: {{ metaField.value }}
 {% endif %}{% endraw %}
 ``` 
 
 Want to use a **project custom field** in your template?
 ```twig
-{% raw %}{% set meta = entry.project.getMetaFieldValue('foo') %}
-{% if meta is not null %}
-    Foo: {{ meta }}
+{% raw %}{% set metaField = entry.project.metaField('foo') %}
+{% if metaField is not null and metaField.value is not null %}
+    Foo: {{ metaField.value }}
 {% endif %}{% endraw %}
 ``` 
 
 Want to use a **user preference** in your template?
 ```twig
-{% raw %}{% set meta = entry.user.getMetaFieldValue('foo') %}
+{% raw %}{% set meta = entry.user.getPreferenceValue('foo') %}
 {% if meta is not null %}
     Foo: {{ meta }}
 {% endif %}{% endraw %}

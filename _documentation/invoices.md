@@ -241,12 +241,12 @@ Use the twig include feature with the `@invoice` namespace . The following examp
 
 #### Custom fields
 
-Iterating all entries in the invoice with `{% raw %}{% for id, entry in model.calculator.entries %}{% endraw %}` 
+Iterating above all entries (line items) in the invoice with `{% raw %}{% for id, entry in model.calculator.entries %}{% endraw %}` 
 allows access to your custom fields.
 
 Want to use a **timesheet custom field** in your template?
 ```twig
-{% raw %}{% set meta = entry.getAdditionalField('foo') %}
+{% raw %}{% set meta = entry.getMetaFieldValue('foo') %}
 {% if meta is not null %}
     Foo: {{ meta }}
 {% endif %}{% endraw %}
@@ -258,23 +258,23 @@ Please be aware:
 
 Want to use a **customer custom field** in your template?
 ```twig
-{% raw %}{% set metaField = entry.customer.metaField('foo') %}
-{% if metaField is not null and metaField.value is not null %}
-    Foo: {{ metaField.value }}
+{% raw %}{% set meta = entry.customer.getMetaFieldValue('foo') %}
+{% if meta is not null %}
+    Foo: {{ meta }}
 {% endif %}{% endraw %}
 ``` 
 
 Want to use a **project custom field** in your template?
 ```twig
-{% raw %}{% set metaField = entry.project.metaField('foo') %}
-{% if metaField is not null and metaField.value is not null %}
-    Foo: {{ metaField.value }}
+{% raw %}{% set meta = entry.project.getMetaFieldValue('foo') %}
+{% if meta is not null %}
+    Foo: {{ meta }}
 {% endif %}{% endraw %}
 ``` 
 
 Want to use a **user preference** in your template?
 ```twig
-{% raw %}{% set meta = entry.user.getPreferenceValue('foo') %}
+{% raw %}{% set meta = entry.user.getMetaFieldValue('foo') %}
 {% if meta is not null %}
     Foo: {{ meta }}
 {% endif %}{% endraw %}
