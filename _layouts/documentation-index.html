@@ -41,8 +41,10 @@ main_menu: documentation
                         </p>
 
                         {% for p in group.pages %}
-                            {% assign doc = site.documentation | where: "slug", p | first %}
-                            <a class="btn btn-primary btn-sm" href="{{ doc.url }}">{{ doc.title }}</a>
+                            {% if p != "-" %}
+                                {% assign doc = site.documentation | where: "slug", p | first %}
+                                <a class="btn btn-primary btn-sm" href="{{ doc.url }}">{{ doc.title }}</a>
+                            {% endif %}
                         {% endfor %}
                     </div>
                 </div>
