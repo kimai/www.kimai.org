@@ -8,6 +8,12 @@ redirect_from:
   - /documentation/manual/rates.html
   - /documentation/fees/
   - /documentation/rates/
+related:
+  - timesheet
+  - customer
+  - project
+  - activity
+  - user-preferences
 ---
 
 Be aware: Rates are always calculated from the duration of a record. 
@@ -32,10 +38,10 @@ The algorithm to calculate a timesheet records rate works by summing up scores, 
 
 This leads to the following decision matrix:
 
-|                           | Activity rate | Project rate  | Customer rate |
-|---                        |---            |---            |---            |
-| None-user rule            | 5             | 3             | 1             |
-| User specific             | 6             | 4             | 2             |
+|                | Activity rate | Project rate | Customer rate |
+|----------------|---------------|--------------|---------------|
+| None-user rule | 5             | 3            | 1             |
+| User specific  | 6             | 4            | 2             |
 
 If no rate can be found, the `users hourly-rate preference` will be used to calculate the records rate.
 In case that the `users hourly-rate` is not set or equals `0`, the records rate will be set to `0`.
