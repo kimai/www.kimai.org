@@ -2,12 +2,13 @@
 title: Azure SAML
 description: How to use Azure AD SAML identity provider with Kimai
 toc: true
-since_version: 1.8
+related:
+  - saml
+  - keycloak
 ---
 
-Go [back to general SAML configuration]({% link _documentation/saml.md %}) for Kimai. 
+Go back to general [SAML configuration]({% link _documentation/saml.md %}) for Kimai. 
 
-### Introduction
 SAML authentication with Azure accounts has proven to work. It requires four phases to get SAML configured. We will call them:
 * Toolkit Deployment
 * Toolkit Configuration
@@ -16,7 +17,7 @@ SAML authentication with Azure accounts has proven to work. It requires four pha
 
 **Note**: The Azure AD is a part of the Microsoft Cloud offerings; you will likely need either a Microsoft Cloud license 
 or an Office 365 license associated with your domain. In case you managed to set it up using a free offering,  
-[please let us know](https://github.com/kevinpapst/kimai2/discussions) so we can add it to the documentation. 
+[please let us know](https://github.com/kevinpapst/kimai2/discussions), so we can add it to the documentation. 
 
 ### Toolkit Deployment
 Please check the following steps to set up an enterprise application using the SAML toolkit.
@@ -45,23 +46,23 @@ Other languages are accessible through the Microsoft Documentation under:
 7. Edit the **Basic SAML Configuration** at the top and add the required **URLs**:
 ![Picture](/images/documentation/azure-saml-pic3.png)
 
-    | Setting |Value  |
-    | ------------- | -----:|
-    | Identifier (Entity ID) | https://timetracking.example.com/auth/saml/metadata |
-    | Reply URL (Assertion Consumer Service URL) | https://timetracking.example.com/auth/saml/acs |
-    | Sign on URL | https://timetracking.example.com/ |
-    | Logout Url | https://timetracking.example.com/auth/saml/logout |
+    | Setting                                    | Value                                               |
+    |--------------------------------------------|-----------------------------------------------------|
+    | Identifier (Entity ID)                     | https://timetracking.example.com/auth/saml/metadata |
+    | Reply URL (Assertion Consumer Service URL) | https://timetracking.example.com/auth/saml/acs      |
+    | Sign on URL                                | https://timetracking.example.com/                   |
+    | Logout Url                                 | https://timetracking.example.com/auth/saml/logout   |
 
 8. Edit the **User Attributes & Claims** and ensure the following settings: 
 ![Picture](/images/documentation/azure-saml-pic4.png)  
 **Note**: It is likely, that you have a missing entry **displayname**, thus please add the claim by clicking **Add new claim** and set the following settings:  
 ![Picture](/images/documentation/azure-saml-pic5.png)
 
-    | Setting |Value  |
-    | ------------- | -----:|
-    | Name | displayname |
-    | Namespace | http://schemas.xmlsoap.org/ws/2005/05/identity/claims |
-    | Source attribute | user.displayname |
+    | Setting          | Value                                                 |
+    |------------------|-------------------------------------------------------|
+    | Name             | displayname                                           |
+    | Namespace        | http://schemas.xmlsoap.org/ws/2005/05/identity/claims |
+    | Source attribute | user.displayname                                      |
 
     After applying these changes hit **Save**.
     

@@ -2,26 +2,27 @@
 title: Keycloak SAML
 description: Use Keycloak as SAML identity provider for Kimai
 toc: true
+related:
+  - saml
+  - azure
 ---
 
-Go [back to general SAML configuration]({% link _documentation/saml.md %}) for Kimai.
+Go back to general [SAML configuration]({% link _documentation/saml.md %}) for Kimai.
 
-### Introduction
+SAML authentication with Keycloak accounts has proven to work with the following configurations.
 
-SAML authentication with Keycloak accounts has proven to work with the following configurations:
-
-#### Add a client for Kimai SAML
+### Add a client for Kimai SAML
 
 ![Picture](/images/documentation/keycloak-saml-1.png)
 
-#### Configure the client
+### Configure the client
 
 Deactivate "Client Signature Required".
 
 ![Picture](/images/documentation/keycloak-saml-2.png)
 ![Picture](/images/documentation/keycloak-saml-3.png)
 
-#### Create user attributes
+### Create user attributes
 
 Which will then be mapped on the Kimai user attributes:
 
@@ -31,7 +32,7 @@ Which will then be mapped on the Kimai user attributes:
 ![X500 Email](/images/documentation/keycloak-saml-7.png)
 
 
-#### Configure local.yaml
+### Configure local.yaml
 
 And here is the matching Kimai configuration:
 

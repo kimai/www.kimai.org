@@ -3,6 +3,9 @@ title: SAML
 description: How to use SAML identity provider with Kimai
 toc: true
 canonical: /documentation/saml.html
+related:
+  - keycloak
+  - azure
 ---
 
 Kimai supports authentication via a SAML provider of your choice (for now it was tested with G Suite and MS Azure accounts).
@@ -122,7 +125,7 @@ If you have troubles with your certificate you could [try to use this SAML onlin
 
 You can find more information about the connection configs in the [onelogin/php-saml](https://github.com/onelogin/php-saml#how-it-works) library that is used for the SAML connections.
 
-### G Suite and roles (or groups)
+### G Suite (Google Workspace) and roles/groups
 
 If you want to sync user-roles as well, you have to know that Google doesn't support that out-of-the-box.
 You need to setup additional user attributes and add those to the SAML attributes of your application.
@@ -142,7 +145,7 @@ For Keycloak, please check the [Keycloak SAML documentation]({% link _documentat
 ## Known limitations
 
 A manually registered user can login via SAML, but his account is then migrated to **SAML only**,
-so he can't login via password any longer.
+so he can't log in via password any longer.
 Additional all configured SAML attributes will be applied.
 To change such an account back to "password login", you need to update the `auth` column in the `kimai2_users` table and set the value from `saml` to `kimai`.
 
