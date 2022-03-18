@@ -22,6 +22,10 @@ If the date of the record falls before the project start or after the project en
 This behavior is intended to avoid ghost bookings on not yet started or already finished projects. 
 If the booking of records is necessary, the team lead or admin can remove the date restriction in the project settings.
 
+## Billable
+
+{% include billable.md entity="Project" %} 
+
 ## Budgets
 
 {% include budgets.md permission="project" %} 
@@ -61,7 +65,7 @@ Besides these filters, you can query for a free search term, which will be searc
 - `comment`
 - `orderNumber`
 
-Additionally you can filter for [custom fields]({% link _documentation/meta-fields.md %}) by using a search phrase like `location:homeoffice`.
+Additionally, you can filter for [custom fields]({% link _documentation/meta-fields.md %}) by using a search phrase like `location:homeoffice`.
 This would find all projects with the custom field `location` matching the term `homeoffice`.
 
 The search terms will be found within the full value, so searching for `office` would find:

@@ -6,7 +6,7 @@ toc: true
 
 Customers in Kimai are used to manage project and activities, which are then used for time-records.
 
-It is common practice to have a customer for your own company, to track times for administration and other internal work.
+It is best-practice to have a customer for your own company, to track times for administrative and other internal work.
  
 ## Creating customer
 
@@ -14,17 +14,21 @@ Default values for new customers can be configured at [System > Settings]({% lin
 
 ## Customer colors
 
-Each customer can be assigned its own color, for easier identification in the timesheets.
+Each customer can be assigned its own color, for easier identification in timesheet listing.
 
 If a project or an activity linked to the customer does not have its own color, the customers color will be used.
 The default color code is `#d2d6de`.
 
 ## Currency
 
-The customers currency is used when displaying the recorded entries in the timesheets.
+The customer currency is used when displaying the recorded entries in the timesheet.
 
 It is also used for printing invoices, which is the reason while the invoice screen needs one applied customer filter 
 before any data will be shown. 
+
+## Billable
+
+{% include billable.md entity="Customer" %}
 
 ## Budgets
 
@@ -70,7 +74,7 @@ Besides these filters, you can query for a free search term, which will be searc
 - `phone`
 - `address`
 
-Additionally you can filter for [custom fields]({% link _documentation/meta-fields.md %}) by using a search phrase like `location:homeoffice`.
+Additionally, you can filter for [custom fields]({% link _documentation/meta-fields.md %}) by using a search phrase like `location:homeoffice`.
 This would find all customers with the custom field `location` matching the term `homeoffice`.
 
 The search terms will be found within the full value, so searching for `office` would find:

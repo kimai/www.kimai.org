@@ -32,6 +32,10 @@ Each activity can be assigned its own color, for easier identification in variou
 If no color has been selected, the project color will be used. 
 If that is not defined as well, Kimai will fallback to the customer color and finally to the [default color]({% link _documentation/customer.md %}).
 
+## Billable
+
+{% include billable.md entity="Activity" %}
+
 ## Budgets
 
 {% include budgets.md permission="activity" %} 
@@ -69,7 +73,7 @@ Besides these filters, you can query for a free search term, which will be searc
 - `name`
 - `comment`
 
-Additionally you can filter for [custom fields]({% link _documentation/meta-fields.md %}) by using a search phrase like `location:homeoffice`.
+Additionally, you can filter for [custom fields]({% link _documentation/meta-fields.md %}) by using a search phrase like `location:homeoffice`.
 This would find all activities with the custom field `location` matching the term `homeoffice`.
 
 The search terms will be found within the full value, so searching for `office` would find:

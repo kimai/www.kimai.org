@@ -52,6 +52,8 @@ Since version 1.14 you can define whether a timesheet record is billable or not.
 
 None-billable timesheets are excluded from [invoices]({% link _documentation/invoices.md %}) and budget calculations.
 
+Please read the [billable documentation]({% link _documentation/billable.md %}) to understand the `billable` flag.
+
 ## Filter and search
 
 The search drop-down supports filtering by the fields:
