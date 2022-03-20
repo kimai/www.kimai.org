@@ -54,10 +54,10 @@ screenshots:
     description: "Editing a timesheet record with a new choice-list custom field"
 ---
 
+{% include documentation-link.html chapter="plugin-custom-fields" %}
+
 Allows configuration of additional (custom) fields for:
 `Timesheets`, `Customers`, `Projects`, `Activities`, `Invoices`, `User`, `Expenses` (see [plugin]({% link _store/keleo-expenses-bundle.md %})).
-
-Full documentation available [in the documentation]({% link _documentation/plugin-custom-fields.md %}).
 
 ## Features
 

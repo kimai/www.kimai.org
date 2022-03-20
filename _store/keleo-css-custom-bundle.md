@@ -29,9 +29,9 @@ screenshots:
     description: "Timesheet view with activated custom rules: highlight active records, hide overlapping records"
 ---
 
-You can test the Plugin in the [Plugin demo]({% link _pages/demo.md %}).
+{% include documentation-link.html chapter="plugin-custom-css" %}
 
-Full documentation available [in the documentation]({% link _documentation/plugin-custom-css.md %}).
+You can test the Plugin in the [Plugin demo]({% link _pages/demo.md %}).
 
 {% include plugins/custom-css.md %}
 

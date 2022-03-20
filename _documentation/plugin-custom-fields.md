@@ -4,8 +4,6 @@ description: Add free configurable custom fields to your Kimai installation
 toc: true
 ---
 
-## Features
-
 {% include plugins/custom-fields.md %}  
 
 ## Field types

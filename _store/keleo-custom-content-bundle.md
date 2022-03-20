@@ -39,9 +39,9 @@ screenshots:
     description: "The news page is linked in the user menu and displays your markdown message"
 ---
 
-You can test the Plugin in the [Plugin demo]({% link _pages/demo.md %}).
+{% include documentation-link.html chapter="plugin-custom-content" %}
 
-Full documentation available [in the documentation]({% link _documentation/plugin-custom-content.md %}).
+You can test the Plugin in the [Plugin demo]({% link _pages/demo.md %}).
 
 ## Features 
 

@@ -36,9 +36,9 @@ screenshots:
     description: "The edit dialog allows to change your custom translation"
 ---
 
-You can test the Plugin in the [Plugin demo]({% link _pages/demo.md %}).
+{% include documentation-link.html chapter="plugin-translation" %}
 
-Full documentation available [in the documentation]({% link _documentation/plugin-translation.md %}).
+You can test the Plugin in the [Plugin demo]({% link _pages/demo.md %}).
 
 {% include plugins/translation.md %}
  
