@@ -50,9 +50,9 @@ server {
         # (see https://github.com/zendtech/ZendOptimizerPlus/issues/126 for more information).
         fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
         fastcgi_param DOCUMENT_ROOT $realpath_root;
-        # If installing kimai alongside other PHP virtualhosts, you should omit this, otherwise their
-        # PHP scripts will no longer work
-        fastcgi_param PHP_ADMIN_VALUE "open_basedir=$document_root/..:/tmp/";
+```suggestion
+        # Activate this if you run Kimai alone or inside a VirtualHost, otherwise this example might break other PHP apps
+        # fastcgi_param PHP_ADMIN_VALUE "open_basedir=$document_root/..:/tmp/";
         internal;
     }
 
