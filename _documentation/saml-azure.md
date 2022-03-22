@@ -4,7 +4,8 @@ description: How to use Azure AD SAML identity provider with Kimai
 toc: true
 related:
   - saml
-  - keycloak
+  - saml-authentik
+  - saml-keycloak
 ---
 
 Go back to general [SAML configuration]({% link _documentation/saml.md %}) for Kimai. 

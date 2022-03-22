@@ -4,8 +4,9 @@ description: How to use SAML identity provider with Kimai
 toc: true
 canonical: /documentation/saml.html
 related:
-  - keycloak
-  - azure
+  - saml-authentik
+  - saml-keycloak
+  - saml-azure
 ---
 
 Kimai supports authentication via a SAML provider of your choice (for now it was tested with G Suite and MS Azure accounts).
@@ -125,6 +126,8 @@ If you have troubles with your certificate you could [try to use this SAML onlin
 
 You can find more information about the connection configs in the [onelogin/php-saml](https://github.com/onelogin/php-saml#how-it-works) library that is used for the SAML connections.
 
+## Identity provider
+
 ### G Suite (Google Workspace) and roles/groups
 
 If you want to sync user-roles as well, you have to know that Google doesn't support that out-of-the-box.
@@ -136,24 +139,15 @@ Links:
 
 ### Azure
 
-For Azure, please check the [Azure SAML documentation]({% link _documentation/azure.md %})
+For Azure, please check the [Azure SAML documentation]({% link _documentation/saml-azure.md %})
 
 ### Keycloak
 
-For Keycloak, please check the [Keycloak SAML documentation]({% link _documentation/keycloak.md %})
+For Keycloak, please check the [Keycloak SAML documentation]({% link _documentation/saml-keycloak.md %})
 
 ### Authentik
 
-[Authentik](https://goauthentik.io) is an open-source Identity Provider focused on flexibility and versatility. 
-It has proven to work with Kimai, see [#3212](https://github.com/kevinpapst/kimai2/discussions/3212).
-
-Make sure that the mapping field match the XML response: 
-
-```yaml
-    mapping:
-      - { saml: $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress, kimai: email }
-      - { saml: $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name, kimai: alias }
-```
+For Authentik, please check the [Authentik SAML documentation]({% link _documentation/saml-authentik.md %})
 
 ## Known limitations
 

@@ -1,10 +1,12 @@
 ---
 title: Keycloak SAML
 description: Use Keycloak as SAML identity provider for Kimai
+canonical: /documentation/keycloak.html
 toc: true
 related:
   - saml
-  - azure
+  - saml-authentik
+  - saml-azure
 ---
 
 Go back to general [SAML configuration]({% link _documentation/saml.md %}) for Kimai.
