@@ -142,6 +142,19 @@ For Azure, please check the [Azure SAML documentation]({% link _documentation/az
 
 For Keycloak, please check the [Keycloak SAML documentation]({% link _documentation/keycloak.md %})
 
+### Authentik
+
+[Authentik](https://goauthentik.io) is an open-source Identity Provider focused on flexibility and versatility. 
+It has proven to work with Kimai, see [#3212](https://github.com/kevinpapst/kimai2/discussions/3212).
+
+Make sure that the mapping field match the XML response: 
+
+```yaml
+    mapping:
+      - { saml: $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress, kimai: email }
+      - { saml: $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name, kimai: alias }
+```
+
 ## Known limitations
 
 A manually registered user can login via SAML, but his account is then migrated to **SAML only**,
