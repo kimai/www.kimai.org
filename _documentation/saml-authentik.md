@@ -29,7 +29,7 @@ kimai:
       - { saml: $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress, kimai: email }
       - { saml: $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name, kimai: alias }
     roles:
-      attribute: Roles
+      attribute: http://schemas.xmlsoap.org/claims/Group
       mapping:
       # Insert your roles here (ROLE_USER is added automatically)
         - { saml: admin.group, kimai: ROLE_ADMIN }
