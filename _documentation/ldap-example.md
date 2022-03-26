@@ -1,5 +1,5 @@
 ---
-title: LDAP structure Example for Kimai
+title: LDAP structure Example for Kimai and OpenLDAP
 toc: true
 related:
   - ldap
@@ -167,4 +167,32 @@ kimai:
                 - { ldap_value: Teamleads, role: ROLE_TEAMLEAD }
                 - { ldap_value: Admins, role: ROLE_ADMIN }
                 - { ldap_value: Super-Admins, role: ROLE_SUPER_ADMIN }
+```
+
+## Tips and Tricks
+
+Some very basic infos for novice OpenLDAP users.
+
+**Links:**
+
+- https://github.com/IntersectAustralia/acdata/wiki/Setting-up-OpenLDAP
+- http://blog.facilelogin.com/2012/05/setting-up-openldap-under-mac-os-x.html
+- https://docs.kanboard.org/en/latest/admin_guide/ldap_examples.html
+
+**Create password:**
+
+```bash
+slappasswd
+```
+
+**Run OpenLDAP:**
+
+```bash
+/usr/libexec/slapd -d3
+```
+
+**Edit configuration:**
+
+```bash
+vim /usr/local/etc/openldap/slapd.conf
 ```
