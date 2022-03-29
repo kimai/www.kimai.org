@@ -1,7 +1,7 @@
 ---
 title: ZipProjectRenderer plugin for Kimai
 name: ZipProjectRenderer plugin
-intro: "A plugin to export one PDF files per project for multiple selected projects."
+intro: "A plugin to export one PDF file per project for multiple selected projects."
 developer: gbs-it
 date: "2022-03-24 20:00:00 +0200"
 icon: fas fa-file-archive
@@ -16,7 +16,7 @@ bundle:
   clone: "https://github.com/jens-2305/ZipProjectRendererBundle.git" 
 ---
 
-The export PDFs are packed into a zip archive that will be sent as download.
+The exported PDFs are packed into a zip archive that will be sent as download.
 
 ### Storage
 
