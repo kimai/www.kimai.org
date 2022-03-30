@@ -2,6 +2,8 @@
 title: Custom fields
 description: Use your own custom/meta fields 
 toc: true
+since_version: 1.0
+canonical: /documentation/meta-fields.html
 ---
 
 Kimai supports custom fields for the following object types:
@@ -11,14 +13,6 @@ Kimai supports custom fields for the following object types:
 - `Customer` via `CustomerMeta` 
 - `Project` via `ProjectMeta` 
 - `Activity` via `ActivityMeta`
-- `Invoice` via `InvoiceMeta`
-
-{% capture alert_note %}
-Below you find the documentation, how a developer can create custom fields.   
-Most users will prefer to use the [Custom fields plugin]({% link _store/keleo-custom-fields-bundle.md %}).
-{% endcapture %}
-{% assign alert_note = alert_note| markdownify %}
-{% include alert.html icon="fas fa-shopping-cart" type="info" alert=alert_note %}
 
 ## Custom fields
 
@@ -50,13 +44,11 @@ See in `prepareEntity()` what needs to be done to setup new custom fields, which
 use App\Entity\ActivityMeta;
 use App\Entity\CustomerMeta;
 use App\Entity\EntityWithMetaFields;
-use App\Entity\InvoiceMeta;
 use App\Entity\MetaTableTypeInterface;
 use App\Entity\ProjectMeta;
 use App\Entity\TimesheetMeta;
 use App\Event\ActivityMetaDefinitionEvent;
 use App\Event\CustomerMetaDefinitionEvent;
-use App\Event\InvoiceMetaDefinitionEvent;
 use App\Event\ProjectMetaDefinitionEvent;
 use App\Event\TimesheetMetaDefinitionEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
@@ -72,7 +64,6 @@ class MetaFieldSubscriber implements EventSubscriberInterface
             CustomerMetaDefinitionEvent::class => ['loadCustomerMeta', 200],
             ProjectMetaDefinitionEvent::class => ['loadProjectMeta', 200],
             ActivityMetaDefinitionEvent::class => ['loadActivityMeta', 200],
-            InvoiceMetaDefinitionEvent::class => ['loadInvoiceMeta', 200],
         ];
     }
 
@@ -96,11 +87,6 @@ class MetaFieldSubscriber implements EventSubscriberInterface
         $this->prepareEntity($event->getEntity(), new ActivityMeta());
     }
 
-    public function loadInvoiceMeta(InvoiceMetaDefinitionEvent $event)
-    {
-        $this->prepareEntity($event->getEntity(), new InvoiceMeta());
-    }
-
     private function prepareEntity(EntityWithMetaFields $entity, MetaTableTypeInterface $definition)
     {
         $definition
@@ -122,7 +108,7 @@ Attention: `setLabel()` and `setOptions()` will be added with 1.4.
 
 With Kimai 1.4 you can display and export custom fields. 
 Supported fields will be shown as new columns in the data-tables for timesheets, customers, projects and activities.
-Additionally, these fields will be added to HTML and Spreadsheet exports. 
+Additionally these fields will be added to HTML and Spreadsheet exports. 
 
 As Kimai cannot query all existing records for possible custom fields, you need to listen to new events and 
 register the desired fields. 
