@@ -56,7 +56,7 @@ The visibility filter in the toolbar has three state:
 
 ## Filter and search 
 
-The search drop-down supports filtering by the fields:
+The search supports filtering by the fields:
 - `customer`
 - `visibility`
 
@@ -65,16 +65,4 @@ Besides these filters, you can query for a free search term, which will be searc
 - `comment`
 - `orderNumber`
 
-Additionally, you can filter for [custom fields]({% link _documentation/meta-fields.md %}) by using a search phrase like `location:homeoffice`.
-This would find all projects with the custom field `location` matching the term `homeoffice`.
-
-The search terms will be found within the full value, so searching for `office` would find:
-- `I love working in my office`
-- `Office` 
-- `This office is beautiful`
-- `Our offices are very noisy`
-
-You can mix the search term and use multiple meta-field queries:
-- `location:homeoffice projectname foo` - find all projects matching the search term `projectname foo` with the custom field `location` matching the term `homeoffice` 
-- `location:homeoffice contract:foo projectname` - find all projects matching the search term `projectname` with the custom field combination: `location` matching the term `homeoffice` and `contract` matching the term `foo` 
-- `location:homeoffice contract:foo` - find all projects with the custom field combination: `location` matching the term `homeoffice` and `contract` matching the term `foo`
+{% include search-custom-field.md %}
