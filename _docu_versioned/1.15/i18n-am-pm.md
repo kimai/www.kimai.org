@@ -2,6 +2,7 @@
 title: "Switch to AM/PM"
 description: Using AM/PM instead of 24h-format
 toc: false
+canonical: /documentation/i18n-am-pm.html
 ---
 
 Kimai uses the 24-hour format by default.

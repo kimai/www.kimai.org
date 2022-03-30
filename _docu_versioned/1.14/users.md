@@ -25,12 +25,12 @@ There are three type of user avatars:
 
 There are four pre-defined roles in Kimai, which define the ACLs/permissions.
 
-| Role name         | Description                                                                                                                   |
-|---                |---                                                                                                                            |
-| ROLE_USER         | Normal user can track their working times, see basic reports and change their own preferences                                 |
-| ROLE_TEAMLEAD     | Manages [teams]({% link _documentation/teams.md %}) with permissions for invoices and access to all **team** timesheets       |
-| ROLE_ADMIN        | Can manage all content and timesheet related data, but lack user administration and system privileges                         |
-| ROLE_SUPER_ADMIN  | Has permissions to manage everything in Kimai, from content to timesheets to users, plugins and system configurations         |
+| Role name          | Description                                                                                                                    |
+|--------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| ROLE_USER          | Normal user can track their working times, see basic reports and change their own preferences                                  |
+| ROLE_TEAMLEAD      | Manages [teams]({% link _documentation/teams.md %}) with permissions for invoices and access to all **team** timesheets        |
+| ROLE_ADMIN         | Can manage all content and timesheet related data, but lack user administration and system privileges                          |
+| ROLE_SUPER_ADMIN   | Has permissions to manage everything in Kimai, from content to timesheets to users, plugins and system configurations          |
 
 {% include alert.html type="success" alert="Every user is automatically member of the ROLE_USER, this behaviour cannot be changed." %}
 

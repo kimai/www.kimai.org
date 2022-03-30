@@ -2,6 +2,7 @@
 title: Invoices
 description: Create invoices directly within Kimai from timesheet data in several formats 
 toc: true
+canonical: /documentation/invoices.html
 ---
 
 Kimai allows creating invoices from timesheet data in several formats.

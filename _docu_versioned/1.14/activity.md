@@ -2,6 +2,7 @@
 title: Activities
 description: Activities in Kimai
 toc: true
+canonical: /documentation/activity.html
 ---
 
 Activities in Kimai are meant to explain the kind of work done for a specific task/timesheet.
