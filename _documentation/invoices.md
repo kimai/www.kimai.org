@@ -355,7 +355,7 @@ The documents which are rendered passively (ODS, XLSX, CSV, DOCX) can use the fo
 | ${template.due_days}        | The amount of days for the payment, starting with the day of creating the invoice       |
 | ${template.vat_id}          | The Vat ID for this invoice                                                             |
 | ${template.contact}         | Extended contact information, might be multiple lines                                   |
-| ${template.payment_details} | Extended payment details like bank accounts, might be multiple lines                    |
+| ${template.paymentDetails}  | Extended payment details like bank accounts, might be multiple lines                    |
 | ${query.begin}              | The query begin as formatted short date                                                 |
 | ${query.end}                | The query end as formatted short date                                                   |
 | ${query.month}              | The month for this query (begin date) **DEPRECATED**                                    |
