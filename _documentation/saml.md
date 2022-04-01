@@ -158,14 +158,7 @@ To change such an account back to "password login", you need to update the `auth
 
 ## Using SAML only
 
-Kimai does not support **SAML only** out of the box, but you can disable the normal login flow yb redirecting the URLs to the SAML login.
-
-This is an example for Apache:
-
-```
-RewriteEngine On
-RewriteRule  /(..)/login /auth/saml/login [L,R=301]
-```
+If SAML is activated, you can turn off the login form entirely by unchecking the `Login form` configuration under `Authentication` at [System > Settings]({% link _documentation/configurations.md %}).
 
 ## Troubleshooting
 
