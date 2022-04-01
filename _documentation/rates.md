@@ -27,6 +27,14 @@ There are two rate types:
 If any of the above is set to `0`, the records rate will be set to `0`.
 A __fixed rate__ always wins over an __hourly rate__.
 
+## Rate changes
+
+Rate changes always only apply for future entries. If you change e.g. a users hourly rate, it will be used for all 
+timesheet records that will be created from now on. But existing records will not be changed retroactive.
+
+Additionally, if a record already has an hourly or fixed rate set, it will not be changed if you change the customer, project or activity.
+So if Project A has a rate of 100 and Project B 120, and you move a record from A to B it will not be automatically changed to 120.
+
 ## Rate calculation
 
 The algorithm to calculate a timesheet records rate works by summing up scores, where the highest score wins:
@@ -50,8 +58,6 @@ The timesheet rate calculation is based on the following formula:
 
 - __Fixed rate__: `$fixedRate`
 - __Hourly rate__: `$hourlyRate * ($durationInSeconds / 3600) * $factor`
-
-Please read the [rate multiplier]({% link _documentation/local-yaml.md %}#rate-multiplier-for-specific-weekdays) documentation to see how you can apply configurable multiplying factors based on the day.
 
 ## Edit rates
 
