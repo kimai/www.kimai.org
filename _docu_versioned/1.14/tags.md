@@ -3,6 +3,7 @@ title: Tags
 description: Using tags to group timesheet entries
 since_version: 1.0
 toc: true
+canonical: /documentation/tags.html
 ---
 
 ## Tagging timesheet records

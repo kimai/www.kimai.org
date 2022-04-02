@@ -138,11 +138,11 @@ Links:
 
 ### Azure
 
-For Azure, please check the [Azure SAML documentation]({% link _documentation/azure.md %})
+For Azure, please check the [Azure SAML documentation]({% link _documentation/saml-azure.md %})
 
 ### Keycloak
 
-For Keycloak, please check the [Keycloak SAML documentation]({% link _documentation/keycloak.md %})
+For Keycloak, please check the [Keycloak SAML documentation]({% link _documentation/saml-keycloak.md %})
 
 ## Known limitations
 

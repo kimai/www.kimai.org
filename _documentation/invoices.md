@@ -241,12 +241,12 @@ Use the twig include feature with the `@invoice` namespace . The following examp
 
 #### Custom fields
 
-Iterating all entries in the invoice with `{% raw %}{% for id, entry in model.calculator.entries %}{% endraw %}` 
+Iterating above all entries (line items) in the invoice with `{% raw %}{% for id, entry in model.calculator.entries %}{% endraw %}` 
 allows access to your custom fields.
 
 Want to use a **timesheet custom field** in your template?
 ```twig
-{% raw %}{% set meta = entry.getAdditionalField('foo') %}
+{% raw %}{% set meta = entry.getMetaFieldValue('foo') %}
 {% if meta is not null %}
     Foo: {{ meta }}
 {% endif %}{% endraw %}
@@ -258,23 +258,23 @@ Please be aware:
 
 Want to use a **customer custom field** in your template?
 ```twig
-{% raw %}{% set metaField = entry.customer.metaField('foo') %}
-{% if metaField is not null and metaField.value is not null %}
-    Foo: {{ metaField.value }}
+{% raw %}{% set meta = entry.customer.getMetaFieldValue('foo') %}
+{% if meta is not null %}
+    Foo: {{ meta }}
 {% endif %}{% endraw %}
 ``` 
 
 Want to use a **project custom field** in your template?
 ```twig
-{% raw %}{% set metaField = entry.project.metaField('foo') %}
-{% if metaField is not null and metaField.value is not null %}
-    Foo: {{ metaField.value }}
+{% raw %}{% set meta = entry.project.getMetaFieldValue('foo') %}
+{% if meta is not null %}
+    Foo: {{ meta }}
 {% endif %}{% endraw %}
 ``` 
 
 Want to use a **user preference** in your template?
 ```twig
-{% raw %}{% set meta = entry.user.getPreferenceValue('foo') %}
+{% raw %}{% set meta = entry.user.getMetaFieldValue('foo') %}
 {% if meta is not null %}
     Foo: {{ meta }}
 {% endif %}{% endraw %}
@@ -326,145 +326,145 @@ Twig templates are rendered actively, it is up to the developer to calculate wha
 
 The documents which are rendered passively (ODS, XLSX, CSV, DOCX) can use the following global variables:
 
-| Key | Description |
-|---|---|
-| ${invoice.due_date} | The due date for the invoice payment |
-| ${invoice.date} | The creation date of this invoice |
-| ${invoice.number} | The generated invoice number |
-| ${invoice.currency} | The invoice currency |
-| ${invoice.currency_symbol} | The invoice currency as symbol (if available) |
-| ${invoice.total_time} | The total working time (entries with a fixed rate are always calculated with 1) |
-| ${invoice.duration_decimal} | The total working time as decimal value |
-| ${invoice.language} | The invoices language as two character code |
-| ${invoice.total} | The invoices total (including tax) with currency |
-| ${invoice.total_nc} | The invoices total (including tax) without currency |
-| ${invoice.total_plain} | The invoices total (including tax) as unformatted value |
-| ${invoice.subtotal} | The invoices subtotal (excluding tax) with currency |
-| ${invoice.subtotal_nc} | The invoices subtotal (excluding tax) without currency |
-| ${invoice.subtotal_plain} | The invoices subtotal (excluding tax) as unformatted value |
-| ${invoice.currency} | The invoices currency as string (like EUR or USD) |
-| ${invoice.vat} | The VAT in percent for this invoice |
-| ${invoice.tax} | The tax of the invoice amount with currency |
-| ${invoice.tax_nc} | The tax of the invoice amount without currency |
-| ${invoice.tax_plain} | The tax of the invoice amount as unformatted value |
-| ${template.name} | The invoice name, as configured in your template |
-| ${template.company} | The company name, as configured in your template |
-| ${template.address} | The invoicing address, as configured in your template |
-| ${template.title} | The invoice title, as configured in your template |
-| ${template.payment_terms} | Your payment terms, might be multiple lines |
-| ${template.due_days} | The amount of days for the payment, starting with the day of creating the invoice |
-| ${template.vat_id} | The Vat ID for this invoice |
-| ${template.contact} | Extended contact information, might be multiple lines |
-| ${template.payment_details} | Extended payment details like bank accounts, might be multiple lines |
-| ${query.begin} | The query begin as formatted short date |
-| ${query.end} | The query end as formatted short date |
-| ${query.month} | The month for this query (begin date) **DEPRECATED** |
-| ${query.month_number} | The numerical value for the month (with leading zero) **DEPRECATED** |
-| ${query.day} | The day for the queries begin as numerical value with leading zero **DEPRECATED** |
-| ${query.year} | The year for this query (begin date) **DEPRECATED** |
-| ${query.begin_month} | The month for the queries begin date |
-| ${query.begin_month_number} | The numerical value for the month of the queries begin date with leading zero |
-| ${query.begin_day} | The day for the queries begin as numerical value with leading zero |
-| ${query.begin_year} | The year for the queries begin date |
-| ${query.end_month} | The month for the queries end date |
-| ${query.end_month_number} | The numerical value for the month of the queries end date with leading zero |
-| ${query.end_day} | The day for the queries end as numerical value with leading zero |
-| ${query.end_year} | The year for the queries end date |
-| ${user.name} | The current users name |
-| ${user.email} | The current users email  |
-| ${user.alias} | The current users alias  |
-| ${user.title} | The current users title  |
-| ${user.meta.X} | The current users [preference]({% link _documentation/user-preferences.md %}) named `X`  |
+| Key                         | Description                                                                             |
+|-----------------------------|-----------------------------------------------------------------------------------------|
+| ${invoice.due_date}         | The due date for the invoice payment                                                    |
+| ${invoice.date}             | The creation date of this invoice                                                       |
+| ${invoice.number}           | The generated invoice number                                                            |
+| ${invoice.currency}         | The invoice currency                                                                    |
+| ${invoice.currency_symbol}  | The invoice currency as symbol (if available)                                           |
+| ${invoice.total_time}       | The total working time (entries with a fixed rate are always calculated with 1)         |
+| ${invoice.duration_decimal} | The total working time as decimal value                                                 |
+| ${invoice.language}         | The invoices language as two character code                                             |
+| ${invoice.total}            | The invoices total (including tax) with currency                                        |
+| ${invoice.total_nc}         | The invoices total (including tax) without currency                                     |
+| ${invoice.total_plain}      | The invoices total (including tax) as unformatted value                                 |
+| ${invoice.subtotal}         | The invoices subtotal (excluding tax) with currency                                     |
+| ${invoice.subtotal_nc}      | The invoices subtotal (excluding tax) without currency                                  |
+| ${invoice.subtotal_plain}   | The invoices subtotal (excluding tax) as unformatted value                              |
+| ${invoice.currency}         | The invoices currency as string (like EUR or USD)                                       |
+| ${invoice.vat}              | The VAT in percent for this invoice                                                     |
+| ${invoice.tax}              | The tax of the invoice amount with currency                                             |
+| ${invoice.tax_nc}           | The tax of the invoice amount without currency                                          |
+| ${invoice.tax_plain}        | The tax of the invoice amount as unformatted value                                      |
+| ${template.name}            | The invoice name, as configured in your template                                        |
+| ${template.company}         | The company name, as configured in your template                                        |
+| ${template.address}         | The invoicing address, as configured in your template                                   |
+| ${template.title}           | The invoice title, as configured in your template                                       |
+| ${template.payment_terms}   | Your payment terms, might be multiple lines                                             |
+| ${template.due_days}        | The amount of days for the payment, starting with the day of creating the invoice       |
+| ${template.vat_id}          | The Vat ID for this invoice                                                             |
+| ${template.contact}         | Extended contact information, might be multiple lines                                   |
+| ${template.payment_details} | Extended payment details like bank accounts, might be multiple lines                    |
+| ${query.begin}              | The query begin as formatted short date                                                 |
+| ${query.end}                | The query end as formatted short date                                                   |
+| ${query.month}              | The month for this query (begin date) **DEPRECATED**                                    |
+| ${query.month_number}       | The numerical value for the month (with leading zero) **DEPRECATED**                    |
+| ${query.day}                | The day for the queries begin as numerical value with leading zero **DEPRECATED**       |
+| ${query.year}               | The year for this query (begin date) **DEPRECATED**                                     |
+| ${query.begin_month}        | The month for the queries begin date                                                    |
+| ${query.begin_month_number} | The numerical value for the month of the queries begin date with leading zero           |
+| ${query.begin_day}          | The day for the queries begin as numerical value with leading zero                      |
+| ${query.begin_year}         | The year for the queries begin date                                                     |
+| ${query.end_month}          | The month for the queries end date                                                      |
+| ${query.end_month_number}   | The numerical value for the month of the queries end date with leading zero             |
+| ${query.end_day}            | The day for the queries end as numerical value with leading zero                        |
+| ${query.end_year}           | The year for the queries end date                                                       |
+| ${user.name}                | The current users name                                                                  |
+| ${user.email}               | The current users email                                                                 |
+| ${user.alias}               | The current users alias                                                                 |
+| ${user.title}               | The current users title                                                                 |
+| ${user.meta.X}              | The current users [preference]({% link _documentation/user-preferences.md %}) named `X` |
 
 ### Timesheet entry variables
 
 For each timesheet entry you can use the variables from the following table.
 
-| Key | Description | Example |
-|---|---|---|
-| ${entry.row} | An empty string, used as template row for docx | |
-| ${entry.description} | The entries description | _foo bar_ |
-| ${entry.amount} | The format duration/amount for this entry | 02:47 h |
-| ${entry.rate} | The rate for one unit of the entry (normally one hour) with currency | 1.100,01 EUR |
-| ${entry.rate_nc} | The rate for one unit of the entry without currency | 1100,01 |
-| ${entry.rate_plain} | The rate for one unit of the entry as unformatted value | 1100.01 |
-| ${entry.total} | The total rate for this entry with currency | 1.278,33 EUR |
-| ${entry.total_nc} | The total rate for this entry without currency | 1.278,33 |
-| ${entry.total_plain} | The total rate as unformatted value | 1278.33 |
-| ${entry.currency} | The currency for this record as string (like EUR or USD) | EUR |
-| ${entry.duration} | The duration in seconds | 10020 |
-| ${entry.duration_decimal} | The duration in decimal format (with localized separator) | 2.78 |
-| ${entry.duration_minutes} | The duration in minutes with no decimals | 167 |
-| ${entry.begin} | The begin date (format depends on the users language) | 27.10.2018 |
-| ${entry.begin_time} | The formatted time for the begin of this entry | 14:57 |
-| ${entry.begin_timestamp} | The timestamp for the begin of this entry | 1542016273 |
-| ${entry.end} | The begin date  (format depends on the users language) | 27.10.2018 |
-| ${entry.end_time} | The formatted time for the end of this entry | 17:44 |
-| ${entry.end_timestamp} | The timestamp for the end of this entry | 1542016273 |
-| ${entry.date} | The start date when this record was created | 27.10.2018 |
-| ${entry.week} | The start week number when this record was created | 39 |
-| ${entry.weekyear} | The corresponding year to the week number | 2018 |
-| ${entry.user_id} | The user ID | 1 |
-| ${entry.user_name} | The username | susan_super |
-| ${entry.user_alias} | The user alias | Susan Miller |
-| ${entry.activity} | Activity name | Post production |
-| ${entry.activity_id} | Activity ID | 124 |
-| ${entry.project} | Project name | Nemesis |
-| ${entry.project_id} | Project ID | 10 |
-| ${entry.customer} | Customer name | Acme Studios |
-| ${entry.customer_id} | Customer ID | 3 |
-| ${entry.meta.X} | The [meta field]({% link _documentation/meta-fields.md %}) named `X` (if visible)  |
-| ${entry.type} | The type of this entry (plugins can add custom types) | timesheet |
-| ${entry.category} | The category of this entry (plugins can add custom types) | work |
+| Key                       | Description                                                                       | Example         |
+|---------------------------|-----------------------------------------------------------------------------------|-----------------|
+| ${entry.row}              | An empty string, used as template row for docx                                    |                 |
+| ${entry.description}      | The entries description                                                           | _foo bar_       |
+| ${entry.amount}           | The format duration/amount for this entry                                         | 02:47 h         |
+| ${entry.rate}             | The rate for one unit of the entry (normally one hour) with currency              | 1.100,01 EUR    |
+| ${entry.rate_nc}          | The rate for one unit of the entry without currency                               | 1100,01         |
+| ${entry.rate_plain}       | The rate for one unit of the entry as unformatted value                           | 1100.01         |
+| ${entry.total}            | The total rate for this entry with currency                                       | 1.278,33 EUR    |
+| ${entry.total_nc}         | The total rate for this entry without currency                                    | 1.278,33        |
+| ${entry.total_plain}      | The total rate as unformatted value                                               | 1278.33         |
+| ${entry.currency}         | The currency for this record as string (like EUR or USD)                          | EUR             |
+| ${entry.duration}         | The duration in seconds                                                           | 10020           |
+| ${entry.duration_decimal} | The duration in decimal format (with localized separator)                         | 2.78            |
+| ${entry.duration_minutes} | The duration in minutes with no decimals                                          | 167             |
+| ${entry.begin}            | The begin date (format depends on the users language)                             | 27.10.2018      |
+| ${entry.begin_time}       | The formatted time for the begin of this entry                                    | 14:57           |
+| ${entry.begin_timestamp}  | The timestamp for the begin of this entry                                         | 1542016273      |
+| ${entry.end}              | The begin date  (format depends on the users language)                            | 27.10.2018      |
+| ${entry.end_time}         | The formatted time for the end of this entry                                      | 17:44           |
+| ${entry.end_timestamp}    | The timestamp for the end of this entry                                           | 1542016273      |
+| ${entry.date}             | The start date when this record was created                                       | 27.10.2018      |
+| ${entry.week}             | The start week number when this record was created                                | 39              |
+| ${entry.weekyear}         | The corresponding year to the week number                                         | 2018            |
+| ${entry.user_id}          | The user ID                                                                       | 1               |
+| ${entry.user_name}        | The username                                                                      | susan_super     |
+| ${entry.user_alias}       | The user alias                                                                    | Susan Miller    |
+| ${entry.activity}         | Activity name                                                                     | Post production |
+| ${entry.activity_id}      | Activity ID                                                                       | 124             |
+| ${entry.project}          | Project name                                                                      | Nemesis         |
+| ${entry.project_id}       | Project ID                                                                        | 10              |
+| ${entry.customer}         | Customer name                                                                     | Acme Studios    |
+| ${entry.customer_id}      | Customer ID                                                                       | 3               |
+| ${entry.meta.X}           | The [meta field]({% link _documentation/meta-fields.md %}) named `X` (if visible) |
+| ${entry.type}             | The type of this entry (plugins can add custom types)                             | timesheet       |
+| ${entry.category}         | The category of this entry (plugins can add custom types)                         | work            |
 
 ### Customer variables
 
-| Key | Description |
-|---|---|
-| ${customer.id} | The customer ID |
-| ${customer.comment} | The description of this customer |
-| ${customer.address} | The customer address |
-| ${customer.name} | The customer name |
-| ${customer.contact} | The customer contact |
-| ${customer.company} | The customer company |
-| ${customer.vat} | The customer Vat ID |
-| ${customer.number} | The customer number |
-| ${customer.country} | The customer country |
-| ${customer.homepage} | The customer homepage |
-| ${customer.phone} | The customers phone number |
-| ${customer.mobile} | The customers mobile number |
-| ${customer.email} | The customers email address |
-| ${customer.fax} | The customers fax number |
-| ${customer.meta.x} | The customer [meta field]({% link _documentation/meta-fields.md %}) named `X`. The internal name `X` needs to be used in lowercase letters, eg. `FooBar` will be available as `${customer.meta.foobar}`. Only available if the field is visible.  |
-| ${customer.budget_open} | The open monetary budget for this customer at the end date of your filter query (formatted with currency) (since 1.16.7)  |
-| ${customer.budget_open_plain} | The open monetary budget for this customer at the end date of your filter query (plain float value) (since 1.16.7)  |
-| ${customer.time_budget_open} | The open time budget for this customer at the end date of your filter query (formatted) (since 1.16.7)  |
-| ${customer.time_budget_open_plain} | The open time budget for this customer at the end date of your filter query (integer value = seconds) (since 1.16.7)  |
+| Key                                | Description                                                                                                                                                                                                                                      |
+|------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ${customer.id}                     | The customer ID                                                                                                                                                                                                                                  |
+| ${customer.comment}                | The description of this customer                                                                                                                                                                                                                 |
+| ${customer.address}                | The customer address                                                                                                                                                                                                                             |
+| ${customer.name}                   | The customer name                                                                                                                                                                                                                                |
+| ${customer.contact}                | The customer contact                                                                                                                                                                                                                             |
+| ${customer.company}                | The customer company                                                                                                                                                                                                                             |
+| ${customer.vat}                    | The customer Vat ID                                                                                                                                                                                                                              |
+| ${customer.number}                 | The customer number                                                                                                                                                                                                                              |
+| ${customer.country}                | The customer country                                                                                                                                                                                                                             |
+| ${customer.homepage}               | The customer homepage                                                                                                                                                                                                                            |
+| ${customer.phone}                  | The customers phone number                                                                                                                                                                                                                       |
+| ${customer.mobile}                 | The customers mobile number                                                                                                                                                                                                                      |
+| ${customer.email}                  | The customers email address                                                                                                                                                                                                                      |
+| ${customer.fax}                    | The customers fax number                                                                                                                                                                                                                         |
+| ${customer.meta.x}                 | The customer [meta field]({% link _documentation/meta-fields.md %}) named `X`. The internal name `X` needs to be used in lowercase letters, eg. `FooBar` will be available as `${customer.meta.foobar}`. Only available if the field is visible. |
+| ${customer.budget_open}            | The open monetary budget for this customer at the end date of your filter query (formatted with currency) (since 1.16.7)                                                                                                                         |
+| ${customer.budget_open_plain}      | The open monetary budget for this customer at the end date of your filter query (plain float value) (since 1.16.7)                                                                                                                               |
+| ${customer.time_budget_open}       | The open time budget for this customer at the end date of your filter query (formatted) (since 1.16.7)                                                                                                                                           |
+| ${customer.time_budget_open_plain} | The open time budget for this customer at the end date of your filter query (integer value = seconds) (since 1.16.7)                                                                                                                             |
 
 ### Project variables
 
 If a project was selected in the invoice filter (search form) the following variables exist as well:
 
-| Key | Description |
-|---|---|
-| ${project.id} | The project ID |
-| ${project.name} | The project name |
-| ${project.comment} | The description of this project |
-| ${project.order_number} | The project order number |
-| ${project.start_date} | Projects start date-time |
-| ${project.end_date} | Projects end date-time |
-| ${project.order_date} | Projects order date-time |
-| ${project.budget_money} | Projects budget including currency |
-| ${project.budget_money_nc} | The projects budget without currency |
-| ${project.budget_money_plain} | The projects budget as unformatted value |
-| ${project.budget_time} | The projects time-budget as seconds |
-| ${project.budget_time_decimal} | The projects time-budget in decimal format (with localized separator) |
-| ${project.budget_time_minutes} | The projects time-budget in minutes with no decimals |
-| ${project.meta.x} | The project [meta field]({% link _documentation/meta-fields.md %}) named `X`. The internal name `X` needs to be used in lowercase letters, eg. `FooBar` will be available as `${project.meta.foobar}`. Only available if the field is visible.  |
-| ${project.budget_open} | The open monetary budget for this project at the end date of your filter query (formatted with currency) (since 1.16.7)  |
-| ${project.budget_open_plain} | The open monetary budget for this project at the end date of your filter query (plain float value) (since 1.16.7)  |
-| ${project.time_budget_open} | The open time budget for this project at the end date of your filter query (formatted) (since 1.16.7)  |
-| ${project.time_budget_open_plain} | The open time budget for this project at the end date of your filter query (integer value = seconds) (since 1.16.7)  |
+| Key                               | Description                                                                                                                                                                                                                                    |
+|-----------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ${project.id}                     | The project ID                                                                                                                                                                                                                                 |
+| ${project.name}                   | The project name                                                                                                                                                                                                                               |
+| ${project.comment}                | The description of this project                                                                                                                                                                                                                |
+| ${project.order_number}           | The project order number                                                                                                                                                                                                                       |
+| ${project.start_date}             | Projects start date-time                                                                                                                                                                                                                       |
+| ${project.end_date}               | Projects end date-time                                                                                                                                                                                                                         |
+| ${project.order_date}             | Projects order date-time                                                                                                                                                                                                                       |
+| ${project.budget_money}           | Projects budget including currency                                                                                                                                                                                                             |
+| ${project.budget_money_nc}        | The projects budget without currency                                                                                                                                                                                                           |
+| ${project.budget_money_plain}     | The projects budget as unformatted value                                                                                                                                                                                                       |
+| ${project.budget_time}            | The projects time-budget as seconds                                                                                                                                                                                                            |
+| ${project.budget_time_decimal}    | The projects time-budget in decimal format (with localized separator)                                                                                                                                                                          |
+| ${project.budget_time_minutes}    | The projects time-budget in minutes with no decimals                                                                                                                                                                                           |
+| ${project.meta.x}                 | The project [meta field]({% link _documentation/meta-fields.md %}) named `X`. The internal name `X` needs to be used in lowercase letters, eg. `FooBar` will be available as `${project.meta.foobar}`. Only available if the field is visible. |
+| ${project.budget_open}            | The open monetary budget for this project at the end date of your filter query (formatted with currency) (since 1.16.7)                                                                                                                        |
+| ${project.budget_open_plain}      | The open monetary budget for this project at the end date of your filter query (plain float value) (since 1.16.7)                                                                                                                              |
+| ${project.time_budget_open}       | The open time budget for this project at the end date of your filter query (formatted) (since 1.16.7)                                                                                                                                          |
+| ${project.time_budget_open_plain} | The open time budget for this project at the end date of your filter query (integer value = seconds) (since 1.16.7)                                                                                                                            |
 
 If you selected more than one project in the search, you will have further variables (same list then above) called `${project.1.name}`, `${project.2.name}` and so on.
 The order is not guaranteed, so it is not recommended relying on those variables.
@@ -473,16 +473,16 @@ The order is not guaranteed, so it is not recommended relying on those variables
 
 If an activity was selected in the invoice filter (search form) the following variables exist as well:
 
-| Key | Description |
-|---|---|
-| ${activity.id} | The activity ID |
-| ${activity.name} | The activity name |
-| ${activity.comment} | The description of this activity |
-| ${activity.meta.x} | The activity [meta field]({% link _documentation/meta-fields.md %}) named `X`. The internal name `X` needs to be used in lowercase letters, eg. `FooBar` will be available as `${activity.meta.foobar}`. Only available if the field is visible.  |
-| ${activity.budget_open} | The open monetary budget for this activity at the end date of your filter query (formatted with currency) (since 1.16.7)  |
-| ${activity.budget_open_plain} | The open monetary budget for this activity at the end date of your filter query (plain float value) (since 1.16.7)  |
-| ${activity.time_budget_open} | The open time budget for this activity at the end date of your filter query (formatted) (since 1.16.7)  |
-| ${activity.time_budget_open_plain} | The open time budget for this activity at the end date of your filter query (integer value = seconds) (since 1.16.7)  |
+| Key                                | Description                                                                                                                                                                                                                                      |
+|------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ${activity.id}                     | The activity ID                                                                                                                                                                                                                                  |
+| ${activity.name}                   | The activity name                                                                                                                                                                                                                                |
+| ${activity.comment}                | The description of this activity                                                                                                                                                                                                                 |
+| ${activity.meta.x}                 | The activity [meta field]({% link _documentation/meta-fields.md %}) named `X`. The internal name `X` needs to be used in lowercase letters, eg. `FooBar` will be available as `${activity.meta.foobar}`. Only available if the field is visible. |
+| ${activity.budget_open}            | The open monetary budget for this activity at the end date of your filter query (formatted with currency) (since 1.16.7)                                                                                                                         |
+| ${activity.budget_open_plain}      | The open monetary budget for this activity at the end date of your filter query (plain float value) (since 1.16.7)                                                                                                                               |
+| ${activity.time_budget_open}       | The open time budget for this activity at the end date of your filter query (formatted) (since 1.16.7)                                                                                                                                           |
+| ${activity.time_budget_open_plain} | The open time budget for this activity at the end date of your filter query (integer value = seconds) (since 1.16.7)                                                                                                                             |
 
 If you selected more than one activity in the search, you will have further variables (same list then above) called `${activity.1.name}`, `${activity.2.name}` and so on.
 The order is not guaranteed, so it is not recommended relying on those variables.
@@ -518,3 +518,17 @@ The invoice template that will be used for every invoice is `Freelancer (PDF)`:
 ```bash
 bin/console kimai:invoice:create --user=susan_super --timezone=UTC --by-project --template="Freelancer (PDF)" --start=2020-01-02 --end=2020-01-31
 ```
+
+## Filter and search
+
+The search supports filtering by the fields:
+- `creation date`
+- `customer`
+- `state`
+
+Besides these filters, you can query for a free search term, which will be searched in the fields:
+- `comment`
+- `customer name`
+- `customer company`
+
+{% include search-custom-field.md %}

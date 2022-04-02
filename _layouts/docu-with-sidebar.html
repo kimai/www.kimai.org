@@ -26,8 +26,12 @@ main_menu: documentation
                 <strong>{{ activeGroup.name }}</strong>
                 <div class="list-group list-group-transparent mb-6 mt-1">
                     {% for p in activeGroup.pages %}
-                        {% assign doc = site[collectionType] | where: "slug", p | first %}
-                        <a href="{{ doc.url }}" class="list-group-item list-group-item-action{% if page.url == doc.url %} active{% endif %}">{{ doc.title }}</a>
+                        {% if p == "-" %}
+                            <div class="dropdown-divider"></div>
+                        {% else %}
+                            {% assign doc = site[collectionType] | where: "slug", p | first %}
+                            <a href="{{ doc.url }}" class="list-group-item list-group-item-action{% if page.url == doc.url %} active{% endif %}">{{ doc.title }}</a>
+                        {% endif %}
                     {% endfor %}
                 </div>
             {% endif %}

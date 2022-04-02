@@ -3,6 +3,10 @@ title: SAML
 description: How to use SAML identity provider with Kimai
 toc: true
 canonical: /documentation/saml.html
+related:
+  - saml-authentik
+  - saml-keycloak
+  - saml-azure
 ---
 
 Kimai supports authentication via a SAML provider of your choice (for now it was tested with G Suite and MS Azure accounts).
@@ -122,7 +126,9 @@ If you have troubles with your certificate you could [try to use this SAML onlin
 
 You can find more information about the connection configs in the [onelogin/php-saml](https://github.com/onelogin/php-saml#how-it-works) library that is used for the SAML connections.
 
-### G Suite and roles (or groups)
+## Identity provider
+
+### G Suite (Google Workspace) and roles/groups
 
 If you want to sync user-roles as well, you have to know that Google doesn't support that out-of-the-box.
 You need to setup additional user attributes and add those to the SAML attributes of your application.
@@ -133,29 +139,26 @@ Links:
 
 ### Azure
 
-For Azure, please check the [Azure SAML documentation]({% link _documentation/azure.md %})
+For Azure, please check the [Azure SAML documentation]({% link _documentation/saml-azure.md %})
 
 ### Keycloak
 
-For Keycloak, please check the [Keycloak SAML documentation]({% link _documentation/keycloak.md %})
+For Keycloak, please check the [Keycloak SAML documentation]({% link _documentation/saml-keycloak.md %})
+
+### Authentik
+
+For Authentik, please check the [Authentik SAML documentation]({% link _documentation/saml-authentik.md %})
 
 ## Known limitations
 
 A manually registered user can login via SAML, but his account is then migrated to **SAML only**,
-so he can't login via password any longer.
+so he can't log in via password any longer.
 Additional all configured SAML attributes will be applied.
 To change such an account back to "password login", you need to update the `auth` column in the `kimai2_users` table and set the value from `saml` to `kimai`.
 
 ## Using SAML only
 
-Kimai does not support **SAML only** out of the box, but you can disable the normal login flow yb redirecting the URLs to the SAML login.
-
-This is an example for Apache:
-
-```
-RewriteEngine On
-RewriteRule  /(..)/login /auth/saml/login [L,R=301]
-```
+If SAML is activated, you can turn off the login form entirely by unchecking the `Login form` configuration under `Authentication` at [System > Settings]({% link _documentation/configurations.md %}).
 
 ## Troubleshooting
 

@@ -124,6 +124,7 @@ These are the existing rounding modes:
 
 ## Authentication
 
+- `Login form` - de-/activates the login form. This setting is only available if [SAML]({% link _documentation/saml.md %}) is activated.
 - `User registration` - de-/activates the self-registration. Do NOT activate this, if your Kimai instance is public accessible.
 - `Forgot password` - de-/activates the password reset function, that sends an email with a "reset my password" link 
 - `Forgotten password - seconds before a user can request the next e-mail` - if a password-reset email was sent, you should not allow to request another one too soon (for security reasons) 

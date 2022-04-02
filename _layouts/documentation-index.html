@@ -16,7 +16,9 @@ main_menu: documentation
 
     {% if page.lang != 'en' %}
         {% assign alertMsg = site.data.trans[page.lang].docu-alert-english %}
-        {% include alert.html type="warning" alert=alertMsg %}
+        {% if alertMsg != nil %}
+            {% include alert.html type="warning" alert=alertMsg %}
+        {% endif %}
     {% endif %}
 
     <div class="row row-cards">
@@ -39,8 +41,10 @@ main_menu: documentation
                         </p>
 
                         {% for p in group.pages %}
-                            {% assign doc = site.documentation | where: "slug", p | first %}
-                            <a class="btn btn-primary btn-sm" href="{{ doc.url }}">{{ doc.title }}</a>
+                            {% if p != "-" %}
+                                {% assign doc = site.documentation | where: "slug", p | first %}
+                                <a class="btn btn-primary btn-sm" href="{{ doc.url }}">{{ doc.title }}</a>
+                            {% endif %}
                         {% endfor %}
                     </div>
                 </div>

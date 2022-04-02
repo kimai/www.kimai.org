@@ -3,6 +3,7 @@ title: Teams
 description: Configure teams to limit access to projects and customers 
 toc: true
 since_version: 1.2
+canonical: /documentation/teams.html
 ---
 
 Teams allow you to organize your users in groups and limit access to customers and projects.

@@ -3,6 +3,7 @@ title: Export
 description: Export your timesheet data with Kimai into several different formats
 since_version: 0.8
 toc: true
+canonical: /documentation/export.html
 ---
 
 The export module allows you to export filtered timesheet data into several formats.

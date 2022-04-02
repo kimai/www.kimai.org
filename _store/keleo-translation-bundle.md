@@ -20,7 +20,7 @@ bundle:
     command: "kimai:bundle:translation:install"
     purchase: true
     versions:
-      - ["1.2", "1.15"]
+      - ["1.2 -1.3", "1.15"]
 screenshots:
   -  
     src: "/images/marketplace/translation-listing.png"
@@ -36,9 +36,9 @@ screenshots:
     description: "The edit dialog allows to change your custom translation"
 ---
 
-You can test the Plugin in the [Plugin demo]({% link _pages/demo.md %}).
+{% include documentation-link.html chapter="plugin-translation" %}
 
-Full documentation available [in the documentation]({% link _documentation/plugin-translation.md %}).
+You can test the Plugin in the [Plugin demo]({% link _pages/demo.md %}).
 
 {% include plugins/translation.md %}
  

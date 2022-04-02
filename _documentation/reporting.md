@@ -40,6 +40,14 @@ You can change the displayed month and (if the user owns the `view_other_timeshe
 
 - Required permission: `view_reporting`
 
+### Yearly view for one user
+
+Displays a full year of working times for one user.
+
+You can change the displayed year and (if the user owns the `view_other_timesheet` permissions) the user to display the report for.
+
+- Required permission: `view_reporting`
+
 ## List of users
 
 ### Weekly view for all users

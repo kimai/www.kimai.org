@@ -6,7 +6,7 @@ A Kimai plugin which allows adding custom content for:
 - A global warning message, shown to every logged-in user
 - An entire new page to display (markdown formatted) information for your users
  
-### Permissions
+## Permissions
 
 | Permission Name      | Description                                     |
 |----------------------|-------------------------------------------------|

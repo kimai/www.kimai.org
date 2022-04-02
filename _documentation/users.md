@@ -8,7 +8,7 @@ related:
 ---
 
 A user can be part of a [team]({% link _documentation/teams.md %}), which can limit/extend the visibility of data.
-Access to features within Kimai are handled by the [permission system]({% link _documentation/permissions.md %}), which is configurable through user roles.
+Access to certain features within Kimai are handled by the [permission system]({% link _documentation/permissions.md %}), which is configurable through user roles.
 
 ## Avatars
 
@@ -19,7 +19,7 @@ There are two types of user avatars:
 
 ## Filter and search
 
-The search drop-down supports filtering by the fields:
+The search supports filtering by the fields:
 - `role`
 - `state` (active, deactivated, all)
 
@@ -29,30 +29,17 @@ Besides these filters, you can query for a free search term, which will be searc
 - `title`
 - `email`
 
-Additionally, you can filter for [user preferences]({% link _documentation/user-preferences.md %}) by using a search phrase like `location:homeoffice`.
-This would find all users with the custom field `location` matching the term `homeoffice`.
-
-The search terms will be found within the full value, so searching for `office` would find:
-- `I love working in my office`
-- `Office`
-- `This office is beautiful`
-- `Our offices are very noisy`
-
-You can mix the search term and use multiple meta-field queries:
-- `location:homeoffice hello world` - find all users matching the search term `hello world` with the user-preference `location` matching the term `homeoffice`
-- `location:homeoffice contract:foo foo` - find all users matching the search term `foo` with the user-preference combination: `location` matching the term `homeoffice` and `contract` matching the term `foo`
-- `location:homeoffice contract:foo` - find all users with the user-preference combination: `location` matching the term `homeoffice` and `contract` matching the term `foo`
+{% include search-custom-field.md %}
 
 ## User registration
 
 User registration is disabled by default, as most Kimai installations are available through the public internet.
 
 If your Kimai installation is protected otherwise (e.g. internal network or other authentication mechanism) you can
-activate it through [System > Settings]({% link _documentation/configurations.md %}). It is then available via a link in the login screen.
+activate it through [System > Settings]({% link _documentation/configurations.md %}). The self-registration is then available via a link in the login screen.
 
-If a user enters his data (email, username and password) he will receive an email, with a confirmation link to activate the account.
-
-You need to enable [email support]({% link _documentation/emails.md %}) to actually use this feature.
+If someone registers a new account with email, username and password an confirmation email will be sent, including a link that needs to be clicked before the account will be activated.
+As this feature requires an email to work, you have to enable [email support]({% link _documentation/emails.md %}) to use it.
 
 ## Password reset
 
@@ -66,17 +53,17 @@ You can configure two settings to influence the security:
 - Token lifetime (in seconds: 3600 = 1 hour) - the allowed time before a link expires
 - Retry pause (in seconds: 3600 = 1 hour) - the allowed time between multiple retries
 
-You need to enable [email support]({% link _documentation/emails.md %}) to actually use this feature.
+As this feature requires an email to work, you have to enable [email support]({% link _documentation/emails.md %}) to use it.
 
 ## Login
 
-User can log-in with a username or email.
+User can log in with a username or email.
 
 If you activate the `Remember me` option, you can use the most common functions within the next time without a new login.
 
 ### Remember me login
 
-If you have chosen to log-in with the `Remember me` option, your login will be extended to one week ([default value configured in security.yaml]({{ site.kimai_v2_file }}/config/packages/security.yaml)).
+If you have chosen to log in with the `Remember me` option, your login will be extended to one week ([default value configured in security.yaml]({{ site.kimai_v2_file }}/config/packages/security.yaml)).
 After coming back and being remembered you have access to all the following features:
 
 - view your own timesheet

@@ -8,10 +8,6 @@ price: '0'
 version: 1.0.0
 download: https://github.com/tobybatch/ChromeKimaiBridge/archive/v1.0.0.zip
 github: https://github.com/tobybatch/ChromeKimaiBridge
-features:
-  - Allows a Kimai instace to be accessed from a browser pop up.
-  - Log time attached to specific Trello card or Github issue.
-  - View time logged against a card or issue.
 type: client
 tags:
   - Chrome
@@ -21,7 +17,11 @@ bundle:
 
 # ChromePlugin to Kimai Bridge
 
-This plugin allows time to logged from ChromePlugin tickets into a Kimai instance.
+This plugin allows time to be logged from ChromePlugin tickets into a Kimai instance.
+
+- Allows a Kimai instance to be accessed from a browser pop up
+- Log time attached to specific Trello card or Github issue
+- View time logged against a card or issue
 
 ## Installation
 
