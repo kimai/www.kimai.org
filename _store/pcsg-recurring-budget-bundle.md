@@ -1,16 +1,16 @@
 ---
-title: Recurring budget plugin for Kimai
+title: Recurring budget plugin for Kimai 
 name: Recurring budget plugin
-intro: "A Kimai 2 plugin that automatically adds money or time to your project budgets on a recurring basis with a custom interval. Set up your projects to receive a fixed amount of budget on a regular basis (e.g. 05:00 hours every month). Ideal for contracts with a regular budget bonus (e.g. maintenance agreements, SLAs etc.)."
+intro: "Automatically adds money or time to your project budgets on a recurring basis with a custom interval."
 developer: pcsg
 date: "2022-02-22 10:00:00 +0200"
-icon: fas fa-calendar-circle-plus
+icon: "fas fa-receipt"
 price: "149€"
 gumroad: apoebu
 features:
   - Automatic recurring budget credits for projects
   - Custom budget interval per project
-  - Detailled budget history view
+  - Detailed budget history view
   - Export budget summaries (PDF)
 new: true
 type: plugin
@@ -20,7 +20,6 @@ bundle:
   name: "RecurringBudgetBundle"
   command: "kimai:bundle:recurringbudget:install"
   purchase: true
-  assets: false
   versions:
     - ["1.0", "1.16.9"]
 screenshots:
@@ -37,23 +36,26 @@ screenshots:
     title: PDF Export
     description: "Example of a PDF budget summary export for one month."
   - 
-  src: "/images/marketplace/pcsg-recurring-budget-bundle-budgets.png"
+    src: "/images/marketplace/pcsg-recurring-budget-bundle-budgets.png"
     title: Project budgets overview
-    description: "Lists all projects with their currently avaiable (time or money) budgets and total budgets."
+    description: "Lists all projects with their currently available (time or money) budgets and total budgets."
   - 
     src: "/images/marketplace/pcsg-recurring-budget-bundle-history.png"
     title: Project budgets history
     description: "Lists all completed budget intervals and shows statistics for each of them."
   -
     src: "/images/marketplace/pcsg-recurring-budget-bundle-email.png"
-    title: Budget statisctis email
+    title: Budget statistics email
     description: "Example of a budget statistics email sent out to the project team lead after a completed budget interval."
 ---
+
+Set up your projects to receive a fixed amount of budget on a regular basis (e.g. 05:00 hours every month). 
+Ideal for contracts with a regular budget bonus (e.g. maintenance agreements, SLAs etc.).
 
 ## Features
 * Automatic budget credits on a per-project basis (time or money)
 * Custom budget interval (every month, every 90 days or whatever you desire)
-* Detailled budget history view for all projects and budget intervals in the Kimai backend
+* Detailed budget history view for all projects and budget intervals in the Kimai backend
 * Current budget view for all projects in the Kimai backend
 * Export budget summaries for specific time periods with all budget details for your documents or your customers
 * Send budget summary emails to project team leads each budget interval
@@ -61,8 +63,8 @@ screenshots:
 
 ## Requirements
 
-* Kimai2, v1.16 or higher
-* The ability to execute cronjobs on your server; this is required for executing the Kimai command that calculates
+* Kimai v1.16 or higher
+* The ability to execute cronjobs on your server; this is required for executing the command that calculates
   project budgets on a regular basis
 
 ## Usage
@@ -86,12 +88,14 @@ The project is now set up and is considered when the console command is executed
 
 The budget addition and calculation for all projects is done via the command:
 
-`bin/console recurring-budget:calculate`
+```bash
+bin/console recurring-budget:calculate
+```
 
 * Please make sure that you set up a cronjob that executes this command on a regular basis.
 * The cronjob interval depends on how your projects are set up; e.g. if all your projects get a budget on a monthly
   basis, then an execution interval of once per month is sufficient.
-* In its default setting the command considers all project budget intervals up to the execution date.
+* With default settings the command considers all project budget intervals up to the execution date.
 
 The budget calculation works in three steps:
 
@@ -104,15 +108,17 @@ or lets you recalculate previous budget intervals (e.g. after you adjusted some 
 
 The full parameter list can be seen with:
 
-`bin/console recurring-budget:calculate --help`
+```bash
+bin/console recurring-budget:calculate --help
+```
 
 ### Budget overview
 
 This plugin provides two new overview tables in the Kimai main menu.
 
-1. Project budgets
+**Project budgets**
 
-Lists all projects with their **currently avaiable (time or money) budgets and total budgets**. It also shows the budget
+Lists all projects with their **currently available (time or money) budgets and total budgets**. It also shows the budget
 credited for each budget interval.
 
 In the "responsible" column you can see the name of the user who is the team lead of the team that is assigned to the
@@ -121,7 +127,7 @@ project. Currently, it only reads the team lead of the first team in the list.
 This view is ideal for companies with multiple projects and project leads. It easily shows where the budget is positive
 and additional work may need to be done.
 
-2. Project budgets history
+**Project budgets history**
 
 Lists all **completed budget intervals** and shows statistics for each of them. Here you can track the history of budget
 credits, how much of a project budget was used and how much was remaining for each interval.
@@ -130,7 +136,7 @@ credits, how much of a project budget was used and how much was remaining for ea
 
 This plugin extends the Kimai export functionality with two views.
 
-In the "Export" menu you have the new "Customer budget" dropdown. Here you have two options:
+In the `Export` menu you have the new "Customer budget" dropdown. Here you have two options:
 
 1. PDF - Complete
 2. PDF - Without rates
@@ -145,4 +151,4 @@ This is intended for your internal documents or as information for you customers
 
 ## Support
 
-If you require support for the usage or setup of this plugin or find any bugs please contact support@pcsg.de!
+If you require support for the usage or setup of this plugin or find any bugs please contact [support@pcsg.de](mailto:support@pcsg.de).
