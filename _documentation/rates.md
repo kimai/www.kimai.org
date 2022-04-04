@@ -29,7 +29,7 @@ A __fixed rate__ always wins over an __hourly rate__.
 
 ## Rate changes
 
-Rate changes always only apply for future entries. If you change e.g. a users hourly rate, it will be used for all 
+Rate changes always only apply for future entries. If you change e.g. a user's hourly rate, it will be used for all 
 timesheet records that will be created from now on. But existing records will not be changed retroactive.
 
 Additionally, if a record already has an hourly or fixed rate set, it will not be changed if you change the customer, project or activity.
