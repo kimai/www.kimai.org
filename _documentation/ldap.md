@@ -206,18 +206,16 @@ User data is synchronized on each login, fetching the latest data from your LDAP
 
 **Password handling**
 
-Obviously Kimai does not store the users password when logged-in via LDAP and there is
-no fallback mechanism implemented, if your LDAP is not available (currently only ONE server can be configured).
+Kimai does not store the user password when logged-in via LDAP. There is no fallback mechanism for login, 
+if your LDAP is not available (only one LDAP server can be configured).
 
-{% include alert.html type="danger" alert="The default configuration allows a user to change the internal password. This manually chosen password is not overwritten by the LDAP plugin and would allow a user to login, even after you removed him from LDAP." %}
-
-To prevent that problem:
+When using LDAP you should:
 - Disable the "[Password reset]({% link _documentation/users.md %})" function via [System > Settings]({% link _documentation/configurations.md %})
-- Disable the `password_own_profile` and `password_other_profile` [permissions]({% link _documentation/permissions.md %}) for each role
+- Disable the `password_own_profile` and `password_other_profile` [permissions]({% link _documentation/permissions.md %}) for LDAP user (at least the normal user role) 
 
-If you don't adjust your configuration, you have to:
-- either deactivate users manually in Kimai after deleting their LDAP account
-- or use an attribute mapping to set the user deactivated flag via `setEnabled()`
+There is no auto-cleanup available:
+- If you delete users in LDAP, you have to delete or disable this account in Kimai manually
+- If you deactivate users in LDAP, you can configure an attribute mapping to set the user deactivated flag via `setEnabled()`
 
 ### User attributes
 
