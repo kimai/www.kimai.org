@@ -4,7 +4,7 @@ name: Recurring budget plugin
 intro: "Automatically adds money or time to your project budgets on a recurring basis with a custom interval."
 developer: pcsg
 date: "2022-02-22 10:00:00 +0200"
-icon: "fas fa-receipt"
+icon: "fas fa-file-invoice-dollar"
 price: "149€"
 gumroad: apoebu
 features:
