@@ -33,6 +33,11 @@ Which will then be mapped on the Kimai user attributes:
 ![X500 Surname](/images/documentation/keycloak-saml-6.png)
 ![X500 Email](/images/documentation/keycloak-saml-7.png)
 
+### Adjust Client Scopes
+
+- Go to Configuration -> Client Scopes -> role_list
+- Select Tab "Mappers", edit "role_list"
+- Set" Single Role Attribute" to "ON"
 
 ### Configure local.yaml
 
