@@ -41,7 +41,17 @@ This change is not reversible.
 
 Global activities cannot be assigned to a project.
 
-The reason for all above restrictions are existing timesheets, which would result in wrong assignments and/or wrong rates otherwise. 
+The reason for all above restrictions are existing timesheets, which would result in wrong assignments and/or wrong rates otherwise.
+
+Here is the solution/workaround that you have to apply for wrongly assigned activities:
+
+- Create the new activity 
+- Go to the timesheet section for all users
+- Filter all timesheet for the old activity (increase the page size if there are more than 50 results)
+- Click the checkbox in the upper left of the result table to check all timesheet rows
+- Now choose "Edit" from the dropdown below the table for batch-update mode
+- In the batch-update screen: choose the project and new activity and save
+- After there is no more timesheet with the old activity you can safely delete it
 
 ## Billable
 
