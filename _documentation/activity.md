@@ -30,7 +30,18 @@ These examples might vary heavily between different industries, the main usage a
 Each activity can be assigned its own color, for easier identification in various screens.
 
 If no color has been selected, the project color will be used. 
-If that is not defined as well, Kimai will fallback to the customer color and finally to the [default color]({% link _documentation/customer.md %}).
+If that is not defined as well, Kimai will fall back to the customer color and finally to the [default color]({% link _documentation/customer.md %}).
+
+## Editing an activity
+
+After an activity was created it cannot be re-assigned to (another) project.
+
+The only change that is possible: project specific activities can be made global by selecting the empty option from the project dropdown.
+This change is not reversible. 
+
+Global activities cannot be assigned to a project.
+
+The reason for all above restrictions are existing timesheets, which would result in wrong assignments and/or wrong rates otherwise. 
 
 ## Billable
 
