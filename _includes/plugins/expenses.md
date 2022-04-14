@@ -5,7 +5,7 @@
     - Negative amounts allow for complex bookings, budget and invoice adjustments
 - Manage expenses via API
 - Export expenses in: Excel, PDF, HTML
-- Support for custom-fields (see [Custom-fields plugin]({% link _store/keleo-custom-fields-bundle.md %}))
+- **Support for custom-fields (see [Custom-fields plugin]({% link _store/keleo-custom-fields-bundle.md %}))**
 - Include expenses in Kimai export module
 - Import expenses from Kimai 1
 
@@ -13,6 +13,9 @@ Expenses will be assigned to free configurable categories and each category has:
 - name
 - visibility flag
 - default cost
+- color
+- help text (will be shown when creating an expense)
+- description (will be copied into the expense description upon selection)
 
 Each expense has the following fields:
 - a date-time
