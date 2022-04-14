@@ -23,3 +23,20 @@ Since Kimai 1.6.2 and ExpensesBundle 1.5 this can be done with the invoice templ
 The value will be `expense` and can be used for example in Excel with `ifthan` formulas or in combination with a `conditional format`.
 
 The invoice template variable `${entry.category}` will contain the category name of the expense.
+
+## Filter and search
+
+The search supports filtering by the fields:
+- `daterange`
+- `customer`
+- `project`
+- `activity`
+- `expense category`
+- `user`
+- `billable`
+- `exported`
+
+The free search term will query the field:
+- `description`
+
+{% include search-custom-field.md %}
