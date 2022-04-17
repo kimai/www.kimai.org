@@ -17,6 +17,14 @@ There are two types of user avatars:
 - `Auto generated avatar` - a circle with colored background and username initials inside
 - `Image URL` - a user can configure an avatar URL in their profile (feature needs to be activated in [System > Settings]({% link _documentation/configurations.md %}))
 
+## Deactivated users
+
+If you uncheck the `Active` checkbox when editing the user profile and save:
+- the user will be hidden from the user listing => but you can display them again by using the search and selecting `Both` or `no` from the `Active` dropdown
+- the user won't be displayed in most dropdowns and reports
+
+You cannot deactivate your own user profile.
+
 ## Filter and search
 
 The search supports filtering by the fields:
