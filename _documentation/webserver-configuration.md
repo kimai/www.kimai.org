@@ -152,11 +152,36 @@ LoadModule rewrite_module libexec/apache2/mod_rewrite.so
 
 ## IIS on Windows or Azure
 
-This is not officially supported, basically because I have no way to test it...
+This is not officially supported, basically because I have no way to test it. But if you want to join the discussion, please visit the issue tracker 
+[here]({{ site.kimai_v2_repo }}/issues/979#issuecomment-514895906) and 
+[here]({{ site.kimai_v2_repo }}/issues/1583#issuecomment-604258299) and also check the 
+[Symfony documentation page](https://symfony.com/doc/3.4/deployment/azure-website.html#configure-the-web-server) which might help.
 
-But there are some discussions in the issue tracker [here]({{ site.kimai_v2_repo }}/issues/979#issuecomment-514895906) and 
-[here]({{ site.kimai_v2_repo }}/issues/1583#issuecomment-604258299) and a 
-[Symfony documentation page](https://symfony.com/doc/3.4/deployment/azure-website.html#configure-the-web-server) which could help.
+The following information was provided by a Kimai user:
+
+When executing the commands from the [official installation docs]({% link _documentation/installation.md %}) you might have to prefix 
+them with the absolute path to your PHP executable, e.g. `C:\Program Files\PHP\v7.4\php.exe bin/console kimai:install -n`.
+
+The webserver needs [file permissions as documented]({% link _documentation/installation.md %}#file-permissions).
+
+Remember to prefix the console command when creating your first user with 
+`C:\Program Files\PHP\v7.4\php.exe bin/console kimai:user:create username admin@example.com ROLE_SUPER_ADMIN`.
+
+**Webserver configuration**
+
+Create a standard website in IIS with document root set to your Kimai directory, e.g. `C:\htdocs\kimai2\public`.
+Make sure `memory_limit` is set to a minimum of 256M.
+Set appropriate handler mappings as below:
+
+![Handler Mappings](/images/documentation/iis-handler-mappings.png)
+
+Under `Request restrictions` you have to select the `Verbs` tab. 
+Here you can select `All verbs` or the following using the option “One of the following verbs:”
+`HEAD,POST,GET,PUT,PATCH,DELETE`
+
+![Request restrictions](/images/documentation/iis-request-restrictions.png)
+
+This is important, as the API requires those methods: you would not be able to use Kimai properly, e.g. stop timesheets.
 
 ## Reverse proxy
 
