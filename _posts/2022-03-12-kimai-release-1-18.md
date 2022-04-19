@@ -12,7 +12,7 @@ The releases 1.18.x were published between February and March 2022.
 
 ## Highlights 
 
-From the releases [1.18](https://github.com/kevinpapst/kimai2/releases/tag/1.18), [1.18.1](https://github.com/kevinpapst/kimai2/releases/tag/1.18.1) and [1.18.2](https://github.com/kevinpapst/kimai2/releases/tag/1.18.2) are:
+New feature highlights from the releases [1.18](https://github.com/kevinpapst/kimai2/releases/tag/1.18), [1.18.1](https://github.com/kevinpapst/kimai2/releases/tag/1.18.1) and [1.18.2](https://github.com/kevinpapst/kimai2/releases/tag/1.18.2) are:
  
 - Reporting: choose data-types (duration, rate, internal rate)
 - Reporting: new report "user per year"
