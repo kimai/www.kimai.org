@@ -183,8 +183,9 @@ You can have a look at [https://github.com/Keleo/kimai2-invoice-templates](https
 ### Twig templates
 
 Generally speaking, you have two main variables in your template which you should use:
-- `model` which is an instance of `App\Model\InvoiceModel`
+- `entries` which is an array of arrays, with the first level representing the invoice items and the second level being `Timesheet entry variables` (see below)
 - `invoice` which is an array of variables (see `Template variables` below), just with a different syntax for access, e.g.: `{% raw %}{{ invoice['invoice.due_date'] }}{% endraw %}` instead of `{% raw %}${invoice.due_date}{% endraw %}` 
+- don't rely on the `model` variable (which is an instance of `App\Model\InvoiceModel`) as it's accessor methods can change without warning
 
 Please see the [default templates]({{ site.kimai_v2_file }}/templates/invoice/renderer) at
 GitHub to find out which variables can be used.
@@ -195,15 +196,15 @@ Use this debug template to find out which variables are available:
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>{{ model.invoiceNumber }}-{{ model.customer.company|default(model.customer.name)|u.snake }}</title>
+    <title>{{ invoice['invoice.number'] }}-{{ invoice['customer.company']|default(invoice['customer.name'])|u.snake }}</title>
     <style type="text/css">
         {{ encore_entry_css_source('invoice-pdf')|raw }}
     </style>
 </head>
 <body>
 <div class="wrapper">
+    <h3>The following list of variables is available for this invoice:</h3>
     <p>Please note, that the available variables will change depending on your search. E.g. the {{ '{{ project }}' }} variables are only available if you selected a project in your search filter.</p>
-    <p>The following list of variables is available for this invoice:</p>
     <table class="items">
         <tr>
             <th>Variable</th>
@@ -212,8 +213,33 @@ Use this debug template to find out which variables are available:
         {% for name, value in invoice %}
             <tr class="{{ cycle(['odd', 'even'], loop.index0) }}">
                 <td>{{ "{{ invoice['" ~ name ~ "'] }}" }}</td>
-                <td>{{ value }}</td>
+                <td>{{ invoice[name] }}</td>
             </tr>
+        {% endfor %}
+    </table>
+    <h3>The following list is available for all timesheet entries, which can be rendered like this:</h3>
+    <pre>
+    {{ '{%' }} for entry in entries {{ '%}' }}
+    &lt;ul&gt;
+        {{ '{%' }} for name, value in entry {{ '%}' }}
+            &lt;li&gt;{{ '{{ name }}' }}: {{ '{{ value }}' }}&lt;/li&gt;
+        {{ '{%' }} endfor {{ '%}' }}
+    &lt;/ul&gt;
+    {{ '{%' }} endfor {{ '%}' }}
+    </pre>
+    <p>The table below contains only the first timesheet record:</p>
+    <table class="items">
+        <tr>
+            <th>Variable</th>
+            <th>Value</th>
+        </tr>
+        {% for entry in entries|slice(1) %}
+            {% for name, value in entry %}
+                <tr class="{{ cycle(['odd', 'even'], loop.index0) }}">
+                    <td>{{ "{{ entry['" ~ name ~ "'] }}" }}</td>
+                    <td>{{ value }}</td>
+                </tr>
+            {% endfor %}
         {% endfor %}
     </table>
 </div>
@@ -319,12 +345,11 @@ See below in `Template variables` to find out which variables you can use.
 
 ## Template variables
 
-Be aware, that the following list of variables is only working for the "document" based formats, but NOT for twig templates.
-Twig templates are rendered actively, it is up to the developer to calculate what is needed.
+Be aware, that the following list of variables is working for the "document" based formats (ODS, XLSX, CSV, DOCX).
+
+Twig rendering is different, you have to access the variables with `{{ invoice['xxx.yyy'] }}` instead of `${xxx.yyy}`. 
 
 ### Global variables
-
-The documents which are rendered passively (ODS, XLSX, CSV, DOCX) can use the following global variables:
 
 | Key                         | Description                                                                             |
 |-----------------------------|-----------------------------------------------------------------------------------------|
@@ -378,7 +403,7 @@ The documents which are rendered passively (ODS, XLSX, CSV, DOCX) can use the fo
 
 ### Timesheet entry variables
 
-For each timesheet entry you can use the variables from the following table.
+For each timesheet record you can use these variables:
 
 | Key                       | Description                                                                       | Example         |
 |---------------------------|-----------------------------------------------------------------------------------|-----------------|
@@ -419,6 +444,8 @@ For each timesheet entry you can use the variables from the following table.
 
 ### Customer variables
 
+Variables for the customer who is receiving the invoice:
+
 | Key                                | Description                                                                                                                                                                                                                                      |
 |------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ${customer.id}                     | The customer ID                                                                                                                                                                                                                                  |
@@ -443,7 +470,7 @@ For each timesheet entry you can use the variables from the following table.
 
 ### Project variables
 
-If a project was selected in the invoice filter (search form) the following variables exist as well:
+ONLY if a project was selected in the invoice filter (search form) the following variables exist as well:
 
 | Key                               | Description                                                                                                                                                                                                                                    |
 |-----------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -471,7 +498,7 @@ The order is not guaranteed, so it is not recommended relying on those variables
 
 ### Activity variables
 
-If an activity was selected in the invoice filter (search form) the following variables exist as well:
+ONLY if an activity was selected in the invoice filter (search form) the following variables exist:
 
 | Key                                | Description                                                                                                                                                                                                                                      |
 |------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -491,7 +518,7 @@ The order is not guaranteed, so it is not recommended relying on those variables
 
 You can upload invoice documents via the UI at `/en/invoice/document_upload`.
 
-Due to security restriction currently only the upload of the following formats is allowed: `DOCX`, `ODS`, `XLSX`.
+Due to security restrictions currently only the upload of the following formats is allowed: `DOCX`, `ODS`, `XLSX`.
 
 There is a known bug in LibreOffice which exports DOCX files with a wrong mime-type. These files will not be accepted
 by Kimai with the error `This file type is not allowed` ([read this issue](https://github.com/kevinpapst/kimai2/issues/1916) for more information).
@@ -519,7 +546,7 @@ The invoice template that will be used for every invoice is `Freelancer (PDF)`:
 bin/console kimai:invoice:create --user=susan_super --timezone=UTC --by-project --template="Freelancer (PDF)" --start=2020-01-02 --end=2020-01-31
 ```
 
-## Filter and search
+## Filter and search in the invoice archive
 
 The search supports filtering by the fields:
 - `creation date`
