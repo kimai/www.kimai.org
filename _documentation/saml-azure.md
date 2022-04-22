@@ -54,19 +54,6 @@ Other languages are accessible through the Microsoft Documentation under:
     | Sign on URL                                | https://timetracking.example.com/                   |
     | Logout Url                                 | https://timetracking.example.com/auth/saml/logout   |
 
-8. Edit the **User Attributes & Claims** and ensure the following settings: 
-![Picture](/images/documentation/azure-saml-pic4.png)  
-**Note**: It is likely, that you have a missing entry **displayname**, thus please add the claim by clicking **Add new claim** and set the following settings:  
-![Picture](/images/documentation/azure-saml-pic5.png)
-
-    | Setting          | Value                                                 |
-    |------------------|-------------------------------------------------------|
-    | Name             | displayname                                           |
-    | Namespace        | http://schemas.xmlsoap.org/ws/2005/05/identity/claims |
-    | Source attribute | user.displayname                                      |
-
-    After applying these changes hit **Save**.
-    
 9. Return to the **Single Sign-On**(Visible in the navigation panel on the left) and download **Certificate (Base64)**:
 ![Picture](/images/documentation/azure-saml-pic6.png) 
 10. Copy the three values of **Set up Kimai**, as we will need them to configure Kimai:
@@ -87,8 +74,9 @@ kimai:
         activate: true
         title: Azure AD SAML
         mapping:
+            - { saml: $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name, kimai: username }
             - { saml: $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress, kimai: email }
-            - { saml: $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/displayname, kimai: alias }
+            - { saml: $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname, kimai: alias }
         roles:
             attribute: Roles
             mapping:
