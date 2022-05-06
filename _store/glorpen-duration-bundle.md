@@ -4,7 +4,8 @@ name: Overridable Duration Rounding plugin
 intro: "Override duration rounding for customers, projects and activities"
 developer: glorpen
 date: "2022-05-06 11:49:16 +0200"
-icon: fab fa-hourglass
+icon: far fa-hourglass
+new: true
 price: "0"
 version: v1.0.2
 download: https://github.com/glorpen/kimai-duration-plugin/archive/refs/heads/master.zip
