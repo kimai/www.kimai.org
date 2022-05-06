@@ -10,7 +10,6 @@ demo: true
 price: "0€"
 gumroad: kimai-invoice
 featured: "Enhanced invoicing features: change format locale, automatic timesheet proof PDF for new invoices."
-new: true
 toc: false
 type: featured
 tags:
