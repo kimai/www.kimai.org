@@ -19,11 +19,11 @@ var/plugins/{{ plugin }}/
 
 {% highlight plaintext %}
 cd kimai/var/plugins/
-git clone {{ include.clone }}
+git clone {{ include.clone }} {{ plugin }}
 {% endhighlight %}
     {% endif %}
 
-    <p>The file structure needs to like like this afterwards:</p>
+    <p>The file structure needs to look like this afterwards:</p>
 
 {% highlight plaintext %}
 var/plugins/
