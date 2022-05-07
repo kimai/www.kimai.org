@@ -18,7 +18,7 @@ bin/console kimai:timesheet:stop-all
 
 This will immediately stop all active records. Validations will NOT be executed, which normally takes place if entries are stopped manually! 
 
-### Reset forgotten password
+## Reset forgotten password
 
 If you lost your (admin) password and don't have another admin account to reset it and deactivated the "forgot password" function,
 you can use the following console command:
