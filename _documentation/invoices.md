@@ -524,28 +524,6 @@ There is a known bug in LibreOffice which exports DOCX files with a wrong mime-t
 by Kimai with the error `This file type is not allowed` ([read this issue](https://github.com/kevinpapst/kimai2/issues/1916) for more information).
 The workaround is to change the document with another word processor: Apple pages, Google Drive and Microsoft 365 Online Office will export the DOCX files with the correct mimetype.
 
-## Create invoices with cronjobs
-
-Kimai comes with a new command, which allows you to create invoices from the command line.
-When combined with a cronjob, you can automate your invoice creation.
-
-Find all available options with the `--help` parameter:
-```bash
-bin/console kimai:invoice:create --help 
-```
-
-This command will create one invoice for every customer which had timesheets in this month.
-The invoice template that will be used is fetched from the customer meta-field `inv_tpl` (can be an ID or a template name):
-```bash
-bin/console kimai:invoice:create --user=susan_super --timezone=Europe/Berlin --by-customer --template-meta=inv_tpl 
-```
-
-This command will create one invoice for every project which had timesheets in January 2020.
-The invoice template that will be used for every invoice is `Freelancer (PDF)`:
-```bash
-bin/console kimai:invoice:create --user=susan_super --timezone=UTC --by-project --template="Freelancer (PDF)" --start=2020-01-02 --end=2020-01-31
-```
-
 ## Filter and search in the invoice archive
 
 The search supports filtering by the fields:
@@ -559,3 +537,7 @@ Besides these filters, you can query for a free search term, which will be searc
 - `customer company`
 
 {% include search-custom-field.md %}
+
+## Create invoices with cronjobs
+
+See [command line tools]({% link _documentation/commands.md %}) to find out how to create invoices from the command line.

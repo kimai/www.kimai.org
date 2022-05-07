@@ -72,7 +72,7 @@ If you activate the `Remember me` option, you can use the most common functions 
 
 ### Remember me login
 
-If you have chosen to log in with the `Remember me` option, your login will be extended to one week ([default value configured in security.yaml]({{ site.kimai_v2_file }}/config/packages/security.yaml)).
+If you have chosen to log in with the `Remember me` option, your login will be extended to [one week]({{ site.kimai_v2_file }}/config/packages/security.yaml).
 After coming back and being remembered you have access to all the following features:
 
 - view your own timesheet
@@ -82,12 +82,3 @@ After coming back and being remembered you have access to all the following feat
 If you are an administrator, you will see all your allowed options in the menu, but will be redirected to the login
 form when you try to access them. This is a security feature to prevent abuse in case you forgot to logout in public
 environments.
-
-### Admin password forgotten
-
-If you lost your admin password and don't have another admin account to reset it and deactivated the "forgot password" function,
-you can use the following console command:
-
-```bash
-bin/console kimai:user:password
-```
