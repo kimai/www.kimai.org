@@ -18,6 +18,11 @@ bin/console kimai:timesheet:stop-all
 
 This will immediately stop all active records. Validations will NOT be executed, which normally takes place if entries are stopped manually! 
 
+You can run this command via cron-at regular intervals, e.g. to stop all forgotten timesheet records at midnight (crontab example).
+```
+0 0 * * * /var/www/kimai2/bin/console kimai:timesheet:stop-all >> /dev/null
+```
+
 ## Reset forgotten password
 
 If you lost your (admin) password and don't have another admin account to reset it and deactivated the "forgot password" function,
