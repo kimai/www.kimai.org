@@ -108,7 +108,9 @@ You can activate it enabling the [permissions]({% link _documentation/permission
 Invoices and exports share the export state, which is used to mark timesheet records as processed.
 These records cannot be edited any longer by regular users and are excluded by default from further invoices and exports.
 
-You need to tick the checkbox before saving the invoice, to automatically set the export state on all filtered timesheet records.
+You need to tick the "mark as export" checkbox before saving the invoice, to automatically set the export state on all filtered timesheet records.
+
+The "mark as export" checkbox is only available for users with the `edit_export_other_timesheet` [permission]({% link _documentation/permissions.md %}).
 
 For further information read the [timesheet documentation]({% link _documentation/timesheet.md %}).
 

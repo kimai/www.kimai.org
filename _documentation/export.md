@@ -20,6 +20,8 @@ There are a couple of differences in these two Kimai modules, the most important
 Giving a user the permission `create_export` to export data, allows him to see most time related data in Kimai 
 (like customer, projects, activities, rates, time worked per user and more).
 
+The "mark as export" checkbox is only available for users with the `edit_export_other_timesheet` [permission]({% link _documentation/permissions.md %}).
+
 {% include alert.html type="warning" alert="The export extension might not check all available permissions, as this would defeat the purpose of an export." %}
 
 ## Export state
