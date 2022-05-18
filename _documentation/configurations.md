@@ -16,8 +16,9 @@ users with the permission `system_configuration` (by default [ROLE_SUPER_ADMIN](
 - `Time-tracking mode` - see below
 - `Default start-time` - not used in all time-tracking modes, read more about the accepted formats [here](https://www.php.net/manual/en/datetime.formats.php) and [here](https://www.php.net/manual/en/datetime.formats.time.php)
 - `Allow time entries in the future` - Whether future booking of timesheet records are possible or not (eg. pre-book meetings for next week)
+- `Allow time entries with an empty duration` - Whether timesheet records are allowed to have a duration of zero seconds
 - `Allow overlapping time entries` - If not checked, you cannot have entries at the same time (even one minute overlap will be prevented)
-- `Allow overbooking of stored budgets` - 
+- `Allow overbooking of stored budgets` - Whether users can book more work than allowed via the customer/project/activity budget
 - `Permitted number of simultaneously running time entries` - by default it is `1`, which will automatically stop the currently running record when a new one is started. 
   If it is greater than 1 and as soon as the limit is reached, the user has to manually stop at least one active entry (an error message will be shown) and the 
   global tick-tack clock will be replaced with a dropdown.
@@ -62,6 +63,8 @@ make sure to remove this permission for persons without special access regulatio
 
 - `Number of entries taken over from previous weeks` - defines the maximum number of "recent activity" rows that will be pre-filled in new weeks.
 You can deactivate that feature by setting the value to 0. 
+- `Take over entries from the last X weeks` - the amount of weeks to go back in time to calculate  (empty or 0 for all time)
+- `Minimum number of rows` - how many rows should be displayed by default
 
 ## Lockdown period
 
@@ -156,15 +159,20 @@ These are the existing rounding modes:
 
 ## Calendar 
 
-- `week_numbers` - whether week numbers should be displayed in the monthly view (default: true)
-- `weekends` - whether weekends should be displayed (default: true)
-- `day_limit` - defined the max amount of items to be displayed for one day in the monthly view (default: 4)
-- `slot_duration` - defines the duration for each calendar slot (row) in the week and day views (default: 00:30:00 = 30 minutes)
+- `Display week numbers` - whether week numbers should be displayed in the monthly view (default: true)
+- `Display weekends` - whether weekends should be displayed (default: true)
+- `Start of normal business hours` - the start time of your working day, which will be highlighted in the weekly and daily view (default: 08:00)
+- `End of normal business hours` - the end time of your working day, which will be highlighted in the weekly and daily view (default: 18:00)
+- `Start of visible time range` - the start time of the calendars week and day view (default: 00:00)
+- `End of visible time range` - the end time of the calendars week and day view (default: 24:00)
+- `Slot duration for week- and day view` - defines the duration for each calendar slot (row) in the week and day views, format: hh:mm:ss (default: 00:30:00 = 30 minutes)
+- `Amount of entries for drag&drop` - amount of rows per drag & drop box (0 = deactivated) 
+- `Display of the titles of calendar entries` - which data should be displayed in the title of each calendar entry
+
+Not editable right now:
+
+- `day_limit` - defined the max amount of items to be displayed for one day in the monthly view (default: 4) 
 - `businessHours.days` - defines your working days, which will be highlighted in the weekly and daily view. counting starts with sunday and the index 0, so 1 = monday, ..., 6 = saturday. (default: 1-5 / monday to friday)
-- `businessHours.begin` - the start time of your working day, which will be highlighted in the weekly and daily view (default: 08:00)
-- `businessHours.end` - the end time of your working day, which will be highlighted in the weekly and daily view (default: 18:00)
-- `visibleHours.begin` - the start time of the calendars week and day view (default: 00:00)
-- `visibleHours.end` - the end time of the calendars week and day view (default: 24:00)
 
 ## My company
 
