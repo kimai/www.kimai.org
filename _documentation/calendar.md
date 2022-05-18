@@ -30,6 +30,17 @@ You can remove every timesheet record by drag & drop onto the "Delete" button:
 
 ![Picture](/images/documentation/calendar-delete.png)
 
+## Switching user
+
+Since version 1.20 you can switch the account whose data is displayed, if your user owns the permission `view_other_timesheet`.
+
+If you are able to switch the account, if depends on the following permissions if you can manipulate records:
+- edit existing records: `edit_other_timesheet`
+- create new records: `create_other_timesheet`
+- delete user records: `delete_other_timesheet`
+
+The recent activities drag & drop is also switched to the account currently displayed.
+
 ## Calendar configurations
 
 The look and feel of the calendar can be customized via [System > Settings]({% link _documentation/configurations.md %}).
