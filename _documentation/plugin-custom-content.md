@@ -36,6 +36,16 @@ Make sure that the "mark as exported" checkbox is pre-selected:
 $('#invoice-print-form input[name=markAsExported]').prop('checked', true);
 ```
 
+Set the activity description upon selection as description for the timesheet record:
+```javascript
+$('body').on('change.select2', '#timesheet_edit_form_activity', function() {
+    const descriptionField = $('#' + $(this.form).prop('name') + '_description');
+    kimai.getPlugin('api').get('/api/activities/' + $(this).val(), {}, function(data) {
+        descriptionField.val(data.comment);
+    });
+});
+```
+
 ### Alert
 
 ```markdown
