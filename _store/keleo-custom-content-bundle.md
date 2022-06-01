@@ -47,8 +47,6 @@ You can test the Plugin in the [Plugin demo]({% link _pages/demo.md %}).
 
 {% include plugins/custom-content.md %}
 
-## Custom CSS plugin  
+#### Custom CSS plugin  
 
-If you only want to add some custom stylesheets, you can have a look at the [Custom CSS plugin]({% link _store/keleo-css-custom-bundle.md %}).
-
-This plugin here does the same, but offers more features. 
+If you only want to add some custom stylesheets, you can have a look at the free [Custom CSS plugin]({% link _store/keleo-css-custom-bundle.md %}).
