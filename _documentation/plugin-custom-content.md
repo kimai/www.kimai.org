@@ -18,8 +18,7 @@ If the title is empty, the menu will be hidden.
 
 ### Javascript
 
-React on global events:
-
+React on global events and utilize the Kimai Javascript API:
 ```javascript
 document.addEventListener('kimai.initialized', function(event) {
     alert(event.detail.kimai.getTranslation().get('confirm'));
@@ -28,7 +27,9 @@ document.addEventListener('kimai.initialized', function(event) {
 
 Select an Activity e.g. to simulate a global default activity. The ID `1234` is the Activity ID to be selected (should be global).
 ```javascript
-$('body').on('change.select2', '#timesheet_edit_form_activity', function() { setTimeout( function() { $('#timesheet_edit_form_activity').val('1234').trigger('change'); }, 200 ); });
+$('body').on('change.select2', '#timesheet_edit_form_activity', function() { 
+    setTimeout( function() { $(this).val('1234').trigger('change'); }, 200 ); 
+});
 ```
 
 Make sure that the "mark as exported" checkbox is pre-selected: 
