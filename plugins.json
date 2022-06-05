@@ -10,6 +10,8 @@ permalink: /plugins.json
         {%- assign developer = site.data.developer[product.developer] -%}
         "name": "{{ product.name }}",
         "url": "{{ product.url | absolute_url }}",
+        {%- if product.gumroad != nil %}
+        "buy": "https://gum.co/{{ product.gumroad }}",{%- endif %}
         "developer": {
             "name": "{{ developer.name }}",
             "homepage": {% if developer.homepage %}"{{ developer.homepage }}"{% else %}null{% endif %}
