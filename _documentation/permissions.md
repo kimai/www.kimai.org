@@ -45,23 +45,27 @@ This is the full list of existing permissions with short descriptions:
 | Permission name                   | Description                                                                                                                                    |
 |-----------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Activity (Admin)**              |                                                                                                                                                |
-| budget_activity                   | Allows to see the budget reports for activities of assigned projects/customers                                                                 |
+| budget_activity                   | Allows to see the budget (monetary) reports for activities of assigned projects/customers                                                      |
+| time_activity                     | Allows to see the budget (time) reports for activities of assigned projects/customers                                                          |
 | create_activity                   | Create a new activity                                                                                                                          |
 | delete_activity                   | Delete activities                                                                                                                              |
 | edit_activity                     | Edit existing activities                                                                                                                       |
 | permissions_activity              | Allows to edit the teams for assigned activities                                                                                               |
 | view_activity                     | Allows access to the activity administration                                                                                                   |
 | **Activity (Team member)**        |                                                                                                                                                |
-| budget_team_activity              | Allows team-members to see the budget reports for activities of assigned projects/customers                                                    |
+| budget_team_activity              | Allows team-members to see the budget (money) reports for activities of assigned projects/customers                                            |
+| time_team_activity                | Allows team-members to see the budget (time) reports for activities of assigned projects/customers                                             |
 | edit_team_activity                | Allows team-members to edit activities of assigned projects/customers                                                                          |
 | view_team_activity                | Allows team-members to access activity administration                                                                                          |
 | **Activity (Teamlead)**           |                                                                                                                                                |
-| budget_teamlead_activity          | Allow team leaders to see the budget reports for activities of assigned projects/customers                                                     |
+| budget_teamlead_activity          | Allow team leaders to see the budget (money) reports for activities of assigned projects/customers                                             |
+| time_teamlead_activity            | Allow team leaders to see the budget (time) reports for activities of assigned projects/customers                                              |
 | edit_teamlead_activity            | Allow team leaders to edit activities for assigned projects/customers                                                                          |
 | permissions_teamlead_activity     | Allow team leaders to edit the teams for assigned activities                                                                                   |
 | view_teamlead_activity            | Allow team leaders to access activity administration                                                                                           |
 | **Customer (Admin)**              |                                                                                                                                                |
-| budget_customer                   | Allows to see the budget reports for the customer                                                                                              |
+| budget_customer                   | Allows to see the budget (money) reports for the customer                                                                                      |
+| time_customer                     | Allows to see the budget (time) reports for the customer                                                                                       |
 | comments_create_customer          | Allows to create comments for the customer (needs comments_customer)                                                                           |
 | comments_customer                 | Allows to see the comment section for customers                                                                                                |
 | create_customer                   | Create new customers                                                                                                                           |
@@ -71,14 +75,16 @@ This is the full list of existing permissions with short descriptions:
 | permissions_customer              | Allows to edit the teams for assigned customers                                                                                                |
 | view_customer                     | Allows access to the customer administration                                                                                                   |
 | **Customer (Team member)**        |                                                                                                                                                |
-| budget_team_customer              | Allows team-members to see the budget reports for assigned customers                                                                           |
+| budget_team_customer              | Allows team-members to see the budget (money) reports for assigned customers                                                                   |
+| time_team_customer                | Allows team-members to see the budget (time) reports for assigned customers                                                                    |
 | comments_create_team_customer     | Allows team-members to create comments for the customer (needs comments_team_customer)                                                         |
 | comments_team_customer            | Allows team-members to see the comment section for customers                                                                                   |
 | details_team_customer             | Allows team-members to see customer details                                                                                                    |
 | edit_team_customer                | Allows team-members to edit assigned customers                                                                                                 |
 | view_team_customer                | Allows team-members to access project administration                                                                                           |
 | **Customer (Teamlead)**           |                                                                                                                                                |
-| budget_teamlead_customer          | Allow team leaders to see the budget reports for assigned customers                                                                            |
+| budget_teamlead_customer          | Allow team leaders to see the budget (money) reports for assigned customers                                                                    |
+| time_teamlead_customer            | Allow team leaders to see the budget (time) reports for assigned customers                                                                     |
 | comments_create_teamlead_customer | Allow team leaders to create comments for the customer (needs comments_teamlead_customer)                                                      |
 | comments_teamlead_customer        | Allow team leaders to see the comment section for customers                                                                                    |
 | details_teamlead_customer         | Allow team leaders to see customer detail                                                                                                      |
@@ -94,7 +100,8 @@ This is the full list of existing permissions with short descriptions:
 | upload_invoice_template           | Allows to upload custom invoice templates                                                                                                      |
 | view_invoice                      | Gives access to the [invoice]({% link _documentation/invoices.md %}) screen and the list of all existing invoices                              |
 | **Project (Admin)**               |                                                                                                                                                |
-| budget_project                    | Allows to see the budget reports for projects                                                                                                  |
+| budget_project                    | Allows to see the budget (money) reports for projects                                                                                          |
+| time_project                      | Allows to see the budget (time) reports for projects                                                                                           |
 | comments_create_project           | Allows to create comments for the projects (needs comments_projects)                                                                           |
 | comments_project                  | Allows to see the comment section for projects                                                                                                 |
 | create_project                    | Create a new project                                                                                                                           |
@@ -104,14 +111,16 @@ This is the full list of existing permissions with short descriptions:
 | permissions_project               | Allows to edit the teams for assigned projects                                                                                                 |
 | view_project                      | Allows access to the project administration                                                                                                    |
 | **Project (Team member)**         |                                                                                                                                                |
-| budget_team_project               | Allows team-members to see the budget reports for assigned projects or projects of assigned customers                                          |
+| budget_team_project               | Allows team-members to see the budget (money) reports for assigned projects or projects of assigned customers                                  |
+| time_team_project                 | Allows team-members to see the budget (time) reports for assigned projects or projects of assigned customers                                   |
 | comments_create_team_project      | Allows team-members to create comments for the project (needs comments_team_project)                                                           |
 | comments_team_project             | Allows team-members to see the comment section for project                                                                                     |
 | details_team_project              | Allows team-members to see project details                                                                                                     |
 | edit_team_project                 | Allows team-members to edit assigned projects or projects for assigned customers                                                               |
 | view_team_project                 | Allows team-members to access projects administration                                                                                          |
 | **Project (Teamlead)**            |                                                                                                                                                |
-| budget_teamlead_project           | Allow team leaders to see the budget reports for assigned projects or projects of assigned customers                                           |
+| budget_teamlead_project           | Allow team leaders to see the budget (money) reports for assigned projects or projects of assigned customers                                   |
+| time_teamlead_project             | Allow team leaders to see the budget (time) reports for assigned projects or projects of assigned customers                                    |
 | comments_create_teamlead_project  | Allow team leaders to create comments for the project (needs comments_team_project)                                                            |
 | comments_teamlead_project         | Allow team leaders to see the comment section for project                                                                                      |
 | details_teamlead_project          | Allow team leaders to see project details                                                                                                      |
