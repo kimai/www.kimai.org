@@ -33,6 +33,9 @@ There is a button that will open a new modal, to enter a role name. This new rol
 
 {% include alert.html type="warning" alert="Allowed character are: `A-Z` and `_`. If you use different character, you might experience strange bugs." %}
 
+Custom role names must start with `ROLE_` and need to be written in uppercase letters, so instead of using `Manager` you have to create `ROLE_MANAGER`. 
+This is required if you want to test for role permissions programmatically.
+
 ## Permissions 
 
 By turning permissions `on` and `off` for specific roles, you widen or limit the access to certain features.
