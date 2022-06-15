@@ -14,7 +14,7 @@ redirect_from:
 
 {% capture alert_note %}
 Some tweaks may be necessary to these instructions if you have a developer setup or update on your local computer 
-instead of a server. Read the [installation docu]({% link _documentation/installation.md %}) for more information.
+instead of a server. Read the [installation documentation]({% link _documentation/installation.md %}) for more information.
 {% endcapture %}
 {% assign alert_note = alert_note| markdownify %}
 {% include alert.html type="info" alert=alert_note %} 
@@ -25,7 +25,7 @@ git fetch --tags
 git checkout {{ site.kimai_v2_version }}
 ```
 
-You might have to prefix the next commands with `sudo` and/or `php73` (depends on your environment):
+You might have to prefix the next commands with `sudo` and/or `php` (depends on your environment):
 
 Update all composer dependencies:
 ```bash
