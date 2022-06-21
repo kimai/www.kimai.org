@@ -16,21 +16,22 @@ All Kimai specific theme settings will be available in the twig templates with t
 
 ## Aligning data in tables
 
-Please stick to the following alignments in your listing:
-
-| Data type             | Alignment |
-|---                    |---|
-| Date                  | Left  |
-| Datetime              | Left  |
-| Time                  | Center  |
-| Money                 | Right  |
-| Duration              | Right  |
-| Boolean               | Center  |
-| Text                  | Left  |
-| Count (int)           | Center (badge)  |
-| Collections (Text)    | Left (label)  |
-
 Always align the table header to the content cell.
+
+Use the following alignments in your data-tables:
+
+| Data type          | Alignment | Component |
+|--------------------|-----------|-----------|
+| Date               | Start     |           |
+| Datetime           | Start     |           |
+| Time               | Center    |           |
+| Money              | End       |           |
+| Duration           | End       |           |
+| Boolean            | Center    |           |
+| Text               | Start     |           |
+| Count (int)        | Center    | badge     |
+| Collections (Text) | Start     | label     |
+
 
 ## Default theme color
 
