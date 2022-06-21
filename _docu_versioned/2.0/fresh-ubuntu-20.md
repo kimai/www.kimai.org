@@ -5,6 +5,8 @@ toc: true
 canonical: /documentation/fresh-ubuntu-20.html
 ---
 
+{% include alert.html type="warning" alert="This documentation was not yet tested with Kimai 2.x" %}
+
 This is a collection of snippets to help you with setting up a fresh Ubuntu 20.04 server for using with Kimai.
 It is neither a fully fledged documentation, explaining each step, nor is it a bash tutorial.
 
@@ -98,15 +100,15 @@ apt install mariadb-server mariadb-client
 apt install nginx
 ```
 
-Now before we continue, we enable the well-known and respected Ondřej PPA by @oerdnj to use PHP 8.0:
+Now before we continue, we enable the well-known and respected Ondřej PPA by @oerdnj to use PHP 8.1:
 ```bash
 apt install software-properties-common
 add-apt-repository ppa:ondrej/php
 ```
 
-Now install PHP 8.0:
+Now install PHP 8.1:
 ```bash
-apt install php8.0-fpm php8.0-cli php8.0-common php8.0-opcache php8.0-readline php8.0-xml php8.0-zip php8.0-intl php8.0-gd php8.0-mbstring php8.0-mysql php8.0-curl
+apt install php8.1-fpm php8.1-cli php8.1-common php8.1-opcache php8.1-readline php8.1-xml php8.1-zip php8.1-intl php8.1-mbstring php8.1-mysql php8.1-curl
 ```
 
 ## Install composer
@@ -181,8 +183,8 @@ Good, now that we have done all these steps we only need the webserver and Virtu
 
 This can be done with:
 ```
-vim /etc/php/8.0/fpm/pool.d/www.conf
-listen = /run/php/php8.0-fpm.sock
+vim /etc/php/8.1/fpm/pool.d/www.conf
+listen = /run/php/php8.1-fpm.sock
 ```
 
 Edit/create the virtual host file:
@@ -211,7 +213,7 @@ server {
     }
 
     location ~ ^/index\.php(/|$) {
-        fastcgi_pass unix:/run/php/php8.0-fpm.sock;
+        fastcgi_pass unix:/run/php/php8.1-fpm.sock;
         fastcgi_split_path_info ^(.+\.php)(/.*)$;
         include fastcgi.conf;
         fastcgi_param PHP_ADMIN_VALUE "open_basedir=$document_root/..:/tmp/";

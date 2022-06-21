@@ -1,11 +1,13 @@
 ---
-title: "Install Kimai on Ubuntu 20.04"
-description: "How to install Kimai on a brand new Ubuntu 20.04 with database, webserver and SSL certificate"
+title: "Install Kimai on Ubuntu 18.04"
+description: "How to install Kimai on a brand new Ubuntu 18.04 with database, webserver and SSL certificate"
 toc: true
-canonical: /documentation/fresh-ubuntu-20.html
+canonical: /documentation/fresh-ubuntu-18.html
 ---
 
-This is a collection of snippets to help you with setting up a fresh Ubuntu 20.04 server for using with Kimai.
+{% include alert.html type="danger" alert="This documentation was not tested with Kimai 2.x. You will at least have to change the used PHP version to 8.1. It is advised to upgrade to a more recent Ubuntu version." %}
+
+This is a collection of snippets to help you with setting up a fresh Ubuntu 18.04 server for using with Kimai.
 It is neither a fully fledged documentation, explaining each step, nor is it a bash tutorial.
 
 Please see it as a personal snippet collection... in which I assume:
@@ -54,6 +56,7 @@ Then edit your local SSH config:
 vim ~/.ssh/config
 ```
 
+
 And paste this:
 ```
 Host myserver
@@ -89,32 +92,23 @@ And restart the SSH Daemon:
 
 ## Install PHP, webserver and database
 
-Let's start with all required software:
+Lets start with all required software:
 ```bash
-apt update
-apt upgrade
-apt install git unzip curl vim
-apt install mariadb-server mariadb-client
-apt install nginx
+apt-get update
+apt-get install php-fpm php-cli php-common php-json php-opcache php-readline php-xml php-zip php-intl php-gd php-mbstring php-mysql php-curl
+apt-get install mysql-server mysql-client
+apt-get install nginx
+apt-get install git unzip curl
 ```
 
-Now before we continue, we enable the well-known and respected Ondřej PPA by @oerdnj to use PHP 8.0:
-```bash
-apt install software-properties-common
-add-apt-repository ppa:ondrej/php
-```
-
-Now install PHP 8.0:
-```bash
-apt install php8.0-fpm php8.0-cli php8.0-common php8.0-opcache php8.0-readline php8.0-xml php8.0-zip php8.0-intl php8.0-gd php8.0-mbstring php8.0-mysql php8.0-curl
-```
+BTW: I'd use MariaDB, but Ubuntu 18.04 ships an outdated MariaDB which does not support JSON columns, thus not compatible with Kimai.
 
 ## Install composer
 
 Grab the latest `hash` from the [composer download page](https://getcomposer.org/download/) and then execute:
 ```bash
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-php -r "if (hash_file('sha384', 'composer-setup.php') === '906a84df04cea2aa72f40b5f787e49f22d4c2f19492ac310e8cba5b96ac8b64115ac402c8cd292b8a03482574915d1a8') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php -r "if (hash_file('sha384', 'composer-setup.php') === '48e3236262b34d30969dca3c37281b3b4bbe3221bda826ac6a9a62d6444cdb0dcd0615698a5cbe587c3f0fe57a54d8f5') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
 ```
 
 Only proceed if you see: **Installer verified**!
@@ -148,23 +142,25 @@ exit;
 
 Clone Kimai and set proper file permissions:
 
-> Please check the lastest installation docs to check if something changed since writing these docs: <https://www.kimai.org/documentation/installation.html>
+> Replace 1.1 with the latest available version, see: <https://www.kimai.org/documentation/installation.html>
 
 ```bash
 cd /var/www/
-git clone -b {{ site.kimai_v2_version }} --depth 1 https://github.com/kevinpapst/kimai2.git
+git clone -b 1.1 --depth 1 https://github.com/kevinpapst/kimai2.git
 cd kimai2/
+chown -R :www-data .
+chmod -R g+r .
+chmod -R g+rw var/
 composer install --no-dev --optimize-autoloader -n
 vim .env
 ```
 
-Configure the database connection and adjust the settings to your needs (compare with the [original .env file](https://github.com/kevinpapst/kimai2/blob/1.16.8/.env.dist)):
+Configure the above created database credentials:
 ```
-DATABASE_URL=mysql://kimai2:my-super-secret-password@127.0.0.1:3306/kimai2?charset=utf8&serverVersion=5.7
+DATABASE_URL=mysql://kimai2:my-super-secret-password@127.0.0.1:3306/kimai2
 ```
- 
 
-Then execute the Kimai installation:
+And execute the Kimai installation:
 ```bash
 bin/console kimai:install -n
 bin/console kimai:user:create admin admin@example.com ROLE_SUPER_ADMIN
@@ -172,6 +168,7 @@ bin/console kimai:user:create admin admin@example.com ROLE_SUPER_ADMIN
 
 {% include file-permissions.html %}
 Use `sudo` to run the commands to change file permissions.
+
 
 ## Configure webserver
 
@@ -181,8 +178,8 @@ Good, now that we have done all these steps we only need the webserver and Virtu
 
 This can be done with:
 ```
-vim /etc/php/8.0/fpm/pool.d/www.conf
-listen = /run/php/php8.0-fpm.sock
+vim /etc/php/7.2/fpm/pool.d/www.conf
+listen = /run/php/php7.2-fpm.sock <= search for this "listen" entry
 ```
 
 Edit/create the virtual host file:
@@ -211,7 +208,7 @@ server {
     }
 
     location ~ ^/index\.php(/|$) {
-        fastcgi_pass unix:/run/php/php8.0-fpm.sock;
+        fastcgi_pass unix:/run/php/php7.2-fpm.sock;
         fastcgi_split_path_info ^(.+\.php)(/.*)$;
         include fastcgi.conf;
         fastcgi_param PHP_ADMIN_VALUE "open_basedir=$document_root/..:/tmp/";
@@ -224,10 +221,10 @@ server {
 }
 ```
 
-Remove the Ubuntu default host and activate the site:
+Lets activate the site and remove the Ubuntu default host:
 ```bash
-unlink /etc/nginx/sites-enabled/default
 ln -s /etc/nginx/sites-available/kimai2 /etc/nginx/sites-enabled/kimai2
+unlink /etc/nginx/sites-enabled/default
 nginx -t && service nginx reload
 ```
 
@@ -236,7 +233,11 @@ nginx -t && service nginx reload
 Almost there, only the free Lets Encrypt SSL certificate is missing:
 
 ```bash
-apt-get install certbot python3-certbot-nginx
+apt-get install software-properties-common
+add-apt-repository universe
+add-apt-repository ppa:certbot/certbot
+apt-get update
+apt-get install certbot python-certbot-nginx
 certbot --nginx
 ```
 
