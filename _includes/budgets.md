@@ -17,8 +17,13 @@ the other available budget type is `monthly`.
 - `Lifetime budget` - uses all records of all times to calculate progress and budget usage
 - `Monthly budget` - uses all records of the selected month to calculate progress and budget usage
 
-No matter which budget type is used, it does not influence invoice amounts. 
-There is no automatism that will add a monthly budget to your invoice (you have to create [expenses]({% link _store/keleo-expenses-bundle.md %}) or time records for that).  
+**Limitations**
+
+No matter which budget type is used, it does not influence invoice amounts.
+There is no automatism that will add a monthly budget to your invoice (you have to create [expenses]({% link _store/keleo-expenses-bundle.md %}) or time records for that).
+
+Monthly budgets are used for every month, no matter how many days are recorded. 
+Kimai does not take range limits into account to calculate partial budgets (e.g. project start/end or the first record created for a customer).  
 
 ### Money budget
 
