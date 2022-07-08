@@ -82,6 +82,10 @@
     .card-options a.btn span {
         display: none;
     }
+    #documentation-content ul {
+        padding-left: 3px;
+        list-style-position: inside;
+    }
 }
 
 @media (min-width: map-get($grid-breakpoints, "sm")) {
@@ -153,6 +157,11 @@ footer.footer {
     }
 }
 
+.header-brand {
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
 pre code {
     word-wrap: normal;
 }
@@ -167,4 +176,8 @@ table.table td code.highlighter-rouge
 
 a.nav-link.icon {
     padding: 0.5rem;
+}
+
+table.feature-list td p {
+    margin-bottom: 0;
 }
