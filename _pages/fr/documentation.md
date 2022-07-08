@@ -11,7 +11,5 @@ permalink: /fr/documentation/
 skip_back: true
 ---
 
-{% include pages/faq.md %}
-
 Vous avez besoin d'aide et ne trouvez pas ce que vous cherchez ?
 Créez un nouveau ticket à [Kimai Support-Forum]({{ site.kimai_v2_repo }}/issues) et demandez de l'aide..

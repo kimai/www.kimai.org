@@ -17,10 +17,6 @@ redirect_from:
   - /documentation/faq.html
 ---
 
-{% include pages/faq.md %}
- 
-## Further questions?
-
 Need help and can't find what you are looking for? 
 Create a new ticket in the [Kimai support forum]({{ site.kimai_v2_repo }}/discussions) and ask for help.
  

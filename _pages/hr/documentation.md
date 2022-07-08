@@ -11,10 +11,6 @@ permalink: /hr/documentation/
 skip_back: true
 ---
 
-{% include pages/faq.md %}
- 
-## Imaš još pitanja?
-
 Trebaš pomoć i ne možeš pronaći ono što tražiš?
 Prijavi novi problem na [Kimai forumu za podršku]({{ site.kimai_v2_repo }}/discussions) i zatraži pomoć.
  
