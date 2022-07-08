@@ -1,12 +1,12 @@
 <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
-    {% assign menu = site.data.menu-documentation %}
-    {% assign menu_levels = layout.menu | default: page.menu | split: '.' %}
+    {% assign menu = site.data[layout.menu] %}
     {% assign showIcons = false %}
-    {% assign homepage = site.data.trans-menu[page.lang].docs %}
+    {% assign homepage = site.data.trans-menu[page.lang][layout.homepage] %}
+    {% assign collectionType = layout.type %}
 
     <li class="nav-item d-md-inline d-none">
 		<a href="{{ homepage.url }}" class="nav-link{% if page.url == homepage.url %} active{% endif %}" style="height: 100%; padding: 0;">
-            <img src="{{ '/assets/icon/apple-touch-icon.png' | absolute_url }}" style="display: block;height: 2rem;width: auto;" alt="Kimai logo">
+            {{ homepage.name }}
         </a>
     </li>
 
@@ -21,7 +21,7 @@
                     {% if p == "-" %}
                         <div class="dropdown-divider"></div>
                     {% else %}
-                        {% assign doc = site.documentation | where: "slug", p | first %}
+                        {% assign doc = site[collectionType] | where: "slug", p | first %}
                         <a href="{{ doc.url }}" class="dropdown-item {% if page.url == doc.url %}active{% endif %}">{{ doc.title }}</a>
     				{% endif %}
 				{% endfor %}

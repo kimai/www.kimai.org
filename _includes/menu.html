@@ -1,7 +1,7 @@
 <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
 	{% assign menu = site.data.menu[page.lang] %}
-	{% assign menu_levels = layout.menu | default: page.menu | split: '.' %}
-	{% assign showIcons = false %}
+    {% assign menu_levels = layout.menu | default: page.menu | split: '.' %}
+    {% assign showIcons = false %}
 	{% assign homepage = site.data.trans-menu[page.lang].home %}
 
 	<li class="nav-item d-md-inline d-none">
@@ -26,16 +26,18 @@
 	</li>
 	{% endfor %}
 
-    {% for lang in site.languages %}
-        {% if page.lang != lang %}
-            {% assign targetUrl = site.data.trans-menu[lang].home.url %}
-            {% if page.lang-ref != nil and page.lang != nil %}
-                {% assign langPages = site.pages | where: "lang-ref", page.lang-ref | where: "lang", lang %}
-                {% assign targetUrl = langPages[0].url %}
+    {% if layout.with_languages == nil %}
+        {% for lang in site.languages %}
+            {% if page.lang != lang %}
+                {% assign targetUrl = site.data.trans-menu[lang].home.url %}
+                {% if page.lang-ref != nil and page.lang != nil %}
+                    {% assign langPages = site.pages | where: "lang-ref", page.lang-ref | where: "lang", lang %}
+                    {% assign targetUrl = langPages[0].url %}
+                {% endif %}
+                <li class="nav-item d-sm-none">
+                    <a href="{{ targetUrl }}" title="{{ site.data.trans-menu[lang].home.title }}" class="first nav-link">{{ site.language_names[lang] }}</a>
+                </li>
             {% endif %}
-            <li class="nav-item d-sm-none">
-                <a href="{{ targetUrl }}" title="{{ site.data.trans-menu[lang].home.title }}" class="first nav-link">{{ site.language_names[lang] }}</a>
-            </li>
-        {% endif %}
-    {% endfor %}
+        {% endfor %}
+    {% endif %}
 </ul>

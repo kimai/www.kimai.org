@@ -1,7 +1,9 @@
 ---
 layout: default
 main_page: documentation
-main_menu: documentation
+menu: menu-documentation
+homepage: docs
+with_languages: false
 ---
 {% assign collectionMenu = layout.menu %}
 {% assign collectionType = layout.type %}
@@ -9,49 +11,18 @@ main_menu: documentation
 {% assign headerSubTitle = page.subtitle | default: layout.subtitle | default: page.description %}
 
 <div class="container">
-	{% include page-title.html title=headerTitle subtitle=headerSubTitle %}
+    {% comment %}
+    <div class="d-none d-md-block">
+        {% include page-title.html title=headerTitle subtitle=headerSubTitle %}
+    </div>
+    {% endcomment %}
 
-	<div class="row">
-		<div class="col-lg-3 order-lg-1 mb-4 sidebar">
-            {% assign activeGroup = nil %}
-			{% for group in site.data[collectionMenu] %}
-                {% for p in group.pages %}
-                    {% if page.slug == p %}
-                        {% assign activeGroup = group %}
-                    {% endif %}
-                {% endfor %}
-            {% endfor %}
+    <div class="row">
 
-            {% if activeGroup != nil %}
-                <strong>{{ activeGroup.name }}</strong>
-                <div class="list-group list-group-transparent mb-6 mt-1">
-                    {% for p in activeGroup.pages %}
-                        {% if p == "-" %}
-                            <div class="dropdown-divider"></div>
-                        {% else %}
-                            {% assign doc = site[collectionType] | where: "slug", p | first %}
-                            <a href="{{ doc.url }}" class="list-group-item list-group-item-action{% if page.url == doc.url %} active{% endif %}">{{ doc.title }}</a>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-            {% endif %}
-
-            {% if page.related != nil %}
-                <strong>Related articles</strong>
-                <div class="list-group list-group-transparent mb-6 mt-1">
-                    {% for p in page.related %}
-                        {% assign doc = site[collectionType] | where: "slug", p | first %}
-                        <a href="{{ doc.url }}" class="list-group-item list-group-item-action{% if page.url == doc.url %} active{% endif %}">{{ doc.title }}</a>
-                    {% endfor %}
-                </div>
-            {% endif %}
-
-            <div class="d-none d-lg-block">
-				<a href="{{ site.kimai_v2_website }}/blob/master/{{ page.path }}" class="text-muted">Edit this page</a>
-			</div>
-		</div>
-		<div class="col-lg-9">
-			<div class="card">
+    {% comment %}
+        <div class="col-lg-9">
+    {% endcomment %}
+            <div class="card">
                 {% if false and page.skip_back == nil %}
                 <div class="card-header">
                     <div class="d-flex align-items-center px-2">
@@ -62,13 +33,13 @@ main_menu: documentation
                 </div>
                 {% endif %}
 
-				<div class="card-body">
-					<div class="text-wrap p-lg-6">
-                        <h2 class="mt-0 mb-4">
-							{{ page.title }}
-                            <span style="float: right">
+                <div class="card-body">
+                    <div class="text-wrap p-lg-6">
+                        <h2 class="d-flex mt-0 mb-4">
+                            {{ page.title }}
+                            <span class="ml-auto">
                                 {% if page.since_version != nil %}
-                                <span class="tag">
+                                <span class="tag d-none d-sm-inline-flex">
                                     Feature added with
                                     <span class="tag-addon">v {{ page.since_version }}</span>
                                 </span>
@@ -88,11 +59,11 @@ main_menu: documentation
                                 {% if versions.size > 0 %}
                                 <div class="dropdown">
                                     <a class="btn btn-primary dropdown-toggle btn-sm" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Kimai version
+                                        Older versions
                                     </a>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
                                         {% for v in versions %}
-                                        <a class="dropdown-item" href="{{ paths[forloop.index0] }}">{{ v }}</a>
+                                        <a class="dropdown-item" href="{{ paths[forloop.index0] }}">Kimai {{ v }}</a>
                                         {% endfor %}
                                         <a class="dropdown-item" href="/documentation/{{ page.slug }}.html">{{ site.kimai_v2_version }} (latest version)</a>
                                     </div>
@@ -107,14 +78,34 @@ main_menu: documentation
 						</div>
 						{% endif %}
 
-						{% if page.toc %}
-						    {% include toc.html html=page.content class="section-nav" h_min=2 h_max=3 %}
-						{% endif %}
+                        {% capture page_content %}
+                            {{ page.content }}
 
-                        {{ page.content }}
+                            {% if page.related != nil %}
+                            <h2 id="related-articles">Related articles</h2>
+                            <ul>
+                                {% for p in page.related %}
+                                {% assign doc = site[collectionType] | where: "slug", p | first %}
+                                <li>
+                                    <a href="{{ doc.url }}">{{ doc.title }}</a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        {% endcapture %}
 
-					</div>
-				</div>
+                        {% if page.toc %}
+                            {% include toc.html html=page_content class="section-nav" h_min=2 h_max=3 %}
+                        {% endif %}
+
+                        {% comment %} THE id "documentation-content" MAY NEVER BE DELETED, IT IS USED IN KIMAI TO REMOTE FETCH THE ARTICLE {% endcomment %}
+                        <div id="documentation-content">
+                        {{ page_content }}
+                        </div>
+                        {% comment %} THE id "documentation-content" MAY NEVER BE DELETED, IT IS USED IN KIMAI TO REMOTE FETCH THE ARTICLE {% endcomment %}
+
+                    </div>
+                </div>
                 {% comment %}
                 {% if layout.main_page != page.slug %}
                 <div class="card-footer">
@@ -131,7 +122,49 @@ main_menu: documentation
                 </div>
                 {% endif %}
                 {% endcomment %}
-			</div>
-		</div>
-	</div>
+            </div>
+        {% comment %}
+        </div>
+
+        <div class="col-lg-3 mb-4 sidebar">
+            {% assign activeGroup = nil %}
+            {% for group in site.data[collectionMenu] %}
+            {% for p in group.pages %}
+            {% if page.slug == p %}
+            {% assign activeGroup = group %}
+            {% endif %}
+            {% endfor %}
+            {% endfor %}
+
+            {% if activeGroup != nil %}
+            <strong>{{ activeGroup.name }}</strong>
+            <div class="list-group list-group-transparent mb-6 mt-1">
+                {% for p in activeGroup.pages %}
+                {% if p == "-" %}
+                <div class="dropdown-divider"></div>
+                {% else %}
+                {% assign doc = site[collectionType] | where: "slug", p | first %}
+                <a href="{{ doc.url }}" class="list-group-item list-group-item-action{% if page.url == doc.url %} active{% endif %}">{{ doc.title }}</a>
+                {% endif %}
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            {% if page.related != nil %}
+            <strong>Related articles</strong>
+            <div class="list-group list-group-transparent mb-6 mt-1">
+                {% for p in page.related %}
+                {% assign doc = site[collectionType] | where: "slug", p | first %}
+                <a href="{{ doc.url }}" class="list-group-item list-group-item-action{% if page.url == doc.url %} active{% endif %}">{{ doc.title }}</a>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <div class="d-none d-lg-block">
+                <a href="{{ site.kimai_v2_website }}/blob/master/{{ page.path }}" class="text-muted">Edit this page</a>
+            </div>
+        </div>
+        {% endcomment %}
+
+    </div>
 </div>
