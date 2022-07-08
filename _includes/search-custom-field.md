@@ -17,6 +17,6 @@ You can mix the search term and use multiple meta-field queries:
 
 There are also special operators, which can be used in conjunction with custom fields (since Kimai 1.19.1):
 
-- The ` ` empty string (e.g. `location:`) will find all entries whose value in the `location` field is either empty or not existing
+- The ` ` empty string (e.g. `location:`) will find all entries whose value in the `location` field is either empty or not existing
 - The `~` search term (e.g. `location:~`) will find all entries that are missing the custom field (created before the field was created)
 - The `*` search term (e.g. `location:*`) will find all entries that have any value in the `location` field (basically the opposite of `~`)
