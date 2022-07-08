@@ -65,7 +65,7 @@ For more details, see the [Webserver How-To]({% link _documentation/webserver-co
 
 {% include alert.html icon="far fa-smile-beam" type="success" alert="Installation complete: enjoy time-tracking!" %}
 
-Oh ... wait! Before you leave, please read the [initial setup guide]({% link _documentation/inital-setup.md %}).
+Oh ... wait! Before you leave, please read the [initial setup guide]({% link _documentation/initial-setup.md %}).
 
 ## Docker
 
