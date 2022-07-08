@@ -1,6 +1,6 @@
 ---
 title: Rates & Fees
-url_v2: /documentation/timesheet.html
+url_v2: /documentation/rates.html
 ---
 
 Here is the order in which is checked if a rate exists. The first one found is then used:
@@ -17,15 +17,15 @@ See function ```get_best_fitting_rate``` in Database class.
 
 If you have a look into the table kimai_rates you may see something like this:
 
-| User | Project | Event | Rate |
-| -- | -- | -- | -- |
-| 1 | 2 | 5 | 10.00 |
-| 2 | NULL | 5 | 20.00 |
-| 2 | 2 | NULL | 30.00 |
-| 2 | NULL | NULL | 40.00 |
-| NULL | 2 | 5 | 50.00 |
-| NULL | NULL | 5 | 60.00 |
-| NULL | 2 | NULL | 70.00 |
+| User | Project | Event | Rate  |
+|------|---------|-------|-------|
+| 1    | 2       | 5     | 10.00 |
+| 2    | NULL    | 5     | 20.00 |
+| 2    | 2       | NULL  | 30.00 |
+| 2    | NULL    | NULL  | 40.00 |
+| NULL | 2       | 5     | 50.00 |
+| NULL | NULL    | 5     | 60.00 |
+| NULL | 2       | NULL  | 70.00 |
 
 The entries are already sorted. Kimai takes the first row that exists (maybe the one with the most hits).
 
