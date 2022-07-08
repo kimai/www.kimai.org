@@ -7,6 +7,8 @@ github: kimai_v1_repo
 title_postfix: "Kimai v1"
 main_page: v1
 layout: default
+homepage: kimai1
+with_languages: false
 ---
 {% assign collectionMenu = layout.menu %}
 {% assign collectionType = layout.type %}
@@ -17,9 +19,10 @@ layout: default
     {% include page-title.html title=headerTitle subtitle=headerSubTitle %}
 
     <div class="row">
+        {% comment %}
         <div class="col-lg-3 order-lg-1 mb-4 sidebar">
             {% for group in site.data[collectionMenu] %}
-            <strong>{{ group.title }}</strong>
+            <strong>{{ group.name }}</strong>
             <div class="list-group list-group-transparent mb-3">
                 {% for p in group.pages %}
                     {% assign doc = site[collectionType] | where: "slug", p | first %}
@@ -33,26 +36,24 @@ layout: default
             </div>
         </div>
         <div class="col-lg-9">
+        {% endcomment %}
+        <div class="col-lg-12">
             <div class="card">
 
-                {% if page.skip_back == nil %}
-                <div class="card-header">
-                    <div class="d-flex align-items-center px-2">
-                        <a href="{% link _pages/v1.md %}" class="btn btn-link">
-                            <i class="fas fa-arrow-circle-left"></i> Back to Kimai v1
-                        </a>
-                    </div>
-                </div>
-                {% endif %}
-
                 <div class="card-body">
-                    <div class="text-wrap p-lg-6">
-                        {% if page.url_v2 != nill %}
-                            <div class="alert alert-success" role="alert">
-                                This documentation page exists <a href="{{ page.url_v2 }}">for version 2 here</a>.
-                            </div>
-                        {% endif %}
 
+                    <div class="alert alert-danger" role="alert">
+                        Kimai 1 is not maintained any longer, please <a href="{% link _documentation/migration-v1.md %}">upgrade to Kimai 2</a> now!
+                        There is <a href="{% link _store/keleo-installation-support.md %}">paid support</a> available and you can even move to our <a href="https://www.kimai.cloud" target="_blank">hosted cloud</a>.
+                    </div>
+
+                    {% if page.url_v2 != nill %}
+                        <div class="alert alert-success" role="alert">
+                            This documentation page exists <a href="{{ page.url_v2 }}">for version 2 here</a>.
+                        </div>
+                    {% endif %}
+
+                    <div class="text-wrap p-lg-6">
                         <h2 class="mt-0 mb-4">
                             {{ page.title }}
                         </h2>
