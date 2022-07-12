@@ -5,6 +5,7 @@ toc: true
 related:
   - saml
   - saml-azure
+  - saml-google
   - saml-keycloak
 ---
 

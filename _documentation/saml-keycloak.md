@@ -7,6 +7,7 @@ related:
   - saml
   - saml-authentik
   - saml-azure
+  - saml-google
 ---
 
 Go back to general [SAML configuration]({% link _documentation/saml.md %}) for Kimai.
