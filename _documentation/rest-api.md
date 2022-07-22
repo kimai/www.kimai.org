@@ -1,6 +1,6 @@
 ---
-title: Rest API
-description: Access your time-tracking data via the REST API with Kimai
+title: Kimai API (JSON aka REST)
+description: Access your time-tracking data via the JSON API with Kimai
 toc: true
 redirect_from: /documentation/api/
 ---
