@@ -53,7 +53,7 @@ This documentation is available in other languages as well [in the Microsoft doc
 ![Picture](/images/documentation/azure-saml-pic4.png)
 14. Return to the **Single Sign-On** (visible in the left navigation panel) and download **Certificate (Base64)**:
 ![Picture](/images/documentation/azure-saml-pic6.png) 
-16. Copy the three values of **Set up Kimai**, as we will need them to configure Kimai:
+15. Copy the three values of **Set up Kimai**, as we will need them to configure Kimai:
 ![Picture](/images/documentation/azure-saml-pic7.png)
 
 ### Kimai Configuration
