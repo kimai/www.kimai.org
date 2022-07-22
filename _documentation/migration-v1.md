@@ -59,7 +59,7 @@ The database does not have to be on the same server, and the database user (for 
 See the help for the import command and all its options and arguments by executing:
 
 ```bash
-bin/console kimai:import --help
+bin/console kimai:import:v1 --help
 ```
 
 A full command could look like this:
