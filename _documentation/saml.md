@@ -28,6 +28,7 @@ kimai:
             - { saml: $Email, kimai: email }
             - { saml: $FirstName $LastName, kimai: alias }
         roles:
+            resetOnLogin: true
             attribute: Groups
             mapping:
                 # Insert your role-mapping here (ROLE_USER is added automatically)
@@ -102,6 +103,7 @@ kimai:
             - { saml: $Email, kimai: email }
             - { saml: $FirstName $LastName, kimai: alias }
         roles:
+            resetOnLogin: true
             attribute: Roles
             mapping:
                 - { saml: Admin, kimai: ROLE_ADMIN }
@@ -113,6 +115,7 @@ A brief description of the available fields:
 - `title` (string) the name of the Login button in the authentication screen
 - `mapping` (array) an array of attributes that will be synced with Kimai. The `kimai` value (`email` and `alias`) are the names in Kimai, the `saml` key (`$Email` and `$FirstName $LastName`) are the attributes from the SAML response. You can assign static values to every user (like `title` = `SAML User`) or you fetch one or more values from the SAML message (`$Email` refers to the SAML attribute `Email` and `$FirstName $LastName` refers to the two SAML attributes `$FirstName` and `$LastName`).
 - `roles` (array) settings related to the user roles syncing
+    - `resetOnLogin` (bool) if `true` all user roles will be reset upon login and synced with the SAML roles, if `false` you can configure user roles in Kimai and only the mapped ones will be forced when the user logs-in (other roles will stick with the user) - config exists since 1.22.0 
     - `attribute` (string) the SAML attribute whose values are used for syncing the groups
     - `mapping` (array) an array of role name mappings. The `saml` key is your SAML role name (here `Admin` and `Manager`) and the key `kimai` (here `ROLE_ADMIN` and `ROLE_TEAMLEAD`) is the role name in Kimai. Unmapped roles from the SAML message will be IGNORED even if they are existing in Kimai.
 
