@@ -19,24 +19,6 @@ with_languages: false
     {% include page-title.html title=headerTitle subtitle=headerSubTitle %}
 
     <div class="row">
-        {% comment %}
-        <div class="col-lg-3 order-lg-1 mb-4 sidebar">
-            {% for group in site.data[collectionMenu] %}
-            <strong>{{ group.name }}</strong>
-            <div class="list-group list-group-transparent mb-3">
-                {% for p in group.pages %}
-                    {% assign doc = site[collectionType] | where: "slug", p | first %}
-                    <a href="{{ doc.url }}" class="list-group-item list-group-item-action{% if page.url == doc.url %} active{% endif %}">{{ doc.title }}</a>
-                {% endfor %}
-            </div>
-            {% endfor %}
-
-            <div class="d-none d-lg-block mt-6">
-                <a href="{{ site.kimai_v2_website }}/blob/master/{{ page.path }}" class="text-muted">Edit this page</a>
-            </div>
-        </div>
-        <div class="col-lg-9">
-        {% endcomment %}
         <div class="col-lg-12">
             <div class="card">
 
