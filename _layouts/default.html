@@ -2,10 +2,6 @@
 layout: base
 ---
 
-{% comment %}
-{% include aside.html %}
-{% endcomment %}
-
 {% assign brand = layout.homepage | default: "home" %}
 {% assign brand_url = site.data.trans-menu[page.lang][brand].url %}
 {% assign brand_title = site.data.trans-menu[page.lang][brand].brand %}
@@ -90,8 +86,6 @@ layout: base
 		{{ content }}
 	</div>
 </div>
-
-{% comment %}{% include footer-sub.html %}{% endcomment %}
 
 <footer class="footer">
     <div class="container">
