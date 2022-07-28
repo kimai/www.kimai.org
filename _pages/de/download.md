@@ -53,48 +53,5 @@ und uns [benachrichtigen]({{ site.kimai_v2_repo }}/issues) wenn Probleme auftret
 <a href="{{ site.kimai_v2_repo }}/releases" class="btn btn-secondary"><i class="fab fa-github"></i> Alle Releases </a>
 
 </div>
-<div class="col-sm-12 col-lg-4">
-    <div class="card card-md">
-        <div class="card-body text-center">
-            <h4>Kimai - Hosted</h4>
-            <ul class="list-unstyled lh-lg">
-                <li>
-                    Kostenloses TLS (SSL) Zertifikat
-                    <i class="fas fa-check text-success"></i>
-                </li>
-                <li>
-                    Hosting & Updates
-                    <i class="fas fa-check text-success"></i>
-                </li>
-                <li>
-                    Backups
-                    <i class="fas fa-check text-success"></i>
-                </li>
-                <li>
-                    Eigene-Felder Plugin
-                    <i class="fas fa-check text-success"></i>
-                </li>
-                <li>
-                    Aufgaben-Verwaltung Plugin
-                    <i class="fas fa-check text-success"></i>
-                </li>
-                <li>
-                    Ausgaben Plugin
-                    <i class="fas fa-check text-success"></i>
-                </li>
-                <li>
-                    Audit-Trail plugin
-                    <i class="fas fa-check text-success"></i>
-                </li>
-                <li>
-                    <br>
-                    Kostenloser Tarif für <strong>5</strong> Benutzer
-                </li>
-            </ul>
-            <div class="text-center mt-4">
-                <a href="https://www.kimai.cloud/de/preise" class="btn btn-primary w-100">Tarif auswählen</a>
-            </div>
-        </div>
-    </div>
-</div>
+{% include card-cloud.html %}
 </div>

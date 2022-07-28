@@ -1,6 +1,7 @@
 ---
 title: Kimai - Free Time-Tracking App (open-source)
 description: Kimai - free and easy time-tracking for freelancer, agencies and companies with user and invoice handling.
+layout: page-empty
 lang: en
 lang-ref: home
 permalink: /
@@ -10,73 +11,5 @@ redirect_from:
   - /testimonials/
 ---
 
-    <blockquote>
-        With Kimai, the boring process of feeding Excel spreadsheets with your working hours is not only simplified,
-        it also offers dozens of other exciting features that you don't even know you're missing so far!
-    </blockquote>
+{% include pages/homepage.md %}
 
-    <div class="row row-cards">
-        <div class="col-sm-6 col-lg-4">
-            {% include card-image.html image="timesheet" %}
-        </div>
-        <div class="col-sm-6 col-lg-4">
-            {% include card-image.html image="invoice" %}
-        </div>
-        <div class="col-sm-6 col-lg-4">
-            {% include card-image.html image="dashboard" %}
-        </div>
-    </div>
-
-    <p>
-        Kimai does not have to run while recording, you can even quit your browser.
-        Your time is still recording until you stop it from any web browser that has access to your installation.
-        It is designed to hold lots of users, but you can also use it for a single user if you want to.
-    </p>
-
-    <div class="alert alert-success">
-        <h4>Free time-tracking for everyone</h4>
-        <p>
-            Kimai is a free & open source timetracker. It tracks work time and prints out a summary of your activities on demand.
-            Yearly, monthly, daily, by customer, by project …
-            Its simplicity is its strength. Due to Kimai’s browser based interface it runs cross-platform, even on your mobile device.
-        </p>
-        <div class="btn-list">
-            <a href="{% link _pages/download.md %}" class="btn btn-primary">Get it now!</a>
-            <a href="{% link _pages/demo.md %}" class="btn btn-secondary">Try first</a>
-        </div>
-    </div>
-
-    <h2>Feature list</h2>
-    <p>
-        The following list is <b>not</b> complete, but instead it should highlight some of the exciting features which Kimai offers.
-    </p>
-
-    <table class="table table-striped table-responsive-sm feature-list">
-        <thead>
-        <tr>
-            <th class="text-nowrap">Name</th>
-            <th>Description</th>
-        </tr>
-        </thead>
-        <tbody>
-            {% assign features = site.features | sort:"order" %}
-            {% for feature in features %}
-                <tr>
-                    <td class="text-nowrap">
-                        {% if feature.documentation != nil %}
-                            {% assign url = feature.documentation | replace: '_store/', '/store/' | replace: '_documentation/', '/documentation/' | replace: '.md', '.html' %}
-                            <a href="{{ url }}">{{ feature.title }}</a>
-                        {% else %}
-                            {{ feature.title }}
-                        {% endif %}
-                    </td>
-                    <td>{{ feature.excerpt }}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-
-    <p>
-        Sounds interesting? Then don't wait and get your free copy now:
-        <a href="{% link _pages/download.md %}" class="btn btn-primary"><i class="fas fa-download"></i> Download</a>
-    </p>

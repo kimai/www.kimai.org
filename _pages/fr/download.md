@@ -10,6 +10,9 @@ permalink: /fr/download.html
 
 # Téléchargez Kimai - gratuitement !
 
+<div class="row">
+<div class="col-sm-12 col-lg-8" markdown="1">
+
 
 ### Configuration requise pour le serveur
 
@@ -50,3 +53,7 @@ Aidez-nous, testez Kimai et [informez-nous]({{ site.kimai_v2_repo }}/questions) 
 <a href="{{ site.kimai_v2_repo }}/zipball/master" class="btn btn-secondary"><i class="fas fa-download"></i> Version de développement (ZIP)</a>
 <a href="{{ site.kimai_v2_repo }}/releases/tag/{{ site.kimai_v2_version }}" class="btn btn-secondary"><i class="fab fa-github"></i> Info version {{ site.kimai_v2_version }} </a>
 <a href="{{ site.kimai_v2_repo }}/releases" class="btn btn-secondary"><i class="fab fa-github"></i> Toutes les versions </a>
+
+</div>
+{% include card-cloud.html %}
+</div>

@@ -50,49 +50,6 @@ i [slanjem povratnih informacija]({{ site.kimai_v2_repo }}/issues) ako naiđu na
 <a href="{{ site.kimai_v2_repo }}/releases" class="btn btn-secondary"><i class="fab fa-github"></i> Sva izdanja </a>
 
 </div>
-<div class="col-sm-12 col-lg-4">
-    <div class="card card-md">
-        <div class="card-body text-center">
-            <h4>Kimai – Hosted</h4>
-            <ul class="list-unstyled lh-lg">
-                <li>
-                    Besplatan TLS (SSL) certifikat
-                    <i class="fas fa-check text-success"></i>
-                </li>
-                <li>
-                    Hosting i aktualiziranja
-                    <i class="fas fa-check text-success"></i>
-                </li>
-                <li>
-                    Sigurnosne kopije
-                    <i class="fas fa-check text-success"></i>
-                </li>
-                <li>
-                    Dodatak za prilagođena polja
-                    <i class="fas fa-check text-success"></i>
-                </li>
-                <li>
-                    Dodatak za upravljanje zadacima
-                    <i class="fas fa-check text-success"></i>
-                </li>
-                <li>
-                    Dodatak za troškove
-                    <i class="fas fa-check text-success"></i>
-                </li>
-                <li>
-                    Dodatak za dnevnik radnji
-                    <i class="fas fa-check text-success"></i>
-                </li>
-                <li>
-                    <br>
-                    Besplatna tarifa je dostupna za <strong>5</strong> korisnika
-                </li>
-            </ul>
-            <div class="text-center mt-4">
-                <a href="https://www.kimai.cloud/pricing" class="btn btn-primary w-100">Odaberi tarifu</a>
-            </div>
-        </div>
-    </div>
+{% include card-cloud.html %}
 </div>
-</div>
-
+ 

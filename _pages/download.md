@@ -52,49 +52,6 @@ and [leaving feedback]({{ site.kimai_v2_repo }}/issues) if you encounter any pro
 <a href="{{ site.kimai_v2_repo }}/releases" class="btn btn-secondary"><i class="fab fa-github"></i> All releases </a>
 
 </div>
-<div class="col-sm-12 col-lg-4">
-    <div class="card card-md">
-        <div class="card-body text-center">
-            <h4>Kimai - Hosted</h4>
-            <ul class="list-unstyled lh-lg">
-                <li>
-                    Free TLS (SSL) certificate
-                    <i class="fas fa-check text-success"></i>
-                </li>
-                <li>
-                    Hosting & Updates
-                    <i class="fas fa-check text-success"></i>
-                </li>
-                <li>
-                    Backups
-                    <i class="fas fa-check text-success"></i>
-                </li>
-                <li>
-                    Custom-fields plugin
-                    <i class="fas fa-check text-success"></i>
-                </li>
-                <li>
-                    Task management plugin
-                    <i class="fas fa-check text-success"></i>
-                </li>
-                <li>
-                    Expenses plugin
-                    <i class="fas fa-check text-success"></i>
-                </li>
-                <li>
-                    Audit-Trail plugin
-                    <i class="fas fa-check text-success"></i>
-                </li>
-                <li>
-                    <br>
-                    Free plan available for <strong>5</strong> users
-                </li>
-            </ul>
-            <div class="text-center mt-4">
-                <a href="https://www.kimai.cloud/pricing" class="btn btn-primary w-100">Choose plan</a>
-            </div>
-        </div>
-    </div>
-</div>
+{% include card-cloud.html %}
 </div>
 
