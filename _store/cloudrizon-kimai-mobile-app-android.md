@@ -7,7 +7,6 @@ image: /images/marketplace/cloudrizon-kimai-mobile-app-logo.png
 icon: fab fa-android
 price: 2,99€
 download: https://www.kimaimobile.com/
-new: true
 type: app 
 tags: 
   - Android
