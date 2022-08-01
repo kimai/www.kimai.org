@@ -10,7 +10,7 @@ redirect_from:
 
 # Test Kimai in one of the demos
 
-{% include alert.html icon="fas fa-desktop" alert='Try out the Kimai time-tracking demo and we promise: your next step will be the download!' %}
+{% include alert.html icon="fas fa-desktop" alert='Try out the Kimai time-tracking demo, and we promise: your next step will be the download!' %}
 
 Please choose one of our demo installations, to get a first impression on how Kimai feels and which functionality it provides.
 
