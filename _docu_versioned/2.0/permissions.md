@@ -98,7 +98,7 @@ This is the full list of existing permissions with short descriptions:
 | delete_invoice                    | Allows to delete invoices, please [read docs why you shouldn't]({% link _documentation/invoices.md %})                                         |
 | manage_invoice_template           | Administrate invoice templates                                                                                                                 |
 | upload_invoice_template           | Allows to upload custom invoice templates                                                                                                      |
-| view_invoice                      | Gives access to the [invoice]({% link _documentation/invoices.md %}) screen and the list of all existing invoices                              |
+| view_invoice                      | Gives access to the [list of all invoices]({% link _documentation/invoices.md %}) and allows to download existing invoices                     |
 | **Project (Admin)**               |                                                                                                                                                |
 | budget_project                    | Allows to see the budget (money) reports for projects                                                                                          |
 | time_project                      | Allows to see the budget (time) reports for projects                                                                                           |
