@@ -228,6 +228,20 @@ mv kimai2-{{ site.kimai_v2_version }} kimai2
 
 ## Troubleshooting
 
+### Allowed memory size issue
+
+If you see an error like `Error: Allowed memory size of 134217728 bytes exhausted (tried to allocate 32768 bytes)` then you 
+have to adjust the memory limit for the PHP command-line interface.
+PHP has two different settings for memory limit, depending on where you run it:
+- execute in web-context (you open a page in your browser) then the setting from DSM are used
+- executing scripts (like the installer) via SSH
+
+So  when running the installer and running into a memory issue, you have to adjust the `php.ini` whose settings are used 
+in SSH, e.g. the file `/usr/local/etc/php74/php.ini` is used for PHP 7.2.
+Search for the key `memory_limit` and set it to a high value, e.g. `memory_limit=512M`.
+
+Read [this discussion](https://github.com/kevinpapst/kimai2/discussions/3468) for more infos. 
+
 ### White page after changes to .env
 
 If you are using a network share (or any Synology app) for downloading/editing/uploading the `.env` file, 
