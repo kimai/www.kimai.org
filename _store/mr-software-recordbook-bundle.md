@@ -13,7 +13,7 @@ type: plugin
 tags:
   - plugin
 bundle:
-  name: "RecordBook"
+  name: "RecordBookBundle"
 screenshots:
   - 
     src: "/images/marketplace/mr-software-recordbook-pdf.png"
