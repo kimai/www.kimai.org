@@ -33,7 +33,7 @@ First the Kimai specific filter:
 failregex = fail2ban.ERROR: <HOST> \[.*\] \[.*\]$
 ```
 
-And the additional jail.local for Kimai2:
+And the additional jail.local for Kimai:
 ```
 #/etc/fail2ban/jail.local
 [kimai2]
@@ -44,6 +44,11 @@ port      = http,https
 bantime   = 600
 banaction = iptables-multiport
 maxretry  = 3
+```
+
+Now touch the file to make sure it exists:
+```
+touch /var/www/kimai2/var/log/fail2ban.log
 ```
 
 ## Credits
