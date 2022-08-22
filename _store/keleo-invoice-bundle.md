@@ -1,6 +1,6 @@
 ---
 title: Invoice plugin for Kimai
-name: Enhanced invoicing plugin
+name: Invoicing with automatic PDF timesheets
 intro: "Enhanced invoicing features: change locale for money and date values, automatic timesheet proof PDF for new invoices."
 slug: invoice-bundle
 developer: kevinpapst
@@ -9,9 +9,8 @@ icon: fas fa-file-invoice-dollar
 demo: true 
 price: "0€"
 gumroad: kimai-invoice
-featured: "Enhanced invoicing features: change format locale, automatic timesheet proof PDF for new invoices."
 toc: false
-type: featured
+type: plugin
 tags:
   - plugin
 bundle:
