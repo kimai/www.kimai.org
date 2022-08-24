@@ -226,6 +226,72 @@ mv kimai2-{{ site.kimai_v2_version }} kimai2
 ```
 {% include upgrading-note.html %}
 
+## SSO with Synology Directory Server
+
+See [this discussion](https://github.com/kevinpapst/kimai2/discussions/3198) to find out more.
+
+1. Prerequisite Synology Directory Server App installed on your NAS
+2. Preparation: open Synology Directory Server App
+
+    - **Domain Tab** write down:
+        Domain name, e.g. your.domain
+        Domain NetBios name, e.g. your address of Domain Controller, e.g. dc.your.domain
+        "DC" part of Distinguished name (DN), e.g. DC=your,DC=domain (everything after OU=Domain Controllers)
+
+    - **Users & Computers Tab** create user:
+        Add - Username
+        User Login name: kimai (can be freely chosen)
+        Password: your-password
+        Confirm Password: your-password
+        Untick "Force this account to change password at next login"
+        confirm next windows (it is sufficient if user just belongs to the group 'domain users'
+
+3. **local.yaml** 
+    create the file local.yaml or add the 'ldap part' to your local.yaml and upload it to kimai2/config/packages
+    
+    ```yaml
+    kimai:
+        ldap:
+            activate: true
+            connection:
+                host: "ldaps://dc.your.domain" <-- change to address of Domain Controller as recorded in first step)
+                port: 636
+                useSsl: true
+                username: CN=kimai,CN=Users,DC=your,DC=domain <--- the created user, amend the DC information as recorded in the first step
+                password: your-password <-- the password for the created user          
+                accountFilterFormat: (&(objectClass=Person)(sAMAccountName=%s))
+                accountDomainName: your.domain <-- your domain name as recorded in first step
+                accountDomainNameShort: your <-- Domain NetBios name as recorded in first step
+        
+            user:
+                baseDn: DC=your,DC=domain <--- amend the DC information as recorded in the first step
+                usernameAttribute: samaccountname
+                filter: (&(objectClass=Person))
+                attributesFilter: (objectClass=Person)
+                attributes:
+                    - { ldap_attr: samaccountname,  user_method: setUsername }
+                    - { ldap_attr: mail, user_method: setEmail }
+                    - { ldap_attr: displayname, user_method: setAlias }
+        
+            role:
+                baseDn: DC=your,DC=domain <--- amend the DC information as recorded in the first step
+                filter: (&(objectClass=group))
+                groups:
+                    - { ldap_value: Domain Admins, role: ROLE_SUPER_ADMIN } 
+                    - { ldap_value: management, role: ROLE_ADMIN } <-- assumes that you have created a Domain Group 'management' in your Active Directory App; if not, delete this line
+                    - { ldap_value: Users, role: ROLE_USER }
+    ```
+4. nstallation
+SSH into your Synology NAS, navigate to your Kimai installation (probably volume1\web\kimai2) and run the following command:
+```bash
+php80 /usr/local/bin/composer require laminas/laminas-ldap --optimize-autoloader
+```
+
+Remark:
+- use the correct php version that you have installed, e.g. `php80` or `php74`
+- change the path to composer if you have not created a link to your composer.phar under /usr/local/bin/
+
+
 ## Troubleshooting
 
 ### Allowed memory size issue
@@ -233,8 +299,8 @@ mv kimai2-{{ site.kimai_v2_version }} kimai2
 If you see an error like `Error: Allowed memory size of 134217728 bytes exhausted (tried to allocate 32768 bytes)` then you 
 have to adjust the memory limit for the PHP command-line interface.
 PHP has two different settings for memory limit, depending on where you run it:
-- execute in web-context (you open a page in your browser) then the setting from DSM are used
-- executing scripts (like the installer) via SSH
+- executed in web-context (you open a page in your browser) => the settings from DSM are used
+- executing scripts (like the installer) via SSH => settings from another config file are used 
 
 So  when running the installer and running into a memory issue, you have to adjust the `php.ini` whose settings are used 
 in SSH, e.g. the file `/usr/local/etc/php74/php.ini` is used for PHP 7.2.
