@@ -47,15 +47,14 @@
                 <table class="table card-table table-vcenter table-striped table-responsive-sm feature-list">
                     <tbody>
 
-                        {% assign features = site.features | sort:"order" %}
+                        {% assign features = site.features | where: "lang", page.lang | sort:"order" %} 
                         {% for feature in features %}
                         <tr>
                             <td>
                                 {% if feature.documentation != nil %}
-                                {% assign url = feature.documentation | replace: '_store/', '/store/' | replace: '_documentation/', '/documentation/' | replace: '.md', '.html' %}
-                                <a href="{{ url }}">{{ feature.title }}</a>
+                                    <a href="{{ feature.documentation }}">{{ feature.title }}</a>
                                 {% else %}
-                                {{ feature.title }}
+                                    {{ feature.title }}
                                 {% endif %}
                             </td>
                             <td>{{ feature.excerpt }}</td>

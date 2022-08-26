@@ -1,6 +1,6 @@
 ---
 title: JSON API
-documentation: _documentation/rest-api.md
+documentation: /documentation/rest-api.html
 oss: true
 hosted: true
 order: 125

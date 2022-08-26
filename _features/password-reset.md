@@ -1,6 +1,6 @@
 ---
 title: "Password reset"
-documentation: _documentation/users.md
+documentation: /documentation/users.html
 oss: true
 hosted: false
 order: 875

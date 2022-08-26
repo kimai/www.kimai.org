@@ -1,6 +1,6 @@
 ---
 title: Statistics
-documentation: _documentation/dashboard.md
+documentation: /documentation/dashboard.html
 oss: true
 hosted: true
 order: 175

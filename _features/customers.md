@@ -1,6 +1,6 @@
 ---
 title: Customers
-documentation: _documentation/customer.md
+documentation: /documentation/customer.html
 oss: true
 hosted: true
 order: 60

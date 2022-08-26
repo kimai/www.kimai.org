@@ -1,6 +1,6 @@
 ---
 title: Timesheet filter
-documentation: _documentation/timesheet.md
+documentation: /documentation/timesheet.html
 oss: true
 hosted: true
 order: 240

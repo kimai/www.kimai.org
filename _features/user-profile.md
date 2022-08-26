@@ -1,6 +1,6 @@
 ---
 title: User profile
-documentation: _documentation/users.md
+documentation: /documentation/users.html
 oss: true
 hosted: true
 order: 810

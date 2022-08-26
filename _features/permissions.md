@@ -1,6 +1,6 @@
 ---
 title: Permissions
-documentation: _documentation/permissions.md
+documentation: /documentation/permissions.html
 oss: true
 hosted: true
 order: 800

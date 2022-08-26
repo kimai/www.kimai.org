@@ -1,6 +1,6 @@
 ---
 title: SAML
-documentation: _documentation/saml.md
+documentation: /documentation/saml.html
 oss: true
 hosted: false
 order: 124

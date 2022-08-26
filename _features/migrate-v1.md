@@ -1,6 +1,6 @@
 ---
 title: Migration
-documentation: _documentation/migration-v1.md
+documentation: /documentation/migration-v1.html
 oss: true
 hosted: false
 order: 190

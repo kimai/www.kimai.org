@@ -1,6 +1,6 @@
 ---
 title: LDAP
-documentation: _documentation/ldap.md
+documentation: /documentation/ldap.html
 oss: true
 hosted: true
 order: 125

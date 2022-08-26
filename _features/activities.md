@@ -1,6 +1,6 @@
 ---
 title: Activities
-documentation: _documentation/activity.md
+documentation: /documentation/activity.html
 oss: true
 hosted: true
 order: 70

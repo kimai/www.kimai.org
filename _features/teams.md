@@ -1,6 +1,6 @@
 ---
 title: Teams
-documentation: _documentation/teams.md
+documentation: /documentation/teams.html
 oss: true
 hosted: true
 order: 40

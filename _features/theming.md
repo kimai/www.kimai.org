@@ -1,6 +1,6 @@
 ---
 title: Theming
-documentation: _documentation/theme.md
+documentation: /documentation/theme.html
 oss: true
 hosted: true
 order: 825

@@ -1,6 +1,6 @@
 ---
 title: Docker
-documentation: _documentation/docker.md
+documentation: /documentation/docker.html
 oss: true
 hosted: false
 order: 180

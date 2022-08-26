@@ -1,6 +1,6 @@
 ---
 title: Expenses
-documentation: _store/expenses-bundle.html
+documentation: /store/expenses-bundle.html
 oss: false
 hosted: true
 order: 115

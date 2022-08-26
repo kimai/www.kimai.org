@@ -1,6 +1,6 @@
 ---
 title: Invoicing
-documentation: _documentation/invoices.md
+documentation: /documentation/invoices.html
 oss: true
 hosted: true
 order: 100

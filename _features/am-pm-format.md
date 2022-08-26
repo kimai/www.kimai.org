@@ -1,6 +1,6 @@
 ---
 title: "AM/PM format"
-documentation: _documentation/translations.md
+documentation: /documentation/i18n-am-pm.html
 oss: true
 hosted: false
 order: 210

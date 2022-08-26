@@ -1,6 +1,6 @@
 ---
 title: Rate calculation
-documentation: _documentation/timesheet.md
+documentation: /documentation/timesheet.html
 oss: true
 hosted: true
 order: 230

@@ -1,6 +1,6 @@
 ---
 title: Projects
-documentation: _documentation/project.md
+documentation: /documentation/project.html
 oss: true
 hosted: true
 order: 65

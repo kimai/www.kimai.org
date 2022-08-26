@@ -1,6 +1,6 @@
 ---
 title: Multi language
-documentation: _documentation/translations.md
+documentation: /documentation/translations.html
 oss: true
 hosted: true
 order: 30
