@@ -4,7 +4,7 @@ name: Approval workflow for timesheets
 intro: "This bundle is available to perform a weekly approval for timesheets."
 developer: katjaglass
 date: "2022-08-24 12:00:00 +0100"
-icon: fa-solid fa-person-circle-check
+icon: fas fa-user-check
 price: "0"
 github: https://github.com/KatjaGlassConsulting/ApprovalBundle
 download: https://github.com/KatjaGlassConsulting/ApprovalBundle/archive/master.zip
@@ -54,7 +54,7 @@ A plugin for Kimai to approve timesheets of users on a weekly basis.
 
 ## Requirement
 
-- Requires Kamai 2, V1.16.10 or higher
+- Requires Kimai v1.16.10 or higher
 - [Custom-fields plugin]({% link _store/keleo-custom-fields-bundle.md %})
 - [Lockdown per user settings]({% link _store/keleo-lockdown-per-user-bundle.md %})
 
