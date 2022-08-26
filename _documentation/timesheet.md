@@ -50,7 +50,7 @@ The export state can be set manually or via the [invoice]({% link _documentation
 
 Since version 1.14 you can define whether a timesheet record is billable or not.
 
-None-billable timesheets are excluded from [invoices]({% link _documentation/invoices.md %}) and budget calculations.
+Non-billable timesheets are excluded from [invoices]({% link _documentation/invoices.md %}) and budget calculations.
 
 Please read the [billable documentation]({% link _documentation/billable.md %}) to understand the `billable` flag.
 

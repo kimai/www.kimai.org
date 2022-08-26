@@ -55,15 +55,15 @@ Here is the solution/workaround that you have to apply for wrongly assigned acti
 
 ## Billable
 
-{% include billable.md entity="Activity" %}
+{% include contents/billable.md entity="Activity" %}
 
 ## Budgets
 
-{% include budgets.md permission="activity" %} 
+{% include contents/budgets.md permission="activity" %} 
 
 ## Rates
 
-{% include rates.md permission="activity" %}
+{% include contents/rates.md permission="activity" %}
 
 ## Visibility
  

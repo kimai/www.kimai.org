@@ -24,15 +24,15 @@ If the booking of records is necessary, the team lead or admin can remove the da
 
 ## Billable
 
-{% include billable.md entity="Project" %} 
+{% include contents/billable.md entity="Project" %} 
 
 ## Budgets
 
-{% include budgets.md permission="project" %} 
+{% include contents/budgets.md permission="project" %} 
 
 ## Rates
 
-{% include rates.md permission="project" %}
+{% include contents/rates.md permission="project" %}
 
 ## Visibility
 

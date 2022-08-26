@@ -28,15 +28,15 @@ before any data will be shown.
 
 ## Billable
 
-{% include billable.md entity="Customer" %}
+{% include contents/billable.md entity="Customer" %}
 
 ## Budgets
 
-{% include budgets.md permission="customer" %} 
+{% include contents/budgets.md permission="customer" %} 
 
 ## Rates
 
-{% include rates.md permission="customer" %} 
+{% include contents/rates.md permission="customer" %} 
 
 ## Visibility
 

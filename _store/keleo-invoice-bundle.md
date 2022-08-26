@@ -30,7 +30,7 @@ screenshots:
     description: Detail screenshot of the new invoice settings for format language and export template
 ---
 
-{% include pay-what-you-want.md %}
+{% include contents/pay-what-you-want.md %}
 
 {% include documentation-link.html chapter="plugin-invoice" %}
 

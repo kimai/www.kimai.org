@@ -269,8 +269,9 @@ layout: default
                         </div>
 
                     </div>
-                    <div class="card-body">
-                        {% include store-gumroad-and-support.html %}
+                    <div class="card-body" markdown="block">
+                        {% capture gumroad_support %}{% include contents/store-gumroad-and-support.md %}{% endcapture %}
+                        {{ gumroad_support | markdownify }}
                     </div>
                 </div>
             {% endif %}

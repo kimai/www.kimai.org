@@ -26,15 +26,15 @@ Start and end-date are inclusive, so both dates will be included when filtering 
 
 ## Billable
 
-{% include billable.md entity="Project" %} 
+{% include contents/billable.md entity="Project" %} 
 
 ## Budgets
 
-{% include budgets.md permission="project" %} 
+{% include contents/budgets.md permission="project" %} 
 
 ## Rates
 
-{% include rates.md permission="project" %}
+{% include contents/rates.md permission="project" %}
 
 ## Visibility
 
