@@ -33,11 +33,11 @@ with_languages: false
                         </div>
 
                         <h2 class="mt-0 mb-4">
-                            {{ group.name }}
+                            {{ group.name[page.lang] }}
                         </h2>
 
                         <p class="empty-subtitle text-muted">
-                            {{ group.description }}
+                            {{ group.description[page.lang] }}
                         </p>
 
                         {% for p in group.pages %}

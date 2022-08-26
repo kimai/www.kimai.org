@@ -3,6 +3,7 @@
     {% assign showIcons = false %}
     {% assign homepage = site.data.trans-menu[page.lang][layout.homepage] %}
     {% assign collectionType = layout.type %}
+    {% assign menuLanguage = page.lang !== nil ? page.lang : 'en' %}
 
     <li class="nav-item d-md-inline d-none">
 		<a href="{{ homepage.url }}" class="nav-link{% if page.url == homepage.url %} active{% endif %}" style="height: 100%; padding: 0;">
@@ -13,7 +14,7 @@
 	{% for data in menu %}
 	<li class="nav-item{% if data.pages %} dropdown{% endif %}">
 
-		<a href="{% if data.url %}{% if data.url != '#' %}{{ data.url | absolute_url }}{% else %}#{% endif %}{% else %}javascript:void(0){% endif %}" class="nav-link dropdown-toggle{% if page.url contains data.url %} active{% endif %}{% if data.disabled %} disabled{% endif %}"{% if data.pages %} data-toggle="dropdown"{% endif %}>{% if showIcons && data.icon %}<i class="{{ data.icon }}"></i>{% endif %} {{ data.name }}{% if data.count %} <span class="badge badge-pill bg-primary text-white ml-2">{{ data.count }}</span>{% endif %}</a>
+		<a href="{% if data.url %}{% if data.url != '#' %}{{ data.url | absolute_url }}{% else %}#{% endif %}{% else %}javascript:void(0){% endif %}" class="nav-link dropdown-toggle{% if page.url contains data.url %} active{% endif %}{% if data.disabled %} disabled{% endif %}"{% if data.pages %} data-toggle="dropdown"{% endif %}>{% if showIcons && data.icon %}<i class="{{ data.icon }}"></i>{% endif %} {{ data.name[menuLanguage] }}{% if data.count %} <span class="badge badge-pill bg-primary text-white ml-2">{{ data.count }}</span>{% endif %}</a>
 
 		{% if data.pages %}
 			<div class="dropdown-menu dropdown-menu-arrow">
