@@ -42,7 +42,7 @@ bundle:
       - ["0.9.1", "1.16.10"]
 ---
 
-A plugin for Kimai to approve timesheets of users on a weekly basis including APIs.
+A plugin for Kimai to approve timesheets of users on a weekly basis.
 
 ## Features
 
