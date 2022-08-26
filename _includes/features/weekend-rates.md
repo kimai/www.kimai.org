@@ -1,0 +1,1 @@
+You can configure global settings for rate factors on single weekdays, e.g. 150% for saturday and sunday.

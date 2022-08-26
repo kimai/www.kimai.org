@@ -4,6 +4,7 @@ documentation: _documentation/users.md
 oss: true
 hosted: true
 order: 20
+lang: en
 ---
 
-Kimai can be used by as many users as you want: each installation supports unlimited users with different roles (see permissions).
+{% include features/multi-user.md %}

@@ -4,6 +4,7 @@ documentation: _documentation/timesheet.md
 oss: true
 hosted: true
 order: 240
+lang: en
 ---
 
-You can filter all time-records by user, customer, project, activity and date.
+{% include features/timesheet-filter.md %}

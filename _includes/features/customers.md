@@ -1,0 +1,1 @@
+Manage your customers and set address, contacts, country, currency, visibility (for archiving) and many more fields.

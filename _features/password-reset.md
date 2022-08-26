@@ -4,6 +4,7 @@ documentation: _documentation/users.md
 oss: true
 hosted: false
 order: 875
+lang: en
 ---
 
-Forgot your password? No problem, Kimai got you covered with an password reset functionality via email.
+{% include features/password-reset.md %}

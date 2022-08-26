@@ -1,0 +1,1 @@
+Forgot your password? No problem, Kimai got you covered with an password reset functionality via email.

@@ -50,7 +50,7 @@
                         {% assign features = site.features | sort:"order" %}
                         {% for feature in features %}
                         <tr>
-                            <td class="text-nowrap">
+                            <td>
                                 {% if feature.documentation != nil %}
                                 {% assign url = feature.documentation | replace: '_store/', '/store/' | replace: '_documentation/', '/documentation/' | replace: '.md', '.html' %}
                                 <a href="{{ url }}">{{ feature.title }}</a>

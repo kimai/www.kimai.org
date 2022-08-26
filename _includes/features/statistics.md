@@ -1,0 +1,1 @@
+Your dashboard will show you several statistics about recorded times and the amount of collected data. And we can always add more charts!

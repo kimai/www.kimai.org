@@ -4,6 +4,7 @@ documentation: _documentation/timesheet.md
 oss: true
 hosted: false
 order: 250
+lang: en
 ---
 
-You can configure global settings for rate factors on single weekdays, e.g. 150% for saturday and sunday.
+{% include features/weekend-rates.md %}

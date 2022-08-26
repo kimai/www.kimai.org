@@ -1,0 +1,1 @@
+Kimai uses localized version of the 24 hour format. But if you are used to the am/pm format, you can configure that.

@@ -4,6 +4,7 @@ documentation: _documentation/docker.md
 oss: true
 hosted: false
 order: 180
+lang: en
 ---
 
-The release includes a docker image for development and there is a separate docker-compose setup for production available.
+{% include features/docker.md %}

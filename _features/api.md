@@ -4,6 +4,7 @@ documentation: _documentation/rest-api.md
 oss: true
 hosted: true
 order: 125
+lang: en
 ---
 
-Featuring a JSON API so external apps can communicate with your favorite time-tracker!
+{% include features/api.md %}

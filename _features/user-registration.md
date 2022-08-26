@@ -4,6 +4,7 @@ documentation: _documentation/users.md
 oss: true
 hosted: false
 order: 850
+lang: en
 ---
 
-Kimai supports user self-registration with email activation.
+{% include features/user-registration.md %}

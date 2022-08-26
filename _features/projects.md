@@ -4,6 +4,7 @@ documentation: _documentation/project.md
 oss: true
 hosted: true
 order: 65
+lang: en
 ---
 
-Manage projects for each customer with order number, budget and visibility (for archiving).
+{% include features/projects.md %}

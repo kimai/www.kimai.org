@@ -4,6 +4,7 @@ documentation: _documentation/customer.md
 oss: true
 hosted: true
 order: 60
+lang: en
 ---
 
-Manage your customers and set address, contacts, country, currency, visibility (for archiving) and many more fields.
+{% include features/customers.md %}

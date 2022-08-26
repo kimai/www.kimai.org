@@ -1,9 +1,10 @@
 ---
-title: Limit records
+title: Amount of active records
 documentation: /documentation/timesheet.html#limit-active-entries
 oss: true
 hosted: true
 order: 200
+lang: en
 ---
 
-You can record as many times as you want in parallel, but you can also config the allowed limit of active records down to 1.
+{% include features/active-entries.md %}
