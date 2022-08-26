@@ -4,7 +4,7 @@ name: Approval workflow for timesheets
 intro: "This bundle is available to perform a weekly approval for timesheets."
 developer: katjaglass
 date: "2022-08-24 12:00:00 +0100"
-icon: fa-solid fa-person-circle-check
+icon: fas fa-user-check
 price: "0"
 github: https://github.com/KatjaGlassConsulting/ApprovalBundle
 download: https://github.com/KatjaGlassConsulting/ApprovalBundle/archive/master.zip
