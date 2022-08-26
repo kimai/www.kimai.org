@@ -1,7 +1,6 @@
 ---
 title: Plugins
 documentation: /documentation/plugins.html
-since: 0.9
 oss: true
 hosted: false
 order: 10

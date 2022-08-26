@@ -1,7 +1,6 @@
 ---
 title: Export data
 documentation: _documentation/export.md
-since: 0.8
 oss: true
 hosted: true
 order: 110
