@@ -23,7 +23,6 @@ screenshots:
     src: "https://raw.githubusercontent.com/KatjaGlassConsulting/ApprovalBundle/0.9.1/_documentation/Screenshot_TeamleadSeeHistory.png"
     title: "History of Approval for that week"
     description: "The approval history including all comments can be viewed by the teamlead or users"
-    description: "Overview Screen of open past approvals of the corresponding team members and itself and status of current finished week"
   - 
     src: "https://raw.githubusercontent.com/KatjaGlassConsulting/ApprovalBundle/0.9.1/_documentation/Screenshot_TeamleadApproveDeny.png"
     title: "Approve or deny a week"
