@@ -9,4 +9,4 @@ tags: [v1]
 User Andreas Bulling found out that Kimai doesn't encrypt passwords set via the admin panel.
 I fixed this today and put a new release on the website. Thanks Andreas!
 
-[Get it here.]({{ site.download_url }})
+[Get it here.](/download/)

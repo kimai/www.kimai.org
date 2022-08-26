@@ -13,4 +13,4 @@ YOU CAN ONLY UPDATE VERSIONS HIGHER THAN 7.0!
 Only the PDO connection works! Non-PDO release is still under development.
 
 Notes from the last blog post are also important for this version.
-[Download]({{ site.download_url }})
+[Download](/download/)

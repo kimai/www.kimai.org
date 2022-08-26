@@ -18,7 +18,7 @@ and... an invoice extension (beta and disabled by default) were added.
 
 ## What to do?
 
-Please [download]({{ site.download_url }}) the new Kimai package and upgrade your system soon!
+Please [download](/download/) the new Kimai package and upgrade your system soon!
 
 If you have any questions, don't hesitate to contact us in the [Forum]({{ site.kimai_v1_repo }}/issues).
 

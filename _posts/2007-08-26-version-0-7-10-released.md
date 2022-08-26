@@ -10,4 +10,4 @@ This version corrects a bug that appears when your Kimai installment makes use o
 Normally timesheet records are splitted in two when crossing midnight.
 This bug caused Kimai not to do so. So this update is for all of you, who don't have regular 9 to 5 jobs ... ;)
 
-[Get it here.]({{ site.download_url }})
+[Get it here.](/download/)
