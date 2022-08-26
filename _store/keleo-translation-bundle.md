@@ -2,25 +2,11 @@
 title: Translation plugin for Kimai
 name: Translation plugin
 intro: "Change all visible elements in your Kimai installation with your own translations"
-slug: translation-bundle
-developer: kevinpapst
-date: "2021-12-25 12:00:00 +0200"
-icon: fas fa-language
-demo: true 
-price: "29€"
-gumroad: kimai-translation
 featured: "Change all visible elements (form labels, table header, menu items ...) in your Kimai installation with your own translations"
-new: true
-toc: false 
+slug: translation-bundle
 type: featured
 tags:
   - plugin
-bundle:
-    name: "TranslationBundle"
-    command: "kimai:bundle:translation:install"
-    purchase: true
-    versions:
-      - ["1.2 -1.3", "1.15"]
 screenshots:
   -  
     src: "/images/marketplace/translation-listing.png"
@@ -34,11 +20,7 @@ screenshots:
     src: "/images/marketplace/translation-edit.png"
     title: "Edit screen"
     description: "The edit dialog allows to change your custom translation"
+lang: en
 ---
 
-{% include documentation-link.html chapter="plugin-translation" %}
-
-You can test the Plugin in the [Plugin demo]({% link _pages/demo.md %}).
-
-{% include plugins/translation.md %}
- 
+{% include store/keleo-translation-bundle.md %}

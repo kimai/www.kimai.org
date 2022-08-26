@@ -1,20 +1,21 @@
 ---
 layout: default
 ---
-{% assign developer = site.data.developer[page.developer] %}
-{% assign icon = page.icon | default: "fas fa-question" %}
+{% assign settings = site.data.store[page.slug] %}
+{% assign developer = site.data.developer[settings.developer] %}
+{% assign icon = settings.icon | default: "fas fa-question" %}
 {% capture options %}<a href="{% link _pages/store.html %}" class="btn btn-option">Back to {{ site.data.trans[page.lang].store }} <i class="fas fa-arrow-circle-right"></i></a>{% endcapture %}
 {% assign buyLink = '#' %}
 {% assign isPaidOwnerPlugin = false %}
-{% if page.download %}
-	{% assign buyLink = page.download %}
-{% elsif page.email %}
-	{% assign buyLink = 'mailto:' | append: page.email %}
-{% elsif page.github %}
-	{% assign buyLink = page.github %}
+{% if settings.download %}
+	{% assign buyLink = settings.download %}
+{% elsif settings.email %}
+	{% assign buyLink = 'mailto:' | append: settings.email %}
+{% elsif settings.github %}
+	{% assign buyLink = settings.github %}
 {% endif %}
-{%- if page.gumroad %}
-    {% if page.developer == 'keleo' or page.developer == 'kevinpapst' %}
+{%- if settings.gumroad %}
+    {% if settings.developer == 'keleo' or settings.developer == 'kevinpapst' %}
 	    {% assign isPaidOwnerPlugin = true %}
     {% endif %}
 {% endif %}
@@ -29,17 +30,17 @@ layout: default
 				<div class="col-md-6 col-lg-12">
 					<div class="card p-3">
 						<div class="d-flex align-items-center">
-							{% if page.gumroad %}
-							<a href="https://gum.co/{{ page.gumroad }}" onclick="location.href='https://gum.co/{{ page.gumroad }}';return false;">
+							{% if settings.gumroad %}
+							<a href="https://gum.co/{{ settings.gumroad }}" onclick="location.href='https://gum.co/{{ settings.gumroad }}';return false;">
 								<span class="stamp stamp-md bg-blue mr-3">
 								  <i class="fas fa-euro-sign"></i>
 								</span>
 							</a>
 							{% else %}
 								<span class="stamp stamp-md bg-blue mr-3">
-									{% if page.price == nil %}
+									{% if settings.price == nil %}
 									<i class="fas fa-comments"></i>
-									{% elsif page.price == '0' %}
+									{% elsif settings.price == '0' %}
 									<i class="fas fa-gift"></i>
 									{% else %}
 									<i class="fas fa-shopping-cart"></i>
@@ -48,12 +49,12 @@ layout: default
 							{% endif %}
 							<div>
 								<h4 class="m-0">
-									{% if page.price == nil %}
+									{% if settings.price == nil %}
 										upon request
-									{% elsif page.price == '0' %}
+									{% elsif settings.price == '0' %}
 										free
 									{% else %}
-										{{ page.price }} (excl. VAT)
+										{{ settings.price }} (excl. VAT)
 									{% endif %}
 								</h4>
 								<small class="text-muted">
@@ -67,7 +68,7 @@ layout: default
 						</div>
 					</div>
 
-                    {% if page.bundle %}
+                    {% if settings.bundle %}
                     <div class="card">
                         <div class="card-body">
                             <ul class="section-nav bundle-nav">
@@ -138,7 +139,7 @@ layout: default
                         </div>
                     </div>
 
-                    {% if page.demo %}
+                    {% if settings.demo %}
                     <div class="card">
                         <div class="card-body">
                             <h3 class="mb-3 text-center alert alert-info">
@@ -199,45 +200,42 @@ layout: default
 			<div class="card">
 				<div class="card-header">
 					<div class="d-flex align-items-center px-2">
-						{% if page.image %}
-						<div class="avatar avatar-md mr-3" style="background-image: url({{ page.image }})"></div>
+						{% if settings.image %}
+						<div class="avatar avatar-md mr-3" style="background-image: url({{ settings.image }})"></div>
 						{% else %}
 						<i class="{{ icon }} fa-2x mr-3"></i>
 						{% endif %}
 						<div>
 							<div>{{ page.intro }}</div>
-							<small class="d-block text-muted">
-								Last update: {{ page.date | date_to_string }}
-							</small>
 						</div>
 					</div>
 					<div class="card-options">
-						{% if page.email %}
-						<a href="mailto:{{ page.email }}" class="btn btn-outline-primary">
+						{% if settings.email %}
+						<a href="mailto:{{ settings.email }}" class="btn btn-outline-primary">
 							<i class="fas fa-at"></i>
 							<span class="text-nowrap">Contact</span>
 						</a>
 						{% endif %}
-						{% if page.github %}
-							<a href="{{ page.github }}" class="btn btn-outline-primary">
+						{% if settings.github %}
+							<a href="{{ settings.github }}" class="btn btn-outline-primary">
 								<i class="fab fa-github"></i>
 								<span class="text-nowrap">GitHub</span>
 							</a>
 						{% endif %}
-						{% if page.gitlab %}
-							<a href="{{ page.gitlab }}" class="btn btn-outline-primary">
+						{% if settings.gitlab %}
+							<a href="{{ settings.gitlab }}" class="btn btn-outline-primary">
 								<i class="fab fa-gitlab"></i>
 								<span class="text-nowrap">GitLab</span>
 							</a>
 						{% endif %}
-						{% if page.download %}
-							<a href="{{ page.download }}" class="btn btn-outline-primary ml-2">
+						{% if settings.download %}
+							<a href="{{ settings.download }}" class="btn btn-outline-primary ml-2">
 								<i class="fas fa-download"></i>
 								<span class="text-nowrap">Download</span>
 							</a>
 						{% endif %}
-						{% if page.gumroad %}
-						<a href="https://gum.co/{{ page.gumroad }}" class="btn btn-success ml-2" target="_blank">
+						{% if settings.gumroad %}
+						<a href="https://gum.co/{{ settings.gumroad }}" class="btn btn-success ml-2" target="_blank">
 							<i class="fas fa-shopping-cart"></i>
 							<span class="text-nowrap">Buy now</span>
 						</a>
@@ -246,7 +244,7 @@ layout: default
 				</div>
 				<div class="card-body">
 
-                    {% if page.toc %}
+                    {% if settings.toc %}
                     {% include toc.html html=page.content class="section-nav" h_min=2 h_max=3 %}
                     {% endif %}
 
@@ -260,8 +258,8 @@ layout: default
                             <h3 id="purchase" class="card-title">Purchase</h3>
                         </div>
                         <div class="card-options">
-                            {% if page.gumroad %}
-                            <a href="https://gum.co/{{ page.gumroad }}" class="btn btn-success ml-2" target="_blank">
+                            {% if settings.gumroad %}
+                            <a href="https://gum.co/{{ settings.gumroad }}" class="btn btn-success ml-2" target="_blank">
                                 <i class="fas fa-shopping-cart"></i>
                                 <span class="text-nowrap">Buy now</span>
                             </a>
@@ -269,7 +267,7 @@ layout: default
                         </div>
 
                     </div>
-                    <div class="card-body" markdown="block">
+                    <div class="card-body">
                         {% capture gumroad_support %}{% include contents/store-gumroad-and-support.md %}{% endcapture %}
                         {{ gumroad_support | markdownify }}
                     </div>
@@ -287,7 +285,7 @@ layout: default
                 </div>
             </div>
             {% endif %}
-            {% if page.bundle %}
+            {% if settings.bundle %}
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center px-2">
@@ -295,7 +293,7 @@ layout: default
                             </div>
                         </div>
                         <div class="card-body">
-                            {% if page.bundle.versions %}
+                            {% if settings.bundle.versions %}
                             <h3>Compatibility</h3>
 
                             <p>
@@ -314,7 +312,7 @@ layout: default
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    {% for version in page.bundle.versions %}
+                                    {% for version in settings.bundle.versions %}
                                     <tr>
                                         <td>{{ version[0] }}</td>
                                         <td>{{ version[1] }}</td>
@@ -324,7 +322,7 @@ layout: default
                             </table>
                             {% endif %}
 
-                            {% include store-plugin-installation.html clone=page.bundle.clone plugin=page.bundle.name command=page.bundle.command assets=page.bundle.assets %}
+                            {% include store-plugin-installation.html clone=settings.bundle.clone plugin=settings.bundle.name command=settings.bundle.command assets=settings.bundle.assets %}
                         </div>
                     </div>
 
@@ -335,7 +333,7 @@ layout: default
                             </div>
                         </div>
                         <div class="card-body">
-                            {% include store-plugin-update.html plugin=page.bundle.name command=page.bundle.command assets=page.bundle.assets %}
+                            {% include store-plugin-update.html plugin=settings.bundle.name command=settings.bundle.command assets=settings.bundle.assets %}
                         </div>
                     </div>
             {% endif %}
@@ -347,10 +345,10 @@ layout: default
 		<div class="col-lg-9">
 			<h4>All items by {{ developer.name }}</h4>
 
-			{% assign products = site.store | where: "developer", page.developer | where_exp:"product", "product.featured != nil" | sort: 'name' %}
+			{% assign products = site.store | where: "developer", settings.developer | where_exp:"product", "product.featured != nil" | sort: 'name' %}
 			{% include store-list.html products=products %}
 
-			{% assign products = site.store | where: "developer", page.developer | where_exp:"product", "product.featured == nil" | sort: 'name' %}
+			{% assign products = site.store | where: "developer", settings.developer | where_exp:"product", "product.featured == nil" | sort: 'name' %}
 			{% include store-list.html products=products %}
 
 			{% include store-list.html products=items %}
