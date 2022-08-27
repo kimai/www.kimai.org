@@ -7,4 +7,4 @@ order: 125
 lang: fr
 ---
 
-{% include features/ldap.md %}
+Connectez Kimai avec le serveur d'annuaire de votre entreprise (LDAP ou Active directory) et utilisez votre infrastructure d'authentification existante.

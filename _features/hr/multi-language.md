@@ -7,4 +7,5 @@ order: 30
 lang: hr
 ---
 
+Kimai can be localized to any language and is already translated to
 {% include features/multi-language.md %}

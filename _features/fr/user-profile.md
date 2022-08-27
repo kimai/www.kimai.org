@@ -1,5 +1,5 @@
 ---
-title: User profile
+title: Profil de l'utilisateur
 documentation: /documentation/users.html
 oss: true
 hosted: true
@@ -7,4 +7,4 @@ order: 810
 lang: fr
 ---
 
-{% include features/user-profile.md %}
+Statistiques personnelles et paramètres par utilisateur pour le taux horaire, le thème Kimai, le mot de passe et l'avatar.

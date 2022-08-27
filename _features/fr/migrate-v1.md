@@ -7,4 +7,4 @@ order: 190
 lang: fr
 ---
 
-{% include features/migrate-v1.md %}
+Les données de Kimai v1 peuvent être importées, pour une migration transparente de votre système de suivi du temps.
