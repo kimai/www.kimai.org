@@ -7,5 +7,5 @@ order: 30
 lang: de
 ---
 
-Kimai can be localized to any language and is already translated to
+Kimai kann an jede Sprache angepasst werden und es liegen Übersetzungen vor für  
 {% include features/multi-language.md %}
