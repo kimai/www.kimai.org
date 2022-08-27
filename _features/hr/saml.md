@@ -7,4 +7,4 @@ order: 124
 lang: hr
 ---
 
-{% include features/saml.md %}
+Prijavi se i registriraj korisnike putem SAML-a (Single sign on, poznato i kao SSO) i ponovo koristi svog postojećeg pružatelja identiteta, kao što su Google workspace, Authentik ili Azure active directory.

@@ -7,4 +7,4 @@ order: 125
 lang: hr
 ---
 
-{% include features/ldap.md %}
+Poveži Kimai s poslužiteljem mapa tvog poduzeća (LDAP ili Active Directory) i koristi svoju postojeću infrastrukturu za autentifikaciju.

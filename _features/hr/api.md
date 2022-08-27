@@ -7,4 +7,4 @@ order: 125
 lang: hr
 ---
 
-{% include features/api.md %}
+Sadrži JSON API tako da vanjski programi mogu komunicirati s tvojim omiljenim programom za evidentiranje vremena!
