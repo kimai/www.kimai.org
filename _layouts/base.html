@@ -26,9 +26,9 @@
     {%- if page.canonical != nil %}
     <link rel="canonical" href="{{ page.canonical | absolute_url }}" />
     {%- endif %}
-    {%- if page.lang-ref != nil %}
-    {%- assign langPages = site.pages | where: "lang-ref", page.lang-ref %}
-    {%- if langPages.size > 1 %}
+    {%- if page.lang != nil %}
+    {%- assign langPages = site[page.collection] | where: "slug", page.slug -%}
+    {%- if langPages and langPages.size > 1 %}
     {%- for langPage in langPages %}
     <link rel="alternate" hreflang="{{ langPage.lang }}" href="{{ langPage.url | absolute_url }}">
     {%- endfor %}

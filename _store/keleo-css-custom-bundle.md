@@ -1,6 +1,5 @@
 ---
-title: Custom CSS plugin for Kimai
-name: Custom CSS plugin
+title: Custom CSS plugin
 intro: "A plugin, which allows editing custom CSS rules through an administration screen."
 type: plugin
 tags:

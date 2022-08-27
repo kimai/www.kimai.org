@@ -2,7 +2,6 @@
 title: Donations
 description: Donate to Kimai and become a time-tracking sponsor
 lang: en
-lang-ref: donation
 redirect_from: /en/donate.html
 ---
 

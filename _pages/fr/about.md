@@ -2,7 +2,6 @@
 title: "A propos de Kimai"
 description: Qu'est-ce qui se cache derrière l'application de suivi du temps Kimai ? Apprenez-en plus sur elle, son histoire et son développeur.
 lang: fr
-lang-ref: about
 permalink: /fr/apropos-kimai.html
 ---
 

@@ -2,7 +2,6 @@
 title: Faire un don
 description: Faites un don à Kimai et devenez un sponsor du suivi du temps
 lang: fr
-lang-ref: donation
 permalink: /fr/soutenez.html
 ---
 

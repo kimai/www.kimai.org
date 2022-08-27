@@ -1,6 +1,5 @@
 ---
 title: Period insert plugin
-name: Period insert plugin
 intro: "Create timesheet entries by date range"
 redirect_from: /store/hmr-it-period-insert-bundle.html
 type: plugin

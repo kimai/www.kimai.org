@@ -4,7 +4,6 @@ title: Download
 description: Download - Kimai time-tracker
 options: '<a href="https://github.com/kevinpapst/kimai2/releases.atom" class="btn btn-option"><i class="fa fa-rss"></i></a>'
 lang: en
-lang-ref: download
 redirect_from:
   - /en/download.html
   - /download.html

@@ -3,7 +3,6 @@ title: Documentation
 description: Support information, user manual and other documentation for Kimai time-tracking
 subtitle: Online documentation for the time-tracking application Kimai
 lang: en
-lang-ref: documentation
 header: Kimai - Documentation
 icon: fas fa-book
 layout: documentation-index

@@ -2,7 +2,6 @@
 title: Privacy Policy
 description: Privacy policy for www.kimai.org
 lang: en
-lang-ref: privacy
 robots: "noindex, follow"
 sitemap: false
 ---

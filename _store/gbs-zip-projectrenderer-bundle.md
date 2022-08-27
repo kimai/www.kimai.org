@@ -1,6 +1,5 @@
 ---
-title: ZipProjectRenderer plugin for Kimai
-name: ZipProjectRenderer plugin
+title: ZipProjectRenderer plugin
 intro: "A plugin to export one PDF file per project for multiple selected projects."
 type: plugin
 tags:

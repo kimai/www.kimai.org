@@ -6,17 +6,22 @@
 			{% assign featured = false %}
 		    {% assign iconSize = "fa-2x" %}
 			{% assign imageSize = 'class="h-8"' %}
+			{% assign isNew = false %}
+			{% assign settings = site.data.store[product.slug] %}
+			{% if settings.new != nil and settings.new %}
+			    {% assign isNew = true %}
+			{% endif %}
 			{% if product.featured %}
 				{% assign featured = true %}
 		    	{% assign iconSize = "fa-3x" %}
 				{% assign imageSize = 'style="width: 15rem"' %}
 			{% endif %}
-			{% assign icon = product.icon | default: "fas fa-question" %}
-			{% assign developer = site.data.developer[product.developer] %}
+			{% assign icon = settings.icon | default: "fas fa-question" %}
+			{% assign developer = site.data.developer[settings.developer] %}
 			<tr class="{% if featured %}featured-article{% endif %}{% for tag in product.tags %} tag-{{ tag | slugify }}{% endfor %}">
 				<td class="text-center product-icon">
-					{% if product.image %}
-					<img src="{{ product.image }}" alt="Product logo" {{ imageSize }}>
+					{% if settings.image != nil %}
+					<img src="{{ settings.image }}" alt="Product logo" {{ imageSize }}>
 					{% else %}
 					<i class="{{ icon }} {{ iconSize }}"></i>
 					{% endif %}
@@ -24,9 +29,9 @@
 				{% if featured %}
 					<td>
 						<h4 class="mb-4">
-							<a href="{{ product.url | absolute_url }}">{{ product.name }}</a>
-							{% if product.new %}
-							<div class="badge badge-success badge-md">New</div>
+							<a href="{{ product.url | absolute_url }}">{{ product.title }}</a>
+							{% if isNew %}
+							<div class="badge badge-success badge-md">{{ site.data.trans[page.lang].new-badge }}</div>
 							{% endif %}
 						</h4>
 
@@ -38,10 +43,10 @@
 					</td>
 				{% else %}
 					<td>
-						<a href="{{ product.url | absolute_url }}">{{ product.name }}</a>
+						<a href="{{ product.url | absolute_url }}">{{ product.title }}</a>
 
-						{% if product.new %}
-						<div class="badge badge-success badge-md">New</div>
+						{% if isNew %}
+						<div class="badge badge-success badge-md">{{ site.data.trans[page.lang].new-badge }}</div>
 						{% endif %}
 					</td>
 				{% endif %}
@@ -50,14 +55,14 @@
 						<div class="badge badge-default badge-md">{{ tag }}</div>
 					{% endfor %}
 				</td>
-				<td class="text-right">
+				<td class="text-right text-nowrap">
 					<strong>
-						{% if product.price == nil %}
+						{% if settings.price == nil %}
                             <i class="far fa-comments fa-lg"></i>
-                        {% elsif product.price == '0' %}
-							free
+                        {% elsif settings.price == 0 %}
+                            {{ site.data.trans[page.lang].free-badge }}
 						{% else %}
-							{{ product.price }}
+							{{ settings.price }}
 						{% endif %}
 					</strong>
 				</td>

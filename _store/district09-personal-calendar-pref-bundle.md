@@ -1,6 +1,5 @@
 ---
-title: Personal calendar preference plugin for Kimai
-name: Personal calendar preference plugin
+title: Personal calendar preference plugin
 intro: "A plugin, which allows users to set a customized start and end time for the calendar display in their personal preferences."
 type: plugin
 tags:

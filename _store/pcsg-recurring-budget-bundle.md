@@ -1,6 +1,5 @@
 ---
-title: Recurring budget plugin for Kimai 
-name: Recurring budget plugin
+title: Recurring budget plugin
 intro: "Automatically adds money or time to your project budgets on a recurring basis with a custom interval."
 type: plugin
 tags:

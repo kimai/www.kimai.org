@@ -1,6 +1,5 @@
 ---
-title: Fail2Ban plugin for Kimai
-name: Fail2Ban plugin
+title: Fail2Ban plugin
 intro: "A fail2ban compatible plugin, logging failed authentication requests"
 slug: fail2ban-bundle
 type: plugin

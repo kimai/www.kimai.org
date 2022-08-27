@@ -19,9 +19,11 @@ layout: base
                     <div class="d-none d-sm-flex language-switch">
                         {% for lang in site.languages %}
                             {% assign targetUrl = site.data.trans-menu[lang].home.url %}
-                            {% if page.lang-ref != nil and page.lang != nil %}
-                                {% assign langPages = site.pages | where: "lang-ref", page.lang-ref | where: "lang", lang %}
-                                {% assign targetUrl = langPages[0].url %}
+                            {% if page.lang != nil %}
+                                {% assign langPages = site[page.collection] | where: "lang", lang | where: "slug", page.slug %}
+                                {% if langPages and langPages.size == 1 %}
+                                    {% assign targetUrl = langPages[0].url %}
+                                {% endif %}
                             {% endif %}
                             <a href="{{ targetUrl }}" title="{{ site.language_names[lang] }} - {{ site.data.trans-menu[lang].home.title }}" {% if page.lang == lang %}class="nav-link text-dark text-uppercase" style="text-decoration: underline;"{% else %}class="nav-link text-uppercase"{% endif %}>{{ lang|capitalize }}</a>
                         {% endfor %}

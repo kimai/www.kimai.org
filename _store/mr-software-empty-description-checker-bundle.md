@@ -1,6 +1,5 @@
 ---
-title: Empty description checker plugin for Kimai
-name: Empty description checker plugin
+title: Empty description checker plugin
 intro: "A plugin for Kimai which shows you all entries without a description + email notification for users to ask them to add a description."
 redirect_from: /store/hmr-it-empty-description-checker-bundle.html
 type: plugin

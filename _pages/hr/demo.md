@@ -2,7 +2,6 @@
 title: Demo
 description: Testiraj i ocijeni naš program za evidentiranje vremena Kimai, izravno s naše demo stranice.
 lang: hr
-lang-ref: demo
 permalink: /hr/demo.html
 ---
 

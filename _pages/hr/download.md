@@ -4,7 +4,6 @@ title: Preuzimanje
 description: Preuzimanje – Kimai program za evidentiranje vremena
 options: '<a href="https://github.com/kevinpapst/kimai2/releases.atom" class="btn btn-option"><i class="fa fa-rss"></i></a>'
 lang: hr
-lang-ref: download
 permalink: /hr/download.html
 ---
 

@@ -1,6 +1,5 @@
 ---
-title: Archive timesheets command plugin for Kimai
-name: Archive timesheets command plugin
+title: Archive timesheets command plugin
 intro: "A plugin, which allows you to archive timesheets older than a specified timeframe, using a command."
 type: plugin
 tags:

@@ -1,6 +1,5 @@
 ---
-title: Rainmeter widget for Kimai
-name: Rainmeter widget (kimai-cmd)
+title: Rainmeter widget
 intro: "Kimai widget for Windows!"
 type: client
 tags:

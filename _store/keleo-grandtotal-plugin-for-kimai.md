@@ -1,6 +1,5 @@
 ---
-title: GrandTotal plugin for Kimai
-name: Grandtotal plugin
+title: Grandtotal plugin
 intro: "A GrandTotal 6 plugin, which allows to import Kimai timesheets"
 slug: grandtotal-plugin-for-kimai
 type: client

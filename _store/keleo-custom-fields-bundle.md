@@ -1,9 +1,8 @@
 ---
-title: Custom-fields plugin for Kimai
-name: Custom-fields plugin
+title: Custom fields
 intro: "Create free configurable additional fields for timesheets, customers, projects, activities and users."
-slug: custom-fields-bundle
 featured: Create free configurable additional fields for timesheets, customers, projects, activities and users in various formats. Fields can be optional or mandatory and restricted by permissions.
+slug: custom-fields-bundle
 type: featured
 tags:
   - plugin

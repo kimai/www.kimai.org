@@ -1,6 +1,5 @@
 ---
-title: iOS offline tracker for Kimai
-name: iOS app for offline tracking with Kimai
+title: iOS app for offline tracking
 intro: "iOS app for offline tracking with Kimai"
 redirect_from: /store/hmr-it-ios-offline-tracker.html
 type: app

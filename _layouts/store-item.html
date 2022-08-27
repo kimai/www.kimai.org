@@ -4,7 +4,7 @@ layout: default
 {% assign settings = site.data.store[page.slug] %}
 {% assign developer = site.data.developer[settings.developer] %}
 {% assign icon = settings.icon | default: "fas fa-question" %}
-{% capture options %}<a href="{% link _pages/store.html %}" class="btn btn-option">Back to {{ site.data.trans[page.lang].store }} <i class="fas fa-arrow-circle-right"></i></a>{% endcapture %}
+{% capture options %}<a href="{{ site.data.trans-menu[page.lang].store.url }}" class="btn btn-option">{{ site.data.trans[page.lang].store-back }} {{ site.data.trans[page.lang].store }} <i class="fas fa-arrow-circle-right"></i></a>{% endcapture %}
 {% assign buyLink = '#' %}
 {% assign isPaidOwnerPlugin = false %}
 {% if settings.download %}
@@ -22,7 +22,7 @@ layout: default
 
 <div class="container store-item">
 
-	{% include page-title.html title=page.name options=options %}
+	{% include page-title.html title=page.title options=options %}
 
 	<div class="row row-cards">
 		<div class="col-lg-3">
@@ -40,7 +40,7 @@ layout: default
 								<span class="stamp stamp-md bg-blue mr-3">
 									{% if settings.price == nil %}
 									<i class="fas fa-comments"></i>
-									{% elsif settings.price == '0' %}
+									{% elsif settings.price == 0 %}
 									<i class="fas fa-gift"></i>
 									{% else %}
 									<i class="fas fa-shopping-cart"></i>
@@ -51,8 +51,8 @@ layout: default
 								<h4 class="m-0">
 									{% if settings.price == nil %}
 										upon request
-									{% elsif settings.price == '0' %}
-										free
+									{% elsif settings.price == 0 %}
+                                        {{ site.data.trans[page.lang].free-badge }}
 									{% else %}
 										{{ settings.price }} (excl. VAT)
 									{% endif %}
@@ -72,9 +72,9 @@ layout: default
                     <div class="card">
                         <div class="card-body">
                             <ul class="section-nav bundle-nav">
-                                <li><a href="#features">Features</a></li>
+                                <li><a href="#features">{{ site.data.trans[page.lang].store-features }}</a></li>
                                 {%- if isPaidOwnerPlugin %}
-                                <li><a href="#purchase">Purchase</a></li>
+                                <li><a href="#purchase">{{ site.data.trans[page.lang].store-purchase }}</a></li>
                                 {% endif %}
                                 <li><a href="#screenshots">Screenshots</a></li>
                                 <li><a href="#installation">Installation</a></li>
@@ -86,7 +86,7 @@ layout: default
 
                     <div class="card">
                         <div class="card-body text-center">
-                            <h4 class="card-title text-center">Offered by</h4>
+                            <h4 class="card-title text-center">{{ site.data.trans[page.lang].store-offered-by }}</h4>
                             <div class="mb-4">
                                 <img src="{{ developer.image }}" alt="Logo - {{ developer.name }}" class="avatar avatar-xxl">
                             </div>
@@ -237,7 +237,7 @@ layout: default
 						{% if settings.gumroad %}
 						<a href="https://gum.co/{{ settings.gumroad }}" class="btn btn-success ml-2" target="_blank">
 							<i class="fas fa-shopping-cart"></i>
-							<span class="text-nowrap">Buy now</span>
+							<span class="text-nowrap">{{ site.data.trans[page.lang].store-buy-button }}</span>
 						</a>
 						{% endif %}
 					</div>
@@ -255,13 +255,13 @@ layout: default
                 <div class="card">
                     <div class="card-header">
                         <div class="d-flex align-items-center px-2">
-                            <h3 id="purchase" class="card-title">Purchase</h3>
+                            <h3 id="purchase" class="card-title">{{ site.data.trans[page.lang].store-purchase }}</h3>
                         </div>
                         <div class="card-options">
                             {% if settings.gumroad %}
                             <a href="https://gum.co/{{ settings.gumroad }}" class="btn btn-success ml-2" target="_blank">
                                 <i class="fas fa-shopping-cart"></i>
-                                <span class="text-nowrap">Buy now</span>
+                                <span class="text-nowrap">{{ site.data.trans[page.lang].store-buy-button }}</span>
                             </a>
                             {% endif %}
                         </div>
@@ -340,18 +340,18 @@ layout: default
 		</div>
 	</div>
 
+    {% comment %}
     <div class="row row-cards">
 		<div class="col-lg-3"></div>
 		<div class="col-lg-9">
 			<h4>All items by {{ developer.name }}</h4>
 
-			{% assign products = site.store | where: "developer", settings.developer | where_exp:"product", "product.featured != nil" | sort: 'name' %}
+			{% assign products = site.store | where: "lang", page.lang | where: "developer", settings.developer | where_exp:"product", "product.featured != nil" | sort: 'title' %}
 			{% include store-list.html products=products %}
 
-			{% assign products = site.store | where: "developer", settings.developer | where_exp:"product", "product.featured == nil" | sort: 'name' %}
+			{% assign products = site.store | where: "lang", page.lang | where: "developer", settings.developer | where_exp:"product", "product.featured == nil" | sort: 'title' %}
 			{% include store-list.html products=products %}
-
-			{% include store-list.html products=items %}
 		</div>
 	</div>
+    {% endcomment %}
 </div>

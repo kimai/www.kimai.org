@@ -1,6 +1,5 @@
 ---
-title: "Backup plugin for Kimai"
-name: Easy Backup
+title: Easy Backup
 intro: "A Kimai plugin, which allows you to backup your environment with a single click."
 type: plugin
 tags:

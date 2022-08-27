@@ -4,7 +4,6 @@ title: Téléchargement
 description: Télécharger - Kimai Time Tracking
 options: '<a href="https://github.com/kevinpapst/kimai2/releases.atom" class="btn btn-option"><i class="fa fa-rss"></i></a>'
 lang: fr
-lang-ref: download
 permalink: /fr/download.html
 ---
 

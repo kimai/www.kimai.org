@@ -1,6 +1,5 @@
 ---
-title: Shared Project Timesheets for Kimai
-name: Shared Project Timesheets Plugin
+title: Shared Project Timesheets Plugin
 intro: Share project timesheets with anyone!
 type: plugin
 tags:

@@ -1,6 +1,5 @@
 ---
 title: Approval workflow for timesheets
-name: Approval workflow for timesheets
 intro: "This bundle is available to perform a weekly approval for timesheets."
 type: plugin
 tags:

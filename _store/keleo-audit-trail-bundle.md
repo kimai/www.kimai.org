@@ -1,6 +1,5 @@
 ---
-title: Audit-Trail plugin for Kimai
-name: Audit-Trail plugin
+title: Audit trail logs
 intro: "Records detailed change/audit logs for timesheets, customers, projects and activities and displays them in a per-item timeline."
 slug: audit-trail-bundle
 featured: "Records detailed change/audit logs for timesheets, customers, projects and activities and displays them in a per-item timeline."
@@ -23,5 +22,11 @@ screenshots:
 lang: en
 ---
 
+
 {% include store/keleo-audit-trail-bundle.md %}
- 
+
+
+<pre>
+{{ page | inspect }}
+</pre>
+   

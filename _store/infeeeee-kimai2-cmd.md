@@ -1,6 +1,5 @@
 ---
-title: Command line client for Kimai
-name: Terminal client (kimai-cmd)
+title: Command line client
 intro: "Cross platform command line client for Kimai, written with Node.js"
 screenshot: 
   - https://raw.githubusercontent.com/infeeeee/kimai2-cmd/master/assets/interactive-restart.gif

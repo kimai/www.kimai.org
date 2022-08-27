@@ -6,28 +6,28 @@
 
     <div class="row row-cards">
         <div class="col-lg-9">
-            {% assign products = site.store | where_exp:"product", "product.type == 'featured'" | sort: 'name' %}
+            {% assign products = site.store | where: "lang", page.lang | where_exp:"product", "product.type == 'featured'" | sort: 'title' %}
             {% include store-list.html products=products %}
 
-            {% assign products = site.store | where_exp:"product", "product.type == 'support'" | sort: 'name' %}
+            {% assign products =  site.store | where: "lang", page.lang | where_exp:"product", "product.type == 'support'" | sort: 'title' %}
             {% include store-list.html products=products %}
 
             <h3>{{ site.data.trans[page.lang].store-category-apps }}</h3>
 
-            {% assign products = site.store | where_exp:"product", "product.type == 'app'" | sort: 'name' %}
+            {% assign products =  site.store | where: "lang", page.lang | where_exp:"product", "product.type == 'app'" | sort: 'title' %}
             {% include store-list.html products=products %}
 
             <h3>{{ site.data.trans[page.lang].store-category-plugins }}</h3>
 
-            {% assign products = site.store | where_exp:"product", "product.type == 'plugin'" | sort: 'name' %}
+            {% assign products =  site.store | where: "lang", page.lang | where_exp:"product", "product.type == 'plugin'" | sort: 'title' %}
             {% include store-list.html products=products %}
 
             <h3>{{ site.data.trans[page.lang].store-category-client }}</h3>
 
-            {% assign products = site.store | where_exp:"product", "product.type != 'featured'" %}
+            {% assign products =  site.store | where: "lang", page.lang | where_exp:"product", "product.type != 'featured'" %}
             {% assign products = products | where_exp:"product", "product.type != 'support'" %}
             {% assign products = products | where_exp:"product", "product.type != 'app'" %}
-            {% assign products = products | where_exp:"product", "product.type != 'plugin'" | sort: 'name' %}
+            {% assign products = products | where_exp:"product", "product.type != 'plugin'" | sort: 'title' %}
 
             {% include store-list.html products=products %}
         </div>

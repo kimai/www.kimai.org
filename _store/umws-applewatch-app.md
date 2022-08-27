@@ -1,6 +1,5 @@
 ---
-title: "Apple Watch App"
-name: Apple Watch App
+title: Apple Watch app
 intro: "Track your kimai times directly at your wrist!"
 type: app
 tags:

@@ -1,9 +1,8 @@
 ---
-title: Kiosk plugin for Kimai with Barcode and RFID support
-name: Kiosk plugin
+title: Kiosk mode with Barcode and RFID support
 intro: "Start and stop timesheets with a barcode or RFID scanner for attendance time-tracking"
-slug: kiosk-barcode-bundle
 featured: "Attendance time-tracking in an environment, where the user has no access to Kimai (eg. in a warehouse) by using a barcode or RFID scanner to start and stop timesheets." 
+slug: kiosk-barcode-bundle
 type: featured
 tags:
   - plugin

@@ -2,7 +2,6 @@
 title: Demo
 description: Testen Sie unseren Zeiterfassungssystem Kimai, direkt online in einer unserer Demo Installationen.
 lang: de
-lang-ref: demo
 permalink: /de/demo.html
 redirect_from:
   - /en/demo.html

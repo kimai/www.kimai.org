@@ -2,7 +2,6 @@
 title: "O programu Kimai"
 description: Informacije o programu za evidentiranje vremena Kimai. Saznaj više o njemu, njegovoj povijesti i programeru.
 lang: hr
-lang-ref: about
 permalink: /hr/o-programu-kimai.html
 ---
 
