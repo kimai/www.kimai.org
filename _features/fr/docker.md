@@ -7,4 +7,4 @@ order: 180
 lang: fr
 ---
 
-{% include features/docker.md %}
+La version inclut une image docker pour le développement et une installation docker-compose distincte pour la production est disponible.

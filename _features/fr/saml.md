@@ -7,4 +7,4 @@ order: 124
 lang: fr
 ---
 
-{% include features/saml.md %}
+Connectez et enregistrez les utilisateurs via SAML (Single sign on aka SSO) et réutilisez votre fournisseur d'identité existant, comme Google workspace, Authentik ou Azure active directory.

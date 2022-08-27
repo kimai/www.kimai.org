@@ -7,4 +7,4 @@ order: 125
 lang: fr
 ---
 
-{% include features/api.md %}
+Avec une API JSON, les applications externes peuvent communiquer avec votre chronomètre préféré !
