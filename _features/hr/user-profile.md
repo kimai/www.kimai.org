@@ -1,5 +1,5 @@
 ---
-title: User profile
+title: Korisnički profil
 documentation: /documentation/users.html
 oss: true
 hosted: true
@@ -7,4 +7,4 @@ order: 810
 lang: hr
 ---
 
-{% include features/user-profile.md %}
+Osobna statistika i postavke korisnika za satnicu, Kimai izgeld, lozinku i avatar.
