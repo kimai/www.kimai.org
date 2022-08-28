@@ -7,4 +7,4 @@ order: 10
 lang: hr
 ---
 
-Kimai se može proširiti dodacima. <a href="/documentation/developers.html">Programer</a> koji želi <a href="/documentation/plugins.html">stvoriti dodatak</a> za Kimai može koristiti mnoge točke proširenja.
+Kimai se može proširiti dodacima. [Programer]({% link _documentation/developers.md %}) koji želi [stvoriti dodatak]({% link _documentation/plugins.md %}) za Kimai može koristiti mnoge točke proširenja.
