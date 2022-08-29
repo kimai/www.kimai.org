@@ -1,5 +1,5 @@
 ---
-title: Multi language
+title: Višejezičan
 documentation: /documentation/translations.html
 oss: true
 hosted: true
@@ -7,5 +7,5 @@ order: 30
 lang: hr
 ---
 
-Kimai can be localized to any language and is already translated to
+Kimai se može prevesti na bilo koji jezik i već je preveden na
 {% include features/multi-language.md %}

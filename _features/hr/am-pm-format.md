@@ -7,4 +7,4 @@ order: 210
 lang: hr
 ---
 
-{% include features/am-pm-format.md %}
+Kimai koristi lokaliziranu verziju 24-satnog formata. Ali ako radije želiš koristiti format prije podne/poslije podne, vrijeme možeš konfigurirati i na taj način.

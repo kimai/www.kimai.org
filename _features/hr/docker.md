@@ -7,4 +7,4 @@ order: 180
 lang: hr
 ---
 
-{% include features/docker.md %}
+Izdanje uključuje docker sliku za razvoj i dostupna je zasebna docker-compose postavka za proizvodnju.

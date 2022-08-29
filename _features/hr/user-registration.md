@@ -1,5 +1,5 @@
 ---
-title: "User registration"
+title: "Registracija korisnika"
 documentation: /documentation/users.html
 oss: true
 hosted: false
@@ -7,4 +7,4 @@ order: 850
 lang: hr
 ---
 
-{% include features/user-registration.md %}
+Kimai podržava samo-registraciju korisnika s aktiviranjem e-mail adrese.

@@ -1,5 +1,5 @@
 ---
-title: Customers
+title: Kupci
 documentation: /documentation/customer.html
 oss: true
 hosted: true
@@ -7,4 +7,4 @@ order: 60
 lang: hr
 ---
 
-{% include features/customers.md %}
+Upravljaj svojim kupcima i postavi adresu, kontakte, zemlju, valutu, vidljivost (za arhiviranje) i razna druga polja.
