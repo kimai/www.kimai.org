@@ -7,6 +7,7 @@ redirect_from:
   - /documentation/translations/
 ---
 
+Kimai can be localized to any language and is already translated to
 {% include features/multi-language.md %}
 
 Feel free to send your self-made language files or contributing to the weblate project below  – we’re looking for translators and would appreciate your support!
