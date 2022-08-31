@@ -13,12 +13,12 @@ screenshots:
     description: "The new administration page with an overview of all tasks with tracked times, status and assignments"
   - 
     src: "/images/marketplace/tasks-create.png"
-    title: Task widgets
-    description: "The new dashboard widgets for assigned and pending tasks"
-  - 
-    src: "/images/marketplace/tasks-widget.png"
     title: "Edit a task"
     description: "When creating or updating a task, you can record these fields"
+  - 
+    src: "/images/marketplace/tasks-widget.png"
+    title: Task widgets
+    description: "The new dashboard widgets for assigned and pending tasks"
 lang: en
 ---
 
