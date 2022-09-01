@@ -22,11 +22,4 @@ screenshots:
 lang: en
 ---
 
-
 {% include store/keleo-audit-trail-bundle.md %}
-
-
-<pre>
-{{ page | inspect }}
-</pre>
-   
