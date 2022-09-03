@@ -317,26 +317,7 @@ There are some additional contents, that will define e.g. page header and footer
 
 Please read the MPdf documentation and check the default PDF templates.
 
-#### Page size
-
-Want to display the PDF in a different size, e.g. because your customer expects `US-Letter` and not the standard size `DIN-A4`?
-Xou can add a CSS rule to your twig template:
-```twig
-{% raw %}
-<style>
-@page { 
-    sheet-size: LETTER-L; 
-}
-</style>
-{% endraw %} 
-```
-
-Available sizes are:
-- `A4`, `A3`, `Letter`, `Legal`, `Executive`, `Folio`, `Demy`, `Royal`, `A`, `B`, `Ledger`, `Tabloid` ...
-- `A4-L`, `A3-L`, `Letter-L`, `Legal-L`, `Executive-L`, `Folio-L` ... for landscape
-
-More information available in the [MDPF documentation](https://mpdf.github.io/paging/different-page-sizes.html) and the 
-full list of available sizes [can be found here](https://mpdf.github.io/reference/mpdf-functions/construct.html) (check `format`).
+{% include pdf-templates.md %}
 
 ### Docx templates
 

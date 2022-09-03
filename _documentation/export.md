@@ -67,17 +67,4 @@ Internally for each template a new ExportRenderer service is registered, called 
 
 ### PDF Templates
 
-Since 1.13 you can customize the following values from within your PDF templates:
- - many [mPDF options](https://mpdf.github.io/reference/mpdf-functions/construct.html) and [configurations](https://mpdf.github.io/reference/mpdf-variables/overview.html) like the page format
- - the generated filename by using the option named `filename`
-
-```
-{% raw %}
-{%- set customer = query.customers|length == 1 ? query.customers.0 : null -%}
-{%- set filename = 'ACME_' ~ (customer is not null ? customer.name|replace({' ': '-'}) ~ '_' : '') ~ query.begin|date_format('Y-m') -%}
-{%- set option = pdfContext.setOption('filename', filename) -%}
-{%- set option = pdfContext.setOption('format', 'A4-L') -%}
-{% endraw %}
-```
-
-The variable name (here `format` and `filename`) must be one of the mPDF constructor options, ConfigVariables or FontVariables (see links above).
+{% include pdf-templates.md %}
