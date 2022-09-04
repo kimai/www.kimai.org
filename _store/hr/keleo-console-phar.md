@@ -1,6 +1,6 @@
 ---
-title: Console client (PHAR)
-intro: Cross platform console client for Kimai
+title: Klijent konzole (PHAR)
+intro: Višeplatformski klijent konzole za Kimai
 slug: console-phar
 type: client
 tags:

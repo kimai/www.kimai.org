@@ -1,6 +1,6 @@
 ---
 title: Rainmeter widget
-intro: "Kimai widget for Windows!"
+intro: "Kimai widget za Windows!"
 type: client
 tags:
   - Windows

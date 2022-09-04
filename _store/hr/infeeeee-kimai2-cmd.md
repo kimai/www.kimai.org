@@ -1,6 +1,6 @@
 ---
-title: Command line client
-intro: "Cross platform command line client for Kimai, written with Node.js"
+title: Klijent naredbenog retka
+intro: "Višeplatformski klijent naredbenog retka za Kimai, koristi Node.js"
 screenshot: 
   - https://raw.githubusercontent.com/infeeeee/kimai2-cmd/master/assets/interactive-restart.gif
 type: client

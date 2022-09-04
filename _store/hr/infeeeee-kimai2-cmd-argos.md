@@ -1,6 +1,6 @@
 ---
-title: Argos/Kargos/xbar menu bar plugin
-intro: "Put Kimai on your top bar!"
+title: Argos/Kargos/xbar traka izbornika
+intro: "Postavi Kimai na gornju traku!"
 screenshot: 
   - https://raw.githubusercontent.com/infeeeee/kimai2-cmd-argos/master/img/screenshot-argos-active.png
   - https://raw.githubusercontent.com/infeeeee/kimai2-cmd-argos/master/img/screenshot-bitbar-active.png
