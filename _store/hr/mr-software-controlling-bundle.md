@@ -1,26 +1,26 @@
 ---
 title: Controlling plugin (German law, break time check, overtime)
-intro: "A plugin for Kimai which checks if one of your users violated the German break time law + nominal and actual work time comparison + overtime view"
+intro: "Kimai dodatak za provjeravanje je li netko od tvojin korisnika prekršio njemački zakon o pauzama + usporedba nominalnog i stvarnog radnog vremena + prikaz prekovremenog rada"
 type: plugin
 tags:
   - plugin
 screenshots:
   - 
     src: "/images/marketplace/mr-software-controlling-1.png"
-    title: Menu item
-    description: "Admins see a summary of all work times from all users"
+    title: Element izbornika
+    description: "Administratori vide sažetak svih radnih vremena svih korisnika"
   - 
     src: "/images/marketplace/mr-software-controlling-2.png"
-    title: Menu item
-    description: "Admins and users see a break time check"
+    title: Element izbornika
+    description: "Administratori i korisnici vide potvrdu vremena pauze"
   - 
     src: "/images/marketplace/mr-software-controlling-3.png"
-    title: Menu item
-    description: "Admins and users see missing days"
+    title: Element izbornika
+    description: "Administratori i korisnici vide nedostajuće dane"
   - 
     src: "/images/marketplace/mr-software-controlling-4.png"
-    title: Menu item
-    description: "Admins can lock months"
+    title: Element izbornika
+    description: "Administratori mogu zaključati mjesece"
 lang: hr
 permalink: /hr/store/mr-software-controlling-bundle.html
 ---

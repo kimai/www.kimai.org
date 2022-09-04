@@ -1,6 +1,6 @@
 ---
-title: Shared Project Timesheets Plugin
-intro: Share project timesheets with anyone!
+title: Vremenske tablice dijeljenog projekta
+intro: Dijeli vremenske tablice projekta s bilo kim!
 type: plugin
 tags:
   - plugin

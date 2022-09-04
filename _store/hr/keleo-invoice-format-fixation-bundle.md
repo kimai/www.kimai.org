@@ -1,14 +1,14 @@
 ---
-title: Fixed invoice data format (by language)
-intro: "A plugin that allows to set a global language for invoice data formats"
+title: Fiksni format podataka računa (po jeziku)
+intro: "Dodatak za postavljanje globalnog jezika za formate podataka računa"
 type: plugin
 tags:
   - plugin
 screenshots:
   - 
     src: "https://raw.githubusercontent.com/Keleo/InvoiceFormatFixationBundle/master/screenshot.png"
-    title: Language configuration
-    description: Configure the language for formatting all invoice settings 
+    title: Konfiguracija jezika
+    description: Konfiguriraj jezik za formatiranje svih postavki računa 
 lang: hr
 permalink: /hr/store/keleo-invoice-format-fixation-bundle.html
 ---

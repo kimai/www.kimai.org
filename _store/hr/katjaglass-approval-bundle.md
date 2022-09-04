@@ -1,30 +1,30 @@
 ---
-title: Approval workflow for timesheets
-intro: "This bundle is available to perform a weekly approval for timesheets."
+title: Tijek rada odobrenja za vremenske tablice
+intro: "Ovaj je paket dostupan za obavljanje tjednog odobrenja za vremenske tablice."
 type: plugin
 tags:
   - plugin
 screenshots:
   - 
     src: "https://raw.githubusercontent.com/KatjaGlassConsulting/ApprovalBundle/0.9.1/_documentation/Screenshot_UserApprovalForWeek.png"
-    title: "User Screen for week approval"
-    description: "Displays week details like working time, expected time and actions like submit for approval"
+    title: "Korisnički ekran za tjedno odobrenje"
+    description: "Prikazuje detalje tjedna kao što je radno vrijeme, očekivano vrijeme i radnje kao što je slanje za odobrenje"
   - 
     src: "https://raw.githubusercontent.com/KatjaGlassConsulting/ApprovalBundle/0.9.1/_documentation/Screenshot_TeamleadOverviewOfTeam.png"
-    title: "Screen for teamleads - show overview"
-    description: "Overview Screen of open past approvals of the corresponding team members and itself and status of current finished week"
+    title: "Ekran za voditelje timova – prikaži pregled"
+    description: "Ekran pregleda otvorenih prošlih odobrenja odgovarajućih članova tima i njega samoga te stanje aktualno završenog tjedna"
   - 
     src: "https://raw.githubusercontent.com/KatjaGlassConsulting/ApprovalBundle/0.9.1/_documentation/Screenshot_TeamleadSeeHistory.png"
-    title: "History of Approval for that week"
-    description: "The approval history including all comments can be viewed by the teamlead or users"
+    title: "Povijest odobrenja za taj tjedan"
+    description: "Povijest odobrenja uključujući sve komentare koje mogu pogledati voditelj tima ili korisnici"
   - 
     src: "https://raw.githubusercontent.com/KatjaGlassConsulting/ApprovalBundle/0.9.1/_documentation/Screenshot_TeamleadApproveDeny.png"
-    title: "Approve or deny a week"
-    description: "Teamleads can approve or deny a weeks approval"
+    title: "Odobri ili odbij tjedan"
+    description: "Voditelji timova mogu odobriti ili odbiti tjedno odobrenje"
   - 
     src: "https://raw.githubusercontent.com/KatjaGlassConsulting/ApprovalBundle/0.9.1/_documentation/Screenshot_AdminRollbackOption.png"
-    title: "Admins View"
-    description: "Admins can do anything like teamleads, see additionally all colleagues in the overview and have the option to undo an approval"
+    title: "Adminstratorski prikaz"
+    description: "Administratori imaju ista prava kao voditelji timova, uz to smiju vidjeti sve suradnike u pregledu te smiju poništiti odobrenje"
 lang: hr
 permalink: /hr/store/katjaglass-approval-bundle.html
 ---

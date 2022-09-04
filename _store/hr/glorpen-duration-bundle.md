@@ -1,6 +1,6 @@
 ---
-title: Overridable Duration Rounding plugin
-intro: "Override duration rounding for customers, projects and activities"
+title: Promijenjivo zaokruživanje trajanja
+intro: "Promijeni zaokruživanje trajanja za kupce, projekte i aktivnosti"
 type: plugin
 tags:
 - plugin

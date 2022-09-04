@@ -1,6 +1,6 @@
 ---
-title: Lockdown per user settings
-intro: "A Kimai plugin that allows to set the lockdown period per user"
+title: Postavke za zaključavanja pojedinačnih korisnika
+intro: "Kimai dodatak za postavljanje razdoblja zaključavanja pojedinačnih korisnika"
 slug: lockdown-per-user-bundle
 type: plugin
 tags:

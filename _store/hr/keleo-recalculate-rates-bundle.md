@@ -1,6 +1,6 @@
 ---
-title: Recalculate rates plugin
-intro: "A plugin which forces to recalculate the hourly/fixed rate on every timesheet update"
+title: Ponovno izračunavanje cijene
+intro: "Dodatak za ponovno izračunavanje satnice/fiksne cijene pri svakom aktualiziranju vremenske tablice"
 type: plugin
 tags:
   - plugin

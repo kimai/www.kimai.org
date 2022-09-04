@@ -1,6 +1,6 @@
 ---
-title: Invoicing with automatic PDF timesheets
-intro: "Enhanced invoicing features: change locale for money and date values, automatic timesheet proof PDF for new invoices."
+title: Izrada računa s automatskim PDF vremenskim tablicama
+intro: "Poboljšane funkcije za izradu računa: promijeni lokalizaciju za novčane i datumske vrijednosti, automatska provjera PDF vremenske tablice za nove račune."
 slug: invoice-bundle
 type: plugin
 tags:
@@ -8,12 +8,12 @@ tags:
 screenshots:
   - 
     src: "/images/marketplace/invoice-fullscreen.png"
-    title: Invoice configuration
-    description: The new configuration settings for export template and format language
+    title: Konfiguriranje računa
+    description: Nove konfiguracijske postavke za predložak izvoza i formata jezika
   - 
     src: "/images/marketplace/invoice-configuration.png"
-    title: Invoice configuration
-    description: Detail screenshot of the new invoice settings for format language and export template
+    title: Konfiguriranje računa
+    description: Detaljna snimka ekrana novih postavki računa za format jezika i predložak izvoza
 lang: hr
 permalink: /hr/store/keleo-invoice-bundle.html
 ---

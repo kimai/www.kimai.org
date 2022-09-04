@@ -1,34 +1,34 @@
 ---
-title: Recurring budget plugin
-intro: "Automatically adds money or time to your project budgets on a recurring basis with a custom interval."
+title: Ponavljajući proračun
+intro: "Automatski redovito dodaje novac ili vrijeme tvojim proračunima projekata na osnovi prilagođenih intervala."
 type: plugin
 tags:
   - plugin
 screenshots:
   - 
     src: "/images/marketplace/pcsg-recurring-budget-bundle-project.png"
-    title: Project settings
-    description: "Project settings for recurring budget."
+    title: Postavke projekta
+    description: "Postavke projekta za ponavljajući proračun."
   - 
     src: "/images/marketplace/pcsg-recurring-budget-bundle-command.png"
-    title: CLI Command
-    description: "Output of the CLI command that credits budgets and calculates project statistics."
+    title: CLI naredba
+    description: "Ispis CLI naredbe koja uračunava proračune i izračunava statistike projekta."
   - 
     src: "/images/marketplace/pcsg-recurring-budget-bundle-export.png"
-    title: PDF Export
-    description: "Example of a PDF budget summary export for one month."
+    title: PDF izvoz
+    description: "Primjer PDF izvoza sažetka proračuna za jedan mjesec."
   - 
     src: "/images/marketplace/pcsg-recurring-budget-bundle-budgets.png"
-    title: Project budgets overview
-    description: "Lists all projects with their currently available (time or money) budgets and total budgets."
+    title: Pregled proračuna projekata
+    description: "Izrađuje popis svih projekata s njihovim aktualno dostupnim (vrijeme ili novac) proračunima i ukupnim proračunima."
   - 
     src: "/images/marketplace/pcsg-recurring-budget-bundle-history.png"
-    title: Project budgets history
-    description: "Lists all completed budget intervals and shows statistics for each of them."
+    title: Povijest proračuna projekata
+    description: "Izrađuje popis svih intervala dovršenih proračuna i prikazuje statistiku za svaki dovršeni proračun."
   -
     src: "/images/marketplace/pcsg-recurring-budget-bundle-email.png"
-    title: Budget statistics email
-    description: "Example of a budget statistics email sent out to the project team lead after a completed budget interval."
+    title: E-mail statistika proračuna
+    description: "Primjer e-mail poruke statistike proračuna poslane voditelju tima projekta nakon dovršenog proračunskog intervala proračuna."
 lang: hr
 permalink: /hr/store/pcsg-recurring-budget-bundle.html
 ---
