@@ -1,7 +1,7 @@
 ---
-title: Custom-content plugin
-intro: "Create custom content for: stylesheets, javascript, a global warning message and a new page to render markdown content for company news."
-featured: "Create custom content for: stylesheets, javascript, a global warning message and a new page to render markdown content for company news."
+title: Prilagođen sadržaj
+intro: "Stvori prilagođen sadržaj za: stilske predloške, javascript, globalnu poruku upozorenja i novu stranicu za prikaz markdown formatiranog sadržaja za novosti poduzeća."
+featured: "Stvori prilagođen sadržaj za: stilske predloške, javascript, globalnu poruku upozorenja i novu stranicu za prikaz markdown formatiranog sadržaja za novosti poduzeća."
 slug: custom-content-bundle
 type: featured
 tags:
@@ -9,20 +9,20 @@ tags:
 screenshots:
   - 
     src: "/images/marketplace/custom-content-alert.png"
-    title: "Warning message"
-    description: "The warning message is displayed on every page for logged-in users"
+    title: "Poruka upozorenja"
+    description: "Poruka upozorenja se prikazuje na svakoj stranici za prijavljene korisnike"
   - 
     src: "/images/marketplace/custom-content-javascript.png"
     title: "Javascript"
-    description: "The javascript is executed on every page for logged- in users"
+    description: "Javascript se izvršava na svakoj stranici za prijavljene korisnike"
   - 
     src: "/images/marketplace/custom-content-news.png"
-    title: "Warning message"
-    description: "You can enter a markdown formatted news with a title"
+    title: "Poruka upozorenja"
+    description: "Možeš upisati markdown formatiranu novost s naslovom"
   - 
     src: "/images/marketplace/custom-content-news-page.png"
-    title: "News page"
-    description: "The news page is linked in the user menu and displays your markdown message"
+    title: "Stranica novosti"
+    description: "Stranica novosti je povezana u korisničkom izborniku i prikazuje tvoju markdown formatiranu poruku"
 lang: hr
 permalink: /hr/store/keleo-custom-content-bundle.html
 ---

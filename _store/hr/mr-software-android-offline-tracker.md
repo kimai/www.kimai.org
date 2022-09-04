@@ -1,6 +1,6 @@
 ---
-title: Android app for offline tracking
-intro: "Android app for offline tracking with Kimai"
+title: Android program za bezmrežno evidentiranje vremena
+intro: "Android program za bezmrežno evidentiranje vremena pomoću Kimaia"
 type: app
 tags: 
   - Android

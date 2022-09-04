@@ -1,7 +1,7 @@
 ---
-title: Custom-fields plugin
-intro: "Create free configurable additional fields for timesheets, customers, projects, activities and users."
-featured: Create free configurable additional fields for timesheets, customers, projects, activities and users in various formats. Fields can be optional or mandatory and restricted by permissions.
+title: Prilagođena polja
+intro: "Stvori dodatna polja koja se mogu konfigurirati prema vlastitim potrebama za vremenske tablice, kupce, projekte, aktivnosti i korisnike."
+featured: Stvori dodatna polja koja se mogu konfigurirati za vremenske tablice, kupce, projekte, aktivnosti i korisnike u raznim formatima. Polja mogu biti opcionalna ili obavezna, a pristup tim poljima se može ograničiti korisničkim dozvolama.
 slug: custom-fields-bundle
 type: featured
 tags:
@@ -9,24 +9,24 @@ tags:
 screenshots:
   - 
     src: "/images/marketplace/meta-fields-listing.png"
-    title: "Custom fields administration"
-    description: "The listing page shows all available item-types and their configured custom fields"
+    title: "Administracija prilagođenih polja"
+    description: "Stranica s popisom prikazuje sve dostupne vrste elemenata i njihova konfigurirana prilagođena polja"
   - 
     src: "/images/marketplace/meta-fields-create.png"
-    title: "Create custom field (Customer)"
+    title: "Stvori prilagođeno polje (kupac)"
     description: "The dialog to create a new custom field for Customers"
   - 
     src: "/images/marketplace/meta-fields-edit.png"
-    title: "Edit custom field (Project)"
-    description: "Editing an already existing custom field for Projects (type boolean, see default value)"
+    title: "Uredi prilagođeno polje (projekt)"
+    description: "Uređivanje već postojećeg prilagođenog polja za projekte (upiši Boolean, pogledaj standardnu vrijednost)"
   - 
     src: "/images/marketplace/meta-fields-timesheet.png"
-    title: "Teams timesheets"
-    description: "The timesheet listing, displaying the visible custom field Location"
+    title: "Vremenske tablice tima"
+    description: "Popis vremenskih tablica. Prikazuje vidljivo prilagođeno polje „Lokacija”"
   - 
     src: "/images/marketplace/meta-fields-timesheet-edit.png"
-    title: "Edit timesheet"
-    description: "Editing a timesheet record with a new choice-list custom field"
+    title: "Uredi vremensku tablicu"
+    description: "Uređivanje zapisa vremenske tablice s novim prilagođenim poljem padajućeg izbornika"
 lang: hr
 permalink: /hr/store/keleo-custom-fields-bundle.html
 ---
