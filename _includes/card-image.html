@@ -1,15 +1,17 @@
 {% if include.image %}
 {% assign image = site.data.photos[include.image] %}
+{% assign title = site.data[page.lang].translation.photos[include.image].title %}
+{% assign descr = site.data[page.lang].translation.photos[include.image].description %}
 <div class="card">
 	<a href="{{ image.large }}">
 		<img class="card-img-top" src="{{ image.small }}" alt="{{ image.alt[page.lang] | default: image.title[page.lang] }}">
 	</a>
 	<div class="card-body">
-		<h4 class="card-title">{{ image.title[page.lang] }}</h4>
-		<div class="card-subtitle">{{ image.description[page.lang] }}</div>
-		{% comment %}<p class="card-text">{{ image.description[page.lang] }}</p>{% endcomment %}
+		<h4 class="card-title">{{ title }}</h4>
+		<div class="card-subtitle">{{ descr }}</div>
+		{% comment %}<p class="card-text">{{ descr }}</p>{% endcomment %}
 		{% if include.url %}
-			<a href="{{ include.url }}" class="btn btn-primary">Read more</a>
+			<a href="{{ include.url }}" class="btn btn-primary">{{ site.data[page.lang].translation.read-more }}</a>
 		{% endif %}
 	</div>
 </div>
