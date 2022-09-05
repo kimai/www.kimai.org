@@ -4,7 +4,7 @@
     </div>
 {% else %}
     {% assign plugin = include.plugin %}
-    <h3>Copy files</h3>
+    <h3>{{ site.data[page.lang].translation.copy-files }}</h3>
 
     <p>
         Extract the ZIP file and upload the included directory and all files to your Kimai installation to the new directory:
@@ -32,7 +32,7 @@ var/plugins/
 |   └ ... more files and directories follow here ...
 {% endhighlight %}
 
-    <h3>Clear cache</h3>
+    <h3>{{ site.data[page.lang].translation.clear-cache }}</h3>
 
     <p>
         After uploading the files, Kimai needs to know about the new plugin. It will be found once the <a href="{% link _documentation/updates.md %}">cache was re-built</a>.
@@ -46,7 +46,7 @@ var/plugins/
     {% include file-permissions.html %}
 
     {% if include.command != nil %}
-        <h3>Create database</h3>
+        <h3>{{ site.data[page.lang].translation.create-database }}</h3>
 
         <p>Run the following command:</p>
 
@@ -63,7 +63,7 @@ then either the directory has a wrong name (must be **var/plugins/{{ plugin }}/*
     {% endif %}
 
     {% if include.assets != nil %}
-        <h3>Install plugin assets</h3>
+        <h3>{{ site.data[page.lang].translation.install-assets }}</h3>
 
         <p>The following command will install the required assets (images, javascripts, styles):</p>
 

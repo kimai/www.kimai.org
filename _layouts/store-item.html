@@ -71,6 +71,7 @@ layout: default
                     {% if settings.bundle %}
                     <div class="card">
                         <div class="card-body">
+                            <strong>{{ site.data[page.lang].translation.table-of-contents }}</strong>
                             <ul class="section-nav bundle-nav">
                                 <li><a href="#features">{{ site.data[page.lang].translation.store-features }}</a></li>
                                 {%- if isPaidOwnerPlugin %}
@@ -214,7 +215,7 @@ layout: default
 						{% if settings.email %}
 						<a href="mailto:{{ settings.email }}" class="btn btn-outline-primary">
 							<i class="fas fa-at"></i>
-							<span class="text-nowrap">Contact</span>
+							<span class="text-nowrap">{{ site.data[page.lang].translation.contact }}</span>
 						</a>
 						{% endif %}
 						{% if settings.github %}
@@ -232,7 +233,7 @@ layout: default
 						{% if settings.download %}
 							<a href="{{ settings.download }}" class="btn btn-outline-primary ml-2">
 								<i class="fas fa-download"></i>
-								<span class="text-nowrap">Download</span>
+								<span class="text-nowrap">{{ site.data[page.lang].translation.download }}</span>
 							</a>
 						{% endif %}
 						{% if settings.gumroad %}
@@ -295,20 +296,18 @@ layout: default
                         </div>
                         <div class="card-body">
                             {% if settings.bundle.versions %}
-                            <h3>Compatibility</h3>
+                            <h3>{{ site.data[page.lang].translation.compatibility }}</h3>
 
-                            <p>
-                                Plugins should always be compatible with higher Kimai versions, the following list contains the plugin version and the required minimum Kimai version.
-                            </p>
+                            <p>{{ site.data[page.lang].translation.compatibility-info }}</p>
 
                             <table class="table">
                                 <thead>
                                 <tr>
                                     <th>
-                                        Bundle version
+                                        {{ site.data[page.lang].translation.compatibility-bundle }}
                                     </th>
                                     <th>
-                                        Minimum Kimai version
+                                        {{ site.data[page.lang].translation.compatibility-kimai }}
                                     </th>
                                 </tr>
                                 </thead>

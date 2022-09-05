@@ -11,8 +11,8 @@
         <li>
             Execute all installation steps again:
             <ul>
-                <li>Copy files</li>
-                <li>Clear cache</li>
+                <li>{{ site.data[page.lang].translation.copy-files }}</li>
+                <li>{{ site.data[page.lang].translation.clear-cache }}</li>
                 {%- if include.command != nil %}
                 <li>Update database with <code class="language-plaintext highlighter-rouge">bin/console {{ include.command }}</code>
                 {% endif %}

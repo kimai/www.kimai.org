@@ -3,7 +3,7 @@
         <div class="card">
             <div class="card-status bg-info"></div>
             <div class="card-header">
-                <h4 class="card-title">Fix Kimai file permission</h4>
+                <h4 class="card-title">Adjust file permission</h4>
             </div>
             <div class="card-body">
                 <p>
@@ -17,7 +17,6 @@
 chown -R :www-data .
 chmod -R g+r .
 chmod -R g+rw var/
-chmod -R g+rw public/avatars/
 {% endhighlight %}
 
                 <p>
