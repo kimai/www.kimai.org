@@ -1,7 +1,7 @@
 ---
-title: Kleinunternehmerreglung für Kimai 2
-name: Kleinunternehmerreglung Plugin
-intro: "Ermöglicht die Verwendung der Kleinunternehmerregelung, wie sie in Deutschland und Österreich angewendet werden kann, bei der Rechnungserstellung in Kimai 2."
+title: Kleinunternehmerregelung für Kimai
+name: Kleinunternehmerregelung Plugin
+intro: "Ermöglicht die Verwendung der Kleinunternehmerregelung, wie sie in Deutschland und Österreich angewendet werden kann, bei der Rechnungserstellung in Kimai."
 developer: liaraalis
 date: "2022-09-05 00:00:00 +0200"
 icon: fab fa-file-invoice
