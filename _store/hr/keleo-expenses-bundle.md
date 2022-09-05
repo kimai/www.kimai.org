@@ -14,8 +14,7 @@ screenshots:
   - 
     src: "/images/marketplace/expenses-search.png"
     title: "Pretraga troškova"
-    description: "Tvoji se troškovi mogu pronaći pretragom više Kimai ekrana
-    Your expenses can be filtered with the search found in multiple Kimai screens"
+    description: "Tvoji se troškovi mogu pronaći pretragom više Kimai ekrana"
   - 
     src: "/images/marketplace/expenses-edit.png"
     title: "Uredi troškove"
