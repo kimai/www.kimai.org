@@ -14,7 +14,7 @@ screenshots:
   - 
     src: "/images/marketplace/meta-fields-create.png"
     title: "Stvori prilagođeno polje (kupac)"
-    description: "The dialog to create a new custom field for Customers"
+    description: "Dijalog za stvaranje novog prilagođenog polja za kupce"
   - 
     src: "/images/marketplace/meta-fields-edit.png"
     title: "Uredi prilagođeno polje (projekt)"
