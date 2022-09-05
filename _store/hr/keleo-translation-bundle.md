@@ -1,7 +1,7 @@
 ---
-title: Translation plugin
-intro: "Change all visible elements in your Kimai installation with your own translations"
-featured: "Change all visible elements (form labels, table header, menu items ...) in your Kimai installation with your own translations"
+title: Prijevodi
+intro: "Promijeni sve vidljive elemente u tvojoj Kimai instalaciji vlastitim prijevodima"
+featured: "Promijeni sve vidljive elemente (oznake obrazaca, zaglavlja tablica, elemente izbornika …) u tvojoj Kimai instalaciji vlastitim prijevodima"
 slug: translation-bundle
 type: featured
 tags:
@@ -9,16 +9,16 @@ tags:
 screenshots:
   -  
     src: "/images/marketplace/translation-listing.png"
-    title: "Translation administration"
-    description: "The new administration page with an overview of all changed translations"
+    title: "Administracija prevođenja"
+    description: "Nova administratorska stranica s pregledom svih promijenjenih prijevoda"
   - 
     src: "/images/marketplace/translation-add.png"
-    title: "Add translation screen"
-    description: "The add dialog allows to find a string by searching its content"
+    title: "Prozor za dodavanje prijevoda"
+    description: "Dijalog za dodavanje omogućuje pronalaženje izraza pretraživanjem njegovog sadržaja"
   - 
     src: "/images/marketplace/translation-edit.png"
-    title: "Edit screen"
-    description: "The edit dialog allows to change your custom translation"
+    title: "Prozor za mijenjanje prijevoda"
+    description: "Dijalog za uređivanje omogućuje mijenjanje tvog prilagođenog prijevoda"
 lang: hr
 permalink: /hr/store/keleo-translation-bundle.html
 ---

@@ -1,6 +1,6 @@
 ---
-title: Apple Watch app
-intro: "Track your kimai times directly at your wrist!"
+title: Apple Watch program
+intro: "Evidentiraj tvoja kimai vremena izravno na ruci!"
 type: app
 tags:
   - watchOS 

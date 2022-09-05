@@ -1,24 +1,24 @@
 ---
-title: Audit-Trail plugin
-intro: "Records detailed change/audit logs for timesheets, customers, projects and activities and displays them in a per-item timeline."
+title: Dnevnici revizija
+intro: "Bilježi detaljne dnevnike promjena/revizija za vremenske tablice, kupce, projekte i aktivnosti te ih prikazuje u pojedinačnim kronologijama."
 slug: audit-trail-bundle
-featured: "Records detailed change/audit logs for timesheets, customers, projects and activities and displays them in a per-item timeline."
+featured: "Bilježi detaljne dnevnike promjena/revizija za vremenske tablice, kupce, projekte i aktivnosti te ih prikazuje u pojedinačnim kronologijama."
 type: featured
 tags:
   - plugin
 screenshots:
   - 
     src: '/images/marketplace/audit-listing.png'
-    title: Audit-logs
-    description: The overview page of all audit trail logs
+    title: Dnevnici revizija
+    description: Stranica pregleda svih dnevnika revizija
   -
     src: '/images/marketplace/audit-details.png'
-    title: Audit detail view
-    description: An audit trail can look like this, each change will be recorded and you might see more entries in a object timeline
+    title: Detaljan prikaz revizija
+    description: Povijest revizija može izgledati ovako. Svaka promjena bit će zabilježena i možda ćeš vidjeti više unosa u kronologiji objekta
   - 
     src: '/images/marketplace/audit-action.png'
-    title: Access change history
-    description: You access a detailed audit log from the listing page or from the data-table "Actions" dropdown of each item
+    title: Pristup povijesti promjena
+    description: Detaljnom dnevniku revizija možeš pristupiti putem stranice s popisom ili putem padajućeg izbornika tablice podataka „Radnje” svake stavke
 lang: hr
 permalink: /hr/store/keleo-audit-trail-bundle.html
 ---

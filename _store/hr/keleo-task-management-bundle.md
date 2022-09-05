@@ -1,7 +1,7 @@
 ---
-title: Task management plugin
-intro: "Create tasks, start/stop/pause them, assign them to users and teams and record times - a todo-list management plugin for Kimai that adds two new dashboard widgets"
-featured: "Create tasks, start/stop/pause them, assign them to users and teams - a todo-list management plugin that is connected to your time-tracker and adds two new dashboard widgets"
+title: Upravljanje zadacima
+intro: "Stvori zadatke, pokreni/prekini/zaustavi ih, dodijeli ih korisnicima i timovima i snimaj vrijeme – dodatak za upravljanje zadacima za Kimai koji dodaje dva nova widgeta u nadzornu ploču"
+featured: "Stvori zadatke, pokreni/prekini/zaustavi ih, dodijeli ih korisnicima i timovima – dodatak za upravljanje zadacima koji je povezan s tvojim evidentiranjem vremena i dodaje dva nova widgeta u nadzornu ploču"
 slug: task-management-bundle
 type: featured
 tags:
@@ -9,16 +9,16 @@ tags:
 screenshots:
   - 
     src: "/images/marketplace/tasks-screenshot.png"
-    title: "Task administration"
-    description: "The new administration page with an overview of all tasks with tracked times, status and assignments"
+    title: "Administracija zadataka"
+    description: "Nova administratorska stranica s pregledom svih zadataka s evidentiranim vremenima, stanjima i dodjelama zadataka"
   - 
     src: "/images/marketplace/tasks-create.png"
-    title: "Edit a task"
-    description: "When creating or updating a task, you can record these fields"
+    title: "Uredi zadatak"
+    description: "Prilikom stvaranja ili aktualiziranja zadatka možeš odrediti ta polja"
   - 
     src: "/images/marketplace/tasks-widget.png"
-    title: Task widgets
-    description: "The new dashboard widgets for assigned and pending tasks"
+    title: Widgeti zadataka
+    description: "Novi widgeti nadzorne ploče za dodijeljene i još neobavljene zadatke"
 lang: hr
 permalink: /hr/store/keleo-task-management-bundle.html
 ---

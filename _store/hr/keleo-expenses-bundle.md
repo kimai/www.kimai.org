@@ -1,7 +1,7 @@
 ---
-title: Expenses  plugin
-intro: "Keep track of your expenses and include them in your invoices."
-featured: Keep track of your expenses based on a customer, project and activity. These expenses can be categorized and included in your invoices.  
+title: Troškovi
+intro: "Evidentiraj troškove i uključi ih u svoje račune."
+featured: Evidentiraj troškove na temelju kupca, projekta i aktivnosti. Ovi se troškovi mogu kategorizirati i uključiti u tvoje račune.  
 slug: expenses-bundle
 type: featured
 tags:
@@ -9,24 +9,24 @@ tags:
 screenshots:
   - 
     src: "/images/marketplace/expenses-listing.png"
-    title: "Expenses administration"
-    description: "Paginated listing of all recorded expenses"
+    title: "Administracija troškova"
+    description: "Paginiran popis svih evidentiranih troškova"
   - 
     src: "/images/marketplace/expenses-search.png"
-    title: "Search expense"
-    description: "Your expenses can be filtered with the search found in multiple Kimai screens"
+    title: "Pretraga troškova"
+    description: "Tvoji se troškovi mogu filtrirati pomoću pretrage troškova u Kimai ekranima"
   - 
     src: "/images/marketplace/expenses-edit.png"
-    title: "Edit expense"
-    description: "Editing or creating a new expense allows you to enter these fields"
+    title: "Uredi troškove"
+    description: "Uređivanje ili stvaranje novog troška omogućuje unos ovih polja"
   - 
     src: "/images/marketplace/expenses-categories.png"
-    title: "Expense category"
-    description: "Expenses are categorized to have a better overview and filter options"
+    title: "Kategorija troškova"
+    description: "Troškovi se kategoriziraju za bolji pregled i mogućnosti filtriranja"
   - 
     src: "/images/marketplace/expenses-category-edit.png"
-    title: "Edit category"
-    description: "You can set a name, cost factor and short help text for each category"
+    title: "Uredi kategoriju"
+    description: "Za svaku kategoriju možeš odrediti ime, faktor cijene i kratki tekst pomoći"
 lang: hr
 permalink: /hr/store/keleo-expenses-bundle.html
 ---
