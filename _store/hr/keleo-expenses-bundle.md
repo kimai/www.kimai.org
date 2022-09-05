@@ -4,8 +4,7 @@ intro: "Evidentiraj troškove i uključi ih u svoje račune."
 featured: Evidentiraj troškove na temelju kupca, projekta i aktivnosti. Ovi se troškovi mogu kategorizirati i uključiti u tvoje račune.  
 slug: expenses-bundle
 type: featured
-tags:
-  - plugin
+tags: [plugin]
 screenshots:
   - 
     src: "/images/marketplace/expenses-listing.png"

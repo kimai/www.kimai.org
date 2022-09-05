@@ -2,8 +2,7 @@
 title: Unos razdoblja
 intro: "Stvori unose vremenske tablice na osnovi raspona datuma"
 type: plugin
-tags:
-  - plugin
+tags: [plugin]
 screenshots:
   - 
     src: "/images/marketplace/mr-software-period-insert-plugin.png"

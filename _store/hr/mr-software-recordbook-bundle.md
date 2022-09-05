@@ -2,8 +2,7 @@
 title: Knijga zapisa (zapisnik pripravnika)
 intro: "Kimai dodatak za generiranje knjige zapisa pripravnika (njemački: Berichtsheft)."
 type: plugin
-tags:
-  - plugin
+tags: [plugin]
 screenshots:
   - 
     src: "/images/marketplace/mr-software-recordbook-pdf.png"

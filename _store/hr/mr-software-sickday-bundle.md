@@ -2,8 +2,7 @@
 title: Bolovanje (dani bolovanja)
 intro: "Kimai dodatak za evidentiranje bolovanja korisnika."
 type: plugin
-tags:
-  - plugin
+tags: [plugin]
 screenshots:
   - 
     src: "/images/marketplace/mr-software-sickday-1.png"

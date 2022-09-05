@@ -2,8 +2,7 @@
 title: Provjera praznog opisa
 intro: "Kimai dodatak za prikaz svih unosa bez opisa + e-mail obavijest za korisnike da dodaju opis."
 type: plugin
-tags:
-  - plugin
+tags: [plugin]
 screenshots:
   - 
     src: "https://gitlab.com/hmr-it/kimai2plugins/EmptyDescriptionCheckerBundle/raw/master/_screenshots/email.jpg"

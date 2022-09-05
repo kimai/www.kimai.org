@@ -2,8 +2,7 @@
 title: Ponavljajući proračun
 intro: "Automatski redovito dodaje novac ili vrijeme tvojim proračunima projekata na osnovi prilagođenih intervala."
 type: plugin
-tags:
-  - plugin
+tags: [plugin]
 screenshots:
   - 
     src: "/images/marketplace/pcsg-recurring-budget-bundle-project.png"

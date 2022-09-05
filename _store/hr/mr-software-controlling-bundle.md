@@ -2,8 +2,7 @@
 title: Controlling plugin (German law, break time check, overtime)
 intro: "Kimai dodatak za provjeravanje je li netko od tvojin korisnika prekršio njemački zakon o pauzama + usporedba nominalnog i stvarnog radnog vremena + prikaz prekovremenog rada"
 type: plugin
-tags:
-  - plugin
+tags: [plugin]
 screenshots:
   - 
     src: "/images/marketplace/mr-software-controlling-1.png"

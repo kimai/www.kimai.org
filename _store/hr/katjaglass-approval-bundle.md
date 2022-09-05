@@ -2,8 +2,7 @@
 title: Radni tok odobrenja za vremenske tablice
 intro: "Ovaj je paket dostupan za obavljanje tjednog odobrenja za vremenske tablice."
 type: plugin
-tags:
-  - plugin
+tags: [plugin]
 screenshots:
   - 
     src: "https://raw.githubusercontent.com/KatjaGlassConsulting/ApprovalBundle/0.9.1/_documentation/Screenshot_UserApprovalForWeek.png"

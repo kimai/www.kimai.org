@@ -6,9 +6,7 @@ screenshot:
   - /images/marketplace/kemai-settings.jpg
   - /images/marketplace/kemai-add-project.jpg
 type: client
-tags:
-  - Qt
-  - Desktop
+tags: [qt,desktop]
 lang: hr
 permalink: /hr/store/alexandreptj-kemai-desktop-client.html
 ---

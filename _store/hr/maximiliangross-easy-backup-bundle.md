@@ -2,8 +2,7 @@
 title: Jednostavna sigurnosna kopija
 intro: "Kimai dodatak za izradu sigurnosne kopije tvog okruženja jednim pritiskom."
 type: plugin
-tags:
-  - plugin
+tags: [plugin]
 screenshots:
   - 
     src: "https://raw.githubusercontent.com/mxgross/EasyBackupBundle/master/screenshot.jpg"
