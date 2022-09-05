@@ -1,6 +1,6 @@
 ---
-title: Archive timesheets command plugin
-intro: "A plugin, which allows you to archive timesheets older than a specified timeframe, using a command."
+title: Naredba za arhiviranje vremenskih tablica
+intro: "Dodatak koji omogućuje arhiviranje vremenskih tablica starijih od određenog vremena pomoću naredbe."
 type: plugin
 tags:
   - plugin

@@ -1,14 +1,14 @@
 ---
-title: Easy Backup
-intro: "A Kimai plugin, which allows you to backup your environment with a single click."
+title: Jednostavna sigurnosna kopija
+intro: "Kimai dodatak za izradu sigurnosne kopije tvog okruženja jednim pritiskom."
 type: plugin
 tags:
   - plugin
 screenshots:
   - 
     src: "https://raw.githubusercontent.com/mxgross/EasyBackupBundle/master/screenshot.jpg"
-    title: Backup administration
-    description: The new administration page with backups 
+    title: Administracija sigurnosnih kopija
+    description: Nova administrativna stranica sa sigurnosnim kopijama 
 lang: hr
 permalink: /hr/store/maximiliangross-easy-backup-bundle.html
 ---

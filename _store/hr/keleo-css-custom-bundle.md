@@ -1,22 +1,22 @@
 ---
-title: Custom CSS plugin
-intro: "A plugin, which allows editing custom CSS rules through an administration screen."
+title: Prilagođeni CSS
+intro: "Dodatak koji omogućuje uređivanje prilagođenih CSS pravila putem administrativnog ekrana."
 type: plugin
 tags:
   - plugin
 screenshots:
   - 
     src: "/images/marketplace/custom-css-edit.png"
-    title: Custom CSS administration
-    description: "The new administration page with all available pre-made rules" 
+    title: Administracija za prilagođeni CSS
+    description: "Nova administrativna stranica sa svim dostupnim unaprijed određenim pravilima" 
   -
     src: "/images/marketplace/custom-css-before.png"
-    title: Timesheet
-    description: "Default timesheet view before using rules"
+    title: Vremenska tablica
+    description: "Zadani prikaz vremenske tablice prije korištenja pravila"
   - 
     src: "/images/marketplace/custom-css-after.png"
-    title: Custom timesheet
-    description: "Timesheet view with activated custom rules: highlight active records, hide overlapping records"
+    title: Prilagođena vremenska tablicat
+    description: "Prikaz vremenske tablice s aktiviranim prilagođenim pravilima: istakni aktivne zapise, sakrij zapise koji se preklapaju"
 lang: hr
 permalink: /hr/store/keleo-css-custom-bundle.html
 ---

@@ -1,34 +1,34 @@
 ---
-title: Vacation plugin (vacation + official & local holidays)
-intro: "A plugin for Kimai which adds the full workflow for vacation + official & local holidays"
+title: Godišnji odmor (godišnji odmor + državni i lokalni praznici)
+intro: "Kimai dodatak za dodavanje godišnjeg odmora + državnih i lokalnih praznika"
 type: plugin
 tags:
   - plugin
 screenshots:
   - 
     src: "/images/marketplace/mr-software-vacation-1.png"
-    title: Menu item
-    description: "Settings of the plugin"
+    title: Element izbornika
+    description: "Postavke dodatka"
   - 
     src: "/images/marketplace/mr-software-vacation-2.png"
-    title: Menu item
-    description: "Admins can the history"
+    title: Element izbornika
+    description: "Administratori mogu vidjeti povijest"
   - 
     src: "/images/marketplace/mr-software-vacation-3.png"
-    title: Menu item
-    description: "Admins can edit the vacation days amount per amount"
+    title: Element izbornika
+    description: "Administratori mogu promijeniti broj dana godišnjeg odmora"
   - 
     src: "/images/marketplace/mr-software-vacation-4.png"
-    title: Menu item
-    description: "Admins can see a summary of all vacation days"
+    title: Element izbornika
+    description: "Administratori mogu vidjeti sažetak svih dana godišnjeg odmora"
   - 
     src: "/images/marketplace/mr-software-vacation-5.png"
-    title: Menu item
-    description: "Admins can configure public/local holidays"
+    title: Element izbornika
+    description: "Administratori mogu konfigurirati državne i lokalne praznike"
   -
     src: "/images/marketplace/mr-software-vacation-6.png"
-    title: Menu item
-    description: "Admins can see all vacation applications"
+    title: Element izbornika
+    description: "Administratori mogu vidjeti sve zahtjeve godišnjeg odmora"
 lang: hr
 permalink: /hr/store/mr-software-vacation-bundle.html
 ---

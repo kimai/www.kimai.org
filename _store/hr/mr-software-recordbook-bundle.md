@@ -1,18 +1,18 @@
 ---
-title: RecordBook plugin (Berichtsheft für Azubis)
-intro: "A plugin for Kimai which generates a RecordBook (German: Berichtsheft) for trainees."
+title: Knijga zapisa (zapisnik pripravnika)
+intro: "Kimai dodatak za generiranje knjige zapisa pripravnika (njemački: Berichtsheft)."
 type: plugin
 tags:
   - plugin
 screenshots:
   - 
     src: "/images/marketplace/mr-software-recordbook-pdf.png"
-    title: "PDF example" 
-    description: "PDF example" 
+    title: "PDF primjer" 
+    description: "PDF primjer" 
   - 
     src: "/images/marketplace/mr-software-recordbook-view.png"
-    title: "Download view"
-    description: "Trainees see the weeks and can download the PDF"
+    title: "Preuzmi prikaz"
+    description: "Pripravnici vide tjedne i mogu preuzeti PDF"
 lang: hr
 permalink: /hr/store/mr-software-recordbook-bundle.html
 ---
