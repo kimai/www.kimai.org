@@ -31,7 +31,7 @@
 						<h4 class="mb-4">
 							<a href="{{ product.url | absolute_url }}">{{ product.title }}</a>
 							{% if isNew %}
-							<div class="badge badge-success badge-md">{{ site.data.trans[page.lang].new-badge }}</div>
+							<div class="badge badge-success badge-md">{{ site.data[page.lang].translation.new-badge }}</div>
 							{% endif %}
 						</h4>
 
@@ -46,7 +46,7 @@
 						<a href="{{ product.url | absolute_url }}">{{ product.title }}</a>
 
 						{% if isNew %}
-						<div class="badge badge-success badge-md">{{ site.data.trans[page.lang].new-badge }}</div>
+						<div class="badge badge-success badge-md">{{ site.data[page.lang].translation.new-badge }}</div>
 						{% endif %}
 					</td>
 				{% endif %}
@@ -60,7 +60,7 @@
 						{% if settings.price == nil %}
                             <i class="far fa-comments fa-lg"></i>
                         {% elsif settings.price == 0 %}
-                            {{ site.data.trans[page.lang].free-badge }}
+                            {{ site.data[page.lang].translation.free-badge }}
 						{% else %}
 							{{ settings.price }}
 						{% endif %}

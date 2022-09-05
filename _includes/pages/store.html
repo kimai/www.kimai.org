@@ -1,7 +1,7 @@
 
 <div class="container">
-    {% assign titleTrans = site.data.trans[page.lang].store-title %}
-    {% assign subtitleTrans = site.data.trans[page.lang].store-subtitle %}
+    {% assign titleTrans = site.data[page.lang].translation.store-title %}
+    {% assign subtitleTrans = site.data[page.lang].translation.store-subtitle %}
     {% include page-title.html title=titleTrans subtitle=subtitleTrans %}
 
     <div class="row row-cards">
@@ -12,17 +12,17 @@
             {% assign products =  site.store | where: "lang", page.lang | where_exp:"product", "product.type == 'support'" | sort: 'title' %}
             {% include store-list.html products=products %}
 
-            <h3>{{ site.data.trans[page.lang].store-category-apps }}</h3>
+            <h3>{{ site.data[page.lang].translation.store-category-apps }}</h3>
 
             {% assign products =  site.store | where: "lang", page.lang | where_exp:"product", "product.type == 'app'" | sort: 'title' %}
             {% include store-list.html products=products %}
 
-            <h3>{{ site.data.trans[page.lang].store-category-plugins }}</h3>
+            <h3>{{ site.data[page.lang].translation.store-category-plugins }}</h3>
 
             {% assign products =  site.store | where: "lang", page.lang | where_exp:"product", "product.type == 'plugin'" | sort: 'title' %}
             {% include store-list.html products=products %}
 
-            <h3>{{ site.data.trans[page.lang].store-category-client }}</h3>
+            <h3>{{ site.data[page.lang].translation.store-category-client }}</h3>
 
             {% assign products =  site.store | where: "lang", page.lang | where_exp:"product", "product.type != 'featured'" %}
             {% assign products = products | where_exp:"product", "product.type != 'support'" %}
@@ -39,16 +39,16 @@
                             <div class="mb-4 text-center">
                                 <i class="fas fa-shopping-cart fa-4x"></i>
                             </div>
-                            <h3 class="card-title text-center">{{ site.data.trans[page.lang].store-buy-title }}</h3>
+                            <h3 class="card-title text-center">{{ site.data[page.lang].translation.store-buy-title }}</h3>
                             <div class="card-subtitle">
                                 <p>
-                                    {{ site.data.trans[page.lang].store-buy-marketplace }}
+                                    {{ site.data[page.lang].translation.store-buy-marketplace }}
                                 </p>
                                 <p>
-                                    {{ site.data.trans[page.lang].store-buy-support }}
+                                    {{ site.data[page.lang].translation.store-buy-support }}
                                 </p>
                                 <p>
-                                    {{ site.data.trans[page.lang].store-buy-karma }}
+                                    {{ site.data[page.lang].translation.store-buy-karma }}
                                 </p>
                             </div>
                         </div>
@@ -57,16 +57,16 @@
                 <div class="col-md-6 col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">{{ site.data.trans[page.lang].store-contribute-title }}</h4>
+                            <h4 class="card-title">{{ site.data[page.lang].translation.store-contribute-title }}</h4>
                             <div class="card-subtitle">
                                 <p>
-                                    {{ site.data.trans[page.lang].store-contribute-subtitle }}:
+                                    {{ site.data[page.lang].translation.store-contribute-subtitle }}:
                                 <ul>
                                     <li>
-                                        <a href="{% link _documentation/plugins.md %}">{{ site.data.trans[page.lang].store-contribute-plugin }}</a>
+                                        <a href="{% link _documentation/plugins.md %}">{{ site.data[page.lang].translation.store-contribute-plugin }}</a>
                                     </li>
                                     <li>
-                                        <a href="{% link _documentation/store.md %}">{{ site.data.trans[page.lang].store-contribute-store }}</a>
+                                        <a href="{% link _documentation/store.md %}">{{ site.data[page.lang].translation.store-contribute-store }}</a>
                                     </li>
                                 </ul>
                             </div>
@@ -76,10 +76,10 @@
                 <div class="col-md-6 col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">{{ site.data.trans[page.lang].store-plugins-title }}</h4>
+                            <h4 class="card-title">{{ site.data[page.lang].translation.store-plugins-title }}</h4>
                             <div class="card-subtitle">
                                 <p>
-                                    {{ site.data.trans[page.lang].store-plugins-subtitle }}:
+                                    {{ site.data[page.lang].translation.store-plugins-subtitle }}:
                                 <ul>
                                     <li>
                                         <a href="https://github.com/topics/kimai2" target="_blank">kimai2</a>

@@ -15,7 +15,7 @@ with_languages: false
     {% include page-title.html title=headerTitle subtitle=headerSubTitle %}
 
     {% if page.lang != 'en' %}
-        {% assign alertMsg = site.data.trans[page.lang].docu-alert-english %}
+        {% assign alertMsg = site.data[page.lang].translation.docu-alert-english %}
         {% if alertMsg != nil %}
             {% include alert.html type="warning" alert=alertMsg %}
         {% endif %}

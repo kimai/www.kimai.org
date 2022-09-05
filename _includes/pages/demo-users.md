@@ -1,5 +1,5 @@
 
-| {{ site.data.trans[page.lang].username }}       | {{ site.data.trans[page.lang].password }} |    API     |
+| {{ site.data[page.lang].translation.username }}       | {{ site.data[page.lang].translation.password }} |    API     |
 |-------------------------------------------------|:-----------------------------------------:|:----------:|
 | **john_user** ({{ include.role_user }})         |                **kitten**                 | api_kitten |
 | **tony_teamlead** ({{ include.role_teamlead }}) |                **kitten**                 | api_kitten |

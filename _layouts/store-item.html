@@ -4,7 +4,7 @@ layout: default
 {% assign settings = site.data.store[page.slug] %}
 {% assign developer = site.data.developer[settings.developer] %}
 {% assign icon = settings.icon | default: "fas fa-question" %}
-{% capture options %}<a href="{{ site.data.trans-menu[page.lang].store.url }}" class="btn btn-option">{{ site.data.trans[page.lang].store-back }} {{ site.data.trans[page.lang].store }} <i class="fas fa-arrow-circle-right"></i></a>{% endcapture %}
+{% capture options %}<a href="{{ site.data.trans-menu[page.lang].store.url }}" class="btn btn-option">{{ site.data[page.lang].translation.store-back }} {{ site.data[page.lang].translation.store }} <i class="fas fa-arrow-circle-right"></i></a>{% endcapture %}
 {% assign buyLink = '#' %}
 {% assign isPaidOwnerPlugin = false %}
 {% if settings.download %}
@@ -52,16 +52,16 @@ layout: default
 									{% if settings.price == nil %}
 										upon request
 									{% elsif settings.price == 0 %}
-                                        {{ site.data.trans[page.lang].free-badge }}
+                                        {{ site.data[page.lang].translation.free-badge }}
 									{% else %}
-										{{ settings.price }} ({{ site.data.trans[page.lang].price-without-vat }})
+										{{ settings.price }} ({{ site.data[page.lang].translation.price-without-vat }})
 									{% endif %}
 								</h4>
 								<small class="text-muted">
 									{%- if isPaidOwnerPlugin %}
-										<a href="{% link _documentation/buy-a-plugin.md %}">{{ site.data.trans[page.lang].license-purchase }}</a>
+										<a href="{% link _documentation/buy-a-plugin.md %}">{{ site.data[page.lang].translation.license-purchase }}</a>
 									{% else %}
-                                    {{ site.data.trans[page.lang].seller-details }}
+                                    {{ site.data[page.lang].translation.seller-details }}
 									{% endif -%}
 								</small>
 							</div>
@@ -72,13 +72,13 @@ layout: default
                     <div class="card">
                         <div class="card-body">
                             <ul class="section-nav bundle-nav">
-                                <li><a href="#features">{{ site.data.trans[page.lang].store-features }}</a></li>
+                                <li><a href="#features">{{ site.data[page.lang].translation.store-features }}</a></li>
                                 {%- if isPaidOwnerPlugin %}
-                                <li><a href="#purchase">{{ site.data.trans[page.lang].store-purchase }}</a></li>
+                                <li><a href="#purchase">{{ site.data[page.lang].translation.store-purchase }}</a></li>
                                 {% endif %}
-                                <li><a href="#screenshots">{{ site.data.trans[page.lang].screenshots }}</a></li>
-                                <li><a href="#installation">{{ site.data.trans[page.lang].installation }}</a></li>
-                                <li><a href="#updates">{{ site.data.trans[page.lang].updates }}</a></li>
+                                <li><a href="#screenshots">{{ site.data[page.lang].translation.screenshots }}</a></li>
+                                <li><a href="#installation">{{ site.data[page.lang].translation.installation }}</a></li>
+                                <li><a href="#updates">{{ site.data[page.lang].translation.updates }}</a></li>
                             </ul>
                         </div>
                     </div>
@@ -86,7 +86,7 @@ layout: default
 
                     <div class="card">
                         <div class="card-body text-center">
-                            <h4 class="card-title text-center">{{ site.data.trans[page.lang].store-offered-by }}</h4>
+                            <h4 class="card-title text-center">{{ site.data[page.lang].translation.store-offered-by }}</h4>
                             <div class="mb-4">
                                 <img src="{{ developer.image }}" alt="Logo - {{ developer.name }}" class="avatar avatar-xxl">
                             </div>
@@ -143,18 +143,18 @@ layout: default
                     <div class="card">
                         <div class="card-body">
                             <h3 class="mb-3 text-center alert alert-info">
-                                {{ site.data.trans[page.lang].try-it }}
+                                {{ site.data[page.lang].translation.try-it }}
                             </h3>
                             <p class="mb-4">
-                                {{ site.data.trans[page.lang].plugin-demo-at }} <a href="https://demo-plugins.kimai.org">https://demo-plugins.kimai.org</a>:
+                                {{ site.data[page.lang].translation.plugin-demo-at }} <a href="https://demo-plugins.kimai.org">https://demo-plugins.kimai.org</a>:
                             </p>
                             <p>
-                                {{ site.data.trans[page.lang].username }}: <strong>susan_super</strong>
+                                {{ site.data[page.lang].translation.username }}: <strong>susan_super</strong>
                                 <br>
-                                {{ site.data.trans[page.lang].password }}: <strong>kitten</strong>
+                                {{ site.data[page.lang].translation.password }}: <strong>kitten</strong>
                             </p>
                             <p class="mb-4">
-                                <a href="{% link _pages/demo.md %}">{{ site.data.trans[page.lang].plugin-demo-accounts }}</a>.
+                                <a href="{% link _pages/demo.md %}">{{ site.data[page.lang].translation.plugin-demo-accounts }}</a>.
                             </p>
                         </div>
                     </div>
@@ -238,7 +238,7 @@ layout: default
 						{% if settings.gumroad %}
 						<a href="https://gum.co/{{ settings.gumroad }}" class="btn btn-success ml-2" target="_blank">
 							<i class="fas fa-shopping-cart"></i>
-							<span class="text-nowrap">{{ site.data.trans[page.lang].store-buy-button }}</span>
+							<span class="text-nowrap">{{ site.data[page.lang].translation.store-buy-button }}</span>
 						</a>
 						{% endif %}
 					</div>
@@ -256,13 +256,13 @@ layout: default
                 <div class="card">
                     <div class="card-header">
                         <div class="d-flex align-items-center px-2">
-                            <h3 id="purchase" class="card-title">{{ site.data.trans[page.lang].store-purchase }}</h3>
+                            <h3 id="purchase" class="card-title">{{ site.data[page.lang].translation.store-purchase }}</h3>
                         </div>
                         <div class="card-options">
                             {% if settings.gumroad %}
                             <a href="https://gum.co/{{ settings.gumroad }}" class="btn btn-success ml-2" target="_blank">
                                 <i class="fas fa-shopping-cart"></i>
-                                <span class="text-nowrap">{{ site.data.trans[page.lang].store-buy-button }}</span>
+                                <span class="text-nowrap">{{ site.data[page.lang].translation.store-buy-button }}</span>
                             </a>
                             {% endif %}
                         </div>
@@ -278,7 +278,7 @@ layout: default
             <div class="card">
                 <div class="card-header">
                     <div class="d-flex align-items-center px-2">
-                        <h3 id="screenshots" class="card-title">{{ site.data.trans[page.lang].screenshots }}</h3>
+                        <h3 id="screenshots" class="card-title">{{ site.data[page.lang].translation.screenshots }}</h3>
                     </div>
                 </div>
                 <div class="card-body">
@@ -290,7 +290,7 @@ layout: default
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center px-2">
-                                <h3 id="installation" class="card-title">{{ site.data.trans[page.lang].installation }}</h3>
+                                <h3 id="installation" class="card-title">{{ site.data[page.lang].translation.installation }}</h3>
                             </div>
                         </div>
                         <div class="card-body">
@@ -330,7 +330,7 @@ layout: default
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center px-2">
-                                <h3 id="updates" class="card-title">{{ site.data.trans[page.lang].updates }}</h3>
+                                <h3 id="updates" class="card-title">{{ site.data[page.lang].translation.updates }}</h3>
                             </div>
                         </div>
                         <div class="card-body">

@@ -13,16 +13,16 @@
         <div class="card alert alert-success">
             <div class="card-body">
                 <h4>
-                    {{ site.data.trans[page.lang].homepage-alert-title }}
+                    {{ site.data[page.lang].translation.homepage-alert-title }}
                 </h4>
                 <p>
-                    {{ site.data.trans[page.lang].homepage-alert-intro }}
+                    {{ site.data[page.lang].translation.homepage-alert-intro }}
                     <br><br>
-                    {{ site.data.trans[page.lang].homepage-quote-excel }}
+                    {{ site.data[page.lang].translation.homepage-quote-excel }}
                 </p>
                 <div class="btn-list">
-                    <a href="{{ site.data.trans-menu[page.lang].download.url }}" class="btn btn-primary">{{ site.data.trans[page.lang].homepage-alert-button-download }}</a>
-                    <a href="{{ site.data.trans-menu[page.lang].demo.url }}" class="btn btn-secondary">{{ site.data.trans[page.lang].homepage-alert-button-demo }}</a>
+                    <a href="{{ site.data.trans-menu[page.lang].download.url }}" class="btn btn-primary">{{ site.data[page.lang].translation.homepage-alert-button-download }}</a>
+                    <a href="{{ site.data.trans-menu[page.lang].demo.url }}" class="btn btn-secondary">{{ site.data[page.lang].translation.homepage-alert-button-demo }}</a>
                 </div>
             </div>
         </div>
@@ -34,12 +34,12 @@
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title">
-                    {{ site.data.trans[page.lang].homepage-features-title }}
+                    {{ site.data[page.lang].translation.homepage-features-title }}
                 </h3>
                 {% comment %}
                 <br>
                 <small>
-                    {{ site.data.trans[page.lang].homepage-features-subtitle }}
+                    {{ site.data[page.lang].translation.homepage-features-subtitle }}
                 </small>
                 {% endcomment %}
             </div>
