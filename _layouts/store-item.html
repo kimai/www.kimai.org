@@ -54,14 +54,14 @@ layout: default
 									{% elsif settings.price == 0 %}
                                         {{ site.data.trans[page.lang].free-badge }}
 									{% else %}
-										{{ settings.price }} (excl. VAT)
+										{{ settings.price }} ({{ site.data.trans[page.lang].price-without-vat }})
 									{% endif %}
 								</h4>
 								<small class="text-muted">
 									{%- if isPaidOwnerPlugin %}
-										<a href="{% link _documentation/buy-a-plugin.md %}">License and purchase details</a>
+										<a href="{% link _documentation/buy-a-plugin.md %}">{{ site.data.trans[page.lang].license-purchase }}</a>
 									{% else %}
-										Pricing for this item
+                                    {{ site.data.trans[page.lang].seller-details }}
 									{% endif -%}
 								</small>
 							</div>
@@ -76,9 +76,9 @@ layout: default
                                 {%- if isPaidOwnerPlugin %}
                                 <li><a href="#purchase">{{ site.data.trans[page.lang].store-purchase }}</a></li>
                                 {% endif %}
-                                <li><a href="#screenshots">Screenshots</a></li>
-                                <li><a href="#installation">Installation</a></li>
-                                <li><a href="#updates">Updates</a></li>
+                                <li><a href="#screenshots">{{ site.data.trans[page.lang].screenshots }}</a></li>
+                                <li><a href="#installation">{{ site.data.trans[page.lang].installation }}</a></li>
+                                <li><a href="#updates">{{ site.data.trans[page.lang].updates }}</a></li>
                             </ul>
                         </div>
                     </div>
@@ -143,17 +143,18 @@ layout: default
                     <div class="card">
                         <div class="card-body">
                             <h3 class="mb-3 text-center alert alert-info">
-                                Try it
+                                {{ site.data.trans[page.lang].try-it }}
                             </h3>
                             <p class="mb-4">
-                                You can test this plugin in our dedicated <a href="https://demo-plugins.kimai.org">plugin demo</a>:
+                                {{ site.data.trans[page.lang].plugin-demo-at }} <a href="https://demo-plugins.kimai.org">https://demo-plugins.kimai.org</a>:
                             </p>
-                            <ul>
-                                <li>Username: <strong>susan_super</strong></li>
-                                <li>Password: <strong>kitten</strong></li>
-                            </ul>
+                            <p>
+                                {{ site.data.trans[page.lang].username }}: <strong>susan_super</strong>
+                                <br>
+                                {{ site.data.trans[page.lang].password }}: <strong>kitten</strong>
+                            </p>
                             <p class="mb-4">
-                                Find more testing accounts <a href="{% link _pages/demo.md %}">here</a>.
+                                <a href="{% link _pages/demo.md %}">{{ site.data.trans[page.lang].plugin-demo-accounts }}</a>.
                             </p>
                         </div>
                     </div>
@@ -277,7 +278,7 @@ layout: default
             <div class="card">
                 <div class="card-header">
                     <div class="d-flex align-items-center px-2">
-                        <h3 id="screenshots" class="card-title">Screenshots</h3>
+                        <h3 id="screenshots" class="card-title">{{ site.data.trans[page.lang].screenshots }}</h3>
                     </div>
                 </div>
                 <div class="card-body">
@@ -289,7 +290,7 @@ layout: default
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center px-2">
-                                <h3 id="installation" class="card-title">Installation</h3>
+                                <h3 id="installation" class="card-title">{{ site.data.trans[page.lang].installation }}</h3>
                             </div>
                         </div>
                         <div class="card-body">
@@ -329,7 +330,7 @@ layout: default
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center px-2">
-                                <h3 id="updates" class="card-title">Updates</h3>
+                                <h3 id="updates" class="card-title">{{ site.data.trans[page.lang].updates }}</h3>
                             </div>
                         </div>
                         <div class="card-body">

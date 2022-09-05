@@ -22,4 +22,4 @@ Ako naiđeš na bilo koju vrstu problema, pošalji poruku na stranici [sustava z
 
 Ovi su računi dostupni za tvoje testove. Vlastitog testnog korisnika možeš stvoriti i u obrascu za prijavu svake demo verzije:
  
-{% include pages/demo-users.md user="Korisničko ime" password="Lozinka" api="API" role_user="Korisnik" role_admin="Administrator" role_super="Super-Admin" role_teamlead="Voditelj tima" %}
+{% include pages/demo-users.md role_user="Korisnik" role_admin="Administrator" role_super="Super-Admin" role_teamlead="Voditelj tima" %}

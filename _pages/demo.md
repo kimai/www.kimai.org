@@ -24,4 +24,4 @@ If you encounter any problem, I would kindly ask you to drop a message in the [i
 
 These accounts are available for your tests. Or you create your own test user in the login form of each demo:
  
-{% include pages/demo-users.md user="Username" password="Password" api="API" role_user="User" role_admin="Admin" role_super="Super-Admin" role_teamlead="Teamlead" %}
+{% include pages/demo-users.md role_user="User" role_admin="Admin" role_super="Super-Admin" role_teamlead="Teamlead" %}

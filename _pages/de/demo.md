@@ -25,4 +25,4 @@ Wenn Sie ein Problem feststellen, würde ich Sie bitten eine Nachricht [bei GitH
 
 Diese Konten stehen für Ihre Tests zur Verfügung. Oder Sie erstellen einen eigenen Testbenutzer im Anmeldeformular jeder Demo:
 
-{% include pages/demo-users.md user="Benutzername" password="Passwort" api="API" role_user="Benutzer" role_admin="Admin" role_super="Super-Admin" role_teamlead="Teamleiter" %}
+{% include pages/demo-users.md role_user="Benutzer" role_admin="Admin" role_super="Super-Admin" role_teamlead="Teamleiter" %}

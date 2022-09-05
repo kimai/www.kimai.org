@@ -22,4 +22,4 @@ Si vous remarquez un problème, je vous demande de laisser un message [sur GitHu
 
 Ces comptes sont disponibles pour vos tests. Vous pouvez également créer votre propre utilisateur test dans le formulaire d'inscription de chaque démo :
 
-{% include pages/demo-users.md user="Nom d'utilisateur" password="Mot de passe" api="API" role_user="Utilisateur" role_admin="Admin" role_super="Super-Admin" role_teamlead="Chef d'équipe" %}
+{% include pages/demo-users.md role_user="Utilisateur" role_admin="Admin" role_super="Super-Admin" role_teamlead="Chef d'équipe" %}
