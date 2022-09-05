@@ -1,6 +1,6 @@
 ---
-title: Grandtotal plugin
-intro: "A GrandTotal 6 plugin, which allows to import Kimai timesheets"
+title: Grandtotal dodatak
+intro: "GrandTotal 6 dodatak, koji omogućuje uvoz Kimaijskih vremenskih tablica"
 slug: grandtotal-plugin-for-kimai
 type: client
 tags:
