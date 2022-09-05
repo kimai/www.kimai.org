@@ -1,5 +1,5 @@
 ---
-title: Tijek rada odobrenja za vremenske tablice
+title: Radni tok odobrenja za vremenske tablice
 intro: "Ovaj je paket dostupan za obavljanje tjednog odobrenja za vremenske tablice."
 type: plugin
 tags:
