@@ -1,11 +1,10 @@
 ---
-title: Custom-fields plugin
+title: Custom-fields
 intro: "Create free configurable additional fields for timesheets, customers, projects, activities and users."
 featured: Create free configurable additional fields for timesheets, customers, projects, activities and users in various formats. Fields can be optional or mandatory and restricted by permissions.
 slug: custom-fields-bundle
 type: featured
-tags:
-  - plugin
+tags: [plugin]
 screenshots:
   - 
     src: "/images/marketplace/meta-fields-listing.png"

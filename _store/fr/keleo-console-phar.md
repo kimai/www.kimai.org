@@ -3,10 +3,7 @@ title: Console client (PHAR)
 intro: Cross platform console client for Kimai
 slug: console-phar
 type: client
-tags:
-  - bash
-  - PHP
-  - PHAR
+tags: [bash,php,cli]
 lang: fr
 permalink: /fr/store/keleo-console-phar.html
 ---

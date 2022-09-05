@@ -7,9 +7,7 @@ screenshot:
   - https://raw.githubusercontent.com/KatjaGlassConsulting/TimeKex/main/docs/img/example_admin_create_02.png
   - https://raw.githubusercontent.com/KatjaGlassConsulting/TimeKex/main/docs/img/layout_week_display_issues.png
 type: client
-tags:
-  - Excel
-  - Import
+tags: [excel,import]
 lang: fr
 permalink: /fr/store/katjaglass-timekex.html
 ---

@@ -5,11 +5,7 @@ screenshot:
   - https://raw.githubusercontent.com/infeeeee/kimai2-cmd-argos/master/img/screenshot-argos-active.png
   - https://raw.githubusercontent.com/infeeeee/kimai2-cmd-argos/master/img/screenshot-bitbar-active.png
 type: client
-tags:
-  - Argos
-  - Kargos
-  - xbar 
-  - kimai-cmd
+tags: [argos,kargos,xbar,cli]
 lang: en
 ---
 

@@ -1,11 +1,10 @@
 ---
-title: Custom-content plugin
+title: Custom-content
 intro: "Create custom content for: stylesheets, javascript, a global warning message and a new page to render markdown content for company news."
 featured: "Create custom content for: stylesheets, javascript, a global warning message and a new page to render markdown content for company news."
 slug: custom-content-bundle
 type: featured
-tags:
-  - plugin
+tags: [plugin]
 screenshots:
   - 
     src: "/images/marketplace/custom-content-alert.png"

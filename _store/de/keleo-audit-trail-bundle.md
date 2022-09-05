@@ -4,8 +4,7 @@ intro: "Records detailed change/audit logs for timesheets, customers, projects a
 slug: audit-trail-bundle
 featured: "Records detailed change/audit logs for timesheets, customers, projects and activities and displays them in a per-item timeline."
 type: featured
-tags:
-  - plugin
+tags: [plugin]
 screenshots:
   - 
     src: '/images/marketplace/audit-listing.png'

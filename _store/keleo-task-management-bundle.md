@@ -4,8 +4,7 @@ intro: "Create tasks, start/stop/pause them, assign them to users and teams and 
 featured: "Create tasks, start/stop/pause them, assign them to users and teams - a todo-list management plugin that is connected to your time-tracker and adds two new dashboard widgets"
 slug: task-management-bundle
 type: featured
-tags:
-  - plugin
+tags: [plugin]
 screenshots:
   - 
     src: "/images/marketplace/tasks-screenshot.png"

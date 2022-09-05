@@ -2,8 +2,7 @@
 title: Approval workflow for timesheets
 intro: "This bundle is available to perform a weekly approval for timesheets."
 type: plugin
-tags:
-  - plugin
+tags: [plugin]
 screenshots:
   - 
     src: "https://raw.githubusercontent.com/KatjaGlassConsulting/ApprovalBundle/0.9.1/_documentation/Screenshot_UserApprovalForWeek.png"
