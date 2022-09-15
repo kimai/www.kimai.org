@@ -12,7 +12,9 @@ related:
 [Authentik](https://goauthentik.io) is an open-source Identity Provider focused on flexibility and versatility.
 It has proven to work with Kimai, see [#3212](https://github.com/kevinpapst/kimai2/discussions/3212).
 
-Make sure that the mapping field match the XML response:
+You should [check the Authentik docs about Kimai](https://goauthentik.io/integrations/services/kimai/) as well!
+
+Make sure that the mapping field matches the XML response:
 
 ```yaml
     mapping:
@@ -86,4 +88,16 @@ kimai:
           displayname: "Kimai"
           url: "https://kimai.company"
 ```
+
+Be aware that you have to set the correct `NameID Property Mapping`, otherwise the second login of a user might fail with an error like:
+```
+Failed creating or hydrating user "5cdbd7e4f75719119780ac83c5b09bcda070d8f6a14dbab20aabee299ce6cda2"
+Duplicate entry 'test@example.com'
+```
+
+**Solution**
+
+On your Authentik Provider, switch to Advanced protocol settings and set the `NameID Property Mapping` to be the username. 
+This will start sending the correct username and email, which Kimai needs to map the SSO user to the internal Kimai account for the authentication.
+
 
