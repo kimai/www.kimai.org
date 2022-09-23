@@ -192,8 +192,8 @@ Here is an example of a nginx proxy configuration, which terminates SSL on `kima
 server {
     listen 443 ssl;
     server_name                 kimai2.local;
-    ssl_certificate             /Users/kevin/Sites/_certs/kimai2.local.crt;
-    ssl_certificate_key         /Users/kevin/Sites/_certs/kimai2.local.key;
+    ssl_certificate             /etc/ssl/certs/kimai2.local.crt;
+    ssl_certificate_key         /etc/ssl/certs/kimai2.local.key;
     ssl_session_timeout         5m;
     ssl_protocols               SSLv2 SSLv3 TLSv1;
     ssl_ciphers                 HIGH:!aNULL:!MD5;

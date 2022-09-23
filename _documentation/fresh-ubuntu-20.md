@@ -45,8 +45,8 @@ exit
 
 Generate your SSH key and sent it to your server:
 ```bash
-ssh-keygen -f ~/.ssh/kevin_myserver_rsa
-ssh-copy-id -i /Users/kevin/.ssh/kevin_myserver_rsa.pub kevin@IP-of-myserver
+ssh-keygen -f ~/.ssh/myserver_rsa
+ssh-copy-id -i ~/.ssh/myserver_rsa.pub kevin@IP-of-myserver
 ```
 
 Then edit your local SSH config:
@@ -58,7 +58,7 @@ And paste this:
 ```
 Host myserver
     HostName IP-of-myserver
-    IdentityFile ~/.ssh/kevin_myserver_rsa
+    IdentityFile ~/.ssh/myserver_rsa
     User kevin
 ```
 
