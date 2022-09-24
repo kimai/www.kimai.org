@@ -1,6 +1,6 @@
 ---
 title: Donacije
-description: Doniraj projektu Kimai i postani sponzor evidentiranja vremena
+description: Podrži Kimai putem donacije
 lang: hr
 permalink: /hr/donacije.html
 ---

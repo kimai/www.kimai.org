@@ -19,7 +19,7 @@ Wählen Sie eine unserer Demo-Installationen aus, um sich einen ersten Eindruck 
 Beachten Sie, dass die Demos in regelmäßigen Abständen neu installiert werden und alle eingegebenen Daten entfernt werden. 
 Aber um es Ihnen bequemer zu machen, werden diese mit zufälligen Daten vorbefüllt, sodass Sie direkt mit dem Testen von funktionen (wie Rechnung oder Export) beginnen können.
 
-Wenn Sie ein Problem feststellen, würde ich Sie bitten eine Nachricht [bei GitHub]({{ site.kimai_v2_repo }}/issues) zu hinterlassen.
+Wenn Sie ein Problem feststellen, würde ich Sie bitten, eine Nachricht [bei GitHub]({{ site.kimai_v2_repo }}/issues) zu hinterlassen.
 
 ## Demo Benutzer
 

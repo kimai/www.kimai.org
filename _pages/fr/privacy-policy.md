@@ -1,6 +1,6 @@
 ---
-title: Privacy Policy
-description: Privacy policy for www.kimai.org
+title: Politique de confidentialité
+description: Politique de confidentialité for www.kimai.org
 lang: fr
 robots: "noindex, follow"
 sitemap: false

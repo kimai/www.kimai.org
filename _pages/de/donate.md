@@ -1,6 +1,6 @@
 ---
 title: Spenden
-description: Spenden Sie an Kimai und werden Sie ein Sponsor der Zeiterfassung
+description: Unterstütze Kimai mit einer Spende
 lang: de
 permalink: /de/spenden.html
 redirect_from: /spenden.html

@@ -1,6 +1,6 @@
 ---
-title: Site notice
-description: Site notice for www.kimai.org
+title: Impressum
+description: Impresum for www.kimai.org
 lang: hr
 robots: "noindex, nofollow"
 sitemap: false

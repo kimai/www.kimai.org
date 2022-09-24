@@ -1,6 +1,6 @@
 ---
-title: Site notice
-description: Site notice for www.kimai.org
+title: Mentions légales
+description: Mentions légales for www.kimai.org
 lang: fr
 robots: "noindex, nofollow"
 sitemap: false
