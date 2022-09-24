@@ -10,8 +10,8 @@ lang: en
 
 ![Kimai logo]({% link /images/kimai_logo.png %}){:class="float-right" style="margin-left: 20px" }
 
-Kimai is a time-tracking app with a long history. Its first version was released 2006. Why do we mention that? 
-Because we have seen so many services come and go in the last decade - trust us when we say: we'll stick around. 
+Kimai is a time-tracking app with a long history. The first version was released 2006. Why do we mention that? 
+Because we have seen so many services come and go since then - trust us when we say: we'll stick around. 
 We didn't make a living from Kimai for many years, it was the fun that kept us motivated to improve Kimai. 
 We believe the fun is one of the main reasons for the success of Kimai.
 

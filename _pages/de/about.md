@@ -12,7 +12,7 @@ permalink: /de/ueber-kimai.html
 ![Kimai logo]({% link /images/kimai_logo.png %}){:class="float-right" style="margin-left: 20px" }
 
 Kimai ist eine Zeiterfassungs-Software mit einer langen Geschichte. Die erste Version wurde 2006 veröffentlicht. 
-Warum erwähnen wir das? Weil wir in den letzten zehn Jahren viele Programme kommen und gehen gesehen haben – vertrauen Sie uns, wenn wir sagen: 
+Warum erwähnen wir das? Weil wir seitdem viele Programme haben kommen und gehen sehen – vertrauen Sie uns, wenn wir sagen: 
 Wir werden am Markt bleiben. Wir haben viele Jahre nichts mit Kimai verdient, es war stets der Spaß der uns motivierte Kimai zu verbessern. 
 Wir glauben, dass die Freude einer der Hauptgründe für den Erfolg von Kimai ist. 
 
