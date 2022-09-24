@@ -1,34 +1,50 @@
 # Site
 title:        "Kimai Time-Tracking"
-bio:          "Kimai Time-Tracking"
-description:  "Kimai time-tracking app - a free and open-source PHP based time-tracker for agencies and freelancer"
 locale:       "en_US"
 lang:         "en_US"
 baseurl:      ""
-
-# jekyll-sitemap: base hostname & protocol for your site
 url:          "https://www.kimai.org"
 bing-id:      "874E17F27A8EABE9DDAED762FC498BC4"
+
+kimai_v2_version: "1.25.0"
+kimai_v2_website: https://github.com/kimai/www.kimai.org
+kimai_v2_repo: https://github.com/kevinpapst/kimai2
+kimai_v2_forum: https://github.com/kevinpapst/kimai2/discussions
+kimai_v2_file: https://github.com/kevinpapst/kimai2/blob/master
+kimai_v2_demo: https://demo.kimai.org
+kimai_v1_repo: https://github.com/kimai/kimai
+
+languages:
+    - de
+    - en
+    - fr
+    - hr
+
+language_names:
+    en: English
+    de: Deutsch
+    fr: Français
+    hr: Hrvatski
 
 collections:
   documentation:
     output: true
-    permalink: /:collection/:name.html
+    permalink: "/:collection/:name.html"
   docu_versioned:
     output: true
-    permalink: /documentation/:path.html
+    permalink: "/documentation/:path.html"
   v1:
     output: true
-    permalink: /:collection/:name.html
+    permalink: "/:collection/:name.html"
   pages:
     output: true
-    permalink: /:name/
+    permalink: "/:name/"
   error:
     output: true
-    permalink: /:name.html
+    permalink: "/:name.html"
   store:
     output: true
-    permalink: /store/:title.html
+    permalink: "/store/:title.html"
 
 defaults:
   - scope:
@@ -77,23 +93,23 @@ defaults:
       layout: store-item
       lang: en
 
-# Jekyll
-markdown:           kramdown
+markdown: kramdown
+
 kramdown:
   auto_ids:         true
   footnote_nr:      1
   entity_output:    as_char
   toc_levels:       1..6
-  enable_coderay:   false
   syntax_highlighter_opts:
     css_class: ''
     span:
       line_numbers: false
-sass:
-  sass_dir:         assets/sass
-  style:            compressed
 
-# Gems
+sass:
+  sass_dir: assets/sass
+  style: compressed
+
+# see Gemfile
 plugins:
   - jekyll-sitemap
   - jekyll-mentions
@@ -103,33 +119,6 @@ plugins:
 jekyll-mentions:
     base_url: https://github.com
 
-jekyll_tidy:
-  compress_html: false
-  ignore_env: development
-
-base_color: '#467fcf'
-
-author:
-   name: Kevin Papst
-   url: https://www.kevinpapst.de
-
-# Kimai exclusive
-use_pagination: false
-permalink: /blog/:year/:title/
-name: Kimai Time-Tracking
-
-# Kimai v2
-kimai_v2_version: "1.25.0"
-kimai_v2_website: https://github.com/kimai/www.kimai.org
-kimai_v2_repo: https://github.com/kevinpapst/kimai2
-kimai_v2_forum: https://github.com/kevinpapst/kimai2/discussions
-kimai_v2_file: https://github.com/kevinpapst/kimai2/blob/master
-kimai_v2_demo: https://demo.kimai.org
-
-# Kimai v1
-kimai_v1_repo: https://github.com/kimai/kimai
-
-# Exclude list
 exclude:
   - README.md
   - Gemfile
@@ -154,17 +143,19 @@ exclude:
   - translate-pages.php
   - .github
 
-languages:
-  - de
-  - en
-  - fr
-  - hr
-
-language_names:
-  en: English
-  de: Deutsch
-  fr: Français
-  hr: Hrvatski
-
 whitelist:
     - jekyll-redirect-from
+
+################### REMOVE ME ###################
+base_color: '#467fcf'
+
+author:
+    name: Kevin Papst
+    url: https://www.kevinpapst.de
+
+# Kimai exclusive
+use_pagination: false
+name: Kimai Time-Tracking
+
+bio: "Kimai Time-Tracking"
+description:  "Kimai time-tracking app - a free and open-source PHP based time-tracker for agencies and freelancer"
