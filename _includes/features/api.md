@@ -1,1 +1,0 @@
-Featuring a JSON API so external apps can communicate with your favorite time-tracker!

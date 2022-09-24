@@ -1,1 +1,0 @@
-Rates can be calculated based on hourly and fixed amounts, configurable for customers, projects, activities and each timesheet record individually.

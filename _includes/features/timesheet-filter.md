@@ -1,1 +1,0 @@
-You can filter all time-records by user, customer, project, activity and date.

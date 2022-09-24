@@ -1,1 +1,0 @@
-Manage projects for each customer with order number, budget and visibility (for archiving).

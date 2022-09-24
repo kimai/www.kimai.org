@@ -216,4 +216,4 @@ bin/console translation:update --dump-messages --force de
 ## Finalization
 
 - Sent in a PR with your changes
-- [Update the documentation](https://github.com/kimai/www.kimai.org/blob/master/_features/multi-language.md), which states all available translations
+- [Update the documentation](https://github.com/kimai/www.kimai.org/blob/master/_includes/features/multi-language.md), which states all available translations

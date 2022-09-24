@@ -19,10 +19,10 @@
                     {{ site.data[page.lang].translation.homepage-alert-intro }}
                     <br><br>
                     {{ site.data[page.lang].translation.homepage-quote-excel }}
-                </p>
+                </p> 
                 <div class="btn-list">
-                    <a href="{{ site.data.trans-menu[page.lang].download.url }}" class="btn btn-primary">{{ site.data[page.lang].translation.homepage-alert-button-download }}</a>
-                    <a href="{{ site.data.trans-menu[page.lang].demo.url }}" class="btn btn-secondary">{{ site.data[page.lang].translation.homepage-alert-button-demo }}</a>
+                    <a href="{{ site.pages | where: "lang", page.lang | where: "slug", "download" | map: "url" | first }}" class="btn btn-primary">{{ site.data[page.lang].translation.homepage-alert-button-download }}</a>
+                    <a href="{{ site.pages | where: "lang", page.lang | where: "slug", "demo" | map: "url" | first }}" class="btn btn-secondary">{{ site.data[page.lang].translation.homepage-alert-button-demo }}</a>
                 </div>
             </div>
         </div>
@@ -46,21 +46,27 @@
             <div class="table-responsive">
                 <table class="table card-table table-vcenter table-striped table-responsive-sm feature-list">
                     <tbody>
-
-                        {% assign features = site.features | where: "lang", page.lang | sort:"order" %} 
-                        {% for feature in features %}
+                    {% for feature in site.data.feature %}
+                        {% assign feature_key = feature.name %}
+                        {% assign feature_documentation = feature.documentation %}
+                        {% assign lang_replacer = page.lang | append: '/' %}
+                        {% if page.lang == 'en' %}
+                           {% assign lang_replacer = '' %}
+                        {% endif %}
+                        {% assign feature_documentation = feature.documentation | replace: '%language%', lang_replacer %}
+                        {% assign feature_title = site.data[page.lang].translation.feature[feature_key].name %}
+                        {% assign feature_description = site.data[page.lang].translation.feature[feature_key].description %}
                         <tr>
                             <td>
-                                {% if feature.documentation != nil %}
-                                    <a href="{{ feature.documentation }}">{{ feature.title }}</a>
+                                {% if feature_documentation != nil and feature_documentation != '' %}
+                                    <a href="{% link {{ feature_documentation }} %}">{{ feature_title }}</a>
                                 {% else %}
-                                    {{ feature.title }}
+                                    {{ feature_title }}
                                 {% endif %}
                             </td>
-                            <td>{{ feature.excerpt }}</td>
+                            <td>{{ feature_description }}</td>
                         </tr>
-                        {% endfor %}
-
+                    {% endfor %}
                     </tbody>
                 </table>
             </div>

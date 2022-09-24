@@ -1,1 +1,0 @@
-Data from Kimai v1 can be imported, for a seamless migration of your time-tracker.

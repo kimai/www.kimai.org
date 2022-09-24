@@ -1,1 +1,0 @@
-Kimai bundles different color themes and display settings, so every user can tweak it to his personal flavour

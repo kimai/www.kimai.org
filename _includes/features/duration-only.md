@@ -1,1 +1,0 @@
-If your local laws require you to only show durations instead of start and end date-time, you can activate that mode globally.

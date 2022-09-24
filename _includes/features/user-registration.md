@@ -1,1 +1,0 @@
-Kimai supports user self-registration with email activation.

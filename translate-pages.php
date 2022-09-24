@@ -3,10 +3,6 @@
 $languages = ['de', 'fr', 'hr'];
 
 $multiLanguagePaths = [
-    '_features' => [
-        'keep_front_matter' => ['title', 'documentation', 'canonical'],
-        'skip' => [],
-    ],
     '_pages' => [
         'keep_front_matter' => ['title', 'description', 'lang', 'canonical', 'header', 'permalink', 'redirect_from'],
         'skip' => ['v1.md'],

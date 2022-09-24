@@ -1,1 +1,0 @@
-The release includes a docker image for development and there is a separate docker-compose setup for production available.
