@@ -38,7 +38,11 @@
                 </li>
             </ul>
             <div class="text-center mt-4">
-                <a href="https://www.kimai.cloud/pricing" class="btn btn-danger w-100">{{ site.data[page.lang].translation.cloud-call-to-action }}</a>
+                {% assign cloud_url = "https://www.kimai.cloud/start-trial" %}
+                {% if page.lang == "de" %}
+                    {% assign cloud_url = "https://www.kimai.cloud/de/testphase-beginnen" %}
+                {% endif %}
+                <a href="{{ cloud_url }}" class="btn btn-danger w-100">{{ site.data[page.lang].translation.cloud-call-to-action }}</a>
             </div>
         </div>
     </div>
