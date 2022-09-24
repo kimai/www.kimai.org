@@ -1,18 +1,9 @@
 ---
-title: "Team / Internal"
+title: "Create a release"
 url_v2: /documentation/create-release.html
 ---
 
-This part of the documentation is related to the Kimai development team, you can safely skip this part 
-if you are a end-user of the Kimai time-tracking application.
-
-## Developing for Kimai
-
-Please read our [CONTRIBUTING GUIDELINES]({{ site.kimai_v1_repo }}/blob/master/.github/CONTRIBUTING.md) directly at Github.
-
-## Creating a new release
-
-For creating a new release, you need to have ant installed
+For creating a new release, you need to have `ant` installed
 
 - Change the version number in the following files and push them to master: 
     - build.xml

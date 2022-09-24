@@ -6,6 +6,8 @@ url_v2: /documentation/developers.html
 
 This document gives an overview of how Kimai works. It is intended for developers (core and extensions).
 
+Please read our [CONTRIBUTING GUIDELINES]({{ site.kimai_v1_repo }}/blob/master/.github/CONTRIBUTING.md) directly at Github.
+
 ## Glossary
 
 First lets talk about the wording used in Kimai to describe things:
