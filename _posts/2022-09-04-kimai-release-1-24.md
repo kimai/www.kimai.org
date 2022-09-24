@@ -6,24 +6,18 @@ author: kevinpapst
 tags: [Release]
 ---
 
-The release [1.24.0](https://github.com/kevinpapst/kimai2/releases/tag/1.24.0) was published in September 2022. 
-Want to upgrade? Great! [Read here how you do it]({%link _documentation/updates.md %}).
+The release 1.24 was published in September 2022.
 
-**Remember that PHP 7.x is EOL: [Kimai supports 7.4, 8.0 and 8.1](https://www.kimai.org/blog/2021/sunsetting-php-7/).**
+- Want to upgrade? Great! [Read here how you do it]({%link _documentation/updates.md %}).
+- Remember that PHP 7.x is EOL: [Kimai supports 7.4, 8.0 and 8.1](https://www.kimai.org/blog/2021/sunsetting-php-7/).
+- Find the official [release notes here](https://github.com/kevinpapst/kimai2/releases/tag/1.24.0).
 
 ## Highlights from the release 
-
-**Implemented enhancements**
 
 - Support custom fonts in PDF via twig templates (#3509)
 - Added inline disposition for PDF previews (#3486)
 - Allow to hide zero tax rows via plugin (#3484)
-- Translations update from Hosted Weblate (#3496)
-
-**Fixed bugs**
-
 - Fix quick entry during grace period matching midnight (#3504)
-- Fix datetime modify to now (#3511)
 
 ### Thank you!
 

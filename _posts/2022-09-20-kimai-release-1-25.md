@@ -6,14 +6,13 @@ author: kevinpapst
 tags: [Release]
 ---
 
-The release [1.25.0](https://github.com/kevinpapst/kimai2/releases/tag/1.25.0) was published in September 2022.
-Want to upgrade? Great! [Read here how you do it]({%link _documentation/updates.md %}).
+The release 1.25 was published in September 2022.
 
-**Remember that PHP 7.x is EOL: [Kimai supports 7.4, 8.0 and 8.1](https://www.kimai.org/blog/2021/sunsetting-php-7/).**
+- Want to upgrade? Great! [Read here how you do it]({%link _documentation/updates.md %}).
+- Remember that PHP 7.x is EOL: [Kimai supports 7.4, 8.0 and 8.1](https://www.kimai.org/blog/2021/sunsetting-php-7/).
+- Find the official [release notes here](https://github.com/kevinpapst/kimai2/releases/tag/1.25.0).
 
 ## Highlights from the release
-
-**Implemented enhancements**
 
 - Added keyboard shortcuts (#3536)
 - Configurable calendar drag and drop behavior (#3537)
