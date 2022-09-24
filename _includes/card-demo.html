@@ -4,14 +4,7 @@
 			{{ include.title }}
 		</h4>
 		<div class="card-subtitle" id="demo_box_{{ include.id }}">
-            <script>
-                window.addEventListener('DOMContentLoaded', () => {
-                    let scriptElement = document.createElement('script');
-                    scriptElement.type = 'text/javascript';
-                    scriptElement.src = "{{ include.url }}/status.php";
-                    document.getElementById('demo_box_{{ include.id }}').appendChild(scriptElement);
-                });
-            </script>
+            Demo will be reinstalled soon ...
         </div>
 		<p class="card-text">
 			{{ include.description|raw }}
@@ -19,3 +12,11 @@
 		<a href="{{ include.url }}" target="_blank" class="btn btn-primary">{{ site.data[page.lang].translation.access-demo }}</a>
 	</div>
 </div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        let scriptElement = document.createElement('script');
+        scriptElement.type = 'text/javascript';
+        scriptElement.src = "{{ include.url }}/status.php";
+        document.getElementById('demo_box_{{ include.id }}').appendChild(scriptElement);
+    });
+</script>
