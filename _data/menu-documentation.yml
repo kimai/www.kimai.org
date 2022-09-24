@@ -1,65 +1,20 @@
-- name:
-    en: User manual
-    de: Benutzerhandbuch
-    fr: Manuel utilisateur
-    hr: Korisnički priručnik
-  description:
-    en: Use Kimai, the UI and all the available features
-    de: Erklärt den Aufbau der Oberfläche, die Funktionen und Benutzung von Kimai
-    fr: Utiliser Kimai, l'interface utilisateur et toutes les fonctionnalités disponibles
-    hr: Kako koristiti Kimai, korisničko sučelje i sve dostupne značajke
-  icon: fas fa-book
-  size: 6
-  pages: [timesheet, weekly-times, calendar, invoices, export, reporting, customer, project, activity, tags, users, user-preferences, permissions, teams, configurations, doctor]
-- name:
-    en: Tips & Tricks
-    de: Tipps & Tricks
-    fr: Conseils et astuces
-    hr: Savjeti i trikovi
-  description:
-    en: Articles that explain basic functionality in Kimai
-    de: Einführungsartikel in Basis Funktionen von Kimai
-    fr: Articles expliquant les fonctionnalités de base de Kimai
-    hr: Članci koji objašnjavaju osnovne Kimai funkcije
-  icon: fas fa-lightbulb
-  size: 6
-  pages: [initial-setup, rates, billable, keyboard-shortcuts, i18n-am-pm, duration-format, "-", faq]
-- name:
-    en: Developer
-    de: Entwickler
-    fr: Développeur
-    hr: Razvoj
-  description:
-    en: Extending Kimai, plugin development and translations
-    de: Erweitere Kimai, erstelle Plugins und Übersetzungen
-    fr: Extension de Kimai, développement de plugins et traductions
-    hr: Razvoj novih funkcija za Kimai, razvoj dodataka i prijevodi
-  icon: fas fa-code
-  size: 6
-  pages: [developers, rest-api, plugins, "-", bughunter, translations, "-", meta-fields, theme, permission-structure, sql-examples, impersonate-user, redis, "-", store, create-release]
-- name:
-    en: Plugins
-    de: Erweiterungen
-    fr: Plugins
-    hr: Dodaci
-  description:
-    en: Documentation for plugins
-    de: Dokumentationen für Erweiterungen
-    fr: Documentation pour les plugins
-    hr: Documentacija za dodatke
-  icon: fas fa-plug
-  size: 6
-  pages: [plugin-custom-fields, plugin-expenses, plugin-custom-css, plugin-custom-content, plugin-translation, plugin-invoice]
-- name:
-    en: Self-hosted
-    de: Selbst gehostet
-    fr: Auto-hébergé
-    hr: Vlastiti hosting
-  description:
-    en: Everything you need to host your Kimai on your own server
-    de: Was man über den Betrieb von Kimai auf dem eigenen Server wissen muss
-    fr: Tout ce dont vous avez besoin pour héberger Kimai sur votre propre serveur
-    hr: Sve potrebne informacije za pokretanje Kimaija na vlastitom serveru
-  icon: fas fa-server
-  size: 6
-  pages: [installation, updates, docker, cache, webserver-configuration, "-", ldap, saml, "-", backups, imports, "-", local-yaml, dashboard, emails, logging, commands, "-", migration-v1, fresh-ubuntu-18, fresh-ubuntu-20, synology, "-", faq-onpremise]
+manual:
+    icon: fas fa-book
+    size: 6
+    pages: [ timesheet, weekly-times, calendar, invoices, export, reporting, customer, project, activity, tags, users, user-preferences, permissions, teams, configurations, doctor ]
+tips:
+    icon: fas fa-lightbulb
+    size: 6
+    pages: [ initial-setup, rates, billable, keyboard-shortcuts, i18n-am-pm, duration-format, "-", faq ]
+developer:
+    icon: fas fa-code
+    size: 6
+    pages: [ developers, rest-api, plugins, "-", bughunter, translations, "-", meta-fields, theme, permission-structure, sql-examples, impersonate-user, redis, "-", store, create-release ]
+plugins:
+    icon: fas fa-plug
+    size: 6
+    pages: [ plugin-custom-fields, plugin-expenses, plugin-custom-css, plugin-custom-content, plugin-translation, plugin-invoice, plugin-import, plugin-audit-trail ]
+on-premise:
+    icon: fas fa-server
+    size: 12
+    pages: [ installation, updates, docker, cache, webserver-configuration, "-", ldap, saml, "-", backups, imports, "-", local-yaml, dashboard, emails, logging, commands, "-", migration-v1, fresh-ubuntu-18, fresh-ubuntu-20, synology, "-", faq-onpremise ]

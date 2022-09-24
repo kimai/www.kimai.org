@@ -1,0 +1,19 @@
+{%- assign translation = site.data[page.lang].translation.menu.default[include.name] -%}
+{%- assign item_name = translation.name -%}
+{%- assign item_title = translation.title -%}
+{%- assign class = '' -%}
+{%- assign icon = '' -%}
+{%- if include.class != nil -%}
+    {%- assign class = include.class -%}
+{%- endif -%}
+{%- if include.icon != nil -%}
+    {%- assign class = class | append: ' icon' -%}
+    {%- assign icon = include.icon -%}
+{%- endif -%}
+<a href="{{ include.url }}" title="{{ item_title }}" class="{{ class }}"{% if include.target != nil %} target="{{ include.target }}"{% endif %}>
+    {%- if icon != '' -%}
+        <i class="{{ icon }}"></i>
+    {%- else -%}
+        {{- item_name -}}
+    {%- endif -%}
+</a>

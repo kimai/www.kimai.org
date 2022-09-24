@@ -4,7 +4,7 @@ layout: default
 {% assign settings = site.data.store[page.slug] %}
 {% assign developer = site.data.developer[settings.developer] %}
 {% assign icon = settings.icon | default: "fas fa-question" %}
-{% capture options %}<a href="{{ site.data.trans-menu[page.lang].store.url }}" class="btn btn-option">{{ site.data[page.lang].translation.store-back }} {{ site.data[page.lang].translation.store }} <i class="fas fa-arrow-circle-right"></i></a>{% endcapture %}
+{% capture options %}<a href="{{ site.pages | where: 'lang', page.lang | where: 'slug', 'store' | map: 'url' }}" class="btn btn-option">{{ site.data[page.lang].translation.store-back }} {{ site.data[page.lang].translation.store }} <i class="fas fa-arrow-circle-right"></i></a>{% endcapture %}
 {% assign buyLink = '#' %}
 {% assign isPaidOwnerPlugin = false %}
 {% if settings.download %}
