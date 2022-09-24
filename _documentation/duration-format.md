@@ -1,7 +1,7 @@
 ---
 title: Duration format
 description: How to enter a duration
-toc: true
+toc: false
 related:
   - timesheet
 ---
