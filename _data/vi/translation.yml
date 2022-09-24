@@ -1,5 +1,3 @@
-site-notice: 'Thông báo trang web'
-privacy-policy: 'Chính sách quyền riêng tư'
 made-with-love: 'Được làm bởi'
 developed-at: 'Phát triển tại'
 store: 'Cửa hàng'
@@ -82,3 +80,146 @@ photos:
     timesheet:
         title: 'Theo dõi thời gian'
         description: 'Tạo và quản lý thời gian làm việc của bạn và xuất chúng sang Excel, PDF hoặc HTML'
+demo-reinstall: Demo will be reinstalled in %X% minutes.
+menu:
+    default:
+        demo:
+            name: Demo
+        store:
+            name: Marketplace
+        blog:
+            name: News
+        documentation:
+            name: Documentation
+            brand: Kimai - Documentation
+        v1:
+            name: Kimai v1
+            brand: Kimai 1 (deprecated)
+        index:
+            name: Home
+            brand: Kimai - Time-tracker
+            title: Kimai homepage
+        download:
+            title: Download Kimai
+            name: Download
+        hosted:
+            name: Cloud
+            title: Kimai-Cloud - Use Kimai directly without setup. Free Kimai hosting!
+        about:
+            name: About Kimai
+    menu-documentation:
+        manual:
+            name: User manual
+            description: Use Kimai, the UI and all the available features
+        tips:
+            description: Articles that explain basic functionality in Kimai
+            name: Tips & Tricks
+        developer:
+            name: Developer
+            description: Extending Kimai, plugin development and translations
+        plugins:
+            name: Plugins
+            description: Documentation for plugins
+        on-premise:
+            name: Self-hosted
+            description: Everything you need to host your Kimai on your own server
+    menu-v1:
+        manual:
+            name: User manual
+        developer:
+            name: Developer
+        apps:
+            name: Apps
+        admin:
+            name: Setup
+feature:
+    mobile-ready:
+        name: Mobile ready
+        description: The layout is fully responsive, made for desktop and mobile usage. Every user can configure the data columns that should be shown, e.g. to prevent horizontal scrolling on small devices.
+    plugins:
+        name: Plugins
+        description: Kimai was built with extendability in mind, the feature set can be extended with plugins.Developer who want to create a plugin for Kimai can use many extension points.
+    multi-user:
+        name: Multi user
+        description: 'Kimai can be used by as many users as you want: each installation supports unlimited users with different roles (see permissions).'
+    multi-language:
+        name: Multi language
+        description: Kimai can be localized to any language and is already translated to more than 30 languages.
+    teams:
+        name: Teams
+        description: Teams can be created to group your users into logical groups like departments or project related peer-groups. Customers and projects can be assigned to those teams, which will limit visibility and access for other users.
+    invoices:
+        name: Invoicing
+        description: 'Different templates, calculator, invoice number generator, and you can add your own templates for export in the file formats: PDF, DOCX, HTML, XLSX, ODS.'
+    export:
+        name: Export data
+        description: 'Timesheet data can be exported for usage in other programs or for sharing them with different departments in the formats: XLSX (Excel), PDF, CSV and HTML.On top of that, exported records can be locked and protected against further changes.'
+    saml:
+        name: SAML
+        description: Login and register users via SAML (Single sign on aka SSO) and re-use your existing identity provider, like Google workspace, Authentik or Azure active directory.
+    api:
+        name: JSON API
+        description: Featuring a JSON API so external apps can communicate with your favorite time-tracker!
+    am-pm-format:
+        name: AM/PM format
+        description: Kimai uses localized version of the 24 hour format. But if you are used to the am/pm format, you can configure that.
+    time-clock:
+        name: Time-clock
+        description: Don’t want your users to log arbitrary timesheet records? Switch to the time-clock mode, which only allows “punch in” and “punch out” records. No more manually given start and end times.
+    timesheet-filter:
+        name: Timesheet filter
+        description: You can filter all time-records by user, customer, project, activity and date.
+    customers:
+        name: Customers
+        description: Manage your customers and set address, contacts, country, currency, visibility (for archiving) and many more fields.
+    projects:
+        name: Projects
+        description: Manage projects for each customer with order number, budget and visibility (for archiving).
+    activities:
+        name: Activities
+        description: Activities are used to assign the unit of work to timesheet entries. Manage activities for each project with order number, budget and visibility (for archiving). Activities can be global, no more duplication necessary if multiple projects share the same working unit.
+    expenses:
+        name: Expenses
+        description: 'Keep track of your expenses based on customer, project and activity. These spendings can be categorized and included in your invoices.Please note: Expense tracking is available as paid plugin only.'
+    ldap:
+        name: LDAP
+        description: Connect Kimai with your company directory server (LDAP or Active directory) and use your existing authentication infrastructure.
+    statistics:
+        name: Statistics
+        description: Your dashboard will show you several statistics about recorded times and the amount of collected data. And we can always add more charts!
+    docker:
+        name: Docker
+        description: The release includes a docker image for development and there is a separate docker-compose setup for production available.
+    migrate-v1:
+        name: Migration
+        description: Data from Kimai v1 can be imported, for a seamless migration of your time-tracker.
+    active-entries:
+        name: Amount of active records
+        description: You can record as many times as you want in parallel, but you can also config the allowed limit of active records down to 1.
+    rates:
+        name: Rate calculation
+        description: Rates can be calculated based on hourly and fixed amounts, configurable for customers, projects, activities and each timesheet record individually.
+    duration-only:
+        name: Duration only
+        description: If your local laws require you to only show durations instead of start and end date-time, you can activate that mode globally.
+    archiving:
+        name: Archiving
+        description: 'Long term users know that old data can pile up in your dropdowns - don’t worry: you can hide them by limiting the visibility of customers, projects and activities.'
+    permissions:
+        name: Permissions
+        description: Customizable permission structure. Assign different roles to your user, e.g. users can record times, teamleads can print invoices and configure project/activities, admins can configure users and customers.
+    user-profile:
+        name: User profile
+        description: Personal statistics and per user settings for hourly rate, Kimai theme, password and avatar.
+    theming:
+        name: Theming
+        description: Kimai bundles different color themes and display settings, so every user can tweak it to his personal flavour
+    user-registration:
+        name: User registration
+        description: Kimai supports user self-registration with email activation.
+    password-reset:
+        name: Password reset
+        description: Forgot your password? No problem, Kimai got you covered with an password reset functionality via email.
+    technology:
+        name: Up-to-date
+        description: 'Based on newest web technologies and frameworks: PHP, Symfony, Doctrine, Flex, Bootstrap, Webpack and many more…'
