@@ -3,8 +3,9 @@
 		<h4 class="card-title">
 			{{ include.title }}
 		</h4>
-		<div class="card-subtitle" id="demo_box_{{ include.id }}">
-            Demo will be reinstalled soon ...
+		<div class="card-subtitle">
+            {% capture demo_id %}<span id="demo_box_{{ include.id }}">?</span>{% endcapture %}
+            {{ site.data[page.lang].translation.demo-reinstall | replace: "%X%", demo_id }}
         </div>
 		<p class="card-text">
 			{{ include.description|raw }}
@@ -17,6 +18,6 @@
         let scriptElement = document.createElement('script');
         scriptElement.type = 'text/javascript';
         scriptElement.src = "{{ include.url }}/status.php";
-        document.getElementById('demo_box_{{ include.id }}').appendChild(scriptElement);
+        document.head.appendChild(scriptElement);
     });
 </script>
