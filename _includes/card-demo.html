@@ -3,9 +3,16 @@
 		<h4 class="card-title">
 			{{ include.title }}
 		</h4>
-		<div class="card-subtitle">
-			<script src="{{ include.url }}/status.php"></script>
-		</div>
+		<div class="card-subtitle" id="demo_box_{{ include.id }}">
+            <script>
+                window.addEventListener('DOMContentLoaded', () => {
+                    let scriptElement = document.createElement('script');
+                    scriptElement.type = 'text/javascript';
+                    scriptElement.src = "{{ include.url }}/status.php";
+                    document.getElementById('demo_box_{{ include.id }}').appendChild(scriptElement);
+                });
+            </script>
+        </div>
 		<p class="card-text">
 			{{ include.description|raw }}
 		</p>
