@@ -17,7 +17,7 @@ permalink: /plugins.json
             "name": "{{ developer.name }}",
             "homepage": {% if developer.homepage %}"{{ developer.homepage }}"{% else %}null{% endif %}
         },
-        "bundle": {% if settings.bundle %}"{{settings.bundle.name }}"{% else %}null{% endif %},
+        "bundle": {% if settings.bundle %}"{{ settings.bundle.name }}"{% else %}null{% endif %},
         "icon": "{{ settings.icon | default: "fas fa-question" }}",
         "description": "{% if settings.featured %}{{ settings.featured }}{% else %}{{ product.intro }}{% endif %}",
         "new": {% if settings.new %}true{% else %}false{% endif %},
