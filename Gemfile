@@ -1,5 +1,8 @@
 source "https://rubygems.org"
 
-gem "github-pages"
-gem 'jekyll-redirect-from'
+gem "jekyll"
+gem "jekyll-redirect-from"
+gem "jekyll-sitemap"
+gem "jekyll-mentions"
+gem "jekyll-paginate"
 gem "webrick", "~> 1.7"
