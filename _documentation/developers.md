@@ -555,8 +555,7 @@ class MySubscriber implements EventSubscriberInterface
 
     public function onSystemConfiguration(SystemConfigurationEvent $event)
     {
-        $event->addConfiguration((new SystemConfigurationModel())
-            ->setSection('your_bundle')
+        $event->addConfiguration((new SystemConfigurationModel('your_bundle'))
             ->setConfiguration([
                 (new Configuration())
                     ->setName('your.setting')
