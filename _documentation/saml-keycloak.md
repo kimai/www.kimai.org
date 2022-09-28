@@ -53,6 +53,7 @@ kimai:
             - { saml: $Email, kimai: email }
             - { saml: $FirstName $LastName, kimai: alias }
         roles:
+            resetOnLogin: true
             attribute: Roles
             mapping:
                 - { saml: Admins, kimai: ROLE_ADMIN }

@@ -36,6 +36,7 @@ kimai:
             - { saml: $Title, kimai: title }
             - { saml: $AccountNumber, kimai: accountNumber }
         roles:
+            resetOnLogin: true
             attribute: Groups
             mapping:
                 - { saml: KIMAI ADMIN, kimai: ROLE_ADMIN }
