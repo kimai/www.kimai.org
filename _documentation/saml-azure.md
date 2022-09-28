@@ -73,7 +73,8 @@ kimai:
             - { saml: $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/displayname, kimai: title }
             - { saml: $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/employeeid, kimai: accountNumber }
         roles:
-            attribute: Groups
+            resetOnLogin: true
+            attribute: http://schemas.microsoft.com/ws/2008/06/identity/claims/groups
             mapping:
                 - { saml: xxxxxxxx-yyyy-xxxx-yyyy-xxxxxxxxxxxx, kimai: ROLE_ADMIN }
                 - { saml: Azure-Group-Object-Id, kimai: ROLE_TEAMLEAD }
