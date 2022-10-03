@@ -91,6 +91,8 @@ You can change the customer to filter the project list and decide to include pro
 
 Shows all kind of reports for the selected project and sums up the times grouped by various characteristics.
 
+- Required permission: `view_reporting` and `details_project`
+
 ### Monthly report
 
 Display a summary of all projects that are (or were) visible and active for the selected month.
