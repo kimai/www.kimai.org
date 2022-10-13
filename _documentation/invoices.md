@@ -180,7 +180,11 @@ Be aware of the following rules:
 
 After you changed an invoice template, you have to [clear the cache]({% link _documentation/cache.md %}) to see the results.
 
-You can have a look at [https://github.com/Keleo/kimai2-invoice-templates](https://github.com/Keleo/kimai2-invoice-templates) to get some code inspirations.
+### More invoice templates 
+
+There is a place where the community can share invoice templates. Please do so, if you created a nice looking an re-usable template yourself!
+
+The repository for all templates is [https://github.com/kimai/invoice-templates](https://github.com/kimai/invoice-templates) and it includes installation notes
 
 ### Twig templates
 
