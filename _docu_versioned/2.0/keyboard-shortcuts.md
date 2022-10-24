@@ -20,6 +20,10 @@ The global `access keys` in Kimai are:
 
 The `access keys` work in lowercase and uppercase.
 
+### Special case: form submit
+
+There is one special case: submitting the modal form with `CTRL + Enter`.
+
 ## Not working?
 
 Unfortunately shortcuts have a somewhat bad support from browser vendors.
