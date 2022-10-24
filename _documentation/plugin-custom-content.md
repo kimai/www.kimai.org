@@ -47,6 +47,13 @@ $('body').on('change.select2', '#timesheet_edit_form_activity', function() {
 });
 ```
 
+Automatically login with SAML (only works if normal form login is deactivated):
+```javascript
+if (document.querySelector('div.login-box-body a.btn-block') !== null) {
+    document.querySelector('div.login-box-body a.btn-block').click();
+}
+```
+
 ### Alert
 
 ```markdown
