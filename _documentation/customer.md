@@ -8,37 +8,39 @@ Customers in Kimai are used to manage project and activities, which are then use
 
 It is best-practice to have a customer for your own company, to track times for administrative and other internal work.
  
-## Creating customer
+## Creating a customer
 
 Default values for new customers can be configured at [System > Settings]({% link _documentation/configurations.md %}). 
 
-## Customer colors
+## Managing customers
+
+### Colors
 
 Each customer can be assigned its own color, for easier identification in timesheet listing.
 
 If a project or an activity linked to the customer does not have its own color, the customers color will be used.
 The default color code is `#d2d6de`.
 
-## Currency
+### Currency
 
 The customer currency is used when displaying the recorded entries in the timesheet.
 
 It is also used for printing invoices, which is the reason while the invoice screen needs one applied customer filter 
 before any data will be shown. 
 
-## Billable
+### Billable
 
 {% include contents/billable.md entity="Customer" %}
 
-## Budgets
+### Budgets
 
 {% include contents/budgets.md permission="customer" %} 
 
-## Rates
+### Rates
 
 {% include contents/rates.md permission="customer" %} 
 
-## Visibility
+### Visibility
 
 By toggling the visibility on a customer, you:
 - hide the customer from all drop-downs
