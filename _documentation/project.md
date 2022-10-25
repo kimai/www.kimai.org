@@ -6,13 +6,20 @@ toc: true
 
 Projects in Kimai are assigned to customers and are linked to activities, which are then used for time-records.
 
-## Project colors
+## Creating a project
+
+There is a configuration (can be configured at [System > Settings]({% link _documentation/configurations.md %}) - added with 1.28), which allows to copy teams of the current user to newly created projects. 
+This is mostly useful when teamleads manage their own projects and should have immediate access to them after creation.
+
+## Managing projects
+
+### Colors
 
 Each project can be assigned its own color, for easier identification in many places throughout Kimai.
 
-If no color is applied, Kimai will fallback to the customers color and finally to the [default color]({% link _documentation/customer.md %}). 
+If no color is applied, Kimai will fall back to the customers color and finally to the [default color]({% link _documentation/customer.md %}). 
 
-## Project start date / end date 
+### Start date / end date 
 
 Having a project start and end date is optional, but it can help you to limit the project visibility in the "edit timesheet record" screen.
 
@@ -22,19 +29,19 @@ If the date of the record falls before the project start or after the project en
 This behavior is intended to avoid ghost bookings on not yet started or already finished projects. 
 If the booking of records is necessary, the team lead or admin can remove the date restriction in the project settings.
 
-## Billable
+### Billable
 
 {% include contents/billable.md entity="Project" %} 
 
-## Budgets
+### Budgets
 
 {% include contents/budgets.md permission="project" %} 
 
-## Rates
+### Rates
 
 {% include contents/rates.md permission="project" %}
 
-## Visibility
+### Visibility
 
 By toggling the visibility on a project, you:
 - hide the project from all drop-downs

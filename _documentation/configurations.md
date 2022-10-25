@@ -133,13 +133,23 @@ These are the existing rounding modes:
 - `Forgotten password - seconds before a user can request the next e-mail` - if a password-reset email was sent, you should not allow to request another one too soon (for security reasons) 
 - `Forgotten password - seconds before a reset link expires` - how long a user can use the password reset link, it is recommended to keep this value below 1 day
 
-## Create customer—default values
+## Customer
 
 - `Timezone` - default value for the "create customer" form
 - `Country` - default value for the "create customer" form
 - `Currency` - default value for the "create customer" form
+- `Display of entries in selection lists` - the display of a customer in dropdown fields
 
-## User—default values
+## Project
+
+- `Display of entries in selection lists` - the display of a project in dropdown fields
+- `Take over teams from the logged-in user when creating new entries` - if this is active, all teams of the currently logged-in users will be copied over to new created project, therefor extending the visibility of the current user (and all his teams) to the new project
+
+## Activity
+
+- `Display of entries in selection lists` - the display of an activity in dropdown fields
+
+## User
 
 - `Timezone` - default value for the "create user" form
 - `Country` - default value for the "create user" form
