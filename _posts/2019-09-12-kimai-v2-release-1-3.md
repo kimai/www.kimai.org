@@ -14,9 +14,6 @@ This release is mainly about:
 - sortable table columns
 - improved tag management
 
-In the meantime a new addon was added to the Marketplace:
-- the [Empty description checker plugin]({% link _store/mr-software-empty-description-checker-bundle.md %})
-
 Thanks to all of you, especially:
 - all clients and donators, you guys rock and help me to keep up the work for Kimai!!!
 - the developers who contributed their time and the plugins to the community

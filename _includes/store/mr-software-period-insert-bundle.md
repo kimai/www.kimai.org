@@ -10,4 +10,4 @@ Select a user, project, activity, date from and to, hours and minutes per day an
 
 ## Requires
 
-Kimai v1.10+
+For a list of all requirements to make this software functional, please e-mail us to info (at) mrsoft (dot) gmbh
