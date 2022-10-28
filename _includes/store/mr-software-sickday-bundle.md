@@ -10,5 +10,4 @@
 
 ## Requires
 
-- [Custom-fields plugin]({% link _store/keleo-custom-fields-bundle.md %})
-- Kimai v1.16.10+
+For a list of all requirements to make this software functional, please e-mail us to info (at) mrsoft (dot) gmbh
