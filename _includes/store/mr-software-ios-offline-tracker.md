@@ -4,7 +4,7 @@ Once you have internet again, you can upload your times to your Kimai server.
 
 ## Requires
 
-Kimai v1.1+
+For a list of all requirements to make this software functional, please e-mail us to info (at) mrsoft (dot) gmbh
 
 ## Installation
 

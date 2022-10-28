@@ -10,4 +10,4 @@ Click [here](https://cdn.hmr-it.de/f/kimai2_berichtsheft-beispiel_bd70976c-2b42-
 
 ## Requires
 
-Kimai v1.10+
+For a list of all requirements to make this software functional, please e-mail us to info (at) mrsoft (dot) gmbh
