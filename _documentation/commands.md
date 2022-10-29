@@ -35,7 +35,7 @@ bin/console kimai:user:password
 
 ## Create invoices with cronjobs
 
-Kimai comes with a new command, which allows you to create invoices from the command line.
+Kimai comes with a command, which allows you to create invoices from the command line.
 When combined with a cronjob, you can automate your invoice creation.
 
 Find all available options with the `--help` parameter:
@@ -53,4 +53,31 @@ This command will create one invoice for every project which had timesheets in J
 The invoice template that will be used for every invoice is `Freelancer (PDF)`:
 ```bash
 bin/console kimai:invoice:create --user=susan_super --timezone=UTC --by-project --template="Freelancer (PDF)" --start=2020-01-02 --end=2020-01-31
+```
+
+## Create exports with cronjobs
+
+Available since 1.28.0
+
+Kimai comes with a command, which allows you to create exports from the command line.
+When combined with a cronjob, you can automate your timesheet reporting.
+
+Find all available options with the `--help` parameter:
+```bash
+bin/console kimai:export:create --help 
+```
+
+Create an Excel export for Customer with ID 1 and Projects with ID 15 and 17 for the current month and mark items as exported.
+```bash
+bin/console kimai:export:create --locale=de --template="xlsx" --customer=1 --project=15 --project=17 --set-exported
+```
+
+Create an export of all data in January 2020. The PDF will be stored in your home directory at `~/kimai-export/`.
+```bash
+bin/console kimai:export:create --template="default.pdf.twig" --locale=es --directory=~/kimai-export/ --start="2020-01-01" --end="2020-01-31"
+```
+
+You can send export documents via email, e.g. to project management or directly to your customer:
+```bash
+bin/console kimai:export:create --customer=351 --template="xlsx" --locale=en --email=pm@example.com --email=customer@example.com --subject="Timesheet report" --body="Your monthly report is attached"
 ```

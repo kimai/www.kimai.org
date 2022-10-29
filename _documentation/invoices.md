@@ -546,7 +546,3 @@ Besides these filters, you can query for a free search term, which will be searc
 - `customer company`
 
 {% include search-custom-field.md %}
-
-## Create invoices with cronjobs
-
-See [command line tools]({% link _documentation/commands.md %}) to find out how to create invoices from the command line.
