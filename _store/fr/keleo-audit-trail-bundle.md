@@ -1,23 +1,23 @@
 ---
 title: Audit-Trail logs
-intro: "Records detailed change/audit logs for timesheets, customers, projects and activities and displays them in a per-item timeline."
+intro: "Enregistre des journaux détaillés de modifications/audits pour les feuilles de temps, les clients, les projets et les activités et les affiche dans une chronologie par élément."
 slug: audit-trail-bundle
-featured: "Records detailed change/audit logs for timesheets, customers, projects and activities and displays them in a per-item timeline."
+featured: "Enregistre des journaux détaillés de modifications/audits pour les feuilles de temps, les clients, les projets et les activités et les affiche dans une chronologie par élément."
 type: featured
 tags: [plugin]
 screenshots:
   - 
     src: '/images/marketplace/audit-listing.png'
-    title: Audit-logs
-    description: The overview page of all audit trail logs
+    title: Journaux d'audit
+    description: La page de présentation de tous les journaux d'audit
   -
     src: '/images/marketplace/audit-details.png'
-    title: Audit detail view
-    description: An audit trail can look like this, each change will be recorded and you might see more entries in a object timeline
+    title: Vue détaillée de l'audit
+    description: Une trace d'audit peut ressembler à ceci, chaque changement sera enregistré et vous pourriez voir plus d'entrées dans une ligne de temps d'objet.
   - 
     src: '/images/marketplace/audit-action.png'
-    title: Access change history
-    description: You access a detailed audit log from the listing page or from the data-table "Actions" dropdown of each item
+    title: Accéder à l'historique des modifications
+    description: Vous pouvez accéder à un journal d'audit détaillé à partir de la page de la liste ou du tableau de données, dans la liste déroulante "Actions" de chaque article.
 lang: fr
 permalink: /fr/store/keleo-audit-trail-bundle.html
 ---

@@ -1,6 +1,6 @@
 ---
-title: Lockdown per user settings
-intro: "A Kimai plugin that allows to set the lockdown period per user"
+title: Verrouillage par paramètres utilisateur
+intro: "Un plugin Kimai qui permet de définir la période de confinement par utilisateur"
 slug: lockdown-per-user-bundle
 type: plugin
 tags: [plugin]

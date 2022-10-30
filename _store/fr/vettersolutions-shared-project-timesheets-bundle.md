@@ -1,6 +1,6 @@
 ---
-title: Shared project timesheets
-intro: Share project timesheets with anyone!
+title: Feuilles de temps de projet partagées
+intro: Partagez les feuilles de temps du projet avec n'importe qui !
 type: plugin
 tags: [plugin]
 lang: fr

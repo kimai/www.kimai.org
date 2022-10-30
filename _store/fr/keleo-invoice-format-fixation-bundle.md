@@ -1,13 +1,13 @@
 ---
-title: Fixed invoice data format (by language)
-intro: "A plugin that allows to set a global language for invoice data formats"
+title: Format fixe des données de facturation (par langue)
+intro: "Un plugin qui permet de définir une langue globale pour les formats de données de facturation"
 type: plugin
 tags: [plugin]
 screenshots:
   - 
     src: "https://raw.githubusercontent.com/Keleo/InvoiceFormatFixationBundle/master/screenshot.png"
-    title: Language configuration
-    description: Configure the language for formatting all invoice settings 
+    title: Configuration de la langue
+    description: Configurer la langue de formatage de tous les paramètres de facturation 
 lang: fr
 permalink: /fr/store/keleo-invoice-format-fixation-bundle.html
 ---

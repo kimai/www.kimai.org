@@ -1,23 +1,23 @@
 ---
-title: Task management
-intro: "Create tasks, start/stop/pause them, assign them to users and teams and record times - a todo-list management plugin for Kimai that adds two new dashboard widgets"
-featured: "Create tasks, start/stop/pause them, assign them to users and teams - a todo-list management plugin that is connected to your time-tracker and adds two new dashboard widgets"
+title: La gestion des tâches
+intro: "Créez des tâches, démarrez/arrêtez/mettez-les en pause, attribuez-les aux utilisateurs et aux équipes et enregistrez les temps - un plugin de gestion de liste de tâches pour Kimai qui ajoute deux nouveaux widgets de tableau de bord"
+featured: "Créez des tâches, démarrez/arrêtez/mettez-les en pause, attribuez-les aux utilisateurs et aux équipes - un plugin de gestion de liste de tâches qui est connecté à votre suivi du temps et ajoute deux nouveaux widgets de tableau de bord"
 slug: task-management-bundle
 type: featured
 tags: [plugin]
 screenshots:
   - 
     src: "/images/marketplace/tasks-screenshot.png"
-    title: "Task administration"
-    description: "The new administration page with an overview of all tasks with tracked times, status and assignments"
+    title: "Administration des tâches"
+    description: "La nouvelle page d'administration avec un aperçu de toutes les tâches avec suivi des temps, statuts et affectations"
   - 
     src: "/images/marketplace/tasks-create.png"
-    title: "Edit a task"
-    description: "When creating or updating a task, you can record these fields"
+    title: "Modifier une tâche"
+    description: "Lors de la création ou de la mise à jour d'une tâche, vous pouvez enregistrer ces champs"
   - 
     src: "/images/marketplace/tasks-widget.png"
-    title: Task widgets
-    description: "The new dashboard widgets for assigned and pending tasks"
+    title: Widgets de tâches
+    description: "Les nouveaux widgets du tableau de bord pour les tâches assignées et en attente"
 lang: fr
 permalink: /fr/store/keleo-task-management-bundle.html
 ---

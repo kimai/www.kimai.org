@@ -1,6 +1,6 @@
 ---
-title: Deduction-Time Bundle
-intro: "Configure activities as deduction times, resulting in negative durations"
+title: Forfait Déduction-Temps
+intro: "Configurez les activités comme des temps de déduction, ce qui entraîne des durées négatives"
 type: plugin
 tags: [plugin]
 lang: fr

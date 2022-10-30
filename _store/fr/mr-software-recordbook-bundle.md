@@ -1,17 +1,17 @@
 ---
-title: RecordBook for apprentices
-intro: "A plugin for Kimai which generates a RecordBook (German: Berichtsheft) for trainees."
+title: Registre des apprentis
+intro: "Un plugin pour Kimai qui génère un registre (allemand : Berichtsheft) pour les stagiaires."
 type: plugin
 tags: [plugin]
 screenshots:
   - 
     src: "/images/marketplace/mr-software-recordbook-pdf.png"
-    title: "PDF example" 
-    description: "PDF example" 
+    title: "Exemple PDF" 
+    description: "Exemple PDF" 
   - 
     src: "/images/marketplace/mr-software-recordbook-view.png"
-    title: "Download view"
-    description: "Trainees see the weeks and can download the PDF"
+    title: "Télécharger la vue"
+    description: "Les stagiaires voient les semaines et peuvent télécharger le PDF"
 lang: fr
 permalink: /fr/store/mr-software-recordbook-bundle.html
 ---

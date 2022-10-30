@@ -1,6 +1,6 @@
 ---
-title: Recalculate rates
-intro: "A plugin which forces to recalculate the hourly/fixed rate on every timesheet update"
+title: Recalculer les taux
+intro: "Un plugin qui oblige à recalculer le taux horaire/forfait à chaque mise à jour de la feuille de temps"
 type: plugin
 tags: [plugin]
 lang: fr

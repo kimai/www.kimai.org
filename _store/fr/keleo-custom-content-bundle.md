@@ -1,27 +1,27 @@
 ---
-title: Custom-content
-intro: "Create custom content for: stylesheets, javascript, a global warning message and a new page to render markdown content for company news."
-featured: "Create custom content for: stylesheets, javascript, a global warning message and a new page to render markdown content for company news."
+title: Contenu personnalisé
+intro: "Créez du contenu personnalisé pour : les feuilles de style, le javascript, un message d'avertissement global et une nouvelle page pour rendre le contenu markdown pour les nouvelles de l'entreprise."
+featured: "Créez du contenu personnalisé pour : les feuilles de style, le javascript, un message d'avertissement global et une nouvelle page pour rendre le contenu markdown pour les nouvelles de l'entreprise."
 slug: custom-content-bundle
 type: featured
 tags: [plugin]
 screenshots:
   - 
     src: "/images/marketplace/custom-content-alert.png"
-    title: "Warning message"
-    description: "The warning message is displayed on every page for logged-in users"
+    title: "Message d'avertissement"
+    description: "Le message d'avertissement est affiché sur chaque page pour les utilisateurs connectés."
   - 
     src: "/images/marketplace/custom-content-javascript.png"
     title: "Javascript"
-    description: "The javascript is executed on every page for logged- in users"
+    description: "Le javascript est exécuté sur chaque page pour les utilisateurs connectés."
   - 
     src: "/images/marketplace/custom-content-news.png"
-    title: "Warning message"
-    description: "You can enter a markdown formatted news with a title"
+    title: "Message d'avertissement"
+    description: "Vous pouvez saisir une actualité formatée en markdown avec un titre"
   - 
     src: "/images/marketplace/custom-content-news-page.png"
-    title: "News page"
-    description: "The news page is linked in the user menu and displays your markdown message"
+    title: "Page d'actualités"
+    description: "La page de actualités est liée dans le menu utilisateur et affiche votre message markdown"
 lang: fr
 permalink: /fr/store/keleo-custom-content-bundle.html
 ---
