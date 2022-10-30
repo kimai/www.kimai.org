@@ -1,23 +1,23 @@
 ---
-title: Translations
-intro: "Change all visible elements in your Kimai installation with your own translations"
-featured: "Change all visible elements (form labels, table header, menu items ...) in your Kimai installation with your own translations"
+title: Traductions
+intro: "Modifiez tous les éléments visibles de votre installation Kimai avec vos propres traductions"
+featured: "Modifiez tous les éléments visibles (étiquettes de formulaire, en-tête de tableau, éléments de menu ...) dans votre installation Kimai avec vos propres traductions"
 slug: translation-bundle
 type: featured
 tags: [plugin]
 screenshots:
   -  
     src: "/images/marketplace/translation-listing.png"
-    title: "Translation administration"
-    description: "The new administration page with an overview of all changed translations"
+    title: "Administration de la traduction"
+    description: "La nouvelle page d'administration avec un aperçu de toutes les traductions modifiées"
   - 
     src: "/images/marketplace/translation-add.png"
-    title: "Add translation screen"
-    description: "The add dialog allows to find a string by searching its content"
+    title: "Ajouter un écran de traduction"
+    description: "La boîte de dialogue d'ajout permet de trouver une chaîne en recherchant son contenu"
   - 
     src: "/images/marketplace/translation-edit.png"
-    title: "Edit screen"
-    description: "The edit dialog allows to change your custom translation"
+    title: "Écran d'édition"
+    description: "La boîte de dialogue d'édition permet de modifier votre traduction personnalisée"
 lang: fr
 permalink: /fr/store/keleo-translation-bundle.html
 ---

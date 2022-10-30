@@ -1,6 +1,6 @@
 ---
-title: Archive timesheets command
-intro: "A plugin, which allows you to archive timesheets older than a specified timeframe, using a command."
+title: Commande d'archivage des feuilles de temps
+intro: "Un plugin, qui vous permet d'archiver les feuilles de temps plus anciennes qu'une période de temps spécifiée, en utilisant une commande."
 type: plugin
 tags: [plugin]
 lang: fr

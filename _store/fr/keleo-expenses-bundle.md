@@ -1,31 +1,31 @@
 ---
-title: Expense management
-intro: "Keep track of your expenses and include them in your invoices."
-featured: Keep track of your expenses based on a customer, project and activity. These expenses can be categorized and included in your invoices.  
+title: Gestion des dépenses
+intro: "Gardez une trace de vos dépenses et incluez-les dans vos factures."
+featured: Gardez la trace de vos dépenses en fonction d'un client, d'un projet et d'une activité. Ces dépenses peuvent être classées par catégorie et incluses dans vos factures.  
 slug: expenses-bundle
 type: featured
 tags: [plugin]
 screenshots:
   - 
     src: "/images/marketplace/expenses-listing.png"
-    title: "Expenses administration"
-    description: "Paginated listing of all recorded expenses"
+    title: "Administration des dépenses"
+    description: "Liste paginée de toutes les dépenses enregistrées"
   - 
     src: "/images/marketplace/expenses-search.png"
-    title: "Search expense"
-    description: "Your expenses can be filtered with the search found in multiple Kimai screens"
+    title: "Rechercher une dépense"
+    description: "Vos dépenses peuvent être filtrées avec la recherche trouvée dans plusieurs écrans Kimai."
   - 
     src: "/images/marketplace/expenses-edit.png"
-    title: "Edit expense"
-    description: "Editing or creating a new expense allows you to enter these fields"
+    title: "Modifier les dépenses"
+    description: "La modification ou la création d'une nouvelle dépense vous permet de saisir les champs suivants"
   - 
     src: "/images/marketplace/expenses-categories.png"
-    title: "Expense category"
-    description: "Expenses are categorized to have a better overview and filter options"
+    title: "Catégorie de dépenses"
+    description: "Les dépenses sont classées par catégories afin d'avoir une meilleure vue d'ensemble et des options de filtrage."
   - 
     src: "/images/marketplace/expenses-category-edit.png"
-    title: "Edit category"
-    description: "You can set a name, cost factor and short help text for each category"
+    title: "Modifier une catégorie"
+    description: "Vous pouvez définir un nom, un facteur de coût et un bref texte d'aide pour chaque catégorie."
 lang: fr
 permalink: /fr/store/keleo-expenses-bundle.html
 ---

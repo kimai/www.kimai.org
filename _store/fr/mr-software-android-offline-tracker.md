@@ -1,6 +1,6 @@
 ---
-title: Android app for offline tracking
-intro: "Android app for offline tracking with Kimai"
+title: Application Android pour le suivi hors ligne
+intro: "Application Android pour le suivi hors ligne avec Kimai"
 type: app
 tags: [Android]
 lang: fr

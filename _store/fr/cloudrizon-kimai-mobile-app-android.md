@@ -1,21 +1,21 @@
 ---
 title: Kimai Mobile
-intro: "Kimai Mobile is an application that enables convenient usage of Kimai on your Android mobile device"
+intro: "Kimai Mobile est une application qui permet une utilisation pratique de Kimai sur votre appareil mobile Android."
 type: app 
 tags: [Android]
 screenshots:
   -
     src: "/images/marketplace/cloudrizon-kimai-mobile-app-splash.png"
-    title: Splashscreen
-    description: "Start screen of the application"
+    title: Ecran de démarrage
+    description: "Écran de démarrage de l'application"
   -
     src: "/images/marketplace/cloudrizon-kimai-mobile-app-timesheets.png"
-    title: Timesheets
-    description: "Simple list view for all your timesheet records"
+    title: Feuilles de temps
+    description: "Une vue de liste simple pour tous vos enregistrements de feuilles de temps"
   -
     src: "/images/marketplace/cloudrizon-kimai-mobile-app-workspaces.png"
     title: Workspaces
-    description: "Allow configuring and switching between multiple Kimai instances"
+    description: "Permettre la configuration et la commutation entre plusieurs instances Kimai"
 lang: fr
 permalink: /fr/store/cloudrizon-kimai-mobile-app-android.html
 ---

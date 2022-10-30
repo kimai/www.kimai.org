@@ -1,6 +1,6 @@
 ---
-title: Custom plugin development
-intro: "Want to have a special feature, which is not available in Kimai? I can develop it for you!"
+title: Développement de plugins personnalisés
+intro: "Vous voulez avoir une fonctionnalité spéciale, qui n'est pas disponible dans Kimai ? Je peux la développer pour vous !"
 slug: custom-plugins
 type: support
 tags: [development,support]

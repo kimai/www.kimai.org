@@ -1,6 +1,6 @@
 ---
-title: Personal calendar preference
-intro: "A plugin, which allows users to set a customized start and end time for the calendar display in their personal preferences."
+title: Préférence de calendrier personnel
+intro: "Un plugin, qui permet aux utilisateurs de définir une heure de début et de fin personnalisée pour l'affichage du calendrier dans leurs préférences personnelles."
 type: plugin
 tags: [plugin]
 lang: fr

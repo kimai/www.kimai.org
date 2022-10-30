@@ -1,6 +1,6 @@
 ---
-title: Kemai - Desktop client for Kimai
-intro: Cross platform GUI client for Kimai
+title: Kemai - Client de bureau pour Kimai
+intro: Client GUI multiplateforme pour Kimai
 screenshot: 
   - /images/marketplace/kemai-running.jpg
   - /images/marketplace/kemai-settings.jpg

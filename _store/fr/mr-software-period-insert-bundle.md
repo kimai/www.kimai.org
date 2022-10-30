@@ -1,13 +1,13 @@
 ---
-title: Period insert
-intro: "Create timesheet entries by date range"
+title: Insertion de période
+intro: "Créer des entrées de feuille de temps par plage de dates"
 type: plugin
 tags: [plugin]
 screenshots:
   - 
     src: "/images/marketplace/mr-software-period-insert-plugin.png"
-    title: Period-Insert screen 
-    description: The form to create the values for the records that will be created 
+    title: Écran d'insertion de période 
+    description: Le formulaire pour créer les valeurs des enregistrements qui seront insérés 
 lang: fr
 permalink: /fr/store/mr-software-period-insert-bundle.html
 ---

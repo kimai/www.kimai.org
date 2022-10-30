@@ -1,6 +1,6 @@
 ---
-title: Small business regulations
-intro: "A plugin that provides the possibility to use the small business regulation, as it can be applied in Germany and Austria, when creating invoices in Kimai."
+title: Réglementation des petites entreprises
+intro: "Un plugin qui offre la possibilité d'utiliser la réglementation des petites entreprises, telle qu'elle peut être appliquée en Allemagne et en Autriche, lors de la création de factures dans Kimai."
 type: plugin
 tags: [plugin]
 lang: fr

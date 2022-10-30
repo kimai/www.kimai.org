@@ -1,6 +1,6 @@
 ---
-title: ChromePlugin to Kimai Bridge
-intro: "This plugin allows time to logged from ChromePlugin tickets into a Kimai instance."
+title: ChromePlugin pour Kimai Bridge
+intro: "Ce plugin laisse le temps de se connecter à partir des tickets ChromePlugin dans une instance Kimai."
 type: client
 tags: [chrome]
 lang: fr

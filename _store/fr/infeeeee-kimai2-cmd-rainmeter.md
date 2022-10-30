@@ -1,6 +1,6 @@
 ---
-title: Rainmeter widget
-intro: "Kimai widget for Windows!"
+title: Widget Pluviomètre
+intro: "Le widget Kimai pour Windows !"
 type: client
 tags: [windows,rainmeter,cli]
 screenshot: https://raw.githubusercontent.com/infeeeee/kimai2-cmd-rainmeter/master/%40Resources/Screenshots/kimai-default-start.png

@@ -1,21 +1,21 @@
 ---
-title: Sick-Day (days of illness)
-intro: "A plugin for Kimai to track the sick-days of users."
+title: Congé de maladie (jours de maladie)
+intro: "Un plugin pour Kimai pour suivre les jours de maladie des utilisateurs."
 type: plugin
 tags: [plugin]
 screenshots:
   - 
     src: "/images/marketplace/mr-software-sickday-1.png"
-    title: Menu item
-    description: "Admins see a summary of all sick days"
+    title: Élément du menu
+    description: "Les administrateurs voient un résumé de tous les jours de maladie"
   - 
     src: "/images/marketplace/mr-software-sickday-2.png"
-    title: Menu item
-    description: "Admins can quickly navigate to the timesheets (sick days) of users"
+    title: Élément du menu
+    description: "Les administrateurs peuvent accéder rapidement aux feuilles de temps (jours de maladie) des utilisateurs"
   - 
     src: "/images/marketplace/mr-software-sickday-3.png"
-    title: Menu item
-    description: "Require PDF while creating a sick day"
+    title: Élément du menu
+    description: "Exiger un PDF lors de la création d'un jour de maladie"
 lang: fr
 permalink: /fr/store/mr-software-sickday-bundle.html
 ---

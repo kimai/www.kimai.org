@@ -1,6 +1,6 @@
 ---
-title: "Installation & Update support"
-intro: "Want to use Kimai but don't know how to install it on your server?"
+title: "Assistance à l'installation et à la mise à jour"
+intro: "Vous voulez utiliser Kimai mais ne savez pas comment l'installer sur votre serveur ?"
 slug: installation-support
 type: support
 tags: [support]

@@ -1,6 +1,6 @@
 ---
-title: Apple Watch app
-intro: "Track your kimai times directly at your wrist!"
+title: Application Apple Watch
+intro: "Suivez vos temps de kimai directement sur votre poignet !"
 type: app
 tags: [watchOS]
 lang: fr

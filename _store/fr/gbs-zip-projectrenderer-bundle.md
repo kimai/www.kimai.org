@@ -1,6 +1,6 @@
 ---
-title: ZipProjectRenderer (Export ZIP with a PDFs per project)
-intro: "A plugin to export one PDF file per project for multiple selected projects."
+title: ZipProjectRenderer (export ZIP avec un PDF par projet)
+intro: "Un plugin pour exporter un fichier PDF par projet pour plusieurs projets sélectionnés."
 type: plugin
 tags: [plugin]
 lang: fr

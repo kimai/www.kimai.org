@@ -1,29 +1,29 @@
 ---
-title: Approval workflow for timesheets
-intro: "This bundle is available to perform a weekly approval for timesheets."
+title: Flux de travail pour l'approbation des feuilles de temps
+intro: "Cette offre groupée est disponible pour effectuer une approbation hebdomadaire des feuilles de temps."
 type: plugin
 tags: [plugin]
 screenshots:
   - 
     src: "https://raw.githubusercontent.com/KatjaGlassConsulting/ApprovalBundle/0.9.1/_documentation/Screenshot_UserApprovalForWeek.png"
-    title: "User Screen for week approval"
-    description: "Displays week details like working time, expected time and actions like submit for approval"
+    title: "Écran utilisateur pour l'approbation de la semaine"
+    description: "Affiche les détails de la semaine comme le temps de travail, le temps prévu et les actions comme la soumission pour approbation."
   - 
     src: "https://raw.githubusercontent.com/KatjaGlassConsulting/ApprovalBundle/0.9.1/_documentation/Screenshot_TeamleadOverviewOfTeam.png"
-    title: "Screen for teamleads - show overview"
-    description: "Overview Screen of open past approvals of the corresponding team members and itself and status of current finished week"
+    title: "Écran pour les chefs d'équipe - montrer la vue d'ensemble"
+    description: "Écran d'aperçu des approbations passées ouvertes des membres de l'équipe correspondants et de l'état de la semaine terminée en cours."
   - 
     src: "https://raw.githubusercontent.com/KatjaGlassConsulting/ApprovalBundle/0.9.1/_documentation/Screenshot_TeamleadSeeHistory.png"
-    title: "History of Approval for that week"
-    description: "The approval history including all comments can be viewed by the teamlead or users"
+    title: "Historique des approbations pour cette semaine"
+    description: "L'historique des approbations, y compris tous les commentaires, peut être consulté par le chef d'équipe ou les utilisateurs."
   - 
     src: "https://raw.githubusercontent.com/KatjaGlassConsulting/ApprovalBundle/0.9.1/_documentation/Screenshot_TeamleadApproveDeny.png"
-    title: "Approve or deny a week"
-    description: "Teamleads can approve or deny a weeks approval"
+    title: "Approuver ou refuser une semaine"
+    description: "Les chefs d'équipe peuvent approuver ou refuser une semaine d'approbation."
   - 
     src: "https://raw.githubusercontent.com/KatjaGlassConsulting/ApprovalBundle/0.9.1/_documentation/Screenshot_AdminRollbackOption.png"
-    title: "Admins View"
-    description: "Admins can do anything like teamleads, see additionally all colleagues in the overview and have the option to undo an approval"
+    title: "Vue administrateurs"
+    description: "Les administrateurs peuvent faire tout comme les chefs d'équipe, voir en plus tous les collègues dans la vue d'ensemble et avoir la possibilité d'annuler une approbation."
 lang: fr
 permalink: /fr/store/katjaglass-approval-bundle.html
 ---

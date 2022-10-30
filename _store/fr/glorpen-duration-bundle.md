@@ -1,6 +1,6 @@
 ---
-title: Overridable duration rounding
-intro: "Override duration rounding for customers, projects and activities"
+title: Arrondi de la durée paramétrable
+intro: "Remplacer l'arrondi de la durée pour les clients, les projets et les activités."
 type: plugin
 tags: [plugin]
 lang: fr
