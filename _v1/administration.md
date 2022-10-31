@@ -1,13 +1,14 @@
 ---
 title: Administration
+subtitle: Legacy documentation for Kimai 1
 redirect_from:
-  - /documentation/administration/
-  - /documentation/manual/administration.html
-  - /documentation/manual/projects.html
-  - /documentation/manual/users.html
-  - /documentation/manual/administration/users.html
-  - /documentation/manual/projects.html
-  - /documentation/manual/administration/projects.html
+- /documentation/administration/
+- /documentation/manual/administration.html
+- /documentation/manual/projects.html
+- /documentation/manual/users.html
+- /documentation/manual/administration/users.html
+- /documentation/manual/projects.html
+- /documentation/manual/administration/projects.html
 ---
 
 In the admin panel you can do every administration that is necessary for the running system.

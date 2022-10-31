@@ -1,11 +1,10 @@
 ---
 title: Apps for Kimai v1
-description: Application to use Kimai on desktop and mobile
+subtitle: Legacy applications for Kimai 1
 url_v2: /store/
 ---
 
 Thanks to many great developer out there we have several external applications, which allow you to use Kimai on your Desktop and mobile device.
-We hope you can find something that fits your needs!
 
 Please note that these apps are not maintained by the Kimai Team.
 
@@ -17,8 +16,7 @@ A very simple mobile optimized interface of Kimai. It lets you start and stop yo
 
 It is built with jQuery Mobile support and works as a developer demonstration for the Kimai Remote API.
 
-<a href="{% link _v1/kimai-mobile.md %}" class="btn btn-primary">Website</a>
-<a href="https://github.com/kimai/kimai-mobile" class="btn btn-primary">GitHub</a>
+<a href="https://github.com/kimai/legacy/tree/master/kimai-mobile" class="btn btn-primary">GitHub</a>
 
 * * *
 

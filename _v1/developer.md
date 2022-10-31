@@ -1,6 +1,6 @@
 ---
 title: Developer introduction
-description: Developer docs for Kimai 1
+subtitle: Legacy documentation for Kimai 1
 url_v2: /documentation/developers.html
 ---
 
@@ -55,7 +55,10 @@ After a successfull login the user is redirected to `/core/kimai.php`. Here all 
 
 ## Extensions
 
-When you develop an extension you have to think of a name and a so called key. 
+For example the timesheet, export and expenses screen (which you get by clicking the corresponding tab) is called an extension. 
+To disable an extension, just add a hash (#) symbol in front of the folder name. To re-enable it, remove the hash.
+
+When you develop an extension you have to think of a name and a key. 
 This key should be prepended to every javascript method, class, id, … just anything that is used within your extension to prevent conflicting names.
 
 Floaters get their seperate folder under the templates folders. The folder css is obviously for CSS files which are needed by the extension. 

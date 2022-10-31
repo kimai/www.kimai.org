@@ -1,10 +1,10 @@
 ---
 title: Authenticator
-description: Authenticator docs for Kimai 1
+subtitle: Legacy documentation for Kimai 1
 url_v2: /documentation/ldap.html
 ---
 
-By default kimai uses its internal user management, where users and passwords are stored in the Kimai database.
+By default, Kimai uses its internal user management, where users and passwords are stored in the Kimai database.
 But there are more authenticators, which can be used to connect to existing user repositories.
 
 ## Configuration
@@ -22,7 +22,7 @@ If the used authenticator supports configuration parameters, you can set those w
 (supported since Kimai > 1.0.1). 
 
 Therefor you need to create the file ``includes/auth.php`` with the content:
-
+ 
 ```php
 <?php
 return array(

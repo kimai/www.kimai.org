@@ -1,6 +1,6 @@
 ---
 title: Installation
-description: Installation docs for Kimai 1
+subtitle: Legacy documentation for Kimai 1
 url_v2: /documentation/installation.html
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Invoice templates
-description: Invoice templates variables for Kimai 1
+subtitle: Legacy documentation for Kimai 1
 url_v2: /documentation/invoices.html
 ---
 
