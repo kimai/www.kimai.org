@@ -94,20 +94,9 @@ defaults:
       lang: en
 
 markdown: kramdown
-
 kramdown:
-  auto_ids:         true
-  footnote_nr:      1
-  entity_output:    as_char
-  toc_levels:       1..6
-  syntax_highlighter_opts:
-    css_class: ''
-    span:
-      line_numbers: false
-
-sass:
-  sass_dir: assets/sass
-  style: compressed
+    input: GFM
+    syntax_highlighter: rouge
 
 # see Gemfile
 plugins:
@@ -138,8 +127,8 @@ exclude:
   - .idea
   - _includes
   - .DS_Store
-  - .sass-cache/
-  - assets/scss/*
+  - assets/*.scss
+  - assets/bundle.js
   - translate-pages.php
   - .github
 

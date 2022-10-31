@@ -1,0 +1,197 @@
+@import '@tabler/core/src/scss/variables';
+
+table {
+    @extend .table;
+}
+
+.store-item {
+    ul.section-nav.bundle-nav {
+        margin: 0;
+        padding: 0;
+        background-color: #fff;
+        border: none;
+    }
+}
+
+.store-screenshots-slider {
+    margin-bottom: 15px;
+    img.slider {
+        background: rgba(0,0,0,0.2);
+    }
+    .carousel-caption {
+        background: rgba(0,0,0,0.8);
+        padding: 20px;
+    }
+    .carousel-item {
+        /* max-height: 800px; */
+    }
+    .carousel-item-background {
+        background: rgba(0,0,0,0.01);
+    }
+    .carousel-control-prev,
+    .carousel-control-next {
+        font-size: 30px;
+        color: #000;
+        opacity: 1;
+    }
+}
+
+.product-icon {
+    display: none;
+}
+
+.page-header {
+    padding-left: $grid-gutter-width / 2;
+    margin: 1rem 0 1rem;
+}
+.sidebar {
+    padding-left: $card-spacer-x;
+    padding-right: $card-spacer-x;
+    a.list-group-item {
+        padding: .3rem .8rem;
+    }
+}
+
+.btn-list {
+    margin-top: $grid-gutter-width / 2;
+}
+.card {
+    border-left-width: 0;
+    border-right-width: 0;
+}
+.footer {
+    padding: $grid-gutter-width / 2;
+}
+.header {
+    padding: $grid-gutter-width / 3;
+}
+.nav-tabs {
+    margin: 0;
+}
+
+.header-toggler {
+    margin-left: 0 !important;
+}
+@media (max-width: map-get($grid-breakpoints, "md")) {
+    .card-options a.btn span {
+        display: none;
+    }
+    #documentation-content ul {
+        padding-left: 3px;
+        list-style-position: inside;
+    }
+}
+
+@media (min-width: map-get($grid-breakpoints, "sm")) {
+    .product-icon {
+        display: table-cell;
+        width: 100px;
+    }
+    .nav-tabs {
+        margin: 0 -#{$grid-gutter-width / 2};
+    }
+    .card {
+        border-left-width: 1px;
+        border-right-width: 1px;
+    }
+    .footer {
+        padding: 1.25rem 0;
+    }
+    .header {
+        padding: 0;
+    }
+    .sidebar {
+        padding-left: $grid-gutter-width / 2;
+        padding-right: $grid-gutter-width / 2;
+    }
+    .page-header {
+        padding-left: 0;
+        margin: $grid-gutter-width 0 $grid-gutter-width;
+    }
+}
+
+tr.featured-article td {
+    strong {
+        font-weight: 700;
+        font-size: 140%;
+    }
+    h4 a {
+        color: $link-color;
+    }
+}
+
+.language-switch {
+    a, span {
+        padding-left: 0;
+        padding-right: 0;
+        &:after {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            content: "|"
+        }
+    }
+    span {
+        cursor: auto;
+    }
+    .last:after {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        content: ""
+    }
+}
+
+footer.footer {
+    .row {
+
+    }
+}
+
+pre code {
+    word-wrap: normal;
+}
+
+/* for permission names in tables */
+table.table td code.highlighter-rouge
+{
+    white-space: nowrap;
+}
+
+/* for navigation icon links in mobile view */
+
+a.nav-link.icon {
+    padding: 0.5rem;
+}
+
+table.feature-list td p {
+    margin-bottom: 0;
+}
+
+/*
+================================================
+    New rules added after the Tabler upgrade
+*/
+
+.header-brand {
+    font-weight: 400;
+    text-transform: unset;
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+/* Make buttons with fontawesome icons work */
+a.btn i.fas,
+a.btn i.far,
+a.btn i.fab {
+    margin-right: 5px;
+}
+
+div.highlighter-rouge {
+    margin-bottom: 1.5rem;
+}
+
+/* Fixing a stupid tabler bug, the first character in a code block has padding */
+div.highlighter-rouge code {
+    padding-left: 0;
+}
