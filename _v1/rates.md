@@ -3,6 +3,7 @@ title: Rates & Fees
 subtitle: Legacy documentation for Kimai 1
 permalink: /v1/rates.html
 url_v2: /documentation/rates.html
+layout: v1
 ---
 
 Here is the order in which is checked if a rate exists. The first one found is then used:

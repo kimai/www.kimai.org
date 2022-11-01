@@ -3,6 +3,7 @@ title: Emails
 subtitle: Legacy documentation for Kimai 1
 permalink: /v1/email.html
 url_v2: /documentation/emails.html
+layout: v1
 ---
 
 Currently Kimai only uses email to send users an email if they have forgotten their password.  It is also currently only implemented for the kimai_auth authenticator.  This is reasonable as the other authentication methods do not allow Kimai to change passwords, e.g. LDAP user must go to the LDAP administrator if they forget their password.

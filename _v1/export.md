@@ -3,6 +3,7 @@ title: Export
 subtitle: Legacy documentation for Kimai 1
 permalink: /v1/export.html
 url_v2: /documentation/export.html
+layout: v1
 ---
 
 With this extension you can export tracked time per User into an Excel-file, csv-file or a pdf-file. 

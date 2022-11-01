@@ -3,6 +3,7 @@ title: Installation
 subtitle: Legacy documentation for Kimai 1
 permalink: /v1/installation.html
 url_v2: /documentation/installation.html
+layout: v1
 ---
 
 Kimai is an open source PHP based time tracking system released under the GNU GPL.

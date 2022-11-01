@@ -3,6 +3,7 @@ title: Timesheet
 subtitle: Legacy documentation for Kimai 1
 permalink: /v1/timesheet.html
 url_v2: /documentation/timesheet.html
+layout: v1
 ---
 
 Thats where you track your time. We hope the interface is easy to understand and use.

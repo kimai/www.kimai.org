@@ -3,6 +3,7 @@ title: Kimai Remote Api
 subtitle: Legacy documentation for Kimai 1
 permalink: /v1/api.html
 url_v2: /documentation/rest-api.html
+layout: v1
 ---
 
 This part of the documentation is dedicated for developers who want to make 3rd party applications that use Kimai as a backend. 

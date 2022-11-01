@@ -3,6 +3,7 @@ title: Developer introduction
 subtitle: Legacy documentation for Kimai 1
 permalink: /v1/developer.html
 url_v2: /documentation/developers.html
+layout: v1
 ---
 
 This document gives an overview of how Kimai works. It is intended for developers (core and extensions).

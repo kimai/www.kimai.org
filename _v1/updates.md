@@ -3,6 +3,7 @@ title: Updates
 subtitle: Legacy documentation for Kimai 1
 permalink: /v1/updates.html
 url_v2: /documentation/updates.html
+layout: v1
 ---
 
 When you update an existing installation, just replace the entire Kimai folder on your server. 

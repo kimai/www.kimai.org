@@ -3,6 +3,7 @@ title: Authenticator
 subtitle: Legacy documentation for Kimai 1
 permalink: /v1/authenticator.html
 url_v2: /documentation/ldap.html
+layout: v1
 ---
 
 By default, Kimai uses its internal user management, where users and passwords are stored in the Kimai database.

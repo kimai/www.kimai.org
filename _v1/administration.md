@@ -2,6 +2,7 @@
 title: Administration
 subtitle: Legacy documentation for Kimai 1
 permalink: /v1/administration.html
+layout: v1
 ---
 
 In the admin panel you can do every administration that is necessary for the running system.
