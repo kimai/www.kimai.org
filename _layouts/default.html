@@ -29,7 +29,7 @@ layout: base
                                     {% assign targetUrl = langPages[0].url %}
                                 {% endif %}
                             {% endif %}
-                            <a href="{{ targetUrl }}" title="{{ site.language_names[lang] }} - {{ targetTitle }}" {% if page.lang == lang %}class="nav-link px-0 hide-theme-dark text-uppercase" style="text-decoration: underline;"{% else %}class="nav-link px-0 hide-theme-dark text-uppercase"{% endif %}>{{ lang|capitalize }}</a>
+                            <a href="{{ targetUrl }}" title="{{ site.language_names[lang] }} - {{ targetTitle }}" {% if page.lang == lang %}class="nav-link px-0 hide-theme-dark text-uppercase{% if forloop.last %} last{% endif %}" style="text-decoration: underline;"{% else %}class="nav-link px-0 hide-theme-dark text-uppercase{% if forloop.last %} last{% endif %}"{% endif %}>{{ lang|capitalize }}</a>
                         {% endfor %}
                     </div>
                     {% endif %}
