@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Subversion and Bugtracker"
 date: "2007-10-29 21:50:55 +0200"
 author: skilleven

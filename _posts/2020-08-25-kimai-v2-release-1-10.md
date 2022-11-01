@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Release 1.10 - Reporting, Activity permissions"
 date: "2020-08-27 08:00:00 +0200"
 author: kevinpapst

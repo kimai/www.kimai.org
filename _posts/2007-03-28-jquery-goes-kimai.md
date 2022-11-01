@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "jQuery goes Kimai"
 date: "2007-03-28 21:21:56 +0200"
 author: skilleven

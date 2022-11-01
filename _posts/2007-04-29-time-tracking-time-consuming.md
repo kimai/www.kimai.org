@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Time tracking, time consuming"
 date: "2007-04-29 11:29:27 +0200"
 author: vasilis

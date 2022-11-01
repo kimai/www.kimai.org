@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Release 1.21 - Budget graph"
 date: "2022-07-14 10:00:00 +0200"
 author: kevinpapst

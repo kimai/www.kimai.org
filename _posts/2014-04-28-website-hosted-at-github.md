@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Website hosting changed"
 date: "2014-04-28 17:30:00 +0200"
 author: kevinpapst

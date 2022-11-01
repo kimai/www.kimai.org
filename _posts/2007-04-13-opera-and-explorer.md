@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Opera and Explorer"
 date: "2007-04-13 06:09:46 +0200"
 author: skilleven

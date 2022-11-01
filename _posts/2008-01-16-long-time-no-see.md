@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Long Time No See"
 date: "2008-01-16 22:48:51 +0200"
 author: jk

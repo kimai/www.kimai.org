@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Test Kimai v0.9.3-beta.1"
 date: "2013-08-03 10:48:00 +0200"
 author: kevinpapst

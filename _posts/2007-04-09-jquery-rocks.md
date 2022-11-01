@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "jQuery rocks!"
 date: "2007-04-09 08:38:47 +0200"
 author: skilleven

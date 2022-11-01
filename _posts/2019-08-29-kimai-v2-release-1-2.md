@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Release 1.2 - Teams"
 date: "2019-08-29 16:45:00 +0200"
 author: kevinpapst

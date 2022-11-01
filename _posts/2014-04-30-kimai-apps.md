@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "External Kimai Apps"
 date: "2014-04-30 14:00:00 +0200"
 author: kevinpapst

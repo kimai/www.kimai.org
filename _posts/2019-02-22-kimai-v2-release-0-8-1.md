@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Release 0.8.1 - just a bugfix release"
 date: "2019-02-22 19:00:00 +0200"
 author: kevinpapst

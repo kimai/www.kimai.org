@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Pre-Release For Testers"
 date: "2009-01-04 12:32:00 +0200"
 author: skilleven

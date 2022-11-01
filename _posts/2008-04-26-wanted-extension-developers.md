@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Wanted: Extension Developers"
 date: "2008-04-26 20:09:31 +0200"
 author: skilleven

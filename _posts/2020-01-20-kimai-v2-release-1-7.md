@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Release 1.7 - Customer & project detail pages"
 date: "2020-01-20 10:00:00 +0200"
 author: kevinpapst

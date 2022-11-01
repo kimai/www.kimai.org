@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Sunsetting PHP 7"
 date: "2021-12-06 20:00:00 +0200"
 author: kevinpapst

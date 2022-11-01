@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Release candidate Kimai v0.9"
 date: "2009-11-05 14:41:00 +0200"
 author: kevinpapst

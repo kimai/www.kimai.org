@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "It could be called YASH (Yet Another Stats Hack) ..."
 date: "2007-10-20 23:21:11 +0200"
 author: skilleven

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Release 0.6 - Global activities"
 date: "2018-11-18 22:00:00 +0200"
 author: kevinpapst

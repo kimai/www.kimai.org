@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Release 1.15 - Project detail report & Monthly budgets"
 date: "2021-09-17 10:00:00 +0200"
 author: kevinpapst

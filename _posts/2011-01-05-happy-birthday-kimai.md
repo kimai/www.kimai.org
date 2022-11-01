@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Happy Birthday Kimai"
 date: "2011-01-05 11:34:00 +0200"
 author: kevinpapst

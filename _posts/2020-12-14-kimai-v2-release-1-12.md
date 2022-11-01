@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Release 1.12 - Bugs, bugs, bugs"
 date: "2020-12-14 08:00:00 +0200"
 author: kevinpapst

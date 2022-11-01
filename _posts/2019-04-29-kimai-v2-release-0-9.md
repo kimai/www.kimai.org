@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Release 0.9 - API, Plugins & DB Configs"
 date: "2019-04-29 00:00:00 +0200"
 author: kevinpapst

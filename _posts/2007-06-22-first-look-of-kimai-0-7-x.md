@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "First Look of Kimai 0.7.x"
 date: "2007-06-22 08:10:38 +0200"
 author: skilleven

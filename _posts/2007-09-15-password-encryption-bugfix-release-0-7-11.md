@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Password Encryption Bugfix > Release 0.7.11"
 date: "2007-09-15 13:39:47 +0200"
 author: skilleven

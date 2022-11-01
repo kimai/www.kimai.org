@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Update for Kimai 0.7.121"
 date: "2009-03-07 16:08:00 +0200"
 author: beny

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Version 0.7.10 released"
 date: "2007-08-26 01:35:06 +0200"
 author: skilleven

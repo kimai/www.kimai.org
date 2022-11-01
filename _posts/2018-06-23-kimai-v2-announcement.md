@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Announcement - Kimai v2"
 date: "2018-06-23 22:00:00 +0200"
 author: kevinpapst

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Kimai 0.9 released"
 date: "2009-11-20 00:15:00 +0200"
 author: kevinpapst

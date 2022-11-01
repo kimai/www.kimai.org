@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Release 1.0 - Tags, Colors, UX, Budgets, LDAP, Custom fields and so much more"
 date: "2019-07-02 14:00:00 +0200"
 author: kevinpapst

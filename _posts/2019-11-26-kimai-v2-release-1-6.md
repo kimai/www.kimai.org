@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Release 1.6 - Permissions & Invoices"
 date: "2019-11-26 18:00:00 +0200"
 author: kevinpapst

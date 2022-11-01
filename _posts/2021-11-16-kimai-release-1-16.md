@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Release 1.16 - Weekly working times form"
 date: "2021-11-16 10:00:00 +0200"
 author: kevinpapst

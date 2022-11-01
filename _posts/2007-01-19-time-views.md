@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Time Views"
 date: "2007-01-19 23:44:00 +0200"
 author: skilleven

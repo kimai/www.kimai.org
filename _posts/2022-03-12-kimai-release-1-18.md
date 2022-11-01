@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Release 1.18 - Export report data"
 date: "2022-03-12 14:00:00 +0200"
 author: kevinpapst

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Kimai 0.9.2 beta - the 2nd"
 date: "2011-02-25 16:16:00 +0200"
 author: kevinpapst

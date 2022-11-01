@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Schon wieder Geburtstag!"
 date: "2008-12-15 14:18:00 +0200"
 author: skilleven

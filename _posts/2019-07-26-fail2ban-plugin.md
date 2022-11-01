@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "New fail2ban plugin"
 date: "2019-07-26 16:00:00 +0200"
 author: kevinpapst

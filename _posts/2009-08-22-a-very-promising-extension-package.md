@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "A very promising extension package..."
 date: "2009-08-22 10:11:00 +0200"
 author: skilleven

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Update Problem..."
 date: "2007-08-08 20:48:43 +0200"
 author: skilleven

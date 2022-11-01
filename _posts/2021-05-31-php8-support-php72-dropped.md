@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "PHP 8 Support added, PHP 7.2 dropped"
 date: "2021-05-31 10:00:00 +0200"
 author: kevinpapst

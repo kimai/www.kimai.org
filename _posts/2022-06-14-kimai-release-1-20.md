@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Release 1.20 - Calendar switch"
 date: "2022-06-14 10:00:00 +0200"
 author: kevinpapst

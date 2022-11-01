@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Release 1.13 - Duration input and dropdown"
 date: "2021-02-06 08:00:00 +0200"
 author: kevinpapst

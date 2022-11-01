@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Release 1.11 - Calendar drag & drop"
 date: "2020-11-05 08:00:00 +0200"
 author: kevinpapst

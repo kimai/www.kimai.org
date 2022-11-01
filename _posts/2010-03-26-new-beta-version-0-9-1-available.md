@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "New Beta version 0.9.1 available"
 date: "2010-03-26 10:48:00 +0200"
 author: kevinpapst

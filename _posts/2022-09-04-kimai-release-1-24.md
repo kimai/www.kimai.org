@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Release 1.24 - Custom PDF fonts"
 date: "2022-09-04 10:00:00 +0200"
 author: kevinpapst

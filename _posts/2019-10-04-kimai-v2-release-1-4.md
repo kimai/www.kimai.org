@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Release 1.4 - New team widgets"
 date: "2019-10-04 06:00:00 +0200"
 author: kevinpapst
