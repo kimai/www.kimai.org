@@ -2,7 +2,6 @@
 title: Plugins
 description: How to create a Kimai plugin 
 toc: true
-since_version: 0.9
 redirect_from: /documentation/extensions/
 ---
 

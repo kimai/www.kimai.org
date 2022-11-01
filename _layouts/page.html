@@ -1,25 +1,19 @@
 ---
 layout: default
 ---
+{% include page-title.html title=page.title subtitle=page.subtitle options=page.options %}
+<div class="page-body">
+    <div class="container-xl">
+        <div class="card card-lg">
+            <div class="card-body">
+                <div class="markdown">
+                    {% if page.toc %}
+                        {% include toc.html html=page.content class="toc" h_max=3 %}
+                    {% endif %}
 
-<div class="container">
-	{% if page.intro == nil or page.intro == true %}
-	{% include page-title.html title=page.title subtitle=page.subtitle options=page.options %}
-	{% endif %}
-
-	<div class="row">
-		<div class="col-lg-12">
-			<div class="card">
-				<div class="card-body">
-					<div class="text-wrap p-lg-6">
-						{% if page.toc %}
-						{% include toc.html html=page.content class="section-nav" h_max=3 %}
-						{% endif %}
-
-						{{ content }}
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                    {{ content }}
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

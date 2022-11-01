@@ -2,7 +2,6 @@
 title: SAML
 description: How to use SAML identity provider with Kimai
 toc: true
-since_version: 1.8
 canonical: /documentation/saml.html
 ---
 

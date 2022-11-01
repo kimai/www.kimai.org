@@ -1,3 +1,4 @@
+<div class="row row-cards row-deck">
 
     <div class="col-sm-6 col-lg-4">
         {% include card-image.html image="timesheet" %}
@@ -10,17 +11,17 @@
     </div>
 
     <div class="col-md-12 col-lg-8">
-        <div class="card alert alert-success">
-            <div class="card-body">
-                <h4>
+        <div class="card bg-green-lt">
+            <div class="card-body d-flex flex-column p-4">
+                <h3 class="pb-3">
                     {{ site.data[page.lang].translation.homepage-alert-title }}
-                </h4>
+                </h3>
                 <p>
                     {{ site.data[page.lang].translation.homepage-alert-intro }}
                     <br><br>
                     {{ site.data[page.lang].translation.homepage-quote-excel }}
                 </p> 
-                <div class="btn-list">
+                <div class="btn-list mt-auto">
                     <a href="{{ site.pages | where: "lang", page.lang | where: "slug", "download" | map: "url" | first }}" class="btn btn-primary">{{ site.data[page.lang].translation.homepage-alert-button-download }}</a>
                     <a href="{{ site.pages | where: "lang", page.lang | where: "slug", "demo" | map: "url" | first }}" class="btn btn-secondary">{{ site.data[page.lang].translation.homepage-alert-button-demo }}</a>
                 </div>
@@ -72,3 +73,5 @@
             </div>
         </div>
     </div>
+
+</div>

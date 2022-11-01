@@ -159,7 +159,7 @@ parameters:
 
 ### Import frontend locales
 
-{% include alert.html icon="fas fa-exclamation" type="warning" alert="You can skip this step, we will do it with when we test your changes." %}
+{% include alert.html type="warning" icon="fas fa-exclamation" alert="You can skip this step, we will do it with when we test your changes." %}
 
 Make sure the new locale is included in the frontend dependencies. For example Kimai includes moment.js, which ships its own translations.
 Kimai ONLY compiles the moment.js locales which are needed. 

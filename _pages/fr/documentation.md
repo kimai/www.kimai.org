@@ -1,9 +1,8 @@
 ---
-title: Documentation
+title: Kimai - Documentation
 description: "Informations de support, manuel d'utilisation et autres documents pour le système d'enregistrement des temps Kimai"
 subtitle: "Il s'agit de la documentation officielle de l'application de suivi du temps Kimai"
 lang: fr
-header: Kimai - Documentation
 icon: fas fa-book
 layout: documentation-index
 permalink: /fr/documentation/

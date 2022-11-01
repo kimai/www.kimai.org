@@ -1,5 +1,7 @@
 ---
 title: Kimai Remote Api
+subtitle: Legacy documentation for Kimai 1
+permalink: /v1/api.html
 url_v2: /documentation/rest-api.html
 ---
 

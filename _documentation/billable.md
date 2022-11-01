@@ -2,7 +2,6 @@
 title: Billable
 description: How billable times are configured and what they do
 toc: true
-since_version: 1.18.3
 related: 
   - timesheet
   - customer

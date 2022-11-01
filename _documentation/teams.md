@@ -10,7 +10,7 @@ A team consists of teamleads and regular team members.
 The teamleads have access to all contents and timesheets of the team. 
 Every content object can be linked to an arbitrary amount of teams.
 
-{% include alert.html icon="fas fa-exclamation" type="warning" alert="Using teams is optional. But once a team is assigned to a customer or project, access to this object and its children is limited." %}
+{% include alert.html type="warning" icon="fas fa-exclamation" alert="Using teams is optional. But once a team is assigned to a customer or project, access to this object and its children is limited." %}
 
 If you want to limit the access to Kimai functionality instead of content, 
 please read the [permissions documentation]({% link _documentation/permissions.md %}).

@@ -2,52 +2,27 @@
 subtitle: "Legacy documentation for Kimai 1"
 menu: menu-v1
 type: v1
-intro: true
 github: kimai_v1_repo
 title_postfix: "Kimai v1"
 main_page: v1
-layout: default
+layout: page
 homepage: v1
 with_languages: false
 ---
-{% assign collectionMenu = layout.menu %}
-{% assign collectionType = layout.type %}
-{% assign headerTitle = page.header | default: layout.title | default: page.title | default: "Documentation" %}
-{% assign headerSubTitle = page.subtitle | default: layout.subtitle | default: page.description %}
 
-<div class="container">
-    {% include page-title.html title=headerTitle subtitle=headerSubTitle %}
+{% capture unmaintained %}
+Kimai 1 is not maintained any longer, please <a href="{% link _documentation/migration-v1.md %}">upgrade to Kimai 2</a> now!
+There is <a href="{% link _store/keleo-installation-support.md %}">paid support</a> available and you can even move to our <a href="https://www.kimai.cloud" target="_blank">hosted cloud</a>.
+{% endcapture %}
+{% include alert.html type="danger" alert=unmaintained %}
 
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="card">
+{% if page.url_v2 != nil %}
+    {% capture docs2 %}
+        This documentation page exists <a href="{{ page.url_v2 }}">for version 2 here</a>.
+    {% endcapture %}
+    {% include alert.html type="success" alert=docs2 %}
+{% endif %}
 
-                <div class="card-body">
-
-                    <div class="alert alert-danger" role="alert">
-                        Kimai 1 is not maintained any longer, please <a href="{% link _documentation/migration-v1.md %}">upgrade to Kimai 2</a> now!
-                        There is <a href="{% link _store/keleo-installation-support.md %}">paid support</a> available and you can even move to our <a href="https://www.kimai.cloud" target="_blank">hosted cloud</a>.
-                    </div>
-
-                    {% if page.url_v2 != nill %}
-                        <div class="alert alert-success" role="alert">
-                            This documentation page exists <a href="{{ page.url_v2 }}">for version 2 here</a>.
-                        </div>
-                    {% endif %}
-
-                    <div class="text-wrap p-lg-6">
-                        <h2 class="mt-0 mb-4">
-                            {{ page.title }}
-                        </h2>
-
-                        {% if page.toc %}
-                            {% include toc.html html=page.content class="section-nav" h_min=2 h_max=3 %}
-                        {% endif %}
-
-                        {{ page.content }}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="markdown mt-4">
+    {{ page.content }}
 </div>

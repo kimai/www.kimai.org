@@ -2,7 +2,6 @@
 title: "Keyboard shortcuts"
 description: How to use Kimai with your keyboard
 toc: false
-since_version: 1.24.1
 ---
 
 Kimai supports a couple of keyboard shortcuts, which can be used on most pages.

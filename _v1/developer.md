@@ -1,6 +1,7 @@
 ---
 title: Developer introduction
-description: Developer docs for Kimai 1
+subtitle: Legacy documentation for Kimai 1
+permalink: /v1/developer.html
 url_v2: /documentation/developers.html
 ---
 
@@ -35,7 +36,7 @@ Every tab you see in Kimai (like timesheet, export, admin panel) is an extension
   * **includes** Files which are needed in almost every other file.
     * **autoconf.php** Contains the configuration given by the user during setup. (Database connection information)
     * **basics.php** Simple wrapper to include all usually necessary files like functions and database layer.
-    * **func.php** Database independant functions are placed here.
+    * **func.php** Database independent functions are placed here.
     * **kspi.php** “Kimai Standard Processor Initialization” is included by every processor. Some setup is done here.
   * **installer** Installer for Kimai.
   * **js** Contains javascript files for the core.
@@ -55,7 +56,10 @@ After a successfull login the user is redirected to `/core/kimai.php`. Here all 
 
 ## Extensions
 
-When you develop an extension you have to think of a name and a so called key. 
+For example the timesheet, export and expenses screen (which you get by clicking the corresponding tab) is called an extension. 
+To disable an extension, just add a hash (#) symbol in front of the folder name. To re-enable it, remove the hash.
+
+When you develop an extension you have to think of a name and a key. 
 This key should be prepended to every javascript method, class, id, … just anything that is used within your extension to prevent conflicting names.
 
 Floaters get their seperate folder under the templates folders. The folder css is obviously for CSS files which are needed by the extension. 

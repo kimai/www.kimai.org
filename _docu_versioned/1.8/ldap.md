@@ -2,7 +2,6 @@
 title: LDAP
 description: How to use an LDAP directory server with Kimai
 toc: true
-since_version: 1.0
 canonical: /documentation/ldap.html
 ---
 

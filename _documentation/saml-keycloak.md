@@ -22,7 +22,7 @@ SAML authentication with Keycloak accounts has proven to work with the following
 
 Deactivate "Client Signature Required".
 
-![Picture](/images/documentation/keycloak-saml-2.png)
+![Picture](/images/documentation/keycloak-sams-2.png)
 ![Picture](/images/documentation/keycloak-saml-3.png)
 
 ### Create user attributes

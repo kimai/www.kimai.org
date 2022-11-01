@@ -1,6 +1,6 @@
 {% assign products = include.products | default: site.data.store %}
 
-<div class="card">
+<div class="card mb-3">
 	<table class="table card-table table-vcenter">
 		{% for product in products %}
 			{% assign featured = false %}
@@ -18,7 +18,7 @@
 			{% endif %}
 			{% assign icon = settings.icon | default: "fas fa-question" %}
 			{% assign developer = site.data.developer[settings.developer] %}
-			<tr class="{% if featured %}featured-article{% endif %}{% for tag in product.tags %} tag-{{ tag | slugify }}{% endfor %}">
+			<tr{% if featured %} class="featured-article"{% endif %}>
 				<td class="text-center product-icon">
 					{% if settings.image != nil %}
 					<img src="{{ settings.image }}" alt="Product logo" {{ imageSize }}>
@@ -28,10 +28,11 @@
 				</td>
 				{% if featured %}
 					<td>
-						<h4 class="mb-4">
+						<h4 class="mb-2">
 							<a href="{{ product.url | absolute_url }}">{{ product.title }}</a>
+
 							{% if isNew %}
-							<div class="badge badge-success badge-md">{{ site.data[page.lang].translation.new-badge }}</div>
+							<span class="badge bg-green badge-md">{{ site.data[page.lang].translation.new-badge }}</span>
 							{% endif %}
 						</h4>
 
@@ -46,16 +47,18 @@
 						<a href="{{ product.url | absolute_url }}">{{ product.title }}</a>
 
 						{% if isNew %}
-						<div class="badge badge-success badge-md">{{ site.data[page.lang].translation.new-badge }}</div>
+						<span class="badge bg-green badge-sm">{{ site.data[page.lang].translation.new-badge }}</span>
 						{% endif %}
 					</td>
 				{% endif %}
-				<td class="text-right text-muted d-none d-md-table-cell text-nowrap">
+				<td class="text-end text-muted d-none d-md-table-cell text-nowrap">
+                    {% comment %}
 					{% for tag in product.tags %}
-						<div class="badge badge-default badge-md">{{ tag }}</div>
+						<span class="badge bg-blue-lt badge-sm">{{ tag }}</span>
 					{% endfor %}
+                    {% endcomment %}
 				</td>
-				<td class="text-right text-nowrap">
+				<td class="text-end text-nowrap">
 					<strong>
 						{% if settings.price == nil %}
                             <i class="far fa-comments fa-lg"></i>

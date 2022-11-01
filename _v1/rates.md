@@ -1,5 +1,7 @@
 ---
 title: Rates & Fees
+subtitle: Legacy documentation for Kimai 1
+permalink: /v1/rates.html
 url_v2: /documentation/rates.html
 ---
 
@@ -43,5 +45,3 @@ Some examples:
 - User 3 is working on project 2: his rate is 70.00 €
 - User 2 is working on project 1 and task 5: his rate is 20.00 €
 - User 2 is working on any project except the defined ones for him: his rate is 40.00 €
-
-This table can only be edited with SQL statements or a database-tool (05/03/2010).

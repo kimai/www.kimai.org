@@ -2,7 +2,6 @@
 title: Importing data
 description: Importing data into Kimai, migrating from another system
 toc: true
-since_version: 1.6
 ---
 
 ## Importing from Kimai v1

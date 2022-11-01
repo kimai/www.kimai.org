@@ -4,7 +4,7 @@ description: Support Kimai with a donation
 lang: en
 redirect_from: /en/donate.html
 ---
-
+ 
 # Support Kimai
 
 {% include alert.html icon="far fa-smile" alert="By donating to Kimai and sponsoring the development you help us to improve your time-tracking experience!" %}

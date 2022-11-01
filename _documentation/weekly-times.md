@@ -5,7 +5,6 @@ toc: true
 related:
   - timesheet
   - calendar
-since_version: 1.16
 ---
 
 The "weekly times" view shows one week in a simple table structure, which mimics a classical spreadsheet.

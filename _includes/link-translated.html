@@ -7,7 +7,6 @@
     {%- assign class = include.class -%}
 {%- endif -%}
 {%- if include.icon != nil -%}
-    {%- assign class = class | append: ' icon' -%}
     {%- assign icon = include.icon -%}
 {%- endif -%}
 <a href="{{ include.url }}" title="{{ item_title }}" class="{{ class }}"{% if include.target != nil %} target="{{ include.target }}"{% endif %}>
