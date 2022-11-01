@@ -29,7 +29,7 @@ screenshots:
   - 
     src: "/images/marketplace/kiosk-webcam.png"
     title: "Scanner webcam"
-    description: "Le mode de connexion "Code à barres avec appareil photo" affichera la vidéo de la caméra et recherchera en permanence des codes à barres"
+    description: "Le mode de connexion \"Code à barres avec appareil photo\" affichera la vidéo de la caméra et recherchera en permanence des codes à barres"
   - 
     src: "/images/marketplace/kiosk-login.png"
     title: "Connexion"
