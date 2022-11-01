@@ -1,16 +1,8 @@
 @import '@tabler/core/src/scss/variables';
 
+/* make all markdown tables look as if they have the "table" class */
 table {
     @extend .table;
-}
-
-.store-item {
-    ul.section-nav.bundle-nav {
-        margin: 0;
-        padding: 0;
-        background-color: #fff;
-        border: none;
-    }
 }
 
 .store-screenshots-slider {
@@ -36,46 +28,12 @@ table {
     }
 }
 
+/* only show the store items on larger screens */
 .product-icon {
     display: none;
 }
 
-.page-header {
-    padding-left: $grid-gutter-width / 2;
-    margin: 1rem 0 1rem;
-}
-.sidebar {
-    padding-left: $card-spacer-x;
-    padding-right: $card-spacer-x;
-    a.list-group-item {
-        padding: .3rem .8rem;
-    }
-}
-
-.btn-list {
-    margin-top: $grid-gutter-width / 2;
-}
-.card {
-    border-left-width: 0;
-    border-right-width: 0;
-}
-.footer {
-    padding: $grid-gutter-width / 2;
-}
-.header {
-    padding: $grid-gutter-width / 3;
-}
-.nav-tabs {
-    margin: 0;
-}
-
-.header-toggler {
-    margin-left: 0 !important;
-}
 @media (max-width: map-get($grid-breakpoints, "md")) {
-    .card-options a.btn span {
-        display: none;
-    }
     #documentation-content ul {
         padding-left: 3px;
         list-style-position: inside;
@@ -87,39 +45,16 @@ table {
         display: table-cell;
         width: 100px;
     }
-    .nav-tabs {
-        margin: 0 -#{$grid-gutter-width / 2};
-    }
-    .card {
-        border-left-width: 1px;
-        border-right-width: 1px;
-    }
-    .footer {
-        padding: 1.25rem 0;
-    }
-    .header {
-        padding: 0;
-    }
-    .sidebar {
-        padding-left: $grid-gutter-width / 2;
-        padding-right: $grid-gutter-width / 2;
-    }
-    .page-header {
-        padding-left: 0;
-        margin: $grid-gutter-width 0 $grid-gutter-width;
-    }
 }
 
+/* make sure the article names are colored link a link */
 tr.featured-article td {
-    strong {
-        font-weight: 700;
-        font-size: 140%;
-    }
     h4 a {
         color: $link-color;
     }
 }
 
+/* for the language chooser in the header row */
 .language-switch {
     a, span {
         padding-left: 0;
@@ -140,16 +75,6 @@ tr.featured-article td {
     }
 }
 
-footer.footer {
-    .row {
-
-    }
-}
-
-pre code {
-    word-wrap: normal;
-}
-
 /* for permission names in tables */
 table.table td code.highlighter-rouge
 {
@@ -157,20 +82,16 @@ table.table td code.highlighter-rouge
 }
 
 /* for navigation icon links in mobile view */
-
 a.nav-link.icon {
     padding: 0.5rem;
 }
 
+/* markdown content in table cells always is always wrapped in <p> */
 table.feature-list td p {
     margin-bottom: 0;
 }
 
-/*
-================================================
-    New rules added after the Tabler upgrade
-*/
-
+/* as long as the name "kimai" is not included in an image */
 .header-brand {
     font-weight: 400;
     text-transform: unset;
@@ -187,16 +108,18 @@ a.btn i.fab {
     margin-right: 5px;
 }
 
+/* apply a default margin to all code blocks */
 div.highlighter-rouge {
     margin-bottom: 1.5rem;
 }
 
-/* Fixing a stupid tabler bug, the first character in a code block has padding */
+/* Fixing a tabler bug, the first character in a code block has padding */
 figure.highlight pre code,
 div.highlighter-rouge code {
     padding-left: 0;
 }
 
+/* some basic styling for the TOC plugin */
 .toc {
     background-color: #f8f9fa;
     margin: 1rem 0;

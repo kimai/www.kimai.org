@@ -30,6 +30,7 @@
 					<td>
 						<h4 class="mb-2">
 							<a href="{{ product.url | absolute_url }}">{{ product.title }}</a>
+
 							{% if isNew %}
 							<span class="badge bg-green badge-md">{{ site.data[page.lang].translation.new-badge }}</span>
 							{% endif %}
