@@ -1,8 +1,96 @@
 ---
-layout: docu-with-sidebar
+layout: page-empty
+main_page: documentation
 menu: menu-documentation
 type: documentation
 github: kimai_v2_repo
 toc: true
 main_page: documentation
+homepage: documentation
+with_languages: false
 ---
+{% assign collectionMenu = layout.menu %}
+{% assign collectionType = layout.type %}
+
+<div class="row">
+
+    <div class="card">
+        {% if false and page.skip_back == nil %}
+        <div class="card-header">
+            <div class="d-flex align-items-center px-2">
+                <a href="{% link _pages/documentation.md %}" class="btn btn-link">
+                    <i class="fas fa-arrow-circle-left"></i> Back to documentation
+                </a>
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="card-body">
+            <div class="markdown p-3">
+                <div class="d-flex mt-0">
+                    <div class="ms-auto">
+                        {% assign versions = '' | split: ',' %}
+                        {% assign paths = '' | split: ',' %}
+                        {% assign items = site.docu_versioned | sort: 'path' | reverse %}
+                        {% for item in items %}
+                        {% if item.slug == page.slug %}
+                        {% assign version = item.path | split:'/' %}
+                        {% if version.size > 2 %}
+                        {% assign versions = versions | push: version[1] %}
+                        {% assign paths = paths | push: item.url %}
+                        {% endif %}
+                        {% endif %}
+                        {% endfor %}
+                        {% if versions.size > 0 %}
+                        <div class="dropdown">
+                            <a class="btn btn-info dropdown-toggle btn-sm" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Older versions
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                                {% for v in versions %}
+                                <a class="dropdown-item" href="{{ paths[forloop.index0] }}">Kimai {{ v }}</a>
+                                {% endfor %}
+                                <a class="dropdown-item" href="/documentation/{{ page.slug }}.html">{{ site.kimai_v2_version }} (latest version)</a>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                {% if page.in_progress %}
+                <div class="alert alert-primary mt-5 mb-6">
+                    <div><strong>Work in progress!</strong> More detailed documentation is coming soon.</div>
+                </div>
+                {% endif %}
+
+                {% capture page_content %}
+                {{ page.content }}
+
+                {% if page.related != nil %}
+                <h2 id="related-articles">Related articles</h2>
+                <ul>
+                    {% for p in page.related %}
+                    {% assign doc = site[collectionType] | where: "slug", p | first %}
+                    <li>
+                        <a href="{{ doc.url }}">{{ doc.title }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                {% endcapture %}
+
+                {% if page.toc %}
+                {% include toc.html html=page_content class="toc" h_min=2 h_max=3 %}
+                {% endif %}
+
+                {% comment %} THE id "documentation-content" MAY NEVER BE DELETED, IT IS USED IN KIMAI TO REMOTE FETCH THE ARTICLE {% endcomment %}
+                <div id="documentation-content">
+                    {{ page_content }}
+                </div>
+                {% comment %} THE id "documentation-content" MAY NEVER BE DELETED, IT IS USED IN KIMAI TO REMOTE FETCH THE ARTICLE {% endcomment %}
+
+            </div>
+        </div>
+    </div>
+
+</div>
