@@ -1,6 +1,7 @@
 ---
 title: Export
 subtitle: Legacy documentation for Kimai 1
+permalink: /v1/export.html
 url_v2: /documentation/export.html
 ---
 

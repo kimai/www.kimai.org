@@ -2,7 +2,6 @@
 subtitle: "Legacy documentation for Kimai 1"
 menu: menu-v1
 type: v1
-intro: true
 github: kimai_v1_repo
 title_postfix: "Kimai v1"
 main_page: v1
@@ -24,10 +23,6 @@ There is <a href="{% link _store/keleo-installation-support.md %}">paid support<
     {% include alert.html type="success" alert=docs2 %}
 {% endif %}
 
-<div class="text-wrap p-lg-6 mt-4">
-    {% if page.toc %}
-        {% include toc.html html=page.content class="section-nav" h_min=2 h_max=3 %}
-    {% endif %}
-
+<div class="markdown mt-4">
     {{ page.content }}
 </div>

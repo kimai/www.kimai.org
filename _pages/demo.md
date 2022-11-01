@@ -5,6 +5,7 @@ lang: en
 redirect_from:
   - /en/demo.html
   - /demo.html
+  - /v1/demo.html
 ---
 
 # Test Kimai in one of the demos
@@ -12,7 +13,7 @@ redirect_from:
 {% include alert.html icon="fas fa-desktop" alert='Try out the Kimai time-tracking demo, and we promise: your next step will be the download!' %}
 
 Please choose one of our demo installations, to get a first impression on how Kimai feels and which functionality it provides.
-
+ 
 {% include pages/demo-boxes.html %}
 
 Be aware that the demos will be reinstalled on a regular schedule and all entered data will be removed. But for your convenience, they 

@@ -1,11 +1,11 @@
-<ul class="nav nav-tabs border-0 flex-column flex-lg-row">
+<ul class="navbar-nav">
     {%- assign menu = site.data[layout.menu] -%}
     {%- assign homepage_url = site.pages | where: "lang", page.lang | where: "slug", layout.homepage | map: "url" | first -%}
     {%- assign homepage_name = site.data[page.lang].translation.menu.default[layout.homepage].name -%}
     {%- assign collectionType = layout.type -%}
 
-    <li class="nav-item d-md-inline d-none">
-        <a href="{{ homepage_url }}" class="nav-link{% if page.url == homepage_url %} active{% endif %}">
+    <li class="nav-item d-md-flex d-none{% if page.url == homepage_url %} active{% endif %}">
+        <a href="{{ homepage_url }}" class="nav-link">
             {{ homepage_name }}
         </a>
     </li>
@@ -13,16 +13,17 @@
 	{% for data in menu %}
         {% assign menu_key = data[0] %}
         {% assign menu_settings = data[1] %}
-        {% assign menu_url = menu_settings.url %}
+        {% assign menu = menu_settings %}
+        {% assign menu_url = menu.url %}
         {% assign menu_name = site.data[page.lang].translation.menu[layout.menu][menu_key].name %}
         {% assign subpages = menu_settings.pages %}
-        <li class="nav-item{% if subpages.size > 0 %} dropdown{% endif %}">
-            <a href="{% if menu_url != nil %}{% if menu_url != '#' %}{{ menu_url }}{% else %}#{% endif %}{% else %}javascript:void(0){% endif %}" class="nav-link{% if subpages.size > 0 %} dropdown-toggle{% endif %}{% if page.url contains menu_url %} active{% endif %}"{% if subpages.size > 0 %} data-toggle="dropdown"{% endif %}>
-                {{- menu_name -}}
+        <li class="nav-item{% if subpages.size > 0 %} dropdown{% endif %}{% if page.url contains menu_url %} active{% endif %}">
+            <a href="{% if menu_url != nil %}{% if menu_url != '#' %}{{ menu_url }}{% else %}#{% endif %}{% else %}javascript:void(0){% endif %}" class="nav-link{% if subpages.size > 0 %} dropdown-toggle{% endif %}"{% if subpages.size > 0 %} data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false"{% endif %}>
+                <span class="nav-link-title">{{- menu_name -}}</span>
             </a>
 
             {% if subpages.size > 0 %}
-                <div class="dropdown-menu dropdown-menu-arrow">
+                <div class="dropdown-menu">
                     {% for p in subpages %}
                         {% if p == "-" %}
                             <div class="dropdown-divider"></div>

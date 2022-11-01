@@ -3,12 +3,10 @@ You can customize the following values from within your PDF templates:
 - the generated filename by using the option named `filename`
 
 ```
-{% raw %}
-{%- set customer = query.customers|length == 1 ? query.customers.0 : null -%}
+{% raw %}{%- set customer = query.customers|length == 1 ? query.customers.0 : null -%}
 {%- set filename = 'ACME_' ~ (customer is not null ? customer.name|replace({' ': '-'}) ~ '_' : '') ~ query.begin|date_format('Y-m') -%}
 {%- set option = pdfContext.setOption('filename', filename) -%}
-{%- set option = pdfContext.setOption('format', 'A4-L') -%}
-{% endraw %}
+{%- set option = pdfContext.setOption('format', 'A4-L') -%}{% endraw %}
 ```
 
 #### Custom fonts

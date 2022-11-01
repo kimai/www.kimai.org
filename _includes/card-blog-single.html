@@ -18,10 +18,10 @@
 
 		<div class="text-muted">{{ article.excerpt | truncate: truncate }}</div>
 
-		<div class="d-flex align-items-center pt-5 mt-auto">
-			<div class="avatar avatar-md mr-3" style="background-image: url({{ author.photo }})"></div>
+		<div class="d-flex align-items-center pt-3 mt-auto">
+			<div class="avatar avatar-rounded me-3" style="background-image: url({{ author.photo }})"></div>
 			<div>
-				<a href="{{ author.profile }}" class="text-default">{{ author.name }}</a>
+				<span class="text-muted">{{ author.name }}</span>
 				<small class="d-block text-muted">{{ article.date | date_to_string }}</small>
 			</div>
 		</div>

@@ -1,6 +1,7 @@
 ---
 title: Timesheet
 subtitle: Legacy documentation for Kimai 1
+permalink: /v1/timesheet.html
 url_v2: /documentation/timesheet.html
 ---
 

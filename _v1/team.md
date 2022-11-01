@@ -1,6 +1,7 @@
 ---
 title: "Create a release"
 subtitle: Legacy documentation for Kimai 1
+permalink: /v1/team.html
 url_v2: /documentation/create-release.html
 ---
 

@@ -1,17 +1,17 @@
 {% assign author = site.data.users[include.user] %}
-<div class="card">
+<div class="card mb-3">
 	<div class="card-body">
-		<article class="media">
-			<div class="mr-3">
-				<div class="avatar avatar-xl" style="background-image: url({{ author.photo }})"></div>
+		<article class="d-flex">
+			<div class="me-3">
+				<div class="avatar avatar-xl avatar-rounded" style="background-image: url({{ author.photo }})"></div>
 			</div>
 			<div class="media-body">
 				<div class="content">
 
-					<p class="h5">
+					<h4>
 						{{ author.name }} <small>@{{ author.username }}</small>
-						{% comment %}<small class="float-right text-muted">31 minutes ago</small>{% endcomment %}
-					</p>
+						{% comment %}<small class="float-end text-muted">31 minutes ago</small>{% endcomment %}
+					</h4>
 					<p>
 						{{ author.intro[page.lang] | replace: "%github%", site.kimai_v2_repo }}
 					</p>

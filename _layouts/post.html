@@ -1,18 +1,14 @@
 ---
-layout: default
+layout: page-empty
 ---
 {% assign author = site.data.users[page.author] %}
-{% assign titleOptions = page.options | default: '' %}
-
-<div class="container">
-	{% include page-title.html title=page.title subtitle=page.subtitle options=titleOptions %}
 
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="card">
 				<div class="card-header">
-					<div class="d-flex align-items-center px-2">
-						<div class="avatar avatar-md mr-3" style="background-image: url({{ author.photo }})"></div>
+					<div class="d-flex px-2">
+						<div class="avatar avatar-rounded me-3" style="background-image: url({{ author.photo }})"></div>
 						<div>
 							<div>{{ author.name }} <small>@{{ author.username }}</small></div>
 							<small class="d-block text-muted">{{ page.date | date_to_string }}</small>
@@ -20,36 +16,33 @@ layout: default
 					</div>
 					<div class="card-options">
 						{% comment %}
-						<a href="{% link _pages/donate.md %}" class="btn btn-option" data-toggle="tooltip" title="Donate">
+						<a href="{% link _pages/donate.md %}" class="btn btn-option" data-bs-toggle="tooltip" title="Donate">
 							<i class="fas fa-heart"></i>
 						</a>
 						{% endcomment %}
-						<a href="/feed.xml" class="btn btn-option"><i class="fa fa-rss"></i></a>
+						<a href="/feed.xml" class="btn btn-link"><i class="fa fa-rss"></i></a>
 					</div>
 				</div>
 				<div class="card-body">
-					<div class="text-wrap p-lg-6">
+					<div class="markdown p-4">
 
 						{% if page.toc %}
-						{% include toc.html html=page.content class="section-nav" h_max=3 %}
+						{% include toc.html html=page.content class="toc" h_max=3 %}
 						{% endif %}
 
 						{{ content }}
 					</div>
 				</div>
 				<div class="card-footer">
+                    <div class="d-flex px-2">
 					{% if page.previous.url %}
-						<div class="d-flex align-items-center px-2">
-							<a class="btn btn-link" href="{{page.previous.url}}"><i class="fas fa-arrow-circle-left"></i> {{page.previous.title}}</a>
-						</div>
+							<a class="me-auto" href="{{page.previous.url}}"><i class="fas fa-arrow-circle-left"></i> {{page.previous.title}}</a>
 					{% endif %}
 					{% if page.next.url %}
-						<div class="card-options">
-							<a class="btn btn-link" href="{{page.next.url}}">{{page.next.title}} <i class="fas fa-arrow-circle-right"></i></a>
-						</div>
+							<a href="{{page.next.url}}">{{page.next.title}} <i class="fas fa-arrow-circle-right"></i></a>
 					{% endif %}
+                    </div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>

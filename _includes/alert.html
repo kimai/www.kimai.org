@@ -1,5 +1,20 @@
 {% assign alertType = include.type | default: 'primary' %}
-<div class="alert {% if include.icon %}alert-icon {% endif %}alert-{{ alertType }}" role="alert">
-	{% if include.icon %}<i class="{{ include.icon }}" aria-hidden="true"></i>{% endif %}
-	{{ include.alert | default: "No alert content given" }}
+{% unless alertType contains 'bg-' %}
+    {% if alertType == 'info' %}
+        {% assign alertType = 'bg-yellow-lt' %}
+    {% elsif alertType == 'primary' %}
+        {% assign alertType = 'bg-blue-lt' %}
+    {% elsif alertType == 'danger' %}
+        {% assign alertType = 'bg-red-lt' %}
+    {% elsif alertType == 'warning' %}
+        {% assign alertType = 'bg-orange-lt' %}
+    {% elsif alertType == 'success' %}
+        {% assign alertType = 'bg-green-lt' %}
+    {% endif %}
+{% endunless %}
+<div class="alert alert-important {{ alertType }}" role="alert">
+    <div class="d-flex">
+        <div>{% if include.icon %}<i class="icon alert-icon {{ include.icon }}" aria-hidden="true"></i>{% endif %}</div>
+        <div>{{ include.alert | default: "No alert content given" | replace: "<p>", "" | replace: "</p>", ""  }}</div>
+    </div>
 </div>

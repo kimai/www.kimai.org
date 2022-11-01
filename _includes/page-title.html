@@ -1,18 +1,21 @@
-<div class="page-header">
-	<h1 class="page-title">{{ include.title | default: page.title }}</h1>
-
-	{% if include.subtitle %}
-	<div class="page-subtitle d-none d-sm-block">{{ include.subtitle }}</div>
-	{% endif %}
-
-	{% if include.options %}
-	<div class="page-options">{{ include.options }}</div>
-	{% endif %}
-
-	{% comment %}
-	<nav class="page-breadcrumb breadcrumb">
-		<a class="breadcrumb-item" href="javascript:void(0)">Library</a>
-		<span class="breadcrumb-item active">Cards</span>
-	</nav>
-	{% endcomment %}
+<div class="page-header d-print-none">
+    <div class="container-xl">
+        <div class="row g-2 align-items-center">
+            <div class="col">
+                {% if include.subtitle %}
+                <div class="page-pretitle">
+                    {{ include.subtitle }}
+                </div>
+                {% endif %}
+                <h2 class="page-title">
+                    {{ include.title | default: page.title }}
+                </h2>
+            </div>
+            {% if include.options %}
+            <div class="col-12 col-md-auto ms-auto d-print-none">
+                <div class="page-options">{{ include.options }}</div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
 </div>

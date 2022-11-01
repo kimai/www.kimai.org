@@ -43,7 +43,7 @@ All examples represent the date `2019-07-09` (2019, July 9th):
 - `{cud}`       - per user (the one creating the invoice) invoice counter for this day, starting at 1
 - `{ustaff}`    - the user (the one creating the invoice) staff number, empty if not configured
 - `{uid}`       - the internal user (the one creating the invoice) ID
-
+ 
 Each replacer (x) can be combined with a length formatter, which will prepend (X) leading zeros, eg. `{x,X}`.
 Example: to get a three digit long string with year counter use `{cy,3}`, which results in `001` for the first invoice of the year.
 

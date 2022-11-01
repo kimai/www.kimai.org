@@ -1,6 +1,7 @@
 ---
 title: Updates
 subtitle: Legacy documentation for Kimai 1
+permalink: /v1/updates.html
 url_v2: /documentation/updates.html
 ---
 

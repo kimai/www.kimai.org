@@ -1,6 +1,7 @@
 ---
 title: Emails
 subtitle: Legacy documentation for Kimai 1
+permalink: /v1/email.html
 url_v2: /documentation/emails.html
 ---
 

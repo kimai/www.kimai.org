@@ -90,6 +90,7 @@ menu:
         download:
             name: Preuzimanje
             title: Preuzmi Kimai
+            header: Preuzmi Kimai – besplatno!
         hosted:
             name: Oblak
             title: Kimai oblak – Koristi Kimai izravno bez postavljanja. Besplatna hosting usluga za Kimai!
@@ -223,3 +224,22 @@ feature:
     technology:
         name: "Moderan"
         description: "Na temelju najnovijih web tehnologija i radnih okvira: PHP, Symfony, Doctrine, Flex, Bootstrap, WebPack i drugih …"
+install:
+    requirements:
+        title: Uvjeti za poslužitelja
+        hosters: "Ove uvjete pružaju gotovo sve hosting tvrtke:"
+        version: "PHP %version% ili novija verzija"
+        extensions: "PHP proširenja:"
+        database: "Baza podataka: MariaDB ili MySQL"
+        webserver: "Web-poslužitelj (nginx, Apache s mod_rewrite)"
+        subdomain: "Besplatna poddomena (upotreba u poddirektoriju nije podržana)"
+        browser: "Moderni preglednik"
+    download:
+        title: Instalacija sa SSH
+        intro: "Preporučeni način instaliranja programa Kimai: koristi `git` i `composer` izravno na ciljanom sustavu."
+        alert-vps: |
+            U ovom trenutku nije moguće instalirati Kimai preuzimanjem ZIP datoteke i učitavanjem datoteka na vaš web poslužitelj. Razlog tome je što se skladatelj mora pokrenuti na naredbenom retku.
+
+            To ne znači nužno da vam treba VPS. Neki dijeljeni hostovi pružaju vam SSH pristup putem kojeg možete jednostavno instalirati Composer i Kimai.
+
+            Potpune instrukcije za instaliranje nalaze se u našoj %documentation%.

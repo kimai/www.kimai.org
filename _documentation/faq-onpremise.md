@@ -40,7 +40,6 @@ Stack trace:
 #0 /var/www/kimai2/vendor/symfony/dotenv/Dotenv.php(57): Symfony\\Component\\Dotenv\\Dotenv->populate(Array)
 #1 /var/www//kimai2/public/index.php(15): Symfony\\Component\\Dotenv\\Dotenv->load('/var/www/html/k...')
 #2 {main}\n  thrown in /var/www/kimai2/vendor/symfony/dotenv/Dotenv.php on line 95
-
 ```
 
 you are running PHP 7.0. Probably you were able to install Kimai, because your PHP-CLI uses a different PHP version than your webserver.

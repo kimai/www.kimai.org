@@ -2,12 +2,18 @@
 layout: default
 ---
 
-<div class="container">
-	{% if page.intro == nil or page.intro == true %}
-	{% include page-title.html title=page.title subtitle=page.subtitle options=page.options %}
-	{% endif %}
+    {% assign pagetitle = page.title %}
+    {% if page.title_trans != nil %}
+        {% assign pagetitle = site.data[page.lang].translation[page.title_trans] %}
+    {% endif %}
+    {% assign subtitle = page.subtitle %}
+    {% if page.subtitle_trans != nil %}
+        {% assign subtitle = site.data[page.lang].translation[page.subtitle_trans] %}
+    {% endif %}
+    {% include page-title.html title=pagetitle subtitle=subtitle options=page.options %}
 
-	<div class="row row-cards">
-        {{ content }}
+    <div class="page-body">
+        <div class="container-xl">
+            {{ content }}
+	    </div>
 	</div>
-</div>

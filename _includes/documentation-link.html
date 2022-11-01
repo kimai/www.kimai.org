@@ -1,6 +1,6 @@
 {% assign chapter = site.documentation | where: "slug", include.chapter | first %}
 {% capture documentation_link %}
-Full documentation available [in the documentation]({{ chapter.url }}).
+[Full documentation available in the documentation]({{ chapter.url }})
 {% endcapture %}
 {% assign documentation_link = documentation_link| markdownify %}
-{% include alert.html icon="fas fa-book" type="info" alert=documentation_link %}
+{% include alert.html icon="fas fa-book" alert=documentation_link %}

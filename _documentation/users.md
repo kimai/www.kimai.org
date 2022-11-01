@@ -4,7 +4,10 @@ description: User, roles and the authentication, registration and security syste
 toc: true
 canonical: /documentation/users.html
 related:
-  - user-preferences
+- user-preferences
+redirect_from:
+- /documentation/manual/users.html
+- /documentation/manual/administration/users.html
 ---
 
 A user can be part of a [team]({% link _documentation/teams.md %}), which can limit/extend the visibility of data.

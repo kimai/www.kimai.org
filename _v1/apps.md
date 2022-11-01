@@ -1,6 +1,7 @@
 ---
 title: Apps for Kimai v1
 subtitle: Legacy applications for Kimai 1
+permalink: /v1/apps.html
 url_v2: /store/
 ---
 

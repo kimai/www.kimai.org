@@ -9,7 +9,7 @@ permalink: /hr/o-programu-kimai.html
 
 {% include alert.html icon="far fa-thumbs-up" alert='Vjerojatno <strong>najbolji i besplatan program otvorenog koda za evidentiranje vremena</strong> …' %}
 
-![Kimai logotip]({% link /images/kimai_logo.png %}){:class="float-right" style="margin-left: 20px" }
+![Kimai logotip]({% link /images/kimai_logo.png %}){:class="float-end" style="margin-left: 20px" }
 
 Kimai je program za evidentiranje vremena s dugom poviješću. Prva verzija objavljena je 2006. Zašto to spominjemo?
 Budući da smo vidjeli da u zadnjem desetljeću razne usluge dolaze i odlaze – vjeruj nam kad kažemo: ostat ćemo.
