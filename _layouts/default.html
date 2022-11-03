@@ -18,9 +18,9 @@ layout: base
         </h1>
         <div class="navbar-nav flex-row order-md-last">
             <div class="d-flex order-lg-2 ml-auto">
-                <div class="nav-item dropdown d-none d-md-flex me-3">
+                <div class="nav-item dropdown me-3">
                     <a href="#" class="nav-link dropdown-toggle px-0" data-bs-toggle="dropdown" tabindex="-1" aria-label="Switch language" aria-expanded="true">
-                        <i class="fas fa-globe me-1"></i> {{ site.language_names[page.lang] }}
+                        <i class="fas fa-globe me-1"></i> <span class="d-none d-sm-flex">{{ site.language_names[page.lang] }}</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-end dropdown-menu-card" data-bs-popper="static">
                         <div class="card">
@@ -62,7 +62,7 @@ layout: base
         <div class="navbar navbar-light">
             <div class="container-xl">
                 <ul class="navbar-nav">
-                    {%- assign menu = 'about,demo,download,store,blog,documentation' | split: "," -%}
+                    {%- assign menus = 'about,demo,download,store,blog,documentation' | split: "," -%}
                     {%- assign homepage_url = site.pages | where: "lang", page.lang | where: "slug", "index" | map: "url" | first -%}
                     {%- assign homepage_name = site.data[page.lang].translation.menu.default.index.name -%}
                     {%- assign collectionType = page.collection -%}
@@ -73,7 +73,7 @@ layout: base
                         </a>
                     </li>
 
-                    {% for menu_key in menu %}
+                    {% for menu_key in menus %}
                         {% assign menu = site.pages | where: "lang", page.lang | where: "slug", menu_key | first %}
                         {% assign menu_url = menu.url %}
                         {% assign menu_name = site.data[page.lang].translation.menu.default[menu_key].name %}
@@ -82,18 +82,6 @@ layout: base
                                 <span class="nav-link-title">{{- menu_name -}}</span>
                             </a>
                         </li>
-                    {% endfor %}
-
-                    {% for lang in site.languages %}
-                        {% if page.lang != lang %}
-                            {% assign targetUrl = site.pages | where: "lang", lang | where: "slug", "index" | map: "url" | first %}
-                            {% if page.lang != nil %}
-                                {% assign targetUrl = site[collectionType] | where: "lang", lang | where: "slug", page.slug | map: "url" | first %}
-                            {% endif %}
-                            <li class="nav-item d-sm-none">
-                                <a href="{{ targetUrl }}" title="{{ site.data[lang].translation.menu.default.index.title }}" class="first nav-link">{{ site.language_names[lang] }}</a>
-                            </li>
-                        {% endif %}
                     {% endfor %}
                 </ul>
             </div>
