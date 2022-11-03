@@ -13,7 +13,7 @@ layout: base
         </button>
         <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
             <a href="{{ brand_url }}" class="header-brand">
-                <img src="{{ '/assets/icon/apple-touch-icon.png' | absolute_url }}" height="32" class="navbar-brand-image" alt="Kimai"> {{ brand_title }}
+                <img src="{{ '/assets/icon/apple-touch-icon.png' | absolute_url }}" height="32" class="navbar-brand-image" alt="Kimai"> Kimai <span class="d-none d-sm-inline">– {{ brand_title }}</span>
             </a>
         </h1>
         <div class="navbar-nav flex-row order-md-last">
@@ -46,7 +46,10 @@ layout: base
                 {%- if page.lang == 'de' %}
                     {%- assign cloud_url = 'https://www.kimai.cloud/de/' -%}
                 {%- endif -%}
-                <div class="d-none d-sm-flex d-md-none">
+                <div class="nav-item d-sm-none">
+                    {% include link-translated.html class="nav-link text-primary" icon="fas fa-cloud" name="hosted" url=cloud_url target="_blank" %}
+                </div>
+                <div class="nav-item d-none d-sm-flex d-md-none">
                     {% include link-translated.html class="nav-link px-0 text-primary" icon="fas fa-cloud fa-2x" name="hosted" url=cloud_url target="_blank" %}
                 </div>
                 <div class="nav-item d-none d-md-flex">
