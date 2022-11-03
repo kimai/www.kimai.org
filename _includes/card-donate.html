@@ -1,28 +1,23 @@
 {% assign author = site.data.users[include.user] %}
 <div class="card mb-3">
 	<div class="card-body">
-		<article class="d-flex">
-			<div class="me-3">
+		<div class="row">
+			<div class="col-12 col-sm-3 col-md-2">
 				<div class="avatar avatar-xl avatar-rounded" style="background-image: url({{ author.photo }})"></div>
 			</div>
-			<div class="media-body">
-				<div class="content">
-
-					<h4>
-						{{ author.name }} <small>@{{ author.username }}</small>
-						{% comment %}<small class="float-end text-muted">31 minutes ago</small>{% endcomment %}
-					</h4>
-					<p>
-						{{ author.intro[page.lang] | replace: "%github%", site.kimai_v2_repo }}
-					</p>
-				</div>
-				<nav class="d-flex text-muted">
-					<a href="{{ author.paypal }}" class="btn btn-primary" role="button" style="margin-right: 10px">Donate with PayPal</a>
-					{% if author.amazon %}
-					<a href="{{ author.amazon }}" class="btn btn-primary" role="button">Buy from wishlist (German Amazon)</a>
-					{% endif %}
-				</nav>
+			<div class="col-12 col-sm-9 col-md-10">
+                <h4>
+                    {{ author.name }} <small>@{{ author.username }}</small>
+                    {% comment %}<small class="float-end text-muted">31 minutes ago</small>{% endcomment %}
+                </h4>
+                <p>
+                    {{ author.intro[page.lang] | replace: "%github%", site.kimai_v2_repo }}
+                </p>
+                <a href="{{ author.paypal }}" class="btn btn-primary mb-1 me-1" role="button">Donate with PayPal</a>
+                {% if author.amazon %}
+                <a href="{{ author.amazon }}" class="btn btn-primary mb-1" role="button">Buy from wishlist (German Amazon)</a>
+                {% endif %}
 			</div>
-		</article>
+		</div>
 	</div>
 </div>

@@ -9,7 +9,7 @@ permalink: /fr/apropos-kimai.html
 
 {% include alert.html icon="far fa-thumbs-up" alert='Peut-être <strong>la meilleure application de suivi du temps, libre et open source</strong>, que vous trouverez ...' %}
 
-![Kimai logo]({% link /images/kimai_logo.png %}){:class="float-end" style="margin-left: 20px" }
+![Kimai logo]({% link /images/kimai_logo.png %}){:class="float-sm-end" style="margin-left: 20px" }
 
 Kimai est un logiciel de suivi du temps qui a une longue histoire. La première version a été publiée en 2006.
 Pourquoi en parle-t-on ? Parce que nous avons vu de nombreux programmes aller et venir au cours de la dernière décennie - faites-nous confiance quand nous disons :

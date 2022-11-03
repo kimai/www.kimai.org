@@ -8,7 +8,7 @@ lang: en
 
 {% include alert.html icon="far fa-thumbs-up" alert='Probably <strong>the best free and open source time-tracking app</strong> you will find ...' %}
 
-![Kimai logo]({% link /images/kimai_logo.png %}){:class="float-end" style="margin-left: 20px" }
+![Kimai logo]({% link /images/kimai_logo.png %}){:class="float-sm-end" style="margin-left: 20px" }
 
 Kimai is a time-tracking app with a long history. The first version was released 2006. Why do we mention that? 
 Because we have seen so many services come and go since then - trust us when we say: we'll stick around. 
