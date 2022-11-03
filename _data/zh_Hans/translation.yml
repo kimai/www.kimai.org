@@ -90,6 +90,7 @@ menu:
         download:
             name: '下载'
             title: '下载 Kimai'
+            header: Download Kimai - it's FREE!
         hosted:
             name: 'Cloud'
             title: 'Kimai-Cloud - 无需设置即可直接使用 Kimai。免费Kimai托管！'
@@ -223,3 +224,17 @@ feature:
     technology:
         name: "最新"
         description: "基于最新的 Web 技术和框架：PHP、Symfony、Doctrine、Flex、Bootstrap、Webpack 等等…"
+install:
+    download:
+        alert-vps: "At this stage, it’s not possible to install Kimai by downloading a ZIP file and uploading the files to your web server. This is because Composer needs to run on the command line.\n\nThis doesn’t necessarily mean you need a VPS. Some shared hosts give you SSH access, through which you should be able to install Composer and Kimai just fine.\n\nFull installation instructions can be found in our %documentation%.\n"
+        title: Installation with SSH
+        intro: The recommended way to install Kimai is to use `git` and `composer` directly on the target system.
+    requirements:
+        title: Server requirements
+        hosters: 'These requirements are provided by almost all hosting companies:'
+        version: PHP %version% or higher
+        extensions: PHP extensions
+        database: 'Database: MariaDB or MySQL'
+        webserver: Webserver (nginx, Apache with mod_rewrite)
+        subdomain: A free subdomain (use in subdirectory is not supported)
+        browser: A modern browser
