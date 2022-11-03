@@ -5,7 +5,7 @@ Please read the [rates documentation]({% link _documentation/configurations.md %
 On the detail page of the selected item (which you find by clicking a row in the listing table or select `Show` from the dropdown menu) 
 you find the `Hourly rate` section. By default, you see the message `No hourly rates have yet been configured`.
 
-![The rates section table](/images/documentation/rates-section.png)
+{% include docs-image.html src="/images/documentation/rates-section.png" title="Rates section table" width="700px" %}
 
 You configure new rate rules by clicking the `+` button in the upper-right of the `Hourly rates` table.
 
@@ -17,7 +17,7 @@ A user needs the two permissions to be able to see and edit rates:
 
 The `edit rate` screen has four settings:
 
-![The edit rates screen](/images/documentation/rates-edit.png)
+{% include docs-image.html src="/images/documentation/rates-edit.png" title="Edit rates screen" width="700px" %}
 
 - `User` - the user this rate applies to - if no user is chosen it applies to everyone without explicit personal rule  
 - `Rate` - the rate to be charged (per hour)
@@ -36,7 +36,7 @@ Every rule the defines a user is a `user specific rate` and those always win ove
 
 The following example contains two rate rules:
 
-![A sample rates configuration](/images/documentation/rates-example.png)
+{% include docs-image.html src="/images/documentation/rates-example.png" title="A sample rates configuration" width="900px" %}
 
 The first one is a `Catch-all rate` that applies to everyone who is recording times for this {{include.permission}}. 
 So every hour counts with 50 € towards the budget of this {{include.permission}} and has internal costs of 25 €.

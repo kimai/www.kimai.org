@@ -173,13 +173,13 @@ Create a standard website in IIS with document root set to your Kimai directory,
 Make sure `memory_limit` is set to a minimum of 256M.
 Set appropriate handler mappings as below:
 
-![Handler Mappings](/images/documentation/iis-handler-mappings.png)
+{% include docs-image.html src="/images/documentation/iis-handler-mappings.png" title="Handler Mappings" width="700px" %}
 
 Under `Request restrictions` you have to select the `Verbs` tab. 
 Here you can select `All verbs` or the following using the option “One of the following verbs:”
 `HEAD,POST,GET,PUT,PATCH,DELETE`
 
-![Request restrictions](/images/documentation/iis-request-restrictions.png)
+{% include docs-image.html src="/images/documentation/iis-request-restrictions.png" title="Request restrictions" width="600px" %}
 
 This is important, as the API requires those methods: you would not be able to use Kimai properly, e.g. stop timesheets.
 
