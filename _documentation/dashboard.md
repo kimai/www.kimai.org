@@ -1,7 +1,6 @@
 ---
 title: Dashboard
 description: Dashboard widgets and statistic information
-toc: true
 ---
 
 The Kimai dashboard displays (so called) `widgets`.

@@ -1,7 +1,6 @@
 ---
 title: Docker
 description: Running Kimai inside docker
-toc: true
 canonical: /documentation/docker.html
 ---
 

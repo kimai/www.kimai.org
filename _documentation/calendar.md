@@ -1,7 +1,6 @@
 ---
 title: Calendar
 description: Manage your timesheet records in a calendar view
-toc: true
 related:
   - timesheet
   - weekly-times

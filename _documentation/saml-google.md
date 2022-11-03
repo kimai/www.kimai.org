@@ -1,12 +1,6 @@
 ---
 title: Google SAML
 description: How to use Google Workspace SAML identity provider with Kimai
-toc: true
-related:
-  - saml
-  - saml-authentik
-  - saml-azure
-  - saml-keycloak
 ---
 
 Go back to general [SAML configuration]({% link _documentation/saml.md %}) for Kimai. 

@@ -107,3 +107,29 @@ div.highlighter-rouge code {
     border-radius: 3px;
     list-style: none;
 }
+.toc_new {
+    background-color: #f8f9fa;
+    margin: 1rem 0;
+    padding: 1rem 2rem;
+    border: 1px solid rgba(0,40,100,0.12);
+    border-radius: 3px;
+    ul {
+        margin-bottom: 0;
+        padding-left: 1rem;
+    }
+}
+
+/* Documentation title */
+a.docs-header {
+    font-size: 1.3rem;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+/* Fix alerts overlapping table of contents */
+#documentation-content {
+    .alert {
+        position: unset;
+    }
+}

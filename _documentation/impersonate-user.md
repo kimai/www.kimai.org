@@ -1,5 +1,6 @@
 ---
 title: Impersonate a user
+navigation: Switch account
 description: How to impersonate a user and test permissions
 ---
 

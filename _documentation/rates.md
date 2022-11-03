@@ -1,7 +1,6 @@
 ---
 title: Rates
 description: How rates for your timesheet records are calculated
-toc: true
 redirect_from: 
   - /manual/rates.html
   - /manual/manual/rates.html

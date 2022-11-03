@@ -1,7 +1,7 @@
 ---
-title: The Marketplace
+title: Publishing in the Marketplace
+navigation: Marketplace
 description: How to list your Kimai extension in the Marketplace 
-toc: true
 ---
 
 If you created a plugin or any other kind of software around Kimai, which you want to see listed in the [{{ site.data[page.lang].translation.store }}]({% link _pages/store.html %}), 

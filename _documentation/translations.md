@@ -1,7 +1,6 @@
 ---
 title: "Translations / i18n"
 description: i18n, language specific configurations and the translation files
-toc: true
 redirect_from:
   - /documentation/developer/translations.html
   - /documentation/translations/

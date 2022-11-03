@@ -1,7 +1,7 @@
 ---
 title: "Install Kimai on a Synology NAS"
+navigation: Synology NAS
 description: "How to install Kimai on a Synology NAS"
-toc: true
 ---
 
 This HowTo does not explain every step for the installation of Kimai on a Synology NAS with **DSM 6**, 

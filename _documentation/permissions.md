@@ -1,7 +1,6 @@
 ---
 title: Roles & Permissions
 description: Configure the permission system which is based on user roles 
-toc: true
 ---
 
 Kimai provides a flexible permission system, which is based on **user roles** and **permissions**, 

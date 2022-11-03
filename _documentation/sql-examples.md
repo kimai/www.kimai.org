@@ -1,7 +1,6 @@
 ---
 title: SQL Examples
 description: A collection of SQL commands to quick start your statistic query 
-toc: true
 ---
 
 This page contains collections of SQL statements, which were helpful in the past and might be of use for other people as well.

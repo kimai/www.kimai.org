@@ -1,13 +1,10 @@
 ---
 title: LDAP
 description: How to use an LDAP directory server with Kimai
-toc: true
 canonical: /documentation/ldap.html
 redirect_from: 
   - /documentation/administrator/authenticator.html
   - /documentation/authenticator/
-related:
-  - ldap-example
 ---
 
 Kimai supports authentication against your company directory server (LDAP or AD).
@@ -421,3 +418,11 @@ kimai:
 {% include alert.html type="warning" alert="You need to configure the attributes in lower-case, otherwise they won't be processed." %}
 
 The LDAP code is based on [the work](https://github.com/Maks3w/FR3DLdapBundle) by @Maks3w , thanks for sharing!
+
+### Structure example
+
+There is an article explaining an [example Open LDAP structure for Kimai]({% link _documentation/ldap-example.md %}), that could be used.
+
+Actually this is more of an example setup for a test environment instead of a best-practice example.
+
+

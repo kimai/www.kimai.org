@@ -1,7 +1,6 @@
 ---
 title: Using Redis for caching
 description: Using Redis as caching instance for Kimai
-toc: true
 ---
 
 ## Production

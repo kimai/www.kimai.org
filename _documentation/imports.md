@@ -1,8 +1,12 @@
 ---
 title: Importing data
 description: Importing data into Kimai, migrating from another system
-toc: true
+related:
+- rest-api-examples
 ---
+
+Kimai has multiple ways of importing data. 
+Some are pre-made commands, but for more complicated use-cases [the API]({% link _documentation/rest-api.md %}) should be used instead.
 
 ## Importing from Kimai v1
 
@@ -18,28 +22,28 @@ bin/console kimai:import:customer customer.csv
 
 Supported attributes (field names are case-insensitive):
 
-| Customer attribute | Supported field names                                     |  
-| -----------------  | --------------------------------------------------------- |
-| Name               | project, projectname, project name, project-name, name    |
-| Account            | number, account, customer number, customer account        |
-| Company name       | company, company name, company-name                       |
-| Description        | description, comment                                      |
-| E-Mail             | email, e-mail, e mail                                     |
-| Country            | country                                                   |
-| Vat-ID             | vat, vat-id, vat id, tax-id, tax id                       |
-| Address            | address                                                   |
-| Contact            | contact                                                   |
-| Currency           | currency                                                  |
-| Timezone           | timezone                                                  |
-| Phone              | phone                                                     |
-| Mobile             | mobile                                                    | 
-| Fax                | fax                                                       |
-| Homepage           | homepage                                                  |
-| Color              | color                                                     |
-| Budget             | budget                                                    |
-| Time budget        | time budget, time-budget                                  |
-| Visible            | visible                                                   |
-| Meta fields        | meta.xxx                                                  |
+| Customer attribute | Supported field names                                  |  
+|--------------------|--------------------------------------------------------|
+| Name               | project, projectname, project name, project-name, name |
+| Account            | number, account, customer number, customer account     |
+| Company name       | company, company name, company-name                    |
+| Description        | description, comment                                   |
+| E-Mail             | email, e-mail, e mail                                  |
+| Country            | country                                                |
+| Vat-ID             | vat, vat-id, vat id, tax-id, tax id                    |
+| Address            | address                                                |
+| Contact            | contact                                                |
+| Currency           | currency                                               |
+| Timezone           | timezone                                               |
+| Phone              | phone                                                  |
+| Mobile             | mobile                                                 | 
+| Fax                | fax                                                    |
+| Homepage           | homepage                                               |
+| Color              | color                                                  |
+| Budget             | budget                                                 |
+| Time budget        | time budget, time-budget                               |
+| Visible            | visible                                                |
+| Meta fields        | meta.xxx                                               |
 
 ### Options
 
@@ -101,18 +105,18 @@ bin/console kimai:import:project project.csv
 
 Supported attributes (field names are case-insensitive):
 
-| Project attribute | Supported field names                                     |  
-| ----------------- | --------------------------------------------------------- |
-| Name              | project, projectname, project name, project-name, name    |
-| Customer name     | customer, customername, customer-name, customer name      |
-| Description        | description, comment                                      |
-| Order number      | ordernumber, order-number, order number                   | 
-| Order date        | orderdate, order-date, order date                         |
-| Color             | color                                                     |
-| Budget            | budget                                                    |
-| Time budget       | time budget, time-budget                                  |
-| Visible           | visible                                                   |
-| Meta fields       | meta.xxx                                                  |
+| Project attribute | Supported field names                                  |  
+|-------------------|--------------------------------------------------------|
+| Name              | project, projectname, project name, project-name, name |
+| Customer name     | customer, customername, customer-name, customer name   |
+| Description       | description, comment                                   |
+| Order number      | ordernumber, order-number, order number                | 
+| Order date        | orderdate, order-date, order date                      |
+| Color             | color                                                  |
+| Budget            | budget                                                 |
+| Time budget       | time budget, time-budget                               |
+| Visible           | visible                                                |
+| Meta fields       | meta.xxx                                               |
 
 ### Options
 

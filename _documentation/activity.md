@@ -1,7 +1,6 @@
 ---
 title: Activities
 description: Activities in Kimai
-toc: true
 ---
 
 Activities in Kimai are meant to explain the kind of work done for a specific task/timesheet.
@@ -57,7 +56,7 @@ If no color has been selected, the project color will be used.
 If that is not defined as well, Kimai will fall back to the customer color and finally to the [default color]({% link _documentation/customer.md %}).
 
 ### Billable
-
+ 
 {% include contents/billable.md entity="Activity" %}
 
 ### Budgets

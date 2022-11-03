@@ -1,10 +1,7 @@
 ---
 title: Backups
 description: How to backup and restore your Kimai installation
-toc: true
 ---
-
-## Backup
 
 You need to backup the following files and directories:
 - `.env`

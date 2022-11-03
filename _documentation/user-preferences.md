@@ -1,7 +1,6 @@
 ---
 title: User preferences
 description: Settings that change the users personal Kimai experience
-toc: true
 related:
   - users
 ---

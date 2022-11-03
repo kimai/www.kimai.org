@@ -1,7 +1,6 @@
 ---
 title: "Initial setup"
 description: Things to configure before you can start time-tracking
-toc: true
 redirect_from: /documentation/inital-setup.md
 ---
 

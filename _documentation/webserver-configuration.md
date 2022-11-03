@@ -1,7 +1,7 @@
 ---
 title: Webserver configuration
+navigation: Webserver
 description: How to install Kimai on your server with git, composer and SSH or FTP
-toc: true
 ---
 
 If you can't manage to get Kimai up and running, it is very likely not an issue with Kimai.

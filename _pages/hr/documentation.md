@@ -3,12 +3,9 @@ title: Kimai – Dokumentacija
 description: Informacije o podršci, korisnički priručnik i druga dokumentacija za evidentiranje vremena pomoću programa Kimai
 subtitle: Online Kimai dokumentacija za evidentiranje vremena
 lang: hr
-icon: fas fa-book
-layout: documentation-index
+layout: documentation
 permalink: /hr/documentation/
-skip_back: true
+toc: false
 ---
 
-Trebaš pomoć i ne možeš pronaći ono što tražiš?
-Prijavi novi problem na [Kimai forumu za podršku]({{ site.kimai_v2_repo }}/discussions) i zatraži pomoć.
- 
+{% include pages/documentation.html %}
