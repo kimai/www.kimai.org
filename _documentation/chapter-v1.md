@@ -1,12 +1,8 @@
 ---
-title: Kimai 1 - tracking your times since 2006
-description: Kimai v1 resources - upgrade infos, documentation and links
-subtitle: "Oldie but goldie!"
-lang: en
-header: Kimai v1
+title: Kimai v1 (deprecated)
+description: "Oldie but goldie - tracking your times since 2006"
 permalink: /v1/
 layout: v1
-skip_back: true
 redirect_from:
 - /de/v1.html
 - /fr/v1.html
@@ -32,16 +28,16 @@ Kimai 1 requires at least:
 
 **IMPORTANT**: Remove the `installer` directory when you’ve successfully installed Kimai.
 
-Please read the complete [installation docu]({% link _v1/installation.md %}) for more details.
+Please read the complete [installation docu]({% link _documentation/v1/installation.md %}) for more details.
 
 ### Update
 
-Please see the [Update documentation]({% link _v1/updates.md %}) for more information on how to update to a newer version of Kimai.
+Please see the [Update documentation]({% link _documentation/v1/updates.md %}) for more information on how to update to a newer version of Kimai.
 
 ## Downloads
 
 <a href="{{ site.kimai_v1_repo }}/releases/download/v1.3.2/kimai_1.3.2.zip" class="btn btn-primary"><i class="fas fa-download"></i> Download 1.3.2</a>
 <a href="{{ site.kimai_v1_repo }}" class="btn btn-primary"><i class="fab fa-github"></i> GitHub</a>
 <a href="https://github.com/kimai/legacy/tree/master/manuals" class="btn btn-primary"><i class="fas fa-book"></i> PDF manuals</a>
-<a href="{% link _v1/apps.md %}" class="btn btn-primary"><i class="fas fa-cubes"></i> Applications</a>
+<a href="{% link _documentation/v1/apps.md %}" class="btn btn-primary"><i class="fas fa-cubes"></i> Applications</a>
 
