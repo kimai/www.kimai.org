@@ -1,7 +1,6 @@
 ---
 title: Settings
 description: Kimai system configurations
-toc: true
 related: 
   - user-preferences
   - local-yaml

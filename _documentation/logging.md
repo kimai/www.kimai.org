@@ -1,7 +1,6 @@
 ---
 title: Logging
 description: Configure logging in Kimai
-toc: true
 ---
 
 By default, Kimai logs to a file at `var/log/prod.log`. 

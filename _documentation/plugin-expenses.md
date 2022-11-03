@@ -1,7 +1,6 @@
 ---
 title: Expenses
 description: Keep track of your expenses and include them in your invoices
-toc: true
 ---
 
 {% include plugins/expenses.md %}  

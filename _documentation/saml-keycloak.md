@@ -2,12 +2,6 @@
 title: Keycloak SAML
 description: Use Keycloak as SAML identity provider for Kimai
 canonical: /documentation/keycloak.html
-toc: true
-related:
-  - saml
-  - saml-authentik
-  - saml-azure
-  - saml-google
 ---
 
 Go back to general [SAML configuration]({% link _documentation/saml.md %}) for Kimai.
@@ -16,23 +10,21 @@ SAML authentication with Keycloak accounts has proven to work with the following
 
 ### Add a client for Kimai SAML
 
-![Picture](/images/documentation/keycloak-saml-1.png)
+{% include docs-image.html src="/images/documentation/keycloak-saml-1.png" title="Add a client" width="800px" %}
 
 ### Configure the client
 
-Deactivate "Client Signature Required".
-
-![Picture](/images/documentation/keycloak-sams-2.png)
-![Picture](/images/documentation/keycloak-saml-3.png)
+{% include docs-image.html src="/images/documentation/keycloak-saml-2.png" title="Deactivate *Client Signature Required* (1)" width="900px" %}
+{% include docs-image.html src="/images/documentation/keycloak-saml-3.png" title="Deactivate *Client Signature Required* (2)" width="900px" %}
 
 ### Create user attributes
 
 Which will then be mapped on the Kimai user attributes:
 
-![Configure attributes](/images/documentation/keycloak-saml-4.png)
-![X500 GivenName](/images/documentation/keycloak-saml-5.png)
-![X500 Surname](/images/documentation/keycloak-saml-6.png)
-![X500 Email](/images/documentation/keycloak-saml-7.png)
+{% include docs-image.html src="/images/documentation/keycloak-saml-4.png" title="Kimai user attributes (listing)" width="1000px" %}
+{% include docs-image.html src="/images/documentation/keycloak-saml-5.png" title="Kimai user attributes (X500 GivenName)" width="700px" %}
+{% include docs-image.html src="/images/documentation/keycloak-saml-6.png" title="Kimai user attributes (X500 Surname)" width="700px" %}
+{% include docs-image.html src="/images/documentation/keycloak-saml-7.png" title="Kimai user attributes (X500 Email)" width="700px" %}
 
 ### Adjust Client Scopes
 

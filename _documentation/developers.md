@@ -1,7 +1,6 @@
 ---
-title: Developers
+title: Developer
 description: Developer documentation - run, develop, extend and build for Kimai 
-toc: true
 canonical: /documentation/developers.html
 redirect_from:
   - /documentation/developer/documentation.html
@@ -16,10 +15,10 @@ This page is for all developers who want to contribute to Kimai. You rock!
 
 All you need is:
 
-- PHP >= 7.3
-- PHP extensions: `pdo-mysql`, `intl`, `zip`, `gd`, `mbstring`, `xml`
+- a recent PHP version, best is 8.1
+- some standard PHP extensions, see composer file for more infos
 - a MariaDB or MySQL instance
-- [Composer](https://getcomposer.org/download/)
+- [Composer](https://getcomposer.org/download/) and `git`
 
 ## Development installation
 
@@ -56,16 +55,16 @@ Its totally up to you how to achieve that, I can recommend the [Symfony local we
 symfony serve --port=8010
 ```
 
-You can now login with these accounts:
+You can now log in with these accounts:
 
-| Username       | Password | API Key    | Role                |
-| -------------- |:--------:|:----------:| ------------------- |
-| clara_customer | kitten   | api_kitten | Customer            |
-| john_user      | kitten   | api_kitten | User                |
-| chris_user     | kitten   | api_kitten | User (deactivated)  |
-| tony_teamlead  | kitten   | api_kitten | Teamlead            |
-| anna_admin     | kitten   | api_kitten | Administrator       |
-| susan_super    | kitten   | api_kitten | Super-Administrator |
+| Username       | Password |  API Key   | Role                |
+|----------------|:--------:|:----------:|---------------------|
+| clara_customer |  kitten  | api_kitten | Customer            |
+| john_user      |  kitten  | api_kitten | User                |
+| chris_user     |  kitten  | api_kitten | User (deactivated)  |
+| tony_teamlead  |  kitten  | api_kitten | Teamlead            |
+| anna_admin     |  kitten  | api_kitten | Administrator       |
+| susan_super    |  kitten  | api_kitten | Super-Administrator |
 
 Demo data can always be deleted by dropping the schema and re-creating it.
 The `kimai:reset:dev` command will do that automatically and can always be executed later on to reset your dev database and cache.
@@ -660,7 +659,7 @@ There is also a (german) blog post that discuss the basics of adding a FOSRestBu
 
 ## Using the Swagger UI
 
-When you want to use the interactive functions of the Swagger UI, you will probably notice that its not working due to a wrong URL being used.
+When you want to use the interactive functions of the Swagger UI, you will probably notice that it's not working due to a wrong URL being used.
 The Swagger UI currently doesn't use the current hostname, but always points to `localhost` on port 80.
 Therefor you have to configure the values used manually.
 

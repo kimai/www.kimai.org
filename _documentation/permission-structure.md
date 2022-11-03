@@ -1,12 +1,11 @@
 ---
 title: Permission structure
 description: Configure the permission system which is based on user roles 
-toc: true
 ---
 
 Kimai provides a flexible [permissions system]({% link _documentation/permissions.md %}), which is based on user roles.  
 
-{% include alert.html icon="fas fa-exclamation" type="warning" alert="You can change the permissions with the administration screens in the Roles admin page." %}
+**You can change the permissions with the administration screens in the System > Roles page.**
 
 ## Plugin permissions
 

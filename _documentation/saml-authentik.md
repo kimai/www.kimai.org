@@ -1,18 +1,14 @@
 ---
 title: Authentik SAML
 description: How to use Authentik as identity provider for Kimai
-toc: true
-related:
-  - saml
-  - saml-azure
-  - saml-google
-  - saml-keycloak
+toc: false
 ---
+
+Go back to general [SAML configuration]({% link _documentation/saml.md %}) for Kimai.
 
 [Authentik](https://goauthentik.io) is an open-source Identity Provider focused on flexibility and versatility.
 It has proven to work with Kimai, see [#3212](https://github.com/kevinpapst/kimai2/discussions/3212).
-
-You should [check the Authentik docs about Kimai](https://goauthentik.io/integrations/services/kimai/) as well!
+You should [check the Authentik docs about Kimai](https://goauthentik.io/integrations/services/kimai/) as well.
 
 Make sure that the mapping field matches the XML response:
 

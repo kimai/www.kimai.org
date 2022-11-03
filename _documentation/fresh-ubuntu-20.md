@@ -1,7 +1,7 @@
 ---
 title: "Install Kimai on Ubuntu 20.04"
+navigation: Ubuntu 20.04
 description: "How to install Kimai on a brand new Ubuntu 20.04 with database, webserver and SSL certificate"
-toc: true
 canonical: /documentation/fresh-ubuntu-20.html
 ---
 

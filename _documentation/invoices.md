@@ -1,7 +1,6 @@
 ---
 title: Invoices
 description: Create invoices directly within Kimai from timesheet data in several formats 
-toc: true
 canonical: /documentation/invoices.html
 redirect_from:
   - /documentation/invoices/
@@ -356,7 +355,7 @@ See below in `Template variables` to find out which variables you can use.
 
 Be aware, that the following list of variables is working for the "document" based formats (ODS, XLSX, CSV, DOCX).
 
-Twig rendering is different, you have to access the variables with `{{ invoice['xxx.yyy'] }}` instead of `${xxx.yyy}`. 
+Twig rendering is different, you have to access the variables with `{% raw %}{{ invoice['xxx.yyy'] }}{% endraw %}` instead of `${xxx.yyy}`. 
 
 ### Global variables
 

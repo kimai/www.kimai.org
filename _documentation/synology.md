@@ -1,7 +1,7 @@
 ---
 title: "Install Kimai on a Synology NAS"
+navigation: Synology NAS
 description: "How to install Kimai on a Synology NAS"
-toc: true
 ---
 
 This HowTo does not explain every step for the installation of Kimai on a Synology NAS with **DSM 6**, 
@@ -74,15 +74,15 @@ php73 bin/console kimai:install -n
 
 Start by opening the `Web Station`:
 
-![main menu](/images/documentation/synology-1.png "Main Menu > Web Station")
+{% include docs-image.html src="/images/documentation/synology-1.png" title="Main Menu > Web Station" width="600px" %}
 
 Check that you have a PHP 7.3 profile:
 
-![php settings](/images/documentation/synology-2.png "Main Menu > Web Station > PHP Settings")
+{% include docs-image.html src="/images/documentation/synology-2.png" title="Main Menu > Web Station > PHP Settings" width="800px" %}
 
 And then creating a VirtualHost (we use a port based in this example): 
 
-![php settings](/images/documentation/synology-3.png "Main Menu > Web Station > PHP Settings")
+{% include docs-image.html src="/images/documentation/synology-3.png" title="Main Menu > Web Station > Virtual Host" width="800px" %}
 
 Settings choosen in the example:
 
@@ -313,7 +313,7 @@ Read [this discussion](https://github.com/kevinpapst/kimai2/discussions/3468) fo
 If you are using a network share (or any Synology app) for downloading/editing/uploading the `.env` file, 
 make sure that `group` permissions for the `http` group are preserved.
 
-![file permissions](/images/documentation/synology-4.png "File station > Select file > Right clink > Properties")
+{% include docs-image.html src="/images/documentation/synology-4.png" title="File station > Select file > Right clink > Properties" width="1000px" %}
 
 You can change them using:
 

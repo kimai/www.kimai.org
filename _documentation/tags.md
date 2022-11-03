@@ -1,7 +1,6 @@
 ---
 title: Tags
 description: Using tags to group timesheet entries
-toc: true
 ---
 
 ## Tagging timesheet records

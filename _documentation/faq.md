@@ -1,7 +1,7 @@
 ---
 title: FAQ - Frequently asked questions
+navigation: FAQ
 description: Frequently asked questions for Kimai admins and users
-toc: true
 ---
 
 ## Recorded times are wrong
@@ -20,3 +20,4 @@ it just hides it from all views and listing.
 You can reactivate the account by going to the [User administration]({% link _documentation/users.md %}), open the 
 search and choose the value `Both` or `No` for the search option `Active`. The resulting list will include all 
 deactivated users which can be reactivated by editing them and checking the `Active` checkbox.
+ 

@@ -1,7 +1,6 @@
 ---
 title: Calendar
 description: Manage your timesheet records in a calendar view
-toc: true
 related:
   - timesheet
   - weekly-times
@@ -28,7 +27,7 @@ There are a couple of ways you can create a new timesheet record in the calendar
 
 You can remove every timesheet record by drag & drop onto the "Delete" button:
 
-![Picture](/images/documentation/calendar-delete.png)
+{% include docs-image.html src="/images/documentation/calendar-delete.png" title="Delete a record by dropping it on the trash bin" width="300px" %}
 
 ## Switching user
 

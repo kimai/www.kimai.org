@@ -1,6 +1,7 @@
 ---
 title: "Creating a release"
 redirect_from: /documentation/team/
+toc: false
 ---
 
 - Change version constants in [src/Constants.php]({{ site.kimai_v2_file}}/src/Constants.php)

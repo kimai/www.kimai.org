@@ -1,8 +1,9 @@
 ---
 title: Translations
-subtitle: Legacy documentation for Kimai 1
+description: Legacy documentation for Kimai 1
 permalink: /v1/translations.html
 url_v2: /documentation/translations.html
+slug: v1-translations
 layout: v1
 ---
 

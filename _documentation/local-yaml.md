@@ -1,7 +1,6 @@
 ---
 title: Configuration files
 description: Advanced configuration via filesystem 
-toc: true
 related:
   - configurations
   - cache

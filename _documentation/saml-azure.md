@@ -1,12 +1,6 @@
 ---
 title: Azure SAML
 description: How to use Azure AD SAML identity provider with Kimai
-toc: true
-related:
-  - saml
-  - saml-authentik
-  - saml-google
-  - saml-keycloak
 ---
 
 Go back to general [SAML configuration]({% link _documentation/saml.md %}) for Kimai. 
@@ -25,36 +19,36 @@ in which Azure AD can be used free of charge.
 Please check the following steps to set up an enterprise application using the SAML toolkit.
 This documentation is available in other languages as well [in the Microsoft documentation](https://docs.microsoft.com/en-us/azure/active-directory/saas-apps/saml-toolkit-tutorial#adding-azure-ad-saml-toolkit-from-the-gallery)
 
-1. Sign in to the Azure portal.
-2. On the left navigation pane, select the **Azure Active Directory** service.
-3. Navigate to **Enterprise Applications** and then select **All Applications**.
-4. To add new application, select **New application**.
-5. In the Add from the gallery section, type **Azure AD SAML Toolkit** in the search box.
-6. Select **Azure AD SAML Toolkit** from the results panel and then add the app.
-7. On the left navigation panel, select the **Azure Active Directory** service.
-8. Navigate to **App registrations** and then select **All Applications**.
-9. Please click on the newly created application **Azure AD SAML Toolkit** and then select **Branding** on the left navigation bar to change the name of the application to "Kimai".  
+- Sign in to the Azure portal. 
+- On the left navigation pane, select the **Azure Active Directory** service.
+- Navigate to **Enterprise Applications** and then select **All Applications**.
+- To add new application, select **New application**.
+- In the Add from the gallery section, type **Azure AD SAML Toolkit** in the search box.
+- Select **Azure AD SAML Toolkit** from the results panel and then add the app.
+- On the left navigation panel, select the **Azure Active Directory** service.
+- Navigate to **App registrations** and then select **All Applications**.
+- Please click on the newly created application **Azure AD SAML Toolkit** and then select **Branding** on the left navigation bar to change the name of the application to "Kimai".  
 **Note**: The name of the application has no technical effect, but could be displayed to users during login.
-10. Click on **Overview** on the left navigation panel. Now click on the value under **Managed application in local directory**:
-![Picture](/images/documentation/azure-saml-pic1.png)
-11. Now navigate to **Single sign-on** on the left navigation and choose **SAML** as your choice:
-![Picture](/images/documentation/azure-saml-pic2.png)
-12. Edit the **Basic SAML Configuration** at the top and add the required **URLs**:
-![Picture](/images/documentation/azure-saml-pic3.png)
+- Click on **Overview** on the left navigation panel. Now click on the value under **Managed application in local directory**: 
+{% include docs-image.html src="/images/documentation/azure-saml-pic1.png" title="Managed applications" width="900px" %}
+- Now navigate to **Single sign-on** on the left navigation and choose **SAML** as your choice: 
+{% include docs-image.html src="/images/documentation/azure-saml-pic2.png" title="Select SAML" width="900px" %}
+- Edit the **Basic SAML Configuration** at the top and add the required **URLs**:
+{% include docs-image.html src="/images/documentation/azure-saml-pic3.png" title="Basic SAML configuration" width="900px" %}
 
-     | Setting                                    | Value                                               |
-     |--------------------------------------------|-----------------------------------------------------|
-     | Identifier (Entity ID)                     | https://timetracking.example.com/auth/saml/metadata |
-     | Reply URL (Assertion Consumer Service URL) | https://timetracking.example.com/auth/saml/acs      |
-     | Sign on URL                                | https://timetracking.example.com/                   |
-     | Logout Url                                 | https://timetracking.example.com/auth/saml/logout   |
+| Setting                                    | Value                                               |
+|--------------------------------------------|-----------------------------------------------------|
+| Identifier (Entity ID)                     | https://timetracking.example.com/auth/saml/metadata |
+| Reply URL (Assertion Consumer Service URL) | https://timetracking.example.com/auth/saml/acs      |
+| Sign on URL                                | https://timetracking.example.com/                   |
+| Logout Url                                 | https://timetracking.example.com/auth/saml/logout   |
 
-13. Edit the **User Attributes & Claims** and ensure the following settings:
-![Picture](/images/documentation/azure-saml-pic4.png)
-14. Return to the **Single Sign-On** (visible in the left navigation panel) and download **Certificate (Base64)**:
-![Picture](/images/documentation/azure-saml-pic6.png) 
-15. Copy the three values of **Set up Kimai**, as we will need them to configure Kimai:
-![Picture](/images/documentation/azure-saml-pic7.png)
+- Edit the **User Attributes & Claims** and ensure the following settings:
+{% include docs-image.html src="/images/documentation/azure-saml-pic4.png" title="User Attributes & Claims" width="900px" %}
+- Return to the **Single Sign-On** (visible in the left navigation panel) and download **Certificate (Base64)**:
+{% include docs-image.html src="/images/documentation/azure-saml-pic6.png" title="Download Certificate" width="900px" %}
+- Copy the three values of **Set up Kimai**, as we will need them to configure Kimai:
+{% include docs-image.html src="/images/documentation/azure-saml-pic7.png" title="Copy Azure URLs" width="900px" %}
 
 ### Kimai Configuration
 

@@ -71,6 +71,7 @@ copy-files: Copier les fichiers
 clear-cache: Effacer le cache
 create-database: Créer une base de données
 install-assets: Installer les actifs
+ask-question: Ask a question
 photos:
     dashboard:
         title: Tableau de bord
@@ -104,36 +105,37 @@ menu:
             name: Actualités
         documentation:
             name: Documentation
-            brand: Kimai - Documentation
-        v1:
-            name: Kimai v1
-            brand: Kimai 1 (ancien)
     menu-documentation:
         manual:
-            name: Manuel utilisateur
-            description: Utiliser Kimai, l'interface utilisateur et toutes les fonctionnalités disponibles
+            name: Using Kimai
+            description: Kimai user manual, explaining the UI and all available screens
         tips:
-            name: Conseils et astuces
-            description: Articles expliquant les fonctionnalités de base de Kimai
+            name: Tips & Tricks
+            description: Articles that explain basic functionality in Kimai
         developer:
-            name: Développeur
-            description: Extension de Kimai, développement de plugins et traductions
+            name: Create plugins
+            description: Creating custom plugins, extending Kimai, using internal APIs
+        extend:
+            name: Technical background
+            description: Background information and technical correlations
+        api:
+            name: REST API
+            description: Use the JSON Api to fetch and create data in Kimai
         plugins:
-            name: Plugins
-            description: Documentation pour les plugins
+            name: Additional features
+            description: User documentation for features provided by (paid) plugins
+        auth:
+            name: Authenticator
+            description: Login to Kimai using external identity provider
         on-premise:
-            name: Auto-hébergé
-            description: Tout ce dont vous avez besoin pour héberger Kimai sur votre propre serveur
-    menu-v1:
-        admin:
-            name: Setup
-        manual:
-            name: User manual
-        developer:
-            name: Developer
-        apps:
-            name: Apps
-
+            name: DevOps
+            description: Manage and configure your Kimai installation
+        installation:
+            name: "Installation & Updates"
+            description: Everything you need to host your Kimai on your own server
+        v1:
+            name: Kimai v1
+            description: Legacy documentation for the deprecated Kimai 1
 feature:
     mobile-ready:
         name: "Adapté aux mobiles"

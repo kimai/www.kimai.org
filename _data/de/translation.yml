@@ -71,6 +71,7 @@ copy-files: Dateien kopieren
 clear-cache: Cache leeren
 create-database: Datenbank erstellen
 install-assets: Assets installieren
+ask-question: Frage stellen
 photos:
     dashboard:
         title: Dashboard
@@ -104,35 +105,37 @@ menu:
             name: Neuigkeiten
         documentation:
             name: Dokumentation
-            brand: Kimai - Dokumentation
-        v1:
-            name: Kimai v1
-            brand: Kimai 1 (veraltet)
     menu-documentation:
         manual:
-            name: Benutzerhandbuch
+            name: Kimai benutzen
             description: Erklärt den Aufbau der Oberfläche, die Funktionen und Benutzung von Kimai
         tips:
             name: Tipps & Tricks
             description: Einführungsartikel in Basis Funktionen von Kimai
         developer:
-            name: Entwickler
+            name: Plugins erstellen
             description: Erweitere Kimai, erstelle Plugins und Übersetzungen
+        extend:
+            name: Technik
+            description: Hintergrundinformationen und technische Zusammenhänge
+        api:
+            name: REST API
+            description: Daten via JSON abfragen und erstellen
         plugins:
             name: Erweiterungen
             description: Dokumentationen für Erweiterungen
+        auth:
+            name: Authenticator
+            description: Login to Kimai using external identity provider
         on-premise:
             name: Selbst gehostet
             description: Was man über den Betrieb von Kimai auf dem eigenen Server wissen muss
-    menu-v1:
-        admin:
-            name: Konfiguration
-        manual:
-            name: Benutzerhandbuch
-        developer:
-            name: Entwickler
-        apps:
-            name: Apps
+        installation:
+            name: Kimai einrichten
+            description: Installation und Updates von Kimai
+        v1:
+            name: Kimai v1
+            description: Legacy-Dokumentation für das veraltete Kimai 1
 feature:
     mobile-ready:
         name: "Mobil einsetzbar"

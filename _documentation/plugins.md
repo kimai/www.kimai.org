@@ -1,7 +1,7 @@
 ---
 title: Plugins
+navigation: Getting started
 description: How to create a Kimai plugin 
-toc: true
 redirect_from: /documentation/extensions/
 ---
 
@@ -135,9 +135,6 @@ A minimal `composer.json` could look like this:
     "homepage": "https://www.kimai.org/",
     "type": "kimai-plugin",
     "version": "0.1",
-    "require": {
-        "kimai/kimai2-composer": "*"
-    },
     "license": "MIT",
     "authors": [
         {
@@ -149,27 +146,26 @@ A minimal `composer.json` could look like this:
     "extra": {
         "kimai": {
             "require": "1.3",
-            "version": "0.1",
             "name": "YourBundle"
         }
     }
 }
 ```
 
-The `type` (kimai-plugin)is required for proper installation if composer is used, as well as the `require` package `kimai/kimai2-composer`.
-The `homepage` will be used for a backlink in the admin panel. 
+The `type` (kimai-plugin)is required for proper installation if composer is used.
+The `homepage` will be used for a backlink in the plugin admin panel. 
+The `version` will be shown in the plugin admin panel.
 
 The values in the `extra.kimai` section are used for:
 
 - `require` - the required (minimal) Kimai which is needed for this plugin  
-- `version` - the version of this plugin
 - `name` - the name of the plugin, used as target directory name of your bundle
 
 ## Data storage
 
 When your plugin wants to store files, don't use your plugin directory or concat the directory yourself, but 
 use the ServiceContainer parameter `%kimai.data_dir%`. This is currently pointing to `var/data/` and also protected 
-from the above mentioned update problems via [.gitignore]({{ site.kimai_v2_file }}/.gitignore). 
+from the above-mentioned update problems via [.gitignore]({{ site.kimai_v2_file }}/.gitignore). 
 
 As this could change in the future, always inject the data directory instead of finding a place yourself:   
 
@@ -184,7 +180,7 @@ There is another parameter called `%kimai.plugin_dir%`, which is pointing to the
 
 ## Example plugin
 
-There is an [official demo bundle](https://github.com/Keleo/DemoBundle) which has multiple features, you might be interested in.
+There is an [official demo bundle](https://github.com/Keleo/DemoBundle) which has many code examples for extension points.
 
 You can also have a look at the [CustomCSSBundle](https://github.com/keleo/CustomCSSBundle) which serves as bundle demo:
 - A bundle with an extension to load service definitions

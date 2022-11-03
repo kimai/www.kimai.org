@@ -1,8 +1,9 @@
 ---
 title: Developer introduction
-subtitle: Legacy documentation for Kimai 1
+description: Legacy documentation for Kimai 1
 permalink: /v1/developer.html
 url_v2: /documentation/developers.html
+slug: v1-developer
 layout: v1
 ---
 

@@ -1,19 +1,10 @@
 ---
-layout: default
+layout: page-empty
 ---
-{% include page-title.html title=page.title subtitle=page.subtitle options=page.options %}
-<div class="page-body">
-    <div class="container-xl">
-        <div class="card card-lg">
-            <div class="card-body">
-                <div class="markdown">
-                    {% if page.toc %}
-                        {% include toc.html html=page.content class="toc" h_max=3 %}
-                    {% endif %}
-
-                    {{ content }}
-                </div>
-            </div>
+<div class="card card-lg">
+    <div class="card-body">
+        <div class="markdown">
+            {{ content }}
         </div>
     </div>
 </div>

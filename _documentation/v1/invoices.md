@@ -1,8 +1,9 @@
 ---
 title: Invoices
-subtitle: Legacy documentation for Kimai 1
+description: Legacy documentation for Kimai 1
 permalink: /v1/invoices.html
 url_v2: /documentation/invoices.html
+slug: v1-invoices
 layout: v1
 ---
 

@@ -1,7 +1,6 @@
 ---
 title: Users
 description: User, roles and the authentication, registration and security system in Kimai
-toc: true
 canonical: /documentation/users.html
 related:
 - user-preferences

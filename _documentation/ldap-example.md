@@ -1,11 +1,10 @@
 ---
 title: LDAP structure Example for Kimai and OpenLDAP
-toc: true
-related:
-  - ldap
 ---
 
-The data below was tested with Kimai 1.18 and the (not yet released) version 2.0.
+This is an example LDAP data structure, which was used for testing the Kimai LDAP integration with Kimai 1.18 and 2.0.
+
+It demonstrates a possible setup and the matching [LDAP connection configuration]({% link _documentation/ldap.md %}). 
 
 ## Creating the structure files
 

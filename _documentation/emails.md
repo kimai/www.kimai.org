@@ -1,7 +1,6 @@
 ---
 title: Emails
 description: Configure email transport for Kimai
-toc: true
 redirect_from: /documentation/email/
 ---
 

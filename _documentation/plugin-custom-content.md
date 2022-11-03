@@ -1,7 +1,6 @@
 ---
 title: Custom content
 description: Add custom content to your Kimai installation
-toc: true
 ---
 
 {% include plugins/custom-content.md %}  

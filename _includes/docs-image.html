@@ -1,0 +1,6 @@
+{% if include.src %}
+<figure class="figure mb-3"{% if include.width %} style="max-width: {{ include.width }}"{% endif %}>
+    <img src="{{ include.src }}"{% if include.alt %} alt="{{ include.alt }}"{% endif %} class="figure-img img-fluid rounded">
+    <figcaption class="figure-caption">{{ include.title }}</figcaption>
+</figure>
+{% endif %}

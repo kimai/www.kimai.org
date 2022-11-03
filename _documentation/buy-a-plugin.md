@@ -3,7 +3,7 @@ title: Buy a Kimai plugin
 description: A brief explanation of the payment process and license
 ---
 
-Thanks for your interest in a payed Kimai plugin.
+Thanks for your interest in a paid Kimai plugin.
 
 ## Order and Payment
 
@@ -17,7 +17,7 @@ You get access either through Gumroad directly or in case of a bank-transfer pay
 
 {% include contents/store-private-repo-support.md %}
 
-### License terms for payed plugins 
+## License terms for paid plugins 
 
 1. The plugin license grants you, the purchaser, an non-exclusive, worldwide license to make use of the digital work (Item) you have purchased. Read the rest of this license for the details that apply to your use of the Item.
 
@@ -43,7 +43,7 @@ You get access either through Gumroad directly or in case of a bank-transfer pay
 _Example of the "final product" application: for each Kimai instance on a subscription base, this might be either a single paying customer or a company with multiple user accounts (contact us in that case)._
 
 10. Although you can modify the Item and therefore delete unwanted components before creating your single End Product, you can’t extract and use a single component of an Item on a stand-alone basis.
-_For example: You license a plugin containing icons. You can delete unwanted icons from the plugin. But you can't extract an icon to use outside of the plugin._
+_For example: You license a plugin containing icons. You can delete unwanted icons from the plugin. But you can't extract an icon to use outside the plugin._
 
 11. You must not permit an end user of the End Product to extract the Item and use it separately from the End Product.
 

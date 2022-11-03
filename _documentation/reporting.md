@@ -1,7 +1,6 @@
 ---
 title: Reporting
 description: Reporting feature of Kimai
-toc: true
 canonical: /documentation/reporting.html
 ---
 

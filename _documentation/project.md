@@ -1,7 +1,6 @@
 ---
 title: Projects
 description: Projects in Kimai
-toc: true
 redirect_from:
 - /documentation/manual/projects.html
 - /documentation/manual/administration/projects.html

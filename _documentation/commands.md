@@ -1,7 +1,6 @@
 ---
 title: Commands
 description: Command line tool
-toc: true
 ---
 
 Some functionality of Kimai can only be triggered via bash / command line.
