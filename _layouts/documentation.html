@@ -42,10 +42,12 @@ layout: base
                 {% else %}
                     {% comment %} if menu is nil then this is the documentation start page OR a page that is not linked in the navigation {% endcomment %}
                     {% for group in site.data.menu-documentation %}
-                        {% assign menu = group[1] %}
-                        {% if menu.skip == nil %}
-                            {% include docs-navi.html navigation=menu %}
-                        {% endif %}
+                        {% assign docs_page = site.documentation | where: "slug", group[1].slug | first %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ docs_page.url }}">
+                                <span class="nav-link-title">{{ docs_page.title }}</span>
+                            </a>
+                        </li>
                     {% endfor %}
                 {% endif %}
             </ul>
