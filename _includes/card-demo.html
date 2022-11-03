@@ -1,4 +1,9 @@
 <div class="card">
+    {% if include.ribbon %}
+    <div class="ribbon ribbon-top{% if include.color %} bg-{{ include.color }}{% endif %}">
+        <i class="{{ include.ribbon | default: 'fas fa-star' }} fa-2x"></i>
+    </div>
+    {% endif %}
 	<div class="card-body d-flex flex-column">
 		<h4 class="card-title">
 			{{ include.title }}
@@ -10,7 +15,7 @@
 		<p class="card-text">
 			{{ include.description|raw }}
 		</p>
-		<a href="{{ include.url }}" target="_blank" class="btn btn-primary mt-auto">{{ site.data[page.lang].translation.access-demo }}</a>
+		<a href="{{ include.url }}" target="_blank" class="btn btn-primary {% if include.color %}bg-{{ include.color }}{% endif %} mt-auto">{{ site.data[page.lang].translation.access-demo }}</a>
 	</div>
 </div>
 <script>
