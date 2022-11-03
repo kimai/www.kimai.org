@@ -1,8 +1,9 @@
 ---
 title: Installation
-subtitle: Legacy documentation for Kimai 1
+description: Legacy documentation for the deprecated Kimai 1
 permalink: /v1/installation.html
 url_v2: /documentation/installation.html
+slug: v1-installation
 layout: v1
 ---
 
@@ -31,14 +32,14 @@ Kimai requires a web server with a PHP environment and a database. The minimum
 system requirements for running Kimai are:
 
 * Webserver capable of running PHP applications (Apache, Nginx, IIS or other)
-* PHP 5.5 or above (not tested with PHP 7.2 yet)
-* MySQL 5.5 up to 5.7 or compatible (Kimai supports table prefixes)
+* PHP between 5.5 and 7.3
+* Required PHP extensions: `mysqli`, `iconv` and `xml`
+- MySQL 4.3 or higher
 * more than 100 MB of disk space
 
 The following requirements must be met on the server installation:
 
 * FTP or shell access to set the correct filesystem permissions.
-
 
 ### MySQL environment
 
@@ -77,8 +78,7 @@ check if these are available.
 
 ### Recommended setup
 
-This is a basic recommended setup for best performance and increased
-functionality:
+This is a basic setup for best performance and increased functionality:
 
 * Apache with mod_expires enabled
 * MySQL 5.5 or newer

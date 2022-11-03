@@ -1,8 +1,9 @@
 ---
 title: Invoice templates
-subtitle: Legacy documentation for Kimai 1
+description: Legacy documentation for Kimai 1
 permalink: /v1/invoice-templates.html
 url_v2: /documentation/invoices.html
+slug: v1-invoice-templates
 layout: v1
 ---
 

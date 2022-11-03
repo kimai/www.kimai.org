@@ -1,8 +1,9 @@
 ---
 title: Kimai Remote Api
-subtitle: Legacy documentation for Kimai 1
+description: Legacy documentation for Kimai 1
 permalink: /v1/api.html
 url_v2: /documentation/rest-api.html
+slug: v1-api
 layout: v1
 ---
 

@@ -1,8 +1,9 @@
 ---
 title: Apps for Kimai v1
-subtitle: Legacy applications for Kimai 1
+description: Legacy applications for Kimai 1
 permalink: /v1/apps.html
 url_v2: /store/
+slug: v1-apps
 layout: v1
 ---
 

@@ -1,8 +1,9 @@
 ---
 title: Emails
-subtitle: Legacy documentation for Kimai 1
+description: Legacy documentation for Kimai 1
 permalink: /v1/email.html
 url_v2: /documentation/emails.html
+slug: v1-email
 layout: v1
 ---
 

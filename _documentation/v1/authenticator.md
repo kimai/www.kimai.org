@@ -1,8 +1,9 @@
 ---
 title: Authenticator
-subtitle: Legacy documentation for Kimai 1
+description: Legacy documentation for Kimai 1
 permalink: /v1/authenticator.html
 url_v2: /documentation/ldap.html
+slug: v1-authenticator
 layout: v1
 ---
 
