@@ -181,7 +181,6 @@ cd /volume1/web/kimai2/
 sudo chown -R :http .
 sudo chmod -R g+r .
 sudo chmod -R g+rw var/
-sudo chmod -R g+rw public/avatars/
 ```
 
 ## Updating Kimai

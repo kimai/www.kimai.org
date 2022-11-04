@@ -63,5 +63,4 @@ bin/console kimai:reload --env=prod
 chgrp -R www-data .
 chmod -R g+r .
 chmod -R 775 var/
-chmod -R g+rw public/avatars/
 ```

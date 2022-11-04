@@ -183,7 +183,6 @@ webserver directly.
     chown -R psacln:psaserv kimai2
     chmod -R g+r kimai2
     chmod -R g+rw kimai2/var/
-    chmod -R g+rw kimai2/public/avatars/
     ```
 - Switch user back to your normal user account (must not be root), e.g. 'user': `su -p user`
 - Reload caches:
