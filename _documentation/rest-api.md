@@ -41,7 +41,13 @@ pm.request.headers.add({key: 'X-AUTH-USER', value: 'susan_super'});
 pm.request.headers.add({key: 'X-AUTH-TOKEN', value: 'api_kitten'});
 ```
 
-## DateTime formats (ISO 8601 and HTML5)
+## Data types
+
+### Default values
+
+The API does not promise any BC on any default value. This is especially true for optional booleans (see below). 
+
+### DateTime formats (ISO 8601 and HTML5)
 
 TL;DR
 - the API returns ISO 8601
@@ -62,3 +68,9 @@ about the "local date and time" pattern.
 Be aware: Kimai treats the given datetime as local time and adds the configured users timezone without changing the given time.
 
 Read [this comment]({{ site.kimai_v2_repo }}/issues/701#issuecomment-485564359) to understand the backgrounds about that decision.
+
+### Boolean
+
+All boolean fields in `POST` and `PATCH` requests are optional, defaulting to `false` if unset.
+
+Therefor you should declare all booleans, no matter if you want them to be `true` or `false`.
