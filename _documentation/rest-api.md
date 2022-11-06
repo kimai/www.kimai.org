@@ -74,3 +74,6 @@ Read [this comment]({{ site.kimai_v2_repo }}/issues/701#issuecomment-485564359) 
 All boolean fields in `POST` and `PATCH` requests are optional, defaulting to `false` if unset.
 
 Therefor you should declare all booleans, no matter if you want them to be `true` or `false`.
+
+The field will be mapped to `false` if it is either `not provided` or `false`.
+Providing any other value, including `null`, will turn the value to `true`. 
