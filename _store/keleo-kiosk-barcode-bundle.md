@@ -5,6 +5,7 @@ featured: "Attendance time-tracking in an environment, where the user has no acc
 slug: kiosk-barcode-bundle
 type: featured
 tags: [plugin]
+redirect_from: /store/keleo-kiosk-barcode-bundle.html
 screenshots:
   - 
     src: "/images/marketplace/kiosk-listing.png"
