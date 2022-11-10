@@ -18,7 +18,7 @@ Until this guide will be updated, there is [a PDF installation documentation in 
 
 You need to prefix all PHP related commands with `php73`, for example:
 ```bash
-php73 composer.phar install --no-dev --optimize-autoloader
+php73 composer.phar install --optimize-autoloader
 ```
 
 Or run a console command:
@@ -41,7 +41,7 @@ This example uses the path `/volume1/web/kimai2`
 
 Then [download and install composer](https://getcomposer.org/download/). Now install all dependencies:
 ```bash
-php73 composer.phar install --no-dev --optimize-autoloader
+php73 composer.phar install --optimize-autoloader
 ```
 
 ### Create a database
@@ -191,7 +191,7 @@ Please cross-check the normal [upgrade guide]({% link _documentation/updates.md 
 cd /volume1/web/kimai2/
 git fetch --tags
 git checkout {{ site.kimai_v2_version }}
-php73 composer install --no-dev --optimize-autoloader -n
+php73 composer install --optimize-autoloader -n
 php73 bin/console kimai:update
 chown -R :http .
 ```
@@ -212,7 +212,7 @@ cd kimai2-{{ site.kimai_v2_version }}/
 Then [download and install composer](https://getcomposer.org/download/), followed by the installation:
 
 ```bash
-php74 composer.phar install --no-dev --optimize-autoloader
+php74 composer.phar install --optimize-autoloader
 php74 bin/console kimai:update
 ```
 

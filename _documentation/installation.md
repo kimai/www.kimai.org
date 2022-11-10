@@ -26,7 +26,7 @@ cd kimai2/
 
 Now install all dependencies:
 ```bash
-composer install --no-dev --optimize-autoloader -n
+composer install --optimize-autoloader -n
 ```
 
 Configure the database connection and server version in the `.env` file:
@@ -112,7 +112,7 @@ If you can't find the correct version, ask your hoster! Or [let us help you]({% 
 - composer has to be installed manually
 - The default PHP version is often too low (PHP 5.x) - you can check that with `php -v`
     - If it is lower than 7.3, you have to prefix all commands with the proper version, eg. `/usr/bin/php7.3-cli` (even composer)
-    - Example composer: `/usr/bin/php7.3-cli composer.phar install --no-dev --optimize-autoloader`
+    - Example composer: `/usr/bin/php7.3-cli composer.phar install --optimize-autoloader`
     - Example installation: `/usr/bin/php7.3-cli bin/console kimai:install -n`
 
 ### Domainfactory
@@ -121,14 +121,14 @@ If you can't find the correct version, ask your hoster! Or [let us help you]({% 
 - composer has to be installed manually: `curl -sS https://getcomposer.org/installer | php7.3.5-cli`
 - The default PHP version is often too low (PHP 5.x or even PHP 4.x) - you can check that with `php -v`
     - If it is lower than 7.3, you have to prefix all commands with the proper version, eg. `php7.3.5-cli` (even composer)
-    - Example composer: `php7.3.5-cli composer.phar install --no-dev --optimize-autoloader`
+    - Example composer: `php7.3.5-cli composer.phar install --optimize-autoloader`
     - Example installation: `php7.3.5-cli bin/console kimai:install -n`
 
 ### All-Inkl
 
 All-Inkl has several CLI versions of PHP available via `php73`, `php74` and so on.
 Composer is running at `/usr/bin/composer`, so you execute it like that:
-- `php74 /usr/bin/composer install --no-dev --optimize-autoloader -n`
+- `php74 /usr/bin/composer install --optimize-autoloader -n`
 - `php74 bin/console kimai:install -n`
 
 ### Strato
@@ -143,7 +143,7 @@ For example, if you want to use PHP 7.3 use always the absolute path when runnin
 How to install Kimai:
 - Install composer: `curl -sS https://getcomposer.org/installer | /opt/RZphp73/bin/php-cli`
 - Clone Kimai as stated above and then `cd kimai2`
-- Install composer packages with `/opt/RZphp73/bin/php-cli ../composer.phar install --no-dev --optimize-autoloader`
+- Install composer packages with `/opt/RZphp73/bin/php-cli ../composer.phar install --optimize-autoloader`
 - Configure your `.env` file, eg. with `nano .env`
 - Install Kimai database `/opt/RZphp73/bin/php-cli bin/console kimai:install -n`
 
@@ -174,7 +174,7 @@ webserver directly.
 - Install composer: `curl -sS https://getcomposer.org/installer | /opt/plesk/php/7.3/bin/php`
 - Clone Kimai: `git clone -b {{ site.kimai_v2_version }} --depth 1 https://github.com/kevinpapst/kimai2.git`
 - Enter Kimai directory: `cd kimai2`
-- Install composer packages: `/opt/plesk/php/7.3/bin/php ../composer.phar install --no-dev --optimize-autoloader`
+- Install composer packages: `/opt/plesk/php/7.3/bin/php ../composer.phar install --optimize-autoloader`
 - Configure `.env` file to have correct database credentials
 - Install Kimai database: `/opt/plesk/php/7.3/bin/php bin/console kimai:install -n`
 - Change ownership of `kimai2` folder:
@@ -200,7 +200,7 @@ webserver directly.
 
 - Clone Kimai in the root folder as stated above and then `cd kimai2`
 - Install composer: `curl -sS https://getcomposer.org/installer | /usr/bin/php`
-- Install dependencies: `php composer.phar install --no-dev --optimize-autoloader`
+- Install dependencies: `php composer.phar install --optimize-autoloader`
 - configure your .env file, eg. `nano .env`
 - install kimai: `php bin/console kimai:install -n`
 - reload config: `php bin/console kimai:reload`

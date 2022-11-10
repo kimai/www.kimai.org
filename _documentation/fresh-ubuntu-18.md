@@ -149,7 +149,7 @@ cd kimai2/
 chown -R :www-data .
 chmod -R g+r .
 chmod -R g+rw var/
-composer install --no-dev --optimize-autoloader -n
+composer install --optimize-autoloader -n
 vim .env
 ```
 

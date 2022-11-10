@@ -24,7 +24,7 @@ git clone {{ site.kimai_v1_repo }}.git kimai-master
 cd kimai-master
 git tag -a -f -m 'Tagged version x.x.x' x.x.x
 git push origin x.x.x
-composer install --no-dev
+composer install
 ant build
 ```
 

@@ -154,7 +154,7 @@ Clone Kimai and set proper file permissions:
 cd /var/www/
 git clone -b {{ site.kimai_v2_version }} --depth 1 https://github.com/kevinpapst/kimai2.git
 cd kimai2/
-composer install --no-dev --optimize-autoloader -n
+composer install --optimize-autoloader -n
 vim .env
 ```
 
