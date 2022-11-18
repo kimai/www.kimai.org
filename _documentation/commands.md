@@ -54,6 +54,12 @@ The invoice template that will be used for every invoice is `Freelancer (PDF)`:
 bin/console kimai:invoice:create --user=susan_super --timezone=UTC --by-project --template="Freelancer (PDF)" --start=2020-01-02 --end=2020-01-31
 ```
 
+Hint: 
+You can utilize the bash command `date` to calculate dynamic values, e.g. the entire current year:
+```bash
+--start=$(date --date "$(date +%Y-01-01) -30 day" +"%Y-%m-%d") --end=$(date --date "$(date +%Y-%m-01) -1 day" +"%Y-%m-%d")
+```
+
 ## Create exports with cronjobs
 
 Available since 1.28.0
