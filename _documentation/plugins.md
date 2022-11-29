@@ -1,5 +1,5 @@
 ---
-title: Plugins
+title: Create plugins
 navigation: Getting started
 description: How to create a Kimai plugin 
 redirect_from: /documentation/extensions/
@@ -12,20 +12,9 @@ Within the external communication it is called **plugin** instead of **bundle**,
 Kimai plugins are stored in `var/plugins/`, for example `var/plugins/YourBundle/`.
 The contents in `var/plugins/*` are listed in the [.gitignore]({{ site.kimai_v2_file }}/.gitignore) file to prevent update problems.
 
-## Plugin installation
+## Plugin management (install, uninstall & deactivate) 
 
-Installation should be done with `git clone` or with a copy task.
-
-Make sure that you copy it into the appropriate subdirectory in `var/plugins/`. 
-For the plugin `CustomCSSBundle` this would be `var/plugins/CustomCSSBundle/`.
-
-After the plugin was installed you need to clear the cache:
-{% include cache-refresh.html %}
-
-Depending on your setup, the cache flush will create directories which cannot be written by your webserver:
-{% include file-permissions.html %}
-
-{% include alert.html icon="fas fa-exclamation" type="warning" alert="Additional installation steps might be required (eg. database creation). Please read the specific plugin docs!" %}
+Read the chapter [Plugin management]({% link _documentation/plugins.md %}).
 
 ## Kimai plugins vs. pure Symfony bundles
 
