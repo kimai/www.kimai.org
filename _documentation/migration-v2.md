@@ -19,14 +19,12 @@ What needs to be done?
 
 Required code adjustments:
 
-- Doctrine Entities: Attributes instead of Annotations (see the rector migration below)
-- API: upgraded to [Open API specification v3](https://blog.readme.com/an-example-filled-guide-to-swagger-3-2/)
-- API: config/timesheet removed `activeEntriesSoftLimit`
-- API: removed route `config/i18n`
-- API: Team removed `teamlead` and `users` - access `members` instead
-- API: Project start/end/order dates are now plain dates without time (start and order are set to 00:00:00 and end is set to 23:59:59, filter expect 2022-02-20 instead of 2022-02-20T00:00:00) 
 - All deprecated code was removed
-- User preference constructor has mandatory parameter
+- Code base uses a much stricter syntax now and thus introduced a lof of tiny and sometimes larger BC breaks  
+- Switched from annotations to attributes everywhere (controller/entities/api), plugins need to be made compatible
+- Doctrine Entities: Attributes instead of Annotations (see the rector migration below)
+- New frontend needs code adjustments (compare with demo plugin and core templates)
+- API: upgraded to [Open API specification v3](https://blog.readme.com/an-example-filled-guide-to-swagger-3-2/) - require use of new attributes/annotations
 - User preference names cannot contain dots `.` anymore (you might need migrations to adapt existing ones!)
 - Removed Twig filters. You have to replace them in your custom export/invoice templates:
     - `date_full` => `date_time`
@@ -34,8 +32,18 @@ Required code adjustments:
     - `currency` => `currency_name`
     - `country` => `country_name`
     - `language` => `language_name`
-- Removed several fields from `/api/version` result
-- Switched from annotations to attributes for Doctrine entities, plugins need to be made compatible
+- Switch from `createForm()` to `createFormForGetRequest()` for toolbar forms
+
+## API changes 
+
+- API: config/timesheet removed `activeEntriesSoftLimit`
+- API: removed route `config/i18n`
+- API: removed several fields from `/api/version`
+- API: Team removed `teamlead` and `users` - access `members` instead
+- API: GET `/timesheets/` collection - replaced comma separated IDs with arrays[] (customers, projects, activities, tags), throws Exception on unknown IDs
+- API: GET `/activities/` collection - replaced comma separated IDs with arrays[] (projects), throws Exception on unknown IDs
+- API: GET `/projects/` collection - replaced comma separated IDs with arrays[] (customers), throws Exception on unknown IDs
+- API: Project start/end/order dates are now plain dates without time (start and order are set to 00:00:00 and end is set to 23:59:59, filter expect 2022-02-20 instead of 2022-02-20T00:00:00)
 
 ## Manual changes
 
@@ -55,6 +63,13 @@ which needs to be formatted as integer instead of a string (like `1.20.2` in 1.x
         }
     },
 ```
+
+## Adjust templates
+
+Change includes, mostly from `{% raw %}{% embed '@AdminLTE/Widgets/box-widget.html.twig' %}{% endraw %}` to `{% raw %}{% embed '@theme/embeds/card.html.twig' %}{% endraw %}`.
+
+Replaces css classes
+- `no-padding` to `p-0`
 
 ## Use Rector to migrate your code 
 
