@@ -6,7 +6,6 @@ slug: expenses-bundle
 type: featured
 tags: [plugin]
 redirect_from:
-  - /store/expenses-bundle.html
   - /documentation/expenses/
   - /v1/expenses.html
 screenshots:
