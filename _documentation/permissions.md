@@ -6,13 +6,18 @@ description: Configure the permission system which is based on user roles
 Kimai provides a flexible permission system, which is based on **user roles** and **permissions**, 
 which can be turned on and off for these roles. You need the `role_permissions` permission to access the `Roles` screen.
 
-This permission system limits access to the functionality of Kimai. If you are looking for a way to limit access to  
-timesheets, activities, projects and customers read about [Team permissions]({% link _documentation/teams.md %}). 
+This permission system limits access to the functionality of Kimai. 
+
+{% capture teamLink %}
+If you are looking for a way to limit access to timesheets, activities, projects and customers read about [Team permissions]({% link _documentation/teams.md %}).
+{% endcapture %}
+{% assign teamLink = teamLink|markdownify %}
+{% include alert.html type="info" alert=teamLink %}
 
 ## Roles
 
 Access to functions are handled by the [permission system]({% link _documentation/permissions.md %}), which is configurable through user roles.
-There are four pre-defined roles in Kimai, which have a pre-made set of ACLs/permissions.
+There are four pre-defined roles in Kimai, which have a customizable set of ACLs/permissions.
 
 | Role name      | Description                                                                                                                                               |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -39,6 +44,8 @@ This is required if you want to test for role permissions programmatically.
 
 By turning permissions `on` and `off` for specific roles, you widen or limit the access to certain features.
 Clicking the `Yes` and `No` labels in the table toggles the selected permission (row title) for the respective role (column title).
+
+If a user has multiple roles, then access is granted as soon as one of these roles own the permission.
 
 ### Existing permissions
 
