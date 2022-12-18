@@ -55,7 +55,7 @@ TL;DR
 
 The API returns ISO 8601 formatted datetime strings in the users local time, including the timezone offset. 
 
-When `POST`ing or `PATCH`ing timesheet records, you MUST use the HTML5 format (see [RFC 3336](https://tools.ietf.org/html/rfc3339) as well).
+When `POST`ing or `PATCH`ing timesheet records, you MUST use the HTML5 format (see [RFC 3339](https://tools.ietf.org/html/rfc3339) as well).
 Even if the API might allow different formats, only this one is guaranteed to work in the future.
 It is also the only format that works correct, adding a timezone might and will result in unexpected and wrong records. 
 
