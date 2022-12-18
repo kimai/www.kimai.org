@@ -62,11 +62,19 @@ symfony.lock
 Please commit your changes or stash them before you switch branches.
 ```
 
-It means you have changes in at least one of the files in your installation.
-This can happen by installation of the additional LDAP packages, or a changed configuration file (which was not meant to be changed). 
+or
+
+```
+config/routes/annotations.yaml: needs merge
+error: you need to resolve your current index first
+```
+
+This means you have changes in at least one of the files in your installation.
+This can happen by installing additional packages (e.g. for LDAP), or simply when you changed a configuration file (which was not meant to be changed, read the docs how to apply config changes in a safe manner). 
 
 These changes need to be reverted before the update can be executed. 
 One possible solution is to use `git stash`, which will store your changes in a temporary location.
 If that fails for some reason, the other (rather extreme) option is to run `git reset --hard`, 
 which will wipe all local changes. 
 
+Please read GIT docs on how to fix that, it is NOT related to Kimai.
