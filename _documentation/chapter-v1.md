@@ -1,5 +1,5 @@
 ---
-title: Kimai v1 (deprecated)
+title: Kimai v1 (legacy)
 description: "Oldie but goldie - tracking your times since 2006"
 permalink: /v1/
 layout: v1
