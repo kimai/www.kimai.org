@@ -11,7 +11,7 @@ The release 1.21 was published in July 2022.
 
 ## Highlights
 
-New feature highlights from the release [1.21.0](https://github.com/kevinpapst/kimai2/releases/tag/1.21.0) are:
+New feature highlights from the release [1.21.0]({{ site.kimai_v2_repo }}/releases/tag/1.21.0) are:
 
 - Budget graph in project details
 - Re-style overlapping border
@@ -33,7 +33,7 @@ Thanks for being part of the Kimai community ❤️
 
 This changelist contains all changes between 1.20.4 and 1.21.
 
-You can find [all commits here](https://github.com/kevinpapst/kimai2/compare/1.20.4...1.21).
+You can find [all commits here]({{ site.kimai_v2_repo }}/compare/1.20.4...1.21).
 
 
 ## Enhancements

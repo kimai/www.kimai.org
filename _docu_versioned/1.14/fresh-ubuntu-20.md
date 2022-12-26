@@ -142,8 +142,8 @@ Clone Kimai and set proper file permissions:
 
 ```bash
 cd /var/www/
-git clone -b {{ site.kimai_v2_version }} --depth 1 https://github.com/kevinpapst/kimai2.git
-cd kimai2/
+git clone -b {{ site.kimai_v2_version }} --depth 1 {{ site.kimai_v2_repo }}.git
+cd kimai/
 composer install --no-dev --optimize-autoloader -n
 vim .env
 ```
@@ -185,7 +185,7 @@ server {
     listen 80 default_server;
     listen [::]:80 default_server;
     server_name www.kimai.local;
-    root /var/www/kimai2/public;
+    root /var/www/kimai/public;
     index index.php;
 
     access_log off;

@@ -20,8 +20,8 @@ You need to install Git and [Composer](https://getcomposer.org/doc/00-intro.md) 
 First clone this repo ({{ site.kimai_v2_version }} is the [latest stable release]({{ site.kimai_v2_repo }}/releases)):
 
 ```bash
-git clone -b {{ site.kimai_v2_version }} --depth 1 https://github.com/kevinpapst/kimai2.git
-cd kimai2/
+git clone -b {{ site.kimai_v2_version }} --depth 1 {{ site.kimai_v2_repo }}.git
+cd kimai/
 ```
 
 Now install all dependencies:
@@ -142,7 +142,7 @@ For example, if you want to use PHP 7.3 use always the absolute path when runnin
 
 How to install Kimai:
 - Install composer: `curl -sS https://getcomposer.org/installer | /opt/RZphp73/bin/php-cli`
-- Clone Kimai as stated above and then `cd kimai2`
+- Clone Kimai as stated above and then `cd kimai`
 - Install composer packages with `/opt/RZphp73/bin/php-cli ../composer.phar install --optimize-autoloader`
 - Configure your `.env` file, eg. with `nano .env`
 - Install Kimai database `/opt/RZphp73/bin/php-cli bin/console kimai:install -n`
@@ -172,41 +172,41 @@ webserver directly.
   cd /var/www/vhosts/kimai.my-domain.com
   ```
 - Install composer: `curl -sS https://getcomposer.org/installer | /opt/plesk/php/7.3/bin/php`
-- Clone Kimai: `git clone -b {{ site.kimai_v2_version }} --depth 1 https://github.com/kevinpapst/kimai2.git`
-- Enter Kimai directory: `cd kimai2`
+- Clone Kimai: `git clone -b {{ site.kimai_v2_version }} --depth 1 {{ site.kimai_v2_repo }}.git`
+- Enter Kimai directory: `cd kimai`
 - Install composer packages: `/opt/plesk/php/7.3/bin/php ../composer.phar install --optimize-autoloader`
 - Configure `.env` file to have correct database credentials
 - Install Kimai database: `/opt/plesk/php/7.3/bin/php bin/console kimai:install -n`
-- Change ownership of `kimai2` folder:
+- Change ownership of `kimai` folder:
     ```
     cd ..
-    chown -R psacln:psaserv kimai2
-    chmod -R g+r kimai2
-    chmod -R g+rw kimai2/var/
+    chown -R psacln:psaserv kimai
+    chmod -R g+r kimai
+    chmod -R g+rw kimai/var/
     ```
 - Switch user back to your normal user account (must not be root), e.g. 'user': `su -p user`
 - Reload caches:
     ```
-    cd kimai2
+    cd kimai
     bin/console kimai:reload --env=prod
     ```
 - Create first user: `bin/console kimai:user:create username admin@example.com ROLE_SUPER_ADMIN`
 - Adjust [Apache configuration](https://www.kimai.org/documentation/webserver-configuration.html)
   to point to the "public" subfolder of the Kimai installation, i.e. set the path to
-  `/var/www/vhosts/my-domain.com/kimai2/public`. Also ensure that `ServerName`
+  `/var/www/vhosts/my-domain.com/kimai/public`. Also ensure that `ServerName`
   and `ServerAlias` are set to `kimai.my-domain.com` and `www.kimai.my-domain.com`.
 
 ### Netcup
 
-- Clone Kimai in the root folder as stated above and then `cd kimai2`
+- Clone Kimai in the root folder as stated above and then `cd kimai`
 - Install composer: `curl -sS https://getcomposer.org/installer | /usr/bin/php`
 - Install dependencies: `php composer.phar install --optimize-autoloader`
 - configure your .env file, eg. `nano .env`
 - install kimai: `php bin/console kimai:install -n`
 - reload config: `php bin/console kimai:reload`
-- Configure Netcup (using the customer controlpanel) to use "/kimai2/public" as root folder for the domain (or subdomain) of your choice and add SSL (Letsencrypt) for this domain
+- Configure Netcup (using the customer controlpanel) to use "/kimai/public" as root folder for the domain (or subdomain) of your choice and add SSL (Letsencrypt) for this domain
 
-See issue [#1620](https://github.com/kevinpapst/kimai2/issues/1620).
+See issue [#1620]({{ site.kimai_v2_repo }}/issues/1620).
 
 ## FTP installation
 

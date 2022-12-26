@@ -18,7 +18,7 @@ Shared hosts aren't known for their good performance, especially running modern 
 
 The second factor is your PHP configuration, which can lead to massively decreased performance when not tuned for production usage.
 
-Please [read this issue](https://github.com/kevinpapst/kimai2/issues/1584#issuecomment-604048869).
+Please [read this issue]({{ site.kimai_v2_repo }}/issues/1584#issuecomment-604048869).
 
 ## Changed configs/templates do not load
 
@@ -29,18 +29,3 @@ Therefor, if you are running Kimai in `production`, you have to [clear the cache
 
 [Sorry, no chance.]({% link _documentation/ftp.md %})
 You either have to find a hoster that offers SSH access, or you use the [SaaS version of Kimai](https://www.kimai.cloud).
-
-## Dotenv::populate() must be an instance of Symfony\\Component\\Dotenv\\void
-
-If you encounter an error like this:
-
-```
-PHP Fatal error:  Uncaught TypeError: Return value of Symfony\\Component\\Dotenv\\Dotenv::populate() must be an instance of Symfony\\Component\\Dotenv\\void, none returned in /var/www/kimai2/vendor/symfony/dotenv/Dotenv.php:95
-Stack trace:
-#0 /var/www/kimai2/vendor/symfony/dotenv/Dotenv.php(57): Symfony\\Component\\Dotenv\\Dotenv->populate(Array)
-#1 /var/www//kimai2/public/index.php(15): Symfony\\Component\\Dotenv\\Dotenv->load('/var/www/html/k...')
-#2 {main}\n  thrown in /var/www/kimai2/vendor/symfony/dotenv/Dotenv.php on line 95
-```
-
-you are running PHP 7.0. Probably you were able to install Kimai, because your PHP-CLI uses a different PHP version than your webserver.
-Upgrade PHP or change the used PHP version in your webserver, and the error will be gone.  

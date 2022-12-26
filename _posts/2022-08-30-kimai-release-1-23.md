@@ -11,7 +11,7 @@ The release 1.23 was published in August 2022.
 
 ## Highlights
 
-New feature highlights from the release [1.23.0](https://github.com/kevinpapst/kimai2/releases/tag/1.23.0) and [1.23.1](https://github.com/kevinpapst/kimai2/releases/tag/1.23.1) are:
+New feature highlights from the release [1.23.0]({{ site.kimai_v2_repo }}/releases/tag/1.23.0) and [1.23.1]({{ site.kimai_v2_repo }}/releases/tag/1.23.1) are:
 
 - Order "weekly hours" by project name
 - Fixed multiple budget validation checks
@@ -33,7 +33,7 @@ Thanks for being part of the Kimai community ❤️
 
 This changelist contains all changes between 1.20.4 and 1.21.
 
-You can find [all commits here](https://github.com/kevinpapst/kimai2/compare/1.20.4...1.21).
+You can find [all commits here]({{ site.kimai_v2_repo }}/compare/1.20.4...1.21).
 
 ### Implemented enhancements
 

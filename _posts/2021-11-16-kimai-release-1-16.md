@@ -45,55 +45,55 @@ Thanks for being part of the Kimai community ❤️
 
 ## Full changelog
 
-You can find [all commits here](https://github.com/kevinpapst/kimai2/compare/1.15.6...1.16.5).
+You can find [all commits here]({{ site.kimai_v2_repo }}/compare/1.15.6...1.16.5).
 
 ### Implemented enhancements
 
-- Extend orderNumber string to 50 characters \(\#2824\) [\#2828](https://github.com/kevinpapst/kimai2/pull/2828) - thanks @iusgit
-- Extend length of project orderNumber string [\#2824](https://github.com/kevinpapst/kimai2/issues/2824)
-- default team for new users [\#2802](https://github.com/kevinpapst/kimai2/issues/2802)
-- Update "Preview"/ "Save" buttons after invoice template \(re\)selection [\#2749](https://github.com/kevinpapst/kimai2/issues/2749)
-- Reporting - choose which type of times [\#2575](https://github.com/kevinpapst/kimai2/issues/2575)
-- improve error handling during invoice generation [\#2932](https://github.com/kevinpapst/kimai2/pull/2932)
-- submit invoice search after changing the template [\#2931](https://github.com/kevinpapst/kimai2/pull/2931)
-- added new invoice status: canceled [\#2922](https://github.com/kevinpapst/kimai2/pull/2922)
-- Translations update from Weblate [\#2915](https://github.com/kevinpapst/kimai2/pull/2915) [\#2850](https://github.com/kevinpapst/kimai2/pull/2850) ([weblate](https://github.com/weblate))
-- added resname for tool compatibility [\#2912](https://github.com/kevinpapst/kimai2/pull/2912)
-- change data filter on project month report [\#2911](https://github.com/kevinpapst/kimai2/pull/2911)
-- Fetch user preferences via API [\#2905](https://github.com/kevinpapst/kimai2/pull/2905)
-- optimizations [\#2904](https://github.com/kevinpapst/kimai2/pull/2904)
-- prevent empty migration warning [\#2901](https://github.com/kevinpapst/kimai2/pull/2901)
-- composer upgrade [\#2900](https://github.com/kevinpapst/kimai2/pull/2900)
-- added invoice replacer for currently logged-in user [\#2899](https://github.com/kevinpapst/kimai2/pull/2899)
-- activate bleeding edge rules for phpstan and fix problems [\#2898](https://github.com/kevinpapst/kimai2/pull/2898)
-- fix weekly view day format [\#2893](https://github.com/kevinpapst/kimai2/pull/2893)
-- simplify building theme independent plugins [\#2888](https://github.com/kevinpapst/kimai2/pull/2888)
-- include roles and teams in user create form [\#2849](https://github.com/kevinpapst/kimai2/pull/2849)
-- Weekly "quick-entry" form [\#2793](https://github.com/kevinpapst/kimai2/pull/2793)
-- allow to set 24 hour format as user preference [\#2789](https://github.com/kevinpapst/kimai2/pull/2789)
-- added ProjectConstraint to add dynamic project validation [\#2747](https://github.com/kevinpapst/kimai2/pull/2747) thanks @pkaltenboeck
-- PDF memory optimizations [\#2736](https://github.com/kevinpapst/kimai2/pull/2736)
-- workflow to trigger event for docker build [\#2882](https://github.com/kevinpapst/kimai2/pull/2882) thanks @Apfelwurm
-- include calendar week in week chooser [\#2933](https://github.com/kevinpapst/kimai2/pull/2933)
-- improve export filename [\#2958](https://github.com/kevinpapst/kimai2/pull/2958)
-- allow to delete invoice documents from within kimai [\#2968](https://github.com/kevinpapst/kimai2/pull/2968)
+- Extend orderNumber string to 50 characters \(\#2824\) [\#2828]({{ site.kimai_v2_repo }}/pull/2828) - thanks @iusgit
+- Extend length of project orderNumber string [\#2824]({{ site.kimai_v2_repo }}/issues/2824)
+- default team for new users [\#2802]({{ site.kimai_v2_repo }}/issues/2802)
+- Update "Preview"/ "Save" buttons after invoice template \(re\)selection [\#2749]({{ site.kimai_v2_repo }}/issues/2749)
+- Reporting - choose which type of times [\#2575]({{ site.kimai_v2_repo }}/issues/2575)
+- improve error handling during invoice generation [\#2932]({{ site.kimai_v2_repo }}/pull/2932)
+- submit invoice search after changing the template [\#2931]({{ site.kimai_v2_repo }}/pull/2931)
+- added new invoice status: canceled [\#2922]({{ site.kimai_v2_repo }}/pull/2922)
+- Translations update from Weblate [\#2915]({{ site.kimai_v2_repo }}/pull/2915) [\#2850]({{ site.kimai_v2_repo }}/pull/2850) ([weblate](https://github.com/weblate))
+- added resname for tool compatibility [\#2912]({{ site.kimai_v2_repo }}/pull/2912)
+- change data filter on project month report [\#2911]({{ site.kimai_v2_repo }}/pull/2911)
+- Fetch user preferences via API [\#2905]({{ site.kimai_v2_repo }}/pull/2905)
+- optimizations [\#2904]({{ site.kimai_v2_repo }}/pull/2904)
+- prevent empty migration warning [\#2901]({{ site.kimai_v2_repo }}/pull/2901)
+- composer upgrade [\#2900]({{ site.kimai_v2_repo }}/pull/2900)
+- added invoice replacer for currently logged-in user [\#2899]({{ site.kimai_v2_repo }}/pull/2899)
+- activate bleeding edge rules for phpstan and fix problems [\#2898]({{ site.kimai_v2_repo }}/pull/2898)
+- fix weekly view day format [\#2893]({{ site.kimai_v2_repo }}/pull/2893)
+- simplify building theme independent plugins [\#2888]({{ site.kimai_v2_repo }}/pull/2888)
+- include roles and teams in user create form [\#2849]({{ site.kimai_v2_repo }}/pull/2849)
+- Weekly "quick-entry" form [\#2793]({{ site.kimai_v2_repo }}/pull/2793)
+- allow to set 24 hour format as user preference [\#2789]({{ site.kimai_v2_repo }}/pull/2789)
+- added ProjectConstraint to add dynamic project validation [\#2747]({{ site.kimai_v2_repo }}/pull/2747) thanks @pkaltenboeck
+- PDF memory optimizations [\#2736]({{ site.kimai_v2_repo }}/pull/2736)
+- workflow to trigger event for docker build [\#2882]({{ site.kimai_v2_repo }}/pull/2882) thanks @Apfelwurm
+- include calendar week in week chooser [\#2933]({{ site.kimai_v2_repo }}/pull/2933)
+- improve export filename [\#2958]({{ site.kimai_v2_repo }}/pull/2958)
+- allow to delete invoice documents from within kimai [\#2968]({{ site.kimai_v2_repo }}/pull/2968)
 
 ### Fixed bugs
 
-- Time records marked as exported even when invoice is not saved due to duplicate invoice numbers [\#2917](https://github.com/kevinpapst/kimai2/issues/2917)
-- Error on Install: "Call to undefined method Doctrine\DBAL\Statement::fetchAll\(\)" [\#2885](https://github.com/kevinpapst/kimai2/issues/2885)
-- Request via API with X-AUTH-USER invalidates all other sessions for the \(LDAP\) user [\#2873](https://github.com/kevinpapst/kimai2/issues/2873) thanks @handcode
-- improve csrf handling [\#2936](https://github.com/kevinpapst/kimai2/pull/2936)
-- link to doctor [\#2930](https://github.com/kevinpapst/kimai2/pull/2930)
-- do not reset password for LDAP and SAML users unless needed [\#2916](https://github.com/kevinpapst/kimai2/pull/2916)
-- use token in invoice delete route [\#2889](https://github.com/kevinpapst/kimai2/pull/2889)
-- fixes for new quick-entry week form [\#2887](https://github.com/kevinpapst/kimai2/pull/2887)
-- optional csrf token name, fixes detail pages for teamleads  [\#2941](https://github.com/kevinpapst/kimai2/issues/2941)
-- Filtering the administrative project list by Visible=Both results in 500 Server Error [\#2941](https://github.com/kevinpapst/kimai2/issues/2941)
-- drop default value to prevent error when server version is not set [#2769](https://github.com/kevinpapst/kimai2/issues/2769) [#2796](https://github.com/kevinpapst/kimai2/issues/2796) [#2943](https://github.com/kevinpapst/kimai2/issues/2943)
+- Time records marked as exported even when invoice is not saved due to duplicate invoice numbers [\#2917]({{ site.kimai_v2_repo }}/issues/2917)
+- Error on Install: "Call to undefined method Doctrine\DBAL\Statement::fetchAll\(\)" [\#2885]({{ site.kimai_v2_repo }}/issues/2885)
+- Request via API with X-AUTH-USER invalidates all other sessions for the \(LDAP\) user [\#2873]({{ site.kimai_v2_repo }}/issues/2873) thanks @handcode
+- improve csrf handling [\#2936]({{ site.kimai_v2_repo }}/pull/2936)
+- link to doctor [\#2930]({{ site.kimai_v2_repo }}/pull/2930)
+- do not reset password for LDAP and SAML users unless needed [\#2916]({{ site.kimai_v2_repo }}/pull/2916)
+- use token in invoice delete route [\#2889]({{ site.kimai_v2_repo }}/pull/2889)
+- fixes for new quick-entry week form [\#2887]({{ site.kimai_v2_repo }}/pull/2887)
+- optional csrf token name, fixes detail pages for teamleads  [\#2941]({{ site.kimai_v2_repo }}/issues/2941)
+- Filtering the administrative project list by Visible=Both results in 500 Server Error [\#2941]({{ site.kimai_v2_repo }}/issues/2941)
+- drop default value to prevent error when server version is not set [#2769]({{ site.kimai_v2_repo }}/issues/2769) [#2796]({{ site.kimai_v2_repo }}/issues/2796) [#2943]({{ site.kimai_v2_repo }}/issues/2943)
 - csrf tokens for multiple actions - thanks @haxatron
-- CSRF Tokens are not properly refreshed on some form submissions [#2947](https://github.com/kevinpapst/kimai2/issues/2947) [#2948](https://github.com/kevinpapst/kimai2/issues/2948) - thanks @tdozbun-reno
-- escape customer, project and activity name in javascript [#2959](https://github.com/kevinpapst/kimai2/issues/2959)
-- escape data in calendar popover [#2960](https://github.com/kevinpapst/kimai2/issues/2960)
-- make sure that markdown uses safe mode [#2961](https://github.com/kevinpapst/kimai2/issues/2961)
-- improve permission handling in invoice screen [#2965](https://github.com/kevinpapst/kimai2/issues/2965)
+- CSRF Tokens are not properly refreshed on some form submissions [#2947]({{ site.kimai_v2_repo }}/issues/2947) [#2948]({{ site.kimai_v2_repo }}/issues/2948) - thanks @tdozbun-reno
+- escape customer, project and activity name in javascript [#2959]({{ site.kimai_v2_repo }}/issues/2959)
+- escape data in calendar popover [#2960]({{ site.kimai_v2_repo }}/issues/2960)
+- make sure that markdown uses safe mode [#2961]({{ site.kimai_v2_repo }}/issues/2961)
+- improve permission handling in invoice screen [#2965]({{ site.kimai_v2_repo }}/issues/2965)

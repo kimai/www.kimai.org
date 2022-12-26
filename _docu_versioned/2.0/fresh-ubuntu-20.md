@@ -150,17 +150,20 @@ exit;
 
 Clone Kimai and set proper file permissions:
 
-> Please check the lastest installation docs to check if something changed since writing these docs: <https://www.kimai.org/documentation/installation.html>
+> Please check the latest installation docs to check if something changed since writing these docs: <https://www.kimai.org/documentation/installation.html>
 
 ```bash
 cd /var/www/
-git clone -b {{ site.kimai_v2_version }} --depth 1 https://github.com/kevinpapst/kimai2.git
-cd kimai2/
+git clone -b {{ site.kimai_v2_version }} --depth 1 {{ site.kimai_v2_repo }}.git
+cd kimai/
+chown -R :www-data .
+chmod -R g+r .
+chmod -R g+rw var/
 composer install --no-dev --optimize-autoloader -n
 vim .env
 ```
 
-Configure the database connection and adjust the settings to your needs (compare with the [original .env file](https://github.com/kevinpapst/kimai2/blob/1.16.8/.env.dist)):
+Configure the database connection and adjust the settings to your needs (compare with the [original .env file]({{ site.kimai_v2_repo }}/blob/master/.env.dist)):
 ```
 DATABASE_URL=mysql://kimai2:my-super-secret-password@127.0.0.1:3306/kimai2?charset=utf8&serverVersion=5.7
 ```
@@ -198,7 +201,7 @@ server {
     listen 80 default_server;
     listen [::]:80 default_server;
     server_name www.kimai.local;
-    root /var/www/kimai2/public;
+    root /var/www/kimai/public;
     index index.php;
 
     access_log off;

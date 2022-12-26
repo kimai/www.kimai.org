@@ -140,12 +140,12 @@ exit;
 
 Clone Kimai and set proper file permissions:
 
-> Replace 1.1 with the latest available version, see: <https://www.kimai.org/documentation/installation.html>
+> Please check the latest installation docs to check if something changed since writing these docs: <https://www.kimai.org/documentation/installation.html>
 
 ```bash
 cd /var/www/
-git clone -b 1.1 --depth 1 https://github.com/kevinpapst/kimai2.git
-cd kimai2/
+git clone -b {{ site.kimai_v2_version }} --depth 1 {{ site.kimai_v2_repo }}.git
+cd kimai/
 chown -R :www-data .
 chmod -R g+r .
 chmod -R g+rw var/
@@ -191,7 +191,7 @@ server {
     listen 80 default_server;
     listen [::]:80 default_server;
     server_name www.kimai.local;
-    root /var/www/kimai2/public;
+    root /var/www/kimai/public;
     index index.php;
 
     access_log off;

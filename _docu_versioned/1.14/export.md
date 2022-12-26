@@ -55,7 +55,7 @@ Be aware of the following rules:
 After you created a new or updated an existing template, you have to clear the cache to see the results:
 {% include cache-refresh.html %}
 
-Please copy & paste one of [default templates](https://github.com/kevinpapst/kimai2/tree/master/templates/export/renderer) to `var/export/`
+Please copy & paste one of [default templates]({{ site.kimai_v2_repo }}/tree/master/templates/export/renderer) to `var/export/`
 as starting point and rename it afterwards.
 
 You can translate the button for your template, by adding its name to the export translation file, eg. `translations/export.en.xlf`.

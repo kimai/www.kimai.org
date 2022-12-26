@@ -87,7 +87,7 @@ And then creating a VirtualHost (we use a port based in this example):
 Settings choosen in the example:
 
 - Port: `7777` with `HTTPS`
-- Document root: `/volume1/web/kimai2/public`
+- Document root: `/volume1/web/kimai/public`
 - HTTP backend server: `nginx`
 - PHP backend: `PHP 7.3`
 
@@ -108,7 +108,7 @@ server {
 
     ...
 
-    root    "/volume1/web/kimai2/public";
+    root    "/volume1/web/kimai/public";
 
     ...
 
@@ -170,13 +170,13 @@ That's it, Kimai should now run.
 
 ## Fixing file permissions
 
-The following commands must be run in the Kimai directory, here in `/volume1/web/kimai2/`.
+The following commands must be run in the Kimai directory, here in `/volume1/web/kimai/`.
 
 They must be run as `root` user (e.g. by prefixing each line with `sudo`). 
 Be extremely careful, a wrong command can destroy your Synology ... you know: with great power comes great responsibility!
 
 ```bash
-cd /volume1/web/kimai2/
+cd /volume1/web/kimai/
 
 sudo chown -R :http .
 sudo chmod -R g+r .
@@ -188,7 +188,7 @@ sudo chmod -R g+rw var/
 Please cross-check the normal [upgrade guide]({% link _documentation/updates.md %}) for more steps:
 
 ```bash
-cd /volume1/web/kimai2/
+cd /volume1/web/kimai/
 git fetch --tags
 git checkout {{ site.kimai_v2_version }}
 php73 composer install --optimize-autoloader -n
@@ -202,11 +202,11 @@ chown -R :http .
 
 ```bash
 cd /volume1/web/
-wget https://github.com/kevinpapst/kimai2/archive/refs/tags/{{ site.kimai_v2_version }}.zip
+wget {{ site.kimai_v2_repo }}/archive/refs/tags/{{ site.kimai_v2_version }}.zip
 7z x 
-cp kimai2/.env kimai2-{{ site.kimai_v2_version }}/
-cp -R kimai2/var/invoices kimai2-{{ site.kimai_v2_version }}/var/
-cd kimai2-{{ site.kimai_v2_version }}/
+cp kimai2/.env kimai-{{ site.kimai_v2_version }}/
+cp -R kimai2/var/invoices kimai-{{ site.kimai_v2_version }}/var/
+cd kimai-{{ site.kimai_v2_version }}/
 ```
 
 Then [download and install composer](https://getcomposer.org/download/), followed by the installation:
@@ -220,14 +220,14 @@ Now a) switch your virtual host to the new directory or b) change the directory 
 
 ```bash
 cd /volume1/web/
-mv kimai2 kimai2-backup
-mv kimai2-{{ site.kimai_v2_version }} kimai2
+mv kimai kimai-backup
+mv kimai-{{ site.kimai_v2_version }} kimai
 ```
 {% include upgrading-note.html %}
 
 ## SSO with Synology Directory Server
 
-See [this discussion](https://github.com/kevinpapst/kimai2/discussions/3198) to find out more.
+See [this discussion]({{ site.kimai_v2_repo }}/discussions/3198) to find out more.
 
 1. Prerequisite Synology Directory Server App installed on your NAS
 2. Preparation: open Synology Directory Server App
@@ -246,7 +246,7 @@ See [this discussion](https://github.com/kevinpapst/kimai2/discussions/3198) to 
         confirm next windows (it is sufficient if user just belongs to the group 'domain users'
 
 3. **local.yaml** 
-    create the file local.yaml or add the 'ldap part' to your local.yaml and upload it to kimai2/config/packages
+    create the file local.yaml or add the 'ldap part' to your local.yaml and upload it to kimai/config/packages
     
     ```yaml
     kimai:
@@ -305,7 +305,7 @@ So  when running the installer and running into a memory issue, you have to adju
 in SSH, e.g. the file `/usr/local/etc/php74/php.ini` is used for PHP 7.2.
 Search for the key `memory_limit` and set it to a high value, e.g. `memory_limit=512M`.
 
-Read [this discussion](https://github.com/kevinpapst/kimai2/discussions/3468) for more infos. 
+Read [this discussion]({{ site.kimai_v2_repo }}/discussions/3468) for more infos. 
 
 ### White page after changes to .env
 
@@ -316,4 +316,4 @@ make sure that `group` permissions for the `http` group are preserved.
 
 You can change them using:
 
-`File station > change to kimai2 directory > Right click on .env > Properties`.
+`File station > change to kimai directory > Right click on .env > Properties`.

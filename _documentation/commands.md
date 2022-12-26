@@ -19,7 +19,7 @@ This will immediately stop all active records. Validations will NOT be executed,
 
 You can run this command via cron-at regular intervals, e.g. to stop all forgotten timesheet records at midnight (crontab example).
 ```
-0 0 * * * /var/www/kimai2/bin/console kimai:timesheet:stop-all >> /dev/null
+0 0 * * * /var/www/kimai/bin/console kimai:timesheet:stop-all >> /dev/null
 ```
 
 ## Reset forgotten password

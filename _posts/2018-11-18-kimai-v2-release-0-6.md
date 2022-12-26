@@ -54,7 +54,7 @@ Don't forget to execute the database migrations! Read more about upgrading Kimai
 - API: Endpoint for API docs needs session cookie [\#319]({{ site.kimai_v2_repo }}/issues/319)
 - API: Timesheets [\#315]({{ site.kimai_v2_repo }}/issues/315)
 - Feature request: Quick search box for activities when creating new timesheet [\#307]({{ site.kimai_v2_repo }}/issues/307)
-- docker image for kimai2 [\#284]({{ site.kimai_v2_repo }}/issues/284)
+- docker image for kimai [\#284]({{ site.kimai_v2_repo }}/issues/284)
 - Separate Customer / Project / Activity input when logging time [\#250]({{ site.kimai_v2_repo }}/issues/250)
 - Interactive help after fresh installation [\#94]({{ site.kimai_v2_repo }}/issues/94)
 

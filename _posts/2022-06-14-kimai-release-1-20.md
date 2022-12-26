@@ -11,8 +11,8 @@ The release 1.20 and its bugfix releases were published between May and June 202
 
 ## Highlights
 
-New feature highlights from the releases [1.20](https://github.com/kevinpapst/kimai2/releases/tag/1.20), [1.20.1](https://github.com/kevinpapst/kimai2/releases/tag/1.20.1), 
-[1.20.2](https://github.com/kevinpapst/kimai2/releases/tag/1.20.2), [1.20.3](https://github.com/kevinpapst/kimai2/releases/tag/1.20.3) and [1.20.4](https://github.com/kevinpapst/kimai2/releases/tag/1.20.4) are:
+New feature highlights from the releases [1.20]({{ site.kimai_v2_repo }}/releases/tag/1.20), [1.20.1]({{ site.kimai_v2_repo }}/releases/tag/1.20.1), 
+[1.20.2]({{ site.kimai_v2_repo }}/releases/tag/1.20.2), [1.20.3]({{ site.kimai_v2_repo }}/releases/tag/1.20.3) and [1.20.4]({{ site.kimai_v2_repo }}/releases/tag/1.20.4) are:
 
 - Calendar user switching
 - Exported timesheets by default for invoices
@@ -38,7 +38,7 @@ Thanks for being part of the Kimai community ❤️
 
 This changelist contains all changes between 1.19.7 and 1.20.4.
 
-You can find [all commits here](https://github.com/kevinpapst/kimai2/compare/1.19.7...1.20.4).
+You can find [all commits here]({{ site.kimai_v2_repo }}/compare/1.19.7...1.20.4).
 
 
 **Implemented enhancements:**
