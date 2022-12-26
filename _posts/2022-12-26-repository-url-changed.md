@@ -39,3 +39,10 @@ Kimai v1 is - as a software without maintenance since years and running with a P
 If you do NOT know how to upgrade, [get in touch]({% link _store/keleo-installation-support.md %}), it is about time!
 
 The legacy version repo was archived at `https://github.com/kimai/kimai1`.
+
+### Please report mistakes
+
+The website was already updated, the next minor release of Kimai (1.30.1) will ship the changes as well.
+
+But there are, without doubt, a lot of places still linking to the old URL.
+If you stumble across them, please help out and [let me know where they are]({{ site.kimai_v2_forum }}).
