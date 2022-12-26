@@ -48,7 +48,7 @@ My only fear is, that there are still too many SQLite installations existing tha
 
 SERIOUSLY: **be aware** that you cannot upgrade to Kimai 1.14 before migrating the data from SQLite to MySQL!
 
-For now there are three documented ways to perform that migration (see bewlo). 
+For now there are three documented ways to perform that migration (see below). 
 If you know more, [please open a new discussion]({{ site.kimai_v2_forum }}).
 
 ### Dump with SQLite browser
