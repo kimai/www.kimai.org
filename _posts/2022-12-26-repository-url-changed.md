@@ -17,7 +17,7 @@ But to be 100% percent future-proof, I'd kindly ask you to execute the following
 
 ```bash
 cd /var/www/kimai2
-git remote set-url origin git@github.com:kimai/kimai.git
+git remote set-url origin https://github.com/kimai/kimai.git
 ```
 
 ### Why was that change done?
