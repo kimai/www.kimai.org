@@ -311,7 +311,6 @@ Want to use a **user preference** in your template?
 {% endif %}{% endraw %}
 ``` 
 
-
 ### PDF templates
 
 PDF invoice templates are basically the same as Twig templates. 
