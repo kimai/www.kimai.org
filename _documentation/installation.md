@@ -86,6 +86,10 @@ The following platforms adopted Kimai to be compatible with their one-click inst
 
 Kimai [package](https://github.com/YunoHost-Apps/kimai2_ynh) for [YunoHost](https://yunohost.org).
 
+### Softaculous
+
+[![Install kimai2 with Softaculous](http://www.softaculous.com/images/softimages/575__logo.gif)](http://www.softaculous.com/apps/others/Kimai)
+
 ### Cloudron
 
 [Cloudron](https://cloudron.io) provides a secure and ready to use Kimai package, which will be kept up-to-date automatically.
