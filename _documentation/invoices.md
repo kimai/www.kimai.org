@@ -477,7 +477,7 @@ Variables for the customer who is receiving the invoice:
 
 ### Project variables
 
-ONLY if a project was selected in the invoice filter (search form) the following variables exist as well:
+The following variables exist, if projects could be found in the filtered data:
 
 | Key                               | Description (highlighted words are the names in the UI)                                                                                                                                                                        |
 |-----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -500,8 +500,9 @@ ONLY if a project was selected in the invoice filter (search form) the following
 | ${project.time_budget_open}       | The open time budget for this project at the end date of your filter query (formatted) (since 1.16.7)                                                                                                                          |
 | ${project.time_budget_open_plain} | The open time budget for this project at the end date of your filter query (integer value = seconds) (since 1.16.7)                                                                                                            |
 
-If you selected more than one project in the search, you will have further variables (same list then above) called `${project.1.name}`, `${project.2.name}` and so on.
-The order is not guaranteed, so it is not recommended relying on those variables.
+If more than one project was found, you will have further variables (same list as above) called `${project.1.name}`, `${project.2.name}` and so on.
+The order is not guaranteed, so it is not recommended relying on those variables. 
+If your template relies on a `{$project.X}` variable, it is recommended to limit the invoice data with the project search filter. 
 
 ### Activity variables
 
@@ -518,8 +519,9 @@ ONLY if an activity was selected in the invoice filter (search form) the followi
 | ${activity.time_budget_open}       | The open time budget for this activity at the end date of your filter query (formatted) (since 1.16.7)                                                                                                                           |
 | ${activity.time_budget_open_plain} | The open time budget for this activity at the end date of your filter query (integer value = seconds) (since 1.16.7)                                                                                                             |
 
-If you selected more than one activity in the search, you will have further variables (same list then above) called `${activity.1.name}`, `${activity.2.name}` and so on.
+If more than one activity was found, you will have further variables (same list as above) called `${activity.1.name}`, `${activity.2.name}` and so on.
 The order is not guaranteed, so it is not recommended relying on those variables.
+If your template relies on a `{activity.X}` variable, it is recommended to limit the invoice data with the activity search filter.
 
 ### Uploading invoice documents
 

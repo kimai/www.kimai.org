@@ -2,11 +2,14 @@
 title: "Install Kimai on Ubuntu 18.04"
 navigation: Ubuntu 18.04
 description: "How to install Kimai on a brand new Ubuntu 18.04 with database, webserver and SSL certificate"
+toc: true
 canonical: /documentation/fresh-ubuntu-18.html
 ---
 
+{% include alert.html type="danger" alert="This documentation was not tested with Kimai 2.x. You will at least have to change the used PHP version to 8.1. It is advised to upgrade to a more recent Ubuntu version." %}
+
 This is a collection of snippets to help you with setting up a fresh Ubuntu 18.04 server for using with Kimai.
-It is neither a full fledged documentation, explaining each step, nor is it a bash tutorial.
+It is neither a fully fledged documentation, explaining each step, nor is it a bash tutorial.
 
 Please see it as a personal snippet collection... in which I assume:
 - that you are familiar with the Linux bash and have at least basic knowledge of vim
