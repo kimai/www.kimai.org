@@ -12,6 +12,6 @@ toc: false
 
 **Post release task:**
  
-- Website: Change version in [_config.yml]({{ site.kimai_v2_website }}/blob/master/_config.yml) and key `kimai_v2_version`  
+- Website: Change version in [_config.yml]({{ site.kimai_v2_website }}/blob/main/_config.yml) and key `kimai_v2_version`  
 - Website: Create a new version [announcement post]({{ site.kimai_v2_website }}), including the release notes
 - Twitter: share a link to the new release

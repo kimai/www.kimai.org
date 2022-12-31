@@ -20,7 +20,7 @@ as I moved to a new city and had troubles getting my provider to setup the inter
 
 **Upgrade from 0.6:**
 
-Don't forget to execute the database migrations! Read more about upgrading Kimai in [UPGRADING]({{ site.kimai_v2_repo }}/blob/master/UPGRADING.md).
+Don't forget to execute the database migrations! Read more about upgrading Kimai in [UPGRADING]({{ site.kimai_v2_repo }}/blob/main/UPGRADING.md).
 
 **Implemented enhancements:**
 

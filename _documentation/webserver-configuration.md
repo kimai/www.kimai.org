@@ -70,7 +70,7 @@ the techniques, paths and commands according to your OS.
 
 ### Kimai .htaccess
 
-Kimai ships a default [.htaccess]({{ site.kimai_v2_repo }}/blob/master/public/.htaccess), 
+Kimai ships a default [.htaccess]({{ site.kimai_v2_repo }}/blob/main/public/.htaccess), 
 which needs to be allowed by Apache via `AllowOverride All`.
 
 ### Create VirtualHost

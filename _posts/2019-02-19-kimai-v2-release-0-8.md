@@ -12,7 +12,7 @@ as you have to execute one more step after the normal [update procedure]({% link
 
 **Upgrade from 0.7:**
 
-- Execute the database migrations: [How to upgrade Kimai]({{ site.kimai_v2_repo }}/blob/master/UPGRADING.md)
+- Execute the database migrations: [How to upgrade Kimai]({{ site.kimai_v2_repo }}/blob/main/UPGRADING.md)
 - One more step is required: [Convert your timesheet data for timezone support]({{ site.kimai_v2_repo }}/pull/372)
 
 **The release main topic was "Export, Timezones & UI". Most notable changes:**

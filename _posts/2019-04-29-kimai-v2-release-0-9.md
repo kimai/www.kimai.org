@@ -14,8 +14,8 @@ If you enjoy the new release, here is the [donation page](https://www.kimai.org/
 
 **Upgrade from 0.8.1:**
 
-- Execute the database migrations: [How to upgrade Kimai]({{ site.kimai_v2_repo }}/blob/master/UPGRADING.md)
-- Follow the other steps mentioned in [UPGRADING.md]({{ site.kimai_v2_repo }}/blob/master/UPGRADING.md)
+- Execute the database migrations: [How to upgrade Kimai]({{ site.kimai_v2_repo }}/blob/main/UPGRADING.md)
+- Follow the other steps mentioned in [UPGRADING.md]({{ site.kimai_v2_repo }}/blob/main/UPGRADING.md)
 
 **Implemented enhancements:**
 

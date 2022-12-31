@@ -20,7 +20,7 @@ Version 0.6 was released, the main topic was "global activities" ... but many mo
 
 **Upgrade from 0.5:**
 
-Don't forget to execute the database migrations! Read more about upgrading Kimai in [UPGRADING]({{ site.kimai_v2_repo }}/blob/master/UPGRADING.md).
+Don't forget to execute the database migrations! Read more about upgrading Kimai in [UPGRADING]({{ site.kimai_v2_repo }}/blob/main/UPGRADING.md).
 
 **Fixed bugs:**
 

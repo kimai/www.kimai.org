@@ -17,8 +17,8 @@ If you enjoy the new release, here is the [donation page](https://www.kimai.org/
 
 **Upgrade from 0.9:**
 
-- Execute the database migrations: [How to upgrade Kimai]({{ site.kimai_v2_repo }}/blob/master/UPGRADING.md)
-- Follow the other steps mentioned in [UPGRADING.md]({{ site.kimai_v2_repo }}/blob/master/UPGRADING.md)
+- Execute the database migrations: [How to upgrade Kimai]({{ site.kimai_v2_repo }}/blob/main/UPGRADING.md)
+- Follow the other steps mentioned in [UPGRADING.md]({{ site.kimai_v2_repo }}/blob/main/UPGRADING.md)
 
 **Implemented enhancements:**
 
@@ -81,7 +81,7 @@ If you enjoy the new release, here is the [donation page](https://www.kimai.org/
 - Timesheets table empty after update [\#878]({{ site.kimai_v2_repo }}/issues/878)
 - Ability to hide the revenue stats to users [\#853]({{ site.kimai_v2_repo }}/issues/853)
 - Error on update database migration:  Syntax error or access violation: 1071 Specified key was too long; max key length is 767 bytes [\#788]({{ site.kimai_v2_repo }}/issues/788)
-- adding a new timesheet entry is broken in current master [\#778]({{ site.kimai_v2_repo }}/issues/778)
+- adding a new timesheet entry is broken [\#778]({{ site.kimai_v2_repo }}/issues/778)
 - calendar week timesheet task with duration=true error 500 [\#704]({{ site.kimai_v2_repo }}/issues/704)
 - Inter-month entries don't get exported in single month [\#652]({{ site.kimai_v2_repo }}/issues/652)
 - fix selectbox is not resettable [\#901]({{ site.kimai_v2_repo }}/pull/901) ([kevinpapst](https://github.com/kevinpapst))
@@ -106,7 +106,7 @@ If you enjoy the new release, here is the [donation page](https://www.kimai.org/
 - Allowed memory in reset-dev [\#857]({{ site.kimai_v2_repo }}/issues/857)
 - 503 Error Service Unavailable [\#834]({{ site.kimai_v2_repo }}/issues/834)
 - Documentation for native wrapper like nativefier [\#830]({{ site.kimai_v2_repo }}/issues/830)
-- Create documentation for layman users to deploy the master code on their servers  [\#827]({{ site.kimai_v2_repo }}/issues/827)
+- Create documentation for layman users to deploy the code on their servers  [\#827]({{ site.kimai_v2_repo }}/issues/827)
 - Allow export of data in timesheet view directly from the frontend [\#826]({{ site.kimai_v2_repo }}/issues/826)
 - Adding a command as Plugin [\#797]({{ site.kimai_v2_repo }}/issues/797)
 - connect kimai to ldap [\#795]({{ site.kimai_v2_repo }}/issues/795)

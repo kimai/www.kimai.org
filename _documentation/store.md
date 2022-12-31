@@ -23,7 +23,7 @@ You have to:
 
 ### The developer information
 
-The information about yourself or your company comes from the [developer.yml file]({{ site.kimai_v2_website }}/tree/master/_data/developer.yml).
+The information about yourself or your company comes from the [developer.yml file]({{ site.kimai_v2_website }}/tree/main/_data/developer.yml).
 
 It starts by defining your company/developer ID and then adding the following keys:
 
@@ -50,7 +50,7 @@ kevinpapst:
 
 ### The product information
 
-Create a new markdown file in the [_store directory]({{ site.kimai_v2_website }}/tree/master/_store/), follow the filename pattern:
+Create a new markdown file in the [_store directory]({{ site.kimai_v2_website }}/tree/main/_store/), follow the filename pattern:
 `company-short-descriptive-name.md`
 
 Within the Jekyll [Front Matter](https://jekyllrb.com/docs/front-matter/) you have the following attributes available:
@@ -71,4 +71,4 @@ Within the Jekyll [Front Matter](https://jekyllrb.com/docs/front-matter/) you ha
 - `features` - array with up to 6 features (short description with approx. 5 words each, currently only shown in the list view if `featured` is `true`) (optional) 
 - `tags` - array with up to 4 tag, try to stay in the range of existing tags if applicable (optional)
 
-A full example can be seen in the file [keleo-css-custom-bundle.md]({{ site.kimai_v2_website }}/tree/master/_store/keleo-css-custom-bundle.md).
+A full example can be seen in the file [keleo-css-custom-bundle.md]({{ site.kimai_v2_website }}/tree/main/_store/keleo-css-custom-bundle.md).

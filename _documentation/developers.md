@@ -239,7 +239,7 @@ class MyDashboardSubscriber implements EventSubscriberInterface
 }
 ```
 
-For more details check this [dashboard subscriber](https://github.com/Keleo/DemoBundle/blob/master/EventSubscriber/DashboardSubscriber.php).
+For more details check this [dashboard subscriber](https://github.com/Keleo/DemoBundle/blob/main/EventSubscriber/DashboardSubscriber.php).
 
 ### Adding new widget types
 

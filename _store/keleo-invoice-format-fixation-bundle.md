@@ -5,7 +5,7 @@ type: plugin
 tags: [plugin]
 screenshots:
   - 
-    src: "https://raw.githubusercontent.com/Keleo/InvoiceFormatFixationBundle/master/screenshot.png"
+    src: "https://raw.githubusercontent.com/Keleo/InvoiceFormatFixationBundle/main/screenshot.png"
     title: Language configuration
     description: Configure the language for formatting all invoice settings 
 lang: en
