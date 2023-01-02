@@ -75,6 +75,9 @@ layout: page-empty
                                 <li><a href="#purchase">{{ site.data[page.lang].translation.store-purchase }}</a></li>
                                 {% endif %}
                                 <li><a href="#screenshots">{{ site.data[page.lang].translation.screenshots }}</a></li>
+                                {% if settings.bundle and settings.bundle.versions %}
+                                <li><a href="#compatibility">{{ site.data[page.lang].translation.compatibility }}</a></li>
+                                {% endif %}
                                 <li><a href="#installation">{{ site.data[page.lang].translation.installation }}</a></li>
                                 <li><a href="#updates">{{ site.data[page.lang].translation.updates }}</a></li>
                             </ul>
@@ -280,17 +283,27 @@ layout: page-empty
                 </div>
             {% endif %}
             {% if settings.bundle %}
+                {% if settings.bundle.versions %}
                 <div class="card mb-3">
                     <div class="card-header">
                         <div class="d-flex align-items-center px-2">
-                            <h3 id="installation" class="card-title">{{ site.data[page.lang].translation.installation }}</h3>
+                            <h3 id="compatibility" class="card-title">{{ site.data[page.lang].translation.compatibility }}</h3>
                         </div>
                     </div>
                     <div class="card-body">
-                        {% if settings.bundle.versions %}
-                        <h3>{{ site.data[page.lang].translation.compatibility }}</h3>
-
                         <p>{{ site.data[page.lang].translation.compatibility-info }}</p>
+
+                        {% assign compatibleWithTwo = false %}
+                        {% for version in settings.bundle.versions %}
+                            {% if version[1] == '2.0' or version[1] == '2.0.0' %}
+                                {% assign compatibleWithTwo = true %}
+                            {% endif %}
+                        {% endfor %}
+                        {% if compatibleWithTwo == false %}
+                            {% include alert.html icon="fas fa-exclamation" type="warning" alert="This bundle does yet NOT confirm compatibility with the upcoming version 2.0" %}
+                        {% else %}
+                            {% include alert.html icon="fas fa-exclamation" type="success" alert="This bundle does confirm compatibility with the upcoming version 2.0" %}
+                        {% endif %}
 
                         <table class="table">
                             <thead>
@@ -312,8 +325,17 @@ layout: page-empty
                                 {% endfor %}
                             </tbody>
                         </table>
-                        {% endif %}
+                    </div>
+                </div>
+                {% endif %}
 
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <div class="d-flex align-items-center px-2">
+                            <h3 id="installation" class="card-title">{{ site.data[page.lang].translation.installation }}</h3>
+                        </div>
+                    </div>
+                    <div class="card-body">
                         {% include store-plugin-installation.html clone=settings.bundle.clone plugin=settings.bundle.name command=settings.bundle.command assets=settings.bundle.assets %}
                     </div>
                 </div>
