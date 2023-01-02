@@ -59,7 +59,7 @@ Adjust the following keys with your Azure / App specific settings:
 kimai:
     saml:
         activate: true
-        title: Login with AzureAD
+        title: Login with Azure AD
         mapping:
             - { saml: $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name, kimai: username }
             - { saml: $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress, kimai: email }
@@ -87,7 +87,7 @@ kimai:
                 requestedAuthnContext: false
 ```
 
-1. Change the title to the wanted text on the login screen
+1. Change the title to the wanted text on the login button
 ```yaml
 title: Login with Azure
 ```
@@ -99,7 +99,7 @@ singleSignOnService:
     url: 'https://login.microsoftonline.com/****-****-***/saml2'  # Login URL
 ```
 
-3. Change the **sp** configuration replacing **https://timetracking.example.com** with your Kimai URL:
+3. Change the **sp** configuration, replacing **https://timetracking.example.com** with your Kimai URL:
 ```yaml
 entityId: 'https://timetracking.example.com/auth/saml/metadata'
 assertionConsumerService:
@@ -124,3 +124,11 @@ x509cert:  'REALLY LONG SET OF CHARACTERS'
 5. Click on **Add user/group** and add the groups or users, who should have access.
 
 You should now be able to test the Login by visiting your Kimai URL and clicking on the title of the SAML method, you defined earlier.
+
+
+### Syncing Employee ID
+
+This is not a standard attribute in Azure AD. But if you want to sync a unique "Employee ID", you could add a field mapping for the account number:
+```
+- { saml: $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/employeeid, kimai: accountNumber }
+```
