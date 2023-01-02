@@ -65,7 +65,6 @@ kimai:
             - { saml: $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress, kimai: email }
             - { saml: $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname, kimai: alias }
             - { saml: $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/displayname, kimai: title }
-            - { saml: $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/employeeid, kimai: accountNumber }
         roles:
             resetOnLogin: true
             attribute: http://schemas.microsoft.com/ws/2008/06/identity/claims/groups
@@ -84,6 +83,8 @@ kimai:
                     url: 'https://timetracking.example.com/auth/saml/acs'
                 singleLogoutService:
                     url: 'https://timetracking.example.com/auth/saml/logout'
+            security:
+                requestedAuthnContext: false
 ```
 
 1. Change the title to the wanted text on the login screen
