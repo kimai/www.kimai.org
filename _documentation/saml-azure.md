@@ -59,7 +59,7 @@ Adjust the following keys with your Azure / App specific settings:
 kimai:
     saml:
         activate: true
-        title: Login with Azure
+        title: Login with AzureAD
         mapping:
             - { saml: $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name, kimai: username }
             - { saml: $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress, kimai: email }
@@ -97,25 +97,18 @@ title: Login with Azure
 entityId: 'https://sts.windows.net/****-****-***/'                # Azure AD Identifier
 singleSignOnService:
     url: 'https://login.microsoftonline.com/****-****-***/saml2'  # Login URL
-    binding: 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect'
-singleLogoutService:
-    url: 'https://login.microsoftonline.com/****-****-***/saml2'  # Logout URL
-    binding: 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect'
 ```
 
-3. Change the **sp** configuration:
+3. Change the **sp** configuration replacing **https://timetracking.example.com** with your Kimai URL:
 ```yaml
 entityId: 'https://timetracking.example.com/auth/saml/metadata'
 assertionConsumerService:
     url: 'https://timetracking.example.com/auth/saml/acs'
-    binding: 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST'
-# logout does not seem to work properly
-#singleLogoutService:
-#    url: 'https://timetracking.example.com/auth/saml/logout'
-#    binding: 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect'
+singleLogoutService:
+    url: 'https://timetracking.example.com/auth/saml/logout'
 ```
 
-4. Change the **x509cert** by opening the earlier downloaded certificate and copy it, without “Next-line” Enters into the configuration:
+4. Change the **x509cert** by opening the earlier downloaded certificate file (in a text editor) and copy the content to the config file and change it to one line  by removing the first line (BEGIN CERTIFICATE) and the last line (END CERTIFICATE) and then removing all line-breaks.
 ```yaml
 x509cert:  'REALLY LONG SET OF CHARACTERS'
 ```
@@ -130,4 +123,4 @@ x509cert:  'REALLY LONG SET OF CHARACTERS'
 4. Please click on the Kimai application , we called it **Kimai**, and then navigate to **Users and groups** on the left navigation bar.
 5. Click on **Add user/group** and add the groups or users, who should have access.
 
-You should now be able to test the Login by visiting **https://timetracking.example.com/** and clicking on the title of the SAML method, you defined earlier.
+You should now be able to test the Login by visiting your Kimai URL and clicking on the title of the SAML method, you defined earlier.
