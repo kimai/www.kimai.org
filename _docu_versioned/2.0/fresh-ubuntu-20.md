@@ -3,7 +3,6 @@ title: "Install Kimai on Ubuntu 20.04"
 navigation: Ubuntu 20.04
 description: "How to install Kimai on a brand new Ubuntu 20.04 with database, webserver and SSL certificate"
 toc: true
-canonical: /documentation/fresh-ubuntu-20.html
 ---
 
 {% include alert.html type="warning" alert="This documentation was not yet tested with Kimai 2.x" %}
@@ -109,7 +108,7 @@ add-apt-repository ppa:ondrej/php
 
 Now install PHP 8.1:
 ```bash
-apt install php8.1-fpm php8.1-cli php8.1-common php8.1-opcache php8.1-readline php8.1-xml php8.1-zip php8.1-intl php8.1-mbstring php8.1-mysql php8.1-curl php8.1-gd
+apt install php8.1-fpm php8.1-cli php8.1-common php8.1-opcache php8.1-readline php8.1-xml php8.1-zip php8.1-intl php8.1-mbstring php8.1-mysql php8.1-curl
 ```
 
 ## Install composer
