@@ -109,8 +109,10 @@ add-apt-repository ppa:ondrej/php
 
 Now install PHP 8.1:
 ```bash
-apt install php8.1-fpm php8.1-cli php8.1-common php8.1-opcache php8.1-readline php8.1-xml php8.1-zip php8.1-intl php8.1-mbstring php8.1-mysql php8.1-curl php8.1-gd
+apt install php8.1-cli php8.1-common php8.1-curl php8.1-fpm php8.1-gd php8.1-intl php8.1-mbstring php8.1-mysql php8.1-opcache php8.1-readline php8.1-xml php8.1-zip
 ```
+
+Note: the required packages `php8.1-ctype`, `php8.1-iconv`, `php8.1-json`, `php8.1-pdo` are usually part of other packages like `php8.1-common`, `php8.1-cli` and `php8.1-fpm`
 
 ## Install composer
 
