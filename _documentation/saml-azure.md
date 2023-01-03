@@ -125,10 +125,28 @@ x509cert:  'REALLY LONG SET OF CHARACTERS'
 
 You should now be able to test the Login by visiting your Kimai URL and clicking on the title of the SAML method, you defined earlier.
 
-
 ### Syncing Employee ID
 
 This is not a standard attribute in Azure AD. But if you want to sync a unique "Employee ID", you could add a field mapping for the account number:
 ```
 - { saml: $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/employeeid, kimai: accountNumber }
 ```
+
+### Syncing Groups
+
+The example values for the group mapping from above: 
+```
+    - { saml: xxxxxxxx-yyyy-xxxx-yyyy-xxxxxxxxxxxx, kimai: ROLE_ADMIN }
+    - { saml: Azure-Group-Object-Id, kimai: ROLE_TEAMLEAD }
+```
+
+would lead with this Azure configuration
+{% include docs-image.html src="/images/documentation/azure-saml-groups.png" title="Group IDs" width="900px" %}
+
+to this configuration:
+```
+    - { saml: 7f9597ed-8b67-45d7-bd5b-70d2659ad429, kimai: ROLE_ADMIN }
+    - { saml: 998e116b-f8a1-4314-871c-045e92f82ce8, kimai: ROLE_TEAMLEAD }
+```
+
+The `Kimai System-Admin` group is not used in this example, but you would configure it in your local.yaml.
