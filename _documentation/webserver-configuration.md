@@ -37,7 +37,7 @@ server {
     }
 
     location ~ ^/index\.php(/|$) {
-        fastcgi_pass unix:/run/php/php7.2-fpm.sock;
+        fastcgi_pass unix:/run/php/php8.1-fpm.sock;
         fastcgi_split_path_info ^(.+\.php)(/.*)$;
         include fastcgi_params;
         # You can use the document root directly:
@@ -130,11 +130,11 @@ for your server distribution. If you have the module installed but its not yet w
 activate it first in Apache.
  
 This is often done with either linking a config using a tool like `a2enmod` or by manually linking the 
-`php7.conf` to the proper directory. If that doesn't help, you can try it with something like this:
+`php8.conf` to the proper directory. If that doesn't help, you can try it with something like this:
 ```
-LoadModule php7_module libexec/apache2/libphp7.so
+LoadModule php8_module libexec/apache2/libphp8.so
 
-<IfModule php7_module>
+<IfModule php8_module>
     AddType application/x-httpd-php .php
     AddType application/x-httpd-php-source .phps
     <IfModule dir_module>

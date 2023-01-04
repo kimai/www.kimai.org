@@ -110,26 +110,26 @@ If you can't find the correct version, ask your hoster! Or [let us help you]({% 
 
 - GIT is normally pre-installed and can be used via SSH
 - composer has to be installed manually
-- The default PHP version is often too low (PHP 5.x) - you can check that with `php -v`
-    - If it is lower than 7.3, you have to prefix all commands with the proper version, eg. `/usr/bin/php7.3-cli` (even composer)
-    - Example composer: `/usr/bin/php7.3-cli composer.phar install --optimize-autoloader`
-    - Example installation: `/usr/bin/php7.3-cli bin/console kimai:install -n`
+- The default PHP version is often too low, you can check that with `php -v`
+    - If it is lower than 8.1, you have to prefix all commands with the proper version, eg. `/usr/bin/php8.1-cli` (even composer)
+    - Example composer: `/usr/bin/php8.1-cli composer.phar install --optimize-autoloader`
+    - Example installation: `/usr/bin/php8.1-cli bin/console kimai:install -n`
 
 ### Domainfactory
 
 - GIT is pre-installed and can be used via SSH
-- composer has to be installed manually: `curl -sS https://getcomposer.org/installer | php7.3.5-cli`
-- The default PHP version is often too low (PHP 5.x or even PHP 4.x) - you can check that with `php -v`
-    - If it is lower than 7.3, you have to prefix all commands with the proper version, eg. `php7.3.5-cli` (even composer)
-    - Example composer: `php7.3.5-cli composer.phar install --optimize-autoloader`
-    - Example installation: `php7.3.5-cli bin/console kimai:install -n`
+- composer has to be installed manually: `curl -sS https://getcomposer.org/installer | php8.1.5-cli`
+- The default PHP version is often too low, you can check that with `php -v`
+    - If it is lower than 8.1, you have to prefix all commands with the proper version, eg. `php8.1.5-cli` (even composer)
+    - Example composer: `php8.1.5-cli composer.phar install --optimize-autoloader`
+    - Example installation: `php8.1.5-cli bin/console kimai:install -n`
 
 ### All-Inkl
 
-All-Inkl has several CLI versions of PHP available via `php73`, `php74` and so on.
+All-Inkl has several CLI versions of PHP available via e.g. `php81`.
 Composer is running at `/usr/bin/composer`, so you execute it like that:
-- `php74 /usr/bin/composer install --optimize-autoloader -n`
-- `php74 bin/console kimai:install -n`
+- `php81 /usr/bin/composer install --optimize-autoloader -n`
+- `php81 bin/console kimai:install -n`
 
 ### Strato
 
@@ -138,16 +138,16 @@ Strato has a special setup of PHP, you need to find the proper version first.
 - PHP-Directory: `/opt/RZphp{major}{minor}/bin/php-cli` (Shared Hosting)
 - PHP-Directory: `/usr/bin/php{major}{minor}` (Managed Server)
 
-For example, if you want to use PHP 7.3 use always the absolute path when running a PHP based command: so prefix all commands with eg. `/opt/RZphp73/bin/php-cli` in bash.
+For example, if you want to use PHP 8.1 use always the absolute path when running a PHP based command: so prefix all commands with eg. `/opt/RZphp81/bin/php-cli` in bash.
 
 How to install Kimai:
-- Install composer: `curl -sS https://getcomposer.org/installer | /opt/RZphp73/bin/php-cli`
+- Install composer: `curl -sS https://getcomposer.org/installer | /opt/RZphp81/bin/php-cli`
 - Clone Kimai as stated above and then `cd kimai`
-- Install composer packages with `/opt/RZphp73/bin/php-cli ../composer.phar install --optimize-autoloader`
+- Install composer packages with `/opt/RZphp81/bin/php-cli ../composer.phar install --optimize-autoloader`
 - Configure your `.env` file, eg. with `nano .env`
-- Install Kimai database `/opt/RZphp73/bin/php-cli bin/console kimai:install -n`
+- Install Kimai database `/opt/RZphp81/bin/php-cli bin/console kimai:install -n`
 
-Reload your configuration `/opt/RZphp73/bin/php-cli bin/console kimai:reload`
+Reload your configuration `/opt/RZphp81/bin/php-cli bin/console kimai:reload`
 
 ### Plesk
 
@@ -163,7 +163,7 @@ webserver directly.
 - Locate the current PHP version. Plesk stores its PHP instances in the
   directory `/opt/plesk/php`. Depending on which PHP version was configured for
   Kimai subdomain, make sure to use this version during the installation. For
-  example, if using version 7.3, the path to PHP should be `/opt/plesk/php/7.3/bin/php`.
+  example, if using version 8.1, the path to PHP should be `/opt/plesk/php/8.1/bin/php`.
 - Switch user to be "root" (otherwise access to Plesk subfolder is denied) with `su`.
 - Navigate to the root folder where Plesk is hosting the websites from.
   Typically, the root can be found at `/var/www/vhosts/<domain_name>`. For hosting
@@ -171,12 +171,12 @@ webserver directly.
   ```bash
   cd /var/www/vhosts/kimai.my-domain.com
   ```
-- Install composer: `curl -sS https://getcomposer.org/installer | /opt/plesk/php/7.3/bin/php`
+- Install composer: `curl -sS https://getcomposer.org/installer | /opt/plesk/php/8.1/bin/php`
 - Clone Kimai: `git clone -b {{ site.kimai_v2_version }} --depth 1 {{ site.kimai_v2_repo }}.git`
 - Enter Kimai directory: `cd kimai`
-- Install composer packages: `/opt/plesk/php/7.3/bin/php ../composer.phar install --optimize-autoloader`
+- Install composer packages: `/opt/plesk/php/8.1/bin/php ../composer.phar install --optimize-autoloader`
 - Configure `.env` file to have correct database credentials
-- Install Kimai database: `/opt/plesk/php/7.3/bin/php bin/console kimai:install -n`
+- Install Kimai database: `/opt/plesk/php/8.1/bin/php bin/console kimai:install -n`
 - Change ownership of `kimai` folder:
     ```
     cd ..

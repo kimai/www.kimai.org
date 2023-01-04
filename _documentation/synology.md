@@ -16,14 +16,14 @@ Until this guide will be updated, there is [a PDF installation documentation in 
 
 ## Important to know
 
-You need to prefix all PHP related commands with `php73`, for example:
+You need to prefix all PHP related commands with `php81`, for example:
 ```bash
-php73 composer.phar install --optimize-autoloader
+php81 composer.phar install --optimize-autoloader
 ```
 
 Or run a console command:
 ```bash
-php73 bin/console kimai:version
+php81 bin/console kimai:version
 ```
 
 The webserver user is called `http` and not `www-data`.
@@ -41,7 +41,7 @@ This example uses the path `/volume1/web/kimai2`
 
 Then [download and install composer](https://getcomposer.org/download/). Now install all dependencies:
 ```bash
-php73 composer.phar install --optimize-autoloader
+php81 composer.phar install --optimize-autoloader
 ```
 
 ### Create a database
@@ -67,7 +67,7 @@ BTW: You find the MariaDB executable at `/volume1/@appstore/MariaDB10/usr/local/
 After editing the `.env` file, install Kimai:
 
 ```bash
-php73 bin/console kimai:install -n
+php81 bin/console kimai:install -n
 ```
 
 ### Webserver (nginx) configuration
@@ -76,7 +76,7 @@ Start by opening the `Web Station`:
 
 {% include docs-image.html src="/images/documentation/synology-1.png" title="Main Menu > Web Station" width="600px" %}
 
-Check that you have a PHP 7.3 profile:
+Check that you have a PHP 8.1 profile:
 
 {% include docs-image.html src="/images/documentation/synology-2.png" title="Main Menu > Web Station > PHP Settings" width="800px" %}
 
@@ -89,7 +89,7 @@ Settings choosen in the example:
 - Port: `7777` with `HTTPS`
 - Document root: `/volume1/web/kimai/public`
 - HTTP backend server: `nginx`
-- PHP backend: `PHP 7.3`
+- PHP backend: `PHP 8.1`
 
 Now switch to the console and find the directory where the config needs to be stored.
 
@@ -139,7 +139,7 @@ Add the following lines to it:
     }
 
     location ~ ^/index\.php(/|$) {
-        fastcgi_pass unix:/run/php/php7.2-fpm.sock;
+        fastcgi_pass unix:/run/php/php8.1-fpm.sock;
         fastcgi_split_path_info ^(.+\.php)(/.*)$;
         include fastcgi.conf;
         fastcgi_param PHP_ADMIN_VALUE "open_basedir=$document_root/..:/tmp/";
@@ -191,8 +191,8 @@ Please cross-check the normal [upgrade guide]({% link _documentation/updates.md 
 cd /volume1/web/kimai/
 git fetch --tags
 git checkout {{ site.kimai_v2_version }}
-php73 composer install --optimize-autoloader -n
-php73 bin/console kimai:update
+php81 composer install --optimize-autoloader -n
+php81 bin/console kimai:update
 chown -R :http .
 ```
 
@@ -212,8 +212,8 @@ cd kimai-{{ site.kimai_v2_version }}/
 Then [download and install composer](https://getcomposer.org/download/), followed by the installation:
 
 ```bash
-php74 composer.phar install --optimize-autoloader
-php74 bin/console kimai:update
+php81 composer.phar install --optimize-autoloader
+php81 bin/console kimai:update
 ```
 
 Now a) switch your virtual host to the new directory or b) change the directory names:
@@ -287,7 +287,7 @@ php80 /usr/local/bin/composer require laminas/laminas-ldap --optimize-autoloader
 ```
 
 Remark:
-- use the correct php version that you have installed, e.g. `php80` or `php74`
+- use the correct php version that you have installed, e.g. `php81` (but not `php74`)
 - change the path to composer if you have not created a link to your composer.phar under /usr/local/bin/
 
 
@@ -302,7 +302,7 @@ PHP has two different settings for memory limit, depending on where you run it:
 - executing scripts (like the installer) via SSH => settings from another config file are used 
 
 So  when running the installer and running into a memory issue, you have to adjust the `php.ini` whose settings are used 
-in SSH, e.g. the file `/usr/local/etc/php74/php.ini` is used for PHP 7.2.
+in SSH, e.g. the file `/usr/local/etc/php81/php.ini` is used for PHP 8.1.
 Search for the key `memory_limit` and set it to a high value, e.g. `memory_limit=512M`.
 
 Read [this discussion]({{ site.kimai_v2_repo }}/discussions/3468) for more infos. 
