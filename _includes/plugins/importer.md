@@ -1,5 +1,15 @@
 
-This bundle allows you to import CSV files into Kimai.
+You can import the following data:
+
+- Customer
+- Project
+- Timesheet
+- Customer (via Grandtotal)
+- Kimai v1
+
+Supported formats: JSON and CSV
+
+When importing timesheets, the user must be existing.
 
 ### Permissions
 
