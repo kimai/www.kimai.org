@@ -5,10 +5,6 @@ description: Import CSV and JSON data into Kimai
 
 {% include plugins/importer.md %}
 
-### Importing from Kimai v1
-
-There is a dedicated chapter about [migrating data from Kimai v1]({% link _documentation/migration-v1.md %}).
-
 ### Customer
 
 Supported attributes (field names are case-insensitive):
@@ -119,3 +115,14 @@ Grandtotal calls CSV exports `Numbers` in the export screen.
 
 Attention: Grandtotal exports its data with column names in the UI language (just like Kimai).
 Kimai only supports imports for GT exports from the languages english and german, so you might have to change it in `Settings / Languages / User interface`.
+
+### Permissions
+
+| Permission Name | Description                                           |
+|-----------------|-------------------------------------------------------|
+| importer        | access the administration screen to import CSV files  |
+{: .table }
+
+By default, these are assigned to each user with the role `ROLE_SUPER_ADMIN`.
+
+{% include store-howto-permissions.md %}

@@ -5,19 +5,6 @@ You can import the following data:
 - Project
 - Timesheet
 - Customer (via Grandtotal)
-- Kimai v1
+- [Kimai v1]({% link _documentation/migration-v1.md %})
 
 Supported formats: JSON and CSV
-
-When importing timesheets, the user must be existing.
-
-### Permissions
-
-| Permission Name | Description                                           |
-|-----------------|-------------------------------------------------------|
-| importer        | access the administration screen to import CSV files  |
-{: .table }
-
-By default, these are assigned to each user with the role `ROLE_SUPER_ADMIN`.
-
-{% include store-howto-permissions.md %}
