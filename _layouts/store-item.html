@@ -136,6 +136,11 @@ layout: page-empty
                                     <a href="{{ developer.twitter }}" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
                                 </li>
                                 {% endif %}
+                                {% if developer.mastodon %}
+                                <li class="avatar avatar-rounded">
+                                    <a href="{{ developer.mastodon }}" title="Mastodon" target="_blank"><i class="fab fa-mastodon"></i></a>
+                                </li>
+                                {% endif %}
                             </ul>
                         </div>
                     </div>
