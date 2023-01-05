@@ -3,9 +3,6 @@ title: Demo
 description: Testen Sie unseren Zeiterfassungssystem Kimai, direkt online in einer unserer Demo Installationen.
 lang: de
 permalink: /de/demo.html
-redirect_from:
-  - /en/demo.html
-  - /demo.html
 ---
 
 # Teste Kimai in einer unserer Demos
