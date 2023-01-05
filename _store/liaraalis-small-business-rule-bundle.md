@@ -4,7 +4,6 @@ intro: "A plugin that provides the possibility to use the small business regulat
 type: plugin
 tags: [plugin]
 lang: en
-permalink: /store/liaraalis-small-business-rule-bundle.html
 ---
 
 {% include store/liaraalis-small-business-rule-bundle.md %}
