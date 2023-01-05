@@ -32,7 +32,14 @@ redirect_from:
 
 Please read the full documentation about accepted inputs for the [duration format]({% link _documentation/duration-format.md %}).
 
-Important:
+### Negative duration
+All duration inputs can be prefixed with a "-" for a negative duration
+
+Normally the calculation is: begintime + duration = endtime - if begintime is empty the current time is used  
+A negative duration reverses this to: endtime - duration = begintime - if endtime is empty the current time is used  
+(the only exception to this is that if the duration is positive but the begintime is emtpy - the duration is treated as negative and the begintime is calculated from the endtime)
+
+### Important:
 - using `0` or `00:00` as duration will also stop the entry with a duration of zero seconds
 - to create a running entry the `end` and `duration` field needs to be empty
 
