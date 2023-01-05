@@ -10,7 +10,7 @@ layout: default
 {% if page.subtitle_trans != nil %}
     {% assign subtitle = site.data[page.lang].translation[page.subtitle_trans] %}
 {% endif %}
-{% include page-title.html title=pagetitle subtitle=subtitle options=page.options %}
+{% include page-title.html title=pagetitle subtitle=subtitle options=layout.options %}
 
 <div class="page-body">
     <div class="container-xl">
