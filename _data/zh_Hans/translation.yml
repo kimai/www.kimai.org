@@ -30,7 +30,7 @@ demo-empty-description: The upcoming version with plugins, but without demo data
 demo-reinstall: '演示将在 %X% 分钟内重新安装。'
 homepage-quote-excel: '使用 Kimai，不仅简化了用工作时间提供 Excel 电子表格的无聊过程，它还提供了许多其他令人兴奋的功能，您甚至不知道到目前为止您还缺少这些功能！'
 homepage-features-title: '功能列表'
-homepage-features-subtitle: '以下列表并不完整，但重点介绍了 Kimai 提供的一些令人兴奋的功能。'
+homepage-features-subtitle: '以下非详尽列表重点介绍了 Kimai 提供的一些令人兴奋的功能。'
 homepage-alert-title: '每个人的免费时间跟踪'
 homepage-alert-intro: 'Kimai 是一个开源时间跟踪解决方案。它跟踪工作时间并按需打印出您的活动摘要。每年、每月、每天、按客户、按项目……它的简单性就是它的优势。由于 Kimai 基于浏览器的界面，它可以跨平台运行，甚至可以在您的移动设备上运行。'
 homepage-alert-button-download: '下载'
@@ -69,7 +69,7 @@ download: '下载'
 compatibility: '兼容性'
 compatibility-kimai: '最低 Kimai 版本'
 compatibility-bundle: 'Bundle 版本'
-compatibility-info: '插件应始终与更高的 Kimai 版本兼容，以下列表包含插件版本和所需的最低 Kimai 版本。'
+compatibility-info: '下表包含插件与所需的最低 Kimai 版本之间的比较。'
 table-of-contents: '目录'
 copy-files: '复制文件'
 clear-cache: '清除缓存'
@@ -95,7 +95,7 @@ menu:
         download:
             name: '下载'
             title: '下载 Kimai'
-            header: 下载 Kimai - 它是免费的！
+            header: 下载 Kimai — 它是免费的！
         hosted:
             name: 'Cloud'
             title: 'Kimai-Cloud - 无需设置即可直接使用 Kimai。免费Kimai托管！'
@@ -124,7 +124,7 @@ menu:
             description: 背景信息和技术相关性
         api:
             name: REST API
-            description: 使用 JSON Api 在 Kimai 中获取并创建数据
+            description: 使用 JSON API 在 Kimai 中获取并创建数据
         plugins:
             name: 附加功能
             description: （付费）插件提供的功能的用户文档
@@ -146,7 +146,7 @@ feature:
         description: "布局完全响应，专为桌面和移动使用而设计。每个用户都可以配置应该显示的数据列，例如防止在小型设备上水平滚动。"
     plugins:
         name: "插件"
-        description: "Kimai 在构建时考虑了可扩展性，可以使用插件扩展功能集。想要为 Kimai 创建插件的开发人员可以使用许多扩展点。"
+        description: "Kimai 被构建为可扩展的，并且可以使用插件添加功能。想要创建它们的开发人员可以使用许多扩展点。"
     multi-user:
         name: "多用户"
         description: "Kimai 可以由任意数量的用户使用：每个安装都支持具有不同角色的无限用户（请参阅权限）。"
@@ -167,13 +167,13 @@ feature:
         description: "活动用于将工作单元分配给时间表条目。使用订单号、预算和可见性（用于归档）管理每个项目的活动。活动可以是全球性的，如果多个项目共享同一个工作单元，则不再需要重复。"
     invoices:
         name: "发票"
-        description: "不同的模板、计算器、发票号码生成器，您可以添加自己的模板以文件格式导出：PDF、DOCX、HTML、XLSX、ODS。"
+        description: "不同的发票模板、条目分组选项、可配置的发票编号，您可以添加自己的 PDF、DOCX、HTML、XLSX 和 ODS 文件格式的模板。"
     export:
         name: "导出数据"
-        description: "时间表数据可以导出以供其他程序使用或以下列格式与不同部门共享：XLSX (Excel)、PDF、CSV 和 HTML。最重要的是，可以锁定导出的记录并防止进一步更改。"
+        description: "时间表数据可以导出到其他程序，或以 XLSX (Excel)、PDF、CSV 和 HTML 格式与不同部门共享。导出的记录还可以被锁定并防止进一步更改。"
     expenses:
         name: "费用"
-        description: "根据客户、项目和活动跟踪您的费用。这些支出可以分类并包含在您的发票中。请注意：费用跟踪仅作为付费插件提供。"
+        description: "购买该插件后，可以根据客户、项目和活动来跟踪支出—以便分类并纳入你的发票。"
     saml:
         name: "SAML"
         description: "通过 SAML（单点登录又名 SSO）登录和注册用户，并重复使用现有的标识提供者，如谷歌工作区、身份验证或 Azure 活动目录。"
@@ -188,7 +188,7 @@ feature:
         description: "您的仪表板将向您显示有关记录时间和收集数据量的一些统计信息。我们总是可以添加更多图表！"
     docker:
         name: "Docker"
-        description: "该版本包括一个用于开发的 docker 映像，并且有一个用于生产的单独 docker-compose 设置。"
+        description: "我们有用于开发的 Docker 映像，还有用于生产用途的 Docker-Compose 设置的多种变体。"
     migrate-v1:
         name: "迁移"
         description: "可以导入来自 Kimai v1 的数据，以便无缝迁移您的时间跟踪器。"
@@ -212,7 +212,7 @@ feature:
         description: "您可以按用户、客户、项目、活动和日期过滤所有时间记录。"
     archiving:
         name: "归档"
-        description: "长期用户知道旧数据会堆积在您的下拉列表中——不用担心：您可以通过限制客户、项目和活动的可见性来隐藏它们。"
+        description: "长期用户知道旧数据会堆积在您的下拉列表中 — 通过限制客户、项目和活动的可见性来隐 藏它们。"
     permissions:
         name: "权限"
         description: "可定制的权限结构。为您的用户分配不同的角色，例如用户可以记录时间，团队负责人可以打印发票和配置项目/活动，管理员可以配置用户和客户。"
@@ -221,13 +221,13 @@ feature:
         description: "每小时费率、Kimai 主题、密码和头像的个人统计信息和每个用户设置。"
     theming:
         name: "主题化"
-        description: "Kimai 捆绑了不同的颜色主题和显示设置，因此每个用户都可以根据自己的喜好进行调整"
+        description: "Kimai 带有不同的颜色主题和显示设置，以适应每个用户"
     user-registration:
         name: "用户注册"
         description: "Kimai 支持用户通过电子邮件激活自行注册。"
     password-reset:
         name: "重设密码"
-        description: "忘记密码了吗？没问题，Kimai 通过电子邮件为您提供了密码重置功能。"
+        description: "忘记密码了吗？ Kimai 通过电子邮件帮助您重置它。"
     technology:
         name: "最新"
         description: "基于最新的 Web 技术和框架：PHP、Symfony、Doctrine、Flex、Bootstrap、Webpack 等等…"
@@ -242,6 +242,6 @@ install:
         version: PHP %version% 或更高版本
         extensions: PHP 扩展
         database: '数据库：MariaDB 或 MySQL'
-        webserver: 网络服务器（nginx，带有 mod_rewrite 的 Apache）
+        webserver: 网络服务器（NGINX 或者带有 mod_rewrite 的 Apache）
         subdomain: 一个免费的子域（不支持在子目录中使用）
-        browser: 现代浏览器
+        browser: 现代网络浏览器
