@@ -16,15 +16,3 @@ Only the text from the following "domains" cannot be changed:
 
 - Security (Login, Password forgotten)
 - Names of export templates, invoice number-generators, invoice calculators and invoice renderer 
-
-### Permissions
-
-| Permission Name     | Description                                                                               |
-|---------------------|-------------------------------------------------------------------------------------------|
-| edit_translation    | access the translation screen and allow all actions: create, edit and delete translations |
-{: .table }
-
-By default, these are assigned to each user with the role `ROLE_SUPER_ADMIN`.
-
-{% include store-howto-permissions.md %}
-

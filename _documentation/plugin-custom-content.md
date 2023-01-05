@@ -62,3 +62,14 @@ That's how the **alert / warning message** looks like. You can even include _mar
 ### CSS / Stylesheet
 
 {% include plugins/custom-css-examples.md %}
+
+## Permissions
+
+| Permission Name      | Description                                     |
+|----------------------|-------------------------------------------------|
+| edit_custom_content  | show the "custom content" administration screen |
+{: .table }
+
+By default, these are assigned to each user with the role `ROLE_SUPER_ADMIN`.
+
+{% include store-howto-permissions.md %}

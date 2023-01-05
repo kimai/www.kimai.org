@@ -18,3 +18,15 @@ The add dialog allows to find a string by typing in the `Default translation` fi
 The edit dialog allows to change your custom translation:
 
 {% include docs-image.html src="/images/marketplace/translation-edit.png" title="Change your custom translation" width="800px" %}
+
+### Permissions
+
+| Permission Name     | Description                                                                               |
+|---------------------|-------------------------------------------------------------------------------------------|
+| edit_translation    | access the translation screen and allow all actions: create, edit and delete translations |
+{: .table }
+
+By default, these are assigned to each user with the role `ROLE_SUPER_ADMIN`.
+
+{% include store-howto-permissions.md %}
+
