@@ -1,4 +1,4 @@
-{% assign date_format = include.date | default: "%Y-%m-%d" %}
+{% assign date_format = site.date_format[page.lang] | default: "%Y-%m-%d" %}
 
     <div class="row row-cards row-deck">
 
@@ -12,9 +12,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="markdown">
-                        <h1>{{ include.archive | default: "Archive" }}</h1>
                         <p>
-                            {{ include.jump_to | default: "Jump to tag" }}:&nbsp;
                             {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
                             {% assign sortedTags = site_tags | split:',' | sort %}
                             {% for tag in sortedTags %}
