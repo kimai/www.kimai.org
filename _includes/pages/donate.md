@@ -1,16 +1,11 @@
 
-# Support Kimai
+# {{ site.data[page.lang].translation.donate.title }}
 
-{% include alert.html icon="far fa-smile" alert="By donating to Kimai and sponsoring the development you help us to improve your time-tracking experience!" %}
+{% assign introduction = site.data[page.lang].translation.donate.introduction %}
+{% include alert.html icon="far fa-smile" alert=introduction %}
 
-Developing a free software like Kimai takes a lot of time and effort.
-If you like Kimai, if you use it on a daily basis or administrate Kimai in your company, please consider to donate and support further development.
+{{ site.data[page.lang].translation.donate.please-donate }}
 
 {% include card-donate.html user="kevinpapst" %}
 
-Your donation goes directly into supporting the project. I am a professional software-developer dedicated to Kimai and with a heart for open source software.
-Most importantly, by helping support the development of Kimai you are contributing to an effort that makes your life easier. Now isn't that sweet?
-
-Thank you for using Kimai and supporting the development!
-
-Please note, this donation is not directed towards a non-profit and thus not deductible on your taxes.
+{{ site.data[page.lang].translation.donate.your-donation }}
