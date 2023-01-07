@@ -2,7 +2,7 @@
 title: "How to use Kimai 2 as native app"
 date: "2019-06-11 20:00:00 +0200"
 author: kevinpapst
-tags: [HowTo]
+tags: [Apps & Plugins]
 ---
 
 Thanks to the Kimai user Roman, who wrote me about that topic, I can share a nice inspiration with you today. 
