@@ -11,7 +11,7 @@
     </div>
 
     <div class="col-md-12 col-lg-8">
-        <div class="card bg-green-lt">
+        <div class="card">
             <div class="card-body d-flex flex-column p-4">
                 <h3 class="pb-3">
                     {{ site.data[page.lang].translation.homepage-alert-title }}
