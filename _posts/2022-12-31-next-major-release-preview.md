@@ -15,6 +15,7 @@ The biggest changes, which I want to present right away are:
 - Re-added the inline search: improving the UX by reducing click-counter
 - Added context menu on all listings and the calendar
 - Two-factor authentication with TOTP
+- Configurable dashboard per user
 - Real remember me mode
 - Store column visibility server side
 - Upgraded the entire frontend stack and reduced JS and CSS footprint (main app from 1.2MB to 350kB, calendar from 760kB to 210kB)
