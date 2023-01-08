@@ -88,11 +88,11 @@ The last few years have shown that there is interest and support for paid plugin
 That's why I created the [Kimai-Cloud](https://www.kimai.cloud): a hosted environment, including SAML login, custom domains, IP restriction, full backups and many more features.
 
 While I love my work and enjoy giving away Kimai for free, I have to support my family and company.
-More than 4 years after the first pre-release of Kimai I am still loosing money (keep in mind the first two years, which I paid entirely out of my own savings). 
+More than 4 years after the first pre-release of Kimai I am still loosing money (not to forget the first two years, where I had basically zero income and what I paid entirely out of my own savings). 
 The basic foundation is now done, and I have many ideas which will keep me fueled for the next years.
 A couple of great companies are supporting my work, and while I totally appreciate that, I am still looking for a way to stabilize my income and really free me of my last freelancer gigs. 
 
-While many of you might not like that announcement, I have to make it: plugin distribution will switch (at least partially) to a subscription model.
+While some of you might not like that announcement, I hope that most will understand it: plugin distribution will switch (at least partially) to a subscription model.
 This is not about "maximising profit", I would not share so much of my code and time for free otherwise.
 It's about being able to run a sustainable business, being able to concentrate 100% on Kimai and 
 being able to get an employee (who should take care of all the content like documentation, news and video tutorials).
