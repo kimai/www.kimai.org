@@ -46,6 +46,20 @@ That's it, Kimai is running the most current version. Enjoy the latest time-trac
 
 ## Troubleshooting
 
+### flex.symfony.com not found
+
+If you see the following error during `composer install`, then you are running a very old installation 😁
+
+```bash
+curl error 6 while downloading https://flex.symfony.com/versions.json: Could not resolve host: flex.symfony.com 
+```
+
+Great that you like Kimai, but PLEASE: for various reason (like security) you should update more regularly!
+
+Please run `composer install --optimize-autoloader -n --no-plugins --no-scripts` once and then follow the normal update process.
+
+### Changed files
+
 Please check with `git status` if your directory is without changes, to make sure you really can upgrade.
 If the following statement looks different for you, keep on reading:
 ```bash 
@@ -56,7 +70,7 @@ nothing to commit, working tree clean
 
 If you experience an issue like this (file name can vary) while performing the `git update`: 
 
-```
+```bash
 error: Your local changes to the following files would be overwritten by checkout:
 symfony.lock
 Please commit your changes or stash them before you switch branches.
@@ -64,7 +78,7 @@ Please commit your changes or stash them before you switch branches.
 
 or
 
-```
+```bash
 config/routes/annotations.yaml: needs merge
 error: you need to resolve your current index first
 ```
