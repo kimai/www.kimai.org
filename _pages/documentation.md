@@ -15,4 +15,4 @@ redirect_from:
 - /documentation/manual/administration.html
 ---
 
-{% include pages/documentation.html %}
+{% include pages/documentation.md %}

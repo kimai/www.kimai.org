@@ -8,4 +8,4 @@ permalink: /fr/documentation/
 toc: false
 ---
 
-{% include pages/documentation.html %}
+{% include pages/documentation.md %}
