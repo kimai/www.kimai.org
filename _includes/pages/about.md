@@ -26,7 +26,7 @@ So be our guest and test Kimai online with our [demo installation]({% link _page
 
 And last but not least - probably the most important fact: **Kimai is open-source, you can download it for free and you will never be charged a license fee for any future update**.
 
-## Who is Kimai?
+## Who is behind Kimai?
 
 There is a great and large community around Kimai and listing everyone is impossible. You find a brief list of former developers below.
 The [marketplace]({% link _pages/store.html %}) shows a list of plugins and their developers, this will give you a good idea of the developers

@@ -36,7 +36,7 @@ Wenn Sie mit harten Fakten vertraut sind, haben wir auch eine [Funktionsübersic
 Und last but not least – wahrscheinlich das Wichtigste: 
 **Kimai ist Open-Source, Sie können es kostenlos herunterladen und Sie werden nie eine Lizenzgebühr für ein zukünftiges Update zahlen.**
 
-## Wer ist Kimai?
+## Wer steckt hinter Kimai?
 
 Es gibt eine großartige und große Gemeinschaft rund um Kimai und es ist unmöglich, jeden Beteiligten aufzulisten. 
 Eine kurze Liste der ehemaligen Entwickler finden Sie unten.
