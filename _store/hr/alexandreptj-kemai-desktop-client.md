@@ -1,10 +1,6 @@
 ---
 title: Kemai – Desktop klijent za Kimai
 intro: Višeplatformski klijent grafičkog korisničkog sučelja za Kimai
-screenshot: 
-  - /images/marketplace/kemai-running.jpg
-  - /images/marketplace/kemai-settings.jpg
-  - /images/marketplace/kemai-add-project.jpg
 type: client
 tags: [qt,desktop]
 lang: hr

@@ -6,6 +6,12 @@ layout: page-empty
 {% assign icon = settings.icon | default: "fas fa-question" %}
 {% assign buyLink = '#' %}
 {% assign isPaidOwnerPlugin = false %}
+{% assign screenshot = nil %}
+{% if settings.screenshot %}
+    {% assign screenshot = settings.screenshot %}
+{% elsif page.screenshot %}
+    {% assign screenshot = page.screenshot %}
+{% endif %}
 {% if settings.download %}
 	{% assign buyLink = settings.download %}
 {% elsif settings.email %}
@@ -166,13 +172,13 @@ layout: page-empty
                     </div>
                     {% endif %}
 
-                    {% if page.screenshot %}
+                    {% if screenshot != nil %}
                     <div class="card p-3 mb-3">
                         <div id="carousel-controls" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
-                                {% for screenshot in page.screenshot %}
+                                {% for s in screenshot %}
                                 <div class="carousel-item{% if forloop.first %} active{% endif %}">
-                                    <a href="{{ screenshot }}" target="_blank"><img class="d-block w-100" alt="" src="{{ screenshot }}" data-holder-rendered="true"></a>
+                                    <a href="{{ s }}" target="_blank"><img class="d-block w-100" alt="" src="{{ s }}" data-holder-rendered="true"></a>
                                 </div>
                                 {% endfor %}
                             </div>
@@ -187,12 +193,12 @@ layout: page-empty
                         </div>
                         <div class="d-flex align-items-center px-2">
                             <div>
-                                <div>Screenshot{% if page.screenshot.size > 1 %}s{% endif %}</div>
+                                <div>Screenshot{% if screenshot.size > 1 %}s{% endif %}</div>
                                 <small class="d-block text-muted">Click to enlarge</small>
                             </div>
-                            {% if page.screenshot.size > 1 %}
-                            <div class="ml-auto text-muted">
-                                {% for screenshot in page.screenshot %}
+                            {% if screenshot.size > 1 %}
+                            <div class="ms-auto text-muted">
+                                {% for s in screenshot %}
                                 <a href="javascript:void(0)" data-bs-target="#carousel-controls" data-bs-slide-to="{{ forloop.index0 }}" class="icon">[{{ forloop.index }}]</a>
                                 {% endfor %}
                             </div>
