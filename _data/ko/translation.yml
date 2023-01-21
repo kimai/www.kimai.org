@@ -120,3 +120,155 @@ menu:
             description: 유료 플러그인에서 제공하는 기능을 위한 사용자문서
         auth:
             name: 인증부호
+            description: Log in to Kimai using external identity provider
+        v1:
+            name: Kimai v1
+            description: Legacy documentation for the deprecated Kimai 1
+        installation:
+            name: Installation & Updates
+            description: Everything you need to host your Kimai on your own server
+        on-premise:
+            name: DevOps
+            description: Manage and configure your Kimai installation
+demo:
+    user: Demo user
+    title: Test Kimai in one of the demos
+    introduction: "Try out the Kimai time-tracking demo, and we promise: you'll keep on using it!"
+    choose: Please choose one of our demo installations, to get a first impression on how Kimai feels and which functionality it provides.
+    reinstall: Be aware that the demos will be reinstalled on a regular schedule and all entered data will be removed. But for your convenience, most are pre-filled with test data, so you can directly start testing features (like invoice or export).
+    accounts: These accounts are available for your tests. Or you create your own test user in the login form of each demo.
+    role_user: User
+    role_teamlead: Teamlead
+    role_admin: Administrator
+    role_super: Super-Admin
+feature:
+    api:
+        name: JSON API
+        description: Featuring a JSON API so external apps can communicate with your favorite time-tracker!
+    timesheet-filter:
+        name: Timesheet filter
+        description: You can filter all time-records by user, customer, project, activity and date.
+    mobile-ready:
+        name: Mobile ready
+        description: The layout is fully responsive, made for desktop and mobile usage. Every user can configure the data columns that should be shown, e.g. to prevent horizontal scrolling on small devices.
+    plugins:
+        name: Plugins
+        description: Kimai was built to be extendable, and features can be added with plugins. Developers wanting to create them can use many extension points.
+    multi-user:
+        description: 'Kimai can be used by as many users as you want: each installation supports unlimited users with different roles (see permissions).'
+        name: Multi user
+    multi-language:
+        description: Kimai can be localized to any language and is already translated to more than 30 languages.
+        name: Multi language
+    teams:
+        name: Teams
+        description: Teams can be created to group your users into logical groups like departments or project related peer-groups. Customers and projects can be assigned to those teams, which will limit visibility and access for other users.
+    customers:
+        name: Customers
+        description: Manage your customers and set address, contacts, country, currency, visibility (for archiving) and many more fields.
+    projects:
+        name: Projects
+        description: Manage projects for each customer with order number, budget and visibility (for archiving).
+    activities:
+        name: Activities
+        description: Activities are used to assign the unit of work to timesheet entries. Manage activities for each project with order number, budget and visibility (for archiving). Activities can be global, no more duplication necessary if multiple projects share the same working unit.
+    invoices:
+        name: Invoicing
+        description: Different invoice templates, options for entry grouping, configurable invoice numbers, and you can add your own templates in PDF, DOCX, HTML, XLSX, and ODS file format.
+    export:
+        name: Export data
+        description: Timesheet data can be exported to other programs, or shared with different departments in XLSX (Excel), PDF, CSV and HTML format. Exported records can additionally be locked and protected against further changes.
+    expenses:
+        description: Buy the plugin and keep track of expenses based on customer, project and activity — for categorization and inclusion in your invoices.
+        name: Expenses
+    saml:
+        description: Login and register users via SAML (Single sign on aka SSO) and re-use your existing identity provider, like Google workspace, Authentik or Azure active directory.
+        name: SAML
+    ldap:
+        description: Connect Kimai with your company directory server (LDAP or Active directory) and use your existing authentication infrastructure.
+        name: LDAP
+    statistics:
+        name: Statistics
+        description: Your dashboard will show you several statistics about recorded times and the amount of collected data. And we can always add more charts!
+    active-entries:
+        description: You can record as many times as you want in parallel, but you can also config the allowed limit of active records down to 1.
+        name: Amount of active records
+    am-pm-format:
+        name: AM/PM format
+        description: Kimai uses localized version of the 24 hour format. But if you are used to the AM/PM format, you can configure that.
+    time-clock:
+        name: Time-clock
+        description: Don’t want your users to log arbitrary timesheet records? Switch to the time-clock mode, which only allows “punch in” and “punch out” records. No more manually given start and end times.
+    duration-only:
+        name: Duration only
+        description: If your local laws require you to only show durations instead of start and end date-time, you can activate that mode globally.
+    rates:
+        name: Rate calculation
+        description: Rates can be calculated based on hourly and fixed amounts, configurable for customers, projects, activities and each timesheet record individually.
+    archiving:
+        name: Archiving
+        description: Long-term users know old data can pile up in your dropdowns — hide them by limiting the visibility of customers, projects and activities.
+    permissions:
+        name: Permissions
+        description: Customizable permission structure. Assign different roles to your user, e.g. users can record times, teamleads can print invoices and configure project/activities, admins can configure users and customers.
+    user-profile:
+        name: User profile
+        description: Personal statistics and per user settings for hourly rate, Kimai theme, password and avatar.
+    theming:
+        description: Kimai comes with different color themes and display settings, to suit each individual user
+        name: Theming
+    user-registration:
+        description: Kimai supports user self-registration with e-mail activation.
+        name: User registration
+    password-reset:
+        name: Password reset
+        description: Forgot your password? Kimai helps you reset it via e-mail.
+    technology:
+        name: Up-to-date
+        description: 'Based on newest web technologies and frameworks: PHP, Symfony, Doctrine, Flex, Bootstrap, Webpack and many more…'
+    docker:
+        name: Docker
+        description: We have Docker images for development and there multiple variations of Docker-Compose setups for production usage.
+    migrate-v1:
+        name: Migration
+        description: Data from Kimai v1 can be imported, for a seamless migration of your time-tracker.
+install:
+    requirements:
+        hosters: 'These requirements are provided by almost all hosting companies:'
+        title: Server requirements
+        version: PHP %version% or higher
+        extensions: PHP extensions
+        database: 'Database: MariaDB or MySQL'
+        webserver: Web server (NGINX, or Apache with mod_rewrite)
+        subdomain: A free subdomain (use in subdirectory is not supported)
+        browser: A modern web browser
+    download:
+        title: Installation with SSH
+        intro: The recommended way to install Kimai is to use `git` and `composer` directly on the target system.
+        alert-vps: "At this stage, it’s not possible to install Kimai by downloading a ZIP file and uploading the files to your web server. This is because Composer needs to run on the command line.\n\nThis doesn’t necessarily mean you need a VPS. Some shared hosts give you SSH access, through which you should be able to install Composer and Kimai just fine.\n\nFull installation instructions can be found in our %documentation%.\n"
+newsletter:
+    title: Newsletter
+    introduction: Subscribe to our newsletter and stay updated about Kimai and Plugin updates.
+    email-title: Your email address
+    email-help: Provide your email address to subscribe.
+    field-invalid: The information provided is invalid. Please review the format and try again.
+    field-required: This field cannot be left blank.
+    captcha-help: Very sorry for the Captcha, we know it's annoying!
+    sendinblue: We use Sendinblue as our marketing platform. By Clicking below to submit this form, you acknowledge that the information you provided will be transferred to Sendinblue for processing in accordance with their %terms%
+    terms: terms of use
+    button: SUBSCRIBE
+donate:
+    title: Support Kimai
+    introduction: By donating to Kimai and sponsoring the development you help us to improve your time-tracking experience!
+    please-donate: Developing a free software like Kimai takes a lot of time and effort. If you like Kimai, if you use it on a daily basis or administrate Kimai in your company, please consider to support further development.
+    your-donation: "Your donation goes directly into supporting the project. I am a professional software-developer dedicated to Kimai and with a heart for open source software.\nMost importantly, by helping support the development of Kimai you are contributing to an effort that makes your life easier. Now isn't that sweet?\n\nThank you for using Kimai!\n\nPlease note, this donation is not directed towards a non-profit and thus not deductible on your taxes.\n"
+demo-empty-description: The upcoming version with plugins, but without demo data.
+demo-v2-description: The coming version with additional plugins and demo data.
+demo-plugins-description: The current version with plugins from our marketplace and with demo data.
+demo-master-title: Current version - Empty
+demo-master-description: The current version with additional plugins, but without demo data.
+demo-stable-title: Current version - No plugins
+demo-stable-description: 'The current version, without plugins, but with demo data. Installed version: '
+demo-plugins-title: Current version
+demo-v2-title: Version 2.0
+demo-empty-title: Version 2.0 - Empty
