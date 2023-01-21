@@ -2,10 +2,10 @@
 title: Download
 description: Download - Kimai time-tracker
 lang: en
-permalink: /download/
+permalink: /en/download.html
 layout: download
 redirect_from:
-- /en/download.html
+- /download/
 - /download.html
 ---
 
