@@ -2,7 +2,6 @@
 title: Kontrola vremena (Njemački zakon, provjera pauza, prekovremeni sati)
 intro: "Kimai dodatak za provjeravanje je li netko od tvojin korisnika prekršio njemački zakon o pauzama + usporedba nominalnog i stvarnog radnog vremena + prikaz prekovremenih sati"
 type: plugin
-tags: [plugin]
 screenshots:
   - 
     src: "/images/marketplace/mr-software-controlling-1.png"

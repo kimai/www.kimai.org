@@ -4,7 +4,6 @@ intro: "Créez des champs supplémentaires librement configurables pour les feui
 featured: Créez des champs supplémentaires librement configurables pour les feuilles de temps, les clients, les projets, les activités et les utilisateurs dans différents formats. Les champs peuvent être facultatifs ou obligatoires et restreints par des permissions.
 slug: custom-fields-bundle
 type: featured
-tags: [plugin]
 screenshots:
   - 
     src: "/images/marketplace/meta-fields-listing.png"

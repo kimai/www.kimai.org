@@ -4,7 +4,6 @@ intro: "Stvori prilagođen sadržaj za: stilske predloške, javascript, globalnu
 featured: "Stvori prilagođen sadržaj za: stilske predloške, javascript, globalnu poruku upozorenja i novu stranicu za prikaz markdown formatiranog sadržaja za novosti poduzeća."
 slug: custom-content-bundle
 type: featured
-tags: [plugin]
 screenshots:
   - 
     src: "/images/marketplace/custom-content-alert.png"

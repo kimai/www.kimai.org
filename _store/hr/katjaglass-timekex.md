@@ -2,7 +2,6 @@
 title: TimeKex – Uvoz vremenskih tablica Excel datoteka
 intro: "Uvezi svoja vremena održavana u programu Excel u Kimai jednom tjedno. Dostupan je i izravan uvoz kupaca/projekata/aktivnosti iz Excela."
 type: client
-tags: [excel,import]
 lang: hr
 permalink: /hr/store/katjaglass-timekex.html
 ---

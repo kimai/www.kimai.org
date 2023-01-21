@@ -3,7 +3,6 @@ title: Invoicing with automatic PDF timesheets
 intro: "Enhanced invoicing features: change locale for money and date values, automatic timesheet proof PDF for new invoices."
 slug: invoice-bundle
 type: plugin
-tags: [plugin]
 screenshots:
   - 
     src: "/images/marketplace/invoice-fullscreen.png"

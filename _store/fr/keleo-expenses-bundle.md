@@ -4,7 +4,6 @@ intro: "Gardez une trace de vos dépenses et incluez-les dans vos factures."
 featured: Gardez la trace de vos dépenses en fonction d'un client, d'un projet et d'une activité. Ces dépenses peuvent être classées par catégorie et incluses dans vos factures.  
 slug: expenses-bundle
 type: featured
-tags: [plugin]
 screenshots:
   - 
     src: "/images/marketplace/expenses-listing.png"

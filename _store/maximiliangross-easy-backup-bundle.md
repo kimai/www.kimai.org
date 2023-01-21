@@ -2,7 +2,6 @@
 title: Easy Backup
 intro: "A Kimai plugin, which allows you to backup your environment with a single click."
 type: plugin
-tags: [plugin]
 screenshots:
   - 
     src: "https://raw.githubusercontent.com/mxgross/EasyBackupBundle/master/screenshot.jpg"

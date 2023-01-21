@@ -2,7 +2,6 @@
 title: Budgets récurrents
 intro: "Ajoute automatiquement de l'argent ou du temps aux budgets de vos projets de manière récurrente avec un intervalle personnalisé."
 type: plugin
-tags: [plugin]
 screenshots:
   - 
     src: "/images/marketplace/pcsg-recurring-budget-bundle-project.png"

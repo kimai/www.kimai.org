@@ -4,7 +4,6 @@ intro: "Create custom content for: stylesheets, javascript, a global warning mes
 featured: "Create custom content for: stylesheets, javascript, a global warning message and a new page to render markdown content for company news."
 slug: custom-content-bundle
 type: featured
-tags: [plugin]
 screenshots:
   - 
     src: "/images/marketplace/custom-content-alert.png"

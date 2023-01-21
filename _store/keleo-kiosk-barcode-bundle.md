@@ -4,7 +4,6 @@ intro: "Start and stop timesheets with a barcode or RFID scanner for attendance 
 featured: "Attendance time-tracking in an environment, where the user has no access to Kimai (eg. in a warehouse) by using a barcode or RFID scanner to start and stop timesheets." 
 slug: kiosk-barcode-bundle
 type: featured
-tags: [plugin]
 redirect_from: /store/keleo-kiosk-barcode-bundle.html
 screenshots:
   - 

@@ -2,7 +2,6 @@
 title: Berichtsheft für Azubis
 intro: "A plugin for Kimai which generates a RecordBook (German: Berichtsheft) for trainees."
 type: plugin
-tags: [plugin]
 screenshots:
   - 
     src: "/images/marketplace/mr-software-recordbook-pdf.png"

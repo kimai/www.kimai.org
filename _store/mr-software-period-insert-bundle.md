@@ -3,7 +3,6 @@ title: Period insert
 intro: "Create timesheet entries by date range"
 redirect_from: /store/hmr-it-period-insert-bundle.html
 type: plugin
-tags: [plugin]
 screenshots:
   - 
     src: "/images/marketplace/mr-software-period-insert-plugin.png"

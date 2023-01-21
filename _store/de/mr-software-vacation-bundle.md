@@ -2,7 +2,6 @@
 title: Urlaubsverwaltung (vacation + official & local holidays)
 intro: "A plugin for Kimai which adds the full workflow for vacation + official & local holidays"
 type: plugin
-tags: [plugin]
 screenshots:
   - 
     src: "/images/marketplace/mr-software-vacation-1.png"

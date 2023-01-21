@@ -4,7 +4,6 @@ intro: "Créez des tâches, démarrez/arrêtez/mettez-les en pause, attribuez-le
 featured: "Créez des tâches, démarrez/arrêtez/mettez-les en pause, attribuez-les aux utilisateurs et aux équipes - un plugin de gestion de liste de tâches qui est connecté à votre suivi du temps et ajoute deux nouveaux widgets de tableau de bord"
 slug: task-management-bundle
 type: featured
-tags: [plugin]
 screenshots:
   - 
     src: "/images/marketplace/tasks-screenshot.png"

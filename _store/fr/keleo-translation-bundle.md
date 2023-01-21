@@ -4,7 +4,6 @@ intro: "Modifiez tous les éléments visibles de votre installation Kimai avec v
 featured: "Modifiez tous les éléments visibles (étiquettes de formulaire, en-tête de tableau, éléments de menu ...) dans votre installation Kimai avec vos propres traductions"
 slug: translation-bundle
 type: featured
-tags: [plugin]
 screenshots:
   -  
     src: "/images/marketplace/translation-listing.png"

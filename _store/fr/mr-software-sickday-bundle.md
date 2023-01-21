@@ -2,7 +2,6 @@
 title: Congé de maladie (jours de maladie)
 intro: "Un plugin pour Kimai pour suivre les jours de maladie des utilisateurs."
 type: plugin
-tags: [plugin]
 screenshots:
   - 
     src: "/images/marketplace/mr-software-sickday-1.png"

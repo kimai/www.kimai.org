@@ -51,13 +51,6 @@
 						{% endif %}
 					</td>
 				{% endif %}
-				<td class="text-end text-muted d-none d-md-table-cell text-nowrap">
-                    {% comment %}
-					{% for tag in product.tags %}
-						<span class="badge bg-blue-lt badge-sm">{{ tag }}</span>
-					{% endfor %}
-                    {% endcomment %}
-				</td>
 				<td class="text-end text-nowrap">
 					<strong>
 						{% if settings.price == nil %}

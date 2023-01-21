@@ -2,7 +2,6 @@
 title: HasWorked (avertir les utilisateurs s'ils n'ont pas entré de temps)
 intro: "Un plugin Kimai pour envoyer une notification par e-mail aux utilisateurs s'ils n'ont aucune entrée le jour en cours"
 type: plugin
-tags: [plugin]
 screenshots:
   - 
     src: "/images/marketplace/mr-software-hasworked-bundle-mail.png"

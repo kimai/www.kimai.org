@@ -2,7 +2,6 @@
 title: Kimai Mobile
 intro: "Kimai Mobile est une application qui permet une utilisation pratique de Kimai sur votre appareil mobile Android."
 type: app 
-tags: [Android]
 screenshots:
   -
     src: "/images/marketplace/cloudrizon-kimai-mobile-app-splash.png"

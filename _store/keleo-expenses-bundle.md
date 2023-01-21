@@ -4,7 +4,6 @@ intro: "Keep track of your expenses and include them in your invoices."
 featured: Keep track of your expenses based on a customer, project and activity. These expenses can be categorized and included in your invoices.  
 slug: expenses-bundle
 type: featured
-tags: [plugin]
 redirect_from:
   - /documentation/expenses/
   - /v1/expenses.html

@@ -4,7 +4,6 @@ intro: "Stvori zadatke, pokreni/prekini/zaustavi ih, dodijeli ih korisnicima i t
 featured: "Stvori zadatke, pokreni/prekini/zaustavi ih, dodijeli ih korisnicima i timovima – dodatak za upravljanje zadacima koji je povezan s tvojim evidentiranjem vremena i dodaje dva nova widgeta u nadzornu ploču"
 slug: task-management-bundle
 type: featured
-tags: [plugin]
 screenshots:
   - 
     src: "/images/marketplace/tasks-screenshot.png"

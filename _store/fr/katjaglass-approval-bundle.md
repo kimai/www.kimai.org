@@ -2,7 +2,6 @@
 title: Flux de travail pour l'approbation des feuilles de temps
 intro: "Cette offre groupée est disponible pour effectuer une approbation hebdomadaire des feuilles de temps."
 type: plugin
-tags: [plugin]
 screenshots:
   - 
     src: "https://raw.githubusercontent.com/KatjaGlassConsulting/ApprovalBundle/0.9.1/_documentation/Screenshot_UserApprovalForWeek.png"

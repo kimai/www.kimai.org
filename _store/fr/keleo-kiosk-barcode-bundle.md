@@ -4,7 +4,6 @@ intro: "Démarrez et arrêtez les feuilles de temps avec un code-barres ou un sc
 featured: "Suivi du temps de présence dans un environnement où l'utilisateur n'a pas accès à Kimai (par exemple dans un entrepôt) en utilisant un code-barres ou un lecteur RFID pour démarrer et arrêter les feuilles de temps." 
 slug: kiosk-barcode-bundle
 type: featured
-tags: [plugin]
 screenshots:
   - 
     src: "/images/marketplace/kiosk-listing.png"

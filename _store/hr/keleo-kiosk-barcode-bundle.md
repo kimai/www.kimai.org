@@ -4,7 +4,6 @@ intro: "Pokreni i prekini vremenske tablice pomoću barkod ili RFID skenera za e
 featured: "Evidentiranje radnog vremena u okruženju u kojem korisnik nema pristup Kimaiju (npr. u skladištu) korištenjem barkod ili RFID skenera za pokretanje i prekidanje vremenskih tablica." 
 slug: kiosk-barcode-bundle
 type: featured
-tags: [plugin]
 screenshots:
   - 
     src: "/images/marketplace/kiosk-listing.png"

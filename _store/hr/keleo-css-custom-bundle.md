@@ -2,7 +2,6 @@
 title: Prilagođeni CSS
 intro: "Dodatak koji omogućuje uređivanje prilagođenih CSS pravila putem administrativnog ekrana."
 type: plugin
-tags: [plugin]
 screenshots:
   - 
     src: "/images/marketplace/custom-css-edit.png"

@@ -2,7 +2,6 @@
 title: Krankheitstage
 intro: "A plugin for Kimai to track the sick-days of users."
 type: plugin
-tags: [plugin]
 screenshots:
   - 
     src: "/images/marketplace/mr-software-sickday-1.png"

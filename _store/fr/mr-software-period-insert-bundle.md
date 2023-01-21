@@ -2,7 +2,6 @@
 title: Insertion de période
 intro: "Créer des entrées de feuille de temps par plage de dates"
 type: plugin
-tags: [plugin]
 screenshots:
   - 
     src: "/images/marketplace/mr-software-period-insert-plugin.png"

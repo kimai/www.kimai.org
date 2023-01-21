@@ -2,7 +2,6 @@
 title: CSS personnalisé
 intro: "Un plugin, qui permet de modifier les règles CSS personnalisées via un écran d'administration."
 type: plugin
-tags: [plugin]
 screenshots:
   - 
     src: "/images/marketplace/custom-css-edit.png"

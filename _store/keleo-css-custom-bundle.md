@@ -2,7 +2,6 @@
 title: Custom CSS
 intro: "A plugin, which allows editing custom CSS rules through an administration screen."
 type: plugin
-tags: [plugin]
 screenshots:
   - 
     src: "/images/marketplace/custom-css-edit.png"

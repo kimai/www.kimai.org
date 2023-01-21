@@ -2,7 +2,6 @@
 title: Fixed invoice data format (by language)
 intro: "A plugin that allows to set a global language for invoice data formats"
 type: plugin
-tags: [plugin]
 screenshots:
   - 
     src: "https://raw.githubusercontent.com/Keleo/InvoiceFormatFixationBundle/main/screenshot.png"

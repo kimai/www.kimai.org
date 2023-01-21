@@ -4,7 +4,6 @@ intro: "Change all visible elements in your Kimai installation with your own tra
 featured: "Change all visible elements (form labels, table header, menu items ...) in your Kimai installation with your own translations"
 slug: translation-bundle
 type: featured
-tags: [plugin]
 screenshots:
   -  
     src: "/images/marketplace/translation-listing.png"

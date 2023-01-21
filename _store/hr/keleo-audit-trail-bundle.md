@@ -4,7 +4,6 @@ intro: "Bilježi detaljne dnevnike promjena/revizija za vremenske tablice, kupce
 slug: audit-trail-bundle
 featured: "Bilježi detaljne dnevnike promjena/revizija za vremenske tablice, kupce, projekte i aktivnosti te ih prikazuje u pojedinačnim kronologijama."
 type: featured
-tags: [plugin]
 screenshots:
   - 
     src: '/images/marketplace/audit-listing.png'

@@ -4,7 +4,6 @@ intro: "Enregistre des journaux détaillés de modifications/audits pour les feu
 slug: audit-trail-bundle
 featured: "Enregistre des journaux détaillés de modifications/audits pour les feuilles de temps, les clients, les projets et les activités et les affiche dans une chronologie par élément."
 type: featured
-tags: [plugin]
 screenshots:
   - 
     src: '/images/marketplace/audit-listing.png'
