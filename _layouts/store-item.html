@@ -1,5 +1,5 @@
 ---
-layout: page-empty
+layout: content
 ---
 {% assign settings = site.data.store[page.slug] %}
 {% assign translation = site.data[page.lang].translation.store-items[page.slug] %}
@@ -28,358 +28,366 @@ layout: page-empty
     {% endif %}
 {% endif %}
 
-<div class="store-item">
+{% include page-title.html title=translation.title options=layout.options %}
 
-    <div class="row row-cards">
-        <div class="col-lg-3">
-            <div class="row">
-                <div class="col-md-6 col-lg-12">
-                    <div class="card p-3 mb-3">
-                        <div class="d-flex align-items-center">
-                            {% if settings.gumroad %}
-                            <a href="https://gum.co/{{ settings.gumroad }}" onclick="location.href='https://gum.co/{{ settings.gumroad }}';return false;">
-                                <span class="avatar text-white bg-blue me-2">
-                                  <i class="fas fa-euro-sign"></i>
-                                </span>
-                            </a>
-                            {% else %}
-                                <span class="avatar text-white bg-blue me-3">
-                                    {% if settings.price == nil %}
-                                    <i class="fas fa-comments"></i>
-                                    {% elsif settings.price == 0 %}
-                                    <i class="fas fa-gift"></i>
+<div class="page-body">
+    <div class="container-xl">
+
+        <div class="store-item">
+
+            <div class="row row-cards">
+                <div class="col-lg-3">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-12">
+                            <div class="card p-3 mb-3">
+                                <div class="d-flex align-items-center">
+                                    {% if settings.gumroad %}
+                                    <a href="https://gum.co/{{ settings.gumroad }}" onclick="location.href='https://gum.co/{{ settings.gumroad }}';return false;">
+                                        <span class="avatar text-white bg-blue me-2">
+                                          <i class="fas fa-euro-sign"></i>
+                                        </span>
+                                    </a>
                                     {% else %}
-                                    <i class="fas fa-shopping-cart"></i>
+                                        <span class="avatar text-white bg-blue me-3">
+                                            {% if settings.price == nil %}
+                                            <i class="fas fa-comments"></i>
+                                            {% elsif settings.price == 0 %}
+                                            <i class="fas fa-gift"></i>
+                                            {% else %}
+                                            <i class="fas fa-shopping-cart"></i>
+                                            {% endif %}
+                                        </span>
                                     {% endif %}
-                                </span>
-                            {% endif %}
-                            <div>
-                                <h4 class="m-0">
-                                    {% if settings.price == nil %}
-                                        upon request
-                                    {% elsif settings.price == 0 %}
-                                        {{ site.data[page.lang].translation.free-badge }}
-                                    {% else %}
-                                        {{ settings.price }} ({{ site.data[page.lang].translation.price-without-vat }})
-                                    {% endif %}
-                                </h4>
-                                <small class="text-muted">
-                                    {%- if isPaidOwnerPlugin %}
-                                        <a href="{% link _documentation/buy-a-plugin.md %}">{{ site.data[page.lang].translation.license-purchase }}</a>
-                                    {% else %}
-                                    {{ site.data[page.lang].translation.seller-details }}
-                                    {% endif -%}
-                                </small>
-                            </div>
-                        </div>
-                    </div>
-
-                    {% if settings.bundle %}
-                    <div class="card p-1 mb-3">
-                        <div class="card-body">
-                            <strong>{{ site.data[page.lang].translation.table-of-contents }}</strong>
-                            <ul class="list-unstyled">
-                                <li><a href="#features">{{ site.data[page.lang].translation.store-features }}</a></li>
-                                {%- if isPaidOwnerPlugin %}
-                                <li><a href="#purchase">{{ site.data[page.lang].translation.store-purchase }}</a></li>
-                                {% endif %}
-                                {% if screenshots %}
-                                <li><a href="#screenshots">{{ site.data[page.lang].translation.screenshots-title }}</a></li>
-                                {% endif %}
-                                {% if settings.bundle and settings.bundle.versions %}
-                                <li><a href="#compatibility">{{ site.data[page.lang].translation.compatibility }}</a></li>
-                                {% endif %}
-                                <li><a href="#installation">{{ site.data[page.lang].translation.installation }}</a></li>
-                                <li><a href="#updates">{{ site.data[page.lang].translation.updates }}</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    {% endif %}
-
-                    <div class="card mb-3">
-                        <div class="card-body text-center">
-                            <h4 class="card-title text-center">{{ site.data[page.lang].translation.store-offered-by }}</h4>
-                            <div class="mb-3">
-                                <img src="{{ developer.image }}" alt="Logo - {{ developer.name }}" class="avatar avatar-xl avatar-rounded">
-                            </div>
-                            <h3 class="mb-3">{{ developer.name }}</h3>
-                            <p class="mb-3">
-                                {{ developer.description }}
-                            </p>
-                            {% if developer.homepage or developer.email %}
-                            <div class="mb-4">
-                                If you have any question,
-                                {% if developer.homepage %}
-                                visit the <a href="{{ developer.homepage }}" title="Homepage" target="_blank">developers homepage</a>
-                                {% endif %}
-                                {% if developer.homepage and developer.email %}
-                                or
-                                {% endif %}
-                                {% if developer.email %}
-                                use the <a href="mailto:{{ developer.email }}" title="Email">email for direct contact</a>
-                                {% endif %}
-                                .
-                            </div>
-                            {% endif %}
-                            <ul class="social-links list-inline mb-0 mt-2">
-                                {% if developer.homepage %}
-                                <li class="avatar avatar-rounded">
-                                    <a href="{{ developer.homepage }}" title="Homepage" target="_blank"><i class="fa fa-home"></i></a>
-                                </li>
-                                {% endif %}
-                                {% if developer.email %}
-                                <li class="avatar avatar-rounded">
-                                    <a href="mailto:{{ developer.email }}" title="Email"><i class="fa fa-envelope"></i></a>
-                                </li>
-                                {% endif %}
-                                {% if developer.github %}
-                                <li class="avatar avatar-rounded">
-                                    <a href="{{ developer.github }}" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
-                                </li>
-                                {% endif %}
-                                {% if developer.gitlab %}
-                                <li class="avatar avatar-rounded">
-                                    <a href="{{ developer.gitlab }}" title="Gitlab" target="_blank"><i class="fab fa-gitlab"></i></a>
-                                </li>
-                                {% endif %}
-                                {% if developer.twitter %}
-                                <li class="avatar avatar-rounded">
-                                    <a href="{{ developer.twitter }}" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
-                                </li>
-                                {% endif %}
-                                {% if developer.mastodon %}
-                                <li class="avatar avatar-rounded">
-                                    <a href="{{ developer.mastodon }}" title="Mastodon" target="_blank"><i class="fab fa-mastodon"></i></a>
-                                </li>
-                                {% endif %}
-                            </ul>
-                        </div>
-                    </div>
-
-                    {% if settings.demo %}
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <h4 class="mb-3 text-center alert alert-important bg-blue-lt">
-                                {{ site.data[page.lang].translation.try-it }}
-                            </h4>
-                            <p class="mb-3">
-                                {{ site.data[page.lang].translation.plugin-demo-at }} <a href="https://demo-plugins.kimai.org">https://demo-plugins.kimai.org</a>:
-                            </p>
-                            <p>
-                                {{ site.data[page.lang].translation.username }}: <strong>susan_super</strong>
-                                <br>
-                                {{ site.data[page.lang].translation.password }}: <strong>kitten</strong>
-                            </p>
-                            <p class="mb-2">
-                                <a href="{% link _pages/demo.md %}">{{ site.data[page.lang].translation.plugin-demo-accounts }}</a>.
-                            </p>
-                        </div>
-                    </div>
-                    {% endif %}
-
-                    {% if screenshot != nil %}
-                    <div class="card p-3 mb-3">
-                        <div id="carousel-controls" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                {% for s in screenshot %}
-                                <div class="carousel-item{% if forloop.first %} active{% endif %}">
-                                    <a href="{{ s }}" target="_blank"><img class="d-block w-100" alt="" src="{{ s }}" data-holder-rendered="true"></a>
+                                    <div>
+                                        <h4 class="m-0">
+                                            {% if settings.price == nil %}
+                                                {{ site.data[page.lang].translation.price-contract }}
+                                            {% elsif settings.price == 0 %}
+                                                {{ site.data[page.lang].translation.free-badge }}
+                                            {% else %}
+                                                {{ settings.price }} ({{ site.data[page.lang].translation.price-without-vat }})
+                                            {% endif %}
+                                        </h4>
+                                        <small class="text-muted">
+                                            {%- if isPaidOwnerPlugin %}
+                                                <a href="{% link _documentation/buy-a-plugin.md %}">{{ site.data[page.lang].translation.license-purchase }}</a>
+                                            {% else %}
+                                            {{ site.data[page.lang].translation.seller-details }}
+                                            {% endif -%}
+                                        </small>
+                                    </div>
                                 </div>
-                                {% endfor %}
                             </div>
-                            <a class="carousel-control-prev" href="#carousel-controls" role="button" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carousel-controls" role="button" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
-                        <div class="d-flex align-items-center px-2">
-                            <div>
-                                <div>Screenshot{% if screenshot.size > 1 %}s{% endif %}</div>
-                                <small class="d-block text-muted">Click to enlarge</small>
+
+                            {% if settings.bundle %}
+                            <div class="card p-1 mb-3">
+                                <div class="card-body">
+                                    <strong>{{ site.data[page.lang].translation.table-of-contents }}</strong>
+                                    <ul class="list-unstyled">
+                                        <li><a href="#features">{{ site.data[page.lang].translation.store-features }}</a></li>
+                                        {%- if isPaidOwnerPlugin %}
+                                        <li><a href="#purchase">{{ site.data[page.lang].translation.store-purchase }}</a></li>
+                                        {% endif %}
+                                        {% if screenshots %}
+                                        <li><a href="#screenshots">{{ site.data[page.lang].translation.screenshots-title }}</a></li>
+                                        {% endif %}
+                                        {% if settings.bundle and settings.bundle.versions %}
+                                        <li><a href="#compatibility">{{ site.data[page.lang].translation.compatibility }}</a></li>
+                                        {% endif %}
+                                        <li><a href="#installation">{{ site.data[page.lang].translation.installation }}</a></li>
+                                        <li><a href="#updates">{{ site.data[page.lang].translation.updates }}</a></li>
+                                    </ul>
+                                </div>
                             </div>
-                            {% if screenshot.size > 1 %}
-                            <div class="ms-auto text-muted">
-                                {% for s in screenshot %}
-                                <a href="javascript:void(0)" data-bs-target="#carousel-controls" data-bs-slide-to="{{ forloop.index0 }}" class="icon">[{{ forloop.index }}]</a>
-                                {% endfor %}
+                            {% endif %}
+
+                            <div class="card mb-3">
+                                <div class="card-body text-center">
+                                    <h4 class="card-title text-center">{{ site.data[page.lang].translation.store-offered-by }}</h4>
+                                    <div class="mb-3">
+                                        <img src="{{ developer.image }}" alt="Logo - {{ developer.name }}" class="avatar avatar-xl avatar-rounded">
+                                    </div>
+                                    <h3 class="mb-3">{{ developer.name }}</h3>
+                                    <p class="mb-3">
+                                        {{ developer.description }}
+                                    </p>
+                                    {% if developer.homepage or developer.email %}
+                                    <div class="mb-4">
+                                        If you have any question,
+                                        {% if developer.homepage %}
+                                        visit the <a href="{{ developer.homepage }}" title="Homepage" target="_blank">developers homepage</a>
+                                        {% endif %}
+                                        {% if developer.homepage and developer.email %}
+                                        or
+                                        {% endif %}
+                                        {% if developer.email %}
+                                        use the <a href="mailto:{{ developer.email }}" title="Email">email for direct contact</a>
+                                        {% endif %}
+                                        .
+                                    </div>
+                                    {% endif %}
+                                    <ul class="social-links list-inline mb-0 mt-2">
+                                        {% if developer.homepage %}
+                                        <li class="avatar avatar-rounded">
+                                            <a href="{{ developer.homepage }}" title="Homepage" target="_blank"><i class="fa fa-home"></i></a>
+                                        </li>
+                                        {% endif %}
+                                        {% if developer.email %}
+                                        <li class="avatar avatar-rounded">
+                                            <a href="mailto:{{ developer.email }}" title="Email"><i class="fa fa-envelope"></i></a>
+                                        </li>
+                                        {% endif %}
+                                        {% if developer.github %}
+                                        <li class="avatar avatar-rounded">
+                                            <a href="{{ developer.github }}" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+                                        </li>
+                                        {% endif %}
+                                        {% if developer.gitlab %}
+                                        <li class="avatar avatar-rounded">
+                                            <a href="{{ developer.gitlab }}" title="Gitlab" target="_blank"><i class="fab fa-gitlab"></i></a>
+                                        </li>
+                                        {% endif %}
+                                        {% if developer.twitter %}
+                                        <li class="avatar avatar-rounded">
+                                            <a href="{{ developer.twitter }}" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                                        </li>
+                                        {% endif %}
+                                        {% if developer.mastodon %}
+                                        <li class="avatar avatar-rounded">
+                                            <a href="{{ developer.mastodon }}" title="Mastodon" target="_blank"><i class="fab fa-mastodon"></i></a>
+                                        </li>
+                                        {% endif %}
+                                    </ul>
+                                </div>
+                            </div>
+
+                            {% if settings.demo %}
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h4 class="mb-3 text-center alert alert-important bg-blue-lt">
+                                        {{ site.data[page.lang].translation.try-it }}
+                                    </h4>
+                                    <p class="mb-3">
+                                        {{ site.data[page.lang].translation.plugin-demo-at }} <a href="https://demo-plugins.kimai.org">https://demo-plugins.kimai.org</a>:
+                                    </p>
+                                    <p>
+                                        {{ site.data[page.lang].translation.username }}: <strong>susan_super</strong>
+                                        <br>
+                                        {{ site.data[page.lang].translation.password }}: <strong>kitten</strong>
+                                    </p>
+                                    <p class="mb-2">
+                                        <a href="{% link _pages/demo.md %}">{{ site.data[page.lang].translation.plugin-demo-accounts }}</a>.
+                                    </p>
+                                </div>
+                            </div>
+                            {% endif %}
+
+                            {% if screenshot != nil %}
+                            <div class="card p-3 mb-3">
+                                <div id="carousel-controls" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        {% for s in screenshot %}
+                                        <div class="carousel-item{% if forloop.first %} active{% endif %}">
+                                            <a href="{{ s }}" target="_blank"><img class="d-block w-100" alt="" src="{{ s }}" data-holder-rendered="true"></a>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                    <a class="carousel-control-prev" href="#carousel-controls" role="button" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#carousel-controls" role="button" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+                                <div class="d-flex align-items-center px-2">
+                                    <div>
+                                        <div>Screenshot{% if screenshot.size > 1 %}s{% endif %}</div>
+                                        <small class="d-block text-muted">Click to enlarge</small>
+                                    </div>
+                                    {% if screenshot.size > 1 %}
+                                    <div class="ms-auto text-muted">
+                                        {% for s in screenshot %}
+                                        <a href="javascript:void(0)" data-bs-target="#carousel-controls" data-bs-slide-to="{{ forloop.index0 }}" class="icon">[{{ forloop.index }}]</a>
+                                        {% endfor %}
+                                    </div>
+                                    {% endif %}
+                                </div>
                             </div>
                             {% endif %}
                         </div>
                     </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="card mb-3">
+                        <div class="card-header">
+                            <div class="d-flex align-items-center px-2">
+                                {% if settings.image %}
+                                <div class="avatar avatar-md me-3" style="background-image: url({{ settings.image }})"></div>
+                                {% else %}
+                                <i class="{{ icon }} fa-2x me-3"></i>
+                                {% endif %}
+                                <div>
+                                    <div>{{ translation.intro }}</div>
+                                </div>
+                            </div>
+                            <div class="card-options">
+                                {% if settings.email %}
+                                <a href="mailto:{{ settings.email }}" class="btn btn-outline-primary">
+                                    <i class="fas fa-at"></i>
+                                    <span class="text-nowrap">{{ site.data[page.lang].translation.contact }}</span>
+                                </a>
+                                {% endif %}
+                                {% if settings.github %}
+                                    <a href="{{ settings.github }}" class="btn btn-outline-primary">
+                                        <i class="fab fa-github"></i>
+                                        <span class="text-nowrap">GitHub</span>
+                                    </a>
+                                {% endif %}
+                                {% if settings.gitlab %}
+                                    <a href="{{ settings.gitlab }}" class="btn btn-outline-primary">
+                                        <i class="fab fa-gitlab"></i>
+                                        <span class="text-nowrap">GitLab</span>
+                                    </a>
+                                {% endif %}
+                                {% if settings.download %}
+                                    <a href="{{ settings.download }}" class="btn btn-outline-primary ms-2">
+                                        <i class="fas fa-download"></i>
+                                        <span class="text-nowrap">{{ site.data[page.lang].translation.download }}</span>
+                                    </a>
+                                {% endif %}
+                                {% if settings.gumroad %}
+                                <a href="https://gum.co/{{ settings.gumroad }}" class="btn btn-success ms-2" target="_blank">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span class="text-nowrap">{{ site.data[page.lang].translation.store-buy-button }}</span>
+                                </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            {{ content }}
+                        </div>
+                    </div>
+                    {%- if isPaidOwnerPlugin %}
+                        <div class="card mb-3">
+                            <div class="card-header">
+                                <div class="d-flex align-items-center px-2">
+                                    <h3 id="purchase" class="card-title">{{ site.data[page.lang].translation.store-purchase }}</h3>
+                                </div>
+                                <div class="card-options">
+                                    {% if settings.gumroad %}
+                                    <a href="https://gum.co/{{ settings.gumroad }}" class="btn btn-success ms-2" target="_blank">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        <span class="text-nowrap">{{ site.data[page.lang].translation.store-buy-button }}</span>
+                                    </a>
+                                    {% endif %}
+                                </div>
+
+                            </div>
+                            <div class="card-body p-4">
+                                {% capture gumroad_support %}{% include contents/store-gumroad-and-support.md %}{% endcapture %}
+                                {{ gumroad_support | markdownify }}
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% if screenshots %}
+                        <div class="card mb-3">
+                            <div class="card-header">
+                                <div class="d-flex align-items-center px-2">
+                                    <h3 id="screenshots" class="card-title">{{ site.data[page.lang].translation.screenshots-title }}</h3>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                {% include slider.html slides=screenshots %}
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% if settings.bundle %}
+                        {% if settings.bundle.versions %}
+                        <div class="card mb-3">
+                            <div class="card-header">
+                                <div class="d-flex align-items-center px-2">
+                                    <h3 id="compatibility" class="card-title">{{ site.data[page.lang].translation.compatibility }}</h3>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <p>{{ site.data[page.lang].translation.compatibility-info }}</p>
+
+                                {% assign compatibleWithTwo = false %}
+                                {% for version in settings.bundle.versions %}
+                                    {% if version[1] == '2.0' or version[1] == '2.0.0' %}
+                                        {% assign compatibleWithTwo = true %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% if compatibleWithTwo == false %}
+                                    {% include alert.html icon="fas fa-exclamation" type="warning" alert="This bundle does yet NOT confirm compatibility with the upcoming version 2.0" %}
+                                {% else %}
+                                    {% include alert.html icon="fas fa-exclamation" type="success" alert="This bundle does confirm compatibility with the upcoming version 2.0" %}
+                                {% endif %}
+
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>
+                                            {{ site.data[page.lang].translation.compatibility-bundle }}
+                                        </th>
+                                        <th>
+                                            {{ site.data[page.lang].translation.compatibility-kimai }}
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for version in settings.bundle.versions %}
+                                        <tr>
+                                            <td>{{ version[0] }}</td>
+                                            <td>{{ version[1] }}</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        <div class="card mb-3">
+                            <div class="card-header">
+                                <div class="d-flex align-items-center px-2">
+                                    <h3 id="installation" class="card-title">{{ site.data[page.lang].translation.installation }}</h3>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                {% include store-plugin-installation.html clone=settings.bundle.clone plugin=settings.bundle.name command=settings.bundle.command assets=settings.bundle.assets %}
+                            </div>
+                        </div>
+
+                        <div class="card mb-3">
+                            <div class="card-header">
+                                <div class="d-flex align-items-center px-2">
+                                    <h3 id="updates" class="card-title">{{ site.data[page.lang].translation.updates }}</h3>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                {% include store-plugin-update.html plugin=settings.bundle.name command=settings.bundle.command assets=settings.bundle.assets %}
+                            </div>
+                        </div>
                     {% endif %}
                 </div>
             </div>
-        </div>
-        <div class="col-lg-9">
-            <div class="card mb-3">
-                <div class="card-header">
-                    <div class="d-flex align-items-center px-2">
-                        {% if settings.image %}
-                        <div class="avatar avatar-md me-3" style="background-image: url({{ settings.image }})"></div>
-                        {% else %}
-                        <i class="{{ icon }} fa-2x me-3"></i>
-                        {% endif %}
-                        <div>
-                            <div>{{ translation.intro }}</div>
-                        </div>
-                    </div>
-                    <div class="card-options">
-                        {% if settings.email %}
-                        <a href="mailto:{{ settings.email }}" class="btn btn-outline-primary">
-                            <i class="fas fa-at"></i>
-                            <span class="text-nowrap">{{ site.data[page.lang].translation.contact }}</span>
-                        </a>
-                        {% endif %}
-                        {% if settings.github %}
-                            <a href="{{ settings.github }}" class="btn btn-outline-primary">
-                                <i class="fab fa-github"></i>
-                                <span class="text-nowrap">GitHub</span>
-                            </a>
-                        {% endif %}
-                        {% if settings.gitlab %}
-                            <a href="{{ settings.gitlab }}" class="btn btn-outline-primary">
-                                <i class="fab fa-gitlab"></i>
-                                <span class="text-nowrap">GitLab</span>
-                            </a>
-                        {% endif %}
-                        {% if settings.download %}
-                            <a href="{{ settings.download }}" class="btn btn-outline-primary ms-2">
-                                <i class="fas fa-download"></i>
-                                <span class="text-nowrap">{{ site.data[page.lang].translation.download }}</span>
-                            </a>
-                        {% endif %}
-                        {% if settings.gumroad %}
-                        <a href="https://gum.co/{{ settings.gumroad }}" class="btn btn-success ms-2" target="_blank">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span class="text-nowrap">{{ site.data[page.lang].translation.store-buy-button }}</span>
-                        </a>
-                        {% endif %}
-                    </div>
-                </div>
-                <div class="card-body">
-                    {{ content }}
+
+            {% comment %}
+            <div class="row row-cards">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-9">
+                    <h4>All items by {{ developer.name }}</h4>
+
+                    {% assign products = site.store | where: "lang", page.lang | where: "developer", settings.developer | sort: 'title' %}
+                    {% include store-list.html products=products %}
                 </div>
             </div>
-            {%- if isPaidOwnerPlugin %}
-                <div class="card mb-3">
-                    <div class="card-header">
-                        <div class="d-flex align-items-center px-2">
-                            <h3 id="purchase" class="card-title">{{ site.data[page.lang].translation.store-purchase }}</h3>
-                        </div>
-                        <div class="card-options">
-                            {% if settings.gumroad %}
-                            <a href="https://gum.co/{{ settings.gumroad }}" class="btn btn-success ms-2" target="_blank">
-                                <i class="fas fa-shopping-cart"></i>
-                                <span class="text-nowrap">{{ site.data[page.lang].translation.store-buy-button }}</span>
-                            </a>
-                            {% endif %}
-                        </div>
+            {% endcomment %}
 
-                    </div>
-                    <div class="card-body p-4">
-                        {% capture gumroad_support %}{% include contents/store-gumroad-and-support.md %}{% endcapture %}
-                        {{ gumroad_support | markdownify }}
-                    </div>
-                </div>
-            {% endif %}
-            {% if screenshots %}
-                <div class="card mb-3">
-                    <div class="card-header">
-                        <div class="d-flex align-items-center px-2">
-                            <h3 id="screenshots" class="card-title">{{ site.data[page.lang].translation.screenshots-title }}</h3>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        {% include slider.html slides=screenshots %}
-                    </div>
-                </div>
-            {% endif %}
-            {% if settings.bundle %}
-                {% if settings.bundle.versions %}
-                <div class="card mb-3">
-                    <div class="card-header">
-                        <div class="d-flex align-items-center px-2">
-                            <h3 id="compatibility" class="card-title">{{ site.data[page.lang].translation.compatibility }}</h3>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <p>{{ site.data[page.lang].translation.compatibility-info }}</p>
-
-                        {% assign compatibleWithTwo = false %}
-                        {% for version in settings.bundle.versions %}
-                            {% if version[1] == '2.0' or version[1] == '2.0.0' %}
-                                {% assign compatibleWithTwo = true %}
-                            {% endif %}
-                        {% endfor %}
-                        {% if compatibleWithTwo == false %}
-                            {% include alert.html icon="fas fa-exclamation" type="warning" alert="This bundle does yet NOT confirm compatibility with the upcoming version 2.0" %}
-                        {% else %}
-                            {% include alert.html icon="fas fa-exclamation" type="success" alert="This bundle does confirm compatibility with the upcoming version 2.0" %}
-                        {% endif %}
-
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th>
-                                    {{ site.data[page.lang].translation.compatibility-bundle }}
-                                </th>
-                                <th>
-                                    {{ site.data[page.lang].translation.compatibility-kimai }}
-                                </th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                                {% for version in settings.bundle.versions %}
-                                <tr>
-                                    <td>{{ version[0] }}</td>
-                                    <td>{{ version[1] }}</td>
-                                </tr>
-                                {% endfor %}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                {% endif %}
-
-                <div class="card mb-3">
-                    <div class="card-header">
-                        <div class="d-flex align-items-center px-2">
-                            <h3 id="installation" class="card-title">{{ site.data[page.lang].translation.installation }}</h3>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        {% include store-plugin-installation.html clone=settings.bundle.clone plugin=settings.bundle.name command=settings.bundle.command assets=settings.bundle.assets %}
-                    </div>
-                </div>
-
-                <div class="card mb-3">
-                    <div class="card-header">
-                        <div class="d-flex align-items-center px-2">
-                            <h3 id="updates" class="card-title">{{ site.data[page.lang].translation.updates }}</h3>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        {% include store-plugin-update.html plugin=settings.bundle.name command=settings.bundle.command assets=settings.bundle.assets %}
-                    </div>
-                </div>
-            {% endif %}
         </div>
+
     </div>
-
-    {% comment %}
-    <div class="row row-cards">
-        <div class="col-lg-3"></div>
-        <div class="col-lg-9">
-            <h4>All items by {{ developer.name }}</h4>
-
-            {% assign products = site.store | where: "lang", page.lang | where: "developer", settings.developer | sort: 'title' %}
-            {% include store-list.html products=products %}
-        </div>
-    </div>
-    {% endcomment %}
-
 </div>
