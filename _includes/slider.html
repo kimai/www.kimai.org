@@ -6,15 +6,17 @@
         {% endfor %}
     </div>
     <div class="carousel-inner">
-        {% for image in include.slides %}
+        {% for imageId in include.slides %}
+        {% assign source = site.data.screenshots[imageId].src %}
+        {% assign image = site.data[page.lang].translation.screenshots[imageId] %}
         <div class="carousel-item{% if forloop.first %} active{% endif %}">
-            <img class="slider d-block w-100" alt="" src="{{ image.src }}" data-holder-rendered="true">
+            <img class="slider d-block w-100" alt="" src="{{ source }}" data-holder-rendered="true">
             <div class="carousel-item-background d-none d-md-block"></div>
             {% if image.title %}
             <div class="carousel-caption d-none d-md-block">
                 <h4>{{ image.title }}</h4>
                 <p>
-                    {{ image.description }} (<a href="{{ image.src }}" target="_blank">fullscreen</a>)
+                    {{ image.description }} (<a href="{{ source }}" target="_blank">fullscreen</a>)
                 </p>
             </div>
             {% endif %}

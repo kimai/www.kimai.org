@@ -10,8 +10,10 @@ layout: page-empty
 {% assign screenshot = nil %}
 {% if settings.screenshot %}
     {% assign screenshot = settings.screenshot %}
-{% elsif page.screenshot %}
-    {% assign screenshot = page.screenshot %}
+{% endif %}
+{% assign screenshots = nil %}
+{% if settings.screenshots %}
+    {% assign screenshots = settings.screenshots %}
 {% endif %}
 {% if settings.download %}
 	{% assign buyLink = settings.download %}
@@ -81,7 +83,9 @@ layout: page-empty
                                 {%- if isPaidOwnerPlugin %}
                                 <li><a href="#purchase">{{ site.data[page.lang].translation.store-purchase }}</a></li>
                                 {% endif %}
-                                <li><a href="#screenshots">{{ site.data[page.lang].translation.screenshots }}</a></li>
+                                {% if screenshots %}
+                                <li><a href="#screenshots">{{ site.data[page.lang].translation.screenshots-title }}</a></li>
+                                {% endif %}
                                 {% if settings.bundle and settings.bundle.versions %}
                                 <li><a href="#compatibility">{{ site.data[page.lang].translation.compatibility }}</a></li>
                                 {% endif %}
@@ -282,15 +286,15 @@ layout: page-empty
                     </div>
                 </div>
             {% endif %}
-            {% if page.screenshots %}
+            {% if screenshots %}
                 <div class="card mb-3">
                     <div class="card-header">
                         <div class="d-flex align-items-center px-2">
-                            <h3 id="screenshots" class="card-title">{{ site.data[page.lang].translation.screenshots }}</h3>
+                            <h3 id="screenshots" class="card-title">{{ site.data[page.lang].translation.screenshots-title }}</h3>
                         </div>
                     </div>
                     <div class="card-body">
-                        {% include slider.html slides=page.screenshots %}
+                        {% include slider.html slides=screenshots %}
                     </div>
                 </div>
             {% endif %}
