@@ -1,9 +1,15 @@
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const RtlCssPlugin = require("rtlcss-webpack-plugin");
 
 module.exports = {
-    plugins: [new MiniCssExtractPlugin()],
-    entry: [__dirname + "/assets/bundle.js"],
+    plugins: [
+        new MiniCssExtractPlugin(),
+        new RtlCssPlugin('main.rtl.css')
+    ],
+    entry: {
+        'main': __dirname + "/assets/bundle.js",
+    },
     output: {
         path: path.resolve(__dirname, 'assets/build'),
         clean: true,

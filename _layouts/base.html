@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ page.lang }}" dir="{% if site.ltr contains page.lang %}rtl{% else %}ltr{% endif %}">
+<html lang="{{ page.lang }}" dir="{% if site.rtl contains page.lang %}rtl{% else %}ltr{% endif %}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -24,7 +24,7 @@
     {%- elsif page.description != nil -%}
         <meta name="description" content="{{ page.description | strip_html | strip_newlines | strip }}">
     {%- endif -%}
-    <link href="{{ '/assets/build/main.css' | absolute_url }}?{{site.time | date: '%s%N'}}" rel="stylesheet" />
+    <link href="{% if site.rtl contains page.lang %}{{ '/assets/build/main.rtl.css' | absolute_url }}{% else %}{{ '/assets/build/main.css' | absolute_url }}{% endif %}?{{site.time | date: '%s%N'}}" rel="stylesheet" />
     <script src="{{ '/assets/build/main.js' | absolute_url }}?{{site.time | date: '%s%N'}}"></script>
     <link type="application/atom+xml" rel="alternate" href="{% link feed.xml %}" title="Kimai Time-Tracking" />
     {%- if page.canonical != nil %}
