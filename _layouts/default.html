@@ -68,7 +68,6 @@ layout: base
                     {%- assign menus = 'about,demo,download,store,blog,documentation' | split: "," -%}
                     {%- assign homepage_url = site.pages | where: "lang", page.lang | where: "slug", "index" | map: "url" | first -%}
                     {%- assign homepage_name = site.data[page.lang].translation.menu.default.index.name -%}
-                    {%- assign collectionType = page.collection -%}
 
                     <li class="nav-item d-md-flex d-none{% if page.url == homepage_url %} active{% endif %}">
                         <a href="{{ homepage_url }}" class="nav-link">

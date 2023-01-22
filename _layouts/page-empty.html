@@ -6,9 +6,12 @@ layout: default
 {% if page.title_trans != nil %}
     {% assign pagetitle = site.data[page.lang].translation[page.title_trans] %}
 {% endif %}
-{% assign subtitle = page.subtitle %}
-{% if page.subtitle_trans != nil %}
-    {% assign subtitle = site.data[page.lang].translation[page.subtitle_trans] %}
+{% assign subtitle = nil %}
+{% if page.subtitle != nil %}
+    {% assign subtitle = page.subtitle %}
+{% endif %}
+{% if site.data[page.lang].translation.menu.default[page.slug].subtitle != nil %}
+    {% assign subtitle = site.data[page.lang].translation.menu.default[page.slug].subtitle %}
 {% endif %}
 {% include page-title.html title=pagetitle subtitle=subtitle options=layout.options %}
 

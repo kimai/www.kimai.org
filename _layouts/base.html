@@ -20,11 +20,10 @@
     <title>{{ page.title }}{% if layout.title_postfix != nil %} - {{ layout.title_postfix }}{% endif %}</title>
     {% assign description = page.excerpt %}
     {%- if site.data[page.lang].translation.menu.default[page.slug].description != nil -%}
-        {% assign description = site.data[page.lang].translation.menu.default[page.slug].description %}
+        <meta name="description" content="{{ site.data[page.lang].translation.menu.default[page.slug].description }}">
     {%- elsif page.description != nil -%}
-        {% assign description = page.description %}
+        <meta name="description" content="{{ page.description | strip_html | strip_newlines | strip }}">
     {%- endif -%}
-    <meta name="description" content="{{ description | strip_html | strip_newlines | strip }}">
     <link href="{{ '/assets/build/main.css' | absolute_url }}?{{site.time | date: '%s%N'}}" rel="stylesheet" />
     <script src="{{ '/assets/build/main.js' | absolute_url }}?{{site.time | date: '%s%N'}}"></script>
     <link type="application/atom+xml" rel="alternate" href="{% link feed.xml %}" title="Kimai Time-Tracking" />
