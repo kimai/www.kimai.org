@@ -53,6 +53,13 @@ if (document.querySelector('div.login-box-body a.btn-block') !== null) {
 }
 ```
 
+Expand extended timesheet settings (since 2.0 beta 3):
+```javascript
+document.addEventListener('show.bs.modal', (e) => { 
+    e.srcElement.querySelector('#timesheet_extended_settings a[data-bs-toggle]')?.click(); 
+});
+```
+
 ### Alert
 
 ```markdown
