@@ -1,5 +1,5 @@
 ---
-title: Android program za bezmrežno evidentiranje vremena
+title: Android app for offline tracking
 type: app
 lang: hr
 permalink: /hr/store/mr-software-android-offline-tracker.html

@@ -1,5 +1,5 @@
 ---
-title: Réglementation des petites entreprises
+title: Small business regulations
 type: plugin
 lang: fr
 permalink: /fr/store/liaraalis-small-business-rule-bundle.html

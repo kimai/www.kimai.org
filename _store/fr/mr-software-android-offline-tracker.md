@@ -1,5 +1,5 @@
 ---
-title: Application Android pour le suivi hors ligne
+title: Android app for offline tracking
 type: app
 lang: fr
 permalink: /fr/store/mr-software-android-offline-tracker.html

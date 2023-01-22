@@ -1,5 +1,5 @@
 ---
-title: Grandtotal dodatak
+title: Grandtotal sync
 slug: grandtotal-plugin-for-kimai
 type: client
 lang: hr

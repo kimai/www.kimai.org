@@ -1,5 +1,5 @@
 ---
-title: Commande d'archivage des feuilles de temps
+title: Archive timesheets command
 type: plugin
 lang: fr
 permalink: /fr/store/district09-archive-timesheets-command-bundle.html

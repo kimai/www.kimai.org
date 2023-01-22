@@ -1,5 +1,5 @@
 ---
-title: Application iOS pour le suivi hors ligne
+title: iOS app for offline tracking
 type: app
 lang: fr
 permalink: /fr/store/mr-software-ios-offline-tracker.html

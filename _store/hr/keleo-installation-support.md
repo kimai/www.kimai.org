@@ -1,5 +1,5 @@
 ---
-title: "Podrška za instaliranje i aktualiziranje"
+title: "Installation & Update support"
 slug: installation-support
 type: support
 lang: hr

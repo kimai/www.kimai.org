@@ -1,5 +1,5 @@
 ---
-title: Stundensätze neu berechnen
+title: Recalculate rates
 type: plugin
 lang: de
 permalink: /de/store/keleo-recalculate-rates-bundle.html

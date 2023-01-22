@@ -1,11 +1,6 @@
 ---
-title: Unos razdoblja
+title: Period insert
 type: plugin
-screenshots:
-  - 
-    src: "/images/marketplace/mr-software-period-insert-plugin.png"
-    title: Ekran za umetanje razdoblja
-    description: Obrazac za stvaranje vrijednosti za zapise koji će se stvoriti 
 lang: hr
 permalink: /hr/store/mr-software-period-insert-bundle.html
 ---

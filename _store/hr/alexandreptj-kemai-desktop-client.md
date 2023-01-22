@@ -1,5 +1,5 @@
 ---
-title: Kemai – Desktop klijent za Kimai
+title: Kemai - Desktop client for Kimai
 type: client
 lang: hr
 permalink: /hr/store/alexandreptj-kemai-desktop-client.html

@@ -1,24 +1,7 @@
 ---
-title: Prilagođen sadržaj
+title: Custom content
 slug: custom-content-bundle
 type: featured
-screenshots:
-  - 
-    src: "/images/marketplace/custom-content-alert.png"
-    title: "Poruka upozorenja"
-    description: "Poruka upozorenja se prikazuje na svakoj stranici za prijavljene korisnike"
-  - 
-    src: "/images/marketplace/custom-content-javascript.png"
-    title: "Javascript"
-    description: "Javascript se izvršava na svakoj stranici za prijavljene korisnike"
-  - 
-    src: "/images/marketplace/custom-content-news.png"
-    title: "Poruka upozorenja"
-    description: "Možeš upisati markdown formatiranu novost s naslovom"
-  - 
-    src: "/images/marketplace/custom-content-news-page.png"
-    title: "Stranica novosti"
-    description: "Stranica novosti je povezana u korisničkom izborniku i prikazuje tvoju markdown formatiranu poruku"
 lang: hr
 permalink: /hr/store/keleo-custom-content-bundle.html
 ---

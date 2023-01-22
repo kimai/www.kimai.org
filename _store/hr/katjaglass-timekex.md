@@ -1,5 +1,5 @@
 ---
-title: TimeKex – Uvoz vremenskih tablica Excel datoteka
+title: TimeKex - Importing timesheet Excel files
 type: client
 lang: hr
 permalink: /hr/store/katjaglass-timekex.html

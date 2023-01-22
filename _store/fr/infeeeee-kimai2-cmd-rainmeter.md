@@ -1,5 +1,5 @@
 ---
-title: Widget Pluviomètre
+title: Rainmeter widget
 type: client
 lang: fr
 permalink: /fr/store/infeeeee-kimai2-cmd-rainmeter.html

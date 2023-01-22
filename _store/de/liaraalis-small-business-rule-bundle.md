@@ -1,5 +1,5 @@
 ---
-title: Kleinunternehmerregelung für Kimai
+title: Small business regulations
 type: plugin
 lang: de
 permalink: /de/store/liaraalis-small-business-rule-bundle.html

@@ -1,5 +1,5 @@
 ---
-title: Développement de plugins personnalisés
+title: Custom plugin development
 slug: custom-plugins
 type: support
 lang: fr

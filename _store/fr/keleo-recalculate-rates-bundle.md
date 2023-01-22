@@ -1,5 +1,5 @@
 ---
-title: Recalculer les taux
+title: Recalculate rates
 type: plugin
 lang: fr
 permalink: /fr/store/keleo-recalculate-rates-bundle.html

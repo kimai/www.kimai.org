@@ -1,5 +1,5 @@
 ---
-title: TimeKex - importer des fichiers Excel de feuilles de temps
+title: TimeKex - Importing timesheet Excel files
 type: client
 lang: fr
 permalink: /fr/store/katjaglass-timekex.html

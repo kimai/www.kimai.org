@@ -1,5 +1,5 @@
 ---
-title: Klijent konzole (PHAR)
+title: Console client (PHAR)
 slug: console-phar
 type: client
 lang: hr

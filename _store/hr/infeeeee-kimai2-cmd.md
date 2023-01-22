@@ -1,5 +1,5 @@
 ---
-title: Klijent naredbenog retka
+title: Command line client
 type: client
 lang: hr
 permalink: /hr/store/infeeeee-kimai2-cmd.html

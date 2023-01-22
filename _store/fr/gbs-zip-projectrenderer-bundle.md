@@ -1,5 +1,5 @@
 ---
-title: ZipProjectRenderer (export ZIP avec un PDF par projet)
+title: ZipProjectRenderer (Export ZIP with a PDFs per project)
 type: plugin
 lang: fr
 permalink: /fr/store/gbs-zip-projectrenderer-bundle.html

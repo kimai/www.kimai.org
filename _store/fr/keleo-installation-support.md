@@ -1,5 +1,5 @@
 ---
-title: "Assistance à l'installation et à la mise à jour"
+title: "Installation & Update support"
 slug: installation-support
 type: support
 lang: fr

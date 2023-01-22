@@ -1,5 +1,5 @@
 ---
-title: Arrondi de la durée paramétrable
+title: Overridable duration rounding
 type: plugin
 lang: fr
 permalink: /fr/store/glorpen-duration-bundle.html

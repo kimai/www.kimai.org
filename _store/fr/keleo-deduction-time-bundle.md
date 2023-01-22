@@ -1,5 +1,5 @@
 ---
-title: Forfait Déduction-Temps
+title: Deduction-Time Bundle
 type: plugin
 lang: fr
 permalink: /fr/store/keleo-deduction-time-bundle.html

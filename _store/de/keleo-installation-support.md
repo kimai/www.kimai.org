@@ -1,5 +1,5 @@
 ---
-title: "Installations- und Update Support"
+title: "Installation & Update support"
 slug: installation-support
 type: support
 lang: de

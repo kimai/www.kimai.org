@@ -1,5 +1,5 @@
 ---
-title: Fail2Ban pour les connexions
+title: Fail2Ban for logins
 slug: fail2ban-bundle
 type: plugin
 lang: fr

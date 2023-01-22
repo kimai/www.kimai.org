@@ -1,5 +1,5 @@
 ---
-title: Kundenspezifische Entwicklungen (Plugins, Rechnungen, Exporte etc.)
+title: Custom plugin development
 slug: custom-plugins
 type: support
 lang: de

@@ -1,5 +1,5 @@
 ---
-title: Razvoj prilagođenih dodataka
+title: Custom plugin development
 slug: custom-plugins
 type: support
 lang: hr

@@ -1,5 +1,5 @@
 ---
-title: Pristup samo čitanju
+title: Readonly access
 type: plugin
 lang: hr
 permalink: /hr/store/derpilzcc-readonly-access-bundle.html

@@ -1,5 +1,5 @@
 ---
-title: Application Apple Watch
+title: Apple Watch app
 type: app
 lang: fr
 permalink: /fr/store/umws-applewatch-app.html

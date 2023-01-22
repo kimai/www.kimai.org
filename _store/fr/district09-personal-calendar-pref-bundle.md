@@ -1,5 +1,5 @@
 ---
-title: Préférence de calendrier personnel
+title: Personal calendar preference
 type: plugin
 lang: fr
 permalink: /fr/store/district09-personal-calendar-pref-bundle.html
