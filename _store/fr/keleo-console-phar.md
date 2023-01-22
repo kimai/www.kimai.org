@@ -1,6 +1,5 @@
 ---
 title: Console client (PHAR)
-intro: Console client multiplateforme pour Kimai
 slug: console-phar
 type: client
 lang: fr

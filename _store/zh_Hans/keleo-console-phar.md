@@ -1,6 +1,5 @@
 ---
 title: Console client (PHAR)
-intro: Cross platform console client for Kimai
 slug: console-phar
 type: client
 lang: zh_Hans

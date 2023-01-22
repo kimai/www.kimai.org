@@ -1,6 +1,5 @@
 ---
 title: Ponavljajući proračun
-intro: "Automatski redovito dodaje novac ili vrijeme tvojim proračunima projekata na osnovi prilagođenih intervala."
 type: plugin
 screenshots:
   - 

@@ -1,6 +1,5 @@
 ---
 title: HasWorked (notify users if they haven't entered times)
-intro: "A Kimai plugin to send an email notification to users if they don't have any entries on the current day"
 type: plugin
 screenshots:
   - 

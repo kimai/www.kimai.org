@@ -1,6 +1,5 @@
 ---
 title: Vacances (vacances + jours fériés officiels et locaux)
-intro: "Un plugin pour Kimai qui ajoute le flux de travail complet pour les vacances + les jours fériés officiels et locaux"
 type: plugin
 screenshots:
   - 

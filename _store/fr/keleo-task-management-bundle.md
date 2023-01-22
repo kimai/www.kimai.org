@@ -1,7 +1,5 @@
 ---
 title: La gestion des tâches
-intro: "Créez des tâches, démarrez/arrêtez/mettez-les en pause, attribuez-les aux utilisateurs et aux équipes et enregistrez les temps - un plugin de gestion de liste de tâches pour Kimai qui ajoute deux nouveaux widgets de tableau de bord"
-featured: "Créez des tâches, démarrez/arrêtez/mettez-les en pause, attribuez-les aux utilisateurs et aux équipes - un plugin de gestion de liste de tâches qui est connecté à votre suivi du temps et ajoute deux nouveaux widgets de tableau de bord"
 slug: task-management-bundle
 type: featured
 screenshots:

@@ -1,6 +1,5 @@
 ---
 title: Flux de travail pour l'approbation des feuilles de temps
-intro: "Cette offre groupée est disponible pour effectuer une approbation hebdomadaire des feuilles de temps."
 type: plugin
 screenshots:
   - 

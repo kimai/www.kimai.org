@@ -1,6 +1,5 @@
 ---
 title: Kimai Mobile
-intro: "Kimai Mobile je program koji omogućuje praktično korištenje Kimaija na tvom mobilnom Android uređaju"
 type: app 
 screenshots:
   -

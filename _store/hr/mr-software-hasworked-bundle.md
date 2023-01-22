@@ -1,6 +1,5 @@
 ---
 title: HasWorked (obavijesti korisnike ako nisu unijeli vremena)
-intro: "Kimai dodatak za slanje e-mail obavijesti korisnicima ako nemaju nijedan unos za aktualni dan"
 type: plugin
 screenshots:
   - 

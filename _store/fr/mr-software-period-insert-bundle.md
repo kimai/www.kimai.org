@@ -1,6 +1,5 @@
 ---
 title: Insertion de période
-intro: "Créer des entrées de feuille de temps par plage de dates"
 type: plugin
 screenshots:
   - 

@@ -1,6 +1,5 @@
 ---
 title: Kimai Mobile
-intro: "Kimai Mobile est une application qui permet une utilisation pratique de Kimai sur votre appareil mobile Android."
 type: app 
 screenshots:
   -

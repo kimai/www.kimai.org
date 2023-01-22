@@ -1,6 +1,5 @@
 ---
 title: Bolovanje (dani bolovanja)
-intro: "Kimai dodatak za evidentiranje bolovanja korisnika."
 type: plugin
 screenshots:
   - 

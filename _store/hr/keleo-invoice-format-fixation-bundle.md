@@ -1,6 +1,5 @@
 ---
 title: Fiksni format podataka računa (po jeziku)
-intro: "Dodatak za postavljanje globalnog jezika za formate podataka računa"
 type: plugin
 screenshots:
   - 

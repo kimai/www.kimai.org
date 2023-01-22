@@ -1,6 +1,5 @@
 ---
 title: Registre des apprentis
-intro: "Un plugin pour Kimai qui génère un registre (allemand : Berichtsheft) pour les stagiaires."
 type: plugin
 screenshots:
   - 

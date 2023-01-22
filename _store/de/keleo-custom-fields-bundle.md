@@ -1,7 +1,5 @@
 ---
 title: Eigene Felder
-intro: "Create free configurable additional fields for timesheets, customers, projects, activities and users."
-featured: Create free configurable additional fields for timesheets, customers, projects, activities and users in various formats. Fields can be optional or mandatory and restricted by permissions.
 slug: custom-fields-bundle
 type: featured
 screenshots:

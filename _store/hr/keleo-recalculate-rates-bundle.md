@@ -1,6 +1,5 @@
 ---
 title: Ponovno izračunavanje cijene
-intro: "Dodatak za ponovno izračunavanje satnice/fiksne cijene pri svakom aktualiziranju vremenske tablice"
 type: plugin
 lang: hr
 permalink: /hr/store/keleo-recalculate-rates-bundle.html

@@ -1,7 +1,5 @@
 ---
 title: Traductions
-intro: "Modifiez tous les éléments visibles de votre installation Kimai avec vos propres traductions"
-featured: "Modifiez tous les éléments visibles (étiquettes de formulaire, en-tête de tableau, éléments de menu ...) dans votre installation Kimai avec vos propres traductions"
 slug: translation-bundle
 type: featured
 screenshots:

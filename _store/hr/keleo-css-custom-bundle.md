@@ -1,6 +1,5 @@
 ---
 title: Prilagođeni CSS
-intro: "Dodatak koji omogućuje uređivanje prilagođenih CSS pravila putem administrativnog ekrana."
 type: plugin
 screenshots:
   - 

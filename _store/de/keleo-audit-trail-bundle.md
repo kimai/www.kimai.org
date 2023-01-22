@@ -1,8 +1,6 @@
 ---
 title: Änderungsprotokolle
-intro: "Records detailed change/audit logs for timesheets, customers, projects and activities and displays them in a per-item timeline."
 slug: audit-trail-bundle
-featured: "Records detailed change/audit logs for timesheets, customers, projects and activities and displays them in a per-item timeline."
 type: featured
 screenshots:
   - 

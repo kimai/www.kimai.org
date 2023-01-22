@@ -1,7 +1,5 @@
 ---
 title: Kiosk Modus mit Barcode und RFID Unterstützung
-intro: "Start and stop timesheets with a barcode or RFID scanner for attendance time-tracking"
-featured: "Attendance time-tracking in an environment, where the user has no access to Kimai (eg. in a warehouse) by using a barcode or RFID scanner to start and stop timesheets." 
 slug: kiosk-barcode-bundle
 type: featured
 screenshots:

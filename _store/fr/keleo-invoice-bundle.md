@@ -1,6 +1,5 @@
 ---
 title: Facturation avec feuilles de temps automatiques en PDF
-intro: "Fonctionnalités de création de factures améliorées : modification des paramètres régionaux pour les valeurs de devise et de date, vérification automatique de la feuille de temps PDF pour les nouvelles factures."
 slug: invoice-bundle
 type: plugin
 screenshots:

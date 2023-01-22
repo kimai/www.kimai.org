@@ -1,6 +1,5 @@
 ---
 title: Custom CSS
-intro: "A plugin, which allows editing custom CSS rules through an administration screen."
 type: plugin
 screenshots:
   - 

@@ -1,6 +1,5 @@
 ---
 title: Razvoj prilagođenih dodataka
-intro: "Želiš posebnu funkciju koja nije dostupna u Kimaiju? Mogu je razviti za tebe!"
 slug: custom-plugins
 type: support
 lang: hr

@@ -1,6 +1,5 @@
 ---
 title: Godišnji odmor (godišnji odmor + državni i lokalni praznici)
-intro: "Kimai dodatak za dodavanje godišnjeg odmora + državnih i lokalnih praznika"
 type: plugin
 screenshots:
   - 

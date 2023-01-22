@@ -1,7 +1,5 @@
 ---
 title: Prilagođena polja
-intro: "Stvori dodatna polja koja se mogu konfigurirati prema vlastitim potrebama za vremenske tablice, kupce, projekte, aktivnosti i korisnike."
-featured: Stvori dodatna polja koja se mogu konfigurirati za vremenske tablice, kupce, projekte, aktivnosti i korisnike u raznim formatima. Polja mogu biti opcionalna ili obavezna, a pristup tim poljima se može ograničiti korisničkim dozvolama.
 slug: custom-fields-bundle
 type: featured
 screenshots:

@@ -1,7 +1,5 @@
 ---
 title: Upravljanje zadacima
-intro: "Stvori zadatke, pokreni/prekini/zaustavi ih, dodijeli ih korisnicima i timovima i snimaj vrijeme – dodatak za upravljanje zadacima za Kimai koji dodaje dva nova widgeta u nadzornu ploču"
-featured: "Stvori zadatke, pokreni/prekini/zaustavi ih, dodijeli ih korisnicima i timovima – dodatak za upravljanje zadacima koji je povezan s tvojim evidentiranjem vremena i dodaje dva nova widgeta u nadzornu ploču"
 slug: task-management-bundle
 type: featured
 screenshots:

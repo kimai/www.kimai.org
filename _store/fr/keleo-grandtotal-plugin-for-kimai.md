@@ -1,6 +1,5 @@
 ---
 title: Grandtotal sync
-intro: "Un plugin GrandTotal 6, qui permet d'importer les feuilles de temps Kimai"
 slug: grandtotal-plugin-for-kimai
 type: client
 lang: fr

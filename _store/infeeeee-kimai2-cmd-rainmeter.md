@@ -1,6 +1,5 @@
 ---
 title: Rainmeter widget
-intro: "Kimai widget for Windows!"
 type: client
 lang: en
 ---

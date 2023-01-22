@@ -1,6 +1,5 @@
 ---
 title: Importer
-intro: "Importiere CSV und JSON Dateien über die Kimai Oberfläche."
 type: plugin
 lang: de
 permalink: /de/store/keleo-importer-bundle.html 

@@ -1,6 +1,5 @@
 ---
 title: Recurring budgets
-intro: "Automatically adds money or time to your project budgets on a recurring basis with a custom interval."
 type: plugin
 screenshots:
   - 

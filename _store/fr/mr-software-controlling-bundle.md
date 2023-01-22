@@ -1,6 +1,5 @@
 ---
 title: Contrôle (droit allemand, contrôle des temps de pause, heures supplémentaires)
-intro: "Un plugin pour Kimai qui vérifie si l'un de vos utilisateurs a enfreint la loi allemande sur les temps de pause + comparaison du temps de travail nominal et réel + vue des heures supplémentaires"
 type: plugin
 screenshots:
   - 

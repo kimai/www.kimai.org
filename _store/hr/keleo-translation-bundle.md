@@ -1,7 +1,5 @@
 ---
 title: Prijevodi
-intro: "Promijeni sve vidljive elemente u tvojoj Kimai instalaciji vlastitim prijevodima"
-featured: "Promijeni sve vidljive elemente (oznake obrazaca, zaglavlja tablica, elemente izbornika …) u tvojoj Kimai instalaciji vlastitim prijevodima"
 slug: translation-bundle
 type: featured
 screenshots:

@@ -1,6 +1,5 @@
 ---
 title: Sick-Day (days of illness)
-intro: "A plugin for Kimai to track the sick-days of users."
 type: plugin
 screenshots:
   - 

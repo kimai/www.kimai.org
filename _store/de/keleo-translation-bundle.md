@@ -1,7 +1,5 @@
 ---
 title: Übersetzungen
-intro: "Change all visible elements in your Kimai installation with your own translations"
-featured: "Change all visible elements (form labels, table header, menu items ...) in your Kimai installation with your own translations"
 slug: translation-bundle
 type: featured
 screenshots:

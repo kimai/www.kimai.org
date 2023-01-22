@@ -1,6 +1,5 @@
 ---
 title: Krankheitstage
-intro: "A plugin for Kimai to track the sick-days of users."
 type: plugin
 screenshots:
   - 

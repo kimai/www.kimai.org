@@ -1,7 +1,5 @@
 ---
 title: Contenu personnalisé
-intro: "Créez du contenu personnalisé pour : les feuilles de style, le javascript, un message d'avertissement global et une nouvelle page pour rendre le contenu markdown pour les nouvelles de l'entreprise."
-featured: "Créez du contenu personnalisé pour : les feuilles de style, le javascript, un message d'avertissement global et une nouvelle page pour rendre le contenu markdown pour les nouvelles de l'entreprise."
 slug: custom-content-bundle
 type: featured
 screenshots:

@@ -1,6 +1,5 @@
 ---
 title: Budgets récurrents
-intro: "Ajoute automatiquement de l'argent ou du temps aux budgets de vos projets de manière récurrente avec un intervalle personnalisé."
 type: plugin
 screenshots:
   - 

@@ -1,6 +1,5 @@
 ---
 title: Period insert
-intro: "Create timesheet entries by date range"
 type: plugin
 screenshots:
   - 

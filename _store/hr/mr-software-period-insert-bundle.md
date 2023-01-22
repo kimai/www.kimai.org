@@ -1,6 +1,5 @@
 ---
 title: Unos razdoblja
-intro: "Stvori unose vremenske tablice na osnovi raspona datuma"
 type: plugin
 screenshots:
   - 

@@ -7,6 +7,7 @@ permalink: /plugins.json
 [
     {%- for product in products -%}
     {
+        {%- assign translation = site.data['en'].translation.store-items[product.slug] -%}
         {%- assign settings = site.data.store[product.slug] -%}
         {%- assign developer = site.data.developer[settings.developer] -%}
         "name": "{{ product.title }}",
@@ -19,7 +20,7 @@ permalink: /plugins.json
         },
         "bundle": {% if settings.bundle %}"{{ settings.bundle.name }}"{% else %}null{% endif %},
         "icon": "{{ settings.icon | default: "fas fa-question" }}",
-        "description": "{% if settings.featured %}{{ settings.featured }}{% else %}{{ product.intro }}{% endif %}",
+        "description": "{% if settings.featured %}{{ translation.featured }}{% else %}{{ translation.intro }}{% endif %}",
         "new": {% if settings.new %}true{% else %}false{% endif %},
         "price": {% if settings.price == nil %}null{% else %}"{{ settings.price }}"{% endif %}
     }{% unless forloop.last %},{% endunless %}

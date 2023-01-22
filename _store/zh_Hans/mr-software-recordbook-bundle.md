@@ -1,6 +1,5 @@
 ---
 title: RecordBook for apprentices
-intro: "A plugin for Kimai which generates a RecordBook (German: Berichtsheft) for trainees."
 type: plugin
 screenshots:
   - 

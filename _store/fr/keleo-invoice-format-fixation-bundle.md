@@ -1,6 +1,5 @@
 ---
 title: Format fixe des données de facturation (par langue)
-intro: "Un plugin qui permet de définir une langue globale pour les formats de données de facturation"
 type: plugin
 screenshots:
   - 

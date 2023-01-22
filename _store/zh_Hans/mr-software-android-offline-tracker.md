@@ -1,6 +1,5 @@
 ---
 title: Android app for offline tracking
-intro: "Android app for offline tracking with Kimai"
 type: app
 lang: zh_Hans
 permalink: /zh_Hans/store/mr-software-android-offline-tracker.html

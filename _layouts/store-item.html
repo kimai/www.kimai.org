@@ -2,6 +2,7 @@
 layout: page-empty
 ---
 {% assign settings = site.data.store[page.slug] %}
+{% assign translation = site.data[page.lang].translation.store-items[page.slug] %}
 {% assign developer = site.data.developer[settings.developer] %}
 {% assign icon = settings.icon | default: "fas fa-question" %}
 {% assign buyLink = '#' %}
@@ -219,7 +220,7 @@ layout: page-empty
                         <i class="{{ icon }} fa-2x me-3"></i>
                         {% endif %}
                         <div>
-                            <div>{{ page.intro }}</div>
+                            <div>{{ translation.intro }}</div>
                         </div>
                     </div>
                     <div class="card-options">

@@ -1,6 +1,5 @@
 ---
 title: Klijent konzole (PHAR)
-intro: Višeplatformski klijent konzole za Kimai
 slug: console-phar
 type: client
 lang: hr

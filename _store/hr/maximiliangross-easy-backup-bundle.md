@@ -1,6 +1,5 @@
 ---
 title: Jednostavna sigurnosna kopija
-intro: "Kimai dodatak za izradu sigurnosne kopije tvog okruženja jednim pritiskom."
 type: plugin
 screenshots:
   - 
