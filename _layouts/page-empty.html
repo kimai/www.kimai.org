@@ -3,8 +3,10 @@ layout: default
 ---
 
 {% assign pagetitle = page.title %}
-{% if page.title_trans != nil %}
-    {% assign pagetitle = site.data[page.lang].translation[page.title_trans] %}
+{% if site.data[page.lang].translation.menu.default[page.slug].title != nil %}
+    {% assign pagetitle = site.data[page.lang].translation.menu.default[page.slug].title %}
+{% elsif site.data[page.lang].translation.menu.default[page.slug].name != nil %}
+    {% assign pagetitle = site.data[page.lang].translation.menu.default[page.slug].name %}
 {% endif %}
 {% assign subtitle = nil %}
 {% if page.subtitle != nil %}
