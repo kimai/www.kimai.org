@@ -1,6 +1,5 @@
 ---
 title: "Über Kimai"
-description: Was steckt hinter der Zeiterfassungs-App Kimai? Erfahren Sie mehr über es, seine Geschichte und seinen Entwickler.
 lang: de
 permalink: /de/ueber-kimai.html
 ---

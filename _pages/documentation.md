@@ -1,7 +1,5 @@
 ---
 title: Kimai - Documentation
-description: Support information, user manual and other documentation for Kimai time-tracking
-subtitle: Online documentation for the time-tracking application Kimai
 lang: en
 layout: documentation
 permalink: /documentation/

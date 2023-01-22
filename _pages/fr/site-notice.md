@@ -1,6 +1,5 @@
 ---
 title: Mentions légales
-description: Mentions légales for www.kimai.org
 lang: fr
 robots: "noindex, nofollow"
 sitemap: false

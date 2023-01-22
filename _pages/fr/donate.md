@@ -1,6 +1,5 @@
 ---
 title: Dons
-description: Supporter Kimai, fait un don
 lang: fr
 permalink: /fr/soutenez.html
 ---

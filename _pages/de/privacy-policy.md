@@ -1,6 +1,5 @@
 ---
 title: Datenschutz
-description: Datenschutzbestimmungen für www.kimai.org
 lang: de
 robots: "noindex, follow"
 sitemap: false
