@@ -1,6 +1,6 @@
 {% assign article = include.article | default: site.posts[0] %}
 {% assign type = include.type | default: 'none' %}
-{% assign author = site.data.users[article.author] %}
+{% assign author = site.data.developer[article.author] %}
 {% assign liked = include.liked | default: false %}
 {% assign truncate = include.truncate | default: 100 %}
 
@@ -19,7 +19,7 @@
 		<div class="text-muted">{{ article.excerpt | truncate: truncate }}</div>
 
 		<div class="d-flex align-items-center pt-3 mt-auto">
-			<div class="avatar avatar-rounded me-3" style="background-image: url({{ author.photo }})"></div>
+			<div class="avatar avatar-rounded me-3" style="background-image: url({{ author.image }})"></div>
 			<div>
 				<span class="text-muted">{{ author.name }}</span>
 				<small class="d-block text-muted">{{ article.date | date_to_string }}</small>

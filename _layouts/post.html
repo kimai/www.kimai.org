@@ -1,14 +1,14 @@
 ---
 layout: page-empty
 ---
-{% assign author = site.data.users[page.author] %}
+{% assign author = site.data.developer[page.author] %}
 
 <div class="row">
     <div class="col-lg-12">
         <div class="card">
             <div class="card-header">
                 <div class="d-flex px-2">
-                    <div class="avatar avatar-rounded me-3" style="background-image: url({{ author.photo }})"></div>
+                    <div class="avatar avatar-rounded me-3" style="background-image: url({{ author.image }})"></div>
                     <div>
                         <div>{{ author.name }} <small>@{{ author.username }}</small></div>
                         <small class="d-block text-muted">{{ page.date | date_to_string }}</small>

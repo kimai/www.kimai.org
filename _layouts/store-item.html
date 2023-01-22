@@ -371,10 +371,7 @@ layout: page-empty
         <div class="col-lg-9">
             <h4>All items by {{ developer.name }}</h4>
 
-            {% assign products = site.store | where: "lang", page.lang | where: "developer", settings.developer | where_exp:"product", "product.featured != nil" | sort: 'title' %}
-            {% include store-list.html products=products %}
-
-            {% assign products = site.store | where: "lang", page.lang | where: "developer", settings.developer | where_exp:"product", "product.featured == nil" | sort: 'title' %}
+            {% assign products = site.store | where: "lang", page.lang | where: "developer", settings.developer | sort: 'title' %}
             {% include store-list.html products=products %}
         </div>
     </div>
