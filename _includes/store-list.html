@@ -11,13 +11,14 @@
 			{% if settings.new != nil and settings.new %}
 			    {% assign isNew = true %}
 			{% endif %}
-			{% if product.featured %}
+			{% if settings.featured %}
 				{% assign featured = true %}
 		    	{% assign iconSize = "fa-3x" %}
 				{% assign imageSize = 'style="width: 15rem"' %}
 			{% endif %}
 			{% assign icon = settings.icon | default: "fas fa-question" %}
 			{% assign developer = site.data.developer[settings.developer] %}
+			{% assign translation = site.data[page.lang].translation.store-items[product.slug] %}
 			<tr{% if featured %} class="featured-article"{% endif %}>
 				<td class="text-center product-icon">
 					{% if settings.image != nil %}
@@ -38,7 +39,7 @@
 
 						<div class="row text-muted">
 							<div class="col-lg-12">
-							{{ product.featured }}
+							{{ translation.featured }}
 							</div>
 						</div>
 					</td>
