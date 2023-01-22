@@ -1,6 +1,7 @@
 ---
 title: Custom content
 description: Add custom content to your Kimai installation
+canonical: /documentation/plugin-custom-content.html
 ---
 
 {% include plugins/custom-content.md %}  
@@ -48,14 +49,7 @@ $('body').on('change.select2', '#timesheet_edit_form_activity', function() {
 
 Automatically login with SAML (only works if normal form login is deactivated):
 ```javascript
-document.querySelector('body.login-page #social-login-button')?.click();
-```
-
-Expand extended timesheet settings (since 2.0 beta 3):
-```javascript
-document.addEventListener('show.bs.modal', (e) => { 
-    e.srcElement.querySelector('#timesheet_extended_settings a[data-bs-toggle]')?.click(); 
-});
+document.querySelector('div.login-box-body a.btn-block')?.click();
 ```
 
 ### Alert
