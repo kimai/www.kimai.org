@@ -174,13 +174,13 @@ feature:
         description: "Potpuno prilagođavajući raspored elemenata za rad na računalu s radnom površinom kao i za rad na mobilnim uređajima. Svaki korisnik može konfigurirati stupce podataka koji će se prikazati, npr. kako bi se izbjeglo vorodavno klizanje na malim uređajima."
     plugins:
         name: "Dodaci"
-        description: "Kimai se može proširiti dodacima. Programer koji želi stvoriti dodatak za Kimai može koristiti mnoge točke proširenja."
+        description: "Funkcionalnost Kimaia se može proširiti pomoću dodataka. Programeri koji žele razviti dodatke mogu koristiti mnoge točke proširenja."
     multi-user:
         name: "Za više korisnika"
         description: "Kimai može koristiti onoliko korisnika koliko želiš: svaka instalacija podržava neograničen broj korisnika s različitim ulogama (vidi dozvole)."
     multi-language:
         name: "Višejezičan"
-        description: "Kimai se može lokalizirati na bilo koji jezik i već je preveden na više od 30 jezika."
+        description: "Kimai se može prevesti na bilo koji jezik i već je preveden na više od 30 jezika."
     teams:
         name: "Timovi"
         description: "Stvori timove za grupiranje tvojih korisnika u logičke skupine poput odjela ili u grupe koje su povezane s projektom. Tim se timovima mogu dodijeliti kupci i projekti, što će ograničiti vidljivost i pristup drugim korisnicima."
@@ -195,7 +195,7 @@ feature:
         description: "Aktivnosti se koriste za dodjeljivanje jedinice rada unosu u vremenskim tablicama. Upravljaj aktivnostima za svaki projekt s brojem narudžbe, proračunom i vidljivošću (za arhiviranje). Aktivnosti mogu biti globalne, dupliciranje više nije potrebno ako više projekata dijeli istu radnu jedinicu."
     invoices:
         name: "Fakturiranje"
-        description: "Razni predlošci, kalkulator, generator broja računa. Možeš također dodati vlastite predloške za izvoz u datotečne formate: PDF, DOCX, HTML, XLSX, ODS."
+        description: "Razni predlošci računa, mogućnosti grupiranja unosa, podesivi brojevi računa te mogućnost dodavanja vlastitih predložaka u PDF, DOCX, HTML, XLSX i ODS formatima."
     export:
         name: "Izvoz podataka"
         description: "Podaci vremenskih tablica mogu se izvesti u druge programe ili dijeliti s drugim odjelima u formatima: XLSX (Excel), PDF, CSV i HTML. Dodatno tome, izvezeni zapisi se mogu zaključati i zaštititi od promjena."
@@ -216,7 +216,7 @@ feature:
         description: "Tvoja pregledna ploča prikazat će nekoliko statistika o snimljenim vremenima i količini prikupljenih podataka. I uvijek možemo dodati još grafikona!"
     docker:
         name: "Docker"
-        description: "Izdanje uključuje docker sliku za razvoj i dostupna je zasebna docker-compose postavka za proizvodnju."
+        description: "Imamo Docker pakete za razvoj kao i više varijanti Docker-Compose postava za proizvodnju."
     migrate-v1:
         name: "Migracija"
         description: "Podaci iz Kimai v1 mogu se uvesti za besprijekornu migraciju tvog evidentaranja vremena."
@@ -278,25 +278,25 @@ install:
             To ne znači nužno da vam treba VPS. Neki dijeljeni hostovi pružaju vam SSH pristup putem kojeg možete jednostavno instalirati Composer i Kimai.
 
             Potpune instrukcije za instaliranje nalaze se u našoj %documentation%.
-demo-master-title: Current version - Empty
-demo-stable-description: 'The current version, without plugins, but with demo data. Installed version: '
-demo-plugins-title: Current version
+demo-master-title: Aktualna verzija – Prazno
+demo-stable-description: 'Aktualna verzija bez dodataka, ali s demo podacima. Instalirana verzija: '
+demo-plugins-title: Aktualna verzija
 newsletter:
-    email-title: Your email address
-    email-help: Provide your email address to subscribe.
-    field-invalid: The information provided is invalid. Please review the format and try again.
+    email-title: Tvoja e-mail adresa
+    email-help: Za pretplatu, upiši tvoju e-mail adresu.
+    field-invalid: Navedeni podaci nisu ispravni. Pregledaj format i pokušaj ponovo.
     field-required: This field cannot be left blank.
     captcha-help: Very sorry for the Captcha, we know it's annoying!
     sendinblue: We use Sendinblue as our marketing platform. By Clicking below to submit this form, you acknowledge that the information you provided will be transferred to Sendinblue for processing in accordance with their %terms%
     button: SUBSCRIBE
     terms: terms of use
-    title: Newsletter
-    introduction: Subscribe to our newsletter and stay updated about Kimai and Plugin updates.
-demo-stable-title: Current version - No plugins
+    title: Bilten
+    introduction: Pretplati se na naš bilten i saznaj o novim verzijama Kimaija i dodataka.
+demo-stable-title: Aktualna verzija – Bez dodataka
 demo-plugins-description: Aktualna verzija s dodacima iz naše trgovine i s demo podacima.
 demo-v2-description: Nadolazeća verzija s dodatnim dodacima i demo podacima.
 demo-empty-title: Verzija 2.0 – prazno
-demo-master-description: The current version with additional plugins, but without demo data.
+demo-master-description: Aktualna verzija s dodatnim dodacima, ali bez demo podataka.
 demo-v2-title: Verzija 2.0
 demo-empty-description: Nadolazeća verzija s dodacima, ali bez demo podataka.
 store-items:
@@ -363,7 +363,7 @@ store-items:
     expenses-bundle:
         title: "Troškovi"
         intro: "Evidentiraj troškove i uključi ih u svoje račune."
-        featured: "Evidentiraj troškove na temelju kupca, projekta i aktivnosti. Ovi se troškovi mogu kategorizirati i uključiti u tvoje račune.  "
+        featured: "Evidentiraj troškove ovisno o kupcu i projektu. Ti se troškovi mogu kategorizirati i uključiti u tvoje račune."
     fail2ban-bundle:
         title: "Fail2Ban"
         intro: "Fail2ban kompatibilan dodatak, bilježi neuspjele zahtjeve za autentifikaciju"
@@ -656,4 +656,4 @@ screenshots:
     pcsg-recurring-budget-bundle5:
         title: "E-mail statistika proračuna"
         description: "Primjer e-mail poruke statistike proračuna poslane voditelju tima projekta nakon dovršenog proračunskog intervala proračuna."
-price-contract: Upon request
+price-contract: Na upit
