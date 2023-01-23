@@ -147,6 +147,23 @@ kimai:
             - 'var/my_invoices/'
 ```
 
+### Changing translations
+
+If you want/need to replace some default translations (e.g. they don't reflect your industry), then you can add a translation file
+which will used as first translation source.
+
+First you create a file `my-company.en.xlf` either in the `translations/` directory or in
+the translation directory of your custom plugin at `Resources/translations/`.
+
+You activate the new translation file with:
+
+```yaml
+kimai:
+    theme:
+        branding:
+            translation: my-company
+```
+
 ### Multiple time-rounding rules
 
 At [System > Settings]({% link _documentation/configurations.md %}) you can configure one rounding rule. 
