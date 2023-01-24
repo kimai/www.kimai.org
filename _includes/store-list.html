@@ -18,7 +18,7 @@
 			{% endif %}
 			{% assign icon = settings.icon | default: "fas fa-question" %}
 			{% assign developer = site.data.developer[settings.developer] %}
-			{% assign translation = site.data[page.lang].translation.store-items[product.slug] %}
+			{% assign translation = site.data[page.lang].store.items[product.slug] %}
 			<tr{% if featured %} class="featured-article"{% endif %}>
 				<td class="text-center product-icon">
 					{% if settings.image != nil %}

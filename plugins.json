@@ -7,7 +7,7 @@ permalink: /plugins.json
 [
     {%- for product in products -%}
     {
-        {%- assign translation = site.data['en'].translation.store-items[product.slug] -%}
+        {%- assign translation = site.data['en'].store.items[product.slug] -%}
         {%- assign settings = site.data.store[product.slug] -%}
         {%- assign developer = site.data.developer[settings.developer] -%}
         "name": "{{ product.title }}",
