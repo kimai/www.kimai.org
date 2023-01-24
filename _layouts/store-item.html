@@ -2,7 +2,7 @@
 layout: content
 ---
 {% assign settings = site.data.store[page.slug] %}
-{% assign translation = site.data[page.lang].translation.store-items[page.slug] %}
+{% assign translation = site.data[page.lang].store.items[page.slug] %}
 {% assign developer = site.data.developer[settings.developer] %}
 {% assign icon = settings.icon | default: "fas fa-question" %}
 {% assign buyLink = '#' %}
@@ -299,7 +299,7 @@ layout: content
                                 </div>
                             </div>
                             <div class="card-body">
-                                {% include slider.html slides=screenshots %}
+                                {% include store-screenshots.html slides=screenshots %}
                             </div>
                         </div>
                     {% endif %}
