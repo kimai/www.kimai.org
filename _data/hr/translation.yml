@@ -228,7 +228,7 @@ feature:
         description: "Kimai koristi lokaliziranu verziju 24-satnog formata. Ali ako radije želiš koristiti AM/PM format (prije podne/poslije podne), vrijeme možeš konfigurirati i na taj način."
     time-clock:
         name: "Kontrolni sat"
-        description: "Ne želiš da tvoji korisnici zapisuju proizvoljne zapise u vremenske tablice? Prebaci se na kontrolni sat, koji omogućuje samo zapise „prijava” i „odjava”. Ručni unos vremena početka i završetka više nije potreban."
+        description: "Ne želiš da tvoji korisnici zapisuju proizvoljne zapise u vremenske tablice? Prebaci se na kontrolni sat, koji omogućuje samo zapise „prijava” i „odjava”. Ručni unosi vremena početka i završetka više nisu potrebni."
     duration-only:
         name: "Samo trajanje"
         description: "Ako tvoji lokalni zakoni zahtijevaju prikaz samo trajanja umjesto datuma/vremena početka i završetka, taj način prikaza možeš aktivirati globalno."
@@ -273,11 +273,11 @@ install:
         title: Instalacija sa SSH
         intro: "Preporučeni način instaliranja programa Kimai: koristi `git` i `composer` izravno na ciljanom sustavu."
         alert-vps: |
-            U ovom trenutku nije moguće instalirati Kimai preuzimanjem ZIP datoteke i učitavanjem datoteka na vaš web poslužitelj. Razlog tome je što se skladatelj mora pokrenuti na naredbenom retku.
+            U ovom trenutku nije moguće instalirati Kimai preuzimanjem ZIP datoteke i učitavanjem datoteka na web poslužitelj. Razlog tome je što se Composer mora pokrenuti putem naredbenog retka.
 
-            To ne znači nužno da vam treba VPS. Neki dijeljeni hostovi pružaju vam SSH pristup putem kojeg možete jednostavno instalirati Composer i Kimai.
+            To ne znači nužno da trebaš VPS. Neki dijeljeni hostovi pružaju SSH pristup putem kojeg se Composer i Kimai mogu instalirati bez problema.
 
-            Potpune instrukcije za instaliranje nalaze se u našoj %documentation%.
+            Potpune instrukcije za instaliranje nalaze se našoj stranici „%documentation%”.
 demo-master-title: Aktualna verzija – Prazno
 demo-stable-description: 'Aktualna verzija bez dodataka, ali s demo podacima. Instalirana verzija: '
 demo-plugins-title: Aktualna verzija
@@ -316,7 +316,7 @@ store-items:
         title: "Postavke osobnog kalendara"
         intro: "Dodatak koji korisnicima omogućuje postavljanje prilagođenog vremena početka i kraja za prikaz kalendara u njihovim osobnim postavkama."
     gbs-zip-projectrenderer-bundle:
-        title: "ZipProjectRenderer"
+        title: "ZipProjectRenderer (Izvoz ZIP-a s PDF datotekom po projektu)"
         intro: "Dodatak za izvoz jedne PDF datoteke po projektu za više odabranih projekata."
     glorpen-duration-bundle:
         title: "Promijenjivo zaokruživanje trajanja"
@@ -350,7 +350,7 @@ store-items:
         intro: "Stvori prilagođen sadržaj za: stilske predloške, javascript, globalnu poruku upozorenja i novu stranicu za prikaz markdown formatiranog sadržaja za novosti poduzeća."
     custom-fields-bundle:
         title: "Prilagođena polja"
-        intro: "Stvori dodatna polja koja se mogu konfigurirati prema vlastitim potrebama za vremenske tablice, kupce, projekte, aktivnosti i korisnike."
+        intro: "Stvori dodatna polja koja se mogu konfigurirati prema vlastitim potrebama za vremenske tablice, kupce, projekte, aktivnosti i korisnike u različitim formatima. Polja mogu biti opcionalna ili obavezna i mogu se ograničiti dozvolama."
     custom-plugins:
         title: "Razvoj prilagođenih dodataka"
         intro: "Želiš posebnu funkciju koja nije dostupna u Kimaiju? Mogu je za tebe razviti!"
@@ -359,7 +359,7 @@ store-items:
         title: Odbijanje vremena
     expenses-bundle:
         title: "Troškovi"
-        intro: "Evidentiraj troškove i uključi ih u svoje račune."
+        intro: "Evidentiraj tvoje troškove na temelju kupca i projekta. Ovi se troškovi mogu kategorizirati i uključiti u tvoje račune."
     fail2ban-bundle:
         title: "Fail2Ban za prijave"
         intro: "Fail2ban kompatibilan dodatak, bilježi neuspjele zahtjeve za autentifikaciju"
@@ -377,7 +377,7 @@ store-items:
         intro: "Dodatak za postavljanje globalnog jezika za formate podataka računa"
     kiosk-barcode-bundle:
         title: "Kiosk s podrškom za barkodove i RFID"
-        intro: "Pokreni i prekini vremenske tablice pomoću barkod ili RFID skenera za evidentiranje radnog vremena"
+        intro: "Evidentiranje vremena prisutnosti u okruženju u kojem korisnik nema pristup Kimaiju (npr. u skladištu), korištenjem barkoda ili RFID skenera za pokretanje i prekidanje vremenskih tablica."
     lockdown-per-user-bundle:
         title: "Postavke za zaključavanja pojedinačnih korisnika"
         intro: "Kimai dodatak za postavljanje razdoblja zaključavanja pojedinačnih korisnika"
@@ -386,10 +386,10 @@ store-items:
         intro: "Dodatak za ponovno izračunavanje satnice/fiksne cijene pri svakom aktualiziranju vremenske tablice"
     task-management-bundle:
         title: "Upravljanje zadacima"
-        intro: "Stvori zadatke, pokreni/prekini/zaustavi ih, dodijeli ih korisnicima i timovima i snimaj vrijeme – dodatak za upravljanje zadacima za Kimai koji dodaje dva nova widgeta u nadzornu ploču"
+        intro: "Stvori zadatke, pokreni/prekini/zaustavi ih, dodijeli ih korisnicima i timovima i snimaj njihovo vrijeme – Kimai dodatak za upravljanje zadacima koji dodaje dva nova widgeta u nadzornu ploču"
     translation-bundle:
         title: "Prijevodi"
-        intro: "Promijeni sve vidljive elemente u tvojoj Kimai instalaciji vlastitim prijevodima"
+        intro: "Promijeni sve vidljive elemente (oznake obrazaca, zaglavlje tablice, stavke izbornika …) u tvojoj Kimai instalaciji s vlastitim prijevodima"
     liaraalis-small-business-rule-bundle:
         title: "Propisi za mala poduzeća"
         intro: "Dodatak koji pruža mogućnost korištenja propisa za mala poduzeća, koji se mogu primijeniti u Njemačkoj i Austriji, prilikom izrade računa u Kimaiju."
@@ -413,7 +413,7 @@ store-items:
         intro: "Stvori unose vremenske tablice na osnovi raspona datuma"
     mr-software-recordbook-bundle:
         title: "Dnevnik rada pripravnika"
-        intro: "Kimai dodatak za generiranje dnevnika rada za priravnike."
+        intro: "Kimai dodatak za generiranje dnevnika rada za pripravnike."
     mr-software-sickday-bundle:
         title: "Bolovanje (dani bolovanja)"
         intro: "Kimai dodatak za evidentiranje bolovanja korisnika."
