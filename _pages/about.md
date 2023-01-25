@@ -2,8 +2,7 @@
 title: "About Kimai"
 lang: en
 permalink: /en/about.html
-redirect_from: 
-- /about/
+redirect_from: /about/
 ---
  
 {% include pages/about.md %}
