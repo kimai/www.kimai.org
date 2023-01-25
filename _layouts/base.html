@@ -17,7 +17,15 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/icon/icon_32x32.png' | absolute_url }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/icon/icon_16x16.png' | absolute_url }}">
     <link rel="shortcut icon" href="{{ '/assets/icon/favicon.ico' | absolute_url }}">
-    <title>{{ page.title }}{% if layout.title_postfix != nil %} - {{ layout.title_postfix }}{% endif %}</title>
+    <title>
+        {%- assign page_title = page.title %}
+        {%- if site.data[page.lang].translation.menu.default[page.slug].name != nil -%}
+            {% assign page_title = site.data[page.lang].translation.menu.default[page.slug].name %}
+        {%- elsif site.data[page.lang].store.items[page.slug].title != nil -%}
+            {% assign page_title = site.data[page.lang].store.items[page.slug].title %}
+        {%- endif -%}
+        {{ page_title }}
+    </title>
     {% assign description = page.excerpt %}
     {%- if site.data[page.lang].translation.menu.default[page.slug].description != nil -%}
         <meta name="description" content="{{ site.data[page.lang].translation.menu.default[page.slug].description }}">
