@@ -7,7 +7,7 @@ redirect_from:
 ---
 
 Kimai can be localized to any language and is already translated to
-{% include features/multi-language.md %}
+{% include features/multi-language.md %}   
 
 Feel free to send your self-made language files or contributing to the weblate project below  – we’re looking for translators and would appreciate your support!
 
@@ -17,15 +17,20 @@ Feel free to send your self-made language files or contributing to the weblate p
 | {{ locale[1] }}        | [![Translation status](https://hosted.weblate.org/widgets/kimai/{{ locale[0] }}/svg-badge.svg)](https://hosted.weblate.org/engage/kimai/{{ locale[0] }}/)           |
 {%- endfor %}
 
-Languages and translations in Kimai are configurable. 
-Read below how to add a new language and configure the output formats for date and time values.  
+All translations in Kimai are managed at Weblate and should be changed there exclusively! Do not chang ethe source files of Kimai.
 
-## Language files
+If you want to change certain keys in your installation, you can use the [Translation plugin]({% link _store/keleo-translation-bundle.md %}) for that.
 
-We try to keep the number of language files small, in order to make it easier to identify the location of application messages and to unify the codebase.
+## Developer
 
-- If you add a new key, you have to add it at least in the `en` version as well (as english is the fallback language)
-- It's very likely that you want to edit the file `messages` as it holds 90% of our application translations 
+The following documentation is not meant for end-users or translators. It is a technical documentation for the folks working on the Kimai code.
+
+### Language files
+
+We try to separate translations in logical units, in order to make it easier to identify the location of application messages.
+
+- If you add a new key, you have to add it at least in the `en` version (as english is the fallback language for all missing keys in any language)
+- It's very likely that you want to edit the file `messages` as it holds the most important application translations 
 
 The files in `translations/` as a quick overview:
 
@@ -54,15 +59,13 @@ If you apply changes to any files mentioned on this page, you have to [clear the
 ### Authentication screens
 
 The authentication screens (login, registration, register account) are translated through the theme bundle which is used in Kimai.
-The bundle can be [found here](https://github.com/kevinpapst/AdminLTEBundle) and the translations [in this directory](https://github.com/kevinpapst/AdminLTEBundle/tree/master/Resources/translations).
+The bundle can be [found here](https://github.com/kevinpapst/TablerBundle) and the translations [in this directory](https://github.com/kevinpapst/TablerBundle/tree/main/translations).
 
 When you create a new translation, please open a Pull Request in this repository as well.
 
-## Adding a new language
+### Adding a new language
 
-In the next section I will explain how to add a new language with the (not existing) locale `xx`. 
-
-### Add translations
+This example assumes you are creating the (not existing) locale `xx`. 
 
 Copy each translation from it's english version `translations/*.en.xlf` and rename them to `translations/*.xx.xlf`.
 
@@ -75,7 +78,7 @@ Adjust the `target-language` attributes in the file header, as example for the n
 
 For a language variant `xx_YY`, the fallback will always be the base language `xx` (eg. `de` for `de_CH`). 
 
-Only some specific keys may need to be changed for this variant and its possible to add only the respective files like i.e. `translations/messages.de_CH.xlf` including only the changed translations:
+Only some specific keys may need to be changed for this variant, and it's possible to add only the respective files like i.e. `translations/messages.de_CH.xlf` including only the changed translations:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -93,78 +96,45 @@ Only some specific keys may need to be changed for this variant and its possible
 
 ### Configure locale formats
 
-Adjust the file `config/packages/kimai.yaml` and add the language (or the language variant) settings below the key `kimai.languages`:
+Locale formats are derived from the file `config/locales.php` which is auto-generated with the command:
  
-```yaml
-kimai:
-    languages:
-        # copy all settings from 'en' and adjust them to your language
-        xx:
-            date_time_type: 'yyyy-MM-dd HH:mm'
-            date_type: 'yyyy-MM-dd'
-            date: 'Y-m-d'
-            date_time: 'm-d H:i'
-            duration: '%%h:%%m h'
-```
-
-This is not necessary if your language uses the same configuration like `en`, which will be used as fallback.
-You only have to overwrite the keys that are different, so if you new language `xx` only has a different duration format, then adding this is sufficient:
-
-```yaml
-kimai:
-    languages:
-        # copy all settings from 'en' and adjust them to your language
-        xx:
-            duration: '%%h hours and %%m minutes'
+```bash
+bin/console kimai:reset:locales
 ```
 
 ### Register locale
 
-Add the new locale (or the locale variant) in the file `config/services.yaml` at `parameters.app_locales` divided by a pipe:
+You need to activate a new locale (so it can be used in routing) in the file `config/services.yaml` at `parameters.app_locales` divided by a pipe:
 
 ```yaml
 parameters:
     locale: en
-    app_locales: en|de|ru|it|xx
+    app_locales: en|de|fr|ru|vi|zh_CN
 ```
-
-### Import frontend locales
-
-{% include alert.html type="warning" icon="fas fa-exclamation" alert="You can skip this step, we will do it with when we test your changes." %}
-
-Make sure the new locale is included in the frontend dependencies. For example Kimai includes moment.js, which ships its own translations.
-Kimai ONLY compiles the moment.js locales which are needed. 
-Check and adapt the JS files in the `assets/` directory:
-- [app.js]({{ site.kimai_v2_repo }}/blob/main/assets/app.js) 
-```
-const Moment = require('moment');
-global.moment = Moment;
-require('moment/locale/xx');
-```
-
-- [calendar.js]({{ site.kimai_v2_repo }}/blob/main/assets/calendar.js) 
-```
-require('fullcalendar');
-require('fullcalendar/dist/locale/xx');
-```
-
-Be careful with the naming of language variants, in JS the variants are written like xx-yy, not xx_YY. To be sure please check [the moment.js locales](https://github.com/moment/moment/tree/develop/locale).
 
 ### Number formats
 
-The number formats on the Kimai frontend as well as in the invoices are defined by the frontend locales. If you get wrong decimal separator or thousands separator keys, please import the correct frontend locale as described above.
+The number formats are determined from the user locale.
 
 ### Date and time formats
 
-Kimai uses configurations from `kimai.yaml` to format the values in the frontend. 
-It also uses the configurations to convert between javascript components (e.g. the date-picker) and the PHP backend,
-so they must create the same output. 
+The date and time formats are determined from the user locale.
 
-## AM/PM format
+There are configurations in place to convert between javascript components (e.g. the date-picker) and the PHP backend. 
 
-Kimai uses the 24-hour format by default but can be switched to use AM/PM instead, please read the [AM/PM format documentation]({% link _documentation/i18n-am-pm.md %}) to find out how.
+### AM/PM format
 
-## Validate your changes
+Whether Kimai displays data in 24 hour or AM/PM format depends on the user locale.
+
+### Generate correct ID and resname
+
+Run the following command, which will generate the correct XLIFF attributes for you:
+
+```bash
+bin/console kimai:translation --resname
+```
+
+### Validate your changes
 
 This will validate if the technical changes are okay / if the changed and new files can be used by Kimai:
 
@@ -172,7 +142,7 @@ This will validate if the technical changes are okay / if the changed and new fi
 bin/console lint:xliff translations
 ```
 
-## Check for missing translations
+### Check for missing translations
 
 You can search for missing keys by issuing this command (replace `xx` with your locale):
 ```bash
@@ -183,8 +153,3 @@ or
 ```
 bin/console translation:update --dump-messages --force de
 ```
-
-## Finalization
-
-- Sent in a PR with your changes
-- [Update the documentation](https://github.com/kimai/www.kimai.org/blob/main/_includes/features/multi-language.md), which states all available translations
