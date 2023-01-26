@@ -7,7 +7,7 @@ toc: false
 Go back to general [SAML configuration]({% link _documentation/saml.md %}) for Kimai.
 
 [Authentik](https://goauthentik.io) is an open-source Identity Provider focused on flexibility and versatility.
-It has proven to work with Kimai, see [#3212](https://github.com/kevinpapst/kimai2/discussions/3212).
+It has proven to work with Kimai, see [#3212]({{ site.kimai_v2_repo }}/discussions/3212).
 You should [check the Authentik docs about Kimai](https://goauthentik.io/integrations/services/kimai/) as well.
 
 Make sure that the mapping field matches the XML response:

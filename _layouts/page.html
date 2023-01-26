@@ -3,7 +3,7 @@ layout: page-empty
 ---
 <div class="card card-lg">
     <div class="card-body">
-        <div class="markdown">
+        <div class="markdown"{% if page.direction != nil %} dir="{{ page.direction }}"{% endif %}>
             {{ content }}
         </div>
     </div>

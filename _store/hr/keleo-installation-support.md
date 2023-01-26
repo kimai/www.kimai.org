@@ -1,9 +1,7 @@
 ---
-title: "Podrška za instaliranje i aktualiziranje"
-intro: "Želiš koristiti Kimai, ali ne znaš kako ga instalirati na tvom serveru?"
+title: "Installation & Update support"
 slug: installation-support
 type: support
-tags: [support]
 lang: hr
 permalink: /hr/store/keleo-installation-support.html
 ---

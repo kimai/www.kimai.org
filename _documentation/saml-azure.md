@@ -59,13 +59,12 @@ Adjust the following keys with your Azure / App specific settings:
 kimai:
     saml:
         activate: true
-        title: Login with Azure
+        title: Login with Azure AD
         mapping:
             - { saml: $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name, kimai: username }
             - { saml: $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress, kimai: email }
             - { saml: $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname, kimai: alias }
             - { saml: $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/displayname, kimai: title }
-            - { saml: $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/employeeid, kimai: accountNumber }
         roles:
             resetOnLogin: true
             attribute: http://schemas.microsoft.com/ws/2008/06/identity/claims/groups
@@ -84,9 +83,11 @@ kimai:
                     url: 'https://timetracking.example.com/auth/saml/acs'
                 singleLogoutService:
                     url: 'https://timetracking.example.com/auth/saml/logout'
+            security:
+                requestedAuthnContext: false
 ```
 
-1. Change the title to the wanted text on the login screen
+1. Change the title to the wanted text on the login button
 ```yaml
 title: Login with Azure
 ```
@@ -96,25 +97,18 @@ title: Login with Azure
 entityId: 'https://sts.windows.net/****-****-***/'                # Azure AD Identifier
 singleSignOnService:
     url: 'https://login.microsoftonline.com/****-****-***/saml2'  # Login URL
-    binding: 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect'
-singleLogoutService:
-    url: 'https://login.microsoftonline.com/****-****-***/saml2'  # Logout URL
-    binding: 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect'
 ```
 
-3. Change the **sp** configuration:
+3. Change the **sp** configuration, replacing **https://timetracking.example.com** with your Kimai URL:
 ```yaml
 entityId: 'https://timetracking.example.com/auth/saml/metadata'
 assertionConsumerService:
     url: 'https://timetracking.example.com/auth/saml/acs'
-    binding: 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST'
-# logout does not seem to work properly
-#singleLogoutService:
-#    url: 'https://timetracking.example.com/auth/saml/logout'
-#    binding: 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect'
+singleLogoutService:
+    url: 'https://timetracking.example.com/auth/saml/logout'
 ```
 
-4. Change the **x509cert** by opening the earlier downloaded certificate and copy it, without “Next-line” Enters into the configuration:
+4. Change the **x509cert** by opening the earlier downloaded certificate file (in a text editor) and copy the content to the config file and change it to one line  by removing the first line (BEGIN CERTIFICATE) and the last line (END CERTIFICATE) and then removing all line-breaks.
 ```yaml
 x509cert:  'REALLY LONG SET OF CHARACTERS'
 ```
@@ -129,4 +123,30 @@ x509cert:  'REALLY LONG SET OF CHARACTERS'
 4. Please click on the Kimai application , we called it **Kimai**, and then navigate to **Users and groups** on the left navigation bar.
 5. Click on **Add user/group** and add the groups or users, who should have access.
 
-You should now be able to test the Login by visiting **https://timetracking.example.com/** and clicking on the title of the SAML method, you defined earlier.
+You should now be able to test the Login by visiting your Kimai URL and clicking on the title of the SAML method, you defined earlier.
+
+### Syncing Employee ID
+
+This is not a standard attribute in Azure AD. But if you want to sync a unique "Employee ID", you could add a field mapping for the account number:
+```
+- { saml: $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/employeeid, kimai: accountNumber }
+```
+
+### Syncing Groups
+
+The example values for the group mapping from above: 
+```
+    - { saml: xxxxxxxx-yyyy-xxxx-yyyy-xxxxxxxxxxxx, kimai: ROLE_ADMIN }
+    - { saml: Azure-Group-Object-Id, kimai: ROLE_TEAMLEAD }
+```
+
+would lead with this Azure configuration
+{% include docs-image.html src="/images/documentation/azure-saml-groups.png" title="Group IDs" width="900px" %}
+
+to this configuration:
+```
+    - { saml: 7f9597ed-8b67-45d7-bd5b-70d2659ad429, kimai: ROLE_ADMIN }
+    - { saml: 998e116b-f8a1-4314-871c-045e92f82ce8, kimai: ROLE_TEAMLEAD }
+```
+
+The `Kimai System-Admin` group is not used in this example, but you would configure it in your local.yaml.

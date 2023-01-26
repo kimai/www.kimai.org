@@ -1,8 +1,6 @@
 ---
-title: Application iOS pour le suivi hors ligne
-intro: "Application iOS pour le suivi hors ligne avec Kimai"
+title: iOS app for offline tracking
 type: app
-tags: [iOS]
 lang: fr
 permalink: /fr/store/mr-software-ios-offline-tracker.html
 ---

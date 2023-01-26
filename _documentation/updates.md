@@ -46,6 +46,20 @@ That's it, Kimai is running the most current version. Enjoy the latest time-trac
 
 ## Troubleshooting
 
+### flex.symfony.com not found
+
+If you see the following error during `composer install`, then you are running a very old installation 😁
+
+```bash
+curl error 6 while downloading https://flex.symfony.com/versions.json: Could not resolve host: flex.symfony.com 
+```
+
+Great that you like Kimai, but PLEASE: for various reason (like security) you should update more regularly!
+
+Please run `composer install --optimize-autoloader -n --no-plugins --no-scripts` once and then follow the normal update process.
+
+### Changed files
+
 Please check with `git status` if your directory is without changes, to make sure you really can upgrade.
 If the following statement looks different for you, keep on reading:
 ```bash 
@@ -56,17 +70,25 @@ nothing to commit, working tree clean
 
 If you experience an issue like this (file name can vary) while performing the `git update`: 
 
-```
+```bash
 error: Your local changes to the following files would be overwritten by checkout:
 symfony.lock
 Please commit your changes or stash them before you switch branches.
 ```
 
-It means you have changes in at least one of the files in your installation.
-This can happen by installation of the additional LDAP packages, or a changed configuration file (which was not meant to be changed). 
+or
+
+```bash
+config/routes/annotations.yaml: needs merge
+error: you need to resolve your current index first
+```
+
+This means you have changes in at least one of the files in your installation.
+This can happen by installing additional packages (e.g. for LDAP), or simply when you changed a configuration file (which was not meant to be changed, read the docs how to apply config changes in a safe manner). 
 
 These changes need to be reverted before the update can be executed. 
 One possible solution is to use `git stash`, which will store your changes in a temporary location.
 If that fails for some reason, the other (rather extreme) option is to run `git reset --hard`, 
 which will wipe all local changes. 
 
+Please read GIT docs on how to fix that, it is NOT related to Kimai.

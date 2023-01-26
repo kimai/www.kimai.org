@@ -1,11 +1,10 @@
 ---
 title: Impressum
-description: Impresum for www.kimai.org
 lang: hr
 robots: "noindex, nofollow"
 sitemap: false
 permalink: /hr/site-notice.html
-canonical: /site-notice/
+canonical: /en/site-notice.html
 ---
 
 {% include pages/site-notice.md %}

@@ -4,7 +4,12 @@
     {%- if include.class != nil -%}
         {%- assign class = include.class -%}
     {%- endif -%}
-    <a href="{{ menu.url }}"{% if menu.description != nil %} title="{{ menu.description }}"{% endif %}{% if include.target != nil %} target="{{ include.target }}"{% endif %}{% if class != '' %} class="{{ class }}"{% endif %}>
-        {{- menu.title -}}
+    <a href="{{ menu.url }}"{% if include.target != nil %} target="{{ include.target }}"{% endif %}{% if class != '' %} class="{{ class }}"{% endif %}>
+        {%- if site.data[page.lang].translation.menu.default[menu.slug] -%}
+            {{- site.data[page.lang].translation.menu.default[menu.slug].name -}}
+        {%- else -%}
+            {{- menu.title -}}
+        {%- endif -%}
     </a>
 {%- endif -%}
+

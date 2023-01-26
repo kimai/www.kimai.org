@@ -1,8 +1,6 @@
 ---
-title: Dijeljenje vremenskih tablica projekta
-intro: Dijeli vremenske tablice projekta s bilo kim!
+title: Shared project timesheets
 type: plugin
-tags: [plugin]
 lang: hr
 permalink: /hr/store/vettersolutions-shared-project-timesheets-bundle.html
 ---

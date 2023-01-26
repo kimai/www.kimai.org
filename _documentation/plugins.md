@@ -14,7 +14,7 @@ The contents in `var/plugins/*` are listed in the [.gitignore]({{ site.kimai_v2_
 
 ## Plugin management (install, uninstall & deactivate) 
 
-Read the chapter [Plugin management]({% link _documentation/plugins.md %}).
+Read the chapter [Plugin management]({% link _documentation/plugin-management.md %}).
 
 ## Kimai plugins vs. pure Symfony bundles
 

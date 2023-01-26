@@ -1,6 +1,5 @@
 ---
 title: "Über Kimai"
-description: Was steckt hinter der Zeiterfassungs-App Kimai? Erfahren Sie mehr über es, seine Geschichte und seinen Entwickler.
 lang: de
 permalink: /de/ueber-kimai.html
 ---
@@ -36,7 +35,7 @@ Wenn Sie mit harten Fakten vertraut sind, haben wir auch eine [Funktionsübersic
 Und last but not least – wahrscheinlich das Wichtigste: 
 **Kimai ist Open-Source, Sie können es kostenlos herunterladen und Sie werden nie eine Lizenzgebühr für ein zukünftiges Update zahlen.**
 
-## Wer ist Kimai?
+## Wer steckt hinter Kimai?
 
 Es gibt eine großartige und große Gemeinschaft rund um Kimai und es ist unmöglich, jeden Beteiligten aufzulisten. 
 Eine kurze Liste der ehemaligen Entwickler finden Sie unten.

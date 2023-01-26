@@ -6,17 +6,17 @@ tags: [Release]
 ---
 
 This is a bugfix release for 0.8. Remember to execute the necessary timezone conversion script, 
-if you haven't updated to 0.8 before ([see UPGRADING]({{ site.kimai_v2_repo }}/blob/master/UPGRADING.md#08)).
+if you haven't updated to 0.8 before ([see UPGRADING]({{ site.kimai_v2_repo }}/blob/main/UPGRADING.md#08)).
 
 [Full Changelog]({{ site.kimai_v2_repo }}/compare/0.8...0.8.1)
 
 **Upgrade from 0.8:**
 
-- fetch the latest sources and refresh your cache: [How to upgrade Kimai]({{ site.kimai_v2_repo }}/blob/master/UPGRADING.md)
+- fetch the latest sources and refresh your cache: [How to upgrade Kimai]({{ site.kimai_v2_repo }}/blob/main/UPGRADING.md)
 
 **Upgrade from 0.7 or before:**
 
-- Execute the database migrations: [How to upgrade Kimai]({{ site.kimai_v2_repo }}/blob/master/UPGRADING.md)
+- Execute the database migrations: [How to upgrade Kimai]({{ site.kimai_v2_repo }}/blob/main/UPGRADING.md)
 - One more step is required: [Convert your timesheet data for timezone support]({{ site.kimai_v2_repo }}/pull/372)
 
 **Fixed bugs:**

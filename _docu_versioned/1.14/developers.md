@@ -21,8 +21,8 @@ All you need is:
 Clone the repository and install all dependencies:
 
 ```bash
-git clone https://github.com/kevinpapst/kimai2.git
-cd kimai2/
+git clone {{ site.kimai_v2_repo }}.git
+cd kimai/
 composer install
 ```
 

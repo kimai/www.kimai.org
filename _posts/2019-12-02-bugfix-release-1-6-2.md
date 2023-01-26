@@ -7,21 +7,21 @@ tags: [Release]
 
 A second bugfix was released for the 1.6 series, including some new invoice features as well.
 
-These [changes](https://github.com/kevinpapst/kimai2/compare/1.5...1.6.2) are included:
+These [changes]({{ site.kimai_v2_repo }}/compare/1.5...1.6.2) are included:
 
 - Added danish translations - thanks @Badgie
-- Fixes [\#1281](https://github.com/kevinpapst/kimai2/issues/1281) - fix installation for older databases
-- Fixes [\#1280](https://github.com/kevinpapst/kimai2/issues/1280) - hide multi update checkboxes for disallowed records
-- Fixes [\#1286](https://github.com/kevinpapst/kimai2/issues/1286) - API: Adds team information to user, add user and teamlead information to team 
-- Fixes [\#1161](https://github.com/kevinpapst/kimai2/issues/822) - dashboard counter for user/customer/project/activity (only show visible, respect team permissions) 
-- Fixes [\#1295](https://github.com/kevinpapst/kimai2/issues/1295) - Fix restart action with rule "do not allow future times" 
+- Fixes [\#1281]({{ site.kimai_v2_repo }}/issues/1281) - fix installation for older databases
+- Fixes [\#1280]({{ site.kimai_v2_repo }}/issues/1280) - hide multi update checkboxes for disallowed records
+- Fixes [\#1286]({{ site.kimai_v2_repo }}/issues/1286) - API: Adds team information to user, add user and teamlead information to team 
+- Fixes [\#1161]({{ site.kimai_v2_repo }}/issues/822) - dashboard counter for user/customer/project/activity (only show visible, respect team permissions) 
+- Fixes [\#1295]({{ site.kimai_v2_repo }}/issues/1295) - Fix restart action with rule "do not allow future times" 
 - Changed default begin for CSV timesheet importer to prevent summer/winter time bugs
 - Improve teamlead permission handling in team timesheets
 - Keep basic order of user preferences
 
 **Invoices**
-- Fixes [\#1237](https://github.com/kevinpapst/kimai2/issues/1237) - New template variables for the current logged-in user
-- Fixes [\#1288](https://github.com/kevinpapst/kimai2/issues/1288) - New template variables for unformatted money values
+- Fixes [\#1237]({{ site.kimai_v2_repo }}/issues/1237) - New template variables for the current logged-in user
+- Fixes [\#1288]({{ site.kimai_v2_repo }}/issues/1288) - New template variables for unformatted money values
 - Fix: copy invoice templates forgets new fields
 - Change: decimal durations in default invoice template (added amount formatter)
 - New variables for current users data in invoices

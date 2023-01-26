@@ -1,6 +1,7 @@
 ---
 title: Projects
 description: Projects in Kimai
+toc: true
 redirect_from:
 - /documentation/manual/projects.html
 - /documentation/manual/administration/projects.html
@@ -30,6 +31,8 @@ If the date of the record falls before the project start or after the project en
 
 This behavior is intended to avoid ghost bookings on not yet started or already finished projects. 
 If the booking of records is necessary, the team lead or admin can remove the date restriction in the project settings.
+
+Start and end-date are inclusive, so both dates will be included when filtering any data.
 
 ### Billable
 

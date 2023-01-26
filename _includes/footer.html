@@ -13,8 +13,12 @@
             <div class="col-12 col-lg-auto mt-3 mt-lg-0">
                 <ul class="list-inline list-inline-dots mb-0">
                     <li class="list-inline-item">
-                        {{ site.data[page.lang].translation.made-with-love }} <a href="https://www.kevinpapst.de" target="_blank" class="link-secondary">Kevin Papst</a>
-                        @ <a href="{{ site.kimai_v2_repo }}" target="_blank" class="link-secondary">GitHub</a>
+                        {{ site.data[page.lang].translation.made-with-love }}
+                        {% if site.rtl contains page.lang %}
+                        <a href="{{ site.kimai_v2_repo }}" target="_blank" class="link-secondary">GitHub</a> @ <a href="https://www.kevinpapst.de" target="_blank" class="link-secondary">Kevin Papst</a>
+                        {% else %}
+                        <a href="https://www.kevinpapst.de" target="_blank" class="link-secondary">Kevin Papst</a> @ <a href="{{ site.kimai_v2_repo }}" target="_blank" class="link-secondary">GitHub</a>
+                        {% endif %}
                     </li>
                     <li class="list-inline-item">{% include link-translated-menu.html language=page.lang item="donate" class="link-secondary" %}</li>
                     <li class="list-inline-item">{% include link-translated.html name="index" url="/" class="link-secondary" %}</a></li>

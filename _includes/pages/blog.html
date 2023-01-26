@@ -1,0 +1,47 @@
+{% assign date_format = site.date_format[page.lang] | default: "%Y-%m-%d" %}
+
+    <div class="row row-cards row-deck">
+
+        <div class="col-lg-7">
+            <div class="row row-cards row-deck">
+            {% for article in site.posts limit:6 %}
+                <div class="col-lg-6 col-md-4">
+                    {% include card-blog-single.html article=article id=forloop.index %}
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+
+        <div class="col-lg-5">
+            <div class="card">
+                <div class="card-body">
+                    {% include newsletter.html %}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="markdown">
+                        <p>
+                            {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+                            {% assign sortedTags = site_tags | split:',' | sort %}
+                            {% for tag in sortedTags %}
+                            <a href="#{{ tag | cgi_escape }}" class="badge">{{ tag }} </a>
+                            {% endfor %}
+                        </p>
+                        {% for tag in sortedTags %}
+                        <h3 id="{{ tag | cgi_escape }}">{{ tag }}</h3>
+                        <ul>
+                            {% for post in site.tags[tag] %}
+                            <li><a href="{{ site.baseurl }}{{ post.url }}" rel="bookmark">{{ post.title }}</a> <span class="text-muted"> — <time class="published" datetime="{{ post.date | date: date_format }}">{{ post.date | date: date_format }}</time></span></li>
+                            {% endfor %}
+                        </ul>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>

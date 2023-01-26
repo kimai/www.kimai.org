@@ -1,9 +1,7 @@
 ---
-title: Kundenspezifische Entwicklungen (Plugins, Rechnungen, Exporte etc.)
-intro: "Want to have a special feature, which is not available in Kimai? I can develop it for you!"
+title: Custom plugin development
 slug: custom-plugins
 type: support
-tags: [development,support]
 lang: de
 permalink: /de/store/keleo-custom-plugins.html
 ---

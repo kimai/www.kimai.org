@@ -1,9 +1,7 @@
 ---
-title: Fail2Ban
-intro: "Fail2ban kompatibilan dodatak, bilježi neuspjele zahtjeve za autentifikaciju"
+title: Fail2Ban for logins
 slug: fail2ban-bundle
 type: plugin
-tags: [plugin]
 lang: hr
 permalink: /hr/store/keleo-fail2ban-bundle.html
 ---

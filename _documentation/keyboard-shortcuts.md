@@ -14,12 +14,15 @@ The keyboard shortcuts can be invoked by the platform specific "trigger key comb
 
 The global `access keys` in Kimai are:
 - `s` - for stop: stops the currently running timesheet (works on every page) 
-- `n` -  for new: opens the "create timesheet" form (works on every page)
+- `n` - for new: opens the "create timesheet" form (works on every page)
 - `a` - for add: opens the add dialog (if available on that page, e.g. customer listing) 
-- `q` - for query: opens the search dialog (if available on that page, e.g. project listing) 
 - `h` - for help: opens the documentation link (if available on that page, e.g. users listing)
 
 The `access keys` work in lowercase and uppercase.
+
+### Special case: form submit
+
+There is one special case: submitting the modal form with `CTRL + Enter`.
 
 ## Not working?
 

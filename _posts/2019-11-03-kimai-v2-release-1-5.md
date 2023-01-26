@@ -23,33 +23,33 @@ Thanks to all of you for using and supporting Kimai, especially:
 
 # Changelog
 
-[Full Changelog](https://github.com/kevinpapst/kimai2/compare/1.4.2...1.5)
+[Full Changelog]({{ site.kimai_v2_repo }}/compare/1.4.2...1.5)
 
 **Implemented enhancements:**
 
-- Query API by custom fields / meta fields [\#1174](https://github.com/kevinpapst/kimai2/issues/1174)
-- Add a "now" button to manual timesheet entry [\#844](https://github.com/kevinpapst/kimai2/issues/844)
-- dynamic branding options [\#1205](https://github.com/kevinpapst/kimai2/pull/1205) ([kevinpapst](https://github.com/kevinpapst))
-- reformat edit forms [\#1192](https://github.com/kevinpapst/kimai2/pull/1192) ([kevinpapst](https://github.com/kevinpapst))
-- improve list views [\#1191](https://github.com/kevinpapst/kimai2/pull/1191) ([kevinpapst](https://github.com/kevinpapst))
-- added order-date field to project [\#1186](https://github.com/kevinpapst/kimai2/pull/1186) ([kevinpapst](https://github.com/kevinpapst))
-- Added some spanish new strings [\#1183](https://github.com/kevinpapst/kimai2/pull/1183) ([yayitazale](https://github.com/yayitazale))
-- duration field in timesheet edit dialog [\#1180](https://github.com/kevinpapst/kimai2/pull/1180) ([kevinpapst](https://github.com/kevinpapst))
-- Turkish Language Translations [\#1160](https://github.com/kevinpapst/kimai2/pull/1160) ([guneysus](https://github.com/guneysus))
-- Phpunit 8 [\#1155](https://github.com/kevinpapst/kimai2/pull/1155) ([kevinpapst](https://github.com/kevinpapst))
+- Query API by custom fields / meta fields [\#1174]({{ site.kimai_v2_repo }}/issues/1174)
+- Add a "now" button to manual timesheet entry [\#844]({{ site.kimai_v2_repo }}/issues/844)
+- dynamic branding options [\#1205]({{ site.kimai_v2_repo }}/pull/1205) ([kevinpapst](https://github.com/kevinpapst))
+- reformat edit forms [\#1192]({{ site.kimai_v2_repo }}/pull/1192) ([kevinpapst](https://github.com/kevinpapst))
+- improve list views [\#1191]({{ site.kimai_v2_repo }}/pull/1191) ([kevinpapst](https://github.com/kevinpapst))
+- added order-date field to project [\#1186]({{ site.kimai_v2_repo }}/pull/1186) ([kevinpapst](https://github.com/kevinpapst))
+- Added some spanish new strings [\#1183]({{ site.kimai_v2_repo }}/pull/1183) ([yayitazale](https://github.com/yayitazale))
+- duration field in timesheet edit dialog [\#1180]({{ site.kimai_v2_repo }}/pull/1180) ([kevinpapst](https://github.com/kevinpapst))
+- Turkish Language Translations [\#1160]({{ site.kimai_v2_repo }}/pull/1160) ([guneysus](https://github.com/guneysus))
+- Phpunit 8 [\#1155]({{ site.kimai_v2_repo }}/pull/1155) ([kevinpapst](https://github.com/kevinpapst))
 
 **Fixed bugs:**
 
-- Redirection of "Show all record" link fails on a servername alias. [\#1199](https://github.com/kevinpapst/kimai2/issues/1199)
-- Avatar url broken [\#1196](https://github.com/kevinpapst/kimai2/issues/1196)
-- Error pages aren't working in production [\#1194](https://github.com/kevinpapst/kimai2/issues/1194)
-- Filter timesheet from user list [\#1179](https://github.com/kevinpapst/kimai2/issues/1179)
-- REST-API Calls always returning 302 redirect to login page [\#1169](https://github.com/kevinpapst/kimai2/issues/1169)
-- Dashboard view not getting updated properly with the work time for the day - 'working hours today'  [\#1163](https://github.com/kevinpapst/kimai2/issues/1163)
-- Fix broken navigation and error pages [\#1210](https://github.com/kevinpapst/kimai2/pull/1210) ([kevinpapst](https://github.com/kevinpapst))
-- fix for production settings not exposing framework details [\#1173](https://github.com/kevinpapst/kimai2/pull/1173) ([adrianrudnik](https://github.com/adrianrudnik))
+- Redirection of "Show all record" link fails on a servername alias. [\#1199]({{ site.kimai_v2_repo }}/issues/1199)
+- Avatar url broken [\#1196]({{ site.kimai_v2_repo }}/issues/1196)
+- Error pages aren't working in production [\#1194]({{ site.kimai_v2_repo }}/issues/1194)
+- Filter timesheet from user list [\#1179]({{ site.kimai_v2_repo }}/issues/1179)
+- REST-API Calls always returning 302 redirect to login page [\#1169]({{ site.kimai_v2_repo }}/issues/1169)
+- Dashboard view not getting updated properly with the work time for the day - 'working hours today'  [\#1163]({{ site.kimai_v2_repo }}/issues/1163)
+- Fix broken navigation and error pages [\#1210]({{ site.kimai_v2_repo }}/pull/1210) ([kevinpapst](https://github.com/kevinpapst))
+- fix for production settings not exposing framework details [\#1173]({{ site.kimai_v2_repo }}/pull/1173) ([adrianrudnik](https://github.com/adrianrudnik))
 
 **Closed issues:**
 
-- Error 500 When I click on "My profile" [\#1164](https://github.com/kevinpapst/kimai2/issues/1164)
-- Upgrading to 1.4.1 broke it :\( [\#1162](https://github.com/kevinpapst/kimai2/issues/1162)
+- Error 500 When I click on "My profile" [\#1164]({{ site.kimai_v2_repo }}/issues/1164)
+- Upgrading to 1.4.1 broke it :\( [\#1162]({{ site.kimai_v2_repo }}/issues/1162)

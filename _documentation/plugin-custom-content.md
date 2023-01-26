@@ -31,7 +31,7 @@ $('body').on('change.select2', '#timesheet_edit_form_activity', function() {
 });
 ```
 
-Make sure that the "mark as exported" checkbox is pre-selected: 
+Make sure that the "mark as exported" checkbox in the "invoice screen" is pre-selected: 
 ```javascript
 $('#invoice-print-form input[name=markAsExported]').prop('checked', true);
 ```
@@ -48,9 +48,14 @@ $('body').on('change.select2', '#timesheet_edit_form_activity', function() {
 
 Automatically login with SAML (only works if normal form login is deactivated):
 ```javascript
-if (document.querySelector('div.login-box-body a.btn-block') !== null) {
-    document.querySelector('div.login-box-body a.btn-block').click();
-}
+document.querySelector('body.login-page #social-login-button')?.click();
+```
+
+Expand extended timesheet settings (since 2.0 beta 3):
+```javascript
+document.addEventListener('show.bs.modal', (e) => { 
+    e.srcElement.querySelector('#timesheet_extended_settings a[data-bs-toggle]')?.click(); 
+});
 ```
 
 ### Alert
@@ -62,3 +67,14 @@ That's how the **alert / warning message** looks like. You can even include _mar
 ### CSS / Stylesheet
 
 {% include plugins/custom-css-examples.md %}
+
+## Permissions
+
+| Permission Name      | Description                                     |
+|----------------------|-------------------------------------------------|
+| edit_custom_content  | show the "custom content" administration screen |
+{: .table }
+
+By default, these are assigned to each user with the role `ROLE_SUPER_ADMIN`.
+
+{% include store-howto-permissions.md %}

@@ -22,7 +22,7 @@ server {
     listen 80 default_server;
     listen [::]:80 default_server;
     server_name kimai.local www.kimai.local;
-    root /var/www/kimai2/public;
+    root /var/www/kimai/public;
     index index.php;
 
     access_log off;
@@ -37,7 +37,7 @@ server {
     }
 
     location ~ ^/index\.php(/|$) {
-        fastcgi_pass unix:/run/php/php7.2-fpm.sock;
+        fastcgi_pass unix:/run/php/php8.1-fpm.sock;
         fastcgi_split_path_info ^(.+\.php)(/.*)$;
         include fastcgi_params;
         # You can use the document root directly:
@@ -70,7 +70,7 @@ the techniques, paths and commands according to your OS.
 
 ### Kimai .htaccess
 
-Kimai ships a default [.htaccess]({{ site.kimai_v2_repo }}/blob/master/public/.htaccess), 
+Kimai ships a default [.htaccess]({{ site.kimai_v2_repo }}/blob/main/public/.htaccess), 
 which needs to be allowed by Apache via `AllowOverride All`.
 
 ### Create VirtualHost
@@ -80,12 +80,12 @@ which needs to be allowed by Apache via `AllowOverride All`.
     ServerName kimai.local
     ServerAlias www.kimai.local
 
-    DocumentRoot /var/www/kimai2/public
-    <Directory /var/www/kimai2/public>
+    DocumentRoot /var/www/kimai/public
+    <Directory /var/www/kimai/public>
         AllowOverride All
 
         # If you see an error like the following in your logs:
-        # AH01630: client denied by server configuration: /var/www/kimai2/public/
+        # AH01630: client denied by server configuration: /var/www/kimai/public/
         # then you might have to exchange the "Order/Allow" rules with "Require" (see below)
         # More infos at https://httpd.apache.org/docs/2.4/de/upgrading.html
 
@@ -99,14 +99,14 @@ which needs to be allowed by Apache via `AllowOverride All`.
         FallbackResource /index.php
     </Directory>
 
-    <Directory /var/www/kimai2>
+    <Directory /var/www/kimai>
         Options FollowSymlinks
     </Directory>
 
     # optionally disable the fallback resource for the asset directories
     # which will allow Apache to return a 404 error when files are
     # not found instead of passing the request to Symfony
-    <Directory /var/www/kimai2/public/bundles>
+    <Directory /var/www/kimai/public/bundles>
         FallbackResource disabled
     </Directory>
     
@@ -130,11 +130,11 @@ for your server distribution. If you have the module installed but its not yet w
 activate it first in Apache.
  
 This is often done with either linking a config using a tool like `a2enmod` or by manually linking the 
-`php7.conf` to the proper directory. If that doesn't help, you can try it with something like this:
+`php8.conf` to the proper directory. If that doesn't help, you can try it with something like this:
 ```
-LoadModule php7_module libexec/apache2/libphp7.so
+LoadModule php8_module libexec/apache2/libphp8.so
 
-<IfModule php7_module>
+<IfModule php8_module>
     AddType application/x-httpd-php .php
     AddType application/x-httpd-php-source .phps
     <IfModule dir_module>
@@ -169,7 +169,7 @@ Remember to prefix the console command when creating your first user with
 
 **Webserver configuration**
 
-Create a standard website in IIS with document root set to your Kimai directory, e.g. `C:\htdocs\kimai2\public`.
+Create a standard website in IIS with document root set to your Kimai directory, e.g. `C:\htdocs\kimai\public`.
 Make sure `memory_limit` is set to a minimum of 256M.
 Set appropriate handler mappings as below:
 
@@ -237,21 +237,21 @@ The easy part is fixing asset URLs. Edit your local.yaml and paste this code ins
 ```yaml
 framework:
     assets:
-        base_path: "/kimai2"
+        base_path: "/kimai"
 ```
 This will prepend `/kimai` to all assets URLs (CSS, Javascript, Images).
 
 Now, lets move on to configure the the webserver (here nginx is used as reverse proxy).
  
 Lets assume Kimai is running on `192.168.0.100` on port `8080`, your host is `example.com` and it 
-should run in the subdirectory directory `kimai2/`:
+should run in the subdirectory directory `kimai/`:
 
 ```
 server {
     listen       80;
     server_name  example.com;
 
-    location /kimai2 {
+    location /kimai {
         proxy_pass http://192.168.0.100:8080;
     }
 }
@@ -260,16 +260,16 @@ server {
 The important part here is the "missing" trailing slash!
 
 You are almost there, the only real "workaround" you have to apply is that you have to create a symlink within the `public/`
-directory of kimai, pointing to itself with the name being the same as the above `location` (here: kimai2):
+directory of kimai, pointing to itself with the name being the same as the above `location` (here: kimai):
 
 ```bash
-cd /var/www/kimai2/public/
-ln -s . kimai2
+cd /var/www/kimai/public/
+ln -s . kimai
 ``` 
 
 In a docker context it could look like this:
 ```
-docker exec -it kimai2 bash ln -s /opt/kimai/public /opt/kimai/public/kimai2 
+docker exec -it kimai2 bash ln -s /opt/kimai/public /opt/kimai/public/kimai
 ``` 
 
 And you are good to go: Kimai is now running behind a Reverse Proxy.

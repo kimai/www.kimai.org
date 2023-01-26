@@ -1,17 +1,19 @@
 ---
 title: Theme
-description: Theme related configuration and developer documentation for Kimai
+description: Developer documentation for frontend and theming 
+toc: true
 canonical: /documentation/theme.html
 ---
 
-Kimai uses the [AdminLTE theme](https://github.com/kevinpapst/AdminLTEBundle/) which can be configured in the file `config/packages/admin_lte.yaml`.
-You find the theme specific documentation [here](https://github.com/kevinpapst/AdminLTEBundle/blob/master/Resources/docs/configurations.md).
+Kimai uses the [Tabler.io](https://github.com/kevinpapst/TablerBundle/) bootstrap theme.
+You find the theme specific documentation [here](https://github.com/kevinpapst/TablerBundle/blob/main/docs/index.md).
 
-All Kimai specific theme settings will be available in the twig templates with the global `kimai_context` key, e.g.
+## Twig context
 
-```twig
-{% raw %}{{ kimai_context.select_type }}{% endraw %}
-``` 
+You have the following global objects available to work with:
+- the `tabler_bundle` context (see [here](https://github.com/kevinpapst/TablerBundle/blob/main/docs/twig-context.md))
+- the `kimai_config` to access system configurations
+- the `kimai_context` helper to identify javascript and modal requests 
 
 ## Aligning data in tables
 
@@ -32,28 +34,6 @@ Use the following alignments in your data-tables:
 | Collections (Text) | Start     | label     |
 
 
-## Default theme color
-
-Kimai supports the AdminLTE themes:
-
-- skin-blue
-- skin-blue-light
-- skin-yellow
-- skin-yellow-light
-- skin-green
-- skin-green-light
-- skin-purple
-- skin-purple-light
-- skin-red
-- skin-red-light
-- skin-black
-- skin-black-light
-
-Each user can change the theme color to their wish (if they have the permission to change their preferences).
-It is recommended to leave the choice to the user, as colors and contrasts are not only a matter of personal choice but might also be necessary for people with visual impairments.
-
-The default theme for new created users can be configured in the system settings.
-
 ## Max. active entries warning
 
 A small colored warning sign will be shown, if a user has an active timesheet.
@@ -65,10 +45,17 @@ The maximum amount of active timesheets can be configured with the setting `time
 Kimai allows you to configure icons in several places (provided by [Font Awesome 5](https://fontawesome.com/icons)) and ships
 with a pre-defined list of icon aliases to guarantee a consistent look.
 
-The pre-defined icons aliases can be found in this [IconExtension]({{ site.kimai_v2_file }}/src/Twig/IconExtension.php).
+The pre-defined icons aliases can be found in this `config/packages/tabler.yaml`.
 
 Icon aliases can be used by applying the `icon` filter, e.g.
 
 ```
 {% raw %}<i class="{{ 'money'|icon }}"></i>{% endraw %}
 ```
+
+or by using the icon function, e.g.
+
+```
+{% raw %}{{ icon('money') }}{% endraw %}
+```
+

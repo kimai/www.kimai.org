@@ -123,3 +123,44 @@ This website is hosted on servers of Github Inc., 88 Colin P Kelly Jr. Street, S
 GitHub may collect Technical Information including logs of your IP address.
 To obtain more information about how GitHub uses your data, please see GitHub's Privacy Policy at 
 <a href="https://help.github.com/articles/github-privacy-policy/">https://help.github.com/articles/github-privacy-policy</a>.
+
+### YouTube
+
+Our website uses plugins from YouTube, which is operated by Google.
+YouTube is a service of Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland, a subsidiary of Google LLC, 1600 Amphitheater Parkway, Mountain View, CA 94043 USA.
+
+If you visit one of our pages featuring a YouTube plugin, a connection to the YouTube servers is established.
+Here the YouTube server is informed about which of our pages you have visited.
+If you're logged in to your YouTube account, YouTube allows you to associate your browsing behavior directly with your personal profile.
+You can prevent this by logging out of your YouTube account.
+
+Further information about handling user data, can be found in the data protection declaration of YouTube under [https://policies.google.com/privacy](https://policies.google.com/privacy).
+This constitutes a justified interest pursuant to Art. 6 (1) (f) DSGVO.
+
+### Sendinblue
+
+We offer you the opportunity to register for our free newsletter on our website.
+We use Sendinblue to send newsletters. 
+Sendinblue is a service provided by the company Sendinblue GmbH, Köpenicker Str. 126, 10179 Berlin, hereinafter referred to as "Sendinblue".
+
+If you sign up to receive our newsletter, the data requested during the registration process (your email address) will be processed by Sendinblue. 
+For this your IP address and the date of your registration will be saved along with the time. 
+As a further part of the registration process, your consent to the sending of the newsletter will be obtained, the content will be described in concrete terms and reference made to this data protection declaration.
+
+Sendinblue offers data protection information at
+[https://www.sendinblue.com/legal/privacypolicy/](https://www.sendinblue.com/legal/privacypolicy/) and 
+[https://www.sendinblue.com/information-for-email-recipients/](https://www.sendinblue.com/information-for-email-recipients/).
+
+The newsletters sent by Sendinblue contain technologies by which we can analyse whether and when an email was opened and whether and which links contained in the newsletter were followed. 
+We save this data in addition to the technical data (system data and IP address) so that the respective newsletter can be best tailored to your wishes and interests. 
+The data thus collected is used to continuously improve the quality of our newsletters.
+
+The legal basis for sending the newsletter and the analysis is Art. 6 Para. 1 lit. a.) EU General Data Protection Regulation (GDPR).
+
+Consent to the newsletter being sent can be revoked at any time with future effect in accordance with Art. 7 Para. 3 GDPR. 
+To do this, you only have to inform us of your revocation or click the unsubscribe link contained in each newsletter.
+
+## References
+
+This document was partially generated with the help of [data protection generator](https://www.e-recht24.de/) by eRecht24 GmbH and the 
+[Model Data Protection Statement](https://www.generator-datenschutzerklärung.de) by [Anwaltskanzlei Weiß & Partner](https://www.ratgeberrecht.eu/).

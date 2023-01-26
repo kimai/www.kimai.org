@@ -6,7 +6,7 @@ tags: [Announcement]
 ---
 
 After working on PHP 8 Support for a couple of months, which was more complicated than expected because 
-of all the dependencies, it is now done and available in master.
+of all the dependencies, it is now done and available in development version.
 
 **Attention**
 Previous versions were officially compatible with PHP >= 7.2.9.

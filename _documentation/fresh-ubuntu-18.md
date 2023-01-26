@@ -2,11 +2,14 @@
 title: "Install Kimai on Ubuntu 18.04"
 navigation: Ubuntu 18.04
 description: "How to install Kimai on a brand new Ubuntu 18.04 with database, webserver and SSL certificate"
+toc: true
 canonical: /documentation/fresh-ubuntu-18.html
 ---
 
+{% include alert.html type="danger" alert="This documentation was not tested with Kimai 2.x. You will at least have to change the used PHP version to 8.1. It is advised to upgrade to a more recent Ubuntu version." %}
+
 This is a collection of snippets to help you with setting up a fresh Ubuntu 18.04 server for using with Kimai.
-It is neither a full fledged documentation, explaining each step, nor is it a bash tutorial.
+It is neither a fully fledged documentation, explaining each step, nor is it a bash tutorial.
 
 Please see it as a personal snippet collection... in which I assume:
 - that you are familiar with the Linux bash and have at least basic knowledge of vim
@@ -140,12 +143,12 @@ exit;
 
 Clone Kimai and set proper file permissions:
 
-> Replace 1.1 with the latest available version, see: <https://www.kimai.org/documentation/installation.html>
+> Please check the latest installation docs to check if something changed since writing these docs: <https://www.kimai.org/documentation/installation.html>
 
 ```bash
 cd /var/www/
-git clone -b 1.1 --depth 1 https://github.com/kevinpapst/kimai2.git
-cd kimai2/
+git clone -b {{ site.kimai_v2_version }} --depth 1 {{ site.kimai_v2_repo }}.git
+cd kimai/
 chown -R :www-data .
 chmod -R g+r .
 chmod -R g+rw var/
@@ -191,7 +194,7 @@ server {
     listen 80 default_server;
     listen [::]:80 default_server;
     server_name www.kimai.local;
-    root /var/www/kimai2/public;
+    root /var/www/kimai/public;
     index index.php;
 
     access_log off;

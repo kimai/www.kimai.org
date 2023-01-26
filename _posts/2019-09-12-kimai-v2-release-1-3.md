@@ -25,33 +25,33 @@ The next version will include:
 
 > I hope you all know how to upgrade... if not [click here]({%link _documentation/updates.md %}). And now enjoy the latest features!
 
-[Full Changelog](https://github.com/kevinpapst/kimai2/compare/1.2...1.3)
+[Full Changelog]({{ site.kimai_v2_repo }}/compare/1.2...1.3)
 
 **Implemented enhancements:**
 
-- Cookie Expiration should automatically lead to sign in page [\#1027](https://github.com/kevinpapst/kimai2/issues/1027)
-- customer specific translations [\#1099](https://github.com/kevinpapst/kimai2/pull/1099) ([kevinpapst](https://github.com/kevinpapst))
-- support multiple invoice repositories [\#1084](https://github.com/kevinpapst/kimai2/pull/1084) ([kevinpapst](https://github.com/kevinpapst))
-- added font-awesome paper-plane [\#1077](https://github.com/kevinpapst/kimai2/pull/1077) ([hmr-it-jr](https://github.com/hmr-it-jr))
+- Cookie Expiration should automatically lead to sign in page [\#1027]({{ site.kimai_v2_repo }}/issues/1027)
+- customer specific translations [\#1099]({{ site.kimai_v2_repo }}/pull/1099) ([kevinpapst](https://github.com/kevinpapst))
+- support multiple invoice repositories [\#1084]({{ site.kimai_v2_repo }}/pull/1084) ([kevinpapst](https://github.com/kevinpapst))
+- added font-awesome paper-plane [\#1077]({{ site.kimai_v2_repo }}/pull/1077) ([hmr-it-jr](https://github.com/hmr-it-jr))
 
 **Fixed bugs:**
 
-- swagger file type text [\#1094](https://github.com/kevinpapst/kimai2/issues/1094)
-- Tags search fails when there are numerous tags which start with a specific identifier [\#1082](https://github.com/kevinpapst/kimai2/issues/1082)
-- Content of ${entry.description} not from table timesheet.description [\#1076](https://github.com/kevinpapst/kimai2/issues/1076)
-- Wrong ${entry.total} for fixed rate items if more than one [\#1073](https://github.com/kevinpapst/kimai2/issues/1073)
-- Post release 1.2 [\#1068](https://github.com/kevinpapst/kimai2/pull/1068) ([kevinpapst](https://github.com/kevinpapst))
+- swagger file type text [\#1094]({{ site.kimai_v2_repo }}/issues/1094)
+- Tags search fails when there are numerous tags which start with a specific identifier [\#1082]({{ site.kimai_v2_repo }}/issues/1082)
+- Content of ${entry.description} not from table timesheet.description [\#1076]({{ site.kimai_v2_repo }}/issues/1076)
+- Wrong ${entry.total} for fixed rate items if more than one [\#1073]({{ site.kimai_v2_repo }}/issues/1073)
+- Post release 1.2 [\#1068]({{ site.kimai_v2_repo }}/pull/1068) ([kevinpapst](https://github.com/kevinpapst))
 
 **Closed issues:**
 
-- When create invoice, Description field is not description but is Activity [\#1093](https://github.com/kevinpapst/kimai2/issues/1093)
-- Critical error after upgrading from 1.1 to 1.2 [\#1071](https://github.com/kevinpapst/kimai2/issues/1071)
+- When create invoice, Description field is not description but is Activity [\#1093]({{ site.kimai_v2_repo }}/issues/1093)
+- Critical error after upgrading from 1.1 to 1.2 [\#1071]({{ site.kimai_v2_repo }}/issues/1071)
 
 **Merged pull requests:**
 
-- fix API version string [\#1096](https://github.com/kevinpapst/kimai2/pull/1096) ([kevinpapst](https://github.com/kevinpapst))
-- handles session timeouts in modals [\#1092](https://github.com/kevinpapst/kimai2/pull/1092) ([kevinpapst](https://github.com/kevinpapst))
-- added table ordering [\#1086](https://github.com/kevinpapst/kimai2/pull/1086) ([kevinpapst](https://github.com/kevinpapst))
-- Improved tag auto-completion + added tag management  [\#1083](https://github.com/kevinpapst/kimai2/pull/1083) ([kevinpapst](https://github.com/kevinpapst))
-- use timesheet description in invoices [\#1079](https://github.com/kevinpapst/kimai2/pull/1079) ([kevinpapst](https://github.com/kevinpapst))
-- refactored search with free search term support [\#1064](https://github.com/kevinpapst/kimai2/pull/1064) ([kevinpapst](https://github.com/kevinpapst))
+- fix API version string [\#1096]({{ site.kimai_v2_repo }}/pull/1096) ([kevinpapst](https://github.com/kevinpapst))
+- handles session timeouts in modals [\#1092]({{ site.kimai_v2_repo }}/pull/1092) ([kevinpapst](https://github.com/kevinpapst))
+- added table ordering [\#1086]({{ site.kimai_v2_repo }}/pull/1086) ([kevinpapst](https://github.com/kevinpapst))
+- Improved tag auto-completion + added tag management  [\#1083]({{ site.kimai_v2_repo }}/pull/1083) ([kevinpapst](https://github.com/kevinpapst))
+- use timesheet description in invoices [\#1079]({{ site.kimai_v2_repo }}/pull/1079) ([kevinpapst](https://github.com/kevinpapst))
+- refactored search with free search term support [\#1064]({{ site.kimai_v2_repo }}/pull/1064) ([kevinpapst](https://github.com/kevinpapst))

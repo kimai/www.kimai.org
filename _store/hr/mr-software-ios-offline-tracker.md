@@ -1,8 +1,6 @@
 ---
-title: iOS program za bezmrežno evidentiranje vremena
-intro: "iOS program za bezmrežno evidentiranje vremena pomoću Kimaia"
+title: iOS app for offline tracking
 type: app
-tags: [iOS]
 lang: hr
 permalink: /hr/store/mr-software-ios-offline-tracker.html
 ---

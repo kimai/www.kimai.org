@@ -13,7 +13,7 @@ physical access to the machine, which exposes way worse security risks.
 
 Besides, the only known workaround for this behavior is to cache bust each and every page of the application, which is in no way acceptable.
 
-For the full article checkout the [Google Bughunter University](https://sites.google.com/site/bughunteruniversity/nonvuln/cached-content-after-logout):
+For the full article checkout the [Google Bughunter University](https://bughunters.google.com/learn/invalid-reports/web-platform/navigation/6057503504465920/content-in-cache-after-logout):
 
 > Some of the vulnerability reporters notice that, after logging out of a web application but do not close their current browser tab, they are still able to use the "back" button in their browser to access cached documents. 
 >
@@ -26,25 +26,11 @@ For the full article checkout the [Google Bughunter University](https://sites.go
 Kimai does have a couple of code pieces in place to prevent simple `Dynamic Data Exchange` or `DDE payload` attacks. 
 But in general I consider this to be a problem of Excel and not Kimai.
 
-A shortened version of [Google Bughunter University](https://sites.google.com/site/bughunteruniversity/nonvuln/csv-excel-formula-injection):
+A shortened version of [Google Bughunter University](https://bughunters.google.com/learn/invalid-reports/google-products/4965108570390528/csv-formula-injection):
 
 > This issue should mitigated by the application which would be importing/interpreting data from an external source, as Microsoft Excel does (for example) by showing a warning. 
 > 
 > In other words, the proper fix should be applied when opening the CSV files, rather then when creating them.
-
-## Cross-site Scripting (XSS) in branding settings
-
-Some researchers find that you can inject HTML into the fields `theme.branding.company` and `theme.branding.mini`, 
-which allows injecting HTML attributes to execute Javascript. 
-
-This is documented behavior, see [System > Setting](https://www.kimai.org/documentation/configurations.html) in the `My company` chapter
-
-> The settings for company and mini name can contain the HTML tags &lt;b>&lt;i>&lt;u>&lt;strong>&lt;em>&lt;img>&lt;svg> for formatting.
-
-The only person able to update these settings is a System-Admin (likely the owner of the Kimai instance), 
-who can already change and delete everything in Kimai: "With great power comes great responsibility".
-
-So this cannot be considered a security issue.
 
 ## Logout works without CSRF token
 
@@ -56,3 +42,17 @@ There are pages like superlogout.com (do not visit!) which will log you out of d
 All of these linked sites [do not work against this feature](https://bughunters.google.com/learn/invalid-reports/web-platform/csrf-clickjacking/5072689380982784) by making it overly-complicated to logout of their website/service.
 
 All in all: I do not consider this to be a security risk.
+
+## Unverified Password Change
+
+I am not going to repeat everything that Google has to say about [Attacks working only when sharing local account with the attacker](https://bughunters.google.com/learn/invalid-reports/invalid-attack-scenarios/6576292268605440/attacks-working-only-when-sharing-local-account-with-the-attacker), 
+so please follow the link. 
+
+In my words: 
+- The account needs to be fully authenticated to work, so "Remember me" session will force a re-login before opening the "change password" page.
+- There is no win asking for the current password, as it can always be recovered by admins or by using the "forgot password" function. Worst case: the only system admin losses access and email is not configured: then it is always possible to using the console application to reset the password. 
+- If an attacker gains access to an active user session, there are much bigger risks, like tampering with recorded data.
+
+All in all: I do not consider this to be a security risk, but a UX improvement. Finally, this screenshot:
+
+{% include docs-image.html src="/images/documentation/bughunter/google-password-change.png" title="Google allows to change my password, without asking for the current password" width="700px" %}

@@ -1,8 +1,6 @@
 ---
 title: Shared project timesheets
-intro: Share project timesheets with anyone!
 type: plugin
-tags: [plugin]
 lang: en
 ---
 

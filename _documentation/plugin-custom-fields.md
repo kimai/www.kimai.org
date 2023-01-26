@@ -55,3 +55,14 @@ A select box that is useful if you want to generate automatic invoices via comma
 
 The Kimai command `bin/console kimai:invoice:create` supports invoice templates via custom-field ([see docs](https://www.kimai.org/documentation/invoices.html#create-invoices-with-cronjobs)).
 The option parameter `--template-meta` takes the internal name of the custom field that will identify the invoice template to be used.
+
+## Permissions
+
+| Permission Name         | Description                                         |
+|-------------------------|-----------------------------------------------------|
+| `configure_meta_fields` | allows to administrate the custom field definitions |
+{: .table }
+
+By default, these are assigned to each user with the role `ROLE_SUPER_ADMIN`.
+
+{% include store-howto-permissions.md %}

@@ -15,8 +15,6 @@ Please write an email to [kevin@kevinpapst.de](mailto:kevin@kevinpapst.de) and a
 After successful purchase, you get access to the plugin files, which need to be installed in your existing Kimai installation.
 You get access either through Gumroad directly or in case of a bank-transfer payment via email.
 
-{% include contents/store-private-repo-support.md %}
-
 ## License terms for paid plugins 
 
 1. The plugin license grants you, the purchaser, an non-exclusive, worldwide license to make use of the digital work (Item) you have purchased. Read the rest of this license for the details that apply to your use of the Item.

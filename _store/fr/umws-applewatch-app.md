@@ -1,8 +1,6 @@
 ---
-title: Application Apple Watch
-intro: "Suivez vos temps de kimai directement sur votre poignet !"
+title: Apple Watch app
 type: app
-tags: [watchOS]
 lang: fr
 permalink: /fr/store/umws-applewatch-app.html
 ---

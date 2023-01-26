@@ -11,13 +11,14 @@
 			{% if settings.new != nil and settings.new %}
 			    {% assign isNew = true %}
 			{% endif %}
-			{% if product.featured %}
+			{% if settings.featured %}
 				{% assign featured = true %}
 		    	{% assign iconSize = "fa-3x" %}
 				{% assign imageSize = 'style="width: 15rem"' %}
 			{% endif %}
 			{% assign icon = settings.icon | default: "fas fa-question" %}
 			{% assign developer = site.data.developer[settings.developer] %}
+			{% assign translation = site.data[page.lang].store.items[product.slug] %}
 			<tr{% if featured %} class="featured-article"{% endif %}>
 				<td class="text-center product-icon">
 					{% if settings.image != nil %}
@@ -29,7 +30,7 @@
 				{% if featured %}
 					<td>
 						<h4 class="mb-2">
-							<a href="{{ product.url | absolute_url }}">{{ product.title }}</a>
+							<a href="{{ product.url | absolute_url }}">{{ translation.title }}</a>
 
 							{% if isNew %}
 							<span class="badge bg-green badge-md">{{ site.data[page.lang].translation.new-badge }}</span>
@@ -38,26 +39,19 @@
 
 						<div class="row text-muted">
 							<div class="col-lg-12">
-							{{ product.featured }}
+							{{ translation.intro }}
 							</div>
 						</div>
 					</td>
 				{% else %}
 					<td>
-						<a href="{{ product.url | absolute_url }}">{{ product.title }}</a>
+						<a href="{{ product.url | absolute_url }}">{{ translation.title }}</a>
 
 						{% if isNew %}
 						<span class="badge bg-green badge-sm">{{ site.data[page.lang].translation.new-badge }}</span>
 						{% endif %}
 					</td>
 				{% endif %}
-				<td class="text-end text-muted d-none d-md-table-cell text-nowrap">
-                    {% comment %}
-					{% for tag in product.tags %}
-						<span class="badge bg-blue-lt badge-sm">{{ tag }}</span>
-					{% endfor %}
-                    {% endcomment %}
-				</td>
 				<td class="text-end text-nowrap">
 					<strong>
 						{% if settings.price == nil %}

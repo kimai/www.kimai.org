@@ -48,7 +48,7 @@ My only fear is, that there are still too many SQLite installations existing tha
 
 SERIOUSLY: **be aware** that you cannot upgrade to Kimai 1.14 before migrating the data from SQLite to MySQL!
 
-For now there are three documented ways to perform that migration (see bewlo). 
+For now there are three documented ways to perform that migration (see below). 
 If you know more, [please open a new discussion]({{ site.kimai_v2_forum }}).
 
 ### Dump with SQLite browser
@@ -110,7 +110,7 @@ Thanks @sixtyfive for this script, works like a charm!
 
 #### Ubuntu
 
-Update from @kosli who mentioned [here](https://github.com/kevinpapst/kimai2/issues/2484#issuecomment-814349874) that 
+Update from @kosli who mentioned [here]({{ site.kimai_v2_repo }}/issues/2484#issuecomment-814349874) that 
 using the above script on Ubuntu requires the packages `ruby-sequel ruby-mysql2 ruby-sqlite3`.
 With these packages installed the script needs to be changed from `Sequel.mysql` to `Sequel.mysql2`.
 

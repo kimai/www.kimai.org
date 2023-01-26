@@ -1,8 +1,6 @@
 ---
-title: Application Android pour le suivi hors ligne
-intro: "Application Android pour le suivi hors ligne avec Kimai"
+title: Android app for offline tracking
 type: app
-tags: [Android]
 lang: fr
 permalink: /fr/store/mr-software-android-offline-tracker.html
 ---

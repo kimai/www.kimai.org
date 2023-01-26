@@ -1,9 +1,7 @@
 ---
-title: "Installations- und Update Support"
-intro: "Want to use Kimai but don't know how to install it on your server?"
+title: "Installation & Update support"
 slug: installation-support
 type: support
-tags: [support]
 lang: de
 permalink: /de/store/keleo-installation-support.html
 ---

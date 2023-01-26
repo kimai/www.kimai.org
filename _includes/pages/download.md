@@ -3,7 +3,7 @@
 
 {{ site.data[page.lang].translation.install.requirements.hosters }}
 
-- {{ site.data[page.lang].translation.install.requirements.version | replace: "%version%", "7.4" }}
+- {{ site.data[page.lang].translation.install.requirements.version | replace: "%version%", "8.1" }}
     - {{ site.data[page.lang].translation.install.requirements.extensions }} `mbstring`, `gd`, `intl`, `json`, `pdo`, `tokenizer`, `xml`, `zip`
 - {{ site.data[page.lang].translation.install.requirements.database }}
 - {{ site.data[page.lang].translation.install.requirements.webserver }}
@@ -20,3 +20,4 @@
 
 {% assign shared_hosting = site.data[page.lang].translation.install.download.alert-vps | replace: "%documentation%", docu_link | markdownify %}
 {% include alert.html type="warning" alert=shared_hosting %}
+ 

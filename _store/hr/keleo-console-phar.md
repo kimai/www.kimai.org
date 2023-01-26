@@ -1,9 +1,7 @@
 ---
-title: Klijent konzole (PHAR)
-intro: Višeplatformski klijent konzole za Kimai
+title: Console client (PHAR)
 slug: console-phar
 type: client
-tags: [bash,php,cli]
 lang: hr
 permalink: /hr/store/keleo-console-phar.html
 ---

@@ -1,7 +1,7 @@
 ---
-title: Upgrade to Kimai 2 from v1
-navigation: Upgrade to Kimai 2
-description: Install Kimai 2 and import your existing timesheet data from Kimai 1
+title: Upgrade to Kimai from v1
+navigation: Upgrade to Kimai
+description: Install Kimai and import your existing timesheet data from the ancient Kimai 1
 canonical: /documentation/migration-v1.html
 redirect_from:
   - /v1/upgrade-v2.html
@@ -16,10 +16,14 @@ You can <a href="{% link _store/keleo-installation-support.md %}">get profession
 
 {% include alert.html type="success" icon="fas fa-shipping-fast" alert=upgrade_note %}
 
+Be aware, Kimai 1 looks like that. If your Kimai looks different, you are not using Kimai 1 and do not need this guide!
+[![Kimai 1 - Main screen]({% link images/screenshots/kimai1-main-screen.png %})]({% link images/screenshots/kimai1-main-screen.png %})
+
 ## Introduction
 
 Before starting with the migration, please read the following FAQs:
 
+- You need to install the [importer plugin]({% link _store/keleo-importer-bundle.md %}) (which ships the command for migrating the data)
 - Data from the existing v1 installation is only read and will never be changed
 - Data can only be imported from a Kimai installation with at least `v1.0.1` and database revision `1388` (check your `configuration` table)
 - User-specific rates are not yet supported in Kimai 2, but
