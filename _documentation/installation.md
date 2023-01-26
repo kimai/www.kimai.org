@@ -184,7 +184,7 @@ webserver directly.
 - Change ownership of `kimai` folder:
     ```
     cd ..
-    chown -R psacln:psaserv kimai
+    chgrp -R psacln kimai
     chmod -R g+r kimai
     chmod -R g+rw kimai/var/
     ```
