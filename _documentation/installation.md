@@ -88,7 +88,7 @@ Kimai [package](https://github.com/YunoHost-Apps/kimai2_ynh) for [YunoHost](http
 
 ### Softaculous
 
-[![Install kimai2 with Softaculous](http://www.softaculous.com/images/softimages/575__logo.gif)](http://www.softaculous.com/apps/others/Kimai)
+[Install Kimai with Softaculous](https://www.softaculous.com/apps/others/Kimai)
 
 ### Cloudron
 
