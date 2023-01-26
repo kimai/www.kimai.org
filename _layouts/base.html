@@ -19,12 +19,16 @@
     <link rel="shortcut icon" href="{{ '/assets/icon/favicon.ico' | absolute_url }}">
     <title>
         {%- assign page_title = page.title %}
-        {%- if site.data[page.lang].translation.menu.default[page.slug].name != nil -%}
+        {%- assign prefix = ' – Kimai' %}
+        {%- if site.data[page.lang].translation.menu.default[page.slug].title != nil -%}
+            {% assign page_title = site.data[page.lang].translation.menu.default[page.slug].title %}
+            {%- assign prefix = '' %}
+        {%- elsif site.data[page.lang].translation.menu.default[page.slug].name != nil -%}
             {% assign page_title = site.data[page.lang].translation.menu.default[page.slug].name %}
         {%- elsif site.data[page.lang].store.items[page.slug].title != nil -%}
             {% assign page_title = site.data[page.lang].store.items[page.slug].title %}
         {%- endif -%}
-        {{- page_title -}}
+        {{- page_title }}{% unless page_title contains 'Kimai'%}{{ prefix -}}{% endunless -%}
     </title>
     {% assign description = page.excerpt %}
     {%- if site.data[page.lang].translation.menu.default[page.slug].description != nil -%}
