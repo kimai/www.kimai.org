@@ -24,14 +24,16 @@
         {%- elsif site.data[page.lang].store.items[page.slug].title != nil -%}
             {% assign page_title = site.data[page.lang].store.items[page.slug].title %}
         {%- endif -%}
-        {{ page_title }}
+        {{- page_title -}}
     </title>
     {% assign description = page.excerpt %}
     {%- if site.data[page.lang].translation.menu.default[page.slug].description != nil -%}
         <meta name="description" content="{{ site.data[page.lang].translation.menu.default[page.slug].description }}">
+    {%- elsif site.data[page.lang].store.items[page.slug].intro != nil -%}
+        <meta name="description" content="{{ site.data[page.lang].store.items[page.slug].intro }}">
     {%- elsif page.description != nil -%}
         <meta name="description" content="{{ page.description | strip_html | strip_newlines | strip }}">
-    {%- endif -%}
+    {%- endif %}
     <link href="{% if site.rtl contains page.lang %}{{ '/assets/build/main.rtl.css' | absolute_url }}{% else %}{{ '/assets/build/main.css' | absolute_url }}{% endif %}?{{site.time | date: '%s%N'}}" rel="stylesheet" />
     <script src="{{ '/assets/build/main.js' | absolute_url }}?{{site.time | date: '%s%N'}}"></script>
     <link type="application/atom+xml" rel="alternate" href="{% link feed.xml %}" title="Kimai Time-Tracking" />
