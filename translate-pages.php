@@ -7,13 +7,13 @@
 // $languages = ['de', 'fr', 'hr', 'he', 'fa', 'ar', 'ko', 'nb_NO', 'pt_BR', 'ru', 'uk', 'vi', 'zh_Hans',];
 
 // list of languages currently working on
-$languages = ['fa'];
+$languages = ['pt_BR', 'he'];
 
 $multiLanguagePaths = [
     '_pages' => [
         'skip' => ['v1.md'],
         'permalink' => '/:language/:original',
-        'remove' => [],
+        'remove' => ['redirect_from'],
         'overwrite' => false,
     ],
     '_store' => [
