@@ -19,6 +19,11 @@ layout: default
 
 <div class="page-body">
     <div class="container-xl">
+        {% if page.warn_language != nil and page.lang != 'en' %}
+        {% assign warning = site.data[page.lang].translation.docu-alert-english %}
+        {% include alert.html icon="fas fa-globe" alert=warning type="danger" %}
+        {% endif %}
+
         {{ content }}
     </div>
 </div>
