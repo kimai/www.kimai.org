@@ -1,4 +1,11 @@
-A Kimai plugin, which forces a recalculation of the hourly and fixed rates for timesheet records on certain updates.
+
+## ATTENTION
+
+The logic of this bundle is part of Kimai 2.0 and this bundle is not necessary if you already upgraded to 2.0!
+
+## About
+
+Forces a recalculation of the hourly and fixed rates for timesheet records on certain updates.
 
 There are two possible modes in which this plugin can work:
 
