@@ -260,7 +260,13 @@ layout: content
                                 {% if settings.gumroad %}
                                 <a href="https://gum.co/{{ settings.gumroad }}" class="btn btn-success ms-2" target="_blank">
                                     <i class="fas fa-shopping-cart"></i>
-                                    <span class="text-nowrap">{{ site.data[page.lang].translation.store-buy-button }}</span>
+                                    <span class="text-nowrap">
+                                        {% if settings.price == 0 %}
+                                            {{ site.data[page.lang].translation.download }}
+                                        {% else %}
+                                            {{ site.data[page.lang].translation.store-buy-button }}
+                                        {% endif %}
+                                    </span>
                                 </a>
                                 {% endif %}
                             </div>
@@ -279,7 +285,13 @@ layout: content
                                     {% if settings.gumroad %}
                                     <a href="https://gum.co/{{ settings.gumroad }}" class="btn btn-success ms-2" target="_blank">
                                         <i class="fas fa-shopping-cart"></i>
-                                        <span class="text-nowrap">{{ site.data[page.lang].translation.store-buy-button }}</span>
+                                        <span class="text-nowrap">
+                                            {% if settings.price == 0 %}
+                                                {{ site.data[page.lang].translation.download }}
+                                            {% else %}
+                                                {{ site.data[page.lang].translation.store-buy-button }}
+                                            {% endif %}
+                                        </span>
                                     </a>
                                     {% endif %}
                                 </div>
