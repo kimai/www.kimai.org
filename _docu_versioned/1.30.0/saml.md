@@ -21,7 +21,6 @@ and [reload the cache]({% link _documentation/cache.md %}) afterwards:
 ```yaml
 kimai:
     saml:
-        provider: google
         activate: true
         title: Login with SAML
         mapping:
@@ -97,7 +96,6 @@ More information about the connection configs can be used in the [onelogin/php-s
 ```yaml
 kimai:
     saml:
-        provider: google
         activate: true
         title: Login with SAML
         mapping:

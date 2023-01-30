@@ -59,7 +59,6 @@ Adjust the following keys with your Azure / App specific settings:
 ```yaml
 kimai:
     saml:
-        provider: azure
         activate: true
         title: Login with Azure AD
         mapping:

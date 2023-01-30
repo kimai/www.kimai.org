@@ -23,7 +23,6 @@ Adjust the following keys with your Google / App specific settings:
 ```yaml
 kimai:
     saml:
-        provider: google
         activate: true
         title: Login with Google
         mapping:

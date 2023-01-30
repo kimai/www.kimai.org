@@ -23,7 +23,6 @@ Here is a full example:
 ```yaml
 kimai:
     saml:
-        provider: authentik
         activate: true
         title: Login with SAML
         mapping:

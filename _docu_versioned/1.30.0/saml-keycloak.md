@@ -39,7 +39,6 @@ And here is the matching Kimai configuration:
 ```yaml
 kimai:
     saml:
-        provider: keycloak
         activate: true
         title: Keycloak
         mapping:
