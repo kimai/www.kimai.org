@@ -7,6 +7,7 @@ redirect_from:
   - /documentation/developer/introduction.html
   - /documentation/developer/index.html
   - /documentation/developer/
+  - /v1/developer.html
 ---
 
 This page is for all developers who want to contribute to Kimai. You rock!

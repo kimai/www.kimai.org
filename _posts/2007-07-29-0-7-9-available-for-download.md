@@ -5,7 +5,6 @@ author: skilleven
 tags: [v1]
 ---
 
-For all users of 0.6.1 - PLEASE, backup your existing data before using the new version (an instruction how this can be done, here:
-[update]({% link _documentation/v1/updates.md %})).
+For all users of 0.6.1 - PLEASE, backup your existing data before using the new versio.
 Please use UTF-8 (utf8\_unicode\_ci) for fresh installments.
-Have fun. [Get it here]({% link _documentation/v1/installation.md %}).
+Have fun.

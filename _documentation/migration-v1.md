@@ -1,6 +1,6 @@
 ---
-title: Upgrade to Kimai from v1
-navigation: Upgrade to Kimai
+title: Migration from Kimai v1
+navigation: Migrate from Kimai v1
 description: Install Kimai and import your existing timesheet data from the ancient Kimai 1
 canonical: /documentation/migration-v1.html
 redirect_from:

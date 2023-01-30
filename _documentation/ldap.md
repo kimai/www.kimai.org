@@ -5,6 +5,7 @@ canonical: /documentation/ldap.html
 redirect_from: 
   - /documentation/administrator/authenticator.html
   - /documentation/authenticator/
+  - /v1/authenticator.html
 ---
 
 Kimai supports authentication against your company directory server (LDAP or AD).

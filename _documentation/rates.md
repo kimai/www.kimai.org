@@ -7,6 +7,7 @@ redirect_from:
   - /documentation/manual/rates.html
   - /documentation/fees/
   - /documentation/rates/
+  - /v1/rates.html
 related:
   - timesheet
   - customer

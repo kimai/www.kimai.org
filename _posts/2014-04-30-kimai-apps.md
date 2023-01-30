@@ -5,9 +5,7 @@ author: kevinpapst
 tags: [v1]
 ---
 
-Just to let our reader (via RSS feed) know, I created a [page for external applications]({% link _documentation/v1/apps.md %}) which make use of our API.
-
-You find that new page at [{% link _documentation/v1/apps.md %}]({% link _documentation/v1/apps.md %})
+Just to let our reader (via RSS feed) know, I created a [page for external applications](https://github.com/kimai/kimai1/wiki/Apps-for-Kimai-1) which make use of our API.
 
 These apps could simplify your time-tracking process :)
 

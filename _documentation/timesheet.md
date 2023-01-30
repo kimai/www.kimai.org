@@ -9,6 +9,7 @@ related:
 redirect_from: 
   - /documentation/manual/timesheet.html
   - /documentation/timesheet/
+  - /v1/timesheet.html
 ---
 
 ## Starting and stopping records

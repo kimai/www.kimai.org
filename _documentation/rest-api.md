@@ -2,7 +2,9 @@
 title: Quickstart for Kimai API (JSON / REST)
 navigation: Kimai API
 description: Access your time-tracking data via the JSON API with Kimai
-redirect_from: /documentation/api/
+redirect_from: 
+- /documentation/api/
+- /v1/api.html
 related:
 - rest-api-examples
 ---

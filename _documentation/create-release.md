@@ -1,6 +1,8 @@
 ---
 title: "Creating a release"
-redirect_from: /documentation/team/
+redirect_from: 
+- /documentation/team/
+- /v1/team.html
 toc: false
 ---
 
