@@ -2,9 +2,9 @@
 layout: base
 ---
 
-{%- assign brand = "index" -%}
-{%- assign brand_url = site.pages | where: "lang", page.lang | where: "slug", brand | map: "url" | first -%}
-{%- assign brand_title = site.data[page.lang].translation.menu.default[brand].brand -%}
+{%- assign homepage_url  = site.pages | where: "lang", page.lang | where: "slug", "index" | map: "url" | first -%}
+{%- assign homepage_name = site.data[page.lang].translation.menu.default.index.name -%}
+{%- assign homepage_title   = site.data[page.lang].translation.menu.default.index.brand -%}
 
 <header class="navbar navbar-expand-md navbar-light d-print-none">
     <div class="container-xl">
@@ -12,87 +12,64 @@ layout: base
             <span class="navbar-toggler-icon"></span>
         </button>
         <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
-            <a href="{{ brand_url }}" class="header-brand">
-                <img src="{{ '/assets/icon/apple-touch-icon.png' | absolute_url }}" height="32" class="navbar-brand-image" alt="Kimai"> Kimai <span class="d-none d-sm-inline">– {{ brand_title }}</span>
+            <a href="{{ homepage_url }}" class="header-brand">
+                <img src="/images/kimai-header.png" height="32" class="navbar-brand-image" alt="Kimai – {{ homepage_title }}">
             </a>
         </h1>
         <div class="navbar-nav flex-row order-md-last">
             <div class="d-flex order-lg-2 ml-auto">
-                <div class="nav-item dropdown me-3">
-                    <a href="#" class="nav-link dropdown-toggle px-0" data-bs-toggle="dropdown" tabindex="-1" aria-label="Switch language" aria-expanded="true">
-                        <i class="fas fa-globe me-1"></i> <span class="d-none d-sm-flex">{{ site.language_names[page.lang] }}</span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-end dropdown-menu-card" data-bs-popper="static">
-                        <div class="card">
-                            <div class="list-group list-group-flush list-group-hoverable">
-                            {% for lang in site.languages %}
-                                {% assign targetUrl = site.pages | where: "lang", lang | where: "slug", brand | map: "url" | first %}
-                                {% assign targetTitle = site.data[lang].translation.menu.default[brand].brand %}
-                                {% if page.lang != nil %}
-                                    {% assign langPages = site[page.collection] | where: "lang", lang | where: "slug", page.slug %}
-                                    {% if langPages and langPages.size == 1 %}
-                                        {% assign targetUrl = langPages[0].url %}
-                                    {% endif %}
+                <div class="btn-group">
+                    <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-globe me-1"></i>
+                        {{ site.language_names[page.lang] }}
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        {% for lang in site.languages %}
+                            {% assign targetUrl = site.pages | where: "lang", lang | where: "slug", brand | map: "url" | first %}
+                            {% assign targetTitle = site.data[lang].translation.menu.default[brand].brand %}
+                            {% if page.lang != nil %}
+                                {% assign langPages = site[page.collection] | where: "lang", lang | where: "slug", page.slug %}
+                                {% if langPages and langPages.size == 1 %}
+                                    {% assign targetUrl = langPages[0].url %}
                                 {% endif %}
-                                <div class="list-group list-group-flush" dir="{% if site.rtl contains lang %}rtl{% else %}ltr{% endif %}">
-                                    <a href="{{ targetUrl }}" title="{{ site.language_names[lang] }} - {{ targetTitle }}" class="list-group-item list-group-item-action{% if page.lang == lang %} active{% endif %}">{{ site.language_names[lang] }}</a>
-                                </div>
-                                {% endfor %}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {%- assign cloud_url = 'https://www.kimai.cloud/' -%}
-                {%- if page.lang == 'de' %}
-                    {%- assign cloud_url = 'https://www.kimai.cloud/de/' -%}
-                {%- endif -%}
-                <div class="nav-item d-sm-none">
-                    {% include link-translated.html class="nav-link text-primary" icon="fas fa-cloud" name="hosted" url=cloud_url target="_blank" %}
-                </div>
-                <div class="nav-item d-none d-sm-flex d-md-none">
-                    {% include link-translated.html class="nav-link px-0 text-primary" icon="fas fa-cloud fa-2x" name="hosted" url=cloud_url target="_blank" %}
-                </div>
-                <div class="nav-item d-none d-md-flex">
-                    {% include link-translated.html class="btn btn-primary" name="hosted" url=cloud_url target="_blank" %}
+                            {% endif %}
+                            <li dir="{% if site.rtl contains lang %}rtl{% else %}ltr{% endif %}">
+                                <a href="{{ targetUrl }}" title="{{ site.language_names[lang] }} - {{ targetTitle }}" class="dropdown-item{% if lang == page.lang %} active{% endif %}">{{ site.language_names[lang] }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
                 </div>
             </div>
         </div>
-    </div>
-</header>
-
-<div class="navbar-expand-md">
-    <div class="collapse navbar-collapse" id="navbar-menu">
-        <div class="navbar navbar-light">
-            <div class="container-xl">
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            <div class="d-flex flex-column flex-md-row flex-fill align-items-stretch align-items-md-center">
                 <ul class="navbar-nav">
-                    {%- assign menus = 'about,demo,download,store,blog,documentation' | split: "," -%}
-                    {%- assign homepage_url = site.pages | where: "lang", page.lang | where: "slug", "index" | map: "url" | first -%}
-                    {%- assign homepage_name = site.data[page.lang].translation.menu.default.index.name -%}
-
+                    {%- assign menus = 'download,demo,store,blog,documentation' | split: "," -%}
+                    {% comment %}
                     <li class="nav-item d-md-flex d-none{% if page.url == homepage_url %} active{% endif %}">
                         <a href="{{ homepage_url }}" class="nav-link">
                             {{ homepage_name }}
                         </a>
                     </li>
-
+                    {% endcomment %}
                     {% for menu_key in menus %}
-                        {% assign menu = site.pages | where: "lang", page.lang | where: "slug", menu_key | first %}
-                        {% assign menu_url = menu.url %}
-                        {% assign menu_name = site.data[page.lang].translation.menu.default[menu_key].name %}
-                        <li class="nav-item{% if page.url contains menu_url %} active{% endif %}">
-                            <a href="{% if menu_url != nil %}{% if menu_url != '#' %}{{ menu_url }}{% else %}#{% endif %}{% else %}javascript:void(0){% endif %}" class="nav-link">
-                                <span class="nav-link-title">{{- menu_name -}}</span>
-                            </a>
-                        </li>
+                    {% assign menu = site.pages | where: "lang", page.lang | where: "slug", menu_key | first %}
+                    {% assign menu_url = menu.url %}
+                    {% assign menu_name = site.data[page.lang].translation.menu.default[menu_key].name %}
+                    <li class="nav-item{% if page.url contains menu_url %} active{% endif %}">
+                        <a href="{% if menu_url != nil %}{% if menu_url != '#' %}{{ menu_url }}{% else %}#{% endif %}{% else %}javascript:void(0){% endif %}" class="nav-link">
+                            <span class="nav-link-title">{{- menu_name -}}</span>
+                        </a>
+                    </li>
                     {% endfor %}
                 </ul>
             </div>
         </div>
     </div>
-</div>
+</header>
 
 <div class="page-wrapper">
     {{ content }}
-
     {% include footer.html %}
 </div>
+

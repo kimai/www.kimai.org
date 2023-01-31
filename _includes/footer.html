@@ -1,29 +1,52 @@
-<footer class="footer footer-transparent d-print-none">
+<footer class="footer footer-transparent d-print-none bg-white mt-4 pt-5">
     <div class="container-xl">
-        <div class="row text-center align-items-center flex-row-reverse">
-            <div class="col-lg-auto ms-lg-auto">
-                <ul class="list-inline list-inline-dots mb-0">
-                    <li class="list-inline-item"><a href="{{ site.kimai_v2_repo }}/discussions" target="_blank" class="link-secondary">{{ site.data[page.lang].translation.ask-question }}</a></li>
-                    <li class="list-inline-item"><a href="https://twitter.com/kimai_org" rel="me" target="_blank" class="link-secondary">Twitter</a></li>
-                    <li class="list-inline-item"><a href="https://phpc.social/@kimai" rel="me" target="_blank" class="link-secondary">Mastodon</a></li>
-                    <li class="list-inline-item">{% include link-translated-menu.html language=page.lang item="site-notice" class="link-secondary" %}</li>
-                    <li class="list-inline-item">{% include link-translated-menu.html language=page.lang item="privacy-policy" class="link-secondary" %}</li>
-                </ul>
-            </div>
-            <div class="col-12 col-lg-auto mt-3 mt-lg-0">
-                <ul class="list-inline list-inline-dots mb-0">
-                    <li class="list-inline-item">
-                        {{ site.data[page.lang].translation.made-with-love }}
-                        {% if site.rtl contains page.lang %}
-                        <a href="{{ site.kimai_v2_repo }}" target="_blank" class="link-secondary">GitHub</a> @ <a href="https://www.kevinpapst.de" target="_blank" class="link-secondary">Kevin Papst</a>
-                        {% else %}
-                        <a href="https://www.kevinpapst.de" target="_blank" class="link-secondary">Kevin Papst</a> @ <a href="{{ site.kimai_v2_repo }}" target="_blank" class="link-secondary">GitHub</a>
-                        {% endif %}
+        <div class="row">
+            <div class="col-md-3 col-lg-2 col-6">
+                <p class="text-uppercase fw-bold">Kimai</p>
+                <ul class="list-unstyled">
+                    <li>
+                        {% include link-translated-menu.html item="index" language=page.lang class="link-secondary" %}
                     </li>
-                    <li class="list-inline-item">{% include link-translated-menu.html language=page.lang item="donate" class="link-secondary" %}</li>
-                    <li class="list-inline-item">{% include link-translated.html name="index" url="/" class="link-secondary" %}</a></li>
+                    <li>
+                        {% include link-translated-menu.html item="about" language=page.lang class="link-secondary" %}
+                    </li>
+                    <li>
+                        {% include link-translated-menu.html item="donate" language=page.lang class="link-secondary" %}
+                    </li>
                 </ul>
             </div>
+            <div class="col-md-3 col-lg-2 col-6">
+                <p class="text-uppercase fw-bold">News</p>
+                <ul class="list-unstyled">
+                    <li>
+                        {% include link-translated-menu.html item="blog" language=page.lang class="link-secondary" %}
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/kimai_org" target="_blank" class="link-secondary">Twitter</a>
+                    </li>
+                    <li>
+                        <a href="https://phpc.social/@kimai" target="_blank" class="link-secondary">Mastodon</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-lg-2 col-6">
+                <p class="text-uppercase fw-bold">Support</p>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="{{ site.kimai_v2_repo }}" target="_blank" class="link-secondary">GitHub</a>
+                    </li>
+                    <li>
+                        <a href="{{ site.kimai_v2_repo }}/discussions" target="_blank" class="link-secondary">{{ site.data[page.lang].translation.ask-question }}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-lg-6 col-6 text-end d-none d-sm-block">
+                <img src="/images/kimai_logo.png" class="img-fluid" style="max-height: 120px;" alt="Kimai logo">
+            </div>
+        </div>
+
+        <div class="row text-center align-items-center flex-row-reverse border-top pt-4 mt-4">
+            {% include footer-links.html %}
         </div>
     </div>
 </footer>

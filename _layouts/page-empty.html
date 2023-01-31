@@ -15,7 +15,7 @@ layout: default
 {% if site.data[page.lang].translation.menu.default[page.slug].subtitle != nil %}
     {% assign subtitle = site.data[page.lang].translation.menu.default[page.slug].subtitle %}
 {% endif %}
-{% include page-title.html title=pagetitle subtitle=subtitle options=layout.options %}
+{% include page-title.html title=pagetitle subtitle=subtitle feed=page.with_feed cloud=page.with_cloud %}
 
 <div class="page-body">
     <div class="container-xl">
