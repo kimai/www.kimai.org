@@ -1,13 +1,13 @@
 <?php
 
 // once development is over, switch back to the list of all currently active languages
-// $languages = ['de', 'fr', 'hr'];
+$languages = ['de', 'fr', 'he', 'hr', 'pt_BR', 'zh_Hans'];
 
 // list of all languages, with at least some translations
 // $languages = ['de', 'fr', 'hr', 'he', 'fa', 'ar', 'ko', 'nb_NO', 'pt_BR', 'ru', 'uk', 'vi', 'zh_Hans',];
 
-// list of languages currently working on
-$languages = ['pt_BR', 'he'];
+// currently working on:
+//$languages = ['fa', 'uk'];
 
 $multiLanguagePaths = [
     '_pages' => [
