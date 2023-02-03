@@ -115,3 +115,19 @@ RIGHT JOIN kimai2_user_preferences p on u.id = p.user_id
 SET t.internal_rate = round((COALESCE(p.value, 0) * (COALESCE(t.duration,0) / 3600)), 2)
 WHERE p.name = 'internal_rate';
 ```
+
+### Find all configured projects rates
+
+In case you want to see a list of all configured project rates at a glance:
+
+```sql
+SELECT c.name          AS Kunde,
+       p.name          AS Projekt,
+       r.rate          AS Stundensatz,
+       r.internal_rate AS "Interner Satz",
+       k2u.username    AS Benutzer
+FROM kimai2_projects p
+         LEFT JOIN kimai2_customers c ON p.customer_id = c.id
+         LEFT JOIN kimai2_projects_rates r ON p.id = r.project_id
+         LEFT JOIN kimai2_users k2u ON r.user_id = k2u.id
+```
