@@ -1,27 +1,55 @@
 ---
-title: Publishing in the Marketplace
-navigation: Marketplace
+title: Publishing in the Store
+navigation: Add to store
 description: How to list your Kimai extension in the Marketplace 
 ---
 
-If you created a plugin or any other kind of software around Kimai, which you want to see listed in the [{{ site.data[page.lang].translation.store }}]({% link _pages/store.html %}), 
-follow these short guidelines and it will soon be published.
+If you created a plugin or any other kind of software around Kimai, 
+which you want to see listed in the [{{ site.data[page.lang].translation.store }}]({% link _pages/store.html %}), follow these short guidelines.
 
-## Jekyll and GitHub pages
-
-The Kimai website is generated with [Jekyll](https://jekyllrb.com) and [managed at GitHub]({{ site.kimai_v2_website }}).
-As all {{ site.data[page.lang].translation.store }} entries are rendered from data collections, you can fork the repository and after changing the necessary files, 
-create a pull request.
-
-Your changes will be published immediately after your PR was merged.
+The website is generated with [Jekyll](https://jekyllrb.com) and [managed at GitHub]({{ site.kimai_v2_website }}).
+It is translated to many languages and there is a little more work required than just adding a markdown page. 
+But not much ... and it just needs a couple of minutes! You'll get help at GitHub if something doesn't work.
 
 ## Adding a plugin
 
-You have to:
-- add your developer/company information to the `developer.yml` file
-- create one file for your item that should be listed in the {{ site.data[page.lang].translation.store }} 
+Let's assume your developer prefix is `acme` and your item name is `foo`. 
 
-### The developer information
+1. Add your developer/company information to the `_data/developer.yml` file (see below `Developer information`):
+```yaml
+acme:
+  name: Acme company
+  username: acme
+  photo:
+  profile: "#"
+```
+2. Create a store file definition at `_data/store/acme-foo.yml` for your item  (see below `Product information`):
+```yaml
+developer: acme
+icon: fas fa-home
+price: 0
+bundle:
+    name: "FooBundle"
+    clone: "https://github.com/acme/foo.git"
+    versions:
+        - [ "2.0", "2.0" ]
+```
+3. Copy and paste `_store/keleo-custom-content-bundle.md` to `_store/acme-foo.md` and change:
+```
+title: Foo
+type: plugin
+```
+Also you have to replace `{% raw %}{% include store/keleo-custom-content-bundle.md %}{% endraw %}` with some introduction text for your new item.
+4. Create a translation for your plugin in `_data/en/store.yaml`:
+```yaml
+items:
+  acme-foo:
+      title: Foo — a cool plugin for Kimai
+      intro: A longer introduction between approx. 100 and 180 character 
+```
+5. Run `php translate-pages.php`. This will extract your content into an include and then create a store page for every language.
+
+### Developer information
 
 The information about yourself or your company comes from the [developer.yml file]({{ site.kimai_v2_website }}/tree/main/_data/developer.yml).
 
@@ -48,7 +76,7 @@ kevinpapst:
     twitter: http://twitter.com/keleo
 ```
 
-### The product information
+### Product information
 
 Create a new markdown file in the [_store directory]({{ site.kimai_v2_website }}/tree/main/_store/), follow the filename pattern:
 `company-short-descriptive-name.md`
@@ -64,6 +92,7 @@ Within the Jekyll [Front Matter](https://jekyllrb.com/docs/front-matter/) you ha
 - `price` - the item price (optional, if not given explain pricing structure in the full-text)
 - `version` - last release version (optional)
 - `download` - full URL to the download if available (optional)
+- `documentation` - slug to your (optional) documentation page
 - `github` - full URL to the GitHub project (optional)
 - `screenshot` - full URL to an image / screenshot (optional)
 - `new` - indicates that the {{ site.data[page.lang].translation.store }} item is new, represents a visible state in the shop (set to `true` - this will be removed after a while) (optional)
