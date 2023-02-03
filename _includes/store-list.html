@@ -5,7 +5,7 @@
 		{% for product in products %}
 			{% assign featured = false %}
 		    {% assign iconSize = "fa-2x" %}
-			{% assign imageSize = 'class="h-8"' %}
+			{% assign imageSize = 'class="h-4"' %}
 			{% assign isNew = false %}
 			{% assign settings = site.data.store[product.slug] %}
 			{% if settings.new != nil and settings.new %}
@@ -22,7 +22,7 @@
 			<tr{% if featured %} class="featured-article"{% endif %}>
 				<td class="text-center product-icon">
 					{% if settings.image != nil %}
-					<img src="{{ settings.image }}" alt="Product logo" {{ imageSize }}>
+					<img src="{{ settings.image }}" alt="Logo" {{ imageSize }}>
 					{% else %}
 					<i class="{{ icon }} {{ iconSize }}"></i>
 					{% endif %}
