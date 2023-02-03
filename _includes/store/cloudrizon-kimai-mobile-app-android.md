@@ -1,6 +1,6 @@
 ## Simplicity
 
-Kimai Mobile is easy to install and use. Above all the interface is user-friendly, and there is a broad functionality.
+Kimai Mobile (see [www.kimaimobile.com](https://www.kimaimobile.com/)) is easy to install and use. Above all the interface is user-friendly, and there is a broad functionality.
 
 {% include youtube-video.html id="naqvBUzvzYs" title="Kimai Mobile introduction" %}
 
