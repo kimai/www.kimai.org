@@ -1,5 +1,3 @@
-{% include documentation-link.html chapter="plugin-custom-content" %}
-
 You can test the Plugin in the [Plugin demo]({% link _pages/demo.md %}).
 
 ## Features 

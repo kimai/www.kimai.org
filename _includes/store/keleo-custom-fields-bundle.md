@@ -1,4 +1,3 @@
-{% include documentation-link.html chapter="plugin-custom-fields" %}
 
 Allows configuration of additional (custom) fields for:
 `Timesheets`, `Customers`, `Projects`, `Activities`, `Invoices`, `User`, `Expenses` (see [plugin]({% link _store/keleo-expenses-bundle.md %})).

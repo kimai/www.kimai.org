@@ -1,4 +1,3 @@
-{% include documentation-link.html chapter="plugin-expenses" %}
 
 ## Features
 

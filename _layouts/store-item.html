@@ -5,8 +5,14 @@ layout: content
 {% assign translation = site.data[page.lang].store.items[page.slug] %}
 {% assign developer = site.data.developer[settings.developer] %}
 {% assign icon = settings.icon | default: "fas fa-question" %}
-{% assign buyLink = '#' %}
-{% assign isPaidOwnerPlugin = false %}
+{% assign buyLink = '' %}
+{% assign buyIcon = 'fas fa-download' %}
+{% assign buyTitle = site.data[page.lang].translation.download %}
+{% assign purchase_details = nil %}
+{% assign documentation = nil %}
+{% if settings.documentation %}
+    {% assign documentation = settings.documentation %}
+{% endif %}
 {% assign screenshot = nil %}
 {% if settings.screenshot %}
     {% assign screenshot = settings.screenshot %}
@@ -16,16 +22,36 @@ layout: content
     {% assign screenshots = settings.screenshots %}
 {% endif %}
 {% if settings.download %}
-	{% assign buyLink = settings.download %}
+    {% assign buyLink = settings.download %}
+    {% assign buyIcon = 'fas fa-download' %}
+    {% assign buyTitle = site.data[page.lang].translation.download %}
 {% elsif settings.email %}
-	{% assign buyLink = 'mailto:' | append: settings.email %}
-{% elsif settings.github %}
-	{% assign buyLink = settings.github %}
-{% endif %}
-{%- if settings.gumroad %}
-    {% if settings.developer == 'keleo' or settings.developer == 'kevinpapst' %}
-	    {% assign isPaidOwnerPlugin = true %}
+    {% assign buyLink = 'mailto:' | append: settings.email %}
+    {% assign buyIcon = 'fas fa-at' %}
+    {% assign buyTitle = site.data[page.lang].translation.contact %}
+{% elsif settings.play-store %}
+    {% assign buyLink = settings.play-store %}
+    {% assign buyIcon = 'fab fa-google-play' %}
+    {% assign buyTitle = 'Play Store' %}
+{% elsif settings.app-store %}
+    {% assign buyLink = settings.app-store %}
+    {% assign buyIcon = 'fab fa-app-store-ios' %}
+    {% assign buyTitle = 'App Store' %}
+{% elsif settings.gumroad %}
+    {% if settings.price == 0 %}
+        {% assign buyTitle = site.data[page.lang].translation.download %}
+    {% else %}
+        {% assign buyTitle = site.data[page.lang].translation.store-buy-button %}
     {% endif %}
+    {% if developer.purchase_details %}
+        {% assign purchase_details = developer.purchase_details %}
+    {% endif %}
+    {% assign buyLink = 'https://gum.co/' | append: settings.gumroad %}
+    {% assign buyIcon = 'fas fa-shopping-cart' %}
+{% elsif settings.github %}
+    {% assign buyLink = settings.github | append: '/releases' %}
+    {% assign buyIcon = 'fab fa-github' %}
+    {% assign buyTitle = site.data[page.lang].translation.download %}
 {% endif %}
 
 {% include page-title.html title=translation.title %}
@@ -69,11 +95,7 @@ layout: content
                                             {% endif %}
                                         </h4>
                                         <small class="text-muted">
-                                            {%- if isPaidOwnerPlugin %}
-                                                <a href="{% link _documentation/buy-a-plugin.md %}">{{ site.data[page.lang].translation.license-purchase }}</a>
-                                            {% else %}
                                             {{ site.data[page.lang].translation.seller-details }}
-                                            {% endif -%}
                                         </small>
                                     </div>
                                 </div>
@@ -85,7 +107,7 @@ layout: content
                                     <strong>{{ site.data[page.lang].translation.table-of-contents }}</strong>
                                     <ul class="list-unstyled">
                                         <li><a href="#features">{{ site.data[page.lang].translation.store-features }}</a></li>
-                                        {%- if isPaidOwnerPlugin %}
+                                        {%- if purchase_details %}
                                         <li><a href="#purchase">{{ site.data[page.lang].translation.store-purchase }}</a></li>
                                         {% endif %}
                                         {% if screenshots %}
@@ -140,11 +162,6 @@ layout: content
                                         {% if developer.github %}
                                         <li class="avatar avatar-rounded">
                                             <a href="{{ developer.github }}" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
-                                        </li>
-                                        {% endif %}
-                                        {% if developer.gitlab %}
-                                        <li class="avatar avatar-rounded">
-                                            <a href="{{ developer.gitlab }}" title="Gitlab" target="_blank"><i class="fab fa-gitlab"></i></a>
                                         </li>
                                         {% endif %}
                                         {% if developer.twitter %}
@@ -233,73 +250,48 @@ layout: content
                                 </div>
                             </div>
                             <div class="card-options">
-                                {% if settings.email %}
-                                <a href="mailto:{{ settings.email }}" class="btn btn-outline-primary">
-                                    <i class="fas fa-at"></i>
-                                    <span class="text-nowrap">{{ site.data[page.lang].translation.contact }}</span>
-                                </a>
-                                {% endif %}
                                 {% if settings.github %}
                                     <a href="{{ settings.github }}" class="btn btn-outline-primary">
                                         <i class="fab fa-github"></i>
                                         <span class="text-nowrap">GitHub</span>
                                     </a>
                                 {% endif %}
-                                {% if settings.gitlab %}
-                                    <a href="{{ settings.gitlab }}" class="btn btn-outline-primary">
-                                        <i class="fab fa-gitlab"></i>
-                                        <span class="text-nowrap">GitLab</span>
+
+                                {% if buyLink != '' %}
+                                    <a href="{{ buyLink }}" class="btn btn-success ms-2" target="_blank">
+                                        <i class="{{ buyIcon }}"></i>
+                                        <span class="text-nowrap">{{ buyTitle }}</span>
                                     </a>
-                                {% endif %}
-                                {% if settings.download %}
-                                    <a href="{{ settings.download }}" class="btn btn-outline-primary ms-2">
-                                        <i class="fas fa-download"></i>
-                                        <span class="text-nowrap">{{ site.data[page.lang].translation.download }}</span>
-                                    </a>
-                                {% endif %}
-                                {% if settings.gumroad %}
-                                <a href="https://gum.co/{{ settings.gumroad }}" class="btn btn-success ms-2" target="_blank">
-                                    <i class="fas fa-shopping-cart"></i>
-                                    <span class="text-nowrap">
-                                        {% if settings.price == 0 %}
-                                            {{ site.data[page.lang].translation.download }}
-                                        {% else %}
-                                            {{ site.data[page.lang].translation.store-buy-button }}
-                                        {% endif %}
-                                    </span>
-                                </a>
                                 {% endif %}
                             </div>
                         </div>
                         <div class="card-body">
+                            {% if documentation %}
+                                {% include documentation-link.html chapter=documentation %}
+                            {% endif %}
+
                             {{ content }}
                         </div>
                     </div>
-                    {%- if isPaidOwnerPlugin %}
+                    {%- if purchase_details %}
                         <div class="card mb-3">
                             <div class="card-header">
                                 <div class="d-flex align-items-center px-2">
                                     <h3 id="purchase" class="card-title">{{ site.data[page.lang].translation.store-purchase }}</h3>
                                 </div>
                                 <div class="card-options">
-                                    {% if settings.gumroad %}
-                                    <a href="https://gum.co/{{ settings.gumroad }}" class="btn btn-success ms-2" target="_blank">
-                                        <i class="fas fa-shopping-cart"></i>
-                                        <span class="text-nowrap">
-                                            {% if settings.price == 0 %}
-                                                {{ site.data[page.lang].translation.download }}
-                                            {% else %}
-                                                {{ site.data[page.lang].translation.store-buy-button }}
-                                            {% endif %}
-                                        </span>
+                                    <a href="{{ buyLink }}" class="btn btn-success ms-2" target="_blank">
+                                        <i class="{{ buyIcon }}"></i>
+                                        <span class="text-nowrap">{{ buyTitle }}</span>
                                     </a>
-                                    {% endif %}
                                 </div>
-
                             </div>
                             <div class="card-body p-4">
-                                {% capture gumroad_support %}{% include contents/store-gumroad-and-support.md %}{% endcapture %}
-                                {{ gumroad_support | markdownify }}
+                                <ul>
+                                {% for detail in purchase_details %}
+                                    <li>{{ detail }}</li>
+                                {% endfor %}
+                                </ul>
                             </div>
                         </div>
                     {% endif %}
