@@ -4,6 +4,8 @@ navigation: Pagination
 description: Cycle through API result data 
 related:
 - rest-api
+redirect_from:
+- /documentation/2.0/api-pagination.html
 ---
 
 To enhance API performance, several collection endpoints support pagination. To use this feature you have to add a `page` and a `size` parameter to the URL's query string. 

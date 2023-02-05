@@ -2,6 +2,7 @@
 title: Keycloak SAML
 description: Use Keycloak as SAML identity provider for Kimai
 canonical: /documentation/saml-keycloak.html
+redirect_from: /documentation/keycloak.html
 ---
 
 Go back to general [SAML configuration]({% link _documentation/saml.md %}) for Kimai.

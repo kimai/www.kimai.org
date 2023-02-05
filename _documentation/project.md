@@ -5,6 +5,7 @@ toc: true
 redirect_from:
 - /documentation/manual/projects.html
 - /documentation/manual/administration/projects.html
+- /documentation/2.0/project.html
 ---
 
 Projects in Kimai are assigned to customers and are linked to activities, which are then used for time-records.

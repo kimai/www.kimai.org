@@ -8,6 +8,7 @@ redirect_from:
   - /documentation/invoice-templates/
   - /v1/invoice-templates.html
   - /v1/invoices.html
+  - /documentation/2.0/invoices.html
 related:
   - plugin-invoice
 ---

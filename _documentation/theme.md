@@ -3,6 +3,7 @@ title: Theme
 description: Developer documentation for frontend and theming 
 toc: true
 canonical: /documentation/theme.html
+redirect_from: /documentation/2.0/theme.html
 ---
 
 Kimai uses the [Tabler.io](https://github.com/kevinpapst/TablerBundle/) bootstrap theme.

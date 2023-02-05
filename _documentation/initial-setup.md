@@ -2,6 +2,8 @@
 title: "Initial setup"
 description: Things to configure before you can start time-tracking
 redirect_from: /documentation/inital-setup.md
+redirect_from:
+- /documentation/inital-setup.html
 ---
 
 Kimai tries to be as simple as possible, while leaving you as much freedom as possible in the way how you use it for your time-tracking.
