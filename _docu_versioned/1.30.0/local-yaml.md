@@ -1,6 +1,7 @@
 ---
 title: Configuration files
-description: Advanced configuration via filesystem 
+description: Advanced configuration via filesystem
+canonical: /documentation/local-yaml.html
 related:
   - configurations
   - cache

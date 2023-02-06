@@ -1,5 +1,6 @@
 ---
 title: Bughunter
+canonical: /documentation/bughunter.html
 ---
 
 Some answers to the most common reports that I receive from independent security researchers, which I do **not** consider 

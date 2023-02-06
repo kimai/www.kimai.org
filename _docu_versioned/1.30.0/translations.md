@@ -1,9 +1,7 @@
 ---
 title: "Translations / i18n"
 description: i18n, language specific configurations and the translation files
-redirect_from:
-  - /documentation/developer/translations.html
-  - /documentation/translations/
+canonical: /documentation/translations.html
 ---
 
 Kimai can be localized to any language and is already translated to

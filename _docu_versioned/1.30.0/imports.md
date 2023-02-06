@@ -1,6 +1,7 @@
 ---
 title: Importing data
 description: Importing data into Kimai, migrating from another system
+canonical: /documentation/imports.html
 related:
 - rest-api-examples
 ---
