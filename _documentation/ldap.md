@@ -237,7 +237,7 @@ In this example we tell Kimai to sync the following fields:
 - `mail` will be the account email address (read "known limitations" below)
 - `cn` will be used for the display name in Kimai
 
-Available methods on the User entity are: `setUsername(string)`, `setEmail(string)`, `setAlias(string)`, `setAvatar(url)`, `setTitle(string)`.
+Available methods on the User entity are: `setUsername(string)`, `setEmail(string)`, `setAlias(string)`, `setAvatar(url)`, `setTitle(string)`, `setLanguage(string)`, `setTimezone(string)`, `setAccountNumber(string)`.
 Its unlikely that you will need those, but they also exist: `setEnabled(bool)`, `setSuperAdmin(bool)`, `addRole(string)`.
 
 ### Groups / Roles import
