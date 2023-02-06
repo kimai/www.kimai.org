@@ -8,7 +8,6 @@ $languages = ['de', 'fr', 'he', 'hr', 'pt_BR', 'sv', 'zh_Hans'];
 
 // currently working on:
 //$languages = ['fa', 'uk'];
-$languages = ['sv'];
 
 $multiLanguagePaths = [
     '_pages' => [
