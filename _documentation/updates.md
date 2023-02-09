@@ -38,6 +38,11 @@ And run the Kimai updater:
 bin/console kimai:update
 ```
 
+If you use redis as cache, dont forget to flush the redis database
+```
+redis-cli flushall
+```
+
 Remember to adjust the file permissions if necessary.
 {% include file-permissions.html %} 
 
