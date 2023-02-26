@@ -1,0 +1,9 @@
+---
+title: Custom content
+slug: custom-content-bundle
+type: featured
+lang: uk
+permalink: /uk/store/keleo-custom-content-bundle.html
+---
+
+{% include store/keleo-custom-content-bundle.md %}
