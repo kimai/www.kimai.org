@@ -1,14 +1,7 @@
 ---
 title: Rates
 description: How rates for your timesheet records are calculated
-redirect_from: 
-  - /manual/rates.html
-  - /manual/manual/rates.html
-  - /documentation/manual/rates.html
-  - /documentation/fees/
-  - /documentation/rates/
-  - /v1/rates.html
-  - /rates/
+canonical: /documentation/rates.html
 related:
   - timesheet
   - customer
@@ -31,7 +24,7 @@ A __fixed rate__ always wins over an __hourly rate__.
 And there are two different rates for each time-record:
 
 - The __regular hourly rate__ defines the external costs for yor customer (what actually goes on an invoice)
-- And the __internal rate__ defines your costs for the accounted work (what your employees costs you) 
+- And the __internal rate__ defines your costs for the accounted work (your employees costs) 
 
 ## Defining rates
 
@@ -44,31 +37,19 @@ Rates can be defined in 4 different places;
 
 The values on the **user level** should always be filled, as they are the last place where Kimai always looks for a rate, if no other could be found.
 
-The other rate settings (customer, project, activity) allow to define multiple rates.
+The other rate settings (customer, project, activity) allow to set multiple rates.
+
 Each customer/project/activity can have one rate setting, that acts as global fallback (if the username is not chosen) for every user, who has no dedicated rate for this object. 
+
 For example: a customer gets a global rate of 10€, and you additionally create one rate for user A for 20€. Now that means A will have the rate of 20€, but user B and C and D will have a rate to 10€. 
-
-### Internal rate
-
-If you leave the "internal rate" empty on customer/project/activity level, the "internal rate user-preference" will be used as fallback.  
 
 ## Changing rates
 
 Rate changes always only apply for future entries. If you change e.g. a user's hourly rate, it will be used for all 
 timesheet records that will be created from now on. But existing records will not be changed retroactive.
 
-### Rate changes upon item changes 
-
-If a record already has an hourly or fixed rate set, it will be re-calculated if you change one of these fields:
-
-- customer
-- project
-- activity
-- user
-
-As all of these fields can have different rate settings. the time-records rate will be recalculated as well.
-
-So if Project A has a rate of 100 and Project B a rate of 120, and you move a time-record from A to B it will automatically be changed from 100 to 120.
+Additionally, if a record already has an hourly or fixed rate set, it will not be changed if you change the customer, project or activity.
+So if Project A has a rate of 100 and Project B 120, and you move a record from A to B it will not be automatically changed to 120.
 
 ## Rate calculation
 
@@ -94,5 +75,11 @@ The timesheet rate calculation is based on the following formula:
 - __Fixed rate__: `$fixedRate`
 - __Hourly rate__: `$hourlyRate * ($durationInSeconds / 3600) * $factor`
 
+## Edit rates
 
-You find more information how and where you can edit the different rates types in the following chapters.
+You find more information how and where you can edit the different rates types in these chapters:
+
+- [Users]({% link _documentation/user-preferences.md %})
+- [Customers]({% link _documentation/customer.md %})
+- [Projects]({% link _documentation/project.md %})
+- [Activities]({% link _documentation/activity.md %})
