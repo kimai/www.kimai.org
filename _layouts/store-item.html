@@ -134,18 +134,9 @@ layout: content
                                         {{ developer.description }}
                                     </p>
                                     {% if developer.homepage or developer.email %}
+                                    <div class="hr-text">{{ site.data[page.lang].translation.contact }}</div>
                                     <div class="mb-4">
-                                        If you have any question,
-                                        {% if developer.homepage %}
-                                        visit the <a href="{{ developer.homepage }}" title="Homepage" target="_blank">developers homepage</a>
-                                        {% endif %}
-                                        {% if developer.homepage and developer.email %}
-                                        or
-                                        {% endif %}
-                                        {% if developer.email %}
-                                        use the <a href="mailto:{{ developer.email }}" title="Email">email for direct contact</a>
-                                        {% endif %}
-                                        .
+                                        {{ site.data[page.lang].translation.contact-developer }}
                                     </div>
                                     {% endif %}
                                     <ul class="social-links list-inline mb-0 mt-2">
