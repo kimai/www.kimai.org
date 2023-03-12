@@ -1,11 +1,12 @@
 ---
 title: Importer
-description: Import CSV and JSON data into Kimai 
+description: Import CSV and JSON data into Kimai
+canonical: /documentation/plugin-import.html
 ---
 
 {% include plugins/importer.md %}
 
-## Customer
+### Customer
 
 Supported attributes (field names are case-insensitive):
 
@@ -32,7 +33,7 @@ Supported attributes (field names are case-insensitive):
 | Visible            | visible                                                |
 | Meta fields        | meta.xxx                                               |
 
-### Example
+#### Example
 
 A minimum CSV file (using semicolon as delimiter):
 ```csv
@@ -47,7 +48,7 @@ Name,Company,Number,Comment,Phone,Timezone,Meta.XYZ
 Acme,Acme university Ltd.,12367800,A longer comment to talk about the project,0011234567890,Europe/Berlin,hello foo 123
 ```
 
-## Projects
+### Projects
 
 Supported attributes (field names are case-insensitive):
 
@@ -64,7 +65,7 @@ Supported attributes (field names are case-insensitive):
 | Visible           | visible                                                |
 | Meta fields       | meta.xxx                                               |
 
-### Example
+#### Example
 
 A minimum CSV example file (using semicolon as delimiter):
 ```csv
@@ -79,17 +80,14 @@ Name,Customer,Comment,OrderNumber,OrderDate,Meta.XYZ
 My great project,Acme university,A longer comment to talk about the project,1234567890,2019-08-29,hello foo 123
 ```
 
-## Timesheets
+### Timesheets
 
 This will import timesheets and create these elements on the fly:
 - missing customer
 - missing projects
 - missing activities
-- missing tags
-- missing users
 
-If you let Kimai create new users on the fly, make sure that you configured the default timezone for new users at [System > Settings]({% link _documentation/configurations.md %}) before the import.
-The users timezone is used to import the timesheets. If you import users from different timezones, you should create the users upfront.
+Users need to exist before (mainly because the user timezone setting will be used to import the timesheets).
 
 #### Example
 
@@ -109,31 +107,7 @@ The users timezone is used to import the timesheets. If you import users from di
 - Exported: can be `0` or `1` (0 = new, 1 = exported)
 - Tags: comma separated list of tag names
 
-## Clockify (Timesheet)
-
-Want to switch from Clockify to Kimai? Export the data in Clockify, open it in Excel and export it as CSV file. 
-
-| Attribute             | Supported field names                                                                                      |
-|-----------------------|------------------------------------------------------------------------------------------------------------|
-| Project               | Project name                                                                                               |
-| Client                | Customer name                                                                                              |
-| Description           | Timesheet description                                                                                      |
-| Task                  | Activity name                                                                                              |
-| User                  | Users name                                                                                                 |
-| Group                 | not yet supported                                                                                          |
-| Email                 | Users email                                                                                                |
-| Tags                  | Comma separated list of tag-names                                                                          |
-| Billable              | Whether the timesheet is billable. Possible values: Yes/No                                                 |
-| Start Date            | Start date of the timesheet, e.g. 7/27/22                                                                  |
-| Start Time            | Start time of the timesheet, e.g. 1:00 PM                                                                  |
-| End Date              | End date of the timesheet, e.g. 2022-07-27                                                                 |
-| End Time              | End time of the timesheet, e.g. 21:00                                                                      |
-| Duration (h)          | ignored: instead the field "Duration (decimal)" is used                                                    |
-| Duration (decimal)    | The timesheet duration                                                                                     |
-| Billable Rate (XXX)   | Timesheet hourly rate. XXX = currency (which is not imported, but needs to be configured for the customer) |
-| Billable Amount (XXX) | Timesheet total rate. XXX = currency (which is not imported, but needs to be configured for the customer)  |
-
-## Grandtotal (Customer)
+### Customer from Grandtotal
 
 There is a [plugin for Mac invoicing software Grandtotal]({% link _store/keleo-grandtotal-plugin-for-kimai.md %}), which adds support for Kimai.
 
@@ -143,7 +117,7 @@ Grandtotal calls CSV exports `Numbers` in the export screen.
 Attention: Grandtotal exports its data with column names in the UI language (just like Kimai).
 Kimai only supports imports for GT exports from the languages english and german, so you might have to change it in `Settings / Languages / User interface`.
 
-## Permissions
+### Permissions
 
 | Permission Name | Description                                           |
 |-----------------|-------------------------------------------------------|

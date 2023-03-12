@@ -29,4 +29,8 @@ See the [importer plugin documentation]({% link _documentation/plugin-import.md 
 ## Importing timesheets
 
 See the [importer plugin documentation]({% link _documentation/plugin-import.md %})
+
+### Via Clockify
+
+See the [importer plugin documentation]({% link _documentation/plugin-import.md %})
  
