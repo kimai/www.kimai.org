@@ -19,7 +19,7 @@ The edit dialog allows to change your custom translation:
 
 {% include docs-image.html src="/images/marketplace/translation-edit.png" title="Change your custom translation" width="800px" %}
 
-### Permissions
+## Permissions
 
 | Permission Name     | Description                                                                               |
 |---------------------|-------------------------------------------------------------------------------------------|
