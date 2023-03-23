@@ -51,7 +51,7 @@ The party responsible for processing data on this website is:
 
 Kevin Papst, Engerthstraße 171/13, 1020 Vienna (Austria)  
 Telephone: +49 (0)30 12087229  
-Email: <kevin@kevinpapst.de>  
+Email: <support@kimai.org>  
 EU-VAT Id: ATU75657727
 
 The responsible party is the natural or legal person who alone or jointly with others decides on the purposes and means 

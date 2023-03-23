@@ -5,7 +5,7 @@ they might cause problems for users who are unfamiliar with server systems.
 In almost 20 years of work experience I have seen a lot of different server systems and know that its not always easy to integrate new software 
 into your existing setup.
 
-If you want to hire me for Kimai installation or updates, please contact me via [kevin@kevinpapst.de](mailto:kevin@kevinpapst.de).
+If you want to hire me for Kimai installation or updates, please contact me via [support@kimai.org](mailto:support@kimai.org).
 
 ### Required information
 
@@ -16,7 +16,7 @@ Depending on the type of setup, I might ask you for different types of credentia
 - a prepared domain with SSL certificate
 - login to your hosters web interface
 
-If you use a shared hoster and don't know what all that means, don't worry - just drop me an [email](mailto:kevin@kevinpapst.de).
+If you use a shared hoster and don't know what all that means, don't worry - just drop me an [email](mailto:support@kimai.org).
 
 ### Pricing
 
