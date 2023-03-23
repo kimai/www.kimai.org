@@ -117,6 +117,13 @@ This javascript is used to allow an on-page shopping experience, which is starte
 For purposes of European data protection legislation, Gumroad, Inc. is the controller of personal information that are collected for their own business purposes during the shopping and payment process.
 Please read their <a href="https://gumroad.com/privacy" target="_blank">Privacy policy</a> to understand what data is collected and for which reasons.  
 
+### LemonSqueezy / Marketplace
+
+When you visit non-free items on the Marketplace, a javascript is embedded from the software selling platform Lemon Squeezy, 222 Main Street Suite 500 , Salt Lake City, UT 84101.
+This javascript is used to allow an on-page shopping experience, which is started when you click one of the "Buy" buttons. 
+For purposes of European data protection legislation, Lemon Squeezy is the controller of personal information that are collected for their own business purposes during the shopping and payment process.
+Please read their <a href="https://www.lemonsqueezy.com/privacy" target="_blank">Privacy policy</a> to understand what data is collected and for which reasons.  
+
 ### Hosting with GitHub Pages
 
 This website is hosted on servers of Github Inc., 88 Colin P Kelly Jr. Street, San Francisco, CA 94107, USA. 
