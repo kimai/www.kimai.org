@@ -112,6 +112,7 @@ The website operator has a legitimate interest in the storage of cookies to ensu
 If other cookies (such as those used to analyze your surfing behavior) are also stored, they will be treated separately in this privacy policy.
 
 ### Gumroad / Marketplace
+
 When you visit non-free items on the Marketplace, a javascript is embedded from the software selling platform Gumroad, Inc., 548 Market St, San Francisco, CA 94104-5401.
 This javascript is used to allow an on-page shopping experience, which is started when you click one of the "Buy" buttons. 
 For purposes of European data protection legislation, Gumroad, Inc. is the controller of personal information that are collected for their own business purposes during the shopping and payment process.
