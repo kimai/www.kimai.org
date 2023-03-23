@@ -54,7 +54,9 @@
 				{% endif %}
 				<td class="text-end text-nowrap">
 					<strong>
-						{% if settings.price == nil %}
+						{% if settings.subscription != nil %}
+							{{ settings.subscription }}
+						{% elsif settings.price == nil %}
                             <i class="far fa-comments fa-lg"></i>
                         {% elsif settings.price == 0 %}
                             {{ site.data[page.lang].translation.free-badge }}
