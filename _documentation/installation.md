@@ -103,6 +103,10 @@ Kimai [package](https://github.com/YunoHost-Apps/kimai2_ynh) for [YunoHost](http
 Be aware that VestaCP uses the `admin` user instead of `www-data`. Replace the names in the permission commands above.
 Read [this issue]({{ site.kimai_v2_repo }}/issues/743) if you have further questions.
 
+### ISPConfig 3
+
+There is an installation doc (unfortunately only in German) available at [www.howtoforge.de](https://www.howtoforge.de/anleitung/installation-kimai2-webbasierte-zeiterfassung-in-einem-ispconfig3-web/).
+
 ### Cloudjiffy
 [CloudJiffy](https://cloudjiffy.com/) provides a scalable, hourly billed and easy to use PaaS platform and the setup of Kimai is [only a click of a button away](https://cloudjiffy.com/blog/solutions/one-click-solutions/kimai-time-tracking-on-cloudjiffy). Kimai is always deployed from the latest Github branch, thus you can rest easy that your software will always be up-to-date.
 
