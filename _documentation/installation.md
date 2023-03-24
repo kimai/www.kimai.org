@@ -112,6 +112,14 @@ How to install Kimai at shared hosting companies. Please share our insights if y
 
 If you can't find the correct version, ask your hoster! Or [let us help you]({% link _store/keleo-installation-support.md %}).
 
+### Uberspace
+
+{% include docs-image.html src="/images/documentation/uberspace-logo.png" title="Uberspace Logo" width="144px" %}
+
+[Uberspace](https://uberspace.de) is run by about a dozen people like you that strive to make technology accessible, understandable and manageable.
+
+You can find a detailed how-to guide for installing Kimai in their [Uberlab](https://lab.uberspace.de/guide_kimai/).
+
 ### Ionos / 1&1
 
 - GIT is normally pre-installed and can be used via SSH
