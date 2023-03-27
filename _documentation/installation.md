@@ -145,9 +145,26 @@ You can find a detailed how-to guide for installing Kimai in their [Uberlab](htt
 ### All-Inkl
 
 All-Inkl has several CLI versions of PHP available via e.g. `php81`.
+
 Composer is running at `/usr/bin/composer`, so you execute it like that:
 - `php81 /usr/bin/composer install --optimize-autoloader -n`
 - `php81 bin/console kimai:install -n`
+
+**ATTENTION** They use the PHP Plugin "ionCubeLoader", which is known to cause troubles with Symfony projects (or better with Doctrine Cache files).
+
+This will lead to a 500 error on page loads, unless the cache is not existing yet.
+[The workaround](https://github.com/kimai/kimai/discussions/2859#discussioncomment-5405336) is to create a custom `php.ini` that will force ioncube to NOT look into the Kimai directory.
+
+Create two files (replace `your-username-here` with your All-Inkl account name):
+
+- /www/htdocs/your-username-here/kimai/.user.ini
+- /www/htdocs/your-username-here/kimai/public/.user.ini
+
+with the content:
+
+```
+ioncube.loader.encoded_paths = /www/htdocs/your-username-here/logs
+```
 
 ### Strato
 
