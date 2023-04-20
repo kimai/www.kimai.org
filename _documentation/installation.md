@@ -243,6 +243,22 @@ webserver directly.
 
 See issue [#1620]({{ site.kimai_v2_repo }}/issues/1620).
 
+### HostEurope
+
+ATTENTION: Procedure must be undertaken **with the FTP SSH account**, not the WP one.
+
+- Clone Kimai in the root folder as stated above and then `cd kimai`
+- Install composer: `curl -sS https://getcomposer.org/installer | /usr/bin/php`
+- Install dependencies: `php composer.phar install --optimize-autoloader`
+- configure your .env file, eg. `nano .env`
+- install kimai: `php bin/console kimai:install -n`
+- reload config: `php bin/console kimai:reload`
+
+After those steps are done, go to the control panel of the webserver
+- In HostEurope's webserver administration, select `Domains` -> `Subdomains` and configure `/kimai/public` as Directory `/` URL for the domain (or subdomain) of your choice
+- Optionally, under `Security & SSL` -> `Manage SSL` configure an SSL certificate for the domain
+- Select `Webspace & Users` -> `File Management` -> `kimai` -> `var` and select all files/folders. Those all belong to the FTP user, change this to the WP user and apply.
+
 ## FTP installation
 
 Installation via FTP is not supported. Kimai cannot be installed with FTP.
