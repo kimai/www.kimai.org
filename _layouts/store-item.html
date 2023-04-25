@@ -312,7 +312,8 @@ layout: content
                                 {% comment %}
                                 {% assign compatibleWithTwo = false %}
                                 {% for version in settings.bundle.versions %}
-                                    {% if version[1] == '2.0' or version[1] == '2.0.0' %}
+                                    {% assign startsVersion = version[1] | slice: 0, 2 %}
+                                    {% if startsVersion == '2.' %}
                                         {% assign compatibleWithTwo = true %}
                                     {% endif %}
                                 {% endfor %}
