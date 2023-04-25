@@ -9,6 +9,10 @@ related:
 Kimai provides a calendar view, which allows management of your timesheet entries in a calendar format, where you 
 can choose between a monthly, weekly and daily view.
 
+## Context-menu
+
+All calendar entries offer a context-menu with several options (like `Duplicate` or `Delete`), right at your fingertip. 
+
 ## Drag & Drop
 
 The calendar allows managing entries by using drag & drop: 
@@ -34,9 +38,7 @@ There are a couple of ways you can create a new timesheet record in the calendar
 
 ## Delete a timesheet
 
-You can remove every timesheet record by drag & drop onto the "Delete" button:
-
-{% include docs-image.html src="/images/documentation/calendar-delete.png" title="Delete a record by dropping it on the trash bin" width="300px" %}
+You can right-click every entry and delete it from the context-menu.
 
 ## Switching user
 
