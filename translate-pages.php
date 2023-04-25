@@ -1,7 +1,7 @@
 <?php
 
 // once development is over, switch back to the list of all currently active languages
-$languages = ['cs', 'de', 'fr', 'he', 'hr', 'pt_BR', 'sv', 'uk', 'zh_Hans'];
+$languages = ['cs', 'de', 'fr', 'he', 'hr', 'pt', 'pt_BR', 'ru', 'sv', 'uk', 'zh_Hans'];
 
 // list of all languages, with at least some translations
 // $languages = ['de', 'fr', 'hr', 'he', 'fa', 'ar', 'ko', 'nb_NO', 'pt_BR', 'ru', 'uk', 'vi', 'zh_Hans',];
