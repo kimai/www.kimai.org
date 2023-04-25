@@ -361,7 +361,7 @@ kimai:
             host: 127.0.0.1
             useSsl: true
             port: 543
-            user: kimai
+            username: kimai
             password: serverToken
             # auto generated fallback is the same, no need to set it explicit:
             #accountFilterFormat: (&(objectClass=posixAccount)(uid=%s))
