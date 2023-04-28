@@ -2,10 +2,6 @@
 title: LDAP
 description: How to use an LDAP directory server with Kimai
 canonical: /documentation/ldap.html
-redirect_from: 
-  - /documentation/administrator/authenticator.html
-  - /documentation/authenticator/
-  - /v1/authenticator.html
 ---
 
 Kimai supports authentication against your company directory server (LDAP or AD).
@@ -133,7 +129,7 @@ kimai:
             attributes:
                 # The following 2 rules are automatically prepended and can be overwritten.
                 # Username is set to the value of the configured "usernameAttribute" field 
-                - { ldap_attr: "usernameAttribute", user_method: setUserIdentifier }
+                - { ldap_attr: "usernameAttribute", user_method: setUsername }
                 # Only applied if you don't configure a mapping for setEmail()
                 - { ldap_attr: "usernameAttribute", user_method: setEmail }
                 # An example which will set the display name in Kimai from the 
@@ -226,7 +222,7 @@ kimai:
     ldap:
         user:
             attributes:
-                - { ldap_attr: uid, user_method: setUserIdentifier }
+                - { ldap_attr: uid, user_method: setUsername }
                 - { ldap_attr: mail, user_method: setEmail }
                 - { ldap_attr: cn, user_method: setAlias }
 ```
@@ -370,7 +366,7 @@ kimai:
             filter: (&(objectClass=posixAccount))
             usernameAttribute: uid
             attributes:
-                - { ldap_attr: uid, user_method: setUserIdentifier }
+                - { ldap_attr: uid, user_method: setUsername }
                 - { ldap_attr: cn, user_method: setAlias }
                 - { ldap_attr: mail, user_method: setEmail }
         role:
@@ -407,7 +403,7 @@ kimai:
             attributes:
                 - { ldap_attr: mail, user_method: setEmail }
                 - { ldap_attr: displayname, user_method: setAlias }
-                - { ldap_attr: samaccountname,  user_method: setUserIdentifier }
+                - { ldap_attr: samaccountname,  user_method: setUsername }
         role:
             baseDn: dc=ad,dc=example,dc=com
             filter: (&(objectClass=group))

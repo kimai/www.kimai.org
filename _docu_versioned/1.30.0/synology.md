@@ -269,7 +269,7 @@ See [this discussion]({{ site.kimai_v2_repo }}/discussions/3198) to find out mor
                 filter: (&(objectClass=Person))
                 attributesFilter: (objectClass=Person)
                 attributes:
-                    - { ldap_attr: samaccountname,  user_method: setUserIdentifier }
+                    - { ldap_attr: samaccountname,  user_method: setUsername }
                     - { ldap_attr: mail, user_method: setEmail }
                     - { ldap_attr: displayname, user_method: setAlias }
         

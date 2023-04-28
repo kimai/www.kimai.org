@@ -155,7 +155,7 @@ kimai:
         user:
             baseDn: ou=users, dc=kimai, dc=org
             attributes:
-                - { ldap_attr: uid, user_method: setUserIdentifier }
+                - { ldap_attr: uid, user_method: setUsername }
                 - { ldap_attr: givenName, user_method: setAlias }
                 - { ldap_attr: mail, user_method: setEmail }
         role:
