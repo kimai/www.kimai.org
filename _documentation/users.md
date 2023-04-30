@@ -68,19 +68,28 @@ As this feature requires an email to work, you have to enable [email support]({%
 
 ## Login
 
-User can log in with a username or email.
+User can log in with a username or email. Administrators can activate different login methods (like LDAP or SAML) as well.
 
-If you activate the `Remember me` option, you can use the most common functions within the next time without a new login.
-
-### Remember me login
-
-If you have chosen to log in with the `Remember me` option, your login will be extended to [one week]({{ site.kimai_v2_file }}/config/packages/security.yaml).
+Your login works for at least [one week]({{ site.kimai_v2_file }}/config/packages/security.yaml) in the `Remember me` mode.
 After coming back and being remembered you have access to all the following features:
 
 - view your own timesheet
 - start and stop new records
 - edit existing records
 
-If you are an administrator, you will see all your allowed options in the menu, but will be redirected to the login
-form when you try to access them. This is a security feature to prevent abuse in case you forgot to logout in public
-environments.
+If you are an administrator, you will see all your allowed options in the menu, but will be redirected to a special confirmation/login
+form when you try to access them. This is a security feature to prevent abuse in case you forgot to log-out in public environments.
+
+## Two-Factor authentication
+
+The latest Kimai version supports 2FA (Two-Factor) authentication via TOTP tokens.
+
+The basic flows looks as this: 
+- You scan a QR code in your Kimai user preferences screen with a TOTP supporting app
+- Your app will show you a confirmation code, which then needs to be entered in Kimai
+- If the code was correct, Kimai will enable 2FA for your account 
+- The next time you log-in, you will have to open your app and enter the current confirmation code before entering Kimai 
+
+The 2FA-mode can be enabled per account, settings can be access by the user himself or by any Super-Admin.
+
+The two-factor authentication can be enabled by all users, even for SAML accounts. 

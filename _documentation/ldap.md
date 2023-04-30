@@ -133,7 +133,7 @@ kimai:
             attributes:
                 # The following 2 rules are automatically prepended and can be overwritten.
                 # Username is set to the value of the configured "usernameAttribute" field 
-                - { ldap_attr: "usernameAttribute", user_method: setUsername }
+                - { ldap_attr: "usernameAttribute", user_method: setUserIdentifier }
                 # Only applied if you don't configure a mapping for setEmail()
                 - { ldap_attr: "usernameAttribute", user_method: setEmail }
                 # An example which will set the display name in Kimai from the 
@@ -226,7 +226,7 @@ kimai:
     ldap:
         user:
             attributes:
-                - { ldap_attr: uid, user_method: setUsername }
+                - { ldap_attr: uid, user_method: setUserIdentifier }
                 - { ldap_attr: mail, user_method: setEmail }
                 - { ldap_attr: cn, user_method: setAlias }
 ```
@@ -361,7 +361,7 @@ kimai:
             host: 127.0.0.1
             useSsl: true
             port: 543
-            user: kimai
+            username: kimai
             password: serverToken
             # auto generated fallback is the same, no need to set it explicit:
             #accountFilterFormat: (&(objectClass=posixAccount)(uid=%s))
@@ -370,7 +370,7 @@ kimai:
             filter: (&(objectClass=posixAccount))
             usernameAttribute: uid
             attributes:
-                - { ldap_attr: uid, user_method: setUsername }
+                - { ldap_attr: uid, user_method: setUserIdentifier }
                 - { ldap_attr: cn, user_method: setAlias }
                 - { ldap_attr: mail, user_method: setEmail }
         role:
@@ -407,7 +407,7 @@ kimai:
             attributes:
                 - { ldap_attr: mail, user_method: setEmail }
                 - { ldap_attr: displayname, user_method: setAlias }
-                - { ldap_attr: samaccountname,  user_method: setUsername }
+                - { ldap_attr: samaccountname,  user_method: setUserIdentifier }
         role:
             baseDn: dc=ad,dc=example,dc=com
             filter: (&(objectClass=group))

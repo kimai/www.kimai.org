@@ -46,6 +46,14 @@ $('body').on('change.select2', '#timesheet_edit_form_activity', function() {
 });
 ```
 
+Always deactivate the export checkbox:
+```javascript
+document.addEventListener('kimai.initialized', function(event) {
+    const cb = document.querySelector('#preview_export #markAsExportedCheck');
+    if (cb !== null && cb.checked) { cb.checked = false; }
+});
+```
+
 Automatically login with SAML (only works if normal form login is deactivated):
 ```javascript
 document.querySelector('body.login-page #social-login-button')?.click();

@@ -27,36 +27,27 @@ users with the permission `system_configuration` (by default [ROLE_SUPER_ADMIN](
 
 ### Time-tracking modes
 
-#### Default mode
+#### Default
 
-The default tracking mode is not limiting the user is any way. Every user can edit the `begin` and `end` time and the `duration`.
+The default tracking mode is not limiting the user is any way. Every user can edit the `date`, the `begin` and `end` times and the `duration`.
 
-#### Time-clock mode
+#### Time-clock
 
 The time-clock mode is primarily for companies, who don't want their users to add arbitrary records.
-It removes the `begin` and `end` fields for the default timesheet forms. 
+It removes the `date`, `begin`, `end` and `duration` fields from the timesheet forms. 
 
 The `Admin > Timesheets` screen still include these fields, as you might have to correct wrong/add forgotten entries on behalf of the user.
 
-#### Duration (no end time)
+#### Duration
 
-Removes the `end` fields from the timesheet form, while the `duration` can be edited.
-All timesheet tables will only display the `date` and `duration` for all records, `start` and `end` time columns are hidden.
-
-Users with the `edit_other_timesheet` [permission]({% link _documentation/permissions.md %}) can still see the 
-`start` and `end` time in the `Admin > Timesheets` screen. If your country has work regulations that should limit access to this data, 
-make sure to remove this permission for persons without special access regulations (e.g. your HR department).
-
-This mode does not use the `Default start-time` but always displays the current time as start for new entries.
-
-#### Duration (fixed start time)
-
-The `begin` and `end` fields will be removed, only the `duration` can be edited. 
+The `date`, `begin` and `end` fields will be removed, only the `duration` can be edited. 
 As `start` time the `Default start-time` configuration is used (which is configured to `now` by default).
 
 Users with the `edit_other_timesheet` [permission]({% link _documentation/permissions.md %}) can still see the
 `start` and `end` time in the `Admin > Timesheets` screen. If your country has work regulations that should limit access to this data,
 make sure to remove this permission for persons without special access regulations (e.g. your HR department).
+
+The `Admin > Timesheets` screen still include these fields, as you might have to correct wrong/add forgotten entries on behalf of the user.
 
 ## Weekly working hours
 

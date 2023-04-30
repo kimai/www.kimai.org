@@ -362,55 +362,63 @@ Twig rendering is different, you have to access the variables with `{% raw %}{{ 
 
 ### Global variables
 
-| Key                         | Description                                                                             |
-|-----------------------------|-----------------------------------------------------------------------------------------|
-| ${invoice.due_date}         | The due date for the invoice payment                                                    |
-| ${invoice.date}             | The creation date of this invoice                                                       |
-| ${invoice.number}           | The generated invoice number                                                            |
-| ${invoice.currency}         | The invoice currency                                                                    |
-| ${invoice.currency_symbol}  | The invoice currency as symbol (if available)                                           |
-| ${invoice.total_time}       | The total working time (entries with a fixed rate are always calculated with 1)         |
-| ${invoice.duration_decimal} | The total working time as decimal value                                                 |
-| ${invoice.language}         | The invoices language as two character code                                             |
-| ${invoice.total}            | The invoices total (including tax) with currency                                        |
-| ${invoice.total_nc}         | The invoices total (including tax) without currency                                     |
-| ${invoice.total_plain}      | The invoices total (including tax) as unformatted value                                 |
-| ${invoice.subtotal}         | The invoices subtotal (excluding tax) with currency                                     |
-| ${invoice.subtotal_nc}      | The invoices subtotal (excluding tax) without currency                                  |
-| ${invoice.subtotal_plain}   | The invoices subtotal (excluding tax) as unformatted value                              |
-| ${invoice.currency}         | The invoices currency as string (like EUR or USD)                                       |
-| ${invoice.vat}              | The VAT in percent for this invoice                                                     |
-| ${invoice.tax}              | The tax of the invoice amount with currency                                             |
-| ${invoice.tax_nc}           | The tax of the invoice amount without currency                                          |
-| ${invoice.tax_plain}        | The tax of the invoice amount as unformatted value                                      |
-| ${template.name}            | The invoice name, as configured in your template                                        |
-| ${template.company}         | The company name, as configured in your template                                        |
-| ${template.address}         | The invoicing address, as configured in your template                                   |
-| ${template.title}           | The invoice title, as configured in your template                                       |
-| ${template.payment_terms}   | Your payment terms, might be multiple lines                                             |
-| ${template.due_days}        | The amount of days for the payment, starting with the day of creating the invoice       |
-| ${template.vat_id}          | The Vat ID for this invoice                                                             |
-| ${template.contact}         | Extended contact information, might be multiple lines                                   |
-| ${template.payment_details} | Extended payment details like bank accounts, might be multiple lines                    |
-| ${query.begin}              | The query begin as formatted short date                                                 |
-| ${query.end}                | The query end as formatted short date                                                   |
-| ${query.month}              | The month for this query (begin date) **DEPRECATED**                                    |
-| ${query.month_number}       | The numerical value for the month (with leading zero) **DEPRECATED**                    |
-| ${query.day}                | The day for the queries begin as numerical value with leading zero **DEPRECATED**       |
-| ${query.year}               | The year for this query (begin date) **DEPRECATED**                                     |
-| ${query.begin_month}        | The month for the queries begin date                                                    |
-| ${query.begin_month_number} | The numerical value for the month of the queries begin date with leading zero           |
-| ${query.begin_day}          | The day for the queries begin as numerical value with leading zero                      |
-| ${query.begin_year}         | The year for the queries begin date                                                     |
-| ${query.end_month}          | The month for the queries end date                                                      |
-| ${query.end_month_number}   | The numerical value for the month of the queries end date with leading zero             |
-| ${query.end_day}            | The day for the queries end as numerical value with leading zero                        |
-| ${query.end_year}           | The year for the queries end date                                                       |
-| ${user.name}                | The current users name                                                                  |
-| ${user.email}               | The current users email                                                                 |
-| ${user.alias}               | The current users alias                                                                 |
-| ${user.title}               | The current users title                                                                 |
-| ${user.meta.X}              | The current users [preference]({% link _documentation/user-preferences.md %}) named `X` |
+| Key                           | Description                                                                             |
+|-------------------------------|-----------------------------------------------------------------------------------------|
+| ${invoice.due_date}           | The due date for the invoice payment                                                    |
+| ${invoice.date}               | The creation date of this invoice                                                       |
+| ${invoice.number}             | The generated invoice number                                                            |
+| ${invoice.currency}           | The invoice currency                                                                    |
+| ${invoice.currency_symbol}    | The invoice currency as symbol (if available)                                           |
+| ${invoice.total_time}         | The total working time (entries with a fixed rate are always calculated with 1)         |
+| ${invoice.duration_decimal}   | The total working time as decimal value                                                 |
+| ${invoice.language}           | The invoices language as two character code                                             |
+| ${invoice.total}              | The invoices total (including tax) with currency                                        |
+| ${invoice.total_nc}           | The invoices total (including tax) without currency                                     |
+| ${invoice.total_plain}        | The invoices total (including tax) as unformatted value                                 |
+| ${invoice.subtotal}           | The invoices subtotal (excluding tax) with currency                                     |
+| ${invoice.subtotal_nc}        | The invoices subtotal (excluding tax) without currency                                  |
+| ${invoice.subtotal_plain}     | The invoices subtotal (excluding tax) as unformatted value                              |
+| ${invoice.currency}           | The invoices currency as string (like EUR or USD)                                       |
+| ${invoice.vat}                | The VAT in percent for this invoice                                                     |
+| ${invoice.tax}                | The tax of the invoice amount with currency                                             |
+| ${invoice.tax_nc}             | The tax of the invoice amount without currency                                          |
+| ${invoice.tax_plain}          | The tax of the invoice amount as unformatted value                                      |
+| ${invoice.tax_hide}           | A boolean flag indicating if the tax field should be hidden (only applies if tax = 0)   |
+| ${template.name}              | The invoice name, as configured in your template                                        |
+| ${template.company}           | The company name, as configured in your template                                        |
+| ${template.address}           | The invoicing address, as configured in your template                                   |
+| ${template.title}             | The invoice title, as configured in your template                                       |
+| ${template.payment_terms}     | Your payment terms, might be multiple lines                                             |
+| ${template.due_days}          | The amount of days for the payment, starting with the day of creating the invoice       |
+| ${template.vat_id}            | The Vat ID for this invoice                                                             |
+| ${template.contact}           | Extended contact information, might be multiple lines                                   |
+| ${template.payment_details}   | Extended payment details like bank accounts, might be multiple lines                    |
+| ${query.begin}                | The query begin as formatted short date                                                 |
+| ${query.end}                  | The query end as formatted short date                                                   |
+| ${query.month}                | The month for this query (begin date) **DEPRECATED**                                    |
+| ${query.month_number}         | The numerical value for the month (with leading zero) **DEPRECATED**                    |
+| ${query.day}                  | The day for the queries begin as numerical value with leading zero **DEPRECATED**       |
+| ${query.year}                 | The year for this query (begin date) **DEPRECATED**                                     |
+| ${query.begin_month}          | The month for the queries begin date                                                    |
+| ${query.begin_month_number}   | The numerical value for the month of the queries begin date with leading zero           |
+| ${query.begin_day}            | The day for the queries begin as numerical value with leading zero                      |
+| ${query.begin_year}           | The year for the queries begin date                                                     |
+| ${query.end_month}            | The month for the queries end date                                                      |
+| ${query.end_month_number}     | The numerical value for the month of the queries end date with leading zero             |
+| ${query.end_day}              | The day for the queries end as numerical value with leading zero                        |
+| ${query.end_year}             | The year for the queries end date                                                       |
+| ${query.activity.name}        | Activity name (only if exactly one activity was filtered)                               |
+| ${query.activity.comment}     | Activity comment/description (only if exactly one activity was filtered)                |
+| ${query.project.name}         | Project name (only if exactly one project was filtered)                                 |
+| ${query.project.comment}      | Project comment/description (only if exactly one project was filtered)                  |
+| ${query.project.order_number} | Project Order-Number (only if exactly one project was filtered)                         |
+| ${user.display}               | The current users display name                                                          |
+| ${user.email}                 | The current users email                                                                 |
+| ${user.name}                  | The current users name                                                                  |
+| ${user.alias}                 | The current users alias                                                                 |
+| ${user.title}                 | The current users title                                                                 |
+| ${user.see_others}            | A boolean indicating if the current user can see other users items                      |
+| ${user.meta.X}                | The current users [preference]({% link _documentation/user-preferences.md %}) named `X` |
 
 ### Timesheet entry variables
 

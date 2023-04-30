@@ -51,7 +51,7 @@ The party responsible for processing data on this website is:
 
 Kevin Papst, Engerthstraße 171/13, 1020 Vienna (Austria)  
 Telephone: +49 (0)30 12087229  
-Email: <kevin@kevinpapst.de>  
+Email: <support@kimai.org>  
 EU-VAT Id: ATU75657727
 
 The responsible party is the natural or legal person who alone or jointly with others decides on the purposes and means 
@@ -112,6 +112,7 @@ The website operator has a legitimate interest in the storage of cookies to ensu
 If other cookies (such as those used to analyze your surfing behavior) are also stored, they will be treated separately in this privacy policy.
 
 ### Gumroad / Marketplace
+
 When you visit non-free items on the Marketplace, a javascript is embedded from the software selling platform Gumroad, Inc., 548 Market St, San Francisco, CA 94104-5401.
 This javascript is used to allow an on-page shopping experience, which is started when you click one of the "Buy" buttons. 
 For purposes of European data protection legislation, Gumroad, Inc. is the controller of personal information that are collected for their own business purposes during the shopping and payment process.

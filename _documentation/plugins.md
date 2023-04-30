@@ -171,7 +171,7 @@ There is another parameter called `%kimai.plugin_dir%`, which is pointing to the
 
 There is an [official demo bundle](https://github.com/Keleo/DemoBundle) which has many code examples for extension points.
 
-You can also have a look at the [CustomCSSBundle](https://github.com/keleo/CustomCSSBundle) which serves as bundle demo:
+You can also have a look at the [CustomCSSBundle](https://github.com/Keleo/CustomCSSBundle) which serves as bundle demo:
 - A bundle with an extension to load service definitions
 - Additional routes
 - An admin controller with form usage, flash messages and an additional view

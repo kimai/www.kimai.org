@@ -88,6 +88,29 @@ This will import timesheets and create these elements on the fly:
 - missing tags
 - missing users
 
+| Attribute      | Supported field names                                     |
+|----------------|-----------------------------------------------------------|
+| Duration       | timesheet duration in seconds                             |
+| Tags           | comma separated list of tag-names                         |
+| Exported       | whether the timesheet should be marked as exported or not |
+| Rate           | TODO document me TODO                                     |
+| HourlyRate     | TODO document me TODO                                     |
+| InternalRate   | TODO document me TODO                                     |
+| FixedRate      | TODO document me TODO                                     |
+| Billable       | TODO document me TODO                                     |
+| Description    | TODO document me TODO                                     |
+| Tags           | TODO document me TODO                                     |
+| Project        | TODO document me TODO                                     |
+| Customer       | TODO document me TODO                                     |
+| Activity       | TODO document me TODO                                     |
+| Begin          | TODO document me TODO                                     |
+| End            | TODO document me TODO                                     |
+| Date           | TODO document me TODO                                     |
+| From           | TODO document me TODO                                     |
+| To             | TODO document me TODO                                     |
+| User           | Username                                                  |
+| Email          | User email (required when creating users)                 |
+
 ### User handling
 
 If you let Kimai create new users on the fly, make sure that you configured the default timezone for new users at [System > Settings]({% link _documentation/configurations.md %}) before the import.
@@ -96,7 +119,7 @@ If you import users from different timezones, you need create the users upfront 
 
 If you want to let Kimai create users, you have to supply at least the `Email` field.
 
-#### Example
+### Example
 
 ```csv
 "Date","From","To","Duration","Rate","User","Customer","Project","Activity","Description","Exported","Tags","Hourly rate","Fixed rate"
@@ -116,7 +139,7 @@ If you want to let Kimai create users, you have to supply at least the `Email` f
 
 ## Clockify (Timesheet)
 
-Want to switch from Clockify to Kimai? Export the data in Clockify, open it in Excel and export it as CSV file. 
+Want to switch from Clockify to Kimai? Export the data in Clockify, open it in Excel and export it as CSV file.
 
 | Attribute             | Supported field names                                                                                      |
 |-----------------------|------------------------------------------------------------------------------------------------------------|

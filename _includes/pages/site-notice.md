@@ -4,7 +4,7 @@ Responsible for contents acc. to Sec. 55, para. 2 German Federal Broadcasting Ag
 
 Kevin Papst, Engerthstraße 171/13, 1020 Vienna (Austria)  
 Telephone: +49 (0)30 12087229  
-Email: <kevin@kevinpapst.de>  
+Email: <support@kimai.org>  
 EU-VAT Id: ATU75657727
 
 ### Dispute resolution

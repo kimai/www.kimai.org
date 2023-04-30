@@ -1,5 +1,6 @@
 ---
 title: LDAP structure Example for Kimai and OpenLDAP
+canonical: /documentation/ldap-example.html
 ---
 
 This is an example LDAP data structure, which was used for testing the Kimai LDAP integration with Kimai 1.18 and 2.0.
@@ -154,7 +155,7 @@ kimai:
         user:
             baseDn: ou=users, dc=kimai, dc=org
             attributes:
-                - { ldap_attr: uid, user_method: setUsername }
+                - { ldap_attr: uid, user_method: setUserIdentifier }
                 - { ldap_attr: givenName, user_method: setAlias }
                 - { ldap_attr: mail, user_method: setEmail }
         role:

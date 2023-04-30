@@ -1,9 +1,9 @@
 A Kimai plugin, which allows using barcodes for `punch-in` and `punch-out` time tracking with Kimai.
-You can use it with an attached barcode scanner, or you run Kimai on a device (eg. tablet) with a built-in camera.   
+You can use it with an attached barcode scanner, or you run Kimai on a device (e.g. tablet) with a built-in camera.   
 
 It also supports a "freestyle" mode, which allows to enter any free configurable code (up to 120 characters), 
 so you can also use other devices for starting/stopping:
-- an electronic USB numpad (like door-locks)
+- an electronic USB number-pad
 - an RFID scanner that acts as keyboard 
 
 If you want to use Kimai in a kiosk mode, where your users should only register their attendance time through  
@@ -18,7 +18,10 @@ You can test it in the ["Plugins" demo](https://www.kimai.org/demo/).
 
 ## Features
 
-- Start/Stop work with barcode scanner (eg. via USB), RFIS scanner (via USB) or a device camera (to scan barcode) 
+- Start/Stop work with 
+  - barcode scanner (via device camera, only works via HTTPS)
+  - barcode scanner (via USB or Bluetooth)
+  - RFID scanner (via USB or Bluetooth) 
 - Upon starting/stopping a record via this plugin, the user will see a short overview screen with the entries of the current week (including some statistics)
 - New user profile screen for the "codes"
   - Display all codes for user
