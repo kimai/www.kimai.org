@@ -93,21 +93,21 @@ This will import timesheets and create these elements on the fly:
 | Duration       | timesheet duration in seconds                             |
 | Tags           | comma separated list of tag-names                         |
 | Exported       | whether the timesheet should be marked as exported or not |
-| Rate           | TODO document me TODO                                     |
-| HourlyRate     | TODO document me TODO                                     |
-| InternalRate   | TODO document me TODO                                     |
-| FixedRate      | TODO document me TODO                                     |
-| Billable       | TODO document me TODO                                     |
-| Description    | TODO document me TODO                                     |
-| Tags           | TODO document me TODO                                     |
-| Project        | TODO document me TODO                                     |
-| Customer       | TODO document me TODO                                     |
-| Activity       | TODO document me TODO                                     |
-| Begin          | TODO document me TODO                                     |
-| End            | TODO document me TODO                                     |
-| Date           | TODO document me TODO                                     |
-| From           | TODO document me TODO                                     |
-| To             | TODO document me TODO                                     |
+| Rate           | TODO ...                                                  |
+| HourlyRate     | TODO ...                                                  |
+| InternalRate   | TODO ...                                                  |
+| FixedRate      | TODO ...                                                  |
+| Billable       | TODO ...                                                  |
+| Description    | TODO ...                                                  |
+| Tags           | TODO ...                                                  |
+| Project        | TODO ...                                                  |
+| Customer       | TODO ...                                                  |
+| Activity       | TODO ...                                                  |
+| Begin          | TODO ...                                                  |
+| End            | TODO ...                                                  |
+| Date           | TODO ...                                                  |
+| From           | TODO ...                                                  |
+| To             | TODO ...                                                  |
 | User           | Username                                                  |
 | Email          | User email (required when creating users)                 |
 
