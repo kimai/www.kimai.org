@@ -5,7 +5,7 @@ It features two new dashboard widgets and a new "Task management" administration
 
 {% include plugins/task-management.md %}
 
-API Documentation can be found in the [plugins demo](https://demo-plugins.kimai.org/api/doc) - credentials [here]({% link _pages/demo.md %}).
+API Documentation can be found in the [Plugin demo]({% link _pages/demo.md %}).
 
 ## Dashboard widgets
 
