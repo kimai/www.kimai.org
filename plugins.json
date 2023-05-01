@@ -11,8 +11,8 @@ permalink: /plugins.json
         {%- assign settings = site.data.store[product.slug] -%}
         {%- assign minimumVersion = nil -%}
         {%- for version in settings.bundle.versions -%}
-            {% assign startsVersion = version[1] | slice: 0, 2 %}
-            {% if startsVersion == '2.' %}
+            {%- assign startsVersion = version[1] | slice: 0, 2 -%}
+            {%- if startsVersion == '2.' -%}
                 {%- assign minimumVersion = version[1] -%}
             {%- endif -%}
         {%- endfor -%}
