@@ -189,7 +189,7 @@ layout: content
                                         {{ site.data[page.lang].translation.try-it }}
                                     </h4>
                                     <p class="mb-3">
-                                        {{ site.data[page.lang].translation.plugin-demo-at }} <a href="https://demo-plugins.kimai.org">https://demo-plugins.kimai.org</a>:
+                                        {{ site.data[page.lang].translation.plugin-demo-at }} <a href="https://demo-branch.kimai.org">demo-branch.kimai.org</a>:
                                     </p>
                                     <p>
                                         {{ site.data[page.lang].translation.username }}: <strong>susan_super</strong>
@@ -322,7 +322,6 @@ layout: content
                             <div class="card-body">
                                 <p>{{ site.data[page.lang].translation.compatibility-info }}</p>
 
-                                {% comment %}
                                 {% assign compatibleWithTwo = false %}
                                 {% for version in settings.bundle.versions %}
                                     {% assign startsVersion = version[1] | slice: 0, 2 %}
@@ -331,11 +330,8 @@ layout: content
                                     {% endif %}
                                 {% endfor %}
                                 {% if compatibleWithTwo == false %}
-                                    {% include alert.html icon="fas fa-exclamation" type="warning" alert="This bundle does yet NOT confirm compatibility with the upcoming version 2.0" %}
-                                {% else %}
-                                    {% include alert.html icon="fas fa-exclamation" type="success" alert="This bundle does confirm compatibility with the upcoming version 2.0" %}
+                                    {% include alert.html icon="fas fa-exclamation" type="warning" alert="This bundle is NOT compatible with Kimai version >= 2.0" %}
                                 {% endif %}
-                                {% endcomment %}
 
                                 <table class="table">
                                     <thead>
