@@ -5,28 +5,32 @@ description: Add free configurable custom fields to your Kimai installation
 
 {% include plugins/custom-fields.md %}  
 
-## Field types
+Custom fields can be of the following type:
+`string`, `integer`, `number`, `duration`, `money`, `language`, `currency`, `country`, `color`, `date`, `datetime`, `email`, `textarea`, `invoice template`, `checkbox`, `choice-list`
 
+## Field types
+ 
 The custom fields will be shown on the "create and edit entity" forms and can have the following types:
 
-| Input field type     | Description                                                                         |
-|----------------------|-------------------------------------------------------------------------------------|
-| `string`             | simple text field                                                                   |
-| `integer`            | number without decimal point                                                        |
-| `number`             | number with decimal places                                                          |
-| `duration`           | enter a duration in [various formats]({% link _documentation/duration-format.md %}) |
-| `money`              |                                                                                     |
-| `language`           | dropdown of languages, shown in the user language                                   |
-| `currency`           | dropdown of currencies, shown in the user language                                  |
-| `country`            | dropdown of countries, shown in the user language                                   |
-| `color`              | browser specific input element to select a color                                    |
-| `date`               | type a date or select it from the datepicker                                        |
-| `datetime`           | type a date and time or select it from the picker                                   |
-| `email`              | enter an email address (with basic validation)                                      |
-| `textarea`           | multi-line text field                                                               |
-| `invoice template`   | dropdown                                                                            |
-| `checkbox`           | on/off                                                                              |
-| `choice-list`        | drop-down with custom entries                                                       |
+| Input field type   | Description                                                                         |
+|--------------------|-------------------------------------------------------------------------------------|
+| `string`           | simple text field                                                                   |
+| `integer`          | number without decimal point                                                        |
+| `number`           | number with decimal places                                                          |
+| `duration`         | enter a duration in [various formats]({% link _documentation/duration-format.md %}) |
+| `money`            |                                                                                     |
+| `language`         | dropdown of languages, shown in the user language                                   |
+| `currency`         | dropdown of currencies, shown in the user language                                  |
+| `country`          | dropdown of countries, shown in the user language                                   |
+| `color`            | browser specific input element to select a color                                    |
+| `date`             | type a date or select it from the datepicker                                        |
+| `datetime`         | type a date and time or select it from the picker                                   |
+| `email`            | enter an email address (with basic validation)                                      |
+| `url`              | URL field                                                                           |
+| `textarea`         | multi-line text field                                                               |
+| `invoice template` | dropdown                                                                            |
+| `checkbox`         | on/off                                                                              |
+| `choice-list`      | drop-down with custom entries                                                       |
 {: .table }
    
 ### Checkbox
