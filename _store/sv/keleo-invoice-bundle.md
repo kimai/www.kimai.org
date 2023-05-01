@@ -1,7 +1,7 @@
 ---
 title: Invoicing with automatic PDF timesheets
 slug: invoice-bundle
-type: plugin
+type: featured
 lang: sv
 permalink: /sv/store/keleo-invoice-bundle.html
 ---

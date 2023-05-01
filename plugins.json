@@ -9,20 +9,31 @@ permalink: /plugins.json
     {
         {%- assign translation = site.data['en'].store.items[product.slug] -%}
         {%- assign settings = site.data.store[product.slug] -%}
+        {%- assign minimumVersion = nil -%}
+        {%- for version in settings.bundle.versions -%}
+            {%- assign startsVersion = version[1] | slice: 0, 2 -%}
+            {%- if startsVersion == '2.' -%}
+                {%- assign minimumVersion = version[1] -%}
+            {%- endif -%}
+        {%- endfor -%}
         {%- assign developer = site.data.developer[settings.developer] -%}
         "name": "{{ product.title }}",
         "url": "{{ product.url | absolute_url }}",
-        {%- if settings.gumroad != nil %}
+        {%- if settings.lemonsqueezy != nil %}
+        "buy": "{{ settings.lemonsqueezy }}",
+        {%- elsif settings.gumroad != nil %}
         "buy": "https://gum.co/{{ settings.gumroad }}",{%- endif %}
         "developer": {
             "name": "{{ developer.name }}",
             "homepage": {% if developer.homepage %}"{{ developer.homepage }}"{% else %}null{% endif %}
         },
+        "minimum_version": {% if minimumVersion == nil %}null{% else %}"{{ minimumVersion }}"{% endif %},
         "bundle": {% if settings.bundle %}"{{ settings.bundle.name }}"{% else %}null{% endif %},
+        "featured": {% if product.type == 'featured' %}true{% else %}false{% endif %},
         "icon": "{{ settings.icon | default: "fas fa-question" }}",
         "description": "{{ translation.intro }}",
         "new": {% if settings.new %}true{% else %}false{% endif %},
-        "price": {% if settings.price == nil %}null{% else %}"{{ settings.price }}"{% endif %}
+        "price": {% if settings.subscription != nil %}"{{ settings.subscription }}"{% elsif settings.price == nil %}null{% else %}"{{ settings.price }}"{% endif %}
     }{% unless forloop.last %},{% endunless %}
     {% endfor %}
 ]

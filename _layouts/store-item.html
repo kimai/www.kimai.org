@@ -6,8 +6,11 @@ layout: content
 {% assign developer = site.data.developer[settings.developer] %}
 {% assign icon = settings.icon | default: "fas fa-question" %}
 {% assign buyLink = '' %}
-{% assign buyIcon = 'fas fa-download' %}
+{% assign buyBtnIcon = 'fas fa-download' %}
+{% assign buyIcon = 'fas fa-shopping-cart' %}
+{% assign pricing = 0 %}
 {% assign buyTitle = site.data[page.lang].translation.download %}
+{% assign buySubTitle = '' %}
 {% assign purchase_details = nil %}
 {% assign documentation = nil %}
 {% if settings.documentation %}
@@ -23,36 +26,66 @@ layout: content
 {% endif %}
 {% if settings.download %}
     {% assign buyLink = settings.download %}
-    {% assign buyIcon = 'fas fa-download' %}
+    {% assign buyBtnIcon = 'fas fa-download' %}
     {% assign buyTitle = site.data[page.lang].translation.download %}
 {% elsif settings.email %}
     {% assign buyLink = 'mailto:' | append: settings.email %}
-    {% assign buyIcon = 'fas fa-at' %}
+    {% assign buyBtnIcon = 'fas fa-at' %}
     {% assign buyTitle = site.data[page.lang].translation.contact %}
 {% elsif settings.play-store %}
     {% assign buyLink = settings.play-store %}
-    {% assign buyIcon = 'fab fa-google-play' %}
+    {% assign buyBtnIcon = 'fab fa-google-play' %}
     {% assign buyTitle = 'Play Store' %}
 {% elsif settings.app-store %}
     {% assign buyLink = settings.app-store %}
-    {% assign buyIcon = 'fab fa-app-store-ios' %}
+    {% assign buyBtnIcon = 'fab fa-app-store-ios' %}
     {% assign buyTitle = 'App Store' %}
-{% elsif settings.gumroad %}
-    {% if settings.price == 0 %}
-        {% assign buyTitle = site.data[page.lang].translation.download %}
-    {% else %}
-        {% assign buyTitle = site.data[page.lang].translation.store-buy-button %}
+{% elsif settings.lemonsqueezy %}
+    {% if developer.purchase_details %}
+        {% assign purchase_details = developer.purchase_details %}
     {% endif %}
+    {% assign buyLink = settings.lemonsqueezy %}
+    {% assign buyBtnIcon = 'fas fa-shopping-cart' %}
+{% elsif settings.gumroad %}
     {% if developer.purchase_details %}
         {% assign purchase_details = developer.purchase_details %}
     {% endif %}
     {% assign buyLink = 'https://gum.co/' | append: settings.gumroad %}
-    {% assign buyIcon = 'fas fa-shopping-cart' %}
+    {% assign buyBtnIcon = 'fas fa-shopping-cart' %}
 {% elsif settings.github %}
     {% assign buyLink = settings.github | append: '/releases' %}
-    {% assign buyIcon = 'fab fa-github' %}
+    {% assign buyBtnIcon = 'fab fa-github' %}
     {% assign buyTitle = site.data[page.lang].translation.download %}
 {% endif %}
+
+{% if settings.price == nil %}
+    {% assign buyIcon = 'fas fa-comments' %}
+{% elsif settings.price != nil and settings.price == 0 %}
+    {% assign buyIcon = 'fas fa-gift' %}
+{% endif %}
+
+{% if settings.subscription != nil and settings.subscription != 0 %}
+    {% assign buyTitle = site.data[page.lang].translation.store-buy-button %}
+    {% assign pricing = settings.subscription | append: ' per year' %}
+    {% assign buySubTitle = site.data[page.lang].translation.price-without-vat %}
+{% elsif settings.price == nil %}
+    {% assign pricing = site.data[page.lang].translation.price-contract %}
+{% elsif settings.price != nil and settings.price != 0 %}
+    {% assign buyTitle = site.data[page.lang].translation.store-buy-button %}
+    {% assign pricing = settings.price %}
+    {% assign buySubTitle = site.data[page.lang].translation.price-without-vat %}
+{% else %}
+    {% assign buyTitle = site.data[page.lang].translation.download %}
+    {% assign pricing = site.data[page.lang].translation.free-badge %}
+{% endif %}
+
+{% assign compatibleWithTwo = false %}
+{% for version in settings.bundle.versions %}
+    {% assign startsVersion = version[1] | slice: 0, 2 %}
+    {% if startsVersion == '2.' %}
+        {% assign compatibleWithTwo = true %}
+    {% endif %}
+{% endfor %}
 
 {% include page-title.html title=translation.title %}
 
@@ -67,58 +100,32 @@ layout: content
                         <div class="col-md-6 col-lg-12">
                             <div class="card p-3 mb-3">
                                 <div class="d-flex align-items-center">
-                                    {% if settings.gumroad %}
-                                    <a href="https://gum.co/{{ settings.gumroad }}" onclick="location.href='https://gum.co/{{ settings.gumroad }}';return false;">
+                                    {% if buyLink != '' %}
+                                    <a href="{{ buyLink }}">
                                         <span class="avatar text-white bg-blue me-2">
                                           <i class="fas fa-euro-sign"></i>
                                         </span>
                                     </a>
                                     {% else %}
                                         <span class="avatar text-white bg-blue me-3">
-                                            {% if settings.price == nil %}
-                                            <i class="fas fa-comments"></i>
-                                            {% elsif settings.price == 0 %}
-                                            <i class="fas fa-gift"></i>
-                                            {% else %}
-                                            <i class="fas fa-shopping-cart"></i>
-                                            {% endif %}
+                                            <i class="{{ buyIcon }}"></i>
                                         </span>
                                     {% endif %}
                                     <div>
                                         <h4 class="m-0">
-                                            {% if settings.price == nil %}
-                                                {{ site.data[page.lang].translation.price-contract }}
-                                            {% elsif settings.price == 0 %}
-                                                {{ site.data[page.lang].translation.free-badge }}
-                                            {% else %}
-                                                {{ settings.price }} ({{ site.data[page.lang].translation.price-without-vat }})
-                                            {% endif %}
+                                            {{ pricing }}
                                         </h4>
                                         <small class="text-muted">
-                                            {{ site.data[page.lang].translation.seller-details }}
+                                            {{ buySubTitle }}
                                         </small>
                                     </div>
                                 </div>
                             </div>
 
-                            {% if settings.bundle %}
-                            <div class="card p-1 mb-3">
-                                <div class="card-body">
-                                    <strong>{{ site.data[page.lang].translation.table-of-contents }}</strong>
-                                    <ul class="list-unstyled">
-                                        <li><a href="#features">{{ site.data[page.lang].translation.store-features }}</a></li>
-                                        {%- if purchase_details %}
-                                        <li><a href="#purchase">{{ site.data[page.lang].translation.store-purchase }}</a></li>
-                                        {% endif %}
-                                        {% if screenshots %}
-                                        <li><a href="#screenshots">{{ site.data[page.lang].translation.screenshots-title }}</a></li>
-                                        {% endif %}
-                                        {% if settings.bundle and settings.bundle.versions %}
-                                        <li><a href="#compatibility">{{ site.data[page.lang].translation.compatibility }}</a></li>
-                                        {% endif %}
-                                        <li><a href="#installation">{{ site.data[page.lang].translation.installation }}</a></li>
-                                        <li><a href="#updates">{{ site.data[page.lang].translation.updates }}</a></li>
-                                    </ul>
+                            {% if compatibleWithTwo == false %}
+                            <div class="card mb-3">
+                                <div class="card-body p-0">
+                                    {% include alert.html icon="fas fa-exclamation" type="danger" alert="This bundle is NOT compatible with Kimai version >= 2.0" %}
                                 </div>
                             </div>
                             {% endif %}
@@ -176,7 +183,7 @@ layout: content
                                         {{ site.data[page.lang].translation.try-it }}
                                     </h4>
                                     <p class="mb-3">
-                                        {{ site.data[page.lang].translation.plugin-demo-at }} <a href="https://demo-plugins.kimai.org">https://demo-plugins.kimai.org</a>:
+                                        {{ site.data[page.lang].translation.plugin-demo-at }} <a href="https://demo-branch.kimai.org">demo-branch.kimai.org</a>:
                                     </p>
                                     <p>
                                         {{ site.data[page.lang].translation.username }}: <strong>susan_super</strong>
@@ -189,6 +196,30 @@ layout: content
                                 </div>
                             </div>
                             {% endif %}
+
+                            {% comment %}
+                            {% if settings.bundle %}
+                            <div class="card p-1 mb-3">
+                                <div class="card-body">
+                                    <strong>{{ site.data[page.lang].translation.table-of-contents }}</strong>
+                                    <ul class="list-unstyled">
+                                        <li><a href="#features">{{ site.data[page.lang].translation.store-features }}</a></li>
+                                        {% if screenshots %}
+                                        <li><a href="#screenshots">{{ site.data[page.lang].translation.screenshots-title }}</a></li>
+                                        {% endif %}
+                                        {%- if purchase_details %}
+                                        <li><a href="#purchase">{{ site.data[page.lang].translation.store-purchase }}</a></li>
+                                        {% endif %}
+                                        {% if settings.bundle and settings.bundle.versions %}
+                                        <li><a href="#compatibility">{{ site.data[page.lang].translation.compatibility }}</a></li>
+                                        {% endif %}
+                                        <li><a href="#installation">{{ site.data[page.lang].translation.installation }}</a></li>
+                                        <li><a href="#updates">{{ site.data[page.lang].translation.updates }}</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            {% endif %}
+                            {% endcomment %}
 
                             {% if screenshot != nil %}
                             <div class="card p-3 mb-3">
@@ -250,7 +281,7 @@ layout: content
 
                                 {% if buyLink != '' %}
                                     <a href="{{ buyLink }}" class="btn btn-success ms-2" target="_blank">
-                                        <i class="{{ buyIcon }}"></i>
+                                        <i class="{{ buyBtnIcon }}"></i>
                                         <span class="text-nowrap">{{ buyTitle }}</span>
                                     </a>
                                 {% endif %}
@@ -264,28 +295,7 @@ layout: content
                             {{ content }}
                         </div>
                     </div>
-                    {%- if purchase_details %}
-                        <div class="card mb-3">
-                            <div class="card-header">
-                                <div class="d-flex align-items-center px-2">
-                                    <h3 id="purchase" class="card-title">{{ site.data[page.lang].translation.store-purchase }}</h3>
-                                </div>
-                                <div class="card-options">
-                                    <a href="{{ buyLink }}" class="btn btn-success ms-2" target="_blank">
-                                        <i class="{{ buyIcon }}"></i>
-                                        <span class="text-nowrap">{{ buyTitle }}</span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="card-body p-4">
-                                <ul>
-                                {% for detail in purchase_details %}
-                                    <li>{{ detail }}</li>
-                                {% endfor %}
-                                </ul>
-                            </div>
-                        </div>
-                    {% endif %}
+
                     {% if screenshots %}
                         <div class="card mb-3">
                             <div class="card-header">
@@ -298,6 +308,30 @@ layout: content
                             </div>
                         </div>
                     {% endif %}
+
+                    {%- if purchase_details %}
+                    <div class="card mb-3">
+                        <div class="card-header">
+                            <div class="d-flex align-items-center px-2">
+                                <h3 id="purchase" class="card-title">{{ site.data[page.lang].translation.store-purchase }}</h3>
+                            </div>
+                            <div class="card-options">
+                                <a href="{{ buyLink }}" class="btn btn-success ms-2" target="_blank">
+                                    <i class="{{ buyBtnIcon }}"></i>
+                                    <span class="text-nowrap">{{ buyTitle }}</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-body p-4">
+                            <ul>
+                                {% for detail in purchase_details %}
+                                <li>{{ detail }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    {% endif %}
+
                     {% if settings.bundle %}
                         {% if settings.bundle.versions %}
                         <div class="card mb-3">
@@ -305,25 +339,12 @@ layout: content
                                 <div class="d-flex align-items-center px-2">
                                     <h3 id="compatibility" class="card-title">{{ site.data[page.lang].translation.compatibility }}</h3>
                                 </div>
+                                <div class="card-actions">
+                                    <a class="btn btn-icon collapsed" href="#" data-bs-toggle="collapse" data-bs-target=".collapse_compatibility" data-bs-placement="top" title="Toggle" aria-expanded="false"><i class="icon fas fa-chevron-down"></i></a>
+                                </div>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body collapse_compatibility collapse">
                                 <p>{{ site.data[page.lang].translation.compatibility-info }}</p>
-
-                                {% comment %}
-                                {% assign compatibleWithTwo = false %}
-                                {% for version in settings.bundle.versions %}
-                                    {% assign startsVersion = version[1] | slice: 0, 2 %}
-                                    {% if startsVersion == '2.' %}
-                                        {% assign compatibleWithTwo = true %}
-                                    {% endif %}
-                                {% endfor %}
-                                {% if compatibleWithTwo == false %}
-                                    {% include alert.html icon="fas fa-exclamation" type="warning" alert="This bundle does yet NOT confirm compatibility with the upcoming version 2.0" %}
-                                {% else %}
-                                    {% include alert.html icon="fas fa-exclamation" type="success" alert="This bundle does confirm compatibility with the upcoming version 2.0" %}
-                                {% endif %}
-                                {% endcomment %}
-
                                 <table class="table">
                                     <thead>
                                     <tr>
@@ -353,8 +374,11 @@ layout: content
                                 <div class="d-flex align-items-center px-2">
                                     <h3 id="installation" class="card-title">{{ site.data[page.lang].translation.installation }}</h3>
                                 </div>
+                                <div class="card-actions">
+                                    <a class="btn btn-icon collapsed" href="#" data-bs-toggle="collapse" data-bs-target=".collapse_installation" data-bs-placement="top" title="Toggle" aria-expanded="false"><i class="icon fas fa-chevron-down"></i></a>
+                                </div>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body collapse_installation collapse">
                                 {% include store-plugin-installation.html clone=settings.bundle.clone plugin=settings.bundle.name command=settings.bundle.command assets=settings.bundle.assets %}
                             </div>
                         </div>
@@ -364,8 +388,11 @@ layout: content
                                 <div class="d-flex align-items-center px-2">
                                     <h3 id="updates" class="card-title">{{ site.data[page.lang].translation.updates }}</h3>
                                 </div>
+                                <div class="card-actions">
+                                    <a class="btn btn-icon collapsed" href="#" data-bs-toggle="collapse" data-bs-target=".collapse_update" data-bs-placement="top" title="Toggle" aria-expanded="false"><i class="icon fas fa-chevron-down"></i></a>
+                                </div>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body collapse_update collapse">
                                 {% include store-plugin-update.html plugin=settings.bundle.name command=settings.bundle.command assets=settings.bundle.assets %}
                             </div>
                         </div>

@@ -10,7 +10,7 @@ related:
 ---
 
 Read the Swagger documentation of the Kimai API in your Kimai installation at `/api/doc`.
-For example, you can have a look at the API docs for the demo installation at [{{ site.kimai_v2_demo }}/api/doc]({{ site.kimai_v2_demo }}/api/doc).
+For example, you can have a look at the API docs for the demo installation at [https://demo.kimai.org/api/doc](https://demo.kimai.org/api/doc).
 You need to authenticate to see them, credentials can be [found here]({% link _pages/demo.md %}).
 
 Or you can export the JSON collection by visiting `/api/doc.json`. Save the result in a file, which can be imported with Postman.
