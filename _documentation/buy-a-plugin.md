@@ -7,13 +7,12 @@ Thanks for your interest in a paid Kimai plugin.
 
 ## Order and Payment
 
-Kimai plugins are sold through the processor Gumroad Inc. and Lemon Squeezy., both of them accept payments via CreditCard and PayPal.
+Kimai plugins are sold through the processor Lemon Squeezy, who accepts CreditCard payments.
 
-If you don't want or can't use this method, I offer direct bank-transfer payments as well.
-Please write an email to [support@kimai.org](mailto:support@kimai.org) and ask for the bank account.
+If you can't use this method, I offer direct bank-transfer payments as well.
+Please write an email to [support@kimai.org](mailto:support@kimai.org) and ask for the details.
 
-After successful purchase, you get access to the plugin files, which need to be installed in your existing Kimai installation.
-You get access either through Gumroad, Lemon Squeezy or in case of a bank-transfer payment via email.
+After successful purchase via bank transfer, you get a discount code for Lemon Squeezy, which can be used to get free access to the plugin.
 
 ## License terms for paid plugins 
 
