@@ -122,13 +122,15 @@ layout: content
                                 </div>
                             </div>
 
-                            {% if compatibleWithTwo == false %}
                             <div class="card mb-3">
                                 <div class="card-body p-0">
-                                    {% include alert.html icon="fas fa-exclamation" type="danger" alert="This bundle is NOT compatible with Kimai version >= 2.0" %}
+                                    {% if compatibleWithTwo == false %}
+                                        {% include alert.html type="danger" alert="This bundle is NOT compatible with Kimai version >= 2.0" %}
+                                    {% else %}
+                                        {% include alert.html type="success" alert="This bundle is compatible with Kimai version >= 2.0" %}
+                                    {% endif %}
                                 </div>
                             </div>
-                            {% endif %}
 
                             <div class="card mb-3">
                                 <div class="card-body text-center">
