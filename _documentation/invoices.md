@@ -276,42 +276,38 @@ Use the twig include feature with the `@invoice` namespace . The following examp
 
 #### Custom fields
 
-Iterating above all entries (line items) in the invoice with `{% raw %}{% for id, entry in model.calculator.entries %}{% endraw %}` 
+Iterating above all entries (line items) in the invoice with `{% raw %}{% for line in entries %}{% endraw %}` 
 allows access to your custom fields.
 
-Want to use a **timesheet custom field** in your template?
+Want to use a **timesheet custom-field** in your template?
 ```twig
-{% raw %}{% set meta = entry.getMetaFieldValue('foo') %}
-{% if meta is not null %}
-    Foo: {{ meta }}
+{% raw %}{% if line['entry.meta.foo'] is defined %}
+    Foo: {{ line['entry.meta.foo'] }}
 {% endif %}{% endraw %}
 ``` 
 Please be aware:
 - you can access timesheet custom fields only if you use the "sum calculation" standard, which creates one invoice line item per timesheet.
 - if you group timesheets e.g. by project, you loose access to their custom fields.
-- entries could be of type "expense" or other types (depending on your used plugins), you can test that with `{% raw %}{% if entry.type == 'timesheet' '%}{% endraw %}` 
+- entries could be of type "expense" or other types (depending on your used plugins), you can test that with `{% raw %}{% if line['entry.type'] == 'timesheet' '%}{% endraw %}` 
 
-Want to use a **customer custom field** in your template?
+Want to use a **customer custom-field** in your template?
 ```twig
-{% raw %}{% set meta = entry.customer.getMetaFieldValue('foo') %}
-{% if meta is not null %}
-    Foo: {{ meta }}
+{% raw %}{% if invoice['customer.meta.foo'] is defined %}
+    Foo: {{ invoice['customer.meta.foo'] }}
 {% endif %}{% endraw %}
 ``` 
 
-Want to use a **project custom field** in your template?
+Want to use a **project custom-field** in your template?
 ```twig
-{% raw %}{% set meta = entry.project.getMetaFieldValue('foo') %}
-{% if meta is not null %}
-    Foo: {{ meta }}
+{% raw %}{% if line['entry.project.meta.foo'] is defined %}
+    Foo: {{ line['entry.project.meta.foo'] }}
 {% endif %}{% endraw %}
 ``` 
 
 Want to use a **user preference** in your template?
 ```twig
-{% raw %}{% set meta = entry.user.getMetaFieldValue('foo') %}
-{% if meta is not null %}
-    Foo: {{ meta }}
+{% raw %}{% if line['entry.user_preference.foo'] is defined %}
+    Foo: {{ line['entry.user_preference.foo'] }}
 {% endif %}{% endraw %}
 ``` 
 
@@ -424,42 +420,43 @@ Twig rendering is different, you have to access the variables with `{% raw %}{{ 
 
 For each timesheet record you can use these variables:
 
-| Key                       | Description                                                                                                                                                                                                         | Example         |
-|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|
-| ${entry.row}              | An empty string, used as template row for docx                                                                                                                                                                      |                 |
-| ${entry.description}      | The entries description                                                                                                                                                                                             | _foo bar_       |
-| ${entry.amount}           | The format duration/amount for this entry                                                                                                                                                                           | 02:47 h         |
-| ${entry.rate}             | The rate for one unit of the entry (normally one hour) with currency                                                                                                                                                | 1.100,01 EUR    |
-| ${entry.rate_nc}          | The rate for one unit of the entry without currency                                                                                                                                                                 | 1100,01         |
-| ${entry.rate_plain}       | The rate for one unit of the entry as unformatted value                                                                                                                                                             | 1100.01         |
-| ${entry.total}            | The total rate for this entry with currency                                                                                                                                                                         | 1.278,33 EUR    |
-| ${entry.total_nc}         | The total rate for this entry without currency                                                                                                                                                                      | 1.278,33        |
-| ${entry.total_plain}      | The total rate as unformatted value                                                                                                                                                                                 | 1278.33         |
-| ${entry.currency}         | The currency for this record as string (like EUR or USD)                                                                                                                                                            | EUR             |
-| ${entry.duration}         | The duration in seconds                                                                                                                                                                                             | 10020           |
-| ${entry.duration_decimal} | The duration in decimal format (with localized separator)                                                                                                                                                           | 2.78            |
-| ${entry.duration_minutes} | The duration in minutes with no decimals                                                                                                                                                                            | 167             |
-| ${entry.begin}            | The begin date (format depends on the users language)                                                                                                                                                               | 27.10.2018      |
-| ${entry.begin_time}       | The formatted time for the begin of this entry                                                                                                                                                                      | 14:57           |
-| ${entry.begin_timestamp}  | The timestamp for the begin of this entry                                                                                                                                                                           | 1542016273      |
-| ${entry.end}              | The begin date  (format depends on the users language)                                                                                                                                                              | 27.10.2018      |
-| ${entry.end_time}         | The formatted time for the end of this entry                                                                                                                                                                        | 17:44           |
-| ${entry.end_timestamp}    | The timestamp for the end of this entry                                                                                                                                                                             | 1542016273      |
-| ${entry.date}             | The start date when this record was created                                                                                                                                                                         | 27.10.2018      |
-| ${entry.week}             | The start week number when this record was created                                                                                                                                                                  | 39              |
-| ${entry.weekyear}         | The corresponding year to the week number                                                                                                                                                                           | 2018            |
-| ${entry.user_id}          | The user ID                                                                                                                                                                                                         | 1               |
-| ${entry.user_name}        | The username                                                                                                                                                                                                        | susan_super     |
-| ${entry.user_alias}       | The user alias                                                                                                                                                                                                      | Susan Miller    |
-| ${entry.activity}         | Activity name                                                                                                                                                                                                       | Post production |
-| ${entry.activity_id}      | Activity ID                                                                                                                                                                                                         | 124             |
-| ${entry.project}          | Project name                                                                                                                                                                                                        | Nemesis         |
-| ${entry.project_id}       | Project ID                                                                                                                                                                                                          | 10              |
-| ${entry.customer}         | Customer name                                                                                                                                                                                                       | Acme Studios    |
-| ${entry.customer_id}      | Customer ID                                                                                                                                                                                                         | 3               |
-| ${entry.meta.foo}         | The [meta field]({% link _documentation/meta-fields.md %}) with the internal name `foo` (must be in lowercase letters, e.g. `FOO` will be available as `${entry.meta.foo}`. Only available if the field is visible. |
-| ${entry.type}             | The type of this entry (plugins can add custom types)                                                                                                                                                               | timesheet       |
-| ${entry.category}         | The category of this entry (plugins can add custom types)                                                                                                                                                           | work            |
+| Key                          | Description                                                                                                                                                                                                          | Example         |
+|------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|
+| ${entry.row}                 | An empty string, used as template row for docx                                                                                                                                                                       |                 |
+| ${entry.description}         | The entries description                                                                                                                                                                                              | _foo bar_       |
+| ${entry.amount}              | The format duration/amount for this entry                                                                                                                                                                            | 02:47 h         |
+| ${entry.rate}                | The rate for one unit of the entry (normally one hour) with currency                                                                                                                                                 | 1.100,01 EUR    |
+| ${entry.rate_nc}             | The rate for one unit of the entry without currency                                                                                                                                                                  | 1100,01         |
+| ${entry.rate_plain}          | The rate for one unit of the entry as unformatted value                                                                                                                                                              | 1100.01         |
+| ${entry.total}               | The total rate for this entry with currency                                                                                                                                                                          | 1.278,33 EUR    |
+| ${entry.total_nc}            | The total rate for this entry without currency                                                                                                                                                                       | 1.278,33        |
+| ${entry.total_plain}         | The total rate as unformatted value                                                                                                                                                                                  | 1278.33         |
+| ${entry.currency}            | The currency for this record as string (like EUR or USD)                                                                                                                                                             | EUR             |
+| ${entry.duration}            | The duration in seconds                                                                                                                                                                                              | 10020           |
+| ${entry.duration_decimal}    | The duration in decimal format (with localized separator)                                                                                                                                                            | 2.78            |
+| ${entry.duration_minutes}    | The duration in minutes with no decimals                                                                                                                                                                             | 167             |
+| ${entry.begin}               | The begin date (format depends on the users language)                                                                                                                                                                | 27.10.2018      |
+| ${entry.begin_time}          | The formatted time for the begin of this entry                                                                                                                                                                       | 14:57           |
+| ${entry.begin_timestamp}     | The timestamp for the begin of this entry                                                                                                                                                                            | 1542016273      |
+| ${entry.end}                 | The begin date  (format depends on the users language)                                                                                                                                                               | 27.10.2018      |
+| ${entry.end_time}            | The formatted time for the end of this entry                                                                                                                                                                         | 17:44           |
+| ${entry.end_timestamp}       | The timestamp for the end of this entry                                                                                                                                                                              | 1542016273      |
+| ${entry.date}                | The start date when this record was created                                                                                                                                                                          | 27.10.2018      |
+| ${entry.week}                | The start week number when this record was created                                                                                                                                                                   | 39              |
+| ${entry.weekyear}            | The corresponding year to the week number                                                                                                                                                                            | 2018            |
+| ${entry.user_id}             | The user ID                                                                                                                                                                                                          | 1               |
+| ${entry.user_name}           | The username                                                                                                                                                                                                         | susan_super     |
+| ${entry.user_alias}          | The user alias                                                                                                                                                                                                       | Susan Miller    |
+| ${entry.user_preference.foo} | The user preference called `foo`                                                                                                                                                                                     | bar             |
+| ${entry.activity}            | Activity name                                                                                                                                                                                                        | Post production |
+| ${entry.activity_id}         | Activity ID                                                                                                                                                                                                          | 124             |
+| ${entry.project}             | Project name                                                                                                                                                                                                         | Nemesis         |
+| ${entry.project_id}          | Project ID                                                                                                                                                                                                           | 10              |
+| ${entry.customer}            | Customer name                                                                                                                                                                                                        | Acme Studios    |
+| ${entry.customer_id}         | Customer ID                                                                                                                                                                                                          | 3               |
+| ${entry.meta.foo}            | The [meta field]({% link _documentation/meta-fields.md %}) with the internal name `foo` (must be in lowercase letters, e.g. `FOO` will be available as `${entry.meta.foo}`. Only available if the field is visible.  |
+| ${entry.type}                | The type of this entry (plugins can add custom types)                                                                                                                                                                | timesheet       |
+| ${entry.category}            | The category of this entry (plugins can add custom types)                                                                                                                                                            | work            |
 
 ### Customer variables
 
@@ -518,7 +515,7 @@ If your template relies on a `{$project.X}` variable, it is recommended to limit
 
 ### Activity variables
 
-ONLY if an activity was selected in the invoice filter (search form) the following variables exist:
+The following variables exist, if activities could be found in the filtered data:
 
 | Key                                | Description (highlighted words are the names in the UI)                                                                                                                                                                          |
 |------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
