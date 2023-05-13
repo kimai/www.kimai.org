@@ -24,25 +24,28 @@ document.addEventListener('kimai.initialized', function(event) {
 });
 ```
 
-Select an Activity e.g. to simulate a global default activity. The ID `1234` is the Activity ID to be selected (should be global).
+Select an Activity e.g. to simulate a global default activity. The ID `6451` is the Activity ID to be selected (should be global).
 ```javascript
-$('body').on('change.select2', '#timesheet_edit_form_activity', function() { 
-    setTimeout( function() { $(this).val('1234').trigger('change'); }, 200 ); 
+document.addEventListener('show.bs.modal', (e) => {
+    const activity = e.srcElement.querySelector('#timesheet_edit_form_activity');
+    if (activity !== null) {
+        activity.value = '6451'; 
+        activity.dispatchEvent(new Event('change'));
+    }
 });
 ```
 
-Make sure that the "mark as exported" checkbox in the "invoice screen" is pre-selected: 
+Set the "activity description" upon selection as "timesheet description":
 ```javascript
-$('#invoice-print-form input[name=markAsExported]').prop('checked', true);
-```
-
-Set the activity description upon selection as description for the timesheet record:
-```javascript
-$('body').on('change.select2', '#timesheet_edit_form_activity', function() {
-    const descriptionField = $('#' + $(this.form).prop('name') + '_description');
-    kimai.getPlugin('api').get('/api/activities/' + $(this).val(), {}, function(data) {
-        descriptionField.val(data.comment);
-    });
+document.addEventListener('show.bs.modal', (e) => {
+    const desc = e.srcElement.querySelector('#timesheet_edit_form_description');
+    if (desc !== null) {
+        e.srcElement.querySelector('#timesheet_edit_form_activity').addEventListener('change', (e) => {
+            kimai.getPlugin('api').get('/api/activities/' + e.target.value, {}, function(data) {
+                desc.value = data.comment;
+            });
+        });
+    }
 });
 ```
 
@@ -54,15 +57,23 @@ document.addEventListener('kimai.initialized', function(event) {
 });
 ```
 
-Automatically login with SAML (only works if normal form login is deactivated):
+Automatically login with SAML:
 ```javascript
 document.querySelector('body.login-page #social-login-button')?.click();
 ```
 
-Expand extended timesheet settings (since 2.0 beta 3):
+Always expand extended timesheet settings:
 ```javascript
 document.addEventListener('show.bs.modal', (e) => { 
     e.srcElement.querySelector('#timesheet_extended_settings a[data-bs-toggle]')?.click(); 
+});
+```
+
+Always set a static time in the timesheet screen:
+```javascript
+document.addEventListener('show.bs.modal', (e) => {
+    const time = e.srcElement.querySelector('#timesheet_edit_form_begin_time');
+    if (time !== null) { time.value = '01:00'; }
 });
 ```
 
