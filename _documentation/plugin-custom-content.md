@@ -57,6 +57,16 @@ document.addEventListener('kimai.initialized', function(event) {
 });
 ```
 
+Deactivate a certain field by ID in a modal:
+```javascript
+deactivateField = (source) => {
+    const field = source.querySelector('#expense_form_metaFields_status_value');
+    if (field !== null) { field.disabled = true; if (field.tomselect) { field.tomselect.disable(); } }
+};
+document.addEventListener('show.bs.modal', (e) => { deactivateField(e.srcElement); });
+deactivateField(document);
+```
+
 Automatically login with SAML:
 ```javascript
 document.querySelector('body.login-page #social-login-button')?.click();
