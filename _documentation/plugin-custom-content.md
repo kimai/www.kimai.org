@@ -59,10 +59,10 @@ document.addEventListener('kimai.initialized', function(event) {
 
 Deactivate a certain field by ID in a modal:
 ```javascript
-deactivateField = (source) => {
+function deactivateField(source) {
     const field = source.querySelector('#expense_form_metaFields_status_value');
     if (field !== null) { field.disabled = true; if (field.tomselect) { field.tomselect.disable(); } }
-};
+}
 document.addEventListener('show.bs.modal', (e) => { deactivateField(e.srcElement); });
 deactivateField(document);
 ```
@@ -85,6 +85,11 @@ document.addEventListener('show.bs.modal', (e) => {
     const time = e.srcElement.querySelector('#timesheet_edit_form_begin_time');
     if (time !== null) { time.value = '01:00'; }
 });
+```
+
+Set a custom browser title: 
+```javascript
+document.title = 'My fancy company';
 ```
 
 ### Alert
