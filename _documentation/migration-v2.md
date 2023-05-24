@@ -5,8 +5,7 @@ description: How to migrate your plugins and templates from Kimai 1.x to Kimai 2
 canonical: /documentation/migration-v2.html
 ---
 
-This documentation covers some of the required steps to [migrate your plugin to the upcoming Kimai 2.x]({{ site.kimai_v2_repo }}/pull/2902).
-
+This documentation covers some required steps to [migrate your plugin to the upcoming Kimai 2.x]({{ site.kimai_v2_repo }}/pull/2902).
 
 I started this guide more than 8 months after I started the migration, so there are for sure steps missing.
 If you encounter any issue, please post them at GitHub and we will adjust this documentation together. 
