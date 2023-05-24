@@ -7,18 +7,25 @@ redirect_from:
   - /v1/updates.html
 ---
 
-1. Make sure that you have a working [database backup]({% link _documentation/backups.md %}) before you start the update
-2. Check [UPGRADING]({{ site.kimai_v2_file }}/UPGRADING.md) for required manual changes between your current and the new version 
-3. You can upgrade multiple version at once, eg. from `1.6` to `1.8` while skipping `1.7`
+1. Make sure that you have a working [database backup]({% link _documentation/backups.md %}) before you start the update.
+2. Check [UPGRADING]({{ site.kimai_v2_file }}/UPGRADING.md) for required manual changes between your current and the new version. 
+3. You can upgrade multiple version at once, e.g. from `1.19` to `2.0.22`, skipping everything between.
+4. Some tweaks might be necessary to run the commands listed below, read the [installation documentation]({% link _documentation/installation.md %}) for more information.
 
 ## Updating Kimai 
 
 {% capture alert_note %}
-Some tweaks may be necessary to these instructions if you have a developer setup or update on your local computer 
-instead of a server. Read the [installation documentation]({% link _documentation/installation.md %}) for more information.
+**ATTENTION** when upgrading from 1.30 (or lower) to 2.0: plugins [are not compatible]({% link _posts/2023-05-19-plugin-upgrades-v2.md %}) and need to be removed before the regular update, including a hard cache reload.  
+```bash
+rm -r var/plugins/*
+rm -r var/cache/*
+bin/console kimai:reload
+```
+Don't know which version you are using? [Read this guide]({% link _documentation/versions.md %}) to find out.
 {% endcapture %}
+
 {% assign alert_note = alert_note| markdownify %}
-{% include alert.html type="info" alert=alert_note %} 
+{% include alert.html type="warning" alert=alert_note %} 
 
 Change into your Kimai directory, then fetch the latest code and install all dependencies: 
 ```bash
