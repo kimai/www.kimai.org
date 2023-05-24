@@ -181,7 +181,6 @@ Kimai offers some configuration settings to adapt the branding to your company:
 - `Logo URL` - an absolute URL to an image, which  replaces the company name in login screen
 - `Company name` - replace the application name with your `company` name (approx. 15-20 character)
 - `Mini Logo` - replace the mini version "KTT" with an abbreviation for your company name (3 chars max)
-- `Browser Title` - the browser title which by default shows the full application title 
 - `Financial year` - starts on **first of January** by default 
 
 If you don't set a `logo` but use a value in `company`, this will be used in the login screen.
