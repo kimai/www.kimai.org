@@ -10,14 +10,13 @@ redirect_from:
 
 This documentation covers the necessary steps to migrate from Kimai 1 to Kimai 2.
 
+Read the [version documentation]({% link _documentation/versions.md %}) before, to understand if you need this migration guide.
+
 {% capture upgrade_note %}
 You can <a href="{% link _store/keleo-installation-support.md %}">get professional support</a> if you are not sure about performing the upgrade yourself.
 {% endcapture %}
 
 {% include alert.html type="success" icon="fas fa-shipping-fast" alert=upgrade_note %}
-
-Be aware, Kimai 1 looks like that. If your Kimai looks different, you are not using Kimai 1 and do not need this guide!
-[![Kimai 1 - Main screen]({% link images/screenshots/kimai1-main-screen.png %})]({% link images/screenshots/kimai1-main-screen.png %})
 
 ## Introduction
 
