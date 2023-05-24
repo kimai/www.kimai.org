@@ -161,6 +161,11 @@ Want to switch from Clockify to Kimai? Export the data in Clockify, open it in E
 | Billable Rate (XXX)   | Timesheet hourly rate. XXX = currency (which is not imported, but needs to be configured for the customer) |
 | Billable Amount (XXX) | Timesheet total rate. XXX = currency (which is not imported, but needs to be configured for the customer)  |
 
+**BE AWARE** you have to choose the correct date-format in Clockify, otherwise you will see errors like:
+```
+Failed to parse time string (14/04/2023 9:00) at position 0 (1): Unexpected character
+```
+
 ## Grandtotal (Customer)
 
 There is a [plugin for Mac invoicing software Grandtotal]({% link _store/keleo-grandtotal-plugin-for-kimai.md %}), which adds support for Kimai.
