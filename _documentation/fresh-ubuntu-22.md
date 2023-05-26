@@ -1,21 +1,20 @@
 ---
-title: "Install Kimai on Ubuntu 20.04"
-navigation: Ubuntu 20.04
-description: "How to install Kimai on a brand new Ubuntu 20.04 with database, webserver and SSL certificate"
+title: "Install Kimai on Ubuntu 22.04"
+navigation: Ubuntu 22.04
+description: "How to install Kimai on a brand new Ubuntu 22.04 with database, webserver and SSL certificate"
 toc: true
-canonical: /documentation/fresh-ubuntu-20.html
-redirect_from: /documentation/development/fresh-ubuntu-20.html
+canonical: /documentation/fresh-ubuntu-22.html
 ---
 
-{% include alert.html type="warning" alert="This documentation was not yet tested with latest Kimai. Use Ubuntu 22.04 installation instead!" %}
+{% include alert.html type="success" alert="This documentation was tested with Kimai 2.0." %}
 
-This is a collection of snippets to help you with setting up a fresh Ubuntu 20.04 server for using with Kimai.
+This is a collection of snippets to help you with setting up a fresh Ubuntu 22.04 server for using with Kimai.
 It is neither a fully fledged documentation, explaining each step, nor is it a bash tutorial.
 
 Please see it as a personal snippet collection... in which I assume:
 - that you are familiar with the Linux bash and have at least basic knowledge of vim
 - that you use a single domain on this server, change the nginx configuration accordingly if you have multiple VirtualHosts
-- that you know how to protect your server (UFW, Fail2Ban ...) and can securely run it in the "wild"
+- that you know how to protect your server (UFW, Fail2Ban ...) and can securely run it in the public internet
 
 You must additionally:
 - replace `IP-of-myserver` with the server IP
@@ -72,7 +71,7 @@ And finally on to the server to start the software installation:
 ssh myserver
 ```
 
-### Secure your SSHD configuration
+### Secure your SSH daemon
 
 Make sure your SSH server has at least some basic security settings in place:
 ```bash
@@ -88,29 +87,27 @@ PasswordAuthentication no
 
 And restart the SSH Daemon:
 ```bash
-/etc/init.d/ssh restart
+service sshd restart
 ```
 
 ## Install PHP, webserver and database
 
 Let's start with all required software:
 ```bash
-apt update
-apt upgrade
-apt install git unzip curl vim
-apt install mariadb-server mariadb-client
-apt install nginx
+apt-get update
+apt-get upgrade
+apt-get install git unzip curl vim mariadb-server mariadb-client nginx
 ```
 
 Now before we continue, we enable the well-known and respected Ondřej PPA by @oerdnj to use PHP 8.1:
 ```bash
-apt install software-properties-common
+apt-get install software-properties-common
 add-apt-repository ppa:ondrej/php
 ```
 
 Now install PHP 8.1:
 ```bash
-apt install php8.1-cli php8.1-common php8.1-curl php8.1-fpm php8.1-gd php8.1-intl php8.1-mbstring php8.1-mysql php8.1-opcache php8.1-readline php8.1-xml php8.1-zip
+apt-get install php8.1-cli php8.1-common php8.1-curl php8.1-fpm php8.1-gd php8.1-intl php8.1-mbstring php8.1-mysql php8.1-opcache php8.1-readline php8.1-xml php8.1-zip
 ```
 
 Note: the required packages `php8.1-ctype`, `php8.1-iconv`, `php8.1-json`, `php8.1-pdo` are usually part of other packages like `php8.1-common`, `php8.1-cli` and `php8.1-fpm`
@@ -142,11 +139,10 @@ mysql -u root
 ```
 
 And execute the following statements:
-```mysql
-CREATE DATABASE IF NOT EXISTS `kimai2`;
-CREATE USER IF NOT EXISTS `kimai2`@127.0.0.1 IDENTIFIED BY "my-super-secret-password";
-GRANT select,insert,update,delete,create,alter,drop,index,references ON `kimai2`.* TO kimai2@127.0.0.1;
-exit;
+```sql
+CREATE DATABASE IF NOT EXISTS `kimai`;
+CREATE USER IF NOT EXISTS `kimai`@127.0.0.1 IDENTIFIED BY "my-super-secret-password";
+GRANT select,insert,update,delete,create,alter,drop,index,references ON `kimai`.* TO kimai@127.0.0.1;
 ```
 > Replace "my-super-secret-password" with a strong password and probably change the username as well.
 
@@ -166,7 +162,7 @@ vim .env
 
 Configure the database connection and adjust the settings to your needs (compare with the [original .env file]({{ site.kimai_v2_repo }}/blob/main/.env.dist)):
 ```
-DATABASE_URL=mysql://kimai2:my-super-secret-password@127.0.0.1:3306/kimai2?charset=utf8&serverVersion=5.7
+DATABASE_URL=mysql://kimai:my-super-secret-password@127.0.0.1:3306/kimai?charset=utf8&serverVersion=5.7
 ```
  
 
@@ -193,7 +189,7 @@ listen = /run/php/php8.1-fpm.sock
 
 Edit/create the virtual host file:
 ```bash
-vim /etc/nginx/sites-available/kimai2
+vim /etc/nginx/sites-available/kimai
 ```
 
 And paste the following configuration:
@@ -233,7 +229,7 @@ server {
 Remove the Ubuntu default host and activate the site:
 ```bash
 unlink /etc/nginx/sites-enabled/default
-ln -s /etc/nginx/sites-available/kimai2 /etc/nginx/sites-enabled/kimai2
+ln -s /etc/nginx/sites-available/kimai /etc/nginx/sites-enabled/kimai
 nginx -t && service nginx reload
 ```
 
@@ -246,7 +242,46 @@ apt-get install certbot python3-certbot-nginx
 certbot --nginx
 ```
 
-Follow the interactive dialogs and choose "2: Redirect - Make all requests redirect to secure HTTPS access.".
-This will rewrite your nginx site configuration and should work out-of-the-box.
+Follow the interactive dialogs and choose your new domain.
+The `certbot` will rewrite your nginx site configuration and the https site should now work out-of-the-box.
 
 Kimai is now up and running at www.kimai.local - enjoy!
+
+## Bonus points
+
+The following points are hints for advanced use-cases. No support given! 
+
+### SSH Port
+
+By changing the default SSH port, you can work around script-kiddies that default tools with default settings for port scans:
+
+```
+sed -i -e 's/#Port 22/Port 54321/g' /etc/ssh/sshd_config
+service sshd restart
+```
+
+### UFW
+
+Enable the universal firewall and allow the new SSH port:
+
+```bash
+ufw allow from any to any port 22 proto tcp
+ufw allow from any to any port 54321 proto tcp
+ufw allow http
+ufw allow https
+ufw default allow outgoing
+ufw default deny incoming
+ufw enable
+```
+
+### Fail2Ban
+
+Install the `fail2ban` service and clone the Kimai plugin.
+
+```bash
+apt-get install fail2ban
+cd /var/www/kimai/var/plugins/
+git clone https://github.com/Keleo/Fail2BanBundle.git
+```
+
+Now reload the Kimai cache and follow the instructions at [https://github.com/Keleo/Fail2BanBundle](https://github.com/Keleo/Fail2BanBundle).
