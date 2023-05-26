@@ -285,3 +285,10 @@ git clone https://github.com/Keleo/Fail2BanBundle.git
 ```
 
 Now reload the Kimai cache and follow the instructions at [https://github.com/Keleo/Fail2BanBundle](https://github.com/Keleo/Fail2BanBundle).
+
+Finally, enable `fail2ban` with:
+
+```bash
+service fail2ban start
+systemctl enable fail2ban
+```
