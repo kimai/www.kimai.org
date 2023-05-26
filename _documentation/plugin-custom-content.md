@@ -57,14 +57,20 @@ document.addEventListener('kimai.initialized', function(event) {
 });
 ```
 
-Deactivate a certain field by ID in a modal:
+Deactivate a certain field by ID in a modal if the current user is not an Admin or SuperAdmin:
 ```javascript
-function deactivateField(source) {
-    const field = source.querySelector('#expense_form_metaFields_status_value');
+function deactivateField(source, selector) {
+    const field = source.querySelector(selector);
     if (field !== null) { field.disabled = true; if (field.tomselect) { field.tomselect.disable(); } }
 }
-document.addEventListener('show.bs.modal', (e) => { deactivateField(e.srcElement); });
-deactivateField(document);
+
+document.addEventListener('kimai.initialized', function(event) {
+    const kimai = event.detail.kimai;
+    if (!kimai.getUser().isAdmin() && !kimai.getUser().isSuperAdmin()) {
+        document.addEventListener('show.bs.modal', (e) => { deactivateField(e.srcElement, '#expense_form_metaFields_status_value'); });
+        deactivateField(document, '#expense_form_metaFields_status_value');
+    }
+});
 ```
 
 Automatically login with SAML:
