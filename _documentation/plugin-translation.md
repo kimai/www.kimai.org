@@ -5,6 +5,27 @@ description: Replace translations in Kimai with your own wording
 
 {% include plugins/translation.md %}  
 
+### How to use it
+
+When clicking the create button, you see a form that contains the fields:
+
+- Language
+- Default translation
+- New translation
+
+With `Language` you choose the target language, which is usually the current active one.
+
+The `default translation` allows you to search for a given phrase, which you then translate in the field `New translation`.
+
+** ATTENTION** 
+The default translation is shown in the current user locale (see the URL of the page). 
+If there is no translation for the exact locale (e.g. `de_AT`) the english translation is used instead.
+You might want to switch your language via the URL to the base language with region code (so `de` instead of `de_AT`). 
+
+The `new translation` contains the translation that you want to display in the future.
+The same locale logic applies as written above. If you create a translation in `de_AT` it will not be displayed in `de`.
+But if you create a translation in `de`, your new translation will also be visible in `de_AT`.
+
 ### Screenshots
 
 The main translation page show a listing of all translated contents, grouped by their language:
