@@ -251,9 +251,9 @@ Kimai is now up and running at www.kimai.local - enjoy!
 
 The following points are hints for advanced use-cases. No support given! 
 
-### SSH Port
+### Change SSH Port
 
-By changing the default SSH port, you can work around script-kiddies that default tools with default settings for port scans:
+By changing the default SSH port to a higher number, you can work around script-kiddies which use default "hacking tools" with default settings for their port-scans:
 
 ```
 sed -i -e 's/#Port 22/Port 54321/g' /etc/ssh/sshd_config
