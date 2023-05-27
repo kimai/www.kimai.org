@@ -17,6 +17,21 @@ If the title is empty, the menu will be hidden.
 
 ### Javascript
 
+Make the header fixed at the screen top and remove that stickyness from the table headers (both are not possible right now):
+```javascript
+function stickyHeader() {
+    [].slice.call(document.querySelectorAll('thead.sticky-top')).map((element) => {
+        element.classList.toggle('sticky-top');
+    });
+    const header = document.querySelector('div.page header.navbar');
+    if (!header.classList.contains('sticky-top')) {
+        header.classList.toggle('sticky-top');
+    }
+}
+document.addEventListener('kimai.initialized', stickyHeader);
+document.addEventListener('kimai.reloadedContent', stickyHeader);
+```
+
 React on global events and utilize the Kimai Javascript API:
 ```javascript
 document.addEventListener('kimai.initialized', function(event) {
