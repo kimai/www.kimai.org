@@ -79,14 +79,6 @@ layout: content
     {% assign pricing = site.data[page.lang].translation.free-badge %}
 {% endif %}
 
-{% assign compatibleWithTwo = false %}
-{% for version in settings.bundle.versions %}
-    {% assign startsVersion = version[1] | slice: 0, 2 %}
-    {% if startsVersion == '2.' %}
-        {% assign compatibleWithTwo = true %}
-    {% endif %}
-{% endfor %}
-
 {% include page-title.html title=translation.title %}
 
 <div class="page-body">
@@ -122,15 +114,25 @@ layout: content
                                 </div>
                             </div>
 
+                            {% if page.type == 'featured' or page.type == 'plugin' %}
                             <div class="card mb-3">
                                 <div class="card-body p-0">
+                                    {% assign compatibleWithTwo = false %}
+                                    {% for version in settings.bundle.versions %}
+                                        {% assign startsVersion = version[1] | slice: 0, 2 %}
+                                        {% if startsVersion == '2.' %}
+                                            {% assign compatibleWithTwo = true %}
+                                        {% endif %}
+                                    {% endfor %}
+
                                     {% if compatibleWithTwo == false %}
-                                        {% include alert.html type="danger" alert="Bundle is NOT compatible with Kimai 2.0" %}
+                                        {% include alert.html type="danger" alert="The developer did not yet confirm compatibility with Kimai 2.0" %}
                                     {% else %}
                                         {% include alert.html type="success" alert="Compatible with Kimai 2.0" %}
                                     {% endif %}
                                 </div>
                             </div>
+                            {% endif %}
 
                             <div class="card mb-3">
                                 <div class="card-body text-center">
