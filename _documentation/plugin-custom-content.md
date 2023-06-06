@@ -32,6 +32,15 @@ document.addEventListener('kimai.initialized', stickyHeader);
 document.addEventListener('kimai.reloadedContent', stickyHeader);
 ```
 
+Hide the dashboard edit button (for all non super-admins only):
+```javascript
+document.addEventListener('kimai.initialized', function (event) {
+    if (event.detail.kimai.getUser().isSuperAdmin() && document.querySelector('section.dashboard') !== null) {
+        document.querySelector('.page-header').style.setProperty("display", "none", "important");
+    }
+});
+```
+
 React on global events and utilize the Kimai Javascript API:
 ```javascript
 document.addEventListener('kimai.initialized', function(event) {
