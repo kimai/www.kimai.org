@@ -17,6 +17,22 @@ If the title is empty, the menu will be hidden.
 
 ### Javascript
 
+Remove the activity from the timesheet form.
+You have to create one global activity and grab the ID from the URL, replace `5095` in the code with your new ID:
+```javascript
+document.addEventListener('show.bs.modal', (e) => {
+    const activity = e.srcElement.querySelector('#timesheet_edit_form_activity');
+    if (activity !== null) {
+        activity.value = '5095'; 
+        activity.dispatchEvent(new Event('change'));
+        const activityRow = e.srcElement.querySelector('.timesheet_edit_form_row_activity');
+        if (activityRow !== null && !activityRow.classList.contains('d-none')) {
+            activityRow.classList.add('d-none');
+        }
+    }
+});
+```
+
 Make the header fixed at the screen top and remove that stickyness from the table headers (both are not possible right now):
 ```javascript
 function stickyHeader() {
