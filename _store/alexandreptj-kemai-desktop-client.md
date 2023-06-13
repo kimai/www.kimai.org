@@ -1,5 +1,5 @@
 ---
-title: Kemai - Desktop client for Kimai
+title: Kemai - Desktop client
 type: client
 lang: en
 ---
