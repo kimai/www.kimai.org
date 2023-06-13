@@ -1,5 +1,6 @@
 Torsten Höltge, [Severin Leonhardt](https://github.com/ServiusHack), 
-[Simon Schaufelberger](https://github.com/simonschaufi),
+[Simon Schaufelberger](https://github.com/simonschaufi), 
+Beny,
 Oleg Britvin, 
 Martin Klemkow, 
 Vasilis van Gemert, 
