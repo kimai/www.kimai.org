@@ -9,28 +9,28 @@ description: Import CSV and JSON data into Kimai
 
 Supported attributes (field names are case-insensitive):
 
-| Customer attribute | Supported field names                                  |  
-|--------------------|--------------------------------------------------------|
-| Name               | project, projectname, project name, project-name, name |
-| Account            | number, account, customer number, customer account     |
-| Company name       | company, company name, company-name                    |
-| Description        | description, comment                                   |
-| E-Mail             | email, e-mail, e mail                                  |
-| Country            | country                                                |
-| Vat-ID             | vat, vat-id, vat id, tax-id, tax id                    |
-| Address            | address                                                |
-| Contact            | contact                                                |
-| Currency           | currency                                               |
-| Timezone           | timezone                                               |
-| Phone              | phone                                                  |
-| Mobile             | mobile                                                 | 
-| Fax                | fax                                                    |
-| Homepage           | homepage                                               |
-| Color              | color                                                  |
-| Budget             | budget                                                 |
-| Time budget        | time budget, time-budget                               |
-| Visible            | visible                                                |
-| Meta fields        | meta.xxx                                               |
+| Customer attribute | Supported field names                              |  
+|--------------------|----------------------------------------------------|
+| Name               | customer, name                                     |
+| Account            | number, account, customer number, customer account |
+| Company name       | company, company name, company-name                |
+| Description        | description, comment                               |
+| E-Mail             | email, e-mail, e mail                              |
+| Country            | country                                            |
+| Vat-ID             | vat, vat-id, vat id, tax-id, tax id                |
+| Address            | address                                            |
+| Contact            | contact                                            |
+| Currency           | currency                                           |
+| Timezone           | timezone                                           |
+| Phone              | phone                                              |
+| Mobile             | mobile                                             | 
+| Fax                | fax                                                |
+| Homepage           | homepage                                           |
+| Color              | color                                              |
+| Budget             | budget                                             |
+| Time budget        | time budget, time-budget                           |
+| Visible            | visible                                            |
+| Meta fields        | meta.xxx                                           |
 
 ### Example
 
