@@ -5,7 +5,7 @@ description: Add custom content to your Kimai installation
 
 {% include plugins/custom-content.md %}  
 
-### Custom content page
+## News page
 
 You can edit two fields: 
 - The news title is the name of the menu entry
@@ -13,17 +13,17 @@ You can edit two fields:
 
 Deactivate the news: if the title is empty, the menu will be hidden.
 
-### Javascript
-
-{% include plugins/custom-javascript-examples.md %}
- 
-### Alert
+## Alert
 
 ```markdown
 That's how the **alert / warning message** looks like. You can even include _markdown_ and [links](/en/custom-content-news) !
 ```
 
-### CSS / Stylesheet
+## Javascript
+
+{% include plugins/custom-javascript-examples.md %}
+
+## CSS
 
 {% include plugins/custom-css-examples.md %}
 
