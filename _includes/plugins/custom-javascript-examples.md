@@ -70,6 +70,18 @@ document.addEventListener('show.bs.modal', (e) => {
 });
 ```
 
+Make the timesheet description field mandatory:
+```javascript
+document.addEventListener('show.bs.modal', (e) => {
+    const desc = e.srcElement.querySelector('#timesheet_edit_form_description');
+    if (desc !== null) {
+        desc.required = true;
+        const label = e.srcElement.querySelector('label[for=timesheet_edit_form_description]');
+        if (label !== null && !label.classList.contains('required')) { label.classList.add('required'); }
+    }
+});
+```
+
 Always deactivate the export checkbox:
 ```javascript
 document.addEventListener('kimai.initialized', function(event) {
