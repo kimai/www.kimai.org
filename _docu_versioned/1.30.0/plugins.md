@@ -1,8 +1,8 @@
 ---
 title: Create plugins
 navigation: Getting started
-description: How to create a Kimai plugin 
-redirect_from: /documentation/extensions/
+description: How to create a Kimai plugin
+canonical: /documentation/plugins.html
 ---
 
 A Kimai plugin is from a technical perspective _only_ a Symfony bundle, with some minor modifications.
@@ -31,7 +31,7 @@ There are some differences to Symfony bundles, which were added to prevent probl
 - Kimai plugins are stored in `var/plugins/` instead of `vendor/`
 - Kimai plugins are loaded automatically in **each** environment (no need to modify `config/bundles.php`)
 - Routes are automatically loaded with the search pattern:  
-`var/plugins/YourBundle/Resources/config/routes.{php,yaml}`
+`var/plugins/YourBundle/Resources/config/routes.{php,xml,yaml,yml}`
 - Your Bundle class needs to be namespaced with the vendor segment `KimaiPlugin`
 - Your Bundle must implement `App\Plugin\PluginInterface` 
 
@@ -120,7 +120,7 @@ A minimal `composer.json` could look like this:
 ```json
 {
     "name": "foo/your-bundle",
-    "description": "A simple demo plugin for Kimai, which actually does nothing",
+    "description": "A Kimai 2 demo plugin which does nothing",
     "homepage": "https://www.kimai.org/",
     "type": "kimai-plugin",
     "version": "0.1",
@@ -134,8 +134,8 @@ A minimal `composer.json` could look like this:
     ],
     "extra": {
         "kimai": {
-            "require": 20000,
-            "name": "Your awesome bundle"
+            "require": "1.3",
+            "name": "YourBundle"
         }
     }
 }
@@ -145,18 +145,27 @@ The `type` (kimai-plugin)is required for proper installation if composer is used
 The `homepage` will be used for a backlink in the plugin admin panel. 
 The `version` will be shown in the plugin admin panel.
 
-The values in the `extra.kimai` section are mandatory and used for:
+The values in the `extra.kimai` section are used for:
 
-- `require` - the required (minimal) Kimai which is needed for this plugin as int (calculate like that: major * 10000 + minor * 100 + patch, e.g. 2.1.7 = 20107) 
-- `name` - the name of the plugin, as shown in the administration
+- `require` - the required (minimal) Kimai which is needed for this plugin  
+- `name` - the name of the plugin, used as target directory name of your bundle
 
 ## Data storage
 
 When your plugin wants to store files, don't use your plugin directory or concat the directory yourself, but 
-use the global directory configured for Kimai. 
+use the ServiceContainer parameter `%kimai.data_dir%`. This is currently pointing to `var/data/` and also protected 
+from the above-mentioned update problems via [.gitignore]({{ site.kimai_v2_file }}/.gitignore). 
 
-Please use `App\Utils\FileHelper` to access files in the data directory
+As this could change in the future, always inject the data directory instead of finding a place yourself:   
 
+```yaml
+services:
+    KimaiPlugin\YourBundle\MyController:
+        arguments:
+            $dataDirectory: "%kimai.data_dir%"
+```
+
+There is another parameter called `%kimai.plugin_dir%`, which is pointing to the base directory of all plugins.
 
 ## Example plugin
 
