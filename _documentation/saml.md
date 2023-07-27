@@ -113,6 +113,7 @@ kimai:
 
 A brief description of the available fields:
 - `activate` (bool) activates the SAML authentication flow
+- `provider` (string) this is a free string, whose ONLY use-case is to show an icon: you have to define a name from the [fontawesome brand icons](https://fontawesome.com/v5/search?o=r&m=free&f=brands), e.g. `microsoft`, `google`, `aws`)
 - `title` (string) the name of the Login button in the authentication screen
 - `mapping` (array) an array of attributes that will be synced with Kimai. The `kimai` value (`email` and `alias`) are the names in Kimai, the `saml` key (`$Email` and `$FirstName $LastName`) are the attributes from the SAML response. You can assign static values to every user (like `title` = `SAML User`) or you fetch one or more values from the SAML message (`$Email` refers to the SAML attribute `Email` and `$FirstName $LastName` refers to the two SAML attributes `$FirstName` and `$LastName`).
 - `roles` (array) settings related to the user roles syncing

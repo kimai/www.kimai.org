@@ -13,16 +13,15 @@ A Kimai plugin that allows you to share your project timesheets with anyone you 
 - View customizations
   - define whether and how to merge records of a day (e.g. merge records of one day, use description of last record)
 
-
 After installation: open Kimai in your browser and navigate to "Shared project timesheets".
 
 ## Permissions
 
-Currently, there are no specific plugin permissions. The role `ROLE_SUPER_ADMIN` is required to manage the shared project timesheets.
+The permission `shared_projects` is required to manage the "shared project timesheets", which is assigned to the role `ROLE_SUPER_ADMIN` by default.
 
 ## Contribute
 
 Please feel free to report bugs and suggest new features on Github: 
-[https://github.com/dexterity42/SharedProjectTimesheetsBundle/issues/new](https://github.com/dexterity42/SharedProjectTimesheetsBundle/issues/new)
+[https://github.com/Keleo/SharedProjectTimesheetsBundle/issues/new](https://github.com/Keleo/SharedProjectTimesheetsBundle/issues/new)
 
 If you're a developer and want to contribute to this plugin, fork the repository and send me a pull request.

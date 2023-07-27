@@ -76,3 +76,14 @@ Besides these filters, you can query for a free search term, which will be searc
 - `address`
 
 {% include search-custom-field.md %}
+
+## Deleting a customer
+
+Customers can be deleted from the Customer listing view via `Administration > Customers`.
+
+Usually it is not a good idea to delete a used customer, consider to switch the visibility instead to hide it.
+
+Right-click on a row (or open the action dropdown at the end of it) to see all available actions for the selected customer.
+The last action in the list is `Delete` - once you click it you wil get a feedback screen which either tells you that the
+customer is unused and can be safely deleted, or it will show you quick stats of the customer and then ask you to re-assign
+the attached timesheets to another customer.

@@ -33,3 +33,13 @@ This behavior might not be desired if you export invoice data e.g. to JSON and u
 Or if you translate your invoice to english for cross-country sales but still want to use your countries formats.
 
 Without choosing a language the default behaviour is used. 
+
+### Additional formats
+
+This plugins ships renderer for other invoice template formats, such as:
+
+- JSON: with the file extension `.json.twig`
+- XML: with the file extension `.xml.twig`
+- PlainText: with the file extension `.txt.twig`
+
+You can find pre-made templates for these renderer at https://github.com/kimai/invoice-templates/tree/main/data-transfer 

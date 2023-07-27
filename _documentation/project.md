@@ -12,7 +12,7 @@ Projects in Kimai are assigned to customers and are linked to activities, which 
 
 ## Creating a project
 
-There is a configuration (can be configured at [System > Settings]({% link _documentation/configurations.md %}) - added with 1.28), which allows to copy teams of the current user to newly created projects. 
+There is a configuration (can be configured at [System > Settings]({% link _documentation/configurations.md %})), which allows to copy teams of the current user to newly created projects. 
 This is mostly useful when teamleads manage their own projects and should have immediate access to them after creation.
 
 ## Managing projects
@@ -79,3 +79,14 @@ Besides these filters, you can query for a free search term, which will be searc
 - `orderNumber`
 
 {% include search-custom-field.md %}
+
+## Deleting a project
+
+Projects can be deleted from the Project listing view via `Administration > Projects`.
+
+Usually it is not a good idea to delete a used project, consider to switch the visibility instead to hide it.
+
+Right-click on a row (or open the action dropdown at the end of it) to see all available actions for the selected project.
+The last action in the list is `Delete` - once you click it you wil get a feedback screen which either tells you that the
+project is unused and can be safely deleted, or it will show you quick stats of the project and then ask you to re-assign
+the attached timesheets to another project.  

@@ -31,3 +31,4 @@ The change history will be recorded for the following fields:
 - This bundle needs to be installed and activated to keep track of the change history, previous changes are not available.
 - Not all entities and fields will be recorded, please read the above list carefully.
 - The "Audit logs" link is not available under "My timsheets" to prevent potential information leaks.
+- Certain batch updates (e.g. setting the `exported` flag of multiple timesheets during export) cannot be recorded, as those are executed directly via database

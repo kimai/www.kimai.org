@@ -158,11 +158,6 @@ The invoice system currently supports the following formats:
     - file extension: filename must end with `.xlsx`
     - Pro: good for creating enhanced reports with an office software package
     - Contra: Non-free software required, not ideal format for invoices
-- `CSV`
-    - Comma-separated file with UTF-8 encoding and double-quotes around each field
-    - filename must end with `.csv`
-    - Pro: good for exporting and creating enhanced reports with an office software package
-    - Contra: only row based information possible (meta information can't be used properly), UTF-8 is not properly supported when using Excel (see [this issue]({{ site.kimai_v2_repo }}/issues/1537))
 
 ### Create your own invoice document
 
@@ -337,7 +332,7 @@ See below in `Template variables` to find out which variables you can use in you
 
 Find out more about PHPWord templates [here](https://phpword.readthedocs.io/en/latest/templates-processing.html).
 
-### Spreadsheets (ODS, XLSX and CSV)
+### Spreadsheets (ODS and XLSX)
 
 Spreadsheet templates are powered by [PhpSpreadsheet](https://github.com/PHPOffice/PhpSpreadsheet).
 
@@ -352,7 +347,7 @@ See below in `Template variables` to find out which variables you can use.
 
 ## Template variables
 
-Be aware, that the following list of variables is working for the "document" based formats (ODS, XLSX, CSV, DOCX).
+Be aware, that the following list of variables is working for the "document" based formats (ODS, XLSX, DOCX).
 
 Twig rendering is different, you have to access the variables with `{% raw %}{{ invoice['xxx.yyy'] }}{% endraw %}` instead of `${xxx.yyy}`. 
 

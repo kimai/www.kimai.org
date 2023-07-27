@@ -327,9 +327,22 @@ Also note that, depending on where you are installing Kimai and how your compute
 "operation not permitted" errors when setting file permissions (`chown` and `chmod` commands).
 In that case, prefix them with `sudo`.
 
-### Troubleshoot
+### Memory limit 
 
-#### Internal Server Error 500
+Composer crashes with something like
+
+```bash
+!!    Error: Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes)
+```
+
+Then please read [this chapter](https://getcomposer.org/doc/articles/troubleshooting.md#memory-limit-errors) in the official docs.
+
+In short, try to run:
+```bash
+COMPOSER_MEMORY_LIMIT=-1 php -d memory_limit=-1 /usr/bin/composer install --optimize-autoloader -n
+```
+
+### Internal Server Error 500
 
 This error can have several causes. Here is a small summary what to check for if
 this error occurs when trying to access the Kimai frontend:
@@ -341,7 +354,7 @@ this error occurs when trying to access the Kimai frontend:
   the process you most likely will have permission errors if the web-server is
   not started as `root` as well. [Fix file permissions]({% link _documentation/cache.md %})!
 
-#### Still doesn't work?
+### Still doesn't work?
 
 These infos were added to give you some possible guidance if you run into troubles. The Linux (and Mac) filesystem
 with its permission structure, especially when using server software, can be tricky and challenging.

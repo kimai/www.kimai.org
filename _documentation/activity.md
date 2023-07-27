@@ -97,3 +97,14 @@ Besides these filters, you can query for a free search term, which will be searc
 - `comment`
 
 {% include search-custom-field.md %}
+
+## Deleting an activity
+
+Activities can be deleted from the Activity listing view via `Administration > Activities`.
+
+Usually it is not a good idea to delete a used activity, consider to switch the visibility instead to hide it. 
+
+Right-click on a row (or open the action dropdown at the end of it) to see all available actions for the selected activity.
+The last action in the list is `Delete` - once you click it you wil get a feedback screen which either tells you that the
+activity is unused and can be safely deleted, or it will show you quick stats of the activity and then ask you to re-assign
+the attached timesheets to another activity.  
