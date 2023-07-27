@@ -5,7 +5,11 @@ For example, you can set the default amounts to 50%, 75%, and 95%, and for anoth
 
 ## Video
 
-Only available in german right now:
+English:
+
+{% include youtube-video.html id="7EuDqvmb-Rk" title="BudgetWatcher" %}
+
+German:
 
 {% include youtube-video.html id="_ryMJwYsOOg" title="BudgetWatcher" %}
 
