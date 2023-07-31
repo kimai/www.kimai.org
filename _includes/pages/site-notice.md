@@ -2,7 +2,7 @@
 
 Responsible for contents acc. to Sec. 55, para. 2 German Federal Broadcasting Agreement (RstV):
 
-Kevin Papst, Engerthstraße 171/13, 1020 Vienna (Austria)  
+Kevin Papst, Schweidlgasse 46/1/13, 1020 Vienna (Austria)  
 Telephone: +49 (0)30 12087229  
 Email: <support@kimai.org>  
 EU-VAT Id: ATU75657727

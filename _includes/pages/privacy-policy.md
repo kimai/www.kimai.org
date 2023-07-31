@@ -49,7 +49,7 @@ Complete protection of your data from third-party access is not possible.
 
 The party responsible for processing data on this website is:
 
-Kevin Papst, Engerthstraße 171/13, 1020 Vienna (Austria)  
+Kevin Papst, Schweidlgasse 46/1/13, 1020 Vienna (Austria)  
 Telephone: +49 (0)30 12087229  
 Email: <support@kimai.org>  
 EU-VAT Id: ATU75657727
