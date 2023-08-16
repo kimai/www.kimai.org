@@ -1,0 +1,13 @@
+name: 'Update latest Kimai version'
+
+on:
+    workflow_dispatch:
+    repository_dispatch:
+        types: [kimai_release]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Save version number"
+        run: echo "${{steps.remote_version.outputs.version}}"
