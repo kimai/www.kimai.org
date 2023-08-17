@@ -8,5 +8,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: "Save version number"
-        run: echo "${{steps.remote_version.outputs.version}}"
+      - uses: actions/checkout@v3
+
+      - name: "Update Kimai version in _config.yml"
+        run: scripts/update-version-number.sh "${{ github.event.client_payload.kimai_version }}"
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          commit-message: "Bump latest release to ${{ github.event.client_payload.kimai_version }}"
+          title: "Bump version to ${{ github.event.client_payload.kimai_version }}"
+          branch: "docs/release-${{ github.event.client_payload.kimai_version }}"
