@@ -26,7 +26,27 @@ If you uncheck the `Active` checkbox when editing the user profile and save:
 - the user won't be displayed in most dropdowns and reports
 - the user cannot log in to Kimai
 
-A user can be re-activated at any time. The logged-in user cannot his own profile.
+A user can be re-activated at any time. The logged-in user cannot deactivate his own profile.
+
+If you want to see all deactivated accounts, please swicth to the user listing (at System > Users) and choose `Active = No` in the filter dropdown. 
+
+## System accounts
+
+System accounts are users in Kimai, which are hidden in many places. They cannot be chosen from dropdowns, 
+will be hidden in reports and more.
+
+This setting is primarily meant to identify:
+
+- your Admin accounts (which should not be used for daily work)
+- API sync accounts
+
+## Supervisor
+
+The supervisor setting is used notifications, e.g. work-contract related features, approval workflows and such.
+
+## Staff number
+
+The staff/account number appears in Exports and can be used to link users from your HR software to Kimai. 
 
 ## Filter and search
 
@@ -82,7 +102,7 @@ form when you try to access them. This is a security feature to prevent abuse in
 
 ## Two-Factor authentication
 
-The latest Kimai version supports 2FA (Two-Factor) authentication via TOTP tokens.
+Kimai supports 2FA (Two-Factor) authentication via TOTP tokens.
 
 The basic flows looks as this: 
 - You scan a QR code in your Kimai user preferences screen with a TOTP supporting app
