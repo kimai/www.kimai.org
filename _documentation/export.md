@@ -69,3 +69,15 @@ Internally for each template a new ExportRenderer service is registered, called 
 ### PDF Templates
 
 {% include pdf-templates.md %}
+
+#### Custom fields
+
+You can access custom fields with:
+
+```twig
+{% raw %}{% set cf = entry.metaField('example') %}
+{% if cf is not null and cf.value is not null %}
+    {{ cf.value }}
+{% endif %}{% endraw %}
+```
+
