@@ -2,6 +2,9 @@ items:
     audit-trail-bundle:
         title: Änderungsprotokolle
         intro: Zeichnet detaillierte Änderungsprotokolle für Stundenzettel, Kunden, Projekte (und mehr) auf und zeigt sie in Zeitleisten an.
+    controlling:
+        title: Arbeitszeiten, Urlaub, Krankheit (Controlling)
+        intro: Soll-Ist-Vergleich der Arbeitszeiten, Überstundenübersicht, monatliche Genehmigungen mit PDF. Feiertagsverwaltung. Buchung von Urlaub, Krankheit, Freizeit und anderen Abwesenheiten.
     custom-content-bundle:
         title: Benutzerdefinierte Inhalte
         intro: Erstelle eigene Inhalte für CSS, Javascript, eine globale Warnmeldung und eine zusätzliche Seite, auf der Markdown-Inhalte dargestellt werden können.
@@ -41,12 +44,6 @@ items:
     mr-software-recordbook-bundle:
         title: Berichtsheft für Azubis
         intro: Ein Plugin für Kimai zur automatischen Erstellung eines Berichtsheftes für Auszubildende.
-    mr-software-sickday-bundle:
-        title: Krankheitstage
-        intro: Ein Plugin für Kimai, um die Krankheitstage von Benutzern zu erfassen.
-    mr-software-vacation-bundle:
-        title: Urlaubsverwaltung (Urlaub + Offizielle & Lokale Ferien)
-        intro: Ein Plugin für Kimai, das den kompletten Workflow für Urlaub + offizielle & lokale Feiertage hinzufügt
     district09-personal-calendar-pref-bundle:
         title: Persönliche Kalender Einstellungen
         intro: Dieses Plugin ermöglicht es, das Benutzer bestimmte Kalender-Konfigurationen mit ihren persönlichen Einstellungen überschreiben können.
@@ -119,9 +116,6 @@ items:
     mr-software-android-offline-tracker:
         title: Android App für Offline-Erfassung
         intro: Android App für Offline-Erfassung
-    mr-software-controlling-bundle:
-        title: Controlling (deutsches Recht, Pausenzeiten, Überstunden)
-        intro: Überprüft, ob einer Ihrer Benutzer gegen das deutsche Pausengesetz verstoßen hat + Soll- und Ist-Arbeitszeitvergleich + Überstundenansicht
     mr-software-hasworked-bundle:
         title: Benutzer ohne Zeiten benachrichtigen
         intro: Versendet E-Mail-Benachrichtigungen an Benutzer, wenn sie am aktuellen Tag keine Zeiteinträge erstellt haben
@@ -285,33 +279,12 @@ screenshots:
     maximiliangross-easy-backup-bundle0:
         title: Backup Administration
         description: Die Übersicht vorhandener Backups
-    mr-software-controlling-bundle0:
-        title: Zusammenfassung
-        description: Admins sehen eine Zusammenfassung aller Arbeitszeiten aller Benutzer
-    mr-software-controlling-bundle1:
-        title: Pausen-Überprüfung
-        description: Admins und Benutzer sehen eine Pausenzeitüberprüfung
-    mr-software-controlling-bundle2:
-        title: Fehlende Tage
-        description: Admins und Benutzer sehen fehlende Tage
-    mr-software-controlling-bundle3:
-        title: Zeiten-Verwaltung
-        description: Administratoren können Monate sperren
     mr-software-hasworked-bundle1:
         title: Übersicht
         description: Nur ein Command aufrufen und schon werden die Benutzer benachrichtigt
     mr-software-recordbook-bundle0:
         title: PDF Beispiel
         description: Beispiel Ansicht eines generierten PDFs
-    mr-software-sickday-bundle0:
-        title: Übersicht Krankheitstage
-        description: Admins sehen eine Zusammenfassung der Krankheitstage
-    mr-software-sickday-bundle1:
-        title: Übersicht Benutzer
-        description: Administratoren können schnell zu den Stundenzetteln (Krankheitstagen) von Benutzern navigieren
-    mr-software-sickday-bundle2:
-        title: Einstellungen
-        description: PDF beim Erstellen eines Krankheitstages anfordern
     pcsg-recurring-budget-bundle1:
         title: CLI Command
         description: Ausgabe des CLI-Befehls, der Budgets gutschreibt und Projektstatistiken berechnet.
@@ -327,21 +300,6 @@ screenshots:
     pcsg-recurring-budget-bundle5:
         title: Budget-Statistik E-Mail
         description: Beispiel für eine Budgetstatistik-E-Mail, die nach einem abgeschlossenen Budgetintervall an den Projektteamleiter gesendet wird.
-    mr-software-vacation-bundle1:
-        title: Menü Eintrag
-        description: Administratoren können den Urlaubsverlauf einsehen
-    mr-software-vacation-bundle2:
-        title: Menü Eintrag
-        description: Administratoren können die Anzahl der Urlaubstage pro Eintrag bearbeiten
-    mr-software-vacation-bundle3:
-        title: Menü Eintrag
-        description: Administratoren können eine Zusammenfassung aller Urlaubstage sehen
-    mr-software-vacation-bundle4:
-        title: Menü Eintrag
-        description: Administratoren können öffentliche/lokale Feiertage konfigurieren
-    mr-software-vacation-bundle5:
-        title: Menü Eintrag
-        description: Administratoren können alle Urlaubsanträge sehen
     mr-software-hasworked-bundle0:
         title: E-Mail Benachrichtigung
         description: Benutzer empfangen eine Benachrichtigung per E-Mail
@@ -351,9 +309,6 @@ screenshots:
     mr-software-recordbook-bundle1:
         title: Download Ansicht
         description: Auszubildende sehe die Wochen und können das PDF herunterladen
-    mr-software-vacation-bundle0:
-        title: Menü Eintrag
-        description: Einstellungen des Plugins
     pcsg-recurring-budget-bundle0:
         title: Projekt Einstellungen
         description: Projekteinstellungen für wiederkehrendes Budget.
@@ -378,3 +333,24 @@ screenshots:
     owlysk-codetimer-screen2:
         title: CodeTimer desktop widget
         description: Desktop widget for Kimai.
+    controlling-bundle0:
+        title: Feiertage und Gruppen
+        description: Liste aller Feiertage und Gruppen, mit der Möglichkeit die Feiertage zu importieren und zu bearbeiten
+    controlling-bundle1:
+        title: Feiertage importieren
+        description: Es gibt eine große Liste an Ländern und Regionen, für die man pro Jahr Feiertage importieren kann
+    controlling-bundle2:
+        title: Arbeitsvertrags-Einstellungen
+        description: Für jeden Benutzer kann man pro Wochentag ein Stundenziel hinterlegen. Dazu die genutzte Feiertagsgruppe, den ersten Arbeitstag und die Anzahl der Urlaubstage konfigurieren.
+    controlling-bundle3:
+        title: Zusammenfassung des Arbeitszeitkonto
+        description: Die Zusammenfassung zeigt die Soll- und Ist-Stunden pro Monat und Jahr an, inklusive einer weiteren Zeil für manuelle Buchungen
+    controlling-bundle4:
+        title: Manuelle Buchungen
+        description: Manuelle Buchungen erlauben die Anpassung des Stundenkontos, z.B. um Stunden aus dem letzten Jahr zu übertragen oder ausgezahlte Stunden auszubuchen
+    controlling-bundle5:
+        title: Zusammenfassung aller Tage
+        description: Tagesgenaue Auswertung der geleisteten und geschuldeten Stunden, inklusive Anzeige aller Abwesenheiten (Urlaub, Krankheit etc), mit der Möglichkeit des Monatsabschluss
+    controlling-bundle6:
+        title: Arbeitszeitkonto ohne Vertragseinstellung
+        description: Der ausgewählte Benutzer hat keine Vertragseinstellungen am Profil gespeichert und Kimai kann daher nur die geleisteten Stunden anzeigen
