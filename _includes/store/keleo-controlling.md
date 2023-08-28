@@ -3,17 +3,17 @@
 
 - It enhances the [Working times]({% link _documentation/contract.md %}) view with 
   - Manual bookings (adjust the time account with plus or minus hours)
-  - Overview of the entire year with resuls per day, the ability to close a month, download result PDF and more
-  - See if a user has overtimes or undertimes (since first day in company, per year/month/day)
+  - Overview of the entire year with results per day, the ability to close a month, download result PDF and more
+  - See if a user has overtimes or minus hours (since first day in company, per year/month/day)
   - Monthly approvals (per user) with PDF handouts that contain the working-hour details for the entire month
   - See if your users have missing days (no times entered on days where they had to work)
-- It adds the [Absence]({% link _documentation/contract.md %}) view, which allows to
+- It adds the [Absence]({% link _documentation/absence.md %}) view, which allows to
   - Create holidays (half-days possible)
   - Take time-off (if account has overtime)
   - Create sickness days
   - Create other absences (e.g. unpaid leave)
   - Automatically adds the times absent to the user's timesheet based on their daily working time
-- And it adds the new [Public holiday]({% link _documentation/contract.md %}) management view
+- And it adds the new [Public holiday]({% link _documentation/public-holiday.md %}) management view
   - Allows to create different groups (e.g. for different countries or states) and add public holidays to each of them 
   - Import and manual creation of public (local) holidays
   - Public holidays will automatically be added to the user's timesheet (a user can only be in one public-holiday group)

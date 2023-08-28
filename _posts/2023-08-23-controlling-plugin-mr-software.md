@@ -27,10 +27,10 @@ But if, there is Kimai mobile for [iOS]({% link _store/cloudrizon-kimai-mobile-a
 
 ### What does this mean for you?
 
-If you are using one of the plugins above, you will not be able to purchase them anymore.
+If you are looking for one of the plugins above, you will not be able to purchase them anymore.
 And if you are using them, I doubt that you will receive any more updates.
-On top of that, their plugins were never released for the new major version of Kimai.
-Which makes the decision for you to update more complicated than necessary.
+On top of that, their plugins were never released for the new major version of Kimai, which means that you are stuck with Kimai 1 for now. 
+The decision for you to upgrade is more complicated than necessary.
 
 **The good news is: I have a solution for you!**
 
@@ -52,5 +52,8 @@ Which totals to 616 €. In comparison, the price of the new plugin is only `299
 It is perfectly integrated with Kimai and offers a lot of exciting features.
 There is a free demo available and a long list of planned features.
 
-This first version of the plugin concentrated on the most important features, following the 80-20 rule, the features that most of you need.
+This first version of the plugin concentrated on the most important features, following the 80-20 rule, the features that most of you need are already there.
 And I will continue to add more features in the future, that is a promise and [described in detail on the shop page]({% link _store/keleo-controlling.md %})!
+
+If you are a user of the MR plugins, I would be happy if you could give the new plugin a try and let me know what you think about it.
+Do not yet upgrade, because I have plans to add an importer that can convert your current data.
