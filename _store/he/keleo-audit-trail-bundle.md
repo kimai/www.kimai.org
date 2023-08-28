@@ -2,6 +2,7 @@
 title: Audit trail logs
 slug: audit-trail-bundle
 type: featured
+order: 50
 lang: he
 permalink: /he/store/keleo-audit-trail-bundle.html
 ---

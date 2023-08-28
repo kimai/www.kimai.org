@@ -1,7 +1,7 @@
 
     <div class="row row-cards">
         <div class="col-lg-9">
-            {% assign products = site.store | where: "lang", page.lang | where_exp:"product", "product.type == 'featured'" | sort: 'title' %}
+            {% assign products = site.store | where: "lang", page.lang | where_exp:"product", "product.type == 'featured'" | sort: 'order', 'last' %}
             {% include store-list.html products=products %}
 
             {% assign products =  site.store | where: "lang", page.lang | where_exp:"product", "product.type == 'support'" | sort: 'title' %}

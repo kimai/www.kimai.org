@@ -2,6 +2,7 @@
 title: Translations
 slug: translation-bundle
 type: featured
+order: 70
 lang: sv
 permalink: /sv/store/keleo-translation-bundle.html
 ---
