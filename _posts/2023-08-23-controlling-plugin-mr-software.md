@@ -9,7 +9,8 @@ This post combines bad and good news. Let's start with the bad one...
 
 ## MR Software closure
 
-I have some sad news to share with you today: the software company MR Software closed down. They never released anything for Kimai 2.0 and it seems they stopped answering requests and developing their plugins for Kimai.
+I have some sad news to share with you today: the software company MR Software closed down. 
+They never released anything for Kimai 2.0 and they won't in the future as well.
 That is the reason why none of their plugins can be purchased since months and it means that the following major plugins are no longer available:
 
 - Controlling
@@ -22,15 +23,14 @@ On top of that, they also offered:
 - Period insert
 - RecordBook for apprentices
 
-I have no further information and don't know what happens to their iOs and Android apps ... I hope that they are not discontinued as well.
+I don't know yet what happens to their iOs and Android apps ... I hope that they are not discontinued as well.
 But if, there is Kimai mobile for [iOS]({% link _store/cloudrizon-kimai-mobile-app-ios.md %}) and [Android]({% link _store/cloudrizon-kimai-mobile-app-android.md %}y) as replacement.
 
 ### What does this mean for you?
 
 If you are looking for one of the plugins above, you will not be able to purchase them anymore.
-And if you are using them, I doubt that you will receive any more updates.
-On top of that, their plugins were never released for the new major version of Kimai, which means that you are stuck with Kimai 1 for now. 
-The decision for you to upgrade is more complicated than necessary.
+And if you are using them, you will not receive an upgrade for Kimai 2.0, which means that you are stuck with Kimai 1 for now. 
+So the decision for you to upgrade is more complicated than necessary.
 
 **The good news is: I have a solution for you!**
 
