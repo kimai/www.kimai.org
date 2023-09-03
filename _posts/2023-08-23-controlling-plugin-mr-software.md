@@ -56,4 +56,14 @@ This first version of the plugin concentrated on the most important features, fo
 And I will continue to add more features in the future, that is a promise and [described in detail on the shop page]({% link _store/keleo-controlling.md %})!
 
 If you are a user of the MR plugins, I would be happy if you could give the new plugin a try and let me know what you think about it.
-Do not yet upgrade, because I have plans to add an importer that can convert your current data.
+
+### Promo Codes
+
+As a bonus I have two promo codes for you:
+
+- `MRIGRATE50` for 50 € off the new plugin (this code can be only be redeemed 20 times and is valid until 2023-09-30)
+- `MRIGRATE50` gives you 10% off the price (it is valid until 2023-12-31) 
+
+### What's next?
+
+Please check out the store page, I have listed all the upcoming features there!
