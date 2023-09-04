@@ -300,7 +300,7 @@ mG0%2Fd1%403aT.Z%29s
 
 Then your `DATABASE_URL` might look like this:
 ```
-DATABASE_URL=mysql://root:mG0%2Fd1%403aT.Z%29s@127.0.0.1:3306/kimai2
+DATABASE_URL=mysql://root:mG0%2Fd1%403aT.Z%29s@127.0.0.1:3306/kimai2?charset=utf8&serverVersion=5.7
 ```
 
 ### Which user to use, www-data, httpd or your own?

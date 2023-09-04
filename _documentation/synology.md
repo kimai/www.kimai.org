@@ -60,7 +60,7 @@ therefore the connection string in your `.env` file could look different from th
 default [installation]({% link _documentation/installation.md %}) docs:
 
 ```
-DATABASE_URL="mysql://kimai2:password@localhost:3307/kimai2?unix_socket=/run/mysqld/mysqld10.sock"
+DATABASE_URL="mysql://kimai2:password@localhost:3307/kimai2?unix_socket=/run/mysqld/mysqld10.sock?charset=utf8&serverVersion=5.7"
 ```
 
 BTW: You find the MariaDB executable at `/volume1/@appstore/MariaDB10/usr/local/mariadb10/bin`.
