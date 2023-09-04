@@ -1,6 +1,9 @@
 ---
 title: Public holiday
 description: Managing public holidays
+related:
+- contract
+- public-holiday
 ---
 
 ## Groups
@@ -12,6 +15,8 @@ TODO
 TODO 
 
 ## Permissions
+
+The `contract_other_profile` permission is required to see the `Contract` menu, which includes the `Public holiday` management view. 
 
 | Permission Name       | Description                                                                                        |
 |-----------------------|----------------------------------------------------------------------------------------------------|

@@ -1,7 +1,13 @@
 ---
 title: Absence
 description: Managing absences
+related:
+- contract
+- public-holiday
 ---
+
+This screen and the `Contract` menu can be seen by any user that has active contract settings.
+The `Absence` screen can be seen by any user that has the `absence` permission.
 
 ## Holiday
 
@@ -20,6 +26,8 @@ TODO
 TODO 
 
 ## Permissions
+
+Administrators require the `contract_other_profile` permission to see the `Contract` menu, which includes the `Absence` management view.
 
 | Permission Name          | Description                                                                                                         |
 |--------------------------|---------------------------------------------------------------------------------------------------------------------|

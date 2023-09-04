@@ -1,7 +1,13 @@
 ---
 title: Working times
 description: Contract management and working times
+related:
+- absence
+- public-holiday
 ---
+
+This screen and the `Contract` menu can be seen by any user that has active contract settings.
+Administrators require the `contract_other_profile` permission (see `Permissions` below)
 
 ## User interface
 
@@ -11,22 +17,38 @@ description: Contract management and working times
 - Manual bookings
 
 ## Summary
-
-TODO 
+ 
+The summary contains the following information (where each column is one month):
+- one row for working times
+- one row for manual bookings, requires the `view_booking_contract` permission
 
 ## Working times
 
-TODO 
+Contains the entire year with the following information:
+- the expected working time for each day of the week
+- the actual working time for each day of the week
+- the difference between expected and actual working time
+- the total working time for each month
+- the total working time for the entire year
+- blue dots for days with either
+  - a public holiday 
+  - any kind of absence
 
 ## Manual bookings
 
-TODO 
+Manual bookings can be used to increase or reduce the users time account.
+
+Popular examples are:
+- adding a positive amount of hours => taking over hours from the last year
+- removing a negative amount of hours => payment to compensate for plus hours
 
 ## Permissions
 
+The `contract_other_profile` permission is required to see the `Contract` menu. 
+This permission also allows to change the contract settings of other users.
+
 | Permission Name            | Description                                                                            |
 |----------------------------|----------------------------------------------------------------------------------------|
-| contract_other_profile     | Used to show the contract menu and the ability to change other users contract settings | 
 | view_booking_contract      | View working-time details (PDF, Manual bookings)                                       |
 | approve_times_contract     | Approve monthly timesheets.                                                            |
 | create_booking_contract    | Allows to create manual time bookings.                                                 |
