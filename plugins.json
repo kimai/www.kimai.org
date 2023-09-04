@@ -22,7 +22,7 @@ permalink: /plugins.json
         {%- if settings.lemonsqueezy != nil %}
         "buy": "{{ settings.lemonsqueezy }}",
         {%- elsif settings.gumroad != nil %}
-        "buy": "https://gum.co/{{ settings.gumroad }}",{%- endif %}
+        "buy": "{{ settings.gumroad }}",{%- endif %}
         "developer": {
             "name": "{{ developer.name }}",
             "homepage": {% if developer.homepage %}"{{ developer.homepage }}"{% else %}null{% endif %}

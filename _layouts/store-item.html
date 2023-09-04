@@ -24,6 +24,10 @@ layout: content
 {% if settings.screenshots %}
     {% assign screenshots = settings.screenshots %}
 {% endif %}
+{% assign isMultiPurchase = nil %}
+{% if settings.multi_purchase %}
+    {% assign isMultiPurchase = true %}
+{% endif %}
 {% if settings.download %}
     {% assign buyLink = settings.download %}
     {% assign buyBtnIcon = 'fas fa-download' %}
@@ -50,7 +54,7 @@ layout: content
     {% if developer.purchase_details %}
         {% assign purchase_details = developer.purchase_details %}
     {% endif %}
-    {% assign buyLink = 'https://gum.co/' | append: settings.gumroad %}
+    {% assign buyLink = settings.gumroad %}
     {% assign buyBtnIcon = 'fas fa-shopping-cart' %}
 {% elsif settings.github %}
     {% assign buyLink = settings.github | append: '/releases' %}
@@ -93,7 +97,11 @@ layout: content
                             <div class="card p-3 mb-3">
                                 <div class="d-flex align-items-center">
                                     {% if buyLink != '' %}
-                                    <a href="{{ buyLink }}">
+                                    {% if isMultiPurchase != nil %}
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#modal-buy">
+                                    {% else %}
+                                        <a href="{{ buyLink }}">
+                                    {% endif %}
                                         <span class="avatar text-white bg-blue me-2">
                                           <i class="fas fa-euro-sign"></i>
                                         </span>
@@ -284,7 +292,11 @@ layout: content
                                 {% endif %}
 
                                 {% if buyLink != '' %}
-                                    <a href="{{ buyLink }}" class="btn btn-success ms-2" target="_blank">
+                                    {% if isMultiPurchase != nil %}
+                                        <a href="#" class="btn btn-success ms-2" data-bs-toggle="modal" data-bs-target="#modal-buy">
+                                    {% else %}
+                                        <a href="{{ buyLink }}" class="btn btn-success ms-2" target="_blank">
+                                    {% endif %}
                                         <i class="{{ buyBtnIcon }}"></i>
                                         <span class="text-nowrap">{{ buyTitle }}</span>
                                     </a>
@@ -320,7 +332,11 @@ layout: content
                                 <h3 id="purchase" class="card-title">{{ site.data[page.lang].translation.store-purchase }}</h3>
                             </div>
                             <div class="card-options">
-                                <a href="{{ buyLink }}" class="btn btn-success ms-2" target="_blank">
+                                {% if isMultiPurchase != nil %}
+                                    <a href="#" class="btn btn-success ms-2" data-bs-toggle="modal" data-bs-target="#modal-buy">
+                                {% else %}
+                                    <a href="{{ buyLink }}" class="btn btn-success ms-2" target="_blank">
+                                {% endif %}
                                     <i class="{{ buyBtnIcon }}"></i>
                                     <span class="text-nowrap">{{ buyTitle }}</span>
                                 </a>
@@ -418,5 +434,77 @@ layout: content
 
         </div>
 
+    </div>
+</div>
+
+<div class="modal modal-blur fade" id="modal-buy" tabindex="-1" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{{ site.data[page.lang].translation.store-buy-button }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                {% if settings.lemonsqueezy %}
+                <div class="row align-items-center mb-3">
+                    <div class="col-auto">
+                        <a class="btn btn-success w-100" href="{{ settings.lemonsqueezy }}" target="_blank">
+                            Lemonsqueezy
+                        </a>
+                    </div>
+                    <div class="col-auto ms-auto">
+                        <i class="fa-2x fab fa-google-pay"></i>
+                        <i class="fa-2x fab fa-cc-apple-pay"></i>
+                        <i class="fa-2x fab fa-cc-visa"></i>
+                        <i class="fa-2x fab fa-cc-mastercard"></i>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if settings.gumroad %}
+                <div class="row align-items-center">
+                    <div class="col-auto">
+                        <a class="btn btn-success w-100" href="{{ settings.gumroad }}" target="_blank">
+                            Gumroad
+                        </a>
+                    </div>
+                    <div class="col-auto ms-auto">
+                        <i class="fa-2x fab fa-cc-paypal"></i>
+                        <i class="fa-2x fab fa-google-pay"></i>
+                        <i class="fa-2x fab fa-cc-apple-pay"></i>
+                        <i class="fa-2x fab fa-cc-visa"></i>
+                        <i class="fa-2x fab fa-cc-mastercard"></i>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if settings.play-store %}
+                <div class="row align-items-center">
+                    <div class="col-auto">
+                        <a class="btn btn-success w-100" href="{{ settings.play-store }}" target="_blank">
+                            <i class="fab fa-google-play"></i> Play Store
+                        </a>
+                    </div>
+                    <div class="col-auto ms-auto">
+                        <i class="fa-2x fab fa-google-pay"></i>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if settings.app-store %}
+                <div class="row align-items-center">
+                    <div class="col-auto">
+                        <a class="btn btn-success w-100" href="{{ settings.app-store }}" target="_blank">
+                            <i class="fab fa-app-store-ios"></i> App Store
+                        </a>
+                    </div>
+                    <div class="col-auto ms-auto">
+                        <i class="fa-2x fab fa-cc-apple-pay"></i>
+                    </div>
+                </div>
+                {% endif %}
+
+            </div>
+        </div>
     </div>
 </div>
