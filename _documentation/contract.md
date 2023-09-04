@@ -24,11 +24,12 @@ TODO
 
 ## Permissions
 
-| Permission Name            | Description                                                                                        |
-|----------------------------|----------------------------------------------------------------------------------------------------|
-| view_booking_contract      | FIXME FIXME FIXME FIXME                                                                            |
-| approve_times_contract     | Approve monthly timesheets. By default given to: `Administrator`, `Super Administrator`            |
-| create_booking_contract    | Allows to create manual time bookings. By default given to: `Administrator`, `Super Administrator` |
+| Permission Name            | Description                                                                            |
+|----------------------------|----------------------------------------------------------------------------------------|
+| contract_other_profile     | Used to show the contract menu and the ability to change other users contract settings | 
+| view_booking_contract      | View working-time details (PDF, Manual bookings)                                       |
+| approve_times_contract     | Approve monthly timesheets.                                                            |
+| create_booking_contract    | Allows to create manual time bookings.                                                 |
 {: .table }
 
 {% include store-howto-permissions.md %}
