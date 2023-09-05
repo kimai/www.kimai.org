@@ -11,7 +11,13 @@ The `Absence` screen can be seen by any user that has the `absence` permission.
 
 ## Holiday
 
-TODO 
+When you are eligible for holidays, meaning that your contract settings have a value for `holidays`, you can add holidays here.
+
+- Vacation days can be full days or half days.
+- Vacation days count as working time, so they will be added to your working time account.
+- How much time is used for each day depends on the expected working hours for the day.
+- You can book ranges of holidays
+- Days without expected working hours will be ignored when creating ranges
 
 ## Sickness
 

@@ -8,3 +8,5 @@ The "Working hours, vacation, sickness (controlling)" plugin bundles the followi
 - [Working times]({% link _documentation/contract.md %})
 - [Absence management]({% link _documentation/absence.md %})
 - [Public holidays]({% link _documentation/public-holiday.md %})
+
+{% include youtube-video.html id="mmMqoTB7Mhw" title="Working contract overview" %}

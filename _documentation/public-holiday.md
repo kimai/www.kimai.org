@@ -6,9 +6,13 @@ related:
 - public-holiday
 ---
 
+{% include youtube-video.html id="zuPZiZmb-0s" title="Public holiday management" %}
+
 ## Groups
 
-TODO
+If you have employees in different locations with different sets of public holidays, you need to create groups for them.
+
+But if you have only one office with all employees having the same set of used public holidays, you can use the "Default" group and skip this step.
 
 ## Holidays
 

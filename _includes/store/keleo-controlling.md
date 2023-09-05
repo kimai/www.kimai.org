@@ -1,4 +1,8 @@
 
+## Introduction
+
+{% include youtube-video.html id="mmMqoTB7Mhw" title="Working contract overview" %}
+
 ## Features
 
 - It enhances the [Working times]({% link _documentation/contract.md %}) view with 
