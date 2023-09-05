@@ -6,7 +6,7 @@ related:
 - public-holiday
 ---
 
-{% include youtube-video.html id="zuPZiZmb-0s" title="Public holiday management" %}
+{% include youtube-video.html id="public_holiday" %}
 
 ## Groups
 

@@ -6,7 +6,7 @@ related:
 - public-holiday
 ---
 
-{% include youtube-video.html id="mmMqoTB7Mhw" title="Working contract overview" %}
+{% include youtube-video.html id="workcontract" %}
 
 This screen and the `Contract` menu can be seen by any user that has active contract settings.
 Administrators require the `contract_other_profile` permission (see `Permissions` below)

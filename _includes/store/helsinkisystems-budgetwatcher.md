@@ -7,11 +7,11 @@ For example, you can set the default amounts to 50%, 75%, and 95%, and for anoth
 
 English:
 
-{% include youtube-video.html id="7EuDqvmb-Rk" title="BudgetWatcher" %}
+{% include youtube-video.html id="budgetwatcher_en" %}
 
 German:
 
-{% include youtube-video.html id="_ryMJwYsOOg" title="BudgetWatcher" %}
+{% include youtube-video.html id="budgetwatcher_de" %}
 
 ## Support
 

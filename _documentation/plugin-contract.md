@@ -1,6 +1,7 @@
 ---
 title: Working contract
-description: Logging entity changes in Kimai 
+description: Logging entity changes in Kimai
+toc: false
 ---
 
 The "Working hours, vacation, sickness (controlling)" plugin bundles the following features:
@@ -9,4 +10,9 @@ The "Working hours, vacation, sickness (controlling)" plugin bundles the followi
 - [Absence management]({% link _documentation/absence.md %})
 - [Public holidays]({% link _documentation/public-holiday.md %})
 
-{% include youtube-video.html id="mmMqoTB7Mhw" title="Working contract overview" %}
+## Video introduction
+
+{% include youtube-video.html id="workcontract" %}
+
+{% include youtube-video.html id="public_holiday" %}
+

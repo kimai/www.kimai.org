@@ -9,7 +9,7 @@ related:
 
 Kimai allows creating invoices from timesheet data in several formats.
 
-{% include youtube-video.html id="wrXqR4uhN-Q" title="Your first Kimai invoice" %}
+{% include youtube-video.html id="first_invoice" %}
 
 ## Invoice number format
 
