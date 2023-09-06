@@ -28,7 +28,10 @@ If you uncheck the `Active` checkbox when editing the user profile and save:
 
 A user can be re-activated at any time. The logged-in user cannot deactivate his own profile.
 
-If you want to see all deactivated accounts, please swicth to the user listing (at System > Users) and choose `Active = No` in the filter dropdown. 
+If you want to see all deactivated accounts, please switch to the user listing (at System > Users) and choose `Active = No` in the filter dropdown.
+
+{% include youtube-video.html id="deactivated_users" %}
+
 
 ## System accounts
 
