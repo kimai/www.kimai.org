@@ -52,11 +52,10 @@ Example: to get a three digit long string with year counter use `{cy,3}`, which 
 {% capture additional_chars %}
 1. Characters outside the replacer **cannot** include `{` and `}`.  
 2. The invoice number is unique in Kimai and you cannot generate an invoice with the same invoice number twice. Kimai will try to avoid that automatically by incrementing the counter, but if that is impossible, you'll see an error message.
+3. You can change the format at [System > Settings]({% link _documentation/configurations.md %}).
 {% endcapture %}
 {% assign additional_chars = additional_chars| markdownify %}
 {% include alert.html icon="fas fa-exclamation" type="warning" alert=additional_chars %}
-
-To change the format, look out for the {% include demo-action-button.html icon="fas fa-cog" %} icon in the invoice screen, or change it from the `System configurations`.
 
 ### Incrementing the invoice counter
 
