@@ -37,14 +37,17 @@ When a user tries to create such a timesheet, or tries to stop such a timesheet,
 
 ![Screenshot](/images/documentation/timesheet/timesheet-excessive-duration.jpg "How such a warning will look like"){:height="250px"}
 
-You have several options to solve this problem:
+You have several options to solve this problem. 
+All of them involve that the user opens the timesheet listing and finds the record (usually the last one created):
 
 - Edit the record and set a different start date
 - Edit the record and set a different end date
 - Edit the record and set a shorter duration
-- Delete the record from the users timesheet listing
+- Delete the record from the listing
 
-Administrators can either configure the duration for this check or deactivate it entirely at [System > Settings > Timesheet]({% link _documentation/configurations.md %}).
+An administrator can fix the problem by opening the `All times` view and filtering the user.
+
+Administrators can also configure the duration for this check or deactivate it entirely at [System > Settings > Timesheet]({% link _documentation/configurations.md %}).
 
 ## Duration format
 
