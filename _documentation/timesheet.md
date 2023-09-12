@@ -15,7 +15,7 @@ redirect_from:
 ## Starting and stopping records
 
 ### Re-start timesheet records
-- Click one of your **last activities** in the dropdown in the upper toolbar - this will start a record for the same customer/project & activity "now"
+- Click one of your **last activities** in the modal, opened through the upper toolbar - this will start a record for the same customer/project & activity "now"
 - Click the **restart** action from one of the records in your timesheet - this will start a record for the same customer/project & activity "now" and copy description and tags
 
 ### Start new records
@@ -28,6 +28,23 @@ redirect_from:
 - Click the **stop** button in the "active records" dropdown in the upper toolbar
 - Click the **stop** action in the running record in your timesheet
 - Save a running record after setting an end date (deactivated if the timeclock-mode is active)
+
+#### Problem: cannot be stopped
+
+Kimai has rules in place, to prevent excessive long timesheets from being accidentally created.
+
+When a user tries to create such a timesheet, or tries to stop such a timesheet, a warning will be shown:
+
+![Screenshot](/images/documentation/timesheet/timesheet-excessive-duration.jpg "How such a warning will look like"){:height="250px"}
+
+You have several options to solve this problem:
+
+- Edit the record and set a different start date
+- Edit the record and set a different end date
+- Edit the record and set a shorter duration
+- Delete the record from the users timesheet listing
+
+Administrators can either configure the duration for this check or deactivate it entirely at [System > Settings > Timesheet]({% link _documentation/configurations.md %}).
 
 ## Duration format
 
