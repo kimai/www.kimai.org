@@ -33,7 +33,7 @@ This is a work-in-progress software, certain features are not yet here, but alre
 
 ### Planned features
 
-Thise features will be added in the future, but there is no guarantee when or in which order (numbers in front are priorities).
+These features will be added in the future, but there is no guarantee when or in which order (numbers in front are priorities).
 
 - Documentation
     - (1) Improve this store page 
@@ -53,20 +53,28 @@ Thise features will be added in the future, but there is no guarantee when or in
     - (2) Allow to "Sent for approval" to Supervisor
     - (2) Allow to "Reject" or "Approve" by Supervisor
     - (2) Only calculate approved or locked absences (new ones are for planning)
+- Absence calendar
+    - (2) Display all users / teams
+    - (2) Allow export as ical (or similar format) for use in external calendars (e.g. Outlook)
 - Monthly contract PDF
     - (2) Include: total working time sum
     - (2) Include: total holiday sum
     - (3) Include: holidays at start of month sum
     - (3) Include: start of month working-time sum
-- Absence calendar
-    - (2) Display all users / teams
-    - (2) Allow export as ical (or similar format) for use in external calendars (e.g. Outlook)
 
 ### Ideas 
 
-These points are collections that come from user feedback. Those might or might not be added. 
-If you need one of these features, do not rely on them being added, but contact me to discuss your needs.
+The following list is a collection of feature wishes from user feedback. 
+Those might or might not be added. 
+If you need one of these features, do not rely on them being added, but contact me upfront to discuss your needs.
 
+- Management view for all users
+    - showing statistics for absences
+    - pending holidays (approved), used holidays, available
+- Monthly approvals
+  - Allow to close months partially, in case there is a change in the contract within the month
+- Define arbitrary date ranges with attached working-time profiles
+  - Allow to attach each user multiple profiles
 - Absences
     - Types of absences (Workaround: use comment field)
         - Configurable for sickness and other
@@ -83,6 +91,8 @@ If you need one of these features, do not rely on them being added, but contact 
     - Support calculation of breaks (e.g. display in calendar)
     - Use all breaks between first entry of the day and last entry of the day as pause
 - Add a button to take over values from last year (for all users)
+- Show "status" more prominent
+  - e.g. Dashboard widgets for total numbers
 - Working time requirements (Arbeitszeitvorgaben)
     - Maximum working time (per day, in one session) and breaks
     - Configure fixed rules per country
