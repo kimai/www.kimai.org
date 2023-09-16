@@ -5,11 +5,13 @@ canonical: /documentation/reporting.html
 ---
 
 Access to the reporting section has every user with the `view_reporting` permission.
+Each user can configure a personal default reporting screen (since Kimai 1.14) in their user preferences (default: `Weekly view for one user`).
 
-Reports show the rounded data, which is used throughout Kimai (e.g. in invoice and exports as well).
+Reports show the rounded data, which is used throughout Kimai (e.g. in invoice and exports as well). In previous versions, this was different.
 
 The following [permissions]({% link _documentation/permissions.md %}) are generally relevant for all reporting views:
 
+- `view_reporting` - to be able to see the report menu
 - `view_other_timesheet` - for choosing users
 - `view_other_reporting` - for seeing reports with other users
 - `view_all_data` - see all user (otherwise team member)
@@ -115,8 +117,6 @@ You can change the date that is used to filter inactive projects (date since las
 ## Customers
 
 ### Projects by month, activity and user
-
-Groups all project times by activity and user with total times. This report will likely NOT work, if you have too much data in one month. 
 
 - Required permission: `view_reporting` and `customer_reporting`
 
