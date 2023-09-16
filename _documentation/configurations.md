@@ -21,9 +21,9 @@ users with the permission `system_configuration` (by default [ROLE_SUPER_ADMIN](
 - `Permitted number of simultaneously running time entries` - by default it is `1`, which will automatically stop the currently running record when a new one is started. 
   If it is greater than 1 and as soon as the limit is reached, the user has to manually stop at least one active entry (an error message will be shown) and the 
   global tick-tack clock will be replaced with a dropdown.
-- `Minute selection for From & To` - 
-- `Minute selection for Duration` - 
-- `Maximum duration of a timesheet record in minutes before saving is rejected` - maximum duration of a timesheet record (0 = deactivated)
+- `Minute selection for From & To` - steps counter for the "begin time" and "end time" dropdown-menu in the timesheet forms
+- `Minute selection for Duration` - steps counter for the "duration" dropdown-menu in the timesheet forms
+- `Maximum duration of a timesheet record` - maximum duration of a timesheet record in minutes, before update/stop is rejected (eg. to prevent users from booking a whole day). Can be deactivated by setting it to 0.
 
 ### Time-tracking modes
 
@@ -49,7 +49,7 @@ make sure to remove this permission for persons without special access regulatio
 
 The `Admin > Timesheets` screen still include these fields, as you might have to correct wrong/add forgotten entries on behalf of the user.
 
-## Weekly working hours
+## Weekly hours
 
 - `Number of entries taken over from previous weeks` - defines the maximum number of "recent activity" rows that will be pre-filled in new weeks.
 You can deactivate that feature by setting the value to 0. 
