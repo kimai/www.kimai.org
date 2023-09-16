@@ -1,6 +1,7 @@
 ---
 title: Calendar
 description: Manage your timesheet records in a calendar view
+canonical: /documentation/calendar.html
 related:
   - timesheet
   - weekly-times
