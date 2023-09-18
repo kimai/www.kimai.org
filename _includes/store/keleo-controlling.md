@@ -39,17 +39,7 @@ These features will be added in the future, but there is no guarantee when or in
 ```
 - Documentation
     - (1) Written
-    - (1) Videos
-- Calendar integration
-    - (1) Show absences
-    - (1) Show public holidays in calendar
-- Migrate from MR Plugins
-    - (1) Convert configurations (and remove unused?)
-    - (2) Import holidays
-    - (2) Import absences
-    - (3) Import public holidays
-- Absences
-  - (2) Export to Excel
+    - (2) Videos
 - Approval workflow
     - (1) Allow to "Sent for approval" to Supervisor
     - (1) Allow to "Reject" or "Approve" by Supervisor
@@ -97,7 +87,57 @@ If the above list is empty or I decide to add a feature, it will be moved to the
 - Show "status" more prominent
   - e.g. Dashboard widgets for total numbers
 - Working time requirements (Arbeitszeitvorgaben)
-    - Maximum working time (per day, in one session) and breaks
-    - Configure fixed rules per country
-    - Allow one custom rule
-    - Configure default rule (country or custom) per user
+  - Maximum working time (per day, in one session) and breaks
+  - Configure fixed rules per country
+  - Allow one custom rule
+  - Configure default rule (country or custom) per user
+- Holidays
+  - Take over holidays from last year (like manual bookings)
+- Finalize year
+  - Auto-adjust time-account of next year
+  - Allow to take over and adjust the holidays, which were not yet taken
+- Configuration for the business year, in case a company is not using the calendar year
+```
+
+## Changelog
+
+```
+1.1.0 (18 Sept. 2023)
+
+- Added: data migration from MR plugins
+- Added: show absences in calendar
+- Added: show public-holidays in calendar
+- Added: export absences to excel
+- Fixed: possible pagination issue
+
+1.0.3 (11 Sept. 2023)
+
+- Fixed: make sure to redirect to correct screen after create and delete absences
+
+1.0.2 (07 Sept. 2023)
+
+- Added: permission docs
+- Fixed: first day of absence ranges is created twice
+
+1.0.1 (31 Aug. 2023)
+
+- Fixed: cannot update existing absences
+- Fixed: replaced deprecated code usage
+
+1.0.0 (28 Aug. 2023)
+
+- Added: booking date-ranges for holiday and sickness
+- Added: 10 new validations to make sure only valid absences can be booked
+- Added: permissions for deleting absences
+- Added: batch delete (non-locked) absences
+- Added: order absences from highest to lowest date
+- Added: support for half-days in public holidays
+- Added_ permission for creating absences
+- Added: support for half-days in holidays
+- Added: support for
+- Fixed: editing absences only non-locked absences
+- Fixed: several calculations were not correct
+- Fixed: adjusting "expected working times" should not change "public holiday calculation" in already locked months
+- Fixed: adjusting "expected working times" should not change "absence calculation" in already locked months
+- Fixed: removed unused `time_off` permission
+```
