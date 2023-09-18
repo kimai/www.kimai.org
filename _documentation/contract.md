@@ -44,6 +44,38 @@ Popular examples are:
 - adding a positive amount of hours => taking over hours from the last year
 - removing a negative amount of hours => payment to compensate for plus hours
 
+## How calculations work
+
+All calculations are only done up until NOW.
+That means adding a holiday tomorrow will not change your hour account.
+
+### Public holidays
+
+Adds the amount of configured working time as working time.
+If you add a timesheet on the same day, it calculates as overtime.
+
+### Holidays
+
+Adds the amount of configured working time as working time.
+If you add a timesheet on the same day, it calculates as overtime.
+
+### Sickness
+
+Fills up the working day to match the expected working time.
+
+Examples:
+- 8 hours are expected and you already logged 2 hours, then 6 hours will be filled-up
+- 8 hours are expected and no time is logged, then 8 hours will be added
+
+### Other
+
+Adds the amount of configured hours as working time.
+
+### Time-Off
+
+Will not influence the working time in any way.
+This booking is only there for information purposes.
+
 ## Permissions
 
 The `contract_other_profile` permission is required to see the `Contract` menu. 

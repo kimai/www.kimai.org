@@ -5,6 +5,8 @@
 
 ## Features
 
+**This is a early-access software, certain features are not yet here, but already planned (see Roadmap below). Feedback will be **
+
 - It enhances the [Working times]({% link _documentation/contract.md %}) view with 
   - Manual bookings (adjust the time account with plus or minus hours)
   - Overview of the entire year with results per day, the ability to close a month, download result PDF and more
@@ -17,6 +19,7 @@
   - Create sickness days
   - Create other absences (e.g. unpaid leave)
   - Automatically adds the times absent to the user's timesheet based on their daily working time
+  - Export absences per user to Excel
 - And it adds the new [Public holiday]({% link _documentation/public-holiday.md %}) management view
   - Allows to create different groups (e.g. for different countries or states) and add public holidays to each of them 
   - Import and manual creation of public (local) holidays
@@ -26,17 +29,15 @@
   - Expected working hours per day of the week: Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday
   - Vacation entitlement per user for the calendar year
   - The "starting day" limits the working hours calculation from that date until "now"  
+- You can [import data from the MR plugins]({% link _documentation/plugin-contract.md %}) (Controlling, Sickday, Vacation)
+- The user calendar will show all absences (sickness, vacation...) and public-holidays
 
-## Roadmap
-
-This is a work-in-progress software, certain features are not yet here, but already planned or at least considered.
-
-### Planned features
+## Roadmap (Planned features)
 
 These features will be added in the future, but there is no guarantee when or in which order (numbers in front are priorities).
 
+```
 - Documentation
-    - (1) Improve this store page 
     - (1) Written
     - (1) Videos
 - Calendar integration
@@ -50,9 +51,9 @@ These features will be added in the future, but there is no guarantee when or in
 - Absences
   - (2) Export to Excel
 - Approval workflow
-    - (2) Allow to "Sent for approval" to Supervisor
-    - (2) Allow to "Reject" or "Approve" by Supervisor
-    - (2) Only calculate approved or locked absences (new ones are for planning)
+    - (1) Allow to "Sent for approval" to Supervisor
+    - (1) Allow to "Reject" or "Approve" by Supervisor
+    - (1) Only calculate approved or locked absences (new ones are for planning)
 - Absence calendar
     - (2) Display all users / teams
     - (2) Allow export as ical (or similar format) for use in external calendars (e.g. Outlook)
@@ -61,35 +62,37 @@ These features will be added in the future, but there is no guarantee when or in
     - (2) Include: total holiday sum
     - (3) Include: holidays at start of month sum
     - (3) Include: start of month working-time sum
+```
 
-### Ideas 
+## Ideas 
 
-The following list is a collection of feature wishes from user feedback. 
-Those might or might not be added. 
+The next list is a collection of feature wishes from users, which might or might not be added. 
 If you need one of these features, do not rely on them being added, but contact me upfront to discuss your needs.
+If the above list is empty or I decide to add a feature, it will be moved to the "Planned features" section.
 
+```
 - Management view for all users
-    - showing statistics for absences
-    - pending holidays (approved), used holidays, available
+  - showing statistics for absences
+  - pending holidays (approved), used holidays, available
 - Monthly approvals
   - Allow to close months partially, in case there is a change in the contract within the month
 - Define arbitrary date ranges with attached working-time profiles
   - Allow to attach each user multiple profiles
 - Absences
-    - Types of absences (Workaround: use comment field)
-        - Configurable for sickness and other
-        - Show type in PDF
-        - paid/not paid
-    - Convert holiday to sickness (Workaround: create sickness and delete holiday)
-    - Sum of sickness and other days on Absence screen
+  - Types of absences (Workaround: use comment field)
+    - Configurable for sickness and other
+    - Show type in PDF
+    - paid/not paid
+  - Convert holiday to sickness (Workaround: create sickness and delete holiday)
+  - Sum of sickness and other days on Absence screen
 - Notification
   - Sent notifications to supervisor for new "absences to be approved"
   - Sent notifications to user for approved/rejected absences
 - Rules
-    - Configure if timesheets should be prohibited during absence (type)
+  - Configure if timesheets should be prohibited during absence (type)
 - Breaks (Pause)
-    - Support calculation of breaks (e.g. display in calendar)
-    - Use all breaks between first entry of the day and last entry of the day as pause
+  - Support calculation of breaks (e.g. display in calendar)
+  - Use all breaks between first entry of the day and last entry of the day as pause
 - Add a button to take over values from last year (for all users)
 - Show "status" more prominent
   - e.g. Dashboard widgets for total numbers
