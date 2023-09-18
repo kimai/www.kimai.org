@@ -5,7 +5,7 @@
 
 ## Features
 
-**This is a early-access software, certain features are not yet here, but already planned (see Roadmap below). Feedback will be **
+**This is a early-access software, certain features are not yet here, but already planned (see Roadmap below). Feedback will be incorporated.**
 
 - It enhances the [Working times]({% link _documentation/contract.md %}) view with 
   - Manual bookings (adjust the time account with plus or minus hours)
