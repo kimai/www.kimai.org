@@ -44,6 +44,7 @@ These features will be added in the future, but there is no guarantee when or in
     - (1) Allow to "Sent for approval" to Supervisor
     - (1) Allow to "Reject" or "Approve" by Supervisor
     - (1) Only calculate approved or locked absences (new ones are for planning)
+    - (3) Allow to export (or print) pending approvals
 - Absence calendar
     - (2) Display all users / teams
     - (2) Allow export as ical (or similar format) for use in external calendars (e.g. Outlook)
@@ -95,8 +96,9 @@ If the above list is empty or I decide to add a feature, it will be moved to the
   - Take over holidays from last year (like manual bookings)
 - Finalize year
   - Auto-adjust time-account of next year
-  - Allow to take over and adjust the holidays, which were not yet taken
+  - Allow to take over and adjust the holidays, which were not yet taken (probably with an expiration date?)
 - Configuration for the business year, in case a company is not using the calendar year
+- Multiple working contracts (configured with start and end time)
 ```
 
 ## Changelog
