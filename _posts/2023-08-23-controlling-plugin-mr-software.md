@@ -3,6 +3,11 @@ title: "New working times (controlling) plugin and MR Software closure"
 date: "2023-08-27 20:00:00 +0200"
 author: kevinpapst
 tags: [Apps & Plugins]
+redirect_from:
+  - /store/hmr-it-hasworked-bundle.html
+  - /store/hmr-it-period-insert-bundle.html
+  - /de/store/hmr-it-hasworked-bundle.html
+  - /de/store/hmr-it-period-insert-bundle.html
 ---
 
 This post combines bad and good news. Let's start with the bad one...
@@ -16,6 +21,8 @@ That is the reason why none of their plugins can be purchased since months and i
 - Controlling
 - Vacation
 - Sickday
+- HasWorked
+- Period insert
 
 On top of that, they also offered:
 
