@@ -6,8 +6,10 @@ tags: [Apps & Plugins]
 redirect_from:
   - /store/hmr-it-hasworked-bundle.html
   - /store/hmr-it-period-insert-bundle.html
+  - /store/mr-software-recordbook-bundle.html
   - /de/store/hmr-it-hasworked-bundle.html
   - /de/store/hmr-it-period-insert-bundle.html
+  - /de/store/mr-software-recordbook-bundle.html
 ---
 
 This post combines bad and good news. Let's start with the bad one...

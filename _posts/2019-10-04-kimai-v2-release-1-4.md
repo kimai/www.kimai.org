@@ -15,7 +15,7 @@ This release contains various bugfixes and some new features:
 
 In the meantime two new addons were added to the Marketplace:
 - the [Expense tracking plugin]({% link _store/keleo-expenses-bundle.md %})
-- the [Period insert plugin]({% link _store/mr-software-period-insert-bundle.md %})
+- the Period insert plugin (not available any longer)
 
 Thanks to all of you for using and supporting Kimai, especially:
 - all clients and donators, you guys rock and help me to keep up the work for Kimai
