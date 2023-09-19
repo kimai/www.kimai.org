@@ -5,10 +5,16 @@ author: kevinpapst
 tags: [Apps & Plugins]
 redirect_from:
   - /store/hmr-it-hasworked-bundle.html
+  - /store/mr-software-hasworked-bundle.html
   - /store/hmr-it-period-insert-bundle.html
+  - /store/mr-software-period-insert-bundle.html
+  - /store/hmr-it-recordbook-bundle.html
   - /store/mr-software-recordbook-bundle.html
   - /de/store/hmr-it-hasworked-bundle.html
+  - /de/store/mr-software-hasworked-bundle.html
   - /de/store/hmr-it-period-insert-bundle.html
+  - /de/store/mr-software-period-insert-bundle.html
+  - /de/store/hmr-it-recordbook-bundle.html
   - /de/store/mr-software-recordbook-bundle.html
 ---
 
