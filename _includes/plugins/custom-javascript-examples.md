@@ -85,8 +85,8 @@ document.addEventListener('show.bs.modal', (e) => {
 Always deactivate the export checkbox:
 ```javascript
 document.addEventListener('kimai.initialized', function(event) {
-    const cb = document.querySelector('#preview_export #markAsExportedCheck');
-    if (cb !== null && cb.checked) { cb.checked = false; }
+    const ec = document.getElementById('markAsExportedCheck');
+    if (ec !== null && ec.checked) { ec.checked = false; document.getElementById('markAsExported').value = 0; }
 });
 ```
 
