@@ -63,7 +63,7 @@ If that is not defined as well, Kimai will fall back to the customer color and f
 
 {% include contents/budgets.md permission="activity" %} 
 
-### Rates
+### Prices
 
 {% include contents/rates.md permission="activity" %}
 

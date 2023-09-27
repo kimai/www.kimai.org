@@ -43,7 +43,7 @@ Start and end-date are inclusive, so both dates will be included when filtering 
 
 {% include contents/budgets.md permission="project" %} 
 
-### Rates
+### Prices
 
 {% include contents/rates.md permission="project" %}
 

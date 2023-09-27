@@ -13,13 +13,13 @@ These settings can be edited by:
 
 ## Hourly rate
 
-A fallback for records without any customer/project/activity specific [rate]({% link _documentation/rates.md %}).
+A fallback for records without any customer/project/activity specific [price]({% link _documentation/rates.md %}).
 
 Needs `hourly-rate_own_profile` / `hourly-rate_other_profile` permission to see and edit.
 
 ## Internal rate
 
-A fallback for records without any customer/project/activity specific internal [rate]({% link _documentation/rates.md %}).
+A fallback for records without any customer/project/activity specific internal [price]({% link _documentation/rates.md %}).
 
 Needs `hourly-rate_own_profile` / `hourly-rate_other_profile` permission to see and edit.
 

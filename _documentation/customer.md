@@ -35,7 +35,7 @@ before any data will be shown.
 
 {% include contents/budgets.md permission="customer" %} 
 
-### Rates
+### Prices
 
 {% include contents/rates.md permission="customer" %} 
 
