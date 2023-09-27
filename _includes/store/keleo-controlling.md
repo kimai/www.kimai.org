@@ -70,6 +70,7 @@ If the above list is empty or I decide to add a feature, it will be moved to the
 - Define arbitrary date ranges with attached working-time profiles
   - Allow to attach each user multiple profiles
 - Absences
+  - Add holiday for multiple users (e.g. for forced company vacations)
   - Types of absences (Workaround: use comment field)
     - Configurable for sickness and other
     - Show type in PDF
