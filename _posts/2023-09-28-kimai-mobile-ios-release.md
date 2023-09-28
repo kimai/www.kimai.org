@@ -25,8 +25,8 @@ Attention, time trackers! Prepare to embrace the extraordinary capabilities of [
 
 ### Track anywhere with offline mode 
 
-* Uninterrupted Tracking: Experience time tracking freedom through Offline Mode. 
-* No Connectivity Worries: No more concerns about connectivity – log your work hours during flights, remote locations, or instances of internet issues. 
+* Uninterrupted tracking: Experience time tracking freedom through Offline Mode. 
+* No connectivity worries: No more concerns about connectivity – log your work hours during flights, remote locations, or instances of internet issues. 
 
 ![Kimai Mobile Offline]({% link /images/news/Kimai-Mobile-Offline.png %}){:class="image"}
 
@@ -57,14 +57,19 @@ Ready to Take Charge?
 Are you poised to take command of your time like never before? Embark on your journey with Kimai Mobile and unlock the realm of efficient time tracking. 
 
 Download Kimai Mobile now:  
+
 [Google Play](https://play.google.com/store/apps/details?id=de.cloudrizon.kimaimobile&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1)
+
 [App Store](https://apps.apple.com/us/app/kimai-mobile/id1563933145)
 
-Stay connected with the Kimai community and remain updated with the latest features and tips:[Join the Kimai Community](https://www.kimaimobile.com/the-kimai-mobile-blog/)
+Stay connected with the Kimai community and remain updated with the latest features and tips: [Join the Kimai Community](https://www.kimaimobile.com/the-kimai-mobile-blog/)
 
 For regular updates, follow us on social media: 
+
 *[Pinterest](https://www.pinterest.de/kimaimobileapp/)
+
 *[Facebook](https://www.facebook.com/cloudrizon/)
+
 *[LinkedIn](https://www.linkedin.com/company/cloudrizon/)
 
 For in-depth information about Kimai Mobile and its features, visit: [Kimai Mobile Features](https://www.kimaimobile.com/features/)
