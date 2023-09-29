@@ -11,6 +11,7 @@ redirect_from:
     - /store/mr-software-sickday-bundle.html
     - /store/hmr-it-vacation-bundle.html
     - /store/mr-software-vacation-bundle.html
+    - /store/work-contract-bundle.html
 ---
 
 {% include store/keleo-controlling.md %}
