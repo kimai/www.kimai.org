@@ -11,12 +11,9 @@
                     {{ include.title | default: page.title }}
                 </h2>
             </div>
-            {% if include.feed != nil or include.cloud != nil %}
+            {% if include.cloud != nil %}
             <div class="col-12 col-md-auto ms-auto d-print-none">
                 <div class="page-options">
-                    {% if include.feed != nil %}
-                        <a href="/feed.xml" class="btn btn-link"><i class="fa fa-rss"></i></a>
-                    {% endif %}
                     {% if include.cloud != nil %}
                         {%- assign cloud_url = 'https://www.kimai.cloud/' -%}
                         {%- if page.lang == 'de' %}
