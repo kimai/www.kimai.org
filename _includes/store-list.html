@@ -1,7 +1,7 @@
 {% assign products = include.products | default: site.data.store %}
 
 <div class="card mb-3">
-	<table class="table card-table table-vcenter">
+	<table class="table card-table table-vcenter product-listing">
 		{% for product in products %}
 			{% assign featured = false %}
 		    {% assign iconSize = "fa-2x" %}

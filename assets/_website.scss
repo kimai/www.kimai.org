@@ -1,5 +1,7 @@
 @import '@tabler/core/src/scss/variables';
 
+body { background-color: #fff; }
+
 /* make all markdown tables look as if they have the "table" class */
 table {
     @extend .table;
@@ -33,6 +35,11 @@ table {
     display: none;
 }
 
+/* only show the badges on larger screens */
+table.product-listing .badge {
+    display: none;
+}
+
 @media (max-width: map-get($grid-breakpoints, "md")) {
     #documentation-content ul {
         padding-left: 3px;
@@ -44,6 +51,10 @@ table {
     .product-icon {
         display: table-cell;
         width: 100px;
+    }
+
+    table.product-listing .badge {
+        display: inline-block;
     }
 }
 
