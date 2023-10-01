@@ -7,12 +7,11 @@ layout: base
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <h1 class="navbar-brand navbar-brand-autodark">
+        <div class="navbar-brand navbar-brand-autodark h1">
             <a href="{% link _pages/documentation.md %}" class="header-brand">
-                <img src="{{ '/assets/icon/apple-touch-icon.png' | absolute_url }}" height="32"
-                     class="navbar-brand-image me-1" alt="Kimai"> Kimai – Docs
+                <img src="{{ '/assets/icon/apple-touch-icon.png' | absolute_url }}" height="32" class="navbar-brand-image me-1" alt="Kimai logo"> Kimai – Docs
             </a>
-        </h1>
+        </div>
         <div class="navbar-nav flex-row d-lg-none">
             {% include docs-chooser.html class="nav-link" %}
         </div>
