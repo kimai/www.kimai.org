@@ -5,7 +5,7 @@ author: kevinpapst
 tags: [v1]
 ---
 
-Oh what a shame, we all forgot our own birthday... Okay, I have to admit I didn't knew the date - but Torsten told me that Kimai is now 4 Years old ;)
+Oh what a shame, we all forgot our own birthday... Okay, I have to admit I didn't knew the date - but Torsten told me that Kimai is now 4 years old ;)
 and if anyone wants to save the date for next time - its the 15th of December.
 
 I would like to use that date to thank the Kimai community: you are great!

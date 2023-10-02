@@ -37,7 +37,7 @@ dann auch mal richtig dokumentieren und Euch (wo ich kann) beim Entwickeln helfe
 Und weil wir heute Geburtstag haben lasse ich es mir nicht nehmen hier nochmal um Spenden zu bitten.
 Das Projekt verursacht nicht nur Arbeit (was mir dabei am wenigsten ausmacht) sondern tatsächlich Kosten.
 Google AdSense vermag die Beträge leider nicht zu ersetzen, da wir dafür scheinbar noch zu sehr ein Randgruppen-Projekt
-mit zu wenig Popolarität sind. 
+mit zu wenig Popularität sind.
 
 Also - klickt doch ruhig mal bei Amazon vorbei. ...Mich motiviert so eine kleine Sachspende auch immer ziemlich
 weiter zu basteln – wie man sich denken kann... :)
