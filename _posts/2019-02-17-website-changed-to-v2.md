@@ -2,7 +2,7 @@
 title: "Website now focusing on Kimai v2"
 date: "2019-02-17 16:00:00 +0200"
 author: kevinpapst
-tags: [Website]
+tags: [Announcement]
 ---
 
 I have spent the last days changing the website again, to include all available information and documentation for Kimai v1 and Kimai v2.

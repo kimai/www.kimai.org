@@ -2,7 +2,7 @@
 title: "Deactivated Kimai Forum"
 date: "2016-07-31 13:30:00 +0200"
 author: kevinpapst
-tags: [Website]
+tags: [Version 1]
 ---
 
 With the current day I deactivated the Kimai Forum, as announced month ago on the forum itself.

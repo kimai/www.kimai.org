@@ -2,7 +2,7 @@
 title: "jQuery goes Kimai"
 date: "2007-03-28 21:21:56 +0200"
 author: skilleven
-tags: [v1]
+tags: [Version 1]
 ---
 
 Last weekend I browsed through the depths of the web looking for an applicative Ajax framework to use with Kimai.

@@ -2,7 +2,7 @@
 title: "Schon wieder Geburtstag!"
 date: "2008-12-15 14:18:00 +0200"
 author: skilleven
-tags: [v1]
+tags: [Version 1]
 ---
 
 Vor 2 Jahren (und einem Monat ungefähr ...) schrieb ich den Prototyp von Kimai an einem Wochenende und konnte

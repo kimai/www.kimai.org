@@ -2,7 +2,7 @@
 title: "Next major release"
 date: "2022-12-31 20:00:00 +0200"
 author: kevinpapst
-tags: [Announcement]
+tags: [Release]
 ---
 
 Wooohooo 😀 I am super excited to share this update, as I was working on it for more than one year now!!! 🎉
