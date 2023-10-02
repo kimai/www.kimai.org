@@ -29,6 +29,7 @@ Please stick to the following alignments in your listing:
 | Text                   | Left           |
 | Count (int)            | Center (badge) |
 | Collections (Text)     | Left (label)   |
+{: .table }
 
 Always align the table header to the content cell.
 

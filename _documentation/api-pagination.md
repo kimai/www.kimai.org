@@ -38,4 +38,5 @@ Here's a summary of the meaning of each of these headers:
 | X-Total-Count | Description | 1142    |
 | X-Total-Pages | Description | 23      |
 | X-Per-Page    | Description | 50      |
- 
+{: .table }
+

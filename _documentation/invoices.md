@@ -409,6 +409,7 @@ Twig rendering is different, you have to access the variables with `{% raw %}{{ 
 | ${user.title}                 | The current users title                                                                 |
 | ${user.see_others}            | A boolean indicating if the current user can see other users items                      |
 | ${user.meta.X}                | The current users [preference]({% link _documentation/user-preferences.md %}) named `X` |
+{: .table }
 
 ### Timesheet entry variables
 
@@ -452,6 +453,7 @@ For each timesheet record you can use these variables:
 | ${entry.meta.foo}            | The [meta field]({% link _documentation/meta-fields.md %}) with the internal name `foo` (must be in lowercase letters, e.g. `FOO` will be available as `${entry.meta.foo}`. Only available if the field is visible. |
 | ${entry.type}                | The type of this entry (plugins can add custom types)                                                                                                                                                               | timesheet       |
 | ${entry.category}            | The category of this entry (plugins can add custom types)                                                                                                                                                           | work            |
+{: .table }
 
 ### Customer variables
 
@@ -478,6 +480,7 @@ Variables for the customer who is receiving the invoice:
 | ${customer.budget_open_plain}      | The open monetary budget for this customer at the end date of your filter query (plain float value) (since 1.16.7)                                                                                                               |
 | ${customer.time_budget_open}       | The open time budget for this customer at the end date of your filter query (formatted) (since 1.16.7)                                                                                                                           |
 | ${customer.time_budget_open_plain} | The open time budget for this customer at the end date of your filter query (integer value = seconds) (since 1.16.7)                                                                                                             |
+{: .table }
 
 ### Project variables
 
@@ -503,6 +506,7 @@ The following variables exist, if projects could be found in the filtered data:
 | ${project.budget_open_plain}      | The open monetary budget for this project at the end date of your filter query (plain float value) (since 1.16.7)                                                                                                              |
 | ${project.time_budget_open}       | The open time budget for this project at the end date of your filter query (formatted) (since 1.16.7)                                                                                                                          |
 | ${project.time_budget_open_plain} | The open time budget for this project at the end date of your filter query (integer value = seconds) (since 1.16.7)                                                                                                            |
+{: .table }
 
 If more than one project was found, you will have further variables (same list as above) called `${project.1.name}`, `${project.2.name}` and so on.
 The order is not guaranteed, so it is not recommended relying on those variables. 
@@ -522,6 +526,7 @@ The following variables exist, if activities could be found in the filtered data
 | ${activity.budget_open_plain}      | The open monetary budget for this activity at the end date of your filter query (plain float value) (since 1.16.7)                                                                                                               |
 | ${activity.time_budget_open}       | The open time budget for this activity at the end date of your filter query (formatted) (since 1.16.7)                                                                                                                           |
 | ${activity.time_budget_open_plain} | The open time budget for this activity at the end date of your filter query (integer value = seconds) (since 1.16.7)                                                                                                             |
+{: .table }
 
 If more than one activity was found, you will have further variables (same list as above) called `${activity.1.name}`, `${activity.2.name}` and so on.
 The order is not guaranteed, so it is not recommended relying on those variables.

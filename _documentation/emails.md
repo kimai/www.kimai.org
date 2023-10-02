@@ -38,6 +38,7 @@ The following specialized transports (usually helper to simplify the connection 
 | SendGrid    | composer require symfony/sendgrid-mailer   | `sendgrid+smtp://KEY@default`                  |
 | Sendinblue  | composer require symfony/sendinblue-mailer | `sendinblue+smtp://USERNAME:PASSWORD@default`  |
 | OhMySMTP    | composer require symfony/oh-my-smtp-mailer | `ohmysmtp+smtp://API_TOKEN@default`            |
+{: .table }
 
 Be aware that you can achieve the same in most cases (without installing composer packages) by rewriting the MAILER_URL, e.g.:
 

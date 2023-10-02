@@ -66,6 +66,7 @@ You can now log in with these accounts:
 | tony_teamlead  |  kitten  | api_kitten | Teamlead            |
 | anna_admin     |  kitten  | api_kitten | Administrator       |
 | susan_super    |  kitten  | api_kitten | Super-Administrator |
+{: .table }
 
 Demo data can always be deleted by dropping the schema and re-creating it.
 The `kimai:reset:dev` command will do that automatically and can always be executed later on to reset your dev database and cache.

@@ -6,3 +6,4 @@
 | **anna_admin** ({{ site.data[page.lang].translation.demo.role_admin }})       |                   **kitten**                    | api_kitten |
 | **susan_super** ({{ site.data[page.lang].translation.demo.role_super }})      |                   **kitten**                    | api_kitten |
 | **admin** ({{ site.data[page.lang].translation.demo.role_super }})            |                  **password**                   |     -      |
+{: .table }

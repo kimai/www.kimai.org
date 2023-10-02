@@ -17,6 +17,7 @@ Feel free to send your self-made language files or contributing to the weblate p
 {%- for locale in site.data.multi-language %}
 | {{ locale[1] }}        | [![Translation status](https://hosted.weblate.org/widgets/kimai/{{ locale[0] }}/svg-badge.svg)](https://hosted.weblate.org/engage/kimai/{{ locale[0] }}/)           |
 {%- endfor %}
+{: .table }
 
 All translations in Kimai are managed at Weblate and should be changed there exclusively! Do not chang ethe source files of Kimai.
 

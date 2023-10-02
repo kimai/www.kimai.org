@@ -32,6 +32,7 @@ Supported attributes (field names are case-insensitive):
 | Time budget        | time budget, time-budget                               |
 | Visible            | visible                                                |
 | Meta fields        | meta.xxx                                               |
+{: .table }
 
 #### Example
 
@@ -64,6 +65,7 @@ Supported attributes (field names are case-insensitive):
 | Time budget       | time budget, time-budget                               |
 | Visible           | visible                                                |
 | Meta fields       | meta.xxx                                               |
+{: .table }
 
 #### Example
 

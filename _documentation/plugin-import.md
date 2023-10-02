@@ -31,6 +31,7 @@ Supported attributes (field names are case-insensitive):
 | Time budget        | time budget, time-budget                           |
 | Visible            | visible                                            |
 | Meta fields        | meta.xxx                                           |
+{: .table }
 
 ### Example
 
@@ -63,6 +64,7 @@ Supported attributes (field names are case-insensitive):
 | Time budget       | time budget, time-budget                               |
 | Visible           | visible                                                |
 | Meta fields       | meta.xxx                                               |
+{: .table }
 
 ### Example
 
@@ -110,6 +112,7 @@ This will import timesheets and create these elements on the fly:
 | To             | TODO ...                                                  |
 | User           | Username                                                  |
 | Email          | User email (required when creating users)                 |
+{: .table }
 
 ### User handling
 
@@ -160,6 +163,7 @@ Want to switch from Clockify to Kimai? Export the data in Clockify, open it in E
 | Duration (decimal)    | The timesheet duration                                                                                     |
 | Billable Rate (XXX)   | Timesheet hourly rate. XXX = currency (which is not imported, but needs to be configured for the customer) |
 | Billable Amount (XXX) | Timesheet total rate. XXX = currency (which is not imported, but needs to be configured for the customer)  |
+{: .table }
 
 **BE AWARE** you have to choose the correct date-format in Clockify, otherwise you will see errors like:
 ```

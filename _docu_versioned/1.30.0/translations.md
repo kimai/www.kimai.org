@@ -42,6 +42,7 @@ Feel free to send your self-made language files or contributing to the weblate p
 | Swedish                | [![Translation status](https://hosted.weblate.org/widgets/kimai/sv/svg-badge.svg)](https://hosted.weblate.org/engage/kimai/sv/)           |
 | Turkish                | [![Translation status](https://hosted.weblate.org/widgets/kimai/tr/svg-badge.svg)](https://hosted.weblate.org/engage/kimai/tr/)           |
 | Vietnamese             | [![Translation status](https://hosted.weblate.org/widgets/kimai/vi/svg-badge.svg)](https://hosted.weblate.org/engage/kimai/vi/)           |
+{: .table }
 
 Languages and translations in Kimai are configurable. 
 Read below how to add a new language and configure the output formats for date and time values.  

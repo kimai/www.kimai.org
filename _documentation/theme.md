@@ -33,7 +33,7 @@ Use the following alignments in your data-tables:
 | Text               | Start     |           |
 | Count (int)        | Center    | badge     |
 | Collections (Text) | Start     | label     |
-
+{: .table }
 
 ## Max. active entries warning
 

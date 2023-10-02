@@ -75,6 +75,7 @@ You have to adjust more keys, please read the main SAML configuration!
     | Basic Information > Last name     | LastName            |
     | Employee Details > Employee ID    | AccountNumber       |
     | Employee Details > Title          | Title               |
+    {: .table }
 - Back on the overview page: activate the new application for your users
 - The last configuration step takes care of the `User role` mapping, which can be defined in two ways:
     - Using Google Groups (recommended):

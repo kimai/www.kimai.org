@@ -85,6 +85,7 @@ This leads to the following decision matrix:
 |----------------|-----------|---------|----------|
 | None-user rule | 5         | 3       | 1        |
 | User specific  | 6         | 4       | 2        |
+{: .table }
 
 If no price can be found, the `users hourly-price preference` will be used to calculate the records rate.
 In case that the `users hourly-price` is not set or equals `0`, the records rate will be set to `0`.
