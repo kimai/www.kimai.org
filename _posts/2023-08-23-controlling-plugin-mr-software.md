@@ -72,12 +72,11 @@ And I will continue to add more features in the future, that is a promise and [d
 
 If you are a user of the MR plugins, I would be happy if you could give the new plugin a try and let me know what you think about it.
 
-### Promo Codes
+### Promo Code
 
-As a bonus I have two promo codes for you:
+As a bonus I have a promo code for you 🦄
 
-- `MRIGRATE50` for 50 € off the new plugin (this code can be only be redeemed 20 times and is valid until 2023-09-30)
-- `MRIGRATE50` gives you 10% off the price (it is valid until 2023-12-31) 
+The code `MRIGRATE50` gives you 10% off the price (it is valid until 2023-12-31) 
 
 ### What's next?
 
