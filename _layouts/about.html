@@ -1,0 +1,58 @@
+---
+layout: base
+---
+
+<main class="page-wrapper">
+
+    {% include header-navigation.html %}
+
+    {% include pages/about-timeline-v2.html %}
+
+    <section class="container mb-4 pt-md-1 pt-lg-4 pt-xl-5">
+        <img src="/images/kimai_logo.png" class="float-sm-end" style="margin-left: 20px" alt="Kimai logo">
+        {% capture include_content %}{% include pages/about-current.md %}{% endcapture %}
+        {{ include_content | markdownify }}
+    </section>
+
+    <section class="container mb-5">
+        {% include link-translated-menu.html language=page.lang item="demo" class="btn btn-primary mb-4" %}
+        {% include link-translated-menu.html language=page.lang item="features" class="btn btn-secondary mb-4" %}
+    </section>
+
+    {% include card-donate.html user="kevinpapst" background=true %}
+
+    <section class="container mb-4 pt-md-1 pt-lg-4 pt-xl-5">
+        {% capture include_content %}{% include pages/about-community.md %}{% endcapture %}
+        {{ include_content | markdownify }}
+    </section>
+
+    {% comment %}
+    <section class="container mb-5">
+        <a href="https://www.kimai.cloud" target="_blank" class="btn btn-primary mb-4">{{ site.data[page.lang].translation.cloud-title }}</a>
+        <a href="{{ site.kimai_v2_repo }}/issues" target="_blank" class="btn btn-secondary mb-4">Issue tracker</a>
+        <a href="{{ site.kimai_v2_repo }}/discussions" target="_blank" class="btn btn-secondary mb-4">Discussions</a>
+    </section>
+    {% endcomment %}
+
+    {% include pages/about-timeline-v1.html %}
+
+    <section class="container mb-5">
+        {% capture include_content %}{% include pages/about-history.md %}{% endcapture %}
+        {{ include_content | markdownify }}
+    </section>
+
+    <section class="container mb-5">
+        <div class="position-relative bg-dark rounded-3 overflow-hidden px-3 py-5">
+            <span class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(255, 255, 255, .05)"></span>
+            <div class="position-relative zindex-5 text-center my-xl-3 py-1 py-md-4 py-lg-5">
+                <p class="lead text-light opacity-70 mb-3">{{ site.data[page.lang].translation.cta.get-started.question }}</p>
+                <h2 class="h1 text-light pb-3 pb-lg-0 mb-lg-5">{{ site.data[page.lang].translation.cta.get-started.answer }}</h2>
+                <a href="{% link _store/keleo-installation-support.md %}" class="btn btn-primary btn-lg">{{ site.data[page.lang].translation.cta.get-started.button }}</a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+{% include footer.html %}
+
