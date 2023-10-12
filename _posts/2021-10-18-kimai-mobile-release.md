@@ -10,9 +10,9 @@ Now the application is available on Google Play.
 Kimai Mobile allows the users to use many workspaces simultaneously via a single application, logging the time for any projects or customers. 
 All data about logging time at Kimai Mobile saves only at self-hosted Kimai Server. 
 
-{% include alert.html type="info" alert="Guest post by Cloudrizon GmbH. If you want to share anything around Kimai, you can write for kimai.org as well." %}
+> Kimai is a perfect instrument for freelancers or small companies: it is easy to install and absolutely private, and Kimai Mobile allows improving the quality of user experience”
 
-“Kimai is a perfect instrument for freelancers or small companies: it is easy to install and absolutely private, and Kimai Mobile allows improving the quality of user experience”, - says one of the beta-testers, a freelancer. 
+says one of the beta-testers, a freelancer. 
 
 [Kimai Mobile](http://www.kimaimobile.com) is the perfect supplement for Kimai Time Tracker Server and is ideal for multi-project jobs. 
 Now Kimai Mobile provides the general functionality: time log, filters, and calendar. 

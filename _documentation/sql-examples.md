@@ -30,6 +30,7 @@ The output looks like this:
 | Acme company | test@example.com | John Doe    | 1,745.4  |
 | Acme company | chris_user       | Chris Maier | 45.8     |
 | Foo Bar      | test@example.com | John Doe    | 345.0    |
+{: .table }
 
 Duration is formatted as decimal time.
 So `1,745.4` is one-thousand-seven-hundred-forty-five hours and 24 minutes.
@@ -57,6 +58,7 @@ GROUP BY
 | test@example.com | John Doe    | Acme company | 1,745.4  |
 | test@example.com | John Doe    | Foo Bar      | 345.0    |
 | chris_user       | Chris Maier | Acme company | 45.8     |
+{: .table }
 
 Duration is formatted as decimal time.
 So `1,745.4` is one-thousand-seven-hundred-forty-five hours and 24 minutes.

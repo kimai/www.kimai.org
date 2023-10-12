@@ -43,6 +43,7 @@ This documentation is available in other languages as well [in the Microsoft doc
 | Reply URL (Assertion Consumer Service URL) | https://timetracking.example.com/auth/saml/acs      |
 | Sign on URL                                | https://timetracking.example.com/                   |
 | Logout Url                                 | https://timetracking.example.com/auth/saml/logout   |
+{: .table }
 
 - Edit the **User Attributes & Claims** and ensure the following settings:
 {% include docs-image.html src="/images/documentation/azure-saml-pic4.png" title="User Attributes & Claims" width="900px" %}

@@ -43,4 +43,4 @@ There are three main reasons, why you might experience a 500 error after plugin 
 {% include cache-refresh.html %}
 
 Depending on your setup, the cache flush will create directories which cannot be written by your webserver:
-{% include file-permissions.html %}
+{% include documentation/file-permissions.html %}

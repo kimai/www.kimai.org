@@ -6,3 +6,4 @@ redirect_from: ["/donate/"]
 ---
 
 {% include pages/donate.md %}
+   

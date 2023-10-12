@@ -5,5 +5,5 @@ toc: false
 ---
 
 <div class="row row-cards row-deck">
-{% include docs-menu-card.html navigation=site.data.menu-documentation.on-premise %}
+{% include docs-menu-card.html navigation="on-premise" %}
 </div> 

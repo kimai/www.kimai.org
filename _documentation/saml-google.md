@@ -56,7 +56,7 @@ You have to adjust more keys, please read the main SAML configuration!
 
 - Go to [https://admin.google.com/ac/apps/unified](https://admin.google.com/ac/apps/unified)
 - Choose "Add app" followed by "Add custom SAML app"
-- Choose your app name (e.g. "Kimai") and [add this image](http://www.kimai.org/assets/icon/apple-touch-icon.png)
+- Choose your app name (e.g. "Kimai") and [add this image](http://www.kimai.org/images/apple-touch-icon.png)
 - Copy & paste the values from the Google Step-by-Step (page 2) guide into your Kimai configuration:
     - `SSO-URL` into `Single Sign-On URL`
     - `Entity-ID` into `Entity ID`
@@ -75,6 +75,7 @@ You have to adjust more keys, please read the main SAML configuration!
     | Basic Information > Last name     | LastName            |
     | Employee Details > Employee ID    | AccountNumber       |
     | Employee Details > Title          | Title               |
+    {: .table }
 - Back on the overview page: activate the new application for your users
 - The last configuration step takes care of the `User role` mapping, which can be defined in two ways:
     - Using Google Groups (recommended):

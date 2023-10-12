@@ -75,52 +75,48 @@ class MetaFieldSubscriber implements EventSubscriberInterface
         ];
     }
 
-    public function loadTimesheetMeta(TimesheetMetaDefinitionEvent $event)
+    public function loadTimesheetMeta(TimesheetMetaDefinitionEvent $event): void
     {
         $this->prepareEntity($event->getEntity(), new TimesheetMeta());
     }
 
-    public function loadCustomerMeta(CustomerMetaDefinitionEvent $event)
+    public function loadCustomerMeta(CustomerMetaDefinitionEvent $event): void
     {
         $this->prepareEntity($event->getEntity(), new CustomerMeta());
     }
 
-    public function loadProjectMeta(ProjectMetaDefinitionEvent $event)
+    public function loadProjectMeta(ProjectMetaDefinitionEvent $event): void
     {
         $this->prepareEntity($event->getEntity(), new ProjectMeta());
     }
 
-    public function loadActivityMeta(ActivityMetaDefinitionEvent $event)
+    public function loadActivityMeta(ActivityMetaDefinitionEvent $event): void
     {
         $this->prepareEntity($event->getEntity(), new ActivityMeta());
     }
 
-    public function loadInvoiceMeta(InvoiceMetaDefinitionEvent $event)
+    public function loadInvoiceMeta(InvoiceMetaDefinitionEvent $event): void
     {
         $this->prepareEntity($event->getEntity(), new InvoiceMeta());
     }
 
-    private function prepareEntity(EntityWithMetaFields $entity, MetaTableTypeInterface $definition)
+    private function prepareEntity(EntityWithMetaFields $entity, MetaTableTypeInterface $definition): void
     {
-        $definition
-            ->setLabel('Working place')
-            ->setOptions(['help' => 'Enter the place you work from here'])
-            ->setName('location')
-            ->setType(TextType::class)
-            ->addConstraint(new Length(['max' => 255]))
-            ->setIsVisible(true);
+        $definition->setLabel('Working place');
+        $definition->setOptions(['help' => 'Enter the place you work from here']);
+        $definition->setName('location');
+        $definition->setType(TextType::class);
+        $definition->addConstraint(new Length(['max' => 255]));
+        $definition->setIsVisible(true);
 
         $entity->setMetaField($definition);
     }
 }
 ```
 
-Attention: `setLabel()` and `setOptions()` will be added with 1.4.
+### Display and export custom fields
 
-### Displaying and exporting custom fields
-
-With Kimai 1.4 you can display and export custom fields. 
-Supported fields will be shown as new columns in the data-tables for timesheets, customers, projects and activities.
+Custom-fields can be shown as new columns in the data-tables for timesheets, customers, projects and activities.
 Additionally, these fields will be added to HTML and Spreadsheet exports. 
 
 As Kimai cannot query all existing records for possible custom fields, you need to listen to new events and 
@@ -153,32 +149,31 @@ class MetaFieldDisplaySubscriber implements EventSubscriberInterface
         ];
     }
 
-    public function loadTimesheetField(TimesheetMetaDisplayEvent $event)
+    public function loadTimesheetField(TimesheetMetaDisplayEvent $event): void
     {
         $event->addField($this->prepareField(new TimesheetMeta()));
     }
 
-    public function loadCustomerField(CustomerMetaDisplayEvent $event)
+    public function loadCustomerField(CustomerMetaDisplayEvent $event): void
     {
         $event->addField($this->prepareField(new CustomerMeta()));
     }
 
-    public function loadProjectField(ProjectMetaDisplayEvent $event)
+    public function loadProjectField(ProjectMetaDisplayEvent $event): void
     {
         $event->addField($this->prepareField(new ProjectMeta()));
     }
 
-    public function loadActivityField(ActivityMetaDisplayEvent $event)
+    public function loadActivityField(ActivityMetaDisplayEvent $event): void
     {
         $event->addField($this->prepareField(new ActivityMeta()));
     }
 
-    private function prepareField(MetaTableTypeInterface $definition)
+    private function prepareField(MetaTableTypeInterface $definition): MetaTableTypeInterface
     {
-        $definition
-            ->setLabel('Working place')
-            ->setName('location')
-            ->setType(TextType::class);
+        $definition->setLabel('Working place');
+        $definition->setName('location');
+        $definition->setType(TextType::class);
 
         return $definition;
     }

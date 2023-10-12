@@ -10,23 +10,25 @@ redirect_from:
 Kimai can be localized to any language and is already translated to
 {% include features/multi-language.md %}   
 
-Feel free to send your self-made language files or contributing to the weblate project below  – we’re looking for translators and would appreciate your support!
+Please be invited to contribute to the Kimai translations  – we’re looking for translators and would appreciate your support!
 
+You find the translations at [https://hosted.weblate.org/projects/kimai/](https://hosted.weblate.org/projects/kimai/) and can start translating right away.
+You can also click the little image in the table below for your language. Thank you for your help 👍🏻
+ 
 | Language               | Status                                                                                                                                    |
 |------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
 {%- for locale in site.data.multi-language %}
 | {{ locale[1] }}        | [![Translation status](https://hosted.weblate.org/widgets/kimai/{{ locale[0] }}/svg-badge.svg)](https://hosted.weblate.org/engage/kimai/{{ locale[0] }}/)           |
 {%- endfor %}
-
+{: .table }
+ 
 All translations in Kimai are managed at Weblate and should be changed there exclusively! Do not chang ethe source files of Kimai.
 
 If you want to change certain keys in your installation, you can use the [Translation plugin]({% link _store/keleo-translation-bundle.md %}) for that.
 
-## Developer
+{% include alert.html type="info" alert="The following documentation is not meant for end-users or translators. It is a technical documentation for the folks working on the Kimai code." %}
 
-The following documentation is not meant for end-users or translators. It is a technical documentation for the folks working on the Kimai code.
-
-### Language files
+## Language files
 
 We try to separate translations in logical units, in order to make it easier to identify the location of application messages.
 
@@ -57,14 +59,14 @@ If you apply changes to any files mentioned on this page, you have to [clear the
 {% assign cache = cache|markdownify %}
 {% include alert.html type="danger" alert=cache %}
 
-### Authentication screens
+## Authentication screens
 
 The authentication screens (login, registration, register account) are translated through the theme bundle which is used in Kimai.
 The bundle can be [found here](https://github.com/kevinpapst/TablerBundle) and the translations [in this directory](https://github.com/kevinpapst/TablerBundle/tree/main/translations).
 
 When you create a new translation, please open a Pull Request in this repository as well.
 
-### Adding a new language
+## Adding a new language
 
 This example assumes you are creating the (not existing) locale `xx`. 
 
@@ -75,7 +77,7 @@ Adjust the `target-language` attributes in the file header, as example for the n
 <file source-language="en" target-language="xx" datatype="plaintext" original="exceptions.en.xlf">`
 ```
 
-### Adding a language variant
+## Adding a language variant
 
 For a language variant `xx_YY`, the fallback will always be the base language `xx` (eg. `de` for `de_CH`). 
 
@@ -95,7 +97,7 @@ Only some specific keys may need to be changed for this variant, and it's possib
 </xliff>
 ```
 
-### Configure locale formats
+## Configure locale formats
 
 Locale formats are derived from the file `config/locales.php` which is auto-generated with the command:
  
@@ -103,7 +105,7 @@ Locale formats are derived from the file `config/locales.php` which is auto-gene
 bin/console kimai:reset:locales
 ```
 
-### Register locale
+## Register locale
 
 You need to activate a new locale (so it can be used in routing) in the file `config/services.yaml` at `parameters.app_locales` divided by a pipe:
 
@@ -113,21 +115,21 @@ parameters:
     app_locales: en|de|fr|ru|vi|zh_CN
 ```
 
-### Number formats
+## Number formats
 
 The number formats are determined from the user locale.
 
-### Date and time formats
+## Date and time formats
 
 The date and time formats are determined from the user locale.
 
 There are configurations in place to convert between javascript components (e.g. the date-picker) and the PHP backend. 
 
-### AM/PM format
+## AM/PM format
 
 Whether Kimai displays data in 24 hour or AM/PM format depends on the user locale.
 
-### Generate correct ID and resname
+## Generate correct ID and resname
 
 Run the following command, which will generate the correct XLIFF attributes for you:
 
@@ -135,7 +137,7 @@ Run the following command, which will generate the correct XLIFF attributes for 
 bin/console kimai:translation --resname
 ```
 
-### Validate your changes
+## Validate your changes
 
 This will validate if the technical changes are okay / if the changed and new files can be used by Kimai:
 
@@ -143,7 +145,7 @@ This will validate if the technical changes are okay / if the changed and new fi
 bin/console lint:xliff translations
 ```
 
-### Check for missing translations
+## Check for missing translations
 
 You can search for missing keys by issuing this command (replace `xx` with your locale):
 ```bash

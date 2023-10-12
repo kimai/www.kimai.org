@@ -12,14 +12,18 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
-    <meta name="robots" content="{{ page.robots | default: "index,follow" }}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/icon/apple-touch-icon.png' | absolute_url }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/icon/icon_32x32.png' | absolute_url }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/icon/icon_16x16.png' | absolute_url }}">
+    <meta name="robots" content="{{ page.robots | default: 'index,follow' }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/images/apple-touch-icon.png' | absolute_url }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/images/icon_32x32.png' | absolute_url }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/images/icon_16x16.png' | absolute_url }}">
     <title>
         {%- assign page_title = page.title %}
         {%- assign prefix = ' – Kimai' %}
-        {%- if site.data[page.lang].translation.menu.default[page.slug].title != nil -%}
+        {%- if page.translation_key != nil -%}
+            {% assign page_title = site.data[page.lang].translation[page.translation_key] %}
+        {%- elsif layout.translation_key != nil -%}
+            {% assign page_title = site.data[page.lang].translation[layout.translation_key] %}
+        {%- elsif site.data[page.lang].translation.menu.default[page.slug].title != nil -%}
             {% assign page_title = site.data[page.lang].translation.menu.default[page.slug].title %}
             {%- assign prefix = '' %}
         {%- elsif site.data[page.lang].translation.menu.default[page.slug].name != nil -%}
@@ -37,8 +41,6 @@
     {%- elsif page.description != nil -%}
         <meta name="description" content="{{ page.description | strip_html | strip_newlines | strip }}">
     {%- endif %}
-    <link href="{% if site.rtl contains page.lang %}{{ '/assets/build/main.rtl.css' | absolute_url }}{% else %}{{ '/assets/build/main.css' | absolute_url }}{% endif %}?{{site.time | date: '%s%N'}}" rel="stylesheet" />
-    <script src="{{ '/assets/build/main.js' | absolute_url }}?{{site.time | date: '%s%N'}}"></script>
     <link type="application/atom+xml" rel="alternate" href="{% link feed.xml %}" title="Kimai Time-Tracking" />
     {%- if page.canonical != nil %}
     <link rel="canonical" href="{{ page.canonical | absolute_url }}" />
@@ -51,12 +53,18 @@
     {%- endfor %}
     {%- endif %}
     {%- endif %}
+    <script src="/assets/build/theme.js"></script>
+    <link href="/assets/build/main{% if site.rtl contains page.lang %}.rtl{% endif %}.css" rel="stylesheet" />
 </head>
 <body class="{{ page.body-class }}">
 
-<div class="page">
-	{{ content }}
-</div>
+{{ content }}
 
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js"></script>
 </body>
 </html>

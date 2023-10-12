@@ -1,6 +1,5 @@
-You can test the Plugin in the [Plugin demo]({% link _pages/demo.md %}).
 
-{% include plugins/custom-css.md %}
+This bundle allows you to add custom CSS rules to Kimai.
 
 ### Storage
 

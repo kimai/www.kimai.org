@@ -1,8 +1,4 @@
-{% if include.plugin == nil %}
-    <div class="alert alert-danger" role="alert">
-    ATTENTION, this include needs the <strong>plugin</strong> variable!
-    </div>
-{% else %}
+{% if include.plugin != nil %}
     {% assign plugin = include.plugin %}
 
     <p>Updating the plugin works exactly like the installation:</p>

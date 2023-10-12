@@ -8,7 +8,8 @@ module.exports = {
         new RtlCssPlugin('main.rtl.css')
     ],
     entry: {
-        'main': __dirname + "/assets/bundle.js",
+        'theme': __dirname + "/src/theme.js",
+        'main': __dirname + "/src/bundle.js",
     },
     output: {
         path: path.resolve(__dirname, 'assets/build'),

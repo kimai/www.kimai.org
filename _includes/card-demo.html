@@ -1,22 +1,17 @@
-<div class="card">
-    {% if include.ribbon %}
-    <div class="ribbon ribbon-top{% if include.color %} bg-{{ include.color }}{% endif %}">
-        <i class="{{ include.ribbon | default: 'fas fa-star' }} fa-2x"></i>
-    </div>
-    {% endif %}
-	<div class="card-body d-flex flex-column">
-		<h4 class="card-title">
-			{{ include.title }}
-		</h4>
-		<div class="card-subtitle">
+<div class="card{% if include.color %} bg-{{ include.color }}{% endif %} h-100">
+    <div class="card-body d-flex flex-column">
+        <h5 class="card-title">
+            {{ include.title }}
+        </h5>
+        <p class="card-text fs-sm text-muted">
             {% capture demo_id %}<span id="demo_box_{{ include.id }}">?</span>{% endcapture %}
             {{ site.data[page.lang].translation.demo-reinstall | replace: "%X%", demo_id }}
-        </div>
-		<p class="card-text">
-			{{ include.description|raw }}
-		</p>
-		<a href="{{ include.url }}" target="_blank" class="btn btn-primary {% if include.color %}bg-{{ include.color }}{% endif %} mt-auto">{{ site.data[page.lang].translation.access-demo }}</a>
-	</div>
+        </p>
+        <p class="card-text">
+            {{ include.description|raw }}
+        </p>
+        <a href="{{ include.url }}" target="_blank" class="btn btn-primary {% if include.color %}bg-{{ include.color }}{% endif %} mt-auto">{{ site.data[page.lang].translation.access-demo }}</a>
+    </div>
 </div>
 <script>
     window.addEventListener('DOMContentLoaded', () => {

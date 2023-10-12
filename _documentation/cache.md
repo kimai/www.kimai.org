@@ -24,7 +24,7 @@ read the [Installation docs]({% link _documentation/installation.md %}) for more
 
 Depending on your setup and the way you call the cache command, you have to fix directory permissions afterwards. 
  
-{% include file-permissions.html %} 
+{% include documentation/file-permissions.html %} 
 
 ### Troubleshooting
 

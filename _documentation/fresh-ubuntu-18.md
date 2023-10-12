@@ -168,7 +168,7 @@ bin/console kimai:install -n
 bin/console kimai:user:create admin admin@example.com ROLE_SUPER_ADMIN
 ```
 
-{% include file-permissions.html %}
+{% include documentation/file-permissions.html %}
 Use `sudo` to run the commands to change file permissions.
 
 

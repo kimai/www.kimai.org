@@ -46,7 +46,7 @@ Windows users might have to prefix the composer and installation commands with `
 
 The webserver needs write permissions for several directories, so make sure the 
 [file permissions are correct](https://symfony.com/doc/current/setup/file_permissions.html).
-{% include file-permissions.html %} 
+{% include documentation/file-permissions.html %} 
 
 ### Create your first user
 

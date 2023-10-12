@@ -46,7 +46,7 @@ bin/console kimai:update
 ```
 
 Remember to adjust the file permissions if necessary.
-{% include file-permissions.html %} 
+{% include documentation/file-permissions.html %} 
 
 {% include upgrading-note.html %} 
 

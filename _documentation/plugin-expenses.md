@@ -37,7 +37,7 @@ The search supports filtering by the fields:
 The free search term will query the field:
 - `description`
 
-{% include search-custom-field.md %}
+{% include documentation/search-custom-field.md %}
 
 ## Permissions
 

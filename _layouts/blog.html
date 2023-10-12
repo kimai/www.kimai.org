@@ -1,0 +1,65 @@
+---
+layout: base
+---
+{% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+{% assign sortedTags = site_tags | split:',' | sort %}
+{% assign date_format = site.date_format[page.lang] | default: "%Y-%m-%d" %}
+{% assign post_hot = site.posts | first %}
+{% assign amount_latest = 10 %}
+
+<main class="page-wrapper">
+    {% include header-navigation.html %}
+
+    <section class="container mt-4 pt-lg-2 pb-4">
+        <div class="row gy-4 align-items-end mb-2 pb-md-3">
+            <div class="col-lg-8 col-md-6">
+                <h1 class="mb-0">
+                    <i class="bx bxs-hot 1 me-1 text-gradient-primary"></i>
+                    {{ site.data[page.lang].translation.menu.default.blog.title }}
+                </h1>
+            </div>
+            <div class="col-lg-4 col-md-6 text-end">
+                <a href="/feed.xml" class="btn btn-link btn-icon rounded-circle my-1 me-2" aria-label="RSS Feed">
+                    <i class="bx bx-rss"></i>
+                </a>
+            </div>
+        </div>
+
+        {% include latest-news.html %}
+    </section>
+
+    <section class="container mb-5 pt-5 pb-lg-5">
+        <ul class="nav nav-tabs justify-content-center mb-lg-5 mb-4 pb-lg-2 border-top pt-5">
+            <li class="nav-item">
+                <a href="#tag-all" class="nav-link active" data-bs-toggle="tab" role="tab">Latest {{ amount_latest }}</a>
+            </li>
+            {% for tag in sortedTags %}
+            <li class="nav-item">
+                <a href="#tag-{{ forloop.index  }}" class="nav-link" data-bs-toggle="tab" role="tab">{{ tag }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+
+        <div class="tab-content pb-3">
+            <div class="tab-pane fade show active" id="tag-all" role="tabpanel">
+                {% for post in site.posts limit: amount_latest %}
+                    {% include card-blog-single.html post=post %}
+                {% endfor %}
+            </div>
+
+            {% for tag in sortedTags %}
+            <div class="tab-pane fade" id="tag-{{ forloop.index }}" role="tabpanel">
+                <ul>
+                    {% for post in site.tags[tag] %}
+                        {% include card-blog-single.html post=post %}
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    {% include section-newsletter.html background=true %}
+</main>
+
+{% include footer.html %}

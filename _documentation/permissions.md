@@ -26,6 +26,7 @@ There are four pre-defined roles in Kimai, which have a customizable set of ACLs
 | Teamlead       | Manages [teams]({% link _documentation/teams.md %}) with permissions for invoices and access to all **team** timesheets. Technical name: `ROLE_TEAMLEAD`  |
 | Administrator  | Can manage all content and timesheet related data, but lack user administration and system privileges. Technical name: `ROLE_ADMIN`                       |
 | System-Admin   | Has permissions to manage everything in Kimai, from content to timesheets to users, plugins and system configurations. Technical name: `ROLE_SUPER_ADMIN` |
+{: .table }
 
 {% include alert.html type="success" alert="Every user is automatically member of the ROLE_USER, this behaviour cannot be changed." %}
 
@@ -203,6 +204,7 @@ This is the full list of existing permissions with short descriptions:
 | system_configuration          | Configure global Kimai settings                                                                                                                |
 | system_information            | Enter the system-information (about) screen                                                                                                    |
 | view_all_data                 | **SECURITY ALERT**: Allows to see all data (disables team permissions) - `System-Admins` will always own that permission                       |
+{: .table }
 
 **Be aware**
 There are other business rules which might limit access to certain functions, so these permissions are not the only checks in place.
