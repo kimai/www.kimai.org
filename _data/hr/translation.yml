@@ -24,9 +24,6 @@ cloud-title: Kimai oblak (SaaS)
 cloud-feature-ssl: Besplatan TLS (SSL) certifikat
 cloud-feature-hosting: Hosting i aktualiziranja
 cloud-feature-backups: Sigurnosne kopije
-cloud-plugin-tasks: Dodatak za upravljanje zadacima
-cloud-plugin-expenses: Dodatak za troškove
-cloud-plugin-audit: Dodatak za dnevnik radnji
 cloud-free-plan: Besplatna tarifa je dostupna za 5 korisnika
 cloud-call-to-action: Odaberi tarifu
 new-badge: Novo
@@ -69,7 +66,6 @@ photos:
         title: Evidentiranje vremena
         description: Stvori i upravljaj svojim radnim vremenima i izvezi ih u Excel, PDF ili HTML format
 donate:
-    title: Podrži Kimai
     introduction: Doniranjem Kimaiju i sponzoriranjem razvoja pomažeš nam poboljšati tvoje iskustvo u evidentiranju vremena!
     please-donate: Razvoj besplatnog softvera poput Kimaija zahtijeva puno vremena i truda. Ako ti se Kimai sviđa, ako ga koristiš svakodnevno ili ako administriraš Kimai u svojoj tvrtki, razmisli o doniranju i podržavanju daljnjeg razvoja.
     your-donation: |
@@ -100,7 +96,6 @@ menu:
         download:
             name: Preuzimanje
             title: Preuzmi Kimai
-            header: Preuzmi Kimai – besplatno!
             description: Preuzimanje – Kimai program za evidentiranje vremena
         hosted:
             name: Oblak
@@ -119,6 +114,7 @@ menu:
             name: Novosti
             description: "Novosti o programu Kimai, softveru za evidentiranje vremena"
             subtitle: Novosti o programu Kimai, softveru otvorenog koda za evidentiranje vremena
+            title: News from Kimai
         documentation:
             name: Dokumentacija
             description: Informacije o podršci, korisnički priručnik i druga dokumentacija za evidentiranje vremena pomoću programa Kimai
@@ -130,6 +126,14 @@ menu:
             name: Politika privatnosti
         site-notice:
             name: Impresum
+        features:
+            name: Features
+        docu-developer:
+            name: Developer
+        docu-onpremise:
+            name: Self-hosting
+        docu-manual:
+            name: User manual
     menu-documentation:
         manual:
             name: Korištenje programa Kimai
@@ -228,9 +232,6 @@ feature:
     timesheet-filter:
         name: "Filtar za vremenske tablice"
         description: "Sve vremenske zapise možeš filtrirati po korisniku, kupcu, projektu, aktivnostima i datumu."
-    archiving:
-        name: "Arhiviranje"
-        description: "Dugoročni korisnici znaju da se stari podaci mogu gomilati u padajućim izbornicima – sakrij ih ograničavajući vidljivost kupaca, projekata i aktivnosti."
     permissions:
         name: "Dozvole"
         description: "Prilagodljiva struktura dozvole. Dodijeli različite uloge svom korisniku, npr. korisnici mogu snimiti vremena, voditelji tima mogu ispisati račune i konfigurirati projekt/aktivnosti, administratori mogu konfigurirati korisnike i kupce."
@@ -246,12 +247,15 @@ feature:
     password-reset:
         name: "Resetiranje lozinke"
         description: "Zaboravio/la si lozinku? Kimai ti pomaže resetirati lozinku putem e-maila."
-    technology:
-        name: "Moderan"
-        description: "Na temelju najnovijih web tehnologija i radnih okvira: PHP, Symfony, Doctrine, Flex, Bootstrap, WebPack i drugih …"
     2fa:
         description: 'Kimai podržava dvofaktorsku autentifikaciju s TOTP tokens: osiguraj svoje korisničke račune danas!'
         name: Dvofaktorska autentifikacija (2FA)
+    auth:
+        description: Kimai supports external identity providers and login via LDAP and SAML across multiple providers (such as Google Workspace, Azure AD or Authentik). In addition, two-factor authentication can be enabled via TOTP tokens.
+        name: Authentication and Security
+    reporting:
+        description: Analysis of recorded times, customers, projects and activities. Evaluation according to users, customers, projects, activities, tags, time periods and much more.
+        name: Reports and analyses
 install:
     requirements:
         title: Uvjeti za poslužitelja
@@ -298,3 +302,69 @@ developer:
 price-contract: Na upit
 full-documentation: Potpuna dokumentacija je ovdje dostupna (samo na engleskom).
 contact-developer: Ako imaš pitanja koristi sljedeće podatke za izravno kontaktiranje programera.
+homepage:
+    title: Time tracking for project-driven teams
+    intro: Our open-source platform is designed to keep track of and analyze your companies time-data, making it perfect for businesses of all sizes. Kimai helps you keep an eye on time and money.
+section-teaser:
+    report:
+        title: Reports
+        description: Reports for the evaluation of users and projects.
+    timesheet:
+        title: Time-Tracking
+        description: Easy input of work done and clear control.
+    work-contract:
+        title: Working time accounts
+        description: Debit and overtime hours, monthly statements.
+    dashboard:
+        description: Dashboard with configurable widgets.
+        title: Dashboard
+    absence:
+        title: Absences
+        description: Holidays, holiday, illness and absences.
+per-year: per year
+history:
+    year-2020: Kimai is offered as a subscription based SaaS, with a free and two paid plans.
+    early-days-title: How it all began
+    year-2009: Torsten, the initial developer, wants to close down Kimai. Kevin steps in and becomes maintainer.
+    year-2019: First plugins are created, to validate market-fit and interest in paid open-source software.
+    early-days-subtitle: Kimai has a long history and is around since 2006, this is a brief overview how everything started.
+    year-2023: The hard work is finally paying off and Kimai is now my 100% full-time job. Thank you!
+    year-2014: The last release of Kimai 1 is created, development stales and there is not much more activity.
+    year-2006: The first version of Kimai is release and slowly gains a growing user and developer base.
+    about: What started as a hobby project is now the leading open-source time-tracking application in the world. Let's dive into it's history.
+    year-2018: The re-write of Kimai finds it's way into the community, the data migrations works.
+store-hero-counter: '%number% customers are already with us'
+store-hero-intro: Enhance Kimai with our great selection of plugins. Choose from dozens of apps and extensions within the Kimai ecosystem and bring super-power to your time-tracking experience now!
+cta:
+    tech-support:
+        question: Tech &amp; Business Support
+        button: Let's work together
+        answer: I ensure support for all applications I've built and I will assist you and your team.
+    get-started:
+        answer: Start your time-tracking journey now
+        button: Get support
+        question: Ready to get started?
+    best-features:
+        answer: Kimai provides a wide range of features that build around your project time-tracking needs and best practices solutions to our customers making their bookkeeping easier.
+        question: The best time-tracking features for you
+        button: More features via plugin
+highlight:
+    title: Supports your business
+    subtitle: Kimai has all the business core features you need to setup your time-tracking workflows and integrate it with your existing infrastructure.
+store-hero-title: Add-ons, Apps, Support
+description: Description
+oss-cloud-compare:
+    saas: Hosted for you
+    onpremise: Hosted by you
+    intro: Kimai is an open source software that is available for self-hosting as well as SaaS.
+    title: One software, two versions
+section-features:
+    subtitle: Kimai offers much more than just time-tracking, here is a list of other important business functions.
+    title: What can Kimai do for you?
+share-post: Share this post
+about-who: Who is building Kimai?
+store-hero-subtitle: Welcome to the Kimai store
+testimonials:
+    title: What users say about Kimai
+footer: Free and easy to use time tracking for freelancers, agencies and companies. Kimai is open source software available for self-hosting and as SaaS.
+slogan: Time-tracking made easy
