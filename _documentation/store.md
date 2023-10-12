@@ -49,7 +49,7 @@ items:
 ```
 5. Run `php translate-pages.php`. This will extract your content into an include and then create a store page for every language.
 
-### Developer information
+## Developer information
 
 The information about yourself or your company comes from the [developer.yml file]({{ site.kimai_v2_website }}/tree/main/_data/developer.yml).
 
@@ -73,10 +73,10 @@ kevinpapst:
     image: https://avatars1.githubusercontent.com/u/533162?s=460&v=4
     homepage: https://www.kevinpapst.de
     github: https://github.com/kevinpapst
-    twitter: http://twitter.com/keleo
+    twitter: https://twitter.com/keleo
 ```
 
-### Product information
+## Product information
 
 Create a new markdown file in the [_store directory]({{ site.kimai_v2_website }}/tree/main/_store/), follow the filename pattern:
 `company-short-descriptive-name.md`

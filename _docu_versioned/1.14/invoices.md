@@ -38,7 +38,7 @@ Characters outside the replacer may **not** include `{` and `}`.
 {% assign additional_chars = additional_chars| markdownify %}
 {% include alert.html icon="fas fa-exclamation" type="warning" alert=additional_chars %}
 
-To change the format, look out for the {% include demo-action-button.html icon="fas fa-cog" %} icon in the invoice screen, or change it from the `System configurations`.
+To change the format, look out for the {% include demo-action-button.html icon="bx bx-cog" %} icon in the invoice screen, or change it from the `System configurations`.
 
 ### Incrementing the invoice counter
 

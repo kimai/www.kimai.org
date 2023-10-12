@@ -1,6 +1,7 @@
 ---
 title: "Release 1.25 - Keyboard shortcuts"
 date: "2022-09-20 10:00:00 +0200"
+image: /images/blog/cover-11.jpeg
 author: kevinpapst
 tags: [Release]
 ---

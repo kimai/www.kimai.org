@@ -1,4 +1,4 @@
-
+ 
 ### {{ site.data[page.lang].translation.install.requirements.title }}
 
 {{ site.data[page.lang].translation.install.requirements.hosters }}

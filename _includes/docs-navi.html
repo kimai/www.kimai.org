@@ -1,77 +1,23 @@
-{% assign docs_page = site.documentation | where: "slug", include.navigation.slug | first %}
-<li class="nav-item{% if docs_page.slug == page.slug %} active{% endif %}">
-    <a class="nav-link" href="{{ docs_page.url }}">
-        <span class="nav-link-icon d-md-none d-lg-inline-block">
-            <i class="fas fa-home"></i>
-        </span>
-        <span class="nav-link-title">
-            {% if docs_page.navigation != nil %}
-                {{ docs_page.navigation }}
-            {% else %}
-                {{ docs_page.title }}
-            {% endif %}
-        </span>
-    </a>
-</li>
-
-{% for group in include.navigation %}
-    {% assign group_key = group[0] %}
-    {% assign group_setting = group[1] %}
-    {% assign links = '' %}
+{% assign doc_chapter = site.data.menu-documentation[include.navigation] %}
+{% for group in doc_chapter.chapter %}
+    {% assign group_key = group.id %}
     {% assign is_active = false %}
-    {% if group_key != 'slug' and group_key != 'skip' %}
-        {% if group_setting.pages.size == 1 %}
-            {% assign docs_page = site.documentation | where: "slug", group_setting.pages[0] | first %}
-            <li class="nav-item">
-                <a class="nav-link" href="{{ docs_page.url }}">
-                    <span class="nav-link-icon d-md-none d-lg-inline-block">
-                        <i class="{{ group_setting.icon }}"></i>
-                    </span>
-                    <span class="nav-link-title">
-                        {% if docs_page.navigation != nil %}
-                            {{ docs_page.navigation }}
-                        {% else %}
-                            {{ docs_page.title }}
-                        {% endif %}
-                    </span>
-                </a>
-            </li>
-        {% else %}
-            {% for page_slug in group_setting.pages %}
-                {% if page_slug != '-' %}
-                    {% assign docs_page = site.documentation | where: "slug", page_slug | first %}
-                    {% if docs_page.slug == page.slug %}
-                        {% assign is_active = true %}
-                    {% endif %}
-                    {% capture one_link %}
-                    <a class="dropdown-item{% if docs_page.slug == page.slug %} active{% endif %}" href="{{ docs_page.url }}">
-                        {% if docs_page.navigation != nil %}
-                            {{ docs_page.navigation }}
-                        {% else %}
-                            {{ docs_page.title }}
-                        {% endif %}
-                    </a>
-                    {% endcapture %}
-                    {% assign links = links | append: one_link %}
+    <h3 class="fs-lg">{{ site.data[page.lang].translation.menu.menu-documentation[group_key].name }}</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    {% for page_slug in group.pages %}
+        {% if page_slug != '-' %}
+            {% assign docs_page = site.documentation | where: "slug", page_slug | first %}
+            {% if docs_page.slug == page.slug %}
+                {% assign is_active = true %}
+            {% endif %}
+            <a href="{{ docs_page.url }}" class="list-group-item list-group-item-action border-0 py-2 px-4 {% if docs_page.slug == page.slug %} active{% endif %}">
+                {% if docs_page.navigation != nil %}
+                {{ docs_page.navigation }}
+                {% else %}
+                {{ docs_page.title }}
                 {% endif %}
-            {% endfor %}
-            <li class="nav-item dropdown{% if is_active %} active{% endif %}">
-                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="{% if is_active %}true{% else %}false{% endif %}">
-                    <span class="nav-link-icon d-md-none d-lg-inline-block">
-                        <i class="{{ group_setting.icon }}"></i>
-                    </span>
-                    <span class="nav-link-title">{{ site.data[page.lang].translation.menu.menu-documentation[group_key].name }}</span>
-                </a>
-                <div class="dropdown-menu{% if is_active %} show{% endif %}">
-                    {{ links }}
-                    {% comment %}
-                        <a class="dropdown-item active" href="./layout-boxed.html">
-                            Boxed
-                            <span class="badge badge-sm bg-green text-uppercase ms-2">New</span>
-                        </a>
-                    {% endcomment %}
-                </div>
-            </li>
+            </a>
         {% endif %}
-    {% endif %}
+    {% endfor %}
+    </div>
 {% endfor %}

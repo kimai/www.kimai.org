@@ -6,3 +6,4 @@ permalink: /de/download.html
 ---
 
 {% include pages/download.md %}
+ 

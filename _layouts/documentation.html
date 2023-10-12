@@ -1,135 +1,172 @@
 ---
 layout: base
 ---
+{% assign menu = nil %}
+{% assign chapter_page = nil %}
+{% assign chapter_title = "Documentation" %}
 
-<aside class="navbar navbar-vertical navbar-expand-lg navbar-dark">
-    <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-brand navbar-brand-autodark h1">
-            <a href="{% link _pages/documentation.md %}" class="header-brand">
-                <img src="{{ '/images/apple-touch-icon.png' | absolute_url }}" height="32" class="navbar-brand-image me-1" alt="Kimai logo"> Kimai – Docs
-            </a>
-        </div>
-        <div class="navbar-nav flex-row d-lg-none">
-            {% include docs-chooser.html class="nav-link" %}
-        </div>
-        <div class="collapse navbar-collapse" id="navbar-menu">
-
-            <ul class="navbar-nav pt-lg-3">
-                {% assign menu = nil %}
-                {% for group in site.data.menu-documentation %}
-                    {% assign group_key = group[0] %}
-                    {% for group2 in group[1] %}
-                        {% if group2[0] == 'slug' %}
-                            {% if group2[1] == page.slug %}
-                                {% assign menu = group[1] %}
-                            {% endif %}
-                        {% else %}
-                            {% for group_name in group2[1].pages %}
-                                {% if group_name == page.slug %}
-                                    {% assign menu = group[1] %}
-                                {% endif %}
-                            {% endfor %}
-                        {% endif %}
-                    {% endfor %}
-                {% endfor %}
-
-                {% if menu != nil %}
-                    {% include docs-navi.html navigation=menu %}
-                {% else %}
-                    {% comment %} if menu is nil then this is the documentation start page OR a page that is not linked in the navigation {% endcomment %}
-                    {% for group in site.data.menu-documentation %}
-                        {% assign docs_page = site.documentation | where: "slug", group[1].slug | first %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ docs_page.url }}">
-                                <span class="nav-link-title">{{ docs_page.title }}</span>
-                            </a>
-                        </li>
-                    {% endfor %}
+{% for group in site.data.menu-documentation %}
+    {% if group[1].slug == page.slug %}
+        {% assign menu = group[0] %}
+    {% else %}
+        {% assign group_key = group[0] %}
+        {% for group2 in group[1].chapter %}
+            {% for group_name in group2.pages %}
+                {% if group_name == page.slug %}
+                    {% assign menu = group[0] %}
                 {% endif %}
-            </ul>
+            {% endfor %}
+        {% endfor %}
+    {% endif %}
+{% endfor %}
+{% if menu != nil %}
+    {% assign chapter_page = site.documentation | where: "slug", site.data.menu-documentation[menu].slug | first %}
+{% endif %}
+{% assign chapter_title = "Documentation" %}
+{% if chapter_page != nil %}
+    {% assign chapter_title = chapter_page.title %}
+{% endif %}
 
+<header class="header navbar navbar-expand bg-light border-bottom border-light shadow fixed-top" data-scroll-header>
+    <div class="container-fluid pe-lg-4">
+        <div class="d-flex align-items-center">
+            <a href="/documentation/" class="navbar-brand flex-shrink-0 py-1 py-lg-2">
+                <img src="/images/apple-touch-icon.png" width="47" alt="Kimai">
+                Kimai
+            </a>
+            <span class="badge bg-warning">{{ chapter_title }}</span>
         </div>
-    </div>
-</aside>
-
-<header class="navbar navbar-expand-md navbar-light d-none d-lg-flex d-print-none">
-    <div class="container-xl">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-nav flex-row ms-auto">
-            <div class="d-none d-md-flex">
-                {% include docs-chooser.html %}
+        <div class="d-flex align-items-center w-100">
+            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 11.75rem;">
+                {% for group in site.data.menu-documentation %}
+                    {% assign docs_config = group[1] %}
+                    {% assign docs_page = site.documentation | where: "slug", docs_config.slug | first %}
+                    <li class="nav-item">
+                        <a href="{{ docs_page.url }}" class="nav-link">
+                            <i class="{{ docs_config.icon }} opacity-70 fs-lg me-1"></i>
+                            {{ docs_page.title }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+            <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="form-check form-switch mode-switch pe-lg-1 ms-lg-auto" data-bs-toggle="mode">
+                <input type="checkbox" class="form-check-input" id="theme-mode">
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Light</label>
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Dark</label>
             </div>
         </div>
     </div>
 </header>
 
-<div class="page-wrapper">
-    <div class="page-header d-print-none">
-        <div class="container-xl">
-            <div class="row g-2 align-items-center">
-                <div class="col">
-                    {% if page.description != nil %}
-                    <div class="page-pretitle">
-                        {{ page.description }}
-                    </div>
+<aside data-bs-theme="dark">
+    <div id="componentsNav" class="offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100 bg-dark border-end-lg" style="width: 21rem; z-index: 1045;">
+        <div class="offcanvas-header d-none d-lg-flex justify-content-start">
+            <a href="/documentation/" class="navbar-brand text-dark d-none d-lg-flex py-0">
+                <img src="/images/icon_32x32.png" alt="Kimai">
+                Kimai
+            </a>
+            <span class="badge bg-warning d-none d-lg-inline-block">{{ chapter_title }}</span>
+        </div>
+        <div class="offcanvas-header d-block d-lg-none border-bottom">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <h5 class="d-lg-none mb-0">Menu</h5>
+                <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#componentsNav" aria-label="Close"></button>
+            </div>
+            <div class="list-group list-group-flush mx-n4">
+                {% for group in site.data.menu-documentation %}
+                    {% assign docs_config = group[1] %}
+                    {% assign docs_page = site.documentation | where: "slug", docs_config.slug | first %}
+                    <a href="{{ docs_page.url }}" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-2 px-4">
+                        <i class="{{ docs_config.icon }} opacity-70 fs-lg me-1"></i>
+                        {{ docs_page.title }}
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="offcanvas-body swiper scrollbar-hover overflow-hidden w-100 p-4" data-swiper-options='{
+          "direction": "vertical",
+          "slidesPerView": "auto",
+          "freeMode": true,
+          "scrollbar": {
+            "el": ".swiper-scrollbar"
+          },
+          "mousewheel": true
+        }'>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide h-auto">
+                    {% if menu != nil %}
+                        {% include docs-navi.html navigation=menu %}
+                    {% else %}
+                        {% comment %} if menu is nil then this is the documentation start page OR a page that is not linked in the navigation {% endcomment %}
+                        <h3 class="fs-lg">Documentation</h3>
+                        <div class="list-group list-group-flush pb-3 mb-4 mx-n4 border-bottom">
+                        {% for group in site.data.menu-documentation %}
+                            {% assign docs_page = site.documentation | where: "slug", group[1].slug | first %}
+                            <a class="list-group-item list-group-item-action border-0 py-2 px-4" href="{{ docs_page.url }}">{{ docs_page.title }}</a>
+                        {% endfor %}
+                        </div>
                     {% endif %}
-                    <h2 class="page-title">
-                        {{ page.title }}
-                    </h2>
-                </div>
-                <div class="col-12 col-md-auto ms-auto d-print-none">
-                    <div class="btn-list">
-                        {% include docs-version-chooser.html %}
+                    <div class="list-group list-group-flush pb-3 mb-4 mx-n4">
+                    {% include link-translated-menu.html language=page.lang item="site-notice" class="list-group-item list-group-item-action border-0 py-2 px-4" %}
+                    {% include link-translated-menu.html language=page.lang item="privacy-policy" class="list-group-item list-group-item-action border-0 py-2 px-4" %}
                     </div>
                 </div>
             </div>
+            <div class="swiper-scrollbar end-0"></div>
         </div>
     </div>
-    <div class="page-body">
-        <div class="container-xl">
-            <div class="row row-deck row-cards">
+</aside>
 
-                <div class="markdown">
-                    {% capture page_content %}
-                        {{ content }}
+<main class="docs-container pt-5">
+    <div class="container-fluid px-xxl-5 px-lg-4 pt-4 pt-lg-5 pb-2 pb-lg-4">
 
-                        {% if page.related != nil %}
-                        <h2 id="related-articles">Related articles</h2>
-                        <ul>
-                            {% for p in page.related %}
-                            {% assign doc = site.documentation | where: "slug", p | first %}
-                            <li>
-                                <a href="{{ doc.url }}">{{ doc.title }}</a>
-                            </li>
-                            {% endfor %}
-                        </ul>
-                        {% endif %}
-                    {% endcapture %}
+        <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 pt-4 mb-n3">
+            <div class="me-4">
+                <h1 class="pb-1">{{ page.title }}</h1>
+                {% if page.description != nil %}
+                <p class="text-muted fs-lg mb-2">{{ page.description }}</p>
+                {% endif %}
+            </div>
+            {% include docs-version-chooser.html %}
+        </div>
 
-                    {% if page.toc == nil or page.toc == true %}
-                        {% include table-of-contents.html html=page_content %}
-                    {% endif %}
+        <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+            {% comment %} THE id "documentation-content" MAY NEVER BE DELETED, IT IS USED IN KIMAI TO REMOTE FETCH THE ARTICLE {% endcomment %}
+            <div id="documentation-content">
+                {{ content }}
 
-                    {% comment %} THE id "documentation-content" MAY NEVER BE DELETED, IT IS USED IN KIMAI TO REMOTE FETCH THE ARTICLE {% endcomment %}
-                    <div id="documentation-content">
-                        {{ page_content }}
-                    </div>
-                    {% comment %} THE id "documentation-content" MAY NEVER BE DELETED, IT IS USED IN KIMAI TO REMOTE FETCH THE ARTICLE {% endcomment %}
-                </div>
+                {% if page.related != nil %}
+                <h2 id="related-articles">Related articles</h2>
+                <ul>
+                    {% for p in page.related %}
+                    {% assign doc = site.documentation | where: "slug", p | first %}
+                    <li>
+                        <a href="{{ doc.url }}">{{ doc.title }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
 
             </div>
+            {% comment %} THE id "documentation-content" MAY NEVER BE DELETED, IT IS USED IN KIMAI TO REMOTE FETCH THE ARTICLE {% endcomment %}
         </div>
+
     </div>
-    <footer class="footer footer-transparent d-print-none">
-        <div class="container-xl">
-            <div class="row text-center align-items-center flex-row-reverse border-top pt-4 mt-4">
-                {% include footer-links.html %}
-            </div>
-        </div>
-    </footer>
-</div>
+</main>
+
+{% if page.toc == nil or page.toc == true %}
+    <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
+        <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
+        {% include toc.html html=content sanitize=true h_min=2 h_max=3 class="nav" id="jumpToNav" item_class="nav-item" anchor_class="nav-link" %}
+        {% if page.related != nil %}
+        <ul class="nav">
+            <li>
+                <a href="#related-articles" class="nav-link">Related articles</a>
+            </li>
+        </ul>
+        {% endif %}
+    </aside>
+{% endif %}

@@ -1,0 +1,62 @@
+<section class="container py-5 mt-3 mt-sm-4 mt-xl-5">
+    <h2 class="h1 text-center pb-2 pb-lg-3">
+        {{ site.data[page.lang].translation.oss-cloud-compare.title }}
+    </h2>
+    <p class="fs-lg text-center text-muted pb-3 pb-lg-4">
+        {{ site.data[page.lang].translation.oss-cloud-compare.intro }}
+    </p>
+
+    <ul class="nav nav-tabs flex-nowrap justify-content-lg-center overflow-auto pb-2 mb-3 mb-lg-4" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link text-nowrap" id="open-source-onpremise-tab" data-bs-toggle="tab" data-bs-target="#open-source-onpremise" type="button" role="tab" aria-controls="open-source-onpremise" aria-selected="false">
+                <i class="bx bx-server fs-lg opacity-60 me-2"></i>
+                {{ site.data[page.lang].translation.oss-cloud-compare.onpremise }}
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link text-nowrap active" id="saas-cloud-tab" data-bs-toggle="tab" data-bs-target="#saas-cloud" type="button" role="tab" aria-controls="saas-cloud" aria-selected="true">
+                <i class="bx bx-cloud fs-lg opacity-60 me-2"></i>
+                {{ site.data[page.lang].translation.oss-cloud-compare.saas }}
+            </button>
+        </li>
+    </ul>
+
+    <div class="tab-content bg-secondary rounded-3 py-4">
+
+        <div class="tab-pane fade" id="open-source-onpremise" role="tabpanel" aria-labelledby="open-source-onpremise-tab">
+            <div class="row align-items-center pt-3 pt-sm-4 pt-md-0 px-3 px-sm-4 px-lg-0">
+                <div class="col-lg-4 col-md-5 offset-lg-1 text-center text-md-start">
+                    <h3 class="mb-lg-4">Open Source</h3>
+                    <p>
+                        {{ site.data[page.lang].translation.homepage-alert-intro }}
+                    </p>
+                    <p>
+                        {{ site.data[page.lang].translation.homepage-quote-excel }}
+                    </p>
+                    <a href="{{ site.pages | where: 'slug', 'demo' | where: 'lang', page.lang | map: 'url' | first }}" class="btn btn-primary w-100">{{ site.data[page.lang].translation.homepage-alert-button-demo }}</a>
+                </div>
+                <div class="col-lg-6 col-md-7 mt-md-4">
+                    <img src="/images/screenshots/widget-teams.jpg" class="d-block my-lg-2 mx-auto me-md-0" width="502" alt="Image">
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade show active" id="saas-cloud" role="tabpanel" aria-labelledby="saas-cloud-tab">
+            <div class="row align-items-center pt-3 pb-2 pb-sm-3 pt-sm-4 pt-md-0 px-3 px-sm-4 px-lg-0">
+                <div class="col-lg-4 col-md-5 offset-lg-1 text-center text-md-start">
+                    <h3 class="mb-lg-4">{{ site.data[page.lang].translation.cloud-title }}</h3>
+                    {% include list-cloud-features.html %}
+                    {% assign cloud_url = "https://www.kimai.cloud/start-trial" %}
+                    {% if page.lang == "de" %}
+                    {% assign cloud_url = "https://www.kimai.cloud/de/testphase-beginnen" %}
+                    {% endif %}
+                    <a href="{{ cloud_url }}" class="btn btn-danger w-100">{{ site.data[page.lang].translation.cloud-call-to-action }}</a>
+                </div>
+                <div class="col-lg-6 col-md-7 mt-md-4">
+                    <img src="/images/screenshots/absence-table.jpg" class="d-block my-lg-2 mx-auto me-md-0" width="502" alt="Image">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

@@ -1,6 +1,7 @@
 ---
 title: "Beta 2 - Callout for testing"
 date: "2023-01-21 10:00:00 +0200"
+image: /images/blog/cover-5.jpeg
 author: kevinpapst
 tags: [Release]
 ---

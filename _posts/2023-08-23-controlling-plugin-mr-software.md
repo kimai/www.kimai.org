@@ -3,6 +3,7 @@ title: "New working times (controlling) plugin and MR Software closure"
 date: "2023-08-27 20:00:00 +0200"
 author: kevinpapst
 tags: [Apps & Plugins]
+image: /images/blog/cover-14.jpeg
 redirect_from:
   - /store/hmr-it-hasworked-bundle.html
   - /store/mr-software-hasworked-bundle.html

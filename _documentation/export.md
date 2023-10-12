@@ -68,8 +68,8 @@ Internally for each template a new ExportRenderer service is registered, called 
 
 ### PDF Templates
 
-{% include pdf-templates.md %}
-
+{% include documentation/pdf-templates.md %}
+ 
 #### Custom fields
 
 You can access custom fields with:

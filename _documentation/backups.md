@@ -51,7 +51,7 @@ At this step: test Kimai again and don't proceed before it works as expected!
 
 Working properly? If not, check your file permissions:
 
-{% include file-permissions.html %} 
+{% include documentation/file-permissions.html %} 
 
 Working now? Fine, then go ahead and restore all other files:
 

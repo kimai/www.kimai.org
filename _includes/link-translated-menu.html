@@ -1,11 +1,14 @@
 {%- if include.item != nil and include.language != nil -%}
-    {%- assign menu = site.pages | where: "lang", include.language | where: "slug", include.item | first -%}
+    {%- assign menu = site.pages | where: "slug", include.item | where: "lang", include.language | first -%}
     {%- assign class = '' -%}
     {%- if include.class != nil -%}
         {%- assign class = include.class -%}
     {%- endif -%}
     <a href="{{ menu.url }}"{% if include.target != nil %} target="{{ include.target }}"{% endif %}{% if class != '' %} class="{{ class }}"{% endif %}>
-        {%- if site.data[page.lang].translation.menu.default[menu.slug] -%}
+        {%- if include.icon != nil %}<i class="{{ include.icon }}"></i>{% endif -%}
+        {%- if include.title != nil -%}
+            {{- include.title -}}
+        {%- else if site.data[page.lang].translation.menu.default[menu.slug] -%}
             {{- site.data[page.lang].translation.menu.default[menu.slug].name -}}
         {%- else -%}
             {{- menu.title -}}

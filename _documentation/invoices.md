@@ -313,7 +313,7 @@ There are some additional contents, that will define e.g. page header and footer
 
 Please read the MPdf documentation and check the default PDF templates.
 
-{% include pdf-templates.md %}
+{% include documentation/pdf-templates.md %}
 
 ### Docx templates
 
@@ -554,4 +554,4 @@ Besides these filters, you can query for a free search term, which will be searc
 - `customer name`
 - `customer company`
 
-{% include search-custom-field.md %}
+{% include documentation/search-custom-field.md %}

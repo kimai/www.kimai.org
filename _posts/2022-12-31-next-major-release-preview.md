@@ -1,6 +1,7 @@
 ---
 title: "Next major release"
 date: "2022-12-31 20:00:00 +0200"
+image: /images/blog/cover-16.jpeg
 author: kevinpapst
 tags: [Release]
 ---

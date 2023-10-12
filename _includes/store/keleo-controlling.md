@@ -5,7 +5,7 @@
 
 ## Features
 
-**This is a early-access software, certain features are not yet here, but already planned (see Roadmap below). Feedback will be incorporated.**
+**Certain features are not yet here, but already planned (see Roadmap below). Your feedback will be incorporated.**
 
 - It enhances the [Working times]({% link _documentation/contract.md %}) view with 
   - Manual bookings (adjust the time account with plus or minus hours)
@@ -100,6 +100,7 @@ If the above list is empty or I decide to add a feature, it will be moved to the
   - Allow to take over and adjust the holidays, which were not yet taken (probably with an expiration date?)
 - Configuration for the business year, in case a company is not using the calendar year
 - Multiple working contracts (configured with start and end time)
+- Work scheduler (like a monthly view), as some employees (especially hourly-based freelancers) cannot used fixed working days
 ```
 
 ## Changelog

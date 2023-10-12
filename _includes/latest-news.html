@@ -1,0 +1,52 @@
+<div class="swiper swiper-nav-onhover mx-n2" data-swiper-options='{
+  "slidesPerView": 1,
+  "loop": true,
+  "spaceBetween": 8,
+  "pagination": {
+    "el": ".swiper-pagination",
+    "clickable": true
+  },
+  "navigation": {
+    "prevEl": "#news-prev",
+    "nextEl": "#news-next"
+  },
+  "breakpoints": {
+    "0": {
+      "slidesPerView": 1
+    },
+    "560": {
+      "slidesPerView": 2
+    },
+    "992": {
+      "slidesPerView": 3
+    }
+  }
+}'>
+    <div class="swiper-wrapper">
+
+        {% for post in site.posts limit: 5 %}
+            <div class="swiper-slide h-auto py-3">
+                <article class="card p-md-3 p-2 border-0 shadow-sm card-hover-primary h-100 mx-2">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            {% for tag in post.tags %}
+                            <span class="badge fs-sm text-nav bg-secondary text-decoration-none position-relative zindex-2">{{ tag }}</span>
+                            {% endfor %}
+
+                            <span class="fs-sm text-muted">{{ post.date | date_to_string }}</span>
+                        </div>
+                        <h3 class="h4">
+                            <a href="{{ post.url }}" class="stretched-link">{{ post.title }}</a>
+                        </h3>
+                        <p class="mb-0">
+                            {{ post.excerpt | truncate: 200 }}
+                        </p>
+                    </div>
+                </article>
+            </div>
+        {% endfor %}
+
+    </div>
+
+    <div class="swiper-pagination position-relative pt-2 pt-sm-3 mt-4"></div>
+</div>

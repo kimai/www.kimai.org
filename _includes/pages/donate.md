@@ -1,9 +1,8 @@
 
-# {{ site.data[page.lang].translation.donate.title }}
+### {{ site.data[page.lang].translation.menu.default.donate.description }}
 
 {% assign introduction = site.data[page.lang].translation.donate.introduction %}
-{% include alert.html icon="far fa-smile" alert=introduction %}
-
+{% include alert.html icon="smile" alert=introduction %}
 {{ site.data[page.lang].translation.donate.please-donate }}
 
 {% include card-donate.html user="kevinpapst" %}

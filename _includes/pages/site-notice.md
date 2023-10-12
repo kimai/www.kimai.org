@@ -32,6 +32,5 @@ Copyright laws of third parties are respected as long as the contents on these w
 ### Credits
 
 - Site is powered by [Jekyll](http://jekyllrb.com/)
-- Using the [tabler](https://github.com/tabler/tabler) theme by @codecalm
-- Icons provided by the free Webfont [Font-Awesome](https://fontawesome.io/)
-- Font "SourceSansPro": [Copyright 2010, 2012, 2014 by Adobe Systems Incorporated](http://www.adobe.com/) with Reserved Font Name Source
+- Icons provided by [boxicons](https://boxicons.com/)
+- All illustrations, the shop header and article images are created using Open AI's DALL·E 3 or Bing Image Creator

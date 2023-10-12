@@ -1,29 +1,36 @@
-{% assign article = include.article | default: site.posts[0] %}
-{% assign type = include.type | default: 'none' %}
+{% assign article = include.post | default: site.posts[0] %}
 {% assign author = site.data.developer[article.author] %}
-{% assign liked = include.liked | default: false %}
-{% assign truncate = include.truncate | default: 100 %}
-
-<div class="card{% if type == 'aside' %} card-aside{% endif %}">
-	{% if type == 'image' %}
-	<a href="#"><img class="card-img-top" src="{{ site.base }}/{{ site.data.photos[article.image].small }}" alt="{{ article.title | escape}}"></a>
-	{% endif %}
-
-	{% if type == 'aside' %}
-	<a href="#" class="card-aside-column{% if include.aside-class %} {{ include.aside-class }}{% endif %}" style="background-image: url({{ site.base }}/{{ site.data.photos[article.image].small }})"></a>
-	{% endif %}
-
-	<div class="card-body d-flex flex-column">
-		<h4><a href="{{ article.url | absolute_url }}">{{ article.title }}</a></h4>
-
-		<div class="text-muted">{{ article.excerpt | truncate: truncate }}</div>
-
-		<div class="d-flex align-items-center pt-3 mt-auto">
-			<div class="avatar avatar-rounded me-3" style="background-image: url({{ author.image }})"></div>
-			<div>
-				<span class="text-muted">{{ author.name }}</span>
-				<small class="d-block text-muted">{{ article.date | date_to_string }}</small>
-			</div>
-		</div>
-	</div>
-</div>
+{% assign image = '/images/blog/cover-17.jpeg' %}
+{% if article.image != nil %}
+    {% assign image = article.image %}
+{% endif %}
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-4 position-relative bg-repeat-0 bg-size-cover opacity-60" style="background-image: url({{ image }}); min-height: 15rem;">
+            <a href="{{ article.url }}" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-8">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    {% for tag in post.tags %}
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">{{ tag }}</span>
+                    {% endfor %}
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">{{ article.date | date_to_string }}</span>
+                </div>
+                <h3 class="h4">
+                    <a href="{{ article.url }}">{{ article.title }}</a>
+                </h3>
+                <p>
+                    {{ article.excerpt | truncate: 250 }}
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="{{ author.image }}" class="rounded-circle me-3" width="48" alt="{{ author.name }}">
+                        {{ author.name }}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>

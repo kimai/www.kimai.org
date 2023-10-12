@@ -1,10 +1,8 @@
 ---
 title: "About Kimai"
+layout: about
 lang: ru
 permalink: /ru/about.html
+canonical: /en/about.html
 warn_language: true
 ---
- 
-{% include pages/about.md %}
-
-{% include pages/about_contributors.md %} 

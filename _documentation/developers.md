@@ -8,6 +8,7 @@ redirect_from:
   - /documentation/developer/index.html
   - /documentation/developer/
   - /v1/developer.html
+  - /documentation/impersonate-user.html
 ---
 
 This page is for all developers who want to contribute to Kimai. You rock!

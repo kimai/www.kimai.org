@@ -1,33 +1,39 @@
 manual:
     slug: chapter-manual
-    manual:
-        icon: fas fa-book
-        pages: [ timesheet, weekly-times, calendar, invoices, export, reporting, customer, project, activity, tags, users, user-preferences, permissions, teams, configurations, doctor, contract, public-holiday, absence, dashboard ]
-    tips:
-        icon: fas fa-lightbulb
-        pages: [ initial-setup, rates, billable, keyboard-shortcuts, i18n-am-pm, duration-format, "-", faq, homescreen ]
-    plugins:
-        icon: fas fa-plug
-        pages: [ plugin-custom-fields, plugin-expenses, plugin-task-management, plugin-custom-css, plugin-custom-content, plugin-translation, plugin-invoice, plugin-import, plugin-audit-trail, plugin-contract ]
+    icon: bx bx-book
+    chapter:
+        -   id: manual
+            icon: bx bx-book
+            pages: [ timesheet, weekly-times, calendar, invoices, export, reporting, customer, project, activity, tags, users, user-preferences, permissions, teams, configurations, doctor, contract, public-holiday, absence, dashboard ]
+        -   id: tips
+            icon: bx bx-bulb
+            pages: [ initial-setup, rates, billable, keyboard-shortcuts, i18n-am-pm, duration-format, "-", faq, homescreen ]
+        -   id: plugins
+            icon: bx bx-plug
+            pages: [ plugin-custom-fields, plugin-expenses, plugin-task-management, plugin-custom-css, plugin-custom-content, plugin-translation, plugin-invoice, plugin-import, plugin-audit-trail, plugin-contract ]
 developer:
     slug: developers
-    api:
-        icon: fas fa-code
-        pages: [ rest-api, rest-api-examples, api-pagination ]
-    developer:
-        icon: fas fa-code-branch
-        pages: [ plugins, translations, meta-fields, theme, store, migration-v2 ]
-    extend:
-        icon: fas fa-bullhorn
-        pages: [ bughunter, permission-structure, sql-examples, impersonate-user, redis, create-release ]
+    icon: bx bx-code
+    chapter:
+        -   id: api
+            icon: bx bx-code
+            pages: [ rest-api, rest-api-examples, api-pagination ]
+        -   id: developer
+            icon: bx bx-git-branch
+            pages: [ plugins, translations, meta-fields, theme, store, migration-v2 ]
+        -   id: extend
+            icon: bx bxs-balloon
+            pages: [ bughunter, permission-structure, sql-examples, redis, create-release ]
 on-premise:
     slug: chapter-on-premise
-    installation:
-        icon: fas fa-tools
-        pages: [ installation, updates, docker, cache, plugin-management, webserver-configuration, fresh-ubuntu-18, fresh-ubuntu-20, fresh-ubuntu-22, synology ]
-    on-premise:
-        icon: fas fa-server
-        pages: [ backups, local-yaml, emails, logging, commands, faq-onpremise, migration-v1, versions ]
-    auth:
-        icon: fas fa-id-card
-        pages: [ ldap, saml, saml-azure, saml-google, saml-keycloak, saml-authentik ]
+    icon: bx bx-wrench
+    chapter:
+        -   id: installation
+            icon: bx bx-wrench
+            pages: [ installation, updates, docker, cache, plugin-management, webserver-configuration, fresh-ubuntu-18, fresh-ubuntu-20, fresh-ubuntu-22, synology ]
+        -   id: on-premise
+            icon: bx bx-server
+            pages: [ backups, local-yaml, emails, logging, commands, faq-onpremise, migration-v1, versions ]
+        -   id: auth
+            icon: bx bx-lock
+            pages: [ ldap, saml, saml-azure, saml-google, saml-keycloak, saml-authentik ]

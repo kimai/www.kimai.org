@@ -8,11 +8,8 @@ Start your Kimai time tracking right at your Apple Watch now!
 * Browse your Customers, Projects and Activities
 * Complications to show current tracking
 
-
 **Note**:
 This app is not for offline tracking. It requires a connection to the API of your server (Kimai 0.9 or higher).
-
-<p style="text-align:center"><a href="https://kimaiapp.umws.de">kimaiapp.umws.de</a></p>
 
 ### App Screens
 

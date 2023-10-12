@@ -14,9 +14,9 @@ It can be considered bad practice, as it can lead to problems with future update
 
 Developer can add/change permissions through plugins, see [Developers documentation]({% link _documentation/developers.md %}).
 
-### Understanding permission structure
+## How the config works
 
-Before you learn to configure the permission system, you have to understand the three involved config types:
+The Kimai configuration contains the entire permission configuration, which consists of the three types:
 
 1. Permission `sets` - a re-usable mapping of a name (e.g. `FOO`) to an array of "permission names" (e.g. `bar`)
 2. Permission `maps` - mappings of role names to an array of "permission sets" (e.g. `FOO`)
@@ -55,7 +55,7 @@ At the end the system calculated the final list of permissions:
 - `ROLE_USER` - view_own_timesheet, start_own_timesheet, view_activity, create_activity, my_profile
 - `ROLE_ADMIN` - view_own_timesheet, start_own_timesheet, view_activity, create_activity, my_profile, show_roles, other_profiles, delete_activity
 
-### Existing sets
+## Existing sets
 
 Existing sets can be seen in `kimai.yaml`, their customization is generally not necessary. 
 You cannot extend existing sets, if you define them, they will be overwritten with your config.

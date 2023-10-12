@@ -111,6 +111,20 @@ Cookies which are necessary to allow electronic communications or to provide cer
 The website operator has a legitimate interest in the storage of cookies to ensure an optimized service provided free of technical errors. 
 If other cookies (such as those used to analyze your surfing behavior) are also stored, they will be treated separately in this privacy policy.
 
+### Google Web Fonts
+
+For uniform representation of fonts, this page uses web fonts provided by Google. 
+When you open a page, your browser loads the required web fonts into your browser cache to display texts and fonts correctly.
+
+When you call up a page of our website that contains a social plugin, your browser makes a direct connection with Google servers. 
+Google thus becomes aware that our web page was accessed via your IP address. 
+The use of Google Web fonts is done in the interest of a uniform and attractive presentation of our website. 
+This constitutes a justified interest pursuant to Art. 6 (1) (f) DSGVO.
+
+If your browser does not support web fonts, a standard font is used by your computer.
+Further information about handling user data, can be found at <a href="https://developers.google.com/fonts/faq" target="_blank">https://developers.google.com/fonts/faq</a> 
+and in Google's privacy policy at <a href="https://www.google.com/policies/privacy/" target="_blank">https://www.google.com/policies/privacy/</a>.
+
 ### Gumroad / Marketplace
 
 When you visit non-free items on the Marketplace, a javascript is embedded from the software selling platform Gumroad, Inc., 548 Market St, San Francisco, CA 94104-5401.
@@ -145,21 +159,21 @@ You can prevent this by logging out of your YouTube account.
 Further information about handling user data, can be found in the data protection declaration of YouTube under [https://policies.google.com/privacy](https://policies.google.com/privacy).
 This constitutes a justified interest pursuant to Art. 6 (1) (f) DSGVO.
 
-### Sendinblue
+### Brevo
 
 We offer you the opportunity to register for our free newsletter on our website.
-We use Sendinblue to send newsletters. 
-Sendinblue is a service provided by the company Sendinblue GmbH, Köpenicker Str. 126, 10179 Berlin, hereinafter referred to as "Sendinblue".
+We use Brevo (ex. Sendinblue) to send newsletters. 
+Brevo is a service provided by the company Sendinblue GmbH, Köpenicker Str. 126, 10179 Berlin, hereinafter referred to as "Brevo".
 
-If you sign up to receive our newsletter, the data requested during the registration process (your email address) will be processed by Sendinblue. 
+If you sign up to receive our newsletter, the data requested during the registration process (your email address) will be processed by Brevo. 
 For this your IP address and the date of your registration will be saved along with the time. 
 As a further part of the registration process, your consent to the sending of the newsletter will be obtained, the content will be described in concrete terms and reference made to this data protection declaration.
 
-Sendinblue offers data protection information at
-[https://www.sendinblue.com/legal/privacypolicy/](https://www.sendinblue.com/legal/privacypolicy/) and 
-[https://www.sendinblue.com/information-for-email-recipients/](https://www.sendinblue.com/information-for-email-recipients/).
+Brevo offers data protection information at
+[https://www.brevo.com/legal/privacypolicy/](https://www.brevo.com/legal/privacypolicy/) and 
+[https://www.brevo.com/information-for-email-recipients/](https://www.brevo.com/information-for-email-recipients/).
 
-The newsletters sent by Sendinblue contain technologies by which we can analyse whether and when an email was opened and whether and which links contained in the newsletter were followed. 
+The newsletters sent by Brevo contain technologies by which we can analyse whether and when an email was opened and whether and which links contained in the newsletter were followed. 
 We save this data in addition to the technical data (system data and IP address) so that the respective newsletter can be best tailored to your wishes and interests. 
 The data thus collected is used to continuously improve the quality of our newsletters.
 

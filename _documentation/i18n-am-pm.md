@@ -1,6 +1,6 @@
 ---
-title: "Switch to AM/PM"
-description: Using AM/PM instead of 24h-format
+title: "Date and Time formats"
+description: How times, dates and money is rendered in Kimai and exports
 toc: false
 ---
 

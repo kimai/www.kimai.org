@@ -2,74 +2,11 @@
 layout: base
 ---
 
-{%- assign homepage_url  = site.pages | where: "lang", page.lang | where: "slug", "index" | map: "url" | first -%}
-{%- assign homepage_name = site.data[page.lang].translation.menu.default.index.name -%}
-{%- assign homepage_title   = site.data[page.lang].translation.menu.default.index.brand -%}
+<main class="page-wrapper">
+    {% include header-navigation.html %}
 
-<header class="navbar navbar-expand-md navbar-light d-print-none">
-    <div class="container-xl">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
-            <a href="{{ homepage_url }}" class="header-brand">
-                <img src="/images/kimai-header.png" height="32" class="navbar-brand-image" alt="Kimai – {{ homepage_title }}">
-            </a>
-        </div>
-        <div class="navbar-nav flex-row order-md-last">
-            <div class="d-flex order-lg-2 ml-auto">
-                <div class="btn-group">
-                    <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-globe me-1"></i>
-                        {{ site.language_names[page.lang] }}
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        {% for lang in site.languages %}
-                            {% assign targetUrl = site.pages | where: "lang", lang | where: "slug", brand | map: "url" | first %}
-                            {% assign targetTitle = site.data[lang].translation.menu.default[brand].brand %}
-                            {% if page.lang != nil %}
-                                {% assign langPages = site[page.collection] | where: "lang", lang | where: "slug", page.slug %}
-                                {% if langPages and langPages.size == 1 %}
-                                    {% assign targetUrl = langPages[0].url %}
-                                {% endif %}
-                            {% endif %}
-                            <li dir="{% if site.rtl contains lang %}rtl{% else %}ltr{% endif %}">
-                                <a href="{{ targetUrl }}" title="{{ site.language_names[lang] }} - {{ targetTitle }}" class="dropdown-item{% if lang == page.lang %} active{% endif %}">{{ site.language_names[lang] }}</a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="collapse navbar-collapse" id="navbar-menu">
-            <div class="d-flex flex-column flex-md-row flex-fill align-items-stretch align-items-md-center">
-                <ul class="navbar-nav">
-                    {%- assign menus = 'download,demo,store,blog,documentation' | split: "," -%}
-                    {% comment %}
-                    <li class="nav-item d-md-flex d-none{% if page.url == homepage_url %} active{% endif %}">
-                        <a href="{{ homepage_url }}" class="nav-link">
-                            {{ homepage_name }}
-                        </a>
-                    </li>
-                    {% endcomment %}
-                    {% for menu_key in menus %}
-                    {% assign menu = site.pages | where: "lang", page.lang | where: "slug", menu_key | first %}
-                    {% assign menu_url = menu.url %}
-                    {% assign menu_name = site.data[page.lang].translation.menu.default[menu_key].name %}
-                    <li class="nav-item{% if page.url contains menu_url %} active{% endif %}">
-                        <a href="{% if menu_url != nil %}{% if menu_url != '#' %}{{ menu_url }}{% else %}#{% endif %}{% else %}javascript:void(0){% endif %}" class="nav-link">
-                            <span class="nav-link-title">{{- menu_name -}}</span>
-                        </a>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
-    </div>
-</header>
-
-<div class="page-wrapper">
     {{ content }}
-    {% include footer.html %}
-</div>
+</main>
+
+{% include footer.html %}
 
