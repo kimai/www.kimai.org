@@ -1,5 +1,5 @@
-<section class="container py-5 mt-3 mt-sm-4 mt-xl-5">
-    <h2 class="h1 text-center pb-2 pb-lg-3">
+<section class="container position-relative zindex-2 pt-2 pt-sm-3 pt-md-4 pt-lg-5 mt-xl-3">
+    <h2 class="h1 text-center pb-2 pb-lg-3 pt-2 pt-md-3 pt-lg-4 pt-xxl-5">
         {{ site.data[page.lang].translation.oss-cloud-compare.title }}
     </h2>
     <p class="fs-lg text-center text-muted pb-3 pb-lg-4">
@@ -33,10 +33,10 @@
                     <p>
                         {{ site.data[page.lang].translation.homepage-quote-excel }}
                     </p>
-                    <a href="{{ site.pages | where: 'slug', 'demo' | where: 'lang', page.lang | map: 'url' | first }}" class="btn btn-primary w-100">{{ site.data[page.lang].translation.homepage-alert-button-demo }}</a>
+                    <a href="{{ site.pages | where: 'slug', 'demo' | where: 'lang', page.lang | map: 'url' | first }}" class="btn btn-primary w-100 mb-2">{{ site.data[page.lang].translation.homepage-alert-button-demo }}</a>
                 </div>
                 <div class="col-lg-6 col-md-7 mt-md-4">
-                    <img src="/images/screenshots/widget-teams.jpg" class="d-block my-lg-2 mx-auto me-md-0" width="502" alt="Image">
+                    <img src="/images/screenshots/widget-teams.jpg" class="d-none d-sm-block my-lg-2 mx-auto me-md-0" width="502" alt="Image">
                 </div>
             </div>
         </div>
@@ -50,10 +50,10 @@
                     {% if page.lang == "de" %}
                     {% assign cloud_url = "https://www.kimai.cloud/de/testphase-beginnen" %}
                     {% endif %}
-                    <a href="{{ cloud_url }}" class="btn btn-danger w-100">{{ site.data[page.lang].translation.cloud-call-to-action }}</a>
+                    <a href="{{ cloud_url }}" class="btn btn-danger w-100 mb-2">{{ site.data[page.lang].translation.cloud-call-to-action }}</a>
                 </div>
                 <div class="col-lg-6 col-md-7 mt-md-4">
-                    <img src="/images/screenshots/absence-table.jpg" class="d-block my-lg-2 mx-auto me-md-0" width="502" alt="Image">
+                    <img src="/images/screenshots/absence-table.jpg" class="d-none d-sm-block my-lg-2 mx-auto me-md-0" width="502" alt="Image">
                 </div>
             </div>
         </div>
