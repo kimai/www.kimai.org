@@ -33,4 +33,5 @@ Copyright laws of third parties are respected as long as the contents on these w
 
 - Site is powered by [Jekyll](http://jekyllrb.com/)
 - Icons provided by [boxicons](https://boxicons.com/)
-- All illustrations, the shop header and article images are created using Open AI's DALL·E 3 or Bing Image Creator
+- The hero background on the start page is an [image by freepik](https://www.freepik.com/free-vector/background-realistic-abstract-technology-particle_6938839.htm) 
+- All other illustrations and images are created using Open AI's DALL·E 3 or Bing Image Creator
