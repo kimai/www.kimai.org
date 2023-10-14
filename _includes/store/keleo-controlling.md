@@ -86,8 +86,7 @@ If the above list is empty or I decide to add a feature, it will be moved to the
   - Support calculation of breaks (e.g. display in calendar)
   - Use all breaks between first entry of the day and last entry of the day as pause
 - Add a button to take over values from last year (for all users)
-- Show "status" more prominent
-  - e.g. Dashboard widgets for total numbers
+- Dashboard widgets for total numbers, to show "status" more prominent
 - Working time requirements (Arbeitszeitvorgaben)
   - Maximum working time (per day, in one session) and breaks
   - Configure fixed rules per country
@@ -101,6 +100,7 @@ If the above list is empty or I decide to add a feature, it will be moved to the
 - Configuration for the business year, in case a company is not using the calendar year
 - Multiple working contracts (configured with start and end time)
 - Work scheduler (like a monthly view), as some employees (especially hourly-based freelancers) cannot used fixed working days
+- Lockdown method for vacations (define periods where no vacations can be booked)
 ```
 
 ## Changelog
