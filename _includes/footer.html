@@ -12,9 +12,6 @@
                 <p class="text-body fs-sm pb-1 pb-md-2 pb-lg-3 mb-3">{{ site.data[page.lang].translation.footer }}</p>
                 <div class="d-flex flex-column flex-sm-row flex-lg-column align-items-sm-center align-items-lg-start justify-content-between">
                     <div class="position-relative">
-
-
-
                         <div class="dropdown">
                             <button type="button" class="form-select" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="bx bx-globe top-50 start-0 text-body me-2"></i>
@@ -71,34 +68,17 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        {% comment %}
                         <h6 class="fs-lg mb-1 mb-md-3">
-                            <span class="d-none d-md-block">Resources</span>
-                            <a href="#resources" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Resources</a>
+                            <span class="d-none d-md-block">{{ site.data[page.lang].translation.comparison.footer-title }}</span>
+                            <a href="#resources" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">{{ site.data[page.lang].translation.comparison.footer-title }}</a>
                         </h6>
                         <div id="resources" class="collapse d-md-block" data-bs-parent="#footer-links">
                             <ul class="nav flex-column">
                                 <li class="nav-item mb-1">
-                                    <a href="#" class="nav-link fs-sm fw-medium px-0 py-1">About Silicon</a>
-                                </li>
-                                <li class="nav-item mb-1">
-                                    <a href="#" class="nav-link fs-sm fw-medium px-0 py-1">Latest news and insights</a>
-                                </li>
-                                <li class="nav-item mb-1">
-                                    <a href="#" class="nav-link fs-sm fw-medium px-0 py-1">Budgeting tips</a>
-                                </li>
-                                <li class="nav-item mb-1">
-                                    <a href="#" class="nav-link fs-sm fw-medium px-0 py-1">Investing tips</a>
-                                </li>
-                                <li class="nav-item mb-1">
-                                    <a href="#" class="nav-link fs-sm fw-medium px-0 py-1">Financial planning tips</a>
-                                </li>
-                                <li class="nav-item mb-1">
-                                    <a href="#" class="nav-link fs-sm fw-medium px-0 py-1">Careers at Silicon</a>
+                                    {% include link-translated-menu.html item="compare-clockify" language=page.lang class="nav-link fs-sm fw-medium px-0 py-1" title="Clockify" %}
                                 </li>
                             </ul>
                         </div>
-                        {% endcomment %}
                     </div>
                     <div class="col-md-4">
                         <img src="/images/kimai_logo.png" style="height:148px" alt="Kimai">

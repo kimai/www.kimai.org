@@ -8,7 +8,7 @@
         {%- if include.icon != nil %}<i class="{{ include.icon }}"></i>{% endif -%}
         {%- if include.title != nil -%}
             {{- include.title -}}
-        {%- else if site.data[page.lang].translation.menu.default[menu.slug] -%}
+        {%- elsif site.data[page.lang].translation.menu.default[menu.slug] != nil -%}
             {{- site.data[page.lang].translation.menu.default[menu.slug].name -}}
         {%- else -%}
             {{- menu.title -}}
