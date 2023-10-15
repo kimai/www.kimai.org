@@ -17,6 +17,14 @@ redirect_from:
   - /de/store/mr-software-period-insert-bundle.html
   - /de/store/hmr-it-recordbook-bundle.html
   - /de/store/mr-software-recordbook-bundle.html
+  - /cs/store/mr-software-recordbook-bundle.html
+  - /cs/store/mr-software-recordbook-bundle.html
+  - /hr/store/mr-software-empty-description-checker-bundle.html
+  - /uk/store/mr-software-hasworked-bundle.html
+  - /pt_BR/store/mr-software-period-insert-bundle.html
+  - /pt_BR/store/mr-software-hasworked-bundle.html
+  - /pt/store/mr-software-hasworked-bundle.html
+  - /he/store/mr-software-period-insert-bundle.html
 ---
 
 This post combines bad and good news. Let's start with the bad one...

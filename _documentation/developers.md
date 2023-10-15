@@ -5,6 +5,7 @@ canonical: /documentation/developers.html
 redirect_from:
   - /documentation/developer/documentation.html
   - /documentation/developer/introduction.html
+  - /documentation/development/installation.html  
   - /documentation/developer/index.html
   - /documentation/developer/
   - /v1/developer.html
