@@ -49,7 +49,7 @@ installation: 'Instalação'
 updates: 'Atualizações'
 username: 'Nome do usuário'
 password: 'Senha'
-try-it: 'Experimente'
+try-it: 'Demonstração'
 plugin-demo-at: 'Você pode testar este plug-in em'
 plugin-demo-accounts: 'Encontre mais contas de teste aqui'
 read-more: 'Saiba mais'
@@ -72,7 +72,7 @@ newsletter:
     sendinblue: Nós usamos o Brevo como a nossa plataforma de marketing. Ao clicar abaixo para enviar este formulário, você reconhece que as informações que você forneceu serão enviadas ao Brevo para processamento de acordo com os %terms%
     terms: Termos de uso
     field-invalid: A informação é inválida Revise o formato e tente novamente.
-    title: Boletim
+    title: Não quer perder nada?
     introduction: Assine o nosso boletim e fique informado sobre as atualizações do Kimai e seus Plug-ins.
     email-title: O seu endereço de e-mail
     button: ASSINE
@@ -100,7 +100,7 @@ demo:
     title: Teste o Kimai numa das demos
     introduction: "Experimente a demonstração do Kimai e prometemos: você continuará a usá-la!"
     choose: Escolha uma das nossas opções de demonstração para ter uma primeira impressão de como o Kimai funciona e quais as funcionalidades que ele oferece.
-    reinstall: Esteja ciente de que as demonstrações serão reinstaladas regularmente e todos os dados inseridos serão removidos. Mas, para a sua conveniência, a maioria é pré-preenchida com dados de teste, para que você possa começar a testar os recursos diretamente (como fatura ou exportação).
+    reinstall: Esteja ciente de que as demonstrações serão reinstaladas regularmente e todos os dados inseridos serão removidos.
     user: Usuário de teste
     accounts: "Essas contas estão disponíveis para os seus testes. Ou você pode criar o seu próprio usuário de teste no formulário de login de cada demonstração."
     role_user: Usário
@@ -135,7 +135,7 @@ menu:
             name: 'Notícias'
             description: Notícias sobre o Kimai, o programa de rastreamento de tempo
             subtitle: Notícias sobre a equipe de desenvolvimento do Kimai
-            title: News from Kimai
+            title: Notícias do Kimai
         documentation:
             name: 'Documentação'
             description: Informações de suporte, manual do usuário e outra documentação para rastreamento de tempo Kimai
@@ -148,13 +148,13 @@ menu:
         site-notice:
             name: Aviso do site
         features:
-            name: Features
+            name: Recursos
         docu-developer:
-            name: Developer
+            name: Desenvolvedor
         docu-onpremise:
-            name: Self-hosting
+            name: Hospedagem própria
         docu-manual:
-            name: User manual
+            name: Manual do usuário
     menu-documentation:
         manual:
             name: 'Usando o Kimai'
@@ -222,7 +222,7 @@ feature:
         description: "Faça login e registre os usuários via SAML (single sign on, também conhecido como SSO) e reutilize o seu provedor de identidade já existente, como o Google workspace, Authentik ou o active directory Azure."
     api:
         name: "API JSON"
-        description: "Apresentando uma API JSON para que os aplicativos externos possam se comunicar com o seu rastreador de tempo favorito!"
+        description: "Apresenta uma extensa API JSON para leitura e gravação de dados, de modo que aplicativos externos e suas ferramentas personalizadas possam se comunicar com o seu rastreador de tempo favorito."
     ldap:
         name: "LDAP"
         description: "Conecte o Kimai com o servidor da sua empresa (LDAP ou Active Directory) e use a sua própria infra-estrutura de autenticação."
@@ -272,11 +272,11 @@ feature:
         description: 'O Kimai oferece suporte à autenticação de dois fatores com tokens TOTP: proteja as suas contas de usuário hoje mesmo!'
         name: Autenticação de dois fatores (2FA)
     auth:
-        description: Kimai supports external identity providers and login via LDAP and SAML across multiple providers (such as Google Workspace, Azure AD or Authentik). In addition, two-factor authentication can be enabled via TOTP tokens.
-        name: Authentication and Security
+        description: O Kimai oferece suporte a provedores de identidade externos e login via LDAP e SAML em vários provedores (como Google Workspace, Azure AD ou Authentik). Além disso, a autenticação de dois fatores pode ser ativada por meio de tokens TOTP.
+        name: Autenticação e segurança
     reporting:
-        description: Analysis of recorded times, customers, projects and activities. Evaluation according to users, customers, projects, activities, tags, time periods and much more.
-        name: Reports and analyses
+        description: Análise dos horários registrados, clientes, projetos e atividades. Avaliação de acordo com os usuários, clientes, projetos, atividades, tags, períodos de tempo e muito mais.
+        name: Relatórios e análises
 install:
     requirements:
         title: 'Requisitos do servidor'
@@ -300,71 +300,73 @@ developer:
     kevinpapst:
         intro: Mantenedor do projeto e desenvolvedor do núcleo desde 2007. Deseja fazer do Kimai a melhor empresa de código aberto do mundo em termos de tempo. Pode ser contratado para suporte, para instalações e para o desenvolvimento de plugi-ns personalizados.
 price-contract: Sob demanda
-full-documentation: A documentação completa está disponível aqui (apenas em Inglês).
+full-documentation: Documentação completa em inglês
 contact-developer: Caso tenha alguma dúvida, use as seguintes informações de contato para entrar em contato diretamente com o desenvolvedor.
 homepage:
-    title: Time tracking for project-driven teams
-    intro: Our open-source platform is designed to keep track of and analyze your companies time-data, making it perfect for businesses of all sizes. Kimai helps you keep an eye on time and money.
+    title: Controle de tempo para equipes orientadas por projetos
+    intro: Nossa plataforma de código aberto foi projetada para acompanhar e analisar os dados de tempo da sua empresa, o que a torna perfeita para empresas de todos os tamanhos. O Kimai ajuda você a ficar de olho no tempo e no dinheiro.
 section-teaser:
     report:
-        title: Reports
-        description: Reports for the evaluation of users and projects.
+        title: Relatórios
+        description: Relatórios para a avaliação de usuários e projetos.
     timesheet:
-        title: Time-Tracking
-        description: Easy input of work done and clear control.
+        title: Controle de tempo
+        description: Entrada fácil do trabalho realizado e clareza no controle.
     work-contract:
-        title: Working time accounts
-        description: Debit and overtime hours, monthly statements.
+        title: Contas de horas de trabalho
+        description: Débito e horas extras, extratos mensais.
     dashboard:
-        description: Dashboard with configurable widgets.
-        title: Dashboard
+        description: Painel com ferramentas configuráveis.
+        title: Painel
     absence:
-        title: Absences
-        description: Holidays, holiday, illness and absences.
-per-year: per year
+        title: Ausências
+        description: Feriados, férias, doenças e ausências.
+per-year: por ano
 history:
-    year-2020: Kimai is offered as a subscription based SaaS, with a free and two paid plans.
-    early-days-title: How it all began
-    year-2009: Torsten, the initial developer, wants to close down Kimai. Kevin steps in and becomes maintainer.
-    year-2019: First plugins are created, to validate market-fit and interest in paid open-source software.
-    early-days-subtitle: Kimai has a long history and is around since 2006, this is a brief overview how everything started.
-    year-2023: The hard work is finally paying off and Kimai is now my 100% full-time job. Thank you!
-    year-2014: The last release of Kimai 1 is created, development stales and there is not much more activity.
-    year-2006: The first version of Kimai is release and slowly gains a growing user and developer base.
-    about: What started as a hobby project is now the leading open-source time-tracking application in the world. Let's dive into it's history.
-    year-2018: The re-write of Kimai finds it's way into the community, the data migrations works.
-store-hero-counter: '%number% customers are already with us'
-store-hero-intro: Enhance Kimai with our great selection of plugins. Choose from dozens of apps and extensions within the Kimai ecosystem and bring super-power to your time-tracking experience now!
+    year-2020: O Kimai é oferecido como um SaaS baseado em assinatura, com um plano gratuito e dois planos pagos.
+    early-days-title: Como tudo começou
+    year-2009: Torsten, o desenvolvedor inicial, quer encerrar o Kimai. Kevin entra em cena e se torna o principal mantenedor.
+    year-2019: Os primeiros plug-ins são criados para validar a adequação ao mercado e ao interesse em pagar por software de código aberto.
+    early-days-subtitle: O Kimai tem uma longa história e existe desde 2006. Esta é uma breve visão geral de como tudo começou.
+    year-2023: O trabalho árduo finalmente está valendo a pena e o Kimai agora é 100% o meu trabalho em tempo integral. Agradeço a todos vocês!
+    year-2014: A última versão do Kimai 1 é criada, o desenvolvimento é interrompido e não há muito mais atividade.
+    year-2006: A primeira versão do Kimai foi lançada e, aos poucos, ganha uma base crescente de usuários e de desenvolvedores.
+    about: O que começou como um hobby, hoje é o principal aplicativo de rastreamento de tempo de código aberto no mundo. Vamos nos aprofundar em sua história.
+    year-2018: A reescrita do Kimai chega à comunidade e as migrações dos dados funcionam.
+store-hero-counter: '%number% de clientes que já estão conosco'
+store-hero-intro: Aprimore o Kimai com nossa grande seleção de plug-ins. Escolha entre dezenas de aplicativos e extensões dentro do ecossistema Kimai e traga superpoderes à sua experiência de controle de tempo agora mesmo!
 cta:
     tech-support:
-        question: Tech &amp; Business Support
-        button: Let's work together
-        answer: I ensure support for all applications I've built and I will assist you and your team.
+        question: Suporte técnico &amp; e comercial
+        button: Vamos trabalhar juntos
+        answer: Garanto suporte para todos os aplicativos que criei e ajudarei você e a sua equipe.
     get-started:
-        answer: Start your time-tracking journey now
-        button: Get support
-        question: Ready to get started?
+        answer: Inicie a sua jornada de controle de tempo agora
+        button: Obtenha ajuda
+        question: Está pronto para começar?
     best-features:
-        answer: Kimai provides a wide range of features that build around your project time-tracking needs and best practices solutions to our customers making their bookkeeping easier.
-        question: The best time-tracking features for you
-        button: More features via plugin
+        answer: O Kimai oferece uma ampla gama de recursos que se baseiam nas necessidades de controle de tempo do seu projeto e de soluções práticas recomendadas para os nossos clientes, facilitando a contabilidade.
+        question: Os melhores recursos de controle de tempo para você
+        button: Mais recursos via plugin
 highlight:
-    title: Supports your business
-    subtitle: Kimai has all the business core features you need to setup your time-tracking workflows and integrate it with your existing infrastructure.
-store-hero-title: Add-ons, Apps, Support
-description: Description
+    title: Auxilia os seus negócios
+    subtitle: O Kimai tem todos os principais recursos comerciais que você precisa para configurar os seus fluxos de trabalho e de controle de tempo ao integrá-lo à sua infraestrutura já existente.
+store-hero-title: Complementos, aplicativos, suporte
+description: Descrição
 oss-cloud-compare:
-    saas: Hosted for you
-    onpremise: Hosted by you
-    intro: Kimai is an open source software that is available for self-hosting as well as SaaS.
-    title: One software, two versions
+    saas: Hospedado para você
+    onpremise: Hospedado por você
+    intro: O Kimai é um programa de código aberto que está disponível para hospedagem própria e SaaS.
+    title: Um programa, duas versões
 section-features:
-    subtitle: Kimai offers much more than just time-tracking, here is a list of other important business functions.
-    title: What can Kimai do for you?
-share-post: Share this post
-about-who: Who is building Kimai?
-store-hero-subtitle: Welcome to the Kimai store
+    subtitle: O Kimai oferece muito mais do que apenas o controle de horas. Aqui está uma lista de outras funções comerciais importantes.
+    title: O que o Kimai pode fazer por você?
+share-post: Compartilhe esta publicação
+about-who: Quem está desenvolvendo o Kimai?
+store-hero-subtitle: Bem-vindo à loja Kimai
 testimonials:
-    title: What users say about Kimai
-footer: Free and easy to use time tracking for freelancers, agencies and companies. Kimai is open source software available for self-hosting and as SaaS.
-slogan: Time-tracking made easy
+    title: O que os usuários dizem sobre o Kimai
+footer: Controle de tempo gratuito e fácil de usar para freelancers, agências e empresas. O Kimai é um software de código aberto disponível para hospedagem própria e como o SaaS.
+slogan: Controle de tempo facilitado
+comparison:
+    footer-title: Comparar
