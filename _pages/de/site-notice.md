@@ -1,7 +1,6 @@
 ---
 title: Impressum
 lang: de
-robots: "noindex, nofollow"
 sitemap: false
 permalink: /de/site-notice.html
 canonical: /en/site-notice.html
