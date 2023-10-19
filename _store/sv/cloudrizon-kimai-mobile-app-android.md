@@ -3,7 +3,7 @@ title: Kimai Mobile
 type: app 
 lang: sv
 permalink: /sv/store/cloudrizon-kimai-mobile-app-android.html
-redirect_from: ["/sv/store/hmr-it-android-offline-tracker.html", "/sv/store/mr-software-android-offline-tracker.md"]
+redirect_from: ["/sv/store/hmr-it-android-offline-tracker.html", "/sv/store/mr-software-android-offline-tracker.html"]
 ---
 
 {% include store/cloudrizon-kimai-mobile-app-android.md %}
