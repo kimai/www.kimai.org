@@ -174,6 +174,13 @@ If SAML is activated, you can turn off the login form entirely by unchecking the
 
 ## Troubleshooting
 
+### API access does not work after changing to SAML
+
+If you previously used local accounts and then switched to SAML. 
+Your user account might be migrated to a new username, which is used during the API authentication.
+
+Please check the username in your user profile and use it for API authentication.
+
 ### Proxy and http vs https
 
 **Error:**  
