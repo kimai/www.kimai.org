@@ -59,7 +59,7 @@ If you see an error like `There are no commands defined in the "kimai:bundle:XYZ
 then either the directory has a wrong name (must be **var/plugins/{{ plugin }}/**) or you forgot to clear the cache (look above).
 {% endcapture %}
 {% assign error_faq = error_faq|markdownify %}
-{% include alert.html icon="fas fa-exclamation" type="warning" alert=error_faq %}
+{% include alert.html type="warning" alert=error_faq %}
     {% endif %}
 
     {% if include.assets != nil %}
