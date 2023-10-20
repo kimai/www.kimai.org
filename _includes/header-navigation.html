@@ -1,5 +1,6 @@
 {% assign is_light = true %}
 {% assign is_dark = false %}
+{% assign downloadBtnClasses = "btn rounded-pill btn-sm fs-sm d-none d-md-inline-flex me-2" %}
 {% assign is_absolute = false %}
 {% if include.light != nil %}
     {% assign is_light = include.light %}
@@ -10,6 +11,12 @@
         {% assign is_light = false %}
     {% endif %}
 {% endif %}
+{% if is_dark %}
+    {% assign downloadBtnClasses = downloadBtnClasses | append: " btn-outline-light" %}
+{% else %}
+    {% assign downloadBtnClasses = downloadBtnClasses | append: " btn-outline-primary" %}
+{% endif %}
+
 {% if include.absolute != nil %}
     {% assign is_absolute = include.absolute %}
 {% endif %}
@@ -52,12 +59,16 @@
                 </ul>
             </div>
         </div>
+        {% comment %}
         <div class="form-check form-switch mode-switch pe-lg-1 ms-auto me-4" data-bs-toggle="mode">
             <input type="checkbox" class="form-check-input" id="theme-mode">
-            {% comment %}
             <label class="form-check-label d-none d-sm-block" for="theme-mode">Light</label>
             <label class="form-check-label d-none d-sm-block" for="theme-mode">Dark</label>
-            {% endcomment %}
+        </div>
+        {% endcomment %}
+        <div class="pe-lg-1 ms-auto me-2">
+            {% include link-translated-menu.html item="download" language=page.lang class=downloadBtnClasses %}
+            {% include link-cloud-start.html classes="btn btn-success rounded-pill btn-sm fs-sm d-none d-sm-inline-flex" %}
         </div>
         <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
