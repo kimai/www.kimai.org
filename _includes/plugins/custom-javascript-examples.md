@@ -1,3 +1,15 @@
+
+Make your tables horizontal scrollable if they are too wide:
+```javascript
+function scrollableTable() {
+    [].slice.call(document.querySelectorAll('div.dataTables_wrapper')).map((element) => {
+        element.style.overflowX = 'scroll';
+    });
+}
+document.addEventListener('kimai.initialized', scrollableTable);
+document.addEventListener('kimai.reloadedContent', scrollableTable);
+```
+
 Remove the activity from the timesheet form.
 You have to create one global activity and grab the ID from the URL, replace `5095` in the code with your new ID:
 ```javascript
