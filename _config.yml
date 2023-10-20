@@ -77,6 +77,9 @@ collections:
   store:
     output: true
     permalink: "/store/:title.html"
+  alternative:
+    output: true
+    permalink: "/en/compare/:title.html"
 
 defaults:
   - scope:
@@ -117,6 +120,12 @@ defaults:
       type: store
     values:
       layout: store-item
+      lang: en
+  - scope:
+      path: ""
+      type: alternative
+    values:
+      layout: alternative
       lang: en
 
 markdown: kramdown
