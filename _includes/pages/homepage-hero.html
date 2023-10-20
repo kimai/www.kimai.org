@@ -1,0 +1,32 @@
+{% include header-navigation.html absolute=true light=false %}
+
+<section class="position-relative pt-5 overflow-hidden">
+    <span class="position-absolute top-0 start-0 d-dark-mode-none d-block w-100 h-100 bg-secondary"></span>
+    <span class="position-absolute top-0 start-0 d-dark-mode-block d-none w-100 h-100" style="background: radial-gradient(84.79% 172.9% at 73.31% 31.4%, rgba(99, 135, 241, .1) 0%, rgba(218, 70, 239, .05) 52.47%, rgba(99, 135, 241, .1) 100%);"></span>
+    <div class="container position-relative pt-xl-5 pt-md-3 zindex-5">
+        <div class="row justify-content-md-start justify-content-center flex-md-nowrap pt-lg-5 pt-4">
+            <div class="col-xl-5 col-md-6 col-sm-10 d-flex flex-column justify-content-between mb-md-5 mb-md-4 mb-3 pb-xl-5 pb-lg-4">
+                <div class="text-md-start text-center">
+                    <h1 class="display-4 mb-lg-4 mb-3">{{ site.data[page.lang].translation.homepage.title }}</h1>
+                    <p class="mb-4 mx-md-0 mx-auto pb-xl-3 pb-lg-2 fs-lg" style="max-width: 30.5rem;">{{ site.data[page.lang].translation.homepage.intro }}</p>
+                </div>
+                {% include section-list-highlights.html %}
+            </div>
+            <div class="col-md-12 offset-xl-1 d-flex mt-lg-4 mb-4">
+                <div class="align-self-end ms-xl-0 ms-md-4 p-lg-4 p-sm-3 p-2 rounded-4 overflow-hidden" style="background: linear-gradient(153.32deg, rgba(255, 255, 255, .3) -65.62%, rgba(255, 255, 255, .1) 83.28%); box-shadow: 0 .25rem 1.5rem -.0625rem rgba(0, 0, 0, .2); backdrop-filter: blur(25px);">
+                    <div class="swap-image">
+                        <img src="/images/screenshots/screenshot-dashboard.jpg" width="1122" alt="Dashboard" class="rounded-4 swap-from" style="box-shadow: 0 0 7.5rem rgba(0, 0, 0, .1);">
+                        <div class="swap-to">
+                            <img src="/images/screenshots/screenshot-reporting.jpg" width="1122" alt="Dashboard" class="rounded-4 light-mode-img" style="box-shadow: 0 0 7.5rem rgba(0, 0, 0, .1);">
+                            <img src="/images/screenshots/screenshot-reporting.jpg" width="1122" alt="Reporting" class="rounded-4 dark-mode-img" style="box-shadow: 0 0 7.5rem rgba(0, 0, 0, .1);">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span class="position-absolute bottom-0 start-0 w-100">
+          <span class="d-dark-mode-none d-block w-100 h-100 py-xl-5 pt-lg-4 pt-md-0 pt-4 pb-5 bg-light"></span>
+          <span class="d-dark-mode-block d-none w-100 h-100 py-xl-5 pt-lg-4 pt-md-0 pt-4 pb-5 bg-dark"></span>
+        </span>
+</section>
