@@ -9,6 +9,12 @@
                 <div class="text-md-start text-center">
                     <h1 class="display-4 mb-lg-4 mb-3">{{ site.data[page.lang].translation.homepage.title }}</h1>
                     <p class="mb-4 mx-md-0 mx-auto pb-xl-3 pb-lg-2 fs-lg" style="max-width: 30.5rem;">{{ site.data[page.lang].translation.homepage.intro }}</p>
+                    <p>
+                        <a href="{% link _posts/2023-05-20-kimai-release-2.md %}" class="d-inline-flex align-items-center fs-sm fw-semibold text-decoration-none border border-primary border-opacity-50 rounded-pill py-1 px-3">
+                            <span class="text-gradient-primary lh-lg">{{ site.data[page.lang].translation.new-badge }}: Kimai 2.0</span>
+                            <i class="bx bx-right-arrow-alt text-gradient-primary fs-lg ms-2 me-n1"></i>
+                        </a>
+                    </p>
                 </div>
                 {% include section-list-highlights.html %}
             </div>
