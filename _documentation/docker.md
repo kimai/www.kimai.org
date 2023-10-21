@@ -2,16 +2,21 @@
 title: Docker
 description: Running Kimai inside docker
 canonical: /documentation/docker.html
+related:
+    - kubernetes
 ---
-
-## Production docker
 
 @tobybatch is managing the Kimai Docker images, both for development and a docker-compose setup suitable for running in a production environment.
 
 - [https://github.com/tobybatch/kimai2](https://github.com/tobybatch/kimai2) - his repository with all the docker sources
-- [https://hub.docker.com/r/kimai/kimai2](https://hub.docker.com/r/kimai/kimai2) - dockerhub repo, auto-building prod and dev containers
 
 Any issues with the container rather than the application itself should be raised [here](https://github.com/tobybatch/kimai2/issues).
+
+### Docker Hub
+
+The Docker Hub repo, where you find the auto-building prod and dev containers for Kimai is: [https://hub.docker.com/r/kimai/kimai2](https://hub.docker.com/r/kimai/kimai2) 
+
+{% comment %} 
 
 ### Build the docker
 
@@ -66,5 +71,7 @@ You can mount a [custom configuration]({% link _documentation/local-yaml.md %}) 
 ```bash
 docker run --rm -ti -p 8001:8001 --name kimai2 -v $(pwd)/config/packages/local.yaml:/opt/kimai/config/packages/local.yaml kimai/kimai2:dev
 ```
+
+{% endcomment %}
 
 The [official docker documentation](https://docs.docker.com/) has more options on running the container.
