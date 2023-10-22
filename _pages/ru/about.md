@@ -4,5 +4,4 @@ layout: about
 lang: ru
 permalink: /ru/about.html
 canonical: /en/about.html
-warn_language: true
 ---
