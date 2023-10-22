@@ -9,7 +9,7 @@ redirect_from:
 
 1. Make sure that you have a working [database backup]({% link _documentation/backups.md %}) before you start the update.
 2. Check [UPGRADING]({{ site.kimai_v2_file }}/UPGRADING.md) for required manual changes between your current and the new version. 
-3. You can upgrade multiple version at once, e.g. from `1.19` to `2.0.22`, skipping everything between.
+3. You can upgrade multiple versions at once, e.g. from `1.19` to `2.0.22`, skipping everything between.
 4. Some tweaks might be necessary to run the commands listed below, read the [installation documentation]({% link _documentation/installation.md %}) for more information.
 
 ## Updating Kimai 
@@ -61,7 +61,7 @@ If you see the following error during `composer install`, then you are running a
 curl error 6 while downloading https://flex.symfony.com/versions.json: Could not resolve host: flex.symfony.com 
 ```
 
-Great that you like Kimai, but PLEASE: for various reason (like security) you should update more regularly!
+Great that you like Kimai, but PLEASE: for various reasons (like security) you should update more regularly!
 
 Please run `composer install --optimize-autoloader -n --no-plugins --no-scripts` once and then follow the normal update process.
 

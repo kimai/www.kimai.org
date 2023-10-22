@@ -20,7 +20,7 @@ You have to adapt two settings in your `.env` [configuration file]({% link _docu
 
 ### MAILER_URL
 
-The following list of providers are supported out-of-the-box by Kimai: 
+The following providers are supported out-of-the-box by Kimai: 
 
 - Deactivated: `null://null`
 - SMTP: `smtp://localhost:25`

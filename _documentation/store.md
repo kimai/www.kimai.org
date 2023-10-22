@@ -4,11 +4,11 @@ navigation: Add to store
 description: How to list your Kimai extension in the Marketplace 
 ---
 
-If you created a plugin or any other kind of software around Kimai, 
+If you create a plugin or any other kind of software around Kimai, 
 which you want to see listed in the [{{ site.data[page.lang].translation.store.name}}]({% link _pages/store.html %}), follow these short guidelines.
 
 The website is generated with [Jekyll](https://jekyllrb.com) and [managed at GitHub]({{ site.kimai_v2_website }}).
-It is translated to many languages and there is a little more work required than just adding a markdown page. 
+It is translated to many languages, and there is a little more work required than just adding a markdown page. 
 But not much ... and it just needs a couple of minutes! You'll get help at GitHub if something doesn't work.
 
 ## Adding a plugin
@@ -39,7 +39,7 @@ bundle:
 title: Foo
 type: plugin
 ```
-Also you have to replace `{% raw %}{% include store/keleo-custom-content-bundle.md %}{% endraw %}` with some introduction text for your new item.
+You also need to replace `{% raw %}{% include store/keleo-custom-content-bundle.md %}{% endraw %}` with some introductory text for your new item.
 4. Create a translation for your plugin in `_data/en/store.yaml`:
 ```yaml
 items:
@@ -56,7 +56,7 @@ The information about yourself or your company comes from the [developer.yml fil
 It starts by defining your company/developer ID and then adding the following keys:
 
 - `name` - your company or personal name (**mandatory**)
-- `description` - a short self description in one sentence (**mandatory**)
+- `description` - a short self-description in one sentence (**mandatory**)
 - `image` - full URL to your company logo or avatar (**mandatory**)
 - `homepage` - full URL to your website (optional)
 - `github` - your GitHub organization or profile URL (optional)
@@ -64,7 +64,7 @@ It starts by defining your company/developer ID and then adding the following ke
 
 The ID should be built from the lowercased version of your name: use only alphabetical character and remove all special chars and spaces.
 
-For example my own entry (`kevinpapst` being my developer ID):
+For example, my own entry (`kevinpapst` being my developer ID):
 
 ```
 kevinpapst:
@@ -83,8 +83,8 @@ Create a new markdown file in the [_store directory]({{ site.kimai_v2_website }}
 
 Within the Jekyll [Front Matter](https://jekyllrb.com/docs/front-matter/) you have the following attributes available:
 
-- `name` - a name for your {{ site.data[page.lang].translation.store.name}} entry, will be used in the list view and in the title of the detail screen (**mandatory**)
-- `intro` - a descriptive sentence for this entry, will be used in the detail screen (**mandatory**)
+- `name` - a name for your {{ site.data[page.lang].translation.store.name}} entry will be used in the list view and in the title of the detail screen (**mandatory**)
+- `intro` - a descriptive sentence for this entry will be used in the detail screen (**mandatory**)
 - `developer` - your company/developer ID (**mandatory**)
 - `date` - date of the last release (**mandatory**)
 - `image` - product image (optional)

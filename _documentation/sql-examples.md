@@ -63,10 +63,10 @@ GROUP BY
 Duration is formatted as decimal time.
 So `1,745.4` is one-thousand-seven-hundred-forty-five hours and 24 minutes.
 
-### Find entries where hourly rate does not match users hourly rate
+### Find entries where hourly rate does not match users' hourly rate
 
-Compares timesheet hourly rate and user-preference rate. 
-Does not check configured customer/project/activity rates!
+It compares timesheet hourly rate and user-preference rate. 
+It does not check configured customer/project/activity rates!
 
 ```sql
 SELECT

@@ -16,7 +16,7 @@ please read the [permissions documentation]({% link _documentation/permissions.m
 
 ## Permission details
 
-First we will have a look at the available user roles and how their permission work when using teams (this only applies when you use the default [permission configuration]({% link _documentation/permissions.md %})):
+First, we will have a look at the available user roles and how their permission work when using teams (this only applies when you use the default [permission configuration]({% link _documentation/permissions.md %})):
 
 - `System-Admin` - can see and manage all content and use all administrative functions.
 - `Administrator` - can see and manage all content, but access to system specific settings and contents (like users) are limited. 

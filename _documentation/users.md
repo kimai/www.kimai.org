@@ -113,7 +113,7 @@ The basic flows looks as this:
 - If the code was correct, Kimai will enable 2FA for your account 
 - The next time you log-in, you will have to open your app and enter the current confirmation code before entering Kimai 
 
-The 2FA-mode can be enabled per account, settings can be access by the user himself or by any Super-Admin.
+The 2FA-mode can be enabled per account, settings can be accessed by the user himself or by any Super-Admin.
 
 The two-factor authentication can be enabled by all users, even for SAML accounts. 
 

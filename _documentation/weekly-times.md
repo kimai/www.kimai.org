@@ -28,7 +28,7 @@ If the existing rows are not sufficient, you can `+ Add` new ones at any time.
 
 ### Creating records
 
-If you add multiple times for one day, they will start at the same time (configured through the above mentioned configuration) . 
+If you add multiple times for one day, they will start at the same time (configured through the above mentioned configuration). 
 There is no way to detect the correct order of times, so instead of guessing start times by sequencing one after another, 
 they all intentionally start at the same time.
 

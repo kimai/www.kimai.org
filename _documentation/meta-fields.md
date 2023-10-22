@@ -189,7 +189,7 @@ in the following places:
 - API
 - Datatables
 
-The default visibility is `false` (hidden). If you want to show the meta fields in the datatables (eg. timesheets), 
+The default visibility is `false` (hidden). If you want to show the meta fields in the datatables (e.g. timesheets), 
 then you have to set `visibility` to `true` (see EventSubscriber example above).
 
 Be aware: the visibility is stored with the meta field, so changing its value via the EventSubscriber 

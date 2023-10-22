@@ -43,14 +43,14 @@ In `sets` we define the "permissions sets" names `ACTIVITY`, `TIMESHEET` and `PR
 In `maps` we now apply the "permission set" called `TIMESHEET` and `ACTIVITY` to the user-role `ROLE_USER` 
 and the three "permission sets" called `TIMESHEET` and `ACTIVITY` and `PROFILE` to the user-role `ROLE_ADMIN`.
 
-At this step the roles have the following permissions:
+At this stage, the roles have the following permissions:
 
 - `ROLE_USER` - view_own_timesheet, start_own_timesheet, view_activity, create_activity
 - `ROLE_ADMIN` - view_own_timesheet, start_own_timesheet, view_activity, create_activity, my_profile, show_roles, other_profiles
 
 As last step, the list of "permission names" in the `roles` section will be merged with the list of previously calculated permissions.
 
-At the end the system calculated the final list of permissions:  
+At the end, the system calculated the final list of permissions:  
 
 - `ROLE_USER` - view_own_timesheet, start_own_timesheet, view_activity, create_activity, my_profile
 - `ROLE_ADMIN` - view_own_timesheet, start_own_timesheet, view_activity, create_activity, my_profile, show_roles, other_profiles, delete_activity

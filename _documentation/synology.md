@@ -85,7 +85,7 @@ And then creating a VirtualHost (we use a port based in this example):
 
 {% include docs-image.html src="/images/documentation/synology-3.png" title="Main Menu > Web Station > Virtual Host" width="800px" %}
 
-Settings choosen in the example:
+Settings chosen in the example:
 
 - Port: `7777` with `HTTPS`
 - Document root: `/volume1/web/kimai/public`
@@ -281,7 +281,7 @@ See [this discussion]({{ site.kimai_v2_repo }}/discussions/3198) to find out mor
                     - { ldap_value: management, role: ROLE_ADMIN } <-- assumes that you have created a Domain Group 'management' in your Active Directory App; if not, delete this line
                     - { ldap_value: Users, role: ROLE_USER }
     ```
-4. nstallation
+4. Installation
 SSH into your Synology NAS, navigate to your Kimai installation (probably volume1\web\kimai2) and run the following command:
 ```bash
 php80 /usr/local/bin/composer require laminas/laminas-ldap --optimize-autoloader
@@ -302,7 +302,7 @@ PHP has two different settings for memory limit, depending on where you run it:
 - executed in web-context (you open a page in your browser) => the settings from DSM are used
 - executing scripts (like the installer) via SSH => settings from another config file are used 
 
-So  when running the installer and running into a memory issue, you have to adjust the `php.ini` whose settings are used 
+So when running the installer and running into a memory issue, you have to adjust the `php.ini` whose settings are used 
 in SSH, e.g. the file `/usr/local/etc/php81/php.ini` is used for PHP 8.1.
 Search for the key `memory_limit` and set it to a high value, e.g. `memory_limit=512M`.
 
