@@ -39,17 +39,17 @@
                                         </p>
                                         <p>
                                             {% if author.github_donate %}
-                                            <a href="{{ author.github_donate }}" class="btn btn-primary mb-1 me-1" role="button">
+                                            <a href="{{ author.github_donate }}" class="btn btn-primary mb-1 me-1" role="button" target="_blank">
                                                 <i class="bx bxl-github fs-5 me-2"></i> {{ site.data[page.lang].translation.menu.default.donate.name }}
                                             </a>
                                             {% endif %}
                                             {% if author.paypal %}
-                                            <a href="{{ author.paypal }}" class="btn btn-primary mb-1 me-1" role="button">
+                                            <a href="{{ author.paypal }}" class="btn btn-primary mb-1 me-1" role="button" target="_blank">
                                                 <i class="bx bxl-paypal fs-5 me-2"></i> {{ site.data[page.lang].translation.menu.default.donate.name }}
                                             </a>
                                             {% endif %}
                                             {% if author.amazon %}
-                                                <a href="{{ author.amazon }}" class="btn btn-primary mb-1" role="button">
+                                                <a href="{{ author.amazon }}" class="btn btn-primary mb-1" role="button" target="_blank">
                                                     <i class="bx bxl-amazon fs-5 me-2"></i> {{ site.data[page.lang].translation.menu.default.donate.name }}
                                                 </a>
                                             {% endif %}
