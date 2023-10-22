@@ -68,33 +68,6 @@ donate:
     please-donate: Developing a free software like Kimai takes a lot of time and effort. If you like Kimai, if you use it on a daily basis or administrate Kimai in your company, please consider to support further development.
     your-donation: "Your donation goes directly into supporting the project. I am a professional software-developer dedicated to Kimai and with a heart for open source software.\nMost importantly, by helping support the development of Kimai you are contributing to an effort that makes your life easier. Now isn't that sweet?\n\nThank you for using Kimai!\n\nPlease note, this donation is not directed towards a non-profit and thus not deductible on your taxes.\n"
 menu:
-    menu-documentation:
-        plugins:
-            description: User documentation for features provided by (paid) plugins
-            name: Additional features
-        auth:
-            name: Authenticator
-            description: Log in to Kimai using external identity provider
-        manual:
-            name: Using Kimai
-            description: Kimai user manual, explaining the UI and all available screens
-        tips:
-            name: Tips and Tricks
-            description: Articles that explain basic functionality in Kimai
-        developer:
-            name: Create plugins
-            description: Creating custom plugins, extending Kimai, using internal APIs
-        extend:
-            name: Technical background
-            description: Background info and technical correlations
-        api:
-            description: Use the JSON API to fetch and create data in Kimai
-        on-premise:
-            name: DevOps
-            description: Manage and configure your Kimai installation
-        installation:
-            name: Installation & Updates
-            description: Everything you need to host your Kimai on your own server
     default:
         index:
             brand: Time-tracker
@@ -144,6 +117,9 @@ menu:
             name: Self-hosting
         docu-manual:
             name: User manual
+        alternatives:
+            name: Compare time-tracker
+            description: Kimai is the best open source time tracking application available, not only for project-based teams. See how Kimai compares to alternative time tracking solutions so you can choose the right one for your organisation.
 feature:
     teams:
         name: Teams
@@ -369,7 +345,6 @@ comparison:
     server_maintenance: Server maintenance
     saml: SAML
     ip_restriction: IP access restriction
-    page-title: Compare time-tracker
 install:
     alert-vps: At this stage, it’s not possible to install Kimai by downloading a ZIP file and uploading the files to your web server. You need to have SSH access to your server. This doesn’t necessarily mean you need a VPS. Some shared hosts give you SSH access, through which you should be able to install Composer and Kimai just fine.
     ssh: The recommended method installs Kimai directly on your server.

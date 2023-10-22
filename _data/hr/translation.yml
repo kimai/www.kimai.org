@@ -136,34 +136,9 @@ menu:
             name: Samostalni hosting
         docu-manual:
             name: Korisnički priručnik
-    menu-documentation:
-        manual:
-            name: Korištenje programa Kimai
-            description: Korisnički priručnik programa Kimai, s objašnjenjem korisničkog sučelja i svih dostupnih ekrana
-        tips:
-            name: Savjeti i trikovi
-            description: Članci koji objašnjavaju osnovne Kimai funkcije
-        developer:
-            name: Stvori dodatke
-            description: Stvaranje prilagođenih dodataka, dodavanje novih funkcija pomoću internih API-ja
-        extend:
-            name: Tehnički podaci
-            description: Informacije i tehničke korelacije
-        api:
-            name: REST API
-            description: Koristi JSON API za dohvaćanje i stvaranje podataka u Kimaiju
-        plugins:
-            name: Dodatne funkcije
-            description: Korisnička dokumentacija za funkcije (naplativih) dodataka
-        auth:
-            name: Autentifikator
-            description: Prijavi se na Kimai pomoću stranog pružatelja usluge identifikacije
-        on-premise:
-            name: Opcije programera
-            description: Upravljaj i konfiguriraj tvoju Kimai instalaciju
-        installation:
-            name: "Instalacija i aktualiziranja"
-            description: Sve što trebaš za hostiranje tvog Kimaija na vlastitom poslužitelju
+        alternatives:
+            name: Usporedi praćenje vremena
+            description: Kimai je najbolja dostupna aplikacija za praćenje vremena s otvorenim izvornim kodom, ne samo za timove koji rade na projektima. Pogledajte kako se Kimai uspoređuje s alternativnim rješenjima za praćenje vremena kako biste mogli odabrati pravu za svoju organizaciju.
 feature:
     mobile-ready:
         name: "Za mobilne uređaje"
@@ -260,10 +235,10 @@ feature:
         name: Izvještaji i analize
 install:
     alert-vps: U ovom trenutku nije moguće instalirati Kimai preuzimanjem ZIP datoteke i učitavanjem datoteka na web poslužitelj. Razlog tome je što se Composer mora pokrenuti putem naredbenog retka. To ne znači nužno da trebaš VPS. Neki dijeljeni hostovi pružaju SSH pristup putem kojeg se Composer i Kimai mogu instalirati bez problema.
-    ssh: The recommended method installs Kimai directly on your server.
-    cloud: No need to install Kimai, you can start using it right now.
-    docker: Use our Docker image to install and update Kimai container easily.
-    kubernetes: You can deploy Kimai to Kubernetes using our Helm-Charts.
+    ssh: Preporučeni način instalacije Kimaija je izravno na vašem poslužitelju.
+    cloud: Nema potrebe za instalacijom Kimaija, možete početi koristiti odmah.
+    docker: Koristite našu Docker sliku za jednostavnu instalaciju i ažuriranje Kimai kontejnera.
+    kubernetes: Možete implementirati Kimai u Kubernetes pomoću naših Helm grafikona.
 demo-master-title: Aktualna verzija – Prazno
 demo-stable-description: 'Aktualna verzija bez dodataka, ali s demo podacima. Instalirana verzija: '
 demo-plugins-title: Aktualna verzija
@@ -382,4 +357,4 @@ comparison:
     server_maintenance: Održavanje poslužitelja
     saml: SAML
     ip_restriction: Ograničenje pristupa putem IP adrese
-    page-title: Usporedi praćenje vremena
+

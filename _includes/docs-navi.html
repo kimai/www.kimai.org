@@ -2,7 +2,7 @@
 {% for group in doc_chapter.chapter %}
     {% assign group_key = group.id %}
     {% assign is_active = false %}
-    <h3 class="fs-lg">{{ site.data[page.lang].translation.menu.menu-documentation[group_key].name }}</h3>
+    <h3 class="fs-lg">{{ group.name }}</h3>
     <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
     {% for page_slug in group.pages %}
         {% if page_slug != '-' %}

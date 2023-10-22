@@ -1,8 +1,8 @@
 {% assign doc_chapter = site.data.menu-documentation[include.navigation] %}
 {% for group in doc_chapter.chapter %}
     {% assign group_key = group.id %}
-    {% assign group_name = site.data[page.lang].translation.menu.menu-documentation[group_key].name %}
-    {% assign group_desc = site.data[page.lang].translation.menu.menu-documentation[group_key].description %}
+    {% assign group_name = group.name %}
+    {% assign group_desc = group.description %}
     <div class="card mb-4">
         <div class="row g-0 align-items-center">
             <div class="col-sm-3 col-xl-2 mt-2 mt-sm-0">
