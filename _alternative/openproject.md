@@ -4,7 +4,7 @@ lang: en
 permalink: /en/compare/openproject.html
 name: OpenProject
 image: /images/logos/openproject.png
-feature: false
+feature: true
 is_oss: true
 on_premise: true
 cloud: true
