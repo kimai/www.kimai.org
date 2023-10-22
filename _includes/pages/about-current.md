@@ -65,24 +65,44 @@ Mogli bismo nabrojati još puno više o njegovim značajkama i prednostima – b
 mala organizacija ili tvrtka sa stotinama zaposlenika – ali smatramo da je izravno testiranje najbolja mogućnost za upoznavanje programa:
 Stoga budi naš gost i testiraj Kimai na internetu s našom demo instalacijom. Ako vjeruješ činjenicama, sastavili smo popis značajki.
 
+{% elsif page.lang == 'it' %}
+
+Kimai è un'applicazione per il monitoraggio del tempo con una lunga storia. La prima versione è stata rilasciata nel 2006. Perché lo dico?
+Perché da allora ho visto molti servizi andare e venire - fidatevi di me quando vi dico: Sono rimasto in zona.
+Per molti anni non mi sono guadagnato da vivere con Kimai, ma è stato il divertimento a tenermi motivato a migliorare Kimai.
+Credo che il divertimento sia una delle ragioni principali del successo di Kimai.
+
+Ho costruito Kimai per un solo scopo: tracciare le ore di lavoro. Kimai supporta un numero illimitato di utenti e di voci di timesheet,
+in modo da poter gestire tutti i vostri team/reparti in un'unica installazione facile da usare.
+Kimai è basato sul web, quindi tutto ciò che serve è un server web abilitato a PHP.
+È costruito con un design reattivo, in modo da poter monitorare i tempi anche sui dispositivi mobili quando si è in viaggio.
+Kimai è tradotto in più lingue e le traduzioni mancanti possono essere facilmente aggiunte utilizzando lo standard di traduzione aperto Xliff.
+
+Oh, e vi ho detto che potete creare fatture dai vostri timesheet nel vostro browser? Non solo è personalizzabile
+Kimai può essere facilmente esteso in molti modi. È costruito sui framework più popolari e moderni e dispone di una comunità attiva
+che produce molti plugin che estendono le funzionalità di base di Kimai.
+
+Potrei scrivere molto di più sulle caratteristiche e i vantaggi che Kimai può offrire, sia che siate un libero professionista, una piccola organizzazione o un'azienda con centinaia di dipendenti.
+una piccola organizzazione o un'azienda con centinaia di dipendenti - ma credo che darvi la possibilità di provarlo direttamente sia ancora meglio di mille parole da parte mia:
+
 {% else %}
 
-Kimai is a time-tracking app with a long history. The first version was released 2006. Why do I mention that?
-Because I have seen so many services come and go since then - trust me when I say: I'll stick around.
+Kimai is a time tracking app with a long history. The first version was released in 2006. Why do I mention that?
+Because I have seen so many services come and go since then - trust me when I say: I'm sticking around.
 I didn't make a living from Kimai for many years, it was the fun that kept me motivated to improve Kimai.
-I believe the fun is one of the main reasons for the success of Kimai.
+I believe that fun is one of the main reasons for Kimai's success.
 
-I build Kimai for one purpose: tracking your working hours. Kimai supports an unlimited amount of users and timesheet entries,
-so you can handle all of your teams/departments in one easy-to-use installation.
-Kimai is web-based, so all you need is a PHP enabled webserver.
-It's built with a responsive design, so you can even track times using your mobile device while you are on the go.
-Kimai is translated into multiple languages and missing translations can be added easily, using the open translation standard Xliff.
+I build Kimai for one purpose: to track your working hours. Kimai supports an unlimited number of users and timesheet entries,
+so you can manage all your teams/departments in one easy to use installation.
+Kimai is web based, so all you need is a PHP enabled web server.
+It's built with a responsive design, so you can even track times on your mobile device when you're on the go.
+Kimai is translated into multiple languages and missing translations can be easily added using the open translation standard Xliff.
 
-Oh, and did I mention that you can create invoices from your timesheets within your browser? It has not only customizable
-invoice templates, Kimai can easily be extended in various ways. It's build on the most popular and modern frameworks and has an active community
-which produces a lot of plugins extending the core functionality of Kimai.
+Oh, and did I mention that you can create invoices from your timesheets in your browser? Not only does it have customisable
+Kimai can be easily extended in many ways. It's built on the most popular and modern frameworks and has an active community
+which produces a lot of plugins that extend the core functionality of Kimai.
 
-I could write so much more about the features and the benefits Kimai will bring to you - whether you are a freelancer,
-a small organization or a company with hundreds of employees - but I think, that giving you the option to test it directly is even better than a thousand words from me:
+I could write so much more about the features and benefits that Kimai can bring to you - whether you are a freelancer, a small organisation
+a small organisation or a company with hundreds of employees - but I think that giving you the opportunity to try it directly is even better than a thousand words from me:
 
 {% endif %}

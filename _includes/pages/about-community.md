@@ -30,14 +30,24 @@ Također postoji mnogo ljudi koji pomažu razvoju progama u svoje slobodno vrije
 Njihova se imena mogu redovito pronaći u GitHub sustavu za praćenje problema.
 Moju najveću zahvalnost upućujem svim doprinositeljima ❤️
 
+{% elsif page.lang == 'it' %}
+
+La comunità intorno a Kimai è grande e numerosa ed è impossibile elencare tutti. Di seguito è riportato un breve elenco degli sviluppatori passati.
+Il marketplace elenca i plugin e i loro sviluppatori, il che vi darà una buona idea degli sviluppatori che supportano il progetto con le loro conoscenze.
+che supportano il progetto con le loro conoscenze.
+
+Molte altre persone contribuiscono con il loro tempo libero fornendo feedback, rapporti di prova e domande costruttive.
+I loro nomi si trovano regolarmente nell'issue tracker e nel forum di discussione di GitHub.
+Il mio più grande ringraziamento va a tutti voi ❤️.
+
 {% else %}
 
-There is a great and large community around Kimai and listing everyone is impossible. You find a brief list of former developers below.
-The marketplace lists plugins and their developers, which will give you a good idea of the developers
-supporting the project with their knowledge.
+There is a great and large community around Kimai and it is impossible to list everyone. Below is a short list of past developers.
+The marketplace lists plugins and their developers, which will give you a good idea of the developers who support the project with their knowledge.
+who support the project with their knowledge.
 
-Many other people contribute their free time and provide feedback, test reports and constructive questions.
+Many other people contribute their free time by providing feedback, test reports and constructive questions.
 Their names can be found regularly in the GitHub issue tracker and discussion forum.
-My greatest thanks go out to you all ❤️
+My biggest thanks go to all of you ❤️
 
 {% endif %}

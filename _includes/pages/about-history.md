@@ -62,24 +62,44 @@ Izvorni program Kimai star je više od 15 godina i koristili su ga ljudi diljem 
 Sada, nakon 5 godina, većina ljudi migrirala je na novu Kimai verziju i broj korisnika je veći nego ikad.
 Zato želimo zahvaliti svima koji su doprinijeli programu Kimai.
 
+{% elsif page.lang == 'it' %}
+
+Kimai ha una lunga storia ed era molto in anticipo sui tempi quando Torsten Höltge e il suo team iniziarono a svilupparlo nel 2006.
+Aveva un design reattivo (grazie a un sacco di magia Javascript) prima ancora che la parola fosse ufficialmente inventata.
+
+Stava per chiudere per motivi personali, quando nel 2009 Kevin è intervenuto come manutentore.
+Con l'aiuto di altri volontari open source, è riuscito a mantenerlo in vita e ad ampliarlo per diversi anni.
+
+Nel frattempo, la comunità PHP aveva fatto passi da gigante e Kimai si sentiva abbandonato a causa della sua storia tecnica: era stato costruito attorno a molti script PHP individuali, che dovevano essere tutti disponibili pubblicamente.
+Aveva anche alcuni svantaggi importanti, come l'estensibilità limitata e un design problematico del database.
+Dopo molti anni di sviluppo, la base di codice era diventata difficile da mantenere e la logica era dispersa tra gli script, le classi e il livello frontend.
+
+Pertanto, l'idea di riscrivere Kimai con framework moderni esisteva da molto tempo, anche sulla spinta delle richieste della comunità, ma non c'era tempo per portare avanti queste idee.
+Alla fine del 2017, Symfony 4.0 è stato rilasciato insieme a un bel frontend stack.
+È stato allora che ho colto l'opportunità di iniziare a sviluppare il passo evolutivo successivo: è nato Kimai (v2).
+
+Il Kimai originale è stato rilasciato per la prima volta nel 2006 ed è stato utilizzato da molte persone in tutto il mondo. Sono orgoglioso di questo e della grande comunità.
+Ora, dopo 5 anni, la maggior parte delle persone è migrata alla nuova versione di Kimai e il numero di utenti cresce ogni giorno.
+Per questo vorrei ringraziare tutti coloro che hanno contribuito a Kimai.
+
 {% else %}
 
 Kimai has a long history and was way ahead of its time when Torsten Höltge and his team started developing it in 2006.
 It had a responsive design (thanks to a lot of Javascript magic) before the word had even been officially invented.
 
-He wanted to shut it down due to personal issues, when Kevin stepped in as maintainer 2009.
-With the help of other open source volunteers he was able to keep it alive and extend it for multiple years.
+He was about to shut it down for personal reasons when Kevin stepped in as maintainer in 2009.
+With the help of other open source volunteers, he was able to keep it alive and expand it for several years.
 
-In the meantime the PHP community made great steps forward and Kimai felt back, due to its technical history - built around a lot of single PHP scripts which all had to be public accessible.
-It had also some major drawbacks, like limited capabilities of extending it and a problematic database design. 
-After many years of development, the code base became hard to maintain and the logic was wildly spread among scripts, classes and the frontend layer.
+In the meantime, the PHP community had made great strides forward, and Kimai felt left behind due to its technical history - built around a lot of individual PHP scripts, all of which had to be publicly available.
+It also had some major drawbacks, such as limited extensibility and a problematic database design.
+After many years of development, the codebase had become difficult to maintain and the logic was scattered across scripts, classes and the frontend layer.
 
-That's why the idea of rewriting Kimai with modern frameworks was there for a very long time, also driven by community requests, but there was no time to push these ideas forward.
-In the end of 2017 Symfony 4.0 was released along with a neat frontend built stack.
-That's when I took the opportunity and started the development of the next evolution step: the Kimai (v2) was born.
+Therefore, the idea of rewriting Kimai with modern frameworks has been around for a long time, also driven by community requests, but there wasn't time to push these ideas forward.
+At the end of 2017, Symfony 4.0 was released together with a nice frontend stack.
+That's when I took the opportunity to start developing the next evolutionary step: the Kimai (v2) was born.
 
-The original Kimai was first released in 2006 and was used by many people around the world. I am proud of that and about its great community.
-Now after 5 years most people migrated to new Kimai version and the amount of users is rising every day.
-That's why I would like to thank each one who contributed to Kimai.
+The original Kimai was first released in 2006 and has been used by many people around the world. I am proud of that and of the great community.
+Now, after 5 years, most people have migrated to the new Kimai version and the number of users is growing every day.
+That's why I would like to thank everyone who has contributed to Kimai.
 
 {% endif %}
