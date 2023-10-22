@@ -6,5 +6,4 @@ layout: download
 redirect_from: ["/download/", "/download.html"]
 ---
 
-{% include pages/download.html %}
- 
+{% include pages/download.md %}
