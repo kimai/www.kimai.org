@@ -257,24 +257,7 @@ feature:
         description: Analysis of recorded times, customers, projects and activities. Evaluation according to users, customers, projects, activities, tags, time periods and much more.
         name: Reports and analyses
 install:
-    requirements:
-        title: Configuration requise pour le serveur
-        hosters: "Ces exigences sont remplies par presque tous les fournisseurs d'hébergement :"
-        version: "PHP %version% ou supérieur"
-        extensions: "Extensions PHP"
-        database: "Base de données (MariaDB ou MySQL)"
-        webserver: "Serveur web (NGINX, ou Apache avec mod_rewrite)"
-        subdomain: "Un sous-domaine libre (l'utilisation en sous-dossier n'est pas supportée)"
-        browser: "Un navigateur moderne"
-    download:
-        title: Installation avec SSH
-        intro: "Seuls `git` et `composer` sont nécessaires pour l'Installation, qui sont exécutés directement sur le système cible."
-        alert-vps: |
-            À ce stade, il n'est pas possible d'installer Kimai en téléchargeant un fichier ZIP et en téléchargeant les fichiers sur votre serveur Web. Cela est dû au fait que Composer doit être exécuté en ligne de commande.
-
-            Cela ne signifie pas nécessairement que vous avez besoin d'un VPS. Certains hôtes partagés vous donnent un accès SSH, grâce auquel vous devriez être en mesure d'installer Composer et Kimai sans problème.
-
-            Vous trouverez un guide d'installation complet dans notre %documentation% (en anglais).
+    alert-vps: À ce stade, il n'est pas possible d'installer Kimai en téléchargeant un fichier ZIP et en téléchargeant les fichiers sur votre serveur Web. Cela est dû au fait que Composer doit être exécuté en ligne de commande. Cela ne signifie pas nécessairement que vous avez besoin d'un VPS. Certains hôtes partagés vous donnent un accès SSH, grâce auquel vous devriez être en mesure d'installer Composer et Kimai sans problème.
 newsletter:
     field-required: Cette case ne peut pas être laissée vide.
     captcha-help: Désolés pour le Captcha, nous savons que c'est ennuyeux !

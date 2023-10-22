@@ -257,24 +257,7 @@ feature:
         description: Analiza zabilježenih vremena, kupaca, projekata i aktivnosti. Evaluacija korisnika, kupaca, projekata, aktivnosti, oznaka, vremenskih razdoblja i još mnogo toga.
         name: Izvještaji i analize
 install:
-    requirements:
-        title: Uvjeti za poslužitelja
-        hosters: "Ove uvjete pružaju gotovo sva hosting poduzeća:"
-        version: "PHP %version% ili novija verzija"
-        extensions: "PHP proširenja"
-        database: "Baza podataka: MariaDB ili MySQL"
-        webserver: "Web-poslužitelj (NGINX ili Apache s mod_rewrite)"
-        subdomain: "Besplatna poddomena (upotreba u poddirektoriju nije podržana)"
-        browser: "Moderan web preglednik"
-    download:
-        title: Instalacija sa SSH
-        intro: "Preporučeni način instaliranja programa Kimai: koristi `git` i `composer` izravno na ciljanom sustavu."
-        alert-vps: |
-            U ovom trenutku nije moguće instalirati Kimai preuzimanjem ZIP datoteke i učitavanjem datoteka na web poslužitelj. Razlog tome je što se Composer mora pokrenuti putem naredbenog retka.
-
-            To ne znači nužno da trebaš VPS. Neki dijeljeni hostovi pružaju SSH pristup putem kojeg se Composer i Kimai mogu instalirati bez problema.
-
-            Potpune instrukcije za instaliranje nalaze se našoj stranici „%documentation%”.
+    alert-vps: U ovom trenutku nije moguće instalirati Kimai preuzimanjem ZIP datoteke i učitavanjem datoteka na web poslužitelj. Razlog tome je što se Composer mora pokrenuti putem naredbenog retka. To ne znači nužno da trebaš VPS. Neki dijeljeni hostovi pružaju SSH pristup putem kojeg se Composer i Kimai mogu instalirati bez problema.
 demo-master-title: Aktualna verzija – Prazno
 demo-stable-description: 'Aktualna verzija bez dodataka, ali s demo podacima. Instalirana verzija: '
 demo-plugins-title: Aktualna verzija

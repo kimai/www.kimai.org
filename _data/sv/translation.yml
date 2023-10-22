@@ -279,24 +279,7 @@ feature:
         description: Analysis of recorded times, customers, projects and activities. Evaluation according to users, customers, projects, activities, tags, time periods and much more.
         name: Reports and analyses
 install:
-    requirements:
-        title: 'Serverkrav'
-        hosters: "Dessa krav tillhandahålls av nästan alla värdföretag:"
-        version: "PHP %version% eller högre"
-        extensions: "PHP-tillägg"
-        database: "Databas: MariaDB eller MySQL"
-        webserver: "Webbserver (NGINX eller Apache med mod_rewrite)"
-        subdomain: "En gratis underdomän (användning i underkatalog stöds inte)"
-        browser: "En modern webbläsare"
-    download:
-        title: 'Installation med SSH'
-        intro: "Det rekommenderade sättet att installera Kimai är att använda `git` och `composer` direkt på målsystemet."
-        alert-vps: |
-            I detta skede är det inte möjligt att installera Kimai genom att ladda ner en ZIP-fil och ladda upp filerna till din webbserver. Detta beror på att Composer måste köras på kommandoraden.
-
-            Detta betyder inte nödvändigtvis att du behöver en VPS. Vissa delade värdar ger dig SSH-åtkomst, genom vilken du bör kunna installera Composer och Kimai alldeles utmärkt.
-
-            Fullständiga installationsinstruktioner finns i vår %documentation%.
+    alert-vps: I detta skede är det inte möjligt att installera Kimai genom att ladda ner en ZIP-fil och ladda upp filerna till din webbserver. Detta beror på att Composer måste köras på kommandoraden. Detta betyder inte nödvändigtvis att du behöver en VPS. Vissa delade värdar ger dig SSH-åtkomst, genom vilken du bör kunna installera Composer och Kimai alldeles utmärkt.
 developer:
     kevinpapst:
         intro: 'Projektunderhållare och kärnutvecklare sedan 2007. Vill göra Kimai till världens bästa tidspårare med öppen källkod. Kan hyras för support, installationer och anpassad plugin-utveckling.'

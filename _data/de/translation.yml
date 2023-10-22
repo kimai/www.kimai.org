@@ -160,9 +160,11 @@ menu:
             title: Kimai - Open Source Zeiterfassung
             description: Kimai - Kostenlose und einfach zu bedienende Zeiterfassung für Freiberufler, Agenturen und Unternehmen.
         download:
-            name: Herunterladen
-            title: Kimai herunterladen
-            description: Download - Kimai Zeiterfassung herunterladen
+            name: Installation
+            title: Kimai installieren
+            description: Download und Installation mit SSH, Docker und Kubernetes - Kimai Zeiterfassung
+            subtitle: Download und Installation
+            intro: Wir bieten verschiedene Wege zur Installation von Kimai an. Wählen Sie die für Sie passende Option aus.
         hosted:
             name: Cloud
             title: Kimai-Cloud - Nutze Kimai direkt ohne Setup. Kostenfreies Kimai Hosting!
@@ -323,24 +325,11 @@ feature:
         name: "Passwort vergessen"
         description: "Passwort vergessen? Kein Problem, Kimai hat eine Funktion zum Zurücksetzen des Passworts per E-Mail."
 install:
-    requirements:
-        title: Server Anforderungen
-        hosters: "Diese Anforderungen werden von nahezu allen Hosting-Anbietern erfüllt:"
-        version: "PHP %version% oder höher"
-        extensions: "PHP-Erweiterungen"
-        database: "Datenbank: MariaDB oder MySQL"
-        webserver: "Webserver (NGINX, Apache mit mod_rewrite)"
-        subdomain: "Eine freie Subdomain (Verwendung im Unterordner wird nicht unterstützt)"
-        browser: "Ein moderner Browser"
-    download:
-        title: Installation mit SSH
-        intro: "Der empfohlene Weg um Kimai zu installieren ist die Befehle `git` und `composer` auf dem Zielsystem auszuführen."
-        alert-vps: |
-            Zu diesem Zeitpunkt ist es nicht möglich, Kimai durch Herunterladen einer ZIP-Datei und Hochladen der Dateien auf Ihren Webserver zu installieren. Der Grund dafür ist, dass der Composer auf der Kommandozeile ausgeführt werden muss.
-
-            Das bedeutet nicht unbedingt, dass Sie einen VPS benötigen. Einige Shared Hosts bieten Ihnen SSH-Zugang, über den Sie Composer und Kimai problemlos installieren können.
-
-            Eine vollständige Installationsanleitung finden Sie in unserer %documentation% (auf englisch).
+    ssh: Die empfohlene Methode installiert Kimai direkt auf Ihrem Server.
+    docker: Verwenden Sie unser Docker-Image, um den Kimai-Container zu installieren.
+    kubernetes: Sie können Kimai mit unseren Helm-Charts auf Kubernetes bereitstellen.
+    cloud: Sie können Kimai sofort und ohne Installation verwenden.
+    alert-vps: Zu diesem Zeitpunkt ist es nicht möglich, Kimai durch Herunterladen einer ZIP-Datei und Hochladen der Dateien auf Ihren Webserver zu installieren. Sie benötigen einen SSH-Zugang, um die erforderlichen Befehle auszuführen. Das bedeutet nicht unbedingt, dass Sie einen VPS benötigen. Einige Shared Hosts bieten Ihnen SSH-Zugang, über den Sie Composer und Kimai problemlos installieren können.
 developer:
     kevinpapst:
         intro: Kimai-Entwickler seit 2007. Will Kimai zur besten Open-Source Zeiterfassung der Welt machen. Verfügbar für Support, Installationen und kundenspezifische Plugin-Entwicklung.
@@ -370,8 +359,8 @@ cta:
         button: "Weitere Funktionen über Erweiterungen"
 comparison:
     footer-title: Vergleichen
-    is_oss: Open source software
-    location: Data server in EU
+    is_oss: Open-Source Software
+    location: Server in der EU
     invoices: Invoicing
     backup_frequency: Backups
     custom_domain: Custom domain

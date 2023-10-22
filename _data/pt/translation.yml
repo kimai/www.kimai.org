@@ -279,24 +279,7 @@ feature:
         description: Analysis of recorded times, customers, projects and activities. Evaluation according to users, customers, projects, activities, tags, time periods and much more.
         name: Reports and analyses
 install:
-    requirements:
-        title: 'Requisitos do servidor'
-        hosters: "Esses requisitos são fornecidos por quase todas as empresas de hospedagem:"
-        version: "PHP %version% ou superior"
-        extensions: "Extensões PHP"
-        database: "Banco de dados: MariaDB ou MySQL"
-        webserver: "Servidor Web (NGINX ou Apache com mod_rewrite)"
-        subdomain: "Um subdomínio gratuito (o uso em subdiretório não é suportado)"
-        browser: "Um navegador de internet moderno"
-    download:
-        title: 'Instalação com SSH'
-        intro: "A maneira recomendada de instalar o Kimai é usar o `git` e o `composer` diretamente no sistema de destino."
-        alert-vps: |
-            Nesta fase, não é possível instalar o Kimai descarregando um ficheiro ZIP e enviando os ficheiros para o seu servidor web. Isso ocorre porque o Composer precisa ser executado via linha de comando.
-
-            Isso não significa necessariamente que precisa de um VPS. Alguns hosts compartilhados fornecem acesso SSH, por meio do qual poderá instalar o Composer e o Kimai sem maiores problemas.
-
-            Todas as instruções de instalação encontram-se em nossa %documentation%.
+    alert-vps: Nesta fase, não é possível instalar o Kimai descarregando um ficheiro ZIP e enviando os ficheiros para o seu servidor web. Isso ocorre porque o Composer precisa ser executado via linha de comando. Isso não significa necessariamente que precisa de um VPS. Alguns hosts compartilhados fornecem acesso SSH, por meio do qual poderá instalar o Composer e o Kimai sem maiores problemas.
 developer:
     kevinpapst:
         intro: 'Mantenedor do projeto e programador do núcleo desde 2007. Deseja fazer do Kimai a melhor empresa de código aberto do mundo em termos de tempo. Pode ser contratado para suporte, para instalações e para o desenvolvimento de plugi-ns personalizados.'

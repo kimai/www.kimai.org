@@ -278,24 +278,7 @@ feature:
         description: Análise dos horários registrados, clientes, projetos e atividades. Avaliação de acordo com os usuários, clientes, projetos, atividades, tags, períodos de tempo e muito mais.
         name: Relatórios e análises
 install:
-    requirements:
-        title: 'Requisitos do servidor'
-        hosters: "Esses requisitos são fornecidos por quase todas as empresas de hospedagem:"
-        version: "PHP %version% ou superior"
-        extensions: "Extensões PHP"
-        database: "Banco de dados: MariaDB ou MySQL"
-        webserver: "Servidor Web (NGINX ou Apache com mod_rewrite)"
-        subdomain: "Um subdomínio gratuito (o uso em subdiretório não é suportado)"
-        browser: "Um navegador de internet moderno"
-    download:
-        title: 'Instalação com SSH'
-        intro: "A maneira recomendada de instalar o Kimai é usar o `git` e o `composer` diretamente no sistema de destino."
-        alert-vps: |
-            Nesta fase, não é possível instalar o Kimai baixando um arquivo ZIP e enviando os arquivos para o seu servidor web. Isso ocorre porque o Composer precisa ser executado via linha de comando.
-
-            Isso não significa necessariamente que você precisa de um VPS. Alguns hosts compartilhados fornecem acesso SSH, por meio do qual você poderá instalar o Composer e o Kimai sem maiores problemas.
-
-            Todas as instruções de instalação podem ser encontradas em nossa %documentation%.
+    alert-vps: Nesta fase, não é possível instalar o Kimai baixando um arquivo ZIP e enviando os arquivos para o seu servidor web. Isso ocorre porque o Composer precisa ser executado via linha de comando. Isso não significa necessariamente que você precisa de um VPS. Alguns hosts compartilhados fornecem acesso SSH, por meio do qual você poderá instalar o Composer e o Kimai sem maiores problemas.
 developer:
     kevinpapst:
         intro: Mantenedor do projeto e desenvolvedor do núcleo desde 2007. Deseja fazer do Kimai a melhor empresa de código aberto do mundo em termos de tempo. Pode ser contratado para suporte, para instalações e para o desenvolvimento de plugi-ns personalizados.

@@ -12,12 +12,38 @@ redirect_from:
   - /v1/installation.html
 ---
 
-The recommended way to install Kimai is via SSH, you need GIT and [Composer](https://getcomposer.org/doc/00-intro.md).
+### Server requirements
 
-## Recommended setup
+<ul class="list-unstyled mb-4 px-4 px-lg-0">
+    <li class="d-flex align-items-center pb-1 mb-2">
+        <i class="bx bxl-php fs-xl text-primary me-3"></i>
+        {{ "PHP 8.1+ with the extensions: `mbstring`, `gd`, `intl`, `json`, `pdo`, `tokenizer`, `xml`, `zip`" | markdownify | replace: "<p>", "" | replace: "</p>", "" }}
+    </li>
+    <li class="d-flex align-items-center pb-1 mb-2">
+        <i class="bx bx-data fs-xl text-primary me-3"></i>
+        Database: MariaDB or MySQL
+    </li>
+    <li class="d-flex align-items-center pb-1 mb-2">
+        <i class="bx bx-server fs-xl text-primary me-3"></i>
+        Webserver (NGINX, or Apache with mod_rewrite)
+    </li>
+    <li class="d-flex align-items-center pb-1 mb-2">
+        <i class="bx bx-window fs-xl text-primary me-3"></i>
+        A modern web browser
+    </li>
+    <li class="d-flex align-items-center pb-1 mb-2">
+        <i class="bx bx-cog fs-xl text-primary me-3"></i>
+        A free subdomain (use in subdirectory is not supported)
+    </li>
+    <li class="d-flex align-items-center pb-1 mb-2">
+        <i class="bx bx-wrench fs-xl text-primary me-3"></i>
+        You need to install Git and <a class="mx-1" href="https://getcomposer.org/doc/00-intro.md" target="_blank">Composer</a> if you haven't already
+    </li>
+</ul>
 
-To install Kimai in your production environment, connect with SSH to your server and change to your webservers (document) root directory.
-You need to install Git and [Composer](https://getcomposer.org/doc/00-intro.md) if you haven't already.
+## Install Kimai with SSH
+
+To install Kimai in your environment, connect with SSH to your server and change to your webservers (document) root directory.
 
 First clone this repo ({{ site.kimai_v2_version }} is the [latest stable release]({{ site.kimai_v2_repo }}/releases)):
 

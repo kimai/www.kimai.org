@@ -279,24 +279,7 @@ feature:
         description: Analisi dei tempi registrati, dei clienti, dei progetti e delle attività. Valutazione in base a utenti, clienti, progetti, attività, tag, periodi temporali e molto altro.
         name: Rapporti e analisi
 install:
-    requirements:
-        title: 'Requisiti del server'
-        hosters: "Questi requisiti sono forniti da quasi tutte le società di hosting:"
-        version: "PHP %version% o superiore"
-        extensions: "Estensioni PHP"
-        database: "Database: MariaDB o MySQL"
-        webserver: "Server Web (NGINX o Apache con mod_rewrite)"
-        subdomain: "Un sottodominio gratuito (l'uso nella sottodirectory non è supportato)"
-        browser: "Un moderno browser web"
-    download:
-        title: 'Installazione con SSH'
-        intro: "Il modo consigliato per installare Kimai è usare 'git' e 'composer' direttamente sul sistema di destinazione."
-        alert-vps: |
-            In questa fase, non è possibile installare Kimai scaricando un file ZIP e caricando i file sul tuo server web. Questo perché Composer deve essere eseguito dalla riga di comando.
-
-            Questo non significa necessariamente che hai bisogno di un VPS. Alcuni host condivisi ti danno accesso SSH, attraverso il quale dovresti essere in grado di installare Composer e Kimai senza problemi.
-
-            Le istruzioni complete per l'installazione sono disponibili nel %documentation%.
+    alert-vps: In questa fase, non è possibile installare Kimai scaricando un file ZIP e caricando i file sul tuo server web. Questo perché Composer deve essere eseguito dalla riga di comando. Questo non significa necessariamente che hai bisogno di un VPS. Alcuni host condivisi ti danno accesso SSH, attraverso il quale dovresti essere in grado di installare Composer e Kimai senza problemi.
 developer:
     kevinpapst:
         intro: 'Manutentore del progetto e core developer dal 2007. Vuole rendere Kimai il miglior time-tracker open source del mondo. Può essere assunto per supporto, installazioni e sviluppo di plugin personalizzati.'

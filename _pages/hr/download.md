@@ -5,4 +5,4 @@ layout: download
 permalink: /hr/download.html
 ---
 
-{% include pages/download.md %}
+{% include pages/download.html %}

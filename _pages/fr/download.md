@@ -5,4 +5,4 @@ layout: download
 permalink: /fr/download.html
 ---
 
-{% include pages/download.md %}
+{% include pages/download.html %}

@@ -279,24 +279,7 @@ feature:
         description: Analysis of recorded times, customers, projects and activities. Evaluation according to users, customers, projects, activities, tags, time periods and much more.
         name: Reports and analyses
 install:
-    requirements:
-        title: 'Požiadavky na server'
-        hosters: "Tieto požiadavky poskytujú takmer všetky hostingové spoločnosti:"
-        version: "PHP %version% alebo vyššia"
-        extensions: "PHP rozšírenia"
-        database: "Databáza: MariaDB alebo MySQL"
-        webserver: "Webový server (NGINX, alebo Apache s doplnkom mod_rewrite)"
-        subdomain: "Bezplatná subdoména (použitie v podložke (subdirectory) nie je podporované)"
-        browser: "Moderný webový prehliadač"
-    download:
-        title: 'Inštalácia pomocou SSH'
-        intro: "Doporučený spôsob inštalácia Kimai je použitie `git` a `composer` priamo v cieľovom systéme."
-        alert-vps: |
-            V tejto fáze nie je možno nainštalovať Kimai stiahnutím súboru ZIP a nahraním na webový server. Je to preto, že program Composer musí byť spustený z príkazového riadku.
-
-            To nutne neznamená, že potrebujete VPS. Niektorí poskytovatelia poskytujú prístup cez SSH, cez ktoré by ste mali byť schopní nainštalovať Composer a Kimai v poriadku.
-
-            Úplný návod na inštaláciu nájdete v našej %documentation%.
+    alert-vps: V tejto fáze nie je možno nainštalovať Kimai stiahnutím súboru ZIP a nahraním na webový server. Je to preto, že program Composer musí byť spustený z príkazového riadku. To nutne neznamená, že potrebujete VPS. Niektorí poskytovatelia poskytujú prístup cez SSH, cez ktoré by ste mali byť schopní nainštalovať Composer a Kimai v poriadku.
 developer:
     kevinpapst:
         intro: 'Správca projektu a hlavný vývojár od roku 2007. Chce, aby sa Kimai stal najlepším open-source programom na sledovanie času aký je na svete. Je možné si ho najmúť na podporu, inštaláciu a vývoj zásuvných modulov na zákazku.'
