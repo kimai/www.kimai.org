@@ -1,8 +1,9 @@
 ---
 title: Site notice
 lang: it
-permalink: /it/site-notice.html
 sitemap: false
+permalink: /it/site-notice.html
+canonical: /en/site-notice.html
 ---
 
 {% include pages/site-notice.md %}

@@ -1,8 +1,9 @@
 ---
 title: Privacy Policy
 lang: it
-permalink: /it/privacy-policy.html
 sitemap: false
+permalink: /it/privacy-policy.html
+canonical: /en/privacy-policy.html
 ---
 
 {% include pages/privacy-policy.md %}
