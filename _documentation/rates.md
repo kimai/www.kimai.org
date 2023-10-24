@@ -9,6 +9,7 @@ redirect_from:
   - /documentation/rates/
   - /v1/rates.html
   - /rates/
+  - /store/recalculate-rates-bundle.html
 related:
   - timesheet
   - customer
