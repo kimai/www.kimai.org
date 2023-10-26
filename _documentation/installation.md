@@ -140,7 +140,7 @@ There is an installation doc (unfortunately only in German) available at [www.ho
 
 [![Deploy](https://pub-da36157c854648669813f3f76c526c2b.r2.dev/deploy-on-elestio-black.png)](https://elest.io/open-source/kimai)
 
-[Elestio](https://elest.io/) provides Kimai as a fully managed option and easy to setup with few clicks. Fast, easy and secure
+[Elestio](https://elest.io/) offers fully managed instances of Kimai in 112 regions / 28 countries. It take care of deployment, security, DNS, SMTP, SSL, monitoring/alerts, backups, automated updates, migrations. You get full root SSH access to the service for advanced customizations, its also possible to change the stack & env vars from Elestio's web dashboard.
 
 ## Shared hosting
 
