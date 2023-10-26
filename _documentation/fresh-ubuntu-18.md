@@ -7,7 +7,11 @@ canonical: /documentation/fresh-ubuntu-18.html
 redirect_from: /documentation/2.0/fresh-ubuntu-18.html
 ---
 
-{% include alert.html type="danger" alert="This documentation was not tested with latest Kimai. You will at least have to change the used PHP version to 8.1. Use Ubuntu 22.04 installation instead!" %}
+{% capture latestUbuntu %}
+This documentation does not work with latest Kimai versions.
+Please upgrade and use the latest Ubuntu LTS instead: <a href="{% link _documentation/fresh-ubuntu-22.md %}">Ubuntu 20.04</a>.
+{% endcapture %}
+{% include alert.html type="danger" alert=latestUbuntu %}
 
 This is a collection of snippets to help you with setting up a fresh Ubuntu 18.04 server for using with Kimai.
 It is neither a fully fledged documentation, explaining each step, nor is it a bash tutorial.

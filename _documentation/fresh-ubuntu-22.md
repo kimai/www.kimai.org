@@ -6,8 +6,6 @@ toc: true
 canonical: /documentation/fresh-ubuntu-22.html
 ---
 
-{% include alert.html type="success" alert="This documentation was tested with Kimai 2.0." %}
-
 This is a collection of snippets to help you with setting up a fresh Ubuntu 22.04 server for using with Kimai.
 It is neither a fully fledged documentation, explaining each step, nor is it a bash tutorial.
 
