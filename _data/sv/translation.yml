@@ -119,6 +119,8 @@ menu:
             name: 'Ladda ner'
             title: 'Ladda ner Kimai'
             description: 'Ladda ner - Kimai tidsspårare'
+            intro: We offer several ways to install Kimai. Choose the option that suits you.
+            subtitle: Download and Installation
         hosted:
             name: 'Moln'
             title: 'Kimai-moln — Använd Kimai direkt utan installation. Gratis Kimai-värd!'
@@ -149,41 +151,16 @@ menu:
         site-notice:
             name: 'Webbplatsmeddelande'
         features:
-            name: Features
+            name: Funktioner
         docu-developer:
-            name: Developer
+            name: Utvecklare
         docu-onpremise:
-            name: Self-hosting
+            name: Egenhosting
         docu-manual:
-            name: User manual
-    menu-documentation:
-        manual:
-            name: 'Att använda Kimai'
-            description: 'Kimai användarmanual, som förklarar användargränssnittet och alla tillgängliga skärmar'
-        tips:
-            name: 'Tips och tricks'
-            description: 'Artiklar som förklarar grundläggande funktioner i Kimai'
-        developer:
-            name: 'Skapa plugins'
-            description: 'Skapa anpassade plugins, utöka Kimai, med interna API:er'
-        extend:
-            name: 'Teknisk bakgrund'
-            description: 'Bakgrundsinformation och tekniska samband'
-        api:
-            name: ''
-            description: 'Använd JSON API för att hämta och skapa data i Kimai'
-        plugins:
-            name: 'Ytterligare egenskaper'
-            description: 'Användardokumentation för funktioner som tillhandahålls av (betalda) plugins'
-        auth:
-            name: 'Autentisering'
-            description: 'Logga in på Kimai med hjälp av extern identitetsleverantör'
-        on-premise:
-            name: 'DevOps'
-            description: 'Hantera och konfigurera din Kimai-installation'
-        installation:
-            name: "Installation och uppdateringar"
-            description: 'Allt du behöver för att vara värd för din Kimai på din egen server'
+            name: Användarmanual
+        alternatives:
+            name: Jämför tidsspårningsverktyg
+            description: "Kimai är den bästa öppna källkods-tidsspårningsapplikationen som finns tillgänglig, inte bara för projektbaserade team. Se hur Kimai jämför sig med alternativa tidsspårningslösningar så att du kan välja den rätta för din organisation."
 feature:
     mobile-ready:
         name: "Mobilklar"
@@ -270,103 +247,119 @@ feature:
         name: "Lösenordsåterställning"
         description: "Glömt ditt lösenord? Kimai hjälper dig att återställa den via e-post."
     2fa:
-        description: 'Kimai supports two-factor authentication with TOTP tokens: secure your user accounts today!'
-        name: Two-factor auth (2FA)
+        description: 'Kimai stödjer tvåfaktorsautentisering med TOTP-token: säkra dina användarkonton idag!'
+        name: Tvåfaktorsautentisering (2FA)
     auth:
-        description: Kimai supports external identity providers and login via LDAP and SAML across multiple providers (such as Google Workspace, Azure AD or Authentik). In addition, two-factor authentication can be enabled via TOTP tokens.
-        name: Authentication and Security
+        description: Kimai stödjer externa identitetsleverantörer och inloggning via LDAP och SAML över flera leverantörer (som Google Workspace, Azure AD eller Authentik). Dessutom kan tvåfaktorsautentisering aktiveras med hjälp av TOTP-token.
+        name: Autentisering och Säkerhet
     reporting:
-        description: Analysis of recorded times, customers, projects and activities. Evaluation according to users, customers, projects, activities, tags, time periods and much more.
-        name: Reports and analyses
+        description: Analys av registrerade tider, kunder, projekt och aktiviteter. Utvärdering enligt användare, kunder, projekt, aktiviteter, taggar, tidsperioder och mycket mer.
+        name: Rapporter och analyser
 install:
-    requirements:
-        title: 'Serverkrav'
-        hosters: "Dessa krav tillhandahålls av nästan alla värdföretag:"
-        version: "PHP %version% eller högre"
-        extensions: "PHP-tillägg"
-        database: "Databas: MariaDB eller MySQL"
-        webserver: "Webbserver (NGINX eller Apache med mod_rewrite)"
-        subdomain: "En gratis underdomän (användning i underkatalog stöds inte)"
-        browser: "En modern webbläsare"
-    download:
-        title: 'Installation med SSH'
-        intro: "Det rekommenderade sättet att installera Kimai är att använda `git` och `composer` direkt på målsystemet."
-        alert-vps: |
-            I detta skede är det inte möjligt att installera Kimai genom att ladda ner en ZIP-fil och ladda upp filerna till din webbserver. Detta beror på att Composer måste köras på kommandoraden.
-
-            Detta betyder inte nödvändigtvis att du behöver en VPS. Vissa delade värdar ger dig SSH-åtkomst, genom vilken du bör kunna installera Composer och Kimai alldeles utmärkt.
-
-            Fullständiga installationsinstruktioner finns i vår %documentation%.
+    alert-vps: I detta skede är det inte möjligt att installera Kimai genom att ladda ner en ZIP-fil och ladda upp filerna till din webbserver. Detta beror på att Composer måste köras på kommandoraden. Detta betyder inte nödvändigtvis att du behöver en VPS. Vissa delade värdar ger dig SSH-åtkomst, genom vilken du bör kunna installera Composer och Kimai alldeles utmärkt.
+    ssh: Rekommenderat sätt är att installera Kimai direkt på din server.
+    cloud: Ingen installation av Kimai behövs, du kan börja använda det direkt.
+    docker: Använd vår Docker-bild för en enkel installation och uppdatering av Kimai-container.
+    kubernetes: Du kan distribuera Kimai till Kubernetes med hjälp av våra Helm-charts.
 developer:
     kevinpapst:
         intro: 'Projektunderhållare och kärnutvecklare sedan 2007. Vill göra Kimai till världens bästa tidspårare med öppen källkod. Kan hyras för support, installationer och anpassad plugin-utveckling.'
 full-documentation: Fullständig dokumentation finns här (endast på engelska).
 contact-developer: Om du har några frågor, använd följande kontaktinformation för att komma i kontakt med utvecklaren direkt.
 homepage:
-    title: Time tracking for project-driven teams
-    intro: Our open-source platform is designed to keep track of and analyze your companies time-data, making it perfect for businesses of all sizes. Kimai helps you keep an eye on time and money.
+    title: Tidsspårning för projektbaserade team
+    intro: Vår öppna plattform är utformad för att spåra och analysera din företags tidsdata, vilket gör den perfekt för företag i alla storlekar. Kimai hjälper dig att hålla koll på tid och pengar.
 section-teaser:
     report:
-        title: Reports
-        description: Reports for the evaluation of users and projects.
+        title: Rapporter
+        description: Rapporter för utvärdering av användare och projekt.
     timesheet:
-        title: Time-Tracking
-        description: Easy input of work done and clear control.
+        title: Tidsspårning
+        description: Enkel registrering av utfört arbete och tydlig kontroll.
     work-contract:
-        title: Working time accounts
-        description: Debit and overtime hours, monthly statements.
+        title: Arbetstidskonton
+        description: Debet- och övertidstimmar, månatliga utdrag.
     dashboard:
-        description: Dashboard with configurable widgets.
-        title: Dashboard
+        description: Instrumentpanel med konfigurerbara widgets.
+        title: Instrumentpanel
     absence:
-        title: Absences
-        description: Holidays, holiday, illness and absences.
-per-year: per year
+        title: Frånvaro
+        description: Semester, ledighet, sjukdom och frånvaro.
+per-year: per år
 history:
-    year-2020: Kimai is offered as a subscription based SaaS, with a free and two paid plans.
-    early-days-title: How it all began
-    year-2009: Torsten, the initial developer, wants to close down Kimai. Kevin steps in and becomes maintainer.
-    year-2019: First plugins are created, to validate market-fit and interest in paid open-source software.
-    early-days-subtitle: Kimai has a long history and is around since 2006, this is a brief overview how everything started.
-    year-2023: The hard work is finally paying off and Kimai is now my 100% full-time job. Thank you!
-    year-2014: The last release of Kimai 1 is created, development stales and there is not much more activity.
-    year-2006: The first version of Kimai is release and slowly gains a growing user and developer base.
-    about: What started as a hobby project is now the leading open-source time-tracking application in the world. Let's dive into it's history.
-    year-2018: The re-write of Kimai finds it's way into the community, the data migrations works.
-store-hero-counter: '%number% customers are already with us'
-store-hero-intro: Enhance Kimai with our great selection of plugins. Choose from dozens of apps and extensions within the Kimai ecosystem and bring super-power to your time-tracking experience now!
+    year-2020: Kimai erbjuds som en prenumerationsbaserad SaaS med två betalningsplaner och en gratisplan.
+    early-days-title: Hur allt började
+    year-2009: Torsten, den ursprungliga utvecklaren, vill avsluta Kimai. Kevin kliver in och blir ansvarig.
+    year-2019: De första pluginerna skapas för att validera marknadsanpassning och intresse för betald öppen källkod.
+    early-days-subtitle: Kimai har en lång historia och har funnits sedan 2006. Här är en kort översikt över hur allt började.
+    year-2023: Det hårda arbetet lönar sig äntligen, och Kimai är nu mitt heltidsjobb. Tack!
+    year-2014: Den sista versionen av Kimai 1 skapas, utvecklingen avtar och det finns inte mycket aktivitet.
+    year-2006: Den första versionen av Kimai släpps och får sakta men säkert en växande användar- och utvecklarbas.
+    about: Vad som började som ett hobbyprojekt är nu den ledande öppna källkods-tidsspårningsapplikationen i världen. Låt oss dyka in i dess historia.
+    year-2018: Kimais omstrukturering når gemenskapen, datamigreringarna fungerar.
+    current: "Kimai is a time tracking app with a long history. The first version was released in 2006. Why do I mention that? Because I have seen so many services come and go since then - trust me when I say: I'm sticking around. I didn't make a living from Kimai for many years, it was the fun that kept me motivated to improve Kimai. I believe that fun is one of the main reasons for Kimai's success.\n\nI build Kimai for one purpose: to track your working hours. Kimai supports an unlimited number of users and timesheet entries, so you can manage all your teams/departments in one easy to use installation. Kimai is web based, so all you need is a PHP enabled web server. It's built with a responsive design, so you can even track times on your mobile device when you're on the go. Kimai is translated into multiple languages and missing translations can be easily added using the open translation standard Xliff.\n\nOh, and did I mention that you can create invoices from your timesheets in your browser? Not only does it have customisable Kimai can be easily extended in many ways. It's built on the most popular and modern frameworks and has an active community which produces a lot of plugins that extend the core functionality of Kimai.\n\nI could write so much more about the features and benefits that Kimai can bring to you - whether you are a freelancer, a small organisation a small organisation or a company with hundreds of employees - but I think that giving you the opportunity to try it directly is even better than a thousand words from me.\n"
+    past: "Kimai has a long history and was way ahead of its time when Torsten Höltge and his team started developing it in 2006. It had a responsive design (thanks to a lot of Javascript magic) before the word had even been officially invented.\n\nHe was about to shut it down for personal reasons when Kevin stepped in as maintainer in 2009. With the help of other open source volunteers, he was able to keep it alive and expand it for several years.\n\nIn the meantime, the PHP community had made great strides forward, and Kimai felt left behind due to its technical history - built around a lot of individual PHP scripts, all of which had to be publicly available. It also had some major drawbacks, such as limited extensibility and a problematic database design. After many years of development, the codebase had become difficult to maintain and the logic was scattered across scripts, classes and the frontend layer.\n\nTherefore, the idea of rewriting Kimai with modern frameworks has been around for a long time, also driven by community requests, but there wasn't time to push these ideas forward. At the end of 2017, Symfony 4.0 was released together with a nice frontend stack. That's when I took the opportunity to start developing the next evolutionary step: the Kimai (v2) was born.\n\nThe original Kimai was first released in 2006 and has been used by many people around the world. I am proud of that and of the great community. Now, after 5 years, most people have migrated to the new Kimai version and the number of users is growing every day. That's why I would like to thank everyone who has contributed to Kimai.\n"
+    community: "There is a great and large community around Kimai and it is impossible to list everyone. Below is a short list of past developers. The marketplace lists plugins and their developers, which will give you a good idea of the developers who support the project with their knowledge. who support the project with their knowledge.\n\nMany other people contribute their free time by providing feedback, test reports and constructive questions. Their names can be found regularly in the GitHub issue tracker and discussion forum. My biggest thanks go to all of you ❤️\n"
+store-hero-counter: '%number% kunder är redan med oss'
+store-hero-intro: Förbättra Kimai med vårt stora urval av tillägg. Välj bland dussintals appar och tillägg inom Kimais ekosystem och ge superkraft åt din tidsspårningsupplevelse nu!
 cta:
     tech-support:
-        question: Tech &amp; Business Support
-        button: Let's work together
-        answer: I ensure support for all applications I've built and I will assist you and your team.
+        question: Teknisk och affärsmässig support
+        button: Låt oss arbeta tillsammans
+        answer: Jag ser till att ge support för alla applikationer jag har byggt, och jag kommer att assistera dig och ditt team.
     get-started:
-        answer: Start your time-tracking journey now
-        button: Get support
-        question: Ready to get started?
+        answer: Börja din tidsspårningsresa nu
+        button: Få support
+        question: Redo att komma igång?
     best-features:
-        answer: Kimai provides a wide range of features that build around your project time-tracking needs and best practices solutions to our customers making their bookkeeping easier.
-        question: The best time-tracking features for you
-        button: More features via plugin
+        answer: Kimai erbjuder ett brett utbud av funktioner som bygger kring dina behov för projekt-tidsspårning och bästa praxis-lösningar för våra kunder, vilket gör deras bokföring enklare.
+        question: De bästa tidsspårningsfunktionerna för dig
+        button: Fler funktioner via tillägg
 highlight:
-    title: Supports your business
-    subtitle: Kimai has all the business core features you need to setup your time-tracking workflows and integrate it with your existing infrastructure.
-store-hero-title: Add-ons, Apps, Support
+    title: Stödjer ditt företag
+    subtitle: Kimai har alla kärnfunktioner för företaget som du behöver för att sätta upp dina tidsspårningsflöden och integrera det med din befintliga infrastruktur.
+    reasons:
+        enterprise: Enterprise-tillägg
+        oss: Öppen källkod
+        versions: Moln och Egenhosting
+        gdpr: GDPR-kompatibel
+store-hero-title: Tillägg, Appar, Support
 description: Beskrivning
 oss-cloud-compare:
-    saas: Hosted for you
-    onpremise: Hosted by you
-    intro: Kimai is an open source software that is available for self-hosting as well as SaaS.
-    title: One software, two versions
+    saas: Värd för dig
+    onpremise: Värd av dig
+    intro: Kimai är öppen källkod-programvara som är tillgänglig för självhosting såväl som SaaS.
+    title: En programvara, två versioner
 section-features:
-    subtitle: Kimai offers much more than just time-tracking, here is a list of other important business functions.
-    title: What can Kimai do for you?
-share-post: Share this post
-about-who: Who is building Kimai?
-store-hero-subtitle: Welcome to the Kimai store
+    subtitle: Kimai erbjuder mycket mer än bara tidsspårning, här är en lista över andra viktiga affärsfunktioner.
+    title: Vad kan Kimai göra för dig?
+share-post: Dela detta inlägg
+about-who: Vem bygger Kimai?
+store-hero-subtitle: Välkommen till Kimai-butiken
 testimonials:
-    title: What users say about Kimai
-footer: Free and easy to use time tracking for freelancers, agencies and companies. Kimai is open source software available for self-hosting and as SaaS.
-slogan: Time-tracking made easy
+    title: Vad användare säger om Kimai
+footer: Gratis och enkel tidsspårning för frilansare, byråer och företag. Kimai är öppen källkodsprogramvara tillgänglig för egenhosting och som SaaS.
+slogan: Tidsspårning gjord enkel
 comparison:
-    footer-title: Compare
+    footer-title: Jämför
+    is_oss: Öppen källkodsprogramvara
+    location: Dataserver i EU
+    invoices: Fakturering
+    backup_frequency: Säkerhetskopieringar
+    custom_domain: Anpassat domännamn
+    max_activities: Max. aktiviteter
+    automatic_upgrades: Automatiska uppgraderingar
+    max_projects: Max. projekt
+    rest_api: JSON API
+    on_premise: Tillgänglig lokalt
+    export: Datexport
+    support: Support
+    max_customers: Max. kunder
+    tls_included: TLS-certifikat
+    cloud: Tillgänglig i molnet
+    server_maintenance: Serverunderhåll
+    saml: SAML
+    ip_restriction: IP-åtkomstbegränsning
+    alternatives: Alternativ till Kimai
+    finding: Att hitta rätt tidsspårningslösning
+    use_case: Varje användningsfall, varje företag och varje arbetsflöde är olika, och dina krav måste utvärderas innan du bestämmer dig för en tidsspårningslösning. Här är några populära alternativ till Kimai, som vi kommer att jämföra i detalj för att hitta den bästa lösningen för dig.

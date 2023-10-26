@@ -9,6 +9,7 @@ redirect_from:
   - /documentation/rates/
   - /v1/rates.html
   - /rates/
+  - /store/keleo-recalculate-rates-bundle.html
 related:
   - timesheet
   - customer

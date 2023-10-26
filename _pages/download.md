@@ -7,4 +7,3 @@ redirect_from: ["/download/", "/download.html"]
 ---
 
 {% include pages/download.md %}
- 

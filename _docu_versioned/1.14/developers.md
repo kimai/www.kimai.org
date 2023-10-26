@@ -540,7 +540,7 @@ class Configuration implements ConfigurationInterface
 
 ## Adding API methods
 
-Please have a look at the [DemoBundle](https://github.com/Keleo/DemoBundle), it includes examples for an API controller with serialization. 
+Please have a look at the [DemoBundle](https://github.com/kimai/DemoBundle), it includes examples for an API controller with serialization. 
 
 There is also a (german) blog post that discuss the basics of adding a FOSRestBundle controller to your bundle:
 [https://www.kevinpapst.de/blog/fosrestbundle-via-bundle.html](https://www.kevinpapst.de/blog/fosrestbundle-via-bundle.html)

@@ -1,0 +1,7 @@
+{% if site.data[page.lang].store.items[include.name] != nil %}
+    {{ site.data[page.lang].store.items[include.name].title }}
+{% elsif site.data[page.lang].translation.comparison[include.name] %}
+    {{ site.data[page.lang].translation.comparison[include.name] }}
+{% else %}
+    {{ include.name }}
+{% endif %}

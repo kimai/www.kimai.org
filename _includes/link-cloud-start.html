@@ -1,0 +1,5 @@
+{% assign cloud_url = "https://www.kimai.cloud/start-trial" %}
+{% if page.lang == "de" %}
+    {% assign cloud_url = "https://www.kimai.cloud/de/testphase-beginnen" %}
+{% endif %}
+<a href="{{ cloud_url }}" class="{{ include.classes }}" target="_blank">{{ site.data[page.lang].translation.cloud-call-to-action }}</a>

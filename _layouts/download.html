@@ -1,13 +1,115 @@
 ---
-layout: page
+layout: base
 ---
-<div class="markdown"{% if page.direction != nil %} dir="{{ page.direction }}"{% endif %}>
 
-    <div class="row">
-        <div class="col-sm-12 col-lg-8 pe-4">
+<main class="page-wrapper">
+    {% include header-navigation.html %}
+
+    <section class="pt-lg-4 mt-lg-3">
+        <div class="position-relative overflow-hidden">
+
+            <div class="container-fluid position-relative position-lg-absolute top-0 start-0 h-100">
+                <div class="row h-100 me-n4 me-n2">
+                    <div class="col-lg-7 position-relative">
+                        <div class="d-none d-sm-block d-lg-none" style="height: 400px;"></div>
+                        <div class="d-sm-none" style="height: 300px;"></div>
+                        <div class="jarallax position-absolute top-0 start-0 w-100 h-100 rounded-3 rounded-start-0 overflow-hidden">
+                            <div class="jarallax-img" style="background-image: url(/images/layout/downloads.jpg);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container position-relative zindex-5 pt-lg-5 px-0 px-lg-3">
+                <div class="row pt-lg-5 mx-n4 mx-lg-n3">
+                    <div class="col-xl-6 col-lg-7 offset-lg-5 offset-xl-6 pb-5">
+                        <div class="card bg-dark border-light overflow-hidden py-4 px-2 p-sm-4">
+                            <span class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(255,255,255,.05);"></span>
+                            <div class="card-body position-relative zindex-5">
+                                <p class="fs-xl fw-bold text-primary text-uppercase mb-3">{{ site.data[page.lang].translation.menu.default.download.subtitle }}</p>
+                                <h1 class="display-5 text-light pb-3 mb-3">{{ site.data[page.lang].translation.menu.default.download.title }}</h1>
+                                <p class="fs-lg text-light opacity-70 mb-3">
+                                    {{ site.data[page.lang].translation.oss-cloud-compare.intro }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    {% comment %}
+                    <div class="col-xxl-3 col-lg-4 offset-lg-8 offset-xxl-9 pt-lg-5 mt-xxl-5">
+                        <ul class="list-unstyled mb-0 px-4 px-lg-0">
+                            <li class="d-flex align-items-center pb-1 mb-2">
+                                <i class="bx bx-download fs-xl text-primary me-2"></i>
+                                No classical download &hellip;
+                            </li>
+                            <li class="d-flex align-items-center pb-1 mb-2">
+                                <i class="bx bx-terminal fs-xl text-primary me-2"></i>
+                                &hellip; a simple 5 step SSH installation
+                            </li>
+                            <li class="d-flex align-items-center pb-1 mb-2">
+                                <i class="bx bxl-docker fs-xl text-primary me-2"></i>
+                                &hellip; or you run a Docker image
+                            </li>
+                        </ul>
+                    </div>
+                    {% endcomment %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container py-5 my-2 my-md-4 my-lg-5">
+        <p class="fs-lg text-muted text-center pb-4 mb-2 mb-lg-3">{{ site.data[page.lang].translation.menu.default.download.intro }}</p>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 justify-content-center g-4 pb-xl-3">
+            <div class="col text-center border-end px-3">
+                <div class="card d-table border-0 p-3 mx-auto mb-4">
+                    <i class="bx bx-terminal bx-lg"></i>
+                </div>
+                <h3 class="h5 mb-3">SSH</h3>
+                <p>{{ site.data[page.lang].translation.install.ssh }}</p>
+                <div class="text-center mt-4">
+                    <a href="{% link _documentation/installation.md %}" class="btn btn-secondary w-75">{{ site.data[page.lang].translation.menu.default.documentation.name }}</a>
+                </div>
+            </div>
+            <div class="col text-center border-end px-3">
+                <div class="card d-table border-0 p-3 mx-auto mb-4">
+                    <i class="bx bxl-docker bx-lg"></i>
+                </div>
+                <h3 class="h5 mb-3">Docker</h3>
+                <p>{{ site.data[page.lang].translation.install.docker }}</p>
+                <div class="text-center mt-4">
+                    <a href="{% link _documentation/docker.md %}" class="btn btn-secondary w-75">{{ site.data[page.lang].translation.menu.default.documentation.name }}</a>
+                </div>
+            </div>
+            <div class="col text-center border-end px-3">
+                <div class="card d-table border-0 p-3 mx-auto mb-4">
+                    <i class="bx bxl-kubernetes bx-lg"></i>
+                </div>
+                <h3 class="h5 mb-3">Kubernetes</h3>
+                <p>{{ site.data[page.lang].translation.install.kubernetes }}</p>
+                <div class="text-center mt-4">
+                    <a href="{% link _documentation/kubernetes.md %}" class="btn btn-secondary w-75">{{ site.data[page.lang].translation.menu.default.documentation.name }}</a>
+                </div>
+            </div>
+            <div class="col text-center px-3">
+                <div class="card d-table border-0 p-3 mx-auto mb-4">
+                    <i class="bx bx-cloud bx-lg"></i>
+                </div>
+                <h3 class="h5 mb-3">Kimai Cloud</h3>
+                <p>{{ site.data[page.lang].translation.install.cloud }}</p>
+                <div class="text-center mt-4">
+                    {% include link-cloud-start.html classes="btn btn-danger w-75" %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container py-5 my-1 my-md-4 my-lg-5">
+        <div class="row">
             {{ content }}
         </div>
-        {% include card-cloud.html %}
-    </div>
+    </section>
 
-</div>
+</main>
+
+{% include footer.html %}
+

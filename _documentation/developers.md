@@ -243,7 +243,7 @@ class MyDashboardSubscriber implements EventSubscriberInterface
 }
 ```
 
-For more details check this [dashboard subscriber](https://github.com/Keleo/DemoBundle/blob/main/EventSubscriber/DashboardSubscriber.php).
+For more details check this [dashboard subscriber](https://github.com/kimai/DemoBundle/blob/main/EventSubscriber/DashboardSubscriber.php).
 
 ### Adding new widget types
 
@@ -656,7 +656,7 @@ Make sure to include an `@Security("is_granted('view_reporting')")` permission c
 
 ## Adding API methods
 
-Please have a look at the [DemoBundle](https://github.com/Keleo/DemoBundle), it includes examples for an API controller with serialization.
+Please have a look at the [DemoBundle](https://github.com/kimai/DemoBundle), it includes examples for an API controller with serialization.
 
 There is also a (german) blog post that discuss the basics of adding a FOSRestBundle controller to your bundle:
 [https://www.kevinpapst.de/blog/fosrestbundle-via-bundle.html](https://www.kevinpapst.de/blog/fosrestbundle-via-bundle.html)

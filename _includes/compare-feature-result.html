@@ -1,0 +1,17 @@
+{% if include.value == true %}
+    <i class="bx bx-check lead {% if include.highlight %}text-light{% else %}text-primary{% endif %}"></i>
+{% elsif include.value == false %}
+    <i class="bx bx-x lead {% if include.highlight %}text-light opacity-50{% else %}text-muted{% endif %}"></i>
+{% elsif include.value == 'plugin' %}
+    Paid plugin
+{% elsif include.value == 'daily' %}
+    Daily
+{% elsif include.value == 'weekly' %}
+    Daily
+{% elsif include.value == 'costs' %}
+    Additional costs
+{% elsif include.value == 'unlimited' %}
+    Unlimited
+{% else %}
+    {{ include.value }}
+{% endif %}

@@ -1,0 +1,325 @@
+---
+layout: base
+---
+{% comment %}
+tool        = compared tool
+oss         = kimai open-source
+basic       = basic plan kimai-cloud
+plus        = plus plan kimai-cloud
+premium     = premium plan kimai-cloud
+{% endcomment %}
+{% assign tool = page %}
+{% assign oss = site.data.kimai-compare.oss %}
+{% assign basic = site.data.kimai-compare.basic %}
+{% assign plus = site.data.kimai-compare.plus %}
+{% assign premium = site.data.kimai-compare.premium %}
+{% assign cloud_url = "https://www.kimai.cloud/auth/registration" %}
+{% assign compare_features = '' %}
+{% for key in site.data.kimai-compare.oss %}
+{% assign compare_features = compare_features | append: ' ' | append: key[0] %}
+{% endfor %}
+{% assign compare_features = compare_features | split: ' ' %}
+
+<main class="page-wrapper">
+    {% include header-navigation.html %}
+
+    <section class="position-relative pt-5 overflow-hidden">
+        <span class="position-absolute top-0 start-0 d-dark-mode-none d-block w-100 h-100 bg-secondary"></span>
+        <span class="position-absolute top-0 start-0 d-dark-mode-block d-none w-100 h-100" style="background: radial-gradient(84.79% 172.9% at 73.31% 31.4%, rgba(99, 135, 241, .1) 0%, rgba(218, 70, 239, .05) 52.47%, rgba(99, 135, 241, .1) 100%);"></span>
+        <div class="container position-relative pt-xl-5 pt-md-3 zindex-5">
+            <div class="row justify-content-md-start justify-content-center flex-md-nowrap pt-lg-5 pt-4">
+                <div class="col-xl-7 col-md-7 col-sm-10 d-flex flex-column justify-content-between mb-md-5 mb-md-4 mb-3 pb-xl-5 pb-lg-4">
+                    <div class="text-md-start text-center">
+                        <h1 class="display-4 mb-lg-4 mb-3">
+                            Best open source<br>
+                            {{ tool.name }} alternative
+                        </h1>
+                        <p class="mb-4 mx-md-0 mx-auto pb-xl-3 pb-lg-2 fs-lg" style="max-width: 30.5rem;">
+                            Kimai is the #1 open-source time-tracking alternative for {{ tool.name }}.
+                            See how Kimai measures up to {{ tool.name }}, so you can choose the right solution for your business.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-12 offset-xl-1 d-flex mt-lg-4 mb-4">
+                    <div class="align-self-start ms-xl-0 ms-md-4 p-lg-4 p-sm-3 p-2 rounded-4 overflow-hidden" style="background: linear-gradient(153.32deg, rgba(255, 255, 255, .3) -65.62%, rgba(255, 255, 255, .1) 83.28%); box-shadow: 0 .25rem 1.5rem -.0625rem rgba(0, 0, 0, .2); backdrop-filter: blur(25px);">
+                        <img src="{{ tool.image }}" width="300" alt="Logo" class="rounded-4" style="box-shadow: 0 0 7.5rem rgba(0, 0, 0, .1);">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span class="position-absolute bottom-0 start-0 w-100">
+          <span class="d-dark-mode-none d-block w-100 h-100 py-xl-5 pt-lg-4 pt-md-0 pt-4 pb-5 bg-light"></span>
+          <span class="d-dark-mode-block d-none w-100 h-100 py-xl-5 pt-lg-4 pt-md-0 pt-4 pb-5 bg-dark"></span>
+        </span>
+    </section>
+
+    <section class="container py-5 my-1 my-md-4 my-lg-5">
+        <div class="row">
+            <div class="col-lg-12 mb-4 mb-lg-0">
+                <div class="pe-lg-4 me-lg-3 pe-xl-0 me-xl-0">
+                    <h2 class="h1 mb-4">Kimai or {{ page.name }}: Which Should You Use?</h2>
+                    <div class="mb-0">
+
+                        <section class="overflow-hidden pt-md-2 pt-lg-3">
+                            <div class="d-flex flex-column flex-md-row flex-md-nowrap align-items-start">
+                                <div class="col-12 ps-0 pe-lg-4 mb-5 mb-md-0">
+                                    <div class="row">
+                                        {{ content }}
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="my-md-3 my-lg-5">
+                            <h3 class="mb-5">All your time-tracking needs in one platform</h3>
+                            <p>
+                                Time is money, and tracking it effectively has become a necessity for project-based teams.
+                                Kimai is a powerful time-tracker that's been the favorite of many businesses worldwide.
+                                But how does it stack up against {{ tool.name }}?
+                                Dive into this comprehensive comparison to find out why businesses are choosing Kimai over {{ tool.name }}
+                            </p>
+                        </section>
+
+                        <section class="py-5 my-md-3 my-lg-5">
+                            <div class="row align-items-center">
+                                <div class="col-md-4 text-center text-md-start">
+                                    <h2 class="h1 mb-4">See the difference</h2>
+                                    <p class="fs-lg mb-5 mb-md-0">Compare Kimai vs. {{ tool.name }}: choose the options that make the most sense for your business.</p>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="row row-cols-1 row-cols-md-3">
+                                        <div class="col text-md-center pb-2 mb-4">
+                                            <h3 class="h5 mb-2 mb-md-3">Kimai <br class="d-none d-md-block">Open-Source</h3>
+                                            <ul class="d-md-none list-unstyled">
+                                                {% for feature_name in compare_features %}
+                                                {% assign tmpValue = oss[feature_name] %}
+                                                <li class="d-flex align-items-center p-2 {% cycle ' bg-secondary', '' %}">
+                                                    <span class="text-dark fw-medium">{% include compare-feature-name.html name=feature_name value=tmpValue %}:&nbsp;</span>
+                                                    {% include compare-feature-result.html name=feature_name value=tmpValue highlight=false %}
+                                                </li>
+                                                {% endfor %}
+                                            </ul>
+                                            <a href="{% link _documentation/installation.md %}" class="btn btn-outline-primary w-100 w-md-auto">Install</a>
+                                        </div>
+                                        <div class="col text-md-center pb-2 mb-4">
+                                            <h3 class="h5 mb-2 mb-md-3">Kimai Cloud <br class="d-none d-md-block">{{ premium.name }}</h3>
+                                            <ul class="d-md-none list-unstyled">
+                                                {% for feature_name in compare_features %}
+                                                {% assign tmpValue = premium[feature_name] %}
+                                                <li class="d-flex align-items-center p-2 {% cycle ' bg-secondary', '' %}">
+                                                    <span class="text-dark fw-medium">{% include compare-feature-name.html name=feature_name value=tmpValue %}:&nbsp;</span>
+                                                    {% include compare-feature-result.html name=feature_name value=tmpValue highlight=true %}
+                                                </li>
+                                                {% endfor %}
+                                            </ul>
+                                            <a href="{{ cloud_url }}" class="btn btn-outline-primary w-100 w-md-auto">Get started</a>
+                                        </div>
+                                        <div class="col text-md-center mb-3">
+                                            <h3 class="h5 mb-2 mb-md-3">{{ tool.name }} <br class="d-none d-md-block">{{ tool.premium_plan }}</h3>
+                                            <ul class="d-md-none list-unstyled">
+                                                {% for feature_name in compare_features %}
+                                                {% assign tmpValue = tool[feature_name] %}
+                                                <li class="d-flex align-items-center p-2 {% cycle ' bg-secondary', '' %}">
+                                                    <span class="text-dark fw-medium">{% include compare-feature-name.html name=feature_name value=tmpValue %}:&nbsp;</span>
+                                                    {% include compare-feature-result.html name=feature_name value=tmpValue highlight=false %}
+                                                </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-none d-md-block pt-5 mt-2 pb-4">
+                                {% for feature_name in compare_features %}
+                                <div class="row g-0 {% cycle ' bg-secondary rounded-3', '' %}">
+                                    <div class="col-md-4 text-dark fw-semibold ps-4 pe-2 py-4">{% include compare-feature-name.html name=feature_name value=tmpValue %}</div>
+                                    <div class="col-md-8 text-center">
+                                        <div class="row row-cols-3 g-0">
+                                            <div class="col px-2 py-4">
+                                                {% assign tmpValue = oss[feature_name] %}
+                                                {% include compare-feature-result.html name=feature_name value=tmpValue highlight=false %}
+                                            </div>
+                                            <div class="col position-relative bg-primary px-2 py-4">
+                                                <span class="text-light opacity-80">
+                                                {% assign tmpValue = premium[feature_name] %}
+                                                {% include compare-feature-result.html name=feature_name value=tmpValue highlight=true %}
+                                                </span>
+                                                {% if forloop.first %}
+                                                <span class="position-absolute start-0 bottom-100 w-100 bg-primary rounded-3 rounded-bottom-0" style="height: 2rem;"></span>
+                                                {% endif %}
+                                            </div>
+                                            <div class="col px-2 py-4">
+                                                {% assign tmpValue = tool[feature_name] %}
+                                                {% include compare-feature-result.html name=feature_name value=tmpValue highlight=false %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                                <div class="row g-0 {% cycle ' bg-secondary rounded-3', '' %}">
+                                    <div class="col-md-4 text-dark fw-semibold ps-4 pe-2 py-4">
+                                        Pricing: 1 user / month
+                                    </div>
+                                    <div class="col-md-8 text-center">
+                                        <div class="row row-cols-3 g-0">
+                                            <div class="col px-2 py-4">
+                                                &ndash;
+                                            </div>
+                                            <div class="col position-relative bg-primary px-2 py-4">
+                                                <span class="text-light opacity-80">
+                                                    € 3.99
+                                                </span>
+                                            </div>
+                                            <div class="col px-2 py-4">
+                                                {{ tool.price_1_month }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row g-0 {% cycle ' bg-secondary rounded-3', '' %}">
+                                    <div class="col-md-4 text-dark fw-semibold ps-4 pe-2 py-4">
+                                        Pricing: 50 users / year
+                                    </div>
+                                    <div class="col-md-8 text-center">
+                                        <div class="row row-cols-3 g-0">
+                                            <div class="col px-2 py-4">
+                                                &ndash;
+                                            </div>
+                                            <div class="col position-relative bg-primary px-2 py-4">
+                                                <span class="text-light opacity-80">
+                                                    € 2,394.00
+                                                </span>
+                                            </div>
+                                            <div class="col px-2 py-4">
+                                                {{ tool.price_50_year }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-muted mt-3">
+                                Please note that the above information were manually compiled from the {{ tool.name }} website.
+                                For the comparison, the best matching plans were chosen.
+                            </p>
+                        </section>
+
+                        <section class="my-md-3 my-lg-5">
+                            <h2 class="my-5">Kimai is open source</h2>
+                            <p>
+                            {% if tool.oss == false %}
+                                {{ tool.name }} is a proprietary software, which includes a platform risk.
+                                Relying solely on a software vendor for code tweaks and feature implementations can feel and often is limiting.
+                                Not so with Kimai, the open-source fairy tale.
+                            {% else %}
+                                Kimai is the #1 open-source time-tracking software.
+                            {% endif %}
+                            With it, you're not only investing in a more secure and cost-efficient solution, but you're also embracing unparalleled transparency and flexibility.
+                            </p>
+
+                            <h2 class="my-5">Host the on-premise edition</h2>
+                            <p>
+                                Kimai prioritizes data privacy and information security, providing an option for self-hosting via its open-source/on-premise edition.
+                                Choosing on-premises software like Kimai ensures a height level of security, allowing businesses to adhere to stringent data protection regulations with confidence.
+                                Beyond its security features, Kimai offers the adaptability to customize to specific needs, providing a degree of control over data processing and storage that's sometimes elusive in cloud solutions.
+                            </p>
+                            <p>
+                                Additionally, for businesses aiming to integrate other applications, Kimai comes equipped with a robust API to facilitate such integrations seamlessly.
+                            </p>
+                            </p>
+                            {% if tool.on_premise == false %}
+                            <p>
+                                <strong>
+                                    {{ tool.name }} does not offer an on-premises solution.
+                                </strong>
+
+                            </p>
+                            {% endif %}
+
+                            <h2 class="my-5">Data protection</h2>
+                            <p>
+                                If you decide to go with the cloud edition, you can be sure that your data is safe.
+                                With the headquarters located in Austria (EU), it is GDPR-compliant by default and all data is stored in Germany (Hetzner Cloud, Falkenstein).
+                            </p>
+
+                            <h2 class="my-5">Conclusion</h2>
+                            <p>
+                                In today's digital age, data security is paramount.
+                                Kimai promises secure data protection and state-of-the-art encryption, ensuring that your business's sensitive information remains confidential.
+                            </p>
+                            <p>
+                                Kimai offers a well-rounded solution that caters to a variety of workflows and use-cases for most project-based teams and companies.
+                                Its ease of use, integration capabilities, and commitment to data security and privacy make it a top choice for businesses seeking an efficient time-tracking software.
+                            </p>
+                        </section>
+
+                        <section class="my-md-3 my-lg-5 d-none d-lg-block ">
+                            <h2 class="my-5 text-center">Start using Kimai today</h2>
+                            <div class="price-switch-wrapper">
+                                <div class="table-responsive-lg">
+                                    <div class="d-flex align-items-center pb-4">
+                                        <div class="border rounded-3 rounded-end-0 shadow-sm me-n1" style="width: 32%; min-width: 16rem;">
+                                            <div class="card bg-light h-100 border-0 border-end rounded-end-0 py-3 py-sm-4 py-lg-5">
+                                                <div class="card-body text-center">
+                                                    <h3 class="mb-2">{{ basic.name }}</h3>
+                                                    <div class="fs-lg pb-4 mb-3">{{ basic.intro }}</div>
+                                                    <div class="display-5 text-dark mb-1">€ {{ basic.price }}</div>
+                                                    <div class="text-muted mb-5">per user & month</div>
+                                                </div>
+                                                <div class="card-footer border-0 text-center pt-0 pb-4">
+                                                    <a href="https://www.kimai.cloud/auth/registration" target="_blank" class="btn btn-outline-primary btn-lg">Get started now</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="bg-primary position-relative rounded-3 shadow-primary shadow-dark-mode-none zindex-2 p-4" style="width: 36%; min-width: 18rem;">
+                                            <div class="card bg-transparent border-light py-3 py-sm-4 py-lg-5">
+                                                <div class="card-body text-light text-center">
+                                                    <h3 class="text-light mb-2">{{ plus.name }}</h3>
+                                                    <div class="fs-lg opacity-70 pb-4 mb-3">{{ plus.intro }}</div>
+                                                    <div class="display-5 mb-1">€ {{ plus.price }}</div>
+                                                    <div class="opacity-50 mb-5">per user & month</div>
+                                                </div>
+                                                <div class="card-footer border-0 text-center pt-0 pb-4">
+                                                    <a href="https://www.kimai.cloud/auth/registration" target="_blank" class="btn btn-light btn-lg shadow-secondary">Get started now</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="border rounded-3 rounded-start-0 shadow-sm" style="width: 32%; min-width: 16rem;">
+                                            <div class="card bg-light h-100 border-0 rounded-start-0 py-3 py-sm-4 py-lg-5">
+                                                <div class="card-body text-center">
+                                                    <h3 class="mb-2">{{ premium.name }}</h3>
+                                                    <div class="fs-lg pb-4 mb-3">{{ premium.intro }}</div>
+                                                    <div class="display-5 text-dark mb-1">€ {{ premium.price }}</div>
+                                                    <div class="text-muted mb-5">per user & month</div>
+                                                </div>
+                                                <div class="card-footer border-0 text-center pt-0 pb-4">
+                                                    <a href="https://www.kimai.cloud/auth/registration" target="_blank" class="btn btn-outline-primary btn-lg">Get started now</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="container position-relative zindex-2 d-lg-none mt-5">
+                            <div class="bg-dark border border-light rounded-3 py-5 px-4 px-sm-0">
+                                <div class="row justify-content-center py-sm-2 py-lg-5">
+                                    <div class="col-xl-6 col-lg-7 col-md-8 col-sm-10 text-center">
+                                        <h2 class="h1 text-light mb-4">Ready to Get Started?</h2>
+                                        <p class="fs-lg text-light opacity-70 pb-4 mb-3">Track your time with a 30-day free trial</p>
+                                        <a href="https://www.kimai.cloud/auth/registration" target="_blank" class="btn btn-primary btn-lg">Get started for free</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+{% include footer.html %}
+

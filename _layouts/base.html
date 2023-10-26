@@ -29,13 +29,16 @@
         {%- endif -%}
         {{- page_title }}{% unless page_title contains 'Kimai'%}{{ prefix -}}{% endunless -%}
     </title>
-    {% assign description = page.excerpt %}
+    {% assign page_description = page.excerpt %}
     {%- if site.data[page.lang].translation.menu.default[page.slug].description != nil -%}
-        <meta name="description" content="{{ site.data[page.lang].translation.menu.default[page.slug].description }}">
+        {% assign page_description = site.data[page.lang].translation.menu.default[page.slug].description %}
     {%- elsif site.data[page.lang].store.items[page.slug].intro != nil -%}
-        <meta name="description" content="{{ site.data[page.lang].store.items[page.slug].intro }}">
+        {% assign page_description = site.data[page.lang].store.items[page.slug].intro %}
     {%- elsif page.description != nil -%}
-        <meta name="description" content="{{ page.description | strip_html | strip_newlines | strip }}">
+        {% assign page_description = page.description %}
+    {%- endif %}
+    {%- if page_description != nil and page_description != '' %}
+        <meta name="description" content="{{ page_description | strip_html | strip_newlines | strip }}">
     {%- endif %}
     <link type="application/atom+xml" rel="alternate" href="{% link feed.xml %}" title="Kimai Time-Tracking" />
     {%- if page.canonical != nil %}

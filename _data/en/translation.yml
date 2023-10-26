@@ -86,6 +86,11 @@ oss-cloud-compare:
 highlight:
     title: Supports your business
     subtitle: Kimai has all the business core features you need to setup your time-tracking workflows and integrate it with your existing infrastructure.
+    reasons:
+        oss: Open Source
+        enterprise: Enterprise add-ons
+        versions: Cloud and On-Premise
+        gdpr: GDPR compliant
 testimonials:
     title: What users say about Kimai
 section-teaser:
@@ -160,9 +165,11 @@ menu:
             title: Kimai - Open Source time-tracker
             description: Kimai - free and easy time-tracking for freelancer, agencies and companies with user and invoice handling.
         download:
-            name: Download
-            title: Download Kimai
-            description: Download - Kimai time-tracker
+            name: Installation
+            title: Installation Kimai
+            description: Download and Installation with SSH, Docker and Kubernetes - Kimai time-tracking
+            subtitle: Download and Installation
+            intro: We offer several ways to install Kimai. Choose the option that suits you.
         hosted:
             name: Cloud
             title: Kimai-Cloud — Use Kimai directly without setup. Free Kimai hosting!
@@ -200,34 +207,9 @@ menu:
             name: Self-hosting
         features:
             name: Features
-    menu-documentation:
-        manual:
-            name: Using Kimai
-            description: Kimai user manual, explaining the UI and all available screens
-        tips:
-            name: Tips and Tricks
-            description: Articles that explain basic functionality in Kimai
-        developer:
-            name: Create plugins
-            description: Creating custom plugins, extending Kimai, using internal APIs
-        extend:
-            name: Technical background
-            description: Background info and technical correlations
-        api:
-            name: REST API
-            description: Use the JSON API to fetch and create data in Kimai
-        plugins:
-            name: Additional features
-            description: User documentation for features provided by (paid) plugins
-        auth:
-            name: Authenticator
-            description: Log in to Kimai using external identity provider
-        on-premise:
-            name: DevOps
-            description: Manage and configure your Kimai installation
-        installation:
-            name: "Installation & Updates"
-            description: Everything you need to host your Kimai on your own server
+        alternatives:
+            name: Compare time-tracker
+            description: Kimai is the best open source time tracking application available, not only for project-based teams. See how Kimai compares to alternative time tracking solutions so you can choose the right one for your organisation.
 feature:
     auth:
         name: "Authentication and Security"
@@ -323,24 +305,11 @@ feature:
         name: "Password reset"
         description: "Forgot your password? Kimai helps you reset it via e-mail."
 install:
-    requirements:
-        title: Server requirements
-        hosters: "These requirements are provided by almost all hosting companies:"
-        version: "PHP %version% or higher"
-        extensions: "PHP extensions"
-        database: "Database: MariaDB or MySQL"
-        webserver: "Web server (NGINX, or Apache with mod_rewrite)"
-        subdomain: "A free subdomain (use in subdirectory is not supported)"
-        browser: "A modern web browser"
-    download:
-        title: Installation with SSH
-        intro: "The recommended way to install Kimai is to use `git` and `composer` directly on the target system."
-        alert-vps: |
-            At this stage, it’s not possible to install Kimai by downloading a ZIP file and uploading the files to your web server. This is because Composer needs to run on the command line.
-
-            This doesn’t necessarily mean you need a VPS. Some shared hosts give you SSH access, through which you should be able to install Composer and Kimai just fine.
-
-            Full installation instructions can be found in our %documentation%.
+    ssh: The recommended method installs Kimai directly on your server.
+    docker: Use our Docker image to install and update Kimai container easily.
+    kubernetes: You can deploy Kimai to Kubernetes using our Helm-Charts.
+    cloud: No need to install Kimai, you can start using it right now.
+    alert-vps: At this stage, it’s not possible to install Kimai by downloading a ZIP file and uploading the files to your web server. You need to have SSH access to your server. This doesn’t necessarily mean you need a VPS. Some shared hosts give you SSH access, through which you should be able to install Composer and Kimai just fine.
 developer:
     kevinpapst:
         intro: Project maintainer and core developer since 2007. Wants to make Kimai the best open-source time-tracker of the world. Can be hired for support, installations and custom plugin development.
@@ -355,6 +324,28 @@ history:
     year-2019: "First plugins are created, to validate market-fit and interest in paid open-source software."
     year-2020: "Kimai is offered as a subscription based SaaS, with a free and two paid plans."
     year-2023: "The hard work is finally paying off and Kimai is now my 100% full-time job. Thank you!"
+    community: |
+        There is a great and large community around Kimai and it is impossible to list everyone. Below is a short list of past developers. The marketplace lists plugins and their developers, which will give you a good idea of the developers who support the project with their knowledge. who support the project with their knowledge.
+
+        Many other people contribute their free time by providing feedback, test reports and constructive questions. Their names can be found regularly in the GitHub issue tracker and discussion forum. My biggest thanks go to all of you ❤️
+    current: |
+        Kimai is a time tracking app with a long history. The first version was released in 2006. Why do I mention that? Because I have seen so many services come and go since then - trust me when I say: I'm sticking around. I didn't make a living from Kimai for many years, it was the fun that kept me motivated to improve Kimai. I believe that fun is one of the main reasons for Kimai's success.
+
+        I build Kimai for one purpose: to track your working hours. Kimai supports an unlimited number of users and timesheet entries, so you can manage all your teams/departments in one easy to use installation. Kimai is web based, so all you need is a PHP enabled web server. It's built with a responsive design, so you can even track times on your mobile device when you're on the go. Kimai is translated into multiple languages and missing translations can be easily added using the open translation standard Xliff.
+
+        Oh, and did I mention that you can create invoices from your timesheets in your browser? Not only does it have customisable Kimai can be easily extended in many ways. It's built on the most popular and modern frameworks and has an active community which produces a lot of plugins that extend the core functionality of Kimai.
+
+        I could write so much more about the features and benefits that Kimai can bring to you - whether you are a freelancer, a small organisation a small organisation or a company with hundreds of employees - but I think that giving you the opportunity to try it directly is even better than a thousand words from me.
+    past: |
+        Kimai has a long history and was way ahead of its time when Torsten Höltge and his team started developing it in 2006. It had a responsive design (thanks to a lot of Javascript magic) before the word had even been officially invented.
+
+        He was about to shut it down for personal reasons when Kevin stepped in as maintainer in 2009. With the help of other open source volunteers, he was able to keep it alive and expand it for several years.
+
+        In the meantime, the PHP community had made great strides forward, and Kimai felt left behind due to its technical history - built around a lot of individual PHP scripts, all of which had to be publicly available. It also had some major drawbacks, such as limited extensibility and a problematic database design. After many years of development, the codebase had become difficult to maintain and the logic was scattered across scripts, classes and the frontend layer.
+
+        Therefore, the idea of rewriting Kimai with modern frameworks has been around for a long time, also driven by community requests, but there wasn't time to push these ideas forward. At the end of 2017, Symfony 4.0 was released together with a nice frontend stack. That's when I took the opportunity to start developing the next evolutionary step: the Kimai (v2) was born.
+
+        The original Kimai was first released in 2006 and has been used by many people around the world. I am proud of that and of the great community. Now, after 5 years, most people have migrated to the new Kimai version and the number of users is growing every day. That's why I would like to thank everyone who has contributed to Kimai.
 cta:
     get-started:
         question: "Ready to get started?"
@@ -370,3 +361,24 @@ cta:
         button: "More features via plugin"
 comparison:
     footer-title: Compare
+    is_oss: Open source software
+    on_premise: Available on-premises
+    cloud: Available in the cloud
+    location: Data server in EU
+    max_customers: Max. customers
+    max_projects: Max. projects
+    max_activities: Max. activities
+    rest_api: JSON API
+    invoices: Invoicing
+    export: Data export
+    saml: SAML
+    support: Support
+    backup_frequency: Backups
+    tls_included: TLS Certificate
+    custom_domain: Custom domain
+    automatic_upgrades: Automatic upgrades
+    server_maintenance: Server maintenance
+    ip_restriction: IP access restriction
+    alternatives: Kimai alternatives
+    finding: Finding the right time-tracking solution
+    use_case: Every use case, every company and every workflow is different and your requirements need to be evaluated before deciding on a time tracker. Here are some alternatives to Kimai, which we will compare in detail.

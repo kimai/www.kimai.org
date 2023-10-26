@@ -25,7 +25,7 @@ cloud-feature-ssl: Besplatan TLS (SSL) certifikat
 cloud-feature-hosting: Hosting i aktualiziranja
 cloud-feature-backups: Sigurnosne kopije
 cloud-free-plan: Besplatna tarifa je dostupna za 5 korisnika
-cloud-call-to-action: Odaberi tarifu
+cloud-call-to-action: Započni besplatno
 new-badge: Novo
 free-badge: besplatno
 store-back: Natrag na
@@ -94,9 +94,11 @@ menu:
             title: Kimai – Program otvorenog koda za evidentiranje vremena
             description: Kimai – besplatan i jednostavan program za evidentiranje vremena za freelancere, agencije i poduzeća, uz mogućnost upravjanja korisnicima i računima.
         download:
-            name: Preuzimanje
-            title: Preuzmi Kimai
-            description: Preuzimanje – Kimai program za evidentiranje vremena
+            name: Intalacija
+            title: Kimai instalacija
+            description: Preuzimanje i instalacija sa SSH, Docker i Kubernetes – Kimai program za evidentiranje vremena
+            intro: Nudimo nekoliko načina za instaliranje Kimaija. Odaberi opciju koja ti odgovara.
+            subtitle: Preuzimanje i instalacija
         hosted:
             name: Oblak
             title: Kimai oblak – Koristi Kimai izravno bez postavljanja. Besplatna hosting usluga za Kimai!
@@ -134,34 +136,9 @@ menu:
             name: Samostalni hosting
         docu-manual:
             name: Korisnički priručnik
-    menu-documentation:
-        manual:
-            name: Korištenje programa Kimai
-            description: Korisnički priručnik programa Kimai, s objašnjenjem korisničkog sučelja i svih dostupnih ekrana
-        tips:
-            name: Savjeti i trikovi
-            description: Članci koji objašnjavaju osnovne Kimai funkcije
-        developer:
-            name: Stvori dodatke
-            description: Stvaranje prilagođenih dodataka, dodavanje novih funkcija pomoću internih API-ja
-        extend:
-            name: Tehnički podaci
-            description: Informacije i tehničke korelacije
-        api:
-            name: REST API
-            description: Koristi JSON API za dohvaćanje i stvaranje podataka u Kimaiju
-        plugins:
-            name: Dodatne funkcije
-            description: Korisnička dokumentacija za funkcije (naplativih) dodataka
-        auth:
-            name: Autentifikator
-            description: Prijavi se na Kimai pomoću stranog pružatelja usluge identifikacije
-        on-premise:
-            name: Opcije programera
-            description: Upravljaj i konfiguriraj tvoju Kimai instalaciju
-        installation:
-            name: "Instalacija i aktualiziranja"
-            description: Sve što trebaš za hostiranje tvog Kimaija na vlastitom poslužitelju
+        alternatives:
+            name: Usporedi praćenje vremena
+            description: Kimai je najbolja dostupna aplikacija za praćenje vremena s otvorenim izvornim kodom, ne samo za timove koji rade na projektima. Pogledajte kako se Kimai uspoređuje s alternativnim rješenjima za praćenje vremena kako biste mogli odabrati pravu za svoju organizaciju.
 feature:
     mobile-ready:
         name: "Za mobilne uređaje"
@@ -171,25 +148,25 @@ feature:
         description: "Funkcionalnost Kimaia se može proširiti pomoću dodataka. Postoje razni načini za programere koji žele razviti dodatke."
     multi-user:
         name: "Za više korisnika"
-        description: "Kimai može koristiti onoliko korisnika koliko želiš: svaka instalacija podržava neograničen broj korisnika s različitim ulogama (vidi dozvole)."
+        description: "Kimai može koristiti bilo koji broj korisnika: svaka instalacija podržava neograničen broj korisnika s različitim ulogama (vidi dozvole)."
     multi-language:
         name: "Višejezičan"
         description: "Kimai se može prevesti na bilo koji jezik i već je preveden na više od 30 jezika."
     teams:
         name: "Timovi"
-        description: "Stvori timove za grupiranje tvojih korisnika u logičke skupine poput odjela ili u grupe koje su povezane s projektom. Tim se timovima mogu dodijeliti kupci i projekti, što će ograničiti vidljivost i pristup drugim korisnicima."
+        description: "Stvori timove za grupiranje tvojih korisnika u logičke skupine poput odjela ili grupe suradnika projekta. Tim se timovima mogu dodijeliti kupci i projekti, što će ograničiti vidljivost i pristup drugim korisnicima."
     customers:
         name: "Kupci"
-        description: "Upravljaj svojim kupcima i postavi adresu, kontakte, zemlju, valutu, vidljivost (za arhiviranje) i razna druga polja."
+        description: "Upravljaj kupcima i postavi adresu, kontakte, zemlju, valutu, vidljivost (za arhiviranje) i razna druga polja."
     projects:
         name: "Projekti"
-        description: "Upravljaj projektima za svakog kupca s brojem narudžbe, budžetom i vidljivošću (za arhiviranje)."
+        description: "Upravljaj projektima za svakog kupca s brojem narudžbe, budžetom i vidljivosti (za arhiviranje)."
     activities:
         name: "Aktivnosti"
         description: "Aktivnosti se koriste za dodjeljivanje jedinice rada unosima u vremenskim tablicama. Upravljaj aktivnostima za svaki projekt s brojem narudžbe, budžetom i vidljivošću (za arhiviranje). Aktivnosti mogu biti globalne,. Dupliciranje više nije potrebno ako više projekata dijele istu radnu jedinicu."
     invoices:
         name: "Fakturiranje"
-        description: "Razni predlošci računa, mogućnosti grupiranja unosa, podesivi brojevi računa te mogućnost dodavanja vlastitih predložaka u PDF, DOCX, HTML, XLSX i ODS formatima."
+        description: "Razni predlošci računa, mogućnosti grupiranja unosa, podesivi brojevi računa te mogućnost dodavanja vlastitih predložaka u formatima PDF, DOCX, HTML, XLSX i ODS."
     export:
         name: "Izvoz podataka"
         description: "Podaci vremenskih tablica mogu se izvesti u druge programe ili dijeliti s drugim odjelima u formatima: XLSX (Excel), PDF, CSV i HTML. Dodatno tome, izvezeni zapisi se mogu zaključati i zaštititi od promjena."
@@ -201,7 +178,7 @@ feature:
         description: "Prijavi se i registriraj korisnike putem SAML-a (single sign-on, poznato i kao SSO) te koristi svog postojećeg pružatelja usluge identifikacije, kao što su Google Workspace, Authentik ili Azure Active Directory."
     api:
         name: "JSON API"
-        description: "S opsežnim JSON API-jem za čitanje i pisanje podataka, tako da externe aplikacije i tvoji prilagođeni alati mogu komunicirati s tvojim omiljenim programom za evidentiranje vremena."
+        description: "Opsežni JSON API za čitanje i pisanje podataka, tako da eksterne aplikacije i tvoji prilagođeni alati mogu komunicirati s tvojim omiljenim programom za evidentiranje vremena."
     ldap:
         name: "LDAP"
         description: "Poveži Kimai s poslužiteljem mapa tvog poduzeća (LDAP ili Active Directory) i koristi svoju postojeću infrastrukturu za autentifikaciju."
@@ -248,7 +225,7 @@ feature:
         name: "Resetiranje lozinke"
         description: "Zaboravio/la si lozinku? Kimai ti pomaže resetirati lozinku putem e-maila."
     2fa:
-        description: 'Kimai podržava dvofaktorsku autentifikaciju s TOTP tokens: osiguraj svoje korisničke račune danas!'
+        description: 'Kimai podržava dvofaktorsku autentifikaciju s TOTP tokenovima: osiguraj svoje korisničke račune danas!'
         name: Dvofaktorska autentifikacija (2FA)
     auth:
         description: Kimai podržava razne strane pružatelje usluge identifikacije i prijavu putem LDAP-a i SAML-a (kao što su Google Workspace, Azure AD ili Authentik). Osim toga se putem TOTP tokena može omogućiti dvofaktorska autentifikacija.
@@ -257,24 +234,11 @@ feature:
         description: Analiza zabilježenih vremena, kupaca, projekata i aktivnosti. Evaluacija korisnika, kupaca, projekata, aktivnosti, oznaka, vremenskih razdoblja i još mnogo toga.
         name: Izvještaji i analize
 install:
-    requirements:
-        title: Uvjeti za poslužitelja
-        hosters: "Ove uvjete pružaju gotovo sva hosting poduzeća:"
-        version: "PHP %version% ili novija verzija"
-        extensions: "PHP proširenja"
-        database: "Baza podataka: MariaDB ili MySQL"
-        webserver: "Web-poslužitelj (NGINX ili Apache s mod_rewrite)"
-        subdomain: "Besplatna poddomena (upotreba u poddirektoriju nije podržana)"
-        browser: "Moderan web preglednik"
-    download:
-        title: Instalacija sa SSH
-        intro: "Preporučeni način instaliranja programa Kimai: koristi `git` i `composer` izravno na ciljanom sustavu."
-        alert-vps: |
-            U ovom trenutku nije moguće instalirati Kimai preuzimanjem ZIP datoteke i učitavanjem datoteka na web poslužitelj. Razlog tome je što se Composer mora pokrenuti putem naredbenog retka.
-
-            To ne znači nužno da trebaš VPS. Neki dijeljeni hostovi pružaju SSH pristup putem kojeg se Composer i Kimai mogu instalirati bez problema.
-
-            Potpune instrukcije za instaliranje nalaze se našoj stranici „%documentation%”.
+    alert-vps: U ovom trenutku nije moguće instalirati Kimai preuzimanjem ZIP datoteke i učitavanjem datoteka na web poslužitelj. Razlog tome je što se Composer mora pokrenuti putem naredbenog retka. To ne znači nužno da trebaš VPS. Neki dijeljeni hostovi pružaju SSH pristup putem kojeg se Composer i Kimai mogu instalirati bez problema.
+    ssh: Preporučeni način instalacije Kimaija je izravno na vašem poslužitelju.
+    cloud: Nema potrebe za instalacijom Kimaija, možete početi koristiti odmah.
+    docker: Koristite našu Docker sliku za jednostavnu instalaciju i ažuriranje Kimai kontejnera.
+    kubernetes: Možete implementirati Kimai u Kubernetes pomoću naših Helm grafikona.
 demo-master-title: Aktualna verzija – Prazno
 demo-stable-description: 'Aktualna verzija bez dodataka, ali s demo podacima. Instalirana verzija: '
 demo-plugins-title: Aktualna verzija
@@ -288,7 +252,7 @@ newsletter:
     button: PRETPLATI SE
     terms: uvjetima korištenja
     title: Ne želiš propustiti nijednu novost?
-    introduction: Pretplati se na naš bilten i saznaj o novim verzijama Kimaija i dodataka.
+    introduction: Pretplati se na naš bilten i primaj obavijesti o novim verzijama Kimaija i dodataka.
 demo-stable-title: Aktualna verzija – Bez dodataka
 demo-plugins-description: Aktualna verzija s dodacima iz naše trgovine i s demo podacima.
 demo-v2-description: Nadolazeća verzija s dodatnim dodacima i demo podacima.
@@ -304,7 +268,7 @@ full-documentation: Potpuna dokumentacija na engleskom jeziku
 contact-developer: Ako imaš pitanja koristi sljedeće podatke za izravno kontaktiranje programera.
 homepage:
     title: Evidentiranje vremena za timove projekata
-    intro: Naša platforma otvorenog koda je osmišljena za praćenje i analiziranje podataka o vremenu tvog poduzeća, što je čini savršenom za poduzeća svih veličina. Kimai pomaže pri praćenju vremena i novca.
+    intro: Naša platforma otvorenog koda omogućuje evidentiranje i analiziranje vremenskih podataka u tvom poduzeću. Prikladna je za poduzeća svih veličina. Kimai pomaže pri praćenju vremena i novca.
 section-teaser:
     report:
         title: Izvještaji
@@ -333,6 +297,28 @@ history:
     year-2006: Prva verzija Kimaija je objavljena i dobiva sve veću bazu korisnika i programera.
     about: Što je počelo kao hobij, projekt je sada vodeća aplikacija otvorenog koda za evidentiranje vremena. Pročitaj povijest projekta.
     year-2018: Nova verzija Kimaija pronalazi put do zajednice, migracije podataka funkcioniraju.
+    community: |
+        Kimai padržava velika zajednica i nemoguće je nabrojati sve doprinositelje. Niže dolje se nalazi kratak popis bivših programera. Trgovina prikazuje popis dodataka i njihovih programera koji doprinose projektu svojim znanjem.
+
+        Također postoji mnogo ljudi koji pomažu razvoju progama u svoje slobodno vrijeme i šalju povratne informacije, izvještaje o testiranju i konstruktivna pitanja. Njihova se imena mogu redovito pronaći u GitHub sustavu za praćenje problema. Moju najveću zahvalnost upućujem svim doprinositeljima ❤️
+    current: |
+        Kimai je program za evidentiranje vremena s dugom poviješću. Prva verzija objavljena je 2006. Zašto to spominjemo? Budući da smo vidjeli da u zadnjem desetljeću razne usluge dolaze i odlaze – vjeruj nam kad kažemo: ostat ćemo. Dugi niz godina nismo ništa zaradili s programom Kimai – uvijek nas je zabava motivirala da poboljšamo Kimai. Vjerujemo da je zabava jedan od glavnih razloga za uspjeh programa Kimai.
+
+        Gradimo Kimai iz jednog razloga: evidentiranje tvog radnog vremena. Kimai podržava neograničen broj korisnika i unosa radnog vremena, tako da možeš upravljati svim svojim timovima/odjelima u jednoj jednostavnoj instalaciji. Kimai se temelji na internetu. Stoga trebaš samo internetski poslužitelj s PHP podrškom. Izrađen je s prilagodljivim dizajnom, tako da možeš evidentirati vrijeme koristeći svoj mobilni uređaj. Kimai je preveden na više jezika. Prijevodi koji nedostaju mogu se jednostavno dodati, koristeći otvoreni standard za prevođenje Xliff.
+
+        Jesmo li već spomenuli da možeš izraditi račune iz tvojih vremenskih tablica u tvom pregledniku? Ne samo da sadrži prilagodljive predloške računa, Kimai se može jednostavno proširiti na razne načine. Izgrađen je s najpopularnijim i modernim okruženjima za razvoj programa i ima aktivnu zajednicu koja proizvodi mnoge dodatke koji proširuju osnovnu funkcionalnost programa Kimai.
+
+        Mogli bismo nabrojati još puno više o njegovim značajkama i prednostima – bez obzira jesi li slobodnjak, mala organizacija ili tvrtka sa stotinama zaposlenika – ali smatramo da je izravno testiranje najbolja mogućnost za upoznavanje programa:Stoga budi naš gost i testiraj Kimai na internetu s našom demo instalacijom. Ako vjeruješ činjenicama, sastavili smo popis značajki.
+    past: |
+        Kimai ima dugu povijest i bio je daleko ispred svog vremena, kad je tim oko Torstena Höltgea započeo razvoj programa 2006. godine. Imao je prilagodljiv dizajn (zahvaljujući javascript magijom) još u vrijeme kad ta riječ nije bila niti službeno izmišljena.
+
+        Htio je prekinuti razvoj programa iz osobnih razloga/vremenskog ograničenja. Tada je Kevin preuzeo održavanje. Uz pomoć drugih volontera otvorenog koda uspio je održati program na životu i produžiti ga na više godina.
+
+        U međuvremenu je PHP zajednica napravila velike korake naprijed i Kimai se osjećao zastarjalim, zbog svoje tehničke povijesti – izgrađene pomoću mnogih pojedinačnih PHP skripta koje su sve morale biti javno dostupne. Sadržao je i neke velike nedostatke, poput ograničenih mogućnosti proširenja i problematičnog dizajna baze podataka. Nakon mnogo godina razvoja, baza koda se teško održavala, a logika je bila jako raširena među skriptama, klasama i slojem sučelja.
+
+        Zato je ideja o novom programiranju Kimaija s modernim okruženjima za razvoj postojala jako dugo, također potaknuta zahtjevima zajednice, ali jednostavno nismo imali vremena za sprovođenje tih ideja. Krajem 2017. godine, objavljen je Symfony 4.0 zajedno s lijepim sučeljem. Tada je Kevin iskoristio priliku i započeo s razvojem sljedećeg evolucijskog koraka: rođen je Kimai 2.
+
+        Izvorni program Kimai star je više od 15 godina i koristili su ga ljudi diljem svijeta. Ponosni smo na to i na njegovu veliku zajednicu. Sada, nakon 5 godina, većina ljudi migrirala je na novu Kimai verziju i broj korisnika je veći nego ikad. Zato želimo zahvaliti svima koji su doprinijeli programu Kimai.
 store-hero-counter: '%number% kupaca su već s nama'
 store-hero-intro: Poboljšaj Kimai s našim velikim izborom dodataka. Biraj između tuceta aplikacija i proširenja unutar Kimai ekosustava i poboljšaj praćenje vremena sada!
 cta:
@@ -350,13 +336,18 @@ cta:
         button: Više funkcija pomoću dodatka
 highlight:
     title: Podržava tvoje poduzeće
-    subtitle: Kimai sadrži sve ključne poslovne funkcije koje su potrebne za postavljanje evidentiranja vremena radnih tokova i integraciju s tvojom postojećom infrastrukturom.
+    subtitle: Kimai sadrži sve osnovne poslovne funkcije koje su potrebne za postavljanje evidentiranja vremena radnih tokova i integraciju s tvojom postojećom infrastrukturom.
+    reasons:
+        enterprise: Dodaci za poduzeća
+        oss: Otvoreni kod
+        versions: Hosting u oblaku i lokalno
+        gdpr: Sukladno općoj uredbi o zaštiti podataka (GDPR)
 store-hero-title: Dodaci, aplikacije, podrška
 description: Opis
 oss-cloud-compare:
     saas: Hosting u oblaku
     onpremise: Vlastiti hosting
-    intro: Kimai je softver otvorenog koda koji je dostupan za samostalni hosting kao i za SaaS.
+    intro: Kimai je softver otvorenog koda koji je dostupan za vlastiti hosting kao i za SaaS.
     title: Jedan softver, dvije verzije
 section-features:
     subtitle: Kimai nudi puno više od pukog evidentiranja vremena. Pregledaj popis drugih važnih poslovnih funkcija.
@@ -370,3 +361,24 @@ footer: Besplatno i jednostavno evidentiranje vremena za freelancere, agencije i
 slogan: Jednostavno evidentiranje vremena
 comparison:
     footer-title: Usporedi
+    is_oss: Open source softver
+    location: Poslužitelj podacima u EU
+    invoices: Izrada računa
+    backup_frequency: Sigurnosne kopije
+    custom_domain: Prilagođena domena
+    max_activities: Maks. aktivnosti
+    automatic_upgrades: Automatsko ažuriranje
+    max_projects: Maks. projekti
+    rest_api: JSON API
+    on_premise: Dostupno na lokaciji
+    export: Izvoz podataka
+    support: Podrška
+    max_customers: Maks. korisnici
+    tls_included: TLS certifikat
+    cloud: Dostupno u oblaku
+    server_maintenance: Održavanje poslužitelja
+    saml: SAML
+    ip_restriction: Ograničenje pristupa putem IP adrese
+    alternatives: Alternative za Kimai
+    finding: Pronalaženje pravog rješenja za praćenje vremena
+    use_case: Svaki slučaj upotrebe, svaka tvrtka i svaki radni tok su različiti te se tvoje potrebe moraju procijeniti prije nego što se odlučiš o rješenju za praćenje vremena. Evo nekoliko alternativa za Kimai, koje ćemo detaljno usporediti.

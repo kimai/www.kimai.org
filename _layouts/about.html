@@ -10,8 +10,7 @@ layout: base
 
     <section class="container mb-4 pt-md-1 pt-lg-4 pt-xl-5">
         <img src="/images/kimai_logo.png" class="float-sm-end" style="margin-left: 20px" alt="Kimai logo">
-        {% capture include_content %}{% include pages/about-current.md %}{% endcapture %}
-        {{ include_content | markdownify }}
+        {{ site.data[page.lang].translation.history.current | markdownify }}
     </section>
 
     <section class="container mb-5">
@@ -22,8 +21,7 @@ layout: base
     {% include card-donate.html user="kevinpapst" background=true %}
 
     <section class="container mb-4 pt-md-1 pt-lg-4 pt-xl-5">
-        {% capture include_content %}{% include pages/about-community.md %}{% endcapture %}
-        {{ include_content | markdownify }}
+        {{ site.data[page.lang].translation.history.community | markdownify }}
     </section>
 
     {% comment %}
@@ -37,8 +35,7 @@ layout: base
     {% include pages/about-timeline-v1.html %}
 
     <section class="container mb-5">
-        {% capture include_content %}{% include pages/about-history.md %}{% endcapture %}
-        {{ include_content | markdownify }}
+        {{ site.data[page.lang].translation.history.past | markdownify }}
     </section>
 
     <section class="container mb-5">

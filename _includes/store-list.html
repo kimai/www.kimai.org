@@ -2,39 +2,43 @@
 
 {% for product in products %}
 {% assign featured = false %}
-{% assign iconSize = "fa-2x" %}
-{% assign imageSize = 'class="h-4"' %}
 {% assign isNew = false %}
 {% assign settings = site.data.store[product.slug] %}
 {% if settings.new != nil and settings.new %}
-{% assign isNew = true %}
+    {% assign isNew = true %}
 {% endif %}
 {% if settings.featured %}
-{% assign featured = true %}
-{% assign iconSize = "fa-3x" %}
-{% assign imageSize = 'style="width: 15rem"' %}
+    {% assign featured = true %}
 {% endif %}
-{% assign icon = settings.icon | default: "fas fa-question" %}
+{% assign icon = settings.icon %}
 {% assign developer = site.data.developer[settings.developer] %}
 {% assign translation = site.data[page.lang].store.items[product.slug] %}
 <li class="mb-4">
-    <h3 class="h4 mb-2">
+    <p class="h4 mb-2">
         <a href="{{ product.url | absolute_url }}">{{ translation.title }}</a>
-    </h3>
+    </p>
     <div class="d-flex text-muted pt-1">
-        <div class="fs-sm pe-3 me-3 flex-fill">{{ translation.intro }}</div>
+        <div class="fs-sm pe-3 me-3 flex-fill">
+            {{ translation.intro }}
+            <a href="{{ product.url | absolute_url }}" class="d-block mt-3">{{ site.data[page.lang].translation.read-more }}</a>
+        </div>
         <p class="fs-sm fw-semibold text-primary mb-0 text-nowrap">
+            <a href="{{ product.url | absolute_url }}">
             {% if settings.subscription != nil %}
-            {{ settings.subscription }}
+            <i class="bx bx-cart fs-3"></i>
             {% elsif settings.price == nil %}
-            <i class="bx bx-comment"></i>
+            <i class="bx bx-comment fs-4"></i>
             {% elsif settings.price == 0 %}
-            {{ site.data[page.lang].translation.free-badge }}
+            <i class="bx bx-gift fs-3"></i>
             {% else %}
-            {{ settings.price }}
+            <i class="bx bx-cart fs-3"></i>
             {% endif %}
+            </a>
         </p>
     </div>
+    {% unless forloop.last %}
+    <hr class="my-4">
+    {% endunless %}
 </li>
 {% comment %}
 {% if featured %}

@@ -37,22 +37,24 @@
 These features will be added in the future, but there is no guarantee when or in which order (numbers in front are priorities).
 
 ```
+- API 
+    - methods to read absences (date-range, user, absence type)
 - Documentation
-    - (1) Written
-    - (2) Videos
+    - Written
+    - Videos
 - Approval workflow
-    - (1) Allow to "Sent for approval" to Supervisor
-    - (1) Allow to "Reject" or "Approve" by Supervisor
-    - (1) Only calculate approved or locked absences (new ones are for planning)
-    - (3) Allow to export (or print) pending approvals
+    - Allow to "Sent for approval" to Supervisor
+    - Allow to "Reject" or "Approve" by Supervisor
+    - Only calculate approved or locked absences (new ones are for planning)
 - Absence calendar
-    - (2) Display all users / teams
-    - (2) Allow export as ical (or similar format) for use in external calendars (e.g. Outlook)
+    - Display all users / teams
+    - Allow export as ical (or similar format) for use in external calendars (e.g. Outlook)
 - Monthly contract PDF
-    - (2) Include: total working time sum
-    - (2) Include: total holiday sum
-    - (3) Include: holidays at start of month sum
-    - (3) Include: start of month working-time sum
+    - Include: total working time sum
+    - Include: total holiday sum
+    - Include: holidays at start of month sum
+    - Include: start of month working-time sum
+    - Include: manual bookings
 ```
 
 ## Ideas 
@@ -62,6 +64,8 @@ If you need one of these features, do not rely on them being added, but contact 
 If the above list is empty or I decide to add a feature, it will be moved to the "Planned features" section.
 
 ```
+- Approval workflow
+    - Allow to export (or print) pending approvals
 - Management view for all users
   - showing statistics for absences
   - pending holidays (approved), used holidays, available
@@ -101,6 +105,7 @@ If the above list is empty or I decide to add a feature, it will be moved to the
 - Multiple working contracts (configured with start and end time)
 - Work scheduler (like a monthly view), as some employees (especially hourly-based freelancers) cannot used fixed working days
 - Lockdown method for vacations (define periods where no vacations can be booked)
+- API methods to write absences (e.g. when using a HR tool for holiday planning)
 ```
 
 ## Changelog
