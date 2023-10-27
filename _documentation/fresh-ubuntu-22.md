@@ -160,9 +160,8 @@ vim .env
 
 Configure the database connection and adjust the settings to your needs (compare with the [original .env file]({{ site.kimai_v2_repo }}/blob/main/.env.dist)):
 ```
-DATABASE_URL=mysql://kimai:my-super-secret-password@127.0.0.1:3306/kimai?charset=utf8mb4&serverVersion=5.7
+DATABASE_URL=mysql://kimai:my-super-secret-password@127.0.0.1:3306/kimai?charset=utf8mb4&serverVersion=10.6.12-MariaDB
 ```
- 
 
 Then execute the Kimai installation:
 ```bash
