@@ -27,5 +27,4 @@ Therefor, if you are running Kimai in `production`, you have to [clear the cache
 
 ## I have only FTP available
 
-[Sorry, no chance.]({% link _documentation/ftp.md %})
-You either have to find a hoster that offers SSH access, or you use the [SaaS version of Kimai](https://www.kimai.cloud).
+Sorry, no chance. You either have to find a hoster that offers SSH access, or you use the [SaaS version of Kimai](https://www.kimai.cloud).
