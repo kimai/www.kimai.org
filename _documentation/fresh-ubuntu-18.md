@@ -8,8 +8,8 @@ redirect_from: /documentation/2.0/fresh-ubuntu-18.html
 ---
 
 {% capture latestUbuntu %}
-This documentation does not work with latest Kimai versions.
-Please upgrade and use the latest Ubuntu LTS instead: <a href="{% link _documentation/fresh-ubuntu-22.md %}">Ubuntu 20.04</a>.
+This documentation is outdated and does not work with the latest Kimai version.
+Please upgrade and use <a href="{% link _documentation/fresh-ubuntu-20.md %}">Ubuntu 20.04 LTS</a> instead.
 {% endcapture %}
 {% include alert.html type="danger" alert=latestUbuntu %}
 
