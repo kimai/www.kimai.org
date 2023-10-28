@@ -1,4 +1,15 @@
-<footer class="footer bg-dark pt-5 pb-4" data-bs-theme="dark">
+{% assign is_light = false %}
+{% assign is_dark = true %}
+{% if page.footer_light != nil %}
+    {% assign is_light = page.footer_light %}
+{% endif %}
+{% if include.light != nil %}
+    {% assign is_light = include.light %}
+{% endif %}
+{% if is_light %}
+    {% assign is_dark = false %}
+{% endif %}
+<footer class="footer {% if is_dark %}bg-dark {% endif %}pt-5 pb-4"{% if is_dark %} data-bs-theme="dark"{% endif %}>
     <div class="container pt-1 pt-md-3 pt-lg-4 pt-xl-5">
         <div class="row">
             <div class="col-md-5 col-xl-4 mb-4 mb-md-5 mb-lg-0">
@@ -68,7 +79,7 @@
                                     {% include link-translated-menu.html item="features" language=page.lang class="nav-link fs-sm fw-medium px-0 py-1" %}
                                 </li>
                                 <li class="nav-item mb-1">
-                                    <a href="{{ site.kimai_v2_repo }}/discussions" class="nav-link fs-sm fw-medium px-0 py-1">{{ site.data[page.lang].translation.ask-question }}</a>
+                                    <a href="{% link _pages/support.html %}" class="nav-link fs-sm fw-medium px-0 py-1">{{ site.data[page.lang].translation.comparison.support }}</a>
                                 </li>
                             </ul>
                         </div>
