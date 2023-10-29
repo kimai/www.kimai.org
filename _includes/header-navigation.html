@@ -26,7 +26,7 @@
 <header class="header navbar navbar-expand-lg {% if is_absolute %}position-absolute{% endif %} {% if is_dark %}navbar-dark{% endif %} {% if is_light %}bg-light{% endif %} navbar-sticky">
     <div class="container px-3">
         <a href="{{ site.pages | where: 'lang', page.lang | where: 'slug', 'index' | map: 'url' | first }}" class="navbar-brand pe-3">
-        <img src="/images/kimai_logo.png" style="height:36px" alt="{{ site.data[page.lang].translation.menu.default.index.title }}"> KIMAI
+        <img src="/images/kimai_logo.png" style="height:36px" alt="{{ site.data[page.lang].translation.index.title }}"> KIMAI
         </a>
         <div id="navbarNav" class="offcanvas offcanvas-end{% if is_dark %} bg-dark{% endif %}">
             <div class="offcanvas-header border-bottom">
@@ -37,26 +37,26 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     {% assign demo = site.pages | where: "slug", "demo" | where: "lang", page.lang | first %}
                     <li class="nav-item{% if page.url contains demo.url %} active{% endif %}">
-                        <a href="{{ demo.url }}" class="nav-link">{{ site.data[page.lang].translation.menu.default.demo.name }}</a>
+                        <a href="{{ demo.url }}" class="nav-link">{{ site.data[page.lang].translation.demo.name }}</a>
                     </li>
                     {% assign store = site.pages | where: "slug", "store" | where: "lang", page.lang | first %}
                     <li class="nav-item{% if page.url contains store.url %} active{% endif %}">
-                        <a href="{{ store.url }}" class="nav-link">{{ site.data[page.lang].translation.menu.default.store.name }}</a>
+                        <a href="{{ store.url }}" class="nav-link">{{ site.data[page.lang].translation.store.name }}</a>
                     </li>
                     {% assign blog = site.pages | where: "slug", "blog" | where: "lang", page.lang | first %}
                     <li class="nav-item{% if page.url contains blog.url %} active{% endif %}">
-                        <a href="{{ blog.url }}" class="nav-link">{{ site.data[page.lang].translation.menu.default.blog.name }}</a>
+                        <a href="{{ blog.url }}" class="nav-link">{{ site.data[page.lang].translation.blog.name }}</a>
                     </li>
                     {% assign documentation = site.pages | where: "slug", "documentation" | where: "lang", page.lang | first %}
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">{{ site.data[page.lang].translation.menu.default.documentation.name }}</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">{{ site.data[page.lang].translation.documentation.name }}</a>
                         <ul class="dropdown-menu">
                             {% assign manual = site.documentation | where: "slug", "chapter-manual" | first %}
-                            <li><a href="{{ manual.url }}" class="dropdown-item">{{ site.data[page.lang].translation.menu.default.docu-manual.name }}</a></li>
+                            <li><a href="{{ manual.url }}" class="dropdown-item">{{ site.data[page.lang].translation.docu-manual.name }}</a></li>
                             {% assign onPremise = site.documentation | where: "slug", "chapter-on-premise" | first %}
-                            <li><a href="{{ onPremise.url }}" class="dropdown-item">{{ site.data[page.lang].translation.menu.default.docu-onpremise.name }}</a></li>
+                            <li><a href="{{ onPremise.url }}" class="dropdown-item">{{ site.data[page.lang].translation.docu-onpremise.name }}</a></li>
                             {% assign developer = site.documentation | where: "slug", "developers" | first %}
-                            <li><a href="{{ developer.url }}" class="dropdown-item">{{ site.data[page.lang].translation.menu.default.docu-developer.name }}</a></li>
+                            <li><a href="{{ developer.url }}" class="dropdown-item">{{ site.data[page.lang].translation.docu-developer.name }}</a></li>
                         </ul>
                     </li>
                 </ul>

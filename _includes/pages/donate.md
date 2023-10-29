@@ -1,5 +1,5 @@
 
-### {{ site.data[page.lang].translation.menu.default.donate.description }}
+### {{ site.data[page.lang].translation.donate.description }}
 
 {% assign introduction = site.data[page.lang].translation.donate.introduction %}
 {% include alert.html icon="smile" alert=introduction %}
