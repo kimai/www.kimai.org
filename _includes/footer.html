@@ -33,14 +33,13 @@
                             <div class="dropdown-menu dropdown-menu-end">
                                 {% for lang in site.languages %}
                                     {% assign targetUrl = site.pages | where: "slug", "index" | where: "lang", lang | map: "url" | first %}
-                                    {% assign targetTitle = site.data[lang].translation.menu.default[brand].brand %}
                                     {% if page.lang != nil %}
                                         {% assign langPages = site[page.collection] | where: "slug", page.slug | where: "lang", lang %}
                                         {% if langPages and langPages.size == 1 %}
                                             {% assign targetUrl = langPages[0].url %}
                                         {% endif %}
                                     {% endif %}
-                                    <a dir="{% if site.rtl contains lang %}rtl{% else %}ltr{% endif %}" href="{{ targetUrl }}" title="{{ site.language_names[lang] }} - {{ targetTitle }}" class="dropdown-item{% if lang == page.lang %} active{% endif %}">{{ site.language_names[lang] }}</a>
+                                    <a dir="{% if site.rtl contains lang %}rtl{% else %}ltr{% endif %}" href="{{ targetUrl }}" class="dropdown-item{% if lang == page.lang %} active{% endif %}">{{ site.language_names[lang] }}</a>
                                 {% endfor %}
                             </div>
                         </div>
