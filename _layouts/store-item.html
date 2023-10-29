@@ -8,7 +8,7 @@ layout: default
 {% assign buyLink = '' %}
 {% assign buyBtnIcon = 'bx bx-cart' %}
 {% assign pricing = 0 %}
-{% assign buyTitle = site.data[page.lang].translation.download %}
+{% assign buyTitle = site.data[page.lang].translation.download-btn %}
 {% assign buySubTitle = '' %}
 {% assign purchase_details = nil %}
 {% if developer.purchase_details %}
@@ -33,7 +33,7 @@ layout: default
 {% if settings.download %}
     {% assign buyLink = settings.download %}
     {% assign buyBtnIcon = 'bx bx-download' %}
-    {% assign buyTitle = site.data[page.lang].translation.download %}
+    {% assign buyTitle = site.data[page.lang].translation.download-btn %}
 {% elsif settings.email %}
     {% assign buyLink = 'mailto:' | append: settings.email %}
     {% assign buyBtnIcon = 'bx bx-envelope' %}
@@ -55,7 +55,7 @@ layout: default
 {% elsif settings.github %}
     {% assign buyLink = settings.github | append: '/releases' %}
     {% assign buyBtnIcon = 'bx bxl-github' %}
-    {% assign buyTitle = site.data[page.lang].translation.download %}
+    {% assign buyTitle = site.data[page.lang].translation.download-btn %}
 {% endif %}
 
 {% assign isFree = false %}
@@ -71,7 +71,7 @@ layout: default
     {% assign pricing = settings.price %}
     {% assign buySubTitle = site.data[page.lang].translation.price-without-vat %}
 {% else %}
-    {% assign buyTitle = site.data[page.lang].translation.download %}
+    {% assign buyTitle = site.data[page.lang].translation.download-btn %}
     {% assign pricing = site.data[page.lang].translation.free-badge %}
     {% assign isFree = true %}
 {% endif %}
