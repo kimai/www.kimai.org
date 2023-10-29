@@ -16,7 +16,8 @@
                         {{ site.data[page.lang].translation.support.premium_intro | markdownify }}
                     </div>
                     <div class="card-footer border-0 p-0">
-                        <a href="{% link _store/keleo-installation-support.md %}" class="btn btn-lg btn-primary">{{ site.data[page.lang].translation.support.premium_cta }}</a>
+                        {% assign install_support_btn = site.data[page.lang].translation.support.premium_cta %}
+                        {% include link-translated-shop.html item="installation-support" class="btn btn-lg btn-primary" title=install_support_btn %}
                     </div>
                 </div>
                 <div class="vr text-border d-none d-sm-inline-block m-4"></div>
