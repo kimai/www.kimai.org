@@ -101,8 +101,8 @@ menu:
             name: הורדה
             title: להוריד את Kimai
             description: הורדה - מעקב שעות Kimai
-            intro: We offer several ways to install Kimai. Choose the option that suits you.
-            subtitle: Download and Installation
+            intro: אנו מציעים מגוון דרכים להתקין את Kimai. נא לבחור את האפשרות שהכי מתאימה לך.
+            subtitle: הורדה והתקנה
         hosted:
             name: ענן
             title: Kimai-Cloud — להשתמש ב־Kimai ישירות ללא התקנה. אירוח Kimai בחינם!
@@ -238,11 +238,11 @@ feature:
         description: Analysis of recorded times, customers, projects and activities. Evaluation according to users, customers, projects, activities, tags, time periods and much more.
         name: Reports and analyses
 install:
-    alert-vps: "בשלב הזה, אי אפשר להתקין את Kimai על ידי הורדת קובץ zip והעלאתו לשרת שלך. זאת מכיוון שיש להריץ את ה־Composer משורת הפקודה.\n\nזה לא בהכרח אומר שדרוש לך שרת וירטואלי פרטי. חלק מספקי האירוח השיתופי מעניקים לך גישת SSH שדרכה אפשר להתקין את ה־Composer ואת Kimai כמו שצריך.\n\nניתן למצוא את הנחיות ההתקנה המלאות ב%documentation% שלנו.\n"
-    ssh: The recommended method installs Kimai directly on your server.
-    cloud: No need to install Kimai, you can start using it right now.
-    docker: Use our Docker image to install and update Kimai container easily.
-    kubernetes: You can deploy Kimai to Kubernetes using our Helm-Charts.
+    alert-vps: "בשלב הזה, אי אפשר להתקין את Kimai על ידי הורדת קובץ zip והעלאתו לשרת שלך. צריך גישה ב־SSH לשרת שלך. זה לא אומר שצריך שרת וירטואלי פרטי (VPS). חלק מהמארחים המשותפים נותנים גישה ב־SSH, דרכה אפשר להתקין Composer ואת Kimai ללא שום בעיות."
+    ssh: השיטה המומלצת מתקינה את Kimai ישירות בשרת שלך.
+    cloud: לא צריך להתקין את Kimai, אפשר להתחיל להשתמש בו כעת.
+    docker: אפשר להשתמש בדמות ה־Docker שלנו כדי להתקין או לעדכן את המכולה של Kimai בקלות.
+    kubernetes: אפשר להטמיע את Kimai ל־Kubernetes באמצעות ה־Helm-Charts שלנו.
 demo:
     role_user: משתמש
     title: בדיקת Kimai באחת מההדגמות
@@ -282,14 +282,14 @@ section-teaser:
 per-year: לשנה
 history:
     year-2020: Kimai is offered as a subscription based SaaS, with a free and two paid plans.
-    early-days-title: How it all began
-    year-2009: Torsten, the initial developer, wants to close down Kimai. Kevin steps in and becomes maintainer.
+    early-days-title: איך הכול התחיל
+    year-2009: טורסטן, המפתח המקורי, רוצה לסגור את Kimai. קווין מתערב ולוקח על עצמו את התחזוקה.
     year-2019: First plugins are created, to validate market-fit and interest in paid open-source software.
-    early-days-subtitle: Kimai has a long history and is around since 2006, this is a brief overview how everything started.
+    early-days-subtitle: ל־Kimai יש היסטוריה ארוכה שמתחילה אי־שם ב־2006, כאן יש סקירה קצרה על איך הכול התחיל.
     year-2023: The hard work is finally paying off and Kimai is now my 100% full-time job. Thank you!
     year-2014: The last release of Kimai 1 is created, development stales and there is not much more activity.
-    year-2006: The first version of Kimai is release and slowly gains a growing user and developer base.
-    about: What started as a hobby project is now the leading open-source time-tracking application in the world. Let's dive into it's history.
+    year-2006: הגרסה הראשונה של Kimai רואה אור ואט ואט צוברת קהל הולך וגדל של משתמשים ומפתחים.
+    about: מה שהחל ממיזם חובבים הוא כעת יישום מעקב השעות המוביל בעולם בקוד פתוח. הנה קצת היסטוריה.
     year-2018: The re-write of Kimai finds it's way into the community, the data migrations works.
     current: "Kimai is a time tracking app with a long history. The first version was released in 2006. Why do I mention that? Because I have seen so many services come and go since then - trust me when I say: I'm sticking around. I didn't make a living from Kimai for many years, it was the fun that kept me motivated to improve Kimai. I believe that fun is one of the main reasons for Kimai's success.\n\nI build Kimai for one purpose: to track your working hours. Kimai supports an unlimited number of users and timesheet entries, so you can manage all your teams/departments in one easy to use installation. Kimai is web based, so all you need is a PHP enabled web server. It's built with a responsive design, so you can even track times on your mobile device when you're on the go. Kimai is translated into multiple languages and missing translations can be easily added using the open translation standard Xliff.\n\nOh, and did I mention that you can create invoices from your timesheets in your browser? Not only does it have customisable Kimai can be easily extended in many ways. It's built on the most popular and modern frameworks and has an active community which produces a lot of plugins that extend the core functionality of Kimai.\n\nI could write so much more about the features and benefits that Kimai can bring to you - whether you are a freelancer, a small organisation a small organisation or a company with hundreds of employees - but I think that giving you the opportunity to try it directly is even better than a thousand words from me.\n"
     past: "Kimai has a long history and was way ahead of its time when Torsten Höltge and his team started developing it in 2006. It had a responsive design (thanks to a lot of Javascript magic) before the word had even been officially invented.\n\nHe was about to shut it down for personal reasons when Kevin stepped in as maintainer in 2009. With the help of other open source volunteers, he was able to keep it alive and expand it for several years.\n\nIn the meantime, the PHP community had made great strides forward, and Kimai felt left behind due to its technical history - built around a lot of individual PHP scripts, all of which had to be publicly available. It also had some major drawbacks, such as limited extensibility and a problematic database design. After many years of development, the codebase had become difficult to maintain and the logic was scattered across scripts, classes and the frontend layer.\n\nTherefore, the idea of rewriting Kimai with modern frameworks has been around for a long time, also driven by community requests, but there wasn't time to push these ideas forward. At the end of 2017, Symfony 4.0 was released together with a nice frontend stack. That's when I took the opportunity to start developing the next evolutionary step: the Kimai (v2) was born.\n\nThe original Kimai was first released in 2006 and has been used by many people around the world. I am proud of that and of the great community. Now, after 5 years, most people have migrated to the new Kimai version and the number of users is growing every day. That's why I would like to thank everyone who has contributed to Kimai.\n"
@@ -314,7 +314,7 @@ highlight:
     subtitle: Kimai has all the business core features you need to setup your time-tracking workflows and integrate it with your existing infrastructure.
     reasons:
         enterprise: תוספות לתאגידים
-        oss: Open Source
+        oss: קוד פתוח
         versions: ענן ואירוח בשרת מקומי
         gdpr: תאימות ל־GDPR
 store-hero-title: הרחבות, יישומים, תמיכה
@@ -338,7 +338,7 @@ comparison:
     footer-title: השוואה
     is_oss: תוכנה בקוד פתוח
     location: שרת נתונים באירופה
-    invoices: Invoicing
+    invoices: הנפקת חשבוניות
     backup_frequency: גיבויים
     custom_domain: שם תחום מותאם אישית
     max_activities: כמות פעילויות מרבית
