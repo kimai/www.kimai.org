@@ -48,7 +48,7 @@ installation: 'Установка'
 updates: 'Оновлення'
 username: 'Ім''я користувача'
 password: 'Пароль'
-try-it: 'Спробуйте'
+try-it: 'Демо'
 plugin-demo-at: 'Ви можете перевірити це розширення на'
 plugin-demo-accounts: 'Додаткові тестові обліковки можна знайти тут'
 read-more: 'Детальніше'
@@ -65,7 +65,7 @@ create-database: 'Створити базу даних'
 install-assets: 'Встановити компоненти'
 ask-question: 'Поставити запитання'
 newsletter:
-    title: Інформаційний лист
+    title: Хочете нічого не пропустити?
     email-help: Надайте свою ел.адресу для підписки.
     field-required: Це поле не можна залишати порожнім.
     captcha-help: Вибачте за капчу, — ми знаємо, що вона дратує!
@@ -92,7 +92,7 @@ demo:
     title: Спробуйте Kimai в одній з демо-версій
     introduction: "Спробуйте демо-версію Kimai і ми обіцяємо: Вам сподобається!"
     choose: Будь ласка, оберіть одну з наших демо-інсталяцій і Ви отримаєте перше враження про те, як працює Kimai та які він має функції.
-    reinstall: Майте на увазі, що демо-версії будуть перевстановлюватися за графіком і всі введені дані будуть видалятися. Але для Вашої зручності більшість з них попередньо заповнені тестовими даними, тому Ви можете одразу розпочати тестування функцій (наприклад, інвойсу або експорту).
+    reinstall: Майте на увазі, що демо-версії будуть перевстановлюватися за графіком і всі введені дані будуть видалятися.
     user: Demo user
     accounts: "Ці облікові записи доступні для тестів. Або можете створити власного тестового користувача у формі входу кожної демо-версії."
     role_user: Користувач
@@ -115,6 +115,15 @@ hosted:
 about:
     name: 'Про Kimai'
     description: Ознайомтеся з історією створення Реєстратора часу Kimai та з його розробником.
+    joy:
+        title: Joy at work
+        content: The development of Kimai is the ideal combination of the profession I love, with its infinite possibilities of education, and the need to earn money to support my family. Thanks to Kimai, I can spend more time with my wife and child, which is probably the best motivation you can ever imagine.
+    technology:
+        title: Technology
+        content: As developer, I love testing new technologies. And if this improves the way you interact with Kimai, I'd call it a win-win situation. UI and UX are crucial to me because software has to be easy to use. Security is default requirement and open source software is a important success factor for many businesses.
+    collaboration:
+        content: Customers appreciate the convenience that comes with free support and the exchange is an essential part of my work. I love the community engagement at GitHub, the collaboration and the agile work. The constant improvement based on your feedback makes this journey an extraordinary experience.
+        title: Collaboration
 store:
     name: 'Магазин'
     subtitle: 'Розширте свій облік часу'
@@ -182,7 +191,7 @@ feature:
         description: "Увійдіть і зареєструйте користувачів за допомогою SAML (Single sign on, також відомого як SSO) і повторно користуйтеся послугами постачальника ідентифікації такими як Google Workspace, Authentik або Azure Active Directory."
     api:
         name: "JSON API"
-        description: "Завдяки JSON API зовнішні застосунки можуть обмінюватися даними з вашим улюбленим тайм-трекером!"
+        description: "Завдяки розширеному JSON API для читання та запису даних зовнішні програми та Ваші власні інструменти можуть обмінюватися даними з Вашим улюбленим реєстратором часу."
     ldap:
         name: "LDAP"
         description: "Підключіть Kimai до сервера каталогів своєї компанії (LDAP або Active Directory) і використовуйте існуючу інфраструктуру автентифікації."
@@ -239,15 +248,15 @@ feature:
         name: Звіти та аналізи
 install:
     alert-vps: На цьому етапі неможливо встановити Kimai, отримавши ZIP-файл і завантаживши файли на свій веб-сервер. Це пов'язано з тим, що Composer потрібно запускати в командному рядку. Це не обов'язково означає, що Вам потрібен VPS. Деякі спільні хости надають доступ до SSH, за допомогою якого Ви зможете встановити Composer і Kimai без жодних проблем.
-    ssh: The recommended method installs Kimai directly on your server.
-    cloud: No need to install Kimai, you can start using it right now.
-    docker: Use our Docker image to install and update Kimai container easily.
-    kubernetes: You can deploy Kimai to Kubernetes using our Helm-Charts.
+    ssh: Рекомендований метод встановлює Kimai безпосередньо на Ваш сервер.
+    cloud: Немає потреби в інсталяції Kimai – Ви можете його просто запустити.
+    docker: Скористайтеся нашим образом Docker для установки та оновлення контейнера Kimai в зручний спосіб.
+    kubernetes: Ви можете розгорнути Kimai у Kubernetes використовуючи наші набори Helm-Chart'ів.
 developer:
     kevinpapst:
         intro: Керівник проєкту та основний розробник з 2007 року. Прагне зробити Kimai найкращим у світі реєстратором часу з відкритим сирцевим кодом. Може бути найнятий для підтримки, встановлення та розробки спеціальних плагінів.
 price-contract: За запитом
-full-documentation: Повна документація доступна тут (лише англійською).
+full-documentation: Повна документація англійською
 contact-developer: Якщо у вас виникли запитання, скористайтеся наведеною нижче контактною інформацією, щоб зв’язатися безпосередньо з розробником.
 homepage:
     title: Ведення обліку часу для команд, що працюють над проектами
@@ -280,10 +289,6 @@ history:
     year-2006: Випускається перша версія Kimai і поступово здобуває ростучу користувацьку та розробницьку базу.
     intro: Те, що почалося як хобі-проект, тепер є провідною в світі відкритою програмою для ведення обліку часу. Давайте зануримось у його історію.
     year-2018: Перезапис Kimai знаходить свій шлях до спільноти, міграція даних працює.
-    community: |
-        Навколо Kimai існує велика та велика спільнота, і неможливо перелічити всіх її учасників. Нижче подано короткий список минулих розробників. На ринку перелічені плагіни та їх розробники, що дає вам хороший уявлення про розробників, які підтримують проект своїми знаннями.
-
-        Багато інших людей віддають свій вільний час, надаючи зворотний зв'язок, звіти про тести та конструктивні запитання. Їх імена регулярно зустрічаються у трекері проблем GitHub та форумі обговорення. Моя найбільша подяка усім ним ❤️
     current: |
         Kimai - це програма обліку часу з довгою історією. Перша версія була випущена ще в 2006 році. Чому я це згадую? Тому що з того часу я бачив багато служб, які приходили і йшли - вірте мені, коли я кажу: я лишаюсь. Я не заробляв на Kimai протягом багатьох років, це було веселощами, які тримали мене в мотивації покращувати Kimai. Я вважаю, що веселощі - одна з головних причин успіху Kimai.
 
@@ -364,7 +369,7 @@ comparison:
     ip_restriction: Обмеження доступу за IP-адресою
     alternatives: Альтернативи для Kimai
     finding: Пошук правильного рішення для обліку часу
-    use_case: Кожен випадок використання, кожна компанія та кожен робочий процес відрізняється, і ваші вимоги повинні бути оцінені перед вибором рішення для обліку часу. Ось деякі популярні альтернативи для Kimai, які ми докладно порівняємо, щоб знайти найкращий варіант для вас.
+    use_case: Кожен випадок використання, кожна компанія та кожен робочий процес відрізняється, і Ваші вимоги повинні бути зважені перед вибором рішення для обліку часу. Тут наведені деякі популярні альтернативи для Kimai, які ми докладно порівняємо.
 support:
     name: "Підтримка"
     description: "Потрібна підтримка? Знайдіть допомогу щодо використання, встановлення або оновлення Kimai."
