@@ -26,18 +26,22 @@ layout: base
 {% if chapter_page != nil %}
     {% assign chapter_title = chapter_page.title %}
 {% endif %}
+{% assign icon = 'apple-touch-icon.png' %}
+{% if chapter_page.slug == 'cloud' %}
+    {% assign icon = 'apple-touch-icon-cloud.png' %}
+{% endif %}
 
 <header class="header navbar navbar-expand bg-light border-bottom border-light shadow fixed-top" data-scroll-header>
     <div class="container-fluid pe-lg-4">
         <div class="d-flex align-items-center">
             <a href="/documentation/" class="navbar-brand flex-shrink-0 py-1 py-lg-2">
-                <img src="/images/apple-touch-icon.png" width="47" alt="Kimai">
+                <img src="/images/{{ icon }}" width="47" alt="Kimai logo">
                 Kimai
             </a>
             <span class="badge bg-warning">{{ chapter_title }}</span>
         </div>
         <div class="d-flex align-items-center w-100">
-            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 11.75rem;">
+            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 9.75rem;">
                 {% for group in site.data.menu-documentation %}
                     {% assign docs_config = group[1] %}
                     {% assign docs_page = site.documentation | where: "slug", docs_config.slug | first %}
@@ -65,7 +69,7 @@ layout: base
     <div id="componentsNav" class="offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100 bg-dark border-end-lg" style="width: 21rem; z-index: 1045;">
         <div class="offcanvas-header d-none d-lg-flex justify-content-start">
             <a href="/documentation/" class="navbar-brand text-dark d-none d-lg-flex py-0">
-                <img src="/images/icon_32x32.png" alt="Kimai">
+                <img src="/images/{{ icon }}" width="32" alt="Kimai logo">
                 Kimai
             </a>
             <span class="badge bg-warning d-none d-lg-inline-block">{{ chapter_title }}</span>
