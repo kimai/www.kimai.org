@@ -55,6 +55,12 @@ These features will be added in the future, but there is no guarantee when or in
     - Include: holidays at start of month sum
     - Include: start of month working-time sum
     - Include: manual bookings
+- Notification
+  - Sent notifications to supervisor for new "absences to be approved"
+  - Sent notifications to user for approved/rejected absences
+- Finalize year
+  - Auto-adjust time-account of next year
+  - Allow to take over and adjust the holidays, which were not yet taken (probably with an expiration date?)
 ```
 
 ## Ideas 
@@ -81,9 +87,6 @@ If the above list is empty or I decide to add a feature, it will be moved to the
     - paid/not paid
   - Convert holiday to sickness (Workaround: create sickness and delete holiday)
   - Sum of sickness and other days on Absence screen
-- Notification
-  - Sent notifications to supervisor for new "absences to be approved"
-  - Sent notifications to user for approved/rejected absences
 - Rules
   - Configure if timesheets should be prohibited during absence (type)
 - Breaks (Pause)
@@ -98,9 +101,6 @@ If the above list is empty or I decide to add a feature, it will be moved to the
   - Configure default rule (country or custom) per user
 - Holidays
   - Take over holidays from last year (like manual bookings)
-- Finalize year
-  - Auto-adjust time-account of next year
-  - Allow to take over and adjust the holidays, which were not yet taken (probably with an expiration date?)
 - Configuration for the business year, in case a company is not using the calendar year
 - Multiple working contracts (configured with start and end time)
 - Work scheduler (like a monthly view), as some employees (especially hourly-based freelancers) cannot used fixed working days
