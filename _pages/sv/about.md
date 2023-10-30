@@ -1,7 +1,9 @@
 ---
 title: "About Kimai"
-layout: about
+layout: default
 lang: sv
 permalink: /sv/about.html
-canonical: /en/about.html
+redirect_from: ["/sv/donate.html"]
 ---
+
+{% include pages/about.html %}

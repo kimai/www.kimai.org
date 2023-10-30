@@ -1,7 +1,9 @@
 ---
 title: "About Kimai"
-layout: about
+layout: default
 lang: pt_BR
 permalink: /pt_BR/about.html
-canonical: /en/about.html
+redirect_from: ["/pt_BR/donate.html"]
 ---
+
+{% include pages/about.html %}
