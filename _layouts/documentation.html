@@ -83,8 +83,8 @@ layout: base
                 {% for group in site.data.menu-documentation %}
                     {% assign docs_config = group[1] %}
                     {% assign docs_page = site.documentation | where: "slug", docs_config.slug | first %}
-                    <a href="{{ docs_page.url }}" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-2 px-4">
-                        <i class="{{ docs_config.icon }} opacity-70 fs-lg me-1"></i>
+                    <a href="{{ docs_page.url }}" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="{{ docs_config.icon }} opacity-70 me-1"></i>
                         {{ docs_page.title }}
                     </a>
                 {% endfor %}
@@ -103,20 +103,11 @@ layout: base
                 <div class="swiper-slide h-auto">
                     {% if menu != nil %}
                         {% include docs-navi.html navigation=menu %}
-                    {% else %}
-                        {% comment %} if menu is nil then this is the documentation start page OR a page that is not linked in the navigation {% endcomment %}
-                        <h3 class="fs-lg">Documentation</h3>
-                        <div class="list-group list-group-flush pb-3 mb-4 mx-n4 border-bottom">
-                        {% for group in site.data.menu-documentation %}
-                            {% assign docs_page = site.documentation | where: "slug", group[1].slug | first %}
-                            <a class="list-group-item list-group-item-action border-0 py-2 px-4" href="{{ docs_page.url }}">{{ docs_page.title }}</a>
-                        {% endfor %}
-                        </div>
+                        <div class="list-group list-group-flush pb-3 mb-4 mx-n4">
                     {% endif %}
-                    <div class="list-group list-group-flush pb-3 mb-4 mx-n4">
-                    {% include link-translated-menu.html language=page.lang item="index" class="list-group-item list-group-item-action border-0 py-2 px-4" %}
-                    {% include link-translated-menu.html language=page.lang item="site-notice" class="list-group-item list-group-item-action border-0 py-2 px-4" %}
-                    {% include link-translated-menu.html language=page.lang item="privacy-policy" class="list-group-item list-group-item-action border-0 py-2 px-4" %}
+                    {% include link-translated-menu.html language=page.lang item="index" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4" %}
+                    {% include link-translated-menu.html language=page.lang item="site-notice" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4" %}
+                    {% include link-translated-menu.html language=page.lang item="privacy-policy" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4" %}
                     </div>
                 </div>
             </div>
@@ -139,12 +130,15 @@ layout: base
         </div>
 
         <div class="markdown py-5 ps-lg-2 ps-xxl-0">
-            {% comment %} THE id "documentation-content" MAY NEVER BE DELETED, IT IS USED IN KIMAI TO REMOTE FETCH THE ARTICLE {% endcomment %}
-            <div id="documentation-content">
-                {{ content }}
+            <div>
+                {% comment %} THE id "documentation-content" MAY NEVER BE DELETED, IT IS USED IN KIMAI TO REMOTE FETCH THE ARTICLE {% endcomment %}
+                <div id="documentation-content">
+                    {{ content }}
+                </div>
+                {% comment %} THE id "documentation-content" MAY NEVER BE DELETED, IT IS USED IN KIMAI TO REMOTE FETCH THE ARTICLE {% endcomment %}
 
                 {% if page.related != nil %}
-                <h2 id="related-articles">Related articles</h2>
+                <h2 id="related-articles" class="fs-4 mt-5">Related articles</h2>
                 <ul>
                     {% for p in page.related %}
                     {% assign doc = site.documentation | where: "slug", p | first %}
@@ -154,9 +148,7 @@ layout: base
                     {% endfor %}
                 </ul>
                 {% endif %}
-
             </div>
-            {% comment %} THE id "documentation-content" MAY NEVER BE DELETED, IT IS USED IN KIMAI TO REMOTE FETCH THE ARTICLE {% endcomment %}
         </div>
 
     </div>
