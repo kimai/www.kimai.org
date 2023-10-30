@@ -53,6 +53,8 @@
                         <ul class="dropdown-menu">
                             {% assign manual = site.documentation | where: "slug", "chapter-manual" | first %}
                             <li><a href="{{ manual.url }}" class="dropdown-item">{{ site.data[page.lang].translation.docu-manual.name }}</a></li>
+                            {% assign cloud = site.documentation | where: "slug", "cloud" | first %}
+                            <li><a href="{{ cloud.url }}" class="dropdown-item">{{ site.data[page.lang].translation.docu-cloud.name }}</a></li>
                             {% assign onPremise = site.documentation | where: "slug", "chapter-on-premise" | first %}
                             <li><a href="{{ onPremise.url }}" class="dropdown-item">{{ site.data[page.lang].translation.docu-onpremise.name }}</a></li>
                             {% assign developer = site.documentation | where: "slug", "developers" | first %}
