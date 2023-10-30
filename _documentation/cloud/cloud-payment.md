@@ -1,6 +1,6 @@
 ---
 title: Payments
-description: How to pay Payment methods, billing period, trial period - Kimai-Cloud
+description: How to pay your Kimai Cloud subscription - payment methods, billing period, trial period and more
 ---
 
 You can use the test phase and the free plan without adding any payment method.
