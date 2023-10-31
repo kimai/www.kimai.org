@@ -70,8 +70,13 @@ If you need one of these features, do not rely on them being added, but contact 
 If the above list is empty or I decide to add a feature, it will be moved to the "Planned features" section.
 
 ```
+- Public holidays
+  - Configurable rule to deactivate time-records on public holidays
+- API 
+  - Methods to read absences
+  - Methods to write absences (e.g. when using a HR tool for holiday planning)
 - Approval workflow
-    - Allow to export (or print) pending approvals
+  - Allow to export (or print) pending approvals
 - Management view for all users
   - showing statistics for absences
   - pending holidays (approved), used holidays, available
@@ -92,8 +97,10 @@ If the above list is empty or I decide to add a feature, it will be moved to the
 - Breaks (Pause)
   - Support calculation of breaks (e.g. display in calendar)
   - Use all breaks between first entry of the day and last entry of the day as pause
-- Add a button to take over values from last year (for all users)
-- Dashboard widgets for total numbers, to show "status" more prominent
+- New year 
+  - Add a button to take over values from last year (for all users)
+- Dashboard 
+  - Widgets for total numbers, to show "status" more prominent
 - Working time requirements (Arbeitszeitvorgaben)
   - Maximum working time (per day, in one session) and breaks
   - Configure fixed rules per country
@@ -101,11 +108,10 @@ If the above list is empty or I decide to add a feature, it will be moved to the
   - Configure default rule (country or custom) per user
 - Holidays
   - Take over holidays from last year (like manual bookings)
+  - Lockdown method for vacations (define periods where no vacations can be booked)
 - Configuration for the business year, in case a company is not using the calendar year
-- Multiple working contracts (configured with start and end time)
+- Multiple working contracts per user (configured with start and end time)
 - Work scheduler (like a monthly view), as some employees (especially hourly-based freelancers) cannot used fixed working days
-- Lockdown method for vacations (define periods where no vacations can be booked)
-- API methods to write absences (e.g. when using a HR tool for holiday planning)
 ```
 
 ## Changelog
