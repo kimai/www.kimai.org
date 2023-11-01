@@ -1,6 +1,5 @@
 made-with-love: 'Feito por'
 developed-at: 'Desenvolvido em'
-store: 'Mercado'
 access-demo: 'Acesse a demonstração'
 docu-alert-english: 'O conteúdo está disponível apenas em inglês'
 store-contribute-title: 'Contribua'
@@ -12,16 +11,6 @@ store-plugins-subtitle: 'Você pode procurar nos seguintes tópicos do GitHub pa
 store-category-plugins: 'Plug-ins para a sua instalação do Kimai'
 store-category-apps: 'Aplicativos nativos para seu dispositivo móvel'
 store-category-client: 'Outras maneiras de se conectar ao Kimai'
-demo-master-title: 'Versão atual - Vazio'
-demo-master-description: 'A versão atual com plug-ins adicionais, mas sem dados para demonstração.'
-demo-stable-title: 'Versão atual - Sem plug-ins'
-demo-stable-description: "A versão atual, sem plug-ins, mas com dados para demonstração. Versão instalada "
-demo-plugins-title: 'Versão atual'
-demo-plugins-description: 'A versão atual com plug-ins do nosso mercado e com dados para demonstração.'
-demo-v2-title: 'Versão 2.0'
-demo-v2-description: 'A próxima versão com plug-ins adicionais e com dados para demonstração.'
-demo-empty-title: 'Versão 2.0 - Vazio'
-demo-empty-description: 'A próxima versão com plug-ins, mas sem dados para demonstração.'
 demo-reinstall: 'A demonstração será reinstalada em %X% minutos.'
 homepage-quote-excel: 'Com o Kimai, o tedioso processo de alimentar planilhas do Excel usando as suas horas de trabalho não é apenas simplificado, mas também oferece dezenas de outros recursos interessantes que você nem sabe que está perdendo até agora!'
 homepage-features-title: 'Lista de recursos'
@@ -54,7 +43,7 @@ plugin-demo-at: 'Você pode testar este plug-in em'
 plugin-demo-accounts: 'Encontre mais contas de teste aqui'
 read-more: 'Saiba mais'
 contact: 'Contato'
-download: 'Baixar'
+download-btn: 'Baixar'
 compatibility: 'Compatibilidade'
 compatibility-kimai: 'Versão mínima do Kimai'
 compatibility-bundle: 'Versão do pacote'
@@ -86,17 +75,10 @@ photos:
     timesheet:
         title: 'Controle de tempo'
         description: 'Crie e gerencie os seus horários de trabalho e exporte-os para Excel, PDF ou HTML'
-donate:
-    introduction: Ao doar e patrocinar o desenvolvimento do Kimai, você nos ajuda a melhorar a sua experiência de controle de tempo!
-    please-donate: Desenvolver um software livre como o Kimai demanda muito tempo e trabalho. Se você gosta do Kimai, se o usa diariamente ou o administra em sua empresa, considere apoiar futuros desenvolvimentos.
-    your-donation: |
-        A sua doação vai diretamente para apoiar o projeto. Eu sou um desenvolvedor de software profissional dedicado ao Kimai e com um coração para o software de código aberto.
-        Mais importante ainda, ao ajudar a apoiar o desenvolvimento do Kimai, você está contribuindo para um esforço que torna a sua vida mais fácil. Isso não é legal?
-
-        Obrigado por usar o Kimai!
-
-        Observe que esta doação não é direcionada a uma organização sem fins lucrativos e, portanto, não é dedutível de impostos.
+donate: Doe
 demo:
+    name: 'Demonstração'
+    description: Teste e avalie o nosso rastreador de tempo Kimai online, diretamente de nossa página de demonstração.
     title: Teste o Kimai numa das demos
     introduction: "Experimente a demonstração do Kimai e prometemos: você continuará a usá-la!"
     choose: Escolha uma das nossas opções de demonstração para ter uma primeira impressão de como o Kimai funciona e quais as funcionalidades que ele oferece.
@@ -107,59 +89,65 @@ demo:
     role_teamlead: Líder da equipe
     role_admin: Administrador
     role_super: Super-Administrador
-menu:
-    default:
-        index:
-            name: 'Início'
-            brand: 'Rastreador de tempo'
-            title: 'Kimai - Rastreador de tempo de código aberto'
-            description: Kimai - controle de tempo fácil e gratuito para freelancers, agências e empresas com gerenciamento de usuários e faturas.
-        download:
-            name: 'Instalação'
-            title: 'Instalação do Kimai'
-            description: Baixe e instale com o SSH, Docker e o Kubernetes - Kimai controle de tempo
-            intro: Oferecemos várias maneiras de instalar o Kimai. Escolha a opção que mais lhe convém.
-            subtitle: Download e Instalação
-        hosted:
-            name: 'Nuvem'
-            title: 'Kimai-Cloud — Use o Kimai sem precisar de configuração. Hospedagem grátis do Kimai!'
-        about:
-            name: 'Sobre o Kimai'
-            description: Conheça a história do rastreador de tempo Kimai e o seu desenvolvedor.
-        demo:
-            name: 'Demonstração'
-            description: Teste e avalie o nosso rastreador de tempo Kimai online, diretamente de nossa página de demonstração.
-        store:
-            name: 'Mercado'
-            subtitle: 'Estenda o seu controle de tempo'
-            description: Encontre extensões e suporte comercial para o Kimai
-        blog:
-            name: 'Notícias'
-            description: Notícias sobre o Kimai, o programa de rastreamento de tempo
-            subtitle: Notícias sobre a equipe de desenvolvimento do Kimai
-            title: Notícias do Kimai
-        documentation:
-            name: 'Documentação'
-            description: Informações de suporte, manual do usuário e outra documentação para rastreamento de tempo Kimai
-            subtitle: Documentação online para o aplicativo de rastreamento de tempo Kimai
-        donate:
-            description: Apoie o Kimai com uma doação
-            name: Doe
-        privacy-policy:
-            name: Política de privacidade
-        site-notice:
-            name: Aviso do site
-        features:
-            name: Recursos
-        docu-developer:
-            name: Desenvolvedor
-        docu-onpremise:
-            name: Hospedagem própria
-        docu-manual:
-            name: Manual do usuário
-        alternatives:
-            name: Comparar o rastreador de tempo
-            description: Kimai é a melhor aplicação de rastreamento de tempo de código aberto disponível, não apenas para equipes baseadas em projetos. Veja como o Kimai se compara às soluções alternativas de rastreamento de tempo para que você possa escolher a certa para a sua organização.
+    empty-description: A versão atual com plugins em destaque, sem dados.
+    plugins-description: A versão atual com plugins em destaque e dados de demonstração.
+    plugins-title: Em Destaque
+    stable-title: Núcleo
+    empty-title: Plug-ins
+    stable-description: A última versão, sem plugins, sem dados de demonstração.
+index:
+    name: 'Início'
+    title: 'Kimai - Rastreador de tempo de código aberto'
+    description: Kimai - controle de tempo fácil e gratuito para freelancers, agências e empresas com gerenciamento de usuários e faturas.
+download:
+    name: 'Instalação'
+    title: 'Instalação do Kimai'
+    description: Baixe e instale com o SSH, Docker e o Kubernetes - Kimai controle de tempo
+    intro: Oferecemos várias maneiras de instalar o Kimai. Escolha a opção que mais lhe convém.
+    subtitle: Download e Instalação
+hosted:
+    name: 'Nuvem'
+    title: 'Kimai-Cloud — Use o Kimai sem precisar de configuração. Hospedagem grátis do Kimai!'
+about:
+    name: 'Sobre o Kimai'
+    description: Conheça a história do rastreador de tempo Kimai e o seu desenvolvedor.
+    collaboration:
+        title: Colaboração
+        content: Os clientes apreciam a conveniência que vem com o suporte gratuito e a troca é uma parte essencial do meu trabalho. Eu adoro o envolvimento da comunidade no GitHub, a colaboração e o trabalho ágil. A melhoria constante com base no seu feedback torna esta jornada uma experiência extraordinária.
+    technology:
+        title: Tecnologia
+        content: Como desenvolvedor, adoro testar novas tecnologias. E se isso melhora a forma como você interage com o Kimai, eu chamaria isso de uma situação ganha-ganha. A interface do usuário e a experiência do usuário são cruciais para mim, porque o software deve ser fácil de usar. A segurança é um requisito padrão e o software de código aberto é um fator de sucesso importante para muitas empresas.
+    joy:
+        title: Alegria no Trabalho
+        content: O desenvolvimento do Kimai é a combinação ideal da profissão que amo, com suas infinitas possibilidades de aprendizado, e a necessidade de ganhar dinheiro para sustentar minha família. Graças ao Kimai, posso passar mais tempo com minha esposa e meu filho, o que é provavelmente a melhor motivação que se pode imaginar.
+store:
+    name: 'Mercado'
+    subtitle: 'Estenda o seu controle de tempo'
+    description: Encontre extensões e suporte comercial para o Kimai
+blog:
+    name: 'Notícias'
+    description: Notícias sobre o Kimai, o programa de rastreamento de tempo
+    subtitle: Notícias sobre a equipe de desenvolvimento do Kimai
+    title: Notícias do Kimai
+documentation:
+    name: 'Documentação'
+    description: Informações de suporte, manual do usuário e outra documentação para rastreamento de tempo Kimai
+    subtitle: Documentação online para o aplicativo de rastreamento de tempo Kimai
+privacy-policy:
+    name: Política de privacidade
+site-notice:
+    name: Aviso do site
+features:
+    name: Recursos
+docu-developer:
+    name: Desenvolvedor
+docu-onpremise:
+    name: Hospedagem própria
+docu-manual:
+    name: Manual do usuário
+alternatives:
+    name: Comparar o rastreador de tempo
+    description: Kimai é a melhor aplicação de rastreamento de tempo de código aberto disponível, não apenas para equipes baseadas em projetos. Veja como o Kimai se compara às soluções alternativas de rastreamento de tempo para que você possa escolher a certa para a sua organização.
 feature:
     mobile-ready:
         name: "Pronto para dispositivos móveis"
@@ -262,7 +250,7 @@ install:
     kubernetes: Você pode implantar o Kimai no Kubernetes usando nossos Helm Charts.
 developer:
     kevinpapst:
-        intro: Mantenedor do projeto e desenvolvedor do núcleo desde 2007. Deseja fazer do Kimai a melhor empresa de código aberto do mundo em termos de tempo. Pode ser contratado para suporte, para instalações e para o desenvolvimento de plugi-ns personalizados.
+        intro: "Sempre foi meu sonho ganhar a vida com um produto de código aberto. Com o Kimai, consegui desenvolver um software que oferece grande valor aos meus clientes e cujo desenvolvimento me motiva todos os dias.\n\nMeus agradecimentos especiais à grande comunidade por sua lealdade ao longo dos anos. Estou ansioso pelos próximos 10 anos do Kimai 🚀\n"
 price-contract: Sob demanda
 full-documentation: Documentação completa em inglês
 contact-developer: Caso tenha alguma dúvida, use as seguintes informações de contato para entrar em contato diretamente com o desenvolvedor.
@@ -289,17 +277,16 @@ per-year: por ano
 history:
     year-2020: O Kimai é oferecido como um SaaS baseado em assinatura, com um plano gratuito e dois planos pagos.
     early-days-title: Como tudo começou
-    year-2009: Torsten, o desenvolvedor inicial, quer encerrar o Kimai. Kevin entra em cena e se torna o principal mantenedor.
-    year-2019: Os primeiros plug-ins são criados para validar a adequação ao mercado e ao interesse em pagar por software de código aberto.
+    year-2009: Torsten, o desenvolvedor inicial, queria encerrar o Kimai. Kevin entra em cena e se torna o principal mantenedor.
+    year-2019: Os primeiros plug-ins são criados para validar a adequação ao mercado e o interesse em software de código aberto pago.
     early-days-subtitle: O Kimai tem uma longa história e existe desde 2006. Esta é uma breve visão geral de como tudo começou.
-    year-2023: O trabalho árduo finalmente está valendo a pena e o Kimai agora é 100% o meu trabalho em tempo integral. Agradeço a todos vocês!
-    year-2014: A última versão do Kimai 1 é criada, o desenvolvimento é interrompido e não há muito mais atividade.
-    year-2006: A primeira versão do Kimai foi lançada e, aos poucos, ganha uma base crescente de usuários e de desenvolvedores.
-    about: O que começou como um hobby, hoje é o principal aplicativo de rastreamento de tempo de código aberto no mundo. Vamos nos aprofundar em sua história.
-    year-2018: A reescrita do Kimai chega à comunidade e as migrações dos dados funcionam.
-    current: "O Kimai é um aplicativo de controle de tempo com uma longa história. A primeira versão foi lançada em 2006. Por que citando isso? Porque vi muitos serviços surgirem e desaparecerem desde então - acredite quando digo isso: Estou aqui para ficar. Não ganhei a vida com o Kimai por muitos anos, mas foi a diversão que me manteve motivado a aprimorar o Kimai. Acredito que a diversão é um dos principais motivos do sucesso do Kimai.\n\nCriei o Kimai com um único objetivo: controlar as horas de trabalho. O Kimai suporta uma quantidade ilimitada de usuários e entradas de planilhas de horas, de modo que você pode gerenciar todas as suas equipes/departamentos em uma instalação fácil de usar. O Kimai é baseado na Web, portanto, tudo o que você precisa é de um servidor Web com PHP. Ele foi desenvolvido com um design ágil, de modo que você pode até mesmo gerenciar os seus horários usando o seu dispositivo móvel quando estiver em trânsito. O Kimai é traduzido para vários idiomas e as traduções ausentes podem ser facilmente adicionadas usando o padrão de tradução aberta Xliff.\n\nAh, e já mencionei que você pode criar faturas a partir das suas planilhas de horas no navegador? Além de ser personalizável, o Kimai pode ser facilmente ampliado de várias maneiras. Ele foi desenvolvido com base nas estruturas mais populares e modernas e tem uma comunidade ativa que produz muitos plug-ins que ampliam a funcionalidade principal do Kimai.\n\nEu poderia escrever muito mais sobre os recursos e os benefícios que o Kimai pode trazer para você - seja você um freelancer, uma pequena organização ou uma empresa com centenas de funcionários - mas acredito que dar a você a oportunidade de experimentá-lo diretamente é ainda melhor do que mil palavras minhas.\n"
-    past: "O Kimai tem uma longa história e estava muito à frente de seu tempo quando Torsten Höltge e sua equipe começaram a desenvolvê-lo em 2006. Ele tinha um design responsivo (graças a muita magia do Javascript) antes mesmo da palavra ter sido oficialmente inventada.\n\nEle estava prestes a encerrar o projeto por motivos pessoais quando Kevin assumiu o cargo de mantenedor em 2009. Com a ajuda de outros voluntários de código aberto, ele conseguiu mantê-lo vivo e expandi-lo por vários anos.\n\nNesse meio tempo, a comunidade PHP avançou muito e o Kimai se sentiu deixado para trás devido ao seu histórico técnico - construído em torno de vários scripts PHP individuais, todos os quais tinham que estar disponíveis publicamente. Ele também tinha algumas desvantagens importantes, como a extensibilidade limitada e um projeto de banco de dados problemático. Após muitos anos de desenvolvimento, a base de código tornou-se difícil de manter e a lógica estava espalhada por scripts, classes e pela camada de front-end.\n\nPortanto, a ideia de reescrever o Kimai com estruturas modernas existe há muito tempo, também impulsionada por solicitações da comunidade, mas não havia tempo para levar essas ideias adiante. No final de 2017, o Symfony 4.0 foi lançado junto com uma boa pilha de front-end. Foi quando aproveitei a oportunidade para começar a desenvolver a próxima etapa evolutiva: nasceu o Kimai (v2).\n\nO Kimai original foi lançado pela primeira vez em 2006 e tem sido usado por muitas pessoas em todo o mundo. Tenho orgulho disso e da grande comunidade. Agora, após 5 anos, a maioria das pessoas migrou para a nova versão do Kimai e o número de usuários cresce a cada dia. É por isso que gostaria de agradecer a todos que contribuíram para o Kimai.\n"
-    community: "Há uma grande comunidade em torno do Kimai e é impossível listar todos. Abaixo está uma pequena lista de desenvolvedores anteriores. O marketplace lista os plug-ins e os seus respectivos desenvolvedores, o que lhe dará uma boa ideia da quantidade dos desenvolvedores que apoiam o projeto com o seu conhecimento.\n\nMuitas outras pessoas contribuem com o seu tempo livre fornecendo feedback, relatórios de teste e perguntas construtivas. Os seus nomes podem ser encontrados regularmente no rastreador de problemas e no fórum de discussão do GitHub. Meus maiores agradecimentos a todos vocês ❤️\n"
+    year-2023: Todo o trabalho árduo finalmente valeu a pena e o Kimai agora é meu trabalho 100% em tempo integral. Muito obrigado!
+    year-2014: A última versão do Kimai 1 é criada, o desenvolvimento é interrompido e não há muito mais atividade..
+    year-2006: A primeira versão do Kimai foi lançada e, aos poucos, ganhou uma base crescente de usuários e de desenvolvedores.
+    intro: O que começou como um hobby é hoje o principal aplicativo de código aberto para controle de tempo no mundo. Vamos dar uma olhada em sua história.
+    year-2018: A reescrita do Kimai chega à comunidade, a migração de dados funciona e a adoção é estável.
+    current: "O Kimai é um software de controle de tempo com uma longa história, a primeira versão foi lançada em 2006. Por que menciono isso? Porque já vi muitos programas surgirem e desaparecerem desde então - acredite em mim quando digo isso: O Kimai veio para ficar. Passei muitos anos desenvolvendo o Kimai por diversão, hoje o Kimai é o meu negócio e nunca estive tão motivado para continuar a aprimorá-lo.\n\nCriei o Kimai com um único objetivo: registrar, gerenciar, avaliar e contabilizar as horas de trabalho. O Kimai suporta um número ilimitado de usuários, clientes, projetos e registros de horas, para que você possa gerenciar todas as suas equipes em uma instalação fácil de usar. O Kimai está traduzido em dezenas de idiomas e funciona em qualquer dispositivo com acesso à Internet e um navegador, até mesmo em seu dispositivo móvel quando você estiver em movimento, graças ao design responsivo.\n\nVocê pode criar faturas a partir de suas planilhas de horas diretamente no navegador, com modelos de faturas personalizáveis. O Kimai também pode ser ampliado de várias maneiras, especialmente por meio dos vários plug-ins criados por uma comunidade ativa.\n\nSeja você um freelancer, uma pequena organização ou uma empresa com centenas de funcionários, o Kimai pode ajudá-lo a gerenciar seus negócios. Decida por si mesmo e teste o Kimai com a ajuda das instalações de demonstração.\n"
+    past: "O Kimai tem uma longa história e estava muito à frente de seu tempo quando a equipe de Torsten Höltge começou a desenvolvê-lo em 2006. Ele tinha um design responsivo (graças a muita mágica do Javascript) em uma época em que essa palavra ainda não havia sido oficialmente inventada.\nAssumi o desenvolvimento do Kimai em 2009, quando Torsten quis interrompê-lo por falta de tempo, e mantive e ampliei o Kimai por vários anos com a ajuda de outros entusiastas do código aberto.\n\nNesse meio tempo, a comunidade PHP estava fazendo grandes avanços, enquanto o Kimai estava ficando cada vez mais para trás devido à sua história. A base tinha muitos pontos fracos técnicos e, após muitos anos de desenvolvimento, a base de código estava se tornando cada vez mais difícil de manter.\nA ideia de reescrever o Kimai com estruturas modernas já existia há algum tempo, também impulsionada por solicitações da comunidade, mas ninguém tinha os recursos para levar essa ideia adiante. No final de 2017, vários fatores se juntaram e aproveitei o momento para começar a desenvolver a próxima etapa evolutiva, o \"Kimai 2\".\n\nO Kimai original foi lançado pela primeira vez em 2006 e tem sido usado por muitas pessoas em todo o mundo, tenho orgulho disso e também de sua grande comunidade. Gostaria de agradecer a todos que contribuíram para o Kimai.\n"
 store-hero-counter: '%number% de clientes que já estão conosco'
 store-hero-intro: Aprimore o Kimai com nossa grande seleção de plug-ins. Escolha entre dezenas de aplicativos e extensões dentro do ecossistema Kimai e traga superpoderes à sua experiência de controle de tempo agora mesmo!
 cta:
@@ -363,3 +350,32 @@ comparison:
     alternatives: Alternativas ao Kimai
     finding: Encontrando a solução certa de rastreamento de tempo
     use_case: Cada caso de uso, cada empresa e cada fluxo de trabalho é diferente, e seus requisitos precisam ser avaliados antes de se decidir por um rastreador de tempo. Aqui estão algumas alternativas ao Kimai, que serão comparadas em detalhes.
+support:
+    name: "Suporte"
+    description: "Precisa de suporte? Encontre ajuda para usar, instalar ou atualizar o Kimai."
+    intro: "Alguns clientes preferem executar o Kimai internamente, mas não querem abrir mão do suporte profissional. Estou feliz em ajudar e oferecer um plano de suporte para instalações auto-hospedadas."
+    community: "Comunidade"
+    community_cta: "Visite o GitHub"
+    community_intro: |
+        Não há suporte por e-mail disponível para instalações auto-hospedadas gratuitas.
+
+        O suporte da comunidade no GitHub geralmente responde rapidamente. Por favor, pesquise as issues existentes para ver se o seu problema já foi resolvido.
+    cloud: "Clientes da Nuvem"
+    cloud_cta: "Criar um Ticket"
+    cloud_intro: |
+        O suporte por e-mail está disponível para clientes pagantes da Nuvem.
+
+        Os clientes da Nuvem podem esperar respostas dentro de 24 horas, de segunda a sexta-feira, das 10h às 16h CET (exceto feriados).
+    premium: "Contato Direto"
+    premium_cta: "Saiba mais"
+    premium_intro: |
+        O suporte por e-mail e videochamadas estão disponíveis para clientes pagantes.
+
+        Ofereço preços competitivos para que você possa se concentrar em seu negócio. Auxilio com suas perguntas, instalação e atualizações de sua instalação do Kimai.
+    calendar: "Chamada de suporte com compartilhamento de tela"
+    calendar_intro: |
+        Se você deseja uma introdução ao Kimai ou suporte com atualizações, etc., você pode agendar uma sessão paga de compartilhamento de tela com o desenvolvedor, Kevin Papst.
+        Quando você selecionar um horário, será redirecionado para uma página de pagamento do Stripe, após o qual receberá um convite para a sessão.
+    calendar_refund: "Se você não puder comparecer à sua consulta, você deve cancelar com pelo menos 24 horas de antecedência para que ela possa ser reagendada. Não serão feitos reembolsos."
+docu-cloud:
+    name: Nuvem Kimai

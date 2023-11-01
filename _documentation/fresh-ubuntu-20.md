@@ -5,9 +5,15 @@ description: "How to install Kimai on a brand new Ubuntu 20.04 with database, we
 toc: true
 canonical: /documentation/fresh-ubuntu-20.html
 redirect_from: /documentation/development/fresh-ubuntu-20.html
+related:
+    - fresh-ubuntu-18
 ---
 
-{% include alert.html type="warning" alert="This documentation was not yet tested with latest Kimai. Use Ubuntu 22.04 installation instead!" %}
+{% capture latestUbuntu %}
+This documentation is outdated.
+Please upgrade and use <a href="{% link _documentation/fresh-ubuntu-22.md %}">Ubuntu 22.04 LTS</a> instead.
+{% endcapture %}
+{% include alert.html type="danger" alert=latestUbuntu %}
 
 This is a collection of snippets to help you with setting up a fresh Ubuntu 20.04 server for using with Kimai.
 It is neither a fully fledged documentation, explaining each step, nor is it a bash tutorial.

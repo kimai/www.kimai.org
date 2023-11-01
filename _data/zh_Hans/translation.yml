@@ -1,6 +1,5 @@
 made-with-love: '制作者'
 developed-at: '开发于'
-store: '商店'
 access-demo: '访问演示'
 docu-alert-english: '内容仅以英文提供'
 store-contribute-title: '贡献'
@@ -12,16 +11,6 @@ store-plugins-subtitle: '您可以搜索以下 GitHub 主题以查找更多插�
 store-category-plugins: '用于您的 Kimai 安装的插件'
 store-category-apps: '移动设备的原生应用'
 store-category-client: '连接到 Kimai 的其他方式'
-demo-master-title: 当前版本 - 空
-demo-master-description: 当前版本带有附加插件，但没有演示数据。
-demo-stable-title: 当前版本 - 无插件
-demo-stable-description: "当前版本，没有插件，但有演示数据。安装版本： "
-demo-plugins-title: 当前版本
-demo-plugins-description: 当前版本带有来自我们市场的插件和演示数据。
-demo-v2-title: Version 2.0
-demo-v2-description: 即将推出的版本带有额外的插件和演示数据。
-demo-empty-title: 版本 2.0 - 空
-demo-empty-description: 即将推出的带有插件的版本，但没有演示数据。
 demo-reinstall: '演示将在 %X% 分钟内重新安装。'
 homepage-quote-excel: '使用 Kimai，不仅简化了用工作时间提供 Excel 电子表格的无聊过程，它还提供了许多其他令人兴奋的功能，您甚至不知道到目前为止您还缺少这些功能！'
 homepage-features-title: '功能列表'
@@ -54,7 +43,7 @@ plugin-demo-at: '你可以在以下网站测试这个插件'
 plugin-demo-accounts: '在此处查找更多测试帐户'
 read-more: '阅读更多'
 contact: '联系'
-download: '下载'
+download-btn: '下载'
 compatibility: '兼容性'
 compatibility-kimai: '最低 Kimai 版本'
 compatibility-bundle: 'Bundle 版本'
@@ -86,17 +75,10 @@ photos:
     timesheet:
         title: '时间跟踪'
         description: '创建和管理您的工作时间并将其导出为 Excel、PDF 或 HTML'
-donate:
-    introduction: 通过向 Kimai 捐款和赞助开发，您可以帮助我们改善您的时间跟踪体验！
-    please-donate: 开发像 Kimai 这样的免费软件需要花费大量的时间和精力。如果您喜欢 Kimai，如果您每天使用它或在您的公司管理 Kimai，请考虑支持进一步的开发。
-    your-donation: |
-        您的捐款直接用于支持该项目。我是一名致力于 Kimai 的专业软件开发人员，并且热衷于开源软件。
-        最重要的是，通过帮助支持 Kimai 的发展，您正在为让您的生活更轻松的努力做出贡献。现在不是很甜蜜吗？
-
-        感谢您使用 Kimai ！
-
-        请注意，这笔捐款并非针对非营利组织，因此不能从您的税款中扣除。
+donate: 捐款
 demo:
+    name: '演示'
+    description: 直接从我们的演示页面在线测试和评估我们的时间跟踪器 Kimai。
     title: 在其中一个演示中测试 Kimai
     introduction: "尝试 Kimai 时间跟踪演示，我们保证：您将继续使用它！"
     choose: 请选择我们的演示安装之一，以获得对 Kimai 的感觉及其提供的功能的第一印象。
@@ -107,59 +89,65 @@ demo:
     user: 演示用户
     role_user: 用户
     role_admin: 管理员
-menu:
-    default:
-        index:
-            name: '首页'
-            title: 'Kimai - 开源时间跟踪器'
-            brand: 时间追踪器
-            description: Kimai - 为自由职业者、代理机构和公司提供用户和发票处理方面的免费且轻松的时间跟踪。
-        download:
-            name: '下载'
-            title: '下载 Kimai'
-            description: 下载 - Kimai 时间跟踪器
-            intro: We offer several ways to install Kimai. Choose the option that suits you.
-            subtitle: Download and Installation
-        hosted:
-            name: 'Cloud'
-            title: 'Kimai-Cloud - 无需设置即可直接使用 Kimai。免费Kimai托管！'
-        about:
-            name: '关于 Kimai'
-            description: 了解时间跟踪器 Kimai 及其开发者的历史。
-        demo:
-            name: '演示'
-            description: 直接从我们的演示页面在线测试和评估我们的时间跟踪器 Kimai。
-        store:
-            name: '商店'
-            subtitle: '延长你的时间追踪'
-            description: 查找 Kimai 的扩展和商业支持
-        blog:
-            name: '新闻'
-            description: 关于时间跟踪软件 Kimai 的新闻
-            subtitle: 来自 Kimai 开发团队的消息
-            title: News from Kimai
-        documentation:
-            name: '文档'
-            description: Kimai 时间跟踪的支持信息、用户手册和其他文档
-            subtitle: 时间跟踪应用程序 Kimai 的在线文档
-        donate:
-            description: 捐款支持 Kimai
-            name: 捐款
-        privacy-policy:
-            name: 隐私策略
-        site-notice:
-            name: 网站公告
-        features:
-            name: Features
-        docu-developer:
-            name: Developer
-        docu-onpremise:
-            name: Self-hosting
-        docu-manual:
-            name: User manual
-        alternatives:
-            name: Compare time-tracker
-            description: Kimai is the best open source time tracking application available, not only for project-based teams. See how Kimai compares to alternative time tracking solutions so you can choose the right one for your organisation.
+    empty-description: 当前版本，具备特色插件，但没有数据。
+    plugins-description: 当前版本，包含特色插件和演示数据。
+    plugins-title: 特色
+    stable-title: 核心
+    empty-title: 插件
+    stable-description: 最新发布版本，不包含插件，也不包含演示数据。
+index:
+    name: '首页'
+    title: 'Kimai - 开源时间跟踪器'
+    description: Kimai - 为自由职业者、代理机构和公司提供用户和发票处理方面的免费且轻松的时间跟踪。
+download:
+    name: '下载'
+    title: '下载 Kimai'
+    description: 下载 - Kimai 时间跟踪器
+    intro: 我们提供多种安装Kimai的方式。请选择适合您的选项。
+    subtitle: 下载和安装
+hosted:
+    name: 'Cloud'
+    title: 'Kimai-Cloud - 无需设置即可直接使用 Kimai。免费Kimai托管！'
+about:
+    name: '关于 Kimai'
+    description: 了解时间跟踪器 Kimai 及其开发者的历史。
+    collaboration:
+        title: 合作
+        content: 客户喜欢免费支持所带来的便利，交流是我工作的重要部分。我热爱GitHub上的社区互动、协作和敏捷工作。基于您的反馈不断改进，让这个旅程变得非凡。
+    technology:
+        title: 技术
+        content: 作为开发者，我热衷于测试新技术。如果这能改善您与Kimai的互动方式，我会称之为双赢。UI和UX对我来说至关重要，因为软件必须易于使用。安全是默认要求，开源软件对许多企业来说是一个重要的成功因素。
+    joy:
+        title: 工作中的快乐
+        content: Kimai的开发是我热爱的职业与教育的无限可能性的理想结合，也需要赚钱来养家糊口。多亏了Kimai，我可以花更多时间与妻子和孩子在一起，这可能是您可以想象的最好的动力。
+store:
+    name: '商店'
+    subtitle: '延长你的时间追踪'
+    description: 查找 Kimai 的扩展和商业支持
+blog:
+    name: '新闻'
+    description: 关于时间跟踪软件 Kimai 的新闻
+    subtitle: 来自 Kimai 开发团队的消息
+    title: Kimai的新闻
+documentation:
+    name: '文档'
+    description: Kimai 时间跟踪的支持信息、用户手册和其他文档
+    subtitle: 时间跟踪应用程序 Kimai 的在线文档
+privacy-policy:
+    name: 隐私策略
+site-notice:
+    name: 网站公告
+features:
+    name: 功能特点
+docu-developer:
+    name: 开发者
+docu-onpremise:
+    name: 自托管
+docu-manual:
+    name: 用户手册
+alternatives:
+    name: 比较时间跟踪工具
+    description: Kimai是最好的开源时间跟踪应用程序，不仅适用于基于项目的团队。查看Kimai与其他时间跟踪解决方案的比较，以便为您的组织选择合适的解决方案。
 feature:
     mobile-ready:
         name: "移动就绪"
@@ -249,17 +237,17 @@ feature:
         name: 双重认证 (2FA)
         description: 'Kimai 支持使用 TOTP 令牌进行双重身份认证：立即保护您的用户帐户！'
     auth:
-        description: Kimai supports external identity providers and login via LDAP and SAML across multiple providers (such as Google Workspace, Azure AD or Authentik). In addition, two-factor authentication can be enabled via TOTP tokens.
-        name: Authentication and Security
+        description: Kimai支持外部身份提供者，可通过LDAP和SAML跨多个提供者（如Google Workspace、Azure AD或Authentik）进行登录。此外，可以通过TOTP令牌启用双因素身份验证。
+        name: 认证和安全
     reporting:
-        description: Analysis of recorded times, customers, projects and activities. Evaluation according to users, customers, projects, activities, tags, time periods and much more.
-        name: Reports and analyses
+        description: 对记录的时间、客户、项目和活动进行分析。可以根据用户、客户、项目、活动、标签、时间段等等进行评估。
+        name: 报告和分析
 install:
     alert-vps: "在此阶段，无法通过下载 ZIP 文件并将文件上传到您的 Web 服务器来安装 Kimai。这是因为 Composer 需要在命令行上运行。\n\n这并不一定意味着您需要 VPS。一些共享主机为您提供 SSH 访问权限，通过它您应该能够很好地安装 Composer 和 Kimai。\n\n完整的安装说明可以在我们的 %documentation% 中找到。\n"
-    ssh: The recommended method installs Kimai directly on your server.
-    cloud: No need to install Kimai, you can start using it right now.
-    docker: Use our Docker image to install and update Kimai container easily.
-    kubernetes: You can deploy Kimai to Kubernetes using our Helm-Charts.
+    ssh: 推荐的方法是直接在您的服务器上安装Kimai。
+    cloud: 无需安装Kimai，您可以立即开始使用它。
+    docker: 使用我们的Docker镜像轻松安装和更新Kimai容器。
+    kubernetes: 您可以使用我们的Helm-Charts将Kimai部署到Kubernetes上。
 developer:
     kevinpapst:
         intro: 自 2007 年起担任项目维护者和核心开发人员。希望将 Kimai 打造成世界上最好的开源时间跟踪器。可以受雇提供支持、安装和自定义插件开发。
@@ -267,99 +255,132 @@ price-contract: 根据要求
 full-documentation: 此处提供完整文档（仅英文版）。
 contact-developer: 如果你有任何问题，请使用以下联系信息与开发商直接联系。
 homepage:
-    title: Time tracking for project-driven teams
-    intro: Our open-source platform is designed to keep track of and analyze your companies time-data, making it perfect for businesses of all sizes. Kimai helps you keep an eye on time and money.
+    title: 面向项目驱动团队的时间跟踪
+    intro: 我们的开源平台旨在跟踪和分析您公司的时间数据，非常适合各种规模的企业。Kimai帮助您时刻关注时间和金钱。
 section-teaser:
     report:
-        title: Reports
-        description: Reports for the evaluation of users and projects.
+        title: 报告
+        description: 用于对用户和项目进行评估的报告。
     timesheet:
-        title: Time-Tracking
-        description: Easy input of work done and clear control.
+        title: 时间跟踪
+        description: 工作完成的简单输入和清晰的控制。
     work-contract:
-        title: Working time accounts
-        description: Debit and overtime hours, monthly statements.
+        title: 工时账户
+        description: 借方和加班小时，月度报表。
     dashboard:
-        description: Dashboard with configurable widgets.
-        title: Dashboard
+        description: 具有可配置小部件的仪表板。
+        title: 仪表板
     absence:
-        title: Absences
-        description: Holidays, holiday, illness and absences.
+        title: 缺勤
+        description: 假期、节假日、疾病和缺勤。
 per-year: per year
 history:
-    year-2020: Kimai is offered as a subscription based SaaS, with a free and two paid plans.
-    early-days-title: How it all began
-    year-2009: Torsten, the initial developer, wants to close down Kimai. Kevin steps in and becomes maintainer.
-    year-2019: First plugins are created, to validate market-fit and interest in paid open-source software.
-    early-days-subtitle: Kimai has a long history and is around since 2006, this is a brief overview how everything started.
-    year-2023: The hard work is finally paying off and Kimai is now my 100% full-time job. Thank you!
-    year-2014: The last release of Kimai 1 is created, development stales and there is not much more activity.
-    year-2006: The first version of Kimai is release and slowly gains a growing user and developer base.
-    about: What started as a hobby project is now the leading open-source time-tracking application in the world. Let's dive into it's history.
-    year-2018: The re-write of Kimai finds it's way into the community, the data migrations works.
-    current: "Kimai is a time tracking app with a long history. The first version was released in 2006. Why do I mention that? Because I have seen so many services come and go since then - trust me when I say: I'm sticking around. I didn't make a living from Kimai for many years, it was the fun that kept me motivated to improve Kimai. I believe that fun is one of the main reasons for Kimai's success.\n\nI build Kimai for one purpose: to track your working hours. Kimai supports an unlimited number of users and timesheet entries, so you can manage all your teams/departments in one easy to use installation. Kimai is web based, so all you need is a PHP enabled web server. It's built with a responsive design, so you can even track times on your mobile device when you're on the go. Kimai is translated into multiple languages and missing translations can be easily added using the open translation standard Xliff.\n\nOh, and did I mention that you can create invoices from your timesheets in your browser? Not only does it have customisable Kimai can be easily extended in many ways. It's built on the most popular and modern frameworks and has an active community which produces a lot of plugins that extend the core functionality of Kimai.\n\nI could write so much more about the features and benefits that Kimai can bring to you - whether you are a freelancer, a small organisation a small organisation or a company with hundreds of employees - but I think that giving you the opportunity to try it directly is even better than a thousand words from me.\n"
-    past: "Kimai has a long history and was way ahead of its time when Torsten Höltge and his team started developing it in 2006. It had a responsive design (thanks to a lot of Javascript magic) before the word had even been officially invented.\n\nHe was about to shut it down for personal reasons when Kevin stepped in as maintainer in 2009. With the help of other open source volunteers, he was able to keep it alive and expand it for several years.\n\nIn the meantime, the PHP community had made great strides forward, and Kimai felt left behind due to its technical history - built around a lot of individual PHP scripts, all of which had to be publicly available. It also had some major drawbacks, such as limited extensibility and a problematic database design. After many years of development, the codebase had become difficult to maintain and the logic was scattered across scripts, classes and the frontend layer.\n\nTherefore, the idea of rewriting Kimai with modern frameworks has been around for a long time, also driven by community requests, but there wasn't time to push these ideas forward. At the end of 2017, Symfony 4.0 was released together with a nice frontend stack. That's when I took the opportunity to start developing the next evolutionary step: the Kimai (v2) was born.\n\nThe original Kimai was first released in 2006 and has been used by many people around the world. I am proud of that and of the great community. Now, after 5 years, most people have migrated to the new Kimai version and the number of users is growing every day. That's why I would like to thank everyone who has contributed to Kimai.\n"
-    community: "There is a great and large community around Kimai and it is impossible to list everyone. Below is a short list of past developers. The marketplace lists plugins and their developers, which will give you a good idea of the developers who support the project with their knowledge. who support the project with their knowledge.\n\nMany other people contribute their free time by providing feedback, test reports and constructive questions. Their names can be found regularly in the GitHub issue tracker and discussion forum. My biggest thanks go to all of you ❤️\n"
-store-hero-counter: '%number% customers are already with us'
-store-hero-intro: Enhance Kimai with our great selection of plugins. Choose from dozens of apps and extensions within the Kimai ecosystem and bring super-power to your time-tracking experience now!
+    year-2020: Kimai以基于订阅的SaaS形式提供，有免费和两个付费计划。
+    early-days-title: 一切始于何时
+    year-2009: 最初的开发者Torsten想关闭Kimai。Kevin介入并成为维护者。
+    year-2019: 创建了第一个插件，以验证市场适应性和对付费开源软件的兴趣。
+    early-days-subtitle: Kimai有着悠久的历史，自2006年以来一直存在，这是一个简要概述一切是如何开始的。
+    year-2023: 辛勤的工作终于有了回报，Kimai现在是我100%的全职工作。谢谢！
+    year-2014: 创建了Kimai 1的最后一个版本，开发停滞不前，活动不多。
+    year-2006: Kimai的第一个版本发布，逐渐获得了越来越多的用户和开发者基础。
+    intro: 从一个爱好项目开始，现在是世界上领先的开源时间跟踪应用程序。让我们深入了解它的历史。
+    year-2018: Kimai的重写进入社区，数据迁移正常工作。
+    current: |
+        Kimai是一款有着悠久历史的时间跟踪应用。首个版本于2006年发布。为什么我要提到这一点呢？因为自那时以来，我见证了许多服务的兴衰 - 请相信我，我会一直坚守在这里。多年来，我没有从Kimai中谋生，是乐趣让我保持动力，不断改进Kimai。我相信乐趣是Kimai成功的主要原因之一。
+
+        我创建Kimai的目的只有一个：追踪你的工时。Kimai支持无限数量的用户和时间表条目，因此您可以在一个易于使用的安装中管理所有团队/部门。Kimai是基于Web的，所以您只需要一个启用了PHP的Web服务器。它采用响应式设计，因此即使在外出时，您也可以在移动设备上追踪时间。Kimai已被翻译成多种语言，可以使用开放翻译标准Xliff轻松添加缺失的翻译。
+
+        哦，我提到了您可以从浏览器中的时间表创建发票吗？Kimai可以以多种方式轻松扩展。它建立在最流行和现代的框架上，并拥有积极的社区，制作了许多插件，扩展了Kimai的核心功能。
+
+        我可以写更多关于Kimai可以为您带来的功能和好处的内容 - 无论您是自由职业者、小型组织还是拥有数百名员工的公司 - 但我认为让您直接尝试它要比我千言万语更好。
+    past: |
+        Kimai有着悠久的历史，在2006年Torsten Höltge和他的团队开始开发它时，它已经领先于时代。在"响应式设计"这个词正式被发明之前，它就已经拥有了响应式设计（多亏了大量的Javascript魔法）。
+
+        由于个人原因，Torsten Höltge在2009年准备关闭它时，Kevin成为了维护者。在其他开源志愿者的帮助下，他让它继续生存并不断发展了多年。
+
+        与此同时，PHP社区取得了巨大的进步，由于其技术历史（建立在许多单独的PHP脚本周围，所有这些脚本都必须公开可用），Kimai感到落后。它还存在一些重大缺点，如有限的可扩展性和问题数据库设计。经过多年的开发，代码库变得难以维护，逻辑分散在脚本、类和前端层中。
+
+        因此，使用现代框架重写Kimai的想法已经存在很长时间，也受到社区的要求推动，但没有时间来推进这些想法。2017年底，Symfony 4.0与一个出色的前端堆栈一起发布。那时我抓住机会开始开发下一个进化步骤：Kimai（v2）诞生了。
+
+        最初的Kimai于2006年首次发布，被世界各地的许多人使用。我为此感到自豪，也为伟大的社区感到自豪。现在，经过5年，大多数人已经迁移到新的Kimai版本，用户数量每天都在增长。因此，我想感谢所有为Kimai做出贡献的人。
+store-hero-counter: '已有%number%位客户选择了我们'
+store-hero-intro: 通过我们丰富的插件选择来增强Kimai。在Kimai生态系统中，可以选择数十种应用程序和扩展，让您的时间跟踪体验更上一层楼！
 cta:
     tech-support:
-        question: Tech &amp; Business Support
-        button: Let's work together
-        answer: I ensure support for all applications I've built and I will assist you and your team.
+        question: 技术和商业支持
+        button: 让我们一起合作
+        answer: 我确保为我构建的所有应用程序提供支持，我将协助您和您的团队。
     get-started:
-        answer: Start your time-tracking journey now
-        button: Get support
-        question: Ready to get started?
+        answer: 立即开始您的时间跟踪之旅
+        button: 获取支持
+        question: 准备好开始了吗？
     best-features:
-        answer: Kimai provides a wide range of features that build around your project time-tracking needs and best practices solutions to our customers making their bookkeeping easier.
-        question: The best time-tracking features for you
-        button: More features via plugin
+        answer: Kimai提供了广泛的功能，围绕您的项目时间跟踪需求和为我们的客户提供最佳实践解决方案，使他们的记账工作更轻松。
+        question: 最适合您的最佳时间跟踪功能
+        button: 通过插件获取更多功能
 highlight:
-    title: Supports your business
-    subtitle: Kimai has all the business core features you need to setup your time-tracking workflows and integrate it with your existing infrastructure.
+    title: 支持您的业务
+    subtitle: Kimai拥有您需要设置时间跟踪工作流程并将其与现有基础设施集成的所有业务核心功能。
     reasons:
-        enterprise: Enterprise add-ons
-        oss: Open Source
-        versions: Cloud and On-Premise
-        gdpr: GDPR compliant
-store-hero-title: Add-ons, Apps, Support
+        enterprise: 企业级附加组件
+        oss: 开源
+        versions: 云和自托管
+        gdpr: 符合GDPR要求
+store-hero-title: 插件、应用、支持
 description: 描述
 oss-cloud-compare:
-    saas: Hosted for you
-    onpremise: Hosted by you
-    intro: Kimai is an open source software that is available for self-hosting as well as SaaS.
-    title: One software, two versions
+    saas: 由我们托管
+    onpremise: 由您托管
+    intro: Kimai是一款开源软件，可以供自行托管以及作为SaaS使用。
+    title: 一个软件，两个版本
 section-features:
-    subtitle: Kimai offers much more than just time-tracking, here is a list of other important business functions.
-    title: What can Kimai do for you?
-share-post: Share this post
-about-who: Who is building Kimai?
-store-hero-subtitle: Welcome to the Kimai store
+    subtitle: Kimai提供的不仅仅是时间跟踪，这里列出了其他重要的业务功能。
+    title: Kimai能为您做什么？
+share-post: 分享此文章
+about-who: 谁在构建Kimai？
+store-hero-subtitle: 欢迎来到Kimai商店
 testimonials:
-    title: What users say about Kimai
-footer: Free and easy to use time tracking for freelancers, agencies and companies. Kimai is open source software available for self-hosting and as SaaS.
-slogan: Time-tracking made easy
+    title: 用户对Kimai的评价
+footer: 自由且易于使用的时间跟踪工具，适用于自由职业者、机构和公司。Kimai是一款开源软件，可供自行托管和作为SaaS使用。
+slogan: 时间跟踪变得简单
 comparison:
-    footer-title: Compare
-    is_oss: Open source software
-    location: Data server in EU
-    invoices: Invoicing
-    backup_frequency: Backups
-    custom_domain: Custom domain
-    max_activities: Max. activities
-    automatic_upgrades: Automatic upgrades
-    max_projects: Max. projects
+    footer-title: 对比
+    is_oss: 开源软件
+    location: 数据服务器在欧洲
+    invoices: 发票
+    backup_frequency: 备份
+    custom_domain: 自定义域名
+    max_activities: 最大活动数
+    automatic_upgrades: 自动升级
+    max_projects: 最大项目数
     rest_api: JSON API
-    on_premise: Available on-premises
-    export: Data export
-    support: Support
-    max_customers: Max. customers
-    tls_included: TLS Certificate
-    cloud: Available in the cloud
-    server_maintenance: Server maintenance
+    on_premise: 可自托管
+    export: 数据导出
+    support: 技术支持
+    max_customers: 最大客户数
+    tls_included: TLS证书
+    cloud: 可用于云端
+    server_maintenance: 服务器维护
     saml: SAML
-    ip_restriction: IP access restriction
-    finding: Finding the right time-tracking solution
-    alternatives: Kimai alternatives
-    use_case: Every use case, every company and every workflow is different and your requirements need to be evaluated before deciding on a time tracking solution. Here are some popular alternatives to Kimai, which we will compare in detail to find the best option for you.
+    ip_restriction: IP访问限制
+    finding: 寻找合适的时间跟踪解决方案
+    alternatives: Kimai替代方案
+    use_case: 每个用例、每个公司和每个工作流都是不同的，您的需求需要在决定时间跟踪解决方案之前进行评估。以下是一些流行的Kimai替代方案，我们将详细比较它们，以找到最适合您的选项。
+support:
+    name: 技术支持
+    community_cta: 访问 GitHub
+    cloud_cta: 创建工单
+    description: 需要支持吗？找到有关使用、安装或更新Kimai的帮助。
+    calendar_intro: "如果您需要Kimai的介绍或更新等支持，您可以预订与开发者Kevin Papst的有偿屏幕共享会话。\n选择时间槽后，您将被重定向到Stripe支付页面，之后您将收到会话的邀请。\n"
+    premium: 直接联系
+    community_intro: "对于免费的自托管安装，没有提供电子邮件支持。\n\nGitHub上的社区支持通常会迅速回应。请搜索现有问题，看看您的问题是否已经得到解决。\n"
+    premium_intro: "付费客户可以使用电子邮件支持和视频通话。\n\n我提供竞争力的定价，以便您专注于您的业务。我将协助您解决问题，安装和升级Kimai。\n"
+    cloud: 云端客户
+    calendar: 带屏幕共享的支持电话
+    premium_cta: 了解更多
+    calendar_refund: 如果您无法参加预约，您必须提前至少24小时取消预约，以便可以重新安排。不提供退款。
+    intro: 一些客户倾向于内部运行Kimai，但不想错过专业支持。我很高兴为自托管安装提供支持计划。
+    community: 社区
+    cloud_intro: "付费云客户可使用电子邮件支持。\n\n云客户可以在中欧时间（CET）周一至周五的10:00至16:00之间（不包括公共假期）内收到回复。\n"
+docu-cloud:
+    name: Kimai-Cloud

@@ -1,6 +1,5 @@
 made-with-love: 'Tillverkad av'
 developed-at: 'Utvecklad på'
-store: 'Marknad'
 access-demo: 'Få tillgång till demo'
 docu-alert-english: 'Innehållet är endast tillgängligt på engelska'
 store-contribute-title: 'Bidra'
@@ -12,16 +11,6 @@ store-plugins-subtitle: 'Du kan söka igenom följande GitHub-ämnen för att hi
 store-category-plugins: 'Plugins för din Kimai-installation'
 store-category-apps: 'Inbyggda appar för din mobila enhet'
 store-category-client: 'Andra sätt att ansluta till Kimai'
-demo-master-title: 'Aktuell version - Tom'
-demo-master-description: 'Den aktuella versionen med ytterligare plugins, men utan demodata.'
-demo-stable-title: 'Aktuell version - Inga plugins'
-demo-stable-description: "Den nuvarande versionen, utan plugins, men med demodata. Installerad version: "
-demo-plugins-title: 'Aktuell version'
-demo-plugins-description: 'Den aktuella versionen med plugins från vår marknadsplats och med demodata.'
-demo-v2-title: 'Version 2.0'
-demo-v2-description: 'Den kommande versionen med ytterligare plugins och demodata.'
-demo-empty-title: 'Version 2.0 - Tom'
-demo-empty-description: 'Den kommande versionen med plugins, men utan demodata.'
 demo-reinstall: 'Demon kommer att installeras om om %X% minuter.'
 homepage-quote-excel: 'Med Kimai är den tråkiga processen att mata Excel-kalkylblad med dina arbetstider inte bara förenklad, den erbjuder också dussintals andra spännande funktioner som du inte ens vet att du saknar än så länge!'
 homepage-features-title: 'Funktionslista'
@@ -55,7 +44,7 @@ plugin-demo-at: 'Du kan testa detta plugin på'
 plugin-demo-accounts: 'Hitta fler testkonton här'
 read-more: 'Läs mer'
 contact: 'Kontakt'
-download: 'Ladda ner'
+download-btn: 'Ladda ner'
 compatibility: 'Kompatibilitet'
 compatibility-kimai: 'Minsta Kimai-version'
 compatibility-bundle: 'Paketversion'
@@ -87,17 +76,10 @@ photos:
     timesheet:
         title: 'Tidsspårning'
         description: 'Skapa och hantera dina arbetstider och exportera dem till Excel, PDF eller HTML'
-donate:
-    introduction: 'Genom att donera till Kimai och sponsra utvecklingen hjälper du oss att förbättra din tidsspårningsupplevelse!'
-    please-donate: 'Att utveckla en gratis programvara som Kimai tar mycket tid och ansträngning. Om du gillar Kimai, om du använder det dagligen eller administrerar Kimai i ditt företag, överväg att stödja vidareutveckling.'
-    your-donation: |
-        Din donation går direkt till att stödja projektet. Jag är en professionell mjukvaruutvecklare dedikerad till Kimai och med ett hjärta för programvara med öppen källkod.
-        Viktigast av allt, genom att hjälpa till att stödja utvecklingen av Kimai bidrar du till en insats som gör ditt liv enklare. Nu är inte det sött?
-
-        Tack för att du använder Kimai!
-
-        Observera att denna donation inte är riktad till ideell verksamhet och därmed inte avdragsgill på din skatt.
+donate: 'Donera'
 demo:
+    name: 'Demo'
+    description: 'Testa och utvärdera vår tidsspårare Kimai online, direkt från vår demosida.'
     title: 'Testa Kimai i en av demos'
     introduction: "Testa Kimai-demon för tidsspårning och vi lovar: du kommer att fortsätta använda den!"
     choose: 'Välj en av våra demoinstallationer för att få ett första intryck av hur Kimai mår och vilken funktionalitet den ger.'
@@ -108,59 +90,65 @@ demo:
     role_teamlead: 'Lagledare'
     role_admin: 'Administratör'
     role_super: 'Super-Admin'
-menu:
-    default:
-        index:
-            name: 'Hem'
-            brand: 'Tidsspårare'
-            title: 'Kimai - öppen källkod tidsspårare'
-            description: 'Kimai - gratis och enkel tidsspårning för frilansare, byråer och företag med användar- och fakturahantering.'
-        download:
-            name: 'Ladda ner'
-            title: 'Ladda ner Kimai'
-            description: 'Ladda ner - Kimai tidsspårare'
-            intro: We offer several ways to install Kimai. Choose the option that suits you.
-            subtitle: Download and Installation
-        hosted:
-            name: 'Moln'
-            title: 'Kimai-moln — Använd Kimai direkt utan installation. Gratis Kimai-värd!'
-        about:
-            name: 'Om Kimai'
-            description: 'Ta reda på historien om tidsspåraren Kimai och dess utvecklare.'
-        demo:
-            name: 'Demo'
-            description: 'Testa och utvärdera vår tidsspårare Kimai online, direkt från vår demosida.'
-        store:
-            name: 'Marknad'
-            description: 'Hitta tillägg och kommersiell support för Kimai'
-            subtitle: 'Förläng din tidsregistrering'
-        blog:
-            name: 'Nyheter'
-            description: 'Nyheter om Kimai, programvaran för tidsspårning'
-            subtitle: 'Nyheter från Kimai utvecklingsteam'
-            title: News from Kimai
-        documentation:
-            name: 'Dokumentation'
-            description: 'Supportinformation, användarmanual och annan dokumentation för Kimai tidsspårning'
-            subtitle: 'Onlinedokumentation för tidsspårningsapplikationen Kimai'
-        donate:
-            name: 'Donera'
-            description: 'Stöd Kimai med en donation'
-        privacy-policy:
-            name: 'Integritetspolicy'
-        site-notice:
-            name: 'Webbplatsmeddelande'
-        features:
-            name: Funktioner
-        docu-developer:
-            name: Utvecklare
-        docu-onpremise:
-            name: Egenhosting
-        docu-manual:
-            name: Användarmanual
-        alternatives:
-            name: Jämför tidsspårningsverktyg
-            description: "Kimai är den bästa öppna källkods-tidsspårningsapplikationen som finns tillgänglig, inte bara för projektbaserade team. Se hur Kimai jämför sig med alternativa tidsspårningslösningar så att du kan välja den rätta för din organisation."
+    empty-description: Den nuvarande versionen med utvalda plugins, utan data.
+    plugins-description: Den nuvarande versionen med utvalda plugins och demo-data.
+    plugins-title: Utvalda
+    stable-title: Kärna
+    empty-title: Plugins
+    stable-description: Den senaste versionen, utan plugins, utan demo-data.
+index:
+    name: 'Hem'
+    title: 'Kimai - öppen källkod tidsspårare'
+    description: 'Kimai - gratis och enkel tidsspårning för frilansare, byråer och företag med användar- och fakturahantering.'
+download:
+    name: 'Ladda ner'
+    title: 'Ladda ner Kimai'
+    description: 'Ladda ner - Kimai tidsspårare'
+    intro: We offer several ways to install Kimai. Choose the option that suits you.
+    subtitle: Download and Installation
+hosted:
+    name: 'Moln'
+    title: 'Kimai-moln — Använd Kimai direkt utan installation. Gratis Kimai-värd!'
+about:
+    name: 'Om Kimai'
+    description: 'Ta reda på historien om tidsspåraren Kimai och dess utvecklare.'
+    collaboration:
+        title: Samarbete
+        content: Kunden uppskattar bekvämligheten som kommer med gratis support och utbyte är en väsentlig del av mitt arbete. Jag älskar community-engagemanget på GitHub, samarbetet och det agila arbetet. Den ständiga förbättringen baserad på dina återkopplingar gör den här resan till en extraordinär upplevelse.
+    technology:
+        title: Teknologi
+        content: Som utvecklare älskar jag att testa nya teknologier. Och om detta förbättrar sättet du interagerar med Kimai skulle jag kalla det en win-win-situation. Användargränssnitt och användarupplevelse är avgörande för mig eftersom mjukvara måste vara enkel att använda. Säkerhet är en standardkrav och öppen källkodsprogramvara är en viktig framgångsfaktor för många företag.
+    joy:
+        title: Glädje i arbetet
+        content: Utvecklingen av Kimai är den idealiska kombinationen av yrket jag älskar, med sina oändliga möjligheter till utbildning, och behovet av att tjäna pengar för att stödja min familj. Tack vare Kimai kan jag tillbringa mer tid med min fru och mitt barn, vilket förmodligen är den bästa motivationen du någonsin kan tänka dig.
+store:
+    name: 'Marknad'
+    description: 'Hitta tillägg och kommersiell support för Kimai'
+    subtitle: 'Förläng din tidsregistrering'
+blog:
+    name: 'Nyheter'
+    description: 'Nyheter om Kimai, programvaran för tidsspårning'
+    subtitle: 'Nyheter från Kimai utvecklingsteam'
+    title: News from Kimai
+documentation:
+    name: 'Dokumentation'
+    description: 'Supportinformation, användarmanual och annan dokumentation för Kimai tidsspårning'
+    subtitle: 'Onlinedokumentation för tidsspårningsapplikationen Kimai'
+privacy-policy:
+    name: 'Integritetspolicy'
+site-notice:
+    name: 'Webbplatsmeddelande'
+features:
+    name: Funktioner
+docu-developer:
+    name: Utvecklare
+docu-onpremise:
+    name: Egenhosting
+docu-manual:
+    name: Användarmanual
+alternatives:
+    name: Jämför tidsspårningsverktyg
+    description: "Kimai är den bästa öppna källkods-tidsspårningsapplikationen som finns tillgänglig, inte bara för projektbaserade team. Se hur Kimai jämför sig med alternativa tidsspårningslösningar så att du kan välja den rätta för din organisation."
 feature:
     mobile-ready:
         name: "Mobilklar"
@@ -295,11 +283,26 @@ history:
     year-2023: Det hårda arbetet lönar sig äntligen, och Kimai är nu mitt heltidsjobb. Tack!
     year-2014: Den sista versionen av Kimai 1 skapas, utvecklingen avtar och det finns inte mycket aktivitet.
     year-2006: Den första versionen av Kimai släpps och får sakta men säkert en växande användar- och utvecklarbas.
-    about: Vad som började som ett hobbyprojekt är nu den ledande öppna källkods-tidsspårningsapplikationen i världen. Låt oss dyka in i dess historia.
+    intro: Vad som började som ett hobbyprojekt är nu den ledande öppna källkods-tidsspårningsapplikationen i världen. Låt oss dyka in i dess historia.
     year-2018: Kimais omstrukturering når gemenskapen, datamigreringarna fungerar.
-    current: "Kimai is a time tracking app with a long history. The first version was released in 2006. Why do I mention that? Because I have seen so many services come and go since then - trust me when I say: I'm sticking around. I didn't make a living from Kimai for many years, it was the fun that kept me motivated to improve Kimai. I believe that fun is one of the main reasons for Kimai's success.\n\nI build Kimai for one purpose: to track your working hours. Kimai supports an unlimited number of users and timesheet entries, so you can manage all your teams/departments in one easy to use installation. Kimai is web based, so all you need is a PHP enabled web server. It's built with a responsive design, so you can even track times on your mobile device when you're on the go. Kimai is translated into multiple languages and missing translations can be easily added using the open translation standard Xliff.\n\nOh, and did I mention that you can create invoices from your timesheets in your browser? Not only does it have customisable Kimai can be easily extended in many ways. It's built on the most popular and modern frameworks and has an active community which produces a lot of plugins that extend the core functionality of Kimai.\n\nI could write so much more about the features and benefits that Kimai can bring to you - whether you are a freelancer, a small organisation a small organisation or a company with hundreds of employees - but I think that giving you the opportunity to try it directly is even better than a thousand words from me.\n"
-    past: "Kimai has a long history and was way ahead of its time when Torsten Höltge and his team started developing it in 2006. It had a responsive design (thanks to a lot of Javascript magic) before the word had even been officially invented.\n\nHe was about to shut it down for personal reasons when Kevin stepped in as maintainer in 2009. With the help of other open source volunteers, he was able to keep it alive and expand it for several years.\n\nIn the meantime, the PHP community had made great strides forward, and Kimai felt left behind due to its technical history - built around a lot of individual PHP scripts, all of which had to be publicly available. It also had some major drawbacks, such as limited extensibility and a problematic database design. After many years of development, the codebase had become difficult to maintain and the logic was scattered across scripts, classes and the frontend layer.\n\nTherefore, the idea of rewriting Kimai with modern frameworks has been around for a long time, also driven by community requests, but there wasn't time to push these ideas forward. At the end of 2017, Symfony 4.0 was released together with a nice frontend stack. That's when I took the opportunity to start developing the next evolutionary step: the Kimai (v2) was born.\n\nThe original Kimai was first released in 2006 and has been used by many people around the world. I am proud of that and of the great community. Now, after 5 years, most people have migrated to the new Kimai version and the number of users is growing every day. That's why I would like to thank everyone who has contributed to Kimai.\n"
-    community: "There is a great and large community around Kimai and it is impossible to list everyone. Below is a short list of past developers. The marketplace lists plugins and their developers, which will give you a good idea of the developers who support the project with their knowledge. who support the project with their knowledge.\n\nMany other people contribute their free time by providing feedback, test reports and constructive questions. Their names can be found regularly in the GitHub issue tracker and discussion forum. My biggest thanks go to all of you ❤️\n"
+    current: |
+        Kimai är en tidsspårningsapp med en lång historia. Den första versionen släpptes redan 2006. Varför nämner jag det? Eftersom jag har sett så många tjänster komma och gå sedan dess - tro mig när jag säger: Jag är här för att stanna. Jag tjänade inte mitt uppehälle från Kimai under många år, det var nöjet som höll mig motiverad att förbättra Kimai. Jag tror att nöje är en av huvudorsakerna till Kimais framgång.
+
+        Jag bygger Kimai för ett enda syfte: att spåra dina arbetstimmar. Kimai stöder ett obegränsat antal användare och tidregistreringar, så att du kan hantera alla dina team/avdelningar i en enkel installation. Kimai är webbaserad, så allt du behöver är en webbserver som stöder PHP. Den är byggd med responsiv design, så du kan även spåra tid på din mobila enhet när du är på språng. Kimai är översatt till flera språk, och saknade översättningar kan enkelt läggas till med hjälp av den öppna översättningsstandarden Xliff.
+
+        Åh, och har jag nämnt att du kan skapa fakturor från dina tidrapporter i din webbläsare? Kimai kan enkelt utökas på många sätt. Den är byggd på de mest populära och moderna ramverken och har en aktiv community som producerar många plugins som utökar Kimais grundläggande funktioner.
+
+        Jag skulle kunna skriva så mycket mer om de funktioner och fördelar som Kimai kan erbjuda dig - oavsett om du är frilansare, en liten organisation eller ett företag med hundratals anställda - men jag tror att att ge dig möjligheten att prova det direkt är ännu bättre än tusen ord från mig.
+    past: |
+        Kimai har en lång historia och var långt före sin tid när Torsten Höltge och hans team började utveckla det 2006. Det hade en responsiv design (tack vare mycket Javascript-magi) innan ordet ens officiellt hade uppfunnits.
+
+        Han var på väg att stänga ner det av personliga skäl när Kevin tog över som ansvarig 2009. Med hjälp av andra frivilliga inom open source höll han det levande och växande i flera år.
+
+        Under tiden hade PHP-samhället gjort stora framsteg, och Kimai kändes efterlämnad på grund av sin tekniska historia - byggd kring många enskilda PHP-skript, som alla måste vara offentligt tillgängliga. Det hade också vissa stora nackdelar, som begränsad utbyggbarhet och en problematisk databasdesign. Efter många års utveckling hade kodbasen blivit svår att underhålla och logiken var utspridd över skript, klasser och frontend-lagret.
+
+        Därför hade idén att skriva om Kimai med moderna ramverk funnits länge, också driven av begäran från communityn, men det hade inte funnits tid att driva dessa idéer framåt. I slutet av 2017 släpptes Symfony 4.0 tillsammans med en bra frontend-stack. Det var då jag tog chansen att börja utveckla det nästa evolutionära steget: Kimai (v2) föddes.
+
+        Den ursprungliga Kimai släpptes första gången 2006 och har använts av många människor över hela världen. Jag är stolt över detta och över den fantastiska communityn. Nu, efter 5 år, har de flesta migrerat till den nya Kimai-versionen och antalet användare växer varje dag. Därför vill jag tacka alla som har bidragit till Kimai.
 store-hero-counter: '%number% kunder är redan med oss'
 store-hero-intro: Förbättra Kimai med vårt stora urval av tillägg. Välj bland dussintals appar och tillägg inom Kimais ekosystem och ge superkraft åt din tidsspårningsupplevelse nu!
 cta:
@@ -363,3 +366,32 @@ comparison:
     alternatives: Alternativ till Kimai
     finding: Att hitta rätt tidsspårningslösning
     use_case: Varje användningsfall, varje företag och varje arbetsflöde är olika, och dina krav måste utvärderas innan du bestämmer dig för en tidsspårningslösning. Här är några populära alternativ till Kimai, som vi kommer att jämföra i detalj för att hitta den bästa lösningen för dig.
+support:
+    name: "Support"
+    description: "Behöver du support? Hitta hjälp med att använda, installera eller uppdatera Kimai."
+    intro: "Vissa kunder föredrar att köra Kimai internt men vill inte missa professionell support. Jag är glad att kunna hjälpa dig och erbjuda ett supportavtal för självhostade installationer."
+    community: "Community"
+    community_cta: "Besök GitHub"
+    community_intro: |
+        Det finns ingen e-postsupport tillgänglig för gratis, självhostade installationer.
+
+        Communitysupport på GitHub svarar vanligtvis snabbt. Sök efter befintliga ärenden för att se om ditt problem redan har lösts.
+    cloud: "Molnkunder"
+    cloud_cta: "Skapa ett ärende"
+    cloud_intro: |
+        E-postsupport är tillgänglig för betalande molnkunder.
+
+        Molnkunder kan förvänta sig svar inom 24 timmar, måndag till fredag mellan kl. 10:00 och 16:00 CET (undantaget allmänna helgdagar).
+    premium: "Direktkontakt"
+    premium_cta: "Läs mer"
+    premium_intro: |
+        E-postsupport och videokonferenser är tillgängliga för betalande kunder.
+
+        Jag erbjuder konkurrenskraftiga priser så att du kan fokusera på din verksamhet. Jag hjälper dig med dina frågor, installationer och uppgraderingar av din Kimai-installation.
+    calendar: "Supportsamtal med skärmdelning"
+    calendar_intro: |
+        Om du vill ha en introduktion till Kimai eller support med uppdateringar etc. kan du boka en betald session med utvecklaren, Kevin Papst, där skärmdelning ingår.
+        När du väljer en tidslucka kommer du att omdirigeras till en betalingssida från Stripe, varefter du kommer att få en inbjudan till sessionen.
+    calendar_refund: "Om du inte kan delta i din bokade tid måste du avboka minst 24 timmar i förväg så att den kan ombokas. Inga återbetalningar kommer att göras."
+docu-cloud:
+    name: Kimai-Cloud

@@ -16,15 +16,13 @@ The main reasons are technical, mainly caused by:
 
 The following sections only cover paid plugins created by Kevin Papst, the maintainer of Kimai. Plugins from other developers might handle that differently.
 
-## A new merchant
+## New merchant: Lemon Squeezy
 
-Kimai 1 plugins were sold through the Gumroad store. 
-This merchant has made some decisions, that I am no longer willing to support.
-So I looked for a new merchant and found Lemonsqueezy.
-Customers who bought from Gumroad before will still have access to their plugins, but the new ones for Kimai 2.0 can only be purchased from
-the new store at [https://store.kimai.org](https://store.kimai.org) or directly from the marketplace entries. 
+Kimai 1 Plugins were sold exclusively through the Gumroad store. 
+Gumroad made some decisions, that I disliked and therefor I looked ourtfor a potential replacement.
+I found Lemon Squeezy, who is now my primary merchant, but I still offer my Plugins at Gumroad as well, because they support PayPal.
 
-<a href="https://store.kimai.org" target="_blank" class="btn btn-primary">Purchase Kimai plugins</a>
+Some customers reported problems with Visa CC payments at Lemon Squeezy. If you are one of them: please retry the purchase at Gumroad.  
 
 ## Discounts for existing customer
 

@@ -4,11 +4,12 @@ navigation: Ubuntu 22.04
 description: "How to install Kimai on a brand new Ubuntu 22.04 with database, webserver and SSL certificate"
 toc: true
 canonical: /documentation/fresh-ubuntu-22.html
+related:
+    - fresh-ubuntu-18
+    - fresh-ubuntu-20
 ---
 
-{% include alert.html type="success" alert="This documentation was tested with Kimai 2.0." %}
-
-This is a collection of snippets to help you with setting up a fresh Ubuntu 22.04 server for using with Kimai.
+This is a collection of snippets to help you with setting up a fresh Ubuntu 22.04 LTS server for using with Kimai.
 It is neither a fully fledged documentation, explaining each step, nor is it a bash tutorial.
 
 Please see it as a personal snippet collection... in which I assume:
@@ -162,9 +163,8 @@ vim .env
 
 Configure the database connection and adjust the settings to your needs (compare with the [original .env file]({{ site.kimai_v2_repo }}/blob/main/.env.dist)):
 ```
-DATABASE_URL=mysql://kimai:my-super-secret-password@127.0.0.1:3306/kimai?charset=utf8mb4&serverVersion=5.7
+DATABASE_URL=mysql://kimai:my-super-secret-password@127.0.0.1:3306/kimai?charset=utf8mb4&serverVersion=10.6.12-MariaDB
 ```
- 
 
 Then execute the Kimai installation:
 ```bash

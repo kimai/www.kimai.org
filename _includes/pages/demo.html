@@ -1,0 +1,76 @@
+{% assign introduction = site.data[page.lang].translation.demo.introduction %}
+{% assign title = site.data[page.lang].translation.demo.title %}
+
+{% include hero-text-round-dark.html title=title intro=introduction %}
+
+<section class="container py-5 my-md-2 my-lg-4 my-xl-5">
+    <div class="row justify-content-center pt-5 pb-1 pb-sm-2 pb-md-3">
+
+        <p>{{ site.data[page.lang].translation.demo.choose }} {{ site.data[page.lang].translation.demo.reinstall }}</p>
+
+        <div class="row row-cols-1 row-cols-sm-3 justify-content-center g-4 pb-xl-3">
+            <div class="col text-center border-end px-5">
+                {% assign pluginsTitle = site.data[page.lang].translation.demo.plugins-title %}
+                {% assign pluginsDescription = site.data[page.lang].translation.demo.plugins-description %}
+                {% include card-demo.html id="plugins" title=pluginsTitle description=pluginsDescription url="https://demo.kimai.org" color="success" icon="bx-plug" %}
+            </div>
+            <div class="col text-center border-end px-5">
+                {% assign emptyTitle = site.data[page.lang].translation.demo.empty-title %}
+                {% assign emptyDescription = site.data[page.lang].translation.demo.empty-description %}
+                {% include card-demo.html id="empty" title=emptyTitle description=emptyDescription url="https://demo-empty.kimai.org" color="primary" icon="bx-test-tube" %}
+            </div>
+            <div class="col text-center px-5">
+                {% assign stableTitle = site.data[page.lang].translation.demo.stable-title %}
+                {% assign stableDescription = site.data[page.lang].translation.demo.stable-description %}
+                {% include card-demo.html id="stable" title=stableTitle description=stableDescription url="https://demo-stable.kimai.org" color="secondary" icon="bx-file-blank" %}
+            </div>
+        </div>
+
+        <h3 class="mt-5">{{ site.data[page.lang].translation.demo.user }}</h3>
+
+        <p>{{ site.data[page.lang].translation.demo.accounts }}</p>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Username</th>
+                <th style="text-align: center">Password</th>
+                <th style="text-align: center">API</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <strong>john_user</strong> (User)</td>
+                <td style="text-align: center"><strong>kitten</strong></td>
+                <td style="text-align: center">api_kitten</td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>tony_teamlead</strong> (Teamlead)</td>
+                <td style="text-align: center"><strong>kitten</strong></td>
+                <td style="text-align: center">api_kitten</td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>anna_admin</strong> (Administrator)</td>
+                <td style="text-align: center"><strong>kitten</strong></td>
+                <td style="text-align: center">api_kitten</td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>susan_super</strong> (Super-Admin)</td>
+                <td style="text-align: center"><strong>kitten</strong></td>
+                <td style="text-align: center">api_kitten</td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>admin</strong> (Super-Admin)</td>
+                <td style="text-align: center"><strong>password</strong></td>
+                <td style="text-align: center">-</td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+</section>

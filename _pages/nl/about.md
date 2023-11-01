@@ -1,8 +1,9 @@
 ---
 title: "About Kimai"
 lang: nl
-layout: about
+layout: default
 permalink: /nl/about.html
+redirect_from: ["/it/donate.html"]
 ---
 
-{% include pages/about.md %}
+{% include pages/about.html %}

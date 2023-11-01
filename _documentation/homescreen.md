@@ -1,6 +1,6 @@
 ---
-title: Kimai application
-description: Adding Kimai to your 
+title: Use Kimai as app
+description: "Install Kimai as application on any of your devices: iPhone, iPad, Android, Mac, Windows, Chrome OS" 
 ---
 
 One of the great things about Kimai is that it's a webapp, which means there is no need to install anything!

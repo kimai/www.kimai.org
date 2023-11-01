@@ -1,11 +1,10 @@
-If you need help with the installation of Kimai or want to update Kimai to the latest version, I am available for paid support.
-Even though all the necessary steps are documented ([here]({% link _documentation/installation.md %}) and [here]({% link _documentation/updates.md %})), 
-they might cause problems for users who are unfamiliar with server systems.
+If you need help installing Kimai or updating to the latest version, I am available for paid support.
 
-In almost 20 years of work experience I have seen a lot of different server systems and know that its not always easy to integrate new software 
-into your existing setup.
+Although all necessary steps are documented, they may cause problems for users who are not familiar with server systems.
 
-If you want to hire me for Kimai installation or updates, please contact me via [support@kimai.org](mailto:support@kimai.org).
+In almost 20 years of work experience I have seen a lot of different server systems and know that it is not always easy to integrate new software into your existing setup.
+
+If you want to hire me for Kimai installation or updates, please contact me via email.
 
 ### Required information
 
@@ -16,7 +15,7 @@ Depending on the type of setup, I might ask you for different types of credentia
 - a prepared domain with SSL certificate
 - login to your hosters web interface
 
-If you use a shared hoster and don't know what all that means, don't worry - just drop me an [email](mailto:support@kimai.org).
+If you use a shared hoster and don't know what all that means, don't worry - just drop me an email.
 
 ### Pricing
 

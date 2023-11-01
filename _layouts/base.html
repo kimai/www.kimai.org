@@ -19,19 +19,19 @@
             {% assign page_title = site.data[page.lang].translation[page.translation_key] %}
         {%- elsif layout.translation_key != nil -%}
             {% assign page_title = site.data[page.lang].translation[layout.translation_key] %}
-        {%- elsif site.data[page.lang].translation.menu.default[page.slug].title != nil -%}
-            {% assign page_title = site.data[page.lang].translation.menu.default[page.slug].title %}
+        {%- elsif site.data[page.lang].translation[page.slug].title != nil -%}
+            {% assign page_title = site.data[page.lang].translation[page.slug].title %}
             {%- assign prefix = '' %}
-        {%- elsif site.data[page.lang].translation.menu.default[page.slug].name != nil -%}
-            {% assign page_title = site.data[page.lang].translation.menu.default[page.slug].name %}
+        {%- elsif site.data[page.lang].translation[page.slug].name != nil -%}
+            {% assign page_title = site.data[page.lang].translation[page.slug].name %}
         {%- elsif site.data[page.lang].store.items[page.slug].title != nil -%}
             {% assign page_title = site.data[page.lang].store.items[page.slug].title %}
         {%- endif -%}
         {{- page_title }}{% unless page_title contains 'Kimai'%}{{ prefix -}}{% endunless -%}
     </title>
     {% assign page_description = page.excerpt %}
-    {%- if site.data[page.lang].translation.menu.default[page.slug].description != nil -%}
-        {% assign page_description = site.data[page.lang].translation.menu.default[page.slug].description %}
+    {%- if site.data[page.lang].translation[page.slug].description != nil -%}
+        {% assign page_description = site.data[page.lang].translation[page.slug].description %}
     {%- elsif site.data[page.lang].store.items[page.slug].intro != nil -%}
         {% assign page_description = site.data[page.lang].store.items[page.slug].intro %}
     {%- elsif page.description != nil -%}

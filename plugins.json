@@ -17,7 +17,7 @@ permalink: /plugins.json
             {%- endif -%}
         {%- endfor -%}
         {%- assign developer = site.data.developer[settings.developer] -%}
-        "name": "{{ product.title }}",
+        "name": "{{ translation.title }}",
         "url": "{{ product.url | absolute_url }}",
         {%- if settings.lemonsqueezy != nil %}
         "buy": "{{ settings.lemonsqueezy }}",

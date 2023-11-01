@@ -85,7 +85,7 @@ If you are a user of the MR plugins, I would be happy if you could give the new 
 
 As a bonus I have a promo code for you 🦄
 
-The code `MRIGRATE50` gives you 10% off the price (it is valid until 2023-12-31) 
+The code `MRIGRATE10` gives you 10% off the price (it is valid until 2023-12-31) 
 
 ### What's next?
 

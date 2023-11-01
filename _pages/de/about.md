@@ -1,7 +1,9 @@
 ---
 title: "Über Kimai"
-layout: about
+layout: default
 lang: de
 permalink: /de/ueber-kimai.html
+redirect_from: ["/spenden.html", "/de/spenden.html"]
 ---
- 
+
+{% include pages/about.html %}

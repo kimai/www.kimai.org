@@ -13,7 +13,7 @@ of the following tasks within Kimai you need to reload its cache:
 - [updated a configuration]({% link _documentation/local-yaml.md %})
 - [installed a bundle]({% link _documentation/plugins.md %})
 - [updated a bundle]({% link _documentation/plugins.md %})
-
+ 
 Kimai not only caches configuration files, but also the list of installed bundles and other information which are 
 time-consuming to calculate and which should not be evaluated on every request.
 
@@ -25,7 +25,7 @@ read the [Installation docs]({% link _documentation/installation.md %}) for more
 Depending on your setup and the way you call the cache command, you have to fix directory permissions afterwards. 
  
 {% include documentation/file-permissions.html %} 
-
+  
 ### Troubleshooting
 
 #### Something went wrong / 500 error

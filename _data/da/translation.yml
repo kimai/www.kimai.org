@@ -1,6 +1,5 @@
 made-with-love: 'Made by'
 developed-at: 'Developed at'
-store: 'Marketplace'
 access-demo: 'Access demo'
 docu-alert-english: 'Content is only available in English'
 store-contribute-title: 'Contribute'
@@ -12,16 +11,6 @@ store-plugins-subtitle: 'You can search through the following GitHub topics to f
 store-category-plugins: 'Plugins for your Kimai installation'
 store-category-apps: 'Native apps for your mobile device'
 store-category-client: 'Other ways to connect to Kimai'
-demo-master-title: 'Current version - Empty'
-demo-master-description: 'The current version with additional plugins, but without demo data.'
-demo-stable-title: 'Current version - No plugins'
-demo-stable-description: "The current version, without plugins, but with demo data. Installed version: "
-demo-plugins-title: 'Current version'
-demo-plugins-description: 'The current version with plugins from our marketplace and with demo data.'
-demo-v2-title: 'Version 2.0'
-demo-v2-description: 'The coming version with additional plugins and demo data.'
-demo-empty-title: 'Version 2.0 - Empty'
-demo-empty-description: 'The upcoming version with plugins, but without demo data.'
 demo-reinstall: 'Demo will be reinstalled in %X% minutes.'
 homepage-quote-excel: 'With Kimai, the boring process of feeding Excel spreadsheets with your working hours is not only simplified, it also offers dozens of other exciting features that you don''t even know you''re missing so far!'
 homepage-features-title: 'Feature list'
@@ -55,7 +44,7 @@ plugin-demo-at: 'You can test this plugin at'
 plugin-demo-accounts: 'Find more test accounts here'
 read-more: 'Read more'
 contact: 'Kontakt'
-download: 'Download'
+download-btn: 'Download'
 compatibility: 'Compatibility'
 compatibility-kimai: 'Minimum Kimai version'
 compatibility-bundle: 'Bundle version'
@@ -87,17 +76,10 @@ photos:
     timesheet:
         title: 'Time-Tracking'
         description: 'Create and manage your working times and export them to Excel, PDF or HTML'
-donate:
-    introduction: 'By donating to Kimai and sponsoring the development you help us to improve your time-tracking experience!'
-    please-donate: 'Developing a free software like Kimai takes a lot of time and effort. If you like Kimai, if you use it on a daily basis or administrate Kimai in your company, please consider to support further development.'
-    your-donation: |
-        Your donation goes directly into supporting the project. I am a professional software-developer dedicated to Kimai and with a heart for open source software.
-        Most importantly, by helping support the development of Kimai you are contributing to an effort that makes your life easier. Now isn't that sweet?
-
-        Thank you for using Kimai!
-
-        Please note, this donation is not directed towards a non-profit and thus not deductible on your taxes.
+donate: 'Donate'
 demo:
+    name: 'Demo'
+    description: 'Test and evaluate our time-tracker Kimai online, directly from our demo page.'
     title: 'Test Kimai in one of the demos'
     introduction: "Try out the Kimai time-tracking demo, and we promise: you'll keep on using it!"
     choose: 'Please choose one of our demo installations, to get a first impression on how Kimai feels and which functionality it provides.'
@@ -108,59 +90,65 @@ demo:
     role_teamlead: 'Teamlead'
     role_admin: 'Administrator'
     role_super: 'Super-Admin'
-menu:
-    default:
-        index:
-            name: 'Home'
-            brand: 'Time-tracker'
-            title: 'Kimai - Open Source time-tracker'
-            description: 'Kimai - free and easy time-tracking for freelancer, agencies and companies with user and invoice handling.'
-        download:
-            name: 'Download'
-            title: 'Download Kimai'
-            description: 'Download - Kimai time-tracker'
-            intro: We offer several ways to install Kimai. Choose the option that suits you.
-            subtitle: Download and Installation
-        hosted:
-            name: 'Cloud'
-            title: 'Kimai-Cloud — Use Kimai directly without setup. Free Kimai hosting!'
-        about:
-            name: 'About Kimai'
-            description: 'Find out about the history of the time-tracker Kimai and its developer.'
-        demo:
-            name: 'Demo'
-            description: 'Test and evaluate our time-tracker Kimai online, directly from our demo page.'
-        store:
-            name: 'Marketplace'
-            description: 'Find extensions and commercial support for Kimai'
-            subtitle: 'Extend your time-tracking'
-        blog:
-            name: 'News'
-            description: 'News about Kimai, the time-tracking software'
-            subtitle: 'News from the Kimai development team'
-            title: News from Kimai
-        documentation:
-            name: 'Documentation'
-            description: 'Support information, user manual and other documentation for Kimai time-tracking'
-            subtitle: 'Online documentation for the time-tracking application Kimai'
-        donate:
-            name: 'Donate'
-            description: 'Support Kimai with a donation'
-        privacy-policy:
-            name: 'Privacy policy'
-        site-notice:
-            name: 'Site notice'
-        features:
-            name: Features
-        docu-developer:
-            name: Developer
-        docu-onpremise:
-            name: Self-hosting
-        docu-manual:
-            name: User manual
-        alternatives:
-            name: Compare time-tracker
-            description: Kimai is the best open source time tracking application available, not only for project-based teams. See how Kimai compares to alternative time tracking solutions so you can choose the right one for your organisation.
+    empty-description: The current version with featured plugins, without data.
+    plugins-description: The current version with featured plugins and demo data.
+    plugins-title: Featured
+    stable-title: Core
+    empty-title: Plugins
+    stable-description: The latest release, without plugins, without demo data.
+index:
+    name: 'Home'
+    title: 'Kimai - Open Source time-tracker'
+    description: 'Kimai - free and easy time-tracking for freelancer, agencies and companies with user and invoice handling.'
+download:
+    name: 'Download'
+    title: 'Download Kimai'
+    description: 'Download - Kimai time-tracker'
+    intro: We offer several ways to install Kimai. Choose the option that suits you.
+    subtitle: Download and Installation
+hosted:
+    name: 'Cloud'
+    title: 'Kimai-Cloud — Use Kimai directly without setup. Free Kimai hosting!'
+about:
+    name: 'About Kimai'
+    description: 'Find out about the history of the time-tracker Kimai and its developer.'
+    joy:
+        title: Joy at work
+        content: The development of Kimai is the ideal combination of the profession I love, with its infinite possibilities of education, and the need to earn money to support my family. Thanks to Kimai, I can spend more time with my wife and child, which is probably the best motivation you can ever imagine.
+    technology:
+        title: Technology
+        content: As developer, I love testing new technologies. And if this improves the way you interact with Kimai, I'd call it a win-win situation. UI and UX are crucial to me because software has to be easy to use. Security is default requirement and open source software is a important success factor for many businesses.
+    collaboration:
+        content: Customers appreciate the convenience that comes with free support and the exchange is an essential part of my work. I love the community engagement at GitHub, the collaboration and the agile work. The constant improvement based on your feedback makes this journey an extraordinary experience.
+        title: Collaboration
+store:
+    name: 'Marketplace'
+    description: 'Find extensions and commercial support for Kimai'
+    subtitle: 'Extend your time-tracking'
+blog:
+    name: 'News'
+    description: 'News about Kimai, the time-tracking software'
+    subtitle: 'News from the Kimai development team'
+    title: News from Kimai
+documentation:
+    name: 'Documentation'
+    description: 'Support information, user manual and other documentation for Kimai time-tracking'
+    subtitle: 'Online documentation for the time-tracking application Kimai'
+privacy-policy:
+    name: 'Privacy policy'
+site-notice:
+    name: 'Site notice'
+features:
+    name: Features
+docu-developer:
+    name: Developer
+docu-onpremise:
+    name: Self-hosting
+docu-manual:
+    name: User manual
+alternatives:
+    name: Compare time-tracker
+    description: Kimai is the best open source time tracking application available, not only for project-based teams. See how Kimai compares to alternative time tracking solutions so you can choose the right one for your organisation.
 feature:
     mobile-ready:
         name: "Mobile ready"
@@ -295,11 +283,10 @@ history:
     year-2023: The hard work is finally paying off and Kimai is now my 100% full-time job. Thank you!
     year-2014: The last release of Kimai 1 is created, development stales and there is not much more activity.
     year-2006: The first version of Kimai is release and slowly gains a growing user and developer base.
-    about: What started as a hobby project is now the leading open-source time-tracking application in the world. Let's dive into it's history.
+    intro: What started as a hobby project is now the leading open-source time-tracking application in the world. Let's dive into it's history.
     year-2018: The re-write of Kimai finds it's way into the community, the data migrations works.
     current: "Kimai is a time tracking app with a long history. The first version was released in 2006. Why do I mention that? Because I have seen so many services come and go since then - trust me when I say: I'm sticking around. I didn't make a living from Kimai for many years, it was the fun that kept me motivated to improve Kimai. I believe that fun is one of the main reasons for Kimai's success.\n\nI build Kimai for one purpose: to track your working hours. Kimai supports an unlimited number of users and timesheet entries, so you can manage all your teams/departments in one easy to use installation. Kimai is web based, so all you need is a PHP enabled web server. It's built with a responsive design, so you can even track times on your mobile device when you're on the go. Kimai is translated into multiple languages and missing translations can be easily added using the open translation standard Xliff.\n\nOh, and did I mention that you can create invoices from your timesheets in your browser? Not only does it have customisable Kimai can be easily extended in many ways. It's built on the most popular and modern frameworks and has an active community which produces a lot of plugins that extend the core functionality of Kimai.\n\nI could write so much more about the features and benefits that Kimai can bring to you - whether you are a freelancer, a small organisation a small organisation or a company with hundreds of employees - but I think that giving you the opportunity to try it directly is even better than a thousand words from me.\n"
     past: "Kimai has a long history and was way ahead of its time when Torsten Höltge and his team started developing it in 2006. It had a responsive design (thanks to a lot of Javascript magic) before the word had even been officially invented.\n\nHe was about to shut it down for personal reasons when Kevin stepped in as maintainer in 2009. With the help of other open source volunteers, he was able to keep it alive and expand it for several years.\n\nIn the meantime, the PHP community had made great strides forward, and Kimai felt left behind due to its technical history - built around a lot of individual PHP scripts, all of which had to be publicly available. It also had some major drawbacks, such as limited extensibility and a problematic database design. After many years of development, the codebase had become difficult to maintain and the logic was scattered across scripts, classes and the frontend layer.\n\nTherefore, the idea of rewriting Kimai with modern frameworks has been around for a long time, also driven by community requests, but there wasn't time to push these ideas forward. At the end of 2017, Symfony 4.0 was released together with a nice frontend stack. That's when I took the opportunity to start developing the next evolutionary step: the Kimai (v2) was born.\n\nThe original Kimai was first released in 2006 and has been used by many people around the world. I am proud of that and of the great community. Now, after 5 years, most people have migrated to the new Kimai version and the number of users is growing every day. That's why I would like to thank everyone who has contributed to Kimai.\n"
-    community: "There is a great and large community around Kimai and it is impossible to list everyone. Below is a short list of past developers. The marketplace lists plugins and their developers, which will give you a good idea of the developers who support the project with their knowledge. who support the project with their knowledge.\n\nMany other people contribute their free time by providing feedback, test reports and constructive questions. Their names can be found regularly in the GitHub issue tracker and discussion forum. My biggest thanks go to all of you ❤️\n"
 store-hero-counter: '%number% customers are already with us'
 store-hero-intro: Enhance Kimai with our great selection of plugins. Choose from dozens of apps and extensions within the Kimai ecosystem and bring super-power to your time-tracking experience now!
 cta:
@@ -363,3 +350,21 @@ comparison:
     finding: Finding the right time-tracking solution
     alternatives: Kimai alternatives
     use_case: Every use case, every company and every workflow is different and your requirements need to be evaluated before deciding on a time tracking solution. Here are some popular alternatives to Kimai, which we will compare in detail to find the best option for you.
+support:
+    name: Support
+    community_cta: Visit GitHub
+    cloud_cta: Create a Ticket
+    description: Need support? Find help with using, installing or updating Kimai.
+    calendar_intro: "If you would like an introduction to Kimai or support with updates etc., you can book a paid screen sharing session with the developer, Kevin Papst.\nWhen you select a time slot, you will be redirected to a Stripe payment page, after which you will receive an invitation to the session.\n"
+    premium: Direct Contact
+    community_intro: "There is no email support available for free, self-hosted installations.\n\nCommunity support on GitHub usually responds quickly. Please search the existing issues to see if your problem has already been solved.\n"
+    premium_intro: "Email support and video calls are available for paying customers.\n\nI offer competitive pricing so you can focus on your business. I assist with your questions, installation and upgrades of your Kimai installation.\n"
+    cloud: Cloud Customers
+    calendar: Support call with screen sharing
+    premium_cta: Learn more
+    calendar_refund: If you are unable to attend your appointment, you must cancel at least 24 hours in advance so that it can be rescheduled. No refunds will be given.
+    intro: Some customers prefer to run Kimai internally but don't want to miss out on professional support. I'm pleased to assist you and offer a support plan for self-hosted installations.
+    community: Community
+    cloud_intro: "Email support is available to paying Cloud customers.\n\nCloud customers can expect responses within 24 hours, Monday to Friday between 10am and 4pm CET (excluding public holidays).\n"
+docu-cloud:
+    name: Kimai-Cloud

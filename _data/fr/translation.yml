@@ -1,6 +1,5 @@
 made-with-love: Réalisé par
 developed-at: Développé à
-store: Magasin
 access-demo: Accéder à la démo
 docu-alert-english: Le contenu est uniquement disponible en anglais
 store-contribute-title: Contribuer
@@ -44,7 +43,7 @@ plugin-demo-at: Vous pouvez tester ce greffon à l'adresse suivante
 plugin-demo-accounts: Vous trouverez d'autres comptes d'essai ici
 read-more: Lire la suite
 contact: Contact
-download: Télécharger
+download-btn: Télécharger
 compatibility: Compatibilité
 compatibility-kimai: Version minimale de Kimai
 compatibility-bundle: Version groupée
@@ -65,17 +64,10 @@ photos:
     timesheet:
         title: Suivi du temps
         description: Suivez et gérez vos heures de travail avec Kimai ou exportez-les vers Excel, PDF ou HTML
-donate:
-    introduction: En faisant un don à Kimai et en soutenant le développement, vous nous aidez à améliorer votre expérience de suivi du temps !
-    please-donate: Développer un logiciel libre comme Kimai demande beaucoup de temps et d'efforts. Si vous aimez Kimai, si vous l'utilisez tous les jours ou si vous utilisez Kimai dans votre entreprise, veuillez envisager de soutenir le développement futur en faisant un don.
-    your-donation: |
-        Votre don est directement affecté au soutien du projet. Je suis un développeur de logiciels professionnel qui développe constamment Kimai et j'ai à cœur de participer à la communauté de l'open source.
-        En soutenant le développement de Kimai, vous contribuez à vous faciliter la vie. N'est-ce pas merveilleux ?
-
-        Merci beaucoup d'utiliser Kimai et de soutenir le développement !
-
-        Veuillez noter que ce don n'est pas destiné à une œuvre de bienfaisance et n'est donc pas déductible de vos impôts.
+donate: Faire un don
 demo:
+    name: Démo
+    description: Testez notre système de suivi du temps Kimai, directement en ligne dans l'une de nos installations de démonstration.
     title: Testez Kimai dans une de nos démos
     introduction: "Essayez la démo de suivi du temps de Kimai et nous vous le promettons : Votre prochaine étape sera de le télécharger !"
     choose: "Choisissez l'une de nos installations de démonstration de Kimai, où vous pourrez avoir une première impression sur ce logiciel et les fonctionnalités qu'il offre."
@@ -86,59 +78,65 @@ demo:
     role_teamlead: Chef d'équipe
     role_admin: Administrator
     role_super: Super-Admin
-menu:
-    default:
-        index:
-            name: Accueil
-            brand: Suivi du temps
-            title: Kimai - Suivi du temps à code ouvert
-            description: Kimai - Suivi du temps de travail gratuit et facile à utiliser pour les indépendants, les agences et les entreprises.
-        download:
-            name: Installation
-            title: Installation de Kimai
-            description: Téléchargement et installation avec SSH, Docker et Kubernetes - Suivi du temps Kimai
-            intro: Nous proposons plusieurs façons d'installer Kimai. Choisissez l'option qui vous convient.
-            subtitle: Téléchargement et Installation
-        hosted:
-            name: Cloud
-            title: Kimai-Cloud – Utilisez Kimai directement sans configuration. Hébergement gratuit de Kimai !
-        about:
-            name: À propos de Kimai
-            description: Qu'est-ce qui se cache derrière l'application de suivi du temps Kimai ? Apprenez-en plus sur elle, son histoire et son développeur.
-        demo:
-            name: Démo
-            description: Testez notre système de suivi du temps Kimai, directement en ligne dans l'une de nos installations de démonstration.
-        store:
-            name: Magasin
-            subtitle: Développez votre saisie du temps
-            description: Extensions et services pour Kimai
-        blog:
-            name: Actualités
-            description: "Actualités sur le système open-source de suivi du temps Kimai"
-            subtitle: Nouvelles de l'équipe de développement Kimai
-            title: News from Kimai
-        documentation:
-            name: Documentation
-            description: "Informations de support, manuel d'utilisation et autres documents pour le système d'enregistrement des temps Kimai"
-            subtitle: "Il s'agit de la documentation officielle de l'application de suivi du temps Kimai"
-        donate:
-            description: Supporter Kimai, fait un don
-            name: Faire un don
-        privacy-policy:
-            name: Politique de confidentialité
-        site-notice:
-            name: Mentions légales
-        features:
-            name: Fonctionnalités
-        docu-developer:
-            name: Développeur
-        docu-onpremise:
-            name: Auto-hébergement
-        docu-manual:
-            name: Manuel de l'utilisateur
-        alternatives:
-            name: Comparer le suivi du temps
-            description: Kimai est la meilleure application open source de suivi du temps disponible, non seulement pour les équipes axées sur les projets. Découvrez comment Kimai se compare aux solutions de suivi du temps alternatives afin que vous puissiez choisir la bonne pour votre organisation.
+    empty-description: La version actuelle avec des plugins en vedette, sans données.
+    plugins-description: La version actuelle avec des plugins en vedette et des données de démonstration.
+    plugins-title: En vedette
+    stable-title: Noyau
+    empty-title: Plugins
+    stable-description: La dernière version, sans plugins, sans données de démonstration.
+index:
+    name: Accueil
+    title: Kimai - Suivi du temps à code ouvert
+    description: Kimai - Suivi du temps de travail gratuit et facile à utiliser pour les indépendants, les agences et les entreprises.
+download:
+    name: Installation
+    title: Installation de Kimai
+    description: Téléchargement et installation avec SSH, Docker et Kubernetes - Suivi du temps Kimai
+    intro: Nous proposons plusieurs façons d'installer Kimai. Choisissez l'option qui vous convient.
+    subtitle: Téléchargement et Installation
+hosted:
+    name: Cloud
+    title: Kimai-Cloud – Utilisez Kimai directement sans configuration. Hébergement gratuit de Kimai !
+about:
+    name: À propos de Kimai
+    description: Qu'est-ce qui se cache derrière l'application de suivi du temps Kimai ? Apprenez-en plus sur elle, son histoire et son développeur.
+    collaboration:
+        title: Collaboration
+        content: Les clients apprécient la commodité offerte par le support gratuit, et l'échange est une partie essentielle de mon travail. J'apprécie l'engagement de la communauté sur GitHub, la collaboration et le travail agile. L'amélioration constante basée sur vos commentaires rend cette expérience exceptionnelle.
+    technology:
+        title: Technologie
+        content: En tant que développeur, j'aime tester de nouvelles technologies. Et si cela améliore la façon dont vous interagissez avec Kimai, je considère que c'est une situation gagnant-gagnant. L'interface utilisateur (UI) et l'expérience utilisateur (UX) sont cruciales pour moi, car le logiciel doit être facile à utiliser. La sécurité est une exigence par défaut, et le logiciel open source est un facteur de succès important pour de nombreuses entreprises.
+    joy:
+        title: Joie au travail
+        content: Le développement de Kimai est la combinaison idéale de la profession que j'aime, avec ses possibilités infinies d'éducation, et du besoin de gagner de l'argent pour soutenir ma famille. Grâce à Kimai, je peux passer plus de temps avec ma femme et mon enfant, ce qui est probablement la meilleure motivation que l'on puisse imaginer.
+store:
+    name: Magasin
+    subtitle: Développez votre saisie du temps
+    description: Extensions et services pour Kimai
+blog:
+    name: Actualités
+    description: "Actualités sur le système open-source de suivi du temps Kimai"
+    subtitle: Nouvelles de l'équipe de développement Kimai
+    title: News from Kimai
+documentation:
+    name: Documentation
+    description: "Informations de support, manuel d'utilisation et autres documents pour le système d'enregistrement des temps Kimai"
+    subtitle: "Il s'agit de la documentation officielle de l'application de suivi du temps Kimai"
+privacy-policy:
+    name: Politique de confidentialité
+site-notice:
+    name: Mentions légales
+features:
+    name: Fonctionnalités
+docu-developer:
+    name: Développeur
+docu-onpremise:
+    name: Auto-hébergement
+docu-manual:
+    name: Manuel de l'utilisateur
+alternatives:
+    name: Comparer le suivi du temps
+    description: Kimai est la meilleure application open source de suivi du temps disponible, non seulement pour les équipes axées sur les projets. Découvrez comment Kimai se compare aux solutions de suivi du temps alternatives afin que vous puissiez choisir la bonne pour votre organisation.
 feature:
     mobile-ready:
         name: "Adapté aux mobiles"
@@ -250,16 +248,6 @@ newsletter:
     introduction: Inscrivez-vous à notre lettre d'information et restez informé·e des mises à jour de Kimai et des greffons.
     email-title: Votre adresse courriel
     email-help: Indiquez votre adresse courriel pour vous abonner.
-demo-v2-description: La version à venir avec des plugins supplémentaires et des données de démonstration.
-demo-empty-title: Version 2.0 - Vide
-demo-empty-description: La prochaine version avec greffons, mais sans données de démonstration.
-demo-master-title: Version actuelle - Vide
-demo-stable-title: Version actuelle - Pas de greffons
-demo-stable-description: 'La version actuelle, sans greffons, mais avec des données de démonstration. Version installée : '
-demo-plugins-title: Version actuelle
-demo-master-description: La version actuelle avec des plugins supplémentaires, mais sans données de démonstration.
-demo-plugins-description: La version actuelle avec les greffons de notre place de marché et avec les données de démonstration.
-demo-v2-title: Version 2.0
 developer:
     kevinpapst:
         intro: Responsable du projet et développeur principal depuis 2009. Entièrement concentré sur la réussite de Kimai. Est disponible pour l'assistance, les installations et le développement de plugins personnalisés.
@@ -295,12 +283,8 @@ history:
     year-2023: Le travail acharné porte enfin ses fruits, et Kimai est maintenant mon travail à temps plein à 100 %. Merci !
     year-2014: La dernière version de Kimai 1 est créée, le développement s'arrête et il n'y a plus beaucoup d'activité.
     year-2006: La première version de Kimai est publiée et gagne progressivement une base d'utilisateurs et de développeurs de plus en plus grande.
-    about: Ce qui a commencé comme un projet de loisir est maintenant l'application de suivi du temps open source leader dans le monde. Plongeons dans son histoire.
+    intro: Ce qui a commencé comme un projet de loisir est maintenant l'application de suivi du temps open source leader dans le monde. Plongeons dans son histoire.
     year-2018: La refonte de Kimai trouve sa place dans la communauté, les migrations de données fonctionnent.
-    community: |
-        Il existe une grande communauté autour de Kimai et il est impossible d'énumérer toutes les personnes impliquées. Vous trouverez ci-dessous une courte liste d'anciens développeurs. Le Marketplace contient une liste de plugins et de leurs développeurs, cela vous donne une bonne idée des développeurs qui soutiennent le projet grâce à leurs connaissances.
-
-        Il y a aussi de nombreuses personnes qui contribuent pendant leur temps libre et qui donnent leur avis, fournissent des critiques et posent des questions constructives. Vous trouverez leurs noms à l'adresse suivante GitHub. Mes remerciements les plus sincères à vous tous ❤️
     current: |
         Kimai est un logiciel de suivi du temps qui a une longue histoire. La première version a été publiée en 2006. Pourquoi en parle-t-on ? Parce que nous avons vu de nombreux programmes aller et venir au cours de la dernière décennie - faites-nous confiance quand nous disons :nous resterons sur le marché. Nous n'avons jamais vécu de Kimai, c'est le plaisir qui nous motive à améliorer Kimai. Nous pensons que c'est l'une des principales raisons du succès de Kimai.
 
@@ -382,3 +366,32 @@ comparison:
     alternatives: Alternatives à Kimai
     finding: Trouver la bonne solution de suivi du temps
     use_case: Chaque cas d'utilisation, chaque entreprise et chaque flux de travail sont différents, et vos besoins doivent être évalués avant de décider d'une solution de suivi du temps. Voici quelques alternatives populaires à Kimai que nous comparerons en détail pour trouver la meilleure option pour vous.
+support:
+    name: "Support"
+    description: "Besoin de support ? Trouvez de l'aide pour l'utilisation, l'installation ou la mise à jour de Kimai."
+    intro: "Certains clients préfèrent exécuter Kimai en interne mais ne veulent pas renoncer à un support professionnel. Je suis ravi de vous aider et de proposer un plan de support pour les installations en auto-hébergement."
+    community: "Communauté"
+    community_cta: "Visitez GitHub"
+    community_intro: |
+        Aucun support par e-mail n'est disponible pour les installations en auto-hébergement gratuites.
+
+        Le support de la communauté sur GitHub répond généralement rapidement. Veuillez rechercher les problèmes existants pour voir si votre problème a déjà été résolu.
+    cloud: "Clients Cloud"
+    cloud_cta: "Créez un ticket"
+    cloud_intro: |
+        Le support par e-mail est disponible pour les clients Cloud payants.
+
+        Les clients Cloud peuvent s'attendre à des réponses dans les 24 heures, du lundi au vendredi de 10h à 16h CET (sauf les jours fériés).
+    premium: "Contact direct"
+    premium_cta: "En savoir plus"
+    premium_intro: |
+        Le support par e-mail et les appels vidéo sont disponibles pour les clients payants.
+
+        Je propose des tarifs compétitifs pour que vous puissiez vous concentrer sur votre entreprise. J'assiste avec vos questions, l'installation et les mises à jour de votre installation Kimai.
+    calendar: "Appel de support avec partage d'écran"
+    calendar_intro: |
+        Si vous souhaitez une introduction à Kimai ou un support pour les mises à jour, etc., vous pouvez réserver une session payante de partage d'écran avec le développeur, Kevin Papst.
+        Lorsque vous sélectionnez un créneau horaire, vous serez redirigé vers une page de paiement Stripe, après quoi vous recevrez une invitation à la session.
+    calendar_refund: "Si vous ne pouvez pas assister à votre rendez-vous, vous devez l'annuler au moins 24 heures à l'avance afin qu'il puisse être reporté. Aucun remboursement ne sera effectué."
+docu-cloud:
+    name: Kimai-Cloud
