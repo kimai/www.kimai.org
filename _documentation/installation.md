@@ -103,11 +103,11 @@ Oh ... wait! Before you leave, please read the [initial setup guide]({% link _do
 
 ### Docker
 
-There is a dedicated article about [Docker setups]({% link _documentation/docker.md %}) for Kimai, suitable for development and production.
+There is a dedicated article about running [a Docker image of Kimai]({% link _documentation/docker/docker.md %}), suitable for development and production.
 
 ### Kubernetes
 
-The rise of containerization and orchestration is not stopping, please read the [Kubernetes and Helm chart]({% link _documentation/kubernetes.md %}) chapter to find out more.
+The rise of containerization and orchestration is not stopping, please read the [Kubernetes and Helm chart]({% link _documentation/docker/kubernetes.md %}) chapter to find out more.
 
 ### Shared hosting
 
