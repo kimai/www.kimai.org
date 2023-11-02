@@ -83,6 +83,6 @@ app.ERROR: Exception occurred while flushing email queue: Expected response code
 ```
 you might suffer from a wrong configuration (read the documentation linked above) and try a fully featured SMTP URL with a dedicated user account for authentication:  
 ```
-MAILER_URL=smtp://username:password@mx.example.com:587
+MAILER_URL=smtps://username:password@mx.example.com:587
 ```
 Password should not contain URL characters like '&@:', which can cause problems parsing the SMTP URL (see above). 
