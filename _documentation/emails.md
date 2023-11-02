@@ -23,7 +23,7 @@ You have to adapt two settings in your `.env` [configuration file]({% link _docu
 The following list of providers are supported out-of-the-box by Kimai: 
 
 - Deactivated: `null://null`
-- SMTP: `smtp://localhost:25?encryption=&auth_mode=`
+- SMTP: `smtp://localhost:25`
 
 The following specialized transports (usually helper to simplify the connection string) can be installed manually:
 
@@ -72,7 +72,7 @@ mG0%2Fd1%403aT.Z%29s
 
 Your `MAILER_URL` might look like this:
 ```
-MAILER_URL="smtp://user:mG0%2Fd1%403aT.Z%29s@localhost:25?encryption=&auth_mode="
+MAILER_URL="smtp://user:mG0%2Fd1%403aT.Z%29s@localhost:25"
 ```
 
 ### SMTP does not accept emails
@@ -83,6 +83,6 @@ app.ERROR: Exception occurred while flushing email queue: Expected response code
 ```
 you might suffer from a wrong configuration (read the documentation linked above) and try a fully featured SMTP URL with a dedicated user account for authentication:  
 ```
-MAILER_URL=smtp://username:password@mx.example.com:587?encryption=tls&auth_mode=plain
+MAILER_URL=smtp://username:password@mx.example.com:587
 ```
 Password should not contain URL characters like '&@:', which can cause problems parsing the SMTP URL (see above). 
