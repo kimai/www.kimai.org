@@ -35,6 +35,7 @@ There is an installation doc (unfortunately only in German) available at [www.ho
 [CloudJiffy](https://cloudjiffy.com/) provides a scalable, hourly billed and easy to use PaaS platform and the setup of Kimai is [only a click of a button away](https://cloudjiffy.com/blog/solutions/one-click-solutions/kimai-time-tracking-on-cloudjiffy). Kimai is always deployed from the latest Github branch, thus you can rest easy that your software will always be up-to-date.
 
 ### Elestio
-[Elestio](https://elest.io/) provides Kimai as a fully managed option and easy to setup with few clicks. Fast, easy and secure.
+[Elestio](https://elest.io/) users get hassle-free, fully managed Kimai instances in 112 regions across 28 countries with Elestio. Our service covers everything from deployment to security, monitoring, and expert support.
+You get full root SSH access, advanced customizations, and a user-friendly web dashboard for stack and env var changes. Click the button below to focus on your work while we handle the technicalities.
 
 [![Deploy](https://pub-da36157c854648669813f3f76c526c2b.r2.dev/deploy-on-elestio-black.png)](https://elest.io/open-source/kimai)
