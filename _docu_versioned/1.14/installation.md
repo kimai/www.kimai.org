@@ -69,7 +69,7 @@ Oh ... wait! Before you leave, please read the [initial setup guide]({% link _do
 
 ## Docker
 
-There is a dedicated article about [Docker setups]({% link _documentation/docker.md %}) for Kimai, suitable for development and production. 
+There is a dedicated article about [Docker setups]({% link _documentation/docker/docker.md %}) for Kimai, suitable for development and production. 
 
 ## Hosting and 1-click installations
 
