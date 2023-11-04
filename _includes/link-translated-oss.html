@@ -1,0 +1,10 @@
+{%- if include.item != nil and include.language != nil -%}
+    {%- assign menu = site.opensource | where: "slug", include.item | where: "lang", include.language | first -%}
+    {%- assign class = '' -%}
+    {%- if include.class != nil -%}
+        {%- assign class = include.class -%}
+    {%- endif -%}
+    <a href="{{ menu.url }}"{% if include.target != nil %} target="{{ include.target }}"{% endif %}{% if class != '' %} class="{{ class }}"{% endif %}>
+        {{- menu.keyword -}}
+    </a>
+{%- endif -%}

@@ -1,0 +1,66 @@
+---
+layout: base
+---
+
+<main class="page-wrapper">
+    {% include header-navigation.html dark=true absolute=true %}
+
+    {% assign title=site.data[page.lang].translation.comparison.support %}
+    {% assign intro=site.data[page.lang].translation.support.intro %}
+
+    {% assign title='<span class="small fs-4 d-block">Open Source</span> %title%' | replace: "%title%", page.keyword %}
+    {% assign intro="Kimai is the open source %title% application you were looking for 🎉" | replace: "%title%", page.keyword %}
+
+    {% include hero-text-round-dark.html title=title intro=intro %}
+
+    <section class="container py-5 my-md-2 my-lg-4 my-xl-5">
+        <div class="row justify-content-center pt-5 pb-1 pb-sm-2 pb-md-3">
+            <div class="col-xxl-10 col-xl-11 col-lg-12 pt-sm-2 pt-md-5">
+                <div class="d-sm-flex">
+                    <div class="card w-sm-50 border-0 bg-transparent px-sm-1 px-md-3">
+                        <div class="card-body p-0 pb-2 pb-sm-3 mb-3">
+                            <div class="d-inline-block bg-secondary text-primary rounded-circle fs-3 lh-1 p-3 mb-3">
+                                <i class="bx bxs-lock-alt"></i>
+                            </div>
+                            <h3 class="fs-5 mb-4">No vendor lock-in</h3>
+                            <p>
+                                Vendor lock-in can cost a lot, not just in cash but also in hours.
+                                With Kimai, you can host it yourself, have me host it for you, or fork it and change it.
+                                You're never locked into a hosted product, and all of your data is easy to export so that if you ever decide Kimai isn't for you anymore, your data is still yours (the same applies to the paid plans, I offer data export upon cancellation).
+                            </p>
+                        </div>
+                    </div>
+                    <div class="vr text-border d-none d-sm-inline-block m-4"></div>
+                    <div class="card w-sm-50 border-0 bg-transparent px-sm-1 px-md-3">
+                        <div class="card-body p-0 pb-2 pb-sm-3 mb-3">
+                            <div class="d-inline-block bg-secondary text-primary rounded-circle fs-3 lh-1 p-3 mb-3">
+                                <i class="bx bx-lock-open-alt"></i>
+                            </div>
+                            <h3 class="fs-5 mb-4">Always transparent</h3>
+                            <p>
+                                With closed source software, you have only the vendor's claims that they're keeping the software secure and adhering to standards.
+                                The visibility of the code behind open source software means you can see for yourself.
+                                You can always see my responses to the community, the release schedule and milestones, and every commit and pull request review.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-secondary py-5 my-md-2 my-lg-4 my-xl-5">
+        <div class="container">
+            <div class="row justify-content-center pt-5 pb-1 pb-sm-2 pb-md-3">
+                <h3 class="mb-4">Discover Kimai</h3>
+
+                {{ content }}
+            </div>
+        </div>
+    </section>
+
+    {% include cta-begin-journey.html %}
+</main>
+
+{% include footer.html %}
+
