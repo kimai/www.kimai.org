@@ -15,13 +15,12 @@ redirect_from:
 ## Updating Kimai 
 
 {% capture alert_note %}
-**ATTENTION** when upgrading from 1.30 (or lower) to 2.0: plugins [are not compatible]({% link _posts/2023-05-19-plugin-upgrades-v2.md %}) and need to be removed before the regular update, including a hard cache reload.  
+**ATTENTION** when upgrading from 1.30 (or lower) to 2.0: you might need a hard cache reload. Also [plugins are not compatible]({% link _posts/2023-05-19-plugin-upgrades-v2.md %}) and need to be removed before updating the system.  
 ```bash
-rm -r var/plugins/*
 rm -r var/cache/*
+rm -r var/plugins/*
 bin/console kimai:reload
 ```
-Don't know which version you are using? [Read this guide]({% link _documentation/versions.md %}) to find out.
 {% endcapture %}
 
 {% assign alert_note = alert_note| markdownify %}
