@@ -43,7 +43,7 @@ Since Kimai 1.9 you can add templates for PDF and HTML exports.
 Export documents are searched in two locations:
 
 - `var/export/` - does not exist by default, please create it when you add a new template
-- `templates/export/renderer/` - don't change files in here, will be overwritten with te next update
+- `templates/export/renderer/` - don't change files in here, will be overwritten with the next update
 
 Be aware of the following rules:
 

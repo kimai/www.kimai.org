@@ -14,7 +14,7 @@ Installation should be done with `git clone` or with a copy task.
 Make sure that you copy it into the appropriate subdirectory in `var/plugins/`. 
 For the plugin `CustomCSSBundle` this would be `var/plugins/CustomCSSBundle/` (there should be a file `var/plugins/CustomCSSBundle/CustomCSSBundle.php`).
 
-After the plugin was installed you need to [clear the cache]({% link _documentation/cache.md %}) (see below).
+After installing the plugin, you will need to [clear the cache]({% link _documentation/cache.md %}) (see below).
 
 {% include alert.html icon="fas fa-exclamation" type="warning" alert="Additional installation steps might be required (eg. database creation). Please read the specific plugin docs!" %}
 
@@ -22,7 +22,7 @@ After the plugin was installed you need to [clear the cache]({% link _documentat
 
 You can disable plugins by creating a file called `.disabled` in the plugin directory, e.g. `var/plugins/CustomCSSBundle/.disabled`.
 
-You need to [clear the cache]({% link _documentation/cache.md %}) afterwards (see below). 
+You will then need to [clear the cache]({% link _documentation/cache.md %}) (see below). 
 
 ## Plugin deinstallation
 

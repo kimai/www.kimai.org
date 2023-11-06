@@ -28,7 +28,7 @@ But if you create a translation in `de`, your new translation will also be visib
 
 ### Screenshots
 
-The main translation page show a listing of all translated contents, grouped by their language:
+The main translation page shows a listing of all translated contents, grouped by their language:
 
 {% include docs-image.html src="/images/marketplace/translation-listing.png" title="List all adjusted translations" width="1200px" %}
 
@@ -50,4 +50,3 @@ The edit dialog allows to change your custom translation:
 By default, these are assigned to each user with the role `ROLE_SUPER_ADMIN`.
 
 {% include store-howto-permissions.md %}
-

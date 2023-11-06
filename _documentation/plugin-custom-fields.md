@@ -42,7 +42,7 @@ If a checkbox is marked as mandatory, the user has to check it in order to submi
 ### Choice-list
 
 "Choice-list" is a different word for "Select-box" or "Drop-down".
-You have to add the entries as comma separated list into the default-value field.
+You have to add the entries as comma-separated list in the `Default value` field.
 For example a list consisting of fruits would look like this: `Banana,Apple,Orange,Pineapple,Peach`.
 
 As the first entry is pre-selected, you can add an empty field to the dropdown by starting the list

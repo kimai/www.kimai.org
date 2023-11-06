@@ -73,13 +73,14 @@ This example assumes you are creating the (not existing) locale `xx`.
 Copy each translation from it's english version `translations/*.en.xlf` and rename them to `translations/*.xx.xlf`.
 
 Adjust the `target-language` attributes in the file header, as example for the new file `exceptions.xx.xlf`:
-```yml
+
+```xml
 <file source-language="en" target-language="xx" datatype="plaintext" original="exceptions.en.xlf">`
 ```
 
 ## Adding a language variant
 
-For a language variant `xx_YY`, the fallback will always be the base language `xx` (eg. `de` for `de_CH`). 
+For a language variant `xx_YY`, the fallback will always be the base language `xx` (e.g. `de` for `de_CH`). 
 
 Only some specific keys may need to be changed for this variant, and it's possible to add only the respective files like i.e. `translations/messages.de_CH.xlf` including only the changed translations:
 
@@ -127,7 +128,7 @@ There are configurations in place to convert between javascript components (e.g.
 
 ## AM/PM format
 
-Whether Kimai displays data in 24 hour or AM/PM format depends on the user locale.
+Whether Kimai displays data in 24-hour or AM/PM format depends on the user locale.
 
 ## Generate correct ID and resname
 
@@ -141,18 +142,19 @@ bin/console kimai:translation --resname
 
 This will validate if the technical changes are okay / if the changed and new files can be used by Kimai:
 
-```
+```bash
 bin/console lint:xliff translations
 ```
 
 ## Check for missing translations
 
 You can search for missing keys by issuing this command (replace `xx` with your locale):
+
 ```bash
 bin/console debug:translation --only-missing de
 ```
-
 or
-```
+
+```bash
 bin/console translation:update --dump-messages --force de
 ```

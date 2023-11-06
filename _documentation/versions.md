@@ -5,7 +5,7 @@ description: Differentiate the available and past Kimai versions
 canonical: /documentation/versions.html
 ---
 
-Some people struggle understanding the versioning of Kimai.
+Some people struggle to understand the versioning of Kimai.
 That usually happens, when the app number and version number are mixed.
 
 There are two distinct Kimai versions with totally different code bases.

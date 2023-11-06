@@ -25,7 +25,7 @@ Needs `hourly-rate_own_profile` / `hourly-rate_other_profile` permission to see 
 
 ## Timezone
 
-The user-specific timezone is used when recording users timesheet entries. 
+The user specific time zone is used when recording user timesheet entries. 
 
 By default, this is the server timezone (php.ini: date.timezone), which is often wrong or not matching the users real timezone (for technical reasons like shared hosting, docker, UTC).
 If you experience wrong times when starting a record, please check this setting first and tell your users to do the same.
@@ -38,7 +38,7 @@ Kimai saves times in UTC, including the timezone information, so it can calculat
 
 ## Language
 
-Which language should be used as primary source for translations (if a specific translation is missing for your language, the fallback will always be english).
+Which language should be used as the primary source for translations (if a specific translation for your language is missing, the fallback will always be English).
 
 ## First day of the week
 

@@ -35,7 +35,7 @@ Before starting with the migration, please read the following FAQs:
 - You have to supply a default password, which will be used for every imported user(!)
     - due to security issues we cannot import the original passwords
     - let your users reset it afterwards with the [Password reset]({% link _documentation/users.md %}) function
-- The import will fail, if a user from v1 has either an empty email, or the same email is used for multiple users. But you can automatically fix that by using the `--fix-email` option
+- The import will fail if a user from v1 has either an empty email, or the same email is used for multiple users. But you can automatically fix that by using the `--fix-email` option
 - Data which was deleted in Kimai v1 (user, customer, projects, activities) will be imported and set to `invisible`
     - if you don't want that, you have to delete all entries that have the value `1` in the `trash` column before importing
 - Groups import
@@ -48,7 +48,7 @@ Before starting with the migration, please read the following FAQs:
 Please read the [installation docs]({% link _documentation/installation.md %}) first and execute the installation.
 You can install it on the same server, but you have to meet the server requirements (see [downloads page]({% link _pages/download.md %})).
 
-The other option is to dump the old database and import it in the new server, the import does not need a running Kimai installation, but only the data!
+The other option is to dump the old database and import it in the new server. The import does not need a running Kimai installation, but only the data!
 
 After Kimai 2 runs properly, the actual *migration* takes place, by importing the data from your Kimai 1 database into Kimai 2.
 You have to have SSH access to your server, as you will use a command shipped with Kimai 2, which will pull the data into the new database (configured in your `.env` file).
@@ -71,7 +71,7 @@ bin/console kimai:import:v1 --global --timezone="timezone" --language="language"
 ```
 
 All arguments (eg. `country`, `currency`, `timezone` and `language`) are optional and will be set to sensitive defaults if not provided.
-Most flags are used for imported customers and users, becuase they were optional or not existing in Kimai 1.
+Most flags are used for imported customers and users because they were optional or not existing in Kimai 1.
 
 It is recommended to test the import in a fresh database. You can test your import as often as you like and fix possible problems in your installation.
 A sample command could look like that:

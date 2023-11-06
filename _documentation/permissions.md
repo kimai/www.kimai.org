@@ -17,7 +17,7 @@ If you are looking for a way to limit access to timesheets, activities, projects
 
 ## Roles
 
-Access to functions are handled by the [permission system]({% link _documentation/permissions.md %}), which is configurable through user roles.
+Access to functions is handled by the [permission system]({% link _documentation/permissions.md %}), which is configurable through user roles.
 There are four pre-defined roles in Kimai, which have a customizable set of ACLs/permissions.
 
 | Role name      | Description                                                                                                                                               |

@@ -120,7 +120,7 @@ which needs to be allowed by Apache via `AllowOverride All`.
 </VirtualHost>
 ```
 
-{% include alert.html icon="fas fa-exclamation" type="warning" alert="Make sure to activate the correct block for your Apache version, find out with eg. 'apachectl -v'" %}
+{% include alert.html icon="fas fa-exclamation" type="warning" alert="Make sure to activate the correct block for your Apache version, find out with e.g. 'apachectl -v'" %}
 
 
 ### Activate required modules PHP & Rewrite
@@ -241,7 +241,7 @@ framework:
 ```
 This will prepend `/kimai` to all assets URLs (CSS, Javascript, Images).
 
-Now, lets move on to configure the the webserver (here nginx is used as reverse proxy).
+Now, let's move on to configure the webserver (here nginx is used as reverse proxy).
  
 Lets assume Kimai is running on `192.168.0.100` on port `8080`, your host is `example.com` and it 
 should run in the subdirectory directory `kimai/`:
@@ -267,7 +267,7 @@ cd /var/www/kimai/public/
 ln -s . kimai
 ``` 
 
-In a docker context it could look like this:
+In a docker context, it could look like this:
 ```
 docker exec -it kimai2 bash ln -s /opt/kimai/public /opt/kimai/public/kimai
 ``` 
