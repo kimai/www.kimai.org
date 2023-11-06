@@ -32,11 +32,13 @@
 - You can [import data from the MR plugins]({% link _documentation/plugin-contract.md %}) (Controlling, Sickday, Vacation)
 - The user calendar will show all absences (sickness, vacation...) and public-holidays
 
-## Roadmap (Planned features)
+## Roadmap
 
-These features will be added in the future, but there is no guarantee when or in which order (numbers in front are priorities).
+These features will be added in the future, but there is no guarantee when or in which order.
 
 ```
+- Holiday
+    - allow booking during public holidays
 - API 
     - methods to read absences (date-range, user, absence type)
 - Documentation
@@ -65,9 +67,9 @@ These features will be added in the future, but there is no guarantee when or in
 
 ## Ideas 
 
-The next list is a collection of feature wishes from users, which might or might not be added. 
+This list is a collection of feature wishes from users, which might or might not be added. 
 If you need one of these features, do not rely on them being added, but contact me upfront to discuss your needs.
-If the above list is empty or I decide to add a feature, it will be moved to the "Planned features" section.
+If I decide to add one of these feature, it will be moved to the "Roadmap" section.
 
 ```
 - Public holidays

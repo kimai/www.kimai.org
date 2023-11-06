@@ -4,6 +4,11 @@ description: Updating your Kimai docker image
 canonical: /documentation/docker-troubleshooting.html
 ---
 
+## Logging
+
+When Kimai runs inside the docker container, logging is reconfigured to use `stderr` which can be seen within the docker container logs.
+See [View container logs](https://docs.docker.com/config/containers/logging/) on how to access them.
+
 ## NGINX and proxying
 
 While outside the direct responsibility of this project we get a lot of issues reported that relate to proxying with NGINX into the FPM container.

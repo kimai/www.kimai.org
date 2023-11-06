@@ -427,3 +427,7 @@ There is an article explaining an [example Open LDAP structure for Kimai]({% lin
 Actually this is more of an example setup for a test environment instead of a best-practice example.
 
 
+## Troubleshooting / Logging
+
+You can switch to `APP_ENV=dev` mode and run `composer install` (to get the missing dev packages) and then all LDAP queries will be logged.
+
