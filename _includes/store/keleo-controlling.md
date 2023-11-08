@@ -63,6 +63,8 @@ These features will be added in the future, but there is no guarantee when or in
 - Finalize year
   - Auto-adjust time-account of next year
   - Allow to take over and adjust the holidays, which were not yet taken (probably with an expiration date?)
+- Settings
+  - Last day of work for a user, to stop calculating afterwards
 ```
 
 ## Ideas 
