@@ -1,8 +1,7 @@
 ---
 title: User preferences
 description: Settings that change the users personal Kimai experience
-related:
-  - users
+canonical: /documentation/user-preferences.html
 ---
 
 The user preferences can be accessed via any user profile (eg. in the upper right corner for your own user) and from `System > Users` (needs `view_user` permission) for every user.
@@ -11,19 +10,19 @@ These settings can be edited by:
 - the user itself, when owning the `preferences_own_profile` permission 
 - every users owning the `preferences_other_profile` [permission]({% link _documentation/permissions.md %})
 
-### Hourly rate
+## Hourly rate
 
 A fallback for records without any customer/project/activity specific [price]({% link _documentation/rates.md %}).
 
 Needs `hourly-rate_own_profile` / `hourly-rate_other_profile` permission to see and edit.
 
-### Internal rate
+## Internal rate
 
 A fallback for records without any customer/project/activity specific internal [price]({% link _documentation/rates.md %}).
 
 Needs `hourly-rate_own_profile` / `hourly-rate_other_profile` permission to see and edit.
 
-### Timezone
+## Timezone
 
 The user specific time zone is used when recording user timesheet entries. 
 
@@ -36,30 +35,46 @@ If you change the timezone while a record is running, it will only influence the
 
 Kimai saves times in UTC, including the timezone information, so it can calculate the correct time to display it in the frontend. 
 
-### Language
+## Language
 
 Which language should be used as the primary source for translations (if a specific translation for your language is missing, the fallback will always be English).
 
-### First day of the week
+## First day of the week
 
 While many countries in the world use `Monday` as start of the week, a lot of other countries use `Sunday`.
 This is the place to change between these two days.
 
-### Design
+## Display: colors
 
-Allows you to change the theme used for Kimai; switching to dark can reduce eye strain in the evening hours.
+A Kimai theme is mainly a set of colors for the top bar and side navigation.
+This setting can be changed by the user to match the personal style.
 
-- Bright: Default bright background and dark menu background
-- Dark: Dark background and dark menu background
+## Display: layout
 
-### Update browser title
+The layout for your Kimai installation:
 
-If activated, the duration of running records will be displayed in the browsers title (tab).
+- `fixed` - full screen layout  
+- `boxed` - max. 1250px width, goes very well with `Minimized sidebar`
 
-- Pro: You can see the duration while working in other browser tabs.
-- Contra: Some browser highlight active tabs, which might be disturbing. 
+## Minimize the left sidebar
 
-### Initial calendar view
+This setting changes the behaviour of the left sidebar after a page (re-)load.
+
+If activated, the sidebar is collapsed and only shown:
+- on hover (on desktops)
+- on clicks (tablets)
+- when the burger icon is clicked
+
+This setting is useful for smaller screens (like tablets and laptops), which need more space.
+
+Small screens like mobile phones will not see the sidebar, they always have to use the burger menu.
+
+## Update browser title
+
+If activated, the duration of running records will be displayed in the browsers title (tab). 
+This can be a benefit, as you can see the duration while working in other browser tabs. 
+ 
+## Initial calendar view
 
 A user can decide which calendar view is most useful for personal work style:
 
@@ -69,7 +84,11 @@ A user can decide which calendar view is most useful for personal work style:
 
 If no translations are available for your language, the options might be called: `month`, `agendaWeek`, `agendaDay`.
 
-### Initial view after login
+## Initial report 
+
+Which report should be shown, when the `Administration > Reports` menu is clicked.
+
+## Initial view after login
 
 This setting changes the target page for:
 
@@ -79,14 +98,10 @@ This setting changes the target page for:
 If a user configured the preference `login.initial_view` to `calendar`, the timesheet icon in the top navigation bar 
 on mobile devices will be replaced by a link to the calendar.  
 
-### Favorites
-
-Allows to store certain menus as favorite menu, to quickly access them from the menu. 
-
-### Show daily statistics in timesheet
+## Show daily statistics in timesheet
 
 If activated, the personal timesheet visually groups and shows statistics for all records within one day.
 
-### Use decimal duration in export
+# Use decimal duration in export
 
 If activated, the export templates render durations as decimal number instead of the human-readable clock format (e.g. `1.5` instead of `01:30 h`).
