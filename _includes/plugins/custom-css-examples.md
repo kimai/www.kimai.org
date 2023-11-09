@@ -25,6 +25,14 @@ Activating horizontal scrolling on data-tables:
 }
 ```
 
+Deactivate the background blur for modals, which might be problematic in [RDP sessions](https://github.com/kimai/kimai/discussions/4415):
+```css
+.modal-blur { 
+    -webkit-backdrop-filter: blur(0px) !important;
+    backdrop-filter: blur(0px) !important;
+}
+```
+
 Switching the order of save and cancel buttons:
 ```css
 .modal-footer button[type=submit], .box-footer input[type=submit] {
