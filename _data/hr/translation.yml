@@ -179,7 +179,7 @@ feature:
         description: "Opsežni JSON API za čitanje i pisanje podataka, tako da eksterne aplikacije i tvoji prilagođeni alati mogu komunicirati s tvojim omiljenim programom za evidentiranje vremena."
     ldap:
         name: "LDAP"
-        description: "Poveži Kimai s poslužiteljem mapa tvog poduzeća (LDAP ili Active Directory) i koristi svoju postojeću infrastrukturu za autentifikaciju."
+        description: "Poveži Kimai sa serverom s mapama tvog poduzeća (LDAP ili Active Directory) i koristi svoju postojeću infrastrukturu za autentifikaciju."
     statistics:
         name: "Statistika"
         description: "Tvoja pregledna ploča prikazat će nekoliko statistika o snimljenim vremenima i količini prikupljenih podataka. I uvijek možemo dodati još grafikona!"
@@ -232,11 +232,11 @@ feature:
         description: Analiza zabilježenih vremena, kupaca, projekata i aktivnosti. Evaluacija korisnika, kupaca, projekata, aktivnosti, oznaka, vremenskih razdoblja i još mnogo toga.
         name: Izvještaji i analize
 install:
-    alert-vps: U ovom trenutku nije moguće instalirati Kimai preuzimanjem ZIP datoteke i učitavanjem datoteka na web poslužitelj. Razlog tome je što se Composer mora pokrenuti putem naredbenog retka. To ne znači nužno da trebaš VPS. Neki dijeljeni hostovi pružaju SSH pristup putem kojeg se Composer i Kimai mogu instalirati bez problema.
-    ssh: Preporučeni način instalacije Kimaija je izravno na vašem poslužitelju.
-    cloud: Nema potrebe za instalacijom Kimaija, možete početi koristiti odmah.
-    docker: Koristite našu Docker sliku za jednostavnu instalaciju i ažuriranje Kimai kontejnera.
-    kubernetes: Možete implementirati Kimai u Kubernetes pomoću naših Helm grafikona.
+    alert-vps: U ovom trenutku nije moguće instalirati Kimai preuzimanjem ZIP datoteke i učitavanjem datoteka na web server. Moraš imati SSH pristup za tvoj server. To ne znači nužno da trebaš VPS (virtualan privatni server). Neki dijeljeni hostovi pružaju SSH pristup putem kojeg se Composer i Kimai mogu instalirati bez problema.
+    ssh: Preporučeni način instalacije Kimaija je izravno na tvoj server.
+    cloud: Kimai ne moraš instalirati, možeš ga odmah početi koristiti.
+    docker: Koristi našu Docker sliku za jednostavnu instalaciju i aktualiziranje Kimai kontejnera.
+    kubernetes: Pomoću naših Helm-Charts paketa Kimai možeš implementirati na Kubernetes.
 newsletter:
     email-title: Tvoja e-mail adresa
     email-help: Za pretplatu, upiši tvoju e-mail adresu.
@@ -250,7 +250,7 @@ newsletter:
     introduction: Pretplati se na naš bilten i primaj obavijesti o novim verzijama Kimaija i dodataka.
 developer:
     kevinpapst:
-        intro: Održavatelj projekta i glavni programer od 2007. godine. Potpuno usredotočen na uspjeh programa Kimai. Može ga se angažirati za podršku, instalaciju i razvoj prilagođenih dodataka.
+        intro: "Oduvijek sam sanjao o zarađivanju novca s proizvodom otvorenog koda. S programom Kimai sam uspio razviti softver koji pruža veliku vrijednost mojim klijentima i čiji me razvoj pokreće svaki dan.\n\nPosebno se zahvaljujem velikoj zajednici na njihovoj odanosti prijektu tijekom godina i radujem se sljedećim 10 godinama Kimaija 🚀\n"
 price-contract: Na upit
 full-documentation: Potpuna dokumentacija na engleskom jeziku
 contact-developer: Ako imaš pitanja koristi sljedeće podatke za izravno kontaktiranje programera.
@@ -275,16 +275,16 @@ section-teaser:
         description: Praznici, praznik, bolovanje i izostanci.
 per-year: po godini
 history:
-    year-2020: Kimai se nudi kao pretplata temeljena na SaaS-u, s jednom besplatnom i s dvije naplative tarife.
+    year-2020: Kimai se nudi kao SaaS pretplata s jednom besplatnom i dvije naplative tarife.
     early-days-title: Kako je sve počelo
-    year-2009: Torsten, početni programer, želi prekinuti razvoj Kimaia. Kevin preuzima i postaje održavatelj projekta.
+    year-2009: Izvorni programer Torsten želi prekinuti razvoj Kimaia. Kevin preuzima i postaje održavatelj projekta.
     year-2019: Stvoreni su prvi dodaci kako bi se ustanovila validnost za tržište i interes za plaćeni softver otvorenog koda.
     early-days-subtitle: Kimai ima dugu povijest i postoji od 2006. Ovo je kratki pregled kako je sve počelo.
     year-2023: Naporan rad se konačno isplatio i Kimai je sada moj redovni posao. Hvala svima!
-    year-2014: Nakon zadnje Kimai 1 izdanja, razvoj je zastao i gotovo da nema nikakvih aktivnosti.
-    year-2006: Prva verzija Kimaija je objavljena i dobiva sve veću bazu korisnika i programera.
-    intro: Što je počelo kao hobij, projekt je sada vodeća aplikacija otvorenog koda za evidentiranje vremena. Pročitaj povijest projekta.
-    year-2018: Nova verzija Kimaija pronalazi put do zajednice, migracije podataka funkcioniraju.
+    year-2014: Nakon zadnjeg Kimai 1 izdanja razvoj je zastao i gotovo nema nikakvih aktivnosti …
+    year-2006: Prva verzija Kimaija je objavljena i polako raste baza korisnika i programera.
+    intro: Što je počelo kao hobij, projekt je sada vodeća aplikacija otvorenog koda za evidentiranje vremena. Pogledaj povijest.
+    year-2018: Nova verzija Kimaija nalazi svoj put u zajednicu, migracija podataka radi, prihvaćanje raste.
     current: |
         Kimai je program za evidentiranje vremena s dugom poviješću. Prva verzija objavljena je 2006. Zašto to spominjemo? Budući da smo vidjeli da u zadnjem desetljeću razne usluge dolaze i odlaze – vjeruj nam kad kažemo: ostat ćemo. Dugi niz godina nismo ništa zaradili s programom Kimai – uvijek nas je zabava motivirala da poboljšamo Kimai. Vjerujemo da je zabava jedan od glavnih razloga za uspjeh programa Kimai.
 
@@ -346,7 +346,7 @@ slogan: Jednostavno evidentiranje vremena
 comparison:
     footer-title: Usporedi
     is_oss: Open source softver
-    location: Poslužitelj podacima u EU
+    location: Server podataka u EU
     invoices: Izrada računa
     backup_frequency: Sigurnosne kopije
     custom_domain: Prilagođena domena
@@ -360,7 +360,7 @@ comparison:
     max_customers: Maks. korisnici
     tls_included: TLS certifikat
     cloud: Dostupno u oblaku
-    server_maintenance: Održavanje poslužitelja
+    server_maintenance: Održavanje servera
     saml: SAML
     ip_restriction: Ograničenje pristupa putem IP adrese
     alternatives: Alternative za Kimai
@@ -369,7 +369,7 @@ comparison:
 support:
     name: "Podrška"
     description: "Trebate podršku? Pronađite pomoć za korištenje, instalaciju ili ažuriranje Kimaija."
-    intro: "Neki korisnici preferiraju internu upotrebu Kimaija, ali ne žele propustiti profesionalnu podršku. Drago mi je da vam mogu pomoći i ponuditi plan podrške za self-hosted instalacije."
+    intro: "Neki korisnici preferiraju internu upotrebu Kimaija, ali ne žele propustiti profesionalnu podršku. Rado ću ti pomoći i ponuditi tarifu podrške za instalacije za vlastiti hosting."
     community: "Zajednica"
     community_cta: "Posjetite GitHub"
     community_intro: |
@@ -396,12 +396,12 @@ support:
 docu-cloud:
     name: Kimai-Cloud
 landing_oss:
-    version_cloud: Get up and running in seconds, leave the hosting and update to me, you take care of your core business. Make sure your team is ready for the future, with a modern time tracking solution.
+    version_cloud: Počni odmah koristiti Kimai. Prepusti hosting i aktualiziranje meni, a ti se brini o tvojoj osnovnoj djelatnosti. Osiguraj moderno rješenje za evidentiranje vremena tvom timu.
     transparency_intro: With closed source software, you have only the vendor's claims that they're keeping the software secure and adhering to standards. The visibility of the code behind open source software means you can see for yourself. You can always see my responses to the community, the release schedule and milestones, and every commit and pull request review.
-    version_choose: Which Kimai is right for you?
-    vendor_title: No vendor lock-in
-    vendor_intro: Vendor lock-in can cost a lot, not just in cash but also in hours. With Kimai, you can host it yourself, have me host it for you, or fork it and change it. You're never locked into a hosted product, and all of your data is easy to export so that if you ever decide Kimai isn't for you anymore, your data is still yours (the same applies to the paid plans, I offer data export upon cancellation).
-    transparency_title: Always transparent
-    subtitle: Kimai is the open source %title% software you were looking for 🎉
-    version_onpremise: I take care of the software, you take care about the hosting, updates and security. And if you don't want to do it yourself, there is always support available at your fingertips.
-    discover: Discover Kimai
+    version_choose: Koji je Kimai za tebe?
+    vendor_title: Bez ovisnosti o proizvođaču
+    vendor_intro: Ovisnost o proizvođaču može puno koštati, ne samo u smislu novca već i u smislu vremena. S Kimaijem možeš koristiti vlastiti hosting, zatražiti hosting s moje strane ili izraditi kopiju i prilagoditi ga tvojim potrebama. U nikojem trenutku nisi vezan/a za hostirani proizvod i sve tvoje podatke možeš jednostavno izvesti, tako da ako ikada odlučiš da više ne želiš koristiti Kimai, tvoji podaci ostaju i dalje tvoji (isto vrijedi i za plaćene tarife, nudim izvoz podataka nakon otkazivanja hosting usluge).
+    transparency_title: Uvijek transparentan
+    subtitle: Kimai je %title% softver otvorenog koda koji si tražio/la 🎉
+    version_onpremise: Ja se brinem o softveru, a ti o hostingu, aktualiziranjma i sigurnosti. A ako to ne želiš učiniti sam/a, uvijek postoji mogućnost podrške.
+    discover: Upoznaj Kimai
