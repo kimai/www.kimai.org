@@ -1,7 +1,8 @@
 ---
 title: Lexoffice Invoice Sync
 type: plugin
-lang: en
+lang: nl
+permalink: /nl/store/helsinkisystems-lexoffice.html
 ---
 
 {% include store/helsinkisystems-lexoffice.md %}
