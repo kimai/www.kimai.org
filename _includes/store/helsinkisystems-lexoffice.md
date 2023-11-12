@@ -6,9 +6,11 @@ Lexoffice plugin for Kimai is a plugin that allows you to automatically create i
 
 This plugin does not need a database table, so there is no installation of the plugin necessary.
 To communicate with Lexoffice however, you need to install the Lexoffice-php-sdk composer package:
-``` composer require helsinki-systems/lexoffice-php-sdk:dev-master ```
+```bash
+composer require helsinki-systems/lexoffice-php-sdk:dev-master
+```
 
-{% include composer-update-warning.md %}
+{% include composer-update-warning.html %}
 
 ## Support
 
