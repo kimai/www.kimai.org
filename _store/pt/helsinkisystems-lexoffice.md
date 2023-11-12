@@ -1,5 +1,5 @@
 ---
-title: Lexoffice plugin (automatically create invoices in Lexoffice from Kimai invoices)
+title: Lexoffice Invoice Sync
 type: plugin
 lang: pt
 permalink: /pt/store/helsinkisystems-lexoffice.html
