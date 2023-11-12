@@ -24,6 +24,7 @@ If you see an error message like this:
 laminas/laminas-ldap requires ext-ldap * -> it is missing from your system. Install or enable PHP's ldap extension.
 ```
 you have to install the PHP LDAP extension, e.g. on Ubuntu with `apt-get install php-ldap` first.
+FPM and CLI PHP use different configs, so installing might not be enough: use `php -m` to verify that the module is really loaded.  
 
 ### Activate LDAP authentication
 
