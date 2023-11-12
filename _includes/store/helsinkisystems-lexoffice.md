@@ -8,9 +8,7 @@ This plugin does not need a database table, so there is no installation of the p
 To communicate with Lexoffice however, you need to install the Lexoffice-php-sdk composer package:
 ``` composer require helsinki-systems/lexoffice-php-sdk:dev-master ```
 
-UPDATE WARNING: As this plugin uses composer it breaks on Kimai Updates.
-You will have to rerun the composer installation step after each update. 
-See https://www.kimai.org/documentation/updates.html#changed-files for more information
+{% include composer-update-warning.md %}
 
 ## Support
 
