@@ -121,6 +121,12 @@ If I decide to add one of these feature, it will be moved to the "Roadmap" secti
 ## Changelog
 
 ```
+1.2.0  (19 Oct. 2023)
+
+- Fixed: some users could not see public holidays in the calendar
+- Fixed: route mapping type changed to attribute
+- Fixed: Homepage link in extension screen
+
 1.1.0 (18 Sept. 2023)
 
 - Added: data migration from MR plugins
