@@ -74,6 +74,7 @@ If you need one of these features, do not rely on them being added, but contact 
 If I decide to add one of these feature, it will be moved to the "Roadmap" section.
 
 ```
+- Allow to configure a [dedicated project](https://github.com/kevinpapst/kimai-plugins/discussions/112) for attendance tracking
 - Public holidays
   - Configurable rule to deactivate time-records on public holidays
 - API 
