@@ -436,3 +436,14 @@ Actually this is more of an example setup for a test environment instead of a be
 
 You can switch to `APP_ENV=dev` mode and run `composer install` (to get the missing dev packages) and then all LDAP queries will be logged.
 
+### Connecting with IP v6
+
+When connecting to your LDAP server via IP v6, you have to use square brackets to enclose the IP, e.g.:
+
+```yaml
+kimai:
+    ldap:
+        activate: true
+        connection:
+            host: "[fe80:20c:29ff:fefd:deea]"
+```
