@@ -38,7 +38,7 @@ objectClass: organizationalUnit
 ou: groups
 ```
 
-The hashed password `{SSHA}+/Ir5pqpe09B07Xz8IT5AS+swJ5s29QS` from the following files are in plain text `kitten`.
+The hashed password `{SSHA}aHxzKxwoAV46MQ4gAv9n+ISm7kD53Tzq` (generated with `slappasswd`) from the following files are in plain text `kitten`.
 
 Create the file `user-user.ldiff` and add this:
 ```
@@ -131,25 +131,6 @@ cn: Super-Admins
 member: uid=super-ldap,ou=users,dc=kimai,dc=org
 ```
 
-## Importing the data
-
-```bash
-ldapadd -D "cn=admin,dc=kimai,dc=org" -W -x -f ou-root.ldif
-ldapadd -D "cn=admin,dc=kimai,dc=org" -W -x -f ou-users.ldiff
-ldapadd -D "cn=admin,dc=kimai,dc=org" -W -x -f ou-groups.ldiff
-
-ldapadd -D "cn=admin,dc=kimai,dc=org" -W -x -f user-user.ldiff
-
-ldapadd -D "cn=admin,dc=kimai,dc=org" -W -x -f teamlead-user.ldiff
-ldapadd -D "cn=admin,dc=kimai,dc=org" -W -x -f teamlead-group.ldiff
-
-ldapadd -D "cn=admin,dc=kimai,dc=org" -W -x -f admin-user.ldiff
-ldapadd -D "cn=admin,dc=kimai,dc=org" -W -x -f admin-group.ldiff
-
-ldapadd -D "cn=admin,dc=kimai,dc=org" -W -x -f super-user.ldiff
-ldapadd -D "cn=admin,dc=kimai,dc=org" -W -x -f super-group.ldiff
-```
-
 ## The local.yaml settings
 
 ```yaml
@@ -174,6 +155,69 @@ kimai:
                 - { ldap_value: Admins, role: ROLE_ADMIN }
                 - { ldap_value: Super-Admins, role: ROLE_SUPER_ADMIN }
 ```
+
+## Setup on MacOS Sonoma (ARM) with Homebrew
+
+```bash
+brew install openldap
+mkdir /opt/homebrew/var/openldap-data
+chmod 777 /opt/homebrew/var/openldap-data
+```
+
+```bash
+vim /opt/homebrew/etc/openldap/slapd.conf
+```
+
+Comment the entire `MDB database definitions` section and add this:
+
+```
+include         /private/etc/openldap/schema/cosine.schema
+include         /private/etc/openldap/schema/nis.schema
+include         /private/etc/openldap/schema/inetorgperson.schema
+
+database ldif
+suffix "dc=kimai,dc=org"
+rootdn "cn=admin,dc=kimai,dc=org"
+# clear text password: kitten (generated with slappasswd)
+rootpw {SSHA}aHxzKxwoAV46MQ4gAv9n+ISm7kD53Tzq
+directory /private/var/db/openldap/openldap-data
+```
+
+Now change the configuration:
+```bash
+vim /opt/homebrew/etc/openldap/ldap.conf
+```
+
+Replace `BASE` and `URI` with these values:
+```
+BASE dc=kimai,dc=org
+URI ldap://127.0.0.1:389
+```
+
+Start the service:
+```bash 
+/usr/libexec/slapd -d3 -f /opt/homebrew/etc/openldap/slapd.conf
+```
+
+## Importing the data
+
+```bash
+ldapadd -D "cn=admin,dc=kimai,dc=org" -W -x -f ou-root.ldif
+ldapadd -D "cn=admin,dc=kimai,dc=org" -W -x -f ou-users.ldiff
+ldapadd -D "cn=admin,dc=kimai,dc=org" -W -x -f ou-groups.ldiff
+
+ldapadd -D "cn=admin,dc=kimai,dc=org" -W -x -f user-user.ldiff
+
+ldapadd -D "cn=admin,dc=kimai,dc=org" -W -x -f teamlead-user.ldiff
+ldapadd -D "cn=admin,dc=kimai,dc=org" -W -x -f teamlead-group.ldiff
+
+ldapadd -D "cn=admin,dc=kimai,dc=org" -W -x -f admin-user.ldiff
+ldapadd -D "cn=admin,dc=kimai,dc=org" -W -x -f admin-group.ldiff
+
+ldapadd -D "cn=admin,dc=kimai,dc=org" -W -x -f super-user.ldiff
+ldapadd -D "cn=admin,dc=kimai,dc=org" -W -x -f super-group.ldiff
+```
+
 
 ## Tips and Tricks
 
@@ -201,54 +245,4 @@ slappasswd
 
 ```bash
 vim /usr/local/etc/openldap/slapd.conf
-```
-
-
-## Setup on MacOS Sonoma (ARM) with Homebrew
-
-```bash
-brew install openldap
-mkdir /opt/homebrew/var/openldap-data
-```
-
-```bash
-vim /opt/homebrew/etc/openldap/slapd.conf
-```
-
-Comment the entire `mdb` section and add a new one:
-
-```
-#######################################################################
-# BERKLEY database definitions
-#######################################################################
-
-database bdb
-suffix  "dc=wso2,dc=com"
-rootdn  "cn=admin,dc=wso2,dc=com"
-# Cleartext passwords, especially for the rootdn, should
-# be avoid.  See slappasswd(8) and slapd.conf(5) for details.
-# Use of strong authentication encouraged.
-rootpw  {SSHA}BqYQBS48EZlLu4XYJxEXaOlRdseW2D4Y
-# The database directory MUST exist prior to running slapd AND
-# should only be accessible by the slapd and slap tools.
-# Mode 700 recommended.
-directory /private/var/db/openldap/openldap-data
-# Indices to maintain
-index objectClass eq
-```
-
-Now change the configuration:
-```bash
-vim /opt/homebrew/etc/openldap/ldap.conf
-```
-
-And listen to another URI and PORT:
-```
-URI ldap://127.0.0.1:3089
-```
-
-
-Start the service:
-```bash 
-/usr/libexec/slapd -d3 -f /opt/homebrew/etc/openldap/slapd.conf
 ```
