@@ -5,9 +5,15 @@ canonical: /documentation/ldap-example.html
 
 This is an example LDAP data structure, which was used for testing the Kimai LDAP integration with Kimai 1.18 and 2.0.
 
-It demonstrates a possible setup and the matching [LDAP connection configuration]({% link _documentation/ldap.md %}). 
+It demo nstrates a possible setup and the matching [LDAP connection configuration]({% link _documentation/ldap.md %}). 
 
 ## Creating the structure files
+
+You can create the files manually or [clone an example repository](https://github.com/kevinpapst/kimai-ldap-example).
+
+### Manual creation
+
+Wanna take the hard road? Ok, here we go 😁
 
 Create the file `ou-root.ldiff` and add this:
 ```
@@ -195,4 +201,54 @@ slappasswd
 
 ```bash
 vim /usr/local/etc/openldap/slapd.conf
+```
+
+
+## Setup on MacOS Sonoma (ARM) with Homebrew
+
+```bash
+brew install openldap
+mkdir /opt/homebrew/var/openldap-data
+```
+
+```bash
+vim /opt/homebrew/etc/openldap/slapd.conf
+```
+
+Comment the entire `mdb` section and add a new one:
+
+```
+#######################################################################
+# BERKLEY database definitions
+#######################################################################
+
+database bdb
+suffix  "dc=wso2,dc=com"
+rootdn  "cn=admin,dc=wso2,dc=com"
+# Cleartext passwords, especially for the rootdn, should
+# be avoid.  See slappasswd(8) and slapd.conf(5) for details.
+# Use of strong authentication encouraged.
+rootpw  {SSHA}BqYQBS48EZlLu4XYJxEXaOlRdseW2D4Y
+# The database directory MUST exist prior to running slapd AND
+# should only be accessible by the slapd and slap tools.
+# Mode 700 recommended.
+directory /private/var/db/openldap/openldap-data
+# Indices to maintain
+index objectClass eq
+```
+
+Now change the configuration:
+```bash
+vim /opt/homebrew/etc/openldap/ldap.conf
+```
+
+And listen to another URI and PORT:
+```
+URI ldap://127.0.0.1:3089
+```
+
+
+Start the service:
+```bash 
+/usr/libexec/slapd -d3 -f /opt/homebrew/etc/openldap/slapd.conf
 ```
