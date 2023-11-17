@@ -205,44 +205,18 @@ Start the service:
 ldapadd -D "cn=admin,dc=kimai,dc=org" -W -x -f ou-root.ldif
 ldapadd -D "cn=admin,dc=kimai,dc=org" -W -x -f ou-users.ldiff
 ldapadd -D "cn=admin,dc=kimai,dc=org" -W -x -f ou-groups.ldiff
-
 ldapadd -D "cn=admin,dc=kimai,dc=org" -W -x -f user-user.ldiff
-
 ldapadd -D "cn=admin,dc=kimai,dc=org" -W -x -f teamlead-user.ldiff
 ldapadd -D "cn=admin,dc=kimai,dc=org" -W -x -f teamlead-group.ldiff
-
 ldapadd -D "cn=admin,dc=kimai,dc=org" -W -x -f admin-user.ldiff
 ldapadd -D "cn=admin,dc=kimai,dc=org" -W -x -f admin-group.ldiff
-
 ldapadd -D "cn=admin,dc=kimai,dc=org" -W -x -f super-user.ldiff
 ldapadd -D "cn=admin,dc=kimai,dc=org" -W -x -f super-group.ldiff
 ```
 
+## Links
 
-## Tips and Tricks
+OpenLDAP is not the simplet service to setup and these links helped me finding a working configuration:
 
-Some very basic infos for novice OpenLDAP users.
-
-**Links:**
-
-- https://github.com/IntersectAustralia/acdata/wiki/Setting-up-OpenLDAP
-- http://blog.facilelogin.com/2012/05/setting-up-openldap-under-mac-os-x.html
-- https://docs.kanboard.org/en/latest/admin_guide/ldap_examples.html
-
-**Create password:**
-
-```bash
-slappasswd
-```
-
-**Run OpenLDAP:**
-
-```bash
-/usr/libexec/slapd -d3
-```
-
-**Edit configuration:**
-
-```bash
-vim /usr/local/etc/openldap/slapd.conf
-```
+- [Setting up OpenLDAP](https://github.com/IntersectAustralia/acdata/wiki/Setting-up-OpenLDAP)
+- [Setting up OpenLDAP - MacOSX 2012](http://blog.facilelogin.com/2012/05/setting-up-openldap-under-mac-os-x.html)
