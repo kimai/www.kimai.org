@@ -50,24 +50,3 @@ me@myhost $ docker-compose exec kimai /opt/kimai/bin/console assets:install
 ```
 
 That should do it.
-
-### Automated upgrade
-
-If you have backed up everything you can use the automated update image that will do the work for you.
-
-Add this to the services section of your docker-compose:
-
-```yaml
-autoupdate:
-    image: kimai/kimai2
-    volumes:
-        - public:/public
-        - ./bin/copy-public.sh:/copy-public.sh
-    entrypoint: /copy-public.sh
-```
-
-You'll still need to tell the running kimai to update its assets:
-
-```bash
-me@myhost $ docker-compose exec kimai /opt/kimai/bin/console assets:install
-```
