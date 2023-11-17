@@ -58,29 +58,6 @@ Keep in mind that this Docker setup is transient and the data will disappear whe
     docker rm kimai-mysql-testing kimai-test
 ```
 
-## Using docker-compose
-
-This will run the latest prod version using FPM with an nginx reverse proxy
-
-See the [[docker-compose.yml]({{ site.kimai_v2_docker }}/blob/main/docker-compose.yml)] in the root of this repo.
-
-### Examples
-
-Listed here are example setups for running the image(s). If you'd like to contribute a new one them please raise a PR for this page.
-
-* [Apache dev]({{ site.kimai_v2_docker }}/tree/main/compose/docker-compose.apache.dev.yml)
-* [Apache prod]({{ site.kimai_v2_docker }}/tree/main/compose/docker-compose.apache.prod.yml)
-* [FPM dev]({{ site.kimai_v2_docker }}/tree/main/compose/docker-compose.fpm.dev.yml)
-* [FPM prod]({{ site.kimai_v2_docker }}/tree/main/compose/docker-compose.fpm.prod.yml)
-
-None of these images persist the DB between restarts, you will need to add a volume to do that:
-```dockerfile
-    volumes:
-      - mysql:/var/lib/mysql
-```
-See the [docker-compose.yml](../docker-compose.yml) in the root of the repo.
-
-
 ## Runtime Arguments
 
 The following settings can set at runtime:
@@ -138,20 +115,6 @@ The ```DB_TYPE``` must be `mysql`:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 {% comment %} 
 
 ### Build the docker
@@ -179,26 +142,6 @@ Considering you started the machine named `default`, you find the IP with:
 
 ```bash
 docker-machine ip default
-```
-
-### Running commands in the docker
-
-You can run any command in the container in this fashion once it is started.  Add `-ti` to attach a terminal.
-
-```bash
-docker exec -ti kimai2 bash
-```
-
-#### Create a user and dummy data
-
-This creates a user admin/password with all privileges.
-```bash
-docker exec kimai2 /opt/kimai/bin/console kimai:user:create admin admin@example.com ROLE_SUPER_ADMIN password
-```
-
-To install the test data (fixtures):
-```bash
-docker exec kimai2 /opt/kimai/bin/console kimai:reset:dev
 ```
 
 ### Using a custom local.yaml
