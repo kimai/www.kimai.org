@@ -24,7 +24,7 @@
   - Allows to create different groups (e.g. for different countries or states) and add public holidays to each of them 
   - Import and manual creation of public (local) holidays
   - Public holidays will automatically be added to the user's timesheet (a user can only be in one public-holiday group)
-  - Public holidays can be imported automatically (if your country is supported - most are, some holidays might be missing).
+  - Public holidays can be imported automatically (check if your [country is supported](https://www.yasumi.dev/docs/providers/)).
 - Per user contract settings
   - Expected working hours per day of the week: Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday
   - Vacation entitlement per user for the calendar year
