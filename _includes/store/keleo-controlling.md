@@ -44,7 +44,7 @@ These features will be added in the future, but there is no guarantee when or in
 - Documentation
     - Written
     - Videos
-- Approval workflow
+- Approval workflow for Absences 
     - Allow to "Sent for approval" to Supervisor
     - Allow to "Reject" or "Approve" by Supervisor
     - Only calculate approved or locked absences (new ones are for planning)
