@@ -210,6 +210,8 @@ server {
           proxy_set_header  X-Forwarded-Proto $scheme;
           proxy_set_header  X-Forwarded-Port $server_port;
       }
+    # Redirect HTTP to HTTPS
+    error_page 497 https://$host:$server_port$request_uri;
 }
 ```
 
