@@ -66,11 +66,11 @@ as starting point and rename it afterwards.
 You can translate the button for your template, by adding its name to the export translation file, eg. `translations/export.en.xlf`.
 Internally for each template a new ExportRenderer service is registered, called `exporter_renderer.filename_EXT_twig` (see `ExportServiceCompilerPass`).   
 
-### PDF Templates
+## PDF Templates
 
-{% include documentation/pdf-templates.md %}
+There is so much to say about PDF templates, that there is a dedicated page about [PDF templates]({% link _documentation/pdf-templates.md %}).
  
-#### Custom fields
+### Custom fields
 
 You can access custom fields with:
 

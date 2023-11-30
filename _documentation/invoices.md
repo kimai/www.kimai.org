@@ -307,14 +307,8 @@ Want to use a **user preference** in your template?
 
 ### PDF templates
 
-PDF invoice templates are basically the same as Twig templates. 
-But the resulting HTML is processed by the [MPdf library](https://mpdf.github.io), which will convert the HTML & CSS to PDF.
-There are some additional contents, that will define e.g. page header and footer. 
-
-Please read the MPdf documentation and check the default PDF templates.
-
-{% include documentation/pdf-templates.md %}
-
+There is so much to say about PDF templates, that there is a dedicated page about [PDF templates]({% link _documentation/pdf-templates.md %}).
+ 
 ### Docx templates
 
 Docx templates are processed by [PHPWord](https://github.com/PHPOffice/PHPWord) and its `TemplateProcessor`.
