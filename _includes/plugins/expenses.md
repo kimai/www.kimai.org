@@ -5,7 +5,7 @@
     - Negative amounts allow for complex bookings, budget and invoice adjustments
 - Manage expenses via API
 - Export expenses in: Excel, PDF, HTML
-- **Support for custom-fields (see [Custom-fields plugin]({% link _store/keleo-custom-fields-bundle.md %}))**
+- Support for custom-fields
 - Include expenses in Kimai export module
 - Import expenses from Kimai 1
 
@@ -28,3 +28,7 @@ Each expense has the following fields:
 - an amount (see it as multiplier, use 1 if you want to charge the cost only)
 - a billable flag (non-billable expenses will not be added to your invoices)
 - an export flag (to make sure, that each expense will be invoiced only once)
+
+If turned on, Expenses count towards budgets and revenue statistics.
+
+Expense summaries are displayed on the detail pages for customer, project and activity.
