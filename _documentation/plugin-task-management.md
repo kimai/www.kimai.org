@@ -5,6 +5,10 @@ description: Manage your tasks / todo lists, use user and team assignments and t
 
 {% include plugins/task-management.md %}  
 
+## Detail pages
+
+Open tasks will also be shown on Customer/Project/Activity detail pages.
+
 ## Dashboard widgets
 
 Two new dashboard widgets belong to the `Task management`.
@@ -27,12 +31,17 @@ This widget has the following UI elements (if permissions are set for the user):
 - a "Delete" button (will remove the task entirely, but keep the related timesheet entries)
 - a "Create" button (create a new task for the currently logged-in user)
 
+Visible for all user with `task_start` permission.
+
 ### Pending tasks widget
 
 Displays all tasks which:
 - have the "pending" status
 - are not assigned to a user
-- can be seen by the user (via team assignment or completely unassigned tasks)
+- and are either
+    - not assigned to a team
+    - or are assigned to the users team
+    - or the current user owns the `view_all_data` permission (like admins)
 
 This widget has the following UI elements (if permissions are set for the user):
 - a title
@@ -41,6 +50,8 @@ This widget has the following UI elements (if permissions are set for the user):
 - an "Assign" button (move the task back to the "My tasks widget")
 - a "Delete" button (will remove the task entirely, but keep the related timesheet entries)
 - a "Create" button (create a new pending task)
+
+Visible for all user with `task_start` and either one of `task_assign` or `task_team_view` permission.
 
 ## Permissions
 
