@@ -20,32 +20,16 @@ You have to adapt two settings in your `.env` [configuration file]({% link _docu
 
 ### MAILER_URL
 
-The following providers are supported out-of-the-box by Kimai: 
+These are some examples to configure your SMTP for sending emails: 
 
 - Deactivated: `null://null`
 - SMTP: `smtp://localhost:25`
-
-The following specialized transports (usually helper to simplify the connection string) can be installed manually:
-
-| Service     | Install with                               | SMTP config example                            |
-|-------------|--------------------------------------------|------------------------------------------------|
-| Amazon SES  | composer require symfony/amazon-mailer     | `ses+smtp://USERNAME:PASSWORD@default`         |
-| Gmail       | composer require symfony/google-mailer     | `gmail+smtp://USERNAME:PASSWORD@default`       |
-| MailChimp   | composer require symfony/mailchimp-mailer  | `mandrill+smtp://USERNAME:PASSWORD@default`    |
-| Mailgun     | composer require symfony/mailgun-mailer    | `mailgun+smtp://USERNAME:PASSWORD@default`     |
-| Mailjet     | composer require symfony/mailjet-mailer    | `mailjet+smtp://ACCESS_KEY:SECRET_KEY@default` |
-| Postmark    | composer require symfony/postmark-mailer   | `postmark+smtp://ID@default`                   |
-| SendGrid    | composer require symfony/sendgrid-mailer   | `sendgrid+smtp://KEY@default`                  |
-| Sendinblue  | composer require symfony/sendinblue-mailer | `sendinblue+smtp://USERNAME:PASSWORD@default`  |
-| OhMySMTP    | composer require symfony/oh-my-smtp-mailer | `ohmysmtp+smtp://API_TOKEN@default`            |
-{: .table }
-
-Be aware that you can achieve the same in most cases (without installing composer packages) by rewriting the MAILER_URL, e.g.:
-
+- Sendmail: `sendmail://default`
 - Gmail: `smtps://{username}:{password}@smtp.gmail.com:465`
-- Sendinblue: `smtps://{username}:{password}@smtp-relay.sendinblue.com:465`
+- Brevo: `smtps://{username}:{password}@smtp-relay.brevo.com:465`
+- Sendgrid: `smtps://{username}:{password}@smtp.sendgrid.net:465`
 
-Read more at [Symfony docs](https://symfony.com/doc/current/mailer.html)
+More explanation can be found int the [Symfony mailer documentation](https://symfony.com/doc/current/mailer.html).
 
 ## Troubleshooting
 
