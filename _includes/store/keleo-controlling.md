@@ -39,9 +39,6 @@ These features will be added in the future, but there is no guarantee when or in
 ```
 - API 
     - methods to read absences (date-range, user, absence type)
-- Documentation
-    - Written
-    - Videos
 - Approval workflow for Absences 
     - Allow to "Sent for approval" to Supervisor
     - Allow to "Reject" or "Approve" by Supervisor
@@ -72,8 +69,11 @@ If you need one of these features, do not rely on them being added, but contact 
 If I decide to add one of these feature, it will be moved to the "Roadmap" section.
 
 ```
-- Allow to configure a [dedicated project](https://github.com/kevinpapst/kimai-plugins/discussions/112) for attendance tracking
-- Public holidays
+- Working times
+    - Allow to configure a [dedicated project](https://github.com/kevinpapst/kimai-plugins/discussions/112) that will be exclusively used for calculating attendance time 
+    - Allow to configure a dedicated project that will be ignored when calculating the attendance time
+- Validations
+  - Configure if timesheets should be prohibited during absence (type)
   - Configurable rule to deactivate time-records on public holidays
 - API 
   - Methods to read absences
@@ -85,8 +85,6 @@ If I decide to add one of these feature, it will be moved to the "Roadmap" secti
   - pending holidays (approved), used holidays, available
 - Monthly approvals
   - Allow to close months partially, in case there is a change in the contract within the month
-- Define arbitrary date ranges with attached working-time profiles
-  - Allow to attach each user multiple profiles
 - Absences
   - Add holiday for multiple users (e.g. for forced company vacations)
   - Types of absences (Workaround: use comment field)
@@ -95,13 +93,9 @@ If I decide to add one of these feature, it will be moved to the "Roadmap" secti
     - paid/not paid
   - Convert holiday to sickness (Workaround: create sickness and delete holiday)
   - Sum of sickness and other days on Absence screen
-- Rules
-  - Configure if timesheets should be prohibited during absence (type)
 - Breaks (Pause)
   - Support calculation of breaks (e.g. display in calendar)
   - Use all breaks between first entry of the day and last entry of the day as pause
-- New year 
-  - Add a button to take over values from last year (for all users)
 - Dashboard
   - Existing widgets do not show public holidays, sickness, vacation ... make it configurable or create new widgets that include these hours/days
   - Widgets for total numbers, to show "status" more prominent
@@ -113,7 +107,12 @@ If I decide to add one of these feature, it will be moved to the "Roadmap" secti
 - Holidays
   - Take over holidays from last year (like manual bookings)
   - Lockdown method for vacations (define periods where no vacations can be booked)
-- Configuration for the business year, in case a company is not using the calendar year
-- Multiple working contracts per user (configured with start and end time)
-- Work scheduler (like a monthly view), as some employees (especially hourly-based freelancers) cannot used fixed working days
+    - Automatic calculation of holidays according to the working-time duration (e.g. 30 days per year for a 40h week) 
+- Contracts 
+    - Multiple working contracts per user (configured with start and end time)
+- Define arbitrary date ranges with attached working-time profiles
+  - Allow to attach each user multiple profiles
+- Other
+  - Configuration for the business year, in case a company is not using the calendar year
+  - Work scheduler (like a monthly view), as some employees (especially hourly-based freelancers) cannot used fixed working days
 ```
