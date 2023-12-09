@@ -55,7 +55,7 @@ services:
       - MAILER_FROM=kimai@example.com
     volumes:
       - public:/opt/kimai/public
-      # - var:/opt/kimai/var
+      # - data:/opt/kimai/var/data
       # - ./ldap.conf:/etc/openldap/ldap.conf:z
       # - ./ROOT-CA.pem:/etc/ssl/certs/ROOT-CA.pem:z
     restart: unless-stopped
@@ -84,7 +84,7 @@ services:
       - "${MAILER_ADMIN_PORT:-1080}:1080"
 
 volumes:
-    var:
+    data:
     public:
     mysql:
 ```
@@ -143,7 +143,7 @@ services:
   sqldb:
     image: mysql:5.7
     volumes:
-      - kimai-mysql:/var/lib/mysql
+      - mysql:/var/lib/mysql
     environment:
       - MYSQL_DATABASE=kimai
       - MYSQL_USER=kimaiuser
@@ -161,7 +161,7 @@ services:
   kimai:
     image: kimai/kimai2:apache
     volumes:
-      - kimai-var:/opt/kimai/var
+      - data:/opt/kimai/var/data
     ports:
       - 8001:8001
     environment:
@@ -172,8 +172,8 @@ services:
     restart: unless-stopped
 
 volumes:
-  kimai-var:
-  kimai-mysql:
+  data:
+  mysql:
 ```
 
 ### FPM dev
@@ -223,13 +223,13 @@ services:
       - TRUSTED_HOSTS=nginx,localhost,127.0.0.1
     volumes:
       - public:/opt/kimai/public
-      # - var:/opt/kimai/var
+      # - data:/opt/kimai/var/data
       # - ./ldap.conf:/etc/openldap/ldap.conf:z
       # - ./ROOT-CA.pem:/etc/ssl/certs/ROOT-CA.pem:z
     restart: unless-stopped
 
 volumes:
-    var:
+    data:
     public:
 ```
 
@@ -280,12 +280,12 @@ services:
       - TRUSTED_HOSTS=nginx,localhost,127.0.0.1
     volumes:
       - public:/opt/kimai/public
-      # - var:/opt/kimai/var
+      # - data:/opt/kimai/var/data
       # - ./ldap.conf:/etc/openldap/ldap.conf:z
       # - ./ROOT-CA.pem:/etc/ssl/certs/ROOT-CA.pem:z
     restart: unless-stopped
 
 volumes:
-    var:
+    data:
     public:
 ```
