@@ -22,6 +22,8 @@ Kimai [package](https://github.com/YunoHost-Apps/kimai2_ynh) for [YunoHost](http
 
 [![Install Kimai with Cloudron](https://cloudron.io/img/button32.png)](https://cloudron.io/button.html?app=org.kimai.cloudronapp)
 
+There is [documentation available](https://docs.cloudron.io/apps/kimai/) on how to customize configs and install plugins.
+
 ### Vesta Control Panel
 
 Be aware that VestaCP uses the `admin` user instead of `www-data`. Replace the names in the permission commands above.
