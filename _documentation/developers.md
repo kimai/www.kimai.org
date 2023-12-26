@@ -37,7 +37,7 @@ You need to change your environment to `dev` and configure your database connect
 
 ```
 APP_ENV=dev
-DATABASE_URL=mysql://user:password@127.0.0.1:3306/database?charset=utf8mb4&serverVersion=5.7
+DATABASE_URL=mysql://user:password@127.0.0.1:3306/database?charset=utf8mb4&serverVersion=5.7.40
 ```
 
 The next command will import demo data, to test the application in its full beauty - with different user accounts,

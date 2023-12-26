@@ -60,7 +60,7 @@ composer install --optimize-autoloader -n
 
 Configure the database connection and server version in the `.env` file:
 ```
-DATABASE_URL=mysql://user:password@127.0.0.1:3306/database?charset=utf8mb4&serverVersion=5.7
+DATABASE_URL=mysql://user:password@127.0.0.1:3306/database?charset=utf8mb4&serverVersion=5.7.40
 ```
 
 And run the Kimai installer:
@@ -172,7 +172,7 @@ mG0%2Fd1%403aT.Z%29s
 
 Then your `DATABASE_URL` might look like this:
 ```
-DATABASE_URL=mysql://root:mG0%2Fd1%403aT.Z%29s@127.0.0.1:3306/kimai2?charset=utf8mb4&serverVersion=5.7
+DATABASE_URL=mysql://root:mG0%2Fd1%403aT.Z%29s@127.0.0.1:3306/kimai2?charset=utf8mb4&serverVersion=5.7.40
 ```
 
 ### Which user to use, www-data, httpd or your own?

@@ -49,7 +49,7 @@ services:
     environment:
       - ADMINMAIL=admin@kimai.local
       - ADMINPASS=changemeplease
-      - DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8&serverVersion=5.7
+      - DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&serverVersion=5.7.40
       - TRUSTED_HOSTS=nginx,localhost,127.0.0.1
       - MAILER_URL=smtp://mailer:1025
       - MAILER_FROM=kimai@example.com
@@ -129,7 +129,7 @@ services:
     environment:
       - ADMINMAIL=admin@kimai.local
       - ADMINPASS=changemeplease
-      - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8&serverVersion=5.7"
+      - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&serverVersion=5.7.40"
       - TRUSTED_HOSTS=nginx,localhost,127.0.0.1
     restart: unless-stopped
 ```
@@ -167,7 +167,7 @@ services:
     environment:
       - ADMINMAIL=admin@kimai.local
       - ADMINPASS=changemeplease
-      - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8&serverVersion=5.7"
+      - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&serverVersion=5.7.40"
       - TRUSTED_HOSTS=nginx,localhost,127.0.0.1
     restart: unless-stopped
 
@@ -219,7 +219,7 @@ services:
     environment:
       - ADMINMAIL=admin@kimai.local
       - ADMINPASS=changemeplease
-      - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8&serverVersion=5.7"
+      - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&serverVersion=5.7.40"
       - TRUSTED_HOSTS=nginx,localhost,127.0.0.1
     volumes:
       - public:/opt/kimai/public
@@ -276,7 +276,7 @@ services:
     environment:
       - ADMINMAIL=admin@kimai.local
       - ADMINPASS=changemeplease
-      - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8&serverVersion=5.7"
+      - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&serverVersion=5.7.40"
       - TRUSTED_HOSTS=nginx,localhost,127.0.0.1
     volumes:
       - public:/opt/kimai/public

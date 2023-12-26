@@ -33,7 +33,7 @@ Run the latest production build:
         docker run --rm --name kimai-test \
             -ti \
             -p 8001:8001 \
-            -e DATABASE_URL=mysql://kimai:kimai@${HOSTNAME}:3399/kimai?charset=utf8&serverVersion=5.7 \
+            -e DATABASE_URL=mysql://kimai:kimai@${HOSTNAME}:3399/kimai?charset=utf8mb4&serverVersion=5.7.40 \
             kimai/kimai2:apache
     ```
 
@@ -75,7 +75,7 @@ memory_limit=512M
 See the Kimai and Symfony docs for more info on these.
 
 ```bash
-DATABASE_URL=mysql://user:pass@hodt/dbname?charset=utf8&serverVersion=5.7
+DATABASE_URL=mysql://user:pass@hodt/dbname?charset=utf8mb4&serverVersion=5.7.40
 APP_SECRET=change_this_to_something_unique
 TRUSTED_PROXIES=nginx,localhost,127.0.0.1
 TRUSTED_HOSTS=nginx,localhost,127.0.0.1
