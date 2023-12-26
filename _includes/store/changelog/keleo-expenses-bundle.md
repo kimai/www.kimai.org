@@ -1,3 +1,12 @@
+## Version 2.6.0
+
+Compatibility: requires minimum Kimai 2.6.0
+
+- Added: calculate "exported" vs. "not exported" statistics and provide for several statistics
+- Added: sort invoice entries if "expense category project" grouping is activated
+- Changed: re-use "Expenses" translation for configuration
+- Fixed: broken "category" translation
+
 ## Version 2.5.0
 
 Compatibility: requires minimum Kimai 2.5.0

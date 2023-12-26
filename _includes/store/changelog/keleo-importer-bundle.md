@@ -1,3 +1,10 @@
+## Version 2.8.0
+
+Compatibility: requires minimum Kimai 2.5.0
+
+- Added: new created users during import require to change password
+- Changed: Improved error message upon wrong mimetype
+
 ## Version 2.7.0
 
 Compatibility: requires minimum Kimai 2.5.0

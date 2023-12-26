@@ -1,3 +1,9 @@
+## Version 2.4.0
+
+Compatibility: requires minimum Kimai 2.5.0
+
+- Changed: do not load all meta-fields from database on every page load
+
 ## Version 2.3.0
 
 Compatibility: requires minimum Kimai 2.5.0

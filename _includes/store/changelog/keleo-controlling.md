@@ -1,3 +1,14 @@
+## Version 1.4.0
+
+Compatibility: requires minimum Kimai 2.7.0
+
+- Added: manual adjustments for holidays, e.g. top up available days with remaining days from last year
+- Added: added category to book "child is sick" absences
+- Added: added category to book "parental leave" absences
+- Added: prevent booking absences across a time-range of two years
+- Added: limit selectable time-range to selected year
+- Fixed: day calculation of vacations with public holidays in between
+
 ## Version 1.3.0
 
 Compatibility: requires minimum Kimai 2.5.0

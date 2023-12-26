@@ -1,3 +1,10 @@
+## Version 2.4.0
+
+Compatibility: requires minimum Kimai 2.1.0
+
+- Improved: replaced up to 1 DB query call per Task on listing page with 1 query in total
+- Improved: stopping a task multiple times will not raise an error anymore
+
 ## Version 2.3.0
 
 Compatibility: requires minimum Kimai 2.1.0

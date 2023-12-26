@@ -56,8 +56,7 @@ These features will be added in the future, but there is no guarantee when or in
   - Sent notifications to supervisor for new "absences to be approved"
   - Sent notifications to user for approved/rejected absences
 - Finalize year
-  - Auto-adjust time-account of next year
-  - Allow to take over and adjust the holidays, which were not yet taken (probably with an expiration date?)
+  - Allow automatic adjustments of time and holiday account of next year, e.g. from a list-overview
 - Settings
   - Last day of work for a user, to stop calculating afterwards
 ```
@@ -69,9 +68,10 @@ If you need one of these features, do not rely on them being added, but contact 
 If I decide to add one of these feature, it will be moved to the "Roadmap" section.
 
 ```
+- Support for employees without expected working hours (e.g. hourly-based freelancers, who cannot used fixed working days) 
 - Working times
-    - Allow to configure a [dedicated project](https://github.com/kevinpapst/kimai-plugins/discussions/112) that will be exclusively used for calculating attendance time 
-    - Allow to configure a dedicated project that will be ignored when calculating the attendance time
+  - Allow to configure a [dedicated project](https://github.com/kevinpapst/kimai-plugins/discussions/112) that will be exclusively used for calculating attendance time 
+  - Allow to configure a dedicated project that will be ignored when calculating the attendance time
 - Validations
   - Configure if timesheets should be prohibited during absence (type)
   - Configurable rule to deactivate time-records on public holidays
@@ -91,7 +91,6 @@ If I decide to add one of these feature, it will be moved to the "Roadmap" secti
     - Configurable for sickness and other
     - Show type in PDF
     - paid/not paid
-  - Convert holiday to sickness (Workaround: create sickness and delete holiday)
   - Sum of sickness and other days on Absence screen
 - Breaks (Pause)
   - Support calculation of breaks (e.g. display in calendar)
@@ -105,14 +104,16 @@ If I decide to add one of these feature, it will be moved to the "Roadmap" secti
   - Allow one custom rule
   - Configure default rule (country or custom) per user
 - Holidays
-  - Take over holidays from last year (like manual bookings)
   - Lockdown method for vacations (define periods where no vacations can be booked)
-    - Automatic calculation of holidays according to the working-time duration (e.g. 30 days per year for a 40h week) 
+  - Automatic calculation of holidays according to the working-time duration (e.g. 30 days per year for a 40h week) 
 - Contracts 
-    - Multiple working contracts per user (configured with start and end time)
+  - Multiple working contracts per user (configured with start and end time)
 - Define arbitrary date ranges with attached working-time profiles
   - Allow to attach each user multiple profiles
-- Other
-  - Configuration for the business year, in case a company is not using the calendar year
-  - Work scheduler (like a monthly view), as some employees (especially hourly-based freelancers) cannot used fixed working days
+```
+
+**Other requests and solutions**
+
+```
+- Convert holiday to sickness. Solution: create sickness and delete holiday
 ```
