@@ -1,6 +1,6 @@
 ---
 title: Data removal
-description: We protect your privacy by deleting unused data after a certain period of time. 
+description: We protect your privacy by deleting unused data after a certain period of time. Only applies to free accounts! 
 ---
 
 I do not make any money from your private data and for data minimisation reasons,
@@ -50,9 +50,8 @@ Kimai will send you warning emails that your cloud is unused with more informati
 If you don't need your Kimai cloud anymore, you don't have to do anything: four weeks after sending the warning-email,
 your cloud and your account will be completely deleted.
 
-### Data protection for paid customer
+### Data protection for paying customer
 
-Data for paid accounts is secure!
-Paying customers and accounts that have had a paid plan in the past are protected and will never be touched by this process.
+Data for paying accounts is secure.
 
-Data from accounts that have used a paid plan in the past can be deleted upon request.
+Paying customers are protected and their data will never be touched by this process.
