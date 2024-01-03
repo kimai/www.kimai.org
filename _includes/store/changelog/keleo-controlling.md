@@ -1,3 +1,14 @@
+## Version 1.5.0
+
+Compatibility: requires minimum Kimai 2.8.0
+
+- Added: new category to book "unpaid holiday" absences
+- Added: generic calculation logic to prevent required adjustments for new categories
+- Added: different duration limitation for absence types (e.g. 75 days in one booking for parental leave)
+- Added: command `bin/console kimai:bundles:workcontract:absence-types` to debug absence types
+- Fixed: time calculation for new "child is sick" and "parental leave" categories
+- Fixed: deprecation by using DateTimeImmutable
+
 ## Version 1.4.0
 
 Compatibility: requires minimum Kimai 2.7.0
