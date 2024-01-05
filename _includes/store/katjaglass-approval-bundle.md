@@ -7,8 +7,10 @@ A plugin for Kimai to approve timesheets of users on a weekly basis.
 - Teamlead/Admin can approve or deny the week
 - Overview of approvals, missing approvals and the status
 - Mailing options to recall approval tasks if outstanding
+- Various options to track overtime
+- Option to check for breaks according German Law
 
-## Requirement
+## Requirements
 
 - Requires Kimai v1.16.10 or higher
 - [Custom-fields plugin]({% link _store/keleo-custom-fields-bundle.md %})
