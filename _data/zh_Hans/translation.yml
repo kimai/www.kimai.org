@@ -38,7 +38,7 @@ installation: '安装'
 updates: '更新'
 username: '用户名'
 password: '密码'
-try-it: '试试吧'
+try-it: '演示'
 plugin-demo-at: '你可以在以下网站测试这个插件'
 plugin-demo-accounts: '在此处查找更多测试帐户'
 read-more: '阅读更多'
@@ -55,11 +55,11 @@ create-database: '创建数据库'
 install-assets: '安装资产'
 ask-question: 问问题
 newsletter:
-    title: 新闻通讯
+    title: 不想错过任何事情？
     email-help: 提供您的电子邮件地址以进行订阅。
     field-required: 此字段不能留空。
     captcha-help: 对于验证码，我们深表歉意，我们知道这很烦人！
-    sendinblue: 我们使用 Brevo 作为我们的营销平台。单击下方提交此表格，即表示您承认您提供的信息将根据其 %terms% 转移到 Brevo 进行处理
+    sendinblue: 我们使用 Brevo 作为我们的营销平台。单击下方提交此表格，即表示您承认您提供的信息将根据其 %terms% 转移到 Brevo 进行处理。
     terms: 使用条款
     introduction: 订阅我们的时事通讯并随时了解 Kimai 和插件更新。
     email-title: 您的电子邮件地址
@@ -82,7 +82,7 @@ demo:
     title: 在其中一个演示中测试 Kimai
     introduction: "尝试 Kimai 时间跟踪演示，我们保证：您将继续使用它！"
     choose: 请选择我们的演示安装之一，以获得对 Kimai 的感觉及其提供的功能的第一印象。
-    reinstall: 请注意，演示将定期重新安装，所有输入的数据都将被删除。但为了您的方便，大多数都预先填充了测试数据，因此您可以直接开始测试功能（如发票或导出）。
+    reinstall: 请注意，演示将定期重新安装，所有输入的数据都将被删除。
     accounts: "这些帐户可用于您的测试。或者您在每个演示的登录表单中创建自己的测试用户。"
     role_teamlead: 团队负责人
     role_super: 超级管理员
@@ -121,7 +121,7 @@ about:
         title: 工作中的快乐
         content: Kimai的开发是我热爱的职业与教育的无限可能性的理想结合，也需要赚钱来养家糊口。多亏了Kimai，我可以花更多时间与妻子和孩子在一起，这可能是您可以想象的最好的动力。
 store:
-    name: '商店'
+    name: '插件'
     subtitle: '延长你的时间追踪'
     description: 查找 Kimai 的扩展和商业支持
 blog:
@@ -187,7 +187,7 @@ feature:
         description: "通过 SAML（单点登录又名 SSO）登录和注册用户，并重复使用现有的标识提供者，如谷歌工作区、身份验证或 Azure 活动目录。"
     api:
         name: "JSON API"
-        description: "具有 JSON API，因此外部应用程序可以与您最喜欢的时间跟踪器进行通信！"
+        description: "具有用于读取和写入数据的广泛 JSON API，因此外部应用程序和您的自定义工具可以与您最喜欢的时间跟踪器进行通信。"
     ldap:
         name: "LDAP"
         description: "将 Kimai 与您的公司目录服务器（LDAP 或 Active Directory）连接并使用您现有的身份验证基础架构。"
@@ -250,9 +250,9 @@ install:
     kubernetes: 您可以使用我们的Helm-Charts将Kimai部署到Kubernetes上。
 developer:
     kevinpapst:
-        intro: 自 2007 年起担任项目维护者和核心开发人员。希望将 Kimai 打造成世界上最好的开源时间跟踪器。可以受雇提供支持、安装和自定义插件开发。
+        intro: "以开源产品为生一直是我的梦想。 借助 Kimai，我能够开发出一款为我的客户提供巨大价值的软件，并且该软件的开发每天都在激励着我。\n\n我特别感谢伟大的社区多年来的忠诚，我期待着 Kimai 的下一个 10 年🚀\n"
 price-contract: 根据要求
-full-documentation: 此处提供完整文档（仅英文版）。
+full-documentation: 完整的英文文档
 contact-developer: 如果你有任何问题，请使用以下联系信息与开发商直接联系。
 homepage:
     title: 面向项目驱动团队的时间跟踪
@@ -273,7 +273,7 @@ section-teaser:
     absence:
         title: 缺勤
         description: 假期、节假日、疾病和缺勤。
-per-year: per year
+per-year: 每年
 history:
     year-2020: Kimai以基于订阅的SaaS形式提供，有免费和两个付费计划。
     early-days-title: 一切始于何时
@@ -284,25 +284,23 @@ history:
     year-2014: 创建了Kimai 1的最后一个版本，开发停滞不前，活动不多。
     year-2006: Kimai的第一个版本发布，逐渐获得了越来越多的用户和开发者基础。
     intro: 从一个爱好项目开始，现在是世界上领先的开源时间跟踪应用程序。让我们深入了解它的历史。
-    year-2018: Kimai的重写进入社区，数据迁移正常工作。
+    year-2018: Kimai 重写找到了进入社区的方式，数据迁移有效，采用率正在上升。
     current: |
-        Kimai是一款有着悠久历史的时间跟踪应用。首个版本于2006年发布。为什么我要提到这一点呢？因为自那时以来，我见证了许多服务的兴衰 - 请相信我，我会一直坚守在这里。多年来，我没有从Kimai中谋生，是乐趣让我保持动力，不断改进Kimai。我相信乐趣是Kimai成功的主要原因之一。
+        Kimai 是一款历史悠久的时间跟踪软件，第一个版本早在2006年就发布了。为什么我要提到这个呢？ 因为从那时起我已经看到许多项目来了又去——相信我，Kimai 会留下来。 我花了很多年开发 Kimai 来娱乐，现在 Kimai 是我的事业，我从未像现在这样更有动力去不断改进它。
 
-        我创建Kimai的目的只有一个：追踪你的工时。Kimai支持无限数量的用户和时间表条目，因此您可以在一个易于使用的安装中管理所有团队/部门。Kimai是基于Web的，所以您只需要一个启用了PHP的Web服务器。它采用响应式设计，因此即使在外出时，您也可以在移动设备上追踪时间。Kimai已被翻译成多种语言，可以使用开放翻译标准Xliff轻松添加缺失的翻译。
+        我构建 Kimai 的目的只有一个：记录、管理、评估和核算工作时间。 Kimai 支持无限数量的用户、客户、项目和时间条目，因此您可以在一个易于使用的安装中管理所有团队。 Kimai 被翻译成数十种语言，可以在任何具有互联网接入和浏览器的设备上运行，甚至在您移动时由于响应式设计也可以在您的移动设备上运行。
 
-        哦，我提到了您可以从浏览器中的时间表创建发票吗？Kimai可以以多种方式轻松扩展。它建立在最流行和现代的框架上，并拥有积极的社区，制作了许多插件，扩展了Kimai的核心功能。
+        您可以使用可自定义的发票模板直接在浏览器中根据时间表创建发票。 Kimai 还可以通过多种方式进行扩展，特别是通过活跃社区创建的许多插件。
 
-        我可以写更多关于Kimai可以为您带来的功能和好处的内容 - 无论您是自由职业者、小型组织还是拥有数百名员工的公司 - 但我认为让您直接尝试它要比我千言万语更好。
+        无论您是自由职业者、小型组织还是拥有数百名员工的公司，Kimai 都可以帮助您管理业务。 请自行决定并在演示安装的帮助下测试 Kimai。
     past: |
-        Kimai有着悠久的历史，在2006年Torsten Höltge和他的团队开始开发它时，它已经领先于时代。在"响应式设计"这个词正式被发明之前，它就已经拥有了响应式设计（多亏了大量的Javascript魔法）。
+        Kimai 有着悠久的历史，当 Torsten Höltge 的团队于 2006 年开始开发它时，它已经远远领先于时代。在这个词还没有被正式发明的时候，它就采用了响应式设计（得益于大量的 Javascript 魔法）。
+        我在 2009 年接手了 Kimai 的开发，当时 Torsten 由于时间不够而想停止它，并在其他开源爱好者的帮助下维护和扩展了 Kimai 几年。
 
-        由于个人原因，Torsten Höltge在2009年准备关闭它时，Kevin成为了维护者。在其他开源志愿者的帮助下，他让它继续生存并不断发展了多年。
+        与此同时，PHP 社区正在取得长足的进步，而 Kimai 由于其历史的原因却越来越落后。 该库存在许多技术弱点，经过多年的发展，代码库变得越来越难以维护。
+        用现代框架重写 Kimai 的想法已经存在了一段时间，也是受到社区请求的推动，但没有人有资源来推动这一想法。 2017年底，多种因素结合在一起，我抓住时机开始开发下一个进化步骤“Kimai 2”。
 
-        与此同时，PHP社区取得了巨大的进步，由于其技术历史（建立在许多单独的PHP脚本周围，所有这些脚本都必须公开可用），Kimai感到落后。它还存在一些重大缺点，如有限的可扩展性和问题数据库设计。经过多年的开发，代码库变得难以维护，逻辑分散在脚本、类和前端层中。
-
-        因此，使用现代框架重写Kimai的想法已经存在很长时间，也受到社区的要求推动，但没有时间来推进这些想法。2017年底，Symfony 4.0与一个出色的前端堆栈一起发布。那时我抓住机会开始开发下一个进化步骤：Kimai（v2）诞生了。
-
-        最初的Kimai于2006年首次发布，被世界各地的许多人使用。我为此感到自豪，也为伟大的社区感到自豪。现在，经过5年，大多数人已经迁移到新的Kimai版本，用户数量每天都在增长。因此，我想感谢所有为Kimai做出贡献的人。
+        最初的 Kimai 于 2006 年首次发布，并已被世界各地的许多人使用，我对此及其伟大的社区感到自豪。 我要感谢所有为 Kimai 做出贡献的人。
 store-hero-counter: '已有%number%位客户选择了我们'
 store-hero-intro: 通过我们丰富的插件选择来增强Kimai。在Kimai生态系统中，可以选择数十种应用程序和扩展，让您的时间跟踪体验更上一层楼！
 cta:
@@ -383,14 +381,14 @@ support:
     community: 社区
     cloud_intro: "付费云客户可使用电子邮件支持。\n\n云客户可以在中欧时间（CET）周一至周五的10:00至16:00之间（不包括公共假期）内收到回复。\n"
 docu-cloud:
-    name: Kimai-Cloud
+    name: Kimai云
 landing_oss:
-    version_cloud: Get up and running in seconds, leave the hosting and update to me, you take care of your core business. Make sure your team is ready for the future, with a modern time tracking solution.
-    transparency_intro: With closed source software, you have only the vendor's claims that they're keeping the software secure and adhering to standards. The visibility of the code behind open source software means you can see for yourself. You can always see my responses to the community, the release schedule and milestones, and every commit and pull request review.
-    version_choose: Which Kimai is right for you?
-    vendor_title: No vendor lock-in
-    vendor_intro: Vendor lock-in can cost a lot, not just in cash but also in hours. With Kimai, you can host it yourself, have me host it for you, or fork it and change it. You're never locked into a hosted product, and all of your data is easy to export so that if you ever decide Kimai isn't for you anymore, your data is still yours (the same applies to the paid plans, I offer data export upon cancellation).
-    transparency_title: Always transparent
-    subtitle: Kimai is the open source %title% software you were looking for 🎉
-    version_onpremise: I take care of the software, you take care about the hosting, updates and security. And if you don't want to do it yourself, there is always support available at your fingertips.
-    discover: Discover Kimai
+    version_cloud: 只需几秒钟即可启动并运行，将托管和更新留给我，您可以专注于您的核心业务。 使用现代时间跟踪解决方案，确保您的团队为未来做好准备。
+    transparency_intro: 对于闭源软件，您只能看到供应商声称他们保证软件安全并遵守标准。 开源软件背后的代码的可见性意味着您可以亲眼看到。 您始终可以看到我对社区的回复、发布时间表和里程碑，以及每次提交和拉取请求审核。
+    version_choose: 哪种 Kimai 适合您？
+    vendor_title: 不锁定供应商
+    vendor_intro: 供应商锁定可能会花费大量成本，不仅需要现金，还需要时间。 使用 Kimai，您可以自己托管它，让我为您托管它，或者分叉它并更改它。 您永远不会被锁定在托管产品中，并且您的所有数据都可以轻松导出，因此，如果您决定 Kimai 不再适合您，您的数据仍然是您的（这同样适用于付费计划，我提供数据 取消后导出）。
+    transparency_title: 始终透明
+    subtitle: Kimai 是您正在寻找的开源 %title% 软件 🎉
+    version_onpremise: 我负责软件，你负责托管、更新和安全。 如果您不想自己动手，也可以随时获得支持。
+    discover: 探索 Kimai
