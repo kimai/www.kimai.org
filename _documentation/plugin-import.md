@@ -90,29 +90,32 @@ This will import timesheets and create these elements on the fly:
 - missing tags
 - missing users
 
-| Attribute      | Supported field names                                     |
-|----------------|-----------------------------------------------------------|
-| Duration       | timesheet duration in seconds                             |
-| Tags           | comma separated list of tag-names                         |
-| Exported       | whether the timesheet should be marked as exported or not |
-| Rate           | TODO ...                                                  |
-| HourlyRate     | TODO ...                                                  |
-| InternalRate   | TODO ...                                                  |
-| FixedRate      | TODO ...                                                  |
-| Billable       | TODO ...                                                  |
-| Description    | TODO ...                                                  |
-| Tags           | TODO ...                                                  |
-| Project        | TODO ...                                                  |
-| Customer       | TODO ...                                                  |
-| Activity       | TODO ...                                                  |
-| Begin          | TODO ...                                                  |
-| End            | TODO ...                                                  |
-| Date           | TODO ...                                                  |
-| From           | TODO ...                                                  |
-| To             | TODO ...                                                  |
-| User           | Username                                                  |
-| Email          | User email (required when creating users)                 |
+| Attribute    | Supported field names                                                                   |
+|--------------|-----------------------------------------------------------------------------------------|
+| Duration     | Timesheet duration in seconds (if skipped, will be calculated from start and end times) |
+| Tags         | Comma separated list of tag-names                                                       |
+| Exported     | Whether the timesheet should be marked as exported or not (1 or 0)                      |
+| Rate         | The rate as an integer                                                                  |
+| HourlyRate   | The hourly rate as an integer                                                           |
+| InternalRate | The internal rate as an integer                                                         |
+| FixedRate    | The fixed rate as an integer                                                            |
+| Billable     | Whether the entry should be marked as billable or not (1 or 0)                          |
+| Description  | Description of the entry as string                                                      |
+| Project      | Name of the project as string                                                           |
+| Customer     | Name of the customer as string                                                          |
+| Activity     | Name of the activity as string                                                          |
+| Begin        | Start date-time in the format: `YYYY-MM-DD HH:MM:SS`                                    |
+| End          | End date-time in the format: `YYYY-MM-DD HH:MM:SS`                                      |
+| Date         | Date in the format: `YYYY-MM-DD` (only used in combination with `From` and `To`         |
+| From         | Start time in the format: `HH:MM:SS`                                                    |
+| To           | End time in the format: `HH:MM:SS`                                                      |
+| User         | Username                                                                                |
+| Email        | User email (required when creating users)                                               |
 {: .table }
+
+Supply one of these combinations:
+- `Begin` and `End`  
+- `Date` with `From` and `To` 
 
 ### User handling
 
