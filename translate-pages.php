@@ -18,7 +18,7 @@ $multiLanguagePaths = [
         'skip' => ['v1.md'],
         'permalink' => '/:language/store/:basename',
         'remove' => ['redirect_from'],
-        'overwrite' => true,
+        'overwrite' => false, // do not change this flag, it will cause too many changes in existing pages
     ],
 ];
 
