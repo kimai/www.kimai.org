@@ -41,6 +41,16 @@
         <meta name="description" content="{{ page_description | strip_html | strip_newlines | strip }}">
     {%- endif %}
     <link type="application/atom+xml" rel="alternate" href="{% link feed.xml %}" title="Kimai Time-Tracking" />
+    <meta property="og:locale" content="{{ page.lang }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kimai Time-Tracking">
+    <meta property="og:description" content="{{ page_description }}">
+    <meta property="og:image" content="{{ '/images/social-preview.jpg' | absolute_url }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kimai Time-Tracking">
+    <meta name="twitter:site" content="@kimai_org">
+    <meta name="twitter:description" content="{{ page_description }}">
+    <meta name="twitter:image" content="{{ '/images/social-preview.jpg' | absolute_url }}">
     {%- if page.canonical != nil %}
     <link rel="canonical" href="{{ page.canonical | absolute_url }}" />
     {%- endif %}
