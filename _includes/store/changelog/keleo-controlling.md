@@ -1,3 +1,10 @@
+## Version 1.6.0
+
+Compatibility: requires minimum Kimai 2.9.0
+
+- Fixed: export of absences caused 500
+- Changed: replaced DateTime with DateTimeInterface / DateTimeImmutable
+
 ## Version 1.5.0
 
 Compatibility: requires minimum Kimai 2.8.0
