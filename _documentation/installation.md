@@ -60,8 +60,9 @@ composer install --optimize-autoloader -n
 
 Configure the database connection and server version in the `.env` file:
 ```
-DATABASE_URL=mysql://user:password@127.0.0.1:3306/database?charset=utf8mb4&serverVersion=5.7.40
+DATABASE_URL=mysql://user:password@127.0.0.1:3306/database?charset=utf8mb4&serverVersion=11.1.2-MariaDB
 ```
+Fetch the exact serverVersion by running `mysql --version` and copy&paste the entire version. 
 
 And run the Kimai installer:
 ```bash
@@ -144,6 +145,25 @@ you can contact me, [I offer paid setup support]({% link _store/keleo-installati
 [Webarchitects Co-operative](https://www.webarchitects.coop/) have written a [Kimai Ansible Galaxy role](https://git.coop/webarch/kimai) for automatically installing and upgrading Kimai sites on their shared hosting servers.
 
 ## Installation FAQ
+
+### Column 'TABLE_NAME' in where clause is ambiguous
+
+An error like this might occur when you have a misconfigured `serverVersion` in your `DATABASE_URL`:
+
+```
+[ERROR] Failed to set migration status: An exception occurred while executing a query: SQLSTATE[23000]: Integrity
+constraint violation: 1052 Column 'TABLE_NAME' in where clause is ambiguous
+```
+
+Run `mysql --version` and extract the entire version string, for example for this entire version string: 
+```
+mysql from 11.1.2-MariaDB, client 15.2 for osx10.19 (arm64) using  EditLine wrapper
+```
+
+Your `serverVersion` should look like this:
+```
+DATABASE_URL=mysql://kimai:kimai@sqldb/kimai?charset=utf8mb4&serverVersion=11.1.2-MariaDB
+```
 
 ### MySQL server has gone away
 
