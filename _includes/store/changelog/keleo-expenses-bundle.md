@@ -1,3 +1,20 @@
+## Version 2.8.0
+
+Compatibility: requires minimum Kimai 2.9.0 (but 2.10 is recommended)
+
+- Changed: remove time field and set to 12:00:00 internally
+- Changed: set "now" as pre-filled default value for an expense date
+- Changed: more DateTime to DateTimeImmutable refactorings
+- Fixed: "not null" category validator does not highlight correct field
+
+## Version 2.7.0
+
+Compatibility: requires minimum Kimai 2.9.0
+
+- Changed: internal DateTime to DateTimeImmutable refactoring
+- Changed: replace deprecated RestRoute attribute with SF native one
+- Changed: replace deprecated Route vs Attribute annotations
+
 ## Version 2.6.0
 
 Compatibility: requires minimum Kimai 2.6.0
