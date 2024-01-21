@@ -32,7 +32,6 @@ If you want to see all deactivated accounts, please switch to the user listing (
 
 {% include youtube-video.html id="deactivated_users" %}
 
-
 ## System accounts
 
 System accounts are users in Kimai, which are hidden in many places. They cannot be chosen from dropdowns, 
@@ -42,6 +41,19 @@ This setting is primarily meant to identify:
 
 - your Admin accounts (which should not be used for daily work)
 - API sync accounts
+
+## Username / User-ID
+
+The username is a system-wide unique identifier which can be used for logging into the system and it will be included in exports.
+
+It shouldn't be changed without strong reasoning, but if you want to e.g. activate LDAP or SAML and see that you have to, 
+then a System-Administrator can do so by editing the user profile (editing your own username is not possible).
+
+The field is hidden by default, you have to double-click the user header to show it.  
+
+{% include youtube-video.html id="change_username" %}
+
+You should have a strong reasoning to change the username, e.g. think about API integrations and App logins.
 
 ## Supervisor
 
