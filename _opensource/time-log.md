@@ -4,9 +4,9 @@ keyword: "Time Log"
 lang: en
 ---
 
-### Kimai: Your premier open source time log solution
-
 Step into a realm where time logging is being revolutionised - Kimai is at the forefront of open source time log software!
+
+### Kimai: Your premier open source time log solution
 
 As you sift through available open source time-log solutions, Kimai stands out for its freedom, adaptability and complete ownership.
 

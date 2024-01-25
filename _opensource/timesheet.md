@@ -4,9 +4,9 @@ keyword: "Timesheet"
 lang: en
 ---
 
-### The Premier Open Source Timesheet Software
-
 Welcome to a world where timesheets meet innovation — Kimai is the cutting edge open source timesheet software!
+
+### The Premier Open Source Timesheet Software
 
 As you evaluate your options, consider the freedom, flexibility, and full control that Kimai offers. 
 It's not just software; it's a game-changer for your business.

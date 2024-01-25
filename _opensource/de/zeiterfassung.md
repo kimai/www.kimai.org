@@ -5,9 +5,9 @@ lang: de
 permalink: /de/open-source-zeiterfassung.html
 ---
 
-### Kimai: Die Spitzenlösung für Open Source Zeiterfassung
+Willkommen in der Welt, in der Zeiterfassung und Innovation aufeinandertreffen - Kimai steht an der Spitze der Open-Source Zeiterfassung für projektbasierte Teams!
 
-Willkommen in der Welt, wo Zeiterfassung und Innovation aufeinandertreffen - Kimai steht an der Spitze der Open-Source Zeiterfassung für projektbasierte Teams!
+### Kimai: Die Spitzenlösung für Open Source Zeiterfassung
 
 Wenn Sie durch die Flut an Zeiterfassungslösungen navigieren, stellt Kimai durch seine Freiheit, Anpassungsfähigkeit und Kontrolle eine Evolution für Ihr Unternehmen dar. 
 Es ist ein Werkzeug, das Projektzeiterfassung neu definiert.

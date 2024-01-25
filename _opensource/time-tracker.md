@@ -4,9 +4,9 @@ keyword: "Time Tracker"
 lang: en
 ---
 
-### Kimai: The Definitive Time Tracker for Modern Professionals
-
 Welcome to a world where time trackers meet innovation — Kimai is the cutting edge open source time tracker software!
+
+### Kimai: The Definitive Time Tracker for Modern Professionals
 
 As you evaluate your options, consider the freedom, flexibility, and full control that Kimai offers. 
 It's not just software; it's a game-changer for your business.
