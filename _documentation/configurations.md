@@ -66,7 +66,7 @@ You can deactivate that feature by setting the value to 0.
 The lockdown period (if activated) will prevent your users from changing timesheet records in the past.
 
 It consists of a `start` and `end` date and a `grace` period.
-The lockdown feature will only be activated if all of these fields are configured with a [relative date format](https://www.php.net/manual/en/datetime.formats.relative.php).
+The lockdown feature will only be activated if all of these fields are configured with a [relative date format](https://www.php.net/manual/en/datetime.formats.php#datetime.formats.relative).
 
 These rules apply:
 - If the start date of a timesheet record is earlier than the lockdown start, it is not possible to edit it any longer
