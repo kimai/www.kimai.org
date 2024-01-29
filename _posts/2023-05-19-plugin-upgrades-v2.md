@@ -6,7 +6,7 @@ author: kevinpapst
 tags: [Announcement]
 ---
 
-The plugin structure for [Kimai 2.0]({% link _posts/2023-05-20-kimai-release-2.md %}) is not compatible with the existing plugins for Kimai 1.
+The plugin structure for Kimai 2.0 is not compatible with the existing plugins for Kimai 1.
 
 The main reasons are technical, mainly caused by:
 

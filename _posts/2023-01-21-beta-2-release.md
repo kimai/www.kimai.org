@@ -6,8 +6,7 @@ author: kevinpapst
 tags: [Release]
 ---
 
-Following the longer news about the next major release this news is a quick heads up that the `Beta 2` was 
-just released at GitHub.
+Following the longer news about the next major release this news is a quick heads up that the **Beta 2** was just released at GitHub.
 
 You can find the relases [here](https://github.com/kimai/kimai/releases/edit/2.0.0-beta-2).
 And if you want to start testing, you can simply switch the version number in the usual upgrade and installation commands to `2.0.0-beta-2`. 
