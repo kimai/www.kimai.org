@@ -151,3 +151,11 @@ After those steps are done, go to the control panel of the webserver
 - In HostEurope's webserver administration, select `Domains` -> `Subdomains` and configure `/kimai/public` as Directory `/` URL for the domain (or subdomain) of your choice
 - Optionally, under `Security & SSL` -> `Manage SSL` configure an SSL certificate for the domain
 - Select `Webspace & Users` -> `File Management` -> `kimai` -> `var` and select all files/folders. Those all belong to the FTP user, change this to the WP user and apply.
+
+### Alfahosting
+
+! DON'T USE ALFAHOSTING! THEY DO NOT SUPPORT KIMAI !
+
+Their technical team thinks that supporting PHP 8.1+ is enough via FPM/Webserver. 
+
+They refuse to make it available via SSH (Business XXL plan). 
