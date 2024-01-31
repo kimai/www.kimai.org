@@ -19,9 +19,10 @@ You can test it in the ["Plugins" demo](https://www.kimai.org/demo/).
 ## Features
 
 - Start/Stop work with 
-  - barcode scanner (via device camera, only works via HTTPS)
-  - barcode scanner (via USB or Bluetooth)
-  - RFID scanner (via USB or Bluetooth) 
+  - Barcode scanner (via device camera, only works via HTTPS)
+  - Barcode scanner (via USB or Bluetooth)
+  - RFID scanner (via USB or Bluetooth)
+  - [Web NFC](https://developer.mozilla.org/en-US/docs/Web/API/NDEFReader)
 - Upon starting/stopping a record via this plugin, the user will see a short overview screen with the entries of the current week (including some statistics)
 - New user profile screen for the "codes"
   - Display all codes for user

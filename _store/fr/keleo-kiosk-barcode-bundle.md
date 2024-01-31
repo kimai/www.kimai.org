@@ -1,5 +1,5 @@
 ---
-title: Kiosk mode with Barcode and RFID support
+title: Kiosk mode with support for Barcode, RFID, Web NFC
 slug: kiosk-barcode-bundle
 type: featured
 order: 40
