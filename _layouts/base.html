@@ -38,7 +38,10 @@
         {% assign page_description = page.description %}
     {%- endif %}
     {%- if page_description != nil and page_description != '' %}
-        <meta name="description" content="{{ page_description | strip_html | strip_newlines | strip }}">
+        {% assign page_description = page_description | strip_html | strip_newlines | strip | replace: "    ", " " | replace: "  ", " " | strip | truncate: 156 %}
+    {%- endif %}
+    {%- if page_description != nil and page_description != '' %}
+        <meta name="description" content="{{ page_description }}">
     {%- endif %}
     <link type="application/atom+xml" rel="alternate" href="{% link feed.xml %}" title="Kimai Time-Tracking" />
     <meta property="og:locale" content="{{ page.lang }}">
