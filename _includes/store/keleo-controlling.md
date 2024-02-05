@@ -37,13 +37,15 @@
 These features will be added in the future, but there is no guarantee when or in which order.
 
 ```
-- Notification
-  - Sent notifications to supervisor for new "absences to be approved"
-  - Sent notifications to user for approved/rejected absences
+- Settings
+  - Last day of work for a user, to stop calculating afterwards
 - Approval workflow for Absences 
     - Allow to "Sent for approval" to Supervisor
     - Allow to "Reject" or "Approve" by Supervisor
     - Only calculate approved or locked absences (new ones are for planning)
+- Notification
+  - Sent notifications to supervisor for new "absences to be approved"
+  - Sent notifications to user for approved/rejected absences
 - Absence calendar
     - Display all users / teams
     - Allow export as ical (or similar format) for use in external calendars (e.g. Outlook)
@@ -55,8 +57,6 @@ These features will be added in the future, but there is no guarantee when or in
     - Include: manual bookings
 - Finalize year
   - Allow automatic adjustments of time and holiday account of next year, e.g. from a list-overview
-- Settings
-  - Last day of work for a user, to stop calculating afterwards
 - Working Times
   - Different colors for holiday / sickness / PTO
 - API 
