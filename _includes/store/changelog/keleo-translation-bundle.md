@@ -1,3 +1,9 @@
+## Version 2.4.0
+
+Compatibility: requires minimum Kimai 2.11.0
+
+- Changed: use only translated languages in dropdown for selecting the target language
+
 ## Version 2.3.0
 
 Compatibility: requires minimum Kimai 2.1.0
