@@ -113,9 +113,3 @@ If I decide to add one of these feature, it will be moved to the "Roadmap" secti
 - Define arbitrary date ranges with attached working-time profiles
   - Allow to attach each user multiple profiles
 ```
-
-**Other requests and solutions**
-
-```
-- Convert holiday to sickness. Solution: create sickness and delete holiday
-```

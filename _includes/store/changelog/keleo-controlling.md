@@ -1,3 +1,22 @@
+## Version 1.8.0
+
+Compatibility: requires minimum Kimai 2.11.0
+
+- Added: absence types have a color
+- Added: use type colors on absence screen and for calendar entries
+- Fixed: translate calendar entries in current locale, instead of absence users locale
+- Fixed: do not show error on calendar if `absences` permission is deactivated for a user
+- Changed: use refactored language vs locale from user for email generation
+
+## Version 1.7.0
+
+Compatibility: requires minimum Kimai 2.10.0
+
+- Added: send notification email to supervisor for new absences
+- Added: cross-link absence and work-contract page
+- Added: trigger event when absences are created
+- Fixed: editing absences could show fields (like "half day" for sickness) that should not be there
+
 ## Version 1.6.0
 
 Compatibility: requires minimum Kimai 2.9.0
