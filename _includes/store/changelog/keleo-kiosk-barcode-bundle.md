@@ -1,3 +1,10 @@
+## Version 2.6.0
+
+Compatibility: requires minimum Kimai 2.11.0
+
+- Changed: CSS files and language handling, required for Kimai 2.11.0
+- Changed: Replaced deprecated RestRoute attribute with SF native one
+
 ## Version 2.5.0
 
 Compatibility: requires minimum Kimai 2.1.0
