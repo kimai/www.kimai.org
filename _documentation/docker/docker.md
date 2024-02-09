@@ -6,7 +6,7 @@ canonical: /documentation/docker.html
 
 We offer Kimai Docker images, both for development and a docker-compose setup suitable for running in a production environment.
 
-Any issues with the container rather than the application itself can be raised [here]({{ site.kimai_v2_docker }}/issues).
+Any issues with the container rather than the application itself can be raised [here]({{ site.kimai_v2_docker }}/issues/new?template=docker.yml).
 
 ## Docker Hub
 
