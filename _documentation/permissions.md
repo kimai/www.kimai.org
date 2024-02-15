@@ -28,7 +28,13 @@ There are four pre-defined roles in Kimai, which have a customizable set of ACLs
 | System-Admin   | Has permissions to manage everything in Kimai, from content to timesheets to users, plugins and system configurations. Technical name: `ROLE_SUPER_ADMIN` |
 {: .table }
 
-{% include alert.html type="success" alert="Every user is automatically member of the ROLE_USER, this behaviour cannot be changed." %}
+{% capture roleUserAssignment %}
+Every user is automatically member of the ROLE_USER, this behaviour cannot be changed. 
+
+That means, that every role and user owns all permissions from the `ROLE_USER`. 
+{% endcapture %}
+
+{% include alert.html type="danger" alert=roleUserAssignment %}
 
 ### Creating roles
 
