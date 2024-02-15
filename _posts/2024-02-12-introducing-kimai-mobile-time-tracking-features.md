@@ -9,7 +9,7 @@ tags: [Apps & Plugins]
 
 Kimai Mobile released a couple of new app features that our team is excited to share with you today. 
 
-Kimai Mobile seamlessly integrates with the Kimai Time Tracker Server, providing users with the convenience of managing multiple workspaces concurrently. This allows for efficient time logging across various projects and clients. All time tracking data is securely stored on the self-hosted Kimai Server, ensuring both data privacy and accessibility. 
+Kimai Mobile seamlessly integrates with the Kimai Time Tracker Server, providing users with the convenience of managing multiple workspaces concurrently. This allows for efficient time logging across various projects and clients. All time tracking data is securely stored on the used Kimai Server (both On-Premise and Saas Cloud are supported), ensuring both data privacy and accessibility. 
 
 ### Multilingual support 
 
@@ -55,5 +55,3 @@ Ready to take control of your time? Start using Kimai Mobile and discover effici
 
 [Google Play]({% link /_store/cloudrizon-kimai-mobile-app-android.md %})
 [App Store]({% link /_store/cloudrizon-kimai-mobile-app-ios.md %})
-
-For in-depth information about Kimai Mobile and its features, visit: [Kimai Mobile Features](https://www.kimaimobile.com/features/)
