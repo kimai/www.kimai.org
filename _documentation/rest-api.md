@@ -25,6 +25,15 @@ When calling the API you have to submit an additional `Authorization` header wit
 
 {% include alert.html icon="fas fa-exclamation" type="warning" alert="You MUST use secure HTTPS calls to protect both credentials and data." %}
 
+### API tokens
+
+Each user can generate multiple API tokens...
+
+- TODO
+- TODO
+- TODO
+- TODO
+
 ## Swagger file
 
 The API calls can be exported in a Swagger file format, which can be imported into your tool of choice.
