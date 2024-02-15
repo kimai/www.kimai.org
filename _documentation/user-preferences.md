@@ -40,6 +40,10 @@ Kimai saves times in UTC, including the timezone information, so it can calculat
 
 Which language should be used as the primary source for translations (if a specific translation for your language is missing, the fallback will always be English).
 
+### Format for time, date and currency
+
+The format that is used to render dates, time, money, numbers and currencies.
+
 ### First day of the week
 
 While many countries in the world use `Monday` as start of the week, a lot of other countries use `Sunday`.
@@ -81,7 +85,7 @@ on mobile devices will be replaced by a link to the calendar.
 
 ### Favorites
 
-Allows to store certain menus as favorite menu, to quickly access them from the menu. 
+Allows to store preferred menus as favorites, which then can be quickly accessed from the dropdown in the top-bar (opened with the bookmark button). 
 
 ### Show daily statistics in timesheet
 
