@@ -32,8 +32,7 @@ Now create a file with the name `importer` and adjust the `KIMAI_API_*` constant
 require __DIR__.'/vendor/autoload.php';
 
 define('KIMAI_API_URL', 'https://demo.kimai.org/api/');
-define('KIMAI_API_USER', 'susan_super');
-define('KIMAI_API_PWD', 'api_kitten');
+define('KIMAI_API_TOKEN', 'api_kitten_super');
 
 use GuzzleHttp\Client;
 use League\Csv\Reader;
@@ -77,7 +76,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
         $client = new Client([
             'base_uri' => KIMAI_API_URL,
             'verify' => false,
-            'headers' => ['X-AUTH-USER' => KIMAI_API_USER, 'X-AUTH-TOKEN' => KIMAI_API_PWD]
+            'headers' => ['Authorization' => 'Bearer ' . KIMAI_API_TOKEN]
         ]);
 
         $customers = 0;
@@ -174,8 +173,8 @@ DEMO,Hello world,Testing the API
 
 ## Calling the API with Javascript
 
-If you develop your own [plugin]({% link _documentation/plugins.md %}) and need to use the API for logged-in user, then you have to 
-set the header `X-AUTH-SESSION` which will allow Kimai to use the current user session and not look for the default token based API authentication.
+If you develop your own [plugin]({% link _documentation/plugins.md %}) and need to use the API for logged-in user, 
+then you don't have to care about authentication, Kimai will handle it for you.
 
 Copy & paste this code into a new `api.html` file and open it in your browser.
 You can execute some sample requests and see the JSON result.
@@ -183,38 +182,35 @@ You can execute some sample requests and see the JSON result.
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Kimai - API demo</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://getbootstrap.com/docs/4.3/examples/floating-labels/floating-labels.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.min.css">
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-json.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
-	<style>
-		body { display: block; }
-		.codePreview { margin-top: 30px; }
-	</style>
-	<script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Kimai - API demo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/4.3/examples/floating-labels/floating-labels.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-json.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <style>
+        body { display: block; }
+        .codePreview { margin-top: 30px; }
+    </style>
+    <script>
         function callKimaiApi(method, successHandler, errorHandler) {
             var domain = $('#inputDomain').val();
-            var username = $('#inputEmail').val();
-            var password = $('#inputPassword').val();
+            var token = $('#inputToken').val();
             $.ajax({
                 url: domain + '/api/' + method,
                 type: 'GET',
                 beforeSend: function (request) {
-                    request.setRequestHeader("X-AUTH-USER", username);
-                    request.setRequestHeader("X-AUTH-TOKEN", password);
+                    request.setRequestHeader('Authorization', 'Bearer ' + token);
                 },
                 headers: {
-                    'X-AUTH-USER': username,
-                    'X-AUTH-TOKEN': password,
+                    'Authorization': 'Bearer ' + token,
                 },
                 success: successHandler,
                 error: errorHandler
@@ -249,7 +245,7 @@ You can execute some sample requests and see the JSON result.
                 $('#loginButton').text('Loading...');
 
                 callKimaiApi(
-                    apiMethod, 
+                    apiMethod,
                     function (result) {
                         $('#loginButton').text('Success!');
                         var jsonBeauty = JSON.stringify(result).trim();
@@ -270,47 +266,42 @@ You can execute some sample requests and see the JSON result.
                 return false;
             });
         });
-	</script>
+    </script>
 </head>
 <body>
 <div class="container">
-	<form id="loginForm" class="form-signin">
-		<div class="text-center mb-4">
-			<h1 class="h3 mb-3 font-weight-normal">API Demo</h1>
-			<p>Provide your API credentials in the form below</p>
-		</div>
-		<div class="form-label-group">
-			<input type="url" id="inputDomain" class="form-control" placeholder="https://www.example.com/" required
-				   autofocus value="https://demo.kimai.org">
-			<label for="inputDomain">Kimai base URL (domain + port)</label>
-		</div>
-		<div class="form-label-group">
-			<input type="text" id="inputEmail" class="form-control" placeholder="Username" required value="susan_super">
-			<label for="inputEmail">Email address</label>
-		</div>
-		<div class="form-label-group">
-			<input type="password" id="inputPassword" class="form-control" placeholder="Password" required
-				   value="api_kitten">
-			<label for="inputPassword">Password</label>
-		</div>
-		<button class="btn btn-lg btn-primary btn-block" id="loginButton" type="submit">Sign in</button>
-	</form>
-	<div class="row secret" style="display:none">
-		<div class="col-sm text-center">
-			<button type="button" class="btn btn-primary" data-api="ping" data-attribute-break="true">Ping</button>
-			<button type="button" class="btn btn-secondary" data-api="version" data-attribute-break="true">Version</button>
-			<button type="button" class="btn btn-primary" data-api="timesheets" data-attribute-break="false">Timesheet</button>
-			<button type="button" class="btn btn-primary" data-api="activities" data-attribute-break="false">Activities</button>
-			<button type="button" class="btn btn-primary" data-api="projects" data-attribute-break="false">Projects</button>
-			<button type="button" class="btn btn-primary" data-api="customers" data-attribute-break="false">Customers</button>
-			<button type="button" class="btn btn-secondary" data-api="config/i18n" data-attribute-break="true">i18n</button>
-		</div>
-	</div>
-	<div class="row codePreview" style="display:none">
-		<pre class="language-json line-numbers" style="white-space: pre-line">
-			<code id="apiResult"></code>
-		</pre>
-	</div>
+    <form id="loginForm" class="form-signin">
+        <div class="text-center mb-4">
+            <h1 class="h3 mb-3 font-weight-normal">API Demo</h1>
+            <p>Provide your API credentials in the form below</p>
+        </div>
+        <div class="form-label-group">
+            <input type="url" id="inputDomain" class="form-control" placeholder="https://www.example.com/" required
+                   autofocus value="https://demo.kimai.org">
+            <label for="inputDomain">Kimai base URL (domain + port)</label>
+        </div>
+        <div class="form-label-group">
+            <input type="text" id="inputToken" class="form-control" placeholder="API Token" required value="api_kitten_super">
+            <label for="inputToken">API Token</label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" id="loginButton" type="submit">Sign in</button>
+    </form>
+    <div class="row secret" style="display:none">
+        <div class="col-sm text-center">
+            <button type="button" class="btn btn-primary" data-api="ping" data-attribute-break="true">Ping</button>
+            <button type="button" class="btn btn-secondary" data-api="version" data-attribute-break="true">Version</button>
+            <button type="button" class="btn btn-secondary" data-api="plugins" data-attribute-break="true">Plugins</button>
+            <button type="button" class="btn btn-primary" data-api="timesheets" data-attribute-break="false">Timesheet</button>
+            <button type="button" class="btn btn-primary" data-api="activities" data-attribute-break="false">Activities</button>
+            <button type="button" class="btn btn-primary" data-api="projects" data-attribute-break="false">Projects</button>
+            <button type="button" class="btn btn-primary" data-api="customers" data-attribute-break="false">Customers</button>
+        </div>
+    </div>
+    <div class="row codePreview" style="display:none">
+        <pre class="language-json line-numbers" style="white-space: pre-line">
+           <code id="apiResult"></code>
+       </pre>
+    </div>
 </div>
 </body>
 </html>

@@ -17,31 +17,21 @@ Or you can export the JSON collection by visiting `/api/doc.json`. Save the resu
 
 ## Authentication
 
-When calling the API you have to submit two additional header with every call for authentication:
+When calling the API you have to submit an additional `Authorization` header with every call:
 
-- `X-AUTH-USER` - holds the username (or email address)
-- `X-AUTH-TOKEN` - the API password, which has to be set in the user profile
+- `Authorization: Bearer xyz` - here `xyz` is the unique API token for that account
 
-{% include alert.html type="primary" alert="The API password is different from the normal user password and can be set in the user profile." %}
+{% include alert.html type="primary" alert="The API token is NOT the normal user password. API tokens can be generated in the user profile." %}
 
-{% include alert.html icon="fas fa-exclamation" type="warning" alert="You should only use secure https calls to protect both credentials and data." %}
+{% include alert.html icon="fas fa-exclamation" type="warning" alert="You MUST use secure HTTPS calls to protect both credentials and data." %}
 
-## Swagger file and Postman
+## Swagger file
 
-The API calls can be exported in a Swagger file format, which can be imported into Postman.
+The API calls can be exported in a Swagger file format, which can be imported into your tool of choice.
 You find the link in the API docs (the URL is `api/doc.json`).
 
 To use the API with Postman, the simplest approach is to export the swagger file and import it with Postman. 
 
-### Authentication in Postman
-
-After importing the collection into Postman, edit the collection and switch to the `Pre-request Scripts` tab.
-You can add the following script to have a global authentication in-place, which you can still overwrite per call. 
-
-```javascript
-pm.request.headers.add({key: 'X-AUTH-USER', value: 'susan_super'});
-pm.request.headers.add({key: 'X-AUTH-TOKEN', value: 'api_kitten'});
-```
 
 ## Data types
 
