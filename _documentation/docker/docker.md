@@ -14,49 +14,51 @@ The Docker Hub repo, where you find the auto-building prod and dev containers fo
 
 ## Quick start
 
-Run the latest production build:
+This will run the latest production build and make it accessible at <http://localhost:8001>.
+
+{% include alert.html icon="fas fa-exclamation" type="danger" alert="This setup is NOT intended for production use as it is temporary and the data will disappear when the containers are removed (see point 4)." %}
 
 1. Start a DB
 
     ```bash
-        docker run --rm --name kimai-mysql-testing \
-            -e MYSQL_DATABASE=kimai \
-            -e MYSQL_USER=kimai \
-            -e MYSQL_PASSWORD=kimai \
-            -e MYSQL_ROOT_PASSWORD=kimai \
-            -p 3399:3306 -d mysql
+    docker run --rm --name kimai-mysql-testing \
+        -e MYSQL_DATABASE=kimai \
+        -e MYSQL_USER=kimai \
+        -e MYSQL_PASSWORD=kimai \
+        -e MYSQL_ROOT_PASSWORD=kimai \
+        -p 3399:3306 -d mysql
     ```
 
 2. Start Kimai
 
     ```bash
-        docker run --rm --name kimai-test \
-            -ti \
-            -p 8001:8001 \
-            -e DATABASE_URL=mysql://kimai:kimai@${HOSTNAME}:3399/kimai?charset=utf8mb4&serverVersion=5.7.40 \
-            kimai/kimai2:apache
+    docker run --rm --name kimai-test \
+        -ti \
+        -p 8001:8001 \
+        -e DATABASE_URL=mysql://kimai:kimai@${HOSTNAME}:3399/kimai?charset=utf8mb4&serverVersion=5.7.40 \
+        kimai/kimai2:apache
     ```
 
 3. Add a user using the terminal
 
     ```bash
-        docker exec -ti kimai-test \
-            /opt/kimai/bin/console kimai:user:create admin admin@example.com ROLE_SUPER_ADMIN
+    docker exec -ti kimai-test \
+        /opt/kimai/bin/console kimai:user:create admin admin@example.com ROLE_SUPER_ADMIN
     ```
 
-Now, you can access the Kimai instance at <http://localhost:8001>.
+4. Stop the containers
 
-__Note:__
-If you're using Docker for Windows or Docker for Mac, and you're getting "Connection refused" or other errors, you might need to change `${HOSTNAME}` to `host.docker.internal`.
-This is because the Kimai Docker container can only communicate within its network boundaries. Alternatively, you can start the container with the flag `--network="host"`.
-See [here](https://stackoverflow.com/questions/24319662/from-inside-of-a-docker-container-how-do-i-connect-to-the-localhost-of-the-mach) for more information.
-
-Keep in mind that this Docker setup is transient and the data will disappear when you remove the containers.
-
-```bash
+    ```bash
     docker stop kimai-mysql-testing kimai-test
+    ```
+
+5. When you are finished testing Kimai, you can remove the containers (warning: **you will lose your data**!).
+
+    ```bash
     docker rm kimai-mysql-testing kimai-test
-```
+    ```
+
+If you are happy with Kimai, you can now setup your Docker installation using [Docker Compose]({% link _documentation/docker/docker-compose.md %}).
 
 ## Runtime Arguments
 
@@ -154,3 +156,9 @@ docker run --rm -ti -p 8001:8001 --name kimai2 -v $(pwd)/config/packages/local.y
 {% endcomment %}
 
 The [official docker documentation](https://docs.docker.com/) has more options on running the container.
+
+## Tips & Tricks
+
+If you're using Docker for Windows or Docker for Mac, and you're getting "Connection refused" or other errors, you might need to change `${HOSTNAME}` to `host.docker.internal`.
+This is because the Kimai Docker container can only communicate within its network boundaries. Alternatively, you can start the container with the flag `--network="host"`.
+See [here](https://stackoverflow.com/questions/24319662/from-inside-of-a-docker-container-how-do-i-connect-to-the-localhost-of-the-mach) for more information.
