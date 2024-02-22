@@ -58,10 +58,13 @@ You can deactivate that feature by setting the value to 0.
 
 ## Lockdown period
 
-- `Lockdown period start` - a PHP date-format string `relative to now` and you will likely want to configure a start of a month like `first day of last month 00:00:00` or `first day of -2 month 00:00:00`
-- `Lockdown period end` - a PHP date-format string `relative to now` and you will likely want to configure the end of a month like `last day of last month 23:59:59`, `last day of -2 month 23:59:59` or `first day of this month 00:00:00`
+- `Lockdown period start` - a string of [PHP relative datetime format](https://www.php.net/manual/en/datetime.formats.php#datetime.formats.relative)
+    - You will likely want to configure a start of a month like `first day of last month 00:00:00` or `first day of -2 month 00:00:00`
+- `Lockdown period end` - a string of [PHP relative datetime format](https://www.php.net/manual/en/datetime.formats.php#datetime.formats.relative)
+    - You will likely want to configure a start of a month like `last day of last month 23:59:59`, `last day of -2 month 23:59:59` or `first day of this month 00:00:00`
 - `Time zone` - the timezone will be used to calculate the dates (might be important if you have users across multiple timezones, if empty the timezone of the current user is used
-- `Lockdown grace period end (PHP relative date to lockdown period end)` - relative to the lockdown end (the end date will always be appended, but it could still be overwritten by using the `of` modifier), most users will likely want to use a relative period like `+12 hours`, `+10 days` or `+3 weeks`
+- `Lockdown grace period end` - a string of [PHP relative datetime format](https://www.php.net/manual/en/datetime.formats.php#datetime.formats.relative) that will be applied to the `Lockdown period end`
+    - You will likely want to configure a relative period like `+12 hours`, `+10 days` or `+3 weeks`
 
 The lockdown period (if activated) will prevent your users from changing timesheet records in the past.
 
