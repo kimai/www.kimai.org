@@ -2,7 +2,7 @@
 title: "Release 1.7 - Customer & project detail pages"
 date: "2020-01-20 10:00:00 +0200"
 author: kevinpapst
-tags: [Release]
+tags: [On-Premise]
 ---
 
 The next release is out (sorry for the long release cycle this time), as always containing various bugfixes and some exciting new features:

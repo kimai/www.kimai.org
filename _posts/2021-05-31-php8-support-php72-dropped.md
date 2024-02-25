@@ -2,7 +2,7 @@
 title: "PHP 8 Support added, PHP 7.2 dropped"
 date: "2021-05-31 10:00:00 +0200"
 author: kevinpapst
-tags: [Announcement]
+tags: [On-Premise]
 ---
 
 After working on PHP 8 Support for a couple of months, which was more complicated than expected because 

@@ -3,7 +3,7 @@ title: "Upgrading your plugins for 2.0"
 date: "2023-05-19 13:00:00 +0200"
 image: /images/blog/cover-13.jpeg
 author: kevinpapst
-tags: [Announcement]
+tags: [On-Premise]
 ---
 
 The plugin structure for Kimai 2.0 is not compatible with the existing plugins for Kimai 1.

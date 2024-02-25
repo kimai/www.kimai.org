@@ -3,7 +3,7 @@ title: "Repository URL changed"
 date: "2022-12-26 10:00:00 +0200"
 image: /images/blog/cover-4.jpeg
 author: kevinpapst
-tags: [Announcement]
+tags: [On-Premise]
 ---
 
 This is a short but important announcement!

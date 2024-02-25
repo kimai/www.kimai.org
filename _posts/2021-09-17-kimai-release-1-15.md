@@ -2,7 +2,7 @@
 title: "Release 1.15 - Project detail report & Monthly budgets"
 date: "2021-09-17 10:00:00 +0200"
 author: kevinpapst
-tags: [Release]
+tags: [On-Premise]
 ---
 
 The release 1.15 was published in September 2021. 

@@ -2,7 +2,7 @@
 title: "Release 1.17 - A bit of everything"
 date: "2022-01-23 14:00:00 +0200"
 author: kevinpapst
-tags: [Release]
+tags: [On-Premise]
 ---
 
 The release 1.17 was published in January 2022.

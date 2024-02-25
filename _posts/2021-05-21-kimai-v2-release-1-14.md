@@ -2,7 +2,7 @@
 title: "Release 1.14 - Reports, invoices & search bookmark"
 date: "2021-05-21 10:00:00 +0200"
 author: kevinpapst
-tags: [Release]
+tags: [On-Premise]
 ---
 
 The release 1.14.3 was just published, after the major release was already released on the 23th of April.

@@ -2,7 +2,7 @@
 title: "Release 1.19 - Billable default option"
 date: "2022-04-19 10:00:00 +0200"
 author: kevinpapst
-tags: [Release]
+tags: [On-Premise]
 ---
 
 The releases 1.19.x were published in April 2022.

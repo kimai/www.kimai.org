@@ -2,7 +2,7 @@
 title: "Release 0.9 - API, Plugins & DB Configs"
 date: "2019-04-29 00:00:00 +0200"
 author: kevinpapst
-tags: [Release]
+tags: [On-Premise]
 ---
 
 Two month are longer than expected for this release, but a lot changed in the background. These will be announced in a 

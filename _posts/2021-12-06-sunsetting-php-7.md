@@ -2,7 +2,7 @@
 title: "Sunsetting PHP 7"
 date: "2021-12-06 20:00:00 +0200"
 author: kevinpapst
-tags: [Announcement]
+tags: [On-Premise]
 ---
 
 Okay everyone, this is reminder that you need to monitor the [PHP lifetime support](https://www.php.net/supported-versions.php) on a regular basis.
