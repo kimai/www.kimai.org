@@ -23,8 +23,8 @@
   }
 }'>
     <div class="swiper-wrapper">
-
-        {% for post in site.posts limit: 5 %}
+        {% assign limit = include.limit | default: 5 %}
+        {% for post in site.posts limit: limit %}
             <div class="swiper-slide h-auto py-3">
                 <article class="card p-md-3 p-2 border-0 shadow-sm card-hover-primary h-100 mx-2">
                     <div class="card-body">

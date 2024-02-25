@@ -25,13 +25,13 @@ layout: base
             </div>
         </div>
 
-        {% include latest-news.html %}
+        {% include latest-news.html limit=3 %}
     </section>
 
     <section class="container mb-5 pt-5 pb-lg-5">
         <ul class="nav nav-tabs justify-content-center mb-lg-5 mb-4 pb-lg-2 border-top pt-5">
             <li class="nav-item">
-                <a href="#tag-all" class="nav-link active" data-bs-toggle="tab" role="tab">Latest {{ amount_latest }}</a>
+                <a href="#tag-all" class="nav-link active" data-bs-toggle="tab" role="tab">Latest</a>
             </li>
             {% for tag in sortedTags %}
             <li class="nav-item">
