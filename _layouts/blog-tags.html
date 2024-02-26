@@ -1,0 +1,40 @@
+---
+layout: base
+---
+{% assign tag = page.tags | first %}
+
+<main class="page-wrapper">
+    {% include header-navigation.html %}
+
+    <section class="container mt-4 pt-lg-2 pb-4">
+        <div class="row gy-4 align-items-end mb-2 pb-md-3">
+            <div class="col-lg-8 col-md-6">
+                <h1 class="mb-0">
+                    <i class="bx bxs-hot 1 me-1 text-gradient-primary"></i>
+                    {{ page.title }}
+                </h1>
+            </div>
+            <div class="col-lg-4 col-md-6 text-end">
+                <a href="/feed.xml" class="btn btn-link btn-icon rounded-circle my-1 me-2" aria-label="RSS Feed">
+                    <i class="bx bx-rss"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mb-5 pt-5 pb-lg-5">
+        <div class="tab-content pb-3">
+            <div class="tab-pane fade show active" id="tag-{{ tag | slugify }}" role="tabpanel">
+                {% for post in site.posts %}
+                    {% if post.tags contains tag %}
+                        {% include card-blog-single.html post=post %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    {% include section-newsletter.html background=true %}
+</main>
+
+{% include footer.html %}

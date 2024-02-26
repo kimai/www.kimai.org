@@ -9,7 +9,7 @@ $languages = ['cs', 'de', 'es', 'fr', 'he', 'hr', 'it', 'nl', 'pl', 'pt', 'pt_BR
 
 $multiLanguagePaths = [
     '_pages' => [
-        'skip' => ['v1.md'],
+        'skip' => ['blog-tags-version-1.html'],
         'permalink' => '/:language/:original',
         'remove' => ['redirect_from'],
         'overwrite' => false,
