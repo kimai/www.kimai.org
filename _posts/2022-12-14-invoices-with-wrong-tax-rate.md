@@ -1,5 +1,5 @@
 ---
-title: "Invoices with wrong tax rate"
+title: "Invoices with wrong tax rate 😳"
 date: "2022-12-14 22:00:00 +0200"
 image: /images/blog/cloud-news-1.jpg
 author: kevinpapst
