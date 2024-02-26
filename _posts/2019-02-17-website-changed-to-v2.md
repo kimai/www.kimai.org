@@ -2,6 +2,7 @@
 title: "Website now focusing on Kimai v2"
 date: "2019-02-17 16:00:00 +0200"
 author: kevinpapst
+image: /images/blog/cover-developer.jpeg
 tags: [On-Premise]
 ---
 

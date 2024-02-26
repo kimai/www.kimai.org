@@ -1,7 +1,7 @@
 ---
 title: "Custom Content rules"
 date: "2021-11-29 10:00:00 +0200"
-image: /images/blog/cloud-news-1.jpg
+image: /images/blog/cover-cloud.jpeg
 author: kevinpapst
 tags: [Cloud]
 ---

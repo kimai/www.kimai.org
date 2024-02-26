@@ -1,7 +1,7 @@
 ---
-title: "Update: Working time account"
+title: "Cloud goes - Working time account"
 date: "2023-09-09 10:00:00 +0200"
-image: /images/blog/cloud-news-1.jpg
+image: /images/blog/cover-cloud.jpeg
 author: kevinpapst
 tags: [Cloud]
 ---

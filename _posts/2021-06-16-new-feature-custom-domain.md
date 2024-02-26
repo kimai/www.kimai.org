@@ -1,7 +1,7 @@
 ---
 title: "New feature: custom domain"
 date: "2021-06-16 22:00:00 +0200"
-image: /images/blog/cloud-news-1.jpg
+image: /images/blog/cover-cloud.jpeg
 author: kevinpapst
 tags: [Cloud]
 ---

@@ -2,6 +2,7 @@
 title: "How to use Kimai 2 as native app"
 date: "2019-06-11 20:00:00 +0200"
 author: kevinpapst
+image: /images/blog/cover-plugin.jpeg
 tags: [Apps & Plugins]
 ---
 

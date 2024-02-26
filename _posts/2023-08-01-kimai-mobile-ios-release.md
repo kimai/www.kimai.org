@@ -2,7 +2,7 @@
 title: "Kimai Mobile iOS release"
 date: "2023-08-01 20:00:00 +0200"
 author: cloudrizon
-image: /images/blog/cover-10.jpeg
+image: /images/blog/cover-app.jpeg
 tags: [Apps & Plugins]
 ---
 

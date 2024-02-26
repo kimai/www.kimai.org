@@ -34,9 +34,11 @@ layout: base
                 <a href="#tag-all" class="nav-link active" data-bs-toggle="tab" role="tab">Latest</a>
             </li>
             {% for tag in sortedTags %}
-            <li class="nav-item">
-                <a href="#tag-{{ forloop.index  }}" class="nav-link" data-bs-toggle="tab" role="tab">{{ tag }}</a>
-            </li>
+                {% unless tag == 'Version 1' %}
+                <li class="nav-item">
+                    <a href="#tag-{{ tag | slugify  }}" class="nav-link" data-bs-toggle="tab" role="tab">{{ tag }}</a>
+                </li>
+                {% endunless %}
             {% endfor %}
         </ul>
 
@@ -48,7 +50,7 @@ layout: base
             </div>
 
             {% for tag in sortedTags %}
-            <div class="tab-pane fade" id="tag-{{ forloop.index }}" role="tabpanel">
+            <div class="tab-pane fade" id="tag-{{ tag | slugify }}" role="tabpanel">
                 <ul>
                     {% for post in site.tags[tag] %}
                         {% include card-blog-single.html post=post %}
@@ -56,6 +58,7 @@ layout: base
                 </ul>
             </div>
             {% endfor %}
+
         </div>
     </section>
 

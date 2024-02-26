@@ -1,7 +1,6 @@
 ---
 title: "Release 1.23 - Budget validation"
 date: "2022-08-30 10:00:00 +0200"
-image: /images/blog/cover-1.jpeg
 author: kevinpapst
 tags: [On-Premise]
 ---

@@ -2,6 +2,7 @@
 title:  "A new website for Kimai"
 date:   2018-02-10
 author: kevinpapst
+image: /images/blog/cover-developer.jpeg
 tags: [On-Premise]
 ---
 

@@ -1,11 +1,12 @@
 ---
-title: "Release 1.0 - Tags, Colors, UX, Budgets, LDAP, Custom fields and so much more"
+title: "Release 1.0 - Tags, Colors, UX, Budgets, LDAP, Custom fields ..."
 date: "2019-07-02 14:00:00 +0200"
 author: kevinpapst
 tags: [On-Premise]
 ---
 
 This release is filled with exciting new features, that's why it took longer than anticipated. I wanted to get the most important features into the first production stable release.
+
 Wait what? The first "stable release"? Well yeah, I know ... most of you are already using Kimai and never cared about the version number - but there are some large companies out there,
 who want to add Kimai to their one-click installations and they don't want to support a "pre-release" version (totally understandable).
 

@@ -5,7 +5,7 @@ author: kevinpapst
 tags: [On-Premise]
 ---
 
-The next release is out (sorry for the long release cycle this time), as always containing various bugfixes and some exciting new features:
+The next release is out, as always containing various bugfixes and some exciting new features:
 
 - Customer detail page (with comments, team and project listing ...)
 - Project detail page (with comments, team and activity listing ...)

@@ -1,7 +1,7 @@
 ---
 title: "SAML Login with Azure AD"
 date: "2022-07-13 21:00:00 +0200"
-image: /images/blog/cloud-news-1.jpg
+image: /images/blog/cover-cloud.jpeg
 author: kevinpapst
 tags: [Cloud]
 ---
