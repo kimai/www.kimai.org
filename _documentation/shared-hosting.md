@@ -18,6 +18,29 @@ If you can't find the correct version, ask your hoster! Or [let us help you]({% 
 
 You can find a detailed how-to guide for installing Kimai in their [Uberlab](https://lab.uberspace.de/guide_kimai/).
 
+### Manitu
+
+Everything needed to install/run kimai (git, composer, etc.) is already preinstalled an available at [manitu.de](https://www.manitu.de/).
+
+Steps to proceed to install kimai in a appropriate subdomain `kimai.your-domain.de` on a shared hosting environment:
+
+- Create/use a SSH user through the manitu configuration menu
+- Login with the SSH user
+- `cd ../../web` to change to the root directory of the web space
+- `git clone -b {{ site.kimai_v2_version }} --depth 1 {{ site.kimai_v2_repo }}.git`
+- `cd kimai/`
+- `composer install --optimize-autoloader -n`
+- Create a DB through the hosters configuration menu (called: `Datenbanken`)
+- Adjust the DB configuration in `.env`
+  DB-Version can be found out through phpMyAdmin with sql instruction: `select Version();`, an example DB connection string:
+  ```
+  DATABASE_URL=mysql://user:pwd@yourDbServer.manitu.net:3306/YourDbName?charset=utf8mb4&serverVersion=10.11.4-MariaDB-log
+  ```
+- Run `./bin/console kimai:install -n`
+- Change file/directory permission through webspace configuration menu (called: `Datei-Berechtigungen`): use `/web/kimai/var` as destination, use all other default values.
+- Create a subdomain for kimai: use /web/kimai/public/ as destination.
+- `bin/console kimai:user:create username admin@example.com ROLE_SUPER_ADMIN`
+
 ### Ionos / 1&1
 
 - GIT is normally pre-installed and can be used via SSH
