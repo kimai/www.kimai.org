@@ -177,8 +177,4 @@ After those steps are done, go to the control panel of the webserver
 
 ### Alfahosting
 
-! DON'T USE ALFAHOSTING! THEY DO NOT SUPPORT KIMAI !
-
-Their technical team thinks that supporting PHP 8.1+ is enough via FPM/Webserver. 
-
-They refuse to make it available via SSH (Business XXL plan). 
+You need a `v2` plan to use Kimai, as they do not support PHP > 8.0 on CLI (SSH) for long-term customers on the "old" plans (like "Business XXL plan").
