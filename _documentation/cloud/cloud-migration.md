@@ -22,7 +22,7 @@ Normal migrations needs approx. 1 hour, but there might be circumstances that le
 - Kimai 1 installation: check that it is at latest patch level, otherwise it will be upgraded during migration
 - Kimai 1 installation: make sure that all of your users have a valid email address
 
-Migration is free, if you are bringing more than 10 users (Plus) or 5 users (Premium), otherwise it is 150€ per hour (without tax).
+Migration is free, if you are bringing more than 10 users, otherwise it is 150€ per hour (without tax).
 
 ## What you need to provide
 
