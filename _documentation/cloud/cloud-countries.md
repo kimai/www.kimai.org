@@ -56,6 +56,7 @@ Customers from the following countries need to provide a document that proves th
 
 - GB = United Kingdom
 - CO = Columbia
+- TR = Turkey
 
 ## Unsupported countries
 
