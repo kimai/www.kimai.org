@@ -112,4 +112,6 @@ This screenshot is a showcase of the attribute mapping including groups:
 
 ## Costs
 
-There are **no additional costs** involved, it is included in your paid plan.
+There are **no additional costs** involved with the SAML SSO login. 
+
+Instead this feature is **only available for certain plans**, check the feature comparison before subscribing to a plan.  

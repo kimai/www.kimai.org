@@ -1,6 +1,6 @@
 ---
 title: Custom domain
-description: Read how to set-up and configure your custom domain, which comes with your paid cloud account.
+description: Read how to set-up and configure your custom domain
 ---
  
 Your Kimai-Cloud can be hosted under your own domain name and **SSL certificates are supported** as well.
@@ -8,7 +8,7 @@ Your Kimai-Cloud can be hosted under your own domain name and **SSL certificates
 This feature allows to run your time-tracking cloud at a custom-domain (eg. `https://time-tracking.example.com`) instead of only using the generic cloud domain (eg. `https://your-name.kimai.cloud`).
 
 All you need is your own domain name and access to the DNS settings of that domain.
-You have to create a so called CNAME (short for "Canonical name") entry, with your cloud domain as destination.
+You have to create a so-called CNAME (short for "Canonical name") entry, with your cloud domain as destination.
 
 ## Configure your DNS
 
@@ -50,4 +50,6 @@ After registering the custom domain in our system, an SSL certificate is issued 
 
 ## Costs
 
-There are **no additional costs** involved with the certificate or the custom domain feature, it is included in your paid plan.
+There are **no additional costs** involved with the certificate or the custom domain feature. 
+
+Instead this feature is **only available for certain plans**, check the feature comparison before subscribing to a plan.  

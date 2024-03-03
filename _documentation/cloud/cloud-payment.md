@@ -31,16 +31,6 @@ If you need to be billed for full calendar months, please book your tariff eithe
 
 If you need an extended trial period and/or additional trial users, please contact support.
 
-### User based billing
-
-Usually each registered user of a Kimai Cloud is charged, but I believe in fairness and have therefore decided to introduce the following regulation in mid-2021:
-
-- **Active users will be charged**
-- Deactivated users will be charged **if they have any activity less than one month ago**, e.g.:
-    - the user was registered within the last month
-    - the user has logged in within the last month
-    - the user has a time booking within the last month (or later)
-
 ### EU Reverse-Charge and taxes
  
 Kimai Cloud, as a SaaS operation, falls under "Electronically Provided Services / Data Processing" whereby the **Receiver location Principle** applies.
@@ -64,3 +54,22 @@ are **never** sent to the Kimai server.
 
 There is anonymous access from "Stripe" to the following data for information purposes:
 the card issuer or bank, the expiration date, the last 4 digits of the  card or bank details and the issuing country.
+
+### User licenses
+
+Usually each registered user of a Kimai Cloud is charged, but I believe in fairness:
+
+- **Active users** use one license
+- **Deactivated users** do not use a license, instead their license will be free again for re-use by another member 
+
+### User based billing
+
+This only applies to old **metered plans** `Plus` and `Premium`, which are not available for new customers any longer.
+
+Usually each registered user of a Kimai Cloud is charged, but I believe in fairness and have therefore decided to introduce the following regulation in mid-2021:
+
+- **Active users will be charged**
+- Deactivated users will be charged **if they have any activity less than one month ago**, e.g.:
+  - the user was registered within the last month
+  - the user has logged in within the last month
+  - the user has a time booking within the last month (or later)
