@@ -13,7 +13,6 @@ premium     = premium plan kimai-cloud
 {% assign basic = site.data.kimai-compare.basic %}
 {% assign plus = site.data.kimai-compare.plus %}
 {% assign premium = site.data.kimai-compare.premium %}
-{% assign cloud_url = "https://www.kimai.cloud/auth/registration" %}
 {% assign compare_features = '' %}
 {% for key in site.data.kimai-compare.oss %}
 {% assign compare_features = compare_features | append: ' ' | append: key[0] %}
@@ -112,7 +111,7 @@ premium     = premium plan kimai-cloud
                                                 </li>
                                                 {% endfor %}
                                             </ul>
-                                            <a href="{{ cloud_url }}" class="btn btn-outline-primary w-100 w-md-auto">Get started</a>
+                                            {% include link-cloud-start.html classes="btn btn-outline-primary w-100 w-md-auto" title="Get started" %}
                                         </div>
                                         <div class="col text-md-center mb-3">
                                             <h3 class="h5 mb-2 mb-md-3">{{ tool.name }} <br class="d-none d-md-block">{{ tool.premium_plan }}</h3>
@@ -266,7 +265,7 @@ premium     = premium plan kimai-cloud
                                                     <div class="text-muted mb-5">per user & month</div>
                                                 </div>
                                                 <div class="card-footer border-0 text-center pt-0 pb-4">
-                                                    <a href="https://www.kimai.cloud/auth/registration" target="_blank" class="btn btn-outline-primary btn-lg">Get started now</a>
+                                                    {% include link-cloud-start.html classes="btn btn-outline-primary btn-lg" title="Get started now" %}
                                                 </div>
                                             </div>
                                         </div>
@@ -279,7 +278,7 @@ premium     = premium plan kimai-cloud
                                                     <div class="opacity-50 mb-5">per user & month</div>
                                                 </div>
                                                 <div class="card-footer border-0 text-center pt-0 pb-4">
-                                                    <a href="https://www.kimai.cloud/auth/registration" target="_blank" class="btn btn-light btn-lg shadow-secondary">Get started now</a>
+                                                    {% include link-cloud-start.html classes="btn btn-light btn-lg shadow-secondary" title="Get started now" %}
                                                 </div>
                                             </div>
                                         </div>
@@ -292,7 +291,7 @@ premium     = premium plan kimai-cloud
                                                     <div class="text-muted mb-5">per user & month</div>
                                                 </div>
                                                 <div class="card-footer border-0 text-center pt-0 pb-4">
-                                                    <a href="https://www.kimai.cloud/auth/registration" target="_blank" class="btn btn-outline-primary btn-lg">Get started now</a>
+                                                    {% include link-cloud-start.html classes="btn btn-outline-primary btn-lg" title="Get started now" %}
                                                 </div>
                                             </div>
                                         </div>
@@ -307,7 +306,7 @@ premium     = premium plan kimai-cloud
                                     <div class="col-xl-6 col-lg-7 col-md-8 col-sm-10 text-center">
                                         <h2 class="h1 text-light mb-4">Ready to Get Started?</h2>
                                         <p class="fs-lg text-light opacity-70 pb-4 mb-3">Track your time with a 30-day free trial</p>
-                                        <a href="https://www.kimai.cloud/auth/registration" target="_blank" class="btn btn-primary btn-lg">Get started for free</a>
+                                        {% include link-cloud-start.html classes="btn btn-primary btn-lg" title="Get started for free" %}
                                     </div>
                                 </div>
                             </div>
