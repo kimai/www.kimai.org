@@ -12,4 +12,4 @@ With the help of this function you can restrict the accessibility of your time t
 As soon as an IP has been stored, only access from there is allowed. 
 Access from all other addresses is answered with an error page.
 
-To activate the function, enter your IP address(es) in your profile under [Access restriction to IP address](https://www.kimai.cloud/my/ip-restriction/) (link only works when you are logged-in).
+To activate the function, enter your IP address(es) in your profile under [Access restriction to IP address]({{ site.cloud.url }}/my/ip-restriction/) (link only works when you are logged-in).

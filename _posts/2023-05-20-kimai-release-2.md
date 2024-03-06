@@ -78,12 +78,12 @@ Do not run your business on an outdated software stack, especially if it publicl
 Kimai is a server software, that needs a bit of technical knowledge when it comes to hosting and maintenance.
 And not everyone is familiar with the Linux bash. 
 
-If you want to use the latest and greatest feature, you can use [www.kimai.cloud](https://www.kimai.cloud) and be always up-to-date. 
+If you want to use the latest and greatest feature, you can use [the Kimai-Cloud]({{ site.cloud.url }}) and be always up-to-date. 
 If you have many employees or a strict governance, using the on-premise version of Kimai might be the best solution.
 But if you are a solo entrepreneur or a small company, it is cheaper and a big time-saver to use the cloud version of Kimai.
 
 To make it simpler for you to move to the cloud, and saving you the hassle of updating Kimai, I am announcing the "Summer of Free Migration": 
-If you switch to [a paid plan](https://www.kimai.cloud/pricing), I will **import your existing Kimai data for free**. 
+If you switch to [a paid plan]({{ site.cloud.url }}/pricing), I will **import your existing Kimai data for free**. 
 All I need is the registered cloud and a database dump of your current Kimai installation.
 Please [contact me](mailto:support@kimai.cloud) to discuss the details.
 

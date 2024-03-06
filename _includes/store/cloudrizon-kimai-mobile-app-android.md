@@ -10,7 +10,7 @@ All time tracking data is securely stored on the used Kimai Server (both On-Prem
 
 ### Connection 
 
-For setting up Kimai Mobile, you need a running Kimai: this can be your own server, or a [Kimai Cloud](https://www.kimai.cloud/) account. 
+For setting up Kimai Mobile, you need a running Kimai: this can be your own server, or a [Kimai Cloud]({{ site.cloud.url }}) account. 
 Create an API password and login with your credentials.
 
 ### Multilingual support 

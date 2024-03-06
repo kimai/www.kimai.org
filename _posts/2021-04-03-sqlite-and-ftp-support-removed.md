@@ -39,7 +39,7 @@ for me to publish a broken software package any longer. Or in other words: the F
 If you are currently using an FTP installation of Kimai, you have several options for the future:
 
 - Get a hoster that supports SSH. Shared hosting is usually not the best idea for Kimai, but many modern hosters offer SSH support.
-- Use the [Kimai Cloud](https://www.kimai.cloud), which is free for up to 5 users and supports full backups in paid plans.
+- Use the [Kimai Cloud]({{ site.cloud.url }}), which is free for up to 5 users and supports full backups in paid plans.
 
 ## Migrate from SQLite to MySQL
 

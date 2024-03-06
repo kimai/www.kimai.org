@@ -203,7 +203,7 @@ Installation via FTP is not supported. Kimai cannot be installed with FTP.
 
 You have two choices:
 - get a proper webhosting/virtual server with SSH support
-- use a [SaaS time-tracking software](https://www.kimai.cloud)
+- use a [SaaS time-tracking software]({{ site.cloud.url }})
 
 ## Ansible
 

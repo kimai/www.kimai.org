@@ -1,6 +1,6 @@
-{% assign _url = "https://www.kimai.cloud/auth/registration" %}
+{% assign _url = "/auth/registration" %}
 {% if page.lang == "de" %}
-    {% assign _url = "https://www.kimai.cloud/de/auth/registrierung" %}
+    {% assign _url = "/de/auth/registrierung" %}
 {% endif %}
 {% assign _title = site.data[page.lang].translation.cloud-call-to-action %}
 {% if include.title != nil %}
@@ -10,4 +10,4 @@
 {% if include.classes != nil %}
     {% assign _classes = include.classes %}
 {% endif %}
-<a href="{{ _url }}" class="{{ _classes }}">{{ _title }}</a>
+<a href="{{ site.cloud.url }}{{ _url }}" class="{{ _classes }}">{{ _title }}</a>

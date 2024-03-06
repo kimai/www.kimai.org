@@ -69,6 +69,6 @@ Most plugins are available in the cloud, access depends on the paid plan you cho
 The cloud is cheaper if you only have a few users.
 
 If you want to switch, I am offering the "Summer of Free Migration":
-If you switch to [a paid plan](https://www.kimai.cloud/pricing), I will **import your existing Kimai data for free**.
+If you switch to [a paid plan]({{ site.cloud.url }}/pricing), I will **import your existing Kimai data for free**.
 All I need is the registered cloud and a database dump of your current Kimai installation.
 Please [contact me](mailto:support@kimai.cloud) to discuss the details.
