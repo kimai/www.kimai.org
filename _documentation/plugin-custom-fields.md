@@ -6,7 +6,7 @@ description: Add free configurable custom fields to your Kimai installation
 {% include plugins/custom-fields.md %}  
 
 Custom fields can be of the following type:
-`string`, `integer`, `number`, `duration`, `money`, `language`, `currency`, `country`, `color`, `date`, `datetime`, `email`, `textarea`, `invoice template`, `checkbox`, `choice-list`
+`string`, `integer`, `number`, `duration`, `money`, `language`, `currency`, `country`, `color`, `date`, `datetime`, `email`, `textarea`, `invoice template`, `checkbox`, `choice-list`, `auto-tags`
 
 ## Field types
  
@@ -31,6 +31,7 @@ The custom fields will be shown on the "create and edit entity" forms and can ha
 | `invoice template` | dropdown                                                                            |
 | `checkbox`         | on/off                                                                              |
 | `choice-list`      | drop-down with custom entries                                                       |
+| `auto-tags`        | automatic timesheet tagging through assignment on activities/projects/custo mers    |
 {: .table }
    
 ### Checkbox
@@ -59,6 +60,13 @@ A select box that is useful if you want to generate automatic invoices via comma
 
 The Kimai command `bin/console kimai:invoice:create` supports invoice templates via custom-field ([see docs](https://www.kimai.org/documentation/invoices.html#create-invoices-with-cronjobs)).
 The option parameter `--template-meta` takes the internal name of the custom field that will identify the invoice template to be used.
+
+### Auto-Tags
+
+This advanced feature allows to assign certain tags to Activity, Project and Customer.
+
+Once you assigned such an `auto-tag` e.g to a Project, each future timesheet that is linked to the selected `Project` will be assigned 
+the selected `auto-tags`. A user cannot remove these tags, they are automatically assigned after the form (to save the timesheet) was submitted. 
 
 ## Permissions
 
