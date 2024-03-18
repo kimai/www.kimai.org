@@ -111,19 +111,17 @@ Cookies which are necessary to allow electronic communications or to provide cer
 The website operator has a legitimate interest in the storage of cookies to ensure an optimized service provided free of technical errors. 
 If other cookies (such as those used to analyze your surfing behavior) are also stored, they will be treated separately in this privacy policy.
 
-### Google Web Fonts
+### Google Fonts
 
 For uniform representation of fonts, this page uses web fonts provided by Google. 
 When you open a page, your browser loads the required web fonts into your browser cache to display texts and fonts correctly.
 
-When you call up a page of our website that contains a social plugin, your browser makes a direct connection with Google servers. 
 Google thus becomes aware that our web page was accessed via your IP address. 
 The use of Google Web fonts is done in the interest of a uniform and attractive presentation of our website. 
 This constitutes a justified interest pursuant to Art. 6 (1) (f) DSGVO.
 
-If your browser does not support web fonts, a standard font is used by your computer.
-Further information about handling user data, can be found at <a href="https://developers.google.com/fonts/faq" target="_blank">https://developers.google.com/fonts/faq</a> 
-and in Google's privacy policy at <a href="https://www.google.com/policies/privacy/" target="_blank">https://www.google.com/policies/privacy/</a>.
+If your browser does not support web fonts, a standard font is used by your computer. Further information about handling user data, 
+can be found in the [FAQ](https://developers.google.com/fonts/faq) and in Google's [privacy policy](https://www.google.com/policies/privacy/).
 
 ### Gumroad / Marketplace
 
