@@ -182,6 +182,12 @@ The legal basis for sending the newsletter and the analysis is Art. 6 Para. 1 li
 Consent to the newsletter being sent can be revoked at any time with future effect in accordance with Art. 7 Para. 3 GDPR. 
 To do this, you only have to inform us of your revocation or click the unsubscribe link contained in each newsletter.
 
+### Simple Analytics
+
+To get critical information about the behavior of our visitors, we use [Simple Analytics](https://simpleanalytics.com). 
+This analytics software gives us insight about our visitors only in general, but not about individuals per say, as it does not track visitors and does not store any personal identifiable information. 
+[Go to their documentation](https://docs.simpleanalytics.com/what-we-collect) to find out what Simple Analytics collects (and most importantly what they don't).
+
 ## References
 
 This document was partially generated with the help of [data protection generator](https://www.e-recht24.de/) by eRecht24 GmbH and the 
