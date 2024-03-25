@@ -35,6 +35,9 @@ All examples represent the date `2019-07-09` (2019, July 9th):
 - `{m}`         - numeric representation of a month, without leading zeros. Example: `7`
 - `{D}`         - day of the month, 2 digits with leading zeros. Example: `09`
 - `{d}`         - day of the month without leading zeros. Example: `9`
+- `{YY}`        - full numeric representation of a year (4 digits), to be used with decrement/increment (default increment = 1). Example: `2020`
+- `{MM}`        - numeric representation of a month, to be used with decrement/increment (default increment = 1). Example: `10`
+- `{DD}`        - day of the month, to be used with decrement/increment (default increment = 1). Example: `24`
 - `{cc}`        - per customer invoice counter for all times, starting at 1
 - `{ccy}`       - per customer invoice counter for this year, starting at 1
 - `{ccm}`       - per customer invoice counter for this month, starting at 1
