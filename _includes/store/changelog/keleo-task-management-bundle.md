@@ -1,3 +1,9 @@
+## Version 2.5.0
+
+Compatibility: requires minimum Kimai 2.1.0
+
+- Changed: support attribute caching in Voter
+
 ## Version 2.4.0
 
 Compatibility: requires minimum Kimai 2.1.0

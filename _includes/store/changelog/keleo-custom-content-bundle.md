@@ -1,3 +1,10 @@
+## Version 2.3.1
+
+Compatibility: requires minimum Kimai 2.5.0
+
+- Changed: import Route attribute from correct namespace
+- Changed: use bundle identifier to load routes
+
 ## Version 2.3.0
 
 Compatibility: requires minimum Kimai 2.5.0

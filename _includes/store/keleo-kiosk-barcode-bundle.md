@@ -79,12 +79,11 @@ The following configurations are available:
 
 This bundle introduces new permissions, which limit access to certain functions:
 
-| Permission Name          | Description                                                                                        |
-|--------------------------|----------------------------------------------------------------------------------------------------|
-| `barcode_own_profile`    | allows to see and administrate barcode for the own user profile                                    |
-| `barcode_other_profile`  | allows to see and administrate barcode for all user profiles                                       |
-| `kiosk_own_profile`      | allows to configure user specific kiosk settings (eg. start and end time) for the own user profile |
-| `kiosk_other_profile`    | allows to configure user specific kiosk settings (eg. start and end time) for all user profiles    |
+| Permission Name         | Description                                                                                  |
+|-------------------------|----------------------------------------------------------------------------------------------|
+| `kiosk_admin`           | whether the current user can see the Kiosk administration and assign codes                   |
+| `kiosk_own_profile`     | configure codes and user specific kiosk settings (eg. start and end time) for own account    |
+| `kiosk_other_profile`   | configure codes and user specific kiosk settings (eg. start and end time) for other accounts |
 {: .table }
 
 By default, these are granted to each user with the role `ROLE_SUPER_ADMIN`.
