@@ -9,6 +9,10 @@
 {% if is_light %}
     {% assign is_dark = false %}
 {% endif %}
+{% assign englishOrGerman = 'en' %}
+{% if page.lang == 'de' %}
+    {% assign englishOrGerman = 'de' %}
+{% endif %}
 <footer class="footer {% if is_dark %}bg-dark {% endif %}pt-5 pb-4"{% if is_dark %} data-bs-theme="dark"{% endif %}>
     <div class="container pt-1 pt-md-3 pt-lg-4 pt-xl-5">
         <div class="row">
@@ -59,45 +63,41 @@
             <div class="col-md-7 offset-xl-1">
                 <div id="footer-links" class="row">
                     {% assign columnLength = 4 %}
-                    {% if page.lang == 'de' or page.lang == 'en' %}
-                        {% assign columnLength = 3 %}
-                    {% endif %}
                     <div class="col-12 col-md-6 col-lg-{{ columnLength }}">
-                        <h6 class="fs-lg mb-1 mb-md-3">
+                        <h6 class="fs-lg mb-1 mb-md-2">
                             <span class="d-none d-md-block">Kimai</span>
                             <a href="#tools" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Kimai</a>
                         </h6>
                         <div id="tools" class="collapse d-md-block" data-bs-parent="#footer-links">
                             <ul class="nav flex-column">
-                                <li class="nav-item mb-1">
+                                <li class="nav-item">
                                     {% include link-translated-menu.html item="about" language=page.lang class="nav-link fs-sm fw-medium px-0 py-1" %}
                                 </li>
-                                <li class="nav-item mb-1">
+                                <li class="nav-item">
                                     {% include link-translated-menu.html item="download" language=page.lang class="nav-link fs-sm fw-medium px-0 py-1" %}
                                 </li>
-                                <li class="nav-item mb-1">
+                                <li class="nav-item">
                                     {% include link-translated-menu.html item="features" language=page.lang class="nav-link fs-sm fw-medium px-0 py-1" %}
                                 </li>
-                                <li class="nav-item mb-1">
+                                <li class="nav-item">
                                     {% include link-translated-menu.html item="support" language=page.lang class="nav-link fs-sm fw-medium px-0 py-1" %}
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    {% assign openSourcePageLang = 'en' %}
-                    {% if page.lang == 'de' %}
-                        {% assign openSourcePageLang = 'de' %}
-                    {% endif %}
                     <div class="col-12 col-md-6 col-lg-{{ columnLength }}">
-                        <h6 class="fs-lg mb-1 mb-md-3">
-                            <span class="d-none d-md-block">Open-Source</span>
-                            <a href="#tools" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Open-Source</a>
+                        <h6 class="fs-lg mb-1 mb-md-2">
+                            <span class="d-none d-md-block">Kimai {% if page.lang == 'de' %}für{% else %}for{% endif %}</span>
+                            <a href="#landing-kimai-for" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Kimai for</a>
                         </h6>
-                        <div id="landing-oss" class="collapse d-md-block" data-bs-parent="#footer-links">
+                        <div id="landing-kimai-for" class="collapse d-md-block" data-bs-parent="#footer-links">
                             <ul class="nav flex-column">
-                                {% assign lps = site.opensource | where: "lang", openSourcePageLang %}
+                                <li class="nav-item">
+                                    {% include link-translated-menu.html item="non-profit" language=englishOrGerman class="nav-link fs-sm fw-medium px-0 py-1" %}
+                                </li>
+                                {% assign lps = site.opensource | where: "lang", englishOrGerman %}
                                 {% for lp in lps %}
-                                <li class="nav-item mb-1">
+                                <li class="nav-item">
                                     <a href="{{ lp.url }}" class="nav-link fs-sm fw-medium px-0 py-1">{{ lp.keyword }}</a>
                                 </li>
                                 {% endfor %}
@@ -105,27 +105,29 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-{{ columnLength }}">
-                        <h6 class="fs-lg mb-1 mb-md-3">
+                        <h6 class="fs-lg mb-1 mb-md-2">
                             <span class="d-none d-md-block">{{ site.data[page.lang].translation.comparison.footer-title }}</span>
                             <a href="#footer-cmp" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">{{ site.data[page.lang].translation.comparison.footer-title }}</a>
                         </h6>
                         <div id="footer-cmp" class="collapse d-md-block" data-bs-parent="#footer-links">
                             <ul class="nav flex-column">
-                                <li class="nav-item mb-1">
+                                <li class="nav-item">
                                     {% include link-translated-menu.html item="alternatives" language=page.lang class="nav-link fs-sm fw-medium px-0 py-1" %}
                                 </li>
                                 {% assign tools = site.alternative | where: "lang", "en"  | where: "feature", true | sort: "name" %}
                                 {% for tool in tools %}
-                                    <li class="nav-item mb-1">
+                                    <li class="nav-item">
                                         <a href="{{ tool.url }}" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to {{ tool.name }}">{{ tool.name }}</a>
                                     </li>
                                 {% endfor %}
                             </ul>
                         </div>
                     </div>
+                    {% comment %}
                     <div class="d-none d-lg-block col-lg-3 text-end">
                         <img src="/images/kimai_logo.png" style="max-height:148px" alt="Kimai">
                     </div>
+                    {% endcomment %}
                 </div>
             </div>
         </div>

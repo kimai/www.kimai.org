@@ -1,0 +1,39 @@
+{% if include.id %}
+{% assign plan = site.data.plans[include.id] %}
+
+<div class="card h-100 border-0 shadow-sm p-xxl-3" style="min-width: 18rem;">
+    <div class="card-body">
+        <div class="d-flex align-items-center pb-2 pb-md-3 mb-4">
+            <div class="flex-shrink-0 rounded-3">
+                <i class="{{ site.data.icons[include.id] }} display-4"></i>
+            </div>
+            <div class="ps-4">
+                <h3 class="fs-lg fw-normal text-body mb-2">{{ plan.name }}</h3>
+                <h4 class="h3 lh-1 mb-0">
+                    {% assign pricing = plan.price | divided_by: 100.0 | round: 2 %}
+                    {{ pricing | replace: '.', '.<span class="fs-5">' }}</span> €
+                    <span class="text-body fs-sm fw-normal">/ {{ site.data[page.lang].translation.pricing.short_monthly }}</span>
+                </h4>
+            </div>
+        </div>
+        <ul class="list-unstyled fs-sm pb-md-3 mb-3">
+            {% for teaser in plan.teaser %}
+            {% if teaser[0] != "" %}
+            <li class="d-flex mb-2">
+                {% assign key = teaser[0] %}
+                <i class="bx bx-check fs-xl text-primary me-1"></i>
+                {% assign text = site.data[page.lang].translation.plans[key] %}
+                {% for replacer in teaser[1] %}
+                    {% assign text = text | replace: replacer[0], replacer[1] %}
+                {% endfor %}
+                {{ text }}
+            </li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="card-footer border-0 pt-0 pb-4">
+        {% include link-cloud-start.html classes="btn btn-outline-primary w-100" %}
+    </div>
+</div>
+{% endif %}
