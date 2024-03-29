@@ -10,6 +10,8 @@
             {{- include.title -}}
         {%- elsif site.data[page.lang].translation[menu.slug] != nil -%}
             {{- site.data[page.lang].translation[menu.slug].name -}}
+        {%- elsif site.data[include.language].translation[menu.slug] != nil -%}
+            {{- site.data[include.language].translation[menu.slug].name -}}
         {%- else -%}
             {{- menu.title -}}
         {%- endif -%}
