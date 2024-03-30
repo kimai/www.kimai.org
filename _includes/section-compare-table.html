@@ -116,7 +116,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="text-start">Working time accounts (holiday, public holidays, sickness)</td>
+                <td class="text-start">{{ site.data[page.lang].store.items.controlling.title }}</td>
                 <td class="text-center">
                     {% assign pluginTitle = site.data.store.controlling.subscription | append: ' ' | append: site.data[page.lang].translation.per-year %}
                     {% include link-translated-shop.html item="controlling" title=pluginTitle %}
@@ -126,7 +126,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="text-start">Audit-Log</td>
+                <td class="text-start">{{ site.data[page.lang].store.items.audit-trail-bundle.title }}</td>
                 <td class="text-center">
                     {% assign pluginTitle = site.data.store.audit-trail-bundle.subscription | append: ' ' | append: site.data[page.lang].translation.per-year %}
                     {% include link-translated-shop.html item="audit-trail-bundle" title=pluginTitle %}
@@ -136,7 +136,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="text-start">Custom fields</td>
+                <td class="text-start">{{ site.data[page.lang].store.items.custom-fields-bundle.title }}</td>
                 <td class="text-center">
                     {% assign pluginTitle = site.data.store.custom-fields-bundle.subscription | append: ' ' | append: site.data[page.lang].translation.per-year %}
                     {% include link-translated-shop.html item="custom-fields-bundle" title=pluginTitle %}
@@ -146,7 +146,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="text-start">Expense tracking</td>
+                <td class="text-start">{{ site.data[page.lang].store.items.expenses-bundle.title }}</td>
                 <td class="text-center">
                     {% assign pluginTitle = site.data.store.expenses-bundle.subscription | append: ' ' | append: site.data[page.lang].translation.per-year %}
                     {% include link-translated-shop.html item="expenses-bundle" title=pluginTitle %}
@@ -156,7 +156,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="text-start">Task planning</td>
+                <td class="text-start">{{ site.data[page.lang].store.items.task-management-bundle.title }}</td>
                 <td class="text-center">
                     {% assign pluginTitle = site.data.store.task-management-bundle.subscription | append: ' ' | append: site.data[page.lang].translation.per-year %}
                     {% include link-translated-shop.html item="task-management-bundle" title=pluginTitle %}
@@ -166,7 +166,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="text-start">Customization of displayed labels</td>
+                <td class="text-start">{{ site.data[page.lang].store.items.translation-bundle.title }}</td>
                 <td class="text-center">
                     {% assign pluginTitle = site.data.store.translation-bundle.subscription | append: ' ' | append: site.data[page.lang].translation.per-year %}
                     {% include link-translated-shop.html item="translation-bundle" title=pluginTitle %}
