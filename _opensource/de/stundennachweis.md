@@ -1,11 +1,9 @@
 ---
 title: "Open-Source Stundennachweis"
 keyword: "Stundennachweise"
-lang: de
-permalink: /de/open-source-stundennachweis.html
 ---
 
-## Kimai: Die Open-Source Lösung für die digitale Erfassung von Stundennachweisen
+### Kimai: Die Open-Source Lösung für die digitale Erfassung von Stundennachweisen
 
 Genug von manuellen Stundenzetteln und mühsamer Nachverfolgung von Arbeitszeiten?
 
@@ -25,7 +23,7 @@ Kimai ist eine einfache, und gleichzeitig mächtige App zur Erfassung von Stunde
 Kimai ist mehr als eine Open Source Stundennachweis; es ist ein Innovationsmotor für Projektmanagement und Zeitprotokollierung.
 Hier sind einige Gründe, warum Kimai Ihre Team-Produktivität steigern kann:
 
-#### Flexibilität, die keine Wünsche offenlässt
+**Flexibilität, die keine Wünsche offenlässt**
 
 Kimai bietet ein Stundennachweissystem, das sich Ihren betrieblichen Anforderungen perfekt anpasst und ein maßgeschneidertes Zeitmanagement für Projekte ermöglicht.
 
@@ -39,7 +37,7 @@ Kimai bietet ein Stundennachweissystem, das sich Ihren betrieblichen Anforderung
 
 Kimai wird durch eine lebendige Open-Source-Gemeinschaft unterstützt, die kontinuierlich zur Verbesserung von Kimai beiträgt.
 
-### Ihre Suche nach einer Open-Source Stundennachweis hat hier ein Ende
+### Ihre Suche nach einer Open-Source Software für Stundennachweise hat hier ein Ende
 
 Kimai ist mehr als eine Software - es ist ein Verbündeter, der mit Ihrem Unternehmen wächst.
 Mit Kimai erreicht Ihre Zeiterfassung für projektbasierte Teams ein neues Niveau der Effizienz.

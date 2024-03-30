@@ -1,8 +1,6 @@
 ---
 title: "Open-Source Zeiterfassung"
 keyword: "Zeiterfassung"
-lang: de
-permalink: /de/open-source-zeiterfassung.html
 ---
 
 Willkommen in der Welt, in der Zeiterfassung und Innovation aufeinandertreffen - Kimai steht an der Spitze der Open-Source Zeiterfassung für projektbasierte Teams!

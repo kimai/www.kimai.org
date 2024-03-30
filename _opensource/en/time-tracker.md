@@ -1,7 +1,6 @@
 ---
 title: "Open-Source Time-Tracker"
 keyword: "Time Tracker"
-lang: en
 ---
 
 Welcome to a world where time trackers meet innovation — Kimai is the cutting edge open source time tracker software!

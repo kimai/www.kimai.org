@@ -1,8 +1,6 @@
 ---
 title: "Open-Source Stempeluhr"
 keyword: "Stempeluhr"
-lang: de
-permalink: /de/open-source-stempeluhr.html
 ---
 
 Willkommen in der Welt, in der Zeiterfassung und Innovation aufeinandertreffen - Kimai steht an der Spitze der Open-Source Stempeluhr für projektbasierte Teams!

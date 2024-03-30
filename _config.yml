@@ -104,13 +104,10 @@ collections:
     permalink: "/store/:title.html"
   alternative:
     output: true
-    permalink: "/en/compare/:title.html"
   opensource:
     output: true
-    permalink: "/en/open-source-:name.html"
   landingpage:
     output: true
-    permalink: "/en/:name.html"
 
 defaults:
   - scope:
@@ -154,22 +151,37 @@ defaults:
       layout: store-item
       lang: en
   - scope:
-      path: ""
+      path: "_alternative/en/"
       type: alternative
     values:
       layout: alternative
       lang: en
+      permalink: "/en/alternative-to-:title"
   - scope:
-      path: ""
+      path: "_opensource/de/"
+      type: opensource
+    values:
+      layout: opensource
+      lang: de
+      permalink: "/de/open-source-:title"
+  - scope:
+      path: "_opensource/en/"
       type: opensource
     values:
       layout: opensource
       lang: en
+      permalink: "/en/open-source-:title"
   - scope:
-      path: ""
-      type: landingpage
+      path: "_landingpage/de/"
     values:
       layout: landingpage
+      permalink: "/de/:title"
+      lang: de
+  - scope:
+      path: "_landingpage/en/"
+    values:
+      layout: landingpage
+      permalink: "/en/:title"
       lang: en
 
 
