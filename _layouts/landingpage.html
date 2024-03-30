@@ -4,8 +4,6 @@ layout: base
 {% assign pagetitle = page.title %}
 {% if site.data[page.lang].translation[page.slug].title != nil %}
     {% assign pagetitle = site.data[page.lang].translation[page.slug].title %}
-{% elsif site.data[page.lang].translation[page.slug].name != nil %}
-    {% assign pagetitle = site.data[page.lang].translation[page.slug].name %}
 {% endif %}
 {% assign subtitle = nil %}
 {% if page.subtitle != nil %}
@@ -30,7 +28,11 @@ layout: base
                         {% endif %}
                     </div>
                     <div class="mb-0">
-                        {{ content }}
+                        <div class="lp-content mb-5 px-xl-5 px-md-3 px-1 {% if page.centered != nil and page.centered %} text-center{% endif %}">
+                            {{ content }}
+                        </div>
+
+                        {% include cta-begin-journey.html %}
                     </div>
                 </div>
             </div>
@@ -40,4 +42,3 @@ layout: base
 </main>
 
 {% include footer.html %}
-
