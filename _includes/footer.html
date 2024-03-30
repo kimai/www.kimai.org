@@ -88,17 +88,17 @@
                     <div class="col-12 col-md-6 col-lg-{{ columnLength }}">
                         <h6 class="fs-lg mb-1 mb-md-2">
                             <span class="d-none d-md-block">Kimai {% if page.lang == 'de' %}für{% else %}for{% endif %}</span>
-                            <a href="#landing-kimai-for" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Kimai for</a>
+                            <a href="#landing-kimai-for" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Kimai {% if page.lang == 'de' %}für{% else %}for{% endif %}</a>
                         </h6>
                         <div id="landing-kimai-for" class="collapse d-md-block" data-bs-parent="#footer-links">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    {% include link-translated-menu.html item="non-profit" language=englishOrGerman class="nav-link fs-sm fw-medium px-0 py-1" %}
+                                    {% include link-translated-menu.html type="landingpage" item="non-profit" language=englishOrGerman class="nav-link fs-sm fw-medium px-0 py-1" %}
                                 </li>
                                 {% assign lps = site.opensource | where: "lang", englishOrGerman %}
                                 {% for lp in lps %}
                                 <li class="nav-item">
-                                    <a href="{{ lp.url }}" class="nav-link fs-sm fw-medium px-0 py-1">{{ lp.keyword }}</a>
+                                    <a href="{{ lp.url }}" class="nav-link fs-sm fw-medium px-0 py-1" title="Open-Source {{ lp.keyword }}">{{ lp.keyword }}</a>
                                 </li>
                                 {% endfor %}
                             </ul>

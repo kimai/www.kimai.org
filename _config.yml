@@ -108,6 +108,9 @@ collections:
   opensource:
     output: true
     permalink: "/en/open-source-:name.html"
+  landingpage:
+    output: true
+    permalink: "/en/:name.html"
 
 defaults:
   - scope:
@@ -160,7 +163,14 @@ defaults:
       path: ""
       type: opensource
     values:
-      layout: landing-opensource
+      layout: opensource
+      lang: en
+  - scope:
+      path: ""
+      type: landingpage
+    values:
+      layout: landingpage
+      lang: en
 
 
 markdown: kramdown
