@@ -176,6 +176,16 @@
                 </td>
             </tr>
             <tr>
+                <td class="text-start">{{ site.data[page.lang].store.items.kiosk-barcode-bundle.title }}</td>
+                <td class="text-center">
+                    {% assign pluginTitle = site.data.store.kiosk-barcode-bundle.subscription | append: ' ' | append: site.data[page.lang].translation.per-year %}
+                    {% include link-translated-shop.html item="kiosk-barcode-bundle" title=pluginTitle %}
+                </td>
+                <td class="text-center">
+                    <i class="bx bx-check text-success"></i>
+                </td>
+            </tr>
+            <tr>
                 <td class="text-start">Personal support</td>
                 <td class="text-center">
                     {% assign supportTitle = 'With additional costs' %}
