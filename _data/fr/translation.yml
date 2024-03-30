@@ -38,7 +38,7 @@ installation: Installation
 updates: Mises à jour
 username: Nom d'utilisateur
 password: Mot de passe
-try-it: Essayez-le
+try-it: Mode démo
 plugin-demo-at: Vous pouvez tester ce greffon à l'adresse suivante
 plugin-demo-accounts: Vous trouverez d'autres comptes d'essai ici
 read-more: Lire la suite
@@ -71,7 +71,7 @@ demo:
     title: Testez Kimai dans une de nos démos
     introduction: "Essayez la démo de suivi du temps de Kimai et nous vous le promettons : Votre prochaine étape sera de le télécharger !"
     choose: "Choisissez l'une de nos installations de démonstration de Kimai, où vous pourrez avoir une première impression sur ce logiciel et les fonctionnalités qu'il offre."
-    reinstall: "Notez que les démos sont réinstallées périodiquement et que toutes les données saisies sont supprimées. Mais pour votre commodité, elles sont préremplies de données aléatoires afin que vous puissiez commencer à tester les fonctionnalités (comme la facture ou l'export) immédiatement."
+    reinstall: "Notez que les démos sont réinstallées périodiquement et que toutes les données saisies sont supprimées."
     user: Utilisateurs de la démo
     accounts: "Ces comptes sont disponibles pour vos tests. Vous pouvez également créer votre propre utilisateur test dans le formulaire d'inscription de chaque démo."
     role_user: Utilisateur
@@ -82,7 +82,7 @@ demo:
     plugins-description: La version actuelle avec des plugins en vedette et des données de démonstration.
     plugins-title: En vedette
     stable-title: Noyau
-    empty-title: Plugins
+    empty-title: Module d'extension
     stable-description: La dernière version, sans plugins, sans données de démonstration.
 index:
     name: Accueil
@@ -101,7 +101,7 @@ about:
     name: À propos de Kimai
     description: Qu'est-ce qui se cache derrière l'application de suivi du temps Kimai ? Apprenez-en plus sur elle, son histoire et son développeur.
     collaboration:
-        title: Collaboration
+        title: Travail collaboratif
         content: Les clients apprécient la commodité offerte par le support gratuit, et l'échange est une partie essentielle de mon travail. J'apprécie l'engagement de la communauté sur GitHub, la collaboration et le travail agile. L'amélioration constante basée sur vos commentaires rend cette expérience exceptionnelle.
     technology:
         title: Technologie
@@ -109,17 +109,17 @@ about:
     joy:
         title: Joie au travail
         content: Le développement de Kimai est la combinaison idéale de la profession que j'aime, avec ses possibilités infinies d'éducation, et du besoin de gagner de l'argent pour soutenir ma famille. Grâce à Kimai, je peux passer plus de temps avec ma femme et mon enfant, ce qui est probablement la meilleure motivation que l'on puisse imaginer.
-    kevin: Kimai and the Cloud are developed and operated by Kevin, an independent software-developer from Vienna (Austria).
+    kevin: Kimai et l'espace en ligne sont développés et mis en oeuvre par Kevin, un développeur indépendant de Vienne (Autriche).
 store:
-    name: Plugins
+    name: Modules d'extension
     subtitle: Développez votre saisie du temps
     description: Extensions et services pour Kimai
 blog:
     name: Actualités
     description: "Actualités sur le système open-source de suivi du temps Kimai"
     subtitle: Nouvelles de l'équipe de développement Kimai
-    title: News from Kimai
-    archive-link: You can find the archive of older %topic% news here
+    title: Nouveautés de Kimai
+    archive-link: Vous trouverez les archives des anciennes nouveautés ici
 documentation:
     name: Documentation
     description: "Informations de support, manuel d'utilisation et autres documents pour le système d'enregistrement des temps Kimai"
@@ -243,10 +243,10 @@ newsletter:
     field-required: Cette case ne peut pas être laissée vide.
     captcha-help: Désolés pour le Captcha, nous savons que c'est ennuyeux !
     field-invalid: L'information fournie n'est pas valide. Veuillez revoir le format et réessayer.
-    sendinblue: Nous utilisons Brevo comme plateforme de marketing. En cliquant ci-dessous pour soumettre ce formulaire, vous reconnaissez que les informations que vous avez fournies seront transférées à Brevo pour être traitées conformément à leur %terms%
+    sendinblue: Nous utilisons Brevo comme plateforme de marketing. En cliquant ci-dessous pour soumettre ce formulaire, vous reconnaissez que les informations que vous avez fournies seront transférées à Brevo pour être traitées conformément à leur %terms%.
     terms: conditions d'utilisation
     button: S’INSCRIRE
-    title: Lettre d'information
+    title: Vous ne voulez rien manquer ?
     introduction: Inscrivez-vous à notre lettre d'information et restez informé·e des mises à jour de Kimai et des greffons.
     email-title: Votre adresse courriel
     email-help: Indiquez votre adresse courriel pour vous abonner.
@@ -254,7 +254,7 @@ developer:
     kevinpapst:
         intro: Responsable du projet et développeur principal depuis 2009. Entièrement concentré sur la réussite de Kimai. Est disponible pour l'assistance, les installations et le développement de plugins personnalisés.
 price-contract: À la demande
-full-documentation: Documentation complète disponible ici (en anglais seulement).
+full-documentation: Documentation complète disponible ici (en anglais seulement)
 contact-developer: Si vous avez des questions, veuillez utiliser les informations de contact suivantes pour contacter directement le développeur.
 homepage:
     title: Suivi du temps pour les équipes axées sur les projets
@@ -273,7 +273,7 @@ section-teaser:
         description: Tableau de bord avec des widgets configurables.
         title: Tableau de bord
     absence:
-        title: Absences
+        title: Omissions
         description: Congés, jours fériés, maladies et absences.
 per-year: par an
 history:
@@ -325,7 +325,7 @@ highlight:
     subtitle: Kimai dispose de toutes les fonctionnalités essentielles pour configurer vos flux de suivi du temps et les intégrer à votre infrastructure existante.
     reasons:
         enterprise: Extensions pour entreprises
-        oss: Open Source
+        oss: Libre de droits
         versions: Cloud et On-Premise
         gdpr: Conforme au RGPD (Règlement général sur la protection des données)
 store-hero-title: Extensions, Applications, Support
@@ -407,3 +407,41 @@ landing_oss:
     subtitle: Kimai is the open source %title% software you were looking for 🎉
     version_onpremise: I take care of the software, you take care about the hosting, updates and security. And if you don't want to do it yourself, there is always support available at your fingertips.
     discover: Discover Kimai
+plans:
+    tls_included: Free SSL Certificate
+    ip_whitelist: IP Access Restriction
+    billable_hours: Billable and Non-Billable Hours
+    max_users: Max. %user% users
+    work_contract: Work Time Accounts (Vacation, Public Holidays, Sick Leave)
+    all_from_plan: All Features from '%plan%'
+    backup_frequency: Backup Frequency
+    priority_features: Prioritized Feature Requests
+    invoices: Invoices
+    invoice_documents: Custom Invoice Templates
+    export: Data Export
+    expense_tracking: Expense Tracking
+    custom_css: Custom CSS Rules
+    annual_payment: 'Annual Plan: Simpler Accounting 🎉'
+    task_management: Task Management
+    ip_restriction: IP Access Restriction
+    expense: Expense Tracking (Travel Expenses, Allowances etc.)
+    timetracking: Project Time Tracking
+    email_support: Personal Email Support
+    absences: Public Holidays, Vacation, Sick Leave
+    automatic_backups: Automatic Backups
+    automatic_upgrades: Automatic Updates
+    server_maintenance: Server Maintenance
+    github_support: Community Forum
+    audit_logs: Audit Logging
+    custom_domain: Custom Domain with SSL
+    saml: Single Sign-On with SAML
+    translation: Industry-Specific Translations
+    rest_api: REST API
+    custom_fields: Custom Fields
+    daily_backups: Daily Backups for Download
+pricing:
+    short_monthly: Per user & month
+    short_annual: Per user & year
+non-profit:
+    name: Non-Profits
+    title: Time-Tracking for Non-Profit Organizations
