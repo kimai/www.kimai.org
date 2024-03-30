@@ -23,3 +23,5 @@ If you use a shared hoster and don't know what all that means, don't worry - jus
 - Migration from Kimai v1 takes around 1 to 2 hours (not including the setup)
 - Installation takes between 1 and 3 hours (depending on your setup / hoster)
 - I offer a recurring update service, so you always have the latest version of Kimai
+
+{% include section-support-calendar.html %}
