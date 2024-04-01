@@ -1,7 +1,7 @@
 ---
 title: "Compare Kimai vs. Clockify: Compare these two time-trackers"
 name: Clockify
-image: /images/logos/clockify.svg
+image: /images/logos/clock-regular.svg
 feature: true
 is_oss: false
 on_premise: false

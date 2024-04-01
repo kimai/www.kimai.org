@@ -1,7 +1,7 @@
 ---
 title: "Compare Kimai vs. Toggle: Which time-tracker fits your needs?"
 name: toggl track
-image: /images/logos/toggle.svg
+image: /images/logos/clock-regular.svg
 feature: true
 is_oss: false
 on_premise: false
@@ -37,4 +37,3 @@ Time tracking software to boost performance and get paid for every billable minu
 An intuitive tool that makes time tracking painless for the entire team.
 
 While Toggle is originally from Estonia, Toggl Inc. is located in the USA. 
- 
