@@ -321,6 +321,7 @@ You find the configuration after login at: <strong>My Kimai-Cloud &gt; SSO Authe
 <ul>
   <li><a href="#google-saml">Google Workspace</a></li>
   <li><a href="#microsoft-saml">Microsoft Azure AD</a></li>
+  <li><a href="#keycloak-saml">Keycloak</a></li>
 </ul>
 
 <p>If you are using another IDP and want to use Kimai: please get in touch, I am open for your ideas.</p>
@@ -356,7 +357,7 @@ You find the configuration after login at: <strong>My Kimai-Cloud &gt; SSO Authe
       <li>Select the <code class="language-plaintext highlighter-rouge">Name-ID</code>: “Basic Information &gt; Primary Email”</li>
     </ul>
   </li>
-  <li>On page 4 <code class="language-plaintext highlighter-rouge">Attributes</code> you have to define the <code class="language-plaintext highlighter-rouge">User attribute</code> mapping like this (correct case is important and you need to configure all attributes, even if you do not use them):
+  <li>On page 4 <code class="language-plaintext highlighter-rouge">Attributes</code> you have to define the <code class="language-plaintext highlighter-rouge">User attribute</code> mapping like this (<strong>correct case is important, and you need to configure all attributes, even if you do not use them</strong>):
     <ul>
       <li><code class="language-plaintext highlighter-rouge">Basic Information &gt; Primary email</code> → <code class="language-plaintext highlighter-rouge">Email</code></li>
       <li><code class="language-plaintext highlighter-rouge">Basic Information &gt; First name</code> → <code class="language-plaintext highlighter-rouge">FirstName</code></li>
@@ -485,6 +486,20 @@ You find the configuration after login at: <strong>My Kimai-Cloud &gt; SSO Authe
     <figcaption class="figure-caption">Azure - Cloud configuration</figcaption>
 </figure>
 
+<h2 id="-keycloak-saml"><span id="keycloak-saml"></span> Keycloak SAML</h2>
+
+<p>Start by setting up your Keycloak following the <a href="/documentation/saml-keycloak.html">Keycloak docs</a>.</p>
+
+<p>Then make sure to define the <code class="language-plaintext highlighter-rouge">User attribute</code> mapping like this (<strong>correct case is important, and you need to configure all attributes, even if you do not use them</strong>):</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Basic Information &gt; Primary email</code> → <code class="language-plaintext highlighter-rouge">Email</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Basic Information &gt; First name</code> → <code class="language-plaintext highlighter-rouge">FirstName</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Basic Information &gt; Last name</code> → <code class="language-plaintext highlighter-rouge">LastName</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Employee Details &gt; Employee ID</code> → <code class="language-plaintext highlighter-rouge">AccountNumber</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Employee Details &gt; Title</code> → <code class="language-plaintext highlighter-rouge">Title</code></li>
+</ul>
+
 <h2 id="costs">Costs</h2>
 
 <p>There are <strong>no additional costs</strong> involved with the SAML SSO login.</p>
@@ -504,7 +519,7 @@ You find the configuration after login at: <strong>My Kimai-Cloud &gt; SSO Authe
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#important-to-know" class="nav-link">Important to know</a></li><li class="nav-item"><a href="#-google-saml" class="nav-link"> Google SAML</a><ul><li class="nav-item"><a href="#-workspace-configuration" class="nav-link"> Workspace configuration</a></li><li class="nav-item"><a href="#-cloud-configuration" class="nav-link"> Cloud configuration</a></li></ul></li><li class="nav-item"><a href="#-microsoft-saml" class="nav-link"> Microsoft SAML</a><ul><li class="nav-item"><a href="#-azure-ad-configuration" class="nav-link"> Azure AD Configuration</a></li><li class="nav-item"><a href="#-cloud-configuration-1" class="nav-link"> Cloud configuration</a></li></ul></li><li class="nav-item"><a href="#costs" class="nav-link">Costs</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#important-to-know" class="nav-link">Important to know</a></li><li class="nav-item"><a href="#-google-saml" class="nav-link"> Google SAML</a><ul><li class="nav-item"><a href="#-workspace-configuration" class="nav-link"> Workspace configuration</a></li><li class="nav-item"><a href="#-cloud-configuration" class="nav-link"> Cloud configuration</a></li></ul></li><li class="nav-item"><a href="#-microsoft-saml" class="nav-link"> Microsoft SAML</a><ul><li class="nav-item"><a href="#-azure-ad-configuration" class="nav-link"> Azure AD Configuration</a></li><li class="nav-item"><a href="#-cloud-configuration-1" class="nav-link"> Cloud configuration</a></li></ul></li><li class="nav-item"><a href="#-keycloak-saml" class="nav-link"> Keycloak SAML</a></li><li class="nav-item"><a href="#costs" class="nav-link">Costs</a></li></ul>
         
     </aside>
 
