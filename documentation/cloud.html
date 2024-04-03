@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index,follow">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+    <title>Kimai-Cloud</title>
+    
+        <meta name="description" content="Explaining details of the Kimai-Cloud service, the hosted and paid version of Kimai.">
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kimai Time-Tracking">
+    <meta property="og:description" content="Explaining details of the Kimai-Cloud service, the hosted and paid version of Kimai.">
+    <meta property="og:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kimai Time-Tracking">
+    <meta name="twitter:site" content="@kimai_org">
+    <meta name="twitter:description" content="Explaining details of the Kimai-Cloud service, the hosted and paid version of Kimai.">
+    <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <script src="/assets/build/theme.js"></script>
+    <link href="/assets/build/main.css" rel="stylesheet" />
+</head>
+<body class="">
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand bg-light border-bottom border-light shadow fixed-top" data-scroll-header>
+    <div class="container-fluid pe-lg-4">
+        <div class="d-flex align-items-center">
+            <a href="/documentation/" class="navbar-brand flex-shrink-0 py-1 py-lg-2">
+                <img src="/images/apple-touch-icon-cloud.png" width="47" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning">Kimai-Cloud</span>
+        </div>
+        <div class="d-flex align-items-center w-100">
+            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 9.75rem;">
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-manual.html" class="nav-link">
+                            <i class="bx bx-book opacity-70 fs-lg me-1"></i>
+                            User manual
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/cloud.html" class="nav-link">
+                            <i class="bx bxs-cloud opacity-70 fs-lg me-1"></i>
+                            Kimai-Cloud
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/developers.html" class="nav-link">
+                            <i class="bx bx-code opacity-70 fs-lg me-1"></i>
+                            Developer
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-on-premise.html" class="nav-link">
+                            <i class="bx bx-wrench opacity-70 fs-lg me-1"></i>
+                            Self-hosted
+                        </a>
+                    </li>
+                
+            </ul>
+            <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="form-check form-switch mode-switch pe-lg-1 ms-lg-auto" data-bs-toggle="mode">
+                <input type="checkbox" class="form-check-input" id="theme-mode">
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Light</label>
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Dark</label>
+            </div>
+        </div>
+    </div>
+</header>
+
+<aside data-bs-theme="dark">
+    <div id="componentsNav" class="offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100 bg-dark border-end-lg" style="width: 21rem; z-index: 1045;">
+        <div class="offcanvas-header d-none d-lg-flex justify-content-start">
+            <a href="/documentation/" class="navbar-brand text-dark d-none d-lg-flex py-0">
+                <img src="/images/apple-touch-icon-cloud.png" width="32" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning d-none d-lg-inline-block">Kimai-Cloud</span>
+        </div>
+        <div class="offcanvas-header d-block d-lg-none border-bottom">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <h5 class="d-lg-none mb-0">Menu</h5>
+                <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#componentsNav" aria-label="Close"></button>
+            </div>
+            <div class="list-group list-group-flush mx-n4">
+                
+                    
+                    
+                    <a href="/documentation/chapter-manual.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-book opacity-70 me-1"></i>
+                        User manual
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/cloud.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bxs-cloud opacity-70 me-1"></i>
+                        Kimai-Cloud
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/developers.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-code opacity-70 me-1"></i>
+                        Developer
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/chapter-on-premise.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-wrench opacity-70 me-1"></i>
+                        Self-hosted
+                    </a>
+                
+            </div>
+        </div>
+        <div class="offcanvas-body swiper scrollbar-hover overflow-hidden w-100 p-4" data-swiper-options='{
+          "direction": "vertical",
+          "slidesPerView": "auto",
+          "freeMode": true,
+          "scrollbar": {
+            "el": ".swiper-scrollbar"
+          },
+          "mousewheel": true
+        }'>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide h-auto">
+                    
+                        
+
+    
+    
+    <h3 class="fs-lg">Cloud management</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/cloud-backups.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Backups
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/cloud-custom-domain.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Custom domain
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/cloud-ip-restriction.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                IP access restriction
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/cloud-saml.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Single Sign-On (SAML)
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/cloud-invoice-templates.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Invoice templates
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">FAQ</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/cloud-payment.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Payments
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/cloud-countries.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Supported countries
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/cloud-data-removal.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Data removal
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/cloud-migration.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Migration to the cloud
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/cloud-plans.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Plan change
+                
+            </a>
+        
+    
+    </div>
+
+
+                        <div class="list-group list-group-flush pb-3 mb-4 mx-n4">
+                    
+                    <a href="/" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Home</a>
+                    <a href="/en/site-notice.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Site notice</a>
+                    <a href="/en/privacy-policy.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Privacy policy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-scrollbar end-0"></div>
+        </div>
+    </div>
+</aside>
+
+<main class="docs-container pt-5">
+    <div class="container-fluid px-xxl-5 px-lg-4 pt-4 pt-lg-5 pb-2 pb-lg-4">
+
+        <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 pt-4 mb-n3">
+            <div class="me-4">
+                <h1 class="pb-1">Kimai-Cloud</h1>
+                
+                <p class="text-muted fs-lg mb-2">Explaining details of the Kimai-Cloud service, the hosted and paid version of Kimai.</p>
+                
+            </div>
+            
+
+
+
+
+
+        </div>
+
+        <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+            <div>
+                
+                <div id="documentation-content">
+                    <div class="row row-cards row-deck">
+
+
+    
+    
+    
+    <div class="card mb-4">
+        <div class="row g-0 align-items-center">
+            <div class="col-sm-3 col-xl-2 mt-2 mt-sm-0">
+                <div class="steps">
+                    <div class="step justify-content-center">
+                        <div class="step-number text-primary">
+                            <div class="step-number-inner">
+                                <i class="bx bxs-cloud fs-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-9 col-xl-10">
+                <div class="card-body">
+                    <h5 class="card-title">Cloud management</h5>
+                    <p class="card-text fs-sm">Manage your Kimai Cloud account</p>
+                    <div class="lh-lg">
+                    
+                        
+                            
+                            <a class="btn btn-sm btn-primary mb-1" href="/documentation/cloud-backups.html">
+                                
+                                Backups
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            <a class="btn btn-sm btn-primary mb-1" href="/documentation/cloud-custom-domain.html">
+                                
+                                Custom domain
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            <a class="btn btn-sm btn-primary mb-1" href="/documentation/cloud-ip-restriction.html">
+                                
+                                IP access restriction
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            <a class="btn btn-sm btn-primary mb-1" href="/documentation/cloud-saml.html">
+                                
+                                Single Sign-On (SAML)
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            <a class="btn btn-sm btn-primary mb-1" href="/documentation/cloud-invoice-templates.html">
+                                
+                                Invoice templates
+                                
+                            </a>
+                        
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    
+    
+    <div class="card mb-4">
+        <div class="row g-0 align-items-center">
+            <div class="col-sm-3 col-xl-2 mt-2 mt-sm-0">
+                <div class="steps">
+                    <div class="step justify-content-center">
+                        <div class="step-number text-primary">
+                            <div class="step-number-inner">
+                                <i class="bx bx-question-mark fs-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-9 col-xl-10">
+                <div class="card-body">
+                    <h5 class="card-title">FAQ</h5>
+                    <p class="card-text fs-sm">Answers to frequent questions about Kimai Cloud</p>
+                    <div class="lh-lg">
+                    
+                        
+                            
+                            <a class="btn btn-sm btn-primary mb-1" href="/documentation/cloud-payment.html">
+                                
+                                Payments
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            <a class="btn btn-sm btn-primary mb-1" href="/documentation/cloud-countries.html">
+                                
+                                Supported countries
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            <a class="btn btn-sm btn-primary mb-1" href="/documentation/cloud-data-removal.html">
+                                
+                                Data removal
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            <a class="btn btn-sm btn-primary mb-1" href="/documentation/cloud-migration.html">
+                                
+                                Migration to the cloud
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            <a class="btn btn-sm btn-primary mb-1" href="/documentation/cloud-plans.html">
+                                
+                                Plan change
+                                
+                            </a>
+                        
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+                </div>
+                
+
+                
+            </div>
+        </div>
+
+    </div>
+</main>
+
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+
+</body>
+</html>

@@ -1,0 +1,1104 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index,follow">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+    <title>Importer – Kimai</title>
+    
+        <meta name="description" content="Import CSV and JSON data into Kimai">
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kimai Time-Tracking">
+    <meta property="og:description" content="Import CSV and JSON data into Kimai">
+    <meta property="og:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kimai Time-Tracking">
+    <meta name="twitter:site" content="@kimai_org">
+    <meta name="twitter:description" content="Import CSV and JSON data into Kimai">
+    <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <script src="/assets/build/theme.js"></script>
+    <link href="/assets/build/main.css" rel="stylesheet" />
+</head>
+<body class="">
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand bg-light border-bottom border-light shadow fixed-top" data-scroll-header>
+    <div class="container-fluid pe-lg-4">
+        <div class="d-flex align-items-center">
+            <a href="/documentation/" class="navbar-brand flex-shrink-0 py-1 py-lg-2">
+                <img src="/images/apple-touch-icon.png" width="47" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning">User manual</span>
+        </div>
+        <div class="d-flex align-items-center w-100">
+            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 9.75rem;">
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-manual.html" class="nav-link">
+                            <i class="bx bx-book opacity-70 fs-lg me-1"></i>
+                            User manual
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/cloud.html" class="nav-link">
+                            <i class="bx bxs-cloud opacity-70 fs-lg me-1"></i>
+                            Kimai-Cloud
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/developers.html" class="nav-link">
+                            <i class="bx bx-code opacity-70 fs-lg me-1"></i>
+                            Developer
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-on-premise.html" class="nav-link">
+                            <i class="bx bx-wrench opacity-70 fs-lg me-1"></i>
+                            Self-hosted
+                        </a>
+                    </li>
+                
+            </ul>
+            <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="form-check form-switch mode-switch pe-lg-1 ms-lg-auto" data-bs-toggle="mode">
+                <input type="checkbox" class="form-check-input" id="theme-mode">
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Light</label>
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Dark</label>
+            </div>
+        </div>
+    </div>
+</header>
+
+<aside data-bs-theme="dark">
+    <div id="componentsNav" class="offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100 bg-dark border-end-lg" style="width: 21rem; z-index: 1045;">
+        <div class="offcanvas-header d-none d-lg-flex justify-content-start">
+            <a href="/documentation/" class="navbar-brand text-dark d-none d-lg-flex py-0">
+                <img src="/images/apple-touch-icon.png" width="32" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning d-none d-lg-inline-block">User manual</span>
+        </div>
+        <div class="offcanvas-header d-block d-lg-none border-bottom">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <h5 class="d-lg-none mb-0">Menu</h5>
+                <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#componentsNav" aria-label="Close"></button>
+            </div>
+            <div class="list-group list-group-flush mx-n4">
+                
+                    
+                    
+                    <a href="/documentation/chapter-manual.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-book opacity-70 me-1"></i>
+                        User manual
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/cloud.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bxs-cloud opacity-70 me-1"></i>
+                        Kimai-Cloud
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/developers.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-code opacity-70 me-1"></i>
+                        Developer
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/chapter-on-premise.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-wrench opacity-70 me-1"></i>
+                        Self-hosted
+                    </a>
+                
+            </div>
+        </div>
+        <div class="offcanvas-body swiper scrollbar-hover overflow-hidden w-100 p-4" data-swiper-options='{
+          "direction": "vertical",
+          "slidesPerView": "auto",
+          "freeMode": true,
+          "scrollbar": {
+            "el": ".swiper-scrollbar"
+          },
+          "mousewheel": true
+        }'>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide h-auto">
+                    
+                        
+
+    
+    
+    <h3 class="fs-lg">Using Kimai</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/timesheet.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Timesheet
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/weekly-times.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Weekly working hours
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/calendar.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Calendar
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/invoices.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Invoices
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/export.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Export
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/reporting.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Reporting
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/customer.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Customer
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/project.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Projects
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/activity.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Activities
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/tags.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Tags
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/users.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Users
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/user-preferences.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                User preferences
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/permissions.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Roles & Permissions
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/teams.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Teams
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/configurations.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Settings
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/doctor.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Doctor
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/contract.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Working times
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/public-holiday.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Public holiday
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/absence.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Absence
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/dashboard.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Dashboard
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">Tips and Tricks</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/initial-setup.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Initial setup
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/rates.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Prices (rates)
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/billable.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Billable
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/pdf-templates.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                PDF templates
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/keyboard-shortcuts.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Keyboard shortcuts
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/i18n-am-pm.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Date and Time formats
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/duration-format.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Duration format
+                
+            </a>
+        
+    
+        
+    
+        
+            
+            
+            <a href="/documentation/homescreen.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Use Kimai as app
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/user-api.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Connecting via API
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">Additional features</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/plugin-custom-fields.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Custom fields
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-expenses.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Expenses
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-task-management.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Task management
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-custom-css.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Custom CSS
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-custom-content.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Custom content
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-translation.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Translation
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-invoice.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Invoice
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-import.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4  active">
+                
+                Importer
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-audit-trail.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Audit trail logs
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-contract.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Working contract
+                
+            </a>
+        
+    
+    </div>
+
+
+                        <div class="list-group list-group-flush pb-3 mb-4 mx-n4">
+                    
+                    <a href="/" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Home</a>
+                    <a href="/en/site-notice.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Site notice</a>
+                    <a href="/en/privacy-policy.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Privacy policy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-scrollbar end-0"></div>
+        </div>
+    </div>
+</aside>
+
+<main class="docs-container pt-5">
+    <div class="container-fluid px-xxl-5 px-lg-4 pt-4 pt-lg-5 pb-2 pb-lg-4">
+
+        <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 pt-4 mb-n3">
+            <div class="me-4">
+                <h1 class="pb-1">Importer</h1>
+                
+                <p class="text-muted fs-lg mb-2">Import CSV and JSON data into Kimai</p>
+                
+            </div>
+            
+
+
+
+
+    <div class="dropdown">
+        <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Older versions
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+            
+            <a class="dropdown-item" href="/documentation/1.30.0/plugin-import.html">Kimai 1.30.0</a>
+            
+            <a class="dropdown-item" href="/documentation/plugin-import.html">2.13.0 (latest version)</a>
+        </div>
+    </div>
+
+
+        </div>
+
+        <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+            <div>
+                
+                <div id="documentation-content">
+                    
+<p>You can import the following data:</p>
+
+<ul>
+  <li>Timesheet</li>
+  <li>Clockify (Timesheet)</li>
+  <li>Project</li>
+  <li>Customer</li>
+  <li>Grandtotal (Customer)</li>
+  <li><a href="/documentation/migration-v1.html">Kimai v1</a></li>
+</ul>
+
+<p>Supported formats: JSON and CSV</p>
+
+<h2 id="customer">Customer</h2>
+
+<p>Supported attributes (field names are case-insensitive):</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Customer attribute</th>
+      <th>Supported field names</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Name</td>
+      <td>customer, name</td>
+    </tr>
+    <tr>
+      <td>Account</td>
+      <td>number, account, customer number, customer account</td>
+    </tr>
+    <tr>
+      <td>Company name</td>
+      <td>company, company name, company-name</td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td>description, comment</td>
+    </tr>
+    <tr>
+      <td>E-Mail</td>
+      <td>email, e-mail, e mail</td>
+    </tr>
+    <tr>
+      <td>Country</td>
+      <td>country</td>
+    </tr>
+    <tr>
+      <td>Vat-ID</td>
+      <td>vat, vat-id, vat id, tax-id, tax id</td>
+    </tr>
+    <tr>
+      <td>Address</td>
+      <td>address</td>
+    </tr>
+    <tr>
+      <td>Contact</td>
+      <td>contact</td>
+    </tr>
+    <tr>
+      <td>Currency</td>
+      <td>currency</td>
+    </tr>
+    <tr>
+      <td>Timezone</td>
+      <td>timezone</td>
+    </tr>
+    <tr>
+      <td>Phone</td>
+      <td>phone</td>
+    </tr>
+    <tr>
+      <td>Mobile</td>
+      <td>mobile</td>
+    </tr>
+    <tr>
+      <td>Fax</td>
+      <td>fax</td>
+    </tr>
+    <tr>
+      <td>Homepage</td>
+      <td>homepage</td>
+    </tr>
+    <tr>
+      <td>Color</td>
+      <td>color</td>
+    </tr>
+    <tr>
+      <td>Budget</td>
+      <td>budget</td>
+    </tr>
+    <tr>
+      <td>Time budget</td>
+      <td>time budget, time-budget</td>
+    </tr>
+    <tr>
+      <td>Visible</td>
+      <td>visible</td>
+    </tr>
+    <tr>
+      <td>Meta fields</td>
+      <td>meta.xxx</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="example">Example</h3>
+
+<p>A minimum CSV file (using semicolon as delimiter):</p>
+<pre><code class="language-csv">Name;Company
+Acme,Acme university Ltd.
+</code></pre>
+
+<p>A multi column-example:</p>
+
+<pre><code class="language-csv">Name,Company,Number,Comment,Phone,Timezone,Meta.XYZ
+Acme,Acme university Ltd.,12367800,A longer comment to talk about the project,0011234567890,Europe/Berlin,hello foo 123
+</code></pre>
+
+<h2 id="projects">Projects</h2>
+
+<p>Supported attributes (field names are case-insensitive):</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Project attribute</th>
+      <th>Supported field names</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Name</td>
+      <td>project, projectname, project name, project-name, name</td>
+    </tr>
+    <tr>
+      <td>Customer name</td>
+      <td>customer, customername, customer-name, customer name</td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td>description, comment</td>
+    </tr>
+    <tr>
+      <td>Order number</td>
+      <td>ordernumber, order-number, order number</td>
+    </tr>
+    <tr>
+      <td>Order date</td>
+      <td>orderdate, order-date, order date</td>
+    </tr>
+    <tr>
+      <td>Color</td>
+      <td>color</td>
+    </tr>
+    <tr>
+      <td>Budget</td>
+      <td>budget</td>
+    </tr>
+    <tr>
+      <td>Time budget</td>
+      <td>time budget, time-budget</td>
+    </tr>
+    <tr>
+      <td>Visible</td>
+      <td>visible</td>
+    </tr>
+    <tr>
+      <td>Meta fields</td>
+      <td>meta.xxx</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="example-1">Example</h3>
+
+<p>A minimum CSV example file (using semicolon as delimiter):</p>
+<pre><code class="language-csv">Name;Customer
+Test project;Test customer
+</code></pre>
+
+<p>A multi column-example:</p>
+
+<pre><code class="language-csv">Name,Customer,Comment,OrderNumber,OrderDate,Meta.XYZ
+My great project,Acme university,A longer comment to talk about the project,1234567890,2019-08-29,hello foo 123
+</code></pre>
+
+<h2 id="timesheets">Timesheets</h2>
+
+<p>This will import timesheets and create these elements on the fly:</p>
+<ul>
+  <li>missing customer</li>
+  <li>missing projects</li>
+  <li>missing activities</li>
+  <li>missing tags</li>
+  <li>missing users</li>
+</ul>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Supported field names</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Duration</td>
+      <td>Timesheet duration in seconds (if skipped, will be calculated from start and end times)</td>
+    </tr>
+    <tr>
+      <td>Tags</td>
+      <td>Comma separated list of tag-names</td>
+    </tr>
+    <tr>
+      <td>Exported</td>
+      <td>Whether the timesheet should be marked as exported or not (1 or 0)</td>
+    </tr>
+    <tr>
+      <td>Rate</td>
+      <td>The rate as an integer</td>
+    </tr>
+    <tr>
+      <td>HourlyRate</td>
+      <td>The hourly rate as an integer</td>
+    </tr>
+    <tr>
+      <td>InternalRate</td>
+      <td>The internal rate as an integer</td>
+    </tr>
+    <tr>
+      <td>FixedRate</td>
+      <td>The fixed rate as an integer</td>
+    </tr>
+    <tr>
+      <td>Billable</td>
+      <td>Whether the entry should be marked as billable or not (1 or 0)</td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td>Description of the entry as string</td>
+    </tr>
+    <tr>
+      <td>Project</td>
+      <td>Name of the project as string</td>
+    </tr>
+    <tr>
+      <td>Customer</td>
+      <td>Name of the customer as string</td>
+    </tr>
+    <tr>
+      <td>Activity</td>
+      <td>Name of the activity as string</td>
+    </tr>
+    <tr>
+      <td>Begin</td>
+      <td>Start date-time in the format: <code class="language-plaintext highlighter-rouge">YYYY-MM-DD HH:MM:SS</code></td>
+    </tr>
+    <tr>
+      <td>End</td>
+      <td>End date-time in the format: <code class="language-plaintext highlighter-rouge">YYYY-MM-DD HH:MM:SS</code></td>
+    </tr>
+    <tr>
+      <td>Date</td>
+      <td>Date in the format: <code class="language-plaintext highlighter-rouge">YYYY-MM-DD</code> (only used in combination with <code class="language-plaintext highlighter-rouge">From</code> and <code class="language-plaintext highlighter-rouge">To</code></td>
+    </tr>
+    <tr>
+      <td>From</td>
+      <td>Start time in the format: <code class="language-plaintext highlighter-rouge">HH:MM:SS</code></td>
+    </tr>
+    <tr>
+      <td>To</td>
+      <td>End time in the format: <code class="language-plaintext highlighter-rouge">HH:MM:SS</code></td>
+    </tr>
+    <tr>
+      <td>User</td>
+      <td>Username</td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td>User email (required when creating users)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Supply one of these combinations:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Begin</code> and <code class="language-plaintext highlighter-rouge">End</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Date</code> with <code class="language-plaintext highlighter-rouge">From</code> and <code class="language-plaintext highlighter-rouge">To</code></li>
+</ul>
+
+<h3 id="user-handling">User handling</h3>
+
+<p>If you let Kimai create new users on the fly, make sure that you configured the default timezone for new users at <a href="/documentation/configurations.html">System &gt; Settings</a> before the import.
+The user timezone is used when importing the timesheets. 
+If you import users from different timezones, you need to create the users upfront manually.</p>
+
+<p>If you want to let Kimai create users, you have to supply at least the <code class="language-plaintext highlighter-rouge">Email</code> field.</p>
+
+<h3 id="example-2">Example</h3>
+
+<pre><code class="language-csv">"Date","From","To","Duration","Rate","User","Customer","Project","Activity","Description","Exported","Tags","Hourly rate","Fixed rate"
+"2020-05-04","15:50","17:51","7260","231.92","user@example.com","Customer LLC","My project", "Testing","some work has been done","0","foo,bar","115.00","0"
+</code></pre>
+
+<ul>
+  <li>Date: format <code class="language-plaintext highlighter-rouge">Y-m-d</code></li>
+  <li>From and To: should be given in 24h format</li>
+  <li>Duration: in seconds</li>
+  <li>Rate: A floating number of the records rate (optional, if you don’t set the value it will be calculated)</li>
+  <li>Hourly Rate: A floating number for the hourly rate (optional, if you don’t set the value it will be calculated)</li>
+  <li>Fixed Rate: A floating number for the fixed rate of this record (optional, you can skip this column)</li>
+  <li>Customer, Project and Activity: will be matched by name</li>
+  <li>User: will be matched by username or email</li>
+  <li>Exported: can be <code class="language-plaintext highlighter-rouge">0</code> or <code class="language-plaintext highlighter-rouge">1</code> (0 = new, 1 = exported)</li>
+  <li>Tags: comma separated list of tag names</li>
+</ul>
+
+<h2 id="clockify-timesheet">Clockify (Timesheet)</h2>
+
+<p>Want to switch from Clockify to Kimai? Export the data in Clockify, open it in Excel and export it as CSV file.</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Supported field names</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Project</td>
+      <td>Project name</td>
+    </tr>
+    <tr>
+      <td>Client</td>
+      <td>Customer name</td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td>Timesheet description</td>
+    </tr>
+    <tr>
+      <td>Task</td>
+      <td>Activity name</td>
+    </tr>
+    <tr>
+      <td>User</td>
+      <td>Users name</td>
+    </tr>
+    <tr>
+      <td>Group</td>
+      <td>not yet supported</td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td>Users email</td>
+    </tr>
+    <tr>
+      <td>Tags</td>
+      <td>Comma separated list of tag-names</td>
+    </tr>
+    <tr>
+      <td>Billable</td>
+      <td>Whether the timesheet is billable. Possible values: Yes/No</td>
+    </tr>
+    <tr>
+      <td>Start Date</td>
+      <td>Start date of the timesheet, e.g. 7/27/22</td>
+    </tr>
+    <tr>
+      <td>Start Time</td>
+      <td>Start time of the timesheet, e.g. 1:00 PM</td>
+    </tr>
+    <tr>
+      <td>End Date</td>
+      <td>End date of the timesheet, e.g. 2022-07-27</td>
+    </tr>
+    <tr>
+      <td>End Time</td>
+      <td>End time of the timesheet, e.g. 21:00</td>
+    </tr>
+    <tr>
+      <td>Duration (h)</td>
+      <td>ignored: instead the field “Duration (decimal)” is used</td>
+    </tr>
+    <tr>
+      <td>Duration (decimal)</td>
+      <td>The timesheet duration</td>
+    </tr>
+    <tr>
+      <td>Billable Rate (XXX)</td>
+      <td>Timesheet hourly rate. XXX = currency (which is not imported, but needs to be configured for the customer)</td>
+    </tr>
+    <tr>
+      <td>Billable Amount (XXX)</td>
+      <td>Timesheet total rate. XXX = currency (which is not imported, but needs to be configured for the customer)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>BE AWARE</strong> you have to choose the correct date-format in Clockify, otherwise you will see errors like:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Failed to parse time string (14/04/2023 9:00) at position 0 (1): Unexpected character
+</code></pre></div></div>
+
+<h2 id="grandtotal-customer">Grandtotal (Customer)</h2>
+
+<p>There is a <a href="/store/grandtotal-plugin-for-kimai.html">plugin for Mac invoicing software Grandtotal</a>, which adds support for Kimai.</p>
+
+<p>In case your leading system for customers is Grandtotal, you can import customers from a Grandtotal CSV export into Kimai.
+Grandtotal calls CSV exports <code class="language-plaintext highlighter-rouge">Numbers</code> in the export screen.</p>
+
+<p>Attention: Grandtotal exports its data with column names in the UI language (just like Kimai).
+Kimai only supports imports for GT exports from the languages english and german, so you might have to change it in <code class="language-plaintext highlighter-rouge">Settings / Languages / User interface</code>.</p>
+
+<h2 id="permissions">Permissions</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Permission Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>importer</td>
+      <td>access the administration screen to import CSV files</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>By default, these are assigned to each user with the role <code class="language-plaintext highlighter-rouge">ROLE_SUPER_ADMIN</code>.</p>
+
+<div class="alert d-flex alert-info" role="alert">
+    <i class="bx bx-fas fa-exclamation lead me-3"></i>
+    <div>
+        
+Read how to assign these permissions to your user roles in the <a href="/documentation/permissions.html">permission documentation</a>.
+
+    </div>
+</div>
+
+
+                </div>
+                
+
+                
+            </div>
+        </div>
+
+    </div>
+</main>
+
+
+    <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
+        <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#customer" class="nav-link">Customer</a><ul><li class="nav-item"><a href="#example" class="nav-link">Example</a></li></ul></li><li class="nav-item"><a href="#projects" class="nav-link">Projects</a><ul><li class="nav-item"><a href="#example-1" class="nav-link">Example</a></li></ul></li><li class="nav-item"><a href="#timesheets" class="nav-link">Timesheets</a><ul><li class="nav-item"><a href="#user-handling" class="nav-link">User handling</a></li><li class="nav-item"><a href="#example-2" class="nav-link">Example</a></li></ul></li><li class="nav-item"><a href="#clockify-timesheet" class="nav-link">Clockify (Timesheet)</a></li><li class="nav-item"><a href="#grandtotal-customer" class="nav-link">Grandtotal (Customer)</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+        
+    </aside>
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+
+</body>
+</html>

@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index,follow">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+    <title>Install Kimai on Ubuntu 20.04</title>
+    
+        <meta name="description" content="How to install Kimai on a brand new Ubuntu 20.04 with database, webserver and SSL certificate">
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kimai Time-Tracking">
+    <meta property="og:description" content="How to install Kimai on a brand new Ubuntu 20.04 with database, webserver and SSL certificate">
+    <meta property="og:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kimai Time-Tracking">
+    <meta name="twitter:site" content="@kimai_org">
+    <meta name="twitter:description" content="How to install Kimai on a brand new Ubuntu 20.04 with database, webserver and SSL certificate">
+    <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <link rel="canonical" href="https://www.kimai.org/documentation/fresh-ubuntu-20.html" />
+    <script src="/assets/build/theme.js"></script>
+    <link href="/assets/build/main.css" rel="stylesheet" />
+</head>
+<body class="">
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand bg-light border-bottom border-light shadow fixed-top" data-scroll-header>
+    <div class="container-fluid pe-lg-4">
+        <div class="d-flex align-items-center">
+            <a href="/documentation/" class="navbar-brand flex-shrink-0 py-1 py-lg-2">
+                <img src="/images/apple-touch-icon.png" width="47" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning">Documentation</span>
+        </div>
+        <div class="d-flex align-items-center w-100">
+            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 9.75rem;">
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-manual.html" class="nav-link">
+                            <i class="bx bx-book opacity-70 fs-lg me-1"></i>
+                            User manual
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/cloud.html" class="nav-link">
+                            <i class="bx bxs-cloud opacity-70 fs-lg me-1"></i>
+                            Kimai-Cloud
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/developers.html" class="nav-link">
+                            <i class="bx bx-code opacity-70 fs-lg me-1"></i>
+                            Developer
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-on-premise.html" class="nav-link">
+                            <i class="bx bx-wrench opacity-70 fs-lg me-1"></i>
+                            Self-hosted
+                        </a>
+                    </li>
+                
+            </ul>
+            <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="form-check form-switch mode-switch pe-lg-1 ms-lg-auto" data-bs-toggle="mode">
+                <input type="checkbox" class="form-check-input" id="theme-mode">
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Light</label>
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Dark</label>
+            </div>
+        </div>
+    </div>
+</header>
+
+<aside data-bs-theme="dark">
+    <div id="componentsNav" class="offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100 bg-dark border-end-lg" style="width: 21rem; z-index: 1045;">
+        <div class="offcanvas-header d-none d-lg-flex justify-content-start">
+            <a href="/documentation/" class="navbar-brand text-dark d-none d-lg-flex py-0">
+                <img src="/images/apple-touch-icon.png" width="32" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning d-none d-lg-inline-block">Documentation</span>
+        </div>
+        <div class="offcanvas-header d-block d-lg-none border-bottom">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <h5 class="d-lg-none mb-0">Menu</h5>
+                <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#componentsNav" aria-label="Close"></button>
+            </div>
+            <div class="list-group list-group-flush mx-n4">
+                
+                    
+                    
+                    <a href="/documentation/chapter-manual.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-book opacity-70 me-1"></i>
+                        User manual
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/cloud.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bxs-cloud opacity-70 me-1"></i>
+                        Kimai-Cloud
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/developers.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-code opacity-70 me-1"></i>
+                        Developer
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/chapter-on-premise.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-wrench opacity-70 me-1"></i>
+                        Self-hosted
+                    </a>
+                
+            </div>
+        </div>
+        <div class="offcanvas-body swiper scrollbar-hover overflow-hidden w-100 p-4" data-swiper-options='{
+          "direction": "vertical",
+          "slidesPerView": "auto",
+          "freeMode": true,
+          "scrollbar": {
+            "el": ".swiper-scrollbar"
+          },
+          "mousewheel": true
+        }'>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide h-auto">
+                    
+                    <a href="/" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Home</a>
+                    <a href="/en/site-notice.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Site notice</a>
+                    <a href="/en/privacy-policy.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Privacy policy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-scrollbar end-0"></div>
+        </div>
+    
+</aside>
+
+<main class="docs-container pt-5">
+    <div class="container-fluid px-xxl-5 px-lg-4 pt-4 pt-lg-5 pb-2 pb-lg-4">
+
+        <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 pt-4 mb-n3">
+            <div class="me-4">
+                <h1 class="pb-1">Install Kimai on Ubuntu 20.04</h1>
+                
+                <p class="text-muted fs-lg mb-2">How to install Kimai on a brand new Ubuntu 20.04 with database, webserver and SSL certificate</p>
+                
+            </div>
+            
+
+
+
+
+    <div class="dropdown">
+        <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Older versions
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+            
+            <a class="dropdown-item" href="/documentation/1.14/fresh-ubuntu-20.html">Kimai 1.14</a>
+            
+            <a class="dropdown-item" href="/documentation/fresh-ubuntu-20.html">2.13.0 (latest version)</a>
+        </div>
+    </div>
+
+
+        </div>
+
+        <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+            <div>
+                
+                <div id="documentation-content">
+                    
+<div class="alert alert-danger" role="alert">
+    
+This documentation is outdated.
+Please upgrade and use <a href="/documentation/fresh-ubuntu-22.html">Ubuntu 22.04 LTS</a> instead.
+
+</div>
+
+<p>This is a collection of snippets to help you with setting up a fresh Ubuntu 20.04 server for using with Kimai.
+It is neither a fully fledged documentation, explaining each step, nor is it a bash tutorial.</p>
+
+<p>Please see it as a personal snippet collection… in which I assume:</p>
+<ul>
+  <li>that you are familiar with the Linux bash and have at least basic knowledge of vim</li>
+  <li>that you use a single domain on this server, change the nginx configuration accordingly if you have multiple VirtualHosts</li>
+  <li>that you know how to protect your server (UFW, Fail2Ban …) and can securely run it in the “wild”</li>
+</ul>
+
+<p>You must additionally:</p>
+<ul>
+  <li>replace <code class="language-plaintext highlighter-rouge">IP-of-myserver</code> with the server IP</li>
+  <li>replace the username <code class="language-plaintext highlighter-rouge">kevin</code> with your own</li>
+  <li>replace the domain <code class="language-plaintext highlighter-rouge">www.kimai.local</code> with your own</li>
+</ul>
+
+<h2 id="accounts-and-ssh-connection">Accounts and SSH connection</h2>
+
+<p>We start on our local machine, connect to the server and create our real user account:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh root@IP-of-myserver
+
+useradd <span class="nt">-m</span> <span class="nt">-s</span> /bin/bash kevin
+passwd kevin
+</code></pre></div></div>
+
+<p>Enable sudo access for this new user:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>visudo /etc/sudoers.d/kevin
+</code></pre></div></div>
+
+<p>And paste this one line:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kevin   ALL=(ALL:ALL) ALL
+</code></pre></div></div>
+
+<p>Back to our local machine:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">exit</span>
+</code></pre></div></div>
+
+<p>Generate your SSH key and sent it to your server:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-keygen <span class="nt">-f</span> ~/.ssh/myserver_rsa
+ssh-copy-id <span class="nt">-i</span> ~/.ssh/myserver_rsa.pub kevin@IP-of-myserver
+</code></pre></div></div>
+
+<p>Then edit your local SSH config:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vim ~/.ssh/config
+</code></pre></div></div>
+
+<p>And paste this:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Host myserver
+    HostName IP-of-myserver
+    IdentityFile ~/.ssh/myserver_rsa
+    User kevin
+</code></pre></div></div>
+
+<p>And finally on to the server to start the software installation:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh myserver
+</code></pre></div></div>
+
+<h3 id="secure-your-sshd-configuration">Secure your SSHD configuration</h3>
+
+<p>Make sure your SSH server has at least some basic security settings in place:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>su
+vim /etc/ssh/sshd_config
+</code></pre></div></div>
+
+<p>Change those:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PermitRootLogin no
+PasswordAuthentication no
+</code></pre></div></div>
+
+<p>And restart the SSH Daemon:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/etc/init.d/ssh restart
+</code></pre></div></div>
+
+<h2 id="install-php-webserver-and-database">Install PHP, webserver and database</h2>
+
+<p>Let’s start with all required software:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt update
+apt upgrade
+apt <span class="nb">install </span>git unzip curl vim
+apt <span class="nb">install </span>mariadb-server mariadb-client
+apt <span class="nb">install </span>nginx
+</code></pre></div></div>
+
+<p>Now before we continue, we enable the well-known and respected Ondřej PPA by <a href="https://github.com/oerdnj" class="user-mention">@oerdnj</a> to use PHP 8.1:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt <span class="nb">install </span>software-properties-common
+add-apt-repository ppa:ondrej/php
+</code></pre></div></div>
+
+<p>Now install PHP 8.1:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt <span class="nb">install </span>php8.1-cli php8.1-common php8.1-curl php8.1-fpm php8.1-gd php8.1-intl php8.1-mbstring php8.1-mysql php8.1-opcache php8.1-readline php8.1-xml php8.1-zip
+</code></pre></div></div>
+
+<p>Note: the required packages <code class="language-plaintext highlighter-rouge">php8.1-ctype</code>, <code class="language-plaintext highlighter-rouge">php8.1-iconv</code>, <code class="language-plaintext highlighter-rouge">php8.1-json</code>, <code class="language-plaintext highlighter-rouge">php8.1-pdo</code> are usually part of other packages like <code class="language-plaintext highlighter-rouge">php8.1-common</code>, <code class="language-plaintext highlighter-rouge">php8.1-cli</code> and <code class="language-plaintext highlighter-rouge">php8.1-fpm</code></p>
+
+<h2 id="install-composer">Install composer</h2>
+
+<p>Grab the latest <code class="language-plaintext highlighter-rouge">hash</code> from the <a href="https://getcomposer.org/download/">composer download page</a> and then execute:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php <span class="nt">-r</span> <span class="s2">"copy('https://getcomposer.org/installer', 'composer-setup.php');"</span>
+php <span class="nt">-r</span> <span class="s2">"if (hash_file('sha384', 'composer-setup.php') === '906a84df04cea2aa72f40b5f787e49f22d4c2f19492ac310e8cba5b96ac8b64115ac402c8cd292b8a03482574915d1a8') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"</span>
+</code></pre></div></div>
+
+<p>Only proceed if you see: <strong>Installer verified</strong>!</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php composer-setup.php
+php <span class="nt">-r</span> <span class="s2">"unlink('composer-setup.php');"</span>
+<span class="nb">chmod</span> +x composer.phar
+<span class="nb">mv </span>composer.phar /usr/bin/composer
+</code></pre></div></div>
+
+<h2 id="create-database">Create database</h2>
+
+<p>Connect to your database as root user:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>su
+mysql <span class="nt">-u</span> root
+</code></pre></div></div>
+
+<p>And execute the following statements:</p>
+<pre><code class="language-mysql">CREATE DATABASE IF NOT EXISTS `kimai2`;
+CREATE USER IF NOT EXISTS `kimai2`@127.0.0.1 IDENTIFIED BY "my-super-secret-password";
+GRANT select,insert,update,delete,create,alter,drop,index,references ON `kimai2`.* TO kimai2@127.0.0.1;
+exit;
+</code></pre>
+<blockquote>
+  <p>Replace “my-super-secret-password” with a strong password and probably change the username as well.</p>
+</blockquote>
+
+<h2 id="install-kimai">Install Kimai</h2>
+
+<p>Clone Kimai and set proper file permissions:</p>
+
+<blockquote>
+  <p>Please check the latest installation docs to check if something changed since writing these docs: <a href="https://www.kimai.org/documentation/installation.html">https://www.kimai.org/documentation/installation.html</a></p>
+</blockquote>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /var/www/
+git clone <span class="nt">-b</span> 2.13.0 <span class="nt">--depth</span> 1 https://github.com/kimai/kimai.git
+<span class="nb">cd </span>kimai/
+composer <span class="nb">install</span> <span class="nt">--optimize-autoloader</span> <span class="nt">-n</span>
+vim .env
+</code></pre></div></div>
+
+<p>Configure the database connection and adjust the settings to your needs (compare with the <a href="https://github.com/kimai/kimai/blob/main/.env.dist">original .env file</a>):</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DATABASE_URL=mysql://kimai2:my-super-secret-password@127.0.0.1:3306/kimai2?charset=utf8mb4&amp;serverVersion=5.7.40
+</code></pre></div></div>
+
+<p>Then execute the Kimai installation:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/console kimai:install <span class="nt">-n</span>
+bin/console kimai:user:create admin admin@example.com ROLE_SUPER_ADMIN
+</code></pre></div></div>
+
+<div class="row row-cards row-deck">
+    <div class="col-md-12">
+        <div class="card mb-3">
+            <div class="card-status bg-info"></div>
+            <div class="card-body">
+                <h4 class="card-title">Adjust file permission</h4>
+                <p>
+                    You have to allow PHP (your webserver process) to write to
+                    <code class="language-plaintext highlighter-rouge">var/</code> and it subdirectories.
+                </p>
+
+                <p>Here is an example for Debian/Ubuntu (to be executed inside the Kimai directory):</p>
+
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">chown -R :www-data .
+chmod -R g+r .
+chmod -R g+rw var/</code></pre></figure>
+
+
+            </div>
+            <div class="card-footer fs-sm text-muted">
+                Test Kimai before executing these commands (they are likely not required in a shared-hosting environment).
+                You probably need to prefix them with <code class="language-plaintext highlighter-rouge">sudo</code> and
+                the group might be called different than <code class="language-plaintext highlighter-rouge">www-data</code>.
+            </div>
+        </div>
+    </div>
+</div>
+
+<p>Use <code class="language-plaintext highlighter-rouge">sudo</code> to run the commands to change file permissions.</p>
+
+<h2 id="configure-webserver">Configure webserver</h2>
+
+<p>Good, now that we have done all these steps we only need the webserver and VirtualHost configuration:</p>
+
+<blockquote>
+  <p>Check your PHP-FPM config for the fastcgi_pass (eg. version and socket)</p>
+</blockquote>
+
+<p>This can be done with:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vim /etc/php/8.1/fpm/pool.d/www.conf
+listen = /run/php/php8.1-fpm.sock
+</code></pre></div></div>
+
+<p>Edit/create the virtual host file:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vim /etc/nginx/sites-available/kimai2
+</code></pre></div></div>
+
+<p>And paste the following configuration:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    server_name www.kimai.local;
+    root /var/www/kimai/public;
+    index index.php;
+
+    access_log off;
+    log_not_found off;
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+    location / {
+        try_files $uri /index.php$is_args$args;
+    }
+
+    location ~ ^/index\.php(/|$) {
+        fastcgi_pass unix:/run/php/php8.1-fpm.sock;
+        fastcgi_split_path_info ^(.+\.php)(/.*)$;
+        include fastcgi.conf;
+        fastcgi_param PHP_ADMIN_VALUE "open_basedir=$document_root/..:/tmp/";
+        internal;
+    }
+
+    location ~ \.php$ {
+        return 404;
+    }
+}
+</code></pre></div></div>
+
+<p>Remove the Ubuntu default host and activate the site:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">unlink</span> /etc/nginx/sites-enabled/default
+<span class="nb">ln</span> <span class="nt">-s</span> /etc/nginx/sites-available/kimai2 /etc/nginx/sites-enabled/kimai2
+nginx <span class="nt">-t</span> <span class="o">&amp;&amp;</span> service nginx reload
+</code></pre></div></div>
+
+<h3 id="install-certbot-for-ssl">Install Certbot for SSL</h3>
+
+<p>Almost there, only the free Lets Encrypt SSL certificate is missing:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get <span class="nb">install </span>certbot python3-certbot-nginx
+certbot <span class="nt">--nginx</span>
+</code></pre></div></div>
+
+<p>Follow the interactive dialogs and choose “2: Redirect - Make all requests redirect to secure HTTPS access.”.
+This will rewrite your nginx site configuration and should work out-of-the-box.</p>
+
+<p>Kimai is now up and running at www.kimai.local - enjoy!</p>
+
+                </div>
+                
+
+                
+                <h2 id="related-articles" class="fs-4 mt-5">Related articles</h2>
+                <ul>
+                    
+                    
+                    <li>
+                        <a href="/documentation/fresh-ubuntu-18.html">Install Kimai on Ubuntu 18.04</a>
+                    </li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+
+    </div>
+</main>
+
+
+    <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
+        <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
+        <ul class="nav" id="jumpToNav">
+<li class="nav-item">
+<a href="#accounts-and-ssh-connection" class="nav-link">Accounts and SSH connection</a><ul><li class="nav-item"><a href="#secure-your-sshd-configuration" class="nav-link">Secure your SSHD configuration</a></li></ul>
+</li>
+<li class="nav-item"><a href="#install-php-webserver-and-database" class="nav-link">Install PHP, webserver and database</a></li>
+<li class="nav-item"><a href="#install-composer" class="nav-link">Install composer</a></li>
+<li class="nav-item"><a href="#create-database" class="nav-link">Create database</a></li>
+<li class="nav-item"><a href="#install-kimai" class="nav-link">Install Kimai</a></li>
+<li class="nav-item">
+<a href="#configure-webserver" class="nav-link">Configure webserver</a><ul><li class="nav-item"><a href="#install-certbot-for-ssl" class="nav-link">Install Certbot for SSL</a></li></ul>
+</li>
+</ul>
+        
+        <ul class="nav">
+            <li>
+                <a href="#related-articles" class="nav-link">Related articles</a>
+            </li>
+        </ul>
+        
+    </aside>
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
+
+</body>
+</html>

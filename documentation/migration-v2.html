@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index,follow">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+    <title>Upgrade your code to v2 – Kimai</title>
+    
+        <meta name="description" content="How to migrate your plugins and templates from Kimai 1.x to Kimai 2.x">
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kimai Time-Tracking">
+    <meta property="og:description" content="How to migrate your plugins and templates from Kimai 1.x to Kimai 2.x">
+    <meta property="og:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kimai Time-Tracking">
+    <meta name="twitter:site" content="@kimai_org">
+    <meta name="twitter:description" content="How to migrate your plugins and templates from Kimai 1.x to Kimai 2.x">
+    <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <link rel="canonical" href="https://www.kimai.org/documentation/migration-v2.html" />
+    <script src="/assets/build/theme.js"></script>
+    <link href="/assets/build/main.css" rel="stylesheet" />
+</head>
+<body class="">
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand bg-light border-bottom border-light shadow fixed-top" data-scroll-header>
+    <div class="container-fluid pe-lg-4">
+        <div class="d-flex align-items-center">
+            <a href="/documentation/" class="navbar-brand flex-shrink-0 py-1 py-lg-2">
+                <img src="/images/apple-touch-icon.png" width="47" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning">Developer</span>
+        </div>
+        <div class="d-flex align-items-center w-100">
+            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 9.75rem;">
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-manual.html" class="nav-link">
+                            <i class="bx bx-book opacity-70 fs-lg me-1"></i>
+                            User manual
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/cloud.html" class="nav-link">
+                            <i class="bx bxs-cloud opacity-70 fs-lg me-1"></i>
+                            Kimai-Cloud
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/developers.html" class="nav-link">
+                            <i class="bx bx-code opacity-70 fs-lg me-1"></i>
+                            Developer
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-on-premise.html" class="nav-link">
+                            <i class="bx bx-wrench opacity-70 fs-lg me-1"></i>
+                            Self-hosted
+                        </a>
+                    </li>
+                
+            </ul>
+            <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="form-check form-switch mode-switch pe-lg-1 ms-lg-auto" data-bs-toggle="mode">
+                <input type="checkbox" class="form-check-input" id="theme-mode">
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Light</label>
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Dark</label>
+            </div>
+        </div>
+    </div>
+</header>
+
+<aside data-bs-theme="dark">
+    <div id="componentsNav" class="offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100 bg-dark border-end-lg" style="width: 21rem; z-index: 1045;">
+        <div class="offcanvas-header d-none d-lg-flex justify-content-start">
+            <a href="/documentation/" class="navbar-brand text-dark d-none d-lg-flex py-0">
+                <img src="/images/apple-touch-icon.png" width="32" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning d-none d-lg-inline-block">Developer</span>
+        </div>
+        <div class="offcanvas-header d-block d-lg-none border-bottom">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <h5 class="d-lg-none mb-0">Menu</h5>
+                <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#componentsNav" aria-label="Close"></button>
+            </div>
+            <div class="list-group list-group-flush mx-n4">
+                
+                    
+                    
+                    <a href="/documentation/chapter-manual.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-book opacity-70 me-1"></i>
+                        User manual
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/cloud.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bxs-cloud opacity-70 me-1"></i>
+                        Kimai-Cloud
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/developers.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-code opacity-70 me-1"></i>
+                        Developer
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/chapter-on-premise.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-wrench opacity-70 me-1"></i>
+                        Self-hosted
+                    </a>
+                
+            </div>
+        </div>
+        <div class="offcanvas-body swiper scrollbar-hover overflow-hidden w-100 p-4" data-swiper-options='{
+          "direction": "vertical",
+          "slidesPerView": "auto",
+          "freeMode": true,
+          "scrollbar": {
+            "el": ".swiper-scrollbar"
+          },
+          "mousewheel": true
+        }'>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide h-auto">
+                    
+                        
+
+    
+    
+    <h3 class="fs-lg">JSON API</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/rest-api.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Kimai API
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/rest-api-examples.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Examples
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/api-pagination.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Pagination
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">Create plugins</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/plugins.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Getting started
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/translations.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Translations / i18n
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/meta-fields.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Custom fields
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/theme.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Theme
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/store.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Add to store
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/migration-v2.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4  active">
+                
+                Migrate plugins to v2
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">Technical background</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/bughunter.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Bughunter
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/permission-structure.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Permission structure
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/sql-examples.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                SQL Examples
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/redis.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Using Redis for caching
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/create-release.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Creating a release
+                
+            </a>
+        
+    
+    </div>
+
+
+                        <div class="list-group list-group-flush pb-3 mb-4 mx-n4">
+                    
+                    <a href="/" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Home</a>
+                    <a href="/en/site-notice.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Site notice</a>
+                    <a href="/en/privacy-policy.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Privacy policy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-scrollbar end-0"></div>
+        </div>
+    </div>
+</aside>
+
+<main class="docs-container pt-5">
+    <div class="container-fluid px-xxl-5 px-lg-4 pt-4 pt-lg-5 pb-2 pb-lg-4">
+
+        <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 pt-4 mb-n3">
+            <div class="me-4">
+                <h1 class="pb-1">Upgrade your code to v2</h1>
+                
+                <p class="text-muted fs-lg mb-2">How to migrate your plugins and templates from Kimai 1.x to Kimai 2.x</p>
+                
+            </div>
+            
+
+
+
+
+
+        </div>
+
+        <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+            <div>
+                
+                <div id="documentation-content">
+                    <p>This documentation covers some required steps to <a href="https://github.com/kimai/kimai/pull/2902">migrate your plugin to the upcoming Kimai 2.x</a>.</p>
+
+<p>I started this guide more than 8 months after I started the migration, so there are for sure steps missing.
+If you encounter any issue, please post them at GitHub and we will adjust this documentation together.</p>
+
+<p>What needs to be done?</p>
+
+<ul>
+  <li>First and foremost: use <a href="https://github.com/Keleo/DemoBundle/pull/7">this PR of the DemoBundle</a> to compare all changes</li>
+  <li>Upgrade your system to PHP &gt;= 8.1 if not yet done</li>
+  <li>Install Kimai 2.0 and install your plugin as usual in <code class="language-plaintext highlighter-rouge">var/plugins/</code></li>
+  <li>Adapt composer.json to the new format</li>
+  <li>Upgrade your code (see below)</li>
+  <li>Test your plugin</li>
+</ul>
+
+<p>Required code adjustments:</p>
+
+<ul>
+  <li>All deprecated code was removed</li>
+  <li>Code base uses a much stricter syntax now and thus introduced a lof of tiny and sometimes larger BC breaks</li>
+  <li>Switched from annotations to attributes everywhere (controller/entities/api), plugins need to be made compatible</li>
+  <li>The entire code base (mainly Controller and Entities): Attributes instead of Annotations (see the rector migration below)
+    <ul>
+      <li>This is super important, because best practice for future versions of Kimai will announce that OpCache can drop code comments!</li>
+    </ul>
+  </li>
+  <li>New frontend needs code adjustments (compare with demo plugin and core templates, read <a href="https://getbootstrap.com/docs/4.0/migration/">bootstrap 4</a> and <a href="https://getbootstrap.com/docs/5.0/migration/">bootstrap 5 migrations</a>)</li>
+  <li>API: upgraded to <a href="https://blog.readme.com/an-example-filled-guide-to-swagger-3-2/">Open API specification v3</a> - require use of new attributes/annotations</li>
+  <li>User preference names cannot contain dots <code class="language-plaintext highlighter-rouge">.</code> anymore (you might need migrations to adapt existing ones, please replace with underscore <code class="language-plaintext highlighter-rouge">_</code>!)</li>
+  <li>Removed Twig filters. You have to replace them in your custom export/invoice templates:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">date_full</code> =&gt; <code class="language-plaintext highlighter-rouge">date_time</code></li>
+      <li><code class="language-plaintext highlighter-rouge">duration_decimal</code> =&gt; <code class="language-plaintext highlighter-rouge">duration(true)</code></li>
+      <li><code class="language-plaintext highlighter-rouge">currency</code> =&gt; <code class="language-plaintext highlighter-rouge">currency_name</code></li>
+      <li><code class="language-plaintext highlighter-rouge">country</code> =&gt; <code class="language-plaintext highlighter-rouge">country_name</code></li>
+      <li><code class="language-plaintext highlighter-rouge">language</code> =&gt; <code class="language-plaintext highlighter-rouge">language_name</code></li>
+    </ul>
+  </li>
+  <li>Switch from <code class="language-plaintext highlighter-rouge">createForm()</code> to <code class="language-plaintext highlighter-rouge">createFormForGetRequest()</code> for toolbar forms</li>
+</ul>
+
+<h2 id="api-changes">API changes</h2>
+
+<ul>
+  <li>API: config/timesheet removed <code class="language-plaintext highlighter-rouge">activeEntriesSoftLimit</code></li>
+  <li>API: removed route <code class="language-plaintext highlighter-rouge">config/i18n</code></li>
+  <li>API: removed several fields from <code class="language-plaintext highlighter-rouge">/api/version</code></li>
+  <li>API: Team removed <code class="language-plaintext highlighter-rouge">teamlead</code> and <code class="language-plaintext highlighter-rouge">users</code> - access <code class="language-plaintext highlighter-rouge">members</code> instead</li>
+  <li>API: GET <code class="language-plaintext highlighter-rouge">/timesheets/</code> collection - replaced comma separated IDs with arrays[] (customers, projects, activities, tags), throws Exception on unknown IDs</li>
+  <li>API: GET <code class="language-plaintext highlighter-rouge">/activities/</code> collection - replaced comma separated IDs with arrays[] (projects), throws Exception on unknown IDs</li>
+  <li>API: GET <code class="language-plaintext highlighter-rouge">/projects/</code> collection - replaced comma separated IDs with arrays[] (customers), throws Exception on unknown IDs</li>
+  <li>API: Project start/end/order dates are now plain dates without time (start and order are set to 00:00:00 and end is set to 23:59:59, filter expect 2022-02-20 instead of 2022-02-20T00:00:00)</li>
+</ul>
+
+<h2 id="manual-changes">Manual changes</h2>
+
+<p>Below follows a list of how I did migrate my own plugins.</p>
+
+<h2 id="adjust-composer">Adjust composer</h2>
+
+<p>A big difference between 1.x and 2.x is that Kimai now checks the minimum requirement of a plugin and rejects 
+reloading the cache if those do not align. The check is done by comparing <code class="language-plaintext highlighter-rouge">Constants::VERSION_ID</code>  and the key at <code class="language-plaintext highlighter-rouge">extra.key.require</code>, 
+which needs to be formatted as integer instead of a string (like <code class="language-plaintext highlighter-rouge">1.20.2</code> in 1.x releases):</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">    </span><span class="nl">"extra"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"kimai"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"require"</span><span class="p">:</span><span class="w"> </span><span class="mi">20000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Some plugin"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="err">,</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="adjust-templates">Adjust templates</h2>
+
+<p>Change includes, mostly from <code class="language-plaintext highlighter-rouge">{% embed '@AdminLTE/Widgets/box-widget.html.twig' %}</code> to <code class="language-plaintext highlighter-rouge">{% embed '@theme/embeds/card.html.twig' %}</code>.</p>
+
+<p>Replaces css classes</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">no-padding</code> to <code class="language-plaintext highlighter-rouge">p-0</code></li>
+  <li><code class="language-plaintext highlighter-rouge">text-left</code> with <code class="language-plaintext highlighter-rouge">text-start</code></li>
+  <li><code class="language-plaintext highlighter-rouge">text-right</code> with <code class="language-plaintext highlighter-rouge">text-end</code></li>
+  <li>some many others …</li>
+</ul>
+
+<h2 id="use-rector-to-migrate-your-code">Use Rector to migrate your code</h2>
+
+<ul>
+  <li>Install <code class="language-plaintext highlighter-rouge">composer require --dev rector/rector</code></li>
+  <li>Create a file called <code class="language-plaintext highlighter-rouge">rector.php</code> at the root of the library with the following contents:</li>
+</ul>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+
+<span class="kn">use</span> <span class="nc">Rector\Config\RectorConfig</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Rector\Php80\Rector\Class_\AnnotationToAttributeRector</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Rector\Php80\ValueObject\AnnotationToAttribute</span><span class="p">;</span>
+
+<span class="k">return</span> <span class="k">function</span> <span class="p">(</span><span class="kt">RectorConfig</span> <span class="nv">$rectorConfig</span><span class="p">):</span> <span class="kt">void</span> <span class="p">{</span>
+    <span class="nv">$rectorConfig</span><span class="o">-&gt;</span><span class="nf">paths</span><span class="p">([</span>
+        <span class="k">__DIR__</span> <span class="mf">.</span> <span class="s1">'/tests/'</span><span class="p">,</span>
+        <span class="k">__DIR__</span> <span class="mf">.</span> <span class="s1">'/src/'</span><span class="p">,</span>
+        <span class="k">__DIR__</span> <span class="mf">.</span> <span class="s1">'/var/plugins/AuditTrailBundle/'</span><span class="p">,</span>
+        <span class="k">__DIR__</span> <span class="mf">.</span> <span class="s1">'/var/plugins/CustomContentBundle/'</span><span class="p">,</span>
+        <span class="k">__DIR__</span> <span class="mf">.</span> <span class="s1">'/var/plugins/CustomCSSBundle/'</span><span class="p">,</span>
+        <span class="k">__DIR__</span> <span class="mf">.</span> <span class="s1">'/var/plugins/DeductionTimeBundle/'</span><span class="p">,</span>
+        <span class="k">__DIR__</span> <span class="mf">.</span> <span class="s1">'/var/plugins/DemoBundle/'</span><span class="p">,</span>
+        <span class="k">__DIR__</span> <span class="mf">.</span> <span class="s1">'/var/plugins/ExpensesBundle/'</span><span class="p">,</span>
+        <span class="k">__DIR__</span> <span class="mf">.</span> <span class="s1">'/var/plugins/Fail2BanBundle/'</span><span class="p">,</span>
+        <span class="k">__DIR__</span> <span class="mf">.</span> <span class="s1">'/var/plugins/ImportBundle/'</span><span class="p">,</span>
+        <span class="k">__DIR__</span> <span class="mf">.</span> <span class="s1">'/var/plugins/InvoiceBundle/'</span><span class="p">,</span>
+        <span class="k">__DIR__</span> <span class="mf">.</span> <span class="s1">'/var/plugins/KioskBundle/'</span><span class="p">,</span>
+        <span class="k">__DIR__</span> <span class="mf">.</span> <span class="s1">'/var/plugins/LockdownPerUserBundle/'</span><span class="p">,</span>
+        <span class="k">__DIR__</span> <span class="mf">.</span> <span class="s1">'/var/plugins/MetaFieldsBundle/'</span><span class="p">,</span>
+        <span class="k">__DIR__</span> <span class="mf">.</span> <span class="s1">'/var/plugins/TaskManagementBundle/'</span><span class="p">,</span>
+        <span class="k">__DIR__</span> <span class="mf">.</span> <span class="s1">'/var/plugins/TranslationBundle/'</span><span class="p">,</span>
+
+    <span class="p">]);</span>
+
+    <span class="nv">$rectorConfig</span><span class="o">-&gt;</span><span class="nf">ruleWithConfiguration</span><span class="p">(</span><span class="nc">AnnotationToAttributeRector</span><span class="o">::</span><span class="n">class</span><span class="p">,</span> <span class="p">[</span>
+        <span class="c1">// Annotations from Kimai core</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'App\\Export\\Annotation\\Expose'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'App\\Export\\Annotation\\Order'</span><span class="p">),</span>
+
+        <span class="c1">// For custom APIs</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'Nelmio\\ApiDocBundle\\Annotation\\Security'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'FOS\\RestBundle\\Controller\\Annotations\\Post'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'FOS\\RestBundle\\Controller\\Annotations\\Get'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'FOS\\RestBundle\\Controller\\Annotations\\Patch'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'FOS\\RestBundle\\Controller\\Annotations\\Delete'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'FOS\\RestBundle\\Controller\\Annotations\\QueryParam'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'FOS\\RestBundle\\Controller\\Annotations\\RequestParam'</span><span class="p">),</span>
+
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\AdditionalProperties'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\AdditionalProperties'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\Attachable'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\Attachable'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\Components'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\Components'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\Contact'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\Contact'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\Delete'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\Delete'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\Discriminator'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\Discriminator'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\Examples'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\Examples'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\ExternalDocumentation'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\ExternalDocumentation'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\Flow'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\Flow'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\Get'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\Get'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\Head'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\Head'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\Header'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\Header'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\Info'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\Info'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\Items'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\Items'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\JsonContent'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\JsonContent'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\License'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\License'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\Link'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\Link'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\MediaType'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\MediaType'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\OpenApi'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\OpenApi'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\Operation'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\Operation'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\Options'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\Options'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\Parameter'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\Parameter'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\Patch'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\Patch'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\PatchItem'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\PatchItem'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\PathParameter'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\PathParameter'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\Post'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\Post'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\Property'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\Property'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\Put'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\Put'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\RequestBody'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\RequestBody'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\Response'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\Response'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\Schema'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\Schema'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\SecurityScheme'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\SecurityScheme'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\Server'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\Server'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\ServerVariable'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\ServerVariable'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\Tag'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\Tag'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\Trace'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\Trace'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\Xml'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\Xml'</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nc">AnnotationToAttribute</span><span class="p">(</span><span class="s1">'OpenApi\\Annotations\\XmlContent'</span><span class="p">,</span> <span class="s1">'OpenApi\\Attributes\\XmlContent'</span><span class="p">),</span>
+    <span class="p">]);</span>
+
+    <span class="nv">$rectorConfig</span><span class="o">-&gt;</span><span class="nf">rules</span><span class="p">([</span>
+        <span class="err">\</span><span class="nc">Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictNativeCallRector</span><span class="o">::</span><span class="n">class</span><span class="p">,</span>
+        <span class="err">\</span><span class="nc">Rector\CodeQuality\Rector\ClassMethod\ReturnTypeFromStrictScalarReturnExprRector</span><span class="o">::</span><span class="n">class</span><span class="p">,</span>
+        <span class="err">\</span><span class="nc">Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictNewArrayRector</span><span class="o">::</span><span class="n">class</span><span class="p">,</span>
+        <span class="err">\</span><span class="nc">Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictBoolReturnExprRector</span><span class="o">::</span><span class="n">class</span><span class="p">,</span>
+    <span class="p">]);</span>
+
+    <span class="nv">$rectorConfig</span><span class="o">-&gt;</span><span class="nf">sets</span><span class="p">([</span>
+        <span class="err">\</span><span class="nc">Rector\Symfony\Set\SymfonySetList</span><span class="o">::</span><span class="no">ANNOTATIONS_TO_ATTRIBUTES</span><span class="p">,</span>
+        <span class="err">\</span><span class="nc">Rector\Symfony\Set\SensiolabsSetList</span><span class="o">::</span><span class="no">FRAMEWORK_EXTRA_61</span><span class="p">,</span>
+        <span class="err">\</span><span class="nc">Rector\Symfony\Set\SymfonyLevelSetList</span><span class="o">::</span><span class="no">UP_TO_SYMFONY_60</span><span class="p">,</span>
+        <span class="err">\</span><span class="nc">Rector\Symfony\Set\JMSSetList</span><span class="o">::</span><span class="no">ANNOTATIONS_TO_ATTRIBUTES</span><span class="p">,</span>
+        <span class="err">\</span><span class="nc">Rector\Symfony\Set\JMSSetList</span><span class="o">::</span><span class="no">REMOVE_JMS_INJECT</span><span class="p">,</span>
+        <span class="err">\</span><span class="nc">Rector\Doctrine\Set\DoctrineSetList</span><span class="o">::</span><span class="no">ANNOTATIONS_TO_ATTRIBUTES</span><span class="p">,</span>
+        <span class="err">\</span><span class="nc">Rector\Doctrine\Set\DoctrineSetList</span><span class="o">::</span><span class="no">GEDMO_ANNOTATIONS_TO_ATTRIBUTES</span><span class="p">,</span>
+        <span class="err">\</span><span class="nc">Rector\PHPUnit\Set\PHPUnitSetList</span><span class="o">::</span><span class="no">PHPUNIT_80</span><span class="p">,</span>
+    <span class="p">]);</span>
+<span class="p">};</span>  
+</code></pre></div></div>
+
+<ul>
+  <li>Run <code class="language-plaintext highlighter-rouge">vendor/bin/rector</code>, which will use the above configuration</li>
+  <li>Uninstall Rector: <code class="language-plaintext highlighter-rouge">composer remove rector/rector &amp;&amp; rm rector.php</code></li>
+  <li>Fix code-styles by running <code class="language-plaintext highlighter-rouge">composer codestyle-fix</code></li>
+</ul>
+
+<h2 id="single-fixes">Single fixes</h2>
+
+<h3 id="openapi">OpenApi</h3>
+
+<p>From:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#[OA\Property(type: 'array', new OA\Items(ref: '#/components/schemas/Team'))]</span>
+</code></pre></div></div>
+
+<p>to:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#[OA\Property(type: 'array', items: new OA\Items(ref: '#/components/schemas/Team'))]</span>
+</code></pre></div></div>
+
+<p>Search for <code class="language-plaintext highlighter-rouge">#\[Security\("(.*)\n(.*)#\[Security\("</code> and combine multiple attributes into one with “and” e.g.:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#[Security("is_granted('access', customer)")]</span>
+<span class="c1">#[Security("is_granted('view_invoice')")]</span>
+</code></pre></div></div>
+
+<p>to:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#[Security("is_granted('access', customer) and is_granted('view_invoice')")]</span>
+</code></pre></div></div>
+
+<h2 id="related-articles">Related articles</h2>
+
+<ul>
+  <li><a href="https://www.doctrine-project.org/2022/11/04/annotations-to-attributes.html">https://www.doctrine-project.org/2022/11/04/annotations-to-attributes.html</a></li>
+  <li><a href="https://tomasvotruba.com/blog/how-to-refactor-custom-doctrine-annotations-to-attributes/">https://tomasvotruba.com/blog/how-to-refactor-custom-doctrine-annotations-to-attributes/</a></li>
+</ul>
+
+                </div>
+                
+
+                
+            </div>
+        </div>
+
+    </div>
+</main>
+
+
+    <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
+        <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#api-changes" class="nav-link">API changes</a></li><li class="nav-item"><a href="#manual-changes" class="nav-link">Manual changes</a></li><li class="nav-item"><a href="#adjust-composer" class="nav-link">Adjust composer</a></li><li class="nav-item"><a href="#adjust-templates" class="nav-link">Adjust templates</a></li><li class="nav-item"><a href="#use-rector-to-migrate-your-code" class="nav-link">Use Rector to migrate your code</a></li><li class="nav-item"><a href="#single-fixes" class="nav-link">Single fixes</a><ul><li class="nav-item"><a href="#openapi" class="nav-link">OpenApi</a></li></ul></li><li class="nav-item"><a href="#related-articles" class="nav-link">Related articles</a></li></ul>
+        
+    </aside>
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+
+</body>
+</html>

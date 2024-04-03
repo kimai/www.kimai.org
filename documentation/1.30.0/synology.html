@@ -1,0 +1,916 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index,follow">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+    <title>Install Kimai on a Synology NAS</title>
+    
+        <meta name="description" content="How to install Kimai on a Synology NAS">
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kimai Time-Tracking">
+    <meta property="og:description" content="How to install Kimai on a Synology NAS">
+    <meta property="og:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kimai Time-Tracking">
+    <meta name="twitter:site" content="@kimai_org">
+    <meta name="twitter:description" content="How to install Kimai on a Synology NAS">
+    <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <link rel="canonical" href="https://www.kimai.org/documentation/synology.html" />
+    <script src="/assets/build/theme.js"></script>
+    <link href="/assets/build/main.css" rel="stylesheet" />
+</head>
+<body class="">
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand bg-light border-bottom border-light shadow fixed-top" data-scroll-header>
+    <div class="container-fluid pe-lg-4">
+        <div class="d-flex align-items-center">
+            <a href="/documentation/" class="navbar-brand flex-shrink-0 py-1 py-lg-2">
+                <img src="/images/apple-touch-icon.png" width="47" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning">Self-hosted</span>
+        </div>
+        <div class="d-flex align-items-center w-100">
+            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 9.75rem;">
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-manual.html" class="nav-link">
+                            <i class="bx bx-book opacity-70 fs-lg me-1"></i>
+                            User manual
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/cloud.html" class="nav-link">
+                            <i class="bx bxs-cloud opacity-70 fs-lg me-1"></i>
+                            Kimai-Cloud
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/developers.html" class="nav-link">
+                            <i class="bx bx-code opacity-70 fs-lg me-1"></i>
+                            Developer
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-on-premise.html" class="nav-link">
+                            <i class="bx bx-wrench opacity-70 fs-lg me-1"></i>
+                            Self-hosted
+                        </a>
+                    </li>
+                
+            </ul>
+            <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="form-check form-switch mode-switch pe-lg-1 ms-lg-auto" data-bs-toggle="mode">
+                <input type="checkbox" class="form-check-input" id="theme-mode">
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Light</label>
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Dark</label>
+            </div>
+        </div>
+    </div>
+</header>
+
+<aside data-bs-theme="dark">
+    <div id="componentsNav" class="offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100 bg-dark border-end-lg" style="width: 21rem; z-index: 1045;">
+        <div class="offcanvas-header d-none d-lg-flex justify-content-start">
+            <a href="/documentation/" class="navbar-brand text-dark d-none d-lg-flex py-0">
+                <img src="/images/apple-touch-icon.png" width="32" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning d-none d-lg-inline-block">Self-hosted</span>
+        </div>
+        <div class="offcanvas-header d-block d-lg-none border-bottom">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <h5 class="d-lg-none mb-0">Menu</h5>
+                <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#componentsNav" aria-label="Close"></button>
+            </div>
+            <div class="list-group list-group-flush mx-n4">
+                
+                    
+                    
+                    <a href="/documentation/chapter-manual.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-book opacity-70 me-1"></i>
+                        User manual
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/cloud.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bxs-cloud opacity-70 me-1"></i>
+                        Kimai-Cloud
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/developers.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-code opacity-70 me-1"></i>
+                        Developer
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/chapter-on-premise.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-wrench opacity-70 me-1"></i>
+                        Self-hosted
+                    </a>
+                
+            </div>
+        </div>
+        <div class="offcanvas-body swiper scrollbar-hover overflow-hidden w-100 p-4" data-swiper-options='{
+          "direction": "vertical",
+          "slidesPerView": "auto",
+          "freeMode": true,
+          "scrollbar": {
+            "el": ".swiper-scrollbar"
+          },
+          "mousewheel": true
+        }'>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide h-auto">
+                    
+                        
+
+    
+    
+    <h3 class="fs-lg">Installation & Updates</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/installation.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Installation
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/updates.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Updates
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/shared-hosting.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Shared hosting
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/hosting-1-click.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                1-click installations
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/cache.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Reloading cache
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-management.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Plugins
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/webserver-configuration.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Webserver
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/fresh-ubuntu-22.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Ubuntu 22.04
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/synology.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4  active">
+                
+                Synology NAS
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">Docker</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/docker.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Docker
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/docker-compose.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Docker Compose
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/kubernetes.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Kubernetes
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/docker-updates.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Updating docker
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/building-docker.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Build your image
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/docker-troubleshooting.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Troubleshooting
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">DevOps</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/backups.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Backups
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/local-yaml.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Configuration files
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/emails.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Emails
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/logging.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Logging
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/commands.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Commands
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/faq-onpremise.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                FAQ
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/migration-v1.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Migrate from Kimai v1
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/versions.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Kimai versions
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">Authenticator</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/ldap.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                LDAP
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/saml.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                SAML
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/saml-azure.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Azure SAML
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/saml-google.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Google SAML
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/saml-keycloak.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Keycloak SAML
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/saml-authentik.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Authentik SAML
+                
+            </a>
+        
+    
+    </div>
+
+
+                        <div class="list-group list-group-flush pb-3 mb-4 mx-n4">
+                    
+                    <a href="/" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Home</a>
+                    <a href="/en/site-notice.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Site notice</a>
+                    <a href="/en/privacy-policy.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Privacy policy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-scrollbar end-0"></div>
+        </div>
+    </div>
+</aside>
+
+<main class="docs-container pt-5">
+    <div class="container-fluid px-xxl-5 px-lg-4 pt-4 pt-lg-5 pb-2 pb-lg-4">
+
+        <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 pt-4 mb-n3">
+            <div class="me-4">
+                <h1 class="pb-1">Install Kimai on a Synology NAS</h1>
+                
+                <p class="text-muted fs-lg mb-2">How to install Kimai on a Synology NAS</p>
+                
+            </div>
+            
+
+
+
+
+    <div class="dropdown">
+        <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Older versions
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+            
+            <a class="dropdown-item" href="/documentation/1.30.0/synology.html">Kimai 1.30.0</a>
+            
+            <a class="dropdown-item" href="/documentation/synology.html">2.13.0 (latest version)</a>
+        </div>
+    </div>
+
+
+        </div>
+
+        <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+            <div>
+                
+                <div id="documentation-content">
+                    
+
+
+
+<div class="alert alert-danger" role="alert">
+    
+You are viewing an older version of this documentation page. A newer version is available <a href="/documentation/synology.html">here</a>.
+
+</div>
+
+
+
+<p>This HowTo does not explain every step for the installation of Kimai on a Synology NAS with <strong>DSM 6</strong>, 
+but rather concentrates on the differences from the <a href="/documentation/installation.html">default installation</a>.</p>
+
+<div class="alert alert-info" role="alert">
+    
+ATTENTION: This manual seems to be outdated and not working with <strong>DSM 7</strong> anymore.
+Until this guide will be updated, there is <a href="/static/downloads/Installationsanleitung_Synology_DSM7_Kimai.pdf">a PDF installation documentation in german</a>, provided by the community user Wolfgang 👍🏻
+
+</div>
+
+<h2 id="important-to-know">Important to know</h2>
+
+<p>You need to prefix all PHP related commands with <code class="language-plaintext highlighter-rouge">php81</code>, for example:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php81 composer.phar <span class="nb">install</span> <span class="nt">--optimize-autoloader</span>
+</code></pre></div></div>
+
+<p>Or run a console command:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php81 bin/console kimai:version
+</code></pre></div></div>
+
+<p>The webserver user is called <code class="language-plaintext highlighter-rouge">http</code> and not <code class="language-plaintext highlighter-rouge">www-data</code>.</p>
+
+<p>The database connection uses a socket instead of a port.</p>
+
+<p>After creating the VirtualHost the DSM changes file ownership, so you might be forced to use <code class="language-plaintext highlighter-rouge">sudo</code> or switch to the root account for multiple commands.</p>
+
+<h2 id="installation-process">Installation process</h2>
+
+<p>Clone Kimai as described in the main <a href="/documentation/installation.html">installation</a> docs. 
+If no git is installed, you can use the method described under the “updates” section.</p>
+
+<p>This example uses the path <code class="language-plaintext highlighter-rouge">/volume1/web/kimai2</code></p>
+
+<p>Then <a href="https://getcomposer.org/download/">download and install composer</a>. Now install all dependencies:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php81 composer.phar <span class="nb">install</span> <span class="nt">--optimize-autoloader</span>
+</code></pre></div></div>
+
+<h3 id="create-a-database">Create a database</h3>
+
+<p>Use phpMyAdmin or the console (if you are familiar with it)  to create a new database and database user.</p>
+
+<p>Do not add special characters to the password that needs to be url encoded, rather use a longer password.
+Synology seems to have strict password rules, use the minus <code class="language-plaintext highlighter-rouge">-</code> if you are forced to use a special character, 
+otherwise stick with lower and uppercase character and numbers.</p>
+
+<h3 id="env-file-and-database-connection">.env file and database connection</h3>
+
+<p>Synology ships a MariaDB which is configured to use a socket connection and runs on a different port, 
+therefore the connection string in your <code class="language-plaintext highlighter-rouge">.env</code> file could look different from the one used in the 
+default <a href="/documentation/installation.html">installation</a> docs:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DATABASE_URL="mysql://kimai2:password@localhost:3307/kimai2?unix_socket=/run/mysqld/mysqld10.sock"
+</code></pre></div></div>
+
+<p>BTW: You find the MariaDB executable at <code class="language-plaintext highlighter-rouge">/volume1/@appstore/MariaDB10/usr/local/mariadb10/bin</code>.</p>
+
+<p>After editing the <code class="language-plaintext highlighter-rouge">.env</code> file, install Kimai:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php81 bin/console kimai:install <span class="nt">-n</span>
+</code></pre></div></div>
+
+<h3 id="webserver-nginx-configuration">Webserver (nginx) configuration</h3>
+
+<p>Start by opening the <code class="language-plaintext highlighter-rouge">Web Station</code>:</p>
+
+<figure class="figure mb-3" style="max-width: 600px">
+    <img src="/images/documentation/synology-1.png" class="figure-img img-fluid rounded" />
+    <figcaption class="figure-caption">Main Menu &gt; Web Station</figcaption>
+</figure>
+
+<p>Check that you have a PHP 8.1 profile:</p>
+
+<figure class="figure mb-3" style="max-width: 800px">
+    <img src="/images/documentation/synology-2.png" class="figure-img img-fluid rounded" />
+    <figcaption class="figure-caption">Main Menu &gt; Web Station &gt; PHP Settings</figcaption>
+</figure>
+
+<p>And then creating a VirtualHost (we use a port based in this example):</p>
+
+<figure class="figure mb-3" style="max-width: 800px">
+    <img src="/images/documentation/synology-3.png" class="figure-img img-fluid rounded" />
+    <figcaption class="figure-caption">Main Menu &gt; Web Station &gt; Virtual Host</figcaption>
+</figure>
+
+<p>Settings choosen in the example:</p>
+
+<ul>
+  <li>Port: <code class="language-plaintext highlighter-rouge">7777</code> with <code class="language-plaintext highlighter-rouge">HTTPS</code></li>
+  <li>Document root: <code class="language-plaintext highlighter-rouge">/volume1/web/kimai/public</code></li>
+  <li>HTTP backend server: <code class="language-plaintext highlighter-rouge">nginx</code></li>
+  <li>PHP backend: <code class="language-plaintext highlighter-rouge">PHP 8.1</code></li>
+</ul>
+
+<p>Now switch to the console and find the directory where the config needs to be stored.</p>
+
+<p>Either use <code class="language-plaintext highlighter-rouge">ls -la /etc/nginx/conf.d/</code> and check which subdirectories exist or better:
+have a look at the file <code class="language-plaintext highlighter-rouge">/etc/nginx/app.d/server.webstation-vhost.conf</code> where all virtual hosts are listed.</p>
+
+<p>Watch out for the line that starts with <code class="language-plaintext highlighter-rouge">include</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>server {
+
+    listen      7777 ssl default_server;
+    listen      [::]:7777 ssl default_server;
+
+    server_name _;
+
+    ...
+
+    root    "/volume1/web/kimai/public";
+
+    ...
+
+    include /usr/local/etc/nginx/conf.d/1d16b269-904e-41c9-bd23-cbdf761e305e/user.conf*;
+
+}
+</code></pre></div></div>
+
+<p>Ok, we found the directory <code class="language-plaintext highlighter-rouge">/usr/local/etc/nginx/conf.d/1d16b269-904e-41c9-bd23-cbdf761e305e/</code>, go ahead and edit a 
+new config file to store the webserver configuration for Kimai:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vim /usr/local/etc/nginx/conf.d/1d16b269-904e-41c9-bd23-cbdf761e305e/user.conf-kimai2
+</code></pre></div></div>
+
+<p>Add the following lines to it:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    index index.php;
+
+    access_log off;
+    log_not_found off;
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+    location / {
+        try_files $uri /index.php$is_args$args;
+    }
+
+    location ~ ^/index\.php(/|$) {
+        fastcgi_pass unix:/run/php/php8.1-fpm.sock;
+        fastcgi_split_path_info ^(.+\.php)(/.*)$;
+        include fastcgi.conf;
+        fastcgi_param PHP_ADMIN_VALUE "open_basedir=$document_root/..:/tmp/";
+        internal;
+    }
+
+    location ~ \.php$ {
+        return 404;
+    }
+</code></pre></div></div>
+
+<p>Check the nginx config with:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>nginx <span class="nt">-t</span>
+</code></pre></div></div>
+
+<p>If you see the following lines:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf <span class="nb">test </span>is successful
+</code></pre></div></div>
+<p>you can tell nginx to reload the configuration with:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>nginx <span class="nt">-s</span> reload
+</code></pre></div></div>
+
+<p>That’s it, Kimai should now run.</p>
+
+<h2 id="fixing-file-permissions">Fixing file permissions</h2>
+
+<p>The following commands must be run in the Kimai directory, here in <code class="language-plaintext highlighter-rouge">/volume1/web/kimai/</code>.</p>
+
+<p>They must be run as <code class="language-plaintext highlighter-rouge">root</code> user (e.g. by prefixing each line with <code class="language-plaintext highlighter-rouge">sudo</code>). 
+Be extremely careful, a wrong command can destroy your Synology … you know: with great power comes great responsibility!</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /volume1/web/kimai/
+
+<span class="nb">sudo chown</span> <span class="nt">-R</span> :http <span class="nb">.</span>
+<span class="nb">sudo chmod</span> <span class="nt">-R</span> g+r <span class="nb">.</span>
+<span class="nb">sudo chmod</span> <span class="nt">-R</span> g+rw var/
+</code></pre></div></div>
+
+<h2 id="updating-kimai">Updating Kimai</h2>
+
+<p>Please cross-check the normal <a href="/documentation/updates.html">upgrade guide</a> for more steps:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /volume1/web/kimai/
+git fetch <span class="nt">--tags</span>
+git checkout 2.13.0
+php81 composer <span class="nb">install</span> <span class="nt">--optimize-autoloader</span> <span class="nt">-n</span>
+php81 bin/console kimai:update
+<span class="nb">chown</span> <span class="nt">-R</span> :http <span class="nb">.</span>
+</code></pre></div></div>
+
+<div class="alert d-flex alert-warning" role="alert">
+    <i class="bx bx-fas fa-exclamation lead me-3"></i>
+    <div>
+        
+Important: Finally execute the version specific tasks from the <a href="https://github.com/kimai/kimai/blob/main/UPGRADING.md">UPGRADING</a> guide.
+
+    </div>
+</div>
+
+<h3 id="update-without-git">Update without git</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /volume1/web/
+wget https://github.com/kimai/kimai/archive/refs/tags/2.13.0.zip
+7z x 
+<span class="nb">cp </span>kimai2/.env kimai-2.13.0/
+<span class="nb">cp</span> <span class="nt">-R</span> kimai2/var/invoices kimai-2.13.0/var/
+<span class="nb">cd </span>kimai-2.13.0/
+</code></pre></div></div>
+
+<p>Then <a href="https://getcomposer.org/download/">download and install composer</a>, followed by the installation:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php81 composer.phar <span class="nb">install</span> <span class="nt">--optimize-autoloader</span>
+php81 bin/console kimai:update
+</code></pre></div></div>
+
+<p>Now a) switch your virtual host to the new directory or b) change the directory names:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /volume1/web/
+<span class="nb">mv </span>kimai kimai-backup
+<span class="nb">mv </span>kimai-2.13.0 kimai
+</code></pre></div></div>
+
+<div class="alert d-flex alert-warning" role="alert">
+    <i class="bx bx-fas fa-exclamation lead me-3"></i>
+    <div>
+        
+Important: Finally execute the version specific tasks from the <a href="https://github.com/kimai/kimai/blob/main/UPGRADING.md">UPGRADING</a> guide.
+
+    </div>
+</div>
+
+<h2 id="sso-with-synology-directory-server">SSO with Synology Directory Server</h2>
+
+<p>See <a href="https://github.com/kimai/kimai/discussions/3198">this discussion</a> to find out more.</p>
+
+<ol>
+  <li>Prerequisite Synology Directory Server App installed on your NAS</li>
+  <li>
+    <p>Preparation: open Synology Directory Server App</p>
+
+    <ul>
+      <li>
+        <p><strong>Domain Tab</strong> write down:
+  Domain name, e.g. your.domain
+  Domain NetBios name, e.g. your address of Domain Controller, e.g. dc.your.domain
+  “DC” part of Distinguished name (DN), e.g. DC=your,DC=domain (everything after OU=Domain Controllers)</p>
+      </li>
+      <li>
+        <p><strong>Users &amp; Computers Tab</strong> create user:
+  Add - Username
+  User Login name: kimai (can be freely chosen)
+  Password: your-password
+  Confirm Password: your-password
+  Untick “Force this account to change password at next login”
+  confirm next windows (it is sufficient if user just belongs to the group ‘domain users’</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>local.yaml</strong> 
+ create the file local.yaml or add the ‘ldap part’ to your local.yaml and upload it to kimai/config/packages</p>
+
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="na">kimai</span><span class="pi">:</span>
+     <span class="na">ldap</span><span class="pi">:</span>
+         <span class="na">activate</span><span class="pi">:</span> <span class="no">true</span>
+         <span class="na">connection</span><span class="pi">:</span>
+             <span class="na">host</span><span class="pi">:</span> <span class="s2">"</span><span class="s">ldaps://dc.your.domain"</span> <span class="s">&lt;-- change to address of Domain Controller as recorded in first step)</span>
+             <span class="na">port</span><span class="pi">:</span> <span class="m">636</span>
+             <span class="na">useSsl</span><span class="pi">:</span> <span class="no">true</span>
+             <span class="na">username</span><span class="pi">:</span> <span class="s">CN=kimai,CN=Users,DC=your,DC=domain &lt;--- the created user, amend the DC information as recorded in the first step</span>
+             <span class="na">password</span><span class="pi">:</span> <span class="s">your-password &lt;-- the password for the created user</span>          
+             <span class="na">accountFilterFormat</span><span class="pi">:</span> <span class="s">(&amp;(objectClass=Person)(sAMAccountName=%s))</span>
+             <span class="na">accountDomainName</span><span class="pi">:</span> <span class="s">your.domain &lt;-- your domain name as recorded in first step</span>
+             <span class="na">accountDomainNameShort</span><span class="pi">:</span> <span class="s">your &lt;-- Domain NetBios name as recorded in first step</span>
+        
+         <span class="na">user</span><span class="pi">:</span>
+             <span class="na">baseDn</span><span class="pi">:</span> <span class="s">DC=your,DC=domain &lt;--- amend the DC information as recorded in the first step</span>
+             <span class="na">usernameAttribute</span><span class="pi">:</span> <span class="s">samaccountname</span>
+             <span class="na">filter</span><span class="pi">:</span> <span class="s">(&amp;(objectClass=Person))</span>
+             <span class="na">attributesFilter</span><span class="pi">:</span> <span class="s">(objectClass=Person)</span>
+             <span class="na">attributes</span><span class="pi">:</span>
+                 <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_attr</span><span class="pi">:</span> <span class="nv">samaccountname</span><span class="pi">,</span>  <span class="nv">user_method</span><span class="pi">:</span> <span class="nv">setUsername</span> <span class="pi">}</span>
+                 <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_attr</span><span class="pi">:</span> <span class="nv">mail</span><span class="pi">,</span> <span class="nv">user_method</span><span class="pi">:</span> <span class="nv">setEmail</span> <span class="pi">}</span>
+                 <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_attr</span><span class="pi">:</span> <span class="nv">displayname</span><span class="pi">,</span> <span class="nv">user_method</span><span class="pi">:</span> <span class="nv">setAlias</span> <span class="pi">}</span>
+        
+         <span class="na">role</span><span class="pi">:</span>
+             <span class="na">baseDn</span><span class="pi">:</span> <span class="s">DC=your,DC=domain &lt;--- amend the DC information as recorded in the first step</span>
+             <span class="na">filter</span><span class="pi">:</span> <span class="s">(&amp;(objectClass=group))</span>
+             <span class="na">groups</span><span class="pi">:</span>
+                 <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_value</span><span class="pi">:</span> <span class="nv">Domain Admins</span><span class="pi">,</span> <span class="nv">role</span><span class="pi">:</span> <span class="nv">ROLE_SUPER_ADMIN</span> <span class="pi">}</span> 
+                 <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_value</span><span class="pi">:</span> <span class="nv">management</span><span class="pi">,</span> <span class="nv">role</span><span class="pi">:</span> <span class="nv">ROLE_ADMIN</span> <span class="pi">}</span> <span class="s">&lt;-- assumes that you have created a Domain Group 'management' in your Active Directory App; if not, delete this line</span>
+                 <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_value</span><span class="pi">:</span> <span class="nv">Users</span><span class="pi">,</span> <span class="nv">role</span><span class="pi">:</span> <span class="nv">ROLE_USER</span> <span class="pi">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>nstallation
+SSH into your Synology NAS, navigate to your Kimai installation (probably volume1\web\kimai2) and run the following command:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php80 /usr/local/bin/composer require laminas/laminas-ldap <span class="nt">--optimize-autoloader</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>Remark:</p>
+<ul>
+  <li>use the correct php version that you have installed, e.g. <code class="language-plaintext highlighter-rouge">php81</code> (but not <code class="language-plaintext highlighter-rouge">php74</code>)</li>
+  <li>change the path to composer if you have not created a link to your composer.phar under /usr/local/bin/</li>
+</ul>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<h3 id="allowed-memory-size-issue">Allowed memory size issue</h3>
+
+<p>If you see an error like <code class="language-plaintext highlighter-rouge">Error: Allowed memory size of 134217728 bytes exhausted (tried to allocate 32768 bytes)</code> then you 
+have to adjust the memory limit for the PHP command-line interface.
+PHP has two different settings for memory limit, depending on where you run it:</p>
+<ul>
+  <li>executed in web-context (you open a page in your browser) =&gt; the settings from DSM are used</li>
+  <li>executing scripts (like the installer) via SSH =&gt; settings from another config file are used</li>
+</ul>
+
+<p>So  when running the installer and running into a memory issue, you have to adjust the <code class="language-plaintext highlighter-rouge">php.ini</code> whose settings are used 
+in SSH, e.g. the file <code class="language-plaintext highlighter-rouge">/usr/local/etc/php81/php.ini</code> is used for PHP 8.1.
+Search for the key <code class="language-plaintext highlighter-rouge">memory_limit</code> and set it to a high value, e.g. <code class="language-plaintext highlighter-rouge">memory_limit=512M</code>.</p>
+
+<p>Read <a href="https://github.com/kimai/kimai/discussions/3468">this discussion</a> for more infos.</p>
+
+<h3 id="white-page-after-changes-to-env">White page after changes to .env</h3>
+
+<p>If you are using a network share (or any Synology app) for downloading/editing/uploading the <code class="language-plaintext highlighter-rouge">.env</code> file, 
+make sure that <code class="language-plaintext highlighter-rouge">group</code> permissions for the <code class="language-plaintext highlighter-rouge">http</code> group are preserved.</p>
+
+<figure class="figure mb-3" style="max-width: 1000px">
+    <img src="/images/documentation/synology-4.png" class="figure-img img-fluid rounded" />
+    <figcaption class="figure-caption">File station &gt; Select file &gt; Right clink &gt; Properties</figcaption>
+</figure>
+
+<p>You can change them using:</p>
+
+<p><code class="language-plaintext highlighter-rouge">File station &gt; change to kimai directory &gt; Right click on .env &gt; Properties</code>.</p>
+
+
+
+                </div>
+                
+
+                
+            </div>
+        </div>
+
+    </div>
+</main>
+
+
+    <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
+        <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#important-to-know" class="nav-link">Important to know</a></li><li class="nav-item"><a href="#installation-process" class="nav-link">Installation process</a><ul><li class="nav-item"><a href="#create-a-database" class="nav-link">Create a database</a></li><li class="nav-item"><a href="#env-file-and-database-connection" class="nav-link">.env file and database connection</a></li><li class="nav-item"><a href="#webserver-nginx-configuration" class="nav-link">Webserver (nginx) configuration</a></li></ul></li><li class="nav-item"><a href="#fixing-file-permissions" class="nav-link">Fixing file permissions</a></li><li class="nav-item"><a href="#updating-kimai" class="nav-link">Updating Kimai</a><ul><li class="nav-item"><a href="#update-without-git" class="nav-link">Update without git</a></li></ul></li><li class="nav-item"><a href="#sso-with-synology-directory-server" class="nav-link">SSO with Synology Directory Server</a></li><li class="nav-item"><a href="#troubleshooting" class="nav-link">Troubleshooting</a><ul><li class="nav-item"><a href="#allowed-memory-size-issue" class="nav-link">Allowed memory size issue</a></li><li class="nav-item"><a href="#white-page-after-changes-to-env" class="nav-link">White page after changes to .env</a></li></ul></li></ul>
+        
+    </aside>
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+
+</body>
+</html>

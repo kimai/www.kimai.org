@@ -1,0 +1,1605 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index,follow">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+    <title>Invoices – Kimai</title>
+    
+        <meta name="description" content="Create invoices directly within Kimai from timesheet data in several formats">
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kimai Time-Tracking">
+    <meta property="og:description" content="Create invoices directly within Kimai from timesheet data in several formats">
+    <meta property="og:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kimai Time-Tracking">
+    <meta name="twitter:site" content="@kimai_org">
+    <meta name="twitter:description" content="Create invoices directly within Kimai from timesheet data in several formats">
+    <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <link rel="canonical" href="https://www.kimai.org/documentation/invoices.html" />
+    <link rel="alternate" hreflang="en" href="https://www.kimai.org/documentation/1.14/invoices.html">
+    <link rel="alternate" hreflang="en" href="https://www.kimai.org/documentation/1.15/invoices.html">
+    <link rel="alternate" hreflang="en" href="https://www.kimai.org/documentation/1.8/invoices.html">
+    <script src="/assets/build/theme.js"></script>
+    <link href="/assets/build/main.css" rel="stylesheet" />
+</head>
+<body class="">
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand bg-light border-bottom border-light shadow fixed-top" data-scroll-header>
+    <div class="container-fluid pe-lg-4">
+        <div class="d-flex align-items-center">
+            <a href="/documentation/" class="navbar-brand flex-shrink-0 py-1 py-lg-2">
+                <img src="/images/apple-touch-icon.png" width="47" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning">User manual</span>
+        </div>
+        <div class="d-flex align-items-center w-100">
+            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 9.75rem;">
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-manual.html" class="nav-link">
+                            <i class="bx bx-book opacity-70 fs-lg me-1"></i>
+                            User manual
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/cloud.html" class="nav-link">
+                            <i class="bx bxs-cloud opacity-70 fs-lg me-1"></i>
+                            Kimai-Cloud
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/developers.html" class="nav-link">
+                            <i class="bx bx-code opacity-70 fs-lg me-1"></i>
+                            Developer
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-on-premise.html" class="nav-link">
+                            <i class="bx bx-wrench opacity-70 fs-lg me-1"></i>
+                            Self-hosted
+                        </a>
+                    </li>
+                
+            </ul>
+            <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="form-check form-switch mode-switch pe-lg-1 ms-lg-auto" data-bs-toggle="mode">
+                <input type="checkbox" class="form-check-input" id="theme-mode">
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Light</label>
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Dark</label>
+            </div>
+        </div>
+    </div>
+</header>
+
+<aside data-bs-theme="dark">
+    <div id="componentsNav" class="offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100 bg-dark border-end-lg" style="width: 21rem; z-index: 1045;">
+        <div class="offcanvas-header d-none d-lg-flex justify-content-start">
+            <a href="/documentation/" class="navbar-brand text-dark d-none d-lg-flex py-0">
+                <img src="/images/apple-touch-icon.png" width="32" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning d-none d-lg-inline-block">User manual</span>
+        </div>
+        <div class="offcanvas-header d-block d-lg-none border-bottom">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <h5 class="d-lg-none mb-0">Menu</h5>
+                <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#componentsNav" aria-label="Close"></button>
+            </div>
+            <div class="list-group list-group-flush mx-n4">
+                
+                    
+                    
+                    <a href="/documentation/chapter-manual.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-book opacity-70 me-1"></i>
+                        User manual
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/cloud.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bxs-cloud opacity-70 me-1"></i>
+                        Kimai-Cloud
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/developers.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-code opacity-70 me-1"></i>
+                        Developer
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/chapter-on-premise.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-wrench opacity-70 me-1"></i>
+                        Self-hosted
+                    </a>
+                
+            </div>
+        </div>
+        <div class="offcanvas-body swiper scrollbar-hover overflow-hidden w-100 p-4" data-swiper-options='{
+          "direction": "vertical",
+          "slidesPerView": "auto",
+          "freeMode": true,
+          "scrollbar": {
+            "el": ".swiper-scrollbar"
+          },
+          "mousewheel": true
+        }'>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide h-auto">
+                    
+                        
+
+    
+    
+    <h3 class="fs-lg">Using Kimai</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/timesheet.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Timesheet
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/weekly-times.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Weekly working hours
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/calendar.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Calendar
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/invoices.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4  active">
+                
+                Invoices
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/export.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Export
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/reporting.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Reporting
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/customer.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Customer
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/project.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Projects
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/activity.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Activities
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/tags.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Tags
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/users.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Users
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/user-preferences.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                User preferences
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/permissions.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Roles &amp; Permissions
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/teams.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Teams
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/configurations.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Settings
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/doctor.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Doctor
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/contract.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Working times
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/public-holiday.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Public holiday
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/absence.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Absence
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/dashboard.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Dashboard
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">Tips and Tricks</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/initial-setup.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Initial setup
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/rates.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Prices (rates)
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/billable.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Billable
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/pdf-templates.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                PDF templates
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/keyboard-shortcuts.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Keyboard shortcuts
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/i18n-am-pm.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Date and Time formats
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/duration-format.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Duration format
+                
+            </a>
+        
+    
+        
+    
+        
+            
+            
+            <a href="/documentation/homescreen.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Use Kimai as app
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/user-api.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Connecting via API
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">Additional features</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/plugin-custom-fields.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Custom fields
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-expenses.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Expenses
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-task-management.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Task management
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-custom-css.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Custom CSS
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-custom-content.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Custom content
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-translation.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Translation
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-invoice.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Invoice
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-import.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Importer
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-audit-trail.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Audit trail logs
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-contract.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Working contract
+                
+            </a>
+        
+    
+    </div>
+
+
+                        <div class="list-group list-group-flush pb-3 mb-4 mx-n4">
+                    
+                    <a href="/" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Home</a>
+                    <a href="/en/site-notice.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Site notice</a>
+                    <a href="/en/privacy-policy.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Privacy policy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-scrollbar end-0"></div>
+        </div>
+    </div>
+</aside>
+
+<main class="docs-container pt-5">
+    <div class="container-fluid px-xxl-5 px-lg-4 pt-4 pt-lg-5 pb-2 pb-lg-4">
+
+        <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 pt-4 mb-n3">
+            <div class="me-4">
+                <h1 class="pb-1">Invoices</h1>
+                
+                <p class="text-muted fs-lg mb-2">Create invoices directly within Kimai from timesheet data in several formats</p>
+                
+            </div>
+            
+
+
+
+
+    <div class="dropdown">
+        <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Older versions
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+            
+            <a class="dropdown-item" href="/documentation/1.8/invoices.html">Kimai 1.8</a>
+            
+            <a class="dropdown-item" href="/documentation/1.15/invoices.html">Kimai 1.15</a>
+            
+            <a class="dropdown-item" href="/documentation/1.14/invoices.html">Kimai 1.14</a>
+            
+            <a class="dropdown-item" href="/documentation/invoices.html">2.13.0 (latest version)</a>
+        </div>
+    </div>
+
+
+        </div>
+
+        <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+            <div>
+                
+                <div id="documentation-content">
+                    
+
+
+
+<div class="alert alert-danger" role="alert">
+    
+You are viewing an older version of this documentation page. A newer version is available <a href="/documentation/invoices.html">here</a>.
+
+</div>
+
+
+
+<p>Kimai allows to create invoices from timesheet data in several formats.</p>
+
+<h2 id="invoice-number-format">Invoice number format</h2>
+
+<p>Since Kimai 1.9 you can configure the invoice number format. 
+You can mix arbitrary characters and the allowed replacer from the list below. 
+All examples represent the date <code class="language-plaintext highlighter-rouge">2019-07-09</code> (2019, July 9th):</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">{date}</code> - shortcut for <code class="language-plaintext highlighter-rouge">ymd</code>. Example: <code class="language-plaintext highlighter-rouge">190709</code> (default format before Kimai 1.9)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">{c}</code> - counter for invoices of all times, starting from 1</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">{cy}</code> - counter for invoices this year, starting from 1</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">{cm}</code> - counter for invoices this month, starting from 1</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">{cd}</code> - counter for invoices this day, starting from 1</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">{Y}</code> -  full numeric representation of a year (4 digits). Example: <code class="language-plaintext highlighter-rouge">2019</code>
+</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">{y}</code> - two digit representation of a year. Example: <code class="language-plaintext highlighter-rouge">19</code>
+</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">{M}</code> - numeric representation of a month, with leading zeros. Example: <code class="language-plaintext highlighter-rouge">07</code>
+</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">{m}</code> - numeric representation of a month, without leading zeros. Example: <code class="language-plaintext highlighter-rouge">7</code>
+</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">{D}</code> - day of the month, 2 digits with leading zeros. Example: <code class="language-plaintext highlighter-rouge">09</code>
+</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">{d}</code> - day of the month without leading zeros. Example: <code class="language-plaintext highlighter-rouge">9</code>
+</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">{cc}</code> - per customer invoice counter for all times, starting from 1 (since 1.10)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">{ccy}</code> - per customer invoice counter for this year, starting from 1 (since 1.10)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">{ccm}</code> - per customer invoice counter for this month, starting from 1 (since 1.10)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">{ccd}</code> - per customer invoice counter for this day, starting from 1 (since 1.10)</li>
+</ul>
+
+<p>Each replacer (x) can be combined with a length formatter, which will prepend (X) leading zeros, eg. <code class="language-plaintext highlighter-rouge">{x,X}</code>. 
+Example: to get a three digit long string with year counter use <code class="language-plaintext highlighter-rouge">{cy,3}</code>, which results in <code class="language-plaintext highlighter-rouge">001</code> for the first invoice of the year.</p>
+
+<div class="alert d-flex alert-warning" role="alert">
+    <i class="bx bx-fas fa-exclamation lead me-3"></i>
+    <div>
+        
+Characters outside the replacer may <strong>not</strong> include <code class="language-plaintext highlighter-rouge">{</code> and <code class="language-plaintext highlighter-rouge">}</code>.
+
+    </div>
+</div>
+
+<p>To change the format, look out for the <a class="btn btn-secondary px-3" href="#"><i class="bx bx-cog pe-2"></i></a>
+ icon in the invoice screen, or change it from the <code class="language-plaintext highlighter-rouge">System configurations</code>.</p>
+
+<h3 id="incrementing-the-invoice-counter">Incrementing the invoice counter</h3>
+
+<p>Since 1.10 it is possible to increment the counter by a fixed value: you can add a number to the result. 
+For evaluated counters, Kimai takes the amount of found invoices and adds 1, but you can replace <code class="language-plaintext highlighter-rouge">+1</code> with an addition like <code class="language-plaintext highlighter-rouge">+3</code>.
+This works for the following replacer: <code class="language-plaintext highlighter-rouge">{c}</code> and <code class="language-plaintext highlighter-rouge">{cy}</code> and <code class="language-plaintext highlighter-rouge">{cm}</code> and <code class="language-plaintext highlighter-rouge">{cd}</code> and <code class="language-plaintext highlighter-rouge">{cc}</code> and <code class="language-plaintext highlighter-rouge">{ccy}</code> and <code class="language-plaintext highlighter-rouge">{ccm}</code> and <code class="language-plaintext highlighter-rouge">{ccd}</code>.</p>
+
+<p>Simply use the plus (<code class="language-plaintext highlighter-rouge">+</code>) after the replacer, eg. <code class="language-plaintext highlighter-rouge">{cy+72}</code>. This also works in combination with the length formatter, eg.: <code class="language-plaintext highlighter-rouge">{cy+72,3}</code></p>
+
+<h3 id="decrementing-the-invoice-counter">Decrementing the invoice counter</h3>
+
+<p>Since 1.11 it is possible to decrement the counter by a fixed value: you can subtract a number from the result. 
+For evaluated counters, Kimai takes the amount of found invoices and adds <code class="language-plaintext highlighter-rouge">+1</code>, but you can replace <code class="language-plaintext highlighter-rouge">+1</code> with a subtraction like <code class="language-plaintext highlighter-rouge">-12</code>.
+This works for the following replacer: <code class="language-plaintext highlighter-rouge">{c}</code> and <code class="language-plaintext highlighter-rouge">{cy}</code> and <code class="language-plaintext highlighter-rouge">{cm}</code> and <code class="language-plaintext highlighter-rouge">{cd}</code> and <code class="language-plaintext highlighter-rouge">{cc}</code> and <code class="language-plaintext highlighter-rouge">{ccy}</code> and <code class="language-plaintext highlighter-rouge">{ccm}</code> and <code class="language-plaintext highlighter-rouge">{ccd}</code>.</p>
+
+<p>Simply use the minus (<code class="language-plaintext highlighter-rouge">-</code>) after the replacer, eg. <code class="language-plaintext highlighter-rouge">{cy-72}</code>. This also works in combination with the length formatter, eg.: <code class="language-plaintext highlighter-rouge">{cy-72,3}</code></p>
+
+<h3 id="examples">Examples</h3>
+
+<p>Assume you already wrote 72 invoices this year (before you started to use Kimai), and your counter is an incrementing number 
+per year, which is prefixed with the four digit year:</p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">{Y}/{cy+73,3}</code> would result in <code class="language-plaintext highlighter-rouge">2020/073</code> for your first invoice</li>
+</ul>
+
+<p>Assume that you want to change your invoice numbering and reset it to zero, you already wrote 72 invoices this year, and your counter is an incrementing number per year that should be prefixed with the four digit year:</p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">{Y}/{cy-72,3}</code> would result in <code class="language-plaintext highlighter-rouge">2020/001</code> for your first invoice</li>
+</ul>
+
+<h2 id="export-state">Export state</h2>
+
+<p>Invoices and exports share the export state, which is used to mark timesheet records as processed. 
+These records cannot be edited any longer by regular users and are excluded by default from further invoices and exports.</p>
+
+<p>You need to tick the checkbox before saving (Kimai 1.9) / printing (Kimai 1.8 and below) the invoice, to automatically set the export state on all filtered timesheet records.</p>
+
+<p>For further information read the <a href="/documentation/timesheet.html">timesheet documentation</a>.</p>
+
+<h2 id="billable-items-only">Billable items only</h2>
+
+<p>Only billable items will be included in invoices (since version 1.10). 
+By default, every timesheet records is billable.
+Since version 1.14 users can set the billable flag on individual timesheets.</p>
+
+<p><a href="/store/expenses-bundle.html">Expense items</a> have a configurable billable flag per item and only the ones marked as billable (refundable) will be included.</p>
+
+<h2 id="invoice-document">Invoice document</h2>
+
+<p>The invoice system currently supports the following formats:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">HTML</code>
+    <ul>
+      <li>through the use of Twig templates</li>
+      <li>filename must end with <code class="language-plaintext highlighter-rouge">.html.twig</code>
+</li>
+      <li>Pro: no need for additional software, print or convert to PDF from your browser (if supported)</li>
+      <li>Contra: you have to understand HTML and Twig</li>
+      <li><strong>the recommended invoice document format</strong></li>
+    </ul>
+  </li>
+  <li>
+<code class="language-plaintext highlighter-rouge">PDF</code> (since Kimai 1.9)
+    <ul>
+      <li>through the use of Twig templates</li>
+      <li>filename must end with <code class="language-plaintext highlighter-rouge">.pdf.twig</code>
+</li>
+      <li>Pro: no need for additional software</li>
+      <li>Contra: you have to understand HTML, Twig and the MPDF library</li>
+    </ul>
+  </li>
+  <li>
+<code class="language-plaintext highlighter-rouge">DOCX</code>
+    <ul>
+      <li>OOXML - Open Office XML Text</li>
+      <li>Microsoft Word 2007-2013 XML</li>
+      <li>filename must end with <code class="language-plaintext highlighter-rouge">.docx</code>
+</li>
+      <li>Pro: simple customization and possibility to edit the invoice later on</li>
+      <li>Contra: Non-free software required</li>
+    </ul>
+  </li>
+  <li>
+<code class="language-plaintext highlighter-rouge">ODS</code>
+    <ul>
+      <li>Open Document Spreadsheet or OASIS, is the OpenOffice.org XML file format for spreadsheets supported by OpenOffice, LibreOffice, StarCalc, Microsoft and others</li>
+      <li>file extension: filename must end with <code class="language-plaintext highlighter-rouge">.ods</code>
+</li>
+      <li>Pro: open format, good for exporting and creating enhanced reports with an office software package</li>
+      <li>Contra: not ideal format for invoices (harder to customize)</li>
+    </ul>
+  </li>
+  <li>
+<code class="language-plaintext highlighter-rouge">XLSX</code>
+    <ul>
+      <li>Microsoft Excel™ 2007 shipped with a new file format, namely Microsoft Office Open XML SpreadsheetML, and Excel 2010 extended this still further with new features.</li>
+      <li>file extension: filename must end with <code class="language-plaintext highlighter-rouge">.xlsx</code>
+</li>
+      <li>Pro: good for creating enhanced reports with an office software package</li>
+      <li>Contra: Non-free software required, not ideal format for invoices</li>
+    </ul>
+  </li>
+  <li>
+<code class="language-plaintext highlighter-rouge">CSV</code>
+    <ul>
+      <li>Comma-separated file with UTF-8 encoding and double-quotes around each field</li>
+      <li>filename must end with <code class="language-plaintext highlighter-rouge">.csv</code>
+</li>
+      <li>Pro: good for exporting and creating enhanced reports with an office software package</li>
+      <li>Contra: only row based information possible (meta information can’t be used properly), UTF-8 is not properly supported when using Excel (see <a href="https://github.com/kimai/kimai/issues/1537">this issue</a>)</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Be aware</strong>: the default templates were created and tested ONLY with LibreOffice!</p>
+
+<h3 id="create-your-own-invoice-document">Create your own invoice document</h3>
+
+<p>Invoice documents are searched in two locations:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">var/invoices/</code> - does not exist by default, please create it when you add a new document</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">templates/invoice/renderer/</code> - don’t change files in here, will be overwritten with the next update</li>
+</ul>
+
+<p>Be aware of the following rules:</p>
+
+<ul>
+  <li>Documents are addressed by their filename without extension (e.g. <code class="language-plaintext highlighter-rouge">kimai.html.twig</code> results in <code class="language-plaintext highlighter-rouge">kimai</code>)</li>
+  <li>You can use every document name only once: so having <code class="language-plaintext highlighter-rouge">kimai.html.twig</code> and <code class="language-plaintext highlighter-rouge">kimai.docx</code> will lead to unpredictable results (the first file to be found takes precedence)</li>
+  <li>Kimai looks for templates in <code class="language-plaintext highlighter-rouge">var/invoices/</code> first, so you can overwrite default templates</li>
+  <li>You should store your templates in <code class="language-plaintext highlighter-rouge">var/invoices/</code>, as this directory is not shipped with Kimai and not touched during updates</li>
+  <li>You can configure different search directories through the config key <code class="language-plaintext highlighter-rouge">kimai.invoice.documents</code> if you want to add additional template source directories</li>
+  <li>You can hide the default templates by setting the key <code class="language-plaintext highlighter-rouge">kimai.invoice.defaults</code> to an empty array / null</li>
+  <li>New or updated templates can be uploaded via the UI</li>
+</ul>
+
+<div class="alert d-flex alert-warning" role="alert">
+    <i class="bx bx-fas fa-exclamation lead me-3"></i>
+    <div>
+        Do NOT change the default templates, but copy the file and save it (with a new filename) at var/invoices/
+    </div>
+</div>
+
+<p>After you changed an invoice template, you have to <a href="/documentation/cache.html">clear the cache</a> to see the results:</p>
+
+<p>You can have a look at <a href="https://github.com/Keleo/kimai2-invoice-templates">https://github.com/Keleo/kimai2-invoice-templates</a> to get some inspirations.</p>
+
+<h4 id="configure-search-path">Configure search path</h4>
+
+<p>An example configuration in <a href="/documentation/local-yaml.html">local.yaml</a> might look like this (this shouldn’t be necessary in 90% of all use-cases):</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">kimai</span><span class="pi">:</span>
+    <span class="na">invoice</span><span class="pi">:</span>
+        <span class="c1"># disable the default locations </span>
+        <span class="na">defaults</span><span class="pi">:</span> <span class="s">~</span>
+        <span class="c1"># add a new search location</span>
+        <span class="na">documents</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s1">'</span><span class="s">var/my_invoices/'</span>
+</code></pre></div></div>
+
+<h3 id="uploading-invoice-documents">Uploading invoice documents</h3>
+
+<p>Sine Kimai 1.8 you can upload invoice documents via the UI at <code class="language-plaintext highlighter-rouge">/en/invoice/document_upload</code>.</p>
+
+<p>Due to security restriction currently only the upload of the following formats is allowed: <code class="language-plaintext highlighter-rouge">DOCX</code>, <code class="language-plaintext highlighter-rouge">ODS</code>, <code class="language-plaintext highlighter-rouge">XLSX</code>.</p>
+
+<p>There is a known bug in LibreOffice which exports DOCX files with a wrong mime-type. These files will not be accepted 
+by Kimai with the error <code class="language-plaintext highlighter-rouge">This file type is not allowed</code> (<a href="https://github.com/kimai/kimai/issues/1916">read this issue</a> for more information). 
+The workaround is to change the document with another word processor: Apple pages, Google Drive and Microsoft 365 Online Office will export the DOCX files with the correct mimetype.</p>
+
+<h3 id="twig-templates">Twig templates</h3>
+
+<p>Generally speaking, you should use only the variable <code class="language-plaintext highlighter-rouge">model</code> in your template which is an instance of <code class="language-plaintext highlighter-rouge">App\Model\InvoiceModel</code>.</p>
+
+<p>Please see the <a href="https://github.com/kimai/kimai/blob/main/templates/invoice/renderer">default templates</a> at 
+GitHub to find out which variables can be used.</p>
+
+<p>Want to include an image in your template? Use the <code class="language-plaintext highlighter-rouge">asset</code> tag for referencing relative URLs (this example points to the directory <code class="language-plaintext highlighter-rouge">public/images/my-logo.png</code>):</p>
+
+<div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"</span><span class="cp">{{</span> <span class="nv">asset</span><span class="p">(</span><span class="s1">'images/my-logo.png'</span><span class="p">)</span> <span class="cp">}}</span><span class="s">"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>But the safest way is to host your images on your own domain:</p>
+
+<div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://www.example.com/images/my-logo.png"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>Want to include a file in your template? 
+Use the twig include feature with the <code class="language-plaintext highlighter-rouge">@invoice</code> namespace . The following example references the file <code class="language-plaintext highlighter-rouge">bar.html.twig</code> in <code class="language-plaintext highlighter-rouge">var/invoices/foo/</code>:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% include '@invoice/foo/bar.html.twig' %}
+</code></pre></div></div>
+
+<h3 id="pdf-templates">PDF templates</h3>
+
+<p>PDF invoice templates are available since Kimai 1.9.</p>
+
+<p>These are basically the same as Twig templates. But the resulting HTML is processed by the <a href="https://mpdf.github.io">MPdf library</a>, 
+which will convert the HTML &amp; CSS to PDF.</p>
+
+<h3 id="docx-templates">Docx templates</h3>
+
+<p>Docx templates are processed by <a href="https://github.com/PHPOffice/PHPWord">PHPWord</a> and its <code class="language-plaintext highlighter-rouge">TemplateProcessor</code>.</p>
+
+<p><strong>Important:</strong> You have to add one of the variables - either <code class="language-plaintext highlighter-rouge">${entry.description}</code> or <code class="language-plaintext highlighter-rouge">${entry.row}</code> - in one table row, 
+otherwise the records will not be rendered (but only the global values)!</p>
+
+<p>The row containing this variable will be cloned for every included (timesheet) record.</p>
+
+<p>If you do not use <code class="language-plaintext highlighter-rouge">${entry.description}</code> then a fallback for <code class="language-plaintext highlighter-rouge">${entry.row}</code> is used and will be removed in the rendering process, 
+it will not show up in the generated invoice.</p>
+
+<p>See below in <code class="language-plaintext highlighter-rouge">Template variables</code> to find out which variables you can use in your template.</p>
+
+<p>Find out more about PHPWord templates <a href="https://phpword.readthedocs.io/en/latest/templates-processing.html">here</a>.</p>
+
+<h3 id="spreadsheets-ods-xlsx-and-csv">Spreadsheets (ODS, XLSX and CSV)</h3>
+
+<p>Spreadsheet templates are powered by <a href="https://github.com/PHPOffice/PhpSpreadsheet">PhpSpreadsheet</a>.</p>
+
+<p><strong>Important:</strong> within the first 100 rows you MUST-HAVE the template row for timesheet entries, which means there must be 
+a value starting with <code class="language-plaintext highlighter-rouge">${entry.</code> in one of the first 10 columns, otherwise no timesheet records will be rendered!</p>
+
+<p><em>Check the default templates if that doesn’t make sense to you ;-)</em></p>
+
+<p>This row will then be cloned for every timesheet entry.</p>
+
+<p>See below in <code class="language-plaintext highlighter-rouge">Template variables</code> to find out which variables you can use.</p>
+
+<h2 id="template-variables">Template variables</h2>
+
+<p>Be aware, that the following list of variables is only working for the “document” based formats, but NOT for twig templates. 
+Twig templates are rendered actively, it is up to the developer to calculate what is needed.</p>
+
+<h3 id="global-variables">Global variables</h3>
+
+<p>The documents which are rendered passively (ODS, XLSX, CSV, DOCX) can use the following global variables:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>${invoice.due_date}</td>
+      <td>The due date for the invoice payment</td>
+    </tr>
+    <tr>
+      <td>${invoice.date}</td>
+      <td>The creation date of this invoice</td>
+    </tr>
+    <tr>
+      <td>${invoice.number}</td>
+      <td>The generated invoice number</td>
+    </tr>
+    <tr>
+      <td>${invoice.currency}</td>
+      <td>The invoice currency</td>
+    </tr>
+    <tr>
+      <td>${invoice.currency_symbol}</td>
+      <td>The invoice currency as symbol (if available)</td>
+    </tr>
+    <tr>
+      <td>${invoice.total_time}</td>
+      <td>The total working time (entries with a fixed rate are always calculated with 1)</td>
+    </tr>
+    <tr>
+      <td>${invoice.duration_decimal}</td>
+      <td>The total working time as decimal value</td>
+    </tr>
+    <tr>
+      <td>${invoice.language}</td>
+      <td>The invoices language as two character code (since 1.9)</td>
+    </tr>
+    <tr>
+      <td>${invoice.total}</td>
+      <td>The invoices total (including tax) with currency</td>
+    </tr>
+    <tr>
+      <td>${invoice.total_nc}</td>
+      <td>The invoices total (including tax) without currency (since 1.6)</td>
+    </tr>
+    <tr>
+      <td>${invoice.total_plain}</td>
+      <td>The invoices total (including tax) as unformatted value (since 1.6.2)</td>
+    </tr>
+    <tr>
+      <td>${invoice.subtotal}</td>
+      <td>The invoices subtotal (excluding tax) with currency</td>
+    </tr>
+    <tr>
+      <td>${invoice.subtotal_nc}</td>
+      <td>The invoices subtotal (excluding tax) without currency (since 1.6)</td>
+    </tr>
+    <tr>
+      <td>${invoice.subtotal_plain}</td>
+      <td>The invoices subtotal (excluding tax) as unformatted value (since 1.6.2)</td>
+    </tr>
+    <tr>
+      <td>${invoice.currency}</td>
+      <td>The invoices currency as string (like EUR or USD)</td>
+    </tr>
+    <tr>
+      <td>${invoice.vat}</td>
+      <td>The VAT in percent for this invoice</td>
+    </tr>
+    <tr>
+      <td>${invoice.tax}</td>
+      <td>The tax of the invoice amount with currency</td>
+    </tr>
+    <tr>
+      <td>${invoice.tax_nc}</td>
+      <td>The tax of the invoice amount without currency (since 1.6)</td>
+    </tr>
+    <tr>
+      <td>${invoice.tax_plain}</td>
+      <td>The tax of the invoice amount as unformatted value (since 1.6.2)</td>
+    </tr>
+    <tr>
+      <td>${template.name}</td>
+      <td>The invoice name, as configured in your template</td>
+    </tr>
+    <tr>
+      <td>${template.company}</td>
+      <td>The company name, as configured in your template</td>
+    </tr>
+    <tr>
+      <td>${template.address}</td>
+      <td>The invoicing address, as configured in your template</td>
+    </tr>
+    <tr>
+      <td>${template.title}</td>
+      <td>The invoice title, as configured in your template</td>
+    </tr>
+    <tr>
+      <td>${template.payment_terms}</td>
+      <td>Your payment terms, might be multiple lines</td>
+    </tr>
+    <tr>
+      <td>${template.due_days}</td>
+      <td>The amount of days for the payment, starting with the day of creating the invoice</td>
+    </tr>
+    <tr>
+      <td>${template.vat_id}</td>
+      <td>The Vat ID for this invoice (since 1.6)</td>
+    </tr>
+    <tr>
+      <td>${template.contact}</td>
+      <td>Extended contact information, might be multiple lines (since 1.6)</td>
+    </tr>
+    <tr>
+      <td>${template.payment_details}</td>
+      <td>Extended payment details like bank accounts, might be multiple lines (since 1.6)</td>
+    </tr>
+    <tr>
+      <td>${query.begin}</td>
+      <td>The query begin as formatted short date</td>
+    </tr>
+    <tr>
+      <td>${query.end}</td>
+      <td>The query end as formatted short date</td>
+    </tr>
+    <tr>
+      <td>${query.month}</td>
+      <td>The month for this query (begin date) <strong>DEPRECATED</strong>
+</td>
+    </tr>
+    <tr>
+      <td>${query.month_number}</td>
+      <td>The numerical value for the month (with leading zero) <strong>DEPRECATED</strong>
+</td>
+    </tr>
+    <tr>
+      <td>${query.day}</td>
+      <td>The day for the queries begin as numerical value with leading zero <strong>DEPRECATED</strong>
+</td>
+    </tr>
+    <tr>
+      <td>${query.year}</td>
+      <td>The year for this query (begin date) <strong>DEPRECATED</strong>
+</td>
+    </tr>
+    <tr>
+      <td>${query.begin_month}</td>
+      <td>The month for the queries begin date (since 1.9)</td>
+    </tr>
+    <tr>
+      <td>${query.begin_month_number}</td>
+      <td>The numerical value for the month of the queries begin date with leading zero (since 1.9)</td>
+    </tr>
+    <tr>
+      <td>${query.begin_day}</td>
+      <td>The day for the queries begin as numerical value with leading zero (since 1.9)</td>
+    </tr>
+    <tr>
+      <td>${query.begin_year}</td>
+      <td>The year for the queries begin date (since 1.9)</td>
+    </tr>
+    <tr>
+      <td>${query.end_month}</td>
+      <td>The month for the queries end date (since 1.9)</td>
+    </tr>
+    <tr>
+      <td>${query.end_month_number}</td>
+      <td>The numerical value for the month of the queries end date with leading zero (since 1.9)</td>
+    </tr>
+    <tr>
+      <td>${query.end_day}</td>
+      <td>The day for the queries end as numerical value with leading zero (since 1.9)</td>
+    </tr>
+    <tr>
+      <td>${query.end_year}</td>
+      <td>The year for the queries end date (since 1.9)</td>
+    </tr>
+    <tr>
+      <td>${user.name}</td>
+      <td>The current users name</td>
+    </tr>
+    <tr>
+      <td>${user.email}</td>
+      <td>The current users email</td>
+    </tr>
+    <tr>
+      <td>${user.alias}</td>
+      <td>The current users alias</td>
+    </tr>
+    <tr>
+      <td>${user.title}</td>
+      <td>The current users title</td>
+    </tr>
+    <tr>
+      <td>${user.meta.X}</td>
+      <td>The current users <a href="/documentation/user-preferences.html">preference</a> named <code class="language-plaintext highlighter-rouge">X</code>
+</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="customer-variables">Customer variables</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>${customer.id}</td>
+      <td>The customer ID</td>
+    </tr>
+    <tr>
+      <td>${customer.address}</td>
+      <td>The customer address</td>
+    </tr>
+    <tr>
+      <td>${customer.name}</td>
+      <td>The customer name</td>
+    </tr>
+    <tr>
+      <td>${customer.contact}</td>
+      <td>The customer contact</td>
+    </tr>
+    <tr>
+      <td>${customer.company}</td>
+      <td>The customer company</td>
+    </tr>
+    <tr>
+      <td>${customer.vat}</td>
+      <td>The customer Vat ID</td>
+    </tr>
+    <tr>
+      <td>${customer.number}</td>
+      <td>The customer number</td>
+    </tr>
+    <tr>
+      <td>${customer.country}</td>
+      <td>The customer country</td>
+    </tr>
+    <tr>
+      <td>${customer.homepage}</td>
+      <td>The customer homepage</td>
+    </tr>
+    <tr>
+      <td>${customer.comment}</td>
+      <td>The customer comment</td>
+    </tr>
+    <tr>
+      <td>${customer.phone}</td>
+      <td>The customers phone number (since 1.9)</td>
+    </tr>
+    <tr>
+      <td>${customer.mobile}</td>
+      <td>The customers mobile number (since 1.9)</td>
+    </tr>
+    <tr>
+      <td>${customer.email}</td>
+      <td>The customers email address (since 1.9)</td>
+    </tr>
+    <tr>
+      <td>${customer.fax}</td>
+      <td>The customers fax number (since 1.9)</td>
+    </tr>
+    <tr>
+      <td>${customer.meta.x}</td>
+      <td>The customer <a href="/documentation/meta-fields.html">meta field</a> named <code class="language-plaintext highlighter-rouge">X</code>. The internal name <code class="language-plaintext highlighter-rouge">X</code> needs to be used in lowercase letters, eg. <code class="language-plaintext highlighter-rouge">FooBar</code> will be available as <code class="language-plaintext highlighter-rouge">${customer.meta.foobar}</code>. Only available if the field is visible.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="timesheet-entry-variables">Timesheet entry variables</h3>
+
+<p>For each timesheet entry you can use the variables from the following table.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>${entry.row}</td>
+      <td>An empty string, used as template row for docx</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>${entry.description}</td>
+      <td>The entries description</td>
+      <td><em>foo bar</em></td>
+    </tr>
+    <tr>
+      <td>${entry.amount}</td>
+      <td>The format duration/amount for this entry</td>
+      <td>02:47 h</td>
+    </tr>
+    <tr>
+      <td>${entry.rate}</td>
+      <td>The rate for one unit of the entry (normally one hour) with currency</td>
+      <td>1.100,01 EUR</td>
+    </tr>
+    <tr>
+      <td>${entry.rate_nc}</td>
+      <td>The rate for one unit of the entry without currency (since 1.6)</td>
+      <td>1100,01</td>
+    </tr>
+    <tr>
+      <td>${entry.rate_plain}</td>
+      <td>The rate for one unit of the entry as unformatted value (since 1.6.2)</td>
+      <td>1100.01</td>
+    </tr>
+    <tr>
+      <td>${entry.total}</td>
+      <td>The total rate for this entry with currency</td>
+      <td>1.278,33 EUR</td>
+    </tr>
+    <tr>
+      <td>${entry.total_nc}</td>
+      <td>The total rate for this entry without currency (since 1.6)</td>
+      <td>1.278,33</td>
+    </tr>
+    <tr>
+      <td>${entry.total_plain}</td>
+      <td>The total rate as unformatted value (since 1.6.2)</td>
+      <td>1278.33</td>
+    </tr>
+    <tr>
+      <td>${entry.currency}</td>
+      <td>The currency for this record as string (like EUR or USD)</td>
+      <td>EUR</td>
+    </tr>
+    <tr>
+      <td>${entry.duration}</td>
+      <td>The duration in seconds</td>
+      <td>10020</td>
+    </tr>
+    <tr>
+      <td>${entry.duration_decimal}</td>
+      <td>The duration in decimal format (with localized separator)</td>
+      <td>2.78</td>
+    </tr>
+    <tr>
+      <td>${entry.duration_minutes}</td>
+      <td>The duration in minutes with no decimals</td>
+      <td>167</td>
+    </tr>
+    <tr>
+      <td>${entry.begin}</td>
+      <td>The begin date (format depends on the users language)</td>
+      <td>27.10.2018</td>
+    </tr>
+    <tr>
+      <td>${entry.begin_time}</td>
+      <td>The formatted time for the begin of this entry</td>
+      <td>14:57</td>
+    </tr>
+    <tr>
+      <td>${entry.begin_timestamp}</td>
+      <td>The timestamp for the begin of this entry</td>
+      <td>1542016273</td>
+    </tr>
+    <tr>
+      <td>${entry.end}</td>
+      <td>The begin date  (format depends on the users language)</td>
+      <td>27.10.2018</td>
+    </tr>
+    <tr>
+      <td>${entry.end_time}</td>
+      <td>The formatted time for the end of this entry</td>
+      <td>17:44</td>
+    </tr>
+    <tr>
+      <td>${entry.end_timestamp}</td>
+      <td>The timestamp for the end of this entry</td>
+      <td>1542016273</td>
+    </tr>
+    <tr>
+      <td>${entry.date}</td>
+      <td>The start date when this record was created</td>
+      <td>27.10.2018</td>
+    </tr>
+    <tr>
+      <td>${entry.week}</td>
+      <td>The start week number when this record was created (since 1.10)</td>
+      <td>39</td>
+    </tr>
+    <tr>
+      <td>${entry.weekyear}</td>
+      <td>The corresponding year to the week number (since 1.10)</td>
+      <td>2018</td>
+    </tr>
+    <tr>
+      <td>${entry.user_id}</td>
+      <td>The user ID</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>${entry.user_name}</td>
+      <td>The username</td>
+      <td>susan_super</td>
+    </tr>
+    <tr>
+      <td>${entry.user_alias}</td>
+      <td>The user alias</td>
+      <td>Susan Miller</td>
+    </tr>
+    <tr>
+      <td>${entry.activity}</td>
+      <td>Activity name</td>
+      <td>Post production</td>
+    </tr>
+    <tr>
+      <td>${entry.activity_id}</td>
+      <td>Activity ID</td>
+      <td>124</td>
+    </tr>
+    <tr>
+      <td>${entry.project}</td>
+      <td>Project name</td>
+      <td>Nemesis</td>
+    </tr>
+    <tr>
+      <td>${entry.project_id}</td>
+      <td>Project ID</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>${entry.customer}</td>
+      <td>Customer name</td>
+      <td>Acme Studios</td>
+    </tr>
+    <tr>
+      <td>${entry.customer_id}</td>
+      <td>Customer ID</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>${entry.meta.X}</td>
+      <td>The <a href="/documentation/meta-fields.html">meta field</a> named <code class="language-plaintext highlighter-rouge">X</code> (if visible)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>${entry.type}</td>
+      <td>The type of this entry (plugins can add custom types)</td>
+      <td>timesheet</td>
+    </tr>
+    <tr>
+      <td>${entry.category}</td>
+      <td>The category of this entry (plugins can add custom types)</td>
+      <td>work</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="project-variables">Project variables</h3>
+
+<p>If a project was selected in the invoice filter (search form) the following variables exist as well:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>${project.id}</td>
+      <td>The project ID</td>
+    </tr>
+    <tr>
+      <td>${project.name}</td>
+      <td>The project name</td>
+    </tr>
+    <tr>
+      <td>${project.comment}</td>
+      <td>The project name</td>
+    </tr>
+    <tr>
+      <td>${project.order_number}</td>
+      <td>The project order number</td>
+    </tr>
+    <tr>
+      <td>${project.start_date}</td>
+      <td>Projects start date-time (since 1.7)</td>
+    </tr>
+    <tr>
+      <td>${project.end_date}</td>
+      <td>Projects end date-time (since 1.7)</td>
+    </tr>
+    <tr>
+      <td>${project.order_date}</td>
+      <td>Projects order date-time (since 1.7)</td>
+    </tr>
+    <tr>
+      <td>${project.budget_money}</td>
+      <td>Projects budget including currency (since 1.7)</td>
+    </tr>
+    <tr>
+      <td>${project.budget_money_nc}</td>
+      <td>The projects budget without currency (since 1.7)</td>
+    </tr>
+    <tr>
+      <td>${project.budget_money_plain}</td>
+      <td>The projects budget as unformatted value (since 1.7)</td>
+    </tr>
+    <tr>
+      <td>${project.budget_time}</td>
+      <td>The projects time-budget as seconds (since 1.7)</td>
+    </tr>
+    <tr>
+      <td>${project.budget_time_decimal}</td>
+      <td>The projects time-budget in decimal format (with localized separator) (since 1.7)</td>
+    </tr>
+    <tr>
+      <td>${project.budget_time_minutes}</td>
+      <td>The projects time-budget in minutes with no decimals (since 1.7)</td>
+    </tr>
+    <tr>
+      <td>${project.meta.x}</td>
+      <td>The project <a href="/documentation/meta-fields.html">meta field</a> named <code class="language-plaintext highlighter-rouge">X</code>. The internal name <code class="language-plaintext highlighter-rouge">X</code> needs to be used in lowercase letters, eg. <code class="language-plaintext highlighter-rouge">FooBar</code> will be available as <code class="language-plaintext highlighter-rouge">${project.meta.foobar}</code>. Only available if the field is visible.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>If you selected more than one project in the search, you will have further variables called <code class="language-plaintext highlighter-rouge">${project.1.X}</code>, <code class="language-plaintext highlighter-rouge">${project.2.X}</code> and so on.
+The order is not guaranteed, so it is not recommended to rely on those variables.</p>
+
+<h3 id="activity-variables">Activity variables</h3>
+
+<p>If an activity was selected in the invoice filter (search form) the following variables exist as well:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>${activity.id}</td>
+      <td>The activity ID</td>
+    </tr>
+    <tr>
+      <td>${activity.name}</td>
+      <td>The activity name</td>
+    </tr>
+    <tr>
+      <td>${activity.comment}</td>
+      <td>The activity name</td>
+    </tr>
+    <tr>
+      <td>${activity.meta.x}</td>
+      <td>The activity <a href="/documentation/meta-fields.html">meta field</a> named <code class="language-plaintext highlighter-rouge">X</code>. The internal name <code class="language-plaintext highlighter-rouge">X</code> needs to be used in lowercase letters, eg. <code class="language-plaintext highlighter-rouge">FooBar</code> will be available as <code class="language-plaintext highlighter-rouge">${activity.meta.foobar}</code>. Only available if the field is visible.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>If you selected more than one project in the search, you will have further variables called <code class="language-plaintext highlighter-rouge">${activity.1.X}</code>, <code class="language-plaintext highlighter-rouge">${activity.2.X}</code> and so on.
+The order is not guaranteed, so it is not recommended to rely on those variables.</p>
+
+<h2 id="create-invoices-with-cronjobs">Create invoices with cronjobs</h2>
+
+<p>Since 1.9 Kimai comes with a new command, which allows you to create invoices from the command line.
+When combined with a cronjob, you can automate your invoice creation.</p>
+
+<p>Find all available options with the <code class="language-plaintext highlighter-rouge">--help</code> parameter:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/console kimai:invoice:create <span class="nt">--help</span> 
+</code></pre></div></div>
+
+<p>This command will create one invoice for every customer which had timesheets in this month.
+The invoice template that will be used is fetched from the customer meta-field <code class="language-plaintext highlighter-rouge">inv_tpl</code> (can be an ID or a template name):</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/console kimai:invoice:create <span class="nt">--user</span><span class="o">=</span>susan_super <span class="nt">--timezone</span><span class="o">=</span>Europe/Berlin <span class="nt">--by-customer</span> <span class="nt">--template-meta</span><span class="o">=</span>inv_tpl 
+</code></pre></div></div>
+
+<p>This command will create one invoice for every project which had timesheets in January 2020.
+The invoice template that will be used for every invoice is <code class="language-plaintext highlighter-rouge">Freelancer (PDF)</code>:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/console kimai:invoice:create <span class="nt">--user</span><span class="o">=</span>susan_super <span class="nt">--timezone</span><span class="o">=</span>UTC <span class="nt">--by-project</span> <span class="nt">--template</span><span class="o">=</span><span class="s2">"Freelancer (PDF)"</span> <span class="nt">--start</span><span class="o">=</span>2020-01-02 <span class="nt">--end</span><span class="o">=</span>2020-01-31
+</code></pre></div></div>
+
+
+
+
+                </div>
+                
+
+                
+            </div>
+        </div>
+
+    </div>
+</main>
+
+
+    <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
+        <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
+        <ul class="nav" id="jumpToNav">
+<li class="nav-item">
+<a href="#invoice-number-format" class="nav-link">Invoice number format</a><ul>
+<li class="nav-item"><a href="#incrementing-the-invoice-counter" class="nav-link">Incrementing the invoice counter</a></li>
+<li class="nav-item"><a href="#decrementing-the-invoice-counter" class="nav-link">Decrementing the invoice counter</a></li>
+<li class="nav-item"><a href="#examples" class="nav-link">Examples</a></li>
+</ul>
+</li>
+<li class="nav-item"><a href="#export-state" class="nav-link">Export state</a></li>
+<li class="nav-item"><a href="#billable-items-only" class="nav-link">Billable items only</a></li>
+<li class="nav-item">
+<a href="#invoice-document" class="nav-link">Invoice document</a><ul>
+<li class="nav-item"><a href="#create-your-own-invoice-document" class="nav-link">Create your own invoice document</a></li>
+<li class="nav-item"><a href="#uploading-invoice-documents" class="nav-link">Uploading invoice documents</a></li>
+<li class="nav-item"><a href="#twig-templates" class="nav-link">Twig templates</a></li>
+<li class="nav-item"><a href="#pdf-templates" class="nav-link">PDF templates</a></li>
+<li class="nav-item"><a href="#docx-templates" class="nav-link">Docx templates</a></li>
+<li class="nav-item"><a href="#spreadsheets-ods-xlsx-and-csv" class="nav-link">Spreadsheets (ODS, XLSX and CSV)</a></li>
+</ul>
+</li>
+<li class="nav-item">
+<a href="#template-variables" class="nav-link">Template variables</a><ul>
+<li class="nav-item"><a href="#global-variables" class="nav-link">Global variables</a></li>
+<li class="nav-item"><a href="#customer-variables" class="nav-link">Customer variables</a></li>
+<li class="nav-item"><a href="#timesheet-entry-variables" class="nav-link">Timesheet entry variables</a></li>
+<li class="nav-item"><a href="#project-variables" class="nav-link">Project variables</a></li>
+<li class="nav-item"><a href="#activity-variables" class="nav-link">Activity variables</a></li>
+</ul>
+</li>
+<li class="nav-item"><a href="#create-invoices-with-cronjobs" class="nav-link">Create invoices with cronjobs</a></li>
+</ul>
+        
+    </aside>
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
+
+</body>
+</html>

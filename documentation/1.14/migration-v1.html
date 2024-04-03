@@ -1,0 +1,780 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index,follow">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+    <title>Upgrade to Kimai 2 from v1</title>
+    
+        <meta name="description" content="Install Kimai 2 and import your existing timesheet data from Kimai 1">
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kimai Time-Tracking">
+    <meta property="og:description" content="Install Kimai 2 and import your existing timesheet data from Kimai 1">
+    <meta property="og:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kimai Time-Tracking">
+    <meta name="twitter:site" content="@kimai_org">
+    <meta name="twitter:description" content="Install Kimai 2 and import your existing timesheet data from Kimai 1">
+    <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <link rel="canonical" href="https://www.kimai.org/documentation/migration-v1.html" />
+    <script src="/assets/build/theme.js"></script>
+    <link href="/assets/build/main.css" rel="stylesheet" />
+</head>
+<body class="">
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand bg-light border-bottom border-light shadow fixed-top" data-scroll-header>
+    <div class="container-fluid pe-lg-4">
+        <div class="d-flex align-items-center">
+            <a href="/documentation/" class="navbar-brand flex-shrink-0 py-1 py-lg-2">
+                <img src="/images/apple-touch-icon.png" width="47" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning">Self-hosted</span>
+        </div>
+        <div class="d-flex align-items-center w-100">
+            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 9.75rem;">
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-manual.html" class="nav-link">
+                            <i class="bx bx-book opacity-70 fs-lg me-1"></i>
+                            User manual
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/cloud.html" class="nav-link">
+                            <i class="bx bxs-cloud opacity-70 fs-lg me-1"></i>
+                            Kimai-Cloud
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/developers.html" class="nav-link">
+                            <i class="bx bx-code opacity-70 fs-lg me-1"></i>
+                            Developer
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-on-premise.html" class="nav-link">
+                            <i class="bx bx-wrench opacity-70 fs-lg me-1"></i>
+                            Self-hosted
+                        </a>
+                    </li>
+                
+            </ul>
+            <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="form-check form-switch mode-switch pe-lg-1 ms-lg-auto" data-bs-toggle="mode">
+                <input type="checkbox" class="form-check-input" id="theme-mode">
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Light</label>
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Dark</label>
+            </div>
+        </div>
+    </div>
+</header>
+
+<aside data-bs-theme="dark">
+    <div id="componentsNav" class="offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100 bg-dark border-end-lg" style="width: 21rem; z-index: 1045;">
+        <div class="offcanvas-header d-none d-lg-flex justify-content-start">
+            <a href="/documentation/" class="navbar-brand text-dark d-none d-lg-flex py-0">
+                <img src="/images/apple-touch-icon.png" width="32" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning d-none d-lg-inline-block">Self-hosted</span>
+        </div>
+        <div class="offcanvas-header d-block d-lg-none border-bottom">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <h5 class="d-lg-none mb-0">Menu</h5>
+                <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#componentsNav" aria-label="Close"></button>
+            </div>
+            <div class="list-group list-group-flush mx-n4">
+                
+                    
+                    
+                    <a href="/documentation/chapter-manual.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-book opacity-70 me-1"></i>
+                        User manual
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/cloud.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bxs-cloud opacity-70 me-1"></i>
+                        Kimai-Cloud
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/developers.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-code opacity-70 me-1"></i>
+                        Developer
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/chapter-on-premise.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-wrench opacity-70 me-1"></i>
+                        Self-hosted
+                    </a>
+                
+            </div>
+        </div>
+        <div class="offcanvas-body swiper scrollbar-hover overflow-hidden w-100 p-4" data-swiper-options='{
+          "direction": "vertical",
+          "slidesPerView": "auto",
+          "freeMode": true,
+          "scrollbar": {
+            "el": ".swiper-scrollbar"
+          },
+          "mousewheel": true
+        }'>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide h-auto">
+                    
+                        
+
+    
+    
+    <h3 class="fs-lg">Installation & Updates</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/installation.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Installation
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/updates.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Updates
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/shared-hosting.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Shared hosting
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/hosting-1-click.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                1-click installations
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/cache.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Reloading cache
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-management.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Plugins
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/webserver-configuration.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Webserver
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/fresh-ubuntu-22.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Ubuntu 22.04
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/synology.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Synology NAS
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">Docker</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/docker.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Docker
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/docker-compose.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Docker Compose
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/kubernetes.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Kubernetes
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/docker-updates.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Updating docker
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/building-docker.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Build your image
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/docker-troubleshooting.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Troubleshooting
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">DevOps</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/backups.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Backups
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/local-yaml.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Configuration files
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/emails.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Emails
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/logging.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Logging
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/commands.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Commands
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/faq-onpremise.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                FAQ
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/migration-v1.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4  active">
+                
+                Migrate from Kimai v1
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/versions.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Kimai versions
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">Authenticator</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/ldap.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                LDAP
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/saml.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                SAML
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/saml-azure.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Azure SAML
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/saml-google.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Google SAML
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/saml-keycloak.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Keycloak SAML
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/saml-authentik.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Authentik SAML
+                
+            </a>
+        
+    
+    </div>
+
+
+                        <div class="list-group list-group-flush pb-3 mb-4 mx-n4">
+                    
+                    <a href="/" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Home</a>
+                    <a href="/en/site-notice.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Site notice</a>
+                    <a href="/en/privacy-policy.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Privacy policy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-scrollbar end-0"></div>
+        </div>
+    </div>
+</aside>
+
+<main class="docs-container pt-5">
+    <div class="container-fluid px-xxl-5 px-lg-4 pt-4 pt-lg-5 pb-2 pb-lg-4">
+
+        <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 pt-4 mb-n3">
+            <div class="me-4">
+                <h1 class="pb-1">Upgrade to Kimai 2 from v1</h1>
+                
+                <p class="text-muted fs-lg mb-2">Install Kimai 2 and import your existing timesheet data from Kimai 1</p>
+                
+            </div>
+            
+
+
+
+
+    <div class="dropdown">
+        <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Older versions
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+            
+            <a class="dropdown-item" href="/documentation/1.14/migration-v1.html">Kimai 1.14</a>
+            
+            <a class="dropdown-item" href="/documentation/migration-v1.html">2.13.0 (latest version)</a>
+        </div>
+    </div>
+
+
+        </div>
+
+        <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+            <div>
+                
+                <div id="documentation-content">
+                    
+
+
+
+<div class="alert alert-danger" role="alert">
+    
+You are viewing an older version of this documentation page. A newer version is available <a href="/documentation/migration-v1.html">here</a>.
+
+</div>
+
+
+
+<p>This documentation covers all necessary steps to migrate from Kimai 1 to Kimai 2.</p>
+
+<div class="alert d-flex alert-success" role="alert">
+    <i class="bx bx-fas fa-shipping-fast lead me-3"></i>
+    <div>
+        
+You can <a href="/store/installation-support.html">get professional support</a> if you are not sure about performing the upgrade yourself. 
+
+    </div>
+</div>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Before starting with the migration, please read the following FAQs:</p>
+
+<ul>
+  <li>Data from the existing v1 installation is only read and will never be changed</li>
+  <li>Data can only be imported from a Kimai installation with at least <code class="language-plaintext highlighter-rouge">v1.0.1</code> and database revision <code class="language-plaintext highlighter-rouge">1388</code> (check your <code class="language-plaintext highlighter-rouge">configuration</code> table)</li>
+  <li>User-specific rates are not yet supported in Kimai 2, but
+    <ul>
+      <li>fixed-rates and hourly-rates for projects and activities are imported</li>
+      <li>fixed-rates and hourly-rates and total rate for timesheet entries are imported</li>
+    </ul>
+  </li>
+  <li>Customers in Kimai 2
+    <ul>
+      <li>are only used for recording, they cannot login and no user accounts will be created for them</li>
+      <li>have a country code, which can be set during import or edited afterwards (Kimai v1 doesn’t know the country)</li>
+      <li>have a currency code, which can be set during import or edited afterwards (Kimai v1 only knows one global currency)</li>
+    </ul>
+  </li>
+  <li>You have to supply a default password, which will be used for every imported user(!)
+    <ul>
+      <li>due to security issues we cannot import the original passwords</li>
+      <li>let your users reset it afterwards with the <a href="/documentation/users.html">Password reset</a> function</li>
+    </ul>
+  </li>
+  <li>The import will fail, if a user from v1 has either an empty email OR the same email is used for multiple users</li>
+  <li>Data which was deleted in Kimai v1 (user, customer, projects, activities) will be imported and set to <code class="language-plaintext highlighter-rouge">invisible</code>
+    <ul>
+      <li>if you don’t want that, you have to delete all entries that have the value <code class="language-plaintext highlighter-rouge">1</code> in the <code class="language-plaintext highlighter-rouge">trash</code> column before importing</li>
+    </ul>
+  </li>
+  <li>Groups import
+    <ul>
+      <li>The import will skip groups that have no members.</li>
+      <li>The import will always assign a teamlead to the project. If none of the users in Kimai v1 was assigned as the teamlead, the first member of the group is assigned as teamlead during import.</li>
+      <li>The groups that were trashed in Kimai v1 are not imported into Kimai 2 as hidden/trashed teams are not supported.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="install-kimai">Install Kimai</h2>
+
+<p>You have to install Kimai, please read the <a href="/documentation/installation.html">documentation</a> first.
+You can install it on the same server, but remember that you have to meet the server requirements (see <a href="/en/download.html">downloads page</a>).</p>
+
+<p>After Kimai 2 runs properly, the actual <em>migration</em> takes place, by importing the data from your Kimai 1 database into Kimai 2.
+You have to have SSH access to your server, as you will use a command shipped with Kimai 2, which will pull the data into the configured database from your <code class="language-plaintext highlighter-rouge">.env</code> file.</p>
+
+<p>The database does not have to be on the same server and the database user (for the Kimai 1 tables) needs only read access.</p>
+
+<h2 id="database-import">Database import</h2>
+
+<div class="alert alert-warning" role="alert">
+    It is strongly recommended to test the import, as unexpected problems may occur. If you already created data (like users and customers), backup your Kimai 2 database before performing the first tests!
+</div>
+
+<p>See the help for the import command and all its arguments by executing:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/console kimai:import <span class="nt">--help</span>
+</code></pre></div></div>
+
+<p>A full command could look like this:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/console kimai:import-v1 <span class="nt">--global</span> <span class="nt">--timezone</span><span class="o">=</span><span class="s2">"timezone"</span> <span class="nt">--language</span><span class="o">=</span><span class="s2">"language"</span> <span class="s2">"mysql://user:password@127.0.0.1:3306/database?charset=utf8"</span> <span class="s2">"db_prefix"</span> <span class="s2">"password"</span> <span class="s2">"country"</span> <span class="s2">"currency"</span> 
+</code></pre></div></div>
+
+<p>The fields <code class="language-plaintext highlighter-rouge">country</code> and <code class="language-plaintext highlighter-rouge">currency</code> are optional and will be set to DE and EUR if not given.
+The flags <code class="language-plaintext highlighter-rouge">timezone</code> and <code class="language-plaintext highlighter-rouge">language</code> are used for imported users, in case they didn’t set it in Kimai 1 (you should update the preference in Kimai 1 before importing, if you work across different timezones).</p>
+
+<p>It is recommended to test the import in a fresh database. You can test your import as often as you like and fix possible problems in your installation.
+A sample command could look like that:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/console doctrine:schema:drop <span class="nt">--force</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
+bin/console kimai:install <span class="nt">-n</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
+bin/console kimai:import-v1 <span class="nt">--global</span> <span class="nt">--timezone</span><span class="o">=</span><span class="s2">"Europe/Zurich"</span> <span class="nt">--language</span><span class="o">=</span><span class="s2">"ch"</span> <span class="s2">"mysql://kimai:test@127.0.0.1:3306/kimai?charset=latin1"</span> <span class="s2">"kimai_"</span> <span class="s2">"NEW-PASSWORD-1234"</span> <span class="s2">"CH"</span> <span class="s2">"CHF"</span>
+</code></pre></div></div>
+<p>That will drop the configured Kimai database schema and re-create it, before importing the data from the <code class="language-plaintext highlighter-rouge">mysql</code> database at <code class="language-plaintext highlighter-rouge">127.0.0.1</code> on port <code class="language-plaintext highlighter-rouge">3306</code> authenticating the user <code class="language-plaintext highlighter-rouge">kimai</code> with the password <code class="language-plaintext highlighter-rouge">test</code> for import.
+The connection will use the charset <code class="language-plaintext highlighter-rouge">latin1</code> and the default table prefix <code class="language-plaintext highlighter-rouge">kimai_</code> for reading data. Imported users can login with the password <code class="language-plaintext highlighter-rouge">test123</code> and all customer will have the country <code class="language-plaintext highlighter-rouge">CH</code> and the currency <code class="language-plaintext highlighter-rouge">CHF</code> assigned.</p>
+
+<h3 id="problems-and-solution">Problems and solution</h3>
+
+<p>Kimai 1 was written a long time ago, when MySQL was lacking proper UTF8 support and foreign keys (in shared hostings).
+While <a href="/store/installation-support.html">migrating dozens of customers installations</a> I stumbled upon some recurring problems, 
+that can be solved with some SQL commands.</p>
+
+<div class="alert alert-warning" role="alert">
+    Be aware, depending on your Kimai 1 version the field names might be different in the following snippets
+</div>
+
+<h4 id="broken-character">Broken character</h4>
+
+<p>Many Kimai 1 installations have broken special character (like german umlauts or other language specific non-ascii characters) in the database.</p>
+
+<p>This problem does not show up in the frontend og Kimai 1, as the database connection is using a different collation then the database. 
+But you can see these problems, when you query the database directly (eg. with a tool like phpMyAdmin).</p>
+
+<p>You can find these broken entries (mainly timesheet descriptions) with SQL statements like these (in the Kimai 1 database):</p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="nv">`kimai_timeSheet`</span> <span class="k">WHERE</span> <span class="k">comment</span> <span class="k">like</span> <span class="nv">"%Ã¤%"</span><span class="p">;</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="nv">`kimai_timeSheet`</span> <span class="k">WHERE</span> <span class="k">comment</span> <span class="k">like</span> <span class="nv">"%Ã„%"</span><span class="p">;</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="nv">`kimai_timeSheet`</span> <span class="k">WHERE</span> <span class="k">comment</span> <span class="k">like</span> <span class="nv">"%Ã¼%"</span><span class="p">;</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="nv">`kimai_timeSheet`</span> <span class="k">WHERE</span> <span class="k">comment</span> <span class="k">like</span> <span class="nv">"%Ãœ%"</span><span class="p">;</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="nv">`kimai_timeSheet`</span> <span class="k">WHERE</span> <span class="k">comment</span> <span class="k">like</span> <span class="nv">"%Ã¶%"</span><span class="p">;</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="nv">`kimai_timeSheet`</span> <span class="k">WHERE</span> <span class="k">comment</span> <span class="k">like</span> <span class="nv">"%Ã–%"</span><span class="p">;</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="nv">`kimai_timeSheet`</span> <span class="k">WHERE</span> <span class="k">comment</span> <span class="k">like</span> <span class="nv">"%ÃŸ%"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>They are not fixed automatically by Kimai, but changing them is then just a matter of rewriting these SQL queries:</p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">UPDATE</span> <span class="nv">`kimai_timeSheet`</span> <span class="k">SET</span> <span class="k">comment</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="k">comment</span><span class="p">,</span> <span class="nv">"Ã¤"</span><span class="p">,</span> <span class="nv">"ä"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="k">comment</span> <span class="k">like</span> <span class="nv">"%Ã¤%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_timeSheet`</span> <span class="k">SET</span> <span class="k">comment</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="k">comment</span><span class="p">,</span> <span class="nv">"Ã„"</span><span class="p">,</span> <span class="nv">"Ä"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="k">comment</span> <span class="k">like</span> <span class="nv">"%Ã„%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_timeSheet`</span> <span class="k">SET</span> <span class="k">comment</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="k">comment</span><span class="p">,</span> <span class="nv">"Ã¼"</span><span class="p">,</span> <span class="nv">"ü"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="k">comment</span> <span class="k">like</span> <span class="nv">"%Ã¼%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_timeSheet`</span> <span class="k">SET</span> <span class="k">comment</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="k">comment</span><span class="p">,</span> <span class="nv">"Ãœ"</span><span class="p">,</span> <span class="nv">"Ü"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="k">comment</span> <span class="k">like</span> <span class="nv">"%Ãœ%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_timeSheet`</span> <span class="k">SET</span> <span class="k">comment</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="k">comment</span><span class="p">,</span> <span class="nv">"Ã¶"</span><span class="p">,</span> <span class="nv">"ö"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="k">comment</span> <span class="k">like</span> <span class="nv">"%Ã¶%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_timeSheet`</span> <span class="k">SET</span> <span class="k">comment</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="k">comment</span><span class="p">,</span> <span class="nv">"Ã–"</span><span class="p">,</span> <span class="nv">"Ö"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="k">comment</span> <span class="k">like</span> <span class="nv">"%Ã–%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_timeSheet`</span> <span class="k">SET</span> <span class="k">comment</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="k">comment</span><span class="p">,</span> <span class="nv">"ÃŸ"</span><span class="p">,</span> <span class="nv">"ß"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="k">comment</span> <span class="k">like</span> <span class="nv">"%ÃŸ%"</span><span class="p">;</span>
+
+<span class="k">UPDATE</span> <span class="nv">`kimai_timeSheet`</span> <span class="k">SET</span> <span class="n">description</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">description</span><span class="p">,</span> <span class="nv">"Ã¤"</span><span class="p">,</span> <span class="nv">"ä"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">description</span> <span class="k">like</span> <span class="nv">"%Ã¤%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_timeSheet`</span> <span class="k">SET</span> <span class="n">description</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">description</span><span class="p">,</span> <span class="nv">"Ã„"</span><span class="p">,</span> <span class="nv">"Ä"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">description</span> <span class="k">like</span> <span class="nv">"%Ã„%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_timeSheet`</span> <span class="k">SET</span> <span class="n">description</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">description</span><span class="p">,</span> <span class="nv">"Ã¼"</span><span class="p">,</span> <span class="nv">"ü"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">description</span> <span class="k">like</span> <span class="nv">"%Ã¼%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_timeSheet`</span> <span class="k">SET</span> <span class="n">description</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">description</span><span class="p">,</span> <span class="nv">"Ãœ"</span><span class="p">,</span> <span class="nv">"Ü"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">description</span> <span class="k">like</span> <span class="nv">"%Ãœ%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_timeSheet`</span> <span class="k">SET</span> <span class="n">description</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">description</span><span class="p">,</span> <span class="nv">"Ã¶"</span><span class="p">,</span> <span class="nv">"ö"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">description</span> <span class="k">like</span> <span class="nv">"%Ã¶%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_timeSheet`</span> <span class="k">SET</span> <span class="n">description</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">description</span><span class="p">,</span> <span class="nv">"Ã–"</span><span class="p">,</span> <span class="nv">"Ö"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">description</span> <span class="k">like</span> <span class="nv">"%Ã–%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_timeSheet`</span> <span class="k">SET</span> <span class="n">description</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">description</span><span class="p">,</span> <span class="nv">"ÃŸ"</span><span class="p">,</span> <span class="nv">"ß"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">description</span> <span class="k">like</span> <span class="nv">"%ÃŸ%"</span><span class="p">;</span>
+
+<span class="k">UPDATE</span> <span class="nv">`kimai_users`</span> <span class="k">SET</span> <span class="n">name</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nv">"Ã¤"</span><span class="p">,</span> <span class="nv">"ä"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">like</span> <span class="nv">"%Ã¤%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_users`</span> <span class="k">SET</span> <span class="n">name</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nv">"Ã„"</span><span class="p">,</span> <span class="nv">"Ä"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">like</span> <span class="nv">"%Ã„%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_users`</span> <span class="k">SET</span> <span class="n">name</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nv">"Ã¼"</span><span class="p">,</span> <span class="nv">"ü"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">like</span> <span class="nv">"%Ã¼%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_users`</span> <span class="k">SET</span> <span class="n">name</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nv">"Ãœ"</span><span class="p">,</span> <span class="nv">"Ü"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">like</span> <span class="nv">"%Ãœ%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_users`</span> <span class="k">SET</span> <span class="n">name</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nv">"Ã¶"</span><span class="p">,</span> <span class="nv">"ö"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">like</span> <span class="nv">"%Ã¶%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_users`</span> <span class="k">SET</span> <span class="n">name</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nv">"Ã–"</span><span class="p">,</span> <span class="nv">"Ö"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">like</span> <span class="nv">"%Ã–%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_users`</span> <span class="k">SET</span> <span class="n">name</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nv">"ÃŸ"</span><span class="p">,</span> <span class="nv">"ß"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">like</span> <span class="nv">"%ÃŸ%"</span><span class="p">;</span>
+
+<span class="k">UPDATE</span> <span class="nv">`kimai_activities`</span> <span class="k">SET</span> <span class="n">name</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nv">"Ã¤"</span><span class="p">,</span> <span class="nv">"ä"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">like</span> <span class="nv">"%Ã¤%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_activities`</span> <span class="k">SET</span> <span class="n">name</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nv">"Ã„"</span><span class="p">,</span> <span class="nv">"Ä"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">like</span> <span class="nv">"%Ã„%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_activities`</span> <span class="k">SET</span> <span class="n">name</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nv">"Ã¼"</span><span class="p">,</span> <span class="nv">"ü"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">like</span> <span class="nv">"%Ã¼%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_activities`</span> <span class="k">SET</span> <span class="n">name</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nv">"Ãœ"</span><span class="p">,</span> <span class="nv">"Ü"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">like</span> <span class="nv">"%Ãœ%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_activities`</span> <span class="k">SET</span> <span class="n">name</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nv">"Ã¶"</span><span class="p">,</span> <span class="nv">"ö"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">like</span> <span class="nv">"%Ã¶%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_activities`</span> <span class="k">SET</span> <span class="n">name</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nv">"Ã–"</span><span class="p">,</span> <span class="nv">"Ö"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">like</span> <span class="nv">"%Ã–%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_activities`</span> <span class="k">SET</span> <span class="n">name</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nv">"ÃŸ"</span><span class="p">,</span> <span class="nv">"ß"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">like</span> <span class="nv">"%ÃŸ%"</span><span class="p">;</span>
+
+<span class="k">UPDATE</span> <span class="nv">`kimai_projects`</span> <span class="k">SET</span> <span class="n">name</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nv">"Ã¤"</span><span class="p">,</span> <span class="nv">"ä"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">like</span> <span class="nv">"%Ã¤%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_projects`</span> <span class="k">SET</span> <span class="n">name</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nv">"Ã„"</span><span class="p">,</span> <span class="nv">"Ä"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">like</span> <span class="nv">"%Ã„%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_projects`</span> <span class="k">SET</span> <span class="n">name</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nv">"Ã¼"</span><span class="p">,</span> <span class="nv">"ü"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">like</span> <span class="nv">"%Ã¼%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_projects`</span> <span class="k">SET</span> <span class="n">name</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nv">"Ãœ"</span><span class="p">,</span> <span class="nv">"Ü"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">like</span> <span class="nv">"%Ãœ%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_projects`</span> <span class="k">SET</span> <span class="n">name</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nv">"Ã¶"</span><span class="p">,</span> <span class="nv">"ö"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">like</span> <span class="nv">"%Ã¶%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_projects`</span> <span class="k">SET</span> <span class="n">name</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nv">"Ã–"</span><span class="p">,</span> <span class="nv">"Ö"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">like</span> <span class="nv">"%Ã–%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_projects`</span> <span class="k">SET</span> <span class="n">name</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nv">"ÃŸ"</span><span class="p">,</span> <span class="nv">"ß"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">like</span> <span class="nv">"%ÃŸ%"</span><span class="p">;</span>
+
+<span class="k">UPDATE</span> <span class="nv">`kimai_projects`</span> <span class="k">SET</span> <span class="k">comment</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="k">comment</span><span class="p">,</span> <span class="nv">"Ã¤"</span><span class="p">,</span> <span class="nv">"ä"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="k">comment</span> <span class="k">like</span> <span class="nv">"%Ã¤%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_projects`</span> <span class="k">SET</span> <span class="k">comment</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="k">comment</span><span class="p">,</span> <span class="nv">"Ã„"</span><span class="p">,</span> <span class="nv">"Ä"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="k">comment</span> <span class="k">like</span> <span class="nv">"%Ã„%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_projects`</span> <span class="k">SET</span> <span class="k">comment</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="k">comment</span><span class="p">,</span> <span class="nv">"Ã¼"</span><span class="p">,</span> <span class="nv">"ü"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="k">comment</span> <span class="k">like</span> <span class="nv">"%Ã¼%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_projects`</span> <span class="k">SET</span> <span class="k">comment</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="k">comment</span><span class="p">,</span> <span class="nv">"Ãœ"</span><span class="p">,</span> <span class="nv">"Ü"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="k">comment</span> <span class="k">like</span> <span class="nv">"%Ãœ%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_projects`</span> <span class="k">SET</span> <span class="k">comment</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="k">comment</span><span class="p">,</span> <span class="nv">"Ã¶"</span><span class="p">,</span> <span class="nv">"ö"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="k">comment</span> <span class="k">like</span> <span class="nv">"%Ã¶%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_projects`</span> <span class="k">SET</span> <span class="k">comment</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="k">comment</span><span class="p">,</span> <span class="nv">"Ã–"</span><span class="p">,</span> <span class="nv">"Ö"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="k">comment</span> <span class="k">like</span> <span class="nv">"%Ã–%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_projects`</span> <span class="k">SET</span> <span class="k">comment</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="k">comment</span><span class="p">,</span> <span class="nv">"ÃŸ"</span><span class="p">,</span> <span class="nv">"ß"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="k">comment</span> <span class="k">like</span> <span class="nv">"%ÃŸ%"</span><span class="p">;</span>
+
+<span class="k">UPDATE</span> <span class="nv">`kimai_customers`</span> <span class="k">SET</span> <span class="n">name</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nv">"Ã¤"</span><span class="p">,</span> <span class="nv">"ä"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">like</span> <span class="nv">"%Ã¤%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_customers`</span> <span class="k">SET</span> <span class="n">name</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nv">"Ã„"</span><span class="p">,</span> <span class="nv">"Ä"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">like</span> <span class="nv">"%Ã„%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_customers`</span> <span class="k">SET</span> <span class="n">name</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nv">"Ã¼"</span><span class="p">,</span> <span class="nv">"ü"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">like</span> <span class="nv">"%Ã¼%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_customers`</span> <span class="k">SET</span> <span class="n">name</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nv">"Ãœ"</span><span class="p">,</span> <span class="nv">"Ü"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">like</span> <span class="nv">"%Ãœ%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_customers`</span> <span class="k">SET</span> <span class="n">name</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nv">"Ã¶"</span><span class="p">,</span> <span class="nv">"ö"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">like</span> <span class="nv">"%Ã¶%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_customers`</span> <span class="k">SET</span> <span class="n">name</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nv">"Ã–"</span><span class="p">,</span> <span class="nv">"Ö"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">like</span> <span class="nv">"%Ã–%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_customers`</span> <span class="k">SET</span> <span class="n">name</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nv">"ÃŸ"</span><span class="p">,</span> <span class="nv">"ß"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">like</span> <span class="nv">"%ÃŸ%"</span><span class="p">;</span>
+
+<span class="k">UPDATE</span> <span class="nv">`kimai_expenses`</span> <span class="k">SET</span> <span class="n">designation</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">designation</span><span class="p">,</span> <span class="nv">"Ã¤"</span><span class="p">,</span> <span class="nv">"ä"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">designation</span> <span class="k">like</span> <span class="nv">"%Ã¤%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_expenses`</span> <span class="k">SET</span> <span class="n">designation</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">designation</span><span class="p">,</span> <span class="nv">"Ã„"</span><span class="p">,</span> <span class="nv">"Ä"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">designation</span> <span class="k">like</span> <span class="nv">"%Ã„%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_expenses`</span> <span class="k">SET</span> <span class="n">designation</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">designation</span><span class="p">,</span> <span class="nv">"Ã¼"</span><span class="p">,</span> <span class="nv">"ü"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">designation</span> <span class="k">like</span> <span class="nv">"%Ã¼%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_expenses`</span> <span class="k">SET</span> <span class="n">designation</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">designation</span><span class="p">,</span> <span class="nv">"Ãœ"</span><span class="p">,</span> <span class="nv">"Ü"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">designation</span> <span class="k">like</span> <span class="nv">"%Ãœ%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_expenses`</span> <span class="k">SET</span> <span class="n">designation</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">designation</span><span class="p">,</span> <span class="nv">"Ã¶"</span><span class="p">,</span> <span class="nv">"ö"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">designation</span> <span class="k">like</span> <span class="nv">"%Ã¶%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_expenses`</span> <span class="k">SET</span> <span class="n">designation</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">designation</span><span class="p">,</span> <span class="nv">"Ã–"</span><span class="p">,</span> <span class="nv">"Ö"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">designation</span> <span class="k">like</span> <span class="nv">"%Ã–%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_expenses`</span> <span class="k">SET</span> <span class="n">designation</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="n">designation</span><span class="p">,</span> <span class="nv">"ÃŸ"</span><span class="p">,</span> <span class="nv">"ß"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">designation</span> <span class="k">like</span> <span class="nv">"%ÃŸ%"</span><span class="p">;</span>
+
+<span class="k">UPDATE</span> <span class="nv">`kimai_expenses`</span> <span class="k">SET</span> <span class="k">comment</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="k">comment</span><span class="p">,</span> <span class="nv">"Ã¤"</span><span class="p">,</span> <span class="nv">"ä"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="k">comment</span> <span class="k">like</span> <span class="nv">"%Ã¤%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_expenses`</span> <span class="k">SET</span> <span class="k">comment</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="k">comment</span><span class="p">,</span> <span class="nv">"Ã„"</span><span class="p">,</span> <span class="nv">"Ä"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="k">comment</span> <span class="k">like</span> <span class="nv">"%Ã„%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_expenses`</span> <span class="k">SET</span> <span class="k">comment</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="k">comment</span><span class="p">,</span> <span class="nv">"Ã¼"</span><span class="p">,</span> <span class="nv">"ü"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="k">comment</span> <span class="k">like</span> <span class="nv">"%Ã¼%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_expenses`</span> <span class="k">SET</span> <span class="k">comment</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="k">comment</span><span class="p">,</span> <span class="nv">"Ãœ"</span><span class="p">,</span> <span class="nv">"Ü"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="k">comment</span> <span class="k">like</span> <span class="nv">"%Ãœ%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_expenses`</span> <span class="k">SET</span> <span class="k">comment</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="k">comment</span><span class="p">,</span> <span class="nv">"Ã¶"</span><span class="p">,</span> <span class="nv">"ö"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="k">comment</span> <span class="k">like</span> <span class="nv">"%Ã¶%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_expenses`</span> <span class="k">SET</span> <span class="k">comment</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="k">comment</span><span class="p">,</span> <span class="nv">"Ã–"</span><span class="p">,</span> <span class="nv">"Ö"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="k">comment</span> <span class="k">like</span> <span class="nv">"%Ã–%"</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_expenses`</span> <span class="k">SET</span> <span class="k">comment</span> <span class="o">=</span> <span class="k">REPLACE</span><span class="p">(</span><span class="k">comment</span><span class="p">,</span> <span class="nv">"ÃŸ"</span><span class="p">,</span> <span class="nv">"ß"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="k">comment</span> <span class="k">like</span> <span class="nv">"%ÃŸ%"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h4 id="user-accounts-without-email">User accounts without email</h4>
+
+<p>Find and update all users, that have no email address:</p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="nv">`kimai_users`</span> <span class="k">WHERE</span> <span class="n">mail</span> <span class="o">=</span> <span class="s1">''</span> <span class="k">OR</span> <span class="n">mail</span> <span class="k">IS</span> <span class="k">NULL</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="nv">`kimai_users`</span> <span class="k">SET</span> <span class="n">mail</span> <span class="o">=</span> <span class="n">concat</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s1">'@example.com'</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">mail</span> <span class="o">=</span> <span class="s1">''</span> <span class="k">OR</span> <span class="n">mail</span> <span class="k">IS</span> <span class="k">NULL</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h4 id="reset-password-for-testing">Reset password for testing</h4>
+
+<p>Update an account with a new <code class="language-plaintext highlighter-rouge">password</code> in your Kimai 1 database:</p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">UPDATE</span> <span class="nv">`kimai_users`</span> <span class="k">SET</span> <span class="n">password</span> <span class="o">=</span> <span class="n">md5</span><span class="p">(</span><span class="n">concat</span><span class="p">(</span><span class="s1">'your-salt'</span><span class="p">,</span> <span class="s1">'new-password'</span><span class="p">,</span> <span class="s1">'your-salt'</span><span class="p">))</span> <span class="k">WHERE</span> <span class="n">userID</span> <span class="o">=</span> <span class="n">XYZ</span><span class="p">;</span>
+</code></pre></div></div>
+
+
+
+                </div>
+                
+
+                
+            </div>
+        </div>
+
+    </div>
+</main>
+
+
+    <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
+        <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#introduction" class="nav-link">Introduction</a></li><li class="nav-item"><a href="#install-kimai" class="nav-link">Install Kimai</a></li><li class="nav-item"><a href="#database-import" class="nav-link">Database import</a><ul><li class="nav-item"><a href="#problems-and-solution" class="nav-link">Problems and solution</a></li></ul></li></ul>
+        
+    </aside>
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+
+</body>
+</html>

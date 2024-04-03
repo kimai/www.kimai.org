@@ -1,0 +1,920 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index,follow">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+    <title>Settings – Kimai</title>
+    
+        <meta name="description" content="Kimai system configurations">
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kimai Time-Tracking">
+    <meta property="og:description" content="Kimai system configurations">
+    <meta property="og:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kimai Time-Tracking">
+    <meta name="twitter:site" content="@kimai_org">
+    <meta name="twitter:description" content="Kimai system configurations">
+    <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <link rel="canonical" href="https://www.kimai.org/documentation/configurations.html" />
+    <script src="/assets/build/theme.js"></script>
+    <link href="/assets/build/main.css" rel="stylesheet" />
+</head>
+<body class="">
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand bg-light border-bottom border-light shadow fixed-top" data-scroll-header>
+    <div class="container-fluid pe-lg-4">
+        <div class="d-flex align-items-center">
+            <a href="/documentation/" class="navbar-brand flex-shrink-0 py-1 py-lg-2">
+                <img src="/images/apple-touch-icon.png" width="47" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning">User manual</span>
+        </div>
+        <div class="d-flex align-items-center w-100">
+            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 9.75rem;">
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-manual.html" class="nav-link">
+                            <i class="bx bx-book opacity-70 fs-lg me-1"></i>
+                            User manual
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/cloud.html" class="nav-link">
+                            <i class="bx bxs-cloud opacity-70 fs-lg me-1"></i>
+                            Kimai-Cloud
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/developers.html" class="nav-link">
+                            <i class="bx bx-code opacity-70 fs-lg me-1"></i>
+                            Developer
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-on-premise.html" class="nav-link">
+                            <i class="bx bx-wrench opacity-70 fs-lg me-1"></i>
+                            Self-hosted
+                        </a>
+                    </li>
+                
+            </ul>
+            <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="form-check form-switch mode-switch pe-lg-1 ms-lg-auto" data-bs-toggle="mode">
+                <input type="checkbox" class="form-check-input" id="theme-mode">
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Light</label>
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Dark</label>
+            </div>
+        </div>
+    </div>
+</header>
+
+<aside data-bs-theme="dark">
+    <div id="componentsNav" class="offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100 bg-dark border-end-lg" style="width: 21rem; z-index: 1045;">
+        <div class="offcanvas-header d-none d-lg-flex justify-content-start">
+            <a href="/documentation/" class="navbar-brand text-dark d-none d-lg-flex py-0">
+                <img src="/images/apple-touch-icon.png" width="32" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning d-none d-lg-inline-block">User manual</span>
+        </div>
+        <div class="offcanvas-header d-block d-lg-none border-bottom">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <h5 class="d-lg-none mb-0">Menu</h5>
+                <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#componentsNav" aria-label="Close"></button>
+            </div>
+            <div class="list-group list-group-flush mx-n4">
+                
+                    
+                    
+                    <a href="/documentation/chapter-manual.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-book opacity-70 me-1"></i>
+                        User manual
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/cloud.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bxs-cloud opacity-70 me-1"></i>
+                        Kimai-Cloud
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/developers.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-code opacity-70 me-1"></i>
+                        Developer
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/chapter-on-premise.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-wrench opacity-70 me-1"></i>
+                        Self-hosted
+                    </a>
+                
+            </div>
+        </div>
+        <div class="offcanvas-body swiper scrollbar-hover overflow-hidden w-100 p-4" data-swiper-options='{
+          "direction": "vertical",
+          "slidesPerView": "auto",
+          "freeMode": true,
+          "scrollbar": {
+            "el": ".swiper-scrollbar"
+          },
+          "mousewheel": true
+        }'>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide h-auto">
+                    
+                        
+
+    
+    
+    <h3 class="fs-lg">Using Kimai</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/timesheet.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Timesheet
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/weekly-times.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Weekly working hours
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/calendar.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Calendar
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/invoices.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Invoices
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/export.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Export
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/reporting.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Reporting
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/customer.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Customer
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/project.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Projects
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/activity.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Activities
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/tags.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Tags
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/users.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Users
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/user-preferences.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                User preferences
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/permissions.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Roles & Permissions
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/teams.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Teams
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/configurations.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4  active">
+                
+                Settings
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/doctor.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Doctor
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/contract.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Working times
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/public-holiday.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Public holiday
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/absence.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Absence
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/dashboard.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Dashboard
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">Tips and Tricks</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/initial-setup.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Initial setup
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/rates.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Prices (rates)
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/billable.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Billable
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/pdf-templates.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                PDF templates
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/keyboard-shortcuts.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Keyboard shortcuts
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/i18n-am-pm.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Date and Time formats
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/duration-format.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Duration format
+                
+            </a>
+        
+    
+        
+    
+        
+            
+            
+            <a href="/documentation/homescreen.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Use Kimai as app
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/user-api.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Connecting via API
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">Additional features</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/plugin-custom-fields.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Custom fields
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-expenses.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Expenses
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-task-management.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Task management
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-custom-css.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Custom CSS
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-custom-content.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Custom content
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-translation.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Translation
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-invoice.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Invoice
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-import.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Importer
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-audit-trail.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Audit trail logs
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-contract.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Working contract
+                
+            </a>
+        
+    
+    </div>
+
+
+                        <div class="list-group list-group-flush pb-3 mb-4 mx-n4">
+                    
+                    <a href="/" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Home</a>
+                    <a href="/en/site-notice.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Site notice</a>
+                    <a href="/en/privacy-policy.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Privacy policy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-scrollbar end-0"></div>
+        </div>
+    </div>
+</aside>
+
+<main class="docs-container pt-5">
+    <div class="container-fluid px-xxl-5 px-lg-4 pt-4 pt-lg-5 pb-2 pb-lg-4">
+
+        <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 pt-4 mb-n3">
+            <div class="me-4">
+                <h1 class="pb-1">Settings</h1>
+                
+                <p class="text-muted fs-lg mb-2">Kimai system configurations</p>
+                
+            </div>
+            
+
+
+
+
+    <div class="dropdown">
+        <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Older versions
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+            
+            <a class="dropdown-item" href="/documentation/1.30.0/configurations.html">Kimai 1.30.0</a>
+            
+            <a class="dropdown-item" href="/documentation/configurations.html">2.13.0 (latest version)</a>
+        </div>
+    </div>
+
+
+        </div>
+
+        <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+            <div>
+                
+                <div id="documentation-content">
+                    
+
+
+
+<div class="alert alert-danger" role="alert">
+    
+You are viewing an older version of this documentation page. A newer version is available <a href="/documentation/configurations.html">here</a>.
+
+</div>
+
+
+
+<p>Many features of your Kimai installation can be changed by editing the <code class="language-plaintext highlighter-rouge">System &gt; Settings</code>. This screen is only visible to 
+users with the permission <code class="language-plaintext highlighter-rouge">system_configuration</code> (by default <a href="/documentation/permissions.html">ROLE_SUPER_ADMIN</a>).</p>
+
+<h2 id="timesheet">Timesheet</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Time-tracking mode</code> - see below</li>
+  <li><code class="language-plaintext highlighter-rouge">Default start-time</code> - not used in all time-tracking modes, read more about the accepted formats <a href="https://www.php.net/manual/en/datetime.formats.php">here</a> and <a href="https://www.php.net/manual/en/datetime.formats.time.php">here</a></li>
+  <li><code class="language-plaintext highlighter-rouge">Allow time entries in the future</code> - Whether future booking of timesheet records are possible or not (eg. pre-book meetings for next week)</li>
+  <li><code class="language-plaintext highlighter-rouge">Allow time entries with an empty duration</code> - Whether timesheet records are allowed to have a duration of zero seconds</li>
+  <li><code class="language-plaintext highlighter-rouge">Allow overlapping time entries</code> - If not checked, you cannot have entries at the same time (even one minute overlap will be prevented)</li>
+  <li><code class="language-plaintext highlighter-rouge">Allow overbooking of stored budgets</code> - Whether users can book more work than allowed via the customer/project/activity budget</li>
+  <li><code class="language-plaintext highlighter-rouge">Permitted number of simultaneously running time entries</code> - by default it is <code class="language-plaintext highlighter-rouge">1</code>, which will automatically stop the currently running record when a new one is started. 
+If it is greater than 1 and as soon as the limit is reached, the user has to manually stop at least one active entry (an error message will be shown) and the 
+global tick-tack clock will be replaced with a dropdown.</li>
+  <li><code class="language-plaintext highlighter-rouge">Minute selection for From &amp; To</code> -</li>
+  <li><code class="language-plaintext highlighter-rouge">Minute selection for Duration</code> -</li>
+  <li><code class="language-plaintext highlighter-rouge">Maximum duration of a timesheet record in minutes before saving is rejected</code> - maximum duration of a timesheet record (0 = deactivated)</li>
+</ul>
+
+<h3 id="time-tracking-modes">Time-tracking modes</h3>
+
+<h4 id="default-mode">Default mode</h4>
+
+<p>The default tracking mode is not limiting the user is any way. Every user can edit the <code class="language-plaintext highlighter-rouge">begin</code> and <code class="language-plaintext highlighter-rouge">end</code> time and the <code class="language-plaintext highlighter-rouge">duration</code>.</p>
+
+<h4 id="time-clock-mode">Time-clock mode</h4>
+
+<p>The time-clock mode is primarily for companies, who don’t want their users to add arbitrary records.
+It removes the <code class="language-plaintext highlighter-rouge">begin</code> and <code class="language-plaintext highlighter-rouge">end</code> fields for the default timesheet forms.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">Admin &gt; Timesheets</code> screen still include these fields, as you might have to correct wrong/add forgotten entries on behalf of the user.</p>
+
+<h4 id="duration-no-end-time">Duration (no end time)</h4>
+
+<p>Removes the <code class="language-plaintext highlighter-rouge">end</code> fields from the timesheet form, while the <code class="language-plaintext highlighter-rouge">duration</code> can be edited.
+All timesheet tables will only display the <code class="language-plaintext highlighter-rouge">date</code> and <code class="language-plaintext highlighter-rouge">duration</code> for all records, <code class="language-plaintext highlighter-rouge">start</code> and <code class="language-plaintext highlighter-rouge">end</code> time columns are hidden.</p>
+
+<p>Users with the <code class="language-plaintext highlighter-rouge">edit_other_timesheet</code> <a href="/documentation/permissions.html">permission</a> can still see the 
+<code class="language-plaintext highlighter-rouge">start</code> and <code class="language-plaintext highlighter-rouge">end</code> time in the <code class="language-plaintext highlighter-rouge">Admin &gt; Timesheets</code> screen. If your country has work regulations that should limit access to this data, 
+make sure to remove this permission for persons without special access regulations (e.g. your HR department).</p>
+
+<p>This mode does not use the <code class="language-plaintext highlighter-rouge">Default start-time</code> but always displays the current time as start for new entries.</p>
+
+<h4 id="duration-fixed-start-time">Duration (fixed start time)</h4>
+
+<p>The <code class="language-plaintext highlighter-rouge">begin</code> and <code class="language-plaintext highlighter-rouge">end</code> fields will be removed, only the <code class="language-plaintext highlighter-rouge">duration</code> can be edited. 
+As <code class="language-plaintext highlighter-rouge">start</code> time the <code class="language-plaintext highlighter-rouge">Default start-time</code> configuration is used (which is configured to <code class="language-plaintext highlighter-rouge">now</code> by default).</p>
+
+<p>Users with the <code class="language-plaintext highlighter-rouge">edit_other_timesheet</code> <a href="/documentation/permissions.html">permission</a> can still see the
+<code class="language-plaintext highlighter-rouge">start</code> and <code class="language-plaintext highlighter-rouge">end</code> time in the <code class="language-plaintext highlighter-rouge">Admin &gt; Timesheets</code> screen. If your country has work regulations that should limit access to this data,
+make sure to remove this permission for persons without special access regulations (e.g. your HR department).</p>
+
+<h2 id="weekly-working-hours">Weekly working hours</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Number of entries taken over from previous weeks</code> - defines the maximum number of “recent activity” rows that will be pre-filled in new weeks.
+You can deactivate that feature by setting the value to 0.</li>
+  <li><code class="language-plaintext highlighter-rouge">Take over entries from the last X weeks</code> - the amount of weeks to go back in time to calculate  (empty or 0 for all time)</li>
+  <li><code class="language-plaintext highlighter-rouge">Minimum number of rows</code> - how many rows should be displayed by default</li>
+</ul>
+
+<h2 id="lockdown-period">Lockdown period</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Lockdown period start</code> - a PHP date-format string <code class="language-plaintext highlighter-rouge">relative to now</code> and you will likely want to configure a start of a month like <code class="language-plaintext highlighter-rouge">first day of last month 00:00:00</code> or <code class="language-plaintext highlighter-rouge">first day of -2 month 00:00:00</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Lockdown period end</code> - a PHP date-format string <code class="language-plaintext highlighter-rouge">relative to now</code> and you will likely want to configure the end of a month like <code class="language-plaintext highlighter-rouge">last day of last month 23:59:59</code>, <code class="language-plaintext highlighter-rouge">last day of -2 month 23:59:59</code> or <code class="language-plaintext highlighter-rouge">first day of this month 00:00:00</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Time zone</code> - the timezone will be used to calculate the dates (might be important if you have users across multiple timezones, if empty the timezone of the current user is used</li>
+  <li><code class="language-plaintext highlighter-rouge">Lockdown grace period end (PHP relative date to lockdown period end)</code> - relative to the lockdown end (the end date will always be appended, but it could still be overwritten by using the <code class="language-plaintext highlighter-rouge">of</code> modifier), most users will likely want to use a relative period like <code class="language-plaintext highlighter-rouge">+12 hours</code>, <code class="language-plaintext highlighter-rouge">+10 days</code> or <code class="language-plaintext highlighter-rouge">+3 weeks</code></li>
+</ul>
+
+<p>The lockdown period (if activated) will prevent your users from changing timesheet records in the past.</p>
+
+<p>It consists of a <code class="language-plaintext highlighter-rouge">start</code> and <code class="language-plaintext highlighter-rouge">end</code> date and a <code class="language-plaintext highlighter-rouge">grace</code> period.
+The lockdown feature will only be activated if all of these fields are configured with a <a href="https://www.php.net/manual/en/datetime.formats.relative.php">relative date format</a>.</p>
+
+<p>These rules apply:</p>
+<ul>
+  <li>If the start date of a timesheet record is earlier than the lockdown start, it is not possible to edit it any longer</li>
+  <li>If the start date of a timesheet record is between the lockdown start and end, it can only be edited if “now” is within the grace period</li>
+  <li>If a user has the permission <code class="language-plaintext highlighter-rouge">lockdown_grace_timesheet</code> all records in the last lockdown period can be edited, even after the grace period ended</li>
+  <li>If a user has the permission <code class="language-plaintext highlighter-rouge">lockdown_override_timesheet</code> none of the lockdown rules apply</li>
+</ul>
+
+<h3 id="examples">Examples</h3>
+
+<p>We want to achieve that the last month goes into lockdown with the start of the current month, but we want to allow that
+users can edit their records until the fifth day of the month (because invoices will be written on the seventh day of the month).</p>
+
+<p>Configuration:</p>
+
+<ul>
+  <li>Lockdown start: <code class="language-plaintext highlighter-rouge">first day of last month 00:00:00</code></li>
+  <li>Lockdown end: <code class="language-plaintext highlighter-rouge">last day of last month 23:59:59</code> (could also be written as <code class="language-plaintext highlighter-rouge">first day of this month 00:00:00</code>)</li>
+  <li>Grace period: <code class="language-plaintext highlighter-rouge">+5 days</code></li>
+</ul>
+
+<p>More examples:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">first day of -3 month 00:00:00 +216 hours</code> executed in July 2020 will result in <code class="language-plaintext highlighter-rouge">2020-04-10 00:00:00</code></li>
+  <li>only allow editing for yesterday and today: start = <code class="language-plaintext highlighter-rouge">yesterday 00:00:00</code>, end = <code class="language-plaintext highlighter-rouge">today 23:59:59</code>, grace = <code class="language-plaintext highlighter-rouge">+1 days</code></li>
+</ul>
+
+<h2 id="time-rounding">Time rounding</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Rounding mode</code> - see below</li>
+  <li><code class="language-plaintext highlighter-rouge">Rounding of the start time</code> - in minutes, zero (0) deactivates this config</li>
+  <li><code class="language-plaintext highlighter-rouge">Rounding of the end time</code> - in minutes, zero (0) deactivates this config</li>
+  <li><code class="language-plaintext highlighter-rouge">Rounding of the duration</code> - in minutes, zero (0) deactivates this config</li>
+  <li><code class="language-plaintext highlighter-rouge">Days of the week when rounding will be applied</code> - on all other days, the real recorded values will be used</li>
+</ul>
+
+<p>Rounding rules are used to round the <code class="language-plaintext highlighter-rouge">begin</code> and <code class="language-plaintext highlighter-rouge">end</code> times and the <code class="language-plaintext highlighter-rouge">duration</code> for timesheet records:</p>
+
+<ul>
+  <li>The <code class="language-plaintext highlighter-rouge">end</code> date of timesheet records will be used to match the day (think of overnight entries)</li>
+  <li>If you set one of <code class="language-plaintext highlighter-rouge">begin</code>, <code class="language-plaintext highlighter-rouge">end</code>, <code class="language-plaintext highlighter-rouge">duration</code> to 0 no rounding will be applied for that field, the exact time (including seconds) is used for calculation</li>
+  <li>The values of the rules are minutes (not the minute of an hour), so 5 for “begin” means we round down to the previous multiple of five</li>
+  <li>Rounding rules will be applied on stopped timesheet records only, so you might see an un-rounded value for the start time and duration until you stop the record</li>
+</ul>
+
+<p>These are the existing rounding modes:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">default</code> - “begin” will always be rounded to the floor (down) and “end” &amp; “duration” to the ceiling (up)</li>
+  <li><code class="language-plaintext highlighter-rouge">closest</code> - “begin”, “end” and “duration” will be rounded in a mathematical way, always to the nearest value</li>
+  <li><code class="language-plaintext highlighter-rouge">floor</code> - “begin”, “end” and “duration” will always be rounded down to the nearest value</li>
+  <li><code class="language-plaintext highlighter-rouge">ceil</code> - “begin”, “end” and “duration” will always be rounded up to the nearest value</li>
+</ul>
+
+<h2 id="invoices">Invoices</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Invoice number format</code> - read more at <a href="/documentation/invoices.html">invoices</a></li>
+  <li><code class="language-plaintext highlighter-rouge">Simple search</code> - displays a shorter search form, removing some fields which are used less often</li>
+</ul>
+
+<h2 id="authentication">Authentication</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Login form</code> - de-/activates the login form. This setting is only available if <a href="/documentation/saml.html">SAML</a> is activated.</li>
+  <li><code class="language-plaintext highlighter-rouge">User registration</code> - de-/activates the self-registration. Do NOT activate this, if your Kimai instance is public accessible.</li>
+  <li><code class="language-plaintext highlighter-rouge">Forgot password</code> - de-/activates the password reset function, that sends an email with a “reset my password” link</li>
+  <li><code class="language-plaintext highlighter-rouge">Forgotten password - seconds before a user can request the next e-mail</code> - if a password-reset email was sent, you should not allow to request another one too soon (for security reasons)</li>
+  <li><code class="language-plaintext highlighter-rouge">Forgotten password - seconds before a reset link expires</code> - how long a user can use the password reset link, it is recommended to keep this value below 1 day</li>
+</ul>
+
+<h2 id="customer">Customer</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Timezone</code> - default value for the “create customer” form</li>
+  <li><code class="language-plaintext highlighter-rouge">Country</code> - default value for the “create customer” form</li>
+  <li><code class="language-plaintext highlighter-rouge">Currency</code> - default value for the “create customer” form</li>
+  <li><code class="language-plaintext highlighter-rouge">Display of entries in selection lists</code> - the display of a customer in dropdown fields</li>
+</ul>
+
+<h2 id="project">Project</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Display of entries in selection lists</code> - the display of a project in dropdown fields</li>
+  <li><code class="language-plaintext highlighter-rouge">Take over teams from the logged-in user when creating new entries</code> - if this is active, all teams of the currently logged-in users will be copied over to new created project, therefor extending the visibility of the current user (and all his teams) to the new project</li>
+</ul>
+
+<h2 id="activity">Activity</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Display of entries in selection lists</code> - the display of an activity in dropdown fields</li>
+</ul>
+
+<h2 id="user">User</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Timezone</code> - default value for the “create user” form</li>
+  <li><code class="language-plaintext highlighter-rouge">Country</code> - default value for the “create user” form</li>
+  <li><code class="language-plaintext highlighter-rouge">Currency</code> - ONLY used to display the users hourly rate</li>
+</ul>
+
+<h2 id="theme">Theme</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Minimum number of letters to start auto-completion</code> -</li>
+  <li><code class="language-plaintext highlighter-rouge">Allow markdown-formattings in descriptions and comments</code> - if activated, contents will be rendered with a markdown engine 
+supporting simple lists and other HTML content. It will only be rendered in <code class="language-plaintext highlighter-rouge">My times</code> and not in <code class="language-plaintext highlighter-rouge">Admin &gt; Timesheet</code> as
+<a href="https://github.com/erusev/parsedown/blob/master/README.md#security">security measure</a>.</li>
+  <li><code class="language-plaintext highlighter-rouge">Tags: use auto-complete search and allow tag creation</code> -</li>
+  <li><code class="language-plaintext highlighter-rouge">Limit color choices</code> - whether you want to use a dropdown list of pre-defined colors or the native color chooser with unlimited colors</li>
+  <li><code class="language-plaintext highlighter-rouge">Allowed colors</code> - if <code class="language-plaintext highlighter-rouge">Limit color choices</code> is active, these are the colors that can be chosen</li>
+  <li><code class="language-plaintext highlighter-rouge">Allow the use of URLs for avatar images</code> - you can allow using URLs for user avatars (not recommended)</li>
+  <li><code class="language-plaintext highlighter-rouge">Use random colors for objects without assigned color</code> - objects without an assigned color (projects, user …) show a grey dot by default, but if this option is active a color is randomly chosen (the use of this random color is limited for now)</li>
+</ul>
+
+<h2 id="calendar">Calendar</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Display week numbers</code> - whether week numbers should be displayed in the monthly view (default: true)</li>
+  <li><code class="language-plaintext highlighter-rouge">Display weekends</code> - whether weekends should be displayed (default: true)</li>
+  <li><code class="language-plaintext highlighter-rouge">Start of normal business hours</code> - the start time of your working day, which will be highlighted in the weekly and daily view (default: 08:00)</li>
+  <li><code class="language-plaintext highlighter-rouge">End of normal business hours</code> - the end time of your working day, which will be highlighted in the weekly and daily view (default: 18:00)</li>
+  <li><code class="language-plaintext highlighter-rouge">Start of visible time range</code> - the start time of the calendars week and day view (default: 00:00)</li>
+  <li><code class="language-plaintext highlighter-rouge">End of visible time range</code> - the end time of the calendars week and day view (default: 24:00)</li>
+  <li><code class="language-plaintext highlighter-rouge">Slot duration for week- and day view</code> - defines the duration for each calendar slot (row) in the week and day views, format: hh:mm:ss (default: 00:30:00 = 30 minutes)</li>
+  <li><code class="language-plaintext highlighter-rouge">Amount of entries for drag&amp;drop</code> - amount of rows per drag &amp; drop box (0 = deactivated)</li>
+  <li><code class="language-plaintext highlighter-rouge">Display of the titles of calendar entries</code> - which data should be displayed in the title of each calendar entry</li>
+</ul>
+
+<p>Not editable right now:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">day_limit</code> - defined the max amount of items to be displayed for one day in the monthly view (default: 4)</li>
+  <li><code class="language-plaintext highlighter-rouge">businessHours.days</code> - defines your working days, which will be highlighted in the weekly and daily view. counting starts with sunday and the index 0, so 1 = monday, …, 6 = saturday. (default: 1-5 / monday to friday)</li>
+</ul>
+
+<h2 id="my-company">My company</h2>
+
+<p>Kimai offers some configuration settings to adapt the branding to your company:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Logo URL</code> - an absolute URL to an image, which  replaces the company name in login screen</li>
+  <li><code class="language-plaintext highlighter-rouge">Company name</code> - replace the application name with your <code class="language-plaintext highlighter-rouge">company</code> name (approx. 15-20 character)</li>
+  <li><code class="language-plaintext highlighter-rouge">Mini Logo</code> - replace the mini version “KTT” with an abbreviation for your company name (3 chars max)</li>
+  <li><code class="language-plaintext highlighter-rouge">Browser Title</code> - the browser title which by default shows the full application title</li>
+  <li><code class="language-plaintext highlighter-rouge">Financial year</code> - starts on <strong>first of January</strong> by default</li>
+</ul>
+
+<p>If you don’t set a <code class="language-plaintext highlighter-rouge">logo</code> but use a value in <code class="language-plaintext highlighter-rouge">company</code>, this will be used in the login screen.
+The settings for <code class="language-plaintext highlighter-rouge">company</code> and <code class="language-plaintext highlighter-rouge">mini</code> name can contain the HTML tags <code class="language-plaintext highlighter-rouge">&lt;b&gt;&lt;i&gt;&lt;u&gt;&lt;strong&gt;&lt;em&gt;&lt;img&gt;&lt;svg&gt;</code> for formatting.</p>
+
+
+
+                </div>
+                
+
+                
+                <h2 id="related-articles" class="fs-4 mt-5">Related articles</h2>
+                <ul>
+                    
+                    
+                    <li>
+                        <a href="/documentation/user-preferences.html">User preferences</a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="/documentation/local-yaml.html">Configuration files</a>
+                    </li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+
+    </div>
+</main>
+
+
+    <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
+        <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#timesheet" class="nav-link">Timesheet</a><ul><li class="nav-item"><a href="#time-tracking-modes" class="nav-link">Time-tracking modes</a></li></ul></li><li class="nav-item"><a href="#weekly-working-hours" class="nav-link">Weekly working hours</a></li><li class="nav-item"><a href="#lockdown-period" class="nav-link">Lockdown period</a><ul><li class="nav-item"><a href="#examples" class="nav-link">Examples</a></li></ul></li><li class="nav-item"><a href="#time-rounding" class="nav-link">Time rounding</a></li><li class="nav-item"><a href="#invoices" class="nav-link">Invoices</a></li><li class="nav-item"><a href="#authentication" class="nav-link">Authentication</a></li><li class="nav-item"><a href="#customer" class="nav-link">Customer</a></li><li class="nav-item"><a href="#project" class="nav-link">Project</a></li><li class="nav-item"><a href="#activity" class="nav-link">Activity</a></li><li class="nav-item"><a href="#user" class="nav-link">User</a></li><li class="nav-item"><a href="#theme" class="nav-link">Theme</a></li><li class="nav-item"><a href="#calendar" class="nav-link">Calendar</a></li><li class="nav-item"><a href="#my-company" class="nav-link">My company</a></li></ul>
+        
+        <ul class="nav">
+            <li>
+                <a href="#related-articles" class="nav-link">Related articles</a>
+            </li>
+        </ul>
+        
+    </aside>
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+
+</body>
+</html>

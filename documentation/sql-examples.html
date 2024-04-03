@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index,follow">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+    <title>SQL Examples – Kimai</title>
+    
+        <meta name="description" content="A collection of SQL commands to quick start your statistic query">
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kimai Time-Tracking">
+    <meta property="og:description" content="A collection of SQL commands to quick start your statistic query">
+    <meta property="og:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kimai Time-Tracking">
+    <meta name="twitter:site" content="@kimai_org">
+    <meta name="twitter:description" content="A collection of SQL commands to quick start your statistic query">
+    <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <script src="/assets/build/theme.js"></script>
+    <link href="/assets/build/main.css" rel="stylesheet" />
+</head>
+<body class="">
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand bg-light border-bottom border-light shadow fixed-top" data-scroll-header>
+    <div class="container-fluid pe-lg-4">
+        <div class="d-flex align-items-center">
+            <a href="/documentation/" class="navbar-brand flex-shrink-0 py-1 py-lg-2">
+                <img src="/images/apple-touch-icon.png" width="47" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning">Developer</span>
+        </div>
+        <div class="d-flex align-items-center w-100">
+            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 9.75rem;">
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-manual.html" class="nav-link">
+                            <i class="bx bx-book opacity-70 fs-lg me-1"></i>
+                            User manual
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/cloud.html" class="nav-link">
+                            <i class="bx bxs-cloud opacity-70 fs-lg me-1"></i>
+                            Kimai-Cloud
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/developers.html" class="nav-link">
+                            <i class="bx bx-code opacity-70 fs-lg me-1"></i>
+                            Developer
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-on-premise.html" class="nav-link">
+                            <i class="bx bx-wrench opacity-70 fs-lg me-1"></i>
+                            Self-hosted
+                        </a>
+                    </li>
+                
+            </ul>
+            <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="form-check form-switch mode-switch pe-lg-1 ms-lg-auto" data-bs-toggle="mode">
+                <input type="checkbox" class="form-check-input" id="theme-mode">
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Light</label>
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Dark</label>
+            </div>
+        </div>
+    </div>
+</header>
+
+<aside data-bs-theme="dark">
+    <div id="componentsNav" class="offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100 bg-dark border-end-lg" style="width: 21rem; z-index: 1045;">
+        <div class="offcanvas-header d-none d-lg-flex justify-content-start">
+            <a href="/documentation/" class="navbar-brand text-dark d-none d-lg-flex py-0">
+                <img src="/images/apple-touch-icon.png" width="32" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning d-none d-lg-inline-block">Developer</span>
+        </div>
+        <div class="offcanvas-header d-block d-lg-none border-bottom">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <h5 class="d-lg-none mb-0">Menu</h5>
+                <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#componentsNav" aria-label="Close"></button>
+            </div>
+            <div class="list-group list-group-flush mx-n4">
+                
+                    
+                    
+                    <a href="/documentation/chapter-manual.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-book opacity-70 me-1"></i>
+                        User manual
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/cloud.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bxs-cloud opacity-70 me-1"></i>
+                        Kimai-Cloud
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/developers.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-code opacity-70 me-1"></i>
+                        Developer
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/chapter-on-premise.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-wrench opacity-70 me-1"></i>
+                        Self-hosted
+                    </a>
+                
+            </div>
+        </div>
+        <div class="offcanvas-body swiper scrollbar-hover overflow-hidden w-100 p-4" data-swiper-options='{
+          "direction": "vertical",
+          "slidesPerView": "auto",
+          "freeMode": true,
+          "scrollbar": {
+            "el": ".swiper-scrollbar"
+          },
+          "mousewheel": true
+        }'>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide h-auto">
+                    
+                        
+
+    
+    
+    <h3 class="fs-lg">JSON API</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/rest-api.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Kimai API
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/rest-api-examples.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Examples
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/api-pagination.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Pagination
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">Create plugins</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/plugins.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Getting started
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/translations.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Translations / i18n
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/meta-fields.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Custom fields
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/theme.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Theme
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/store.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Add to store
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/migration-v2.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Migrate plugins to v2
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">Technical background</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/bughunter.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Bughunter
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/permission-structure.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Permission structure
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/sql-examples.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4  active">
+                
+                SQL Examples
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/redis.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Using Redis for caching
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/create-release.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Creating a release
+                
+            </a>
+        
+    
+    </div>
+
+
+                        <div class="list-group list-group-flush pb-3 mb-4 mx-n4">
+                    
+                    <a href="/" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Home</a>
+                    <a href="/en/site-notice.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Site notice</a>
+                    <a href="/en/privacy-policy.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Privacy policy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-scrollbar end-0"></div>
+        </div>
+    </div>
+</aside>
+
+<main class="docs-container pt-5">
+    <div class="container-fluid px-xxl-5 px-lg-4 pt-4 pt-lg-5 pb-2 pb-lg-4">
+
+        <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 pt-4 mb-n3">
+            <div class="me-4">
+                <h1 class="pb-1">SQL Examples</h1>
+                
+                <p class="text-muted fs-lg mb-2">A collection of SQL commands to quick start your statistic query</p>
+                
+            </div>
+            
+
+
+
+
+
+        </div>
+
+        <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+            <div>
+                
+                <div id="documentation-content">
+                    <p>This page contains collections of SQL statements, which were helpful in the past and might be of use for other people as well.</p>
+
+<h3 id="summary-of-total-duration-grouped-by-customer-and-user">Summary of total duration, grouped by customer and user</h3>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span>
+    <span class="k">c</span><span class="p">.</span><span class="n">name</span> <span class="k">as</span> <span class="n">Customer</span><span class="p">,</span>
+    <span class="n">u</span><span class="p">.</span><span class="n">username</span> <span class="k">as</span> <span class="n">Username</span><span class="p">,</span>
+    <span class="n">u</span><span class="p">.</span><span class="k">alias</span> <span class="k">as</span> <span class="k">User</span><span class="p">,</span>
+    <span class="n">FORMAT</span><span class="p">(</span><span class="k">SUM</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">duration</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3600</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">as</span> <span class="n">Duration</span>
+<span class="k">FROM</span>
+    <span class="n">kimai2_timesheet</span> <span class="n">t</span>
+        <span class="k">LEFT</span> <span class="k">JOIN</span> <span class="n">kimai2_projects</span> <span class="n">p</span> <span class="k">on</span> <span class="n">t</span><span class="p">.</span><span class="n">project_id</span> <span class="o">=</span> <span class="n">p</span><span class="p">.</span><span class="n">id</span>
+        <span class="k">LEFT</span> <span class="k">JOIN</span> <span class="n">kimai2_customers</span> <span class="k">c</span> <span class="k">on</span> <span class="n">p</span><span class="p">.</span><span class="n">customer_id</span> <span class="o">=</span> <span class="k">c</span><span class="p">.</span><span class="n">id</span>
+        <span class="k">LEFT</span> <span class="k">JOIN</span> <span class="n">kimai2_users</span> <span class="n">u</span> <span class="k">on</span> <span class="n">t</span><span class="p">.</span><span class="k">user</span> <span class="o">=</span> <span class="n">u</span><span class="p">.</span><span class="n">id</span>
+<span class="k">GROUP</span> <span class="k">BY</span>
+    <span class="k">c</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="n">t</span><span class="p">.</span><span class="k">user</span><span class="p">,</span> <span class="k">c</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">u</span><span class="p">.</span><span class="n">username</span><span class="p">,</span> <span class="n">u</span><span class="p">.</span><span class="k">alias</span>
+<span class="p">;</span>
+</code></pre></div></div>
+
+<p>The output looks like this:</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Username</th>
+      <th>User</th>
+      <th>Duration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Acme company</td>
+      <td>test@example.com</td>
+      <td>John Doe</td>
+      <td>1,745.4</td>
+    </tr>
+    <tr>
+      <td>Acme company</td>
+      <td>chris_user</td>
+      <td>Chris Maier</td>
+      <td>45.8</td>
+    </tr>
+    <tr>
+      <td>Foo Bar</td>
+      <td>test@example.com</td>
+      <td>John Doe</td>
+      <td>345.0</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Duration is formatted as decimal time.
+So <code class="language-plaintext highlighter-rouge">1,745.4</code> is one-thousand-seven-hundred-forty-five hours and 24 minutes.</p>
+
+<h3 id="summary-of-total-duration-grouped-by-user-and-customer">Summary of total duration, grouped by user and customer</h3>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span>
+    <span class="n">u</span><span class="p">.</span><span class="n">username</span> <span class="k">as</span> <span class="n">Username</span><span class="p">,</span>
+    <span class="n">u</span><span class="p">.</span><span class="k">alias</span> <span class="k">as</span> <span class="k">User</span><span class="p">,</span>
+    <span class="k">c</span><span class="p">.</span><span class="n">name</span> <span class="k">as</span> <span class="n">Customer</span><span class="p">,</span>
+    <span class="n">FORMAT</span><span class="p">(</span><span class="k">SUM</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">duration</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3600</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">as</span> <span class="n">Duration</span>
+<span class="k">FROM</span>
+    <span class="n">kimai2_timesheet</span> <span class="n">t</span>
+    <span class="k">LEFT</span> <span class="k">JOIN</span> <span class="n">kimai2_projects</span> <span class="n">p</span> <span class="k">on</span> <span class="n">t</span><span class="p">.</span><span class="n">project_id</span> <span class="o">=</span> <span class="n">p</span><span class="p">.</span><span class="n">id</span>
+    <span class="k">LEFT</span> <span class="k">JOIN</span> <span class="n">kimai2_customers</span> <span class="k">c</span> <span class="k">on</span> <span class="n">p</span><span class="p">.</span><span class="n">customer_id</span> <span class="o">=</span> <span class="k">c</span><span class="p">.</span><span class="n">id</span>
+    <span class="k">LEFT</span> <span class="k">JOIN</span> <span class="n">kimai2_users</span> <span class="n">u</span> <span class="k">on</span> <span class="n">t</span><span class="p">.</span><span class="k">user</span> <span class="o">=</span> <span class="n">u</span><span class="p">.</span><span class="n">id</span>
+<span class="k">GROUP</span> <span class="k">BY</span>
+    <span class="n">t</span><span class="p">.</span><span class="k">user</span><span class="p">,</span> <span class="n">u</span><span class="p">.</span><span class="n">username</span><span class="p">,</span> <span class="n">u</span><span class="p">.</span><span class="k">alias</span><span class="p">,</span> <span class="k">c</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="k">c</span><span class="p">.</span><span class="n">name</span>
+<span class="p">;</span>
+</code></pre></div></div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>User</th>
+      <th>Customer</th>
+      <th>Duration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>test@example.com</td>
+      <td>John Doe</td>
+      <td>Acme company</td>
+      <td>1,745.4</td>
+    </tr>
+    <tr>
+      <td>test@example.com</td>
+      <td>John Doe</td>
+      <td>Foo Bar</td>
+      <td>345.0</td>
+    </tr>
+    <tr>
+      <td>chris_user</td>
+      <td>Chris Maier</td>
+      <td>Acme company</td>
+      <td>45.8</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Duration is formatted as decimal time.
+So <code class="language-plaintext highlighter-rouge">1,745.4</code> is one-thousand-seven-hundred-forty-five hours and 24 minutes.</p>
+
+<h3 id="find-entries-where-hourly-rate-does-not-match-users-hourly-rate">Find entries where hourly rate does not match users’ hourly rate</h3>
+
+<p>It compares timesheet hourly rate and user-preference rate. 
+It does not check configured customer/project/activity rates!</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span>
+    <span class="n">t</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="n">t</span><span class="p">.</span><span class="k">user</span> <span class="k">as</span> <span class="nv">"User ID"</span><span class="p">,</span> <span class="n">u</span><span class="p">.</span><span class="n">username</span><span class="p">,</span>
+    <span class="n">t</span><span class="p">.</span><span class="n">duration</span> <span class="k">as</span> <span class="n">Duration</span><span class="p">,</span>
+    <span class="n">t</span><span class="p">.</span><span class="n">hourly_rate</span> <span class="k">as</span> <span class="nv">"Timesheet rate"</span><span class="p">,</span>
+    <span class="n">COALESCE</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="p">)</span> <span class="k">as</span> <span class="nv">"Configured rate"</span><span class="p">,</span>
+    <span class="n">t</span><span class="p">.</span><span class="n">rate</span> <span class="k">as</span> <span class="nv">"Current rate"</span><span class="p">,</span>
+    <span class="n">round</span><span class="p">((</span><span class="n">COALESCE</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">duration</span> <span class="o">/</span> <span class="mi">3600</span><span class="p">)),</span> <span class="mi">2</span><span class="p">)</span> <span class="k">as</span> <span class="nv">"Possible rate"</span>
+<span class="k">FROM</span>
+    <span class="n">kimai2_timesheet</span> <span class="n">t</span>
+<span class="k">LEFT</span> <span class="k">JOIN</span>
+    <span class="n">kimai2_users</span> <span class="n">u</span> <span class="k">ON</span> <span class="n">t</span><span class="p">.</span><span class="k">user</span> <span class="o">=</span> <span class="n">u</span><span class="p">.</span><span class="n">id</span>
+<span class="k">LEFT</span> <span class="k">JOIN</span>
+    <span class="n">kimai2_user_preferences</span> <span class="n">p</span> <span class="k">on</span> <span class="n">u</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">p</span><span class="p">.</span><span class="n">user_id</span>
+<span class="k">WHERE</span>
+    <span class="n">p</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">'hourly_rate'</span>
+    <span class="k">and</span> <span class="n">t</span><span class="p">.</span><span class="n">hourly_rate</span> <span class="o">!=</span> <span class="n">COALESCE</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="p">)</span>
+<span class="k">order</span> <span class="k">by</span> <span class="n">rate</span> <span class="k">DESC</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="find-users-without-explicit-hourly-rate">Find users without explicit hourly rate</h3>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="n">u</span><span class="p">.</span><span class="n">username</span><span class="p">,</span> <span class="n">COALESCE</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="p">)</span> <span class="k">as</span> <span class="n">hourly_rate</span>
+<span class="k">FROM</span> <span class="n">kimai2_users</span> <span class="n">u</span> <span class="k">LEFT</span> <span class="k">JOIN</span> <span class="n">kimai2_user_preferences</span> <span class="n">p</span> <span class="k">on</span> <span class="n">u</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">p</span><span class="p">.</span><span class="n">user_id</span>
+<span class="k">WHERE</span> <span class="n">p</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">'hourly_rate'</span>
+<span class="k">AND</span> <span class="n">COALESCE</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="update-timesheet-rates-by-user-configuration">Update timesheet rates by user configuration</h3>
+
+<p>These statements are only meant as idea! Update timesheet rates by configured users rates.
+Does not use configured customer/project/activity rates.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">UPDATE</span> <span class="n">kimai2_timesheet</span> <span class="n">t</span>
+<span class="k">RIGHT</span> <span class="k">JOIN</span> <span class="n">kimai2_users</span> <span class="n">u</span> <span class="k">ON</span> <span class="n">t</span><span class="p">.</span><span class="k">user</span> <span class="o">=</span> <span class="n">u</span><span class="p">.</span><span class="n">id</span>
+<span class="k">RIGHT</span> <span class="k">JOIN</span> <span class="n">kimai2_user_preferences</span> <span class="n">p</span> <span class="k">on</span> <span class="n">u</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">p</span><span class="p">.</span><span class="n">user_id</span>
+<span class="k">SET</span>
+    <span class="n">t</span><span class="p">.</span><span class="n">hourly_rate</span> <span class="o">=</span> <span class="n">COALESCE</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+    <span class="n">t</span><span class="p">.</span><span class="n">rate</span> <span class="o">=</span> <span class="n">round</span><span class="p">((</span><span class="n">COALESCE</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">COALESCE</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">duration</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3600</span><span class="p">)),</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">WHERE</span> <span class="n">p</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">'hourly_rate'</span><span class="p">;</span>
+
+<span class="k">UPDATE</span> <span class="n">kimai2_timesheet</span> <span class="n">t</span>
+<span class="k">RIGHT</span> <span class="k">JOIN</span> <span class="n">kimai2_users</span> <span class="n">u</span> <span class="k">ON</span> <span class="n">t</span><span class="p">.</span><span class="k">user</span> <span class="o">=</span> <span class="n">u</span><span class="p">.</span><span class="n">id</span>
+<span class="k">RIGHT</span> <span class="k">JOIN</span> <span class="n">kimai2_user_preferences</span> <span class="n">p</span> <span class="k">on</span> <span class="n">u</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">p</span><span class="p">.</span><span class="n">user_id</span>
+<span class="k">SET</span> <span class="n">t</span><span class="p">.</span><span class="n">internal_rate</span> <span class="o">=</span> <span class="n">round</span><span class="p">((</span><span class="n">COALESCE</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">COALESCE</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">duration</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3600</span><span class="p">)),</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">WHERE</span> <span class="n">p</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">'internal_rate'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="find-all-configured-projects-rates">Find all configured projects rates</h3>
+
+<p>In case you want to see a list of all configured project rates at a glance:</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="k">c</span><span class="p">.</span><span class="n">name</span>          <span class="k">AS</span> <span class="n">Kunde</span><span class="p">,</span>
+       <span class="n">p</span><span class="p">.</span><span class="n">name</span>          <span class="k">AS</span> <span class="n">Projekt</span><span class="p">,</span>
+       <span class="n">r</span><span class="p">.</span><span class="n">rate</span>          <span class="k">AS</span> <span class="n">Stundensatz</span><span class="p">,</span>
+       <span class="n">r</span><span class="p">.</span><span class="n">internal_rate</span> <span class="k">AS</span> <span class="nv">"Interner Satz"</span><span class="p">,</span>
+       <span class="n">k2u</span><span class="p">.</span><span class="n">username</span>    <span class="k">AS</span> <span class="n">Benutzer</span>
+<span class="k">FROM</span> <span class="n">kimai2_projects</span> <span class="n">p</span>
+         <span class="k">LEFT</span> <span class="k">JOIN</span> <span class="n">kimai2_customers</span> <span class="k">c</span> <span class="k">ON</span> <span class="n">p</span><span class="p">.</span><span class="n">customer_id</span> <span class="o">=</span> <span class="k">c</span><span class="p">.</span><span class="n">id</span>
+         <span class="k">LEFT</span> <span class="k">JOIN</span> <span class="n">kimai2_projects_rates</span> <span class="n">r</span> <span class="k">ON</span> <span class="n">p</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">r</span><span class="p">.</span><span class="n">project_id</span>
+         <span class="k">LEFT</span> <span class="k">JOIN</span> <span class="n">kimai2_users</span> <span class="n">k2u</span> <span class="k">ON</span> <span class="n">r</span><span class="p">.</span><span class="n">user_id</span> <span class="o">=</span> <span class="n">k2u</span><span class="p">.</span><span class="n">id</span>
+</code></pre></div></div>
+
+                </div>
+                
+
+                
+            </div>
+        </div>
+
+    </div>
+</main>
+
+
+    <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
+        <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#summary-of-total-duration-grouped-by-customer-and-user" class="nav-link">Summary of total duration, grouped by customer and user</a></li><li class="nav-item"><a href="#summary-of-total-duration-grouped-by-user-and-customer" class="nav-link">Summary of total duration, grouped by user and customer</a></li><li class="nav-item"><a href="#find-entries-where-hourly-rate-does-not-match-users-hourly-rate" class="nav-link">Find entries where hourly rate does not match users’ hourly rate</a></li><li class="nav-item"><a href="#find-users-without-explicit-hourly-rate" class="nav-link">Find users without explicit hourly rate</a></li><li class="nav-item"><a href="#update-timesheet-rates-by-user-configuration" class="nav-link">Update timesheet rates by user configuration</a></li><li class="nav-item"><a href="#find-all-configured-projects-rates" class="nav-link">Find all configured projects rates</a></li></ul>
+        
+    </aside>
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+
+</body>
+</html>

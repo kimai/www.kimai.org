@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index,follow">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+    <title>LDAP structure Example for Kimai and OpenLDAP</title>
+    
+        <meta name="description" content="This is an example LDAP data structure, which was used for testing the Kimai LDAP integration with Kimai 1.18 and 2.0.">
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kimai Time-Tracking">
+    <meta property="og:description" content="This is an example LDAP data structure, which was used for testing the Kimai LDAP integration with Kimai 1.18 and 2.0.">
+    <meta property="og:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kimai Time-Tracking">
+    <meta name="twitter:site" content="@kimai_org">
+    <meta name="twitter:description" content="This is an example LDAP data structure, which was used for testing the Kimai LDAP integration with Kimai 1.18 and 2.0.">
+    <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <link rel="canonical" href="https://www.kimai.org/documentation/ldap-example.html" />
+    <script src="/assets/build/theme.js"></script>
+    <link href="/assets/build/main.css" rel="stylesheet" />
+</head>
+<body class="">
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand bg-light border-bottom border-light shadow fixed-top" data-scroll-header>
+    <div class="container-fluid pe-lg-4">
+        <div class="d-flex align-items-center">
+            <a href="/documentation/" class="navbar-brand flex-shrink-0 py-1 py-lg-2">
+                <img src="/images/apple-touch-icon.png" width="47" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning">Documentation</span>
+        </div>
+        <div class="d-flex align-items-center w-100">
+            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 9.75rem;">
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-manual.html" class="nav-link">
+                            <i class="bx bx-book opacity-70 fs-lg me-1"></i>
+                            User manual
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/cloud.html" class="nav-link">
+                            <i class="bx bxs-cloud opacity-70 fs-lg me-1"></i>
+                            Kimai-Cloud
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/developers.html" class="nav-link">
+                            <i class="bx bx-code opacity-70 fs-lg me-1"></i>
+                            Developer
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-on-premise.html" class="nav-link">
+                            <i class="bx bx-wrench opacity-70 fs-lg me-1"></i>
+                            Self-hosted
+                        </a>
+                    </li>
+                
+            </ul>
+            <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="form-check form-switch mode-switch pe-lg-1 ms-lg-auto" data-bs-toggle="mode">
+                <input type="checkbox" class="form-check-input" id="theme-mode">
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Light</label>
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Dark</label>
+            </div>
+        </div>
+    </div>
+</header>
+
+<aside data-bs-theme="dark">
+    <div id="componentsNav" class="offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100 bg-dark border-end-lg" style="width: 21rem; z-index: 1045;">
+        <div class="offcanvas-header d-none d-lg-flex justify-content-start">
+            <a href="/documentation/" class="navbar-brand text-dark d-none d-lg-flex py-0">
+                <img src="/images/apple-touch-icon.png" width="32" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning d-none d-lg-inline-block">Documentation</span>
+        </div>
+        <div class="offcanvas-header d-block d-lg-none border-bottom">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <h5 class="d-lg-none mb-0">Menu</h5>
+                <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#componentsNav" aria-label="Close"></button>
+            </div>
+            <div class="list-group list-group-flush mx-n4">
+                
+                    
+                    
+                    <a href="/documentation/chapter-manual.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-book opacity-70 me-1"></i>
+                        User manual
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/cloud.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bxs-cloud opacity-70 me-1"></i>
+                        Kimai-Cloud
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/developers.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-code opacity-70 me-1"></i>
+                        Developer
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/chapter-on-premise.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-wrench opacity-70 me-1"></i>
+                        Self-hosted
+                    </a>
+                
+            </div>
+        </div>
+        <div class="offcanvas-body swiper scrollbar-hover overflow-hidden w-100 p-4" data-swiper-options='{
+          "direction": "vertical",
+          "slidesPerView": "auto",
+          "freeMode": true,
+          "scrollbar": {
+            "el": ".swiper-scrollbar"
+          },
+          "mousewheel": true
+        }'>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide h-auto">
+                    
+                    <a href="/" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Home</a>
+                    <a href="/en/site-notice.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Site notice</a>
+                    <a href="/en/privacy-policy.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Privacy policy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-scrollbar end-0"></div>
+        </div>
+    </div>
+</aside>
+
+<main class="docs-container pt-5">
+    <div class="container-fluid px-xxl-5 px-lg-4 pt-4 pt-lg-5 pb-2 pb-lg-4">
+
+        <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 pt-4 mb-n3">
+            <div class="me-4">
+                <h1 class="pb-1">LDAP structure Example for Kimai and OpenLDAP</h1>
+                
+            </div>
+            
+
+
+
+
+    <div class="dropdown">
+        <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Older versions
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+            
+            <a class="dropdown-item" href="/documentation/1.30.0/ldap-example.html">Kimai 1.30.0</a>
+            
+            <a class="dropdown-item" href="/documentation/ldap-example.html">2.13.0 (latest version)</a>
+        </div>
+    </div>
+
+
+        </div>
+
+        <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+            <div>
+                
+                <div id="documentation-content">
+                    <p>This is an example LDAP data structure, which was used for testing the Kimai LDAP integration with Kimai 1.18 and 2.0.</p>
+
+<p>It demo nstrates a possible setup and the matching <a href="/documentation/ldap.html">LDAP connection configuration</a>.</p>
+
+<h2 id="creating-the-structure-files">Creating the structure files</h2>
+
+<p>You can create the files manually or <a href="https://github.com/kevinpapst/kimai-ldap-example">clone an example repository</a>.</p>
+
+<h3 id="manual-creation">Manual creation</h3>
+
+<p>Wanna take the hard road? Ok, here we go 😁</p>
+
+<p>Create the file <code class="language-plaintext highlighter-rouge">ou-root.ldiff</code> and add this:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dn:dc=kimai,dc=org
+objectClass:dcObject
+objectClass:organizationalUnit
+dc:kimai
+ou:KIMAI
+</code></pre></div></div>
+
+<p>Create the file <code class="language-plaintext highlighter-rouge">ou-users.ldiff</code> and add this:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dn: ou=users,dc=kimai,dc=org
+objectClass: organizationalUnit
+ou: users
+</code></pre></div></div>
+
+<p>Create the file <code class="language-plaintext highlighter-rouge">ou-groups.ldiff</code> and add this:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dn: ou=groups,dc=kimai,dc=org
+objectClass: organizationalUnit
+ou: groups
+</code></pre></div></div>
+
+<p>The hashed password <code class="language-plaintext highlighter-rouge">{SSHA}aHxzKxwoAV46MQ4gAv9n+ISm7kD53Tzq</code> (generated with <code class="language-plaintext highlighter-rouge">slappasswd</code>) from the following files are in plain text <code class="language-plaintext highlighter-rouge">kitten</code>.</p>
+
+<p>Create the file <code class="language-plaintext highlighter-rouge">user-user.ldiff</code> and add this:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dn: uid=user-ldap,ou=users,dc=kimai,dc=org
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+uid: user-ldap
+sn: LDAP-User
+givenName: LDAP-User Example
+cn: user-ldap
+displayName: LDAP User (User)
+mail: user-ldap@example.com
+userPassword: {SSHA}+/Ir5pqpe09B07Xz8IT5AS+swJ5s29QS
+</code></pre></div></div>
+
+<p>Create the file <code class="language-plaintext highlighter-rouge">teamlead-user.ldiff</code> and add this:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dn: uid=teamlead-ldap,ou=users,dc=kimai,dc=org
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+uid: teamlead-ldap
+sn: LDAP-Teamlead
+givenName: LDAP-Teamlead Example
+cn: teamlead-ldap
+displayName: LDAP User (Teamlead)
+mail: teamlead-ldap@example.com
+userPassword: {SSHA}+/Ir5pqpe09B07Xz8IT5AS+swJ5s29QS
+</code></pre></div></div>
+
+<p>Create the file <code class="language-plaintext highlighter-rouge">teamlead-group.ldiff</code> and add this:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dn: cn=teamlead,ou=groups,dc=kimai,dc=org
+objectClass: top
+objectClass: groupOfNames
+cn: Teamleads
+member: uid=teamlead-ldap,ou=users,dc=kimai,dc=org
+</code></pre></div></div>
+
+<p>Create the file <code class="language-plaintext highlighter-rouge">admin-user.ldiff</code> and add this:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dn: uid=admin-ldap,ou=users,dc=kimai,dc=org
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+uid: admin-ldap
+sn: LDAP-Administrator
+givenName: LDAP-Admin Example
+cn: admin-ldap
+displayName: LDAP User (Administrator)
+mail: admin-ldap@example.com
+userPassword: {SSHA}+/Ir5pqpe09B07Xz8IT5AS+swJ5s29QS
+</code></pre></div></div>
+
+<p>Create the file <code class="language-plaintext highlighter-rouge">admin-group.ldiff</code> and add this:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dn: cn=admin,ou=groups,dc=kimai,dc=org
+objectClass: top
+objectClass: groupOfNames
+cn: Admins
+member: uid=admin-ldap,ou=users,dc=kimai,dc=org
+</code></pre></div></div>
+
+<p>Create the file <code class="language-plaintext highlighter-rouge">super-user.ldiff</code> and add this:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dn: uid=super-ldap,ou=users,dc=kimai,dc=org
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+uid: super-ldap
+sn: LDAP-SuperAdmin
+givenName: LDAP-Teamlead Example
+cn: super-ldap
+displayName: LDAP User (Super-Admin)
+mail: super-ldap@example.com
+userPassword: {SSHA}+/Ir5pqpe09B07Xz8IT5AS+swJ5s29QS
+</code></pre></div></div>
+
+<p>Create the file <code class="language-plaintext highlighter-rouge">super-group.ldiff</code> and add this:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dn: cn=super,ou=groups,dc=kimai,dc=org
+objectClass: top
+objectClass: groupOfNames
+cn: Super-Admins
+member: uid=super-ldap,ou=users,dc=kimai,dc=org
+</code></pre></div></div>
+
+<h2 id="the-localyaml-settings">The local.yaml settings</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">kimai</span><span class="pi">:</span>
+    <span class="na">ldap</span><span class="pi">:</span>
+        <span class="na">activate</span><span class="pi">:</span> <span class="no">true</span>
+        <span class="na">connection</span><span class="pi">:</span>
+            <span class="na">host</span><span class="pi">:</span> <span class="s">127.0.0.1</span>
+        <span class="na">user</span><span class="pi">:</span>
+            <span class="na">baseDn</span><span class="pi">:</span> <span class="s">ou=users, dc=kimai, dc=org</span>
+            <span class="na">attributes</span><span class="pi">:</span>
+                <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_attr</span><span class="pi">:</span> <span class="nv">uid</span><span class="pi">,</span> <span class="nv">user_method</span><span class="pi">:</span> <span class="nv">setUserIdentifier</span> <span class="pi">}</span>
+                <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_attr</span><span class="pi">:</span> <span class="nv">givenName</span><span class="pi">,</span> <span class="nv">user_method</span><span class="pi">:</span> <span class="nv">setAlias</span> <span class="pi">}</span>
+                <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_attr</span><span class="pi">:</span> <span class="nv">mail</span><span class="pi">,</span> <span class="nv">user_method</span><span class="pi">:</span> <span class="nv">setEmail</span> <span class="pi">}</span>
+        <span class="na">role</span><span class="pi">:</span>
+            <span class="na">baseDn</span><span class="pi">:</span> <span class="s">ou=groups, dc=kimai, dc=org</span>
+            <span class="na">filter</span><span class="pi">:</span> <span class="s">(&amp;(objectClass=groupOfNames)(|(cn=Admins)(cn=Super-Admins)(cn=Teamleads)))</span>
+            <span class="na">userDnAttribute</span><span class="pi">:</span> <span class="s">member</span>
+            <span class="na">usernameAttribute</span><span class="pi">:</span> <span class="s">dn</span>
+            <span class="na">groups</span><span class="pi">:</span>
+                <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_value</span><span class="pi">:</span> <span class="nv">Teamleads</span><span class="pi">,</span> <span class="nv">role</span><span class="pi">:</span> <span class="nv">ROLE_TEAMLEAD</span> <span class="pi">}</span>
+                <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_value</span><span class="pi">:</span> <span class="nv">Admins</span><span class="pi">,</span> <span class="nv">role</span><span class="pi">:</span> <span class="nv">ROLE_ADMIN</span> <span class="pi">}</span>
+                <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_value</span><span class="pi">:</span> <span class="nv">Super-Admins</span><span class="pi">,</span> <span class="nv">role</span><span class="pi">:</span> <span class="nv">ROLE_SUPER_ADMIN</span> <span class="pi">}</span>
+</code></pre></div></div>
+
+<h2 id="setup-on-macos-sonoma-arm-with-homebrew">Setup on MacOS Sonoma (ARM) with Homebrew</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew <span class="nb">install </span>openldap
+<span class="nb">mkdir</span> /opt/homebrew/var/openldap-data
+<span class="nb">chmod </span>777 /opt/homebrew/var/openldap-data
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vim /opt/homebrew/etc/openldap/slapd.conf
+</code></pre></div></div>
+
+<p>Comment the entire <code class="language-plaintext highlighter-rouge">MDB database definitions</code> section and add this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>include         /private/etc/openldap/schema/cosine.schema
+include         /private/etc/openldap/schema/nis.schema
+include         /private/etc/openldap/schema/inetorgperson.schema
+
+database ldif
+suffix "dc=kimai,dc=org"
+rootdn "cn=admin,dc=kimai,dc=org"
+# clear text password: kitten (generated with slappasswd)
+rootpw {SSHA}aHxzKxwoAV46MQ4gAv9n+ISm7kD53Tzq
+directory /private/var/db/openldap/openldap-data
+</code></pre></div></div>
+
+<p>Now change the configuration:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vim /opt/homebrew/etc/openldap/ldap.conf
+</code></pre></div></div>
+
+<p>Replace <code class="language-plaintext highlighter-rouge">BASE</code> and <code class="language-plaintext highlighter-rouge">URI</code> with these values:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>BASE dc=kimai,dc=org
+URI ldap://127.0.0.1:389
+</code></pre></div></div>
+
+<p>Start the service:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/libexec/slapd <span class="nt">-d3</span> <span class="nt">-f</span> /opt/homebrew/etc/openldap/slapd.conf
+</code></pre></div></div>
+
+<h2 id="importing-the-data">Importing the data</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ldapadd <span class="nt">-D</span> <span class="s2">"cn=admin,dc=kimai,dc=org"</span> <span class="nt">-W</span> <span class="nt">-x</span> <span class="nt">-f</span> ou-root.ldif
+ldapadd <span class="nt">-D</span> <span class="s2">"cn=admin,dc=kimai,dc=org"</span> <span class="nt">-W</span> <span class="nt">-x</span> <span class="nt">-f</span> ou-users.ldiff
+ldapadd <span class="nt">-D</span> <span class="s2">"cn=admin,dc=kimai,dc=org"</span> <span class="nt">-W</span> <span class="nt">-x</span> <span class="nt">-f</span> ou-groups.ldiff
+ldapadd <span class="nt">-D</span> <span class="s2">"cn=admin,dc=kimai,dc=org"</span> <span class="nt">-W</span> <span class="nt">-x</span> <span class="nt">-f</span> user-user.ldiff
+ldapadd <span class="nt">-D</span> <span class="s2">"cn=admin,dc=kimai,dc=org"</span> <span class="nt">-W</span> <span class="nt">-x</span> <span class="nt">-f</span> teamlead-user.ldiff
+ldapadd <span class="nt">-D</span> <span class="s2">"cn=admin,dc=kimai,dc=org"</span> <span class="nt">-W</span> <span class="nt">-x</span> <span class="nt">-f</span> teamlead-group.ldiff
+ldapadd <span class="nt">-D</span> <span class="s2">"cn=admin,dc=kimai,dc=org"</span> <span class="nt">-W</span> <span class="nt">-x</span> <span class="nt">-f</span> admin-user.ldiff
+ldapadd <span class="nt">-D</span> <span class="s2">"cn=admin,dc=kimai,dc=org"</span> <span class="nt">-W</span> <span class="nt">-x</span> <span class="nt">-f</span> admin-group.ldiff
+ldapadd <span class="nt">-D</span> <span class="s2">"cn=admin,dc=kimai,dc=org"</span> <span class="nt">-W</span> <span class="nt">-x</span> <span class="nt">-f</span> super-user.ldiff
+ldapadd <span class="nt">-D</span> <span class="s2">"cn=admin,dc=kimai,dc=org"</span> <span class="nt">-W</span> <span class="nt">-x</span> <span class="nt">-f</span> super-group.ldiff
+</code></pre></div></div>
+
+<h2 id="links">Links</h2>
+
+<p>OpenLDAP is not the simplet service to setup and these links helped me finding a working configuration:</p>
+
+<ul>
+  <li><a href="https://github.com/IntersectAustralia/acdata/wiki/Setting-up-OpenLDAP">Setting up OpenLDAP</a></li>
+  <li><a href="http://blog.facilelogin.com/2012/05/setting-up-openldap-under-mac-os-x.html">Setting up OpenLDAP - MacOSX 2012</a></li>
+</ul>
+
+                </div>
+                
+
+                
+            </div>
+        </div>
+
+    </div>
+</main>
+
+
+    <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
+        <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#creating-the-structure-files" class="nav-link">Creating the structure files</a><ul><li class="nav-item"><a href="#manual-creation" class="nav-link">Manual creation</a></li></ul></li><li class="nav-item"><a href="#the-localyaml-settings" class="nav-link">The local.yaml settings</a></li><li class="nav-item"><a href="#setup-on-macos-sonoma-arm-with-homebrew" class="nav-link">Setup on MacOS Sonoma (ARM) with Homebrew</a></li><li class="nav-item"><a href="#importing-the-data" class="nav-link">Importing the data</a></li><li class="nav-item"><a href="#links" class="nav-link">Links</a></li></ul>
+        
+    </aside>
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+
+</body>
+</html>

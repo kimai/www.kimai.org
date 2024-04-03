@@ -1,0 +1,803 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index,follow">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+    <title>Timesheet – Kimai</title>
+    
+        <meta name="description" content="View and manage your time-tracking data in the timesheet view">
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kimai Time-Tracking">
+    <meta property="og:description" content="View and manage your time-tracking data in the timesheet view">
+    <meta property="og:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kimai Time-Tracking">
+    <meta name="twitter:site" content="@kimai_org">
+    <meta name="twitter:description" content="View and manage your time-tracking data in the timesheet view">
+    <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <link rel="canonical" href="https://www.kimai.org/documentation/timesheet.html" />
+    <script src="/assets/build/theme.js"></script>
+    <link href="/assets/build/main.css" rel="stylesheet" />
+</head>
+<body class="">
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand bg-light border-bottom border-light shadow fixed-top" data-scroll-header>
+    <div class="container-fluid pe-lg-4">
+        <div class="d-flex align-items-center">
+            <a href="/documentation/" class="navbar-brand flex-shrink-0 py-1 py-lg-2">
+                <img src="/images/apple-touch-icon.png" width="47" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning">User manual</span>
+        </div>
+        <div class="d-flex align-items-center w-100">
+            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 9.75rem;">
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-manual.html" class="nav-link">
+                            <i class="bx bx-book opacity-70 fs-lg me-1"></i>
+                            User manual
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/cloud.html" class="nav-link">
+                            <i class="bx bxs-cloud opacity-70 fs-lg me-1"></i>
+                            Kimai-Cloud
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/developers.html" class="nav-link">
+                            <i class="bx bx-code opacity-70 fs-lg me-1"></i>
+                            Developer
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-on-premise.html" class="nav-link">
+                            <i class="bx bx-wrench opacity-70 fs-lg me-1"></i>
+                            Self-hosted
+                        </a>
+                    </li>
+                
+            </ul>
+            <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="form-check form-switch mode-switch pe-lg-1 ms-lg-auto" data-bs-toggle="mode">
+                <input type="checkbox" class="form-check-input" id="theme-mode">
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Light</label>
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Dark</label>
+            </div>
+        </div>
+    </div>
+</header>
+
+<aside data-bs-theme="dark">
+    <div id="componentsNav" class="offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100 bg-dark border-end-lg" style="width: 21rem; z-index: 1045;">
+        <div class="offcanvas-header d-none d-lg-flex justify-content-start">
+            <a href="/documentation/" class="navbar-brand text-dark d-none d-lg-flex py-0">
+                <img src="/images/apple-touch-icon.png" width="32" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning d-none d-lg-inline-block">User manual</span>
+        </div>
+        <div class="offcanvas-header d-block d-lg-none border-bottom">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <h5 class="d-lg-none mb-0">Menu</h5>
+                <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#componentsNav" aria-label="Close"></button>
+            </div>
+            <div class="list-group list-group-flush mx-n4">
+                
+                    
+                    
+                    <a href="/documentation/chapter-manual.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-book opacity-70 me-1"></i>
+                        User manual
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/cloud.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bxs-cloud opacity-70 me-1"></i>
+                        Kimai-Cloud
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/developers.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-code opacity-70 me-1"></i>
+                        Developer
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/chapter-on-premise.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-wrench opacity-70 me-1"></i>
+                        Self-hosted
+                    </a>
+                
+            </div>
+        </div>
+        <div class="offcanvas-body swiper scrollbar-hover overflow-hidden w-100 p-4" data-swiper-options='{
+          "direction": "vertical",
+          "slidesPerView": "auto",
+          "freeMode": true,
+          "scrollbar": {
+            "el": ".swiper-scrollbar"
+          },
+          "mousewheel": true
+        }'>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide h-auto">
+                    
+                        
+
+    
+    
+    <h3 class="fs-lg">Using Kimai</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/timesheet.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4  active">
+                
+                Timesheet
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/weekly-times.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Weekly working hours
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/calendar.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Calendar
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/invoices.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Invoices
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/export.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Export
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/reporting.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Reporting
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/customer.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Customer
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/project.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Projects
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/activity.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Activities
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/tags.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Tags
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/users.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Users
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/user-preferences.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                User preferences
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/permissions.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Roles & Permissions
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/teams.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Teams
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/configurations.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Settings
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/doctor.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Doctor
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/contract.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Working times
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/public-holiday.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Public holiday
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/absence.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Absence
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/dashboard.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Dashboard
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">Tips and Tricks</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/initial-setup.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Initial setup
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/rates.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Prices (rates)
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/billable.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Billable
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/pdf-templates.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                PDF templates
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/keyboard-shortcuts.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Keyboard shortcuts
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/i18n-am-pm.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Date and Time formats
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/duration-format.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Duration format
+                
+            </a>
+        
+    
+        
+    
+        
+            
+            
+            <a href="/documentation/homescreen.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Use Kimai as app
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/user-api.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Connecting via API
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">Additional features</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/plugin-custom-fields.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Custom fields
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-expenses.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Expenses
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-task-management.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Task management
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-custom-css.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Custom CSS
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-custom-content.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Custom content
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-translation.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Translation
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-invoice.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Invoice
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-import.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Importer
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-audit-trail.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Audit trail logs
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-contract.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Working contract
+                
+            </a>
+        
+    
+    </div>
+
+
+                        <div class="list-group list-group-flush pb-3 mb-4 mx-n4">
+                    
+                    <a href="/" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Home</a>
+                    <a href="/en/site-notice.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Site notice</a>
+                    <a href="/en/privacy-policy.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Privacy policy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-scrollbar end-0"></div>
+        </div>
+    </div>
+</aside>
+
+<main class="docs-container pt-5">
+    <div class="container-fluid px-xxl-5 px-lg-4 pt-4 pt-lg-5 pb-2 pb-lg-4">
+
+        <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 pt-4 mb-n3">
+            <div class="me-4">
+                <h1 class="pb-1">Timesheet</h1>
+                
+                <p class="text-muted fs-lg mb-2">View and manage your time-tracking data in the timesheet view</p>
+                
+            </div>
+            
+
+
+
+
+    <div class="dropdown">
+        <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Older versions
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+            
+            <a class="dropdown-item" href="/documentation/1.14/timesheet.html">Kimai 1.14</a>
+            
+            <a class="dropdown-item" href="/documentation/timesheet.html">2.13.0 (latest version)</a>
+        </div>
+    </div>
+
+
+        </div>
+
+        <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+            <div>
+                
+                <div id="documentation-content">
+                    <h2 id="starting-and-stopping-records">Starting and stopping records</h2>
+
+<h3 id="re-start-timesheet-records">Re-start timesheet records</h3>
+<ul>
+  <li>Click one of your <strong>last activities</strong> in the modal, opened through the upper toolbar - this will start a record for the same customer/project &amp; activity “now”</li>
+  <li>Click the <strong>restart</strong> action from one of the records in your timesheet - this will start a record for the same customer/project &amp; activity “now” and copy description and tags</li>
+</ul>
+
+<h3 id="start-new-records">Start new records</h3>
+<ul>
+  <li>Clicking the big <strong>play</strong> button in the toolbar (if no record is active right now)</li>
+  <li>Click the “+” action is the upper right page actions to open the “edit new record” modal</li>
+  <li>Select a time-range in the calendar (deactivated if the timeclock-mode is active)</li>
+  <li>Click a day in the calendar (deactivated if the timeclock-mode is active)</li>
+</ul>
+
+<h3 id="stop-records">Stop records</h3>
+<ul>
+  <li>Click the <strong>stop</strong> button in the “active records” dropdown in the upper toolbar</li>
+  <li>Click the <strong>stop</strong> action in the running record in your timesheet</li>
+  <li>Save a running record after setting an end date (deactivated if the timeclock-mode is active)</li>
+</ul>
+
+<h4 id="problem-cannot-be-stopped">Problem: cannot be stopped</h4>
+
+<p>Kimai has rules in place, to prevent excessive long timesheets from being accidentally created.</p>
+
+<p>When a user tries to create such a timesheet, or tries to stop such a timesheet, a warning will be shown:</p>
+
+<p><img src="/images/documentation/timesheet/timesheet-excessive-duration.jpg" alt="Screenshot" title="How such a warning will look like" height="250px" /></p>
+
+<p>You have several options to solve this problem. 
+All of them involve that the user opens the timesheet listing and finds the record (usually the last one created):</p>
+
+<ul>
+  <li>Edit the record and set a different start date</li>
+  <li>Edit the record and set a different end date</li>
+  <li>Edit the record and set a shorter duration</li>
+  <li>Delete the record from the listing</li>
+</ul>
+
+<p>An administrator can fix the problem by opening the <code class="language-plaintext highlighter-rouge">All times</code> view and filtering the user.</p>
+
+<p>Administrators can also configure the duration for this check or deactivate it entirely at <a href="/documentation/configurations.html">System &gt; Settings &gt; Timesheet</a>.</p>
+
+<h2 id="duration-format">Duration format</h2>
+
+<p>Please read the full documentation about accepted inputs for the <a href="/documentation/duration-format.html">duration format</a>.</p>
+
+<p>Important:</p>
+<ul>
+  <li>using <code class="language-plaintext highlighter-rouge">0</code> or <code class="language-plaintext highlighter-rouge">00:00</code> as duration will also stop the entry with a duration of zero seconds</li>
+  <li>to create a running entry the <code class="language-plaintext highlighter-rouge">end</code> and <code class="language-plaintext highlighter-rouge">duration</code> field needs to be empty</li>
+</ul>
+
+<h2 id="exported-records">Exported records</h2>
+
+<p>Exported records will be locked to prevent manipulation of cleared data.</p>
+
+<p>The <a href="/documentation/permissions.html">permission</a> <code class="language-plaintext highlighter-rouge">edit_exported_timesheet</code> does allow editing and deletion of these
+locked entries nevertheless, which by default is given to users with <code class="language-plaintext highlighter-rouge">ROLE_ADMIN</code> and <code class="language-plaintext highlighter-rouge">ROLE_SUPER_ADMIN</code>.</p>
+
+<p>The export state can be set manually or via the <a href="/documentation/invoices.html">invoice</a> and <a href="/documentation/export.html">export</a> screens.</p>
+
+<h2 id="billable-vs-not-billable">Billable vs. not billable</h2>
+
+<p>Since version 1.14 you can define whether a timesheet record is billable or not.</p>
+
+<p>Non-billable timesheets are excluded from <a href="/documentation/invoices.html">invoices</a> and budget calculations.</p>
+
+<p>Please read the <a href="/documentation/billable.html">billable documentation</a> to understand the <code class="language-plaintext highlighter-rouge">billable</code> flag.</p>
+
+<h2 id="filter-and-search">Filter and search</h2>
+
+<p>The search supports filtering by the fields:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">user</code> (only in team timesheets)</li>
+  <li><code class="language-plaintext highlighter-rouge">daterange</code></li>
+  <li><code class="language-plaintext highlighter-rouge">customer</code></li>
+  <li><code class="language-plaintext highlighter-rouge">project</code></li>
+  <li><code class="language-plaintext highlighter-rouge">activity</code></li>
+  <li><code class="language-plaintext highlighter-rouge">tags</code></li>
+  <li><code class="language-plaintext highlighter-rouge">state</code> (running / stopped)</li>
+</ul>
+
+<p>Besides these filters, you can query for a free search term, which will be searched in the fields:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">description</code></li>
+</ul>
+
+<p>Additionally, you can filter for <a href="/documentation/meta-fields.html">custom fields</a> by using a search phrase like <code class="language-plaintext highlighter-rouge">location:homeoffice</code>.
+This would find all entries with the custom field <code class="language-plaintext highlighter-rouge">location</code> matching the term <code class="language-plaintext highlighter-rouge">homeoffice</code>.</p>
+
+<p>The search terms will be found within the full value, so searching for <code class="language-plaintext highlighter-rouge">office</code> would find:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">I love working in my office</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Office</code></li>
+  <li><code class="language-plaintext highlighter-rouge">This office is beautiful</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Our offices are very noisy</code></li>
+</ul>
+
+<p>Attention: checkboxes have the values <code class="language-plaintext highlighter-rouge">0</code> (not checked) and <code class="language-plaintext highlighter-rouge">1</code> (checked).</p>
+
+<p>You can mix the search term and use multiple meta-field queries:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">location:homeoffice hello</code> - find all entries matching the search term <code class="language-plaintext highlighter-rouge">hello</code> with the custom field <code class="language-plaintext highlighter-rouge">location</code> matching the term <code class="language-plaintext highlighter-rouge">homeoffice</code></li>
+  <li><code class="language-plaintext highlighter-rouge">location:homeoffice contract:fulltime</code> - find all entries with the custom field combination: <code class="language-plaintext highlighter-rouge">location</code> matching <code class="language-plaintext highlighter-rouge">homeoffice</code> and <code class="language-plaintext highlighter-rouge">contract</code> matching <code class="language-plaintext highlighter-rouge">fulltime</code></li>
+  <li><code class="language-plaintext highlighter-rouge">expired:0</code> finds all items whose <code class="language-plaintext highlighter-rouge">expired</code> checkbox is <code class="language-plaintext highlighter-rouge">off</code></li>
+</ul>
+
+<p>There are also special operators, which can be used in conjunction with custom fields (since Kimai 1.19.1):</p>
+
+<ul>
+  <li>The <code class="language-plaintext highlighter-rouge"> </code> empty string (e.g. <code class="language-plaintext highlighter-rouge">location:</code>) will find all entries whose value in the <code class="language-plaintext highlighter-rouge">location</code> field is either empty or not existing</li>
+  <li>The <code class="language-plaintext highlighter-rouge">~</code> search term (e.g. <code class="language-plaintext highlighter-rouge">location:~</code>) will find all entries that are missing the custom field (created before the field was created)</li>
+  <li>The <code class="language-plaintext highlighter-rouge">*</code> search term (e.g. <code class="language-plaintext highlighter-rouge">location:*</code>) will find all entries that have any value in the <code class="language-plaintext highlighter-rouge">location</code> field (basically the opposite of <code class="language-plaintext highlighter-rouge">~</code>)</li>
+</ul>
+
+
+                </div>
+                
+
+                
+                <h2 id="related-articles" class="fs-4 mt-5">Related articles</h2>
+                <ul>
+                    
+                    
+                    <li>
+                        <a href="/documentation/rates.html">Prices (rates)</a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="/documentation/calendar.html">Calendar</a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="/documentation/weekly-times.html">Weekly working hours</a>
+                    </li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+
+    </div>
+</main>
+
+
+    <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
+        <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#starting-and-stopping-records" class="nav-link">Starting and stopping records</a><ul><li class="nav-item"><a href="#re-start-timesheet-records" class="nav-link">Re-start timesheet records</a></li><li class="nav-item"><a href="#start-new-records" class="nav-link">Start new records</a></li><li class="nav-item"><a href="#stop-records" class="nav-link">Stop records</a></li></ul></li><li class="nav-item"><a href="#duration-format" class="nav-link">Duration format</a></li><li class="nav-item"><a href="#exported-records" class="nav-link">Exported records</a></li><li class="nav-item"><a href="#billable-vs-not-billable" class="nav-link">Billable vs. not billable</a></li><li class="nav-item"><a href="#filter-and-search" class="nav-link">Filter and search</a></li></ul>
+        
+        <ul class="nav">
+            <li>
+                <a href="#related-articles" class="nav-link">Related articles</a>
+            </li>
+        </ul>
+        
+    </aside>
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+
+</body>
+</html>

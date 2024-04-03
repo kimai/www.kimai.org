@@ -1,0 +1,1204 @@
+<!doctype html>
+<html lang="nl" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index,follow">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+    <title>Kimai - Open Source tijdregistratie</title>
+    
+        <meta name="description" content="Kimai - gratis en eenvoudige tijdregistratie voor freelancers, agentschappen en bedrijven met gebruikers- en factuurverwerking.">
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
+    <meta property="og:locale" content="nl">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kimai Time-Tracking">
+    <meta property="og:description" content="Kimai - gratis en eenvoudige tijdregistratie voor freelancers, agentschappen en bedrijven met gebruikers- en factuurverwerking.">
+    <meta property="og:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kimai Time-Tracking">
+    <meta name="twitter:site" content="@kimai_org">
+    <meta name="twitter:description" content="Kimai - gratis en eenvoudige tijdregistratie voor freelancers, agentschappen en bedrijven met gebruikers- en factuurverwerking.">
+    <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <link rel="alternate" hreflang="cs" href="https://www.kimai.org/cs/">
+    <link rel="alternate" hreflang="de" href="https://www.kimai.org/de/">
+    <link rel="alternate" hreflang="es" href="https://www.kimai.org/es/">
+    <link rel="alternate" hreflang="fr" href="https://www.kimai.org/fr/">
+    <link rel="alternate" hreflang="he" href="https://www.kimai.org/he/">
+    <link rel="alternate" hreflang="hr" href="https://www.kimai.org/hr/">
+    <link rel="alternate" hreflang="en" href="https://www.kimai.org/">
+    <link rel="alternate" hreflang="it" href="https://www.kimai.org/it/">
+    <link rel="alternate" hreflang="nl" href="https://www.kimai.org/nl/">
+    <link rel="alternate" hreflang="pl" href="https://www.kimai.org/pl/">
+    <link rel="alternate" hreflang="pt" href="https://www.kimai.org/pt/">
+    <link rel="alternate" hreflang="pt_BR" href="https://www.kimai.org/pt_BR/">
+    <link rel="alternate" hreflang="ru" href="https://www.kimai.org/ru/">
+    <link rel="alternate" hreflang="sk" href="https://www.kimai.org/sk/">
+    <link rel="alternate" hreflang="sv" href="https://www.kimai.org/sv/">
+    <link rel="alternate" hreflang="uk" href="https://www.kimai.org/uk/">
+    <link rel="alternate" hreflang="zh_Hans" href="https://www.kimai.org/zh_Hans/">
+    <script src="/assets/build/theme.js"></script>
+    <link href="/assets/build/main.css" rel="stylesheet" />
+</head>
+<body class="">
+
+<main class="page-wrapper">
+
+    
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand-lg position-absolute   navbar-sticky">
+    <div class="container px-3">
+        <a href="/nl/" class="navbar-brand pe-3">
+        <img src="/images/kimai_logo.png" style="height:36px" alt="Kimai - Open Source tijdregistratie"> Kimai
+        </a>
+        <div id="navbarNav" class="offcanvas offcanvas-end">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title">Menu</h5>
+                <button type="button" class="btn-close " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    
+                    <li class="nav-item">
+                        <a href="/nl/demo.html" class="nav-link">Demo</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/nl/store/" class="nav-link">Winkel</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/nl/blog/" class="nav-link">Nieuws</a>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Documentatie</a>
+                        <ul class="dropdown-menu">
+                            
+                            <li><a href="/documentation/chapter-manual.html" class="dropdown-item">Gebruikershandleiding</a></li>
+                            
+                            <li><a href="/documentation/cloud.html" class="dropdown-item">Kimai-Cloud</a></li>
+                            
+                            <li><a href="/documentation/chapter-on-premise.html" class="dropdown-item">On-Premise</a></li>
+                            
+                            <li><a href="/documentation/developers.html" class="dropdown-item">Ontwikkelaar</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="pe-lg-1 ms-auto me-2">
+            <a href="/nl/download.html" class="btn rounded-pill btn-sm fs-sm d-none d-md-inline-flex me-2 btn-outline-primary">Download</a>
+            
+
+
+
+
+
+<a href="https://www.kimai.cloud/auth/registration" class="btn btn-success rounded-pill btn-sm fs-sm d-inline-flex">Gratis beginnen</a>
+
+        </div>
+        <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</header>
+
+
+<section class="position-relative pt-5 overflow-hidden">
+    <span class="position-absolute top-0 start-0 d-dark-mode-none d-block w-100 h-100 bg-secondary"></span>
+    <span class="position-absolute top-0 start-0 d-dark-mode-block d-none w-100 h-100" style="background: radial-gradient(84.79% 172.9% at 73.31% 31.4%, rgba(99, 135, 241, .1) 0%, rgba(218, 70, 239, .05) 52.47%, rgba(99, 135, 241, .1) 100%);"></span>
+    <div class="container position-relative pt-xl-5 pt-md-3 zindex-5">
+        <div class="row justify-content-md-start justify-content-center flex-md-nowrap pt-lg-5 pt-4">
+            <div class="col-xl-5 col-md-6 col-sm-10 d-flex flex-column justify-content-between mb-md-5 mb-md-4 mb-3 pb-xl-5 pb-lg-4">
+                <div class="text-md-start text-center">
+                    <h1 class="display-4 mb-lg-4 mb-3">Tijdregistratie voor projectgestuurde teams</h1>
+                    <p class="mb-4 mx-md-0 mx-auto pb-xl-3 pb-lg-2 fs-lg" style="max-width: 30.5rem;">Ons open-source platform is ontworpen om de tijdgegevens van uw bedrijf bij te houden en te analyseren, waardoor het perfect is voor bedrijven van alle groottes. Kimai helpt u de controle te houden over tijd en geld.</p>
+                    <p>
+                        <a href="/blog/2023/kimai-release-2/" class="d-inline-flex align-items-center fs-sm fw-semibold text-decoration-none border border-primary border-opacity-50 rounded-pill py-1 px-3">
+                            <span class="text-gradient-primary lh-lg">Nieuw: Kimai 2.0</span>
+                            <i class="bx bx-right-arrow-alt text-gradient-primary fs-lg ms-2 me-n1"></i>
+                        </a>
+                    </p>
+                </div>
+                <ul class="list-unstyled row row-cols-2 gy-sm-2 gy-1 gx-sm-4 gx-2 mt-lg-5 mt-4 mx-md-0 mx-auto pt-lg-0 pt-md-2 mb-md-5 mb-4 pb-xl-4 pb-lg-3 pb-md-2 pb-sm-0 pb-2" style="max-width: 30rem;">
+    <li class="col d-flex align-items-start">
+        <i class="bx bx-check-circle me-2 fs-5 text-primary"></i>
+        Open source
+    </li>
+    <li class="col d-flex align-items-start">
+        <i class="bx bx-check-circle me-2 fs-5 text-primary"></i>
+        Enterprise-add-ons
+    </li>
+    <li class="col d-flex align-items-start">
+        <i class="bx bx-check-circle me-2 fs-5 text-primary"></i>
+        Cloud en On-Premise
+    </li>
+    <li class="col d-flex align-items-start">
+        <i class="bx bx-check-circle me-2 fs-5 text-primary"></i>
+        GDPR-conform
+    </li>
+</ul>
+
+            </div>
+            <div class="col-md-12 offset-xl-1 d-flex mt-lg-4 mb-4">
+                <div class="align-self-end ms-xl-0 ms-md-4 p-lg-4 p-sm-3 p-2 rounded-4 overflow-hidden" style="background: linear-gradient(153.32deg, rgba(255, 255, 255, .3) -65.62%, rgba(255, 255, 255, .1) 83.28%); box-shadow: 0 .25rem 1.5rem -.0625rem rgba(0, 0, 0, .2); backdrop-filter: blur(25px);">
+                    <div class="swap-image">
+                        <img src="/images/screenshots/screenshot-dashboard.jpg" width="1122" alt="Dashboard" class="rounded-4 swap-from" style="box-shadow: 0 0 7.5rem rgba(0, 0, 0, .1);">
+                        <div class="swap-to">
+                            <img src="/images/screenshots/screenshot-reporting.jpg" width="1122" alt="Dashboard" class="rounded-4 light-mode-img" style="box-shadow: 0 0 7.5rem rgba(0, 0, 0, .1);">
+                            <img src="/images/screenshots/screenshot-reporting.jpg" width="1122" alt="Reporting" class="rounded-4 dark-mode-img" style="box-shadow: 0 0 7.5rem rgba(0, 0, 0, .1);">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span class="position-absolute bottom-0 start-0 w-100">
+          <span class="d-dark-mode-none d-block w-100 h-100 py-xl-5 pt-lg-4 pt-md-0 pt-4 pb-5 bg-light"></span>
+          <span class="d-dark-mode-block d-none w-100 h-100 py-xl-5 pt-lg-4 pt-md-0 pt-4 pb-5 bg-dark"></span>
+        </span>
+</section>
+
+
+    <section class="container position-relative zindex-2 pt-2 pt-sm-3 pt-md-4 pt-lg-5 mt-xl-3">
+    <h2 class="h1 text-center pb-2 pb-lg-3 pt-2 pt-md-3 pt-lg-4 pt-xxl-5">
+        Eén software, twee versies
+    </h2>
+    <p class="fs-lg text-center text-muted pb-3 pb-lg-4">
+        Kimai is open source software die beschikbaar is voor zelfhosting en als SaaS.
+    </p>
+
+    <ul class="nav nav-tabs flex-nowrap justify-content-lg-center overflow-auto pb-2 mb-3 mb-lg-4" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link text-nowrap" id="open-source-onpremise-tab" data-bs-toggle="tab" data-bs-target="#open-source-onpremise" type="button" role="tab" aria-controls="open-source-onpremise" aria-selected="false">
+                <i class="bx bx-server fs-lg opacity-60 me-2"></i>
+                Door u gehost
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link text-nowrap active" id="saas-cloud-tab" data-bs-toggle="tab" data-bs-target="#saas-cloud" type="button" role="tab" aria-controls="saas-cloud" aria-selected="true">
+                <i class="bx bx-cloud fs-lg opacity-60 me-2"></i>
+                Voor u gehost
+            </button>
+        </li>
+    </ul>
+
+    <div class="tab-content bg-secondary rounded-3 py-4">
+
+        <div class="tab-pane fade" id="open-source-onpremise" role="tabpanel" aria-labelledby="open-source-onpremise-tab">
+            <div class="row align-items-center pt-3 pt-sm-4 pt-md-0 px-3 px-sm-4 px-lg-0">
+                <div class="col-lg-4 col-md-5 offset-lg-1 text-center text-md-start">
+                    <h3 class="mb-lg-4">Open Source</h3>
+                    <p>
+                        Kimai is een open-source tijdregistratie oplossing. Het houdt de werktijd bij en print op verzoek een samenvatting van je activiteiten. Jaarlijks, maandelijks, dagelijks, per klant, per project ... De eenvoud is de kracht. Dankzij Kimai's browsergebaseerde interface werkt het cross-platform, zelfs op je mobiele apparaat.
+                    </p>
+                    <p>
+                        Met Kimai wordt het saaie proces van het invoeren van Excel spreadsheets met je werkuren niet alleen vereenvoudigd, het biedt ook tientallen andere spannende functies waarvan je niet eens weet dat je ze tot nu toe mist!
+                    </p>
+                    <a href="/nl/demo.html" class="btn btn-primary w-100 mb-2">Eerst uitproberen</a>
+                </div>
+                <div class="col-lg-6 col-md-7 mt-md-4">
+                    <img src="/images/screenshots/widget-teams.jpg" class="d-none d-sm-block my-lg-2 mx-auto me-md-0" width="502" alt="Image">
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade show active" id="saas-cloud" role="tabpanel" aria-labelledby="saas-cloud-tab">
+            <div class="row align-items-center pt-3 pb-2 pb-sm-3 pt-sm-4 pt-md-0 px-3 px-sm-4 px-lg-0">
+                <div class="col-lg-4 col-md-5 offset-lg-1 text-center text-md-start">
+                    <h3 class="mb-lg-4">Kimai Cloud (SaaS)</h3>
+                    <ul class="list-unstyled fs-sm pb-md-3 mb-3">
+    <li class="d-flex mb-2">
+        <i class="bx bx-check fs-xl text-primary me-1"></i>
+        Gratis TLS (SSL)-certificaat
+    </li>
+    <li class="d-flex mb-2">
+        <i class="bx bx-check fs-xl text-primary me-1"></i>
+        Hosting en Updates
+    </li>
+    <li class="d-flex mb-2">
+        <i class="bx bx-check fs-xl text-primary me-1"></i>
+        Back-ups
+    </li>
+    <li class="d-flex mb-2">
+        <i class="bx bx-check fs-xl text-primary me-1"></i>
+        Aangepaste velden
+    </li>
+    <li class="d-flex mb-2">
+        <i class="bx bx-check fs-xl text-primary me-1"></i>
+        Taakplanning
+    </li>
+    <li class="d-flex mb-2">
+        <i class="bx bx-check fs-xl text-primary me-1"></i>
+        Kostenbeheer
+    </li>
+    <li class="d-flex mb-2">
+        <i class="bx bx-check fs-xl text-primary me-1"></i>
+        Audittraillogs
+    </li>
+    <li class="d-flex">
+        <i class="bx bx-check fs-xl text-primary me-1"></i>
+        Werknemersaccount: Werkuren, vakantie, ziekte, feestdagen
+    </li>
+</ul>
+
+                    
+
+
+
+
+
+<a href="https://www.kimai.cloud/auth/registration" class="btn btn-danger w-100 mb-2">Gratis beginnen</a>
+
+                </div>
+                <div class="col-lg-6 col-md-7 mt-md-4">
+                    <img src="/images/screenshots/absence-table.jpg" class="d-none d-sm-block my-lg-2 mx-auto me-md-0" width="502" alt="Image">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+    
+<section class="position-relative py-5">
+    <div class="container position-relative zindex-5 pb-md-4 pt-md-2 pt-lg-3 pb-lg-5">
+        <div class="row justify-content-center text-center pb-3 mb-sm-2 mb-lg-3">
+            <div class="col-xl-6 col-lg-7 col-md-9">
+                <h2 class="h1 mb-lg-4">Ondersteunt uw bedrijf</h2>
+                <p class="fs-lg text-muted mb-0">Kimai heeft alle essentiële zakelijke functies die u nodig heeft om uw tijdregistratieworkflows op te zetten en te integreren met uw bestaande infrastructuur.</p>
+            </div>
+        </div>
+        
+        <div class="row align-items-center justify-content-center py-4 py-md-5 my-1 my-sm-3 my-md-0 my-xl-3">
+            <div class="col-12 col-md-6 order-md-2 pb-2 pb-sm-3 pb-md-0 mb-4 mb-md-0">
+                <div class="text-center">
+                    
+                    <i class="bx bx-check-shield feature-icon"></i>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 order-md-1 text-center text-md-start">
+                <h3 class="h2 mb-lg-4">Authenticatie en Beveiliging</h3>
+                <p class="fs-lg pb-lg-2 mb-4">
+                    Kimai ondersteunt externe identiteitsproviders en inloggen via LDAP en SAML bij meerdere providers (zoals Google Workspace, Azure AD of Authentik). Daarnaast kan tweefactorauthenticatie worden ingeschakeld via TOTP-tokens.
+                </p>
+            </div>
+        </div>
+        
+        <div class="row align-items-center justify-content-center py-4 py-md-5 my-1 my-sm-3 my-md-0 my-xl-3">
+            <div class="col-12 col-md-6  pb-2 pb-sm-3 pb-md-0 mb-4 mb-md-0">
+                <div class="text-center">
+                    
+                    <i class="bx bx-line-chart feature-icon"></i>
+                </div>
+            </div>
+            <div class="col-12 col-md-6  text-center text-md-start">
+                <h3 class="h2 mb-lg-4">Rapporten en analyses</h3>
+                <p class="fs-lg pb-lg-2 mb-4">
+                    Analyse van geregistreerde tijden, klanten, projecten en activiteiten. Evaluatie op basis van gebruikers, klanten, projecten, activiteiten, tags, tijdsperiodes en nog veel meer.
+                </p>
+            </div>
+        </div>
+        
+        <div class="row align-items-center justify-content-center py-4 py-md-5 my-1 my-sm-3 my-md-0 my-xl-3">
+            <div class="col-12 col-md-6 order-md-2 pb-2 pb-sm-3 pb-md-0 mb-4 mb-md-0">
+                <div class="text-center">
+                    
+                    <i class="bx bxs-file-pdf feature-icon"></i>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 order-md-1 text-center text-md-start">
+                <h3 class="h2 mb-lg-4">Facturering</h3>
+                <p class="fs-lg pb-lg-2 mb-4">
+                    Verschillende factuursjablonen, opties voor groepering van invoeren, configureerbare factuurnummers, en u kunt uw eigen sjablonen toevoegen in PDF, DOCX, HTML, XLSX en ODS-bestandsindeling.
+                </p>
+            </div>
+        </div>
+        
+        <div class="row align-items-center justify-content-center py-4 py-md-5 my-1 my-sm-3 my-md-0 my-xl-3">
+            <div class="col-12 col-md-6  pb-2 pb-sm-3 pb-md-0 mb-4 mb-md-0">
+                <div class="text-center">
+                    
+                    <i class="bx bx-code-curly feature-icon"></i>
+                </div>
+            </div>
+            <div class="col-12 col-md-6  text-center text-md-start">
+                <h3 class="h2 mb-lg-4">JSON API</h3>
+                <p class="fs-lg pb-lg-2 mb-4">
+                    Met een JSON API zodat externe apps kunnen communiceren met uw favoriete tijdregistratiesysteem!
+                </p>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+
+
+
+    <section class="position-relative py-5">
+    <div class="container position-relative zindex-5 pb-md-4 pt-md-2 pt-lg-3 pb-lg-5">
+        <div class="row justify-content-center text-center pb-3 mb-sm-2 mb-lg-3">
+            <div class="col-xl-6 col-lg-7 col-md-9">
+                <h2 class="h1 mb-lg-4">Wat kan Kimai voor u doen?</h2>
+                <p class="fs-lg text-muted mb-0">Kimai biedt veel meer dan alleen tijdregistratie, hier is een lijst van andere belangrijke zakelijke functies.</p>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-0 pb-xl-3">
+            
+            
+                
+                
+                
+                
+                
+                
+                
+                <div class="col position-relative">
+                    <div class="card border-0 bg-transparent rounded-0 p-md-1 p-xl-3">
+                        <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
+                            
+                                <a href="/nl/store/"><i class="bx bx-plug fs-2"></i></a>
+                            
+                        </div>
+                        <div class="card-body text-center">
+                            
+                                <h3 class="h5 pb-1 mb-2"><a href="/nl/store/">Plugins</a></h3>
+                            
+                            <p class="mb-0">Kimai is ontworpen om uitbreidbaar te zijn, en functies kunnen worden toegevoegd met plugins. Ontwikkelaars die ze willen maken, kunnen veel uitbreidingspunten gebruiken.</p>
+                        </div>
+                    </div>
+                    <hr class="position-absolute top-0 end-0 w-1 h-100 d-none d-sm-block">
+                    <hr class="position-absolute top-100 start-0 w-100 d-none d-sm-block">
+                </div>
+            
+                
+                
+                
+                
+                
+                
+                
+                <div class="col position-relative">
+                    <div class="card border-0 bg-transparent rounded-0 p-md-1 p-xl-3">
+                        <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
+                            
+                                <a href="/documentation/users.html"><i class="bx bxs-user-account fs-2"></i></a>
+                            
+                        </div>
+                        <div class="card-body text-center">
+                            
+                                <h3 class="h5 pb-1 mb-2"><a href="/documentation/users.html">Multi-gebruiker</a></h3>
+                            
+                            <p class="mb-0">Kimai kan door zoveel gebruikers worden gebruikt als u wilt: elke installatie ondersteunt onbeperkte gebruikers met verschillende rollen (zie machtigingen).</p>
+                        </div>
+                    </div>
+                    <hr class="position-absolute top-0 end-0 w-1 h-100 d-none d-sm-block">
+                    <hr class="position-absolute top-100 start-0 w-100 d-none d-sm-block">
+                </div>
+            
+                
+                
+                
+                
+                
+                
+                
+                <div class="col position-relative">
+                    <div class="card border-0 bg-transparent rounded-0 p-md-1 p-xl-3">
+                        <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
+                            
+                                <a href="/documentation/translations.html"><i class="bx bx-chat fs-2"></i></a>
+                            
+                        </div>
+                        <div class="card-body text-center">
+                            
+                                <h3 class="h5 pb-1 mb-2"><a href="/documentation/translations.html">Meertalig</a></h3>
+                            
+                            <p class="mb-0">Kimai kan worden gelokaliseerd naar elke taal en is al vertaald naar meer dan 30 talen.</p>
+                        </div>
+                    </div>
+                    <hr class="position-absolute top-0 end-0 w-1 h-100 d-none d-sm-block">
+                    <hr class="position-absolute top-100 start-0 w-100 d-none d-sm-block">
+                </div>
+            
+                
+                
+                
+                
+                
+                
+                
+                <div class="col position-relative">
+                    <div class="card border-0 bg-transparent rounded-0 p-md-1 p-xl-3">
+                        <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
+                            
+                                <a href="/documentation/teams.html"><i class="bx bx-select-multiple fs-2"></i></a>
+                            
+                        </div>
+                        <div class="card-body text-center">
+                            
+                                <h3 class="h5 pb-1 mb-2"><a href="/documentation/teams.html">Teams</a></h3>
+                            
+                            <p class="mb-0">Teams kunnen worden gemaakt om uw gebruikers in logische groepen te groeperen, zoals afdelingen of projectgerelateerde peer-groepen. Klanten en projecten kunnen aan die teams worden toegewezen, wat de zichtbaarheid en toegang voor andere gebruikers beperkt.</p>
+                        </div>
+                    </div>
+                    <hr class="position-absolute top-0 end-0 w-1 h-100 d-none d-sm-block">
+                    <hr class="position-absolute top-100 start-0 w-100 d-none d-sm-block">
+                </div>
+            
+                
+                
+                
+                
+                
+                
+                
+                <div class="col position-relative">
+                    <div class="card border-0 bg-transparent rounded-0 p-md-1 p-xl-3">
+                        <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
+                            
+                                <a href="/documentation/customer.html"><i class="bx bx-store fs-2"></i></a>
+                            
+                        </div>
+                        <div class="card-body text-center">
+                            
+                                <h3 class="h5 pb-1 mb-2"><a href="/documentation/customer.html">Klanten</a></h3>
+                            
+                            <p class="mb-0">Beheer uw klanten en stel adres, contactpersonen, land, valuta, zichtbaarheid (voor archivering) en nog veel meer velden in.</p>
+                        </div>
+                    </div>
+                    <hr class="position-absolute top-0 end-0 w-1 h-100 d-none d-sm-block">
+                    <hr class="position-absolute top-100 start-0 w-100 d-none d-sm-block">
+                </div>
+            
+                
+                
+                
+                
+                
+                
+                
+                <div class="col position-relative">
+                    <div class="card border-0 bg-transparent rounded-0 p-md-1 p-xl-3">
+                        <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
+                            
+                                <a href="/documentation/project.html"><i class="bx bx-briefcase fs-2"></i></a>
+                            
+                        </div>
+                        <div class="card-body text-center">
+                            
+                                <h3 class="h5 pb-1 mb-2"><a href="/documentation/project.html">Projecten</a></h3>
+                            
+                            <p class="mb-0">Beheer projecten voor elke klant met bestelnummer, budget en zichtbaarheid (voor archivering).</p>
+                        </div>
+                    </div>
+                    <hr class="position-absolute top-0 end-0 w-1 h-100 d-none d-sm-block">
+                    <hr class="position-absolute top-100 start-0 w-100 d-none d-sm-block">
+                </div>
+            
+                
+                
+                
+                
+                
+                
+                
+                <div class="col position-relative">
+                    <div class="card border-0 bg-transparent rounded-0 p-md-1 p-xl-3">
+                        <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
+                            
+                                <a href="/documentation/invoices.html"><i class="bx bxs-bank fs-2"></i></a>
+                            
+                        </div>
+                        <div class="card-body text-center">
+                            
+                                <h3 class="h5 pb-1 mb-2"><a href="/documentation/invoices.html">Facturering</a></h3>
+                            
+                            <p class="mb-0">Verschillende factuursjablonen, opties voor groepering van invoeren, configureerbare factuurnummers, en u kunt uw eigen sjablonen toevoegen in PDF, DOCX, HTML, XLSX en ODS-bestandsindeling.</p>
+                        </div>
+                    </div>
+                    <hr class="position-absolute top-0 end-0 w-1 h-100 d-none d-sm-block">
+                    <hr class="position-absolute top-100 start-0 w-100 d-none d-sm-block">
+                </div>
+            
+                
+                
+                
+                
+                
+                
+                
+                <div class="col position-relative">
+                    <div class="card border-0 bg-transparent rounded-0 p-md-1 p-xl-3">
+                        <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
+                            
+                                <a href="/documentation/export.html"><i class="bx bx-export fs-2"></i></a>
+                            
+                        </div>
+                        <div class="card-body text-center">
+                            
+                                <h3 class="h5 pb-1 mb-2"><a href="/documentation/export.html">Gegevens exporteren</a></h3>
+                            
+                            <p class="mb-0">Timesheet-gegevens kunnen worden geëxporteerd naar andere programma's of gedeeld met verschillende afdelingen in XLSX (Excel), PDF, CSV en HTML-indeling. Geëxporteerde gegevens kunnen bovendien worden vergrendeld en beschermd tegen verdere wijzigingen.</p>
+                        </div>
+                    </div>
+                    <hr class="position-absolute top-0 end-0 w-1 h-100 d-none d-sm-block">
+                    <hr class="position-absolute top-100 start-0 w-100 d-none d-sm-block">
+                </div>
+            
+                
+                
+                
+                
+                
+                
+                
+                <div class="col position-relative">
+                    <div class="card border-0 bg-transparent rounded-0 p-md-1 p-xl-3">
+                        <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
+                            
+                                <a href="/nl/store/keleo-expenses-bundle.html"><i class="bx bx-receipt fs-2"></i></a>
+                            
+                        </div>
+                        <div class="card-body text-center">
+                            
+                                <h3 class="h5 pb-1 mb-2"><a href="/nl/store/keleo-expenses-bundle.html">Uitgaven</a></h3>
+                            
+                            <p class="mb-0">Koop de plugin en houd uitgaven bij op basis van klant, project en activiteit - voor categorisatie en opname in uw facturen.</p>
+                        </div>
+                    </div>
+                    <hr class="position-absolute top-0 end-0 w-1 h-100 d-none d-sm-block">
+                    <hr class="position-absolute top-100 start-0 w-100 d-none d-sm-block">
+                </div>
+            
+                
+                
+                
+                
+                
+                
+                
+                <div class="col position-relative">
+                    <div class="card border-0 bg-transparent rounded-0 p-md-1 p-xl-3">
+                        <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
+                            
+                                <a href="/documentation/saml.html"><i class="bx bx-key fs-2"></i></a>
+                            
+                        </div>
+                        <div class="card-body text-center">
+                            
+                                <h3 class="h5 pb-1 mb-2"><a href="/documentation/saml.html">SAML</a></h3>
+                            
+                            <p class="mb-0">Meld u aan en registreer gebruikers via SAML (single sign-on aka SSO) en hergebruik uw bestaande identiteitsprovider, zoals Google Workspace, Authentik of Azure Active Directory.</p>
+                        </div>
+                    </div>
+                    <hr class="position-absolute top-0 end-0 w-1 h-100 d-none d-sm-block">
+                    <hr class="position-absolute top-100 start-0 w-100 d-none d-sm-block">
+                </div>
+            
+                
+                
+                
+                
+                
+                
+                
+                <div class="col position-relative">
+                    <div class="card border-0 bg-transparent rounded-0 p-md-1 p-xl-3">
+                        <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
+                            
+                                <a href="/documentation/rest-api.html"><i class="bx bxs-file-json fs-2"></i></a>
+                            
+                        </div>
+                        <div class="card-body text-center">
+                            
+                                <h3 class="h5 pb-1 mb-2"><a href="/documentation/rest-api.html">JSON API</a></h3>
+                            
+                            <p class="mb-0">Met een JSON API zodat externe apps kunnen communiceren met uw favoriete tijdregistratiesysteem!</p>
+                        </div>
+                    </div>
+                    <hr class="position-absolute top-0 end-0 w-1 h-100 d-none d-sm-block">
+                    <hr class="position-absolute top-100 start-0 w-100 d-none d-sm-block">
+                </div>
+            
+                
+                
+                
+                
+                
+                
+                
+                <div class="col position-relative">
+                    <div class="card border-0 bg-transparent rounded-0 p-md-1 p-xl-3">
+                        <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
+                            
+                                <a href="/documentation/users.html"><i class="bx bx-key fs-2"></i></a>
+                            
+                        </div>
+                        <div class="card-body text-center">
+                            
+                                <h3 class="h5 pb-1 mb-2"><a href="/documentation/users.html">Tweefactorauthenticatie (2FA)</a></h3>
+                            
+                            <p class="mb-0">Kimai ondersteunt tweefactorauthenticatie met TOTP-tokens: beveilig uw gebruikersaccounts vandaag nog!</p>
+                        </div>
+                    </div>
+                    <hr class="position-absolute top-0 end-0 w-1 h-100 d-none d-sm-block">
+                    <hr class="position-absolute top-100 start-0 w-100 d-none d-sm-block">
+                </div>
+            
+                
+                
+                
+                
+                
+                
+                
+                <div class="col position-relative">
+                    <div class="card border-0 bg-transparent rounded-0 p-md-1 p-xl-3">
+                        <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
+                            
+                                <a href="/documentation/dashboard.html"><i class="bx bxs-widget fs-2"></i></a>
+                            
+                        </div>
+                        <div class="card-body text-center">
+                            
+                                <h3 class="h5 pb-1 mb-2"><a href="/documentation/dashboard.html">Statistieken</a></h3>
+                            
+                            <p class="mb-0">Uw dashboard toont u verschillende statistieken over geregistreerde tijden en de hoeveelheid verzamelde gegevens. En we kunnen altijd meer grafieken toevoegen!</p>
+                        </div>
+                    </div>
+                    <hr class="position-absolute top-0 end-0 w-1 h-100 d-none d-sm-block">
+                    <hr class="position-absolute top-100 start-0 w-100 d-none d-sm-block">
+                </div>
+            
+                
+                
+                
+                
+                
+                
+                
+                <div class="col position-relative">
+                    <div class="card border-0 bg-transparent rounded-0 p-md-1 p-xl-3">
+                        <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
+                            
+                                <a href="/documentation/docker.html"><i class="bx bxl-docker fs-2"></i></a>
+                            
+                        </div>
+                        <div class="card-body text-center">
+                            
+                                <h3 class="h5 pb-1 mb-2"><a href="/documentation/docker.html">Docker</a></h3>
+                            
+                            <p class="mb-0">We hebben Docker-images voor ontwikkeling en er zijn meerdere variaties van Docker-Compose-configuraties voor productiegebruik.</p>
+                        </div>
+                    </div>
+                    <hr class="position-absolute top-0 end-0 w-1 h-100 d-none d-sm-block">
+                    <hr class="position-absolute top-100 start-0 w-100 d-none d-sm-block">
+                </div>
+            
+                
+                
+                
+                
+                
+                
+                
+                <div class="col position-relative">
+                    <div class="card border-0 bg-transparent rounded-0 p-md-1 p-xl-3">
+                        <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
+                            
+                                <a href="/documentation/timesheet.html"><i class="bx bx-stopwatch fs-2"></i></a>
+                            
+                        </div>
+                        <div class="card-body text-center">
+                            
+                                <h3 class="h5 pb-1 mb-2"><a href="/documentation/timesheet.html">Tijdklok</a></h3>
+                            
+                            <p class="mb-0">Wilt u niet dat uw gebruikers willekeurige timesheet-records registreren? Schakel over naar de tijdklokmodus, die alleen "inklokken" en "uitklokken" toestaat. Geen handmatig opgegeven start- en eindtijden meer.</p>
+                        </div>
+                    </div>
+                    <hr class="position-absolute top-0 end-0 w-1 h-100 d-none d-sm-block">
+                    <hr class="position-absolute top-100 start-0 w-100 d-none d-sm-block">
+                </div>
+            
+        </div>
+    </div>
+    <div class="mb-xl-3 text-center">
+        
+        <a href="/nl/features.html" class="btn btn-lg btn-outline-primary">Lees meer</a>
+    </div>
+</section>
+
+
+
+
+    <section class="border-bottom border-light py-5">
+    <div class="container py-md-3 py-lg-5">
+        <h2 class="h1 text-center pb-2">Nieuws</h2>
+        <div class="position-relative mx-md-2 px-md-5">
+
+            <button type="button" id="news-prev" class="btn btn-prev btn-icon btn-sm position-absolute top-50 start-0 translate-middle-y mt-n4 d-none d-md-inline-flex" aria-label="Previous">
+                <i class="bx bx-chevron-left"></i>
+            </button>
+            <button type="button" id="news-next" class="btn btn-next btn-icon btn-sm position-absolute top-50 end-0 translate-middle-y mt-n4 d-none d-md-inline-flex" aria-label="Next">
+                <i class="bx bx-chevron-right"></i>
+            </button>
+
+            <div class="swiper swiper-nav-onhover mx-n2" data-swiper-options='{
+  "slidesPerView": 1,
+  "loop": true,
+  "spaceBetween": 8,
+  "pagination": {
+    "el": ".swiper-pagination",
+    "clickable": true
+  },
+  "navigation": {
+    "prevEl": "#news-prev",
+    "nextEl": "#news-next"
+  },
+  "breakpoints": {
+    "0": {
+      "slidesPerView": 1
+    },
+    "560": {
+      "slidesPerView": 2
+    },
+    "992": {
+      "slidesPerView": 3
+    }
+  }
+}'>
+    <div class="swiper-wrapper">
+        
+        
+            <div class="swiper-slide h-auto py-3">
+                <article class="card p-md-3 p-2 border-0 shadow-sm card-hover-primary h-100 mx-2">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            
+                            <span class="badge fs-sm text-nav bg-secondary text-decoration-none position-relative zindex-2">Cloud</span>
+                            
+
+                            <span class="fs-sm text-muted">27 Mar 2024</span>
+                        </div>
+                        <h3 class="h4">
+                            <a href="/blog/2024/closing-free-plan/" class="stretched-link">Removing free plan from the cloud</a>
+                        </h3>
+                        <p class="mb-0">
+                            </p>
+<p>Yes! Sad as it is, I’m removing the free plan from the cloud.
+It was a tough decision that had to be made after careful thought as it was causing two problems;</p>
+
+                        
+                    </div>
+                </article>
+            </div>
+        
+            <div class="swiper-slide h-auto py-3">
+                <article class="card p-md-3 p-2 border-0 shadow-sm card-hover-primary h-100 mx-2">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            
+                            <span class="badge fs-sm text-nav bg-secondary text-decoration-none position-relative zindex-2">Cloud</span>
+                            
+
+                            <span class="fs-sm text-muted">09 Sep 2023</span>
+                        </div>
+                        <h3 class="h4">
+                            <a href="/blog/2023/update-working-time-account/" class="stretched-link">Cloud goes - Working time account</a>
+                        </h3>
+                        <p class="mb-0">
+                            </p>
+<p>Today I’m back with the most anticipated and biggest feature update I’ve ever created for Kimai.</p>
+
+                        
+                    </div>
+                </article>
+            </div>
+        
+            <div class="swiper-slide h-auto py-3">
+                <article class="card p-md-3 p-2 border-0 shadow-sm card-hover-primary h-100 mx-2">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            
+                            <span class="badge fs-sm text-nav bg-secondary text-decoration-none position-relative zindex-2">Apps &amp; Plugins</span>
+                            
+
+                            <span class="fs-sm text-muted">27 Aug 2023</span>
+                        </div>
+                        <h3 class="h4">
+                            <a href="/blog/2023/controlling-plugin-mr-software/" class="stretched-link">New working times (controlling) plugin and MR Software closure</a>
+                        </h3>
+                        <p class="mb-0">
+                            </p>
+<p>This post combines bad and good news. Let’s start with the bad one…</p>
+
+                        
+                    </div>
+                </article>
+            </div>
+        
+            <div class="swiper-slide h-auto py-3">
+                <article class="card p-md-3 p-2 border-0 shadow-sm card-hover-primary h-100 mx-2">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            
+                            <span class="badge fs-sm text-nav bg-secondary text-decoration-none position-relative zindex-2">Apps &amp; Plugins</span>
+                            
+
+                            <span class="fs-sm text-muted">01 Aug 2023</span>
+                        </div>
+                        <h3 class="h4">
+                            <a href="/blog/2023/kimai-mobile-ios-release/" class="stretched-link">Kimai Mobile iOS release</a>
+                        </h3>
+                        <p class="mb-0">
+                            </p>
+<p>Kimai Mobile for iOS was launched by Cloudrizon GmbH: a game-changing time tracking application</p>
+
+                        
+                    </div>
+                </article>
+            </div>
+        
+            <div class="swiper-slide h-auto py-3">
+                <article class="card p-md-3 p-2 border-0 shadow-sm card-hover-primary h-100 mx-2">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            
+                            <span class="badge fs-sm text-nav bg-secondary text-decoration-none position-relative zindex-2">On-Premise</span>
+                            
+
+                            <span class="fs-sm text-muted">20 May 2023</span>
+                        </div>
+                        <h3 class="h4">
+                            <a href="/blog/2023/kimai-release-2/" class="stretched-link">Kimai 2.0 - It's here!</a>
+                        </h3>
+                        <p class="mb-0">
+                            </p>
+<p>🎉 Yes, you all have been waiting for this moment for almost too long 🎉</p>
+
+                        
+                    </div>
+                </article>
+            </div>
+        
+
+    </div>
+
+    <div class="swiper-pagination position-relative pt-2 pt-sm-3 mt-4"></div>
+</div>
+
+        </div>
+    </div>
+</section>
+
+
+    <section class="py-5 bg-secondary">
+    <div class="container py-md-3 py-lg-5">
+        <div class="row justify-content-center pt-2">
+            <div class="col-xl-8 col-lg-9 col-md-11">
+                <h2 class="h1 d-md-inline-block position-relative mb-md-5 mb-sm-4 text-sm-start text-center">
+                    Nieuwsbrief
+                    <svg class="d-md-block d-none position-absolute top-0 ms-4 ps-1" style="left: 100%;" xmlns="http://www.w3.org/2000/svg" width="65" height="68" fill="#6366f1"><path d="M53.9527 51.0012c8.396-10.5668 2.0302-26.0134-11.7481-26.7511-.6899-.0646-1.4612.0015-2.1258.0431.1243 9.0462-4.1714 18.8896-11.5618 21.3814-6.6695 2.2133-10.3337-4.2224-7.5813-9.676 3.2966-6.4755 9.103-11.8504 16.1678-13.8189-.5654-5.6953-3.3436-10.7672-9.485-12.48517C17.2678 6.8204 6.49364 16.3681 4.98841 26.127c-.09276 1.0297-1.68569.9497-1.59293-.0801C3.98732 12.9139 19.7395 2.55212 31.9628 8.5787c4.7253 2.3813 7.2649 7.3963 7.9368 13.067 7.4237-.9311 14.5154 3.3683 18.3422 9.5422 4.3988 7.1623 2.3584 15.1401-2.6322 21.1108-.7826.9653-2.3331-.3572-1.6569-1.2975zM26.7754 32.1845c-1.9411 2.2411-4.076 5.0872-4.3542 8.1764-.3036 2.9829 3.7601 3.0525 5.4905 2.7645 2.1568-.3863 3.7221-2.3164 4.8863-4.0419 2.6228-3.6308 4.3657-9.0752 4.4844-14.2563-4.0808 1.279-7.6514 4.2327-10.507 7.3573zm24.6311 25.592c-.7061-2.9738-1.2243-6.1031-1.1591-9.143.0423-1.242 1.767-1.0805 1.8313.1372.1284 2.435.815 4.8532 1.4764 7.1651l4.1619-1.4098c1.0153-.4586 2.4373-1.5714 3.6544-1.1804.6087.1954.7347.7264.6475 1.3068-.2302 1.3976-2.4683 1.9147-3.5901 2.398-1.8429.7619-3.6293 1.2865-5.5477 1.7298-.6391.1476-1.3233-.3665-1.4746-1.0037z"></path></svg>
+                </h2>
+
+                <div class="row gy-4 align-items-center pb-3">
+                    <p class="mb-0 text-sm-start text-center">
+                        Abonneer op onze nieuwsbrief en blijf op de hoogte van Kimai- en Plugin-updates.
+                    </p>
+                </div>
+
+                <form class="mb-3 needs-validation" id="sib-form" method="POST" action="https://8e086265.sibforms.com/serve/MUIFALXVRuuVZhsZZmbuMp4JqgZZf_sJJWO4GVG9THmeTDdQx8hsSOrGIvy5t3ExNPvyzh4QExz2_p-bBdUmLhfAJnMdOkpNAr9yS47FxZSlcRqInpzs0k1TNgOnHIjiz8T4ZYe-MZd45dpbZqQ-Ft6zQLlSKSnGQJJd5Zd9icbaup6Sjqssu0CjIdKUvdWAYUUCeh6LWlBSTAit">
+                    <div class="d-flex flex-sm-row flex-column mb-3">
+                        <div class="input-group me-sm-3 mb-sm-0">
+                            <input type="email" class="input form-control form-control-lg rounded-3 ps-5" placeholder="Uw e-mailadres" required id="EMAIL" name="EMAIL" autocomplete="off" data-required="true">
+                            <i class="bx bx-envelope position-absolute start-0 top-50 translate-middle-y ms-3 zindex-5 fs-5 text-muted"></i>
+                        </div>
+                        
+                        <a href="https://8e086265.sibforms.com/serve/MUIFAAa1ym6wZTDYXZGIYzXYDPZswEthNmVl7Y0-sr829LPi20LNhS3kmUfgY3eTStykbeYM9WJTmZIBLgyg6o1VL0ThXHF-TRWzGO6_EHFGpLbN43wnS-oCDXNkUWWTs6EkBK-tQ0MgkzZNLSELHCNXTqPzLoyJlMGjJBkabmjziFxrXfWLrytl3nw5JA7kORw7Ifph16VqU8k-" class="btn btn-lg btn-primary">ABONNEREN *</a>
+                    </div>
+
+                    <input type="text" name="email_address_check" value="" class="visually-hidden">
+                    <input type="hidden" name="locale" value="en">
+                    <input type="hidden" name="html_type" value="simple">
+                </form>
+                <div class="form-text fs-sm text-sm-start text-center">
+                    
+                    
+                    * We gebruiken Brevo als ons marketingplatform. Door hieronder te klikken om dit formulier in te dienen, erkent u dat de verstrekte informatie zal worden overgedragen aan Brevo voor verwerking in overeenstemming met hun <a target="_blank" class="clickable_link" href="https://www.brevo.com/legal/termsofuse/">gebruiksvoorwaarden</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+</main>
+
+
+
+
+
+
+
+
+<footer class="footer bg-dark pt-5 pb-4" data-bs-theme="dark">
+    <div class="container pt-1 pt-md-3 pt-lg-4 pt-xl-5">
+        <div class="row">
+            <div class="col-md-5 col-xl-4 mb-4 mb-md-5 mb-lg-0">
+                <div class="d-flex align-items-center pb-3 mb-1">
+                    <div class="navbar-brand text-dark p-0 pe-1 me-0">
+                        Kimai
+                    </div>
+                    <hr class="vr mt-2 mx-3" style="height: 26px;">
+                    <div class="text-white fw-semibold ps-1">Tijdregistratie eenvoudig gemaakt</div>
+                </div>
+                <p class="text-body fs-sm pb-1 pb-md-2 pb-lg-2 mb-2">
+                    Gratis en eenvoudige tijdregistratie voor freelancers, bureaus en bedrijven. Kimai is open source software die beschikbaar is voor zelfhosting en als SaaS.
+                </p>
+                <div class="d-flex flex-column flex-sm-row flex-lg-column align-items-sm-center align-items-lg-start justify-content-between pb-1 pb-md-2 pb-lg-3 mb-3">
+                    <div class="position-relative">
+                        <div class="dropdown">
+                            <button type="button" class="form-select" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-globe top-50 start-0 text-body me-2"></i>
+                                Nederlands
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/cs/" class="dropdown-item">Čeština</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/de/" class="dropdown-item">Deutsch</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/" class="dropdown-item">English</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/es/" class="dropdown-item">Español</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/fr/" class="dropdown-item">Français</a>
+                                
+                                    
+                                    
+                                    <a dir="rtl" href="/he/" class="dropdown-item">עברית</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/hr/" class="dropdown-item">Hrvatski</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/it/" class="dropdown-item">Italiano</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/nl/" class="dropdown-item active">Nederlands</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/pl/" class="dropdown-item">Polski</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/pt/" class="dropdown-item">Português</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/pt_BR/" class="dropdown-item">Português (Brasil)</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/ru/" class="dropdown-item">Rусский</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/sk/" class="dropdown-item">Slovenčina</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/sv/" class="dropdown-item">Svenska</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/uk/" class="dropdown-item">Українська</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/zh_Hans/" class="dropdown-item">中文（繁體）</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="form-check form-switch mode-switch pb-1 pb-md-2 pb-lg-2 mb-2" data-bs-toggle="mode">
+                    <input type="checkbox" class="form-check-input" id="theme-mode">
+                    <label class="form-check-label" for="theme-mode">Light</label>
+                    <label class="form-check-label" for="theme-mode">Dark</label>
+                </div>
+            </div>
+            <div class="col-md-7 offset-xl-1">
+                <div id="footer-links" class="row">
+                    
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <h6 class="fs-lg mb-1 mb-md-2">
+                            <span class="d-none d-md-block">Kimai</span>
+                            <a href="#tools" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Kimai</a>
+                        </h6>
+                        <div id="tools" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/nl/about.html" class="nav-link fs-sm fw-medium px-0 py-1">Over Kimai</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/nl/download.html" class="nav-link fs-sm fw-medium px-0 py-1">Download</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/nl/features.html" class="nav-link fs-sm fw-medium px-0 py-1">Functies</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/nl/support.html" class="nav-link fs-sm fw-medium px-0 py-1">Ondersteuning</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/en/kimai-discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">Discount codes</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <h6 class="fs-lg mb-1 mb-md-2">
+                            <span class="d-none d-md-block">Kimai for</span>
+                            <a href="#landing-kimai-for" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Kimai for</a>
+                        </h6>
+                        <div id="landing-kimai-for" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/en/time-tracking-non-profit.html" class="nav-link fs-sm fw-medium px-0 py-1">Non-Profits</a>
+                                </li>
+                                
+                                
+                                <li class="nav-item">
+                                    <a href="/en/open-source-time-log" class="nav-link fs-sm fw-medium px-0 py-1" title="Open-Source Time Log">Time Log</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/open-source-time-tracker" class="nav-link fs-sm fw-medium px-0 py-1" title="Open-Source Time Tracker">Time Tracker</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/open-source-timesheet" class="nav-link fs-sm fw-medium px-0 py-1" title="Open-Source Timesheet">Timesheet</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <h6 class="fs-lg mb-1 mb-md-2">
+                            <span class="d-none d-md-block">Vergelijken</span>
+                            <a href="#footer-cmp" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Vergelijken</a>
+                        </h6>
+                        <div id="footer-cmp" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/nl/compare/" class="nav-link fs-sm fw-medium px-0 py-1">Vergelijk tijdregistratiesoftware</a>
+                                </li>
+                                
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternative-to-clockify" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to Clockify">Clockify</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternative-to-openproject" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to OpenProject">OpenProject</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternative-to-toggl" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to toggl track">toggl track</a>
+                                    </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="d-md-flex align-items-center justify-content-between pt-sm-2 pt-md-4 pt-lg-5 pb-2 mt-4 ">
+    <ul class="nav order-md-1 ms-md-0 mb-3 mb-md-0">
+        <li class="nav-item">
+            <a href="/nl/" class="nav-link fs-sm fw-medium ps-0">Home</a>
+        </li>
+        <li class="nav-item">
+            <a href="/nl/site-notice.html" class="nav-link fs-sm fw-medium">Melding van de site</a>
+        </li>
+        <li class="nav-item">
+            <a href="/nl/privacy-policy.html" class="nav-link fs-sm fw-medium">Privacybeleid</a>
+        </li>
+        <li class="nav-item">
+            <a href="https://uptime.kimai.cloud/" target="_blank" class="nav-link fs-sm fw-medium">Cloud-Status</a>
+        </li>
+    </ul>
+    <div class="nav order-md-2 mb-3 mb-md-0">
+        <a target="_blank" href="https://github.com/kimai/kimai" class="btn btn-icon btn-secondary btn-github rounded-circle me-3" aria-label="GitHub">
+    <i class="bx bxl-github"></i>
+</a>
+<a target="_blank" href="https://twitter.com/kimai_org" class="btn btn-icon btn-secondary btn-twitter rounded-circle me-3" aria-label="Twitter / X">
+    <i class="bx bxl-twitter"></i>
+</a>
+<a target="_blank" href="https://www.youtube.com/@kimai_org" class="btn btn-icon btn-secondary btn-youtube rounded-circle me-3" aria-label="YouTube">
+    <i class="bx bxl-youtube"></i>
+</a>
+<a target="_blank" href="https://phpc.social/@kimai" class="btn btn-icon btn-secondary btn-messenger rounded-circle me-3" aria-label="Mastodon">
+    <i class="bx bxl-mastodon"></i>
+</a>
+
+    </div>
+    <p class="nav d-block fs-sm mb-0 order-md-3">
+        <span class="text-body">Gemaakt door </span>
+        <a class="nav-link d-inline-block p-0" href="https://www.kevinpapst.de/" target="_blank" rel="noopener">Kevin Papst</a>
+    </p>
+</div>
+
+    </div>
+</footer>
+
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
+
+</body>
+</html>

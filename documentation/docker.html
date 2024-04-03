@@ -1,0 +1,688 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index,follow">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+    <title>Docker – Kimai</title>
+    
+        <meta name="description" content="Running Kimai inside docker">
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kimai Time-Tracking">
+    <meta property="og:description" content="Running Kimai inside docker">
+    <meta property="og:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kimai Time-Tracking">
+    <meta name="twitter:site" content="@kimai_org">
+    <meta name="twitter:description" content="Running Kimai inside docker">
+    <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <link rel="canonical" href="https://www.kimai.org/documentation/docker.html" />
+    <script src="/assets/build/theme.js"></script>
+    <link href="/assets/build/main.css" rel="stylesheet" />
+</head>
+<body class="">
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand bg-light border-bottom border-light shadow fixed-top" data-scroll-header>
+    <div class="container-fluid pe-lg-4">
+        <div class="d-flex align-items-center">
+            <a href="/documentation/" class="navbar-brand flex-shrink-0 py-1 py-lg-2">
+                <img src="/images/apple-touch-icon.png" width="47" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning">Self-hosted</span>
+        </div>
+        <div class="d-flex align-items-center w-100">
+            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 9.75rem;">
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-manual.html" class="nav-link">
+                            <i class="bx bx-book opacity-70 fs-lg me-1"></i>
+                            User manual
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/cloud.html" class="nav-link">
+                            <i class="bx bxs-cloud opacity-70 fs-lg me-1"></i>
+                            Kimai-Cloud
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/developers.html" class="nav-link">
+                            <i class="bx bx-code opacity-70 fs-lg me-1"></i>
+                            Developer
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-on-premise.html" class="nav-link">
+                            <i class="bx bx-wrench opacity-70 fs-lg me-1"></i>
+                            Self-hosted
+                        </a>
+                    </li>
+                
+            </ul>
+            <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="form-check form-switch mode-switch pe-lg-1 ms-lg-auto" data-bs-toggle="mode">
+                <input type="checkbox" class="form-check-input" id="theme-mode">
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Light</label>
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Dark</label>
+            </div>
+        </div>
+    </div>
+</header>
+
+<aside data-bs-theme="dark">
+    <div id="componentsNav" class="offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100 bg-dark border-end-lg" style="width: 21rem; z-index: 1045;">
+        <div class="offcanvas-header d-none d-lg-flex justify-content-start">
+            <a href="/documentation/" class="navbar-brand text-dark d-none d-lg-flex py-0">
+                <img src="/images/apple-touch-icon.png" width="32" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning d-none d-lg-inline-block">Self-hosted</span>
+        </div>
+        <div class="offcanvas-header d-block d-lg-none border-bottom">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <h5 class="d-lg-none mb-0">Menu</h5>
+                <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#componentsNav" aria-label="Close"></button>
+            </div>
+            <div class="list-group list-group-flush mx-n4">
+                
+                    
+                    
+                    <a href="/documentation/chapter-manual.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-book opacity-70 me-1"></i>
+                        User manual
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/cloud.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bxs-cloud opacity-70 me-1"></i>
+                        Kimai-Cloud
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/developers.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-code opacity-70 me-1"></i>
+                        Developer
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/chapter-on-premise.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-wrench opacity-70 me-1"></i>
+                        Self-hosted
+                    </a>
+                
+            </div>
+        </div>
+        <div class="offcanvas-body swiper scrollbar-hover overflow-hidden w-100 p-4" data-swiper-options='{
+          "direction": "vertical",
+          "slidesPerView": "auto",
+          "freeMode": true,
+          "scrollbar": {
+            "el": ".swiper-scrollbar"
+          },
+          "mousewheel": true
+        }'>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide h-auto">
+                    
+                        
+
+    
+    
+    <h3 class="fs-lg">Installation & Updates</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/installation.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Installation
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/updates.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Updates
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/shared-hosting.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Shared hosting
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/hosting-1-click.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                1-click installations
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/cache.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Reloading cache
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-management.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Plugins
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/webserver-configuration.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Webserver
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/fresh-ubuntu-22.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Ubuntu 22.04
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/synology.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Synology NAS
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">Docker</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/docker.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4  active">
+                
+                Docker
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/docker-compose.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Docker Compose
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/kubernetes.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Kubernetes
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/docker-updates.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Updating docker
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/building-docker.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Build your image
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/docker-troubleshooting.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Troubleshooting
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">DevOps</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/backups.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Backups
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/local-yaml.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Configuration files
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/emails.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Emails
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/logging.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Logging
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/commands.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Commands
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/faq-onpremise.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                FAQ
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/migration-v1.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Migrate from Kimai v1
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/versions.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Kimai versions
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">Authenticator</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/ldap.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                LDAP
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/saml.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                SAML
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/saml-azure.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Azure SAML
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/saml-google.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Google SAML
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/saml-keycloak.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Keycloak SAML
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/saml-authentik.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Authentik SAML
+                
+            </a>
+        
+    
+    </div>
+
+
+                        <div class="list-group list-group-flush pb-3 mb-4 mx-n4">
+                    
+                    <a href="/" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Home</a>
+                    <a href="/en/site-notice.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Site notice</a>
+                    <a href="/en/privacy-policy.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Privacy policy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-scrollbar end-0"></div>
+        </div>
+    </div>
+</aside>
+
+<main class="docs-container pt-5">
+    <div class="container-fluid px-xxl-5 px-lg-4 pt-4 pt-lg-5 pb-2 pb-lg-4">
+
+        <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 pt-4 mb-n3">
+            <div class="me-4">
+                <h1 class="pb-1">Docker</h1>
+                
+                <p class="text-muted fs-lg mb-2">Running Kimai inside docker</p>
+                
+            </div>
+            
+
+
+
+
+    <div class="dropdown">
+        <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Older versions
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+            
+            <a class="dropdown-item" href="/documentation/1.14/docker.html">Kimai 1.14</a>
+            
+            <a class="dropdown-item" href="/documentation/docker.html">2.13.0 (latest version)</a>
+        </div>
+    </div>
+
+
+        </div>
+
+        <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+            <div>
+                
+                <div id="documentation-content">
+                    <p>We offer Kimai Docker images, both for development and a docker-compose setup suitable for running in a production environment.</p>
+
+<p>Any issues with the container rather than the application itself can be raised <a href="https://github.com/kimai/kimai/issues/new?template=docker.yml">here</a>.</p>
+
+<h2 id="docker-hub">Docker Hub</h2>
+
+<p>The Docker Hub repo, where you find the auto-building prod and dev containers for Kimai is: <a href="https://hub.docker.com/r/kimai/kimai2">https://hub.docker.com/r/kimai/kimai2</a></p>
+
+<h2 id="quick-start">Quick start</h2>
+
+<p>This will run the latest production build and make it accessible at <a href="http://localhost:8001">http://localhost:8001</a>.</p>
+
+<div class="alert d-flex alert-danger" role="alert">
+    <i class="bx bx-fas fa-exclamation lead me-3"></i>
+    <div>
+        This setup is NOT intended for production use as it is temporary and the data will disappear when the containers are removed (see point 4).
+    </div>
+</div>
+
+<ol>
+  <li>
+    <p>Start a DB</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> docker run <span class="nt">--rm</span> <span class="nt">--name</span> kimai-mysql-testing <span class="se">\</span>
+     <span class="nt">-e</span> <span class="nv">MYSQL_DATABASE</span><span class="o">=</span>kimai <span class="se">\</span>
+     <span class="nt">-e</span> <span class="nv">MYSQL_USER</span><span class="o">=</span>kimai <span class="se">\</span>
+     <span class="nt">-e</span> <span class="nv">MYSQL_PASSWORD</span><span class="o">=</span>kimai <span class="se">\</span>
+     <span class="nt">-e</span> <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>kimai <span class="se">\</span>
+     <span class="nt">-p</span> 3399:3306 <span class="nt">-d</span> mysql
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Start Kimai</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> docker run <span class="nt">--rm</span> <span class="nt">--name</span> kimai-test <span class="se">\</span>
+     <span class="nt">-ti</span> <span class="se">\</span>
+     <span class="nt">-p</span> 8001:8001 <span class="se">\</span>
+     <span class="nt">-e</span> <span class="nv">DATABASE_URL</span><span class="o">=</span>mysql://kimai:kimai@<span class="k">${</span><span class="nv">HOSTNAME</span><span class="k">}</span>:3399/kimai?charset<span class="o">=</span>utf8mb4&amp;serverVersion<span class="o">=</span>5.7.40 <span class="se">\</span>
+     kimai/kimai2:apache
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Add a user using the terminal</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> docker <span class="nb">exec</span> <span class="nt">-ti</span> kimai-test <span class="se">\</span>
+     /opt/kimai/bin/console kimai:user:create admin admin@example.com ROLE_SUPER_ADMIN
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Stop the containers</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> docker stop kimai-mysql-testing kimai-test
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>When you are finished testing Kimai, you can remove the containers (warning: <strong>you will lose your data</strong>!).</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> docker <span class="nb">rm </span>kimai-mysql-testing kimai-test
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>If you are happy with Kimai, you can now setup your Docker installation using <a href="/documentation/docker-compose.html">Docker Compose</a>.</p>
+
+<h2 id="runtime-arguments">Runtime Arguments</h2>
+
+<p>The following settings can set at runtime:</p>
+
+<h3 id="php-memory-limit">PHP memory limit</h3>
+
+<p>The maximum amount of memory a script may consume, <a href="https://php.net/memory-limit">https://php.net/memory-limit</a></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">memory_limit</span><span class="o">=</span>512M
+</code></pre></div></div>
+
+<h3 id="kimai-core-settings">Kimai core settings</h3>
+
+<p>See the Kimai and Symfony docs for more info on these.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">DATABASE_URL</span><span class="o">=</span>mysql://user:pass@hodt/dbname?charset<span class="o">=</span>utf8mb4&amp;serverVersion<span class="o">=</span>5.7.40
+<span class="nv">APP_SECRET</span><span class="o">=</span>change_this_to_something_unique
+<span class="nv">TRUSTED_PROXIES</span><span class="o">=</span>nginx,localhost,127.0.0.1
+<span class="nv">TRUSTED_HOSTS</span><span class="o">=</span>nginx,localhost,127.0.0.1
+<span class="nv">MAILER_FROM</span><span class="o">=</span>kimai@example.com
+<span class="nv">MAILER_URL</span><span class="o">=</span>null://localhost
+</code></pre></div></div>
+
+<p>Start up values:</p>
+
+<p>If set, then these values will be used to create a new admin user (if not yet existing).</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">ADMINPASS</span><span class="o">=</span>
+<span class="nv">ADMINMAIL</span><span class="o">=</span>
+</code></pre></div></div>
+
+<h2 id="changing-uid-and-gid">Changing UID and GID</h2>
+
+<p>It is possible to set the user that FPM or Apache run as. If the user does not exist a new user called www-kimai is created and the server is then run under that user. Note these must be numbers, not names.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">USER_ID</span><span class="o">=</span>1000
+<span class="nv">GROUP_ID</span><span class="o">=</span>1000
+</code></pre></div></div>
+
+<h2 id="alternate-db-config">Alternate DB config</h2>
+
+<p>It is possible to pass the DB config in individual values. If the ENV variable <code class="language-plaintext highlighter-rouge">DB_TYPE</code> is set then the following values will be expected:</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">DB_TYPE</code> must be <code class="language-plaintext highlighter-rouge">mysql</code>:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">DB_USER</code> defaults to <code class="language-plaintext highlighter-rouge">kimai</code></li>
+  <li><code class="language-plaintext highlighter-rouge">DB_PASS</code> defaults to <code class="language-plaintext highlighter-rouge">kimai</code></li>
+  <li><code class="language-plaintext highlighter-rouge">DB_HOST</code> defaults to <code class="language-plaintext highlighter-rouge">sqldb</code></li>
+  <li><code class="language-plaintext highlighter-rouge">DB_PORT</code> defaults to <code class="language-plaintext highlighter-rouge">3306</code></li>
+  <li><code class="language-plaintext highlighter-rouge">DB_BASE</code> defaults to <code class="language-plaintext highlighter-rouge">kimai</code></li>
+</ul>
+
+<p>The <a href="https://docs.docker.com/">official docker documentation</a> has more options on running the container.</p>
+
+<h2 id="tips--tricks">Tips &amp; Tricks</h2>
+
+<p>If you’re using Docker for Windows or Docker for Mac, and you’re getting “Connection refused” or other errors, you might need to change <code class="language-plaintext highlighter-rouge">${HOSTNAME}</code> to <code class="language-plaintext highlighter-rouge">host.docker.internal</code>.
+This is because the Kimai Docker container can only communicate within its network boundaries. Alternatively, you can start the container with the flag <code class="language-plaintext highlighter-rouge">--network="host"</code>.
+See <a href="https://stackoverflow.com/questions/24319662/from-inside-of-a-docker-container-how-do-i-connect-to-the-localhost-of-the-mach">here</a> for more information.</p>
+
+                </div>
+                
+
+                
+            </div>
+        </div>
+
+    </div>
+</main>
+
+
+    <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
+        <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#docker-hub" class="nav-link">Docker Hub</a></li><li class="nav-item"><a href="#quick-start" class="nav-link">Quick start</a></li><li class="nav-item"><a href="#runtime-arguments" class="nav-link">Runtime Arguments</a><ul><li class="nav-item"><a href="#php-memory-limit" class="nav-link">PHP memory limit</a></li><li class="nav-item"><a href="#kimai-core-settings" class="nav-link">Kimai core settings</a></li></ul></li><li class="nav-item"><a href="#changing-uid-and-gid" class="nav-link">Changing UID and GID</a></li><li class="nav-item"><a href="#alternate-db-config" class="nav-link">Alternate DB config</a></li><li class="nav-item"><a href="#tips--tricks" class="nav-link">Tips &amp; Tricks</a></li></ul>
+        
+    </aside>
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+
+</body>
+</html>

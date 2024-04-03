@@ -1,0 +1,1331 @@
+<!doctype html>
+<html lang="zh_Hans" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index,follow">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+    <title>任务规划 – Kimai</title>
+    
+        <meta name="description" content="创建任务，开始/停止/暂停它们，将它们分配给用户和团队并记录时间 - Kimai 的待办事项列表管理插件，添加了两个新的仪表板小部件">
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
+    <meta property="og:locale" content="zh_Hans">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kimai Time-Tracking">
+    <meta property="og:description" content="创建任务，开始/停止/暂停它们，将它们分配给用户和团队并记录时间 - Kimai 的待办事项列表管理插件，添加了两个新的仪表板小部件">
+    <meta property="og:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kimai Time-Tracking">
+    <meta name="twitter:site" content="@kimai_org">
+    <meta name="twitter:description" content="创建任务，开始/停止/暂停它们，将它们分配给用户和团队并记录时间 - Kimai 的待办事项列表管理插件，添加了两个新的仪表板小部件">
+    <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <link rel="alternate" hreflang="cs" href="https://www.kimai.org/cs/store/keleo-task-management-bundle.html">
+    <link rel="alternate" hreflang="de" href="https://www.kimai.org/de/store/keleo-task-management-bundle.html">
+    <link rel="alternate" hreflang="es" href="https://www.kimai.org/es/store/keleo-task-management-bundle.html">
+    <link rel="alternate" hreflang="fr" href="https://www.kimai.org/fr/store/keleo-task-management-bundle.html">
+    <link rel="alternate" hreflang="he" href="https://www.kimai.org/he/store/keleo-task-management-bundle.html">
+    <link rel="alternate" hreflang="hr" href="https://www.kimai.org/hr/store/keleo-task-management-bundle.html">
+    <link rel="alternate" hreflang="it" href="https://www.kimai.org/it/store/keleo-task-management-bundle.html">
+    <link rel="alternate" hreflang="en" href="https://www.kimai.org/store/task-management-bundle.html">
+    <link rel="alternate" hreflang="nl" href="https://www.kimai.org/nl/store/keleo-task-management-bundle.html">
+    <link rel="alternate" hreflang="pl" href="https://www.kimai.org/pl/store/keleo-task-management-bundle.html">
+    <link rel="alternate" hreflang="pt" href="https://www.kimai.org/pt/store/keleo-task-management-bundle.html">
+    <link rel="alternate" hreflang="pt_BR" href="https://www.kimai.org/pt_BR/store/keleo-task-management-bundle.html">
+    <link rel="alternate" hreflang="ru" href="https://www.kimai.org/ru/store/keleo-task-management-bundle.html">
+    <link rel="alternate" hreflang="sk" href="https://www.kimai.org/sk/store/keleo-task-management-bundle.html">
+    <link rel="alternate" hreflang="sv" href="https://www.kimai.org/sv/store/keleo-task-management-bundle.html">
+    <link rel="alternate" hreflang="uk" href="https://www.kimai.org/uk/store/keleo-task-management-bundle.html">
+    <link rel="alternate" hreflang="zh_Hans" href="https://www.kimai.org/zh_Hans/store/keleo-task-management-bundle.html">
+    <script src="/assets/build/theme.js"></script>
+    <link href="/assets/build/main.css" rel="stylesheet" />
+</head>
+<body class="">
+
+<main class="page-wrapper">
+    
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand-lg   bg-light navbar-sticky">
+    <div class="container px-3">
+        <a href="/zh_Hans/" class="navbar-brand pe-3">
+        <img src="/images/kimai_logo.png" style="height:36px" alt="Kimai - 开源时间跟踪器"> Kimai
+        </a>
+        <div id="navbarNav" class="offcanvas offcanvas-end">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title">Menu</h5>
+                <button type="button" class="btn-close " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    
+                    <li class="nav-item">
+                        <a href="/zh_Hans/demo.html" class="nav-link">演示</a>
+                    </li>
+                    
+                    <li class="nav-item active">
+                        <a href="/zh_Hans/store/" class="nav-link">插件</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/zh_Hans/blog/" class="nav-link">新闻</a>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">文档</a>
+                        <ul class="dropdown-menu">
+                            
+                            <li><a href="/documentation/chapter-manual.html" class="dropdown-item">用户手册</a></li>
+                            
+                            <li><a href="/documentation/cloud.html" class="dropdown-item">Kimai云</a></li>
+                            
+                            <li><a href="/documentation/chapter-on-premise.html" class="dropdown-item">本地部署</a></li>
+                            
+                            <li><a href="/documentation/developers.html" class="dropdown-item">开发者</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="pe-lg-1 ms-auto me-2">
+            <a href="/zh_Hans/download.html" class="btn rounded-pill btn-sm fs-sm d-none d-md-inline-flex me-2 btn-outline-primary">下载</a>
+            
+
+
+
+
+
+<a href="https://www.kimai.cloud/auth/registration" class="btn btn-success rounded-pill btn-sm fs-sm d-inline-flex">免费开始</a>
+
+        </div>
+        <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</header>
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="jarallax bg-dark pt-2 pt-lg-3 pb-lg-5" data-jarallax data-speed="0.35" data-bs-theme="dark">
+    <span class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-70"></span>
+    <div class="container position-relative zindex-5">
+
+        <div class="d-flex pt-3 pb-4 py-sm-4 pt-lg-5">
+        
+            
+        
+        </div>
+
+        <h1>任务规划</h1>
+        <p class="fs-lg text-light opacity-70">创建任务，开始/停止/暂停它们，将它们分配给用户和团队并记录时间 - Kimai 的待办事项列表管理插件，添加了两个新的仪表板小部件</p>
+
+        
+        <div class="d-flex align-items-center">
+            <img src="/images/kevin-papst.jpeg" class="rounded-circle" width="60" alt="Kevin Papst">
+            <div class="ps-3">
+                <div class="text-light opacity-80 mb-1">提供者</div>
+                <h6>Kevin Papst</h6>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container pt-5 mt-2 mt-lg-4 mt-xl-5">
+    <div class="row">
+
+        <!-- Sidebar (Course summary) -->
+        <aside class="col-lg-4 col-md-5 offset-xl-1 order-md-2 mb-5">
+            <div style="margin-top: -96px;"></div>
+            <div class="position-sticky top-0 pt-5">
+                <div class="pt-5 mt-md-3">
+                    <div class="card shadow-sm p-sm-3">
+                        <div class="card-body">
+                            
+
+                            <div class="h2 d-flex align-items-center mb-4">
+                                <span class="text-nowrap">79 €</span>
+                                <small class="text-muted fs-xl fw-normal ms-2">
+                                    不含增值税 (每年)
+                                </small>
+                            </div>
+
+                            
+                                <a class="btn btn-primary btn-lg shadow-primary" href="#" data-bs-toggle="modal" data-bs-target="#modal-buy"><i class="bx bx-cart me-2"></i> 现在购买</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Content -->
+        <div class="col-xl-7 col-lg-8 col-md-7 order-md-1 mb-5">
+            <ul class="nav nav-tabs-alt" role="tablist">
+                <li class="nav-item">
+                    <a href="#store-info" class="nav-link active" data-bs-toggle="tab" role="tab">
+                        <i class="bx bx-home-alt opacity-70 me-2"></i>
+                        描述
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#store-installation" class="nav-link" data-bs-toggle="tab" role="tab">
+                        <i class="bx bx-profile opacity-70 me-2"></i>
+                        安装
+                    </a>
+                </li>
+                
+                
+                <li class="nav-item">
+                    <a href="#store-compatibility" class="nav-link" data-bs-toggle="tab" role="tab">
+                        <i class="bx bx-profile opacity-70 me-2"></i>
+                        兼容性
+                    </a>
+                </li>
+                
+                
+                <li class="nav-item">
+                    <a href="#store-demo" class="nav-link" data-bs-toggle="tab" role="tab">
+                        <i class="bx bx-profile opacity-70 me-2"></i>
+                        演示
+                    </a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="store-info" role="tabpanel">
+                    
+                        
+
+
+
+
+<div class="alert d-flex alert-primary" role="alert">
+    <i class="bx bx-fas fa-book lead me-3"></i>
+    <div>
+        
+<a href="/documentation/plugin-task-management.html">完整的英文文档</a>
+
+    </div>
+</div>
+
+
+
+                    
+
+                    <p>A Kimai plugin, which allows you to plan your work and distribute tasks among your users and teams.
+It features two new dashboard widgets and a new “Task management” administration view.</p>
+
+<h2 id="features">Features</h2>
+
+<p>Add “tasks” which are used to start and group timesheet records.</p>
+
+<p>Each task has the following fields:</p>
+<ul>
+  <li>Title</li>
+  <li>Work description</li>
+  <li>End date (optional)</li>
+  <li>Time estimation (optional: if given, a progressbar for duration vs estimation will be shown in the listing page)</li>
+  <li>User (optional: if left empty, the task can be self-assigned from the “pending tasks” widget)</li>
+  <li>Team (optional: if given, only users from this team see this task and can assign it)</li>
+  <li>Customer (will be copied to the started timesheet)</li>
+  <li>Project (will be copied to the started timesheet)</li>
+  <li>Activity (will be copied to the started timesheet)</li>
+  <li>Description (will be copied to the started timesheet)</li>
+  <li>Tags (will be copied to the started timesheet)</li>
+  <li>List of comments (to share updates with others)</li>
+</ul>
+
+<p>Ships new reports:</p>
+<ul>
+  <li>List all users with the number of assigned tasks and progress (via estimation / logged duration)</li>
+  <li>List all teams with the number of assigned tasks and progress (via estimation / logged duration)</li>
+</ul>
+
+<p>Users can log work time for tasks with drag &amp; drop support in the calendar view.</p>
+
+<p>Ships two new dashboard widgets (see screenshots):</p>
+<ul>
+  <li>The amount of rows in the dashboard widgets can be configured in the user-preferences</li>
+  <li>With the help of the dashboard widgets every user can manage their work</li>
+</ul>
+
+<p>You can configure the permissions in multiple ways:</p>
+<ul>
+  <li>First version: allows self-management by the user via the dashboard widgets, by assigning to pending tasks</li>
+  <li>Second version: only the “My tasks” widget will be shown, listing page is hidden from “normal users” and teamleads will  plan the work schedule (a list of tasks) for the users, who then use the widget to start/pause/stop their assigned tasks</li>
+  <li>Third version: Tasks are shared, pending tasks can be started and stopped by everyone/team members</li>
+</ul>
+
+<p>A task can reach the <code class="language-plaintext highlighter-rouge">overdue</code> status, which means:</p>
+<ul>
+  <li>the task reached its end date without being finished</li>
+  <li>or the duration of all logged entries is higher than the estimation of the task</li>
+</ul>
+
+<p>Tasks which are <code class="language-plaintext highlighter-rouge">overdue</code> will be highlighted by a warning color.</p>
+
+<p>A task can be created from an Activity, pre-setting all possible values from the project and activity.</p>
+
+<p>Task can also be managed via the API.</p>
+
+<p>API Documentation can be found in the <a href="/en/demo.html">Plugin demo</a>.</p>
+
+<h2 id="dashboard-widgets">Dashboard widgets</h2>
+
+<p>This bundle ships two new dashboard widgets (see screenshots):</p>
+
+<ul>
+  <li>My tasks widget</li>
+  <li>Pending tasks widget</li>
+</ul>
+
+<p>With the help of these dashboard widgets every user can manage their work.</p>
+
+<h2 id="reports">Reports</h2>
+
+<p>This bundle ships two new report</p>
+
+<ul>
+  <li>My tasks</li>
+  <li>Team tasks</li>
+</ul>
+
+
+
+                    
+                        <h3 id="changelog">Changelog</h3>
+                        <pre class="p-2">## Version 2.5.0
+
+Compatibility: requires minimum Kimai 2.1.0
+
+- Changed: support attribute caching in Voter
+
+## Version 2.4.0
+
+Compatibility: requires minimum Kimai 2.1.0
+
+- Improved: replaced up to 1 DB query call per Task on listing page with 1 query in total
+- Improved: stopping a task multiple times will not raise an error anymore
+
+## Version 2.3.0
+
+Compatibility: requires minimum Kimai 2.1.0
+
+- Fixed: route mapping type changed to attribute
+- Fixed: removed sticky table header in detail page for timesheet list
+
+## Version 2.2.0
+
+Compatibility: requires minimum Kimai 2.0.33
+
+- Fixed: API param `pageSize` did not allow arbitrary values
+- Fixed: API pagination compatibility with Kimai 2.0.33
+
+## Version 2.1.8
+
+Compatibility: requires minimum Kimai 2.0.26
+
+- Added: simplify API form setup (no visible change)
+- Fixed: compatibility check for Kimai version
+
+## Version 2.1.7
+
+Compatibility: requires minimum Kimai 2.0.26
+
+- Fixed: removed empty footer on detail pages
+- Fixed: use collapsible element with wide header for extended settings
+
+## Version 2.1.6
+
+Compatibility: requires minimum Kimai 2.0.20
+
+- Fixed: removed unused API definition TaskQuery
+
+## Version 2.1.5
+
+Compatibility: requires minimum Kimai 2.0.20
+
+- Fixed: compatibility with Kimai 2.0.20 and Tabler Beta 19
+
+## Version 2.1.4
+
+Compatibility: requires minimum Kimai 2.0.6
+
+- Added: added "create task" actions to detail pages
+
+## Version 2.1.3
+
+Compatibility: requires minimum Kimai 2.0.6
+
+- Added: upgrade item actions to use v2 API
+- Added: allow to import single fixture, reduce max tasks
+
+## Version 2.1.2
+
+Compatibility: requires minimum Kimai 2.0.6
+
+- Fixed: reactivate DataFixtures as service, so they can be used (fixes all demos as well)
+
+## Version 2.1.1
+
+Compatibility: requires minimum Kimai 2.0.6
+
+- Fixed: using translations for widget title
+
+## Version 2.1.0
+
+Compatibility: requires minimum Kimai 2.0.5
+
+- Translation cleanup
+- Moved translations to main application, thus making them available via Weblate
+
+## Version 2.0.1
+
+Compatibility: requires minimum Kimai 2.0
+
+- Fixed: moved "Task Management" to top-level menu
+
+## Version 2.0
+
+Compatibility: requires minimum Kimai 2.0
+
+- Fixed: compatibility with Kimai 2.0
+
+## Version 1.16
+
+Compatibility: requires minimum Kimai 1.19
+
+- Added: allow time logging to any task with `task_start_all` permission
+
+## Version 1.15
+
+Compatibility: requires minimum Kimai 1.19
+
+- Added: added duration select (dropdown) to estimation field
+- Added: loosen strict format for estimation field (allow to enter a duration like `2.5` and `5h`)
+- Added: moved fields of the form
+
+## Version 1.14
+
+Compatibility: requires minimum Kimai 1.19
+
+- Added: task list to customer/project/activity detail pages
+
+## Version 1.13
+
+Compatibility: requires minimum Kimai 1.15
+
+- Added: French translations
+
+## Version 1.12
+
+Compatibility: requires minimum Kimai 1.15
+
+- Fixed: compatibility with Kimai 1.16
+
+## Version 1.11
+
+Compatibility: requires minimum Kimai 1.15
+
+- Added: New permission `task_team_view` allowing to see the tasks of all team members (assigned to all default roles)
+- Fixed: limited task visibility for regular users on listing page
+
+## Version 1.10
+
+Compatibility: requires minimum Kimai 1.15
+
+- Added: Support configurable amount of calendar drag&amp;drop items
+- Added: API method to fetch Task collection with search filter
+- Added: API method to fetch one Task by ID
+- Added: API method to create a new Task
+- Added: API method to update an existing Task
+- Added: Duplicate task action (#38)
+- Fixed: definitions for new Kimai version
+
+## Version 1.9
+
+Compatibility: requires minimum Kimai 1.14
+
+- Added: Support for bookmarking default search options
+- Added: Button to create Task from Activity
+- Fixed: Reload details page after editing task
+- Fixed: Full compatibility with Kimai 1.14
+- Fixed: Better responsiveness on task reports
+
+## Version 1.8
+
+Compatibility: requires minimum Kimai 1.11
+
+- Added: Detail page (needs `task_details` permission) with
+    - List of comments
+    - List of all timesheets
+- Added: New "work description" field to define the real task todos
+- Added: New permission `task_start_all` (by default assigned to `ROLE_SUPER_ADMIN` and `ROLE_ADMIN`)
+- Added: New permission `task_details` (by default assigned to all roles)
+- Added: Duplicated timesheets will be linked to the Task as well
+- Added: Start pending tasks (also from dashboard widgets)
+- Added: Export of Tasks as XLSX
+- Changed: Clicks in widgets open detail page
+- Changed: Permission `task_assign` now assigned to `ROLE_USER` by default
+
+## Version 1.7.2
+
+Compatibility: requires minimum Kimai 1.11
+
+- Added: Finnish translations - thanks @NikoGrano
+
+## Version 1.7.1
+
+Compatibility: requires minimum Kimai 1.11
+
+- Fixed: Task form breaks API documentation
+
+## Version 1.7
+
+Compatibility: requires minimum Kimai 1.11
+
+- Added: activity column to listing page (hidden by default)
+- Added: times for "restarted activities" will now be counted for the task (see #16)
+- Added: API endpoint to log working times for a task
+- Added: Drag and Drop support for logging task work via calendar
+- Added: Report for all teams with their assigned tasks
+- Added: Using Kimai bundle installer for unified workflow
+- Fixed: Composer 2 compatibility
+
+## Version 1.6
+
+Compatibility: requires minimum Kimai 1.10
+
+- Added: Support for tags
+- Fixed: Icons and active state in "My tasks" widget (see #14)
+- Added: Permission `task_edit_other` allows to unassign and close tasks for other users (see #22)
+- Added: Time estimation for tasks with progressbar in listing page (see #3)
+- Added: Report for all users with their assigned tasks
+
+## Version 1.5
+
+Compatibility: requires minimum Kimai 1.10
+
+- Fixed: Pagination on Dashboard
+- Added: User preference panel with own section
+- Added: Highlight menu when opening edit/create screens in new tab
+
+## Version 1.4
+
+Compatibility: requires minimum Kimai 1.10
+
+- Click on widget row opens edit dialog
+- Added CI for static analysis and code linting workflows
+- Use `view_all_data` permission instead of Admin assignment
+- Fixed: directory separator for Windows installer
+- Fixed: deprecation warnings for 1.10
+
+## Version 1.3
+
+Compatibility: requires minimum Kimai 1.9
+
+- Show color dots with tooltips (project name /customer name) in dashboard widgets
+- Support multi-selects in filter for customer/project/activity
+
+## Version 1.2
+
+Compatibility: requires minimum Kimai 1.7
+
+- Bugfix: admins without teams cannot select user [issue #11](https://github.com/kevinpapst/TaskManagementBundle/pull/11)
+
+## Version 1.1
+
+Compatibility: requires minimum Kimai 1.7
+
+- Added user-preference to configure the amount of rows in the dashboard widgets
+- Bugfix: edit form for normal users removed team, see [issue #6](https://github.com/kevinpapst/TaskManagementBundle/issues/6)
+- Bugfix: admins do not see all tasks in dashboard, see [issue #8](https://github.com/kevinpapst/TaskManagementBundle/issues/8)
+
+## Version 1.0
+
+Compatibility: requires minimum Kimai 1.7
+
+- Initial release
+</pre>
+                    
+                </div>
+
+                
+                <div class="tab-pane fade" id="store-installation" role="tabpanel">
+                    <h2 id="installation">安装</h2>
+                    
+    
+    <h3>复制文件</h3>
+
+    <p>
+        Extract the ZIP file and upload the included directory and all files to your Kimai installation to the new directory:
+    </p>
+
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">var/plugins/TaskManagementBundle/</code></pre></figure>
+
+
+    
+
+    <p>The file structure needs to look like this afterwards:</p>
+
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">var/plugins/
+├── TaskManagementBundle
+│   ├── TaskManagementBundle.php
+|   └ ... more files and directories follow here ...</code></pre></figure>
+
+
+    <h3>清除缓存</h3>
+
+    <p>
+        After uploading the files, Kimai needs to know about the new plugin. It will be found once the <a href="/documentation/updates.html">cache was re-built</a>.
+        Call these commands from the Kimai directory:
+    </p>
+
+    <div class="row row-cards row-deck">
+    <div class="col-md-12">
+        <div class="card mb-3">
+            <div class="card-body">
+                <h4 class="card-title">How to reload Kimai cache</h4>
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">bin/console kimai:reload --env=prod</code></pre></figure>
+
+
+                <p>It is not advised, but in case the above command fails you could try:</p>
+
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">rm -r var/cache/prod/*</code></pre></figure>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <p>You might have to set file permissions afterwards:</p>
+
+    <div class="row row-cards row-deck">
+    <div class="col-md-12">
+        <div class="card mb-3">
+            <div class="card-status bg-info"></div>
+            <div class="card-body">
+                <h4 class="card-title">Adjust file permission</h4>
+                <p>
+                    You have to allow PHP (your webserver process) to write to
+                    <code class="language-plaintext highlighter-rouge">var/</code> and it subdirectories.
+                </p>
+
+                <p>Here is an example for Debian/Ubuntu (to be executed inside the Kimai directory):</p>
+
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">chown -R :www-data .
+chmod -R g+r .
+chmod -R g+rw var/</code></pre></figure>
+
+
+            </div>
+            <div class="card-footer fs-sm text-muted">
+                Test Kimai before executing these commands (they are likely not required in a shared-hosting environment).
+                You probably need to prefix them with <code class="language-plaintext highlighter-rouge">sudo</code> and
+                the group might be called different than <code class="language-plaintext highlighter-rouge">www-data</code>.
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+        <h3>创建数据库</h3>
+
+        <p>Run the following command:</p>
+
+        
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">bin/console kimai:bundle:tasks:install</code></pre></figure>
+
+
+        <p>This will create the required database tables and update them to the latest version.</p>
+
+
+
+
+
+<div class="alert alert-warning" role="alert">
+    
+If you see an error like <code class="language-plaintext highlighter-rouge">There are no commands defined in the "kimai:bundle:XYZ" namespace.</code>,
+then either the directory has a wrong name (must be <strong>var/plugins/TaskManagementBundle/</strong>) or you forgot to clear the cache (look above).
+
+</div>
+
+
+    
+
+    
+
+
+
+                    <h3>更新</h3>
+                    
+    
+
+    <p>Updating the plugin works exactly like the installation:</p>
+    <ul>
+        <li>Delete the directory <code class="language-plaintext highlighter-rouge">var/plugins/TaskManagementBundle/</code>
+        </li>
+<li>
+            Execute all installation steps again:
+            <ul>
+                <li>复制文件</li>
+                <li>清除缓存</li>
+                <li>Update database with <code class="language-plaintext highlighter-rouge">bin/console kimai:bundle:tasks:install</code>
+                
+            </li>
+</ul>
+        </li>
+    </ul>
+
+
+
+                </div>
+                
+
+                
+                <div class="tab-pane fade" id="store-compatibility" role="tabpanel">
+                    <h2 id="compatibility">兼容性</h2>
+                    <p>下表包含插件与所需的最低 Kimai 版本之间的比较。</p>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>
+                                Bundle 版本
+                            </th>
+                            <th>
+                                最低 Kimai 版本
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        
+                        <tr>
+                            <td>2.3.0 - 2.5.0</td>
+                            <td>2.1.0</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>2.2.0</td>
+                            <td>2.0.33</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>2.1.7 - 2.1.8</td>
+                            <td>2.0.26</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>2.1.5 - 2.1.6</td>
+                            <td>2.0.20</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>2.1.1 - 2.1.4</td>
+                            <td>2.0.6</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>2.1.0</td>
+                            <td>2.0.5</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>2.0 - 2.0.1</td>
+                            <td>2.0</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>1.14.0 -1.16.0</td>
+                            <td>1.19</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>1.10.0 - 1.13.1</td>
+                            <td>1.15</td>
+                        </tr>
+                        
+                        </tbody>
+                    </table>
+
+                    
+                </div>
+                
+
+                
+                <div class="tab-pane fade" id="store-demo" role="tabpanel">
+                    <h2 id="demo">演示</h2>
+                    <p class="mb-3">
+                        你可以在以下网站测试这个插件 <a href="https://demo.kimai.org">demo.kimai.org</a>:
+                    </p>
+                    <p>
+                        用户名: <strong>susan_super</strong>
+                        <br>
+                        密码: <strong>kitten</strong>
+                    </p>
+                    <p class="mb-2">
+                        <a href="/en/demo.html">在此处查找更多测试帐户</a>.
+                    </p>
+                </div>
+                
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="mb-5 pt-md-3 pt-lg-4 pt-xl-5">
+    <h2 class="h1 pt-lg-2 pt-xl-3 mb-5 text-center">截图</h2>
+    <div class="pb-2 pb-sm-3 pb-md-4">
+        <div class="swiper" data-swiper-options='{
+            "loop": true,
+            "grabCursor": false,
+            "centeredSlides": true,
+            "autoplay": {
+              "delay": 0,
+              "disableOnInteraction": false
+            },
+            "freeMode": true,
+            "speed": 38000,
+            "freeModeMomentum": false,
+            "breakpoints": {
+              "0": {
+                "slidesPerView": 1,
+                "spaceBetween": 8
+              },
+              "500": {
+                "spaceBetween": 16
+              },
+              "768": {
+                "slidesPerView": 2,
+                "spaceBetween": 24
+              }
+            }
+          }'>
+            <div class="swiper-wrapper">
+                
+                    
+                    
+                    <div class="swiper-slide pb-3">
+                        <figure class="figure">
+                            <img src="/images/marketplace/tasks-screenshot.png" class="figure-img" alt="Screenshot">
+                            
+                            <figcaption class="figure-caption text-center">The new administration page with an overview of all tasks with tracked times, status and assignments</figcaption>
+                            
+                        </figure>
+                    </div>
+                
+                    
+                    
+                    <div class="swiper-slide pb-3">
+                        <figure class="figure">
+                            <img src="/images/marketplace/tasks-create.png" class="figure-img" alt="Screenshot">
+                            
+                            <figcaption class="figure-caption text-center">When creating or updating a task, you can record these fields</figcaption>
+                            
+                        </figure>
+                    </div>
+                
+                    
+                    
+                    <div class="swiper-slide pb-3">
+                        <figure class="figure">
+                            <img src="/images/marketplace/tasks-widget.png" class="figure-img" alt="Screenshot">
+                            
+                            <figcaption class="figure-caption text-center">The new dashboard widgets for assigned and pending tasks</figcaption>
+                            
+                        </figure>
+                    </div>
+                
+
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="container pb-5 mb-md-3 mb-lg-4 mb-xl-5">
+    <div class="row pb-3">
+        <div class="col-md-5 mb-4 mb-md-0">
+            <div class="card bg-dark h-100 p-lg-5">
+                <div class="card-body p-lg-2">
+                    <h2 class="h1 text-light">购买</h2>
+                    
+                </div>
+                <div class="card-footer border-0 w-100 pt-0 p-4 p-lg-2">
+                    <div class="h2 d-flex align-items-center text-light mb-4">
+                        79 €
+                        <small class="text-muted fs-xl fw-normal ms-2">
+                            不含增值税 (每年)
+                        </small>
+                    </div>
+                    
+                        <a class="btn btn-primary btn-lg shadow-primary" href="#" data-bs-toggle="modal" data-bs-target="#modal-buy"><i class="bx bx-cart me-2"></i> 现在购买</a>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div class="accordion" id="faq">
+                
+                <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button shadow-none rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#q-1" aria-expanded="false" aria-controls="q-1">How is the plugin licensed?</button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="q-1" data-bs-parent="#faq">
+                        <div class="accordion-body fs-sm pt-0">
+                            <p>Read more about <a href="/documentation/buy-a-plugin.html">the license for this item here</a></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button shadow-none rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#q-2" aria-expanded="false" aria-controls="q-1">Where can I buy this plugin?</button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="q-2" data-bs-parent="#faq">
+                        <div class="accordion-body fs-sm pt-0">
+                            <p>You can buy the plugin via Lemon Squeezy (CreditCard, instant access) or <a href="mailto:support@kimai.org">from the developer</a> (bank-transfer, up to one week)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button shadow-none rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#q-3" aria-expanded="false" aria-controls="q-1">Where can I get support for this plugin?</button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="q-3" data-bs-parent="#faq">
+                        <div class="accordion-body fs-sm pt-0">
+                            <p>Support-questions, bug-reports and feature-requests will be answered in this <a href="https://github.com/kevinpapst/kimai-plugins" target="_blank">Github repository</a></p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="container py-lg-4 py-xl-5 mt-3 mb-5">
+    <div class="row g-0 bg-dark bg-repeat-0 bg-position-center border rounded-3 overflow-hidden" style="background-image: url(/images/layout/author-pattern.svg);">
+        <div class="col-md-5 bg-repeat-0 bg-position-top-center bg-size-cover" style="background-image: url(/images/kevin-papst.jpeg); min-height: 350px;"></div>
+        <div class="col-md-7 py-xl-5 px-4">
+            <div class="py-5 mx-auto" style="max-width: 530px;">
+                <div class="fs-xl text-light opacity-50 mb-2">提供者</div>
+                <h2 class="h1 text-light mb-4">Kevin Papst</h2>
+                <p class="text-light opacity-70 pb-4">
+                    Building Kimai since 2009
+                </p>
+
+                <div class="mb-4">
+                    如果你有任何问题，请使用以下联系信息与开发商直接联系。
+                </div>
+                <div class="d-flex flex-column flex-sm-row flex-wrap">
+                    
+                    <a href="https://www.kevinpapst.de" class="btn btn-behance me-sm-4 mb-3 mb-sm-0">
+                        <i class="bx bx-home fs-xl me-2"></i>
+                        Homepage
+                    </a>
+                    
+                    
+                    <a href="mailto:support@kimai.org" class="btn btn-blogger me-sm-4 mb-3 mb-sm-0">
+                        <i class="bx bx-envelope fs-xl me-2"></i>
+                        Email
+                    </a>
+                    
+                    
+                    <a href="https://github.com/kevinpapst" class="btn btn-github me-sm-4 mb-3 mb-sm-0">
+                        <i class="bx bxl-github fs-xl me-2"></i>
+                        GitHub
+                    </a>
+                    
+                    <br>
+                    
+                    <a href="https://twitter.com/keleo" class="btn btn-twitter me-sm-4 mb-3 mb-sm-0 mt-3">
+                        <i class="bx bxl-twitter fs-xl me-2"></i>
+                        Twitter
+                    </a>
+                    
+                    
+                    <a href="https://phpc.social/@kevinpapst" class="btn btn-messenger me-sm-4 mb-3 mb-sm-0 mt-3">
+                        <i class="bx bxl-mastodon fs-xl me-2"></i>
+                        Mastodon
+                    </a>
+                    
+                    
+                    <a href="https://www.youtube.com/@kimai_org" class="btn btn-youtube me-sm-4 mb-3 mb-sm-0 mt-3">
+                        <i class="bx bxl-youtube fs-xl me-2"></i>
+                        Youtube
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<div class="modal modal-blur fade" id="modal-buy" tabindex="-1" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">现在购买</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                
+                <div class="row align-items-center mb-3">
+                    <div class="col-auto">
+                        <a class="btn btn-success w-100" href="https://kimai.lemonsqueezy.com/checkout/buy/672774c1-7a01-4a6f-8301-0a968e4412ec" target="_blank">
+                            Lemon Squeezy
+                        </a>
+                    </div>
+                    <div class="col-auto ms-auto">
+                        <i class="fs-3 bx bxl-google"></i>
+                        <i class="fs-3 bx bxl-apple"></i>
+                        <i class="fs-3 bx bxl-visa"></i>
+                        <i class="fs-3 bx bxl-mastercard"></i>
+                    </div>
+                </div>
+                
+
+                
+                <div class="row align-items-center mb-3">
+                    <div class="col-auto">
+                        <a class="btn btn-success w-100" href="https://kevinpapst.gumroad.com/l/tasks" target="_blank">
+                            Gumroad
+                        </a>
+                    </div>
+                    <div class="col-auto ms-auto">
+                        <i class="fs-3 bx bxl-paypal"></i>
+                        <i class="fs-3 bx bxl-google"></i>
+                        <i class="fs-3 bx bxl-apple"></i>
+                        <i class="fs-3 bx bxl-visa"></i>
+                        <i class="fs-3 bx bxl-mastercard"></i>
+                    </div>
+                </div>
+                
+
+                
+
+                
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</main>
+
+
+
+
+
+
+
+
+<footer class="footer bg-dark pt-5 pb-4" data-bs-theme="dark">
+    <div class="container pt-1 pt-md-3 pt-lg-4 pt-xl-5">
+        <div class="row">
+            <div class="col-md-5 col-xl-4 mb-4 mb-md-5 mb-lg-0">
+                <div class="d-flex align-items-center pb-3 mb-1">
+                    <div class="navbar-brand text-dark p-0 pe-1 me-0">
+                        Kimai
+                    </div>
+                    <hr class="vr mt-2 mx-3" style="height: 26px;">
+                    <div class="text-white fw-semibold ps-1">时间跟踪变得简单</div>
+                </div>
+                <p class="text-body fs-sm pb-1 pb-md-2 pb-lg-2 mb-2">
+                    自由且易于使用的时间跟踪工具，适用于自由职业者、机构和公司。Kimai是一款开源软件，可供自行托管和作为SaaS使用。
+                </p>
+                <div class="d-flex flex-column flex-sm-row flex-lg-column align-items-sm-center align-items-lg-start justify-content-between pb-1 pb-md-2 pb-lg-3 mb-3">
+                    <div class="position-relative">
+                        <div class="dropdown">
+                            <button type="button" class="form-select" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-globe top-50 start-0 text-body me-2"></i>
+                                中文（繁體）
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/cs/store/keleo-task-management-bundle.html" class="dropdown-item">Čeština</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/de/store/keleo-task-management-bundle.html" class="dropdown-item">Deutsch</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/store/task-management-bundle.html" class="dropdown-item">English</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/es/store/keleo-task-management-bundle.html" class="dropdown-item">Español</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/fr/store/keleo-task-management-bundle.html" class="dropdown-item">Français</a>
+                                
+                                    
+                                    
+                                    <a dir="rtl" href="/he/store/keleo-task-management-bundle.html" class="dropdown-item">עברית</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/hr/store/keleo-task-management-bundle.html" class="dropdown-item">Hrvatski</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/it/store/keleo-task-management-bundle.html" class="dropdown-item">Italiano</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/nl/store/keleo-task-management-bundle.html" class="dropdown-item">Nederlands</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/pl/store/keleo-task-management-bundle.html" class="dropdown-item">Polski</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/pt/store/keleo-task-management-bundle.html" class="dropdown-item">Português</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/pt_BR/store/keleo-task-management-bundle.html" class="dropdown-item">Português (Brasil)</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/ru/store/keleo-task-management-bundle.html" class="dropdown-item">Rусский</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/sk/store/keleo-task-management-bundle.html" class="dropdown-item">Slovenčina</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/sv/store/keleo-task-management-bundle.html" class="dropdown-item">Svenska</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/uk/store/keleo-task-management-bundle.html" class="dropdown-item">Українська</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/zh_Hans/store/keleo-task-management-bundle.html" class="dropdown-item active">中文（繁體）</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="form-check form-switch mode-switch pb-1 pb-md-2 pb-lg-2 mb-2" data-bs-toggle="mode">
+                    <input type="checkbox" class="form-check-input" id="theme-mode">
+                    <label class="form-check-label" for="theme-mode">Light</label>
+                    <label class="form-check-label" for="theme-mode">Dark</label>
+                </div>
+            </div>
+            <div class="col-md-7 offset-xl-1">
+                <div id="footer-links" class="row">
+                    
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <h6 class="fs-lg mb-1 mb-md-2">
+                            <span class="d-none d-md-block">Kimai</span>
+                            <a href="#tools" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Kimai</a>
+                        </h6>
+                        <div id="tools" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/zh_Hans/about.html" class="nav-link fs-sm fw-medium px-0 py-1">关于 Kimai</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/zh_Hans/download.html" class="nav-link fs-sm fw-medium px-0 py-1">下载</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/zh_Hans/features.html" class="nav-link fs-sm fw-medium px-0 py-1">功能特点</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/zh_Hans/support.html" class="nav-link fs-sm fw-medium px-0 py-1">技术支持</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/en/kimai-discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">Discount codes</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <h6 class="fs-lg mb-1 mb-md-2">
+                            <span class="d-none d-md-block">Kimai for</span>
+                            <a href="#landing-kimai-for" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Kimai for</a>
+                        </h6>
+                        <div id="landing-kimai-for" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/en/time-tracking-non-profit.html" class="nav-link fs-sm fw-medium px-0 py-1">Non-Profits</a>
+                                </li>
+                                
+                                
+                                <li class="nav-item">
+                                    <a href="/en/open-source-time-log" class="nav-link fs-sm fw-medium px-0 py-1" title="Open-Source Time Log">Time Log</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/open-source-time-tracker" class="nav-link fs-sm fw-medium px-0 py-1" title="Open-Source Time Tracker">Time Tracker</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/open-source-timesheet" class="nav-link fs-sm fw-medium px-0 py-1" title="Open-Source Timesheet">Timesheet</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <h6 class="fs-lg mb-1 mb-md-2">
+                            <span class="d-none d-md-block">对比</span>
+                            <a href="#footer-cmp" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">对比</a>
+                        </h6>
+                        <div id="footer-cmp" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/zh_Hans/compare/" class="nav-link fs-sm fw-medium px-0 py-1">比较时间跟踪工具</a>
+                                </li>
+                                
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternative-to-clockify" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to Clockify">Clockify</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternative-to-openproject" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to OpenProject">OpenProject</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternative-to-toggl" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to toggl track">toggl track</a>
+                                    </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="d-md-flex align-items-center justify-content-between pt-sm-2 pt-md-4 pt-lg-5 pb-2 mt-4 ">
+    <ul class="nav order-md-1 ms-md-0 mb-3 mb-md-0">
+        <li class="nav-item">
+            <a href="/zh_Hans/" class="nav-link fs-sm fw-medium ps-0">首页</a>
+        </li>
+        <li class="nav-item">
+            <a href="/zh_Hans/site-notice.html" class="nav-link fs-sm fw-medium">网站公告</a>
+        </li>
+        <li class="nav-item">
+            <a href="/zh_Hans/privacy-policy.html" class="nav-link fs-sm fw-medium">隐私策略</a>
+        </li>
+        <li class="nav-item">
+            <a href="https://uptime.kimai.cloud/" target="_blank" class="nav-link fs-sm fw-medium">Cloud-Status</a>
+        </li>
+    </ul>
+    <div class="nav order-md-2 mb-3 mb-md-0">
+        <a target="_blank" href="https://github.com/kimai/kimai" class="btn btn-icon btn-secondary btn-github rounded-circle me-3" aria-label="GitHub">
+    <i class="bx bxl-github"></i>
+</a>
+<a target="_blank" href="https://twitter.com/kimai_org" class="btn btn-icon btn-secondary btn-twitter rounded-circle me-3" aria-label="Twitter / X">
+    <i class="bx bxl-twitter"></i>
+</a>
+<a target="_blank" href="https://www.youtube.com/@kimai_org" class="btn btn-icon btn-secondary btn-youtube rounded-circle me-3" aria-label="YouTube">
+    <i class="bx bxl-youtube"></i>
+</a>
+<a target="_blank" href="https://phpc.social/@kimai" class="btn btn-icon btn-secondary btn-messenger rounded-circle me-3" aria-label="Mastodon">
+    <i class="bx bxl-mastodon"></i>
+</a>
+
+    </div>
+    <p class="nav d-block fs-sm mb-0 order-md-3">
+        <span class="text-body">制作者 </span>
+        <a class="nav-link d-inline-block p-0" href="https://www.kevinpapst.de/" target="_blank" rel="noopener">Kevin Papst</a>
+    </p>
+</div>
+
+    </div>
+</footer>
+
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
+
+</body>
+</html>

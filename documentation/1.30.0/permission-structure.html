@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index,follow">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+    <title>Permission structure – Kimai</title>
+    
+        <meta name="description" content="Configure the permission system which is based on user roles">
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kimai Time-Tracking">
+    <meta property="og:description" content="Configure the permission system which is based on user roles">
+    <meta property="og:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kimai Time-Tracking">
+    <meta name="twitter:site" content="@kimai_org">
+    <meta name="twitter:description" content="Configure the permission system which is based on user roles">
+    <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <script src="/assets/build/theme.js"></script>
+    <link href="/assets/build/main.css" rel="stylesheet" />
+</head>
+<body class="">
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand bg-light border-bottom border-light shadow fixed-top" data-scroll-header>
+    <div class="container-fluid pe-lg-4">
+        <div class="d-flex align-items-center">
+            <a href="/documentation/" class="navbar-brand flex-shrink-0 py-1 py-lg-2">
+                <img src="/images/apple-touch-icon.png" width="47" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning">Developer</span>
+        </div>
+        <div class="d-flex align-items-center w-100">
+            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 9.75rem;">
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-manual.html" class="nav-link">
+                            <i class="bx bx-book opacity-70 fs-lg me-1"></i>
+                            User manual
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/cloud.html" class="nav-link">
+                            <i class="bx bxs-cloud opacity-70 fs-lg me-1"></i>
+                            Kimai-Cloud
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/developers.html" class="nav-link">
+                            <i class="bx bx-code opacity-70 fs-lg me-1"></i>
+                            Developer
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-on-premise.html" class="nav-link">
+                            <i class="bx bx-wrench opacity-70 fs-lg me-1"></i>
+                            Self-hosted
+                        </a>
+                    </li>
+                
+            </ul>
+            <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="form-check form-switch mode-switch pe-lg-1 ms-lg-auto" data-bs-toggle="mode">
+                <input type="checkbox" class="form-check-input" id="theme-mode">
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Light</label>
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Dark</label>
+            </div>
+        </div>
+    </div>
+</header>
+
+<aside data-bs-theme="dark">
+    <div id="componentsNav" class="offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100 bg-dark border-end-lg" style="width: 21rem; z-index: 1045;">
+        <div class="offcanvas-header d-none d-lg-flex justify-content-start">
+            <a href="/documentation/" class="navbar-brand text-dark d-none d-lg-flex py-0">
+                <img src="/images/apple-touch-icon.png" width="32" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning d-none d-lg-inline-block">Developer</span>
+        </div>
+        <div class="offcanvas-header d-block d-lg-none border-bottom">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <h5 class="d-lg-none mb-0">Menu</h5>
+                <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#componentsNav" aria-label="Close"></button>
+            </div>
+            <div class="list-group list-group-flush mx-n4">
+                
+                    
+                    
+                    <a href="/documentation/chapter-manual.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-book opacity-70 me-1"></i>
+                        User manual
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/cloud.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bxs-cloud opacity-70 me-1"></i>
+                        Kimai-Cloud
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/developers.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-code opacity-70 me-1"></i>
+                        Developer
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/chapter-on-premise.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-wrench opacity-70 me-1"></i>
+                        Self-hosted
+                    </a>
+                
+            </div>
+        </div>
+        <div class="offcanvas-body swiper scrollbar-hover overflow-hidden w-100 p-4" data-swiper-options='{
+          "direction": "vertical",
+          "slidesPerView": "auto",
+          "freeMode": true,
+          "scrollbar": {
+            "el": ".swiper-scrollbar"
+          },
+          "mousewheel": true
+        }'>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide h-auto">
+                    
+                        
+
+    
+    
+    <h3 class="fs-lg">JSON API</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/rest-api.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Kimai API
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/rest-api-examples.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Examples
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/api-pagination.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Pagination
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">Create plugins</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/plugins.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Getting started
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/translations.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Translations / i18n
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/meta-fields.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Custom fields
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/theme.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Theme
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/store.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Add to store
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/migration-v2.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Migrate plugins to v2
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">Technical background</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/bughunter.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Bughunter
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/permission-structure.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4  active">
+                
+                Permission structure
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/sql-examples.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                SQL Examples
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/redis.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Using Redis for caching
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/create-release.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Creating a release
+                
+            </a>
+        
+    
+    </div>
+
+
+                        <div class="list-group list-group-flush pb-3 mb-4 mx-n4">
+                    
+                    <a href="/" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Home</a>
+                    <a href="/en/site-notice.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Site notice</a>
+                    <a href="/en/privacy-policy.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Privacy policy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-scrollbar end-0"></div>
+        </div>
+    </div>
+</aside>
+
+<main class="docs-container pt-5">
+    <div class="container-fluid px-xxl-5 px-lg-4 pt-4 pt-lg-5 pb-2 pb-lg-4">
+
+        <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 pt-4 mb-n3">
+            <div class="me-4">
+                <h1 class="pb-1">Permission structure</h1>
+                
+                <p class="text-muted fs-lg mb-2">Configure the permission system which is based on user roles</p>
+                
+            </div>
+            
+
+
+
+
+    <div class="dropdown">
+        <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Older versions
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+            
+            <a class="dropdown-item" href="/documentation/1.30.0/permission-structure.html">Kimai 1.30.0</a>
+            
+            <a class="dropdown-item" href="/documentation/permission-structure.html">2.13.0 (latest version)</a>
+        </div>
+    </div>
+
+
+        </div>
+
+        <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+            <div>
+                
+                <div id="documentation-content">
+                    
+
+
+
+<div class="alert alert-danger" role="alert">
+    
+You are viewing an older version of this documentation page. A newer version is available <a href="/documentation/permission-structure.html">here</a>.
+
+</div>
+
+
+
+<p>Kimai provides a flexible <a href="/documentation/permissions.html">permissions system</a>, which is based on user roles.</p>
+
+<p><strong>You can change the permissions with the administration screens in the System &gt; Roles page.</strong></p>
+
+<h2 id="plugin-permissions">Plugin permissions</h2>
+
+<p>Developer can add/change permissions through plugins, see <a href="/documentation/developers.html">Developers documentation</a>.</p>
+
+<h2 id="permission-configuration-in-localyaml">Permission configuration in local.yaml</h2>
+
+<p>Since Kimai 1.6 there is generally no reason for changing the default permission through the <a href="/documentation/local-yaml.html">local.yaml</a>.
+It can be considered bad practice, as it can lead to problems with future updates.</p>
+
+<h3 id="understanding-permission-structure">Understanding permission structure</h3>
+
+<p>Before you learn to configure the permission system, you have to understand the three involved config types:</p>
+
+<ol>
+  <li>
+<code class="language-plaintext highlighter-rouge">Permission sets</code> - a re-usable mapping of a free choosable name (e.g. <code class="language-plaintext highlighter-rouge">TEST</code>) to a list of:
+    <ul>
+      <li>one or more “permission names” (e.g. <code class="language-plaintext highlighter-rouge">test</code>)</li>
+      <li>one or more “permission sets” (linking other sets can be achieved by prepending an <code class="language-plaintext highlighter-rouge">@</code>, e.g. <code class="language-plaintext highlighter-rouge">@TEST</code>)</li>
+      <li>one or more “negated permission names” (prepend an <code class="language-plaintext highlighter-rouge">!</code> to negate a permission, e.g. <code class="language-plaintext highlighter-rouge">!test</code>)</li>
+    </ul>
+  </li>
+  <li>
+<code class="language-plaintext highlighter-rouge">Permission maps</code> - a mapping of a role name to a list of “permission sets” (no <code class="language-plaintext highlighter-rouge">@</code> required here, e.g. <code class="language-plaintext highlighter-rouge">TEST</code>)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">Permissions</code> - a mapping of a role name to a list of:
+    <ul>
+      <li>one or more “permission names” (e.g. <code class="language-plaintext highlighter-rouge">test</code>)</li>
+      <li>one or more “negated permission names” (e.g. <code class="language-plaintext highlighter-rouge">!test</code>)</li>
+    </ul>
+  </li>
+</ol>
+
+<p>An example and its explanation:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="na">permissions</span><span class="pi">:</span>
+        <span class="na">sets</span><span class="pi">:</span>
+            <span class="na">ACTIVITY</span><span class="pi">:</span> <span class="pi">[</span><span class="s1">'</span><span class="s">view_activity'</span><span class="pi">,</span> <span class="s1">'</span><span class="s">create_activity'</span><span class="pi">]</span>
+            <span class="na">TIMESHEET</span><span class="pi">:</span> <span class="pi">[</span><span class="s1">'</span><span class="s">view_own_timesheet'</span><span class="pi">,</span> <span class="s1">'</span><span class="s">start_own_timesheet'</span><span class="pi">]</span>
+            <span class="na">PROFILE</span><span class="pi">:</span> <span class="pi">[</span><span class="s1">'</span><span class="s">my_profile'</span><span class="pi">,</span> <span class="s1">'</span><span class="s">show_roles'</span><span class="pi">,</span> <span class="s1">'</span><span class="s">other_profiles'</span><span class="pi">]</span>
+            <span class="na">EXAMPLE</span><span class="pi">:</span> <span class="pi">[</span><span class="s1">'</span><span class="s">@PROFILE'</span><span class="pi">,</span> <span class="s1">'</span><span class="s">@ACTIVITY'</span><span class="pi">]</span>
+            <span class="na">EXAMPLE_USER</span><span class="pi">:</span> <span class="pi">[</span><span class="s1">'</span><span class="s">@PROFILE'</span><span class="pi">,</span> <span class="s1">'</span><span class="s">!show_roles'</span><span class="pi">]</span>
+        <span class="na">maps</span><span class="pi">:</span>
+            <span class="na">ROLE_USER</span><span class="pi">:</span> <span class="pi">[</span><span class="s1">'</span><span class="s">TIMESHEET'</span><span class="pi">,</span> <span class="s1">'</span><span class="s">EXAMPLE_USER'</span><span class="pi">]</span>
+            <span class="na">ROLE_ADMIN</span><span class="pi">:</span> <span class="pi">[</span><span class="s1">'</span><span class="s">TIMESHEET'</span><span class="pi">,</span> <span class="s1">'</span><span class="s">EXAMPLE'</span><span class="pi">]</span>
+        <span class="na">roles</span><span class="pi">:</span>
+            <span class="na">ROLE_USER</span><span class="pi">:</span> <span class="pi">[</span><span class="s1">'</span><span class="s">!other_profiles'</span><span class="pi">]</span>
+            <span class="na">ROLE_ADMIN</span><span class="pi">:</span> <span class="pi">[</span><span class="s1">'</span><span class="s">delete_activity'</span><span class="pi">]</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In <code class="language-plaintext highlighter-rouge">sets</code> we define the <code class="language-plaintext highlighter-rouge">permissions sets</code> names “ACTIVITY”, “TIMESHEET”, “PROFILE” and “EXAMPLE”.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">set</code> called “EXAMPLE” inherits the other <code class="language-plaintext highlighter-rouge">sets</code> called “PROFILE” and “ACTIVITY”, so its contains
+the permissions: my_profile, show_roles, other_profiles, view_activity , create_activity.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">set</code> called “EXAMPLE_USER” inherits the <code class="language-plaintext highlighter-rouge">set</code> called “PROFILE” and removes the permission “show_roles”, so its contains
+the permissions: my_profile, other_profiles.</li>
+</ul>
+
+<p>In <code class="language-plaintext highlighter-rouge">maps</code> we now apply the <code class="language-plaintext highlighter-rouge">permission set</code> called “TIMESHEET” and “EXAMPLE_USER” to the user-role “ROLE_USER”
+and the two <code class="language-plaintext highlighter-rouge">permission sets</code> called “TIMESHEET” and “EXAMPLE” to the user-role “ROLE_ADMIN”.</p>
+
+<p>At this step the roles have the following permissions:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">ROLE_USER</code> - view_own_timesheet, start_own_timesheet, my_profile, other_profiles</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">ROLE_ADMIN</code> - view_own_timesheet, start_own_timesheet, my_profile, show_roles, other_profiles, view_activity, create_activity</li>
+</ul>
+
+<p>As last step, the list of <code class="language-plaintext highlighter-rouge">permission names</code> will be merged with the list of previously calculated permissions.
+We removed the permission “other_profiles” from the user-role “ROLE_USER” and added the permission “delete_activity” to the user-role “ROLE_ADMIN”.</p>
+
+<p>At the end the system calculated the final list of permissions:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">ROLE_USER</code> - view_own_timesheet, start_own_timesheet, my_profile</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">ROLE_ADMIN</code> - view_own_timesheet, start_own_timesheet, my_profile, show_roles, other_profiles, view_activity, create_activity, delete_activity</li>
+</ul>
+
+<p>Yes, that could have been easier ;-) but I wanted to demonstrate all possibilities!</p>
+
+<h3 id="changing-permissions">Changing permissions</h3>
+
+<p>In most cases you just want to adjust single permissions, like remove from or add single permissions to a user role.
+This can be done by adding something like this to your <a href="/documentation/local-yaml.html">local.yaml</a>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">kimai</span><span class="pi">:</span>
+    <span class="na">permissions</span><span class="pi">:</span>
+        <span class="na">roles</span><span class="pi">:</span>
+            <span class="na">ROLE_TEAMLEAD</span><span class="pi">:</span> <span class="pi">[</span><span class="s1">'</span><span class="s">!edit_invoice_template'</span><span class="pi">,</span> <span class="s1">'</span><span class="s">delete_invoice_template'</span><span class="pi">]</span>
+</code></pre></div></div>
+<p>This example removes <code class="language-plaintext highlighter-rouge">edit_invoice_template</code> and adds <code class="language-plaintext highlighter-rouge">delete_invoice_template</code> for the user role <code class="language-plaintext highlighter-rouge">ROLE_TEAMLEAD</code>.</p>
+
+<p>If you want to go further and want to re-adjust which <code class="language-plaintext highlighter-rouge">sets</code> are applied to a user role, you have to overwrite the
+complete map for that role. Lets assume you want to redefine user permissions and allow full access to tags,
+then you edit your <code class="language-plaintext highlighter-rouge">local.yaml</code> like this:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">kimai</span><span class="pi">:</span>
+    <span class="na">permissions</span><span class="pi">:</span>
+        <span class="na">maps</span><span class="pi">:</span>
+            <span class="na">ROLE_USER</span><span class="pi">:</span> <span class="pi">[</span><span class="s1">'</span><span class="s">ROLE_USER'</span><span class="pi">,</span> <span class="s1">'</span><span class="s">TAGS'</span><span class="pi">]</span>
+</code></pre></div></div>
+<p>As you overwrite the default map <code class="language-plaintext highlighter-rouge">ROLE_USER</code> by defining it, you have to apply the default set <code class="language-plaintext highlighter-rouge">ROLE_USER</code> and append the set <code class="language-plaintext highlighter-rouge">TAGS</code> (see below in “Existing maps”).</p>
+
+<p>Customizing sets is generally not recommended, as you should be able to achieve everything with <code class="language-plaintext highlighter-rouge">maps</code> and <code class="language-plaintext highlighter-rouge">permissions</code>.
+See below in “Existing sets”.</p>
+
+<h3 id="existing-sets">Existing sets</h3>
+
+<p>Existing sets can be seen in <code class="language-plaintext highlighter-rouge">kimai.yaml</code>, their customization is generally not necessary.
+You cannot extend existing sets, if you define them, they will be overwritten with your config.
+Therefor it is <strong>not</strong> recommended to overwrite any existing <code class="language-plaintext highlighter-rouge">set</code> but create new ones (start their name with a prefix like ‘CUSTOM_’):</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">kimai</span><span class="pi">:</span>
+    <span class="na">permissions</span><span class="pi">:</span>
+        <span class="na">sets</span><span class="pi">:</span>
+            <span class="na">CUSTOM_ROLE_USER</span><span class="pi">:</span> <span class="pi">[</span><span class="s1">'</span><span class="s">@ROLE_USER'</span><span class="pi">,</span> <span class="s1">'</span><span class="s">@TAGS'</span><span class="pi">]</span>
+        <span class="na">maps</span><span class="pi">:</span>
+            <span class="na">ROLE_USER</span><span class="pi">:</span> <span class="pi">[</span><span class="s1">'</span><span class="s">CUSTOM_ROLE_USER'</span><span class="pi">]</span>
+</code></pre></div></div>
+
+<h3 id="existing-maps">Existing maps</h3>
+
+<p>By default each role owns only one set, which is called like the user role itself:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">kimai</span><span class="pi">:</span>
+    <span class="na">permissions</span><span class="pi">:</span>
+        <span class="na">maps</span><span class="pi">:</span>
+            <span class="na">ROLE_USER</span><span class="pi">:</span> <span class="pi">[</span><span class="s1">'</span><span class="s">ROLE_USER'</span><span class="pi">]</span>
+            <span class="na">ROLE_TEAMLEAD</span><span class="pi">:</span> <span class="pi">[</span><span class="s1">'</span><span class="s">ROLE_TEAMLEAD'</span><span class="pi">]</span>
+            <span class="na">ROLE_ADMIN</span><span class="pi">:</span> <span class="pi">[</span><span class="s1">'</span><span class="s">ROLE_ADMIN'</span><span class="pi">]</span>
+            <span class="na">ROLE_SUPER_ADMIN</span><span class="pi">:</span> <span class="pi">[</span><span class="s1">'</span><span class="s">ROLE_SUPER_ADMIN'</span><span class="pi">]</span>
+</code></pre></div></div>
+
+
+
+                </div>
+                
+
+                
+            </div>
+        </div>
+
+    </div>
+</main>
+
+
+    <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
+        <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
+        <ul class="nav" id="jumpToNav">
+<li class="nav-item"><a href="#plugin-permissions" class="nav-link">Plugin permissions</a></li>
+<li class="nav-item">
+<a href="#permission-configuration-in-localyaml" class="nav-link">Permission configuration in local.yaml</a><ul>
+<li class="nav-item"><a href="#understanding-permission-structure" class="nav-link">Understanding permission structure</a></li>
+<li class="nav-item"><a href="#changing-permissions" class="nav-link">Changing permissions</a></li>
+<li class="nav-item"><a href="#existing-sets" class="nav-link">Existing sets</a></li>
+<li class="nav-item"><a href="#existing-maps" class="nav-link">Existing maps</a></li>
+</ul>
+</li>
+</ul>
+        
+    </aside>
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
+
+</body>
+</html>

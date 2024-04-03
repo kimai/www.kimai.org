@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="hr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index,follow">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+    <title>Testiraj Kimai u jednoj od demo verzija</title>
+    
+        <meta name="description" content="Testiraj i ocijeni naš program za evidentiranje vremena Kimai, izravno s naše demo stranice.">
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
+    <meta property="og:locale" content="hr">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kimai Time-Tracking">
+    <meta property="og:description" content="Testiraj i ocijeni naš program za evidentiranje vremena Kimai, izravno s naše demo stranice.">
+    <meta property="og:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kimai Time-Tracking">
+    <meta name="twitter:site" content="@kimai_org">
+    <meta name="twitter:description" content="Testiraj i ocijeni naš program za evidentiranje vremena Kimai, izravno s naše demo stranice.">
+    <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <link rel="alternate" hreflang="cs" href="https://www.kimai.org/cs/demo.html">
+    <link rel="alternate" hreflang="de" href="https://www.kimai.org/de/demo.html">
+    <link rel="alternate" hreflang="en" href="https://www.kimai.org/en/demo.html">
+    <link rel="alternate" hreflang="es" href="https://www.kimai.org/es/demo.html">
+    <link rel="alternate" hreflang="fr" href="https://www.kimai.org/fr/demo.html">
+    <link rel="alternate" hreflang="he" href="https://www.kimai.org/he/demo.html">
+    <link rel="alternate" hreflang="hr" href="https://www.kimai.org/hr/demo.html">
+    <link rel="alternate" hreflang="it" href="https://www.kimai.org/it/demo.html">
+    <link rel="alternate" hreflang="nl" href="https://www.kimai.org/nl/demo.html">
+    <link rel="alternate" hreflang="pl" href="https://www.kimai.org/pl/demo.html">
+    <link rel="alternate" hreflang="pt" href="https://www.kimai.org/pt/demo.html">
+    <link rel="alternate" hreflang="pt_BR" href="https://www.kimai.org/pt_BR/demo.html">
+    <link rel="alternate" hreflang="ru" href="https://www.kimai.org/ru/demo.html">
+    <link rel="alternate" hreflang="sk" href="https://www.kimai.org/sk/demo.html">
+    <link rel="alternate" hreflang="sv" href="https://www.kimai.org/sv/demo.html">
+    <link rel="alternate" hreflang="uk" href="https://www.kimai.org/uk/demo.html">
+    <link rel="alternate" hreflang="zh_Hans" href="https://www.kimai.org/zh_Hans/demo.html">
+    <script src="/assets/build/theme.js"></script>
+    <link href="/assets/build/main.css" rel="stylesheet" />
+</head>
+<body class="">
+
+<main class="page-wrapper">
+    
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand-lg position-absolute navbar-dark  navbar-sticky">
+    <div class="container px-3">
+        <a href="/hr/" class="navbar-brand pe-3">
+        <img src="/images/kimai_logo.png" style="height:36px" alt="Kimai – Program otvorenog koda za evidentiranje vremena"> Kimai
+        </a>
+        <div id="navbarNav" class="offcanvas offcanvas-end bg-dark">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title">Menu</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    
+                    <li class="nav-item active">
+                        <a href="/hr/demo.html" class="nav-link">Demo</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/hr/store/" class="nav-link">Dodaci</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/hr/blog/" class="nav-link">Novosti</a>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Dokumentacija</a>
+                        <ul class="dropdown-menu">
+                            
+                            <li><a href="/documentation/chapter-manual.html" class="dropdown-item">Korisnički priručnik</a></li>
+                            
+                            <li><a href="/documentation/cloud.html" class="dropdown-item">Kimai-Cloud</a></li>
+                            
+                            <li><a href="/documentation/chapter-on-premise.html" class="dropdown-item">Interni hosting</a></li>
+                            
+                            <li><a href="/documentation/developers.html" class="dropdown-item">Programer</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="pe-lg-1 ms-auto me-2">
+            <a href="/hr/download.html" class="btn rounded-pill btn-sm fs-sm d-none d-md-inline-flex me-2 btn-outline-light">Intalacija</a>
+            
+
+
+
+
+
+<a href="https://www.kimai.cloud/auth/registration" class="btn btn-success rounded-pill btn-sm fs-sm d-inline-flex">Započni besplatno</a>
+
+        </div>
+        <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</header>
+
+
+    
+<section class="position-relative pt-5" style="background-color: #151922;" data-bs-theme="dark">
+
+    <div class="container position-relative zindex-2 pt-5 pb-2 pb-md-0">
+
+        <div class="row justify-content-center pt-3 mt-3">
+            <div class="col-xl-6 col-lg-7 col-md-8 col-sm-10 text-center">
+                <h1 class="mb-4">Testiraj Kimai u jednoj od demo verzija</h1>
+                <p class="text-body fs-lg pb-3 mb-3">Isprobaj demo verziju programa za evidentiranje vremena Kimai i obećavamo ti: tvoj sljedeći korak bit će preuzimanje programa!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex position-absolute top-100 start-0 w-100 overflow-hidden mt-n5" style="color: #151922;">
+        <div class="position-relative start-50 translate-middle-x flex-shrink-0 mt-n5 mt-md-n3 mt-lg-n1" style="width: 3788px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="3788" height="144" viewbox="0 0 3788 144"><path fill="currentColor" d="M0,0h3788.7c-525,90.2-1181.7,143.9-1894.3,143.9S525,90.2,0,0z"></path></svg>
+        </div>
+    </div>
+</section>
+
+<section class="container py-5 my-md-2 my-lg-4 my-xl-5">
+    <div class="row justify-content-center pt-5 pb-1 pb-sm-2 pb-md-3">
+
+        <p>Odaberi jednu od naših demo instalacija za dobivanje dojma o tome kako se Kimai osjeća i koju funkcionalnost pruža. Imaj na umu da će se demo verzije redovito ponovo instalirati i da će se svi uneseni podaci ukloniti.</p>
+
+        <div class="row row-cols-1 row-cols-sm-3 justify-content-center g-4 pb-xl-3">
+            <div class="col text-center border-end px-5">
+                
+                
+                <div class="card d-table border-0 p-3 mx-auto mb-4">
+    <i class="bx bx-plug bx-lg"></i>
+</div>
+<h3 class="h5 mb-3">Istaknuto</h3>
+<p class="px-5">Trenutna verzija s istaknutim dodacima i demo podacima.</p>
+<div class="text-center mt-4">
+    <a href="https://demo.kimai.org" class="btn btn-success w-50" target="_blank">Pogledaj demo</a>
+    
+    <small class="d-block mt-3">Demo će se ponovo instalirati za <span id="demo_box_plugins">?</span> min.</small>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        let scriptElement = document.createElement('script');
+        scriptElement.type = 'text/javascript';
+        scriptElement.src = "https://demo.kimai.org/status.php";
+        document.head.appendChild(scriptElement);
+    });
+</script>
+
+            </div>
+            <div class="col text-center border-end px-5">
+                
+                
+                <div class="card d-table border-0 p-3 mx-auto mb-4">
+    <i class="bx bx-test-tube bx-lg"></i>
+</div>
+<h3 class="h5 mb-3">Dodaci</h3>
+<p class="px-5">Trenutna verzija s istaknutim dodacima, bez podataka.</p>
+<div class="text-center mt-4">
+    <a href="https://demo-empty.kimai.org" class="btn btn-primary w-50" target="_blank">Pogledaj demo</a>
+    
+    <small class="d-block mt-3">Demo će se ponovo instalirati za <span id="demo_box_empty">?</span> min.</small>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        let scriptElement = document.createElement('script');
+        scriptElement.type = 'text/javascript';
+        scriptElement.src = "https://demo-empty.kimai.org/status.php";
+        document.head.appendChild(scriptElement);
+    });
+</script>
+
+            </div>
+            <div class="col text-center px-5">
+                
+                
+                <div class="card d-table border-0 p-3 mx-auto mb-4">
+    <i class="bx bx-file-blank bx-lg"></i>
+</div>
+<h3 class="h5 mb-3">Osnovno</h3>
+<p class="px-5">Najnovije izdanje, bez dodataka, bez demo podataka.</p>
+<div class="text-center mt-4">
+    <a href="https://demo-stable.kimai.org" class="btn btn-secondary w-50" target="_blank">Pogledaj demo</a>
+    
+    <small class="d-block mt-3">Demo će se ponovo instalirati za <span id="demo_box_stable">?</span> min.</small>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        let scriptElement = document.createElement('script');
+        scriptElement.type = 'text/javascript';
+        scriptElement.src = "https://demo-stable.kimai.org/status.php";
+        document.head.appendChild(scriptElement);
+    });
+</script>
+
+            </div>
+        </div>
+
+        <h3 class="mt-5">Korisnik demo verzija</h3>
+
+        <p>Ovi su računi dostupni za tvoje testove. Vlastitog testnog korisnika možeš stvoriti i u obrascu za prijavu svake demo verzije.</p>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Username</th>
+                <th style="text-align: center">Password</th>
+                <th style="text-align: center">API</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <strong>john_user</strong> (User)</td>
+                <td style="text-align: center"><strong>kitten</strong></td>
+                <td style="text-align: center">api_kitten</td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>tony_teamlead</strong> (Teamlead)</td>
+                <td style="text-align: center"><strong>kitten</strong></td>
+                <td style="text-align: center">api_kitten</td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>anna_admin</strong> (Administrator)</td>
+                <td style="text-align: center"><strong>kitten</strong></td>
+                <td style="text-align: center">api_kitten</td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>susan_super</strong> (Super-Admin)</td>
+                <td style="text-align: center"><strong>kitten</strong></td>
+                <td style="text-align: center">api_kitten</td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>admin</strong> (Super-Admin)</td>
+                <td style="text-align: center"><strong>password</strong></td>
+                <td style="text-align: center">-</td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+</section>
+
+
+</main>
+
+
+
+
+
+
+
+
+<footer class="footer bg-dark pt-5 pb-4" data-bs-theme="dark">
+    <div class="container pt-1 pt-md-3 pt-lg-4 pt-xl-5">
+        <div class="row">
+            <div class="col-md-5 col-xl-4 mb-4 mb-md-5 mb-lg-0">
+                <div class="d-flex align-items-center pb-3 mb-1">
+                    <div class="navbar-brand text-dark p-0 pe-1 me-0">
+                        Kimai
+                    </div>
+                    <hr class="vr mt-2 mx-3" style="height: 26px;">
+                    <div class="text-white fw-semibold ps-1">Jednostavno evidentiranje vremena</div>
+                </div>
+                <p class="text-body fs-sm pb-1 pb-md-2 pb-lg-2 mb-2">
+                    Besplatno i jednostavno evidentiranje vremena za freelancere, agencije i poduzeća. Kimai je softver otvorenog koda dostupan za samostalni hosting i kao SaaS.
+                </p>
+                <div class="d-flex flex-column flex-sm-row flex-lg-column align-items-sm-center align-items-lg-start justify-content-between pb-1 pb-md-2 pb-lg-3 mb-3">
+                    <div class="position-relative">
+                        <div class="dropdown">
+                            <button type="button" class="form-select" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-globe top-50 start-0 text-body me-2"></i>
+                                Hrvatski
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/cs/demo.html" class="dropdown-item">Čeština</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/de/demo.html" class="dropdown-item">Deutsch</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/en/demo.html" class="dropdown-item">English</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/es/demo.html" class="dropdown-item">Español</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/fr/demo.html" class="dropdown-item">Français</a>
+                                
+                                    
+                                    
+                                    <a dir="rtl" href="/he/demo.html" class="dropdown-item">עברית</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/hr/demo.html" class="dropdown-item active">Hrvatski</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/it/demo.html" class="dropdown-item">Italiano</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/nl/demo.html" class="dropdown-item">Nederlands</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/pl/demo.html" class="dropdown-item">Polski</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/pt/demo.html" class="dropdown-item">Português</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/pt_BR/demo.html" class="dropdown-item">Português (Brasil)</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/ru/demo.html" class="dropdown-item">Rусский</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/sk/demo.html" class="dropdown-item">Slovenčina</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/sv/demo.html" class="dropdown-item">Svenska</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/uk/demo.html" class="dropdown-item">Українська</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/zh_Hans/demo.html" class="dropdown-item">中文（繁體）</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="form-check form-switch mode-switch pb-1 pb-md-2 pb-lg-2 mb-2" data-bs-toggle="mode">
+                    <input type="checkbox" class="form-check-input" id="theme-mode">
+                    <label class="form-check-label" for="theme-mode">Light</label>
+                    <label class="form-check-label" for="theme-mode">Dark</label>
+                </div>
+            </div>
+            <div class="col-md-7 offset-xl-1">
+                <div id="footer-links" class="row">
+                    
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <h6 class="fs-lg mb-1 mb-md-2">
+                            <span class="d-none d-md-block">Kimai</span>
+                            <a href="#tools" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Kimai</a>
+                        </h6>
+                        <div id="tools" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/hr/o-programu-kimai.html" class="nav-link fs-sm fw-medium px-0 py-1">Informacije</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/hr/download.html" class="nav-link fs-sm fw-medium px-0 py-1">Intalacija</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/hr/features.html" class="nav-link fs-sm fw-medium px-0 py-1">Funkcije</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/hr/support.html" class="nav-link fs-sm fw-medium px-0 py-1">Podrška</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/en/kimai-discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">Discount codes</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <h6 class="fs-lg mb-1 mb-md-2">
+                            <span class="d-none d-md-block">Kimai for</span>
+                            <a href="#landing-kimai-for" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Kimai for</a>
+                        </h6>
+                        <div id="landing-kimai-for" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/en/time-tracking-non-profit.html" class="nav-link fs-sm fw-medium px-0 py-1">Non-Profits</a>
+                                </li>
+                                
+                                
+                                <li class="nav-item">
+                                    <a href="/en/open-source-time-log" class="nav-link fs-sm fw-medium px-0 py-1" title="Open-Source Time Log">Time Log</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/open-source-time-tracker" class="nav-link fs-sm fw-medium px-0 py-1" title="Open-Source Time Tracker">Time Tracker</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/open-source-timesheet" class="nav-link fs-sm fw-medium px-0 py-1" title="Open-Source Timesheet">Timesheet</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <h6 class="fs-lg mb-1 mb-md-2">
+                            <span class="d-none d-md-block">Usporedi</span>
+                            <a href="#footer-cmp" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Usporedi</a>
+                        </h6>
+                        <div id="footer-cmp" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/hr/compare/" class="nav-link fs-sm fw-medium px-0 py-1">Usporedi program za evidentiranje vremena</a>
+                                </li>
+                                
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternative-to-clockify" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to Clockify">Clockify</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternative-to-openproject" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to OpenProject">OpenProject</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternative-to-toggl" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to toggl track">toggl track</a>
+                                    </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="d-md-flex align-items-center justify-content-between pt-sm-2 pt-md-4 pt-lg-5 pb-2 mt-4 ">
+    <ul class="nav order-md-1 ms-md-0 mb-3 mb-md-0">
+        <li class="nav-item">
+            <a href="/hr/" class="nav-link fs-sm fw-medium ps-0">Početna</a>
+        </li>
+        <li class="nav-item">
+            <a href="/hr/site-notice.html" class="nav-link fs-sm fw-medium">Impresum</a>
+        </li>
+        <li class="nav-item">
+            <a href="/hr/privacy-policy.html" class="nav-link fs-sm fw-medium">Politika privatnosti</a>
+        </li>
+        <li class="nav-item">
+            <a href="https://uptime.kimai.cloud/" target="_blank" class="nav-link fs-sm fw-medium">Cloud-Status</a>
+        </li>
+    </ul>
+    <div class="nav order-md-2 mb-3 mb-md-0">
+        <a target="_blank" href="https://github.com/kimai/kimai" class="btn btn-icon btn-secondary btn-github rounded-circle me-3" aria-label="GitHub">
+    <i class="bx bxl-github"></i>
+</a>
+<a target="_blank" href="https://twitter.com/kimai_org" class="btn btn-icon btn-secondary btn-twitter rounded-circle me-3" aria-label="Twitter / X">
+    <i class="bx bxl-twitter"></i>
+</a>
+<a target="_blank" href="https://www.youtube.com/@kimai_org" class="btn btn-icon btn-secondary btn-youtube rounded-circle me-3" aria-label="YouTube">
+    <i class="bx bxl-youtube"></i>
+</a>
+<a target="_blank" href="https://phpc.social/@kimai" class="btn btn-icon btn-secondary btn-messenger rounded-circle me-3" aria-label="Mastodon">
+    <i class="bx bxl-mastodon"></i>
+</a>
+
+    </div>
+    <p class="nav d-block fs-sm mb-0 order-md-3">
+        <span class="text-body">Autor </span>
+        <a class="nav-link d-inline-block p-0" href="https://www.kevinpapst.de/" target="_blank" rel="noopener">Kevin Papst</a>
+    </p>
+</div>
+
+    </div>
+</footer>
+
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
+
+</body>
+</html>

@@ -1,0 +1,2300 @@
+<!doctype html>
+<html lang="pl" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index,follow">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+    <title>Aktualności z Kimai</title>
+    
+        <meta name="description" content="Aktualności na temat oprogramowania do śledzenia czasu Kimai">
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
+    <meta property="og:locale" content="pl">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kimai Time-Tracking">
+    <meta property="og:description" content="Aktualności na temat oprogramowania do śledzenia czasu Kimai">
+    <meta property="og:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kimai Time-Tracking">
+    <meta name="twitter:site" content="@kimai_org">
+    <meta name="twitter:description" content="Aktualności na temat oprogramowania do śledzenia czasu Kimai">
+    <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <link rel="alternate" hreflang="en" href="https://www.kimai.org/blog/">
+    <link rel="alternate" hreflang="cs" href="https://www.kimai.org/cs/blog/">
+    <link rel="alternate" hreflang="de" href="https://www.kimai.org/de/blog/">
+    <link rel="alternate" hreflang="es" href="https://www.kimai.org/es/blog/">
+    <link rel="alternate" hreflang="fr" href="https://www.kimai.org/fr/blog/">
+    <link rel="alternate" hreflang="he" href="https://www.kimai.org/he/blog/">
+    <link rel="alternate" hreflang="hr" href="https://www.kimai.org/hr/blog/">
+    <link rel="alternate" hreflang="it" href="https://www.kimai.org/it/blog/">
+    <link rel="alternate" hreflang="nl" href="https://www.kimai.org/nl/blog/">
+    <link rel="alternate" hreflang="pl" href="https://www.kimai.org/pl/blog/">
+    <link rel="alternate" hreflang="pt" href="https://www.kimai.org/pt/blog/">
+    <link rel="alternate" hreflang="pt_BR" href="https://www.kimai.org/pt_BR/blog/">
+    <link rel="alternate" hreflang="ru" href="https://www.kimai.org/ru/blog/">
+    <link rel="alternate" hreflang="sk" href="https://www.kimai.org/sk/blog/">
+    <link rel="alternate" hreflang="sv" href="https://www.kimai.org/sv/blog/">
+    <link rel="alternate" hreflang="uk" href="https://www.kimai.org/uk/blog/">
+    <link rel="alternate" hreflang="zh_Hans" href="https://www.kimai.org/zh_Hans/blog/">
+    <script src="/assets/build/theme.js"></script>
+    <link href="/assets/build/main.css" rel="stylesheet" />
+</head>
+<body class="">
+
+
+
+
+
+
+
+<main class="page-wrapper">
+    
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand-lg   bg-light navbar-sticky">
+    <div class="container px-3">
+        <a href="/pl/" class="navbar-brand pe-3">
+        <img src="/images/kimai_logo.png" style="height:36px" alt="Kimai - Otwarte oprogramowanie do śledzenia czasu"> Kimai
+        </a>
+        <div id="navbarNav" class="offcanvas offcanvas-end">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title">Menu</h5>
+                <button type="button" class="btn-close " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    
+                    <li class="nav-item">
+                        <a href="/pl/demo.html" class="nav-link">Demo</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/pl/store/" class="nav-link">Sklep</a>
+                    </li>
+                    
+                    <li class="nav-item active">
+                        <a href="/pl/blog/" class="nav-link">Aktualności</a>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Dokumentacja</a>
+                        <ul class="dropdown-menu">
+                            
+                            <li><a href="/documentation/chapter-manual.html" class="dropdown-item">Podręcznik użytkownika</a></li>
+                            
+                            <li><a href="/documentation/cloud.html" class="dropdown-item">Kimai-Cloud</a></li>
+                            
+                            <li><a href="/documentation/chapter-on-premise.html" class="dropdown-item">Hostowanie własne</a></li>
+                            
+                            <li><a href="/documentation/developers.html" class="dropdown-item">Tworzenie wtyczek</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="pe-lg-1 ms-auto me-2">
+            <a href="/pl/download.html" class="btn rounded-pill btn-sm fs-sm d-none d-md-inline-flex me-2 btn-outline-primary">Pobierz</a>
+            
+
+
+
+
+
+<a href="https://www.kimai.cloud/auth/registration" class="btn btn-success rounded-pill btn-sm fs-sm d-inline-flex">Rozpocznij za darmo</a>
+
+        </div>
+        <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</header>
+
+
+    <section class="container mt-4 pt-lg-2 pb-4">
+        <div class="row gy-4 align-items-end mb-2 pb-md-3">
+            <div class="col-lg-8 col-md-6">
+                <h1 class="mb-0">
+                    <i class="bx bxs-hot 1 me-1 text-gradient-primary"></i>
+                    Aktualności z Kimai
+                </h1>
+            </div>
+            <div class="col-lg-4 col-md-6 text-end">
+                <a href="/feed.xml" class="btn btn-link btn-icon rounded-circle my-1 me-2" aria-label="RSS Feed">
+                    <i class="bx bx-rss"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="swiper swiper-nav-onhover mx-n2" data-swiper-options='{
+  "slidesPerView": 1,
+  "loop": true,
+  "spaceBetween": 8,
+  "pagination": {
+    "el": ".swiper-pagination",
+    "clickable": true
+  },
+  "navigation": {
+    "prevEl": "#news-prev",
+    "nextEl": "#news-next"
+  },
+  "breakpoints": {
+    "0": {
+      "slidesPerView": 1
+    },
+    "560": {
+      "slidesPerView": 2
+    },
+    "992": {
+      "slidesPerView": 3
+    }
+  }
+}'>
+    <div class="swiper-wrapper">
+        
+        
+            <div class="swiper-slide h-auto py-3">
+                <article class="card p-md-3 p-2 border-0 shadow-sm card-hover-primary h-100 mx-2">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            
+                            <span class="badge fs-sm text-nav bg-secondary text-decoration-none position-relative zindex-2">Cloud</span>
+                            
+
+                            <span class="fs-sm text-muted">27 Mar 2024</span>
+                        </div>
+                        <h3 class="h4">
+                            <a href="/blog/2024/closing-free-plan/" class="stretched-link">Removing free plan from the cloud</a>
+                        </h3>
+                        <p class="mb-0">
+                            </p>
+<p>Yes! Sad as it is, I’m removing the free plan from the cloud.
+It was a tough decision that had to be made after careful thought as it was causing two problems;</p>
+
+                        
+                    </div>
+                </article>
+            </div>
+        
+            <div class="swiper-slide h-auto py-3">
+                <article class="card p-md-3 p-2 border-0 shadow-sm card-hover-primary h-100 mx-2">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            
+                            <span class="badge fs-sm text-nav bg-secondary text-decoration-none position-relative zindex-2">Cloud</span>
+                            
+
+                            <span class="fs-sm text-muted">09 Sep 2023</span>
+                        </div>
+                        <h3 class="h4">
+                            <a href="/blog/2023/update-working-time-account/" class="stretched-link">Cloud goes - Working time account</a>
+                        </h3>
+                        <p class="mb-0">
+                            </p>
+<p>Today I’m back with the most anticipated and biggest feature update I’ve ever created for Kimai.</p>
+
+                        
+                    </div>
+                </article>
+            </div>
+        
+            <div class="swiper-slide h-auto py-3">
+                <article class="card p-md-3 p-2 border-0 shadow-sm card-hover-primary h-100 mx-2">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            
+                            <span class="badge fs-sm text-nav bg-secondary text-decoration-none position-relative zindex-2">Apps &amp; Plugins</span>
+                            
+
+                            <span class="fs-sm text-muted">27 Aug 2023</span>
+                        </div>
+                        <h3 class="h4">
+                            <a href="/blog/2023/controlling-plugin-mr-software/" class="stretched-link">New working times (controlling) plugin and MR Software closure</a>
+                        </h3>
+                        <p class="mb-0">
+                            </p>
+<p>This post combines bad and good news. Let’s start with the bad one…</p>
+
+                        
+                    </div>
+                </article>
+            </div>
+        
+
+    </div>
+
+    <div class="swiper-pagination position-relative pt-2 pt-sm-3 mt-4"></div>
+</div>
+
+    </section>
+
+    <section class="container mb-5 pt-5 pb-lg-5">
+        <ul class="nav nav-tabs justify-content-center mb-lg-5 mb-4 pb-lg-2 border-top pt-5">
+            <li class="nav-item">
+                <a href="#tag-all" class="nav-link active" data-bs-toggle="tab" role="tab">Latest</a>
+            </li>
+            
+                
+                <li class="nav-item">
+                    <a href="#tag-apps-plugins" class="nav-link" data-bs-toggle="tab" role="tab">Apps &amp; Plugins</a>
+                </li>
+                
+            
+                
+                <li class="nav-item">
+                    <a href="#tag-cloud" class="nav-link" data-bs-toggle="tab" role="tab">Cloud</a>
+                </li>
+                
+            
+                
+                <li class="nav-item">
+                    <a href="#tag-on-premise" class="nav-link" data-bs-toggle="tab" role="tab">On-Premise</a>
+                </li>
+                
+            
+                
+            
+        </ul>
+
+        <div class="tab-content pb-3">
+            <div class="tab-pane fade show active" id="tag-all" role="tabpanel">
+                
+                    
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-cloud.jpeg); min-height: 15rem;">
+            <a href="/blog/2024/closing-free-plan/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">Cloud</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">27 Mar 2024</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2024/closing-free-plan/">Removing free plan from the cloud</a>
+                </h3>
+                <p>
+                    Yes! Sad as it is, I’m removing the free plan from the cloud.
+It was a tough decision that had to be made after careful thought as it was causing two problems;
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/kevin-papst.jpeg" class="rounded-circle me-3" width="48" alt="Kevin Papst">
+                        Kevin Papst
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                
+                    
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-cloud.jpeg); min-height: 15rem;">
+            <a href="/blog/2023/update-working-time-account/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">Cloud</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">09 Sep 2023</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2023/update-working-time-account/">Cloud goes - Working time account</a>
+                </h3>
+                <p>
+                    Today I’m back with the most anticipated and biggest feature update I’ve ever created for Kimai.
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/kevin-papst.jpeg" class="rounded-circle me-3" width="48" alt="Kevin Papst">
+                        Kevin Papst
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                
+                    
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-14.jpeg); min-height: 15rem;">
+            <a href="/blog/2023/controlling-plugin-mr-software/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">Apps &amp; Plugins</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">27 Aug 2023</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2023/controlling-plugin-mr-software/">New working times (controlling) plugin and MR Software closure</a>
+                </h3>
+                <p>
+                    This post combines bad and good news. Let’s start with the bad one…
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/kevin-papst.jpeg" class="rounded-circle me-3" width="48" alt="Kevin Papst">
+                        Kevin Papst
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                
+                    
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-app.jpeg); min-height: 15rem;">
+            <a href="/blog/2023/kimai-mobile-ios-release/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">Apps &amp; Plugins</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">01 Aug 2023</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2023/kimai-mobile-ios-release/">Kimai Mobile iOS release</a>
+                </h3>
+                <p>
+                    Kimai Mobile for iOS was launched by Cloudrizon GmbH: a game-changing time tracking application
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/marketplace/cloudrizon-logo.jpeg" class="rounded-circle me-3" width="48" alt="Cloudrizon GmbH">
+                        Cloudrizon GmbH
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                
+                    
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-9.jpeg); min-height: 15rem;">
+            <a href="/blog/2023/kimai-release-2/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">On-Premise</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">20 May 2023</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2023/kimai-release-2/">Kimai 2.0 - It's here!</a>
+                </h3>
+                <p>
+                    🎉 Yes, you all have been waiting for this moment for almost too long 🎉
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/kevin-papst.jpeg" class="rounded-circle me-3" width="48" alt="Kevin Papst">
+                        Kevin Papst
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                
+                    
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-13.jpeg); min-height: 15rem;">
+            <a href="/blog/2023/plugin-upgrades-v2/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">Apps &amp; Plugins</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">19 May 2023</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2023/plugin-upgrades-v2/">Upgrading your plugins for 2.0</a>
+                </h3>
+                <p>
+                    The plugin structure for Kimai 2.0 is not compatible with the existing plugins for Kimai 1.
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/kevin-papst.jpeg" class="rounded-circle me-3" width="48" alt="Kevin Papst">
+                        Kevin Papst
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                
+                    
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-cloud.jpeg); min-height: 15rem;">
+            <a href="/blog/2023/two-factor-authentication/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">Cloud</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">30 Apr 2023</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2023/two-factor-authentication/">Two-Factor authentication</a>
+                </h3>
+                <p>
+                    From today, you can enable two-factor authentication using TOTP (time-based one-time password) tokens.
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/kevin-papst.jpeg" class="rounded-circle me-3" width="48" alt="Kevin Papst">
+                        Kevin Papst
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                
+                    
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-cloud.jpeg); min-height: 15rem;">
+            <a href="/blog/2023/kimai-cloud-2-0/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">Cloud</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">18 Feb 2023</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2023/kimai-cloud-2-0/">Kimai-Cloud 2.0 🎉</a>
+                </h3>
+                <p>
+                    Today is a big day for the Kimai Cloud, as we gradually start rolling out our biggest update to date to all customers.
+This update is not one of the usual maintenance updates, but a completely renewed version, that has been worked on for over a ye...
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/kevin-papst.jpeg" class="rounded-circle me-3" width="48" alt="Kevin Papst">
+                        Kevin Papst
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                
+                    
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-5.jpeg); min-height: 15rem;">
+            <a href="/blog/2023/beta-2-release/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">On-Premise</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">21 Jan 2023</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2023/beta-2-release/">Beta 2 - Callout for testing</a>
+                </h3>
+                <p>
+                    Following the longer news about the next major release this news is a quick heads up that the Beta 2 was just released at GitHub.
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/kevin-papst.jpeg" class="rounded-circle me-3" width="48" alt="Kevin Papst">
+                        Kevin Papst
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                
+                    
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-16.jpeg); min-height: 15rem;">
+            <a href="/blog/2022/next-major-release-preview/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">On-Premise</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">31 Dec 2022</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2022/next-major-release-preview/">Next major release</a>
+                </h3>
+                <p>
+                    Wooohooo 😀 I am super excited to share this update, as I was working on it for more than one year now!!! 🎉
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/kevin-papst.jpeg" class="rounded-circle me-3" width="48" alt="Kevin Papst">
+                        Kevin Papst
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                
+            </div>
+
+            
+            <div class="tab-pane fade" id="tag-apps-plugins" role="tabpanel">
+                <ul>
+                    
+                        
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-14.jpeg); min-height: 15rem;">
+            <a href="/blog/2023/controlling-plugin-mr-software/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">Apps &amp; Plugins</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">27 Aug 2023</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2023/controlling-plugin-mr-software/">New working times (controlling) plugin and MR Software closure</a>
+                </h3>
+                <p>
+                    This post combines bad and good news. Let’s start with the bad one…
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/kevin-papst.jpeg" class="rounded-circle me-3" width="48" alt="Kevin Papst">
+                        Kevin Papst
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                    
+                        
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-app.jpeg); min-height: 15rem;">
+            <a href="/blog/2023/kimai-mobile-ios-release/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">Apps &amp; Plugins</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">01 Aug 2023</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2023/kimai-mobile-ios-release/">Kimai Mobile iOS release</a>
+                </h3>
+                <p>
+                    Kimai Mobile for iOS was launched by Cloudrizon GmbH: a game-changing time tracking application
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/marketplace/cloudrizon-logo.jpeg" class="rounded-circle me-3" width="48" alt="Cloudrizon GmbH">
+                        Cloudrizon GmbH
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                    
+                        
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-13.jpeg); min-height: 15rem;">
+            <a href="/blog/2023/plugin-upgrades-v2/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">Apps &amp; Plugins</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">19 May 2023</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2023/plugin-upgrades-v2/">Upgrading your plugins for 2.0</a>
+                </h3>
+                <p>
+                    The plugin structure for Kimai 2.0 is not compatible with the existing plugins for Kimai 1.
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/kevin-papst.jpeg" class="rounded-circle me-3" width="48" alt="Kevin Papst">
+                        Kevin Papst
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                    
+                        
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-app.jpeg); min-height: 15rem;">
+            <a href="/blog/2021/kimai-mobile-release/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">Apps &amp; Plugins</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">18 Oct 2021</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2021/kimai-mobile-release/">Kimai Mobile is now available on Google Play</a>
+                </h3>
+                <p>
+                    Cloudrizon GmbH begins the open testing of Kimai Mobile on Android, which is now available on Google Play.
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/marketplace/cloudrizon-logo.jpeg" class="rounded-circle me-3" width="48" alt="Cloudrizon GmbH">
+                        Cloudrizon GmbH
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                    
+                        
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-plugin.jpeg); min-height: 15rem;">
+            <a href="/blog/2019/fail2ban-plugin/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">Apps &amp; Plugins</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">26 Jul 2019</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2019/fail2ban-plugin/">New fail2ban plugin</a>
+                </h3>
+                <p>
+                    Just a quick note for all Kimai users and the RSS readers: a new plugin was released, to support blocking acess via fail2ban.
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/kevin-papst.jpeg" class="rounded-circle me-3" width="48" alt="Kevin Papst">
+                        Kevin Papst
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                    
+                        
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-plugin.jpeg); min-height: 15rem;">
+            <a href="/blog/2019/using-kimai-as-native-app/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">Apps &amp; Plugins</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">11 Jun 2019</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2019/using-kimai-as-native-app/">How to use Kimai 2 as native app</a>
+                </h3>
+                <p>
+                    Thanks to the Kimai user Roman, who wrote me about that topic, I can share a nice inspiration with you today.
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/kevin-papst.jpeg" class="rounded-circle me-3" width="48" alt="Kevin Papst">
+                        Kevin Papst
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                    
+                </ul>
+
+                <p class="d-flex justify-content-end pt-4">
+                    <a href="/blog/tags-apps-plugins.html" class="btn btn-outline-primary ms-4">
+                        You can find the archive of older Apps &amp; Plugins news here
+                        <i class="bx bx-right-arrow-alt ms-1 fs-lg"></i>
+                    </a>
+                </p>
+            </div>
+            
+            <div class="tab-pane fade" id="tag-cloud" role="tabpanel">
+                <ul>
+                    
+                        
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-cloud.jpeg); min-height: 15rem;">
+            <a href="/blog/2024/closing-free-plan/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">Cloud</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">27 Mar 2024</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2024/closing-free-plan/">Removing free plan from the cloud</a>
+                </h3>
+                <p>
+                    Yes! Sad as it is, I’m removing the free plan from the cloud.
+It was a tough decision that had to be made after careful thought as it was causing two problems;
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/kevin-papst.jpeg" class="rounded-circle me-3" width="48" alt="Kevin Papst">
+                        Kevin Papst
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                    
+                        
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-cloud.jpeg); min-height: 15rem;">
+            <a href="/blog/2023/update-working-time-account/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">Cloud</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">09 Sep 2023</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2023/update-working-time-account/">Cloud goes - Working time account</a>
+                </h3>
+                <p>
+                    Today I’m back with the most anticipated and biggest feature update I’ve ever created for Kimai.
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/kevin-papst.jpeg" class="rounded-circle me-3" width="48" alt="Kevin Papst">
+                        Kevin Papst
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                    
+                        
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-cloud.jpeg); min-height: 15rem;">
+            <a href="/blog/2023/two-factor-authentication/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">Cloud</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">30 Apr 2023</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2023/two-factor-authentication/">Two-Factor authentication</a>
+                </h3>
+                <p>
+                    From today, you can enable two-factor authentication using TOTP (time-based one-time password) tokens.
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/kevin-papst.jpeg" class="rounded-circle me-3" width="48" alt="Kevin Papst">
+                        Kevin Papst
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                    
+                        
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-cloud.jpeg); min-height: 15rem;">
+            <a href="/blog/2023/kimai-cloud-2-0/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">Cloud</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">18 Feb 2023</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2023/kimai-cloud-2-0/">Kimai-Cloud 2.0 🎉</a>
+                </h3>
+                <p>
+                    Today is a big day for the Kimai Cloud, as we gradually start rolling out our biggest update to date to all customers.
+This update is not one of the usual maintenance updates, but a completely renewed version, that has been worked on for over a ye...
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/kevin-papst.jpeg" class="rounded-circle me-3" width="48" alt="Kevin Papst">
+                        Kevin Papst
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                    
+                        
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-cloud.jpeg); min-height: 15rem;">
+            <a href="/blog/2022/invoices-with-wrong-tax-rate/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">Cloud</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">14 Dec 2022</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2022/invoices-with-wrong-tax-rate/">Invoices with wrong tax rate 😳</a>
+                </h3>
+                <p>
+                    Dear customers, we have noticed that there was a problem with PDF invoicing for the Cloud.
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/kevin-papst.jpeg" class="rounded-circle me-3" width="48" alt="Kevin Papst">
+                        Kevin Papst
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                    
+                        
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-cloud.jpeg); min-height: 15rem;">
+            <a href="/blog/2022/suspending-twitter-account/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">Cloud</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">02 Dec 2022</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2022/suspending-twitter-account/">Merging Twitter accounts</a>
+                </h3>
+                <p>
+                    This short post is to inform them that the Kimai Cloud Twitter account will be discontinued immediately and deleted within the next week.
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/kevin-papst.jpeg" class="rounded-circle me-3" width="48" alt="Kevin Papst">
+                        Kevin Papst
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                    
+                        
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-cloud.jpeg); min-height: 15rem;">
+            <a href="/blog/2022/saml-login-with-azure-ad/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">Cloud</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">13 Jul 2022</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2022/saml-login-with-azure-ad/">SAML Login with Azure AD</a>
+                </h3>
+                <p>
+                    For paying corporate customers, there is now a new way for employees to log in to the cloud.
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/kevin-papst.jpeg" class="rounded-circle me-3" width="48" alt="Kevin Papst">
+                        Kevin Papst
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                    
+                        
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-cloud.jpeg); min-height: 15rem;">
+            <a href="/blog/2022/saml-login-with-google-workspace/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">Cloud</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">13 Jul 2022</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2022/saml-login-with-google-workspace/">SAML Login with Google Workspace</a>
+                </h3>
+                <p>
+                    For paying corporate customers, there is now a new way for employees to log in to the cloud.
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/kevin-papst.jpeg" class="rounded-circle me-3" width="48" alt="Kevin Papst">
+                        Kevin Papst
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                    
+                        
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-cloud.jpeg); min-height: 15rem;">
+            <a href="/blog/2022/sepa-debit-payments-now-available/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">Cloud</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">01 Jul 2022</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2022/sepa-debit-payments-now-available/">SEPA Debit payments now available</a>
+                </h3>
+                <p>
+                    Customers located in the EU or with European bank accounts can now pay their cloud bill via SEPA direct debit.
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/kevin-papst.jpeg" class="rounded-circle me-3" width="48" alt="Kevin Papst">
+                        Kevin Papst
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                    
+                        
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-cloud.jpeg); min-height: 15rem;">
+            <a href="/blog/2021/send-invoice-emails-to-different-recipient/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">Cloud</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">05 Dec 2021</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2021/send-invoice-emails-to-different-recipient/">Send invoice emails to different recipient</a>
+                </h3>
+                <p>
+                    On customer demand we added a new feature to the administrative part of your Kimai-Cloud.
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/kevin-papst.jpeg" class="rounded-circle me-3" width="48" alt="Kevin Papst">
+                        Kevin Papst
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                    
+                </ul>
+
+                <p class="d-flex justify-content-end pt-4">
+                    <a href="/blog/tags-cloud.html" class="btn btn-outline-primary ms-4">
+                        You can find the archive of older Cloud news here
+                        <i class="bx bx-right-arrow-alt ms-1 fs-lg"></i>
+                    </a>
+                </p>
+            </div>
+            
+            <div class="tab-pane fade" id="tag-on-premise" role="tabpanel">
+                <ul>
+                    
+                        
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-9.jpeg); min-height: 15rem;">
+            <a href="/blog/2023/kimai-release-2/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">On-Premise</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">20 May 2023</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2023/kimai-release-2/">Kimai 2.0 - It's here!</a>
+                </h3>
+                <p>
+                    🎉 Yes, you all have been waiting for this moment for almost too long 🎉
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/kevin-papst.jpeg" class="rounded-circle me-3" width="48" alt="Kevin Papst">
+                        Kevin Papst
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                    
+                        
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-5.jpeg); min-height: 15rem;">
+            <a href="/blog/2023/beta-2-release/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">On-Premise</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">21 Jan 2023</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2023/beta-2-release/">Beta 2 - Callout for testing</a>
+                </h3>
+                <p>
+                    Following the longer news about the next major release this news is a quick heads up that the Beta 2 was just released at GitHub.
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/kevin-papst.jpeg" class="rounded-circle me-3" width="48" alt="Kevin Papst">
+                        Kevin Papst
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                    
+                        
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-16.jpeg); min-height: 15rem;">
+            <a href="/blog/2022/next-major-release-preview/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">On-Premise</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">31 Dec 2022</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2022/next-major-release-preview/">Next major release</a>
+                </h3>
+                <p>
+                    Wooohooo 😀 I am super excited to share this update, as I was working on it for more than one year now!!! 🎉
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/kevin-papst.jpeg" class="rounded-circle me-3" width="48" alt="Kevin Papst">
+                        Kevin Papst
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                    
+                        
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-developer.jpeg); min-height: 15rem;">
+            <a href="/blog/2022/repository-url-changed/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">On-Premise</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">26 Dec 2022</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2022/repository-url-changed/">Repository URL changed</a>
+                </h3>
+                <p>
+                    This is a short but important announcement!
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/kevin-papst.jpeg" class="rounded-circle me-3" width="48" alt="Kevin Papst">
+                        Kevin Papst
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                    
+                        
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-fallback.jpeg); min-height: 15rem;">
+            <a href="/blog/2022/kimai-release-1-25/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">On-Premise</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">20 Sep 2022</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2022/kimai-release-1-25/">Release 1.25 - Keyboard shortcuts</a>
+                </h3>
+                <p>
+                    The release 1.25 was published in September 2022.
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/kevin-papst.jpeg" class="rounded-circle me-3" width="48" alt="Kevin Papst">
+                        Kevin Papst
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                    
+                        
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-fallback.jpeg); min-height: 15rem;">
+            <a href="/blog/2022/kimai-release-1-24/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">On-Premise</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">04 Sep 2022</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2022/kimai-release-1-24/">Release 1.24 - Custom PDF fonts</a>
+                </h3>
+                <p>
+                    The release 1.24 was published in September 2022.
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/kevin-papst.jpeg" class="rounded-circle me-3" width="48" alt="Kevin Papst">
+                        Kevin Papst
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                    
+                        
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-fallback.jpeg); min-height: 15rem;">
+            <a href="/blog/2022/kimai-release-1-23/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">On-Premise</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">30 Aug 2022</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2022/kimai-release-1-23/">Release 1.23 - Budget validation</a>
+                </h3>
+                <p>
+                    The release 1.23 was published in August 2022.
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/kevin-papst.jpeg" class="rounded-circle me-3" width="48" alt="Kevin Papst">
+                        Kevin Papst
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                    
+                        
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-fallback.jpeg); min-height: 15rem;">
+            <a href="/blog/2022/kimai-release-1-22/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">On-Premise</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">01 Aug 2022</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2022/kimai-release-1-22/">Release 1.22 - Restrict global activities</a>
+                </h3>
+                <p>
+                    The release 1.22 was published in August 2022.
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/kevin-papst.jpeg" class="rounded-circle me-3" width="48" alt="Kevin Papst">
+                        Kevin Papst
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                    
+                        
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-fallback.jpeg); min-height: 15rem;">
+            <a href="/blog/2022/kimai-release-1-21/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">On-Premise</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">14 Jul 2022</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2022/kimai-release-1-21/">Release 1.21 - Budget graph</a>
+                </h3>
+                <p>
+                    The release 1.21 was published in July 2022.
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/kevin-papst.jpeg" class="rounded-circle me-3" width="48" alt="Kevin Papst">
+                        Kevin Papst
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                    
+                        
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-fallback.jpeg); min-height: 15rem;">
+            <a href="/blog/2022/kimai-release-1-20/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">On-Premise</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">14 Jun 2022</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2022/kimai-release-1-20/">Release 1.20 - Calendar switch</a>
+                </h3>
+                <p>
+                    The release 1.20 and its bugfix releases were published between May and June 2022.
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/kevin-papst.jpeg" class="rounded-circle me-3" width="48" alt="Kevin Papst">
+                        Kevin Papst
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                    
+                </ul>
+
+                <p class="d-flex justify-content-end pt-4">
+                    <a href="/blog/tags-on-premise.html" class="btn btn-outline-primary ms-4">
+                        You can find the archive of older On-Premise news here
+                        <i class="bx bx-right-arrow-alt ms-1 fs-lg"></i>
+                    </a>
+                </p>
+            </div>
+            
+            <div class="tab-pane fade" id="tag-version-1" role="tabpanel">
+                <ul>
+                    
+                        
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-fallback.jpeg); min-height: 15rem;">
+            <a href="/blog/2016/kimai-forum-deactivated/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">Version 1</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">31 Jul 2016</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2016/kimai-forum-deactivated/">Deactivated Kimai Forum</a>
+                </h3>
+                <p>
+                    With the current day I deactivated the Kimai Forum, as announced month ago on the forum itself.
+ The subdomain still exists, but everything redirects now to the Kimai issue tracker.
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/kevin-papst.jpeg" class="rounded-circle me-3" width="48" alt="Kevin Papst">
+                        Kevin Papst
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                    
+                        
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-fallback.jpeg); min-height: 15rem;">
+            <a href="/blog/2014/website-hosted-at-github/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">Version 1</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">28 Apr 2014</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2014/website-hosted-at-github/">Website hosting changed</a>
+                </h3>
+                <p>
+                    Hi folks, its been a long time since my last posting.
+Today I wanted to let you know, that we are still alive and work on Kimai is slowely progressing.
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/kevin-papst.jpeg" class="rounded-circle me-3" width="48" alt="Kevin Papst">
+                        Kevin Papst
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                    
+                        
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-fallback.jpeg); min-height: 15rem;">
+            <a href="/blog/2011/happy-birthday-kimai/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">Version 1</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">05 Jan 2011</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2011/happy-birthday-kimai/">Happy Birthday Kimai</a>
+                </h3>
+                <p>
+                    Oh what a shame, we all forgot our own birthday… Okay, I have to admit I didn’t knew the date - but Torsten told me that Kimai is now 4 years old ;)
+and if anyone wants to save the date for next time - its the 15th of December.
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/kevin-papst.jpeg" class="rounded-circle me-3" width="48" alt="Kevin Papst">
+                        Kevin Papst
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                    
+                        
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-fallback.jpeg); min-height: 15rem;">
+            <a href="/blog/2009/the-condemned-live-longer/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">Version 1</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">20 Jul 2009</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2009/the-condemned-live-longer/">The condemned live longer...</a>
+                </h3>
+                <p>
+                    Just a quick note: Kevin Papst takes over stewardship of Kimai!
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/layout/avatar/owl.png" class="rounded-circle me-3" width="48" alt="Torsten">
+                        Torsten
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                    
+                        
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-fallback.jpeg); min-height: 15rem;">
+            <a href="/blog/2009/bye-bye-folks/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">Version 1</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">19 Jun 2009</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2009/bye-bye-folks/">Bye bye folks ...</a>
+                </h3>
+                <p>
+                    Like some users might already have noticed - there is not much going on around Kimai lately.
+Because all of us don’t have the time to do this anymore we decided to close the project for good.
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/layout/avatar/owl.png" class="rounded-circle me-3" width="48" alt="Torsten">
+                        Torsten
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                    
+                        
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-fallback.jpeg); min-height: 15rem;">
+            <a href="/blog/2008/schon-wieder-geburtstag/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">Version 1</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">15 Dec 2008</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2008/schon-wieder-geburtstag/">Schon wieder Geburtstag!</a>
+                </h3>
+                <p>
+                    Vor 2 Jahren (und einem Monat ungefähr …) schrieb ich den Prototyp von Kimai an einem Wochenende und konnte
+danach irgendwie nicht mehr aufhören, daran zu basteln. Der folgende Kurzurlaub ging praktisch komplett für die
+Entwicklung der ersten Verö...
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/layout/avatar/owl.png" class="rounded-circle me-3" width="48" alt="Torsten">
+                        Torsten
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                    
+                        
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-fallback.jpeg); min-height: 15rem;">
+            <a href="/blog/2007/updates/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">Version 1</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">06 Dec 2007</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2007/updates/">Updates...</a>
+                </h3>
+                <p>
+                    I’m thinking about deactivating the warning screen that appears every time an update is performed.
+In deed I’m using Kimai with real data over a year now.
+I used it for my business even before I started thinking about ever making it public.
+The up...
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/layout/avatar/owl.png" class="rounded-circle me-3" width="48" alt="Torsten">
+                        Torsten
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                    
+                        
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-fallback.jpeg); min-height: 15rem;">
+            <a href="/blog/2007/jquery-goes-kimai/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">Version 1</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">28 Mar 2007</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2007/jquery-goes-kimai/">jQuery goes Kimai</a>
+                </h3>
+                <p>
+                    Last weekend I browsed through the depths of the web looking for an applicative Ajax framework to use with Kimai.
+I did a few times before and everything I found seemed overkill to me. Now I found jQuery and instantaneously fell in love with it.
+T...
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/layout/avatar/owl.png" class="rounded-circle me-3" width="48" alt="Torsten">
+                        Torsten
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                    
+                        
+
+
+
+<article class="card border-0 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url(/images/blog/cover-fallback.jpeg); min-height: 15rem;">
+            <a href="/blog/2006/kimai-blog/" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    
+                    <span class="badge fs-sm text-nav bg-secondary text-decoration-none">Version 1</span>
+                    
+                    <span class="fs-sm text-muted border-start ps-3 ms-3">12 Dec 2006</span>
+                </div>
+                <h3 class="h4">
+                    <a href="/blog/2006/kimai-blog/">Kimai Blog</a>
+                </h3>
+                <p>
+                    On the Kimai Blog we will keep you posted on everything Kimai.
+What are the plans, what is the current state, what news is there.
+We invite you to comment on our post. We need your feedback to make Kimai the perfect time tracker.
+
+                </p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="/images/layout/avatar/owl.png" class="rounded-circle me-3" width="48" alt="Torsten">
+                        Torsten
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+                    
+                </ul>
+
+                <p class="d-flex justify-content-end pt-4">
+                    <a href="/blog/tags-version-1.html" class="btn btn-outline-primary ms-4">
+                        You can find the archive of older Version 1 news here
+                        <i class="bx bx-right-arrow-alt ms-1 fs-lg"></i>
+                    </a>
+                </p>
+            </div>
+            
+
+        </div>
+    </section>
+
+    <section class="py-5 bg-secondary">
+    <div class="container py-md-3 py-lg-5">
+        <div class="row justify-content-center pt-2">
+            <div class="col-xl-8 col-lg-9 col-md-11">
+                <h2 class="h1 d-md-inline-block position-relative mb-md-5 mb-sm-4 text-sm-start text-center">
+                    Newsletter
+                    <svg class="d-md-block d-none position-absolute top-0 ms-4 ps-1" style="left: 100%;" xmlns="http://www.w3.org/2000/svg" width="65" height="68" fill="#6366f1"><path d="M53.9527 51.0012c8.396-10.5668 2.0302-26.0134-11.7481-26.7511-.6899-.0646-1.4612.0015-2.1258.0431.1243 9.0462-4.1714 18.8896-11.5618 21.3814-6.6695 2.2133-10.3337-4.2224-7.5813-9.676 3.2966-6.4755 9.103-11.8504 16.1678-13.8189-.5654-5.6953-3.3436-10.7672-9.485-12.48517C17.2678 6.8204 6.49364 16.3681 4.98841 26.127c-.09276 1.0297-1.68569.9497-1.59293-.0801C3.98732 12.9139 19.7395 2.55212 31.9628 8.5787c4.7253 2.3813 7.2649 7.3963 7.9368 13.067 7.4237-.9311 14.5154 3.3683 18.3422 9.5422 4.3988 7.1623 2.3584 15.1401-2.6322 21.1108-.7826.9653-2.3331-.3572-1.6569-1.2975zM26.7754 32.1845c-1.9411 2.2411-4.076 5.0872-4.3542 8.1764-.3036 2.9829 3.7601 3.0525 5.4905 2.7645 2.1568-.3863 3.7221-2.3164 4.8863-4.0419 2.6228-3.6308 4.3657-9.0752 4.4844-14.2563-4.0808 1.279-7.6514 4.2327-10.507 7.3573zm24.6311 25.592c-.7061-2.9738-1.2243-6.1031-1.1591-9.143.0423-1.242 1.767-1.0805 1.8313.1372.1284 2.435.815 4.8532 1.4764 7.1651l4.1619-1.4098c1.0153-.4586 2.4373-1.5714 3.6544-1.1804.6087.1954.7347.7264.6475 1.3068-.2302 1.3976-2.4683 1.9147-3.5901 2.398-1.8429.7619-3.6293 1.2865-5.5477 1.7298-.6391.1476-1.3233-.3665-1.4746-1.0037z"></path></svg>
+                </h2>
+
+                <div class="row gy-4 align-items-center pb-3">
+                    <p class="mb-0 text-sm-start text-center">
+                        Zapisz się do naszego newslettera i bądź na bieżąco z aktualizacjami Kimai i Pluginów.
+                    </p>
+                </div>
+
+                <form class="mb-3 needs-validation" id="sib-form" method="POST" action="https://8e086265.sibforms.com/serve/MUIFALXVRuuVZhsZZmbuMp4JqgZZf_sJJWO4GVG9THmeTDdQx8hsSOrGIvy5t3ExNPvyzh4QExz2_p-bBdUmLhfAJnMdOkpNAr9yS47FxZSlcRqInpzs0k1TNgOnHIjiz8T4ZYe-MZd45dpbZqQ-Ft6zQLlSKSnGQJJd5Zd9icbaup6Sjqssu0CjIdKUvdWAYUUCeh6LWlBSTAit">
+                    <div class="d-flex flex-sm-row flex-column mb-3">
+                        <div class="input-group me-sm-3 mb-sm-0">
+                            <input type="email" class="input form-control form-control-lg rounded-3 ps-5" placeholder="Twój adres e-mail" required id="EMAIL" name="EMAIL" autocomplete="off" data-required="true">
+                            <i class="bx bx-envelope position-absolute start-0 top-50 translate-middle-y ms-3 zindex-5 fs-5 text-muted"></i>
+                        </div>
+                        
+                        <a href="https://8e086265.sibforms.com/serve/MUIFAAa1ym6wZTDYXZGIYzXYDPZswEthNmVl7Y0-sr829LPi20LNhS3kmUfgY3eTStykbeYM9WJTmZIBLgyg6o1VL0ThXHF-TRWzGO6_EHFGpLbN43wnS-oCDXNkUWWTs6EkBK-tQ0MgkzZNLSELHCNXTqPzLoyJlMGjJBkabmjziFxrXfWLrytl3nw5JA7kORw7Ifph16VqU8k-" class="btn btn-lg btn-primary">ZAPISZ SIĘ *</a>
+                    </div>
+
+                    <input type="text" name="email_address_check" value="" class="visually-hidden">
+                    <input type="hidden" name="locale" value="en">
+                    <input type="hidden" name="html_type" value="simple">
+                </form>
+                <div class="form-text fs-sm text-sm-start text-center">
+                    
+                    
+                    * Używamy Brevo jako naszej platformy marketingowej. Klikając poniżej, aby przesłać ten formularz, potwierdzasz, że przekazane przez Ciebie informacje zostaną przekazane do Brevo w celu przetworzenia zgodnie z ich <a target="_blank" class="clickable_link" href="https://www.brevo.com/legal/termsofuse/">regulaminem</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+
+
+
+
+
+
+
+<footer class="footer bg-dark pt-5 pb-4" data-bs-theme="dark">
+    <div class="container pt-1 pt-md-3 pt-lg-4 pt-xl-5">
+        <div class="row">
+            <div class="col-md-5 col-xl-4 mb-4 mb-md-5 mb-lg-0">
+                <div class="d-flex align-items-center pb-3 mb-1">
+                    <div class="navbar-brand text-dark p-0 pe-1 me-0">
+                        Kimai
+                    </div>
+                    <hr class="vr mt-2 mx-3" style="height: 26px;">
+                    <div class="text-white fw-semibold ps-1">Łatwe śledzenie czasu</div>
+                </div>
+                <p class="text-body fs-sm pb-1 pb-md-2 pb-lg-2 mb-2">
+                    Darmowe i łatwe w użyciu narzędzie do śledzenia czasu dla freelancerów, agencji i firm. Kimai to oprogramowanie open source dostępne do samodzielnego hostowania oraz jako usługa typu SaaS.
+                </p>
+                <div class="d-flex flex-column flex-sm-row flex-lg-column align-items-sm-center align-items-lg-start justify-content-between pb-1 pb-md-2 pb-lg-3 mb-3">
+                    <div class="position-relative">
+                        <div class="dropdown">
+                            <button type="button" class="form-select" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-globe top-50 start-0 text-body me-2"></i>
+                                Polski
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/cs/blog/" class="dropdown-item">Čeština</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/de/blog/" class="dropdown-item">Deutsch</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/blog/" class="dropdown-item">English</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/es/blog/" class="dropdown-item">Español</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/fr/blog/" class="dropdown-item">Français</a>
+                                
+                                    
+                                    
+                                    <a dir="rtl" href="/he/blog/" class="dropdown-item">עברית</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/hr/blog/" class="dropdown-item">Hrvatski</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/it/blog/" class="dropdown-item">Italiano</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/nl/blog/" class="dropdown-item">Nederlands</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/pl/blog/" class="dropdown-item active">Polski</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/pt/blog/" class="dropdown-item">Português</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/pt_BR/blog/" class="dropdown-item">Português (Brasil)</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/ru/blog/" class="dropdown-item">Rусский</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/sk/blog/" class="dropdown-item">Slovenčina</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/sv/blog/" class="dropdown-item">Svenska</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/uk/blog/" class="dropdown-item">Українська</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/zh_Hans/blog/" class="dropdown-item">中文（繁體）</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="form-check form-switch mode-switch pb-1 pb-md-2 pb-lg-2 mb-2" data-bs-toggle="mode">
+                    <input type="checkbox" class="form-check-input" id="theme-mode">
+                    <label class="form-check-label" for="theme-mode">Light</label>
+                    <label class="form-check-label" for="theme-mode">Dark</label>
+                </div>
+            </div>
+            <div class="col-md-7 offset-xl-1">
+                <div id="footer-links" class="row">
+                    
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <h6 class="fs-lg mb-1 mb-md-2">
+                            <span class="d-none d-md-block">Kimai</span>
+                            <a href="#tools" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Kimai</a>
+                        </h6>
+                        <div id="tools" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/pl/about.html" class="nav-link fs-sm fw-medium px-0 py-1">O Kimai</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/pl/download.html" class="nav-link fs-sm fw-medium px-0 py-1">Pobierz</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/pl/features.html" class="nav-link fs-sm fw-medium px-0 py-1">Funkcje</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/pl/support.html" class="nav-link fs-sm fw-medium px-0 py-1">Wsparcie</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/en/kimai-discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">Discount codes</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <h6 class="fs-lg mb-1 mb-md-2">
+                            <span class="d-none d-md-block">Kimai for</span>
+                            <a href="#landing-kimai-for" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Kimai for</a>
+                        </h6>
+                        <div id="landing-kimai-for" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/en/time-tracking-non-profit.html" class="nav-link fs-sm fw-medium px-0 py-1">Non-Profits</a>
+                                </li>
+                                
+                                
+                                <li class="nav-item">
+                                    <a href="/en/open-source-time-log" class="nav-link fs-sm fw-medium px-0 py-1" title="Open-Source Time Log">Time Log</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/open-source-time-tracker" class="nav-link fs-sm fw-medium px-0 py-1" title="Open-Source Time Tracker">Time Tracker</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/open-source-timesheet" class="nav-link fs-sm fw-medium px-0 py-1" title="Open-Source Timesheet">Timesheet</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <h6 class="fs-lg mb-1 mb-md-2">
+                            <span class="d-none d-md-block">Porównanie</span>
+                            <a href="#footer-cmp" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Porównanie</a>
+                        </h6>
+                        <div id="footer-cmp" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/pl/compare/" class="nav-link fs-sm fw-medium px-0 py-1">Porównanie narzędzi do śledzenia czasu</a>
+                                </li>
+                                
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternative-to-clockify" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to Clockify">Clockify</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternative-to-openproject" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to OpenProject">OpenProject</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternative-to-toggl" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to toggl track">toggl track</a>
+                                    </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="d-md-flex align-items-center justify-content-between pt-sm-2 pt-md-4 pt-lg-5 pb-2 mt-4 ">
+    <ul class="nav order-md-1 ms-md-0 mb-3 mb-md-0">
+        <li class="nav-item">
+            <a href="/pl/" class="nav-link fs-sm fw-medium ps-0">Strona główna</a>
+        </li>
+        <li class="nav-item">
+            <a href="/pl/site-notice.html" class="nav-link fs-sm fw-medium">Ogłoszenie o stronie</a>
+        </li>
+        <li class="nav-item">
+            <a href="/pl/privacy-policy.html" class="nav-link fs-sm fw-medium">Polityka prywatności</a>
+        </li>
+        <li class="nav-item">
+            <a href="https://uptime.kimai.cloud/" target="_blank" class="nav-link fs-sm fw-medium">Cloud-Status</a>
+        </li>
+    </ul>
+    <div class="nav order-md-2 mb-3 mb-md-0">
+        <a target="_blank" href="https://github.com/kimai/kimai" class="btn btn-icon btn-secondary btn-github rounded-circle me-3" aria-label="GitHub">
+    <i class="bx bxl-github"></i>
+</a>
+<a target="_blank" href="https://twitter.com/kimai_org" class="btn btn-icon btn-secondary btn-twitter rounded-circle me-3" aria-label="Twitter / X">
+    <i class="bx bxl-twitter"></i>
+</a>
+<a target="_blank" href="https://www.youtube.com/@kimai_org" class="btn btn-icon btn-secondary btn-youtube rounded-circle me-3" aria-label="YouTube">
+    <i class="bx bxl-youtube"></i>
+</a>
+<a target="_blank" href="https://phpc.social/@kimai" class="btn btn-icon btn-secondary btn-messenger rounded-circle me-3" aria-label="Mastodon">
+    <i class="bx bxl-mastodon"></i>
+</a>
+
+    </div>
+    <p class="nav d-block fs-sm mb-0 order-md-3">
+        <span class="text-body">Zrobione przez </span>
+        <a class="nav-link d-inline-block p-0" href="https://www.kevinpapst.de/" target="_blank" rel="noopener">Kevin Papst</a>
+    </p>
+</div>
+
+    </div>
+</footer>
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
+
+</body>
+</html>

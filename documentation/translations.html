@@ -1,0 +1,707 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index,follow">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+    <title>Translations / i18n – Kimai</title>
+    
+        <meta name="description" content="i18n, language specific configurations and the translation files">
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kimai Time-Tracking">
+    <meta property="og:description" content="i18n, language specific configurations and the translation files">
+    <meta property="og:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kimai Time-Tracking">
+    <meta name="twitter:site" content="@kimai_org">
+    <meta name="twitter:description" content="i18n, language specific configurations and the translation files">
+    <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <script src="/assets/build/theme.js"></script>
+    <link href="/assets/build/main.css" rel="stylesheet" />
+</head>
+<body class="">
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand bg-light border-bottom border-light shadow fixed-top" data-scroll-header>
+    <div class="container-fluid pe-lg-4">
+        <div class="d-flex align-items-center">
+            <a href="/documentation/" class="navbar-brand flex-shrink-0 py-1 py-lg-2">
+                <img src="/images/apple-touch-icon.png" width="47" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning">Developer</span>
+        </div>
+        <div class="d-flex align-items-center w-100">
+            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 9.75rem;">
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-manual.html" class="nav-link">
+                            <i class="bx bx-book opacity-70 fs-lg me-1"></i>
+                            User manual
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/cloud.html" class="nav-link">
+                            <i class="bx bxs-cloud opacity-70 fs-lg me-1"></i>
+                            Kimai-Cloud
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/developers.html" class="nav-link">
+                            <i class="bx bx-code opacity-70 fs-lg me-1"></i>
+                            Developer
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-on-premise.html" class="nav-link">
+                            <i class="bx bx-wrench opacity-70 fs-lg me-1"></i>
+                            Self-hosted
+                        </a>
+                    </li>
+                
+            </ul>
+            <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="form-check form-switch mode-switch pe-lg-1 ms-lg-auto" data-bs-toggle="mode">
+                <input type="checkbox" class="form-check-input" id="theme-mode">
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Light</label>
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Dark</label>
+            </div>
+        </div>
+    </div>
+</header>
+
+<aside data-bs-theme="dark">
+    <div id="componentsNav" class="offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100 bg-dark border-end-lg" style="width: 21rem; z-index: 1045;">
+        <div class="offcanvas-header d-none d-lg-flex justify-content-start">
+            <a href="/documentation/" class="navbar-brand text-dark d-none d-lg-flex py-0">
+                <img src="/images/apple-touch-icon.png" width="32" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning d-none d-lg-inline-block">Developer</span>
+        </div>
+        <div class="offcanvas-header d-block d-lg-none border-bottom">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <h5 class="d-lg-none mb-0">Menu</h5>
+                <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#componentsNav" aria-label="Close"></button>
+            </div>
+            <div class="list-group list-group-flush mx-n4">
+                
+                    
+                    
+                    <a href="/documentation/chapter-manual.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-book opacity-70 me-1"></i>
+                        User manual
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/cloud.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bxs-cloud opacity-70 me-1"></i>
+                        Kimai-Cloud
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/developers.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-code opacity-70 me-1"></i>
+                        Developer
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/chapter-on-premise.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-wrench opacity-70 me-1"></i>
+                        Self-hosted
+                    </a>
+                
+            </div>
+        </div>
+        <div class="offcanvas-body swiper scrollbar-hover overflow-hidden w-100 p-4" data-swiper-options='{
+          "direction": "vertical",
+          "slidesPerView": "auto",
+          "freeMode": true,
+          "scrollbar": {
+            "el": ".swiper-scrollbar"
+          },
+          "mousewheel": true
+        }'>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide h-auto">
+                    
+                        
+
+    
+    
+    <h3 class="fs-lg">JSON API</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/rest-api.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Kimai API
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/rest-api-examples.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Examples
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/api-pagination.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Pagination
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">Create plugins</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/plugins.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Getting started
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/translations.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4  active">
+                
+                Translations / i18n
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/meta-fields.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Custom fields
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/theme.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Theme
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/store.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Add to store
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/migration-v2.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Migrate plugins to v2
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">Technical background</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/bughunter.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Bughunter
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/permission-structure.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Permission structure
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/sql-examples.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                SQL Examples
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/redis.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Using Redis for caching
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/create-release.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Creating a release
+                
+            </a>
+        
+    
+    </div>
+
+
+                        <div class="list-group list-group-flush pb-3 mb-4 mx-n4">
+                    
+                    <a href="/" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Home</a>
+                    <a href="/en/site-notice.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Site notice</a>
+                    <a href="/en/privacy-policy.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Privacy policy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-scrollbar end-0"></div>
+        </div>
+    </div>
+</aside>
+
+<main class="docs-container pt-5">
+    <div class="container-fluid px-xxl-5 px-lg-4 pt-4 pt-lg-5 pb-2 pb-lg-4">
+
+        <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 pt-4 mb-n3">
+            <div class="me-4">
+                <h1 class="pb-1">Translations / i18n</h1>
+                
+                <p class="text-muted fs-lg mb-2">i18n, language specific configurations and the translation files</p>
+                
+            </div>
+            
+
+
+
+
+    <div class="dropdown">
+        <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Older versions
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+            
+            <a class="dropdown-item" href="/documentation/1.30.0/translations.html">Kimai 1.30.0</a>
+            
+            <a class="dropdown-item" href="/documentation/translations.html">2.13.0 (latest version)</a>
+        </div>
+    </div>
+
+
+        </div>
+
+        <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+            <div>
+                
+                <div id="documentation-content">
+                    <p>Kimai can be localized to any language and is already translated to
+<strong>Arabic, Czech, Danish, German, German (Swiss), Greek, English, Esperanto, Spanish, Basque, Persian, Finnish, Faroese, French, Hebrew, Croatian, Hungarian, Indonesian, Italian, Japanese, Korean, Norwegian (Bokmål), Dutch, Panjabi, Polish, Portuguese, Portuguese (Brazilian), Romanian, Russian, Slovakian, Slovenian, Swedish, Turkish, Ukrainian, Vietnamese, Chinese (traditional), Chinese (simplified)</strong></p>
+
+<p>Please be invited to contribute to the Kimai translations  – we’re looking for translators and would appreciate your support!</p>
+
+<p>You find the translations at <a href="https://hosted.weblate.org/projects/kimai/">https://hosted.weblate.org/projects/kimai/</a> and can start translating right away.
+You can also click the little image in the table below for your language. Thank you for your help 👍🏻</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Language</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Arabic</td>
+      <td><a href="https://hosted.weblate.org/engage/kimai/ar/"><img src="https://hosted.weblate.org/widgets/kimai/ar/svg-badge.svg" alt="Translation status" /></a></td>
+    </tr>
+    <tr>
+      <td>Czech</td>
+      <td><a href="https://hosted.weblate.org/engage/kimai/cs/"><img src="https://hosted.weblate.org/widgets/kimai/cs/svg-badge.svg" alt="Translation status" /></a></td>
+    </tr>
+    <tr>
+      <td>Danish</td>
+      <td><a href="https://hosted.weblate.org/engage/kimai/da/"><img src="https://hosted.weblate.org/widgets/kimai/da/svg-badge.svg" alt="Translation status" /></a></td>
+    </tr>
+    <tr>
+      <td>German</td>
+      <td><a href="https://hosted.weblate.org/engage/kimai/de/"><img src="https://hosted.weblate.org/widgets/kimai/de/svg-badge.svg" alt="Translation status" /></a></td>
+    </tr>
+    <tr>
+      <td>German (Swiss)</td>
+      <td><a href="https://hosted.weblate.org/engage/kimai/de_CH/"><img src="https://hosted.weblate.org/widgets/kimai/de_CH/svg-badge.svg" alt="Translation status" /></a></td>
+    </tr>
+    <tr>
+      <td>Greek</td>
+      <td><a href="https://hosted.weblate.org/engage/kimai/el/"><img src="https://hosted.weblate.org/widgets/kimai/el/svg-badge.svg" alt="Translation status" /></a></td>
+    </tr>
+    <tr>
+      <td>English</td>
+      <td><a href="https://hosted.weblate.org/engage/kimai/en/"><img src="https://hosted.weblate.org/widgets/kimai/en/svg-badge.svg" alt="Translation status" /></a></td>
+    </tr>
+    <tr>
+      <td>Esperanto</td>
+      <td><a href="https://hosted.weblate.org/engage/kimai/eo/"><img src="https://hosted.weblate.org/widgets/kimai/eo/svg-badge.svg" alt="Translation status" /></a></td>
+    </tr>
+    <tr>
+      <td>Spanish</td>
+      <td><a href="https://hosted.weblate.org/engage/kimai/es/"><img src="https://hosted.weblate.org/widgets/kimai/es/svg-badge.svg" alt="Translation status" /></a></td>
+    </tr>
+    <tr>
+      <td>Basque</td>
+      <td><a href="https://hosted.weblate.org/engage/kimai/eu/"><img src="https://hosted.weblate.org/widgets/kimai/eu/svg-badge.svg" alt="Translation status" /></a></td>
+    </tr>
+    <tr>
+      <td>Persian</td>
+      <td><a href="https://hosted.weblate.org/engage/kimai/fa/"><img src="https://hosted.weblate.org/widgets/kimai/fa/svg-badge.svg" alt="Translation status" /></a></td>
+    </tr>
+    <tr>
+      <td>Finnish</td>
+      <td><a href="https://hosted.weblate.org/engage/kimai/fi/"><img src="https://hosted.weblate.org/widgets/kimai/fi/svg-badge.svg" alt="Translation status" /></a></td>
+    </tr>
+    <tr>
+      <td>Faroese</td>
+      <td><a href="https://hosted.weblate.org/engage/kimai/fo/"><img src="https://hosted.weblate.org/widgets/kimai/fo/svg-badge.svg" alt="Translation status" /></a></td>
+    </tr>
+    <tr>
+      <td>French</td>
+      <td><a href="https://hosted.weblate.org/engage/kimai/fr/"><img src="https://hosted.weblate.org/widgets/kimai/fr/svg-badge.svg" alt="Translation status" /></a></td>
+    </tr>
+    <tr>
+      <td>Hebrew</td>
+      <td><a href="https://hosted.weblate.org/engage/kimai/he/"><img src="https://hosted.weblate.org/widgets/kimai/he/svg-badge.svg" alt="Translation status" /></a></td>
+    </tr>
+    <tr>
+      <td>Croatian</td>
+      <td><a href="https://hosted.weblate.org/engage/kimai/hr/"><img src="https://hosted.weblate.org/widgets/kimai/hr/svg-badge.svg" alt="Translation status" /></a></td>
+    </tr>
+    <tr>
+      <td>Hungarian</td>
+      <td><a href="https://hosted.weblate.org/engage/kimai/hu/"><img src="https://hosted.weblate.org/widgets/kimai/hu/svg-badge.svg" alt="Translation status" /></a></td>
+    </tr>
+    <tr>
+      <td>Indonesian</td>
+      <td><a href="https://hosted.weblate.org/engage/kimai/id/"><img src="https://hosted.weblate.org/widgets/kimai/id/svg-badge.svg" alt="Translation status" /></a></td>
+    </tr>
+    <tr>
+      <td>Italian</td>
+      <td><a href="https://hosted.weblate.org/engage/kimai/it/"><img src="https://hosted.weblate.org/widgets/kimai/it/svg-badge.svg" alt="Translation status" /></a></td>
+    </tr>
+    <tr>
+      <td>Japanese</td>
+      <td><a href="https://hosted.weblate.org/engage/kimai/ja/"><img src="https://hosted.weblate.org/widgets/kimai/ja/svg-badge.svg" alt="Translation status" /></a></td>
+    </tr>
+    <tr>
+      <td>Korean</td>
+      <td><a href="https://hosted.weblate.org/engage/kimai/ko/"><img src="https://hosted.weblate.org/widgets/kimai/ko/svg-badge.svg" alt="Translation status" /></a></td>
+    </tr>
+    <tr>
+      <td>Norwegian (Bokmål)</td>
+      <td><a href="https://hosted.weblate.org/engage/kimai/nb_NO/"><img src="https://hosted.weblate.org/widgets/kimai/nb_NO/svg-badge.svg" alt="Translation status" /></a></td>
+    </tr>
+    <tr>
+      <td>Dutch</td>
+      <td><a href="https://hosted.weblate.org/engage/kimai/nl/"><img src="https://hosted.weblate.org/widgets/kimai/nl/svg-badge.svg" alt="Translation status" /></a></td>
+    </tr>
+    <tr>
+      <td>Panjabi</td>
+      <td><a href="https://hosted.weblate.org/engage/kimai/pa/"><img src="https://hosted.weblate.org/widgets/kimai/pa/svg-badge.svg" alt="Translation status" /></a></td>
+    </tr>
+    <tr>
+      <td>Polish</td>
+      <td><a href="https://hosted.weblate.org/engage/kimai/pl/"><img src="https://hosted.weblate.org/widgets/kimai/pl/svg-badge.svg" alt="Translation status" /></a></td>
+    </tr>
+    <tr>
+      <td>Portuguese</td>
+      <td><a href="https://hosted.weblate.org/engage/kimai/pt/"><img src="https://hosted.weblate.org/widgets/kimai/pt/svg-badge.svg" alt="Translation status" /></a></td>
+    </tr>
+    <tr>
+      <td>Portuguese (Brazilian)</td>
+      <td><a href="https://hosted.weblate.org/engage/kimai/pt_BR/"><img src="https://hosted.weblate.org/widgets/kimai/pt_BR/svg-badge.svg" alt="Translation status" /></a></td>
+    </tr>
+    <tr>
+      <td>Romanian</td>
+      <td><a href="https://hosted.weblate.org/engage/kimai/ro/"><img src="https://hosted.weblate.org/widgets/kimai/ro/svg-badge.svg" alt="Translation status" /></a></td>
+    </tr>
+    <tr>
+      <td>Russian</td>
+      <td><a href="https://hosted.weblate.org/engage/kimai/ru/"><img src="https://hosted.weblate.org/widgets/kimai/ru/svg-badge.svg" alt="Translation status" /></a></td>
+    </tr>
+    <tr>
+      <td>Slovakian</td>
+      <td><a href="https://hosted.weblate.org/engage/kimai/sk/"><img src="https://hosted.weblate.org/widgets/kimai/sk/svg-badge.svg" alt="Translation status" /></a></td>
+    </tr>
+    <tr>
+      <td>Slovenian</td>
+      <td><a href="https://hosted.weblate.org/engage/kimai/sl/"><img src="https://hosted.weblate.org/widgets/kimai/sl/svg-badge.svg" alt="Translation status" /></a></td>
+    </tr>
+    <tr>
+      <td>Swedish</td>
+      <td><a href="https://hosted.weblate.org/engage/kimai/sv/"><img src="https://hosted.weblate.org/widgets/kimai/sv/svg-badge.svg" alt="Translation status" /></a></td>
+    </tr>
+    <tr>
+      <td>Turkish</td>
+      <td><a href="https://hosted.weblate.org/engage/kimai/tr/"><img src="https://hosted.weblate.org/widgets/kimai/tr/svg-badge.svg" alt="Translation status" /></a></td>
+    </tr>
+    <tr>
+      <td>Ukrainian</td>
+      <td><a href="https://hosted.weblate.org/engage/kimai/uk/"><img src="https://hosted.weblate.org/widgets/kimai/uk/svg-badge.svg" alt="Translation status" /></a></td>
+    </tr>
+    <tr>
+      <td>Vietnamese</td>
+      <td><a href="https://hosted.weblate.org/engage/kimai/vi/"><img src="https://hosted.weblate.org/widgets/kimai/vi/svg-badge.svg" alt="Translation status" /></a></td>
+    </tr>
+    <tr>
+      <td>Chinese (traditional)</td>
+      <td><a href="https://hosted.weblate.org/engage/kimai/zh_Hant/"><img src="https://hosted.weblate.org/widgets/kimai/zh_Hant/svg-badge.svg" alt="Translation status" /></a></td>
+    </tr>
+    <tr>
+      <td>Chinese (simplified)</td>
+      <td><a href="https://hosted.weblate.org/engage/kimai/zh_Hans/"><img src="https://hosted.weblate.org/widgets/kimai/zh_Hans/svg-badge.svg" alt="Translation status" /></a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>All translations in Kimai are managed at Weblate and should be changed there exclusively! Do not chang ethe source files of Kimai.</p>
+
+<p>If you want to change certain keys in your installation, you can use the <a href="/store/translation-bundle.html">Translation plugin</a> for that.</p>
+
+<div class="alert alert-info" role="alert">
+    The following documentation is not meant for end-users or translators. It is a technical documentation for the folks working on the Kimai code.
+</div>
+
+<h2 id="language-files">Language files</h2>
+
+<p>We try to separate translations in logical units, in order to make it easier to identify the location of application messages.</p>
+
+<ul>
+  <li>If you add a new key, you have to add it at least in the <code class="language-plaintext highlighter-rouge">en</code> version (as english is the fallback language for all missing keys in any language)</li>
+  <li>It’s very likely that you want to edit the file <code class="language-plaintext highlighter-rouge">messages</code> as it holds the most important application translations</li>
+</ul>
+
+<p>The files in <code class="language-plaintext highlighter-rouge">translations/</code> as a quick overview:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">about</code> - the about screen with license information</li>
+  <li><code class="language-plaintext highlighter-rouge">actions</code> - the “action” dropdowns in all data-tables</li>
+  <li><code class="language-plaintext highlighter-rouge">email</code> - contents for the system emails generated by Kimai (eg. user registration and password reset)</li>
+  <li><code class="language-plaintext highlighter-rouge">daterangepicker</code> - the date range picker dialog to choose a timeframe in screens with data-tables</li>
+  <li><code class="language-plaintext highlighter-rouge">exceptions</code> - error pages and exception handlers</li>
+  <li><code class="language-plaintext highlighter-rouge">flashmessages</code> - success and error messages (alerts), which will be shown after submitting data</li>
+  <li><code class="language-plaintext highlighter-rouge">invoice-calculator</code> - invoice calculator types (see <code class="language-plaintext highlighter-rouge">Adding invoice calculator</code> in <a href="/documentation/developers.html">developers</a>-section)</li>
+  <li><code class="language-plaintext highlighter-rouge">invoice-numbergenerator</code> - invoice calculator (see <code class="language-plaintext highlighter-rouge">Adding invoice-number generator </code> in <a href="/documentation/developers.html">developers</a>-section)</li>
+  <li><code class="language-plaintext highlighter-rouge">invoice-renderer</code> - holds translations of all invoice templates (<a href="/documentation/invoices.html">read more</a>)</li>
+  <li><code class="language-plaintext highlighter-rouge">messages</code> - most of the visible application translations (like menu, buttons and forms)</li>
+  <li><code class="language-plaintext highlighter-rouge">plugins</code> - the plugin screen</li>
+  <li><code class="language-plaintext highlighter-rouge">system-configuration</code> - all system configuration, which can be changed through the UI</li>
+  <li><code class="language-plaintext highlighter-rouge">tags</code> - the tags administration screen</li>
+  <li><code class="language-plaintext highlighter-rouge">teams</code> - the team administration screen</li>
+  <li><code class="language-plaintext highlighter-rouge">validators</code> - related to violations/validation of submitted form data (or API calls)</li>
+</ul>
+
+<div class="alert alert-danger" role="alert">
+    
+If you apply changes to any files mentioned on this page, you have to <a href="/documentation/cache.html">clear the cache</a>.
+
+</div>
+
+<h2 id="authentication-screens">Authentication screens</h2>
+
+<p>The authentication screens (login, registration, register account) are translated through the theme bundle which is used in Kimai.
+The bundle can be <a href="https://github.com/kevinpapst/TablerBundle">found here</a> and the translations <a href="https://github.com/kevinpapst/TablerBundle/tree/main/translations">in this directory</a>.</p>
+
+<p>When you create a new translation, please open a Pull Request in this repository as well.</p>
+
+<h2 id="adding-a-new-language">Adding a new language</h2>
+
+<p>This example assumes you are creating the (not existing) locale <code class="language-plaintext highlighter-rouge">xx</code>.</p>
+
+<p>Copy each translation from it’s english version <code class="language-plaintext highlighter-rouge">translations/*.en.xlf</code> and rename them to <code class="language-plaintext highlighter-rouge">translations/*.xx.xlf</code>.</p>
+
+<p>Adjust the <code class="language-plaintext highlighter-rouge">target-language</code> attributes in the file header, as example for the new file <code class="language-plaintext highlighter-rouge">exceptions.xx.xlf</code>:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;file</span> <span class="na">source-language=</span><span class="s">"en"</span> <span class="na">target-language=</span><span class="s">"xx"</span> <span class="na">datatype=</span><span class="s">"plaintext"</span> <span class="na">original=</span><span class="s">"exceptions.en.xlf"</span><span class="nt">&gt;</span>`
+</code></pre></div></div>
+
+<h2 id="adding-a-language-variant">Adding a language variant</h2>
+
+<p>For a language variant <code class="language-plaintext highlighter-rouge">xx_YY</code>, the fallback will always be the base language <code class="language-plaintext highlighter-rouge">xx</code> (e.g. <code class="language-plaintext highlighter-rouge">de</code> for <code class="language-plaintext highlighter-rouge">de_CH</code>).</p>
+
+<p>Only some specific keys may need to be changed for this variant, and it’s possible to add only the respective files like i.e. <code class="language-plaintext highlighter-rouge">translations/messages.de_CH.xlf</code> including only the changed translations:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;xliff</span> <span class="na">version=</span><span class="s">"1.2"</span> <span class="na">xmlns=</span><span class="s">"urn:oasis:names:tc:xliff:document:1.2"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;file</span> <span class="na">source-language=</span><span class="s">"de"</span> <span class="na">target-language=</span><span class="s">"de-CH"</span> <span class="na">datatype=</span><span class="s">"plaintext"</span> <span class="na">original=</span><span class="s">"messages.en.xlf"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;body&gt;</span>
+            <span class="nt">&lt;trans-unit</span> <span class="na">resname=</span><span class="s">"action.close"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;source&gt;</span>action.close<span class="nt">&lt;/source&gt;</span>
+                <span class="nt">&lt;target&gt;</span>Schliessen<span class="nt">&lt;/target&gt;</span>
+            <span class="nt">&lt;/trans-unit&gt;</span>
+        <span class="nt">&lt;/body&gt;</span>
+    <span class="nt">&lt;/file&gt;</span>
+<span class="nt">&lt;/xliff&gt;</span>
+</code></pre></div></div>
+
+<h2 id="configure-locale-formats">Configure locale formats</h2>
+
+<p>Locale formats are derived from the file <code class="language-plaintext highlighter-rouge">config/locales.php</code> which is auto-generated with the command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/console kimai:reset:locales
+</code></pre></div></div>
+
+<h2 id="register-locale">Register locale</h2>
+
+<p>You need to activate a new locale (so it can be used in routing) in the file <code class="language-plaintext highlighter-rouge">config/services.yaml</code> at <code class="language-plaintext highlighter-rouge">parameters.app_locales</code> divided by a pipe:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">parameters</span><span class="pi">:</span>
+    <span class="na">locale</span><span class="pi">:</span> <span class="s">en</span>
+    <span class="na">app_locales</span><span class="pi">:</span> <span class="s">en|de|fr|ru|vi|zh_CN</span>
+</code></pre></div></div>
+
+<h2 id="number-formats">Number formats</h2>
+
+<p>The number formats are determined from the user locale.</p>
+
+<h2 id="date-and-time-formats">Date and time formats</h2>
+
+<p>The date and time formats are determined from the user locale.</p>
+
+<p>There are configurations in place to convert between javascript components (e.g. the date-picker) and the PHP backend.</p>
+
+<h2 id="ampm-format">AM/PM format</h2>
+
+<p>Whether Kimai displays data in 24-hour or AM/PM format depends on the user locale.</p>
+
+<h2 id="generate-correct-id-and-resname">Generate correct ID and resname</h2>
+
+<p>Run the following command, which will generate the correct XLIFF attributes for you:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/console kimai:translation <span class="nt">--resname</span>
+</code></pre></div></div>
+
+<h2 id="validate-your-changes">Validate your changes</h2>
+
+<p>This will validate if the technical changes are okay / if the changed and new files can be used by Kimai:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/console lint:xliff translations
+</code></pre></div></div>
+
+<h2 id="check-for-missing-translations">Check for missing translations</h2>
+
+<p>You can search for missing keys by issuing this command (replace <code class="language-plaintext highlighter-rouge">xx</code> with your locale):</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/console debug:translation <span class="nt">--only-missing</span> de
+</code></pre></div></div>
+<p>or</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/console translation:update <span class="nt">--dump-messages</span> <span class="nt">--force</span> de
+</code></pre></div></div>
+
+                </div>
+                
+
+                
+            </div>
+        </div>
+
+    </div>
+</main>
+
+
+    <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
+        <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#language-files" class="nav-link">Language files</a></li><li class="nav-item"><a href="#authentication-screens" class="nav-link">Authentication screens</a></li><li class="nav-item"><a href="#adding-a-new-language" class="nav-link">Adding a new language</a></li><li class="nav-item"><a href="#adding-a-language-variant" class="nav-link">Adding a language variant</a></li><li class="nav-item"><a href="#configure-locale-formats" class="nav-link">Configure locale formats</a></li><li class="nav-item"><a href="#register-locale" class="nav-link">Register locale</a></li><li class="nav-item"><a href="#number-formats" class="nav-link">Number formats</a></li><li class="nav-item"><a href="#date-and-time-formats" class="nav-link">Date and time formats</a></li><li class="nav-item"><a href="#ampm-format" class="nav-link">AM/PM format</a></li><li class="nav-item"><a href="#generate-correct-id-and-resname" class="nav-link">Generate correct ID and resname</a></li><li class="nav-item"><a href="#validate-your-changes" class="nav-link">Validate your changes</a></li><li class="nav-item"><a href="#check-for-missing-translations" class="nav-link">Check for missing translations</a></li></ul>
+        
+    </aside>
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+
+</body>
+</html>

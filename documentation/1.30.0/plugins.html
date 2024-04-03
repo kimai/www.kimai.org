@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index,follow">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+    <title>Create plugins – Kimai</title>
+    
+        <meta name="description" content="How to create a Kimai plugin">
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kimai Time-Tracking">
+    <meta property="og:description" content="How to create a Kimai plugin">
+    <meta property="og:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kimai Time-Tracking">
+    <meta name="twitter:site" content="@kimai_org">
+    <meta name="twitter:description" content="How to create a Kimai plugin">
+    <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <link rel="canonical" href="https://www.kimai.org/documentation/plugins.html" />
+    <script src="/assets/build/theme.js"></script>
+    <link href="/assets/build/main.css" rel="stylesheet" />
+</head>
+<body class="">
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand bg-light border-bottom border-light shadow fixed-top" data-scroll-header>
+    <div class="container-fluid pe-lg-4">
+        <div class="d-flex align-items-center">
+            <a href="/documentation/" class="navbar-brand flex-shrink-0 py-1 py-lg-2">
+                <img src="/images/apple-touch-icon.png" width="47" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning">Developer</span>
+        </div>
+        <div class="d-flex align-items-center w-100">
+            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 9.75rem;">
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-manual.html" class="nav-link">
+                            <i class="bx bx-book opacity-70 fs-lg me-1"></i>
+                            User manual
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/cloud.html" class="nav-link">
+                            <i class="bx bxs-cloud opacity-70 fs-lg me-1"></i>
+                            Kimai-Cloud
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/developers.html" class="nav-link">
+                            <i class="bx bx-code opacity-70 fs-lg me-1"></i>
+                            Developer
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-on-premise.html" class="nav-link">
+                            <i class="bx bx-wrench opacity-70 fs-lg me-1"></i>
+                            Self-hosted
+                        </a>
+                    </li>
+                
+            </ul>
+            <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="form-check form-switch mode-switch pe-lg-1 ms-lg-auto" data-bs-toggle="mode">
+                <input type="checkbox" class="form-check-input" id="theme-mode">
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Light</label>
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Dark</label>
+            </div>
+        </div>
+    </div>
+</header>
+
+<aside data-bs-theme="dark">
+    <div id="componentsNav" class="offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100 bg-dark border-end-lg" style="width: 21rem; z-index: 1045;">
+        <div class="offcanvas-header d-none d-lg-flex justify-content-start">
+            <a href="/documentation/" class="navbar-brand text-dark d-none d-lg-flex py-0">
+                <img src="/images/apple-touch-icon.png" width="32" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning d-none d-lg-inline-block">Developer</span>
+        </div>
+        <div class="offcanvas-header d-block d-lg-none border-bottom">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <h5 class="d-lg-none mb-0">Menu</h5>
+                <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#componentsNav" aria-label="Close"></button>
+            </div>
+            <div class="list-group list-group-flush mx-n4">
+                
+                    
+                    
+                    <a href="/documentation/chapter-manual.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-book opacity-70 me-1"></i>
+                        User manual
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/cloud.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bxs-cloud opacity-70 me-1"></i>
+                        Kimai-Cloud
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/developers.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-code opacity-70 me-1"></i>
+                        Developer
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/chapter-on-premise.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-wrench opacity-70 me-1"></i>
+                        Self-hosted
+                    </a>
+                
+            </div>
+        </div>
+        <div class="offcanvas-body swiper scrollbar-hover overflow-hidden w-100 p-4" data-swiper-options='{
+          "direction": "vertical",
+          "slidesPerView": "auto",
+          "freeMode": true,
+          "scrollbar": {
+            "el": ".swiper-scrollbar"
+          },
+          "mousewheel": true
+        }'>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide h-auto">
+                    
+                        
+
+    
+    
+    <h3 class="fs-lg">JSON API</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/rest-api.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Kimai API
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/rest-api-examples.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Examples
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/api-pagination.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Pagination
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">Create plugins</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/plugins.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4  active">
+                
+                Getting started
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/translations.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Translations / i18n
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/meta-fields.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Custom fields
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/theme.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Theme
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/store.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Add to store
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/migration-v2.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Migrate plugins to v2
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">Technical background</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/bughunter.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Bughunter
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/permission-structure.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Permission structure
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/sql-examples.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                SQL Examples
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/redis.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Using Redis for caching
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/create-release.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Creating a release
+                
+            </a>
+        
+    
+    </div>
+
+
+                        <div class="list-group list-group-flush pb-3 mb-4 mx-n4">
+                    
+                    <a href="/" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Home</a>
+                    <a href="/en/site-notice.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Site notice</a>
+                    <a href="/en/privacy-policy.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Privacy policy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-scrollbar end-0"></div>
+        </div>
+    </div>
+</aside>
+
+<main class="docs-container pt-5">
+    <div class="container-fluid px-xxl-5 px-lg-4 pt-4 pt-lg-5 pb-2 pb-lg-4">
+
+        <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 pt-4 mb-n3">
+            <div class="me-4">
+                <h1 class="pb-1">Create plugins</h1>
+                
+                <p class="text-muted fs-lg mb-2">How to create a Kimai plugin</p>
+                
+            </div>
+            
+
+
+
+
+    <div class="dropdown">
+        <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Older versions
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+            
+            <a class="dropdown-item" href="/documentation/1.30.0/plugins.html">Kimai 1.30.0</a>
+            
+            <a class="dropdown-item" href="/documentation/plugins.html">2.13.0 (latest version)</a>
+        </div>
+    </div>
+
+
+        </div>
+
+        <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+            <div>
+                
+                <div id="documentation-content">
+                    
+
+
+
+<div class="alert alert-danger" role="alert">
+    
+You are viewing an older version of this documentation page. A newer version is available <a href="/documentation/plugins.html">here</a>.
+
+</div>
+
+
+
+<p>A Kimai plugin is from a technical perspective <em>only</em> a Symfony bundle, with some minor modifications.</p>
+
+<p>Within the external communication it is called <strong>plugin</strong> instead of <strong>bundle</strong>, as this is the wording most users know.</p>
+
+<p>Kimai plugins are stored in <code class="language-plaintext highlighter-rouge">var/plugins/</code>, for example <code class="language-plaintext highlighter-rouge">var/plugins/YourBundle/</code>.
+The contents in <code class="language-plaintext highlighter-rouge">var/plugins/*</code> are listed in the <a href="https://github.com/kimai/kimai/blob/main/.gitignore">.gitignore</a> file to prevent update problems.</p>
+
+<h2 id="plugin-management-install-uninstall--deactivate">Plugin management (install, uninstall &amp; deactivate)</h2>
+
+<p>Read the chapter <a href="/documentation/plugin-management.html">Plugin management</a>.</p>
+
+<h2 id="kimai-plugins-vs-pure-symfony-bundles">Kimai plugins vs. pure Symfony bundles</h2>
+
+<p>The reason for using a slightly different approach than the proposed Symfony way is the recommended way 
+to install and update Kimai with Git and Composer.</p>
+
+<p>If you would install a bundle using composer, you would end up with a “dirty git status” and run 
+into problems when performing the next update (with changes in: <code class="language-plaintext highlighter-rouge">bundles.php</code>, <code class="language-plaintext highlighter-rouge">composer.json</code>, <code class="language-plaintext highlighter-rouge">composer.lock</code>, <code class="language-plaintext highlighter-rouge">symfony.lock</code>).</p>
+
+<p>The application Kernel was slightly modified to allow dynamic plugin and route loading, to prevent this from happening.</p>
+
+<p>There are some differences to Symfony bundles, which were added to prevent problems during core updates:</p>
+
+<ul>
+  <li>Kimai plugins are stored in <code class="language-plaintext highlighter-rouge">var/plugins/</code> instead of <code class="language-plaintext highlighter-rouge">vendor/</code></li>
+  <li>Kimai plugins are loaded automatically in <strong>each</strong> environment (no need to modify <code class="language-plaintext highlighter-rouge">config/bundles.php</code>)</li>
+  <li>Routes are automatically loaded with the search pattern:<br />
+<code class="language-plaintext highlighter-rouge">var/plugins/YourBundle/Resources/config/routes.{php,xml,yaml,yml}</code></li>
+  <li>Your Bundle class needs to be namespaced with the vendor segment <code class="language-plaintext highlighter-rouge">KimaiPlugin</code></li>
+  <li>Your Bundle must implement <code class="language-plaintext highlighter-rouge">App\Plugin\PluginInterface</code></li>
+</ul>
+
+<p>The namespace is pre-registered in composer with the vendor segment locked to <code class="language-plaintext highlighter-rouge">KimaiPlugin</code>, 
+pointing to <code class="language-plaintext highlighter-rouge">var/plugins/</code> to prevent that users have to dump a new autoloader after installing a plugin.</p>
+
+<h2 id="directory-structure">Directory structure</h2>
+
+<p>The minimal directory structure must look like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var/plugins/YourBundle
+├── DependencyInjection
+│   └── YourExtension.php
+├── Resources
+│   └── config
+│       └── services.yaml
+├── YourBundle.php
+├── composer.json
+└ ... more files and directories follow here ... 
+</code></pre></div></div>
+
+<p>Even though its called <strong>plugin</strong> in Kimai, the namespace and classes still need to follow the official 
+<a href="https://symfony.com/doc/current/bundles/best_practices.html#bundles-naming-conventions">Symfony bundle naming conventions</a>.</p>
+
+<h3 id="yourbundlephp">YourBundle.php</h3>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">namespace</span> <span class="nn">KimaiPlugin\YourBundle</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nc">App\Plugin\PluginInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Symfony\Component\DependencyInjection\ContainerBuilder</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Symfony\Component\HttpKernel\Bundle\Bundle</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">YourBundle</span> <span class="kd">extends</span> <span class="nc">Bundle</span> <span class="kd">implements</span> <span class="nc">PluginInterface</span>
+<span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="dependencyinjectionyourextensionphp">DependencyInjection/YourExtension.php</h3>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">namespace</span> <span class="nn">KimaiPlugin\YourBundle\DependencyInjection</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nc">Symfony\Component\Config\FileLocator</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Symfony\Component\DependencyInjection\ContainerBuilder</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Symfony\Component\DependencyInjection\Loader</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Symfony\Component\HttpKernel\DependencyInjection\Extension</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">YourExtension</span> <span class="kd">extends</span> <span class="nc">Extension</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">load</span><span class="p">(</span><span class="kt">array</span> <span class="nv">$configs</span><span class="p">,</span> <span class="kt">ContainerBuilder</span> <span class="nv">$container</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$loader</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Loader\YamlFileLoader</span><span class="p">(</span>
+            <span class="nv">$container</span><span class="p">,</span> 
+            <span class="k">new</span> <span class="nc">FileLocator</span><span class="p">(</span><span class="k">__DIR__</span> <span class="mf">.</span> <span class="s1">'/../Resources/config'</span><span class="p">)</span>
+        <span class="p">);</span>
+
+        <span class="nv">$loader</span><span class="o">-&gt;</span><span class="nf">load</span><span class="p">(</span><span class="s1">'services.yaml'</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="resourcesconfigservicesyaml">Resources/config/services.yaml</h3>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">services</span><span class="pi">:</span>
+    <span class="na">_defaults</span><span class="pi">:</span>
+        <span class="na">autowire</span><span class="pi">:</span> <span class="no">true</span>
+        <span class="na">autoconfigure</span><span class="pi">:</span> <span class="no">true</span>
+        <span class="na">public</span><span class="pi">:</span> <span class="no">false</span>
+        <span class="na">bind</span><span class="pi">:</span>
+
+    <span class="na">KimaiPlugin\YourBundle\</span><span class="pi">:</span>
+        <span class="na">resource</span><span class="pi">:</span> <span class="s1">'</span><span class="s">../../*'</span>
+        <span class="na">exclude</span><span class="pi">:</span> <span class="s1">'</span><span class="s">../../{Resources}'</span>
+</code></pre></div></div>
+
+<h3 id="composerjson">composer.json</h3>
+
+<p>Your plugin needs to ship a composer.json, even if it is not used for installation.
+Kimai will read values from it for extended information in the plugins admin panel.</p>
+
+<p>A minimal <code class="language-plaintext highlighter-rouge">composer.json</code> could look like this:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo/your-bundle"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A Kimai 2 demo plugin which does nothing"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"homepage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.kimai.org/"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kimai-plugin"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MIT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"authors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kevin Papst"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kpapst@gmx.net"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"homepage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.kimai.org"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"extra"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"kimai"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"require"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.3"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YourBundle"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">type</code> (kimai-plugin)is required for proper installation if composer is used.
+The <code class="language-plaintext highlighter-rouge">homepage</code> will be used for a backlink in the plugin admin panel. 
+The <code class="language-plaintext highlighter-rouge">version</code> will be shown in the plugin admin panel.</p>
+
+<p>The values in the <code class="language-plaintext highlighter-rouge">extra.kimai</code> section are used for:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">require</code> - the required (minimal) Kimai which is needed for this plugin</li>
+  <li><code class="language-plaintext highlighter-rouge">name</code> - the name of the plugin, used as target directory name of your bundle</li>
+</ul>
+
+<h2 id="data-storage">Data storage</h2>
+
+<p>When your plugin wants to store files, don’t use your plugin directory or concat the directory yourself, but 
+use the ServiceContainer parameter <code class="language-plaintext highlighter-rouge">%kimai.data_dir%</code>. This is currently pointing to <code class="language-plaintext highlighter-rouge">var/data/</code> and also protected 
+from the above-mentioned update problems via <a href="https://github.com/kimai/kimai/blob/main/.gitignore">.gitignore</a>.</p>
+
+<p>As this could change in the future, always inject the data directory instead of finding a place yourself:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">services</span><span class="pi">:</span>
+    <span class="na">KimaiPlugin\YourBundle\MyController</span><span class="pi">:</span>
+        <span class="na">arguments</span><span class="pi">:</span>
+            <span class="na">$dataDirectory</span><span class="pi">:</span> <span class="s2">"</span><span class="s">%kimai.data_dir%"</span>
+</code></pre></div></div>
+
+<p>There is another parameter called <code class="language-plaintext highlighter-rouge">%kimai.plugin_dir%</code>, which is pointing to the base directory of all plugins.</p>
+
+<h2 id="example-plugin">Example plugin</h2>
+
+<p>There is an <a href="https://github.com/kimai/DemoBundle">official demo bundle</a> which has many code examples for extension points.</p>
+
+<p>You can also have a look at the <a href="https://github.com/Keleo/CustomCSSBundle">CustomCSSBundle</a> which serves as bundle demo:</p>
+<ul>
+  <li>A bundle with an extension to load service definitions</li>
+  <li>Additional routes</li>
+  <li>An admin controller with form usage, flash messages and an additional view</li>
+  <li>EventSubscriber to extend the navigation</li>
+  <li>Translations</li>
+  <li>Data storage in <code class="language-plaintext highlighter-rouge">%kimai.data_dir%</code></li>
+</ul>
+
+<h2 id="list-your-plugin">List your plugin</h2>
+
+<p>If you created a plugin or any other kind of software around Kimai which you want to see listed in the Plugins, head over 
+to the <a href="/documentation/store.html">documentation</a> to find out how.</p>
+
+<h2 id="links">Links</h2>
+
+<ul>
+  <li>Check out the <a href="/store/">Plugins</a> to find out more free plugins for code demonstrations</li>
+  <li>Read the <a href="https://symfony.com/doc/current/bundles.html">Symfony bundle documentation</a> if this is your first time writing a Symfony bundle</li>
+</ul>
+
+
+
+
+                </div>
+                
+
+                
+            </div>
+        </div>
+
+    </div>
+</main>
+
+
+    <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
+        <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#plugin-management-install-uninstall--deactivate" class="nav-link">Plugin management (install, uninstall &amp; deactivate)</a></li><li class="nav-item"><a href="#kimai-plugins-vs-pure-symfony-bundles" class="nav-link">Kimai plugins vs. pure Symfony bundles</a></li><li class="nav-item"><a href="#directory-structure" class="nav-link">Directory structure</a><ul><li class="nav-item"><a href="#yourbundlephp" class="nav-link">YourBundle.php</a></li><li class="nav-item"><a href="#dependencyinjectionyourextensionphp" class="nav-link">DependencyInjection/YourExtension.php</a></li><li class="nav-item"><a href="#resourcesconfigservicesyaml" class="nav-link">Resources/config/services.yaml</a></li><li class="nav-item"><a href="#composerjson" class="nav-link">composer.json</a></li></ul></li><li class="nav-item"><a href="#data-storage" class="nav-link">Data storage</a></li><li class="nav-item"><a href="#example-plugin" class="nav-link">Example plugin</a></li><li class="nav-item"><a href="#list-your-plugin" class="nav-link">List your plugin</a></li><li class="nav-item"><a href="#links" class="nav-link">Links</a></li></ul>
+        
+    </aside>
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+
+</body>
+</html>

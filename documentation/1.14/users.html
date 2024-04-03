@@ -1,0 +1,894 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index,follow">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+    <title>Users – Kimai</title>
+    
+        <meta name="description" content="User, roles and the authentication, registration and security system in Kimai">
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kimai Time-Tracking">
+    <meta property="og:description" content="User, roles and the authentication, registration and security system in Kimai">
+    <meta property="og:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kimai Time-Tracking">
+    <meta name="twitter:site" content="@kimai_org">
+    <meta name="twitter:description" content="User, roles and the authentication, registration and security system in Kimai">
+    <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <link rel="canonical" href="https://www.kimai.org/documentation/users.html" />
+    <link rel="alternate" hreflang="en" href="https://www.kimai.org/documentation/1.14/users.html">
+    <link rel="alternate" hreflang="en" href="https://www.kimai.org/documentation/1.30.0/users.html">
+    <script src="/assets/build/theme.js"></script>
+    <link href="/assets/build/main.css" rel="stylesheet" />
+</head>
+<body class="">
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand bg-light border-bottom border-light shadow fixed-top" data-scroll-header>
+    <div class="container-fluid pe-lg-4">
+        <div class="d-flex align-items-center">
+            <a href="/documentation/" class="navbar-brand flex-shrink-0 py-1 py-lg-2">
+                <img src="/images/apple-touch-icon.png" width="47" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning">User manual</span>
+        </div>
+        <div class="d-flex align-items-center w-100">
+            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 9.75rem;">
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-manual.html" class="nav-link">
+                            <i class="bx bx-book opacity-70 fs-lg me-1"></i>
+                            User manual
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/cloud.html" class="nav-link">
+                            <i class="bx bxs-cloud opacity-70 fs-lg me-1"></i>
+                            Kimai-Cloud
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/developers.html" class="nav-link">
+                            <i class="bx bx-code opacity-70 fs-lg me-1"></i>
+                            Developer
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-on-premise.html" class="nav-link">
+                            <i class="bx bx-wrench opacity-70 fs-lg me-1"></i>
+                            Self-hosted
+                        </a>
+                    </li>
+                
+            </ul>
+            <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="form-check form-switch mode-switch pe-lg-1 ms-lg-auto" data-bs-toggle="mode">
+                <input type="checkbox" class="form-check-input" id="theme-mode">
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Light</label>
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Dark</label>
+            </div>
+        </div>
+    </div>
+</header>
+
+<aside data-bs-theme="dark">
+    <div id="componentsNav" class="offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100 bg-dark border-end-lg" style="width: 21rem; z-index: 1045;">
+        <div class="offcanvas-header d-none d-lg-flex justify-content-start">
+            <a href="/documentation/" class="navbar-brand text-dark d-none d-lg-flex py-0">
+                <img src="/images/apple-touch-icon.png" width="32" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning d-none d-lg-inline-block">User manual</span>
+        </div>
+        <div class="offcanvas-header d-block d-lg-none border-bottom">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <h5 class="d-lg-none mb-0">Menu</h5>
+                <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#componentsNav" aria-label="Close"></button>
+            </div>
+            <div class="list-group list-group-flush mx-n4">
+                
+                    
+                    
+                    <a href="/documentation/chapter-manual.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-book opacity-70 me-1"></i>
+                        User manual
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/cloud.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bxs-cloud opacity-70 me-1"></i>
+                        Kimai-Cloud
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/developers.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-code opacity-70 me-1"></i>
+                        Developer
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/chapter-on-premise.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-wrench opacity-70 me-1"></i>
+                        Self-hosted
+                    </a>
+                
+            </div>
+        </div>
+        <div class="offcanvas-body swiper scrollbar-hover overflow-hidden w-100 p-4" data-swiper-options='{
+          "direction": "vertical",
+          "slidesPerView": "auto",
+          "freeMode": true,
+          "scrollbar": {
+            "el": ".swiper-scrollbar"
+          },
+          "mousewheel": true
+        }'>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide h-auto">
+                    
+                        
+
+    
+    
+    <h3 class="fs-lg">Using Kimai</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/timesheet.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Timesheet
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/weekly-times.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Weekly working hours
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/calendar.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Calendar
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/invoices.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Invoices
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/export.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Export
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/reporting.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Reporting
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/customer.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Customer
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/project.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Projects
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/activity.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Activities
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/tags.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Tags
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/users.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4  active">
+                
+                Users
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/user-preferences.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                User preferences
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/permissions.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Roles & Permissions
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/teams.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Teams
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/configurations.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Settings
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/doctor.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Doctor
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/contract.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Working times
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/public-holiday.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Public holiday
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/absence.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Absence
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/dashboard.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Dashboard
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">Tips and Tricks</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/initial-setup.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Initial setup
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/rates.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Prices (rates)
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/billable.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Billable
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/pdf-templates.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                PDF templates
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/keyboard-shortcuts.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Keyboard shortcuts
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/i18n-am-pm.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Date and Time formats
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/duration-format.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Duration format
+                
+            </a>
+        
+    
+        
+    
+        
+            
+            
+            <a href="/documentation/homescreen.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Use Kimai as app
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/user-api.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Connecting via API
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">Additional features</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/plugin-custom-fields.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Custom fields
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-expenses.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Expenses
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-task-management.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Task management
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-custom-css.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Custom CSS
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-custom-content.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Custom content
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-translation.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Translation
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-invoice.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Invoice
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-import.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Importer
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-audit-trail.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Audit trail logs
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-contract.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Working contract
+                
+            </a>
+        
+    
+    </div>
+
+
+                        <div class="list-group list-group-flush pb-3 mb-4 mx-n4">
+                    
+                    <a href="/" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Home</a>
+                    <a href="/en/site-notice.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Site notice</a>
+                    <a href="/en/privacy-policy.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Privacy policy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-scrollbar end-0"></div>
+        </div>
+    </div>
+</aside>
+
+<main class="docs-container pt-5">
+    <div class="container-fluid px-xxl-5 px-lg-4 pt-4 pt-lg-5 pb-2 pb-lg-4">
+
+        <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 pt-4 mb-n3">
+            <div class="me-4">
+                <h1 class="pb-1">Users</h1>
+                
+                <p class="text-muted fs-lg mb-2">User, roles and the authentication, registration and security system in Kimai</p>
+                
+            </div>
+            
+
+
+
+
+    <div class="dropdown">
+        <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Older versions
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+            
+            <a class="dropdown-item" href="/documentation/1.30.0/users.html">Kimai 1.30.0</a>
+            
+            <a class="dropdown-item" href="/documentation/1.14/users.html">Kimai 1.14</a>
+            
+            <a class="dropdown-item" href="/documentation/users.html">2.13.0 (latest version)</a>
+        </div>
+    </div>
+
+
+        </div>
+
+        <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+            <div>
+                
+                <div id="documentation-content">
+                    
+
+
+
+<div class="alert alert-danger" role="alert">
+    
+You are viewing an older version of this documentation page. A newer version is available <a href="/documentation/users.html">here</a>.
+
+</div>
+
+
+
+<h2 id="permissions">Permissions</h2>
+
+<p>The permission system is configurable through user roles. Find further information in the <a href="/documentation/permissions.html">permissions</a> chapter.</p>
+
+<h2 id="teams">Teams</h2>
+
+<p>A user can be part of a team, which can limit/extend the visibility of data. See the <a href="/documentation/teams.html">team documentation</a> to find out more.</p>
+
+<h2 id="avatars">Avatars</h2>
+
+<p>There are three type of user avatars:</p>
+
+<ul>
+  <li>Self chosen: user configures an avatar URL in its profile (e.g. to Github, Google, Youtube, Dropbox, Gravatar and many other sources. Make sure to explain the privacy implications when using this method.)</li>
+  <li>Auto generated avatar: colored background + username initials (required dependencies: <code class="language-plaintext highlighter-rouge">gd</code> extension with freetype-support + write permission on avatar directory)</li>
+  <li>Fallback avatar: a static icon, which will be used if the user didn’t choose a custom icon and the avatar generation failed</li>
+</ul>
+
+<h2 id="roles">Roles</h2>
+
+<p>There are four pre-defined roles in Kimai, which define the ACLs/permissions.</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Role name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ROLE_USER</td>
+      <td>Normal user can track their working times, see basic reports and change their own preferences</td>
+    </tr>
+    <tr>
+      <td>ROLE_TEAMLEAD</td>
+      <td>Manages <a href="/documentation/teams.html">teams</a> with permissions for invoices and access to all <strong>team</strong> timesheets</td>
+    </tr>
+    <tr>
+      <td>ROLE_ADMIN</td>
+      <td>Can manage all content and timesheet related data, but lack user administration and system privileges</td>
+    </tr>
+    <tr>
+      <td>ROLE_SUPER_ADMIN</td>
+      <td>Has permissions to manage everything in Kimai, from content to timesheets to users, plugins and system configurations</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="alert alert-success" role="alert">
+    Every user is automatically member of the ROLE_USER, this behaviour cannot be changed.
+</div>
+
+<div class="alert alert-warning" role="alert">
+    ROLE_ADMIN and ROLE_SUPER_ADMIN are special roles and treated different internally: they are not bound to team permissions and can see all content, no matter what their team assignments looks like.
+</div>
+
+<p>The applied permissions of your Kimai installation can be seen via the user administration, 
+e.g. <a href="https://demo.kimai.org/en/admin/permissions">https://demo.kimai.org/en/admin/permissions</a>.</p>
+
+<h3 id="creating-new-roles">Creating new roles</h3>
+
+<p>If the pre-defined roles are not sufficient for your use-case and you need more roles, you can create new ones.</p>
+
+<div class="alert alert-warning" role="alert">
+    Allowed character are: `A-Z` and `_`. If you use different character, you might experience strange bugs.
+</div>
+
+<p>Every user with the <a href="/documentation/permissions.html">permission</a> <code class="language-plaintext highlighter-rouge">role_permissions</code> can create new user roles 
+through the user administration. Navigate to the user role permission screen and check the pages action.</p>
+
+<p>There is a button that will open a new modal, to enter a role name. This new role will show up in the table after saving.</p>
+
+<p>By clicking the <code class="language-plaintext highlighter-rouge">Yes</code> and <code class="language-plaintext highlighter-rouge">No</code> labels in the table, you can toggle all permissions.</p>
+
+<blockquote>
+  <p>This new screen was added with Kimai 1.6. 
+If you created new roles through <code class="language-plaintext highlighter-rouge">local.yaml</code> before, please remove them and use the admin screen exclusively.</p>
+</blockquote>
+
+<h2 id="filter-and-search">Filter and search</h2>
+
+<p>The search drop-down supports filtering by the fields:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">role</code></li>
+  <li><code class="language-plaintext highlighter-rouge">state</code> (active, deactivated, all)</li>
+</ul>
+
+<p>Besides these filters, you can query for a free search term, which will be searched in the fields:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">username</code></li>
+  <li><code class="language-plaintext highlighter-rouge">alias</code></li>
+  <li><code class="language-plaintext highlighter-rouge">title</code></li>
+  <li><code class="language-plaintext highlighter-rouge">email</code></li>
+</ul>
+
+<p>Additionally you can filter for <a href="/documentation/user-preferences.html">user preferences</a> by using a search phrase like <code class="language-plaintext highlighter-rouge">location:homeoffice</code>.
+This would find all users with the custom field <code class="language-plaintext highlighter-rouge">location</code> matching the term <code class="language-plaintext highlighter-rouge">homeoffice</code>.</p>
+
+<p>The search terms will be found within the full value, so searching for <code class="language-plaintext highlighter-rouge">office</code> would find:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">I love working in my office</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Office</code></li>
+  <li><code class="language-plaintext highlighter-rouge">This office is beautiful</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Our offices are very noisy</code></li>
+</ul>
+
+<p>You can mix the search term and use multiple meta-field queries:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">location:homeoffice hello world</code> - find all users matching the search term <code class="language-plaintext highlighter-rouge">hello world</code> with the user-preference <code class="language-plaintext highlighter-rouge">location</code> matching the term <code class="language-plaintext highlighter-rouge">homeoffice</code></li>
+  <li><code class="language-plaintext highlighter-rouge">location:homeoffice contract:foo foo</code> - find all users matching the search term <code class="language-plaintext highlighter-rouge">foo</code> with the user-preference combination: <code class="language-plaintext highlighter-rouge">location</code> matching the term <code class="language-plaintext highlighter-rouge">homeoffice</code> and <code class="language-plaintext highlighter-rouge">contract</code> matching the term <code class="language-plaintext highlighter-rouge">foo</code></li>
+  <li><code class="language-plaintext highlighter-rouge">location:homeoffice contract:foo</code> - find all users with the user-preference combination: <code class="language-plaintext highlighter-rouge">location</code> matching the term <code class="language-plaintext highlighter-rouge">homeoffice</code> and <code class="language-plaintext highlighter-rouge">contract</code> matching the term <code class="language-plaintext highlighter-rouge">foo</code></li>
+</ul>
+
+<h2 id="user-registration">User registration</h2>
+
+<p>User registration with instant approval is activated by default, so users can register and will be able to login and start time-tracking instantly.</p>
+
+<p>If you want your new users to use <a href="/documentation/emails.html">email verification</a> add this to your <code class="language-plaintext highlighter-rouge">local.yaml</code>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">fos_user</span><span class="pi">:</span>
+    <span class="na">registration</span><span class="pi">:</span>
+        <span class="na">confirmation</span><span class="pi">:</span>
+            <span class="na">enabled</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>If you want to disable the user registration, add this your <code class="language-plaintext highlighter-rouge">local.yaml</code>:</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">kimai</span><span class="pi">:</span>
+    <span class="na">user</span><span class="pi">:</span>
+        <span class="na">registration</span><span class="pi">:</span> <span class="no">false</span>
+</code></pre></div></div>
+
+<h2 id="password-reset">Password reset</h2>
+
+<p>The reset password function is enabled by default, but you need to activate <a href="/documentation/emails.html">email</a> support if you want to use it.</p>
+
+<p>If you want to disable the password reset, add this your <code class="language-plaintext highlighter-rouge">local.yaml</code>:</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">kimai</span><span class="pi">:</span>
+    <span class="na">user</span><span class="pi">:</span>
+        <span class="na">password_reset</span><span class="pi">:</span> <span class="no">false</span>
+</code></pre></div></div>
+
+<p>If you want to configure the behaviour (like the allowed time between multiple retries) then configure the settings:</p>
+
+<ul>
+  <li>in <code class="language-plaintext highlighter-rouge">config/packages/fos_user.yaml</code> the key below <code class="language-plaintext highlighter-rouge">fos_user.registration.resetting</code> (see <a href="https://symfony.com/doc/current/bundles/FOSUserBundle/configuration_reference.html">documentation</a>)</li>
+  <li>the values <code class="language-plaintext highlighter-rouge">retry_ttl</code> and <code class="language-plaintext highlighter-rouge">token_ttl</code> are configured in seconds (7220 = 2 hours)</li>
+</ul>
+
+<h2 id="login">Login</h2>
+
+<ul>
+  <li>User can login with username or email</li>
+  <li>If you activate the <code class="language-plaintext highlighter-rouge">Remember me</code> option, you can use use the most common functions within the next days without a new login</li>
+</ul>
+
+<p>Kimai uses the FOSUserBundle for security related tasks like user management. 
+Its configuration can be found in <a href="https://github.com/kimai/kimai/blob/main/config/packages/fos_user.yaml">fos_user.yaml</a>.</p>
+
+<h3 id="remember-me-login">Remember me login</h3>
+
+<p>If you have chosen to login with the <code class="language-plaintext highlighter-rouge">Remember me</code> option, your login will be extended to one week (default value).
+After coming back and being remembered you have access to all the following features:</p>
+
+<ul>
+  <li>view your own timesheet</li>
+  <li>start and stop new records</li>
+  <li>edit existing records</li>
+</ul>
+
+<p>If you are an administrator, you will see all your allowed options in the menu, but will be redirected to the login 
+form when you try to access them. This is a security feature to prevent abuse in case you forgot to logout in public 
+environments.</p>
+
+<p>The default period for the <code class="language-plaintext highlighter-rouge">Remember me</code> option can be changed in the config file <a href="https://github.com/kimai/kimai/blob/main/config/packages/security.yaml">security.yaml</a>.</p>
+
+<h3 id="session-lifetime">Session lifetime</h3>
+
+<p>By default, Kimai uses the PHP session lifetime configured on your server (normally in <code class="language-plaintext highlighter-rouge">php.ini</code>).</p>
+
+<p>If you want to change the session lifetime (eg. to prevent automatic logout during the workday or to prevent CSRF errors), 
+you can either adjust the settings for PHP directly (<a href="https://www.php.net/manual/en/session.configuration.php">see PHP docs</a>) 
+or you can explicitly set it for Kimai.</p>
+
+<p>You need to add the following settings to your <a href="/documentation/local-yaml.html">local.yaml</a>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">framework</span><span class="pi">:</span>
+    <span class="na">session</span><span class="pi">:</span>
+        <span class="na">gc_maxlifetime</span><span class="pi">:</span> <span class="m">3600</span>
+        <span class="na">cookie_lifetime</span><span class="pi">:</span> <span class="m">3600</span>
+</code></pre></div></div>
+
+<p>The values above (here <code class="language-plaintext highlighter-rouge">3600</code>) are seconds, the above configuration would be rather strict and automatically logout the user after 1 hour.</p>
+
+<p>Another example would be:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">framework</span><span class="pi">:</span>
+    <span class="na">session</span><span class="pi">:</span>
+        <span class="na">gc_maxlifetime</span><span class="pi">:</span> <span class="m">36000</span>
+        <span class="na">cookie_lifetime</span><span class="pi">:</span> <span class="s">~</span>
+</code></pre></div></div>
+
+<p>Explanation: the session should last 10 hours with a session cookie that is deleted upon browser restart (every browser restart forces a new login).</p>
+
+<p>See also:</p>
+<ul>
+  <li><a href="https://symfony.com/doc/current/reference/configuration/framework.html#session">Symfony documentation</a></li>
+  <li><a href="https://www.php.net/manual/en/session.configuration.php">PHP documentation</a></li>
+</ul>
+
+<h3 id="admin-password-forgotten">Admin password forgotten</h3>
+
+<p>If you lost your admin password and don’t have another admin account to reset it and deactivated the “forgot password” function, 
+you can use the following console command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/console fos:user:change-password
+</code></pre></div></div>
+
+
+
+                </div>
+                
+
+                
+            </div>
+        </div>
+
+    </div>
+</main>
+
+
+    <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
+        <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li><li class="nav-item"><a href="#teams" class="nav-link">Teams</a></li><li class="nav-item"><a href="#avatars" class="nav-link">Avatars</a></li><li class="nav-item"><a href="#roles" class="nav-link">Roles</a><ul><li class="nav-item"><a href="#creating-new-roles" class="nav-link">Creating new roles</a></li></ul></li><li class="nav-item"><a href="#filter-and-search" class="nav-link">Filter and search</a></li><li class="nav-item"><a href="#user-registration" class="nav-link">User registration</a></li><li class="nav-item"><a href="#password-reset" class="nav-link">Password reset</a></li><li class="nav-item"><a href="#login" class="nav-link">Login</a><ul><li class="nav-item"><a href="#remember-me-login" class="nav-link">Remember me login</a></li><li class="nav-item"><a href="#session-lifetime" class="nav-link">Session lifetime</a></li><li class="nav-item"><a href="#admin-password-forgotten" class="nav-link">Admin password forgotten</a></li></ul></li></ul>
+        
+    </aside>
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+
+</body>
+</html>

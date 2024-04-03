@@ -1,0 +1,1441 @@
+<!doctype html>
+<html lang="pl" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index,follow">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+    <title>Tryb kiosku z obsługą kodów kreskowych i RFID – Kimai</title>
+    
+        <meta name="description" content="Śledzenie czasu obecności w środowisku, w którym użytkownik nie ma dostępu do Kimai (np. w magazynie), poprzez skanowanie kodów kreskowych lub RFID w cel...">
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
+    <meta property="og:locale" content="pl">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kimai Time-Tracking">
+    <meta property="og:description" content="Śledzenie czasu obecności w środowisku, w którym użytkownik nie ma dostępu do Kimai (np. w magazynie), poprzez skanowanie kodów kreskowych lub RFID w cel...">
+    <meta property="og:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kimai Time-Tracking">
+    <meta name="twitter:site" content="@kimai_org">
+    <meta name="twitter:description" content="Śledzenie czasu obecności w środowisku, w którym użytkownik nie ma dostępu do Kimai (np. w magazynie), poprzez skanowanie kodów kreskowych lub RFID w cel...">
+    <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <link rel="alternate" hreflang="cs" href="https://www.kimai.org/cs/store/keleo-kiosk-barcode-bundle.html">
+    <link rel="alternate" hreflang="de" href="https://www.kimai.org/de/store/keleo-kiosk-barcode-bundle.html">
+    <link rel="alternate" hreflang="es" href="https://www.kimai.org/es/store/keleo-kiosk-barcode-bundle.html">
+    <link rel="alternate" hreflang="fr" href="https://www.kimai.org/fr/store/keleo-kiosk-barcode-bundle.html">
+    <link rel="alternate" hreflang="he" href="https://www.kimai.org/he/store/keleo-kiosk-barcode-bundle.html">
+    <link rel="alternate" hreflang="hr" href="https://www.kimai.org/hr/store/keleo-kiosk-barcode-bundle.html">
+    <link rel="alternate" hreflang="it" href="https://www.kimai.org/it/store/keleo-kiosk-barcode-bundle.html">
+    <link rel="alternate" hreflang="en" href="https://www.kimai.org/store/kiosk-barcode-bundle.html">
+    <link rel="alternate" hreflang="nl" href="https://www.kimai.org/nl/store/keleo-kiosk-barcode-bundle.html">
+    <link rel="alternate" hreflang="pl" href="https://www.kimai.org/pl/store/keleo-kiosk-barcode-bundle.html">
+    <link rel="alternate" hreflang="pt" href="https://www.kimai.org/pt/store/keleo-kiosk-barcode-bundle.html">
+    <link rel="alternate" hreflang="pt_BR" href="https://www.kimai.org/pt_BR/store/keleo-kiosk-barcode-bundle.html">
+    <link rel="alternate" hreflang="ru" href="https://www.kimai.org/ru/store/keleo-kiosk-barcode-bundle.html">
+    <link rel="alternate" hreflang="sk" href="https://www.kimai.org/sk/store/keleo-kiosk-barcode-bundle.html">
+    <link rel="alternate" hreflang="sv" href="https://www.kimai.org/sv/store/keleo-kiosk-barcode-bundle.html">
+    <link rel="alternate" hreflang="uk" href="https://www.kimai.org/uk/store/keleo-kiosk-barcode-bundle.html">
+    <link rel="alternate" hreflang="zh_Hans" href="https://www.kimai.org/zh_Hans/store/keleo-kiosk-barcode-bundle.html">
+    <script src="/assets/build/theme.js"></script>
+    <link href="/assets/build/main.css" rel="stylesheet" />
+</head>
+<body class="">
+
+<main class="page-wrapper">
+    
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand-lg   bg-light navbar-sticky">
+    <div class="container px-3">
+        <a href="/pl/" class="navbar-brand pe-3">
+        <img src="/images/kimai_logo.png" style="height:36px" alt="Kimai - Otwarte oprogramowanie do śledzenia czasu"> Kimai
+        </a>
+        <div id="navbarNav" class="offcanvas offcanvas-end">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title">Menu</h5>
+                <button type="button" class="btn-close " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    
+                    <li class="nav-item">
+                        <a href="/pl/demo.html" class="nav-link">Demo</a>
+                    </li>
+                    
+                    <li class="nav-item active">
+                        <a href="/pl/store/" class="nav-link">Sklep</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/pl/blog/" class="nav-link">Aktualności</a>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Dokumentacja</a>
+                        <ul class="dropdown-menu">
+                            
+                            <li><a href="/documentation/chapter-manual.html" class="dropdown-item">Podręcznik użytkownika</a></li>
+                            
+                            <li><a href="/documentation/cloud.html" class="dropdown-item">Kimai-Cloud</a></li>
+                            
+                            <li><a href="/documentation/chapter-on-premise.html" class="dropdown-item">Hostowanie własne</a></li>
+                            
+                            <li><a href="/documentation/developers.html" class="dropdown-item">Tworzenie wtyczek</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="pe-lg-1 ms-auto me-2">
+            <a href="/pl/download.html" class="btn rounded-pill btn-sm fs-sm d-none d-md-inline-flex me-2 btn-outline-primary">Pobierz</a>
+            
+
+
+
+
+
+<a href="https://www.kimai.cloud/auth/registration" class="btn btn-success rounded-pill btn-sm fs-sm d-inline-flex">Rozpocznij za darmo</a>
+
+        </div>
+        <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</header>
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="jarallax bg-dark pt-2 pt-lg-3 pb-lg-5" data-jarallax data-speed="0.35" data-bs-theme="dark">
+    <span class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-70"></span>
+    <div class="container position-relative zindex-5">
+
+        <div class="d-flex pt-3 pb-4 py-sm-4 pt-lg-5">
+        
+            
+        
+        </div>
+
+        <h1>Tryb kiosku z obsługą kodów kreskowych i RFID</h1>
+        <p class="fs-lg text-light opacity-70">Śledzenie czasu obecności w środowisku, w którym użytkownik nie ma dostępu do Kimai (np. w magazynie), poprzez skanowanie kodów kreskowych lub RFID w celu rozpoczęcia i zakończenia arkuszy czasowych.</p>
+
+        
+        <div class="d-flex align-items-center">
+            <img src="/images/kevin-papst.jpeg" class="rounded-circle" width="60" alt="Kevin Papst">
+            <div class="ps-3">
+                <div class="text-light opacity-80 mb-1">Oferowane przez</div>
+                <h6>Kevin Papst</h6>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container pt-5 mt-2 mt-lg-4 mt-xl-5">
+    <div class="row">
+
+        <!-- Sidebar (Course summary) -->
+        <aside class="col-lg-4 col-md-5 offset-xl-1 order-md-2 mb-5">
+            <div style="margin-top: -96px;"></div>
+            <div class="position-sticky top-0 pt-5">
+                <div class="pt-5 mt-md-3">
+                    <div class="card shadow-sm p-sm-3">
+                        <div class="card-body">
+                            
+
+                            <div class="h2 d-flex align-items-center mb-4">
+                                <span class="text-nowrap">199 €</span>
+                                <small class="text-muted fs-xl fw-normal ms-2">
+                                    bez VAT (na rok)
+                                </small>
+                            </div>
+
+                            
+                                <a class="btn btn-primary btn-lg shadow-primary" href="#" data-bs-toggle="modal" data-bs-target="#modal-buy"><i class="bx bx-cart me-2"></i> Kup teraz</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Content -->
+        <div class="col-xl-7 col-lg-8 col-md-7 order-md-1 mb-5">
+            <ul class="nav nav-tabs-alt" role="tablist">
+                <li class="nav-item">
+                    <a href="#store-info" class="nav-link active" data-bs-toggle="tab" role="tab">
+                        <i class="bx bx-home-alt opacity-70 me-2"></i>
+                        Opis
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#store-installation" class="nav-link" data-bs-toggle="tab" role="tab">
+                        <i class="bx bx-profile opacity-70 me-2"></i>
+                        Instalacja
+                    </a>
+                </li>
+                
+                
+                <li class="nav-item">
+                    <a href="#store-compatibility" class="nav-link" data-bs-toggle="tab" role="tab">
+                        <i class="bx bx-profile opacity-70 me-2"></i>
+                        Kompatybilność
+                    </a>
+                </li>
+                
+                
+                <li class="nav-item">
+                    <a href="#store-demo" class="nav-link" data-bs-toggle="tab" role="tab">
+                        <i class="bx bx-profile opacity-70 me-2"></i>
+                        Wypróbuj
+                    </a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="store-info" role="tabpanel">
+                    
+
+                    <p>A Kimai plugin, which allows using barcodes for <code class="language-plaintext highlighter-rouge">punch-in</code> and <code class="language-plaintext highlighter-rouge">punch-out</code> time tracking with Kimai.
+You can use it with a barcode scanner, with a web-camera, with a RFID reader or an NFC reader.</p>
+
+<p>It also supports a “freestyle” mode, which allows to enter any free configurable code (up to 120 characters), 
+so you can also use other devices for starting/stopping:</p>
+<ul>
+  <li>an electronic USB number-pad</li>
+  <li>an RFID scanner that acts as keyboard</li>
+  <li>an Android device with <a href="https://developer.mozilla.org/en-US/docs/Web/API/NDEFReader">Web NFC support</a> (only Chrome browser)</li>
+</ul>
+
+<p>This bundle is the solution for you, if you want to use Kimai in a kiosk mode, where users register their
+attendance time through punch-in (coming) and punch-out (leaving) mode.</p>
+
+<p>It could be as simple as:</p>
+<ul>
+  <li>Hand out NFC or RFID tokens to your employees</li>
+  <li>Mount a tablet to the wall in your entrance room</li>
+  <li>Let your users check-in &amp; check-out when entering the building by scanning their tokens</li>
+</ul>
+
+<p>You can test it in the <a href="https://www.kimai.org/demo/">“Plugins” demo</a>.</p>
+
+<h2 id="features">Features</h2>
+
+<ul>
+  <li>Start/Stop work with
+    <ul>
+      <li>Barcode scanner (via device camera, only works via HTTPS)</li>
+      <li>Barcode scanner (via USB or Bluetooth)</li>
+      <li>RFID scanner (via USB or Bluetooth)</li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/NDEFReader">Web NFC</a></li>
+    </ul>
+  </li>
+  <li>Upon starting/stopping a record via this plugin, the user will see a short overview screen with the entries of the current week (including some statistics)</li>
+  <li>New user profile screen for the “codes”
+    <ul>
+      <li>Display all codes for user</li>
+      <li>Generate a random code (automatically done if none is existing yet for the active code-type)</li>
+      <li>Re-use existing code for user by entering (or scanning) it manually</li>
+    </ul>
+  </li>
+  <li>User specific settings to configured allowed start and end working time (user can only clock in between these times)</li>
+  <li>Supports the following 1D barcodes:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">Code 128</code></li>
+      <li><code class="language-plaintext highlighter-rouge">Code 39</code></li>
+      <li>
+<code class="language-plaintext highlighter-rouge">UPC-A</code> (scanner needs to transmit check digit)</li>
+      <li><code class="language-plaintext highlighter-rouge">Code 2 of 5</code></li>
+      <li><code class="language-plaintext highlighter-rouge">Code 2 of 5 interleaved</code></li>
+      <li>
+<code class="language-plaintext highlighter-rouge">Codabar</code> (scanner needs to transmit start &amp; stop digits)</li>
+    </ul>
+  </li>
+  <li>Optional: show active / inactive users in login screen</li>
+  <li>Many CSS classes to customize the look with <a href="/store/keleo-css-custom-bundle.html">Custom CSS Bundle</a>
+</li>
+</ul>
+
+<p>You need to configure <strong>a non-global activity</strong> for starting the record via this plugin. 
+This will be used for every recorded timesheet that is created using the kiosk mode.</p>
+
+<h3 id="hardware">Hardware</h3>
+
+<p>This is NOT a hardware recommendation, but more an idea for possible use-cases.</p>
+
+<p>I tried the linked products and even though all scanner are rather cheap, they work without problems.</p>
+
+<ul>
+  <li>
+<a href="https://amzn.to/2Ye8LeK">Raspberry PI</a> setup with <a href="https://amzn.to/321jg6k">touch screen</a> (eg. for wall mount)</li>
+  <li>
+<a href="https://amzn.to/3aM5yby">RFID scanner</a> by Neuftech (desktop version)</li>
+  <li>
+<a href="https://amzn.to/3hfwDpK">RFID scanner</a> by KKMoon (desktop version)</li>
+  <li>
+<a href="https://amzn.to/3g6HzEU">Barcode scanner</a> which can also scan codes from mobile phones (desktop version)</li>
+  <li>
+<a href="https://amzn.to/2Q9KWAy">Barcode scanner</a> classic hand-held version</li>
+</ul>
+
+<p>The above are affiliate links for Amazon (germany) where I bought them myself.</p>
+
+<h2 id="configuration">Configuration</h2>
+
+<p>You have to configure the bundle before you can use it - you reach the configuration via</p>
+<ul>
+  <li>the <code class="language-plaintext highlighter-rouge">Plugin</code> screen (<code class="language-plaintext highlighter-rouge">Preferences</code> in action dropdown behind the plugin)</li>
+  <li>the Kiosk administration (cogs icon in the upper right)</li>
+  <li>the System configuration (<code class="language-plaintext highlighter-rouge">Kiosk &amp; Barcode</code> section)</li>
+</ul>
+
+<p>The following configurations are available:</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Configuration</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Login mode</code></td>
+      <td>whether to use camera or usb mode</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Code format</code></td>
+      <td>you have to decide which code format you want to use</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Barcode includes readable code</code></td>
+      <td>whether the barcode in the user profile will include the human readable code</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Duration to display confirmation dialog (in seconds)</code></td>
+      <td>how long the start/stop screens will be shown after a successful scan</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Activity</code></td>
+      <td>the non-global activity that will be used to track the times</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="permissions">Permissions</h2>
+
+<p>This bundle introduces new permissions, which limit access to certain functions:</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Permission Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">kiosk_admin</code></td>
+      <td>whether the current user can see the Kiosk administration and assign codes</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">kiosk_own_profile</code></td>
+      <td>configure codes and user specific kiosk settings (eg. start and end time) for own account</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">kiosk_other_profile</code></td>
+      <td>configure codes and user specific kiosk settings (eg. start and end time) for other accounts</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>By default, these are granted to each user with the role <code class="language-plaintext highlighter-rouge">ROLE_SUPER_ADMIN</code>.</p>
+
+<div class="alert d-flex alert-info" role="alert">
+    <i class="bx bx-fas fa-exclamation lead me-3"></i>
+    <div>
+        
+Read how to assign these permissions to your user roles in the <a href="/documentation/permissions.html">permission documentation</a>.
+
+    </div>
+</div>
+
+<h2 id="licenses">Licenses</h2>
+
+<p>The following libraries are used and shipped with this plugin:</p>
+
+<ul>
+  <li>Barcode scanning: https://github.com/ericblade/quagga2 (Version: 0.0.18, License: MIT)</li>
+  <li>Barcode generation: https://github.com/metafloor/bwip-js (Version: 2.0.6, License: MIT)</li>
+</ul>
+
+
+
+                    
+                        <h3 id="changelog">Changelog</h3>
+                        <pre class="p-2">## Version 2.8.0
+
+Compatibility: requires minimum Kimai 2.11.0
+
+- Added: system configuration `kiosk.enabled` to disable Kiosk via local.yaml
+- Added: allow to set NFC code in edit screen via WebNFC
+- Changed: support attribute caching in Voter
+- Changed: simplified buttons in users kiosk profile
+
+## Version 2.7.0
+
+Compatibility: requires minimum Kimai 2.11.0
+
+- Added: show kiosk codes as user profile tab
+- Added: print barcode on click to the image
+- Changed: removed `barcode_own_profile` and `barcode_other_profile` permissions, replaced by `kiosk_own_profile` and `kiosk_other_profile`
+
+## Version 2.6.0
+
+Compatibility: requires minimum Kimai 2.11.0
+
+- Changed: CSS files and language handling, required for Kimai 2.11.0
+- Changed: Replaced deprecated RestRoute attribute with SF native one
+
+## Version 2.5.0
+
+Compatibility: requires minimum Kimai 2.1.0
+
+- Use annotation type for routes
+
+## Version 2.4.1
+
+Compatibility: requires minimum Kimai 2.0.35
+
+- Adjusted internal API usage to prevent calls to deprecated code
+
+## Version 2.4.0
+
+Compatibility: requires minimum Kimai 2.0.33
+
+- Fixed: possible pagination issues
+
+## Version 2.3.1
+
+Compatibility: requires minimum Kimai 2.0.29
+
+- Fixed: upgraded quagga from 0.0.18 to 1.8.2
+- Fixed: upgraded bwip from 2.0.6 to 3.0.1
+
+## Version 2.3.0
+
+Compatibility: requires minimum Kimai 2.0.29
+
+- Added: use language of the current user to render the welcome screen
+- Added: use timezone of the current user to display the time
+
+## Version 2.2.1
+
+Compatibility: requires minimum Kimai 2.0.20
+
+- Fixed: compatibility with Kimai 2.0.20 and Tabler Beta 19
+
+## Version 2.2.0
+
+Compatibility: requires minimum Kimai 2.0
+
+- Added: Support for [Web NFC](https://developer.mozilla.org/en-US/docs/Web/API/NDEFReader) in freestyle mode
+- Added: upgrade item actions to use v2 API
+
+## Version 2.1.0
+
+Compatibility: requires minimum Kimai 2.0
+
+- Added: detect HTTP and include hint in error message, that webcam can only be accessed via HTTPS
+- Added: Allow to manually select camera by user
+- Added: Configuration if user may select the camera
+- Added: Store used device ID in cookie
+- Added: Configuration for input field placeholder
+- Changed: Added and changed HTML IDs for better "Custom CSS" experience
+- Fixed: disappearing error message
+
+## Version 2.0.2
+
+Compatibility: requires minimum Kimai 2.0
+
+- Fixed: Do not auto-calculate new Kiosk code, to allow removing the last code from a user
+
+## Version 2.0.1
+
+Compatibility: requires minimum Kimai 2.0
+
+- Fixed: Menu-Subscriber priority (missing in "Favorites" menu)
+
+## Version 2.0
+
+Compatibility: requires minimum Kimai 2.0
+
+- Fixed: compatibility with Kimai 2.0
+- BC break: Changed API URLs:
+    - `/api/kiosks/kiosks` to `/api/kiosk/codes`
+    - `/api/kiosks/kiosks/{id}` to `/api/kiosk/codes/{id}`
+
+### Version 1.12
+
+Compatibility: requires minimum Kimai 1.15
+
+- Added: missing translation for "Code"
+
+### Version 1.11
+
+Compatibility: requires minimum Kimai 1.15
+
+- Added: support **multiple codes per user**
+- Added: delete single code
+- Added: edit code with activity
+
+### Version 1.10
+
+Compatibility: requires minimum Kimai 1.15
+
+- Added: reload scanner page every 14 minutes to prevent CSRF token / session issues (PHP default session timeout is 14 minutes)
+- Added: set an **activity per user and code**, which allows to overwrite the global configured code
+- Added: new setting to prevent stopping of non-kiosk activities
+- Added: edit existing codes
+
+## Version 1.9
+
+Compatibility: requires minimum Kimai 1.15
+
+- Added: a new configuration to prevent page reloads after login (activated by default)
+
+## Version 1.8
+
+Compatibility: requires minimum Kimai 1.15
+
+- Added: API functions to load available codes (list of all codes only available to user with permission `kiosk_admin`)
+- Fixed: do not display codes for disabled users
+- Fixed: definitions for new Kimai version
+
+## Version 1.7
+
+Compatibility: requires minimum Kimai 1.14
+
+- Added: beep (login) and boop (logout) sounds (off by default)
+
+## Version 1.6
+
+Compatibility: requires minimum Kimai 1.11
+
+- Added: allow CSS customization via event
+- Added: the following CSS classes, for building selectors:
+    - `kiosk-login`: the kiosk login screen with the code input/scanner
+    - `kiosk-login-status`: status page (started and stopped)
+    - `kiosk-started`: status page after record has been started (login)
+    - `kiosk-stopped`: status page after record has been stopped (logout)
+    - `kiosk-users`: list of active and inactive users with avatars (features must be activated)
+    - Example: hide the logo on login and logout page via Custom CSS bundle:
+    ```css
+    .kiosk-login-status .login-logo { display:none; }
+    .kiosk-login-status .login-box-body { margin-top: 50px; }
+    ``` 
+- Added: the following new configurations
+    - `hide logo`: hide logo on status pages (login and logout)
+    - `hide code`: turns the code input field into a password field
+- Added: a new configuration to show active users in login screen
+- Added: a new configuration to show inactive users in login screen
+
+## Version 1.5
+
+Compatibility: requires minimum Kimai 1.11
+
+- Added: Configuration to activate IP address logging when starting a new entry
+- Added: Simplify installation (assets will be installed automatically)
+- Fixed: Composer 2 compatibility
+
+## Version 1.4
+
+Compatibility: requires minimum Kimai 1.10
+
+- Added "Freestyle" code format, which can be used for example:
+    - with a simple keyboard (eg. door-lock)
+    - RFID reader which act as keyboard (like barcode scanners)
+    - see Hardware section in [README.md](README.md)
+- Added new `kiosk_admin` permission (by default assigned to Super-Admins)
+- Added Kiosk Admin page showing all users with attached codes (needs `kiosk_admin` permission)
+- Prevent invalid time configuration in user-preferences
+- Show all configured codes on user screen (highlight active type)
+
+## Version 1.3
+
+- Added allowed start and end times for each user (new permissions `kiosk_own_profile` and `kiosk_other_profile`)
+
+## Version 1.2
+
+- Fixed timezone issue
+
+## Version 1.1
+
+- Fixed configuration problem, removed project setting
+
+## Version 1.0
+
+- Initial release
+</pre>
+                    
+                </div>
+
+                
+                <div class="tab-pane fade" id="store-installation" role="tabpanel">
+                    <h2 id="installation">Instalacja</h2>
+                    
+    
+    <h3>Skopiuj pliki</h3>
+
+    <p>
+        Extract the ZIP file and upload the included directory and all files to your Kimai installation to the new directory:
+    </p>
+
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">var/plugins/KioskBundle/</code></pre></figure>
+
+
+    
+
+    <p>The file structure needs to look like this afterwards:</p>
+
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">var/plugins/
+├── KioskBundle
+│   ├── KioskBundle.php
+|   └ ... more files and directories follow here ...</code></pre></figure>
+
+
+    <h3>Wyczyść pamięć podręczną</h3>
+
+    <p>
+        After uploading the files, Kimai needs to know about the new plugin. It will be found once the <a href="/documentation/updates.html">cache was re-built</a>.
+        Call these commands from the Kimai directory:
+    </p>
+
+    <div class="row row-cards row-deck">
+    <div class="col-md-12">
+        <div class="card mb-3">
+            <div class="card-body">
+                <h4 class="card-title">How to reload Kimai cache</h4>
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">bin/console kimai:reload --env=prod</code></pre></figure>
+
+
+                <p>It is not advised, but in case the above command fails you could try:</p>
+
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">rm -r var/cache/prod/*</code></pre></figure>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <p>You might have to set file permissions afterwards:</p>
+
+    <div class="row row-cards row-deck">
+    <div class="col-md-12">
+        <div class="card mb-3">
+            <div class="card-status bg-info"></div>
+            <div class="card-body">
+                <h4 class="card-title">Adjust file permission</h4>
+                <p>
+                    You have to allow PHP (your webserver process) to write to
+                    <code class="language-plaintext highlighter-rouge">var/</code> and it subdirectories.
+                </p>
+
+                <p>Here is an example for Debian/Ubuntu (to be executed inside the Kimai directory):</p>
+
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">chown -R :www-data .
+chmod -R g+r .
+chmod -R g+rw var/</code></pre></figure>
+
+
+            </div>
+            <div class="card-footer fs-sm text-muted">
+                Test Kimai before executing these commands (they are likely not required in a shared-hosting environment).
+                You probably need to prefix them with <code class="language-plaintext highlighter-rouge">sudo</code> and
+                the group might be called different than <code class="language-plaintext highlighter-rouge">www-data</code>.
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+        <h3>Utwórz bazę danych</h3>
+
+        <p>Run the following command:</p>
+
+        
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">bin/console kimai:bundle:kiosk:install</code></pre></figure>
+
+
+        <p>This will create the required database tables and update them to the latest version.</p>
+
+
+
+
+
+<div class="alert alert-warning" role="alert">
+    
+If you see an error like <code class="language-plaintext highlighter-rouge">There are no commands defined in the "kimai:bundle:XYZ" namespace.</code>,
+then either the directory has a wrong name (must be <strong>var/plugins/KioskBundle/</strong>) or you forgot to clear the cache (look above).
+
+</div>
+
+
+    
+
+    
+        <h3>Zainstaluj zasoby</h3>
+
+        <p>The following command will install the required assets (images, javascripts, styles):</p>
+
+        
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">bin/console assets:install</code></pre></figure>
+
+    
+
+
+
+                    <h3>Aktualizacje</h3>
+                    
+    
+
+    <p>Updating the plugin works exactly like the installation:</p>
+    <ul>
+        <li>Delete the directory <code class="language-plaintext highlighter-rouge">var/plugins/KioskBundle/</code>
+        </li>
+<li>
+            Execute all installation steps again:
+            <ul>
+                <li>Skopiuj pliki</li>
+                <li>Wyczyść pamięć podręczną</li>
+                <li>Update database with <code class="language-plaintext highlighter-rouge">bin/console kimai:bundle:kiosk:install</code>
+                
+                </li>
+<li>Update assets with <code class="language-plaintext highlighter-rouge">bin/console assets:install</code>
+</li>
+                
+            </ul>
+        </li>
+    </ul>
+
+
+
+                </div>
+                
+
+                
+                <div class="tab-pane fade" id="store-compatibility" role="tabpanel">
+                    <h2 id="compatibility">Kompatybilność</h2>
+                    <p>Poniższa tabela zawiera porównanie między pluginem a minimalną wymaganą wersją Kimai.</p>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>
+                                Wersja pakietu
+                            </th>
+                            <th>
+                                Minimalna wersja Kimai
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        
+                        <tr>
+                            <td>2.6.0 - 2.8.0</td>
+                            <td>2.11.0</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>2.5.0</td>
+                            <td>2.1.0</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>2.4.1</td>
+                            <td>2.0.35</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>2.4.0</td>
+                            <td>2.0.33</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>2.3.0 - 2.3.1</td>
+                            <td>2.0.29</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>2.2.1</td>
+                            <td>2.0.20</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>2.0 - 2.2.0</td>
+                            <td>2.0</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>1.8 - 1.12</td>
+                            <td>1.15</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>1.7</td>
+                            <td>1.14</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>1.5 - 1.6</td>
+                            <td>1.11</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>1.4</td>
+                            <td>1.10</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>1.0 - 1.3</td>
+                            <td>1.8</td>
+                        </tr>
+                        
+                        </tbody>
+                    </table>
+
+                    
+                </div>
+                
+
+                
+                <div class="tab-pane fade" id="store-demo" role="tabpanel">
+                    <h2 id="demo">Wypróbuj</h2>
+                    <p class="mb-3">
+                        Możesz przetestować ten plugin na <a href="https://demo.kimai.org">demo.kimai.org</a>:
+                    </p>
+                    <p>
+                        Nazwa użytkownika: <strong>susan_super</strong>
+                        <br>
+                        Hasło: <strong>kitten</strong>
+                    </p>
+                    <p class="mb-2">
+                        <a href="/en/demo.html">Znajdź więcej kont testowych tutaj</a>.
+                    </p>
+                </div>
+                
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="mb-5 pt-md-3 pt-lg-4 pt-xl-5">
+    <h2 class="h1 pt-lg-2 pt-xl-3 mb-5 text-center">Zrzuty ekranu</h2>
+    <div class="pb-2 pb-sm-3 pb-md-4">
+        <div class="swiper" data-swiper-options='{
+            "loop": true,
+            "grabCursor": false,
+            "centeredSlides": true,
+            "autoplay": {
+              "delay": 0,
+              "disableOnInteraction": false
+            },
+            "freeMode": true,
+            "speed": 38000,
+            "freeModeMomentum": false,
+            "breakpoints": {
+              "0": {
+                "slidesPerView": 1,
+                "spaceBetween": 8
+              },
+              "500": {
+                "spaceBetween": 16
+              },
+              "768": {
+                "slidesPerView": 2,
+                "spaceBetween": 24
+              }
+            }
+          }'>
+            <div class="swiper-wrapper">
+                
+                    
+                    
+                    <div class="swiper-slide pb-3">
+                        <figure class="figure">
+                            <img src="/images/marketplace/kiosk-listing.png" class="figure-img" alt="Screenshot">
+                            
+                            <figcaption class="figure-caption text-center">Wyświetla listę wszystkich użytkowników wraz z ich skonfigurowanymi typami kodów logowania</figcaption>
+                            
+                        </figure>
+                    </div>
+                
+                    
+                    
+                    <div class="swiper-slide pb-3">
+                        <figure class="figure">
+                            <img src="/images/marketplace/kiosk-preferences.png" class="figure-img" alt="Screenshot">
+                            
+                            <figcaption class="figure-caption text-center">Skonfiguruj wtyczkę Kiosk według własnych potrzeb, tryb logowania i format kodu zależą od siebie nawzajem</figcaption>
+                            
+                        </figure>
+                    </div>
+                
+                    
+                    
+                    <div class="swiper-slide pb-3">
+                        <figure class="figure">
+                            <img src="/images/marketplace/kiosk-user-profile.png" class="figure-img" alt="Screenshot">
+                            
+                            <figcaption class="figure-caption text-center">Ten nowy kod kreskowy może teraz być drukowany i wręczany użytkownikowi</figcaption>
+                            
+                        </figure>
+                    </div>
+                
+                    
+                    
+                    <div class="swiper-slide pb-3">
+                        <figure class="figure">
+                            <img src="/images/marketplace/kiosk-scanner.png" class="figure-img" alt="Screenshot">
+                            
+                            <figcaption class="figure-caption text-center">Tryb logowania 'Kod kreskowy z czytnikiem USB' pokazuje ekran tak jak ten, pole wejściowe jest preselekcjonowane, a czytnik wyśle go po znalezieniu kodu</figcaption>
+                            
+                        </figure>
+                    </div>
+                
+                    
+                    
+                    <div class="swiper-slide pb-3">
+                        <figure class="figure">
+                            <img src="/images/marketplace/kiosk-scanner-users.png" class="figure-img" alt="Screenshot">
+                            
+                            <figcaption class="figure-caption text-center">Ekran logowania z aktywowaną opcją listy użytkowników</figcaption>
+                            
+                        </figure>
+                    </div>
+                
+                    
+                    
+                    <div class="swiper-slide pb-3">
+                        <figure class="figure">
+                            <img src="/images/marketplace/kiosk-webcam.png" class="figure-img" alt="Screenshot">
+                            
+                            <figcaption class="figure-caption text-center">Tryb logowania 'Kod kreskowy z kamerą urządzenia' pokazuje obraz z kamery i ciągle skanuje kody kreskowe</figcaption>
+                            
+                        </figure>
+                    </div>
+                
+                    
+                    
+                    <div class="swiper-slide pb-3">
+                        <figure class="figure">
+                            <img src="/images/marketplace/kiosk-login.png" class="figure-img" alt="Screenshot">
+                            
+                            <figcaption class="figure-caption text-center">Skanowanie istniejącego kodu użytkownika rozpoczyna nową kartę czasową</figcaption>
+                            
+                        </figure>
+                    </div>
+                
+                    
+                    
+                    <div class="swiper-slide pb-3">
+                        <figure class="figure">
+                            <img src="/images/marketplace/kiosk-logout.png" class="figure-img" alt="Screenshot">
+                            
+                            <figcaption class="figure-caption text-center">Lub gdy karta czasowa już działa, zostanie zatrzymana</figcaption>
+                            
+                        </figure>
+                    </div>
+                
+
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="container pb-5 mb-md-3 mb-lg-4 mb-xl-5">
+    <div class="row pb-3">
+        <div class="col-md-5 mb-4 mb-md-0">
+            <div class="card bg-dark h-100 p-lg-5">
+                <div class="card-body p-lg-2">
+                    <h2 class="h1 text-light">Zakup</h2>
+                    
+                </div>
+                <div class="card-footer border-0 w-100 pt-0 p-4 p-lg-2">
+                    <div class="h2 d-flex align-items-center text-light mb-4">
+                        199 €
+                        <small class="text-muted fs-xl fw-normal ms-2">
+                            bez VAT (na rok)
+                        </small>
+                    </div>
+                    
+                        <a class="btn btn-primary btn-lg shadow-primary" href="#" data-bs-toggle="modal" data-bs-target="#modal-buy"><i class="bx bx-cart me-2"></i> Kup teraz</a>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div class="accordion" id="faq">
+                
+                <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button shadow-none rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#q-1" aria-expanded="false" aria-controls="q-1">How is the plugin licensed?</button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="q-1" data-bs-parent="#faq">
+                        <div class="accordion-body fs-sm pt-0">
+                            <p>Read more about <a href="/documentation/buy-a-plugin.html">the license for this item here</a></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button shadow-none rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#q-2" aria-expanded="false" aria-controls="q-1">Where can I buy this plugin?</button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="q-2" data-bs-parent="#faq">
+                        <div class="accordion-body fs-sm pt-0">
+                            <p>You can buy the plugin via Lemon Squeezy (CreditCard, instant access) or <a href="mailto:support@kimai.org">from the developer</a> (bank-transfer, up to one week)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button shadow-none rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#q-3" aria-expanded="false" aria-controls="q-1">Where can I get support for this plugin?</button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="q-3" data-bs-parent="#faq">
+                        <div class="accordion-body fs-sm pt-0">
+                            <p>Support-questions, bug-reports and feature-requests will be answered in this <a href="https://github.com/kevinpapst/kimai-plugins" target="_blank">Github repository</a></p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="container py-lg-4 py-xl-5 mt-3 mb-5">
+    <div class="row g-0 bg-dark bg-repeat-0 bg-position-center border rounded-3 overflow-hidden" style="background-image: url(/images/layout/author-pattern.svg);">
+        <div class="col-md-5 bg-repeat-0 bg-position-top-center bg-size-cover" style="background-image: url(/images/kevin-papst.jpeg); min-height: 350px;"></div>
+        <div class="col-md-7 py-xl-5 px-4">
+            <div class="py-5 mx-auto" style="max-width: 530px;">
+                <div class="fs-xl text-light opacity-50 mb-2">Oferowane przez</div>
+                <h2 class="h1 text-light mb-4">Kevin Papst</h2>
+                <p class="text-light opacity-70 pb-4">
+                    Building Kimai since 2009
+                </p>
+
+                <div class="mb-4">
+                    Jeśli masz jakiekolwiek pytania, skorzystaj z poniższych informacji kontaktowych, aby skontaktować się bezpośrednio z deweloperem.
+                </div>
+                <div class="d-flex flex-column flex-sm-row flex-wrap">
+                    
+                    <a href="https://www.kevinpapst.de" class="btn btn-behance me-sm-4 mb-3 mb-sm-0">
+                        <i class="bx bx-home fs-xl me-2"></i>
+                        Homepage
+                    </a>
+                    
+                    
+                    <a href="mailto:support@kimai.org" class="btn btn-blogger me-sm-4 mb-3 mb-sm-0">
+                        <i class="bx bx-envelope fs-xl me-2"></i>
+                        Email
+                    </a>
+                    
+                    
+                    <a href="https://github.com/kevinpapst" class="btn btn-github me-sm-4 mb-3 mb-sm-0">
+                        <i class="bx bxl-github fs-xl me-2"></i>
+                        GitHub
+                    </a>
+                    
+                    <br>
+                    
+                    <a href="https://twitter.com/keleo" class="btn btn-twitter me-sm-4 mb-3 mb-sm-0 mt-3">
+                        <i class="bx bxl-twitter fs-xl me-2"></i>
+                        Twitter
+                    </a>
+                    
+                    
+                    <a href="https://phpc.social/@kevinpapst" class="btn btn-messenger me-sm-4 mb-3 mb-sm-0 mt-3">
+                        <i class="bx bxl-mastodon fs-xl me-2"></i>
+                        Mastodon
+                    </a>
+                    
+                    
+                    <a href="https://www.youtube.com/@kimai_org" class="btn btn-youtube me-sm-4 mb-3 mb-sm-0 mt-3">
+                        <i class="bx bxl-youtube fs-xl me-2"></i>
+                        Youtube
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<div class="modal modal-blur fade" id="modal-buy" tabindex="-1" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Kup teraz</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                
+                <div class="row align-items-center mb-3">
+                    <div class="col-auto">
+                        <a class="btn btn-success w-100" href="https://kimai.lemonsqueezy.com/checkout/buy/45a6ecc2-fb56-4d4e-a6ff-124e1b247a19" target="_blank">
+                            Lemon Squeezy
+                        </a>
+                    </div>
+                    <div class="col-auto ms-auto">
+                        <i class="fs-3 bx bxl-google"></i>
+                        <i class="fs-3 bx bxl-apple"></i>
+                        <i class="fs-3 bx bxl-visa"></i>
+                        <i class="fs-3 bx bxl-mastercard"></i>
+                    </div>
+                </div>
+                
+
+                
+                <div class="row align-items-center mb-3">
+                    <div class="col-auto">
+                        <a class="btn btn-success w-100" href="https://kevinpapst.gumroad.com/l/kiosk" target="_blank">
+                            Gumroad
+                        </a>
+                    </div>
+                    <div class="col-auto ms-auto">
+                        <i class="fs-3 bx bxl-paypal"></i>
+                        <i class="fs-3 bx bxl-google"></i>
+                        <i class="fs-3 bx bxl-apple"></i>
+                        <i class="fs-3 bx bxl-visa"></i>
+                        <i class="fs-3 bx bxl-mastercard"></i>
+                    </div>
+                </div>
+                
+
+                
+
+                
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</main>
+
+
+
+
+
+
+
+
+<footer class="footer bg-dark pt-5 pb-4" data-bs-theme="dark">
+    <div class="container pt-1 pt-md-3 pt-lg-4 pt-xl-5">
+        <div class="row">
+            <div class="col-md-5 col-xl-4 mb-4 mb-md-5 mb-lg-0">
+                <div class="d-flex align-items-center pb-3 mb-1">
+                    <div class="navbar-brand text-dark p-0 pe-1 me-0">
+                        Kimai
+                    </div>
+                    <hr class="vr mt-2 mx-3" style="height: 26px;">
+                    <div class="text-white fw-semibold ps-1">Łatwe śledzenie czasu</div>
+                </div>
+                <p class="text-body fs-sm pb-1 pb-md-2 pb-lg-2 mb-2">
+                    Darmowe i łatwe w użyciu narzędzie do śledzenia czasu dla freelancerów, agencji i firm. Kimai to oprogramowanie open source dostępne do samodzielnego hostowania oraz jako usługa typu SaaS.
+                </p>
+                <div class="d-flex flex-column flex-sm-row flex-lg-column align-items-sm-center align-items-lg-start justify-content-between pb-1 pb-md-2 pb-lg-3 mb-3">
+                    <div class="position-relative">
+                        <div class="dropdown">
+                            <button type="button" class="form-select" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-globe top-50 start-0 text-body me-2"></i>
+                                Polski
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/cs/store/keleo-kiosk-barcode-bundle.html" class="dropdown-item">Čeština</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/de/store/keleo-kiosk-barcode-bundle.html" class="dropdown-item">Deutsch</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/store/kiosk-barcode-bundle.html" class="dropdown-item">English</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/es/store/keleo-kiosk-barcode-bundle.html" class="dropdown-item">Español</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/fr/store/keleo-kiosk-barcode-bundle.html" class="dropdown-item">Français</a>
+                                
+                                    
+                                    
+                                    <a dir="rtl" href="/he/store/keleo-kiosk-barcode-bundle.html" class="dropdown-item">עברית</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/hr/store/keleo-kiosk-barcode-bundle.html" class="dropdown-item">Hrvatski</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/it/store/keleo-kiosk-barcode-bundle.html" class="dropdown-item">Italiano</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/nl/store/keleo-kiosk-barcode-bundle.html" class="dropdown-item">Nederlands</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/pl/store/keleo-kiosk-barcode-bundle.html" class="dropdown-item active">Polski</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/pt/store/keleo-kiosk-barcode-bundle.html" class="dropdown-item">Português</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/pt_BR/store/keleo-kiosk-barcode-bundle.html" class="dropdown-item">Português (Brasil)</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/ru/store/keleo-kiosk-barcode-bundle.html" class="dropdown-item">Rусский</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/sk/store/keleo-kiosk-barcode-bundle.html" class="dropdown-item">Slovenčina</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/sv/store/keleo-kiosk-barcode-bundle.html" class="dropdown-item">Svenska</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/uk/store/keleo-kiosk-barcode-bundle.html" class="dropdown-item">Українська</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/zh_Hans/store/keleo-kiosk-barcode-bundle.html" class="dropdown-item">中文（繁體）</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="form-check form-switch mode-switch pb-1 pb-md-2 pb-lg-2 mb-2" data-bs-toggle="mode">
+                    <input type="checkbox" class="form-check-input" id="theme-mode">
+                    <label class="form-check-label" for="theme-mode">Light</label>
+                    <label class="form-check-label" for="theme-mode">Dark</label>
+                </div>
+            </div>
+            <div class="col-md-7 offset-xl-1">
+                <div id="footer-links" class="row">
+                    
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <h6 class="fs-lg mb-1 mb-md-2">
+                            <span class="d-none d-md-block">Kimai</span>
+                            <a href="#tools" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Kimai</a>
+                        </h6>
+                        <div id="tools" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/pl/about.html" class="nav-link fs-sm fw-medium px-0 py-1">O Kimai</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/pl/download.html" class="nav-link fs-sm fw-medium px-0 py-1">Pobierz</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/pl/features.html" class="nav-link fs-sm fw-medium px-0 py-1">Funkcje</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/pl/support.html" class="nav-link fs-sm fw-medium px-0 py-1">Wsparcie</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/en/kimai-discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">Discount codes</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <h6 class="fs-lg mb-1 mb-md-2">
+                            <span class="d-none d-md-block">Kimai for</span>
+                            <a href="#landing-kimai-for" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Kimai for</a>
+                        </h6>
+                        <div id="landing-kimai-for" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/en/time-tracking-non-profit.html" class="nav-link fs-sm fw-medium px-0 py-1">Non-Profits</a>
+                                </li>
+                                
+                                
+                                <li class="nav-item">
+                                    <a href="/en/open-source-time-log" class="nav-link fs-sm fw-medium px-0 py-1" title="Open-Source Time Log">Time Log</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/open-source-time-tracker" class="nav-link fs-sm fw-medium px-0 py-1" title="Open-Source Time Tracker">Time Tracker</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/open-source-timesheet" class="nav-link fs-sm fw-medium px-0 py-1" title="Open-Source Timesheet">Timesheet</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <h6 class="fs-lg mb-1 mb-md-2">
+                            <span class="d-none d-md-block">Porównanie</span>
+                            <a href="#footer-cmp" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Porównanie</a>
+                        </h6>
+                        <div id="footer-cmp" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/pl/compare/" class="nav-link fs-sm fw-medium px-0 py-1">Porównanie narzędzi do śledzenia czasu</a>
+                                </li>
+                                
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternative-to-clockify" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to Clockify">Clockify</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternative-to-openproject" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to OpenProject">OpenProject</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternative-to-toggl" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to toggl track">toggl track</a>
+                                    </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="d-md-flex align-items-center justify-content-between pt-sm-2 pt-md-4 pt-lg-5 pb-2 mt-4 ">
+    <ul class="nav order-md-1 ms-md-0 mb-3 mb-md-0">
+        <li class="nav-item">
+            <a href="/pl/" class="nav-link fs-sm fw-medium ps-0">Strona główna</a>
+        </li>
+        <li class="nav-item">
+            <a href="/pl/site-notice.html" class="nav-link fs-sm fw-medium">Ogłoszenie o stronie</a>
+        </li>
+        <li class="nav-item">
+            <a href="/pl/privacy-policy.html" class="nav-link fs-sm fw-medium">Polityka prywatności</a>
+        </li>
+        <li class="nav-item">
+            <a href="https://uptime.kimai.cloud/" target="_blank" class="nav-link fs-sm fw-medium">Cloud-Status</a>
+        </li>
+    </ul>
+    <div class="nav order-md-2 mb-3 mb-md-0">
+        <a target="_blank" href="https://github.com/kimai/kimai" class="btn btn-icon btn-secondary btn-github rounded-circle me-3" aria-label="GitHub">
+    <i class="bx bxl-github"></i>
+</a>
+<a target="_blank" href="https://twitter.com/kimai_org" class="btn btn-icon btn-secondary btn-twitter rounded-circle me-3" aria-label="Twitter / X">
+    <i class="bx bxl-twitter"></i>
+</a>
+<a target="_blank" href="https://www.youtube.com/@kimai_org" class="btn btn-icon btn-secondary btn-youtube rounded-circle me-3" aria-label="YouTube">
+    <i class="bx bxl-youtube"></i>
+</a>
+<a target="_blank" href="https://phpc.social/@kimai" class="btn btn-icon btn-secondary btn-messenger rounded-circle me-3" aria-label="Mastodon">
+    <i class="bx bxl-mastodon"></i>
+</a>
+
+    </div>
+    <p class="nav d-block fs-sm mb-0 order-md-3">
+        <span class="text-body">Zrobione przez </span>
+        <a class="nav-link d-inline-block p-0" href="https://www.kevinpapst.de/" target="_blank" rel="noopener">Kevin Papst</a>
+    </p>
+</div>
+
+    </div>
+</footer>
+
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
+
+</body>
+</html>

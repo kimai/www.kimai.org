@@ -1,0 +1,1657 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index,follow">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+    <title>Управление расходами – Kimai</title>
+    
+        <meta name="description" content="Отслеживайте свои расходы по клиенту и проекту. Эти расходы могут быть категоризированы и включены в ваши счета.">
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
+    <meta property="og:locale" content="ru">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kimai Time-Tracking">
+    <meta property="og:description" content="Отслеживайте свои расходы по клиенту и проекту. Эти расходы могут быть категоризированы и включены в ваши счета.">
+    <meta property="og:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kimai Time-Tracking">
+    <meta name="twitter:site" content="@kimai_org">
+    <meta name="twitter:description" content="Отслеживайте свои расходы по клиенту и проекту. Эти расходы могут быть категоризированы и включены в ваши счета.">
+    <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <link rel="alternate" hreflang="cs" href="https://www.kimai.org/cs/store/keleo-expenses-bundle.html">
+    <link rel="alternate" hreflang="de" href="https://www.kimai.org/de/store/keleo-expenses-bundle.html">
+    <link rel="alternate" hreflang="es" href="https://www.kimai.org/es/store/keleo-expenses-bundle.html">
+    <link rel="alternate" hreflang="fr" href="https://www.kimai.org/fr/store/keleo-expenses-bundle.html">
+    <link rel="alternate" hreflang="he" href="https://www.kimai.org/he/store/keleo-expenses-bundle.html">
+    <link rel="alternate" hreflang="hr" href="https://www.kimai.org/hr/store/keleo-expenses-bundle.html">
+    <link rel="alternate" hreflang="it" href="https://www.kimai.org/it/store/keleo-expenses-bundle.html">
+    <link rel="alternate" hreflang="en" href="https://www.kimai.org/store/expenses-bundle.html">
+    <link rel="alternate" hreflang="nl" href="https://www.kimai.org/nl/store/keleo-expenses-bundle.html">
+    <link rel="alternate" hreflang="pl" href="https://www.kimai.org/pl/store/keleo-expenses-bundle.html">
+    <link rel="alternate" hreflang="pt" href="https://www.kimai.org/pt/store/keleo-expenses-bundle.html">
+    <link rel="alternate" hreflang="pt_BR" href="https://www.kimai.org/pt_BR/store/keleo-expenses-bundle.html">
+    <link rel="alternate" hreflang="ru" href="https://www.kimai.org/ru/store/keleo-expenses-bundle.html">
+    <link rel="alternate" hreflang="sk" href="https://www.kimai.org/sk/store/keleo-expenses-bundle.html">
+    <link rel="alternate" hreflang="sv" href="https://www.kimai.org/sv/store/keleo-expenses-bundle.html">
+    <link rel="alternate" hreflang="uk" href="https://www.kimai.org/uk/store/keleo-expenses-bundle.html">
+    <link rel="alternate" hreflang="zh_Hans" href="https://www.kimai.org/zh_Hans/store/keleo-expenses-bundle.html">
+    <script src="/assets/build/theme.js"></script>
+    <link href="/assets/build/main.css" rel="stylesheet" />
+</head>
+<body class="">
+
+<main class="page-wrapper">
+    
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand-lg   bg-light navbar-sticky">
+    <div class="container px-3">
+        <a href="/ru/" class="navbar-brand pe-3">
+        <img src="/images/kimai_logo.png" style="height:36px" alt="Kimai - регистратор времени с открытым исходным кодом"> Kimai
+        </a>
+        <div id="navbarNav" class="offcanvas offcanvas-end">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title">Menu</h5>
+                <button type="button" class="btn-close " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    
+                    <li class="nav-item">
+                        <a href="/ru/demo.html" class="nav-link">Демо-версия</a>
+                    </li>
+                    
+                    <li class="nav-item active">
+                        <a href="/ru/store/" class="nav-link">магазин</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/ru/blog/" class="nav-link">Новости</a>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Документация</a>
+                        <ul class="dropdown-menu">
+                            
+                            <li><a href="/documentation/chapter-manual.html" class="dropdown-item">Руководство пользователя</a></li>
+                            
+                            <li><a href="/documentation/cloud.html" class="dropdown-item">Kimai-Cloud</a></li>
+                            
+                            <li><a href="/documentation/chapter-on-premise.html" class="dropdown-item">Самостоятельное размещение</a></li>
+                            
+                            <li><a href="/documentation/developers.html" class="dropdown-item">Разработчик</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="pe-lg-1 ms-auto me-2">
+            <a href="/ru/download.html" class="btn rounded-pill btn-sm fs-sm d-none d-md-inline-flex me-2 btn-outline-primary">Скачать</a>
+            
+
+
+
+
+
+<a href="https://www.kimai.cloud/auth/registration" class="btn btn-success rounded-pill btn-sm fs-sm d-inline-flex">Начните бесплатно</a>
+
+        </div>
+        <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</header>
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="jarallax bg-dark pt-2 pt-lg-3 pb-lg-5" data-jarallax data-speed="0.35" data-bs-theme="dark">
+    <span class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-70"></span>
+    <div class="container position-relative zindex-5">
+
+        <div class="d-flex pt-3 pb-4 py-sm-4 pt-lg-5">
+        
+            
+        
+        </div>
+
+        <h1>Управление расходами</h1>
+        <p class="fs-lg text-light opacity-70">Отслеживайте свои расходы по клиенту и проекту. Эти расходы могут быть категоризированы и включены в ваши счета.</p>
+
+        
+        <div class="d-flex align-items-center">
+            <img src="/images/kevin-papst.jpeg" class="rounded-circle" width="60" alt="Kevin Papst">
+            <div class="ps-3">
+                <div class="text-light opacity-80 mb-1">Предлагает</div>
+                <h6>Kevin Papst</h6>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container pt-5 mt-2 mt-lg-4 mt-xl-5">
+    <div class="row">
+
+        <!-- Sidebar (Course summary) -->
+        <aside class="col-lg-4 col-md-5 offset-xl-1 order-md-2 mb-5">
+            <div style="margin-top: -96px;"></div>
+            <div class="position-sticky top-0 pt-5">
+                <div class="pt-5 mt-md-3">
+                    <div class="card shadow-sm p-sm-3">
+                        <div class="card-body">
+                            
+
+                            <div class="h2 d-flex align-items-center mb-4">
+                                <span class="text-nowrap">99 €</span>
+                                <small class="text-muted fs-xl fw-normal ms-2">
+                                    без НДС (в год)
+                                </small>
+                            </div>
+
+                            
+                                <a class="btn btn-primary btn-lg shadow-primary" href="#" data-bs-toggle="modal" data-bs-target="#modal-buy"><i class="bx bx-cart me-2"></i> Купить сейчас</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Content -->
+        <div class="col-xl-7 col-lg-8 col-md-7 order-md-1 mb-5">
+            <ul class="nav nav-tabs-alt" role="tablist">
+                <li class="nav-item">
+                    <a href="#store-info" class="nav-link active" data-bs-toggle="tab" role="tab">
+                        <i class="bx bx-home-alt opacity-70 me-2"></i>
+                        Описание
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#store-installation" class="nav-link" data-bs-toggle="tab" role="tab">
+                        <i class="bx bx-profile opacity-70 me-2"></i>
+                        Установка
+                    </a>
+                </li>
+                
+                
+                <li class="nav-item">
+                    <a href="#store-compatibility" class="nav-link" data-bs-toggle="tab" role="tab">
+                        <i class="bx bx-profile opacity-70 me-2"></i>
+                        Совместимость
+                    </a>
+                </li>
+                
+                
+                <li class="nav-item">
+                    <a href="#store-demo" class="nav-link" data-bs-toggle="tab" role="tab">
+                        <i class="bx bx-profile opacity-70 me-2"></i>
+                        Демо
+                    </a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="store-info" role="tabpanel">
+                    
+                        
+
+
+
+
+<div class="alert d-flex alert-primary" role="alert">
+    <i class="bx bx-fas fa-book lead me-3"></i>
+    <div>
+        
+<a href="/documentation/plugin-expenses.html">Полная документация на английском языке</a>
+
+    </div>
+</div>
+
+
+
+                    
+
+                    
+<h2 id="features">Features</h2>
+
+<ul>
+  <li>Record all your expenses and show them in a table view
+    <ul>
+      <li>The data can be searched- and filtered (see screenshots)</li>
+    </ul>
+  </li>
+  <li>All (billable) expenses will be automatically included in your invoices
+    <ul>
+      <li>Negative amounts allow for complex bookings, budget and invoice adjustments</li>
+    </ul>
+  </li>
+  <li>Manage expenses via API</li>
+  <li>Export expenses in: Excel, PDF, HTML</li>
+  <li>Support for custom-fields</li>
+  <li>Include expenses in Kimai export module</li>
+  <li>Import expenses from Kimai 1</li>
+</ul>
+
+<p>Expenses will be assigned to free configurable categories and each category has:</p>
+<ul>
+  <li>name</li>
+  <li>visibility flag</li>
+  <li>default cost</li>
+  <li>color</li>
+  <li>help text (will be shown when creating an expense)</li>
+  <li>description (will be copied into the expense description upon selection)</li>
+</ul>
+
+<p>Each expense has the following fields:</p>
+<ul>
+  <li>a date-time</li>
+  <li>category (see above)</li>
+  <li>user</li>
+  <li>project (and customer)</li>
+  <li>activity (optional)</li>
+  <li>description (free text field)</li>
+  <li>the cost (can be hidden for default user, if you use default cost via category)</li>
+  <li>an amount (see it as multiplier, use 1 if you want to charge the cost only)</li>
+  <li>a billable flag (non-billable expenses will not be added to your invoices)</li>
+  <li>an export flag (to make sure, that each expense will be invoiced only once)</li>
+</ul>
+
+<p>If turned on, Expenses count towards budgets and revenue statistics.</p>
+
+<p>Expense summaries are displayed on the detail pages for customer, project and activity.</p>
+
+<h3 id="invoice-calculator">Invoice calculator</h3>
+
+<p>This bundle ships two new invoice calculator:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">ExpenseActivityInvoiceCalculator</code> one entry per activity, expenses display description</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">ExpenseCategoryProjectInvoiceCalculator</code> - one entry for each expense category, timesheets are grouped into one entry per project</li>
+</ul>
+
+<h3 id="importing-from-kimai-v1">Importing from Kimai v1</h3>
+
+<p>This bundle supports data import from Kimai v1, but you need to imported the other data (like customers) first.</p>
+
+<p>An example for the import command:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/console kimai:bundle:expenses:import-v1 <span class="s2">"mysql://username:password@127.0.0.1:3306/database?charset=utf8"</span> <span class="s2">"kimai_"</span>
+</code></pre></div></div>
+
+
+
+                    
+                        <h3 id="changelog">Changelog</h3>
+                        <pre class="p-2">## Version 2.11.0
+
+Compatibility: requires minimum Kimai 2.10.0
+
+- Changed: cache permissions in view
+- Changed: support attribute caching in Voter
+
+## Version 2.10.0
+
+Compatibility: requires minimum Kimai 2.10.0
+
+- Fixed: use correct base class for migration - removes Doctrine deprecation warning
+
+## Version 2.9.0
+
+Compatibility: requires minimum Kimai 2.10.0
+
+- Added: System-Configuration to disable time field
+
+## Version 2.8.0
+
+Compatibility: requires minimum Kimai 2.9.0 (but 2.10 is recommended)
+
+- Changed: remove time field and set to 12:00:00 internally
+- Changed: set "now" as pre-filled default value for an expense date
+- Changed: more DateTime to DateTimeImmutable refactorings
+- Fixed: "not null" category validator does not highlight correct field
+
+## Version 2.7.0
+
+Compatibility: requires minimum Kimai 2.9.0
+
+- Changed: internal DateTime to DateTimeImmutable refactoring
+- Changed: replace deprecated RestRoute attribute with SF native one
+- Changed: replace deprecated Route vs Attribute annotations
+
+## Version 2.6.0
+
+Compatibility: requires minimum Kimai 2.6.0
+
+- Added: calculate "exported" vs. "not exported" statistics and provide for several statistics
+- Added: sort invoice entries if "expense category project" grouping is activated
+- Changed: re-use "Expenses" translation for configuration
+- Fixed: broken "category" translation
+
+## Version 2.5.0
+
+Compatibility: requires minimum Kimai 2.5.0
+
+- Changed: create default category if none is existing yet
+- Changed: moved some translations to core allowing more languages
+
+## Version 2.4.0
+
+Compatibility: requires minimum Kimai 2.1.0
+
+- Use annotation type for routes
+
+## Version 2.3.0
+
+Compatibility: requires minimum Kimai 2.0.33
+
+- Fixed: API pagination compatibility with Kimai 2.0.33
+
+## Version 2.2.3
+
+Compatibility: requires minimum Kimai 2.0.26
+
+- Added: simplify API form setup (no visible changes)
+- Fixed: "extended settings" on edit screen collapses on clicking anywhere in the title
+- Fixed: compatibility check for Kimai version
+
+## Version 2.2.2
+
+Compatibility: requires minimum Kimai 2.0.9
+
+- Added: upgrade item actions to use v2 API.
+- Fixed: locale-switching problem in context menu of calendar (only with Kimai 2.0.19)
+
+## Version 2.2.1
+
+Compatibility: requires minimum Kimai 2.0.9
+
+- Fixed: Teamleads could not limit entries to selected teams
+
+## Version 2.2.0
+
+Compatibility: requires minimum Kimai 2.0.9
+
+- Added: normal users do not see a sub-menu anymore
+- Added: Batch delete expenses
+- Fixed: 500 error on searches with meta field
+- Fixed: Excel export did not respect the current user
+
+## Version 2.1.6
+
+Compatibility: requires minimum Kimai 2.0.9
+
+- Fixed: export query did not respect selected teams
+- Fixed: missing closing HTML tag
+- Added: improved code style
+
+## Version 2.1.5
+
+Compatibility: requires minimum Kimai 2.0.9
+
+- Fixed: reactivate DataFixtures as service, so they can be used (fixes all demos as well)
+
+## Version 2.1.4
+
+Compatibility: requires minimum Kimai 2.0.9
+
+- Added: identify listener for auto-deactivation during batch imports
+
+## Version 2.1.3
+
+Compatibility: requires minimum Kimai 2.0
+
+- Cleanup PDF export template
+
+## Version 2.1.2
+
+Compatibility: requires minimum Kimai 2.0
+
+- Cleanup translation files
+
+## Version 2.1.1
+
+Compatibility: requires minimum Kimai 2.0
+
+- API: simplified usage of "billableMode" and added description
+
+## Version 2.1.0
+
+Compatibility: requires minimum Kimai 2.0
+
+- API: added route to fetch categories
+- API: export "cost" and "description" fields with categories
+
+## Version 2.0.3
+
+Compatibility: requires minimum Kimai 2.0
+
+- Fixed: remove customer from API
+- Fixed: API returns 500 on missing user field
+
+## Version 2.0.2
+
+Compatibility: requires minimum Kimai 2.0
+
+- Fixed: enable fields for API, added API description
+
+## Version 2.0.1
+
+Compatibility: requires minimum Kimai 2.0
+
+- Fixed: Duplicate Menu-Subscriber ID
+
+## Version 2.0
+
+Compatibility: requires minimum Kimai 2.0
+
+- Fixed: compatibility with Kimai 2.0
+- Added: move expenses to replacement user upon user deletion #99
+- Added: dashboard widgets for total expenses of the current user for today/week/month/year
+- Added: basic statistics in listing page
+- Added: Expenses has it's own top-level-menu with items `Expenses`, `Categories`
+- Fixed: clarify API docs
+
+## Version 1.33.0
+
+Compatibility: requires minimum Kimai 1.28.0
+
+- Added: Pre-fill create form via URL (date, project &amp; activity, description, user, metaFields)
+
+## Version 1.32.0
+
+Compatibility: requires minimum Kimai 1.28.0
+
+- Added: Cleanup logic for installations where user count &lt; 2 or team count &lt; 2
+
+## Version 1.31.0
+
+Compatibility: requires minimum Kimai 1.20.2
+
+- Added: Team filter in expense form and query
+- Added: Support team filter in invoice query
+- Added: Support team filter in export query
+
+## Version 1.30.1
+
+Compatibility: requires minimum Kimai 1.20.2
+
+- Updated/Improved dutch translations - thanks Edward
+
+## Version 1.30
+
+Compatibility: requires minimum Kimai 1.20.2
+
+- Added: NL translations - thanks Edward
+
+## Version 1.29
+
+Compatibility: requires minimum Kimai 1.20.2
+
+- Added: PL translations - thanks @KonradMazur
+
+## Version 1.28
+
+Compatibility: requires minimum Kimai 1.20.2
+
+- Added: Support for invoice text field in project and activity
+
+## Version 1.27
+
+Compatibility: requires minimum Kimai 1.19
+
+- Added: CSS classes in edit form to allow customizations
+
+## Version 1.26
+
+Compatibility: requires minimum Kimai 1.19
+
+- Added: create expense from project detail page
+- Added: create expense from activity detail page
+
+## Version 1.25
+
+Compatibility: requires minimum Kimai 1.19
+
+- Added: add expense sums to revenue on dashboard
+- Added: show amount/cost/refundable statistics on customer/project/activity detail pages
+- Added: pagination support for category page
+- Added: description column in category table
+- Added: copy category description into expense description upon selection
+- Fixed: migration wasn't executed due to invalid namespace
+
+## Version 1.24
+
+Compatibility: requires minimum Kimai 1.15
+
+- Added: allow negative costs
+- Added: support for modernized search with filter count and reset action
+- Fixed: exporting PDF with many entries/pages
+- Fixed: Excel exporter now exposes the correct columns
+- Removed: Broken CSV exporter that exposed too many and invalid columns
+
+## Version 1.23
+
+Compatibility: requires minimum Kimai 1.15
+
+- Fixed: emptying the cost field for existing expenses (as admin) caused an error
+
+## Version 1.22
+
+Compatibility: requires minimum Kimai 1.15
+
+- Added: option to customize PDF and HTML export templates by creating new files
+- Added: open dialog upon "create copy" (expense duplication), instead of hard copy in list view
+- Fixed: removed duplicated date-time from PDF export template
+- Fixed: budget/statistic calculation only used cost (without multiplier)
+
+## Version 1.21.1
+
+Compatibility: requires minimum Kimai 1.15
+
+- Fixed: billable state should be ignored in query (expenses were missing in export)
+- Fixed: PDF title
+
+## Version 1.21
+
+Compatibility: requires minimum Kimai 1.15
+
+- Added: support 65535 character per custom field value (previously 256 chars)
+- Added: color for categories
+- Added: use rounding rules for minute dropdown
+- Added: configure if expenses should be included in budgets
+- Added: include expenses in monthly budget statistics
+- Fixed: definitions for new Kimai version
+
+## Version 1.20
+
+Compatibility: requires minimum Kimai 1.14.1
+
+- Added: Include refundable expenses in used customer budget
+- Added: Include refundable expenses in used project budget
+- Added: Include refundable expenses in used activity budget
+
+## Version 1.19.1
+
+Compatibility: requires minimum Kimai 1.14
+
+- Fixed: Open "create expense from timesheet" dialog in modal
+
+## Version 1.19
+
+Compatibility: requires minimum Kimai 1.14
+
+- Added: Support for bookmarking default search options
+- Added: German translations for validation error
+- Added: Validation for project begin &amp; end date vs. expense date
+- Fixed: Required changes for full compatibility with Kimai 1.14 (broken page-action links in detail pages)
+- Fixed: Order of page-action buttons in line with other screens
+- Fixed: Allow to import expenses from Kimai 1 into deactivated activities/projects/customers
+
+## Version 1.18.1
+
+Compatibility: requires minimum Kimai 1.12
+
+- Fixed: API datetime expected localized datetime format
+
+## Version 1.18
+
+Compatibility: requires minimum Kimai 1.12
+
+- Fixed: duplicating expenses will duplicate meta-fields as well
+- Fixed: API pagination parameters were ignored (size &amp; page)
+
+## Version 1.17
+
+Compatibility: requires minimum Kimai 1.12
+
+- Added: invoice calculator to group expenses by category and timesheets by project
+- Fixed: exporting expenses could fail, as the current time was used for start and end date
+- Fixed: housekeeping - keep code clean and up2date
+
+## Version 1.16
+
+Compatibility: requires minimum Kimai 1.12
+
+- Added: Include expense items in Kimai export module
+- Added: Duplicate expense action in dropdown
+
+## Version 1.15
+
+Compatibility: requires minimum Kimai 1.11
+
+- Added: Display custom-fields sorted by configured internal order
+- Added: Export expense custom fields in Excel
+- Added: Using bundle installer for unified workflow
+- Fixed: Team permission check improvements
+- Fixed: Composer 2 compatibility
+
+## Version 1.14
+
+Compatibility: requires minimum Kimai 1.10
+
+- Fixes action dropdown links to filter expenses (multi-select support)
+- Changed UI labels from "refundable" to "billable" (to match Kimai wording)
+- Fixed group_by problem on some databases including pagination result size
+- Use `view_all_data` permission instead of Admin assignment
+
+## Version 1.13
+
+Compatibility: requires minimum Kimai 1.9
+
+- **Activates `view_expense` permission by default for user and teamleads** - if you don't want that: deactivate the permission before upgrading!
+- Creates a default "Demo" category if none is existing yet (for new installations only)
+- Allow to delete expense categories
+    - Re-assign expenses to other category while deleting a category
+- Reload list for first expense (on empty list)
+- Added Hebrew translation - thanks @eransurg
+
+## Version 1.12
+
+Compatibility: requires minimum Kimai 1.9
+
+- Support custom-fields for expenses
+- Added checkbox for "exported" flag for users with `edit_exported_expense` permission
+- Added phpstan for static code analysis (internal: no user feature)
+- Fixed directory separator for installer on Windows
+- Improved API definition (BC break: removed unused `end` field)
+
+Database was changed, you need to run `bin/console kimai:bundle:expenses:install`.
+
+## Version 1.11
+
+Compatibility: requires minimum Kimai 1.9
+
+- Support multi-select in search for: customer, project, activity
+- Fix timezone issue in expenses listing
+- Use same styles for pdf export than kimai core and fixed UTF-8 issue
+- Added `edit_exported_expense` permission check to prevent unallowed edits/deletes of already exported expenses
+
+## Version 1.10
+
+Compatibility: requires minimum Kimai 1.7
+
+- Allow empty activities in "grouped by activity" invoice calculator
+- Fix permission issue for non-admins
+- Optional display export column in listing
+
+## Version 1.9
+
+Compatibility: requires minimum Kimai 1.7
+
+- Added "grouped by activity" invoice calculator that renders the description for expenses, instead of the activity name
+- Fixed translation file names (plugin needs to be deleted before update!)
+
+## Version 1.8.1
+
+Compatibility: requires minimum Kimai 1.7
+
+- Bugfix: cannot change start to a later date
+
+Database columns are changed, you need to run `bin/console kimai:bundle:expenses:install`.
+
+## Version 1.8
+
+Compatibility: requires minimum Kimai 1.7
+
+- Applying default permissions for all roles (check them if you update from a previous version)
+- Added field for a "category help text" (which will be displayed behind the category name in the "edit/create expense" form)
+- Bugfix: Always set the cost from the category, if the user is not allowed to set it manually (allows switching the category)
+- Bugfix: Allow API usage from the docs page
+
+## Version 1.7
+
+Compatibility: requires minimum Kimai 1.7
+
+- Required code changes to be compatible with Kimai 1.7
+- Added export functionality in listing page for: PDF, HTML, CSV, Excel
+- Added own permission section for "user roles &amp; permission screen"
+
+## Version 1.6
+
+Compatibility: requires minimum Kimai 1.6.2
+
+- Added command to import expenses from Kimai v1
+- Removed end field, expenses have a fixed datetime only
+- Activity field is now optional
+
+## Version 1.5
+
+Compatibility: requires minimum Kimai 1.6.2
+
+- Support data limitation via getUser() for invoice data filter
+- Replaced permission `view_expense_other` by `view_other_timesheet` (check your permission settings after update)
+- Fix access for regular user with `view_other_timsheet` permission
+- Invoices templates can distinguish between expenses and timesheets via `${entry.type}` (contains `expense`)
+- Invoices templates can display the expense catgeory name via `${entry.category}`
+
+## Version 1.4
+
+Compatibility: requires minimum Kimai 1.6.1
+
+- Show multiplier as amount (instead of 1) on invoices
+
+## Version 1.3
+
+Compatibility: requires minimum Kimai 1.6
+
+- Support free search term
+- Added API functions:
+    - Get expense collection
+    - Get expense entity
+    - Create expense
+    - Update expense
+    - Delete expense
+- Improve permission handling (auto register for ROLE_SUPER_ADMIN, as preparation for Kimai 1.6)
+
+## Version 1.2
+
+Compatibility: requires minimum Kimai 1.4
+
+**ATTENTION** - when upgrading, you need to configure the new permissions!
+
+- Respect team permissions
+- Added new permissions: view_expense_other and edit_expense_cost
+- Allow to set default cost on category
+- Allow to hide entry based cost field to use only the pre-configured
+
+## Version 1.1
+
+Compatibility: requires minimum Kimai 1.4
+
+- End-date is now optional
+- Fixed duplicate index
+- Fixed wrong version number
+- API changes for Kimai 1.4
+
+## Version 1.0
+
+Compatibility: requires minimum Kimai 1.3
+
+Initial release
+</pre>
+                    
+                </div>
+
+                
+                <div class="tab-pane fade" id="store-installation" role="tabpanel">
+                    <h2 id="installation">Установка</h2>
+                    
+    
+    <h3>Копировать файлы</h3>
+
+    <p>
+        Extract the ZIP file and upload the included directory and all files to your Kimai installation to the new directory:
+    </p>
+
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">var/plugins/ExpensesBundle/</code></pre></figure>
+
+
+    
+
+    <p>The file structure needs to look like this afterwards:</p>
+
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">var/plugins/
+├── ExpensesBundle
+│   ├── ExpensesBundle.php
+|   └ ... more files and directories follow here ...</code></pre></figure>
+
+
+    <h3>Очистить кэш</h3>
+
+    <p>
+        After uploading the files, Kimai needs to know about the new plugin. It will be found once the <a href="/documentation/updates.html">cache was re-built</a>.
+        Call these commands from the Kimai directory:
+    </p>
+
+    <div class="row row-cards row-deck">
+    <div class="col-md-12">
+        <div class="card mb-3">
+            <div class="card-body">
+                <h4 class="card-title">How to reload Kimai cache</h4>
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">bin/console kimai:reload --env=prod</code></pre></figure>
+
+
+                <p>It is not advised, but in case the above command fails you could try:</p>
+
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">rm -r var/cache/prod/*</code></pre></figure>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <p>You might have to set file permissions afterwards:</p>
+
+    <div class="row row-cards row-deck">
+    <div class="col-md-12">
+        <div class="card mb-3">
+            <div class="card-status bg-info"></div>
+            <div class="card-body">
+                <h4 class="card-title">Adjust file permission</h4>
+                <p>
+                    You have to allow PHP (your webserver process) to write to
+                    <code class="language-plaintext highlighter-rouge">var/</code> and it subdirectories.
+                </p>
+
+                <p>Here is an example for Debian/Ubuntu (to be executed inside the Kimai directory):</p>
+
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">chown -R :www-data .
+chmod -R g+r .
+chmod -R g+rw var/</code></pre></figure>
+
+
+            </div>
+            <div class="card-footer fs-sm text-muted">
+                Test Kimai before executing these commands (they are likely not required in a shared-hosting environment).
+                You probably need to prefix them with <code class="language-plaintext highlighter-rouge">sudo</code> and
+                the group might be called different than <code class="language-plaintext highlighter-rouge">www-data</code>.
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+        <h3>Создать базу данных</h3>
+
+        <p>Run the following command:</p>
+
+        
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">bin/console kimai:bundle:expenses:install</code></pre></figure>
+
+
+        <p>This will create the required database tables and update them to the latest version.</p>
+
+
+
+
+
+<div class="alert alert-warning" role="alert">
+    
+If you see an error like <code class="language-plaintext highlighter-rouge">There are no commands defined in the "kimai:bundle:XYZ" namespace.</code>,
+then either the directory has a wrong name (must be <strong>var/plugins/ExpensesBundle/</strong>) or you forgot to clear the cache (look above).
+
+</div>
+
+
+    
+
+    
+
+
+
+                    <h3>Обновления</h3>
+                    
+    
+
+    <p>Updating the plugin works exactly like the installation:</p>
+    <ul>
+        <li>Delete the directory <code class="language-plaintext highlighter-rouge">var/plugins/ExpensesBundle/</code>
+        </li>
+<li>
+            Execute all installation steps again:
+            <ul>
+                <li>Копировать файлы</li>
+                <li>Очистить кэш</li>
+                <li>Update database with <code class="language-plaintext highlighter-rouge">bin/console kimai:bundle:expenses:install</code>
+                
+            </li>
+</ul>
+        </li>
+    </ul>
+
+
+
+                </div>
+                
+
+                
+                <div class="tab-pane fade" id="store-compatibility" role="tabpanel">
+                    <h2 id="compatibility">Совместимость</h2>
+                    <p>Плагины всегда должны быть совместимы с более высокими версиями Kimai. Следующий список содержит версию плагина и необходимую минимальную версию Kimai.</p>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>
+                                Версия сборки
+                            </th>
+                            <th>
+                                Минимальная версия Kimai
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        
+                        <tr>
+                            <td>2.8.0 - 2.11.0</td>
+                            <td>2.10.0</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>2.7.0</td>
+                            <td>2.9.0</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>2.6.0</td>
+                            <td>2.6.0</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>2.5.0</td>
+                            <td>2.5.0</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>2.4.0</td>
+                            <td>2.1.0</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>2.3.0</td>
+                            <td>2.0.33</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>2.2.3</td>
+                            <td>2.0.26</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>2.1.4 - 2.2.2</td>
+                            <td>2.0.9</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>2.0 - 2.1.3</td>
+                            <td>2.0</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>1.32.0</td>
+                            <td>1.28.0</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>1.28 - 1.31.0</td>
+                            <td>1.20.2</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>1.25 - 1.27</td>
+                            <td>1.19</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>1.21 - 1.24</td>
+                            <td>1.15</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>1.20</td>
+                            <td>1.14.1</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>1.19 - 1.19.1</td>
+                            <td>1.14</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>1.16 - 1.18.1</td>
+                            <td>1.12</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>1.15</td>
+                            <td>1.11</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>1.14</td>
+                            <td>1.10</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>1.11 - 1.13</td>
+                            <td>1.9</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>1.7 - 1.10</td>
+                            <td>1.7</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>1.5 - 1.6</td>
+                            <td>1.6.2</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>1.4</td>
+                            <td>1.6.1</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>1.3</td>
+                            <td>1.6</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>1.1 - 1.2</td>
+                            <td>1.4</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>1.0</td>
+                            <td>1.3</td>
+                        </tr>
+                        
+                        </tbody>
+                    </table>
+
+                    
+                </div>
+                
+
+                
+                <div class="tab-pane fade" id="store-demo" role="tabpanel">
+                    <h2 id="demo">Демо</h2>
+                    <p class="mb-3">
+                        Вы можете протестировать этот плагин на <a href="https://demo.kimai.org">demo.kimai.org</a>:
+                    </p>
+                    <p>
+                        Имя пользователя: <strong>susan_super</strong>
+                        <br>
+                        Пароль: <strong>kitten</strong>
+                    </p>
+                    <p class="mb-2">
+                        <a href="/en/demo.html">Дополнительные тестовые аккаунты можно найти здесь</a>.
+                    </p>
+                </div>
+                
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="mb-5 pt-md-3 pt-lg-4 pt-xl-5">
+    <h2 class="h1 pt-lg-2 pt-xl-3 mb-5 text-center">Скриншоты</h2>
+    <div class="pb-2 pb-sm-3 pb-md-4">
+        <div class="swiper" data-swiper-options='{
+            "loop": true,
+            "grabCursor": false,
+            "centeredSlides": true,
+            "autoplay": {
+              "delay": 0,
+              "disableOnInteraction": false
+            },
+            "freeMode": true,
+            "speed": 38000,
+            "freeModeMomentum": false,
+            "breakpoints": {
+              "0": {
+                "slidesPerView": 1,
+                "spaceBetween": 8
+              },
+              "500": {
+                "spaceBetween": 16
+              },
+              "768": {
+                "slidesPerView": 2,
+                "spaceBetween": 24
+              }
+            }
+          }'>
+            <div class="swiper-wrapper">
+                
+                    
+                    
+                    <div class="swiper-slide pb-3">
+                        <figure class="figure">
+                            <img src="/images/marketplace/expenses-listing.png" class="figure-img" alt="Screenshot">
+                            
+                            <figcaption class="figure-caption text-center">Постраничный список всех записанных расходов</figcaption>
+                            
+                        </figure>
+                    </div>
+                
+                    
+                    
+                    <div class="swiper-slide pb-3">
+                        <figure class="figure">
+                            <img src="/images/marketplace/expenses-search.png" class="figure-img" alt="Screenshot">
+                            
+                            <figcaption class="figure-caption text-center">Ваши расходы можно фильтровать с помощью поиска на нескольких экранах Kimai</figcaption>
+                            
+                        </figure>
+                    </div>
+                
+                    
+                    
+                    <div class="swiper-slide pb-3">
+                        <figure class="figure">
+                            <img src="/images/marketplace/expenses-edit.png" class="figure-img" alt="Screenshot">
+                            
+                            <figcaption class="figure-caption text-center">Редактирование или создание новых расходов позволяет ввести эти поля</figcaption>
+                            
+                        </figure>
+                    </div>
+                
+                    
+                    
+                    <div class="swiper-slide pb-3">
+                        <figure class="figure">
+                            <img src="/images/marketplace/expenses-categories.png" class="figure-img" alt="Screenshot">
+                            
+                            <figcaption class="figure-caption text-center">Расходы категоризированы для лучшего обзора и опции фильтрации</figcaption>
+                            
+                        </figure>
+                    </div>
+                
+                    
+                    
+                    <div class="swiper-slide pb-3">
+                        <figure class="figure">
+                            <img src="/images/marketplace/expenses-category-edit.png" class="figure-img" alt="Screenshot">
+                            
+                            <figcaption class="figure-caption text-center">Вы можете задать имя, коэффициент стоимости и краткое пояснение для каждой категории</figcaption>
+                            
+                        </figure>
+                    </div>
+                
+
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="container pb-5 mb-md-3 mb-lg-4 mb-xl-5">
+    <div class="row pb-3">
+        <div class="col-md-5 mb-4 mb-md-0">
+            <div class="card bg-dark h-100 p-lg-5">
+                <div class="card-body p-lg-2">
+                    <h2 class="h1 text-light">Приобрести</h2>
+                    
+                </div>
+                <div class="card-footer border-0 w-100 pt-0 p-4 p-lg-2">
+                    <div class="h2 d-flex align-items-center text-light mb-4">
+                        99 €
+                        <small class="text-muted fs-xl fw-normal ms-2">
+                            без НДС (в год)
+                        </small>
+                    </div>
+                    
+                        <a class="btn btn-primary btn-lg shadow-primary" href="#" data-bs-toggle="modal" data-bs-target="#modal-buy"><i class="bx bx-cart me-2"></i> Купить сейчас</a>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div class="accordion" id="faq">
+                
+                <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button shadow-none rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#q-1" aria-expanded="false" aria-controls="q-1">How is the plugin licensed?</button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="q-1" data-bs-parent="#faq">
+                        <div class="accordion-body fs-sm pt-0">
+                            <p>Read more about <a href="/documentation/buy-a-plugin.html">the license for this item here</a></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button shadow-none rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#q-2" aria-expanded="false" aria-controls="q-1">Where can I buy this plugin?</button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="q-2" data-bs-parent="#faq">
+                        <div class="accordion-body fs-sm pt-0">
+                            <p>You can buy the plugin via Lemon Squeezy (CreditCard, instant access) or <a href="mailto:support@kimai.org">from the developer</a> (bank-transfer, up to one week)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button shadow-none rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#q-3" aria-expanded="false" aria-controls="q-1">Where can I get support for this plugin?</button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="q-3" data-bs-parent="#faq">
+                        <div class="accordion-body fs-sm pt-0">
+                            <p>Support-questions, bug-reports and feature-requests will be answered in this <a href="https://github.com/kevinpapst/kimai-plugins" target="_blank">Github repository</a></p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="container py-lg-4 py-xl-5 mt-3 mb-5">
+    <div class="row g-0 bg-dark bg-repeat-0 bg-position-center border rounded-3 overflow-hidden" style="background-image: url(/images/layout/author-pattern.svg);">
+        <div class="col-md-5 bg-repeat-0 bg-position-top-center bg-size-cover" style="background-image: url(/images/kevin-papst.jpeg); min-height: 350px;"></div>
+        <div class="col-md-7 py-xl-5 px-4">
+            <div class="py-5 mx-auto" style="max-width: 530px;">
+                <div class="fs-xl text-light opacity-50 mb-2">Предлагает</div>
+                <h2 class="h1 text-light mb-4">Kevin Papst</h2>
+                <p class="text-light opacity-70 pb-4">
+                    Building Kimai since 2009
+                </p>
+
+                <div class="mb-4">
+                    Если у вас возникли вопросы, пожалуйста, используйте следующую контактную информацию, чтобы связаться с разработчиком напрямую.
+                </div>
+                <div class="d-flex flex-column flex-sm-row flex-wrap">
+                    
+                    <a href="https://www.kevinpapst.de" class="btn btn-behance me-sm-4 mb-3 mb-sm-0">
+                        <i class="bx bx-home fs-xl me-2"></i>
+                        Homepage
+                    </a>
+                    
+                    
+                    <a href="mailto:support@kimai.org" class="btn btn-blogger me-sm-4 mb-3 mb-sm-0">
+                        <i class="bx bx-envelope fs-xl me-2"></i>
+                        Email
+                    </a>
+                    
+                    
+                    <a href="https://github.com/kevinpapst" class="btn btn-github me-sm-4 mb-3 mb-sm-0">
+                        <i class="bx bxl-github fs-xl me-2"></i>
+                        GitHub
+                    </a>
+                    
+                    <br>
+                    
+                    <a href="https://twitter.com/keleo" class="btn btn-twitter me-sm-4 mb-3 mb-sm-0 mt-3">
+                        <i class="bx bxl-twitter fs-xl me-2"></i>
+                        Twitter
+                    </a>
+                    
+                    
+                    <a href="https://phpc.social/@kevinpapst" class="btn btn-messenger me-sm-4 mb-3 mb-sm-0 mt-3">
+                        <i class="bx bxl-mastodon fs-xl me-2"></i>
+                        Mastodon
+                    </a>
+                    
+                    
+                    <a href="https://www.youtube.com/@kimai_org" class="btn btn-youtube me-sm-4 mb-3 mb-sm-0 mt-3">
+                        <i class="bx bxl-youtube fs-xl me-2"></i>
+                        Youtube
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<div class="modal modal-blur fade" id="modal-buy" tabindex="-1" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Купить сейчас</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                
+                <div class="row align-items-center mb-3">
+                    <div class="col-auto">
+                        <a class="btn btn-success w-100" href="https://kimai.lemonsqueezy.com/checkout/buy/2c383934-5fa3-4c6c-a389-ff9e0f2e3107" target="_blank">
+                            Lemon Squeezy
+                        </a>
+                    </div>
+                    <div class="col-auto ms-auto">
+                        <i class="fs-3 bx bxl-google"></i>
+                        <i class="fs-3 bx bxl-apple"></i>
+                        <i class="fs-3 bx bxl-visa"></i>
+                        <i class="fs-3 bx bxl-mastercard"></i>
+                    </div>
+                </div>
+                
+
+                
+                <div class="row align-items-center mb-3">
+                    <div class="col-auto">
+                        <a class="btn btn-success w-100" href="https://kevinpapst.gumroad.com/l/expenses" target="_blank">
+                            Gumroad
+                        </a>
+                    </div>
+                    <div class="col-auto ms-auto">
+                        <i class="fs-3 bx bxl-paypal"></i>
+                        <i class="fs-3 bx bxl-google"></i>
+                        <i class="fs-3 bx bxl-apple"></i>
+                        <i class="fs-3 bx bxl-visa"></i>
+                        <i class="fs-3 bx bxl-mastercard"></i>
+                    </div>
+                </div>
+                
+
+                
+
+                
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</main>
+
+
+
+
+
+
+
+
+<footer class="footer bg-dark pt-5 pb-4" data-bs-theme="dark">
+    <div class="container pt-1 pt-md-3 pt-lg-4 pt-xl-5">
+        <div class="row">
+            <div class="col-md-5 col-xl-4 mb-4 mb-md-5 mb-lg-0">
+                <div class="d-flex align-items-center pb-3 mb-1">
+                    <div class="navbar-brand text-dark p-0 pe-1 me-0">
+                        Kimai
+                    </div>
+                    <hr class="vr mt-2 mx-3" style="height: 26px;">
+                    <div class="text-white fw-semibold ps-1">Простой учет времени</div>
+                </div>
+                <p class="text-body fs-sm pb-1 pb-md-2 pb-lg-2 mb-2">
+                    Бесплатное и простое в использовании учетное время для фрилансеров, агентств и компаний. Kimai - это свободное программное обеспечение, доступное для самостоятельного хостинга и в виде SaaS.
+                </p>
+                <div class="d-flex flex-column flex-sm-row flex-lg-column align-items-sm-center align-items-lg-start justify-content-between pb-1 pb-md-2 pb-lg-3 mb-3">
+                    <div class="position-relative">
+                        <div class="dropdown">
+                            <button type="button" class="form-select" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-globe top-50 start-0 text-body me-2"></i>
+                                Rусский
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/cs/store/keleo-expenses-bundle.html" class="dropdown-item">Čeština</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/de/store/keleo-expenses-bundle.html" class="dropdown-item">Deutsch</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/store/expenses-bundle.html" class="dropdown-item">English</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/es/store/keleo-expenses-bundle.html" class="dropdown-item">Español</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/fr/store/keleo-expenses-bundle.html" class="dropdown-item">Français</a>
+                                
+                                    
+                                    
+                                    <a dir="rtl" href="/he/store/keleo-expenses-bundle.html" class="dropdown-item">עברית</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/hr/store/keleo-expenses-bundle.html" class="dropdown-item">Hrvatski</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/it/store/keleo-expenses-bundle.html" class="dropdown-item">Italiano</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/nl/store/keleo-expenses-bundle.html" class="dropdown-item">Nederlands</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/pl/store/keleo-expenses-bundle.html" class="dropdown-item">Polski</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/pt/store/keleo-expenses-bundle.html" class="dropdown-item">Português</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/pt_BR/store/keleo-expenses-bundle.html" class="dropdown-item">Português (Brasil)</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/ru/store/keleo-expenses-bundle.html" class="dropdown-item active">Rусский</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/sk/store/keleo-expenses-bundle.html" class="dropdown-item">Slovenčina</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/sv/store/keleo-expenses-bundle.html" class="dropdown-item">Svenska</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/uk/store/keleo-expenses-bundle.html" class="dropdown-item">Українська</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/zh_Hans/store/keleo-expenses-bundle.html" class="dropdown-item">中文（繁體）</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="form-check form-switch mode-switch pb-1 pb-md-2 pb-lg-2 mb-2" data-bs-toggle="mode">
+                    <input type="checkbox" class="form-check-input" id="theme-mode">
+                    <label class="form-check-label" for="theme-mode">Light</label>
+                    <label class="form-check-label" for="theme-mode">Dark</label>
+                </div>
+            </div>
+            <div class="col-md-7 offset-xl-1">
+                <div id="footer-links" class="row">
+                    
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <h6 class="fs-lg mb-1 mb-md-2">
+                            <span class="d-none d-md-block">Kimai</span>
+                            <a href="#tools" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Kimai</a>
+                        </h6>
+                        <div id="tools" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/ru/about.html" class="nav-link fs-sm fw-medium px-0 py-1">О Kimai</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/ru/download.html" class="nav-link fs-sm fw-medium px-0 py-1">Скачать</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/ru/features.html" class="nav-link fs-sm fw-medium px-0 py-1">Особенности</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/ru/support.html" class="nav-link fs-sm fw-medium px-0 py-1">Поддержка</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/en/kimai-discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">Discount codes</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <h6 class="fs-lg mb-1 mb-md-2">
+                            <span class="d-none d-md-block">Kimai for</span>
+                            <a href="#landing-kimai-for" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Kimai for</a>
+                        </h6>
+                        <div id="landing-kimai-for" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/en/time-tracking-non-profit.html" class="nav-link fs-sm fw-medium px-0 py-1">Non-Profits</a>
+                                </li>
+                                
+                                
+                                <li class="nav-item">
+                                    <a href="/en/open-source-time-log" class="nav-link fs-sm fw-medium px-0 py-1" title="Open-Source Time Log">Time Log</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/open-source-time-tracker" class="nav-link fs-sm fw-medium px-0 py-1" title="Open-Source Time Tracker">Time Tracker</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/open-source-timesheet" class="nav-link fs-sm fw-medium px-0 py-1" title="Open-Source Timesheet">Timesheet</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <h6 class="fs-lg mb-1 mb-md-2">
+                            <span class="d-none d-md-block">Сравнение</span>
+                            <a href="#footer-cmp" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Сравнение</a>
+                        </h6>
+                        <div id="footer-cmp" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/ru/compare/" class="nav-link fs-sm fw-medium px-0 py-1">Сравнение средств учета времени</a>
+                                </li>
+                                
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternative-to-clockify" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to Clockify">Clockify</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternative-to-openproject" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to OpenProject">OpenProject</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternative-to-toggl" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to toggl track">toggl track</a>
+                                    </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="d-md-flex align-items-center justify-content-between pt-sm-2 pt-md-4 pt-lg-5 pb-2 mt-4 ">
+    <ul class="nav order-md-1 ms-md-0 mb-3 mb-md-0">
+        <li class="nav-item">
+            <a href="/ru/" class="nav-link fs-sm fw-medium ps-0">Главная</a>
+        </li>
+        <li class="nav-item">
+            <a href="/ru/site-notice.html" class="nav-link fs-sm fw-medium">Уведомление на сайте</a>
+        </li>
+        <li class="nav-item">
+            <a href="/ru/privacy-policy.html" class="nav-link fs-sm fw-medium">Политика конфиденциальности</a>
+        </li>
+        <li class="nav-item">
+            <a href="https://uptime.kimai.cloud/" target="_blank" class="nav-link fs-sm fw-medium">Cloud-Status</a>
+        </li>
+    </ul>
+    <div class="nav order-md-2 mb-3 mb-md-0">
+        <a target="_blank" href="https://github.com/kimai/kimai" class="btn btn-icon btn-secondary btn-github rounded-circle me-3" aria-label="GitHub">
+    <i class="bx bxl-github"></i>
+</a>
+<a target="_blank" href="https://twitter.com/kimai_org" class="btn btn-icon btn-secondary btn-twitter rounded-circle me-3" aria-label="Twitter / X">
+    <i class="bx bxl-twitter"></i>
+</a>
+<a target="_blank" href="https://www.youtube.com/@kimai_org" class="btn btn-icon btn-secondary btn-youtube rounded-circle me-3" aria-label="YouTube">
+    <i class="bx bxl-youtube"></i>
+</a>
+<a target="_blank" href="https://phpc.social/@kimai" class="btn btn-icon btn-secondary btn-messenger rounded-circle me-3" aria-label="Mastodon">
+    <i class="bx bxl-mastodon"></i>
+</a>
+
+    </div>
+    <p class="nav d-block fs-sm mb-0 order-md-3">
+        <span class="text-body">Автор </span>
+        <a class="nav-link d-inline-block p-0" href="https://www.kevinpapst.de/" target="_blank" rel="noopener">Kevin Papst</a>
+    </p>
+</div>
+
+    </div>
+</footer>
+
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
+
+</body>
+</html>

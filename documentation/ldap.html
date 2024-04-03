@@ -1,0 +1,1077 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index,follow">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+    <title>LDAP – Kimai</title>
+    
+        <meta name="description" content="How to use an LDAP directory server with Kimai">
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kimai Time-Tracking">
+    <meta property="og:description" content="How to use an LDAP directory server with Kimai">
+    <meta property="og:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kimai Time-Tracking">
+    <meta name="twitter:site" content="@kimai_org">
+    <meta name="twitter:description" content="How to use an LDAP directory server with Kimai">
+    <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <link rel="canonical" href="https://www.kimai.org/documentation/ldap.html" />
+    <script src="/assets/build/theme.js"></script>
+    <link href="/assets/build/main.css" rel="stylesheet" />
+</head>
+<body class="">
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand bg-light border-bottom border-light shadow fixed-top" data-scroll-header>
+    <div class="container-fluid pe-lg-4">
+        <div class="d-flex align-items-center">
+            <a href="/documentation/" class="navbar-brand flex-shrink-0 py-1 py-lg-2">
+                <img src="/images/apple-touch-icon.png" width="47" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning">Self-hosted</span>
+        </div>
+        <div class="d-flex align-items-center w-100">
+            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 9.75rem;">
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-manual.html" class="nav-link">
+                            <i class="bx bx-book opacity-70 fs-lg me-1"></i>
+                            User manual
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/cloud.html" class="nav-link">
+                            <i class="bx bxs-cloud opacity-70 fs-lg me-1"></i>
+                            Kimai-Cloud
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/developers.html" class="nav-link">
+                            <i class="bx bx-code opacity-70 fs-lg me-1"></i>
+                            Developer
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-on-premise.html" class="nav-link">
+                            <i class="bx bx-wrench opacity-70 fs-lg me-1"></i>
+                            Self-hosted
+                        </a>
+                    </li>
+                
+            </ul>
+            <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="form-check form-switch mode-switch pe-lg-1 ms-lg-auto" data-bs-toggle="mode">
+                <input type="checkbox" class="form-check-input" id="theme-mode">
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Light</label>
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Dark</label>
+            </div>
+        </div>
+    </div>
+</header>
+
+<aside data-bs-theme="dark">
+    <div id="componentsNav" class="offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100 bg-dark border-end-lg" style="width: 21rem; z-index: 1045;">
+        <div class="offcanvas-header d-none d-lg-flex justify-content-start">
+            <a href="/documentation/" class="navbar-brand text-dark d-none d-lg-flex py-0">
+                <img src="/images/apple-touch-icon.png" width="32" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning d-none d-lg-inline-block">Self-hosted</span>
+        </div>
+        <div class="offcanvas-header d-block d-lg-none border-bottom">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <h5 class="d-lg-none mb-0">Menu</h5>
+                <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#componentsNav" aria-label="Close"></button>
+            </div>
+            <div class="list-group list-group-flush mx-n4">
+                
+                    
+                    
+                    <a href="/documentation/chapter-manual.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-book opacity-70 me-1"></i>
+                        User manual
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/cloud.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bxs-cloud opacity-70 me-1"></i>
+                        Kimai-Cloud
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/developers.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-code opacity-70 me-1"></i>
+                        Developer
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/chapter-on-premise.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-wrench opacity-70 me-1"></i>
+                        Self-hosted
+                    </a>
+                
+            </div>
+        </div>
+        <div class="offcanvas-body swiper scrollbar-hover overflow-hidden w-100 p-4" data-swiper-options='{
+          "direction": "vertical",
+          "slidesPerView": "auto",
+          "freeMode": true,
+          "scrollbar": {
+            "el": ".swiper-scrollbar"
+          },
+          "mousewheel": true
+        }'>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide h-auto">
+                    
+                        
+
+    
+    
+    <h3 class="fs-lg">Installation &amp; Updates</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/installation.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Installation
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/updates.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Updates
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/shared-hosting.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Shared hosting
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/hosting-1-click.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                1-click installations
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/cache.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Reloading cache
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-management.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Plugins
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/webserver-configuration.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Webserver
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/fresh-ubuntu-22.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Ubuntu 22.04
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/synology.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Synology NAS
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">Docker</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/docker.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Docker
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/docker-compose.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Docker Compose
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/kubernetes.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Kubernetes
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/docker-updates.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Updating docker
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/building-docker.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Build your image
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/docker-troubleshooting.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Troubleshooting
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">DevOps</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/backups.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Backups
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/local-yaml.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Configuration files
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/emails.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Emails
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/logging.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Logging
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/commands.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Commands
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/faq-onpremise.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                FAQ
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/migration-v1.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Migrate from Kimai v1
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/versions.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Kimai versions
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">Authenticator</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/ldap.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4  active">
+                
+                LDAP
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/saml.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                SAML
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/saml-azure.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Azure SAML
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/saml-google.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Google SAML
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/saml-keycloak.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Keycloak SAML
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/saml-authentik.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Authentik SAML
+                
+            </a>
+        
+    
+    </div>
+
+
+                        <div class="list-group list-group-flush pb-3 mb-4 mx-n4">
+                    
+                    <a href="/" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Home</a>
+                    <a href="/en/site-notice.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Site notice</a>
+                    <a href="/en/privacy-policy.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Privacy policy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-scrollbar end-0"></div>
+        </div>
+    </div>
+</aside>
+
+<main class="docs-container pt-5">
+    <div class="container-fluid px-xxl-5 px-lg-4 pt-4 pt-lg-5 pb-2 pb-lg-4">
+
+        <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 pt-4 mb-n3">
+            <div class="me-4">
+                <h1 class="pb-1">LDAP</h1>
+                
+                <p class="text-muted fs-lg mb-2">How to use an LDAP directory server with Kimai</p>
+                
+            </div>
+            
+
+
+
+
+    <div class="dropdown">
+        <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Older versions
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+            
+            <a class="dropdown-item" href="/documentation/1.8/ldap.html">Kimai 1.8</a>
+            
+            <a class="dropdown-item" href="/documentation/1.30.0/ldap.html">Kimai 1.30.0</a>
+            
+            <a class="dropdown-item" href="/documentation/1.14/ldap.html">Kimai 1.14</a>
+            
+            <a class="dropdown-item" href="/documentation/ldap.html">2.13.0 (latest version)</a>
+        </div>
+    </div>
+
+
+        </div>
+
+        <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+            <div>
+                
+                <div id="documentation-content">
+                    <p>Kimai supports authentication against your company directory server (LDAP or AD).
+LDAP users will be imported during the first login and their attributes and groups
+updated on each following login.</p>
+
+<h2 id="installation">Installation</h2>
+
+<p>In order to use the LDAP authentication module of Kimai, you have to install the LDAP library:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require laminas/laminas-ldap <span class="nt">--optimize-autoloader</span> <span class="nt">-n</span>
+</code></pre></div></div>
+
+<p>If you see an error message like this:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>laminas/laminas-ldap requires ext-ldap * -&gt; it is missing from your system. Install or enable PHP's ldap extension.
+</code></pre></div></div>
+<p>you have to install the PHP LDAP extension first:</p>
+<ul>
+  <li>e.g. on Ubuntu with <code class="language-plaintext highlighter-rouge">apt-get install php-ldap</code>
+</li>
+  <li>or with the PHP version prefixed <code class="language-plaintext highlighter-rouge">apt-get install php8.1-ldap</code>
+</li>
+  <li>FPM and CLI PHP use different configs, use <code class="language-plaintext highlighter-rouge">php -m</code> to verify that the module is really loaded</li>
+</ul>
+
+<div class="row row-cards row-deck">
+    <div class="col-md-12">
+        <div class="card mb-3">
+            <div class="card-body">
+                <h4 class="card-title">UPDATE WARNING</h4>
+<p>
+    As this plugin uses composer to install further dependencies, your next update will not work as usual.
+    Please read this <a href="/documentation/updates.html#changed-files">troubleshooting guide</a> how to handle the situation.
+    After reverting all local changes and updating Kimai, you have to reinstall the composer package.
+</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<h3 id="activate-ldap-authentication">Activate LDAP authentication</h3>
+
+<p>You activate the LDAP authentication by adding the following code to the end of your
+<a href="/documentation/local-yaml.html">local.yaml</a> and <a href="/documentation/cache.html">reloading the cache</a> afterwards.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">kimai</span><span class="pi">:</span>
+    <span class="na">ldap</span><span class="pi">:</span>
+        <span class="na">activate</span><span class="pi">:</span> <span class="no">true</span>
+        <span class="c1"># more infos about the connection params can be found at:</span>
+        <span class="c1"># https://docs.laminas.dev/laminas-ldap/api/</span>
+        <span class="na">connection</span><span class="pi">:</span>
+            <span class="c1"># The default hostname of the LDAP server (mandatory setting). </span>
+            <span class="c1"># You can connect to multiple servers by setting their URLs like this:</span>
+            <span class="c1"># host: "ldap://ldap.example.local ldap://ldap2.example.local"</span>
+            <span class="c1"># host: "ldaps://ldap.example.local ldaps://ldap2.example.local"</span>
+            <span class="na">host</span><span class="pi">:</span> <span class="s">127.0.0.1</span>
+            
+            <span class="c1"># Default port for your LDAP port server</span>
+            <span class="c1"># default: 389</span>
+            <span class="c1">#port: 389</span>
+            
+            <span class="c1"># Whether or not the LDAP client should use SSL encrypted transport. </span>
+            <span class="c1"># The useSsl and useStartTls options are mutually exclusive.</span>
+            <span class="c1"># default: false</span>
+            <span class="c1">#useSsl: false</span>
+            
+            <span class="c1"># Enable TLS negotiation (should be favoured over useSsl).</span>
+            <span class="c1"># The useSsl and useStartTls options are mutually exclusive.</span>
+            <span class="c1"># default: false</span>
+            <span class="c1">#useStartTls: false</span>
+            
+            <span class="c1"># The default credentials username (your service account). Some servers </span>
+            <span class="c1"># require that this is given in DN form.</span>
+            <span class="c1"># It must be given in DN form if the LDAP server requires  </span>
+            <span class="c1"># a DN to bind and binding should be possible with simple usernames. </span>
+            <span class="c1"># default: empty</span>
+            <span class="c1">#username:</span>
+            
+            <span class="c1"># Password for the username (service-account) above</span>
+            <span class="c1"># default: empty</span>
+            <span class="c1">#password:</span>
+            
+            <span class="c1"># LDAP search filter to find the user (%s will be replaced by the username).</span>
+            <span class="c1"># Should be set, to be compatible with your object structure.</span>
+            <span class="c1"># You might not need to set this filter, unless you have a special setup </span>
+            <span class="c1"># or use Microsofts Active directory.</span>
+            <span class="c1">#</span>
+            <span class="c1"># Defaults:</span>
+            <span class="c1"># - if bindRequiresDn is false: (&amp;(objectClass=user)(sAMAccountName=%s))</span>
+            <span class="c1"># - if bindRequiresDn is true: (&amp;%filter%(uid=%s))</span>
+            <span class="c1">#   - %filter% = empty </span>
+            <span class="c1">#     accountFilterFormat = (&amp;(usernameAttribute=%s))</span>
+            <span class="c1">#   - %filter% = (&amp;(objectClass=posixAccount)) </span>
+            <span class="c1">#     accountFilterFormat = (&amp;(objectClass=posixAccount))(&amp;(usernameAttribute=%s))</span>
+            <span class="c1">#</span>
+            <span class="c1"># %filter% is the "filter" configuration defined below in the "user" section</span>
+            <span class="c1">#accountFilterFormat: (&amp;(objectClass=inetOrgPerson)(uid=%s))</span>
+            
+            <span class="c1"># If true, this instructs Kimai to retrieve the DN for the account, </span>
+            <span class="c1"># used to bind if the username is not already in DN form. </span>
+            <span class="c1"># default: true</span>
+            <span class="c1">#bindRequiresDn: true</span>
+             
+            <span class="c1"># If set to true, this option indicates to the LDAP client that </span>
+            <span class="c1"># referrals should be followed, default: false</span>
+            <span class="c1">#optReferrals: false</span>
+            
+            <span class="c1"># for the next options please refer to:</span>
+            <span class="c1"># https://docs.laminas.dev/laminas-ldap/api/ </span>
+            <span class="c1">#allowEmptyPassword: false</span>
+            <span class="c1">#tryUsernameSplit: </span>
+            <span class="c1">#networkTimeout: </span>
+            <span class="c1">#accountCanonicalForm: 3</span>
+            <span class="c1">#accountDomainName: HOST</span>
+            <span class="c1">#accountDomainNameShort: HOST</span>
+
+        <span class="na">user</span><span class="pi">:</span>
+            <span class="c1"># baseDn to query for users (mandatory setting).</span>
+            <span class="na">baseDn</span><span class="pi">:</span> <span class="s">ou=users, dc=kimai, dc=org</span>
+            
+            <span class="c1"># Field used to match the login username in your LDAP.</span>
+            <span class="c1"># If "bindRequiresDn: false" is set, the username is used in "bind".</span>
+            <span class="c1"># Otherwise a search is executed to find the users "dn" by finding the user</span>
+            <span class="c1"># via this attribute with his "baseDn" and the "filter" below. </span>
+            <span class="c1"># default: uid </span>
+            <span class="na">usernameAttribute</span><span class="pi">:</span> <span class="s">uid</span>
+            
+            <span class="c1"># LDAP search base filter to find the user / the users DN.</span>
+            <span class="c1"># Do NOT include the rule (&amp;(usernameAttribute=%s)), it will be appended</span>
+            <span class="c1"># automatically. The result of the search filter must return 1 result only.</span>
+            <span class="c1"># default: empty (results in (&amp;(uid=%s)) with default usernameAttribute)</span>
+            <span class="na">filter</span><span class="pi">:</span> <span class="s">(&amp;(objectClass=inetOrgPerson))</span>
+
+            <span class="c1"># LDAP search base filter to find the user attributes.</span>
+            <span class="c1"># This is used for a slightly different query than the one above, which is </span>
+            <span class="c1"># used to query the users DN only.</span>
+            <span class="c1"># AD users might have too many results (Exchange activesync devices </span>
+            <span class="c1"># attributes) and therefor an incompatible result structure if not changed.</span>
+            <span class="c1"># See https://github.com/kimai/kimai/issues/875   </span>
+            <span class="c1"># default: (objectClass=*)</span>
+            <span class="c1">#attributesFilter: (objectClass=Person)</span>
+
+            <span class="c1"># Configure the mapping between LDAP attributes and user entity</span>
+            <span class="c1"># The ldap_attr must be given in lowercase!</span>
+            <span class="na">attributes</span><span class="pi">:</span>
+                <span class="c1"># The following 2 rules are automatically prepended and can be overwritten.</span>
+                <span class="c1"># Username is set to the value of the configured "usernameAttribute" field </span>
+                <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_attr</span><span class="pi">:</span> <span class="s2">"</span><span class="s">usernameAttribute"</span><span class="pi">,</span> <span class="nv">user_method</span><span class="pi">:</span> <span class="nv">setUserIdentifier</span> <span class="pi">}</span>
+                <span class="c1"># Only applied if you don't configure a mapping for setEmail()</span>
+                <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_attr</span><span class="pi">:</span> <span class="s2">"</span><span class="s">usernameAttribute"</span><span class="pi">,</span> <span class="nv">user_method</span><span class="pi">:</span> <span class="nv">setEmail</span> <span class="pi">}</span>
+                <span class="c1"># An example which will set the display name in Kimai from the </span>
+                <span class="c1"># value of the "common name" field in your LDAP</span>
+                <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_attr</span><span class="pi">:</span> <span class="nv">cn</span><span class="pi">,</span> <span class="nv">user_method</span><span class="pi">:</span> <span class="nv">setAlias</span> <span class="pi">}</span>
+
+        <span class="c1"># You can comment the following section, if you don't want to manage</span>
+        <span class="c1"># user roles in Kimai via LDAP groups. If you want to use the group</span>
+        <span class="c1"># sync, you have to set at least the "role.baseDn" config.</span>
+        <span class="c1"># default: deactivated as "role.baseDn" is empty by default</span>
+        <span class="na">role</span><span class="pi">:</span>
+            <span class="c1"># baseDn to query for groups, MUST be set to activate the "group import"</span>
+            <span class="c1"># default: empty (deactivated)</span>
+            <span class="na">baseDn</span><span class="pi">:</span> <span class="s">ou=groups, dc=kimai, dc=org</span>
+            
+            <span class="c1"># Filter to query user groups, all results will be matched against </span>
+            <span class="c1"># the configured "groups" mapping below.</span>
+            <span class="c1"># The full search filter will ALWAYS be generated like this:</span>
+            <span class="c1"># (&amp;%filter(userDnAttribute=valueOfUsernameAttribute)) </span>
+            <span class="c1"># The following example rule will be expanded to (for user "foo"):</span>
+            <span class="c1"># (&amp;(&amp;(objectClass=groupOfNames))(member=foo))</span>
+            <span class="c1"># default: empty</span>
+            <span class="na">filter</span><span class="pi">:</span> <span class="s">(&amp;(objectClass=groupOfNames))</span>
+              
+            <span class="c1"># The following field is taken from the LDAP user entry and its </span>
+            <span class="c1"># value is used in the filter above as "valueOfUsernameAttribute".</span>
+            <span class="c1"># The attribute must be given in lowercase!</span>
+            <span class="c1"># The example below uses "posix group style memberUid". </span>
+            <span class="c1"># default: dn</span>
+            <span class="c1">#usernameAttribute: uid</span>
+            
+            <span class="c1"># Field that holds the group name, which will be used to map the </span>
+            <span class="c1"># LDAP groups with Kimai roles (see groups mapping below).</span>
+            <span class="c1"># default: cn</span>
+            <span class="c1">#nameAttribute: cn</span>
+            
+            <span class="c1"># Field that holds the users dn in your LDAP group definition.</span>
+            <span class="c1"># Value of this configuration is used in the filter (see above).</span>
+            <span class="c1"># default: member</span>
+            <span class="c1">#userDnAttribute: member</span>
+            
+            <span class="c1"># Convert LDAP group name (nameAttribute) to Kimai role</span>
+            <span class="c1"># You will very likely have to define mappings, unless your groups</span>
+            <span class="c1"># are called "teamlead", "admin" or "super_admin"</span>
+            <span class="c1">#groups:</span>
+            <span class="c1">#    - { ldap_value: group1, role: ROLE_TEAMLEAD }</span>
+            <span class="c1">#    - { ldap_value: kimai_admin, role: ROLE_ADMIN }</span>
+</code></pre></div></div>
+
+<p>This is the full available configuration, most of the values are optional and their default values were chosen for maximum compatibility with OpenLDAP setup.
+Kimai uses the Laminas Framework LDAP module and uses the configured <code class="language-plaintext highlighter-rouge">connection</code> parameters without modification.
+Find out more about the settings in the <a href="https://docs.laminas.dev/laminas-ldap/api/">detailed documentation</a>.</p>
+
+<p>You need to <a href="/documentation/cache.html">re-build the cache</a> for changes to take effect.</p>
+
+<h2 id="user-synchronization">User synchronization</h2>
+
+<p>User data is synchronized on each login, fetching the latest data from your LDAP.</p>
+
+<p><strong>How it works</strong></p>
+
+<ul>
+  <li>if <code class="language-plaintext highlighter-rouge">bindRequiredDn</code> is active, a <code class="language-plaintext highlighter-rouge">search</code> is executed to find the users DN by the given username</li>
+  <li>the authentication is checked with a <code class="language-plaintext highlighter-rouge">bind</code>
+</li>
+  <li>if the <code class="language-plaintext highlighter-rouge">bind</code> was successful:
+    <ul>
+      <li>another <code class="language-plaintext highlighter-rouge">bind</code> using the service account (connection.username/connection.password) is executed and under that scope:
+        <ul>
+          <li>a <code class="language-plaintext highlighter-rouge">search</code> is executed to find and map LDAP attributes to the Kimai profile</li>
+          <li>if configured, another <code class="language-plaintext highlighter-rouge">search</code> is executed to sync and map the users LDAP groups to Kimai roles</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Password handling</strong></p>
+
+<p>Kimai does not store the user password when logged-in via LDAP. There is no fallback mechanism for login, 
+if your LDAP is not available (only one LDAP server can be configured).</p>
+
+<p>When using LDAP you should:</p>
+<ul>
+  <li>Disable the “<a href="/documentation/users.html">Password reset</a>” function via <a href="/documentation/configurations.html">System &gt; Settings</a>
+</li>
+  <li>Disable the <code class="language-plaintext highlighter-rouge">password_own_profile</code> and <code class="language-plaintext highlighter-rouge">password_other_profile</code> <a href="/documentation/permissions.html">permissions</a> for LDAP user (at least the normal user role)</li>
+</ul>
+
+<p>There is no auto-cleanup available:</p>
+<ul>
+  <li>If you delete users in LDAP, you have to delete or disable this account in Kimai manually</li>
+  <li>If you deactivate users in LDAP, you can configure an attribute mapping to set the user deactivated flag via <code class="language-plaintext highlighter-rouge">setEnabled()</code>
+</li>
+</ul>
+
+<h3 id="user-attributes">User attributes</h3>
+
+<p>Kimai does not rely on an <code class="language-plaintext highlighter-rouge">objectClass</code>, but maps single LDAP attributes to the User entity by configuration.</p>
+
+<p>An example could look like this:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">kimai</span><span class="pi">:</span>
+    <span class="na">ldap</span><span class="pi">:</span>
+        <span class="na">user</span><span class="pi">:</span>
+            <span class="na">attributes</span><span class="pi">:</span>
+                <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_attr</span><span class="pi">:</span> <span class="nv">uid</span><span class="pi">,</span> <span class="nv">user_method</span><span class="pi">:</span> <span class="nv">setUserIdentifier</span> <span class="pi">}</span>
+                <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_attr</span><span class="pi">:</span> <span class="nv">mail</span><span class="pi">,</span> <span class="nv">user_method</span><span class="pi">:</span> <span class="nv">setEmail</span> <span class="pi">}</span>
+                <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_attr</span><span class="pi">:</span> <span class="nv">cn</span><span class="pi">,</span> <span class="nv">user_method</span><span class="pi">:</span> <span class="nv">setAlias</span> <span class="pi">}</span>
+</code></pre></div></div>
+
+<div class="alert alert-warning" role="alert">
+    You need to configure the attributes in lower-case, otherwise they won't be processed.
+</div>
+
+<p>In this example we tell Kimai to sync the following fields:</p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">uid</code> will be the username in Kimai (will fail with a 500 if not unique)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">mail</code> will be the account email address (read “known limitations” below)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">cn</code> will be used for the display name in Kimai</li>
+</ul>
+
+<p>Available methods on the User entity are: <code class="language-plaintext highlighter-rouge">setUsername(string)</code>, <code class="language-plaintext highlighter-rouge">setEmail(string)</code>, <code class="language-plaintext highlighter-rouge">setAlias(string)</code>, <code class="language-plaintext highlighter-rouge">setAvatar(url)</code>, <code class="language-plaintext highlighter-rouge">setTitle(string)</code>, <code class="language-plaintext highlighter-rouge">setLanguage(string)</code>, <code class="language-plaintext highlighter-rouge">setTimezone(string)</code>, <code class="language-plaintext highlighter-rouge">setAccountNumber(string)</code>.
+Its unlikely that you will need those, but they also exist: <code class="language-plaintext highlighter-rouge">setEnabled(bool)</code>, <code class="language-plaintext highlighter-rouge">setSuperAdmin(bool)</code>, <code class="language-plaintext highlighter-rouge">addRole(string)</code>.</p>
+
+<h3 id="groups--roles-import">Groups / Roles import</h3>
+
+<p>Kimai can use your LDAP groups and map them to <a href="/documentation/users.html">user roles</a>.
+If configured, it will execute another <code class="language-plaintext highlighter-rouge">search</code> against your LDAP after authentication and importing the user attributes.</p>
+
+<div class="alert alert-warning" role="alert">
+    Every user automatically owns the ROLE_USER role, you don't have to create a mapping for it.
+</div>
+
+<p>Assuming this <code class="language-plaintext highlighter-rouge">role</code> configuration:</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">kimai</span><span class="pi">:</span>
+    <span class="na">ldap</span><span class="pi">:</span>
+        <span class="na">role</span><span class="pi">:</span>
+            <span class="na">baseDn</span><span class="pi">:</span> <span class="s">ou=groups, dc=kimai, dc=org</span>
+            <span class="c1">#filter: (&amp;(objectClass=groupOfNames))  # additional group filter</span>
+            <span class="c1">#userDnAttribute: member                # field to lookup the users</span>
+            <span class="c1">#nameAttribute: cn                      # group name to match</span>
+            <span class="na">groups</span><span class="pi">:</span>
+                <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_value</span><span class="pi">:</span> <span class="nv">group1</span><span class="pi">,</span> <span class="nv">role</span><span class="pi">:</span> <span class="nv">ROLE_TEAMLEAD</span> <span class="pi">}</span>
+                <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_value</span><span class="pi">:</span> <span class="nv">kimai_admin</span><span class="pi">,</span> <span class="nv">role</span><span class="pi">:</span> <span class="nv">ROLE_ADMIN</span> <span class="pi">}</span>
+                <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_value</span><span class="pi">:</span> <span class="nv">administrator</span><span class="pi">,</span> <span class="nv">role</span><span class="pi">:</span> <span class="nv">ROLE_SUPER_ADMIN</span> <span class="pi">}</span>
+</code></pre></div></div>
+
+<p>Kimai will search the <code class="language-plaintext highlighter-rouge">baseDn</code> with <code class="language-plaintext highlighter-rouge">userDnAttribute=user['dn']</code> (e.g. <code class="language-plaintext highlighter-rouge">member=uid=user1,ou=users,dc=kimai,dc=org</code>) and extract the
+group names from the result-sets attribute <code class="language-plaintext highlighter-rouge">nameAttribute</code>.</p>
+
+<p>After finding a list of group names, they will be converted to Kimai roles:</p>
+<ul>
+  <li>first step is to lookup in <code class="language-plaintext highlighter-rouge">groups</code> mapping, if there is a match in <code class="language-plaintext highlighter-rouge">ldap_value</code> and uses the <code class="language-plaintext highlighter-rouge">role</code> value without further processing</li>
+  <li>if no mapping was found, the group name will be UPPERCASED and prefixed with <code class="language-plaintext highlighter-rouge">ROLE_</code> =&gt; e.g. <code class="language-plaintext highlighter-rouge">admin</code> will become <code class="language-plaintext highlighter-rouge">ROLE_ADMIN</code>
+</li>
+</ul>
+
+<p>These converted names will be validated and <a href="/documentation/users.html">only existing roles</a> will pass to the user profile.</p>
+
+<div class="alert alert-info" role="alert">
+    Remove the entire 'role' configuration block to deactivate role sync!
+</div>
+
+<h2 id="known-limitations">Known limitations</h2>
+
+<p>There are a couple of caveats that should be taken into account.</p>
+
+<h3 id="missing-email-address">Missing email address</h3>
+
+<p>Kimai requires that every user account has an email address. If you do not configure an attribute for email,
+the username will be used as fallback for the email during the initial import of the user account.</p>
+
+<p>This will lead to problems, when you try to update a user profile in Kimai - you will see an error saying
+that the email is not valid, even if you only tried to change the user roles.</p>
+
+<ul>
+  <li>Bad solution: change the users email address manually, it will not be overwritten by the sync</li>
+  <li>Good solution: sync the users email address to Kimai</li>
+</ul>
+
+<h3 id="profile-changes-will-be-overwritten">Profile changes will be overwritten</h3>
+
+<p>As all configured user attributes will be synchronized on every login, manual profile changes
+in the internal user database won’t be permanent.</p>
+
+<p>But: fields which are not synced, won’t be changed during the user login.</p>
+
+<h3 id="role-changes-will-be-overwritten">Role changes will be overwritten</h3>
+
+<p>If you configured the group sync, the assigned user roles in Kimai will be overwritten on login.</p>
+
+<p>Roles are not merged, but replaced during authentication, so you cannot<br>
+demote or promote a User permanently to another role in Kimai.</p>
+
+<p>The rule is: either manage all roles in Kimai or in LDAP, mixing is not possible.</p>
+
+<h2 id="examples">Examples</h2>
+
+<div class="alert alert-info" role="alert">
+    Before you start to configure your LDAP, switch to 'dev' environment and tail 'var/log/dev.log'.
+</div>
+
+<p>Another simple solution to debug the generated queries is to start your OpenLDAP with <code class="language-plaintext highlighter-rouge">sudo /usr/libexec/slapd -d256</code>.</p>
+
+<h3 id="minimal-openldap">Minimal OpenLDAP</h3>
+
+<p>A minimal setup with a local OpenLDAP with roles sync.
+This will only work for very basic LDAP setups, but it demonstrates the power of default values.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">kimai</span><span class="pi">:</span>
+    <span class="na">ldap</span><span class="pi">:</span>
+        <span class="na">activate</span><span class="pi">:</span> <span class="no">true</span>
+        <span class="na">connection</span><span class="pi">:</span>
+            <span class="na">host</span><span class="pi">:</span> <span class="s">127.0.0.1</span>
+        <span class="na">user</span><span class="pi">:</span>
+            <span class="na">baseDn</span><span class="pi">:</span> <span class="s">ou=users, dc=kimai, dc=org</span>
+        <span class="na">role</span><span class="pi">:</span>
+            <span class="na">baseDn</span><span class="pi">:</span> <span class="s">ou=groups, dc=kimai, dc=org</span>
+</code></pre></div></div>
+
+<p>The generated query to find the users DN looks like this (for the username “foo”):</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SRCH base="ou=users,dc=kimai,dc=org" scope=2 deref=0 filter="(&amp;(uid=foo))"
+SRCH attr=dn
+</code></pre></div></div>
+<p>The query to find all user attributes looks like this:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SRCH base="uid=foo,ou=users,dc=kimai,dc=org" scope=2 deref=0 filter="(objectClass=*)"
+SRCH attr=+ *
+</code></pre></div></div>
+<p>The generated query for the group-to-role mapping:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SRCH base="ou=groups,dc=kimai,dc=org" scope=2 deref=0 filter="(&amp;(member=uid=foo,ou=users,dc=kimai,dc=org))"
+SRCH attr=cn + *
+</code></pre></div></div>
+
+<p>The Kimai account will have the username and email set to the <code class="language-plaintext highlighter-rouge">uid</code>, because we did not configure
+another usernameAttribute (like <code class="language-plaintext highlighter-rouge">cn</code>) or a mapping for the email.</p>
+
+<p>If the role search would have returned groups with the <code class="language-plaintext highlighter-rouge">cn</code> value <code class="language-plaintext highlighter-rouge">admin</code>, <code class="language-plaintext highlighter-rouge">super_admin</code> or <code class="language-plaintext highlighter-rouge">teamlead</code>,
+the new account would have been promoted into these roles.</p>
+
+<h3 id="openldap-with-group-sync">OpenLDAP with group sync</h3>
+
+<p>A secured local OpenLDAP on port 543 with roles sync for the objectClass <code class="language-plaintext highlighter-rouge">posixAccount</code> users:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">kimai</span><span class="pi">:</span>
+    <span class="na">ldap</span><span class="pi">:</span>
+        <span class="na">activate</span><span class="pi">:</span> <span class="no">true</span>
+        <span class="na">connection</span><span class="pi">:</span>
+            <span class="na">host</span><span class="pi">:</span> <span class="s">127.0.0.1</span>
+            <span class="na">useSsl</span><span class="pi">:</span> <span class="no">true</span>
+            <span class="na">port</span><span class="pi">:</span> <span class="m">543</span>
+            <span class="na">username</span><span class="pi">:</span> <span class="s">kimai</span>
+            <span class="na">password</span><span class="pi">:</span> <span class="s">serverToken</span>
+            <span class="c1"># auto generated fallback is the same, no need to set it explicit:</span>
+            <span class="c1">#accountFilterFormat: (&amp;(objectClass=posixAccount)(uid=%s))</span>
+        <span class="na">user</span><span class="pi">:</span>
+            <span class="na">baseDn</span><span class="pi">:</span> <span class="s">ou=users, dc=kimai, dc=org</span>
+            <span class="na">filter</span><span class="pi">:</span> <span class="s">(&amp;(objectClass=posixAccount))</span>
+            <span class="na">usernameAttribute</span><span class="pi">:</span> <span class="s">uid</span>
+            <span class="na">attributes</span><span class="pi">:</span>
+                <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_attr</span><span class="pi">:</span> <span class="nv">uid</span><span class="pi">,</span> <span class="nv">user_method</span><span class="pi">:</span> <span class="nv">setUserIdentifier</span> <span class="pi">}</span>
+                <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_attr</span><span class="pi">:</span> <span class="nv">cn</span><span class="pi">,</span> <span class="nv">user_method</span><span class="pi">:</span> <span class="nv">setAlias</span> <span class="pi">}</span>
+                <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_attr</span><span class="pi">:</span> <span class="nv">mail</span><span class="pi">,</span> <span class="nv">user_method</span><span class="pi">:</span> <span class="nv">setEmail</span> <span class="pi">}</span>
+        <span class="na">role</span><span class="pi">:</span>
+            <span class="na">baseDn</span><span class="pi">:</span> <span class="s">ou=groups, dc=kimai, dc=org</span>
+            <span class="na">filter</span><span class="pi">:</span> <span class="s">(&amp;(objectClass=groupOfNames)(|(cn=teamlead)(cn=manager)(cn=devops)))</span>
+            <span class="na">userDnAttribute</span><span class="pi">:</span> <span class="s">member</span>
+            <span class="na">usernameAttribute</span><span class="pi">:</span> <span class="s">uid</span>
+            <span class="na">groups</span><span class="pi">:</span>
+                <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_value</span><span class="pi">:</span> <span class="nv">teamlead</span><span class="pi">,</span> <span class="nv">role</span><span class="pi">:</span> <span class="nv">ROLE_TEAMLEAD</span> <span class="pi">}</span>
+                <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_value</span><span class="pi">:</span> <span class="nv">manager</span><span class="pi">,</span> <span class="nv">role</span><span class="pi">:</span> <span class="nv">ROLE_ADMIN</span> <span class="pi">}</span>
+                <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_value</span><span class="pi">:</span> <span class="nv">devops</span><span class="pi">,</span> <span class="nv">role</span><span class="pi">:</span> <span class="nv">ROLE_SUPER_ADMIN</span> <span class="pi">}</span>
+</code></pre></div></div>
+
+<h3 id="connect-to-active-directory">Connect to Active Directory</h3>
+
+<p>This is an <a href="https://gist.github.com/firegore/b12d43ef679bd8020a7b5ffa4a556083">example</a> how you can connect your AD with Kimai.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">kimai</span><span class="pi">:</span>
+    <span class="na">ldap</span><span class="pi">:</span>
+        <span class="na">activate</span><span class="pi">:</span> <span class="no">true</span>
+        <span class="na">connection</span><span class="pi">:</span>
+            <span class="na">host</span><span class="pi">:</span> <span class="s">ad.example.com</span>
+            <span class="na">username</span><span class="pi">:</span> <span class="s">user@ad.example.com</span>
+            <span class="na">password</span><span class="pi">:</span> <span class="s">secret</span>
+            <span class="na">accountDomainName</span><span class="pi">:</span> <span class="s">ad.example.com</span>
+            <span class="na">accountDomainNameShort</span><span class="pi">:</span> <span class="s">AD</span>
+            <span class="na">accountFilterFormat</span><span class="pi">:</span> <span class="s">(&amp;(objectClass=Person)(sAMAccountName=%s))</span>
+        <span class="na">user</span><span class="pi">:</span>
+            <span class="na">baseDn</span><span class="pi">:</span> <span class="s">dc=ad,dc=example,dc=com</span>
+            <span class="na">filter</span><span class="pi">:</span> <span class="s">(&amp;(objectClass=Person))</span>
+            <span class="na">usernameAttribute</span><span class="pi">:</span> <span class="s">samaccountname</span>
+            <span class="na">attributesFilter</span><span class="pi">:</span> <span class="s">(objectClass=Person)</span>
+            <span class="na">attributes</span><span class="pi">:</span>
+                <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_attr</span><span class="pi">:</span> <span class="nv">mail</span><span class="pi">,</span> <span class="nv">user_method</span><span class="pi">:</span> <span class="nv">setEmail</span> <span class="pi">}</span>
+                <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_attr</span><span class="pi">:</span> <span class="nv">displayname</span><span class="pi">,</span> <span class="nv">user_method</span><span class="pi">:</span> <span class="nv">setAlias</span> <span class="pi">}</span>
+                <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_attr</span><span class="pi">:</span> <span class="nv">samaccountname</span><span class="pi">,</span>  <span class="nv">user_method</span><span class="pi">:</span> <span class="nv">setUserIdentifier</span> <span class="pi">}</span>
+        <span class="na">role</span><span class="pi">:</span>
+            <span class="na">baseDn</span><span class="pi">:</span> <span class="s">dc=ad,dc=example,dc=com</span>
+            <span class="na">filter</span><span class="pi">:</span> <span class="s">(&amp;(objectClass=group))</span>
+            <span class="na">groups</span><span class="pi">:</span>
+                <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_value</span><span class="pi">:</span> <span class="nv">Leads</span><span class="pi">,</span> <span class="nv">role</span><span class="pi">:</span> <span class="nv">ROLE_TEAMLEAD</span> <span class="pi">}</span>
+                <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_value</span><span class="pi">:</span> <span class="nv">Sysadmins</span><span class="pi">,</span> <span class="nv">role</span><span class="pi">:</span> <span class="nv">ROLE_SUPER_ADMIN</span> <span class="pi">}</span>
+                <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_value</span><span class="pi">:</span> <span class="nv">Users</span><span class="pi">,</span> <span class="nv">role</span><span class="pi">:</span> <span class="nv">ROLE_USER</span> <span class="pi">}</span>
+</code></pre></div></div>
+
+<div class="alert alert-warning" role="alert">
+    You need to configure the attributes in lower-case, otherwise they won't be processed.
+</div>
+
+<p>The LDAP code is based on <a href="https://github.com/Maks3w/FR3DLdapBundle">the work</a> by <a href="https://github.com/Maks3w" class="user-mention">@Maks3w</a> , thanks for sharing!</p>
+
+<h3 id="structure-example">Structure example</h3>
+
+<p>There is an article explaining an <a href="/documentation/ldap-example.html">example Open LDAP structure for Kimai</a>, that could be used.</p>
+
+<p>Actually this is more of an example setup for a test environment instead of a best-practice example.</p>
+
+<h2 id="troubleshooting--logging">Troubleshooting / Logging</h2>
+
+<p>You can switch to <code class="language-plaintext highlighter-rouge">APP_ENV=dev</code> mode and run <code class="language-plaintext highlighter-rouge">composer install</code> (to get the missing dev packages) and then all LDAP queries will be logged.</p>
+
+<h3 id="connecting-with-ip-v6">Connecting with IP v6</h3>
+
+<p>When connecting to your LDAP server via IP v6, you have to use square brackets to enclose the IP, e.g.:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">kimai</span><span class="pi">:</span>
+    <span class="na">ldap</span><span class="pi">:</span>
+        <span class="na">activate</span><span class="pi">:</span> <span class="no">true</span>
+        <span class="na">connection</span><span class="pi">:</span>
+            <span class="na">host</span><span class="pi">:</span> <span class="s2">"</span><span class="s">[fe80:20c:29ff:fefd:deea]"</span>
+</code></pre></div></div>
+
+                </div>
+                
+
+                
+            </div>
+        </div>
+
+    </div>
+</main>
+
+
+    <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
+        <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
+        <ul class="nav" id="jumpToNav">
+<li class="nav-item">
+<a href="#installation" class="nav-link">Installation</a><ul><li class="nav-item"><a href="#activate-ldap-authentication" class="nav-link">Activate LDAP authentication</a></li></ul>
+</li>
+<li class="nav-item">
+<a href="#user-synchronization" class="nav-link">User synchronization</a><ul>
+<li class="nav-item"><a href="#user-attributes" class="nav-link">User attributes</a></li>
+<li class="nav-item"><a href="#groups--roles-import" class="nav-link">Groups / Roles import</a></li>
+</ul>
+</li>
+<li class="nav-item">
+<a href="#known-limitations" class="nav-link">Known limitations</a><ul>
+<li class="nav-item"><a href="#missing-email-address" class="nav-link">Missing email address</a></li>
+<li class="nav-item"><a href="#profile-changes-will-be-overwritten" class="nav-link">Profile changes will be overwritten</a></li>
+<li class="nav-item"><a href="#role-changes-will-be-overwritten" class="nav-link">Role changes will be overwritten</a></li>
+</ul>
+</li>
+<li class="nav-item">
+<a href="#examples" class="nav-link">Examples</a><ul>
+<li class="nav-item"><a href="#minimal-openldap" class="nav-link">Minimal OpenLDAP</a></li>
+<li class="nav-item"><a href="#openldap-with-group-sync" class="nav-link">OpenLDAP with group sync</a></li>
+<li class="nav-item"><a href="#connect-to-active-directory" class="nav-link">Connect to Active Directory</a></li>
+<li class="nav-item"><a href="#structure-example" class="nav-link">Structure example</a></li>
+</ul>
+</li>
+<li class="nav-item">
+<a href="#troubleshooting--logging" class="nav-link">Troubleshooting / Logging</a><ul><li class="nav-item"><a href="#connecting-with-ip-v6" class="nav-link">Connecting with IP v6</a></li></ul>
+</li>
+</ul>
+        
+    </aside>
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
+
+</body>
+</html>

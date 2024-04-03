@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index,follow">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+    <title>Backups – Kimai</title>
+    
+        <meta name="description" content="How to backup and restore your Kimai installation">
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kimai Time-Tracking">
+    <meta property="og:description" content="How to backup and restore your Kimai installation">
+    <meta property="og:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kimai Time-Tracking">
+    <meta name="twitter:site" content="@kimai_org">
+    <meta name="twitter:description" content="How to backup and restore your Kimai installation">
+    <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <script src="/assets/build/theme.js"></script>
+    <link href="/assets/build/main.css" rel="stylesheet" />
+</head>
+<body class="">
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand bg-light border-bottom border-light shadow fixed-top" data-scroll-header>
+    <div class="container-fluid pe-lg-4">
+        <div class="d-flex align-items-center">
+            <a href="/documentation/" class="navbar-brand flex-shrink-0 py-1 py-lg-2">
+                <img src="/images/apple-touch-icon.png" width="47" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning">Self-hosted</span>
+        </div>
+        <div class="d-flex align-items-center w-100">
+            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 9.75rem;">
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-manual.html" class="nav-link">
+                            <i class="bx bx-book opacity-70 fs-lg me-1"></i>
+                            User manual
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/cloud.html" class="nav-link">
+                            <i class="bx bxs-cloud opacity-70 fs-lg me-1"></i>
+                            Kimai-Cloud
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/developers.html" class="nav-link">
+                            <i class="bx bx-code opacity-70 fs-lg me-1"></i>
+                            Developer
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-on-premise.html" class="nav-link">
+                            <i class="bx bx-wrench opacity-70 fs-lg me-1"></i>
+                            Self-hosted
+                        </a>
+                    </li>
+                
+            </ul>
+            <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="form-check form-switch mode-switch pe-lg-1 ms-lg-auto" data-bs-toggle="mode">
+                <input type="checkbox" class="form-check-input" id="theme-mode">
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Light</label>
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Dark</label>
+            </div>
+        </div>
+    </div>
+</header>
+
+<aside data-bs-theme="dark">
+    <div id="componentsNav" class="offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100 bg-dark border-end-lg" style="width: 21rem; z-index: 1045;">
+        <div class="offcanvas-header d-none d-lg-flex justify-content-start">
+            <a href="/documentation/" class="navbar-brand text-dark d-none d-lg-flex py-0">
+                <img src="/images/apple-touch-icon.png" width="32" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning d-none d-lg-inline-block">Self-hosted</span>
+        </div>
+        <div class="offcanvas-header d-block d-lg-none border-bottom">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <h5 class="d-lg-none mb-0">Menu</h5>
+                <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#componentsNav" aria-label="Close"></button>
+            </div>
+            <div class="list-group list-group-flush mx-n4">
+                
+                    
+                    
+                    <a href="/documentation/chapter-manual.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-book opacity-70 me-1"></i>
+                        User manual
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/cloud.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bxs-cloud opacity-70 me-1"></i>
+                        Kimai-Cloud
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/developers.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-code opacity-70 me-1"></i>
+                        Developer
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/chapter-on-premise.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-wrench opacity-70 me-1"></i>
+                        Self-hosted
+                    </a>
+                
+            </div>
+        </div>
+        <div class="offcanvas-body swiper scrollbar-hover overflow-hidden w-100 p-4" data-swiper-options='{
+          "direction": "vertical",
+          "slidesPerView": "auto",
+          "freeMode": true,
+          "scrollbar": {
+            "el": ".swiper-scrollbar"
+          },
+          "mousewheel": true
+        }'>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide h-auto">
+                    
+                        
+
+    
+    
+    <h3 class="fs-lg">Installation & Updates</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/installation.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Installation
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/updates.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Updates
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/shared-hosting.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Shared hosting
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/hosting-1-click.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                1-click installations
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/cache.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Reloading cache
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-management.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Plugins
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/webserver-configuration.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Webserver
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/fresh-ubuntu-22.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Ubuntu 22.04
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/synology.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Synology NAS
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">Docker</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/docker.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Docker
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/docker-compose.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Docker Compose
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/kubernetes.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Kubernetes
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/docker-updates.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Updating docker
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/building-docker.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Build your image
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/docker-troubleshooting.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Troubleshooting
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">DevOps</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/backups.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4  active">
+                
+                Backups
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/local-yaml.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Configuration files
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/emails.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Emails
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/logging.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Logging
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/commands.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Commands
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/faq-onpremise.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                FAQ
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/migration-v1.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Migrate from Kimai v1
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/versions.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Kimai versions
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">Authenticator</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/ldap.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                LDAP
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/saml.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                SAML
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/saml-azure.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Azure SAML
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/saml-google.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Google SAML
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/saml-keycloak.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Keycloak SAML
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/saml-authentik.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Authentik SAML
+                
+            </a>
+        
+    
+    </div>
+
+
+                        <div class="list-group list-group-flush pb-3 mb-4 mx-n4">
+                    
+                    <a href="/" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Home</a>
+                    <a href="/en/site-notice.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Site notice</a>
+                    <a href="/en/privacy-policy.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Privacy policy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-scrollbar end-0"></div>
+        </div>
+    </div>
+</aside>
+
+<main class="docs-container pt-5">
+    <div class="container-fluid px-xxl-5 px-lg-4 pt-4 pt-lg-5 pb-2 pb-lg-4">
+
+        <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 pt-4 mb-n3">
+            <div class="me-4">
+                <h1 class="pb-1">Backups</h1>
+                
+                <p class="text-muted fs-lg mb-2">How to backup and restore your Kimai installation</p>
+                
+            </div>
+            
+
+
+
+
+
+        </div>
+
+        <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+            <div>
+                
+                <div id="documentation-content">
+                    <p>You need to backup the following files and directories:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">.env</code></li>
+  <li><code class="language-plaintext highlighter-rouge">config/packages/local.yaml</code></li>
+</ul>
+
+<p>The following files need your attention as well, backup if necessary:</p>
+<ul>
+  <li>all customized files</li>
+  <li>the directory <code class="language-plaintext highlighter-rouge">var/data/</code> if some plugins uses the directory</li>
+  <li>all added invoice templates from <code class="language-plaintext highlighter-rouge">var/invoices/</code></li>
+  <li>all added export templates from <code class="language-plaintext highlighter-rouge">var/export/</code></li>
+  <li>installed plugins at <code class="language-plaintext highlighter-rouge">var/plugins/</code></li>
+</ul>
+
+<p>Database:</p>
+<ul>
+  <li>Best option is to backup all tables in the database with all data!</li>
+  <li>In detail:
+    <ul>
+      <li>all tables starting with <code class="language-plaintext highlighter-rouge">kimai2_</code></li>
+      <li>all tables starting with <code class="language-plaintext highlighter-rouge">bundle_migration_</code></li>
+      <li>the table <code class="language-plaintext highlighter-rouge">migration_versions</code></li>
+    </ul>
+  </li>
+</ul>
+
+<p>Write down the exact version of your Kimai installation:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">bin/console kimai:version</code></li>
+  <li><code class="language-plaintext highlighter-rouge">git rev-parse HEAD</code></li>
+</ul>
+
+<p>In most cases you don’t need these versions. 
+But it’s good to have the information in the unlikely case of a problem while restoring the backup.</p>
+
+<h2 id="create-a-database-backup">Create a database backup</h2>
+
+<p>Here is a one liner that creates a database backup for MySQL/MariaDB (adjust connection to your needs):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysqldump --single-transaction -u kimai2 -p -h 127.0.0.1 kimai2 &gt; ~/kimai2-`date +%F_%H-%M`.sql
+</code></pre></div></div>
+
+<h2 id="restore">Restore</h2>
+
+<ul>
+  <li>install Kimai <a href="/documentation/installation.html">as documented</a> in the <strong>exact same version</strong>, which you used when you created the backup</li>
+  <li>make sure it works</li>
+  <li>restore the database backup in an empty database</li>
+  <li>point <code class="language-plaintext highlighter-rouge">.env</code> to your imported database</li>
+</ul>
+
+<p>Now refresh your cache:</p>
+
+<div class="row row-cards row-deck">
+    <div class="col-md-12">
+        <div class="card mb-3">
+            <div class="card-body">
+                <h4 class="card-title">How to reload Kimai cache</h4>
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">bin/console kimai:reload --env=prod</code></pre></figure>
+
+
+                <p>It is not advised, but in case the above command fails you could try:</p>
+
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">rm -r var/cache/prod/*</code></pre></figure>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<p>At this step: test Kimai again and don’t proceed before it works as expected!</p>
+
+<p>Working properly? If not, check your file permissions:</p>
+
+<div class="row row-cards row-deck">
+    <div class="col-md-12">
+        <div class="card mb-3">
+            <div class="card-status bg-info"></div>
+            <div class="card-body">
+                <h4 class="card-title">Adjust file permission</h4>
+                <p>
+                    You have to allow PHP (your webserver process) to write to
+                    <code class="language-plaintext highlighter-rouge">var/</code> and it subdirectories.
+                </p>
+
+                <p>Here is an example for Debian/Ubuntu (to be executed inside the Kimai directory):</p>
+
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">chown -R :www-data .
+chmod -R g+r .
+chmod -R g+rw var/</code></pre></figure>
+
+
+            </div>
+            <div class="card-footer fs-sm text-muted">
+                Test Kimai before executing these commands (they are likely not required in a shared-hosting environment).
+                You probably need to prefix them with <code class="language-plaintext highlighter-rouge">sudo</code> and
+                the group might be called different than <code class="language-plaintext highlighter-rouge">www-data</code>.
+            </div>
+        </div>
+    </div>
+</div>
+
+<p>Working now? Fine, then go ahead and restore all other files:</p>
+
+<ul>
+  <li>invoice templates</li>
+  <li>plugins</li>
+  <li><code class="language-plaintext highlighter-rouge">local.yaml</code></li>
+</ul>
+
+<p>Still not satisfied and want to upgrade to the latest version?</p>
+
+<p>Great! Make sure you have the <code class="language-plaintext highlighter-rouge">migration_versions</code> table in your database backup, 
+before you upgrade. If not, execute <code class="language-plaintext highlighter-rouge">bin/console doctrine:migrations:version --add --all</code> 
+beforehand and read the <a href="/documentation/installation.html">installation docs</a> again, 
+if you might have missed other points as well.</p>
+
+<p>Now you <a href="/documentation/updates.html">can upgrade</a> :-)</p>
+
+<h2 id="pitfall-version-change">Pitfall version change</h2>
+
+<p>You restored Kimai (as documented above), but have problems when accessing it?</p>
+
+<p>Maybe you have missed an upgrade steps, which you would have done when executing a <a href="/documentation/updates.html">normal upgrade</a>.</p>
+
+<p>Please check the <a href="https://github.com/kimai/kimai/blob/main/UPGRADING.md">UPGRADING</a> guide and make sure you executed all version specific tasks.</p>
+
+<h3 id="database">Database</h3>
+
+<p>If Kimai will not load properly (e.g. you only see a white screen, maybe some pages work) the database could be the reason.
+This problem can happen when you install a different (newer) version that has a different database structure then your backup.</p>
+
+<p>Check your database if you have the <code class="language-plaintext highlighter-rouge">migration_versions</code> table. If not, go back to “Restore”. 
+If so: try to execute the missing database migrations with <code class="language-plaintext highlighter-rouge">bin/console kimai:update -n</code>.</p>
+
+<h3 id="configuration">Configuration</h3>
+
+<p>You see an error when executing <code class="language-plaintext highlighter-rouge">bin/console cache:clear</code>.</p>
+
+<p>This problem can happen when a configuration change is necessary in your <code class="language-plaintext highlighter-rouge">local.yaml</code>. 
+Please check the <a href="https://github.com/kimai/kimai/blob/main/UPGRADING.md">UPGRADING</a> guide.</p>
+
+<h2 id="backup-script">Backup script</h2>
+
+<p>The following solution is a very simple, but working way to backup your Kimai installation. It will store the database, your environment file, 
+the installed plugins and generated data (eg. invoice files).</p>
+
+<p>I recommend to create a dedicated user on the server that will store the backups:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>useradd <span class="nt">-m</span> <span class="nt">-s</span> /bin/bash backup
+</code></pre></div></div>
+
+<p>Create a MySQL configuration file to store the connection password for the Kimai database user at <code class="language-plaintext highlighter-rouge">/home/backup/.kimai2.cnf</code>:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>client]
+<span class="nv">password</span><span class="o">=</span>my-super-password
+</code></pre></div></div>
+
+<p>Make sure it can only be read by that user:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod </span>600 /home/backup/.kimai2.cnf
+</code></pre></div></div>
+
+<p>Create the backup script at <code class="language-plaintext highlighter-rouge">/home/backup/backup.sh</code> and adapt to your needs:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+
+<span class="nb">export </span><span class="nv">CONNECTION_CONFIG</span><span class="o">=</span>/home/backup/.kimai2.cnf
+<span class="nb">export </span><span class="nv">KIMAI_DIR</span><span class="o">=</span>/var/www/kimai2
+<span class="nb">export </span><span class="nv">BACKUP_DIR</span><span class="o">=</span>/home/backup
+
+<span class="nb">export </span><span class="nv">DATE</span><span class="o">=</span><span class="sb">`</span><span class="nb">date</span> +%F_%H-%M<span class="sb">`</span>
+<span class="nb">export </span><span class="nv">BACKUP_STORAGE_DIR</span><span class="o">=</span><span class="nv">$BACKUP_DIR</span>/storage
+<span class="nb">export </span><span class="nv">BACKUP_TMP_DIR</span><span class="o">=</span><span class="nv">$BACKUP_DIR</span>/temp/<span class="nv">$DATE</span>
+
+<span class="nb">mkdir</span> <span class="nt">-p</span> <span class="nv">$BACKUP_STORAGE_DIR</span>
+<span class="nb">mkdir</span> <span class="nt">-p</span> <span class="nv">$BACKUP_TMP_DIR</span>
+<span class="nb">mkdir</span> <span class="nt">-p</span> <span class="nv">$BACKUP_TMP_DIR</span>/var/data/
+<span class="nb">mkdir</span> <span class="nt">-p</span> <span class="nv">$BACKUP_TMP_DIR</span>/var/plugins/
+
+mysqldump <span class="nt">--defaults-file</span><span class="o">=</span><span class="nv">$CONNECTION_CONFIG</span> <span class="nt">--single-transaction</span> <span class="nt">--no-tablespaces</span> <span class="nt">-u</span> kimai2 <span class="nt">-h</span> 127.0.0.1 kimai2 <span class="o">&gt;</span> <span class="nv">$BACKUP_TMP_DIR</span>/kimai2-<span class="nv">$DATE</span>.sql
+
+<span class="nb">cp</span> <span class="nv">$KIMAI_DIR</span>/.env <span class="nv">$BACKUP_TMP_DIR</span>/
+<span class="nb">cp</span> <span class="nt">-R</span> <span class="nv">$KIMAI_DIR</span>/var/data/<span class="k">*</span> <span class="nv">$BACKUP_TMP_DIR</span>/var/data/
+<span class="nb">cp</span> <span class="nt">-R</span> <span class="nv">$KIMAI_DIR</span>/var/plugins/<span class="k">*</span> <span class="nv">$BACKUP_TMP_DIR</span>/var/plugins/
+
+<span class="k">if</span> <span class="o">[[</span> <span class="nt">-d</span> <span class="s2">"</span><span class="nv">$KIMAI_DIR</span><span class="s2">/var/invoices/"</span> <span class="o">]]</span><span class="p">;</span>
+<span class="k">then
+  </span><span class="nb">mkdir</span> <span class="nt">-p</span> <span class="nv">$BACKUP_TMP_DIR</span>/var/invoices/
+ <span class="nb">cp</span> <span class="nt">-R</span> <span class="nv">$KIMAI_DIR</span>/var/invoices/<span class="k">*</span> <span class="nv">$BACKUP_TMP_DIR</span>/var/invoices/
+<span class="k">fi
+
+if</span> <span class="o">[[</span> <span class="nt">-d</span> <span class="s2">"</span><span class="nv">$KIMAI_DIR</span><span class="s2">/var/export/"</span> <span class="o">]]</span><span class="p">;</span>
+<span class="k">then
+  </span><span class="nb">mkdir</span> <span class="nt">-p</span> <span class="nv">$BACKUP_TMP_DIR</span>/var/export/
+ <span class="nb">cp</span> <span class="nt">-R</span> <span class="nv">$KIMAI_DIR</span>/var/export/<span class="k">*</span> <span class="nv">$BACKUP_TMP_DIR</span>/var/export/
+<span class="k">fi
+
+</span><span class="nb">pushd</span> <span class="nv">$BACKUP_TMP_DIR</span>
+zip <span class="nt">-r</span> <span class="nv">$BACKUP_STORAGE_DIR</span>/<span class="nv">$DATE</span>.zip <span class="k">*</span> .env
+<span class="nb">popd</span>
+</code></pre></div></div>
+
+<p>Now edit the servers crontab with <code class="language-plaintext highlighter-rouge">crontab -e</code> and add the following lines:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>10 1 <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> /home/backup/backup.sh <span class="o">&gt;&gt;</span> /var/log/kimai-backup.log 2&gt;&amp;1
+20 2 <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> find /home/backup/storage/<span class="k">*</span> <span class="nt">-atime</span> +60 <span class="nt">-type</span> f <span class="nt">-delete</span>
+</code></pre></div></div>
+
+                </div>
+                
+
+                
+            </div>
+        </div>
+
+    </div>
+</main>
+
+
+    <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
+        <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#create-a-database-backup" class="nav-link">Create a database backup</a></li><li class="nav-item"><a href="#restore" class="nav-link">Restore</a></li><li class="nav-item"><a href="#pitfall-version-change" class="nav-link">Pitfall version change</a><ul><li class="nav-item"><a href="#database" class="nav-link">Database</a></li><li class="nav-item"><a href="#configuration" class="nav-link">Configuration</a></li></ul></li><li class="nav-item"><a href="#backup-script" class="nav-link">Backup script</a></li></ul>
+        
+    </aside>
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+
+</body>
+</html>

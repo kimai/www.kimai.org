@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index,follow">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+    <title>Release 1.0 - Tags, Colors, UX, Budgets, LDAP, Custom fields ... – Kimai</title>
+    
+        <meta name="description" content="This release is filled with exciting new features, that’s why it took longer than anticipated. I wanted to get the most important features into the first...">
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kimai Time-Tracking">
+    <meta property="og:description" content="This release is filled with exciting new features, that’s why it took longer than anticipated. I wanted to get the most important features into the first...">
+    <meta property="og:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kimai Time-Tracking">
+    <meta name="twitter:site" content="@kimai_org">
+    <meta name="twitter:description" content="This release is filled with exciting new features, that’s why it took longer than anticipated. I wanted to get the most important features into the first...">
+    <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <script src="/assets/build/theme.js"></script>
+    <link href="/assets/build/main.css" rel="stylesheet" />
+</head>
+<body class="">
+
+<main class="page-wrapper">
+    
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand-lg   bg-light navbar-sticky">
+    <div class="container px-3">
+        <a href="/" class="navbar-brand pe-3">
+        <img src="/images/kimai_logo.png" style="height:36px" alt="Kimai - Open Source time-tracker"> Kimai
+        </a>
+        <div id="navbarNav" class="offcanvas offcanvas-end">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title">Menu</h5>
+                <button type="button" class="btn-close " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    
+                    <li class="nav-item">
+                        <a href="/en/demo.html" class="nav-link">Demo</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/store/" class="nav-link">Plugins</a>
+                    </li>
+                    
+                    <li class="nav-item active">
+                        <a href="/blog/" class="nav-link">News</a>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Documentation</a>
+                        <ul class="dropdown-menu">
+                            
+                            <li><a href="/documentation/chapter-manual.html" class="dropdown-item">User manual</a></li>
+                            
+                            <li><a href="/documentation/cloud.html" class="dropdown-item">Kimai-Cloud</a></li>
+                            
+                            <li><a href="/documentation/chapter-on-premise.html" class="dropdown-item">On-Premise</a></li>
+                            
+                            <li><a href="/documentation/developers.html" class="dropdown-item">Developer</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="pe-lg-1 ms-auto me-2">
+            <a href="/en/download.html" class="btn rounded-pill btn-sm fs-sm d-none d-md-inline-flex me-2 btn-outline-primary">Installation</a>
+            
+
+
+
+
+
+<a href="https://www.kimai.cloud/auth/registration" class="btn btn-success rounded-pill btn-sm fs-sm d-inline-flex">Start for free</a>
+
+        </div>
+        <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</header>
+
+
+    
+
+<section class="container mt-4 pt-lg-2 pb-3">
+    <h1 class="pb-3" style="max-width: 970px;">Release 1.0 - Tags, Colors, UX, Budgets, LDAP, Custom fields ...</h1>
+    <div class="d-flex flex-md-row flex-column align-items-md-center justify-content-md-between mb-3">
+        <div class="d-flex align-items-center flex-wrap text-muted mb-md-0 mb-4">
+            <div class="fs-xs border-end pe-3 me-3 mb-2">
+                
+                    <span class="badge bg-faded-primary text-primary fs-base">On-Premise</span>
+                
+            </div>
+            <div class="fs-sm pe-3 me-3 mb-2">02 Jul 2019</div>
+        </div>
+        <div class="d-flex align-items-center position-relative ps-md-3 pe-lg-5 mb-2">
+            <img src="/images/kevin-papst.jpeg" class="rounded-circle" width="60" alt="Avatar">
+            <div class="ps-3">
+                <h6 class="mb-1">Kevin Papst</h6>
+                <a href="https://twitter.com/keleo" class="fw-semibold stretched-link">@kevinpapst</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="container mb-5 pb-2 py-mg-4">
+    <div class="row gy-4">
+        <div class="col-lg-9">
+            <p>This release is filled with exciting new features, that’s why it took longer than anticipated. I wanted to get the most important features into the first production stable release.</p>
+
+<p>Wait what? The first “stable release”? Well yeah, I know … most of you are already using Kimai and never cared about the version number - but there are some large companies out there,
+who want to add Kimai to their one-click installations and they don’t want to support a “pre-release” version (totally understandable).</p>
+
+<p>I am really excited about this release and the new stuff, that will follow in the next days. Please stay tuned!</p>
+
+<p>If you enjoy the new release, here is the <a href="https://www.kimai.org/donate/">donation page</a>.</p>
+
+<p><a href="https://github.com/kimai/kimai/compare/0.9..1.0">Full Changelog</a></p>
+
+<p><strong>Upgrade from 0.9:</strong></p>
+
+<ul>
+  <li>Execute the database migrations: <a href="https://github.com/kimai/kimai/blob/main/UPGRADING.md">How to upgrade Kimai</a>
+</li>
+  <li>Follow the other steps mentioned in <a href="https://github.com/kimai/kimai/blob/main/UPGRADING.md">UPGRADING.md</a>
+</li>
+</ul>
+
+<p><strong>Implemented enhancements:</strong></p>
+
+<ul>
+  <li>Admin Timesheets Toolbar: order users by username <a href="https://github.com/kimai/kimai/issues/876">#876</a>
+</li>
+  <li>import project “budget” field <a href="https://github.com/kimai/kimai/issues/841">#841</a>
+</li>
+  <li>Add tag data to exports <a href="https://github.com/kimai/kimai/issues/825">#825</a>
+</li>
+  <li>Additional status indicators for a field (tag field) more like lables which are globally assigable and appear for each task a user is working on or has started <a href="https://github.com/kimai/kimai/issues/769">#769</a>
+</li>
+  <li>Include option of tags field to link various timesheet entries together and use them for filtering data <a href="https://github.com/kimai/kimai/issues/768">#768</a>
+</li>
+  <li>Disable manual To date and duration entry option in timer <a href="https://github.com/kimai/kimai/issues/764">#764</a>
+</li>
+  <li>Custom data for external references <a href="https://github.com/kimai/kimai/issues/760">#760</a>
+</li>
+  <li>Refactor active entries dropdown <a href="https://github.com/kimai/kimai/issues/754">#754</a>
+</li>
+  <li>Stop entries without page reload <a href="https://github.com/kimai/kimai/issues/753">#753</a>
+</li>
+  <li>More actions on data records resp. table rows <a href="https://github.com/kimai/kimai/issues/748">#748</a>
+</li>
+  <li>Action menu instead of icons <a href="https://github.com/kimai/kimai/issues/747">#747</a>
+</li>
+  <li>Multiple Work Orders under Project for a Customer <a href="https://github.com/kimai/kimai/issues/720">#720</a>
+</li>
+  <li>Add custom fields in timesheet record <a href="https://github.com/kimai/kimai/issues/697">#697</a>
+</li>
+  <li>Lock exported objects <a href="https://github.com/kimai/kimai/issues/686">#686</a>
+</li>
+  <li>Option to allow Markdown in Project/Activity-comments <a href="https://github.com/kimai/kimai/issues/677">#677</a>
+</li>
+  <li>Recalculate rates on every change <a href="https://github.com/kimai/kimai/issues/673">#673</a>
+</li>
+  <li>Show on the title if there is an active recording <a href="https://github.com/kimai/kimai/issues/660">#660</a>
+</li>
+  <li>Allow edit Date From for saved time records <a href="https://github.com/kimai/kimai/issues/627">#627</a>
+</li>
+  <li>Restarting a entry- missing description <a href="https://github.com/kimai/kimai/issues/626">#626</a>
+</li>
+  <li>Calendar: Return to last view after creating a new time entry <a href="https://github.com/kimai/kimai/issues/622">#622</a>
+</li>
+  <li>Unable to select «projects» while filtering in timesheets <a href="https://github.com/kimai/kimai/issues/601">#601</a>
+</li>
+  <li>View cut off on 4:3 monitor <a href="https://github.com/kimai/kimai/issues/575">#575</a>
+</li>
+  <li>Calendar view: more space for business hours <a href="https://github.com/kimai/kimai/issues/530">#530</a>
+</li>
+  <li>maximale Anzahl Projektstunden als Vorgabe <a href="https://github.com/kimai/kimai/issues/467">#467</a>
+</li>
+  <li>don’t allow start end dates, just punch in or out <a href="https://github.com/kimai/kimai/issues/448">#448</a>
+</li>
+  <li>Refresh of Duration time <a href="https://github.com/kimai/kimai/issues/420">#420</a>
+</li>
+  <li>Statistic of time-used vs. time-budget <a href="https://github.com/kimai/kimai/issues/416">#416</a>
+</li>
+  <li>Colors for customers / projects <a href="https://github.com/kimai/kimai/issues/374">#374</a>
+</li>
+  <li>allow to disable user preferences by permission <a href="https://github.com/kimai/kimai/pull/895">#895</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>order users by username <a href="https://github.com/kimai/kimai/pull/880">#880</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>use default_begin in duration only mode <a href="https://github.com/kimai/kimai/pull/873">#873</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>Custom fields for timesheets, customers, projects and activities <a href="https://github.com/kimai/kimai/pull/871">#871</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>export tags in spreadsheets <a href="https://github.com/kimai/kimai/pull/860">#860</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>add tracking mode (duration + fixed start time) <a href="https://github.com/kimai/kimai/pull/859">#859</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>branding options <a href="https://github.com/kimai/kimai/pull/856">#856</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>Widget refactoring <a href="https://github.com/kimai/kimai/pull/847">#847</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>added hourly and money budgets to activity, project and customer <a href="https://github.com/kimai/kimai/pull/843">#843</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>updated dockerfile <a href="https://github.com/kimai/kimai/pull/840">#840</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>added installation command <a href="https://github.com/kimai/kimai/pull/838">#838</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>add ldap support <a href="https://github.com/kimai/kimai/pull/815">#815</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>added punch-in punch-out / time-clock mode <a href="https://github.com/kimai/kimai/pull/812">#812</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>allow markdown for customer, project and activity comments <a href="https://github.com/kimai/kimai/pull/807">#807</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>improved html export <a href="https://github.com/kimai/kimai/pull/802">#802</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>use dropdown for entity actions on detail pages <a href="https://github.com/kimai/kimai/pull/801">#801</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>lock exported timesheets <a href="https://github.com/kimai/kimai/pull/798">#798</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>Calendar improvements <a href="https://github.com/kimai/kimai/pull/784">#784</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>restart via API allows to copy description <a href="https://github.com/kimai/kimai/pull/782">#782</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>delete timesheets via api <a href="https://github.com/kimai/kimai/pull/776">#776</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>javascript and api to stop and display active records <a href="https://github.com/kimai/kimai/pull/772">#772</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>recent activities via API <a href="https://github.com/kimai/kimai/pull/761">#761</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>ES6 javascript conversion <a href="https://github.com/kimai/kimai/pull/733">#733</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>Use tags for every timesheet entry <a href="https://github.com/kimai/kimai/pull/604">#604</a> (<a href="https://github.com/infastra">infastra</a>)</li>
+</ul>
+
+<p><strong>Fixed bugs:</strong></p>
+
+<ul>
+  <li>Invoice calculator that differs between fixed and hourly rates <a href="https://github.com/kimai/kimai/issues/884">#884</a>
+</li>
+  <li>Timesheets table empty after update <a href="https://github.com/kimai/kimai/issues/878">#878</a>
+</li>
+  <li>Ability to hide the revenue stats to users <a href="https://github.com/kimai/kimai/issues/853">#853</a>
+</li>
+  <li>Error on update database migration:  Syntax error or access violation: 1071 Specified key was too long; max key length is 767 bytes <a href="https://github.com/kimai/kimai/issues/788">#788</a>
+</li>
+  <li>adding a new timesheet entry is broken <a href="https://github.com/kimai/kimai/issues/778">#778</a>
+</li>
+  <li>calendar week timesheet task with duration=true error 500 <a href="https://github.com/kimai/kimai/issues/704">#704</a>
+</li>
+  <li>Inter-month entries don’t get exported in single month <a href="https://github.com/kimai/kimai/issues/652">#652</a>
+</li>
+  <li>fix selectbox is not resettable <a href="https://github.com/kimai/kimai/pull/901">#901</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>fixed short invoice <a href="https://github.com/kimai/kimai/pull/891">#891</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>fix sqlite migration <a href="https://github.com/kimai/kimai/pull/881">#881</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>added LDAP config to set filter for finding user attributes <a href="https://github.com/kimai/kimai/pull/877">#877</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>fix LDAP install for systems without ldap extension <a href="https://github.com/kimai/kimai/pull/846">#846</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>fixed mpdf temp directory <a href="https://github.com/kimai/kimai/pull/845">#845</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>enhance tag query to show all tags of an item <a href="https://github.com/kimai/kimai/pull/810">#810</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>fix column and max key length <a href="https://github.com/kimai/kimai/pull/789">#789</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>bugfix for API selects <a href="https://github.com/kimai/kimai/pull/780">#780</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>translate date picker and charts <a href="https://github.com/kimai/kimai/pull/775">#775</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>refactored javascript to ES6 classes <a href="https://github.com/kimai/kimai/pull/759">#759</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+</ul>
+
+<p><strong>Closed issues:</strong></p>
+
+<ul>
+  <li>Update Spanish translation <a href="https://github.com/kimai/kimai/issues/898">#898</a>
+</li>
+  <li>Update Hungarian translation <a href="https://github.com/kimai/kimai/issues/897">#897</a>
+</li>
+  <li>Authentication to Active Directory <a href="https://github.com/kimai/kimai/issues/875">#875</a>
+</li>
+  <li>LDAP Documentation Enhancement for Active Directory <a href="https://github.com/kimai/kimai/issues/867">#867</a>
+</li>
+  <li>Cannot find bundle in plugin tests <a href="https://github.com/kimai/kimai/issues/863">#863</a>
+</li>
+  <li>Allowed memory in reset-dev <a href="https://github.com/kimai/kimai/issues/857">#857</a>
+</li>
+  <li>503 Error Service Unavailable <a href="https://github.com/kimai/kimai/issues/834">#834</a>
+</li>
+  <li>Documentation for native wrapper like nativefier <a href="https://github.com/kimai/kimai/issues/830">#830</a>
+</li>
+  <li>Create documentation for layman users to deploy the code on their servers  <a href="https://github.com/kimai/kimai/issues/827">#827</a>
+</li>
+  <li>Allow export of data in timesheet view directly from the frontend <a href="https://github.com/kimai/kimai/issues/826">#826</a>
+</li>
+  <li>Adding a command as Plugin <a href="https://github.com/kimai/kimai/issues/797">#797</a>
+</li>
+  <li>connect kimai to ldap <a href="https://github.com/kimai/kimai/issues/795">#795</a>
+</li>
+  <li>Older Kimai2 version compatible with PHP 7.0? <a href="https://github.com/kimai/kimai/issues/790">#790</a>
+</li>
+  <li>POLL: Global vs. customer currency <a href="https://github.com/kimai/kimai/issues/781">#781</a>
+</li>
+  <li>Docker refactor <a href="https://github.com/kimai/kimai/issues/763">#763</a>
+</li>
+  <li>Finally got this installed! <a href="https://github.com/kimai/kimai/issues/743">#743</a>
+</li>
+  <li>Possible to translate login page <a href="https://github.com/kimai/kimai/issues/736">#736</a>
+</li>
+  <li>Grouping Users when Exporting <a href="https://github.com/kimai/kimai/issues/680">#680</a>
+</li>
+</ul>
+
+<p><strong>Merged pull requests:</strong></p>
+
+<ul>
+  <li>Added last changed strings <a href="https://github.com/kimai/kimai/pull/906">#906</a> (<a href="https://github.com/yayitazale">yayitazale</a>)</li>
+  <li>Update japanese translation 190702 <a href="https://github.com/kimai/kimai/pull/905">#905</a> (<a href="https://github.com/nabbisen">nabbisen</a>)</li>
+  <li>Update Hungarian translation <a href="https://github.com/kimai/kimai/pull/902">#902</a> (<a href="https://github.com/infeeeee">infeeeee</a>)</li>
+  <li>performance tuning on timesheets <a href="https://github.com/kimai/kimai/pull/874">#874</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>Removed lines that skip plugins in test env <a href="https://github.com/kimai/kimai/pull/864">#864</a> (<a href="https://github.com/tobybatch">tobybatch</a>)</li>
+  <li>fix/LDAP multivalues Email Aliases <a href="https://github.com/kimai/kimai/pull/862">#862</a> (<a href="https://github.com/jacoblanco">jacoblanco</a>)</li>
+  <li>Spanish translate updated <a href="https://github.com/kimai/kimai/pull/852">#852</a> (<a href="https://github.com/yayitazale">yayitazale</a>)</li>
+  <li>Update of the French translation <a href="https://github.com/kimai/kimai/pull/850">#850</a> (<a href="https://github.com/jeau">jeau</a>)</li>
+  <li>improved fixture data for devs <a href="https://github.com/kimai/kimai/pull/848">#848</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>Implement japanese translation 190601 <a href="https://github.com/kimai/kimai/pull/837">#837</a> (<a href="https://github.com/nabbisen">nabbisen</a>)</li>
+  <li>use codecov for coverage <a href="https://github.com/kimai/kimai/pull/833">#833</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>code cleanup <a href="https://github.com/kimai/kimai/pull/811">#811</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>refactored permissions for simpler customizations <a href="https://github.com/kimai/kimai/pull/808">#808</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>added phpstan for code analyzes <a href="https://github.com/kimai/kimai/pull/806">#806</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>added SECURITY.md <a href="https://github.com/kimai/kimai/pull/805">#805</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>added funding yaml <a href="https://github.com/kimai/kimai/pull/804">#804</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>timesheet controller refactoring <a href="https://github.com/kimai/kimai/pull/796">#796</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>fix phpunit annotations <a href="https://github.com/kimai/kimai/pull/794">#794</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>Modify Japanese translation <a href="https://github.com/kimai/kimai/pull/779">#779</a> (<a href="https://github.com/nabbisen">nabbisen</a>)</li>
+  <li>Add Japanese translation <a href="https://github.com/kimai/kimai/pull/774">#774</a> (<a href="https://github.com/nabbisen">nabbisen</a>)</li>
+  <li>fix toolbar requests for empty choice <a href="https://github.com/kimai/kimai/pull/758">#758</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>added more entity actions <a href="https://github.com/kimai/kimai/pull/757">#757</a> (<a href="https://github.com/bjoerne2">bjoerne2</a>)</li>
+  <li>Database interoperability <a href="https://github.com/kimai/kimai/pull/756">#756</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>dynamically update title and visible durations for running records <a href="https://github.com/kimai/kimai/pull/752">#752</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>colors for visual grouping of customer, projects and activities <a href="https://github.com/kimai/kimai/pull/751">#751</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>moved shared entity fields and functions to trait <a href="https://github.com/kimai/kimai/pull/750">#750</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>Entity actions re-designed (table buttons) <a href="https://github.com/kimai/kimai/pull/746">#746</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>navbar block cleanup <a href="https://github.com/kimai/kimai/pull/742">#742</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>use bootstrap tooltips instead of own solution <a href="https://github.com/kimai/kimai/pull/741">#741</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>always query timesheets by begin date <a href="https://github.com/kimai/kimai/pull/740">#740</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>prevent jumping icons in navbar between collapsed and open state <a href="https://github.com/kimai/kimai/pull/739">#739</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>translate time-tracking in login screen and browser title <a href="https://github.com/kimai/kimai/pull/738">#738</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>theme update for swedish auth screens <a href="https://github.com/kimai/kimai/pull/737">#737</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+  <li>Testing: Webpack upgrade <a href="https://github.com/kimai/kimai/pull/729">#729</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
+</ul>
+
+        </div>
+        <div class="col-lg-3 position-relative">
+            <div class="sticky-top ms-xl-5 ms-lg-4 ps-xxl-4" style="top: 105px !important;">
+                <h6>Share this post:</h6>
+                <div class="mb-4 pb-lg-3">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.kimai.org/blog/2019/kimai-v2-first-production-release-1-0/&amp;title=Release%201.0%20-%20Tags,%20Colors,%20UX,%20Budgets,%20LDAP,%20Custom%20fields%20..." class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2" aria-label="LinkedIn">
+                        <i class="bx bxl-linkedin"></i>
+                    </a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.kimai.org/blog/2019/kimai-v2-first-production-release-1-0/" class="btn btn-icon btn-secondary btn-facebook me-2 mb-2" aria-label="Facebook">
+                        <i class="bx bxl-facebook"></i>
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?text=https://www.kimai.org/blog/2019/kimai-v2-first-production-release-1-0/" class="btn btn-icon btn-secondary btn-twitter me-2 mb-2" aria-label="Twitter">
+                        <i class="bx bxl-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+
+
+
+
+
+
+
+<footer class="footer bg-dark pt-5 pb-4" data-bs-theme="dark">
+    <div class="container pt-1 pt-md-3 pt-lg-4 pt-xl-5">
+        <div class="row">
+            <div class="col-md-5 col-xl-4 mb-4 mb-md-5 mb-lg-0">
+                <div class="d-flex align-items-center pb-3 mb-1">
+                    <div class="navbar-brand text-dark p-0 pe-1 me-0">
+                        Kimai
+                    </div>
+                    <hr class="vr mt-2 mx-3" style="height: 26px;">
+                    <div class="text-white fw-semibold ps-1">Time-tracking made easy</div>
+                </div>
+                <p class="text-body fs-sm pb-1 pb-md-2 pb-lg-2 mb-2">
+                    Free and easy to use time tracking for freelancers, agencies and companies. Kimai is open source software available for self-hosting and as SaaS.
+                </p>
+                <div class="d-flex flex-column flex-sm-row flex-lg-column align-items-sm-center align-items-lg-start justify-content-between pb-1 pb-md-2 pb-lg-3 mb-3">
+                    <div class="position-relative">
+                        <div class="dropdown">
+                            <button type="button" class="form-select" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-globe top-50 start-0 text-body me-2"></i>
+                                English
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/cs/" class="dropdown-item">Čeština</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/de/" class="dropdown-item">Deutsch</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/blog/2019/kimai-v2-first-production-release-1-0/" class="dropdown-item active">English</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/es/" class="dropdown-item">Español</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/fr/" class="dropdown-item">Français</a>
+                                
+                                    
+                                    
+                                    <a dir="rtl" href="/he/" class="dropdown-item">עברית</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/hr/" class="dropdown-item">Hrvatski</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/it/" class="dropdown-item">Italiano</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/nl/" class="dropdown-item">Nederlands</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/pl/" class="dropdown-item">Polski</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/pt/" class="dropdown-item">Português</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/pt_BR/" class="dropdown-item">Português (Brasil)</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/ru/" class="dropdown-item">Rусский</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/sk/" class="dropdown-item">Slovenčina</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/sv/" class="dropdown-item">Svenska</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/uk/" class="dropdown-item">Українська</a>
+                                
+                                    
+                                    
+                                    <a dir="ltr" href="/zh_Hans/" class="dropdown-item">中文（繁體）</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="form-check form-switch mode-switch pb-1 pb-md-2 pb-lg-2 mb-2" data-bs-toggle="mode">
+                    <input type="checkbox" class="form-check-input" id="theme-mode">
+                    <label class="form-check-label" for="theme-mode">Light</label>
+                    <label class="form-check-label" for="theme-mode">Dark</label>
+                </div>
+            </div>
+            <div class="col-md-7 offset-xl-1">
+                <div id="footer-links" class="row">
+                    
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <h6 class="fs-lg mb-1 mb-md-2">
+                            <span class="d-none d-md-block">Kimai</span>
+                            <a href="#tools" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Kimai</a>
+                        </h6>
+                        <div id="tools" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/en/about.html" class="nav-link fs-sm fw-medium px-0 py-1">About Kimai</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/en/download.html" class="nav-link fs-sm fw-medium px-0 py-1">Installation</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/en/features.html" class="nav-link fs-sm fw-medium px-0 py-1">Features</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/en/support.html" class="nav-link fs-sm fw-medium px-0 py-1">Support</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/en/kimai-discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">Discount codes</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <h6 class="fs-lg mb-1 mb-md-2">
+                            <span class="d-none d-md-block">Kimai for</span>
+                            <a href="#landing-kimai-for" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Kimai for</a>
+                        </h6>
+                        <div id="landing-kimai-for" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/en/time-tracking-non-profit.html" class="nav-link fs-sm fw-medium px-0 py-1">Non-Profits</a>
+                                </li>
+                                
+                                
+                                <li class="nav-item">
+                                    <a href="/en/open-source-time-log" class="nav-link fs-sm fw-medium px-0 py-1" title="Open-Source Time Log">Time Log</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/open-source-time-tracker" class="nav-link fs-sm fw-medium px-0 py-1" title="Open-Source Time Tracker">Time Tracker</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/open-source-timesheet" class="nav-link fs-sm fw-medium px-0 py-1" title="Open-Source Timesheet">Timesheet</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <h6 class="fs-lg mb-1 mb-md-2">
+                            <span class="d-none d-md-block">Compare</span>
+                            <a href="#footer-cmp" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Compare</a>
+                        </h6>
+                        <div id="footer-cmp" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/en/compare/" class="nav-link fs-sm fw-medium px-0 py-1">Compare time-tracker</a>
+                                </li>
+                                
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternative-to-clockify" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to Clockify">Clockify</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternative-to-openproject" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to OpenProject">OpenProject</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternative-to-toggl" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to toggl track">toggl track</a>
+                                    </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="d-md-flex align-items-center justify-content-between pt-sm-2 pt-md-4 pt-lg-5 pb-2 mt-4 ">
+    <ul class="nav order-md-1 ms-md-0 mb-3 mb-md-0">
+        <li class="nav-item">
+            <a href="/" class="nav-link fs-sm fw-medium ps-0">Home</a>
+        </li>
+        <li class="nav-item">
+            <a href="/en/site-notice.html" class="nav-link fs-sm fw-medium">Site notice</a>
+        </li>
+        <li class="nav-item">
+            <a href="/en/privacy-policy.html" class="nav-link fs-sm fw-medium">Privacy policy</a>
+        </li>
+        <li class="nav-item">
+            <a href="https://uptime.kimai.cloud/" target="_blank" class="nav-link fs-sm fw-medium">Cloud-Status</a>
+        </li>
+    </ul>
+    <div class="nav order-md-2 mb-3 mb-md-0">
+        <a target="_blank" href="https://github.com/kimai/kimai" class="btn btn-icon btn-secondary btn-github rounded-circle me-3" aria-label="GitHub">
+    <i class="bx bxl-github"></i>
+</a>
+<a target="_blank" href="https://twitter.com/kimai_org" class="btn btn-icon btn-secondary btn-twitter rounded-circle me-3" aria-label="Twitter / X">
+    <i class="bx bxl-twitter"></i>
+</a>
+<a target="_blank" href="https://www.youtube.com/@kimai_org" class="btn btn-icon btn-secondary btn-youtube rounded-circle me-3" aria-label="YouTube">
+    <i class="bx bxl-youtube"></i>
+</a>
+<a target="_blank" href="https://phpc.social/@kimai" class="btn btn-icon btn-secondary btn-messenger rounded-circle me-3" aria-label="Mastodon">
+    <i class="bx bxl-mastodon"></i>
+</a>
+
+    </div>
+    <p class="nav d-block fs-sm mb-0 order-md-3">
+        <span class="text-body">Developed by </span>
+        <a class="nav-link d-inline-block p-0" href="https://www.kevinpapst.de/" target="_blank" rel="noopener">Kevin Papst</a>
+    </p>
+</div>
+
+    </div>
+</footer>
+
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
+
+</body>
+</html>

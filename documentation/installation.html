@@ -1,0 +1,859 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index,follow">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+    <title>Installation – Kimai</title>
+    
+        <meta name="description" content="How to install Kimai on your server with git, composer and SSH or FTP">
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kimai Time-Tracking">
+    <meta property="og:description" content="How to install Kimai on your server with git, composer and SSH or FTP">
+    <meta property="og:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kimai Time-Tracking">
+    <meta name="twitter:site" content="@kimai_org">
+    <meta name="twitter:description" content="How to install Kimai on your server with git, composer and SSH or FTP">
+    <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <link rel="canonical" href="https://www.kimai.org/documentation/installation.html" />
+    <script src="/assets/build/theme.js"></script>
+    <link href="/assets/build/main.css" rel="stylesheet" />
+</head>
+<body class="">
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand bg-light border-bottom border-light shadow fixed-top" data-scroll-header>
+    <div class="container-fluid pe-lg-4">
+        <div class="d-flex align-items-center">
+            <a href="/documentation/" class="navbar-brand flex-shrink-0 py-1 py-lg-2">
+                <img src="/images/apple-touch-icon.png" width="47" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning">Self-hosted</span>
+        </div>
+        <div class="d-flex align-items-center w-100">
+            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 9.75rem;">
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-manual.html" class="nav-link">
+                            <i class="bx bx-book opacity-70 fs-lg me-1"></i>
+                            User manual
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/cloud.html" class="nav-link">
+                            <i class="bx bxs-cloud opacity-70 fs-lg me-1"></i>
+                            Kimai-Cloud
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/developers.html" class="nav-link">
+                            <i class="bx bx-code opacity-70 fs-lg me-1"></i>
+                            Developer
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-on-premise.html" class="nav-link">
+                            <i class="bx bx-wrench opacity-70 fs-lg me-1"></i>
+                            Self-hosted
+                        </a>
+                    </li>
+                
+            </ul>
+            <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="form-check form-switch mode-switch pe-lg-1 ms-lg-auto" data-bs-toggle="mode">
+                <input type="checkbox" class="form-check-input" id="theme-mode">
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Light</label>
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Dark</label>
+            </div>
+        </div>
+    </div>
+</header>
+
+<aside data-bs-theme="dark">
+    <div id="componentsNav" class="offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100 bg-dark border-end-lg" style="width: 21rem; z-index: 1045;">
+        <div class="offcanvas-header d-none d-lg-flex justify-content-start">
+            <a href="/documentation/" class="navbar-brand text-dark d-none d-lg-flex py-0">
+                <img src="/images/apple-touch-icon.png" width="32" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning d-none d-lg-inline-block">Self-hosted</span>
+        </div>
+        <div class="offcanvas-header d-block d-lg-none border-bottom">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <h5 class="d-lg-none mb-0">Menu</h5>
+                <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#componentsNav" aria-label="Close"></button>
+            </div>
+            <div class="list-group list-group-flush mx-n4">
+                
+                    
+                    
+                    <a href="/documentation/chapter-manual.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-book opacity-70 me-1"></i>
+                        User manual
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/cloud.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bxs-cloud opacity-70 me-1"></i>
+                        Kimai-Cloud
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/developers.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-code opacity-70 me-1"></i>
+                        Developer
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/chapter-on-premise.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-wrench opacity-70 me-1"></i>
+                        Self-hosted
+                    </a>
+                
+            </div>
+        </div>
+        <div class="offcanvas-body swiper scrollbar-hover overflow-hidden w-100 p-4" data-swiper-options='{
+          "direction": "vertical",
+          "slidesPerView": "auto",
+          "freeMode": true,
+          "scrollbar": {
+            "el": ".swiper-scrollbar"
+          },
+          "mousewheel": true
+        }'>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide h-auto">
+                    
+                        
+
+    
+    
+    <h3 class="fs-lg">Installation & Updates</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/installation.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4  active">
+                
+                Installation
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/updates.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Updates
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/shared-hosting.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Shared hosting
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/hosting-1-click.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                1-click installations
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/cache.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Reloading cache
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-management.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Plugins
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/webserver-configuration.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Webserver
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/fresh-ubuntu-22.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Ubuntu 22.04
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/synology.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Synology NAS
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">Docker</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/docker.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Docker
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/docker-compose.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Docker Compose
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/kubernetes.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Kubernetes
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/docker-updates.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Updating docker
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/building-docker.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Build your image
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/docker-troubleshooting.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Troubleshooting
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">DevOps</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/backups.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Backups
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/local-yaml.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Configuration files
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/emails.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Emails
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/logging.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Logging
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/commands.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Commands
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/faq-onpremise.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                FAQ
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/migration-v1.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Migrate from Kimai v1
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/versions.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Kimai versions
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">Authenticator</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/ldap.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                LDAP
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/saml.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                SAML
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/saml-azure.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Azure SAML
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/saml-google.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Google SAML
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/saml-keycloak.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Keycloak SAML
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/saml-authentik.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Authentik SAML
+                
+            </a>
+        
+    
+    </div>
+
+
+                        <div class="list-group list-group-flush pb-3 mb-4 mx-n4">
+                    
+                    <a href="/" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Home</a>
+                    <a href="/en/site-notice.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Site notice</a>
+                    <a href="/en/privacy-policy.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Privacy policy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-scrollbar end-0"></div>
+        </div>
+    </div>
+</aside>
+
+<main class="docs-container pt-5">
+    <div class="container-fluid px-xxl-5 px-lg-4 pt-4 pt-lg-5 pb-2 pb-lg-4">
+
+        <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 pt-4 mb-n3">
+            <div class="me-4">
+                <h1 class="pb-1">Installation</h1>
+                
+                <p class="text-muted fs-lg mb-2">How to install Kimai on your server with git, composer and SSH or FTP</p>
+                
+            </div>
+            
+
+
+
+
+    <div class="dropdown">
+        <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Older versions
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+            
+            <a class="dropdown-item" href="/documentation/1.14/installation.html">Kimai 1.14</a>
+            
+            <a class="dropdown-item" href="/documentation/installation.html">2.13.0 (latest version)</a>
+        </div>
+    </div>
+
+
+        </div>
+
+        <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+            <div>
+                
+                <div id="documentation-content">
+                    <h2 id="server-requirements">Server requirements</h2>
+
+<ul class="list-unstyled mb-4 px-4 px-lg-0">
+    <li class="d-flex align-items-center pb-1 mb-2">
+        <i class="bx bxl-php fs-xl text-primary me-3"></i>
+        PHP 8.1+ with the extensions: <code class="language-plaintext highlighter-rouge">mbstring</code>, <code class="language-plaintext highlighter-rouge">gd</code>, <code class="language-plaintext highlighter-rouge">intl</code>, <code class="language-plaintext highlighter-rouge">json</code>, <code class="language-plaintext highlighter-rouge">pdo</code>, <code class="language-plaintext highlighter-rouge">tokenizer</code>, <code class="language-plaintext highlighter-rouge">xml</code>, <code class="language-plaintext highlighter-rouge">zip</code>
+
+    </li>
+    <li class="d-flex align-items-center pb-1 mb-2">
+        <i class="bx bx-data fs-xl text-primary me-3"></i>
+        Database: MariaDB or MySQL
+    </li>
+    <li class="d-flex align-items-center pb-1 mb-2">
+        <i class="bx bx-server fs-xl text-primary me-3"></i>
+        Webserver (NGINX, or Apache with mod_rewrite)
+    </li>
+    <li class="d-flex align-items-center pb-1 mb-2">
+        <i class="bx bx-window fs-xl text-primary me-3"></i>
+        A modern web browser
+    </li>
+    <li class="d-flex align-items-center pb-1 mb-2">
+        <i class="bx bx-cog fs-xl text-primary me-3"></i>
+        A free subdomain (use in subdirectory is not supported)
+    </li>
+    <li class="d-flex align-items-center pb-1 mb-2">
+        <i class="bx bx-wrench fs-xl text-primary me-3"></i>
+        You need to install Git and <a class="mx-1" href="https://getcomposer.org/doc/00-intro.md" target="_blank">Composer</a> if you haven't already
+    </li>
+</ul>
+
+<h2 id="install-kimai-with-ssh">Install Kimai with SSH</h2>
+
+<p>To install Kimai in your environment, connect with SSH to your server and change to your webservers (document) root directory.</p>
+
+<p>First clone this repo (2.13.0 is the <a href="https://github.com/kimai/kimai/releases">latest stable release</a>):</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone <span class="nt">-b</span> 2.13.0 <span class="nt">--depth</span> 1 https://github.com/kimai/kimai.git
+<span class="nb">cd </span>kimai/
+</code></pre></div></div>
+
+<p>Now install all dependencies:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer <span class="nb">install</span> <span class="nt">--optimize-autoloader</span> <span class="nt">-n</span>
+</code></pre></div></div>
+
+<p>Configure the database connection and server version in the <code class="language-plaintext highlighter-rouge">.env</code> file:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DATABASE_URL=mysql://user:password@127.0.0.1:3306/database?charset=utf8mb4&amp;serverVersion=11.1.2-MariaDB
+</code></pre></div></div>
+<p>Fetch the exact serverVersion by running <code class="language-plaintext highlighter-rouge">mysql --version</code> and copy&amp;paste the entire version.</p>
+
+<p>And run the Kimai installer:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/console kimai:install <span class="nt">-n</span>
+</code></pre></div></div>
+
+<div class="alert d-flex alert-warning" role="alert">
+    <i class="bx bx-fab fa-windows lead me-3"></i>
+    <div>
+        
+Windows users might have to prefix the composer and installation commands with <code class="language-plaintext highlighter-rouge">php</code>, eg.:<br />
+<code class="language-plaintext highlighter-rouge">php bin/console kimai:install -n</code>
+
+    </div>
+</div>
+
+<h3 id="file-permissions">File permissions</h3>
+
+<p>The webserver needs write permissions for several directories, so make sure the
+<a href="https://symfony.com/doc/current/setup/file_permissions.html">file permissions are correct</a>.</p>
+<div class="row row-cards row-deck">
+    <div class="col-md-12">
+        <div class="card mb-3">
+            <div class="card-status bg-info"></div>
+            <div class="card-body">
+                <h4 class="card-title">Adjust file permission</h4>
+                <p>
+                    You have to allow PHP (your webserver process) to write to
+                    <code class="language-plaintext highlighter-rouge">var/</code> and it subdirectories.
+                </p>
+
+                <p>Here is an example for Debian/Ubuntu (to be executed inside the Kimai directory):</p>
+
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">chown -R :www-data .
+chmod -R g+r .
+chmod -R g+rw var/</code></pre></figure>
+
+
+            </div>
+            <div class="card-footer fs-sm text-muted">
+                Test Kimai before executing these commands (they are likely not required in a shared-hosting environment).
+                You probably need to prefix them with <code class="language-plaintext highlighter-rouge">sudo</code> and
+                the group might be called different than <code class="language-plaintext highlighter-rouge">www-data</code>.
+            </div>
+        </div>
+    </div>
+</div>
+
+<h3 id="create-your-first-user">Create your first user</h3>
+
+<p>There are several options to create your first user:</p>
+
+<ul>
+  <li>via command: <code class="language-plaintext highlighter-rouge">bin/console kimai:user:create username admin@example.com ROLE_SUPER_ADMIN</code></li>
+  <li>via login screen: you can register a user, the first one will be promoted to the role <code class="language-plaintext highlighter-rouge">ROLE_SUPER_ADMIN</code></li>
+  <li>you can configure <a href="/documentation/ldap.html">LDAP</a> or <a href="/documentation/saml.html">SAML</a> for authentication</li>
+</ul>
+
+<p>If you are going to <a href="/documentation/migration-v1.html">import data from Kimai v1</a> choose a username &amp; email that was not used in v1.</p>
+
+<h3 id="configure-documentroot">Configure DocumentRoot</h3>
+
+<p>Configure your web server (like nginx or Apache) to point its DocumentRoot at the <code class="language-plaintext highlighter-rouge">public/</code> directory.
+For more details, see the <a href="/documentation/webserver-configuration.html">Webserver How-To</a>.</p>
+
+<p>Oh … wait! Before you leave, please read the <a href="/documentation/initial-setup.html">initial setup guide</a>.</p>
+
+<h2 id="other-installation-methods">Other installation methods</h2>
+
+<h3 id="docker">Docker</h3>
+
+<p>There is a dedicated article about running <a href="/documentation/docker.html">a Docker image of Kimai</a>, suitable for development and production.</p>
+
+<h3 id="kubernetes">Kubernetes</h3>
+
+<p>The rise of containerization and orchestration is not stopping, please read the <a href="/documentation/kubernetes.html">Kubernetes and Helm chart</a> chapter to find out more.</p>
+
+<h3 id="shared-hosting">Shared hosting</h3>
+
+<p>Kimai is known to be compatible and can be installed on a wide range of <a href="/documentation/shared-hosting.html">shared hosting environments</a> like Uberspace, 1&amp;1, ionos, Domainfactiry, All-Inkl, Strato and others.</p>
+
+<h3 id="1-click-installations">1-click installations</h3>
+
+<p>Many platforms adopted Kimai to be compatible with their <a href="/documentation/hosting-1-click.html">1-click installation systems</a>, like YunoHost, Softaculous, Cloudron, VestaCP, ISPConfig 3 and Cloudjiffy.</p>
+
+<h3 id="plesk">Plesk</h3>
+
+<p>Hosting Kimai on Plesk is described in the <a href="/documentation/shared-hosting.html">shared hosting article</a>.</p>
+
+<h3 id="ftp-installation">FTP installation</h3>
+
+<div class="alert alert-warning" role="alert">
+    Installation via FTP is not supported, because most of Kimai's management tasks rely on the console.
+</div>
+
+<p>You have two choices:</p>
+<ul>
+  <li>get a proper webhosting/virtual server with SSH support</li>
+  <li>use a <a href="https://www.kimai.cloud">SaaS time-tracking software</a></li>
+</ul>
+
+<div class="alert alert-info" role="alert">
+    
+If you don’t have the technical background for managing a server yourself and need to rely on a shared hosting package,
+it is better to stop hosting business critical software yourself!
+If you thought about switching to a managed server before (they are affordable these days)
+you can contact me, <a href="/store/installation-support.html">I offer paid setup support</a>.
+
+</div>
+
+<h3 id="ansible">Ansible</h3>
+
+<p><a href="https://www.webarchitects.coop/">Webarchitects Co-operative</a> have written a <a href="https://git.coop/webarch/kimai">Kimai Ansible Galaxy role</a> for automatically installing and upgrading Kimai sites on their shared hosting servers.</p>
+
+<h2 id="installation-faq">Installation FAQ</h2>
+
+<h3 id="column-table_name-in-where-clause-is-ambiguous">Column ‘TABLE_NAME’ in where clause is ambiguous</h3>
+
+<p>An error like this might occur when you have a misconfigured <code class="language-plaintext highlighter-rouge">serverVersion</code> in your <code class="language-plaintext highlighter-rouge">DATABASE_URL</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ERROR] Failed to set migration status: An exception occurred while executing a query: SQLSTATE[23000]: Integrity
+constraint violation: 1052 Column 'TABLE_NAME' in where clause is ambiguous
+</code></pre></div></div>
+
+<p>Run <code class="language-plaintext highlighter-rouge">mysql --version</code> and extract the entire version string, for example for this entire version string:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql from 11.1.2-MariaDB, client 15.2 for osx10.19 (arm64) using  EditLine wrapper
+</code></pre></div></div>
+
+<p>Your <code class="language-plaintext highlighter-rouge">serverVersion</code> should look like this:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DATABASE_URL=mysql://kimai:kimai@sqldb/kimai?charset=utf8mb4&amp;serverVersion=11.1.2-MariaDB
+</code></pre></div></div>
+
+<h3 id="mysql-server-has-gone-away">MySQL server has gone away</h3>
+
+<p>The message <code class="language-plaintext highlighter-rouge">SQLSTATE[HY000] [2006] MySQL server has gone away</code> usually means that your <code class="language-plaintext highlighter-rouge">DATABASE_URL</code> is wrong. You can run a command like <code class="language-plaintext highlighter-rouge">bin/console doctrine:schema:validate</code> to check,
+if the software can connect successfully to your database.</p>
+
+<p>If that gives you the same error, it is configuration issue which you need to solve first, before you are able to install Kimai.</p>
+
+<h3 id="malformed-parameter-url">Malformed parameter “url”</h3>
+
+<p>If you see an error message like this, then you have a special character in your <code class="language-plaintext highlighter-rouge">DATABASE_URL</code>.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>!!  
+!!  In DriverManager.php line 259:
+!!                                
+!!    Malformed parameter "url".  
+!!
+</code></pre></div></div>
+<p>This can be a character like <code class="language-plaintext highlighter-rouge">@</code> or <code class="language-plaintext highlighter-rouge">/</code> or some others, which need to be urlencoded.
+This can easily be done with one command, lets assume your password is <code class="language-plaintext highlighter-rouge">mG0/d1@3aT.Z)s</code> then you get your password like this:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php <span class="nt">-r</span> <span class="s2">"echo urlencode('mG0/d1@3aT.Z)s');echo PHP_EOL;"</span>
+mG0%2Fd1%403aT.Z%29s
+</code></pre></div></div>
+
+<p>Then your <code class="language-plaintext highlighter-rouge">DATABASE_URL</code> might look like this:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DATABASE_URL=mysql://root:mG0%2Fd1%403aT.Z%29s@127.0.0.1:3306/kimai2?charset=utf8mb4&amp;serverVersion=5.7.40
+</code></pre></div></div>
+
+<h3 id="which-user-to-use-www-data-httpd-or-your-own">Which user to use, www-data, httpd or your own?</h3>
+
+<p>The installation instructions are intended primarily for server applications.</p>
+
+<p>If you are installing Kimai on your personal computer - maybe for use in a local network, but where the computer primarily
+serves as a single user computer - you will avoid permission errors by substituting <code class="language-plaintext highlighter-rouge">www-data</code> in the relevant commands with your username.</p>
+
+<p>In particular, <code class="language-plaintext highlighter-rouge">sudo -u www-data</code> is a command which grants the <code class="language-plaintext highlighter-rouge">www-data</code> user temporary administrator/super-user privileges).
+However, depending on the configuration of your particular computer, you may be able to avoid <code class="language-plaintext highlighter-rouge">sudo</code> altogether (your user
+may already have adequate permissions). Or your webserver user is not called <code class="language-plaintext highlighter-rouge">www-data</code> but <code class="language-plaintext highlighter-rouge">httpd</code>.</p>
+
+<p>You can try first leaving <code class="language-plaintext highlighter-rouge">sudo -u www-data</code> altogether in the relevant commands.
+If you have permission errors, you can substitute it for <code class="language-plaintext highlighter-rouge">sudo -u $USER</code> in the relevant commands, where username is the
+username that runs the server - if you don’t know, it is likely your own username that you login with.</p>
+
+<h4 id="chown--chmod-commands">chown &amp; chmod commands</h4>
+
+<p>Further, <code class="language-plaintext highlighter-rouge">chown</code> and <code class="language-plaintext highlighter-rouge">chmod</code> commands should be for the username that runs the server instead of <code class="language-plaintext highlighter-rouge">www-data</code> (again, if you
+don’t know, it is likely your own username).</p>
+
+<p>Also note that, depending on where you are installing Kimai and how your computer is configured, you may also receive
+“operation not permitted” errors when setting file permissions (<code class="language-plaintext highlighter-rouge">chown</code> and <code class="language-plaintext highlighter-rouge">chmod</code> commands).
+In that case, prefix them with <code class="language-plaintext highlighter-rouge">sudo</code>.</p>
+
+<h3 id="memory-limit">Memory limit</h3>
+
+<p>Composer crashes with something like</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">!!</span>    Error: Allowed memory size of 134217728 bytes exhausted <span class="o">(</span>tried to allocate 20480 bytes<span class="o">)</span>
+</code></pre></div></div>
+
+<p>Then please read <a href="https://getcomposer.org/doc/articles/troubleshooting.md#memory-limit-errors">this chapter</a> in the official docs.
+In short, try to run:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">COMPOSER_MEMORY_LIMIT</span><span class="o">=</span><span class="nt">-1</span> php <span class="nt">-d</span> <span class="nv">memory_limit</span><span class="o">=</span><span class="nt">-1</span> /usr/bin/composer <span class="nb">install</span> <span class="nt">--optimize-autoloader</span> <span class="nt">-n</span>
+</code></pre></div></div>
+
+<h3 id="internal-server-error-500">Internal Server Error 500</h3>
+
+<p>This error can have several causes. Here is a small summary what to check for if
+this error occurs when trying to access the Kimai frontend:</p>
+
+<ul>
+  <li>There could be something wrong with your file permissions. Please check the
+log <code class="language-plaintext highlighter-rouge">var/log/prod.log</code> in your installation directory.</li>
+  <li>Make sure not to reload Kimai as <code class="language-plaintext highlighter-rouge">root</code> (e.g. via <code class="language-plaintext highlighter-rouge">bin/console kimai:reload
+--env=prod</code>). The application will create folders and files. If <em>root</em> started
+the process you most likely will have permission errors if the web-server is
+not started as <code class="language-plaintext highlighter-rouge">root</code> as well. <a href="/documentation/cache.html">Fix file permissions</a>!</li>
+</ul>
+
+<h3 id="still-doesnt-work">Still doesn’t work?</h3>
+
+<p>These infos were added to give you some possible guidance if you run into troubles. The Linux (and Mac) filesystem
+with its permission structure, especially when using server software, can be tricky and challenging.</p>
+
+<p>But this has NOTHING to do with Kimai and we might not be able to help you in such situations … it is your system and
+responsibility, be aware that wrong permissions might break Kimai and can also lead to security problems.</p>
+
+                </div>
+                
+
+                
+                <h2 id="related-articles" class="fs-4 mt-5">Related articles</h2>
+                <ul>
+                    
+                    
+                    <li>
+                        <a href="/documentation/shared-hosting.html">Shared hosting</a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="/documentation/hosting-1-click.html">1-click installations</a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="/documentation/fresh-ubuntu-22.html">Install Kimai on Ubuntu 22.04</a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="/documentation/webserver-configuration.html">Webserver configuration</a>
+                    </li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+
+    </div>
+</main>
+
+
+    <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
+        <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#server-requirements" class="nav-link">Server requirements</a></li><li class="nav-item"><a href="#install-kimai-with-ssh" class="nav-link">Install Kimai with SSH</a><ul><li class="nav-item"><a href="#file-permissions" class="nav-link">File permissions</a></li><li class="nav-item"><a href="#create-your-first-user" class="nav-link">Create your first user</a></li><li class="nav-item"><a href="#configure-documentroot" class="nav-link">Configure DocumentRoot</a></li></ul></li><li class="nav-item"><a href="#other-installation-methods" class="nav-link">Other installation methods</a><ul><li class="nav-item"><a href="#docker" class="nav-link">Docker</a></li><li class="nav-item"><a href="#kubernetes" class="nav-link">Kubernetes</a></li><li class="nav-item"><a href="#shared-hosting" class="nav-link">Shared hosting</a></li><li class="nav-item"><a href="#1-click-installations" class="nav-link">1-click installations</a></li><li class="nav-item"><a href="#plesk" class="nav-link">Plesk</a></li><li class="nav-item"><a href="#ftp-installation" class="nav-link">FTP installation</a></li><li class="nav-item"><a href="#ansible" class="nav-link">Ansible</a></li></ul></li><li class="nav-item"><a href="#installation-faq" class="nav-link">Installation FAQ</a><ul><li class="nav-item"><a href="#column-table_name-in-where-clause-is-ambiguous" class="nav-link">Column ‘TABLE_NAME’ in where clause is ambiguous</a></li><li class="nav-item"><a href="#mysql-server-has-gone-away" class="nav-link">MySQL server has gone away</a></li><li class="nav-item"><a href="#malformed-parameter-url" class="nav-link">Malformed parameter “url”</a></li><li class="nav-item"><a href="#which-user-to-use-www-data-httpd-or-your-own" class="nav-link">Which user to use, www-data, httpd or your own?</a></li><li class="nav-item"><a href="#memory-limit" class="nav-link">Memory limit</a></li><li class="nav-item"><a href="#internal-server-error-500" class="nav-link">Internal Server Error 500</a></li><li class="nav-item"><a href="#still-doesnt-work" class="nav-link">Still doesn’t work?</a></li></ul></li></ul>
+        
+        <ul class="nav">
+            <li>
+                <a href="#related-articles" class="nav-link">Related articles</a>
+            </li>
+        </ul>
+        
+    </aside>
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+
+</body>
+</html>

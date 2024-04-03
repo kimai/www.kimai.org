@@ -1,0 +1,819 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index,follow">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+    <title>PDF templates – Kimai</title>
+    
+        <meta name="description" content="Kimai supports custom PDF templates in the invoice and export screens">
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kimai Time-Tracking">
+    <meta property="og:description" content="Kimai supports custom PDF templates in the invoice and export screens">
+    <meta property="og:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kimai Time-Tracking">
+    <meta name="twitter:site" content="@kimai_org">
+    <meta name="twitter:description" content="Kimai supports custom PDF templates in the invoice and export screens">
+    <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <link rel="canonical" href="https://www.kimai.org/documentation/pdf-templates.html" />
+    <script src="/assets/build/theme.js"></script>
+    <link href="/assets/build/main.css" rel="stylesheet" />
+</head>
+<body class="">
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand bg-light border-bottom border-light shadow fixed-top" data-scroll-header>
+    <div class="container-fluid pe-lg-4">
+        <div class="d-flex align-items-center">
+            <a href="/documentation/" class="navbar-brand flex-shrink-0 py-1 py-lg-2">
+                <img src="/images/apple-touch-icon.png" width="47" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning">User manual</span>
+        </div>
+        <div class="d-flex align-items-center w-100">
+            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 9.75rem;">
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-manual.html" class="nav-link">
+                            <i class="bx bx-book opacity-70 fs-lg me-1"></i>
+                            User manual
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/cloud.html" class="nav-link">
+                            <i class="bx bxs-cloud opacity-70 fs-lg me-1"></i>
+                            Kimai-Cloud
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/developers.html" class="nav-link">
+                            <i class="bx bx-code opacity-70 fs-lg me-1"></i>
+                            Developer
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-on-premise.html" class="nav-link">
+                            <i class="bx bx-wrench opacity-70 fs-lg me-1"></i>
+                            Self-hosted
+                        </a>
+                    </li>
+                
+            </ul>
+            <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="form-check form-switch mode-switch pe-lg-1 ms-lg-auto" data-bs-toggle="mode">
+                <input type="checkbox" class="form-check-input" id="theme-mode">
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Light</label>
+                <label class="form-check-label d-none d-sm-block d-lg-none d-xl-block" for="theme-mode">Dark</label>
+            </div>
+        </div>
+    </div>
+</header>
+
+<aside data-bs-theme="dark">
+    <div id="componentsNav" class="offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100 bg-dark border-end-lg" style="width: 21rem; z-index: 1045;">
+        <div class="offcanvas-header d-none d-lg-flex justify-content-start">
+            <a href="/documentation/" class="navbar-brand text-dark d-none d-lg-flex py-0">
+                <img src="/images/apple-touch-icon.png" width="32" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning d-none d-lg-inline-block">User manual</span>
+        </div>
+        <div class="offcanvas-header d-block d-lg-none border-bottom">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <h5 class="d-lg-none mb-0">Menu</h5>
+                <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#componentsNav" aria-label="Close"></button>
+            </div>
+            <div class="list-group list-group-flush mx-n4">
+                
+                    
+                    
+                    <a href="/documentation/chapter-manual.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-book opacity-70 me-1"></i>
+                        User manual
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/cloud.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bxs-cloud opacity-70 me-1"></i>
+                        Kimai-Cloud
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/developers.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-code opacity-70 me-1"></i>
+                        Developer
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/chapter-on-premise.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-wrench opacity-70 me-1"></i>
+                        Self-hosted
+                    </a>
+                
+            </div>
+        </div>
+        <div class="offcanvas-body swiper scrollbar-hover overflow-hidden w-100 p-4" data-swiper-options='{
+          "direction": "vertical",
+          "slidesPerView": "auto",
+          "freeMode": true,
+          "scrollbar": {
+            "el": ".swiper-scrollbar"
+          },
+          "mousewheel": true
+        }'>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide h-auto">
+                    
+                        
+
+    
+    
+    <h3 class="fs-lg">Using Kimai</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/timesheet.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Timesheet
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/weekly-times.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Weekly working hours
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/calendar.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Calendar
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/invoices.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Invoices
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/export.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Export
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/reporting.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Reporting
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/customer.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Customer
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/project.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Projects
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/activity.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Activities
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/tags.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Tags
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/users.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Users
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/user-preferences.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                User preferences
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/permissions.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Roles &amp; Permissions
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/teams.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Teams
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/configurations.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Settings
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/doctor.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Doctor
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/contract.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Working times
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/public-holiday.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Public holiday
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/absence.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Absence
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/dashboard.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Dashboard
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">Tips and Tricks</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/initial-setup.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Initial setup
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/rates.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Prices (rates)
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/billable.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Billable
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/pdf-templates.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4  active">
+                
+                PDF templates
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/keyboard-shortcuts.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Keyboard shortcuts
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/i18n-am-pm.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Date and Time formats
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/duration-format.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Duration format
+                
+            </a>
+        
+    
+        
+    
+        
+            
+            
+            <a href="/documentation/homescreen.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Use Kimai as app
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/user-api.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Connecting via API
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">Additional features</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/plugin-custom-fields.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Custom fields
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-expenses.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Expenses
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-task-management.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Task management
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-custom-css.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Custom CSS
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-custom-content.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Custom content
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-translation.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Translation
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-invoice.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Invoice
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-import.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Importer
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-audit-trail.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Audit trail logs
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-contract.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Working contract
+                
+            </a>
+        
+    
+    </div>
+
+
+                        <div class="list-group list-group-flush pb-3 mb-4 mx-n4">
+                    
+                    <a href="/" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Home</a>
+                    <a href="/en/site-notice.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Site notice</a>
+                    <a href="/en/privacy-policy.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Privacy policy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-scrollbar end-0"></div>
+        </div>
+    </div>
+</aside>
+
+<main class="docs-container pt-5">
+    <div class="container-fluid px-xxl-5 px-lg-4 pt-4 pt-lg-5 pb-2 pb-lg-4">
+
+        <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 pt-4 mb-n3">
+            <div class="me-4">
+                <h1 class="pb-1">PDF templates</h1>
+                
+                <p class="text-muted fs-lg mb-2">Kimai supports custom PDF templates in the invoice and export screens</p>
+                
+            </div>
+            
+
+
+
+
+
+        </div>
+
+        <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+            <div>
+                
+                <div id="documentation-content">
+                    <p>PDF templates are basically the same as Twig templates (which themselves create HTML).
+The generated HTML is processed by the <a href="https://mpdf.github.io">MPdf library</a>, which will convert the HTML and CSS to PDF.</p>
+
+<p>There are some additional contents (<a href="https://mpdf.github.io/reference/html-control-tags/overview.html">that need special markup</a>), which define e.g. the page header and footer. 
+Please read the MPdf documentation and check the default PDF templates.</p>
+
+<h2 id="setting-options">Setting options</h2>
+
+<p>You can customize many <a href="https://mpdf.github.io/reference/mpdf-functions/construct.html">mPDF options</a> and <a href="https://mpdf.github.io/reference/mpdf-variables/overview.html">configurations</a> like the page format with the <code class="language-plaintext highlighter-rouge">pdfContext.setOption(name, value)</code> syntax:</p>
+
+<div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="o">-</span> <span class="k">set</span> <span class="nv">option</span> <span class="o">=</span> <span class="nv">pdfContext.setOption</span><span class="p">(</span><span class="s1">'name'</span><span class="p">,</span> <span class="s1">'value'</span><span class="p">)</span> <span class="o">-</span><span class="cp">%}</span>
+</code></pre></div></div>
+
+<h2 id="changing-the-filename">Changing the filename</h2>
+
+<div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="o">-</span> <span class="k">set</span> <span class="nv">customer</span> <span class="o">=</span> <span class="nv">query.customers</span><span class="o">|</span><span class="nf">length</span> <span class="o">==</span> <span class="nv">1</span> <span class="err">?</span> <span class="nv">query.customers.0</span> <span class="err">:</span> <span class="nb">null</span> <span class="o">-</span><span class="cp">%}</span>
+<span class="cp">{%</span><span class="o">-</span> <span class="k">set</span> <span class="nv">filename</span> <span class="o">=</span> <span class="s1">'ACME_'</span> <span class="err">~</span> <span class="p">(</span><span class="nv">customer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">null</span> <span class="err">?</span> <span class="nv">customer.name</span><span class="o">|</span><span class="nf">replace</span><span class="p">(</span><span class="err">{</span><span class="s1">' '</span><span class="err">:</span> <span class="s1">'-'</span><span class="err">}</span><span class="p">)</span> <span class="err">~</span> <span class="s1">'_'</span> <span class="err">:</span> <span class="s1">''</span><span class="p">)</span> <span class="err">~</span> <span class="nv">query.begin</span><span class="o">|</span><span class="nf">date_format</span><span class="p">(</span><span class="s1">'Y-m'</span><span class="p">)</span> <span class="o">-</span><span class="cp">%}</span>
+<span class="cp">{%</span><span class="o">-</span> <span class="k">set</span> <span class="nv">option</span> <span class="o">=</span> <span class="nv">pdfContext.setOption</span><span class="p">(</span><span class="s1">'filename'</span><span class="p">,</span> <span class="nv">filename</span><span class="p">)</span> <span class="o">-</span><span class="cp">%}</span>
+</code></pre></div></div>
+
+<h2 id="pdfa-compliance">PDF/A compliance</h2>
+
+<p>You can create a <a href="https://mpdf.github.io/what-else-can-i-do/pdf-a1-b-compliance.html">PDF/A1-b compliant</a> document by setting
+these configurations in your template:</p>
+
+<div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="o">-</span> <span class="k">set</span> <span class="nv">option</span> <span class="o">=</span> <span class="nv">pdfContext.setOption</span><span class="p">(</span><span class="s1">'PDFA'</span><span class="p">,</span> <span class="kp">true</span><span class="p">)</span> <span class="o">-</span><span class="cp">%}</span>
+<span class="cp">{%</span><span class="o">-</span> <span class="k">set</span> <span class="nv">option</span> <span class="o">=</span> <span class="nv">pdfContext.setOption</span><span class="p">(</span><span class="s1">'PDFAauto'</span><span class="p">,</span> <span class="kp">true</span><span class="p">)</span> <span class="o">-</span><span class="cp">%}</span> 
+</code></pre></div></div>
+
+<h2 id="available-fonts">Available fonts</h2>
+
+<p>The PDF engine comes with many fonts that can be used without the need for installing fonts in your computer system.</p>
+
+<ul>
+  <li>Defaults: <code class="language-plaintext highlighter-rouge">times</code>, <code class="language-plaintext highlighter-rouge">serif</code>, <code class="language-plaintext highlighter-rouge">helvetica</code>, <code class="language-plaintext highlighter-rouge">sans</code>, <code class="language-plaintext highlighter-rouge">sans</code>, <code class="language-plaintext highlighter-rouge">courier</code>, <code class="language-plaintext highlighter-rouge">monospace</code>
+</li>
+  <li>Built-in: <code class="language-plaintext highlighter-rouge">dejavusanscondensed</code>, <code class="language-plaintext highlighter-rouge">dejavusans</code>, <code class="language-plaintext highlighter-rouge">dejavuserif</code>, <code class="language-plaintext highlighter-rouge">dejavuserifcondensed</code>, <code class="language-plaintext highlighter-rouge">dejavusansmono</code>, <code class="language-plaintext highlighter-rouge">freesans</code>, <code class="language-plaintext highlighter-rouge">freeserif</code>, <code class="language-plaintext highlighter-rouge">freemono</code>, <code class="language-plaintext highlighter-rouge">ocrb</code>, <code class="language-plaintext highlighter-rouge">abyssinicasil</code>, <code class="language-plaintext highlighter-rouge">aboriginalsans</code>, <code class="language-plaintext highlighter-rouge">jomolhari</code>, <code class="language-plaintext highlighter-rouge">taiheritagepro</code>, <code class="language-plaintext highlighter-rouge">aegean</code>, <code class="language-plaintext highlighter-rouge">aegyptus</code>, <code class="language-plaintext highlighter-rouge">akkadian</code>, <code class="language-plaintext highlighter-rouge">quivira</code>, <code class="language-plaintext highlighter-rouge">lannaalif</code>, <code class="language-plaintext highlighter-rouge">daibannasilbook</code>, <code class="language-plaintext highlighter-rouge">garuda</code>, <code class="language-plaintext highlighter-rouge">khmeros</code>, <code class="language-plaintext highlighter-rouge">dhyana</code>, <code class="language-plaintext highlighter-rouge">tharlon</code>, <code class="language-plaintext highlighter-rouge">padaukbook</code>, <code class="language-plaintext highlighter-rouge">zawgyi-one</code>, <code class="language-plaintext highlighter-rouge">ayar</code>, <code class="language-plaintext highlighter-rouge">taameydavidclm</code>, <code class="language-plaintext highlighter-rouge">mph2bdamase</code>, <code class="language-plaintext highlighter-rouge">briyaz</code>, <code class="language-plaintext highlighter-rouge">lateef</code>, <code class="language-plaintext highlighter-rouge">sun-exta</code>, <code class="language-plaintext highlighter-rouge">unbatang</code>
+</li>
+</ul>
+
+<h2 id="missing-character">Missing character</h2>
+
+<p>The default font used in the PDFs does not support certain character ranges, which will usually result in the ☐ box symbol, that symbolizes any character that is not available in the used font.
+Unfortunately it is still not out of the box possible to render or display right-to-left, cyrillic and asian languages in PDFs.
+Please read the relevant <a href="https://mpdf.github.io/fonts-languages/fonts-in-mpdf-7-x.html">MPDF documentation</a> about fonts and them the chapter about all <a href="https://mpdf.github.io/fonts-languages/available-fonts-v6.html">available fonts</a>.
+As last resort (and only after trying the below hints) read these Adobe <a href="https://helpx.adobe.com/acrobat/using/asian-cyrillic-right-to-left.html">docs</a> and try the downloadable font pack for
+<a href="https://helpx.adobe.com/in/acrobat/kb/windows-font-packs-32-bit-reader.html#Requirements">Windows</a> and <a href="https://helpx.adobe.com/in/acrobat/kb/macintosh-font-packs--acrobat---reader-.html">macOS</a>.</p>
+
+<p>The following font/language combinations were successfully used by the community.
+Activate them in your template by using e.g. this CSS: <code class="language-plaintext highlighter-rouge">body { font-family: sun-exta, unbatang, sans-serif; }</code></p>
+
+<ul>
+  <li>
+<strong>Hebrew</strong> works with <code class="language-plaintext highlighter-rouge">helvetica</code>, <code class="language-plaintext highlighter-rouge">sans</code>, <code class="language-plaintext highlighter-rouge">dejavusanscondensed</code>, <code class="language-plaintext highlighter-rouge">dejavusans</code>, <code class="language-plaintext highlighter-rouge">freesans</code>, <code class="language-plaintext highlighter-rouge">freeserif</code>, <code class="language-plaintext highlighter-rouge">freemono</code>, <code class="language-plaintext highlighter-rouge">quivira</code>, <code class="language-plaintext highlighter-rouge">mph2bdamase</code>, <code class="language-plaintext highlighter-rouge">sun-exta</code>
+</li>
+  <li>
+<strong>Cyrillic</strong> works with <code class="language-plaintext highlighter-rouge">times</code>, <code class="language-plaintext highlighter-rouge">sans</code>, <code class="language-plaintext highlighter-rouge">courier</code>, <code class="language-plaintext highlighter-rouge">helvetica</code>, <code class="language-plaintext highlighter-rouge">serif</code>, <code class="language-plaintext highlighter-rouge">monospace</code>, <code class="language-plaintext highlighter-rouge">mono</code>, <code class="language-plaintext highlighter-rouge">dejavusanscondensed</code>, <code class="language-plaintext highlighter-rouge">dejavusans</code>, <code class="language-plaintext highlighter-rouge">dejavuserif</code>, <code class="language-plaintext highlighter-rouge">dejavusansmono</code>, <code class="language-plaintext highlighter-rouge">freesans</code>, <code class="language-plaintext highlighter-rouge">freeserif</code>, <code class="language-plaintext highlighter-rouge">freemono</code>, <code class="language-plaintext highlighter-rouge">quivira</code>, <code class="language-plaintext highlighter-rouge">mph2bdamase</code>, <code class="language-plaintext highlighter-rouge">sun-exta</code>, <code class="language-plaintext highlighter-rouge">unbatang</code>
+</li>
+  <li>
+<strong>Japanese</strong> works with <code class="language-plaintext highlighter-rouge">sun-exta</code> and <code class="language-plaintext highlighter-rouge">unbatang</code>, which can be downloaded from <a href="https://www.alanwood.net/downloads/index.html">here</a> (if missing on your system)</li>
+</ul>
+
+<h2 id="font-debugging">Font debugging</h2>
+
+<p>You can use the following template to debug fonts. Replace the sentence <code class="language-plaintext highlighter-rouge">The quick brown fox jumps over the lazy dog</code> with the text you want to test.</p>
+
+<div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="o">-</span> <span class="k">set</span> <span class="nv">defaultFonts</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'times'</span><span class="p">,</span> <span class="s1">'serif'</span><span class="p">,</span> <span class="s1">'helvetica'</span><span class="p">,</span> <span class="s1">'sans'</span><span class="p">,</span> <span class="s1">'sans'</span><span class="p">,</span> <span class="s1">'courier'</span><span class="p">,</span> <span class="s1">'monospace'</span><span class="p">,</span> <span class="s1">'mono'</span><span class="p">]</span> <span class="o">-</span><span class="cp">%}</span>
+<span class="cp">{%</span><span class="o">-</span> <span class="k">set</span> <span class="nv">builtInFonts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"dejavusanscondensed"</span><span class="p">,</span> <span class="s2">"dejavusans"</span><span class="p">,</span> <span class="s2">"dejavuserif"</span><span class="p">,</span> <span class="s2">"dejavuserifcondensed"</span><span class="p">,</span> <span class="s2">"dejavusansmono"</span><span class="p">,</span> <span class="s2">"freesans"</span><span class="p">,</span> <span class="s2">"freeserif"</span><span class="p">,</span> <span class="s2">"freemono"</span><span class="p">,</span> <span class="s2">"ocrb"</span><span class="p">,</span> <span class="s2">"abyssinicasil"</span><span class="p">,</span> <span class="s2">"aboriginalsans"</span><span class="p">,</span> <span class="s2">"jomolhari"</span><span class="p">,</span> <span class="s2">"taiheritagepro"</span><span class="p">,</span> <span class="s2">"aegean"</span><span class="p">,</span> <span class="s2">"aegyptus"</span><span class="p">,</span> <span class="s2">"akkadian"</span><span class="p">,</span> <span class="s2">"quivira"</span><span class="p">,</span> <span class="s2">"lannaalif"</span><span class="p">,</span> <span class="s2">"daibannasilbook"</span><span class="p">,</span> <span class="s2">"garuda"</span><span class="p">,</span> <span class="s2">"khmeros"</span><span class="p">,</span> <span class="s2">"dhyana"</span><span class="p">,</span> <span class="s2">"tharlon"</span><span class="p">,</span> <span class="s2">"padaukbook"</span><span class="p">,</span> <span class="s2">"zawgyi-one"</span><span class="p">,</span> <span class="s2">"ayar"</span><span class="p">,</span> <span class="s2">"taameydavidclm"</span><span class="p">,</span> <span class="s2">"mph2bdamase"</span><span class="p">,</span> <span class="s2">"xbriyaz"</span><span class="p">,</span> <span class="s2">"lateef"</span><span class="p">,</span> <span class="s2">"sun-exta"</span><span class="p">,</span> <span class="s2">"unbatang"</span><span class="p">]</span> <span class="o">-</span><span class="cp">%}</span>
+<span class="cp">{%</span><span class="o">-</span> <span class="k">set</span> <span class="nv">fontData</span> <span class="o">=</span> <span class="nv">pdfContext.setOption</span><span class="p">(</span><span class="s1">'fonts'</span><span class="p">,</span> <span class="nv">customFonts</span><span class="p">)</span> <span class="o">-</span><span class="cp">%}</span>
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Font Demo<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Default PDF fonts<span class="nt">&lt;/h2&gt;</span>
+    <span class="cp">{%</span> <span class="k">for</span> <span class="nv">fontName</span> <span class="ow">in</span> <span class="nv">defaultFonts</span> <span class="cp">%}</span>
+        <span class="nt">&lt;p</span> <span class="na">style=</span><span class="s">"font-family: </span><span class="cp">{{</span> <span class="nv">fontName</span> <span class="cp">}}</span><span class="s">"</span><span class="nt">&gt;</span>The quick brown fox jumps over the lazy dog (<span class="cp">{{</span> <span class="nv">fontName</span> <span class="cp">}}</span>)<span class="nt">&lt;/p&gt;</span>
+    <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+    <span class="nt">&lt;pagebreak</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Built-In fonts<span class="nt">&lt;/h2&gt;</span>
+    <span class="cp">{%</span> <span class="k">for</span> <span class="nv">fontName</span> <span class="ow">in</span> <span class="nv">builtInFonts</span> <span class="cp">%}</span>
+        <span class="nt">&lt;p</span> <span class="na">style=</span><span class="s">"font-family: </span><span class="cp">{{</span> <span class="nv">fontName</span> <span class="cp">}}</span><span class="s">"</span><span class="nt">&gt;</span>The quick brown fox jumps over the lazy dog (<span class="cp">{{</span> <span class="nv">fontName</span> <span class="cp">}}</span>)<span class="nt">&lt;/p&gt;</span>
+    <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h2 id="custom-fonts">Custom fonts</h2>
+
+<p>If you want to use a custom font in your PDF, you can configure it like that:</p>
+
+<div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="o">-</span> <span class="k">set</span> <span class="nv">fontData</span> <span class="o">=</span> <span class="nv">pdfContext.setOption</span><span class="p">(</span><span class="s1">'fonts'</span><span class="p">,</span> <span class="err">{</span>
+<span class="s1">'demo'</span><span class="err">:</span> <span class="err">{</span>
+    <span class="s1">'R'</span><span class="err">:</span> <span class="s1">'Demo-Regular.ttf'</span><span class="p">,</span>
+    <span class="s1">'B'</span><span class="err">:</span> <span class="s1">'Demo-Bold.ttf'</span><span class="p">,</span>
+    <span class="s1">'I'</span><span class="err">:</span> <span class="s1">'Demo-Italic.ttf'</span><span class="p">,</span>
+    <span class="s1">'BI'</span><span class="err">:</span> <span class="s1">'Demo-BoldItalic.ttf'</span>
+<span class="err">}</span>
+<span class="err">}</span><span class="p">)</span> <span class="o">-</span><span class="cp">%}</span>
+<span class="nt">&lt;style&gt;</span>
+<span class="nt">body</span> <span class="p">{</span> 
+    <span class="nl">font-family</span><span class="p">:</span> <span class="s2">'demo'</span><span class="p">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span> 
+</code></pre></div></div>
+
+<p>The font files must be stored in the directory <code class="language-plaintext highlighter-rouge">var/data/fonts/</code> within the Kimai directory, in this case it would be:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">var/data/fonts/Demo-Regular.ttf</code></li>
+  <li><code class="language-plaintext highlighter-rouge">var/data/fonts/Demo-Bold.ttf</code></li>
+  <li><code class="language-plaintext highlighter-rouge">var/data/fonts/Demo-Italic.ttf</code></li>
+  <li><code class="language-plaintext highlighter-rouge">var/data/fonts/Demo-BoldItalic.ttf</code></li>
+</ul>
+
+<h2 id="page-size">Page size</h2>
+
+<p>Want to display the PDF in a different size, e.g. because your customer expects <code class="language-plaintext highlighter-rouge">US-Letter</code> and not the standard size <code class="language-plaintext highlighter-rouge">DIN-A4</code>?
+Xou can add a CSS rule to your twig template:</p>
+<div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+<span class="k">@page</span> <span class="p">{</span> 
+    <span class="py">sheet-size</span><span class="p">:</span> <span class="n">LETTER-L</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span> 
+</code></pre></div></div>
+
+<p>You could also try to set the page-size via <code class="language-plaintext highlighter-rouge">options</code>:</p>
+<div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="o">-</span> <span class="k">set</span> <span class="nv">option</span> <span class="o">=</span> <span class="nv">pdfContext.setOption</span><span class="p">(</span><span class="s1">'format'</span><span class="p">,</span> <span class="s1">'A4-L'</span><span class="p">)</span> <span class="o">-</span><span class="cp">%}</span>
+</code></pre></div></div>
+
+<p>Available sizes are:</p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">A4</code>, <code class="language-plaintext highlighter-rouge">A3</code>, <code class="language-plaintext highlighter-rouge">Letter</code>, <code class="language-plaintext highlighter-rouge">Legal</code>, <code class="language-plaintext highlighter-rouge">Executive</code>, <code class="language-plaintext highlighter-rouge">Folio</code>, <code class="language-plaintext highlighter-rouge">Demy</code>, <code class="language-plaintext highlighter-rouge">Royal</code>, <code class="language-plaintext highlighter-rouge">A</code>, <code class="language-plaintext highlighter-rouge">B</code>, <code class="language-plaintext highlighter-rouge">Ledger</code>, <code class="language-plaintext highlighter-rouge">Tabloid</code> …</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">A4-L</code>, <code class="language-plaintext highlighter-rouge">A3-L</code>, <code class="language-plaintext highlighter-rouge">Letter-L</code>, <code class="language-plaintext highlighter-rouge">Legal-L</code>, <code class="language-plaintext highlighter-rouge">Executive-L</code>, <code class="language-plaintext highlighter-rouge">Folio-L</code> … for landscape</li>
+</ul>
+
+<p>More information available in the <a href="https://mpdf.github.io/paging/different-page-sizes.html">MDPF documentation</a> and the
+full list of available sizes <a href="https://mpdf.github.io/reference/mpdf-functions/construct.html">can be found here</a> (check <code class="language-plaintext highlighter-rouge">format</code>).</p>
+
+                </div>
+                
+
+                
+                <h2 id="related-articles" class="fs-4 mt-5">Related articles</h2>
+                <ul>
+                    
+                    
+                    <li>
+                        <a href="/documentation/invoices.html">Invoices</a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="/documentation/export.html">Export</a>
+                    </li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+
+    </div>
+</main>
+
+
+    <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
+        <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
+        <ul class="nav" id="jumpToNav">
+<li class="nav-item"><a href="#setting-options" class="nav-link">Setting options</a></li>
+<li class="nav-item"><a href="#changing-the-filename" class="nav-link">Changing the filename</a></li>
+<li class="nav-item"><a href="#pdfa-compliance" class="nav-link">PDF/A compliance</a></li>
+<li class="nav-item"><a href="#available-fonts" class="nav-link">Available fonts</a></li>
+<li class="nav-item"><a href="#missing-character" class="nav-link">Missing character</a></li>
+<li class="nav-item"><a href="#font-debugging" class="nav-link">Font debugging</a></li>
+<li class="nav-item"><a href="#custom-fonts" class="nav-link">Custom fonts</a></li>
+<li class="nav-item"><a href="#page-size" class="nav-link">Page size</a></li>
+</ul>
+        
+        <ul class="nav">
+            <li>
+                <a href="#related-articles" class="nav-link">Related articles</a>
+            </li>
+        </ul>
+        
+    </aside>
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
+
+</body>
+</html>
