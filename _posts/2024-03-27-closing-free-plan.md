@@ -6,16 +6,15 @@ author: kevinpapst
 tags: [Cloud]
 ---
 
-Today I am sharing some news, which are important to me, because making that decision was hard for me.
+Yes! Sad as it is, I’m removing the free plan from the cloud.
+It was a tough decision that had to be made after careful thought as it was causing two problems;
 
-For a long time I was thinking about removing the free plan from the Cloud, as it was causing two problems:
+- I was my own competitor as almost all features were available for free
+- Certain users were in it for the free product
 
-- I was my own competitor, as almost all core features were available for free 
-- Certain users are just searching for free products, they just don't care about the product or mission    
+I am slowly getting rid of the clouds that have been up and running for the last 3+ years for free.
 
-Since a few weeks now, I am slowly expiring old clouds, which were using the cloud for up to 3+ years without paying.
-
-I am super grateful for the mostly positive feedback and the users, that chose to upgrade to a paid plan.
+I am grateful for the mostly positive feedback and to all my users, most especially the ones that chose to upgrade to the paid plan, Thank you!
 
 **This is the email I sent out to everyone:**
 
