@@ -1,3 +1,22 @@
+## Version 2.11.0
+
+Compatibility: requires minimum Kimai 2.10.0
+
+- Changed: cache permissions in view
+- Changed: support attribute caching in Voter
+
+## Version 2.10.0
+
+Compatibility: requires minimum Kimai 2.10.0
+
+- Fixed: use correct base class for migration - removes Doctrine deprecation warning
+
+## Version 2.9.0
+
+Compatibility: requires minimum Kimai 2.10.0
+
+- Added: System-Configuration to disable time field
+
 ## Version 2.8.0
 
 Compatibility: requires minimum Kimai 2.9.0 (but 2.10 is recommended)

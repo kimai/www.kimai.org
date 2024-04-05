@@ -1,3 +1,20 @@
+## Version 2.8.0
+
+Compatibility: requires minimum Kimai 2.11.0
+
+- Added: system configuration `kiosk.enabled` to disable Kiosk via local.yaml
+- Added: allow to set NFC code in edit screen via WebNFC
+- Changed: support attribute caching in Voter
+- Changed: simplified buttons in users kiosk profile
+
+## Version 2.7.0
+
+Compatibility: requires minimum Kimai 2.11.0
+
+- Added: show kiosk codes as user profile tab
+- Added: print barcode on click to the image
+- Changed: removed `barcode_own_profile` and `barcode_other_profile` permissions, replaced by `kiosk_own_profile` and `kiosk_other_profile`
+
 ## Version 2.6.0
 
 Compatibility: requires minimum Kimai 2.11.0

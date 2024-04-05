@@ -15,15 +15,15 @@
 {% assign translation = site.data[page.lang].store.items[product.slug] %}
 <li class="mb-4">
     <p class="h4 mb-2">
-        <a href="{{ product.url | absolute_url }}">{{ translation.title }}</a>
+        <a href="{{ product.url }}">{{ translation.title }}</a>
     </p>
     <div class="d-flex text-muted pt-1">
         <div class="fs-sm pe-3 me-3 flex-fill">
             {{ translation.intro }}
-            <a href="{{ product.url | absolute_url }}" class="d-block mt-3">{{ site.data[page.lang].translation.read-more }}</a>
+            <a href="{{ product.url }}" class="d-block mt-3">{{ site.data[page.lang].translation.read-more }}</a>
         </div>
         <p class="fs-sm fw-semibold text-primary mb-0 text-nowrap">
-            <a href="{{ product.url | absolute_url }}">
+            <a href="{{ product.url }}">
             {% if settings.subscription != nil %}
             <i class="bx bx-cart fs-3"></i>
             {% elsif settings.price == nil %}

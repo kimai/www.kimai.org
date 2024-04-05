@@ -3,7 +3,7 @@ title: "Upgrading your plugins for 2.0"
 date: "2023-05-19 13:00:00 +0200"
 image: /images/blog/cover-13.jpeg
 author: kevinpapst
-tags: [Announcement]
+tags: [Apps & Plugins]
 ---
 
 The plugin structure for Kimai 2.0 is not compatible with the existing plugins for Kimai 1.
@@ -69,6 +69,6 @@ Most plugins are available in the cloud, access depends on the paid plan you cho
 The cloud is cheaper if you only have a few users.
 
 If you want to switch, I am offering the "Summer of Free Migration":
-If you switch to [a paid plan](https://www.kimai.cloud/pricing), I will **import your existing Kimai data for free**.
+If you switch to [a paid plan]({{ site.cloud.url }}/pricing), I will **import your existing Kimai data for free**.
 All I need is the registered cloud and a database dump of your current Kimai installation.
 Please [contact me](mailto:support@kimai.cloud) to discuss the details.

@@ -8,8 +8,7 @@ related:
 
 {% include youtube-video.html id="workcontract" %}
 
-This screen and the `Contract` menu can be seen by any user that has active contract settings.
-Administrators require the `contract_other_profile` permission (see `Permissions` below)
+This screen and the `Contract` menu can be seen by any user that has active contract settings and the ones that own the `contract_other_profile` permission (see `Permissions` below).
 
 ## User interface
 
@@ -78,14 +77,12 @@ This booking is only there for information purposes.
 
 ## Permissions
 
-The `contract_other_profile` permission is required to see the `Contract` menu. 
-This permission also allows to change the contract settings of other users.
-
-| Permission Name            | Description                                                                            |
-|----------------------------|----------------------------------------------------------------------------------------|
-| view_booking_contract      | View working-time details (PDF, Manual bookings)                                       |
-| approve_times_contract     | Approve monthly timesheets.                                                            |
-| create_booking_contract    | Allows to create manual time bookings.                                                 |
+| Permission Name            | Description                                                                                                                                                |
+|----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| contract_other_profile     | View the `Employment contract` menu. Switch the user in the `Working Contract` and `Absence` screen. Allow to change the contract settings of other users. |
+| view_booking_contract      | View working-time details (PDF, Manual bookings)                                                                                                           |
+| approve_times_contract     | Approve monthly timesheets.                                                                                                                                |
+| create_booking_contract    | Allows to create manual time bookings.                                                                                                                     |
 {: .table }
 
 {% include store-howto-permissions.md %}

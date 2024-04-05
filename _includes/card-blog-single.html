@@ -1,15 +1,15 @@
 {% assign article = include.post | default: site.posts[0] %}
 {% assign author = site.data.developer[article.author] %}
-{% assign image = '/images/blog/cover-17.jpeg' %}
+{% assign image = '/images/blog/cover-fallback.jpeg' %}
 {% if article.image != nil %}
     {% assign image = article.image %}
 {% endif %}
 <article class="card border-0 shadow-sm overflow-hidden mb-4">
     <div class="row g-0">
-        <div class="col-sm-4 position-relative bg-repeat-0 bg-size-cover opacity-60" style="background-image: url({{ image }}); min-height: 15rem;">
+        <div class="col-sm-3 position-relative bg-repeat-0 bg-size-cover opacity-40" style="background-image: url({{ image }}); min-height: 15rem;">
             <a href="{{ article.url }}" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
         </div>
-        <div class="col-sm-8">
+        <div class="col-sm-9">
             <div class="card-body">
                 <div class="d-flex align-items-center mb-3">
                     {% for tag in post.tags %}
@@ -21,7 +21,7 @@
                     <a href="{{ article.url }}">{{ article.title }}</a>
                 </h3>
                 <p>
-                    {{ article.excerpt | truncate: 250 }}
+                    {{ article.excerpt | strip_html | truncate: 250 }}
                 </p>
                 <hr class="my-4">
                 <div class="d-flex align-items-center justify-content-between">

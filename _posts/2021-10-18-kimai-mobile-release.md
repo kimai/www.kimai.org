@@ -2,11 +2,12 @@
 title: "Kimai Mobile is now available on Google Play"
 date: "2021-10-18 13:00:00 +0200"
 author: cloudrizon
+image: /images/blog/cover-app.jpeg
 tags: [Apps & Plugins]
 ---
 
-Cloudrizon GmbH begins the open testing of Kimai Mobile on Android. The time tracking application provides the infrastructure for Kimai Time Tracker Server.
-Now the application is available on Google Play.  
+Cloudrizon GmbH begins the open testing of Kimai Mobile on Android, which is now available on Google Play.
+
 Kimai Mobile allows the users to use many workspaces simultaneously via a single application, logging the time for any projects or customers. 
 All data about logging time at Kimai Mobile saves only at self-hosted Kimai Server. 
 

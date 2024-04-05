@@ -2,7 +2,7 @@
 title: "Release 1.8 - SAML, Team API & user rates"
 date: "2020-03-01 12:00:00 +0200"
 author: kevinpapst
-tags: [Release]
+tags: [On-Premise]
 ---
 
 The next release is out, as always containing various bugfixes and new features:

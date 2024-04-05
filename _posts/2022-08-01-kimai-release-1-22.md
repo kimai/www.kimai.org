@@ -2,7 +2,7 @@
 title: "Release 1.22 - Restrict global activities"
 date: "2022-08-01 10:00:00 +0200"
 author: kevinpapst
-tags: [Release]
+tags: [On-Premise]
 ---
 
 The release 1.22 was published in August 2022.

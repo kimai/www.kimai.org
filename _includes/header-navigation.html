@@ -26,12 +26,12 @@
 <header class="header navbar navbar-expand-lg {% if is_absolute %}position-absolute{% endif %} {% if is_dark %}navbar-dark{% endif %} {% if is_light %}bg-light{% endif %} navbar-sticky">
     <div class="container px-3">
         <a href="{{ site.pages | where: 'lang', page.lang | where: 'slug', 'index' | map: 'url' | first }}" class="navbar-brand pe-3">
-        <img src="/images/kimai_logo.png" style="height:36px" alt="{{ site.data[page.lang].translation.index.title }}"> KIMAI
+        <img src="/images/kimai_logo.png" style="height:36px" alt="{{ site.data[page.lang].translation.index.title }}"> Kimai
         </a>
         <div id="navbarNav" class="offcanvas offcanvas-end{% if is_dark %} bg-dark{% endif %}">
             <div class="offcanvas-header border-bottom">
                 <h5 class="offcanvas-title">Menu</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <button type="button" class="btn-close {% if is_dark %}btn-close-white{% endif %}" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -73,7 +73,7 @@
         {% endcomment %}
         <div class="pe-lg-1 ms-auto me-2">
             {% include link-translated-menu.html item="download" language=page.lang class=downloadBtnClasses %}
-            {% include link-cloud-start.html classes="btn btn-success rounded-pill btn-sm fs-sm d-none d-sm-inline-flex" %}
+            {% include link-cloud-start.html classes="btn btn-success rounded-pill btn-sm fs-sm d-inline-flex" %}
         </div>
         <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

@@ -1,5 +1,13 @@
-{% assign cloud_url = "https://www.kimai.cloud/start-trial" %}
+{% assign _url = "/auth/registration" %}
 {% if page.lang == "de" %}
-    {% assign cloud_url = "https://www.kimai.cloud/de/testphase-beginnen" %}
+    {% assign _url = "/de/auth/registrierung" %}
 {% endif %}
-<a href="{{ cloud_url }}" class="{{ include.classes }}" target="_blank">{{ site.data[page.lang].translation.cloud-call-to-action }}</a>
+{% assign _title = site.data[page.lang].translation.cloud-call-to-action %}
+{% if include.title != nil %}
+    {% assign _title = include.title %}
+{% endif %}
+{% assign _classes = '' %}
+{% if include.classes != nil %}
+    {% assign _classes = include.classes %}
+{% endif %}
+<a href="{{ site.cloud.url }}{{ _url }}" class="{{ _classes }}">{{ _title }}</a>

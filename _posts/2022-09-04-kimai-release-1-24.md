@@ -1,9 +1,8 @@
 ---
 title: "Release 1.24 - Custom PDF fonts"
 date: "2022-09-04 10:00:00 +0200"
-image: /images/blog/cover-3.jpeg
 author: kevinpapst
-tags: [Release]
+tags: [On-Premise]
 ---
 
 The release 1.24 was published in September 2022.

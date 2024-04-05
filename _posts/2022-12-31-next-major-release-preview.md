@@ -3,7 +3,7 @@ title: "Next major release"
 date: "2022-12-31 20:00:00 +0200"
 image: /images/blog/cover-16.jpeg
 author: kevinpapst
-tags: [Release]
+tags: [On-Premise]
 ---
 
 Wooohooo 😀 I am super excited to share this update, as I was working on it for more than one year now!!! 🎉
@@ -86,7 +86,7 @@ Longer support for the old series is not planned. Symfony 4, the base of Kimai 1
 So using it for longer might impose security risks. 
 
 The last few years have shown that there is interest and support for paid plugins, and although this has been a nice pocket money, it has never paid my bills.
-That's why I created the [Kimai-Cloud](https://www.kimai.cloud): a hosted environment, including SAML login, custom domains, IP restriction, full backups and many more features.
+That's why I created the [Kimai-Cloud]({{ site.cloud.url }}): a hosted environment, including SAML login, custom domains, IP restriction, full backups and many more features.
 
 While I love my work and enjoy giving away Kimai for free, I have to support my family and company.
 More than 4 years after the first pre-release of Kimai I am still loosing money (not to forget the first two years, where I had basically zero income and what I paid entirely out of my own savings). 

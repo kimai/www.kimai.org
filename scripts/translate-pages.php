@@ -1,5 +1,7 @@
 <?php
 
+chdir(__DIR__ . '/..');
+
 // once development is over, switch back to the list of all currently active languages
 $languages = ['cs', 'de', 'es', 'fr', 'he', 'hr', 'it', 'nl', 'pl', 'pt', 'pt_BR', 'ru', 'sv', 'uk', 'zh_Hans'];
 
@@ -9,7 +11,12 @@ $languages = ['cs', 'de', 'es', 'fr', 'he', 'hr', 'it', 'nl', 'pl', 'pt', 'pt_BR
 
 $multiLanguagePaths = [
     '_pages' => [
-        'skip' => ['v1.md'],
+        'skip' => [
+            'blog-tags-apps-plugins.html',
+            'blog-tags-cloud.html',
+            'blog-tags-on-premise.html',
+            'blog-tags-version-1.html',
+        ],
         'permalink' => '/:language/:original',
         'remove' => ['redirect_from'],
         'overwrite' => false,

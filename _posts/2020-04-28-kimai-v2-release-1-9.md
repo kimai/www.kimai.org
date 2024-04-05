@@ -2,7 +2,7 @@
 title: "Release 1.9 - Invoice archive, internal rates"
 date: "2020-04-28 12:00:00 +0200"
 author: kevinpapst
-tags: [Release]
+tags: [On-Premise]
 ---
 
 The new release 1.9 was published, some of its highlights are:

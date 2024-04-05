@@ -121,6 +121,7 @@ about:
     joy:
         title: Alegria no Trabalho
         content: O desenvolvimento do Kimai é a combinação ideal da profissão que amo, com suas infinitas possibilidades de educação, e a necessidade de ganhar dinheiro para sustentar minha família. Graças ao Kimai, posso passar mais tempo com minha esposa e filho, o que provavelmente é a melhor motivação que se pode imaginar.
+    kevin: O Kimai e a Cloud são desenvolvidos e operados por Kevin, um programador de software independente de Viena (Áustria).
 store:
     name: 'Plugins'
     description: 'Encontre extensões e suporte comercial para o Kimai'
@@ -130,6 +131,7 @@ blog:
     description: 'Notícias sobre o Kimai, o programa de rastreamento de tempo'
     subtitle: 'Notícias sobre a equipa de desenvolvimento do Kimai'
     title: Notícias do Kimai
+    archive-link: Pode encontrar o arquivo de notícias %topic% mais antigas aqui
 documentation:
     name: 'Documentação'
     description: 'Informações de suporte, manual do utilizador e outra documentação para rastreamento de tempo Kimai'
@@ -143,7 +145,7 @@ features:
 docu-developer:
     name: Desenvolvedor
 docu-onpremise:
-    name: Auto-hospedagem
+    name: No local
 docu-manual:
     name: Manual do Usuário
 alternatives:
@@ -251,9 +253,10 @@ install:
     kubernetes: Pode implantar Kimai para Kubernetes através dos nossos Helm-Charts.
 developer:
     kevinpapst:
-        intro: 'Sempre foi meu sonho conseguir meu sustento com um projeto de código aberto. Com o Kimai, eu tenho sido capaz de desenvolver um software que gera grande valor aos meus clientes e cujo desenvolvimento me motiva todos os dias.
+        intro: 'Sempre foi meu sonho ganhar a vida com um produto de código aberto. Com o Kimai, consegui desenvolver um software de grande valor para os meus clientes e cujo desenvolvimento me motiva todos os dias.
 
-            Meu obrigado especial à ótima comunidade por sua lealdade no decorrer dos anos, estou ansioso pelos próximos 10 anos de Kimai 🚀
+
+            Os meus agradecimentos especiais à grande comunidade pela sua lealdade ao longo dos anos. Aguardo com expetativa os próximos 10 anos de Kimai 🚀
 
             '
 full-documentation: Documentação completa (apenas em Inglês)
@@ -298,15 +301,13 @@ history:
 
         Se é um freelancer, uma pequena organização ou uma empresa com centenas de funcionários, a Kimai pode ajudá-lo a gerir os seus negócios. Por favor, decida por si próprio e teste Kimai com a ajuda das instalações de demonstração.
     past: |
-        O Kimai tem uma longa história e estava muito à frente de seu tempo quando Torsten Höltge e sua equipe começaram a desenvolvê-lo em 2006. Ele tinha um design responsivo (graças a muita mágica Javascript) antes mesmo de a palavra ter sido oficialmente inventada.
+        O Kimai tem uma longa história e estava muito à frente do seu tempo quando a equipa de Torsten Höltge começou a desenvolvê-lo em 2006. Tinha um design responsivo (graças a muita magia do Javascript) numa altura em que a palavra ainda nem sequer tinha sido oficialmente inventada.
+        Assumi o desenvolvimento do Kimai em 2009, quando Torsten quis pará-lo por falta de tempo, e mantive e ampliei o Kimai durante vários anos com a ajuda de outros entusiastas do código aberto.
 
-        Ele estava prestes a encerrá-lo por motivos pessoais quando Kevin assumiu como mantenedor em 2009. Com a ajuda de outros voluntários de código aberto, ele o manteve vivo e em crescimento por vários anos.
+        Entretanto, a comunidade PHP estava a fazer grandes progressos, enquanto o Kimai estava a ficar cada vez mais para trás devido à sua história. A base tinha muitas fraquezas técnicas e, após muitos anos de desenvolvimento, a base de código estava a tornar-se cada vez mais difícil de manter.
+        A ideia de reescrever o Kimai com frameworks modernas já existia há algum tempo, também impulsionada por pedidos da comunidade, mas ninguém tinha os recursos para levar essa ideia adiante. No final de 2017, vários factores juntaram-se e aproveitei o momento para começar a desenvolver o próximo passo evolutivo, o "Kimai 2".
 
-        Enquanto isso, a comunidade PHP havia avançado muito, e o Kimai se sentiu para trás devido à sua história técnica - construída em torno de muitos scripts PHP individuais, todos os quais precisavam estar publicamente disponíveis. Também tinha algumas desvantagens significativas, como extensibilidade limitada e um design de banco de dados problemático. Após muitos anos de desenvolvimento, a base de código havia se tornado difícil de manter e a lógica estava dispersa entre scripts, classes e a camada de frontend.
-
-        Portanto, a ideia de reescrever o Kimai com frameworks modernos já existia há muito tempo, também impulsionada por pedidos da comunidade, mas não havia tempo para avançar com essas ideias. No final de 2017, o Symfony 4.0 foi lançado junto com um bom stack frontend. Foi quando aproveitei a oportunidade para começar a desenvolver o próximo passo evolutivo: o Kimai (v2) nasceu.
-
-        O Kimai original foi lançado pela primeira vez em 2006 e foi usado por muitas pessoas ao redor do mundo. Tenho orgulho disso e da grande comunidade. Agora, após 5 anos, a maioria das pessoas migrou para a nova versão do Kimai, e o número de usuários cresce a cada dia. Por isso, gostaria de agradecer a todos que contribuíram para o Kimai.
+        O Kimai original foi lançado em 2006 e tem sido utilizado por muitas pessoas em todo o mundo, pelo que me orgulho disso e também da sua grande comunidade. Gostaria de agradecer a todos os que contribuíram para o Kimai.
 store-hero-counter: '%number% clientes já estão conosco'
 store-hero-intro: Melhore o Kimai com nossa ótima seleção de plugins. Escolha entre dezenas de aplicativos e extensões dentro do ecossistema Kimai e traga superpoderes para sua experiência de rastreamento de tempo agora!
 cta:
@@ -409,3 +410,42 @@ landing_oss:
     subtitle: O Kimai é o software %title% de código aberto que você procurava 🎉
     version_onpremise: Eu cuido do software, você cuida da hospedagem, das atualizações e da segurança. E se não quiser fazê-lo sozinho, sempre há um apoio disponível na ponta dos dedos.
     discover: Descubra o Kimai
+plans:
+    tls_included: Free SSL Certificate
+    ip_whitelist: IP Access Restriction
+    billable_hours: Billable and Non-Billable Hours
+    max_users: Max. %user% users
+    work_contract: Work Time Accounts (Vacation, Public Holidays, Sick Leave)
+    all_from_plan: All Features from '%plan%'
+    backup_frequency: Backup Frequency
+    priority_features: Prioritized Feature Requests
+    invoices: Invoices
+    invoice_documents: Custom Invoice Templates
+    export: Data Export
+    expense_tracking: Expense Tracking
+    custom_css: Custom CSS Rules
+    annual_payment: 'Annual Plan: Simpler Accounting 🎉'
+    task_management: Task Management
+    ip_restriction: IP Access Restriction
+    expense: Expense Tracking (Travel Expenses, Allowances etc.)
+    timetracking: Project Time Tracking
+    email_support: Personal Email Support
+    absences: Public Holidays, Vacation, Sick Leave
+    automatic_backups: Automatic Backups
+    automatic_upgrades: Automatic Updates
+    server_maintenance: Server Maintenance
+    github_support: Community Forum
+    audit_logs: Audit Logging
+    custom_domain: Custom Domain with SSL
+    saml: Single Sign-On with SAML
+    translation: Industry-Specific Translations
+    rest_api: REST API
+    custom_fields: Custom Fields
+    daily_backups: Daily Backups for Download
+pricing:
+    short_monthly: Per user & month
+    short_annual: Per user & year
+non-profit:
+    name: Non-Profits
+discount-codes:
+    name: Discount codes

@@ -1,7 +1,6 @@
 ---
 title: "Open-Source Timesheet"
 keyword: "Timesheet"
-lang: en
 ---
 
 Welcome to a world where timesheets meet innovation — Kimai is the cutting edge open source timesheet software!

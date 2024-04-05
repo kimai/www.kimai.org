@@ -1,3 +1,16 @@
+## Version 2.5.0
+
+Compatibility: requires minimum Kimai 2.5.0
+
+- Fixed: auto-tags support in detail pages (in cases where many tags already exist)
+
+## Version 2.4.1
+
+Compatibility: requires minimum Kimai 2.5.0
+
+- Changed: import Route attribute from correct namespace
+- Changed: removed API security definition
+
 ## Version 2.4.0
 
 Compatibility: requires minimum Kimai 2.5.0

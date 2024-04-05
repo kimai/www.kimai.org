@@ -1,7 +1,7 @@
 ---
 title: IP access restriction
 toc: false
-description: Want to limit access to your Kimai-Cloud? Read how to configure IP access restrictions. 
+description: Limit access to your Kimai-Cloud by configuring IP access restrictions. 
 ---
 
 With the help of this function you can restrict the accessibility of your time tracking for up to 5 different IPv4 addresses.
@@ -31,5 +31,7 @@ To restore public access, simply remove all stored IP addresses (empty all rows)
 
 ## Costs
 
-There are **no additional costs** involved, they are included in your **paid plan**.
- 
+There are **no additional costs** for the IP access restriction feature.
+
+Instead this feature is **only available for certain plans**, check the feature comparison before subscribing to a plan.  
+

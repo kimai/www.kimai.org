@@ -1,9 +1,8 @@
 ---
 title: "Kimai vs. Open Project: Why companies choose Kimai over Open Project"
-lang: en
-permalink: /en/compare/openproject.html
+redirect_from: /en/compare/openproject.html
 name: OpenProject
-image: /images/logos/openproject.png
+image: /images/logos/clock-regular.svg
 feature: true
 is_oss: true
 on_premise: true

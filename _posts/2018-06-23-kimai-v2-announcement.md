@@ -2,7 +2,8 @@
 title: "Announcement - Kimai v2"
 date: "2018-06-23 22:00:00 +0200"
 author: kevinpapst
-tags: [Announcement]
+image: /images/blog/cover-developer.jpeg
+tags: [On-Premise]
 ---
 
 Welcome to a long overdue blog posting with a major announcement!

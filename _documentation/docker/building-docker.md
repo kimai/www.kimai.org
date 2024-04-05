@@ -38,7 +38,7 @@ The Apache/Debian image is bigger (~940mb) but does not require a second contain
 Use this image for development, tests or evaluation.
 
 The FPM image is smaller (~640mb) but requires a web server to provide the http services.
-Use this image in production and see the [docker-compose](docker-compose.md) page for setting up a http server.
+Use this image in production and see the [Docker Compose]({% link _documentation/docker/docker-compose.md %}) page for setting up a http server.
 
 ### KIMAI
 

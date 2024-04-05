@@ -30,4 +30,4 @@ But I believe in freedom of choice, respect your data and fight against vendor l
 
 ## Costs
 
-There are no additional costs involved, backups are included in your paid plan.
+There are **no additional costs** involved, backups are included in your paid plan.

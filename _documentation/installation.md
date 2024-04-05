@@ -128,7 +128,7 @@ Hosting Kimai on Plesk is described in the [shared hosting article]({% link _doc
 
 You have two choices:
 - get a proper webhosting/virtual server with SSH support
-- use a [SaaS time-tracking software](https://www.kimai.cloud)
+- use a [SaaS time-tracking software]({{ site.cloud.url }})
 
 {% capture support %}
 If you don't have the technical background for managing a server yourself and need to rely on a shared hosting package,

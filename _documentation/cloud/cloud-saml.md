@@ -10,6 +10,7 @@ Currently, the following provider are supported:
 
 - [Google Workspace](#google-saml)
 - [Microsoft Azure AD](#microsoft-saml)
+- [Keycloak](#keycloak-saml)
 
 If you are using another IDP and want to use Kimai: please get in touch, I am open for your ideas.
 
@@ -35,7 +36,7 @@ If you are using another IDP and want to use Kimai: please get in touch, I am op
     - `Entity ID` into `Entity-ID`
     - Choose the `Name-ID Format`: "X509_SUBJECT"
     - Select the `Name-ID`: "Basic Information > Primary Email"
-- On page 4 `Attributes` you have to define the `User attribute` mapping like this (correct case is important and you need to configure all attributes, even if you do not use them):
+- On page 4 `Attributes` you have to define the `User attribute` mapping like this (**correct case is important, and you need to configure all attributes, even if you do not use them**):
     - `Basic Information > Primary email` → `Email`
     - `Basic Information > First name` → `FirstName`
     - `Basic Information > Last name` → `LastName`
@@ -105,11 +106,24 @@ This screenshot is a showcase of the attribute mapping including groups:
 - Copy & paste the `Object Id` of each group into the Cloud configuration (see screenshot below).
   {% include docs-image.html src="/images/documentation/cloud/saml-azure-groups.png" title="Azure - Groups" width="800px" %}
 
-
 ### <span id="microsoft-cloud"></span> Cloud configuration
 
 {% include docs-image.html src="/images/documentation/cloud/saml-azure-cloud.png" title="Azure - Cloud configuration" width="800px" %}
 
+## <span id="keycloak-saml"></span> Keycloak SAML
+
+Start by setting up your Keycloak following the [Keycloak docs]({% link _documentation/saml-keycloak.md %}). 
+
+Then make sure to define the `User attribute` mapping like this (**correct case is important, and you need to configure all attributes, even if you do not use them**):
+
+- `Basic Information > Primary email` → `Email`
+- `Basic Information > First name` → `FirstName`
+- `Basic Information > Last name` → `LastName`
+- `Employee Details > Employee ID` → `AccountNumber`
+- `Employee Details > Title` → `Title`
+
 ## Costs
 
-There are **no additional costs** involved, it is included in your paid plan.
+There are **no additional costs** involved with the SAML SSO login. 
+
+Instead this feature is **only available for certain plans**, check the feature comparison before subscribing to a plan.  

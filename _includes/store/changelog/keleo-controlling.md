@@ -1,3 +1,23 @@
+## Version 1.10.0
+
+Compatibility: requires minimum Kimai 2.12.0
+
+- Changed: support attribute caching in Voter
+- Fixed: permission check for PDF download
+- Fixed: public holidays in calendar missing
+
+## Version 1.9.0
+
+Compatibility: requires minimum Kimai 2.12.0
+
+- Added: system configuration to set absence comment-field optional
+- Added: allow to assign half days for user contract "holidays per year"
+- Added: allow to use half days in "manual bookings"
+- Added: allow to set duration for "sickness"
+- Added: auto-approve all open days of the year before the lock date
+- Changed: single line comment field for "manual bookings" form
+- Fixed: use correct base class for migration - removes Doctrine deprecation warning
+
 ## Version 1.8.0
 
 Compatibility: requires minimum Kimai 2.11.0

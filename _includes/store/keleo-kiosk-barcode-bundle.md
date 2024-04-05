@@ -1,18 +1,19 @@
 A Kimai plugin, which allows using barcodes for `punch-in` and `punch-out` time tracking with Kimai.
-You can use it with an attached barcode scanner, or you run Kimai on a device (e.g. tablet) with a built-in camera.   
+You can use it with a barcode scanner, with a web-camera, with a RFID reader or an NFC reader.    
 
 It also supports a "freestyle" mode, which allows to enter any free configurable code (up to 120 characters), 
 so you can also use other devices for starting/stopping:
 - an electronic USB number-pad
 - an RFID scanner that acts as keyboard 
+- an Android device with [Web NFC support](https://developer.mozilla.org/en-US/docs/Web/API/NDEFReader) (only Chrome browser)
 
-If you want to use Kimai in a kiosk mode, where your users should only register their attendance time through  
-punch-in and punch-out mode when entering/leaving the building, then this bundle is the solution for you.
+This bundle is the solution for you, if you want to use Kimai in a kiosk mode, where users register their
+attendance time through punch-in (coming) and punch-out (leaving) mode.
 
 It could be as simple as:
-- Print the barcodes on your employee cards 
+- Hand out NFC or RFID tokens to your employees 
 - Mount a tablet to the wall in your entrance room
-- Let your users check-in & check-out when entering the building by scanning the barcode of their employee card
+- Let your users check-in & check-out when entering the building by scanning their tokens
 
 You can test it in the ["Plugins" demo](https://www.kimai.org/demo/).
 
@@ -58,8 +59,7 @@ The above are affiliate links for Amazon (germany) where I bought them myself.
 
 ## Configuration
 
-
-You have to configure the bundle before you can use it - you reach the configuration via 
+You have to configure the bundle before you can use it - you reach the configuration via
 - the `Plugin` screen (`Preferences` in action dropdown behind the plugin)
 - the Kiosk administration (cogs icon in the upper right)
 - the System configuration (`Kiosk & Barcode` section)
@@ -75,18 +75,24 @@ The following configurations are available:
 | `Activity`                                             | the non-global activity that will be used to track the times                 |
 {: .table }
 
-### Permissions
+## Permissions
 
 This bundle introduces new permissions, which limit access to certain functions:
 
-| Permission Name          | Description                                                                                        |
-|--------------------------|----------------------------------------------------------------------------------------------------|
-| `barcode_own_profile`    | allows to see and administrate barcode for the own user profile                                    |
-| `barcode_other_profile`  | allows to see and administrate barcode for all user profiles                                       |
-| `kiosk_own_profile`      | allows to configure user specific kiosk settings (eg. start and end time) for the own user profile |
-| `kiosk_other_profile`    | allows to configure user specific kiosk settings (eg. start and end time) for all user profiles    |
+| Permission Name         | Description                                                                                  |
+|-------------------------|----------------------------------------------------------------------------------------------|
+| `kiosk_admin`           | whether the current user can see the Kiosk administration and assign codes                   |
+| `kiosk_own_profile`     | configure codes and user specific kiosk settings (eg. start and end time) for own account    |
+| `kiosk_other_profile`   | configure codes and user specific kiosk settings (eg. start and end time) for other accounts |
 {: .table }
 
 By default, these are granted to each user with the role `ROLE_SUPER_ADMIN`.
 
 {% include store-howto-permissions.md %}
+
+## Licenses
+
+The following libraries are used and shipped with this plugin: 
+
+- Barcode scanning: https://github.com/ericblade/quagga2 (Version: 0.0.18, License: MIT)
+- Barcode generation: https://github.com/metafloor/bwip-js (Version: 2.0.6, License: MIT)

@@ -2,7 +2,7 @@
 title: "Release 0.8 - Export, Timezones & UI"
 date: "2019-02-19 12:00:00 +0200"
 author: kevinpapst
-tags: [Release]
+tags: [On-Premise]
 ---
 
 This release includes database changes and one major change, which makes the upgrade process slightly more complicated, 

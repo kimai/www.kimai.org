@@ -13,6 +13,7 @@
         <div class="row justify-content-center pb-sm-3 pb-md-4 pb-lg-5">
             <div class="col-md-10 col-lg-8 text-center">
                 <h2 class="h1 mb-4">{{ site.data[page.lang].translation.about-who }}</h2>
+                <p>{{ site.data[page.lang].translation.about.kevin }}</p>
             </div>
         </div>
         <div class="row row-cols-1 row-cols-md-2 gx-3 gx-lg-4 pb-sm-3 pb-md-4 pb-lg-5">
@@ -99,7 +100,7 @@
 
 {% comment %}
 <section class="container mb-5">
-    <a href="https://www.kimai.cloud" target="_blank" class="btn btn-primary mb-4">{{ site.data[page.lang].translation.cloud-title }}</a>
+    <a href="{{ site.cloud.url }}" target="_blank" class="btn btn-primary mb-4">{{ site.data[page.lang].translation.cloud-title }}</a>
     <a href="{{ site.kimai_v2_repo }}/issues" target="_blank" class="btn btn-secondary mb-4">Issue tracker</a>
     <a href="{{ site.kimai_v2_repo }}/discussions" target="_blank" class="btn btn-secondary mb-4">Discussions</a>
 </section>
@@ -109,6 +110,9 @@
 
 <section class="container mb-5">
     {{ site.data[page.lang].translation.history.past | markdownify }}
+    <p>
+        We keep the <a href="{% link _pages/blog-tags-version-1.html %}">archived Kimai 1 news</a> for historical reasons.
+    </p>
 </section>
 
 {% include cta-begin-journey.html %}

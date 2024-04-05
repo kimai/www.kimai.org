@@ -1,3 +1,15 @@
+## Version 2.6.0
+
+Compatibility: requires minimum Kimai 2.5.0
+
+- Changed: support attribute caching in Voter
+
+## Version 2.5.0
+
+Compatibility: requires minimum Kimai 2.5.0
+
+- Fixed: use correct base class for migration - removes Doctrine deprecation warning
+
 ## Version 2.4.0
 
 Compatibility: requires minimum Kimai 2.5.0
