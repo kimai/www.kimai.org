@@ -27,12 +27,13 @@ When calling the API you have to submit an additional `Authorization` header wit
 
 ### API tokens
 
-Each user can generate multiple API tokens...
+Each user can generate multiple API tokens.
 
-- TODO
-- TODO
-- TODO
-- TODO
+Each token has the following fields: 
+
+- **name**, which is only for yourself for simpler identification.
+- **expiration date** which is optional - if set, this token won't work from the configured date on
+- **last usage** will be updated once a minute, when used - helps to identify obsolete tokens
 
 ## Swagger file
 
@@ -40,7 +41,6 @@ The API calls can be exported in a Swagger file format, which can be imported in
 You find the link in the API docs (the URL is `api/doc.json`).
 
 To use the API with Postman, the simplest approach is to export the swagger file and import it with Postman. 
-
 
 ## Data types
 
