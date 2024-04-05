@@ -2,6 +2,7 @@
 title: API examples
 navigation: Examples
 description: Some examples how to access the Kimai PAI with different languages
+canonical: /documentation/rest-api-examples.html
 related:
 - rest-api
 ---
@@ -32,7 +33,8 @@ Now create a file with the name `importer` and adjust the `KIMAI_API_*` constant
 require __DIR__.'/vendor/autoload.php';
 
 define('KIMAI_API_URL', 'https://demo.kimai.org/api/');
-define('KIMAI_API_TOKEN', 'api_kitten_super');
+define('KIMAI_API_USER', 'susan_super');
+define('KIMAI_API_PWD', 'api_kitten');
 
 use GuzzleHttp\Client;
 use League\Csv\Reader;
@@ -46,7 +48,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 
 (new SingleCommandApplication())
     ->setName('Kimai - Simple activity importer')
-    ->setVersion('0.3')
+    ->setVersion('0.2')
     ->addArgument('file', InputArgument::REQUIRED, 'The CSV file to import')
     ->addOption('delimiter', null, InputOption::VALUE_REQUIRED, 'The delimiter to use (by default comma ",")', ',')
     ->setCode(function (InputInterface $input, OutputInterface $output) {
@@ -76,7 +78,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
         $client = new Client([
             'base_uri' => KIMAI_API_URL,
             'verify' => false,
-            'headers' => ['Authorization' => 'Bearer ' . KIMAI_API_TOKEN]
+            'headers' => ['X-AUTH-USER' => KIMAI_API_USER, 'X-AUTH-TOKEN' => KIMAI_API_PWD]
         ]);
 
         $customers = 0;
@@ -173,8 +175,8 @@ DEMO,Hello world,Testing the API
 
 ## Calling the API with Javascript
 
-If you develop your own [plugin]({% link _documentation/plugins.md %}) and need to use the API for logged-in user, 
-then you don't have to care about authentication, Kimai will handle it for you.
+If you develop your own [plugin]({% link _documentation/plugins.md %}) and need to use the API for logged-in user, then you have to 
+set the header `X-AUTH-SESSION` which will allow Kimai to use the current user session and not look for the default token based API authentication.
 
 Copy & paste this code into a new `api.html` file and open it in your browser.
 You can execute some sample requests and see the JSON result.
@@ -202,15 +204,18 @@ You can execute some sample requests and see the JSON result.
 	<script>
         function callKimaiApi(method, successHandler, errorHandler) {
             var domain = $('#inputDomain').val();
-            var token = $('#inputToken').val();
+            var username = $('#inputEmail').val();
+            var password = $('#inputPassword').val();
             $.ajax({
                 url: domain + '/api/' + method,
                 type: 'GET',
                 beforeSend: function (request) {
-                    request.setRequestHeader('Authorization', 'Bearer ' + token);
+                    request.setRequestHeader("X-AUTH-USER", username);
+                    request.setRequestHeader("X-AUTH-TOKEN", password);
                 },
                 headers: {
-                    'Authorization': 'Bearer ' + token,
+                    'X-AUTH-USER': username,
+                    'X-AUTH-TOKEN': password,
                 },
                 success: successHandler,
                 error: errorHandler
@@ -272,8 +277,8 @@ You can execute some sample requests and see the JSON result.
 <div class="container">
 	<form id="loginForm" class="form-signin">
 		<div class="text-center mb-4">
-			<h1 class="h3 mb-3 font-weight-normal">Kimai &ndash; API Demo</h1>
-			<p>Please provide your API URL and token below</p>
+			<h1 class="h3 mb-3 font-weight-normal">API Demo</h1>
+			<p>Provide your API credentials in the form below</p>
 		</div>
 		<div class="form-label-group">
 			<input type="url" id="inputDomain" class="form-control" placeholder="https://www.example.com/" required
@@ -281,8 +286,13 @@ You can execute some sample requests and see the JSON result.
 			<label for="inputDomain">Kimai base URL (domain + port)</label>
 		</div>
 		<div class="form-label-group">
-			<input type="text" id="inputToken" class="form-control" placeholder="API Token" required value="api_kitten_super">
-			<label for="inputToken">API Token</label>
+			<input type="text" id="inputEmail" class="form-control" placeholder="Username" required value="susan_super">
+			<label for="inputEmail">Email address</label>
+		</div>
+		<div class="form-label-group">
+			<input type="password" id="inputPassword" class="form-control" placeholder="Password" required
+				   value="api_kitten">
+			<label for="inputPassword">Password</label>
 		</div>
 		<button class="btn btn-lg btn-primary btn-block" id="loginButton" type="submit">Sign in</button>
 	</form>
@@ -290,11 +300,11 @@ You can execute some sample requests and see the JSON result.
 		<div class="col-sm text-center">
 			<button type="button" class="btn btn-primary" data-api="ping" data-attribute-break="true">Ping</button>
 			<button type="button" class="btn btn-secondary" data-api="version" data-attribute-break="true">Version</button>
-			<button type="button" class="btn btn-secondary" data-api="plugins" data-attribute-break="true">Plugins</button>
 			<button type="button" class="btn btn-primary" data-api="timesheets" data-attribute-break="false">Timesheet</button>
 			<button type="button" class="btn btn-primary" data-api="activities" data-attribute-break="false">Activities</button>
 			<button type="button" class="btn btn-primary" data-api="projects" data-attribute-break="false">Projects</button>
 			<button type="button" class="btn btn-primary" data-api="customers" data-attribute-break="false">Customers</button>
+			<button type="button" class="btn btn-secondary" data-api="config/i18n" data-attribute-break="true">i18n</button>
 		</div>
 	</div>
 	<div class="row codePreview" style="display:none">

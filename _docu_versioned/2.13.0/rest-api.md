@@ -2,9 +2,7 @@
 title: Quickstart for Kimai API (JSON / REST)
 navigation: Kimai API
 description: Access your time-tracking data via the JSON API with Kimai
-redirect_from: 
-- /documentation/api/
-- /v1/api.html
+canonical: /documentation/rest-api.html
 related:
 - rest-api-examples
 ---
@@ -17,30 +15,31 @@ Or you can export the JSON collection by visiting `/api/doc.json`. Save the resu
 
 ## Authentication
 
-When calling the API you have to submit an additional `Authorization` header with every call:
+When calling the API you have to submit two additional header with every call for authentication:
 
-- `Authorization: Bearer xyz` - here `xyz` is the unique API token for that account
+- `X-AUTH-USER` - holds the username (or email address)
+- `X-AUTH-TOKEN` - the API password, which has to be set in the user profile
 
-{% include alert.html type="primary" alert="The API token is NOT the normal user password. API tokens can be generated in the user profile." %}
+{% include alert.html type="primary" alert="The API password is different from the normal user password and can be set in the user profile." %}
 
-{% include alert.html icon="fas fa-exclamation" type="warning" alert="You MUST use secure HTTPS calls to protect both credentials and data." %}
+{% include alert.html icon="fas fa-exclamation" type="warning" alert="You should only use secure https calls to protect both credentials and data." %}
 
-### API tokens
+## Swagger file and Postman
 
-Each user can generate multiple API tokens.
-
-Each token has the following fields: 
-
-- **name**, which is only for yourself for simpler identification.
-- **expiration date** which is optional - if set, this token won't work from the configured date on
-- **last usage** will be updated once a minute, when used - helps to identify obsolete tokens
-
-## Swagger file
-
-The API calls can be exported in a Swagger file format, which can be imported into your tool of choice.
+The API calls can be exported in a Swagger file format, which can be imported into Postman.
 You find the link in the API docs (the URL is `api/doc.json`).
 
 To use the API with Postman, the simplest approach is to export the swagger file and import it with Postman. 
+
+### Authentication in Postman
+
+After importing the collection into Postman, edit the collection and switch to the `Pre-request Scripts` tab.
+You can add the following script to have a global authentication in-place, which you can still overwrite per call. 
+
+```javascript
+pm.request.headers.add({key: 'X-AUTH-USER', value: 'susan_super'});
+pm.request.headers.add({key: 'X-AUTH-TOKEN', value: 'api_kitten'});
+```
 
 ## Data types
 

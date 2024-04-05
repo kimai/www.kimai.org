@@ -4,16 +4,15 @@ description: How to connect your Kimai account with applications, requesting you
 toc: false
 ---
  
-When calling the API you have to submit two additional header with every call for authentication:
+When calling the API you have to submit the additional `Authorization` header with every call:
 
-- `X-AUTH-USER` - holds the username, which you use for the normal web-login (email address works as well)
-- `X-AUTH-TOKEN` - the API password, which has to be set in your user profile (this is NOT your normal password)
+- `Authorization: Bearer xyz` - here `xyz` is the unique API token for that account
 
-Application will also ask for your Base URL (or your Kimai URL).
+Application will also ask for your Kimai base URL.
 
-This is usually the URL you use to access Kimai in your browser, e.g. `https://example.kimai.cloud`.
+This is usually the URL you use to access Kimai in your browser, e.g. `https://demo.kimai.org`.
 
 Do not include the trailing slash:
 
-- Wrong: `https://example.kimai.cloud/`
-- Correct: `https://example.kimai.cloud`
+- Wrong: `https://demo.kimai.org/`
+- Correct: `https://demo.kimai.org`
