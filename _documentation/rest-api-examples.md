@@ -46,7 +46,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 
 (new SingleCommandApplication())
     ->setName('Kimai - Simple activity importer')
-    ->setVersion('0.2')
+    ->setVersion('0.3')
     ->addArgument('file', InputArgument::REQUIRED, 'The CSV file to import')
     ->addOption('delimiter', null, InputOption::VALUE_REQUIRED, 'The delimiter to use (by default comma ",")', ',')
     ->setCode(function (InputInterface $input, OutputInterface $output) {
