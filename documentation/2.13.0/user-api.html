@@ -26,6 +26,7 @@
     <meta name="twitter:site" content="@kimai_org">
     <meta name="twitter:description" content="How to connect your Kimai account with applications, requesting your API token and how to use it.">
     <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <link rel="canonical" href="https://www.kimai.org/documentation/user-api.html" />
     <script src="/assets/build/theme.js"></script>
     <link href="/assets/build/main.css" rel="stylesheet" />
 </head>
@@ -624,22 +625,37 @@
             <div>
                 
                 <div id="documentation-content">
-                    <p>When calling the API you have to submit the additional <code class="language-plaintext highlighter-rouge">Authorization</code> header with every call:</p>
+                    
+
+
+
+<div class="alert alert-danger" role="alert">
+    
+You are viewing an older version of this documentation page. A newer version is available <a href="/documentation/user-api.html">here</a>.
+
+</div>
+
+
+
+<p>When calling the API you have to submit two additional header with every call for authentication:</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">Authorization: Bearer xyz</code> - here <code class="language-plaintext highlighter-rouge">xyz</code> is the unique API token for that account</li>
+  <li><code class="language-plaintext highlighter-rouge">X-AUTH-USER</code> - holds the username, which you use for the normal web-login (email address works as well)</li>
+  <li><code class="language-plaintext highlighter-rouge">X-AUTH-TOKEN</code> - the API password, which has to be set in your user profile (this is NOT your normal password)</li>
 </ul>
 
-<p>Application will also ask for your Kimai base URL.</p>
+<p>Application will also ask for your Base URL (or your Kimai URL).</p>
 
-<p>This is usually the URL you use to access Kimai in your browser, e.g. <code class="language-plaintext highlighter-rouge">https://demo.kimai.org</code>.</p>
+<p>This is usually the URL you use to access Kimai in your browser, e.g. <code class="language-plaintext highlighter-rouge">https://example.kimai.cloud</code>.</p>
 
 <p>Do not include the trailing slash:</p>
 
 <ul>
-  <li>Wrong: <code class="language-plaintext highlighter-rouge">https://demo.kimai.org/</code></li>
-  <li>Correct: <code class="language-plaintext highlighter-rouge">https://demo.kimai.org</code></li>
+  <li>Wrong: <code class="language-plaintext highlighter-rouge">https://example.kimai.cloud/</code></li>
+  <li>Correct: <code class="language-plaintext highlighter-rouge">https://example.kimai.cloud</code></li>
 </ul>
+
+
 
                 </div>
                 

@@ -26,6 +26,7 @@
     <meta name="twitter:site" content="@kimai_org">
     <meta name="twitter:description" content="Access your time-tracking data via the JSON API with Kimai">
     <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <link rel="canonical" href="https://www.kimai.org/documentation/rest-api.html" />
     <script src="/assets/build/theme.js"></script>
     <link href="/assets/build/main.css" rel="stylesheet" />
 </head>
@@ -372,7 +373,19 @@
             <div>
                 
                 <div id="documentation-content">
-                    <p>Read the Swagger documentation of the Kimai API in your Kimai installation at <code class="language-plaintext highlighter-rouge">/api/doc</code>.
+                    
+
+
+
+<div class="alert alert-danger" role="alert">
+    
+You are viewing an older version of this documentation page. A newer version is available <a href="/documentation/rest-api.html">here</a>.
+
+</div>
+
+
+
+<p>Read the Swagger documentation of the Kimai API in your Kimai installation at <code class="language-plaintext highlighter-rouge">/api/doc</code>.
 For example, you can have a look at the API docs for the demo installation at <a href="https://demo.kimai.org/api/doc">https://demo.kimai.org/api/doc</a>.
 You need to authenticate to see them, credentials can be <a href="/en/demo.html">found here</a>.</p>
 
@@ -380,41 +393,39 @@ You need to authenticate to see them, credentials can be <a href="/en/demo.html"
 
 <h2 id="authentication">Authentication</h2>
 
-<p>When calling the API you have to submit an additional <code class="language-plaintext highlighter-rouge">Authorization</code> header with every call:</p>
+<p>When calling the API you have to submit two additional header with every call for authentication:</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">Authorization: Bearer xyz</code> - here <code class="language-plaintext highlighter-rouge">xyz</code> is the unique API token for that account</li>
+  <li><code class="language-plaintext highlighter-rouge">X-AUTH-USER</code> - holds the username (or email address)</li>
+  <li><code class="language-plaintext highlighter-rouge">X-AUTH-TOKEN</code> - the API password, which has to be set in the user profile</li>
 </ul>
 
 <div class="alert alert-primary" role="alert">
-    The API token is NOT the normal user password. API tokens can be generated in the user profile.
+    The API password is different from the normal user password and can be set in the user profile.
 </div>
 
 <div class="alert d-flex alert-warning" role="alert">
     <i class="bx bx-fas fa-exclamation lead me-3"></i>
     <div>
-        You MUST use secure HTTPS calls to protect both credentials and data.
+        You should only use secure https calls to protect both credentials and data.
     </div>
 </div>
 
-<h3 id="api-tokens">API tokens</h3>
+<h2 id="swagger-file-and-postman">Swagger file and Postman</h2>
 
-<p>Each user can generate multiple API tokens.</p>
-
-<p>Each token has the following fields:</p>
-
-<ul>
-  <li><strong>name</strong>, which is only for yourself for simpler identification.</li>
-  <li><strong>expiration date</strong> which is optional - if set, this token won’t work from the configured date on</li>
-  <li><strong>last usage</strong> will be updated once a minute, when used - helps to identify obsolete tokens</li>
-</ul>
-
-<h2 id="swagger-file">Swagger file</h2>
-
-<p>The API calls can be exported in a Swagger file format, which can be imported into your tool of choice.
+<p>The API calls can be exported in a Swagger file format, which can be imported into Postman.
 You find the link in the API docs (the URL is <code class="language-plaintext highlighter-rouge">api/doc.json</code>).</p>
 
 <p>To use the API with Postman, the simplest approach is to export the swagger file and import it with Postman.</p>
+
+<h3 id="authentication-in-postman">Authentication in Postman</h3>
+
+<p>After importing the collection into Postman, edit the collection and switch to the <code class="language-plaintext highlighter-rouge">Pre-request Scripts</code> tab.
+You can add the following script to have a global authentication in-place, which you can still overwrite per call.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">pm</span><span class="p">.</span><span class="nx">request</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">add</span><span class="p">({</span><span class="na">key</span><span class="p">:</span> <span class="dl">'</span><span class="s1">X-AUTH-USER</span><span class="dl">'</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="dl">'</span><span class="s1">susan_super</span><span class="dl">'</span><span class="p">});</span>
+<span class="nx">pm</span><span class="p">.</span><span class="nx">request</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">add</span><span class="p">({</span><span class="na">key</span><span class="p">:</span> <span class="dl">'</span><span class="s1">X-AUTH-TOKEN</span><span class="dl">'</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="dl">'</span><span class="s1">api_kitten</span><span class="dl">'</span><span class="p">});</span>
+</code></pre></div></div>
 
 <h2 id="data-types">Data types</h2>
 
@@ -457,6 +468,8 @@ about the “local date and time” pattern.</p>
 <p>The field will be mapped to <code class="language-plaintext highlighter-rouge">false</code> if it is either <code class="language-plaintext highlighter-rouge">not provided</code> or <code class="language-plaintext highlighter-rouge">false</code>.
 Providing any other value, including <code class="language-plaintext highlighter-rouge">null</code>, will turn the value to <code class="language-plaintext highlighter-rouge">true</code>.</p>
 
+
+
                 </div>
                 
 
@@ -480,7 +493,7 @@ Providing any other value, including <code class="language-plaintext highlighter
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#authentication" class="nav-link">Authentication</a><ul><li class="nav-item"><a href="#api-tokens" class="nav-link">API tokens</a></li></ul></li><li class="nav-item"><a href="#swagger-file" class="nav-link">Swagger file</a></li><li class="nav-item"><a href="#data-types" class="nav-link">Data types</a><ul><li class="nav-item"><a href="#default-values" class="nav-link">Default values</a></li><li class="nav-item"><a href="#datetime-formats-iso-8601-and-html5" class="nav-link">DateTime formats (ISO 8601 and HTML5)</a></li><li class="nav-item"><a href="#boolean" class="nav-link">Boolean</a></li></ul></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#authentication" class="nav-link">Authentication</a></li><li class="nav-item"><a href="#swagger-file-and-postman" class="nav-link">Swagger file and Postman</a><ul><li class="nav-item"><a href="#authentication-in-postman" class="nav-link">Authentication in Postman</a></li></ul></li><li class="nav-item"><a href="#data-types" class="nav-link">Data types</a><ul><li class="nav-item"><a href="#default-values" class="nav-link">Default values</a></li><li class="nav-item"><a href="#datetime-formats-iso-8601-and-html5" class="nav-link">DateTime formats (ISO 8601 and HTML5)</a></li><li class="nav-item"><a href="#boolean" class="nav-link">Boolean</a></li></ul></li></ul>
         
         <ul class="nav">
             <li>

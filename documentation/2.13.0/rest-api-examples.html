@@ -26,6 +26,7 @@
     <meta name="twitter:site" content="@kimai_org">
     <meta name="twitter:description" content="Some examples how to access the Kimai PAI with different languages">
     <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <link rel="canonical" href="https://www.kimai.org/documentation/rest-api-examples.html" />
     <script src="/assets/build/theme.js"></script>
     <link href="/assets/build/main.css" rel="stylesheet" />
 </head>
@@ -372,7 +373,19 @@
             <div>
                 
                 <div id="documentation-content">
-                    <h2 id="using-the-api-to-import-csv-data-with-php">Using the API to import CSV data with PHP</h2>
+                    
+
+
+
+<div class="alert alert-danger" role="alert">
+    
+You are viewing an older version of this documentation page. A newer version is available <a href="/documentation/rest-api-examples.html">here</a>.
+
+</div>
+
+
+
+<h2 id="using-the-api-to-import-csv-data-with-php">Using the API to import CSV data with PHP</h2>
 
 <p>This example uses the API to import a list of customers, projects and activities from a CSV file.</p>
 
@@ -396,7 +409,8 @@
 <span class="k">require</span> <span class="k">__DIR__</span><span class="mf">.</span><span class="s1">'/vendor/autoload.php'</span><span class="p">;</span>
 
 <span class="nb">define</span><span class="p">(</span><span class="s1">'KIMAI_API_URL'</span><span class="p">,</span> <span class="s1">'https://demo.kimai.org/api/'</span><span class="p">);</span>
-<span class="nb">define</span><span class="p">(</span><span class="s1">'KIMAI_API_TOKEN'</span><span class="p">,</span> <span class="s1">'api_kitten_super'</span><span class="p">);</span>
+<span class="nb">define</span><span class="p">(</span><span class="s1">'KIMAI_API_USER'</span><span class="p">,</span> <span class="s1">'susan_super'</span><span class="p">);</span>
+<span class="nb">define</span><span class="p">(</span><span class="s1">'KIMAI_API_PWD'</span><span class="p">,</span> <span class="s1">'api_kitten'</span><span class="p">);</span>
 
 <span class="kn">use</span> <span class="nc">GuzzleHttp\Client</span><span class="p">;</span>
 <span class="kn">use</span> <span class="nc">League\Csv\Reader</span><span class="p">;</span>
@@ -410,7 +424,7 @@
 
 <span class="p">(</span><span class="k">new</span> <span class="nc">SingleCommandApplication</span><span class="p">())</span>
     <span class="o">-&gt;</span><span class="nf">setName</span><span class="p">(</span><span class="s1">'Kimai - Simple activity importer'</span><span class="p">)</span>
-    <span class="o">-&gt;</span><span class="nf">setVersion</span><span class="p">(</span><span class="s1">'0.3'</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="nf">setVersion</span><span class="p">(</span><span class="s1">'0.2'</span><span class="p">)</span>
     <span class="o">-&gt;</span><span class="nf">addArgument</span><span class="p">(</span><span class="s1">'file'</span><span class="p">,</span> <span class="nc">InputArgument</span><span class="o">::</span><span class="no">REQUIRED</span><span class="p">,</span> <span class="s1">'The CSV file to import'</span><span class="p">)</span>
     <span class="o">-&gt;</span><span class="nf">addOption</span><span class="p">(</span><span class="s1">'delimiter'</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="nc">InputOption</span><span class="o">::</span><span class="no">VALUE_REQUIRED</span><span class="p">,</span> <span class="s1">'The delimiter to use (by default comma ",")'</span><span class="p">,</span> <span class="s1">','</span><span class="p">)</span>
     <span class="o">-&gt;</span><span class="nf">setCode</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="kt">InputInterface</span> <span class="nv">$input</span><span class="p">,</span> <span class="kt">OutputInterface</span> <span class="nv">$output</span><span class="p">)</span> <span class="p">{</span>
@@ -440,7 +454,7 @@
         <span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Client</span><span class="p">([</span>
             <span class="s1">'base_uri'</span> <span class="o">=&gt;</span> <span class="no">KIMAI_API_URL</span><span class="p">,</span>
             <span class="s1">'verify'</span> <span class="o">=&gt;</span> <span class="kc">false</span><span class="p">,</span>
-            <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'Bearer '</span> <span class="mf">.</span> <span class="no">KIMAI_API_TOKEN</span><span class="p">]</span>
+            <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'X-AUTH-USER'</span> <span class="o">=&gt;</span> <span class="no">KIMAI_API_USER</span><span class="p">,</span> <span class="s1">'X-AUTH-TOKEN'</span> <span class="o">=&gt;</span> <span class="no">KIMAI_API_PWD</span><span class="p">]</span>
         <span class="p">]);</span>
 
         <span class="nv">$customers</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
@@ -536,8 +550,8 @@ DEMO,Hello world,Testing the API
 
 <h2 id="calling-the-api-with-javascript">Calling the API with Javascript</h2>
 
-<p>If you develop your own <a href="/documentation/plugins.html">plugin</a> and need to use the API for logged-in user, 
-then you don’t have to care about authentication, Kimai will handle it for you.</p>
+<p>If you develop your own <a href="/documentation/plugins.html">plugin</a> and need to use the API for logged-in user, then you have to 
+set the header <code class="language-plaintext highlighter-rouge">X-AUTH-SESSION</code> which will allow Kimai to use the current user session and not look for the default token based API authentication.</p>
 
 <p>Copy &amp; paste this code into a new <code class="language-plaintext highlighter-rouge">api.html</code> file and open it in your browser.
 You can execute some sample requests and see the JSON result.</p>
@@ -564,15 +578,18 @@ You can execute some sample requests and see the JSON result.</p>
 	<span class="nt">&lt;script&gt;</span>
         <span class="kd">function</span> <span class="nx">callKimaiApi</span><span class="p">(</span><span class="nx">method</span><span class="p">,</span> <span class="nx">successHandler</span><span class="p">,</span> <span class="nx">errorHandler</span><span class="p">)</span> <span class="p">{</span>
             <span class="kd">var</span> <span class="nx">domain</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#inputDomain</span><span class="dl">'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
-            <span class="kd">var</span> <span class="nx">token</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#inputToken</span><span class="dl">'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+            <span class="kd">var</span> <span class="nx">username</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#inputEmail</span><span class="dl">'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+            <span class="kd">var</span> <span class="nx">password</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#inputPassword</span><span class="dl">'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
             <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
                 <span class="na">url</span><span class="p">:</span> <span class="nx">domain</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">/api/</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">method</span><span class="p">,</span>
                 <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span>
                 <span class="na">beforeSend</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">request</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="nx">request</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">'</span><span class="s1">Authorization</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Bearer </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">token</span><span class="p">);</span>
+                    <span class="nx">request</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">X-AUTH-USER</span><span class="dl">"</span><span class="p">,</span> <span class="nx">username</span><span class="p">);</span>
+                    <span class="nx">request</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">X-AUTH-TOKEN</span><span class="dl">"</span><span class="p">,</span> <span class="nx">password</span><span class="p">);</span>
                 <span class="p">},</span>
                 <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-                    <span class="dl">'</span><span class="s1">Authorization</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Bearer </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">token</span><span class="p">,</span>
+                    <span class="dl">'</span><span class="s1">X-AUTH-USER</span><span class="dl">'</span><span class="p">:</span> <span class="nx">username</span><span class="p">,</span>
+                    <span class="dl">'</span><span class="s1">X-AUTH-TOKEN</span><span class="dl">'</span><span class="p">:</span> <span class="nx">password</span><span class="p">,</span>
                 <span class="p">},</span>
                 <span class="na">success</span><span class="p">:</span> <span class="nx">successHandler</span><span class="p">,</span>
                 <span class="na">error</span><span class="p">:</span> <span class="nx">errorHandler</span>
@@ -634,8 +651,8 @@ You can execute some sample requests and see the JSON result.</p>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
 	<span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">"loginForm"</span> <span class="na">class=</span><span class="s">"form-signin"</span><span class="nt">&gt;</span>
 		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"text-center mb-4"</span><span class="nt">&gt;</span>
-			<span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"h3 mb-3 font-weight-normal"</span><span class="nt">&gt;</span>Kimai <span class="ni">&amp;ndash;</span> API Demo<span class="nt">&lt;/h1&gt;</span>
-			<span class="nt">&lt;p&gt;</span>Please provide your API URL and token below<span class="nt">&lt;/p&gt;</span>
+			<span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"h3 mb-3 font-weight-normal"</span><span class="nt">&gt;</span>API Demo<span class="nt">&lt;/h1&gt;</span>
+			<span class="nt">&lt;p&gt;</span>Provide your API credentials in the form below<span class="nt">&lt;/p&gt;</span>
 		<span class="nt">&lt;/div&gt;</span>
 		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-label-group"</span><span class="nt">&gt;</span>
 			<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"url"</span> <span class="na">id=</span><span class="s">"inputDomain"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">placeholder=</span><span class="s">"https://www.example.com/"</span> <span class="na">required</span>
@@ -643,8 +660,13 @@ You can execute some sample requests and see the JSON result.</p>
 			<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"inputDomain"</span><span class="nt">&gt;</span>Kimai base URL (domain + port)<span class="nt">&lt;/label&gt;</span>
 		<span class="nt">&lt;/div&gt;</span>
 		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-label-group"</span><span class="nt">&gt;</span>
-			<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"inputToken"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">placeholder=</span><span class="s">"API Token"</span> <span class="na">required</span> <span class="na">value=</span><span class="s">"api_kitten_super"</span><span class="nt">&gt;</span>
-			<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"inputToken"</span><span class="nt">&gt;</span>API Token<span class="nt">&lt;/label&gt;</span>
+			<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"inputEmail"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">placeholder=</span><span class="s">"Username"</span> <span class="na">required</span> <span class="na">value=</span><span class="s">"susan_super"</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"inputEmail"</span><span class="nt">&gt;</span>Email address<span class="nt">&lt;/label&gt;</span>
+		<span class="nt">&lt;/div&gt;</span>
+		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-label-group"</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"password"</span> <span class="na">id=</span><span class="s">"inputPassword"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">placeholder=</span><span class="s">"Password"</span> <span class="na">required</span>
+				   <span class="na">value=</span><span class="s">"api_kitten"</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"inputPassword"</span><span class="nt">&gt;</span>Password<span class="nt">&lt;/label&gt;</span>
 		<span class="nt">&lt;/div&gt;</span>
 		<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-lg btn-primary btn-block"</span> <span class="na">id=</span><span class="s">"loginButton"</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Sign in<span class="nt">&lt;/button&gt;</span>
 	<span class="nt">&lt;/form&gt;</span>
@@ -652,11 +674,11 @@ You can execute some sample requests and see the JSON result.</p>
 		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm text-center"</span><span class="nt">&gt;</span>
 			<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span> <span class="na">data-api=</span><span class="s">"ping"</span> <span class="na">data-attribute-break=</span><span class="s">"true"</span><span class="nt">&gt;</span>Ping<span class="nt">&lt;/button&gt;</span>
 			<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-secondary"</span> <span class="na">data-api=</span><span class="s">"version"</span> <span class="na">data-attribute-break=</span><span class="s">"true"</span><span class="nt">&gt;</span>Version<span class="nt">&lt;/button&gt;</span>
-			<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-secondary"</span> <span class="na">data-api=</span><span class="s">"plugins"</span> <span class="na">data-attribute-break=</span><span class="s">"true"</span><span class="nt">&gt;</span>Plugins<span class="nt">&lt;/button&gt;</span>
 			<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span> <span class="na">data-api=</span><span class="s">"timesheets"</span> <span class="na">data-attribute-break=</span><span class="s">"false"</span><span class="nt">&gt;</span>Timesheet<span class="nt">&lt;/button&gt;</span>
 			<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span> <span class="na">data-api=</span><span class="s">"activities"</span> <span class="na">data-attribute-break=</span><span class="s">"false"</span><span class="nt">&gt;</span>Activities<span class="nt">&lt;/button&gt;</span>
 			<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span> <span class="na">data-api=</span><span class="s">"projects"</span> <span class="na">data-attribute-break=</span><span class="s">"false"</span><span class="nt">&gt;</span>Projects<span class="nt">&lt;/button&gt;</span>
 			<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span> <span class="na">data-api=</span><span class="s">"customers"</span> <span class="na">data-attribute-break=</span><span class="s">"false"</span><span class="nt">&gt;</span>Customers<span class="nt">&lt;/button&gt;</span>
+			<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-secondary"</span> <span class="na">data-api=</span><span class="s">"config/i18n"</span> <span class="na">data-attribute-break=</span><span class="s">"true"</span><span class="nt">&gt;</span>i18n<span class="nt">&lt;/button&gt;</span>
 		<span class="nt">&lt;/div&gt;</span>
 	<span class="nt">&lt;/div&gt;</span>
 	<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row codePreview"</span> <span class="na">style=</span><span class="s">"display:none"</span><span class="nt">&gt;</span>
@@ -668,6 +690,8 @@ You can execute some sample requests and see the JSON result.</p>
 <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/html&gt;</span>
 </code></pre></div></div>
+
+
 
                 </div>
                 
