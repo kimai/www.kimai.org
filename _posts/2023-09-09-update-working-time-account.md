@@ -15,8 +15,10 @@ Today I'm back with the most anticipated and biggest feature update I've ever cr
 - Booking of holidays, sickness, time off and other absences
 - ... and this is just the beginning, more functions are already being implemented
 
+To find out more, please read the [full documentation]({% link _documentation/contract.md %}).
+
 Please watch the video to learn more:
 
 {% include youtube-video.html id="workcontract" %}
 
-These new features are available to all customers on the **Premium** and **Pro** plan.
+These new features are available to paying customers (check the pricing table for supported plans).
