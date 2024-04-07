@@ -10,7 +10,7 @@ With the latest update a new feature was introduced, the "Custom Content" rules.
 
 This allows to write your own javascript and stylesheet extensions, which you can use to further adapt Kimai to your own needs.
 
-You find the full documentation at https://www.kimai.org/documentation/plugin-custom-content.html
+To find out more, please read the [full documentation](https://www.kimai.org/documentation/plugin-custom-content.html).
 
 **Two basic examples to trigger your imagination**:
 
@@ -27,3 +27,4 @@ tr.recording {
     background-color: #ffa059 !important;
 }
 ```
+
