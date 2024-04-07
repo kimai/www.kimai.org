@@ -7,12 +7,6 @@ description: As paying cloud customer you receive full backups of your data
 The system creates backups of the entire database for each paying customer.
 These backups are available as ZIP archives, you will receive an email after they are generated, and you should download them immediately.
 
-The frequency of your backups are as follows:
-
-- Premium: {{ site.data.plans.premium.backup_frequency }}
-- Plus: {{ site.data.plans.plus.backup_frequency }}
-- Basic: {{ site.data.plans.basic.backup_frequency }}
-
 ## Archive duration
 
 Backups are kept for {{ site.cloud.backup_archive_days }} days before they are removed from our servers.
