@@ -349,7 +349,7 @@ Twig rendering is different, you have to access the variables with `{% raw %}{{ 
 
 Date variables have equivalents with the suffix `_process`, so you can use them in combination with the Twig filter for date formatting e.g. `|date('d. m. Y.')`.
 So you can either use the pre-formatted date value or you can convert it yourself.
-The example `{{ invoice['invoice.due_date'] }}` would then be converted to `{{ invoice['invoice.due_date_process']|date('d. m. Y.') }}`.
+The example `{% raw %}{{ invoice['invoice.due_date'] }}{% endraw %}` would then be converted to `{% raw %}{{ invoice['invoice.due_date_process']|date('d. m. Y.') }}{% endraw %}`.
 
 ### Global variables
 
