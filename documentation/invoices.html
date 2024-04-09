@@ -1057,6 +1057,10 @@ a value starting with <code class="language-plaintext highlighter-rouge">${entry
 
 <p>Twig rendering is different, you have to access the variables with <code class="language-plaintext highlighter-rouge">{{ invoice['xxx.yyy'] }}</code> instead of <code class="language-plaintext highlighter-rouge">${xxx.yyy}</code>.</p>
 
+<p>Date variables have equivalents with the suffix <code class="language-plaintext highlighter-rouge">_process</code>, so you can use them in combination with the Twig filter for date formatting e.g. <code class="language-plaintext highlighter-rouge">|date('d. m. Y.')</code>.
+So you can either use the pre-formatted date value or you can convert it yourself.
+The example <code class="language-plaintext highlighter-rouge">{{ invoice['invoice.due_date'] }}</code> would then be converted to <code class="language-plaintext highlighter-rouge">{{ invoice['invoice.due_date_process']|date('d. m. Y.') }}</code>.</p>
+
 <h3 id="global-variables">Global variables</h3>
 
 <table class="table">
@@ -1069,11 +1073,21 @@ a value starting with <code class="language-plaintext highlighter-rouge">${entry
   <tbody>
     <tr>
       <td>${invoice.due_date}</td>
-      <td>The due date for the invoice payment</td>
+      <td>The due date for the invoice payment formatted in the requested locale</td>
+    </tr>
+    <tr>
+      <td>${invoice.due_date_process}</td>
+      <td>The due date for the invoice payment, to be formatted with the twig filter <code class="language-plaintext highlighter-rouge">date()</code>
+</td>
     </tr>
     <tr>
       <td>${invoice.date}</td>
       <td>The creation date of this invoice</td>
+    </tr>
+    <tr>
+      <td>${invoice.date_process}</td>
+      <td>The creation date of this invoice, to be formatted with the twig filter <code class="language-plaintext highlighter-rouge">date()</code>
+</td>
     </tr>
     <tr>
       <td>${invoice.number}</td>
@@ -1188,8 +1202,18 @@ a value starting with <code class="language-plaintext highlighter-rouge">${entry
       <td>The query begin as formatted short date</td>
     </tr>
     <tr>
+      <td>${query.begin_process}</td>
+      <td>The query begin, to be formatted with the twig filter <code class="language-plaintext highlighter-rouge">date()</code>
+</td>
+    </tr>
+    <tr>
       <td>${query.end}</td>
       <td>The query end as formatted short date</td>
+    </tr>
+    <tr>
+      <td>${query.end_process}</td>
+      <td>The query end, to be formatted with the twig filter <code class="language-plaintext highlighter-rouge">date()</code>
+</td>
     </tr>
     <tr>
       <td>${query.month}</td>
