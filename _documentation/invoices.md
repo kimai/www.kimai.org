@@ -347,12 +347,18 @@ Be aware, that the following list of variables is working for the "document" bas
 
 Twig rendering is different, you have to access the variables with `{% raw %}{{ invoice['xxx.yyy'] }}{% endraw %}` instead of `${xxx.yyy}`. 
 
+Date variables have equivalents with the suffix `_process`, so you can use them in combination with the Twig filter for date formatting e.g. `|date('d. m. Y.')`.
+So you can either use the pre-formatted date value or you can convert it yourself.
+The example `{{ invoice['invoice.due_date'] }}` would then be converted to `{{ invoice['invoice.due_date_process']|date('d. m. Y.') }}`.
+
 ### Global variables
 
 | Key                           | Description                                                                             |
 |-------------------------------|-----------------------------------------------------------------------------------------|
-| ${invoice.due_date}           | The due date for the invoice payment                                                    |
+| ${invoice.due_date}           | The due date for the invoice payment formatted in the requested locale                  |
+| ${invoice.due_date_process}   | The due date for the invoice payment, to be formatted with the twig filter `date()`     |
 | ${invoice.date}               | The creation date of this invoice                                                       |
+| ${invoice.date_process}       | The creation date of this invoice, to be formatted with the twig filter `date()`        |
 | ${invoice.number}             | The generated invoice number                                                            |
 | ${invoice.currency}           | The invoice currency                                                                    |
 | ${invoice.currency_symbol}    | The invoice currency as symbol (if available)                                           |
@@ -381,7 +387,9 @@ Twig rendering is different, you have to access the variables with `{% raw %}{{ 
 | ${template.contact}           | Extended contact information, might be multiple lines                                   |
 | ${template.payment_details}   | Extended payment details like bank accounts, might be multiple lines                    |
 | ${query.begin}                | The query begin as formatted short date                                                 |
+| ${query.begin_process}        | The query begin, to be formatted with the twig filter `date()`                          |
 | ${query.end}                  | The query end as formatted short date                                                   |
+| ${query.end_process}          | The query end, to be formatted with the twig filter `date()`                            |
 | ${query.month}                | The month for this query (begin date) **DEPRECATED**                                    |
 | ${query.month_number}         | The numerical value for the month (with leading zero) **DEPRECATED**                    |
 | ${query.day}                  | The day for the queries begin as numerical value with leading zero **DEPRECATED**       |
