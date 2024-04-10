@@ -13,7 +13,7 @@ version: '3.5'
 services:
 
   sqldb:
-    image: mysql:5.7
+    image: mysql:8.3
     volumes:
       - mysql:/var/lib/mysql
     environment:
@@ -39,7 +39,7 @@ services:
     environment:
       - ADMINMAIL=admin@kimai.local
       - ADMINPASS=changemeplease
-      - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&serverVersion=5.7.40"
+      - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&serverVersion=8.3.0"
       - TRUSTED_HOSTS=nginx,localhost,127.0.0.1
     restart: unless-stopped
 
@@ -55,7 +55,7 @@ version: '3.5'
 services:
 
   sqldb:
-    image: mysql:5.7
+    image: mysql:8.3
     environment:
       - MYSQL_DATABASE=kimai
       - MYSQL_USER=kimaiuser
@@ -77,7 +77,7 @@ services:
     environment:
       - ADMINMAIL=admin@kimai.local
       - ADMINPASS=changemeplease
-      - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&serverVersion=5.7.40"
+      - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&serverVersion=8.3.0"
       - TRUSTED_HOSTS=nginx,localhost,127.0.0.1
     restart: unless-stopped
 ```
@@ -107,7 +107,7 @@ version: '3.5'
 services:
 
   sqldb:
-    image: mysql:5.7
+    image: mysql:8.3
     environment:
       - MYSQL_DATABASE=kimai
       - MYSQL_USER=kimaiuser
@@ -143,7 +143,7 @@ services:
     environment:
       - ADMINMAIL=admin@kimai.local
       - ADMINPASS=changemeplease
-      - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&serverVersion=5.7.40"
+      - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&serverVersion=8.3.0"
       - TRUSTED_HOSTS=nginx,localhost,127.0.0.1
     volumes:
       - public:/opt/kimai/public
@@ -165,7 +165,7 @@ version: '3.5'
 services:
 
   sqldb:
-    image: mysql:5.7
+    image: mysql:8.3
     environment:
       - MYSQL_DATABASE=kimai
       - MYSQL_USER=kimaiuser
@@ -203,7 +203,7 @@ services:
     environment:
       - ADMINMAIL=admin@kimai.local
       - ADMINPASS=changemeplease
-      - DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&serverVersion=5.7.40
+      - DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&serverVersion=8.3.0
       - TRUSTED_HOSTS=nginx,localhost,127.0.0.1
       - MAILER_URL=smtp://mailer:1025
       - MAILER_FROM=kimai@example.com
@@ -250,7 +250,7 @@ version: '3.5'
 services:
 
   sqldb:
-    image: mysql:5.7
+    image: mysql:8.3
     environment:
       - MYSQL_DATABASE=kimai
       - MYSQL_USER=kimaiuser
@@ -286,7 +286,7 @@ services:
     environment:
       - ADMINMAIL=admin@kimai.local
       - ADMINPASS=changemeplease
-      - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&serverVersion=5.7.40"
+      - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&serverVersion=8.3.0"
       - TRUSTED_HOSTS=nginx,localhost,127.0.0.1
     volumes:
       - public:/opt/kimai/public
