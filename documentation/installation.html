@@ -702,11 +702,11 @@ you can contact me, <a href="/store/installation-support.html">I offer paid setu
 constraint violation: 1052 Column 'TABLE_NAME' in where clause is ambiguous
 </code></pre></div></div>
 
-<p>Run <code class="language-plaintext highlighter-rouge">mysql --version</code> and extract the entire version string, for example for this entire version string:</p>
+<p>Run <code class="language-plaintext highlighter-rouge">mysql --version</code> and extract the <a href="https://www.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/configuration.html#automatic-platform-version-detection">entire version string</a>, for example for this version string:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql from 11.1.2-MariaDB, client 15.2 for osx10.19 (arm64) using  EditLine wrapper
 </code></pre></div></div>
 
-<p>Your <code class="language-plaintext highlighter-rouge">serverVersion</code> should look like this:</p>
+<p>the <code class="language-plaintext highlighter-rouge">serverVersion</code> part in your <code class="language-plaintext highlighter-rouge">DATABASE_URL</code> should include the part <code class="language-plaintext highlighter-rouge">11.1.2-MariaDB</code> like this:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DATABASE_URL=mysql://kimai:kimai@sqldb/kimai?charset=utf8mb4&amp;serverVersion=11.1.2-MariaDB
 </code></pre></div></div>
 
@@ -734,7 +734,7 @@ mG0%2Fd1%403aT.Z%29s
 </code></pre></div></div>
 
 <p>Then your <code class="language-plaintext highlighter-rouge">DATABASE_URL</code> might look like this:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DATABASE_URL=mysql://root:mG0%2Fd1%403aT.Z%29s@127.0.0.1:3306/kimai2?charset=utf8mb4&amp;serverVersion=5.7.40
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DATABASE_URL=mysql://root:mG0%2Fd1%403aT.Z%29s@127.0.0.1:3306/kimai2?charset=utf8mb4&amp;serverVersion=8.3.0
 </code></pre></div></div>
 
 <h3 id="which-user-to-use-www-data-httpd-or-your-own">Which user to use, www-data, httpd or your own?</h3>

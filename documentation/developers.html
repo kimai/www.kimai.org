@@ -380,9 +380,9 @@
 <p>All you need is:</p>
 
 <ul>
-  <li>a recent PHP version, best is 8.1</li>
+  <li>a recent PHP version, best is 8.1+</li>
   <li>some standard PHP extensions, see composer file for more infos</li>
-  <li>a MariaDB or MySQL instance</li>
+  <li>a MariaDB 11.1+ or MySQL 8.3+ instance</li>
   <li>
 <a href="https://getcomposer.org/download/">Composer</a> and <code class="language-plaintext highlighter-rouge">git</code>
 </li>
@@ -400,7 +400,7 @@ composer <span class="nb">install</span>
 <p>You need to change your environment to <code class="language-plaintext highlighter-rouge">dev</code> and configure your database connection in your <code class="language-plaintext highlighter-rouge">.env</code> file:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>APP_ENV=dev
-DATABASE_URL=mysql://user:password@127.0.0.1:3306/database?charset=utf8mb4&amp;serverVersion=5.7.40
+DATABASE_URL=mysql://user:password@127.0.0.1:3306/database?charset=utf8mb4&amp;serverVersion=8.3.0
 </code></pre></div></div>
 
 <p>The next command will import demo data, to test the application in its full beauty - with different user accounts,

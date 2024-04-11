@@ -567,7 +567,7 @@
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> docker run <span class="nt">--rm</span> <span class="nt">--name</span> kimai-test <span class="se">\</span>
      <span class="nt">-ti</span> <span class="se">\</span>
      <span class="nt">-p</span> 8001:8001 <span class="se">\</span>
-     <span class="nt">-e</span> <span class="nv">DATABASE_URL</span><span class="o">=</span>mysql://kimai:kimai@<span class="k">${</span><span class="nv">HOSTNAME</span><span class="k">}</span>:3399/kimai?charset<span class="o">=</span>utf8mb4&amp;serverVersion<span class="o">=</span>5.7.40 <span class="se">\</span>
+     <span class="nt">-e</span> <span class="nv">DATABASE_URL</span><span class="o">=</span>mysql://kimai:kimai@<span class="k">${</span><span class="nv">HOSTNAME</span><span class="k">}</span>:3399/kimai?charset<span class="o">=</span>utf8mb4&amp;serverVersion<span class="o">=</span>8.3.0 <span class="se">\</span>
      kimai/kimai2:apache
 </code></pre></div>    </div>
   </li>
@@ -609,7 +609,7 @@
 
 <p>See the Kimai and Symfony docs for more info on these.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">DATABASE_URL</span><span class="o">=</span>mysql://user:pass@hodt/dbname?charset<span class="o">=</span>utf8mb4&amp;serverVersion<span class="o">=</span>5.7.40
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">DATABASE_URL</span><span class="o">=</span>mysql://user:pass@hodt/dbname?charset<span class="o">=</span>utf8mb4&amp;serverVersion<span class="o">=</span>8.3.0
 <span class="nv">APP_SECRET</span><span class="o">=</span>change_this_to_something_unique
 <span class="nv">TRUSTED_PROXIES</span><span class="o">=</span>nginx,localhost,127.0.0.1
 <span class="nv">TRUSTED_HOSTS</span><span class="o">=</span>nginx,localhost,127.0.0.1
