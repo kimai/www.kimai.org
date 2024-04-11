@@ -155,12 +155,12 @@ An error like this might occur when you have a misconfigured `serverVersion` in 
 constraint violation: 1052 Column 'TABLE_NAME' in where clause is ambiguous
 ```
 
-Run `mysql --version` and extract the entire version string, for example for this entire version string: 
+Run `mysql --version` and extract the [entire version string](https://www.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/configuration.html#automatic-platform-version-detection), for example for this version string: 
 ```
 mysql from 11.1.2-MariaDB, client 15.2 for osx10.19 (arm64) using  EditLine wrapper
 ```
 
-Your `serverVersion` should look like this:
+the `serverVersion` part in your `DATABASE_URL` should include the part `11.1.2-MariaDB` like this:
 ```
 DATABASE_URL=mysql://kimai:kimai@sqldb/kimai?charset=utf8mb4&serverVersion=11.1.2-MariaDB
 ```
@@ -192,7 +192,7 @@ mG0%2Fd1%403aT.Z%29s
 
 Then your `DATABASE_URL` might look like this:
 ```
-DATABASE_URL=mysql://root:mG0%2Fd1%403aT.Z%29s@127.0.0.1:3306/kimai2?charset=utf8mb4&serverVersion=5.7.40
+DATABASE_URL=mysql://root:mG0%2Fd1%403aT.Z%29s@127.0.0.1:3306/kimai2?charset=utf8mb4&serverVersion=8.3.0
 ```
 
 ### Which user to use, www-data, httpd or your own?
