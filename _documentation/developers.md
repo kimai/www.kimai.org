@@ -18,9 +18,9 @@ This page is for all developers who want to contribute to Kimai. You rock!
 
 All you need is:
 
-- a recent PHP version, best is 8.1
+- a recent PHP version, best is 8.1+
 - some standard PHP extensions, see composer file for more infos
-- a MariaDB or MySQL instance
+- a MariaDB 11.1+ or MySQL 8.3+ instance
 - [Composer](https://getcomposer.org/download/) and `git`
 
 ## Development installation
@@ -37,7 +37,7 @@ You need to change your environment to `dev` and configure your database connect
 
 ```
 APP_ENV=dev
-DATABASE_URL=mysql://user:password@127.0.0.1:3306/database?charset=utf8mb4&serverVersion=5.7.40
+DATABASE_URL=mysql://user:password@127.0.0.1:3306/database?charset=utf8mb4&serverVersion=8.3.0
 ```
 
 The next command will import demo data, to test the application in its full beauty - with different user accounts,

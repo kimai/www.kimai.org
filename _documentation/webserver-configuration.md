@@ -116,7 +116,7 @@ which needs to be allowed by Apache via `AllowOverride All`.
     # optionally set the value of the environment variables used in the application
     #SetEnv APP_ENV prod
     #SetEnv APP_SECRET <app-secret-id>
-    #SetEnv DATABASE_URL "mysql://db_user:db_pass@host:3306/db_name?charset=utf8mb4&serverVersion=5.7.40"
+    #SetEnv DATABASE_URL "mysql://db_user:db_pass@host:3306/db_name?charset=utf8mb4&serverVersion=8.3.0"
 </VirtualHost>
 ```
 
