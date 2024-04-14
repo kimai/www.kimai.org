@@ -29,7 +29,7 @@ Steps to proceed to install kimai in a appropriate subdomain `kimai.your-domain.
 - `cd ../../web` to change to the root directory of the web space
 - `git clone -b {{ site.kimai_v2_version }} --depth 1 {{ site.kimai_v2_repo }}.git`
 - `cd kimai/`
-- `composer install --optimize-autoloader -n`
+- `composer install --optimize-autoloader`
 - Create a DB through the hosters configuration menu (called: `Datenbanken`)
 - Adjust the DB configuration in `.env`
   DB-Version can be found out through phpMyAdmin with sql instruction: `select Version();`, an example DB connection string:
@@ -64,7 +64,7 @@ Steps to proceed to install kimai in a appropriate subdomain `kimai.your-domain.
 All-Inkl has several CLI versions of PHP available via e.g. `php81`.
 
 Composer is running at `/usr/bin/composer`, so you execute it like that:
-- `php81 /usr/bin/composer install --optimize-autoloader -n`
+- `php81 /usr/bin/composer install --optimize-autoloader`
 - `php81 bin/console kimai:install -n`
 
 **ATTENTION** They use the PHP Plugin "ionCubeLoader", which is known to cause troubles with Symfony projects (or better with Doctrine Cache files).

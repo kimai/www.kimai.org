@@ -36,7 +36,7 @@ You might have to prefix the next commands with `sudo` and/or `php` (depends on 
 
 Update all composer dependencies:
 ```bash
-composer install --optimize-autoloader -n
+composer install --optimize-autoloader
 ```
 
 And run the Kimai updater:
@@ -63,7 +63,7 @@ curl error 6 while downloading https://flex.symfony.com/versions.json: Could not
 
 Great that you like Kimai, but PLEASE: for various reasons (like security) you should update more regularly!
 
-Please run `composer install --optimize-autoloader -n --no-plugins --no-scripts` once and then follow the normal update process.
+Please run `composer install --optimize-autoloader --no-plugins --no-scripts` once and then follow the normal update process.
 
 ### Changed files
 
