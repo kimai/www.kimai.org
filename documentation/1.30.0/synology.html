@@ -727,7 +727,7 @@ Be extremely careful, a wrong command can destroy your Synology … you know: wi
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /volume1/web/kimai/
 git fetch <span class="nt">--tags</span>
 git checkout 2.15.0
-php81 composer <span class="nb">install</span> <span class="nt">--optimize-autoloader</span> <span class="nt">-n</span>
+php81 composer <span class="nb">install</span> <span class="nt">--optimize-autoloader</span>
 php81 bin/console kimai:update
 <span class="nb">chown</span> <span class="nt">-R</span> :http <span class="nb">.</span>
 </code></pre></div></div>

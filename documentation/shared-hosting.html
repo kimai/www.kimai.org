@@ -547,7 +547,7 @@
   <li><code class="language-plaintext highlighter-rouge">cd ../../web</code> to change to the root directory of the web space</li>
   <li><code class="language-plaintext highlighter-rouge">git clone -b 2.15.0 --depth 1 https://github.com/kimai/kimai.git</code></li>
   <li><code class="language-plaintext highlighter-rouge">cd kimai/</code></li>
-  <li><code class="language-plaintext highlighter-rouge">composer install --optimize-autoloader -n</code></li>
+  <li><code class="language-plaintext highlighter-rouge">composer install --optimize-autoloader</code></li>
   <li>Create a DB through the hosters configuration menu (called: <code class="language-plaintext highlighter-rouge">Datenbanken</code>)</li>
   <li>Adjust the DB configuration in <code class="language-plaintext highlighter-rouge">.env</code>
 DB-Version can be found out through phpMyAdmin with sql instruction: <code class="language-plaintext highlighter-rouge">select Version();</code>, an example DB connection string:
@@ -594,7 +594,7 @@ DB-Version can be found out through phpMyAdmin with sql instruction: <code class
 
 <p>Composer is running at <code class="language-plaintext highlighter-rouge">/usr/bin/composer</code>, so you execute it like that:</p>
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">php81 /usr/bin/composer install --optimize-autoloader -n</code></li>
+  <li><code class="language-plaintext highlighter-rouge">php81 /usr/bin/composer install --optimize-autoloader</code></li>
   <li><code class="language-plaintext highlighter-rouge">php81 bin/console kimai:install -n</code></li>
 </ul>
 
