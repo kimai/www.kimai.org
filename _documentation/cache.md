@@ -28,6 +28,21 @@ Depending on your setup and the way you call the cache command, you have to fix 
   
 ### Troubleshooting
 
+#### [WARNING] Cache could not be rebuilt.
+
+Sometimes the cache cannot be rebuilt, because of technical dependencies that changed between versions. 
+That is more likely to happen if you miss single updates steps, e.g. going from 2.1 to 2.5 directly.
+
+
+The solution is usually to manually delete the cache files before executing the reload command:
+
+```bash
+cd /var/www/kimai/
+rm -r var/cache/prod/*
+```
+
+Now you can run `bin/console kimai:reload --env=prod`.
+
 #### Something went wrong / 500 error
 
 This is very often caused by rebuilding the cache without fixing the file permissions.
