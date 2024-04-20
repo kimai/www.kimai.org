@@ -4,15 +4,16 @@ permalink: /de/kimai-rabatt-codes
 centered: true
 ---
 
-Ich habe diese Seite erstellt, um meine Richtlinie in Bezug auf Rabatte zu erläutern.
+Diese Seite wurde erstellt, um die Richtlinie in Bezug auf Rabatte zu erläutern.
 
-Ich biete [gemeinnützigen Organisationen]({% link _landingpage/de/non-profit.md %}), welche die Kimai-Cloud nutzen möchten, einen Rabatt an.   
-Dieser Rabatt gilt nicht für Plugins in selbst gehosteten Installationen. 
+Für [gemeinnützige Organisationen]({% link _landingpage/de/non-profit.md %}), welche die Kimai-Cloud nutzen möchten, gibt es einen großzügigen Rabatt.   
+
+Es gibt keinen Rabatt für Plugins in selbst gehosteten Installationen. 
 
 Ich beteilige mich nicht an Aktionen wie Black Friday.
 Alle Rabattcodes, die Sie auf Rabattcode-Websites finden, sind gefälscht und funktionieren nicht.
 
-Diese einfache Richtlinie wurde geschaffen, um die fairste Preispolitik für meine Kunden zu gewährleisten.
+Ich habe mich für diese einfache Richtlinie entschieden, um die fairste Preispolitik für alle Kunden zu gewährleisten.
 
-Hinweis: Wenn Sie sich für einen kostenpflichtigen Plan mit Kimai-Cloud entscheiden, erhalten Sie einen Rabatt von 20-25%, wenn Sie jährlich statt monatlich bezahlen.
+Hinweis: Wenn Sie sich für einen kostenpflichtigen Plan mit Kimai-Cloud entscheiden, erhalten Sie einen Rabatt von über 20%, wenn Sie jährlich statt monatlich bezahlen.
  

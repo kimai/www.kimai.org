@@ -7,11 +7,12 @@ centered: true
 I've created this page to make my policy around discounting clear.
 
 I do offer a discount to [non-profit organisations]({% link _landingpage/en/non-profit.md %}) who want to use the Kimai-Cloud.  
-This discount does not apply to plugins in self-hosted installations.
+
+There is no discount for plugins in self-hosted installations.
 
 I never run seasonal promotions like Black Friday deals.
 All discount codes found on discount code websites are fake and will not work.
 
-This simple policy was created to ensure the fairest pricing policy for my customers.
+This simple policy was created to ensure the fairest pricing policy for all customers.
 
 Note: if you choose a paid plan with Kimai-Cloud, you will receive a 20-25% discount if you pay it annually instead of monthly.
