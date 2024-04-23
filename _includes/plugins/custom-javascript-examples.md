@@ -155,3 +155,15 @@ document.addEventListener('kimai.initialized', function (event) {
     }
 });
 ```
+
+Make the tags field mandatory:
+```javascript
+document.addEventListener('show.bs.modal', (e) => {
+    const field = e.srcElement.querySelector('#timesheet_edit_form_tags');
+    if (field !== null) {
+        field.required = true;
+        const label = e.srcElement.querySelector('label[for=timesheet_edit_form_tags-ts-control]');
+        if (label !== null && !label.classList.contains('required')) { label.classList.add('required'); }
+    }
+});
+```
