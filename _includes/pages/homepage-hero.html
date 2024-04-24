@@ -10,8 +10,15 @@
                     <h1 class="display-4 mb-lg-4 mb-3">{{ site.data[page.lang].translation.homepage.title }}</h1>
                     <p class="mb-4 mx-md-0 mx-auto pb-xl-3 pb-lg-2 fs-lg" style="max-width: 30.5rem;">{{ site.data[page.lang].translation.homepage.intro }}</p>
                     <p>
-                        <a href="{% link _posts/2023-05-20-kimai-release-2.md %}" class="d-inline-flex align-items-center fs-sm fw-semibold text-decoration-none border border-primary border-opacity-50 rounded-pill py-1 px-3">
-                            <span class="text-gradient-primary lh-lg">{{ site.data[page.lang].translation.new-badge }}: Kimai 2.0</span>
+                        {% if page.lang == "de" %}
+                            <div class="senja-embed" data-id="744e7436-f4e0-4c78-b5df-baadb891018a" data-mode="shadow" data-lazyload="false"></div>
+                            <script async type="text/javascript" src="https://widget.senja.io/widget/744e7436-f4e0-4c78-b5df-baadb891018a/platform.js"></script>
+                        {% else %}
+                            <div class="senja-embed" data-id="5f195b5c-de71-43ef-83c8-ec9ca9aa9b9f" data-mode="shadow" data-lazyload="false"></div>
+                            <script async type="text/javascript" src="https://widget.senja.io/widget/5f195b5c-de71-43ef-83c8-ec9ca9aa9b9f/platform.js"></script>
+                        {% endif %}
+                        <a href="{% include link-cloud-url.html %}" class="d-inline-flex align-items-center fw-semibold text-decoration-none border border-primary border-opacity-50 rounded-pill py-1 px-3 mt-5">
+                            <span class="text-gradient-primary lh-lg">{{ site.data[page.lang].translation.cloud-call-to-action }}</span>
                             <i class="bx bx-right-arrow-alt text-gradient-primary fs-lg ms-2 me-n1"></i>
                         </a>
                     </p>
