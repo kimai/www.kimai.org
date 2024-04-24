@@ -14,17 +14,17 @@
     <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
     <title>Active Directory Federation Services (ADFS) – Kimai</title>
     
-        <meta name="description" content="Use Keycloak as SAML identity provider for Kimai">
+        <meta name="description" content="Use ADFS as SAML identity provider for Kimai">
     <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
     <meta property="og:locale" content="en">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Kimai Time-Tracking">
-    <meta property="og:description" content="Use Keycloak as SAML identity provider for Kimai">
+    <meta property="og:description" content="Use ADFS as SAML identity provider for Kimai">
     <meta property="og:image" content="https://www.kimai.org/images/social-preview.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Kimai Time-Tracking">
     <meta name="twitter:site" content="@kimai_org">
-    <meta name="twitter:description" content="Use Keycloak as SAML identity provider for Kimai">
+    <meta name="twitter:description" content="Use ADFS as SAML identity provider for Kimai">
     <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.jpg">
     <link rel="canonical" href="https://www.kimai.org/documentation/saml-adfs.html" />
     <script src="/assets/build/theme.js"></script>
@@ -513,7 +513,7 @@
             <div class="me-4">
                 <h1 class="pb-1">Active Directory Federation Services (ADFS)</h1>
                 
-                <p class="text-muted fs-lg mb-2">Use Keycloak as SAML identity provider for Kimai</p>
+                <p class="text-muted fs-lg mb-2">Use ADFS as SAML identity provider for Kimai</p>
                 
             </div>
             
@@ -530,74 +530,11 @@
                 <div id="documentation-content">
                     <p>Go back to general <a href="/documentation/saml.html">SAML configuration</a> for Kimai.</p>
 
-<p>SAML authentication with ADFS accounts has proven to work with the following configurations.</p>
+<p>SAML authentication with Microsoft ADFS has proven to work with the following configuration.</p>
 
-<h3 id="adfs-setup">ADFS Setup</h3>
-
-<figure class="d-block figure mb-3" style="max-width: 1000px">
-    <img src="/images/documentation/adfs-saml-pic1.png" class="figure-img img-fluid rounded" />
-    <figcaption class="figure-caption">Add Relying Party Trust</figcaption>
-</figure>
-
-<figure class="d-block figure mb-3" style="max-width: 1000px">
-    <img src="/images/documentation/adfs-saml-pic2.png" class="figure-img img-fluid rounded" />
-    <figcaption class="figure-caption">Select Data Source 1</figcaption>
-</figure>
-
-<figure class="d-block figure mb-3" style="max-width: 1000px">
-    <img src="/images/documentation/adfs-saml-pic3.png" class="figure-img img-fluid rounded" />
-    <figcaption class="figure-caption">Specific Display Name</figcaption>
-</figure>
-
-<figure class="d-block figure mb-3" style="max-width: 1000px">
-    <img src="/images/documentation/adfs-saml-pic4.png" class="figure-img img-fluid rounded" />
-    <figcaption class="figure-caption">Choose Access Control Policy</figcaption>
-</figure>
-
-<figure class="d-block figure mb-3" style="max-width: 1000px">
-    <img src="/images/documentation/adfs-saml-pic5.png" class="figure-img img-fluid rounded" />
-    <figcaption class="figure-caption">Ready to Add Trust</figcaption>
-</figure>
-
-<figure class="d-block figure mb-3" style="max-width: 1000px">
-    <img src="/images/documentation/adfs-saml-pic6.png" class="figure-img img-fluid rounded" />
-    <figcaption class="figure-caption">Edit Claim Issuance Policy</figcaption>
-</figure>
-
-<p><strong>Rule Template for Attributes</strong></p>
-
-<figure class="d-block figure mb-3" style="max-width: 1000px">
-    <img src="/images/documentation/adfs-saml-pic7.png" class="figure-img img-fluid rounded" />
-    <figcaption class="figure-caption">Send LDAP Attributes as Claims</figcaption>
-</figure>
-
-<figure class="d-block figure mb-3" style="max-width: 1000px">
-    <img src="/images/documentation/adfs-saml-pic8.png" class="figure-img img-fluid rounded" />
-    <figcaption class="figure-caption">Edit Rule - Attributes</figcaption>
-</figure>
-
-<p><strong>Rule Template for Groups</strong></p>
-
-<figure class="d-block figure mb-3" style="max-width: 1000px">
-    <img src="/images/documentation/adfs-saml-pic9.png" class="figure-img img-fluid rounded" />
-    <figcaption class="figure-caption">Send Group Memberships as a Claim</figcaption>
-</figure>
-
-<figure class="d-block figure mb-3" style="max-width: 1000px">
-    <img src="/images/documentation/adfs-saml-pic10.png" class="figure-img img-fluid rounded" />
-    <figcaption class="figure-caption">Configure Claim Rule for Groups</figcaption>
-</figure>
-
-<p><strong>Apply Claim Issuance Policy</strong></p>
-
-<figure class="d-block figure mb-3" style="max-width: 1000px">
-    <img src="/images/documentation/adfs-saml-pic11.png" class="figure-img img-fluid rounded" />
-    <figcaption class="figure-caption">Apply Claim Issuance Policy</figcaption>
-</figure>
+<p><em>Setup the Kimai Config first and reload cache, once SAML is enabled the metadata.xml that’s autogenerated is used to configure the ADFS side.</em></p>
 
 <h3 id="configure-localyaml">Configure local.yaml</h3>
-
-<p>And here is the matching Kimai configuration:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">kimai</span><span class="pi">:</span>
     <span class="na">saml</span><span class="pi">:</span>
@@ -669,7 +606,71 @@
                     <span class="na">url</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://example.com'</span>
 </code></pre></div></div>
 
-<p>You should now be able to test the Login by visiting <strong>https://timetracking.example.com/</strong> and clicking on the <code class="language-plaintext highlighter-rouge">Keycloak</code> title of the SAML method, you defined earlier.</p>
+<h3 id="adfs-setup">ADFS Setup</h3>
+
+<figure class="d-block figure mb-3" style="max-width: 1000px">
+    <img src="/images/documentation/adfs-saml-pic1.png" class="figure-img img-fluid rounded" />
+    <figcaption class="figure-caption">Add Relying Party Trust</figcaption>
+</figure>
+
+<figure class="d-block figure mb-3" style="max-width: 1000px">
+    <img src="/images/documentation/adfs-saml-pic2.png" class="figure-img img-fluid rounded" />
+    <figcaption class="figure-caption">Select Data Source 1</figcaption>
+</figure>
+
+<figure class="d-block figure mb-3" style="max-width: 1000px">
+    <img src="/images/documentation/adfs-saml-pic3.png" class="figure-img img-fluid rounded" />
+    <figcaption class="figure-caption">Specific Display Name</figcaption>
+</figure>
+
+<figure class="d-block figure mb-3" style="max-width: 1000px">
+    <img src="/images/documentation/adfs-saml-pic4.png" class="figure-img img-fluid rounded" />
+    <figcaption class="figure-caption">Choose Access Control Policy</figcaption>
+</figure>
+
+<figure class="d-block figure mb-3" style="max-width: 1000px">
+    <img src="/images/documentation/adfs-saml-pic5.png" class="figure-img img-fluid rounded" />
+    <figcaption class="figure-caption">Ready to Add Trust</figcaption>
+</figure>
+
+<figure class="d-block figure mb-3" style="max-width: 1000px">
+    <img src="/images/documentation/adfs-saml-pic6.png" class="figure-img img-fluid rounded" />
+    <figcaption class="figure-caption">Edit Claim Issuance Policy</figcaption>
+</figure>
+
+<p><strong>Rule Template for Attributes</strong></p>
+
+<figure class="d-block figure mb-3" style="max-width: 1000px">
+    <img src="/images/documentation/adfs-saml-pic7.png" class="figure-img img-fluid rounded" />
+    <figcaption class="figure-caption">Send LDAP Attributes as Claims</figcaption>
+</figure>
+
+<figure class="d-block figure mb-3" style="max-width: 1000px">
+    <img src="/images/documentation/adfs-saml-pic8.png" class="figure-img img-fluid rounded" />
+    <figcaption class="figure-caption">Edit Rule - Attributes</figcaption>
+</figure>
+
+<p><strong>Rule Template for Groups</strong></p>
+
+<figure class="d-block figure mb-3" style="max-width: 1000px">
+    <img src="/images/documentation/adfs-saml-pic9.png" class="figure-img img-fluid rounded" />
+    <figcaption class="figure-caption">Send Group Memberships as a Claim</figcaption>
+</figure>
+
+<figure class="d-block figure mb-3" style="max-width: 1000px">
+    <img src="/images/documentation/adfs-saml-pic10.png" class="figure-img img-fluid rounded" />
+    <figcaption class="figure-caption">Configure Claim Rule for Groups</figcaption>
+</figure>
+
+<p><strong>Apply Claim Issuance Policy</strong></p>
+
+<figure class="d-block figure mb-3" style="max-width: 1000px">
+    <img src="/images/documentation/adfs-saml-pic11.png" class="figure-img img-fluid rounded" />
+    <figcaption class="figure-caption">Apply Claim Issuance Policy</figcaption>
+</figure>
+
+<h3 id="test">Test</h3>
+<p>You should now be able to test the Login by visiting <strong>https://timetracking.example.com/</strong> and clicking on the <code class="language-plaintext highlighter-rouge">Login With ADFS</code> title of the SAML method, you defined earlier.</p>
 
                 </div>
                 
@@ -684,7 +685,7 @@
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#adfs-setup" class="nav-link">ADFS Setup</a></li><li class="nav-item"><a href="#configure-localyaml" class="nav-link">Configure local.yaml</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#configure-localyaml" class="nav-link">Configure local.yaml</a></li><li class="nav-item"><a href="#adfs-setup" class="nav-link">ADFS Setup</a></li><li class="nav-item"><a href="#test" class="nav-link">Test</a></li></ul>
         
     </aside>
 
