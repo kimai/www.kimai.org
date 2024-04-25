@@ -29,7 +29,7 @@ Steps to proceed to install kimai in a appropriate subdomain `kimai.your-domain.
 - `cd ../../web` to change to the root directory of the web space
 - `git clone -b {{ site.kimai_v2_version }} --depth 1 {{ site.kimai_v2_repo }}.git`
 - `cd kimai/`
-- `composer install --optimize-autoloader`
+- `composer install {{ site.kimai_v2_composer_flags }}`
 - Create a DB through the hosters configuration menu (called: `Datenbanken`)
 - Adjust the DB configuration in `.env`
   DB-Version can be found out through phpMyAdmin with sql instruction: `select Version();`, an example DB connection string:
@@ -47,7 +47,7 @@ Steps to proceed to install kimai in a appropriate subdomain `kimai.your-domain.
 - composer has to be installed manually
 - The default PHP version is often too low, you can check that with `php -v`
     - If it is lower than 8.1, you have to prefix all commands with the proper version, eg. `/usr/bin/php8.1-cli` (even composer)
-    - Example composer: `/usr/bin/php8.1-cli composer.phar install --optimize-autoloader`
+    - Example composer: `/usr/bin/php8.1-cli composer.phar install {{ site.kimai_v2_composer_flags }}`
     - Example installation: `/usr/bin/php8.1-cli bin/console kimai:install -n`
 
 ### Domainfactory
@@ -56,7 +56,7 @@ Steps to proceed to install kimai in a appropriate subdomain `kimai.your-domain.
 - composer has to be installed manually: `curl -sS https://getcomposer.org/installer | php8.1.5-cli`
 - The default PHP version is often too low, you can check that with `php -v`
     - If it is lower than 8.1, you have to prefix all commands with the proper version, eg. `php8.1.5-cli` (even composer)
-    - Example composer: `php8.1.5-cli composer.phar install --optimize-autoloader`
+    - Example composer: `php8.1.5-cli composer.phar install {{ site.kimai_v2_composer_flags }}`
     - Example installation: `php8.1.5-cli bin/console kimai:install -n`
 
 ### All-Inkl
@@ -64,7 +64,7 @@ Steps to proceed to install kimai in a appropriate subdomain `kimai.your-domain.
 All-Inkl has several CLI versions of PHP available via e.g. `php81`.
 
 Composer is running at `/usr/bin/composer`, so you execute it like that:
-- `php81 /usr/bin/composer install --optimize-autoloader`
+- `php81 /usr/bin/composer install {{ site.kimai_v2_composer_flags }}`
 - `php81 bin/console kimai:install -n`
 
 **ATTENTION** They use the PHP Plugin "ionCubeLoader", which is known to cause troubles with Symfony projects (or better with Doctrine Cache files).
@@ -95,7 +95,7 @@ For example, if you want to use PHP 8.1 use always the absolute path when runnin
 How to install Kimai:
 - Install composer: `curl -sS https://getcomposer.org/installer | /opt/RZphp81/bin/php-cli`
 - Clone Kimai as stated above and then `cd kimai`
-- Install composer packages with `/opt/RZphp81/bin/php-cli ../composer.phar install --optimize-autoloader`
+- Install composer packages with `/opt/RZphp81/bin/php-cli ../composer.phar install {{ site.kimai_v2_composer_flags }}`
 - Configure your `.env` file, eg. with `nano .env`
 - Install Kimai database `/opt/RZphp81/bin/php-cli bin/console kimai:install -n`
 
@@ -125,7 +125,7 @@ webserver directly.
 - Install composer: `curl -sS https://getcomposer.org/installer | /opt/plesk/php/8.1/bin/php`
 - Clone Kimai: `git clone -b {{ site.kimai_v2_version }} --depth 1 {{ site.kimai_v2_repo }}.git`
 - Enter Kimai directory: `cd kimai`
-- Install composer packages: `/opt/plesk/php/8.1/bin/php ../composer.phar install --optimize-autoloader`
+- Install composer packages: `/opt/plesk/php/8.1/bin/php ../composer.phar install {{ site.kimai_v2_composer_flags }}`
 - Configure `.env` file to have correct database credentials
 - Install Kimai database: `/opt/plesk/php/8.1/bin/php bin/console kimai:install -n`
 - Change ownership of `kimai` folder:
@@ -165,7 +165,7 @@ ATTENTION: Procedure must be undertaken **with the FTP SSH account**, not the WP
 
 - Clone Kimai in the root folder as stated above and then `cd kimai`
 - Install composer: `curl -sS https://getcomposer.org/installer | /usr/bin/php`
-- Install dependencies: `php composer.phar install --optimize-autoloader`
+- Install dependencies: `php composer.phar install {{ site.kimai_v2_composer_flags }}`
 - configure your .env file, eg. `nano .env`
 - install kimai: `php bin/console kimai:install -n`
 - reload config: `php bin/console kimai:reload`
