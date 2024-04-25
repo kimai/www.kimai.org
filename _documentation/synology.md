@@ -19,7 +19,7 @@ Until this guide will be updated, there is [a PDF installation documentation in 
 
 You need to prefix all PHP related commands with `php81`, for example:
 ```bash
-php81 composer.phar install --optimize-autoloader
+php81 composer.phar install {{ site.kimai_v2_composer_flags }}
 ```
 
 Or run a console command:
@@ -42,7 +42,7 @@ This example uses the path `/volume1/web/kimai2`
 
 Then [download and install composer](https://getcomposer.org/download/). Now install all dependencies:
 ```bash
-php81 composer.phar install --optimize-autoloader
+php81 composer.phar install {{ site.kimai_v2_composer_flags }}
 ```
 
 ### Create a database
@@ -192,7 +192,7 @@ Please cross-check the normal [upgrade guide]({% link _documentation/updates.md 
 cd /volume1/web/kimai/
 git fetch --tags
 git checkout {{ site.kimai_v2_version }}
-php81 composer install --optimize-autoloader
+php81 composer install {{ site.kimai_v2_composer_flags }}
 php81 bin/console kimai:update
 chown -R :http .
 ```
@@ -213,7 +213,7 @@ cd kimai-{{ site.kimai_v2_version }}/
 Then [download and install composer](https://getcomposer.org/download/), followed by the installation:
 
 ```bash
-php81 composer.phar install --optimize-autoloader
+php81 composer.phar install {{ site.kimai_v2_composer_flags }}
 php81 bin/console kimai:update
 ```
 

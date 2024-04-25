@@ -55,7 +55,7 @@ cd kimai/
 
 Now install all dependencies:
 ```bash
-composer install --optimize-autoloader
+composer install {{ site.kimai_v2_composer_flags }}
 ```
 
 Configure the database connection and server version in the `.env` file:
@@ -230,7 +230,7 @@ Composer crashes with something like
 Then please read [this chapter](https://getcomposer.org/doc/articles/troubleshooting.md#memory-limit-errors) in the official docs.
 In short, try to run: 
 ```bash
-COMPOSER_MEMORY_LIMIT=-1 php -d memory_limit=-1 /usr/bin/composer install --optimize-autoloader
+COMPOSER_MEMORY_LIMIT=-1 php -d memory_limit=-1 /usr/bin/composer install {{ site.kimai_v2_composer_flags }}
 ```
 
 ### Internal Server Error 500

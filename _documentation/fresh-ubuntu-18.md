@@ -157,7 +157,7 @@ cd kimai/
 chown -R :www-data .
 chmod -R g+r .
 chmod -R g+rw var/
-composer install --optimize-autoloader
+composer install {{ site.kimai_v2_composer_flags }}
 vim .env
 ```
 
