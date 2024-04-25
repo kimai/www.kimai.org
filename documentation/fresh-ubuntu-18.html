@@ -349,7 +349,7 @@ git clone <span class="nt">-b</span> 2.15.0 <span class="nt">--depth</span> 1 ht
 <span class="nb">chown</span> <span class="nt">-R</span> :www-data <span class="nb">.</span>
 <span class="nb">chmod</span> <span class="nt">-R</span> g+r <span class="nb">.</span>
 <span class="nb">chmod</span> <span class="nt">-R</span> g+rw var/
-composer <span class="nb">install</span> <span class="nt">--optimize-autoloader</span>
+composer <span class="nb">install</span> <span class="nt">--no-dev</span> <span class="nt">--optimize-autoloader</span> <span class="nt">-n</span>
 vim .env
 </code></pre></div></div>
 

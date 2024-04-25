@@ -581,7 +581,7 @@
 </code></pre></div></div>
 
 <p>Now install all dependencies:</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer <span class="nb">install</span> <span class="nt">--optimize-autoloader</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer <span class="nb">install</span> <span class="nt">--no-dev</span> <span class="nt">--optimize-autoloader</span> <span class="nt">-n</span>
 </code></pre></div></div>
 
 <p>Configure the database connection and server version in the <code class="language-plaintext highlighter-rouge">.env</code> file:</p>
@@ -780,7 +780,7 @@ In that case, prefix them with <code class="language-plaintext highlighter-rouge
 
 <p>Then please read <a href="https://getcomposer.org/doc/articles/troubleshooting.md#memory-limit-errors">this chapter</a> in the official docs.
 In short, try to run:</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">COMPOSER_MEMORY_LIMIT</span><span class="o">=</span><span class="nt">-1</span> php <span class="nt">-d</span> <span class="nv">memory_limit</span><span class="o">=</span><span class="nt">-1</span> /usr/bin/composer <span class="nb">install</span> <span class="nt">--optimize-autoloader</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">COMPOSER_MEMORY_LIMIT</span><span class="o">=</span><span class="nt">-1</span> php <span class="nt">-d</span> <span class="nv">memory_limit</span><span class="o">=</span><span class="nt">-1</span> /usr/bin/composer <span class="nb">install</span> <span class="nt">--no-dev</span> <span class="nt">--optimize-autoloader</span> <span class="nt">-n</span>
 </code></pre></div></div>
 
 <h3 id="internal-server-error-500">Internal Server Error 500</h3>

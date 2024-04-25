@@ -557,7 +557,7 @@
   <li><code class="language-plaintext highlighter-rouge">cd ../../web</code> to change to the root directory of the web space</li>
   <li><code class="language-plaintext highlighter-rouge">git clone -b 2.15.0 --depth 1 https://github.com/kimai/kimai.git</code></li>
   <li><code class="language-plaintext highlighter-rouge">cd kimai/</code></li>
-  <li><code class="language-plaintext highlighter-rouge">composer install --optimize-autoloader</code></li>
+  <li><code class="language-plaintext highlighter-rouge">composer install --no-dev --optimize-autoloader -n</code></li>
   <li>Create a DB through the hosters configuration menu (called: <code class="language-plaintext highlighter-rouge">Datenbanken</code>)</li>
   <li>Adjust the DB configuration in <code class="language-plaintext highlighter-rouge">.env</code>
 DB-Version can be found out through phpMyAdmin with sql instruction: <code class="language-plaintext highlighter-rouge">select Version();</code>, an example DB connection string:
@@ -578,7 +578,7 @@ DB-Version can be found out through phpMyAdmin with sql instruction: <code class
   <li>The default PHP version is often too low, you can check that with <code class="language-plaintext highlighter-rouge">php -v</code>
     <ul>
       <li>If it is lower than 8.1, you have to prefix all commands with the proper version, eg. <code class="language-plaintext highlighter-rouge">/usr/bin/php8.1-cli</code> (even composer)</li>
-      <li>Example composer: <code class="language-plaintext highlighter-rouge">/usr/bin/php8.1-cli composer.phar install --optimize-autoloader</code></li>
+      <li>Example composer: <code class="language-plaintext highlighter-rouge">/usr/bin/php8.1-cli composer.phar install --no-dev --optimize-autoloader -n</code></li>
       <li>Example installation: <code class="language-plaintext highlighter-rouge">/usr/bin/php8.1-cli bin/console kimai:install -n</code></li>
     </ul>
   </li>
@@ -592,7 +592,7 @@ DB-Version can be found out through phpMyAdmin with sql instruction: <code class
   <li>The default PHP version is often too low, you can check that with <code class="language-plaintext highlighter-rouge">php -v</code>
     <ul>
       <li>If it is lower than 8.1, you have to prefix all commands with the proper version, eg. <code class="language-plaintext highlighter-rouge">php8.1.5-cli</code> (even composer)</li>
-      <li>Example composer: <code class="language-plaintext highlighter-rouge">php8.1.5-cli composer.phar install --optimize-autoloader</code></li>
+      <li>Example composer: <code class="language-plaintext highlighter-rouge">php8.1.5-cli composer.phar install --no-dev --optimize-autoloader -n</code></li>
       <li>Example installation: <code class="language-plaintext highlighter-rouge">php8.1.5-cli bin/console kimai:install -n</code></li>
     </ul>
   </li>
@@ -604,7 +604,7 @@ DB-Version can be found out through phpMyAdmin with sql instruction: <code class
 
 <p>Composer is running at <code class="language-plaintext highlighter-rouge">/usr/bin/composer</code>, so you execute it like that:</p>
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">php81 /usr/bin/composer install --optimize-autoloader</code></li>
+  <li><code class="language-plaintext highlighter-rouge">php81 /usr/bin/composer install --no-dev --optimize-autoloader -n</code></li>
   <li><code class="language-plaintext highlighter-rouge">php81 bin/console kimai:install -n</code></li>
 </ul>
 
@@ -640,7 +640,7 @@ DB-Version can be found out through phpMyAdmin with sql instruction: <code class
 <ul>
   <li>Install composer: <code class="language-plaintext highlighter-rouge">curl -sS https://getcomposer.org/installer | /opt/RZphp81/bin/php-cli</code></li>
   <li>Clone Kimai as stated above and then <code class="language-plaintext highlighter-rouge">cd kimai</code></li>
-  <li>Install composer packages with <code class="language-plaintext highlighter-rouge">/opt/RZphp81/bin/php-cli ../composer.phar install --optimize-autoloader</code></li>
+  <li>Install composer packages with <code class="language-plaintext highlighter-rouge">/opt/RZphp81/bin/php-cli ../composer.phar install --no-dev --optimize-autoloader -n</code></li>
   <li>Configure your <code class="language-plaintext highlighter-rouge">.env</code> file, eg. with <code class="language-plaintext highlighter-rouge">nano .env</code></li>
   <li>Install Kimai database <code class="language-plaintext highlighter-rouge">/opt/RZphp81/bin/php-cli bin/console kimai:install -n</code></li>
 </ul>
@@ -672,7 +672,7 @@ Typically, the root can be found at <code class="language-plaintext highlighter-
   <li>Install composer: <code class="language-plaintext highlighter-rouge">curl -sS https://getcomposer.org/installer | /opt/plesk/php/8.1/bin/php</code></li>
   <li>Clone Kimai: <code class="language-plaintext highlighter-rouge">git clone -b 2.15.0 --depth 1 https://github.com/kimai/kimai.git</code></li>
   <li>Enter Kimai directory: <code class="language-plaintext highlighter-rouge">cd kimai</code></li>
-  <li>Install composer packages: <code class="language-plaintext highlighter-rouge">/opt/plesk/php/8.1/bin/php ../composer.phar install --optimize-autoloader</code></li>
+  <li>Install composer packages: <code class="language-plaintext highlighter-rouge">/opt/plesk/php/8.1/bin/php ../composer.phar install --no-dev --optimize-autoloader -n</code></li>
   <li>Configure <code class="language-plaintext highlighter-rouge">.env</code> file to have correct database credentials</li>
   <li>Install Kimai database: <code class="language-plaintext highlighter-rouge">/opt/plesk/php/8.1/bin/php bin/console kimai:install -n</code></li>
   <li>Change ownership of <code class="language-plaintext highlighter-rouge">kimai</code> folder:
@@ -697,17 +697,20 @@ and <code class="language-plaintext highlighter-rouge">ServerAlias</code> are se
 
 <h3 id="netcup">Netcup</h3>
 
+<p>Regardless of which shared hosting package you have, there is only 128M available in the console by default. As a result, the PHP setting <code class="language-plaintext highlighter-rouge">memory_limit</code> must be increased manually for each console command.</p>
+
 <ul>
-  <li>Clone Kimai in the root folder as stated above and then <code class="language-plaintext highlighter-rouge">cd kimai</code></li>
+  <li>Clone Kimai: <code class="language-plaintext highlighter-rouge">git clone -b 2.15.0 --depth 1 https://github.com/kimai/kimai.git</code></li>
+  <li>Switch to the Kimai directory: <code class="language-plaintext highlighter-rouge">cd kimai</code></li>
   <li>Install composer: <code class="language-plaintext highlighter-rouge">curl -sS https://getcomposer.org/installer | /usr/bin/php</code></li>
-  <li>Install dependencies: <code class="language-plaintext highlighter-rouge">php composer.phar install --optimize-autoloader</code></li>
+  <li>Install dependencies: <code class="language-plaintext highlighter-rouge">COMPOSER_MEMORY_LIMIT=512M php -d memory_limit=512M php composer.phar install --no-dev --optimize-autoloader -n</code></li>
   <li>configure your .env file, eg. <code class="language-plaintext highlighter-rouge">nano .env</code></li>
   <li>install kimai: <code class="language-plaintext highlighter-rouge">php bin/console kimai:install -n</code></li>
   <li>reload config: <code class="language-plaintext highlighter-rouge">php bin/console kimai:reload</code></li>
   <li>Configure Netcup (using the customer controlpanel) to use “/kimai/public” as root folder for the domain (or subdomain) of your choice and add SSL (Letsencrypt) for this domain</li>
 </ul>
 
-<p>See issue <a href="https://github.com/kimai/kimai/issues/1620">#1620</a>.</p>
+<p>See issues <a href="https://github.com/kimai/kimai/issues/1620">#1620</a> and <a href="https://github.com/kimai/kimai/issues/4816">#4816</a>.</p>
 
 <h3 id="hosteurope">HostEurope</h3>
 
@@ -716,7 +719,7 @@ and <code class="language-plaintext highlighter-rouge">ServerAlias</code> are se
 <ul>
   <li>Clone Kimai in the root folder as stated above and then <code class="language-plaintext highlighter-rouge">cd kimai</code></li>
   <li>Install composer: <code class="language-plaintext highlighter-rouge">curl -sS https://getcomposer.org/installer | /usr/bin/php</code></li>
-  <li>Install dependencies: <code class="language-plaintext highlighter-rouge">php composer.phar install --optimize-autoloader</code></li>
+  <li>Install dependencies: <code class="language-plaintext highlighter-rouge">php composer.phar install --no-dev --optimize-autoloader -n</code></li>
   <li>configure your .env file, eg. <code class="language-plaintext highlighter-rouge">nano .env</code></li>
   <li>install kimai: <code class="language-plaintext highlighter-rouge">php bin/console kimai:install -n</code></li>
   <li>reload config: <code class="language-plaintext highlighter-rouge">php bin/console kimai:reload</code></li>

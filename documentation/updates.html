@@ -554,7 +554,7 @@ git checkout 2.15.0
 <p>You might have to prefix the next commands with <code class="language-plaintext highlighter-rouge">sudo</code> and/or <code class="language-plaintext highlighter-rouge">php</code> (depends on your environment):</p>
 
 <p>Update all composer dependencies:</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer <span class="nb">install</span> <span class="nt">--optimize-autoloader</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer <span class="nb">install</span> <span class="nt">--no-dev</span> <span class="nt">--optimize-autoloader</span> <span class="nt">-n</span>
 </code></pre></div></div>
 
 <p>And run the Kimai updater:</p>
@@ -613,7 +613,7 @@ Important: Finally execute the version specific tasks from the <a href="https://
 
 <p>Great that you like Kimai, but PLEASE: for various reasons (like security) you should update more regularly!</p>
 
-<p>Please run <code class="language-plaintext highlighter-rouge">composer install --optimize-autoloader --no-plugins --no-scripts</code> once and then follow the normal update process.</p>
+<p>Please run <code class="language-plaintext highlighter-rouge">composer install --no-dev --optimize-autoloader -n --no-plugins --no-scripts</code> once and then follow the normal update process.</p>
 
 <h3 id="changed-files">Changed files</h3>
 
