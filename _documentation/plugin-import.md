@@ -90,54 +90,46 @@ This will import timesheets and create these elements on the fly:
 - missing tags
 - missing users
 
-| Attribute    | Supported field names                                                                   |
-|--------------|-----------------------------------------------------------------------------------------|
-| Duration     | Timesheet duration in seconds (if skipped, will be calculated from start and end times) |
-| Tags         | Comma separated list of tag-names                                                       |
-| Exported     | Whether the timesheet should be marked as exported or not (1 or 0)                      |
-| Rate         | The rate as an integer                                                                  |
-| HourlyRate   | The hourly rate as an integer                                                           |
-| InternalRate | The internal rate as an integer                                                         |
-| FixedRate    | The fixed rate as an integer                                                            |
-| Billable     | Whether the entry should be marked as billable or not (1 or 0)                          |
-| Description  | Description of the entry as string                                                      |
-| Project      | Name of the project as string                                                           |
-| Customer     | Name of the customer as string                                                          |
-| Activity     | Name of the activity as string                                                          |
-| Begin        | Start date-time in the format: `YYYY-MM-DD HH:MM:SS`                                    |
-| End          | End date-time in the format: `YYYY-MM-DD HH:MM:SS`                                      |
-| Date         | Date in the format: `YYYY-MM-DD` (only used in combination with `From` and `To`         |
-| From         | Start time in the format: `HH:MM:SS`                                                    |
-| To           | End time in the format: `HH:MM:SS`                                                      |
-| User         | Username                                                                                |
-| Email        | User email (required when creating users)                                               |
+| Attribute    | Required | Supported field names | Description                                                                             |
+|--------------|----------|-----------------------|-----------------------------------------------------------------------------------------|
+| Date         | x        |                       | Date in the format: `YYYY-MM-DD`                                                        |
+| From         | x        |                       | Start time in the format: `HH:MM:SS`                                                    |
+| To           | x        |                       | End time in the format: `HH:MM:SS`                                                      |
+| User         | x        |                       | Username                                                                                |
+| Email        | x        |                       | User email                                                                              |
+| Project      | x        |                       | Name of the project as string                                                           |
+| Customer     | x        |                       | Name of the customer as string                                                          |
+| Activity     | x        |                       | Name of the activity as string                                                          |
+| Duration     |          |                       | Timesheet duration in seconds (if skipped, will be calculated from start and end times) |
+| Tags         |          |                       | Comma separated list of tag-names                                                       |
+| Exported     |          |                       | Whether the timesheet should be marked as exported or not (supported values: 1 or 0)    |
+| Rate         |          |                       | The rate as a float without currency                                                    |
+| HourlyRate   |          |                       | The hourly rate as a float without currency                                             |
+| InternalRate |          |                       | The internal rate as a float without currency                                           |
+| FixedRate    |          |                       | The fixed rate as a float without currency                                              |
+| Billable     |          |                       | Whether the entry should be marked as billable or not (supported values: 1 or 0)        |
+| Description  |          |                       | Description of the entry as string                                                      |
 {: .table }
-
-Supply one of these combinations:
-- `Begin` and `End`  
-- `Date` with `From` and `To` 
 
 ### User handling
 
-If you let Kimai create new users on the fly, make sure that you configured the default timezone for new users at [System > Settings]({% link _documentation/configurations.md %}) before the import.
+If Kimai creates new users on the fly, make sure that you configured the default timezone for new users at [System > Settings]({% link _documentation/configurations.md %}) before the import.
 The user timezone is used when importing the timesheets. 
 If you import users from different timezones, you need to create the users upfront manually.
-
-If you want to let Kimai create users, you have to supply at least the `Email` field.
 
 ### Example
 
 ```csv
-"Date","From","To","Duration","Rate","User","Customer","Project","Activity","Description","Exported","Tags","Hourly rate","Fixed rate"
-"2020-05-04","15:50","17:51","7260","231.92","user@example.com","Customer LLC","My project", "Testing","some work has been done","0","foo,bar","115.00","0"
+"Date","From","To","Duration","Rate","User","Email","Customer","Project","Activity","Description","Exported","Tags","Hourly rate","Fixed rate"
+"2020-05-04","15:50:00","17:51:00","7260","231.92","John Smith","user@example.com","Customer LLC","My project", "Testing","some work has been done","0","foo,bar","115.00","0"
 ```
 
 - Date: format `Y-m-d`
 - From and To: should be given in 24h format
 - Duration: in seconds
-- Rate: A floating number of the records rate (optional, if you don't set the value it will be calculated)
-- Hourly Rate: A floating number for the hourly rate (optional, if you don't set the value it will be calculated)
-- Fixed Rate: A floating number for the fixed rate of this record (optional, you can skip this column)
+- Rate: A floating number of the rate without currency (optional, otherwise Kimai tries to calculate it) e.g. 123.50€ = "123.50"
+- Hourly Rate: A floating number for the hourly rate (optional, otherwise Kimai tries to calculate it)
+- Fixed Rate: A floating number for the fixed rate of this record (optional)
 - Customer, Project and Activity: will be matched by name
 - User: will be matched by username or email
 - Exported: can be `0` or `1` (0 = new, 1 = exported)
@@ -147,7 +139,9 @@ If you want to let Kimai create users, you have to supply at least the `Email` f
 
 Want to switch from Clockify to Kimai? Export the data in Clockify, open it in Excel and export it as CSV file.
 
-| Attribute             | Supported field names                                                                                      |
+The following CSV structure is expected. Import will not work if one of these columns is missing:
+
+| Field name            | Description                                                                                                |
 |-----------------------|------------------------------------------------------------------------------------------------------------|
 | Project               | Project name                                                                                               |
 | Client                | Customer name                                                                                              |
@@ -169,6 +163,35 @@ Want to switch from Clockify to Kimai? Export the data in Clockify, open it in E
 {: .table }
 
 **BE AWARE** you have to choose the correct date-format in Clockify, otherwise you will see errors like:
+```
+Failed to parse time string (14/04/2023 9:00) at position 0 (1): Unexpected character
+```
+
+## toggl track (Timesheet)
+
+Want to switch from Toggl Track to Kimai? Export the data in toggl as CSV file.
+
+The following CSV structure is expected. Import will not work if one of these columns is missing:
+
+| Field name    | Description                                                                                               |
+|---------------|-----------------------------------------------------------------------------------------------------------|
+| User          | Users name                                                                                                |
+| Email         | Users email                                                                                               |
+| Client        | Customer name                                                                                             |
+| Project       | Project name                                                                                              |
+| Task          | Activity name                                                                                             |
+| Description   | Timesheet description                                                                                     |
+| Billable      | Whether the timesheet is billable. Possible values: Yes/No                                                |
+| Start date    | Start date of the timesheet, e.g. 2024-04-20                                                              |
+| Start time    | Start time of the timesheet, e.g. 16:30:00                                                                |
+| End date      | End date of the timesheet, e.g. 2022-07-27                                                                |
+| End time      | End time of the timesheet, e.g. 21:00:00                                                                  |
+| Duration      | The timesheet duration, e.g. 04:30:00                                                                     |
+| Tags          | Comma separated list of tag-names                                                                         |
+| Amount (XXX)  | Timesheet total rate. XXX = currency (which is not imported, but needs to be configured for the customer) |
+{: .table }
+
+**BE AWARE** you have to choose the correct date-format in toggl, otherwise you will see errors like:
 ```
 Failed to parse time string (14/04/2023 9:00) at position 0 (1): Unexpected character
 ```
