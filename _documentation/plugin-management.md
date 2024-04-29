@@ -10,6 +10,13 @@ Kimai plugins are stored in `var/plugins/`.
 For the sake of this documentation, we use a plugin called `FooBar`. 
 This plugin lives in the directory called `FooBarBundle`, the full directory name is therefor `var/plugins/FooBarBundle/`.
 
+## Download licensed plugins
+
+In case you bought a license for one of the Kimai plugins, you can get your latest update in that particular shop:
+
+- [Gumroad](https://app.gumroad.com/library) 
+- [Lemon Squeezy](https://store.kimai.org/billing)
+
 ## Plugin installation
 
 You copy the ZIP file to your server, e.g. into `var/plugins/` and then unzip it in:
