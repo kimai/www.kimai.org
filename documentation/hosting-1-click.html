@@ -12,7 +12,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
-    <title>1-click installations – Kimai</title>
+    <title>1-click deployments and hosted platforms – Kimai</title>
     
         <meta name="description" content="Kimai can be hosted on various systems and many hosting companies support 1-click installations for Kimai directly.">
     <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
@@ -511,7 +511,7 @@
 
         <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 pt-4 mb-n3">
             <div class="me-4">
-                <h1 class="pb-1">1-click installations</h1>
+                <h1 class="pb-1">1-click deployments and hosted platforms</h1>
                 
                 <p class="text-muted fs-lg mb-2">Kimai can be hosted on various systems and many hosting companies support 1-click installations for Kimai directly.</p>
                 
@@ -532,39 +532,46 @@
 
 <h3 id="yunohost">YunoHost</h3>
 
-<p><a href="https://install-app.yunohost.org/?app=kimai2"><img src="https://install-app.yunohost.org/install-with-yunohost.png" alt="Install kimai2 with YunoHost" /></a></p>
+<p>With <a href="https://yunohost.org">YunoHost</a>, you can easily manage a server for your friends, association or enterprise. 
+The Kimai <a href="https://github.com/YunoHost-Apps/kimai2_ynh">package</a> can be found at GitHub.</p>
 
-<p>Kimai <a href="https://github.com/YunoHost-Apps/kimai2_ynh">package</a> for <a href="https://yunohost.org">YunoHost</a>.</p>
-
-<h3 id="softaculous">Softaculous</h3>
-
-<p><a href="https://www.softaculous.com/apps/others/Kimai">Install Kimai with Softaculous</a></p>
+<p><a href="https://install-app.yunohost.org/?app=kimai2" class="btn btn-success">Install Kimai with YunoHost</a></p>
 
 <h3 id="cloudron">Cloudron</h3>
 
-<p><a href="https://cloudron.io">Cloudron</a> provides a secure and ready to use Kimai package, which will be kept up-to-date automatically.</p>
+<p><a href="https://cloudron.io">Cloudron</a> provides a secure and ready to use Kimai package, which will be kept up-to-date automatically.
+There is <a href="https://docs.cloudron.io/apps/kimai/">documentation available</a> on how to customize configs and install plugins.</p>
 
-<p><a href="https://cloudron.io/button.html?app=org.kimai.cloudronapp"><img src="https://cloudron.io/img/button32.png" alt="Install Kimai with Cloudron" /></a></p>
+<p><a href="https://cloudron.io/button.html?app=org.kimai.cloudronapp" class="btn btn-success">Install Kimai with Cloudron</a></p>
 
-<p>There is <a href="https://docs.cloudron.io/apps/kimai/">documentation available</a> on how to customize configs and install plugins.</p>
+<h3 id="cloudjiffy">Cloudjiffy</h3>
+
+<p><a href="https://cloudjiffy.com/">CloudJiffy</a> provides a scalable, hourly billed and easy to use PaaS platform. Kimai is always deployed from the latest Github branch, thus you can rest easy that your software will always be up-to-date.</p>
+
+<p><a href="https://cloudjiffy.com/blog/solutions/one-click-solutions/kimai-time-tracking-on-cloudjiffy" class="btn btn-success">Kimai is only a button-click away</a></p>
+
+<h3 id="elestio">Elestio</h3>
+<p><a href="https://elest.io/">Elestio</a> offers fully managed Kimai instances in 112 regions across 28 countries and covers everything from deployment to security, monitoring, and updates.
+You get full root SSH access to Kimai instance, and a web dashboard for stack and env var changes. 
+You don’t have to worry about updates as Elestio auto updates Kimai instance weekly which can be configured or disabled from the dashboard easily.</p>
+
+<p><a href="https://elest.io/open-source/kimai" class="btn btn-success">Deploy Kimai to Elestio</a></p>
+
+<h3 id="softaculous">Softaculous</h3>
+
+<p>Be warned that Softaculous <strong>does not yet provide updates of Kimai</strong>, so you are stuck with the installed version. 
+There have been a few other problems reported, using this installation type is not advised for production usage.</p>
+
+<p><a href="https://www.softaculous.com/apps/others/Kimai" class="btn btn-success">Install Kimai with Softaculous</a></p>
 
 <h3 id="vesta-control-panel">Vesta Control Panel</h3>
 
-<p>Be aware that VestaCP uses the <code class="language-plaintext highlighter-rouge">admin</code> user instead of <code class="language-plaintext highlighter-rouge">www-data</code>. Replace the names in the permission commands above.
+<p>Be aware that VestaCP uses the <code class="language-plaintext highlighter-rouge">admin</code> user instead of <code class="language-plaintext highlighter-rouge">www-data</code>. Replace the names in the regular permission commandss.
 Read <a href="https://github.com/kimai/kimai/issues/743">this issue</a> if you have further questions.</p>
 
 <h3 id="ispconfig-3">ISPConfig 3</h3>
 
-<p>There is an installation doc (unfortunately only in German) available at <a href="https://www.howtoforge.de/anleitung/installation-kimai2-webbasierte-zeiterfassung-in-einem-ispconfig3-web/">www.howtoforge.de</a>.</p>
-
-<h3 id="cloudjiffy">Cloudjiffy</h3>
-<p><a href="https://cloudjiffy.com/">CloudJiffy</a> provides a scalable, hourly billed and easy to use PaaS platform and the setup of Kimai is <a href="https://cloudjiffy.com/blog/solutions/one-click-solutions/kimai-time-tracking-on-cloudjiffy">only a click of a button away</a>. Kimai is always deployed from the latest Github branch, thus you can rest easy that your software will always be up-to-date.</p>
-
-<h3 id="elestio">Elestio</h3>
-<p><a href="https://elest.io/">Elestio</a> users get hassle-free, fully managed Kimai instances in 112 regions across 28 countries with Elestio. Elestio covers everything from deployment to security, monitoring, and expert support in the few clicks.
-You get full root SSH access to Kimai instance, advanced customizations, and a web dashboard for stack and env var changes. By clicking the button below you get to choose your preferred cloud provider, Kimai version, region, VM specifications and much more. You don’t have to worry about updates as Elestio auto updates Kimai instance weekly which can be configured or disabled from the dashboard easily.</p>
-
-<p><a href="https://elest.io/open-source/kimai">Deploy Kimai now</a></p>
+<p>There is an installation doc (only in German) available at <a href="https://www.howtoforge.de/anleitung/installation-kimai2-webbasierte-zeiterfassung-in-einem-ispconfig3-web/">www.howtoforge.de</a>.</p>
 
                 </div>
                 
@@ -579,7 +586,7 @@ You get full root SSH access to Kimai instance, advanced customizations, and a w
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#yunohost" class="nav-link">YunoHost</a></li><li class="nav-item"><a href="#softaculous" class="nav-link">Softaculous</a></li><li class="nav-item"><a href="#cloudron" class="nav-link">Cloudron</a></li><li class="nav-item"><a href="#vesta-control-panel" class="nav-link">Vesta Control Panel</a></li><li class="nav-item"><a href="#ispconfig-3" class="nav-link">ISPConfig 3</a></li><li class="nav-item"><a href="#cloudjiffy" class="nav-link">Cloudjiffy</a></li><li class="nav-item"><a href="#elestio" class="nav-link">Elestio</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#yunohost" class="nav-link">YunoHost</a></li><li class="nav-item"><a href="#cloudron" class="nav-link">Cloudron</a></li><li class="nav-item"><a href="#cloudjiffy" class="nav-link">Cloudjiffy</a></li><li class="nav-item"><a href="#elestio" class="nav-link">Elestio</a></li><li class="nav-item"><a href="#softaculous" class="nav-link">Softaculous</a></li><li class="nav-item"><a href="#vesta-control-panel" class="nav-link">Vesta Control Panel</a></li><li class="nav-item"><a href="#ispconfig-3" class="nav-link">ISPConfig 3</a></li></ul>
         
     </aside>
 
