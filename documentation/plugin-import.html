@@ -829,116 +829,136 @@ My great project,Acme university,A longer comment to talk about the project,1234
   <thead>
     <tr>
       <th>Attribute</th>
+      <th>Required</th>
       <th>Supported field names</th>
+      <th>Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Duration</td>
-      <td>Timesheet duration in seconds (if skipped, will be calculated from start and end times)</td>
-    </tr>
-    <tr>
-      <td>Tags</td>
-      <td>Comma separated list of tag-names</td>
-    </tr>
-    <tr>
-      <td>Exported</td>
-      <td>Whether the timesheet should be marked as exported or not (1 or 0)</td>
-    </tr>
-    <tr>
-      <td>Rate</td>
-      <td>The rate as an integer</td>
-    </tr>
-    <tr>
-      <td>HourlyRate</td>
-      <td>The hourly rate as an integer</td>
-    </tr>
-    <tr>
-      <td>InternalRate</td>
-      <td>The internal rate as an integer</td>
-    </tr>
-    <tr>
-      <td>FixedRate</td>
-      <td>The fixed rate as an integer</td>
-    </tr>
-    <tr>
-      <td>Billable</td>
-      <td>Whether the entry should be marked as billable or not (1 or 0)</td>
-    </tr>
-    <tr>
-      <td>Description</td>
-      <td>Description of the entry as string</td>
-    </tr>
-    <tr>
-      <td>Project</td>
-      <td>Name of the project as string</td>
-    </tr>
-    <tr>
-      <td>Customer</td>
-      <td>Name of the customer as string</td>
-    </tr>
-    <tr>
-      <td>Activity</td>
-      <td>Name of the activity as string</td>
-    </tr>
-    <tr>
-      <td>Begin</td>
-      <td>Start date-time in the format: <code class="language-plaintext highlighter-rouge">YYYY-MM-DD HH:MM:SS</code></td>
-    </tr>
-    <tr>
-      <td>End</td>
-      <td>End date-time in the format: <code class="language-plaintext highlighter-rouge">YYYY-MM-DD HH:MM:SS</code></td>
-    </tr>
-    <tr>
       <td>Date</td>
-      <td>Date in the format: <code class="language-plaintext highlighter-rouge">YYYY-MM-DD</code> (only used in combination with <code class="language-plaintext highlighter-rouge">From</code> and <code class="language-plaintext highlighter-rouge">To</code></td>
+      <td>x</td>
+      <td> </td>
+      <td>Date in the format: <code class="language-plaintext highlighter-rouge">YYYY-MM-DD</code></td>
     </tr>
     <tr>
       <td>From</td>
+      <td>x</td>
+      <td> </td>
       <td>Start time in the format: <code class="language-plaintext highlighter-rouge">HH:MM:SS</code></td>
     </tr>
     <tr>
       <td>To</td>
+      <td>x</td>
+      <td> </td>
       <td>End time in the format: <code class="language-plaintext highlighter-rouge">HH:MM:SS</code></td>
     </tr>
     <tr>
       <td>User</td>
+      <td>x</td>
+      <td> </td>
       <td>Username</td>
     </tr>
     <tr>
       <td>Email</td>
-      <td>User email (required when creating users)</td>
+      <td>x</td>
+      <td> </td>
+      <td>User email</td>
+    </tr>
+    <tr>
+      <td>Project</td>
+      <td>x</td>
+      <td> </td>
+      <td>Name of the project as string</td>
+    </tr>
+    <tr>
+      <td>Customer</td>
+      <td>x</td>
+      <td> </td>
+      <td>Name of the customer as string</td>
+    </tr>
+    <tr>
+      <td>Activity</td>
+      <td>x</td>
+      <td> </td>
+      <td>Name of the activity as string</td>
+    </tr>
+    <tr>
+      <td>Duration</td>
+      <td> </td>
+      <td> </td>
+      <td>Timesheet duration in seconds (if skipped, will be calculated from start and end times)</td>
+    </tr>
+    <tr>
+      <td>Tags</td>
+      <td> </td>
+      <td> </td>
+      <td>Comma separated list of tag-names</td>
+    </tr>
+    <tr>
+      <td>Exported</td>
+      <td> </td>
+      <td> </td>
+      <td>Whether the timesheet should be marked as exported or not (supported values: 1 or 0)</td>
+    </tr>
+    <tr>
+      <td>Rate</td>
+      <td> </td>
+      <td> </td>
+      <td>The rate as a float without currency</td>
+    </tr>
+    <tr>
+      <td>HourlyRate</td>
+      <td> </td>
+      <td> </td>
+      <td>The hourly rate as a float without currency</td>
+    </tr>
+    <tr>
+      <td>InternalRate</td>
+      <td> </td>
+      <td> </td>
+      <td>The internal rate as a float without currency</td>
+    </tr>
+    <tr>
+      <td>FixedRate</td>
+      <td> </td>
+      <td> </td>
+      <td>The fixed rate as a float without currency</td>
+    </tr>
+    <tr>
+      <td>Billable</td>
+      <td> </td>
+      <td> </td>
+      <td>Whether the entry should be marked as billable or not (supported values: 1 or 0)</td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td> </td>
+      <td> </td>
+      <td>Description of the entry as string</td>
     </tr>
   </tbody>
 </table>
 
-<p>Supply one of these combinations:</p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">Begin</code> and <code class="language-plaintext highlighter-rouge">End</code></li>
-  <li><code class="language-plaintext highlighter-rouge">Date</code> with <code class="language-plaintext highlighter-rouge">From</code> and <code class="language-plaintext highlighter-rouge">To</code></li>
-</ul>
-
 <h3 id="user-handling">User handling</h3>
 
-<p>If you let Kimai create new users on the fly, make sure that you configured the default timezone for new users at <a href="/documentation/configurations.html">System &gt; Settings</a> before the import.
+<p>If Kimai creates new users on the fly, make sure that you configured the default timezone for new users at <a href="/documentation/configurations.html">System &gt; Settings</a> before the import.
 The user timezone is used when importing the timesheets. 
 If you import users from different timezones, you need to create the users upfront manually.</p>
 
-<p>If you want to let Kimai create users, you have to supply at least the <code class="language-plaintext highlighter-rouge">Email</code> field.</p>
-
 <h3 id="example-2">Example</h3>
 
-<pre><code class="language-csv">"Date","From","To","Duration","Rate","User","Customer","Project","Activity","Description","Exported","Tags","Hourly rate","Fixed rate"
-"2020-05-04","15:50","17:51","7260","231.92","user@example.com","Customer LLC","My project", "Testing","some work has been done","0","foo,bar","115.00","0"
+<pre><code class="language-csv">"Date","From","To","Duration","Rate","User","Email","Customer","Project","Activity","Description","Exported","Tags","Hourly rate","Fixed rate"
+"2020-05-04","15:50:00","17:51:00","7260","231.92","John Smith","user@example.com","Customer LLC","My project", "Testing","some work has been done","0","foo,bar","115.00","0"
 </code></pre>
 
 <ul>
   <li>Date: format <code class="language-plaintext highlighter-rouge">Y-m-d</code></li>
   <li>From and To: should be given in 24h format</li>
   <li>Duration: in seconds</li>
-  <li>Rate: A floating number of the records rate (optional, if you don’t set the value it will be calculated)</li>
-  <li>Hourly Rate: A floating number for the hourly rate (optional, if you don’t set the value it will be calculated)</li>
-  <li>Fixed Rate: A floating number for the fixed rate of this record (optional, you can skip this column)</li>
+  <li>Rate: A floating number of the rate without currency (optional, otherwise Kimai tries to calculate it) e.g. 123.50€ = “123.50”</li>
+  <li>Hourly Rate: A floating number for the hourly rate (optional, otherwise Kimai tries to calculate it)</li>
+  <li>Fixed Rate: A floating number for the fixed rate of this record (optional)</li>
   <li>Customer, Project and Activity: will be matched by name</li>
   <li>User: will be matched by username or email</li>
   <li>Exported: can be <code class="language-plaintext highlighter-rouge">0</code> or <code class="language-plaintext highlighter-rouge">1</code> (0 = new, 1 = exported)</li>
@@ -949,11 +969,13 @@ If you import users from different timezones, you need to create the users upfro
 
 <p>Want to switch from Clockify to Kimai? Export the data in Clockify, open it in Excel and export it as CSV file.</p>
 
+<p>The following CSV structure is expected. Import will not work if one of these columns is missing:</p>
+
 <table class="table">
   <thead>
     <tr>
-      <th>Attribute</th>
-      <th>Supported field names</th>
+      <th>Field name</th>
+      <th>Description</th>
     </tr>
   </thead>
   <tbody>
@@ -1032,6 +1054,83 @@ If you import users from different timezones, you need to create the users upfro
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Failed to parse time string (14/04/2023 9:00) at position 0 (1): Unexpected character
 </code></pre></div></div>
 
+<h2 id="toggl-track-timesheet">toggl track (Timesheet)</h2>
+
+<p>Want to switch from Toggl Track to Kimai? Export the data in toggl as CSV file.</p>
+
+<p>The following CSV structure is expected. Import will not work if one of these columns is missing:</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Field name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>User</td>
+      <td>Users name</td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td>Users email</td>
+    </tr>
+    <tr>
+      <td>Client</td>
+      <td>Customer name</td>
+    </tr>
+    <tr>
+      <td>Project</td>
+      <td>Project name</td>
+    </tr>
+    <tr>
+      <td>Task</td>
+      <td>Activity name</td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td>Timesheet description</td>
+    </tr>
+    <tr>
+      <td>Billable</td>
+      <td>Whether the timesheet is billable. Possible values: Yes/No</td>
+    </tr>
+    <tr>
+      <td>Start date</td>
+      <td>Start date of the timesheet, e.g. 2024-04-20</td>
+    </tr>
+    <tr>
+      <td>Start time</td>
+      <td>Start time of the timesheet, e.g. 16:30:00</td>
+    </tr>
+    <tr>
+      <td>End date</td>
+      <td>End date of the timesheet, e.g. 2022-07-27</td>
+    </tr>
+    <tr>
+      <td>End time</td>
+      <td>End time of the timesheet, e.g. 21:00:00</td>
+    </tr>
+    <tr>
+      <td>Duration</td>
+      <td>The timesheet duration, e.g. 04:30:00</td>
+    </tr>
+    <tr>
+      <td>Tags</td>
+      <td>Comma separated list of tag-names</td>
+    </tr>
+    <tr>
+      <td>Amount (XXX)</td>
+      <td>Timesheet total rate. XXX = currency (which is not imported, but needs to be configured for the customer)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>BE AWARE</strong> you have to choose the correct date-format in toggl, otherwise you will see errors like:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Failed to parse time string (14/04/2023 9:00) at position 0 (1): Unexpected character
+</code></pre></div></div>
+
 <h2 id="grandtotal-customer">Grandtotal (Customer)</h2>
 
 <p>There is a <a href="/store/grandtotal-plugin-for-kimai.html">plugin for Mac invoicing software Grandtotal</a>, which adds support for Kimai.</p>
@@ -1084,7 +1183,7 @@ Read how to assign these permissions to your user roles in the <a href="/documen
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#customer" class="nav-link">Customer</a><ul><li class="nav-item"><a href="#example" class="nav-link">Example</a></li></ul></li><li class="nav-item"><a href="#projects" class="nav-link">Projects</a><ul><li class="nav-item"><a href="#example-1" class="nav-link">Example</a></li></ul></li><li class="nav-item"><a href="#timesheets" class="nav-link">Timesheets</a><ul><li class="nav-item"><a href="#user-handling" class="nav-link">User handling</a></li><li class="nav-item"><a href="#example-2" class="nav-link">Example</a></li></ul></li><li class="nav-item"><a href="#clockify-timesheet" class="nav-link">Clockify (Timesheet)</a></li><li class="nav-item"><a href="#grandtotal-customer" class="nav-link">Grandtotal (Customer)</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#customer" class="nav-link">Customer</a><ul><li class="nav-item"><a href="#example" class="nav-link">Example</a></li></ul></li><li class="nav-item"><a href="#projects" class="nav-link">Projects</a><ul><li class="nav-item"><a href="#example-1" class="nav-link">Example</a></li></ul></li><li class="nav-item"><a href="#timesheets" class="nav-link">Timesheets</a><ul><li class="nav-item"><a href="#user-handling" class="nav-link">User handling</a></li><li class="nav-item"><a href="#example-2" class="nav-link">Example</a></li></ul></li><li class="nav-item"><a href="#clockify-timesheet" class="nav-link">Clockify (Timesheet)</a></li><li class="nav-item"><a href="#toggl-track-timesheet" class="nav-link">toggl track (Timesheet)</a></li><li class="nav-item"><a href="#grandtotal-customer" class="nav-link">Grandtotal (Customer)</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
         
     </aside>
 
