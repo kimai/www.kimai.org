@@ -12,19 +12,19 @@
     <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
-    <title>Plugin management – Kimai</title>
+    <title>Install and update Kimai plugins</title>
     
-        <meta name="description" content="Installation, deactivating and uninstalling plugins">
+        <meta name="description" content="How to install, update, deactivate and uninstall Kimai plugins">
     <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
     <meta property="og:locale" content="en">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Kimai Time-Tracking">
-    <meta property="og:description" content="Installation, deactivating and uninstalling plugins">
+    <meta property="og:description" content="How to install, update, deactivate and uninstall Kimai plugins">
     <meta property="og:image" content="https://www.kimai.org/images/social-preview.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Kimai Time-Tracking">
     <meta name="twitter:site" content="@kimai_org">
-    <meta name="twitter:description" content="Installation, deactivating and uninstalling plugins">
+    <meta name="twitter:description" content="How to install, update, deactivate and uninstall Kimai plugins">
     <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.jpg">
     <script src="/assets/build/theme.js"></script>
     <link href="/assets/build/main.css" rel="stylesheet" />
@@ -510,9 +510,9 @@
 
         <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 pt-4 mb-n3">
             <div class="me-4">
-                <h1 class="pb-1">Plugin management</h1>
+                <h1 class="pb-1">Install and update Kimai plugins</h1>
                 
-                <p class="text-muted fs-lg mb-2">Installation, deactivating and uninstalling plugins</p>
+                <p class="text-muted fs-lg mb-2">How to install, update, deactivate and uninstall Kimai plugins</p>
                 
             </div>
             
@@ -527,35 +527,61 @@
             <div>
                 
                 <div id="documentation-content">
-                    <p>Kimai plugins are stored in <code class="language-plaintext highlighter-rouge">var/plugins/</code>, for example <code class="language-plaintext highlighter-rouge">var/plugins/CustomCSSBundle/</code>.</p>
+                    <p>Kimai plugins are stored in <code class="language-plaintext highlighter-rouge">var/plugins/</code>.</p>
+
+<p>For the sake of this documentation, we use a plugin called <code class="language-plaintext highlighter-rouge">FooBar</code>. 
+This plugin lives in the directory called <code class="language-plaintext highlighter-rouge">FooBarBundle</code>, the full directory name is therefor <code class="language-plaintext highlighter-rouge">var/plugins/FooBarBundle/</code>.</p>
 
 <h2 id="plugin-installation">Plugin installation</h2>
 
-<p>Installation should be done with <code class="language-plaintext highlighter-rouge">git clone</code> or with a copy task.</p>
+<p>You copy the ZIP file to your server, e.g. into <code class="language-plaintext highlighter-rouge">var/plugins/</code> and then unzip it in:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>var/plugins/
+unzip FooBarBundle-1.0.zip
+</code></pre></div></div>
 
-<p>Make sure that you copy it into the appropriate subdirectory in <code class="language-plaintext highlighter-rouge">var/plugins/</code>. 
-For the plugin <code class="language-plaintext highlighter-rouge">CustomCSSBundle</code> this would be <code class="language-plaintext highlighter-rouge">var/plugins/CustomCSSBundle/</code> (there should be a file <code class="language-plaintext highlighter-rouge">var/plugins/CustomCSSBundle/CustomCSSBundle.php</code>).</p>
+<p>If the plugin ZIP contained a version number, as in the above example the <code class="language-plaintext highlighter-rouge">-1.0</code>, you often end with a directory 
+called <code class="language-plaintext highlighter-rouge">var/plugins/FooBarBundle-1.0/</code> instead of what we need, so you have to rename it:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mv </span>FooBarBundle-1.0 FooBarBundle
+</code></pre></div></div>
 
-<p>After installing the plugin, you will need to <a href="/documentation/cache.html">clear the cache</a> (see below).</p>
+<p>The final location for the plugin <code class="language-plaintext highlighter-rouge">FooBarBundle</code> must be <code class="language-plaintext highlighter-rouge">var/plugins/FooBarBundle/</code> and there needs to be a file called <code class="language-plaintext highlighter-rouge">var/plugins/FooBarBundle/FooBarBundle.php</code>.</p>
 
-<div class="alert d-flex alert-warning" role="alert">
+<p>After installing the plugin, you will need to <a href="/documentation/cache.html">clear the cache</a>.</p>
+
+<p>In case your plugin comes with a database, you might have to call something like <code class="language-plaintext highlighter-rouge">bin/console kimai:bundle:foobar:install</code>.</p>
+
+<div class="alert d-flex alert-success" role="alert">
     <i class="bx bx-fas fa-exclamation lead me-3"></i>
     <div>
-        Additional installation steps might be required (eg. database creation). Please read the specific plugin docs!
+        Additional installation steps might be required (like the database creation step above). The plugin specific docs will explain that.
     </div>
 </div>
 
+<h2 id="updating-plugins">Updating plugins</h2>
+
+<p>The update procedure is the same as the installation produce. First delete the existing plugin directory, then repeat the installation:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>vsr/plugins/
+<span class="nb">rm</span> <span class="nt">-r</span> FooBarBundle
+unzip FooBarBundle-1.1.zip
+<span class="nb">mv </span>FooBarBundle-1.1 FooBarBundle
+</code></pre></div></div>
+
+<p>You will then need to <a href="/documentation/cache.html">clear the cache</a>.</p>
+
+<p>In case your plugin comes with a database, you might have to call something like <code class="language-plaintext highlighter-rouge">bin/console kimai:bundle:foobar:install</code>.</p>
+
 <h2 id="deactivate-plugins">Deactivate plugins</h2>
 
-<p>You can disable plugins by creating a file called <code class="language-plaintext highlighter-rouge">.disabled</code> in the plugin directory, e.g. <code class="language-plaintext highlighter-rouge">var/plugins/CustomCSSBundle/.disabled</code>.</p>
+<p>You can disable plugins by creating a file called <code class="language-plaintext highlighter-rouge">.disabled</code> in the plugin directory, e.g. <code class="language-plaintext highlighter-rouge">var/plugins/FooBarBundle/.disabled</code>.</p>
 
-<p>You will then need to <a href="/documentation/cache.html">clear the cache</a> (see below).</p>
+<p>You will then need to <a href="/documentation/cache.html">clear the cache</a>.</p>
 
 <h2 id="plugin-deinstallation">Plugin deinstallation</h2>
 
-<p>To uninstall a plugin, you simply have to delete the directory, e.g. <code class="language-plaintext highlighter-rouge">var/plugins/CustomCSSBundle/</code>.</p>
+<p>To uninstall a plugin, you simply have to delete the directory, e.g. <code class="language-plaintext highlighter-rouge">var/plugins/FooBarBundle/</code>.</p>
 
-<p>Now <a href="/documentation/cache.html">clear the cache</a> (see below).</p>
+<p>Now <a href="/documentation/cache.html">clear the cache</a>.</p>
 
 <h2 id="troubleshooting">Troubleshooting</h2>
 
@@ -566,58 +592,6 @@ For the plugin <code class="language-plaintext highlighter-rouge">CustomCSSBundl
   <li>You forgot to change the file permissions after reloading the cache</li>
   <li>You did not execute the necessary step to install the plugins database tables, the command is usually called <code class="language-plaintext highlighter-rouge">bin/console kimai:bundle:example:install</code></li>
 </ul>
-
-<h3 id="reload-cache">Reload cache</h3>
-
-<div class="row row-cards row-deck">
-    <div class="col-md-12">
-        <div class="card mb-3">
-            <div class="card-body">
-                <h4 class="card-title">How to reload Kimai cache</h4>
-
-<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">bin/console kimai:reload --env=prod</code></pre></figure>
-
-
-                <p>It is not advised, but in case the above command fails you could try:</p>
-
-
-<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">rm -r var/cache/prod/*</code></pre></figure>
-
-            </div>
-        </div>
-    </div>
-</div>
-
-<p>Depending on your setup, the cache flush will create directories which cannot be written by your webserver:</p>
-<div class="row row-cards row-deck">
-    <div class="col-md-12">
-        <div class="card mb-3">
-            <div class="card-status bg-info"></div>
-            <div class="card-body">
-                <h4 class="card-title">Adjust file permission</h4>
-                <p>
-                    You have to allow PHP (your webserver process) to write to
-                    <code class="language-plaintext highlighter-rouge">var/</code> and it subdirectories.
-                </p>
-
-                <p>Here is an example for Debian/Ubuntu (to be executed inside the Kimai directory):</p>
-
-
-<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">chown -R :www-data .
-chmod -R g+r .
-chmod -R g+rw var/</code></pre></figure>
-
-
-            </div>
-            <div class="card-footer fs-sm text-muted">
-                Test Kimai before executing these commands (they are likely not required in a shared-hosting environment).
-                You probably need to prefix them with <code class="language-plaintext highlighter-rouge">sudo</code> and
-                the group might be called different than <code class="language-plaintext highlighter-rouge">www-data</code>.
-            </div>
-        </div>
-    </div>
-</div>
-
 
                 </div>
                 
@@ -632,7 +606,7 @@ chmod -R g+rw var/</code></pre></figure>
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#plugin-installation" class="nav-link">Plugin installation</a></li><li class="nav-item"><a href="#deactivate-plugins" class="nav-link">Deactivate plugins</a></li><li class="nav-item"><a href="#plugin-deinstallation" class="nav-link">Plugin deinstallation</a></li><li class="nav-item"><a href="#troubleshooting" class="nav-link">Troubleshooting</a><ul><li class="nav-item"><a href="#reload-cache" class="nav-link">Reload cache</a></li></ul></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#plugin-installation" class="nav-link">Plugin installation</a></li><li class="nav-item"><a href="#updating-plugins" class="nav-link">Updating plugins</a></li><li class="nav-item"><a href="#deactivate-plugins" class="nav-link">Deactivate plugins</a></li><li class="nav-item"><a href="#plugin-deinstallation" class="nav-link">Plugin deinstallation</a></li><li class="nav-item"><a href="#troubleshooting" class="nav-link">Troubleshooting</a></li></ul>
         
     </aside>
 
