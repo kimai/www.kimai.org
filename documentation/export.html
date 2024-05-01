@@ -643,8 +643,8 @@
 
 <p>The “mark as export” checkbox is only available for users with the <code class="language-plaintext highlighter-rouge">edit_export_other_timesheet</code> <a href="/documentation/permissions.html">permission</a>.</p>
 
-<div class="alert alert-warning" role="alert">
-    The export extension might not check all available permissions, as this would defeat the purpose of an export.
+<div class="alert alert-danger" role="alert">
+    The export extension does not check all available permissions, as this would defeat the purpose of an export. If your users shall not see rates, do not give them the 'create_export' permission.
 </div>
 
 <h2 id="export-state">Export state</h2>
@@ -726,6 +726,11 @@ Internally for each template a new ExportRenderer service is registered, called 
 <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
 </code></pre></div></div>
 
+<h2 id="permission">Permission</h2>
+
+<p>The export page is visible to users who own the <code class="language-plaintext highlighter-rouge">create_export</code> permission.</p>
+
+<p>The export does <strong>not</strong> respect permissions like <code class="language-plaintext highlighter-rouge">view_rate_other_timesheet</code> and <code class="language-plaintext highlighter-rouge">view_rate_own_timesheet</code>.</p>
 
                 </div>
                 
@@ -740,7 +745,7 @@ Internally for each template a new ExportRenderer service is registered, called 
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#difference-between-export-and-invoice" class="nav-link">Difference between export and invoice</a></li><li class="nav-item"><a href="#security-and-privacy" class="nav-link">Security and privacy</a></li><li class="nav-item"><a href="#export-state" class="nav-link">Export state</a></li><li class="nav-item"><a href="#adding-export-templates" class="nav-link">Adding export templates</a></li><li class="nav-item"><a href="#pdf-templates" class="nav-link">PDF Templates</a><ul><li class="nav-item"><a href="#custom-fields" class="nav-link">Custom fields</a></li></ul></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#difference-between-export-and-invoice" class="nav-link">Difference between export and invoice</a></li><li class="nav-item"><a href="#security-and-privacy" class="nav-link">Security and privacy</a></li><li class="nav-item"><a href="#export-state" class="nav-link">Export state</a></li><li class="nav-item"><a href="#adding-export-templates" class="nav-link">Adding export templates</a></li><li class="nav-item"><a href="#pdf-templates" class="nav-link">PDF Templates</a><ul><li class="nav-item"><a href="#custom-fields" class="nav-link">Custom fields</a></li></ul></li><li class="nav-item"><a href="#permission" class="nav-link">Permission</a></li></ul>
         
     </aside>
 
