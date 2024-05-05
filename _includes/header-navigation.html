@@ -1,6 +1,6 @@
 {% assign is_light = true %}
 {% assign is_dark = false %}
-{% assign downloadBtnClasses = "btn rounded-pill btn-sm fs-sm d-none d-md-inline-flex me-2" %}
+{% assign downloadBtnClasses = "btn btn-sm fs-sm d-none d-md-inline-flex me-2" %}
 {% assign is_absolute = false %}
 {% if include.light != nil %}
     {% assign is_light = include.light %}
@@ -15,7 +15,7 @@
     {% assign is_light = false %}
     {% assign downloadBtnClasses = downloadBtnClasses | append: " btn-outline-light" %}
 {% else %}
-    {% assign downloadBtnClasses = downloadBtnClasses | append: " btn-outline-primary" %}
+    {% assign downloadBtnClasses = downloadBtnClasses | append: " btn-outline-secondary" %}
 {% endif %}
 {% if include.absolute != nil %}
     {% assign is_absolute = include.absolute %}
@@ -72,8 +72,8 @@
         </div>
         {% endcomment %}
         <div class="pe-lg-1 ms-auto me-2">
-            {% include link-translated-menu.html item="download" language=page.lang class=downloadBtnClasses %}
-            {% include link-cloud-start.html classes="btn btn-success rounded-pill btn-sm fs-sm d-inline-flex" %}
+            {% include link-cloud-login.html classes=downloadBtnClasses %}
+            {% include link-cloud-start.html classes="btn btn-success btn-sm fs-sm d-inline-flex" %}
         </div>
         <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
