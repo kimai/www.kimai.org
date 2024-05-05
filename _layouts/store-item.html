@@ -271,12 +271,17 @@ layout: default
                     </a>
                 </li>
                 {% endif %}
+                {% if documentation %}
+                <li class="nav-item">
+                    <a target="_blank" href="{% link {{ "_documentation/" | append: documentation | append: ".md" }} %}" class="nav-link">
+                        <i class="bx bx-link-external opacity-70 me-2"></i>
+                        {{ site.data[page.lang].translation.documentation.name }}
+                    </a>
+                </li>
+                {% endif %}
             </ul>
             <div class="tab-content">
                 <div class="tab-pane fade show active" id="store-info" role="tabpanel">
-                    {% if documentation %}
-                        {% include documentation-link.html chapter=documentation %}
-                    {% endif %}
 
                     {{ content }}
 
