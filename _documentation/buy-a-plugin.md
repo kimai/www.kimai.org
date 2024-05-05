@@ -1,15 +1,7 @@
 ---
-title: Buy a Kimai plugin
-description: A brief explanation of the payment process and license
+title: License terms for Kimai plugins
+description: This license applies for all Kimai plugins offered by Kevin Papst (unless licensed otherwise)
 ---
-
-Thanks for your interest in a paid Kimai plugin.
-
-## Order and Payment
-
-Kimai plugins are sold through the marketplaces Lemon Squeezy and Gumroad, who both accept Credit Card and PayPal payments.
-
-## License terms for paid plugins 
 
 1. The plugin license grants you, the purchaser, an non-exclusive, worldwide license to make use of the digital work (Item) you have purchased. Read the rest of this license for the details that apply to your use of the Item.
 
@@ -46,3 +38,11 @@ _For example: You license a plugin containing icons. You can delete unwanted ico
 14. This license can be terminated if you breach it. If that happens, you must stop making copies of or using or distributing the End Product until you remove the Item from it.
 
 15. The author of the Item retains ownership of the Item but grants you the license on these terms. This license is between the author of the Item and you. Keleo is not a party to this license or the one giving you the license, unless Keleo is the author of the Item.
+
+### Frequently asked questions
+
+- You are allowed to use a plugin license in one additional test/development environment 
+- You are allowed to buy a plugin license and resell it to one customer
+- You are not allowed to use one plugin license for multiple customers
+- You are not allowed to use the plugin in a SaaS environment
+- Each of your customer needs its own license
