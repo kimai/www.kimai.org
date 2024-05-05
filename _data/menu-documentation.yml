@@ -1,6 +1,7 @@
 manual:
     slug: chapter-manual
     icon: bx bx-book
+    translation: docu-manual
     chapter:
         -   id: manual
             icon: bx bx-book
@@ -19,7 +20,8 @@ manual:
             pages: [ plugin-custom-fields, plugin-expenses, plugin-task-management, plugin-custom-css, plugin-custom-content, plugin-translation, plugin-invoice, plugin-import, plugin-audit-trail, plugin-contract ]
 cloud:
     slug: cloud
-    icon: bx bxs-cloud
+    icon: bx bx-cloud
+    translation: docu-cloud
     chapter:
         -   id: cloud
             icon: bx bxs-cloud
@@ -31,28 +33,10 @@ cloud:
             name: FAQ
             description: Answers to frequent questions about Kimai Cloud
             pages: [ cloud-payment, cloud-countries, cloud-data-removal, cloud-migration, cloud-plans ]
-developer:
-    slug: developers
-    icon: bx bx-code
-    chapter:
-        -   id: api
-            icon: bx bx-code
-            name: JSON API
-            description: Use the JSON API to fetch and create data in Kimai
-            pages: [ rest-api, rest-api-examples, api-pagination ]
-        -   id: developer
-            icon: bx bx-git-branch
-            name: Create plugins
-            description: Creating custom plugins, extending Kimai, using internal APIs
-            pages: [ plugins, translations, meta-fields, theme, store, migration-v2 ]
-        -   id: extend
-            icon: bx bxs-balloon
-            name: Technical background
-            description: Background info and technical correlations
-            pages: [ bughunter, permission-structure, sql-examples, redis, create-release ]
 on-premise:
     slug: chapter-on-premise
-    icon: bx bx-wrench
+    icon: bx bx-server
+    translation: docu-onpremise
     chapter:
         -   id: installation
             icon: bx bx-wrench
@@ -74,3 +58,23 @@ on-premise:
             name: Authenticator
             description: Log in to Kimai using external identity provider
             pages: [ ldap, saml, saml-azure, saml-google, saml-keycloak, saml-authentik, saml-adfs ]
+developer:
+    slug: developers
+    icon: bx bx-code-alt
+    translation: docu-developer
+    chapter:
+        -   id: api
+            icon: bx bx-code
+            name: JSON API
+            description: Use the JSON API to fetch and create data in Kimai
+            pages: [ rest-api, rest-api-examples, api-pagination ]
+        -   id: developer
+            icon: bx bx-git-branch
+            name: Create plugins
+            description: Creating custom plugins, extending Kimai, using internal APIs
+            pages: [ plugins, translations, meta-fields, theme, store, migration-v2 ]
+        -   id: extend
+            icon: bx bxs-balloon
+            name: Technical background
+            description: Background info and technical correlations
+            pages: [ bughunter, permission-structure, sql-examples, redis, create-release ]
