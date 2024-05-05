@@ -155,7 +155,6 @@ layout: default
 <section class="container pt-5 mt-2 mt-lg-4 mt-xl-5">
     <div class="row" id="buy-item-card">
 
-        <!-- Sidebar (Course summary) -->
         <aside class="col-lg-4 col-md-5 offset-xl-1 order-md-2 mb-5">
             <div style="margin-top: -96px;"></div>
             <div class="position-sticky top-0 pt-5">
@@ -196,7 +195,43 @@ layout: default
                             </div>
 
                             {% if isMultiPurchase != nil %}
-                                <a class="btn btn-primary btn-lg shadow-primary" href="#" data-bs-toggle="modal" data-bs-target="#modal-buy"><i class="{{ buyBtnIcon }} me-2"></i> {{ buyTitle }}</a>
+                                {% if page.lang == 'en' %}
+                                    <script src="https://cdn.paritydeals.com/banner.js"></script>
+                                    {% comment %}the .discount-deal-* classes are required for paritydeals.com{% endcomment %}
+                                {% endif %}
+
+                                {% if settings.lemonsqueezy %}
+                                <div class="discount-deal-lemonsqueezy"></div>
+                                <div class="row align-items-center mb-3">
+                                    <div class="col-auto">
+                                        <a class="btn btn-success w-100" href="{{ settings.lemonsqueezy }}" target="_blank">{{ buyTitle }}</a>
+                                    </div>
+                                    <div class="col-auto ms-auto">
+                                        <i class="fs-4 bx bxl-paypal"></i>
+                                        <i class="fs-4 bx bxl-google"></i>
+                                        <i class="fs-4 bx bxl-apple"></i>
+                                        <i class="fs-4 bx bxl-visa"></i>
+                                        <i class="fs-4 bx bxl-mastercard"></i>
+                                    </div>
+                                </div>
+                                {% endif %}
+
+                                {% if settings.gumroad and settings.lemonsqueezy == nil %}
+                                <div class="discount-deal-gumroad"></div>
+                                <div class="row align-items-center mb-3">
+                                    <div class="col-auto">
+                                        <a class="btn btn-success w-100" href="{{ settings.gumroad }}" target="_blank">{{ buyTitle }}</a>
+                                    </div>
+                                    <div class="col-auto ms-auto">
+                                        <i class="fs-4 bx bxl-paypal"></i>
+                                        <i class="fs-4 bx bxl-google"></i>
+                                        <i class="fs-4 bx bxl-apple"></i>
+                                        <i class="fs-4 bx bxl-visa"></i>
+                                        <i class="fs-4 bx bxl-mastercard"></i>
+                                    </div>
+                                </div>
+                                {% endif %}
+
                             {% else %}
                                 <a class="btn btn-primary btn-lg shadow-primary" href="{{ buyLink }}"><i class="{{ buyBtnIcon }} me-2"></i> {{ buyTitle }}</a>
                             {% endif %}
@@ -548,75 +583,3 @@ layout: default
         {% assign products = site.store | where: "lang", page.lang | where: "developer", settings.developer | sort: 'title' %}
         {% include store-list.html products=products %}
 {% endcomment %}
-
-<div class="modal modal-blur fade" id="modal-buy" tabindex="-1" style="display: none;" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">{{ site.data[page.lang].translation.store-buy-button }}</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                {% if settings.lemonsqueezy %}
-                <div class="row align-items-center mb-3">
-                    <div class="col-auto">
-                        <a class="btn btn-success w-100" href="{{ settings.lemonsqueezy }}" target="_blank">
-                            Lemon Squeezy
-                        </a>
-                    </div>
-                    <div class="col-auto ms-auto">
-                        <i class="fs-3 bx bxl-google"></i>
-                        <i class="fs-3 bx bxl-apple"></i>
-                        <i class="fs-3 bx bxl-visa"></i>
-                        <i class="fs-3 bx bxl-mastercard"></i>
-                    </div>
-                </div>
-                {% endif %}
-
-                {% if settings.gumroad %}
-                <div class="row align-items-center mb-3">
-                    <div class="col-auto">
-                        <a class="btn btn-success w-100" href="{{ settings.gumroad }}" target="_blank">
-                            Gumroad
-                        </a>
-                    </div>
-                    <div class="col-auto ms-auto">
-                        <i class="fs-3 bx bxl-paypal"></i>
-                        <i class="fs-3 bx bxl-google"></i>
-                        <i class="fs-3 bx bxl-apple"></i>
-                        <i class="fs-3 bx bxl-visa"></i>
-                        <i class="fs-3 bx bxl-mastercard"></i>
-                    </div>
-                </div>
-                {% endif %}
-
-                {% if settings.play-store %}
-                <div class="row align-items-center mb-3">
-                    <div class="col-auto">
-                        <a class="btn btn-success w-100" href="{{ settings.play-store }}" target="_blank">
-                            <i class="fab fa-google-play"></i> Play Store
-                        </a>
-                    </div>
-                    <div class="col-auto ms-auto">
-                        <i class="fs-3 bx bxl-google"></i>
-                    </div>
-                </div>
-                {% endif %}
-
-                {% if settings.app-store %}
-                <div class="row align-items-center mb-3">
-                    <div class="col-auto">
-                        <a class="btn btn-success w-100" href="{{ settings.app-store }}" target="_blank">
-                            <i class="fab fa-app-store-ios"></i> App Store
-                        </a>
-                    </div>
-                    <div class="col-auto ms-auto">
-                        <i class="fs-3 bx bxl-apple"></i>
-                    </div>
-                </div>
-                {% endif %}
-
-            </div>
-        </div>
-    </div>
-</div>
