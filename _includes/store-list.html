@@ -13,6 +13,7 @@
 {% assign icon = settings.icon %}
 {% assign developer = site.data.developer[settings.developer] %}
 {% assign translation = site.data[page.lang].store.items[product.slug] %}
+{% if settings.disabled == nil %}
 <li class="mb-4">
     <p class="h4 mb-2">
         <a href="{{ product.url }}">{{ translation.title }}</a>
@@ -40,12 +41,5 @@
     <hr class="my-4">
     {% endunless %}
 </li>
-{% comment %}
-{% if featured %}
-{% if isNew %}
-<span class="badge bg-green badge-md">{{ site.data[page.lang].translation.new-badge }}</span>
 {% endif %}
-{% endif %}
-{% endcomment %}
-
 {% endfor %}
