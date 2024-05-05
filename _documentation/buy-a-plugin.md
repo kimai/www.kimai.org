@@ -16,10 +16,10 @@ Kimai plugins are sold through the marketplaces Lemon Squeezy and Gumroad, who b
 2. You are licensed to use the Item in one End product (a Kimai installation) for yourself or for one client (a “single application”).
 
 3. An End Product is one of the following things:
-  - A Kimai installation hosted by yourself, so that you are acting as application provider either for you or your client.
-  _For example: you are administrating the Kimai installation for your employer or yourself._
-  - A Kimai installation that you install (or manage) for your client, hosted by someone else.
-  _For example: your client pays you to install, administrate and update a Kimai installation for one company or person._
+   - A Kimai installation hosted by yourself, so that you are acting as application provider either for you or your client.
+   _For example: you are administrating the Kimai installation for your employer or yourself._
+   - A Kimai installation that you install (or manage) for your client, hosted by someone else.
+   _For example: your client pays you to install, administrate and update a Kimai installation for one company or person._
 
 4. You can create one End Product for a client, and you can transfer that single End Product to your client for any fee. This license is then transferred to your client.
 
