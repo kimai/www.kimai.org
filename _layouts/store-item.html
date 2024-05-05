@@ -153,7 +153,7 @@ layout: default
 </section>
 
 <section class="container pt-5 mt-2 mt-lg-4 mt-xl-5">
-    <div class="row">
+    <div class="row" id="buy-item-card">
 
         <!-- Sidebar (Course summary) -->
         <aside class="col-lg-4 col-md-5 offset-xl-1 order-md-2 mb-5">
@@ -457,21 +457,11 @@ layout: default
         <div class="col-md-5 mb-4 mb-md-0">
             <div class="card bg-dark h-100 p-lg-5">
                 <div class="card-body p-lg-2">
-                    <h2 class="h1 text-light">{{ site.data[page.lang].translation.store-purchase }}</h2>
-                    {% comment %}<p class="fs-xl text-light opacity-70 mb-0">Check out the FAQs.</p>{% endcomment %}
+                    <h2 class="h1 text-light">{{ site.data[page.lang].translation.faq.title }}</h2>
+                    <p class="fs-xl text-light opacity-70 mb-2">{{ site.data[page.lang].translation.faq.intro }}</p>
                 </div>
                 <div class="card-footer border-0 w-100 pt-0 p-4 p-lg-2">
-                    <div class="h2 d-flex align-items-center text-light mb-4">
-                        {{ pricing }}
-                        <small class="text-muted fs-xl fw-normal ms-2">
-                            {{ buySubTitle }}
-                        </small>
-                    </div>
-                    {% if isMultiPurchase != nil %}
-                        <a class="btn btn-primary btn-lg shadow-primary" href="#" data-bs-toggle="modal" data-bs-target="#modal-buy"><i class="{{ buyBtnIcon }} me-2"></i> {{ buyTitle }}</a>
-                    {% else %}
-                        <a class="btn btn-primary btn-lg shadow-primary" href="{{ buyLink }}"><i class="{{ buyBtnIcon }} me-2"></i> {{ buyTitle }}</a>
-                    {% endif %}
+                    <a class="btn btn-primary btn-lg shadow-primary" href="#buy-item-card"><i class="{{ buyBtnIcon }} me-2"></i> {{ buyTitle }}</a>
                 </div>
             </div>
         </div>
