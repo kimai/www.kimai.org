@@ -35,16 +35,29 @@
                                 {{ site.language_names[page.lang] }}
                             </button>
                             <div class="dropdown-menu dropdown-menu-end">
+                                {% comment %}THIS CODE IS GENERATED ONCE AND COPIED HERE FOR CACHING{% endcomment %}
+                                {% comment %}
                                 {% for lang in site.languages %}
-                                    {% assign targetUrl = site.pages | where: "slug", "index" | where: "lang", lang | map: "url" | first %}
-                                    {% if page.lang != nil %}
-                                        {% assign langPages = site[page.collection] | where: "slug", page.slug | where: "lang", lang %}
-                                        {% if langPages and langPages.size == 1 %}
-                                            {% assign targetUrl = langPages[0].url %}
-                                        {% endif %}
-                                    {% endif %}
-                                    <a dir="{% if site.rtl contains lang %}rtl{% else %}ltr{% endif %}" href="{{ targetUrl }}" class="dropdown-item{% if lang == page.lang %} active{% endif %}">{{ site.language_names[lang] }}</a>
+                                    <a dir="{% if site.rtl contains lang %}rtl{% else %}ltr{% endif %}" href="{% include link-language-domain.html language=lang %}/" class="dropdown-item{% if lang == page.lang %} active{% endif %}">{{ site.language_names[lang] }}</a>
                                 {% endfor %}
+                                {% endcomment %}
+                                <a dir="ltr" href="https://www.kimai.org/cs/" class="dropdown-item">Čeština</a>
+                                <a dir="ltr" href="https://www.kimai.org/de/" class="dropdown-item">Deutsch</a>
+                                <a dir="ltr" href="https://www.kimai.org/" class="dropdown-item active">English</a>
+                                <a dir="ltr" href="https://www.kimai.org/es/" class="dropdown-item">Español</a>
+                                <a dir="ltr" href="https://www.kimai.org/fr/" class="dropdown-item">Français</a>
+                                <a dir="rtl" href="https://www.kimai.org/he/" class="dropdown-item">עברית</a>
+                                <a dir="ltr" href="https://www.kimai.org/hr/" class="dropdown-item">Hrvatski</a>
+                                <a dir="ltr" href="https://www.kimai.org/it/" class="dropdown-item">Italiano</a>
+                                <a dir="ltr" href="https://www.kimai.org/nl/" class="dropdown-item">Nederlands</a>
+                                <a dir="ltr" href="https://www.kimai.org/pl/" class="dropdown-item">Polski</a>
+                                <a dir="ltr" href="https://www.kimai.org/pt/" class="dropdown-item">Português</a>
+                                <a dir="ltr" href="https://www.kimai.org/pt_BR/" class="dropdown-item">Português (Brasil)</a>
+                                <a dir="ltr" href="https://www.kimai.org/ru/" class="dropdown-item">Rусский</a>
+                                <a dir="ltr" href="https://www.kimai.org/sk/" class="dropdown-item">Slovenčina</a>
+                                <a dir="ltr" href="https://www.kimai.org/sv/" class="dropdown-item">Svenska</a>
+                                <a dir="ltr" href="https://www.kimai.org/uk/" class="dropdown-item">Українська</a>
+                                <a dir="ltr" href="https://www.kimai.org/zh_Hans/" class="dropdown-item">中文（中国）</a>
                             </div>
                         </div>
                     </div>
