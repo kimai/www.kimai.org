@@ -14,7 +14,7 @@
     <title>LDAP – Kimai</title>
     
         <meta name="description" content="How to use an LDAP directory server with Kimai">
-    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
+    <link type="application/atom+xml" rel="alternate" href="/www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
     <meta property="og:locale" content="en">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Kimai Time-Tracking">
@@ -572,7 +572,7 @@ updated on each following login.</p>
                 <h4 class="card-title">UPDATE WARNING</h4>
 <p>
     As this plugin uses composer to install further dependencies, your next update will not work as usual.
-    Please read this <a href="/documentation/updates.html#changed-files">troubleshooting guide</a> how to handle the situation.
+    Please read this <a href="/www.kimai.org/documentation/updates.html#changed-files">troubleshooting guide</a> how to handle the situation.
     After reverting all local changes and updating Kimai, you have to reinstall the composer package.
 </p>
 
@@ -584,7 +584,7 @@ updated on each following login.</p>
 <h3 id="activate-ldap-authentication">Activate LDAP authentication</h3>
 
 <p>You activate the LDAP authentication by adding the following code to the end of your
-<a href="/documentation/local-yaml.html">local.yaml</a> and <a href="/documentation/cache.html">reloading the cache</a> afterwards.</p>
+<a href="/www.kimai.org/documentation/local-yaml.html">local.yaml</a> and <a href="/www.kimai.org/documentation/cache.html">reloading the cache</a> afterwards.</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">kimai</span><span class="pi">:</span>
     <span class="na">ldap</span><span class="pi">:</span>
@@ -742,7 +742,7 @@ updated on each following login.</p>
 Kimai uses the Laminas Framework LDAP module and uses the configured <code class="language-plaintext highlighter-rouge">connection</code> parameters without modification.
 Find out more about the settings in the <a href="https://docs.laminas.dev/laminas-ldap/api/">detailed documentation</a>.</p>
 
-<p>You need to <a href="/documentation/cache.html">re-build the cache</a> for changes to take effect.</p>
+<p>You need to <a href="/www.kimai.org/documentation/cache.html">re-build the cache</a> for changes to take effect.</p>
 
 <h2 id="user-synchronization">User synchronization</h2>
 
@@ -773,9 +773,9 @@ if your LDAP is not available (only one LDAP server can be configured).</p>
 
 <p>When using LDAP you should:</p>
 <ul>
-  <li>Disable the “<a href="/documentation/users.html">Password reset</a>” function via <a href="/documentation/configurations.html">System &gt; Settings</a>
+  <li>Disable the “<a href="/www.kimai.org/documentation/users.html">Password reset</a>” function via <a href="/www.kimai.org/documentation/configurations.html">System &gt; Settings</a>
 </li>
-  <li>Disable the <code class="language-plaintext highlighter-rouge">password_own_profile</code> and <code class="language-plaintext highlighter-rouge">password_other_profile</code> <a href="/documentation/permissions.html">permissions</a> for LDAP user (at least the normal user role)</li>
+  <li>Disable the <code class="language-plaintext highlighter-rouge">password_own_profile</code> and <code class="language-plaintext highlighter-rouge">password_other_profile</code> <a href="/www.kimai.org/documentation/permissions.html">permissions</a> for LDAP user (at least the normal user role)</li>
 </ul>
 
 <p>There is no auto-cleanup available:</p>
@@ -819,7 +819,7 @@ Its unlikely that you will need those, but they also exist: <code class="languag
 
 <h3 id="groups--roles-import">Groups / Roles import</h3>
 
-<p>Kimai can use your LDAP groups and map them to <a href="/documentation/users.html">user roles</a>.
+<p>Kimai can use your LDAP groups and map them to <a href="/www.kimai.org/documentation/users.html">user roles</a>.
 If configured, it will execute another <code class="language-plaintext highlighter-rouge">search</code> against your LDAP after authentication and importing the user attributes.</p>
 
 <div class="alert alert-warning" role="alert">
@@ -850,7 +850,7 @@ group names from the result-sets attribute <code class="language-plaintext highl
 </li>
 </ul>
 
-<p>These converted names will be validated and <a href="/documentation/users.html">only existing roles</a> will pass to the user profile.</p>
+<p>These converted names will be validated and <a href="/www.kimai.org/documentation/users.html">only existing roles</a> will pass to the user profile.</p>
 
 <div class="alert alert-info" role="alert">
     Remove the entire 'role' configuration block to deactivate role sync!
@@ -1006,7 +1006,7 @@ the new account would have been promoted into these roles.</p>
 
 <h3 id="structure-example">Structure example</h3>
 
-<p>There is an article explaining an <a href="/documentation/ldap-example.html">example Open LDAP structure for Kimai</a>, that could be used.</p>
+<p>There is an article explaining an <a href="/www.kimai.org/documentation/ldap-example.html">example Open LDAP structure for Kimai</a>, that could be used.</p>
 
 <p>Actually this is more of an example setup for a test environment instead of a best-practice example.</p>
 

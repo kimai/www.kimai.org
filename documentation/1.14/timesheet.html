@@ -14,7 +14,7 @@
     <title>Timesheet – Kimai</title>
     
         <meta name="description" content="View and manage your time-tracking data in the timesheet view">
-    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
+    <link type="application/atom+xml" rel="alternate" href="/www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
     <meta property="og:locale" content="en">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Kimai Time-Tracking">
@@ -640,7 +640,7 @@ You are viewing an older version of this documentation page. A newer version is 
 
 <p>User manual on the timesheet tables, actions and configuration.</p>
 
-<p>Kimai provides also a <a href="/documentation/calendar.html">calendar view</a>, which displays your timesheet entries in an easy readable format.</p>
+<p>Kimai provides also a <a href="/www.kimai.org/documentation/calendar.html">calendar view</a>, which displays your timesheet entries in an easy readable format.</p>
 
 <h2 id="starting-and-stopping-records">Starting and stopping records</h2>
 
@@ -670,7 +670,7 @@ You are viewing an older version of this documentation page. A newer version is 
 <p>Since version 1.10 you can configure a lockdown period, which will prevent your users from changing timesheet records in the past.</p>
 
 <p>The lockdown period consists of a <code class="language-plaintext highlighter-rouge">start</code> and <code class="language-plaintext highlighter-rouge">end</code> date and a <code class="language-plaintext highlighter-rouge">grace</code> period. The lockdown feature will only work if all of these fields are configured.
-These fields can be found in the <a href="/documentation/configurations.html">System configuration screen</a> and take a <a href="https://www.php.net/manual/en/datetime.formats.relative.php">relative date format</a> as input.</p>
+These fields can be found in the <a href="/www.kimai.org/documentation/configurations.html">System configuration screen</a> and take a <a href="https://www.php.net/manual/en/datetime.formats.relative.php">relative date format</a> as input.</p>
 
 <p>These rules apply:</p>
 <ul>
@@ -733,7 +733,7 @@ It removes the ability to choose <code class="language-plaintext highlighter-rou
 
 <p>Be aware: the admin/team timesheets screens still include these fields, as you might have to correct wrong or add 
 forgotten entries on behalf of the user.
-You can limit access to these screens with the <code class="language-plaintext highlighter-rouge">edit_other_timesheet</code> <a href="/documentation/permissions.html">permission</a>.</p>
+You can limit access to these screens with the <code class="language-plaintext highlighter-rouge">edit_other_timesheet</code> <a href="/www.kimai.org/documentation/permissions.html">permission</a>.</p>
 
 <h3 id="duration-only-mode">Duration only mode</h3>
 
@@ -741,14 +741,14 @@ You can limit access to these screens with the <code class="language-plaintext h
 In addition, the “edit timesheet” forms will be changed and instead of displaying the <code class="language-plaintext highlighter-rouge">end</code> date you will see a field for <code class="language-plaintext highlighter-rouge">duration</code>.</p>
 
 <p>You can activate the <code class="language-plaintext highlighter-rouge">duration_only</code> mode by switching the configuration key <code class="language-plaintext highlighter-rouge">kimai.timesheet.mode</code> to <code class="language-plaintext highlighter-rouge">duration_only</code> in 
-your <code class="language-plaintext highlighter-rouge">local.yaml</code> or directly from within the <a href="/documentation/configurations.html">System-configuration screen</a>:</p>
+your <code class="language-plaintext highlighter-rouge">local.yaml</code> or directly from within the <a href="/www.kimai.org/documentation/configurations.html">System-configuration screen</a>:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">kimai</span><span class="pi">:</span>
     <span class="na">timesheet</span><span class="pi">:</span>
         <span class="na">mode</span><span class="pi">:</span> <span class="s">duration_only</span>
 </code></pre></div></div>
 
-<p>Be aware: users with the <a href="/documentation/permissions.html">permission</a> <code class="language-plaintext highlighter-rouge">edit_other_timesheet</code> can still see the 
+<p>Be aware: users with the <a href="/www.kimai.org/documentation/permissions.html">permission</a> <code class="language-plaintext highlighter-rouge">edit_other_timesheet</code> can still see the 
 start time and by a simple calculation the end time, if they open each entry manually. If your country has work regulations 
 that should limit access to this data, make sure to remove this permission for persons without special access regulations (e.g. your HR department).</p>
 
@@ -797,7 +797,7 @@ the <a href="https://www.php.net/manual/en/datetime.formats.time.php">time forma
 
 <h4 id="duration-drop-down">Duration drop-down</h4>
 
-<p>If activated in <a href="/documentation/configurations.html">System &gt; Settings</a>, the duration field has a dropdown.
+<p>If activated in <a href="/www.kimai.org/documentation/configurations.html">System &gt; Settings</a>, the duration field has a dropdown.
 The drop-down allows for simple selection of a duration, which will be entered in <code class="language-plaintext highlighter-rouge">Time span</code> format.</p>
 
 <p>Please note:</p>
@@ -826,7 +826,7 @@ entry (an error message is shown, indicating why it is not possible to start ano
 
 <h2 id="12-hour-ampm-format">12-hour am/pm format</h2>
 
-<p>Want to use the 12 hour format? Read the <a href="/documentation/translations.html">i18n docu</a>.</p>
+<p>Want to use the 12 hour format? Read the <a href="/www.kimai.org/documentation/translations.html">i18n docu</a>.</p>
 
 <h2 id="descriptions-with-markdown">Descriptions with Markdown</h2>
 
@@ -854,7 +854,7 @@ Kimai will only apply the markdown in the user timesheet and not in the admin se
   <li>Rounding rules will be applied on stopped timesheet records only, so you might see an un-rounded value for the start time and duration until you stop the record</li>
 </ol>
 
-<p>You can configure your <code class="language-plaintext highlighter-rouge">rounding</code> rules by changing the configuration file <a href="/documentation/local-yaml.html">local.yaml</a>.</p>
+<p>You can configure your <code class="language-plaintext highlighter-rouge">rounding</code> rules by changing the configuration file <a href="/www.kimai.org/documentation/local-yaml.html">local.yaml</a>.</p>
 
 <p>These are the existing rounding modes:</p>
 <ul>
@@ -894,22 +894,22 @@ Kimai will only apply the markdown in the user timesheet and not in the admin se
 
 <h2 id="rate-calculation">Rate calculation</h2>
 
-<p>You can find the <a href="/documentation/rates.html">documentation how rates are calculated here</a>.</p>
+<p>You can find the <a href="/www.kimai.org/documentation/rates.html">documentation how rates are calculated here</a>.</p>
 
 <h2 id="exported-records">Exported records</h2>
 
 <p>Exported records will be locked to prevent manipulation of cleared data.</p>
 
-<p>The <a href="/documentation/permissions.html">permission</a> <code class="language-plaintext highlighter-rouge">edit_exported_timesheet</code> does allow editing and deletion of these 
+<p>The <a href="/www.kimai.org/documentation/permissions.html">permission</a> <code class="language-plaintext highlighter-rouge">edit_exported_timesheet</code> does allow editing and deletion of these 
 locked entries nevertheless, which by default is given to users with <code class="language-plaintext highlighter-rouge">ROLE_ADMIN</code> and <code class="language-plaintext highlighter-rouge">ROLE_SUPER_ADMIN</code>.</p>
 
-<p>The export state can be set manually or via the <a href="/documentation/invoices.html">invoice</a> and <a href="/documentation/export.html">export</a> screens.</p>
+<p>The export state can be set manually or via the <a href="/www.kimai.org/documentation/invoices.html">invoice</a> and <a href="/www.kimai.org/documentation/export.html">export</a> screens.</p>
 
 <h2 id="billable-vs-not-billable">Billable vs. not billable</h2>
 
 <p>Since version 1.14 you can define whether a timesheet record is billable or not.</p>
 
-<p>None-billable timesheets are excluded from <a href="/documentation/invoices.html">invoices</a> and budget calculations.</p>
+<p>None-billable timesheets are excluded from <a href="/www.kimai.org/documentation/invoices.html">invoices</a> and budget calculations.</p>
 
 <h2 id="filter-and-search">Filter and search</h2>
 
@@ -929,7 +929,7 @@ locked entries nevertheless, which by default is given to users with <code class
   <li><code class="language-plaintext highlighter-rouge">description</code></li>
 </ul>
 
-<p>Additionally, you can filter for <a href="/documentation/meta-fields.html">custom fields</a> by using a search phrase like <code class="language-plaintext highlighter-rouge">location:homeoffice</code>.
+<p>Additionally, you can filter for <a href="/www.kimai.org/documentation/meta-fields.html">custom fields</a> by using a search phrase like <code class="language-plaintext highlighter-rouge">location:homeoffice</code>.
 This would find all timesheets with the custom field <code class="language-plaintext highlighter-rouge">location</code> matching the term <code class="language-plaintext highlighter-rouge">homeoffice</code>.</p>
 
 <p>The search terms will be found within the full value, so searching for <code class="language-plaintext highlighter-rouge">office</code> would find:</p>

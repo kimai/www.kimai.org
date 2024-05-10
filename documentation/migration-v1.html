@@ -14,7 +14,7 @@
     <title>Migration from Kimai v1</title>
     
         <meta name="description" content="Install Kimai and import your existing timesheet data from the ancient Kimai 1">
-    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
+    <link type="application/atom+xml" rel="alternate" href="/www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
     <meta property="og:locale" content="en">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Kimai Time-Tracking">
@@ -541,13 +541,13 @@
                 <div id="documentation-content">
                     <p>This documentation covers the necessary steps to migrate from Kimai 1 to Kimai 2.</p>
 
-<p>Read the <a href="/documentation/versions.html">version documentation</a> before, to understand if you need this migration guide.</p>
+<p>Read the <a href="/www.kimai.org/documentation/versions.html">version documentation</a> before, to understand if you need this migration guide.</p>
 
 <div class="alert d-flex alert-success" role="alert">
     <i class="bx bx-fas fa-shipping-fast lead me-3"></i>
     <div>
         
-You can <a href="/store/installation-support.html">get professional support</a> if you are not sure about performing the upgrade yourself.
+You can <a href="/www.kimai.org/store/installation-support.html">get professional support</a> if you are not sure about performing the upgrade yourself.
 
     </div>
 </div>
@@ -557,7 +557,7 @@ You can <a href="/store/installation-support.html">get professional support</a> 
 <p>Before starting with the migration, please read the following FAQs:</p>
 
 <ul>
-  <li>You need to install the <a href="/store/keleo-importer-bundle.html">importer plugin</a> (which ships the command for migrating the data)</li>
+  <li>You need to install the <a href="/www.kimai.org/store/keleo-importer-bundle.html">importer plugin</a> (which ships the command for migrating the data)</li>
   <li>Data from the existing v1 installation is only read and will never be changed</li>
   <li>Data can only be imported from a Kimai installation with at least <code class="language-plaintext highlighter-rouge">v1.0.1</code> and database revision <code class="language-plaintext highlighter-rouge">1388</code> (check your <code class="language-plaintext highlighter-rouge">configuration</code> table)</li>
   <li>User-specific rates are not yet supported in Kimai 2, but
@@ -576,7 +576,7 @@ You can <a href="/store/installation-support.html">get professional support</a> 
   <li>You have to supply a default password, which will be used for every imported user(!)
     <ul>
       <li>due to security issues we cannot import the original passwords</li>
-      <li>let your users reset it afterwards with the <a href="/documentation/users.html">Password reset</a> function</li>
+      <li>let your users reset it afterwards with the <a href="/www.kimai.org/documentation/users.html">Password reset</a> function</li>
     </ul>
   </li>
   <li>The import will fail if a user from v1 has either an empty email, or the same email is used for multiple users. But you can automatically fix that by using the <code class="language-plaintext highlighter-rouge">--fix-email</code> option</li>
@@ -596,8 +596,8 @@ You can <a href="/store/installation-support.html">get professional support</a> 
 
 <h2 id="install-kimai">Install Kimai</h2>
 
-<p>Please read the <a href="/documentation/installation.html">installation docs</a> first and execute the installation.
-You can install it on the same server, but you have to meet the server requirements (see <a href="/en/download.html">downloads page</a>).</p>
+<p>Please read the <a href="/www.kimai.org/documentation/installation.html">installation docs</a> first and execute the installation.
+You can install it on the same server, but you have to meet the server requirements (see <a href="/www.kimai.org/en/download.html">downloads page</a>).</p>
 
 <p>The other option is to dump the old database and import it in the new server. The import does not need a running Kimai installation, but only the data!</p>
 
@@ -636,7 +636,7 @@ The connection will use the charset <code class="language-plaintext highlighter-
 <h3 id="problems-and-solution">Problems and solution</h3>
 
 <p>Kimai 1 was written a long time ago, when MySQL was lacking proper UTF8 support and foreign keys.
-While <a href="/store/installation-support.html">migrating dozens of customers installations</a> I stumbled upon some recurring problems,
+While <a href="/www.kimai.org/store/installation-support.html">migrating dozens of customers installations</a> I stumbled upon some recurring problems,
 that can be solved with some SQL commands.</p>
 
 <p>You can either fix the problems manually as described below, or you let the importer handle all these problems by using the

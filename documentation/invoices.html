@@ -14,7 +14,7 @@
     <title>Invoices – Kimai</title>
     
         <meta name="description" content="Create invoices directly within Kimai from timesheet data in several formats">
-    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
+    <link type="application/atom+xml" rel="alternate" href="/www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
     <meta property="og:locale" content="en">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Kimai Time-Tracking">
@@ -713,7 +713,7 @@ Example: to get a three digit long string with year counter use <code class="lan
 <ol>
   <li>Characters outside the replacer <strong>cannot</strong> include <code class="language-plaintext highlighter-rouge">{</code> and <code class="language-plaintext highlighter-rouge">}</code>.</li>
   <li>The invoice number is unique in Kimai and you cannot generate an invoice with the same invoice number twice. Kimai will try to avoid that automatically by incrementing the counter, but if that is impossible, you’ll see an error message.</li>
-  <li>You can change the format at <a href="/documentation/configurations.html">System &gt; Settings</a>.</li>
+  <li>You can change the format at <a href="/www.kimai.org/documentation/configurations.html">System &gt; Settings</a>.</li>
 </ol>
 
     </div>
@@ -777,7 +777,7 @@ This will cause troubles with your invoice counter, as Kimai is calculating invo
 By deleting invoices you lower the amount of invoices in the database, and the next invoice number might be one that you already used.</p>
 
 <p>Invoice deletion is disabled by default, because of all known problems with deletion. 
-You can activate it enabling the <a href="/documentation/permissions.html">permissions</a> called <code class="language-plaintext highlighter-rouge">delete_invoice</code>.</p>
+You can activate it enabling the <a href="/www.kimai.org/documentation/permissions.html">permissions</a> called <code class="language-plaintext highlighter-rouge">delete_invoice</code>.</p>
 
 <h2 id="export-state">Export state</h2>
 
@@ -786,9 +786,9 @@ These records cannot be edited any longer by regular users and are excluded by d
 
 <p>You need to tick the “mark as export” checkbox before saving the invoice, to automatically set the export state on all filtered timesheet records.</p>
 
-<p>The “mark as export” checkbox is only available for users with the <code class="language-plaintext highlighter-rouge">edit_export_other_timesheet</code> <a href="/documentation/permissions.html">permission</a>.</p>
+<p>The “mark as export” checkbox is only available for users with the <code class="language-plaintext highlighter-rouge">edit_export_other_timesheet</code> <a href="/www.kimai.org/documentation/permissions.html">permission</a>.</p>
 
-<p>For further information read the <a href="/documentation/timesheet.html">timesheet documentation</a>.</p>
+<p>For further information read the <a href="/www.kimai.org/documentation/timesheet.html">timesheet documentation</a>.</p>
 
 <h2 id="billable-items-only">Billable items only</h2>
 
@@ -796,7 +796,7 @@ These records cannot be edited any longer by regular users and are excluded by d
 
 <p>By default, every timesheet records is billable, but users can set the billable flag on individual timesheets.</p>
 
-<p><a href="/store/expenses-bundle.html">Expense items</a> have a configurable billable flag per item and only the ones marked as billable (refundable) will be included.</p>
+<p><a href="/www.kimai.org/store/expenses-bundle.html">Expense items</a> have a configurable billable flag per item and only the ones marked as billable (refundable) will be included.</p>
 
 <hr>
 
@@ -877,7 +877,7 @@ These records cannot be edited any longer by regular users and are excluded by d
   <li>You can use every document name only once: so having <code class="language-plaintext highlighter-rouge">kimai.html.twig</code> and <code class="language-plaintext highlighter-rouge">kimai.docx</code> will lead to unpredictable results (the first file to be found takes precedence)</li>
   <li>Kimai looks for templates in <code class="language-plaintext highlighter-rouge">var/invoices/</code> first, so you can overwrite default templates</li>
   <li>You should store your templates in <code class="language-plaintext highlighter-rouge">var/invoices/</code>, as this directory is not shipped with Kimai and not touched during updates</li>
-  <li>You can <a href="/documentation/local-yaml.html">configure different search directories</a> through the config key <code class="language-plaintext highlighter-rouge">kimai.invoice.documents</code> if you want to add additional template source directories</li>
+  <li>You can <a href="/www.kimai.org/documentation/local-yaml.html">configure different search directories</a> through the config key <code class="language-plaintext highlighter-rouge">kimai.invoice.documents</code> if you want to add additional template source directories</li>
 </ul>
 
 <div class="alert d-flex alert-warning" role="alert">
@@ -887,7 +887,7 @@ These records cannot be edited any longer by regular users and are excluded by d
     </div>
 </div>
 
-<p>After you changed an invoice template, you have to <a href="/documentation/cache.html">clear the cache</a> to see the results.</p>
+<p>After you changed an invoice template, you have to <a href="/www.kimai.org/documentation/cache.html">clear the cache</a> to see the results.</p>
 
 <h3 id="more-invoice-templates">More invoice templates</h3>
 
@@ -1019,7 +1019,7 @@ allows access to your custom fields.</p>
 
 <h3 id="pdf-templates">PDF templates</h3>
 
-<p>There is so much to say about PDF templates, that there is a dedicated page about <a href="/documentation/pdf-templates.html">PDF templates</a>.</p>
+<p>There is so much to say about PDF templates, that there is a dedicated page about <a href="/www.kimai.org/documentation/pdf-templates.html">PDF templates</a>.</p>
 
 <h3 id="docx-templates">Docx templates</h3>
 
@@ -1312,7 +1312,7 @@ The example <code class="language-plaintext highlighter-rouge">{{ invoice['invoi
     </tr>
     <tr>
       <td>${user.meta.X}</td>
-      <td>The current users <a href="/documentation/user-preferences.html">preference</a> named <code class="language-plaintext highlighter-rouge">X</code>
+      <td>The current users <a href="/www.kimai.org/documentation/user-preferences.html">preference</a> named <code class="language-plaintext highlighter-rouge">X</code>
 </td>
     </tr>
   </tbody>
@@ -1499,7 +1499,7 @@ The example <code class="language-plaintext highlighter-rouge">{{ invoice['invoi
     </tr>
     <tr>
       <td>${entry.meta.foo}</td>
-      <td>The <a href="/documentation/meta-fields.html">meta field</a> with the internal name <code class="language-plaintext highlighter-rouge">foo</code> (must be in lowercase letters, e.g. <code class="language-plaintext highlighter-rouge">FOO</code> will be available as <code class="language-plaintext highlighter-rouge">${entry.meta.foo}</code>. Only available if the field is visible.</td>
+      <td>The <a href="/www.kimai.org/documentation/meta-fields.html">meta field</a> with the internal name <code class="language-plaintext highlighter-rouge">foo</code> (must be in lowercase letters, e.g. <code class="language-plaintext highlighter-rouge">FOO</code> will be available as <code class="language-plaintext highlighter-rouge">${entry.meta.foo}</code>. Only available if the field is visible.</td>
       <td> </td>
     </tr>
     <tr>
@@ -1595,7 +1595,7 @@ The example <code class="language-plaintext highlighter-rouge">{{ invoice['invoi
     </tr>
     <tr>
       <td>${customer.meta.foo}</td>
-      <td>The customer <a href="/documentation/meta-fields.html">meta field</a> with the internal name <code class="language-plaintext highlighter-rouge">foo</code> (must be in lowercase letters, e.g. <code class="language-plaintext highlighter-rouge">FOO</code> will be available as <code class="language-plaintext highlighter-rouge">${customer.meta.foo}</code>. Only available if the field is visible.</td>
+      <td>The customer <a href="/www.kimai.org/documentation/meta-fields.html">meta field</a> with the internal name <code class="language-plaintext highlighter-rouge">foo</code> (must be in lowercase letters, e.g. <code class="language-plaintext highlighter-rouge">FOO</code> will be available as <code class="language-plaintext highlighter-rouge">${customer.meta.foo}</code>. Only available if the field is visible.</td>
     </tr>
     <tr>
       <td>${customer.budget_open}</td>
@@ -1688,7 +1688,7 @@ The example <code class="language-plaintext highlighter-rouge">{{ invoice['invoi
     </tr>
     <tr>
       <td>${project.meta.foo}</td>
-      <td>The project <a href="/documentation/meta-fields.html">meta field</a> with the internal name <code class="language-plaintext highlighter-rouge">foo</code> (must be in lowercase letters, e.g. <code class="language-plaintext highlighter-rouge">FOO</code> will be available as <code class="language-plaintext highlighter-rouge">${project.meta.foo}</code>. Only available if the field is visible.</td>
+      <td>The project <a href="/www.kimai.org/documentation/meta-fields.html">meta field</a> with the internal name <code class="language-plaintext highlighter-rouge">foo</code> (must be in lowercase letters, e.g. <code class="language-plaintext highlighter-rouge">FOO</code> will be available as <code class="language-plaintext highlighter-rouge">${project.meta.foo}</code>. Only available if the field is visible.</td>
     </tr>
     <tr>
       <td>${project.budget_open}</td>
@@ -1740,7 +1740,7 @@ If your template relies on a <code class="language-plaintext highlighter-rouge">
     </tr>
     <tr>
       <td>${activity.meta.foo}</td>
-      <td>The activity <a href="/documentation/meta-fields.html">meta field</a> with the internal name <code class="language-plaintext highlighter-rouge">foo</code> (must be in lowercase letters, e.g. <code class="language-plaintext highlighter-rouge">FOO</code> will be available as <code class="language-plaintext highlighter-rouge">${activity.meta.foo}</code>. Only available if the field is visible.</td>
+      <td>The activity <a href="/www.kimai.org/documentation/meta-fields.html">meta field</a> with the internal name <code class="language-plaintext highlighter-rouge">foo</code> (must be in lowercase letters, e.g. <code class="language-plaintext highlighter-rouge">FOO</code> will be available as <code class="language-plaintext highlighter-rouge">${activity.meta.foo}</code>. Only available if the field is visible.</td>
     </tr>
     <tr>
       <td>${activity.budget_open}</td>
@@ -1791,7 +1791,7 @@ The workaround is to change the document with another word processor: Apple page
   <li><code class="language-plaintext highlighter-rouge">customer company</code></li>
 </ul>
 
-<p>Additionally, you can filter for <a href="/documentation/meta-fields.html">custom fields</a> by using a search phrase like <code class="language-plaintext highlighter-rouge">location:homeoffice</code>.
+<p>Additionally, you can filter for <a href="/www.kimai.org/documentation/meta-fields.html">custom fields</a> by using a search phrase like <code class="language-plaintext highlighter-rouge">location:homeoffice</code>.
 This would find all entries with the custom field <code class="language-plaintext highlighter-rouge">location</code> matching the term <code class="language-plaintext highlighter-rouge">homeoffice</code>.</p>
 
 <p>The search terms will be found within the full value, so searching for <code class="language-plaintext highlighter-rouge">office</code> would find:</p>

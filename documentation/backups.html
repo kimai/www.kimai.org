@@ -14,7 +14,7 @@
     <title>Backups – Kimai</title>
     
         <meta name="description" content="How to backup and restore your Kimai installation">
-    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
+    <link type="application/atom+xml" rel="alternate" href="/www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
     <meta property="og:locale" content="en">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Kimai Time-Tracking">
@@ -572,7 +572,7 @@ But it’s good to have the information in the unlikely case of a problem while 
 <h2 id="restore">Restore</h2>
 
 <ul>
-  <li>install Kimai <a href="/documentation/installation.html">as documented</a> in the <strong>exact same version</strong>, which you used when you created the backup</li>
+  <li>install Kimai <a href="/www.kimai.org/documentation/installation.html">as documented</a> in the <strong>exact same version</strong>, which you used when you created the backup</li>
   <li>make sure it works</li>
   <li>restore the database backup in an empty database</li>
   <li>point <code class="language-plaintext highlighter-rouge">.env</code> to your imported database</li>
@@ -644,16 +644,16 @@ chmod -R g+rw var/</code></pre></figure>
 
 <p>Great! Make sure you have the <code class="language-plaintext highlighter-rouge">migration_versions</code> table in your database backup, 
 before you upgrade. If not, execute <code class="language-plaintext highlighter-rouge">bin/console doctrine:migrations:version --add --all</code> 
-beforehand and read the <a href="/documentation/installation.html">installation docs</a> again, 
+beforehand and read the <a href="/www.kimai.org/documentation/installation.html">installation docs</a> again, 
 if you might have missed other points as well.</p>
 
-<p>Now you <a href="/documentation/updates.html">can upgrade</a> :-)</p>
+<p>Now you <a href="/www.kimai.org/documentation/updates.html">can upgrade</a> :-)</p>
 
 <h2 id="pitfall-version-change">Pitfall version change</h2>
 
 <p>You restored Kimai (as documented above), but have problems when accessing it?</p>
 
-<p>Maybe you have missed an upgrade steps, which you would have done when executing a <a href="/documentation/updates.html">normal upgrade</a>.</p>
+<p>Maybe you have missed an upgrade steps, which you would have done when executing a <a href="/www.kimai.org/documentation/updates.html">normal upgrade</a>.</p>
 
 <p>Please check the <a href="https://github.com/kimai/kimai/blob/main/UPGRADING.md">UPGRADING</a> guide and make sure you executed all version specific tasks.</p>
 

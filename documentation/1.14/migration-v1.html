@@ -14,7 +14,7 @@
     <title>Upgrade to Kimai 2 from v1</title>
     
         <meta name="description" content="Install Kimai 2 and import your existing timesheet data from Kimai 1">
-    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
+    <link type="application/atom+xml" rel="alternate" href="/www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
     <meta property="og:locale" content="en">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Kimai Time-Tracking">
@@ -557,7 +557,7 @@ You are viewing an older version of this documentation page. A newer version is 
     <i class="bx bx-fas fa-shipping-fast lead me-3"></i>
     <div>
         
-You can <a href="/store/installation-support.html">get professional support</a> if you are not sure about performing the upgrade yourself. 
+You can <a href="/www.kimai.org/store/installation-support.html">get professional support</a> if you are not sure about performing the upgrade yourself. 
 
     </div>
 </div>
@@ -585,7 +585,7 @@ You can <a href="/store/installation-support.html">get professional support</a> 
   <li>You have to supply a default password, which will be used for every imported user(!)
     <ul>
       <li>due to security issues we cannot import the original passwords</li>
-      <li>let your users reset it afterwards with the <a href="/documentation/users.html">Password reset</a> function</li>
+      <li>let your users reset it afterwards with the <a href="/www.kimai.org/documentation/users.html">Password reset</a> function</li>
     </ul>
   </li>
   <li>The import will fail, if a user from v1 has either an empty email OR the same email is used for multiple users</li>
@@ -605,8 +605,8 @@ You can <a href="/store/installation-support.html">get professional support</a> 
 
 <h2 id="install-kimai">Install Kimai</h2>
 
-<p>You have to install Kimai, please read the <a href="/documentation/installation.html">documentation</a> first.
-You can install it on the same server, but remember that you have to meet the server requirements (see <a href="/en/download.html">downloads page</a>).</p>
+<p>You have to install Kimai, please read the <a href="/www.kimai.org/documentation/installation.html">documentation</a> first.
+You can install it on the same server, but remember that you have to meet the server requirements (see <a href="/www.kimai.org/en/download.html">downloads page</a>).</p>
 
 <p>After Kimai 2 runs properly, the actual <em>migration</em> takes place, by importing the data from your Kimai 1 database into Kimai 2.
 You have to have SSH access to your server, as you will use a command shipped with Kimai 2, which will pull the data into the configured database from your <code class="language-plaintext highlighter-rouge">.env</code> file.</p>
@@ -643,7 +643,7 @@ The connection will use the charset <code class="language-plaintext highlighter-
 <h3 id="problems-and-solution">Problems and solution</h3>
 
 <p>Kimai 1 was written a long time ago, when MySQL was lacking proper UTF8 support and foreign keys (in shared hostings).
-While <a href="/store/installation-support.html">migrating dozens of customers installations</a> I stumbled upon some recurring problems, 
+While <a href="/www.kimai.org/store/installation-support.html">migrating dozens of customers installations</a> I stumbled upon some recurring problems, 
 that can be solved with some SQL commands.</p>
 
 <div class="alert alert-warning" role="alert">

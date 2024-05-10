@@ -14,7 +14,7 @@
     <title>Install Kimai on a Synology NAS</title>
     
         <meta name="description" content="How to install Kimai on a Synology NAS">
-    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
+    <link type="application/atom+xml" rel="alternate" href="/www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
     <meta property="og:locale" content="en">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Kimai Time-Tracking">
@@ -540,7 +540,7 @@
                 
                 <div id="documentation-content">
                     <p>This HowTo does not explain every step for the installation of Kimai on a Synology NAS with <strong>DSM 6</strong>, 
-but rather concentrates on the differences from the <a href="/documentation/installation.html">default installation</a>.</p>
+but rather concentrates on the differences from the <a href="/www.kimai.org/documentation/installation.html">default installation</a>.</p>
 
 <div class="alert alert-info" role="alert">
     ATTENTION: This manual seems to be outdated and not working with DSM 7+ anymore. Please use Docker to host Kimai on Synology!
@@ -564,7 +564,7 @@ but rather concentrates on the differences from the <a href="/documentation/inst
 
 <h2 id="installation-process">Installation process</h2>
 
-<p>Clone Kimai as described in the main <a href="/documentation/installation.html">installation</a> docs. 
+<p>Clone Kimai as described in the main <a href="/www.kimai.org/documentation/installation.html">installation</a> docs. 
 If no git is installed, you can use the method described under the “updates” section.</p>
 
 <p>This example uses the path <code class="language-plaintext highlighter-rouge">/volume1/web/kimai2</code></p>
@@ -585,7 +585,7 @@ otherwise stick with lower and uppercase character and numbers.</p>
 
 <p>Synology ships a MariaDB which is configured to use a socket connection and runs on a different port, 
 therefore the connection string in your <code class="language-plaintext highlighter-rouge">.env</code> file could look different from the one used in the 
-default <a href="/documentation/installation.html">installation</a> docs:</p>
+default <a href="/www.kimai.org/documentation/installation.html">installation</a> docs:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DATABASE_URL="mysql://kimai2:password@localhost:3307/kimai2?unix_socket=/run/mysqld/mysqld10.sock?charset=utf8mb4&amp;serverVersion=5.7.40"
 </code></pre></div></div>
@@ -716,7 +716,7 @@ Be extremely careful, a wrong command can destroy your Synology … you know: wi
 
 <h2 id="updating-kimai">Updating Kimai</h2>
 
-<p>Please cross-check the normal <a href="/documentation/updates.html">upgrade guide</a> for more steps:</p>
+<p>Please cross-check the normal <a href="/www.kimai.org/documentation/updates.html">upgrade guide</a> for more steps:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /volume1/web/kimai/
 git fetch <span class="nt">--tags</span>
