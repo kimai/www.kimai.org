@@ -1,0 +1,20 @@
+---
+layout: none
+sitemap: false
+permalink: /sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+{% for collection in site.collections %}
+    {% for item in site[collection.label]  %}
+    {% if item.sitemap == nil or item.sitemap %}
+    {%- unless site.custom_domain[item.lang] -%}
+    <url>
+        <loc>{% include link-language-domain.html language=item.lang url=item.url %}</loc>
+        <lastmod>{{ item.date | date_to_xmlschema }}</lastmod>
+    </url>
+    {% endunless %}
+    {% endif %}
+    {% endfor %}
+{% endfor %}
+</urlset>
