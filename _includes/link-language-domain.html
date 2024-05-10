@@ -1,5 +1,7 @@
 {%- assign targetUrl = site.language_base[include.language] -%}
-{%- if targetUrl == 'https://www.kimai.org' and include.language != 'en' -%}
+{%- unless site.custom_domain[include.language] -%}
+{%- if include.language != 'en' -%}
 {%- assign targetUrl = targetUrl | append: '/' | append: include.language -%}
 {%- endif -%}
+{%- endunless -%}
 {{- targetUrl -}}
