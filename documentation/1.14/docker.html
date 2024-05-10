@@ -14,7 +14,7 @@
     <title>Docker – Kimai</title>
     
         <meta name="description" content="Running Kimai inside docker">
-    <link type="application/atom+xml" rel="alternate" href="/www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
     <meta property="og:locale" content="en">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Kimai Time-Tracking">
@@ -606,7 +606,7 @@ Considering you started the machine named <code class="language-plaintext highli
 
 <h3 id="using-a-custom-localyaml">Using a custom local.yaml</h3>
 
-<p>You can mount a <a href="/www.kimai.org/documentation/local-yaml.html">custom configuration</a> into the container while starting it:</p>
+<p>You can mount a <a href="/documentation/local-yaml.html">custom configuration</a> into the container while starting it:</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">--rm</span> <span class="nt">-ti</span> <span class="nt">-p</span> 8001:8001 <span class="nt">--name</span> kimai2 <span class="nt">-v</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/config/packages/local.yaml:/opt/kimai/config/packages/local.yaml kimai/kimai2:dev
 </code></pre></div></div>
 

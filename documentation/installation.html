@@ -14,7 +14,7 @@
     <title>Installation – Kimai</title>
     
         <meta name="description" content="How to install Kimai on your server with git, composer and SSH or FTP">
-    <link type="application/atom+xml" rel="alternate" href="/www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
     <meta property="og:locale" content="en">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Kimai Time-Tracking">
@@ -642,39 +642,39 @@ chmod -R g+rw var/</code></pre></figure>
 <ul>
   <li>via command: <code class="language-plaintext highlighter-rouge">bin/console kimai:user:create username admin@example.com ROLE_SUPER_ADMIN</code></li>
   <li>via login screen: you can register a user, the first one will be promoted to the role <code class="language-plaintext highlighter-rouge">ROLE_SUPER_ADMIN</code></li>
-  <li>you can configure <a href="/www.kimai.org/documentation/ldap.html">LDAP</a> or <a href="/www.kimai.org/documentation/saml.html">SAML</a> for authentication</li>
+  <li>you can configure <a href="/documentation/ldap.html">LDAP</a> or <a href="/documentation/saml.html">SAML</a> for authentication</li>
 </ul>
 
-<p>If you are going to <a href="/www.kimai.org/documentation/migration-v1.html">import data from Kimai v1</a> choose a username &amp; email that was not used in v1.</p>
+<p>If you are going to <a href="/documentation/migration-v1.html">import data from Kimai v1</a> choose a username &amp; email that was not used in v1.</p>
 
 <h3 id="configure-documentroot">Configure DocumentRoot</h3>
 
 <p>Configure your web server (like nginx or Apache) to point its DocumentRoot at the <code class="language-plaintext highlighter-rouge">public/</code> directory.
-For more details, see the <a href="/www.kimai.org/documentation/webserver-configuration.html">Webserver How-To</a>.</p>
+For more details, see the <a href="/documentation/webserver-configuration.html">Webserver How-To</a>.</p>
 
-<p>Oh … wait! Before you leave, please read the <a href="/www.kimai.org/documentation/initial-setup.html">initial setup guide</a>.</p>
+<p>Oh … wait! Before you leave, please read the <a href="/documentation/initial-setup.html">initial setup guide</a>.</p>
 
 <h2 id="other-installation-methods">Other installation methods</h2>
 
 <h3 id="docker">Docker</h3>
 
-<p>There is a dedicated article about running <a href="/www.kimai.org/documentation/docker.html">a Docker image of Kimai</a>, suitable for development and production.</p>
+<p>There is a dedicated article about running <a href="/documentation/docker.html">a Docker image of Kimai</a>, suitable for development and production.</p>
 
 <h3 id="kubernetes">Kubernetes</h3>
 
-<p>The rise of containerization and orchestration is not stopping, please read the <a href="/www.kimai.org/documentation/kubernetes.html">Kubernetes and Helm chart</a> chapter to find out more.</p>
+<p>The rise of containerization and orchestration is not stopping, please read the <a href="/documentation/kubernetes.html">Kubernetes and Helm chart</a> chapter to find out more.</p>
 
 <h3 id="shared-hosting">Shared hosting</h3>
 
-<p>Kimai is known to be compatible and can be installed on a wide range of <a href="/www.kimai.org/documentation/shared-hosting.html">shared hosting environments</a> like Uberspace, 1&amp;1, ionos, Domainfactiry, All-Inkl, Strato and others.</p>
+<p>Kimai is known to be compatible and can be installed on a wide range of <a href="/documentation/shared-hosting.html">shared hosting environments</a> like Uberspace, 1&amp;1, ionos, Domainfactiry, All-Inkl, Strato and others.</p>
 
 <h3 id="1-click-installations">1-click installations</h3>
 
-<p>Many platforms adopted Kimai to be compatible with their <a href="/www.kimai.org/documentation/hosting-1-click.html">1-click installation systems</a>, like YunoHost, Softaculous, Cloudron, VestaCP, ISPConfig 3 and Cloudjiffy.</p>
+<p>Many platforms adopted Kimai to be compatible with their <a href="/documentation/hosting-1-click.html">1-click installation systems</a>, like YunoHost, Softaculous, Cloudron, VestaCP, ISPConfig 3 and Cloudjiffy.</p>
 
 <h3 id="plesk">Plesk</h3>
 
-<p>Hosting Kimai on Plesk is described in the <a href="/www.kimai.org/documentation/shared-hosting.html">shared hosting article</a>.</p>
+<p>Hosting Kimai on Plesk is described in the <a href="/documentation/shared-hosting.html">shared hosting article</a>.</p>
 
 <h3 id="ftp-installation">FTP installation</h3>
 
@@ -693,7 +693,7 @@ For more details, see the <a href="/www.kimai.org/documentation/webserver-config
 If you don’t have the technical background for managing a server yourself and need to rely on a shared hosting package,
 it is better to stop hosting business critical software yourself!
 If you thought about switching to a managed server before (they are affordable these days)
-you can contact me, <a href="/www.kimai.org/store/installation-support.html">I offer paid setup support</a>.
+you can contact me, <a href="/store/installation-support.html">I offer paid setup support</a>.
 
 </div>
 
@@ -793,7 +793,7 @@ log <code class="language-plaintext highlighter-rouge">var/log/prod.log</code> i
   <li>Make sure not to reload Kimai as <code class="language-plaintext highlighter-rouge">root</code> (e.g. via <code class="language-plaintext highlighter-rouge">bin/console kimai:reload
 --env=prod</code>). The application will create folders and files. If <em>root</em> started
 the process you most likely will have permission errors if the web-server is
-not started as <code class="language-plaintext highlighter-rouge">root</code> as well. <a href="/www.kimai.org/documentation/cache.html">Fix file permissions</a>!</li>
+not started as <code class="language-plaintext highlighter-rouge">root</code> as well. <a href="/documentation/cache.html">Fix file permissions</a>!</li>
 </ul>
 
 <h3 id="still-doesnt-work">Still doesn’t work?</h3>

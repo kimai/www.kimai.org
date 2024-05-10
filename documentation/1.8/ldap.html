@@ -14,7 +14,7 @@
     <title>LDAP – Kimai</title>
     
         <meta name="description" content="How to use an LDAP directory server with Kimai">
-    <link type="application/atom+xml" rel="alternate" href="/www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
     <meta property="og:locale" content="en">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Kimai Time-Tracking">
@@ -571,7 +571,7 @@ updated on each following login.</p>
 <h3 id="activate-ldap-authentication">Activate LDAP authentication</h3>
 
 <p>You activate the LDAP authentication by adding the following code to the end of your 
-<a href="/www.kimai.org/documentation/local-yaml.html">local.yaml</a>:</p>
+<a href="/documentation/local-yaml.html">local.yaml</a>:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">security</span><span class="pi">:</span>
     <span class="na">providers</span><span class="pi">:</span>
@@ -583,13 +583,13 @@ updated on each following login.</p>
             <span class="na">kimai_ldap</span><span class="pi">:</span> <span class="s">~</span>
 </code></pre></div></div>
 
-<p>After that, you need to adjust the LDAP config (see below) and at the end <a href="/www.kimai.org/documentation/cache.html">re-build the cache</a>.</p>
+<p>After that, you need to adjust the LDAP config (see below) and at the end <a href="/documentation/cache.html">re-build the cache</a>.</p>
 
 <p>You can deactivate it the other way around, delete or comment the lines above and clear the cache.</p>
 
 <h3 id="configuration">Configuration</h3>
 
-<p>If you want to activate LDAP authentication, you have to adjust your <a href="/www.kimai.org/documentation/local-yaml.html">local.yaml</a>.</p>
+<p>If you want to activate LDAP authentication, you have to adjust your <a href="/documentation/local-yaml.html">local.yaml</a>.</p>
 
 <p>This is the full available configuration, most of the values are optional and their default values were chosen for maximum compatibility with OpenLDAP setup:</p>
 
@@ -747,7 +747,7 @@ updated on each following login.</p>
 <p>Kimai uses the Laminas Framework LDAP module and uses the configured <code class="language-plaintext highlighter-rouge">connection</code> parameters without modification. 
 Find out more about the settings in the <a href="https://docs.laminas.dev/laminas-ldap/api/">detailed documentation</a>.</p>
 
-<p>Remember to <a href="/www.kimai.org/documentation/cache.html">re-build the cache</a> for changes to take effect.</p>
+<p>Remember to <a href="/documentation/cache.html">re-build the cache</a> for changes to take effect.</p>
 
 <h2 id="user-synchronization">User synchronization</h2>
 
@@ -782,7 +782,7 @@ no fallback mechanism implemented, if your LDAP is not available (currently only
 
 <p>To prevent that problem:</p>
 <ul>
-  <li>disable the “<a href="/www.kimai.org/documentation/users.html">Password reset</a>” function
+  <li>disable the “<a href="/documentation/users.html">Password reset</a>” function
     <div class="language-yaml highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code><span class="na">kimai</span><span class="pi">:</span>
   <span class="na">user</span><span class="pi">:</span>
@@ -802,7 +802,7 @@ no fallback mechanism implemented, if your LDAP is not available (currently only
   </li>
 </ul>
 
-<p>Read more about <code class="language-plaintext highlighter-rouge">password_own_profile</code> and <code class="language-plaintext highlighter-rouge">password_other_profile</code> <a href="/www.kimai.org/documentation/permissions.html">permissions</a>.</p>
+<p>Read more about <code class="language-plaintext highlighter-rouge">password_own_profile</code> and <code class="language-plaintext highlighter-rouge">password_other_profile</code> <a href="/documentation/permissions.html">permissions</a>.</p>
 
 <p>If you don’t adjust your configuration, you have to:</p>
 <ul>
@@ -845,7 +845,7 @@ Its unlikely that you will need those, but they also exist: <code class="languag
 
 <h3 id="groups--roles-import">Groups / Roles import</h3>
 
-<p>Kimai can use your LDAP groups and map them to <a href="/www.kimai.org/documentation/users.html">user roles</a>.
+<p>Kimai can use your LDAP groups and map them to <a href="/documentation/users.html">user roles</a>.
 If configured, it will execute another <code class="language-plaintext highlighter-rouge">search</code> against your LDAP after authentication and importing the user attributes.</p>
 
 <div class="alert alert-warning" role="alert">
@@ -876,7 +876,7 @@ group names from the result-sets attribute <code class="language-plaintext highl
 </li>
 </ul>
 
-<p>These converted names will validated and <a href="/www.kimai.org/documentation/users.html">only existing roles</a> will pass to the user profile.</p>
+<p>These converted names will validated and <a href="/documentation/users.html">only existing roles</a> will pass to the user profile.</p>
 
 <h2 id="known-limitations">Known limitations</h2>
 

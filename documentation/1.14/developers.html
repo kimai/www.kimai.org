@@ -14,7 +14,7 @@
     <title>Developers – Kimai</title>
     
         <meta name="description" content="Developer documentation - run, develop, extend and build for Kimai">
-    <link type="application/atom+xml" rel="alternate" href="/www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
     <meta property="og:locale" content="en">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Kimai Time-Tracking">
@@ -514,7 +514,7 @@ bin/console doctrine:schema:create
 
 <h2 id="localyaml">local.yaml</h2>
 
-<p>Beware: if you use the <a href="/www.kimai.org/documentation/local-yaml.html">local.yaml</a> then don’t put it 
+<p>Beware: if you use the <a href="/documentation/local-yaml.html">local.yaml</a> then don’t put it 
 in <code class="language-plaintext highlighter-rouge">config/packages/</code> as all configs in there are used when running the PHPUnit testsuite.</p>
 
 <p>The (integration) tests are written to work with the default configuration of Kimai and locally changed configs might unexpectedly break the tests.</p>
@@ -564,7 +564,7 @@ composer kimai:tests-integration
 
 <h2 id="translations">Translations</h2>
 
-<p>Read more about <a href="/www.kimai.org/documentation/translations.html">languages and translations</a>.</p>
+<p>Read more about <a href="/documentation/translations.html">languages and translations</a>.</p>
 
 <h2 id="extending-the-navigation-bar">Extending the navigation bar</h2>
 
@@ -689,7 +689,7 @@ composer kimai:tests-integration
 
 <h3 id="adding-documents-for-invoice-rendering">Adding documents for invoice rendering</h3>
 
-<p>In the config <code class="language-plaintext highlighter-rouge">kimai.invoice.documents</code>, you can add a list of directories with the locations of your invoice document templates (<a href="/www.kimai.org/documentation/invoices.html">read more</a>).</p>
+<p>In the config <code class="language-plaintext highlighter-rouge">kimai.invoice.documents</code>, you can add a list of directories with the locations of your invoice document templates (<a href="/documentation/invoices.html">read more</a>).</p>
 
 <h3 id="adding-invoice-calculator">Adding invoice calculator</h3>
 
@@ -802,11 +802,11 @@ as <code class="language-plaintext highlighter-rouge">timesheet.calculator</code
 
 <h2 id="adding-custom-fields-meta-fields">Adding custom fields (meta fields)</h2>
 
-<p>See <a href="/www.kimai.org/documentation/meta-fields.html">meta fields</a> documentation.</p>
+<p>See <a href="/documentation/meta-fields.html">meta fields</a> documentation.</p>
 
 <h2 id="adding-userpreference">Adding UserPreference</h2>
 
-<p>See <a href="/www.kimai.org/documentation/user-preferences.html">user preferences</a> documentation.</p>
+<p>See <a href="/documentation/user-preferences.html">user preferences</a> documentation.</p>
 
 <h2 id="adding-custom-meta-tags-stylesheets-or-javascript">Adding custom meta tags, stylesheets or javascript</h2>
 
@@ -840,9 +840,9 @@ as <code class="language-plaintext highlighter-rouge">timesheet.calculator</code
 <h2 id="adding-permissions">Adding permissions</h2>
 
 <p>New plugins usually ship with a set of own permissions. You should always assign these permissions at least to the <code class="language-plaintext highlighter-rouge">ROLE_SUPER_ADMIN</code>.
-By doing so, you register the permission in the system and they become available in the <a href="/www.kimai.org/documentation/permissions.html">permission admin screen</a>.</p>
+By doing so, you register the permission in the system and they become available in the <a href="/documentation/permissions.html">permission admin screen</a>.</p>
 
-<p>You register new permission through your <a href="/www.kimai.org/documentation/plugins.html">plugins extension class</a>, by using the <code class="language-plaintext highlighter-rouge">PrependExtensionInterface</code>:</p>
+<p>You register new permission through your <a href="/documentation/plugins.html">plugins extension class</a>, by using the <code class="language-plaintext highlighter-rouge">PrependExtensionInterface</code>:</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">namespace</span> <span class="nn">KimaiPlugin\YourBundle\DependencyInjection</span><span class="p">;</span>
 
@@ -869,7 +869,7 @@ By doing so, you register the permission in the system and they become available
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>If you don’t register your permissions, your users will not be able to change them <a href="/www.kimai.org/documentation/permissions.html">via the UI</a>.</p>
+<p>If you don’t register your permissions, your users will not be able to change them <a href="/documentation/permissions.html">via the UI</a>.</p>
 
 <h2 id="adding-system-configuration">Adding system configuration</h2>
 

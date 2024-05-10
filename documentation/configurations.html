@@ -14,7 +14,7 @@
     <title>Settings – Kimai</title>
     
         <meta name="description" content="Kimai system configurations">
-    <link type="application/atom+xml" rel="alternate" href="/www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
     <meta property="og:locale" content="en">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Kimai Time-Tracking">
@@ -624,7 +624,7 @@
                 
                 <div id="documentation-content">
                     <p>Many features of your Kimai installation can be changed by editing the <code class="language-plaintext highlighter-rouge">System &gt; Settings</code>. This screen is only visible to 
-users with the permission <code class="language-plaintext highlighter-rouge">system_configuration</code> (by default <a href="/www.kimai.org/documentation/permissions.html">ROLE_SUPER_ADMIN</a>).</p>
+users with the permission <code class="language-plaintext highlighter-rouge">system_configuration</code> (by default <a href="/documentation/permissions.html">ROLE_SUPER_ADMIN</a>).</p>
 
 <h2 id="timesheet">Timesheet</h2>
 
@@ -661,7 +661,7 @@ It removes the <code class="language-plaintext highlighter-rouge">date</code>, <
 <p>The <code class="language-plaintext highlighter-rouge">date</code>, <code class="language-plaintext highlighter-rouge">begin</code> and <code class="language-plaintext highlighter-rouge">end</code> fields will be removed, only the <code class="language-plaintext highlighter-rouge">duration</code> can be edited. 
 As <code class="language-plaintext highlighter-rouge">start</code> time the <code class="language-plaintext highlighter-rouge">Default start-time</code> configuration is used (which is configured to <code class="language-plaintext highlighter-rouge">now</code> by default).</p>
 
-<p>Users with the <code class="language-plaintext highlighter-rouge">edit_other_timesheet</code> <a href="/www.kimai.org/documentation/permissions.html">permission</a> can still see the
+<p>Users with the <code class="language-plaintext highlighter-rouge">edit_other_timesheet</code> <a href="/documentation/permissions.html">permission</a> can still see the
 <code class="language-plaintext highlighter-rouge">start</code> and <code class="language-plaintext highlighter-rouge">end</code> time in the <code class="language-plaintext highlighter-rouge">Admin &gt; Timesheets</code> screen. If your country has work regulations that should limit access to this data,
 make sure to remove this permission for persons without special access regulations (e.g. your HR department).</p>
 
@@ -747,14 +747,14 @@ users can edit their records until the fifth day of the month (because invoices 
 <h2 id="invoices">Invoices</h2>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">Invoice number format</code> - read more at <a href="/www.kimai.org/documentation/invoices.html">invoices</a></li>
+  <li><code class="language-plaintext highlighter-rouge">Invoice number format</code> - read more at <a href="/documentation/invoices.html">invoices</a></li>
   <li><code class="language-plaintext highlighter-rouge">Simple search</code> - displays a shorter search form, removing some fields which are used less often</li>
 </ul>
 
 <h2 id="authentication">Authentication</h2>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">Login form</code> - de-/activates the login form. This setting is only available if <a href="/www.kimai.org/documentation/saml.html">SAML</a> is activated.</li>
+  <li><code class="language-plaintext highlighter-rouge">Login form</code> - de-/activates the login form. This setting is only available if <a href="/documentation/saml.html">SAML</a> is activated.</li>
   <li><code class="language-plaintext highlighter-rouge">User registration</code> - de-/activates the self-registration. Do NOT activate this, if your Kimai instance is public accessible.</li>
   <li><code class="language-plaintext highlighter-rouge">Forgot password</code> - de-/activates the password reset function, that sends an email with a “reset my password” link</li>
   <li><code class="language-plaintext highlighter-rouge">Forgotten password - seconds before a user can request the next e-mail</code> - if a password-reset email was sent, you should not allow to request another one too soon (for security reasons)</li>

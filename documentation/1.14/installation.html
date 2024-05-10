@@ -14,7 +14,7 @@
     <title>Installation – Kimai</title>
     
         <meta name="description" content="How to install Kimai on your server with git, composer and SSH or FTP">
-    <link type="application/atom+xml" rel="alternate" href="/www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
     <meta property="og:locale" content="en">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Kimai Time-Tracking">
@@ -626,15 +626,15 @@ chmod -R g+rw var/</code></pre></figure>
 <ul>
   <li>via command: <code class="language-plaintext highlighter-rouge">bin/console kimai:create-user username admin@example.com ROLE_SUPER_ADMIN</code></li>
   <li>via login screen: you can register a user, the first one will be promoted to the role <code class="language-plaintext highlighter-rouge">ROLE_SUPER_ADMIN</code></li>
-  <li>you can configure <a href="/www.kimai.org/documentation/ldap.html">LDAP</a> or <a href="/www.kimai.org/documentation/saml.html">SAML</a> for authentication</li>
+  <li>you can configure <a href="/documentation/ldap.html">LDAP</a> or <a href="/documentation/saml.html">SAML</a> for authentication</li>
 </ul>
 
-<p>If you are going to <a href="/www.kimai.org/documentation/migration-v1.html">import data from Kimai v1</a> choose a username &amp; email that was not used in v1.</p>
+<p>If you are going to <a href="/documentation/migration-v1.html">import data from Kimai v1</a> choose a username &amp; email that was not used in v1.</p>
 
 <h3 id="webserver">Webserver</h3>
 
 <p>Configure your web server (like Nginx or Apache) to point its DocumentRoot at the <code class="language-plaintext highlighter-rouge">public/</code> directory.
-For more details, see the <a href="/www.kimai.org/documentation/webserver-configuration.html">Webserver How-To</a>.</p>
+For more details, see the <a href="/documentation/webserver-configuration.html">Webserver How-To</a>.</p>
 
 <div class="alert d-flex alert-success" role="alert">
     <i class="bx bx-far fa-smile-beam lead me-3"></i>
@@ -643,11 +643,11 @@ For more details, see the <a href="/www.kimai.org/documentation/webserver-config
     </div>
 </div>
 
-<p>Oh … wait! Before you leave, please read the <a href="/www.kimai.org/documentation/initial-setup.html">initial setup guide</a>.</p>
+<p>Oh … wait! Before you leave, please read the <a href="/documentation/initial-setup.html">initial setup guide</a>.</p>
 
 <h2 id="docker">Docker</h2>
 
-<p>There is a dedicated article about <a href="/www.kimai.org/documentation/docker.html">Docker setups</a> for Kimai, suitable for development and production.</p>
+<p>There is a dedicated article about <a href="/documentation/docker.html">Docker setups</a> for Kimai, suitable for development and production.</p>
 
 <h2 id="hosting-and-1-click-installations">Hosting and 1-click installations</h2>
 
@@ -677,7 +677,7 @@ Read <a href="https://github.com/kimai/kimai/issues/743">this issue</a> if you h
 
 <p>How to install Kimai at shared hosting companies. Please share our insights if you have managed to get it up and running with another company!</p>
 
-<p>If you can’t find the correct version, ask your hoster! Or <a href="/www.kimai.org/store/installation-support.html">let us help you</a>.</p>
+<p>If you can’t find the correct version, ask your hoster! Or <a href="/store/installation-support.html">let us help you</a>.</p>
 
 <h3 id="ionos--11">Ionos / 1&amp;1</h3>
 
@@ -879,7 +879,7 @@ log <code class="language-plaintext highlighter-rouge">var/log/prod.log</code> i
   <li>Make sure not to reload Kimai as <code class="language-plaintext highlighter-rouge">root</code> (e.g. via <code class="language-plaintext highlighter-rouge">bin/console kimai:reload
 --env=prod</code>). The application will create folders and files. If <em>root</em> started
 the process you most likely will have permission errors if the web-server is
-not started as <code class="language-plaintext highlighter-rouge">root</code> as well. <a href="/www.kimai.org/documentation/cache.html">Fix file permissions</a>!</li>
+not started as <code class="language-plaintext highlighter-rouge">root</code> as well. <a href="/documentation/cache.html">Fix file permissions</a>!</li>
 </ul>
 
 <h4 id="still-doesnt-work">Still doesn’t work?</h4>

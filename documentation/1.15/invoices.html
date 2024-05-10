@@ -14,7 +14,7 @@
     <title>Invoices – Kimai</title>
     
         <meta name="description" content="Create invoices directly within Kimai from timesheet data in several formats">
-    <link type="application/atom+xml" rel="alternate" href="/www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
     <meta property="og:locale" content="en">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Kimai Time-Tracking">
@@ -759,7 +759,7 @@ These records cannot be edited any longer by regular users and are excluded by d
 
 <p>You need to tick the checkbox before saving (Kimai 1.9) / printing (Kimai 1.8 and below) the invoice, to automatically set the export state on all filtered timesheet records.</p>
 
-<p>For further information read the <a href="/www.kimai.org/documentation/timesheet.html">timesheet documentation</a>.</p>
+<p>For further information read the <a href="/documentation/timesheet.html">timesheet documentation</a>.</p>
 
 <h2 id="billable-items-only">Billable items only</h2>
 
@@ -767,7 +767,7 @@ These records cannot be edited any longer by regular users and are excluded by d
 
 <p>By default, every timesheet records is billable, but users can set the billable flag on individual timesheets (since version 1.14).</p>
 
-<p><a href="/www.kimai.org/store/expenses-bundle.html">Expense items</a> have a configurable billable flag per item and only the ones marked as billable (refundable) will be included.</p>
+<p><a href="/store/expenses-bundle.html">Expense items</a> have a configurable billable flag per item and only the ones marked as billable (refundable) will be included.</p>
 
 <hr>
 
@@ -858,7 +858,7 @@ These records cannot be edited any longer by regular users and are excluded by d
   <li>You can use every document name only once: so having <code class="language-plaintext highlighter-rouge">kimai.html.twig</code> and <code class="language-plaintext highlighter-rouge">kimai.docx</code> will lead to unpredictable results (the first file to be found takes precedence)</li>
   <li>Kimai looks for templates in <code class="language-plaintext highlighter-rouge">var/invoices/</code> first, so you can overwrite default templates</li>
   <li>You should store your templates in <code class="language-plaintext highlighter-rouge">var/invoices/</code>, as this directory is not shipped with Kimai and not touched during updates</li>
-  <li>You can <a href="/www.kimai.org/documentation/local-yaml.html">configure different search directories</a> through the config key <code class="language-plaintext highlighter-rouge">kimai.invoice.documents</code> if you want to add additional template source directories</li>
+  <li>You can <a href="/documentation/local-yaml.html">configure different search directories</a> through the config key <code class="language-plaintext highlighter-rouge">kimai.invoice.documents</code> if you want to add additional template source directories</li>
 </ul>
 
 <div class="alert d-flex alert-warning" role="alert">
@@ -868,7 +868,7 @@ These records cannot be edited any longer by regular users and are excluded by d
     </div>
 </div>
 
-<p>After you changed an invoice template, you have to <a href="/www.kimai.org/documentation/cache.html">clear the cache</a> to see the results.</p>
+<p>After you changed an invoice template, you have to <a href="/documentation/cache.html">clear the cache</a> to see the results.</p>
 
 <p>You can have a look at <a href="https://github.com/Keleo/kimai2-invoice-templates">https://github.com/Keleo/kimai2-invoice-templates</a> to get some code inspirations.</p>
 
@@ -1137,7 +1137,7 @@ Twig templates are rendered actively, it is up to the developer to calculate wha
     </tr>
     <tr>
       <td>${user.meta.X}</td>
-      <td>The current users <a href="/www.kimai.org/documentation/user-preferences.html">preference</a> named <code class="language-plaintext highlighter-rouge">X</code>
+      <td>The current users <a href="/documentation/user-preferences.html">preference</a> named <code class="language-plaintext highlighter-rouge">X</code>
 </td>
     </tr>
   </tbody>
@@ -1313,7 +1313,7 @@ Twig templates are rendered actively, it is up to the developer to calculate wha
     </tr>
     <tr>
       <td>${entry.meta.X}</td>
-      <td>The <a href="/www.kimai.org/documentation/meta-fields.html">meta field</a> named <code class="language-plaintext highlighter-rouge">X</code> (if visible)</td>
+      <td>The <a href="/documentation/meta-fields.html">meta field</a> named <code class="language-plaintext highlighter-rouge">X</code> (if visible)</td>
       <td> </td>
     </tr>
     <tr>
@@ -1397,7 +1397,7 @@ Twig templates are rendered actively, it is up to the developer to calculate wha
     </tr>
     <tr>
       <td>${customer.meta.x}</td>
-      <td>The customer <a href="/www.kimai.org/documentation/meta-fields.html">meta field</a> named <code class="language-plaintext highlighter-rouge">X</code>. The internal name <code class="language-plaintext highlighter-rouge">X</code> needs to be used in lowercase letters, eg. <code class="language-plaintext highlighter-rouge">FooBar</code> will be available as <code class="language-plaintext highlighter-rouge">${customer.meta.foobar}</code>. Only available if the field is visible.</td>
+      <td>The customer <a href="/documentation/meta-fields.html">meta field</a> named <code class="language-plaintext highlighter-rouge">X</code>. The internal name <code class="language-plaintext highlighter-rouge">X</code> needs to be used in lowercase letters, eg. <code class="language-plaintext highlighter-rouge">FooBar</code> will be available as <code class="language-plaintext highlighter-rouge">${customer.meta.foobar}</code>. Only available if the field is visible.</td>
     </tr>
   </tbody>
 </table>
@@ -1468,7 +1468,7 @@ Twig templates are rendered actively, it is up to the developer to calculate wha
     </tr>
     <tr>
       <td>${project.meta.x}</td>
-      <td>The project <a href="/www.kimai.org/documentation/meta-fields.html">meta field</a> named <code class="language-plaintext highlighter-rouge">X</code>. The internal name <code class="language-plaintext highlighter-rouge">X</code> needs to be used in lowercase letters, eg. <code class="language-plaintext highlighter-rouge">FooBar</code> will be available as <code class="language-plaintext highlighter-rouge">${project.meta.foobar}</code>. Only available if the field is visible.</td>
+      <td>The project <a href="/documentation/meta-fields.html">meta field</a> named <code class="language-plaintext highlighter-rouge">X</code>. The internal name <code class="language-plaintext highlighter-rouge">X</code> needs to be used in lowercase letters, eg. <code class="language-plaintext highlighter-rouge">FooBar</code> will be available as <code class="language-plaintext highlighter-rouge">${project.meta.foobar}</code>. Only available if the field is visible.</td>
     </tr>
   </tbody>
 </table>
@@ -1502,7 +1502,7 @@ The order is not guaranteed, so it is not recommended to rely on those variables
     </tr>
     <tr>
       <td>${activity.meta.x}</td>
-      <td>The activity <a href="/www.kimai.org/documentation/meta-fields.html">meta field</a> named <code class="language-plaintext highlighter-rouge">X</code>. The internal name <code class="language-plaintext highlighter-rouge">X</code> needs to be used in lowercase letters, eg. <code class="language-plaintext highlighter-rouge">FooBar</code> will be available as <code class="language-plaintext highlighter-rouge">${activity.meta.foobar}</code>. Only available if the field is visible.</td>
+      <td>The activity <a href="/documentation/meta-fields.html">meta field</a> named <code class="language-plaintext highlighter-rouge">X</code>. The internal name <code class="language-plaintext highlighter-rouge">X</code> needs to be used in lowercase letters, eg. <code class="language-plaintext highlighter-rouge">FooBar</code> will be available as <code class="language-plaintext highlighter-rouge">${activity.meta.foobar}</code>. Only available if the field is visible.</td>
     </tr>
   </tbody>
 </table>

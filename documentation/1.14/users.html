@@ -14,7 +14,7 @@
     <title>Users – Kimai</title>
     
         <meta name="description" content="User, roles and the authentication, registration and security system in Kimai">
-    <link type="application/atom+xml" rel="alternate" href="/www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
     <meta property="og:locale" content="en">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Kimai Time-Tracking">
@@ -642,11 +642,11 @@ You are viewing an older version of this documentation page. A newer version is 
 
 <h2 id="permissions">Permissions</h2>
 
-<p>The permission system is configurable through user roles. Find further information in the <a href="/www.kimai.org/documentation/permissions.html">permissions</a> chapter.</p>
+<p>The permission system is configurable through user roles. Find further information in the <a href="/documentation/permissions.html">permissions</a> chapter.</p>
 
 <h2 id="teams">Teams</h2>
 
-<p>A user can be part of a team, which can limit/extend the visibility of data. See the <a href="/www.kimai.org/documentation/teams.html">team documentation</a> to find out more.</p>
+<p>A user can be part of a team, which can limit/extend the visibility of data. See the <a href="/documentation/teams.html">team documentation</a> to find out more.</p>
 
 <h2 id="avatars">Avatars</h2>
 
@@ -676,7 +676,7 @@ You are viewing an older version of this documentation page. A newer version is 
     </tr>
     <tr>
       <td>ROLE_TEAMLEAD</td>
-      <td>Manages <a href="/www.kimai.org/documentation/teams.html">teams</a> with permissions for invoices and access to all <strong>team</strong> timesheets</td>
+      <td>Manages <a href="/documentation/teams.html">teams</a> with permissions for invoices and access to all <strong>team</strong> timesheets</td>
     </tr>
     <tr>
       <td>ROLE_ADMIN</td>
@@ -708,7 +708,7 @@ e.g. <a href="https://demo.kimai.org/en/admin/permissions">https://demo.kimai.or
     Allowed character are: `A-Z` and `_`. If you use different character, you might experience strange bugs.
 </div>
 
-<p>Every user with the <a href="/www.kimai.org/documentation/permissions.html">permission</a> <code class="language-plaintext highlighter-rouge">role_permissions</code> can create new user roles 
+<p>Every user with the <a href="/documentation/permissions.html">permission</a> <code class="language-plaintext highlighter-rouge">role_permissions</code> can create new user roles 
 through the user administration. Navigate to the user role permission screen and check the pages action.</p>
 
 <p>There is a button that will open a new modal, to enter a role name. This new role will show up in the table after saving.</p>
@@ -736,7 +736,7 @@ If you created new roles through <code class="language-plaintext highlighter-rou
   <li><code class="language-plaintext highlighter-rouge">email</code></li>
 </ul>
 
-<p>Additionally you can filter for <a href="/www.kimai.org/documentation/user-preferences.html">user preferences</a> by using a search phrase like <code class="language-plaintext highlighter-rouge">location:homeoffice</code>.
+<p>Additionally you can filter for <a href="/documentation/user-preferences.html">user preferences</a> by using a search phrase like <code class="language-plaintext highlighter-rouge">location:homeoffice</code>.
 This would find all users with the custom field <code class="language-plaintext highlighter-rouge">location</code> matching the term <code class="language-plaintext highlighter-rouge">homeoffice</code>.</p>
 
 <p>The search terms will be found within the full value, so searching for <code class="language-plaintext highlighter-rouge">office</code> would find:</p>
@@ -758,7 +758,7 @@ This would find all users with the custom field <code class="language-plaintext 
 
 <p>User registration with instant approval is activated by default, so users can register and will be able to login and start time-tracking instantly.</p>
 
-<p>If you want your new users to use <a href="/www.kimai.org/documentation/emails.html">email verification</a> add this to your <code class="language-plaintext highlighter-rouge">local.yaml</code>:</p>
+<p>If you want your new users to use <a href="/documentation/emails.html">email verification</a> add this to your <code class="language-plaintext highlighter-rouge">local.yaml</code>:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">fos_user</span><span class="pi">:</span>
     <span class="na">registration</span><span class="pi">:</span>
@@ -774,7 +774,7 @@ This would find all users with the custom field <code class="language-plaintext 
 
 <h2 id="password-reset">Password reset</h2>
 
-<p>The reset password function is enabled by default, but you need to activate <a href="/www.kimai.org/documentation/emails.html">email</a> support if you want to use it.</p>
+<p>The reset password function is enabled by default, but you need to activate <a href="/documentation/emails.html">email</a> support if you want to use it.</p>
 
 <p>If you want to disable the password reset, add this your <code class="language-plaintext highlighter-rouge">local.yaml</code>:</p>
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">kimai</span><span class="pi">:</span>
@@ -824,7 +824,7 @@ environments.</p>
 you can either adjust the settings for PHP directly (<a href="https://www.php.net/manual/en/session.configuration.php">see PHP docs</a>) 
 or you can explicitly set it for Kimai.</p>
 
-<p>You need to add the following settings to your <a href="/www.kimai.org/documentation/local-yaml.html">local.yaml</a>:</p>
+<p>You need to add the following settings to your <a href="/documentation/local-yaml.html">local.yaml</a>:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">framework</span><span class="pi">:</span>
     <span class="na">session</span><span class="pi">:</span>

@@ -14,7 +14,7 @@
     <title>Dashboard – Kimai</title>
     
         <meta name="description" content="Dashboard widgets and statistic information">
-    <link type="application/atom+xml" rel="alternate" href="/www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
     <meta property="og:locale" content="en">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Kimai Time-Tracking">
@@ -657,7 +657,7 @@ The ones shipped by default can be changed, re-ordered or completely removed.</p
 <ul>
   <li><code class="language-plaintext highlighter-rouge">title</code> - the title of a section, if omitted no title will be shown (default: <code class="language-plaintext highlighter-rouge">null</code>)</li>
   <li><code class="language-plaintext highlighter-rouge">order</code> - allows to define the order of the section</li>
-  <li><code class="language-plaintext highlighter-rouge">permission</code> - the name of a <a href="/www.kimai.org/documentation/permissions.html">permission</a> or <a href="/www.kimai.org/documentation/users.html">user role</a>, defining who can see the widgets in that section</li>
+  <li><code class="language-plaintext highlighter-rouge">permission</code> - the name of a <a href="/documentation/permissions.html">permission</a> or <a href="/documentation/users.html">user role</a>, defining who can see the widgets in that section</li>
   <li><code class="language-plaintext highlighter-rouge">widgets</code> - an array of widget names</li>
 </ul>
 
@@ -699,7 +699,7 @@ If you don’t like the default sections you can remove them by overwriting thei
             <span class="na">widgets</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">userDurationWeek</span><span class="pi">,</span> <span class="nv">userDurationMonth</span><span class="pi">,</span> <span class="nv">userDurationYear</span><span class="pi">]</span>
 </code></pre></div></div>
 
-<p>Want to hide some rows or show them to a different group of users? Easy! Change the <a href="/www.kimai.org/documentation/permissions.html">permissions</a>:</p>
+<p>Want to hide some rows or show them to a different group of users? Easy! Change the <a href="/documentation/permissions.html">permissions</a>:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">kimai</span><span class="pi">:</span>
     <span class="na">dashboard</span><span class="pi">:</span>
@@ -746,8 +746,8 @@ Lower numbers will be rendered before higher numbers.</p>
   <li><code class="language-plaintext highlighter-rouge">user</code> - whether the query is executed for the current user or for all users. possible values are <code class="language-plaintext highlighter-rouge">true</code> and <code class="language-plaintext highlighter-rouge">false</code> (default: <code class="language-plaintext highlighter-rouge">false</code> - all data is used to calculate the result)</li>
   <li><code class="language-plaintext highlighter-rouge">begin</code> - setting the start date for the query, formatted with the <a href="http://php.net/manual/en/datetime.formats.relative.php">PHP DateTime syntax</a> (default: <code class="language-plaintext highlighter-rouge">null</code> - a query matching any start date)</li>
   <li><code class="language-plaintext highlighter-rouge">end</code> - setting the end date for the query, formatted with the <a href="http://php.net/manual/en/datetime.formats.relative.php">PHP DateTime syntax</a> (default: <code class="language-plaintext highlighter-rouge">null</code> - a query matching any end date)</li>
-  <li><code class="language-plaintext highlighter-rouge">color</code> - a color name, see all possible names in <a href="/www.kimai.org/documentation/theme.html">theme settings</a> (default: ``)</li>
-  <li><code class="language-plaintext highlighter-rouge">icon</code> - an icon alias from <a href="/www.kimai.org/documentation/theme.html">theme settings</a> or any other icon from <a href="https://fontawesome.com/icons">Font Awesome 5</a> (default: <code class="language-plaintext highlighter-rouge">null</code> - no icon)</li>
+  <li><code class="language-plaintext highlighter-rouge">color</code> - a color name, see all possible names in <a href="/documentation/theme.html">theme settings</a> (default: ``)</li>
+  <li><code class="language-plaintext highlighter-rouge">icon</code> - an icon alias from <a href="/documentation/theme.html">theme settings</a> or any other icon from <a href="https://fontawesome.com/icons">Font Awesome 5</a> (default: <code class="language-plaintext highlighter-rouge">null</code> - no icon)</li>
 </ul>
 
 
