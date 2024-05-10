@@ -58,7 +58,7 @@ layout: base
                 </ul>
 
                 <p class="d-flex justify-content-end pt-4">
-                    <a href="{% link _pages/blog-tags-{{ tag | slugify  }}.html %}" class="btn btn-outline-primary ms-4">
+                    <a href="{% link _blog_tags/{{ tag | slugify  }}.html %}" class="btn btn-outline-primary ms-4">
                         {{ site.data[page.lang].translation.blog.archive-link| replace: "%topic%", tag }}
                         <i class="bx bx-right-arrow-alt ms-1 fs-lg"></i>
                     </a>
