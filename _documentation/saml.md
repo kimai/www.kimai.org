@@ -35,6 +35,12 @@ kimai:
                 - { saml: Admin, kimai: ROLE_SUPER_ADMIN }
                 - { saml: Manager, kimai: ROLE_ADMIN }
                 - { saml: Teamlead, kimai: ROLE_TEAMLEAD }
+        teams:
+            resetOnLogin: true
+            attribute: groups
+            mapping:
+                # Insert your team-mapping there. You can find group IDs in the URL of your brower when you edit a group on kimai
+                - { saml: Example group, kimai: 1, leader: false }
         connection:
             idp:
                 entityId: 'https://accounts.google.com/o/saml2?idpid=your-google-id'
@@ -109,6 +115,11 @@ kimai:
             mapping:
                 - { saml: Admin, kimai: ROLE_ADMIN }
                 - { saml: Manager, kimai: ROLE_TEAMLEAD }
+        teams:
+            resetOnLogin: true
+            attribute: groups
+            mapping:
+                - { saml: Example group, kimai: 1, leader: false }
 ```
 
 A brief description of the available fields:
@@ -120,10 +131,14 @@ A brief description of the available fields:
     - `resetOnLogin` (bool) if `true` all user roles will be reset upon login and synced with the SAML roles, if `false` you can configure user roles in Kimai and only the mapped ones will be forced when the user logs-in (other roles will stick with the user) - config exists since 1.22.0 
     - `attribute` (string) the SAML attribute whose values are used for syncing the groups
     - `mapping` (array) an array of role name mappings. The `saml` key is your SAML role name (here `Admin` and `Manager`) and the key `kimai` (here `ROLE_ADMIN` and `ROLE_TEAMLEAD`) is the role name in Kimai. Unmapped roles from the SAML message will be IGNORED even if they are existing in Kimai.
+- `teams` (array) settings related to the user teams syncing
+    - `resetOnLogin` (bool) if `true` all user teams will be reset upon login and synced with the SAML roles, if `false` you can configure user teams in Kimai and only the mapped ones will be forced when the user logs-in (other teams will stick with the user)
+    - `attribute` (string) the SAML attribute whose values are used for syncing the teams
+    - `mapping` (array) an array of role name mappings. The `saml` key is your SAML role name (here `Example group`), the key `kimai` (here 1) is the team id in Kimai and the key `leader` is a boolean specifing if the user should be leader of the team. You can find the team id in the URL of your browser when you edit a team. Unmapped teams from the SAML message will be IGNORED even if they are existing in Kimai.
 
 If you have troubles with your certificate you can [use this online tool](https://www.samltool.com/format_x509cert.php) to convert the X.509 cert into "string format".
 
-{% include alert.html type="info" alert="User data and roles are synchronized during each login." %}
+{% include alert.html type="info" alert="User data, roles and teams are synchronized during each login." %}
 {% include alert.html type="info" alert="Every user automatically owns the ROLE_USER role, you don't have to create a mapping for it." %}
 {% include alert.html type="warning" alert="Every user needs a username and email address, you cannot activate SAML without a mapping for the email. The username cannot be set from SAML attributes, but will always be taken from the SAML request." %}
 
