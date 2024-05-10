@@ -8,12 +8,7 @@ canonical: /documentation/synology.html
 This HowTo does not explain every step for the installation of Kimai on a Synology NAS with **DSM 6**, 
 but rather concentrates on the differences from the [default installation]({% link _documentation/installation.md %}).
 
-{% capture dsm70 %}
-ATTENTION: This manual seems to be outdated and not working with **DSM 7** anymore.
-Until this guide will be updated, there is [a PDF installation documentation in german](/static/downloads/Installationsanleitung_Synology_DSM7_Kimai.pdf), provided by the community user Wolfgang 👍🏻
-{% endcapture %}
-{% assign dsm70 = dsm70|markdownify %}
-{% include alert.html type="info" alert=dsm70 %}
+{% include alert.html type="info" alert="ATTENTION: This manual seems to be outdated and not working with DSM 7+ anymore. Please use Docker to host Kimai on Synology!" %}
 
 ## Important to know
 
