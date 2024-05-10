@@ -4,12 +4,11 @@ $realpath = realpath(__DIR__ . '/..');
 chdir($realpath);
 
 // once development is over, switch back to the list of all currently active languages
-$languages = ['cs', 'de', 'es', 'fr', 'he', 'hr', 'it', 'nl', 'pl', 'pt', 'pt_BR', 'ru', 'sv', 'uk', 'zh_Hans'];
+$languages = ['cs', 'de', 'es', 'fr', 'he', 'hr', 'it', 'nl', 'pl', 'pt', 'pt_BR', 'ru', 'sv', 'uk', 'zh_Hans', 'zh_Hant'];
 
 // currently working on:
 //$languages = ['fa'];
 //$languages = ['sk'];
-$languages = ['zh_Hans'];
 
 $multiLanguagePaths = [
     '_pages' => [
@@ -19,12 +18,14 @@ $multiLanguagePaths = [
         'overwrite' => false,
         'with_content' => true,
     ],
+    /*
     '_error' => [
         'skip' => [],
         'remove' => [],
         'overwrite' => true,
         'with_content' => false,
     ],
+    */
     '_store' => [
         'skip' => ['v1.md'],
         'permalink' => '/:language/store/:basename',
