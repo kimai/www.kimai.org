@@ -11,12 +11,7 @@ $languages = ['cs', 'de', 'es', 'fr', 'he', 'hr', 'it', 'nl', 'pl', 'pt', 'pt_BR
 
 $multiLanguagePaths = [
     '_pages' => [
-        'skip' => [
-            'blog-tags-apps-plugins.html',
-            'blog-tags-cloud.html',
-            'blog-tags-on-premise.html',
-            'blog-tags-version-1.html',
-        ],
+        'skip' => [],
         'permalink' => '/:language/:original',
         'remove' => ['redirect_from'],
         'overwrite' => false,
