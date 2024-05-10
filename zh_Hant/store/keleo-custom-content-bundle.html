@@ -1,0 +1,1022 @@
+<!doctype html>
+<html lang="zh_Hant" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index,follow">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+    <title>自訂內容 – Kimai</title>
+    
+        <meta name="description" content="建立自訂的 CSS 樣式表、JavaScript 手槁、全域警告訊息與能以 Markdown 格式撰寫公司最新消息的新頁面。">
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Kimai Time-Tracking" />
+    <meta property="og:locale" content="zh_Hant">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kimai Time-Tracking">
+    <meta property="og:description" content="建立自訂的 CSS 樣式表、JavaScript 手槁、全域警告訊息與能以 Markdown 格式撰寫公司最新消息的新頁面。">
+    <meta property="og:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kimai Time-Tracking">
+    <meta name="twitter:site" content="@kimai_org">
+    <meta name="twitter:description" content="建立自訂的 CSS 樣式表、JavaScript 手槁、全域警告訊息與能以 Markdown 格式撰寫公司最新消息的新頁面。">
+    <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.jpg">
+    <link rel="alternate" hreflang="cs" href="https://www.kimai.org/cs/store/keleo-custom-content-bundle.html">
+    <link rel="alternate" hreflang="de" href="https://www.kimai.org/de/store/keleo-custom-content-bundle.html">
+    <link rel="alternate" hreflang="es" href="https://www.kimai.org/es/store/keleo-custom-content-bundle.html">
+    <link rel="alternate" hreflang="fr" href="https://www.kimai.org/fr/store/keleo-custom-content-bundle.html">
+    <link rel="alternate" hreflang="he" href="https://www.kimai.org/he/store/keleo-custom-content-bundle.html">
+    <link rel="alternate" hreflang="hr" href="https://www.kimai.org/hr/store/keleo-custom-content-bundle.html">
+    <link rel="alternate" hreflang="it" href="https://www.kimai.org/it/store/keleo-custom-content-bundle.html">
+    <link rel="alternate" hreflang="en" href="https://www.kimai.org/store/custom-content-bundle.html">
+    <link rel="alternate" hreflang="nl" href="https://www.kimai.org/nl/store/keleo-custom-content-bundle.html">
+    <link rel="alternate" hreflang="pl" href="https://www.kimai.org/pl/store/keleo-custom-content-bundle.html">
+    <link rel="alternate" hreflang="pt" href="https://www.kimai.org/pt/store/keleo-custom-content-bundle.html">
+    <link rel="alternate" hreflang="pt_BR" href="https://www.kimai.org/pt_BR/store/keleo-custom-content-bundle.html">
+    <link rel="alternate" hreflang="ru" href="https://www.kimai.org/ru/store/keleo-custom-content-bundle.html">
+    <link rel="alternate" hreflang="sk" href="https://www.kimai.org/sk/store/keleo-custom-content-bundle.html">
+    <link rel="alternate" hreflang="sv" href="https://www.kimai.org/sv/store/keleo-custom-content-bundle.html">
+    <link rel="alternate" hreflang="uk" href="https://www.kimai.org/uk/store/keleo-custom-content-bundle.html">
+    <link rel="alternate" hreflang="zh_Hans" href="https://www.kimai.org/zh_Hans/store/keleo-custom-content-bundle.html">
+    <link rel="alternate" hreflang="zh_Hant" href="https://www.kimai.org/zh_Hant/store/keleo-custom-content-bundle.html">
+    <script src="/assets/build/theme.js?v1"></script>
+    <link href="/assets/build/main.css?v1" rel="stylesheet" />
+</head>
+<body class="">
+
+<main class="page-wrapper">
+    
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand-lg   bg-light navbar-sticky">
+    <div class="container px-3">
+        <a href="/zh_Hant/" class="navbar-brand pe-3">
+        <img src="/images/kimai_logo.png" style="height:36px" alt="Kimai —— 開放源始碼的工時追蹤工具"> Kimai
+        </a>
+        <div id="navbarNav" class="offcanvas offcanvas-end">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title">Menu</h5>
+                <button type="button" class="btn-close " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    
+                    <li class="nav-item">
+                        <a href="/zh_Hant/demo.html" class="nav-link">體驗</a>
+                    </li>
+                    
+                    <li class="nav-item active">
+                        <a href="/zh_Hant/store/" class="nav-link">外掛程式</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/zh_Hant/blog/" class="nav-link">最新消息</a>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">說明文件</a>
+                        <ul class="dropdown-menu">
+                            
+                            
+                            
+                            <a href="/documentation/chapter-manual.html" class="dropdown-item">
+                                <i class="bx bx-book me-2"></i>
+                                
+                                使用指南
+                            </a>
+                            
+                            
+                            
+                            <a href="/documentation/cloud.html" class="dropdown-item">
+                                <i class="bx bx-cloud me-2"></i>
+                                
+                                Cloud
+                            </a>
+                            
+                            
+                            
+                            <a href="/documentation/chapter-on-premise.html" class="dropdown-item">
+                                <i class="bx bx-server me-2"></i>
+                                
+                                本地部署
+                            </a>
+                            
+                            
+                            
+                            <a href="/documentation/developers.html" class="dropdown-item">
+                                <i class="bx bx-code-alt me-2"></i>
+                                
+                                開發者
+                            </a>
+                            
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="pe-lg-1 ms-auto me-2">
+            
+
+
+
+<a href="https://www.kimai.cloud/auth/" class="btn btn-sm fs-sm d-none d-md-inline-flex me-2 btn-outline-secondary">Login</a>
+
+            
+
+
+
+<a href="https://www.kimai.cloud/auth/registration" class="btn btn-success btn-sm fs-sm d-inline-flex">免費開始</a>
+
+        </div>
+        <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</header>
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="jarallax bg-dark pt-2 pt-lg-3 pb-lg-5" data-jarallax data-speed="0.35" data-bs-theme="dark">
+    <span class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-70"></span>
+    <div class="container position-relative zindex-5">
+
+        <div class="d-flex pt-3 pb-4 py-sm-4 pt-lg-5">
+        
+            
+        
+        </div>
+
+        <h1>自訂內容</h1>
+        <p class="fs-lg text-light opacity-70">建立自訂的 CSS 樣式表、JavaScript 手槁、全域警告訊息與能以 Markdown 格式撰寫公司最新消息的新頁面。</p>
+
+        
+        <div class="d-flex align-items-center">
+            <img src="/images/kevin-papst.jpeg" class="rounded-circle" width="60" alt="Kevin Papst">
+            <div class="ps-3">
+                <div class="text-light opacity-80 mb-1">提供者</div>
+                <h6>Kevin Papst</h6>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container pt-5 mt-2 mt-lg-4 mt-xl-5">
+    <div class="row" id="buy-item-card">
+
+        <aside class="col-lg-4 col-md-5 offset-xl-1 order-md-2 mb-5">
+            <div style="margin-top: -96px;"></div>
+            <div class="position-sticky top-0 pt-5">
+                <div class="pt-5 mt-md-3">
+                    <div class="card shadow-sm p-sm-3">
+                        <div class="card-body">
+                            
+
+                            <div class="h2 d-flex align-items-center mb-4">
+                                <span class="text-nowrap">9 €</span>
+                                <small class="text-muted fs-xl fw-normal ms-2">
+                                    不含加值稅 (每年)
+                                </small>
+                            </div>
+
+                            
+                                
+
+                                
+                                <div class="discount-deal-lemonsqueezy"></div>
+                                <div class="row align-items-center mb-3">
+                                    <a class="btn btn-success btn-lg w-100 btn-buy" href="https://kimai.lemonsqueezy.com/checkout/buy/9e80bb83-1ce0-41b1-a234-e0166bc1fb70" target="_blank"><i class="bx bx-cart me-2"></i> 現在購買</a>
+                                </div>
+                                <div class="row align-items-center mb-3 text-muted fs-sm">
+                                    <div class="col-auto">
+                                        Available payment methods
+                                    </div>
+                                    <div class="col-auto ms-auto fs-lg">
+                                        <i class="bx bxl-paypal"></i>
+                                        <i class="bx bxl-google"></i>
+                                        <i class="bx bxl-apple"></i>
+                                        <i class="bx bxl-visa"></i>
+                                        <i class="bx bxl-mastercard"></i>
+                                    </div>
+                                </div>
+                                
+
+                                
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Content -->
+        <div class="col-xl-7 col-lg-8 col-md-7 order-md-1 mb-5">
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <a href="#store-info" class="nav-link active" data-bs-toggle="tab" role="tab">
+                        <i class="bx bx-home-alt opacity-70 me-2"></i>
+                        描述
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#store-installation" class="nav-link" data-bs-toggle="tab" role="tab">
+                        安裝
+                    </a>
+                </li>
+                
+                
+                <li class="nav-item">
+                    <a href="#store-compatibility" class="nav-link" data-bs-toggle="tab" role="tab">
+                        相容性
+                    </a>
+                </li>
+                
+                
+                <li class="nav-item">
+                    <a href="#store-demo" class="nav-link" data-bs-toggle="tab" role="tab">
+                        體驗版本
+                    </a>
+                </li>
+                
+                
+                <li class="nav-item">
+                    <a target="_blank" href="/documentation/plugin-custom-content.html" class="nav-link">
+                        <i class="bx bx-link-external opacity-70 me-2"></i>
+                        說明文件
+                    </a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="store-info" role="tabpanel">
+
+                    
+<p>A Kimai plugin which allows adding custom content for:</p>
+
+<ul>
+  <li>Stylesheet (embedded in all pages)</li>
+  <li>Javascript (embedded in all pages, except security screens)</li>
+  <li>A global warning message, shown to every logged-in user</li>
+  <li>An entire new page to display (markdown formatted) information for your users</li>
+</ul>
+
+<p><strong>Alternative</strong></p>
+
+<p>If you only want to add some custom CSS stylesheets, you can have a look at this free item instead:
+<a href="/zh_Hant/store/keleo-css-custom-bundle.html">自訂 CSS 樣式表</a></p>
+
+<h2 id="storage">Storage</h2>
+
+<p>This bundle stores contents in the directory <code class="language-plaintext highlighter-rouge">var/data/custom-content-bundle/</code>.</p>
+
+<p>Make sure the data directory is writable by your webserver and included in your backups.</p>
+
+
+
+                    
+                        <h3 id="changelog">Changelog</h3>
+                        <pre class="p-2">## Version 2.3.1
+
+Compatibility: requires minimum Kimai 2.5.0
+
+- Changed: import Route attribute from correct namespace
+- Changed: use bundle identifier to load routes
+
+## Version 2.3.0
+
+Compatibility: requires minimum Kimai 2.5.0
+
+- Changed: moved some translations to core, allowing more languages
+
+## Version 2.2.0
+
+Compatibility: requires minimum Kimai 2.1.0
+
+- Fixed: route mapping type changed to attribute
+
+## Version 2.1.1
+
+Compatibility: requires minimum Kimai 2.0
+
+- Added: explicit ID and class to target markdown news content via Javascript
+
+## Version 2.1.0
+
+Compatibility: requires minimum Kimai 2.0
+
+- Added: new permissions `js_custom_content`, `css_custom_content`, `alert_custom_content`, `news_custom_content` for separate content sections
+- Added: better tabs
+
+## Version 2.0.3
+
+Compatibility: requires minimum Kimai 2.0
+
+- Fixed: do not escape HTML in javascript content
+
+## Version 2.0.2
+
+Compatibility: requires minimum Kimai 2.0
+
+- Added: improved validation rules
+- Fixed: show submitted tab again
+
+## Version 2.0.1
+
+Compatibility: requires minimum Kimai 2.0
+
+- Fixed: compatibility with Kimai 2.0 (new Configuration access API)
+
+## Version 2.0
+
+Compatibility: requires minimum Kimai 2.0
+
+- Fixed: compatibility with Kimai 2.0
+
+## Version 1.2
+
+Compatibility: requires minimum Kimai 1.17
+
+- Added: automatically import settings from CustomCSS bundle (when admin page is opened first)
+- Added: Translations for tabs (added german)
+
+## Version 1.1
+
+Compatibility: requires minimum Kimai 1.17
+
+- Fixed: saving failed
+- Code cleanup
+
+## Version 1.0
+
+Compatibility: requires minimum Kimai 1.17
+
+- Added support for: Custom CSS
+- Added support for: Custom Javascript
+- Added support for: Custom warning message (alert)
+- Added support for: Custom page with title (name of menu) and content
+</pre>
+                    
+                </div>
+
+                
+                <div class="tab-pane fade" id="store-installation" role="tabpanel">
+                    <h2 id="installation">安裝</h2>
+                    
+    
+    <h3>複製檔案</h3>
+
+    <p>
+        Extract the ZIP file and upload the included directory and all files to your Kimai installation to the new directory:
+    </p>
+
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">var/plugins/CustomContentBundle/</code></pre></figure>
+
+
+    
+
+    <p>The file structure needs to look like this afterwards:</p>
+
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">var/plugins/
+├── CustomContentBundle
+│   ├── CustomContentBundle.php
+|   └ ... more files and directories follow here ...</code></pre></figure>
+
+
+    <h3>清除快取</h3>
+
+    <p>
+        After uploading the files, Kimai needs to know about the new plugin. It will be found once the <a href="/documentation/updates.html">cache was re-built</a>.
+        Call these commands from the Kimai directory:
+    </p>
+
+    <div class="row row-cards row-deck">
+    <div class="col-md-12">
+        <div class="card mb-3">
+            <div class="card-body">
+                <h4 class="card-title">How to reload Kimai cache</h4>
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">bin/console kimai:reload --env=prod</code></pre></figure>
+
+
+                <p>It is not advised, but in case the above command fails you could try:</p>
+
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">rm -r var/cache/prod/*</code></pre></figure>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <p>You might have to set file permissions afterwards:</p>
+
+    <div class="row row-cards row-deck">
+    <div class="col-md-12">
+        <div class="card mb-3">
+            <div class="card-status bg-info"></div>
+            <div class="card-body">
+                <h4 class="card-title">Adjust file permission</h4>
+                <p>
+                    You have to allow PHP (your webserver process) to write to
+                    <code class="language-plaintext highlighter-rouge">var/</code> and it subdirectories.
+                </p>
+
+                <p>Here is an example for Debian/Ubuntu (to be executed inside the Kimai directory):</p>
+
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">chown -R :www-data .
+chmod -R g+r .
+chmod -R g+rw var/</code></pre></figure>
+
+
+            </div>
+            <div class="card-footer fs-sm text-muted">
+                Test Kimai before executing these commands (they are likely not required in a shared-hosting environment).
+                You probably need to prefix them with <code class="language-plaintext highlighter-rouge">sudo</code> and
+                the group might be called different than <code class="language-plaintext highlighter-rouge">www-data</code>.
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    
+
+
+
+                    <h3>更新</h3>
+                    
+    
+
+    <p>Updating the plugin works exactly like the installation:</p>
+    <ul>
+        <li>Delete the directory <code class="language-plaintext highlighter-rouge">var/plugins/CustomContentBundle/</code>
+        </li>
+<li>
+            Execute all installation steps again:
+            <ul>
+                <li>複製檔案</li>
+                <li>清除快取</li>
+            </ul>
+        </li>
+    </ul>
+
+
+
+                </div>
+                
+
+                
+                <div class="tab-pane fade" id="store-compatibility" role="tabpanel">
+                    <h2 id="compatibility">相容性</h2>
+                    <p>下表比較了外掛程式與所需的最低 Kimai 版本。</p>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>
+                                套件版本
+                            </th>
+                            <th>
+                                最低 Kimai 版本
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        
+                        <tr>
+                            <td>2.3.0 - 2.3.1</td>
+                            <td>2.5.0</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>2.2.0</td>
+                            <td>2.1.0</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>2.1.0 - 2.1.1</td>
+                            <td>2.0</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>2.0.1</td>
+                            <td>2.0</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>1.2.1</td>
+                            <td>1.17</td>
+                        </tr>
+                        
+                        </tbody>
+                    </table>
+
+                    
+                </div>
+                
+
+                
+                <div class="tab-pane fade" id="store-demo" role="tabpanel">
+                    <h2 id="demo">體驗版本</h2>
+                    <p class="mb-3">
+                        如要測試此外掛程式，可前往體驗版網頁 <a href="https://demo.kimai.org">demo.kimai.org</a>:
+                    </p>
+                    <p>
+                        使用者名稱: <strong>susan_super</strong>
+                        <br>
+                        密碼: <strong>kitten</strong>
+                    </p>
+                    <p class="mb-2">
+                        <a href="/en/demo.html">在此處找到更多測試帳號</a>.
+                    </p>
+                </div>
+                
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="mb-5 pt-md-3 pt-lg-4 pt-xl-5">
+    <h2 class="h1 pt-lg-2 pt-xl-3 mb-5 text-center">使用截圖</h2>
+    <div class="pb-2 pb-sm-3 pb-md-4">
+        <div class="swiper" data-swiper-options='{
+            "loop": true,
+            "grabCursor": false,
+            "centeredSlides": true,
+            "autoplay": {
+              "delay": 0,
+              "disableOnInteraction": false
+            },
+            "freeMode": true,
+            "speed": 38000,
+            "freeModeMomentum": false,
+            "breakpoints": {
+              "0": {
+                "slidesPerView": 1,
+                "spaceBetween": 8
+              },
+              "500": {
+                "spaceBetween": 16
+              },
+              "768": {
+                "slidesPerView": 2,
+                "spaceBetween": 24
+              }
+            }
+          }'>
+            <div class="swiper-wrapper">
+                
+                    
+                    
+                    <div class="swiper-slide pb-3">
+                        <figure class="figure">
+                            <img src="/images/marketplace/custom-content-alert.png" class="figure-img" alt="Screenshot">
+                            
+                            <figcaption class="figure-caption text-center">這則警告訊息會顯示在已登入使用者的所有頁面上</figcaption>
+                            
+                        </figure>
+                    </div>
+                
+                    
+                    
+                    <div class="swiper-slide pb-3">
+                        <figure class="figure">
+                            <img src="/images/marketplace/custom-content-javascript.png" class="figure-img" alt="Screenshot">
+                            
+                            <figcaption class="figure-caption text-center">自訂的 Javascript 手稿會在已登入的使用者的所有頁面上執行</figcaption>
+                            
+                        </figure>
+                    </div>
+                
+                    
+                    
+                    <div class="swiper-slide pb-3">
+                        <figure class="figure">
+                            <img src="/images/marketplace/custom-content-news.png" class="figure-img" alt="Screenshot">
+                            
+                            <figcaption class="figure-caption text-center">您能以 Markdown 格式撰寫最新消息與自訂標題</figcaption>
+                            
+                        </figure>
+                    </div>
+                
+                    
+                    
+                    <div class="swiper-slide pb-3">
+                        <figure class="figure">
+                            <img src="/images/marketplace/custom-content-news-page.png" class="figure-img" alt="Screenshot">
+                            
+                            <figcaption class="figure-caption text-center">這個最新消息頁面在使用者選單內有對應鏈結，且內容可為您以 Markdown 格式撰寫的訊息</figcaption>
+                            
+                        </figure>
+                    </div>
+                
+
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="container pb-5 mb-md-3 mb-lg-4 mb-xl-5">
+    <div class="row pb-3">
+        <div class="col-md-5 mb-4 mb-md-0">
+            <div class="card bg-dark h-100 p-lg-5">
+                <div class="card-body p-lg-2">
+                    <h2 class="h1 text-light">FAQ</h2>
+                    <p class="fs-xl text-light opacity-70 mb-2">These FAQs are provided by the developer of this offer.</p>
+                </div>
+                <div class="card-footer border-0 w-100 pt-0 p-4 p-lg-2">
+                    <a class="btn btn-primary btn-lg shadow-primary" href="#buy-item-card"><i class="bx bx-cart me-2"></i> 現在購買</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div class="accordion" id="faq">
+                
+                <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button shadow-none rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#q-1" aria-expanded="false" aria-controls="q-1">How is the plugin licensed?</button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="q-1" data-bs-parent="#faq">
+                        <div class="accordion-body fs-sm pt-0">
+                            <p>Read more about <a href="/documentation/buy-a-plugin.html">the license for this item here</a></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button shadow-none rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#q-2" aria-expanded="false" aria-controls="q-1">Where can I buy this plugin?</button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="q-2" data-bs-parent="#faq">
+                        <div class="accordion-body fs-sm pt-0">
+                            <p>You can buy the plugin via the Marketplaces 'Lemon Squeezy' or 'Gumroad' and pay with Credit Card or PayPal. Both offer instant access to the purchases.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button shadow-none rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#q-3" aria-expanded="false" aria-controls="q-1">Where can I get support for this plugin?</button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="q-3" data-bs-parent="#faq">
+                        <div class="accordion-body fs-sm pt-0">
+                            <p>Support-questions, bug-reports and feature-requests will be answered in this <a href="https://github.com/kimai/Paid-plugins" target="_blank">Github repository</a></p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="container py-lg-4 py-xl-5 mt-3 mb-5">
+    <div class="row g-0 bg-dark bg-repeat-0 bg-position-center border rounded-3 overflow-hidden" style="background-image: url(/images/layout/author-pattern.svg);">
+        <div class="col-md-5 bg-repeat-0 bg-position-top-center bg-size-cover" style="background-image: url(/images/kevin-papst.jpeg); min-height: 350px;"></div>
+        <div class="col-md-7 py-xl-5 px-4">
+            <div class="py-5 mx-auto" style="max-width: 530px;">
+                <div class="fs-xl text-light opacity-50 mb-2">提供者</div>
+                <h2 class="h1 text-light mb-4">Kevin Papst</h2>
+                <p class="text-light opacity-70 pb-4">
+                    Building Kimai since 2009
+                </p>
+
+                <div class="mb-4">
+                    如果您有任何問題，請透過以下聯絡資訊直接與此開發者聯絡。
+                </div>
+                <div class="d-flex flex-column flex-sm-row flex-wrap">
+                    
+                    <a href="https://www.kevinpapst.de" class="btn btn-behance me-sm-4 mb-3 mb-sm-0">
+                        <i class="bx bx-home fs-xl me-2"></i>
+                        Homepage
+                    </a>
+                    
+                    
+                    <a href="mailto:support@kimai.org" class="btn btn-blogger me-sm-4 mb-3 mb-sm-0">
+                        <i class="bx bx-envelope fs-xl me-2"></i>
+                        Email
+                    </a>
+                    
+                    
+                    <a href="https://github.com/kevinpapst" class="btn btn-github me-sm-4 mb-3 mb-sm-0">
+                        <i class="bx bxl-github fs-xl me-2"></i>
+                        GitHub
+                    </a>
+                    
+                    <br>
+                    
+                    <a href="https://twitter.com/keleo" class="btn btn-twitter me-sm-4 mb-3 mb-sm-0 mt-3">
+                        <i class="bx bxl-twitter fs-xl me-2"></i>
+                        Twitter
+                    </a>
+                    
+                    
+                    <a href="https://phpc.social/@kevinpapst" class="btn btn-messenger me-sm-4 mb-3 mb-sm-0 mt-3">
+                        <i class="bx bxl-mastodon fs-xl me-2"></i>
+                        Mastodon
+                    </a>
+                    
+                    
+                    <a href="https://www.youtube.com/@kimai_org" class="btn btn-youtube me-sm-4 mb-3 mb-sm-0 mt-3">
+                        <i class="bx bxl-youtube fs-xl me-2"></i>
+                        Youtube
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+</main>
+
+
+
+
+
+
+
+
+<footer class="footer bg-dark pt-5 pb-4" data-bs-theme="dark">
+    <div class="container pt-1 pt-md-3 pt-lg-4 pt-xl-5">
+        <div class="row">
+            <div class="col-md-5 col-xl-4 mb-4 mb-md-5 mb-lg-0">
+                <div class="d-flex align-items-center pb-3 mb-1">
+                    <div class="navbar-brand text-dark p-0 pe-1 me-0">
+                        Kimai
+                    </div>
+                    <hr class="vr mt-2 mx-3" style="height: 26px;">
+                    <div class="text-white fw-semibold ps-1">追蹤工時，輕而易舉</div>
+                </div>
+                <p class="text-body fs-sm pb-1 pb-md-2 pb-lg-2 mb-2">
+                    自由且易於使用的工時追蹤工具，適用於自由工作者、機構與公司。 Kimai 是款開源軟體，可供自架服務或以 SaaS 型式使用。
+                </p>
+                <div class="d-flex flex-column flex-sm-row flex-lg-column align-items-sm-center align-items-lg-start justify-content-between pb-1 pb-md-2 pb-lg-3 mb-3">
+                    <div class="position-relative">
+                        <div class="dropdown">
+                            <button type="button" class="form-select" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-globe top-50 start-0 text-body me-2"></i>
+                                中文（繁體）
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/cs/" class="dropdown-item">Čeština</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/de/" class="dropdown-item">Deutsch</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/" class="dropdown-item">English</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/es/" class="dropdown-item">Español</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/fr/" class="dropdown-item">Français</a>
+                                
+                                    <a dir="rtl" href="https://www.kimai.org/he/" class="dropdown-item">עברית</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/hr/" class="dropdown-item">Hrvatski</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/it/" class="dropdown-item">Italiano</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/nl/" class="dropdown-item">Nederlands</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/pl/" class="dropdown-item">Polski</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/pt/" class="dropdown-item">Português</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/pt_BR/" class="dropdown-item">Português (Brasil)</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/ru/" class="dropdown-item">Rусский</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/sk/" class="dropdown-item">Slovenčina</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/sv/" class="dropdown-item">Svenska</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/uk/" class="dropdown-item">Українська</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/zh_Hans/" class="dropdown-item">中文（中国）</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.tw/" class="dropdown-item active">中文（繁體）</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="form-check form-switch mode-switch pb-1 pb-md-2 pb-lg-2 mb-2" data-bs-toggle="mode">
+                    <input type="checkbox" class="form-check-input" id="theme-mode">
+                    <label class="form-check-label" for="theme-mode">Light</label>
+                    <label class="form-check-label" for="theme-mode">Dark</label>
+                </div>
+            </div>
+            <div class="col-md-7 offset-xl-1">
+                <div id="footer-links" class="row">
+                    
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <h6 class="fs-lg mb-1 mb-md-2">
+                            <span class="d-none d-md-block">Kimai</span>
+                            <a href="#tools" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Kimai</a>
+                        </h6>
+                        <div id="tools" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/zh_Hant/about.html" class="nav-link fs-sm fw-medium px-0 py-1">關於 Kimai</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/zh_Hant/download.html" class="nav-link fs-sm fw-medium px-0 py-1">安裝</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/zh_Hant/features.html" class="nav-link fs-sm fw-medium px-0 py-1">功能特色</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/zh_Hant/support.html" class="nav-link fs-sm fw-medium px-0 py-1">Support</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/en/kimai-discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">Discount codes</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <h6 class="fs-lg mb-1 mb-md-2">
+                            <span class="d-none d-md-block">Kimai for</span>
+                            <a href="#landing-kimai-for" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Kimai for</a>
+                        </h6>
+                        <div id="landing-kimai-for" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/en/time-tracking-non-profit.html" class="nav-link fs-sm fw-medium px-0 py-1">Non-Profits</a>
+                                </li>
+                                
+                                
+                                <li class="nav-item">
+                                    <a href="/en/open-source-time-log" class="nav-link fs-sm fw-medium px-0 py-1" title="Open-Source Time Log">Time Log</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/open-source-time-tracker" class="nav-link fs-sm fw-medium px-0 py-1" title="Open-Source Time Tracker">Time Tracker</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/open-source-timesheet" class="nav-link fs-sm fw-medium px-0 py-1" title="Open-Source Timesheet">Timesheet</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <h6 class="fs-lg mb-1 mb-md-2">
+                            <span class="d-none d-md-block">Compare</span>
+                            <a href="#footer-cmp" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Compare</a>
+                        </h6>
+                        <div id="footer-cmp" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/zh_Hant/compare/" class="nav-link fs-sm fw-medium px-0 py-1">比較各種工時追蹤工具</a>
+                                </li>
+                                
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/clockify-alternative" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to Clockify">Clockify</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/openproject-alternative" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to OpenProject">OpenProject</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/toggl-alternative" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to toggl track">toggl track</a>
+                                    </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="d-md-flex align-items-center justify-content-between pt-sm-2 pt-md-4 pt-lg-5 pb-2 mt-4 ">
+    <ul class="nav order-md-1 ms-md-0 mb-3 mb-md-0">
+        <li class="nav-item">
+            <a href="/zh_Hant/" class="nav-link fs-sm fw-medium ps-0">首頁</a>
+        </li>
+        <li class="nav-item">
+            <a href="/zh_Hant/site-notice.html" class="nav-link fs-sm fw-medium">網站告示</a>
+        </li>
+        <li class="nav-item">
+            <a href="/zh_Hant/privacy-policy.html" class="nav-link fs-sm fw-medium">隱私政策</a>
+        </li>
+        <li class="nav-item">
+            <a href="https://uptime.kimai.cloud/" target="_blank" class="nav-link fs-sm fw-medium">Cloud-Status</a>
+        </li>
+    </ul>
+    <div class="nav order-md-2 mb-3 mb-md-0">
+        <a target="_blank" href="https://github.com/kimai/kimai" class="btn btn-icon btn-secondary btn-github rounded-circle me-3" aria-label="GitHub">
+    <i class="bx bxl-github"></i>
+</a>
+<a target="_blank" href="https://www.youtube.com/@kimai_org" class="btn btn-icon btn-secondary btn-youtube rounded-circle me-3" aria-label="YouTube">
+    <i class="bx bxl-youtube"></i>
+</a>
+<a target="_blank" href="https://www.linkedin.com/company/kimai-timetracker/" class="btn btn-icon btn-secondary btn-linkedin rounded-circle me-3" aria-label="LinkedIn">
+    <i class="bx bxl-linkedin"></i>
+</a>
+<a target="_blank" href="https://www.instagram.com/kimai_org" class="btn btn-icon btn-secondary btn-instagram rounded-circle me-3" aria-label="Instagram">
+    <i class="bx bxl-instagram"></i>
+</a>
+<a target="_blank" href="https://twitter.com/kimai_org" class="btn btn-icon btn-secondary btn-twitter rounded-circle me-3" aria-label="Twitter / X">
+    <i class="bx bxl-twitter"></i>
+</a>
+<a target="_blank" href="https://www.facebook.com/people/Kimai/61557684102167/" class="btn btn-icon btn-secondary btn-facebook rounded-circle me-3" aria-label="Facebook">
+    <i class="bx bxl-facebook"></i>
+</a>
+<a target="_blank" href="https://phpc.social/@kimai" class="btn btn-icon btn-secondary btn-messenger rounded-circle me-3" aria-label="Mastodon">
+    <i class="bx bxl-mastodon"></i>
+</a>
+
+    </div>
+    <p class="nav d-block fs-sm mb-0 order-md-3">
+        <span class="text-body">製作者 </span>
+        <a class="nav-link d-inline-block p-0" href="https://www.kevinpapst.de/" target="_blank" rel="noopener">Kevin Papst</a>
+    </p>
+</div>
+
+    </div>
+</footer>
+
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
+
+</body>
+</html>
