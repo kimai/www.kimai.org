@@ -195,7 +195,7 @@ layout: default
                             </div>
 
                             {% if isMultiPurchase != nil %}
-                                {% if page.lang == 'en' %}
+                                {% if site.parity_deals[page.lang] %}
                                     <script src="https://cdn.paritydeals.com/banner.js"></script>
                                     {% comment %}the .discount-deal-* classes are required for paritydeals.com{% endcomment %}
                                 {% endif %}
