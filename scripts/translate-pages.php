@@ -1,6 +1,7 @@
 <?php
 
-chdir(__DIR__ . '/..');
+$realpath = realpath(__DIR__ . '/..');
+chdir($realpath);
 
 // once development is over, switch back to the list of all currently active languages
 $languages = ['cs', 'de', 'es', 'fr', 'he', 'hr', 'it', 'nl', 'pl', 'pt', 'pt_BR', 'ru', 'sv', 'uk', 'zh_Hans'];
@@ -8,6 +9,7 @@ $languages = ['cs', 'de', 'es', 'fr', 'he', 'hr', 'it', 'nl', 'pl', 'pt', 'pt_BR
 // currently working on:
 //$languages = ['fa'];
 //$languages = ['sk'];
+$languages = ['zh_Hans'];
 
 $multiLanguagePaths = [
     '_pages' => [
@@ -15,21 +17,29 @@ $multiLanguagePaths = [
         'permalink' => '/:language/:original',
         'remove' => ['redirect_from'],
         'overwrite' => false,
+        'with_content' => true,
+    ],
+    '_error' => [
+        'skip' => [],
+        'remove' => [],
+        'overwrite' => true,
+        'with_content' => false,
     ],
     '_store' => [
         'skip' => ['v1.md'],
         'permalink' => '/:language/store/:basename',
         'remove' => ['redirect_from'],
         'overwrite' => false, // do not change this flag, it will cause too many changes in existing pages
+        'with_content' => true,
     ],
 ];
 
 foreach ($multiLanguagePaths as $path => $settings)
 {
-    $basePath = __DIR__ . '/' . $path;
+    $basePath = $realpath . '/' . $path;
     $files = glob($basePath . '/*.{md,html}', GLOB_BRACE);
     $includePath = str_replace('_', '', $path);
-    $contentTarget = __DIR__ . '/_includes/' . $includePath;
+    $contentTarget = $realpath . '/_includes/' . $includePath;
     $createPermalink = array_key_exists('permalink', $settings);
 
     foreach ($files as $file) {
@@ -43,24 +53,27 @@ foreach ($multiLanguagePaths as $path => $settings)
             }
 
             if ($settings['overwrite'] || !file_exists($langTargetFile)) {
-                $newContentFile = $contentTarget . '/' . $baseFileName;
 
-                if (!file_exists($newContentFile)) {
-                    $content = file_get_contents($file);
-                    $pos = strpos($content, '---', strpos($content, '---') + 3);
+                if ($settings['with_content']) {
+                    $newContentFile = $contentTarget . '/' . $baseFileName;
 
-                    $pureContent = substr($content, $pos + 3);
+                    if (!file_exists($newContentFile)) {
+                        $content = file_get_contents($file);
+                        $pos = strpos($content, '---', strpos($content, '---') + 3);
 
-                    $include = $includePath . '/' . basename($file);
+                        $pureContent = substr($content, $pos + 3);
 
-                    $newContent = substr($content, 0, $pos);
-                    if (!str_contains($newContent, 'lang:')) {
-                        $newContent .= 'lang: en' . PHP_EOL;
+                        $include = $includePath . '/' . basename($file);
+
+                        $newContent = substr($content, 0, $pos);
+                        if (!str_contains($newContent, 'lang:')) {
+                            $newContent .= 'lang: en' . PHP_EOL;
+                        }
+                        $newContent .= '---' . PHP_EOL . PHP_EOL . '{% include ' . $include . ' %}';
+
+                        file_put_contents($file, $newContent);
+                        file_put_contents($newContentFile, trim($pureContent) . PHP_EOL);
                     }
-                    $newContent .= '---' . PHP_EOL . PHP_EOL . '{% include ' . $include . ' %}';
-
-                    file_put_contents($file, $newContent);
-                    file_put_contents($newContentFile, trim($pureContent) . PHP_EOL);
                 }
 
                 if (!file_exists($langPath)) {
@@ -72,26 +85,29 @@ foreach ($multiLanguagePaths as $path => $settings)
                 $translatedContent = file_get_contents($langTargetFile);
                 $replaceMe = 'lang: ' . $language;
 
-                $permalink = str_replace(':language', $language, $settings['permalink']);
-                $permalink = str_replace(':basename', basename($langTargetFile), $permalink);
-                $permalink = str_replace('.md', '.html', $permalink);
+                if ($createPermalink) {
+                    $permalink = str_replace(':language', $language, $settings['permalink']);
+                    $permalink = str_replace(':basename', basename($langTargetFile), $permalink);
+                    $permalink = str_replace('.md', '.html', $permalink);
 
-                if (!str_contains($translatedContent, 'permalink:')) {
-                    $replaceMe .= PHP_EOL . 'permalink: ' . $permalink;
-                } else {
-                    $result = preg_match('/permalink: (.*)\\n/', $translatedContent, $matches);
-                    if (count($matches) !== 2) {
-                        throw new Exception('Invalid permalink in: ' . $file);
-                    }
-                    $originalPermalink = $matches[1];
-                    $permalink = str_replace(':original', $originalPermalink, $permalink);
-                    if (!str_starts_with($permalink, '/' . $language . '/')) {
-                        $permalink = str_replace('/en/', '/' . $language . '/', $permalink);
+                    if (!str_contains($translatedContent, 'permalink:')) {
+                        $replaceMe .= PHP_EOL . 'permalink: "' . $permalink . '"';
                     } else {
-                        $permalink = str_replace('/en/', '/', $permalink);
+                        $result = preg_match('/permalink: (.*)\\n/', $translatedContent, $matches);
+                        if (count($matches) !== 2) {
+                            throw new Exception('Invalid permalink in: ' . $file);
+                        }
+                        $originalPermalink = $matches[1];
+                        $permalink = str_replace(':original', $originalPermalink, $permalink);
+                        if (!str_starts_with($permalink, '/' . $language . '/')) {
+                            $permalink = str_replace('/en/', '/' . $language . '/', $permalink);
+                        } else {
+                            $permalink = str_replace('/en/', '/', $permalink);
+                        }
+                        $permalink = str_replace('//', '/', $permalink);
+                        $translatedContent = str_replace('permalink: ' . $originalPermalink, 'permalink: ' . $permalink,
+                            $translatedContent);
                     }
-                    $permalink = str_replace('//', '/', $permalink);
-                    $translatedContent = str_replace('permalink: ' . $originalPermalink, 'permalink: ' . $permalink, $translatedContent);
                 }
 
                 $translatedContent = str_replace('lang: en', $replaceMe, $translatedContent);
