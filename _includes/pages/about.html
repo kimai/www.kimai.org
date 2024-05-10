@@ -111,7 +111,10 @@
 <section class="container mb-5">
     {{ site.data[page.lang].translation.history.past | markdownify }}
     <p>
-        We keep the <a href="{% link _blog_tags/version-1.html %}">archived Kimai 1 news</a> for historical reasons.
+        <a href="{% link _blog_tags/version-1.html %}" class="btn btn-outline-primary">
+            {{ site.data[page.lang].translation.blog.archive-link| replace: "%topic%", 'Kimai 1' }}
+            <i class="bx bx-right-arrow-alt ms-1 fs-lg"></i>
+        </a>
     </p>
 </section>
 
