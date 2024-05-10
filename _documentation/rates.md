@@ -1,15 +1,6 @@
 ---
 title: Prices (rates)
 description: How rates for your timesheet records are calculated
-redirect_from: 
-  - /manual/rates.html
-  - /manual/manual/rates.html
-  - /documentation/manual/rates.html
-  - /documentation/fees/
-  - /documentation/rates/
-  - /v1/rates.html
-  - /rates/
-  - /store/keleo-recalculate-rates-bundle.html
 related:
   - timesheet
   - customer

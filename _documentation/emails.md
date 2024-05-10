@@ -2,10 +2,6 @@
 title: Emails
 description: Configure email transport for Kimai
 toc: true
-redirect_from: 
-- /documentation/email/
-- /v1/email.html
-- /documentation/2.0/emails.html
 ---
 
 Kimai uses the [Symfony Mailer component](https://symfony.com/doc/current/mailer.html) for sending emails. 

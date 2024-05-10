@@ -1,10 +1,6 @@
 ---
 title: Updates
 description: How to update Kimai to the next release version
-redirect_from:
-  - /documentation/installation/updates.html
-  - /documentation/updates/
-  - /v1/updates.html
 ---
 
 1. Make sure that you have a working [database backup]({% link _documentation/backups.md %}) before you start the update.

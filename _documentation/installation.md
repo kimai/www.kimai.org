@@ -7,10 +7,6 @@ related:
   - hosting-1-click
   - fresh-ubuntu-22
   - webserver-configuration
-redirect_from: 
-  - /documentation/installation/
-  - /documentation/ftp.html
-  - /v1/installation.html 
 ---
 
 ## Server requirements

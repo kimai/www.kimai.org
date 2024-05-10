@@ -2,7 +2,6 @@
 title: Azure SAML
 description: How to use Azure AD SAML identity provider with Kimai
 canonical: /documentation/saml-azure.html
-redirect_from: /documentation/azure.html
 ---
 
 Go back to general [SAML configuration]({% link _documentation/saml.md %}) for Kimai. 

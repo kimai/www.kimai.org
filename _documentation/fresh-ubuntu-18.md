@@ -4,7 +4,6 @@ navigation: Ubuntu 18.04
 description: "How to install Kimai on a brand new Ubuntu 18.04 with database, webserver and SSL certificate"
 toc: true
 canonical: /documentation/fresh-ubuntu-18.html
-redirect_from: /documentation/2.0/fresh-ubuntu-18.html
 ---
 
 {% capture latestUbuntu %}

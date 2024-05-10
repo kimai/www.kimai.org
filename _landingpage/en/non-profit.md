@@ -1,7 +1,6 @@
 ---
 title: "Time-tracking for Non-Profit Organizations"
 permalink: /en/time-tracking-non-profit.html
-redirect_from: /documentation/cloud-charity.html
 ---
 
 Today I want to say thank you to the many NGOs and NPOs:

@@ -4,27 +4,6 @@ date: "2023-08-27 20:00:00 +0200"
 author: kevinpapst
 tags: [Apps & Plugins]
 image: /images/blog/cover-14.jpeg
-redirect_from:
-  - /store/hmr-it-hasworked-bundle.html
-  - /store/mr-software-hasworked-bundle.html
-  - /store/hmr-it-period-insert-bundle.html
-  - /store/mr-software-period-insert-bundle.html
-  - /store/hmr-it-recordbook-bundle.html
-  - /store/mr-software-recordbook-bundle.html
-  - /de/store/hmr-it-hasworked-bundle.html
-  - /de/store/mr-software-hasworked-bundle.html
-  - /de/store/hmr-it-period-insert-bundle.html
-  - /de/store/mr-software-period-insert-bundle.html
-  - /de/store/hmr-it-recordbook-bundle.html
-  - /de/store/mr-software-recordbook-bundle.html
-  - /cs/store/mr-software-recordbook-bundle.html
-  - /cs/store/mr-software-recordbook-bundle.html
-  - /hr/store/mr-software-empty-description-checker-bundle.html
-  - /uk/store/mr-software-hasworked-bundle.html
-  - /pt_BR/store/mr-software-period-insert-bundle.html
-  - /pt_BR/store/mr-software-hasworked-bundle.html
-  - /pt/store/mr-software-hasworked-bundle.html
-  - /he/store/mr-software-period-insert-bundle.html
 ---
 
 This post combines bad and good news. Let's start with the bad one...

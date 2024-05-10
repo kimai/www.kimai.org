@@ -2,14 +2,6 @@
 title: Developer
 description: Developer documentation - run, develop, extend and build for Kimai 
 canonical: /documentation/developers.html
-redirect_from:
-  - /documentation/developer/documentation.html
-  - /documentation/developer/introduction.html
-  - /documentation/development/installation.html  
-  - /documentation/developer/index.html
-  - /documentation/developer/
-  - /v1/developer.html
-  - /documentation/impersonate-user.html
 ---
 
 This page is for all developers who want to contribute to Kimai. You rock!

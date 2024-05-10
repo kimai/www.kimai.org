@@ -2,13 +2,6 @@
 title: Invoices
 description: Create invoices directly within Kimai from timesheet data in several formats 
 canonical: /documentation/invoices.html
-redirect_from:
-  - /documentation/invoices/
-  - /documentation/developer/invoice-templates.html
-  - /documentation/invoice-templates/
-  - /v1/invoice-templates.html
-  - /v1/invoices.html
-  - /documentation/2.0/invoices.html
 related:
   - plugin-invoice
 ---

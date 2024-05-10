@@ -2,8 +2,6 @@
 title: "Keyboard shortcuts"
 description: How to use Kimai with your keyboard
 toc: false
-redirect_from:
-- /documentation/2.0/keyboard-shortcuts.html
 ---
 
 Kimai supports a couple of keyboard shortcuts, which can be used on most pages.

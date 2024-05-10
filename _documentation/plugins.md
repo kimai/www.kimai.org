@@ -2,7 +2,6 @@
 title: Create plugins
 navigation: Getting started
 description: How to create a Kimai plugin 
-redirect_from: /documentation/extensions/
 ---
 
 A Kimai plugin is from a technical perspective _only_ a Symfony bundle, with some minor modifications.

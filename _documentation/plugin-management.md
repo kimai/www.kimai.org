@@ -2,7 +2,6 @@
 title: Install and update Kimai plugins
 navigation: Plugins
 description: How to install, update, deactivate and uninstall Kimai plugins 
-redirect_from: /documentation/extensions/
 ---
 
 Kimai plugins are stored in `var/plugins/`.
