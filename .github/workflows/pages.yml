@@ -44,6 +44,7 @@ jobs:
         run: |
             find _site/zh_Hant -type f -exec sed -i'' 's/\/zh_Hant\//\//g' {} +
             find _site/zh_Hant -type f -exec sed -i'' 's/href="\/documentation\//href="https:\/\/www.kimai.org\/documentation\//g' {} +
+            find _site/zh_Hant -type f -exec sed -i'' 's/href="\/en\//href="https:\/\/www.kimai.org\/en\//g' {} +
       - name: Commit to branch
         uses: JamesIves/github-pages-deploy-action@v4
         with:
