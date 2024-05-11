@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -33,7 +33,7 @@ jobs:
           cache-version: 0 # Increment this number if you need to re-download cached gems
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@v5
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build
@@ -41,7 +41,7 @@ jobs:
           JEKYLL_ENV: production
       - name: Fix zh_Hant locale
         id: remote_version
-        run: find _site/zh_Hant -type f -exec sed -i '' 's/\/zh_Hant\//\//g' {} +
+        run: find _site/zh_Hant -type f -exec sed -i'' 's/\/zh_Hant\//\//g' {} +
       - name: Commit to branch
         uses: JamesIves/github-pages-deploy-action@v4
         with:
