@@ -1,6 +1,6 @@
 ---
 title: "Kimai Rabatt und Gutschein Codes"
-permalink: /de/kimai-rabatt-codes.html
+permalink: /de/kimai-rabatt-codes
 centered: true
 ---
 
