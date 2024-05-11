@@ -279,7 +279,7 @@ layout: default
                 {% endif %}
                 {% if documentation %}
                 <li class="nav-item">
-                    <a target="_blank" href="{% link {{ "_documentation/" | append: documentation | append: ".md" }} %}" class="nav-link">
+                    <a target="_blank" href="{% link _documentation/{{ documentation }}.md %}" class="nav-link">
                         <i class="bx bx-link-external opacity-70 me-2"></i>
                         {{ site.data[page.lang].translation.documentation.name }}
                     </a>
