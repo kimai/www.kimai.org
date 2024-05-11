@@ -55,8 +55,7 @@
             </div>
             <div class="col-md-7 offset-xl-1">
                 <div id="footer-links" class="row">
-                    {% assign columnLength = 4 %}
-                    <div class="col-12 col-md-6 col-lg-{{ columnLength }}">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <h6 class="fs-lg mb-1 mb-md-2">
                             <span class="d-none d-md-block">Kimai</span>
                             <a href="#tools" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Kimai</a>
@@ -81,7 +80,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 col-lg-{{ columnLength }}">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <h6 class="fs-lg mb-1 mb-md-2">
                             <span class="d-none d-md-block">Kimai {% if page.lang == 'de' %}für{% else %}for{% endif %}</span>
                             <a href="#landing-kimai-for" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Kimai {% if page.lang == 'de' %}für{% else %}for{% endif %}</a>
@@ -100,7 +99,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 col-lg-{{ columnLength }}">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <h6 class="fs-lg mb-1 mb-md-2">
                             <span class="d-none d-md-block">{{ site.data[page.lang].translation.comparison.footer-title }}</span>
                             <a href="#footer-cmp" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">{{ site.data[page.lang].translation.comparison.footer-title }}</a>
