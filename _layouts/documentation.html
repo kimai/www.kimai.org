@@ -105,9 +105,9 @@ layout: base
                         {% include docs-navi.html navigation=menu %}
                         <div class="list-group list-group-flush pb-3 mb-4 mx-n4">
                     {% endif %}
-                    {% include link-translated-menu.html language=page.lang item="index" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4" %}
-                    {% include link-translated-menu.html language=page.lang item="site-notice" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4" %}
-                    {% include link-translated-menu.html language=page.lang item="privacy-policy" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4" %}
+                        <a href="{% link _pages/index.html %}" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">{{ site.data['en'].translation['index'].name }}</a>
+                        <a href="{% link _pages/site-notice.md %}" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">{{ site.data['en'].translation['site-notice'].name }}</a>
+                        <a href="{% link _pages/privacy-policy.md %}" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">{{ site.data['en'].translation['privacy-policy'].name }}</a>
                     </div>
                 </div>
             </div>
