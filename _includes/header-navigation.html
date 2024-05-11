@@ -54,8 +54,8 @@
                         <ul class="dropdown-menu">
                             {% for group in site.data.menu-documentation %}
                             {% assign docs_config = group[1] %}
-                            {% assign docs_page = site.documentation | where: "slug", docs_config.slug | first %}
-                            <a href="{% include link-language-domain.html language='en' url=docs_page.url %}" class="dropdown-item">
+                            {% assign docs_page = site.documentation | find: "slug", docs_config.slug %}
+                            <a href="{{ docs_page.url | full_url: 'en' }}" class="dropdown-item">
                                 <i class="{{ docs_config.icon }} me-2"></i>
                                 {% assign tkey = docu- | append: docs_config.translation %}
                                 {{ site.data[page.lang].translation[tkey].name }}

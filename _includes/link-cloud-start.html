@@ -6,4 +6,4 @@
 {% if include.classes != nil %}
     {% assign _classes = include.classes %}
 {% endif %}
-<a href="{% include link-cloud-url.html %}" class="{{ _classes }}">{{ _title }}</a>
+<a href="{{ page.lang | url_cloud_register }}" class="{{ _classes }}">{{ _title }}</a>

@@ -36,7 +36,7 @@
                             </button>
                             <div class="dropdown-menu dropdown-menu-end">
                                 {% for lang in site.languages %}
-                                    <a dir="{% if site.rtl contains lang %}rtl{% else %}ltr{% endif %}" href="{% include link-language-domain.html language=lang %}/" class="dropdown-item{% if lang == page.lang %} active{% endif %}" title="{{ site.data[lang].translation.index.title }}">{{ site.language_names[lang] }}</a>
+                                    <a dir="{% if site.rtl contains lang %}rtl{% else %}ltr{% endif %}" href="{{ '/' | full_url: lang }}" class="dropdown-item{% if lang == page.lang %} active{% endif %}" title="{{ site.data[lang].translation.index.title }}">{{ site.language_names[lang] }}</a>
                                 {% endfor %}
                             </div>
                         </div>
@@ -93,7 +93,7 @@
                                 {% assign lps = site.opensource | where: "lang", englishOrGerman %}
                                 {% for lp in lps %}
                                 <li class="nav-item">
-                                    <a href="{{ lp.url }}" class="nav-link fs-sm fw-medium px-0 py-1" title="Open-Source {{ lp.keyword }}">{{ lp.keyword }}</a>
+                                    <a href="{{ lp.url | full_url: englishOrGerman }}" class="nav-link fs-sm fw-medium px-0 py-1" title="Open-Source {{ lp.keyword }}">{{ lp.keyword }}</a>
                                 </li>
                                 {% endfor %}
                             </ul>
@@ -112,7 +112,7 @@
                                 {% assign tools = site.alternative | where: "lang", "en"  | where: "feature", true | sort: "name" %}
                                 {% for tool in tools %}
                                     <li class="nav-item">
-                                        <a href="{{ tool.url }}" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to {{ tool.name }}">{{ tool.name }}</a>
+                                        <a href="{{ tool.url | full_url: 'en' }}" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to {{ tool.name }}">{{ tool.name }}</a>
                                     </li>
                                 {% endfor %}
                             </ul>

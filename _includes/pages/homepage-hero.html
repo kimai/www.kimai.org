@@ -17,7 +17,7 @@
                             <div class="senja-embed" data-id="5f195b5c-de71-43ef-83c8-ec9ca9aa9b9f" data-mode="shadow" data-lazyload="false"></div>
                             <script async type="text/javascript" src="https://widget.senja.io/widget/5f195b5c-de71-43ef-83c8-ec9ca9aa9b9f/platform.js"></script>
                         {% endif %}
-                        <a href="{% include link-cloud-url.html %}" class="d-inline-flex align-items-center fw-semibold text-decoration-none border border-primary border-opacity-50 rounded-pill py-1 px-3 mt-5">
+                        <a href="{{ page.lang | url_cloud_register }}" class="d-inline-flex align-items-center fw-semibold text-decoration-none border border-primary border-opacity-50 rounded-pill py-1 px-3 mt-5">
                             <span class="text-gradient-primary lh-lg">{{ site.data[page.lang].translation.cloud-call-to-action }}</span>
                             <i class="bx bx-right-arrow-alt text-gradient-primary fs-lg ms-2 me-n1"></i>
                         </a>
