@@ -33,7 +33,8 @@
                     <p>
                         {{ site.data[page.lang].translation.homepage-quote-excel }}
                     </p>
-                    <a href="{{ site.pages | where: 'slug', 'demo' | where: 'lang', page.lang | map: 'url' | first }}" class="btn btn-primary w-100 mb-2">{{ site.data[page.lang].translation.homepage-alert-button-demo }}</a>
+                    {% assign demoText = site.data[page.lang].translation.homepage-alert-button-demo %}
+                    {% include link-translated-menu.html item="demo" language=page.lang class="btn btn-primary w-100 mb-2" title=demoText %}
                 </div>
                 <div class="col-lg-6 col-md-7 mt-md-4">
                     <img src="/images/screenshots/widget-teams.jpg" class="d-none d-sm-block my-lg-2 mx-auto me-md-0" width="502" alt="Image">
