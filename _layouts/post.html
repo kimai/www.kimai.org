@@ -18,7 +18,13 @@ layout: default
             <img src="{{ author.image }}" class="rounded-circle" width="60" alt="Avatar">
             <div class="ps-3">
                 <h6 class="mb-1">{{ author.name }}</h6>
+                {% if author.twitter != nil %}
                 <a href="{{ author.twitter }}" class="fw-semibold stretched-link">@{{ author.username }}</a>
+                {% elsif author.github != nil %}
+                <a href="{{ author.github }}" class="fw-semibold stretched-link">@{{ author.username }}</a>
+                {% elsif author.homepage != nil %}
+                <a href="{{ author.homepage }}" class="fw-semibold stretched-link">@{{ author.username }}</a>
+                {% endif %}
             </div>
         </div>
     </div>
