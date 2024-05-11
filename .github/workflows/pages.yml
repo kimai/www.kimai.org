@@ -39,10 +39,9 @@ jobs:
         run: bundle exec jekyll build
         env:
           JEKYLL_ENV: production
-      - name: Upload artifact
-        # Automatically uploads an artifact from the './_site' directory by default
-        uses: actions/upload-pages-artifact@v1
-
+      - name: Fix zh_Hant locale
+        id: remote_version
+        run: find _site/zh_Hant -type f -exec sed -i '' 's/\/zh_Hant\//\//g' {} +
       - name: Commit to branch
         uses: JamesIves/github-pages-deploy-action@v4
         with:
