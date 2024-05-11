@@ -1,4 +1,4 @@
-{% assign chapter = site.documentation | where: "slug", include.chapter | first %}
+{% assign chapter = site.documentation | find: "slug", include.chapter %}
 {% capture documentation_link %}
 [{{ site.data[page.lang].translation.full-documentation }}]({{ chapter.url }})
 {% endcapture %}

@@ -1,6 +1,6 @@
 {%- if include.item != nil -%}
     {%- assign language = include.language | default: page.lang -%}
-    {%- assign menu = site.store | where: "slug", include.item | where: "lang", language | first -%}
+    {%- assign menu = site.store | where: "slug", include.item | find: "lang", language -%}
     {%- assign class = '' -%}
     {%- if include.class != nil -%}
         {%- assign class = include.class -%}

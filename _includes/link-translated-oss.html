@@ -1,5 +1,5 @@
 {%- if include.item != nil and include.language != nil -%}
-    {%- assign menu = site.opensource | where: "slug", include.item | where: "lang", include.language | first -%}
+    {%- assign menu = site.opensource | where: "slug", include.item | find: "lang", include.language -%}
     {%- assign class = '' -%}
     {%- if include.class != nil -%}
         {%- assign class = include.class -%}

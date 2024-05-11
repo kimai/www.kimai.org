@@ -23,7 +23,7 @@
                     <div class="lh-lg">
                     {% for p in group.pages %}
                         {% if p != "-" %}
-                            {% assign doc = site.documentation | where: "slug", p | first %}
+                            {% assign doc = site.documentation | find: "slug", p %}
                             <a class="btn btn-sm btn-primary mb-1" href="{{ doc.url }}">
                                 {% if doc.navigation != nil %}
                                 {{ doc.navigation }}

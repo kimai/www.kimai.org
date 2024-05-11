@@ -6,7 +6,7 @@
     <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
     {% for page_slug in group.pages %}
         {% if page_slug != '-' %}
-            {% assign docs_page = site.documentation | where: "slug", page_slug | first %}
+            {% assign docs_page = site.documentation | find: "slug", page_slug %}
             {% if docs_page.slug == page.slug %}
                 {% assign is_active = true %}
             {% endif %}

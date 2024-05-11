@@ -25,7 +25,8 @@
 {% endif %}
 <header class="header navbar navbar-expand-lg {% if is_absolute %}position-absolute{% endif %} {% if is_dark %}navbar-dark{% endif %} {% if is_light %}bg-light{% endif %} navbar-sticky">
     <div class="container px-3">
-        <a href="{{ site.pages | where: 'lang', page.lang | where: 'slug', 'index' | map: 'url' | first }}" class="navbar-brand pe-3">
+        {% assign homepage = site.pages | where: 'lang', page.lang | find: 'slug', 'index' %}
+        <a href="{{ homepage.url }}" class="navbar-brand pe-3">
         <img src="/images/kimai_logo.png" style="height:36px" alt="{{ site.data[page.lang].translation.index.title }}"> Kimai
         </a>
         <div id="navbarNav" class="offcanvas offcanvas-end{% if is_dark %} bg-dark{% endif %}">
@@ -35,19 +36,19 @@
             </div>
             <div class="offcanvas-body">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    {% assign demo = site.pages | where: "slug", "demo" | where: "lang", page.lang | first %}
+                    {% assign demo = site.pages | where: "slug", "demo" | find: "lang", page.lang %}
                     <li class="nav-item{% if page.url contains demo.url %} active{% endif %}">
                         <a href="{{ demo.url }}" class="nav-link">{{ site.data[page.lang].translation.demo.name }}</a>
                     </li>
-                    {% assign store = site.pages | where: "slug", "store" | where: "lang", page.lang | first %}
+                    {% assign store = site.pages | where: "slug", "store" | find: "lang", page.lang %}
                     <li class="nav-item{% if page.url contains store.url %} active{% endif %}">
                         <a href="{{ store.url }}" class="nav-link">{{ site.data[page.lang].translation.store.name }}</a>
                     </li>
-                    {% assign blog = site.pages | where: "slug", "blog" | where: "lang", page.lang | first %}
+                    {% assign blog = site.pages | where: "slug", "blog" | find: "lang", page.lang %}
                     <li class="nav-item{% if page.url contains blog.url %} active{% endif %}">
                         <a href="{{ blog.url }}" class="nav-link">{{ site.data[page.lang].translation.blog.name }}</a>
                     </li>
-                    {% assign documentation = site.pages | where: "slug", "documentation" | where: "lang", page.lang | first %}
+                    {% assign documentation = site.pages | where: "slug", "documentation" | find: "lang", page.lang %}
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">{{ site.data[page.lang].translation.documentation.name }}</a>
                         <ul class="dropdown-menu">
