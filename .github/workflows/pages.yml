@@ -41,7 +41,9 @@ jobs:
           JEKYLL_ENV: production
       - name: Fix zh_Hant locale
         id: remote_version
-        run: find _site/zh_Hant -type f -exec sed -i'' 's/\/zh_Hant\//\//g' {} +
+        run: |
+            find _site/zh_Hant -type f -exec sed -i'' 's/\/zh_Hant\//\//g' {} +
+            find _site/zh_Hant -type f -exec sed -i'' 's/href="\/documentation\//href="https:\/\/www.kimai.org\/documentation\//g' {} +
       - name: Commit to branch
         uses: JamesIves/github-pages-deploy-action@v4
         with:
