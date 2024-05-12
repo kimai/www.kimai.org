@@ -39,8 +39,15 @@ jobs:
         run: bundle exec jekyll build
         env:
           JEKYLL_ENV: production
-      - name: Fix zh_Hant locale
-        id: remote_version
+      - name: Fix locale Hebrew
+        id: locale-he
+        run: |
+            find _site/he -type f -exec sed -i'' 's/\/he\//\//g' {} +
+            find _site/he -type f -exec sed -i'' 's/href="\/documentation\//href="https:\/\/www.kimai.org\/documentation\//g' {} +
+            find _site/he -type f -exec sed -i'' 's/href="\/blog\/2/href="https:\/\/www.kimai.org\/blog\/2/g' {} +
+            find _site/he -type f -exec sed -i'' 's/href="\/en\//href="https:\/\/www.kimai.org\/en\//g' {} +
+      - name: Fix locale zh_Hant
+        id: locale-zh-hant
         run: |
             find _site/zh_Hant -type f -exec sed -i'' 's/\/zh_Hant\//\//g' {} +
             find _site/zh_Hant -type f -exec sed -i'' 's/href="\/documentation\//href="https:\/\/www.kimai.org\/documentation\//g' {} +
