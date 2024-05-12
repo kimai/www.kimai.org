@@ -142,7 +142,7 @@ webserver directly.
     bin/console kimai:reload --env=prod
     ```
 - Create first user: `bin/console kimai:user:create username admin@example.com ROLE_SUPER_ADMIN`
-- Adjust [Apache configuration](https://www.kimai.org/documentation/webserver-configuration.html)
+- Adjust [Apache configuration]({% link _documentation/webserver-configuration.md %})
   to point to the "public" subfolder of the Kimai installation, i.e. set the path to
   `/var/www/vhosts/my-domain.com/kimai/public`. Also ensure that `ServerName`
   and `ServerAlias` are set to `kimai.my-domain.com` and `www.kimai.my-domain.com`.

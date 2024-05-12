@@ -38,7 +38,7 @@ A shortened version of [Google Bughunter University](https://bughunters.google.c
 Some researchers find that you can inject HTML into the fields `theme.branding.company` and `theme.branding.mini`, 
 which allows injecting HTML attributes to execute Javascript. 
 
-This is documented behavior, see [System > Setting](https://www.kimai.org/documentation/configurations.html) in the `My company` chapter
+This is documented behavior, see [System > Setting]({% link _documentation/configurations.md %}) in the `My company` chapter
 
 > The settings for company and mini name can contain the HTML tags &lt;b>&lt;i>&lt;u>&lt;strong>&lt;em>&lt;img>&lt;svg> for formatting.
 

@@ -16,7 +16,7 @@ The release 1.15 was published in September 2021.
 
 **LDAP & SAML**
 
-Please verify your config with the [LDAP](https://www.kimai.org/documentation/ldap.html) and [SAML](https://www.kimai.org/documentation/saml.html) documentation, especially:
+Please verify your config with the [LDAP]({% link _documentation/ldap.md %}) and [SAML]({% link _documentation/saml.md %}) documentation, especially:
 
 - SAML users: activate it by setting the `kimai.saml.activate: true` config key
 - LDAP users: activate it by setting the `kimai.ldap.activate: true` config key

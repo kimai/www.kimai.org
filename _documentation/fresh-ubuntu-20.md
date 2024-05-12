@@ -159,7 +159,7 @@ exit;
 
 Clone Kimai and set proper file permissions:
 
-> Please check the latest installation docs to check if something changed since writing these docs: <https://www.kimai.org/documentation/installation.html>
+> Please compare with the latest version infos at: <{% link _documentation/installation.md %}>
 
 ```bash
 cd /var/www/

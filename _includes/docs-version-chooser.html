@@ -19,7 +19,7 @@
             {% for v in versions %}
             <a class="dropdown-item" href="{{ paths[forloop.index0] }}">Kimai {{ v }}</a>
             {% endfor %}
-            <a class="dropdown-item" href="/documentation/{{ page.slug }}.html">{{ site.kimai_v2_version }} (latest version)</a>
+            <a class="dropdown-item" href="{% link {{ page.path }} %}">{{ site.kimai_v2_version }} (latest version)</a>
         </div>
     </div>
 {% endif %}

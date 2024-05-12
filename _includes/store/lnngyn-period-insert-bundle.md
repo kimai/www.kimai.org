@@ -9,7 +9,7 @@ This bundle comes with the following permission:
 
 By default, it is assigned to each user with the role `ROLE_SUPER_ADMIN`.
 
-Read how to assign these permissions to your user roles in the [permission documentation](https://www.kimai.org/documentation/permissions.html).
+Read how to assign these permissions to your user roles in the [permission documentation]({% link _documentation/permissions.md %}).
 
 ### Acknowledgements
 

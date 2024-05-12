@@ -21,11 +21,11 @@ var/data/
 var/plugins/
 ```
 
-According to [the backup docu](https://www.kimai.org/documentation/backups.html) the kimai version should be saved to.
+According to [the backup docu]({% link _documentation/backups.md %}) the kimai version should be saved to.
 Also the current git head.
 Therefor a Readme.txt file with the mentioned information is written and added to the backup.
 
-### What database tables are backuped?
+### Which tables are included iun the backup?
 
 If you use sqlite, the database file is backuped because the `var/data` directory will be backuped by the plugin.
 
