@@ -8,7 +8,7 @@
 {%- else -%}
 {%- unless site.custom_domain[include.language] -%}
 {%- if include.language != 'en' -%}
-{%- assign targetUrl = targetUrl | append: '/' | append: include.language -%}
+{%- assign targetUrl = targetUrl | append: '/' | append: include.language | append: '/' -%}
 {%- endif -%}
 {%- endunless -%}
 {%- endif -%}

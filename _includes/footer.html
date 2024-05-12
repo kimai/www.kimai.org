@@ -36,7 +36,7 @@
                             </button>
                             <div class="dropdown-menu dropdown-menu-end">
                                 {% for lang in site.languages %}
-                                    <a dir="{% if site.rtl contains lang %}rtl{% else %}ltr{% endif %}" href="{{ '/' | full_url: lang }}" class="dropdown-item{% if lang == page.lang %} active{% endif %}" title="{{ site.data[lang].translation.index.title }}">{{ site.language_names[lang] }}</a>
+                                    <a dir="{% if site.rtl contains lang %}rtl{% else %}ltr{% endif %}" href="{% include link-language-domain.html language=lang %}" class="dropdown-item{% if lang == page.lang %} active{% endif %}" title="{{ site.data[lang].translation.index.title }}">{{ site.language_names[lang] }}</a>
                                 {% endfor %}
                             </div>
                         </div>
