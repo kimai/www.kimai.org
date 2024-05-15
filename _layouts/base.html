@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="{{ page.lang }}" dir="{% if site.rtl contains page.lang %}rtl{% else %}ltr{% endif %}">
 <head>
-    {%- assign DOMAIN = site.language_base[page.lang] -%}
+    {% assign DOMAIN = site.language_base[page.lang] -%}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="msapplication-TileColor" content="#2d89ef">
@@ -30,7 +30,7 @@
         {%- endif -%}
         {{- page_title }}{% unless page_title contains 'Kimai'%}{{ prefix -}}{% endunless -%}
     </title>
-    {% assign page_description = page.excerpt %}
+    {%- assign page_description = page.excerpt -%}
     {%- if site.data[page.lang].translation[page.slug].description != nil -%}
         {% assign page_description = site.data[page.lang].translation[page.slug].description %}
     {%- elsif site.data[page.lang].store.items[page.slug].intro != nil -%}
@@ -42,9 +42,11 @@
         {% assign page_description = page_description | strip_html | strip_newlines | strip | replace: "    ", " " | replace: "  ", " " | strip | truncate: 156 %}
     {%- endif %}
     {%- if page_description != nil and page_description != '' %}
-        <meta name="description" content="{{ page_description }}">
+    <meta name="description" content="{{ page_description }}">
     {%- endif %}
+    {% unless site.custom_domain[page.lang] -%}
     <link type="application/atom+xml" rel="alternate" href="{% link feed.xml %}" title="Kimai Time-Tracking" />
+    {%- endunless %}
     <meta property="og:locale" content="{{ page.lang }}">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Kimai Time-Tracking">
