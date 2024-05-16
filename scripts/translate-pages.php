@@ -7,12 +7,11 @@ chdir($realpath);
 $languages = ['cs', 'de', 'es', 'fr', 'he', 'hr', 'it', 'nl', 'pl', 'pt', 'pt_BR', 'ru', 'sv', 'uk', 'zh_Hans', 'zh_Hant'];
 
 // currently working on:
-//$languages = ['fa'];
-//$languages = ['sk'];
+//$languages = ['zh_Hant'];
 
 $multiLanguagePaths = [
     '_pages' => [
-        'skip' => [],
+        'skip' => ['documentation.md'],
         'permalink' => '/:language/:original',
         'remove' => ['redirect_from'],
         'overwrite' => false,
