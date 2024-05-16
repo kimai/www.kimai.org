@@ -45,7 +45,7 @@
     <meta name="description" content="{{ page_description }}">
     {%- endif %}
     {% unless site.custom_domain[page.lang] -%}
-    <link type="application/atom+xml" rel="alternate" href="{% link feed.xml %}" title="Kimai Time-Tracking" />
+    <link type="application/atom+xml" rel="alternate" href="{{ '/feed.xml' | full_url: 'en' }}" title="Kimai Time-Tracking" />
     {%- endunless %}
     <meta property="og:locale" content="{{ page.lang }}">
     <meta property="og:type" content="website">
