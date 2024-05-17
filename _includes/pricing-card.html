@@ -24,7 +24,7 @@
                 <i class="bx bx-check fs-xl text-primary me-1"></i>
                 {% assign text = site.data[page.lang].translation.plans[key] %}
                 {% for replacer in teaser[1] %}
-                    {% assign text = text | replace: replacer[0], replacer[1] %}
+                {% assign text = text | replace: replacer[0], replacer[1] %}
                 {% endfor %}
                 {{ text }}
             </li>
