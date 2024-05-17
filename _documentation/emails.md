@@ -27,6 +27,12 @@ These are some examples to configure your SMTP for sending emails:
 
 More explanation can be found int the [Symfony mailer documentation](https://symfony.com/doc/current/mailer.html).
 
+Some more complex examples for the default SMTP transport:
+
+- SMTP with authentication: `smtp://user:password@smtp.example.com:25`
+- With email as username: `smtp://info@example.com:password@smtp.example.com:25`
+- With TLS/SSL encryption: `smtp://info@example.com:password@smtp.example.com:443?encryption=ssl`
+
 ## Troubleshooting
 
 You can test your email configuration by registering a new account or using the password reset function.
@@ -40,19 +46,22 @@ To work around that waiting time, you can reset the timer by issuing the followi
 bin/console doctrine:query:dql "UPDATE App\Entity\User u SET u.passwordRequestedAt = null WHERE u.username = 'anna_admin'"
 ```
 
-### MAILER_URL with special character 
+### Error 500 when sending emails 
 
-If your SMTP credentials contain special character like `@` or other ones which are not URL-safe, then they need to be urlencoded. 
-This can be done with one command, assuming your password is `mG0/d1@3aT.Z)s` then execute:
+Some commonly used password characters can cause problems, which lead to a 500 error when trying to send an email. 
+Those could be for example: `@`, `+`, `:` or `#` - but other ones might be affected as well!
+
+You need to encode them, so they can be safely used in the connection URL. 
+This can be done with one PHP command, assuming your password is `mG0/d1@3aT#Z+s1` then execute:
 
 ```bash
-php -r "echo urlencode('mG0/d1@3aT.Z)s');"
-mG0%2Fd1%403aT.Z%29s
+php -r "echo urlencode('mG0/d1@3aT#Z+s1');"
+mG0%2Fd1%403aT%23Z%2Bs1%
 ```
 
-Your `MAILER_URL` might look like this:
+Your `MAILER_URL` would look like this:
 ```
-MAILER_URL="smtp://user:mG0%2Fd1%403aT.Z%29s@localhost:25"
+MAILER_URL="smtp://user:mG0%2Fd1%403aT%23Z%2Bs1%@smtp.example.com:443?encryption=ssl"
 ```
 
 ### SMTP does not accept emails
