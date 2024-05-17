@@ -1,8 +1,12 @@
 
-<div class="table-responsive-lg w-xl-50 w-md-75 w-100">
-    <div class="row flex-nowrap pb-4">
-        <div class="col">
-            {% include pricing-card.html id="nonprofit" %}
-        </div>
+<div class="row flex-nowrap pb-4">
+    <div class="col-xs-12 col-md-6">
+        {% include pricing-card.html id="nonprofit" %}
+    </div>
+    <div class="col-xs-12 col-md-6">
+        {% if page.lang == 'de' %}
+        <div class="senja-embed" data-id="95a4466a-5f89-4292-95bf-00a7c2302e2c" data-mode="shadow" data-lazyload="false"></div>
+        <script async type="text/javascript" src="https://widget.senja.io/widget/95a4466a-5f89-4292-95bf-00a7c2302e2c/platform.js"></script>
+        {% endif %}
     </div>
 </div>
