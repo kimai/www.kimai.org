@@ -19,11 +19,11 @@
         <a href="{{ product.url }}">{{ translation.title }}</a>
     </p>
     <div class="d-flex text-muted pt-1">
-        <div class="fs-sm pe-3 me-3 flex-fill">
+        <div class="fs-sm pe-3 me-0 me-md-3 flex-fill">
             {{ translation.intro }}
             <a href="{{ product.url }}" class="d-block mt-3">{{ site.data[page.lang].translation.read-more }}</a>
         </div>
-        <p class="fs-sm fw-semibold text-primary mb-0 text-nowrap">
+        <p class="fs-sm fw-semibold text-primary mb-0 text-nowrap d-none d-md-block">
             <a href="{{ product.url }}">
             {% if settings.subscription != nil %}
             <i class="bx bx-cart fs-3"></i>
