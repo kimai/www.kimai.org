@@ -2,8 +2,8 @@
 title: Public holiday
 description: Managing public holidays
 related:
+- absence
 - contract
-- public-holiday
 ---
 
 {% include youtube-video.html id="public_holiday" %}

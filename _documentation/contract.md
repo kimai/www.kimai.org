@@ -77,12 +77,13 @@ This booking is only there for information purposes.
 
 ## Permissions
 
-| Permission Name            | Description                                                                                                                                                |
-|----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| contract_other_profile     | View the `Employment contract` menu. Switch the user in the `Working Contract` and `Absence` screen. Allow to change the contract settings of other users. |
-| view_booking_contract      | View working-time details (PDF, Manual bookings)                                                                                                           |
-| approve_times_contract     | Approve monthly timesheets.                                                                                                                                |
-| create_booking_contract    | Allows to create manual time bookings.                                                                                                                     |
+| Permission Name         | Description                                                                            |
+|-------------------------|----------------------------------------------------------------------------------------|
+| contract_other_profile  | Allow to see and change the contract settings of other users.                          |
+| hours_other_profile     | View the `Employment contract` menu. Switch the user in the `Working Contract` screen. |
+| view_booking_contract   | View working-time details (PDF, Manual bookings)                                       |
+| approve_times_contract  | Approve monthly timesheets.                                                            |
+| create_booking_contract | Allows to create manual time bookings.                                                 |
 {: .table }
 
 {% include store-howto-permissions.md %}
