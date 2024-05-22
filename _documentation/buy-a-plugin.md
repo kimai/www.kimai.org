@@ -41,8 +41,9 @@ _For example: You license a plugin containing icons. You can delete unwanted ico
 
 ### Frequently asked questions
 
+- The plugins are sold with annual licenses for receiving updates. If you cancel a subscription, you can keep on using the latest version which was released before the end of our subscription. 
 - You are allowed to use a plugin license in one additional test/development environment 
-- You are allowed to buy a plugin license and resell it to one customer
+- You are allowed to buy a plugin license and resell the original license key to one customer 
 - You are not allowed to use one plugin license for multiple customers
-- You are not allowed to use the plugin in a SaaS environment
-- Each of your customer needs its own license
+- You are not allowed to use the plugin in any kind of SaaS environment
+- If you are hosting for your customers, every customer needs its own license
