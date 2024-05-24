@@ -1687,6 +1687,14 @@ The example <code class="language-plaintext highlighter-rouge">{{ invoice['invoi
       <td>The projects time-budget in minutes with no decimals</td>
     </tr>
     <tr>
+      <td>${project.number}</td>
+      <td>The project number</td>
+    </tr>
+    <tr>
+      <td>${project.invoice_text}</td>
+      <td>The project invoice-text</td>
+    </tr>
+    <tr>
       <td>${project.meta.foo}</td>
       <td>The project <a href="/documentation/meta-fields.html">meta field</a> with the internal name <code class="language-plaintext highlighter-rouge">foo</code> (must be in lowercase letters, e.g. <code class="language-plaintext highlighter-rouge">FOO</code> will be available as <code class="language-plaintext highlighter-rouge">${project.meta.foo}</code>. Only available if the field is visible.</td>
     </tr>
@@ -1737,6 +1745,14 @@ If your template relies on a <code class="language-plaintext highlighter-rouge">
     <tr>
       <td>${activity.comment}</td>
       <td>The <code class="language-plaintext highlighter-rouge">description</code> of this activity</td>
+    </tr>
+    <tr>
+      <td>${activity.number}</td>
+      <td>The activity number</td>
+    </tr>
+    <tr>
+      <td>${activity.invoice_text}</td>
+      <td>The activity invoice-text</td>
     </tr>
     <tr>
       <td>${activity.meta.foo}</td>
