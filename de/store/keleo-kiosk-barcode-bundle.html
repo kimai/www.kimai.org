@@ -289,6 +289,13 @@
                 </li>
                 
                 
+                <li class="nav-item">
+                    <a target="_blank" href="/documentation/plugin-kiosk.html" class="nav-link">
+                        <i class="bx bx-link-external opacity-70 me-2"></i>
+                        Dokumentation
+                    </a>
+                </li>
+                
             </ul>
             <div class="tab-content">
                 <div class="tab-pane fade show active" id="store-info" role="tabpanel">
@@ -324,7 +331,7 @@ attendance time through punch-in (coming) and punch-out (leaving) mode.</p>
       <li>Barcode scanner (via device camera, only works via HTTPS)</li>
       <li>Barcode scanner (via USB or Bluetooth)</li>
       <li>RFID scanner (via USB or Bluetooth)</li>
-      <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/NDEFReader">Web NFC</a></li>
+      <li>Web NFC (<a href="https://developer.mozilla.org/en-US/docs/Web/API/NDEFReader">see docs</a>)</li>
     </ul>
   </li>
   <li>Upon starting/stopping a record via this plugin, the user will see a short overview screen with the entries of the current week (including some statistics)</li>
@@ -349,11 +356,11 @@ attendance time through punch-in (coming) and punch-out (leaving) mode.</p>
     </ul>
   </li>
   <li>Optional: show active / inactive users in login screen</li>
-  <li>Many CSS classes to customize the look with <a href="/store/keleo-css-custom-bundle.html">Custom CSS Bundle</a>
+  <li>Many CSS classes to customize the look with <a href="/documentation/plugin-custom-content.html">Custom CSS</a>
 </li>
 </ul>
 
-<p>You need to configure <strong>a non-global activity</strong> for starting the record via this plugin. 
+<p>You need to configure <strong>a non-global activity</strong> for starting the record via this plugin.
 This will be used for every recorded timesheet that is created using the kiosk mode.</p>
 
 <h3 id="hardware">Hardware</h3>
@@ -375,87 +382,7 @@ This will be used for every recorded timesheet that is created using the kiosk m
 <a href="https://amzn.to/2Q9KWAy">Barcode scanner</a> classic hand-held version</li>
 </ul>
 
-<p>The above are affiliate links for Amazon (germany) where I bought them myself.</p>
-
-<h2 id="configuration">Configuration</h2>
-
-<p>You have to configure the bundle before you can use it - you reach the configuration via</p>
-<ul>
-  <li>the <code class="language-plaintext highlighter-rouge">Plugin</code> screen (<code class="language-plaintext highlighter-rouge">Preferences</code> in action dropdown behind the plugin)</li>
-  <li>the Kiosk administration (cogs icon in the upper right)</li>
-  <li>the System configuration (<code class="language-plaintext highlighter-rouge">Kiosk &amp; Barcode</code> section)</li>
-</ul>
-
-<p>The following configurations are available:</p>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Configuration</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">Login mode</code></td>
-      <td>whether to use camera or usb mode</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">Code format</code></td>
-      <td>you have to decide which code format you want to use</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">Barcode includes readable code</code></td>
-      <td>whether the barcode in the user profile will include the human readable code</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">Duration to display confirmation dialog (in seconds)</code></td>
-      <td>how long the start/stop screens will be shown after a successful scan</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">Activity</code></td>
-      <td>the non-global activity that will be used to track the times</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="permissions">Permissions</h2>
-
-<p>This bundle introduces new permissions, which limit access to certain functions:</p>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Permission Name</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">kiosk_admin</code></td>
-      <td>whether the current user can see the Kiosk administration and assign codes</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">kiosk_own_profile</code></td>
-      <td>configure codes and user specific kiosk settings (eg. start and end time) for own account</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">kiosk_other_profile</code></td>
-      <td>configure codes and user specific kiosk settings (eg. start and end time) for other accounts</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>By default, these are granted to each user with the role <code class="language-plaintext highlighter-rouge">ROLE_SUPER_ADMIN</code>.</p>
-
-<div class="alert d-flex alert-info" role="alert">
-    <i class="bx bx-fas fa-exclamation lead me-3"></i>
-    <div>
-        
-Read how to assign these permissions to your user roles in the <a href="/documentation/permissions.html">permission documentation</a>.
-
-    </div>
-</div>
+<p>Above are affiliate links for Amazon (Germany) where I bought them myself.</p>
 
 <h2 id="licenses">Licenses</h2>
 
