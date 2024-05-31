@@ -804,16 +804,23 @@ users can edit their records until the fifth day of the month (because invoices 
 <h2 id="theme">Theme</h2>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">Minimum number of letters to start auto-completion</code> -</li>
   <li><code class="language-plaintext highlighter-rouge">Allow markdown-formattings in descriptions and comments</code> - if activated, contents will be rendered with a markdown engine 
-supporting simple lists and other HTML content. It will only be rendered in <code class="language-plaintext highlighter-rouge">My times</code> and not in <code class="language-plaintext highlighter-rouge">Admin &gt; Timesheet</code> as
-<a href="https://github.com/erusev/parsedown/blob/master/README.md#security">security measure</a>.</li>
-  <li><code class="language-plaintext highlighter-rouge">Tags: use auto-complete search and allow tag creation</code> -</li>
-  <li><code class="language-plaintext highlighter-rouge">Limit color choices</code> - whether you want to use a dropdown list of pre-defined colors or the native color chooser with unlimited colors</li>
-  <li><code class="language-plaintext highlighter-rouge">Allowed colors</code> - if <code class="language-plaintext highlighter-rouge">Limit color choices</code> is active, these are the colors that can be chosen</li>
-  <li><code class="language-plaintext highlighter-rouge">Allow the use of URLs for avatar images</code> - you can allow using URLs for user avatars (not recommended)</li>
-  <li><code class="language-plaintext highlighter-rouge">Use random colors for objects without assigned color</code> - objects without an assigned color (projects, user …) show a grey dot by default, but if this option is active a color is randomly chosen (the use of this random color is limited for now)</li>
+supporting simple lists and other HTML content. It will only be rendered in <code class="language-plaintext highlighter-rouge">My times</code> and not in <code class="language-plaintext highlighter-rouge">Admin &gt; Timesheet</code> as <a href="https://github.com/erusev/parsedown/blob/master/README.md#security">security</a> measure.</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td><code class="language-plaintext highlighter-rouge">Allowed colors</code> - Comma-separated list of HTML color-codes. Color names can be set by prefixing the color code with a name and the “</td>
+          <td>” delimiter, e.g: <code class="language-plaintext highlighter-rouge">White|#ffffff,Black|#000000</code>.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
 </ul>
+
+<p>The default color palette is:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#c0c0c0,Gray|#808080,Black|#000000,Maroon|#800000,Brown|#a52a2a,Red|#ff0000,Orange|#ffa500,Gold|#ffd700,Yellow|#ffff00,Peach|#ffdab9,Khaki|#f0e68c,Olive|#808000,Lime|#00ff00,Jelly|#9acd32,Green|#008000,Teal|#008080,Aqua|#00ffff,LightBlue|#add8e6,DeepSky|#00bfff,Dodger|#1e90ff,Blue|#0000ff,Navy|#000080,Purple|#800080,Fuchsia|#ff00ff,Violet|#ee82ee,Rose|#ffe4e1,Lavender|#E6E6FA
+</code></pre></div></div>
 
 <h2 id="calendar">Calendar</h2>
 
