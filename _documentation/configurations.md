@@ -146,15 +146,14 @@ These are the existing rounding modes:
 
 ## Theme
 
-- `Minimum number of letters to start auto-completion` - 
 - `Allow markdown-formattings in descriptions and comments` - if activated, contents will be rendered with a markdown engine 
-  supporting simple lists and other HTML content. It will only be rendered in `My times` and not in `Admin > Timesheet` as
-  [security measure](https://github.com/erusev/parsedown/blob/master/README.md#security).  
-- `Tags: use auto-complete search and allow tag creation` - 
-- `Limit color choices` - whether you want to use a dropdown list of pre-defined colors or the native color chooser with unlimited colors
-- `Allowed colors` - if `Limit color choices` is active, these are the colors that can be chosen 
-- `Allow the use of URLs for avatar images` - you can allow using URLs for user avatars (not recommended) 
-- `Use random colors for objects without assigned color` - objects without an assigned color (projects, user ...) show a grey dot by default, but if this option is active a color is randomly chosen (the use of this random color is limited for now)
+  supporting simple lists and other HTML content. It will only be rendered in `My times` and not in `Admin > Timesheet` as [security](https://github.com/erusev/parsedown/blob/master/README.md#security) measure.  
+- `Allowed colors` - Comma-separated list of HTML color-codes. Color names can be set by prefixing the color code with a name and the "|" delimiter, e.g: `White|#ffffff,Black|#000000`.
+
+The default color palette is: 
+```
+#c0c0c0,Gray|#808080,Black|#000000,Maroon|#800000,Brown|#a52a2a,Red|#ff0000,Orange|#ffa500,Gold|#ffd700,Yellow|#ffff00,Peach|#ffdab9,Khaki|#f0e68c,Olive|#808000,Lime|#00ff00,Jelly|#9acd32,Green|#008000,Teal|#008080,Aqua|#00ffff,LightBlue|#add8e6,DeepSky|#00bfff,Dodger|#1e90ff,Blue|#0000ff,Navy|#000080,Purple|#800080,Fuchsia|#ff00ff,Violet|#ee82ee,Rose|#ffe4e1,Lavender|#E6E6FA
+```
 
 ## Calendar 
 
