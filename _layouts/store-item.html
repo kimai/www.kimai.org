@@ -195,13 +195,7 @@ layout: default
                             </div>
 
                             {% if isMultiPurchase != nil %}
-                                {% if site.parity_deals[page.lang] %}
-                                    <script src="https://cdn.paritydeals.com/banner.js"></script>
-                                    {% comment %}the .discount-deal-* classes are required for paritydeals.com{% endcomment %}
-                                {% endif %}
-
                                 {% if settings.lemonsqueezy %}
-                                <div class="discount-deal-lemonsqueezy"></div>
                                 <div class="row align-items-center mb-3">
                                     <a class="btn btn-success btn-lg w-100 btn-buy" href="{{ settings.lemonsqueezy }}" target="_blank"><i class="{{ buyBtnIcon }} me-2"></i> {{ buyTitle }}</a>
                                 </div>
@@ -220,7 +214,6 @@ layout: default
                                 {% endif %}
 
                                 {% if settings.gumroad and settings.lemonsqueezy == nil %}
-                                <div class="discount-deal-gumroad"></div>
                                 <div class="row align-items-center mb-3">
                                     <a class="btn btn-success btn-lg w-100 btn-buy" href="{{ settings.gumroad }}" target="_blank"><i class="{{ buyBtnIcon }} me-2"></i> {{ buyTitle }}</a>
                                 </div>
