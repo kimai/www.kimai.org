@@ -104,6 +104,10 @@ layout: default
 {% if settings.demo != nil %}
     {% assign showDemo = settings.demo %}
 {% endif %}
+{% assign is_ppp = false %}
+{% if isMultiPurchase != nil and page.lang != 'de' %}
+    {% assign is_ppp = true %}
+{% endif %}
 
 <section class="jarallax bg-dark pt-2 pt-lg-3 pb-lg-5" data-jarallax data-speed="0.35" data-bs-theme="dark">
     <span class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-70"></span>
@@ -191,26 +195,38 @@ layout: default
                                 <span class="text-nowrap">{{ pricing }}</span>
                                 <small class="text-muted fs-xl fw-normal ms-2">
                                     {{ buySubTitle }}
+                                    {% if is_ppp %}
+                                        <sup>*</sup>
+                                    {% endif %}
                                 </small>
                             </div>
 
                             {% if isMultiPurchase != nil %}
                                 {% if settings.lemonsqueezy %}
-                                <div class="row align-items-center mb-3">
-                                    <a class="btn btn-success btn-lg w-100 btn-buy" href="{{ settings.lemonsqueezy }}" target="_blank"><i class="{{ buyBtnIcon }} me-2"></i> {{ buyTitle }}</a>
-                                </div>
-                                <div class="row align-items-center mb-3 text-muted fs-sm">
-                                    <div class="col-auto">
-                                        {{ site.data[page.lang].translation.store-payment-methods }}
+                                    <div class="row align-items-center mb-3">
+                                        <a class="btn btn-success btn-lg w-100 btn-buy" href="{{ settings.lemonsqueezy }}" target="_blank"><i class="{{ buyBtnIcon }} me-2"></i> {{ buyTitle }}</a>
                                     </div>
-                                    <div class="col-auto ms-auto fs-lg">
-                                        <i class="bx bxl-paypal"></i>
-                                        <i class="bx bxl-google"></i>
-                                        <i class="bx bxl-apple"></i>
-                                        <i class="bx bxl-visa"></i>
-                                        <i class="bx bxl-mastercard"></i>
+                                    <div class="row align-items-center mb-3 text-muted fs-sm">
+                                        <div class="col-auto">
+                                            {{ site.data[page.lang].translation.store-payment-methods }}
+                                        </div>
+                                        <div class="col-auto ms-auto fs-lg">
+                                            <i class="bx bxl-paypal"></i>
+                                            <i class="bx bxl-google"></i>
+                                            <i class="bx bxl-apple"></i>
+                                            <i class="bx bxl-visa"></i>
+                                            <i class="bx bxl-mastercard"></i>
+                                        </div>
                                     </div>
-                                </div>
+                                    {% if is_ppp %}
+                                        <div class="row align-items-center text-muted fs-sm">
+                                            <div class="col-auto ms-auto">
+                                                    <a href="{% link _landingpage/en/discount-codes.md %}" class="text-decoration-none text-muted">
+                                                    * {{ site.data[page.lang].translation.purchase-power-parity }}
+                                                    </a>
+                                            </div>
+                                        </div>
+                                    {% endif %}
                                 {% endif %}
 
                                 {% if settings.gumroad and settings.lemonsqueezy == nil %}
