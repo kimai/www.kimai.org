@@ -6,6 +6,14 @@ related:
 - rest-api
 ---
 
+## Sync your Kimai data via API to a local database
+
+Tired of exporting Excel to import it into Power BI?
+
+Use this script and let it run every night to sync the delta from last night: https://github.com/kimai/api-sync
+
+Then point your BI solution to the local database. 
+
 ## Using the API to import CSV data with PHP
 
 This example uses the API to import a list of customers, projects and activities from a CSV file.
