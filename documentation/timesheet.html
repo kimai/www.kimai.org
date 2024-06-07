@@ -41,7 +41,6 @@
 
 
 
-
 <header class="header navbar navbar-expand bg-light border-bottom border-light shadow fixed-top" data-scroll-header>
     <div class="container-fluid pe-lg-4">
         <div class="d-flex align-items-center">
@@ -659,14 +658,28 @@
 
 <h4 id="problem-cannot-be-stopped">Problem: cannot be stopped</h4>
 
-<p>Kimai has rules in place, to prevent excessive long timesheets from being accidentally created.</p>
+<p>Kimai has a few rules in place, which could prevent to stop a running timesheet, e.g.:</p>
 
-<p>When a user tries to create such a timesheet, or tries to stop such a timesheet, a warning will be shown:</p>
+<ul>
+  <li>prevent excessive long timesheets from being accidentally created</li>
+  <li>prevent a timesheet to be stopped before it was started, which can happen if you create a running timesheet with a start date in the future</li>
+</ul>
 
-<p><img src="/images/documentation/timesheet/timesheet-excessive-duration.jpg" alt="Screenshot" title="How such a warning will look like" height="250px" /></p>
+<p>When a user tries to stop such a timesheet, a warning like one of the following will be shown:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">End date must not be earlier then start date</code></li>
+  <li><code class="language-plaintext highlighter-rouge">An empty duration is not allowed</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Maximum 08:00 hours allowed</code></li>
+</ul>
+
+<figure class="d-block figure mb-3" style="max-width: 350px">
+    <img src="/images/documentation/timesheet/timesheet-excessive-duration.jpg" class="figure-img img-fluid rounded" />
+    <figcaption class="figure-caption">How such a warning will look like</figcaption>
+</figure>
 
 <p>You have several options to solve this problem. 
-All of them involve that the user opens the timesheet listing and finds the record (usually the last one created):</p>
+All of them involve that you switch to <code class="language-plaintext highlighter-rouge">My times</code> and find the record (usually the last one created):</p>
 
 <ul>
   <li>Edit the record and set a different start date</li>
