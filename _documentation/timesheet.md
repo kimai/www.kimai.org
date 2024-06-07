@@ -27,14 +27,21 @@ related:
 
 #### Problem: cannot be stopped
 
-Kimai has rules in place, to prevent excessive long timesheets from being accidentally created.
+Kimai has a few rules in place, which could prevent to stop a running timesheet, e.g.:
 
-When a user tries to create such a timesheet, or tries to stop such a timesheet, a warning will be shown:
+- prevent excessive long timesheets from being accidentally created
+- prevent a timesheet to be stopped before it was started, which can happen if you create a running timesheet with a start date in the future
 
-![Screenshot](/images/documentation/timesheet/timesheet-excessive-duration.jpg "How such a warning will look like"){:height="250px"}
+When a user tries to stop such a timesheet, a warning like one of the following will be shown:
+
+- `End date must not be earlier then start date`
+- `An empty duration is not allowed`
+- `Maximum 08:00 hours allowed`
+
+{% include docs-image.html src="/images/documentation/timesheet/timesheet-excessive-duration.jpg" title="How such a warning will look like" width="350px" %}
 
 You have several options to solve this problem. 
-All of them involve that the user opens the timesheet listing and finds the record (usually the last one created):
+All of them involve that you switch to `My times` and find the record (usually the last one created):
 
 - Edit the record and set a different start date
 - Edit the record and set a different end date
