@@ -35,13 +35,21 @@ Contains the entire year with the following information:
   - a public holiday 
   - any kind of absence
 
-## Manual bookings
+## Manual bookings: Account working times
 
 Manual bookings can be used to increase or reduce the users time account.
 
 Popular examples are:
 - adding a positive amount of hours => taking over hours from the last year
 - removing a negative amount of hours => payment to compensate for plus hours
+
+## Manual bookings: Holidays
+
+Manual bookings can be used to increase or reduce the users available holidays.
+
+Popular examples are:
+- adding a positive amount of days => taking over holiday from the last year
+- removing a negative amount of days => old holidays which were not taken on time expired
 
 ## How calculations work
 
