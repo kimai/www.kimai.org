@@ -22,7 +22,7 @@ These data are collected automatically as soon as you enter our website.
 **What do we use your data for?** 
 
 Part of the data is collected to ensure the proper functioning of the website. 
-Other data can be used to analyze how visitors use the site. 
+Other data can is used to analyze how visitors use the site. 
 
 **What rights do you have regarding your data?**
 
@@ -30,6 +30,9 @@ You always have the right to request information about your stored data, its ori
 You also have the right to request that it be corrected, blocked, or deleted. 
 You can contact us at any time using the address given in the legal notice if you have further questions about the issue of privacy and data protection. 
 You may also, of course, file a complaint with the competent regulatory authorities.
+
+This document was partially generated with the help of [data protection generator](https://www.e-recht24.de/) by eRecht24 GmbH and the
+[Model Data Protection Statement](https://www.generator-datenschutzerklärung.de) by [Anwaltskanzlei Weiß & Partner](https://www.ratgeberrecht.eu/).
 
 ## General information and mandatory information
 
@@ -90,17 +93,14 @@ personal data that is stored as well as its origin, the recipient and the purpos
 You also have the right to have this data corrected, blocked or deleted. You can contact us at any time using the address 
 given in our legal notice if you have further questions on the topic of personal data.
 
-## Data collection on our website
+## Data collection 
 
-### Cookies 
+**Cookies** 
 
-Some of our web pages use cookies. Cookies do not harm your computer and do not contain any viruses. 
-Cookies help make our website more user-friendly, efficient, and secure. 
+Some of our web pages use cookies. Cookies help make our website more user-friendly.
 Cookies are small text files that are stored on your computer and saved by your browser. 
-
 Most of the cookies we use are so-called "session cookies." They are automatically deleted after your visit. 
-Other cookies remain in your device's memory until you delete them. 
-These cookies make it possible to recognize your browser when you next visit the site. 
+Other cookies remain in your device's memory until you delete them. These cookies make it possible to recognize your browser when you next visit the site. 
 
 You can configure your browser to inform you about the use of cookies so that you can decide on a case-by-case basis whether to accept or reject a cookie. 
 Alternatively, your browser can be configured to automatically accept cookies under certain conditions or to always reject them, 
@@ -111,65 +111,44 @@ Cookies which are necessary to allow electronic communications or to provide cer
 The website operator has a legitimate interest in the storage of cookies to ensure an optimized service provided free of technical errors. 
 If other cookies (such as those used to analyze your surfing behavior) are also stored, they will be treated separately in this privacy policy.
 
-### Google Fonts
+**Google Fonts**
 
 For uniform representation of fonts, this page uses web fonts provided by Google. 
 When you open a page, your browser loads the required web fonts into your browser cache to display texts and fonts correctly.
-
-Google thus becomes aware that our web page was accessed via your IP address. 
 The use of Google Web fonts is done in the interest of a uniform and attractive presentation of our website. 
 This constitutes a justified interest pursuant to Art. 6 (1) (f) DSGVO.
 
-If your browser does not support web fonts, a standard font is used by your computer. Further information about handling user data, 
-can be found in the [FAQ](https://developers.google.com/fonts/faq) and in Google's [privacy policy](https://www.google.com/policies/privacy/).
+**Gumroad**
 
-### Gumroad / Marketplace
+When you want to buy a plugin and click the "Buy" buttons in the shop, you are redirected to the software selling platform Gumroad.
 
-When you visit non-free items on the Marketplace, a javascript is embedded from the software selling platform Gumroad, Inc., 548 Market St, San Francisco, CA 94104-5401.
-This javascript is used to allow an on-page shopping experience, which is started when you click one of the "Buy" buttons. 
-For purposes of European data protection legislation, Gumroad, Inc. is the controller of personal information that are collected for their own business purposes during the shopping and payment process.
-Please read their <a href="https://gumroad.com/privacy" target="_blank">Privacy policy</a> to understand what data is collected and for which reasons.  
+For purposes of European data protection legislation, Gumroad is the controller of personal information that are collected for their own business purposes during the shopping and payment process.
 
-### LemonSqueezy / Marketplace
+**LemonSqueezy**
 
-When you visit non-free items on the Marketplace, a javascript is embedded from the software selling platform Lemon Squeezy, 222 Main Street Suite 500 , Salt Lake City, UT 84101.
-This javascript is used to allow an on-page shopping experience, which is started when you click one of the "Buy" buttons. 
+When you want to buy a plugin and click the "Buy" buttons in the shop, you are redirected to the software selling platform Lemon Squeezy.
+
 For purposes of European data protection legislation, Lemon Squeezy is the controller of personal information that are collected for their own business purposes during the shopping and payment process.
-Please read their <a href="https://www.lemonsqueezy.com/privacy" target="_blank">Privacy policy</a> to understand what data is collected and for which reasons.  
 
-### Hosting with GitHub Pages
+**Hetzner Cloud**
 
-This website is hosted on servers of Github Inc., 88 Colin P Kelly Jr. Street, San Francisco, CA 94107, USA. 
-GitHub may collect Technical Information including logs of your IP address.
-To obtain more information about how GitHub uses your data, please see GitHub's Privacy Policy at 
-<a href="https://help.github.com/articles/github-privacy-policy/">https://help.github.com/articles/github-privacy-policy</a>.
+The service runs on the Cloud of the Hetzner Online GmbH (Germany). Server location is Falkenstein, Germany.
 
-### YouTube
+**YouTube**
 
-Our website uses plugins from YouTube, which is operated by Google.
-YouTube is a service of Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland, a subsidiary of Google LLC, 1600 Amphitheater Parkway, Mountain View, CA 94043 USA.
-
-If you visit one of our pages featuring a YouTube plugin, a connection to the YouTube servers is established.
+Our website displays videos from YouTube.
+If you visit one of our pages featuring a YouTube video, a connection to the YouTube servers is established.
 Here the YouTube server is informed about which of our pages you have visited.
 If you're logged in to your YouTube account, YouTube allows you to associate your browsing behavior directly with your personal profile.
 You can prevent this by logging out of your YouTube account.
-
-Further information about handling user data, can be found in the data protection declaration of YouTube under [https://policies.google.com/privacy](https://policies.google.com/privacy).
 This constitutes a justified interest pursuant to Art. 6 (1) (f) DSGVO.
 
-### Brevo
+**Brevo**
 
-We offer you the opportunity to register for our free newsletter on our website.
-We use Brevo (ex. Sendinblue) to send newsletters. 
-Brevo is a service provided by the company Sendinblue GmbH, Köpenicker Str. 126, 10179 Berlin, hereinafter referred to as "Brevo".
-
+We use Brevo (ex. Sendinblue) to send newsletters and emails regarding our services (both for plugins and cloud). 
 If you sign up to receive our newsletter, the data requested during the registration process (your email address) will be processed by Brevo. 
 For this your IP address and the date of your registration will be saved along with the time. 
 As a further part of the registration process, your consent to the sending of the newsletter will be obtained, the content will be described in concrete terms and reference made to this data protection declaration.
-
-Brevo offers data protection information at
-[https://www.brevo.com/legal/privacypolicy/](https://www.brevo.com/legal/privacypolicy/) and 
-[https://www.brevo.com/information-for-email-recipients/](https://www.brevo.com/information-for-email-recipients/).
 
 The newsletters sent by Brevo contain technologies by which we can analyse whether and when an email was opened and whether and which links contained in the newsletter were followed. 
 We save this data in addition to the technical data (system data and IP address) so that the respective newsletter can be best tailored to your wishes and interests. 
@@ -180,13 +159,48 @@ The legal basis for sending the newsletter and the analysis is Art. 6 Para. 1 li
 Consent to the newsletter being sent can be revoked at any time with future effect in accordance with Art. 7 Para. 3 GDPR. 
 To do this, you only have to inform us of your revocation or click the unsubscribe link contained in each newsletter.
 
-### Simple Analytics
+**Simple Analytics**
 
-To get critical information about the behavior of our visitors, we use [Simple Analytics](https://simpleanalytics.com). 
-This analytics software gives us insight about our visitors only in general, but not about individuals per say, as it does not track visitors and does not store any personal identifiable information. 
-[Go to their documentation](https://docs.simpleanalytics.com/what-we-collect) to find out what Simple Analytics collects (and most importantly what they don't).
+To get critical information about the behavior of our visitors, we use Simple Analytics. 
+This analytics software gives us insight about our visitors only in general, but not about individuals per se, 
+as it does not track visitors and does not store any personal identifiable information.
 
-## References
+**Senja**
 
-This document was partially generated with the help of [data protection generator](https://www.e-recht24.de/) by eRecht24 GmbH and the 
-[Model Data Protection Statement](https://www.generator-datenschutzerklärung.de) by [Anwaltskanzlei Weiß & Partner](https://www.ratgeberrecht.eu/).
+We are using Senja to collect and display user testimonials. 
+If you opt to leave a review, the data requested during the process will be processed by Senja.
+Your testimonial will be utilized as social proof, and we might display it both on the websites and on social media.
+
+Consent to the testimonial being used/displayed can be revoked at any time with future effect. 
+To do this, you only have to inform us of your revocation.
+
+## Subprocessor
+
+We are using the following service providers (also called sub-processors) to assist with data processing:
+
+**Brevo**: Email shipping, [Link](https://www.brevo.com/), [Privacy policy](https://www.brevo.com/legal/privacypolicy/), [Info](https://www.brevo.com/information-for-email-recipients/)  
+Sendinblue GmbH, Köpenicker Straße 126, 10179 Berlin, Germany
+
+**GitHub**: OAuth login, [Link](https://github.com), [Privacy policy](https://github.com/site/privacy)  
+GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA
+
+**Google**: OAuth login, Videos, re-captcha verification, [Link](https://www.google.com), [Privacy policy](https://policies.google.com/privacy)  
+Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland
+
+**Gumroad**: Marketplace for plugins [Link](https://gumroad.com/), [Privacy policy](https://gumroad.com/privacy)  
+Gumroad, Inc., 548 Market St, San Francisco, CA 94104-5401, USA
+
+**Hetzner**: Server Hosting, [Link](https://www.hetzner.com/), [Privacy policy](https://www.hetzner.com/rechtliches/datenschutz)  
+Hetzner Online GmbH, Industriestr. 25, 91710 Gunzenhausen, Germany
+
+**Lemon Squeezy**: Marketplace for plugins [Link](https://www.lemonsqueezy.com), [Privacy policy](https://www.lemonsqueezy.com/privacy)  
+Lemon Squeezy, 222 Main Street Suite 500 , Salt Lake City, UT 84101, USA
+
+**Senja**: Testimonials, [Link](https://senja.io/), [Privacy policy](https://senja.io/legal/privacy-policy)  
+Senja Proof LTD - Flat 9, 2 Battlebridge Lane, SE1 2HL London, United Kingdom
+
+**Simple Analytics**: Statistics, [Link](https://simpleanalytics.com), [Privacy policy](https://dashboard.simpleanalytics.com/privacy-policy)  
+Simple Analytics B.V., Jacob van Lennepstraat 78 H, 1053 HM Amsterdam, Netherlands
+
+**Stripe**: Payment and contract management, [Link](https://stripe.com), [Privacy policy](https://stripe.com/privacy)  
+Stripe, Inc., 510 Townsend Street, San Francisco, CA 94103, USA
