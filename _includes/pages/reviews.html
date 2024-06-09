@@ -1,0 +1,16 @@
+{% assign title=site.data[page.lang].translation.reviews.title %}
+{% assign intro=site.data[page.lang].translation.reviews.subtitle|newline_to_br %}
+
+{% include hero-text.html title=title intro=intro %}
+
+<div class="text-center">
+    <a href="https://love.kimai.org/r/add-testimonial" target="_blank" class="btn btn-info rounded-pill">{{ site.data[page.lang].translation.reviews.leave }}</a>
+</div>
+
+<section class="container mb-5 pt-md-1 pt-lg-4 pt-xl-5">
+    <div class="senja-embed" data-id="74a7e8eb-2ecf-47e4-8d6d-0b3a4f6f93ef" data-mode="shadow" data-lazyload="false"></div>
+    <script async type="text/javascript" src="https://widget.senja.io/widget/74a7e8eb-2ecf-47e4-8d6d-0b3a4f6f93ef/platform.js"></script>
+</section>
+
+{% include cta-begin-journey.html %}
+
