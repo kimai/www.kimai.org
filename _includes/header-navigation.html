@@ -55,11 +55,11 @@
                             {% for group in site.data.menu-documentation %}
                             {% assign docs_config = group[1] %}
                             {% assign docs_page = site.documentation | find: "slug", docs_config.slug %}
-                            <a href="{{ docs_page.url | full_url: 'en' }}" class="dropdown-item">
+                            <li><a href="{{ docs_page.url | full_url: 'en' }}" class="dropdown-item">
                                 <i class="{{ docs_config.icon }} me-2"></i>
                                 {% assign tkey = docu- | append: docs_config.translation %}
                                 {{ site.data[page.lang].translation[tkey].name }}
-                            </a>
+                            </a></li>
                             {% endfor %}
                         </ul>
                     </li>
