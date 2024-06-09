@@ -1,16 +1,11 @@
 ---
 layout: base
 ---
-{% comment %}
-tool        = compared tool
-oss         = kimai open-source
-premium     = premium plan kimai-cloud
-{% endcomment %}
 {% assign tool = page %}
 {% assign oss = site.data.kimai-compare.oss %}
 {% assign premium = site.data.kimai-compare.premium %}
 {% assign compare_features = '' %}
-{% for key in site.data.kimai-compare.oss %}
+{% for key in oss %}
 {% assign compare_features = compare_features | append: ' ' | append: key[0] %}
 {% endfor %}
 {% assign compare_features = compare_features | split: ' ' %}
@@ -84,7 +79,7 @@ premium     = premium plan kimai-cloud
                                 <div class="col-md-8">
                                     <div class="row row-cols-1 row-cols-md-3">
                                         <div class="col text-md-center pb-2 mb-4">
-                                            <h3 class="h5 mb-2 mb-md-3">Kimai <br class="d-none d-md-block">Open-Source</h3>
+                                            <h3 class="h5 mb-2 mb-md-3">Kimai</h3>
                                             <ul class="d-md-none list-unstyled">
                                                 {% for feature_name in compare_features %}
                                                 {% assign tmpValue = oss[feature_name] %}
@@ -97,7 +92,7 @@ premium     = premium plan kimai-cloud
                                             <a href="{% link _documentation/installation.md %}" class="btn btn-outline-primary w-100 w-md-auto">Install</a>
                                         </div>
                                         <div class="col text-md-center pb-2 mb-4">
-                                            <h3 class="h5 mb-2 mb-md-3">Kimai Cloud <br class="d-none d-md-block">{{ premium.name }}</h3>
+                                            <h3 class="h5 mb-2 mb-md-3">Kimai Cloud</h3>
                                             <ul class="d-md-none list-unstyled">
                                                 {% for feature_name in compare_features %}
                                                 {% assign tmpValue = premium[feature_name] %}
@@ -162,7 +157,7 @@ premium     = premium plan kimai-cloud
                                             </div>
                                             <div class="col position-relative bg-primary px-2 py-4">
                                                 <span class="text-light opacity-80">
-                                                    € 3.99
+                                                    {% include money.html amount=site.data.plans.pro.price %}
                                                 </span>
                                             </div>
                                             <div class="col px-2 py-4">
