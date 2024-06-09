@@ -6,7 +6,7 @@ tags: [Apps & Plugins]
 image: /images/blog/cover-work-contract.png
 ---
 
-This post combines bad and good news. Let's start with the bad one...
+MR Software shuts down, but we have an all-in-one replacement for all their controlling plugins!
 
 ## MR Software closure
 
