@@ -1,9 +1,9 @@
 ---
-title: "New working times (controlling) plugin and MR Software closure"
+title: "New work times plugin"
 date: "2023-08-27 20:00:00 +0200"
 author: kevinpapst
 tags: [Apps & Plugins]
-image: /images/blog/cover-14.jpeg
+image: /images/blog/cover-work-contract.png
 ---
 
 This post combines bad and good news. Let's start with the bad one...

@@ -1,7 +1,7 @@
 ---
 title: "Social media"
 date: "2024-04-10 20:00:00 +0200"
-image: /images/blog/cover-cloud.jpeg
+image: /images/blog/cover-social-media.png
 author: kevinpapst
 tags: [Cloud]
 ---

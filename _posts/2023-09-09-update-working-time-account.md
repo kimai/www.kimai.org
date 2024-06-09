@@ -1,7 +1,7 @@
 ---
-title: "Cloud goes - Working time account"
+title: "Work times plugin for Cloud"
 date: "2023-09-09 10:00:00 +0200"
-image: /images/blog/cover-cloud.jpeg
+image: /images/blog/cover-cloud-work-contract.png
 author: kevinpapst
 tags: [Cloud]
 ---

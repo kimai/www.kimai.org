@@ -1,7 +1,7 @@
 ---
 layout: base
 ---
-{% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+{% assign site_tags = 'Cloud,On-Premise,Apps & Plugins' %}
 {% assign sortedTags = site_tags | split:',' | sort %}
 {% assign date_format = site.date_format[page.lang] | default: "%Y-%m-%d" %}
 {% assign post_hot = site.posts | first %}
@@ -19,54 +19,59 @@ layout: base
                 </h1>
             </div>
             <div class="col-lg-4 col-md-6 text-end">
-                <a href="{{ '/feed.xml' | full_url: 'en' }}" class="btn btn-link btn-icon rounded-circle my-1 me-2" aria-label="RSS Feed">
-                    <i class="bx bx-rss"></i>
+                <a href="{{ '/feed.xml' | full_url: 'en' }}" class="btn btn-link btn-icon my-1 me-2" aria-label="RSS Feed">
+                    <i class="bx bx-rss fs-2"></i>
                 </a>
             </div>
         </div>
 
-        {% include latest-news.html limit=3 %}
     </section>
 
     <section class="container mb-5 pt-5 pb-lg-5" dir="ltr">
-        <ul class="nav nav-tabs justify-content-center mb-lg-5 mb-4 pb-lg-2 border-top pt-5">
-            <li class="nav-item">
-                <a href="#tag-all" class="nav-link active" data-bs-toggle="tab" role="tab">Latest</a>
-            </li>
-            {% for tag in sortedTags %}
-                {% unless tag == 'Version 1' %}
-                <li class="nav-item">
-                    <a href="#tag-{{ tag | slugify  }}" class="nav-link" data-bs-toggle="tab" role="tab">{{ tag }}</a>
-                </li>
-                {% endunless %}
-            {% endfor %}
-        </ul>
-
-        <div class="tab-content pb-3">
-            <div class="tab-pane fade show active" id="tag-all" role="tabpanel">
-                {% for post in site.posts limit: amount_latest %}
-                    {% include card-blog-single.html post=post %}
-                {% endfor %}
+    {% for tag in sortedTags %}
+        <div class="d-flex align-items-center justify-content-between my-2 pb-1 pb-md-3">
+            <h2 class="mb-3">{{ tag }}</h2>
+            <div class="nav flex-nowrap ms-sm-4 ms-3">
+                <a href="{% link _blog_tags/{{ tag | slugify  }}.html %}" class="btn btn-dark rounded-pill py-1 px-3" aria-label="View all">
+                    View all
+                    <i class="bx bx-right-arrow-alt fs-4"></i>
+                </a>
             </div>
-
-            {% for tag in sortedTags %}
-            <div class="tab-pane fade" id="tag-{{ tag | slugify }}" role="tabpanel">
-                <ul>
-                    {% for post in site.tags[tag] limit: amount_latest %}
-                        {% include card-blog-single.html post=post %}
-                    {% endfor %}
-                </ul>
-
-                <p class="d-flex justify-content-end pt-4">
-                    <a href="{% link _blog_tags/{{ tag | slugify  }}.html %}" class="btn btn-outline-primary ms-4">
-                        {{ site.data[page.lang].translation.blog.archive-link| replace: "%topic%", tag }}
-                        <i class="bx bx-right-arrow-alt ms-1 fs-lg"></i>
-                    </a>
-                </p>
-            </div>
-            {% endfor %}
-
         </div>
+        <div class="masonry-grid row row-cols-lg-3 row-cols-md-2 row-cols-1 g-4 shuffle mb-5">
+        {% for post in site.tags[tag] limit: 3 %}
+            {% assign image = '/images/blog/cover-fallback.jpeg' %}
+            {% if post.image != nil %}
+                {% assign image = post.image %}
+            {% endif %}
+            <div class="masonry-grid-item col pb-2 pb-lg-3 shuffle-item shuffle-item--visible {% if forloop.index0 == 2 %}d-md-none d-lg-block{% endif %}">
+                <article class="card bg-transparent border-0">
+                    <div class="position-relative overflow-hidden rounded-3">
+                        <a href="{{ post.url }}" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+                        {% comment %}
+                        <a href="#" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" aria-label="Read later" data-bs-original-title="Read later">
+                            <i class="bx bx-bookmark"></i>
+                        </a>
+                        {% endcomment %}
+                        <img src="{{ image }}" alt="Blog article logo" class="w-100">
+                    </div>
+                    <div class="card-body pb-1 px-0">
+                        {% comment %}<a href="#" class="badge fs-sm text-white bg-info shadow-info text-decoration-none mb-3">Digital</a>{% endcomment %}
+                        <h3 class="h4">
+                            <a href="{{ post.url }}">{{ post.title }}</a>
+                        </h3>
+                        <p class="mb-4">
+                            {{ post.excerpt | strip_html | truncate: 250 }}
+                        </p>
+                        <div class="d-flex align-items-center text-muted">
+                            <div class="fs-sm pe-3 me-3">{{ post.date | date_to_string }}</div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        {% endfor %}
+        </div>
+    {% endfor %}
     </section>
 
     {% include section-newsletter.html background=true %}
