@@ -4,7 +4,7 @@ lang: sv
 layout: default
 navi_dark: false
 navi_absolute: true
-permalink: /sv/reviews.html
+permalink: /sv/reviews
 ---
 
 {% include pages/reviews.html %}
