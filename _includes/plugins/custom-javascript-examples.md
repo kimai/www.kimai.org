@@ -126,7 +126,7 @@ document.querySelector('body.login-page #social-login-button')?.click();
 Always expand extended timesheet settings:
 ```javascript
 document.addEventListener('show.bs.modal', (e) => { 
-    e.srcElement.querySelector('#timesheet_extended_settings a[data-bs-toggle]')?.click(); 
+    e.srcElement.querySelector('#timesheet_extended_settings button[data-bs-toggle]')?.click(); 
 });
 ```
 
