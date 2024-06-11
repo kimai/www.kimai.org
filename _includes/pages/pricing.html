@@ -1,0 +1,23 @@
+<section class="bg-dark py-4" data-bs-theme="dark">
+    <div class="container pb-2 py-lg-3 text-center">
+        <h1 class="mb-4">{{ site.data[page.lang].translation.pricing.name }}</h1>
+        <p class="text-body fs-lg pb-3 mb-3">{{ site.data[page.lang].translation.pricing.subtitle }}</p>
+    </div>
+    <div style="height: 250px;"></div>
+</section>
+
+<section class="container mb-5 pt-md-1 pt-lg-4 pt-xl-5" style="margin-top: -300px;">
+    {% include pricing-plans.html %}
+</section>
+
+<section class="container mb-5 pt-md-1 pt-lg-2 pt-xl-3">
+    {% include testimonials-horizontal.html %}
+</section>
+
+{% comment %}
+<section class="container mb-5 pt-md-1 pt-lg-4 pt-xl-5">
+    {% include plan-compare-features.html %}
+</section>
+{% endcomment %}
+
+{% include cta-begin-journey.html %}
