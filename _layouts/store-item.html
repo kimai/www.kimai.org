@@ -202,36 +202,15 @@ layout: default
                             </div>
 
                             {% if isMultiPurchase != nil %}
-                                {% if settings.lemonsqueezy %}
-                                    <div class="row align-items-center mb-3">
-                                        <a class="btn btn-success btn-lg w-100 btn-buy" href="{{ settings.lemonsqueezy }}" target="_blank"><i class="{{ buyBtnIcon }} me-2"></i> {{ buyTitle }}</a>
-                                    </div>
-                                    <div class="row align-items-center mb-3 text-muted fs-sm">
-                                        <div class="col-auto">
-                                            {{ site.data[page.lang].translation.store-payment-methods }}
-                                        </div>
-                                        <div class="col-auto ms-auto fs-lg">
-                                            <i class="bx bxl-paypal"></i>
-                                            <i class="bx bxl-google"></i>
-                                            <i class="bx bxl-apple"></i>
-                                            <i class="bx bxl-visa"></i>
-                                            <i class="bx bxl-mastercard"></i>
-                                        </div>
-                                    </div>
-                                    {% if is_ppp %}
-                                        <div class="row align-items-center text-muted fs-sm">
-                                            <div class="col-auto ms-auto">
-                                                    <a href="{% link _landingpage/en/discount-codes.md %}" class="text-decoration-none text-muted">
-                                                    * {{ site.data[page.lang].translation.purchase-power-parity }}
-                                                    </a>
-                                            </div>
-                                        </div>
-                                    {% endif %}
+
+                                <div class="row align-items-center mb-3">
+                                {% if settings.gumroad %}
+                                    <a class="btn btn-success btn-lg w-100 btn-buy" href="{{ settings.gumroad }}" target="_blank"><i class="{{ buyBtnIcon }} me-2"></i> {{ buyTitle }}</a>
                                 {% endif %}
 
-                                {% if settings.gumroad and settings.lemonsqueezy == nil %}
-                                <div class="row align-items-center mb-3">
-                                    <a class="btn btn-success btn-lg w-100 btn-buy" href="{{ settings.gumroad }}" target="_blank"><i class="{{ buyBtnIcon }} me-2"></i> {{ buyTitle }}</a>
+                                {% if settings.lemonsqueezy and settings.gumroad == nil %}
+                                    <a class="btn btn-success btn-lg w-100 btn-buy" href="{{ settings.lemonsqueezy }}" target="_blank"><i class="{{ buyBtnIcon }} me-2"></i> {{ buyTitle }}</a>
+                                {% endif %}
                                 </div>
                                 <div class="row align-items-center mb-3 text-muted fs-sm">
                                     <div class="col-auto">
@@ -243,6 +222,15 @@ layout: default
                                         <i class="bx bxl-apple"></i>
                                         <i class="bx bxl-visa"></i>
                                         <i class="bx bxl-mastercard"></i>
+                                    </div>
+                                </div>
+
+                                {% if is_ppp %}
+                                <div class="row align-items-center text-muted fs-sm">
+                                    <div class="col-auto ms-auto">
+                                        <a href="{% link _landingpage/en/discount-codes.md %}" class="text-decoration-none text-muted">
+                                            * {{ site.data[page.lang].translation.purchase-power-parity }}
+                                        </a>
                                     </div>
                                 </div>
                                 {% endif %}
