@@ -1,0 +1,22 @@
+{% assign value = include.plan['features'][key] %}
+{% assign class = include.class | default: '' %}
+{% assign danger = include.class | default: 'text-danger' %}
+{% if value == 'unlimited' %}
+    <i class="bx bx-infinite lead {{ class }}"></i>
+{% elsif value == false %}
+    <i class="bx bx-x lead {{ danger }}"></i>
+{% elsif value == true %}
+    <i class="bx bx-check lead {{ class }}"></i>
+{% elsif value == nil %}
+    {% if include.plan['teaser'][key] != nil %}
+        <i class="bx bx-check lead {{ class }}"></i>
+    {% else %}
+        <i class="bx bx-x lead {{ danger }}"></i>
+    {% endif %}
+{% elsif value == 'daily' %}
+    <span class="{{ class }}">{{ site.data[page.lang].translation.plans.backup_daily }}</span>
+{% elsif value == 'weekly' %}
+    <span class="{{ class }}">{{ site.data[page.lang].translation.plans.backup_weekly }}</span>
+{% else %}
+    <span class="{{ class }}">{{ value }}</span>
+{% endif %}

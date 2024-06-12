@@ -3,8 +3,12 @@
 {% assign pro = site.data.plans.pro %}
 {% assign pro_month = site.data.plans.pro_month %}
 {% assign nonprofit = site.data.plans.nonprofit %}
-{% assign show_nonprofit = true %}
-<div class="price-switch-wrapper">
+{% assign show_nonprofit = false %}
+{% assign englishOrGerman = 'en' %}
+{% if page.lang == 'de' %}
+    {% assign englishOrGerman = 'de' %}
+{% endif %}
+<div class="">
     <div class="pb-2 pb-lg-3" data-bs-theme="dark">
         <div class="form-check form-switch price-switch justify-content-center mt-2 mb-4" data-bs-toggle="price">
             <input type="checkbox" class="form-check-input" id="pricing">
@@ -13,8 +17,8 @@
         </div>
     </div>
     <div class="table-responsive-lg">
-        <div class="d-flex align-items-center pb-4">
-            <div class="border rounded-3 rounded-end-0 shadow-sm me-n1" style="width: {% if show_nonprofit %}35%{% else %}50%{% endif %}; min-width: 16rem;">
+        <div class="d-flex align-items-center pb-4 flex-wrap">
+            <div class="border rounded-3 rounded-end-0 shadow-sm me-n1 w-100 w-sm-{% if show_nonprofit %}33{% else %}50{% endif %}">
                 <div class="card bg-light h-100 border-0 border-end rounded-end-0 py-3 py-sm-4 py-lg-5">
                     <div class="card-body text-center">
                         <h3 class="mb-5">{{ starter.name }}</h3>
@@ -41,7 +45,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-primary position-relative rounded-3 shadow-primary shadow-dark-mode-none zindex-2 p-4" style="width: {% if show_nonprofit %}35%{% else %}50%{% endif %}; min-width: 18rem;">
+            <div class="bg-primary position-relative rounded-3 shadow-primary shadow-dark-mode-none zindex-2 p-4 w-100 w-sm-{% if show_nonprofit %}33{% else %}50{% endif %}">
                 <div class="card bg-transparent border-light py-3 py-sm-4 py-lg-5">
                     <div class="card-body text-light text-center">
                         <h3 class="text-light mb-5">{{ pro.name }}</h3>
@@ -81,12 +85,12 @@
                         <div class="fs-lg pb-4 mb-3" data-monthly-price="">
                             <ul class="list-unstyled mt-2">
                                 <li>{{ site.data[page.lang].translation.plans.all_from_plan | replace: '%plan%', pro.name }}</li>
-                                <li class="mt-3"><a href="#">{{ site.data[page.lang].translation.non-profit.eligible }}</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="card-footer border-0 text-center pt-0 pb-4" data-monthly-price="">
-                        {% include link-cloud-start.html classes="btn btn-outline-primary btn-lg" %}
+                        {%- assign menu = site.landingpage | where: "slug", 'non-profit' | find: "lang", englishOrGerman -%}
+                        <a href="{{ menu.url }}" class="btn btn-outline-primary btn-lg">{{ site.data[page.lang].translation.non-profit.eligible }}</a>
                     </div>
                     <div class="d-none card-footer border-0 text-center pt-0 pb-4" data-annual-price="">
                         <button class="btn btn-secondary btn-lg disabled">{{ site.data[page.lang].translation.pricing.not_available }}</button>
