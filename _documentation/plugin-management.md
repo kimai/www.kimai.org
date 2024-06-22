@@ -11,10 +11,14 @@ This plugin lives in the directory called `FooBarBundle`, the full directory nam
 
 ## Download licensed plugins
 
-In case you bought a license for one of the Kimai plugins, you can get your latest update in that particular shop:
+In case you bought a license for one of the Kimai plugins, you can get your latest update at:
+
+- https://license.kimai.org/
+
+If you want to see your purchase history, check out:
 
 - [Gumroad](https://app.gumroad.com/library) 
-- [Lemon Squeezy](https://store.kimai.org/billing)
+- [Lemon Squeezy](https://kimai.lemonsqueezy.com/billing)
 
 ## Plugin installation
 
