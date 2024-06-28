@@ -309,13 +309,12 @@ There is so much to say about PDF templates, that there is a dedicated page abou
 
 Docx templates are processed by [PHPWord](https://github.com/PHPOffice/PHPWord) and its `TemplateProcessor`.
 
-**Important:** You have to add one of the variables - either `${entry.description}` or `${entry.row}` - in one table row,
-otherwise the records will not be rendered (but only the global values)!
+**Important:** You have to add the variable `${entry.row}` in the table row that will be duplicated for each entry,
+otherwise the records will not be rendered at all. In that case only the global values will be replaced!
 
 The row containing this variable will be cloned for every included (timesheet) record.
 
-If you do not use `${entry.description}` then a fallback for `${entry.row}` is used and will be removed in the rendering process,
-it will not show up in the generated invoice.
+The variable `${entry.row}` will be removed during the rendering process, it will not show up in your generated invoices.
 
 See below in `Template variables` to find out which variables you can use in your template.
 
@@ -417,6 +416,7 @@ For each timesheet record you can use these variables:
 |------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|
 | ${entry.row}                 | An empty string, used as template row for docx                                                                                                                                                                      |                 |
 | ${entry.description}         | The entries description                                                                                                                                                                                             | _foo bar_       |
+| ${entry.description_safe}    | The entries description. If that is empty the activity name will be used.                                                                                                                                           | _foo bar_       |
 | ${entry.amount}              | DEPRECATED (do not use): The decimal duration for this entry. If this is a fixed rate entry, it contains the formatted amount.                                                                                      | 2.78            |
 | ${entry.rate}                | The rate for one unit of the entry (normally one hour) with currency                                                                                                                                                | 1.100,01 EUR    |
 | ${entry.rate_nc}             | The rate for one unit of the entry without currency                                                                                                                                                                 | 1100,01         |
