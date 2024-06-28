@@ -21,15 +21,14 @@ translation_key: store-hero-title
                     </p>
                     <div class="d-flex align-items-center mt-auto mb-3 mb-lg-0 pb-4 pb-lg-0 pb-xl-5">
                         <div class="d-flex me-3">
-                            {% assign testimonials = site.data.testimonials | sample: 5 %}
-                            {% for testimonial in testimonials %}
-                            <div class="d-flex align-items-center justify-content-center bg-light rounded-circle ms-n3" style="width: 52px; height: 52px;">
-                                <img src="{{ testimonial.image }}" class="rounded-circle" width="48" alt="{{ testimonial.position }}">
-                            </div>
-                            {% endfor %}
+                        {% if page.lang == 'de' %}
+                            <div class="senja-embed" data-id="266e4889-180b-482a-82f9-e1b69fd70f66" data-mode="shadow" data-lazyload="false" style="display: block;"></div>
+                            <script async type="text/javascript" src="https://widget.senja.io/widget/266e4889-180b-482a-82f9-e1b69fd70f66/platform.js"></script>
+                        {% else %}
+                            <div class="senja-embed" data-id="35161406-eaf4-43f9-b5aa-531ca0b92d41" data-mode="shadow" data-lazyload="false" style="display: block;"></div>
+                            <script async type="text/javascript" src="https://widget.senja.io/widget/35161406-eaf4-43f9-b5aa-531ca0b92d41/platform.js"></script>
+                        {% endif %}
                         </div>
-                        {% assign customer_count = '<span class="text-primary fw-semibold">%number%+</span>' | replace: '%number%', site.kimai_customers %}
-                        <span class="fs-sm">{{ site.data[page.lang].translation.store-hero-counter | replace: '%number%', customer_count }}</span>
                     </div>
                 </div>
                 <div class="col-xl-7">
