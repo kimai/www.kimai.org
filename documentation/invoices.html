@@ -1034,13 +1034,12 @@ allows access to your custom fields.</p>
 
 <p>Docx templates are processed by <a href="https://github.com/PHPOffice/PHPWord">PHPWord</a> and its <code class="language-plaintext highlighter-rouge">TemplateProcessor</code>.</p>
 
-<p><strong>Important:</strong> You have to add one of the variables - either <code class="language-plaintext highlighter-rouge">${entry.description}</code> or <code class="language-plaintext highlighter-rouge">${entry.row}</code> - in one table row,
-otherwise the records will not be rendered (but only the global values)!</p>
+<p><strong>Important:</strong> You have to add the variable <code class="language-plaintext highlighter-rouge">${entry.row}</code> in the table row that will be duplicated for each entry,
+otherwise the records will not be rendered at all. In that case only the global values will be replaced!</p>
 
 <p>The row containing this variable will be cloned for every included (timesheet) record.</p>
 
-<p>If you do not use <code class="language-plaintext highlighter-rouge">${entry.description}</code> then a fallback for <code class="language-plaintext highlighter-rouge">${entry.row}</code> is used and will be removed in the rendering process,
-it will not show up in the generated invoice.</p>
+<p>The variable <code class="language-plaintext highlighter-rouge">${entry.row}</code> will be removed during the rendering process, it will not show up in your generated invoices.</p>
 
 <p>See below in <code class="language-plaintext highlighter-rouge">Template variables</code> to find out which variables you can use in your template.</p>
 
@@ -1348,6 +1347,11 @@ The example <code class="language-plaintext highlighter-rouge">{{ invoice['invoi
     <tr>
       <td>${entry.description}</td>
       <td>The entries description</td>
+      <td><em>foo bar</em></td>
+    </tr>
+    <tr>
+      <td>${entry.description_safe}</td>
+      <td>The entries description. If that is empty the activity name will be used.</td>
       <td><em>foo bar</em></td>
     </tr>
     <tr>
