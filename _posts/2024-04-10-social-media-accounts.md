@@ -25,6 +25,6 @@ We value your feedback! That’s why we’d like to kindly ask that you share yo
 know how it has helped you streamline your workflow, boost productivity, and achieve your goals. 
 
 Your testimonials help us improve and inspire others to discover the benefits of our software. 
-[Click here](https://love.kimai.org/) to submit your testimonial and be featured on our website. 
+[Click here]({{ site.testimonial_add }}) to submit your testimonial and be featured on our website. 
 
 Thank you for being part of our success story!
