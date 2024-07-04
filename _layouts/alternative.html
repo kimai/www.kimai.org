@@ -30,11 +30,13 @@ layout: base
                         </p>
                     </div>
                 </div>
+                {% if tool.image != nil %}
                 <div class="col-md-12 offset-xl-1 d-flex mt-lg-4 mb-4">
                     <div class="align-self-start ms-xl-0 ms-md-4 p-lg-4 p-sm-3 p-2 rounded-4 overflow-hidden" style="background: linear-gradient(153.32deg, rgba(255, 255, 255, .3) -65.62%, rgba(255, 255, 255, .1) 83.28%); box-shadow: 0 .25rem 1.5rem -.0625rem rgba(0, 0, 0, .2); backdrop-filter: blur(25px);">
                         <img src="{{ tool.image }}" width="200" alt="Logo" class="rounded-4" style="box-shadow: 0 0 7.5rem rgba(0, 0, 0, .1);">
                     </div>
                 </div>
+                {% endif %}
             </div>
         </div>
         <span class="position-absolute bottom-0 start-0 w-100">
