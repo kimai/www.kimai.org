@@ -1,7 +1,7 @@
 ---
 title: "Kimai 2.0 - It's here!"
 date: "2023-05-20 10:00:00 +0200"
-image: /images/blog/cover-9.jpeg
+image: /images/blog/cover-9.webp
 author: kevinpapst
 tags: [On-Premise]
 ---

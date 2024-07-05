@@ -2,7 +2,7 @@
 title: "Kimai Mobile is now available on Google Play"
 date: "2021-10-18 13:00:00 +0200"
 author: cloudrizon
-image: /images/blog/cover-app.jpeg
+image: /images/blog/cover-app.webp
 tags: [Apps & Plugins]
 ---
 

@@ -2,7 +2,7 @@
 title: "How to use Kimai 2 as native app"
 date: "2019-06-11 20:00:00 +0200"
 author: kevinpapst
-image: /images/blog/cover-plugin.jpeg
+image: /images/blog/cover-plugin.webp
 tags: [Apps & Plugins]
 ---
 
@@ -27,7 +27,7 @@ nativefier --icon touch-icon-192x192.png --name "Kimai 2 - Demo" "https://demo.k
 
 ## How it looks
 
-![Kimai native app screenshot]({% link /images/news/kimai-native-app.png %}){:class="image"}
+![Kimai native app screenshot]({% link /images/news/kimai-native-app.webp %}){:class="image"}
 
 And that's it already. You will have a new directory with an executable inside.
 

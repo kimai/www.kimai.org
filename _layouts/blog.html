@@ -40,7 +40,7 @@ layout: base
         </div>
         <div class="masonry-grid row row-cols-lg-3 row-cols-md-2 row-cols-1 g-4 shuffle mb-5">
         {% for post in site.tags[tag] limit: 3 %}
-            {% assign image = '/images/blog/cover-fallback.jpeg' %}
+            {% assign image = '/images/blog/cover-fallback.webp' %}
             {% if post.image != nil %}
                 {% assign image = post.image %}
             {% endif %}

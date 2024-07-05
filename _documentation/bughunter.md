@@ -55,4 +55,4 @@ In my words:
 
 All in all: I do not consider this to be a security risk, but a UX improvement. Finally, this screenshot:
 
-{% include docs-image.html src="/images/documentation/bughunter/google-password-change.png" title="Google allows to change my password, without asking for the current password" width="700px" %}
+{% include docs-image.html src="/images/documentation/bughunter/google-password-change.webp" title="Google allows to change my password, without asking for the current password" width="700px" %}

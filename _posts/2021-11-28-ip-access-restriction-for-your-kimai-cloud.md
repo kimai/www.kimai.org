@@ -1,7 +1,7 @@
 ---
 title: "IP access restriction for your Kimai cloud"
 date: "2021-11-28 00:15:00 +0200"
-image: /images/blog/cover-cloud.jpeg
+image: /images/blog/cover-cloud.webp
 author: kevinpapst
 tags: [Cloud]
 ---

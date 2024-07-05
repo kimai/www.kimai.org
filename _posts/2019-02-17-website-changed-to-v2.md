@@ -2,7 +2,7 @@
 title: "Website now focusing on Kimai v2"
 date: "2019-02-17 16:00:00 +0200"
 author: kevinpapst
-image: /images/blog/cover-developer.jpeg
+image: /images/blog/cover-developer.webp
 tags: [On-Premise]
 ---
 
@@ -25,5 +25,5 @@ Thankfully it is written for Jekyll (which is used to publish this website), so 
 
 Say goodbye to the *intermediate* website design:
 
-![v2 website design]({% link /images/news/v2.kimai.org_preview.jpg %})
-[Fullscreen]({% link /images/news/v2.kimai.org.jpg %})
+![v2 website design]({% link /images/news/v2.kimai.org_preview.webp %})
+[Fullscreen]({% link /images/news/v2.kimai.org.webp %})

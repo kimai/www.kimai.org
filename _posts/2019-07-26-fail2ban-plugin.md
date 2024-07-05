@@ -2,7 +2,7 @@
 title: "New fail2ban plugin"
 date: "2019-07-26 16:00:00 +0200"
 author: kevinpapst
-image: /images/blog/cover-plugin.jpeg
+image: /images/blog/cover-plugin.webp
 tags: [Apps & Plugins]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Two-Factor authentication"
 date: "2023-04-30 18:00:00 +0200"
-image: /images/blog/cover-cloud.jpeg
+image: /images/blog/cover-cloud.webp
 author: kevinpapst
 tags: [Cloud]
 ---

@@ -17,7 +17,7 @@ Allow custom export repositories: eg. [Expenses]({% link _store/keleo-expenses-b
 
 Allows reassigning of timesheet records from "delete user" dialog, so historical data can be moved to a backup account upon user deletion:
 
-![Confirm reassignment](/images/documentation/user/delete_user_reassign.png "Reassign timesheets when deleting account"){:height="250px"}
+![Confirm reassignment](/images/documentation/user/delete_user_reassign.webp "Reassign timesheets when deleting account"){:height="250px"}
 
 ### Translations
 

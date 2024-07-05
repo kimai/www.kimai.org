@@ -2,7 +2,7 @@
 title:  "A new website for Kimai"
 date:   2018-02-10
 author: kevinpapst
-image: /images/blog/cover-developer.jpeg
+image: /images/blog/cover-developer.webp
 tags: [On-Premise]
 ---
 
@@ -19,7 +19,7 @@ Not everyone will like it (as it is always with relaunches) and the new website 
 
 So say goodbye to:
 
-![Old website design]({% link /images/news/old-website.jpg %}){:class="image"}
+![Old website design]({% link /images/news/old-website.webp %}){:class="image"}
 
 And the next posts will be more about Kimai v2 and less about us ;-)
 

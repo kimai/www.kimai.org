@@ -1,7 +1,7 @@
 ---
 title: "Security updates"
 date: "2019-12-16 19:08:00 +0200"
-image: /images/blog/cover-cloud.jpeg
+image: /images/blog/cover-cloud.webp
 author: kevinpapst
 tags: [Cloud]
 ---

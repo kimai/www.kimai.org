@@ -70,15 +70,15 @@ php81 bin/console kimai:install -n
 
 Start by opening the `Web Station`:
 
-{% include docs-image.html src="/images/documentation/synology-1.png" title="Main Menu > Web Station" width="600px" %}
+{% include docs-image.html src="/images/documentation/synology-1.webp" title="Main Menu > Web Station" width="600px" %}
 
 Check that you have a PHP 8.1 profile:
 
-{% include docs-image.html src="/images/documentation/synology-2.png" title="Main Menu > Web Station > PHP Settings" width="800px" %}
+{% include docs-image.html src="/images/documentation/synology-2.webp" title="Main Menu > Web Station > PHP Settings" width="800px" %}
 
 And then creating a VirtualHost (we use a port based in this example): 
 
-{% include docs-image.html src="/images/documentation/synology-3.png" title="Main Menu > Web Station > Virtual Host" width="800px" %}
+{% include docs-image.html src="/images/documentation/synology-3.webp" title="Main Menu > Web Station > Virtual Host" width="800px" %}
 
 Settings chosen in the example:
 
@@ -308,7 +308,7 @@ Read [this discussion]({{ site.kimai_v2_repo }}/discussions/3468) for more infos
 If you are using a network share (or any Synology app) for downloading/editing/uploading the `.env` file, 
 make sure that `group` permissions for the `http` group are preserved.
 
-{% include docs-image.html src="/images/documentation/synology-4.png" title="File station > Select file > Right clink > Properties" width="1000px" %}
+{% include docs-image.html src="/images/documentation/synology-4.webp" title="File station > Select file > Right clink > Properties" width="1000px" %}
 
 You can change them using:
 

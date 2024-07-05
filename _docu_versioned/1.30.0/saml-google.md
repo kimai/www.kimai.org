@@ -95,7 +95,7 @@ You have to adjust more keys, please read the main SAML configuration!
 You can use other names for your groups, the mapping happens in the next step in your Cloud configuration.
 
 This screenshot is a showcase of the attribute mapping including groups:
-{% include docs-image.html src="/images/documentation/google-saml-attributes.png" title="SAML attribute mapping" width="1000px" %}
+{% include docs-image.html src="/images/documentation/google-saml-attributes.webp" title="SAML attribute mapping" width="1000px" %}
 
 ## Single Logout
 

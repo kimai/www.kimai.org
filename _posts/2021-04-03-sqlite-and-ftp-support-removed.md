@@ -2,7 +2,7 @@
 title: "Removing SQLite support and FTP installation"
 date: "2021-04-03 08:00:00 +0200"
 author: kevinpapst
-image: /images/blog/cover-developer.jpeg
+image: /images/blog/cover-developer.webp
 tags: [On-Premise]
 ---
 

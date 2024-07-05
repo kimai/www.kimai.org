@@ -63,11 +63,11 @@ You can use other names for your groups, the mapping happens in the next step in
 
 This screenshot is a showcase of the attribute mapping including groups:
 
-{% include docs-image.html src="/images/documentation/cloud/saml-google-attributes.png" title="Google - SAMl attribute mapping" width="800px" %}
+{% include docs-image.html src="/images/documentation/cloud/saml-google-attributes.webp" title="Google - SAMl attribute mapping" width="800px" %}
 
 ### <span id="google-cloud"></span> Cloud configuration
 
-{% include docs-image.html src="/images/documentation/cloud/saml-google-cloud.png" title="Google - Cloud configuration" width="800px" %}
+{% include docs-image.html src="/images/documentation/cloud/saml-google-cloud.webp" title="Google - Cloud configuration" width="800px" %}
 
 ## <span id="microsoft-saml"></span> Microsoft SAML
 
@@ -95,7 +95,7 @@ This screenshot is a showcase of the attribute mapping including groups:
     - Azure AD Identifier: `Azure AD Identifier (SAML Entity ID)`
 
 **Configure "Attributes & Claims":**
-{% include docs-image.html src="/images/documentation/cloud/saml-azure-attributes.png" title="Azure - Attributes & Claims" width="800px" %}
+{% include docs-image.html src="/images/documentation/cloud/saml-azure-attributes.webp" title="Azure - Attributes & Claims" width="800px" %}
 
 **Configure "Groups":**
 - In the "Azure Active Directory" section, choose "Groups" from the navigation.
@@ -104,11 +104,11 @@ This screenshot is a showcase of the attribute mapping including groups:
     - Set the name `Kimai Admin` and add members
     - Set the name `Kimai System-Admin` and add members
 - Copy & paste the `Object Id` of each group into the Cloud configuration (see screenshot below).
-  {% include docs-image.html src="/images/documentation/cloud/saml-azure-groups.png" title="Azure - Groups" width="800px" %}
+  {% include docs-image.html src="/images/documentation/cloud/saml-azure-groups.webp" title="Azure - Groups" width="800px" %}
 
 ### <span id="microsoft-cloud"></span> Cloud configuration
 
-{% include docs-image.html src="/images/documentation/cloud/saml-azure-cloud.png" title="Azure - Cloud configuration" width="800px" %}
+{% include docs-image.html src="/images/documentation/cloud/saml-azure-cloud.webp" title="Azure - Cloud configuration" width="800px" %}
 
 ## <span id="keycloak-saml"></span> Keycloak SAML
 

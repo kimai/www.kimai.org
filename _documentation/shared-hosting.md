@@ -12,7 +12,7 @@ If you can't find the correct version, ask your hoster! Or [let us help you]({% 
 
 ### Uberspace
 
-{% include docs-image.html src="/images/documentation/uberspace-logo.png" title="Uberspace Logo" width="144px" %}
+{% include docs-image.html src="/images/documentation/uberspace-logo.webp" title="Uberspace Logo" width="144px" %}
 
 [Uberspace](https://uberspace.de) is run by about a dozen people like you that strive to make technology accessible, understandable and manageable.
 

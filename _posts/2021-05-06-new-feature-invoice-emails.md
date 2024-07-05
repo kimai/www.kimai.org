@@ -1,7 +1,7 @@
 ---
 title: "New feature: invoice emails"
 date: "2021-05-06 12:00:00 +0200"
-image: /images/blog/cover-cloud.jpeg
+image: /images/blog/cover-cloud.webp
 author: kevinpapst
 tags: [Cloud]
 ---

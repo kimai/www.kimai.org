@@ -32,17 +32,17 @@ That means there are multiple major versions existing, which combined from the a
 
 Based on Tabler and Symfony 6:
 
-[![Kimai 2.0 - Login]({% link images/screenshots/login-2.jpg %})]({% link images/screenshots/login-2.jpg %})
+[![Kimai 2.0 - Login]({% link images/screenshots/login-2.webp %})]({% link images/screenshots/login-2.webp %})
 
-[![Kimai 2.0 - Dashboard]({% link images/screenshots/dashboard-2.jpg %})]({% link images/screenshots/dashboard-2.jpg %})
+[![Kimai 2.0 - Dashboard]({% link images/screenshots/dashboard-2.webp %})]({% link images/screenshots/dashboard-2.webp %})
 
 ### 1.0
 
 Based on AdminLTE and Symfony 4:
 
-[![Kimai 1.0 - Login]({% link images/screenshots/login-1.jpg %})]({% link images/screenshots/login-1.jpg %})
+[![Kimai 1.0 - Login]({% link images/screenshots/login-1.webp %})]({% link images/screenshots/login-1.webp %})
 
-[![Kimai 1.0 - Dashboard]({% link images/screenshots/dashboard-1.jpg %})]({% link images/screenshots/dashboard-1.jpg %})
+[![Kimai 1.0 - Dashboard]({% link images/screenshots/dashboard-1.webp %})]({% link images/screenshots/dashboard-1.webp %})
 
 ## Kimai 1
 
@@ -52,6 +52,6 @@ The latest available version was called v1.3.2 (released September 2019).
 
 It looked like this:
 
-[![Kimai 1 - Login]({% link images/screenshots/kimai1-login.png %})]({% link images/screenshots/kimai1-login.png %})
+[![Kimai 1 - Login]({% link images/screenshots/kimai1-login.webp %})]({% link images/screenshots/kimai1-login.webp %})
 
-[![Kimai 1 - Dashboard]({% link images/screenshots/kimai1-main-screen.png %})]({% link images/screenshots/kimai1-main-screen.png %})
+[![Kimai 1 - Dashboard]({% link images/screenshots/kimai1-main-screen.webp %})]({% link images/screenshots/kimai1-main-screen.webp %})

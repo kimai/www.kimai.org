@@ -1,7 +1,7 @@
 ---
 title: "New address - changed terms and invoices"
 date: "2021-01-09 21:00:00 +0200"
-image: /images/blog/cover-cloud.jpeg
+image: /images/blog/cover-cloud.webp
 author: kevinpapst
 tags: [Cloud]
 ---

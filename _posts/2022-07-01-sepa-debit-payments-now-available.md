@@ -1,7 +1,7 @@
 ---
 title: "SEPA Debit payments now available"
 date: "2022-07-01 20:00:00 +0200"
-image: /images/blog/cover-cloud.jpeg
+image: /images/blog/cover-cloud.webp
 author: kevinpapst
 tags: [Cloud]
 ---

@@ -1,7 +1,7 @@
 ---
 title: "SAML Login with Google Workspace"
 date: "2022-07-13 20:00:00 +0200"
-image: /images/blog/cover-cloud.jpeg
+image: /images/blog/cover-cloud.webp
 author: kevinpapst
 tags: [Cloud]
 ---

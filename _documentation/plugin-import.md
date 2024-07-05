@@ -196,7 +196,7 @@ The following CSV structure is expected. Import will not work if one of these co
 Failed to parse time string (14/04/2023 9:00) at position 0 (1): Unexpected character
 ```
 
-{% include docs-image.html src="/images/documentation/toggl-export.jpg" title="Exporting timesheet with toggl track" width="800px" %}
+{% include docs-image.html src="/images/documentation/toggl-export.webp" title="Exporting timesheet with toggl track" width="800px" %}
 
 ## Grandtotal (Customer)
 

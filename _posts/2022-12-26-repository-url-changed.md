@@ -1,7 +1,7 @@
 ---
 title: "Repository URL changed"
 date: "2022-12-26 10:00:00 +0200"
-image: /images/blog/cover-developer.jpeg
+image: /images/blog/cover-developer.webp
 author: kevinpapst
 tags: [On-Premise]
 ---

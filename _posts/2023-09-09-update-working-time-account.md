@@ -1,7 +1,7 @@
 ---
 title: "Work times plugin for Cloud"
 date: "2023-09-09 10:00:00 +0200"
-image: /images/blog/cover-cloud-work-contract.png
+image: /images/blog/cover-cloud-work-contract.webp
 author: kevinpapst
 tags: [Cloud]
 ---

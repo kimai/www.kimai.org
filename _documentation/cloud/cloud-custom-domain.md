@@ -14,7 +14,7 @@ You have to create a so-called CNAME (short for "Canonical name") entry, with yo
 
 Here is an example screenshot of such a DNS setting:
 
-{% include docs-image.html src="/images/documentation/cloud/custom-domain.png" title="Configure your DNS" width="800px" %}
+{% include docs-image.html src="/images/documentation/cloud/custom-domain.webp" title="Configure your DNS" width="800px" %}
 
 It is unlikely that you need it in this syntax, but in "technical speech" this would be:
 ```
@@ -36,7 +36,7 @@ You can also point to a top-level domain, it doesn't have to be a subdomain.
 
 In the last step you enter your domain in your profile under **Custom domain**:
 
-{% include docs-image.html src="/images/documentation/cloud/custom-domain-form.png" title="Configure your CNAME" width="800px" %}
+{% include docs-image.html src="/images/documentation/cloud/custom-domain-form.webp" title="Configure your CNAME" width="800px" %}
 
 It usually takes a couple of hours until our system are able to utilize this new domain, especially if you tested the integration before creating the DNS entry.
 In that case our servers will have to wait until new DNS information are available (the waiting time depends on your TTL).

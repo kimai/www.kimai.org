@@ -38,7 +38,7 @@ When a user tries to stop such a timesheet, a warning like one of the following 
 - `An empty duration is not allowed`
 - `Maximum 08:00 hours allowed`
 
-{% include docs-image.html src="/images/documentation/timesheet/timesheet-excessive-duration.jpg" title="How such a warning will look like" width="350px" %}
+{% include docs-image.html src="/images/documentation/timesheet/timesheet-excessive-duration.webp" title="How such a warning will look like" width="350px" %}
 
 You have several options to solve this problem. 
 All of them involve that you switch to `My times` and find the record (usually the last one created):

@@ -3,7 +3,7 @@ title: "New work times plugin"
 date: "2023-08-27 20:00:00 +0200"
 author: kevinpapst
 tags: [Apps & Plugins]
-image: /images/blog/cover-work-contract.png
+image: /images/blog/cover-work-contract.webp
 ---
 
 MR Software shuts down, but we have an all-in-one replacement for all their controlling plugins!

@@ -2,7 +2,7 @@
 title: "Kimai Mobile iOS release"
 date: "2023-08-01 20:00:00 +0200"
 author: cloudrizon
-image: /images/blog/cover-kimai-mobile.png
+image: /images/blog/cover-kimai-mobile.webp
 tags: [Apps & Plugins]
 ---
 
@@ -37,7 +37,7 @@ Since its launch, [Kimai Mobile](https://www.kimaimobile.com/) has already recei
 Cloudrizon GmbH remains dedicated to improving the application by adding new features and enhancing its overall stability, delivering an ever evolving and exceptional user experience. 
 Stay informed about upcoming features by checking the [website](https://www.kimaimobile.com/features/).  
 
-![Kimai Mobile app screenshot]({% link /images/news/Kimai-Mobile-with-offline.png %}){:class="image"}
+![Kimai Mobile app screenshot]({% link /images/news/Kimai-Mobile-with-offline.webp %}){:class="image"}
 
 ### The perfect time management companion  
 

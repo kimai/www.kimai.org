@@ -31,7 +31,7 @@
     <div class="container px-3">
         {% assign homepage = site.pages | where: 'lang', page.lang | find: 'slug', 'index' %}
         <a href="{{ homepage.url }}" class="navbar-brand pe-3">
-        <img src="/images/kimai_logo.png" style="height:36px" alt="{{ site.data[page.lang].translation.index.title }}"> Kimai
+        <img src="/images/kimai_logo.webp" style="height:36px" alt="{{ site.data[page.lang].translation.index.title }}"> Kimai
         </a>
         <div id="navbarNav" class="offcanvas offcanvas-end{% if is_dark %} bg-dark{% endif %}">
             <div class="offcanvas-header border-bottom">

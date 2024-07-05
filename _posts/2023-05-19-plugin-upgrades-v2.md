@@ -1,7 +1,7 @@
 ---
 title: "Upgrading your plugins for 2.0"
 date: "2023-05-19 13:00:00 +0200"
-image: /images/blog/cover-kimai2-plugins.png
+image: /images/blog/cover-kimai2-plugins.webp
 author: kevinpapst
 tags: [Apps & Plugins]
 ---

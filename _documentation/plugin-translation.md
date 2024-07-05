@@ -30,15 +30,15 @@ But if you create a translation in `de`, your new translation will also be visib
 
 The main translation page shows a listing of all translated contents, grouped by their language:
 
-{% include docs-image.html src="/images/marketplace/translation-listing.png" title="List all adjusted translations" width="1200px" %}
+{% include docs-image.html src="/images/marketplace/translation-listing.webp" title="List all adjusted translations" width="1200px" %}
 
 The add dialog allows to find a string by typing in the `Default translation` field and then you can enter your custom translation in `New translation`:
 
-{% include docs-image.html src="/images/marketplace/translation-add.png" title="Select the text to change and enter your custom translation" width="800px" %}
+{% include docs-image.html src="/images/marketplace/translation-add.webp" title="Select the text to change and enter your custom translation" width="800px" %}
 
 The edit dialog allows to change your custom translation:
 
-{% include docs-image.html src="/images/marketplace/translation-edit.png" title="Change your custom translation" width="800px" %}
+{% include docs-image.html src="/images/marketplace/translation-edit.webp" title="Change your custom translation" width="800px" %}
 
 ## Permissions
 

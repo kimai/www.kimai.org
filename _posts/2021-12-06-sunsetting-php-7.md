@@ -2,13 +2,13 @@
 title: "Sunsetting PHP 7"
 date: "2021-12-06 20:00:00 +0200"
 author: kevinpapst
-image: /images/blog/cover-developer.jpeg
+image: /images/blog/cover-developer.webp
 tags: [On-Premise]
 ---
 
 Okay everyone, this is reminder that you need to monitor the [PHP lifetime support](https://www.php.net/supported-versions.php) on a regular basis.
 
-![Edit](/images/news/sunset-php-7.png "Supported PHP versions in December 2021")
+![Edit](/images/news/sunset-php-7.webp "Supported PHP versions in December 2021")
 
 As you can see from that screen the Support for PHP 7.3 is entirely out of life.
 The latest version from PHP 7 which is still supported is 7.4 - and that one only for security updates.
