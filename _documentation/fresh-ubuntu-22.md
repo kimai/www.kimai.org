@@ -98,20 +98,13 @@ Let's start with all required software:
 apt-get update
 apt-get upgrade
 apt-get install git unzip curl vim mariadb-server mariadb-client nginx
-```
-
-Now before we continue, we enable the well-known and respected Ondřej PPA by @oerdnj to use PHP 8.1:
-```bash
 apt-get install software-properties-common
-add-apt-repository ppa:ondrej/php
 ```
 
-Now install PHP 8.1:
+Now install PHP 8.3:
 ```bash
-apt-get install php8.1-cli php8.1-common php8.1-curl php8.1-fpm php8.1-gd php8.1-intl php8.1-mbstring php8.1-mysql php8.1-opcache php8.1-readline php8.1-xml php8.1-zip
+apt-get install php8.3 php8.3-curl php8.3-fpm php8.3-gd php8.3-intl php8.3-mbstring php8.3-mysql php8.3-opcache php8.3-xml php8.3-zip
 ```
-
-Note: the required packages `php8.1-ctype`, `php8.1-iconv`, `php8.1-json`, `php8.1-pdo` are usually part of other packages like `php8.1-common`, `php8.1-cli` and `php8.1-fpm`
 
 ## Install composer
 
@@ -183,8 +176,8 @@ Good, now that we have done all these steps we only need the webserver and Virtu
 
 This can be done with:
 ```
-vim /etc/php/8.1/fpm/pool.d/www.conf
-listen = /run/php/php8.1-fpm.sock
+vim /etc/php/8.3/fpm/pool.d/www.conf
+listen = /run/php/php8.3-fpm.sock
 ```
 
 Edit/create the virtual host file:
@@ -213,7 +206,7 @@ server {
     }
 
     location ~ ^/index\.php(/|$) {
-        fastcgi_pass unix:/run/php/php8.1-fpm.sock;
+        fastcgi_pass unix:/run/php/php8.3-fpm.sock;
         fastcgi_split_path_info ^(.+\.php)(/.*)$;
         include fastcgi.conf;
         fastcgi_param PHP_ADMIN_VALUE "open_basedir=$document_root/..:/tmp/";
