@@ -164,7 +164,7 @@
 
     
     
-    <h3 class="fs-lg">Installation &amp; Updates</h3>
+    <h3 class="fs-lg">Installation & Updates</h3>
     <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
     
         
@@ -607,18 +607,12 @@ PasswordAuthentication no
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get update
 apt-get upgrade
 apt-get <span class="nb">install </span>git unzip curl vim mariadb-server mariadb-client nginx
+apt-get <span class="nb">install </span>software-properties-common
 </code></pre></div></div>
 
-<p>Now before we continue, we enable the well-known and respected Ondřej PPA by <a href="https://github.com/oerdnj" class="user-mention">@oerdnj</a> to use PHP 8.1:</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get <span class="nb">install </span>software-properties-common
-add-apt-repository ppa:ondrej/php
+<p>Now install PHP 8.3:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get <span class="nb">install </span>php8.3 php8.3-curl php8.3-fpm php8.3-gd php8.3-intl php8.3-mbstring php8.3-mysql php8.3-opcache php8.3-xml php8.3-zip
 </code></pre></div></div>
-
-<p>Now install PHP 8.1:</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get <span class="nb">install </span>php8.1-cli php8.1-common php8.1-curl php8.1-fpm php8.1-gd php8.1-intl php8.1-mbstring php8.1-mysql php8.1-opcache php8.1-readline php8.1-xml php8.1-zip
-</code></pre></div></div>
-
-<p>Note: the required packages <code class="language-plaintext highlighter-rouge">php8.1-ctype</code>, <code class="language-plaintext highlighter-rouge">php8.1-iconv</code>, <code class="language-plaintext highlighter-rouge">php8.1-json</code>, <code class="language-plaintext highlighter-rouge">php8.1-pdo</code> are usually part of other packages like <code class="language-plaintext highlighter-rouge">php8.1-common</code>, <code class="language-plaintext highlighter-rouge">php8.1-cli</code> and <code class="language-plaintext highlighter-rouge">php8.1-fpm</code></p>
 
 <h2 id="install-composer">Install composer</h2>
 
@@ -716,8 +710,8 @@ chmod -R g+rw var/</code></pre></figure>
 </blockquote>
 
 <p>This can be done with:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vim /etc/php/8.1/fpm/pool.d/www.conf
-listen = /run/php/php8.1-fpm.sock
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vim /etc/php/8.3/fpm/pool.d/www.conf
+listen = /run/php/php8.3-fpm.sock
 </code></pre></div></div>
 
 <p>Edit/create the virtual host file:</p>
@@ -744,7 +738,7 @@ listen = /run/php/php8.1-fpm.sock
     }
 
     location ~ ^/index\.php(/|$) {
-        fastcgi_pass unix:/run/php/php8.1-fpm.sock;
+        fastcgi_pass unix:/run/php/php8.3-fpm.sock;
         fastcgi_split_path_info ^(.+\.php)(/.*)$;
         include fastcgi.conf;
         fastcgi_param PHP_ADMIN_VALUE "open_basedir=$document_root/..:/tmp/";
@@ -846,25 +840,7 @@ systemctl <span class="nb">enable </span>fail2ban
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav">
-<li class="nav-item">
-<a href="#accounts-and-ssh-connection" class="nav-link">Accounts and SSH connection</a><ul><li class="nav-item"><a href="#secure-your-ssh-daemon" class="nav-link">Secure your SSH daemon</a></li></ul>
-</li>
-<li class="nav-item"><a href="#install-php-webserver-and-database" class="nav-link">Install PHP, webserver and database</a></li>
-<li class="nav-item"><a href="#install-composer" class="nav-link">Install composer</a></li>
-<li class="nav-item"><a href="#create-database" class="nav-link">Create database</a></li>
-<li class="nav-item"><a href="#install-kimai" class="nav-link">Install Kimai</a></li>
-<li class="nav-item">
-<a href="#configure-webserver" class="nav-link">Configure webserver</a><ul><li class="nav-item"><a href="#install-certbot-for-ssl" class="nav-link">Install Certbot for SSL</a></li></ul>
-</li>
-<li class="nav-item">
-<a href="#bonus-points" class="nav-link">Bonus points</a><ul>
-<li class="nav-item"><a href="#change-ssh-port" class="nav-link">Change SSH Port</a></li>
-<li class="nav-item"><a href="#ufw" class="nav-link">UFW</a></li>
-<li class="nav-item"><a href="#fail2ban" class="nav-link">Fail2Ban</a></li>
-</ul>
-</li>
-</ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#accounts-and-ssh-connection" class="nav-link">Accounts and SSH connection</a><ul><li class="nav-item"><a href="#secure-your-ssh-daemon" class="nav-link">Secure your SSH daemon</a></li></ul></li><li class="nav-item"><a href="#install-php-webserver-and-database" class="nav-link">Install PHP, webserver and database</a></li><li class="nav-item"><a href="#install-composer" class="nav-link">Install composer</a></li><li class="nav-item"><a href="#create-database" class="nav-link">Create database</a></li><li class="nav-item"><a href="#install-kimai" class="nav-link">Install Kimai</a></li><li class="nav-item"><a href="#configure-webserver" class="nav-link">Configure webserver</a><ul><li class="nav-item"><a href="#install-certbot-for-ssl" class="nav-link">Install Certbot for SSL</a></li></ul></li><li class="nav-item"><a href="#bonus-points" class="nav-link">Bonus points</a><ul><li class="nav-item"><a href="#change-ssh-port" class="nav-link">Change SSH Port</a></li><li class="nav-item"><a href="#ufw" class="nav-link">UFW</a></li><li class="nav-item"><a href="#fail2ban" class="nav-link">Fail2Ban</a></li></ul></li></ul>
         
         <ul class="nav">
             <li>
@@ -884,7 +860,7 @@ systemctl <span class="nb">enable </span>fail2ban
 <script src="/assets/build/main.js"></script>
 
 <script async defer src="https://sa.kimai.org/latest.js"></script>
-<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
 
 </body>
 </html>
