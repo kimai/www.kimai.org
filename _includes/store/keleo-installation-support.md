@@ -2,7 +2,7 @@ If you need help installing Kimai or updating to the latest version, I am availa
 
 Although all necessary steps are documented, they may cause problems for users who are not familiar with server systems.
 
-In almost 20 years of work experience I have seen a lot of different server systems and know that it is not always easy to integrate new software into your existing setup.
+In 25+ years of work experience I have seen a lot of different server systems and know that it is not always easy to integrate new software into your existing setup.
 
 If you want to hire me for Kimai installation or updates, please contact me via email.
 
