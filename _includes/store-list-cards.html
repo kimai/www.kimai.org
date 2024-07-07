@@ -1,0 +1,88 @@
+{% assign products = include.products | default: site.data.store %}
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+{% for product in products %}
+{% assign featured = false %}
+{% assign isNew = false %}
+{% assign settings = site.data.store[product.slug] %}
+{% if settings.new != nil and settings.new %}
+    {% assign isNew = true %}
+{% endif %}
+{% if settings.featured %}
+    {% assign featured = true %}
+{% endif %}
+{% assign icon = settings.icon %}
+{% assign developer = site.data.developer[settings.developer] %}
+{% assign translation = site.data[page.lang].store.items[product.slug] %}
+{% if settings.disabled == nil %}
+<div class="col">
+    <article class="card card-hover h-100 border-0 shadow-sm">
+        <a href="{{ product.url }}" class="d-block position-absolute w-100 h-100 top-0 start-0" aria-label="Link to: {{ translation.title }}"></a>
+        {% comment %}
+        <a href="#" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-2 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" aria-label="Save to Favorites" data-bs-original-title="Save to Favorites">
+            <i class="bx bx-bookmark"></i>
+        </a>
+        {% endcomment %}
+        <div class="card-body pb-1">
+            <h3 class="h5 mb-3">
+                <a href="{{ product.url }}">{{ translation.title }}</a>
+            </h3>
+            <p>{{ translation.intro }}</p>
+            <!--p class="fs-lg fw-semibold text-primary mb-0">$12.50</p-->
+        </div>
+        <div class="px-4 pb-3">
+            {% for tag in settings.tags %}
+            <span class="badge bg-secondary zindex-2 me-2 text-capitalize">{{ tag }}</span>
+            {% endfor %}
+        </div>
+        <div class="card-footer d-flex align-items-center fs-sm text-muted py-4">
+            {% unless settings.price == nil and settings.subscription == nil %}
+            <div class="d-flex align-items-center me-4">
+            {% if settings.subscription != nil %}
+                <i class="bx bx-cart fs-xl me-1"></i>
+                {{ settings.subscription }}
+            {% elsif settings.price == 0 %}
+                <i class="bx bx-gift fs-xl me-1"></i>
+                For free
+            {% else %}
+                <i class="bx bx-cart fs-xl me-1"></i>
+                {{ settings.price }}
+            {% endif %}
+            </div>
+            {% endunless %}
+            <div class="d-flex align-items-center">
+                <i class="bx bx-user fs-xl me-1"></i>
+                {{ developer.name }}
+            </div>
+        </div>
+    </article>
+</div>
+{% comment %}
+<li class="mb-4">
+    <div class="d-flex text-muted pt-1">
+        <div class="fs-sm pe-3 me-0 me-md-3 flex-fill">
+            {{ translation.intro }}
+            <a href="{{ product.url }}" class="d-block mt-3">{{ site.data[page.lang].translation.read-more }}</a>
+        </div>
+        <p class="fs-sm fw-semibold text-primary mb-0 text-nowrap d-none d-md-block">
+            <a href="{{ product.url }}">
+            {% if settings.subscription != nil %}
+            <i class="bx bx-cart fs-3"></i>
+            {% elsif settings.price == nil %}
+            <i class="bx bx-comment fs-4"></i>
+            {% elsif settings.price == 0 %}
+            <i class="bx bx-gift fs-3"></i>
+            {% else %}
+            <i class="bx bx-cart fs-3"></i>
+            {% endif %}
+            </a>
+        </p>
+    </div>
+    {% unless forloop.last %}
+    <hr class="my-4">
+    {% endunless %}
+</li>
+{% endcomment %}
+
+{% endif %}
+{% endfor %}
+</div>
