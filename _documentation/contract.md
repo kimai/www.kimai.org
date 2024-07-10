@@ -35,7 +35,24 @@ Contains the entire year with the following information:
   - a public holiday 
   - any kind of absence
 
-## Manual bookings: Account working times
+## Lock a month
+
+After a month is over and the employee working-times were verified for correctness, the month should be "locked".
+
+You can right-click the row or use the action menu at the end of the monthly row to lock the selected month:
+
+{% include docs-image.html src="/images/documentation/contract-lock-month.webp" title="Lock a month by choosing from the context menu" width="700px" %}
+
+Whether a month is locked (closed black lock) or not (open orange lock) is indicated by the icon in front of the row.
+
+Locking a month will lock all days of the year before the chosen date.
+If previous months were not locked, they will be locked automatically as well.
+
+The user will no longer be able to create or edit times for any locked period.
+
+## Manual bookings
+
+### Account working times
 
 Manual bookings can be used to increase or reduce the users time account.
 
@@ -43,7 +60,7 @@ Popular examples are:
 - adding a positive amount of hours => taking over hours from the last year
 - removing a negative amount of hours => payment to compensate for plus hours
 
-## Manual bookings: Holidays
+### Holidays
 
 Manual bookings can be used to increase or reduce the users available holidays.
 
