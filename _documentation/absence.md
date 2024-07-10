@@ -9,6 +9,13 @@ related:
 This screen and the `Contract` menu can be seen by any user that has active contract settings.
 The `Absence` screen can be seen by any user that has the `absence` permission.
 
+## Approval workflow
+
+Right now, there is **no** Approval workflow for absences.
+
+But any time an absence is created, the system will email the users supervisor.
+The supervisor is a setting in the [users profile]({%link _documentation/users.md %})). 
+
 ## Holiday
 
 When you are eligible for holidays, meaning that your contract settings have a value for `holidays`, you can add holidays here.
