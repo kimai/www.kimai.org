@@ -50,6 +50,15 @@ If previous months were not locked, they will be locked automatically as well.
 
 The user will no longer be able to create or edit times for any locked period.
 
+## Changing a work contract
+
+If you change a users expected hours, it will influence all non-locked times.
+It is therefore necessary to lock all months (see above) in which the old employment contract settings were valid BEFORE you change the settings.
+
+After you locked all previous months, you can safely change the expected working time settings.
+
+As you can only lock complete months, it is currently only possible to change the employment contract at the beginning of a month.
+
 ## Manual bookings
 
 ### Account working times
