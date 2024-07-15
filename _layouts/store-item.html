@@ -204,12 +204,12 @@ layout: default
                             {% if isMultiPurchase != nil %}
 
                                 <div class="row align-items-center mb-3">
-                                {% if settings.gumroad %}
-                                    <a class="btn btn-success btn-lg w-100 btn-buy" href="{{ settings.gumroad }}" target="_blank"><i class="{{ buyBtnIcon }} me-2"></i> {{ buyTitle }}</a>
+                                {% if settings.lemonsqueezy %}
+                                    <a class="btn btn-success btn-lg w-100 btn-buy" href="{{ settings.lemonsqueezy }}" target="_blank"><i class="{{ buyBtnIcon }} me-2"></i> {{ buyTitle }}</a>
                                 {% endif %}
 
-                                {% if settings.lemonsqueezy and settings.gumroad == nil %}
-                                    <a class="btn btn-success btn-lg w-100 btn-buy" href="{{ settings.lemonsqueezy }}" target="_blank"><i class="{{ buyBtnIcon }} me-2"></i> {{ buyTitle }}</a>
+                                {% if settings.gumroad and settings.lemonsqueezy == nil %}
+                                    <a class="btn btn-success btn-lg w-100 btn-buy" href="{{ settings.gumroad }}" target="_blank"><i class="{{ buyBtnIcon }} me-2"></i> {{ buyTitle }}</a>
                                 {% endif %}
                                 </div>
                                 <div class="row align-items-center mb-3 text-muted fs-sm">
