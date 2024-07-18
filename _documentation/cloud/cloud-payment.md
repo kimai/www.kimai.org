@@ -18,14 +18,16 @@ Supported card providers include **Visa, Mastercard, American Express, Discover,
  
 As the price depends on the plan and the number of registered users, the Kimai-Cloud is billed **in hindsight**: invoices are issued at the end of each billing period.
 
-If you cancel your contract, you will receive a final invoice after the cancellation period.
+If you cancel your contract, you will:
+- not receive another invoice and you can use your cloud until the last day of your subscription  
+- receive a final invoice after the cancellation period (old metered plans `Plus` and `Premium`)
 
 ### Billing period
 
 Billing takes place on a monthly basis, **the billing day corresponds to the day the plan is booked**.
 As an example: booking the premium plan on 26.12. means that subsequent invoices will be issued on the 26th of each month.
 
-If you need to be billed for full calendar months, please book your tariff either on the next first of the month.
+If you need to be billed for full calendar months, please subscribe either on the next first of the month or contact support.
 
 ### Trial period
 
@@ -60,13 +62,13 @@ the card issuer or bank, the expiration date, the last 4 digits of the  card or 
 Usually each registered user of a Kimai Cloud is charged, but I believe in fairness:
 
 - **Active users** use one license
-- **Deactivated users** do not use a license, instead their license will be free again for re-use by another member 
+- **Deactivated users** do not use a license. Once you deactivate a user, the license is free again to be re-used by another account. If you reactivate a previously deactivated user, a license is used again. 
+
+If you do not have sufficient licenses for creating a new account or for actovating an existing account, then you can purchase more licenses at [My Cloud](https://www.kimai.cloud/my-cloud/).
 
 ### User based billing
 
-This only applies to old **metered plans** `Plus` and `Premium`, which are not available for new customers any longer.
-
-Usually each registered user of a Kimai Cloud is charged, but I believe in fairness and have therefore decided to introduce the following regulation in mid-2021:
+Accounts still on the deprecated **metered plans** `Plus` and `Premium` use a different calculation model (these plans are not available for new customers).
 
 - **Active users will be charged**
 - Deactivated users will be charged **if they have any activity less than one month ago**, e.g.:
