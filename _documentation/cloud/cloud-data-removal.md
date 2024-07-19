@@ -18,11 +18,13 @@ I believe that **deleting unused data is the best way to prove to everyone that 
 I want to provide you with a safe working environment. Privacy first is one of my top rules.
 There is no investor behind me, so I do not have and do not want to fake numbers with expired accounts! I do make my own rules.
 
-And one of these rules is: **You must log in once a month and enter a time record.**
+And one of these rules is: **You must create at least one new timesheet every month.**
 
-If you don't follow this rule, you will receive a warning that "Your cloud is unused".
-After receiving this email, you have max. 4 weeks to log in and enter a timesheet.
+If you don't follow this rule, you will receive a warning that "Your cloud is unused - Data deletion is imminent".
+After receiving this email, you have a short timeframe of a few days to log in and enter a timesheet.
 If you fail to do so, your cloud will be irretrievable/permanently deleted.
+
+There is no backup of your deleted data, it cannot be restored, even if you want to pay for it.
 
 **This process only applies to free users.** Paying customers pay me to host Kimai - their data is protected and will never be touched.
 
@@ -43,11 +45,10 @@ Unsubscribing from our system emails is not only a bad idea, it's a violation of
 
 Kimai will send you warning emails that your cloud is unused with more information if the following applies:
 
-- after the trial period has expired
-- last login was more than 30 days ago
+- after the trial period has expired and you are on the unpaid plan
 - the last timesheet was created more than 30 days ago
 
-If you don't need your Kimai cloud anymore, you don't have to do anything: four weeks after sending the warning-email,
+If you don't need your Kimai cloud anymore, you don't have to do anything: shortly after sending the warning-email,
 your cloud and your account will be completely deleted.
 
 ### Data protection for paying customer
