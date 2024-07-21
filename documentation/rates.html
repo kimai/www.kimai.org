@@ -652,6 +652,8 @@ A <strong>fixed price</strong> always wins over an <strong>hourly price</strong>
   <li>And the <strong>internal price</strong> defines your costs for the accounted work (what your employees costs you)</li>
 </ul>
 
+<p>The rate for each timesheet is not calculated on the fly, but stored with the timesheet itself.</p>
+
 <h2 id="defining-prices">Defining prices</h2>
 
 <p>Prices can be defined in 4 different places;</p>
@@ -675,8 +677,18 @@ For example: a customer gets a global rate of 10€, and you additionally create
 
 <h2 id="changing-prices">Changing prices</h2>
 
-<p>Rate changes always only apply for future entries. If you change e.g. a user’s hourly rate, it will be used for all 
-timesheet records that will be created from now on. But existing records will not be changed retroactive.</p>
+<p>Rate changes apply to <strong>future records only</strong>. If you change e.g. a user’s hourly rate, it will be used for all timesheet records that will be created from now on.</p>
+
+<p>Existing records will never be changed retrospectively by changing a base rate (e.g. the user’s hourly rate). This would immediately destroy your entire accounting history.</p>
+
+<h3 id="batch-changing-prices">Batch changing prices</h3>
+
+<p>If you want to change the rate for many timesheets at once, you can go to “All times” and use the search filter to find the correct timesheets.</p>
+
+<p>Now tick the box in the top left hand corner of the results list to select all records.
+Click on the “Edit” button below the table. You will be taken to the “Batch Update” page where you activate the “Recalculate prices” toggle and click “Save”.</p>
+
+<p>Read more about the <a href="/documentation/timesheet.html">Batch Update Mode</a> in the timesheet documentation.</p>
 
 <h3 id="price-changes-upon-item-changes">Price changes upon item changes</h3>
 
@@ -689,9 +701,11 @@ timesheet records that will be created from now on. But existing records will no
   <li>User</li>
 </ul>
 
-<p>As all of these fields can have different rate settings. the time-records rate will be recalculated as well.</p>
+<p>As all these fields can result in a different rate setting, the rate is recalculated for each timesheet that is changed.</p>
 
-<p>So if Project A has a rate of 100 and Project B a rate of 120, and you move a time-record from A to B it will automatically be changed from 100 to 120.</p>
+<p>In other words:</p>
+
+<p>If Project A has a rate of 100 and Project B a rate of 120, and you move a time-record from A to B it will automatically be changed from 100 to 120.</p>
 
 <h2 id="price-calculation">Price calculation</h2>
 
@@ -786,7 +800,7 @@ In case that the <code class="language-plaintext highlighter-rouge">users hourly
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#defining-prices" class="nav-link">Defining prices</a><ul><li class="nav-item"><a href="#internal-price" class="nav-link">Internal price</a></li></ul></li><li class="nav-item"><a href="#changing-prices" class="nav-link">Changing prices</a><ul><li class="nav-item"><a href="#price-changes-upon-item-changes" class="nav-link">Price changes upon item changes</a></li></ul></li><li class="nav-item"><a href="#price-calculation" class="nav-link">Price calculation</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#defining-prices" class="nav-link">Defining prices</a><ul><li class="nav-item"><a href="#internal-price" class="nav-link">Internal price</a></li></ul></li><li class="nav-item"><a href="#changing-prices" class="nav-link">Changing prices</a><ul><li class="nav-item"><a href="#batch-changing-prices" class="nav-link">Batch changing prices</a></li><li class="nav-item"><a href="#price-changes-upon-item-changes" class="nav-link">Price changes upon item changes</a></li></ul></li><li class="nav-item"><a href="#price-calculation" class="nav-link">Price calculation</a></li></ul>
         
         <ul class="nav">
             <li>
