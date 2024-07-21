@@ -25,6 +25,8 @@ And there are two different rates for each time-record:
 - The __regular hourly price__ defines the external costs for yor customer (what actually goes on an invoice)
 - And the __internal price__ defines your costs for the accounted work (what your employees costs you) 
 
+The rate for each timesheet is not calculated on the fly, but stored with the timesheet itself.
+
 ## Defining prices
 
 Prices can be defined in 4 different places;
@@ -46,8 +48,18 @@ If you leave the `internal price` empty on customer/project/activity level, the 
 
 ## Changing prices
 
-Rate changes always only apply for future entries. If you change e.g. a user's hourly rate, it will be used for all 
-timesheet records that will be created from now on. But existing records will not be changed retroactive.
+Rate changes apply to **future records only**. If you change e.g. a user's hourly rate, it will be used for all timesheet records that will be created from now on. 
+
+Existing records will never be changed retrospectively by changing a base rate (e.g. the user's hourly rate). This would immediately destroy your entire accounting history. 
+
+### Batch changing prices
+
+If you want to change the rate for many timesheets at once, you can go to "All times" and use the search filter to find the correct timesheets.
+
+Now tick the box in the top left hand corner of the results list to select all records.
+Click on the "Edit" button below the table. You will be taken to the "Batch Update" page where you activate the "Recalculate prices" toggle and click "Save".
+
+Read more about the [Batch Update Mode]({% link _documentation/timesheet.md %}) in the timesheet documentation.
 
 ### Price changes upon item changes 
 
@@ -58,9 +70,11 @@ If a record already has an hourly or fixed rate set, it will be re-calculated if
 - Activity
 - User
 
-As all of these fields can have different rate settings. the time-records rate will be recalculated as well.
+As all these fields can result in a different rate setting, the rate is recalculated for each timesheet that is changed.
 
-So if Project A has a rate of 100 and Project B a rate of 120, and you move a time-record from A to B it will automatically be changed from 100 to 120.
+In other words:  
+
+If Project A has a rate of 100 and Project B a rate of 120, and you move a time-record from A to B it will automatically be changed from 100 to 120.
 
 ## Price calculation
 

@@ -52,6 +52,17 @@ An administrator can fix the problem by opening the `All times` view and filteri
 
 Administrators can also configure the duration for this check or deactivate it entirely at [System > Settings > Timesheet]({% link _documentation/configurations.md %}).
 
+## Batch update
+
+You can change many timesheets at once, by using the "Batch update mode". 
+First use the search to filter the correct results (tip: increase page size to see everything on one page).
+
+Now click the checkbox in the top left corner of the results list to select all records (or select individual records if you only want to change a few).
+Scroll down to the bottom of the table where the new "Batch Mode" buttons appeared. 
+Click "Edit" and confirm that you want to edit all the selected records.
+
+You will see a new "Batch Update" page with various options to update all the selected timesheets.
+
 ## Duration format
 
 Please read the full documentation about accepted inputs for the [duration format]({% link _documentation/duration-format.md %}).
