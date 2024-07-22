@@ -8,4 +8,3 @@ permalink: /en/reviews
 ---
 
 {% include pages/reviews.html %}
-  

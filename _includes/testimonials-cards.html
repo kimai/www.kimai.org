@@ -1,0 +1,41 @@
+
+{% for testimonial in include.testimonials %}
+<div class="card border-0 p-0 p-sm-0 p-md-2 col-12 col-md-6 col-xl-4 mb-2 mb-md-0">
+    <div class="h-100 border border-secondary rounded">
+        <div class="card-body pt-1 mt-3">
+            <figcaption class="d-flex align-items-center border-0 pt-0 mt-n2 mt-lg-0">
+                {% if testimonial.avatar == '' %}
+                <svg  xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24"  fill="none"  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" /></svg>
+                {% else %}
+                <img src="/images/testimonials/{{ testimonial.avatar }}" width="60" class="rounded-circle" alt="{{ testimonial.name }}">
+                {% endif %}
+                <div class="ps-3">
+                    <h6 class="fw-semibold lh-base mb-0">{{ testimonial.name }}</h6>
+                    <span class="fs-sm text-muted">
+                        {% if testimonial.url != '' and testimonial.company == '' %}
+                            <a href="{{ testimonial.url }}" target="_blank" class="text-muted text-decoration-none">{{ testimonial.position }}</a>
+                        {% elsif testimonial.position != '' %}
+                            {{ testimonial.position }}
+                        {% endif %}
+                        {% if testimonial.url != '' and testimonial.company != '' %}
+                            &ndash; <a href="{{ testimonial.url }}" target="_blank" class="text-muted text-decoration-none">{{ testimonial.company }}</a>
+                        {% elsif testimonial.company != '' %}
+                            &ndash; {{ testimonial.company }}
+                        {% endif %}
+                    </span>
+                </div>
+            </figcaption>
+            <div class="text-nowrap py-2">
+                {% for i in (1..testimonial.rating) %}
+                <i class="bx bxs-star fs-3 text-warning"></i>
+                {% endfor %}
+            </div>
+            <div class="test-start">
+                {{ testimonial.text | markdownify }}
+            </div>
+            <p class="text-muted fs-xs">{{ testimonial.date | date: "%B %-d, %Y" }}</p>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
