@@ -1,0 +1,21 @@
+<div class="d-flex me-3">
+    <div class="d-flex me-3">
+        {% for testimonial in include.testimonials %}
+        <div class="d-flex align-items-center justify-content-center bg-light rounded-circle ms-n3" style="width: 48px; height: 48px;">
+            <img src="/images/testimonials/{{ testimonial.avatar }}" class="rounded-circle" width="44" alt="{{ testimonial.name }} - {{ testimonial.position }} - {{ testimonial.company }}">
+        </div>
+        {% endfor %}
+    </div>
+    {% assign customer_count = '<span class="text-primary fw-semibold">%number%+</span>' | replace: '%number%', site.kimai_customers %}
+    <div>
+        <div class="d-block fs-base">
+            <i class="bx bxs-star text-warning"></i>
+            <i class="bx bxs-star text-warning"></i>
+            <i class="bx bxs-star text-warning"></i>
+            <i class="bx bxs-star text-warning"></i>
+            <i class="bx bxs-star text-warning"></i>
+            5.0
+        </div>
+        <span class="fs-sm">{{ site.data[page.lang].translation.store-hero-counter | replace: '%number%', customer_count }}</span>
+    </div>
+</div>

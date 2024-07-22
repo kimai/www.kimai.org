@@ -18,16 +18,9 @@ translation_key: store-hero-title
                     <p class="fs-lg mb-5">
                         {{ site.data[page.lang].translation.store-hero-intro }}
                     </p>
-                    <div class="d-flex align-items-center mt-auto mb-3 mb-lg-0 pb-4 pb-lg-0 pb-xl-5">
-                        <div class="d-flex me-3">
-                        {% if page.lang == 'de' %}
-                            <div class="senja-embed" data-id="266e4889-180b-482a-82f9-e1b69fd70f66" data-mode="shadow" data-lazyload="false" style="display: block;"></div>
-                            <script async type="text/javascript" src="https://widget.senja.io/widget/266e4889-180b-482a-82f9-e1b69fd70f66/platform.js"></script>
-                        {% else %}
-                            <div class="senja-embed" data-id="35161406-eaf4-43f9-b5aa-531ca0b92d41" data-mode="shadow" data-lazyload="false" style="display: block;"></div>
-                            <script async type="text/javascript" src="https://widget.senja.io/widget/35161406-eaf4-43f9-b5aa-531ca0b92d41/platform.js"></script>
-                        {% endif %}
-                        </div>
+                    <div class="d-flex align-items-center mt-auto mb-3 mb-lg-0 pb-4 pb-lg-0 pb-xl-5 ps-3">
+                        {% assign testimonials = site.data.testimonials | where_exp: "item", "item.avatar != ''" | sample: 5 %}
+                        {% include testimonials-avatars.html testimonials=testimonials %}
                     </div>
                 </div>
                 <div class="col-xl-7">
@@ -47,35 +40,35 @@ translation_key: store-hero-title
                 <span class="badge bg-primary shadow-info fs-base fw-normal">Featured</span>
             </header>
             {% assign products = site.store | where: "lang", page.lang | where_exp:"product", "product.type == 'featured'" | sort: 'order', 'last' %}
-            {% include store-list.html products=products %}
+            {% include store-list-cards.html products=products %}
         </article>
         <article class="mb-5 pt-3">
             <header class="d-flex align-items-center justify-content-between mb-5">
                 <span class="badge bg-success shadow-info fs-base fw-normal">Support</span>
             </header>
             {% assign products =  site.store | where: "lang", page.lang | where_exp:"product", "product.type == 'support'" | sort: 'title' %}
-            {% include store-list.html products=products %}
+            {% include store-list-cards.html products=products %}
         </article>
         <article class="mb-5 pt-3">
             <header class="d-flex align-items-center justify-content-between mb-5">
                 <span class="badge bg-info shadow-info fs-base fw-normal">{{ site.data[page.lang].translation.store-category-apps }}</span>
             </header>
             {% assign products =  site.store | where: "lang", page.lang | where_exp:"product", "product.type == 'app'" | sort: 'title' %}
-            {% include store-list.html products=products %}
+            {% include store-list-cards.html products=products %}
         </article>
         <article class="mb-5 pt-3">
             <header class="d-flex align-items-center justify-content-between mb-5">
                 <span class="badge bg-warning shadow-info fs-base fw-normal">{{ site.data[page.lang].translation.store-category-plugins }}</span>
             </header>
             {% assign products =  site.store | where: "lang", page.lang | where_exp:"product", "product.type == 'plugin'" | sort: 'title' %}
-            {% include store-list.html products=products %}
+            {% include store-list-cards.html products=products %}
         </article>
         <article class="mb-5 pt-3">
             <header class="d-flex align-items-center justify-content-between mb-5">
                 <span class="badge bg-danger shadow-info fs-base fw-normal">{{ site.data[page.lang].translation.store-category-client }}</span>
             </header>
             {% assign products =  site.store | where: "lang", page.lang | where_exp:"product", "product.type == 'client'" %}
-            {% include store-list.html products=products %}
+            {% include store-list-cards.html products=products %}
         </article>
     </section>
 
