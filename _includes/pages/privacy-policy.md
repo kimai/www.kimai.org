@@ -165,15 +165,6 @@ To get critical information about the behavior of our visitors, we use Simple An
 This analytics software gives us insight about our visitors only in general, but not about individuals per se, 
 as it does not track visitors and does not store any personal identifiable information.
 
-**Senja**
-
-We are using Senja to collect and display user testimonials. 
-If you opt to leave a review, the data requested during the process will be processed by Senja.
-Your testimonial will be utilized as social proof, and we might display it both on the websites and on social media.
-
-Consent to the testimonial being used/displayed can be revoked at any time with future effect. 
-To do this, you only have to inform us of your revocation.
-
 ## Subprocessor
 
 We are using the following service providers (also called sub-processors) to assist with data processing:
@@ -195,9 +186,6 @@ Hetzner Online GmbH, Industriestr. 25, 91710 Gunzenhausen, Germany
 
 **Lemon Squeezy**: Marketplace for plugins [Link](https://www.lemonsqueezy.com), [Privacy policy](https://www.lemonsqueezy.com/privacy)  
 Lemon Squeezy, 222 Main Street Suite 500 , Salt Lake City, UT 84101, USA
-
-**Senja**: Testimonials, [Link](https://senja.io/), [Privacy policy](https://senja.io/legal/privacy-policy)  
-Senja Proof LTD - Flat 9, 2 Battlebridge Lane, SE1 2HL London, United Kingdom
 
 **Simple Analytics**: Statistics, [Link](https://simpleanalytics.com), [Privacy policy](https://dashboard.simpleanalytics.com/privacy-policy)  
 Simple Analytics B.V., Jacob van Lennepstraat 78 H, 1053 HM Amsterdam, Netherlands

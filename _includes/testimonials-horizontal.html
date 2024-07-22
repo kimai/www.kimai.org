@@ -1,7 +1,19 @@
-{% if page.lang == "de" %}
-<div class="senja-embed" data-id="223d13ff-cf5e-4887-8633-270788c6869a" data-mode="shadow" data-lazyload="false"></div>
-<script async type="text/javascript" src="https://widget.senja.io/widget/223d13ff-cf5e-4887-8633-270788c6869a/platform.js"></script>
-{% else %}
-<div class="senja-embed" data-id="78a8191e-9a25-43bc-83e1-9c2884cf57e6" data-mode="shadow" data-lazyload="false"></div>
-<script async type="text/javascript" src="https://widget.senja.io/widget/78a8191e-9a25-43bc-83e1-9c2884cf57e6/platform.js"></script>
-{% endif %}
+
+<div class="row">
+    {% for testimonial in testimonials %}
+    <div class="col-12 col-md-4 text-center p-3">
+        <img src="/images/testimonials/{{ testimonial.avatar }}" class="d-inline-block rounded-circle mb-2" width="60" alt="{{ testimonial.name }}">
+        {% assign highlight = testimonial.text | split: '<mark>' | slice: 1 | first | split: '</mark>' | slice: 0 | first %}
+        {{ highlight | markdownify }}
+        <div class="text-nowrap">
+            {% for i in (1..testimonial.rating) %}
+            <i class="bx bxs-star text-warning"></i>
+            {% endfor %}
+        </div>
+        <div class="mt-1">
+            <p class="fs-base mb-0">{{ testimonial.name }}</p>
+            <p class="fs-xs text-muted">{{ testimonial.position }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
