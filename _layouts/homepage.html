@@ -14,9 +14,8 @@ layout: base
 
     {% include section-features-images.html %}
 
-{% comment %}
-    {% include section-testimonials.html %}
-{% endcomment %}
+    {% assign testimonials = site.data.testimonials | where_exp: "item", "item.tags contains 'SliderHomepage'" | sample: 5 %}
+    {% include testimonials-slider.html testimonials=testimonials %}
 
     {% include section-features.html %}
 
