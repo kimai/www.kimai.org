@@ -12,7 +12,14 @@
     </section>
 
     <section class="container mb-5 pt-md-1 pt-lg-2 pt-xl-3">
-        {% include testimonials-horizontal.html %}
+        {% assign testimonials = site.data.testimonials | where_exp: "item", "item.tags contains 'FeaturedShort'" %}
+        {% if page.lang == 'de' %}
+            {% assign testimonials = testimonials | where_exp: "item", "item.tags contains 'German'" %}
+        {% else %}
+            {% assign testimonials = testimonials | where_exp: "item", "item.tags contains 'English'" %}
+        {% endif %}
+        {% assign testimonials = testimonials | sample: 3 %}
+        {% include testimonials-horizontal.html testimonials=testimonials %}
     </section>
 
     <section class="container mb-5 pt-md-1 pt-lg-4 pt-xl-5">
