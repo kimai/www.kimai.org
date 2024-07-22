@@ -4,19 +4,26 @@
         {% include pricing-card.html id="nonprofit" %}
     </div>
     <div class="col-xs-12 col-md-6">
-        {% if page.lang == 'de' %}
         <div class="card h-100 border-0 shadow-sm p-xxl-3" style="min-width: 18rem;">
             <div class="card-body">
                 <div class="d-flex align-items-center pb-2 pb-md-3">
-                    <h4 class="h3 lh-1 mb-4">Dutzende NPOs vertrauen Kimai"</h4>
+                    <h4 class="h3 lh-1 mb-4">{{ site.data[page.lang].translation.non-profit.testimonial-title }}</h4>
                 </div>
-                <p class="mb-4">
-                    Und wir freuen uns über jede weitere Organisation, die wir unterstützen dürfen.
-                </p>
-                <div class="senja-embed" data-id="95a4466a-5f89-4292-95bf-00a7c2302e2c" data-mode="shadow" data-lazyload="false"></div>
-                <script async type="text/javascript" src="https://widget.senja.io/widget/95a4466a-5f89-4292-95bf-00a7c2302e2c/platform.js"></script>
+                <p class="mb-4">{{ site.data[page.lang].translation.non-profit.testimonial-intro }}</p>
+                <span class="btn btn-icon btn-primary btn-lg shadow-primary pe-none">
+                    <i class="bx bxs-quote-left"></i>
+                </span>
+
+                <div class="swiper mx-n2" data-swiper-options='{"slidesPerView": 1, "loop": true, "autoplay": {"delay": 3500, "disableOnInteraction": false}}'>
+                    <div class="swiper-wrapper">
+
+                        {% assign testimonials = site.data.testimonials | where_exp: "item", "item.tags contains 'NonProfit'" | sort: 'date' | reverse %}
+                        {% include testimonials-slider-plain.html testimonials=testimonials %}
+
+                    </div>
+                </div>
+
             </div>
         </div>
-        {% endif %}
     </div>
 </div>

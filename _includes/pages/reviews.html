@@ -9,8 +9,8 @@
 
 <section class="container mb-5 pt-md-1 pt-lg-4 pt-xl-5">
     <div class="row gx-5">
-        {% assign walloflove = site.data.testimonials | where_exp: "item", "item.tags contains 'WallOfLove'" | sort: 'date' | reverse %}
-        {% include testimonials-cards.html testimonials=walloflove %}
+        {% assign testimonials = site.data.testimonials | where_exp: "item", "item.tags contains 'WallOfLove'" | sort: 'date' | reverse %}
+        {% include testimonials-cards.html testimonials=testimonials %}
     </div>
 </section>
 
