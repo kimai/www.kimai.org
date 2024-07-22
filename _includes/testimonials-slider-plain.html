@@ -4,9 +4,9 @@
         {{ testimonial.text | markdownify }}
         <div class="d-flex align-items-center border-0 pt-3">
             {% if testimonial.avatar == '' %}
-            <svg  xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"  fill="none"  stroke="currentColor" stroke-width="2" stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" /></svg>
+                {{ site.avatar_fallback }}
             {% else %}
-            <img src="/images/testimonials/{{ testimonial.avatar }}" width="48" class="rounded-circle ms-n1" alt="{{ testimonial.name }}">
+                <img src="/images/testimonials/{{ testimonial.avatar }}" width="48" class="rounded-circle ms-n1" alt="{{ testimonial.name }}">
             {% endif %}
             <div class="ps-2 ms-1">
                 <h6 class="fs-base fw-semibold mb-0">{{ testimonial.name }}</h6>
