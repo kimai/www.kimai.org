@@ -35,6 +35,11 @@ translation_key: store-hero-title
     </section>
 
     <section class="container mb-lg-4 pb-5">
+        <p class="alert alert-warning d-flex mt-3" role="alert">
+            <i class="bx bx-info-circle lead me-3"></i>
+            {{ site.data[page.lang].translation.store-plugins-onpremise|replace: '%cloud%', '<span class="badge bg-secondary zindex-2 mx-2 text-capitalize">Cloud</span>' }}
+        </p>
+
         <article class="mb-5 pt-3">
             <header class="d-flex align-items-center justify-content-between mb-5">
                 <span class="badge bg-primary shadow-info fs-base fw-normal">Featured</span>
