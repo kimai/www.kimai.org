@@ -201,38 +201,48 @@ layout: default
                                 </small>
                             </div>
 
-                            {% if isMultiPurchase != nil %}
-
+                            {% if isMultiPurchase != nil and isFree %}
                                 <div class="row align-items-center mb-3">
+                                    <p>
+                                        You can only access this free plugin with a valid email address as you must login to the licence manager for download.
+                                    </p>
+                                </div>
+                            {% endif %}
+
+                            <div class="row align-items-center mb-3">
+                                {% if isMultiPurchase != nil %}
                                     <a class="btn btn-success btn-lg w-100 btn-buy" href="{{ settings.gumroad }}" target="_blank"><i class="{{ buyBtnIcon }} me-2"></i> {{ buyTitle }}</a>
                                     <!--<a class="btn btn-success btn-lg w-100 btn-buy" href="{{ settings.lemonsqueezy }}" target="_blank"><i class="{{ buyBtnIcon }} me-2"></i> {{ buyTitle }}</a>-->
-                                </div>
-                                <div class="row align-items-center mb-3 text-muted fs-sm">
-                                    <div class="col-auto">
-                                        {{ site.data[page.lang].translation.store-payment-methods }}
-                                    </div>
-                                    <div class="col-auto ms-auto fs-lg">
-                                        <i class="bx bxl-paypal"></i>
-                                        <i class="bx bxl-google"></i>
-                                        <i class="bx bxl-apple"></i>
-                                        <i class="bx bxl-visa"></i>
-                                        <i class="bx bxl-mastercard"></i>
-                                    </div>
-                                </div>
-
-                                {% if is_ppp %}
-                                <div class="row align-items-center text-muted fs-sm">
-                                    <div class="col-auto ms-auto">
-                                        <a href="{% link _landingpage/en/discount-codes.md %}" class="text-decoration-none text-muted">
-                                            * {{ site.data[page.lang].translation.purchase-power-parity }}
-                                        </a>
-                                    </div>
-                                </div>
+                                {% else %}
+                                    <a class="btn btn-success btn-lg w-100 btn-buy" href="{{ buyLink }}"><i class="{{ buyBtnIcon }} me-2"></i> {{ buyTitle }}</a>
                                 {% endif %}
+                            </div>
 
-                            {% else %}
-                                <a class="btn btn-primary btn-lg shadow-primary btn-buy" href="{{ buyLink }}"><i class="{{ buyBtnIcon }} me-2"></i> {{ buyTitle }}</a>
+                            {% if isFree == false %}
+                            <div class="row align-items-center mb-3 text-muted fs-sm">
+                                <div class="col-auto">
+                                    {{ site.data[page.lang].translation.store-payment-methods }}
+                                </div>
+                                <div class="col-auto ms-auto fs-lg">
+                                    <i class="bx bxl-paypal"></i>
+                                    <i class="bx bxl-google"></i>
+                                    <i class="bx bxl-apple"></i>
+                                    <i class="bx bxl-visa"></i>
+                                    <i class="bx bxl-mastercard"></i>
+                                </div>
+                            </div>
                             {% endif %}
+
+                            {% if is_ppp %}
+                            <div class="row align-items-center text-muted fs-sm">
+                                <div class="col-auto ms-auto">
+                                    <a href="{% link _landingpage/en/discount-codes.md %}" class="text-decoration-none text-muted">
+                                        * {{ site.data[page.lang].translation.purchase-power-parity }}
+                                    </a>
+                                </div>
+                            </div>
+                            {% endif %}
+
                         </div>
                     </div>
                 </div>
