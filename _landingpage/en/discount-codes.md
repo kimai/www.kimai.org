@@ -4,22 +4,28 @@ permalink: /en/kimai-discount-codes
 centered: true
 ---
 
-This page explains my discount policy, which was created to ensure the fairest pricing policy for all customers.
+This page explains my discount policy, with which I want to ensure a fair pricing policy for all customers.
 
-**Non Profits**
+**There is generally no discount for plugins in self-hosted installations.**
 
-I do offer a discount to [non-profit organisations]({% link _landingpage/en/non-profit.md %}) who want to use the Kimai-Cloud.
+The only exception to this rule is listed under "Purchasing Power Parity".
 
-There is no discount for plugins in self-hosted installations.
+### Non Profits
 
-**Cloud**
+For non-profit organisations that want to use the Kimai Cloud, I offer a [generous discount in the form of an annual plan]({% link _landingpage/en/non-profit.md %}).   
+
+### Cloud
 
 If you choose a paid plan with Kimai-Cloud, you will receive a 20-25% discount if you pay it annually instead of monthly.
 
-**Purchasing Power Parity**
+### Black friday
 
-Many countries have a lower GDP than my home country Austria.
-To make it easier for these countries to utilize Kimai I give out PPP discounts.
+I never run seasonal promotions like Black Friday or Christmas deals.
+All discount codes found on discount code websites are fake and will not work.
+
+### Purchasing Power Parity
+
+I offer PPP discounts for countries that have a lower GDP than my home country of Austria.
 To find out if you are eligible for a discount, go to this [Wikipedia page](https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)_per_capita), 
 and compare your countries GDP per capita with the below table. 
 
@@ -38,9 +44,3 @@ and compare your countries GDP per capita with the below table.
 {: .table }
 
 If you [contact me](mailto:support@kimai.cloud), don't forget to add proof like your company registration.
-
-**Black friday**
-
-I never run seasonal promotions like Black Friday or Christmas deals.
-
-All discount codes found on discount code websites are fake and will not work.
