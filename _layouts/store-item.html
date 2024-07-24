@@ -105,7 +105,7 @@ layout: default
     {% assign showDemo = settings.demo %}
 {% endif %}
 {% assign is_ppp = false %}
-{% if isMultiPurchase != nil and page.lang != 'de' %}
+{% if isMultiPurchase != nil and page.lang != 'de' and isFree == false %}
     {% assign is_ppp = true %}
 {% endif %}
 
