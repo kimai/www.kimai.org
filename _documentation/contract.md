@@ -48,7 +48,8 @@ Whether a month is locked (closed black lock) or not (open orange lock) is indic
 Locking a month will lock all days of the year before the chosen date.
 If previous months were not locked, they will be locked automatically as well.
 
-The user will no longer be able to create or edit times for any locked period.
+**Be aware:** No one (neither the user nor an admin) will be able to create or edit times for any locked period! 
+Locking a month is a final decision.
 
 ## Changing a work contract
 
