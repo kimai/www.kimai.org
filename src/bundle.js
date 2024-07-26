@@ -1,8 +1,6 @@
 require ('/src/bundle.scss')
 
-// ========= INSTEAD OF USING THE FILE, THIS IS COPY & PASTE WITH ADJUSTMENTS =========
- //import './js/theme.js';
-// ====================================================================================
+// import './js/components/theme-switcher'
 
 import './js/components/sticky-navbar'
 import './js/components/scroll-top-button'
