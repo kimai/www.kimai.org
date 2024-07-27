@@ -356,34 +356,22 @@ git clone https://github.com/glorpen/kimai-duration-plugin.git GlorpenDurationBu
 
     <p>You might have to set file permissions afterwards:</p>
 
-    <div class="row row-cards row-deck">
-    <div class="col-md-12">
-        <div class="card mb-3">
-            <div class="card-status bg-info"></div>
-            <div class="card-body">
-                <h4 class="card-title">Adjust file permission</h4>
-                <p>
-                    You have to allow PHP (your webserver process) to write to
-                    <code class="language-plaintext highlighter-rouge">var/</code> and it subdirectories.
-                </p>
+<div class="card mb-3">
+                       <p class="card-title bg-faded-primary p-1 mb-1"><strong><i class="bx bxs-info-circle ms-2 me-2 text-primary fs-5"></i>Adjust file permission</strong></p>
+                       <div class="card-body m-0 pb-0 pt-3 px-3">
+<p>You have to allow PHP (your webserver process) to write to <code class="language-plaintext highlighter-rouge">var/</code> and it subdirectories.</p>
 
-                <p>Here is an example for Debian/Ubuntu (to be executed inside the Kimai directory):</p>
+<p>Here is an example for Debian/Ubuntu, to be executed inside the Kimai directory:</p>
 
-
-<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">chown -R :www-data .
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chown -R :www-data .
 chmod -R g+r .
-chmod -R g+rw var/</code></pre></figure>
+chmod -R g+rw var/
+</code></pre></div></div>
 
-
-            </div>
-            <div class="card-footer fs-sm text-muted">
-                Test Kimai before executing these commands (they are likely not required in a shared-hosting environment).
-                You probably need to prefix them with <code class="language-plaintext highlighter-rouge">sudo</code> and
-                the group might be called different than <code class="language-plaintext highlighter-rouge">www-data</code>.
-            </div>
-        </div>
-    </div>
+<p>You might not need these commands in a shared-hosting environment.
+And you probably need to prefix them with <code class="language-plaintext highlighter-rouge">sudo</code> and/or the group might be called different from <code class="language-plaintext highlighter-rouge">www-data</code>.</p>
 </div>
+                   </div>
 
 
     
