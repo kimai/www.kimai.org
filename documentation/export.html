@@ -689,24 +689,18 @@ These records cannot be edited any longer by regular users and are excluded by d
 </ul>
 
 <p>After you created a new or updated an existing template, you have to clear the cache to see the results:</p>
-<div class="row row-cards row-deck">
-    <div class="col-md-12">
-        <div class="card mb-3">
-            <div class="card-body">
-                <h4 class="card-title">How to reload Kimai cache</h4>
+<div class="card border-primary mb-3">
+                       <p class="card-title bg-faded-primary p-1 mb-1"><strong><i class="bx bxs-info-circle ms-2 me-2 text-primary fs-5"></i>How to reload Kimai cache</strong></p>
+                       <div class="card-body m-0 pb-0 pt-3 px-3">
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/console kimai:reload --env=prod
+</code></pre></div></div>
 
-<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">bin/console kimai:reload --env=prod</code></pre></figure>
+<p>It is not advised, but in case the above command fails you could try:</p>
 
-
-                <p>It is not advised, but in case the above command fails you could try:</p>
-
-
-<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">rm -r var/cache/prod/*</code></pre></figure>
-
-            </div>
-        </div>
-    </div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm -r var/cache/prod/*
+</code></pre></div></div>
 </div>
+                   </div>
 
 <p>Please copy &amp; paste one of <a href="https://github.com/kimai/kimai/tree/main/templates/export/renderer">default templates</a> to <code class="language-plaintext highlighter-rouge">var/export/</code> 
 as starting point and rename it afterwards.</p>
