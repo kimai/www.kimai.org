@@ -15,11 +15,6 @@ In case you bought a license for one of the Kimai plugins, you can get your late
 
 - [Kimai License-Manager](https://license.kimai.org/)
 
-If you want to see your purchase history, check out:
-
-- [Gumroad](https://app.gumroad.com/library) 
-- [Lemon Squeezy](https://kimai.lemonsqueezy.com/billing)
-
 ## Plugin installation
 
 You copy the ZIP file to your server, e.g. into `var/plugins/` and then unzip it in:
@@ -63,7 +58,7 @@ You can disable plugins by creating a file called `.disabled` in the plugin dire
 
 You will then need to [clear the cache]({% link _documentation/cache.md %}).
 
-## Plugin deinstallation
+## Remove Plugin
 
 To uninstall a plugin, you simply have to delete the directory, e.g. `var/plugins/FooBarBundle/`.
 
