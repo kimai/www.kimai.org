@@ -24,6 +24,7 @@ rm -r var/plugins/*
 
 Change into your Kimai directory, then fetch the latest code and install all dependencies: 
 ```bash
+git checkout -- composer.lock
 git fetch --tags
 git checkout {{ site.kimai_v2_version }}
 ```
