@@ -38,16 +38,26 @@ on-premise:
     icon: bx bx-server
     translation: docu-onpremise
     chapter:
+        -   id: recommended
+            icon: bx bx-wrench
+            name: "Server setups"
+            description: This is the recommended way for most users / companies
+            pages: [ hosting-hetzner-cloud, hosting-digital-ocean ]
         -   id: installation
             icon: bx bx-wrench
-            name: "Installation & Updates"
-            description: Everything you need to host your Kimai on your own server
-            pages: [ installation, updates, hosting-hetzner-cloud, hosting-digital-ocean, shared-hosting, hosting-1-click, cache, plugin-management, webserver-configuration, fresh-ubuntu-22, synology ]
+            name: "Setup with SSH"
+            description: Manage Kimai via SSH on your own server
+            pages: [ installation, updates, cache, plugin-management ]
         -   id: docker
             icon: bx bxl-docker
-            name: Docker
+            name: Using Docker
             description: Running and updating containerized Kimai images
-            pages: [ docker, docker-compose, kubernetes, docker-updates, building-docker, docker-troubleshooting ]
+            pages: [ docker, docker-compose, kubernetes, building-docker, docker-troubleshooting ]
+        -   id: hosting
+            icon: bx bx-wrench
+            name: "Other setups"
+            description: Everything you need to host your Kimai on your own server
+            pages: [ fresh-ubuntu-22, webserver-configuration, synology, shared-hosting, hosting-1-click ]
         -   id: on-premise
             icon: bx bx-server
             name: DevOps
