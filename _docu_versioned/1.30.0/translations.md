@@ -5,7 +5,7 @@ canonical: /documentation/translations.html
 ---
 
 Kimai can be localized to any language and is already translated to
-{% include features/multi-language.md %}
+{% include snippets/multi-language.md %}
 
 Feel free to send your self-made language files or contributing to the weblate project below  – we’re looking for translators and would appreciate your support!
 
@@ -214,4 +214,4 @@ bin/console translation:update --dump-messages --force de
 ## Finalization
 
 - Sent in a PR with your changes
-- [Update the documentation](https://github.com/kimai/www.kimai.org/blob/main/_includes/features/multi-language.md), which states all available translations
+- [Update the documentation](https://github.com/kimai/www.kimai.org/blob/main/_includes/snippets/multi-language.md), which states all available translations

@@ -58,15 +58,15 @@ If that is not defined as well, Kimai will fall back to the customer color and f
 
 ### Billable
  
-{% include contents/billable.md entity="Activity" %}
+{% include snippets/billable.md entity="Activity" %}
 
 ### Budgets
 
-{% include contents/budgets.md permission="activity" %} 
+{% include snippets/budgets.md permission="activity" %} 
 
 ### Rates
 
-{% include contents/rates.md permission="activity" %}
+{% include snippets/rates.md permission="activity" %}
 
 ### Visibility
  
@@ -97,4 +97,4 @@ Besides these filters, you can query for a free search term, which will be searc
 - `name`
 - `comment`
 
-{% include documentation/search-custom-field.md %}
+{% include snippets/search-custom-field.md %}

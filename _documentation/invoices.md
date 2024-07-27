@@ -558,4 +558,4 @@ Besides these filters, you can query for a free search term, which will be searc
 - `customer name`
 - `customer company`
 
-{% include documentation/search-custom-field.md %}
+{% include snippets/search-custom-field.md %}

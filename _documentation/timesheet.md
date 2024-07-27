@@ -102,4 +102,4 @@ The search supports filtering by the fields:
 Besides these filters, you can query for a free search term, which will be searched in the fields:
 - `description`
 
-{% include documentation/search-custom-field.md %}
+{% include snippets/search-custom-field.md %}

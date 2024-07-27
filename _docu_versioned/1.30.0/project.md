@@ -34,15 +34,15 @@ Start and end-date are inclusive, so both dates will be included when filtering 
 
 ### Billable
 
-{% include contents/billable.md entity="Project" %} 
+{% include snippets/billable.md entity="Project" %} 
 
 ### Budgets
 
-{% include contents/budgets.md permission="project" %} 
+{% include snippets/budgets.md permission="project" %} 
 
 ### Rates
 
-{% include contents/rates.md permission="project" %}
+{% include snippets/rates.md permission="project" %}
 
 ### Visibility
 
@@ -75,4 +75,4 @@ Besides these filters, you can query for a free search term, which will be searc
 - `comment`
 - `orderNumber`
 
-{% include documentation/search-custom-field.md %}
+{% include snippets/search-custom-field.md %}

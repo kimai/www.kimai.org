@@ -6,5 +6,5 @@ related:
   - timesheet
 ---
 
-{% include contents/duration_format.md %}
+{% include snippets/duration_format.md %}
  

@@ -4,7 +4,7 @@ description: i18n, language specific configurations and the translation files
 ---
 
 Kimai can be localized to any language and is already translated to
-{% include features/multi-language.md %}   
+{% include snippets/multi-language.md %}   
 
 Please be invited to contribute to the Kimai translations  – we’re looking for translators and would appreciate your support!
 

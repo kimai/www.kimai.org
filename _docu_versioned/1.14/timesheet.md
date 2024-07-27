@@ -124,7 +124,7 @@ the [time formats](https://www.php.net/manual/en/datetime.formats.time.php) chap
 
 ## Duration format
 
-{% include contents/duration_format.md %}
+{% include snippets/duration_format.md %}
 
 Please note: 
 - using `0` or `00:00` as duration will also stop the entry with a duration of zero seconds

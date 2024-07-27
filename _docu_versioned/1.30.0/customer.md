@@ -30,15 +30,15 @@ before any data will be shown.
 
 ### Billable
 
-{% include contents/billable.md entity="Customer" %}
+{% include snippets/billable.md entity="Customer" %}
 
 ### Budgets
 
-{% include contents/budgets.md permission="customer" %} 
+{% include snippets/budgets.md permission="customer" %} 
 
 ### Rates
 
-{% include contents/rates.md permission="customer" %} 
+{% include snippets/rates.md permission="customer" %} 
 
 ### Visibility
 
@@ -76,4 +76,4 @@ Besides these filters, you can query for a free search term, which will be searc
 - `phone`
 - `address`
 
-{% include documentation/search-custom-field.md %}
+{% include snippets/search-custom-field.md %}

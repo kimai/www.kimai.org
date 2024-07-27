@@ -37,7 +37,7 @@ Besides these filters, you can query for a free search term, which will be searc
 - `title`
 - `email`
 
-{% include documentation/search-custom-field.md %}
+{% include snippets/search-custom-field.md %}
 
 ## User registration
 
