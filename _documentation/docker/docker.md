@@ -72,7 +72,7 @@ This will run the latest production build and make it accessible at <http://loca
     ```bash
     docker stop kimai-mysql-testing kimai-test
     ```
-
+ 
 5. When you are finished testing Kimai, you can remove the containers (warning: **you will lose your data**!).
 
     ```bash
@@ -81,14 +81,65 @@ This will run the latest production build and make it accessible at <http://loca
 
 If you are happy with Kimai, you can now setup your Docker installation using [Docker Compose]({% link _documentation/docker/docker-compose.md %}).
 
-## Updating with Docker
+## Updating Kimai
 
+The usual update step is simple: stop, pull latest version, restart. 
+
+This example is based on the `Apache` image used with the `Docker compose` plugin:
+
+```bash
+# Pull latest version
+docker compose pull
+# Stop and remove older version
+docker compose down
+# Start the container
+docker compose up -d
+```
+
+### FPM image
+
+The FPM image will need to be upgraded with a manual step. 
+Because the FPM image will have a HTTP proxy (e.g. caddy or nginx) serving the static assets the `public` directory is mounted into that container. This is done via volumes:
+
+```yaml
+version: '3.5'
+services:
+    kimai:
+        image: kimai/kimai2:latest
+        ...
+        volumes:
+            - public:/opt/kimai/public
+        ...
+    nginx:
+        ...
+        volumes:
+            - public:/opt/kimai/public:ro
+    ...
+```
+
+When the kimai image is updated, and the container is restarted any new assets in the public directory are never included. These will be things like CSS files, images and especially version specific javascript code! To fix this you need to copy the newer files from a fresh image over the top.
+
+```bash
+# You might need to use `docker volume ls | grep kimai` to find the name of your Kimai "public" volume
+docker run --rm -ti -v kimai_public:/public --entrypoint /bin/bash kimai/kimai2
+#                      ^^^^^^^^^^^^ -> Kimai public volume
+cp -r /opt/kimai/public /
+exit
+```
+
+Now you'll need to tell the running kimai to update its assets:
+
+```bash
+docker-compose exec kimai /opt/kimai/bin/console assets:install
+```
+
+That should do it.
 
 ## Runtime Arguments
 
 The following settings can set at runtime:
 
-### PHP memory limit
+**PHP memory limit**
 
 The maximum amount of memory a script may consume, <https://php.net/memory-limit>
 
@@ -96,7 +147,7 @@ The maximum amount of memory a script may consume, <https://php.net/memory-limit
 memory_limit=512M
 ```
 
-### Kimai core settings
+**Kimai settings**
 
 See the Kimai and Symfony docs for more info on these.
 
