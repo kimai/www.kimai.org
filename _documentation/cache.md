@@ -23,8 +23,8 @@ It might be necessary to execute these commands as webserver user,
 read the [Installation docs]({% link _documentation/installation.md %}) for more details.
 
 Depending on your setup and the way you call the cache command, you have to fix directory permissions afterwards. 
- 
-{% include documentation/file-permissions.html %} 
+
+{% include snippets/file-permissions.md %} 
   
 ### Troubleshooting
 
