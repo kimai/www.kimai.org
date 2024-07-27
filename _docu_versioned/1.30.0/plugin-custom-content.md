@@ -71,4 +71,4 @@ That's how the **alert / warning message** looks like. You can even include _mar
 
 By default, these are assigned to each user with the role `ROLE_SUPER_ADMIN`.
 
-{% include store-howto-permissions.md %}
+{% include snippets/store-howto-permissions.md %}

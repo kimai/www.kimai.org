@@ -74,4 +74,4 @@ Administrators require the `contract_other_profile` permission to see the `Contr
 | view_other_absence     | Switch the user in the`Absence` screen. Also influences the visibility of absence entries in the calendar.          |
 {: .table }
 
-{% include store-howto-permissions.md %}
+{% include snippets/store-howto-permissions.md %}

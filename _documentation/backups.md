@@ -45,7 +45,7 @@ mysqldump --single-transaction -u kimai2 -p -h 127.0.0.1 kimai2 > ~/kimai2-`date
 
 Now refresh your cache:
 
-{% include cache-refresh.html %}  
+{% include snippets/cache-refresh.md %}  
 
 At this step: test Kimai again and don't proceed before it works as expected!
 

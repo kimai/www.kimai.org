@@ -31,4 +31,4 @@ Please note: `audit_own_timesheet` are only available via team timesheets, audit
 
 By default, these are assigned to each user with the role `ROLE_SUPER_ADMIN`.
 
-{% include store-howto-permissions.md %}
+{% include snippets/store-howto-permissions.md %}

@@ -192,7 +192,7 @@ php81 bin/console kimai:update
 chown -R :http .
 ```
 
-{% include upgrading-note.html %} 
+{% include snippets/upgrading-note.md %} 
 
 ### Update without git
 
@@ -219,7 +219,7 @@ cd /volume1/web/
 mv kimai kimai-backup
 mv kimai-{{ site.kimai_v2_version }} kimai
 ```
-{% include upgrading-note.html %}
+{% include snippets/upgrading-note.md %}
 
 ## SSO with Synology Directory Server
 

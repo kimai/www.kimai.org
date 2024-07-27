@@ -36,4 +36,4 @@ This bundle introduces new permissions, which limit access to certain functions:
 
 By default, these are granted to each user with the role `ROLE_SUPER_ADMIN`.
 
-{% include store-howto-permissions.md %}
+{% include snippets/store-howto-permissions.md %}

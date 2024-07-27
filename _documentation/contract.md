@@ -121,4 +121,4 @@ This booking is only there for information purposes.
 | create_booking_contract | Allows to create manual time bookings.                                                 |
 {: .table }
 
-{% include store-howto-permissions.md %}
+{% include snippets/store-howto-permissions.md %}

@@ -17,7 +17,7 @@ of the following tasks within Kimai you need to reload its cache:
 Kimai not only caches configuration files, but also the list of installed bundles and other information which are 
 time-consuming to calculate and which should not be evaluated on every request.
 
-{% include cache-refresh.html %} 
+{% include snippets/cache-refresh.md %} 
 
 It might be necessary to execute these commands as webserver user, 
 read the [Installation docs]({% link _documentation/installation.md %}) for more details.

@@ -73,7 +73,7 @@ This bundle introduces new permissions, which limit access to certain functions:
 
 A pre-configured permission set for all default user roles is applied by the plugin, please adjust them to your needs.
 
-{% include store-howto-permissions.md %}
+{% include snippets/store-howto-permissions.md %}
 
 The following restrictions are in place for accessing other user's data:
 - can only be seen by users who own the `view_other_timesheet`

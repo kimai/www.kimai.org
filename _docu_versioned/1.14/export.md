@@ -53,7 +53,7 @@ Be aware of the following rules:
 - You can hide the default templates by setting the key `kimai.export.defaults` to an empty array / null
 
 After you created a new or updated an existing template, you have to clear the cache to see the results:
-{% include cache-refresh.html %}
+{% include snippets/cache-refresh.md %}
 
 Please copy & paste one of [default templates]({{ site.kimai_v2_repo }}/tree/main/templates/export/renderer) to `var/export/`
 as starting point and rename it afterwards.

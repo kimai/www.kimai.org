@@ -60,4 +60,4 @@ The following restrictions are in place for accessing other user's data:
 - users that own the `view_expense` permission but NOT `view_other_timesheet` will only see own expenses
 - the visible data for non-admin users (permission `view_all_data`) is limited by team assignments
 
-{% include store-howto-permissions.md %}
+{% include snippets/store-howto-permissions.md %}

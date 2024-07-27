@@ -217,4 +217,4 @@ Kimai only supports imports for GT exports from the languages english and german
 
 By default, these are assigned to each user with the role `ROLE_SUPER_ADMIN`.
 
-{% include store-howto-permissions.md %}
+{% include snippets/store-howto-permissions.md %}

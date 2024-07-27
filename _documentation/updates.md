@@ -44,7 +44,7 @@ bin/console kimai:update
 Remember to adjust the file permissions if necessary.
 {% include snippets/file-permissions.md %} 
 
-{% include upgrading-note.html %} 
+{% include snippets/upgrading-note.md %} 
 
 That's it, Kimai is running the most current version. Enjoy the latest time-tracking features!
 

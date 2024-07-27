@@ -27,4 +27,4 @@ The `contract_other_profile` permission is required to see the `Contract` menu, 
 | edit_public_holidays  | Allows to configure public holidays. By default given to `Administrator` and `Super Administrator` |
 {: .table }
 
-{% include store-howto-permissions.md %}
+{% include snippets/store-howto-permissions.md %}
