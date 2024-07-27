@@ -9,6 +9,8 @@ related:
   - webserver-configuration
 ---
 
+{% include snippets/self-hosting-warning.md %}
+
 ## Server requirements
 
 <ul class="list-unstyled mb-4 px-4 px-lg-0">
