@@ -13,7 +13,7 @@ This plugin lives in the directory called `FooBarBundle`, the full directory nam
 
 In case you bought a license for one of the Kimai plugins, you can get your latest update at:
 
-- https://license.kimai.org/
+- [Kimai License-Manager](https://license.kimai.org/)
 
 If you want to see your purchase history, check out:
 
