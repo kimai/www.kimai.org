@@ -1,0 +1,763 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index,follow">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+    <title>Hosting Kimai on Hetzner Cloud</title>
+    <meta name="description" content="Hosting Kimai on the Hetzner cloud is the simplest solution available for running your own Kimai">
+    <link type="application/atom+xml" rel="alternate" href="https://www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kimai Time-Tracking">
+    <meta property="og:description" content="Hosting Kimai on the Hetzner cloud is the simplest solution available for running your own Kimai">
+    <meta property="og:image" content="https://www.kimai.org/images/social-preview.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kimai Time-Tracking">
+    <meta name="twitter:site" content="@kimai_org">
+    <meta name="twitter:description" content="Hosting Kimai on the Hetzner cloud is the simplest solution available for running your own Kimai">
+    <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.webp">
+    <link rel="canonical" href="https://www.kimai.org/documentation/hosting-hetzner-cloud.html" />
+    <link href="/assets/build/main.css?v2" rel="stylesheet" />
+</head>
+<body class="">
+
+
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand bg-light border-bottom border-light shadow fixed-top" data-scroll-header>
+    <div class="container-fluid pe-lg-4">
+        <div class="d-flex align-items-center">
+            <a href="/" class="navbar-brand flex-shrink-0 py-1 py-lg-2">
+                <img src="/images/apple-touch-icon.png" width="47" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning">On-Premise</span>
+        </div>
+        <div class="d-flex align-items-center w-100">
+            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 9.75rem;">
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-manual.html" class="nav-link">
+                            <i class="bx bx-book opacity-70 fs-lg me-1"></i>
+                            User manual
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/cloud.html" class="nav-link">
+                            <i class="bx bx-cloud opacity-70 fs-lg me-1"></i>
+                            Kimai-Cloud
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-on-premise.html" class="nav-link">
+                            <i class="bx bx-server opacity-70 fs-lg me-1"></i>
+                            On-Premise
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/developers.html" class="nav-link">
+                            <i class="bx bx-code-alt opacity-70 fs-lg me-1"></i>
+                            Developer
+                        </a>
+                    </li>
+                
+            </ul>
+            <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<aside class="bg-dark">
+    <div id="componentsNav" class="offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100 bg-dark border-end-lg" style="width: 21rem; z-index: 1045;">
+        <div class="offcanvas-header d-none d-lg-flex justify-content-start">
+            <a href="/" class="navbar-brand text-dark d-none d-lg-flex py-0">
+                <img src="/images/apple-touch-icon.png" width="32" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning d-none d-lg-inline-block">On-Premise</span>
+        </div>
+        <div class="offcanvas-header d-block d-lg-none border-bottom">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <h5 class="d-lg-none mb-0">Menu</h5>
+                <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#componentsNav" aria-label="Close"></button>
+            </div>
+            <div class="list-group list-group-flush mx-n4">
+                
+                    
+                    
+                    <a href="/documentation/chapter-manual.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-book opacity-70 me-1"></i>
+                        User manual
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/cloud.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-cloud opacity-70 me-1"></i>
+                        Kimai-Cloud
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/chapter-on-premise.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-server opacity-70 me-1"></i>
+                        On-Premise
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/developers.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-code-alt opacity-70 me-1"></i>
+                        Developer
+                    </a>
+                
+            </div>
+        </div>
+        <div class="offcanvas-body swiper scrollbar-hover overflow-hidden w-100 p-4" data-swiper-options='{
+          "direction": "vertical",
+          "slidesPerView": "auto",
+          "freeMode": true,
+          "scrollbar": {
+            "el": ".swiper-scrollbar"
+          },
+          "mousewheel": true
+        }'>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide h-auto">
+                    
+                        
+
+    
+    
+    <h3 class="fs-lg">Installation & Updates</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/installation.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Installation
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/updates.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Updates
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/hosting-hetzner-cloud.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4  active">
+                
+                Hetzner Cloud
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/shared-hosting.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Shared hosting
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/hosting-1-click.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                1-click installations
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/cache.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Reloading cache
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/plugin-management.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Plugins
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/webserver-configuration.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Webserver
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/fresh-ubuntu-22.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Ubuntu 22.04
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/synology.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Synology NAS
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">Docker</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/docker.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Docker
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/docker-compose.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Docker Compose
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/kubernetes.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Kubernetes
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/docker-updates.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Updating docker
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/building-docker.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Build your image
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/docker-troubleshooting.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Troubleshooting
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">DevOps</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/backups.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Backups
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/local-yaml.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Configuration files
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/emails.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Emails
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/logging.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Logging
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/commands.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Commands
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/faq-onpremise.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                FAQ
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/migration-v1.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Migrate from Kimai v1
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/versions.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Kimai versions
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg">Authenticator</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+            
+            <a href="/documentation/ldap.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                LDAP
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/saml.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                SAML
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/saml-azure.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Azure SAML
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/saml-google.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Google SAML
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/saml-keycloak.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Keycloak SAML
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/saml-authentik.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Authentik SAML
+                
+            </a>
+        
+    
+        
+            
+            
+            <a href="/documentation/saml-adfs.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Microsoft ADFS
+                
+            </a>
+        
+    
+    </div>
+
+
+                        <div class="list-group list-group-flush pb-3 mb-4 mx-n4">
+                    
+                        <a href="/" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Home</a>
+                        <a href="/en/site-notice.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Site notice</a>
+                        <a href="/en/privacy-policy.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Privacy policy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-scrollbar end-0"></div>
+        </div>
+    </div>
+</aside>
+
+<main class="docs-container pt-5">
+    <div class="container-fluid px-xxl-5 px-lg-4 pt-4 pt-lg-5 pb-2 pb-lg-4">
+
+        <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 pt-4 mb-n3">
+            <div class="me-4">
+                <h1 class="pb-1">Hosting Kimai on Hetzner Cloud</h1>
+                
+                <p class="text-muted fs-lg mb-2">Hosting Kimai on the Hetzner cloud is the simplest solution available for running your own Kimai</p>
+                
+            </div>
+            
+
+
+
+
+
+        </div>
+
+        <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+            <div>
+                
+                <div id="documentation-content">
+                    <p>This hosting guide shows you how to self-host Kimai on a Hetzner cloud server. It uses:</p>
+
+<ul>
+  <li><a href="http://caddyserver.com" target="_blank" class="external-link">Caddy</a> (a reverse proxy) to allow access to the Server from the internet</li>
+  <li><a href="https://docs.docker.com/compose/" target="_blank" class="external-link">Docker Compose</a> to create and define the application components and how they work together</li>
+</ul>
+
+<div class="card mb-3">
+                       <p class="card-title bg-faded-primary p-1 mb-1"><strong><i class="bx bxs-info-circle ms-2 me-2 text-primary fs-5"></i>Self-hosting knowledge prerequisites</strong></p>
+                       <div class="card-body m-0 pb-0 pt-3 px-3">
+<p>Self-hosting Kimai requires technical knowledge, including:</p>
+
+<ul>
+  <li>Setting up and configuring servers and containers</li>
+  <li>Managing application resources and scaling</li>
+  <li>Securing servers and applications</li>
+  <li>Configuring Kimai</li>
+</ul>
+
+<p>Kimai recommends self-hosting for expert users. Mistakes can lead to data loss, security issues, and downtime. If you aren’t experienced at managing servers, Kimai recommends <a href="https://www.kimai.org/" class="external-link">Kimai Cloud</a>.</p>
+</div>
+                   </div>
+
+<h2 id="create-a-server">Create a server</h2>
+
+<ol>
+  <li><a href="https://console.hetzner.cloud/" class="external-link">Log in</a> to the Hetzner Cloud Console (New to Hetzner? <a href="https://hetzner.cloud/?ref=dvgY87DqAfIv" target="_blank" class="external-link">Register here</a>).</li>
+  <li>Select the project to host the server, or create a new project by selecting <strong>+ NEW PROJECT</strong>.</li>
+  <li>Select <strong>+ CREATE SERVER</strong> on the project tile you want to add it to.</li>
+</ol>
+
+<p>You can change most of the settings to suit your needs, but as this guide uses Docker to run the application, under the <strong>Image</strong> section, select “Docker CE” from the <strong>APPS</strong> tab.</p>
+
+<div class="card mb-3">
+                       <p class="card-title bg-faded-primary p-1 mb-1"><strong><i class="bx bxs-info-circle ms-2 me-2 text-primary fs-5"></i>Type</strong></p>
+                       <div class="card-body m-0 pb-0 pt-3 px-3"><p>When creating the server, Hetzner asks you to choose a plan. For most usage levels, the CPX11 type is enough.</p>
+</div>
+                   </div>
+<div class="card mb-3">
+                       <p class="card-title bg-faded-primary p-1 mb-1"><strong><i class="bx bxs-info-circle ms-2 me-2 text-primary fs-5"></i>SSH keys</strong></p>
+                       <div class="card-body m-0 pb-0 pt-3 px-3"><p>Hetzner lets you choose between SSH and password-based authentication. SSH is more secure. The rest of this guide assumes you are using SSH.</p>
+</div>
+                   </div>
+
+<h2 id="log-in-to-your-server">Log in to your server</h2>
+
+<p>The rest of this guide requires you to log in to the server using a terminal with SSH. Refer to <a href="https://docs.hetzner.com/robot/storage-box/access/access-ssh-rsync-borg" target="_blank" class="external-link">Access with SSH/rsync/BorgBackup</a> for more information. You can find the public IP in the listing of the servers in your project.</p>
+
+<h2 id="install-docker-compose">Install Docker Compose</h2>
+
+<p>The Hetzner Docker app image doesn’t have Docker compose installed. Install it with the following commands:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt update <span class="o">&amp;&amp;</span> apt <span class="nt">-y</span> upgrade
+apt <span class="nb">install </span>docker-compose-plugin
+</code></pre></div></div>
+
+<h2 id="clone-configuration-repository">Clone configuration repository</h2>
+
+<p>Docker Compose, Kimai, and Caddy require a series of folders and configuration files. 
+You can clone these from <a href="https://github.com/kimai/kimai-docker-caddy" target="_blank" class="external-link">this repository</a> into the root user folder of the server. 
+The following steps will tell you which file to change and what changes to make.</p>
+
+<p>Clone the repository with the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/kimai/kimai-docker-caddy.git
+</code></pre></div></div>
+
+<p>And change directory to the root of the repository you cloned:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>kimai-docker-caddy
+</code></pre></div></div>
+
+<h2 id="default-folders-and-files">Default folders and files</h2>
+
+<p>The host operating system (the server) copies the two folders you created to Docker containers to make them available to Docker. The two folders are:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">caddy_config</code>: Holds the Caddy configuration files.</li>
+  <li><code class="language-plaintext highlighter-rouge">kimai_config</code>: Holds the Kimai configuration file.</li>
+</ul>
+
+<h3 id="create-docker-volume">Create Docker volume</h3>
+
+<p>To persist the Caddy cache between restarts and speed up start times, create <a href="https://docs.docker.com/storage/volumes/" target="_blank" class="external-link">a Docker volume</a> that Docker reuses between restarts:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker volume create caddy_data
+</code></pre></div></div>
+
+<p>Create a Docker volume for the Kimai data:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker volume create kimai_data
+</code></pre></div></div>
+
+<p>Create a Docker volume for the Kimai plugins:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker volume create kimai_plugins
+</code></pre></div></div>
+
+<p>Create a Docker volume for the database:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker volume create mysql_data
+</code></pre></div></div>
+
+<h2 id="set-up-dns">Set up DNS</h2>
+
+<p>Kimai typically operates on a subdomain. 
+Create a DNS record with your provider for the subdomain and point it to the IP address of the server. 
+The exact steps for this depend on your DNS provider, but typically you need to create a new “A” record for the Kimai subdomain.</p>
+
+<h2 id="open-ports">Open ports</h2>
+
+<p>Kimai runs as a web application, so the server needs to allow incoming access to traffic on port 80 for non-secure traffic, and port 443 for secure traffic.</p>
+
+<p>Open the following ports in the server’s firewall by running the following two commands:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ufw allow 80
+ufw allow 443
+</code></pre></div></div>
+
+<h2 id="configure-kimai">Configure Kimai</h2>
+
+<p>Kimai needs some environment variables set to pass to the application running in the Docker container. The example <code class="language-plaintext highlighter-rouge">.env</code> file contains placeholders you need to replace with values of your own.</p>
+
+<p>Open the file with the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nano .env
+</code></pre></div></div>
+
+<p>The file contains inline comments to help you know what to change.</p>
+
+<h2 id="the-docker-compose-file">The Docker Compose file</h2>
+
+<p>The Docker Compose file (<code class="language-plaintext highlighter-rouge">docker-compose.yml</code>) defines the services the application needs, in this case Caddy and Kimai.</p>
+
+<ul>
+  <li>The MySQL service definition defines the database that will be used by Kimai and the volume that is used for permanent storage of Kimai content.</li>
+  <li>The Caddy service definition defines the ports it uses and the local volumes to copy to the containers.</li>
+  <li>The Kimai service definition defines the ports it uses, the environment variables Kimai needs to run (some defined in the <code class="language-plaintext highlighter-rouge">.env</code> file), and the volumes it needs to copy to the containers.</li>
+</ul>
+
+<p>The Docker Compose file uses the environment variables set in the <code class="language-plaintext highlighter-rouge">.env</code> file, so you shouldn’t need to change it’s content, but to take a look, run the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nano docker-compose.yml
+</code></pre></div></div>
+
+<h2 id="configure-caddy">Configure Caddy</h2>
+
+<p>Caddy needs to know which domains it should serve, and which port to expose to the outside world. 
+Edit the <code class="language-plaintext highlighter-rouge">Caddyfile</code> file in the <code class="language-plaintext highlighter-rouge">caddy_config</code> folder.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nano caddy_config/Caddyfile
+</code></pre></div></div>
+
+<p>Change the placeholder subdomain to yours. 
+If you followed the steps to name the subdomain Kimai, your full domain is similar to <code class="language-plaintext highlighter-rouge">kimai.example.com</code>. 
+The <code class="language-plaintext highlighter-rouge">kimai</code> in the <code class="language-plaintext highlighter-rouge">reverse_proxy</code> setting tells Caddy to use the service definition defined in the <code class="language-plaintext highlighter-rouge">docker-compose.yml</code> file:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kimai.&lt;domain&gt;.&lt;suffix&gt; {
+    reverse_proxy kimai:8001 {
+      flush_interval -1
+    }
+}
+</code></pre></div></div>
+
+<h2 id="start-docker-compose">Start Docker Compose</h2>
+
+<p>Start Kimai and Caddy with the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker compose up <span class="nt">-d</span>
+</code></pre></div></div>
+
+<p>This may take a few minutes.</p>
+
+<p>If you see an error, wait for a few minutes and retry.
+It can take a while until the DNS changes are available and the SSL certificate is generated.</p>
+
+<h2 id="test-your-setup">Test your setup</h2>
+
+<p>In your browser, open the URL formed of the subdomain and domain name defined earlier.
+Enter the username and password defined earlier, and you should be able to access Kimai.</p>
+
+<h2 id="stop-kimai-and-caddy">Stop Kimai and Caddy</h2>
+
+<p>You can stop Kimai and Caddy with the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker compose stop
+</code></pre></div></div>
+
+<h2 id="updating">Updating</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Pull latest version</span>
+docker compose pull
+
+<span class="c"># Stop and remove older version</span>
+docker compose down
+
+<span class="c"># Start the container</span>
+docker compose up <span class="nt">-d</span>
+</code></pre></div></div>
+
+                </div>
+                
+
+                
+            </div>
+        </div>
+
+    </div>
+</main>
+
+
+    <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
+        <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#create-a-server" class="nav-link">Create a server</a></li><li class="nav-item"><a href="#log-in-to-your-server" class="nav-link">Log in to your server</a></li><li class="nav-item"><a href="#install-docker-compose" class="nav-link">Install Docker Compose</a></li><li class="nav-item"><a href="#clone-configuration-repository" class="nav-link">Clone configuration repository</a></li><li class="nav-item"><a href="#default-folders-and-files" class="nav-link">Default folders and files</a><ul><li class="nav-item"><a href="#create-docker-volume" class="nav-link">Create Docker volume</a></li></ul></li><li class="nav-item"><a href="#set-up-dns" class="nav-link">Set up DNS</a></li><li class="nav-item"><a href="#open-ports" class="nav-link">Open ports</a></li><li class="nav-item"><a href="#configure-kimai" class="nav-link">Configure Kimai</a></li><li class="nav-item"><a href="#the-docker-compose-file" class="nav-link">The Docker Compose file</a></li><li class="nav-item"><a href="#configure-caddy" class="nav-link">Configure Caddy</a></li><li class="nav-item"><a href="#start-docker-compose" class="nav-link">Start Docker Compose</a></li><li class="nav-item"><a href="#test-your-setup" class="nav-link">Test your setup</a></li><li class="nav-item"><a href="#stop-kimai-and-caddy" class="nav-link">Stop Kimai and Caddy</a></li><li class="nav-item"><a href="#updating" class="nav-link">Updating</a></li></ul>
+        
+    </aside>
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+
+</body>
+</html>
