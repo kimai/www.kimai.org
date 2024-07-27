@@ -12,7 +12,7 @@ The **Docker Hub repo**, where you find the auto-building prod and dev container
 ## Available tags
 
 - `kimai/kimai2:apache`: the latest Kimai version bundled in an Apache container, needs a reverse proxy only
-- `kimai/kimai2:fpm`: the latest Kimai version bundled in nginx container (needs some extra work, [see here]({% link _documentation/docker/docker-compose.md %})) 
+- `kimai/kimai2:fpm`: the latest Kimai version bundled in PHP-FPM Alpine container (smaller image, but [needs extra setup steps]({% link _documentation/docker/docker-compose.md %})) 
 - `kimai/kimai2:latest`: same as `kimai/kimai2:fpm`
 - `kimai/kimai2:dev`: development image based on Apache, only to be used locally with debug mode and more 
 
@@ -24,14 +24,14 @@ The following tags are deprecated and will be removed in the future, do NOT use 
 - `kimai/kimai2:fpm-latest`: same as `kimai/kimai2:fpm` 
 - `kimai/kimai2:prod`: same as `kimai/kimai2:fpm`
 - `kimai/kimai2:apache-dev`: development image based on Apache 
-- `kimai/kimai2:fpm-dev`: development image based on nginx
+- `kimai/kimai2:fpm-dev`: development image based on PHP-FPM Alpine
 
 Each new release creates tag names containing the Kimai release number:
 
 - `kimai/kimai2:apache-x.xx.x-prod`: the specific Kimai version in an Apache container 
 - `kimai/kimai2:apache-x.xx.x-dev`: development image based on Apache
-- `kimai/kimai2:fpm-x.xx.x-prod`: the specific Kimai version in an nginx container 
-- `kimai/kimai2:fpm-x.xx.x-dev`: development image based on nginx 
+- `kimai/kimai2:fpm-x.xx.x-prod`: the specific Kimai version in an PHP-FPM Alpine container 
+- `kimai/kimai2:fpm-x.xx.x-dev`: development image based on PHP-FPM Alpine 
 
 ## Quick start
 
@@ -80,6 +80,9 @@ This will run the latest production build and make it accessible at <http://loca
     ```
 
 If you are happy with Kimai, you can now setup your Docker installation using [Docker Compose]({% link _documentation/docker/docker-compose.md %}).
+
+## Updating with Docker
+
 
 ## Runtime Arguments
 
