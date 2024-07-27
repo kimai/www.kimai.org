@@ -1,7 +1,7 @@
 ---
 title: Hosting Kimai on Hetzner Cloud
 navigation: Hetzner Cloud
-description: Hosting Kimai on the Hetzner cloud is the simplest solution available for running your own Kimai 
+description: Hosting Kimai on the Hetzner cloud is the simplest solution available for self-hosting Kimai 
 canonical: /documentation/hosting-hetzner-cloud.html
 ---
 
@@ -14,14 +14,14 @@ This hosting guide shows you how to self-host Kimai on a Hetzner cloud server. I
    
 ## Create a server
      
-1. [Log in](https://console.hetzner.cloud/){:target=_blank .external-link} to the Hetzner Cloud Console (New to Hetzner? [Register here]({{ site.hetzner_cloud }}){:target="_blank" .external-link}).
+1. [Log in](https://console.hetzner.cloud/){:target=_blank .external-link} to the Hetzner Cloud Console. New to Hetzner? [Register here]({{ site.hetzner_cloud }}){:target="_blank" .external-link}.
 2. Select the project to host the server, or create a new project by selecting **+ NEW PROJECT**.
 3. Select **+ CREATE SERVER** on the project tile you want to add it to.
 
 You can change most of the settings to suit your needs, but as this guide uses Docker to run the application, under the **Image** section, select "Docker CE" from the **APPS** tab.
 
 {% note "Type" %}When creating the server, Hetzner asks you to choose a plan. For most usage levels, the CPX11 type is enough.{% endnote %}
-{% note "SSH keys" %}Hetzner lets you choose between SSH and password-based authentication. SSH is more secure. The rest of this guide assumes you are using SSH.{% endnote %}
+{% note "SSH or Password" %}Hetzner lets you choose between SSH and password-based authentication. SSH is more secure. The rest of this guide assumes you are using SSH.{% endnote %}
    
 ## Log in to your server
 
