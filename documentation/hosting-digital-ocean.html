@@ -12,20 +12,20 @@
     <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
-    <title>Versions – Kimai</title>
-    <meta name="description" content="Differentiate the available and past Kimai versions">
+    <title>Hosting Kimai on DigitalOcean</title>
+    <meta name="description" content="Hosting Kimai on the DigitalOcean is the simplest solution available for self-hosting Kimai">
     <link type="application/atom+xml" rel="alternate" href="https://www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
     <meta property="og:locale" content="en">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Kimai Time-Tracking">
-    <meta property="og:description" content="Differentiate the available and past Kimai versions">
+    <meta property="og:description" content="Hosting Kimai on the DigitalOcean is the simplest solution available for self-hosting Kimai">
     <meta property="og:image" content="https://www.kimai.org/images/social-preview.webp">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Kimai Time-Tracking">
     <meta name="twitter:site" content="@kimai_org">
-    <meta name="twitter:description" content="Differentiate the available and past Kimai versions">
+    <meta name="twitter:description" content="Hosting Kimai on the DigitalOcean is the simplest solution available for self-hosting Kimai">
     <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.webp">
-    <link rel="canonical" href="https://www.kimai.org/documentation/versions.html" />
+    <link rel="canonical" href="https://www.kimai.org/documentation/hosting-digital-ocean.html" />
     <link href="/assets/build/main.css?v2" rel="stylesheet" />
 </head>
 <body class="">
@@ -194,7 +194,7 @@
         
             
             
-            <a href="/documentation/hosting-digital-ocean.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+            <a href="/documentation/hosting-digital-ocean.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4  active">
                 
                 DigitalOcean
                 
@@ -418,7 +418,7 @@
         
             
             
-            <a href="/documentation/versions.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4  active">
+            <a href="/documentation/versions.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
                 
                 Kimai versions
                 
@@ -523,9 +523,9 @@
 
         <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 pt-4 mb-n3">
             <div class="me-4">
-                <h1 class="pb-1">Versions</h1>
+                <h1 class="pb-1">Hosting Kimai on DigitalOcean</h1>
                 
-                <p class="text-muted fs-lg mb-2">Differentiate the available and past Kimai versions</p>
+                <p class="text-muted fs-lg mb-2">Hosting Kimai on the DigitalOcean is the simplest solution available for self-hosting Kimai</p>
                 
             </div>
             
@@ -540,58 +540,197 @@
             <div>
                 
                 <div id="documentation-content">
-                    <p>Some people struggle to understand the versioning of Kimai.
-That usually happens, when the app number and version number are mixed.</p>
+                    <p>This hosting guide shows you how to self-host Kimai on a DigitalOcean server. It uses:</p>
 
-<p>There are two distinct Kimai versions with totally different code bases.
-So the app name might sometimes contain the number 1 or 2. 
-This usually relates to the “original” Kimai, which we call <code class="language-plaintext highlighter-rouge">Kimai 1</code> sometimes (see the last image on this page).</p>
-
-<p>The modern Kimai is sometimes called <code class="language-plaintext highlighter-rouge">Kimai 2</code>, but only if we need to differentiate between the original and the current Kimai.
-We use it on this page to explain this concept, but whenever we say <code class="language-plaintext highlighter-rouge">Kimai</code> we mean <code class="language-plaintext highlighter-rouge">Kimai 2</code>.</p>
-
-<p>The following list is ordered from youngest to oldest version.</p>
-
-<h2 id="kimai-2">Kimai 2</h2>
-
-<p>This Kimai version was originally released in 2018 and is still actively developed today.</p>
-
-<p>Released versions were 0.2 up to 2.18.0.
-That means there are multiple major versions existing, which combined from the app name part <code class="language-plaintext highlighter-rouge">2</code> and the actual release number like <code class="language-plaintext highlighter-rouge">1.30</code> or <code class="language-plaintext highlighter-rouge">2.0.22</code> leads to:</p>
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">Kimai 2 - v1.30</code></li>
-  <li><code class="language-plaintext highlighter-rouge">Kimai 2 - v2.0.22</code></li>
-  <li><code class="language-plaintext highlighter-rouge">Kimai 1.30</code></li>
-  <li><code class="language-plaintext highlighter-rouge">Kimai 2.0.22</code></li>
+  <li><a href="http://caddyserver.com" target="_blank" class="external-link">Caddy</a> (a reverse proxy) to allow access to the Server from the internet</li>
+  <li><a href="https://docs.docker.com/compose/" target="_blank" class="external-link">Docker Compose</a> to create and define the application components and how they work together</li>
 </ul>
 
-<h3 id="20">2.0</h3>
+<div class="card mb-3">
+                       <p class="card-title bg-faded-primary p-1 mb-1"><strong><i class="bx bxs-info-circle ms-2 me-2 text-primary fs-5"></i>Self-hosting knowledge prerequisites</strong></p>
+                       <div class="card-body m-0 pb-0 pt-3 px-3">
+<p>Self-hosting Kimai requires technical knowledge, including:</p>
 
-<p>Based on Tabler and Symfony 6:</p>
+<ul>
+  <li>Setting up and configuring servers and containers</li>
+  <li>Managing application resources and scaling</li>
+  <li>Securing servers and applications</li>
+  <li>Configuring Kimai</li>
+</ul>
 
-<p><a href="/images/screenshots/login-2.webp"><img src="/images/screenshots/login-2.webp" alt="Kimai 2.0 - Login" /></a></p>
+<p>Kimai recommends self-hosting for expert users. Mistakes can lead to data loss, security issues, and downtime. If you aren’t experienced at managing servers, Kimai recommends <a href="https://www.kimai.org/" class="external-link">Kimai Cloud</a>.</p>
+</div>
+                   </div>
 
-<p><a href="/images/screenshots/dashboard-2.webp"><img src="/images/screenshots/dashboard-2.webp" alt="Kimai 2.0 - Dashboard" /></a></p>
+<h2 id="create-a-droplet">Create a Droplet</h2>
 
-<h3 id="10">1.0</h3>
+<ol>
+  <li><a href="https://cloud.digitalocean.com/login" class="external-link">Log in</a> to DigitalOcean. New to DigitalOcean? <a href="" target="_blank" class="external-link">Register here</a>.</li>
+  <li>Select the project to host the Droplet, or <a href="https://docs.digitalocean.com/products/projects/how-to/create/" class="external-link">create a new project</a>.</li>
+  <li>In your project, select <strong>Droplets</strong> from the <strong>Manage</strong> menu.</li>
+  <li><a href="https://docs.digitalocean.com/products/droplets/how-to/create/" class="external-link">Create a new Droplet</a> using the <a href="https://marketplace.digitalocean.com/apps/docker" target="_blank" class="external-link">Docker image</a> available on the <strong>Marketplace</strong> tab.</li>
+</ol>
 
-<p>Based on AdminLTE and Symfony 4:</p>
+<div class="card mb-3">
+                       <p class="card-title bg-faded-primary p-1 mb-1"><strong><i class="bx bxs-info-circle ms-2 me-2 text-primary fs-5"></i>Droplet resources</strong></p>
+                       <div class="card-body m-0 pb-0 pt-3 px-3"><p>When creating the Droplet, DigitalOcean asks you to choose a plan. For most usage levels, a basic shared CPU plan is enough.</p>
+</div>
+                   </div>
+<div class="card mb-3">
+                       <p class="card-title bg-faded-primary p-1 mb-1"><strong><i class="bx bxs-info-circle ms-2 me-2 text-primary fs-5"></i>SSH or Password</strong></p>
+                       <div class="card-body m-0 pb-0 pt-3 px-3"><p>DigitalOcean lets you choose between SSH and password-based authentication. SSH is more secure. The rest of this guide assumes you are using SSH.</p>
+</div>
+                   </div>
 
-<p><a href="/images/screenshots/login-1.webp"><img src="/images/screenshots/login-1.webp" alt="Kimai 1.0 - Login" /></a></p>
+<h2 id="log-in-to-your-server">Log in to your server</h2>
 
-<p><a href="/images/screenshots/dashboard-1.webp"><img src="/images/screenshots/dashboard-1.webp" alt="Kimai 1.0 - Dashboard" /></a></p>
+<p>The rest of this guide requires you to log in to the Droplet using a terminal with SSH. Refer to <a href="https://docs.digitalocean.com/products/droplets/how-to/connect-with-ssh/" target="_blank" class="external-link">How to Connect to Droplets with SSH</a> for more information. You can find the public IP in the listing of your droplets.</p>
 
-<h2 id="kimai-1">Kimai 1</h2>
+<h2 id="clone-configuration-repository">Clone configuration repository</h2>
 
-<p>This Kimai version was originally released in 2007 and actively developed until 2018.</p>
+<p>Docker Compose, Kimai, and Caddy require a series of folders and configuration files. 
+You can clone these from <a href="https://github.com/kimai/kimai-docker-caddy" target="_blank" class="external-link">this repository</a> into the root user folder of the server. 
+The following steps will tell you which file to change and what changes to make.</p>
 
-<p>The latest available version was called v1.3.2 (released September 2019).</p>
+<p>Clone the repository with the following command:</p>
 
-<p>It looked like this:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/kimai/kimai-docker-caddy.git
+</code></pre></div></div>
 
-<p><a href="/images/screenshots/kimai1-login.webp"><img src="/images/screenshots/kimai1-login.webp" alt="Kimai 1 - Login" /></a></p>
+<p>And change directory to the root of the repository you cloned:</p>
 
-<p><a href="/images/screenshots/kimai1-main-screen.webp"><img src="/images/screenshots/kimai1-main-screen.webp" alt="Kimai 1 - Dashboard" /></a></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>kimai-docker-caddy
+</code></pre></div></div>
+
+<h2 id="default-folders-and-files">Default folders and files</h2>
+
+<p>The host operating system (the server) copies the two folders you created to Docker containers to make them available to Docker. The two folders are:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">caddy_config</code>: Holds the Caddy configuration files.</li>
+  <li><code class="language-plaintext highlighter-rouge">kimai_config</code>: Holds the Kimai configuration file.</li>
+</ul>
+
+<h3 id="create-docker-volume">Create Docker volume</h3>
+
+<p>To persist the Caddy cache between restarts and speed up start times, create <a href="https://docs.docker.com/storage/volumes/" target="_blank" class="external-link">a Docker volume</a> that Docker reuses between restarts:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker volume create caddy_data
+</code></pre></div></div>
+
+<p>Create a Docker volume for the Kimai data:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker volume create kimai_data
+</code></pre></div></div>
+
+<p>Create a Docker volume for the Kimai plugins:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker volume create kimai_plugins
+</code></pre></div></div>
+
+<p>Create a Docker volume for the database:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker volume create mysql_data
+</code></pre></div></div>
+
+<h2 id="set-up-dns">Set up DNS</h2>
+
+<p>Kimai typically operates on a subdomain. 
+Create a DNS record with your provider for the subdomain and point it to the IP address of the server. 
+The exact steps for this depend on your DNS provider, but typically you need to create a new “A” record for the Kimai subdomain.
+DigitalOcean provide <a href="https://www.digitalocean.com/community/tutorials/an-introduction-to-dns-terminology-components-and-concepts" target="_blank" class="external-link">An Introduction to DNS Terminology, Components, and Concepts</a>.</p>
+
+<h2 id="open-ports">Open ports</h2>
+
+<p>Kimai runs as a web application, so the server needs to allow incoming access to traffic on port 80 for non-secure traffic, and port 443 for secure traffic.</p>
+
+<p>Open the following ports in the server’s firewall by running the following two commands:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ufw allow 80
+ufw allow 443
+</code></pre></div></div>
+
+<h2 id="configure-kimai">Configure Kimai</h2>
+
+<p>Kimai needs some environment variables set to pass to the application running in the Docker container. The example <code class="language-plaintext highlighter-rouge">.env</code> file contains placeholders you need to replace with values of your own.</p>
+
+<p>Open the file with the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nano .env
+</code></pre></div></div>
+
+<p>The file contains inline comments to help you know what to change.</p>
+
+<h2 id="the-docker-compose-file">The Docker Compose file</h2>
+
+<p>The Docker Compose file (<code class="language-plaintext highlighter-rouge">docker-compose.yml</code>) defines the services the application needs, in this case Caddy and Kimai.</p>
+
+<ul>
+  <li>The MySQL service definition defines the database that will be used by Kimai and the volume that is used for permanent storage of Kimai content.</li>
+  <li>The Caddy service definition defines the ports it uses and the local volumes to copy to the containers.</li>
+  <li>The Kimai service definition defines the ports it uses, the environment variables Kimai needs to run (some defined in the <code class="language-plaintext highlighter-rouge">.env</code> file), and the volumes it needs to copy to the containers.</li>
+</ul>
+
+<p>The Docker Compose file uses the environment variables set in the <code class="language-plaintext highlighter-rouge">.env</code> file, so you shouldn’t need to change it’s content, but to take a look, run the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nano docker-compose.yml
+</code></pre></div></div>
+
+<h2 id="configure-caddy">Configure Caddy</h2>
+
+<p>Caddy needs to know which domains it should serve, and which port to expose to the outside world. 
+Edit the <code class="language-plaintext highlighter-rouge">Caddyfile</code> file in the <code class="language-plaintext highlighter-rouge">caddy_config</code> folder.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nano caddy_config/Caddyfile
+</code></pre></div></div>
+
+<p>Change the placeholder subdomain to yours. 
+If you followed the steps to name the subdomain Kimai, your full domain is similar to <code class="language-plaintext highlighter-rouge">kimai.example.com</code>. 
+The <code class="language-plaintext highlighter-rouge">kimai</code> in the <code class="language-plaintext highlighter-rouge">reverse_proxy</code> setting tells Caddy to use the service definition defined in the <code class="language-plaintext highlighter-rouge">docker-compose.yml</code> file:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kimai.&lt;domain&gt;.&lt;suffix&gt; {
+    reverse_proxy kimai:8001 {
+      flush_interval -1
+    }
+}
+</code></pre></div></div>
+
+<h2 id="start-docker-compose">Start Docker Compose</h2>
+
+<p>Start Kimai and Caddy with the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker compose up <span class="nt">-d</span>
+</code></pre></div></div>
+
+<p>This may take a few minutes.</p>
+
+<p>If you see an error, wait for a few minutes and retry.
+It can take a while until the DNS changes are available and the SSL certificate is generated.</p>
+
+<h2 id="test-your-setup">Test your setup</h2>
+
+<p>In your browser, open the URL formed of the subdomain and domain name defined earlier.
+Enter the username and password defined earlier, and you should be able to access Kimai.</p>
+
+<h2 id="stop-kimai-and-caddy">Stop Kimai and Caddy</h2>
+
+<p>You can stop Kimai and Caddy with the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker compose stop
+</code></pre></div></div>
+
+<h2 id="updating">Updating</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Pull latest version</span>
+docker compose pull
+
+<span class="c"># Stop and remove older version</span>
+docker compose down
+
+<span class="c"># Start the container</span>
+docker compose up <span class="nt">-d</span>
+</code></pre></div></div>
 
                 </div>
                 
@@ -606,7 +745,7 @@ That means there are multiple major versions existing, which combined from the a
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#kimai-2" class="nav-link">Kimai 2</a><ul><li class="nav-item"><a href="#20" class="nav-link">2.0</a></li><li class="nav-item"><a href="#10" class="nav-link">1.0</a></li></ul></li><li class="nav-item"><a href="#kimai-1" class="nav-link">Kimai 1</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#create-a-droplet" class="nav-link">Create a Droplet</a></li><li class="nav-item"><a href="#log-in-to-your-server" class="nav-link">Log in to your server</a></li><li class="nav-item"><a href="#clone-configuration-repository" class="nav-link">Clone configuration repository</a></li><li class="nav-item"><a href="#default-folders-and-files" class="nav-link">Default folders and files</a><ul><li class="nav-item"><a href="#create-docker-volume" class="nav-link">Create Docker volume</a></li></ul></li><li class="nav-item"><a href="#set-up-dns" class="nav-link">Set up DNS</a></li><li class="nav-item"><a href="#open-ports" class="nav-link">Open ports</a></li><li class="nav-item"><a href="#configure-kimai" class="nav-link">Configure Kimai</a></li><li class="nav-item"><a href="#the-docker-compose-file" class="nav-link">The Docker Compose file</a></li><li class="nav-item"><a href="#configure-caddy" class="nav-link">Configure Caddy</a></li><li class="nav-item"><a href="#start-docker-compose" class="nav-link">Start Docker Compose</a></li><li class="nav-item"><a href="#test-your-setup" class="nav-link">Test your setup</a></li><li class="nav-item"><a href="#stop-kimai-and-caddy" class="nav-link">Stop Kimai and Caddy</a></li><li class="nav-item"><a href="#updating" class="nav-link">Updating</a></li></ul>
         
     </aside>
 
