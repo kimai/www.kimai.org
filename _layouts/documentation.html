@@ -32,8 +32,8 @@ layout: base
     <div class="container-fluid pe-lg-4">
         <div class="d-flex align-items-center">
             <a href="/" class="navbar-brand flex-shrink-0 py-1 py-lg-2">
-                <img src="/images/{{ icon }}" width="47" alt="Kimai logo">
-                Kimai
+                <img src="/images/{{ icon }}" width="32" alt="Kimai logo" class="me-2">
+                Kimai Docs
             </a>
             <span class="badge bg-warning">{{ chapter_title }}</span>
         </div>
@@ -43,7 +43,7 @@ layout: base
                     {% assign docs_config = group[1] %}
                     {% assign docs_page = site.documentation | where: "slug", docs_config.slug | first %}
                     <li class="nav-item">
-                        <a href="{{ docs_page.url }}" class="nav-link">
+                        <a href="{{ docs_page.url }}" class="nav-link {% if chapter_page.url == docs_page.url %} active{% endif %}">
                             <i class="{{ docs_config.icon }} opacity-70 fs-lg me-1"></i>
                             {{ docs_page.title }}
                         </a>
@@ -60,11 +60,10 @@ layout: base
 <aside class="bg-dark">
     <div id="componentsNav" class="offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100 bg-dark border-end-lg" style="width: 21rem; z-index: 1045;">
         <div class="offcanvas-header d-none d-lg-flex justify-content-start">
-            <a href="/" class="navbar-brand text-dark d-none d-lg-flex py-0">
-                <img src="/images/{{ icon }}" width="32" alt="Kimai logo">
-                Kimai
+            <a href="/" class="navbar-brand d-none d-lg-flex py-0">
+                <img src="/images/{{ icon }}" width="26" alt="Kimai logo" class="me-3">
+                Kimai Docs
             </a>
-            <span class="badge bg-warning d-none d-lg-inline-block">{{ chapter_title }}</span>
         </div>
         <div class="offcanvas-header d-block d-lg-none border-bottom">
             <div class="d-flex align-items-center justify-content-between mb-3">
@@ -97,7 +96,7 @@ layout: base
                         {% include docs-navi.html navigation=menu %}
                         <div class="list-group list-group-flush pb-3 mb-4 mx-n4">
                     {% endif %}
-                        <a href="{% link _pages/index.html %}" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">{{ site.data['en'].translation['index'].name }}</a>
+                        <a href="{% link _pages/index.html %}" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Kimai {{ site.data['en'].translation['index'].name }}</a>
                         <a href="{% link _pages/site-notice.md %}" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">{{ site.data['en'].translation['site-notice'].name }}</a>
                         <a href="{% link _pages/privacy-policy.md %}" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">{{ site.data['en'].translation['privacy-policy'].name }}</a>
                     </div>
