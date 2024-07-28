@@ -1,7 +1,6 @@
 ---
 title: Projects
 description: Projects in Kimai
-toc: true
 canonical: /documentation/project.html
 ---
 

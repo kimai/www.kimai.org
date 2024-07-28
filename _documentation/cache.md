@@ -11,8 +11,8 @@ of the following tasks within Kimai you need to reload its cache:
 - [installed Kimai]({% link _documentation/installation.md %})
 - [updated Kimai]({% link _documentation/updates.md %})
 - [updated a configuration]({% link _documentation/local-yaml.md %})
-- [installed a bundle]({% link _documentation/plugins.md %})
-- [updated a bundle]({% link _documentation/plugins.md %})
+- [installed a bundle]({% link _documentation/developer/plugins.md %})
+- [updated a bundle]({% link _documentation/developer/plugins.md %})
  
 Kimai not only caches configuration files, but also the list of installed bundles and other information which are 
 time-consuming to calculate and which should not be evaluated on every request.

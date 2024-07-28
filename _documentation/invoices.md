@@ -51,7 +51,7 @@ Example: to get a three digit long string with year counter use `{cy,3}`, which 
 3. You can change the format at [System > Settings]({% link _documentation/configurations.md %}).
 {% endcapture %}
 {% assign additional_chars = additional_chars| markdownify %}
-{% include alert.html icon="fas fa-exclamation" type="warning" alert=additional_chars %}
+{% include alert.html icon="alarm-exclamation" type="warning" alert=additional_chars %}
 
 ### Incrementing the invoice counter
 
@@ -169,7 +169,7 @@ Be aware of the following rules:
 - You should store your templates in `var/invoices/`, as this directory is not shipped with Kimai and not touched during updates
 - You can [configure different search directories]({% link _documentation/local-yaml.md %}) through the config key `kimai.invoice.documents` if you want to add additional template source directories
 
-{% include alert.html icon="fas fa-exclamation" type="warning" alert="Do NOT change the default templates, but copy the file and save it (with a new filename) at var/invoices/" %}
+{% include alert.html icon="alarm-exclamation" type="warning" alert="Do NOT change the default templates, but copy the file and save it (with a new filename) at var/invoices/" %}
 
 After you changed an invoice template, you have to [clear the cache]({% link _documentation/cache.md %}) to see the results.
 
@@ -448,7 +448,7 @@ For each timesheet record you can use these variables:
 | ${entry.project_id}          | Project ID                                                                                                                                                                                                          | 10              |
 | ${entry.customer}            | Customer name                                                                                                                                                                                                       | Acme Studios    |
 | ${entry.customer_id}         | Customer ID                                                                                                                                                                                                         | 3               |
-| ${entry.meta.foo}            | The [meta field]({% link _documentation/meta-fields.md %}) with the internal name `foo` (must be in lowercase letters, e.g. `FOO` will be available as `${entry.meta.foo}`. Only available if the field is visible. |                 |
+| ${entry.meta.foo}            | The [meta field]({% link _documentation/plugin-custom-fields.md %}) with the internal name `foo` (must be in lowercase letters, e.g. `FOO` will be available as `${entry.meta.foo}`. Only available if the field is visible. |                 |
 | ${entry.tags}                | Comma separated list of all tags                                                                                                                                                                                    | foo, bar        |
 | ${entry.type}                | The type of this entry (plugins can add custom types)                                                                                                                                                               | timesheet       |
 | ${entry.category}            | The category of this entry (plugins can add custom types)                                                                                                                                                           | work            |
@@ -474,7 +474,7 @@ Variables for the customer who is receiving the invoice:
 | ${customer.mobile}                 | The customers `mobile` number                                                                                                                                                                                                   |
 | ${customer.email}                  | The customers `email` address                                                                                                                                                                                                   |
 | ${customer.fax}                    | The customers `fax` number                                                                                                                                                                                                      |
-| ${customer.meta.foo}               | The customer [meta field]({% link _documentation/meta-fields.md %}) with the internal name `foo` (must be in lowercase letters, e.g. `FOO` will be available as `${customer.meta.foo}`. Only available if the field is visible. |
+| ${customer.meta.foo}               | The customer [meta field]({% link _documentation/plugin-custom-fields.md %}) with the internal name `foo` (must be in lowercase letters, e.g. `FOO` will be available as `${customer.meta.foo}`. Only available if the field is visible. |
 | ${customer.budget_open}            | The open monetary budget for this customer at the end date of your filter query (formatted with currency)                                                                                                                       |
 | ${customer.budget_open_plain}      | The open monetary budget for this customer at the end date of your filter query (plain float value)                                                                                                                             |
 | ${customer.time_budget_open}       | The open time budget for this customer at the end date of your filter query (formatted)                                                                                                                                         |
@@ -503,7 +503,7 @@ The following variables exist, if projects could be found in the filtered data:
 | ${project.budget_time_minutes}    | The projects time-budget in minutes with no decimals                                                                                                                                                                          |
 | ${project.number}                 | The project number                                                                                                                                                                                                            |
 | ${project.invoice_text}           | The project invoice-text                                                                                                                                                                                                      |
-| ${project.meta.foo}               | The project [meta field]({% link _documentation/meta-fields.md %}) with the internal name `foo` (must be in lowercase letters, e.g. `FOO` will be available as `${project.meta.foo}`. Only available if the field is visible. |
+| ${project.meta.foo}               | The project [meta field]({% link _documentation/plugin-custom-fields.md %}) with the internal name `foo` (must be in lowercase letters, e.g. `FOO` will be available as `${project.meta.foo}`. Only available if the field is visible. |
 | ${project.budget_open}            | The open monetary budget for this project at the end date of your filter query (formatted with currency)                                                                                                                      |
 | ${project.budget_open_plain}      | The open monetary budget for this project at the end date of your filter query (plain float value)                                                                                                                            |
 | ${project.time_budget_open}       | The open time budget for this project at the end date of your filter query (formatted)                                                                                                                                        |
@@ -525,7 +525,7 @@ The following variables exist, if activities could be found in the filtered data
 | ${activity.comment}                | The `description` of this activity                                                                                                                                                                                              |
 | ${activity.number}                 | The activity number                                                                                                                                                                                                             |
 | ${activity.invoice_text}           | The activity invoice-text                                                                                                                                                                                                       |
-| ${activity.meta.foo}               | The activity [meta field]({% link _documentation/meta-fields.md %}) with the internal name `foo` (must be in lowercase letters, e.g. `FOO` will be available as `${activity.meta.foo}`. Only available if the field is visible. |
+| ${activity.meta.foo}               | The activity [meta field]({% link _documentation/plugin-custom-fields.md %}) with the internal name `foo` (must be in lowercase letters, e.g. `FOO` will be available as `${activity.meta.foo}`. Only available if the field is visible. |
 | ${activity.budget_open}            | The open monetary budget for this activity at the end date of your filter query (formatted with currency)                                                                                                                       |
 | ${activity.budget_open_plain}      | The open monetary budget for this activity at the end date of your filter query (plain float value)                                                                                                                             |
 | ${activity.time_budget_open}       | The open time budget for this activity at the end date of your filter query (formatted)                                                                                                                                         |

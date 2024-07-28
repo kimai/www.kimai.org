@@ -17,7 +17,7 @@ Below you find the documentation, how a developer can create custom fields.
 Most users will prefer to use the [Custom fields plugin]({% link _store/keleo-custom-fields-bundle.md %}).
 {% endcapture %}
 {% assign alert_note = alert_note| markdownify %}
-{% include alert.html icon="fas fa-shopping-cart" alert=alert_note %}
+{% include alert.html icon="cart" alert=alert_note %}
 
 ## Custom fields
 

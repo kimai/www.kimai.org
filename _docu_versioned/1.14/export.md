@@ -1,7 +1,6 @@
 ---
 title: Export
 description: Export your timesheet data with Kimai into several different formats
-toc: true
 canonical: /documentation/export.html
 ---
 

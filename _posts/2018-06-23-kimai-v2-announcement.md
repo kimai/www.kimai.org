@@ -41,7 +41,7 @@ I choose to use Symfony as technical core layer and a bootstrap based theme, to 
 and greatest features from the open-source world and to be ready for another 10 years of Kimai.
 
 You can find more technical details [at Github]({{ site.kimai_v2_repo }}) and in 
-the [developer documentation]({% link _documentation/developers.md %}).
+the [developer documentation]({% link _documentation/developer/developers.md %}).
 
 ## Current status
 

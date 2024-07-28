@@ -1,5 +1,5 @@
 
-Additionally, you can filter for [custom fields]({% link _documentation/meta-fields.md %}) by using a search phrase like `location:homeoffice`.
+Additionally, you can filter for [custom fields]({% link _documentation/plugin-custom-fields.md %}) by using a search phrase like `location:homeoffice`.
 This would find all entries with the custom field `location` matching the term `homeoffice`.
 
 The search terms will be found within the full value, so searching for `office` would find:

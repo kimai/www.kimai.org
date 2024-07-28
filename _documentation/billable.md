@@ -9,7 +9,7 @@ related:
 ---
 
 The `billable` field is used to determine if timesheet entries should be included in [invoices]({% link _documentation/invoices.md %}), 
-budget calculations and certain statistics. The [API]({% link _documentation/rest-api.md %}) supports filtering for the `billable` field as well. 
+budget calculations and certain statistics. The [API]({% link _documentation/developer/rest-api.md %}) supports filtering for the `billable` field as well. 
 
 The following [permissions]({% link _documentation/permissions.md %}) define if a user is allowed to set the timesheet field: 
 - `edit_billable_own_timesheet` - for own timesheet, by default assigned to: Teamlead, Administrator and System-Admin.

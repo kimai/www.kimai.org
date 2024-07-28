@@ -1,7 +1,6 @@
 ---
 title: "Keyboard shortcuts"
 description: How to use Kimai with your keyboard
-toc: false
 ---
 
 Kimai supports a couple of keyboard shortcuts, which can be used on most pages.
@@ -12,6 +11,8 @@ The keyboard shortcuts can be invoked by the platform specific "trigger key comb
 - For Mac users, use `control + option` + `[access key]`
 - For Linux users, use `Alt` + `[access key]` (Chrome) or `Alt + shift` + `[access key]` (Firefox)
 
+## Global access key
+
 The global `access keys` in Kimai are:
 - `s` - for stop: stops the currently running timesheet (works on every page) 
 - `n` - for new: opens the "create timesheet" form (works on every page)
@@ -20,7 +21,7 @@ The global `access keys` in Kimai are:
 
 The `access keys` work in lowercase and uppercase.
 
-### Special case: form submit
+## Special case: form submit
 
 There is one special case: submitting the modal form with `CTRL + Enter`.
 

@@ -7,7 +7,7 @@ related:
 ---
 
 Kimai has multiple ways of importing data. 
-Some are pre-made commands, but for more complicated use-cases [the API]({% link _documentation/rest-api.md %}) should be used instead.
+Some are pre-made commands, but for more complicated use-cases [the API]({% link _documentation/developer/rest-api.md %}) should be used instead.
 
 ## Importing from Kimai v1
 

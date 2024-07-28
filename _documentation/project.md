@@ -1,7 +1,6 @@
 ---
 title: Projects
 description: Projects in Kimai
-toc: true
 ---
 
 Projects in Kimai are assigned to customers and are linked to activities, which are then used for time-records.

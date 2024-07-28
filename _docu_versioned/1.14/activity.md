@@ -1,7 +1,6 @@
 ---
 title: Activities
 description: Activities in Kimai
-toc: true
 canonical: /documentation/activity.html
 ---
 
@@ -11,7 +10,7 @@ Activities in Kimai are meant to explain the kind of work done for a specific ta
 
 Activities can have two different types: `global` and `project specific`.  
 
-{% include alert.html icon="fas fa-exclamation" type="warning" alert="Activities cannot be linked to a customer, the customer field in the edit form is only a filter for the project list." %}
+{% include alert.html icon="alarm-exclamation" type="warning" alert="Activities cannot be linked to a customer, the customer field in the edit form is only a filter for the project list." %}
 
 ### Project specific 
 
@@ -68,7 +67,7 @@ Besides these filters, you can query for a free search term, which will be searc
 - `name`
 - `comment`
 
-Additionally you can filter for [custom fields]({% link _documentation/meta-fields.md %}) by using a search phrase like `location:homeoffice`.
+Additionally you can filter for [custom fields]({% link _documentation/plugin-custom-fields.md %}) by using a search phrase like `location:homeoffice`.
 This would find all activities with the custom field `location` matching the term `homeoffice`.
 
 The search terms will be found within the full value, so searching for `office` would find:

@@ -1,7 +1,6 @@
 ---
 title: Installation
 description: How to install Kimai on your server with git, composer and SSH or FTP
-toc: true
 canonical: /documentation/installation.html
 ---
 

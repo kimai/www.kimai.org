@@ -12,8 +12,8 @@ Read the [version documentation]({% link _documentation/versions.md %}) before, 
 {% capture upgrade_note %}
 You can <a href="{% link _store/keleo-installation-support.md %}">get professional support</a> if you are not sure about performing the upgrade yourself.
 {% endcapture %}
-
-{% include alert.html type="success" icon="fas fa-shipping-fast" alert=upgrade_note %}
+  
+{% include alert.html type="success" icon="support" alert=upgrade_note %}
 
 ## Introduction
 

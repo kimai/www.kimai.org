@@ -9,7 +9,7 @@ Kimai provides a flexible [permissions system]({% link _documentation/permission
 
 ## Plugin permissions
 
-Developer can add/change permissions through plugins, see [Developers documentation]({% link _documentation/developers.md %}).
+Developer can add/change permissions through plugins, see [Developers documentation]({% link _documentation/developer/developers.md %}).
 
 ## Permission configuration in local.yaml
 

@@ -2,7 +2,6 @@
 title: Connecting via API
 description: How to connect your Kimai account with applications, requesting your API token and how to use it.
 canonical: /documentation/user-api.html
-toc: false
 ---
  
 When calling the API you have to submit two additional header with every call for authentication:

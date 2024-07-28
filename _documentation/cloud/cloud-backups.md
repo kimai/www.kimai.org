@@ -1,6 +1,5 @@
 ---
 title: Backups
-toc: false
 description: As paying cloud customer you receive full backups of your data
 ---
  

@@ -18,7 +18,7 @@ Check out the repository:
 For the techies: the website is now hosted using GitHub pages with a custom Jekyll theme. Super fun!
 If you didn't use it yet, you should give it a try.
 
-If you are interested in helping us with [the documentation]({% link _documentation/developers.md %}),
+If you are interested in helping us with [the documentation]({% link _documentation/developer/developers.md %}),
 the new one is based on GitBook and [hosted here]({% link _pages/documentation.md %}).
 You can simply fork [the repository](https://github.com/kimai/www.kimai.org) and send us pull requests. We will publish them to the gh-pages branch after merging.
 

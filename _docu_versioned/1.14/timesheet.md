@@ -1,7 +1,6 @@
 ---
 title: Timesheet
 description: View and manage your time-tracking data in the timesheet view
-toc: true
 canonical: /documentation/timesheet.html
 ---
 
@@ -151,7 +150,7 @@ entry (an error message is shown, indicating why it is not possible to start ano
 
 ## 12-hour am/pm format
 
-Want to use the 12 hour format? Read the [i18n docu]({% link _documentation/translations.md %}).
+Want to use the 12 hour format? Read the [i18n docu]({% link _documentation/developer/translations.md %}).
 
 ## Descriptions with Markdown
 
@@ -246,7 +245,7 @@ The search drop-down supports filtering by the fields:
 Besides these filters, you can query for a free search term, which will be searched in the fields:
 - `description`
 
-Additionally, you can filter for [custom fields]({% link _documentation/meta-fields.md %}) by using a search phrase like `location:homeoffice`.
+Additionally, you can filter for [custom fields]({% link _documentation/plugin-custom-fields.md %}) by using a search phrase like `location:homeoffice`.
 This would find all timesheets with the custom field `location` matching the term `homeoffice`.
 
 The search terms will be found within the full value, so searching for `office` would find:

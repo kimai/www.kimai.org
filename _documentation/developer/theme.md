@@ -1,7 +1,6 @@
 ---
 title: Theme
 description: Developer documentation for frontend and theming 
-toc: true
 canonical: /documentation/theme.html
 ---
 

@@ -37,7 +37,7 @@ Each new release creates tag names containing the Kimai release number:
 
 This will run the latest production build and make it accessible at <http://localhost:8001>.
 
-{% include alert.html icon="fas fa-exclamation" type="danger" alert="This setup is NOT intended for production use as it is temporary and the data will disappear when the containers are removed (see point 4)." %}
+{% include alert.html icon="alarm-exclamation" type="danger" alert="This setup is NOT intended for production use as it is temporary and the data will disappear when the containers are removed (see point 4)." %}
 
 1. Start a DB
 

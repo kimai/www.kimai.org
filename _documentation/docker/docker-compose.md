@@ -98,7 +98,7 @@ Be aware that the below image [tobybatch/nginx-fpm-reverse-proxy](https://github
 It is not made for production usage. Use your existing reverse proxy instead! 
 {% endcapture %}
 {% assign proxImage = proxImage|markdownify %}
-{% include alert.html icon="fas fa-exclamation" type="danger" alert=proxImage %}
+{% include alert.html icon="alarm-exclamation" type="danger" alert=proxImage %}
 
 ### Production
 

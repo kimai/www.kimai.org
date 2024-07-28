@@ -1,7 +1,6 @@
 ---
 title: Developers
 description: Developer documentation - run, develop, extend and build for Kimai 
-toc: true
 canonical: /documentation/developers.html
 ---
 
@@ -149,7 +148,7 @@ Kimai code-styles are configured in [.php_cs.dist]({{ site.kimai_v2_file }}/.php
 
 ## Translations
 
-Read more about [languages and translations]({% link _documentation/translations.md %}).
+Read more about [languages and translations]({% link _documentation/developer/translations.md %}).
 
 ## Extending the navigation bar
 
@@ -380,7 +379,7 @@ The configuration for "hourly-rates multiplication factors" can be fetched from 
 
 ## Adding custom fields (meta fields)
 
-See [meta fields]({% link _documentation/meta-fields.md %}) documentation.
+See [meta fields]({% link _documentation/developer/meta-fields.md %}) documentation.
 
 ## Adding UserPreference
 
@@ -419,7 +418,7 @@ These events are trigger on all pages, including the security layout.
 New plugins usually ship with a set of own permissions. You should always assign these permissions at least to the `ROLE_SUPER_ADMIN`.
 By doing so, you register the permission in the system and they become available in the [permission admin screen]({% link _documentation/permissions.md %}). 
 
-You register new permission through your [plugins extension class]({% link _documentation/plugins.md %}), by using the `PrependExtensionInterface`:
+You register new permission through your [plugins extension class]({% link _documentation/developer/plugins.md %}), by using the `PrependExtensionInterface`:
 
 ```php
 namespace KimaiPlugin\YourBundle\DependencyInjection;

@@ -1,7 +1,6 @@
 ---
 title: Custom fields
 description: Use your own custom/meta fields 
-toc: true
 canonical: /documentation/meta-fields.html
 ---
 

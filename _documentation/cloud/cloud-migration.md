@@ -1,6 +1,5 @@
 ---
 title: Migration to the cloud
-toc: false
 description: Migrating your Kimai on-premise installation to the cloud is easy and fast 
 ---
  

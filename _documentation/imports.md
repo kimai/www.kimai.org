@@ -6,7 +6,7 @@ related:
 - plugin-import
 ---
 
-Kimai itself offers [the API]({% link _documentation/rest-api.md %}) for importing data.
+Kimai itself offers [the API]({% link _documentation/developer/rest-api.md %}) for importing data.
 
 The other option is the [importer plugin]({% link _documentation/plugin-import.md %}).
 

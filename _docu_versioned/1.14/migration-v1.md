@@ -1,7 +1,6 @@
 ---
 title: Upgrade to Kimai 2 from v1
 description: Install Kimai 2 and import your existing timesheet data from Kimai 1
-toc: true
 canonical: /documentation/migration-v1.html
 ---
 
@@ -11,7 +10,7 @@ This documentation covers all necessary steps to migrate from Kimai 1 to Kimai 2
 You can <a href="{% link _store/keleo-installation-support.md %}">get professional support</a> if you are not sure about performing the upgrade yourself. 
 {% endcapture %}
 
-{% include alert.html type="success" icon="fas fa-shipping-fast" alert=upgrade_note %} 
+{% include alert.html type="success" icon="support" alert=upgrade_note %} 
 
 ## Introduction
 

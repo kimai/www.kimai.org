@@ -12,7 +12,7 @@ It can be considered bad practice, as it can lead to problems with future update
 
 ## Plugin permissions
 
-Developer can add/change permissions through plugins, see [Developers documentation]({% link _documentation/developers.md %}).
+Developer can add/change permissions through plugins, see [Developers documentation]({% link _documentation/developer/developers.md %}).
 
 ## How the config works
 

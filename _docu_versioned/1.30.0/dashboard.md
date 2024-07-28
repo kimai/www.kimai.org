@@ -115,5 +115,5 @@ Widgets are currently only used in the Dashboard, but the could be used in other
 - `user` - whether the query is executed for the current user or for all users. possible values are `true` and `false` (default: `false` - all data is used to calculate the result)
 - `begin` - setting the start date for the query, formatted with the [PHP DateTime syntax](http://php.net/manual/en/datetime.formats.relative.php) (default: `null` - a query matching any start date)
 - `end` - setting the end date for the query, formatted with the [PHP DateTime syntax](http://php.net/manual/en/datetime.formats.relative.php) (default: `null` - a query matching any end date)
-- `color` - a color name, see all possible names in [theme settings]({% link _documentation/theme.md %}) (default: ``)
-- `icon` - an icon alias from [theme settings]({% link _documentation/theme.md %}) or any other icon from [Font Awesome 5](https://fontawesome.com/icons) (default: `null` - no icon)
+- `color` - a color name, see all possible names in [theme settings]({% link _documentation/developer/theme.md %}) (default: ``)
+- `icon` - an icon alias from [theme settings]({% link _documentation/developer/theme.md %}) or any other icon from [Font Awesome 5](https://fontawesome.com/icons) (default: `null` - no icon)

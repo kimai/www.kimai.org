@@ -2,7 +2,6 @@
 title: "Install Kimai on Ubuntu 22.04"
 navigation: Ubuntu 22.04
 description: "How to install Kimai on a brand new Ubuntu 22.04 with database, webserver and SSL certificate"
-toc: true
 canonical: /documentation/fresh-ubuntu-22.html
 related:
     - fresh-ubuntu-18

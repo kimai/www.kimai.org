@@ -1,7 +1,6 @@
 ---
 title: Theme
 description: Theme related configuration and developer documentation for Kimai
-toc: true
 canonical: /documentation/theme.html
 ---
 

@@ -22,7 +22,7 @@ When calling the API you have to submit two additional header with every call fo
 
 {% include alert.html type="primary" alert="The API password is different from the normal user password and can be set in the user profile." %}
 
-{% include alert.html icon="fas fa-exclamation" type="warning" alert="You should only use secure https calls to protect both credentials and data." %}
+{% include alert.html icon="alarm-exclamation" type="warning" alert="You should only use secure https calls to protect both credentials and data." %}
 
 ## Swagger file and Postman
 

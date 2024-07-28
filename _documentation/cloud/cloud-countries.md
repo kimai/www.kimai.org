@@ -1,6 +1,5 @@
 ---
 title: Supported countries
-toc: false
 description: We can currently provide services to custoemrs from the following countries 
 ---
 

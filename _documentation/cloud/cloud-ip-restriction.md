@@ -1,6 +1,5 @@
 ---
 title: IP access restriction
-toc: false
 description: Limit access to your Kimai-Cloud by configuring IP access restrictions. 
 ---
 

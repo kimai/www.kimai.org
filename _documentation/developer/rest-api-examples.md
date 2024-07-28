@@ -181,7 +181,7 @@ DEMO,Hello world,Testing the API
 
 ## Calling the API with Javascript
 
-If you develop your own [plugin]({% link _documentation/plugins.md %}) and need to use the API for logged-in user, 
+If you develop your own [plugin]({% link _documentation/developer/plugins.md %}) and need to use the API for logged-in user, 
 then you don't have to care about authentication, Kimai will handle it for you.
 
 Copy & paste this code into a new `api.html` file and open it in your browser.

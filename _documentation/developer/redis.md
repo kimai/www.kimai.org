@@ -3,7 +3,11 @@ title: Using Redis for caching
 description: Using Redis as caching instance for Kimai
 ---
 
-## Production
+
+Please note: the text below is only a "note to myself" for future use-cases. 
+This is not a documentation on how to setup caching with Kimai and redis
+
+## Activate Redis
 
 If you want to use Redis as caching instance, you have to change your `local.yaml` and add the following lines:
 

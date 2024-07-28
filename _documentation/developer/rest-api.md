@@ -20,7 +20,7 @@ When calling the API you have to submit an additional `Authorization` header wit
 
 {% include alert.html type="primary" alert="The API token is NOT the normal user password. API tokens can be generated in the user profile." %}
 
-{% include alert.html icon="fas fa-exclamation" type="warning" alert="You MUST use secure HTTPS calls to protect both credentials and data." %}
+{% include alert.html icon="alarm-exclamation" type="warning" alert="You MUST use secure HTTPS calls to protect both credentials and data." %}
 
 ### API tokens
 

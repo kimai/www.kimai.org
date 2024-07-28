@@ -62,8 +62,8 @@ The files in `translations/` as a quick overview:
 - `daterangepicker` - the date range picker dialog to choose a timeframe in screens with data-tables
 - `exceptions` - error pages and exception handlers
 - `flashmessages` - success and error messages (alerts), which will be shown after submitting data
-- `invoice-calculator` - invoice calculator types (see `Adding invoice calculator` in [developers]({% link _documentation/developers.md %})-section)
-- `invoice-numbergenerator` - invoice calculator (see `Adding invoice-number generator ` in [developers]({% link _documentation/developers.md %})-section)
+- `invoice-calculator` - invoice calculator types (see `Adding invoice calculator` in [developers]({% link _documentation/developer/developers.md %})-section)
+- `invoice-numbergenerator` - invoice calculator (see `Adding invoice-number generator ` in [developers]({% link _documentation/developer/developers.md %})-section)
 - `invoice-renderer` - holds translations of all invoice templates ([read more]({% link _documentation/invoices.md %}))
 - `messages` - most of the visible application translations (like menu, buttons and forms)
 - `plugins` - the plugin screen
@@ -157,7 +157,7 @@ parameters:
 
 ### Import frontend locales
 
-{% include alert.html type="warning" icon="fas fa-exclamation" alert="You can skip this step, we will do it with when we test your changes." %}
+{% include alert.html type="warning" icon="alarm-exclamation" alert="You can skip this step, we will do it with when we test your changes." %}
 
 Make sure the new locale is included in the frontend dependencies. For example Kimai includes moment.js, which ships its own translations.
 Kimai ONLY compiles the moment.js locales which are needed. 

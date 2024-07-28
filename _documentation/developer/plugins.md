@@ -1,6 +1,5 @@
 ---
 title: Create plugins
-navigation: Getting started
 description: How to create a Kimai plugin 
 ---
 
@@ -172,7 +171,7 @@ You can also have a look at the [CustomCSSBundle](https://github.com/Keleo/Custo
 ## List your plugin
 
 If you created a plugin or any other kind of software around Kimai which you want to see listed in the {{ site.data[page.lang].translation.store.name}}, head over 
-to the [documentation]({% link _documentation/store.md %}) to find out how.
+to the [documentation]({% link _documentation/developer/store.md %}) to find out how.
 
 ## Links
 

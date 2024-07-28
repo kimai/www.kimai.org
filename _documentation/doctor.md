@@ -1,7 +1,6 @@
 ---
 title: Doctor
 description: Shows relevant system information
-toc: false
 canonical: /documentation/doctor.html
 ---
 

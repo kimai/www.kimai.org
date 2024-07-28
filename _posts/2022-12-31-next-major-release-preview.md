@@ -47,7 +47,7 @@ You can test the new version at the [Demo sites]({% link _pages/demo.md %}).
 - Confirm edit dialogs with keyboard shortcut
 - Added project action buttons in project detail report
 - Tags (if less than 500 registered) and user with colored dots in dropdowns
-- API pagination header (fixes #1536) - see [docs]({% link _documentation/api-pagination.md %})
+- API pagination header (fixes #1536) - see [docs]({% link _documentation/developer/api-pagination.md %})
 - New API endpoints for item actions
 - Customer number must be unique
 - Configurable customer number format (formats very limited on purpose right now) - see #3373
@@ -58,7 +58,7 @@ You can test the new version at the [Demo sites]({% link _pages/demo.md %}).
 
 **Notable code changes**
 
-- Plugin developers: read the [migration guide]({% link _documentation/migration-v2.md %})
+- Plugin developers: read the [migration guide]({% link _documentation/developer/migration-v2.md %})
 - Upgrade to new Symfony Security System - **LDAP untested!**
 - Removed Sweetalert2 in favor of Bootstrap Toasts & Modals
 - Removed `gd` extension requirement

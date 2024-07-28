@@ -1,7 +1,6 @@
 ---
 title: Authentik SAML
 description: How to use Authentik as identity provider for Kimai
-toc: false
 canonical: /documentation/saml-authentik.html
 ---
 
@@ -19,7 +18,8 @@ Make sure that the mapping field matches the XML response:
       - { saml: $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name, kimai: alias }
 ```
 
-Here is a full example:
+## Full example
+
 ```yaml
 kimai:
     saml:

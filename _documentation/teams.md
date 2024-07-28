@@ -12,7 +12,7 @@ Every content object can be linked to an arbitrary amount of teams.
 If you want to limit the access to Kimai functionality instead of content, 
 please read the [permissions documentation]({% link _documentation/permissions.md %}).
 
-{% include alert.html type="warning" icon="fas fa-exclamation" alert="Once a team is assigned to a customer or project, access to this object and its children is limited." %}
+{% include alert.html type="warning" icon="alarm-exclamation" alert="Once a team is assigned to a customer or project, access to this object and its children is limited." %}
 
 ## Permission details
 

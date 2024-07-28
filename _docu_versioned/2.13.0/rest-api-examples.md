@@ -175,7 +175,7 @@ DEMO,Hello world,Testing the API
 
 ## Calling the API with Javascript
 
-If you develop your own [plugin]({% link _documentation/plugins.md %}) and need to use the API for logged-in user, then you have to 
+If you develop your own [plugin]({% link _documentation/developer/plugins.md %}) and need to use the API for logged-in user, then you have to 
 set the header `X-AUTH-SESSION` which will allow Kimai to use the current user session and not look for the default token based API authentication.
 
 Copy & paste this code into a new `api.html` file and open it in your browser.

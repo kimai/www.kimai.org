@@ -1,7 +1,6 @@
 ---
 title: Invoices
 description: Create invoices directly within Kimai from timesheet data in several formats 
-toc: true
 canonical: /documentation/invoices.html
 related:
   - plugin-invoice
@@ -47,7 +46,7 @@ Example: to get a three digit long string with year counter use `{cy,3}`, which 
 Characters outside the replacer **cannot** include `{` and `}`.
 {% endcapture %}
 {% assign additional_chars = additional_chars| markdownify %}
-{% include alert.html icon="fas fa-exclamation" type="warning" alert=additional_chars %}
+{% include alert.html icon="alarm-exclamation" type="warning" alert=additional_chars %}
 
 To change the format, look out for the {% include demo-action-button.html icon="bx bx-cog" %} icon in the invoice screen, or change it from the `System configurations`.
 
@@ -170,7 +169,7 @@ Be aware of the following rules:
 - You should store your templates in `var/invoices/`, as this directory is not shipped with Kimai and not touched during updates
 - You can [configure different search directories]({% link _documentation/local-yaml.md %}) through the config key `kimai.invoice.documents` if you want to add additional template source directories
 
-{% include alert.html icon="fas fa-exclamation" type="warning" alert="Do NOT change the default templates, but copy the file and save it (with a new filename) at var/invoices/" %}
+{% include alert.html icon="alarm-exclamation" type="warning" alert="Do NOT change the default templates, but copy the file and save it (with a new filename) at var/invoices/" %}
 
 After you changed an invoice template, you have to [clear the cache]({% link _documentation/cache.md %}) to see the results.
 
@@ -409,7 +408,7 @@ For each timesheet entry you can use the variables from the following table.
 | ${entry.project_id} | Project ID | 10 |
 | ${entry.customer} | Customer name | Acme Studios |
 | ${entry.customer_id} | Customer ID | 3 |
-| ${entry.meta.X} | The [meta field]({% link _documentation/meta-fields.md %}) named `X` (if visible)  |
+| ${entry.meta.X} | The [meta field]({% link _documentation/plugin-custom-fields.md %}) named `X` (if visible)  |
 | ${entry.type} | The type of this entry (plugins can add custom types) | timesheet |
 | ${entry.category} | The category of this entry (plugins can add custom types) | work |
 
@@ -431,7 +430,7 @@ For each timesheet entry you can use the variables from the following table.
 | ${customer.mobile} | The customers mobile number |
 | ${customer.email} | The customers email address |
 | ${customer.fax} | The customers fax number |
-| ${customer.meta.x} | The customer [meta field]({% link _documentation/meta-fields.md %}) named `X`. The internal name `X` needs to be used in lowercase letters, eg. `FooBar` will be available as `${customer.meta.foobar}`. Only available if the field is visible.  |
+| ${customer.meta.x} | The customer [meta field]({% link _documentation/plugin-custom-fields.md %}) named `X`. The internal name `X` needs to be used in lowercase letters, eg. `FooBar` will be available as `${customer.meta.foobar}`. Only available if the field is visible.  |
 | ${customer.budget_open} | The open monetary budget for this customer at the end date of your filter query (formatted with currency) (since 1.16.7)  |
 | ${customer.budget_open_plain} | The open monetary budget for this customer at the end date of your filter query (plain float value) (since 1.16.7)  |
 | ${customer.time_budget_open} | The open time budget for this customer at the end date of your filter query (formatted) (since 1.16.7)  |
@@ -456,7 +455,7 @@ If a project was selected in the invoice filter (search form) the following vari
 | ${project.budget_time} | The projects time-budget as seconds |
 | ${project.budget_time_decimal} | The projects time-budget in decimal format (with localized separator) |
 | ${project.budget_time_minutes} | The projects time-budget in minutes with no decimals |
-| ${project.meta.x} | The project [meta field]({% link _documentation/meta-fields.md %}) named `X`. The internal name `X` needs to be used in lowercase letters, eg. `FooBar` will be available as `${project.meta.foobar}`. Only available if the field is visible.  |
+| ${project.meta.x} | The project [meta field]({% link _documentation/plugin-custom-fields.md %}) named `X`. The internal name `X` needs to be used in lowercase letters, eg. `FooBar` will be available as `${project.meta.foobar}`. Only available if the field is visible.  |
 | ${project.budget_open} | The open monetary budget for this project at the end date of your filter query (formatted with currency) (since 1.16.7)  |
 | ${project.budget_open_plain} | The open monetary budget for this project at the end date of your filter query (plain float value) (since 1.16.7)  |
 | ${project.time_budget_open} | The open time budget for this project at the end date of your filter query (formatted) (since 1.16.7)  |
@@ -474,7 +473,7 @@ If an activity was selected in the invoice filter (search form) the following va
 | ${activity.id} | The activity ID |
 | ${activity.name} | The activity name |
 | ${activity.comment} | The description of this activity |
-| ${activity.meta.x} | The activity [meta field]({% link _documentation/meta-fields.md %}) named `X`. The internal name `X` needs to be used in lowercase letters, eg. `FooBar` will be available as `${activity.meta.foobar}`. Only available if the field is visible.  |
+| ${activity.meta.x} | The activity [meta field]({% link _documentation/plugin-custom-fields.md %}) named `X`. The internal name `X` needs to be used in lowercase letters, eg. `FooBar` will be available as `${activity.meta.foobar}`. Only available if the field is visible.  |
 | ${activity.budget_open} | The open monetary budget for this activity at the end date of your filter query (formatted with currency) (since 1.16.7)  |
 | ${activity.budget_open_plain} | The open monetary budget for this activity at the end date of your filter query (plain float value) (since 1.16.7)  |
 | ${activity.time_budget_open} | The open time budget for this activity at the end date of your filter query (formatted) (since 1.16.7)  |

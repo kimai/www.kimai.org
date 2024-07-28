@@ -1,6 +1,5 @@
 ---
 title: Invoice templates
-toc: false
 description: As paying customer you can upload your own invoice template for Kimai 
 ---
  
@@ -25,6 +24,8 @@ Please ZIP and mail them to our support email at [support@kimai.cloud](mailto:{{
 Please read the [invoice documentation]({% link _documentation/invoices.md %}) to find out how to create your
 own invoice template.
 
-## Costs
+## Limitation & Costs
 
 There are **no additional costs** involved, they are included in your **paid plan**.
+
+Adding invoice templates to a free cloud is **not possible**.
