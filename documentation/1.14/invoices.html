@@ -85,7 +85,7 @@
                     
                     
                     <li class="nav-item">
-                        <a href="/documentation/developers.html" class="nav-link">
+                        <a href="/documentation/chapter-developer.html" class="nav-link">
                             <i class="bx bx-code-alt opacity-70 fs-lg me-1"></i>
                             Developer
                         </a>
@@ -138,7 +138,7 @@
                 
                     
                     
-                    <a href="/documentation/developers.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                    <a href="/documentation/chapter-developer.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
                         <i class="bx bx-code-alt opacity-70 me-1"></i>
                         Developer
                     </a>
@@ -623,7 +623,8 @@
             
             <a class="dropdown-item" href="/documentation/1.14/invoices.html">Kimai 1.14</a>
             
-            <a class="dropdown-item" href="/documentation/1.14/invoices.html">2.19.0 (latest version)</a>
+            
+            <a class="dropdown-item" href="/documentation/invoices.html">2.19.0 (latest version)</a>
         </div>
     </div>
 
@@ -697,7 +698,7 @@ All examples represent the date <code class="language-plaintext highlighter-roug
 Example: to get a three digit long string with year counter use <code class="language-plaintext highlighter-rouge">{cy,3}</code>, which results in <code class="language-plaintext highlighter-rouge">001</code> for the first invoice of the year.</p>
 
 <div class="alert d-flex alert-warning" role="alert">
-    <i class="bx bx-fas fa-exclamation lead me-3"></i>
+    <i class="bx bx-alarm-exclamation lead me-3"></i>
     <div>
         
 Characters outside the replacer may <strong>not</strong> include <code class="language-plaintext highlighter-rouge">{</code> and <code class="language-plaintext highlighter-rouge">}</code>.
@@ -851,7 +852,7 @@ Since version 1.14 users can set the billable flag on individual timesheets.</p>
 </ul>
 
 <div class="alert d-flex alert-warning" role="alert">
-    <i class="bx bx-fas fa-exclamation lead me-3"></i>
+    <i class="bx bx-alarm-exclamation lead me-3"></i>
     <div>
         Do NOT change the default templates, but copy the file and save it (with a new filename) at var/invoices/
     </div>
@@ -1223,7 +1224,7 @@ Twig templates are rendered actively, it is up to the developer to calculate wha
     </tr>
     <tr>
       <td>${customer.meta.x}</td>
-      <td>The customer <a href="/documentation/meta-fields.html">meta field</a> named <code class="language-plaintext highlighter-rouge">X</code>. The internal name <code class="language-plaintext highlighter-rouge">X</code> needs to be used in lowercase letters, eg. <code class="language-plaintext highlighter-rouge">FooBar</code> will be available as <code class="language-plaintext highlighter-rouge">${customer.meta.foobar}</code>. Only available if the field is visible.</td>
+      <td>The customer <a href="/documentation/plugin-custom-fields.html">meta field</a> named <code class="language-plaintext highlighter-rouge">X</code>. The internal name <code class="language-plaintext highlighter-rouge">X</code> needs to be used in lowercase letters, eg. <code class="language-plaintext highlighter-rouge">FooBar</code> will be available as <code class="language-plaintext highlighter-rouge">${customer.meta.foobar}</code>. Only available if the field is visible.</td>
     </tr>
   </tbody>
 </table>
@@ -1398,7 +1399,7 @@ Twig templates are rendered actively, it is up to the developer to calculate wha
     </tr>
     <tr>
       <td>${entry.meta.X}</td>
-      <td>The <a href="/documentation/meta-fields.html">meta field</a> named <code class="language-plaintext highlighter-rouge">X</code> (if visible)</td>
+      <td>The <a href="/documentation/plugin-custom-fields.html">meta field</a> named <code class="language-plaintext highlighter-rouge">X</code> (if visible)</td>
       <td> </td>
     </tr>
     <tr>
@@ -1480,7 +1481,7 @@ Twig templates are rendered actively, it is up to the developer to calculate wha
     </tr>
     <tr>
       <td>${project.meta.x}</td>
-      <td>The project <a href="/documentation/meta-fields.html">meta field</a> named <code class="language-plaintext highlighter-rouge">X</code>. The internal name <code class="language-plaintext highlighter-rouge">X</code> needs to be used in lowercase letters, eg. <code class="language-plaintext highlighter-rouge">FooBar</code> will be available as <code class="language-plaintext highlighter-rouge">${project.meta.foobar}</code>. Only available if the field is visible.</td>
+      <td>The project <a href="/documentation/plugin-custom-fields.html">meta field</a> named <code class="language-plaintext highlighter-rouge">X</code>. The internal name <code class="language-plaintext highlighter-rouge">X</code> needs to be used in lowercase letters, eg. <code class="language-plaintext highlighter-rouge">FooBar</code> will be available as <code class="language-plaintext highlighter-rouge">${project.meta.foobar}</code>. Only available if the field is visible.</td>
     </tr>
   </tbody>
 </table>
@@ -1514,7 +1515,7 @@ The order is not guaranteed, so it is not recommended to rely on those variables
     </tr>
     <tr>
       <td>${activity.meta.x}</td>
-      <td>The activity <a href="/documentation/meta-fields.html">meta field</a> named <code class="language-plaintext highlighter-rouge">X</code>. The internal name <code class="language-plaintext highlighter-rouge">X</code> needs to be used in lowercase letters, eg. <code class="language-plaintext highlighter-rouge">FooBar</code> will be available as <code class="language-plaintext highlighter-rouge">${activity.meta.foobar}</code>. Only available if the field is visible.</td>
+      <td>The activity <a href="/documentation/plugin-custom-fields.html">meta field</a> named <code class="language-plaintext highlighter-rouge">X</code>. The internal name <code class="language-plaintext highlighter-rouge">X</code> needs to be used in lowercase letters, eg. <code class="language-plaintext highlighter-rouge">FooBar</code> will be available as <code class="language-plaintext highlighter-rouge">${activity.meta.foobar}</code>. Only available if the field is visible.</td>
     </tr>
   </tbody>
 </table>

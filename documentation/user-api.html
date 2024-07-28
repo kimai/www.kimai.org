@@ -81,7 +81,7 @@
                     
                     
                     <li class="nav-item">
-                        <a href="/documentation/developers.html" class="nav-link">
+                        <a href="/documentation/chapter-developer.html" class="nav-link">
                             <i class="bx bx-code-alt opacity-70 fs-lg me-1"></i>
                             Developer
                         </a>
@@ -134,7 +134,7 @@
                 
                     
                     
-                    <a href="/documentation/developers.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                    <a href="/documentation/chapter-developer.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
                         <i class="bx bx-code-alt opacity-70 me-1"></i>
                         Developer
                     </a>
@@ -615,6 +615,7 @@
             
             <a class="dropdown-item" href="/documentation/2.13.0/user-api.html">Kimai 2.13.0</a>
             
+            
             <a class="dropdown-item" href="/documentation/user-api.html">2.19.0 (latest version)</a>
         </div>
     </div>
@@ -626,11 +627,15 @@
             <div>
                 
                 <div id="documentation-content">
-                    <p>When calling the API you have to submit the additional <code class="language-plaintext highlighter-rouge">Authorization</code> header with every call:</p>
+                    <h2 id="bearer-token">Bearer token</h2>
+
+<p>When calling the API you have to submit the additional <code class="language-plaintext highlighter-rouge">Authorization</code> header with every call:</p>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">Authorization: Bearer xyz</code> - here <code class="language-plaintext highlighter-rouge">xyz</code> is the unique API token for that account</li>
 </ul>
+
+<h2 id="api-base-url">API Base URL</h2>
 
 <p>Application will also ask for your Kimai base URL.</p>
 
@@ -653,6 +658,12 @@
     </div>
 </main>
 
+
+    <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
+        <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#bearer-token" class="nav-link">Bearer token</a></li><li class="nav-item"><a href="#api-base-url" class="nav-link">API Base URL</a></li></ul>
+        
+    </aside>
 
 
 

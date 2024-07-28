@@ -81,7 +81,7 @@
                     
                     
                     <li class="nav-item">
-                        <a href="/documentation/developers.html" class="nav-link">
+                        <a href="/documentation/chapter-developer.html" class="nav-link">
                             <i class="bx bx-code-alt opacity-70 fs-lg me-1"></i>
                             Developer
                         </a>
@@ -134,7 +134,7 @@
                 
                     
                     
-                    <a href="/documentation/developers.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                    <a href="/documentation/chapter-developer.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
                         <i class="bx bx-code-alt opacity-70 me-1"></i>
                         Developer
                     </a>
@@ -615,6 +615,7 @@
             
             <a class="dropdown-item" href="/documentation/1.30.0/dashboard.html">Kimai 1.30.0</a>
             
+            
             <a class="dropdown-item" href="/documentation/dashboard.html">2.19.0 (latest version)</a>
         </div>
     </div>
@@ -629,12 +630,22 @@
                     <p>The Kimai dashboard displays (so called) <code class="language-plaintext highlighter-rouge">widgets</code>.
 The ones shipped by default can be changed, re-ordered or completely removed.</p>
 
+<h2 id="user-specific-widgets">User specific widgets</h2>
+
 <p>The dashboard can be configured directly by the user via the frontend, every user can have an own set of widgets.</p>
 
 <p>Some widget might require certain permissions to access the data, so different user roles see different widgets.</p>
 
+<h2 id="editing-the-dashboard">Editing the Dashboard</h2>
+
 <p>Upon clicking the <a class="btn btn-secondary px-3" href="#"><i class="bx bx-cog pe-2"></i>Preferences</a>
  button in the top right corner, you can configure the dashboard.</p>
+
+<p>When you delete a widget from the Dashboard, you have to manually click the save button.</p>
+
+<p>If you add a widget to the page it will immediately save this change.</p>
+
+<p>Rearranging widgets is possible, but not all possible combinations will appear as it did in the edit mode.</p>
 
                 </div>
                 
@@ -646,6 +657,12 @@ The ones shipped by default can be changed, re-ordered or completely removed.</p
     </div>
 </main>
 
+
+    <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
+        <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#user-specific-widgets" class="nav-link">User specific widgets</a></li><li class="nav-item"><a href="#editing-the-dashboard" class="nav-link">Editing the Dashboard</a></li></ul>
+        
+    </aside>
 
 
 

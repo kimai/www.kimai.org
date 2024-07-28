@@ -1,0 +1,961 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index,follow">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+    <title>Extending Kimai</title>
+    <meta name="description" content="The most common interfaces, events and other options to hook into the flow of Kimai core">
+    <link type="application/atom+xml" rel="alternate" href="https://www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kimai Time-Tracking">
+    <meta property="og:description" content="The most common interfaces, events and other options to hook into the flow of Kimai core">
+    <meta property="og:image" content="https://www.kimai.org/images/social-preview.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kimai Time-Tracking">
+    <meta name="twitter:site" content="@kimai_org">
+    <meta name="twitter:description" content="The most common interfaces, events and other options to hook into the flow of Kimai core">
+    <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.webp">
+    <link href="/assets/build/main.css?v2" rel="stylesheet" />
+</head>
+<body class="">
+
+
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand bg-light border-bottom border-light shadow fixed-top" data-scroll-header>
+    <div class="container-fluid pe-lg-4">
+        <div class="d-flex align-items-center">
+            <a href="/" class="navbar-brand flex-shrink-0 py-1 py-lg-2">
+                <img src="/images/apple-touch-icon.png" width="47" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning">Developer</span>
+        </div>
+        <div class="d-flex align-items-center w-100">
+            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 9.75rem;">
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-manual.html" class="nav-link">
+                            <i class="bx bx-book opacity-70 fs-lg me-1"></i>
+                            User manual
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/cloud.html" class="nav-link">
+                            <i class="bx bx-cloud opacity-70 fs-lg me-1"></i>
+                            Kimai-Cloud
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-on-premise.html" class="nav-link">
+                            <i class="bx bx-server opacity-70 fs-lg me-1"></i>
+                            On-Premise
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-developer.html" class="nav-link">
+                            <i class="bx bx-code-alt opacity-70 fs-lg me-1"></i>
+                            Developer
+                        </a>
+                    </li>
+                
+            </ul>
+            <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<aside class="bg-dark">
+    <div id="componentsNav" class="offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100 bg-dark border-end-lg" style="width: 21rem; z-index: 1045;">
+        <div class="offcanvas-header d-none d-lg-flex justify-content-start">
+            <a href="/" class="navbar-brand text-dark d-none d-lg-flex py-0">
+                <img src="/images/apple-touch-icon.png" width="32" alt="Kimai logo">
+                Kimai
+            </a>
+            <span class="badge bg-warning d-none d-lg-inline-block">Developer</span>
+        </div>
+        <div class="offcanvas-header d-block d-lg-none border-bottom">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <h5 class="d-lg-none mb-0">Menu</h5>
+                <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#componentsNav" aria-label="Close"></button>
+            </div>
+            <div class="list-group list-group-flush mx-n4">
+                
+                    
+                    
+                    <a href="/documentation/chapter-manual.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-book opacity-70 me-1"></i>
+                        User manual
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/cloud.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-cloud opacity-70 me-1"></i>
+                        Kimai-Cloud
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/chapter-on-premise.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-server opacity-70 me-1"></i>
+                        On-Premise
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/chapter-developer.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-code-alt opacity-70 me-1"></i>
+                        Developer
+                    </a>
+                
+            </div>
+        </div>
+        <div class="offcanvas-body swiper scrollbar-hover overflow-hidden w-100 p-4" data-swiper-options='{
+          "direction": "vertical",
+          "slidesPerView": "auto",
+          "freeMode": true,
+          "scrollbar": {
+            "el": ".swiper-scrollbar"
+          },
+          "mousewheel": true
+        }'>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide h-auto">
+                    
+                        
+
+    
+    
+    <h3 class="fs-lg mb-1">JSON API</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+             
+            <a href="/documentation/rest-api.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Kimai API
+                
+            </a>
+        
+    
+        
+            
+             
+            <a href="/documentation/rest-api-examples.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Examples
+                
+            </a>
+        
+    
+        
+            
+             
+            <a href="/documentation/api-pagination.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Pagination
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg mb-1">Create plugins</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+             
+            <a href="/documentation/developers.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Development environment
+                
+            </a>
+        
+    
+        
+            
+             
+            <a href="/documentation/extending-kimai.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4  active">
+                
+                Extending Kimai
+                
+            </a>
+        
+    
+        
+            
+             
+            <a href="/documentation/plugins.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Create plugins
+                
+            </a>
+        
+    
+        
+            
+             
+            <a href="/documentation/translations.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Translations / i18n
+                
+            </a>
+        
+    
+        
+            
+             
+            <a href="/documentation/meta-fields.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Custom fields
+                
+            </a>
+        
+    
+        
+            
+             
+            <a href="/documentation/theme.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Theme
+                
+            </a>
+        
+    
+        
+            
+             
+            <a href="/documentation/store.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Add to store
+                
+            </a>
+        
+    
+        
+            
+             
+            <a href="/documentation/migration-v2.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Migrate plugins to v2
+                
+            </a>
+        
+    
+    </div>
+
+    
+    
+    <h3 class="fs-lg mb-1">Technical background</h3>
+    <div class="list-group list-group-flush border-bottom pb-3 mb-4 mx-n4">
+    
+        
+            
+             
+            <a href="/documentation/bughunter.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Bughunter
+                
+            </a>
+        
+    
+        
+            
+             
+            <a href="/documentation/permission-structure.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Permission structure
+                
+            </a>
+        
+    
+        
+            
+             
+            <a href="/documentation/sql-examples.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                SQL Examples
+                
+            </a>
+        
+    
+        
+            
+             
+            <a href="/documentation/redis.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+                
+                Using Redis for caching
+                
+            </a>
+        
+    
+    </div>
+
+
+                        <div class="list-group list-group-flush pb-3 mb-4 mx-n4">
+                    
+                        <a href="/" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Home</a>
+                        <a href="/en/site-notice.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Site notice</a>
+                        <a href="/en/privacy-policy.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Privacy policy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-scrollbar end-0"></div>
+        </div>
+    </div>
+</aside>
+
+<main class="docs-container pt-5">
+    <div class="container-fluid px-xxl-5 px-lg-4 pt-4 pt-lg-5 pb-2 pb-lg-4">
+
+        <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 pt-4 mb-n3">
+            <div class="me-4">
+                <h1 class="pb-1">Extending Kimai</h1>
+                
+                <p class="text-muted fs-lg mb-2">The most common interfaces, events and other options to hook into the flow of Kimai core</p>
+                
+            </div>
+            
+
+
+
+
+
+        </div>
+
+        <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+            <div>
+                
+                <div id="documentation-content">
+                    <h2 id="extending-the-navigation-bar">Extending the navigation bar</h2>
+
+<p>If you want to add your own entries in the navigation bar, you can subscribe to these events:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">App\Event\ConfigureMainMenuEvent::CONFIGURE</code></li>
+  <li><code class="language-plaintext highlighter-rouge">App\Event\ConfigureAdminMenuEvent::CONFIGURE</code></li>
+</ul>
+
+<p>And that’s how to use it:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">use</span> <span class="nc">App\Event\ConfigureMainMenuEvent</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">App\Event\ConfigureAdminMenuEvent</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Avanzu\AdminThemeBundle\Model\MenuItemModel</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Symfony\Component\EventDispatcher\EventSubscriberInterface</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">MyMenuSubscriber</span> <span class="kd">implements</span> <span class="nc">EventSubscriberInterface</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="n">getSubscribedEvents</span><span class="p">():</span> <span class="kt">array</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="nc">ConfigureMainMenuEvent</span><span class="o">::</span><span class="no">CONFIGURE</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'onMainMenuConfigure'</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
+            <span class="nc">ConfigureAdminMenuEvent</span><span class="o">::</span><span class="no">CONFIGURE</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'onAdminMenuConfigure'</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
+        <span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">onMainMenuConfigure</span><span class="p">(</span><span class="kt">ConfigureMainMenuEvent</span> <span class="nv">$event</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$event</span><span class="o">-&gt;</span><span class="nf">getMenu</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">addItem</span><span class="p">(</span>
+            <span class="k">new</span> <span class="nc">MenuItemModel</span><span class="p">(</span><span class="s1">'timesheet'</span><span class="p">,</span> <span class="s1">'menu.timesheet'</span><span class="p">,</span> <span class="s1">'timesheet'</span><span class="p">,</span> <span class="p">[],</span> <span class="s1">'fa fa-clock-o'</span><span class="p">)</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">onAdminMenuConfigure</span><span class="p">(</span><span class="kt">ConfigureAdminMenuEvent</span> <span class="nv">$event</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$event</span><span class="o">-&gt;</span><span class="nf">getAdminMenu</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">addChild</span><span class="p">(</span>
+            <span class="k">new</span> <span class="nc">MenuItemModel</span><span class="p">(</span><span class="s1">'timesheet_admin'</span><span class="p">,</span> <span class="s1">'menu.admin_timesheet'</span><span class="p">,</span> <span class="s1">'admin_timesheet'</span><span class="p">,</span> <span class="p">[],</span> <span class="s1">'fa fa-clock-o'</span><span class="p">)</span>
+        <span class="p">);</span>
+    <span class="p">}</span>    
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>For more details check the <a href="https://github.com/kimai/kimai/blob/main/src/EventSubscriber/MenuSubscriber.php">official menu subscriber</a>.</p>
+
+<h2 id="extending-the-dashboard-with-widgets">Extending the dashboard with widgets</h2>
+
+<p>If you want to add your own widget rows to the dashboard, you can subscribe to the event:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">App\Event\DashboardEvent::DASHBOARD</code></li>
+</ul>
+
+<p>And that’s how to use it:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">use</span> <span class="nc">App\Event\DashboardEvent</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">App\Model\Widget</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">App\Widget\Type\CompoundRow</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">KimaiPlugin\YourCustomBundle\Widget\Type\CustomWidget</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Symfony\Component\EventDispatcher\EventSubscriberInterface</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">MyDashboardSubscriber</span> <span class="kd">implements</span> <span class="nc">EventSubscriberInterface</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="n">getSubscribedEvents</span><span class="p">():</span> <span class="kt">array</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span><span class="nc">DashboardEvent</span><span class="o">::</span><span class="no">DASHBOARD</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'onDashboardEvent'</span><span class="p">,</span> <span class="mi">200</span><span class="p">]];</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">onDashboardEvent</span><span class="p">(</span><span class="kt">DashboardEvent</span> <span class="nv">$event</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$section</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">CompoundRow</span><span class="p">();</span>
+        <span class="nv">$section</span><span class="o">-&gt;</span><span class="nf">setTitle</span><span class="p">(</span><span class="s1">'Section title'</span><span class="p">);</span>
+        <span class="nv">$section</span><span class="o">-&gt;</span><span class="nf">setOrder</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+
+        <span class="nv">$section</span><span class="o">-&gt;</span><span class="nf">addWidget</span><span class="p">(</span>
+            <span class="p">(</span><span class="k">new</span> <span class="nc">CustomWidget</span><span class="p">())</span>
+                <span class="o">-&gt;</span><span class="nf">setId</span><span class="p">(</span><span class="s1">'custom-widget-id'</span><span class="p">)</span>
+                <span class="o">-&gt;</span><span class="nf">setTitle</span><span class="p">(</span><span class="s1">'Custom widget title'</span><span class="p">)</span>
+                <span class="o">-&gt;</span><span class="nf">setData</span><span class="p">([</span><span class="s1">'foo'</span> <span class="o">=&gt;</span> <span class="s1">'bar'</span><span class="p">])</span>
+                <span class="o">-&gt;</span><span class="nf">setOptions</span><span class="p">([])</span>
+        <span class="p">);</span>
+
+       <span class="nv">$event</span><span class="o">-&gt;</span><span class="nf">addSection</span><span class="p">(</span><span class="nv">$section</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>For more details check this <a href="https://github.com/kimai/DemoBundle/blob/main/EventSubscriber/DashboardSubscriber.php">dashboard subscriber</a>.</p>
+
+<h3 id="adding-new-widget-types">Adding new widget types</h3>
+
+<p>You can add your own widgets via plugin by adding two classes:</p>
+
+<ul>
+  <li>a widget implementing <code class="language-plaintext highlighter-rouge">\App\Widget\WidgetInterface</code>
+    <ul>
+      <li>or for the lazy folks extending <code class="language-plaintext highlighter-rouge">\App\Widget\Type\AbstractWidgetType</code>
+</li>
+    </ul>
+  </li>
+  <li>a widget renderer implementing <code class="language-plaintext highlighter-rouge">\App\Widget\WidgetRendererInterface</code>
+    <ul>
+      <li>if you want to use twig to render your widget, extend <code class="language-plaintext highlighter-rouge">\App\Widget\Renderer\AbstractTwigRenderer</code>
+</li>
+    </ul>
+  </li>
+</ul>
+
+<p>These widgets can now be injected to the Dashboard as explained above with the <code class="language-plaintext highlighter-rouge">MyDashboardSubscriber</code>.</p>
+
+<h3 id="display-widgets-in-your-template">Display widgets in your template</h3>
+
+<p>You can also use widgets in your twig templates like this:</p>
+
+<div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{{</span> <span class="nv">render_widget</span><span class="p">(</span><span class="s1">'DailyWorkingTimeChart'</span><span class="p">,</span> <span class="err">{</span><span class="s1">'type'</span><span class="err">:</span> <span class="s1">'line'</span><span class="p">,</span> <span class="s1">'begin'</span><span class="err">:</span> <span class="s1">'monday this week 00:00:00'</span><span class="p">,</span> <span class="s1">'end'</span><span class="err">:</span> <span class="s1">'friday this week 23:59:59'</span><span class="err">}</span><span class="p">)</span> <span class="cp">}}</span>
+<span class="cp">{{</span> <span class="nv">render_widget</span><span class="p">(</span><span class="s1">'userAmountMonth'</span><span class="p">,</span> <span class="err">{</span><span class="s1">'color'</span><span class="err">:</span> <span class="s1">'blue'</span><span class="p">,</span> <span class="s1">'icon'</span><span class="err">:</span> <span class="s1">'user'</span><span class="err">}</span><span class="p">)</span> <span class="cp">}}</span>
+</code></pre></div></div>
+
+<p>Widgets are referenced by their ID.</p>
+
+<h2 id="invoices">Invoices</h2>
+
+<h3 id="adding-documents-for-invoice-rendering">Adding documents for invoice rendering</h3>
+
+<p>In the config <code class="language-plaintext highlighter-rouge">kimai.invoice.documents</code>, you can add a list of directories with the locations of your invoice document templates (<a href="/documentation/invoices.html">read more</a>).</p>
+
+<h3 id="adding-invoice-calculator">Adding invoice calculator</h3>
+
+<p>An invoice calculator is a class implementing <code class="language-plaintext highlighter-rouge">App\Invoice\CalculatorInterface</code> and it is responsible for calculating
+invoice rates, taxes and taking care to aggregate all timesheet entries that should be displayed.</p>
+
+<p>Every invoice calculator class will be automatically available, after refreshing the application cache with <code class="language-plaintext highlighter-rouge">bin/console cache:clear</code>.
+This “magic” happens in the <a href="https://github.com/kimai/kimai/blob/main/src/DependencyInjection/Compiler/InvoiceServiceCompilerPass.php">InvoiceServiceCompilerPass</a>,
+which finds the classes by the interface <code class="language-plaintext highlighter-rouge">CalculatorInterface</code>.</p>
+
+<p>The ID of the calculator must be unique, please prefix it with your vendor or bundle name and make sure it only contains
+alpha-numeric characters, as it will be stored in a database column.</p>
+
+<p>Translations are stored in the <code class="language-plaintext highlighter-rouge">invoice-calculator.xx.xlf</code>.</p>
+
+<h3 id="adding-invoice-number-generator">Adding invoice-number generator</h3>
+
+<p>An invoice-number generator is a class implementing <code class="language-plaintext highlighter-rouge">App\Invoice\NumberGeneratorInterface</code> and its only task is to generate
+a number for the invoice. In most cases you do not want to mix multiple invoice-number generators throughout your invoices.</p>
+
+<p>Every invoice number-generator class will be automatically available, after refreshing the application cache with <code class="language-plaintext highlighter-rouge">bin/console cache:clear</code>.
+This “magic” happens in the <a href="https://github.com/kimai/kimai/blob/main/src/DependencyInjection/Compiler/InvoiceServiceCompilerPass.php">InvoiceServiceCompilerPass</a>,
+which finds the classes by the interface <code class="language-plaintext highlighter-rouge">NumberGeneratorInterface</code>.</p>
+
+<p>The ID of the number generator must be unique, please prefix it with your vendor or bundle name and make sure it only contains
+alpha-numeric characters, as it will be stored in a database column.</p>
+
+<p>Translations are stored in the <code class="language-plaintext highlighter-rouge">invoice-numbergenerator.xx.xlf</code>.</p>
+
+<h3 id="adding-invoice-renderer">Adding invoice renderer</h3>
+
+<p>An invoice renderer is a class implementing <code class="language-plaintext highlighter-rouge">App\Invoice\RendererInterface</code> and it is responsible to convert an <code class="language-plaintext highlighter-rouge">InvoiceModel</code> (the actual data)
+with the use of an <code class="language-plaintext highlighter-rouge">InvoiceDocument</code> (the template file) into a downloadable/printable document.</p>
+
+<p>Every invoice renderer class will be automatically available, after refreshing the application cache with <code class="language-plaintext highlighter-rouge">bin/console cache:clear</code>.
+This “magic” happens in the <a href="https://github.com/kimai/kimai/blob/main/src/DependencyInjection/Compiler/InvoiceServiceCompilerPass.php">InvoiceServiceCompilerPass</a>,
+which finds the classes by the interface <code class="language-plaintext highlighter-rouge">RendererInterface</code>.</p>
+
+<h2 id="adding-export-renderer">Adding export renderer</h2>
+
+<p>An export renderer is a class implementing <code class="language-plaintext highlighter-rouge">App\Export\RendererInterface</code> and it is responsible to convert an array of
+<code class="language-plaintext highlighter-rouge">Timesheet</code> objects into a downloadable/printable document.</p>
+
+<p>Every export renderer class will be automatically available when refreshing the application cache, thanks to the<br>
+<a href="https://github.com/kimai/kimai/blob/main/src/DependencyInjection/Compiler/ExportServiceCompilerPass.php">ExportServiceCompilerPass</a>.</p>
+
+<p>Each renderer is represented by a “button” below the datatable on the export screen.</p>
+
+<p>A simple example, which only shows the IDs of the included timesheet records could look like this:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">use</span> <span class="nc">App\Entity\Timesheet</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">App\Export\RendererInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">App\Repository\Query\TimesheetQuery</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Symfony\Component\HttpFoundation\Response</span><span class="p">;</span>
+
+<span class="k">final</span> <span class="kd">class</span> <span class="nc">TimesheetIdRenderer</span> <span class="kd">implements</span> <span class="nc">RendererInterface</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">render</span><span class="p">(</span><span class="kt">array</span> <span class="nv">$timesheets</span><span class="p">,</span> <span class="kt">TimesheetQuery</span> <span class="nv">$query</span><span class="p">):</span> <span class="kt">Response</span>
+    <span class="p">{</span>
+        <span class="nv">$ids</span> <span class="o">=</span> <span class="nb">array_map</span><span class="p">(</span><span class="k">function</span><span class="p">(</span><span class="kt">Timesheet</span> <span class="nv">$timesheet</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nv">$timesheet</span><span class="o">-&gt;</span><span class="nf">getId</span><span class="p">();</span>
+        <span class="p">},</span> <span class="nv">$timesheets</span><span class="p">);</span>
+
+        <span class="nv">$response</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Response</span><span class="p">();</span>
+        <span class="nv">$response</span><span class="o">-&gt;</span><span class="nf">setContent</span><span class="p">(</span><span class="nb">sprintf</span><span class="p">(</span><span class="s1">'Included IDs: %s'</span><span class="p">,</span> <span class="nb">implode</span><span class="p">(</span><span class="s1">', '</span><span class="p">,</span> <span class="nv">$ids</span><span class="p">)));</span>
+
+        <span class="k">return</span> <span class="nv">$response</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">getId</span><span class="p">():</span> <span class="kt">string</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="s1">'ext_array_dump'</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">getIcon</span><span class="p">():</span> <span class="kt">string</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="s1">'fas fa-file-code'</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">getTitle</span><span class="p">():</span> <span class="kt">string</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="s1">'Show IDs'</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>All you need to do is to register it as a service in the Symfony DI container.</p>
+
+<h3 id="adding-timesheet-export-renderer">Adding timesheet export renderer</h3>
+
+<p>Timesheet exporter (implementing the interface <code class="language-plaintext highlighter-rouge">App\Export\TimesheetExportInterface</code>) are almost the same as export renderer,
+except that they don’t have the methods <code class="language-plaintext highlighter-rouge">getIcon()</code> and <code class="language-plaintext highlighter-rouge">getTitle()</code>.</p>
+
+<p>If you already wrote an export renderer, all you need to add is the second interface and you can export the filtered data
+from the user and admin timesheet screen.</p>
+
+<p>Be aware, that you should add more permission (eg. <code class="language-plaintext highlighter-rouge">view_rate_own_timesheet</code>) checks to these renderer, as they are available for every user!</p>
+
+<h2 id="adding-timesheet-calculator">Adding timesheet calculator</h2>
+
+<p>A timesheet calculator will be called on stopped timesheet records. It can rewrite all values but will normally take care
+of the columns <code class="language-plaintext highlighter-rouge">begin</code>, <code class="language-plaintext highlighter-rouge">end</code>, <code class="language-plaintext highlighter-rouge">duration</code> and <code class="language-plaintext highlighter-rouge">rate</code> but could also be used to apply a default <code class="language-plaintext highlighter-rouge">description</code>.</p>
+
+<p>Timesheet calculator need to implement the interface <code class="language-plaintext highlighter-rouge">App\Timesheet\CalculatorInterface</code> and will be automatically tagged
+as <code class="language-plaintext highlighter-rouge">timesheet.calculator</code> in the service container. They will be found and used <em>only</em> if you add them to the service container.</p>
+
+<p>The configuration for “rounding rules” can be fetched from the container parameter <code class="language-plaintext highlighter-rouge">kimai.timesheet.rounding</code>.</p>
+
+<p>The configuration for “hourly-rates multiplication factors” can be fetched from the container parameter <code class="language-plaintext highlighter-rouge">kimai.timesheet.rates</code>.</p>
+
+<h2 id="adding-custom-fields-meta-fields">Adding custom fields (meta fields)</h2>
+
+<p>See <a href="/documentation/meta-fields.html">meta fields</a> documentation.</p>
+
+<h2 id="adding-userpreference">Adding UserPreference</h2>
+
+<p>Developers can register new user preferences from within <a href="/documentation/plugins.html">their plugin</a> as easy as that:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">use</span> <span class="nc">App\Entity\UserPreference</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">App\Event\UserPreferenceEvent</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Symfony\Component\EventDispatcher\EventSubscriberInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Symfony\Component\Form\Extension\Core\Type\CheckboxType</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">UserProfileSubscriber</span> <span class="kd">implements</span> <span class="nc">EventSubscriberInterface</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="n">getSubscribedEvents</span><span class="p">():</span> <span class="kt">array</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="nc">UserPreferenceEvent</span><span class="o">::</span><span class="no">CONFIGURE</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'loadUserPreferences'</span><span class="p">,</span> <span class="mi">200</span><span class="p">]</span>
+        <span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">loadUserPreferences</span><span class="p">(</span><span class="kt">UserPreferenceEvent</span> <span class="nv">$event</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="kc">null</span> <span class="o">===</span> <span class="p">(</span><span class="nv">$user</span> <span class="o">=</span> <span class="nv">$event</span><span class="o">-&gt;</span><span class="nf">getUser</span><span class="p">()))</span> <span class="p">{</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// You attach every field to the event and all the heavy lifting is done by Kimai.</span>
+        <span class="c1">// The value is the default as long as the user has not yet updated his preferences,</span>
+        <span class="c1">// otherwise it will be overwritten with the users choice, stored in the database.</span>
+        <span class="nv">$event</span><span class="o">-&gt;</span><span class="nf">addPreference</span><span class="p">(</span>
+            <span class="p">(</span><span class="k">new</span> <span class="nc">UserPreference</span><span class="p">())</span>
+                <span class="o">-&gt;</span><span class="nf">setName</span><span class="p">(</span><span class="s1">'fooooo-bar'</span><span class="p">)</span>
+                <span class="o">-&gt;</span><span class="nf">setValue</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+                <span class="o">-&gt;</span><span class="nb">setType</span><span class="p">(</span><span class="nc">CheckboxType</span><span class="o">::</span><span class="n">class</span><span class="p">)</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="displaying-and-exporting-userpreferences">Displaying and exporting UserPreferences</h3>
+
+<p>With Kimai 1.4 you can display and export user preferences.
+Supported fields will be shown as new columns in the data-table for users.
+Additionally these preferences will be added to HTML and Spreadsheet exports.</p>
+
+<p>As Kimai cannot query all existing users for possible preferences, you need to listen to a new event and register the desired preference.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">use</span> <span class="nc">App\Entity\UserPreference</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">App\Event\UserPreferenceDisplayEvent</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Symfony\Component\EventDispatcher\EventSubscriberInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Symfony\Component\Form\Extension\Core\Type\CheckboxType</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">UserProfileSubscriber</span> <span class="kd">implements</span> <span class="nc">EventSubscriberInterface</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="n">getSubscribedEvents</span><span class="p">():</span> <span class="kt">array</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="nc">UserPreferenceDisplayEvent</span><span class="o">::</span><span class="n">class</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'loadUserPreferences'</span><span class="p">,</span> <span class="mi">200</span><span class="p">]</span>
+        <span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">loadUserPreferences</span><span class="p">(</span><span class="kt">UserPreferenceDisplayEvent</span> <span class="nv">$event</span><span class="p">)</span>
+    <span class="p">{</span>
+
+        <span class="c1">// You attach every field to the event and all the heavy lifting is done by Kimai.</span>
+        <span class="c1">// The value is the default as long as the user has not yet updated his preferences,</span>
+        <span class="c1">// otherwise it will be overwritten with the users choice, stored in the database.</span>
+        <span class="nv">$event</span><span class="o">-&gt;</span><span class="nf">addPreference</span><span class="p">(</span>
+            <span class="p">(</span><span class="k">new</span> <span class="nc">UserPreference</span><span class="p">())</span>
+                <span class="o">-&gt;</span><span class="nf">setName</span><span class="p">(</span><span class="s1">'fooooo-bar'</span><span class="p">)</span>
+                <span class="o">-&gt;</span><span class="nf">setValue</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+                <span class="o">-&gt;</span><span class="nb">setType</span><span class="p">(</span><span class="nc">CheckboxType</span><span class="o">::</span><span class="n">class</span><span class="p">)</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="adding-custom-meta-tags-stylesheets-or-javascript">Adding custom meta tags, stylesheets or javascript</h2>
+
+<p>There are three available events which can be used to add your custom output to the rendered HTML:</p>
+
+<ul>
+  <li>App\Event\ThemeEvent::HTML_HEAD</li>
+  <li>App\Event\ThemeEvent::STYLESHEET</li>
+  <li>App\Event\ThemeEvent::JAVASCRIPT</li>
+</ul>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">ThemeEventSubscriber</span> <span class="kd">implements</span> <span class="nc">EventSubscriberInterface</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="n">getSubscribedEvents</span><span class="p">():</span> <span class="kt">array</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="nc">ThemeEvent</span><span class="o">::</span><span class="no">STYLESHEET</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'renderStylesheet'</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
+        <span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">renderStylesheet</span><span class="p">(</span><span class="kt">ThemeEvent</span> <span class="nv">$event</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$css</span> <span class="o">=</span> <span class="s1">'&lt;style type="text/css"&gt;body.login-page h3 { color:red !important; }&lt;/style&gt;'</span><span class="p">;</span>
+        <span class="nv">$event</span><span class="o">-&gt;</span><span class="nf">addContent</span><span class="p">(</span><span class="nv">$css</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>These events are trigger on all pages, including the security layout.</p>
+
+<h2 id="adding-permissions">Adding permissions</h2>
+
+<p>New plugins usually ship with a set of own permissions. 
+You should always assign these permissions at least to the <code class="language-plaintext highlighter-rouge">ROLE_SUPER_ADMIN</code>.
+By doing so, you register the permission in the system and they become available in the <a href="/documentation/permissions.html">permission administration</a>.</p>
+
+<p>You register new permission through your <a href="/documentation/plugins.html">plugins extension class</a>, by using the <code class="language-plaintext highlighter-rouge">PrependExtensionInterface</code>:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">namespace</span> <span class="nn">KimaiPlugin\YourBundle\DependencyInjection</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nc">Symfony\Component\DependencyInjection\ContainerBuilder</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Symfony\Component\HttpKernel\DependencyInjection\Extension</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">YourExtension</span> <span class="kd">extends</span> <span class="nc">Extension</span> <span class="kd">implements</span> <span class="nc">PrependExtensionInterface</span>
+<span class="p">{</span>
+    <span class="c1">// ... other methods .... </span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">prepend</span><span class="p">(</span><span class="kt">ContainerBuilder</span> <span class="nv">$container</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$container</span><span class="o">-&gt;</span><span class="nf">prependExtensionConfig</span><span class="p">(</span><span class="s1">'kimai'</span><span class="p">,</span> <span class="p">[</span>
+            <span class="s1">'permissions'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                <span class="s1">'roles'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                    <span class="s1">'ROLE_SUPER_ADMIN'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                        <span class="s1">'my_awesomer_permission'</span><span class="p">,</span>
+                    <span class="p">],</span>
+                <span class="p">],</span>
+            <span class="p">],</span>
+        <span class="p">]);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>If you don’t register your permissions, your users will not be able to change them <a href="/documentation/permissions.html">via the UI</a>.</p>
+
+<p>There is an introduction available, if you want to understand the <a href="/documentation/permission-structure.html">permission structure</a>.</p>
+
+<h2 id="adding-system-configuration">Adding system configuration</h2>
+
+<p>As plugin developer you can add your own sections to the system configuration screen by using a code like this:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">namespace</span> <span class="nn">KimaiPlugin\YourBundle\EventSubscriber</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nc">App\Event\SystemConfigurationEvent</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">App\Form\Model\Configuration</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">App\Form\Model\SystemConfiguration</span> <span class="k">as</span> <span class="nc">SystemConfigurationModel</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Symfony\Component\Form\Extension\Core\Type\TextType</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Symfony\Component\EventDispatcher\EventSubscriberInterface</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">MySubscriber</span> <span class="kd">implements</span> <span class="nc">EventSubscriberInterface</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="n">getSubscribedEvents</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="nc">SystemConfigurationEvent</span><span class="o">::</span><span class="n">class</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'onSystemConfiguration'</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
+        <span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">onSystemConfiguration</span><span class="p">(</span><span class="kt">SystemConfigurationEvent</span> <span class="nv">$event</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$event</span><span class="o">-&gt;</span><span class="nf">addConfiguration</span><span class="p">((</span><span class="k">new</span> <span class="nc">SystemConfigurationModel</span><span class="p">(</span><span class="s1">'your_bundle'</span><span class="p">))</span>
+            <span class="o">-&gt;</span><span class="nf">setConfiguration</span><span class="p">([</span>
+                <span class="p">(</span><span class="k">new</span> <span class="nc">Configuration</span><span class="p">())</span>
+                    <span class="o">-&gt;</span><span class="nf">setName</span><span class="p">(</span><span class="s1">'your.setting'</span><span class="p">)</span>
+                    <span class="o">-&gt;</span><span class="nf">setTranslationDomain</span><span class="p">(</span><span class="s1">'your'</span><span class="p">)</span>
+                    <span class="o">-&gt;</span><span class="nf">setRequired</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+                    <span class="o">-&gt;</span><span class="nb">setType</span><span class="p">(</span><span class="nc">TextType</span><span class="o">::</span><span class="n">class</span><span class="p">),</span>
+            <span class="p">])</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>This assumes that your bundle uses its own Configuration (class) and registers its configs with
+<code class="language-plaintext highlighter-rouge">\App\Plugin\AbstractPluginExtension::registerBundleConfiguration()</code>:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">namespace</span> <span class="nn">KimaiPlugin\YourBundle\DependencyInjection</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nc">App\Plugin\AbstractPluginExtension</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Symfony\Component\DependencyInjection\ContainerBuilder</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">YourExtension</span> <span class="kd">extends</span> <span class="nc">AbstractPluginExtension</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">load</span><span class="p">(</span><span class="kt">array</span> <span class="nv">$configs</span><span class="p">,</span> <span class="kt">ContainerBuilder</span> <span class="nv">$container</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$configuration</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Configuration</span><span class="p">();</span>
+        <span class="nv">$config</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">processConfiguration</span><span class="p">(</span><span class="nv">$configuration</span><span class="p">,</span> <span class="nv">$configs</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">registerBundleConfiguration</span><span class="p">(</span><span class="nv">$container</span><span class="p">,</span> <span class="nv">$config</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>And your configuration class looking like this:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">namespace</span> <span class="nn">KimaiPlugin\YourBundle\DependencyInjection</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nc">Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Symfony\Component\Config\Definition\Builder\TreeBuilder</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Symfony\Component\Config\Definition\ConfigurationInterface</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">Configuration</span> <span class="kd">implements</span> <span class="nc">ConfigurationInterface</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">getConfigTreeBuilder</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$treeBuilder</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">TreeBuilder</span><span class="p">(</span><span class="s1">'your'</span><span class="p">);</span>
+        <span class="cd">/** @var ArrayNodeDefinition $rootNode */</span>
+        <span class="nv">$rootNode</span> <span class="o">=</span> <span class="nv">$treeBuilder</span><span class="o">-&gt;</span><span class="nf">getRootNode</span><span class="p">();</span>
+
+        <span class="nv">$rootNode</span>
+            <span class="o">-&gt;</span><span class="nf">addDefaultsIfNotSet</span><span class="p">()</span>
+            <span class="o">-&gt;</span><span class="nf">children</span><span class="p">()</span>
+                <span class="o">-&gt;</span><span class="nf">scalarNode</span><span class="p">(</span><span class="s1">'setting'</span><span class="p">)</span>
+                    <span class="o">-&gt;</span><span class="nf">defaultValue</span><span class="p">(</span><span class="s1">'foo'</span><span class="p">)</span>
+                <span class="o">-&gt;</span><span class="nb">end</span><span class="p">()</span>
+            <span class="o">-&gt;</span><span class="nb">end</span><span class="p">()</span>
+        <span class="o">-&gt;</span><span class="nb">end</span><span class="p">();</span>
+
+        <span class="k">return</span> <span class="nv">$treeBuilder</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="extending-the-reports">Extending the reports</h2>
+
+<p>You can add your own views to the reporting panel by listening to the <code class="language-plaintext highlighter-rouge">ReportingEvent</code>:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">namespace</span> <span class="nn">KimaiPlugin\DemoBundle\EventSubscriber</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nc">App\Event\ReportingEvent</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">App\Reporting\Report</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Symfony\Component\EventDispatcher\EventSubscriberInterface</span><span class="p">;</span>
+
+<span class="k">final</span> <span class="kd">class</span> <span class="nc">ReportingEventSubscriber</span> <span class="kd">implements</span> <span class="nc">EventSubscriberInterface</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="n">getSubscribedEvents</span><span class="p">():</span> <span class="kt">array</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="nc">ReportingEvent</span><span class="o">::</span><span class="n">class</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'onReportingMenu'</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
+        <span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">onReportingMenu</span><span class="p">(</span><span class="kt">ReportingEvent</span> <span class="nv">$event</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// add a report to the menu: unique id,      the route name,     the label to be translated</span>
+        <span class="nv">$event</span><span class="o">-&gt;</span><span class="nf">addReport</span><span class="p">(</span><span class="k">new</span> <span class="nc">Report</span><span class="p">(</span><span class="s1">'week_by_user'</span><span class="p">,</span> <span class="s1">'report_user_week'</span><span class="p">,</span> <span class="s1">'report_user_week'</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Now all you need to do: create a controller that renders your report.
+Make sure to include an <code class="language-plaintext highlighter-rouge">@Security("is_granted('view_reporting')")</code> permission check.</p>
+
+<h2 id="json-api-rest">JSON API (REST)</h2>
+
+<h2 id="adding-api-methods">Adding API methods</h2>
+
+<p>Please have a look at the <a href="https://github.com/kimai/DemoBundle">DemoBundle</a>, it includes examples for an API controller with serialization.</p>
+
+<p>There is also a (german) blog post that discuss the basics of adding a FOSRestBundle controller to your bundle:
+<a href="https://www.kevinpapst.de/blog/fosrestbundle-via-bundle.html">https://www.kevinpapst.de/blog/fosrestbundle-via-bundle.html</a></p>
+
+<h2 id="using-the-swagger-ui">Using the Swagger UI</h2>
+
+<p>When you want to use the interactive functions of the Swagger UI, you will probably notice that it’s not working due to a wrong URL being used.
+The Swagger UI currently doesn’t use the current hostname, but always points to <code class="language-plaintext highlighter-rouge">localhost</code> on port 80.
+Therefor you have to configure the values used manually.</p>
+
+<p>Please add these lines to your local.yaml (adapt them to your needs):</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">parameters</span><span class="pi">:</span>
+    <span class="na">router.request_context.host</span><span class="pi">:</span> <span class="s1">'</span><span class="s">127.0.0.1'</span>
+    <span class="na">router.request_context.port</span><span class="pi">:</span> <span class="s1">'</span><span class="s">8050'</span>
+    <span class="na">router.request_context.scheme</span><span class="pi">:</span> <span class="s1">'</span><span class="s">http'</span>
+    <span class="na">router.request_context.base_url</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+
+<span class="c1"># the next lines are only necessary, if you use a port other than 80</span>
+<span class="na">nelmio_api_doc</span><span class="pi">:</span>
+    <span class="na">documentation</span><span class="pi">:</span>
+        <span class="na">host</span><span class="pi">:</span> <span class="s1">'</span><span class="s">%router.request_context.host%:%router.request_context.port%'</span>
+</code></pre></div></div>
+
+<h2 id="swagger-file-and-postman">Swagger file and Postman</h2>
+
+<p>You could change your <a href="/documentation/local-yaml.html">local.yaml</a> and add this, which will cause the generated Swagger file to contain a variable instead of the hostname URL:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">nelmio_api_doc</span><span class="pi">:</span>
+    <span class="na">documentation</span><span class="pi">:</span>
+        <span class="na">host</span><span class="pi">:</span> <span class="s1">'</span><span class="s">{{hostname}}'</span>
+        <span class="na">schemes</span><span class="pi">:</span> <span class="pi">[</span><span class="s1">'</span><span class="s">https'</span><span class="pi">]</span>
+</code></pre></div></div>
+
+<p>The variable <code class="language-plaintext highlighter-rouge">hostname</code> can then be changed for the complete collection in Postman.
+Using Postman environments, you can even switch the API location via a simple change of the environments drop-down.</p>
+
+                </div>
+                
+
+                
+            </div>
+        </div>
+
+    </div>
+</main>
+
+
+    <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
+        <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
+        <ul class="nav" id="jumpToNav">
+<li class="nav-item"><a href="#extending-the-navigation-bar" class="nav-link">Extending the navigation bar</a></li>
+<li class="nav-item">
+<a href="#extending-the-dashboard-with-widgets" class="nav-link">Extending the dashboard with widgets</a><ul>
+<li class="nav-item"><a href="#adding-new-widget-types" class="nav-link">Adding new widget types</a></li>
+<li class="nav-item"><a href="#display-widgets-in-your-template" class="nav-link">Display widgets in your template</a></li>
+</ul>
+</li>
+<li class="nav-item">
+<a href="#invoices" class="nav-link">Invoices</a><ul>
+<li class="nav-item"><a href="#adding-documents-for-invoice-rendering" class="nav-link">Adding documents for invoice rendering</a></li>
+<li class="nav-item"><a href="#adding-invoice-calculator" class="nav-link">Adding invoice calculator</a></li>
+<li class="nav-item"><a href="#adding-invoice-number-generator" class="nav-link">Adding invoice-number generator</a></li>
+<li class="nav-item"><a href="#adding-invoice-renderer" class="nav-link">Adding invoice renderer</a></li>
+</ul>
+</li>
+<li class="nav-item">
+<a href="#adding-export-renderer" class="nav-link">Adding export renderer</a><ul><li class="nav-item"><a href="#adding-timesheet-export-renderer" class="nav-link">Adding timesheet export renderer</a></li></ul>
+</li>
+<li class="nav-item"><a href="#adding-timesheet-calculator" class="nav-link">Adding timesheet calculator</a></li>
+<li class="nav-item"><a href="#adding-custom-fields-meta-fields" class="nav-link">Adding custom fields (meta fields)</a></li>
+<li class="nav-item">
+<a href="#adding-userpreference" class="nav-link">Adding UserPreference</a><ul><li class="nav-item"><a href="#displaying-and-exporting-userpreferences" class="nav-link">Displaying and exporting UserPreferences</a></li></ul>
+</li>
+<li class="nav-item"><a href="#adding-custom-meta-tags-stylesheets-or-javascript" class="nav-link">Adding custom meta tags, stylesheets or javascript</a></li>
+<li class="nav-item"><a href="#adding-permissions" class="nav-link">Adding permissions</a></li>
+<li class="nav-item"><a href="#adding-system-configuration" class="nav-link">Adding system configuration</a></li>
+<li class="nav-item"><a href="#extending-the-reports" class="nav-link">Extending the reports</a></li>
+<li class="nav-item"><a href="#json-api-rest" class="nav-link">JSON API (REST)</a></li>
+<li class="nav-item"><a href="#adding-api-methods" class="nav-link">Adding API methods</a></li>
+<li class="nav-item"><a href="#using-the-swagger-ui" class="nav-link">Using the Swagger UI</a></li>
+<li class="nav-item"><a href="#swagger-file-and-postman" class="nav-link">Swagger file and Postman</a></li>
+</ul>
+        
+    </aside>
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
+
+</body>
+</html>
