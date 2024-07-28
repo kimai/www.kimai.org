@@ -10,8 +10,8 @@ To communicate with Lexoffice however, you need to install the Lexoffice-php-sdk
 composer require helsinki-systems/lexoffice-php-sdk:dev-master
 ```
 
-{% include composer-update-warning.html %}
-
+{% include snippets/composer-update-warning.md %}
+  
 ## Support
 
 If you need help setting this plugin up or have any feature requests our commercial support is available at [kunden@helsinki-systems.de](mailto:kunden@helsinki-systems.de)

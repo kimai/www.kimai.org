@@ -23,9 +23,9 @@ you have to install the PHP LDAP extension first:
 - e.g. on Ubuntu with `apt-get install php-ldap`
 - or with the PHP version prefixed `apt-get install php8.1-ldap`
 - FPM and CLI PHP use different configs, use `php -m` to verify that the module is really loaded  
-
-{% include composer-update-warning.html %}
-
+  
+{% include snippets/composer-update-warning.md %}
+ 
 ### Activate LDAP authentication
 
 You activate the LDAP authentication by adding the following code to the end of your
