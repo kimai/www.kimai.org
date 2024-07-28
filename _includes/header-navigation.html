@@ -48,9 +48,15 @@
                     <li class="nav-item{% if page.url contains pricing.url %} active{% endif %}">
                         <a href="{{ pricing.url }}" class="nav-link">{{ site.data[page.lang].translation.pricing.name }}</a>
                     </li>
-                    {% assign store = site.pages | where: "slug", "store" | find: "lang", page.lang %}
-                    <li class="nav-item{% if page.url contains store.url %} active{% endif %}">
-                        <a href="{{ store.url }}" class="nav-link">{{ site.data[page.lang].translation.store.name }}</a>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">{{ site.data[page.lang].translation.community.name }}</a>
+                        <ul class="dropdown-menu">
+                            {% assign store = site.pages | where: "slug", "store" | find: "lang", page.lang %}
+                            <li><a href="{{ store.url }}" class="dropdown-item"><i class="bx bx-extension me-2"></i>{{ site.data[page.lang].translation.store.name }}</a></li>
+                            <li>{% include link-translated-menu.html item="download" language=page.lang class="dropdown-item" icon="bx bxl-docker me-2" %}</li>
+                            <li>{% include link-translated-menu.html item="blog" language="en" class="dropdown-item" icon="bx bx-news me-2" %}</li>
+                            <li><a href="{{ site.kimai_v2_forum }}" target="_blank" class="dropdown-item"><i class="bx bx-chat me-2"></i>{{ site.data[page.lang].translation.forum.name }}</a></li>
+                        </ul>
                     </li>
                     {% assign documentation = site.pages | where: "slug", "documentation" | find: "lang", page.lang %}
                     <li class="nav-item dropdown">
