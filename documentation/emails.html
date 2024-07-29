@@ -577,13 +577,18 @@ Please read their documentation to find out more about possible connection detai
   <li>With TLS/SSL encryption: <code class="language-plaintext highlighter-rouge">smtp://info@example.com:password@smtp.example.com:443?encryption=ssl</code></li>
 </ul>
 
+<h2 id="testing-emails">Testing emails</h2>
+
+<p>You can run <code class="language-plaintext highlighter-rouge">bin/console mailer:test admin@example.com</code> to verify if the connection string is working.</p>
+
+<p>Obviously you replace <code class="language-plaintext highlighter-rouge">admin@example.com</code> with the value you have configured for <code class="language-plaintext highlighter-rouge">MAILER_FROM</code>.</p>
+
 <h2 id="troubleshooting">Troubleshooting</h2>
 
 <p>You can test your email configuration by registering a new account or using the password reset function.</p>
 
-<p>During your initial tests, you might try to use the <code class="language-plaintext highlighter-rouge">password reset</code> function over and over again.
-That will not work, as Kimai stores a timestamp when the last password reset was requested  and does not 
-allow another request in a certain timespan.</p>
+<p>You cannot try to  test the <code class="language-plaintext highlighter-rouge">password reset</code> for sending emails, as it has a security feature which prevents recurring usage. 
+Kimai stores a timestamp when the last password reset was requested and does not allow another request in a certain timespan.</p>
 
 <p>To work around that waiting time, you can reset the timer by issuing the following command (replace the username with yours):</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/console doctrine:query:dql <span class="s2">"UPDATE App</span><span class="se">\E</span><span class="s2">ntity</span><span class="se">\U</span><span class="s2">ser u SET u.passwordRequestedAt = null WHERE u.username = 'anna_admin'"</span>
@@ -628,7 +633,7 @@ mG0%2Fd1%403aT%23Z%2Bs1%
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#activating-email" class="nav-link">Activating email</a><ul><li class="nav-item"><a href="#mailer_url" class="nav-link">MAILER_URL</a></li></ul></li><li class="nav-item"><a href="#troubleshooting" class="nav-link">Troubleshooting</a><ul><li class="nav-item"><a href="#error-500-when-sending-emails" class="nav-link">Error 500 when sending emails</a></li><li class="nav-item"><a href="#smtp-does-not-accept-emails" class="nav-link">SMTP does not accept emails</a></li></ul></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#activating-email" class="nav-link">Activating email</a><ul><li class="nav-item"><a href="#mailer_url" class="nav-link">MAILER_URL</a></li></ul></li><li class="nav-item"><a href="#testing-emails" class="nav-link">Testing emails</a></li><li class="nav-item"><a href="#troubleshooting" class="nav-link">Troubleshooting</a><ul><li class="nav-item"><a href="#error-500-when-sending-emails" class="nav-link">Error 500 when sending emails</a></li><li class="nav-item"><a href="#smtp-does-not-accept-emails" class="nav-link">SMTP does not accept emails</a></li></ul></li></ul>
         
     </aside>
 
