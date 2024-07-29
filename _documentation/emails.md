@@ -32,13 +32,18 @@ Some more complex examples for the default SMTP transport:
 - With email as username: `smtp://info@example.com:password@smtp.example.com:25`
 - With TLS/SSL encryption: `smtp://info@example.com:password@smtp.example.com:443?encryption=ssl`
 
+## Testing emails
+
+You can run `bin/console mailer:test admin@example.com` to verify if the connection string is working.
+
+Obviously you replace `admin@example.com` with the value you have configured for `MAILER_FROM`.
+
 ## Troubleshooting
 
 You can test your email configuration by registering a new account or using the password reset function.
 
-During your initial tests, you might try to use the `password reset` function over and over again.
-That will not work, as Kimai stores a timestamp when the last password reset was requested  and does not 
-allow another request in a certain timespan.
+You cannot try to  test the `password reset` for sending emails, as it has a security feature which prevents recurring usage. 
+Kimai stores a timestamp when the last password reset was requested and does not allow another request in a certain timespan.
 
 To work around that waiting time, you can reset the timer by issuing the following command (replace the username with yours):
 ```bash
