@@ -85,7 +85,7 @@ But if you are a solo entrepreneur or a small company, it is cheaper and a big t
 To make it simpler for you to move to the cloud, and saving you the hassle of updating Kimai, I am announcing the "Summer of Free Migration": 
 If you switch to [a paid plan]({{ site.cloud.url }}/pricing), I will **import your existing Kimai data for free**. 
 All I need is the registered cloud and a database dump of your current Kimai installation.
-Please [contact me](mailto:support@kimai.cloud) to discuss the details.
+Please [contact me](mailto:{{ site.cloud.support_email }}) to discuss the details.
 
 ## Upgrading Plugins
 
