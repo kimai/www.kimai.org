@@ -25,7 +25,7 @@
     <meta name="twitter:site" content="@kimai_org">
     <meta name="twitter:description" content="Access your time-tracking data via the JSON API with Kimai">
     <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.webp">
-    <link href="/assets/build/main.css?v2" rel="stylesheet" />
+    <link href="/assets/build/main.css?v3" rel="stylesheet" />
 </head>
 <body class="">
 
@@ -140,19 +140,10 @@
                 
             </div>
         </div>
-        <div class="offcanvas-body swiper scrollbar-hover overflow-hidden w-100 p-4" data-swiper-options='{
-          "direction": "vertical",
-          "slidesPerView": "auto",
-          "freeMode": true,
-          "scrollbar": {
-            "el": ".swiper-scrollbar"
-          },
-          "mousewheel": true
-        }'>
-            <div class="swiper-wrapper">
-                <div class="swiper-slide h-auto">
+        <div class="offcanvas-body overflow-scroll w-100 p-4">
+            <div class=" h-auto">
+                
                     
-                        
 
     
     
@@ -161,8 +152,8 @@
     
         
             
-             
-            <a href="/documentation/rest-api.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4  active">
+            
+            <a href="/documentation/rest-api.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4  active" id="docnavi-rest-api">
                 
                 Kimai API
                 
@@ -171,8 +162,8 @@
     
         
             
-             
-            <a href="/documentation/rest-api-examples.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+            
+            <a href="/documentation/rest-api-examples.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 " id="docnavi-rest-api-examples">
                 
                 Examples
                 
@@ -181,8 +172,8 @@
     
         
             
-             
-            <a href="/documentation/api-pagination.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+            
+            <a href="/documentation/api-pagination.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 " id="docnavi-api-pagination">
                 
                 Pagination
                 
@@ -198,8 +189,8 @@
     
         
             
-             
-            <a href="/documentation/developers.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+            
+            <a href="/documentation/developers.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 " id="docnavi-developers">
                 
                 Development environment
                 
@@ -208,8 +199,8 @@
     
         
             
-             
-            <a href="/documentation/extending-kimai.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+            
+            <a href="/documentation/extending-kimai.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 " id="docnavi-extending-kimai">
                 
                 Extending Kimai
                 
@@ -218,8 +209,8 @@
     
         
             
-             
-            <a href="/documentation/plugins.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+            
+            <a href="/documentation/plugins.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 " id="docnavi-plugins">
                 
                 Create plugins
                 
@@ -228,8 +219,8 @@
     
         
             
-             
-            <a href="/documentation/translations.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+            
+            <a href="/documentation/translations.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 " id="docnavi-translations">
                 
                 Translations / i18n
                 
@@ -238,8 +229,8 @@
     
         
             
-             
-            <a href="/documentation/meta-fields.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+            
+            <a href="/documentation/meta-fields.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 " id="docnavi-meta-fields">
                 
                 Custom fields
                 
@@ -248,8 +239,8 @@
     
         
             
-             
-            <a href="/documentation/theme.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+            
+            <a href="/documentation/theme.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 " id="docnavi-theme">
                 
                 Theme
                 
@@ -258,8 +249,8 @@
     
         
             
-             
-            <a href="/documentation/store.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+            
+            <a href="/documentation/store.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 " id="docnavi-store">
                 
                 Add to store
                 
@@ -268,8 +259,8 @@
     
         
             
-             
-            <a href="/documentation/migration-v2.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+            
+            <a href="/documentation/migration-v2.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 " id="docnavi-migration-v2">
                 
                 Migrate plugins to v2
                 
@@ -285,8 +276,8 @@
     
         
             
-             
-            <a href="/documentation/bughunter.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+            
+            <a href="/documentation/bughunter.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 " id="docnavi-bughunter">
                 
                 Bughunter
                 
@@ -295,8 +286,8 @@
     
         
             
-             
-            <a href="/documentation/permission-structure.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+            
+            <a href="/documentation/permission-structure.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 " id="docnavi-permission-structure">
                 
                 Permission structure
                 
@@ -305,8 +296,8 @@
     
         
             
-             
-            <a href="/documentation/sql-examples.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+            
+            <a href="/documentation/sql-examples.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 " id="docnavi-sql-examples">
                 
                 SQL Examples
                 
@@ -315,8 +306,8 @@
     
         
             
-             
-            <a href="/documentation/redis.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 ">
+            
+            <a href="/documentation/redis.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 " id="docnavi-redis">
                 
                 Using Redis for caching
                 
@@ -325,16 +316,22 @@
     
     </div>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+        const dpm = document.getElementById('docnavi-rest-api');
+        if (dpm !== null) {
+            dpm.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+        }
+    });
+</script>
 
-                        <div class="list-group list-group-flush pb-3 mb-4 mx-n4">
-                    
-                        <a href="/" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Kimai Home</a>
-                        <a href="/en/site-notice.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Site notice</a>
-                        <a href="/en/privacy-policy.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Privacy policy</a>
-                    </div>
+                    <div class="list-group list-group-flush pb-3 mb-4 mx-n4">
+                
+                    <a href="/" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Kimai Home</a>
+                    <a href="/en/site-notice.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Site notice</a>
+                    <a href="/en/privacy-policy.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Privacy policy</a>
                 </div>
             </div>
-            <div class="swiper-scrollbar end-0"></div>
         </div>
     </div>
 </aside>
