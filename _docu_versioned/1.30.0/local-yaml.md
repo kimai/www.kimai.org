@@ -21,13 +21,10 @@ The most important configuration files of Kimai are:
 
 There are several other configurations that could potentially be interesting for you in [config/packages/*.yaml]({{ site.kimai_v2_file }}/config/packages/).
 
-{% capture dont_edit_configs %}
+{% alert danger %}
 Don't edit any of the configuration files (eg. `config/packages/kimai.yaml`) directly, as they will be overwritten during an update.
 Adjust settings from any configuration file by adding them in your own configuration in `local.yaml` (see below).
-{% endcapture %}
-{% assign dont_edit_configs = dont_edit_configs|markdownify %}
-
-{% include alert.html icon="alarm-exclamation" type="danger" alert=dont_edit_configs %}
+{% endalert %}
 
 ### .env
 
@@ -39,7 +36,7 @@ These "environment specific settings" are required so Kimai can boot. They are s
 - `DATABASE_URL` - database connection for storing all application data
 - `APP_SECRET` - secret used to encrypt session cookies (users will be logged out if you change it)
 
-{% include alert.html icon="alarm-exclamation" type="warning" alert="You don't need a .env file, but can set these environment values via webserver config as well. Later ones will take precedence over the .env entries." %}
+{% alert warning %}You don't need a .env file, but can set these environment values via webserver config as well. Later ones will take precedence over the .env entries.{% endalert %}
 
 ### local.yaml
 
@@ -68,7 +65,7 @@ The `local.yaml` file will be imported as last configuration file, so you can ov
 Whenever the documentation asks you to edit a yaml file from the `config/packages/` directory, it means you should copy
 this specific configuration key to your `local.yaml` in order to overwrite the default configuration.
 
-{% include alert.html icon="alarm-exclamation" type="warning" alert="Be consistent with the indentation and don't mix spaces and tabs, YAML is very sensitive about that!" %}
+{% alert warning %}Be consistent with the indentation and don't mix spaces and tabs, YAML is very sensitive about that!{% endalert %}
 
 ### Reload configurations
 

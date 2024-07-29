@@ -5,23 +5,20 @@ description: How to update Kimai to the next release version
 
 1. Make sure that you have a working [database backup]({% link _documentation/backups.md %}) before you start the update.
 2. Check [UPGRADING]({{ site.kimai_v2_file }}/UPGRADING.md) for required manual changes between your current and the new version. 
-3. You can upgrade multiple versions at once, e.g. from `1.19` to `2.0.22`, skipping everything between.
+3. You can upgrade multiple versions at once, e.g. from `2.10.0` to `2.19.1`, skipping everything between.
 4. Some tweaks might be necessary to run the commands listed below, read the [installation documentation]({% link _documentation/installation.md %}) for more information.
 
-## Updating Kimai 
-
-{% capture alert_note %}
-**ATTENTION** when upgrading from 1.30 (or lower) to 2.0: do a hard cache flush. [Plugins are incompatible]({% link _posts/2023-05-19-plugin-upgrades-v2.md %}) and must be removed before updating the system.
+{% note "Upgrading from 1.30 (or lower) to 2.0" %}
+You need to do a hard cache flush. And as [plugins are incompatible]({% link _posts/2023-05-19-plugin-upgrades-v2.md %}), they must be removed before updating the system.
   
 ```bash
 rm -r var/cache/*
 rm -r var/plugins/*
 ```
-{% endcapture %}
+{% endnote %}
 
-{% assign alert_note = alert_note| markdownify %}
-{% include alert.html type="danger" alert=alert_note %} 
-
+## Updating Kimai 
+ 
 Change into your Kimai directory, then fetch the latest code and install all dependencies: 
 ```bash
 git checkout -- composer.lock
@@ -47,7 +44,7 @@ Remember to adjust the file permissions if necessary.
 {% include snippets/upgrading-note.md %} 
 
 That's it, Kimai is running the most current version. Enjoy the latest time-tracking features!
-
+ 
 ## Troubleshooting
 
 ### flex.symfony.com not found

@@ -72,11 +72,9 @@ The files in `translations/` as a quick overview:
 - `teams` - the team administration screen
 - `validators` - related to violations/validation of submitted form data (or API calls)
 
-{% capture cache %}
+{% alert danger %}
 If you apply changes to any files mentioned on this page, you have to [clear the cache]({% link _documentation/cache.md %}).
-{% endcapture %}
-{% assign cache = cache|markdownify %}
-{% include alert.html type="danger" alert=cache %}
+{% endalert %}
 
 ### Authentication screens
 
@@ -157,7 +155,7 @@ parameters:
 
 ### Import frontend locales
 
-{% include alert.html type="warning" icon="alarm-exclamation" alert="You can skip this step, we will do it with when we test your changes." %}
+{% alert warning %}You can skip this step, we will do it with when we test your changes.{% endalert %}
 
 Make sure the new locale is included in the frontend dependencies. For example Kimai includes moment.js, which ships its own translations.
 Kimai ONLY compiles the moment.js locales which are needed. 

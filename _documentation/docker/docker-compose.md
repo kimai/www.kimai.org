@@ -93,12 +93,10 @@ None of these images persist the DB between restarts, unless you add a volume to
       - mysql:/var/lib/mysql
 ```
 
-{% capture proxImage %}
+{% alert danger %}
 Be aware that the below image [tobybatch/nginx-fpm-reverse-proxy](https://github.com/tobybatch/nginx-fpm-reverse-proxy) is only meant as example.
 It is not made for production usage. Use your existing reverse proxy instead! 
-{% endcapture %}
-{% assign proxImage = proxImage|markdownify %}
-{% include alert.html icon="alarm-exclamation" type="danger" alert=proxImage %}
+{% endalert %}
 
 ### Production
 

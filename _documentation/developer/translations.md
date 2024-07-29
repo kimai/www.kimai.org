@@ -22,7 +22,7 @@ All translations in Kimai are managed at Weblate and should be changed there exc
 
 If you want to change certain keys in your installation, you can use the [Translation plugin]({% link _store/keleo-translation-bundle.md %}) for that.
 
-{% include alert.html type="info" alert="The following documentation is not meant for end-users or translators. It is a technical documentation for the folks working on the Kimai code." %}
+{% alert %}The following documentation is not meant for end-users or translators. It is a technical documentation for the folks working on the Kimai code.{% endalert %}
 
 ## Language files
 
@@ -49,11 +49,9 @@ The files in `translations/` as a quick overview:
 - `teams` - the team administration screen
 - `validators` - related to violations/validation of submitted form data (or API calls)
 
-{% capture cache %}
+{% alert danger %}
 If you apply changes to any files mentioned on this page, you have to [clear the cache]({% link _documentation/cache.md %}).
-{% endcapture %}
-{% assign cache = cache|markdownify %}
-{% include alert.html type="danger" alert=cache %}
+{% endalert %}
 
 ## Authentication screens
 

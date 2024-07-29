@@ -8,11 +8,9 @@ which can be turned on and off for these roles. You need the `role_permissions` 
 
 This permission system limits access to the functionality of Kimai. 
 
-{% capture teamLink %}
+{% alert %}
 If you are looking for a way to limit access to timesheets, activities, projects and customers read about [Team permissions]({% link _documentation/teams.md %}).
-{% endcapture %}
-{% assign teamLink = teamLink|markdownify %}
-{% include alert.html type="info" alert=teamLink %}
+{% endalert %}
 
 ## Roles
 
@@ -27,13 +25,11 @@ There are four pre-defined roles in Kimai, which have a customizable set of ACLs
 | System-Admin   | Has permissions to manage everything in Kimai, from content to timesheets to users, plugins and system configurations. Technical name: `ROLE_SUPER_ADMIN` |
 {: .table }
 
-{% capture roleUserAssignment %}
+{% alert danger %}
 Every user is automatically member of the ROLE_USER, this behaviour cannot be changed. 
 
 That means, that every role and user owns all permissions from the `ROLE_USER`. 
-{% endcapture %}
-
-{% include alert.html type="danger" alert=roleUserAssignment %}
+{% endalert %}
 
 ### Creating roles
 
@@ -42,7 +38,7 @@ If the pre-defined roles are not sufficient for your use-case and you need more 
 Every user with the permission `role_permissions` can create new user roles. 
 There is a button that will open a new modal, to enter a role name. This new role will show up in the table after saving.
 
-{% include alert.html type="warning" alert="Allowed character are: `A-Z` and `_`. If you use different character, you might experience strange bugs." %}
+{% alert warning %}Allowed character are: `A-Z` and `_`. If you use different character, you might experience strange bugs.{% endalert %}
 
 Custom role names must start with `ROLE_` and need to be written in uppercase letters, so instead of using `Manager` you have to create `ROLE_MANAGER`. 
 This is required if you want to test for role permissions programmatically.

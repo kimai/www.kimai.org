@@ -6,11 +6,9 @@ canonical: /documentation/migration-v1.html
 
 This documentation covers all necessary steps to migrate from Kimai 1 to Kimai 2.
 
-{% capture upgrade_note %}
+{% alert %}
 You can <a href="{% link _store/keleo-installation-support.md %}">get professional support</a> if you are not sure about performing the upgrade yourself. 
-{% endcapture %}
-
-{% include alert.html type="success" icon="support" alert=upgrade_note %} 
+{% endalert %}
 
 ## Introduction
 
@@ -48,7 +46,7 @@ The database does not have to be on the same server and the database user (for t
      
 ## Database import
 
-{% include alert.html type="warning" alert="It is strongly recommended to test the import, as unexpected problems may occur. If you already created data (like users and customers), backup your Kimai 2 database before performing the first tests!" %} 
+{% alert warning %}It is strongly recommended to test the import, as unexpected problems may occur. If you already created data (like users and customers), backup your Kimai 2 database before performing the first tests!{% endalert %} 
 
 See the help for the import command and all its arguments by executing:
 
@@ -80,7 +78,7 @@ Kimai 1 was written a long time ago, when MySQL was lacking proper UTF8 support 
 While [migrating dozens of customers installations]({% link _store/keleo-installation-support.md %}) I stumbled upon some recurring problems, 
 that can be solved with some SQL commands.  
 
-{% include alert.html type="warning" alert="Be aware, depending on your Kimai 1 version the field names might be different in the following snippets" %} 
+{% alert warning %}Be aware, depending on your Kimai 1 version the field names might be different in the following snippets{% endalert %} 
 
 #### Broken character
 

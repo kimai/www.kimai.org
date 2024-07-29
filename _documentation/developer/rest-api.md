@@ -18,9 +18,9 @@ When calling the API you have to submit an additional `Authorization` header wit
 
 - `Authorization: Bearer xyz` - here `xyz` is the unique API token for that account
 
-{% include alert.html type="primary" alert="The API token is NOT the normal user password. API tokens can be generated in the user profile." %}
+{% alert %}The API token is NOT the normal user password. API tokens can be generated in the user profile.{% endalert %}
 
-{% include alert.html icon="alarm-exclamation" type="warning" alert="You MUST use secure HTTPS calls to protect both credentials and data." %}
+{% alert warning %}You MUST use secure HTTPS calls to protect both credentials and data.{% endalert %}
 
 ### API tokens
 

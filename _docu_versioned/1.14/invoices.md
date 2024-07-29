@@ -31,11 +31,9 @@ All examples represent the date `2019-07-09` (2019, July 9th):
 Each replacer (x) can be combined with a length formatter, which will prepend (X) leading zeros, eg. `{x,X}`. 
 Example: to get a three digit long string with year counter use `{cy,3}`, which results in `001` for the first invoice of the year.
 
-{% capture additional_chars %}
+{% alert warning %}
 Characters outside the replacer may **not** include `{` and `}`.
-{% endcapture %}
-{% assign additional_chars = additional_chars| markdownify %}
-{% include alert.html icon="alarm-exclamation" type="warning" alert=additional_chars %}
+{% endalert %}
 
 To change the format, look out for the {% include demo-action-button.html icon="bx bx-cog" %} icon in the invoice screen, or change it from the `System configurations`.
 
@@ -137,7 +135,7 @@ Be aware of the following rules:
 - You can hide the default templates by setting the key `kimai.invoice.defaults` to an empty array / null
 - New or updated templates can be uploaded via the UI
  
-{% include alert.html icon="alarm-exclamation" type="warning" alert="Do NOT change the default templates, but copy the file and save it (with a new filename) at var/invoices/" %}
+{% alert warning %}Do NOT change the default templates, but copy the file and save it (with a new filename) at var/invoices/{% endalert %}
  
 After you changed an invoice template, you have to [clear the cache]({% link _documentation/cache.md %}) to see the results:
 

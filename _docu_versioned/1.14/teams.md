@@ -9,7 +9,7 @@ Teams allow you to organize your users in groups and limit access to customers a
 A team consists of a Teamlead and an unlimited amount of team members. The teamlead has access to all contents and timesheets of the team. 
 Every content object can be linked to an arbitrary amount of teams.
 
-{% include alert.html type="warning" icon="alarm-exclamation" alert="Using teams is optional. But once a team is assigned to a customer or project, access to this object and its children is limited." %}
+{% alert warning %}Using teams is optional. But once a team is assigned to a customer or project, access to this object and its children is limited.{% endalert %}
 
 If you want to limit the access to Kimai functionality instead of content, 
 please read the [permissions documentation]({% link _documentation/permissions.md %}).

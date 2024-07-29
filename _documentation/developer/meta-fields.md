@@ -12,12 +12,10 @@ Kimai supports custom fields for the following object types:
 - `Activity` via `ActivityMeta`
 - `Invoice` via `InvoiceMeta`
 
-{% capture alert_note %}
+{% alert %}
 Below you find the documentation, how a developer can create custom fields.   
 Most users will prefer to use the [Custom fields plugin]({% link _store/keleo-custom-fields-bundle.md %}).
-{% endcapture %}
-{% assign alert_note = alert_note| markdownify %}
-{% include alert.html icon="cart" alert=alert_note %}
+{% endalert %}
 
 ## Custom fields
 

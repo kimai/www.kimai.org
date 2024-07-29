@@ -45,13 +45,11 @@ All examples represent the date `2019-07-09` (2019, July 9th):
 Each replacer (x) can be combined with a length formatter, which will prepend (X) leading zeros, eg. `{x,X}`.
 Example: to get a three digit long string with year counter use `{cy,3}`, which results in `001` for the first invoice of the year.
 
-{% capture additional_chars %}
+{% alert warning %}
 1. Characters outside the replacer **cannot** include `{` and `}`.  
 2. The invoice number is unique in Kimai and you cannot generate an invoice with the same invoice number twice. Kimai will try to avoid that automatically by incrementing the counter, but if that is impossible, you'll see an error message.
 3. You can change the format at [System > Settings]({% link _documentation/configurations.md %}).
-{% endcapture %}
-{% assign additional_chars = additional_chars| markdownify %}
-{% include alert.html icon="alarm-exclamation" type="warning" alert=additional_chars %}
+{% endalert %}
 
 ### Incrementing the invoice counter
 
@@ -169,7 +167,7 @@ Be aware of the following rules:
 - You should store your templates in `var/invoices/`, as this directory is not shipped with Kimai and not touched during updates
 - You can [configure different search directories]({% link _documentation/local-yaml.md %}) through the config key `kimai.invoice.documents` if you want to add additional template source directories
 
-{% include alert.html icon="alarm-exclamation" type="warning" alert="Do NOT change the default templates, but copy the file and save it (with a new filename) at var/invoices/" %}
+{% alert warning %}Do NOT change the default templates, but copy the file and save it (with a new filename) at var/invoices/{% endalert %}
 
 After you changed an invoice template, you have to [clear the cache]({% link _documentation/cache.md %}) to see the results.
 

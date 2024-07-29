@@ -10,7 +10,7 @@ Activities in Kimai are meant to explain the kind of work done for a specific ta
 
 Activities can have two different types: `global` and `project specific`.  
 
-{% include alert.html icon="alarm-exclamation" type="warning" alert="Activities cannot be linked to a customer, the customer field in the edit form is only a filter for the project list." %}
+{% alert warning %}Activities cannot be linked to a customer, the customer field in the edit form is only a filter for the project list.{% endalert %}
 
 ### Project specific 
 

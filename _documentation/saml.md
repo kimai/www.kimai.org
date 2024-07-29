@@ -123,9 +123,9 @@ A brief description of the available fields:
 
 If you have troubles with your certificate you can [use this online tool](https://www.samltool.com/format_x509cert.php) to convert the X.509 cert into "string format".
 
-{% include alert.html type="info" alert="User data and roles are synchronized during each login." %}
-{% include alert.html type="info" alert="Every user automatically owns the ROLE_USER role, you don't have to create a mapping for it." %}
-{% include alert.html type="warning" alert="Every user needs a username and email address, you cannot activate SAML without a mapping for the email. The username cannot be set from SAML attributes, but will always be taken from the SAML request." %}
+{% alert %}User data and roles are synchronized during each login.{% endalert %}
+{% alert %}Every user automatically owns the ROLE_USER role, you don't have to create a mapping for it.{% endalert %}
+{% alert warning %}Every user needs a username and email address, you cannot activate SAML without a mapping for the email. The username cannot be set from SAML attributes, but will always be taken from the SAML request.{% endalert %}
 
 ### Multiline Certificate - x509cert
 

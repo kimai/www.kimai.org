@@ -16,7 +16,7 @@ There are a couple of differences in these two Kimai modules, the most important
 
 ## Security and privacy
 
-{% include alert.html type="danger" alert="The export extension DOES NOT check permissions, as this would defeat the purpose of an export." %}
+{% alert danger %}The export extension DOES NOT check permissions, as this would defeat the purpose of an export.{% endalert %}
 
 So giving a user the permission to export data allows to see most time related data in Kimai
 (like customer, projects, activities, rates, time worked per user and more).

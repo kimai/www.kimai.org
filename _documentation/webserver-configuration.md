@@ -120,7 +120,7 @@ which needs to be allowed by Apache via `AllowOverride All`.
 </VirtualHost>
 ```
 
-{% include alert.html icon="alarm-exclamation" type="warning" alert="Make sure to activate the correct block for your Apache version, find out with e.g. 'apachectl -v'" %}
+{% alert warning %}Make sure to activate the correct block for your Apache version, find out with e.g. 'apachectl -v'{% endalert %}
 
 
 ### Activate required modules PHP & Rewrite

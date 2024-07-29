@@ -35,7 +35,7 @@ After installing the plugin, you will need to [clear the cache]({% link _documen
 
 In case your plugin comes with a database, you might have to call something like `bin/console kimai:bundle:foobar:install`.
 
-{% include alert.html icon="alarm-exclamation" type="success" alert="Additional installation steps might be required (like the database creation step above). The plugin specific docs will explain that." %}
+{% alert %}Additional installation steps might be required (like the database creation step above). The plugin specific docs will explain that.{% endalert %}
 
 ## Updating plugins
 

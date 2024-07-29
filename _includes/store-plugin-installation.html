@@ -1,8 +1,4 @@
-{% if include.plugin == nil %}
-    <div class="alert alert-danger" role="alert">
-    ATTENTION, this include needs the <strong>plugin</strong> variable!
-    </div>
-{% else %}
+{% if include.plugin != nil %}
     {% assign plugin = include.plugin %}
     <h3>{{ site.data[page.lang].translation.copy-files }}</h3>
 
@@ -54,12 +50,10 @@ var/plugins/
 
         <p>This will create the required database tables and update them to the latest version.</p>
 
-{% capture error_faq %}
+{% alert warning %}
 If you see an error like `There are no commands defined in the "kimai:bundle:XYZ" namespace.`,
 then either the directory has a wrong name (must be **var/plugins/{{ plugin }}/**) or you forgot to clear the cache (look above).
-{% endcapture %}
-{% assign error_faq = error_faq|markdownify %}
-{% include alert.html type="warning" alert=error_faq %}
+{% endalert %}
     {% endif %}
 
     {% if include.assets != nil %}

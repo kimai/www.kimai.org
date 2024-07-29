@@ -67,13 +67,10 @@ And run the Kimai installer:
 bin/console kimai:install -n
 ```
 
-{% capture windows %}
-Windows users might have to prefix the composer and installation commands with `php`, eg.:  
-`php bin/console kimai:install -n`
-{% endcapture %}
-{% assign windows = windows|markdownify %}
-
-{% include alert.html icon="fab fa-windows" type="warning" alert=windows %}
+{% alert warning %}
+You might have to prefix the composer and installation commands with either `php` or even the correct version:  
+`php bin/console kimai:install -n` or `php8.3 bin/console kimai:install -n`
+{% endalert %}
 
 ### File permissions
 
@@ -122,22 +119,19 @@ Hosting Kimai on Plesk is described in the [shared hosting article]({% link _doc
 
 ### FTP installation
 
-{% include alert.html type="warning" alert="Installation via FTP is not supported, because most of Kimai's management tasks rely on the console." %}
+{% alert warning%}Installation via FTP is not supported, because most of Kimai's management tasks rely on the console.{% endalert %}
 
 You have two choices:
 - get a proper webhosting/virtual server with SSH support
 - use a [SaaS time-tracking software]({{ site.cloud.url }})
 
-{% capture support %}
+{% alert %}
 If you don't have the technical background for managing a server yourself and need to rely on a shared hosting package,
 it is better to stop hosting business critical software yourself!
 If you thought about switching to a managed server before (they are affordable these days)
 you can contact me, [I offer paid setup support]({% link _store/keleo-installation-support.md %}).
-{% endcapture %}
-{% assign support = support|markdownify %}
-
-{% include alert.html type="info" alert=support %}
-
+{% endalert %}
+ 
 ### Ansible
 
 [Webarchitects Co-operative](https://www.webarchitects.coop/) have written a [Kimai Ansible Galaxy role](https://git.coop/webarch/kimai) for automatically installing and upgrading Kimai sites on their shared hosting servers.

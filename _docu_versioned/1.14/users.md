@@ -32,9 +32,9 @@ There are four pre-defined roles in Kimai, which define the ACLs/permissions.
 | ROLE_SUPER_ADMIN   | Has permissions to manage everything in Kimai, from content to timesheets to users, plugins and system configurations          |
 {: .table }
 
-{% include alert.html type="success" alert="Every user is automatically member of the ROLE_USER, this behaviour cannot be changed." %}
+{% alert %}Every user is automatically member of the ROLE_USER, this behaviour cannot be changed.{% endalert %}
 
-{% include alert.html type="warning" alert="ROLE_ADMIN and ROLE_SUPER_ADMIN are special roles and treated different internally: they are not bound to team permissions and can see all content, no matter what their team assignments looks like." %}
+{% alert warning %}ROLE_ADMIN and ROLE_SUPER_ADMIN are special roles and treated different internally: they are not bound to team permissions and can see all content, no matter what their team assignments looks like.{% endalert %}
 
 The applied permissions of your Kimai installation can be seen via the user administration, 
 e.g. [https://demo.kimai.org/en/admin/permissions](https://demo.kimai.org/en/admin/permissions).
@@ -43,7 +43,7 @@ e.g. [https://demo.kimai.org/en/admin/permissions](https://demo.kimai.org/en/adm
 
 If the pre-defined roles are not sufficient for your use-case and you need more roles, you can create new ones.
 
-{% include alert.html type="warning" alert="Allowed character are: `A-Z` and `_`. If you use different character, you might experience strange bugs." %}
+{% alert warning %}Allowed character are: `A-Z` and `_`. If you use different character, you might experience strange bugs.{% endalert %}
 
 Every user with the [permission]({% link _documentation/permissions.md %}) `role_permissions` can create new user roles 
 through the user administration. Navigate to the user role permission screen and check the pages action. 

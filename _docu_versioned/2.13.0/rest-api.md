@@ -20,9 +20,9 @@ When calling the API you have to submit two additional header with every call fo
 - `X-AUTH-USER` - holds the username (or email address)
 - `X-AUTH-TOKEN` - the API password, which has to be set in the user profile
 
-{% include alert.html type="primary" alert="The API password is different from the normal user password and can be set in the user profile." %}
+{% alert %}The API password is different from the normal user password and can be set in the user profile.{% endalert %}
 
-{% include alert.html icon="alarm-exclamation" type="warning" alert="You should only use secure https calls to protect both credentials and data." %}
+{% alert warning %}You should only use secure https calls to protect both credentials and data.{% endalert %}
 
 ## Swagger file and Postman
 

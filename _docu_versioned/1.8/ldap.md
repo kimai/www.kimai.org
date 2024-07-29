@@ -216,7 +216,7 @@ User data is synchronized on each login, fetching the latest data from your LDAP
 Obviously Kimai does not store the users password when logged-in via LDAP and there is 
 no fallback mechanism implemented, if your LDAP is not available (currently only ONE server can be configured).
 
-{% include alert.html type="danger" alert="The default configuration allows a user to change the internal password. This manually chosen password is not overwritten by the LDAP plugin and would allow a user to login, even after you removed him from LDAP." %} 
+{% alert danger %}The default configuration allows a user to change the internal password. This manually chosen password is not overwritten by the LDAP plugin and would allow a user to login, even after you removed him from LDAP.{% endalert %} 
 
 To prevent that problem:
 - disable the "[Password reset]({% link _documentation/users.md %})" function
@@ -257,7 +257,7 @@ kimai:
                 - { ldap_attr: mail, user_method: setEmail }
                 - { ldap_attr: cn, user_method: setAlias }
 ```
-{% include alert.html type="warning" alert="You need to configure the attributes in lower-case, otherwise they won't be processed." %}
+{% alert warning %}You need to configure the attributes in lower-case, otherwise they won't be processed.{% endalert %}
 
 In this example we tell Kimai to sync the following fields:
 - `uid` will be the username in Kimai (will fail with a 500 if not unique)
@@ -272,7 +272,7 @@ Its unlikely that you will need those, but they also exist: `setEnabled(bool)`, 
 Kimai can use your LDAP groups and map them to [user roles]({% link _documentation/users.md %}).
 If configured, it will execute another `search` against your LDAP after authentication and importing the user attributes.
 
-{% include alert.html type="warning" alert="Every user automatically owns the ROLE_USER role, you don't have to create a mapping for it." %}
+{% alert warning %}Every user automatically owns the ROLE_USER role, you don't have to create a mapping for it.{% endalert %}
 
 Assuming this `role` configuration:
 ```yaml
@@ -331,7 +331,7 @@ The rule is: either manage all roles in Kimai or in LDAP, mixing is not possible
 
 ## Examples
 
-{% include alert.html type="info" alert="Before you start to configure your LDAP, switch to 'dev' environment and tail 'var/log/dev.log'." %}
+{% alert %}Before you start to configure your LDAP, switch to 'dev' environment and tail 'var/log/dev.log'.{% endalert %}
 
 Another simple solution to debug the generated queries is to start your OpenLDAP with `sudo /usr/libexec/slapd -d256`.
 
@@ -438,6 +438,6 @@ kimai:
                 - { ldap_value: Sysadmins, role: ROLE_SUPER_ADMIN }
                 - { ldap_value: Users, role: ROLE_USER }
 ```
-{% include alert.html type="warning" alert="You need to configure the attributes in lower-case, otherwise they won't be processed." %}
+{% alert warning %}You need to configure the attributes in lower-case, otherwise they won't be processed.{% endalert %}
 
 The LDAP code is based on [the work](https://github.com/Maks3w/FR3DLdapBundle) by @Maks3w , thanks for sharing!

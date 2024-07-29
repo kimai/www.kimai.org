@@ -33,13 +33,10 @@ And run the Kimai installer:
 bin/console kimai:install -n
 ```
 
-{% capture windows %}
+{% alert warning %}
 Windows users might have to prefix the composer and installation commands with `php`, eg.:  
 `php bin/console kimai:install -n`
-{% endcapture %}
-{% assign windows = windows|markdownify %}
-
-{% include alert.html icon="fab fa-windows" type="warning" alert=windows %}
+{% endalert %}
 
 ### File permissions
 
@@ -62,7 +59,7 @@ If you are going to [import data from Kimai v1]({% link _documentation/migration
 Configure your web server (like Nginx or Apache) to point its DocumentRoot at the `public/` directory.
 For more details, see the [Webserver How-To]({% link _documentation/webserver-configuration.md %}).
 
-{% include alert.html icon="far fa-smile-beam" type="success" alert="Installation complete: enjoy time-tracking!" %}
+{% alert %}Installation complete: enjoy time-tracking!{% endalert %}
 
 Oh ... wait! Before you leave, please read the [initial setup guide]({% link _documentation/initial-setup.md %}).
 

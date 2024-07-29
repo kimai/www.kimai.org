@@ -19,7 +19,7 @@ The following [permissions]({% link _documentation/permissions.md %}) are genera
 If the current user owns the `view_other_timesheet` permission the displayed username will be replaced by a user select box.
 The available users to choose from are either all (if the user owns the permission `view_all_data`) or all his team member (if he is a team leader).
 
-{% include alert.html type="info" alert="Plugins can ship their own reports, the following list contains the reports shipped in default installations." %}
+{% alert %}Plugins can ship their own reports, the following list contains the reports shipped in default installations.{% endalert %}
 
 ## Single user
 

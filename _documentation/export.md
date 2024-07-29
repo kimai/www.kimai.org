@@ -20,7 +20,7 @@ Giving a user the permission `create_export` to export data, allows him to see m
 
 The "mark as export" checkbox is only available for users with the `edit_export_other_timesheet` [permission]({% link _documentation/permissions.md %}).
 
-{% include alert.html type="danger" alert="The export extension does not check all available permissions, as this would defeat the purpose of an export. If your users shall not see rates, do not give them the 'create_export' permission." %}
+{% alert danger %}The export extension does not check all available permissions, as this would defeat the purpose of an export. If your users shall not see rates, do not give them the 'create_export' permission.{% endalert %}
 
 ## Export state
 

@@ -8,7 +8,27 @@ canonical: /documentation/synology.html
 This HowTo does not explain every step for the installation of Kimai on a Synology NAS with **DSM 6**, 
 but rather concentrates on the differences from the [default installation]({% link _documentation/installation.md %}).
 
-{% include alert.html type="info" alert="ATTENTION: This manual seems to be outdated and not working with DSM 7+ anymore. Please use Docker to host Kimai on Synology!" %}
+## Container Manager
+
+- Container Manager
+- Image Update über - search `kimai/kimai2`, Doppelklick, Projekt stoppen, Erstellen, Neu starten
+
+## Updating the image
+
+Image Update über Images => Suche nach kimai/kimai2, Doppelklick, Projekt stoppen, Erstellen, Neu starten
+
+## Copying data into the volume
+
+- Copy the ZIP files into a directory via File Station, eg. /volume1/home/kimai/
+- Extract the ZIP files, e.g. /volume1/home/kimai/KioskBundle-1.12.0
+- Rename the directory, e.g. /volume1/home/kimai/KioskBundle-1.12.0
+- ssh user@synology-ip
+- sudo su
+- cd /volume1/@docker/volumes/kimai_plugins/_data/
+- mv /
+- docker exec -it kimai /bin/bash
+
+{% alert %}ATTENTION: This manual seems to be outdated and not working with DSM 7+ anymore. Please use Docker to host Kimai on Synology!{% endalert %}
 
 ## Important to know
 
