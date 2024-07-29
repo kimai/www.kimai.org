@@ -81,28 +81,17 @@ layout: base
                 {% endfor %}
             </div>
         </div>
-        <div class="offcanvas-body swiper scrollbar-hover overflow-hidden w-100 p-4" data-swiper-options='{
-          "direction": "vertical",
-          "slidesPerView": "auto",
-          "freeMode": true,
-          "scrollbar": {
-            "el": ".swiper-scrollbar"
-          },
-          "mousewheel": true
-        }'>
-            <div class="swiper-wrapper">
-                <div class="swiper-slide h-auto">
-                    {% if menu != nil %}
-                        {% include docs-navi.html navigation=menu %}
-                        <div class="list-group list-group-flush pb-3 mb-4 mx-n4">
-                    {% endif %}
-                        <a href="{% link _pages/index.html %}" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Kimai {{ site.data['en'].translation['index'].name }}</a>
-                        <a href="{% link _pages/site-notice.md %}" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">{{ site.data['en'].translation['site-notice'].name }}</a>
-                        <a href="{% link _pages/privacy-policy.md %}" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">{{ site.data['en'].translation['privacy-policy'].name }}</a>
-                    </div>
+        <div class="offcanvas-body overflow-scroll w-100 p-4">
+            <div class=" h-auto">
+                {% if menu != nil %}
+                    {% include docs-navi.html navigation=menu %}
+                    <div class="list-group list-group-flush pb-3 mb-4 mx-n4">
+                {% endif %}
+                    <a href="{% link _pages/index.html %}" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Kimai {{ site.data['en'].translation['index'].name }}</a>
+                    <a href="{% link _pages/site-notice.md %}" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">{{ site.data['en'].translation['site-notice'].name }}</a>
+                    <a href="{% link _pages/privacy-policy.md %}" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">{{ site.data['en'].translation['privacy-policy'].name }}</a>
                 </div>
             </div>
-            <div class="swiper-scrollbar end-0"></div>
         </div>
     </div>
 </aside>
