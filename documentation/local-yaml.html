@@ -25,7 +25,7 @@
     <meta name="twitter:site" content="@kimai_org">
     <meta name="twitter:description" content="Advanced configuration via filesystem">
     <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.webp">
-    <link href="/assets/build/main.css?v3" rel="stylesheet" />
+    <link href="/assets/build/main.css?v4" rel="stylesheet" />
 </head>
 <body class="">
 
@@ -568,14 +568,9 @@
 
 <p>There are several other configurations that could potentially be interesting for you in <a href="https://github.com/kimai/kimai/blob/main/config/packages/">config/packages/*.yaml</a>.</p>
 
-<div class="alert d-flex alert-danger" role="alert">
-    <i class="bx bx-alarm-exclamation lead me-3"></i>
-    <div>
-        
-Don’t edit any of the configuration files (eg. <code class="language-plaintext highlighter-rouge">config/packages/kimai.yaml</code>) directly, as they will be overwritten during an update.
-Adjust settings from any configuration file by adding them in your own configuration in <code class="language-plaintext highlighter-rouge">local.yaml</code> (see below).
-
-    </div>
+<div class="alert alert-danger d-flex" role="alert"><i class="bx bx-info-circle lead me-3"></i>
+<p>Don’t edit any of the configuration files (eg. <code class="language-plaintext highlighter-rouge">config/packages/kimai.yaml</code>) directly, as they will be overwritten during an update.
+Adjust settings from any configuration file by adding them in your own configuration in <code class="language-plaintext highlighter-rouge">local.yaml</code> (see below).</p>
 </div>
 
 <h3 id="env">.env</h3>
@@ -590,11 +585,7 @@ Adjust settings from any configuration file by adding them in your own configura
   <li><code class="language-plaintext highlighter-rouge">APP_SECRET</code> - secret used to encrypt session cookies (users will be logged out if you change it)</li>
 </ul>
 
-<div class="alert d-flex alert-warning" role="alert">
-    <i class="bx bx-alarm-exclamation lead me-3"></i>
-    <div>
-        You don't need a .env file, but can set these environment values via webserver config as well. Later ones will take precedence over the .env entries.
-    </div>
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i><p>You don’t need a .env file, but can set these environment values via webserver config as well. Later ones will take precedence over the .env entries.</p>
 </div>
 
 <h3 id="localyaml">local.yaml</h3>
@@ -623,11 +614,7 @@ This is the same concept which is used for the <code class="language-plaintext h
 <p>Whenever the documentation asks you to edit a yaml file from the <code class="language-plaintext highlighter-rouge">config/packages/</code> directory, it means you should copy
 this specific configuration key to your <code class="language-plaintext highlighter-rouge">local.yaml</code> in order to overwrite the default configuration.</p>
 
-<div class="alert d-flex alert-warning" role="alert">
-    <i class="bx bx-alarm-exclamation lead me-3"></i>
-    <div>
-        Be consistent with the indentation and don't mix spaces and tabs, YAML is very sensitive about that!
-    </div>
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i><p>Be consistent with the indentation and don’t mix spaces and tabs, YAML is very sensitive about that!</p>
 </div>
 
 <h3 id="reload-configurations">Reload configurations</h3>

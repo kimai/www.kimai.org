@@ -26,7 +26,7 @@
     <meta name="twitter:description" content="How to install Kimai on a Synology NAS">
     <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.webp">
     <link rel="canonical" href="https://www.kimai.org/documentation/synology.html" />
-    <link href="/assets/build/main.css?v3" rel="stylesheet" />
+    <link href="/assets/build/main.css?v4" rel="stylesheet" />
 </head>
 <body class="">
 
@@ -556,8 +556,31 @@
                     <p>This HowTo does not explain every step for the installation of Kimai on a Synology NAS with <strong>DSM 6</strong>, 
 but rather concentrates on the differences from the <a href="/documentation/installation.html">default installation</a>.</p>
 
-<div class="alert alert-info" role="alert">
-    ATTENTION: This manual seems to be outdated and not working with DSM 7+ anymore. Please use Docker to host Kimai on Synology!
+<h2 id="container-manager">Container Manager</h2>
+
+<ul>
+  <li>Container Manager</li>
+  <li>Image Update über - search <code class="language-plaintext highlighter-rouge">kimai/kimai2</code>, Doppelklick, Projekt stoppen, Erstellen, Neu starten</li>
+</ul>
+
+<h2 id="updating-the-image">Updating the image</h2>
+
+<p>Image Update über Images =&gt; Suche nach kimai/kimai2, Doppelklick, Projekt stoppen, Erstellen, Neu starten</p>
+
+<h2 id="copying-data-into-the-volume">Copying data into the volume</h2>
+
+<ul>
+  <li>Copy the ZIP files into a directory via File Station, eg. /volume1/home/kimai/</li>
+  <li>Extract the ZIP files, e.g. /volume1/home/kimai/KioskBundle-1.12.0</li>
+  <li>Rename the directory, e.g. /volume1/home/kimai/KioskBundle-1.12.0</li>
+  <li>ssh user@synology-ip</li>
+  <li>sudo su</li>
+  <li>cd /volume1/@docker/volumes/kimai_plugins/_data/</li>
+  <li>mv /</li>
+  <li>docker exec -it kimai /bin/bash</li>
+</ul>
+
+<div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i><p>ATTENTION: This manual seems to be outdated and not working with DSM 7+ anymore. Please use Docker to host Kimai on Synology!</p>
 </div>
 
 <h2 id="important-to-know">Important to know</h2>
@@ -740,13 +763,8 @@ php81 bin/console kimai:update
 <span class="nb">chown</span> <span class="nt">-R</span> :http <span class="nb">.</span>
 </code></pre></div></div>
 
-<div class="alert d-flex alert-warning" role="alert">
-    <i class="bx bx-alarm-exclamation lead me-3"></i>
-    <div>
-        
-Important: Finally execute the version specific tasks from the <a href="https://github.com/kimai/kimai/blob/main/UPGRADING.md">UPGRADING</a> guide.
-
-    </div>
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i>
+<p>Important: Finally execute the version specific tasks from the <a href="https://github.com/kimai/kimai/blob/main/UPGRADING.md">UPGRADING</a> guide.</p>
 </div>
 
 <h3 id="update-without-git">Update without git</h3>
@@ -771,14 +789,8 @@ php81 bin/console kimai:update
 <span class="nb">mv </span>kimai kimai-backup
 <span class="nb">mv </span>kimai-2.19.1 kimai
 </code></pre></div></div>
-
-<div class="alert d-flex alert-warning" role="alert">
-    <i class="bx bx-alarm-exclamation lead me-3"></i>
-    <div>
-        
-Important: Finally execute the version specific tasks from the <a href="https://github.com/kimai/kimai/blob/main/UPGRADING.md">UPGRADING</a> guide.
-
-    </div>
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i>
+<p>Important: Finally execute the version specific tasks from the <a href="https://github.com/kimai/kimai/blob/main/UPGRADING.md">UPGRADING</a> guide.</p>
 </div>
 
 <h2 id="sso-with-synology-directory-server">SSO with Synology Directory Server</h2>
@@ -902,7 +914,7 @@ make sure that <code class="language-plaintext highlighter-rouge">group</code> p
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#important-to-know" class="nav-link">Important to know</a></li><li class="nav-item"><a href="#installation-process" class="nav-link">Installation process</a><ul><li class="nav-item"><a href="#create-a-database" class="nav-link">Create a database</a></li><li class="nav-item"><a href="#env-file-and-database-connection" class="nav-link">.env file and database connection</a></li><li class="nav-item"><a href="#webserver-nginx-configuration" class="nav-link">Webserver (nginx) configuration</a></li></ul></li><li class="nav-item"><a href="#fixing-file-permissions" class="nav-link">Fixing file permissions</a></li><li class="nav-item"><a href="#updating-kimai" class="nav-link">Updating Kimai</a><ul><li class="nav-item"><a href="#update-without-git" class="nav-link">Update without git</a></li></ul></li><li class="nav-item"><a href="#sso-with-synology-directory-server" class="nav-link">SSO with Synology Directory Server</a></li><li class="nav-item"><a href="#troubleshooting" class="nav-link">Troubleshooting</a><ul><li class="nav-item"><a href="#allowed-memory-size-issue" class="nav-link">Allowed memory size issue</a></li><li class="nav-item"><a href="#white-page-after-changes-to-env" class="nav-link">White page after changes to .env</a></li></ul></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#container-manager" class="nav-link">Container Manager</a></li><li class="nav-item"><a href="#updating-the-image" class="nav-link">Updating the image</a></li><li class="nav-item"><a href="#copying-data-into-the-volume" class="nav-link">Copying data into the volume</a></li><li class="nav-item"><a href="#important-to-know" class="nav-link">Important to know</a></li><li class="nav-item"><a href="#installation-process" class="nav-link">Installation process</a><ul><li class="nav-item"><a href="#create-a-database" class="nav-link">Create a database</a></li><li class="nav-item"><a href="#env-file-and-database-connection" class="nav-link">.env file and database connection</a></li><li class="nav-item"><a href="#webserver-nginx-configuration" class="nav-link">Webserver (nginx) configuration</a></li></ul></li><li class="nav-item"><a href="#fixing-file-permissions" class="nav-link">Fixing file permissions</a></li><li class="nav-item"><a href="#updating-kimai" class="nav-link">Updating Kimai</a><ul><li class="nav-item"><a href="#update-without-git" class="nav-link">Update without git</a></li></ul></li><li class="nav-item"><a href="#sso-with-synology-directory-server" class="nav-link">SSO with Synology Directory Server</a></li><li class="nav-item"><a href="#troubleshooting" class="nav-link">Troubleshooting</a><ul><li class="nav-item"><a href="#allowed-memory-size-issue" class="nav-link">Allowed memory size issue</a></li><li class="nav-item"><a href="#white-page-after-changes-to-env" class="nav-link">White page after changes to .env</a></li></ul></li></ul>
         
     </aside>
 

@@ -43,7 +43,7 @@
     <link rel="alternate" hreflang="uk" href="https://www.kimai.org/uk/store/keleo-kiosk-barcode-bundle.html">
     <link rel="alternate" hreflang="zh_Hans" href="https://www.kimai.org/zh_Hans/store/keleo-kiosk-barcode-bundle.html">
     <link rel="alternate" hreflang="zh_Hant" href="https://www.kimai.tw/store/keleo-kiosk-barcode-bundle.html">
-    <link href="/assets/build/main.css?v3" rel="stylesheet" />
+    <link href="/assets/build/main.css?v4" rel="stylesheet" />
 </head>
 <body class="">
 
@@ -648,7 +648,7 @@ Compatibility: requires minimum Kimai 1.10
 
     <div class="card border-primary mb-3">
                        <p class="card-title bg-faded-primary p-1 mb-1"><strong><i class="bx bxs-info-circle ms-2 me-2 text-primary fs-5"></i>How to reload Kimai cache</strong></p>
-                       <div class="card-body m-0 pb-0 pt-3 px-3">
+                       <div class="card-body card-note m-0 pt-3 px-3">
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/console kimai:reload --env=prod
 </code></pre></div></div>
 
@@ -664,7 +664,7 @@ Compatibility: requires minimum Kimai 1.10
 
 <div class="card border-primary mb-3">
                        <p class="card-title bg-faded-primary p-1 mb-1"><strong><i class="bx bxs-info-circle ms-2 me-2 text-primary fs-5"></i>Adjust file permission</strong></p>
-                       <div class="card-body m-0 pb-0 pt-3 px-3">
+                       <div class="card-body card-note m-0 pt-3 px-3">
 <p>You have to allow PHP (your webserver process) to write to <code class="language-plaintext highlighter-rouge">var/</code> and it subdirectories.</p>
 
 <p>Here is an example for Debian/Ubuntu, to be executed inside the Kimai directory:</p>
@@ -691,18 +691,11 @@ And you probably need to prefix them with <code class="language-plaintext highli
 
         <p>This will create the required database tables and update them to the latest version.</p>
 
-
-
-
-
-<div class="alert alert-warning" role="alert">
-    
-If you see an error like <code class="language-plaintext highlighter-rouge">There are no commands defined in the "kimai:bundle:XYZ" namespace.</code>,
-then either the directory has a wrong name (must be <strong>var/plugins/KioskBundle/</strong>) or you forgot to clear the cache (look above).
-
+<div class="alert alert-warning d-flex" role="alert">
+<i class="bx bx-alarm-exclamation lead me-3"></i>
+<p>If you see an error like <code class="language-plaintext highlighter-rouge">There are no commands defined in the "kimai:bundle:XYZ" namespace.</code>,
+then either the directory has a wrong name (must be <strong>var/plugins/KioskBundle/</strong>) or you forgot to clear the cache (look above).</p>
 </div>
-
-
     
 
     

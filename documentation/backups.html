@@ -25,7 +25,7 @@
     <meta name="twitter:site" content="@kimai_org">
     <meta name="twitter:description" content="How to backup and restore your Kimai installation">
     <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.webp">
-    <link href="/assets/build/main.css?v3" rel="stylesheet" />
+    <link href="/assets/build/main.css?v4" rel="stylesheet" />
 </head>
 <body class="">
 
@@ -595,7 +595,7 @@ But it’s good to have the information in the unlikely case of a problem while 
 
 <div class="card border-primary mb-3">
                        <p class="card-title bg-faded-primary p-1 mb-1"><strong><i class="bx bxs-info-circle ms-2 me-2 text-primary fs-5"></i>How to reload Kimai cache</strong></p>
-                       <div class="card-body m-0 pb-0 pt-3 px-3">
+                       <div class="card-body card-note m-0 pt-3 px-3">
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/console kimai:reload --env=prod
 </code></pre></div></div>
 
@@ -612,7 +612,7 @@ But it’s good to have the information in the unlikely case of a problem while 
 
 <div class="card border-primary mb-3">
                        <p class="card-title bg-faded-primary p-1 mb-1"><strong><i class="bx bxs-info-circle ms-2 me-2 text-primary fs-5"></i>Adjust file permission</strong></p>
-                       <div class="card-body m-0 pb-0 pt-3 px-3">
+                       <div class="card-body card-note m-0 pt-3 px-3">
 <p>You have to allow PHP (your webserver process) to write to <code class="language-plaintext highlighter-rouge">var/</code> and it subdirectories.</p>
 
 <p>Here is an example for Debian/Ubuntu, to be executed inside the Kimai directory:</p>

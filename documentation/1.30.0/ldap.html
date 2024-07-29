@@ -29,7 +29,7 @@
     <link rel="alternate" hreflang="en" href="https://www.kimai.org/documentation/1.14/ldap.html">
     <link rel="alternate" hreflang="en" href="https://www.kimai.org/documentation/1.30.0/ldap.html">
     <link rel="alternate" hreflang="en" href="https://www.kimai.org/documentation/1.8/ldap.html">
-    <link href="/assets/build/main.css?v3" rel="stylesheet" />
+    <link href="/assets/build/main.css?v4" rel="stylesheet" />
 </head>
 <body class="">
 
@@ -561,16 +561,10 @@
                 
                 <div id="documentation-content">
                     
-
-
-
-<div class="alert alert-danger" role="alert">
-    
-You are viewing an older version of this documentation page. A newer version is available <a href="/documentation/ldap.html">here</a>.
-
+<div class="alert alert-danger d-flex" role="alert">
+<i class="bx bx-info-circle lead me-3"></i>
+<p>You are viewing an older version of this documentation page. A newer version is available <a href="/documentation/ldap.html">here</a>.</p>
 </div>
-
-
 
 <p>Kimai supports authentication against your company directory server (LDAP or AD).
 LDAP users will be imported during the first login and their attributes and groups
@@ -805,9 +799,8 @@ if your LDAP is not available (only one LDAP server can be configured).</p>
                 <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_attr</span><span class="pi">:</span> <span class="nv">mail</span><span class="pi">,</span> <span class="nv">user_method</span><span class="pi">:</span> <span class="nv">setEmail</span> <span class="pi">}</span>
                 <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_attr</span><span class="pi">:</span> <span class="nv">cn</span><span class="pi">,</span> <span class="nv">user_method</span><span class="pi">:</span> <span class="nv">setAlias</span> <span class="pi">}</span>
 </code></pre></div></div>
-
-<div class="alert alert-warning" role="alert">
-    You need to configure the attributes in lower-case, otherwise they won't be processed.
+<div class="alert alert-warning d-flex" role="alert">
+<i class="bx bx-alarm-exclamation lead me-3"></i><p>You need to configure the attributes in lower-case, otherwise they won’t be processed.</p>
 </div>
 
 <p>In this example we tell Kimai to sync the following fields:</p>
@@ -828,8 +821,8 @@ Its unlikely that you will need those, but they also exist: <code class="languag
 <p>Kimai can use your LDAP groups and map them to <a href="/documentation/users.html">user roles</a>.
 If configured, it will execute another <code class="language-plaintext highlighter-rouge">search</code> against your LDAP after authentication and importing the user attributes.</p>
 
-<div class="alert alert-warning" role="alert">
-    Every user automatically owns the ROLE_USER role, you don't have to create a mapping for it.
+<div class="alert alert-warning d-flex" role="alert">
+<i class="bx bx-alarm-exclamation lead me-3"></i><p>Every user automatically owns the ROLE_USER role, you don’t have to create a mapping for it.</p>
 </div>
 
 <p>Assuming this <code class="language-plaintext highlighter-rouge">role</code> configuration:</p>
@@ -858,8 +851,8 @@ group names from the result-sets attribute <code class="language-plaintext highl
 
 <p>These converted names will be validated and <a href="/documentation/users.html">only existing roles</a> will pass to the user profile.</p>
 
-<div class="alert alert-info" role="alert">
-    Remove the entire 'role' configuration block to deactivate role sync!
+<div class="alert alert-info d-flex" role="alert">
+<i class="bx bx-message-rounded-detail lead me-3"></i><p>Remove the entire ‘role’ configuration block to deactivate role sync!</p>
 </div>
 
 <h2 id="known-limitations">Known limitations</h2>
@@ -897,8 +890,8 @@ demote or promote a User permanently to another role in Kimai.</p>
 
 <h2 id="examples">Examples</h2>
 
-<div class="alert alert-info" role="alert">
-    Before you start to configure your LDAP, switch to 'dev' environment and tail 'var/log/dev.log'.
+<div class="alert alert-info d-flex" role="alert">
+<i class="bx bx-message-rounded-detail lead me-3"></i><p>Before you start to configure your LDAP, switch to ‘dev’ environment and tail ‘var/log/dev.log’.</p>
 </div>
 
 <p>Another simple solution to debug the generated queries is to start your OpenLDAP with <code class="language-plaintext highlighter-rouge">sudo /usr/libexec/slapd -d256</code>.</p>
@@ -1003,9 +996,8 @@ the new account would have been promoted into these roles.</p>
                 <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_value</span><span class="pi">:</span> <span class="nv">Sysadmins</span><span class="pi">,</span> <span class="nv">role</span><span class="pi">:</span> <span class="nv">ROLE_SUPER_ADMIN</span> <span class="pi">}</span>
                 <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_value</span><span class="pi">:</span> <span class="nv">Users</span><span class="pi">,</span> <span class="nv">role</span><span class="pi">:</span> <span class="nv">ROLE_USER</span> <span class="pi">}</span>
 </code></pre></div></div>
-
-<div class="alert alert-warning" role="alert">
-    You need to configure the attributes in lower-case, otherwise they won't be processed.
+<div class="alert alert-warning d-flex" role="alert">
+<i class="bx bx-alarm-exclamation lead me-3"></i><p>You need to configure the attributes in lower-case, otherwise they won’t be processed.</p>
 </div>
 
 <p>The LDAP code is based on <a href="https://github.com/Maks3w/FR3DLdapBundle">the work</a> by <a href="https://github.com/Maks3w" class="user-mention">@Maks3w</a> , thanks for sharing!</p>

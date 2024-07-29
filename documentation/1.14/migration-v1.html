@@ -26,7 +26,7 @@
     <meta name="twitter:description" content="Install Kimai 2 and import your existing timesheet data from Kimai 1">
     <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.webp">
     <link rel="canonical" href="https://www.kimai.org/documentation/migration-v1.html" />
-    <link href="/assets/build/main.css?v3" rel="stylesheet" />
+    <link href="/assets/build/main.css?v4" rel="stylesheet" />
 </head>
 <body class="">
 
@@ -554,26 +554,14 @@
                 
                 <div id="documentation-content">
                     
-
-
-
-<div class="alert alert-danger" role="alert">
-    
-You are viewing an older version of this documentation page. A newer version is available <a href="/documentation/migration-v1.html">here</a>.
-
+<div class="alert alert-danger d-flex" role="alert"><i class="bx bx-info-circle lead me-3"></i>
+<p>You are viewing an older version of this documentation page. A newer version is available <a href="/documentation/migration-v1.html">here</a>.</p>
 </div>
-
-
 
 <p>This documentation covers all necessary steps to migrate from Kimai 1 to Kimai 2.</p>
 
-<div class="alert d-flex alert-success" role="alert">
-    <i class="bx bx-support lead me-3"></i>
-    <div>
-        
-You can <a href="/store/installation-support.html">get professional support</a> if you are not sure about performing the upgrade yourself. 
-
-    </div>
+<div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i>
+<p>You can <a href="/store/installation-support.html">get professional support</a> if you are not sure about performing the upgrade yourself.</p>
 </div>
 
 <h2 id="introduction">Introduction</h2>
@@ -629,8 +617,7 @@ You have to have SSH access to your server, as you will use a command shipped wi
 
 <h2 id="database-import">Database import</h2>
 
-<div class="alert alert-warning" role="alert">
-    It is strongly recommended to test the import, as unexpected problems may occur. If you already created data (like users and customers), backup your Kimai 2 database before performing the first tests!
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i><p>It is strongly recommended to test the import, as unexpected problems may occur. If you already created data (like users and customers), backup your Kimai 2 database before performing the first tests!</p>
 </div>
 
 <p>See the help for the import command and all its arguments by executing:</p>
@@ -660,8 +647,7 @@ The connection will use the charset <code class="language-plaintext highlighter-
 While <a href="/store/installation-support.html">migrating dozens of customers installations</a> I stumbled upon some recurring problems, 
 that can be solved with some SQL commands.</p>
 
-<div class="alert alert-warning" role="alert">
-    Be aware, depending on your Kimai 1 version the field names might be different in the following snippets
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i><p>Be aware, depending on your Kimai 1 version the field names might be different in the following snippets</p>
 </div>
 
 <h4 id="broken-character">Broken character</h4>

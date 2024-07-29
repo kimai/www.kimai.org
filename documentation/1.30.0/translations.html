@@ -26,7 +26,7 @@
     <meta name="twitter:description" content="i18n, language specific configurations and the translation files">
     <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.webp">
     <link rel="canonical" href="https://www.kimai.org/documentation/translations.html" />
-    <link href="/assets/build/main.css?v3" rel="stylesheet" />
+    <link href="/assets/build/main.css?v4" rel="stylesheet" />
 </head>
 <body class="">
 
@@ -373,16 +373,9 @@
                 
                 <div id="documentation-content">
                     
-
-
-
-<div class="alert alert-danger" role="alert">
-    
-You are viewing an older version of this documentation page. A newer version is available <a href="/documentation/translations.html">here</a>.
-
+<div class="alert alert-danger d-flex" role="alert"><i class="bx bx-info-circle lead me-3"></i>
+<p>You are viewing an older version of this documentation page. A newer version is available <a href="/documentation/translations.html">here</a>.</p>
 </div>
-
-
 
 <p>Kimai can be localized to any language and is already translated to
 <strong>Arabic, Czech, Danish, German, German (Swiss), Greek, English, Esperanto, Spanish, Basque, Persian, Finnish, Faroese, French, Hebrew, Croatian, Hungarian, Indonesian, Italian, Japanese, Korean, Norwegian (Bokmål), Dutch, Panjabi, Polish, Portuguese, Portuguese (Brazilian), Romanian, Russian, Slovakian, Slovenian, Swedish, Turkish, Ukrainian, Vietnamese, Chinese (traditional), Chinese (simplified)</strong></p>
@@ -556,10 +549,8 @@ Read below how to add a new language and configure the output formats for date a
   <li><code class="language-plaintext highlighter-rouge">validators</code> - related to violations/validation of submitted form data (or API calls)</li>
 </ul>
 
-<div class="alert alert-danger" role="alert">
-    
-If you apply changes to any files mentioned on this page, you have to <a href="/documentation/cache.html">clear the cache</a>.
-
+<div class="alert alert-danger d-flex" role="alert"><i class="bx bx-info-circle lead me-3"></i>
+<p>If you apply changes to any files mentioned on this page, you have to <a href="/documentation/cache.html">clear the cache</a>.</p>
 </div>
 
 <h3 id="authentication-screens">Authentication screens</h3>
@@ -636,11 +627,7 @@ You only have to overwrite the keys that are different, so if you new language <
 
 <h3 id="import-frontend-locales">Import frontend locales</h3>
 
-<div class="alert d-flex alert-warning" role="alert">
-    <i class="bx bx-alarm-exclamation lead me-3"></i>
-    <div>
-        You can skip this step, we will do it with when we test your changes.
-    </div>
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i><p>You can skip this step, we will do it with when we test your changes.</p>
 </div>
 
 <p>Make sure the new locale is included in the frontend dependencies. For example Kimai includes moment.js, which ships its own translations.

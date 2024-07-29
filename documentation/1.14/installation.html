@@ -26,7 +26,7 @@
     <meta name="twitter:description" content="How to install Kimai on your server with git, composer and SSH or FTP">
     <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.webp">
     <link rel="canonical" href="https://www.kimai.org/documentation/installation.html" />
-    <link href="/assets/build/main.css?v3" rel="stylesheet" />
+    <link href="/assets/build/main.css?v4" rel="stylesheet" />
 </head>
 <body class="">
 
@@ -554,16 +554,9 @@
                 
                 <div id="documentation-content">
                     
-
-
-
-<div class="alert alert-danger" role="alert">
-    
-You are viewing an older version of this documentation page. A newer version is available <a href="/documentation/installation.html">here</a>.
-
+<div class="alert alert-danger d-flex" role="alert"><i class="bx bx-info-circle lead me-3"></i>
+<p>You are viewing an older version of this documentation page. A newer version is available <a href="/documentation/installation.html">here</a>.</p>
 </div>
-
-
 
 <p>The recommended way to install Kimai is via SSH, you need GIT and <a href="https://getcomposer.org/doc/00-intro.md">Composer</a>.</p>
 
@@ -590,14 +583,9 @@ You need to install Git and <a href="https://getcomposer.org/doc/00-intro.md">Co
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/console kimai:install <span class="nt">-n</span>
 </code></pre></div></div>
 
-<div class="alert d-flex alert-warning" role="alert">
-    <i class="bx bx-fab fa-windows lead me-3"></i>
-    <div>
-        
-Windows users might have to prefix the composer and installation commands with <code class="language-plaintext highlighter-rouge">php</code>, eg.:<br />
-<code class="language-plaintext highlighter-rouge">php bin/console kimai:install -n</code>
-
-    </div>
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i>
+<p>Windows users might have to prefix the composer and installation commands with <code class="language-plaintext highlighter-rouge">php</code>, eg.:<br />
+<code class="language-plaintext highlighter-rouge">php bin/console kimai:install -n</code></p>
 </div>
 
 <h3 id="file-permissions">File permissions</h3>
@@ -606,7 +594,7 @@ Windows users might have to prefix the composer and installation commands with <
 <a href="https://symfony.com/doc/current/setup/file_permissions.html">file permissions are correct</a>.</p>
 <div class="card border-primary mb-3">
                        <p class="card-title bg-faded-primary p-1 mb-1"><strong><i class="bx bxs-info-circle ms-2 me-2 text-primary fs-5"></i>Adjust file permission</strong></p>
-                       <div class="card-body m-0 pb-0 pt-3 px-3">
+                       <div class="card-body card-note m-0 pt-3 px-3">
 <p>You have to allow PHP (your webserver process) to write to <code class="language-plaintext highlighter-rouge">var/</code> and it subdirectories.</p>
 
 <p>Here is an example for Debian/Ubuntu, to be executed inside the Kimai directory:</p>
@@ -638,11 +626,7 @@ And you probably need to prefix them with <code class="language-plaintext highli
 <p>Configure your web server (like Nginx or Apache) to point its DocumentRoot at the <code class="language-plaintext highlighter-rouge">public/</code> directory.
 For more details, see the <a href="/documentation/webserver-configuration.html">Webserver How-To</a>.</p>
 
-<div class="alert d-flex alert-success" role="alert">
-    <i class="bx bx-far fa-smile-beam lead me-3"></i>
-    <div>
-        Installation complete: enjoy time-tracking!
-    </div>
+<div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i><p>Installation complete: enjoy time-tracking!</p>
 </div>
 
 <p>Oh … wait! Before you leave, please read the <a href="/documentation/initial-setup.html">initial setup guide</a>.</p>

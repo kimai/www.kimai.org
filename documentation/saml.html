@@ -26,7 +26,7 @@
     <meta name="twitter:description" content="How to use SAML identity provider with Kimai">
     <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.webp">
     <link rel="canonical" href="https://www.kimai.org/documentation/saml.html" />
-    <link href="/assets/build/main.css?v3" rel="stylesheet" />
+    <link href="/assets/build/main.css?v4" rel="stylesheet" />
 </head>
 <body class="">
 
@@ -672,16 +672,11 @@ and <a href="/documentation/cache.html">reload the cache</a> afterwards:</p>
 
 <p>If you have troubles with your certificate you can <a href="https://www.samltool.com/format_x509cert.php">use this online tool</a> to convert the X.509 cert into “string format”.</p>
 
-<div class="alert alert-info" role="alert">
-    User data and roles are synchronized during each login.
+<div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i><p>User data and roles are synchronized during each login.</p>
 </div>
-
-<div class="alert alert-info" role="alert">
-    Every user automatically owns the ROLE_USER role, you don't have to create a mapping for it.
+<div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i><p>Every user automatically owns the ROLE_USER role, you don’t have to create a mapping for it.</p>
 </div>
-
-<div class="alert alert-warning" role="alert">
-    Every user needs a username and email address, you cannot activate SAML without a mapping for the email. The username cannot be set from SAML attributes, but will always be taken from the SAML request.
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i><p>Every user needs a username and email address, you cannot activate SAML without a mapping for the email. The username cannot be set from SAML attributes, but will always be taken from the SAML request.</p>
 </div>
 
 <h3 id="multiline-certificate---x509cert">Multiline Certificate - x509cert</h3>

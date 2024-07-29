@@ -26,7 +26,7 @@
     <meta name="twitter:description" content="How to install Kimai on your server with git, composer and SSH or FTP">
     <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.webp">
     <link rel="canonical" href="https://www.kimai.org/documentation/installation.html" />
-    <link href="/assets/build/main.css?v3" rel="stylesheet" />
+    <link href="/assets/build/main.css?v4" rel="stylesheet" />
 </head>
 <body class="">
 
@@ -555,7 +555,7 @@
                 <div id="documentation-content">
                     <div class="card border-primary mb-3">
                        <p class="card-title bg-faded-primary p-1 mb-1"><strong><i class="bx bxs-info-circle ms-2 me-2 text-primary fs-5"></i>Self-hosting knowledge prerequisites</strong></p>
-                       <div class="card-body m-0 pb-0 pt-3 px-3">
+                       <div class="card-body card-note m-0 pt-3 px-3">
 <p>Self-hosting Kimai requires technical knowledge, including:</p>
 
 <ul>
@@ -622,14 +622,9 @@
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/console kimai:install <span class="nt">-n</span>
 </code></pre></div></div>
 
-<div class="alert d-flex alert-warning" role="alert">
-    <i class="bx bx-fab fa-windows lead me-3"></i>
-    <div>
-        
-Windows users might have to prefix the composer and installation commands with <code class="language-plaintext highlighter-rouge">php</code>, eg.:<br />
-<code class="language-plaintext highlighter-rouge">php bin/console kimai:install -n</code>
-
-    </div>
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i>
+<p>You might have to prefix the composer and installation commands with either <code class="language-plaintext highlighter-rouge">php</code> or even the correct version:<br />
+<code class="language-plaintext highlighter-rouge">php bin/console kimai:install -n</code> or <code class="language-plaintext highlighter-rouge">php8.3 bin/console kimai:install -n</code></p>
 </div>
 
 <h3 id="file-permissions">File permissions</h3>
@@ -638,7 +633,7 @@ Windows users might have to prefix the composer and installation commands with <
 <a href="https://symfony.com/doc/current/setup/file_permissions.html">file permissions are correct</a>.</p>
 <div class="card border-primary mb-3">
                        <p class="card-title bg-faded-primary p-1 mb-1"><strong><i class="bx bxs-info-circle ms-2 me-2 text-primary fs-5"></i>Adjust file permission</strong></p>
-                       <div class="card-body m-0 pb-0 pt-3 px-3">
+                       <div class="card-body card-note m-0 pt-3 px-3">
 <p>You have to allow PHP (your webserver process) to write to <code class="language-plaintext highlighter-rouge">var/</code> and it subdirectories.</p>
 
 <p>Here is an example for Debian/Ubuntu, to be executed inside the Kimai directory:</p>
@@ -696,8 +691,7 @@ For more details, see the <a href="/documentation/webserver-configuration.html">
 
 <h3 id="ftp-installation">FTP installation</h3>
 
-<div class="alert alert-warning" role="alert">
-    Installation via FTP is not supported, because most of Kimai's management tasks rely on the console.
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i><p>Installation via FTP is not supported, because most of Kimai’s management tasks rely on the console.</p>
 </div>
 
 <p>You have two choices:</p>
@@ -706,13 +700,11 @@ For more details, see the <a href="/documentation/webserver-configuration.html">
   <li>use a <a href="https://www.kimai.cloud">SaaS time-tracking software</a></li>
 </ul>
 
-<div class="alert alert-info" role="alert">
-    
-If you don’t have the technical background for managing a server yourself and need to rely on a shared hosting package,
+<div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i>
+<p>If you don’t have the technical background for managing a server yourself and need to rely on a shared hosting package,
 it is better to stop hosting business critical software yourself!
 If you thought about switching to a managed server before (they are affordable these days)
-you can contact me, <a href="/store/installation-support.html">I offer paid setup support</a>.
-
+you can contact me, <a href="/store/installation-support.html">I offer paid setup support</a>.</p>
 </div>
 
 <h3 id="ansible">Ansible</h3>

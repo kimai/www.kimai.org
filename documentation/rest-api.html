@@ -25,7 +25,7 @@
     <meta name="twitter:site" content="@kimai_org">
     <meta name="twitter:description" content="Access your time-tracking data via the JSON API with Kimai">
     <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.webp">
-    <link href="/assets/build/main.css?v3" rel="stylesheet" />
+    <link href="/assets/build/main.css?v4" rel="stylesheet" />
 </head>
 <body class="">
 
@@ -385,15 +385,10 @@ You need to authenticate to see them, credentials can be <a href="/en/demo.html"
   <li><code class="language-plaintext highlighter-rouge">Authorization: Bearer xyz</code> - here <code class="language-plaintext highlighter-rouge">xyz</code> is the unique API token for that account</li>
 </ul>
 
-<div class="alert alert-primary" role="alert">
-    The API token is NOT the normal user password. API tokens can be generated in the user profile.
+<div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i><p>The API token is NOT the normal user password. API tokens can be generated in the user profile.</p>
 </div>
 
-<div class="alert d-flex alert-warning" role="alert">
-    <i class="bx bx-alarm-exclamation lead me-3"></i>
-    <div>
-        You MUST use secure HTTPS calls to protect both credentials and data.
-    </div>
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i><p>You MUST use secure HTTPS calls to protect both credentials and data.</p>
 </div>
 
 <h3 id="api-tokens">API tokens</h3>

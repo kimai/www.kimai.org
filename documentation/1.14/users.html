@@ -28,7 +28,7 @@
     <link rel="canonical" href="https://www.kimai.org/documentation/users.html" />
     <link rel="alternate" hreflang="en" href="https://www.kimai.org/documentation/1.14/users.html">
     <link rel="alternate" hreflang="en" href="https://www.kimai.org/documentation/1.30.0/users.html">
-    <link href="/assets/build/main.css?v3" rel="stylesheet" />
+    <link href="/assets/build/main.css?v4" rel="stylesheet" />
 </head>
 <body class="">
 
@@ -629,16 +629,9 @@
                 
                 <div id="documentation-content">
                     
-
-
-
-<div class="alert alert-danger" role="alert">
-    
-You are viewing an older version of this documentation page. A newer version is available <a href="/documentation/users.html">here</a>.
-
+<div class="alert alert-danger d-flex" role="alert"><i class="bx bx-info-circle lead me-3"></i>
+<p>You are viewing an older version of this documentation page. A newer version is available <a href="/documentation/users.html">here</a>.</p>
 </div>
-
-
 
 <h2 id="permissions">Permissions</h2>
 
@@ -689,12 +682,10 @@ You are viewing an older version of this documentation page. A newer version is 
   </tbody>
 </table>
 
-<div class="alert alert-success" role="alert">
-    Every user is automatically member of the ROLE_USER, this behaviour cannot be changed.
+<div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i><p>Every user is automatically member of the ROLE_USER, this behaviour cannot be changed.</p>
 </div>
 
-<div class="alert alert-warning" role="alert">
-    ROLE_ADMIN and ROLE_SUPER_ADMIN are special roles and treated different internally: they are not bound to team permissions and can see all content, no matter what their team assignments looks like.
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i><p>ROLE_ADMIN and ROLE_SUPER_ADMIN are special roles and treated different internally: they are not bound to team permissions and can see all content, no matter what their team assignments looks like.</p>
 </div>
 
 <p>The applied permissions of your Kimai installation can be seen via the user administration, 
@@ -704,8 +695,7 @@ e.g. <a href="https://demo.kimai.org/en/admin/permissions">https://demo.kimai.or
 
 <p>If the pre-defined roles are not sufficient for your use-case and you need more roles, you can create new ones.</p>
 
-<div class="alert alert-warning" role="alert">
-    Allowed character are: `A-Z` and `_`. If you use different character, you might experience strange bugs.
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i><p>Allowed character are: <code class="language-plaintext highlighter-rouge">A-Z</code> and <code class="language-plaintext highlighter-rouge">_</code>. If you use different character, you might experience strange bugs.</p>
 </div>
 
 <p>Every user with the <a href="/documentation/permissions.html">permission</a> <code class="language-plaintext highlighter-rouge">role_permissions</code> can create new user roles 

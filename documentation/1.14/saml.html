@@ -28,7 +28,7 @@
     <link rel="canonical" href="https://www.kimai.org/documentation/saml.html" />
     <link rel="alternate" hreflang="en" href="https://www.kimai.org/documentation/1.14/saml.html">
     <link rel="alternate" hreflang="en" href="https://www.kimai.org/documentation/1.30.0/saml.html">
-    <link href="/assets/build/main.css?v3" rel="stylesheet" />
+    <link href="/assets/build/main.css?v4" rel="stylesheet" />
 </head>
 <body class="">
 
@@ -558,16 +558,9 @@
                 
                 <div id="documentation-content">
                     
-
-
-
-<div class="alert alert-danger" role="alert">
-    
-You are viewing an older version of this documentation page. A newer version is available <a href="/documentation/saml.html">here</a>.
-
+<div class="alert alert-danger d-flex" role="alert"><i class="bx bx-info-circle lead me-3"></i>
+<p>You are viewing an older version of this documentation page. A newer version is available <a href="/documentation/saml.html">here</a>.</p>
 </div>
-
-
 
 <p>Kimai supports authentication via a SAML provider of your choice (for now it was tested with G Suite and MS Azure accounts).
 SAML users will be imported during the first login with their attributes and groups.</p>
@@ -685,16 +678,11 @@ SAML users will be imported during the first login with their attributes and gro
 
 <p>If you have troubles with your certificate you could <a href="https://www.samltool.com/format_x509cert.php">try to use this SAML online tool</a> to find the correct formatting (whether you trust this tool is up to you!). You could use it with fake data, check the result format and then apply it to your certificate manually.</p>
 
-<div class="alert alert-info" role="alert">
-    User data and roles are synchronized during each login.
+<div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i><p>User data and roles are synchronized during each login.</p>
 </div>
-
-<div class="alert alert-info" role="alert">
-    Every user automatically owns the ROLE_USER role, you don't have to create a mapping for it.
+<div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i><p>Every user automatically owns the ROLE_USER role, you don’t have to create a mapping for it.</p>
 </div>
-
-<div class="alert alert-warning" role="alert">
-    Every user needs a username and email address, you cannot activate SAML without a mapping for the email. The username cannot be set from SAML attributes, but will always be taken from the SAML request.
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i><p>Every user needs a username and email address, you cannot activate SAML without a mapping for the email. The username cannot be set from SAML attributes, but will always be taken from the SAML request.</p>
 </div>
 
 <h3 id="connection-details">Connection details</h3>

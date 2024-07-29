@@ -29,7 +29,7 @@
     <link rel="alternate" hreflang="en" href="https://www.kimai.org/documentation/1.14/invoices.html">
     <link rel="alternate" hreflang="en" href="https://www.kimai.org/documentation/1.15/invoices.html">
     <link rel="alternate" hreflang="en" href="https://www.kimai.org/documentation/1.8/invoices.html">
-    <link href="/assets/build/main.css?v3" rel="stylesheet" />
+    <link href="/assets/build/main.css?v4" rel="stylesheet" />
 </head>
 <body class="">
 
@@ -632,16 +632,10 @@
                 
                 <div id="documentation-content">
                     
-
-
-
-<div class="alert alert-danger" role="alert">
-    
-You are viewing an older version of this documentation page. A newer version is available <a href="/documentation/invoices.html">here</a>.
-
+<div class="alert alert-danger d-flex" role="alert">
+<i class="bx bx-info-circle lead me-3"></i>
+<p>You are viewing an older version of this documentation page. A newer version is available <a href="/documentation/invoices.html">here</a>.</p>
 </div>
-
-
 
 <p>Kimai allows creating invoices from timesheet data in several formats.</p>
 
@@ -709,13 +703,9 @@ All examples represent the date <code class="language-plaintext highlighter-roug
 <p>Each replacer (x) can be combined with a length formatter, which will prepend (X) leading zeros, eg. <code class="language-plaintext highlighter-rouge">{x,X}</code>.
 Example: to get a three digit long string with year counter use <code class="language-plaintext highlighter-rouge">{cy,3}</code>, which results in <code class="language-plaintext highlighter-rouge">001</code> for the first invoice of the year.</p>
 
-<div class="alert d-flex alert-warning" role="alert">
-    <i class="bx bx-alarm-exclamation lead me-3"></i>
-    <div>
-        
-Characters outside the replacer <strong>cannot</strong> include <code class="language-plaintext highlighter-rouge">{</code> and <code class="language-plaintext highlighter-rouge">}</code>.
-
-    </div>
+<div class="alert alert-warning d-flex" role="alert">
+<i class="bx bx-alarm-exclamation lead me-3"></i>
+<p>Characters outside the replacer <strong>cannot</strong> include <code class="language-plaintext highlighter-rouge">{</code> and <code class="language-plaintext highlighter-rouge">}</code>.</p>
 </div>
 
 <p>To change the format, look out for the <a class="btn btn-secondary px-3" href="#"><i class="bx bx-cog pe-2"></i></a>
@@ -861,11 +851,8 @@ These records cannot be edited any longer by regular users and are excluded by d
   <li>You can <a href="/documentation/local-yaml.html">configure different search directories</a> through the config key <code class="language-plaintext highlighter-rouge">kimai.invoice.documents</code> if you want to add additional template source directories</li>
 </ul>
 
-<div class="alert d-flex alert-warning" role="alert">
-    <i class="bx bx-alarm-exclamation lead me-3"></i>
-    <div>
-        Do NOT change the default templates, but copy the file and save it (with a new filename) at var/invoices/
-    </div>
+<div class="alert alert-warning d-flex" role="alert">
+<i class="bx bx-alarm-exclamation lead me-3"></i><p>Do NOT change the default templates, but copy the file and save it (with a new filename) at var/invoices/</p>
 </div>
 
 <p>After you changed an invoice template, you have to <a href="/documentation/cache.html">clear the cache</a> to see the results.</p>

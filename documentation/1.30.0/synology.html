@@ -26,7 +26,7 @@
     <meta name="twitter:description" content="How to install Kimai on a Synology NAS">
     <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.webp">
     <link rel="canonical" href="https://www.kimai.org/documentation/synology.html" />
-    <link href="/assets/build/main.css?v3" rel="stylesheet" />
+    <link href="/assets/build/main.css?v4" rel="stylesheet" />
 </head>
 <body class="">
 
@@ -554,22 +554,14 @@
                 
                 <div id="documentation-content">
                     
-
-
-
-<div class="alert alert-danger" role="alert">
-    
-You are viewing an older version of this documentation page. A newer version is available <a href="/documentation/synology.html">here</a>.
-
+<div class="alert alert-danger d-flex" role="alert"><i class="bx bx-info-circle lead me-3"></i>
+<p>You are viewing an older version of this documentation page. A newer version is available <a href="/documentation/synology.html">here</a>.</p>
 </div>
-
-
 
 <p>This HowTo does not explain every step for the installation of Kimai on a Synology NAS with <strong>DSM 6</strong>, 
 but rather concentrates on the differences from the <a href="/documentation/installation.html">default installation</a>.</p>
 
-<div class="alert alert-info" role="alert">
-    ATTENTION: This manual seems to be outdated and not working with DSM 7+ anymore. Please use Docker to host Kimai on Synology!
+<div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i><p>ATTENTION: This manual seems to be outdated and not working with DSM 7+ anymore. Please use Docker to host Kimai on Synology!</p>
 </div>
 
 <h2 id="important-to-know">Important to know</h2>
@@ -752,13 +744,8 @@ php81 bin/console kimai:update
 <span class="nb">chown</span> <span class="nt">-R</span> :http <span class="nb">.</span>
 </code></pre></div></div>
 
-<div class="alert d-flex alert-warning" role="alert">
-    <i class="bx bx-alarm-exclamation lead me-3"></i>
-    <div>
-        
-Important: Finally execute the version specific tasks from the <a href="https://github.com/kimai/kimai/blob/main/UPGRADING.md">UPGRADING</a> guide.
-
-    </div>
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i>
+<p>Important: Finally execute the version specific tasks from the <a href="https://github.com/kimai/kimai/blob/main/UPGRADING.md">UPGRADING</a> guide.</p>
 </div>
 
 <h3 id="update-without-git">Update without git</h3>
@@ -783,14 +770,8 @@ php81 bin/console kimai:update
 <span class="nb">mv </span>kimai kimai-backup
 <span class="nb">mv </span>kimai-2.19.1 kimai
 </code></pre></div></div>
-
-<div class="alert d-flex alert-warning" role="alert">
-    <i class="bx bx-alarm-exclamation lead me-3"></i>
-    <div>
-        
-Important: Finally execute the version specific tasks from the <a href="https://github.com/kimai/kimai/blob/main/UPGRADING.md">UPGRADING</a> guide.
-
-    </div>
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i>
+<p>Important: Finally execute the version specific tasks from the <a href="https://github.com/kimai/kimai/blob/main/UPGRADING.md">UPGRADING</a> guide.</p>
 </div>
 
 <h2 id="sso-with-synology-directory-server">SSO with Synology Directory Server</h2>

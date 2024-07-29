@@ -25,7 +25,7 @@
     <meta name="twitter:site" content="@kimai_org">
     <meta name="twitter:description" content="Configure the permission system which is based on user roles">
     <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.webp">
-    <link href="/assets/build/main.css?v3" rel="stylesheet" />
+    <link href="/assets/build/main.css?v4" rel="stylesheet" />
 </head>
 <body class="">
 
@@ -615,10 +615,8 @@ which can be turned on and off for these roles. You need the <code class="langua
 
 <p>This permission system limits access to the functionality of Kimai.</p>
 
-<div class="alert alert-info" role="alert">
-    
-If you are looking for a way to limit access to timesheets, activities, projects and customers read about <a href="/documentation/teams.html">Team permissions</a>.
-
+<div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i>
+<p>If you are looking for a way to limit access to timesheets, activities, projects and customers read about <a href="/documentation/teams.html">Team permissions</a>.</p>
 </div>
 
 <h2 id="roles">Roles</h2>
@@ -653,12 +651,10 @@ There are four pre-defined roles in Kimai, which have a customizable set of ACLs
   </tbody>
 </table>
 
-<div class="alert alert-danger" role="alert">
-    
-Every user is automatically member of the ROLE_USER, this behaviour cannot be changed. 
+<div class="alert alert-danger d-flex" role="alert"><i class="bx bx-info-circle lead me-3"></i>
+<p>Every user is automatically member of the ROLE_USER, this behaviour cannot be changed.</p>
 
-That means, that every role and user owns all permissions from the `ROLE_USER`. 
-
+<p>That means, that every role and user owns all permissions from the <code class="language-plaintext highlighter-rouge">ROLE_USER</code>.</p>
 </div>
 
 <h3 id="creating-roles">Creating roles</h3>
@@ -668,8 +664,7 @@ That means, that every role and user owns all permissions from the `ROLE_USER`.
 <p>Every user with the permission <code class="language-plaintext highlighter-rouge">role_permissions</code> can create new user roles. 
 There is a button that will open a new modal, to enter a role name. This new role will show up in the table after saving.</p>
 
-<div class="alert alert-warning" role="alert">
-    Allowed character are: `A-Z` and `_`. If you use different character, you might experience strange bugs.
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i><p>Allowed character are: <code class="language-plaintext highlighter-rouge">A-Z</code> and <code class="language-plaintext highlighter-rouge">_</code>. If you use different character, you might experience strange bugs.</p>
 </div>
 
 <p>Custom role names must start with <code class="language-plaintext highlighter-rouge">ROLE_</code> and need to be written in uppercase letters, so instead of using <code class="language-plaintext highlighter-rouge">Manager</code> you have to create <code class="language-plaintext highlighter-rouge">ROLE_MANAGER</code>. 

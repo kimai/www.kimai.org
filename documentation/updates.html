@@ -25,7 +25,7 @@
     <meta name="twitter:site" content="@kimai_org">
     <meta name="twitter:description" content="How to update Kimai to the next release version">
     <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.webp">
-    <link href="/assets/build/main.css?v3" rel="stylesheet" />
+    <link href="/assets/build/main.css?v4" rel="stylesheet" />
 </head>
 <body class="">
 
@@ -542,21 +542,22 @@
                     <ol>
   <li>Make sure that you have a working <a href="/documentation/backups.html">database backup</a> before you start the update.</li>
   <li>Check <a href="https://github.com/kimai/kimai/blob/main/UPGRADING.md">UPGRADING</a> for required manual changes between your current and the new version.</li>
-  <li>You can upgrade multiple versions at once, e.g. from <code class="language-plaintext highlighter-rouge">1.19</code> to <code class="language-plaintext highlighter-rouge">2.0.22</code>, skipping everything between.</li>
+  <li>You can upgrade multiple versions at once, e.g. from <code class="language-plaintext highlighter-rouge">2.10.0</code> to <code class="language-plaintext highlighter-rouge">2.19.1</code>, skipping everything between.</li>
   <li>Some tweaks might be necessary to run the commands listed below, read the <a href="/documentation/installation.html">installation documentation</a> for more information.</li>
 </ol>
 
-<h2 id="updating-kimai">Updating Kimai</h2>
-
-<div class="alert alert-danger" role="alert">
-    
-<strong>ATTENTION</strong> when upgrading from 1.30 (or lower) to 2.0: do a hard cache flush. <a href="/blog/2023/plugin-upgrades-v2/">Plugins are incompatible</a> and must be removed before updating the system.
+<div class="card border-primary mb-3">
+                       <p class="card-title bg-faded-primary p-1 mb-1"><strong><i class="bx bxs-info-circle ms-2 me-2 text-primary fs-5"></i>Upgrading from 1.30 (or lower) to 2.0</strong></p>
+                       <div class="card-body card-note m-0 pt-3 px-3">
+<p>You need to do a hard cache flush. And as <a href="/blog/2023/plugin-upgrades-v2/">plugins are incompatible</a>, they must be removed before updating the system.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">rm</span> <span class="nt">-r</span> var/cache/<span class="k">*</span>
 <span class="nb">rm</span> <span class="nt">-r</span> var/plugins/<span class="k">*</span>
 </code></pre></div></div>
-
 </div>
+                   </div>
+
+<h2 id="updating-kimai">Updating Kimai</h2>
 
 <p>Change into your Kimai directory, then fetch the latest code and install all dependencies:</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout <span class="nt">--</span> composer.lock
@@ -577,7 +578,7 @@ git checkout 2.19.1
 <p>Remember to adjust the file permissions if necessary.</p>
 <div class="card border-primary mb-3">
                        <p class="card-title bg-faded-primary p-1 mb-1"><strong><i class="bx bxs-info-circle ms-2 me-2 text-primary fs-5"></i>Adjust file permission</strong></p>
-                       <div class="card-body m-0 pb-0 pt-3 px-3">
+                       <div class="card-body card-note m-0 pt-3 px-3">
 <p>You have to allow PHP (your webserver process) to write to <code class="language-plaintext highlighter-rouge">var/</code> and it subdirectories.</p>
 
 <p>Here is an example for Debian/Ubuntu, to be executed inside the Kimai directory:</p>
@@ -592,13 +593,8 @@ And you probably need to prefix them with <code class="language-plaintext highli
 </div>
                    </div>
 
-<div class="alert d-flex alert-warning" role="alert">
-    <i class="bx bx-alarm-exclamation lead me-3"></i>
-    <div>
-        
-Important: Finally execute the version specific tasks from the <a href="https://github.com/kimai/kimai/blob/main/UPGRADING.md">UPGRADING</a> guide.
-
-    </div>
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i>
+<p>Important: Finally execute the version specific tasks from the <a href="https://github.com/kimai/kimai/blob/main/UPGRADING.md">UPGRADING</a> guide.</p>
 </div>
 
 <p>That’s it, Kimai is running the most current version. Enjoy the latest time-tracking features!</p>

@@ -26,7 +26,7 @@
     <meta name="twitter:description" content="Create invoices directly within Kimai from timesheet data in several formats">
     <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.webp">
     <link rel="canonical" href="https://www.kimai.org/documentation/invoices.html" />
-    <link href="/assets/build/main.css?v3" rel="stylesheet" />
+    <link href="/assets/build/main.css?v4" rel="stylesheet" />
 </head>
 <body class="">
 
@@ -706,17 +706,13 @@ All examples represent the date <code class="language-plaintext highlighter-roug
 <p>Each replacer (x) can be combined with a length formatter, which will prepend (X) leading zeros, eg. <code class="language-plaintext highlighter-rouge">{x,X}</code>.
 Example: to get a three digit long string with year counter use <code class="language-plaintext highlighter-rouge">{cy,3}</code>, which results in <code class="language-plaintext highlighter-rouge">001</code> for the first invoice of the year.</p>
 
-<div class="alert d-flex alert-warning" role="alert">
-    <i class="bx bx-alarm-exclamation lead me-3"></i>
-    <div>
-        
+<div class="alert alert-warning d-flex" role="alert">
+<i class="bx bx-alarm-exclamation lead me-3"></i>
 <ol>
   <li>Characters outside the replacer <strong>cannot</strong> include <code class="language-plaintext highlighter-rouge">{</code> and <code class="language-plaintext highlighter-rouge">}</code>.</li>
   <li>The invoice number is unique in Kimai and you cannot generate an invoice with the same invoice number twice. Kimai will try to avoid that automatically by incrementing the counter, but if that is impossible, you’ll see an error message.</li>
   <li>You can change the format at <a href="/documentation/configurations.html">System &gt; Settings</a>.</li>
 </ol>
-
-    </div>
 </div>
 
 <h3 id="incrementing-the-invoice-counter">Incrementing the invoice counter</h3>
@@ -880,11 +876,8 @@ These records cannot be edited any longer by regular users and are excluded by d
   <li>You can <a href="/documentation/local-yaml.html">configure different search directories</a> through the config key <code class="language-plaintext highlighter-rouge">kimai.invoice.documents</code> if you want to add additional template source directories</li>
 </ul>
 
-<div class="alert d-flex alert-warning" role="alert">
-    <i class="bx bx-alarm-exclamation lead me-3"></i>
-    <div>
-        Do NOT change the default templates, but copy the file and save it (with a new filename) at var/invoices/
-    </div>
+<div class="alert alert-warning d-flex" role="alert">
+<i class="bx bx-alarm-exclamation lead me-3"></i><p>Do NOT change the default templates, but copy the file and save it (with a new filename) at var/invoices/</p>
 </div>
 
 <p>After you changed an invoice template, you have to <a href="/documentation/cache.html">clear the cache</a> to see the results.</p>
