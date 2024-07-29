@@ -14,6 +14,8 @@ Please upgrade and use <a href="{% link _documentation/fresh-ubuntu-20.md %}">Ub
 This is a collection of snippets to help you with setting up a fresh Ubuntu 18.04 server for using with Kimai.
 It is neither a fully fledged documentation, explaining each step, nor is it a bash tutorial.
 
+{% include snippets/self-hosting-warning.md %}
+
 Please see it as a personal snippet collection... in which I assume:
 - that you are familiar with the Linux bash and have at least basic knowledge of vim
 - that you use a single domain on this server, change the nginx configuration accordingly if you have multiple VirtualHosts
