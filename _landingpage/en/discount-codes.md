@@ -27,7 +27,7 @@ All discount codes found on discount code websites are fake and will not work.
 
 I offer PPP discounts for countries that have a lower GDP than my home country of Austria.
 To find out if you are eligible for a discount, go to this [Wikipedia page](https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)_per_capita), 
-and compare your countries GDP per capita with the below table. 
+and compare your countries GDP per capita (IMF estimate) with the below table. 
 
 | GDP per capita | Discount |
 |----------------|----------|
@@ -42,5 +42,8 @@ and compare your countries GDP per capita with the below table.
 | < 40.000       | 10 %     |
 | < 45.000       | 5 %      |
 {: .table }
+
+The discount applies permanently to the first order.
+If you cancel and want to order again after a break, no new discount will be granted.
 
 If you [contact me](mailto:support@kimai.cloud), don't forget to add proof like your company registration.

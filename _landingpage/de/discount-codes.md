@@ -27,7 +27,7 @@ Alle Rabattcodes, die Sie auf Rabattcode-Websites finden, sind gefälscht und fu
 
 Ich biete PPP-Rabatte (Purchasing Power Parity) für Länder an, die ein geringeres BIP als mein Heimatland Österreich haben.
 Um herauszufinden, ob Sie für einen Rabatt in Frage kommen, gehen Sie auf diese [Wikipedia-Seite](https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)_per_capita),
-und vergleichen Sie das Pro-Kopf-BIP Ihres Landes mit der unten stehenden Tabelle.
+und vergleichen Sie das Pro-Kopf-BIP Ihres Landes (IMF Estimate) mit der unten stehenden Tabelle.
 
 | GDP per capita | Discount |
 |----------------|----------|
@@ -42,6 +42,9 @@ und vergleichen Sie das Pro-Kopf-BIP Ihres Landes mit der unten stehenden Tabell
 | < 40.000       | 10 %     |
 | < 45.000       | 5 %      |
 {: .table }
+
+Der Rabatt gilt dauerhaft auf die Erstbestellung. 
+Sollten Sie kündigen und nach einer Pause wieder neu bestellen wollen, dann wird hierfür kein neuer Rabatt gewährt. 
 
 Wenn Du [Kontakt aufnimmst](mailto:support@kimai.cloud), vergiss nicht Nachweise (wie der Unternehmensregistrierung) beizufügen.
 
