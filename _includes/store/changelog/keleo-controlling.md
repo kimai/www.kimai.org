@@ -1,3 +1,12 @@
+## Version 1.11.0
+
+Compatibility: requires minimum Kimai 2.17.0
+
+- Added: new API methods to fetch public holidays
+- Removed: public holidays from Absence API
+- Fixed: showing own absences in other users calendar
+- Fixed: use new `hours_other_profile` permission from core
+
 ## Version 1.10.0
 
 Compatibility: requires minimum Kimai 2.12.0
