@@ -567,6 +567,13 @@ Any issues with the container rather than the application itself can be raised <
   <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:dev</code>: development image based on Apache, only to be used locally with debug mode and more</li>
 </ul>
 
+<p>Each new release creates tag names containing the Kimai release number:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-x.xx.x</code>: version specific release (Apache container)</li>
+  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-x.xx.x</code>: version specific release (PHP-FPM container)</li>
+</ul>
+
 <p>The following tags are deprecated and will not receive updates anymore, replace them:</p>
 
 <ul>
@@ -577,15 +584,10 @@ Any issues with the container rather than the application itself can be raised <
   <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:prod</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm</code></li>
   <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-dev</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:dev</code></li>
   <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-dev</code>: no replacement</li>
-</ul>
-
-<p>Each new release creates tag names containing the Kimai release number:</p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-x.xx.x-prod</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-x.xx.x</code></li>
   <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-x.xx.x-dev</code>: no replacement</li>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-x.xx.x-prod</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-x.xx.x</code></li>
   <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-x.xx.x-dev</code>: no replacement</li>
+  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-x.xx.x-prod</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-x.xx.x</code></li>
+  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-x.xx.x-prod</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-x.xx.x</code></li>
 </ul>
 
 <h2 id="quick-start">Quick start</h2>
