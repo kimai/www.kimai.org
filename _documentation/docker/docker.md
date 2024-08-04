@@ -16,22 +16,22 @@ The **Docker Hub repo**, where you find the auto-building prod and dev container
 - `kimai/kimai2:latest`: same as `kimai/kimai2:fpm`
 - `kimai/kimai2:dev`: development image based on Apache, only to be used locally with debug mode and more 
 
-The following tags are deprecated and will be removed in the future, do NOT use them:
+The following tags are deprecated and will not receive updates anymore, replace them:
 
-- `kimai/kimai2:apache-prod`: same as `kimai/kimai2:apache` 
-- `kimai/kimai2:apache-latest`: same as `kimai/kimai2:apache` 
-- `kimai/kimai2:fpm-prod`: same as `kimai/kimai2:fpm`
-- `kimai/kimai2:fpm-latest`: same as `kimai/kimai2:fpm` 
-- `kimai/kimai2:prod`: same as `kimai/kimai2:fpm`
-- `kimai/kimai2:apache-dev`: development image based on Apache 
-- `kimai/kimai2:fpm-dev`: development image based on PHP-FPM Alpine
+- `kimai/kimai2:apache-prod`: replaced by `kimai/kimai2:apache` 
+- `kimai/kimai2:apache-latest`: replaced by `kimai/kimai2:apache` 
+- `kimai/kimai2:fpm-prod`: replaced by `kimai/kimai2:fpm`
+- `kimai/kimai2:fpm-latest`: replaced by `kimai/kimai2:fpm` 
+- `kimai/kimai2:prod`: replaced by `kimai/kimai2:fpm`
+- `kimai/kimai2:apache-dev`: replaced by `kimai/kimai2:dev`  
+- `kimai/kimai2:fpm-dev`: no replacement
 
 Each new release creates tag names containing the Kimai release number:
 
-- `kimai/kimai2:apache-x.xx.x-prod`: the specific Kimai version in an Apache container 
-- `kimai/kimai2:apache-x.xx.x-dev`: development image based on Apache
-- `kimai/kimai2:fpm-x.xx.x-prod`: the specific Kimai version in an PHP-FPM Alpine container 
-- `kimai/kimai2:fpm-x.xx.x-dev`: development image based on PHP-FPM Alpine 
+- `kimai/kimai2:apache-x.xx.x-prod`: replaced by `kimai/kimai2:apache-x.xx.x` 
+- `kimai/kimai2:apache-x.xx.x-dev`: no replacement
+- `kimai/kimai2:fpm-x.xx.x-prod`: replaced by `kimai/kimai2:fpm-x.xx.x` 
+- `kimai/kimai2:fpm-x.xx.x-dev`: no replacement 
 
 ## Quick start
 
