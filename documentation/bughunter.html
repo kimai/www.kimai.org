@@ -13,17 +13,17 @@
     <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
     <title>Bughunter – Kimai</title>
-    <meta name="description" content="Some answers to the most common reports that I receive from independent security researchers, which I do not consider to be security issues in Kimai or b...">
+    <meta name="description" content="Reporting">
     <link type="application/atom+xml" rel="alternate" href="https://www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
     <meta property="og:locale" content="en">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Kimai Time-Tracking">
-    <meta property="og:description" content="Some answers to the most common reports that I receive from independent security researchers, which I do not consider to be security issues in Kimai or b...">
+    <meta property="og:description" content="Reporting">
     <meta property="og:image" content="https://www.kimai.org/images/social-preview.webp">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Kimai Time-Tracking">
     <meta name="twitter:site" content="@kimai_org">
-    <meta name="twitter:description" content="Some answers to the most common reports that I receive from independent security researchers, which I do not consider to be security issues in Kimai or b...">
+    <meta name="twitter:description" content="Reporting">
     <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.webp">
     <link href="/assets/build/main.css?v4" rel="stylesheet" />
 </head>
@@ -369,10 +369,57 @@
             <div>
                 
                 <div id="documentation-content">
-                    <p>Some answers to the most common reports that I receive from independent security researchers, which I do <strong>not</strong> consider 
+                    <h2 id="reporting">Reporting</h2>
+
+<p>You can report any security related vulnerability in the <a href="https://github.com/kimai/kimai/security/advisories">advisory section at GitHub</a>
+or via email to <a href="mailto:support@kimai.org">support@kimai.org</a>.
+You can expect that your message will be answered in 24-48 hours.</p>
+
+<p>I will work as fast as I can to fix the problem and publish a bugfix release / security update.
+Depending on the size of the required fixes, this might take a couple of hours or a couple of days.</p>
+
+<p>If you try to ask for money BEFORE sharing details of a report, you won’t get a reply and your email will be blocked.</p>
+
+<h3 id="reward">Reward</h3>
+
+<p>This is an open-source project and I cannot offer a financial bug bounty program.
+The community including myself is grateful for any (discrete) disclosure of vulnerabilities!</p>
+
+<p>You will be mentioned in the release notes if your issue is valid and a fix is shipped. 
+And if you want to be mentioned/linked on social media, I will do so as well.</p>
+
+<h2 id="testing">Testing</h2>
+
+<p>Make a good faith effort to avoid privacy violations, destruction of data, and interruption or degradation of our service.
+Only interact with accounts you own or with explicit permission of the account holder.</p>
+
+<h3 id="exclusions">Exclusions</h3>
+
+<p>YOU MAY NOT TEST AGAINST SERVERS YOU DO NOT HAVE EXPLICIT PERMISSION TO TEST.</p>
+
+<p>While researching, please refrain from:</p>
+
+<ul>
+  <li>Denial of service</li>
+  <li>Spamming</li>
+  <li>Social engineering (including phishing)</li>
+</ul>
+
+<p>Do not pentest Kimai-Cloud or Demo installations without prior consent.</p>
+
+<p>There are EU <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> and German<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup> laws that require service owners to report certain attacks to the authorities.
+This makes it difficult to cooperate in scenarios without prior written consent.</p>
+
+<h2 id="common-reports">Common reports</h2>
+
+<p>Some answers to the most common reports that I receive from independent security researchers, which I do <strong>not</strong> consider
 to be security issues in Kimai or behavior that needs to be addressed.</p>
 
-<h2 id="back-button-that-keeps-working-after-logout">“Back” button that keeps working after logout</h2>
+<h3 id="no-dmarc-record-found">No DMARC record found</h3>
+
+<p>This does not qualify, read why <a href="https://dmarcreport.com/blog/no-dmarc-record-found-bug-bounty-is-a-beg-bounty/">at dmarcreport.com</a>.</p>
+
+<h3 id="back-button-that-keeps-working-after-logout">“Back” button that keeps working after logout</h3>
 
 <p>I do not consider this as a security risk. If a user leaves his browser unprotected, he has much more to worry about than a colleague
 browsing through the tab history of a browser in which Kimai was open. To me this is a theoretical problem because you need 
@@ -390,7 +437,7 @@ physical access to the machine, which exposes way worse security risks.</p>
   <p>We believe that attackers with this degree of access are firmly outside the security model of contemporary browsers and operating systems, and will be able to extract comparable information from the records persisted in system memory or in the filesystem using off-the-shelf tools; they may also simply modify the system to place a keylogger or other malicious software that collects passwords or cookies, or injects malicious scripts onto every visited page.</p>
 </blockquote>
 
-<h2 id="csv-excel-formula-injection">CSV Excel Formula injection</h2>
+<h3 id="csv-excel-formula-injection">CSV Excel Formula injection</h3>
 
 <p>Kimai does have a couple of code pieces in place to prevent simple <code class="language-plaintext highlighter-rouge">Dynamic Data Exchange</code> or <code class="language-plaintext highlighter-rouge">DDE payload</code> attacks. 
 But in general I consider this to be a problem of Excel and not Kimai.</p>
@@ -403,7 +450,7 @@ But in general I consider this to be a problem of Excel and not Kimai.</p>
   <p>In other words, the proper fix should be applied when opening the CSV files, rather then when creating them.</p>
 </blockquote>
 
-<h2 id="logout-works-without-csrf-token">Logout works without CSRF token</h2>
+<h3 id="logout-works-without-csrf-token">Logout works without CSRF token</h3>
 
 <p>The pure fact that the logout link works without any protection is not a vulnerability.
 If someone manages to get a hold of your Kimai URL and is able to make you open the logout link without knowing (eg. as URL of a hidden image in an email) - you would be logged out.
@@ -414,7 +461,7 @@ All of these linked sites <a href="https://bughunters.google.com/learn/invalid-r
 
 <p>All in all: I do not consider this to be a security risk.</p>
 
-<h2 id="unverified-password-change">Unverified Password Change</h2>
+<h3 id="unverified-password-change">Unverified Password Change</h3>
 
 <p>I am not going to repeat everything that Google has to say about <a href="https://bughunters.google.com/learn/invalid-reports/invalid-attack-scenarios/6576292268605440/attacks-working-only-when-sharing-local-account-with-the-attacker">Attacks working only when sharing local account with the attacker</a>, 
 so please follow the link.</p>
@@ -433,9 +480,16 @@ so please follow the link.</p>
     <figcaption class="figure-caption">Google allows to change my password, without asking for the current password</figcaption>
 </figure>
 
-<h2 id="no-dmarc-record-found">No DMARC record found</h2>
-
-<p>This does not qualify, read why <a href="https://dmarcreport.com/blog/no-dmarc-record-found-bug-bounty-is-a-beg-bounty/">at dmarcreport.com</a>.</p>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>https://www.consilium.europa.eu/en/policies/cybersecurity/ <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>https://www.bsi.bund.de/DE/Themen/Regulierte-Wirtschaft/Weitere_regulierte_Unternehmen/Anbieter_digitaler_Dienste/Meldungen/meldungen_node.html <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
                 </div>
                 
@@ -450,7 +504,7 @@ so please follow the link.</p>
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#back-button-that-keeps-working-after-logout" class="nav-link">“Back” button that keeps working after logout</a></li><li class="nav-item"><a href="#csv-excel-formula-injection" class="nav-link">CSV Excel Formula injection</a></li><li class="nav-item"><a href="#logout-works-without-csrf-token" class="nav-link">Logout works without CSRF token</a></li><li class="nav-item"><a href="#unverified-password-change" class="nav-link">Unverified Password Change</a></li><li class="nav-item"><a href="#no-dmarc-record-found" class="nav-link">No DMARC record found</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#reporting" class="nav-link">Reporting</a><ul><li class="nav-item"><a href="#reward" class="nav-link">Reward</a></li></ul></li><li class="nav-item"><a href="#testing" class="nav-link">Testing</a><ul><li class="nav-item"><a href="#exclusions" class="nav-link">Exclusions</a></li></ul></li><li class="nav-item"><a href="#common-reports" class="nav-link">Common reports</a><ul><li class="nav-item"><a href="#no-dmarc-record-found" class="nav-link">No DMARC record found</a></li><li class="nav-item"><a href="#back-button-that-keeps-working-after-logout" class="nav-link">“Back” button that keeps working after logout</a></li><li class="nav-item"><a href="#csv-excel-formula-injection" class="nav-link">CSV Excel Formula injection</a></li><li class="nav-item"><a href="#logout-works-without-csrf-token" class="nav-link">Logout works without CSRF token</a></li><li class="nav-item"><a href="#unverified-password-change" class="nav-link">Unverified Password Change</a></li></ul></li></ul>
         
     </aside>
 
