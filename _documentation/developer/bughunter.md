@@ -2,10 +2,56 @@
 title: Bughunter
 ---
 
-Some answers to the most common reports that I receive from independent security researchers, which I do **not** consider 
+## Reporting 
+
+You can report any security related vulnerability in the [advisory section at GitHub](https://github.com/kimai/kimai/security/advisories)
+or via email to [support@kimai.org](mailto:support@kimai.org).
+You can expect that your message will be answered in 24-48 hours.
+
+I will work as fast as I can to fix the problem and publish a bugfix release / security update.
+Depending on the size of the required fixes, this might take a couple of hours or a couple of days.
+
+If you try to ask for money BEFORE sharing details of a report, you won't get a reply and your email will be blocked.
+
+### Reward
+
+This is an open-source project and I cannot offer a financial bug bounty program.
+The community including myself is grateful for any (discrete) disclosure of vulnerabilities!
+
+You will be mentioned in the release notes if your issue is valid and a fix is shipped. 
+And if you want to be mentioned/linked on social media, I will do so as well. 
+
+
+## Testing
+
+Make a good faith effort to avoid privacy violations, destruction of data, and interruption or degradation of our service.
+Only interact with accounts you own or with explicit permission of the account holder.
+
+### Exclusions
+
+YOU MAY NOT TEST AGAINST SERVERS YOU DO NOT HAVE EXPLICIT PERMISSION TO TEST.
+
+While researching, please refrain from:
+
+- Denial of service
+- Spamming
+- Social engineering (including phishing)
+
+Do not pentest Kimai-Cloud or Demo installations without prior consent.
+
+There are EU [^1] and German[^2] laws that require service owners to report certain attacks to the authorities.
+This makes it difficult to cooperate in scenarios without prior written consent.
+
+## Common reports
+
+Some answers to the most common reports that I receive from independent security researchers, which I do **not** consider
 to be security issues in Kimai or behavior that needs to be addressed.
 
-## "Back" button that keeps working after logout
+### No DMARC record found
+
+This does not qualify, read why [at dmarcreport.com](https://dmarcreport.com/blog/no-dmarc-record-found-bug-bounty-is-a-beg-bounty/).
+
+### "Back" button that keeps working after logout
 
 I do not consider this as a security risk. If a user leaves his browser unprotected, he has much more to worry about than a colleague
 browsing through the tab history of a browser in which Kimai was open. To me this is a theoretical problem because you need 
@@ -21,7 +67,7 @@ For the full article checkout the [Google Bughunter University](https://bughunte
 >
 > We believe that attackers with this degree of access are firmly outside the security model of contemporary browsers and operating systems, and will be able to extract comparable information from the records persisted in system memory or in the filesystem using off-the-shelf tools; they may also simply modify the system to place a keylogger or other malicious software that collects passwords or cookies, or injects malicious scripts onto every visited page.
 
-## CSV Excel Formula injection
+### CSV Excel Formula injection
 
 Kimai does have a couple of code pieces in place to prevent simple `Dynamic Data Exchange` or `DDE payload` attacks. 
 But in general I consider this to be a problem of Excel and not Kimai.
@@ -32,7 +78,7 @@ A shortened version of [Google Bughunter University](https://bughunters.google.c
 > 
 > In other words, the proper fix should be applied when opening the CSV files, rather then when creating them.
 
-## Logout works without CSRF token
+### Logout works without CSRF token
 
 The pure fact that the logout link works without any protection is not a vulnerability.
 If someone manages to get a hold of your Kimai URL and is able to make you open the logout link without knowing (eg. as URL of a hidden image in an email) - you would be logged out.
@@ -43,7 +89,7 @@ All of these linked sites [do not work against this feature](https://bughunters.
 
 All in all: I do not consider this to be a security risk.
 
-## Unverified Password Change
+### Unverified Password Change
 
 I am not going to repeat everything that Google has to say about [Attacks working only when sharing local account with the attacker](https://bughunters.google.com/learn/invalid-reports/invalid-attack-scenarios/6576292268605440/attacks-working-only-when-sharing-local-account-with-the-attacker), 
 so please follow the link. 
@@ -57,6 +103,5 @@ All in all: I do not consider this to be a security risk, but a UX improvement. 
 
 {% include docs-image.html src="/images/documentation/bughunter/google-password-change.webp" title="Google allows to change my password, without asking for the current password" width="700px" %}
 
-## No DMARC record found
-
-This does not qualify, read why [at dmarcreport.com](https://dmarcreport.com/blog/no-dmarc-record-found-bug-bounty-is-a-beg-bounty/).  
+[^1]: https://www.consilium.europa.eu/en/policies/cybersecurity/
+[^2]: https://www.bsi.bund.de/DE/Themen/Regulierte-Wirtschaft/Weitere_regulierte_Unternehmen/Anbieter_digitaler_Dienste/Meldungen/meldungen_node.html
