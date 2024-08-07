@@ -13,19 +13,18 @@
     <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
     <title>Install Kimai on a Synology NAS</title>
-    <meta name="description" content="How to install Kimai on a Synology NAS">
+    <meta name="description" content="How to install Kimai on a Synology NAS with DSM 6">
     <link type="application/atom+xml" rel="alternate" href="https://www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
     <meta property="og:locale" content="en">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Kimai Time-Tracking">
-    <meta property="og:description" content="How to install Kimai on a Synology NAS">
+    <meta property="og:description" content="How to install Kimai on a Synology NAS with DSM 6">
     <meta property="og:image" content="https://www.kimai.org/images/social-preview.webp">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Kimai Time-Tracking">
     <meta name="twitter:site" content="@kimai_org">
-    <meta name="twitter:description" content="How to install Kimai on a Synology NAS">
+    <meta name="twitter:description" content="How to install Kimai on a Synology NAS with DSM 6">
     <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.webp">
-    <link rel="canonical" href="https://www.kimai.org/documentation/synology.html" />
     <link rel="alternate" hreflang="en" href="https://www.kimai.org/documentation/1.30.0/synology.html">
     <link rel="alternate" hreflang="en" href="https://www.kimai.org/documentation/2.13.0/synology.html">
     <link href="/assets/build/main.css?v4" rel="stylesheet" />
@@ -527,7 +526,7 @@
             <div class="me-4">
                 <h1 class="pb-1">Install Kimai on a Synology NAS</h1>
                 
-                <p class="text-muted fs-lg mb-2">How to install Kimai on a Synology NAS</p>
+                <p class="text-muted fs-lg mb-2">How to install Kimai on a Synology NAS with DSM 6</p>
                 
             </div>
             
@@ -564,9 +563,6 @@
 
 <p>This HowTo does not explain every step for the installation of Kimai on a Synology NAS with <strong>DSM 6</strong>, 
 but rather concentrates on the differences from the <a href="/documentation/installation.html">default installation</a>.</p>
-
-<div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i><p>ATTENTION: This manual seems to be outdated and not working with DSM 7+ anymore. Please use Docker to host Kimai on Synology!</p>
-</div>
 
 <h2 id="important-to-know">Important to know</h2>
 
@@ -609,7 +605,7 @@ otherwise stick with lower and uppercase character and numbers.</p>
 therefore the connection string in your <code class="language-plaintext highlighter-rouge">.env</code> file could look different from the one used in the 
 default <a href="/documentation/installation.html">installation</a> docs:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DATABASE_URL="mysql://kimai2:password@localhost:3307/kimai2?unix_socket=/run/mysqld/mysqld10.sock"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DATABASE_URL="mysql://kimai2:password@localhost:3307/kimai2?unix_socket=/run/mysqld/mysqld10.sock?charset=utf8mb4&amp;serverVersion=5.7.40"
 </code></pre></div></div>
 
 <p>BTW: You find the MariaDB executable at <code class="language-plaintext highlighter-rouge">/volume1/@appstore/MariaDB10/usr/local/mariadb10/bin</code>.</p>
@@ -642,7 +638,7 @@ default <a href="/documentation/installation.html">installation</a> docs:</p>
     <figcaption class="figure-caption">Main Menu &gt; Web Station &gt; Virtual Host</figcaption>
 </figure>
 
-<p>Settings choosen in the example:</p>
+<p>Settings chosen in the example:</p>
 
 <ul>
   <li>Port: <code class="language-plaintext highlighter-rouge">7777</code> with <code class="language-plaintext highlighter-rouge">HTTPS</code></li>
@@ -828,7 +824,7 @@ php81 bin/console kimai:update
              <span class="na">filter</span><span class="pi">:</span> <span class="s">(&amp;(objectClass=Person))</span>
              <span class="na">attributesFilter</span><span class="pi">:</span> <span class="s">(objectClass=Person)</span>
              <span class="na">attributes</span><span class="pi">:</span>
-                 <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_attr</span><span class="pi">:</span> <span class="nv">samaccountname</span><span class="pi">,</span>  <span class="nv">user_method</span><span class="pi">:</span> <span class="nv">setUsername</span> <span class="pi">}</span>
+                 <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_attr</span><span class="pi">:</span> <span class="nv">samaccountname</span><span class="pi">,</span>  <span class="nv">user_method</span><span class="pi">:</span> <span class="nv">setUserIdentifier</span> <span class="pi">}</span>
                  <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_attr</span><span class="pi">:</span> <span class="nv">mail</span><span class="pi">,</span> <span class="nv">user_method</span><span class="pi">:</span> <span class="nv">setEmail</span> <span class="pi">}</span>
                  <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_attr</span><span class="pi">:</span> <span class="nv">displayname</span><span class="pi">,</span> <span class="nv">user_method</span><span class="pi">:</span> <span class="nv">setAlias</span> <span class="pi">}</span>
         
@@ -841,7 +837,7 @@ php81 bin/console kimai:update
                  <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_value</span><span class="pi">:</span> <span class="nv">Users</span><span class="pi">,</span> <span class="nv">role</span><span class="pi">:</span> <span class="nv">ROLE_USER</span> <span class="pi">}</span>
 </code></pre></div>    </div>
   </li>
-  <li>nstallation
+  <li>Installation
 SSH into your Synology NAS, navigate to your Kimai installation (probably volume1\web\kimai2) and run the following command:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php80 /usr/local/bin/composer require laminas/laminas-ldap <span class="nt">--optimize-autoloader</span>
 </code></pre></div>    </div>
@@ -866,7 +862,7 @@ PHP has two different settings for memory limit, depending on where you run it:<
   <li>executing scripts (like the installer) via SSH =&gt; settings from another config file are used</li>
 </ul>
 
-<p>So  when running the installer and running into a memory issue, you have to adjust the <code class="language-plaintext highlighter-rouge">php.ini</code> whose settings are used 
+<p>So when running the installer and running into a memory issue, you have to adjust the <code class="language-plaintext highlighter-rouge">php.ini</code> whose settings are used 
 in SSH, e.g. the file <code class="language-plaintext highlighter-rouge">/usr/local/etc/php81/php.ini</code> is used for PHP 8.1.
 Search for the key <code class="language-plaintext highlighter-rouge">memory_limit</code> and set it to a high value, e.g. <code class="language-plaintext highlighter-rouge">memory_limit=512M</code>.</p>
 
