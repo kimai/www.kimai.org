@@ -8,10 +8,10 @@ related:
     - fresh-ubuntu-20
 ---
 
+{% include snippets/self-hosting-warning.md %}
+
 This is a collection of snippets to help you with setting up a fresh Ubuntu 22.04 LTS server for using with Kimai.
 It is neither a fully fledged documentation, explaining each step, nor is it a bash tutorial.
-
-{% include snippets/self-hosting-warning.md %}
 
 Please see it as a personal snippet collection... in which I assume:
 - that you are familiar with the Linux bash and have at least basic knowledge of vim

@@ -5,12 +5,13 @@ description: "How to install Kimai on a Synology NAS with DSM 7+"
 canonical: /documentation/synology.html
 ---
 
-This HowTo does not explain every step for the installation of Kimai on a Synology NAS with **DSM 7+**.
+{% include snippets/unsupported-installation-warning.md %}
+{% include snippets/self-hosting-warning.md %}
 
-If someone can contribute and write down a step-by-step guide, that would be 🔥
+Everything is handled via the `Conatiner Manager` on the Synology DSM 7+ Web UI.
 
-Everything is handled via the `Conatiner Manager` on the DSM Web UI.
-
+This HowTo explains the installation of Kimai on a Synology NAS with **DSM 7+** - but right now there are some steps missing.
+ 
 ## Installation
 
 - Open "Container Manager"

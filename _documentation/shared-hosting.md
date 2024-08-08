@@ -4,11 +4,8 @@ description: How to install Kimai in a shared hosting environment
 canonical: /documentation/shared-hosting.html
 ---
 
-## Shared hosting
-
-How to install Kimai at shared hosting companies. Please share our insights if you have managed to get it up and running with another company!
-
-If you can't find the correct version, ask your hoster! Or [let us help you]({% link _store/keleo-installation-support.md %}).
+{% include snippets/unsupported-installation-warning.md %}
+{% include snippets/self-hosting-warning.md %}
 
 ### Uberspace
 

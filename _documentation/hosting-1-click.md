@@ -5,6 +5,9 @@ description: Kimai can be hosted on various systems and many hosting companies s
 canonical: /documentation/hosting-1-click.html
 ---
 
+{% include snippets/unsupported-installation-warning.md %}
+{% include snippets/self-hosting-warning.md %}
+
 The following platforms adopted Kimai to be compatible with their one-click installation systems.
 
 ### YunoHost
@@ -38,13 +41,13 @@ You don't have to worry about updates as Elestio auto updates Kimai instance wee
 ### Softaculous
 
 Be warned that Softaculous **does not yet provide updates of Kimai**, so you are stuck with the installed version. 
-There have been a few other problems reported, using this installation type is not advised for production usage.  
+There have been a few other problems reported, using this installation type is ONLY FOR EVALUATION usage.   
 
 [Install Kimai with Softaculous](https://www.softaculous.com/apps/others/Kimai){: .btn .btn-success}
 
 ### Vesta Control Panel
 
-Be aware that VestaCP uses the `admin` user instead of `www-data`. Replace the names in the regular permission commandss.
+Be aware that VestaCP uses the `admin` user instead of `www-data`. Replace the names in the regular permission commands.
 Read [this issue]({{ site.kimai_v2_repo }}/issues/743) if you have further questions.
 
 ### ISPConfig 3

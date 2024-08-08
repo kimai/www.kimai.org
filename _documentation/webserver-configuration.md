@@ -4,6 +4,8 @@ navigation: Webserver
 description: How to install Kimai on your server with git, composer and SSH or FTP
 ---
 
+{% include snippets/self-hosting-warning.md %}
+
 If you can't manage to get Kimai up and running, it is very likely not an issue with Kimai.
 - Check your server logs first and the Kimai logs (at `var/logs/` inside the Kimai directory).
 - Try to find an answer at Stackoverflow, ServerFault or other online communities
