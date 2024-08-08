@@ -567,7 +567,7 @@ but rather concentrates on the differences from the <a href="/documentation/inst
 <h2 id="important-to-know">Important to know</h2>
 
 <p>You need to prefix all PHP related commands with <code class="language-plaintext highlighter-rouge">php81</code>, for example:</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php81 composer.phar <span class="nb">install</span> <span class="nt">--no-dev</span> <span class="nt">--optimize-autoloader</span> <span class="nt">-n</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php81 composer.phar <span class="nb">install</span> <span class="nt">--no-dev</span> <span class="nt">--optimize-autoloader</span>
 </code></pre></div></div>
 
 <p>Or run a console command:</p>
@@ -588,7 +588,7 @@ If no git is installed, you can use the method described under the “updates”
 <p>This example uses the path <code class="language-plaintext highlighter-rouge">/volume1/web/kimai2</code></p>
 
 <p>Then <a href="https://getcomposer.org/download/">download and install composer</a>. Now install all dependencies:</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php81 composer.phar <span class="nb">install</span> <span class="nt">--no-dev</span> <span class="nt">--optimize-autoloader</span> <span class="nt">-n</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php81 composer.phar <span class="nb">install</span> <span class="nt">--no-dev</span> <span class="nt">--optimize-autoloader</span>
 </code></pre></div></div>
 
 <h3 id="create-a-database">Create a database</h3>
@@ -739,7 +739,7 @@ Be extremely careful, a wrong command can destroy your Synology … you know: wi
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /volume1/web/kimai/
 git fetch <span class="nt">--tags</span>
 git checkout 2.20.1
-php81 composer <span class="nb">install</span> <span class="nt">--no-dev</span> <span class="nt">--optimize-autoloader</span> <span class="nt">-n</span>
+php81 composer <span class="nb">install</span> <span class="nt">--no-dev</span> <span class="nt">--optimize-autoloader</span>
 php81 bin/console kimai:update
 <span class="nb">chown</span> <span class="nt">-R</span> :http <span class="nb">.</span>
 </code></pre></div></div>
@@ -760,7 +760,7 @@ wget https://github.com/kimai/kimai/archive/refs/tags/2.20.1.zip
 
 <p>Then <a href="https://getcomposer.org/download/">download and install composer</a>, followed by the installation:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php81 composer.phar <span class="nb">install</span> <span class="nt">--no-dev</span> <span class="nt">--optimize-autoloader</span> <span class="nt">-n</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php81 composer.phar <span class="nb">install</span> <span class="nt">--no-dev</span> <span class="nt">--optimize-autoloader</span>
 php81 bin/console kimai:update
 </code></pre></div></div>
 

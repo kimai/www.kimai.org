@@ -540,11 +540,26 @@
             <div>
                 
                 <div id="documentation-content">
-                    <h2 id="shared-hosting">Shared hosting</h2>
+                    <div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i>
+<p>Hosting Kimai this way is neither officially recommended nor supported. But in the best interest of the community, this quick-starter is provided to help you set up Kimai.<br />
+If you run into issues with this documentation, please <a href="https://github.com/kimai/kimai/discussions" class="external-link">share your updates</a> to improve it for the next person 🔥</p>
+</div>
 
-<p>How to install Kimai at shared hosting companies. Please share our insights if you have managed to get it up and running with another company!</p>
+<div class="card border-primary mb-3">
+                       <p class="card-title bg-faded-primary p-1 mb-1"><strong><i class="bx bxs-info-circle ms-2 me-2 text-primary fs-5"></i>Self-hosting knowledge prerequisites</strong></p>
+                       <div class="card-body card-note m-0 pt-3 px-3">
+<p>Self-hosting Kimai requires technical knowledge, including:</p>
 
-<p>If you can’t find the correct version, ask your hoster! Or <a href="/store/installation-support.html">let us help you</a>.</p>
+<ul>
+  <li>Setting up and configuring servers and containers</li>
+  <li>Managing application resources and scaling</li>
+  <li>Securing servers and applications</li>
+  <li>Configuring Kimai</li>
+</ul>
+
+<p>Kimai recommends self-hosting for expert users. Mistakes can lead to data loss, security issues, and downtime. If you aren’t experienced at managing servers, Kimai recommends <a href="https://www.kimai.org/" class="external-link">Kimai Cloud</a>.</p>
+</div>
+                   </div>
 
 <h3 id="uberspace">Uberspace</h3>
 
@@ -569,7 +584,7 @@
   <li><code class="language-plaintext highlighter-rouge">cd ../../web</code> to change to the root directory of the web space</li>
   <li><code class="language-plaintext highlighter-rouge">git clone -b 2.20.1 --depth 1 https://github.com/kimai/kimai.git</code></li>
   <li><code class="language-plaintext highlighter-rouge">cd kimai/</code></li>
-  <li><code class="language-plaintext highlighter-rouge">composer install --no-dev --optimize-autoloader -n</code></li>
+  <li><code class="language-plaintext highlighter-rouge">composer install --no-dev --optimize-autoloader</code></li>
   <li>Create a DB through the hosters configuration menu (called: <code class="language-plaintext highlighter-rouge">Datenbanken</code>)</li>
   <li>Adjust the DB configuration in <code class="language-plaintext highlighter-rouge">.env</code>
 DB-Version can be found out through phpMyAdmin with sql instruction: <code class="language-plaintext highlighter-rouge">select Version();</code>, an example DB connection string:
@@ -590,7 +605,7 @@ DB-Version can be found out through phpMyAdmin with sql instruction: <code class
   <li>The default PHP version is often too low, you can check that with <code class="language-plaintext highlighter-rouge">php -v</code>
     <ul>
       <li>If it is lower than 8.1, you have to prefix all commands with the proper version, eg. <code class="language-plaintext highlighter-rouge">/usr/bin/php8.1-cli</code> (even composer)</li>
-      <li>Example composer: <code class="language-plaintext highlighter-rouge">/usr/bin/php8.1-cli composer.phar install --no-dev --optimize-autoloader -n</code></li>
+      <li>Example composer: <code class="language-plaintext highlighter-rouge">/usr/bin/php8.1-cli composer.phar install --no-dev --optimize-autoloader</code></li>
       <li>Example installation: <code class="language-plaintext highlighter-rouge">/usr/bin/php8.1-cli bin/console kimai:install -n</code></li>
     </ul>
   </li>
@@ -604,7 +619,7 @@ DB-Version can be found out through phpMyAdmin with sql instruction: <code class
   <li>The default PHP version is often too low, you can check that with <code class="language-plaintext highlighter-rouge">php -v</code>
     <ul>
       <li>If it is lower than 8.1, you have to prefix all commands with the proper version, eg. <code class="language-plaintext highlighter-rouge">php8.1.5-cli</code> (even composer)</li>
-      <li>Example composer: <code class="language-plaintext highlighter-rouge">php8.1.5-cli composer.phar install --no-dev --optimize-autoloader -n</code></li>
+      <li>Example composer: <code class="language-plaintext highlighter-rouge">php8.1.5-cli composer.phar install --no-dev --optimize-autoloader</code></li>
       <li>Example installation: <code class="language-plaintext highlighter-rouge">php8.1.5-cli bin/console kimai:install -n</code></li>
     </ul>
   </li>
@@ -616,7 +631,7 @@ DB-Version can be found out through phpMyAdmin with sql instruction: <code class
 
 <p>Composer is running at <code class="language-plaintext highlighter-rouge">/usr/bin/composer</code>, so you execute it like that:</p>
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">php81 /usr/bin/composer install --no-dev --optimize-autoloader -n</code></li>
+  <li><code class="language-plaintext highlighter-rouge">php81 /usr/bin/composer install --no-dev --optimize-autoloader</code></li>
   <li><code class="language-plaintext highlighter-rouge">php81 bin/console kimai:install -n</code></li>
 </ul>
 
@@ -652,7 +667,7 @@ DB-Version can be found out through phpMyAdmin with sql instruction: <code class
 <ul>
   <li>Install composer: <code class="language-plaintext highlighter-rouge">curl -sS https://getcomposer.org/installer | /opt/RZphp81/bin/php-cli</code></li>
   <li>Clone Kimai as stated above and then <code class="language-plaintext highlighter-rouge">cd kimai</code></li>
-  <li>Install composer packages with <code class="language-plaintext highlighter-rouge">/opt/RZphp81/bin/php-cli ../composer.phar install --no-dev --optimize-autoloader -n</code></li>
+  <li>Install composer packages with <code class="language-plaintext highlighter-rouge">/opt/RZphp81/bin/php-cli ../composer.phar install --no-dev --optimize-autoloader</code></li>
   <li>Configure your <code class="language-plaintext highlighter-rouge">.env</code> file, eg. with <code class="language-plaintext highlighter-rouge">nano .env</code></li>
   <li>Install Kimai database <code class="language-plaintext highlighter-rouge">/opt/RZphp81/bin/php-cli bin/console kimai:install -n</code></li>
 </ul>
@@ -684,7 +699,7 @@ Typically, the root can be found at <code class="language-plaintext highlighter-
   <li>Install composer: <code class="language-plaintext highlighter-rouge">curl -sS https://getcomposer.org/installer | /opt/plesk/php/8.1/bin/php</code></li>
   <li>Clone Kimai: <code class="language-plaintext highlighter-rouge">git clone -b 2.20.1 --depth 1 https://github.com/kimai/kimai.git</code></li>
   <li>Enter Kimai directory: <code class="language-plaintext highlighter-rouge">cd kimai</code></li>
-  <li>Install composer packages: <code class="language-plaintext highlighter-rouge">/opt/plesk/php/8.1/bin/php ../composer.phar install --no-dev --optimize-autoloader -n</code></li>
+  <li>Install composer packages: <code class="language-plaintext highlighter-rouge">/opt/plesk/php/8.1/bin/php ../composer.phar install --no-dev --optimize-autoloader</code></li>
   <li>Configure <code class="language-plaintext highlighter-rouge">.env</code> file to have correct database credentials</li>
   <li>Install Kimai database: <code class="language-plaintext highlighter-rouge">/opt/plesk/php/8.1/bin/php bin/console kimai:install -n</code></li>
   <li>Change ownership of <code class="language-plaintext highlighter-rouge">kimai</code> folder:
@@ -715,7 +730,7 @@ and <code class="language-plaintext highlighter-rouge">ServerAlias</code> are se
   <li>Clone Kimai: <code class="language-plaintext highlighter-rouge">git clone -b 2.20.1 --depth 1 https://github.com/kimai/kimai.git</code></li>
   <li>Switch to the Kimai directory: <code class="language-plaintext highlighter-rouge">cd kimai</code></li>
   <li>Install composer: <code class="language-plaintext highlighter-rouge">curl -sS https://getcomposer.org/installer | /usr/bin/php</code></li>
-  <li>Install dependencies: <code class="language-plaintext highlighter-rouge">COMPOSER_MEMORY_LIMIT=512M php -d memory_limit=512M php composer.phar install --no-dev --optimize-autoloader -n</code></li>
+  <li>Install dependencies: <code class="language-plaintext highlighter-rouge">COMPOSER_MEMORY_LIMIT=512M php -d memory_limit=512M php composer.phar install --no-dev --optimize-autoloader</code></li>
   <li>configure your .env file, eg. <code class="language-plaintext highlighter-rouge">nano .env</code></li>
   <li>install kimai: <code class="language-plaintext highlighter-rouge">php bin/console kimai:install -n</code></li>
   <li>reload config: <code class="language-plaintext highlighter-rouge">php bin/console kimai:reload</code></li>
@@ -731,7 +746,7 @@ and <code class="language-plaintext highlighter-rouge">ServerAlias</code> are se
 <ul>
   <li>Clone Kimai in the root folder as stated above and then <code class="language-plaintext highlighter-rouge">cd kimai</code></li>
   <li>Install composer: <code class="language-plaintext highlighter-rouge">curl -sS https://getcomposer.org/installer | /usr/bin/php</code></li>
-  <li>Install dependencies: <code class="language-plaintext highlighter-rouge">php composer.phar install --no-dev --optimize-autoloader -n</code></li>
+  <li>Install dependencies: <code class="language-plaintext highlighter-rouge">php composer.phar install --no-dev --optimize-autoloader</code></li>
   <li>configure your .env file, eg. <code class="language-plaintext highlighter-rouge">nano .env</code></li>
   <li>install kimai: <code class="language-plaintext highlighter-rouge">php bin/console kimai:install -n</code></li>
   <li>reload config: <code class="language-plaintext highlighter-rouge">php bin/console kimai:reload</code></li>
@@ -761,7 +776,7 @@ and <code class="language-plaintext highlighter-rouge">ServerAlias</code> are se
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#shared-hosting" class="nav-link">Shared hosting</a><ul><li class="nav-item"><a href="#uberspace" class="nav-link">Uberspace</a></li><li class="nav-item"><a href="#manitu" class="nav-link">Manitu</a></li><li class="nav-item"><a href="#ionos--11" class="nav-link">Ionos / 1&amp;1</a></li><li class="nav-item"><a href="#domainfactory" class="nav-link">Domainfactory</a></li><li class="nav-item"><a href="#all-inkl" class="nav-link">All-Inkl</a></li><li class="nav-item"><a href="#strato" class="nav-link">Strato</a></li><li class="nav-item"><a href="#plesk" class="nav-link">Plesk</a></li><li class="nav-item"><a href="#netcup" class="nav-link">Netcup</a></li><li class="nav-item"><a href="#hosteurope" class="nav-link">HostEurope</a></li><li class="nav-item"><a href="#alfahosting" class="nav-link">Alfahosting</a></li></ul></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#uberspace" class="nav-link">Uberspace</a></li><li class="nav-item"><a href="#manitu" class="nav-link">Manitu</a></li><li class="nav-item"><a href="#ionos--11" class="nav-link">Ionos / 1&amp;1</a></li><li class="nav-item"><a href="#domainfactory" class="nav-link">Domainfactory</a></li><li class="nav-item"><a href="#all-inkl" class="nav-link">All-Inkl</a></li><li class="nav-item"><a href="#strato" class="nav-link">Strato</a></li><li class="nav-item"><a href="#plesk" class="nav-link">Plesk</a></li><li class="nav-item"><a href="#netcup" class="nav-link">Netcup</a></li><li class="nav-item"><a href="#hosteurope" class="nav-link">HostEurope</a></li><li class="nav-item"><a href="#alfahosting" class="nav-link">Alfahosting</a></li></ul>
         
     </aside>
 

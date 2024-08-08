@@ -555,11 +555,30 @@
             <div>
                 
                 <div id="documentation-content">
-                    <p>This HowTo does not explain every step for the installation of Kimai on a Synology NAS with <strong>DSM 7+</strong>.</p>
+                    <div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i>
+<p>Hosting Kimai this way is neither officially recommended nor supported. But in the best interest of the community, this quick-starter is provided to help you set up Kimai.<br />
+If you run into issues with this documentation, please <a href="https://github.com/kimai/kimai/discussions" class="external-link">share your updates</a> to improve it for the next person 🔥</p>
+</div>
 
-<p>If someone can contribute and write down a step-by-step guide, that would be 🔥</p>
+<div class="card border-primary mb-3">
+                       <p class="card-title bg-faded-primary p-1 mb-1"><strong><i class="bx bxs-info-circle ms-2 me-2 text-primary fs-5"></i>Self-hosting knowledge prerequisites</strong></p>
+                       <div class="card-body card-note m-0 pt-3 px-3">
+<p>Self-hosting Kimai requires technical knowledge, including:</p>
 
-<p>Everything is handled via the <code class="language-plaintext highlighter-rouge">Conatiner Manager</code> on the DSM Web UI.</p>
+<ul>
+  <li>Setting up and configuring servers and containers</li>
+  <li>Managing application resources and scaling</li>
+  <li>Securing servers and applications</li>
+  <li>Configuring Kimai</li>
+</ul>
+
+<p>Kimai recommends self-hosting for expert users. Mistakes can lead to data loss, security issues, and downtime. If you aren’t experienced at managing servers, Kimai recommends <a href="https://www.kimai.org/" class="external-link">Kimai Cloud</a>.</p>
+</div>
+                   </div>
+
+<p>Everything is handled via the <code class="language-plaintext highlighter-rouge">Conatiner Manager</code> on the Synology DSM 7+ Web UI.</p>
+
+<p>This HowTo explains the installation of Kimai on a Synology NAS with <strong>DSM 7+</strong> - but right now there are some steps missing.</p>
 
 <h2 id="installation">Installation</h2>
 
