@@ -9,12 +9,19 @@ related:
 This screen and the `Contract` menu can be seen by any user that has active contract settings.
 The `Absence` screen can be seen by any user that has the `absence` permission.
 
+## Email notification
+
+When creating a new absence, an email including the type of absence, comment and duration/date-range will be sent to the users supervisor.
+
+This email will not be sent if the user has no configured supervisor.
+The supervisor is a setting in the [users profile]({% link _documentation/users.md %}).
+
 ## Approval workflow
 
-Right now, there is **no** Approval workflow for absences.
+**Right now, there is no Approval workflow for absences.**
 
 But any time an absence is created, the system will email the users supervisor.
-The supervisor is a setting in the [users profile]({%link _documentation/users.md %})). 
+The supervisor is a setting in the [users profile]({% link _documentation/users.md %}).
 
 ## Holiday
 
