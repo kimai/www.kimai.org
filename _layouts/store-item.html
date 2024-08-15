@@ -78,33 +78,34 @@ layout: default
 
 {% assign showInstallation = false %}
 {% assign showCompatibility = false %}
+{% assign compatibleWithTwo = false %}
+{% assign changelog = nil %}
+{% assign showDemo = false %}
+{% assign is_ppp = false %}
+
 {% if settings.bundle %}
     {% assign showInstallation = true %}
-    {% if settings.bundle.versions %}
+    {% if site.data.store.releases[settings.bundle.name] != nil %}
         {% assign showCompatibility = true %}
+        {% if page.type == 'featured' or page.type == 'plugin' %}
+            {% for version in site.data.store.releases[settings.bundle.name].versions %}
+                {% assign startsVersion = version[1] | slice: 0, 2 %}
+                {% if startsVersion == '2.' %}
+                    {% assign compatibleWithTwo = true %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endif %}
+    {% if settings.changelog != nil %}
+        {% assign changelog = 'store/changelog/' | append: settings.bundle.name | append: '.md' %}
     {% endif %}
 {% endif %}
 
-{% assign changelog = nil %}
-{% if settings.changelog %}
-    {% assign changelog = settings.changelog %}
-{% endif %}
 
-{% assign compatibleWithTwo = false %}
-{% if page.type == 'featured' or page.type == 'plugin' %}
-    {% for version in settings.bundle.versions %}
-        {% assign startsVersion = version[1] | slice: 0, 2 %}
-        {% if startsVersion == '2.' %}
-            {% assign compatibleWithTwo = true %}
-        {% endif %}
-    {% endfor %}
-{% endif %}
-
-{% assign showDemo = false %}
 {% if settings.demo != nil %}
     {% assign showDemo = settings.demo %}
 {% endif %}
-{% assign is_ppp = false %}
+
 {% if isMultiPurchase != nil and page.lang != 'de' and isFree == false %}
     {% assign is_ppp = true %}
 {% endif %}
@@ -264,10 +265,10 @@ layout: default
                     </a>
                 </li>
                 {% endif %}
-                {% if showCompatibility %}
+                {% if changelog != nil %}
                 <li class="nav-item">
-                    <a href="#store-compatibility" class="nav-link" data-bs-toggle="tab" role="tab">
-                        {{ site.data[page.lang].translation.compatibility }}
+                    <a href="#store-changelog" class="nav-link" data-bs-toggle="tab" role="tab">
+                        {{ site.data[page.lang].translation.changelog }}
                     </a>
                 </li>
                 {% endif %}
@@ -292,9 +293,29 @@ layout: default
 
                     {{ content }}
 
-                    {% if changelog != nil %}
-                        <h3 id="changelog">Changelog</h3>
-                        <pre class="p-2">{% include store/changelog/{{ changelog }} %}</pre>
+                    {% if changelog == nil and showCompatibility %}
+                        <h3 id="changelog">{{ site.data[page.lang].translation.compatibility }}</h3>
+                        <p>{{ site.data[page.lang].translation.compatibility-info }}</p>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>
+                                    {{ site.data[page.lang].translation.compatibility-bundle }}
+                                </th>
+                                <th>
+                                    {{ site.data[page.lang].translation.compatibility-kimai }}
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for version in site.data.store.releases[settings.bundle.name].versions %}
+                            <tr>
+                                <td>{{ version[0] }}</td>
+                                <td>{{ version[1] }}</td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
                     {% endif %}
                 </div>
 
@@ -308,113 +329,13 @@ layout: default
                 </div>
                 {% endif %}
 
-                {% if showCompatibility %}
-                <div class="tab-pane fade" id="store-compatibility" role="tabpanel">
-                    <h2 id="compatibility">{{ site.data[page.lang].translation.compatibility }}</h2>
-                    <p>{{ site.data[page.lang].translation.compatibility-info }}</p>
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th>
-                                {{ site.data[page.lang].translation.compatibility-bundle }}
-                            </th>
-                            <th>
-                                {{ site.data[page.lang].translation.compatibility-kimai }}
-                            </th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {% for version in settings.bundle.versions %}
-                        <tr>
-                            <td>{{ version[0] }}</td>
-                            <td>{{ version[1] }}</td>
-                        </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
-
-                    {% comment %}
-                    <h3 class="mb-4">What you'll learn</h3>
-                    <ul class="list-unstyled mb-5">
-                        <li class="d-flex align-items-center mb-2">
-                            <i class="bx bx-check-circle text-primary fs-xl me-2"></i>
-                            Sed lectus donec amet eu turpis interdum.
-                        </li>
-                        <li class="d-flex align-items-center mb-2">
-                            <i class="bx bx-check-circle text-primary fs-xl me-2"></i>
-                            Nulla at consectetur vitae dignissim porttitor.
-                        </li>
-                        <li class="d-flex align-items-center mb-2">
-                            <i class="bx bx-check-circle text-primary fs-xl me-2"></i>
-                            Phasellus id vitae dui aliquet mi.
-                        </li>
-                        <li class="d-flex align-items-center mb-2">
-                            <i class="bx bx-check-circle text-primary fs-xl me-2"></i>
-                            Integer cursus vitae, odio feugiat iaculis aliquet diam, et purus.
-                        </li>
-                        <li class="d-flex align-items-center mb-2">
-                            <i class="bx bx-check-circle text-primary fs-xl me-2"></i>
-                            In aenean dolor diam tortor orci eu.
-                        </li>
-                    </ul>
-                    <h2 class="h1 pt-md-2 pt-lg-4 pt-xl-5 pb-md-3 pb-lg-4 mb-md-4">Program details</h2>
-                    <div class="steps steps-sm">
-                        <div class="step">
-                            <div class="step-number">
-                                <div class="step-number-inner">1</div>
-                            </div>
-                            <div class="step-body">
-                                <h4 class="mb-2">Introduction. Getting started</h4>
-                                <p class="mb-0">Nulla faucibus mauris pellentesque blandit faucibus non. Sit ut et at suspendisse gravida hendrerit tempus placerat.</p>
-                            </div>
-                        </div>
-                        <div class="step">
-                            <div class="step-number">
-                                <div class="step-number-inner">2</div>
-                            </div>
-                            <div class="step-body">
-                                <h4 class="mb-2">The ultimate HTML developer: advanced HTML</h4>
-                                <p class="mb-0">Lobortis diam elit id nibh ultrices sed penatibus donec. Nibh iaculis eu sit cras ultricies. Nam eu eget etiam egestas donec scelerisque ut ac enim. Vitae ac nisl, enim nec accumsan vitae est.</p>
-                            </div>
-                        </div>
-                        <div class="step">
-                            <div class="step-number">
-                                <div class="step-number-inner">3</div>
-                            </div>
-                            <div class="step-body">
-                                <h4 class="mb-2">CSS &amp; CSS3: basic</h4>
-                                <p class="mb-0">Duis euismod enim, facilisis risus tellus pharetra lectus diam neque. Nec ultrices mi faucibus est. Magna ullamcorper potenti elementum ultricies auctor.</p>
-                            </div>
-                        </div>
-                        <div class="step">
-                            <div class="step-number">
-                                <div class="step-number-inner">4</div>
-                            </div>
-                            <div class="step-body">
-                                <h4 class="mb-2">JavaScript basics for beginners</h4>
-                                <p class="mb-0">Morbi porttitor risus imperdiet a, nisl mattis. Amet, faucibus eget in platea vitae, velit, erat eget velit. At lacus ut proin erat.</p>
-                            </div>
-                        </div>
-                        <div class="step">
-                            <div class="step-number">
-                                <div class="step-number-inner">5</div>
-                            </div>
-                            <div class="step-body">
-                                <h4 class="mb-2">Understanding APIs</h4>
-                                <p class="mb-0">Risus morbi euismod in congue scelerisque fusce pellentesque diam consequat. Nisi mauris nibh sed est morbi amet arcu urna. Malesuada feugiat quisque consectetur elementum diam vitae. Dictumst facilisis odio eu quis maecenas risus odio fames bibendum ullamcorper.</p>
-                            </div>
-                        </div>
-                        <div class="step">
-                            <div class="step-number">
-                                <div class="step-number-inner">6</div>
-                            </div>
-                            <div class="step-body">
-                                <h4 class="mb-2">Python from beginner to advanced</h4>
-                                <p class="mb-0">Quis risus quisque diam diam. Volutpat neque eget eu faucibus sed urna fermentum risus. Est, mauris morbi nibh massa.</p>
-                            </div>
-                        </div>
-                    </div>
-                    {% endcomment %}
+                {% if changelog != nil %}
+                <div class="tab-pane fade" id="store-changelog" role="tabpanel">
+                    <h2 id="compatibility">{{ site.data[page.lang].translation.changelog }}</h2>
+                    {% capture changelog_md -%}
+                    {%- include {{ changelog }} -%}
+                    {%- endcapture %}
+                    {{ changelog_md | markdownify }}
                 </div>
                 {% endif %}
 
