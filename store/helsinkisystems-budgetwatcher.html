@@ -192,7 +192,6 @@
 
 
 
-
 <section class="bg-dark pt-2 pt-lg-3 pb-lg-5">
     <div class="container position-relative zindex-5">
 
@@ -283,12 +282,6 @@
                 </li>
                 
                 
-                <li class="nav-item">
-                    <a href="#store-compatibility" class="nav-link" data-bs-toggle="tab" role="tab">
-                        Compatibility
-                    </a>
-                </li>
-                
                 
                 
             </ul>
@@ -321,6 +314,29 @@ For example, you can set the default amounts to 50%, 75%, and 95%, and for anoth
 
 
                     
+                        <h3 id="changelog">Compatibility</h3>
+                        <p>The following table contains a comparison between plugin and required minimum Kimai version.</p>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>
+                                    Bundle version
+                                </th>
+                                <th>
+                                    Minimum Kimai version
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            
+                            <tr>
+                                <td>1.0</td>
+                                <td>2.0</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    
                 </div>
 
                 
@@ -335,7 +351,7 @@ For example, you can set the default amounts to 50%, 75%, and 95%, and for anoth
     </p>
 
 
-<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">var/plugins/Budget Watcher/</code></pre></figure>
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">var/plugins/BudgetWatcherBundle/</code></pre></figure>
 
 
     
@@ -344,8 +360,8 @@ For example, you can set the default amounts to 50%, 75%, and 95%, and for anoth
 
 
 <figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">var/plugins/
-├── Budget Watcher
-│   ├── Budget Watcher.php
+├── BudgetWatcherBundle
+│   ├── BudgetWatcherBundle.php
 |   └ ... more files and directories follow here ...</code></pre></figure>
 
 
@@ -404,7 +420,7 @@ And you probably need to prefix them with <code class="language-plaintext highli
 <div class="alert alert-warning d-flex" role="alert">
 <i class="bx bx-alarm-exclamation lead me-3"></i>
 <p>If you see an error like <code class="language-plaintext highlighter-rouge">There are no commands defined in the "kimai:bundle:XYZ" namespace.</code>,
-then either the directory has a wrong name (must be <strong>var/plugins/Budget Watcher/</strong>) or you forgot to clear the cache (look above).</p>
+then either the directory has a wrong name (must be <strong>var/plugins/BudgetWatcherBundle/</strong>) or you forgot to clear the cache (look above).</p>
 </div>
     
 
@@ -418,7 +434,7 @@ then either the directory has a wrong name (must be <strong>var/plugins/Budget W
 
     <p>Updating the plugin works exactly like the installation:</p>
     <ul>
-        <li>Delete the directory <code class="language-plaintext highlighter-rouge">var/plugins/Budget Watcher/</code>
+        <li>Delete the directory <code class="language-plaintext highlighter-rouge">var/plugins/BudgetWatcherBundle/</code>
         </li>
 <li>
             Execute all installation steps again:
@@ -437,33 +453,6 @@ then either the directory has a wrong name (must be <strong>var/plugins/Budget W
                 </div>
                 
 
-                
-                <div class="tab-pane fade" id="store-compatibility" role="tabpanel">
-                    <h2 id="compatibility">Compatibility</h2>
-                    <p>The following table contains a comparison between plugin and required minimum Kimai version.</p>
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th>
-                                Bundle version
-                            </th>
-                            <th>
-                                Minimum Kimai version
-                            </th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        
-                        <tr>
-                            <td>1.0</td>
-                            <td>2.0</td>
-                        </tr>
-                        
-                        </tbody>
-                    </table>
-
-                    
-                </div>
                 
 
                 

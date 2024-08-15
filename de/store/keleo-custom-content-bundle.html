@@ -192,7 +192,6 @@
 
 
 
-
 <section class="bg-dark pt-2 pt-lg-3 pb-lg-5">
     <div class="container position-relative zindex-5">
 
@@ -285,8 +284,8 @@
                 
                 
                 <li class="nav-item">
-                    <a href="#store-compatibility" class="nav-link" data-bs-toggle="tab" role="tab">
-                        Kompatibilität
+                    <a href="#store-changelog" class="nav-link" data-bs-toggle="tab" role="tab">
+                        Änderungen
                     </a>
                 </li>
                 
@@ -332,88 +331,6 @@
 
 
 
-                    
-                        <h3 id="changelog">Changelog</h3>
-                        <pre class="p-2">## Version 2.3.1
-
-Compatibility: requires minimum Kimai 2.5.0
-
-- Changed: import Route attribute from correct namespace
-- Changed: use bundle identifier to load routes
-
-## Version 2.3.0
-
-Compatibility: requires minimum Kimai 2.5.0
-
-- Changed: moved some translations to core, allowing more languages
-
-## Version 2.2.0
-
-Compatibility: requires minimum Kimai 2.1.0
-
-- Fixed: route mapping type changed to attribute
-
-## Version 2.1.1
-
-Compatibility: requires minimum Kimai 2.0
-
-- Added: explicit ID and class to target markdown news content via Javascript
-
-## Version 2.1.0
-
-Compatibility: requires minimum Kimai 2.0
-
-- Added: new permissions `js_custom_content`, `css_custom_content`, `alert_custom_content`, `news_custom_content` for separate content sections
-- Added: better tabs
-
-## Version 2.0.3
-
-Compatibility: requires minimum Kimai 2.0
-
-- Fixed: do not escape HTML in javascript content
-
-## Version 2.0.2
-
-Compatibility: requires minimum Kimai 2.0
-
-- Added: improved validation rules
-- Fixed: show submitted tab again
-
-## Version 2.0.1
-
-Compatibility: requires minimum Kimai 2.0
-
-- Fixed: compatibility with Kimai 2.0 (new Configuration access API)
-
-## Version 2.0
-
-Compatibility: requires minimum Kimai 2.0
-
-- Fixed: compatibility with Kimai 2.0
-
-## Version 1.2
-
-Compatibility: requires minimum Kimai 1.17
-
-- Added: automatically import settings from CustomCSS bundle (when admin page is opened first)
-- Added: Translations for tabs (added german)
-
-## Version 1.1
-
-Compatibility: requires minimum Kimai 1.17
-
-- Fixed: saving failed
-- Code cleanup
-
-## Version 1.0
-
-Compatibility: requires minimum Kimai 1.17
-
-- Added support for: Custom CSS
-- Added support for: Custom Javascript
-- Added support for: Custom warning message (alert)
-- Added support for: Custom page with title (name of menu) and content
-</pre>
                     
                 </div>
 
@@ -513,51 +430,47 @@ And you probably need to prefix them with <code class="language-plaintext highli
                 
 
                 
-                <div class="tab-pane fade" id="store-compatibility" role="tabpanel">
-                    <h2 id="compatibility">Kompatibilität</h2>
-                    <p>Die folgende Tabelle enthält einen Vergleich zwischen Plugin und benötigter Kimai Version.</p>
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th>
-                                Plugin Version
-                            </th>
-                            <th>
-                                Minimale Kimai Version
-                            </th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        
-                        <tr>
-                            <td>2.3.0 - 2.3.1</td>
-                            <td>2.5.0</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>2.2.0</td>
-                            <td>2.1.0</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>2.1.0 - 2.1.1</td>
-                            <td>2.0</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>2.0.1</td>
-                            <td>2.0</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>1.2.1</td>
-                            <td>1.17</td>
-                        </tr>
-                        
-                        </tbody>
-                    </table>
-
+                <div class="tab-pane fade" id="store-changelog" role="tabpanel">
+                    <h2 id="compatibility">Änderungen</h2>
                     
+                    <h2 id="version-231">Version 2.3.1</h2>
+
+<p>Compatibility: requires minimum Kimai 2.5.0</p>
+
+<ul>
+  <li>Changed: import Route attribute from correct namespace</li>
+  <li>Changed: use bundle identifier to load routes</li>
+</ul>
+
+<h2 id="version-230">Version 2.3.0</h2>
+
+<p>Compatibility: requires minimum Kimai 2.5.0</p>
+
+<p>Changed: moved some translations to core, allowing more languages</p>
+
+<h2 id="version-220">Version 2.2.0</h2>
+
+<p>Compatibility: requires minimum Kimai 2.1.0</p>
+
+<ul>
+  <li>Fixed: route mapping type changed to attribute</li>
+  <li>Fixed code-sniffer deprecation</li>
+</ul>
+
+<h2 id="version-211">Version 2.1.1</h2>
+
+<p>Compatibility: requires minimum Kimai 2.0.0</p>
+
+<p>Added: explicit ID and class to target markdown news content via Javascript</p>
+
+<h2 id="version-210">Version 2.1.0</h2>
+
+<p>Compatibility: requires minimum Kimai 2.0.0</p>
+
+<p>Added: new permissions - js_custom_content, css_custom_content, alert_custom_content, news_custom_content
+Added: better tabs</p>
+
+
                 </div>
                 
 

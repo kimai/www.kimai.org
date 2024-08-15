@@ -192,7 +192,6 @@
 
 
 
-
 <section class="bg-dark pt-2 pt-lg-3 pb-lg-5">
     <div class="container position-relative zindex-5">
 
@@ -283,12 +282,6 @@
                 </li>
                 
                 
-                <li class="nav-item">
-                    <a href="#store-compatibility" class="nav-link" data-bs-toggle="tab" role="tab">
-                        Совместимость
-                    </a>
-                </li>
-                
                 
                 
             </ul>
@@ -322,6 +315,29 @@ After reverting all local changes and updating Kimai, you have to reinstall the 
 
 
                     
+                        <h3 id="changelog">Совместимость</h3>
+                        <p>Плагины всегда должны быть совместимы с более высокими версиями Kimai. Следующий список содержит версию плагина и необходимую минимальную версию Kimai.</p>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>
+                                    Версия сборки
+                                </th>
+                                <th>
+                                    Минимальная версия Kimai
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            
+                            <tr>
+                                <td>1.0</td>
+                                <td>2.0</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    
                 </div>
 
                 
@@ -336,7 +352,7 @@ After reverting all local changes and updating Kimai, you have to reinstall the 
     </p>
 
 
-<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">var/plugins/LexofficeInvoice/</code></pre></figure>
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">var/plugins/LexofficeInvoiceBundle/</code></pre></figure>
 
 
     
@@ -345,8 +361,8 @@ After reverting all local changes and updating Kimai, you have to reinstall the 
 
 
 <figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">var/plugins/
-├── LexofficeInvoice
-│   ├── LexofficeInvoice.php
+├── LexofficeInvoiceBundle
+│   ├── LexofficeInvoiceBundle.php
 |   └ ... more files and directories follow here ...</code></pre></figure>
 
 
@@ -403,7 +419,7 @@ And you probably need to prefix them with <code class="language-plaintext highli
 
     <p>Updating the plugin works exactly like the installation:</p>
     <ul>
-        <li>Delete the directory <code class="language-plaintext highlighter-rouge">var/plugins/LexofficeInvoice/</code>
+        <li>Delete the directory <code class="language-plaintext highlighter-rouge">var/plugins/LexofficeInvoiceBundle/</code>
         </li>
 <li>
             Execute all installation steps again:
@@ -419,33 +435,6 @@ And you probably need to prefix them with <code class="language-plaintext highli
                 </div>
                 
 
-                
-                <div class="tab-pane fade" id="store-compatibility" role="tabpanel">
-                    <h2 id="compatibility">Совместимость</h2>
-                    <p>Плагины всегда должны быть совместимы с более высокими версиями Kimai. Следующий список содержит версию плагина и необходимую минимальную версию Kimai.</p>
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th>
-                                Версия сборки
-                            </th>
-                            <th>
-                                Минимальная версия Kimai
-                            </th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        
-                        <tr>
-                            <td>1.0</td>
-                            <td>2.0</td>
-                        </tr>
-                        
-                        </tbody>
-                    </table>
-
-                    
-                </div>
                 
 
                 

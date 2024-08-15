@@ -192,7 +192,6 @@
 
 
 
-
 <section class="bg-dark pt-2 pt-lg-3 pb-lg-5">
     <div class="container position-relative zindex-5">
 
@@ -278,8 +277,8 @@
                 
                 
                 <li class="nav-item">
-                    <a href="#store-compatibility" class="nav-link" data-bs-toggle="tab" role="tab">
-                        Kompatibilität
+                    <a href="#store-changelog" class="nav-link" data-bs-toggle="tab" role="tab">
+                        Änderungen
                     </a>
                 </li>
                 
@@ -319,207 +318,6 @@
 
 
 
-                    
-                        <h3 id="changelog">Changelog</h3>
-                        <pre class="p-2">## Version 2.12.0
-
-Compatibility: requires minimum Kimai 2.11.0
-
-- Added toggl timesheet importer
-- Format certain values in preview
-- Fixed user column name detection in timesheet import
-- Removed support for translated column headers (caused too many problems)
-
-## Version 2.11.0
-
-Compatibility: requires minimum Kimai 2.11.0
-
-- Validate Hourly/Internal/Fixed rate
-- Translate detected column headers (removed in 2.12)
-
-## Version 2.10.0
-
-Compatibility: requires minimum Kimai 2.11.0
-
-- Simplify timesheet example data to prevent confusion
-- Fix Doctrine deprecations
-
-## Version 2.9.0
-
-Compatibility: requires minimum Kimai 2.5.0
-
-- Fixed: timesheet importer created project multiple times (if many projects used the same name)
-- Change: import route annotation from correct namespace
-
-## Version 2.8.0
-
-Compatibility: requires minimum Kimai 2.5.0
-
-- Added: new created users during import require to change password
-- Changed: Improved error message upon wrong mimetype
-
-## Version 2.7.0
-
-Compatibility: requires minimum Kimai 2.5.0
-
-- Changed: moved some translations to core, allowing more languages
-- Fixed: column "Rate" is not required for timesheets
-
-## Version 2.6.0
-
-Compatibility: requires minimum Kimai 2.4.0
-
-- Added: support Kimai Export CSV for import
-- Added: logging for simpler debugging
-- Changed: improved importing visible flags for customers and projects
-- Changed: improve user mapping (and support setting the Alias during import)
-
-## Version 2.5.1
-
-Compatibility: requires minimum Kimai 2.1.0
-
-- Fixed: column "Billable" is not correctly imported
-
-## Version 2.5.0
-
-Compatibility: requires minimum Kimai 2.1.0
-
-- Changed: use annotation type for routes
-
-## Version 2.4.0
-
-Compatibility: requires minimum Kimai 2.0.30
-
-- Added: skip some validations during timesheet import
-
-## Version 2.3.0
-
-Compatibility: requires minimum Kimai 2.0.9
-
-- Added: support for meta-fields via column "meta.XXX" for customers
-- Added: support for meta-fields via column "meta.XXX" for projects
-- Added: support for column "name" for customer
-- Added: support for column "name" for project
-- Added: importer highlights invalid column mapping
-- Removed: "(plugin)" from permission header
-
-## Version 2.2.3
-
-Compatibility: requires minimum Kimai 2.0.9
-
-- Fixed: System-Menu is not highlighted on tabs
-
-## Version 2.2.2
-
-Compatibility: requires minimum Kimai 2.0.9
-
-- Added: hint for Clockify imports, that rate configurations are not imported
-- Added: deactivate certain validation rules in "Import from Kimai v1" command
-- Removed: use `Import` validator group
-
-## Version 2.2.1
-
-Compatibility: requires minimum Kimai 2.0.9
-
-- Fixed: detect invalid encoding for fields Activity, Project, Description
-- Added: better preview and import result status
-
-## Version 2.2.0
-
-Compatibility: requires minimum Kimai 2.0.9
-
-Better use with Kimai 2.0.15 to utilize new `Import` validator group.
-
-- Added: command option `skip-teams` to prevent team sync
-- Added: command option `check-already-imported` to prevent duplicate database entries
-- Fixed: `string` vs `int` comparison
-- Fixed: `isset` vs `array_key_exists`
-- Fixed: `is_int` vs `is_numeric`
-
-## Version 2.1.6
-
-Compatibility: requires minimum Kimai 2.0.9
-
-- Fixed: prevent error if tag name exceeds 500 character
-
-## Version 2.1.5
-
-Compatibility: requires minimum Kimai 2.0.9
-
-- Fixed: duration parsing
-
-## Version 2.1.4
-
-Compatibility: requires minimum Kimai 2.0.9
-
-- Added: identify auto-deactivation during batch imports
-
-## Version 2.1.3
-
-Compatible with Kimai 2.0
-
-- Fixed: deactivate listener for import, reducing extra DB queries (now 1k imported rows = ~7k queries, instead of 22k before)
-- Fixed: improved boolean parsing
-    - strings `yes`, `true`, `1` = true
-    - everything else (e.g. `no`, `false`, `0`, empty string) = false
-
-## Version 2.1.2
-
-Compatible with Kimai 2.0
-
-- Fixed: catch any Exception during CSV import
-
-## Version 2.1.1
-
-Compatible with Kimai 2.0
-
-- Fixed: use UserService to create new user with default settings
-
-## Version 2.1.0
-
-Compatible with Kimai 2.0
-
-- Added: new tabs for different importer
-- Added: support creating user during import
-- Added: new importer for Clockify migrations
-- Added: option to choose between global and project-specific activities
-- Fixed: Highlight errors
-
-## Version 2.0.2
-
-Compatible with Kimai 2.0
-
-- Fixed: proper error handling for invalid date-times
-- Fixed: proper error handling for unknown users
-
-## Version 2.0.1
-
-Compatible with Kimai 2.0
-
-- Fixed: fixed import form validation
-- Fixed: replaced "Sensio-FrameworkExtraBundle" with Symfony attribute
-
-## Version 2.0
-
-Compatible with Kimai 2.0
-
-- Fixed: compatibility with 2.0
-- Added: moved Kimai 1 import command from core to plugin
-
-## Version 1.2
-
-Compatible with Kimai 1.22.0
-
-- Fixed: import of float values for "rate", "hourly rate", "fixed rate" and "internal rate"
-
-## Version 1.0
-
-Compatible with Kimai 1.21.0
-
-- Initial version with support for:
-    - Customer
-    - Project
-</pre>
                     
                 </div>
 
@@ -619,66 +417,115 @@ And you probably need to prefix them with <code class="language-plaintext highli
                 
 
                 
-                <div class="tab-pane fade" id="store-compatibility" role="tabpanel">
-                    <h2 id="compatibility">Kompatibilität</h2>
-                    <p>Die folgende Tabelle enthält einen Vergleich zwischen Plugin und benötigter Kimai Version.</p>
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th>
-                                Plugin Version
-                            </th>
-                            <th>
-                                Minimale Kimai Version
-                            </th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        
-                        <tr>
-                            <td>2.10.0 - 2.12.0</td>
-                            <td>2.11.0</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>2.7.0 - 2.9.0</td>
-                            <td>2.5.0</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>2.6.0</td>
-                            <td>2.4.0</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>2.5.0 - 2.5.1</td>
-                            <td>2.1.0</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>2.4.0</td>
-                            <td>2.0.30</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>2.1.4 - 2.3.0</td>
-                            <td>2.0.9</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>2.0.0 - 2.1.3</td>
-                            <td>2.0</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>1.2</td>
-                            <td>1.22.0</td>
-                        </tr>
-                        
-                        </tbody>
-                    </table>
-
+                <div class="tab-pane fade" id="store-changelog" role="tabpanel">
+                    <h2 id="compatibility">Änderungen</h2>
                     
+                    <h2 id="version-2140">Version 2.14.0</h2>
+
+<p>Compatibility: requires minimum Kimai 2.17.0</p>
+
+<ul>
+  <li>Allow 4MB upload file size and 5000 rows per file</li>
+  <li>Deactivate timesheet validators during Kimai1 import: TimesheetLockdown, TimesheetLongRunning, TimesheetZeroDuration</li>
+</ul>
+
+<h2 id="version-2130">Version 2.13.0</h2>
+
+<p>Compatibility: requires minimum Kimai 2.17.0</p>
+
+<ul>
+  <li>Support importing seconds</li>
+  <li>Fixed Clockify duration import rounding issue (see #4838)</li>
+  <li>Added quick links from Customer and Project listing</li>
+</ul>
+
+<h2 id="version-2120">Version 2.12.0</h2>
+
+<p>Compatibility: requires minimum Kimai 2.11.0</p>
+
+<ul>
+  <li>Added: toggl timesheet importer</li>
+  <li>Added: format a few value types in preview</li>
+  <li>Added: internal API improvements</li>
+  <li>Fixed: user column name detection in timesheet importer</li>
+  <li>Fixed: removed translated column header detection in timesheet importer (caused too many problems)</li>
+</ul>
+
+<h2 id="version-2110">Version 2.11.0</h2>
+
+<p>Compatibility: requires minimum Kimai 2.11.0</p>
+
+<ul>
+  <li>Added: Validate Hourly/Internal/Fixed rate</li>
+  <li>Changed: Translate detected column headers</li>
+</ul>
+
+<h2 id="version-2100">Version 2.10.0</h2>
+
+<p>Compatibility: requires minimum Kimai 2.11.0</p>
+
+<ul>
+  <li>Simplify timesheet example data to prevent confusion</li>
+  <li>Fix Doctrine deprecations</li>
+</ul>
+
+<h2 id="version-290">Version 2.9.0</h2>
+
+<p>Compatibility: requires minimum Kimai 2.5.0</p>
+
+<ul>
+  <li>Fixed: timesheet importer created project multiple times (if it existed under the same name multiple times)</li>
+  <li>Change: import route annotation from correct namespace</li>
+</ul>
+
+<h2 id="version-280">Version 2.8.0</h2>
+
+<p>Compatibility: requires minimum Kimai 2.5.0</p>
+
+<ul>
+  <li>Added: new created users during import require to change password</li>
+  <li>Changed: Improved error message upon wrong mimetype</li>
+</ul>
+
+<h2 id="version-270">Version 2.7.0</h2>
+
+<p>Compatibility: requires minimum Kimai 2.5.0</p>
+
+<ul>
+  <li>Changed: moved some translations to core, allowing more languages</li>
+  <li>Fixed: column “Rate” is not required for timesheets</li>
+</ul>
+
+<h2 id="version-260">Version 2.6.0</h2>
+
+<p>Compatibility: requires minimum Kimai 2.4.0</p>
+
+<ul>
+  <li>Improved importing visible flags for customers and projects</li>
+  <li>Support Kimai Export CSV for import</li>
+  <li>Improve user mapping (and support setting the Alias during import)</li>
+  <li>Added logging for simpler debugging</li>
+</ul>
+
+<h2 id="version-251">Version 2.5.1</h2>
+
+<p>Compatibility: requires minimum Kimai 2.1.0</p>
+
+<p>Fixed: Column “Billable” is not correctly imported</p>
+
+<h2 id="version-250">Version 2.5.0</h2>
+
+<p>Compatibility: requires minimum Kimai 2.1.0</p>
+
+<p>Use annotation type for routes</p>
+
+<h2 id="version-240">Version 2.4.0</h2>
+
+<p>Compatibility: requires minimum Kimai 2.0.30</p>
+
+<p>Added: skip some validations during timesheet import</p>
+
+
                 </div>
                 
 

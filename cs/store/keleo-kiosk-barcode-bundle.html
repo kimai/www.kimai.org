@@ -192,7 +192,6 @@
 
 
 
-
 <section class="bg-dark pt-2 pt-lg-3 pb-lg-5">
     <div class="container position-relative zindex-5">
 
@@ -295,8 +294,8 @@
                 
                 
                 <li class="nav-item">
-                    <a href="#store-compatibility" class="nav-link" data-bs-toggle="tab" role="tab">
-                        Kompatibilita
+                    <a href="#store-changelog" class="nav-link" data-bs-toggle="tab" role="tab">
+                        Changelog
                     </a>
                 </li>
                 
@@ -414,212 +413,6 @@ This will be used for every recorded timesheet that is created using the kiosk m
 
 
 
-                    
-                        <h3 id="changelog">Changelog</h3>
-                        <pre class="p-2">## Version 2.8.0
-
-Compatibility: requires minimum Kimai 2.11.0
-
-- Added: system configuration `kiosk.enabled` to disable Kiosk via local.yaml
-- Added: allow to set NFC code in edit screen via WebNFC
-- Changed: support attribute caching in Voter
-- Changed: simplified buttons in users kiosk profile
-
-## Version 2.7.0
-
-Compatibility: requires minimum Kimai 2.11.0
-
-- Added: show kiosk codes as user profile tab
-- Added: print barcode on click to the image
-- Changed: removed `barcode_own_profile` and `barcode_other_profile` permissions, replaced by `kiosk_own_profile` and `kiosk_other_profile`
-
-## Version 2.6.0
-
-Compatibility: requires minimum Kimai 2.11.0
-
-- Changed: CSS files and language handling, required for Kimai 2.11.0
-- Changed: Replaced deprecated RestRoute attribute with SF native one
-
-## Version 2.5.0
-
-Compatibility: requires minimum Kimai 2.1.0
-
-- Use annotation type for routes
-
-## Version 2.4.1
-
-Compatibility: requires minimum Kimai 2.0.35
-
-- Adjusted internal API usage to prevent calls to deprecated code
-
-## Version 2.4.0
-
-Compatibility: requires minimum Kimai 2.0.33
-
-- Fixed: possible pagination issues
-
-## Version 2.3.1
-
-Compatibility: requires minimum Kimai 2.0.29
-
-- Fixed: upgraded quagga from 0.0.18 to 1.8.2
-- Fixed: upgraded bwip from 2.0.6 to 3.0.1
-
-## Version 2.3.0
-
-Compatibility: requires minimum Kimai 2.0.29
-
-- Added: use language of the current user to render the welcome screen
-- Added: use timezone of the current user to display the time
-
-## Version 2.2.1
-
-Compatibility: requires minimum Kimai 2.0.20
-
-- Fixed: compatibility with Kimai 2.0.20 and Tabler Beta 19
-
-## Version 2.2.0
-
-Compatibility: requires minimum Kimai 2.0
-
-- Added: Support for [Web NFC](https://developer.mozilla.org/en-US/docs/Web/API/NDEFReader) in freestyle mode
-- Added: upgrade item actions to use v2 API
-
-## Version 2.1.0
-
-Compatibility: requires minimum Kimai 2.0
-
-- Added: detect HTTP and include hint in error message, that webcam can only be accessed via HTTPS
-- Added: Allow to manually select camera by user
-- Added: Configuration if user may select the camera
-- Added: Store used device ID in cookie
-- Added: Configuration for input field placeholder
-- Changed: Added and changed HTML IDs for better "Custom CSS" experience
-- Fixed: disappearing error message
-
-## Version 2.0.2
-
-Compatibility: requires minimum Kimai 2.0
-
-- Fixed: Do not auto-calculate new Kiosk code, to allow removing the last code from a user
-
-## Version 2.0.1
-
-Compatibility: requires minimum Kimai 2.0
-
-- Fixed: Menu-Subscriber priority (missing in "Favorites" menu)
-
-## Version 2.0
-
-Compatibility: requires minimum Kimai 2.0
-
-- Fixed: compatibility with Kimai 2.0
-- BC break: Changed API URLs:
-    - `/api/kiosks/kiosks` to `/api/kiosk/codes`
-    - `/api/kiosks/kiosks/{id}` to `/api/kiosk/codes/{id}`
-
-### Version 1.12
-
-Compatibility: requires minimum Kimai 1.15
-
-- Added: missing translation for "Code"
-
-### Version 1.11
-
-Compatibility: requires minimum Kimai 1.15
-
-- Added: support **multiple codes per user**
-- Added: delete single code
-- Added: edit code with activity
-
-### Version 1.10
-
-Compatibility: requires minimum Kimai 1.15
-
-- Added: reload scanner page every 14 minutes to prevent CSRF token / session issues (PHP default session timeout is 14 minutes)
-- Added: set an **activity per user and code**, which allows to overwrite the global configured code
-- Added: new setting to prevent stopping of non-kiosk activities
-- Added: edit existing codes
-
-## Version 1.9
-
-Compatibility: requires minimum Kimai 1.15
-
-- Added: a new configuration to prevent page reloads after login (activated by default)
-
-## Version 1.8
-
-Compatibility: requires minimum Kimai 1.15
-
-- Added: API functions to load available codes (list of all codes only available to user with permission `kiosk_admin`)
-- Fixed: do not display codes for disabled users
-- Fixed: definitions for new Kimai version
-
-## Version 1.7
-
-Compatibility: requires minimum Kimai 1.14
-
-- Added: beep (login) and boop (logout) sounds (off by default)
-
-## Version 1.6
-
-Compatibility: requires minimum Kimai 1.11
-
-- Added: allow CSS customization via event
-- Added: the following CSS classes, for building selectors:
-    - `kiosk-login`: the kiosk login screen with the code input/scanner
-    - `kiosk-login-status`: status page (started and stopped)
-    - `kiosk-started`: status page after record has been started (login)
-    - `kiosk-stopped`: status page after record has been stopped (logout)
-    - `kiosk-users`: list of active and inactive users with avatars (features must be activated)
-    - Example: hide the logo on login and logout page via Custom CSS bundle:
-    ```css
-    .kiosk-login-status .login-logo { display:none; }
-    .kiosk-login-status .login-box-body { margin-top: 50px; }
-    ``` 
-- Added: the following new configurations
-    - `hide logo`: hide logo on status pages (login and logout)
-    - `hide code`: turns the code input field into a password field
-- Added: a new configuration to show active users in login screen
-- Added: a new configuration to show inactive users in login screen
-
-## Version 1.5
-
-Compatibility: requires minimum Kimai 1.11
-
-- Added: Configuration to activate IP address logging when starting a new entry
-- Added: Simplify installation (assets will be installed automatically)
-- Fixed: Composer 2 compatibility
-
-## Version 1.4
-
-Compatibility: requires minimum Kimai 1.10
-
-- Added "Freestyle" code format, which can be used for example:
-    - with a simple keyboard (eg. door-lock)
-    - RFID reader which act as keyboard (like barcode scanners)
-    - see Hardware section in [README.md](README.md)
-- Added new `kiosk_admin` permission (by default assigned to Super-Admins)
-- Added Kiosk Admin page showing all users with attached codes (needs `kiosk_admin` permission)
-- Prevent invalid time configuration in user-preferences
-- Show all configured codes on user screen (highlight active type)
-
-## Version 1.3
-
-- Added allowed start and end times for each user (new permissions `kiosk_own_profile` and `kiosk_other_profile`)
-
-## Version 1.2
-
-- Fixed timezone issue
-
-## Version 1.1
-
-- Fixed configuration problem, removed project setting
-
-## Version 1.0
-
-- Initial release
-</pre>
                     
                 </div>
 
@@ -749,86 +542,87 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
                 
 
                 
-                <div class="tab-pane fade" id="store-compatibility" role="tabpanel">
-                    <h2 id="compatibility">Kompatibilita</h2>
-                    <p>Následující tabulka obsahuje seznam pluginů a k nim minimální požadovanou verzi Kimai.</p>
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th>
-                                Verze balíčku
-                            </th>
-                            <th>
-                                Minimální verze Kimai
-                            </th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        
-                        <tr>
-                            <td>2.6.0 - 2.8.0</td>
-                            <td>2.11.0</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>2.5.0</td>
-                            <td>2.1.0</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>2.4.1</td>
-                            <td>2.0.35</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>2.4.0</td>
-                            <td>2.0.33</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>2.3.0 - 2.3.1</td>
-                            <td>2.0.29</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>2.2.1</td>
-                            <td>2.0.20</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>2.0 - 2.2.0</td>
-                            <td>2.0</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>1.8 - 1.12</td>
-                            <td>1.15</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>1.7</td>
-                            <td>1.14</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>1.5 - 1.6</td>
-                            <td>1.11</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>1.4</td>
-                            <td>1.10</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>1.0 - 1.3</td>
-                            <td>1.8</td>
-                        </tr>
-                        
-                        </tbody>
-                    </table>
-
+                <div class="tab-pane fade" id="store-changelog" role="tabpanel">
+                    <h2 id="compatibility">Changelog</h2>
                     
+                    <h2 id="version-290">Version 2.9.0</h2>
+
+<p>Compatibility: requires minimum Kimai 2.11.0</p>
+
+<ul>
+  <li>Compatibility with composer installation</li>
+  <li>Inline Nelmio API Doc configuration</li>
+  <li>Inline JMS Serializer configuration</li>
+</ul>
+
+<h2 id="version-282">Version 2.8.2</h2>
+
+<p>Compatibility: requires minimum Kimai 2.11.0</p>
+
+<ul>
+  <li>Added support for NFC with Android-Kiosk: www.android-kiosk.com</li>
+</ul>
+
+<h2 id="version-281">Version 2.8.1</h2>
+
+<p>Compatibility: requires minimum Kimai 2.11.0</p>
+
+<p>Changed: link to new documentation page</p>
+
+<h2 id="version-280">Version 2.8.0</h2>
+
+<p>Compatibility: requires minimum Kimai 2.11.0</p>
+
+<ul>
+  <li>Added: system configuration <code class="language-plaintext highlighter-rouge">kiosk.enabled</code> to disable Kiosk via local.yaml</li>
+  <li>Added: allow to set NFC code in edit screen via WebNFC</li>
+  <li>Changed: support attribute caching in Voter</li>
+  <li>Changed: simplified buttons in users kiosk profile</li>
+</ul>
+
+<h2 id="version-270">Version 2.7.0</h2>
+
+<p>Compatibility: requires minimum Kimai 2.11.0</p>
+
+<ul>
+  <li>Added: show kiosk codes as user profile tab</li>
+  <li>Added: permission <code class="language-plaintext highlighter-rouge">kiosk_enabled</code> to allow disabling Kiosk for entire user roles</li>
+  <li>Added: print barcode on click to the image</li>
+  <li>Changed: removed <code class="language-plaintext highlighter-rouge">barcode_own_profile</code> and <code class="language-plaintext highlighter-rouge">barcode_other_profile</code> permissions, replaced by <code class="language-plaintext highlighter-rouge">kiosk_own_profile</code> and <code class="language-plaintext highlighter-rouge">kiosk_other_profile</code>
+</li>
+</ul>
+
+<h2 id="version-260">Version 2.6.0</h2>
+
+<p>Compatibility: requires minimum Kimai 2.11.0</p>
+
+<ul>
+  <li>Changed: CSS files and language handling, required for Kimai 2.11.0</li>
+  <li>Changed: Replaced deprecated RestRoute attribute with SF native one</li>
+</ul>
+
+<h2 id="version-250">Version 2.5.0</h2>
+
+<p>Compatibility: requires minimum Kimai 2.1.0</p>
+
+<p>Use annotation type for routes</p>
+
+<h2 id="version-240">Version 2.4.0</h2>
+
+<p>Compatibility: requires minimum Kimai 2.0.33</p>
+
+<p>Fixed: possible pagination issues</p>
+
+<h2 id="version-231">Version 2.3.1</h2>
+
+<p>Compatibility: requires minimum Kimai 2.0.29</p>
+
+<ul>
+  <li>Fixed: upgraded quagga from 0.0.18 to 1.8.2</li>
+  <li>Fixed: upgraded bwip from 2.0.6 to 3.0.1</li>
+</ul>
+
+
                 </div>
                 
 
