@@ -566,13 +566,16 @@ Please read their documentation to find out more about possible connection detai
 
 <p>More explanation can be found int the <a href="https://symfony.com/doc/current/mailer.html">Symfony mailer documentation</a>.</p>
 
-<p>Some more complex examples for the default SMTP transport:</p>
+<p>Some more examples for the SMTP transport:</p>
 
 <ul>
   <li>SMTP with authentication: <code class="language-plaintext highlighter-rouge">smtp://user:password@smtp.example.com:25</code></li>
   <li>With email as username: <code class="language-plaintext highlighter-rouge">smtp://info@example.com:password@smtp.example.com:25</code></li>
-  <li>With TLS/SSL encryption: <code class="language-plaintext highlighter-rouge">smtp://info@example.com:password@smtp.example.com:443?encryption=ssl</code></li>
+  <li>With SSL encryption: <code class="language-plaintext highlighter-rouge">smtp://info@example.com:password@smtp.example.com:443?encryption=ssl</code></li>
+  <li>With TLS encryption: <code class="language-plaintext highlighter-rouge">smtp://user:password@smtp.example.com:587?encryption=tls</code></li>
 </ul>
+
+<p>You get all the above settings from your email provider. Ports and encryption can vary.</p>
 
 <h2 id="testing-emails">Testing emails</h2>
 
