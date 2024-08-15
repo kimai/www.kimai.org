@@ -1,3 +1,17 @@
+## Version 2.9.0
+
+Compatibility: requires minimum Kimai 2.11.0
+
+- Compatibility with composer installation
+- Inline Nelmio API Doc configuration
+- Inline JMS Serializer configuration
+
+## Version 2.8.2
+
+Compatibility: requires minimum Kimai 2.11.0
+
+- Added support for NFC with Android-Kiosk: www.android-kiosk.com
+
 ## Version 2.8.1
 
 Compatibility: requires minimum Kimai 2.11.0

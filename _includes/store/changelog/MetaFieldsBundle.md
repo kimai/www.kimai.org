@@ -1,3 +1,9 @@
+## Version 2.9.0
+
+Compatibility: requires minimum Kimai 2.15.0
+
+- Inline Nelmio API Doc configuration
+
 ## Version 2.8.0
 
 Compatibility: requires minimum Kimai 2.15.0

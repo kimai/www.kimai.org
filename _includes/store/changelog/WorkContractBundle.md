@@ -1,3 +1,14 @@
+## Version 1.12.0
+
+Compatibility: requires minimum Kimai 2.17.0
+
+- Fixed: booking vacation on "half-day" public holidays wasn't possible
+- Fixed: raise max vacation days from 20 to 30
+- Fixed: approved timesheets can be deleted
+- Fixed: edit dialog for approved timesheets can be opened
+- Added: new configuration to disable timesheet booking on non-working days
+- Added: new permission `workdays_override_timesheet` to skip the above validation, e.g. for admins
+
 ## Version 1.11.0
 
 Compatibility: requires minimum Kimai 2.17.0

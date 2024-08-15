@@ -1,8 +1,17 @@
+## Version 2.10.0
+
+Compatibility: requires minimum Kimai 2.17.0
+
+- Fixed CSRF token refresh when deleting comments
+- Compatibility with composer installation
+- Inline Nelmio API Doc configuration
+- Inline JMS Serializer configuration
+
 ## Version 2.9.0
 
 Compatibility: requires minimum Kimai 2.17.0
 
-<div>Added API endpoint to fetch all timesheets for one task</div><div><br></div>
+Added API endpoint to fetch all timesheets for one task
 
 ## Version 2.8.0
 

@@ -1,3 +1,10 @@
+## Version 2.14.0
+
+Compatibility: requires minimum Kimai 2.17.0
+
+- Allow 4MB upload file size and 5000 rows per file
+- Deactivate timesheet validators during Kimai1 import: TimesheetLockdown, TimesheetLongRunning, TimesheetZeroDuration
+
 ## Version 2.13.0
 
 Compatibility: requires minimum Kimai 2.17.0
