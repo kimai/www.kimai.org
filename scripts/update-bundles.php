@@ -32,7 +32,7 @@ foreach ($bundles as $bundle) {
     foreach ($bundle['releases'] as $release) {
         $versions[] = [$release['version'], $release['kimai']];
 
-        $changelog .= '## Version ' . $release['version']
+        $changelog .= '**Version ' . $release['version'] . '**'
             . PHP_EOL
             . PHP_EOL
             . 'Compatibility: requires minimum Kimai ' . $release['kimai']

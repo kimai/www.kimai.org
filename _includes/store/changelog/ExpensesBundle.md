@@ -1,50 +1,50 @@
-## Version 2.15..0
+**Version 2.15.0**
 
 Compatibility: requires minimum Kimai 2.17.0
 
 - Inline Nelmio API Doc configuration
 
-## Version 2.14.0
+**Version 2.14.0**
 
 Compatibility: requires minimum Kimai 2.17.0
 
 - Added: new filter parameter for API collection call: users[], customers[], projects[], activities[]
 - Added: unify API access permission check
 
-## Version 2.13.0
+**Version 2.13.0**
 
 Compatibility: requires minimum Kimai 2.10.0
 
 Fixed: error if category `Default` was hidden and no other category exists
 
-## Version 2.12.0
+**Version 2.12.0**
 
 Compatibility: requires minimum Kimai 2.10.0
 
 - Added: allow to filter expenses and expense categories from detail page listing
 - Added: reload customer/project/activity detail page after expense was created
 
-## Version 2.11.0
+**Version 2.11.0**
 
 Compatibility: requires minimum Kimai 2.10.0
 
 - Changed: cache permissions in view
 - Changed: support attribute caching in Voter
 
-## Version 2.10.0
+**Version 2.10.0**
 
 Compatibility: requires minimum Kimai 2.10.0
 
 - Fixed: use correct base class for migration - removes Doctrine deprecation warning
 - Fixed: removed ApiSecurity annotation
 
-## Version 2.9.0
+**Version 2.9.0**
 
 Compatibility: requires minimum Kimai 2.10.0
 
 Added: System-Configuration to disable time field
 
-## Version 2.8.0
+**Version 2.8.0**
 
 Compatibility: requires minimum Kimai 2.9.0
 
@@ -53,7 +53,7 @@ Compatibility: requires minimum Kimai 2.9.0
 - Fix "not null" category validator does not highlight correct field
 - More DateTime to DateTimeImmutable refactorings
 
-## Version 2.7.0
+**Version 2.7.0**
 
 Compatibility: requires minimum Kimai 2.9.0
 
@@ -61,7 +61,7 @@ Compatibility: requires minimum Kimai 2.9.0
 - Changed: replace deprecated RestRoute attribute with SF native one
 - Changed: replace deprecated Route vs Attribute annotations
 
-## Version 2.6.0
+**Version 2.6.0**
 
 Compatibility: requires minimum Kimai 2.6.0
 
@@ -70,20 +70,20 @@ Compatibility: requires minimum Kimai 2.6.0
 - Changed: re-use "Expenses" translation for configuration
 - Fixed: broken "category" translation
 
-## Version 2.5.0
+**Version 2.5.0**
 
 Compatibility: requires minimum Kimai 2.5.0
 
 - Changed: create default category if none is existing yet
 - Changed: moved some translations to core allowing more languages
 
-## Version 2.4.0
+**Version 2.4.0**
 
 Compatibility: requires minimum Kimai 2.1.0
 
 Use annotation type for routes
 
-## Version 2.3.0
+**Version 2.3.0**
 
 Compatibility: requires minimum Kimai 2.0.33
 

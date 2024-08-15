@@ -1,4 +1,4 @@
-## Version 1.12.0
+**Version 1.12.0**
 
 Compatibility: requires minimum Kimai 2.17.0
 
@@ -9,7 +9,7 @@ Compatibility: requires minimum Kimai 2.17.0
 - Added: new configuration to disable timesheet booking on non-working days
 - Added: new permission `workdays_override_timesheet` to skip the above validation, e.g. for admins
 
-## Version 1.11.0
+**Version 1.11.0**
 
 Compatibility: requires minimum Kimai 2.17.0
 
@@ -18,7 +18,7 @@ Compatibility: requires minimum Kimai 2.17.0
 - Fixed: showing own absences in other users calendar
 - Fixed: use new `hours_other_profile` permission from core 
 
-## Version 1.10.0
+**Version 1.10.0**
 
 Compatibility: requires minimum Kimai 2.12.0
 
@@ -26,7 +26,7 @@ Compatibility: requires minimum Kimai 2.12.0
 - Fixed: permission check for PDF download
 - Fixed: public holidays in calendar missing
 
-## Version 1.9.0
+**Version 1.9.0**
 
 Compatibility: requires minimum Kimai 2.12.0
 
@@ -38,7 +38,7 @@ Compatibility: requires minimum Kimai 2.12.0
 - Changed: single line comment field for "manual bookings" form 
 - Fixed: use correct base class for migration - removes Doctrine deprecation warning
 
-## Version 1.8.0
+**Version 1.8.0**
 
 Compatibility: requires minimum Kimai 2.11.0
 
@@ -48,7 +48,7 @@ Compatibility: requires minimum Kimai 2.11.0
 - Fixed: do not show error on calendar if `absences` permission is deactivated for a user
 - Changed: use refactored language vs locale from user for email generation
 
-## Version 1.7.0
+**Version 1.7.0**
 
 Compatibility: requires minimum Kimai 2.10.0
 
@@ -57,14 +57,14 @@ Compatibility: requires minimum Kimai 2.10.0
 - Added: trigger event when absences are created
 - Fixed: editing absences could show fields (like "half day" for sickness) that should not be there 
 
-## Version 1.6.0
+**Version 1.6.0**
 
 Compatibility: requires minimum Kimai 2.9.0
 
 - Fixed: export of absences caused 500
 - Changed: replaced DateTime with DateTimeInterface / DateTimeImmutable
 
-## Version 1.5.0
+**Version 1.5.0**
 
 Compatibility: requires minimum Kimai 2.8.0
 
@@ -75,7 +75,7 @@ Compatibility: requires minimum Kimai 2.8.0
 - Fixed: time calculation for new "child is sick" and "parental leave" categories
 - Fixed: deprecation by using DateTimeImmutable
 
-## Version 1.4.0
+**Version 1.4.0**
 
 Compatibility: requires minimum Kimai 2.7.0
 
@@ -86,14 +86,14 @@ Compatibility: requires minimum Kimai 2.7.0
 - Added: limit selectable time-range to selected year
 - Fixed: day calculation of vacations with public holidays in between 
 
-## Version 1.3.0
+**Version 1.3.0**
 
 Compatibility: requires minimum Kimai 2.5.0
 
 - Fixed: adapted collapsible boxes for Kimai 2.5.0
 - Fixed: allow booking holidays with public holidays within the selected date-range
 
-## Version 1.2.0
+**Version 1.2.0**
 
 Compatibility: requires minimum Kimai 2.1.0
 
@@ -101,7 +101,7 @@ Compatibility: requires minimum Kimai 2.1.0
 - Fixed: route mapping type changed to attribute
 - Fixed: Homepage link in extension screen
 
-## Version 1.1.0
+**Version 1.1.0**
 
 Compatibility: requires minimum Kimai 2.0.34
 

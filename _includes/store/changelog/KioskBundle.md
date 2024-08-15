@@ -1,4 +1,4 @@
-## Version 2.9.0
+**Version 2.9.0**
 
 Compatibility: requires minimum Kimai 2.11.0
 
@@ -6,19 +6,19 @@ Compatibility: requires minimum Kimai 2.11.0
 - Inline Nelmio API Doc configuration
 - Inline JMS Serializer configuration
 
-## Version 2.8.2
+**Version 2.8.2**
 
 Compatibility: requires minimum Kimai 2.11.0
 
 - Added support for NFC with Android-Kiosk: www.android-kiosk.com
 
-## Version 2.8.1
+**Version 2.8.1**
 
 Compatibility: requires minimum Kimai 2.11.0
 
 Changed: link to new documentation page
 
-## Version 2.8.0
+**Version 2.8.0**
 
 Compatibility: requires minimum Kimai 2.11.0
 
@@ -27,7 +27,7 @@ Compatibility: requires minimum Kimai 2.11.0
 - Changed: support attribute caching in Voter
 - Changed: simplified buttons in users kiosk profile
 
-## Version 2.7.0
+**Version 2.7.0**
 
 Compatibility: requires minimum Kimai 2.11.0
 
@@ -36,26 +36,26 @@ Compatibility: requires minimum Kimai 2.11.0
 - Added: print barcode on click to the image
 - Changed: removed `barcode_own_profile` and `barcode_other_profile` permissions, replaced by `kiosk_own_profile` and `kiosk_other_profile`
 
-## Version 2.6.0
+**Version 2.6.0**
 
 Compatibility: requires minimum Kimai 2.11.0
 
 - Changed: CSS files and language handling, required for Kimai 2.11.0
 - Changed: Replaced deprecated RestRoute attribute with SF native one
 
-## Version 2.5.0
+**Version 2.5.0**
 
 Compatibility: requires minimum Kimai 2.1.0
 
 Use annotation type for routes
 
-## Version 2.4.0
+**Version 2.4.0**
 
 Compatibility: requires minimum Kimai 2.0.33
 
 Fixed: possible pagination issues
 
-## Version 2.3.1
+**Version 2.3.1**
 
 Compatibility: requires minimum Kimai 2.0.29
 
