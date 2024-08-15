@@ -26,11 +26,14 @@ These are some examples to configure your SMTP for sending emails:
 
 More explanation can be found int the [Symfony mailer documentation](https://symfony.com/doc/current/mailer.html).
 
-Some more complex examples for the default SMTP transport:
+Some more examples for the SMTP transport:
 
 - SMTP with authentication: `smtp://user:password@smtp.example.com:25`
 - With email as username: `smtp://info@example.com:password@smtp.example.com:25`
-- With TLS/SSL encryption: `smtp://info@example.com:password@smtp.example.com:443?encryption=ssl`
+- With SSL encryption: `smtp://info@example.com:password@smtp.example.com:443?encryption=ssl`
+- With TLS encryption: `smtp://user:password@smtp.example.com:587?encryption=tls`
+
+You get all the above settings from your email provider. Ports and encryption can vary. 
 
 ## Testing emails
 
