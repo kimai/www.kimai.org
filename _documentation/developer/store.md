@@ -16,55 +16,59 @@ But not much ... and it just needs a couple of minutes! You'll get help at GitHu
 Let's assume your developer prefix is `acme` and your item name is `foo`. 
 
 1. Add your developer/company information to the `_data/developer.yml` file (see below `Developer information`):
-```yaml
-acme:
-  name: Acme company
-  username: acme
-  photo:
-  profile: "#"
-```
+    ```yaml
+    acme:
+      name: Acme company
+      username: acme
+      photo:
+      profile: "#"
+    ```
 2. Create a store file definition at `_data/store/acme-foo.yml` for your item  (see below `Product information`):
-```yaml
-developer: acme
-icon: fas fa-home
-price: 0
-bundle:
-    name: "FooBundle"
-    clone: "https://github.com/acme/foo.git"
-    versions:
-        - [ "2.0", "2.0" ]
-```
+    ```yaml
+    developer: acme
+    icon: fas fa-home
+    price: 0
+    bundle:
+        name: "FooBundle"
+        clone: "https://github.com/acme/foo.git"
+        versions:
+            - [ "2.0", "2.0" ]
+    ```
 3. Copy and paste `_store/keleo-custom-content-bundle.md` to `_store/acme-foo.md` and change:
-```
-title: Foo
-type: plugin
-```
-You also need to replace `{% raw %}{% include store/keleo-custom-content-bundle.md %}{% endraw %}` with some introductory text for your new item.
+    ```
+    title: Foo
+    type: plugin
+    ```
+    You also need to replace `{% raw %}{% include store/keleo-custom-content-bundle.md %}{% endraw %}` with some introductory text for your new item.
 4. Create a translation for your plugin in `_data/en/store.yaml`:
-```yaml
-items:
-  acme-foo:
-      title: Foo — a cool plugin for Kimai
-      intro: A longer introduction between approx. 100 and 180 character 
-```
-5. Run `php translate-pages.php`. This will extract your content into an include and then create a store page for every language.
+    ```yaml
+    items:
+      acme-foo:
+          title: Foo — a cool plugin for Kimai
+          intro: A longer introduction between approx. 100 and 180 character 
+    ```
+
+The translation of the store pages will be done by the Team after merging your content.
 
 ## Developer information
 
-The information about yourself or your company comes from the [developer.yml file]({{ site.kimai_v2_website }}/tree/main/_data/developer.yml).
+The information about yourself or your company comes from the [developer.yml]({{ site.kimai_v2_website }}/tree/main/_data/developer.yml) file.
 
 It starts by defining your company/developer ID and then adding the following keys:
 
 - `name` - your company or personal name (**mandatory**)
 - `description` - a short self-description in one sentence (**mandatory**)
 - `image` - full URL to your company logo or avatar (**mandatory**)
+
+There are more keys available, especially to store contact information. 
+
 - `homepage` - full URL to your website (optional)
 - `github` - your GitHub organization or profile URL (optional)
 - `twitter` - full URL to your twitter profile (optional)
 
 The ID should be built from the lowercased version of your name: use only alphabetical character and remove all special chars and spaces.
 
-For example, my own entry (`kevinpapst` being my developer ID):
+Use one of the existing developer entries as example, copy & paste and adapt to your needs:
 
 ```
 kevinpapst:
