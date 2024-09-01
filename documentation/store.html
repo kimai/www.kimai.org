@@ -371,43 +371,44 @@ But not much … and it just needs a couple of minutes! You’ll get help at Git
 
 <ol>
   <li>Add your developer/company information to the <code class="language-plaintext highlighter-rouge">_data/developer.yml</code> file (see below <code class="language-plaintext highlighter-rouge">Developer information</code>):
-    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">acme</span><span class="pi">:</span>
-  <span class="na">name</span><span class="pi">:</span> <span class="s">Acme company</span>
-  <span class="na">username</span><span class="pi">:</span> <span class="s">acme</span>
-  <span class="na">photo</span><span class="pi">:</span>
-  <span class="na">profile</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#"</span>
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="na">acme</span><span class="pi">:</span>
+   <span class="na">name</span><span class="pi">:</span> <span class="s">Acme company</span>
+   <span class="na">username</span><span class="pi">:</span> <span class="s">acme</span>
+   <span class="na">photo</span><span class="pi">:</span>
+   <span class="na">profile</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#"</span>
 </code></pre></div>    </div>
   </li>
   <li>Create a store file definition at <code class="language-plaintext highlighter-rouge">_data/store/acme-foo.yml</code> for your item  (see below <code class="language-plaintext highlighter-rouge">Product information</code>):
-    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">developer</span><span class="pi">:</span> <span class="s">acme</span>
-<span class="na">icon</span><span class="pi">:</span> <span class="s">fas fa-home</span>
-<span class="na">price</span><span class="pi">:</span> <span class="m">0</span>
-<span class="na">bundle</span><span class="pi">:</span>
- <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">FooBundle"</span>
- <span class="na">clone</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://github.com/acme/foo.git"</span>
- <span class="na">versions</span><span class="pi">:</span>
-     <span class="pi">-</span> <span class="pi">[</span> <span class="s2">"</span><span class="s">2.0"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">2.0"</span> <span class="pi">]</span>
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="na">developer</span><span class="pi">:</span> <span class="s">acme</span>
+ <span class="na">icon</span><span class="pi">:</span> <span class="s">fas fa-home</span>
+ <span class="na">price</span><span class="pi">:</span> <span class="m">0</span>
+ <span class="na">bundle</span><span class="pi">:</span>
+     <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">FooBundle"</span>
+     <span class="na">clone</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://github.com/acme/foo.git"</span>
+     <span class="na">versions</span><span class="pi">:</span>
+         <span class="pi">-</span> <span class="pi">[</span> <span class="s2">"</span><span class="s">2.0"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">2.0"</span> <span class="pi">]</span>
 </code></pre></div>    </div>
   </li>
   <li>Copy and paste <code class="language-plaintext highlighter-rouge">_store/keleo-custom-content-bundle.md</code> to <code class="language-plaintext highlighter-rouge">_store/acme-foo.md</code> and change:
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>title: Foo
-type: plugin
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> title: Foo
+ type: plugin
 </code></pre></div>    </div>
     <p>You also need to replace <code class="language-plaintext highlighter-rouge">{% include store/keleo-custom-content-bundle.md %}</code> with some introductory text for your new item.</p>
   </li>
   <li>Create a translation for your plugin in <code class="language-plaintext highlighter-rouge">_data/en/store.yaml</code>:
-    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">items</span><span class="pi">:</span>
-  <span class="na">acme-foo</span><span class="pi">:</span>
-   <span class="na">title</span><span class="pi">:</span> <span class="s">Foo — a cool plugin for Kimai</span>
-   <span class="na">intro</span><span class="pi">:</span> <span class="s">A longer introduction between approx. 100 and 180 character</span> 
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="na">items</span><span class="pi">:</span>
+   <span class="na">acme-foo</span><span class="pi">:</span>
+       <span class="na">title</span><span class="pi">:</span> <span class="s">Foo — a cool plugin for Kimai</span>
+       <span class="na">intro</span><span class="pi">:</span> <span class="s">A longer introduction between approx. 100 and 180 character</span> 
 </code></pre></div>    </div>
   </li>
-  <li>Run <code class="language-plaintext highlighter-rouge">php translate-pages.php</code>. This will extract your content into an include and then create a store page for every language.</li>
 </ol>
+
+<p>The translation of the store pages will be done by the Team after merging your content.</p>
 
 <h2 id="developer-information">Developer information</h2>
 
-<p>The information about yourself or your company comes from the <a href="https://github.com/kimai/www.kimai.org/tree/main/_data/developer.yml">developer.yml file</a>.</p>
+<p>The information about yourself or your company comes from the <a href="https://github.com/kimai/www.kimai.org/tree/main/_data/developer.yml">developer.yml</a> file.</p>
 
 <p>It starts by defining your company/developer ID and then adding the following keys:</p>
 
@@ -415,6 +416,11 @@ type: plugin
   <li><code class="language-plaintext highlighter-rouge">name</code> - your company or personal name (<strong>mandatory</strong>)</li>
   <li><code class="language-plaintext highlighter-rouge">description</code> - a short self-description in one sentence (<strong>mandatory</strong>)</li>
   <li><code class="language-plaintext highlighter-rouge">image</code> - full URL to your company logo or avatar (<strong>mandatory</strong>)</li>
+</ul>
+
+<p>There are more keys available, especially to store contact information.</p>
+
+<ul>
   <li><code class="language-plaintext highlighter-rouge">homepage</code> - full URL to your website (optional)</li>
   <li><code class="language-plaintext highlighter-rouge">github</code> - your GitHub organization or profile URL (optional)</li>
   <li><code class="language-plaintext highlighter-rouge">twitter</code> - full URL to your twitter profile (optional)</li>
@@ -422,7 +428,7 @@ type: plugin
 
 <p>The ID should be built from the lowercased version of your name: use only alphabetical character and remove all special chars and spaces.</p>
 
-<p>For example, my own entry (<code class="language-plaintext highlighter-rouge">kevinpapst</code> being my developer ID):</p>
+<p>Use one of the existing developer entries as example, copy &amp; paste and adapt to your needs:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kevinpapst:
     name: Kevin Papst
