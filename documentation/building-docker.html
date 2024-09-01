@@ -581,7 +581,7 @@ Use this image in production and see the <a href="/documentation/docker-compose.
 <p>This allows over releases of Kimai to be built.  You can specify anything that would be passed to a git clone command.</p>
 
 <ul>
-  <li>A tag or release, e.g. <code class="language-plaintext highlighter-rouge">KIMAI=2.20.1</code></li>
+  <li>A tag or release, e.g. <code class="language-plaintext highlighter-rouge">KIMAI=2.21.0</code></li>
   <li>A branch name, e.g. <code class="language-plaintext highlighter-rouge">KIMAI=main</code></li>
 </ul>
 
@@ -597,12 +597,12 @@ Use this image in production and see the <a href="/documentation/docker-compose.
 
 <p>Build a dev image of Kimai that uses the apache bundled web server:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    docker build <span class="nt">--target</span><span class="o">=</span>dev <span class="nt">--build-arg</span> <span class="nv">KIMAI</span><span class="o">=</span>2.20.1 <span class="nt">--build-arg</span> <span class="nv">BASE</span><span class="o">=</span>apache <span class="nb">.</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    docker build <span class="nt">--target</span><span class="o">=</span>dev <span class="nt">--build-arg</span> <span class="nv">KIMAI</span><span class="o">=</span>2.21.0 <span class="nt">--build-arg</span> <span class="nv">BASE</span><span class="o">=</span>apache <span class="nb">.</span>
 </code></pre></div></div>
 
 <p>Build a prod, FPM image of Kimai, localised for the UK</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    docker build <span class="nt">--target</span><span class="o">=</span>prod <span class="nt">--build-arg</span> <span class="nv">KIMAI</span><span class="o">=</span>2.20.1 <span class="nt">--build-arg</span> <span class="nv">BASE</span><span class="o">=</span>fpm <span class="nt">--build-arg</span> <span class="nv">TZ</span><span class="o">=</span>Europe/London <span class="nb">.</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    docker build <span class="nt">--target</span><span class="o">=</span>prod <span class="nt">--build-arg</span> <span class="nv">KIMAI</span><span class="o">=</span>2.21.0 <span class="nt">--build-arg</span> <span class="nv">BASE</span><span class="o">=</span>fpm <span class="nt">--build-arg</span> <span class="nv">TZ</span><span class="o">=</span>Europe/London <span class="nb">.</span>
 </code></pre></div></div>
 
 <h2 id="extending-the-image">Extending the image</h2>
@@ -618,7 +618,7 @@ Use this image in production and see the <a href="/documentation/docker-compose.
 <span class="k">RUN </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> libxslt-dev libxml2-dev libssl-dev
 <span class="k">RUN </span>docker-php-ext-install <span class="nt">-j</span><span class="si">$(</span><span class="nb">nproc</span><span class="si">)</span> xsl xml xmlrpc xmlwriter simplexml
 
-<span class="k">FROM</span><span class="s"> kimai/kimai2:apache-2.20.1-prod</span>
+<span class="k">FROM</span><span class="s"> kimai/kimai2:apache-2.21.0-prod</span>
 <span class="k">COPY</span><span class="s"> --from=php-base /usr/local/etc/php/conf.d/docker-php-ext-xsl.ini /usr/local/etc/php/conf.d/docker-php-ext-xsl.ini</span>
 <span class="k">COPY</span><span class="s"> --from=php-base /usr/local/lib/php/extensions/no-debug-non-zts-20190902/xsl.so /usr/local/lib/php/extensions/no-debug-non-zts-20190902/xsl.so</span>
 </code></pre></div></div>
