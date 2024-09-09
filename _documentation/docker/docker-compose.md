@@ -48,6 +48,61 @@ volumes:
   mysql:
 ```
 
+## Environment variables
+
+Instead of hardcoding your secrets, you can also use a `.env` file like that:
+
+```
+DATABASE_NAME=kimai
+DATABASE_USER=kimaiuser
+DATABASE_PASSWORD=kimaipassword
+DATABASE_ROOT_PASSWORD=changemeplease
+ADMIN_EMAIL=admin@kimai.local
+ADMIN_PASSWORD=changemeplease
+```
+
+And then reference those from your `docker-compose.yaml`:
+
+```dockerfile
+version: '3.5'
+services:
+
+  sqldb:
+    image: mysql:8.3
+    volumes:
+      - mysql:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=${DATABASE_NAME}
+      - MYSQL_USER=${DATABASE_USER}
+      - MYSQL_PASSWORD=${DATABASE_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${DATABASE_ROOT_PASSWORD}
+    command: --default-storage-engine innodb
+    restart: unless-stopped
+    healthcheck:
+      test: mysqladmin -p$$MYSQL_ROOT_PASSWORD ping -h localhost
+      interval: 20s
+      start_period: 10s
+      timeout: 10s
+      retries: 3
+
+  kimai:
+    image: kimai/kimai2:apache
+    volumes:
+      - data:/opt/kimai/var/data
+    ports:
+      - 8001:8001
+    environment:
+      - ADMINMAIL=${ADMIN_EMAIL}
+      - ADMINPASS=${ADMIN_PASSWORD}
+      - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&serverVersion=8.3.0"
+      - TRUSTED_HOSTS=nginx,localhost,127.0.0.1
+    restart: unless-stopped
+
+volumes:
+  data:
+  mysql:
+```
+
 ## Apache (dev)
 
 ```dockerfile
