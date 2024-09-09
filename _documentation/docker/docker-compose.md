@@ -50,7 +50,7 @@ volumes:
 
 ## Environment variables
 
-Instead of hardcoding your secrets, you can also use a `.env` file like that:
+Instead of hardcoding your credentials and/or duplicating them in several places, you can also use a `.env` file like that:
 
 ```
 DATABASE_NAME=kimai
@@ -94,7 +94,7 @@ services:
     environment:
       - ADMINMAIL=${ADMIN_EMAIL}
       - ADMINPASS=${ADMIN_PASSWORD}
-      - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&serverVersion=8.3.0"
+      - "DATABASE_URL=mysql://${DATABASE_USER}:${DATABASE_PASSWORD}@sqldb/${DATABASE_NAME}?charset=utf8mb4&serverVersion=8.3.0"
       - TRUSTED_HOSTS=nginx,localhost,127.0.0.1
     restart: unless-stopped
 
