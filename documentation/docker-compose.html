@@ -583,6 +583,59 @@ volumes:
   mysql:
 </code></pre></div></div>
 
+<h2 id="environment-variables">Environment variables</h2>
+
+<p>Instead of hardcoding your secrets, you can also use a <code class="language-plaintext highlighter-rouge">.env</code> file like that:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DATABASE_NAME=kimai
+DATABASE_USER=kimaiuser
+DATABASE_PASSWORD=kimaipassword
+DATABASE_ROOT_PASSWORD=changemeplease
+ADMIN_EMAIL=admin@kimai.local
+ADMIN_PASSWORD=changemeplease
+</code></pre></div></div>
+
+<p>And then reference those from your <code class="language-plaintext highlighter-rouge">docker-compose.yaml</code>:</p>
+
+<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>version: '3.5'
+services:
+
+  sqldb:
+    image: mysql:8.3
+    volumes:
+      - mysql:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=${DATABASE_NAME}
+      - MYSQL_USER=${DATABASE_USER}
+      - MYSQL_PASSWORD=${DATABASE_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${DATABASE_ROOT_PASSWORD}
+    command: --default-storage-engine innodb
+    restart: unless-stopped
+    healthcheck:
+      test: mysqladmin -p$$MYSQL_ROOT_PASSWORD ping -h localhost
+      interval: 20s
+      start_period: 10s
+      timeout: 10s
+      retries: 3
+
+  kimai:
+    image: kimai/kimai2:apache
+    volumes:
+      - data:/opt/kimai/var/data
+    ports:
+      - 8001:8001
+    environment:
+      - ADMINMAIL=${ADMIN_EMAIL}
+      - ADMINPASS=${ADMIN_PASSWORD}
+      - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&amp;serverVersion=8.3.0"
+      - TRUSTED_HOSTS=nginx,localhost,127.0.0.1
+    restart: unless-stopped
+
+volumes:
+  data:
+  mysql:
+</code></pre></div></div>
+
 <h2 id="apache-dev">Apache (dev)</h2>
 
 <div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>version: '3.5'
@@ -842,7 +895,7 @@ volumes:
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#apache-prod" class="nav-link">Apache (prod)</a></li><li class="nav-item"><a href="#apache-dev" class="nav-link">Apache (dev)</a></li><li class="nav-item"><a href="#fpm-and-nginx" class="nav-link">FPM and nginx</a><ul><li class="nav-item"><a href="#production" class="nav-link">Production</a></li><li class="nav-item"><a href="#with-addons" class="nav-link">With addons</a></li><li class="nav-item"><a href="#development" class="nav-link">Development</a></li></ul></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#apache-prod" class="nav-link">Apache (prod)</a></li><li class="nav-item"><a href="#environment-variables" class="nav-link">Environment variables</a></li><li class="nav-item"><a href="#apache-dev" class="nav-link">Apache (dev)</a></li><li class="nav-item"><a href="#fpm-and-nginx" class="nav-link">FPM and nginx</a><ul><li class="nav-item"><a href="#production" class="nav-link">Production</a></li><li class="nav-item"><a href="#with-addons" class="nav-link">With addons</a></li><li class="nav-item"><a href="#development" class="nav-link">Development</a></li></ul></li></ul>
         
     </aside>
 
