@@ -897,7 +897,8 @@ These records cannot be edited any longer by regular users and are excluded by d
   <li>
 <code class="language-plaintext highlighter-rouge">invoice</code> which is an array of variables (see <code class="language-plaintext highlighter-rouge">Template variables</code> below), just with a different syntax for access, e.g.: <code class="language-plaintext highlighter-rouge">{{ invoice['invoice.due_date'] }}</code> instead of <code class="language-plaintext highlighter-rouge">${invoice.due_date}</code>
 </li>
-  <li>don’t rely on the <code class="language-plaintext highlighter-rouge">model</code> variable (which is an instance of <code class="language-plaintext highlighter-rouge">App\Model\InvoiceModel</code>) as it’s accessor methods can change without warning</li>
+  <li>
+<strong>Attention</strong>: accessing the <code class="language-plaintext highlighter-rouge">model</code> variable (instance of <code class="language-plaintext highlighter-rouge">App\Model\InvoiceModel</code>) directly is deprecated and will be removed in the future (no BC promise given!)</li>
 </ul>
 
 <p>Please see the <a href="https://github.com/kimai/kimai/blob/main/templates/invoice/renderer">default templates</a> at
