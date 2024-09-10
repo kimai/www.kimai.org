@@ -182,7 +182,7 @@ The repository for all templates is [https://github.com/kimai/invoice-templates]
 Generally speaking, you have two main variables in your template which you should use:
 - `entries` which is an array of arrays, with the first level representing the invoice items and the second level being `Timesheet entry variables` (see below)
 - `invoice` which is an array of variables (see `Template variables` below), just with a different syntax for access, e.g.: `{% raw %}{{ invoice['invoice.due_date'] }}{% endraw %}` instead of `{% raw %}${invoice.due_date}{% endraw %}` 
-- don't rely on the `model` variable (which is an instance of `App\Model\InvoiceModel`) as it's accessor methods can change without warning
+- **Attention**: accessing the `model` variable (instance of `App\Model\InvoiceModel`) directly is deprecated and will be removed in the future (no BC promise given!)
 
 Please see the [default templates]({{ site.kimai_v2_file }}/templates/invoice/renderer) at
 GitHub to find out which variables can be used.
