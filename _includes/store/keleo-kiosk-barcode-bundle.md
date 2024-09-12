@@ -23,6 +23,8 @@ You can test it in the ["Plugins" demo](https://www.kimai.org/demo/).
 
 ### Hardware
 
+**Self-built setups**
+
 This is NOT a hardware recommendation, but more an idea for possible use-cases.
 
 I tried the linked products and even though all scanner are rather cheap, they work without problems.
@@ -35,9 +37,24 @@ I tried the linked products and even though all scanner are rather cheap, they w
 
 Above are affiliate links for Amazon (Germany) where I bought them myself. 
 
+**Meeting-Room Tablet with NFC**
+
+This proposal contains a tablet which can be wall- and VESA mounted, has WLAN and only needs a tiny AC adapter. The NFC reader is on the front, so users can easily scan their tokens.
+
+- Meeting room tablet: [AllNet DE](https://shop.allnet.de/detail/index/sarticle/338037) [AllNet AT](https://shop.allnet.de/displaysdigital-signage/stationaere-displays-mit-android-od.-linux/rockchip-rk3288/323023/allnet-meetingraum-rgb-led-tablet-10-zoll-rk3288-android-10-und-nfc) (this only works if you switch to the AT Shop through the dropdown in the header of the Shop)
+ 
+You need a Kiosk application, which makes sure that users always see the login screen:
+
+- Kiosk application: [Android Kiosk](https://www.android-kiosk.com/)
+
+And you need a bunch of NFC tokens:
+
+- NFC tags: [NFC Tag Shop](https://www.nfc-tag-shop.de/NFC-Anhaenger-ABS-40-x-32-mm-NTAG213-180-Byte-blau/68199) 
+
+
 ## Licenses
 
-The following libraries are used and shipped with this plugin: 
+The following libraries are used when using barcodes with the Kiosk mode: 
 
 - Barcode scanning: https://github.com/ericblade/quagga2 (Version: 0.0.18, License: MIT)
 - Barcode generation: https://github.com/metafloor/bwip-js (Version: 2.0.6, License: MIT)
