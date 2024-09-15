@@ -1,6 +1,7 @@
 ---
 title: "Trademark policy"
 permalink: /en/trademark-policy.html
+lang: en
 ---
 
 Kevin Papst owns and oversees the trademark for the name <mark>Kimai</mark>.
