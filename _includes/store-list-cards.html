@@ -24,7 +24,7 @@
         {% endcomment %}
         <div class="card-body pb-1">
             <h3 class="h5 mb-3">
-                <a href="{{ product.url }}">{{ translation.title }}</a>
+                <a href="{{ product.url }}">{{ translation.title | default: product.title }}</a>
             </h3>
             <p>{{ translation.intro }}</p>
             <!--p class="fs-lg fw-semibold text-primary mb-0">$12.50</p-->
