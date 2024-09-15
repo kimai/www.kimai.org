@@ -12,18 +12,18 @@
     <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
-    <title>Translation – Kimai</title>
-    <meta name="description" content="Replace translations in Kimai with your own wording">
+    <title>Customer Portal – Kimai</title>
+    <meta name="description" content="Share client and project statistics and timesheets with anyone using a secret URL, optionally password protected.">
     <link type="application/atom+xml" rel="alternate" href="https://www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
     <meta property="og:locale" content="en">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Kimai Time-Tracking">
-    <meta property="og:description" content="Replace translations in Kimai with your own wording">
+    <meta property="og:description" content="Share client and project statistics and timesheets with anyone using a secret URL, optionally password protected.">
     <meta property="og:image" content="https://www.kimai.org/images/social-preview.webp">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Kimai Time-Tracking">
     <meta name="twitter:site" content="@kimai_org">
-    <meta name="twitter:description" content="Replace translations in Kimai with your own wording">
+    <meta name="twitter:description" content="Share client and project statistics and timesheets with anyone using a secret URL, optionally password protected.">
     <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.webp">
     <link href="/assets/build/main.css?v4" rel="stylesheet" />
 </head>
@@ -509,7 +509,7 @@
         
             
             
-            <a href="/documentation/plugin-translation.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4  active" id="docnavi-plugin-translation">
+            <a href="/documentation/plugin-translation.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 " id="docnavi-plugin-translation">
                 
                 Translation
                 
@@ -569,7 +569,7 @@
         
             
             
-            <a href="/documentation/plugin-customer-portal.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 " id="docnavi-plugin-customer-portal">
+            <a href="/documentation/plugin-customer-portal.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4  active" id="docnavi-plugin-customer-portal">
                 
                 Customer Portal
                 
@@ -580,7 +580,7 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function(event) {
-        const dpm = document.getElementById('docnavi-plugin-translation');
+        const dpm = document.getElementById('docnavi-plugin-customer-portal');
         if (dpm !== null) {
             dpm.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
         }
@@ -603,9 +603,9 @@
 
         <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 pt-4 mb-n3">
             <div class="me-4">
-                <h1 class="pb-1">Translation</h1>
+                <h1 class="pb-1">Customer Portal</h1>
                 
-                <p class="text-muted fs-lg mb-2">Replace translations in Kimai with your own wording</p>
+                <p class="text-muted fs-lg mb-2">Share client and project statistics and timesheets with anyone using a secret URL, optionally password protected.</p>
                 
             </div>
             
@@ -621,72 +621,27 @@
                 
                 <div id="documentation-content">
                     
-<p>This bundle allows you to modify most translated contents in Kimai to your business needs.</p>
-
-<p>Often companies want to change some wordings in Kimai to better match it to their industry or usage of Kimai.
-One of the most requested modifications in Kimai is to change “Customers” to something else (eg. “Client”, “Construction site”, “Family”).
-Now this is as simple as searching for the text to replace and then setting your preferred translation.</p>
-
-<p>You can replace messages, form labels, menu items and many more into one or multiple language.
-It comes with a new “Translation” view to manage these changed translations.</p>
-
-<h3 id="what-can-be-changed">What can be changed</h3>
-
-<p><strong>Visible elements like form labels, headings, menu items, error messages, and many more can be changed.</strong></p>
-
-<p>The text from the following “domains” cannot be changed:</p>
+<h2 id="features">Features</h2>
 
 <ul>
-  <li>Security (Login, Password forgotten)</li>
-  <li>Names of export templates, invoice number-generators, invoice calculators and invoice renderer</li>
-  <li>You cannot create translations for currently not existing “keys”</li>
+  <li>Shared details with your customers via URL</li>
+  <li>Create publicly accessible URLs for customer details (stats and timesheets)</li>
+  <li>Create publicly accessible URLs for the projectd etails (stats and timesheets)</li>
+  <li>Access control: protect the shared details with a password (optional)</li>
+  <li>View control feature
+    <ul>
+      <li>Show or hide user of records (name of user)</li>
+      <li>Show or hide rates of records (hour rate, total rate)</li>
+      <li>Show or hide chart with day comparison by selected month (coming soon)</li>
+      <li>Show or hide chart with month comparison by selected year (coming soon)</li>
+    </ul>
+  </li>
+  <li>View customizations
+    <ul>
+      <li>Define whether and how to merge records of a day (e.g. merge records of one day, use description of last record)</li>
+    </ul>
+  </li>
 </ul>
-
-<h3 id="how-to-use-it">How to use it</h3>
-
-<p>When clicking the create button, you see a form that contains the fields:</p>
-
-<ul>
-  <li>Language</li>
-  <li>Default translation</li>
-  <li>New translation</li>
-</ul>
-
-<p>With <code class="language-plaintext highlighter-rouge">Language</code> you choose the target language, which is usually the current active one.</p>
-
-<p>The <code class="language-plaintext highlighter-rouge">default translation</code> allows you to search for a given phrase, which you then translate in the field <code class="language-plaintext highlighter-rouge">New translation</code>.</p>
-
-<p>** ATTENTION** 
-The default translation is shown in the current user locale (see the URL of the page). 
-If there is no translation for the exact locale (e.g. <code class="language-plaintext highlighter-rouge">de_AT</code>) the english translation is used instead.
-You might want to switch your language via the URL to the base language with region code (so <code class="language-plaintext highlighter-rouge">de</code> instead of <code class="language-plaintext highlighter-rouge">de_AT</code>).</p>
-
-<p>The <code class="language-plaintext highlighter-rouge">new translation</code> contains the translation that you want to display in the future.
-The same locale logic applies as written above. If you create a translation in <code class="language-plaintext highlighter-rouge">de_AT</code> it will not be displayed in <code class="language-plaintext highlighter-rouge">de</code>.
-But if you create a translation in <code class="language-plaintext highlighter-rouge">de</code>, your new translation will also be visible in <code class="language-plaintext highlighter-rouge">de_AT</code>.</p>
-
-<h3 id="screenshots">Screenshots</h3>
-
-<p>The main translation page shows a listing of all translated contents, grouped by their language:</p>
-
-<figure class="d-block figure mb-3" style="max-width: 1200px">
-    <img src="/images/marketplace/translation-listing.webp" class="figure-img img-fluid rounded" />
-    <figcaption class="figure-caption">List all adjusted translations</figcaption>
-</figure>
-
-<p>The add dialog allows to find a string by typing in the <code class="language-plaintext highlighter-rouge">Default translation</code> field and then you can enter your custom translation in <code class="language-plaintext highlighter-rouge">New translation</code>:</p>
-
-<figure class="d-block figure mb-3" style="max-width: 800px">
-    <img src="/images/marketplace/translation-add.webp" class="figure-img img-fluid rounded" />
-    <figcaption class="figure-caption">Select the text to change and enter your custom translation</figcaption>
-</figure>
-
-<p>The edit dialog allows to change your custom translation:</p>
-
-<figure class="d-block figure mb-3" style="max-width: 800px">
-    <img src="/images/marketplace/translation-edit.webp" class="figure-img img-fluid rounded" />
-    <figcaption class="figure-caption">Change your custom translation</figcaption>
-</figure>
 
 <h2 id="permissions">Permissions</h2>
 
@@ -699,8 +654,8 @@ But if you create a translation in <code class="language-plaintext highlighter-r
   </thead>
   <tbody>
     <tr>
-      <td>edit_translation</td>
-      <td>access the translation screen and allow all actions: create, edit and delete translations</td>
+      <td>customer_portal</td>
+      <td>edit all shared URLs</td>
     </tr>
   </tbody>
 </table>
@@ -725,7 +680,7 @@ But if you create a translation in <code class="language-plaintext highlighter-r
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#what-can-be-changed" class="nav-link">What can be changed</a></li><li class="nav-item"><a href="#how-to-use-it" class="nav-link">How to use it</a></li><li class="nav-item"><a href="#screenshots" class="nav-link">Screenshots</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#features" class="nav-link">Features</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
         
     </aside>
 
