@@ -1,3 +1,10 @@
+**Version 2.16.0**
+
+Compatibility: requires minimum Kimai 2.17.0
+
+- Refactoring: new query types
+- Refactoring: use attributes for export service injection
+
 **Version 2.15.0**
 
 Compatibility: requires minimum Kimai 2.17.0

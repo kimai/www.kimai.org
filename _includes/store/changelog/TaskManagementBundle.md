@@ -1,3 +1,10 @@
+**Version 2.11.0**
+
+Compatibility: requires minimum Kimai 2.17.0
+
+- Fixed tag column length
+- Refactoring: new repository access
+
 **Version 2.10.0**
 
 Compatibility: requires minimum Kimai 2.17.0

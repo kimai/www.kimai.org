@@ -1,3 +1,9 @@
+**Version 2.3.2**
+
+Compatibility: requires minimum Kimai 2.5.0
+
+- Refactoring: do not register Entity directory as service
+
 **Version 2.3.1**
 
 Compatibility: requires minimum Kimai 2.5.0

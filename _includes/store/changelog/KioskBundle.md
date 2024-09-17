@@ -1,3 +1,9 @@
+**Version 2.10.0**
+
+Compatibility: requires minimum Kimai 2.21.0
+
+- Refactoring: use new query and repository methods
+
 **Version 2.9.0**
 
 Compatibility: requires minimum Kimai 2.11.0

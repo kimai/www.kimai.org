@@ -1,3 +1,12 @@
+**Version 1.13.0**
+
+Compatibility: requires minimum Kimai 2.21.0
+
+- Allow to define a duration for "other" absences
+- Improved responsiveness on public-holiday screen
+- Fixed: last half-day of vacation can't be booked
+- Refactoring: namespaces, unused services, repository methods
+
 **Version 1.12.0**
 
 Compatibility: requires minimum Kimai 2.17.0

@@ -1,3 +1,10 @@
+**Version 2.8.0**
+
+Compatibility: requires minimum Kimai 2.21.0
+
+- Moved several translations to core
+- Refactoring: New query objects
+
 **Version 2.7.0**
 
 Compatibility: requires minimum Kimai 2.14.0

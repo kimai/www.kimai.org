@@ -1,3 +1,11 @@
+**Version 2.15.0**
+
+Compatibility: requires minimum Kimai 2.21.0
+
+- Refactoring: Use attributes for importer service injection
+- Refactoring: Use new repository and query methods
+- Refactoring: Activate PHPStan bleeding edge rules
+
 **Version 2.14.0**
 
 Compatibility: requires minimum Kimai 2.17.0
