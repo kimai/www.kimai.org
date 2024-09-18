@@ -590,6 +590,29 @@ Any issues with the container rather than the application itself can be raised <
   <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-x.xx.x-prod</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-x.xx.x</code></li>
 </ul>
 
+<h2 id="environment-variables--runtime-args">Environment variables / Runtime args</h2>
+
+<p>The Kimai image supports the following environment variables:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">DATABASE_URL</code> - Default “mysql://kimai:kimai@127.0.0.1:3306/kimai?charset=utf8mb4&amp;serverVersion=5.7.40”</li>
+  <li><code class="language-plaintext highlighter-rouge">APP_SECRET</code> - Default: “change_this_to_something_unique”</li>
+  <li><code class="language-plaintext highlighter-rouge">TRUSTED_PROXIES</code> - Default: “nginx,localhost,127.0.0.1”</li>
+  <li><code class="language-plaintext highlighter-rouge">TRUSTED_HOSTS</code> - Default: “nginx,localhost,127.0.0.1”</li>
+  <li><code class="language-plaintext highlighter-rouge">MAILER_FROM</code> - Default: “kimai@example.com”</li>
+  <li><code class="language-plaintext highlighter-rouge">MAILER_URL</code> - Default: “null://localhost”</li>
+  <li><code class="language-plaintext highlighter-rouge">ADMINMAIL</code> - Email for the new <code class="language-plaintext highlighter-rouge">admin</code> user (will be created if not existing)</li>
+  <li><code class="language-plaintext highlighter-rouge">ADMINPASS</code> - Password for the new <code class="language-plaintext highlighter-rouge">admin</code> user (will be created if not existing)</li>
+  <li><code class="language-plaintext highlighter-rouge">memory_limit</code> - Default: “256M”, the <a href="https://php.net/memory-limit">maximum amount of memory</a> a script may consume</li>
+</ul>
+
+<p>It is possible to set the user that FPM or Apache run as. If the user does not exist a new user called www-kimai is created and the server is then run under that user. Note these must be numbers, not names.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">USER_ID=1000</code></li>
+  <li><code class="language-plaintext highlighter-rouge">GROUP_ID=1000</code></li>
+</ul>
+
 <h2 id="quick-start">Quick start</h2>
 
 <p>This will run the latest production build and make it accessible at <a href="http://localhost:8001">http://localhost:8001</a>.</p>
@@ -692,59 +715,6 @@ docker run <span class="nt">--rm</span> <span class="nt">-ti</span> <span class=
 
 <p>That should do it.</p>
 
-<h2 id="runtime-arguments">Runtime Arguments</h2>
-
-<p>The following settings can set at runtime:</p>
-
-<p><strong>PHP memory limit</strong></p>
-
-<p>The maximum amount of memory a script may consume, <a href="https://php.net/memory-limit">https://php.net/memory-limit</a></p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">memory_limit</span><span class="o">=</span>512M
-</code></pre></div></div>
-
-<p><strong>Kimai settings</strong></p>
-
-<p>See the Kimai and Symfony docs for more info on these.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">DATABASE_URL</span><span class="o">=</span>mysql://user:pass@hodt/dbname?charset<span class="o">=</span>utf8mb4&amp;serverVersion<span class="o">=</span>8.3.0
-<span class="nv">APP_SECRET</span><span class="o">=</span>change_this_to_something_unique
-<span class="nv">TRUSTED_PROXIES</span><span class="o">=</span>nginx,localhost,127.0.0.1
-<span class="nv">TRUSTED_HOSTS</span><span class="o">=</span>nginx,localhost,127.0.0.1
-<span class="nv">MAILER_FROM</span><span class="o">=</span>kimai@example.com
-<span class="nv">MAILER_URL</span><span class="o">=</span>null://localhost
-</code></pre></div></div>
-
-<p>Start up values:</p>
-
-<p>If set, then these values will be used to create a new admin user (if not yet existing).</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">ADMINPASS</span><span class="o">=</span>
-<span class="nv">ADMINMAIL</span><span class="o">=</span>
-</code></pre></div></div>
-
-<h2 id="changing-uid-and-gid">Changing UID and GID</h2>
-
-<p>It is possible to set the user that FPM or Apache run as. If the user does not exist a new user called www-kimai is created and the server is then run under that user. Note these must be numbers, not names.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">USER_ID</span><span class="o">=</span>1000
-<span class="nv">GROUP_ID</span><span class="o">=</span>1000
-</code></pre></div></div>
-
-<h2 id="alternate-db-config">Alternate DB config</h2>
-
-<p>It is possible to pass the DB config in individual values. If the ENV variable <code class="language-plaintext highlighter-rouge">DB_TYPE</code> is set then the following values will be expected:</p>
-
-<p>The <code class="language-plaintext highlighter-rouge">DB_TYPE</code> must be <code class="language-plaintext highlighter-rouge">mysql</code>:</p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">DB_USER</code> defaults to <code class="language-plaintext highlighter-rouge">kimai</code></li>
-  <li><code class="language-plaintext highlighter-rouge">DB_PASS</code> defaults to <code class="language-plaintext highlighter-rouge">kimai</code></li>
-  <li><code class="language-plaintext highlighter-rouge">DB_HOST</code> defaults to <code class="language-plaintext highlighter-rouge">sqldb</code></li>
-  <li><code class="language-plaintext highlighter-rouge">DB_PORT</code> defaults to <code class="language-plaintext highlighter-rouge">3306</code></li>
-  <li><code class="language-plaintext highlighter-rouge">DB_BASE</code> defaults to <code class="language-plaintext highlighter-rouge">kimai</code></li>
-</ul>
-
 <p>The <a href="https://docs.docker.com/">official docker documentation</a> has more options on running the container.</p>
 
 <h2 id="tips--tricks">Tips &amp; Tricks</h2>
@@ -766,7 +736,7 @@ See <a href="https://stackoverflow.com/questions/24319662/from-inside-of-a-docke
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#available-tags" class="nav-link">Available tags</a></li><li class="nav-item"><a href="#quick-start" class="nav-link">Quick start</a></li><li class="nav-item"><a href="#updating-kimai" class="nav-link">Updating Kimai</a><ul><li class="nav-item"><a href="#fpm-image" class="nav-link">FPM image</a></li></ul></li><li class="nav-item"><a href="#runtime-arguments" class="nav-link">Runtime Arguments</a></li><li class="nav-item"><a href="#changing-uid-and-gid" class="nav-link">Changing UID and GID</a></li><li class="nav-item"><a href="#alternate-db-config" class="nav-link">Alternate DB config</a></li><li class="nav-item"><a href="#tips--tricks" class="nav-link">Tips &amp; Tricks</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#available-tags" class="nav-link">Available tags</a></li><li class="nav-item"><a href="#environment-variables--runtime-args" class="nav-link">Environment variables / Runtime args</a></li><li class="nav-item"><a href="#quick-start" class="nav-link">Quick start</a></li><li class="nav-item"><a href="#updating-kimai" class="nav-link">Updating Kimai</a><ul><li class="nav-item"><a href="#fpm-image" class="nav-link">FPM image</a></li></ul></li><li class="nav-item"><a href="#tips--tricks" class="nav-link">Tips &amp; Tricks</a></li></ul>
         
     </aside>
 
