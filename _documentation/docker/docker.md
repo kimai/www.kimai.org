@@ -35,6 +35,25 @@ The following tags are deprecated and will not receive updates anymore, replace 
 - `kimai/kimai2:apache-x.xx.x-prod`: replaced by `kimai/kimai2:apache-x.xx.x` 
 - `kimai/kimai2:fpm-x.xx.x-prod`: replaced by `kimai/kimai2:fpm-x.xx.x` 
 
+## Environment variables / Runtime args
+
+The Kimai image supports the following environment variables:
+
+- `DATABASE_URL` - Default "mysql://kimai:kimai@127.0.0.1:3306/kimai?charset=utf8mb4&serverVersion=5.7.40"
+- `APP_SECRET` - Default: "change_this_to_something_unique"
+- `TRUSTED_PROXIES` - Default: "nginx,localhost,127.0.0.1" 
+- `TRUSTED_HOSTS` - Default: "nginx,localhost,127.0.0.1"
+- `MAILER_FROM` - Default: "kimai@example.com"
+- `MAILER_URL` - Default: "null://localhost"
+- `ADMINMAIL` - Email for the new `admin` user (will be created if not existing)
+- `ADMINPASS` - Password for the new `admin` user (will be created if not existing)
+- `memory_limit` - Default: "256M", the [maximum amount of memory](https://php.net/memory-limit) a script may consume
+
+It is possible to set the user that FPM or Apache run as. If the user does not exist a new user called www-kimai is created and the server is then run under that user. Note these must be numbers, not names.
+
+- `USER_ID=1000`
+- `GROUP_ID=1000`
+
 ## Quick start
 
 This will run the latest production build and make it accessible at <http://localhost:8001>.
@@ -136,63 +155,6 @@ docker-compose exec kimai /opt/kimai/bin/console assets:install
 ```
 
 That should do it.
-
-## Runtime Arguments
-
-The following settings can set at runtime:
-
-**PHP memory limit**
-
-The maximum amount of memory a script may consume, <https://php.net/memory-limit>
-
-```bash
-memory_limit=512M
-```
-
-**Kimai settings**
-
-See the Kimai and Symfony docs for more info on these.
-
-```bash
-DATABASE_URL=mysql://user:pass@hodt/dbname?charset=utf8mb4&serverVersion=8.3.0
-APP_SECRET=change_this_to_something_unique
-TRUSTED_PROXIES=nginx,localhost,127.0.0.1
-TRUSTED_HOSTS=nginx,localhost,127.0.0.1
-MAILER_FROM=kimai@example.com
-MAILER_URL=null://localhost
-```
-
-Start up values:
-
-If set, then these values will be used to create a new admin user (if not yet existing).
-
-```bash
-ADMINPASS=
-ADMINMAIL=
-```
-
-## Changing UID and GID
-
-It is possible to set the user that FPM or Apache run as. If the user does not exist a new user called www-kimai is created and the server is then run under that user. Note these must be numbers, not names.
-
-```bash
-USER_ID=1000
-GROUP_ID=1000
-```
-
-## Alternate DB config
-
-It is possible to pass the DB config in individual values. If the ENV variable ```DB_TYPE``` is set then the following values will be expected:
-
-The ```DB_TYPE``` must be `mysql`:
-
-* ```DB_USER``` defaults to ```kimai```
-* ```DB_PASS``` defaults to ```kimai```
-* ```DB_HOST``` defaults to ```sqldb```
-* ```DB_PORT``` defaults to ```3306```
-* ```DB_BASE``` defaults to ```kimai```
-
-
 
 {% comment %} 
 
