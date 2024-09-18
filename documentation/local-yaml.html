@@ -578,15 +578,21 @@ Adjust settings from any configuration file by adding them in your own configura
 <p>These “environment specific settings” are required so Kimai can boot. They are stored in the <code class="language-plaintext highlighter-rouge">.env</code> file:</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">MAILER_URL</code> - smtp connection for emails</li>
-  <li><code class="language-plaintext highlighter-rouge">MAILER_FROM</code> - application specific “from” address for all emails</li>
-  <li><code class="language-plaintext highlighter-rouge">APP_ENV</code> - environment for the runtime (always use <code class="language-plaintext highlighter-rouge">prod</code> unless you want to develop for Kimai)</li>
   <li><code class="language-plaintext highlighter-rouge">DATABASE_URL</code> - database connection for storing all application data</li>
-  <li><code class="language-plaintext highlighter-rouge">APP_SECRET</code> - secret used to encrypt session cookies (users will be logged out if you change it)</li>
+  <li><code class="language-plaintext highlighter-rouge">APP_ENV</code> - environment for the runtime (always use <code class="language-plaintext highlighter-rouge">prod</code>, other option is <code class="language-plaintext highlighter-rouge">dev</code> if you want to developfor Kimai)</li>
+  <li><code class="language-plaintext highlighter-rouge">MAILER_URL</code> - SMTP connection for emails</li>
+  <li><code class="language-plaintext highlighter-rouge">MAILER_FROM</code> - application specific “from” address for all emails</li>
+  <li><code class="language-plaintext highlighter-rouge">APP_SECRET</code> - secret used to encrypt e.g. session cookies (users will be logged out if you change it)</li>
 </ul>
 
 <div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i><p>You don’t need a .env file, but can set these environment values via webserver config as well. Later ones will take precedence over the .env entries.</p>
 </div>
+
+<h3 id="database_url">DATABASE_URL</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">DATABASE_URL</code> has the format of <code class="language-plaintext highlighter-rouge">mysql://user:password@host:port/database?charset=utf8mb4&amp;serverVersion=5.7.40</code>.</p>
+
+<p>Your task is to change the values <code class="language-plaintext highlighter-rouge">user</code>, <code class="language-plaintext highlighter-rouge">password</code>, <code class="language-plaintext highlighter-rouge">host</code>, <code class="language-plaintext highlighter-rouge">port</code> (default port for MySQL/MariaDB is <code class="language-plaintext highlighter-rouge">3306</code>), <code class="language-plaintext highlighter-rouge">database</code> and <code class="language-plaintext highlighter-rouge">serverVersion</code>.</p>
 
 <h3 id="localyaml">local.yaml</h3>
 
@@ -799,7 +805,7 @@ which will be displayed in each of the <a href="/documentation/calendar.html">us
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#configuration-files" class="nav-link">Configuration files</a><ul><li class="nav-item"><a href="#env" class="nav-link">.env</a></li><li class="nav-item"><a href="#localyaml" class="nav-link">local.yaml</a></li><li class="nav-item"><a href="#reload-configurations" class="nav-link">Reload configurations</a></li></ul></li><li class="nav-item"><a href="#available-configurations" class="nav-link">Available configurations</a><ul><li class="nav-item"><a href="#data-directory" class="nav-link">Data directory</a></li><li class="nav-item"><a href="#session-lifetime" class="nav-link">Session lifetime</a></li><li class="nav-item"><a href="#invoice-template-search-path" class="nav-link">Invoice template search path</a></li><li class="nav-item"><a href="#multiple-time-rounding-rules" class="nav-link">Multiple time-rounding rules</a></li><li class="nav-item"><a href="#rate-multiplier-for-specific-weekdays" class="nav-link">Rate multiplier for specific weekdays</a></li><li class="nav-item"><a href="#integrating-google-calender" class="nav-link">Integrating google calender</a></li></ul></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#configuration-files" class="nav-link">Configuration files</a><ul><li class="nav-item"><a href="#env" class="nav-link">.env</a></li><li class="nav-item"><a href="#database_url" class="nav-link">DATABASE_URL</a></li><li class="nav-item"><a href="#localyaml" class="nav-link">local.yaml</a></li><li class="nav-item"><a href="#reload-configurations" class="nav-link">Reload configurations</a></li></ul></li><li class="nav-item"><a href="#available-configurations" class="nav-link">Available configurations</a><ul><li class="nav-item"><a href="#data-directory" class="nav-link">Data directory</a></li><li class="nav-item"><a href="#session-lifetime" class="nav-link">Session lifetime</a></li><li class="nav-item"><a href="#invoice-template-search-path" class="nav-link">Invoice template search path</a></li><li class="nav-item"><a href="#multiple-time-rounding-rules" class="nav-link">Multiple time-rounding rules</a></li><li class="nav-item"><a href="#rate-multiplier-for-specific-weekdays" class="nav-link">Rate multiplier for specific weekdays</a></li><li class="nav-item"><a href="#integrating-google-calender" class="nav-link">Integrating google calender</a></li></ul></li></ul>
         
         <ul class="nav">
             <li>

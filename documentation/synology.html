@@ -697,6 +697,20 @@ volumes:
   <li>Reload the Kimai website</li>
 </ul>
 
+<h2 id="backups">Backups</h2>
+
+<p>You can export your Kimai database with a daily cronjob:</p>
+
+<ul>
+  <li>Create a backup directory, e.g. <code class="language-plaintext highlighter-rouge">/volume1/backups/</code></li>
+  <li>Start the “Task Scheduler” and configure a <code class="language-plaintext highlighter-rouge">Custom script</code>, which you run as <code class="language-plaintext highlighter-rouge">root</code>, e.g. <code class="language-plaintext highlighter-rouge">daily</code> at <code class="language-plaintext highlighter-rouge">01:00</code>.</li>
+</ul>
+
+<p>The script looks like this:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/local/bin/docker <span class="nb">exec </span>kimai-sqldb-1 mysqldump <span class="nt">-uroot</span> <span class="nt">-pchangemeplease</span> kimai <span class="o">&gt;</span> /volume1/backups/kimai-<span class="sb">`</span><span class="nb">date</span> +%Y-%m-%d<span class="sb">`</span>.sql
+</code></pre></div></div>
+
+<p>You might habe to adjust the database container name <code class="language-plaintext highlighter-rouge">kimai-sqldb-1</code> and the  password <code class="language-plaintext highlighter-rouge">changemeplease</code> to your configured values.</p>
 
                 </div>
                 
@@ -711,7 +725,7 @@ volumes:
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#installation" class="nav-link">Installation</a><ul><li class="nav-item"><a href="#docker-composer-yaml" class="nav-link">Docker-Composer YAML</a></li></ul></li><li class="nav-item"><a href="#updating-the-image" class="nav-link">Updating the image</a></li><li class="nav-item"><a href="#installing-plugins" class="nav-link">Installing plugins</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#installation" class="nav-link">Installation</a><ul><li class="nav-item"><a href="#docker-composer-yaml" class="nav-link">Docker-Composer YAML</a></li></ul></li><li class="nav-item"><a href="#updating-the-image" class="nav-link">Updating the image</a></li><li class="nav-item"><a href="#installing-plugins" class="nav-link">Installing plugins</a></li><li class="nav-item"><a href="#backups" class="nav-link">Backups</a></li></ul>
         
     </aside>
 
