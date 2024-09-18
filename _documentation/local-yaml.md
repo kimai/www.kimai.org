@@ -29,13 +29,19 @@ Adjust settings from any configuration file by adding them in your own configura
 
 These "environment specific settings" are required so Kimai can boot. They are stored in the `.env` file:
 
-- `MAILER_URL` - smtp connection for emails
-- `MAILER_FROM` - application specific "from" address for all emails
-- `APP_ENV` - environment for the runtime (always use `prod` unless you want to develop for Kimai)
 - `DATABASE_URL` - database connection for storing all application data
-- `APP_SECRET` - secret used to encrypt session cookies (users will be logged out if you change it)
+- `APP_ENV` - environment for the runtime (always use `prod`, other option is `dev` if you want to developfor Kimai)
+- `MAILER_URL` - SMTP connection for emails
+- `MAILER_FROM` - application specific "from" address for all emails
+- `APP_SECRET` - secret used to encrypt e.g. session cookies (users will be logged out if you change it)
 
 {% alert warning %}You don't need a .env file, but can set these environment values via webserver config as well. Later ones will take precedence over the .env entries.{% endalert %}
+
+### DATABASE_URL
+
+The `DATABASE_URL` has the format of `mysql://user:password@host:port/database?charset=utf8mb4&serverVersion=5.7.40`.
+
+Your task is to change the values `user`, `password`, `host`, `port` (default port for MySQL/MariaDB is `3306`), `database` and `serverVersion`.
 
 ### local.yaml
 
