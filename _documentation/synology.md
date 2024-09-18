@@ -103,3 +103,16 @@ This will be stored at `/volume1/@docker/volumes/kimai_plugins/_data/`.
 - Quit both the `Docker` and `SSH` sessions with `exit`
 - Reload the Kimai website
 
+## Backups
+
+You can export your Kimai database with a daily cronjob:
+
+- Create a backup directory, e.g. `/volume1/backups/`
+- Start the "Task Scheduler" and configure a `Custom script`, which you run as `root`, e.g. `daily` at `01:00`.
+
+The script looks like this:
+```bash
+/usr/local/bin/docker exec kimai-sqldb-1 mysqldump -uroot -pchangemeplease kimai > /volume1/backups/kimai-`date +%Y-%m-%d`.sql
+```
+
+You might habe to adjust the database container name `kimai-sqldb-1` and the  password `changemeplease` to your configured values.
