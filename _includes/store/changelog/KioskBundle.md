@@ -1,3 +1,9 @@
+**Version 2.11.0**
+
+Compatibility: requires minimum Kimai 2.21.0
+
+- Removed duplicate "Barcode" link in user-profile
+
 **Version 2.10.0**
 
 Compatibility: requires minimum Kimai 2.21.0

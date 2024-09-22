@@ -1,3 +1,9 @@
+**Version 2.9.0**
+
+Compatibility: requires minimum Kimai 2.21.0
+
+- Moved users "Audit-logs" action to "Filter" menu
+
 **Version 2.8.0**
 
 Compatibility: requires minimum Kimai 2.21.0

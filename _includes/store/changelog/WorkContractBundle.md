@@ -1,3 +1,10 @@
+**Version 1.14.0**
+
+Compatibility: requires minimum Kimai 2.22.0
+
+- New working-hours calculation modes: "Hours per month" and "Hours per week"
+- Fixed: using an Absence with duration caused plus hours
+
 **Version 1.13.0**
 
 Compatibility: requires minimum Kimai 2.21.0

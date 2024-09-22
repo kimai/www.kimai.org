@@ -1,3 +1,13 @@
+**Version 4.1.0**
+
+Compatibility: requires minimum Kimai 2.21.0
+
+- Move "Customer Portal" to "Administration" menu
+- Use new database table `kimai2_customer_portals`
+- Automatic migration of existing URL shares and database cleanup
+- Move statistics card above timesheets
+- Fix: broken customer statistics (customer portals with budget display for customer without budget)
+
 **Version 4.0.0**
 
 Compatibility: requires minimum Kimai 2.21.0
