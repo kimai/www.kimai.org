@@ -112,14 +112,6 @@ This booking is only there for information purposes.
 
 ## Permissions
 
-| Permission Name             | Description                                                                                                                                      |
-|-----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| contract_other_profile      | Allow to see and change the contract settings of other users.                                                                                    |
-| hours_other_profile         | View the `Employment contract` menu. Switch the user in the `Working Contract` screen.                                                           |
-| view_booking_contract       | View working-time details (PDF, Manual bookings)                                                                                                 |
-| approve_times_contract      | Approve monthly timesheets.                                                                                                                      |
-| create_booking_contract     | Allows to create manual time bookings.                                                                                                           |
-| workdays_override_timesheet | Allows to create timesheets on non-working days (this rule must be activated in [System > Settings]({% link _documentation/configurations.md %}) |
-{: .table }
+{% include documentation/permissions-contract.md %}
 
 {% include snippets/store-howto-permissions.md %}
