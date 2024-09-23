@@ -687,20 +687,22 @@ Clicking the <code class="language-plaintext highlighter-rouge">Yes</code> and <
 
 <p>If a user has multiple roles, then access is granted as soon as one of these roles own the permission.</p>
 
-<h3 id="existing-permissions">Existing permissions</h3>
+<p><strong>Be aware</strong>
+There are other business rules which might limit access to certain functions, so permissions are not the only checks in place.
+For example: exported timesheet records cannot be edited, even if a user has the <code class="language-plaintext highlighter-rouge">edit_own_timesheet</code> or <code class="language-plaintext highlighter-rouge">edit_other_timesheet</code> permission.</p>
 
-<p>This is the full list of existing permissions with short descriptions:</p>
+<h3 id="activity">Activity</h3>
 
-<table class="table">
+<table class="table permissions">
   <thead>
     <tr>
-      <th>Permission name</th>
+      <th>Permission Name</th>
       <th>Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong>Activity (Admin)</strong></td>
+      <td><strong>Administrator</strong></td>
       <td> </td>
     </tr>
     <tr>
@@ -732,27 +734,7 @@ Clicking the <code class="language-plaintext highlighter-rouge">Yes</code> and <
       <td>Allows access to the activity administration</td>
     </tr>
     <tr>
-      <td><strong>Activity (Team member)</strong></td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>budget_team_activity</td>
-      <td>Allows team-members to see the budget (money) reports for activities of assigned projects/customers</td>
-    </tr>
-    <tr>
-      <td>time_team_activity</td>
-      <td>Allows team-members to see the budget (time) reports for activities of assigned projects/customers</td>
-    </tr>
-    <tr>
-      <td>edit_team_activity</td>
-      <td>Allows team-members to edit activities of assigned projects/customers</td>
-    </tr>
-    <tr>
-      <td>view_team_activity</td>
-      <td>Allows team-members to access activity administration</td>
-    </tr>
-    <tr>
-      <td><strong>Activity (Teamlead)</strong></td>
+      <td><strong>Teamlead</strong></td>
       <td> </td>
     </tr>
     <tr>
@@ -776,7 +758,40 @@ Clicking the <code class="language-plaintext highlighter-rouge">Yes</code> and <
       <td>Allow team leaders to access activity administration</td>
     </tr>
     <tr>
-      <td><strong>Customer (Admin)</strong></td>
+      <td><strong>Team member</strong></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>budget_team_activity</td>
+      <td>Allows team-members to see the budget (money) reports for activities of assigned projects/customers</td>
+    </tr>
+    <tr>
+      <td>time_team_activity</td>
+      <td>Allows team-members to see the budget (time) reports for activities of assigned projects/customers</td>
+    </tr>
+    <tr>
+      <td>edit_team_activity</td>
+      <td>Allows team-members to edit activities of assigned projects/customers</td>
+    </tr>
+    <tr>
+      <td>view_team_activity</td>
+      <td>Allows team-members to access activity administration</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="customer">Customer</h3>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Permission Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Administrator</strong></td>
       <td> </td>
     </tr>
     <tr>
@@ -816,35 +831,7 @@ Clicking the <code class="language-plaintext highlighter-rouge">Yes</code> and <
       <td>Allows access to the customer administration</td>
     </tr>
     <tr>
-      <td><strong>Customer (Team member)</strong></td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>budget_team_customer</td>
-      <td>Allows team-members to see the budget (money) reports for assigned customers</td>
-    </tr>
-    <tr>
-      <td>time_team_customer</td>
-      <td>Allows team-members to see the budget (time) reports for assigned customers</td>
-    </tr>
-    <tr>
-      <td>comments_team_customer</td>
-      <td>Allows team-members to see the comment section for customers</td>
-    </tr>
-    <tr>
-      <td>details_team_customer</td>
-      <td>Allows team-members to see customer details</td>
-    </tr>
-    <tr>
-      <td>edit_team_customer</td>
-      <td>Allows team-members to edit assigned customers</td>
-    </tr>
-    <tr>
-      <td>view_team_customer</td>
-      <td>Allows team-members to access project administration</td>
-    </tr>
-    <tr>
-      <td><strong>Customer (Teamlead)</strong></td>
+      <td><strong>Teamlead</strong></td>
       <td> </td>
     </tr>
     <tr>
@@ -876,39 +863,48 @@ Clicking the <code class="language-plaintext highlighter-rouge">Yes</code> and <
       <td>Allow team leaders to access project administration</td>
     </tr>
     <tr>
-      <td><strong>Export</strong></td>
+      <td><strong>Team member</strong></td>
       <td> </td>
     </tr>
     <tr>
-      <td>create_export</td>
-      <td>See <a href="/documentation/export.html">export</a> screen and create export documents from the selected timesheet data</td>
+      <td>budget_team_customer</td>
+      <td>Allows team-members to see the budget (money) reports for assigned customers</td>
     </tr>
     <tr>
-      <td><strong>Invoice</strong></td>
-      <td> </td>
+      <td>time_team_customer</td>
+      <td>Allows team-members to see the budget (time) reports for assigned customers</td>
     </tr>
     <tr>
-      <td>create_invoice</td>
-      <td>Create a new invoice</td>
+      <td>comments_team_customer</td>
+      <td>Allows team-members to see the comment section for customers</td>
     </tr>
     <tr>
-      <td>delete_invoice</td>
-      <td>Allows to delete invoices, please <a href="/documentation/invoices.html">read docs why you shouldn’t</a></td>
+      <td>details_team_customer</td>
+      <td>Allows team-members to see customer details</td>
     </tr>
     <tr>
-      <td>manage_invoice_template</td>
-      <td>Administrate invoice templates</td>
+      <td>edit_team_customer</td>
+      <td>Allows team-members to edit assigned customers</td>
     </tr>
     <tr>
-      <td>upload_invoice_template</td>
-      <td>Allows to upload custom invoice templates</td>
+      <td>view_team_customer</td>
+      <td>Allows team-members to access project administration</td>
     </tr>
+  </tbody>
+</table>
+
+<h3 id="project">Project</h3>
+
+<table class="table permissions">
+  <thead>
     <tr>
-      <td>view_invoice</td>
-      <td>Gives access to the <a href="/documentation/invoices.html">list of all invoices</a> and allows to download existing invoices</td>
+      <th>Permission Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+  <tbody>
     <tr>
-      <td><strong>Project (Admin)</strong></td>
+      <td><strong>Administrator</strong></td>
       <td> </td>
     </tr>
     <tr>
@@ -948,35 +944,7 @@ Clicking the <code class="language-plaintext highlighter-rouge">Yes</code> and <
       <td>Allows access to the project administration</td>
     </tr>
     <tr>
-      <td><strong>Project (Team member)</strong></td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>budget_team_project</td>
-      <td>Allows team-members to see the budget (money) reports for assigned projects or projects of assigned customers</td>
-    </tr>
-    <tr>
-      <td>time_team_project</td>
-      <td>Allows team-members to see the budget (time) reports for assigned projects or projects of assigned customers</td>
-    </tr>
-    <tr>
-      <td>comments_team_project</td>
-      <td>Allows team-members to see the comment section for project</td>
-    </tr>
-    <tr>
-      <td>details_team_project</td>
-      <td>Allows team-members to see project details</td>
-    </tr>
-    <tr>
-      <td>edit_team_project</td>
-      <td>Allows team-members to edit assigned projects or projects for assigned customers</td>
-    </tr>
-    <tr>
-      <td>view_team_project</td>
-      <td>Allows team-members to access projects administration</td>
-    </tr>
-    <tr>
-      <td><strong>Project (Teamlead)</strong></td>
+      <td><strong>Teamlead</strong></td>
       <td> </td>
     </tr>
     <tr>
@@ -1008,57 +976,46 @@ Clicking the <code class="language-plaintext highlighter-rouge">Yes</code> and <
       <td>Allow team leaders to access projects administration</td>
     </tr>
     <tr>
-      <td><strong>Reporting</strong></td>
+      <td><strong>Team member</strong></td>
       <td> </td>
     </tr>
     <tr>
-      <td>view_other_reporting</td>
-      <td>Gives access to the reports of other users</td>
+      <td>budget_team_project</td>
+      <td>Allows team-members to see the budget (money) reports for assigned projects or projects of assigned customers</td>
     </tr>
     <tr>
-      <td>view_reporting</td>
-      <td>Gives access to the <a href="/documentation/reporting.html">reporting</a> screen</td>
+      <td>time_team_project</td>
+      <td>Allows team-members to see the budget (time) reports for assigned projects or projects of assigned customers</td>
     </tr>
     <tr>
-      <td><strong>Tags</strong></td>
-      <td> </td>
+      <td>comments_team_project</td>
+      <td>Allows team-members to see the comment section for project</td>
     </tr>
     <tr>
-      <td>delete_tag</td>
-      <td>Delete existing tags</td>
+      <td>details_team_project</td>
+      <td>Allows team-members to see project details</td>
     </tr>
     <tr>
-      <td>manage_tag</td>
-      <td>Edit existing and create new tags in the administration</td>
+      <td>edit_team_project</td>
+      <td>Allows team-members to edit assigned projects or projects for assigned customers</td>
     </tr>
     <tr>
-      <td>view_tag</td>
-      <td>Gives access to the <a href="/documentation/tags.html">tags</a> administration</td>
+      <td>view_team_project</td>
+      <td>Allows team-members to access projects administration</td>
     </tr>
+  </tbody>
+</table>
+
+<h3 id="timesheet">Timesheet</h3>
+
+<table class="table permissions">
+  <thead>
     <tr>
-      <td><strong>Teams</strong></td>
-      <td> </td>
+      <th>Permission Name</th>
+      <th>Description</th>
     </tr>
-    <tr>
-      <td>create_team</td>
-      <td>Create new teams</td>
-    </tr>
-    <tr>
-      <td>delete_team</td>
-      <td>Delete existing teams</td>
-    </tr>
-    <tr>
-      <td>edit_team</td>
-      <td>Edit team assignments</td>
-    </tr>
-    <tr>
-      <td>view_team</td>
-      <td>See <a href="/documentation/teams.html">teams</a> administration</td>
-    </tr>
-    <tr>
-      <td>view_team_member</td>
-      <td>View the teamleads and members for the teams of the current user</td>
-    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td><strong>Timesheet</strong></td>
       <td> </td>
@@ -1175,6 +1132,19 @@ Clicking the <code class="language-plaintext highlighter-rouge">Yes</code> and <
       <td>weekly_own_timesheet</td>
       <td>Gives access to the <a href="/documentation/weekly-times.html">weekly working hours</a> screen</td>
     </tr>
+  </tbody>
+</table>
+
+<h3 id="user">User</h3>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Permission Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td><strong>User</strong></td>
       <td> </td>
@@ -1271,6 +1241,194 @@ Clicking the <code class="language-plaintext highlighter-rouge">Yes</code> and <
       <td>view_own_profile</td>
       <td>View own user profile and statistics</td>
     </tr>
+  </tbody>
+</table>
+
+<h3 id="invoice">Invoice</h3>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Permission Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Invoice</strong></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>create_invoice</td>
+      <td>Create a new invoice</td>
+    </tr>
+    <tr>
+      <td>delete_invoice</td>
+      <td>Allows to delete invoices, please <a href="/documentation/invoices.html">read docs why you shouldn’t</a></td>
+    </tr>
+    <tr>
+      <td>manage_invoice_template</td>
+      <td>Administrate invoice templates</td>
+    </tr>
+    <tr>
+      <td>upload_invoice_template</td>
+      <td>Allows to upload custom invoice templates</td>
+    </tr>
+    <tr>
+      <td>view_invoice</td>
+      <td>Gives access to the <a href="/documentation/invoices.html">list of all invoices</a> and allows to download existing invoices</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="absences">Absences</h3>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Permission Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>absence</td>
+      <td>View and access the Absence screen. By default given to: <code class="language-plaintext highlighter-rouge">User</code>, <code class="language-plaintext highlighter-rouge">Teamlead</code>, <code class="language-plaintext highlighter-rouge">Administrator</code>, <code class="language-plaintext highlighter-rouge">Super Administrator</code></td>
+    </tr>
+    <tr>
+      <td>edit_own_absence</td>
+      <td>Edit the own absences. By default given to: <code class="language-plaintext highlighter-rouge">User</code>, <code class="language-plaintext highlighter-rouge">Teamlead</code>, <code class="language-plaintext highlighter-rouge">Administrator</code>, <code class="language-plaintext highlighter-rouge">Super Administrator</code></td>
+    </tr>
+    <tr>
+      <td>edit_other_absence</td>
+      <td>Edit other users absences. By default given to: <code class="language-plaintext highlighter-rouge">Teamlead</code>, <code class="language-plaintext highlighter-rouge">Administrator</code>, <code class="language-plaintext highlighter-rouge">Super Administrator</code></td>
+    </tr>
+    <tr>
+      <td>delete_own_absence</td>
+      <td>Delete the own absence entries. By default given to: <code class="language-plaintext highlighter-rouge">Teamlead</code>, <code class="language-plaintext highlighter-rouge">Administrator</code>, <code class="language-plaintext highlighter-rouge">Super Administrator</code></td>
+    </tr>
+    <tr>
+      <td>delete_other_absence</td>
+      <td>Delete other users absence entries. By default given to: <code class="language-plaintext highlighter-rouge">Teamlead</code>, <code class="language-plaintext highlighter-rouge">Administrator</code>, <code class="language-plaintext highlighter-rouge">Super Administrator</code></td>
+    </tr>
+    <tr>
+      <td>view_other_absence</td>
+      <td>Switch the user in the<code class="language-plaintext highlighter-rouge">Absence</code> screen. Also influences the visibility of absence entries in the calendar.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="working-times">Working times</h3>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Permission Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>contract_other_profile</td>
+      <td>Allow to see and change the contract settings of other users.</td>
+    </tr>
+    <tr>
+      <td>hours_own_profile</td>
+      <td>View the <code class="language-plaintext highlighter-rouge">Employment contract</code> menu and the own “Working times”.</td>
+    </tr>
+    <tr>
+      <td>hours_other_profile</td>
+      <td>View the <code class="language-plaintext highlighter-rouge">Employment contract</code> menu. Switch the user in the <code class="language-plaintext highlighter-rouge">Working Contract</code> screen.</td>
+    </tr>
+    <tr>
+      <td>view_booking_contract</td>
+      <td>View working-time details (PDF, Manual bookings)</td>
+    </tr>
+    <tr>
+      <td>approve_times_contract</td>
+      <td>Approve monthly timesheets.</td>
+    </tr>
+    <tr>
+      <td>create_booking_contract</td>
+      <td>Allows to create manual time bookings.</td>
+    </tr>
+    <tr>
+      <td>workdays_override_timesheet</td>
+      <td>Allows to create timesheets on non-working days (this rule must be activated in <a href="/documentation/configurations.html">System &gt; Settings</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="others">Others</h3>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Permission name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Export</strong></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>create_export</td>
+      <td>See <a href="/documentation/export.html">export</a> screen and create export documents from the selected timesheet data</td>
+    </tr>
+    <tr>
+      <td><strong>Reporting</strong></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>view_other_reporting</td>
+      <td>Gives access to the reports of other users</td>
+    </tr>
+    <tr>
+      <td>view_reporting</td>
+      <td>Gives access to the <a href="/documentation/reporting.html">reporting</a> screen</td>
+    </tr>
+    <tr>
+      <td><strong>Tags</strong></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>delete_tag</td>
+      <td>Delete existing tags</td>
+    </tr>
+    <tr>
+      <td>manage_tag</td>
+      <td>Edit existing and create new tags in the administration</td>
+    </tr>
+    <tr>
+      <td>view_tag</td>
+      <td>Gives access to the <a href="/documentation/tags.html">tags</a> administration</td>
+    </tr>
+    <tr>
+      <td><strong>Teams</strong></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>create_team</td>
+      <td>Create new teams</td>
+    </tr>
+    <tr>
+      <td>delete_team</td>
+      <td>Delete existing teams</td>
+    </tr>
+    <tr>
+      <td>edit_team</td>
+      <td>Edit team assignments</td>
+    </tr>
+    <tr>
+      <td>view_team</td>
+      <td>See <a href="/documentation/teams.html">teams</a> administration</td>
+    </tr>
+    <tr>
+      <td>view_team_member</td>
+      <td>View the teamleads and members for the teams of the current user</td>
+    </tr>
     <tr>
       <td><strong>Other</strong></td>
       <td> </td>
@@ -1298,11 +1456,6 @@ Clicking the <code class="language-plaintext highlighter-rouge">Yes</code> and <
   </tbody>
 </table>
 
-<p><strong>Be aware</strong>
-There are other business rules which might limit access to certain functions, so these permissions are not the only checks in place.
-For example timesheet records which were exported cannot be edited any longer, even if a user has the <code class="language-plaintext highlighter-rouge">edit_own_timesheet</code> 
-or <code class="language-plaintext highlighter-rouge">edit_other_timesheet</code> permission.</p>
-
                 </div>
                 
 
@@ -1316,7 +1469,7 @@ or <code class="language-plaintext highlighter-rouge">edit_other_timesheet</code
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#roles" class="nav-link">Roles</a><ul><li class="nav-item"><a href="#creating-roles" class="nav-link">Creating roles</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a><ul><li class="nav-item"><a href="#existing-permissions" class="nav-link">Existing permissions</a></li></ul></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#roles" class="nav-link">Roles</a><ul><li class="nav-item"><a href="#creating-roles" class="nav-link">Creating roles</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a><ul><li class="nav-item"><a href="#activity" class="nav-link">Activity</a></li><li class="nav-item"><a href="#customer" class="nav-link">Customer</a></li><li class="nav-item"><a href="#project" class="nav-link">Project</a></li><li class="nav-item"><a href="#timesheet" class="nav-link">Timesheet</a></li><li class="nav-item"><a href="#user" class="nav-link">User</a></li><li class="nav-item"><a href="#invoice" class="nav-link">Invoice</a></li><li class="nav-item"><a href="#absences" class="nav-link">Absences</a></li><li class="nav-item"><a href="#working-times" class="nav-link">Working times</a></li><li class="nav-item"><a href="#others" class="nav-link">Others</a></li></ul></li></ul>
         
     </aside>
 
