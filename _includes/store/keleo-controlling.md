@@ -71,9 +71,9 @@ If you need one of these features, do not rely on them being added, but contact 
 If I decide to add one of these feature, it will be moved to the "Roadmap" section.
 
 ```
+- Preview of the "locked month" PDF without actually closing the month as email
 - Prevent that certain days can be booked for vacation
 - Add first start- and last end-time as begin and end times to the PDF
-- Support for employees without expected working hours (e.g. hourly-based freelancers, who cannot used fixed working days) 
 - Working times
   - Allow to configure a [dedicated project](https://github.com/kevinpapst/kimai-plugins/discussions/112) that will be exclusively used for calculating attendance time 
   - Allow to configure a dedicated project that will be ignored when calculating the attendance time
@@ -83,8 +83,6 @@ If I decide to add one of these feature, it will be moved to the "Roadmap" secti
 - API 
   - Methods to read absences
   - Methods to write absences (e.g. when using a HR tool for holiday planning)
-- Approval workflow
-  - Allow to export (or print) pending approvals
 - Management view for all users
   - showing statistics for absences
   - pending holidays (approved), used holidays, available
@@ -113,6 +111,5 @@ If I decide to add one of these feature, it will be moved to the "Roadmap" secti
   - Automatic calculation of holidays according to the working-time duration (e.g. 30 days per year for a 40h week) 
 - Contracts 
   - Multiple working contracts per user (configured with start and end time)
-- Define arbitrary date ranges with attached working-time profiles
-  - Allow to attach each user multiple profiles
+  - Define arbitrary date ranges with attached working-time profiles
 ```
