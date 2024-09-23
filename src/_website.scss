@@ -114,6 +114,19 @@ i.feature-icon {
     }
 }
 
+@include media-breakpoint-down(sm) {
+    .table>:not(caption)>*>* {
+        padding: 0.25rem 0;
+    }
+}
+
+table.table.permissions {
+    th:nth-child(1),
+    td:nth-child(1) {
+        width: 300px;
+    }
+}
+
 /*
 .store-screenshots-slider {
     margin-bottom: 15px;
