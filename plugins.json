@@ -21,10 +21,11 @@ permalink: /plugins.json
         {%- assign developer = site.data.developer[settings.developer] -%}
         "name": "{{ translation.title }}",
         "url": "{{ product.url | absolute_url }}",
-        {%- if settings.lemonsqueezy != nil %}
+        {%- if settings.gumroad != nil %}
+        "buy": "{{ settings.gumroad }}",
+        {%- elsif settings.lemonsqueezy != nil %}
         "buy": "{{ settings.lemonsqueezy }}",
-        {%- elsif settings.gumroad != nil %}
-        "buy": "{{ settings.gumroad }}",{%- endif %}
+        {%- endif %}
         "developer": {
             "name": "{{ developer.name }}",
             "homepage": {% if developer.homepage %}"{{ developer.homepage }}"{% else %}null{% endif %}
