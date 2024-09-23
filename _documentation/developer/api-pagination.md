@@ -15,7 +15,7 @@ https://example.kimai.cloud/api/timesheets?page=2&size=10
 
 This will return the second page of ten timesheets. If the `size` parameter is not provided, the API will return 50 records per page by default, unless otherwise specified.
 
-Information on whether a given endpoint supports pagination parameters can be found in the parameter list within the swagger documentation of your API endpoints.
+Information on whether a given endpoint supports pagination parameters can be found in the parameter list within the swagger documentation of the API endpoints.
 
 ## Paginated responses
 
