@@ -21,7 +21,9 @@ permalink: /plugins.json
         {%- assign developer = site.data.developer[settings.developer] -%}
         "name": "{{ translation.title }}",
         "url": "{{ product.url | absolute_url }}",
-        {%- if settings.gumroad != nil %}
+        {%- if settings.shop != nil %}
+        "buy": "{{ settings.shop }}",
+        {%- elsif settings.gumroad != nil %}
         "buy": "{{ settings.gumroad }}",
         {%- elsif settings.lemonsqueezy != nil %}
         "buy": "{{ settings.lemonsqueezy }}",

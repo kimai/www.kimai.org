@@ -26,10 +26,6 @@ layout: default
 {% if settings.screenshots %}
     {% assign screenshots = settings.screenshots %}
 {% endif %}
-{% assign isMultiPurchase = nil %}
-{% if settings.multi_purchase %}
-    {% assign isMultiPurchase = true %}
-{% endif %}
 {% if settings.download %}
     {% assign buyLink = settings.download %}
     {% assign buyBtnIcon = 'bx bx-download' %}
@@ -46,6 +42,9 @@ layout: default
     {% assign buyLink = settings.app-store %}
     {% assign buyBtnIcon = 'bx bxl-apple' %}
     {% assign buyTitle = 'App Store' %}
+{% elsif settings.shop %}
+    {% assign buyLink = settings.shop %}
+    {% assign buyBtnIcon = 'bx bx-cart' %}
 {% elsif settings.lemonsqueezy %}
     {% assign buyLink = settings.lemonsqueezy %}
     {% assign buyBtnIcon = 'bx bx-cart' %}
@@ -82,6 +81,7 @@ layout: default
 {% assign changelog = nil %}
 {% assign showDemo = false %}
 {% assign is_ppp = false %}
+{% assign isUsingLicenseManager = false %}
 
 {% if settings.bundle %}
     {% assign showInstallation = true %}
@@ -101,13 +101,17 @@ layout: default
     {% endif %}
 {% endif %}
 
-
 {% if settings.demo != nil %}
     {% assign showDemo = settings.demo %}
 {% endif %}
 
-{% if isMultiPurchase != nil and page.lang != 'de' and isFree == false %}
-    {% assign is_ppp = true %}
+{% if settings.developer == 'kevinpapst' and settings.shop != nil %}
+    {% if settings.shop != nil %}
+        {% assign isUsingLicenseManager = true %}
+    {% endif %}
+    {% if page.lang != 'de' and isFree == false %}
+        {% assign is_ppp = true %}
+    {% endif %}
 {% endif %}
 
 <section class="bg-dark pt-2 pt-lg-3 pb-lg-5">
@@ -201,21 +205,16 @@ layout: default
                                 </small>
                             </div>
 
-                            {% if isMultiPurchase != nil and isFree %}
+                            {% if isUsingLicenseManager %}
                                 <div class="row align-items-center mb-3">
-                                    <p>
-                                        You can only access this free plugin with a valid email address as you must login to the licence manager for download.
+                                    <p class="text-muted">
+                                        {{ site.data[page.lang].translation.store-license-manager }}
                                     </p>
                                 </div>
                             {% endif %}
 
                             <div class="row align-items-center mb-3">
-                                {% if isMultiPurchase != nil %}
-                                    <a class="btn btn-success btn-lg w-100 btn-buy" href="{{ settings.gumroad }}" target="_blank"><i class="{{ buyBtnIcon }} me-2"></i> {{ buyTitle }}</a>
-                                    <!--<a class="btn btn-success btn-lg w-100 btn-buy" href="{{ settings.lemonsqueezy }}" target="_blank"><i class="{{ buyBtnIcon }} me-2"></i> {{ buyTitle }}</a>-->
-                                {% else %}
-                                    <a class="btn btn-success btn-lg w-100 btn-buy" href="{{ buyLink }}"><i class="{{ buyBtnIcon }} me-2"></i> {{ buyTitle }}</a>
-                                {% endif %}
+                                <a class="btn btn-success btn-lg w-100 btn-buy" href="{{ buyLink }}" target="_blank"><i class="{{ buyBtnIcon }} me-2"></i> {{ buyTitle }}</a>
                             </div>
 
                             {% if isFree == false %}
