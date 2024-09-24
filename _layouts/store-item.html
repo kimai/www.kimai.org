@@ -45,12 +45,6 @@ layout: default
 {% elsif settings.shop %}
     {% assign buyLink = settings.shop %}
     {% assign buyBtnIcon = 'bx bx-cart' %}
-{% elsif settings.lemonsqueezy %}
-    {% assign buyLink = settings.lemonsqueezy %}
-    {% assign buyBtnIcon = 'bx bx-cart' %}
-{% elsif settings.gumroad %}
-    {% assign buyLink = settings.gumroad %}
-    {% assign buyBtnIcon = 'bx bx-cart' %}
 {% elsif settings.github %}
     {% assign buyLink = settings.github | append: '/releases' %}
     {% assign buyBtnIcon = 'bx bxl-github' %}

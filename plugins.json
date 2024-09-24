@@ -23,10 +23,6 @@ permalink: /plugins.json
         "url": "{{ product.url | absolute_url }}",
         {%- if settings.shop != nil %}
         "buy": "{{ settings.shop }}",
-        {%- elsif settings.gumroad != nil %}
-        "buy": "{{ settings.gumroad }}",
-        {%- elsif settings.lemonsqueezy != nil %}
-        "buy": "{{ settings.lemonsqueezy }}",
         {%- endif %}
         "developer": {
             "name": "{{ developer.name }}",
