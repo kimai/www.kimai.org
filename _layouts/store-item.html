@@ -56,6 +56,9 @@ layout: default
     {% assign buyLink = settings.github | append: '/releases' %}
     {% assign buyBtnIcon = 'bx bxl-github' %}
     {% assign buyTitle = site.data[page.lang].translation.download-btn %}
+{% elsif settings.buy_link %}
+    {% assign buyLink = settings.buy_link %}
+    {% assign buyBtnIcon = 'bx bx-cart' %}
 {% endif %}
 
 {% assign isFree = false %}

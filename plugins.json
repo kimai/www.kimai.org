@@ -25,6 +25,8 @@ permalink: /plugins.json
         "buy": "{{ settings.gumroad }}",
         {%- elsif settings.lemonsqueezy != nil %}
         "buy": "{{ settings.lemonsqueezy }}",
+        {%- elsif settings.buy_link != nil %}
+        "buy": "{{ settings.buy_link }}",
         {%- endif %}
         "developer": {
             "name": "{{ developer.name }}",
