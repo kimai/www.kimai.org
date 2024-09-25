@@ -544,8 +544,7 @@
 
 <h2 id="apache-prod">Apache (prod)</h2>
 
-<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>version: '3.5'
-services:
+<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>services:
 
   sqldb:
     image: mysql:8.3
@@ -569,6 +568,7 @@ services:
     image: kimai/kimai2:apache
     volumes:
       - data:/opt/kimai/var/data
+      - plugins:/opt/kimai/var/plugins
     ports:
       - 8001:8001
     environment:
@@ -581,6 +581,7 @@ services:
 volumes:
   data:
   mysql:
+  plugins:
 </code></pre></div></div>
 
 <h2 id="environment-variables">Environment variables</h2>
@@ -597,8 +598,7 @@ ADMIN_PASSWORD=changemeplease
 
 <p>And then reference those from your <code class="language-plaintext highlighter-rouge">docker-compose.yaml</code>:</p>
 
-<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>version: '3.5'
-services:
+<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>services:
 
   sqldb:
     image: mysql:8.3
@@ -622,6 +622,7 @@ services:
     image: kimai/kimai2:apache
     volumes:
       - data:/opt/kimai/var/data
+      - plugins:/opt/kimai/var/plugins
     ports:
       - 8001:8001
     environment:
@@ -634,12 +635,175 @@ services:
 volumes:
   data:
   mysql:
+  plugins:
+</code></pre></div></div>
+
+<h2 id="caddy-reverse-proxy">Caddy Reverse Proxy</h2>
+
+<p>Kimai has extensive examples of using Caddy as revrese proxy in frontend of Kimai.</p>
+
+<p>See <a href="/documentation/hosting-hetzner-cloud.html">Hetzner Cloud</a> and <a href="/documentation/hosting-digital-ocean.html">Digital Ocean</a> docs.</p>
+
+<h2 id="installing-plugins">Installing plugins</h2>
+
+<p>When using plugins, you can either use a <a href="https://docs.docker.com/engine/storage/volumes/">volume</a> or a <a href="https://docs.docker.com/engine/storage/bind-mounts/">bind mount</a>.
+As plugin are accessed read-only by Kimai, you can use both methods.</p>
+
+<p>Using a volume:</p>
+
+<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>services:
+    [...]
+
+  kimai:
+    image: kimai/kimai2:apache
+    volumes:
+      - data:/opt/kimai/var/data
+      - plugins:/opt/kimai/var/plugins
+    [...]
+
+volumes:
+  data:
+  plugins:
+</code></pre></div></div>
+
+<p>Or using a bind mount, pointing to the local filesystem at <code class="language-plaintext highlighter-rouge">/home/kimai/plugins</code>:</p>
+
+<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>services:
+
+  sqldb:
+    [...]
+
+  kimai:
+    image: kimai/kimai2:apache
+    volumes:
+      - data:/opt/kimai/var/data
+      - /home/kimai/plugins:/opt/kimai/var/plugins
+    [...]
+
+volumes:
+  data:
+</code></pre></div></div>
+
+<h2 id="fpm-and-nginx">FPM and nginx</h2>
+
+<p>Listed here are example setups for running the image(s).
+If you’d like to contribute a new one them please <a href="https://github.com/kimai/www.kimai.org/edit/main/_documentation/docker/docker-compose.md">raise a PR for this page</a>.</p>
+
+<div class="alert alert-danger d-flex" role="alert"><i class="bx bx-info-circle lead me-3"></i>
+<p>Be aware that the below image <a href="https://github.com/tobybatch/nginx-fpm-reverse-proxy">tobybatch/nginx-fpm-reverse-proxy</a> is only meant as example.
+It is not made for production usage. Use your existing reverse proxy instead!</p>
+</div>
+
+<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>services:
+
+  sqldb:
+    image: mysql:8.3
+    volumes:
+      - mysql:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=kimai
+      - MYSQL_USER=kimaiuser
+      - MYSQL_PASSWORD=kimaipassword
+      - MYSQL_ROOT_PASSWORD=changemeplease
+    command: --default-storage-engine innodb
+    restart: unless-stopped
+    healthcheck:
+      test: mysqladmin -p$$MYSQL_ROOT_PASSWORD ping -h localhost
+      interval: 20s
+      start_period: 10s
+      timeout: 10s
+      retries: 3
+
+  nginx:
+    image: tobybatch/nginx-fpm-reverse-proxy
+    ports:
+      - 8001:80
+    volumes:
+      - public:/opt/kimai/public:ro
+    restart: unless-stopped
+    depends_on:
+      - kimai
+    healthcheck:
+      test:  wget --spider http://nginx/health || exit 1
+      interval: 20s
+      start_period: 10s
+      timeout: 10s
+      retries: 3
+
+  kimai:
+    image: kimai/kimai2:latest
+    environment:
+      - ADMINMAIL=admin@kimai.local
+      - ADMINPASS=changemeplease
+      - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&amp;serverVersion=8.3.0"
+      - TRUSTED_HOSTS=nginx,localhost,127.0.0.1
+    volumes:
+      - public:/opt/kimai/public
+      - plugins:/opt/kimai/var/plugins
+      <span class="c"># - data:/opt/kimai/var/data</span>
+      <span class="c"># - ./ldap.conf:/etc/openldap/ldap.conf:z</span>
+      <span class="c"># - ./ROOT-CA.pem:/etc/ssl/certs/ROOT-CA.pem:z</span>
+    restart: unless-stopped
+
+volumes:
+    data:
+    public:
+    mysql:
+    plugins:
+</code></pre></div></div>
+
+<h2 id="updating-kimai">Updating Kimai</h2>
+
+<p>The usual update step is simple: stop, pull latest version, restart.</p>
+
+<p>This example is based on the <code class="language-plaintext highlighter-rouge">Apache</code> image used with the <code class="language-plaintext highlighter-rouge">Docker compose</code> plugin:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Pull latest version</span>
+docker compose pull
+<span class="c"># Stop and remove older version</span>
+docker compose down
+<span class="c"># Start the container</span>
+docker compose up <span class="nt">-d</span>
+</code></pre></div></div>
+
+<h3 id="fpm-image">FPM image</h3>
+
+<p>The FPM image will need to be upgraded with a manual step.
+Because the FPM image will have a HTTP proxy (e.g. caddy or nginx) serving the static assets the <code class="language-plaintext highlighter-rouge">public</code> directory is mounted into that container. This is done via volumes:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">services</span><span class="pi">:</span>
+    <span class="na">kimai</span><span class="pi">:</span>
+        <span class="na">image</span><span class="pi">:</span> <span class="s">kimai/kimai2:latest</span>
+        <span class="s">...</span>
+        <span class="na">volumes</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">public:/opt/kimai/public</span>
+        <span class="s">...</span>
+    <span class="na">nginx</span><span class="pi">:</span>
+        <span class="s">...</span>
+        <span class="s">volumes</span><span class="err">:</span>
+            <span class="pi">-</span> <span class="s">public:/opt/kimai/public:ro</span>
+    <span class="s">...</span>
+</code></pre></div></div>
+
+<p>When the Kimai image is updated, and the container is restarted any new assets in the public directory are never included.
+These will be things like CSS files, images and especially version specific javascript code!
+To fix this you need to copy the newer files from a fresh image over the top.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># You might need to use `docker volume ls | grep kimai` to find the name of your Kimai "public" volume</span>
+docker run <span class="nt">--rm</span> <span class="nt">-ti</span> <span class="nt">-v</span> kimai_public:/public <span class="nt">--entrypoint</span> /bin/bash kimai/kimai2
+<span class="c">#                      ^^^^^^^^^^^^ -&gt; Kimai public volume</span>
+<span class="nb">cp</span> <span class="nt">-r</span> /opt/kimai/public /
+<span class="nb">exit</span>
+</code></pre></div></div>
+
+<p>Now you’ll need to tell the running kimai to update its assets:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker-compose <span class="nb">exec </span>kimai /opt/kimai/bin/console assets:install
 </code></pre></div></div>
 
 <h2 id="apache-dev">Apache (dev)</h2>
 
-<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>version: '3.5'
-services:
+<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>services:
 
   sqldb:
     image: mysql:8.3
@@ -669,219 +833,6 @@ services:
     restart: unless-stopped
 </code></pre></div></div>
 
-<h2 id="fpm-and-nginx">FPM and nginx</h2>
-
-<p>Listed here are example setups for running the image(s).
-If you’d like to contribute a new one them please <a href="https://github.com/kimai/www.kimai.org/edit/main/_documentation/docker/docker-compose.md">raise a PR for this page</a>.</p>
-
-<p>None of these images persist the DB between restarts, unless you add a volume to do that:</p>
-<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    volumes:
-      - mysql:/var/lib/mysql
-</code></pre></div></div>
-
-<div class="alert alert-danger d-flex" role="alert"><i class="bx bx-info-circle lead me-3"></i>
-<p>Be aware that the below image <a href="https://github.com/tobybatch/nginx-fpm-reverse-proxy">tobybatch/nginx-fpm-reverse-proxy</a> is only meant as example.
-It is not made for production usage. Use your existing reverse proxy instead!</p>
-</div>
-
-<h3 id="production">Production</h3>
-
-<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>version: '3.5'
-services:
-
-  sqldb:
-    image: mysql:8.3
-    environment:
-      - MYSQL_DATABASE=kimai
-      - MYSQL_USER=kimaiuser
-      - MYSQL_PASSWORD=kimaipassword
-      - MYSQL_ROOT_PASSWORD=changemeplease
-    command: --default-storage-engine innodb
-    restart: unless-stopped
-    healthcheck:
-      test: mysqladmin -p$$MYSQL_ROOT_PASSWORD ping -h localhost
-      interval: 20s
-      start_period: 10s
-      timeout: 10s
-      retries: 3
-
-  nginx:
-    image: tobybatch/nginx-fpm-reverse-proxy
-    ports:
-      - 8001:80
-    volumes:
-      - public:/opt/kimai/public:ro
-    restart: unless-stopped
-    depends_on:
-      - kimai
-    healthcheck:
-      test:  wget --spider http://nginx/health || exit 1
-      interval: 20s
-      start_period: 10s
-      timeout: 10s
-      retries: 3
-
-  kimai:
-    image: kimai/kimai2:latest
-    environment:
-      - ADMINMAIL=admin@kimai.local
-      - ADMINPASS=changemeplease
-      - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&amp;serverVersion=8.3.0"
-      - TRUSTED_HOSTS=nginx,localhost,127.0.0.1
-    volumes:
-      - public:/opt/kimai/public
-      <span class="c"># - data:/opt/kimai/var/data</span>
-      <span class="c"># - ./ldap.conf:/etc/openldap/ldap.conf:z</span>
-      <span class="c"># - ./ROOT-CA.pem:/etc/ssl/certs/ROOT-CA.pem:z</span>
-    restart: unless-stopped
-
-volumes:
-    data:
-    public:
-    mysql:
-</code></pre></div></div>
-
-<h3 id="with-addons">With addons</h3>
-
-<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>version: '3.5'
-services:
-
-  sqldb:
-    image: mysql:8.3
-    environment:
-      - MYSQL_DATABASE=kimai
-      - MYSQL_USER=kimaiuser
-      - MYSQL_PASSWORD=kimaipassword
-      - MYSQL_ROOT_PASSWORD=changemeplease
-    volumes:
-      - mysql:/var/lib/mysql
-    command: --default-storage-engine innodb
-    restart: unless-stopped
-    healthcheck:
-      test: mysqladmin -p$$MYSQL_ROOT_PASSWORD ping -h localhost
-      interval: 20s
-      start_period: 10s
-      timeout: 10s
-      retries: 3
-
-  nginx:
-    image: tobybatch/nginx-fpm-reverse-proxy
-    ports:
-      - 8001:80
-    volumes:
-      - public:/opt/kimai/public:ro
-    restart: unless-stopped
-    depends_on:
-      - kimai
-    healthcheck:
-      test:  wget --spider http://nginx/health || exit 1
-      interval: 20s
-      start_period: 10s
-      timeout: 10s
-      retries: 3
-
-  kimai:
-    image: kimai/kimai2:latest
-    environment:
-      - ADMINMAIL=admin@kimai.local
-      - ADMINPASS=changemeplease
-      - DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&amp;serverVersion=8.3.0
-      - TRUSTED_HOSTS=nginx,localhost,127.0.0.1
-      - MAILER_URL=smtp://mailer:1025
-      - MAILER_FROM=kimai@example.com
-    volumes:
-      - public:/opt/kimai/public
-      <span class="c"># - data:/opt/kimai/var/data</span>
-      <span class="c"># - ./ldap.conf:/etc/openldap/ldap.conf:z</span>
-      <span class="c"># - ./ROOT-CA.pem:/etc/ssl/certs/ROOT-CA.pem:z</span>
-    restart: unless-stopped
-
-  phpmyadmin:
-    image: phpmyadmin
-    restart: always
-    ports:
-      - 8081:80
-    environment:
-      - PMA_ARBITRARY=1
-
-  swagger:
-    image: swaggerapi/swagger-ui
-    ports:
-      - 8080:8080
-    volumes:
-      - ./swagger.json:/swagger.json
-    environment:
-      - SWAGGER_JSON=/swagger.json
-
-  mailer:
-    image: schickling/mailcatcher
-    ports:
-      - "${MAILER_SMTP_PORT:-1025}:1025"
-      - "${MAILER_ADMIN_PORT:-1080}:1080"
-
-volumes:
-    data:
-    public:
-    mysql:
-</code></pre></div></div>
-
-<h3 id="development">Development</h3>
-
-<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>version: '3.5'
-services:
-
-  sqldb:
-    image: mysql:8.3
-    environment:
-      - MYSQL_DATABASE=kimai
-      - MYSQL_USER=kimaiuser
-      - MYSQL_PASSWORD=kimaipassword
-      - MYSQL_ROOT_PASSWORD=changemeplease
-    command: --default-storage-engine innodb
-    restart: unless-stopped
-    healthcheck:
-      test: mysqladmin -p$$MYSQL_ROOT_PASSWORD ping -h localhost
-      interval: 20s
-      start_period: 10s
-      timeout: 10s
-      retries: 3
-
-  nginx:
-    image: tobybatch/nginx-fpm-reverse-proxy
-    ports:
-      - 8001:80
-    volumes:
-      - public:/opt/kimai/public:ro
-    restart: unless-stopped
-    depends_on:
-      - kimai
-    healthcheck:
-      test:  wget --spider http://nginx/health || exit 1
-      interval: 20s
-      start_period: 10s
-      timeout: 10s
-      retries: 3
-
-  kimai:
-    image: kimai/kimai2:fpm-dev
-    environment:
-      - ADMINMAIL=admin@kimai.local
-      - ADMINPASS=changemeplease
-      - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&amp;serverVersion=8.3.0"
-      - TRUSTED_HOSTS=nginx,localhost,127.0.0.1
-    volumes:
-      - public:/opt/kimai/public
-      <span class="c"># - data:/opt/kimai/var/data</span>
-      <span class="c"># - ./ldap.conf:/etc/openldap/ldap.conf:z</span>
-      <span class="c"># - ./ROOT-CA.pem:/etc/ssl/certs/ROOT-CA.pem:z</span>
-    restart: unless-stopped
-
-volumes:
-    data:
-    public:
-    mysql:
-</code></pre></div></div>
-
                 </div>
                 
 
@@ -895,7 +846,7 @@ volumes:
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#apache-prod" class="nav-link">Apache (prod)</a></li><li class="nav-item"><a href="#environment-variables" class="nav-link">Environment variables</a></li><li class="nav-item"><a href="#apache-dev" class="nav-link">Apache (dev)</a></li><li class="nav-item"><a href="#fpm-and-nginx" class="nav-link">FPM and nginx</a><ul><li class="nav-item"><a href="#production" class="nav-link">Production</a></li><li class="nav-item"><a href="#with-addons" class="nav-link">With addons</a></li><li class="nav-item"><a href="#development" class="nav-link">Development</a></li></ul></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#apache-prod" class="nav-link">Apache (prod)</a></li><li class="nav-item"><a href="#environment-variables" class="nav-link">Environment variables</a></li><li class="nav-item"><a href="#caddy-reverse-proxy" class="nav-link">Caddy Reverse Proxy</a></li><li class="nav-item"><a href="#installing-plugins" class="nav-link">Installing plugins</a></li><li class="nav-item"><a href="#fpm-and-nginx" class="nav-link">FPM and nginx</a></li><li class="nav-item"><a href="#updating-kimai" class="nav-link">Updating Kimai</a><ul><li class="nav-item"><a href="#fpm-image" class="nav-link">FPM image</a></li></ul></li><li class="nav-item"><a href="#apache-dev" class="nav-link">Apache (dev)</a></li></ul>
         
     </aside>
 

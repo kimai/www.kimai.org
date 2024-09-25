@@ -590,7 +590,7 @@ Any issues with the container rather than the application itself can be raised <
   <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-x.xx.x-prod</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-x.xx.x</code></li>
 </ul>
 
-<h2 id="environment-variables--runtime-args">Environment variables / Runtime args</h2>
+<h2 id="environment-variables">Environment variables</h2>
 
 <p>The Kimai image supports the following environment variables:</p>
 
@@ -613,16 +613,16 @@ Any issues with the container rather than the application itself can be raised <
   <li><code class="language-plaintext highlighter-rouge">GROUP_ID=1000</code></li>
 </ul>
 
-<h2 id="quick-start">Quick start</h2>
+<h2 id="quick-test-setup">Quick test setup</h2>
 
 <p>This will run the latest production build and make it accessible at <a href="http://localhost:8001">http://localhost:8001</a>.</p>
 
-<div class="alert alert-danger d-flex" role="alert"><i class="bx bx-info-circle lead me-3"></i><p>This setup is NOT intended for production use as it is temporary and the data will disappear when the containers are removed (see point 4).</p>
+<div class="alert alert-danger d-flex" role="alert"><i class="bx bx-info-circle lead me-3"></i><p>This setup is NOT intended for production use. It’s temporary and entered data will disappear when the containers are removed (see last point).</p>
 </div>
 
 <ol>
   <li>
-    <p>Start a DB</p>
+    <p>Start a database</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> docker run <span class="nt">--rm</span> <span class="nt">--name</span> kimai-mysql-testing <span class="se">\</span>
      <span class="nt">-e</span> <span class="nv">MYSQL_DATABASE</span><span class="o">=</span>kimai <span class="se">\</span>
@@ -641,6 +641,9 @@ Any issues with the container rather than the application itself can be raised <
      <span class="nt">-e</span> <span class="nv">DATABASE_URL</span><span class="o">=</span>mysql://kimai:kimai@<span class="k">${</span><span class="nv">HOSTNAME</span><span class="k">}</span>:3399/kimai?charset<span class="o">=</span>utf8mb4&amp;serverVersion<span class="o">=</span>8.3.0 <span class="se">\</span>
      kimai/kimai2:apache
 </code></pre></div>    </div>
+
+    <p>If you’re getting a “Connection refused” or similar errors, try changing <code class="language-plaintext highlighter-rouge">${HOSTNAME}</code> to <code class="language-plaintext highlighter-rouge">host.docker.internal</code>. 
+ Alternatively, you can start the container with the flag <code class="language-plaintext highlighter-rouge">--network="host"</code> (more infos <a href="https://stackoverflow.com/questions/24319662/from-inside-of-a-docker-container-how-do-i-connect-to-the-localhost-of-the-mach">here</a>).</p>
   </li>
   <li>
     <p>Add a user using the terminal</p>
@@ -656,72 +659,14 @@ Any issues with the container rather than the application itself can be raised <
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>When you are finished testing Kimai, you can remove the containers (warning: <strong>you will lose your data</strong>!).</p>
+    <p>When you are finished testing Kimai, you can remove the test containers</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> docker <span class="nb">rm </span>kimai-mysql-testing kimai-test
 </code></pre></div>    </div>
   </li>
 </ol>
 
-<p>If you are happy with Kimai, you can now setup your Docker installation using <a href="/documentation/docker-compose.html">Docker Compose</a>.</p>
-
-<h2 id="updating-kimai">Updating Kimai</h2>
-
-<p>The usual update step is simple: stop, pull latest version, restart.</p>
-
-<p>This example is based on the <code class="language-plaintext highlighter-rouge">Apache</code> image used with the <code class="language-plaintext highlighter-rouge">Docker compose</code> plugin:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Pull latest version</span>
-docker compose pull
-<span class="c"># Stop and remove older version</span>
-docker compose down
-<span class="c"># Start the container</span>
-docker compose up <span class="nt">-d</span>
-</code></pre></div></div>
-
-<h3 id="fpm-image">FPM image</h3>
-
-<p>The FPM image will need to be upgraded with a manual step. 
-Because the FPM image will have a HTTP proxy (e.g. caddy or nginx) serving the static assets the <code class="language-plaintext highlighter-rouge">public</code> directory is mounted into that container. This is done via volumes:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3.5'</span>
-<span class="na">services</span><span class="pi">:</span>
-    <span class="na">kimai</span><span class="pi">:</span>
-        <span class="na">image</span><span class="pi">:</span> <span class="s">kimai/kimai2:latest</span>
-        <span class="s">...</span>
-        <span class="na">volumes</span><span class="pi">:</span>
-            <span class="pi">-</span> <span class="s">public:/opt/kimai/public</span>
-        <span class="s">...</span>
-    <span class="na">nginx</span><span class="pi">:</span>
-        <span class="s">...</span>
-        <span class="s">volumes</span><span class="err">:</span>
-            <span class="pi">-</span> <span class="s">public:/opt/kimai/public:ro</span>
-    <span class="s">...</span>
-</code></pre></div></div>
-
-<p>When the kimai image is updated, and the container is restarted any new assets in the public directory are never included. These will be things like CSS files, images and especially version specific javascript code! To fix this you need to copy the newer files from a fresh image over the top.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># You might need to use `docker volume ls | grep kimai` to find the name of your Kimai "public" volume</span>
-docker run <span class="nt">--rm</span> <span class="nt">-ti</span> <span class="nt">-v</span> kimai_public:/public <span class="nt">--entrypoint</span> /bin/bash kimai/kimai2
-<span class="c">#                      ^^^^^^^^^^^^ -&gt; Kimai public volume</span>
-<span class="nb">cp</span> <span class="nt">-r</span> /opt/kimai/public /
-<span class="nb">exit</span>
-</code></pre></div></div>
-
-<p>Now you’ll need to tell the running kimai to update its assets:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker-compose <span class="nb">exec </span>kimai /opt/kimai/bin/console assets:install
-</code></pre></div></div>
-
-<p>That should do it.</p>
-
-<p>The <a href="https://docs.docker.com/">official docker documentation</a> has more options on running the container.</p>
-
-<h2 id="tips--tricks">Tips &amp; Tricks</h2>
-
-<p>If you’re using Docker for Windows or Docker for Mac, and you’re getting “Connection refused” or other errors, you might need to change <code class="language-plaintext highlighter-rouge">${HOSTNAME}</code> to <code class="language-plaintext highlighter-rouge">host.docker.internal</code>.
-This is because the Kimai Docker container can only communicate within its network boundaries. Alternatively, you can start the container with the flag <code class="language-plaintext highlighter-rouge">--network="host"</code>.
-See <a href="https://stackoverflow.com/questions/24319662/from-inside-of-a-docker-container-how-do-i-connect-to-the-localhost-of-the-mach">here</a> for more information.</p>
+<p>If you are happy with Kimai, you can now set up your Docker installation using <a href="/documentation/docker-compose.html">Docker Compose</a>.</p>
 
                 </div>
                 
@@ -736,7 +681,7 @@ See <a href="https://stackoverflow.com/questions/24319662/from-inside-of-a-docke
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#available-tags" class="nav-link">Available tags</a></li><li class="nav-item"><a href="#environment-variables--runtime-args" class="nav-link">Environment variables / Runtime args</a></li><li class="nav-item"><a href="#quick-start" class="nav-link">Quick start</a></li><li class="nav-item"><a href="#updating-kimai" class="nav-link">Updating Kimai</a><ul><li class="nav-item"><a href="#fpm-image" class="nav-link">FPM image</a></li></ul></li><li class="nav-item"><a href="#tips--tricks" class="nav-link">Tips &amp; Tricks</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#available-tags" class="nav-link">Available tags</a></li><li class="nav-item"><a href="#environment-variables" class="nav-link">Environment variables</a></li><li class="nav-item"><a href="#quick-test-setup" class="nav-link">Quick test setup</a></li></ul>
         
     </aside>
 
