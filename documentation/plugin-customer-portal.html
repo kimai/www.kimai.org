@@ -620,28 +620,84 @@
             <div>
                 
                 <div id="documentation-content">
-                    
-<h2 id="features">Features</h2>
+                    <h2 id="sharing-a-customer">Sharing a customer</h2>
+
+<p>Sharing a customer shows all recorded timesheets.</p>
+
+<p>In addition, a table of all projects is displayed, which shows the project name and budget statistics.
+The project statistics are only displayed if the customer statistics are active.</p>
+
+<p>You can activate the following options to show further customer details:</p>
 
 <ul>
-  <li>Shared details with your customers via URL</li>
-  <li>Create publicly accessible URLs for customer details (stats and timesheets)</li>
-  <li>Create publicly accessible URLs for the projectd etails (stats and timesheets)</li>
-  <li>Access control: protect the shared details with a password (optional)</li>
-  <li>View control feature
+  <li>Timesheets
     <ul>
-      <li>Show or hide user of records (name of user)</li>
-      <li>Show or hide rates of records (hour rate, total rate)</li>
-      <li>Show or hide chart with day comparison by selected month (coming soon)</li>
-      <li>Show or hide chart with month comparison by selected year (coming soon)</li>
+      <li>Name of the user</li>
+      <li>Rate (hourly rate, total rate)</li>
     </ul>
   </li>
-  <li>View customizations
+  <li>Chart options
     <ul>
-      <li>Define whether and how to merge records of a day (e.g. merge records of one day, use description of last record)</li>
+      <li>Annual chart (chart with month comparison by selected year)</li>
+      <li>Monthly chart (chart with day comparison by selected month)</li>
+    </ul>
+  </li>
+  <li>Statistics
+    <ul>
+      <li>Budget statistics</li>
+      <li>Time-Budget</li>
     </ul>
   </li>
 </ul>
+
+<h2 id="sharing-a-project">Sharing a project</h2>
+
+<p>Sharing a project shows all recorded timesheets.</p>
+
+<p>You can activate the following options to show further details:</p>
+
+<ul>
+  <li>Timesheets
+    <ul>
+      <li>Name of the user</li>
+      <li>Rate (hourly rate, total rate)</li>
+    </ul>
+  </li>
+  <li>Chart options
+    <ul>
+      <li>Annual chart (chart with month comparison by selected year)</li>
+      <li>Monthly chart (chart with day comparison by selected month)</li>
+    </ul>
+  </li>
+  <li>Statistics
+    <ul>
+      <li>Budget statistics</li>
+      <li>Time-Budget</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="merging-records">Merging records</h2>
+
+<p>Define whether and how to merge records of a day:</p>
+
+<ul>
+  <li>No merging: shows all records as single line</li>
+  <li>Merge all records and show the descriptions of all entries</li>
+  <li>Merge all records and show the description of the first entry</li>
+  <li>Merge all records and show the description of the last entry</li>
+</ul>
+
+<h2 id="password-protection">Password protection</h2>
+
+<p>You can protect a shared URL by setting a password.</p>
+
+<p>In that case the user has to enter the password before being able to see the shared data.</p>
+
+<h2 id="changing-the-language">Changing the language</h2>
+
+<p>The shared URL contains as first part of the URL the language code, e.g. <code class="language-plaintext highlighter-rouge">/en/auth/customer-portal/0123456789</code>, which is used to display the content.
+You can change the language (here <code class="language-plaintext highlighter-rouge">/en/</code>) to your required wished language, e.g. <code class="language-plaintext highlighter-rouge">/de/</code> for German, <code class="language-plaintext highlighter-rouge">/es/</code> for Spanish, <code class="language-plaintext highlighter-rouge">/fr/</code> for French and so on …</p>
 
 <h2 id="permissions">Permissions</h2>
 
@@ -680,7 +736,7 @@
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#features" class="nav-link">Features</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#sharing-a-customer" class="nav-link">Sharing a customer</a></li><li class="nav-item"><a href="#sharing-a-project" class="nav-link">Sharing a project</a></li><li class="nav-item"><a href="#merging-records" class="nav-link">Merging records</a></li><li class="nav-item"><a href="#password-protection" class="nav-link">Password protection</a></li><li class="nav-item"><a href="#changing-the-language" class="nav-link">Changing the language</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
         
     </aside>
 
