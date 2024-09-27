@@ -684,6 +684,12 @@ volumes:
   data:
 </code></pre></div></div>
 
+<p>Once the Docker container is running up, you need to step into the container and install the plugin:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker <span class="nb">exec</span> <span class="nt">-ti</span> kimai /opt/kimai/bin/console cache:clear <span class="nt">--env</span><span class="o">=</span>prod
+docker <span class="nb">exec</span> <span class="nt">-ti</span> kimai /opt/kimai/bin/console kimai:bundle:workcontract:install
+</code></pre></div></div>
+
 <h2 id="fpm-and-nginx">FPM and nginx</h2>
 
 <p>Listed here are example setups for running the image(s).
