@@ -153,6 +153,13 @@ volumes:
   data:
 ```
 
+Once the Docker container is running up, you need to step into the container and install the plugin:
+
+```bash
+docker exec -ti kimai /opt/kimai/bin/console cache:clear --env=prod
+docker exec -ti kimai /opt/kimai/bin/console kimai:bundle:workcontract:install
+```
+
 ## FPM and nginx
 
 Listed here are example setups for running the image(s).
