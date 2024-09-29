@@ -4,14 +4,10 @@ title: Bughunter
 
 ## Reporting 
 
-You can report any security related vulnerability in the [advisory section at GitHub](https://github.com/kimai/kimai/security/advisories)
-or via email to [support@kimai.org](mailto:support@kimai.org).
-You can expect that your message will be answered in 24-48 hours.
-
-I will work as fast as I can to fix the problem and publish a bugfix release / security update.
-Depending on the size of the required fixes, this might take a couple of hours or a couple of days.
-
-If you try to ask for money BEFORE sharing details of a report, you won't get a reply and your email will be blocked.
+- You can report any security related vulnerability in the [advisory section at GitHub](https://github.com/kimai/kimai/security/advisories) or via email to [support@kimai.org](mailto:support@kimai.org). You can expect that your message will be answered in 24-48 hours.
+- If you post the advisory on any other platform, I will read them, but I will not respond there. Answers only via email or GitHub security section.
+- I will work as fast as I can to fix the problem and publish a bugfix release / security update. Depending on the size of the required fixes, this might take a couple of hours or a couple of days.
+- If you try to ask for money BEFORE sharing details of a report, you won't get a reply and your email will be blocked.
 
 ### Reward
 
@@ -19,8 +15,7 @@ This is an open-source project and I cannot offer a financial bug bounty program
 The community including myself is grateful for any (discrete) disclosure of vulnerabilities!
 
 You will be mentioned in the release notes if your issue is valid and a fix is shipped. 
-And if you want to be mentioned/linked on social media, I will do so as well. 
-
+And if you want to be mentioned on social media, I will happily do so as well.
 
 ## Testing
 
