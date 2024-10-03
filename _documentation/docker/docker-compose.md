@@ -107,7 +107,7 @@ volumes:
 
 ## Caddy Reverse Proxy
 
-Kimai has extensive examples of using Caddy as revrese proxy in frontend of Kimai.
+Kimai has extensive examples of using Caddy as reverse proxy in frontend of Kimai.
 
 See [Hetzner Cloud]({% link _documentation/hosting-hetzner-cloud.md %}) and [Digital Ocean]({% link _documentation/hosting-digital-ocean.md %}) docs.
 
