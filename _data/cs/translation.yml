@@ -1,4 +1,4 @@
-made-with-love: 'Vyrobil'
+made-with-love: 'Vyvinul'
 developed-at: 'Vyvinuto v'
 access-demo: 'Demo přístup'
 docu-alert-english: 'Obsah je dostupný pouze v angličtině'
@@ -26,7 +26,7 @@ cloud-feature-backups: 'Zálohy'
 cloud-free-plan: 'Bezplatný plán pro 3 uživatelů'
 cloud-call-to-action: 'Začněte zdarma'
 new-badge: 'Nový'
-free-badge: 'zdarma'
+free-badge: 'Zdarma'
 price-contract: 'Na žádost'
 store-back: 'Zpět'
 store-features: 'Funkce'
@@ -39,7 +39,7 @@ installation: 'Instalace'
 updates: 'Aktualizace'
 username: 'Uživatelské jméno'
 password: 'Heslo'
-try-it: 'Vyzkoušet'
+try-it: 'Demo'
 plugin-demo-at: 'Tento plugin můžete otestovat na'
 plugin-demo-accounts: 'Více testovacích účtů naleznete zde'
 read-more: 'Více'
@@ -56,14 +56,14 @@ create-database: 'Vytvořit databázi'
 install-assets: 'Instalovat aktiva'
 ask-question: 'Zeptat se'
 newsletter:
-    title: 'Novinky'
+    title: 'Nechcete o nic přijít?'
     introduction: 'Odebírejte naše novinky a zůstaňte v obraze ohledně Kimai a aktualizací pluginů.'
     email-title: 'Váš e-mail'
     email-help: 'Poskytněte nám svou e-mailovou adresu, abyste mohli odebírat novinky.'
     field-invalid: 'Poskytnuté informace nejsou platné. Zkuste to prosím znovu.'
     field-required: 'Toto pole nemůže být vynecháno.'
     captcha-help: 'Omlouváme se za Captcha ověření. Víme, že je to otrava!'
-    sendinblue: 'Jako marketingovou platformu používáme Sendinblue. Odesláním tohoto formuláře berete na vědomí, že vámi poskytnuté informace budou předány společnosti Brevo ke zpracování v souladu s jejich %terms%'
+    sendinblue: 'Brevo používáme jako naši marketingovou platformu.  Odesláním tohoto formuláře berete na vědomí, že vámi poskytnuté informace budou přeneseny do společnosti Brevo ke zpracování v souladu s jejich %terms%.'
     terms: 'podmínky používání'
     button: 'ODEBÍRAT'
 photos:
@@ -83,7 +83,7 @@ demo:
     title: 'Vyzkoušejte Kimai na jedné z demo verzí'
     introduction: "Vyzkoušejte demo sledování času Kimai, a slibujeme, že ho pak budete chtít dál používat!"
     choose: 'Vyberte si prosím jednu z našich demo instalací, abyste získali pojem o tom, jak Kimai funguje a jaké funkce poskytuje.'
-    reinstall: 'Dejte pozor na to, že demoverze budou pravidelně přeinstalovávány a všechna zadaná data budou odstraněna. Pro vaše pohodlí je však většina z nich předvyplněna testovacími daty, takže můžete rovnou začít testovat funkce (například faktury nebo export).'
+    reinstall: 'Dejte pozor na to, že demoverze budou pravidelně přeinstalovávány a všechna zadaná data budou odstraněna.'
     user: 'Demo uživatel'
     accounts: "Tyto účty jsou určené pro vaše testování. Můžete si vytvořit i vlastní testovací účet v přihlašování do každého dema."
     role_user: 'Uživatel'
@@ -121,17 +121,17 @@ about:
     joy:
         title: Radost z práce
         content: Vývoj Kimai je ideální kombinací mého milovaného povolání s nekonečnými možnostmi vzdělání a potřebou vydělávat peníze na podporu své rodiny. Díky Kimai mohu trávit více času se svou ženou a dítětem, což je pravděpodobně nejlepší motivace, kterou si lze představit.
-    kevin: Kimai and the Cloud are developed and operated by Kevin, an independent software-developer from Vienna (Austria).
+    kevin: Kimai a Cloud jsou vyvíjeny a provozovány Kevinem, nezávislým softwarovým vývojářem z Vídně (Rakousko).
 store:
-    name: 'Obchod'
+    name: 'Doplňky'
     description: 'Rozšíření a komerční podpora pro Kimai'
     subtitle: 'Prodlužte si sledování času'
 blog:
-    name: 'Novinky'
+    name: 'Blog'
     description: 'Novinky o Kimai, open-source programu na sledování času'
     subtitle: 'Novinky od týmu vývojářů Kimai'
     title: Novinky z Kimai
-    archive-link: You can find the archive of older %topic% news here
+    archive-link: Archiv starších zpráv %topic% naleznete zde
 documentation:
     name: 'Dokumenty'
     description: 'Informace o podpoře, uživatelská příručka a další dokumentace pro Kimai sledování času'
@@ -145,7 +145,7 @@ features:
 docu-developer:
     name: Vývojář
 docu-onpremise:
-    name: Samo-hostování
+    name: Místní instalace
 docu-manual:
     name: Uživatelský manuál
 alternatives:
@@ -190,7 +190,7 @@ feature:
         description: "Přihlaste a registrujte uživatele prostřednictvím SAML (jednotné přihlášení alias SSO) a využijte vašeho stávajícího poskytovatele identit, jako například Google Workspace, Authentik nebo Azure Active Directory."
     api:
         name: "JSON API"
-        description: "Obsahuje rozhraní JSON API, takže externí aplikace mohou komunikovat s vaším oblíbeným sledovačem času!"
+        description: "Obsahuje rozsáhlé rozhraní JSON API pro čtení a zápis dat, takže externí aplikace a vaše vlastní nástroje mohou komunikovat s vaším oblíbeným sledovačem času."
     ldap:
         name: "LDAP"
         description: "Propojte Kimai s adresářovým serverem vaší společnosti (LDAP nebo Active directory) a použijte vaši stávající infrastrukturu."
@@ -247,15 +247,18 @@ feature:
         name: Zprávy a analýzy
 install:
     alert-vps: V této fázi není možné nainstalovat Kimai stažením souboru ZIP a nahráním souborů na webový server. Je to proto, že program Composer musí být spuštěn z příkazového řádku. To nutně neznamená, že potřebujete VPS. Někteří hostitelé poskytují přístup SSH, přes který byste měli být schopni nainstalovat Composer a Kimai v pořádku.
-    ssh: Doporučená metoda instaluje Kimai přímo na vašem serveru.
+    ssh: Tato metoda nainstaluje Kimai přímo na váš server.
     cloud: Nemusíte instalovat Kimai, můžete ho začít používat ihned.
     docker: Použijte náš obraz Dockeru pro snadnou instalaci a aktualizaci Kimai kontejneru.
     kubernetes: Kimai můžete nasadit do Kubernetes pomocí našich Helm-Charts.
-    caddy-docker: Using Docker-Compose and Caddy as reverse-proxy with SSL support.
+    caddy-docker: Použití Docker-Compose a Caddy jako reverzní proxy s podporou SSL.
 developer:
     kevinpapst:
-        intro: 'Správce projektu a hlavní vývojář od roku 2007. Chce, aby se Kimai stal nejlepším open-source sledováním času na světě. Lze si ho najmout na podporu, instalaci a vývoj zásuvných modulů na zakázku.'
-full-documentation: Celá dokumentace je dostupná zde (pouze v angličtině).
+        intro: 'Vždy bylo mým snem živit se open source produktem. S Kimai jsem byl schopen vyvinout software, který poskytuje velkou hodnotu mým zákazníkům a jehož vývoj mě pohání každý den.
+
+
+            Mé zvláštní poděkování patří skvělé komunitě za jejich věrnost v průběhu let, těším se na dalších 10 let Kimai 🚀'
+full-documentation: Celá dokumentace v angličtině
 contact-developer: V případě dotazů se obraťte přímo na vývojáře pomocí těchto kontaktních údajů.
 homepage:
     title: Sledování času pro týmy orientované na projekty
@@ -282,12 +285,12 @@ history:
     early-days-title: Jak to vše začalo
     year-2009: Torsten, původní vývojář, chtěl ukončit Kimai. Kevin přichází a stává se správcem.
     year-2019: První pluginy jsou vytvořeny, aby se ověřila poptávka na trhu a zájem o placený open-source software.
-    early-days-subtitle: Kimai má dlouhou historii a existuje od roku 2006, toto je stručný přehled, jak to vše začalo.
+    early-days-subtitle: Kimai má dlouhou historii a existuje od roku 2006, zde je stručný přehled toho, jak to všechno začalo.
     year-2023: Tvrdá práce se konečně vyplácí a Kimai je nyní mou 100% práci na plný úvazek. Děkuji!
     year-2014: Poslední vydání Kimai 1 je vytvořeno, vývoj stagnoval a nebyla zaznamenána žádná další aktivita.
     year-2006: První verze Kimai je vydána a postupně získává rostoucí uživatelskou a vývojářskou základnu.
-    intro: To, co začalo jako hobby projekt, je nyní přední open-source aplikací pro sledování času na světě. Ponořme se do jeho historie.
-    year-2018: Přepis Kimai najde svou cestu do komunity, migrace dat fungují.
+    intro: To, co začalo jako hobby projekt, je nyní přední open-source aplikací pro sledování času na světě. Pojďme se podívat na jeho historii.
+    year-2018: Přepis Kimai si najde cestu do komunity, migrace dat funguje, adopce je na vzestupu.
     current: |
         Kimai je aplikace pro sledování času s dlouhou historií. První verze byla vydána v roce 2006. Proč to zmiňuji? Protože jsem od té doby viděl přijít a odjít tolik služeb - věřte mi, když říkám: Zůstanu. Neživil jsem se Kimai mnoho let, byla to zábava, která mě motivovala vylepšovat Kimai. Věřím, že zábava je jedním z hlavních důvodů úspěchu Kimai.
 
@@ -326,7 +329,7 @@ highlight:
     subtitle: Kimai má všechny hlavní funkce pro podnikání, které potřebujete pro nastavení svých pracovních postupů sledování času a integraci s vaší stávající infrastrukturou.
     reasons:
         enterprise: Enterprise doplňky
-        oss: Open Source
+        oss: Otevřený zdrojový kód
         versions: Cloud a On-Premise
         gdpr: V souladu s GDPR
 store-hero-title: Doplňky, Aplikace, Podpora
@@ -344,7 +347,7 @@ about-who: Kdo staví Kimai?
 testimonials:
     title: Co uživatelé říkají o Kimai
 footer: Bezplatné a snadno použitelné sledování času pro freelancery, agentury a firmy. Kimai je open source software dostupný pro samostatné hostování a jako SaaS.
-slogan: Sledování času zjednodušeno
+slogan: Číslo 1 ve sledování času s otevřeným zdrojovým kódem
 comparison:
     footer-title: Porovnat
     is_oss: Open source software
@@ -396,7 +399,7 @@ support:
         Po výběru časového slotu budete přesměrováni na stránku pro platbu Stripe, po které obdržíte pozvánku na relaci.
     calendar_refund: "Pokud se nemůžete zúčastnit své schůzky, musíte ji zrušit nejméně 24 hodin předem, aby mohla být znovu naplánována. Žádné vrácení peněz nebude provedeno."
 docu-cloud:
-    name: Kimai-Cloud
+    name: Cloud
 landing_oss:
     version_cloud: Get up and running in seconds, leave the hosting and update to me, you take care of your core business. Make sure your team is ready for the future, with a modern time tracking solution.
     transparency_intro: With closed source software, you have only the vendor's claims that they're keeping the software secure and adhering to standards. The visibility of the code behind open source software means you can see for yourself. You can always see my responses to the community, the release schedule and milestones, and every commit and pull request review.
@@ -408,49 +411,49 @@ landing_oss:
     version_onpremise: I take care of the software, you take care about the hosting, updates and security. And if you don't want to do it yourself, there is always support available at your fingertips.
     discover: Discover Kimai
 plans:
-    tls_included: Free SSL Certificate
-    ip_whitelist: IP Access Restriction
-    billable_hours: Billable and Non-Billable Hours
+    tls_included: SSL certifikát zdarma
+    ip_whitelist: Omezení přístupu z IP adresy
+    billable_hours: Fakturovatelné a nefakturovatelné hodiny
     max_users: Users
     work_contract: "Working hour account"
-    all_from_plan: All Features from '%plan%'
-    backup_frequency: Backup Frequency
-    priority_features: Prioritized Feature Requests
-    invoices: Invoices
-    invoice_documents: Custom Invoice Templates
-    export: Data Export
-    expense_tracking: Expense Tracking
-    custom_css: Custom CSS Rules
-    task_management: Task Management
-    ip_restriction: IP Access Restriction
+    all_from_plan: Všechny funkce z '%plan%'
+    backup_frequency: Frekvence zálohování
+    priority_features: Prioritizované požadavky na funkce
+    invoices: Fakturování
+    invoice_documents: Vlastní šablony faktur
+    export: Export dat
+    expense_tracking: Sledování nákladů
+    custom_css: Vlastní CSS pravidla
+    task_management: Správa úkolů
+    ip_restriction: Omezení přístupu prostřednictvím IP adresy
     expense: Expense tracking
-    timetracking: Project Time Tracking
-    email_support: Personal Email Support
-    absences: Public Holidays, Vacation, Sick Leave
-    automatic_backups: Automatic Backups
-    automatic_upgrades: Automatic Updates
-    server_maintenance: Server Maintenance
-    github_support: Community Forum
-    audit_logs: Audit Logging
-    custom_domain: Custom Domain with SSL
-    saml: Single Sign-On with SAML
-    translation: Industry-Specific Translations
+    timetracking: Sledování času projektu
+    email_support: E-mailová podpora
+    absences: Státní svátky, dovolená, nemocenská
+    automatic_backups: Automatické zálohy
+    automatic_upgrades: Automatické aktualizace
+    server_maintenance: Údržba serveru
+    github_support: Komunitní fórum
+    audit_logs: Protokoly auditu
+    custom_domain: Vlastní doména s SSL
+    saml: Jednotné přihlašování pomocí SAML
+    translation: Překlady specifické pro dané odvětví
     rest_api: JSON API
-    custom_fields: Custom Fields
-    daily_backups: Daily Backups for Download
+    custom_fields: Vlastní pole
+    daily_backups: Denní zálohy ke stažení
     export_templates: Export PDF-Templates
     kiosk: Kiosk Modus
-    backup_weekly: Weekly
-    backup_daily: Daily
+    backup_weekly: Týdně
+    backup_daily: Denně
 pricing:
-    short_monthly: Per user & month
-    short_annual: Per user & year
-    name: Pricing
-    monthly: Monthly
-    annual: Annually
-    included: What's included?
-    not_available: Not available
-    subtitle: These plans are available for cloud customers
+    short_monthly: Na uživatele a měsíc
+    short_annual: Na uživatele a rok
+    name: Cenník
+    monthly: Měsíčně
+    annual: Ročně
+    included: Co je zahrnuto?
+    not_available: Není k dispozici
+    subtitle: Tyto plány jsou k dispozici pro zákazníky cloudu
 non-profit:
     name: Non-Profits
     eligible: Learn more
@@ -459,43 +462,43 @@ non-profit:
 discount-codes:
     name: Discount codes
 faq:
-    title: FAQ
+    title: Často kladené otázky
     intro: These FAQs are provided by the developer of this offer.
-login: Login
-store-payment-methods: Available payment methods
+login: Přihlášení
+store-payment-methods: Dostupné platební metody
 500:
-    name: Server error (500)
-    description: We are sorry, but your request contains bad syntax and cannot be fulfilled.
+    name: Chyba serveru (500)
+    description: Je nám líto, ale váš požadavek obsahuje špatnou syntaxi a nemůže být vyřízen.
 404:
-    name: Not found (404)
-    description: We are sorry, but we restructured our page recently and some old links might now be broken.
+    name: Nenalezeno (404)
+    description: Omlouváme se, ale nedávno jsme změnili strukturu našich stránek a některé staré odkazy mohou být nyní nefunkční.
 400:
-    name: Bad request (400)
-    description: We are sorry, but your request contains bad syntax and cannot be fulfilled.
+    name: Špatný požadavek (400)
+    description: Je nám líto, ale váš požadavek obsahuje špatnou syntaxi a nemůže být proveden.
 error:
-    title: Ooops!
-    back: Back to homepage
+    title: Jejda!
+    back: Zpět na domovskou stránku
 503:
-    name: Temporarily unavailable (503)
-    description: We are sorry, but our server is currently in maintenance and currently not available. We'll be back soon!
+    name: Dočasně nedostupné (503)
+    description: Omlouváme se, ale náš server je v současné době v údržbě a není dostupný. Brzy se vrátíme!
 cloud:
     status: Status
 theme:
-    dark: Dark
-    light: Light
-licenses: Licenses
-roadmap: Roadmap
+    dark: Tmavé
+    light: Světlé
+licenses: Licence
+roadmap: Časový plán vývoje
 purchase-power-parity: Can't pay? Reach out for a PPP discount.
 reviews:
-    subtitle: "Thousands of companies use Kimai everyday to track their times.\nHere's what some of them have to say ...\n"
-    leave: Leave your review
+    subtitle: "Tisíce firem používají Kimai každý den ke sledování času.\nZde je vyjádření některých z nich..."
+    leave: Zanechte svůj názor
     name: Reviews
-store-plugins-onpremise: Plugins are for on-premises customers, cloud users have access to plugins labelled %cloud%
+store-plugins-onpremise: Doplňky jsou pro zákazníky s místní instalací, uživatelé cloudového řešení mají přístup k doplňkům označených jako %cloud%.
 community:
-    name: Community
+    name: Komunita
 forum:
-    name: Forum
+    name: Fórum
 trademark:
-    name: Trademark
-changelog: Changelog
-store-license-manager: Please provide a valid email address to access your plugin and manage your licenses.
+    name: Ochranná známka
+changelog: Seznam změn
+store-license-manager: Uveďte prosím platnou e-mailovou adresu pro přístup k doplňku a pro správu Vašich licencí.
