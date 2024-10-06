@@ -1,3 +1,12 @@
+**Version 2.12.0**
+
+Compatibility: requires minimum Kimai 2.21.0
+
+- Improve: create Task from Customer detail page
+- Fixed deep link pagination
+- Always attach first team when creating task from project or activity
+- Using new repository features, saving at least one query per page load
+
 **Version 2.11.0**
 
 Compatibility: requires minimum Kimai 2.17.0

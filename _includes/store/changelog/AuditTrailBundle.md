@@ -1,3 +1,12 @@
+**Version 2.10.0**
+
+Compatibility: requires minimum Kimai 2.21.0
+
+Moved "Filter audit-logs" action to "Filter" submenu for:
+- Customer
+- Project
+- Activity
+
 **Version 2.9.0**
 
 Compatibility: requires minimum Kimai 2.21.0

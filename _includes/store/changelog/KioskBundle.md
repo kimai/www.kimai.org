@@ -1,3 +1,9 @@
+**Version 2.11.1**
+
+Compatibility: requires minimum Kimai 2.21.0
+
+- Use MapEntity for routes to fix deprecations
+
 **Version 2.11.0**
 
 Compatibility: requires minimum Kimai 2.21.0

@@ -1,3 +1,9 @@
+**Version 2.17.0**
+
+Compatibility: requires minimum Kimai 2.17.0
+
+- Category listing always shows fallback color in dots
+
 **Version 2.16.0**
 
 Compatibility: requires minimum Kimai 2.17.0
