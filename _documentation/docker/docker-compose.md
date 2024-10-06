@@ -40,7 +40,6 @@ services:
       - ADMINMAIL=admin@kimai.local
       - ADMINPASS=changemeplease
       - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&serverVersion=8.3.0"
-      - TRUSTED_HOSTS=nginx,localhost,127.0.0.1
     restart: unless-stopped
 
 volumes:
@@ -96,7 +95,6 @@ services:
       - ADMINMAIL=${ADMIN_EMAIL}
       - ADMINPASS=${ADMIN_PASSWORD}
       - "DATABASE_URL=mysql://${DATABASE_USER}:${DATABASE_PASSWORD}@sqldb/${DATABASE_NAME}?charset=utf8mb4&serverVersion=8.3.0"
-      - TRUSTED_HOSTS=nginx,localhost,127.0.0.1
     restart: unless-stopped
 
 volumes:
@@ -213,7 +211,6 @@ services:
       - ADMINMAIL=admin@kimai.local
       - ADMINPASS=changemeplease
       - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&serverVersion=8.3.0"
-      - TRUSTED_HOSTS=nginx,localhost,127.0.0.1
     volumes:
       - public:/opt/kimai/public
       - plugins:/opt/kimai/var/plugins
@@ -311,6 +308,5 @@ services:
       - ADMINMAIL=admin@kimai.local
       - ADMINPASS=changemeplease
       - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&serverVersion=8.3.0"
-      - TRUSTED_HOSTS=nginx,localhost,127.0.0.1
     restart: unless-stopped
 ```

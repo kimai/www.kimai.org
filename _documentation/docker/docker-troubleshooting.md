@@ -1,6 +1,6 @@
 ---
 title: Troubleshooting
-description: Updating your Kimai docker image
+description: Troubleshooting your Kimai docker image
 canonical: /documentation/docker-troubleshooting.html
 ---
 
@@ -9,11 +9,11 @@ canonical: /documentation/docker-troubleshooting.html
 When Kimai runs inside the docker container, logging is reconfigured to use `stderr` which can be seen within the docker container logs.
 See [View container logs](https://docs.docker.com/config/containers/logging/) on how to access them.
 
-## NGINX and proxying
+## Docker behind a reverse proxy
 
 While outside the direct responsibility of this project we get a lot of issues reported that relate to proxying with NGINX into the FPM container.
 
-Note that you will need to set the name of your NGINX container to be in the list of TRUSTED_HOSTS when you start the Kimai container.
+Note that you will need to set the name of your NGINX container to be in the list of `TRUSTED_PROXIES` when you start the Kimai container.
 
 ## Permissions
 
@@ -28,12 +28,6 @@ or
 ```bash
 docker-compose --user root exec CONTAINER_NAME chown -R www-data:www-data /opt/kimai/var
 ```
-
-## 500 Server errors
-
-Around nine out of ten of the bugs raised are related to the TRUSTED_HOSTS value. 
-If you get a 500 then check that the `TRUSTED_HOSTS` environment variable is set to either your hostname or the hostname of your proxy server (nginx etc).
-In the docker-compose environment that is the container name of the nginx container.
 
 ## Older version
 
