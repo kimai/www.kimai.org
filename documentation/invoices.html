@@ -276,7 +276,7 @@
             
             <a href="/documentation/permissions.html" class="list-group-item list-group-item-action border-0 py-1 fs-base px-4 " id="docnavi-permissions">
                 
-                Roles &amp; Permissions
+                Roles & Permissions
                 
             </a>
         
@@ -650,74 +650,38 @@
 All examples represent the date <code class="language-plaintext highlighter-rouge">2019-07-09</code> (2019, July 9th):</p>
 
 <ul>
-  <li>
-<code class="language-plaintext highlighter-rouge">{date}</code>      - shortcut for <code class="language-plaintext highlighter-rouge">ymd</code>. Example: <code class="language-plaintext highlighter-rouge">190709</code> (default format before Kimai 1.9)</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{cname}</code>     - the customer name</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{cnumber}</code>   - the customer number</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{c}</code>         - counter for invoices of all times, starting at 1</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{cy}</code>        - counter for invoices this year, starting at 1</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{cm}</code>        - counter for invoices this month, starting at 1</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{cd}</code>        - counter for invoices this day, starting at 1</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{Y}</code>         - full numeric representation of a year (4 digits). Example: <code class="language-plaintext highlighter-rouge">2019</code>
-</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{y}</code>         - two digit representation of a year. Example: <code class="language-plaintext highlighter-rouge">19</code>
-</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{M}</code>         - numeric representation of a month, with leading zeros. Example: <code class="language-plaintext highlighter-rouge">07</code>
-</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{m}</code>         - numeric representation of a month, without leading zeros. Example: <code class="language-plaintext highlighter-rouge">7</code>
-</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{D}</code>         - day of the month, 2 digits with leading zeros. Example: <code class="language-plaintext highlighter-rouge">09</code>
-</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{d}</code>         - day of the month without leading zeros. Example: <code class="language-plaintext highlighter-rouge">9</code>
-</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{YY}</code>        - full numeric representation of a year (4 digits), to be used with decrement/increment (default increment = 1). Example: <code class="language-plaintext highlighter-rouge">2020</code>
-</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{MM}</code>        - numeric representation of a month, to be used with decrement/increment (default increment = 1). Example: <code class="language-plaintext highlighter-rouge">10</code>
-</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{DD}</code>        - day of the month, to be used with decrement/increment (default increment = 1). Example: <code class="language-plaintext highlighter-rouge">24</code>
-</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{cc}</code>        - per customer invoice counter for all times, starting at 1</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{ccy}</code>       - per customer invoice counter for this year, starting at 1</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{ccm}</code>       - per customer invoice counter for this month, starting at 1</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{ccd}</code>       - per customer invoice counter for this day, starting at 1</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{cu}</code>        - per user (the one creating the invoice) invoice counter for all times, starting at 1</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{cuy}</code>       - per user (the one creating the invoice) invoice counter for this year, starting at 1</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{cum}</code>       - per user (the one creating the invoice) invoice counter for this month, starting at 1</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{cud}</code>       - per user (the one creating the invoice) invoice counter for this day, starting at 1</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{ustaff}</code>    - the user (the one creating the invoice) staff number, empty if not configured</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{uid}</code>       - the internal user (the one creating the invoice) ID</li>
+  <li><code class="language-plaintext highlighter-rouge">{date}</code>      - shortcut for <code class="language-plaintext highlighter-rouge">ymd</code>. Example: <code class="language-plaintext highlighter-rouge">190709</code> (default format before Kimai 1.9)</li>
+  <li><code class="language-plaintext highlighter-rouge">{cname}</code>     - the customer name</li>
+  <li><code class="language-plaintext highlighter-rouge">{cnumber}</code>   - the customer number</li>
+  <li><code class="language-plaintext highlighter-rouge">{c}</code>         - counter for invoices of all times, starting at 1</li>
+  <li><code class="language-plaintext highlighter-rouge">{cy}</code>        - counter for invoices this year, starting at 1</li>
+  <li><code class="language-plaintext highlighter-rouge">{cm}</code>        - counter for invoices this month, starting at 1</li>
+  <li><code class="language-plaintext highlighter-rouge">{cd}</code>        - counter for invoices this day, starting at 1</li>
+  <li><code class="language-plaintext highlighter-rouge">{Y}</code>         - full numeric representation of a year (4 digits). Example: <code class="language-plaintext highlighter-rouge">2019</code></li>
+  <li><code class="language-plaintext highlighter-rouge">{y}</code>         - two digit representation of a year. Example: <code class="language-plaintext highlighter-rouge">19</code></li>
+  <li><code class="language-plaintext highlighter-rouge">{M}</code>         - numeric representation of a month, with leading zeros. Example: <code class="language-plaintext highlighter-rouge">07</code></li>
+  <li><code class="language-plaintext highlighter-rouge">{m}</code>         - numeric representation of a month, without leading zeros. Example: <code class="language-plaintext highlighter-rouge">7</code></li>
+  <li><code class="language-plaintext highlighter-rouge">{D}</code>         - day of the month, 2 digits with leading zeros. Example: <code class="language-plaintext highlighter-rouge">09</code></li>
+  <li><code class="language-plaintext highlighter-rouge">{d}</code>         - day of the month without leading zeros. Example: <code class="language-plaintext highlighter-rouge">9</code></li>
+  <li><code class="language-plaintext highlighter-rouge">{YY}</code>        - full numeric representation of a year (4 digits), to be used with decrement/increment (default increment = 1). Example: <code class="language-plaintext highlighter-rouge">2020</code></li>
+  <li><code class="language-plaintext highlighter-rouge">{MM}</code>        - numeric representation of a month, to be used with decrement/increment (default increment = 1). Example: <code class="language-plaintext highlighter-rouge">10</code></li>
+  <li><code class="language-plaintext highlighter-rouge">{DD}</code>        - day of the month, to be used with decrement/increment (default increment = 1). Example: <code class="language-plaintext highlighter-rouge">24</code></li>
+  <li><code class="language-plaintext highlighter-rouge">{cc}</code>        - per customer invoice counter for all times, starting at 1</li>
+  <li><code class="language-plaintext highlighter-rouge">{ccy}</code>       - per customer invoice counter for this year, starting at 1</li>
+  <li><code class="language-plaintext highlighter-rouge">{ccm}</code>       - per customer invoice counter for this month, starting at 1</li>
+  <li><code class="language-plaintext highlighter-rouge">{ccd}</code>       - per customer invoice counter for this day, starting at 1</li>
+  <li><code class="language-plaintext highlighter-rouge">{cu}</code>        - per user (the one creating the invoice) invoice counter for all times, starting at 1</li>
+  <li><code class="language-plaintext highlighter-rouge">{cuy}</code>       - per user (the one creating the invoice) invoice counter for this year, starting at 1</li>
+  <li><code class="language-plaintext highlighter-rouge">{cum}</code>       - per user (the one creating the invoice) invoice counter for this month, starting at 1</li>
+  <li><code class="language-plaintext highlighter-rouge">{cud}</code>       - per user (the one creating the invoice) invoice counter for this day, starting at 1</li>
+  <li><code class="language-plaintext highlighter-rouge">{ustaff}</code>    - the user (the one creating the invoice) staff number, empty if not configured</li>
+  <li><code class="language-plaintext highlighter-rouge">{uid}</code>       - the internal user (the one creating the invoice) ID</li>
 </ul>
 
 <p>Each replacer (x) can be combined with a length formatter, which will prepend (X) leading zeros, eg. <code class="language-plaintext highlighter-rouge">{x,X}</code>.
 Example: to get a three digit long string with year counter use <code class="language-plaintext highlighter-rouge">{cy,3}</code>, which results in <code class="language-plaintext highlighter-rouge">001</code> for the first invoice of the year.</p>
 
-<div class="alert alert-warning d-flex" role="alert">
-<i class="bx bx-alarm-exclamation lead me-3"></i>
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i>
 <ol>
   <li>Characters outside the replacer <strong>cannot</strong> include <code class="language-plaintext highlighter-rouge">{</code> and <code class="language-plaintext highlighter-rouge">}</code>.</li>
   <li>The invoice number is unique in Kimai and you cannot generate an invoice with the same invoice number twice. Kimai will try to avoid that automatically by incrementing the counter, but if that is impossible, you’ll see an error message.</li>
@@ -746,28 +710,22 @@ This works for the following replacer: <code class="language-plaintext highlight
 <p>Assume you already wrote 72 invoices this year (before you started to use Kimai), and your counter is an incrementing number
 per year, which is prefixed with the four digit year:</p>
 <ul>
-  <li>
-<code class="language-plaintext highlighter-rouge">{Y}/{cy+73,3}</code> would result in <code class="language-plaintext highlighter-rouge">2020/073</code> for your first invoice</li>
+  <li><code class="language-plaintext highlighter-rouge">{Y}/{cy+73,3}</code> would result in <code class="language-plaintext highlighter-rouge">2020/073</code> for your first invoice</li>
 </ul>
 
 <p>Assume that you want to change your invoice numbering and reset it to zero, you already wrote 72 invoices this year, and your counter is an incrementing number per year that should be prefixed with the four digit year:</p>
 <ul>
-  <li>
-<code class="language-plaintext highlighter-rouge">{Y}/{cy-72,3}</code> would result in <code class="language-plaintext highlighter-rouge">2020/001</code> for your first invoice</li>
+  <li><code class="language-plaintext highlighter-rouge">{Y}/{cy-72,3}</code> would result in <code class="language-plaintext highlighter-rouge">2020/001</code> for your first invoice</li>
 </ul>
 
 <h2 id="invoice-state">Invoice state</h2>
 
 <p>Invoices can have multiple states:</p>
 <ul>
-  <li>
-<code class="language-plaintext highlighter-rouge">New</code> - the invoice was just created</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">Waiting for payment</code> - the invoice was sent to the customer</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">Invoice paid</code> - the invoice was paid (you have to choose a payment date)</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">Canceled</code> - the invoice was accidentally created</li>
+  <li><code class="language-plaintext highlighter-rouge">New</code> - the invoice was just created</li>
+  <li><code class="language-plaintext highlighter-rouge">Waiting for payment</code> - the invoice was sent to the customer</li>
+  <li><code class="language-plaintext highlighter-rouge">Invoice paid</code> - the invoice was paid (you have to choose a payment date)</li>
+  <li><code class="language-plaintext highlighter-rouge">Canceled</code> - the invoice was accidentally created</li>
 </ul>
 
 <h3 id="deleting-invoices">Deleting invoices</h3>
@@ -804,61 +762,51 @@ These records cannot be edited any longer by regular users and are excluded by d
 
 <p><a href="/store/expenses-bundle.html">Expense items</a> have a configurable billable flag per item and only the ones marked as billable (refundable) will be included.</p>
 
-<hr>
+<hr />
 
 <h2 id="invoice-document">Invoice document</h2>
 
 <p>The invoice system currently supports the following formats:</p>
 
 <ul>
-  <li>
-<code class="language-plaintext highlighter-rouge">PDF</code>
+  <li><code class="language-plaintext highlighter-rouge">PDF</code>
     <ul>
       <li>through the use of Twig templates</li>
-      <li>filename must end with <code class="language-plaintext highlighter-rouge">.pdf.twig</code>
-</li>
+      <li>filename must end with <code class="language-plaintext highlighter-rouge">.pdf.twig</code></li>
       <li>Pro: no need for additional software</li>
       <li>Contra: you have to understand HTML, Twig and the MPDF library</li>
       <li><strong>the recommended invoice document format</strong></li>
     </ul>
   </li>
-  <li>
-<code class="language-plaintext highlighter-rouge">HTML</code>
+  <li><code class="language-plaintext highlighter-rouge">HTML</code>
     <ul>
       <li>through the use of Twig templates</li>
-      <li>filename must end with <code class="language-plaintext highlighter-rouge">.html.twig</code>
-</li>
+      <li>filename must end with <code class="language-plaintext highlighter-rouge">.html.twig</code></li>
       <li>Pro: no need for additional software, print or convert to PDF from your browser (if supported)</li>
       <li>Contra: you have to understand HTML and Twig</li>
     </ul>
   </li>
-  <li>
-<code class="language-plaintext highlighter-rouge">DOCX</code>
+  <li><code class="language-plaintext highlighter-rouge">DOCX</code>
     <ul>
       <li>OOXML - Open Office XML Text</li>
       <li>Microsoft Word 2007-2013 XML</li>
-      <li>filename must end with <code class="language-plaintext highlighter-rouge">.docx</code>
-</li>
+      <li>filename must end with <code class="language-plaintext highlighter-rouge">.docx</code></li>
       <li>Pro: simple customization and possibility to edit the invoice later on</li>
       <li>Contra: Non-free software required</li>
     </ul>
   </li>
-  <li>
-<code class="language-plaintext highlighter-rouge">ODS</code>
+  <li><code class="language-plaintext highlighter-rouge">ODS</code>
     <ul>
       <li>Open Document Spreadsheet or OASIS, is the OpenOffice.org XML file format for spreadsheets supported by OpenOffice, LibreOffice, StarCalc, Microsoft and others</li>
-      <li>file extension: filename must end with <code class="language-plaintext highlighter-rouge">.ods</code>
-</li>
+      <li>file extension: filename must end with <code class="language-plaintext highlighter-rouge">.ods</code></li>
       <li>Pro: open format, good for exporting and creating enhanced reports with an office software package</li>
       <li>Contra: not ideal format for invoices (harder to customize)</li>
     </ul>
   </li>
-  <li>
-<code class="language-plaintext highlighter-rouge">XLSX</code>
+  <li><code class="language-plaintext highlighter-rouge">XLSX</code>
     <ul>
       <li>Microsoft Excel™ 2007 shipped with a new file format, namely Microsoft Office Open XML SpreadsheetML, and Excel 2010 extended this still further with new features.</li>
-      <li>file extension: filename must end with <code class="language-plaintext highlighter-rouge">.xlsx</code>
-</li>
+      <li>file extension: filename must end with <code class="language-plaintext highlighter-rouge">.xlsx</code></li>
       <li>Pro: good for creating enhanced reports with an office software package</li>
       <li>Contra: Non-free software required, not ideal format for invoices</li>
     </ul>
@@ -870,10 +818,8 @@ These records cannot be edited any longer by regular users and are excluded by d
 <p>Invoice documents are searched in two locations:</p>
 
 <ul>
-  <li>
-<code class="language-plaintext highlighter-rouge">var/invoices/</code> - does not exist by default, please create it when you add a new document</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">templates/invoice/renderer/</code> - don’t change files in here, will be overwritten with the next update</li>
+  <li><code class="language-plaintext highlighter-rouge">var/invoices/</code> - does not exist by default, please create it when you add a new document</li>
+  <li><code class="language-plaintext highlighter-rouge">templates/invoice/renderer/</code> - don’t change files in here, will be overwritten with the next update</li>
 </ul>
 
 <p>Be aware of the following rules:</p>
@@ -886,8 +832,7 @@ These records cannot be edited any longer by regular users and are excluded by d
   <li>You can <a href="/documentation/local-yaml.html">configure different search directories</a> through the config key <code class="language-plaintext highlighter-rouge">kimai.invoice.documents</code> if you want to add additional template source directories</li>
 </ul>
 
-<div class="alert alert-warning d-flex" role="alert">
-<i class="bx bx-alarm-exclamation lead me-3"></i><p>Do NOT change the default templates, but copy the file and save it (with a new filename) at var/invoices/</p>
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i><p>Do NOT change the default templates, but copy the file and save it (with a new filename) at var/invoices/</p>
 </div>
 
 <p>After you changed an invoice template, you have to <a href="/documentation/cache.html">clear the cache</a> to see the results.</p>
@@ -902,13 +847,9 @@ These records cannot be edited any longer by regular users and are excluded by d
 
 <p>Generally speaking, you have two main variables in your template which you should use:</p>
 <ul>
-  <li>
-<code class="language-plaintext highlighter-rouge">entries</code> which is an array of arrays, with the first level representing the invoice items and the second level being <code class="language-plaintext highlighter-rouge">Timesheet entry variables</code> (see below)</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">invoice</code> which is an array of variables (see <code class="language-plaintext highlighter-rouge">Template variables</code> below), just with a different syntax for access, e.g.: <code class="language-plaintext highlighter-rouge">{{ invoice['invoice.due_date'] }}</code> instead of <code class="language-plaintext highlighter-rouge">${invoice.due_date}</code>
-</li>
-  <li>
-<strong>Attention</strong>: accessing the <code class="language-plaintext highlighter-rouge">model</code> variable (instance of <code class="language-plaintext highlighter-rouge">App\Model\InvoiceModel</code>) directly is deprecated and will be removed in the future (no BC promise given!)</li>
+  <li><code class="language-plaintext highlighter-rouge">entries</code> which is an array of arrays, with the first level representing the invoice items and the second level being <code class="language-plaintext highlighter-rouge">Timesheet entry variables</code> (see below)</li>
+  <li><code class="language-plaintext highlighter-rouge">invoice</code> which is an array of variables (see <code class="language-plaintext highlighter-rouge">Template variables</code> below), just with a different syntax for access, e.g.: <code class="language-plaintext highlighter-rouge">{{ invoice['invoice.due_date'] }}</code> instead of <code class="language-plaintext highlighter-rouge">${invoice.due_date}</code></li>
+  <li><strong>Attention</strong>: accessing the <code class="language-plaintext highlighter-rouge">model</code> variable (instance of <code class="language-plaintext highlighter-rouge">App\Model\InvoiceModel</code>) directly is deprecated and will be removed in the future (no BC promise given!)</li>
 </ul>
 
 <p>Please see the <a href="https://github.com/kimai/kimai/blob/main/templates/invoice/renderer">default templates</a> at
@@ -980,10 +921,8 @@ GitHub to find out which variables can be used.</p>
 <div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://www.example.com/images/my-logo.png"</span><span class="nt">&gt;</span>
 </code></pre></div></div>
 
-<p>Want to include a file in your template?
-Use the twig include feature with the <code class="language-plaintext highlighter-rouge">@invoice</code> namespace . The following example references the file <code class="language-plaintext highlighter-rouge">bar.html.twig</code> in <code class="language-plaintext highlighter-rouge">var/invoices/foo/</code>:</p>
-<div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span> <span class="k">include</span> <span class="s1">'@invoice/foo/bar.html.twig'</span> <span class="cp">%}</span>
-</code></pre></div></div>
+<p>Due to security reasons, multiple twig functions and filters are disabled in the invoice renderer.
+Therefor you cannot for example use <code class="language-plaintext highlighter-rouge">include</code> or <code class="language-plaintext highlighter-rouge">embed</code> to include other templates.</p>
 
 <h4 id="custom-fields">Custom fields</h4>
 
@@ -999,8 +938,7 @@ allows access to your custom fields.</p>
 <ul>
   <li>you can access timesheet custom fields only if you use the “sum calculation” standard, which creates one invoice line item per timesheet.</li>
   <li>if you group timesheets e.g. by project, you loose access to their custom fields.</li>
-  <li>entries could be of type “expense” or other types (depending on your used plugins), you can test that with <code class="language-plaintext highlighter-rouge">{% if line['entry.type'] == 'timesheet' '%}</code>
-</li>
+  <li>entries could be of type “expense” or other types (depending on your used plugins), you can test that with <code class="language-plaintext highlighter-rouge">{% if line['entry.type'] == 'timesheet' '%}</code></li>
 </ul>
 
 <p>Want to use a <strong>customer custom-field</strong> in your template?</p>
@@ -1079,8 +1017,7 @@ The example <code class="language-plaintext highlighter-rouge">{{ invoice['invoi
     </tr>
     <tr>
       <td>${invoice.due_date_process}</td>
-      <td>The due date for the invoice payment, to be formatted with the twig filter <code class="language-plaintext highlighter-rouge">date()</code>
-</td>
+      <td>The due date for the invoice payment, to be formatted with the twig filter <code class="language-plaintext highlighter-rouge">date()</code></td>
     </tr>
     <tr>
       <td>${invoice.date}</td>
@@ -1088,8 +1025,7 @@ The example <code class="language-plaintext highlighter-rouge">{{ invoice['invoi
     </tr>
     <tr>
       <td>${invoice.date_process}</td>
-      <td>The creation date of this invoice, to be formatted with the twig filter <code class="language-plaintext highlighter-rouge">date()</code>
-</td>
+      <td>The creation date of this invoice, to be formatted with the twig filter <code class="language-plaintext highlighter-rouge">date()</code></td>
     </tr>
     <tr>
       <td>${invoice.number}</td>
@@ -1205,8 +1141,7 @@ The example <code class="language-plaintext highlighter-rouge">{{ invoice['invoi
     </tr>
     <tr>
       <td>${query.begin_process}</td>
-      <td>The query begin, to be formatted with the twig filter <code class="language-plaintext highlighter-rouge">date()</code>
-</td>
+      <td>The query begin, to be formatted with the twig filter <code class="language-plaintext highlighter-rouge">date()</code></td>
     </tr>
     <tr>
       <td>${query.end}</td>
@@ -1214,28 +1149,23 @@ The example <code class="language-plaintext highlighter-rouge">{{ invoice['invoi
     </tr>
     <tr>
       <td>${query.end_process}</td>
-      <td>The query end, to be formatted with the twig filter <code class="language-plaintext highlighter-rouge">date()</code>
-</td>
+      <td>The query end, to be formatted with the twig filter <code class="language-plaintext highlighter-rouge">date()</code></td>
     </tr>
     <tr>
       <td>${query.month}</td>
-      <td>The month for this query (begin date) <strong>DEPRECATED</strong>
-</td>
+      <td>The month for this query (begin date) <strong>DEPRECATED</strong></td>
     </tr>
     <tr>
       <td>${query.month_number}</td>
-      <td>The numerical value for the month (with leading zero) <strong>DEPRECATED</strong>
-</td>
+      <td>The numerical value for the month (with leading zero) <strong>DEPRECATED</strong></td>
     </tr>
     <tr>
       <td>${query.day}</td>
-      <td>The day for the queries begin as numerical value with leading zero <strong>DEPRECATED</strong>
-</td>
+      <td>The day for the queries begin as numerical value with leading zero <strong>DEPRECATED</strong></td>
     </tr>
     <tr>
       <td>${query.year}</td>
-      <td>The year for this query (begin date) <strong>DEPRECATED</strong>
-</td>
+      <td>The year for this query (begin date) <strong>DEPRECATED</strong></td>
     </tr>
     <tr>
       <td>${query.begin_month}</td>
@@ -1315,8 +1245,7 @@ The example <code class="language-plaintext highlighter-rouge">{{ invoice['invoi
     </tr>
     <tr>
       <td>${user.meta.X}</td>
-      <td>The current users <a href="/documentation/user-preferences.html">preference</a> named <code class="language-plaintext highlighter-rouge">X</code>
-</td>
+      <td>The current users <a href="/documentation/user-preferences.html">preference</a> named <code class="language-plaintext highlighter-rouge">X</code></td>
     </tr>
   </tbody>
 </table>
@@ -1446,8 +1375,7 @@ The example <code class="language-plaintext highlighter-rouge">{{ invoice['invoi
     </tr>
     <tr>
       <td>${entry.date_process}</td>
-      <td>The start date of this record, to be formatted with the twig filter <code class="language-plaintext highlighter-rouge">date()</code>
-</td>
+      <td>The start date of this record, to be formatted with the twig filter <code class="language-plaintext highlighter-rouge">date()</code></td>
       <td> </td>
     </tr>
     <tr>
@@ -1477,8 +1405,7 @@ The example <code class="language-plaintext highlighter-rouge">{{ invoice['invoi
     </tr>
     <tr>
       <td>${entry.user_preference.foo}</td>
-      <td>The user preference called <code class="language-plaintext highlighter-rouge">foo</code>
-</td>
+      <td>The user preference called <code class="language-plaintext highlighter-rouge">foo</code></td>
       <td>bar</td>
     </tr>
     <tr>
@@ -1552,8 +1479,7 @@ The example <code class="language-plaintext highlighter-rouge">{{ invoice['invoi
     </tr>
     <tr>
       <td>${customer.name}</td>
-      <td>The customer <code class="language-plaintext highlighter-rouge">name</code>
-</td>
+      <td>The customer <code class="language-plaintext highlighter-rouge">name</code></td>
     </tr>
     <tr>
       <td>${customer.comment}</td>
@@ -1561,8 +1487,7 @@ The example <code class="language-plaintext highlighter-rouge">{{ invoice['invoi
     </tr>
     <tr>
       <td>${customer.address}</td>
-      <td>The customer <code class="language-plaintext highlighter-rouge">address</code>
-</td>
+      <td>The customer <code class="language-plaintext highlighter-rouge">address</code></td>
     </tr>
     <tr>
       <td>${customer.contact}</td>
@@ -1570,13 +1495,11 @@ The example <code class="language-plaintext highlighter-rouge">{{ invoice['invoi
     </tr>
     <tr>
       <td>${customer.company}</td>
-      <td>The <code class="language-plaintext highlighter-rouge">company name</code>
-</td>
+      <td>The <code class="language-plaintext highlighter-rouge">company name</code></td>
     </tr>
     <tr>
       <td>${customer.vat}</td>
-      <td>The customer <code class="language-plaintext highlighter-rouge">Vat ID</code>
-</td>
+      <td>The customer <code class="language-plaintext highlighter-rouge">Vat ID</code></td>
     </tr>
     <tr>
       <td>${customer.number}</td>
@@ -1588,8 +1511,7 @@ The example <code class="language-plaintext highlighter-rouge">{{ invoice['invoi
     </tr>
     <tr>
       <td>${customer.homepage}</td>
-      <td>A URL to the customer <code class="language-plaintext highlighter-rouge">homepage</code>
-</td>
+      <td>A URL to the customer <code class="language-plaintext highlighter-rouge">homepage</code></td>
     </tr>
     <tr>
       <td>${customer.phone}</td>
@@ -1652,8 +1574,7 @@ The example <code class="language-plaintext highlighter-rouge">{{ invoice['invoi
     </tr>
     <tr>
       <td>${project.name}</td>
-      <td>The project <code class="language-plaintext highlighter-rouge">name</code>
-</td>
+      <td>The project <code class="language-plaintext highlighter-rouge">name</code></td>
     </tr>
     <tr>
       <td>${project.comment}</td>
@@ -1661,8 +1582,7 @@ The example <code class="language-plaintext highlighter-rouge">{{ invoice['invoi
     </tr>
     <tr>
       <td>${project.order_number}</td>
-      <td>The project <code class="language-plaintext highlighter-rouge">order number</code>
-</td>
+      <td>The project <code class="language-plaintext highlighter-rouge">order number</code></td>
     </tr>
     <tr>
       <td>${project.start_date}</td>
@@ -1753,8 +1673,7 @@ If your template relies on a <code class="language-plaintext highlighter-rouge">
     </tr>
     <tr>
       <td>${activity.name}</td>
-      <td>The activity <code class="language-plaintext highlighter-rouge">name</code>
-</td>
+      <td>The activity <code class="language-plaintext highlighter-rouge">name</code></td>
     </tr>
     <tr>
       <td>${activity.comment}</td>
@@ -1836,15 +1755,9 @@ This would find all entries with the custom field <code class="language-plaintex
 
 <p>You can mix the search term and use multiple meta-field queries:</p>
 <ul>
-  <li>
-<code class="language-plaintext highlighter-rouge">location:homeoffice hello</code> - find all entries matching the search term <code class="language-plaintext highlighter-rouge">hello</code> with the custom field <code class="language-plaintext highlighter-rouge">location</code> matching the term <code class="language-plaintext highlighter-rouge">homeoffice</code>
-</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">location:homeoffice contract:fulltime</code> - find all entries with the custom field combination: <code class="language-plaintext highlighter-rouge">location</code> matching <code class="language-plaintext highlighter-rouge">homeoffice</code> and <code class="language-plaintext highlighter-rouge">contract</code> matching <code class="language-plaintext highlighter-rouge">fulltime</code>
-</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">expired:0</code> finds all items whose <code class="language-plaintext highlighter-rouge">expired</code> checkbox is <code class="language-plaintext highlighter-rouge">off</code>
-</li>
+  <li><code class="language-plaintext highlighter-rouge">location:homeoffice hello</code> - find all entries matching the search term <code class="language-plaintext highlighter-rouge">hello</code> with the custom field <code class="language-plaintext highlighter-rouge">location</code> matching the term <code class="language-plaintext highlighter-rouge">homeoffice</code></li>
+  <li><code class="language-plaintext highlighter-rouge">location:homeoffice contract:fulltime</code> - find all entries with the custom field combination: <code class="language-plaintext highlighter-rouge">location</code> matching <code class="language-plaintext highlighter-rouge">homeoffice</code> and <code class="language-plaintext highlighter-rouge">contract</code> matching <code class="language-plaintext highlighter-rouge">fulltime</code></li>
+  <li><code class="language-plaintext highlighter-rouge">expired:0</code> finds all items whose <code class="language-plaintext highlighter-rouge">expired</code> checkbox is <code class="language-plaintext highlighter-rouge">off</code></li>
 </ul>
 
 <p>There are also special operators, which can be used in conjunction with custom fields (since Kimai 1.19.1):</p>
@@ -1879,41 +1792,7 @@ This would find all entries with the custom field <code class="language-plaintex
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav">
-<li class="nav-item">
-<a href="#invoice-number-format" class="nav-link">Invoice number format</a><ul>
-<li class="nav-item"><a href="#incrementing-the-invoice-counter" class="nav-link">Incrementing the invoice counter</a></li>
-<li class="nav-item"><a href="#decrementing-the-invoice-counter" class="nav-link">Decrementing the invoice counter</a></li>
-<li class="nav-item"><a href="#examples" class="nav-link">Examples</a></li>
-</ul>
-</li>
-<li class="nav-item">
-<a href="#invoice-state" class="nav-link">Invoice state</a><ul><li class="nav-item"><a href="#deleting-invoices" class="nav-link">Deleting invoices</a></li></ul>
-</li>
-<li class="nav-item"><a href="#export-state" class="nav-link">Export state</a></li>
-<li class="nav-item"><a href="#billable-items-only" class="nav-link">Billable items only</a></li>
-<li class="nav-item">
-<a href="#invoice-document" class="nav-link">Invoice document</a><ul>
-<li class="nav-item"><a href="#create-your-own-invoice-document" class="nav-link">Create your own invoice document</a></li>
-<li class="nav-item"><a href="#more-invoice-templates" class="nav-link">More invoice templates</a></li>
-<li class="nav-item"><a href="#twig-templates" class="nav-link">Twig templates</a></li>
-<li class="nav-item"><a href="#pdf-templates" class="nav-link">PDF templates</a></li>
-<li class="nav-item"><a href="#docx-templates" class="nav-link">Docx templates</a></li>
-<li class="nav-item"><a href="#spreadsheets-ods-and-xlsx" class="nav-link">Spreadsheets (ODS and XLSX)</a></li>
-</ul>
-</li>
-<li class="nav-item">
-<a href="#template-variables" class="nav-link">Template variables</a><ul>
-<li class="nav-item"><a href="#global-variables" class="nav-link">Global variables</a></li>
-<li class="nav-item"><a href="#timesheet-entry-variables" class="nav-link">Timesheet entry variables</a></li>
-<li class="nav-item"><a href="#customer-variables" class="nav-link">Customer variables</a></li>
-<li class="nav-item"><a href="#project-variables" class="nav-link">Project variables</a></li>
-<li class="nav-item"><a href="#activity-variables" class="nav-link">Activity variables</a></li>
-<li class="nav-item"><a href="#uploading-invoice-documents" class="nav-link">Uploading invoice documents</a></li>
-</ul>
-</li>
-<li class="nav-item"><a href="#filter-and-search-in-the-invoice-archive" class="nav-link">Filter and search in the invoice archive</a></li>
-</ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#invoice-number-format" class="nav-link">Invoice number format</a><ul><li class="nav-item"><a href="#incrementing-the-invoice-counter" class="nav-link">Incrementing the invoice counter</a></li><li class="nav-item"><a href="#decrementing-the-invoice-counter" class="nav-link">Decrementing the invoice counter</a></li><li class="nav-item"><a href="#examples" class="nav-link">Examples</a></li></ul></li><li class="nav-item"><a href="#invoice-state" class="nav-link">Invoice state</a><ul><li class="nav-item"><a href="#deleting-invoices" class="nav-link">Deleting invoices</a></li></ul></li><li class="nav-item"><a href="#export-state" class="nav-link">Export state</a></li><li class="nav-item"><a href="#billable-items-only" class="nav-link">Billable items only</a></li><li class="nav-item"><a href="#invoice-document" class="nav-link">Invoice document</a><ul><li class="nav-item"><a href="#create-your-own-invoice-document" class="nav-link">Create your own invoice document</a></li><li class="nav-item"><a href="#more-invoice-templates" class="nav-link">More invoice templates</a></li><li class="nav-item"><a href="#twig-templates" class="nav-link">Twig templates</a></li><li class="nav-item"><a href="#pdf-templates" class="nav-link">PDF templates</a></li><li class="nav-item"><a href="#docx-templates" class="nav-link">Docx templates</a></li><li class="nav-item"><a href="#spreadsheets-ods-and-xlsx" class="nav-link">Spreadsheets (ODS and XLSX)</a></li></ul></li><li class="nav-item"><a href="#template-variables" class="nav-link">Template variables</a><ul><li class="nav-item"><a href="#global-variables" class="nav-link">Global variables</a></li><li class="nav-item"><a href="#timesheet-entry-variables" class="nav-link">Timesheet entry variables</a></li><li class="nav-item"><a href="#customer-variables" class="nav-link">Customer variables</a></li><li class="nav-item"><a href="#project-variables" class="nav-link">Project variables</a></li><li class="nav-item"><a href="#activity-variables" class="nav-link">Activity variables</a></li><li class="nav-item"><a href="#uploading-invoice-documents" class="nav-link">Uploading invoice documents</a></li></ul></li><li class="nav-item"><a href="#filter-and-search-in-the-invoice-archive" class="nav-link">Filter and search in the invoice archive</a></li></ul>
         
         <ul class="nav">
             <li>
@@ -1933,7 +1812,7 @@ This would find all entries with the custom field <code class="language-plaintex
 <script src="/assets/build/main.js"></script>
 
 <script async defer src="https://sa.kimai.org/latest.js"></script>
-<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
 
 </body>
 </html>
