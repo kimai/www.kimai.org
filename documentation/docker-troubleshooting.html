@@ -13,17 +13,17 @@
     <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
     <title>Troubleshooting – Kimai</title>
-    <meta name="description" content="Updating your Kimai docker image">
+    <meta name="description" content="Troubleshooting your Kimai docker image">
     <link type="application/atom+xml" rel="alternate" href="https://www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
     <meta property="og:locale" content="en">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Kimai Time-Tracking">
-    <meta property="og:description" content="Updating your Kimai docker image">
+    <meta property="og:description" content="Troubleshooting your Kimai docker image">
     <meta property="og:image" content="https://www.kimai.org/images/social-preview.webp">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Kimai Time-Tracking">
     <meta name="twitter:site" content="@kimai_org">
-    <meta name="twitter:description" content="Updating your Kimai docker image">
+    <meta name="twitter:description" content="Troubleshooting your Kimai docker image">
     <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.webp">
     <link rel="canonical" href="https://www.kimai.org/documentation/docker-troubleshooting.html" />
     <link href="/assets/build/main.css?v4" rel="stylesheet" />
@@ -525,7 +525,7 @@
             <div class="me-4">
                 <h1 class="pb-1">Troubleshooting</h1>
                 
-                <p class="text-muted fs-lg mb-2">Updating your Kimai docker image</p>
+                <p class="text-muted fs-lg mb-2">Troubleshooting your Kimai docker image</p>
                 
             </div>
             
@@ -545,11 +545,11 @@
 <p>When Kimai runs inside the docker container, logging is reconfigured to use <code class="language-plaintext highlighter-rouge">stderr</code> which can be seen within the docker container logs.
 See <a href="https://docs.docker.com/config/containers/logging/">View container logs</a> on how to access them.</p>
 
-<h2 id="nginx-and-proxying">NGINX and proxying</h2>
+<h2 id="docker-behind-a-reverse-proxy">Docker behind a reverse proxy</h2>
 
 <p>While outside the direct responsibility of this project we get a lot of issues reported that relate to proxying with NGINX into the FPM container.</p>
 
-<p>Note that you will need to set the name of your NGINX container to be in the list of TRUSTED_HOSTS when you start the Kimai container.</p>
+<p>Note that you will need to set the name of your NGINX container to be in the list of <code class="language-plaintext highlighter-rouge">TRUSTED_PROXIES</code> when you start the Kimai container.</p>
 
 <h2 id="permissions">Permissions</h2>
 
@@ -562,12 +562,6 @@ See <a href="https://docs.docker.com/config/containers/logging/">View container 
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker-compose <span class="nt">--user</span> root <span class="nb">exec </span>CONTAINER_NAME <span class="nb">chown</span> <span class="nt">-R</span> www-data:www-data /opt/kimai/var
 </code></pre></div></div>
-
-<h2 id="500-server-errors">500 Server errors</h2>
-
-<p>Around nine out of ten of the bugs raised are related to the TRUSTED_HOSTS value. 
-If you get a 500 then check that the <code class="language-plaintext highlighter-rouge">TRUSTED_HOSTS</code> environment variable is set to either your hostname or the hostname of your proxy server (nginx etc).
-In the docker-compose environment that is the container name of the nginx container.</p>
 
 <h2 id="older-version">Older version</h2>
 
@@ -594,7 +588,7 @@ We keep the older tags available for those who do not wish to upgrade, but if yo
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#logging" class="nav-link">Logging</a></li><li class="nav-item"><a href="#nginx-and-proxying" class="nav-link">NGINX and proxying</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li><li class="nav-item"><a href="#500-server-errors" class="nav-link">500 Server errors</a></li><li class="nav-item"><a href="#older-version" class="nav-link">Older version</a></li><li class="nav-item"><a href="#allowed-memory-size-exhausted" class="nav-link">Allowed memory size exhausted</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#logging" class="nav-link">Logging</a></li><li class="nav-item"><a href="#docker-behind-a-reverse-proxy" class="nav-link">Docker behind a reverse proxy</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li><li class="nav-item"><a href="#older-version" class="nav-link">Older version</a></li><li class="nav-item"><a href="#allowed-memory-size-exhausted" class="nav-link">Allowed memory size exhausted</a></li></ul>
         
     </aside>
 

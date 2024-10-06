@@ -637,7 +637,6 @@ services:
       - ADMINMAIL=admin@kimai.local
       - ADMINPASS=changemeplease
       - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&amp;serverVersion=5.7.40"
-      - TRUSTED_HOSTS=nginx,localhost,127.0.0.1
     restart: unless-stopped
 
 volumes:
