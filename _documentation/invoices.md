@@ -256,11 +256,8 @@ But the safest way is to host your images on your own domain:
 {% raw %}<img src="https://www.example.com/images/my-logo.png">{% endraw %}
 ```
 
-Want to include a file in your template?
-Use the twig include feature with the `@invoice` namespace . The following example references the file `bar.html.twig` in `var/invoices/foo/`:
-```twig
-{% raw %}{% include '@invoice/foo/bar.html.twig' %}{% endraw %}
-``` 
+Due to security reasons, multiple twig functions and filters are disabled in the invoice renderer.
+Therefor you cannot for example use `include` or `embed` to include other templates.
 
 #### Custom fields
 
