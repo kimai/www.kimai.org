@@ -25,7 +25,7 @@
     <meta name="twitter:site" content="@kimai_org">
     <meta name="twitter:description" content="Reporting">
     <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.webp">
-    <link href="/assets/build/main.css?v5" rel="stylesheet" />
+    <link href="/assets/build/main.css?v6" rel="stylesheet" />
 </head>
 <body class="">
 
@@ -407,14 +407,13 @@ Only interact with accounts you own or with explicit permission of the account h
 <p>There are EU <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> and German<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup> laws that require service owners to report certain attacks to the authorities.
 This makes it difficult to cooperate in scenarios without prior written consent.</p>
 
-<h2 id="no-answer-to-your-beg-email">No answer to your beg email?</h2>
+<h2 id="i-havent-heard-back-from-you">I haven’t heard back from you</h2>
 
-<p>You have sent a report and did not receive an answer?</p>
+<p>You have sent a report and did not receive an answer?
+Then you are very likely one of those thousands of “ethical hackers” or “independent security researchers” who are sending out automated emails to every domain they can find. 
+You did not bother to check the bigger picture, you maybe even send an invalid report. Please use your knowledge for the greater good, not to intimidate business/domain owners.</p>
 
-<p>Then you are very likely one of the thousands of “security researchers” who are sending out automated emails to every domain they can find. 
-You did not bother to check the bigger picture, you maybe even send an invalid report.</p>
-
-<p>I am wasting my time with these “beg reports”, as I receive dozens of them every week, and I am not going to answer personally.</p>
+<p>I am not going to waste my time with your “beg report”, as I receive dozens of them every week, and I am not going to answer personally.</p>
 
 <h2 id="common-reports">Common reports</h2>
 
@@ -423,9 +422,8 @@ to be security issues in Kimai or behavior that needs to be addressed.</p>
 
 <h3 id="no-dmarc-record-found">No DMARC record found</h3>
 
-<p>This does not qualify, read why <a href="https://dmarcreport.com/blog/no-dmarc-record-found-bug-bounty-is-a-beg-bounty/">at dmarcreport.com</a>.</p>
-
-<p>And we are using DMARC, DKIM and SPF in combination to protect our email domain.</p>
+<p>Not only does this not qualify (read why <a href="https://dmarcreport.com/blog/no-dmarc-record-found-bug-bounty-is-a-beg-bounty/">at dmarcreport.com</a>), 
+but we are indeed using DMARC, DKIM and SPF in combination to protect our email domain.</p>
 
 <h3 id="misconfigured-spf">Misconfigured SPF</h3>
 
@@ -438,10 +436,10 @@ The common industry standard recommends using SPF as just one part of the bigger
 
 <p>Ok, if you are using automated tests, at least make sure they work.</p>
 
-<p>a) it is not a security risk
-b) we have a <code class="language-plaintext highlighter-rouge">CAA</code> record in place with the value <code class="language-plaintext highlighter-rouge">0 issue "letsencrypt.org"</code></p>
-
-<p>Make your homework before spamming domain owners with nonsense.</p>
+<ul>
+  <li>it is not a security risk</li>
+  <li>there is a <code class="language-plaintext highlighter-rouge">CAA</code> record with the value <code class="language-plaintext highlighter-rouge">0 issue "letsencrypt.org"</code> in place</li>
+</ul>
 
 <h3 id="back-button-that-keeps-working-after-logout">“Back” button that keeps working after logout</h3>
 
@@ -528,7 +526,7 @@ so please follow the link.</p>
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#reporting" class="nav-link">Reporting</a></li><li class="nav-item"><a href="#rewards" class="nav-link">Rewards</a></li><li class="nav-item"><a href="#testing" class="nav-link">Testing</a><ul><li class="nav-item"><a href="#exclusions" class="nav-link">Exclusions</a></li></ul></li><li class="nav-item"><a href="#no-answer-to-your-beg-email" class="nav-link">No answer to your beg email?</a></li><li class="nav-item"><a href="#common-reports" class="nav-link">Common reports</a><ul><li class="nav-item"><a href="#no-dmarc-record-found" class="nav-link">No DMARC record found</a></li><li class="nav-item"><a href="#misconfigured-spf" class="nav-link">Misconfigured SPF</a></li><li class="nav-item"><a href="#missing-certificate-authority-authorization-rule" class="nav-link">Missing Certificate Authority Authorization Rule</a></li><li class="nav-item"><a href="#back-button-that-keeps-working-after-logout" class="nav-link">“Back” button that keeps working after logout</a></li><li class="nav-item"><a href="#csv-excel-formula-injection" class="nav-link">CSV Excel Formula injection</a></li><li class="nav-item"><a href="#logout-works-without-csrf-token" class="nav-link">Logout works without CSRF token</a></li><li class="nav-item"><a href="#unverified-password-change" class="nav-link">Unverified Password Change</a></li></ul></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#reporting" class="nav-link">Reporting</a></li><li class="nav-item"><a href="#rewards" class="nav-link">Rewards</a></li><li class="nav-item"><a href="#testing" class="nav-link">Testing</a><ul><li class="nav-item"><a href="#exclusions" class="nav-link">Exclusions</a></li></ul></li><li class="nav-item"><a href="#i-havent-heard-back-from-you" class="nav-link">I haven’t heard back from you</a></li><li class="nav-item"><a href="#common-reports" class="nav-link">Common reports</a><ul><li class="nav-item"><a href="#no-dmarc-record-found" class="nav-link">No DMARC record found</a></li><li class="nav-item"><a href="#misconfigured-spf" class="nav-link">Misconfigured SPF</a></li><li class="nav-item"><a href="#missing-certificate-authority-authorization-rule" class="nav-link">Missing Certificate Authority Authorization Rule</a></li><li class="nav-item"><a href="#back-button-that-keeps-working-after-logout" class="nav-link">“Back” button that keeps working after logout</a></li><li class="nav-item"><a href="#csv-excel-formula-injection" class="nav-link">CSV Excel Formula injection</a></li><li class="nav-item"><a href="#logout-works-without-csrf-token" class="nav-link">Logout works without CSRF token</a></li><li class="nav-item"><a href="#unverified-password-change" class="nav-link">Unverified Password Change</a></li></ul></li></ul>
         
     </aside>
 
