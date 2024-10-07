@@ -10,7 +10,7 @@ title: Bughunter
 - I will work as fast as I can to fix the problem and publish a bugfix release / security update. Depending on the size of the required fixes, this might take a couple of hours or a couple of days.
 - If you try to ask for money BEFORE sharing details of a report, you won't get a reply and your email will be blocked.
 
-### Reward
+## Rewards
 
 This is an open-source project and I cannot offer a financial bug bounty program.
 The community including myself is grateful for any (discrete) disclosure of vulnerabilities!
@@ -38,6 +38,15 @@ Do not pentest Kimai-Cloud or Demo installations without prior consent.
 There are EU [^1] and German[^2] laws that require service owners to report certain attacks to the authorities.
 This makes it difficult to cooperate in scenarios without prior written consent.
 
+## No answer to your beg email?
+
+You have sent a report and did not receive an answer?
+
+Then you are very likely one of the thousands of "security researchers" who are sending out automated emails to every domain they can find. 
+You did not bother to check the bigger picture, you maybe even send an invalid report. 
+
+I am wasting my time with these "beg reports", as I receive dozens of them every week, and I am not going to answer personally.
+
 ## Common reports
 
 Some answers to the most common reports that I receive from independent security researchers, which I do **not** consider
@@ -46,6 +55,24 @@ to be security issues in Kimai or behavior that needs to be addressed.
 ### No DMARC record found
 
 This does not qualify, read why [at dmarcreport.com](https://dmarcreport.com/blog/no-dmarc-record-found-bug-bounty-is-a-beg-bounty/).
+
+And we are using DMARC, DKIM and SPF in combination to protect our email domain.
+
+### Misconfigured SPF
+
+Whether the soft fail `~all` or the fail `-all` qualifier is used, is a matter of choice of the server admin.
+The common industry standard recommends using SPF as just one part of the bigger picture and therefor `~all` for active and email sending domains.
+
+Besides: we are using DMARC, DKIM and SPF in combination to protect our email domain.
+
+### Missing Certificate Authority Authorization Rule
+
+Ok, if you are using automated tests, at least make sure they work.
+
+a) it is not a security risk
+b) we have a `CAA` record in place with the value `0 issue "letsencrypt.org"`
+
+Make your homework before spamming domain owners with nonsense.
 
 ### "Back" button that keeps working after logout
 
