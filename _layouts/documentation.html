@@ -58,7 +58,7 @@ layout: base
 </header>
 
 <aside class="bg-dark">
-    <div id="componentsNav" class="offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100 bg-dark border-end-lg" style="width: 21rem; z-index: 1045;">
+    <div id="componentsNav" class="offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100 bg-dark border-end-lg" style="width: 19rem; z-index: 1045;">
         <div class="offcanvas-header d-none d-lg-flex justify-content-start">
             <a href="/" class="navbar-brand d-none d-lg-flex py-0">
                 <img src="/images/{{ icon }}" width="26" alt="Kimai logo" class="me-3">
@@ -82,9 +82,31 @@ layout: base
             </div>
         </div>
         <div class="offcanvas-body overflow-scroll w-100 p-4">
-            <div class=" h-auto">
+            <div class="h-auto docsnavi">
                 {% if menu != nil %}
-                    {% include docs-navi.html navigation=menu %}
+                    {% assign doc_chapter = site.data.menu-documentation[menu] %}
+                    {% for group in doc_chapter.chapter %}
+                    {% assign group_key = group.id %}
+                    {% assign is_active = false %}
+                    <p class="fs-lg mb-1 text-white fw-bold">{{ group.name }}</p>
+                    <div class="list-group list-group-flush mb-4 me-n4 border-start">
+                        {% for page_slug in group.pages %}
+                        {% if page_slug != '-' %}
+                        {% assign docs_page = site.documentation | find: "slug", page_slug %}
+                        {% if docs_page.slug == page.slug %}
+                        {% assign is_active = true %}
+                        {% endif %}
+                        <a href="{{ docs_page.url }}" class="list-group-item ms-2 list-group-item-action border-0 ps-2 {% if docs_page.slug == page.slug %} active{% endif %}" id="docnavi-{{ docs_page.slug }}">
+                            {% if docs_page.navigation != nil %}
+                            {{ docs_page.navigation }}
+                            {% else %}
+                            {{ docs_page.title }}
+                            {% endif %}
+                        </a>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    {% endfor %}
                     <div class="list-group list-group-flush pb-3 mb-4 mx-n4">
                 {% endif %}
                     <a href="{% link _pages/index.html %}" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Kimai {{ site.data['en'].translation['index'].name }}</a>
@@ -95,7 +117,14 @@ layout: base
         </div>
     </div>
 </aside>
-
+<script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+        const dpm = document.getElementById('docnavi-{{ page.slug }}');
+        if (dpm !== null) {
+            dpm.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+        }
+    });
+</script>
 <main class="docs-container pt-5">
     <div class="container-fluid px-xxl-5 px-lg-4 pt-4 pt-lg-5 pb-2 pb-lg-4">
 

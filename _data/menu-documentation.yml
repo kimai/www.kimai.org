@@ -8,16 +8,16 @@ manual:
             name: Using Kimai
             description: Kimai user manual, explaining the UI and all available screens
             pages: [ timesheet, weekly-times, calendar, invoices, export, reporting, customer, project, activity, tags, users, user-preferences, permissions, teams, configurations, doctor, contract, public-holiday, absence, dashboard ]
+        -   id: plugins
+            icon: bx bx-plug
+            name: Additional features
+            description: User documentation for features provided by (paid) plugins
+            pages: [ plugin-custom-fields, plugin-expenses, plugin-task-management, plugin-custom-css, plugin-custom-content, plugin-translation, plugin-invoice, plugin-import, plugin-audit-trail, plugin-kiosk, plugin-customer-portal ]
         -   id: tips
             name: Tips and Tricks
             description: Articles that explain basic functionality in Kimai
             icon: bx bx-bulb
             pages: [ initial-setup, rates, billable, pdf-templates, keyboard-shortcuts, i18n-am-pm, duration-format, "-", homescreen, user-api ]
-        -   id: plugins
-            icon: bx bx-plug
-            name: Additional features
-            description: User documentation for features provided by (paid) plugins
-            pages: [ plugin-custom-fields, plugin-expenses, plugin-task-management, plugin-custom-css, plugin-custom-content, plugin-translation, plugin-invoice, plugin-import, plugin-audit-trail, plugin-contract, plugin-kiosk, plugin-customer-portal ]
 cloud:
     slug: cloud
     icon: bx bx-cloud
@@ -68,6 +68,11 @@ on-premise:
             name: Authenticator
             description: Log in to Kimai using external identity provider
             pages: [ ldap, saml, saml-azure, saml-google, saml-keycloak, saml-authentik, saml-adfs ]
+        -   id: pluginsonpremise
+            icon: bx bx-plug
+            name: Plugins
+            description: Plugin functionality available to onpremise installations
+            pages: [ plugin-contract ]
 developer:
     slug: chapter-developer
     icon: bx bx-code-alt
