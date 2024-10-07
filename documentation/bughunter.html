@@ -377,7 +377,7 @@
   <li>If you try to ask for money BEFORE sharing details of a report, you won’t get a reply and your email will be blocked.</li>
 </ul>
 
-<h3 id="reward">Reward</h3>
+<h2 id="rewards">Rewards</h2>
 
 <p>This is an open-source project and I cannot offer a financial bug bounty program.
 The community including myself is grateful for any (discrete) disclosure of vulnerabilities!</p>
@@ -407,6 +407,15 @@ Only interact with accounts you own or with explicit permission of the account h
 <p>There are EU <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> and German<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup> laws that require service owners to report certain attacks to the authorities.
 This makes it difficult to cooperate in scenarios without prior written consent.</p>
 
+<h2 id="no-answer-to-your-beg-email">No answer to your beg email?</h2>
+
+<p>You have sent a report and did not receive an answer?</p>
+
+<p>Then you are very likely one of the thousands of “security researchers” who are sending out automated emails to every domain they can find. 
+You did not bother to check the bigger picture, you maybe even send an invalid report.</p>
+
+<p>I am wasting my time with these “beg reports”, as I receive dozens of them every week, and I am not going to answer personally.</p>
+
 <h2 id="common-reports">Common reports</h2>
 
 <p>Some answers to the most common reports that I receive from independent security researchers, which I do <strong>not</strong> consider
@@ -415,6 +424,24 @@ to be security issues in Kimai or behavior that needs to be addressed.</p>
 <h3 id="no-dmarc-record-found">No DMARC record found</h3>
 
 <p>This does not qualify, read why <a href="https://dmarcreport.com/blog/no-dmarc-record-found-bug-bounty-is-a-beg-bounty/">at dmarcreport.com</a>.</p>
+
+<p>And we are using DMARC, DKIM and SPF in combination to protect our email domain.</p>
+
+<h3 id="misconfigured-spf">Misconfigured SPF</h3>
+
+<p>Whether the soft fail <code class="language-plaintext highlighter-rouge">~all</code> or the fail <code class="language-plaintext highlighter-rouge">-all</code> qualifier is used, is a matter of choice of the server admin.
+The common industry standard recommends using SPF as just one part of the bigger picture and therefor <code class="language-plaintext highlighter-rouge">~all</code> for active and email sending domains.</p>
+
+<p>Besides: we are using DMARC, DKIM and SPF in combination to protect our email domain.</p>
+
+<h3 id="missing-certificate-authority-authorization-rule">Missing Certificate Authority Authorization Rule</h3>
+
+<p>Ok, if you are using automated tests, at least make sure they work.</p>
+
+<p>a) it is not a security risk
+b) we have a <code class="language-plaintext highlighter-rouge">CAA</code> record in place with the value <code class="language-plaintext highlighter-rouge">0 issue "letsencrypt.org"</code></p>
+
+<p>Make your homework before spamming domain owners with nonsense.</p>
 
 <h3 id="back-button-that-keeps-working-after-logout">“Back” button that keeps working after logout</h3>
 
@@ -501,7 +528,7 @@ so please follow the link.</p>
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#reporting" class="nav-link">Reporting</a><ul><li class="nav-item"><a href="#reward" class="nav-link">Reward</a></li></ul></li><li class="nav-item"><a href="#testing" class="nav-link">Testing</a><ul><li class="nav-item"><a href="#exclusions" class="nav-link">Exclusions</a></li></ul></li><li class="nav-item"><a href="#common-reports" class="nav-link">Common reports</a><ul><li class="nav-item"><a href="#no-dmarc-record-found" class="nav-link">No DMARC record found</a></li><li class="nav-item"><a href="#back-button-that-keeps-working-after-logout" class="nav-link">“Back” button that keeps working after logout</a></li><li class="nav-item"><a href="#csv-excel-formula-injection" class="nav-link">CSV Excel Formula injection</a></li><li class="nav-item"><a href="#logout-works-without-csrf-token" class="nav-link">Logout works without CSRF token</a></li><li class="nav-item"><a href="#unverified-password-change" class="nav-link">Unverified Password Change</a></li></ul></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#reporting" class="nav-link">Reporting</a></li><li class="nav-item"><a href="#rewards" class="nav-link">Rewards</a></li><li class="nav-item"><a href="#testing" class="nav-link">Testing</a><ul><li class="nav-item"><a href="#exclusions" class="nav-link">Exclusions</a></li></ul></li><li class="nav-item"><a href="#no-answer-to-your-beg-email" class="nav-link">No answer to your beg email?</a></li><li class="nav-item"><a href="#common-reports" class="nav-link">Common reports</a><ul><li class="nav-item"><a href="#no-dmarc-record-found" class="nav-link">No DMARC record found</a></li><li class="nav-item"><a href="#misconfigured-spf" class="nav-link">Misconfigured SPF</a></li><li class="nav-item"><a href="#missing-certificate-authority-authorization-rule" class="nav-link">Missing Certificate Authority Authorization Rule</a></li><li class="nav-item"><a href="#back-button-that-keeps-working-after-logout" class="nav-link">“Back” button that keeps working after logout</a></li><li class="nav-item"><a href="#csv-excel-formula-injection" class="nav-link">CSV Excel Formula injection</a></li><li class="nav-item"><a href="#logout-works-without-csrf-token" class="nav-link">Logout works without CSRF token</a></li><li class="nav-item"><a href="#unverified-password-change" class="nav-link">Unverified Password Change</a></li></ul></li></ul>
         
     </aside>
 
