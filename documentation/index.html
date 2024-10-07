@@ -96,7 +96,7 @@
 </header>
 
 <aside class="bg-dark">
-    <div id="componentsNav" class="offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100 bg-dark border-end-lg" style="width: 21rem; z-index: 1045;">
+    <div id="componentsNav" class="offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100 bg-dark border-end-lg" style="width: 19rem; z-index: 1045;">
         <div class="offcanvas-header d-none d-lg-flex justify-content-start">
             <a href="/" class="navbar-brand d-none d-lg-flex py-0">
                 <img src="/images/apple-touch-icon.png" width="26" alt="Kimai logo" class="me-3">
@@ -141,7 +141,7 @@
             </div>
         </div>
         <div class="offcanvas-body overflow-scroll w-100 p-4">
-            <div class=" h-auto">
+            <div class="h-auto docsnavi">
                 
                     <a href="/" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Kimai Home</a>
                     <a href="/en/site-notice.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Site notice</a>
@@ -151,7 +151,14 @@
         </div>
     </div>
 </aside>
-
+<script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+        const dpm = document.getElementById('docnavi-documentation');
+        if (dpm !== null) {
+            dpm.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+        }
+    });
+</script>
 <main class="docs-container pt-5">
     <div class="container-fluid px-xxl-5 px-lg-4 pt-4 pt-lg-5 pb-2 pb-lg-4">
 
@@ -396,117 +403,6 @@
                     <div class="step justify-content-center">
                         <div class="step-number text-primary">
                             <div class="step-number-inner">
-                                <i class="bx bx-bulb fs-1"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-9 col-xl-10">
-                <div class="card-body">
-                    <h5 class="card-title">Tips and Tricks</h5>
-                    <p class="card-text fs-sm">Articles that explain basic functionality in Kimai</p>
-                    <div class="lh-lg">
-                    
-                        
-                            
-                            <a class="btn btn-sm btn-primary mb-1" href="/documentation/initial-setup.html">
-                                
-                                Initial setup
-                                
-                            </a>
-                        
-                    
-                        
-                            
-                            <a class="btn btn-sm btn-primary mb-1" href="/documentation/rates.html">
-                                
-                                Prices (rates)
-                                
-                            </a>
-                        
-                    
-                        
-                            
-                            <a class="btn btn-sm btn-primary mb-1" href="/documentation/billable.html">
-                                
-                                Billable
-                                
-                            </a>
-                        
-                    
-                        
-                            
-                            <a class="btn btn-sm btn-primary mb-1" href="/documentation/pdf-templates.html">
-                                
-                                PDF templates
-                                
-                            </a>
-                        
-                    
-                        
-                            
-                            <a class="btn btn-sm btn-primary mb-1" href="/documentation/keyboard-shortcuts.html">
-                                
-                                Keyboard shortcuts
-                                
-                            </a>
-                        
-                    
-                        
-                            
-                            <a class="btn btn-sm btn-primary mb-1" href="/documentation/i18n-am-pm.html">
-                                
-                                Date and Time formats
-                                
-                            </a>
-                        
-                    
-                        
-                            
-                            <a class="btn btn-sm btn-primary mb-1" href="/documentation/duration-format.html">
-                                
-                                Duration format
-                                
-                            </a>
-                        
-                    
-                        
-                    
-                        
-                            
-                            <a class="btn btn-sm btn-primary mb-1" href="/documentation/homescreen.html">
-                                
-                                Use Kimai as app
-                                
-                            </a>
-                        
-                    
-                        
-                            
-                            <a class="btn btn-sm btn-primary mb-1" href="/documentation/user-api.html">
-                                
-                                Connecting via API
-                                
-                            </a>
-                        
-                    
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    
-    
-    
-    <div class="card mb-4">
-        <div class="row g-0 align-items-center">
-            <div class="col-sm-3 col-xl-2 mt-2 mt-sm-0">
-                <div class="steps">
-                    <div class="step justify-content-center">
-                        <div class="step-number text-primary">
-                            <div class="step-number-inner">
                                 <i class="bx bx-plug fs-1"></i>
                             </div>
                         </div>
@@ -602,15 +498,6 @@
                     
                         
                             
-                            <a class="btn btn-sm btn-primary mb-1" href="/documentation/plugin-contract.html">
-                                
-                                Working contract
-                                
-                            </a>
-                        
-                    
-                        
-                            
                             <a class="btn btn-sm btn-primary mb-1" href="/documentation/plugin-kiosk.html">
                                 
                                 Kiosk mode
@@ -623,6 +510,117 @@
                             <a class="btn btn-sm btn-primary mb-1" href="/documentation/plugin-customer-portal.html">
                                 
                                 Customer Portal
+                                
+                            </a>
+                        
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    
+    
+    <div class="card mb-4">
+        <div class="row g-0 align-items-center">
+            <div class="col-sm-3 col-xl-2 mt-2 mt-sm-0">
+                <div class="steps">
+                    <div class="step justify-content-center">
+                        <div class="step-number text-primary">
+                            <div class="step-number-inner">
+                                <i class="bx bx-bulb fs-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-9 col-xl-10">
+                <div class="card-body">
+                    <h5 class="card-title">Tips and Tricks</h5>
+                    <p class="card-text fs-sm">Articles that explain basic functionality in Kimai</p>
+                    <div class="lh-lg">
+                    
+                        
+                            
+                            <a class="btn btn-sm btn-primary mb-1" href="/documentation/initial-setup.html">
+                                
+                                Initial setup
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            <a class="btn btn-sm btn-primary mb-1" href="/documentation/rates.html">
+                                
+                                Prices (rates)
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            <a class="btn btn-sm btn-primary mb-1" href="/documentation/billable.html">
+                                
+                                Billable
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            <a class="btn btn-sm btn-primary mb-1" href="/documentation/pdf-templates.html">
+                                
+                                PDF templates
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            <a class="btn btn-sm btn-primary mb-1" href="/documentation/keyboard-shortcuts.html">
+                                
+                                Keyboard shortcuts
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            <a class="btn btn-sm btn-primary mb-1" href="/documentation/i18n-am-pm.html">
+                                
+                                Date and Time formats
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            <a class="btn btn-sm btn-primary mb-1" href="/documentation/duration-format.html">
+                                
+                                Duration format
+                                
+                            </a>
+                        
+                    
+                        
+                    
+                        
+                            
+                            <a class="btn btn-sm btn-primary mb-1" href="/documentation/homescreen.html">
+                                
+                                Use Kimai as app
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            <a class="btn btn-sm btn-primary mb-1" href="/documentation/user-api.html">
+                                
+                                Connecting via API
                                 
                             </a>
                         
@@ -1226,6 +1224,43 @@
                             <a class="btn btn-sm btn-primary mb-1" href="/documentation/saml-adfs.html">
                                 
                                 Microsoft ADFS
+                                
+                            </a>
+                        
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    
+    
+    <div class="card mb-4">
+        <div class="row g-0 align-items-center">
+            <div class="col-sm-3 col-xl-2 mt-2 mt-sm-0">
+                <div class="steps">
+                    <div class="step justify-content-center">
+                        <div class="step-number text-primary">
+                            <div class="step-number-inner">
+                                <i class="bx bx-plug fs-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-9 col-xl-10">
+                <div class="card-body">
+                    <h5 class="card-title">Plugins</h5>
+                    <p class="card-text fs-sm">Plugin functionality available to onpremise installations</p>
+                    <div class="lh-lg">
+                    
+                        
+                            
+                            <a class="btn btn-sm btn-primary mb-1" href="/documentation/plugin-contract.html">
+                                
+                                Working contract
                                 
                             </a>
                         
