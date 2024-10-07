@@ -38,14 +38,13 @@ Do not pentest Kimai-Cloud or Demo installations without prior consent.
 There are EU [^1] and German[^2] laws that require service owners to report certain attacks to the authorities.
 This makes it difficult to cooperate in scenarios without prior written consent.
 
-## No answer to your beg email?
+## I haven't heard back from you
 
 You have sent a report and did not receive an answer?
+Then you are very likely one of those thousands of "ethical hackers" or "independent security researchers" who are sending out automated emails to every domain they can find. 
+You did not bother to check the bigger picture, you maybe even send an invalid report. Please use your knowledge for the greater good, not to intimidate business/domain owners. 
 
-Then you are very likely one of the thousands of "security researchers" who are sending out automated emails to every domain they can find. 
-You did not bother to check the bigger picture, you maybe even send an invalid report. 
-
-I am wasting my time with these "beg reports", as I receive dozens of them every week, and I am not going to answer personally.
+I am not going to waste my time with your "beg report", as I receive dozens of them every week, and I am not going to answer personally.
 
 ## Common reports
 
@@ -54,9 +53,8 @@ to be security issues in Kimai or behavior that needs to be addressed.
 
 ### No DMARC record found
 
-This does not qualify, read why [at dmarcreport.com](https://dmarcreport.com/blog/no-dmarc-record-found-bug-bounty-is-a-beg-bounty/).
-
-And we are using DMARC, DKIM and SPF in combination to protect our email domain.
+Not only does this not qualify (read why [at dmarcreport.com](https://dmarcreport.com/blog/no-dmarc-record-found-bug-bounty-is-a-beg-bounty/)), 
+but we are indeed using DMARC, DKIM and SPF in combination to protect our email domain.
 
 ### Misconfigured SPF
 
@@ -69,10 +67,8 @@ Besides: we are using DMARC, DKIM and SPF in combination to protect our email do
 
 Ok, if you are using automated tests, at least make sure they work.
 
-a) it is not a security risk
-b) we have a `CAA` record in place with the value `0 issue "letsencrypt.org"`
-
-Make your homework before spamming domain owners with nonsense.
+- it is not a security risk
+- there is a `CAA` record with the value `0 issue "letsencrypt.org"` in place
 
 ### "Back" button that keeps working after logout
 
