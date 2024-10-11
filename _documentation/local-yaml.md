@@ -109,19 +109,31 @@ or you can explicitly set it for Kimai:
 ```yaml
 framework:
     session:
-        gc_maxlifetime: 3600
-        cookie_lifetime: 3600
+        gc_maxlifetime: 604800
+        cookie_lifetime: 604800
+
+security:
+    firewalls:
+        secured_area:
+            remember_me:
+                lifetime: 2419200
 ```
 
-The values above (here `3600`) are seconds, the above configuration would be rather strict and automatically logout the user after 1 hour.
+The values above are seconds, the above configuration would give you a week long full session and a remember me session for 4 weeks.
 
-Another example, where the session should last 10 hours with a session cookie that is deleted upon browser restart (every browser restart forces a new login):
+Another very strict example would be a forced logout after 1 hour, with a session cookie that is deleted upon browser restart (every browser restart forces a new login):
 
 ```yaml
 framework:
     session:
-        gc_maxlifetime: 36000
+        gc_maxlifetime: 3600
         cookie_lifetime: ~
+
+security:
+    firewalls:
+        secured_area:
+            remember_me:
+                lifetime: 3600
 ```
 
 More infos in the [Symfony docs](https://symfony.com/doc/current/reference/configuration/framework.html#session) and [PHP documentation](https://www.php.net/manual/en/session.configuration.php).
