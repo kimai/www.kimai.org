@@ -673,18 +673,30 @@ or you can explicitly set it for Kimai:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">framework</span><span class="pi">:</span>
     <span class="na">session</span><span class="pi">:</span>
-        <span class="na">gc_maxlifetime</span><span class="pi">:</span> <span class="m">3600</span>
-        <span class="na">cookie_lifetime</span><span class="pi">:</span> <span class="m">3600</span>
+        <span class="na">gc_maxlifetime</span><span class="pi">:</span> <span class="m">604800</span>
+        <span class="na">cookie_lifetime</span><span class="pi">:</span> <span class="m">604800</span>
+
+<span class="na">security</span><span class="pi">:</span>
+    <span class="na">firewalls</span><span class="pi">:</span>
+        <span class="na">secured_area</span><span class="pi">:</span>
+            <span class="na">remember_me</span><span class="pi">:</span>
+                <span class="na">lifetime</span><span class="pi">:</span> <span class="m">2419200</span>
 </code></pre></div></div>
 
-<p>The values above (here <code class="language-plaintext highlighter-rouge">3600</code>) are seconds, the above configuration would be rather strict and automatically logout the user after 1 hour.</p>
+<p>The values above are seconds, the above configuration would give you a week long full session and a remember me session for 4 weeks.</p>
 
-<p>Another example, where the session should last 10 hours with a session cookie that is deleted upon browser restart (every browser restart forces a new login):</p>
+<p>Another very strict example would be a forced logout after 1 hour, with a session cookie that is deleted upon browser restart (every browser restart forces a new login):</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">framework</span><span class="pi">:</span>
     <span class="na">session</span><span class="pi">:</span>
-        <span class="na">gc_maxlifetime</span><span class="pi">:</span> <span class="m">36000</span>
+        <span class="na">gc_maxlifetime</span><span class="pi">:</span> <span class="m">3600</span>
         <span class="na">cookie_lifetime</span><span class="pi">:</span> <span class="s">~</span>
+
+<span class="na">security</span><span class="pi">:</span>
+    <span class="na">firewalls</span><span class="pi">:</span>
+        <span class="na">secured_area</span><span class="pi">:</span>
+            <span class="na">remember_me</span><span class="pi">:</span>
+                <span class="na">lifetime</span><span class="pi">:</span> <span class="m">3600</span>
 </code></pre></div></div>
 
 <p>More infos in the <a href="https://symfony.com/doc/current/reference/configuration/framework.html#session">Symfony docs</a> and <a href="https://www.php.net/manual/en/session.configuration.php">PHP documentation</a>.</p>
