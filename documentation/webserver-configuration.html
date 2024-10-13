@@ -797,49 +797,9 @@ when generating URLs for links and redirects.</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fastcgi_param TRUSTED_PROXIES "127.0.0.1,kimai2.local,localhost";
 </code></pre></div></div>
 
-<h3 id="with-subdirectory-usage">With subdirectory usage</h3>
+<h3 id="subdirectory-usage">Subdirectory usage</h3>
 
-<p>Kimai was made to be hosted on the domain level, so running it inside a subdirectory is not perfectly supported.
-Nevertheless, there are some workarounds that enable the usage behind a Reverse Proxy and inside a subdirectory.</p>
-
-<p>The easy part is fixing asset URLs. Edit your local.yaml and paste this code inside:</p>
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">framework</span><span class="pi">:</span>
-    <span class="na">assets</span><span class="pi">:</span>
-        <span class="na">base_path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/kimai"</span>
-</code></pre></div></div>
-<p>This will prepend <code class="language-plaintext highlighter-rouge">/kimai</code> to all assets URLs (CSS, Javascript, Images).</p>
-
-<p>Now, let’s move on to configure the webserver (here nginx is used as reverse proxy).</p>
-
-<p>Lets assume Kimai is running on <code class="language-plaintext highlighter-rouge">192.168.0.100</code> on port <code class="language-plaintext highlighter-rouge">8080</code>, your host is <code class="language-plaintext highlighter-rouge">example.com</code> and it 
-should run in the subdirectory directory <code class="language-plaintext highlighter-rouge">kimai/</code>:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>server {
-    listen       80;
-    server_name  example.com;
-
-    location /kimai {
-        proxy_pass http://192.168.0.100:8080;
-    }
-}
-</code></pre></div></div>
-
-<p>The important part here is the “missing” trailing slash!</p>
-
-<p>You are almost there, the only real “workaround” you have to apply is that you have to create a symlink within the <code class="language-plaintext highlighter-rouge">public/</code>
-directory of kimai, pointing to itself with the name being the same as the above <code class="language-plaintext highlighter-rouge">location</code> (here: kimai):</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /var/www/kimai/public/
-<span class="nb">ln</span> <span class="nt">-s</span> <span class="nb">.</span> kimai
-</code></pre></div></div>
-
-<p>In a docker context, it could look like this:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker exec -it kimai2 bash ln -s /opt/kimai/public /opt/kimai/public/kimai
-</code></pre></div></div>
-
-<p>And you are good to go: Kimai is now running behind a Reverse Proxy.</p>
-
-<p>Read <a href="https://github.com/kimai/kimai/issues/1006">this GitHub issue</a> for more information (start at the bottom).</p>
+<p>Kimai was made to be hosted on the domain level, so running it inside a subdirectory is not supported.</p>
 
 <h2 id="links">Links</h2>
 
@@ -861,7 +821,7 @@ directory of kimai, pointing to itself with the name being the same as the above
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#nginx" class="nav-link">Nginx</a></li><li class="nav-item"><a href="#apache" class="nav-link">Apache</a><ul><li class="nav-item"><a href="#kimai-htaccess" class="nav-link">Kimai .htaccess</a></li><li class="nav-item"><a href="#create-virtualhost" class="nav-link">Create VirtualHost</a></li><li class="nav-item"><a href="#activate-required-modules-php--rewrite" class="nav-link">Activate required modules PHP &amp; Rewrite</a></li></ul></li><li class="nav-item"><a href="#iis-on-windows-or-azure" class="nav-link">IIS on Windows or Azure</a></li><li class="nav-item"><a href="#reverse-proxy" class="nav-link">Reverse proxy</a><ul><li class="nav-item"><a href="#with-subdirectory-usage" class="nav-link">With subdirectory usage</a></li></ul></li><li class="nav-item"><a href="#links" class="nav-link">Links</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#nginx" class="nav-link">Nginx</a></li><li class="nav-item"><a href="#apache" class="nav-link">Apache</a><ul><li class="nav-item"><a href="#kimai-htaccess" class="nav-link">Kimai .htaccess</a></li><li class="nav-item"><a href="#create-virtualhost" class="nav-link">Create VirtualHost</a></li><li class="nav-item"><a href="#activate-required-modules-php--rewrite" class="nav-link">Activate required modules PHP &amp; Rewrite</a></li></ul></li><li class="nav-item"><a href="#iis-on-windows-or-azure" class="nav-link">IIS on Windows or Azure</a></li><li class="nav-item"><a href="#reverse-proxy" class="nav-link">Reverse proxy</a><ul><li class="nav-item"><a href="#subdirectory-usage" class="nav-link">Subdirectory usage</a></li></ul></li><li class="nav-item"><a href="#links" class="nav-link">Links</a></li></ul>
         
     </aside>
 
