@@ -232,53 +232,9 @@ or set it in your Kimai server definition (here nginx syntax):
 fastcgi_param TRUSTED_PROXIES "127.0.0.1,kimai2.local,localhost";
 ```
 
-### With subdirectory usage
+### Subdirectory usage
 
-Kimai was made to be hosted on the domain level, so running it inside a subdirectory is not perfectly supported.
-Nevertheless, there are some workarounds that enable the usage behind a Reverse Proxy and inside a subdirectory.
-
-The easy part is fixing asset URLs. Edit your local.yaml and paste this code inside:
-```yaml
-framework:
-    assets:
-        base_path: "/kimai"
-```
-This will prepend `/kimai` to all assets URLs (CSS, Javascript, Images).
-
-Now, let's move on to configure the webserver (here nginx is used as reverse proxy).
- 
-Lets assume Kimai is running on `192.168.0.100` on port `8080`, your host is `example.com` and it 
-should run in the subdirectory directory `kimai/`:
-
-```
-server {
-    listen       80;
-    server_name  example.com;
-
-    location /kimai {
-        proxy_pass http://192.168.0.100:8080;
-    }
-}
-```
-
-The important part here is the "missing" trailing slash!
-
-You are almost there, the only real "workaround" you have to apply is that you have to create a symlink within the `public/`
-directory of kimai, pointing to itself with the name being the same as the above `location` (here: kimai):
-
-```bash
-cd /var/www/kimai/public/
-ln -s . kimai
-``` 
-
-In a docker context, it could look like this:
-```
-docker exec -it kimai2 bash ln -s /opt/kimai/public /opt/kimai/public/kimai
-``` 
-
-And you are good to go: Kimai is now running behind a Reverse Proxy.
-
-Read [this GitHub issue]({{ site.kimai_v2_repo }}/issues/1006) for more information (start at the bottom).
+Kimai was made to be hosted on the domain level, so running it inside a subdirectory is not supported.
 
 ## Links
 
