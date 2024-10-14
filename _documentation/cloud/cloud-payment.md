@@ -3,87 +3,85 @@ title: Payments
 description: How to pay your Kimai Cloud subscription - payment methods, billing period, trial period and more
 ---
 
-You can use the test phase and the free plan without adding any payment method.
-However, you must do so before applying for a paid plan.
+You can utilize the test phase and the free plan without providing any payment information. However, this must be done before subscribing to a paid plan.
 
 ### SEPA Direct Debit
 
-Customers with a European bank account can issue a SEPA direct debit mandate.
+Customers with a European bank account can authorize a SEPA direct debit mandate.
 
-### Credit cards
+### Credit Cards
 
-Supported card providers include **Visa, Mastercard, American Express, Discover, Diners** and more.
+We accept major credit cards including **Visa, Mastercard, American Express, Discover, Diners**, and others.
 
 ### Payment
 
-#### Starter and Professional
+#### Starter and Professional Plans
 
-Those are pre-paid plans. You decide on the amount of licenses and purchase them in advance.
+These are prepaid plans. You select the number of licenses you need and pay for them upfront.
 
-If you need further licenses, you can purchase them at any time. The price is pro-rated, so you pay for the remaining time of the current subscription period. 
+If additional licenses are required, you can purchase them at any time. The cost is prorated, meaning you only pay for the remaining time in the current subscription period.
 
-You can cancel your contract until the last day before the end of the subscription period. When your subscription expired, you will not receive another invoice.
+You may cancel your contract up to the last day before the subscription period ends. Once your subscription expires, no further invoices will be issued.
 
-#### Plus and Premium (deprecated)
+#### Plus and Premium Plans (Deprecated)
 
-These plans were in deprecated January 2024 and cannot be booked anymore. 
-Price depends on the plan and the number of registered users. 
-You can always change the amount of users and the Kimai-Cloud is billed **in hindsight**: invoices are issued at the end of each billing period.
+These plans were deprecated in January 2024 and are no longer available for new subscriptions. P
+ricing is based on the plan and the number of registered users. 
+You can adjust the number of users at any time, and billing for Kimai-Cloud occurs **in arrears**: invoices are issued at the end of each billing period.
 
-See below ar "User based billing" for details.
+Refer to "User-Based Billing" below for more details.
 
-If you cancel your contract, you will receive a final invoice after your subscription expired.
+If you cancel your contract, a final invoice will be issued after your subscription expires.
 
-### Billing period
+### Billing Period
 
-Billing takes place on a monthly or annual basis, **the billing day corresponds to the day the plan is booked**.
-As an example: booking the premium plan on 26.12. results in subsequent invoices being issued on the 26th of each month.
+Billing occurs on a monthly or annual basis, with the billing date corresponding to the date the plan was initially subscribed. 
+For example, if you subscribe to the premium plan on December 26th, subsequent invoices will be issued on the 26th of each month.
 
-If you need to be billed on certain dates (e.g. first of the month), please subscribe either on the next first of the month or contact support.
+If you require billing on specific dates (e.g., the first of the month), please subscribe on that date or contact support for assistance.
 
-### Trial period
+### Trial Period
 
-If you need an extended trial period and/or additional trial users, please contact support.
+For an extended trial period or additional trial users, please contact support.
 
-### EU Reverse-Charge and taxes
- 
-Kimai Cloud, as a SaaS operation, falls under "Electronically Provided Services / Data Processing" whereby the **Receiver location Principle** applies.
- 
-- The tax rules of {{ site.cloud.country }} apply.
-- A valid VAT ID is required to issue an EU reverse-charge invoice.
-- The tax-number you enter will appear on your invoice in any case.
+### EU Reverse-Charge and Taxes
 
-**The Kimai Cloud is explicitly aimed at B2B customers.**
+Kimai Cloud operates under "Electronically Provided Services / Data Processing," applying the **Receiver Location Principle**.
 
-- Business customers from the EU with Vat ID will receive reverse-charge invoices.
-- Our business location is Austria, so customers from Austria aways receive an invoice including tax. 
-- Customers from all other EU countries without Vat ID will receive invoices with VAT of their home country (under the OSS / One-Stop Shop program).
+- The tax regulations of {{ site.cloud.country }} apply.
+- A valid VAT ID is necessary to issue an EU reverse-charge invoice.
+- The tax number you provide will always appear on your invoice.
 
-### How payment data is stored
+**Kimai Cloud is specifically designed for B2B customers.**
 
-I work with the payment service provider "Stripe", which manages your payment data securely.
-Your payment details (credit card number and CVC/check digits, or IBAN for SEPA) are **never** sent to the Kimai server.
+- Business customers within the EU with a VAT ID will receive reverse-charge invoices.
+- Our business is based in Austria; therefore, Austrian customers will always receive an invoice including tax.
+- Customers from other EU countries without a VAT ID will receive invoices with their local VAT rate (under the OSS / One-Stop Shop program).
 
-There is anonymous access from "Stripe" to the following data for informational and fraud prevention purposes:
-- the card issuer (CC) or bank details (SEPA) including the country
-- the expiration date (CC)
-- the last 4 digits of the card (CC) or the IBAN (SEPA)
+### How Payment Data is Stored
 
-### User licenses
+We partner with "Stripe" to securely manage your payment data. Your payment details (credit card number and CVC/check digits or IBAN for SEPA) are **never** transmitted to Kimai's server.
 
-Usually each registered user of a Kimai Cloud is charged, but I believe in fairness:
+Stripe has anonymous access to certain data for informational and fraud prevention purposes:
+- The card issuer (CC) or bank details (SEPA), including country
+- Expiration date (CC)
+- Last four digits of the card (CC) or IBAN (SEPA)
 
-- **Active users** use one license
-- **Deactivated users** do not use a license. Once you deactivate a user, the license is free again to be re-used by another account. If you reactivate a previously deactivated user, a license is used again. 
+### User Licenses
 
-If you do not have sufficient licenses for creating a new account or for activating an existing account, then you can purchase more licenses at [My Cloud](https://www.kimai.cloud/my-cloud/).
+Typically, each registered user of Kimai Cloud incurs a charge, but we prioritize fairness:
 
-### User based billing
+- **Active users** consume one license.
+- **Deactivated users** do not consume a license. Once deactivated, a license becomes available for another account. If a previously deactivated user is reactivated, a license is consumed again.
 
-Accounts still on the deprecated **metered plans** `Plus` and `Premium` use a different calculation model (these plans are not available for new customers).
+If you lack sufficient licenses to create a new account or activate an existing one, additional licenses can be purchased at [My Cloud](https://www.kimai.cloud/my-cloud/).
 
-- **Active users will be charged**
-- Deactivated users will be charged **if they have any activity less than one month ago**, e.g.:
-  - the user was registered within the last month
-  - the user has logged in within the last month
-  - the user has a time booking within the last month (or later)
+### User-Based Billing
+
+Accounts still using the deprecated **metered plans** `Plus` and `Premium` follow a different billing model (these plans are not available for new customers).
+
+- **Active users incur charges**
+- Deactivated users incur charges **if they have been active within the last month**, such as:
+    - The user was registered within the last month
+    - The user logged in within the last month
+    - The user made a time booking within the last month (or later)
