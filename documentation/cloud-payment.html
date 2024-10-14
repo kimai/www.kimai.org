@@ -299,88 +299,98 @@
             <div>
                 
                 <div id="documentation-content">
-                    <p>You can use the test phase and the free plan without adding any payment method.
-However, you must do so before applying for a paid plan.</p>
+                    <p>You can utilize the test phase and the free plan without providing any payment information. However, this must be done before subscribing to a paid plan.</p>
 
 <h3 id="sepa-direct-debit">SEPA Direct Debit</h3>
 
-<p>Customers with a European bank account can issue a SEPA direct debit mandate.</p>
+<p>Customers with a European bank account can authorize a SEPA direct debit mandate.</p>
 
-<h3 id="credit-cards">Credit cards</h3>
+<h3 id="credit-cards">Credit Cards</h3>
 
-<p>Supported card providers include <strong>Visa, Mastercard, American Express, Discover, Diners</strong> and more.</p>
+<p>We accept major credit cards including <strong>Visa, Mastercard, American Express, Discover, Diners</strong>, and others.</p>
 
 <h3 id="payment">Payment</h3>
 
-<p>As the price depends on the plan and the number of registered users, the Kimai-Cloud is billed <strong>in hindsight</strong>: invoices are issued at the end of each billing period.</p>
+<h4 id="starter-and-professional-plans">Starter and Professional Plans</h4>
 
-<p>If you cancel your contract, you will:</p>
+<p>These are prepaid plans. You select the number of licenses you need and pay for them upfront.</p>
+
+<p>If additional licenses are required, you can purchase them at any time. The cost is prorated, meaning you only pay for the remaining time in the current subscription period.</p>
+
+<p>You may cancel your contract up to the last day before the subscription period ends. Once your subscription expires, no further invoices will be issued.</p>
+
+<h4 id="plus-and-premium-plans-deprecated">Plus and Premium Plans (Deprecated)</h4>
+
+<p>These plans were deprecated in January 2024 and are no longer available for new subscriptions. P
+ricing is based on the plan and the number of registered users. 
+You can adjust the number of users at any time, and billing for Kimai-Cloud occurs <strong>in arrears</strong>: invoices are issued at the end of each billing period.</p>
+
+<p>Refer to “User-Based Billing” below for more details.</p>
+
+<p>If you cancel your contract, a final invoice will be issued after your subscription expires.</p>
+
+<h3 id="billing-period">Billing Period</h3>
+
+<p>Billing occurs on a monthly or annual basis, with the billing date corresponding to the date the plan was initially subscribed. 
+For example, if you subscribe to the premium plan on December 26th, subsequent invoices will be issued on the 26th of each month.</p>
+
+<p>If you require billing on specific dates (e.g., the first of the month), please subscribe on that date or contact support for assistance.</p>
+
+<h3 id="trial-period">Trial Period</h3>
+
+<p>For an extended trial period or additional trial users, please contact support.</p>
+
+<h3 id="eu-reverse-charge-and-taxes">EU Reverse-Charge and Taxes</h3>
+
+<p>Kimai Cloud operates under “Electronically Provided Services / Data Processing,” applying the <strong>Receiver Location Principle</strong>.</p>
+
 <ul>
-  <li>not receive another invoice and you can use your cloud until the last day of your subscription</li>
-  <li>receive a final invoice after the cancellation period (old metered plans <code class="language-plaintext highlighter-rouge">Plus</code> and <code class="language-plaintext highlighter-rouge">Premium</code>)</li>
+  <li>The tax regulations of Austria apply.</li>
+  <li>A valid VAT ID is necessary to issue an EU reverse-charge invoice.</li>
+  <li>The tax number you provide will always appear on your invoice.</li>
 </ul>
 
-<h3 id="billing-period">Billing period</h3>
-
-<p>Billing takes place on a monthly basis, <strong>the billing day corresponds to the day the plan is booked</strong>.
-As an example: booking the premium plan on 26.12. means that subsequent invoices will be issued on the 26th of each month.</p>
-
-<p>If you need to be billed for full calendar months, please subscribe either on the next first of the month or contact support.</p>
-
-<h3 id="trial-period">Trial period</h3>
-
-<p>If you need an extended trial period and/or additional trial users, please contact support.</p>
-
-<h3 id="eu-reverse-charge-and-taxes">EU Reverse-Charge and taxes</h3>
-
-<p>Kimai Cloud, as a SaaS operation, falls under “Electronically Provided Services / Data Processing” whereby the <strong>Receiver location Principle</strong> applies.</p>
+<p><strong>Kimai Cloud is specifically designed for B2B customers.</strong></p>
 
 <ul>
-  <li>The tax rules of Austria apply.</li>
-  <li>A valid VAT ID is required to issue an EU reverse-charge invoice.</li>
-  <li>The tax-number you enter will appear on your invoice in any case.</li>
+  <li>Business customers within the EU with a VAT ID will receive reverse-charge invoices.</li>
+  <li>Our business is based in Austria; therefore, Austrian customers will always receive an invoice including tax.</li>
+  <li>Customers from other EU countries without a VAT ID will receive invoices with their local VAT rate (under the OSS / One-Stop Shop program).</li>
 </ul>
 
-<p><strong>The Kimai Cloud is explicitly aimed at B2B customers.</strong></p>
+<h3 id="how-payment-data-is-stored">How Payment Data is Stored</h3>
 
+<p>We partner with “Stripe” to securely manage your payment data. Your payment details (credit card number and CVC/check digits or IBAN for SEPA) are <strong>never</strong> transmitted to Kimai’s server.</p>
+
+<p>Stripe has anonymous access to certain data for informational and fraud prevention purposes:</p>
 <ul>
-  <li>Business customers from the EU with Vat ID will receive reverse-charge invoices.</li>
-  <li>All other customers from the EU without Vat ID will receive invoices with VAT of their home country within the OSS (One-Stop Shop) program.</li>
+  <li>The card issuer (CC) or bank details (SEPA), including country</li>
+  <li>Expiration date (CC)</li>
+  <li>Last four digits of the card (CC) or IBAN (SEPA)</li>
 </ul>
 
-<h3 id="how-payment-data-is-stored">How payment data is stored</h3>
+<h3 id="user-licenses">User Licenses</h3>
 
-<p>I work with the payment service provider “Stripe”, which manages your payment data securely.
-Your credit card details (card number and CVC/check digits) or the data of your bank account
-are <strong>never</strong> sent to the Kimai server.</p>
-
-<p><strong>I do not store your payment data!</strong></p>
-
-<p>There is anonymous access from “Stripe” to the following data for information purposes:
-the card issuer or bank, the expiration date, the last 4 digits of the  card or bank details and the issuing country.</p>
-
-<h3 id="user-licenses">User licenses</h3>
-
-<p>Usually each registered user of a Kimai Cloud is charged, but I believe in fairness:</p>
+<p>Typically, each registered user of Kimai Cloud incurs a charge, but we prioritize fairness:</p>
 
 <ul>
-  <li><strong>Active users</strong> use one license</li>
-  <li><strong>Deactivated users</strong> do not use a license. Once you deactivate a user, the license is free again to be re-used by another account. If you reactivate a previously deactivated user, a license is used again.</li>
+  <li><strong>Active users</strong> consume one license.</li>
+  <li><strong>Deactivated users</strong> do not consume a license. Once deactivated, a license becomes available for another account. If a previously deactivated user is reactivated, a license is consumed again.</li>
 </ul>
 
-<p>If you do not have sufficient licenses for creating a new account or for actovating an existing account, then you can purchase more licenses at <a href="https://www.kimai.cloud/my-cloud/">My Cloud</a>.</p>
+<p>If you lack sufficient licenses to create a new account or activate an existing one, additional licenses can be purchased at <a href="https://www.kimai.cloud/my-cloud/">My Cloud</a>.</p>
 
-<h3 id="user-based-billing">User based billing</h3>
+<h3 id="user-based-billing">User-Based Billing</h3>
 
-<p>Accounts still on the deprecated <strong>metered plans</strong> <code class="language-plaintext highlighter-rouge">Plus</code> and <code class="language-plaintext highlighter-rouge">Premium</code> use a different calculation model (these plans are not available for new customers).</p>
+<p>Accounts still using the deprecated <strong>metered plans</strong> <code class="language-plaintext highlighter-rouge">Plus</code> and <code class="language-plaintext highlighter-rouge">Premium</code> follow a different billing model (these plans are not available for new customers).</p>
 
 <ul>
-  <li><strong>Active users will be charged</strong></li>
-  <li>Deactivated users will be charged <strong>if they have any activity less than one month ago</strong>, e.g.:
+  <li><strong>Active users incur charges</strong></li>
+  <li>Deactivated users incur charges <strong>if they have been active within the last month</strong>, such as:
     <ul>
-      <li>the user was registered within the last month</li>
-      <li>the user has logged in within the last month</li>
-      <li>the user has a time booking within the last month (or later)</li>
+      <li>The user was registered within the last month</li>
+      <li>The user logged in within the last month</li>
+      <li>The user made a time booking within the last month (or later)</li>
     </ul>
   </li>
 </ul>
@@ -398,7 +408,7 @@ the card issuer or bank, the expiration date, the last 4 digits of the  card or 
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#sepa-direct-debit" class="nav-link">SEPA Direct Debit</a></li><li class="nav-item"><a href="#credit-cards" class="nav-link">Credit cards</a></li><li class="nav-item"><a href="#payment" class="nav-link">Payment</a></li><li class="nav-item"><a href="#billing-period" class="nav-link">Billing period</a></li><li class="nav-item"><a href="#trial-period" class="nav-link">Trial period</a></li><li class="nav-item"><a href="#eu-reverse-charge-and-taxes" class="nav-link">EU Reverse-Charge and taxes</a></li><li class="nav-item"><a href="#how-payment-data-is-stored" class="nav-link">How payment data is stored</a></li><li class="nav-item"><a href="#user-licenses" class="nav-link">User licenses</a></li><li class="nav-item"><a href="#user-based-billing" class="nav-link">User based billing</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#sepa-direct-debit" class="nav-link">SEPA Direct Debit</a></li><li class="nav-item"><a href="#credit-cards" class="nav-link">Credit Cards</a></li><li class="nav-item"><a href="#payment" class="nav-link">Payment</a></li><li class="nav-item"><a href="#billing-period" class="nav-link">Billing Period</a></li><li class="nav-item"><a href="#trial-period" class="nav-link">Trial Period</a></li><li class="nav-item"><a href="#eu-reverse-charge-and-taxes" class="nav-link">EU Reverse-Charge and Taxes</a></li><li class="nav-item"><a href="#how-payment-data-is-stored" class="nav-link">How Payment Data is Stored</a></li><li class="nav-item"><a href="#user-licenses" class="nav-link">User Licenses</a></li><li class="nav-item"><a href="#user-based-billing" class="nav-link">User-Based Billing</a></li></ul>
         
     </aside>
 
