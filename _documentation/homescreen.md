@@ -33,8 +33,8 @@ But I know you may still want to have the app on your phone or tablet's home scr
 
 1. Open Chrome and go to https://example.kimai.cloud/ 
 2. Click the three vertical dots in the top-right corner to open the menu
-3. Select `More tools` then `Create shortcut`
-4. Rename the app if desired, then click `Create`
+3. Select `Cast, save and share` then `Install Kimai Time-Tracker`
+4. Click `Install`
 5. That's it! The Kimai app shortcut will now appear on your desktop 
 
 ### For Chrome OS
