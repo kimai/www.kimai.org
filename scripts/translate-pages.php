@@ -11,7 +11,7 @@ $languages = ['cs', 'de', 'es', 'fr', 'he', 'hr', 'it', 'nl', 'pl', 'pt', 'pt_BR
 
 $multiLanguagePaths = [
     '_pages' => [
-        'skip' => ['documentation.md'],
+        'skip' => ['documentation.md', 'terms-cloud.md', 'terms-plugins.md'],
         'permalink' => '/:language/:original',
         'remove' => ['redirect_from'],
         'overwrite' => false,
