@@ -42,7 +42,7 @@ In case your plugin comes with a database, you might have to call something like
 The update procedure is the same as the installation produce. First delete the existing plugin directory, then repeat the installation:
 
 ```bash
-cd vsr/plugins/
+cd var/plugins/
 rm -r FooBarBundle
 unzip FooBarBundle-1.1.zip
 mv FooBarBundle-1.1 FooBarBundle
