@@ -52,14 +52,14 @@ symfony serve --port=8010
 
 You can now log in with these accounts:
 
-| Username       | Password |  API Key   | Role                |
-|----------------|:--------:|:----------:|---------------------|
-| clara_customer |  kitten  | api_kitten | Customer            |
-| john_user      |  kitten  | api_kitten | User                |
-| chris_user     |  kitten  | api_kitten | User (deactivated)  |
-| tony_teamlead  |  kitten  | api_kitten | Teamlead            |
-| anna_admin     |  kitten  | api_kitten | Administrator       |
-| susan_super    |  kitten  | api_kitten | Super-Administrator |
+| Username       | Password | API Key | Role                |
+|----------------|:--------:|:-------:|---------------------|
+| clara_customer | password |  token  | Customer            |
+| john_user      | password |  token  | User                |
+| chris_user     | password |  token  | User (deactivated)  |
+| tony_teamlead  | password |  token  | Teamlead            |
+| anna_admin     | password |  token  | Administrator       |
+| susan_super    | password |  token  | Super-Administrator |
 {: .table }
 
 Demo data can always be deleted by dropping the schema and re-creating it.

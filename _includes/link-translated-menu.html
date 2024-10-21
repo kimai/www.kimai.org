@@ -1,9 +1,16 @@
 {%- if include.item != nil and include.language != nil -%}
+    {%- assign lang =  -%}
     {%- assign type = include.type | default: 'pages' -%}
     {%- assign menu = site[type] | where: "slug", include.item | find: "lang", include.language -%}
+    {%- if menu == nil -%}
+        {%- assign menu = site[type] | where: "slug", include.item | find: "lang", "en" -%}
+    {%- endif -%}
     {%- assign class = '' -%}
     {%- if include.class != nil -%}
         {%- assign class = include.class -%}
+    {%- endif -%}
+    {%- if include.active == true and page.slug == menu.slug -%}
+        {%- assign class = class | append: ' active' -%}
     {%- endif -%}
     <a href="{{ menu.url }}"{% if include.target != nil %} target="{{ include.target }}"{% endif %}{% if class != '' %} class="{{ class }}"{% endif %}>
         {%- if include.icon != nil %}<i class="{{ include.icon }}"></i>{% endif -%}
@@ -13,6 +20,8 @@
             {{- site.data[page.lang].translation[menu.slug].name -}}
         {%- elsif site.data[include.language].translation[menu.slug] != nil -%}
             {{- site.data[include.language].translation[menu.slug].name -}}
+        {%- elsif site.data['en'].translation[menu.slug] != nil -%}
+            {{- site.data['en'].translation[menu.slug].name -}}
         {%- else -%}
             {{- menu.title -}}
         {%- endif -%}
