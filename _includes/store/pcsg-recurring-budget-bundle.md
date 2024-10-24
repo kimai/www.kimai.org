@@ -20,33 +20,6 @@ contracts with a regular budget bonus (e.g. maintenance agreements, SLAs etc.).
 * The ability to execute cronjobs on your server; this is required for executing the Kimai command that calculates
   project budgets on a regular basis
 
-## Installation
-
-1. Unzip the plugin files to the `var/plugins/` directory in your Kimai root directory.
-
-Example:  
-```bash
-unzip RecurringBudgetBundle-x.x.zip -d [kimai_root_dir]/var/plugins/
-```
-
-This should create the folder `RecurringBudgetBundle` in the aforementioned directory.
-
-2. Clear the Kimai cache
-
-```bash
-bin/console kimai:reload --env=prod
-```
-
-3. Execute the package install command
-
-```bash
-bin/console kimai:bundle:recurringbudget:install
-```
-
-This sets up the database.
-
-The plugin is now ready to use!
-
 ## Usage
 
 ### Setup projects for recurring budget
