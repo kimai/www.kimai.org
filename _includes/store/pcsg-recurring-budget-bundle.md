@@ -7,7 +7,7 @@ contracts with a regular budget bonus (e.g. maintenance agreements, SLAs etc.).
 ## Features
 * Automatic budget credits on a per-project basis (time or money)
 * Custom budget interval (every month, every 90 days or whatever you desire)
-* Detailled budget history view for all projects and budget intervals in the Kimai backend
+* Detailed budget history view for all projects and budget intervals in the Kimai backend
 * Current budget view for all projects in the Kimai backend
 * Export budget summaries for specific time periods with all budget details for your documents or your customers
 * **NEW for Kimai 2**
@@ -25,17 +25,23 @@ contracts with a regular budget bonus (e.g. maintenance agreements, SLAs etc.).
 1. Unzip the plugin files to the `var/plugins/` directory in your Kimai root directory.
 
 Example:  
-`unzip RecurringBudgetBundle-x.x.zip -d [kimai_root_dir]/var/plugins/`.
+```bash
+unzip RecurringBudgetBundle-x.x.zip -d [kimai_root_dir]/var/plugins/
+```
 
 This should create the folder `RecurringBudgetBundle` in the aforementioned directory.
 
 2. Clear the Kimai cache
 
-`bin/console kimai:reload --env=prod`
+```bash
+bin/console kimai:reload --env=prod
+```
 
 3. Execute the package install command
 
-`bin/console kimai:bundle:recurringbudget:install`
+```bash
+bin/console kimai:bundle:recurringbudget:install
+```
 
 This sets up the database.
 
@@ -62,12 +68,14 @@ The project is now set up and is considered when the console command is executed
 
 The budget addition and calculation for all projects is done via the command:
 
-`bin/console recurring-budget:calculate`
+```bash
+bin/console recurring-budget:calculate
+```
 
 * Please make sure that you set up a cronjob that executes this command on a regular basis.
 * The cronjob interval depends on how your projects are set up; e.g. if all your projects get a budget on a monthly
   basis, then an execution interval of once per month is sufficient.
-* In its default setting the command considers all project budget intervals up to the execution date.
+* With default settings the command considers all project budget intervals up to the execution date.
 
 The budget calculation works in three steps:
 
@@ -80,7 +88,9 @@ or lets you recalculate previous budget intervals (e.g. after you adjusted some 
 
 The full parameter list can be seen with:
 
-`bin/console recurring-budget:calculate --help`
+```bash
+bin/console recurring-budget:calculate --help
+```
 
 ### Budget overview
 
@@ -88,7 +98,7 @@ This plugin provides two new overview tables in the Kimai main menu.
 
 1. Project budgets
 
-Lists all projects with their **currently avaiable (time or money) budgets and total budgets**. It also shows the budget
+Lists all projects with their **currently available (time or money) budgets and total budgets**. It also shows the budget
 credited for each budget interval.
 
 In the "responsible" column you can see the name of the user who is the team lead of the team that is assigned to the
@@ -121,4 +131,4 @@ This is intended for your internal documents or as information for you customers
 
 ## Support
 
-If you require support for the usage or setup of this plugin or find any bugs please contact support@pcsg.de!
+If you require support for the usage or setup of this plugin or find any bugs please contact [support@pcsg.de](mailto:support@pcsg.de)!
