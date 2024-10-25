@@ -17,25 +17,6 @@ Nonetheless, we intend to update it according to changes in the WorkContract plu
 
 Should features of this plugin be implemented in the main plugin in the future, we will remove them from this plugin.
 
-## Installation
-
-1. Unzip the plugin files to the `var/plugins/` directory in your Kimai root directory.
-
-Example:  
-`unzip WorkContractAddonsBundle-x.x.zip -d [kimai_root_dir]/var/plugins/`.
-
-This should create the folder `WorkContractAddonsBundle` in the aforementioned directory.
-
-2. Reload Kimai
-
-`bin/console kimai:reload --env=prod`
-
-3. Prepare database
-
-`bin/console kimai:bundle:workcontractaddons:install`
-
-The plugin is now ready to use!
-
 ## Usage
 
 ### Abesence (all) view
