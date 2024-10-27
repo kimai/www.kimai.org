@@ -1,3 +1,10 @@
+**Version 2.17.1**
+
+Compatibility: requires minimum Kimai 2.17.0
+
+- Rename migration config for compatibility with new plugin installer
+- Fix migration warning in newer Kimai versions
+
 **Version 2.17.0**
 
 Compatibility: requires minimum Kimai 2.17.0

@@ -1,3 +1,12 @@
+**Version 1.15.0**
+
+Compatibility: requires minimum Kimai 2.24.0
+
+- Configure the users last working day
+- Preview the "Monthly approval PDF" before locking the month
+- Rename migration config for compatibility with new plugin installer
+
+
 **Version 1.14.0**
 
 Compatibility: requires minimum Kimai 2.22.0
