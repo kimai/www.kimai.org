@@ -1,5 +1,4 @@
 {%- if include.item != nil and include.language != nil -%}
-    {%- assign lang =  -%}
     {%- assign type = include.type | default: 'pages' -%}
     {%- assign menu = site[type] | where: "slug", include.item | find: "lang", include.language -%}
     {%- if menu == nil -%}
