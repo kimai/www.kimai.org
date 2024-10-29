@@ -158,6 +158,28 @@ docker exec -ti kimai /opt/kimai/bin/console cache:clear --env=prod
 docker exec -ti kimai /opt/kimai/bin/console kimai:bundle:workcontract:install
 ```
 
+## Using a local.yaml
+
+This requires a new mount, e.g. mounting the local file `/home/kimai/local.yaml` into the correct location inside the image.  
+
+```dockerfile
+services:
+    [...]
+
+  kimai:
+    image: kimai/kimai2:apache
+    volumes:
+      - data:/opt/kimai/var/data
+      - plugins:/opt/kimai/var/plugins
+      - /home/kimai/local.yaml:/opt/kimai/config/packages/local.yaml
+      
+    [...]
+
+volumes:
+  data:
+  plugins:
+```
+
 ## FPM and nginx
 
 Listed here are example setups for running the image(s).
