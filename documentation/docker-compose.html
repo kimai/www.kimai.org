@@ -703,6 +703,27 @@ volumes:
 docker <span class="nb">exec</span> <span class="nt">-ti</span> kimai /opt/kimai/bin/console kimai:bundle:workcontract:install
 </code></pre></div></div>
 
+<h2 id="using-a-localyaml">Using a local.yaml</h2>
+
+<p>This requires a new mount, e.g. mounting the local file <code class="language-plaintext highlighter-rouge">/home/kimai/local.yaml</code> into the correct location inside the image.</p>
+
+<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>services:
+    [...]
+
+  kimai:
+    image: kimai/kimai2:apache
+    volumes:
+      - data:/opt/kimai/var/data
+      - plugins:/opt/kimai/var/plugins
+      - /home/kimai/local.yaml:/opt/kimai/config/packages/local.yaml
+      
+    [...]
+
+volumes:
+  data:
+  plugins:
+</code></pre></div></div>
+
 <h2 id="fpm-and-nginx">FPM and nginx</h2>
 
 <p>Listed here are example setups for running the image(s).
@@ -863,7 +884,7 @@ docker run <span class="nt">--rm</span> <span class="nt">-ti</span> <span class=
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#apache-prod" class="nav-link">Apache (prod)</a></li><li class="nav-item"><a href="#environment-variables" class="nav-link">Environment variables</a></li><li class="nav-item"><a href="#caddy-reverse-proxy" class="nav-link">Caddy Reverse Proxy</a></li><li class="nav-item"><a href="#installing-plugins" class="nav-link">Installing plugins</a></li><li class="nav-item"><a href="#fpm-and-nginx" class="nav-link">FPM and nginx</a></li><li class="nav-item"><a href="#updating-kimai" class="nav-link">Updating Kimai</a><ul><li class="nav-item"><a href="#fpm-image" class="nav-link">FPM image</a></li></ul></li><li class="nav-item"><a href="#apache-dev" class="nav-link">Apache (dev)</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#apache-prod" class="nav-link">Apache (prod)</a></li><li class="nav-item"><a href="#environment-variables" class="nav-link">Environment variables</a></li><li class="nav-item"><a href="#caddy-reverse-proxy" class="nav-link">Caddy Reverse Proxy</a></li><li class="nav-item"><a href="#installing-plugins" class="nav-link">Installing plugins</a></li><li class="nav-item"><a href="#using-a-localyaml" class="nav-link">Using a local.yaml</a></li><li class="nav-item"><a href="#fpm-and-nginx" class="nav-link">FPM and nginx</a></li><li class="nav-item"><a href="#updating-kimai" class="nav-link">Updating Kimai</a><ul><li class="nav-item"><a href="#fpm-image" class="nav-link">FPM image</a></li></ul></li><li class="nav-item"><a href="#apache-dev" class="nav-link">Apache (dev)</a></li></ul>
         
     </aside>
 
