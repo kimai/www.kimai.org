@@ -7,4 +7,3 @@ layout: terms
 ---
 
 {% include pages/terms-cloud.md %}
-          

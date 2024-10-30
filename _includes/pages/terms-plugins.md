@@ -40,7 +40,7 @@
 
 15. Der Autor des Objekts bleibt Eigentümer des Objekts, gewährt Ihnen jedoch die Lizenz zu diesen Bedingungen. Diese Lizenz gilt zwischen dem Autor des Artikels und Ihnen.
 
-### Häufig gestellte Fragen
+**Häufig gestellte Fragen**
 
 - Die Plugins werden mit jährlichen Lizenzen für den Erhalt von Updates verkauft. Wenn Sie ein Abonnement kündigen, können Sie die letzte Version, die vor dem Ende unseres Abonnements veröffentlicht wurde, weiter verwenden.
 - Sie dürfen eine Plugin-Lizenz in einer zusätzlichen Test-/Entwicklungsumgebung verwenden
@@ -50,11 +50,10 @@
 - Wenn Sie für Ihre Kunden hosten, benötigt jeder Kunde eine eigene Lizenz
 
 
-
 {% else %}
 
 
-> This is a translation for information purposes only. Only the original declaration, [which is available in German]({% link _pages/de/terms-plugins.md %}), is legally valid.
+_This is a translation for information purposes only. Only the original declaration, [which is available in German]({% link _pages/de/terms-plugins.md %}), is legally valid._
 
 **This license applies to all Kimai plugins offered by Kevin Papst (unless licensed otherwise)**
 
@@ -95,7 +94,7 @@
 
 15. The author of the Item retains ownership of the Item but grants you the license on these terms. This license is between the author of the Item and you.
 
-### Frequently asked questions
+**Frequently asked questions**
 
 - The plugins are sold with annual licenses for receiving updates. If you cancel a subscription, you can keep on using the latest version which was released before the end of our subscription.
 - You are allowed to use a plugin license in one additional test/development environment

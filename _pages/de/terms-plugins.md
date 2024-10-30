@@ -1,5 +1,5 @@
 ---
-title: Allgemeine Geschäftsbedingungen (Plugins)
+title: Plugin Lizenz
 lang: de
 permalink: /de/terms-plugins.html
 sitemap: false
