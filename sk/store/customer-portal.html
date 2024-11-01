@@ -1,0 +1,803 @@
+<!doctype html>
+<html lang="sk" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index,follow">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+    <title>Customer Portal – Kimai</title>
+    <meta name="description" content="Share client and project statistics and timesheets with anyone using a secret URL, optionally password protected.">
+    <link type="application/atom+xml" rel="alternate" href="https://www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
+    <meta property="og:locale" content="sk">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kimai Time-Tracking">
+    <meta property="og:description" content="Share client and project statistics and timesheets with anyone using a secret URL, optionally password protected.">
+    <meta property="og:image" content="https://www.kimai.org/images/social-preview.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kimai Time-Tracking">
+    <meta name="twitter:site" content="@kimai_org">
+    <meta name="twitter:description" content="Share client and project statistics and timesheets with anyone using a secret URL, optionally password protected.">
+    <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.webp">
+    <link rel="alternate" hreflang="cs" href="https://www.kimai.org/cs/store/customer-portal.html">
+    <link rel="alternate" hreflang="en" href="https://www.kimai.org/store/customer-portal.html">
+    <link rel="alternate" hreflang="de" href="https://www.kimai.org/de/store/customer-portal.html">
+    <link rel="alternate" hreflang="es" href="https://www.kimai.org/es/store/customer-portal.html">
+    <link rel="alternate" hreflang="fr" href="https://www.kimai.org/fr/store/customer-portal.html">
+    <link rel="alternate" hreflang="he" href="https://www.kimai.co.il/store/customer-portal.html">
+    <link rel="alternate" hreflang="hr" href="https://www.kimai.org/hr/store/customer-portal.html">
+    <link rel="alternate" hreflang="it" href="https://www.kimai.org/it/store/customer-portal.html">
+    <link rel="alternate" hreflang="nl" href="https://www.kimai.org/nl/store/customer-portal.html">
+    <link rel="alternate" hreflang="pl" href="https://www.kimai.org/pl/store/customer-portal.html">
+    <link rel="alternate" hreflang="pt" href="https://www.kimai.org/pt/store/customer-portal.html">
+    <link rel="alternate" hreflang="pt_BR" href="https://www.kimai.org/pt_BR/store/customer-portal.html">
+    <link rel="alternate" hreflang="ru" href="https://www.kimai.org/ru/store/customer-portal.html">
+    <link rel="alternate" hreflang="sk" href="https://www.kimai.org/sk/store/customer-portal.html">
+    <link rel="alternate" hreflang="sv" href="https://www.kimai.org/sv/store/customer-portal.html">
+    <link rel="alternate" hreflang="uk" href="https://www.kimai.org/uk/store/customer-portal.html">
+    <link rel="alternate" hreflang="zh_Hans" href="https://www.kimai.org/zh_Hans/store/customer-portal.html">
+    <link rel="alternate" hreflang="zh_Hant" href="https://www.kimai.tw/store/customer-portal.html">
+    <link href="/assets/build/main.css?v6" rel="stylesheet" />
+</head>
+<body class="">
+
+<main class="page-wrapper">
+    
+
+
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand-lg    bg-light navbar-sticky">
+    <div class="container px-3">
+        
+        <a href="/sk/" class="navbar-brand pe-3">
+        <img src="/images/kimai_logo.webp" style="height:36px" alt="Kimai - Open Source sledovanie času"> Kimai
+        </a>
+        <div id="navbarNav" class="offcanvas offcanvas-end">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title">Menu</h5>
+                <button type="button" class="btn-close " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    
+                    <li class="nav-item">
+                        <a href="/sk/demo.html" class="nav-link">Demo</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/sk/pricing" class="nav-link">Pricing</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Community</a>
+                        <ul class="dropdown-menu">
+                            
+                            <li><a href="/sk/store/" class="dropdown-item"><i class="bx bx-extension me-2"></i>Obchod</a></li>
+                            <li><a href="/sk/download.html" class="dropdown-item"><i class="bx bxl-docker me-2"></i>Stiahnuť</a></li>
+                            <li><a href="/blog/" class="dropdown-item"><i class="bx bx-news me-2"></i>Novinky</a></li>
+                            <li><a href="https://github.com/kimai/kimai/discussions" target="_blank" class="dropdown-item"><i class="bx bx-chat me-2"></i>Forum</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Dokumentácia</a>
+                        <ul class="dropdown-menu">
+                            
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-manual.html" class="dropdown-item">
+                                <i class="bx bx-book me-2"></i>
+                                
+                                Užívateľská príručka
+                            </a></li>
+                            
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/cloud.html" class="dropdown-item">
+                                <i class="bx bx-cloud me-2"></i>
+                                
+                                Kimai-Cloud
+                            </a></li>
+                            
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-on-premise.html" class="dropdown-item">
+                                <i class="bx bx-server me-2"></i>
+                                
+                                Samohostovanie
+                            </a></li>
+                            
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-developer.html" class="dropdown-item">
+                                <i class="bx bx-code-alt me-2"></i>
+                                
+                                Vývojári
+                            </a></li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="pe-lg-1 ms-auto me-2">
+            
+
+
+
+<a href="https://www.kimai.cloud/auth/" class="btn btn-sm fs-sm d-none d-md-inline-flex me-2 btn-outline-secondary">Login</a>
+
+            
+
+
+
+<a href="https://www.kimai.cloud/auth/registration" class="btn btn-success btn-sm fs-sm d-inline-flex">Začnite zdarma</a>
+
+        </div>
+        <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</header>
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="bg-dark pt-2 pt-lg-3 pb-lg-5">
+    <div class="container position-relative zindex-5">
+
+        <div class="d-flex pt-3 pb-4 py-sm-4 pt-lg-5">
+        
+            
+        
+        </div>
+
+        <h1>Customer Portal</h1>
+        <p class="fs-lg text-light opacity-70">Share client and project statistics and timesheets with anyone using a secret URL, optionally password protected.</p>
+
+        
+        <div class="d-flex align-items-center">
+            <img src="/images/kevin-papst.webp" class="rounded-circle" width="60" alt="Kevin Papst">
+            <div class="ps-3">
+                <div class="text-light opacity-80 mb-1">Ponúkol</div>
+                <h6>Kevin Papst</h6>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container pt-5 mt-2 mt-lg-4 mt-xl-5">
+    <div class="row" id="buy-item-card">
+
+        <aside class="col-lg-4 col-md-5 offset-xl-1 order-md-2 mb-5">
+            <div style="margin-top: -96px;"></div>
+            <div class="position-sticky top-0 pt-5">
+                <div class="pt-5 mt-md-3">
+                    <div class="card shadow-sm p-sm-3">
+                        <div class="card-body">
+                            
+
+                            <div class="h2 d-flex align-items-center mb-4">
+                                <span class="text-nowrap">zdarma</span>
+                                <small class="text-muted fs-xl fw-normal ms-2">
+                                    
+                                    
+                                </small>
+                            </div>
+
+                            
+                                <div class="row align-items-center mb-3">
+                                    <p class="text-muted">
+                                        Please provide a valid email address to access your plugin and manage your licenses.
+                                    </p>
+                                </div>
+                            
+
+                            <div class="row align-items-center mb-3">
+                                <a class="btn btn-success btn-lg w-100 btn-buy" href="https://kimai.lemonsqueezy.com/buy/43758118-a034-4c34-b9ac-27f989164a2e" target="_blank"><i class="bx bx-cart me-2"></i> Stiahnuť</a>
+                            </div>
+
+                            
+
+                            
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Content -->
+        <div class="col-xl-7 col-lg-8 col-md-7 order-md-1 mb-5">
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <a href="#store-info" class="nav-link active" data-bs-toggle="tab" role="tab">
+                        <i class="bx bx-home-alt opacity-70 me-2"></i>
+                        Popis
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#store-installation" class="nav-link" data-bs-toggle="tab" role="tab">
+                        Inštalácia
+                    </a>
+                </li>
+                
+                
+                <li class="nav-item">
+                    <a href="#store-changelog" class="nav-link" data-bs-toggle="tab" role="tab">
+                        Changelog
+                    </a>
+                </li>
+                
+                
+                <li class="nav-item">
+                    <a href="#store-demo" class="nav-link" data-bs-toggle="tab" role="tab">
+                        Vyskúšať
+                    </a>
+                </li>
+                
+                
+                <li class="nav-item">
+                    <a target="_blank" href="/documentation/plugin-customer-portal.html" class="nav-link">
+                        <i class="bx bx-link-external opacity-70 me-2"></i>
+                        Dokumentácia
+                    </a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="store-info" role="tabpanel">
+
+                    <p>A Kimai plugin that allows you to share your timesheets details and statistics for customer and projects via a URL.</p>
+
+<h2 id="features">Features</h2>
+
+<ul>
+  <li>Shared details with your customers via URL</li>
+  <li>Create publicly accessible URLs for customer details (stats and timesheets)</li>
+  <li>Create publicly accessible URLs for the project details (stats and timesheets)</li>
+  <li>Access control: protect the shared details with a password (optional)</li>
+  <li>View control feature
+    <ul>
+      <li>Show or hide user of records (name of user)</li>
+      <li>Show or hide rates of records (hour rate, total rate)</li>
+      <li>Show or hide chart with day comparison by selected month</li>
+      <li>Show or hide chart with month comparison by selected year</li>
+    </ul>
+  </li>
+  <li>View customizations
+    <ul>
+      <li>Define whether and how to merge records of a day (e.g. merge records of one day, use description of last record)</li>
+    </ul>
+  </li>
+</ul>
+
+<p>After installation: open Kimai in your browser and navigate to “Applications &gt; Customer Portal”.</p>
+
+<h2 id="credits">Credits</h2>
+
+<p>This plugin was <a href="https://github.com/dexterity42/SharedProjectTimesheetsBundle">originally</a> created by <a href="https://vettersolutions.de">Fabian Vetter</a> in 2020.</p>
+
+<p>As it was abandoned by the original author, it has been forked and further extended by Kevin Papst since then.</p>
+
+
+
+                    
+                </div>
+
+                
+                <div class="tab-pane fade" id="store-installation" role="tabpanel">
+                    <h2 id="installation">Inštalácia</h2>
+                    
+    
+    <h3>Kopírovať súbory</h3>
+
+    <p>
+        Extract the ZIP file and upload the included directory and all files to your Kimai installation to the new directory:
+    </p>
+
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">var/plugins/CustomerPortalBundle/</code></pre></figure>
+
+
+    
+
+    <p>The file structure needs to look like this afterwards:</p>
+
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">var/plugins/
+├── CustomerPortalBundle
+│   ├── CustomerPortalBundle.php
+|   └ ... more files and directories follow here ...</code></pre></figure>
+
+
+    <h3>Vymazať cache</h3>
+
+    <p>
+        After uploading the files, Kimai needs to know about the new plugin. It will be found once the <a href="/documentation/updates.html">cache was re-built</a>.
+        Call these commands from the Kimai directory:
+    </p>
+
+    <div class="card border-primary mb-3">
+                       <p class="card-title bg-faded-primary p-1 mb-1"><strong><i class="bx bxs-info-circle ms-2 me-2 text-primary fs-5"></i>How to reload Kimai cache</strong></p>
+                       <div class="card-body card-note m-0 pt-3 px-3">
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/console kimai:reload --env=prod
+</code></pre></div></div>
+
+<p>It is not advised, but in case the above command fails you could try:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm -r var/cache/prod/*
+</code></pre></div></div>
+</div>
+                   </div>
+
+
+    <p>You might have to set file permissions afterwards:</p>
+
+<div class="card border-primary mb-3">
+                       <p class="card-title bg-faded-primary p-1 mb-1"><strong><i class="bx bxs-info-circle ms-2 me-2 text-primary fs-5"></i>Adjust file permission</strong></p>
+                       <div class="card-body card-note m-0 pt-3 px-3">
+<p>You have to allow PHP (your webserver process) to write to <code class="language-plaintext highlighter-rouge">var/</code> and it subdirectories.</p>
+
+<p>Here is an example for Debian/Ubuntu, to be executed inside the Kimai directory:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chown -R :www-data .
+chmod -R g+r .
+chmod -R g+rw var/
+</code></pre></div></div>
+
+<p>You might not need these commands in a shared-hosting environment.
+And you probably need to prefix them with <code class="language-plaintext highlighter-rouge">sudo</code> and/or the group might be called different from <code class="language-plaintext highlighter-rouge">www-data</code>.</p>
+</div>
+                   </div>
+
+
+    
+        <h3>Vytvoriť databázu</h3>
+
+        <p>Run the following command:</p>
+
+        
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">bin/console kimai:bundle:customer-portal:install</code></pre></figure>
+
+
+        <p>This will create the required database tables and update them to the latest version.</p>
+
+<div class="alert alert-warning d-flex" role="alert">
+<i class="bx bx-alarm-exclamation lead me-3"></i>
+<p>If you see an error like <code class="language-plaintext highlighter-rouge">There are no commands defined in the "kimai:bundle:XYZ" namespace.</code>,
+then either the directory has a wrong name (must be <strong>var/plugins/CustomerPortalBundle/</strong>) or you forgot to clear the cache (look above).</p>
+</div>
+    
+
+    
+
+
+
+                    <h3>Aktualizácie</h3>
+                    
+    
+
+    <p>Updating the plugin works exactly like the installation:</p>
+    <ul>
+        <li>Delete the directory <code class="language-plaintext highlighter-rouge">var/plugins/CustomerPortalBundle/</code>
+        </li>
+<li>
+            Execute all installation steps again:
+            <ul>
+                <li>Kopírovať súbory</li>
+                <li>Vymazať cache</li>
+                <li>Update database with <code class="language-plaintext highlighter-rouge">bin/console kimai:bundle:customer-portal:install</code>
+                
+            </li>
+</ul>
+        </li>
+    </ul>
+
+
+
+                </div>
+                
+
+                
+                <div class="tab-pane fade" id="store-changelog" role="tabpanel">
+                    <h2 id="compatibility">Changelog</h2>
+                    
+                    <p><strong>Version 4.1.1</strong></p>
+
+<p>Compatibility: requires minimum Kimai 2.21.0</p>
+
+<ul>
+  <li>Added missing “Documentation” link</li>
+  <li>Create with invalid type caused 500: redirect to manage view instead</li>
+</ul>
+
+<p><strong>Version 4.1.0</strong></p>
+
+<p>Compatibility: requires minimum Kimai 2.21.0</p>
+
+<ul>
+  <li>Move “Customer Portal” to “Administration” menu</li>
+  <li>Use new database table <code class="language-plaintext highlighter-rouge">kimai2_customer_portals</code>
+</li>
+  <li>Automatic migration of existing URL shares and database cleanup</li>
+  <li>Move statistics card above timesheets</li>
+  <li>Fix: broken customer statistics (customer portals with budget display for customer without budget)</li>
+</ul>
+
+<p><strong>Version 4.0.0</strong></p>
+
+<p>Compatibility: requires minimum Kimai 2.21.0</p>
+
+<ul>
+  <li>Rename to “Customer portal”</li>
+  <li>Allow to switch month and year via dropdowns</li>
+  <li>Simplify URLs by using 20-char share-key only (old URLS still working)</li>
+  <li>Toggle financial- and time budget statistics for shared URLs</li>
+  <li>Allow to share an entire customer</li>
+  <li>Add details button and stats in project listing on shared customer page</li>
+  <li>Use translations from core, use latest repository features</li>
+  <li>Use password field for login</li>
+  <li>Fixes missing timesheet if user and start time is the same</li>
+</ul>
+
+
+                </div>
+                
+
+                
+                <div class="tab-pane fade" id="store-demo" role="tabpanel">
+                    <h2 id="demo">Vyskúšať</h2>
+                    <p class="mb-3">
+                        Tento plugin môžete otestovať na <a href="https://demo.kimai.org">demo.kimai.org</a>:
+                    </p>
+                    <p>
+                        Uživateľské meno: <strong>susan_super</strong>
+                        <br>
+                        Heslo: <strong>password</strong>
+                    </p>
+                    <p class="mb-2">
+                        <a href="/en/demo.html">Viacej testovacích účtov nájdete tu</a>.
+                    </p>
+                </div>
+                
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<section class="container py-lg-4 py-xl-5 mt-3 mb-5">
+    <div class="row g-0 bg-dark bg-repeat-0 bg-position-center border rounded-3 overflow-hidden" style="background-image: url(/images/layout/author-pattern.svg);">
+        <div class="col-md-5 bg-repeat-0 bg-position-top-center bg-size-cover" style="background-image: url(/images/kevin-papst.webp); min-height: 350px;"></div>
+        <div class="col-md-7 py-xl-5 px-4">
+            <div class="py-5 mx-auto" style="max-width: 530px;">
+                <div class="fs-xl text-light opacity-50 mb-2">Ponúkol</div>
+                <h2 class="h1 text-light mb-4">Kevin Papst</h2>
+                <p class="text-light opacity-70 pb-4">
+                    Building Kimai since 2009
+                </p>
+
+                <div class="mb-4">
+                    V prípade otázok, obráťte sa priamo na vývojárov pomocou týchto kontaktných údajov.
+                </div>
+                <div class="d-flex flex-column flex-sm-row flex-wrap">
+                    
+                    <a href="https://www.kevinpapst.de" class="btn btn-behance me-sm-4 mb-3 mb-sm-0">
+                        <i class="bx bx-home fs-xl me-2"></i>
+                        Homepage
+                    </a>
+                    
+                    
+                    <a href="mailto:support@kimai.org" class="btn btn-blogger me-sm-4 mb-3 mb-sm-0">
+                        <i class="bx bx-envelope fs-xl me-2"></i>
+                        Email
+                    </a>
+                    
+                    
+                    <a href="https://github.com/kevinpapst" class="btn btn-github me-sm-4 mb-3 mb-sm-0">
+                        <i class="bx bxl-github fs-xl me-2"></i>
+                        GitHub
+                    </a>
+                    
+                    <br>
+                    
+                    <a href="https://twitter.com/keleo" class="btn btn-twitter me-sm-4 mb-3 mb-sm-0 mt-3">
+                        <i class="bx bxl-twitter fs-xl me-2"></i>
+                        Twitter
+                    </a>
+                    
+                    
+                    <a href="https://phpc.social/@kevinpapst" class="btn btn-messenger me-sm-4 mb-3 mb-sm-0 mt-3">
+                        <i class="bx bxl-mastodon fs-xl me-2"></i>
+                        Mastodon
+                    </a>
+                    
+                    
+                    <a href="https://www.youtube.com/@kimai_org" class="btn btn-youtube me-sm-4 mb-3 mb-sm-0 mt-3">
+                        <i class="bx bxl-youtube fs-xl me-2"></i>
+                        Youtube
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+</main>
+
+
+
+
+
+
+
+
+<footer class="footer bg-dark pt-5 pb-4">
+    <div class="container pt-1 pt-md-3 pt-lg-4 pt-xl-5">
+        <div class="row">
+            <div class="col-md-5 col-xl-4 mb-4 mb-md-5 mb-lg-0">
+                <div class="d-flex align-items-center pb-3 mb-1">
+                    <div class="navbar-brand p-0 pe-1 me-0">
+                        Kimai
+                    </div>
+                    <hr class="vr mt-2 mx-3" style="height: 26px;">
+                    <div class="text-white fw-semibold ps-1">Sledovanie času urobené jednoduchým</div>
+                </div>
+                <p class="text-body fs-sm pb-1 pb-md-2 pb-lg-2 mb-2">
+                    Bezplatné a jednoduché sledovanie času pre freelancov, agentúry a firmy. Kimai je open source softvér dostupný na samohostovanie aj ako služba SaaS.
+                </p>
+                <div class="d-flex flex-column flex-sm-row flex-lg-column align-items-sm-center align-items-lg-start justify-content-between pb-1 pb-md-2 pb-lg-3 mb-3">
+                    <div class="position-relative">
+                        <div class="dropdown">
+                            <button type="button" class="form-select" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-globe top-50 start-0 text-body me-2"></i>
+                                Slovenčina
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/cs/" class="dropdown-item" title="Kimai - Open Source sledování času">Čeština</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/de/" class="dropdown-item" title="Kimai - Open Source Zeiterfassung">Deutsch</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org" class="dropdown-item" title="Kimai - Open Source time-tracker">English</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/es/" class="dropdown-item" title="Página de inicio de Kimai">Español</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/fr/" class="dropdown-item" title="Kimai - Suivi du temps à code ouvert">Français</a>
+                                
+                                    <a dir="rtl" href="https://www.kimai.co.il" class="dropdown-item" title="Kimai - מעקב שעות בקוד פתוח">עברית</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/hr/" class="dropdown-item" title="Kimai – Program otvorenog koda za evidentiranje vremena">Hrvatski</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/it/" class="dropdown-item" title="Kimai: time-tracker open source">Italiano</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/nl/" class="dropdown-item" title="Kimai - Open Source tijdregistratie">Nederlands</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/pl/" class="dropdown-item" title="Kimai - Otwarte oprogramowanie do śledzenia czasu">Polski</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/pt/" class="dropdown-item" title="Kimai - Rastreador de tempo de código aberto">Português</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/pt_BR/" class="dropdown-item" title="Kimai - Rastreador de tempo de código aberto">Português (Brasil)</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/ru/" class="dropdown-item" title="Kimai - регистратор времени с открытым исходным кодом">Rусский</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/sk/" class="dropdown-item active" title="Kimai - Open Source sledovanie času">Slovenčina</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/sv/" class="dropdown-item" title="Kimai - öppen källkod tidsspårare">Svenska</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/uk/" class="dropdown-item" title="Kimai — реєстратор часу з відкритим сирцевим кодом">Українська</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/zh_Hans/" class="dropdown-item" title="Kimai - 开源时间跟踪器">中文（中国）</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.tw" class="dropdown-item" title="Kimai —— 開放源始碼的工時追蹤工具">中文（繁體）</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-md-7 offset-xl-1">
+                <div id="footer-links" class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <h6 class="fs-lg mb-1 mb-md-2">
+                            <span class="d-none d-md-block">Company</span>
+                            <a href="#tools" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Company</a>
+                        </h6>
+                        <div id="tools" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/sk/about.html" class="nav-link fs-sm fw-medium px-0 py-1">Informácie o Kimai</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/sk/features.html" class="nav-link fs-sm fw-medium px-0 py-1">Funkcie</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/sk/support.html" class="nav-link fs-sm fw-medium px-0 py-1">Podpora</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/sk/reviews" class="nav-link fs-sm fw-medium px-0 py-1">Reviews</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/en/kimai-discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">Discount codes</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <h6 class="fs-lg mb-1 mb-md-2">
+                            <span class="d-none d-md-block">Kimai for</span>
+                            <a href="#landing-kimai-for" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Kimai</a>
+                        </h6>
+                        <div id="landing-kimai-for" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/en/time-tracking-non-profit.html" class="nav-link fs-sm fw-medium px-0 py-1">Non-Profits</a>
+                                </li>
+                                
+                                
+                                <li class="nav-item">
+                                    <a href="https://www.kimai.org/en/open-source-time-log" class="nav-link fs-sm fw-medium px-0 py-1" title="Open-Source Time Log">Time Log</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="https://www.kimai.org/en/open-source-time-tracker" class="nav-link fs-sm fw-medium px-0 py-1" title="Open-Source Time Tracker">Time Tracker</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="https://www.kimai.org/en/open-source-timesheet" class="nav-link fs-sm fw-medium px-0 py-1" title="Open-Source Timesheet">Timesheet</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <h6 class="fs-lg mb-1 mb-md-2">
+                            <span class="d-none d-md-block">Porovnanie</span>
+                            <a href="#footer-cmp" class="d-block text-dark dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Porovnanie</a>
+                        </h6>
+                        <div id="footer-cmp" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/sk/compare/" class="nav-link fs-sm fw-medium px-0 py-1">Porovnajte sledovanie času</a>
+                                </li>
+                                
+                                
+                                    <li class="nav-item">
+                                        <a href="https://www.kimai.org/en/clockify-alternative" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to Clockify">Clockify</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="https://www.kimai.org/en/openproject-alternative" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to OpenProject">OpenProject</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="https://www.kimai.org/en/toggl-alternative" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to toggl track">toggl track</a>
+                                    </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="d-md-flex align-items-center justify-content-between pt-sm-2 pt-md-4 pt-lg-5 pb-2 mt-4 ">
+    <ul class="nav order-md-1 ms-md-0 mb-3 mb-md-0">
+        <li class="nav-item">
+            <a href="/sk/site-notice.html" class="nav-link fs-sm fw-medium">Upozornenia na stránkách</a>
+        </li>
+        <li class="nav-item">
+            <a href="/sk/privacy-policy.html" class="nav-link fs-sm fw-medium">Zásady ochrany osobných údajov</a>
+        </li>
+        <li class="nav-item">
+            <a href="/sk/terms-cloud.html" class="nav-link fs-sm fw-medium">Terms</a>
+        </li>
+    </ul>
+    <div class="nav order-md-2 mb-3 mb-md-0">
+        <a target="_blank" href="https://github.com/kimai/kimai" class="btn btn-icon btn-secondary btn-github rounded-circle me-3" aria-label="GitHub">
+    <i class="bx bxl-github"></i>
+</a>
+<a target="_blank" href="https://www.youtube.com/@kimai_org" class="btn btn-icon btn-secondary btn-youtube rounded-circle me-3" aria-label="YouTube">
+    <i class="bx bxl-youtube"></i>
+</a>
+<a target="_blank" href="https://www.linkedin.com/company/kimai-timetracker/" class="btn btn-icon btn-secondary btn-linkedin rounded-circle me-3" aria-label="LinkedIn">
+    <i class="bx bxl-linkedin"></i>
+</a>
+<a target="_blank" href="https://www.instagram.com/kimai_org" class="btn btn-icon btn-secondary btn-instagram rounded-circle me-3" aria-label="Instagram">
+    <i class="bx bxl-instagram"></i>
+</a>
+<a target="_blank" href="https://twitter.com/kimai_org" class="btn btn-icon btn-secondary btn-twitter rounded-circle me-3" aria-label="Twitter / X">
+    <i class="bx bxl-twitter"></i>
+</a>
+<a target="_blank" href="https://www.facebook.com/people/Kimai/61557684102167/" class="btn btn-icon btn-secondary btn-facebook rounded-circle me-3" aria-label="Facebook">
+    <i class="bx bxl-facebook"></i>
+</a>
+<a target="_blank" href="https://phpc.social/@kimai" class="btn btn-icon btn-secondary btn-messenger rounded-circle me-3" aria-label="Mastodon">
+    <i class="bx bxl-mastodon"></i>
+</a>
+
+    </div>
+    <ul class="nav order-md-3">
+        <li class="nav-item">
+            <a href="https://uptime.kimai.cloud/" target="_blank" class="nav-link fs-sm fw-medium">Status</a>
+        </li>
+    </ul>
+    
+</div>
+
+    </div>
+</footer>
+
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js?v1"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
+
+</body>
+</html>
