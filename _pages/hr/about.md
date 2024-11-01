@@ -2,7 +2,7 @@
 title: "About Kimai"
 lang: hr
 layout: default
-permalink: /hr/o-programu-kimai.html
+permalink: /hr/about.html
 ---
 
 {% include pages/about.md %}
