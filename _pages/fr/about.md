@@ -1,8 +1,8 @@
 ---
 title: "A propos de Kimai"
-layout: default
 lang: fr
+layout: default
 permalink: /fr/apropos-kimai.html
 ---
 
-{% include pages/about.html %}
+{% include pages/about.md %}

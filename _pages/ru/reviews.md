@@ -7,4 +7,4 @@ navi_absolute: true
 permalink: /ru/reviews
 ---
 
-{% include pages/reviews.html %}
+{% include pages/reviews.md %} 

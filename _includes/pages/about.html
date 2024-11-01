@@ -1,8 +1,6 @@
 
 {% assign author = site.data.developer.kevinpapst %}
 
-{% include pages/about-timeline-v2.html %}
-
 <section class="container mb-5 py-md-3 py-lg-4 py-xl-5">
     <img src="/images/kimai_logo.webp" class="float-sm-end" style="margin-left: 20px" alt="Kimai logo">
     {{ site.data[page.lang].translation.history.current | markdownify }}
@@ -105,8 +103,3 @@
     <a href="{{ site.kimai_v2_repo }}/discussions" target="_blank" class="btn btn-secondary mb-4">Discussions</a>
 </section>
 {% endcomment %}
-
-{% include pages/about-timeline-v1.html %}
-
-{% include cta-begin-journey.html %}
-

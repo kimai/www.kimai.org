@@ -1,7 +1,3 @@
-{% assign title=site.data[page.lang].translation.reviews.name %}
-{% assign intro=site.data[page.lang].translation.reviews.subtitle|newline_to_br %}
-
-{% include hero-text.html title=title intro=intro %}
 
 <div class="text-center mb-2">
     <a href="{{ site.testimonial_add }}" target="_blank" class="btn btn-info rounded-pill">{{ site.data[page.lang].translation.reviews.leave }}</a>
@@ -13,6 +9,3 @@
         {% include testimonials-cards.html testimonials=testimonials %}
     </div>
 </section>
-
-{% include cta-begin-journey.html %}
-

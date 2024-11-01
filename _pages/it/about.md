@@ -4,6 +4,5 @@ lang: it
 layout: default
 permalink: /it/about.html
 ---
- 
-{% include pages/about.html %}
- 
+
+{% include pages/about.md %}

@@ -8,4 +8,4 @@ navi_absolute: false
 permalink: /zh_Hant/pricing
 ---
 
-{% include pages/pricing.html %}
+{% include pages/pricing.md %} 

@@ -7,4 +7,4 @@ navi_absolute: true
 permalink: /pt_BR/demo.html
 ---
 
-{% include pages/demo.html %}
+{% include pages/demo.md %}

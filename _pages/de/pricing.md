@@ -8,5 +8,4 @@ navi_absolute: false
 permalink: /de/pricing
 ---
 
-{% include pages/pricing.html %}
-          
+{% include pages/pricing.md %} 

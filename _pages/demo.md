@@ -6,5 +6,5 @@ navi_dark: true
 navi_absolute: true
 permalink: /en/demo.html
 ---
- 
-{% include pages/demo.html %}   
+
+{% include pages/demo.md %}
