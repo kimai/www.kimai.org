@@ -6,4 +6,3 @@ layout: download
 ---
 
 {% include pages/download.md %}
- 

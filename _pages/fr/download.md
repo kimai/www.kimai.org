@@ -1,5 +1,5 @@
 ---
-title: Téléchargement
+title: Download
 lang: fr
 permalink: /fr/download.html
 layout: download

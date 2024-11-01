@@ -1,8 +1,8 @@
 ---
-title: Preuzimanje
+title: Download
 lang: hr
-layout: download
 permalink: /hr/download.html
+layout: download
 ---
 
 {% include pages/download.md %}

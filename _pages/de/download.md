@@ -1,9 +1,8 @@
 ---
 title: Download
 lang: de
-layout: download
 permalink: /de/download.html
+layout: download
 ---
 
 {% include pages/download.md %}
- 
