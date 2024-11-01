@@ -1,5 +1,5 @@
 ---
-title: Démo
+title: Demo
 lang: fr
 layout: default
 navi_dark: true

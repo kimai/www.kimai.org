@@ -16,7 +16,7 @@ $multiLanguagePaths = [
         'remove' => ['redirect_from'],
         'overwrite' => false,
         'with_content' => true,
-        'skip_content' => ['blog.html'],
+        'skip_content' => ['index.html', 'blog.html', 'store.html'],
     ],
     /*
     '_error' => [

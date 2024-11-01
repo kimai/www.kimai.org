@@ -1,5 +1,5 @@
 ---
-title: "A propos de Kimai"
+title: "About Kimai"
 lang: fr
 layout: default
 permalink: /fr/apropos-kimai.html

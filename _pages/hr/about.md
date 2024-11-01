@@ -1,5 +1,5 @@
 ---
-title: "O programu Kimai"
+title: "About Kimai"
 lang: hr
 layout: default
 permalink: /hr/o-programu-kimai.html
