@@ -1,10 +1,9 @@
 ---
 title: Privacy Policy
 lang: it
-sitemap: false
 permalink: /it/privacy-policy.html
 canonical: /en/privacy-policy.html
+layout: terms
 ---
 
 {% include pages/privacy-policy.md %}
- 

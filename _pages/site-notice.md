@@ -2,8 +2,8 @@
 title: Site notice
 lang: en
 permalink: /en/site-notice.html
-sitemap: false
+canonical: /en/site-notice.html
 layout: terms
 ---
- 
+
 {% include pages/site-notice.md %}

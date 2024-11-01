@@ -1,9 +1,9 @@
 ---
-title: Politique de confidentialité
+title: Privacy Policy
 lang: fr
-sitemap: false
 permalink: /fr/privacy-policy.html
 canonical: /en/privacy-policy.html
+layout: terms
 ---
 
 {% include pages/privacy-policy.md %}

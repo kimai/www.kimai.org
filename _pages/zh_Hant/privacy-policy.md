@@ -2,8 +2,8 @@
 title: Privacy Policy
 lang: zh_Hant
 permalink: /zh_Hant/privacy-policy.html
-sitemap: false
+canonical: /en/privacy-policy.html
+layout: terms
 ---
 
 {% include pages/privacy-policy.md %}
- 
