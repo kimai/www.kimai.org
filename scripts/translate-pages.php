@@ -16,6 +16,7 @@ $multiLanguagePaths = [
         'remove' => ['redirect_from'],
         'overwrite' => false,
         'with_content' => true,
+        'skip_content' => ['blog.html'],
     ],
     /*
     '_error' => [
@@ -23,6 +24,7 @@ $multiLanguagePaths = [
         'remove' => [],
         'overwrite' => true,
         'with_content' => false,
+        'skip_content' => [],
     ],
     */
     '_store' => [
@@ -31,6 +33,7 @@ $multiLanguagePaths = [
         'remove' => ['redirect_from'],
         'overwrite' => false, // do not change this flag, it will cause too many changes in existing pages
         'with_content' => true,
+        'skip_content' => [],
     ],
 ];
 
@@ -54,7 +57,7 @@ foreach ($multiLanguagePaths as $path => $settings)
 
             if ($settings['overwrite'] || !file_exists($langTargetFile)) {
 
-                if ($settings['with_content']) {
+                if ($settings['with_content'] && !in_array($baseFileName, $settings['skip_content'], true)) {
                     $newContentFile = $contentTarget . '/' . $baseFileName;
 
                     if (!file_exists($newContentFile)) {
