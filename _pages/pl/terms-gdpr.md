@@ -1,7 +1,7 @@
 ---
 title: Data processing
-lang: en
-permalink: /en/terms-gdpr.html
+lang: pl
+permalink: /pl/terms-gdpr.html
 canonical: /en/terms-gdpr.html
 layout: terms
 ---

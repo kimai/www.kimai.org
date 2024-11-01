@@ -1,7 +1,7 @@
 ---
 title: "Trademark policy"
-lang: en
-permalink: /en/trademark-policy.html
+lang: zh_Hant
+permalink: /zh_Hant/trademark-policy.html
 canonical: /en/trademark-policy.html
 layout: terms
 ---

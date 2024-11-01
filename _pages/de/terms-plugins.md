@@ -1,10 +1,8 @@
 ---
-title: Plugin Lizenz
+title: Plugin License
 lang: de
 permalink: /de/terms-plugins.html
-sitemap: false
 layout: terms
 ---
 
 {% include pages/terms-plugins.md %}
-          

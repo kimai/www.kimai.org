@@ -1,7 +1,7 @@
 ---
 title: Plugin License
-lang: en
-permalink: /en/terms-plugins.html
+lang: zh_Hant
+permalink: /zh_Hant/terms-plugins.html
 canonical: /en/terms-plugins.html
 layout: terms
 ---

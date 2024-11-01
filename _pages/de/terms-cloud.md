@@ -1,8 +1,7 @@
 ---
-title: Allgemeine Geschäftsbedingungen (Cloud)
+title: Terms of service (Cloud) 
 lang: de
 permalink: /de/terms-cloud.html
-sitemap: false
 layout: terms
 ---
 

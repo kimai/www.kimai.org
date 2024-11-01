@@ -1,7 +1,7 @@
 ---
 title: Plugin License
-lang: en
-permalink: /en/terms-plugins.html
+lang: pt_BR
+permalink: /pt_BR/terms-plugins.html
 canonical: /en/terms-plugins.html
 layout: terms
 ---

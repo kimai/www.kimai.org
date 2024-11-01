@@ -1,7 +1,7 @@
 ---
 title: Terms of service (Cloud) 
-lang: en
-permalink: /en/terms-cloud.html
+lang: sk
+permalink: /sk/terms-cloud.html
 canonical: /en/terms-cloud.html
 layout: terms
 ---

@@ -1,8 +1,7 @@
 ---
-title: Auftragsverarbeitung
+title: Data processing
 lang: de
 permalink: /de/terms-gdpr.html
-sitemap: false
 layout: terms
 ---
 
