@@ -33,7 +33,14 @@ The custom fields will be shown on the "create and edit entity" forms and can ha
 | `choice-list`      | drop-down with custom entries                                                       |
 | `auto-tags`        | automatic timesheet tagging through assignment on activities/projects/custo mers    |
 {: .table }
-   
+
+## Default value
+
+Many fields support setting a `Default value`. 
+
+As the type of the `default value` and therefor the input field depends on the selected `Field type`, 
+this input field only appears after saving the new custom-field and then re-opening its configuration.
+
 ### Checkbox
 
 Use the value `1` as default value for a pre-checked box or `0` for an unchecked box.
