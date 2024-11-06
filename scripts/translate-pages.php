@@ -113,6 +113,10 @@ foreach ($multiLanguagePaths as $path => $settings)
                     }
                 }
 
+                if (str_contains($translatedContent, 'canonical: /en/')) {
+                    $translatedContent = str_replace('sitemap: true', 'sitemap: false', $translatedContent);
+                }
+
                 $translatedContent = str_replace('lang: en', $replaceMe, $translatedContent);
 
                 foreach ($settings['remove'] as $removal) {
