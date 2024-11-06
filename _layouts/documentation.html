@@ -38,7 +38,7 @@ layout: base
             <span class="badge bg-warning">{{ chapter_title }}</span>
         </div>
         <div class="d-flex align-items-center w-100">
-            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 9.75rem;">
+            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 6.75rem;">
                 {% for group in site.data.menu-documentation %}
                     {% assign docs_config = group[1] %}
                     {% assign docs_page = site.documentation | where: "slug", docs_config.slug | first %}
