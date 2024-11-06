@@ -64,7 +64,7 @@
     {%- assign langPages = site[page.collection] | where: "slug", page.slug -%}
     {%- if langPages and langPages.size > 1 %}
     {%- for langPage in langPages %}
-    <link rel="alternate" hreflang="{{ langPage.lang }}" href="{% include link-language-domain.html language=langPage.lang url=langPage.url %}">
+    <link rel="alternate" hreflang="{{ langPage.lang | replace: '_', '-' | downcase }}" href="{% include link-language-domain.html language=langPage.lang url=langPage.url %}">
     {%- endfor %}
     {%- endif %}
     {%- endif %}
