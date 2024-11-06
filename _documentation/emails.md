@@ -37,9 +37,11 @@ You get all the above settings from your email provider. Ports and encryption ca
 
 ## Testing emails
 
-You can run `bin/console mailer:test admin@example.com` to verify if the connection string is working.
+You can run `bin/console mailer:test admin@example.com --from=test@example.com` to verify if the connection string is working.
 
-Obviously you replace `admin@example.com` with the value you have configured for `MAILER_FROM`.
+You have to replace:
+- `admin@example.com` with your own email address to receive the test email 
+- `test@example.com` with the value you have configured for `MAILER_FROM`
 
 ## Troubleshooting
 
