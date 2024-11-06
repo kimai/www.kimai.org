@@ -594,9 +594,13 @@ Please read their documentation to find out more about possible connection detai
 
 <h2 id="testing-emails">Testing emails</h2>
 
-<p>You can run <code class="language-plaintext highlighter-rouge">bin/console mailer:test admin@example.com</code> to verify if the connection string is working.</p>
+<p>You can run <code class="language-plaintext highlighter-rouge">bin/console mailer:test admin@example.com --from=test@example.com</code> to verify if the connection string is working.</p>
 
-<p>Obviously you replace <code class="language-plaintext highlighter-rouge">admin@example.com</code> with the value you have configured for <code class="language-plaintext highlighter-rouge">MAILER_FROM</code>.</p>
+<p>You have to replace:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">admin@example.com</code> with your own email address to receive the test email</li>
+  <li><code class="language-plaintext highlighter-rouge">test@example.com</code> with the value you have configured for <code class="language-plaintext highlighter-rouge">MAILER_FROM</code></li>
+</ul>
 
 <h2 id="troubleshooting">Troubleshooting</h2>
 
