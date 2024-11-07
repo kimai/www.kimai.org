@@ -1,27 +1,27 @@
 ---
 layout: base
 ---
+{% assign homepage = site.pages | where: 'lang', page.lang | find: 'slug', 'index' %}
+{% assign features = site.pages | where: 'lang', page.lang | find: 'slug', 'features' %}
 
 <main class="page-wrapper">
     {% include header-navigation.html %}
 
     <section class="container pt-4 pb-5 mb-lg-5">
 
-        <!-- Breadcrumb mobile -->
         <nav class="d-md-none pb-3 mb-2 mb-lg-3" aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
                 <li class="breadcrumb-item">
-                    <a href="index.html"><i class="bx bx-home-alt fs-lg me-1"></i>Home</a>
+                    <a href="{{ homepage.url }}"><i class="bx bx-home-alt fs-lg me-1"></i>{{ site.data[page.lang].translation.index.name }}</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="#">Industries</a>
+                    <a href="#">{{ site.data[page.lang].translation.industries.name }}</a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
             </ol>
         </nav>
 
         <div class="row row-cols-1 row-cols-md-2 g-0 pb-2">
-
             <div class="col order-md-2 position-relative bg-position-center bg-size-cover bg-repeat-0 zindex-2" style="background-image: url({{ page.image }}); border-radius: .5rem .5rem .5rem 0;">
                 <div style="height: 250px;"></div>
             </div>
@@ -30,10 +30,10 @@ layout: base
                 <nav class="d-none d-md-block py-3 mb-2 mb-lg-3" aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0">
                         <li class="breadcrumb-item">
-                            <a href="index.html"><i class="bx bx-home-alt fs-lg me-1"></i>Home</a>
+                            <a href="{{ homepage.url }}"><i class="bx bx-home-alt fs-lg me-1"></i>{{ site.data[page.lang].translation.index.name }}</a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a href="#">Industries</a>
+                            <a href="#">{{ site.data[page.lang].translation.industries.name }}</a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
                     </ol>
@@ -45,13 +45,7 @@ layout: base
                         <h3>{{ page.subtitle }}</h3>
                         <div class="pb-2 mb-4 mb-xxl-5">{{ page.introduction|markdownify }}</div>
                         <div class="d-xxl-flex align-items-center">
-                            <a href="#" class="btn btn-primary shadow-primary btn-lg">Try Kimai for free</a>
-                        {% comment %}
-                            <ul class="list-unstyled ps-xxl-4 pt-4 pt-xxl-0 ms-xxl-2">
-                                <li><strong>Mon — Fri:</strong> 9:00 am — 22:00 am</li>
-                                <li><strong>Sat — Sun:</strong> 9:00 am — 20:00 am</li>
-                            </ul>
-                        {% endcomment %}
+                            {% include link-cloud-start.html classes="btn btn-success shadow-success btn-lg" %}
                         </div>
                     </div>
                 </div>
@@ -64,7 +58,7 @@ layout: base
             <div class="col-lg-4 text-center text-lg-start pb-3 pb-lg-0 mb-4 mb-lg-0">
                 <h2 class="h1 mb-lg-4">{{ page.features.title }}</h2>
                 <div class="pb-4 mb-0 mb-lg-3">{{ page.features.introduction|markdownify }}</div>
-                <a href="#" class="btn btn-primary shadow-primary btn-lg">All features</a>
+                <a href="{{ features.url }}" class="btn btn-primary shadow-primary btn-lg">{{ site.data[page.lang].translation.features.name }}</a>
             </div>
             <div class="col-xl-7 col-lg-8 offset-xl-1">
                 <div class="row row-cols-1 row-cols-md-2">
