@@ -12,12 +12,12 @@ image:
     original: "https://www.pexels.com/photo/people-sitting-at-the-table-6476257/"
     license: "https://www.pexels.com/license/"
 features:
-    title: "How Kimai helps AGENCIES"
+    title: "How Kimai helps Agencies"
     introduction: "Not all time tracking tools are created equal. The best solutions for agencies offer a specialized set of features to streamline your workflows. Look for capabilities like:"
     list: ['plugins', 'teams', 'saml', 'multi-user']
 testimonials:
     tag: Agency
-    title: "What AGENCIES say about time-tracking"
+    title: "What Agencies say about time-tracking"
     introduction: |
         At Kimai, we've designed our time tracking platform to meet the needs of agencies, teams, and freelancers. Our intuitive interface and powerful features help agencies like yours work smarter and more profitably. You can now “listen” to the reviews of the real users.
 about:
