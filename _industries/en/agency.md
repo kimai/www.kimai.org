@@ -7,7 +7,10 @@ introduction: |
     But managing time tracking through spreadsheets and disconnected tools can quickly become a mess, especially as your agency scales. That's where a dedicated time tracking solution can be a game-changer.
 
     In this post, we'll explore why successful agencies rely on time tracking software and what essential features to look for. We’ll use Kimai as an example of a user-friendly solution built with agencies in mind.
-image: "/images/industry/agency.jpg"
+image: 
+    url: "/images/industry/agency.webp"
+    original: "https://www.pexels.com/photo/people-sitting-at-the-table-6476257/"
+    license: "https://www.pexels.com/license/"
 features:
     title: "How Kimai helps AGENCIES"
     introduction: "Not all time tracking tools are created equal. The best solutions for agencies offer a specialized set of features to streamline your workflows. Look for capabilities like:"
