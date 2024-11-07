@@ -160,6 +160,8 @@ collections:
     output: true
   landingpage:
     output: true
+  industries:
+    output: true
   blog_tags:
     output: true
 
@@ -237,6 +239,12 @@ defaults:
     values:
       layout: landingpage
       permalink: "/en/:title"
+      lang: en
+  - scope:
+      path: "_industries/en/"
+    values:
+      layout: industry
+      permalink: "/en/:title-time-tracking"
       lang: en
 
 markdown: kramdown

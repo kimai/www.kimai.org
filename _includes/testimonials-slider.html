@@ -1,7 +1,11 @@
+{% assign title = include.title | default: site.data[page.lang].translation.testimonials.title %}
 <section class="container py-5 my-2 my-md-4 my-lg-5">
     <div class="row pt-2 py-xl-3">
         <div class="col-lg-3 col-md-4">
-            <h2 class="h1 text-center text-md-start mx-auto mx-md-0 pt-md-2" style="max-width: 300px;">{{ site.data[page.lang].translation.testimonials.title }}</h2>
+            <h2 class="text-center text-md-start mx-auto mx-md-0 pt-md-2" style="max-width: 300px;">{{ title }}</h2>
+            {% if include.introduction %}
+            <p class="mb-3">{{ include.introduction }}</p>
+            {% endif %}
 
             <!-- Slider controls (Prev / next buttons) -->
             <div class="d-flex justify-content-center justify-content-md-start pb-4 mb-2 pt-2 pt-md-4 mt-md-5">
