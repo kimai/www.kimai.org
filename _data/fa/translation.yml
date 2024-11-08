@@ -225,9 +225,6 @@ feature:
     user-profile:
         name: "مشخصات کاربر"
         description: "آمار شخصی و تنظیمات هر کاربر برای نرخ ساعتی، تم Kimai، رمز عبور و آواتار."
-    theming:
-        name: "قالببندی"
-        description: "Kimai با تم های رنگی و تنظیمات نمایش متفاوتی عرضه می شود که مناسب هر کاربر است"
     user-registration:
         name: "ثبت نام کاربر"
         description: "Kimai از ثبت خود کاربر با فعال سازی ایمیل پشتیبانی می کند."
@@ -243,6 +240,12 @@ feature:
     reporting:
         description: Analysis of recorded times, customers, projects and activities. Evaluation according to users, customers, projects, activities, tags, time periods and much more.
         name: Reports and analyses
+    dark-mode:
+        name: Dark mode
+        description: Because every app needs a dark-mode, which helps to reduce eye strain in the evening or in dark environments.
+    customer-portal:
+        description: Share client and project statistics and timesheets with anyone using a secret URL, optionally password protected.
+        name: Customer Portal
 install:
     alert-vps: "در این مرحله، نصب Kimai با دانلود یک فایل ZIP و آپلود فایل ها در وب سرور شما امکان پذیر نیست. این به این دلیل است که Composer باید در خط فرمان اجرا شود.\n\nاین لزوما به این معنی نیست که شما به VPS نیاز دارید. برخی از هاست های اشتراکی به شما دسترسی SSH می دهند که از طریق آن می توانید Composer و Kimai را به خوبی نصب کنید.\n\nدستورالعمل نصب کامل را می توان در %documentation ما یافت.\n"
     ssh: This method installs Kimai directly on your server.

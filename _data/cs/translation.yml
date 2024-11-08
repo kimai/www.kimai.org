@@ -227,9 +227,6 @@ feature:
     user-profile:
         name: "Uživatelský profil"
         description: "Osobní statistiky a nastavení pro jednotlivé uživatele pro hodinovou sazbu, vzhled Kimai, heslo a avatara."
-    theming:
-        name: "Motivy"
-        description: "Kimai disponuje různými barevnými motivy a nastaveními zobrazení, aby vyhovoval každému uživateli."
     user-registration:
         name: "Registrace uživatelů"
         description: "Kimai podporuje samoregistraci uživatelů s aktivací pomocí e-mailu."
@@ -245,6 +242,12 @@ feature:
     reporting:
         description: Analýza zaznamenaných časů, zákazníků, projektů a aktivit. Hodnocení podle uživatelů, zákazníků, projektů, aktivit, značek, časových období a mnoho dalšího.
         name: Zprávy a analýzy
+    dark-mode:
+        name: Dark mode
+        description: Because every app needs a dark-mode, which helps to reduce eye strain in the evening or in dark environments.
+    customer-portal:
+        description: Share client and project statistics and timesheets with anyone using a secret URL, optionally password protected.
+        name: Customer Portal
 install:
     alert-vps: V této fázi není možné nainstalovat Kimai stažením souboru ZIP a nahráním souborů na webový server. Je to proto, že program Composer musí být spuštěn z příkazového řádku. To nutně neznamená, že potřebujete VPS. Někteří hostitelé poskytují přístup SSH, přes který byste měli být schopni nainstalovat Composer a Kimai v pořádku.
     ssh: Tato metoda nainstaluje Kimai přímo na váš server.
