@@ -12,7 +12,8 @@ layout: base
         <nav class="d-md-none pb-3 mb-2 mb-lg-3" aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
                 <li class="breadcrumb-item">
-                    <a href="{{ homepage.url }}"><i class="bx bx-home-alt fs-lg me-1"></i>{{ site.data[page.lang].translation.index.name }}</a>
+                    <a href="{{ homepage.url }}"><i class="bx bx-home-alt fs-lg me-1"></i>{{
+                        site.data[page.lang].translation.index.name }}</a>
                 </li>
                 <li class="breadcrumb-item">
                     <a href="#">{{ site.data[page.lang].translation.industries.name }}</a>
@@ -22,7 +23,8 @@ layout: base
         </nav>
 
         <div class="row row-cols-1 row-cols-md-2 g-0 pb-2">
-            <div class="col order-md-2 position-relative bg-position-center bg-size-cover bg-repeat-0 zindex-2" style="background-image: url({{ page.image.url }}); border-radius: .5rem .5rem .5rem 0;">
+            <div class="col order-md-2 position-relative bg-position-center bg-size-cover bg-repeat-0 zindex-2"
+                 style="background-image: url({{ page.image.url }}); border-radius: .5rem .5rem .5rem 0;">
                 <div style="height: 250px;"></div>
             </div>
 
@@ -30,7 +32,8 @@ layout: base
                 <nav class="d-none d-md-block py-3 mb-2 mb-lg-3" aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0">
                         <li class="breadcrumb-item">
-                            <a href="{{ homepage.url }}"><i class="bx bx-home-alt fs-lg me-1"></i>{{ site.data[page.lang].translation.index.name }}</a>
+                            <a href="{{ homepage.url }}"><i class="bx bx-home-alt fs-lg me-1"></i>{{
+                                site.data[page.lang].translation.index.name }}</a>
                         </li>
                         <li class="breadcrumb-item">
                             <a href="#">{{ site.data[page.lang].translation.industries.name }}</a>
@@ -58,22 +61,23 @@ layout: base
             <div class="col-lg-4 text-center text-lg-start pb-3 pb-lg-0 mb-4 mb-lg-0">
                 <h2 class="h1 mb-lg-4">{{ page.features.title }}</h2>
                 <div class="pb-4 mb-0 mb-lg-3">{{ page.features.introduction|markdownify }}</div>
-                <a href="{{ features.url }}" class="btn btn-primary shadow-primary btn-lg">{{ site.data[page.lang].translation.features.name }}</a>
+                <a href="{{ features.url }}" class="btn btn-primary shadow-primary btn-lg">{{
+                    site.data[page.lang].translation.features.name }}</a>
             </div>
             <div class="col-xl-7 col-lg-8 offset-xl-1">
                 <div class="row row-cols-1 row-cols-md-2">
                     <div class="col">
-                    {% for name in page.features.list %}
+                        {% for name in page.features.list %}
                         {% assign features = site.data.feature | where_exp: "feature", "feature.name == name" %}
                         {% for feature in features %}
-                            {% include feature-box.html feature=feature %}
+                        {% include feature-box.html feature=feature %}
                         {% endfor %}
                         {% assign mod = forloop.index1 | modulo: 2 %}
                         {% if mod == 0 %}
                     </div>
                     <div class="col">
                         {% endif %}
-                    {% endfor %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -84,30 +88,22 @@ layout: base
     {% assign testimonial_title = page.testimonials.title %}
     {% assign testimonial_intro = page.testimonials.introduction %}
     {% assign testimonials = site.data.testimonials | where_exp: "item", "item.tags contains testimonial_tag" | sample: 5 %}
-    {% include testimonials-slider.html testimonials=testimonials title=testimonial_title introduction=testimonial_intro %}
+    {% include testimonials-horizontal-swipe.html testimonials=testimonials title=testimonial_title introduction=testimonial_intro %}
 
     {% comment %}
     https://silicon.createx.studio/landing-medical.html
     {% endcomment %}
-    <section class="container text-center pb-5 mb-3 mb-md-4 mb-lg-5">
-        <h2 class="h1 pt-1 mb-4">{{ page.about.title }}</h2>
-        <div class="row justify-content-center">
-            <div class="col-lg-6 col-md-8">
-                <div class="fs-lg text-muted mb-lg-0">{{ page.about.introduction|markdownify }}</div>
+    <section class="container pb-5 mb-1 mb-md-4 mb-lg-5">
+        <div class="row pb-xl-3">
+            <div class="col-xl-5 col-md-6">
+                <h2 class="h1 pb-4 mb-1 mb-lg-3">{{ page.about.title }}</h2>
+            </div>
+            <div class="col-md-6 pb-2 pb-md-0 mb-4 mb-md-0">
+                {{ page.about.introduction|markdownify }}
             </div>
         </div>
-        {% comment %}
-        <div class="position-relative rounded-3 overflow-hidden mb-lg-3">
-            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center zindex-5">
-                <a href="https://www.youtube.com/watch?v=wJC1LFT_GD0" class="btn btn-video btn-icon btn-xl stretched-link bg-white" data-bs-toggle="video" aria-label="Play video" data-lg-id="1ab3fbc9-3ad4-48b6-93b7-eef9d8c09a39">
-                    <i class="bx bx-play"></i>
-                </a>
-            </div>
-            <span class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-35"></span>
-            <img src="assets/img/landing/medical/video-cover.jpg" alt="Cover image">
-        </div>
-        {% endcomment %}
     </section>
+
 
     <section class="container py-5 my-1 my-md-4 my-lg-5">
         <div class="row">
