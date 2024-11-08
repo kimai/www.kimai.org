@@ -12,11 +12,10 @@ layout: base
         <nav class="d-md-none pb-3 mb-2 mb-lg-3" aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
                 <li class="breadcrumb-item">
-                    <a href="{{ homepage.url }}"><i class="bx bx-home-alt fs-lg me-1"></i>{{
-                        site.data[page.lang].translation.index.name }}</a>
+                    <a href="{{ homepage.url }}"><i class="bx bx-home-alt fs-lg me-1"></i>{{ site.data[page.lang].translation.index.name }}</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="#">{{ site.data[page.lang].translation.industries.name }}</a>
+                    <a href="{% link _pages/industry.md %}">{{ site.data[page.lang].translation.industries.name }}</a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
             </ol>
@@ -90,9 +89,6 @@ layout: base
     {% assign testimonials = site.data.testimonials | where_exp: "item", "item.tags contains testimonial_tag" | sample: 5 %}
     {% include testimonials-horizontal-swipe.html testimonials=testimonials title=testimonial_title introduction=testimonial_intro %}
 
-    {% comment %}
-    https://silicon.createx.studio/landing-medical.html
-    {% endcomment %}
     <section class="container pt-5 mb-1 mb-md-4 mb-lg-5">
         <div class="row pb-xl-3">
             <div class="col-xl-5 col-md-6">
