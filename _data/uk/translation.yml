@@ -226,9 +226,6 @@ feature:
     user-profile:
         name: "Профіль користувача"
         description: "Особиста статистика та налаштування погодинної ставки, теми Kimai, пароля та аватара для кожного користувача."
-    theming:
-        name: "Оформлення"
-        description: "Щоб задовольнити кожного користувача, Kimai поставляється з різним кольоровим оформленням та налаштуванням дисплея"
     user-registration:
         name: "Реєстрація користувача"
         description: "Kimai підтримує самостійну реєстрацію користувача за допомогою активації через електронну пошту."
@@ -244,6 +241,12 @@ feature:
     reporting:
         description: Аналіз записаних часів, клієнтів, проектів та видів діяльності. Оцінка за користувачами, клієнтами, проектами, видами діяльності, мітками, періодами часу та багато іншого.
         name: Звіти та аналізи
+    customer-portal:
+        description: Share client and project statistics and timesheets with anyone using a secret URL, optionally password protected.
+        name: Customer Portal
+    dark-mode:
+        name: Dark mode
+        description: Because every app needs a dark-mode, which helps to reduce eye strain in the evening or in dark environments.
 install:
     alert-vps: На цьому етапі неможливо встановити Kimai, отримавши ZIP-файл і завантаживши файли на свій веб-сервер. Це пов'язано з тим, що Composer потрібно запускати в командному рядку. Це не обов'язково означає, що Вам потрібен VPS. Деякі спільні хости надають доступ до SSH, за допомогою якого Ви зможете встановити Composer і Kimai без жодних проблем.
     ssh: Цей метод встановлює Kimai безпосередньо на Ваш сервер.
@@ -268,7 +271,7 @@ section-teaser:
         title: Ведення часу
         description: Легкий введення виконаної роботи і чіткий контроль.
     work-contract:
-        title: Облік робочого часу
+        title: Облікові записи робочого часу
         description: Дебет та понаднормові години, щомісячні звіти.
     dashboard:
         description: Панель із налаштовуваними віджетами.
@@ -410,7 +413,7 @@ plans:
     ip_whitelist: Обмеження доступу за IP
     billable_hours: Оплачувані та неоплачувані години
     max_users: Користувачі
-    work_contract: "Облік робочого часу"
+    work_contract: "Обліковий запис робочого часу"
     all_from_plan: Усі можливості '%plan%'
     backup_frequency: Частота створення резервних копій
     priority_features: Запити щодо пріоритетних функцій
@@ -502,4 +505,4 @@ terms-cloud:
     name: Умови використання
 gdpr: Обробка даних
 industries:
-    name: Industries
+    name: Галузі

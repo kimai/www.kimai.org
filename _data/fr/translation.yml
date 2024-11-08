@@ -215,9 +215,6 @@ feature:
     user-profile:
         name: "Profil de l'utilisateur"
         description: "Statistiques personnelles et paramètres par utilisateur pour le taux horaire, le thème Kimai, le mot de passe et l’avatar."
-    theming:
-        name: "Thème"
-        description: "Kimai est proposé avec différents thèmes de couleurs et de paramètres d'affichage, pour s'adapter à chaque utilisateur"
     user-registration:
         name: "Enregistrement de l'utilisateur"
         description: "Kimai prend en charge l’auto-inscription des utilisateurs avec activation par courriel."
@@ -233,6 +230,12 @@ feature:
     reporting:
         description: Analyse des temps enregistrés, des clients, des projets et des activités. Évaluation selon les utilisateurs, les clients, les projets, les activités, les balises, les périodes de temps, et bien plus encore.
         name: Rapports et analyses
+    dark-mode:
+        description: Because every app needs a dark-mode, which helps to reduce eye strain in the evening or in dark environments.
+        name: Dark mode
+    customer-portal:
+        description: Share client and project statistics and timesheets with anyone using a secret URL, optionally password protected.
+        name: Customer Portal
 install:
     alert-vps: À ce stade, il n'est pas possible d'installer Kimai en téléchargeant un fichier ZIP et en téléchargeant les fichiers sur votre serveur Web. Cela est dû au fait que Composer doit être exécuté en ligne de commande. Cela ne signifie pas nécessairement que vous avez besoin d'un VPS. Certains hôtes partagés vous donnent un accès SSH, grâce auquel vous devriez être en mesure d'installer Composer et Kimai sans problème.
     ssh: La méthode recommandée installe Kimai directement sur votre serveur.

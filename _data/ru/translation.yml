@@ -195,9 +195,6 @@ feature:
     user-profile:
         name: "Профиль пользователя"
         description: "Личная статистика и настройки почасовой оплаты, темы Kimai, пароля и аватара для каждого пользователя."
-    theming:
-        name: "Оформление"
-        description: "Kimai включает в себя различные цветовые темы и настройки дисплея, поэтому каждый пользователь может настроить его на свой вкус"
     user-registration:
         name: "Регистрация пользователя"
         description: "Kimai поддерживает самостоятельную регистрацию пользователей с активацией по электронной почте."
@@ -213,6 +210,12 @@ feature:
     reporting:
         description: Анализ записанных временных данных, клиентов, проектов и активностей. Оценка по пользователям, клиентам, проектам, активностям, меткам, временным периодам и многому другому.
         name: Отчеты и анализы
+    dark-mode:
+        name: Dark mode
+        description: Because every app needs a dark-mode, which helps to reduce eye strain in the evening or in dark environments.
+    customer-portal:
+        description: Share client and project statistics and timesheets with anyone using a secret URL, optionally password protected.
+        name: Customer Portal
 install:
     alert-vps: На данном этапе невозможно установить Kimai, скачав ZIP-файл и загрузив файлы на свой веб-сервер. Это связано с тем, что Composer должен запускаться из командной строки. Это не обязательно означает, что вам нужен VPS. Некоторые виртуальные хосты предоставляют доступ к SSH, через который вы сможете установить Composer и Kimai.
     ssh: Рекомендуемый метод устанавливает Kimai непосредственно на ваш сервер.

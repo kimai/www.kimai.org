@@ -226,9 +226,6 @@ feature:
     user-profile:
         name: "用户资料"
         description: "每小时费率、Kimai 主题、密码和头像的个人统计信息和每个用户设置。"
-    theming:
-        name: "主题化"
-        description: "Kimai 带有不同的颜色主题和显示设置，以适应每个用户"
     user-registration:
         name: "用户注册"
         description: "Kimai 支持用户通过电子邮件激活自行注册。"
@@ -244,6 +241,12 @@ feature:
     reporting:
         description: 对记录的时间、客户、项目和活动进行分析。可以根据用户、客户、项目、活动、标签、时间段等等进行评估。
         name: 报告和分析
+    dark-mode:
+        name: Dark mode
+        description: Because every app needs a dark-mode, which helps to reduce eye strain in the evening or in dark environments.
+    customer-portal:
+        description: Share client and project statistics and timesheets with anyone using a secret URL, optionally password protected.
+        name: Customer Portal
 install:
     alert-vps: "在此阶段，无法通过下载 ZIP 文件并将文件上传到您的 Web 服务器来安装 Kimai。这是因为 Composer 需要在命令行上运行。\n\n这并不一定意味着您需要 VPS。一些共享主机为您提供 SSH 访问权限，通过它您应该能够很好地安装 Composer 和 Kimai。\n\n完整的安装说明可以在我们的 %documentation% 中找到。\n"
     ssh: 推荐的方法是直接在您的服务器上安装Kimai。
