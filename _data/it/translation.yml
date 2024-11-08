@@ -166,7 +166,7 @@ feature:
         description: "Kimai può essere localizzato in qualsiasi lingua ed è già tradotto in più di 30 lingue."
     teams:
         name: "Team"
-        description: "I team possono essere creati per raggruppare gli utenti in gruppi logici come reparti o gruppi alla pari relativi al progetto. I clienti e i progetti possono essere assegnati a tali team, il che limiterà la visibilità e l'accesso per altri utenti."
+        description: "I team collegano gli utenti in gruppi logici, come i reparti. Limita l'accesso ad altri utenti assegnando clienti e progetti ai tuoi team."
     customers:
         name: "Clienti"
         description: "Gestisci i tuoi clienti e imposta indirizzo, contatti, paese, valuta, visibilità (per l'archiviazione) e molti altri campi."
@@ -175,7 +175,7 @@ feature:
         description: "Gestisci i progetti per ogni cliente con numero d'ordine, budget e visibilità (per l'archiviazione)."
     activities:
         name: "Attività"
-        description: "Le attività vengono usate per assegnare l'unità di lavoro alle voci del foglio di presenza. Gestisci le attività per ogni progetto con numero d'ordine, budget e visibilità (per l'archiviazione). Le attività possono essere globali, non è più necessaria la duplicazione se più progetti condividono la stessa unità di lavoro."
+        description: "Le attività vengono usate per assegnare l'unità di lavoro alle voci del foglio di presenza. Gestisci le attività per ogni progetto con numero d'ordine, budget e visibilità (per l'archiviazione) oppure creane di globali per evitare duplicati."
     invoices:
         name: "Fatturazione"
         description: "Diversi modelli di fattura, opzioni per il raggruppamento delle voci, numeri di fattura configurabili, puoi anche aggiungere i tuoi modelli personalizzati in formato file PDF, DOCX, HTML, XLSX e ODS."
@@ -237,17 +237,17 @@ feature:
         name: Autenticazione a due fattori (2FA)
         description: 'Kimai supporta l''autenticazione a due fattori con i token TOTP: proteggi i tuoi account utente oggi stesso!'
     auth:
-        description: Kimai supporta provider di identità esterni e accesso tramite LDAP e SAML su più provider (come Google Workspace, Azure AD o Authentik). Inoltre, è possibile abilitare l'autenticazione a due fattori tramite token TOTP.
+        description: Kimai supporta provider di identità esterni e accesso tramite LDAP e SAML su più provider (come Google Workspace, Azure AD o Authentik). Facoltativamente è possibile l'autenticazione a due fattori tramite token TOTP.
         name: Autenticazione e sicurezza
     reporting:
         description: Analisi dei tempi registrati, dei clienti, dei progetti e delle attività. Valutazione in base a utenti, clienti, progetti, attività, tag, periodi temporali e molto altro.
         name: Rapporti e analisi
     dark-mode:
-        name: Dark mode
-        description: Because every app needs a dark-mode, which helps to reduce eye strain in the evening or in dark environments.
+        name: Modalità scura
+        description: Perché ogni app necessita di una modalità scura, che aiuta a ridurre l'affaticamento degli occhi di sera o in ambienti bui.
     customer-portal:
-        description: Share client and project statistics and timesheets with anyone using a secret URL, optionally password protected.
-        name: Customer Portal
+        description: Condividi statistiche e schede attività sui clienti e sui progetti con chiunque utilizzando un URL segreto, eventualmente protetto da password.
+        name: Portale clienti
 install:
     alert-vps: In questa fase non è possibile installare Kimai scaricando un file ZIP e caricando i file sul tuo server web. Devi avere accesso SSH al tuo server. Questo non significa necessariamente che hai bisogno di un VPS. Alcuni host condivisi ti danno accesso SSH, attraverso il quale dovresti essere in grado di installare Composer e Kimai senza problemi.
     ssh: Questo metodo installa Kimai direttamente sul tuo server.
@@ -460,6 +460,7 @@ non-profit:
     eligible: Saperne di più
     testimonial-title: Le organizzazioni no-profit si fidano di Kimai
     testimonial-intro: E non vedo l'ora di poter supportare anche la tua organizzazione.
+    intro: Time-tracking for Non-Profit Organizations, cheap and reliable
 discount-codes:
     name: Codici sconto
 faq:
@@ -508,4 +509,10 @@ terms-cloud:
     name: Termini
 gdpr: Elaborazione dati
 industries:
-    name: Industries
+    name: Industrie
+industry:
+    name: Time tracking for every business
+    intro: You can improve the productivity of your employees with the Kimai time recording software.
+    title: Time tracking for every industry
+    subtitle: Keep your projects on track with Kimai
+    office: For office workers
