@@ -235,7 +235,7 @@ alternatives:
 feature:
     auth:
         name: "Authentifizierung und Sicherheit"
-        description: "Kimai unterstützt externe Identitätsanbieter und Anmeldung via LDAP und SAML über mehrere Provider (wie Google Workspace, Azure AD oder Authentik). Darüber hinaus kann eine Zwei-Faktor-Authentifizierung über TOTP-Tokens aktiviert werden."
+        description: "Kimai unterstützt externe Identitätsanbieter und Anmeldung via LDAP und SAML über mehrere Provider (wie Google Workspace, Azure AD oder Authentik). Zwei-Faktor-Authentifizierung über TOTP-Tokens ist optional möglich."
     reporting:
         name: "Berichte und Auswertungen"
         description: "Analyse der erfassten Zeiten, Kunden, Projekte und Aktivitäten. Auswertung nach Benutzer, Kunden, Projekten, Aktivitäten, Tags, Zeiträumen und vielem mehr."
@@ -271,7 +271,7 @@ feature:
         description: "Stundenzettel können zur Verwendung in anderen Programmen oder zur gemeinsamen Nutzung in verschiedenen Formaten exportiert werden. Exportierte Datensätze werden gesperrt und vor weiteren Änderungen geschützt."
     expenses:
         name: "Ausgaben"
-        description: "Behalten Sie den Überblick über Ihre Ausgaben basierend auf Kunde, Projekt und Aktivität. Diese Ausgaben können kategorisiert und in Ihre Rechnungen aufgenommen werden. Die Spesen- und Ausgabenverwaltung ist als kostenpflichtiges Plugin verfügbar."
+        description: "Behalten Sie den Überblick über Ihre Ausgaben. Diese Ausgaben können kategorisiert und in Ihre Rechnungen aufgenommen werden. Die Spesen- und Ausgabenverwaltung ist als kostenpflichtiges Plugin verfügbar."
     2fa:
         name: "Zwei-Faktor Anmeldung (2FA)"
         description: "Kimai unterstützt die Zwei-Faktor Authentifizierung mit TOTP Tokens: sichern Sie Ihre Benutzer Accounts noch heute ab!"
@@ -313,19 +313,22 @@ feature:
         description: "Sie können alle Zeiterfassungen nach Benutzer, Kunde, Projekt, Aktivität und Datum filtern."
     permissions:
         name: "Berechtigungen"
-        description: "Anpassbare Berechtigungsstruktur. Weisen Sie Ihrem Benutzer verschiedene Rollen zu, z. B. können Benutzer Zeiten erfassen, Teamleiter können Rechnungen drucken und Projekte/Aktivitäten konfigurieren, Administratoren können Benutzer und Kunden konfigurieren."
+        description: "Anpassbare Berechtigungsstruktur über Benutzer-Rollen: z. B. können Benutzer Zeiten erfassen, Teamleiter können Rechnungen drucken und Projekte/Aktivitäten konfigurieren, Administratoren kümmern sich um Benutzer."
     user-profile:
         name: "Benutzerprofil"
         description: "Persönliche Statistiken und Benutzereinstellungen für Stundensatz, Kimai-Design, Passwort und Avatar."
-    theming:
-        name: "Anpassbare Darstellung"
-        description: "Kimai bringt verschiedene Farb- und Anzeige-Konfigurationen, sodass es jeder Benutzer an seinen persönlichen Geschmack anpassen kann"
     user-registration:
         name: "Benutzer Registrierung"
         description: "Kimai unterstützt die Selbstregistrierung von Benutzern mit E-Mail-Aktivierung."
     password-reset:
         name: "Passwort vergessen"
         description: "Passwort vergessen? Kein Problem, Kimai hat eine Funktion zum Zurücksetzen des Passworts per E-Mail."
+    customer-portal:
+        name: "Kunden Portal"
+        description: "Geben Sie Kunden- und Projektstatistiken sowie Zeiterfassungsbögen über eine geheime, optional passwortgeschützte URL an andere weiter."
+    dark-mode:
+        name: "Dark mode"
+        description: "Jede App benötigt einen dunklen Modus. Und dieser hilft auch dabei, die Augen am Abend oder in dunklen Umgebungen zu entlasten."
 install:
     ssh: Diese Methode installiert Kimai direkt auf Ihrem Server.
     docker: Verwenden Sie unser Docker-Image, um den Kimai-Container zu installieren.

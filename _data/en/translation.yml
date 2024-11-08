@@ -235,7 +235,7 @@ alternatives:
 feature:
     auth:
         name: "Authentication and Security"
-        description: "Kimai supports external identity providers and login via LDAP and SAML across multiple providers (such as Google Workspace, Azure AD or Authentik). In addition, two-factor authentication can be enabled via TOTP tokens."
+        description: "Kimai supports external identity providers and login via LDAP and SAML across multiple providers (such as Google Workspace, Azure AD or Authentik). Two-factor authentication via TOTP tokens is optionally possible."
     reporting:
         name: "Reports and analyses"
         description: "Analysis of recorded times, customers, projects and activities. Evaluation according to users, customers, projects, activities, tags, time periods and much more."
@@ -253,7 +253,7 @@ feature:
         description: "Kimai can be localized to any language and is already translated to more than 30 languages."
     teams:
         name: "Teams"
-        description: "Teams can be created to group your users into logical groups like departments or project related peer-groups. Customers and projects can be assigned to those teams, which will limit visibility and access for other users."
+        description: "Teams connects users into logical groups, like departments. Limit access for other users by assigning customers and projects to your teams."
     customers:
         name: "Customers"
         description: "Manage your customers and set address, contacts, country, currency, visibility (for archiving) and many more fields."
@@ -262,7 +262,7 @@ feature:
         description: "Manage projects for each customer with order number, budget and visibility (for archiving)."
     activities:
         name: "Activities"
-        description: "Activities are used to assign the unit of work to timesheet entries. Manage activities for each project with order number, budget and visibility (for archiving). Activities can be global, no more duplication necessary if multiple projects share the same working unit."
+        description: "Activities are used to assign the unit of work to timesheet entries. Manage activities for each project with order number, budget and visibility (for archiving) or create global ones to prevent duplicates."
     invoices:
         name: "Invoicing"
         description: "Different invoice templates, options for entry grouping, configurable invoice numbers, and you can add your own templates in PDF, DOCX, HTML, XLSX, and ODS file format."
@@ -317,15 +317,18 @@ feature:
     user-profile:
         name: "User profile"
         description: "Personal statistics and per user settings for hourly rate, Kimai theme, password and avatar."
-    theming:
-        name: "Theming"
-        description: "Kimai comes with different color themes and display settings, to suit each individual user"
     user-registration:
         name: "User registration"
         description: "Kimai supports user self-registration with e-mail activation."
     password-reset:
         name: "Password reset"
         description: "Forgot your password? Kimai helps you reset it via e-mail."
+    customer-portal:
+        name: "Customer Portal"
+        description: "Share client and project statistics and timesheets with anyone using a secret URL, optionally password protected."
+    dark-mode:
+        name: "Dark mode"
+        description: "Because every app needs a dark-mode, which helps to reduce eye strain in the evening or in dark environments."
 install:
     ssh: This method installs Kimai directly on your server.
     docker: Use our Docker image to install and update Kimai container easily.
