@@ -1,14 +1,14 @@
 ---
 title: "2Time tracking for every business"
 lang: en
-permalink: /en/industry.html
+permalink: /en/industry
 layout: base
 ---
- 
+
 <main class="page-wrapper">
 {% include header-navigation.html %}
 
-{% assign header_title = site.data[page.lang].translation.industry.name %} 
+{% assign header_title = site.data[page.lang].translation.industry.name %}
 {% assign header_subtitle = site.data[page.lang].translation.industry.subtitle %}
 {% assign header_intro = site.data[page.lang].translation.industry.intro %}
 {% assign header_image = "/images/industry/header.webp" %}
@@ -41,9 +41,9 @@ layout: base
         </div>
         {% assign mod = 1 %}
         {% if forloop.index0 > 3 %}
-            {% assign mod = forloop.index0 | modulo: 3 %} 
+            {% assign mod = forloop.index0 | modulo: 3 %}
         {% endif %}
-        {% if forloop.index0 == 2 or mod == 0 %}  
+        {% if forloop.index0 == 2 or mod == 0 %}
         {% endif %}
     <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 justify-content-center g-4 pb-xl-3">
     </div>
