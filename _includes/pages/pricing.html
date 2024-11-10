@@ -9,6 +9,10 @@
 <div class="price-switch-wrapper">
     <section class="container mb-5 pt-md-1 pt-lg-4 pt-xl-5" style="margin-top: -300px;">
         {% include pricing-plans.html %}
+        <p class="my-3 text-muted text-center">
+            {{ site.data[page.lang].translation.pricing.tax_exclusive }}
+            {{ site.data[page.lang].translation.pricing.cancellation }}
+        </p>
     </section>
 
     <section class="container mb-5 pt-md-1 pt-lg-2 pt-xl-3">
