@@ -1,8 +1,9 @@
 
 {% if page.lang == 'de' %}
 
-**Diese Lizenz gilt für die von Kevin Papst angebotenen kommerziellen Kimai-Plugins (sofern nicht anders angegeben)**
-
+{% alert info %}
+Diese Lizenz gilt für die von Kevin Papst angebotenen kommerziellen Kimai-Plugins (sofern nicht anders angegeben)
+{% endalert %}
 
 1. Die Plugin-Lizenz gewährt Ihnen, dem Käufer, eine nicht-exklusive, weltweite Lizenz zur Nutzung des digitalen Werks (Gegenstand), das Sie erworben haben. Lesen Sie den Rest dieser Lizenz für die Details, die für Ihre Nutzung des Objekts gelten.
 
@@ -52,10 +53,13 @@
 
 {% else %}
 
+{% alert warning %}
+This is a translation for information purposes only. Only the original declaration, [which is available in German]({% link _pages/de/terms-plugins.md %}), is legally valid.
+{% endalert %}
 
-_This is a translation for information purposes only. Only the original declaration, [which is available in German]({% link _pages/de/terms-plugins.md %}), is legally valid._
-
-**This license applies to all Kimai plugins offered by Kevin Papst (unless licensed otherwise)**
+{% alert info %}
+This license applies to all Kimai plugins offered by Kevin Papst (unless licensed otherwise)
+{% endalert %}
 
 
 1. The plugin license grants you, the purchaser, an non-exclusive, worldwide license to make use of the digital work (Item) you have purchased. Read the rest of this license for the details that apply to your use of the Item.

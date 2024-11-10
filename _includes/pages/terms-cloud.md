@@ -335,8 +335,9 @@ Initiale Version
 
 {% else %}
 
-
-_This is a translation for information purposes only. Only the original declaration, [which is available in German]({% link _pages/de/terms-cloud.md %}), is legally valid._
+{% alert warning %}
+This is a translation for information purposes only. Only the original declaration, [which is available in German]({% link _pages/de/terms-cloud.md %}), is legally valid.
+{% endalert %}
 
 (1) Provider of the services (hereinafter "service", "Kimai") offered at the Internet address kimai.cloud (hereinafter "website") is Kevin Papst with registered office in Austria (hereinafter "Provider"). The complete address can be found in the imprint.
 
