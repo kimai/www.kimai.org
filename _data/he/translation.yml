@@ -182,7 +182,7 @@ feature:
         description: צוותים מאגדים משתמשים לקבוצות לוגיות כגון מחלקות. אפשר להגביל גישה למשתמשים אחרים על ידי הקצאת לקוחות ומיזמים לצוותים שלך.
     activities:
         name: פעילויות
-        description: פעילויות משמשמות להקצאת יחידת עבודה לרשומות בגיליון שעות. ניתן לנהל פעילויות לכל מיזם עם מספר הזמנה, תקציב וחשיפה (למטרות אחסון בארכיון). פעילויות יכולות להיות כלליות, אין צורך עוד לשכפל אם מגוון מיזמים חולקים את אותה יחידת העבודה.
+        description: פעילויות משמשמות להקצאת יחידת עבודה לרשומות בגיליון שעות. ניתן לנהל פעילויות לכל מיזם עם מספר הזמנה, תקציב וחשיפה (למטרות אחסון בארכיון) או ליצור פעילויות גלובליות כדי למנוע כפילויות.
     saml:
         name: SAML
         description: אפשר להיכנס ולרשום משתמשים דרך SAML (כניסה אחודה - SSO) ולעשות שימוש חוזר בספק הזהות הקיים שלך כגון Google Workspace,‏ Authentik או Azure Active Directory.
@@ -217,7 +217,7 @@ feature:
         description: 'במערכת Kimai יש תמיכה באימות דו־שלבי עם אסימוני TOTP (סיסמה חד־פעמית מבוססת זמן): כדאי להגן על החשבונות שלך עוד היום!'
         name: אימות דו־שלבי (2FA)
     auth:
-        description: Kimai תומך בספקי אימות חיצוניים וכניסה עם LDAP ו־SAML בקרב מספר ספקים (כגון Google Workspace,‏ Azure AD או Authentik). בנוסף, אפשר להפעיל אימות דו־שלבי דרך אסימוני סיסמאות חד־פעמיות (TOTP).
+        description: Kimai תומך בספקי אימות חיצוניים וכניסה עם LDAP ו־SAML בקרב מספר ספקים (כגון Google Workspace,‏ Azure AD או Authentik). אפשר להפעיל אימות דו־שלבי דרך אסימוני סיסמאות חד־פעמיות (TOTP).
         name: אימות ואבטחה
     reporting:
         description: ניתוח השעות, הלקוחות, המיזמים והפעילויות המתועדות. שערוך לפי משתמשים, לקוחות, מיזמים, פעילויות, תגיות, טווחי זמן ועוד.
@@ -427,12 +427,14 @@ pricing:
     included: מה בחבילה?
     not_available: לא זמין
     subtitle: התוכניות האלו זמינות ללקוחות ענן
+    cancellation: You can cancel your subscription at any time up to one day before the end of the subscription period.
+    tax_exclusive: All prices are exclusive of taxes.
 non-profit:
     name: ללא מטרות רווח
     eligible: מידע נוסף
     testimonial-title: מלכ״רים סומכים על Kimai
     testimonial-intro: ואני מצפה להשתדרג כך שאוכל לתמוך גם בתאגידים.
-    intro: Time-tracking for Non-Profit Organizations, cheap and reliable
+    intro: מעקב שעות לארגונים ללא מטרות רווח, אמין וזול
 discount-codes:
     name: קודים של הנחות
 faq:
@@ -483,8 +485,8 @@ gdpr: עיבוד נתונים
 industries:
     name: תחומי תעשייה
 industry:
-    name: Time tracking for every business
-    intro: You can improve the productivity of your employees with the Kimai time recording software.
-    office: For office workers
-    title: Time tracking for every industry
-    subtitle: Keep your projects on track with Kimai
+    name: מעקב שעות לכל סוג עסק
+    intro: אפשר לשפר את היעילות של העובדים שלך עם תוכנת תיעוד השעות של Kimai.
+    office: לעובדי משרד
+    title: מעקב שעות לכל סוג של תעשייה
+    subtitle: לשמור על לוח זמנים במיזמים שלך עם Kimai
