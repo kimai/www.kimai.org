@@ -41,7 +41,11 @@
                             </span>
                             <blockquote class="card-body pb-3 mb-0">
                                 <div class="mb-0">
-                                    {{ testimonial.text | markdownify }}
+                                    {% if include.language %}
+                                        {{ testimonial.translations[include.language] | markdownify }}
+                                    {% else %}
+                                        {{ testimonial.text | markdownify }}
+                                    {% endif %}
                                 </div>
                             </blockquote>
                             <div class="card-footer border-0 text-nowrap pt-0">
