@@ -18,7 +18,7 @@ image:
 features:
     title: "Kimai features most used by agencies"
     introduction: "Not all time tracking tools are created equal. The best solutions for agencies offer a specialized set of features to streamline your workflows."
-    list: ['plugins', 'teams', 'saml', 'multi-user']
+    list: ['customer-portal', 'teams', 'saml', 'invoices']
 testimonials:
     tag: Agency
     title: "What agencies say about time tracking"
