@@ -49,3 +49,6 @@ Whether you're running a creative agency in Berlin or managing a tech startup in
 
 Ready to make EU time tracking compliance less of a headache? Try Kimai free today and discover why hundreds of EU businesses trust us to keep them on the right side of the law (and sanity).
 
+{% alert info %}
+Please consult your lawyer or human resources specialist for information about your country's specific regulations.
+{% endalert %}
