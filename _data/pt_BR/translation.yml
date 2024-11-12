@@ -165,7 +165,7 @@ feature:
         description: "O Kimai pode ser localizado em qualquer idioma e já está traduzido para mais de 30 línguas."
     teams:
         name: "Equipes"
-        description: "O Teams conecta os usuários em grupos lógicos, como departamentos. Limite o acesso de outros usuários atribuindo clientes e projetos às suas equipes."
+        description: "O Teams conecta os usuários em grupos lógicos, como departamentos. Limite o acesso aos dados atribuindo clientes e projetos às suas equipes."
     customers:
         name: "Clientes"
         description: "Gerencie os seus clientes e defina um endereço, um país, uma moeda, visibilidade (para arquivamento), contatos e muitos outros campos."
@@ -180,16 +180,16 @@ feature:
         description: "Diferentes modelos de fatura, opções para agrupamento das entradas, fatura com números configuráveis e você pode adicionar os seus próprios modelos em formato PDF, DOCX, HTML, XLSX e ODS."
     export:
         name: "Exportar dados"
-        description: "Os dados do quadro de horários podem ser exportados para outros programas ou podem ser compartilhados entre diferentes departamentos nos formatos XLSX (Excel), PDF, CSV e HTML. Os registros exportados também podem ser bloqueados e protegidos contra outras alterações."
+        description: "Os dados da planilha de horas podem ser exportados e compartilhados nos formatos XLSX, PDF, CSV e HTML. Os registros exportados podem ser bloqueados e protegidos contra alterações posteriores."
     expenses:
         name: "Despesas"
         description: "Compre o plug-in e acompanhe as despesas com base no cliente, no projeto e na atividade - para a categorização e para a inclusão nas suas faturas."
     saml:
         name: "SAML"
-        description: "Faça login e registre os usuários via SAML (single sign on, também conhecido como SSO) e reutilize o seu provedor de identidade já existente, como o Google workspace, Authentik ou o active directory Azure."
+        description: "Faça login e registre usuários com SAML por meio do seu provedor de identidade SSO existente, como Google Workspace, Authentik ou Azure Active Directory."
     api:
         name: "API JSON"
-        description: "Apresenta uma extensa API JSON para leitura e gravação de dados, de modo que aplicativos externos e suas ferramentas personalizadas possam se comunicar com o seu rastreador de tempo favorito."
+        description: "Apresenta uma extensa API JSON para leitura e gravação de dados, para que aplicativos externos e ferramentas personalizadas possam se comunicar com o Kimai."
     ldap:
         name: "LDAP"
         description: "Conecte o Kimai com o servidor da sua empresa (LDAP ou Active Directory) e use a sua própria infra-estrutura de autenticação."
@@ -210,7 +210,7 @@ feature:
         description: "O Kimai usa uma versão localizada do formato de 24 horas. Mas se você está acostumado com o formato AM/PM, também poderá configurá-lo."
     time-clock:
         name: "Relógio de ponto"
-        description: "Não deseja que os seus usuários registrem um quadro de horários arbitrários? Mude para o modo relógio-de-ponto, isso permite apenas os registros “de entrada” e “de saída”. Chega de horários de início e término fornecidos manualmente."
+        description: "Não deseja que os seus usuários registrem um quadro de horários arbitrários? Mude para o modo relógio-de-ponto, isso permite apenas os registros “de entrada” e “de saída”."
     duration-only:
         name: "Apenas duração"
         description: "Se as leis locais exigirem que você mostre apenas as durações em vez da data e hora de início e término, você pode ativar esse modo globalmente."
@@ -438,8 +438,8 @@ pricing:
     included: O que está incluso?
     not_available: Não disponível
     subtitle: Estes planos estão disponíveis para clientes da nuvem
-    cancellation: You can cancel your subscription at any time up to one day before the end of the subscription period.
-    tax_exclusive: All prices are exclusive of taxes.
+    cancellation: Você pode cancelar sua assinatura a qualquer momento, até um dia antes do final do período de assinatura.
+    tax_exclusive: Todos os preços não incluem impostos.
 non-profit:
     name: Sem fins lucrativos
     eligible: Saiba mais
@@ -503,4 +503,17 @@ industry:
     subtitle: Mantenha seus projetos sob controle com o Kimai
     office: Para funcionários de escritório
 terms-plugins:
-    name: Plugin license
+    name: Licença do plug-in
+start-trial:
+    name: Start 30-day free trial of Kimai
+    subtitle: Your own time-tracking system in 3 steps. Try Kimai for 30 days, free of charge and without risk.
+    step_1_title: Create account
+    step_2_title: Choose cloud name
+    video_subtitle: 'Simple as that: In 45 seconds to your own time-tracking!'
+    step_2_text: After account activation you have to create your Kimai-Cloud instance by selecting a (subdomain) name.
+    step_3_title: Start time-tracking
+    step_1_text: Create your account with your Google account or email and password, the later needs to be verified with an email link.
+    title: Start free trial
+    step_3_text: After a short moment your Kimai-Cloud is ready for use, you can now login and start time-tracking.
+cloud-cta:
+    days_30: Sign up for your 30-days free trial
