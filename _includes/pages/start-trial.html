@@ -1,0 +1,61 @@
+<section class="pt-md-1 pt-lg-4 pt-xl-5 mb-5">
+    <div class="container">
+        <div class="mt-4 py-2 pb-sm-3 pb-md-4 pb-lg-5 mx-auto text-center" style="max-width: 46.625rem;">
+            <h2 class="h1 mb-4">{{ site.data[page.lang].translation.start-trial.title }}</h2>
+            <p>{{ site.data[page.lang].translation.start-trial.subtitle }}</p>
+        </div>
+    </div>
+</section>
+
+<section class="bg-secondary pb-5">
+    <div class="container py-2 py-md-3 py-lg-4 py-xl-5">
+
+        <div class="row align-items-center justify-content-center py-4 py-md-5 my-1 my-sm-3 my-md-0 my-xl-3 px-5">
+            <div class="col-12 col-md-5 pb-2 pb-sm-3 pb-md-0 mb-4 mb-md-0">
+                <div class="steps steps-sm">
+                    <div class="step">
+                        <div class="step-number">
+                            <div class="step-number-inner">1</div>
+                        </div>
+                        <div class="step-body">
+                            <h5 class="mb-2">{{ site.data[page.lang].translation.start-trial.step_1_title }}</h5>
+                            <p class="fs-sm mb-0">{{ site.data[page.lang].translation.start-trial.step_1_text }}</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">
+                            <div class="step-number-inner">2</div>
+                        </div>
+                        <div class="step-body">
+                            <h5 class="mb-2">{{ site.data[page.lang].translation.start-trial.step_2_title }}</h5>
+                            <p class="fs-sm mb-0">{{ site.data[page.lang].translation.start-trial.step_2_text }}</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">
+                            <div class="step-number-inner">3</div>
+                        </div>
+                        <div class="step-body">
+                            <h5 class="mb-2">{{ site.data[page.lang].translation.start-trial.step_3_title }}</h5>
+                            <p class="fs-sm mb-0">{{ site.data[page.lang].translation.start-trial.step_3_text }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-1 text-center"></div>
+            <div class="col-12 col-md-6 text-center">
+                <iframe style="width: 600px;height: 350px;" data-src="https://www.youtube.com/embed/85BF8UMqi9s?autoplay=1" allowfullscreen="allowfullscreen" src="https://www.youtube.com/embed/85BF8UMqi9s?autoplay=1"></iframe>
+                <br>
+                <span class="text-muted">{{ site.data[page.lang].translation.start-trial.video_subtitle }}</span>
+            </div>
+        </div>
+
+        <section class="bg-secondary py-5">
+            <div class="container text-center">
+                {% assign cta=site.data[page.lang].translation.cloud-cta.days_30 %}
+                {% include link-cloud-start.html classes="btn btn-primary shadow-primary btn-lg mb-1" title=cta %}
+            </div>
+        </section>
+
+    </div>
+</section>
