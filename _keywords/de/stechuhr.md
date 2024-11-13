@@ -1,6 +1,8 @@
 ---
 title: "Open-Source Stechuhr"
 keyword: "Stechuhr"
+permalink: "/de/open-source-stechuhr"
+layout: keyword
 ---
 
 Genug von unflexiblen Stechuhren, die Ihnen Zeit und Nerven rauben?

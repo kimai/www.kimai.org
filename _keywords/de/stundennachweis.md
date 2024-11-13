@@ -1,6 +1,8 @@
 ---
 title: "Open-Source Stundennachweis"
 keyword: "Stundennachweise"
+permalink: "/de/open-source-stundennachweis"
+layout: keyword
 ---
 
 ### Kimai: Die Open-Source Lösung für die digitale Erfassung von Stundennachweisen

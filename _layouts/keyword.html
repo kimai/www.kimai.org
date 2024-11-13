@@ -8,8 +8,10 @@ layout: base
     {% assign title=site.data[page.lang].translation.comparison.support %}
     {% assign intro=site.data[page.lang].translation.support.intro %}
 
-    {% assign title='<span class="small fs-4 d-block">Open Source</span> %title%' | replace: "%title%", page.keyword %}
-    {% assign intro=site.data[page.lang].translation.landing_oss.subtitle | replace: "%title%", page.keyword | append: ' ✨' %}
+    {% assign subtitle = page.subtitle | default: 'Open Source' %}
+    {% assign title = '<span class="small fs-4 d-block">%subtitle%</span> %title%' | replace: "%subtitle%", subtitle | replace: "%title%", page.keyword %}
+    {% assign intro = page.intro | default: site.data[page.lang].translation.landing_oss.subtitle %}
+    {% assign intro = intro | replace: "%title%", page.keyword | append: ' ✨' %}
 
     {% include hero-text-round-dark.html title=title intro=intro %}
 

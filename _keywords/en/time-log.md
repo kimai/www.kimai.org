@@ -1,6 +1,8 @@
 ---
 title: "Open-Source Time-Log"
 keyword: "Time Log"
+permalink: "/en/open-source-time-log"
+layout: keyword
 ---
 
 Step into a realm where time logging is being revolutionised - Kimai is at the forefront of open source time log software!
