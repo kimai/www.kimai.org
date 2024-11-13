@@ -12,18 +12,18 @@
     <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
-    <title>Supported countries – Kimai</title>
-    <meta name="description" content="We can currently provide services to custoemrs from the following countries">
+    <title>User licenses – Kimai</title>
+    <meta name="description" content="How the seat-based licensing works in Kimai-Cloud">
     <link type="application/atom+xml" rel="alternate" href="https://www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
     <meta property="og:locale" content="en">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Kimai Time-Tracking">
-    <meta property="og:description" content="We can currently provide services to custoemrs from the following countries">
+    <meta property="og:description" content="How the seat-based licensing works in Kimai-Cloud">
     <meta property="og:image" content="https://www.kimai.org/images/social-preview.webp">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Kimai Time-Tracking">
     <meta name="twitter:site" content="@kimai_org">
-    <meta name="twitter:description" content="We can currently provide services to custoemrs from the following countries">
+    <meta name="twitter:description" content="How the seat-based licensing works in Kimai-Cloud">
     <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.webp">
     <link href="/assets/build/main.css?v6" rel="stylesheet" />
 </head>
@@ -220,7 +220,7 @@
                         
                         
                         
-                        <a href="/documentation/cloud-user-licenses.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-cloud-user-licenses">
+                        <a href="/documentation/cloud-user-licenses.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2  active" id="docnavi-cloud-user-licenses">
                             
                             User licenses
                             
@@ -230,7 +230,7 @@
                         
                         
                         
-                        <a href="/documentation/cloud-countries.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2  active" id="docnavi-cloud-countries">
+                        <a href="/documentation/cloud-countries.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-cloud-countries">
                             
                             Supported countries
                             
@@ -281,7 +281,7 @@
 </aside>
 <script>
     document.addEventListener("DOMContentLoaded", function(event) {
-        const dpm = document.getElementById('docnavi-cloud-countries');
+        const dpm = document.getElementById('docnavi-cloud-user-licenses');
         if (dpm !== null) {
             dpm.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
         }
@@ -292,9 +292,9 @@
 
         <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 pt-4 mb-n3">
             <div class="me-4">
-                <h1 class="pb-1">Supported countries</h1>
+                <h1 class="pb-1">User licenses</h1>
                 
-                <p class="text-muted fs-lg mb-2">We can currently provide services to custoemrs from the following countries</p>
+                <p class="text-muted fs-lg mb-2">How the seat-based licensing works in Kimai-Cloud</p>
                 
             </div>
             
@@ -309,82 +309,54 @@
             <div>
                 
                 <div id="documentation-content">
-                    <p>If your country is not listed in the <code class="language-plaintext highlighter-rouge">Country</code> dropdown, it still might be available for purchase, please check the list below.</p>
+                    <p>Kimai uses a <strong>per-seat licensing model</strong>, where each active user account consumes one license. 
+However, the system is designed with fairness in mind, so deactivated accounts do not consume licenses.</p>
 
-<h2 id="allowed-countries">Allowed countries</h2>
+<p>Here’s a breakdown of how the licensing works:</p>
 
-<p>All EU countries are supported. You need to provide your VAT ID for reverse-charge invoices.</p>
-
-<ul>
-  <li>AT = Austria</li>
-  <li>BE = Belgium</li>
-  <li>BG = Bulgaria</li>
-  <li>CY = Cyprus</li>
-  <li>CZ = Czech</li>
-  <li>DE = Germany</li>
-  <li>DK = Denmark</li>
-  <li>EE = Estonia</li>
-  <li>ES = Spain</li>
-  <li>FI = Finland</li>
-  <li>FR = France</li>
-  <li>GR = Greece</li>
-  <li>HR = Croatia</li>
-  <li>HU = Hungary</li>
-  <li>IE = Ireland</li>
-  <li>IT = Italy</li>
-  <li>LT = Lithuania</li>
-  <li>LU = Luxembourg</li>
-  <li>LV = Latvia - Lettland</li>
-  <li>MT = Malta</li>
-  <li>NL = Netherlands</li>
-  <li>PL = Poland</li>
-  <li>PT = Portugal</li>
-  <li>RO = Romania</li>
-  <li>SE = Sweden</li>
-  <li>SI = Slovenia</li>
-  <li>SK = Slovakia</li>
-</ul>
-
-<p>Subscriptions are also possible for customers from the following countries:</p>
+<h2 id="licensing-rules">Licensing Rules</h2>
 
 <ul>
-  <li>AU = Australia</li>
-  <li>CA = Canada</li>
-  <li>CH = Switzerland</li>
-  <li>IS = Iceland</li>
-  <li>NO = Norway</li>
-  <li>NZ = New Zealand</li>
-  <li>SG = Singapore</li>
-  <li>US = United States of America</li>
-  <li>ZA = South Africa</li>
+  <li><strong>Active users</strong>: Each active user consumes one license.</li>
+  <li><strong>Deactivated users</strong>: Do not consume a license. This allows the license to be reassigned to another user.</li>
 </ul>
 
-<h2 id="countries-with-b2b-only">Countries with B2B only</h2>
-
-<p>Customers from the following countries need to provide a document that proves they are a B2B customer (usually Tax ID, or company registration):</p>
+<h3 id="managing-user-accounts">Managing User Accounts</h3>
 
 <ul>
-  <li>GB = United Kingdom</li>
-  <li>CO = Columbia</li>
-  <li>TR = Turkey</li>
+  <li>When a user leaves the company, you can deactivate their account, freeing up the license for another user.</li>
+  <li>If a deactivated user is reactivated, they will once again consume a license. Reactivation is only possible if there are available licenses.</li>
+  <li>New user accounts can only be created if there are free licenses available.</li>
 </ul>
 
-<h2 id="unsupported-countries">Unsupported countries</h2>
-
-<p>Due to international tax regulations, we currently cannot provide service in those countries:</p>
+<h3 id="before-subscription-purchase">Before Subscription Purchase</h3>
 
 <ul>
-  <li>IL = Israel</li>
-  <li>PK = Pakistan</li>
-  <li>UY = Uruguay</li>
-  <li>RS = Serbia</li>
-  <li>LI = Liechtenstein</li>
-  <li>IN = India</li>
+  <li>When registering for a plan, the system displays the minimum number of licenses you need to purchase based on your current number of active users.</li>
+  <li>If you see more licenses than necessary, you can deactivate any extra accounts and reload the page to adjust the displayed license count.</li>
 </ul>
 
-<h2 id="other-countries">Other countries</h2>
+<h3 id="purchasing-additional-licenses">Purchasing Additional Licenses</h3>
 
-<p>Customers from countries that are not listed here should open a support request to clarify the situation.</p>
+<ul>
+  <li>If you lack sufficient licenses to activate an existing account or create a new one, you can purchase additional licenses through the <a href="https://www.kimai.cloud/my-cloud/">My Cloud</a> portal.</li>
+</ul>
+
+<h2 id="deprecated-metered-plans">Deprecated Metered Plans</h2>
+
+<p>For users still on the deprecated <strong>metered plans</strong> (<code class="language-plaintext highlighter-rouge">Plus</code> and <code class="language-plaintext highlighter-rouge">Premium</code>), which are no longer available to new customers, billing is based on usage:</p>
+<ul>
+  <li><strong>Active users incur charges</strong>.</li>
+  <li><strong>Deactivated users incur charges</strong> if they were active within the last month. This includes:
+    <ul>
+      <li>Users who registered within the last month.</li>
+      <li>Users who logged in within the last month.</li>
+      <li>Users who made time bookings within the last month (or later).</li>
+    </ul>
+  </li>
+</ul>
+
+<p>This system ensures flexibility in managing user accounts while maintaining fairness in licensing costs.</p>
 
                 </div>
                 
@@ -399,7 +371,7 @@
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#allowed-countries" class="nav-link">Allowed countries</a></li><li class="nav-item"><a href="#countries-with-b2b-only" class="nav-link">Countries with B2B only</a></li><li class="nav-item"><a href="#unsupported-countries" class="nav-link">Unsupported countries</a></li><li class="nav-item"><a href="#other-countries" class="nav-link">Other countries</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#licensing-rules" class="nav-link">Licensing Rules</a><ul><li class="nav-item"><a href="#managing-user-accounts" class="nav-link">Managing User Accounts</a></li><li class="nav-item"><a href="#before-subscription-purchase" class="nav-link">Before Subscription Purchase</a></li><li class="nav-item"><a href="#purchasing-additional-licenses" class="nav-link">Purchasing Additional Licenses</a></li></ul></li><li class="nav-item"><a href="#deprecated-metered-plans" class="nav-link">Deprecated Metered Plans</a></li></ul>
         
     </aside>
 
