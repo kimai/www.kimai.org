@@ -41,7 +41,7 @@
                             </span>
                             <blockquote class="card-body pb-3 mb-0">
                                 <div class="mb-0">
-                                    {% if include.language %}
+                                    {% if include.language and testimonial.translations[include.language] %}
                                         {{ testimonial.translations[include.language] | markdownify }}
                                     {% else %}
                                         {{ testimonial.text | markdownify }}
