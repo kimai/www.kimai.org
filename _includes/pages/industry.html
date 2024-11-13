@@ -29,7 +29,7 @@
             <h3 class="h5 mb-3">{{ industry.name }}</h3>
             <p>{{ industry.intro }}</p>
             <div class="text-center mt-4">
-                <a href="{{ industry.url }}" class="btn btn-secondary w-75">{{ industry.title }}</a>
+                <a href="{{ industry.url }}" class="btn btn-secondary w-75 text-wrap">{{ industry.title }}</a>
             </div>
         </div>
         {% assign mod = 1 %}
@@ -38,8 +38,6 @@
         {% endif %}
         {% if forloop.index0 == 2 or mod == 0 %}
         {% endif %}
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 justify-content-center g-4 pb-xl-3">
-    </div>
         {% endfor %}
     </div>
 </section>
