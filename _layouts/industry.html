@@ -105,7 +105,7 @@ layout: base
                 <div class="pe-lg-4 me-lg-3 pe-xl-0 me-xl-0">
                     <div class="mb-0">
                         {% assign cta_question = page.cta.question %}
-                        {% assign cta_title = page.cta.title %}
+                        {% assign cta_title = page.cta.title|newline_to_br %}
                         {% include cta-customizable.html question=cta_question title=cta_title %}
                     </div>
                 </div>
