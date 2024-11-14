@@ -236,6 +236,32 @@ feature:
     customer-portal:
         description: Share client and project statistics and timesheets with anyone using a secret URL, optionally password protected.
         name: Customer Portal
+    no-limits:
+        description: "Your SaaS software always includes limits? Not Kimai: there are no limits. You only pay for the amount of active users. I don't limit you, and I do not charge for inactive users. You can create an unlimited amount of users, customers, projects, activities, timesheets and more."
+        name: Knows no limits
+    security:
+        points:
+            security_5: In-depth code reviews
+            security_3: CSRF and XSS protection
+            security_6: Automated code test with a code coverage above 90%
+            security_4: Continuous integration with thousands of checks
+            security_1: Secure password hashing with Argon2 or Sodium
+            security_2: Granular user-roles restricting access
+        description: Kimai implements best-practices in application design to prevent common attacks. Automated security controls are critical to any software development workflow to reduce the amount of time from defect creation to defect detection. These scans run on every code change, every time.
+        name: Security in Kimai
+    security-cloud:
+        points:
+            security_3: No multi-tenancy, each customer has their own database
+            security_1: All connections secured via TLS (SSL)
+            security_2: Best-practice security, firewalls and brute-force prevention
+            security_6: Code runs in tightly restricted domain environments
+            security_4: Servers are hosted in a data center in the EU
+            security_5: Critical services are not accessible to the outside world
+        name: Security in the platform
+        description: Software is only as secure as the system it runs on. I take a defense-in-depth approach with server and network infrastructure. Customers on the hosted platform are secured through multiple layers of protection.
+    privacy:
+        name: Privacy comes first
+        description: I respect your and your users privacy and data. No, this is not yet another boring introduction into a Privacy policy - that's how I run this business. I don't sell data. I follow the GDPR and will answer any question about involved sub-processors.
 install:
     alert-vps: À ce stade, il n'est pas possible d'installer Kimai en téléchargeant un fichier ZIP et en téléchargeant les fichiers sur votre serveur Web. Cela est dû au fait que Composer doit être exécuté en ligne de commande. Cela ne signifie pas nécessairement que vous avez besoin d'un VPS. Certains hôtes partagés vous donnent un accès SSH, grâce auquel vous devriez être en mesure d'installer Composer et Kimai sans problème.
     ssh: La méthode recommandée installe Kimai directement sur votre serveur.
