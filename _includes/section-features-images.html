@@ -6,18 +6,17 @@
                 <p class="fs-lg text-muted mb-0">{{ site.data[page.lang].translation.highlight.subtitle }}</p>
             </div>
         </div>
-        {% for feature in site.data['homepage-features'] %}
+        {% for feature in include.features %}
         <div class="row align-items-center justify-content-center py-4 py-md-5 my-1 my-sm-3 my-md-0 my-xl-3 px-5">
             <div class="col-12 col-md-6 {% cycle 'order-md-2', '' %} pb-2 pb-sm-3 pb-md-0 mb-4 mb-md-0">
                 <div class="text-center">
-                    {% comment %}<img src="{{ feature.image }}" class="img-thumbnail">{% endcomment %}
-                    <i class="bx {{ feature.icon }} feature-icon"></i>
+                    <i class="{{ feature | icon }} feature-icon"></i>
                 </div>
             </div>
             <div class="col-12 col-md-6 {% cycle 'order-md-1', '' %} text-center text-md-start px-5">
-                <h3 class="mb-lg-4">{{ site.data[page.lang].translation.feature[feature.name].name }}</h3>
+                <h3 class="mb-lg-4">{{ site.data[page.lang].translation.feature[feature].name }}</h3>
                 <p class="fs-lg pb-lg-2 mb-4">
-                    {{ site.data[page.lang].translation.feature[feature.name].description }}
+                    {{ site.data[page.lang].translation.feature[feature].description }}
                 </p>
             </div>
         </div>

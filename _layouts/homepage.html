@@ -18,8 +18,9 @@ layout: base
         {% assign testimonials = testimonials | sample: 3 %}
         {% include testimonials-horizontal.html testimonials=testimonials %}
     </div>
-
-    {% include section-features-images.html %}
+ 
+    {% assign features = 'auth,reporting,invoices,api' | split: ',' %}
+    {% include section-features-images.html features=features %}
 
     {% assign testimonials = site.data.testimonials | where_exp: "item", "item.tags contains 'SliderHomepage'" | sample: 5 %}
     {% include testimonials-slider.html testimonials=testimonials %}
