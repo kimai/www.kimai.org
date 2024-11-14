@@ -181,11 +181,11 @@ You can also have a look at the [CustomCSSBundle](https://github.com/Keleo/Custo
 
 ## List your plugin
 
-If you created a plugin or any other kind of software around Kimai which you want to see listed in the {{ site.data[page.lang].translation.store.name}}, head over 
+If you created a plugin or any other kind of software around Kimai which you want to see listed in the Store, head over 
 to the [documentation]({% link _documentation/developer/store.md %}) to find out how.
 
 ## Links
 
-- Check out the [{{ site.data[page.lang].translation.store.name}}]({% link _pages/store.html %}) to find out more free plugins for code demonstrations
+- Check out the [Store]({% link _pages/store.html %}) to find out more free plugins for code demonstrations
 - Read the [Symfony bundle documentation](https://symfony.com/doc/current/bundles.html) if this is your first time writing a Symfony bundle
  
