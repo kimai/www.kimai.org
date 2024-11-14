@@ -247,6 +247,32 @@ feature:
     dark-mode:
         name: Темний режим
         description: Кожній програмі потрібен темний режим, який допомагає ввечері або у темному середовищі зменшити напруження очей.
+    no-limits:
+        name: Knows no limits
+        description: "Your SaaS software always includes limits? Not Kimai: there are no limits. You only pay for the amount of active users. I don't limit you, and I do not charge for inactive users. You can create an unlimited amount of users, customers, projects, activities, timesheets and more."
+    security:
+        points:
+            security_6: Automated code test with a code coverage above 90%
+            security_4: Continuous integration with thousands of checks
+            security_1: Secure password hashing with Argon2 or Sodium
+            security_5: In-depth code reviews
+            security_2: Granular user-roles restricting access
+            security_3: CSRF and XSS protection
+        description: Kimai implements best-practices in application design to prevent common attacks. Automated security controls are critical to any software development workflow to reduce the amount of time from defect creation to defect detection. These scans run on every code change, every time.
+        name: Security in Kimai
+    privacy:
+        name: Privacy comes first
+        description: I respect your and your users privacy and data. No, this is not yet another boring introduction into a Privacy policy - that's how I run this business. I don't sell data. I follow the GDPR and will answer any question about involved sub-processors.
+    security-cloud:
+        points:
+            security_1: All connections secured via TLS (SSL)
+            security_2: Best-practice security, firewalls and brute-force prevention
+            security_6: Code runs in tightly restricted domain environments
+            security_3: No multi-tenancy, each customer has their own database
+            security_4: Servers are hosted in a data center in the EU
+            security_5: Critical services are not accessible to the outside world
+        name: Security in the platform
+        description: Software is only as secure as the system it runs on. I take a defense-in-depth approach with server and network infrastructure. Customers on the hosted platform are secured through multiple layers of protection.
 install:
     alert-vps: На цьому етапі неможливо встановити Kimai, отримавши ZIP-файл і завантаживши файли на свій веб-сервер. Це пов'язано з тим, що Composer потрібно запускати в командному рядку. Це не обов'язково означає, що Вам потрібен VPS. Деякі спільні хости надають доступ до SSH, за допомогою якого Ви зможете встановити Composer і Kimai без жодних проблем.
     ssh: Цей метод встановлює Kimai безпосередньо на Ваш сервер.

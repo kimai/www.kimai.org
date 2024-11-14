@@ -177,7 +177,7 @@ feature:
         description: "Las actividades se utilizan para asignar la unidad de trabajo a las entradas de los partes de horas. Gestione las actividades de cada proyecto con número de orden, presupuesto y visibilidad (para archivarlas) o cree otras globales para evitar duplicados."
     invoices:
         name: "Facturación"
-        description: "Diferentes plantillas de factura, opciones para agrupación de entradas, números de factura configurables y puedes agregar tus propias plantillas en formato de archivo PDF, DOCX, HTML, XLSX y ODS."
+        description: "Plantillas de factura configurables, opciones de agrupación de entradas, números de factura configurables y múltiples formatos como PDF y DOCX."
     export:
         name: "Exportar datos"
         description: "Los datos de las hojas de horas pueden exportarse y compartirse en formato XLSX, PDF, CSV y HTML. Los registros exportados pueden bloquearse y protegerse contra cambios posteriores."
@@ -239,7 +239,7 @@ feature:
         description: 'Kimai admite proveedores de identidad externos e inicio de sesión mediante LDAP y SAML a través de varios proveedores (como Google Workspace, Azure AD o Authentik). La autenticación de dos factores mediante tokens TOTP es posible de forma opcional.'
         name: Autenticación y Seguridad
     reporting:
-        description: 'Análisis de tiempos registrados, clientes, proyectos y actividades. Evaluación según usuarios, clientes, proyectos, actividades, etiquetas, períodos de tiempo y mucho más.'
+        description: 'Análisis de tiempos registrados por usuarios, clientes, proyectos, actividades, etiquetas, periodos de tiempo y más.'
         name: Informes y análisis
     dark-mode:
         name: Modo oscuro
@@ -247,6 +247,32 @@ feature:
     customer-portal:
         description: Comparta estadísticas de clientes y proyectos y partes de horas con cualquiera mediante una URL secreta, opcionalmente protegida por contraseña.
         name: Portal del cliente
+    no-limits:
+        description: "Your SaaS software always includes limits? Not Kimai: there are no limits. You only pay for the amount of active users. I don't limit you, and I do not charge for inactive users. You can create an unlimited amount of users, customers, projects, activities, timesheets and more."
+        name: Knows no limits
+    security:
+        points:
+            security_6: Automated code test with a code coverage above 90%
+            security_4: Continuous integration with thousands of checks
+            security_1: Secure password hashing with Argon2 or Sodium
+            security_5: In-depth code reviews
+            security_2: Granular user-roles restricting access
+            security_3: CSRF and XSS protection
+        name: Security in Kimai
+        description: Kimai implements best-practices in application design to prevent common attacks. Automated security controls are critical to any software development workflow to reduce the amount of time from defect creation to defect detection. These scans run on every code change, every time.
+    privacy:
+        name: Privacy comes first
+        description: I respect your and your users privacy and data. No, this is not yet another boring introduction into a Privacy policy - that's how I run this business. I don't sell data. I follow the GDPR and will answer any question about involved sub-processors.
+    security-cloud:
+        name: Security in the platform
+        points:
+            security_1: All connections secured via TLS (SSL)
+            security_2: Best-practice security, firewalls and brute-force prevention
+            security_6: Code runs in tightly restricted domain environments
+            security_3: No multi-tenancy, each customer has their own database
+            security_4: Servers are hosted in a data center in the EU
+            security_5: Critical services are not accessible to the outside world
+        description: Software is only as secure as the system it runs on. I take a defense-in-depth approach with server and network infrastructure. Customers on the hosted platform are secured through multiple layers of protection.
 install:
     alert-vps: En esta etapa, no es posible instalar Kimai descargando un archivo ZIP y cargando los archivos en tu servidor web. Necesitas tener acceso SSH a tu servidor. Esto no necesariamente significa que necesites un VPS. Algunos hosts compartidos te brindan acceso SSH, a través del cual deberías poder instalar Composer y Kimai sin problemas.
     ssh: Este método instala Kimai directamente en tu servidor.
@@ -519,15 +545,15 @@ industry:
 terms-plugins:
     name: Licencia del complemento
 start-trial:
-    name: Start 30-day free trial of Kimai
-    subtitle: Your own time-tracking system in 3 steps. Try Kimai for 30 days, free of charge and without risk.
-    step_2_title: Choose cloud name
-    video_subtitle: 'Simple as that: In 45 seconds to your own time-tracking!'
-    step_2_text: After account activation you have to create your Kimai-Cloud instance by selecting a (subdomain) name.
-    step_1_title: Create account
-    step_3_title: Start time-tracking
-    step_1_text: Create your account with your Google account or email and password, the later needs to be verified with an email link.
-    title: Start free trial
-    step_3_text: After a short moment your Kimai-Cloud is ready for use, you can now login and start time-tracking.
+    name: Prueba gratuita de 30 días de Kimai
+    subtitle: Tu propio sistema de control del tiempo en 3 pasos. Prueba Kimai durante 30 días, gratis y sin riesgo.
+    step_2_title: Elige el nombre de la nube
+    video_subtitle: 'Así de simple: ¡en 45 segundos a tu propio ritmo !'
+    step_2_text: Tras la activación de la cuenta, deberá crear su instancia de Kimai-Cloud seleccionando un nombre (subdominio).
+    step_1_title: Crear una cuenta
+    step_3_title: Iniciar el control del tiempo
+    step_1_text: Crea tu cuenta con tu cuenta de Google o correo electrónico y contraseña, esta última debe ser verificada con un enlace de correo electrónico.
+    title: Iniciar prueba gratuita
+    step_3_text: Después de un breve momento su Kimai-Cloud estará listo para usarse, ahora puede iniciar sesión y comenzar a realizar el control del tiempo .
 cloud-cta:
-    days_30: Sign up for your 30-days free trial
+    days_30: Regístrate para tu prueba gratuita de 30 días
