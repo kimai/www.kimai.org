@@ -18,7 +18,7 @@ layout: base
         {% assign testimonials = testimonials | sample: 3 %}
         {% include testimonials-horizontal.html testimonials=testimonials %}
     </div>
- 
+
     {% assign features = 'auth,reporting,invoices,api' | split: ',' %}
     {% include section-features-images.html features=features %}
 
