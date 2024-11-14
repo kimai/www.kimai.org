@@ -351,6 +351,32 @@ feature:
     dark-mode:
         name: "Dark mode"
         description: "Because every app needs a dark-mode, which helps to reduce eye strain in the evening or in dark environments."
+    no-limits:
+        name: "Knows no limits"
+        description: "Your SaaS software always includes limits? Not Kimai: there are no limits. You only pay for the amount of active users. I don't limit you, and I do not charge for inactive users. You can create an unlimited amount of users, customers, projects, activities, timesheets and more."
+    privacy:
+        name: "Privacy comes first"
+        description: "I respect your and your users privacy and data. No, this is not yet another boring introduction into a Privacy policy - that's how I run this business. I don't sell data. I follow the GDPR and will answer any question about involved sub-processors."
+    security:
+        name: "Security in Kimai"
+        description: "Kimai implements best-practices in application design to prevent common attacks. Automated security controls are critical to any software development workflow to reduce the amount of time from defect creation to defect detection. These scans run on every code change, every time."
+        points:
+            security_1: Secure password hashing with Argon2 or Sodium
+            security_2: Granular user-roles restricting access
+            security_3: CSRF and XSS protection
+            security_4: Continuous integration with thousands of checks
+            security_5: In-depth code reviews
+            security_6: Automated code test with a code coverage above 90%
+    security-cloud:
+        name: "Security in the platform"
+        description: "Software is only as secure as the system it runs on. I take a defense-in-depth approach with server and network infrastructure. Customers on the hosted platform are secured through multiple layers of protection."
+        points:
+            security_1: All connections secured via TLS (SSL)
+            security_2: Best-practice security, firewalls and brute-force prevention
+            security_3: No multi-tenancy, each customer has their own database
+            security_4: Servers are hosted in a data center in the EU
+            security_5: Critical services are not accessible to the outside world
+            security_6: Code runs in tightly restricted domain environments
 install:
     ssh: This method installs Kimai directly on your server.
     docker: Use our Docker image to install and update Kimai container easily.

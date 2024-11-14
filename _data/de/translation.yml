@@ -351,6 +351,32 @@ feature:
     dark-mode:
         name: "Dark mode"
         description: "Jede App benötigt einen dunklen Modus. Und dieser hilft auch dabei, die Augen am Abend oder in dunklen Umgebungen zu entlasten."
+    no-limits:
+        name: "Kennt keine Limits"
+        description: "Egal, ob Sie pro Benutzer oder pro Monat bezahlen - SaaS-Software beinhaltet immer Limits. Der Premium Tarif kennt buchstäblich \"keine Limits\". Mit anderen Worten: Sie zahlen nur die Anzahl aktiver Benutzer, sie werden nicht eingeschränkt und es werden keine Gebühren für inaktive Benutzer verlangt. Sie können eine unbegrenzte Anzahl an Benutzern, Kunden, Projekten, Aktivitäten und Stundenzetteln anlegen. Alles in Kombination mit dem Mitarbeiterzeitkonten, Rechnungsdruck und vielen weiteren Funktionen."
+    privacy:
+        name: "Datenschutz kommt zuerst"
+        description: "Ich respektieren Ihre und die Privatsphäre und Daten ihrer Nutzer. Dies ist nicht einfach nur eine Floskel der Datenschutzbestimmung, so führe ich mein Business. Ich verkaufe keine Daten. Ich befolge die DSGVO und werde jede Frage über involvierte Auftragsdatenverarbeiter beantworten."
+    security:
+        name: "Sicherheit in Kimai"
+        description: "Kimai setzt auf bewährte Verfahren im Anwendungsdesign, um typische Angriffsszenarien zu verhindern. Automatisierte Sicherheitskontrollen sind für jede Software-Entwicklung entscheidend, um die Zeit von der Fehlererstellung bis zur Fehlererkennung zu verkürzen. Diese Scans laufen bei jeder Codeänderung, jedes einzelne mal."
+        points:
+            security_1: Sicheres Passwort Hashing mit Argon2 oder Sodium
+            security_2: Konfigurierbare Benutzerrollen, die den Zugriff einschränken
+            security_3: CSRF und XSS Schutzmaßnahmen
+            security_4: Continuous integration mit tausenden von Prüfungen
+            security_5: Detaillierte Code-Reviews
+            security_6: Automatisierte Code Tests mit einer Code-Coverage von über 90%
+    security-cloud:
+        name: "Sicherheit der Platform"
+        description: "Software ist nur so sicher, wie das System auf dem es läuft. Ich verfolge einen umfassenden Verteidigungsansatz um die Server- und Netzwerkinfrastruktur zu schützen. Kunden auf der Cloud-Plattform werden auf mehreren Ebenen beschützt."
+        points:
+            security_1: Alle Verbindungen sind über TLS (SSL) gesichert
+            security_2: Netzwerk-Sicherheit, Firewalls und Brute-Force Prävention
+            security_3: Klare Trennung, jeder Kunde hat eigene Datenbanken
+            security_4: Server werden innerhalb der EU gehostet
+            security_5: Kritische Services sind nicht nach außerhalb geöffnet
+            security_6: Code läuft in stark eingeschränkten Domänenumgebungen
 install:
     ssh: Diese Methode installiert Kimai direkt auf Ihrem Server.
     docker: Verwenden Sie unser Docker-Image, um den Kimai-Container zu installieren.
