@@ -8,17 +8,17 @@
             <div class="col text-center border-end px-5">
                 {% assign pluginsTitle = site.data[page.lang].translation.demo.plugins-title %}
                 {% assign pluginsDescription = site.data[page.lang].translation.demo.plugins-description %}
-                {% include card-demo.html id="plugins" title=pluginsTitle description=pluginsDescription url="https://demo.kimai.org" color="success" icon="bx-plug" %}
+                {% include card-demo.html id="plugins" title=pluginsTitle description=pluginsDescription url="https://demo.kimai.org" color="success" icon="featured" %}
             </div>
             <div class="col text-center border-end px-5">
                 {% assign emptyTitle = site.data[page.lang].translation.demo.empty-title %}
                 {% assign emptyDescription = site.data[page.lang].translation.demo.empty-description %}
-                {% include card-demo.html id="empty" title=emptyTitle description=emptyDescription url="https://demo-empty.kimai.org" color="primary" icon="bx-test-tube" %}
+                {% include card-demo.html id="empty" title=emptyTitle description=emptyDescription url="https://demo-empty.kimai.org" color="primary" icon="plugins" %}
             </div>
             <div class="col text-center px-5">
                 {% assign stableTitle = site.data[page.lang].translation.demo.stable-title %}
                 {% assign stableDescription = site.data[page.lang].translation.demo.stable-description %}
-                {% include card-demo.html id="stable" title=stableTitle description=stableDescription url="https://demo-stable.kimai.org" color="secondary" icon="bx-file-blank" %}
+                {% include card-demo.html id="stable" title=stableTitle description=stableDescription url="https://demo-stable.kimai.org" color="secondary" icon="default" %}
             </div>
         </div>
 
