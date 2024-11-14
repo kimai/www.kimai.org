@@ -31,7 +31,7 @@ related:
         A modern web browser
     </li>
     <li class="d-flex align-items-center pb-1 mb-2">
-        <i class="bx bx-cog fs-xl text-primary me-3"></i>
+        <i class="{{ 'preferences' | icon }} fs-xl text-primary me-3"></i>
         A free subdomain (use in subdirectory is not supported)
     </li>
     <li class="d-flex align-items-center pb-1 mb-2">

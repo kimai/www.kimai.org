@@ -14,7 +14,7 @@ Some widget might require certain permissions to access the data, so different u
 
 ## Editing the Dashboard 
 
-Upon clicking the {% include demo-action-button.html icon="bx bx-cog" title="Preferences" %} button in the top right corner, you can configure the dashboard.
+Upon clicking the {% include demo-action-button.html icon="preferences" title="Preferences" %} button in the top right corner, you can configure the dashboard.
 
 When you delete a widget from the Dashboard, you have to manually click the save button.
 

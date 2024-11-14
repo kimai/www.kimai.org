@@ -46,7 +46,7 @@ Example: to get a three digit long string with year counter use `{cy,3}`, which 
 Characters outside the replacer **cannot** include `{` and `}`.
 {% endalert %}
 
-To change the format, look out for the {% include demo-action-button.html icon="bx bx-cog" %} icon in the invoice screen, or change it from the `System configurations`.
+To change the format, look out for the {% include demo-action-button.html icon="preferences" %} icon in the invoice screen, or change it from the `System configurations`.
 
 ### Incrementing the invoice counter
 
