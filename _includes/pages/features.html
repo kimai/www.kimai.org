@@ -72,7 +72,7 @@
             {% assign features = site.data.feature %}
             {% for feature in features %}
                 {% assign feature_key = feature.name %}
-                {% assign feature_icon = feature.icon | default: 'bx-time-five' %}
+                {% assign feature_icon = feature.icon | default: 'clock' %}
                 {% assign feature_documentation = feature.documentation %}
                 {% assign lang_replacer = page.lang | append: '/' %}
                 {% if page.lang == 'en' %}
@@ -87,7 +87,7 @@
                         <a href="{% link {{ feature_documentation }} %}" class="card card-hover h-100 border-0 shadow-sm text-decoration-none pt-5 px-sm-3 px-md-0 px-lg-3 pb-sm-3 pb-md-0 pb-lg-3 me-xl-2">
                             <div class="card-body pt-3">
                                 <div class="d-inline-block bg-primary shadow-primary rounded-3 position-absolute top-0 translate-middle-y p-3">
-                                    <i class="bx {{ feature_icon }} fs-3 text-white"></i>
+                                    <i class="{{ feature_icon | icon }} fs-3 text-white"></i>
                                 </div>
                                 <h2 class="h4 d-inline-flex align-items-center">
                                     {{ feature_title }}
@@ -100,7 +100,7 @@
                         <div class="card card-hover h-100 border-0 shadow-sm text-decoration-none pt-5 px-sm-3 px-md-0 px-lg-3 pb-sm-3 pb-md-0 pb-lg-3 me-xl-2">
                             <div class="card-body pt-3">
                                 <div class="d-inline-block bg-primary shadow-primary rounded-3 position-absolute top-0 translate-middle-y p-3">
-                                    <i class="bx {{ feature_icon }} fs-3 text-white"></i>
+                                    <i class="{{ feature_icon | icon }} fs-3 text-white"></i>
                                 </div>
                                 <h2 class="h4 d-inline-flex align-items-center">
                                     {{ feature_title }}

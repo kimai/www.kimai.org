@@ -22,9 +22,9 @@
                     <div class="card border-0 bg-transparent rounded-0 p-md-1 p-xl-3">
                         <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
                             {% if feature_documentation != nil and feature_documentation != '' %}
-                                <a href="{% link {{ feature_documentation }} %}" title="{{ feature_title }}"><i class="bx {{ feature.icon }} fs-2"></i></a>
+                                <a href="{% link {{ feature_documentation }} %}" title="{{ feature_title }}"><i class="{{ feature.icon | icon }} fs-2"></i></a>
                             {% else %}
-                                <i class="bx {{ feature.icon }} fs-2" title="{{ feature_title }}"></i>
+                                <i class="{{ feature.icon | icon }} fs-2" title="{{ feature_title }}"></i>
                             {% endif %}
                         </div>
                         <div class="card-body text-center">
