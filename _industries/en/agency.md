@@ -4,7 +4,7 @@ title: "Time tracking for agencies"
 subtitle: "The key to profitability"
 intro: "Kimai helps organizing your workflow and collecting billable project hours"
 type: office
-icon: bx-pen
+icon: agency
 introduction: |
     Are you running an agency - whether it's in marketing, PR, design, consulting, HR, or architecture? Then you know how critical time tracking is to your business. Tracking employee hours and client project time is essential for billing accurately, understanding profitability, and managing your growing team.
 

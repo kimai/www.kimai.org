@@ -4,7 +4,7 @@ title: "Time tracking for software developers"
 subtitle: "Maximize Your Productivity"
 intro: "Kimai helps organizing your workflow and collecting billable project hours"
 type: office
-icon: bx-pen
+icon: code
 introduction: | 
     We understand the pain all too well -  endless overtime, stressful deadlines, time-consuming bugs, and the constant struggle to make project managers and clients appreciate the true effort behind your code. It's a vicious cycle that can quickly lead to burnout and disrupt your work-life balance. This is a common challenge faced by software developers, programmers, engineers, and other tech professionals.
 
