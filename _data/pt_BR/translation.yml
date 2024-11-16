@@ -239,7 +239,7 @@ feature:
         description: O Kimai oferece suporte a provedores de identidade externos e login via LDAP e SAML em vários provedores (como Google Workspace, Azure AD ou Authentik). A autenticação de dois fatores por meio de tokens TOTP é uma opção.
         name: Autenticação e segurança
     reporting:
-        description: Análise dos horários registrados, clientes, projetos e atividades. Avaliação de acordo com os usuários, clientes, projetos, atividades, tags, períodos de tempo e muito mais.
+        description: Análise dos tempos registrados por usuários, clientes, projetos, atividades, etiquetas, períodos de tempo e muito mais.
         name: Relatórios e análises
     dark-mode:
         name: Modo escuro
@@ -248,31 +248,31 @@ feature:
         description: Compartilhe as estatísticas dos clientes, de projetos e de planilhas de horas com qualquer pessoa usando um URL secreto, opcionalmente protegido por senha.
         name: Portal do cliente
     privacy:
-        name: Privacy comes first
-        description: I respect your and your users privacy and data. No, this is not yet another boring introduction into a Privacy policy - that's how I run this business. I don't sell data. I follow the GDPR and will answer any question about involved sub-processors.
+        name: A privacidade vem em primeiro lugar
+        description: Respeito a privacidade dos usuários e a sua. Não, esta não é mais uma introdução enfadonha a uma política de privacidade; é assim que administro este negócio. Não vendo dados. Sigo o GDPR e responderei a qualquer pergunta sobre subprocessadores envolvidos.
     no-limits:
-        name: Knows no limits
-        description: "Your SaaS software always includes limits? Not Kimai: there are no limits. You only pay for the amount of active users. I don't limit you, and I do not charge for inactive users. You can create an unlimited amount of users, customers, projects, activities, timesheets and more."
+        name: Não há limites
+        description: "O seu software SaaS tem limites? O Kimai não. Você paga apenas pela quantidade de usuários ativos. Eu não o limito nem cobro por usuários inativos. Com ele, você pode criar uma quantidade ilimitada de usuários, clientes, projetos, atividades, planilhas de horas e muito mais."
     security:
         points:
-            security_6: Automated code test with a code coverage above 90%
-            security_4: Continuous integration with thousands of checks
-            security_5: In-depth code reviews
-            security_2: Granular user-roles restricting access
-            security_1: Secure password hashing with Argon2 or Sodium
-            security_3: CSRF and XSS protection
-        description: Kimai implements best-practices in application design to prevent common attacks. Automated security controls are critical to any software development workflow to reduce the amount of time from defect creation to defect detection. These scans run on every code change, every time.
-        name: Security in Kimai
+            security_6: Teste de código automatizado com uma cobertura acima de 90%
+            security_4: Integração contínua com centenas de verificações
+            security_5: Revisões detalhadas do código
+            security_2: Funções de usuário granulares que restringem o acesso
+            security_1: Hash de senha segura com Argon2 ou Sodium
+            security_3: Proteções CSRF e XSS
+        description: O Kimai implementa as práticas recomendadas no desenvolvimento de aplicativos para evitar ataques comuns. Os controles de segurança automatizados são essenciais para qualquer fluxo de trabalho de desenvolvimento de software, pois reduzem o tempo entre a criação e a detecção de defeitos. Essas varreduras são executadas a cada alteração de código.
+        name: A segurança no Kimai
     security-cloud:
-        name: Security in the platform
+        name: Segurança na plataforma
         points:
-            security_1: All connections secured via TLS (SSL)
-            security_2: Best-practice security, firewalls and brute-force prevention
-            security_6: Code runs in tightly restricted domain environments
-            security_5: Critical services are not accessible to the outside world
-            security_3: No multi-tenancy, each customer has their own database
-            security_4: Servers are hosted in a data center in the EU
-        description: Software is only as secure as the system it runs on. I take a defense-in-depth approach with server and network infrastructure. Customers on the hosted platform are secured through multiple layers of protection.
+            security_1: Todas as conexões são protegidas por TLS (SSL)
+            security_2: Melhores práticas de segurança, firewalls e prevenção contra força bruta
+            security_6: O código é executado em ambientes de domínio bem restrito
+            security_5: Os serviços essenciais não são acessíveis ao mundo externo
+            security_3: Sem multilocação, cada cliente tem o seu próprio banco de dados
+            security_4: Os servidores são hospedados em um data center na UE
+        description: O software é tão seguro quanto o sistema onde é executado. Adoto uma abordagem de defesa completa com infraestrutura de servidor e rede. Os clientes hospedados na plataforma são protegidos por várias camadas de segurança.
 install:
     alert-vps: Nesta fase, não é possível instalar o Kimai baixando um arquivo ZIP e enviando os arquivos para o seu servidor web. Isso ocorre porque o Composer precisa ser executado via linha de comando. Isso não significa necessariamente que você precisa de um VPS. Alguns hosts compartilhados fornecem acesso SSH, por meio do qual você poderá instalar o Composer e o Kimai sem maiores problemas.
     ssh: Este método instala o Kimai diretamente no seu servidor.

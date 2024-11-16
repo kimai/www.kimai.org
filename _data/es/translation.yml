@@ -248,31 +248,31 @@ feature:
         description: Comparta estadísticas de clientes y proyectos y partes de horas con cualquiera mediante una URL secreta, opcionalmente protegida por contraseña.
         name: Portal del cliente
     no-limits:
-        description: "Your SaaS software always includes limits? Not Kimai: there are no limits. You only pay for the amount of active users. I don't limit you, and I do not charge for inactive users. You can create an unlimited amount of users, customers, projects, activities, timesheets and more."
-        name: Knows no limits
+        description: "¿Su software SaaS siempre incluye límites? Kimai no: no hay límites. Solo pagas por la cantidad de usuarios activos. Yo no te limito y no cobro por usuarios inactivos. Puede crear una cantidad ilimitada de usuarios, clientes, proyectos, actividades, hojas de tiempo y más."
+        name: Sin límites
     security:
         points:
-            security_6: Automated code test with a code coverage above 90%
-            security_4: Continuous integration with thousands of checks
-            security_1: Secure password hashing with Argon2 or Sodium
-            security_5: In-depth code reviews
-            security_2: Granular user-roles restricting access
-            security_3: CSRF and XSS protection
-        name: Security in Kimai
-        description: Kimai implements best-practices in application design to prevent common attacks. Automated security controls are critical to any software development workflow to reduce the amount of time from defect creation to defect detection. These scans run on every code change, every time.
+            security_6: Pruebas de código automatizadas con una cobertura de código superior al 90%
+            security_4: Integración continua con miles de pruebas.
+            security_1: Hashing seguro de contraseñas con Argon2 o Sodium
+            security_5: Revisiones de código en profundidad
+            security_2: Roles de usuario configurables que restringen el acceso
+            security_3: Protección CSRF y XSS
+        name: Seguridad en Kimai
+        description: Kimai aplica las mejores prácticas en el diseño de aplicaciones para prevenir los ataques más comunes. Los controles de seguridad automatizados son fundamentales en cualquier flujo de trabajo de desarrollo de software para reducir el tiempo que transcurre desde la creación del defecto hasta su detección. Estas exploraciones se ejecutan en cada cambio de código, cada vez.
     privacy:
-        name: Privacy comes first
-        description: I respect your and your users privacy and data. No, this is not yet another boring introduction into a Privacy policy - that's how I run this business. I don't sell data. I follow the GDPR and will answer any question about involved sub-processors.
+        name: La privacidad es lo primero
+        description: 'Respeto tu privacidad y la de tus usuarios. No, no se trata de otra aburrida introducción a una política de privacidad: así es como dirijo este negocio. No vendo datos. Cumplo el GDPR y responderé a cualquier pregunta sobre los subprocesadores implicados.'
     security-cloud:
-        name: Security in the platform
+        name: Seguridad en la plataforma
         points:
-            security_1: All connections secured via TLS (SSL)
-            security_2: Best-practice security, firewalls and brute-force prevention
-            security_6: Code runs in tightly restricted domain environments
-            security_3: No multi-tenancy, each customer has their own database
-            security_4: Servers are hosted in a data center in the EU
-            security_5: Critical services are not accessible to the outside world
-        description: Software is only as secure as the system it runs on. I take a defense-in-depth approach with server and network infrastructure. Customers on the hosted platform are secured through multiple layers of protection.
+            security_1: Todas las conexiones están protegidas mediante TLS (SSL)
+            security_2: Mejores prácticas de seguridad, firewalls y prevención de ataques de fuerza bruta
+            security_6: El código se ejecuta en entornos de dominio estrictamente restringidos
+            security_3: Separación clara, cada cliente tiene sus propias bases de datos.
+            security_4: Los servidores están alojados dentro de la UE.
+            security_5: Los servicios críticos no son accesibles al exterior
+        description: El software es tan seguro como el sistema en el que se ejecuta. Adopto un enfoque de defensa en profundidad con la infraestructura de servidores y redes. Los clientes de la plataforma alojada están protegidos mediante varias capas de protección.
 install:
     alert-vps: En esta etapa, no es posible instalar Kimai descargando un archivo ZIP y cargando los archivos en tu servidor web. Necesitas tener acceso SSH a tu servidor. Esto no necesariamente significa que necesites un VPS. Algunos hosts compartidos te brindan acceso SSH, a través del cual deberías poder instalar Composer y Kimai sin problemas.
     ssh: Este método instala Kimai directamente en tu servidor.
