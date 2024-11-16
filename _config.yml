@@ -36,7 +36,6 @@ languages:
     - en
     - es
     - fr
-#    - fa
     - he
     - hr
     - it
@@ -57,7 +56,6 @@ date_format:
     en: "%Y-%m-%d"
     es: "%d/%m/%Y"
     fr: "%d.%m.%Y"
-#    fa: "%Y-%m-%d"
     he: "%Y-%m-%d"
     hr: "%-d. %-m. %Y."
     it: "%d/%m/%Y"
@@ -113,7 +111,6 @@ custom_domain:
     zh_Hant: true
 
 language_names:
-    fa: فارسی
     cs: Čeština
     de: Deutsch
     en: English
@@ -139,107 +136,129 @@ rtl:
     - he
 
 collections:
-  documentation:
-    output: true
-    permalink: "/:collection/:name.html"
-  docu_versioned:
-    output: true
-    permalink: "/documentation/:path.html"
-  pages:
-    output: true
-    permalink: "/:name/"
-  error:
-    output: true
-    permalink: "/:path.html"
-  store:
-    output: true
-    permalink: "/store/:title.html"
-  alternative:
-    output: true
-  keywords:
-    output: true
-  landingpage:
-    output: true
-  industries:
-    output: true
-  blog_tags:
-    output: true
+    documentation:
+        output: true
+        permalink: "/:collection/:name.html"
+    docu_versioned:
+        output: true
+        permalink: "/documentation/:path.html"
+    pages:
+        output: true
+        permalink: "/:name/"
+    error:
+        output: true
+        permalink: "/:path.html"
+    store:
+        output: true
+        permalink: "/store/:title.html"
+    alternative:
+        output: true
+    keywords:
+        output: true
+    landingpage:
+        output: true
+    industries:
+        output: true
+    blog_tags:
+        output: true
+    changelog:
+        output: true
 
 defaults:
-  - scope:
-      path: ""
-      type: posts
-    values:
-      permalink: "/blog/:year/:title/"
-      layout: post
-      author: kevinpapst
-      lang: en
-  - scope:
-      path: ""
-      type: pages
-    values:
-      layout: page
-      lang: en
-  - scope:
-      path: ""
-      type: error
-    values:
-      layout: error
-      lang: en
-      sitemap: false
-      robots: noindex,follow
-  - scope:
-      path: ""
-      type: documentation
-    values:
-      layout: documentation
-      lang: en
-  - scope:
-      path: ""
-      type: docu_versioned
-    values:
-      layout: docu-versioned
-      lang: en
-      sitemap: false
-  - scope:
-      path: ""
-      type: store
-    values:
-      layout: store-item
-      lang: en
-  - scope:
-      path: "_alternative/en/"
-      type: alternative
-    values:
-      layout: alternative
-      lang: en
-      permalink: "/en/:title-alternative"
-  - scope:
-      path: "_keywords/de/"
-    values:
-      lang: de
-  - scope:
-      path: "_keywords/en/"
-    values:
-      lang: en
-  - scope:
-      path: "_landingpage/de/"
-    values:
-      layout: landingpage
-      permalink: "/de/:title"
-      lang: de
-  - scope:
-      path: "_landingpage/en/"
-    values:
-      layout: landingpage
-      permalink: "/en/:title"
-      lang: en
-  - scope:
-      path: "_industries/en/"
-    values:
-      layout: industry
-      permalink: "/en/:title-time-tracking"
-      lang: en
+    -
+        scope:
+            path: ""
+            type: posts
+        values:
+            permalink: "/blog/:year/:title/"
+            layout: post
+            author: kevinpapst
+            lang: en
+    -
+        scope:
+            path: ""
+            type: pages
+        values:
+            layout: page
+            lang: en
+    -
+        scope:
+            path: ""
+            type: error
+        values:
+            layout: error
+            lang: en
+            sitemap: false
+            robots: noindex,follow
+    -
+        scope:
+            path: ""
+            type: documentation
+        values:
+            layout: documentation
+            lang: en
+    -
+        scope:
+            path: ""
+            type: docu_versioned
+        values:
+            layout: docu-versioned
+            lang: en
+            sitemap: false
+    -
+        scope:
+            path: ""
+            type: store
+        values:
+            layout: store-item
+            lang: en
+    -
+        scope:
+            path: "_alternative/en/"
+            type: alternative
+        values:
+            layout: alternative
+            lang: en
+            permalink: "/en/:title-alternative"
+    -
+        scope:
+            path: "_keywords/de/"
+        values:
+            lang: de
+    -
+        scope:
+            path: "_keywords/en/"
+        values:
+            lang: en
+    -
+        scope:
+            path: "_landingpage/de/"
+        values:
+            layout: landingpage
+            permalink: "/de/:title"
+            lang: de
+    -
+        scope:
+            path: "_landingpage/en/"
+        values:
+            layout: landingpage
+            permalink: "/en/:title"
+            lang: en
+    -
+        scope:
+            path: "_industries/en/"
+        values:
+            layout: industry
+            permalink: "/en/:title-time-tracking"
+            lang: en
+    -
+        scope:
+            path: "_changelog/"
+        values:
+            layout: post
+            author: kevinpapst
+            permalink: "/blog/:year/:title/"
+            lang: en
 
 markdown: kramdown
 kramdown:
@@ -248,35 +267,35 @@ kramdown:
 
 # see Gemfile
 plugins:
-  - jekyll-mentions
-  - jekyll-paginate
+    - jekyll-mentions
+    - jekyll-paginate
 
 jekyll-mentions:
     base_url: https://github.com
 
 exclude:
-  - .DS_Store/
-  - .git/
-  - .github/
-  - .idea/
-  - .jekyll-cache/
-  - .sass-cache/
-  - _includes/
-  - _site/
-  - node_modules/
-  - scripts/
-  - src/
-  - vendor/
-  - gulpfile.js
-  - package.json
-  - package-lock.json
-  - README.md
-  - Gemfile
-  - Gemfile.lock
-  - CNAME
-  - LICENSE
-  - .gitignore
-  - _config.dev.yml
-  - composer.json
-  - composer.lock
-  - webpack.config.js
+    - .DS_Store/
+    - .git/
+    - .github/
+    - .idea/
+    - .jekyll-cache/
+    - .sass-cache/
+    - _includes/
+    - _site/
+    - node_modules/
+    - scripts/
+    - src/
+    - vendor/
+    - gulpfile.js
+    - package.json
+    - package-lock.json
+    - README.md
+    - Gemfile
+    - Gemfile.lock
+    - CNAME
+    - LICENSE
+    - .gitignore
+    - _config.dev.yml
+    - composer.json
+    - composer.lock
+    - webpack.config.js
