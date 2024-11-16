@@ -1,6 +1,6 @@
 ---
-title: "Compare Kimai vs. Clockify: Compare these two time-trackers"
-name: Clockify
+title: "Compare Kimai vs. Toggle: Which time-tracker fits your needs?"
+name: toggl track
 image: /images/logos/clock-regular.svg
 feature: true
 is_oss: false
@@ -17,7 +17,7 @@ rest_api: true
 invoices: true
 export: true
 saml: false
-support: true
+support: false
 backup_frequency: false
 tls_included: false
 custom_domain: 'costs'
@@ -32,7 +32,16 @@ task-management-bundle: false
 translation-bundle: false
 controlling: false
 ---
- 
-Clockify is a time tracker and timesheet app that lets you track work hours across projects.
 
-Clockify is located in the USA.
+Speaking in their own words:
+
+> Time tracking software to boost performance and get paid for every billable minute. 
+> An intuitive tool that makes time tracking painless for the entire team.
+
+While Toggle is originally from Estonia, **Toggl Inc. is located in the USA**.
+
+Hosting sensitive data with a US company is risky in terms of data privacy, 
+as they cannot protect your data against access from US authorities. 
+
+## Moving from toggl to Kimai
+

@@ -1,6 +1,5 @@
 ---
-title: "Kimai vs. Open Project: Why companies choose Kimai over Open Project"
-redirect_from: /en/compare/openproject.html
+title: "Compare Kimai vs. Open Project - the best alternative for Open project time-tracking"
 name: OpenProject
 image: /images/logos/clock-regular.svg
 feature: true

@@ -40,4 +40,4 @@ In 2021 there was code activity in 3 days, in 2022 in 4 days and in 2023 in 2 da
 
 There is no paid support available or any kind of user manual.
 
-It is hard to tell if it will evolve in the future, it seems that the project is not maintained any longer. 
+It is hard to tell if it will evolve in the future. There seems to be only a tiny amount of maintenance happening. 
