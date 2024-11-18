@@ -229,7 +229,7 @@ feature:
         description: שיתוף סטטיסטיקה וגיליונות נתונים של מיזמים עם כל אחד ואחת באמצעות כתובת סודית שאפשר גם להגן עליה בסיסמה.
         name: שער לקוחות
     privacy:
-        name: אבטחה בראש ובראשונה
+        name: פרטיות בראש ובראשונה
         description: הפרטיות והנתונים שלך ושל המשתמשים שלך מאוד חשובה לי. לא, זה לא עוד סעיף היכרות לצלילה לתוך מדיניות פרטיות - זאת הדרך שלי לעשות עסקים. אני לא מוכר נתונים. אני מקפיד באופן אדוק על GDPR ואענה על כל שאלה בנוגע למנגנוני עיבוד שפועלים מאחורי הקלעים.
     security:
         points:
@@ -240,20 +240,20 @@ feature:
             security_1: הפקת גיבוב סיסמאות מאובטחת עם Argon2 או Sodium
             security_3: הגנה מפני CSRF ו־XSS
         name: אבטחת מידע ב־Kimai
-        description: Kimai implements best-practices in application design to prevent common attacks. Automated security controls are critical to any software development workflow to reduce the amount of time from defect creation to defect detection. These scans run on every code change, every time.
+        description: Kimai מממשת את ההמלצות המובילות לתכנון יישומים כדי למנוע תקיפות נפוצות. בקרות אבטחת מידע אוטומטיות הן חיוניות בכל תהליך פיתוח תוכנה כדי לסייע בצמצום הזמן בין יצירת תקלה לזיהוי תקלה. הסריקות האלו נערכות עם כל שינוי קוד, כל הזמן.
     security-cloud:
         name: אבטחה כחלק מהפלטפורמה
         points:
-            security_1: All connections secured via TLS (SSL)
-            security_2: Best-practice security, firewalls and brute-force prevention
-            security_6: Code runs in tightly restricted domain environments
-            security_3: No multi-tenancy, each customer has their own database
-            security_4: Servers are hosted in a data center in the EU
-            security_5: Critical services are not accessible to the outside world
-        description: Software is only as secure as the system it runs on. I take a defense-in-depth approach with server and network infrastructure. Customers on the hosted platform are secured through multiple layers of protection.
+            security_1: כל החיבורים מאובטחים באמצעות TLS ‏(SSL)
+            security_2: אבטחה, חומות אש ומניעת תקיפת כוח גס (Brute-force) לפי ההמלצות המובילות
+            security_6: הקוד פועל בסביבות מוגבלות באופן אדוק
+            security_3: אין ערבוב לקוחות, לכל לקוח יש מסד נתונים משלו
+            security_4: השרתים מתארחים בחוות שרתים באירופה
+            security_5: שירותים חשובים במיוחד אינם נגישים לעולם החיצון
+        description: תוכנה לא יכולה להיות מאובטחת בהרבה מהתשתית שהיא פועלת עליה. הגישה שלך לאבטחה היא הגנה מהעומק עם תשתית שרת ורשת. לקוחות בפלטפורמה שאני מארח מאובטחים במגוון שכבות הגנה.
     no-limits:
         name: אין מגבלות
-        description: "Your SaaS software always includes limits? Not Kimai: there are no limits. You only pay for the amount of active users. I don't limit you, and I do not charge for inactive users. You can create an unlimited amount of users, customers, projects, activities, timesheets and more."
+        description: "תוכנות הענן שלך תמיד מגבילות אותך? לא ב־Kimai: אצלנו אין מגבלות. משלמים רק על כמות המשתמשים הפעילים. אין הגבלה, ואין חיוב על משתמשים לא פעילים. אפשר ליצור כמות בלתי מוגבלת של משתמשים, לקוחות, מיזמים, פעילויות, גיליונות שעות ועוד."
 install:
     alert-vps: "בשלב הזה, אי אפשר להתקין את Kimai על ידי הורדת קובץ zip והעלאתו לשרת שלך. צריך גישה ב־SSH לשרת שלך. זה לא אומר שצריך שרת וירטואלי פרטי (VPS). חלק מהמארחים המשותפים נותנים גישה ב־SSH, דרכה אפשר להתקין Composer ואת Kimai ללא שום בעיות."
     ssh: השיטה הזאת מתקינה את Kimai ישירות בשרת שלך.
