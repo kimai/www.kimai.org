@@ -9,7 +9,7 @@
 
 <section class="container mt-2 mt-md-4 mt-lg-5 mb-5">
     <p class="fs-lg text-muted text-center pb-4 mb-2 mb-lg-3">{{ site.data[page.lang].translation.industry.office }}</p>
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 justify-content-center g-4 pb-xl-3">
+    <div class="row row-cols-1 row-cols-xs-1 row-cols-lg-2 justify-content-center g-4 pb-xl-3">
         <div class="col text-center px-3">
             <div class="card d-table border-0 p-3 mx-auto mb-4">
                 <i class="{{ 'nonprofit' | icon }} bx-lg"></i>
@@ -32,12 +32,6 @@
                 <a href="{{ industry.url }}" class="btn btn-secondary w-75 text-wrap">{{ industry.title }}</a>
             </div>
         </div>
-        {% assign mod = 1 %}
-        {% if forloop.index0 > 3 %}
-            {% assign mod = forloop.index0 | modulo: 3 %}
-        {% endif %}
-        {% if forloop.index0 == 2 or mod == 0 %}
-        {% endif %}
         {% endfor %}
     </div>
 </section>
