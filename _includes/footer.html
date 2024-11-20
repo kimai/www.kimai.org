@@ -117,6 +117,11 @@
                                         <a href="{{ tool.url | full_url: 'en' }}" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to {{ tool.name }}">{{ tool.name }}</a>
                                     </li>
                                 {% endfor %}
+                                {% if page.lang == 'de' or page.lang == 'en' %}
+                                <li class="nav-item">
+                                    {% include link-translated-menu.html item="time-tracking-terms" language=englishOrGerman class="nav-link fs-sm fw-medium px-0 py-1" %}
+                                </li>
+                                {% endif %}
                             </ul>
                         </div>
                     </div>
