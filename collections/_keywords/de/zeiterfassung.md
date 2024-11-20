@@ -1,6 +1,7 @@
 ---
 title: "Open-Source Zeiterfassung"
 keyword: "Zeiterfassung"
+intro: "Zeiterfassung ist die systematische Dokumentation und Aufzeichnung von Arbeitszeiten, Pausen und Abwesenheiten der Mitarbeiter mittels manueller oder elektronischer Methoden."
 permalink: "/de/open-source-zeiterfassung"
 layout: keyword
 ---

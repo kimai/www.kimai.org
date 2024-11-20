@@ -1,6 +1,7 @@
 ---
 title: "Open-Source Stempeluhr"
 keyword: "Stempeluhr"
+intro: "Eine Stempeluhr ist ein Gerät zur Arbeitszeiterfassung, das die Uhrzeit beim Kommen und Gehen der Mitarbeiter automatisch auf eine Karte druckt oder digital speichert."
 permalink: "/de/open-source-stempeluhr"
 layout: keyword
 ---

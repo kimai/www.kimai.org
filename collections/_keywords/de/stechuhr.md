@@ -2,6 +2,7 @@
 title: "Open-Source Stechuhr"
 keyword: "Stechuhr"
 permalink: "/de/open-source-stechuhr"
+intro: "Eine Stechuhr ist ein Gerät zur Erfassung von Arbeitszeiten, das den Arbeitsbeginn und das Arbeitsende von Mitarbeitern aufzeichnet und in digitaler Form als Kiosk bezeichnet wird."
 layout: keyword
 ---
 
