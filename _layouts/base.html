@@ -16,11 +16,7 @@
     <title>
         {%- assign page_title = page.title %}
         {%- assign prefix = ' – Kimai' %}
-        {%- if page.translation_key != nil -%}
-            {% assign page_title = site.data[page.lang].translation[page.translation_key] %}
-        {%- elsif layout.translation_key != nil -%}
-            {% assign page_title = site.data[page.lang].translation[layout.translation_key] %}
-        {%- elsif site.data[page.lang].translation[page.slug].title != nil -%}
+        {%- if site.data[page.lang].translation[page.slug].title != nil -%}
             {% assign page_title = site.data[page.lang].translation[page.slug].title %}
             {%- assign prefix = '' %}
         {%- elsif site.data[page.lang].translation[page.slug].name != nil -%}
@@ -30,19 +26,21 @@
         {%- endif -%}
         {{- page_title }}{% unless page_title contains 'Kimai'%}{{ prefix -}}{% endunless -%}
     </title>
-    {%- assign page_description = page.excerpt -%}
+    {%- assign page_description = '' -%}
     {%- if site.data[page.lang].translation[page.slug].description != nil -%}
         {% assign page_description = site.data[page.lang].translation[page.slug].description %}
-    {%- elsif site.data[page.lang].store.items[page.slug].intro != nil -%}
-        {% assign page_description = site.data[page.lang].store.items[page.slug].intro %}
+    {%- elsif site.data[page.lang].translation[page.slug].intro != nil -%}
+        {% assign page_description = site.data[page.lang].translation[page.slug].intro %}
     {%- elsif page.description != nil -%}
         {% assign page_description = page.description %}
+    {%- elsif page.intro != nil -%}
+        {% assign page_description = page.intro %}
     {%- endif %}
     {%- if page_description != nil and page_description != '' %}
-        {% assign page_description = page_description | strip_html | strip_newlines | strip | replace: "    ", " " | replace: "  ", " " | strip | truncate: 156 %}
-    {%- endif %}
-    {%- if page_description != nil and page_description != '' %}
+    {%- assign page_description = page_description | strip_html | strip_newlines | strip | replace: "    ", " " | replace: "  ", " " | strip | truncate: 156 %}
     <meta name="description" content="{{ page_description }}">
+    <meta property="og:description" content="{{ page_description }}">
+    <meta name="twitter:description" content="{{ page_description }}">
     {%- endif %}
     {% unless site.custom_domain[page.lang] -%}
     <link type="application/atom+xml" rel="alternate" href="{{ '/feed.xml' | full_url: 'en' }}" title="Kimai Time-Tracking" />
@@ -50,12 +48,10 @@
     <meta property="og:locale" content="{{ page.lang }}">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Kimai Time-Tracking">
-    <meta property="og:description" content="{{ page_description }}">
     <meta property="og:image" content="{{ DOMAIN }}/images/social-preview.webp">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Kimai Time-Tracking">
     <meta name="twitter:site" content="@kimai_org">
-    <meta name="twitter:description" content="{{ page_description }}">
     <meta name="twitter:image" content="{{ DOMAIN }}/images/social-preview.webp">
     {%- if page.canonical != nil %}
     <link rel="canonical" href="{{ DOMAIN }}{{ page.canonical }}" />
