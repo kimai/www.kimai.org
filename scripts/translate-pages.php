@@ -42,7 +42,7 @@ $multiLanguagePaths = [
 
 foreach ($multiLanguagePaths as $path => $settings)
 {
-    $basePath = $realpath . '/' . $path;
+    $basePath = $realpath . '/collections/' . $path;
     $files = glob($basePath . '/*.{md,html}', GLOB_BRACE);
     $includePath = str_replace('_', '', $path);
     $contentTarget = $realpath . '/_includes/' . $includePath;
