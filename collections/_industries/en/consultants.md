@@ -18,7 +18,7 @@ image:
 features:
     title: "Kimai features most used by consultants"
     introduction: "Whether you are a freelancer or part of a large consulting department, Kimai offers tools to help you scale as your business grows."
-    list: ['teams', 'customer-portal', 'invoicing', 'statistics']
+    list: ['expenses', 'customer-portal', 'invoices', 'statistics']
 testimonials:
     tag: Consulting
     title: "Insights on time tracking from consulting professionals"
@@ -35,4 +35,5 @@ cta:
     title: |
         Ready to try a new way 
         to track time in your practice?
+featured: true
 ---

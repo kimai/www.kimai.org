@@ -16,7 +16,7 @@ image:
 features:
     title: "Kimai features used by software engineers"
     introduction: "Discover the perfect set of features tailored to your tasks and goals. What if your IT team needs not just a simple time tracker but a robust solution with different integration options and advanced invoicing and analytics features?"
-    list: ['plugins', 'api', 'customer-portal', 'projects']
+    list: ['plugins', 'api', 'customer-portal', 'invoices']
 testimonials:
     tag: Software
     title: "IT pros speak about time tracking"
@@ -33,5 +33,6 @@ cta:
     title: |
         Ready to try a new way 
         to track time in your IT team?
+featured: true
 ---
  

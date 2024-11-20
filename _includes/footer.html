@@ -89,13 +89,16 @@
                                 <li class="nav-item">
                                     {% include link-translated-menu.html type="landingpage" item="non-profit" language=englishOrGerman class="nav-link fs-sm fw-medium px-0 py-1" %}
                                 </li>
-                                {% assign lps = site.keywords | where: "lang", englishOrGerman %}
-                                {% for lp in lps %}
+                                {% assign industries = site.industries | where: "lang", "en"  | where: "featured", true | sort: "name" %}
+                                {% for industry in industries %}
                                 <li class="nav-item">
-                                    <a href="{{ lp.url | full_url: englishOrGerman }}" class="nav-link fs-sm fw-medium px-0 py-1" title="Open-Source {{ lp.keyword }}">{{ lp.keyword }}</a>
+                                    <a href="{{ industry.url }}" class="nav-link fs-sm fw-medium px-0 py-1" title="Time-tracking for {{ industry.title }}">{{ industry.name }}</a>
                                 </li>
                                 {% endfor %}
-                            </ul>
+                                <li class="nav-item">
+                                    {% assign industry_title= site.data[page.lang].translation.industry.more %}
+                                    {% include link-translated-menu.html item="industry" language=page.lang class="nav-link fs-sm fw-medium px-0 py-1" title=industry_title %}
+                                </li>                            </ul>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-4">
