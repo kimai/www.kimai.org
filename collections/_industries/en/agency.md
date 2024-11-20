@@ -1,5 +1,5 @@
 ---
-name: Agency
+name: Agencies
 title: "Time Tracking For Agencies"
 subtitle: "The key to profitability"
 intro: "Kimai helps organizing your workflow and collecting billable project hours"
