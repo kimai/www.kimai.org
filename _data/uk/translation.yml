@@ -239,7 +239,7 @@ feature:
         description: Kimai підтримує зовнішні постачальники ідентичності та вхід через LDAP та SAML на кількох платформах (таких як Google Workspace, Azure AD або Authentik). Додатково можна включити двофакторну аутентифікацію за допомогою TOTP-токенів.
         name: Аутентифікація та безпека
     reporting:
-        description: Аналіз записаного часу, клієнтів, проєктів та видів діяльності. Оцінка за користувачами, клієнтами, проєктами, видами діяльності, мітками, періодами часу та багато іншого.
+        description: Аналіз записаного часу за користувачами, клієнтами, проєктами, видами діяльності, мітками, періодами часу та іншим.
         name: Звіти та аналізи
     customer-portal:
         description: Діліться статистикою клієнтів та проєктів, а також журналів робочого часу через секретне посилання, опційно захищене паролем.
@@ -248,31 +248,31 @@ feature:
         name: Темний режим
         description: Кожній програмі потрібен темний режим, який допомагає ввечері або у темному середовищі зменшити напруження очей.
     no-limits:
-        name: Knows no limits
-        description: "Your SaaS software always includes limits? Not Kimai: there are no limits. You only pay for the amount of active users. I don't limit you, and I do not charge for inactive users. You can create an unlimited amount of users, customers, projects, activities, timesheets and more."
+        name: Не знає меж
+        description: "Ваше ПЗ SaaS завжди має обмеження? Але не Kimai: тут обмежень немає. Ви можете платити лише за активних користувачів. Я не обмежую Вас та не виставляю рахунки за неактивних користувачів. Ви можете створити безмежну кількість користувачів, клієнтів, проєктів, активностей, табелів та іншого."
     security:
         points:
-            security_6: Automated code test with a code coverage above 90%
-            security_4: Continuous integration with thousands of checks
-            security_1: Secure password hashing with Argon2 or Sodium
-            security_5: In-depth code reviews
-            security_2: Granular user-roles restricting access
-            security_3: CSRF and XSS protection
-        description: Kimai implements best-practices in application design to prevent common attacks. Automated security controls are critical to any software development workflow to reduce the amount of time from defect creation to defect detection. These scans run on every code change, every time.
-        name: Security in Kimai
+            security_6: Автоматичні тести коду з покриттям коду понад 90%
+            security_4: Постійна інтеграція з тисячами перевірок
+            security_1: Безпечний хеш паролів з Argon2 або Sodium
+            security_5: Поглиблений аналіз коду
+            security_2: Настроювані ролі користувачів, які обмежують доступ
+            security_3: Захист CSRF та XSS
+        description: Kimai, для уникнення відомих атак, використовує щодо дизайну ПЗ найкращі методики (best-practices). Автоматичний контроль безпеки — критична частина будь-якої розробки програмного забезпечення для зменшення кількості часу від створення до визначення дефектів. Такі перевірки виконуються щоразу, коли змінюється код.
+        name: Безпека у Kimai
     privacy:
-        name: Privacy comes first
-        description: I respect your and your users privacy and data. No, this is not yet another boring introduction into a Privacy policy - that's how I run this business. I don't sell data. I follow the GDPR and will answer any question about involved sub-processors.
+        name: Приватність на першому місці
+        description: Я поважаю приватність Вашу та Ваших даних. Ні, це не ще один нудний вступ до Політики приватності — це про те як я керую цією справою. Я не продаю дані. Я виконую політику збереження приватних даних GDPR та надам відповідь на будь-які запитання щодо опрацювання даних.
     security-cloud:
         points:
-            security_1: All connections secured via TLS (SSL)
-            security_2: Best-practice security, firewalls and brute-force prevention
-            security_6: Code runs in tightly restricted domain environments
-            security_3: No multi-tenancy, each customer has their own database
-            security_4: Servers are hosted in a data center in the EU
-            security_5: Critical services are not accessible to the outside world
-        name: Security in the platform
-        description: Software is only as secure as the system it runs on. I take a defense-in-depth approach with server and network infrastructure. Customers on the hosted platform are secured through multiple layers of protection.
+            security_1: Усі з'єднання захищені TLS (SSL)
+            security_2: Найкращі методики безпеки, фаєрволів та захисту від перебору
+            security_6: Код виконується у доменних середовищах із суворими обмеженнями
+            security_3: Чіткий поділ, кожен клієнт має свої бази даних
+            security_4: Сервери розміщені у датацентрі в ЄС
+            security_5: Критично важливі служби недоступні для зовнішнього світу
+        name: Безпека платформи
+        description: Програма безпечна на стільки, на скільки безпечна система, на якій вона працює. Я використовую підхід з глибоким захистом серверної та мережевої інфраструктури. Клієнти розміщеної платформи захищені кількома рівнями захисту.
 install:
     alert-vps: На цьому етапі неможливо встановити Kimai, отримавши ZIP-файл і завантаживши файли на свій веб-сервер. Це пов'язано з тим, що Composer потрібно запускати в командному рядку. Це не обов'язково означає, що Вам потрібен VPS. Деякі спільні хости надають доступ до SSH, за допомогою якого Ви зможете встановити Composer і Kimai без жодних проблем.
     ssh: Цей метод встановлює Kimai безпосередньо на Ваш сервер.
@@ -542,6 +542,7 @@ industry:
     office: Для офісних працівників
     title: Облік часу для кожної галузі
     subtitle: Тримайте руку на пульсі у своїх проєктах разом з Kimai
+    more: More industries
 terms-plugins:
     name: Ліцензія плагіна
 start-trial:
@@ -557,3 +558,8 @@ start-trial:
     step_3_text: Через деяку мить Ваш Kimai-Cloud буде готовий, а зараз Ви можете увійти та почати облік часу.
 cloud-cta:
     days_30: Підпишіться на 30-денне безплатне тестування
+time-tracking-terms:
+    subtitle: Explanations of common terms
+    title: Time Tracking Terms
+    intro: Take a look behind the scenes of time recording and learn more about the frequently used terms in Kimai
+    name: Time Tracking Terms
