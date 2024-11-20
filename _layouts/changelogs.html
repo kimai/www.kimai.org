@@ -1,0 +1,45 @@
+---
+layout: default
+---
+
+<section class="container mt-4 pt-lg-2 pb-3">
+    <h1 class="pb-3" style="max-width: 970px;">{{ page.title }}</h1>
+    <div class="d-flex flex-md-row flex-column align-items-md-center justify-content-md-between mb-3">
+        <div class="d-flex align-items-center flex-wrap text-muted mb-md-0 mb-4">
+            <div class="fs-xs border-end pe-3 me-3 mb-2">
+                {% for tag in page.tags %}
+                    <span class="badge bg-faded-primary text-primary fs-base">{{ tag }}</span>
+                {% endfor %}
+            </div>
+            <div class="fs-sm pe-3 me-3 mb-2">{{ page.date | date_to_string }}</div>
+        </div>
+    </div>
+</section>
+
+<section class="container mb-5 pb-2 py-mg-4">
+    <div class="row gy-4">
+        <div class="col-lg-8">
+            {{ content }}
+        </div>
+        <div class="col-lg-4 position-relative">
+            <div class="sticky-top ms-xl-5 ms-lg-4 ps-xxl-4" style="top: 105px !important;">
+                <div class="jarallax mb-lg-5 mb-4 pb-4" data-jarallax data-speed="0.35" style="height: 200px">
+                    <div class="jarallax-img" style="background-image: url({{ page.image}});"></div>
+                </div>
+
+                <h6>{{ site.data[page.lang].translation.share-post }}:</h6>
+                <div class="mb-4 pb-lg-3">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url }}&title={{ page.title }}" class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2" aria-label="LinkedIn">
+                        <i class="bx bxl-linkedin"></i>
+                    </a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}" class="btn btn-icon btn-secondary btn-facebook me-2 mb-2" aria-label="Facebook">
+                        <i class="bx bxl-facebook"></i>
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?text={{ page.url | absolute_url }}" class="btn btn-icon btn-secondary btn-twitter me-2 mb-2" aria-label="Twitter">
+                        <i class="bx bxl-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

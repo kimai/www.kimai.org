@@ -11,7 +11,7 @@ $languages = ['cs', 'de', 'es', 'fr', 'he', 'hr', 'it', 'nl', 'pl', 'pt', 'pt_BR
 
 $multiLanguagePaths = [
     '_pages' => [
-        'skip' => ['documentation.md', 'industry.html'],
+        'skip' => ['documentation.md', 'industry.html', 'time-tracking-terms.html', 'changelogs.html'],
         'permalink' => '/:language/:original',
         'remove' => ['redirect_from'],
         'overwrite' => true,

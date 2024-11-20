@@ -161,7 +161,7 @@ collections:
         output: true
     blog_tags:
         output: true
-    changelog:
+    changelogs:
         output: true
 
 defaults:
@@ -253,12 +253,14 @@ defaults:
             lang: en
     -
         scope:
-            path: "_changelog/"
+            path: "_changelogs/"
         values:
-            layout: post
-            author: kevinpapst
-            permalink: "/blog/:year/:title/"
+            layout: changelogs
+            permalink: "/blog/:year/:title"
             lang: en
+            author: kevinpapst
+            image: /images/blog/cloud-update.webp
+            tags: [Changelog]
 
 markdown: kramdown
 kramdown:
