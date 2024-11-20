@@ -1,6 +1,7 @@
 ---
 title: "Open-Source Time-Tracker"
 keyword: "Time Tracker"
+intro: "A time-tracker is a software tool or application designed to automatically or manually record and monitor how time is spent on various activities, tasks, or projects, helping individuals and organizations measure and analyze their time usage."
 permalink: "/en/open-source-time-tracker"
 layout: keyword
 ---

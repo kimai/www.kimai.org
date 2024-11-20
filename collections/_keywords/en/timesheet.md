@@ -1,6 +1,7 @@
 ---
 title: "Open-Source Timesheet"
 keyword: "Timesheet"
+intro: "Timesheet are documents or digital forms used to record and report the hours worked by an employee, including specific projects, tasks, or activities performed during their working time."
 permalink: "/en/open-source-timesheet"
 layout: keyword
 ---

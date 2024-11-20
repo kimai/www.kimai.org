@@ -1,6 +1,7 @@
 ---
 title: "Open-Source Time-Log"
 keyword: "Time Log"
+intro: "A time log is a systematic record that documents the duration spent on various tasks and activities within a specific timeframe, serving as a tool for tracking and analyzing time usage."
 permalink: "/en/open-source-time-log"
 layout: keyword
 ---
