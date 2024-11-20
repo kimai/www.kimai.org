@@ -1,0 +1,822 @@
+<!doctype html>
+<html lang="de" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index,follow">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+    <title>Online Zeiterfassung – Kimai</title>
+    <meta name="description" content="Die schnelle und kostengünstige Einführung eines skalierbaren Zeiterfassungssystems ist nicht nur für moderne Start-ups unerlässlich - Kimai bietet einen...">
+    <meta property="og:description" content="Die schnelle und kostengünstige Einführung eines skalierbaren Zeiterfassungssystems ist nicht nur für moderne Start-ups unerlässlich - Kimai bietet einen...">
+    <meta name="twitter:description" content="Die schnelle und kostengünstige Einführung eines skalierbaren Zeiterfassungssystems ist nicht nur für moderne Start-ups unerlässlich - Kimai bietet einen...">
+    <link type="application/atom+xml" rel="alternate" href="https://www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
+    <meta property="og:locale" content="de">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kimai Time-Tracking">
+    <meta property="og:image" content="https://www.kimai.org/images/social-preview.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kimai Time-Tracking">
+    <meta name="twitter:site" content="@kimai_org">
+    <meta name="twitter:image" content="https://www.kimai.org/images/social-preview.webp">
+    <link href="/assets/build/main.css?v6" rel="stylesheet" />
+</head>
+<body class="">
+
+<main class="page-wrapper">
+    
+
+
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand-lg position-absolute navbar-dark   navbar-sticky">
+    <div class="container px-3">
+        
+        <a href="/de/" class="navbar-brand pe-3">
+        <img src="/images/kimai_logo_48.webp" style="height:36px;width:36px;" alt="Kimai - Open Source Zeiterfassung"> Kimai
+        </a>
+        <div id="navbarNav" class="offcanvas offcanvas-end bg-dark">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title">Menu</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    
+                    <li class="nav-item">
+                        <a href="/de/demo.html" class="nav-link">Demo</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/de/pricing" class="nav-link">Preise</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Community</a>
+                        <ul class="dropdown-menu">
+                            
+                            <li><a href="/de/store/" class="dropdown-item"><i class="bx bx-extension me-2"></i>Plugins</a></li>
+                            <li><a href="/de/download.html" class="dropdown-item"><i class="bx bxl-docker me-2"></i>Installation</a></li>
+                            <li><a href="/blog/" class="dropdown-item"><i class="bx bx-news me-2"></i>Blog</a></li>
+                            <li><a href="https://github.com/kimai/kimai/discussions" target="_blank" class="dropdown-item"><i class="bx bx-chat me-2"></i>Forum</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Dokumentation</a>
+                        <ul class="dropdown-menu">
+                            
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-manual.html" class="dropdown-item">
+                                <i class="bx bx-book me-2"></i>
+                                
+                                Benutzerhandbuch
+                            </a></li>
+                            
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/cloud.html" class="dropdown-item">
+                                <i class="bx bx-cloud me-2"></i>
+                                
+                                Cloud
+                            </a></li>
+                            
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-on-premise.html" class="dropdown-item">
+                                <i class="bx bx-server me-2"></i>
+                                
+                                Selbst gehostet
+                            </a></li>
+                            
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-developer.html" class="dropdown-item">
+                                <i class="bx bx-code-alt me-2"></i>
+                                
+                                Entwickler
+                            </a></li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="pe-lg-1 ms-auto me-2">
+            
+
+
+
+<a href="https://www.kimai.cloud/de/auth/" class="btn btn-sm fs-sm d-none d-md-inline-flex me-2 btn-outline-light">Anmelden</a>
+
+            
+
+
+
+<a href="https://www.kimai.cloud/de/auth/registrierung" class="btn btn-success btn-sm fs-sm d-inline-flex">Kostenlos starten</a>
+
+        </div>
+        <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</header>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    <section class="position-relative pt-5 bg-dark">
+
+    <div class="container position-relative zindex-2 pt-5 pb-2 pb-md-0">
+
+        <div class="row justify-content-center pt-3 mt-3">
+            <div class="col-xl-6 col-lg-7 col-md-8 col-sm-10 text-center">
+                <h1 class="mb-4">
+<span class="small fs-4 d-block">Online</span> Online Zeiterfassung</h1>
+                <p class="text-body fs-lg pb-3 mb-3">Die schnelle und kostengünstige Einführung eines skalierbaren Zeiterfassungssystems ist nicht nur für moderne Start-ups unerlässlich - Kimai bietet einen enormen Mehrwert gegen eine geringe Gebühr. Die in der Cloud gehostete Zeiterfassungssoftware Kimai ist sofort verfügbar und steht für Sie bereit, nur wenige Minuten nach der Anmeldung. ✨</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex position-absolute top-100 start-0 w-100 overflow-hidden mt-n5" style="color: #0b0f19;">
+        <div class="position-relative start-50 translate-middle-x flex-shrink-0 mt-n5 mt-md-n3 mt-lg-n1" style="width: 3788px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="3788" height="144" viewbox="0 0 3788 144"><path fill="currentColor" d="M0,0h3788.7c-525,90.2-1181.7,143.9-1894.3,143.9S525,90.2,0,0z"></path></svg>
+        </div>
+    </div>
+</section>
+
+
+    <section class="container pt-5 mt-md-2 mt-lg-4 mt-xl-5">
+        <div class="row justify-content-center pt-5">
+            <div class="col-xxl-10 col-xl-11 col-lg-12 pt-sm-2 pt-md-5">
+                <div class="d-sm-flex">
+                    <div class="card w-sm-50 border-0 bg-transparent px-sm-1 px-md-3">
+                        <div class="card-body p-0 pb-2 pb-sm-3 mb-3">
+                            <div class="d-inline-block bg-secondary text-primary rounded-circle fs-3 lh-1 p-3 mb-3">
+                                <i class="bx bx-lock-open-alt"></i>
+                            </div>
+                            <h3 class="fs-5 mb-4">Keine Herstellerbindung</h3>
+                            <p>Die Bindung an einen Hersteller kann sehr teuer sein, nicht nur finanziell, sondern auch in Zeit. Mit Kimai können Sie das Hosting selber übernehmen, von mir für Sie hosten lassen oder es forken und ändern. Sie sind nie an ein gehostetes Produkt gebunden, und alle Ihre Daten sind einfach zu exportieren - es sind Ihre, selbst wenn Sie sich jemals entscheiden, dass Kimai nicht mehr das richtige für Sie ist (dies gilt auch für die kostenpflichtigen Tarife, die regelmäßige Backups und Datenexporte beinhalten).</p>
+                        </div>
+                    </div>
+                    <div class="vr text-border d-none d-sm-inline-block m-4"></div>
+                    <div class="card w-sm-50 border-0 bg-transparent px-sm-1 px-md-3">
+                        <div class="card-body p-0 pb-2 pb-sm-3 mb-3">
+                            <div class="d-inline-block bg-secondary text-primary rounded-circle fs-3 lh-1 p-3 mb-3">
+                                <i class="bx bx-search"></i>
+                            </div>
+                            <h3 class="fs-5 mb-4">Immer transparent</h3>
+                            <p>Mit Closed-Source-Software müssen Sie auf die Behauptung des Anbieters vertrauen, wenn er sagt, dass seine Software sicher sei und moderne Standards einhält. Die Sichtbarkeit des Codes hinter Open-Source-Software dagegen bedeutet, dass Sie sich selbst davon überzeugen oder einen Experten damit beauftragen können dies zu überprüfen! Sie können darüber hinaus jederzeit die Antworten an die Community, den Release-Zeitplan und die Meilensteine sowie jeden Commit- und Pull-Request einsehen.</p>
+                        </div>
+                    </div>
+                </div>
+                <img src="/images/screenshots/this-week-cut.webp" alt="Dashboard" class="rounded-top-4 light-mode-img" style="box-shadow: 0 0 7.5rem rgba(0, 0, 0, .1);">
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-secondary pb-5 mb-md-2 mb-lg-4 mb-xl-5">
+        <div class="container">
+            <div class="row pt-5 pb-1 pb-sm-2 pb-md-3">
+                <h2 class="h1 mt-3 mb-5 text-center">Entdecke Kimai</h2>
+
+                <div class="lp-content">
+                    <section class="position-relative py-5">
+    <div class="container position-relative zindex-5 pb-md-4 pt-md-2 pt-lg-3 pb-lg-5">
+        
+        
+        
+        <div class="row align-items-center justify-content-center py-4 py-md-5 my-1 my-sm-3 my-md-0 my-xl-3 px-5">
+            <div class="col-12 col-md-6 order-md-2 pb-2 pb-sm-3 pb-md-0 mb-4 mb-md-0">
+                <div class="text-center">
+                    <i class="bx bx-line-chart feature-icon"></i>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 order-md-1 text-center text-md-start px-5">
+                <h3 class="mb-lg-4">Kennt keine Limits</h3>
+                <p class="fs-lg pb-lg-2 mb-4">
+                    Egal, ob Sie pro Benutzer oder pro Monat bezahlen - SaaS-Software beinhaltet immer Limits. Der Premium Tarif kennt buchstäblich "keine Limits". Mit anderen Worten: Sie zahlen nur die Anzahl aktiver Benutzer, sie werden nicht eingeschränkt und es werden keine Gebühren für inaktive Benutzer verlangt. Sie können eine unbegrenzte Anzahl an Benutzern, Kunden, Projekten, Aktivitäten und Stundenzetteln anlegen. Alles in Kombination mit dem Mitarbeiterzeitkonten, Rechnungsdruck und vielen weiteren Funktionen.
+                </p>
+                
+            </div>
+        </div>
+        
+        
+        <div class="row align-items-center justify-content-center py-4 py-md-5 my-1 my-sm-3 my-md-0 my-xl-3 px-5">
+            <div class="col-12 col-md-6  pb-2 pb-sm-3 pb-md-0 mb-4 mb-md-0">
+                <div class="text-center">
+                    <i class="bx bxs-user-badge feature-icon"></i>
+                </div>
+            </div>
+            <div class="col-12 col-md-6  text-center text-md-start px-5">
+                <h3 class="mb-lg-4">Datenschutz kommt zuerst</h3>
+                <p class="fs-lg pb-lg-2 mb-4">
+                    Ich respektieren Ihre und die Privatsphäre und Daten ihrer Nutzer. Dies ist nicht einfach nur eine Floskel der Datenschutzbestimmung, so führe ich mein Business. Ich verkaufe keine Daten. Ich befolge die DSGVO und werde jede Frage über involvierte Auftragsdatenverarbeiter beantworten.
+                </p>
+                
+            </div>
+        </div>
+        
+        
+        <div class="row align-items-center justify-content-center py-4 py-md-5 my-1 my-sm-3 my-md-0 my-xl-3 px-5">
+            <div class="col-12 col-md-6 order-md-2 pb-2 pb-sm-3 pb-md-0 mb-4 mb-md-0">
+                <div class="text-center">
+                    <i class="bx bx-fingerprint feature-icon"></i>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 order-md-1 text-center text-md-start px-5">
+                <h3 class="mb-lg-4">Sicherheit in Kimai</h3>
+                <p class="fs-lg pb-lg-2 mb-4">
+                    Kimai setzt auf bewährte Verfahren im Anwendungsdesign, um typische Angriffsszenarien zu verhindern. Automatisierte Sicherheitskontrollen sind für jede Software-Entwicklung entscheidend, um die Zeit von der Fehlererstellung bis zur Fehlererkennung zu verkürzen. Diese Scans laufen bei jeder Codeänderung, jedes einzelne mal.
+                </p>
+                
+                    
+                        <i class="bx bxs-check-circle text-success"></i> Sicheres Passwort Hashing mit Argon2 oder Sodium<br>
+                    
+                        <i class="bx bxs-check-circle text-success"></i> Konfigurierbare Benutzerrollen, die den Zugriff einschränken<br>
+                    
+                        <i class="bx bxs-check-circle text-success"></i> CSRF und XSS Schutzmaßnahmen<br>
+                    
+                        <i class="bx bxs-check-circle text-success"></i> Continuous integration mit tausenden von Prüfungen<br>
+                    
+                        <i class="bx bxs-check-circle text-success"></i> Detaillierte Code-Reviews<br>
+                    
+                        <i class="bx bxs-check-circle text-success"></i> Automatisierte Code Tests mit über 90% Code-Coverage<br>
+                    
+                
+            </div>
+        </div>
+        
+        
+        <div class="row align-items-center justify-content-center py-4 py-md-5 my-1 my-sm-3 my-md-0 my-xl-3 px-5">
+            <div class="col-12 col-md-6  pb-2 pb-sm-3 pb-md-0 mb-4 mb-md-0">
+                <div class="text-center">
+                    <i class="bx bx-shield-quarter feature-icon"></i>
+                </div>
+            </div>
+            <div class="col-12 col-md-6  text-center text-md-start px-5">
+                <h3 class="mb-lg-4">Sicherheit der Platform</h3>
+                <p class="fs-lg pb-lg-2 mb-4">
+                    Software ist nur so sicher, wie das System auf dem es läuft. Ich verfolge einen umfassenden Verteidigungsansatz um die Server- und Netzwerkinfrastruktur zu schützen. Kunden auf der Cloud-Plattform werden auf mehreren Ebenen beschützt.
+                </p>
+                
+                    
+                        <i class="bx bxs-check-circle text-success"></i> Alle Verbindungen sind über TLS (SSL) gesichert<br>
+                    
+                        <i class="bx bxs-check-circle text-success"></i> Netzwerk-Sicherheit, Firewalls und Brute-Force Prävention<br>
+                    
+                        <i class="bx bxs-check-circle text-success"></i> Klare Trennung, jeder Kunde hat eigene Datenbanken<br>
+                    
+                        <i class="bx bxs-check-circle text-success"></i> Server werden innerhalb der EU gehostet<br>
+                    
+                        <i class="bx bxs-check-circle text-success"></i> Kritische Services sind nicht nach außerhalb geöffnet<br>
+                    
+                        <i class="bx bxs-check-circle text-success"></i> Code läuft in stark eingeschränkten Domänenumgebungen<br>
+                    
+                
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container py-5 my-md-2 my-lg-4 my-xl-5">
+    <div class="row justify-content-center pt-5 pb-1 pb-sm-2 pb-md-3 text-center">
+        <h3 class="mb-4">Welches Kimai ist das richtige für Sie?</h3>
+    </div>
+    <div class="row justify-content-center pt-5 pb-1 pb-sm-2 pb-md-3">
+        <div class="col-xxl-10 col-xl-11 col-lg-12 pt-sm-2 pt-md-5">
+            <div class="d-sm-flex">
+                <div class="card w-sm-50 border-0 bg-transparent px-sm-1 px-md-3">
+                    <div class="card-body p-0 pb-2 pb-sm-3 mb-3 text-center">
+                        <div class="d-inline-block bg-secondary text-primary rounded-circle fs-3 lh-1 p-3 mb-3">
+                            <i class="bx bx-lock-open-alt"></i>
+                        </div>
+                        <h3 class="fs-5 mb-4">On-Premise</h3>
+                        <p>
+                            Ich kümmere mich um die Software, Sie kümmern sich um den Betrieb, Updates und die Sicherheit ihrer Server. Und wenn Sie es nicht selbst tun wollen, können Sie jederzeit auf Unterstützung zurückgreifen. Sie kaufen die für Sie relevanten Plugins im jährlichen Update-Abo.
+                        </p>
+                    </div>
+                </div>
+                <div class="vr text-border d-none d-sm-inline-block m-4"></div>
+                <div class="card w-sm-50 border-0 bg-transparent px-sm-1 px-md-3">
+                    <div class="card-body p-0 pb-2 pb-sm-3 mb-3 text-center">
+                        <div class="d-inline-block bg-secondary text-primary rounded-circle fs-3 lh-1 p-3 mb-3">
+                            <i class="bx bx-cloud"></i>
+                        </div>
+                        <h3 class="fs-5 mb-4">Cloud</h3>
+                        <p>
+                            Sofort einsatzbereit, Sie überlassen mir Hosting und Updates und haben dadurch mehr Zeit für Ihr Kerngeschäft. Sorgen Sie dafür, dass Ihr Team mit einer modernen Zeiterfassungslösung für die Zukunft gerüstet ist. Alle Plugins sind in der Cloud ohne Zusatzkosten verfügbar.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center pt-5 pb-1 pb-sm-2 pb-md-3 text-center">
+        <h3 class="mb-5">Eine Software, zwei Versionen</h3>
+    </div>
+    <div class="row justify-content-center pt-5 pb-1 pb-sm-2 pb-md-3">
+        <table class="table compare-versions">
+            <thead>
+            <tr>
+                <th></th>
+                <th class="text-center">
+                    Von Dir gehostet
+                    <br>
+                    On-Premise
+                </th>
+                <th class="text-center">
+                    Für Dich gehostet
+                    <br>
+                    Cloud
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="text-start">Number of users</td>
+                <td class="text-center">
+                    Unlimited
+                </td>
+                <td class="text-center">
+                    Unlimited
+                </td>
+            </tr>
+            <tr>
+                <td class="text-start">Number of customers</td>
+                <td class="text-center">
+                    Unlimited
+                </td>
+                <td class="text-center">
+                    Unlimited
+                </td>
+            </tr>
+            <tr>
+                <td class="text-start">Number of projects</td>
+                <td class="text-center">
+                    Unlimited
+                </td>
+                <td class="text-center">
+                    Unlimited
+                </td>
+            </tr>
+            <tr>
+                <td class="text-start">Number of activities</td>
+                <td class="text-center">
+                    Unlimited
+                </td>
+                <td class="text-center">
+                    Unlimited
+                </td>
+            </tr>
+            <tr>
+                <td class="text-start">Invoice printing</td>
+                <td class="text-center">
+                    <i class="bx bx-check text-success"></i>
+                </td>
+                <td class="text-center">
+                    <i class="bx bx-check text-success"></i>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-start">Data export</td>
+                <td class="text-center">
+                    <i class="bx bx-check text-success"></i>
+                </td>
+                <td class="text-center">
+                    <i class="bx bx-check text-success"></i>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-start">Community Forum</td>
+                <td class="text-center">
+                    <i class="bx bx-check text-success"></i>
+                </td>
+                <td class="text-center">
+                    <i class="bx bx-check text-success"></i>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-start">Arbeitszeiten, Urlaub, Krankheit, Feiertage</td>
+                <td class="text-center">
+                    
+                    <a href="/de/store/keleo-controlling.html">299 € pro Jahr</a>
+                </td>
+                <td class="text-center">
+                    <i class="bx bx-check text-success"></i>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-start">Änderungsprotokolle</td>
+                <td class="text-center">
+                    
+                    <a href="/de/store/keleo-audit-trail-bundle.html">49 € pro Jahr</a>
+                </td>
+                <td class="text-center">
+                    <i class="bx bx-check text-success"></i>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-start">Eigene Felder</td>
+                <td class="text-center">
+                    
+                    <a href="/de/store/keleo-custom-fields-bundle.html">79 € pro Jahr</a>
+                </td>
+                <td class="text-center">
+                    <i class="bx bx-check text-success"></i>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-start">Ausgaben Verwaltung</td>
+                <td class="text-center">
+                    
+                    <a href="/de/store/keleo-expenses-bundle.html">99 € pro Jahr</a>
+                </td>
+                <td class="text-center">
+                    <i class="bx bx-check text-success"></i>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-start">Aufgaben Planung</td>
+                <td class="text-center">
+                    
+                    <a href="/de/store/keleo-task-management-bundle.html">79 € pro Jahr</a>
+                </td>
+                <td class="text-center">
+                    <i class="bx bx-check text-success"></i>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-start">Übersetzungen</td>
+                <td class="text-center">
+                    
+                    <a href="/de/store/keleo-translation-bundle.html">29 € pro Jahr</a>
+                </td>
+                <td class="text-center">
+                    <i class="bx bx-check text-success"></i>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-start">Kiosk Modus mit Support für Barcode, RFID, Web NFC</td>
+                <td class="text-center">
+                    
+                    <a href="/de/store/keleo-kiosk-barcode-bundle.html">199 € pro Jahr</a>
+                </td>
+                <td class="text-center">
+                    <i class="bx bx-check text-success"></i>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-start">Personal support</td>
+                <td class="text-center">
+                    
+                    <a href="/de/support.html">With additional costs</a>
+                </td>
+                <td class="text-center">
+                    <i class="bx bx-check text-success"></i>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-start">Custom domain incl. SSL</td>
+                <td class="text-center">
+                    With additional costs
+                </td>
+                <td class="text-center">
+                    <i class="bx bx-check text-success"></i>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-start">Automatic Backups</td>
+                <td class="text-center">
+                    <i class="bx bx-minus text-danger"></i>
+                </td>
+                <td class="text-center">
+                    <i class="bx bx-check text-success"></i>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-start">SSL Certificate (TLS) included</td>
+                <td class="text-center">
+                    <i class="bx bx-minus text-danger"></i>
+                </td>
+                <td class="text-center">
+                    <i class="bx bx-check text-success"></i>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-start">Access restriction via IP</td>
+                <td class="text-center">
+                    <i class="bx bx-minus text-danger"></i>
+                </td>
+                <td class="text-center">
+                    <i class="bx bx-check text-success"></i>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-start">Automatic Updates</td>
+                <td class="text-center">
+                    <i class="bx bx-minus text-danger"></i>
+                </td>
+                <td class="text-center">
+                    <i class="bx bx-check text-success"></i>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-start">Server Maintenance</td>
+                <td class="text-center">
+                    <i class="bx bx-minus text-danger"></i>
+                </td>
+                <td class="text-center">
+                    <i class="bx bx-check text-success"></i>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-start">Priority for feature requests</td>
+                <td class="text-center">
+                    <i class="bx bx-minus text-danger"></i>
+                </td>
+                <td class="text-center">
+                    <i class="bx bx-check text-success"></i>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+
+    
+<section class="container mb-5">
+    <div class="position-relative bg-dark rounded-3 overflow-hidden px-3 py-5">
+        <span class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(255, 255, 255, .05)"></span>
+        <div class="position-relative zindex-5 text-center my-xl-3 py-1 py-md-4 py-lg-5">
+            <p class="lead text-light opacity-70 mb-3">Bereit loszulegen?</p>
+            <h2 class="h1 text-light pb-3 pb-lg-0 mb-lg-5">Starte jetzt damit Zeiten zu erfassen</h2>
+            
+            
+            
+
+
+
+<a href="https://www.kimai.cloud/de/auth/registrierung" class="btn btn-success btn-lg">Kostenlos starten</a>
+
+        </div>
+    </div>
+</section>
+
+</main>
+
+
+
+
+
+
+
+
+
+<footer class="footer bg-dark pt-5 pb-4">
+    <div class="container pt-1 pt-md-3 pt-lg-4 pt-xl-5">
+        <div class="row">
+            <div class="col-md-5 col-xl-4 mb-4 mb-md-5 mb-lg-0">
+                <div class="d-flex align-items-center pb-3 mb-1">
+                    <div class="navbar-brand text-white p-0 pe-1 me-0">
+                        Kimai
+                    </div>
+                    <hr class="vr mt-2 mx-3" style="height: 26px;">
+                    <div class="text-white fw-semibold ps-1">#1 Open-Source Zeiterfassung</div>
+                </div>
+                <p class="text-body fs-sm pb-1 pb-md-2 pb-lg-2 mb-2">
+                    Kostenlose und einfach zu bedienende Zeiterfassung für Freelancer, Agenturen und Unternehmen. Kimai ist eine Open-Source-Software, die sowohl zum Selbst-Hosting als auch als SaaS verfügbar ist.
+                </p>
+                <div class="d-flex flex-column flex-sm-row flex-lg-column align-items-sm-center align-items-lg-start justify-content-between pb-1 pb-md-2 pb-lg-3 mb-3">
+                    <div class="position-relative">
+                        <div class="dropdown">
+                            <button type="button" class="form-select" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-globe top-50 start-0 text-body me-2"></i>
+                                Deutsch
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/cs/" class="dropdown-item" title="Kimai - Open Source sledování času">Čeština</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/de/" class="dropdown-item active" title="Kimai - Open Source Zeiterfassung">Deutsch</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org" class="dropdown-item" title="Kimai - Open Source time-tracker">English</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/es/" class="dropdown-item" title="Página de inicio de Kimai">Español</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/fr/" class="dropdown-item" title="Kimai - Suivi du temps à code ouvert">Français</a>
+                                
+                                    <a dir="rtl" href="https://www.kimai.co.il" class="dropdown-item" title="Kimai - מעקב שעות בקוד פתוח">עברית</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/hr/" class="dropdown-item" title="Kimai – Program otvorenog koda za evidentiranje vremena">Hrvatski</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/it/" class="dropdown-item" title="Kimai: time-tracker open source">Italiano</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/nl/" class="dropdown-item" title="Kimai - Open Source tijdregistratie">Nederlands</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/pl/" class="dropdown-item" title="Kimai - Otwarte oprogramowanie do śledzenia czasu">Polski</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/pt/" class="dropdown-item" title="Kimai - Rastreador de tempo de código aberto">Português</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/pt_BR/" class="dropdown-item" title="Kimai - Rastreador de tempo de código aberto">Português (Brasil)</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/ru/" class="dropdown-item" title="Kimai - регистратор времени с открытым исходным кодом">Rусский</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/sk/" class="dropdown-item" title="Kimai - Open Source sledovanie času">Slovenčina</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/sv/" class="dropdown-item" title="Kimai - öppen källkod tidsspårare">Svenska</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/uk/" class="dropdown-item" title="Kimai — реєстратор часу з відкритим сирцевим кодом">Українська</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/zh_Hans/" class="dropdown-item" title="Kimai - 开源时间跟踪器">中文（中国）</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.tw" class="dropdown-item" title="Kimai —— 開放源始碼的工時追蹤工具">中文（繁體）</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-md-7 offset-xl-1">
+                <div id="footer-links" class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <h6 class="fs-lg mb-1 mb-md-2">
+                            <span class="d-none d-md-block">Company</span>
+                            <a href="#tools" class="d-block text-white dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Company</a>
+                        </h6>
+                        <div id="tools" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/de/about.html" class="nav-link fs-sm fw-medium px-0 py-1">Über Kimai</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/features.html" class="nav-link fs-sm fw-medium px-0 py-1">Funktionen</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/support.html" class="nav-link fs-sm fw-medium px-0 py-1">Support</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/reviews" class="nav-link fs-sm fw-medium px-0 py-1">Bewertungen</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/kimai-rabatt-codes" class="nav-link fs-sm fw-medium px-0 py-1">Rabatt Codes</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <h6 class="fs-lg mb-1 mb-md-2">
+                            <span class="d-none d-md-block">Kimai für</span>
+                            <a href="#landing-kimai-for" class="d-block text-white dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Kimai</a>
+                        </h6>
+                        <div id="landing-kimai-for" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/de/zeiterfassung-non-profit.html" class="nav-link fs-sm fw-medium px-0 py-1">Gemeinnützige Organisationen</a>
+                                </li>
+                                
+                                
+                                <li class="nav-item">
+                                    <a href="/en/agency-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Time-tracking for Time Tracking For Agencies">Agencies</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/consultants-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Time-tracking for Time Tracking For Consultants">Consultants</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/software-developers-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Time-tracking for Time Tracking For Software Developers">Software Developers</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    
+                                    <a href="/en/industry" class="nav-link fs-sm fw-medium px-0 py-1">Weitere Branchen</a>
+                                </li>                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <h6 class="fs-lg mb-1 mb-md-2">
+                            <span class="d-none d-md-block">Vergleichen</span>
+                            <a href="#footer-cmp" class="d-block text-white dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Vergleichen</a>
+                        </h6>
+                        <div id="footer-cmp" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/de/compare/" class="nav-link fs-sm fw-medium px-0 py-1">Zeiterfassungen im Vergleich</a>
+                                </li>
+                                
+                                
+                                    <li class="nav-item">
+                                        <a href="https://www.kimai.org/en/clockify-alternative" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to Clockify">Clockify</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="https://www.kimai.org/en/openproject-alternative" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to OpenProject">OpenProject</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="https://www.kimai.org/en/toggl-alternative" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to toggl track">toggl track</a>
+                                    </li>
+                                
+                                
+                                <li class="nav-item">
+                                    <a href="/de/time-tracking-terms" class="nav-link fs-sm fw-medium px-0 py-1">Zeiterfassungsbegriffe</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="d-md-flex align-items-center justify-content-between pt-sm-2 pt-md-4 pt-lg-5 pb-2 mt-4 ">
+    <ul class="nav order-md-1 ms-md-0 mb-3 mb-md-0">
+        <li class="nav-item">
+            <a href="/de/site-notice.html" class="nav-link fs-sm fw-medium">Impressum</a>
+        </li>
+        <li class="nav-item">
+            <a href="/de/privacy-policy.html" class="nav-link fs-sm fw-medium">Datenschutz</a>
+        </li>
+        <li class="nav-item">
+            <a href="/de/terms-cloud.html" class="nav-link fs-sm fw-medium">AGB</a>
+        </li>
+    </ul>
+    <div class="nav order-md-2 mb-3 mb-md-0">
+        <a target="_blank" href="https://github.com/kimai/kimai" class="btn btn-icon btn-secondary btn-github rounded-circle me-3" aria-label="GitHub">
+    <i class="bx bxl-github"></i>
+</a>
+<a target="_blank" href="https://www.youtube.com/@kimai_org" class="btn btn-icon btn-secondary btn-youtube rounded-circle me-3" aria-label="YouTube">
+    <i class="bx bxl-youtube"></i>
+</a>
+<a target="_blank" href="https://www.linkedin.com/company/kimai-timetracker/" class="btn btn-icon btn-secondary btn-linkedin rounded-circle me-3" aria-label="LinkedIn">
+    <i class="bx bxl-linkedin"></i>
+</a>
+<a target="_blank" href="https://www.instagram.com/kimai_org" class="btn btn-icon btn-secondary btn-instagram rounded-circle me-3" aria-label="Instagram">
+    <i class="bx bxl-instagram"></i>
+</a>
+<a target="_blank" href="https://twitter.com/kimai_org" class="btn btn-icon btn-secondary btn-twitter rounded-circle me-3" aria-label="Twitter / X">
+    <i class="bx bxl-twitter"></i>
+</a>
+<a target="_blank" href="https://www.facebook.com/people/Kimai/61557684102167/" class="btn btn-icon btn-secondary btn-facebook rounded-circle me-3" aria-label="Facebook">
+    <i class="bx bxl-facebook"></i>
+</a>
+<a target="_blank" href="https://phpc.social/@kimai" class="btn btn-icon btn-secondary btn-messenger rounded-circle me-3" aria-label="Mastodon">
+    <i class="bx bxl-mastodon"></i>
+</a>
+
+    </div>
+    <ul class="nav order-md-3">
+        <li class="nav-item">
+            <a href="https://uptime.kimai.cloud/" target="_blank" class="nav-link fs-sm fw-medium">Status</a>
+        </li>
+    </ul>
+    
+</div>
+
+    </div>
+</footer>
+
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js?v1"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
+
+</body>
+</html>
