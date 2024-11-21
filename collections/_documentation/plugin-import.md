@@ -7,30 +7,34 @@ description: Import CSV and JSON data into Kimai
 
 ## Customer
 
+Customers will not be updated, if you import the same file multiple-times, you will end up with several customers with the same name.
+You will have to delete the imported customers if you plan to re-import a file.
+
 Supported attributes (field names are case-insensitive):
 
-| Customer attribute | Supported field names                              |  
-|--------------------|----------------------------------------------------|
-| Name               | customer, name                                     |
-| Account            | number, account, customer number, customer account |
-| Company name       | company, company name, company-name                |
-| Description        | description, comment                               |
-| E-Mail             | email, e-mail, e mail                              |
-| Country            | country                                            |
-| Vat-ID             | vat, vat-id, vat id, tax-id, tax id                |
-| Address            | address                                            |
-| Contact            | contact                                            |
-| Currency           | currency                                           |
-| Timezone           | timezone                                           |
-| Phone              | phone                                              |
-| Mobile             | mobile                                             | 
-| Fax                | fax                                                |
-| Homepage           | homepage                                           |
-| Color              | color                                              |
-| Budget             | budget                                             |
-| Time budget        | time budget, time-budget                           |
-| Visible            | visible                                            |
-| Meta fields        | meta.xxx                                           |
+| Customer attribute | Supported field names |  
+|--------------------|-----------------------|
+| Name               | customer, name        |
+| Account            | account               |
+| Company name       | company               |
+| Description        | description           |
+| E-Mail             | email                 |
+| Country            | country               |
+| Vat-ID             | tax                   |
+| Address            | address               |
+| Contact            | contact               |
+| Currency           | currency              |
+| Timezone           | timezone              |
+| Phone              | phone                 |
+| Mobile             | mobile                | 
+| Fax                | fax                   |
+| Homepage           | homepage              |
+| Color              | color                 |
+| Budget             | budget                |
+| Time budget        | timebudget            |
+| Budget type        | budgettype            |
+| Visible            | visible               |
+| Meta fields        | meta.xxx              |
 {: .table }
 
 ### Example
@@ -44,7 +48,7 @@ Acme,Acme university Ltd.
 A multi column-example:
 
 ```csv
-Name,Company,Number,Comment,Phone,Timezone,Meta.XYZ
+Name,Company,Account,Description,Phone,Timezone,Meta.XYZ
 Acme,Acme university Ltd.,12367800,A longer comment to talk about the project,0011234567890,Europe/Berlin,hello foo 123
 ```
 
