@@ -50,20 +50,26 @@ Acme,Acme university Ltd.,12367800,A longer comment to talk about the project,00
 
 ## Projects
 
+Projects will not be updated, if you import the same file multiple-times, you will end up with several projects with the same name and customer.
+You will have to delete the imported projects if you plan to re-import a file.
+
 Supported attributes (field names are case-insensitive):
 
-| Project attribute | Supported field names                                  |  
-|-------------------|--------------------------------------------------------|
-| Name              | project, projectname, project name, project-name, name |
-| Customer name     | customer, customername, customer-name, customer name   |
-| Description       | description, comment                                   |
-| Order number      | ordernumber, order-number, order number                | 
-| Order date        | orderdate, order-date, order date                      |
-| Color             | color                                                  |
-| Budget            | budget                                                 |
-| Time budget       | time budget, time-budget                               |
-| Visible           | visible                                                |
-| Meta fields       | meta.xxx                                               |
+| Project attribute | Supported field names |  
+|-------------------|-----------------------|
+| Name              | project, name         |
+| Customer name     | customer              |
+| Description       | description           |
+| End date          | enddate               |
+| Start date        | startdate             |
+| Order number      | ordernumber           | 
+| Order date        | orderdate             |
+| Color             | color                 |
+| Budget            | budget                |
+| Time budget       | timebudget            |
+| Budget type       | budgettype            |
+| Visible           | visible               |
+| Meta fields       | meta.xxx              |
 {: .table }
 
 ### Example
@@ -77,7 +83,7 @@ Test project;Test customer
 A multi column-example:
 
 ```csv
-Name,Customer,Comment,OrderNumber,OrderDate,Meta.XYZ
+Name,Customer,Description,OrderNumber,OrderDate,Meta.XYZ
 My great project,Acme university,A longer comment to talk about the project,1234567890,2019-08-29,hello foo 123
 ```
 
