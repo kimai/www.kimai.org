@@ -746,6 +746,9 @@ Acme,Acme university Ltd.,12367800,A longer comment to talk about the project,00
 
 <h2 id="projects">Projects</h2>
 
+<p>Projects will not be updated, if you import the same file multiple-times, you will end up with several projects with the same name and customer.
+You will have to delete the imported projects if you plan to re-import a file.</p>
+
 <p>Supported attributes (field names are case-insensitive):</p>
 
 <table class="table">
@@ -758,23 +761,31 @@ Acme,Acme university Ltd.,12367800,A longer comment to talk about the project,00
   <tbody>
     <tr>
       <td>Name</td>
-      <td>project, projectname, project name, project-name, name</td>
+      <td>project, name</td>
     </tr>
     <tr>
       <td>Customer name</td>
-      <td>customer, customername, customer-name, customer name</td>
+      <td>customer</td>
     </tr>
     <tr>
       <td>Description</td>
-      <td>description, comment</td>
+      <td>description</td>
+    </tr>
+    <tr>
+      <td>End date</td>
+      <td>enddate</td>
+    </tr>
+    <tr>
+      <td>Start date</td>
+      <td>startdate</td>
     </tr>
     <tr>
       <td>Order number</td>
-      <td>ordernumber, order-number, order number</td>
+      <td>ordernumber</td>
     </tr>
     <tr>
       <td>Order date</td>
-      <td>orderdate, order-date, order date</td>
+      <td>orderdate</td>
     </tr>
     <tr>
       <td>Color</td>
@@ -786,7 +797,11 @@ Acme,Acme university Ltd.,12367800,A longer comment to talk about the project,00
     </tr>
     <tr>
       <td>Time budget</td>
-      <td>time budget, time-budget</td>
+      <td>timebudget</td>
+    </tr>
+    <tr>
+      <td>Budget type</td>
+      <td>budgettype</td>
     </tr>
     <tr>
       <td>Visible</td>
@@ -808,7 +823,7 @@ Test project;Test customer
 
 <p>A multi column-example:</p>
 
-<pre><code class="language-csv">Name,Customer,Comment,OrderNumber,OrderDate,Meta.XYZ
+<pre><code class="language-csv">Name,Customer,Description,OrderNumber,OrderDate,Meta.XYZ
 My great project,Acme university,A longer comment to talk about the project,1234567890,2019-08-29,hello foo 123
 </code></pre>
 
