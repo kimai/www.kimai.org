@@ -638,6 +638,9 @@
 
 <h2 id="customer">Customer</h2>
 
+<p>Customers will not be updated, if you import the same file multiple-times, you will end up with several customers with the same name.
+You will have to delete the imported customers if you plan to re-import a file.</p>
+
 <p>Supported attributes (field names are case-insensitive):</p>
 
 <table class="table">
@@ -654,19 +657,19 @@
     </tr>
     <tr>
       <td>Account</td>
-      <td>number, account, customer number, customer account</td>
+      <td>account</td>
     </tr>
     <tr>
       <td>Company name</td>
-      <td>company, company name, company-name</td>
+      <td>company</td>
     </tr>
     <tr>
       <td>Description</td>
-      <td>description, comment</td>
+      <td>description</td>
     </tr>
     <tr>
       <td>E-Mail</td>
-      <td>email, e-mail, e mail</td>
+      <td>email</td>
     </tr>
     <tr>
       <td>Country</td>
@@ -674,7 +677,7 @@
     </tr>
     <tr>
       <td>Vat-ID</td>
-      <td>vat, vat-id, vat id, tax-id, tax id</td>
+      <td>tax</td>
     </tr>
     <tr>
       <td>Address</td>
@@ -718,7 +721,11 @@
     </tr>
     <tr>
       <td>Time budget</td>
-      <td>time budget, time-budget</td>
+      <td>timebudget</td>
+    </tr>
+    <tr>
+      <td>Budget type</td>
+      <td>budgettype</td>
     </tr>
     <tr>
       <td>Visible</td>
@@ -740,7 +747,7 @@ Acme,Acme university Ltd.
 
 <p>A multi column-example:</p>
 
-<pre><code class="language-csv">Name,Company,Number,Comment,Phone,Timezone,Meta.XYZ
+<pre><code class="language-csv">Name,Company,Account,Description,Phone,Timezone,Meta.XYZ
 Acme,Acme university Ltd.,12367800,A longer comment to talk about the project,0011234567890,Europe/Berlin,hello foo 123
 </code></pre>
 
