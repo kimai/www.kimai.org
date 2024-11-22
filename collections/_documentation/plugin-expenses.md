@@ -13,6 +13,42 @@ When logged in as user with sufficient permissions, you will see the expense adm
 During the installation a `Demo` category will be created, so you can immediately start adding expenses.
 You can rename it after your first test.
 
+### Categories
+
+Expenses are categorized. An expense category serves these main purposes:
+- it groups expenses
+- it sets default values
+- it allows to configure a price per piece
+
+By entering costs, you can pre-define how much will be calculated for "one expense" item.
+Let's say you enter `10` as `Costs` and the user enters `5` as `Quantity`. The expense will then be worth `50`.
+
+But if you want your user to enter the real price, then you enter 1 as cost.
+
+### Price vs Amount
+
+Each expense has two fields:
+- Quantity (visible for all users)
+- Amount (visible for Admins only)
+
+A regular can see the `Quantity` field. Only Admins can edit an expenses `Amount` directly. 
+
+### Example
+
+The following example explained:
+{% include docs-image.html src="/images/documentation/expenses/expense-category.webp" title="One expense category" width="750px" %}
+
+The category `Driving distance` can be used to track travelling routes between the office and a client location.
+It will be charged with 0.30 per Kilometer.
+
+Now let's assume a user creates an expense as seen in the following screenshot with the new `Driving distance` category and an amount of `74`.
+
+{% include docs-image.html src="/images/documentation/expenses/expense.webp" title="The expense is using the previously created category" width="750px" %}
+
+Then the amount of `74` kilometers is multiplied by the costs of `0.30`, which results in the amount of `22,20 €`.
+
+{% include docs-image.html src="/images/documentation/expenses/listing.webp" title="The expense with costs" width="750px" %}
+
 ## Invoices
 
 As expenses will be automatically included in your invoices, you might want to distinguish between expenses and timesheets.
