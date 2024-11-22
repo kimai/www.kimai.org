@@ -8,54 +8,50 @@ canonical: /documentation/plugin-expenses.html
 
 ## Usage 
 
-When logged in as user with sufficient permissions, you will see the expense administration screen at `/en/expenses/`.
+Users with sufficient permissions can access the expense administration screen at `/en/expenses/`.
 
-During the installation a `Demo` category will be created, so you can immediately start adding expenses.
-You can rename it after your first test.
+During installation, a default `Demo` category is created to help you get started with adding expenses. You can rename it after completing your first test.
 
 ### Categories
 
-Expenses are categorized. An expense category serves these main purposes:
-- it groups expenses
-- it sets default values
-- it allows to configure a price per piece
+Expenses are organized into categories. An expense category serves three main purposes:
+- It groups related expenses.
+- It sets default values for calculations.
+- It allows configuration of a price per unit.
 
-By entering costs, you can pre-define how much will be calculated for "one expense" item.
-Let's say you enter `10` as `Costs` and the user enters `5` as `Quantity`. The expense will then be worth `50`.
+When defining costs, you can pre-set how much will be calculated for a single expense item.  
+For example, if you set `10` as the `Cost` and the user enters `5` as the `Quantity`, the total expense will amount to `50`.
 
-But if you want your user to enter the real price, then you enter 1 as cost.
+If you want users to input the actual price themselves, you can set the cost to `1`.
 
 ### Price vs Amount
 
-Each expense has two fields:
-- Quantity (visible for all users)
-- Amount (visible for Admins only)
+Each expense consists of two fields:
+- **Quantity** (visible to all users)
+- **Amount** (visible only to Admins)
 
-A regular can see the `Quantity` field. Only Admins can edit an expenses `Amount` directly. 
+Regular users can view and edit the `Quantity` field. However, only Admins have permission to directly edit an expense's `Amount`.
 
 ### Example
 
-The following example explained:
+The following example illustrates this process:  
 {% include docs-image.html src="/images/documentation/expenses/expense-category.webp" title="One expense category" width="750px" %}
 
-The category `Driving distance` can be used to track travelling routes between the office and a client location.
-It will be charged with 0.30 per Kilometer.
+The category `Driving distance` is designed to track travel routes between the office and a client location. The cost is set at `0.30` per kilometer.
 
-Now let's assume a user creates an expense as seen in the following screenshot with the new `Driving distance` category and an amount of `74`.
-
+Now, let’s assume a user creates an expense using the new `Driving distance` category and enters a quantity of `74`, as shown in the screenshot below:  
 {% include docs-image.html src="/images/documentation/expenses/expense.webp" title="The expense is using the previously created category" width="750px" %}
 
-Then the amount of `74` kilometers is multiplied by the costs of `0.30`, which results in the amount of `22,20 €`.
+In this case, the entered quantity of `74` kilometers is multiplied by the cost of `0.30`, resulting in a total amount of `22.20 €`.
 
 {% include docs-image.html src="/images/documentation/expenses/listing.webp" title="The expense with costs" width="750px" %}
 
 ## Invoices
 
-As expenses will be automatically included in your invoices, you might want to distinguish between expenses and timesheets.
-The invoice template variable `${entry.type}` contains that info.
-The value will be `expense` and can be used for example in Excel with `ifthan` formulas or in combination with a `conditional format`.
+Expenses are automatically included in your invoices, so it may be helpful to differentiate between expenses and timesheets.
 
-The invoice template variable `${entry.category}` will contain the category name of the expense.
+- The invoice template variable `${entry.type}` indicates the type of entry. Its value will be `expense`. This can be used in tools like Excel with `IF` formulas or conditional formatting.
+- The variable `${entry.category}` contains the expense category name.
 
 ## Filter and search
 
