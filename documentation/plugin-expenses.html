@@ -671,18 +671,67 @@
 
 <h2 id="usage">Usage</h2>
 
-<p>When logged in as user with sufficient permissions, you will see the expense administration screen at <code class="language-plaintext highlighter-rouge">/en/expenses/</code>.</p>
+<p>Users with sufficient permissions can access the expense administration screen at <code class="language-plaintext highlighter-rouge">/en/expenses/</code>.</p>
 
-<p>During the installation a <code class="language-plaintext highlighter-rouge">Demo</code> category will be created, so you can immediately start adding expenses.
-You can rename it after your first test.</p>
+<p>During installation, a default <code class="language-plaintext highlighter-rouge">Demo</code> category is created to help you get started with adding expenses. You can rename it after completing your first test.</p>
+
+<h3 id="categories">Categories</h3>
+
+<p>Expenses are organized into categories. An expense category serves three main purposes:</p>
+<ul>
+  <li>It groups related expenses.</li>
+  <li>It sets default values for calculations.</li>
+  <li>It allows configuration of a price per unit.</li>
+</ul>
+
+<p>When defining costs, you can pre-set how much will be calculated for a single expense item.<br />
+For example, if you set <code class="language-plaintext highlighter-rouge">10</code> as the <code class="language-plaintext highlighter-rouge">Cost</code> and the user enters <code class="language-plaintext highlighter-rouge">5</code> as the <code class="language-plaintext highlighter-rouge">Quantity</code>, the total expense will amount to <code class="language-plaintext highlighter-rouge">50</code>.</p>
+
+<p>If you want users to input the actual price themselves, you can set the cost to <code class="language-plaintext highlighter-rouge">1</code>.</p>
+
+<h3 id="price-vs-amount">Price vs Amount</h3>
+
+<p>Each expense consists of two fields:</p>
+<ul>
+  <li><strong>Quantity</strong> (visible to all users)</li>
+  <li><strong>Amount</strong> (visible only to Admins)</li>
+</ul>
+
+<p>Regular users can view and edit the <code class="language-plaintext highlighter-rouge">Quantity</code> field. However, only Admins have permission to directly edit an expense’s <code class="language-plaintext highlighter-rouge">Amount</code>.</p>
+
+<h3 id="example">Example</h3>
+
+<p>The following example illustrates this process:</p>
+
+<figure class="d-block figure mb-3" style="max-width: 750px">
+    <img src="/images/documentation/expenses/expense-category.webp" class="figure-img img-fluid rounded" />
+    <figcaption class="figure-caption">One expense category</figcaption>
+</figure>
+
+<p>The category <code class="language-plaintext highlighter-rouge">Driving distance</code> is designed to track travel routes between the office and a client location. The cost is set at <code class="language-plaintext highlighter-rouge">0.30</code> per kilometer.</p>
+
+<p>Now, let’s assume a user creates an expense using the new <code class="language-plaintext highlighter-rouge">Driving distance</code> category and enters a quantity of <code class="language-plaintext highlighter-rouge">74</code>, as shown in the screenshot below:</p>
+
+<figure class="d-block figure mb-3" style="max-width: 750px">
+    <img src="/images/documentation/expenses/expense.webp" class="figure-img img-fluid rounded" />
+    <figcaption class="figure-caption">The expense is using the previously created category</figcaption>
+</figure>
+
+<p>In this case, the entered quantity of <code class="language-plaintext highlighter-rouge">74</code> kilometers is multiplied by the cost of <code class="language-plaintext highlighter-rouge">0.30</code>, resulting in a total amount of <code class="language-plaintext highlighter-rouge">22.20 €</code>.</p>
+
+<figure class="d-block figure mb-3" style="max-width: 750px">
+    <img src="/images/documentation/expenses/listing.webp" class="figure-img img-fluid rounded" />
+    <figcaption class="figure-caption">The expense with costs</figcaption>
+</figure>
 
 <h2 id="invoices">Invoices</h2>
 
-<p>As expenses will be automatically included in your invoices, you might want to distinguish between expenses and timesheets.
-The invoice template variable <code class="language-plaintext highlighter-rouge">${entry.type}</code> contains that info.
-The value will be <code class="language-plaintext highlighter-rouge">expense</code> and can be used for example in Excel with <code class="language-plaintext highlighter-rouge">ifthan</code> formulas or in combination with a <code class="language-plaintext highlighter-rouge">conditional format</code>.</p>
+<p>Expenses are automatically included in your invoices, so it may be helpful to differentiate between expenses and timesheets.</p>
 
-<p>The invoice template variable <code class="language-plaintext highlighter-rouge">${entry.category}</code> will contain the category name of the expense.</p>
+<ul>
+  <li>The invoice template variable <code class="language-plaintext highlighter-rouge">${entry.type}</code> indicates the type of entry. Its value will be <code class="language-plaintext highlighter-rouge">expense</code>. This can be used in tools like Excel with <code class="language-plaintext highlighter-rouge">IF</code> formulas or conditional formatting.</li>
+  <li>The variable <code class="language-plaintext highlighter-rouge">${entry.category}</code> contains the expense category name.</li>
+</ul>
 
 <h2 id="filter-and-search">Filter and search</h2>
 
@@ -803,7 +852,7 @@ This would find all entries with the custom field <code class="language-plaintex
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#usage" class="nav-link">Usage</a></li><li class="nav-item"><a href="#invoices" class="nav-link">Invoices</a></li><li class="nav-item"><a href="#filter-and-search" class="nav-link">Filter and search</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#usage" class="nav-link">Usage</a><ul><li class="nav-item"><a href="#categories" class="nav-link">Categories</a></li><li class="nav-item"><a href="#price-vs-amount" class="nav-link">Price vs Amount</a></li><li class="nav-item"><a href="#example" class="nav-link">Example</a></li></ul></li><li class="nav-item"><a href="#invoices" class="nav-link">Invoices</a></li><li class="nav-item"><a href="#filter-and-search" class="nav-link">Filter and search</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
         
     </aside>
 
