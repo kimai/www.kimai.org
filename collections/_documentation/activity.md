@@ -3,96 +3,87 @@ title: Activities
 description: Activities in Kimai
 ---
 
-Activities in Kimai are meant to explain the kind of work done for a specific task/timesheet.
+Activities describe the type of work performed during a time-record.
 
 ## Activity types
 
-Activities can have two different types: `global` and `project specific`.  
+Kimai supports two activity types: `global` and `project specific`.
 
-### Project specific 
+### Project specific activities
 
-Activities can be assigned to a project, which means you can only choose them if the linked project is active.
+These activities are linked to one project and can only be selected when working on that specific project.
 
 ### Global activities
 
-Activities can be global, meaning they are not linked to a project and can be used in combination with every project.
+Global activities are available for all projects. They typically represent common tasks that occur across different projects, such as:
+- Meetings
+- Phone calls
+- Administration
 
-Examples for global activities could be:
-- meetings
-- phone calls
-- administrative tasks
+The choice of activities depends on your industry and workflow requirements.
 
-These examples might vary heavily between different industries, the main usage are recurring tasks throughout all of your projects.
+Projects have a configuration flag to disallow global activity usage. 
 
 ### Changing the activity type
 
-After an activity was created it cannot be re-assigned to (another) project.
+Once created, activities have limited type modification options:
+- Project specific activities can be converted to global by clearing the project dropdown
+- Global activities cannot be assigned to projects
+- Converting global to project specific is not possible
+- Re-assigning to different projects is not possible
 
-The only change that is possible: project specific activities can be made global by selecting the empty option from the project dropdown.
-This change is not reversible.
+These restrictions protect timesheet integrity and prevent incorrect rate calculations.
 
-Global activities cannot be assigned to a project.
-
-The reason for all above restrictions are existing timesheets, which would result in wrong assignments and/or wrong rates otherwise.
-
-Here is the solution/workaround that you have to apply for wrongly assigned activities:
-
-- Create the new activity
-- Go to the timesheet section for all users
-- Filter all timesheet for the old activity (increase the page size if there are more than 50 results)
-- Click the checkbox in the upper left of the result table to check all timesheet rows
-- Now choose "Edit" from the dropdown below the table for batch-update mode
-- In the batch-update screen: choose the project and new activity and save
-- After there is no more timesheet with the old activity you can safely delete it
-
+If you need to change an activity's assignment nevertheless, follow these steps:
+1. Create a new activity with correct assignment
+2. Open timesheet section and filter for the old activity
+3. Select all relevant timesheet entries
+4. Use batch-update to assign the new activity
+5. Delete the old activity once no timesheets use it
 
 ## Managing activities
 
 ### Colors
 
-Each activity can be assigned its own color, for easier identification in various screens.
-
-If no color has been selected, the project color will be used. 
-If that is not defined as well, Kimai will fall back to the customer color and finally to the [default color]({% link _documentation/customer.md %}).
+Activities can have individual colors for better visual identification. The color hierarchy is:
+1. Activity color
+2. Project color
+3. Customer color
+4. System default color
 
 ### Billable
- 
+
 {% include snippets/billable.md entity="Activity" %}
 
 ### Budgets
 
-{% include snippets/budgets.md permission="activity" %} 
+{% include snippets/budgets.md permission="activity" %}
 
 ### Prices
 
 {% include snippets/rates.md permission="activity" %}
 
 ### Visibility
- 
-By toggling the visibility on an activity, you:
-- hide the activity from all drop-downs, regardless of their visibility state
-- hide the activity from the default list in the activities administration
 
-Please note:
-- all currently linked objects will still show the activity in the dropdown as pre-selected option
-  - you can still change the activity on timesheet record, which used it before
-  - you cannot create new timesheet records for this activity 
-- you can still access the hidden entries by changing the visibility filter on the toolbars
+Visibility settings control activity access:
+- Hidden activities are removed from all dropdowns
+- Existing links retain the activity as pre-selected option
+- New timesheet records cannot use hidden activities
 
-The visibility filter in the toolbar has three state: 
-- Visible: Yes (all activities that are "really" visible, meaning: the activity, linked project and customer are visible)
-- Visible: No (all activities that are exclusively invisible by their own visibility state)
-- Visible "empty" (all activities: not filtering on their own, the projects or customers visibility)
+The visibility filter has three states:
+- Yes: Shows visible activities (including project and customer visibility)
+- No: Shows activities hidden by their visibility setting
+- Empty: Shows all activities regardless of visibility
 
-## Filter and search 
+## Filter and search
 
-The search supports filtering by the fields:
+Available filters:
 - `customer`
 - `project`
 - `global` / `non-global`
 - `visibility`
 
-Besides these filters, you can query for a free search term, which will be searched in the fields:
+Free text search applies to:
 - `name`
 - `comment`
 
@@ -100,11 +91,8 @@ Besides these filters, you can query for a free search term, which will be searc
 
 ## Deleting an activity
 
-Activities can be deleted from the Activity listing view via `Administration > Activities`.
+Delete activities via `Administration > Activities`. Consider using visibility settings instead of deletion for used activities.
 
-Usually it is not a good idea to delete a used activity, consider to switch the visibility instead to hide it. 
-
-Right-click on a row (or open the action dropdown at the end of it) to see all available actions for the selected activity.
-The last action in the list is `Delete` - once you click it you wil get a feedback screen which either tells you that the
-activity is unused and can be safely deleted, or it will show you quick stats of the activity and then ask you to re-assign
-the attached timesheets to another activity.  
+Use the row context menu to access the delete option. The system will either:
+- Confirm safe deletion for unused activities
+- Show activity statistics and prompt for timesheet reassignment
