@@ -35,10 +35,19 @@ jobs:
 #        id: pages
 #        uses: actions/configure-pages@v5
       - name: Build with Jekyll
-        # Outputs to the './_site' directory by default
         run: bundle exec jekyll build
         env:
           JEKYLL_ENV: production
+      - name: Google verification file
+        run: |
+          echo "google-site-verification: googleeb5b9accd9e1e7c6.html" > _site/googleeb5b9accd9e1e7c6.html
+      - name: Bing verification file
+        run: |
+          echo "<?xml version=\"1.0\"?><users><user>874E17F27A8EABE9DDAED762FC498BC4</user></users>" > _site/BingSiteAuth.xml
+      - name: BlueSky verification file
+        run: |
+          mkdir _site/.well-known/
+          echo "did:plc:honlpxnvzll2rpfcszvgrgw5" > _site/.well-known/atproto-did
       - name: Fix locale Hebrew
         id: locale-he
         run: |
