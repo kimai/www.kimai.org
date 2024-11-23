@@ -608,48 +608,49 @@
             <div>
                 
                 <div id="documentation-content">
-                    <p>The <code class="language-plaintext highlighter-rouge">billable</code> field is used to determine if timesheet entries should be included in <a href="/documentation/invoices.html">invoices</a>, 
-budget calculations and certain statistics. The <a href="/documentation/rest-api.html">API</a> supports filtering for the <code class="language-plaintext highlighter-rouge">billable</code> field as well.</p>
+                    <p>The <code class="language-plaintext highlighter-rouge">billable</code> field determines if timesheet entries are included in <a href="/documentation/invoices.html">invoices</a>, budget calculations and statistics. 
+The <a href="/documentation/rest-api.html">API</a> supports filtering by this field.</p>
 
-<p>The following <a href="/documentation/permissions.html">permissions</a> define if a user is allowed to set the timesheet field:</p>
+<h2 id="permissions">Permissions</h2>
+
+<p>Two permissions control the billable field access:</p>
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">edit_billable_own_timesheet</code> - for own timesheet, by default assigned to: Teamlead, Administrator and System-Admin.</li>
-  <li><code class="language-plaintext highlighter-rouge">edit_billable_other_timesheet</code> - for timesheet of other users. By default, assigned to: Teamlead, Administrator and System-Admin.</li>
+  <li><code class="language-plaintext highlighter-rouge">edit_billable_own_timesheet</code> - allows editing own timesheets (default: Teamlead, Administrator, System-Admin)</li>
+  <li><code class="language-plaintext highlighter-rouge">edit_billable_other_timesheet</code> - allows editing other users’ timesheets (default: Teamlead, Administrator, System-Admin)</li>
 </ul>
 
-<h2 id="timesheet">Timesheet</h2>
+<p>To hide the billable field, remove the corresponding permission from the user group.</p>
 
-<p>Users with the billable permissions will see a dropdown (select-box) with 3 entries: <code class="language-plaintext highlighter-rouge">Automatic</code>, <code class="language-plaintext highlighter-rouge">Yes</code> and <code class="language-plaintext highlighter-rouge">No</code>.</p>
+<h2 id="timesheet-options">Timesheet options</h2>
 
+<p>Users with billable permissions can choose between:</p>
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">Yes</code>: timesheet is billable</li>
-  <li><code class="language-plaintext highlighter-rouge">No</code>: timesheet is not billable</li>
-  <li><code class="language-plaintext highlighter-rouge">Automatic</code> (default): will lead to a detection of the billable state (explained below)</li>
+  <li><code class="language-plaintext highlighter-rouge">Yes</code> - timesheet is billable</li>
+  <li><code class="language-plaintext highlighter-rouge">No</code> - timesheet is not billable</li>
+  <li><code class="language-plaintext highlighter-rouge">Automatic</code> (default) - billable state is detected automatically</li>
 </ul>
 
-<h2 id="the-billable-configuration">The billable configuration</h2>
+<h2 id="configuration">Configuration</h2>
 
-<p>Each of the 3 level entities <code class="language-plaintext highlighter-rouge">Activity</code>, <code class="language-plaintext highlighter-rouge">Project</code> and <code class="language-plaintext highlighter-rouge">Customer</code> have a billable flag, which defines whether a timesheet for it should be billable or not.</p>
+<p>The billable flag exists on three levels:</p>
+<ul>
+  <li>Activity</li>
+  <li>Project</li>
+  <li>Customer</li>
+</ul>
 
-<p>By default, each existing and new entity is billable. If you have certain entities that cannot be billed to customers (e.g. an Activity for internal work), 
-then the <code class="language-plaintext highlighter-rouge">billable</code> checkbox on that entity should be deactivated. All new timesheet using this internal activity will then not be billable, if they were 
-created with the <code class="language-plaintext highlighter-rouge">Automatic</code> billable mode.</p>
+<p>New entities are billable by default. Deactivate the <code class="language-plaintext highlighter-rouge">billable</code> checkbox for non-billable entities (e.g. internal activities).</p>
 
 <h2 id="automatic-detection">Automatic detection</h2>
 
-<p>By default, every new timesheet uses the <code class="language-plaintext highlighter-rouge">Automatic</code> billable detection mode. 
-That means: after saving the entry, the billable field will be detected by the settings in the timesheet linked <code class="language-plaintext highlighter-rouge">Activity</code>, <code class="language-plaintext highlighter-rouge">Project</code> and <code class="language-plaintext highlighter-rouge">Customer</code>.</p>
+<p>New timesheets use <code class="language-plaintext highlighter-rouge">Automatic</code> detection by default. The billable state is determined by checking:</p>
+<ul>
+  <li>Activity billable flag</li>
+  <li>Project billable flag</li>
+  <li>Customer billable flag</li>
+</ul>
 
-<p>If any of those is not billable, the timesheet is not billable as well.</p>
-
-<p>In other words: in order for a timesheet to be detected as billable, the <code class="language-plaintext highlighter-rouge">Activity</code>, <code class="language-plaintext highlighter-rouge">Project</code> and <code class="language-plaintext highlighter-rouge">Customer</code> needs to be billable as well.</p>
-
-<p>Users owning the <code class="language-plaintext highlighter-rouge">edit_billable_own_timesheet</code> permission can always manually override the <code class="language-plaintext highlighter-rouge">Automatic</code> mode and choose directly whether the</p>
-
-<h2 id="hiding-the-billable-field">Hiding the billable field</h2>
-
-<p>Hiding the <code class="language-plaintext highlighter-rouge">billable</code> form field with CSS is <strong>NOT</strong> recommended. To remove the field, you should instead remove the permission for the user group.</p>
-
+<p>A timesheet is only billable if all three entities are marked as billable. Users with <code class="language-plaintext highlighter-rouge">edit_billable_own_timesheet</code> permission can manually override this.</p>
 
                 </div>
                 
@@ -689,7 +690,7 @@ That means: after saving the entry, the billable field will be detected by the s
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#timesheet" class="nav-link">Timesheet</a></li><li class="nav-item"><a href="#the-billable-configuration" class="nav-link">The billable configuration</a></li><li class="nav-item"><a href="#automatic-detection" class="nav-link">Automatic detection</a></li><li class="nav-item"><a href="#hiding-the-billable-field" class="nav-link">Hiding the billable field</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li><li class="nav-item"><a href="#timesheet-options" class="nav-link">Timesheet options</a></li><li class="nav-item"><a href="#configuration" class="nav-link">Configuration</a></li><li class="nav-item"><a href="#automatic-detection" class="nav-link">Automatic detection</a></li></ul>
         
         <ul class="nav">
             <li>

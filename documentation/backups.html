@@ -554,45 +554,40 @@
             <div>
                 
                 <div id="documentation-content">
-                    <p>You need to backup the following files and directories:</p>
+                    <p>You need to back up the following files and directories:</p>
 <ul>
   <li><code class="language-plaintext highlighter-rouge">.env</code></li>
   <li><code class="language-plaintext highlighter-rouge">config/packages/local.yaml</code></li>
+  <li><code class="language-plaintext highlighter-rouge">var/</code></li>
+  <li>and possible customized files</li>
 </ul>
 
-<p>The following files need your attention as well, backup if necessary:</p>
+<h2 id="database-backup">Database backup</h2>
+
+<p>You should always create a full backup of the database.</p>
+
+<p>The required database tables are:</p>
 <ul>
-  <li>all customized files</li>
-  <li>the directory <code class="language-plaintext highlighter-rouge">var/data/</code> if some plugins uses the directory</li>
-  <li>all added invoice templates from <code class="language-plaintext highlighter-rouge">var/invoices/</code></li>
-  <li>all added export templates from <code class="language-plaintext highlighter-rouge">var/export/</code></li>
-  <li>installed plugins at <code class="language-plaintext highlighter-rouge">var/plugins/</code></li>
+  <li>All tables with prefix <code class="language-plaintext highlighter-rouge">kimai2_</code></li>
+  <li>All tables with prefix <code class="language-plaintext highlighter-rouge">bundle_migration_</code></li>
+  <li>The table <code class="language-plaintext highlighter-rouge">migration_versions</code></li>
 </ul>
 
-<p>Database:</p>
-<ul>
-  <li>Best option is to backup all tables in the database with all data!</li>
-  <li>In detail:
-    <ul>
-      <li>all tables starting with <code class="language-plaintext highlighter-rouge">kimai2_</code></li>
-      <li>all tables starting with <code class="language-plaintext highlighter-rouge">bundle_migration_</code></li>
-      <li>the table <code class="language-plaintext highlighter-rouge">migration_versions</code></li>
-    </ul>
-  </li>
-</ul>
+<p>There might be more depending on the used plugins.</p>
 
-<p>Write down the exact version of your Kimai installation:</p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">bin/console kimai:version</code></li>
-  <li><code class="language-plaintext highlighter-rouge">git rev-parse HEAD</code></li>
-</ul>
+<h2 id="version-information">Version information</h2>
+
+<p>Record your Kimai version:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/console kimai:version
+git rev-parse HEAD
+</code></pre></div></div>
 
 <p>In most cases you don’t need these versions. 
 But it’s good to have the information in the unlikely case of a problem while restoring the backup.</p>
 
 <h2 id="create-a-database-backup">Create a database backup</h2>
 
-<p>Here is a one liner that creates a database backup for MySQL/MariaDB (adjust connection to your needs):</p>
+<p>The following command creates a database backup for MySQL/MariaDB:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysqldump --single-transaction -u kimai2 -p -h 127.0.0.1 kimai2 &gt; ~/kimai2-`date +%F_%H-%M`.sql
 </code></pre></div></div>
@@ -600,10 +595,11 @@ But it’s good to have the information in the unlikely case of a problem while 
 <h2 id="restore">Restore</h2>
 
 <ul>
-  <li>install Kimai <a href="/documentation/installation.html">as documented</a> in the <strong>exact same version</strong>, which you used when you created the backup</li>
-  <li>make sure it works</li>
-  <li>restore the database backup in an empty database</li>
-  <li>point <code class="language-plaintext highlighter-rouge">.env</code> to your imported database</li>
+  <li>Install Kimai <a href="/documentation/installation.html">as documented</a> in the <strong>exact same version</strong>, which you used when you created the backup</li>
+  <li>Make sure it works</li>
+  <li>Restore the database backup in an empty database</li>
+  <li>Replace the file with the ones from your backup (e.g. <code class="language-plaintext highlighter-rouge">var/</code>, <code class="language-plaintext highlighter-rouge">.env</code>, <code class="language-plaintext highlighter-rouge">local.yaml</code>=</li>
+  <li>Point <code class="language-plaintext highlighter-rouge">.env</code> to your imported database</li>
 </ul>
 
 <p>Now refresh your cache:</p>
@@ -621,43 +617,9 @@ But it’s good to have the information in the unlikely case of a problem while 
 </div>
                    </div>
 
-<p>At this step: test Kimai again and don’t proceed before it works as expected!</p>
+<p>Now run the <a href="/documentation/updates.html">upgrade commands</a> and come back.</p>
 
-<p>Working properly? If not, check your file permissions:</p>
-
-<div class="card border-primary mb-3">
-                       <p class="card-title bg-faded-primary p-1 mb-1"><strong><i class="bx bxs-info-circle ms-2 me-2 text-primary fs-5"></i>Adjust file permission</strong></p>
-                       <div class="card-body card-note m-0 pt-3 px-3">
-<p>You have to allow PHP (your webserver process) to write to <code class="language-plaintext highlighter-rouge">var/</code> and it subdirectories.</p>
-
-<p>Here is an example for Debian/Ubuntu, to be executed inside the Kimai directory:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chown -R :www-data .
-chmod -R g+r .
-chmod -R g+rw var/
-</code></pre></div></div>
-
-<p>You might not need these commands in a shared-hosting environment.
-And you probably need to prefix them with <code class="language-plaintext highlighter-rouge">sudo</code> and/or the group might be called different from <code class="language-plaintext highlighter-rouge">www-data</code>.</p>
-</div>
-                   </div>
-
-<p>Working now? Fine, then go ahead and restore all other files:</p>
-
-<ul>
-  <li>invoice templates</li>
-  <li>plugins</li>
-  <li><code class="language-plaintext highlighter-rouge">local.yaml</code></li>
-</ul>
-
-<p>Still not satisfied and want to upgrade to the latest version?</p>
-
-<p>Great! Make sure you have the <code class="language-plaintext highlighter-rouge">migration_versions</code> table in your database backup, 
-before you upgrade. If not, execute <code class="language-plaintext highlighter-rouge">bin/console doctrine:migrations:version --add --all</code> 
-beforehand and read the <a href="/documentation/installation.html">installation docs</a> again, 
-if you might have missed other points as well.</p>
-
-<p>Now you <a href="/documentation/updates.html">can upgrade</a> :-)</p>
+<p>Run the plugin installation commands.</p>
 
 <h2 id="pitfall-version-change">Pitfall version change</h2>
 
@@ -669,23 +631,22 @@ if you might have missed other points as well.</p>
 
 <h3 id="database">Database</h3>
 
-<p>If Kimai will not load properly (e.g. you only see a white screen, maybe some pages work) the database could be the reason.
+<p>If Kimai does not load (e.g. you only see a white screen, maybe some pages work) the database could be the reason.
 This problem can happen when you install a different (newer) version that has a different database structure then your backup.</p>
 
-<p>Check your database if you have the <code class="language-plaintext highlighter-rouge">migration_versions</code> table. If not, go back to “Restore”. 
-If so: try to execute the missing database migrations with <code class="language-plaintext highlighter-rouge">bin/console kimai:update -n</code>.</p>
+<p>Run the <a href="/documentation/updates.html">upgrade commands</a>.</p>
 
 <h3 id="configuration">Configuration</h3>
 
-<p>You see an error when executing <code class="language-plaintext highlighter-rouge">bin/console cache:clear</code>.</p>
+<p>You see an error when executing the cache commands?</p>
 
 <p>This problem can happen when a configuration change is necessary in your <code class="language-plaintext highlighter-rouge">local.yaml</code>. 
 Please check the <a href="https://github.com/kimai/kimai/blob/main/UPGRADING.md">UPGRADING</a> guide.</p>
 
 <h2 id="backup-script">Backup script</h2>
 
-<p>The following solution is a very simple, but working way to backup your Kimai installation. It will store the database, your environment file, 
-the installed plugins and generated data (eg. invoice files).</p>
+<p>The following solution is a very simple, but working way to back up your Kimai installation. 
+It will store the database, your environment file, the installed plugins and generated data (e.g. invoice files).</p>
 
 <p>I recommend to create a dedicated user on the server that will store the backups:</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>useradd <span class="nt">-m</span> <span class="nt">-s</span> /bin/bash backup
@@ -758,7 +719,7 @@ zip <span class="nt">-r</span> <span class="nv">$BACKUP_STORAGE_DIR</span>/<span
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#create-a-database-backup" class="nav-link">Create a database backup</a></li><li class="nav-item"><a href="#restore" class="nav-link">Restore</a></li><li class="nav-item"><a href="#pitfall-version-change" class="nav-link">Pitfall version change</a><ul><li class="nav-item"><a href="#database" class="nav-link">Database</a></li><li class="nav-item"><a href="#configuration" class="nav-link">Configuration</a></li></ul></li><li class="nav-item"><a href="#backup-script" class="nav-link">Backup script</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#database-backup" class="nav-link">Database backup</a></li><li class="nav-item"><a href="#version-information" class="nav-link">Version information</a></li><li class="nav-item"><a href="#create-a-database-backup" class="nav-link">Create a database backup</a></li><li class="nav-item"><a href="#restore" class="nav-link">Restore</a></li><li class="nav-item"><a href="#pitfall-version-change" class="nav-link">Pitfall version change</a><ul><li class="nav-item"><a href="#database" class="nav-link">Database</a></li><li class="nav-item"><a href="#configuration" class="nav-link">Configuration</a></li></ul></li><li class="nav-item"><a href="#backup-script" class="nav-link">Backup script</a></li></ul>
         
     </aside>
 
