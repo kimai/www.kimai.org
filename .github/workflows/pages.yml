@@ -50,18 +50,18 @@ jobs:
           echo "did:plc:honlpxnvzll2rpfcszvgrgw5" > _site/.well-known/atproto-did
       - name: Fix locale Hebrew
         run: |
-            find _site/he -type f -exec sed -i'' 's/\/he\//\//g' {} +
-            find _site/he -type f -exec sed -i'' 's/href="\/documentation\//href="https:\/\/www.kimai.org\/documentation\//g' {} +
-            find _site/he -type f -exec sed -i'' 's/href="\/blog\/2/href="https:\/\/www.kimai.org\/blog\/2/g' {} +
-            find _site/he -type f -exec sed -i'' 's/href="\/en\//href="https:\/\/www.kimai.org\/en\//g' {} +
+          find _site/he -type f -exec sed -i'' 's/\/he\//\//g' {} +
+          find _site/he -type f -exec sed -i'' 's/href="\/documentation\//href="https:\/\/www.kimai.org\/documentation\//g' {} +
+          find _site/he -type f -exec sed -i'' 's/href="\/blog\/2/href="https:\/\/www.kimai.org\/blog\/2/g' {} +
+          find _site/he -type f -exec sed -i'' 's/href="\/en\//href="https:\/\/www.kimai.org\/en\//g' {} +
       - name: Fix locale zh_Hant
         run: |
-            find _site/zh_Hant -type f -exec sed -i'' 's/\/zh_Hant\//\//g' {} +
-            find _site/zh_Hant -type f -exec sed -i'' 's/href="\/documentation\//href="https:\/\/www.kimai.org\/documentation\//g' {} +
-            find _site/zh_Hant -type f -exec sed -i'' 's/href="\/blog\/2/href="https:\/\/www.kimai.org\/blog\/2/g' {} +
-            find _site/zh_Hant -type f -exec sed -i'' 's/href="\/en\//href="https:\/\/www.kimai.org\/en\//g' {} +
+          find _site/zh_Hant -type f -exec sed -i'' 's/\/zh_Hant\//\//g' {} +
+          find _site/zh_Hant -type f -exec sed -i'' 's/href="\/documentation\//href="https:\/\/www.kimai.org\/documentation\//g' {} +
+          find _site/zh_Hant -type f -exec sed -i'' 's/href="\/blog\/2/href="https:\/\/www.kimai.org\/blog\/2/g' {} +
+          find _site/zh_Hant -type f -exec sed -i'' 's/href="\/en\//href="https:\/\/www.kimai.org\/en\//g' {} +
       - name: Commit to branch
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-            folder: _site
-            branch: site
+          folder: _site
+          branch: site
