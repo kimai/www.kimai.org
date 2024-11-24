@@ -1,6 +1,6 @@
 ---
 title: Public holiday
-description: Managing public holidays
+description: Configure public holidays for your employees with working contracts.
 related:
 - absence
 - contract
@@ -8,15 +8,53 @@ related:
 
 {% include youtube-video.html id="public_holiday" %}
 
-## Groups
+Public holidays are considered in employee working time calculations:
 
-If you have employees in different locations with different sets of public holidays, you need to create groups for them.
+- If a public holiday falls on a weekday that is a regular working day for the employee, their expected working hours for that day are fulfilled automatically
+- Any timesheet entries recorded on a public holiday are counted as overtime
 
-But if you have only one office with all employees having the same set of used public holidays, you can use the "Default" group and skip this step.
+## Public holiday groups
 
-## Holidays
+Public holiday groups help manage location-specific holidays for organizations with employees in different regions.
 
-TODO 
+### Default group 
+
+The 'Standard' group is shown by default in the public holiday administration. This group applies to all employees without a specific group assignment.
+
+### Multiple locations
+
+For organizations with employees in different locations:
+
+1. Create location-specific groups using the {% include demo-action-button.html icon="create" title="Create" %} button
+2. Assign the relevant public holidays to each group
+
+## Managing public holidays
+
+### Group selection
+
+Select your desired group from the dropdown menu. If you have a single location, use the 'Standard' group.
+
+### Creating holidays
+
+Add public holidays to the selected year using either:
+- {% include demo-action-button.html icon="create" %} button for adding single holidays
+- {% include demo-action-button.html icon="import" %} button for bulk importing pre-defined holidays
+
+### Import feature
+
+The import dialog provides a worldwide location database (in English only):
+- Search for countries (e.g. `Germany`)
+- Search for regions (e.g. `NorthRhineWestphalia`)
+- Review and import all holidays for the selected region
+
+## Customization
+
+After import you can:
+- Edit existing holidays (e.g. change full-day to half-day)
+- Delete unwanted holidays
+- Add new custom holidays
+
+{% alert warning %}The imported data has been calculated automatically, is not subject to any liability and needs to be verified after import.{% endalert %}
 
 ## Permissions
 
