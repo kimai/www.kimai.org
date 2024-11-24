@@ -152,7 +152,7 @@ layout: base
                     {% for p in page.related %}
                     {% assign doc = site.documentation | where: "slug", p | first %}
                     <li>
-                        <a href="{{ doc.url }}">{{ doc.title }}</a>
+                        <a href="{{ doc.url }}">{{ doc.title }}</a> &ndash; {{ doc.description }}
                     </li>
                     {% endfor %}
                 </ul>
