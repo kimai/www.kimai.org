@@ -58,7 +58,7 @@ By editing single public holidays you can:
 
 ## Permissions
 
-Public holidays can be edited at `Administration > Public holidays`.
+Public holidays can be edited at `Employment contract > Public holidays`.
 
 | Permission Name       | Description                                                                                        |
 |-----------------------|----------------------------------------------------------------------------------------------------|
