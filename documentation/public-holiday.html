@@ -13,9 +13,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
     <title>Public holiday – Kimai</title>
-    <meta name="description" content="Managing public holidays">
-    <meta property="og:description" content="Managing public holidays">
-    <meta name="twitter:description" content="Managing public holidays">
+    <meta name="description" content="Configure public holidays for your employees with working contracts.">
+    <meta property="og:description" content="Configure public holidays for your employees with working contracts.">
+    <meta name="twitter:description" content="Configure public holidays for your employees with working contracts.">
     <link type="application/atom+xml" rel="alternate" href="https://www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
     <meta property="og:locale" content="en">
     <meta property="og:type" content="website">
@@ -593,7 +593,7 @@
             <div class="me-4">
                 <h1 class="pb-1">Public holiday</h1>
                 
-                <p class="text-muted fs-lg mb-2">Managing public holidays</p>
+                <p class="text-muted fs-lg mb-2">Configure public holidays for your employees with working contracts.</p>
                 
             </div>
             
@@ -613,15 +613,67 @@
     <iframe width="100%" height="315" src="https://www.youtube.com/embed/zuPZiZmb-0s" title="Public holiday management" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 </div>
 
-<h2 id="groups">Groups</h2>
+<p>Public holidays are considered in employee working time calculations:</p>
 
-<p>If you have employees in different locations with different sets of public holidays, you need to create groups for them.</p>
+<ul>
+  <li>If a public holiday falls on a weekday that is a regular working day for the employee, their expected working hours for that day are fulfilled automatically</li>
+  <li>Any timesheet entries recorded on a public holiday are counted as overtime</li>
+</ul>
 
-<p>But if you have only one office with all employees having the same set of used public holidays, you can use the “Default” group and skip this step.</p>
+<h2 id="public-holiday-groups">Public holiday groups</h2>
 
-<h2 id="holidays">Holidays</h2>
+<p>Public holiday groups help manage location-specific holidays for organizations with employees in different regions.</p>
 
-<p>TODO</p>
+<h3 id="default-group">Default group</h3>
+
+<p>The ‘Standard’ group is shown by default in the public holiday administration. This group applies to all employees without a specific group assignment.</p>
+
+<h3 id="multiple-locations">Multiple locations</h3>
+
+<p>For organizations with employees in different locations:</p>
+
+<ol>
+  <li>Create location-specific groups using the <a class="btn btn-secondary px-3" href="#"><i class="bx bx-plus pe-2"></i>Create</a>
+ button</li>
+  <li>Assign the relevant public holidays to each group</li>
+</ol>
+
+<h2 id="managing-public-holidays">Managing public holidays</h2>
+
+<h3 id="group-selection">Group selection</h3>
+
+<p>Select your desired group from the dropdown menu. If you have a single location, use the ‘Standard’ group.</p>
+
+<h3 id="creating-holidays">Creating holidays</h3>
+
+<p>Add public holidays to the selected year using either:</p>
+<ul>
+  <li><a class="btn btn-secondary px-3" href="#"><i class="bx bx-plus pe-2"></i></a>
+ button for adding single holidays</li>
+  <li><a class="btn btn-secondary px-3" href="#"><i class="bx bxs-file-import pe-2"></i></a>
+ button for bulk importing pre-defined holidays</li>
+</ul>
+
+<h3 id="import-feature">Import feature</h3>
+
+<p>The import dialog provides a worldwide location database (in English only):</p>
+<ul>
+  <li>Search for countries (e.g. <code class="language-plaintext highlighter-rouge">Germany</code>)</li>
+  <li>Search for regions (e.g. <code class="language-plaintext highlighter-rouge">NorthRhineWestphalia</code>)</li>
+  <li>Review and import all holidays for the selected region</li>
+</ul>
+
+<h2 id="customization">Customization</h2>
+
+<p>After import you can:</p>
+<ul>
+  <li>Edit existing holidays (e.g. change full-day to half-day)</li>
+  <li>Delete unwanted holidays</li>
+  <li>Add new custom holidays</li>
+</ul>
+
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i><p>The imported data has been calculated automatically, is not subject to any liability and needs to be verified after import.</p>
+</div>
 
 <h2 id="permissions">Permissions</h2>
 
@@ -656,12 +708,12 @@
                     
                     
                     <li>
-                        <a href="/documentation/absence.html">Absence</a>
+                        <a href="/documentation/absence.html">Absence</a> &ndash; Managing absences
                     </li>
                     
                     
                     <li>
-                        <a href="/documentation/contract.html">Working times</a>
+                        <a href="/documentation/contract.html">Working times</a> &ndash; Contract management and working times
                     </li>
                     
                 </ul>
@@ -675,7 +727,7 @@
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#groups" class="nav-link">Groups</a></li><li class="nav-item"><a href="#holidays" class="nav-link">Holidays</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#public-holiday-groups" class="nav-link">Public holiday groups</a><ul><li class="nav-item"><a href="#default-group" class="nav-link">Default group</a></li><li class="nav-item"><a href="#multiple-locations" class="nav-link">Multiple locations</a></li></ul></li><li class="nav-item"><a href="#managing-public-holidays" class="nav-link">Managing public holidays</a><ul><li class="nav-item"><a href="#group-selection" class="nav-link">Group selection</a></li><li class="nav-item"><a href="#creating-holidays" class="nav-link">Creating holidays</a></li><li class="nav-item"><a href="#import-feature" class="nav-link">Import feature</a></li></ul></li><li class="nav-item"><a href="#customization" class="nav-link">Customization</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
         
         <ul class="nav">
             <li>
