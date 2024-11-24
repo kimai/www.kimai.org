@@ -30,15 +30,15 @@ For organizations with employees in different locations:
 
 ## Managing public holidays
 
-### Group selection
-
 Select your desired group from the dropdown menu. If you have a single location, use the 'Standard' group.
 
 ### Creating holidays
 
-Add public holidays to the selected year using either:
-- {% include demo-action-button.html icon="create" %} button for adding single holidays
-- {% include demo-action-button.html icon="import" %} button for bulk importing pre-defined holidays
+You have two options to add public holidays to the selected year:
+
+The {% include demo-action-button.html icon="create" %} button for adding single holidays.
+
+The {% include demo-action-button.html icon="import" %} button for bulk importing pre-defined holidays.
 
 ### Import feature
 
@@ -47,14 +47,14 @@ The import dialog provides a worldwide location database (in English only):
 - Search for regions (e.g. `NorthRhineWestphalia`)
 - Review and import all holidays for the selected region
 
-## Customization
+{% alert warning %}The imported data has been calculated automatically, is not subject to any liability and needs to be verified after import.{% endalert %}
 
-After import you can:
-- Edit existing holidays (e.g. change full-day to half-day)
+## Manual editing public holidays
+
+By editing single public holidays you can:
+- Change full-day to half-day or vice-versa
 - Delete unwanted holidays
 - Add new custom holidays
-
-{% alert warning %}The imported data has been calculated automatically, is not subject to any liability and needs to be verified after import.{% endalert %}
 
 ## Permissions
 
