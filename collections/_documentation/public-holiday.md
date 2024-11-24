@@ -58,7 +58,7 @@ By editing single public holidays you can:
 
 ## Permissions
 
-The `contract_other_profile` permission is required to see the `Contract` menu, which includes the `Public holiday` management view. 
+Public holidays can be edited at `Administration > Public holidays`.
 
 | Permission Name       | Description                                                                                        |
 |-----------------------|----------------------------------------------------------------------------------------------------|
