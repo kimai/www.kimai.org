@@ -32,6 +32,12 @@ Each expense consists of two fields:
 
 Regular users can view and edit the `Quantity` field. However, only Admins have permission to directly edit an expense's `Amount`.
 
+The usual case is that most categories have a fixed price and your users only enter a `quantity`. But: 
+
+> If you want users to input the actual price themselves, you set the category cost to `1`.
+
+In that case the `quantity` that your users put in is the amount on their receipt.
+
 ### Example
 
 The following example illustrates this process:  
