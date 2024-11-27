@@ -3,7 +3,7 @@ title: "European time-tracking law"
 date: "2024-11-11 10:00:00 +0200"
 image: /images/blog/eu-time-tracking-law.webp
 author: valentina
-tags: [On-Premise]
+tags: [General]
 excerpt: "Let's talk about the elephant in the conference room: The EU's Working Time Directive, forcing all employers to use an electronic time-tracking system."
 cta: cloud
 ---
