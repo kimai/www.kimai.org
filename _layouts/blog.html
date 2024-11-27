@@ -1,8 +1,8 @@
 ---
 layout: base
 ---
-{% assign site_tags = 'Cloud,On-Premise,Apps & Plugins' %}
-{% assign sortedTags = site_tags | split:',' | sort %}
+{% assign site_tags = 'General,Cloud,On-Premise' %}
+{% assign sortedTags = site_tags | split:',' %}
 {% assign date_format = site.date_format[page.lang] | default: "%Y-%m-%d" %}
 {% assign post_hot = site.posts | first %}
 {% assign amount_latest = 10 %}
