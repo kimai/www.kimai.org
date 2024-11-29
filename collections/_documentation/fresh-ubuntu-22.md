@@ -139,13 +139,12 @@ CREATE DATABASE IF NOT EXISTS `kimai`;
 CREATE USER IF NOT EXISTS `kimai`@127.0.0.1 IDENTIFIED BY "my-super-secret-password";
 GRANT select,insert,update,delete,create,alter,drop,index,references ON `kimai`.* TO kimai@127.0.0.1;
 ```
-> Replace "my-super-secret-password" with a strong password and probably change the username as well.
+
+{% alert warning %}Replace "my-super-secret-password" with a strong password and probably change the username as well.{% endalert %}
 
 ## Install Kimai
 
 Clone Kimai and set proper file permissions:
-
-> Please compare with the latest version infos at: <{% link _documentation/installation.md %}>
 
 ```bash
 cd /var/www/
@@ -154,6 +153,8 @@ cd kimai/
 composer install {{ site.kimai_v2_composer_flags }}
 vim .env
 ```
+
+{% alert info %}Please compare with the [latest installation infos]({% link _documentation/installation.md %}), maybe something changed or was added in the meantime since writing this article.{% endalert %}
 
 Configure the database connection and adjust the settings to your needs (compare with the [original .env file]({{ site.kimai_v2_repo }}/blob/main/.env.dist)):
 ```
@@ -171,9 +172,9 @@ Use `sudo` to run the commands to change file permissions.
 
 ## Configure webserver
 
-Good, now that we have done all these steps we only need the webserver and VirtualHost configuration:
+Great! Now that we have done all these steps we only need the webserver and VirtualHost configuration:
 
-> Check your PHP-FPM config for the fastcgi_pass (eg. version and socket)
+{% alert %}Check your PHP-FPM config for the fastcgi_pass (eg. version and socket).{% endalert %}
 
 This can be done with:
 ```
