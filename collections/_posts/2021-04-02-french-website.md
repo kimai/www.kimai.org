@@ -5,7 +5,7 @@ author: kevinpapst
 tags: [On-Premise]
 ---
 
-A quickie news for all the french speaking users out there:
+A quickie news for all the French-speaking users out there:
 
 > The Kimai website is now translated to french and available at: [https://www.kimai.org/fr/](https://www.kimai.org/fr/)
 
