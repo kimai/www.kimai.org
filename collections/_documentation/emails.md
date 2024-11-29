@@ -45,8 +45,6 @@ You have to replace:
 
 ## Troubleshooting
 
-You can test your email configuration by registering a new account or using the password reset function.
-
 You cannot try to  test the `password reset` for sending emails, as it has a security feature which prevents recurring usage. 
 Kimai stores a timestamp when the last password reset was requested and does not allow another request in a certain timespan.
 
