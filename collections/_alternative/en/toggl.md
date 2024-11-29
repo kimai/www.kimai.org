@@ -45,3 +45,8 @@ as they cannot protect your data against access from US authorities.
 
 ## Moving from toggl to Kimai
 
+Kimai has an CSV importer, that allows to load your toggl data. All you have to do is export the data like this:
+
+{% include docs-image.html src="/images/documentation/toggl-export.webp" title="Exporting timesheet with toggl track" width="800px" %}
+
+Please read the [importer documentation]({% link _documentation/plugin-import.md %}) to find out more. 
