@@ -687,17 +687,13 @@ mysql <span class="nt">-u</span> root
 <span class="k">CREATE</span> <span class="k">USER</span> <span class="n">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="nv">`kimai`</span><span class="o">@</span><span class="mi">127</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">1</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="nv">"my-super-secret-password"</span><span class="p">;</span>
 <span class="k">GRANT</span> <span class="k">select</span><span class="p">,</span><span class="k">insert</span><span class="p">,</span><span class="k">update</span><span class="p">,</span><span class="k">delete</span><span class="p">,</span><span class="k">create</span><span class="p">,</span><span class="k">alter</span><span class="p">,</span><span class="k">drop</span><span class="p">,</span><span class="k">index</span><span class="p">,</span><span class="k">references</span> <span class="k">ON</span> <span class="nv">`kimai`</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="n">kimai</span><span class="o">@</span><span class="mi">127</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">1</span><span class="p">;</span>
 </code></pre></div></div>
-<blockquote>
-  <p>Replace “my-super-secret-password” with a strong password and probably change the username as well.</p>
-</blockquote>
+
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i><p>Replace “my-super-secret-password” with a strong password and probably change the username as well.</p>
+</div>
 
 <h2 id="install-kimai">Install Kimai</h2>
 
 <p>Clone Kimai and set proper file permissions:</p>
-
-<blockquote>
-  <p>Please compare with the latest version infos at: &lt;/documentation/installation.html&gt;</p>
-</blockquote>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /var/www/
 git clone <span class="nt">-b</span> 2.24.0 <span class="nt">--depth</span> 1 https://github.com/kimai/kimai.git
@@ -705,6 +701,9 @@ git clone <span class="nt">-b</span> 2.24.0 <span class="nt">--depth</span> 1 ht
 composer <span class="nb">install</span> <span class="nt">--no-dev</span> <span class="nt">--optimize-autoloader</span>
 vim .env
 </code></pre></div></div>
+
+<div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i><p>Please compare with the <a href="/documentation/installation.html">latest installation infos</a>, maybe something changed or was added in the meantime since writing this article.</p>
+</div>
 
 <p>Configure the database connection and adjust the settings to your needs (compare with the <a href="https://github.com/kimai/kimai/blob/main/.env.dist">original .env file</a>):</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DATABASE_URL=mysql://kimai:my-super-secret-password@127.0.0.1:3306/kimai?charset=utf8mb4&amp;serverVersion=10.6.12-MariaDB
@@ -736,11 +735,10 @@ And you probably need to prefix them with <code class="language-plaintext highli
 
 <h2 id="configure-webserver">Configure webserver</h2>
 
-<p>Good, now that we have done all these steps we only need the webserver and VirtualHost configuration:</p>
+<p>Great! Now that we have done all these steps we only need the webserver and VirtualHost configuration:</p>
 
-<blockquote>
-  <p>Check your PHP-FPM config for the fastcgi_pass (eg. version and socket)</p>
-</blockquote>
+<div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i><p>Check your PHP-FPM config for the fastcgi_pass (eg. version and socket).</p>
+</div>
 
 <p>This can be done with:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vim /etc/php/8.3/fpm/pool.d/www.conf
