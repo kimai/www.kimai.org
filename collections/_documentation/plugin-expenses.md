@@ -34,9 +34,10 @@ Regular users can view and edit the `Quantity` field. However, only Admins have 
 
 The usual case is that most categories have a fixed price and your users only enter a `quantity`. But: 
 
-> If you want users to input the actual price themselves, you set the category cost to `1`.
-
-In that case the `quantity` that your users put in is the amount on their receipt.
+{% alert info %}
+If you want users to input the actual price themselves, you set the category cost to `1`.  
+In that case the `quantity` represents the amount on the receipt.
+{% endalert %}
 
 ### Example
 
