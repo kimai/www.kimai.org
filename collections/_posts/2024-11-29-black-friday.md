@@ -44,6 +44,6 @@ This discount applies to the wide range of plugins available for our on-premise 
 {%- endif %}
 {%- endfor %}
 
-Ready to explore your PPP discount*? Check your eligibility and request your plugin coupon via e-mail.
+Ready to explore your [PPP discount]({% link _landingpage/en/discount-codes.md %})? Check your eligibility and request your plugin coupon via e-mail.
 
 [^1]: Disclaimer: Discount calculations are based on the latest available economic data. Eligibility will be verified during the application process.
