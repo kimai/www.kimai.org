@@ -60,6 +60,16 @@ Expenses are automatically included in your invoices, so it may be helpful to di
 - The invoice template variable `${entry.type}` indicates the type of entry. Its value will be `expense`. This can be used in tools like Excel with `IF` formulas or conditional formatting.
 - The variable `${entry.category}` contains the expense category name.
 
+## Budgets
+
+As initially written:
+
+> If turned on, Expenses count towards budgets and revenue statistics.
+
+At {% include documentation/link-kimai-page.md page="settings" %} in the `Expenses` category you find a setting called `If activated: adds expenses to consumed budgets`.
+
+Switch it on and all expenses will be deducted from your budgets. 
+
 ## Filter and search
 
 The search supports filtering by the fields:
