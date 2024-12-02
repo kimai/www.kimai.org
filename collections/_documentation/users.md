@@ -39,6 +39,9 @@ This setting is primarily meant to identify:
 - your Admin accounts (which should not be used for daily work)
 - API sync accounts
 
+If you edit the users profile, there is a checkbox that says `System-Account` (Will be hidden in reports and dropdowns).
+Toggle it to either hide (active) or show (inactive) the user. 
+
 ## Username / User-ID
 
 The username is a system-wide unique identifier which can be used for logging into the system and it will be included in exports.
