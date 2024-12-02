@@ -15,18 +15,18 @@ permalink: /feed.xml
      xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
         >
     <channel>
-        <title xml:lang="en">Kimai - Open Source Time-Tracking</title>
+        <title xml:lang="en">{{ site.feed_title }}</title>
         <atom:link type="application/atom+xml" href="http://www.kimai.org/feed.xml" rel="self"/>
         <link>https://www.kimai.org/</link>
         <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
         <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
         <language>en-US</language>
         <generator>Jekyll v{{ jekyll.version }}</generator>
-        <description>Kimai - an open source time tracking software for freelancer and agencies</description>
+        <description>{{ site.data.en.translation.footer }}</description>
         <image>
-            <description>Kimai logo</description>
+            <description>Kimai Logo</description>
             <url>https://www.kimai.org/images/apple-touch-icon.png</url>
-            <title>Kimai - Open Source Time-Tracking</title>
+            <title>{{ site.feed_title }}</title>
             <link>https://www.kimai.org/</link>
             <width>184</width>
             <height>184</height>
