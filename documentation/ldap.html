@@ -1045,6 +1045,22 @@ the new account would have been promoted into these roles.</p>
             <span class="na">host</span><span class="pi">:</span> <span class="s2">"</span><span class="s">[fe80:20c:29ff:fefd:deea]"</span>
 </code></pre></div></div>
 
+<h3 id="ldaps-and-self-signed-tls-certificate">LDAPS and self-signed TLS certificate</h3>
+
+<p>Kimai uses the Laminas LDAP implementation, you can read about it <a href="https://docs.laminas.dev/laminas-ldap/">here</a> and <a href="https://docs.laminas.dev/laminas-authentication/adapter/ldap/">here</a>.</p>
+
+<p>When using Kimai in Docker (see <a href="https://github.com/kimai/kimai/discussions/5198#discussioncomment-11462019">this comment</a>) you can get it to work by:</p>
+
+<blockquote>
+  <p>… installing the CA certificate to the system hosting the docker image and mapping the ca-certificates.crt file into the Kimai container 
+in the volumes section of my docker-compose file:</p>
+
+  <ul>
+    <li>/etc/ssl/certs/ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt</li>
+  </ul>
+</blockquote>
+
+
                 </div>
                 
 
@@ -1084,7 +1100,10 @@ the new account would have been promoted into these roles.</p>
 </ul>
 </li>
 <li class="nav-item">
-<a href="#troubleshooting--logging" class="nav-link">Troubleshooting / Logging</a><ul><li class="nav-item"><a href="#connecting-with-ip-v6" class="nav-link">Connecting with IP v6</a></li></ul>
+<a href="#troubleshooting--logging" class="nav-link">Troubleshooting / Logging</a><ul>
+<li class="nav-item"><a href="#connecting-with-ip-v6" class="nav-link">Connecting with IP v6</a></li>
+<li class="nav-item"><a href="#ldaps-and-self-signed-tls-certificate" class="nav-link">LDAPS and self-signed TLS certificate</a></li>
+</ul>
 </li>
 </ul>
         
