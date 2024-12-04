@@ -443,3 +443,16 @@ kimai:
         connection:
             host: "[fe80:20c:29ff:fefd:deea]"
 ```
+
+### LDAPS and self-signed TLS certificate
+
+Kimai uses the Laminas LDAP implementation, you can read about it [here](https://docs.laminas.dev/laminas-ldap/) and [here](https://docs.laminas.dev/laminas-authentication/adapter/ldap/).
+
+When using Kimai in Docker (see [this comment](https://github.com/kimai/kimai/discussions/5198#discussioncomment-11462019)) you can get it to work by: 
+
+> ... installing the CA certificate to the system hosting the docker image and mapping the ca-certificates.crt file into the Kimai container 
+> in the volumes section of my docker-compose file:
+>
+>- /etc/ssl/certs/ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt
+
+ 
