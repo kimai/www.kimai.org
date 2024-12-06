@@ -34,7 +34,7 @@ store-buy-button: Kupi sada
 store-offered-by: Autor
 price-without-vat: bez PDV-a
 screenshots-title: Snimke ekrana
-installation: Intalacija
+installation: Instalacija
 updates: Aktualiziranja
 username: Korisničko ime
 password: Lozinka
@@ -89,7 +89,7 @@ index:
     title: Kimai – Program otvorenog koda za evidentiranje vremena
     description: Kimai – besplatan i jednostavan program za evidentiranje vremena za freelancere, agencije i poduzeća, uz mogućnost upravjanja korisnicima i računima.
 download:
-    name: Intalacija
+    name: Instalacija
     title: Kimai instalacija
     description: Preuzimanje i instalacija sa SSH, Docker i Kubernetes – Kimai program za evidentiranje vremena
     intro: Nudimo nekoliko načina za instaliranje Kimaija. Odaberi opciju koja ti odgovara.
@@ -178,7 +178,7 @@ feature:
         description: "Prijavi se i registriraj korisnike sa SAML-om putem tvoje postojeće usluge SSO identifikacije kao što su Google Workspace, Authentik ili Azure Active Directory."
     api:
         name: "JSON API"
-        description: "Opsežni JSON API za čitanje i pisanje podataka, tako da eksterni programi i tvoji prilagođeni alati mogu komunicirati s tvojim omiljenim programom za evidentiranje vremena."
+        description: "Opsežni JSON API za čitanje i pisanje podataka, tako da eksterni programi i tvoji prilagođeni alati mogu komunicirati s Kimaijem."
     ldap:
         name: "LDAP"
         description: "Poveži Kimai sa serverom s mapama tvog poduzeća (LDAP ili Active Directory) i koristi svoju postojeću infrastrukturu za autentifikaciju."
@@ -244,23 +244,23 @@ feature:
             security_3: CSRF i XSS zaštita
             security_6: Automatizirani test koda s pokrivenošću koda više od 90 %
             security_5: Detaljni pregledi koda
-        description: Kimai implements best-practices in application design to prevent common attacks. Automated security controls are critical to any software development workflow to reduce the amount of time from defect creation to defect detection. These scans run on every code change, every time.
+        description: Kimai primjenjuje najbolje prakse u dizajnu aplikacija kako bi spriječio uobičajene napade. Automatizirane sigurnosne kontrole su ključne za bilo koji radni tok razvoja softvera kako bi se smanjilo vrijeme od stvaranja do otkrivanja kvara. Ove se provjere pokreću pri svakoj promjeni koda, svaki put.
         name: Sigurnost u Kimaiu
     security-cloud:
         points:
             security_1: Sve veze zaštićene putem TLS-a (SSL)
-            security_2: Best-practice security, firewalls and brute-force prevention
-            security_6: Code runs in tightly restricted domain environments
+            security_2: Najbolja praksa sigurnosti, vatrozidi i prevencija grube sile
+            security_6: Kod se izvodi u strogo ograničenim okruženjima domena
             security_3: Jasno odvajanje, svaki kupac ima svoje baze podataka
             security_4: Serveri se nalaze u podatkovnom centru u EU
             security_5: Kritične usluge nisu dostupne vanjskom svijetu
         name: Sigurnost platforme
-        description: Software is only as secure as the system it runs on. I take a defense-in-depth approach with server and network infrastructure. Customers on the hosted platform are secured through multiple layers of protection.
+        description: Softver je siguran onoliko koliko je siguran sustav na kojem radi. Zauzimam se za sveobuhvatnu obranu servera i mrežne infrastrukture. Korisnici na hostiranoj platformi zaštićeni su višestrukim slojevima zaštite.
     privacy:
         name: Privatnost je na prvom mjestu
-        description: I respect your and your users privacy and data. No, this is not yet another boring introduction into a Privacy policy - that's how I run this business. I don't sell data. I follow the GDPR and will answer any question about involved sub-processors.
+        description: Poštujem tvoju privatnost i podatke kao i tvojih korisnika. Ne, ovo nije još jedan dosadan uvod u Politiku privatnosti – to je način na koji ja vodim ovaj posao. Ne prodajem podatke. Pridržavam se GDPR-a i odgovorit ću na sva pitanja o uključenim podobrađivačima.
     no-limits:
-        description: "Your SaaS software always includes limits? Not Kimai: there are no limits. You only pay for the amount of active users. I don't limit you, and I do not charge for inactive users. You can create an unlimited amount of users, customers, projects, activities, timesheets and more."
+        description: "Tvoj SaaS softver uvijek uključuje ograničenja? Kimai nema ograničenja. Plaćaš samo za broj aktivnih korisnika. Ne ograničujem i ne naplaćujem neaktivne korisnike. Možeš stvoriti neograničen broj korisnika, kupaca, projekata, aktivnosti, vremenskih tablica i više."
         name: Bez ograničenja
 install:
     alert-vps: U ovom trenutku nije moguće instalirati Kimai preuzimanjem ZIP datoteke i učitavanjem datoteka na web server. Moraš imati SSH pristup za tvoj server. To ne znači nužno da trebaš VPS (virtualan privatni server). Neki dijeljeni hostovi pružaju SSH pristup putem kojeg se Composer i Kimai mogu instalirati bez problema.
@@ -394,7 +394,7 @@ comparison:
     ip_restriction: Ograničenje pristupa putem IP adrese
     alternatives: Alternative za Kimai
     finding: Pronalaženje pravog rješenja za evidentiranje vremena
-    use_case: Svaki slučaj upotrebe, svaka tvrtka i svaki radni tok su različiti te se tvoje potrebe moraju procijeniti prije nego što se odlučiš za rješenje za evidentiranje vremena. Evo nekih alternativa za Kimai koje ćemo detaljno usporediti.
+    use_case: Svaki slučaj upotrebe, svako poduzeće i svaki radni tok su različiti te se tvoje potrebe moraju procijeniti prije nego što se odlučiš za rješenje za evidentiranje vremena. Evo nekih alternativa za Kimai koje ćemo detaljno usporediti.
 support:
     name: "Podrška"
     description: "Trebaš podršku? Ovdje pronađi pomoć za korištenje, instaliranje ili aktualiziranje Kimaija."
@@ -541,7 +541,7 @@ industry:
     name: Evidentiranje vremena za svako poduzeće
     intro: Pomoću Kimai softvera za evidentiranje vremena možeš poboljšati produktivnost tvojih zaposlenika.
     title: Evidentiranje vremena za svaku branšu
-    subtitle: Keep your projects on track with Kimai
+    subtitle: Drži svoje projekte na pravom putu uz Kimai
     more: Daljnje branše
 terms-plugins:
     name: Licenca dodatka
