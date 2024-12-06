@@ -1,3 +1,12 @@
+**Version 2.10.0**
+
+Compatibility: requires minimum Kimai 2.25.0
+
+- Fix default value for boolean values of user-preferences 
+- Use translations from Kimai core
+- Rename migration config for compatibility with new plugin installer
+- Code improvement: PHPStan 2 with strict and deprecation rules activated
+
 **Version 2.9.0**
 
 Compatibility: requires minimum Kimai 2.15.0

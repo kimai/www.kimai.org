@@ -1,3 +1,13 @@
+**Version 2.18.0**
+
+Compatibility: requires minimum Kimai 2.25.0
+
+- Added empty "category" option, so the user has to choose one
+- Support `Quantity` column in overview listing
+- Allow to hide `Customer` column 
+- Use translations from Kimai core
+- PHPStan v2: Code syntax improvements (Refactoring)
+
 **Version 2.17.1**
 
 Compatibility: requires minimum Kimai 2.17.0

@@ -6,6 +6,8 @@ Compatibility: requires minimum Kimai 2.24.0
 - Preview the "Monthly approval PDF" before locking the month
 - Rename migration config for compatibility with new plugin installer
 
+**ATTENTION**: Incompatible with Kimai 2.25.0. Please wait for the next plugin release before updating Kimai!
+
 **Version 1.14.0**
 
 Compatibility: requires minimum Kimai 2.22.0
@@ -24,7 +26,7 @@ Compatibility: requires minimum Kimai 2.21.0
 
 **Version 1.12.0**
 
-Compatibility: requires minimum Kimai 2.17.0
+Compatibility: requires minimum Kimai 2.19.0
 
 - Fixed: booking vacation on "half-day" public holidays wasn't possible
 - Fixed: raise max vacation days from 20 to 30

@@ -1,3 +1,19 @@
+**Version 2.17.0**
+
+Compatibility: requires minimum Kimai 2.21.0
+
+- Fixed: missing `duration` caused 0 duration
+- Fixed: missing `duration` caused "undefined index"
+- Fixed: missing `description` caused "undefined index"
+
+**Version 2.16.0**
+
+Compatibility: requires minimum Kimai 2.21.0
+
+- Removed "end date" from project import example
+- PHPStan v2 with strict and deprecation rules
+- Updated documentation
+
 **Version 2.15.0**
 
 Compatibility: requires minimum Kimai 2.21.0

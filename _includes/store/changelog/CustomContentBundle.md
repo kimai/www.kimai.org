@@ -1,3 +1,9 @@
+**Version 2.4.0**
+
+Compatibility: requires minimum Kimai 2.5.0
+
+Internal: PHPStan 2 with strict and deprecation rules
+
 **Version 2.3.2**
 
 Compatibility: requires minimum Kimai 2.5.0
