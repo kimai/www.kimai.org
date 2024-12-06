@@ -371,7 +371,7 @@ This is not a documentation on how to setup caching with Kimai and redis</p>
         <span class="na">pools</span><span class="pi">:</span>
             <span class="na">app.cache.redis</span><span class="pi">:</span>
                 <span class="na">adapter</span><span class="pi">:</span> <span class="s">cache.adapter.redis</span>
-                <span class="na">public</span><span class="pi">:</span> <span class="no">false</span>
+                <span class="na">public</span><span class="pi">:</span> <span class="kc">false</span>
                 <span class="na">default_lifetime</span><span class="pi">:</span> <span class="m">120</span>
             <span class="na">doctrine.result_cache_pool</span><span class="pi">:</span>
                 <span class="na">adapter</span><span class="pi">:</span> <span class="s">app.cache.redis</span>
@@ -409,12 +409,12 @@ This is not a documentation on how to setup caching with Kimai and redis</p>
 <span class="na">services</span><span class="pi">:</span>
     <span class="na">doctrine.result_cache_provider</span><span class="pi">:</span>
         <span class="na">class</span><span class="pi">:</span> <span class="s">Symfony\Component\Cache\DoctrineProvider</span>
-        <span class="na">public</span><span class="pi">:</span> <span class="no">false</span>
+        <span class="na">public</span><span class="pi">:</span> <span class="kc">false</span>
         <span class="na">arguments</span><span class="pi">:</span>
             <span class="pi">-</span> <span class="s1">'</span><span class="s">@doctrine.result_cache_pool'</span>
     <span class="na">doctrine.system_cache_provider</span><span class="pi">:</span>
         <span class="na">class</span><span class="pi">:</span> <span class="s">Symfony\Component\Cache\DoctrineProvider</span>
-        <span class="na">public</span><span class="pi">:</span> <span class="no">false</span>
+        <span class="na">public</span><span class="pi">:</span> <span class="kc">false</span>
         <span class="na">arguments</span><span class="pi">:</span>
             <span class="pi">-</span> <span class="s1">'</span><span class="s">@doctrine.system_cache_pool'</span>
 </code></pre></div></div>

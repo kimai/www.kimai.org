@@ -634,13 +634,13 @@
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">kimai</span><span class="pi">:</span>
     <span class="na">saml</span><span class="pi">:</span>
-        <span class="na">activate</span><span class="pi">:</span> <span class="no">true</span>
+        <span class="na">activate</span><span class="pi">:</span> <span class="kc">true</span>
         <span class="na">title</span><span class="pi">:</span> <span class="s">Keycloak</span>
         <span class="na">mapping</span><span class="pi">:</span>
             <span class="pi">-</span> <span class="pi">{</span> <span class="nv">saml</span><span class="pi">:</span> <span class="nv">$Email</span><span class="pi">,</span> <span class="nv">kimai</span><span class="pi">:</span> <span class="nv">email</span> <span class="pi">}</span>
             <span class="pi">-</span> <span class="pi">{</span> <span class="nv">saml</span><span class="pi">:</span> <span class="nv">$FirstName $LastName</span><span class="pi">,</span> <span class="nv">kimai</span><span class="pi">:</span> <span class="nv">alias</span> <span class="pi">}</span>
         <span class="na">roles</span><span class="pi">:</span>
-            <span class="na">resetOnLogin</span><span class="pi">:</span> <span class="no">true</span>
+            <span class="na">resetOnLogin</span><span class="pi">:</span> <span class="kc">true</span>
             <span class="na">attribute</span><span class="pi">:</span> <span class="s">Roles</span>
             <span class="na">mapping</span><span class="pi">:</span>
                 <span class="pi">-</span> <span class="pi">{</span> <span class="nv">saml</span><span class="pi">:</span> <span class="nv">Admins</span><span class="pi">,</span> <span class="nv">kimai</span><span class="pi">:</span> <span class="nv">ROLE_ADMIN</span> <span class="pi">}</span>
@@ -666,19 +666,19 @@
                 <span class="c1">#privateKey: ''</span>
             <span class="c1"># only set baseurl, if auto-detection doesn't work</span>
             <span class="c1">#baseurl: 'https://kimai.domain.de/auth/saml/'</span>
-            <span class="na">strict</span><span class="pi">:</span> <span class="no">true</span>
-            <span class="na">debug</span><span class="pi">:</span> <span class="no">true</span>
+            <span class="na">strict</span><span class="pi">:</span> <span class="kc">true</span>
+            <span class="na">debug</span><span class="pi">:</span> <span class="kc">true</span>
             <span class="na">security</span><span class="pi">:</span>
-                <span class="na">nameIdEncrypted</span><span class="pi">:</span> <span class="no">false</span>
-                <span class="na">authnRequestsSigned</span><span class="pi">:</span> <span class="no">false</span>
-                <span class="na">logoutRequestSigned</span><span class="pi">:</span> <span class="no">false</span>
-                <span class="na">logoutResponseSigned</span><span class="pi">:</span> <span class="no">false</span>
-                <span class="na">wantMessagesSigned</span><span class="pi">:</span> <span class="no">false</span>
-                <span class="na">wantAssertionsSigned</span><span class="pi">:</span> <span class="no">false</span>
-                <span class="na">wantNameIdEncrypted</span><span class="pi">:</span> <span class="no">false</span>
-                <span class="na">requestedAuthnContext</span><span class="pi">:</span> <span class="no">true</span>
-                <span class="na">signMetadata</span><span class="pi">:</span> <span class="no">false</span>
-                <span class="na">wantXMLValidation</span><span class="pi">:</span> <span class="no">true</span>
+                <span class="na">nameIdEncrypted</span><span class="pi">:</span> <span class="kc">false</span>
+                <span class="na">authnRequestsSigned</span><span class="pi">:</span> <span class="kc">false</span>
+                <span class="na">logoutRequestSigned</span><span class="pi">:</span> <span class="kc">false</span>
+                <span class="na">logoutResponseSigned</span><span class="pi">:</span> <span class="kc">false</span>
+                <span class="na">wantMessagesSigned</span><span class="pi">:</span> <span class="kc">false</span>
+                <span class="na">wantAssertionsSigned</span><span class="pi">:</span> <span class="kc">false</span>
+                <span class="na">wantNameIdEncrypted</span><span class="pi">:</span> <span class="kc">false</span>
+                <span class="na">requestedAuthnContext</span><span class="pi">:</span> <span class="kc">true</span>
+                <span class="na">signMetadata</span><span class="pi">:</span> <span class="kc">false</span>
+                <span class="na">wantXMLValidation</span><span class="pi">:</span> <span class="kc">true</span>
                 <span class="na">signatureAlgorithm</span><span class="pi">:</span> <span class="s1">'</span><span class="s">http://www.w3.org/2001/04/xmldsig-more#rsa-sha256'</span>
                 <span class="na">digestAlgorithm</span><span class="pi">:</span> <span class="s1">'</span><span class="s">http://www.w3.org/2001/04/xmlenc#sha256'</span>
             <span class="na">contactPerson</span><span class="pi">:</span>

@@ -531,21 +531,21 @@ which needs to be formatted as integer instead of a string (like <code class="la
     <span class="p">]);</span>
 
     <span class="nv">$rectorConfig</span><span class="o">-&gt;</span><span class="nf">rules</span><span class="p">([</span>
-        <span class="err">\</span><span class="nc">Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictNativeCallRector</span><span class="o">::</span><span class="n">class</span><span class="p">,</span>
-        <span class="err">\</span><span class="nc">Rector\CodeQuality\Rector\ClassMethod\ReturnTypeFromStrictScalarReturnExprRector</span><span class="o">::</span><span class="n">class</span><span class="p">,</span>
-        <span class="err">\</span><span class="nc">Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictNewArrayRector</span><span class="o">::</span><span class="n">class</span><span class="p">,</span>
-        <span class="err">\</span><span class="nc">Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictBoolReturnExprRector</span><span class="o">::</span><span class="n">class</span><span class="p">,</span>
+        <span class="nc">\Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictNativeCallRector</span><span class="o">::</span><span class="n">class</span><span class="p">,</span>
+        <span class="nc">\Rector\CodeQuality\Rector\ClassMethod\ReturnTypeFromStrictScalarReturnExprRector</span><span class="o">::</span><span class="n">class</span><span class="p">,</span>
+        <span class="nc">\Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictNewArrayRector</span><span class="o">::</span><span class="n">class</span><span class="p">,</span>
+        <span class="nc">\Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictBoolReturnExprRector</span><span class="o">::</span><span class="n">class</span><span class="p">,</span>
     <span class="p">]);</span>
 
     <span class="nv">$rectorConfig</span><span class="o">-&gt;</span><span class="nf">sets</span><span class="p">([</span>
-        <span class="err">\</span><span class="nc">Rector\Symfony\Set\SymfonySetList</span><span class="o">::</span><span class="no">ANNOTATIONS_TO_ATTRIBUTES</span><span class="p">,</span>
-        <span class="err">\</span><span class="nc">Rector\Symfony\Set\SensiolabsSetList</span><span class="o">::</span><span class="no">FRAMEWORK_EXTRA_61</span><span class="p">,</span>
-        <span class="err">\</span><span class="nc">Rector\Symfony\Set\SymfonyLevelSetList</span><span class="o">::</span><span class="no">UP_TO_SYMFONY_60</span><span class="p">,</span>
-        <span class="err">\</span><span class="nc">Rector\Symfony\Set\JMSSetList</span><span class="o">::</span><span class="no">ANNOTATIONS_TO_ATTRIBUTES</span><span class="p">,</span>
-        <span class="err">\</span><span class="nc">Rector\Symfony\Set\JMSSetList</span><span class="o">::</span><span class="no">REMOVE_JMS_INJECT</span><span class="p">,</span>
-        <span class="err">\</span><span class="nc">Rector\Doctrine\Set\DoctrineSetList</span><span class="o">::</span><span class="no">ANNOTATIONS_TO_ATTRIBUTES</span><span class="p">,</span>
-        <span class="err">\</span><span class="nc">Rector\Doctrine\Set\DoctrineSetList</span><span class="o">::</span><span class="no">GEDMO_ANNOTATIONS_TO_ATTRIBUTES</span><span class="p">,</span>
-        <span class="err">\</span><span class="nc">Rector\PHPUnit\Set\PHPUnitSetList</span><span class="o">::</span><span class="no">PHPUNIT_80</span><span class="p">,</span>
+        <span class="nc">\Rector\Symfony\Set\SymfonySetList</span><span class="o">::</span><span class="no">ANNOTATIONS_TO_ATTRIBUTES</span><span class="p">,</span>
+        <span class="nc">\Rector\Symfony\Set\SensiolabsSetList</span><span class="o">::</span><span class="no">FRAMEWORK_EXTRA_61</span><span class="p">,</span>
+        <span class="nc">\Rector\Symfony\Set\SymfonyLevelSetList</span><span class="o">::</span><span class="no">UP_TO_SYMFONY_60</span><span class="p">,</span>
+        <span class="nc">\Rector\Symfony\Set\JMSSetList</span><span class="o">::</span><span class="no">ANNOTATIONS_TO_ATTRIBUTES</span><span class="p">,</span>
+        <span class="nc">\Rector\Symfony\Set\JMSSetList</span><span class="o">::</span><span class="no">REMOVE_JMS_INJECT</span><span class="p">,</span>
+        <span class="nc">\Rector\Doctrine\Set\DoctrineSetList</span><span class="o">::</span><span class="no">ANNOTATIONS_TO_ATTRIBUTES</span><span class="p">,</span>
+        <span class="nc">\Rector\Doctrine\Set\DoctrineSetList</span><span class="o">::</span><span class="no">GEDMO_ANNOTATIONS_TO_ATTRIBUTES</span><span class="p">,</span>
+        <span class="nc">\Rector\PHPUnit\Set\PHPUnitSetList</span><span class="o">::</span><span class="no">PHPUNIT_80</span><span class="p">,</span>
     <span class="p">]);</span>
 <span class="p">};</span>  
 </code></pre></div></div>
@@ -562,23 +562,23 @@ which needs to be formatted as integer instead of a string (like <code class="la
 
 <p>From:</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#[OA\Property(type: 'array', new OA\Items(ref: '#/components/schemas/Team'))]</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">#[OA\Property(type: 'array', new OA\Items(ref: '#/components/schemas/Team'))]</span>
 </code></pre></div></div>
 
 <p>to:</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#[OA\Property(type: 'array', items: new OA\Items(ref: '#/components/schemas/Team'))]</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">#[OA\Property(type: 'array', items: new OA\Items(ref: '#/components/schemas/Team'))]</span>
 </code></pre></div></div>
 
 <p>Search for <code class="language-plaintext highlighter-rouge">#\[Security\("(.*)\n(.*)#\[Security\("</code> and combine multiple attributes into one with “and” e.g.:</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#[Security("is_granted('access', customer)")]</span>
-<span class="c1">#[Security("is_granted('view_invoice')")]</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">#[Security("is_granted('access', customer)")]</span>
+<span class="na">#[Security("is_granted('view_invoice')")]</span>
 </code></pre></div></div>
 
 <p>to:</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#[Security("is_granted('access', customer) and is_granted('view_invoice')")]</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">#[Security("is_granted('access', customer) and is_granted('view_invoice')")]</span>
 </code></pre></div></div>
 
 <h2 id="related-articles">Related articles</h2>

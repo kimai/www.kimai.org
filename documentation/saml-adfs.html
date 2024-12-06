@@ -566,7 +566,7 @@
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">kimai</span><span class="pi">:</span>
     <span class="na">saml</span><span class="pi">:</span>
         <span class="na">provider</span><span class="pi">:</span> <span class="s">microsoft</span>
-        <span class="na">activate</span><span class="pi">:</span> <span class="no">true</span> 
+        <span class="na">activate</span><span class="pi">:</span> <span class="kc">true</span> 
         <span class="na">title</span><span class="pi">:</span> <span class="s">Login with ADFS</span>
         <span class="na">mapping</span><span class="pi">:</span>            
             <span class="pi">-</span> <span class="pi">{</span> <span class="nv">saml</span><span class="pi">:</span> <span class="nv">$http</span><span class="pi">:</span><span class="nv">//schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress</span><span class="pi">,</span> <span class="nv">kimai</span><span class="pi">:</span> <span class="nv">email</span> <span class="pi">}</span>
@@ -574,7 +574,7 @@
             <span class="pi">-</span> <span class="pi">{</span> <span class="nv">saml</span><span class="pi">:</span> <span class="nv">$http</span><span class="pi">:</span><span class="nv">//schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname $http</span><span class="pi">:</span><span class="nv">//schemas.xmlsoap.org/ws/2005/05/identity/claims/surname</span><span class="pi">,</span> <span class="nv">kimai</span><span class="pi">:</span> <span class="nv">alias</span> <span class="pi">}</span>
             <span class="pi">-</span> <span class="pi">{</span> <span class="nv">saml</span><span class="pi">:</span> <span class="nv">$http</span><span class="pi">:</span><span class="nv">//schemas.xmlsoap.org/ws/2005/05/identity/claims/name</span><span class="pi">,</span> <span class="nv">kimai</span><span class="pi">:</span> <span class="nv">title</span> <span class="pi">}</span>
         <span class="na">roles</span><span class="pi">:</span>
-            <span class="na">resetOnLogin</span><span class="pi">:</span> <span class="no">true</span>
+            <span class="na">resetOnLogin</span><span class="pi">:</span> <span class="kc">true</span>
             <span class="na">attribute</span><span class="pi">:</span> <span class="s">$http://schemas.xmlsoap.org/claims/Group</span>
             <span class="na">mapping</span><span class="pi">:</span>
                 <span class="c1"># Insert your role-mapping here (ROLE_USER is added automatically)</span>
@@ -603,25 +603,25 @@
                 <span class="na">privateKey</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
             <span class="c1"># only set baseurl, if auto-detection doesn't work</span>
             <span class="na">baseurl</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://timetracking.example.com/auth/saml/'</span>
-            <span class="na">strict</span><span class="pi">:</span> <span class="no">false</span>
-            <span class="na">debug</span><span class="pi">:</span> <span class="no">true</span>
+            <span class="na">strict</span><span class="pi">:</span> <span class="kc">false</span>
+            <span class="na">debug</span><span class="pi">:</span> <span class="kc">true</span>
             <span class="na">security</span><span class="pi">:</span>
-                <span class="na">nameIdEncrypted</span><span class="pi">:</span> <span class="no">true</span>
-                <span class="na">authnRequestsSigned</span><span class="pi">:</span> <span class="no">false</span>
-                <span class="na">logoutRequestSigned</span><span class="pi">:</span> <span class="no">false</span>
-                <span class="na">logoutResponseSigned</span><span class="pi">:</span> <span class="no">false</span>
-                <span class="na">wantMessagesSigned</span><span class="pi">:</span> <span class="no">false</span>
-                <span class="na">wantAssertionsSigned</span><span class="pi">:</span> <span class="no">false</span>
-                <span class="na">wantNameIdEncrypted</span><span class="pi">:</span> <span class="no">false</span>
-                <span class="na">requestedAuthnContext</span><span class="pi">:</span> <span class="no">true</span> 
-                <span class="na">signMetadata</span><span class="pi">:</span> <span class="no">false</span>
-                <span class="na">wantXMLValidation</span><span class="pi">:</span> <span class="no">true</span>
+                <span class="na">nameIdEncrypted</span><span class="pi">:</span> <span class="kc">true</span>
+                <span class="na">authnRequestsSigned</span><span class="pi">:</span> <span class="kc">false</span>
+                <span class="na">logoutRequestSigned</span><span class="pi">:</span> <span class="kc">false</span>
+                <span class="na">logoutResponseSigned</span><span class="pi">:</span> <span class="kc">false</span>
+                <span class="na">wantMessagesSigned</span><span class="pi">:</span> <span class="kc">false</span>
+                <span class="na">wantAssertionsSigned</span><span class="pi">:</span> <span class="kc">false</span>
+                <span class="na">wantNameIdEncrypted</span><span class="pi">:</span> <span class="kc">false</span>
+                <span class="na">requestedAuthnContext</span><span class="pi">:</span> <span class="kc">true</span> 
+                <span class="na">signMetadata</span><span class="pi">:</span> <span class="kc">false</span>
+                <span class="na">wantXMLValidation</span><span class="pi">:</span> <span class="kc">true</span>
                 <span class="c1">#signatureAlgorithm: 'http://www.w3.org/2001/04/xmldsig-more#rsa-sha256'</span>
                 <span class="c1">#digestAlgorithm: 'http://www.w3.org/2001/04/xmlenc#sha256'</span>
                 <span class="c1">#ADFS URL-Encodes SAML data as lowercase, and the toolkit by default uses</span>
                 <span class="c1">#uppercase. Turn it True for ADFS compatibility on signature verification</span>
                 <span class="c1">#https://github.com/SAML-Toolkits/php-saml#how-it-works</span>
-                <span class="na">lowercaseUrlencoding</span><span class="pi">:</span> <span class="no">true</span>
+                <span class="na">lowercaseUrlencoding</span><span class="pi">:</span> <span class="kc">true</span>
             <span class="na">contactPerson</span><span class="pi">:</span>
                 <span class="na">technical</span><span class="pi">:</span>
                     <span class="na">givenName</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Name'</span>

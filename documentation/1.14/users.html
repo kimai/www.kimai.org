@@ -751,13 +751,13 @@ This would find all users with the custom field <code class="language-plaintext 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">fos_user</span><span class="pi">:</span>
     <span class="na">registration</span><span class="pi">:</span>
         <span class="na">confirmation</span><span class="pi">:</span>
-            <span class="na">enabled</span><span class="pi">:</span> <span class="no">true</span>
+            <span class="na">enabled</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <p>If you want to disable the user registration, add this your <code class="language-plaintext highlighter-rouge">local.yaml</code>:</p>
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">kimai</span><span class="pi">:</span>
     <span class="na">user</span><span class="pi">:</span>
-        <span class="na">registration</span><span class="pi">:</span> <span class="no">false</span>
+        <span class="na">registration</span><span class="pi">:</span> <span class="kc">false</span>
 </code></pre></div></div>
 
 <h2 id="password-reset">Password reset</h2>
@@ -767,7 +767,7 @@ This would find all users with the custom field <code class="language-plaintext 
 <p>If you want to disable the password reset, add this your <code class="language-plaintext highlighter-rouge">local.yaml</code>:</p>
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">kimai</span><span class="pi">:</span>
     <span class="na">user</span><span class="pi">:</span>
-        <span class="na">password_reset</span><span class="pi">:</span> <span class="no">false</span>
+        <span class="na">password_reset</span><span class="pi">:</span> <span class="kc">false</span>
 </code></pre></div></div>
 
 <p>If you want to configure the behaviour (like the allowed time between multiple retries) then configure the settings:</p>
