@@ -25,7 +25,7 @@
                     <span class="btn btn-icon btn-primary btn-lg shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4 ms-lg-5">
                         <i class="bx bxs-quote-left"></i>
                     </span>
-                    <blockquote class="card-body mt-2 mb-0">
+                    <div class="card-body mt-2 mb-0">
                         <p class="fs-lg">
                         {% if site.data[page.lang].translation.developer.kevinpapst.intro %}
                             {{ site.data[page.lang].translation.developer.kevinpapst.intro | markdownify }}
@@ -33,7 +33,7 @@
                             {{ author.description }}
                         {% endif %}
                         </p>
-                    </blockquote>
+                    </div>
                     <figcaption class="card-footer border-0 d-sm-flex pt-0 mt-n3 mt-lg-0">
                         <div class="d-flex align-items-center border-end-sm pe-sm-4 me-sm-4">
                             <img src="{{ author.image }}" width="48" class="d-md-none rounded-circle" alt="Ralph Edwards">

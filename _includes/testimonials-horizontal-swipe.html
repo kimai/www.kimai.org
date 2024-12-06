@@ -39,7 +39,7 @@
                             <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
                                 <i class="bx bxs-quote-left"></i>
                             </span>
-                            <blockquote class="card-body pb-3 mb-0">
+                            <div class="card-body pb-3 mb-0">
                                 <div class="mb-0">
                                     {% if include.language and testimonial.translations[include.language] %}
                                         {{ testimonial.translations[include.language] | markdownify }}
@@ -47,7 +47,7 @@
                                         {{ testimonial.text | markdownify }}
                                     {% endif %}
                                 </div>
-                            </blockquote>
+                            </div>
                             <div class="card-footer border-0 text-nowrap pt-0">
                                 {% for i in (1..testimonial.rating) %}
                                 <i class="bx bxs-star text-warning"></i>

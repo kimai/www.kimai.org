@@ -38,14 +38,14 @@
                                 <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
                                     <i class="bx bxs-quote-left"></i>
                                 </span>
-                                <blockquote class="card-body pb-4 mb-0">
+                                <div class="card-body pb-4 mb-0">
                                     <div class="text-nowrap pt-1 mb-3">
                                         {% for i in (1..testimonial.rating) %}
                                         <i class="bx bxs-star text-warning"></i>
                                         {% endfor %}
                                     </div>
                                     {{ testimonial.text | markdownify }}
-                                </blockquote>
+                                </div>
                                 <div class="card-footer d-flex align-items-center border-0 pt-0">
                                     {% if testimonial.avatar == '' %}
                                         {{ site.avatar_fallback }}
