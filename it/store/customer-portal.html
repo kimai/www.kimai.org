@@ -448,7 +448,27 @@ then either the directory has a wrong name (must be <strong>var/plugins/Customer
                 <div class="tab-pane fade" id="store-changelog" role="tabpanel">
                     <h2 id="compatibility">Registro delle modifiche</h2>
                     
-                    <p><strong>Version 4.1.1</strong></p>
+                    <p><strong>Version 4.3.0</strong></p>
+
+<p>Compatibility: requires minimum Kimai 2.25.0</p>
+
+<ul>
+  <li>Added rate limiter to password protection form (10 failures within 1-hour will block access)</li>
+  <li>Remove form target (password protection) to prevent proxy issues with http vs https</li>
+  <li>Use non-deprecated API to fetch timesheets</li>
+</ul>
+
+<p><strong>Version 4.2.0</strong></p>
+
+<p>Compatibility: requires minimum Kimai 2.25.0</p>
+
+<ul>
+  <li>Use translations from Kimai core</li>
+  <li>Rename migration config for compatibility with new plugin installer</li>
+  <li>Internal: PHPStan 2 with strict and deprecation rules</li>
+</ul>
+
+<p><strong>Version 4.1.1</strong></p>
 
 <p>Compatibility: requires minimum Kimai 2.21.0</p>
 
