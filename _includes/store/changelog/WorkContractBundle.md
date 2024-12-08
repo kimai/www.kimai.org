@@ -1,3 +1,9 @@
+**Version 1.16.1**
+
+Compatibility: requires minimum Kimai 2.25.0
+
+- Fix: approvals without date
+
 **Version 1.16.0**
 
 Compatibility: requires minimum Kimai 2.25.0
