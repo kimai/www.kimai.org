@@ -39,14 +39,6 @@ These features will be added in the future, but there is no guarantee when or in
 ```
 - Settings
   - Last day of work for a user, to stop calculating afterwards
-  - Allow to reach a configurable amount of negative hours for time-off ([#159](https://github.com/kimai/Paid-plugins/issues/159))
-- Approval workflow for Absences 
-    - Allow to "Sent for approval" to Supervisor
-    - Allow to "Reject" or "Approve" by Supervisor
-    - Only calculate approved or locked absences (new ones are for planning)
-- Notification
-  - Sent notifications to supervisor for new "absences to be approved"
-  - Sent notifications to user for approved/rejected absences
 - Absence calendar
     - Display all users / teams
     - Allow export as ical (or similar format) for use in external calendars (e.g. Outlook)
@@ -58,10 +50,6 @@ These features will be added in the future, but there is no guarantee when or in
     - Include: manual bookings
 - Finalize year
   - Allow automatic adjustments of time and holiday account of next year, e.g. from a list-overview
-- Working Times
-  - Different colors for holiday / sickness / PTO
-- API 
-    - methods to read absences (date-range, user, absence type)
 ```
 
 ## Ideas 
@@ -71,6 +59,8 @@ If you need one of these features, do not rely on them being added, but contact 
 If I decide to add one of these feature, it will be moved to the "Roadmap" section.
 
 ```
+- Settings
+  - Allow to reach a configurable amount of negative hours for time-off ([#159](https://github.com/kimai/Paid-plugins/issues/159))
 - Preview of the "locked month" PDF without actually closing the month as email
 - Prevent that certain days can be booked for vacation
 - Add first start- and last end-time as begin and end times to the PDF
@@ -81,7 +71,6 @@ If I decide to add one of these feature, it will be moved to the "Roadmap" secti
   - Configure if timesheets should be prohibited during absence (type)
   - Configurable rule to deactivate time-records on public holidays
 - API 
-  - Methods to read absences
   - Methods to write absences (e.g. when using a HR tool for holiday planning)
 - Management view for all users
   - showing statistics for absences

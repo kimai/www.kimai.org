@@ -1,3 +1,21 @@
+**Version 1.16.0**
+
+Compatibility: requires minimum Kimai 2.25.0
+
+- Added Approval workflow for absences
+  - All existing absences will be automatically set to "approved" during update
+- Added `Absence` column to Monthly Approval PDF
+- Moved `Public holidays` menu to `Administration`
+- New API methods:
+    - delete absence
+    - delete public holiday
+    - delete public holiday group
+- Use translations from Kimai core
+- Use faster API on `All times` listing (save many DB queries)
+- Fix "last half day of vacation" could not be booked 
+- Fix jumping back to current year, if changing absences in other year
+- Internal: PHPStan 2 with strict and deprecation rules activated
+
 **Version 1.15.0**
 
 Compatibility: requires minimum Kimai 2.24.0
