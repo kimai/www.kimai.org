@@ -70,6 +70,12 @@ Ok, if you are using automated tests, at least make sure they work.
 - it is not a security risk
 - there is a `CAA` record with the value `0 issue "letsencrypt.org"` in place
 
+### Website framing
+
+Being able to frame a website doesn't necessarily mean, that there is a security threat.
+
+Unless you can prove a clickjacking attack, I do not consider this hypothetical problem to be an issue.
+
 ### "Back" button that keeps working after logout
 
 I do not consider this as a security risk. If a user leaves his browser unprotected, he has much more to worry about than a colleague
