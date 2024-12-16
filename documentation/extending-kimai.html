@@ -518,6 +518,27 @@ with the use of an <code class="language-plaintext highlighter-rouge">InvoiceDoc
 This “magic” happens in the <a href="https://github.com/kimai/kimai/blob/main/src/DependencyInjection/Compiler/InvoiceServiceCompilerPass.php">InvoiceServiceCompilerPass</a>,
 which finds the classes by the interface <code class="language-plaintext highlighter-rouge">RendererInterface</code>.</p>
 
+<h2 id="export-templates">Export templates</h2>
+
+<p>Export documents are searched in two locations:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">var/export/</code> - does not exist by default, please create it when you add a new template</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">templates/export/renderer/</code> - don’t change files in here, will be overwritten with the next update</li>
+</ul>
+
+<p>If you create customer templates, beware of these rules:</p>
+
+<ul>
+  <li>You should store your templates in <code class="language-plaintext highlighter-rouge">var/export/</code>, as this directory is not shipped with Kimai and not touched during updates (instead of <code class="language-plaintext highlighter-rouge">templates/export/renderer/</code>)</li>
+  <li>You can configure different search directories through the config key <code class="language-plaintext highlighter-rouge">kimai.export.documents</code> if you want to add additional template source directories</li>
+  <li>You can hide the default templates by setting the key <code class="language-plaintext highlighter-rouge">kimai.export.defaults</code> to an empty array / null</li>
+  <li>You can translate the button for your template, by adding its name to the export translation file, eg. <code class="language-plaintext highlighter-rouge">translations/export.en.xlf</code>
+</li>
+</ul>
+
 <h2 id="adding-export-renderer">Adding export renderer</h2>
 
 <p>An export renderer is a class implementing <code class="language-plaintext highlighter-rouge">App\Export\RendererInterface</code> and it is responsible to convert an array of
@@ -567,6 +588,8 @@ which finds the classes by the interface <code class="language-plaintext highlig
 </code></pre></div></div>
 
 <p>All you need to do is to register it as a service in the Symfony DI container.</p>
+
+<p>Internally for each template a new ExportRenderer service is registered, called <code class="language-plaintext highlighter-rouge">exporter_renderer.filename_EXT_twig</code> (see <code class="language-plaintext highlighter-rouge">ExportServiceCompilerPass</code>).</p>
 
 <h3 id="adding-timesheet-export-renderer">Adding timesheet export renderer</h3>
 
@@ -919,6 +942,7 @@ Using Postman environments, you can even switch the API location via a simple ch
 <li class="nav-item"><a href="#adding-invoice-renderer" class="nav-link">Adding invoice renderer</a></li>
 </ul>
 </li>
+<li class="nav-item"><a href="#export-templates" class="nav-link">Export templates</a></li>
 <li class="nav-item">
 <a href="#adding-export-renderer" class="nav-link">Adding export renderer</a><ul><li class="nav-item"><a href="#adding-timesheet-export-renderer" class="nav-link">Adding timesheet export renderer</a></li></ul>
 </li>

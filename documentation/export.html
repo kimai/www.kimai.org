@@ -656,30 +656,18 @@ These records cannot be edited any longer by regular users and are excluded by d
 
 <h2 id="adding-export-templates">Adding export templates</h2>
 
-<p>Since Kimai 1.9 you can add templates for PDF and HTML exports.</p>
+<p>Kimai supports custom PDF and HTML export templates.</p>
 
-<p>Export documents are searched in two locations:</p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">var/export/</code> - does not exist by default, please create it when you add a new template</li>
-  <li><code class="language-plaintext highlighter-rouge">templates/export/renderer/</code> - don’t change files in here, will be overwritten with the next update</li>
-</ul>
+<p>Those export templates are searched in the location <code class="language-plaintext highlighter-rouge">var/export/</code>, which does not exist by default, please create it when you add your first template.</p>
 
 <p>Be aware of the following rules:</p>
 
 <ul>
   <li>HTML templates have the file extension <code class="language-plaintext highlighter-rouge">.html.twig</code></li>
   <li>PDF templates have the file extension <code class="language-plaintext highlighter-rouge">.pdf.twig</code></li>
-  <li>Templates are addressed by their filename</li>
-  <li>You can use every document name only once.
-    <ul>
-      <li>Having <code class="language-plaintext highlighter-rouge">var/export/default.html.twig</code> and <code class="language-plaintext highlighter-rouge">templates/export/renderer/default.html.twig</code> will lead to unpredictable results</li>
-      <li>Use unique filenames and prefix them with your company name, eg <code class="language-plaintext highlighter-rouge">acme-export.html.twig</code></li>
-    </ul>
-  </li>
-  <li>You should store your templates in <code class="language-plaintext highlighter-rouge">var/export/</code>, as this directory is not shipped with Kimai and not touched during updates</li>
-  <li>You can configure different search directories through the config key <code class="language-plaintext highlighter-rouge">kimai.export.documents</code> if you want to add additional template source directories</li>
-  <li>You can hide the default templates by setting the key <code class="language-plaintext highlighter-rouge">kimai.export.defaults</code> to an empty array / null</li>
+  <li>You can use every template filename only once, as they are used as reference</li>
+  <li>The names <code class="language-plaintext highlighter-rouge">default.html.twig</code>, <code class="language-plaintext highlighter-rouge">default.pdf.twig</code>, <code class="language-plaintext highlighter-rouge">default-budget.pdf.twig</code>, <code class="language-plaintext highlighter-rouge">default-internal.pdf.twig</code>, <code class="language-plaintext highlighter-rouge">timesheet.pdf.twig</code> are reserved</li>
+  <li>Use unique filenames and prefix them with your company name, eg <code class="language-plaintext highlighter-rouge">company-export.html.twig</code></li>
 </ul>
 
 <p>After you created a new or updated an existing template, you have to clear the cache to see the results:</p>
@@ -696,11 +684,9 @@ These records cannot be edited any longer by regular users and are excluded by d
 </div>
                    </div>
 
-<p>Please copy &amp; paste one of <a href="https://github.com/kimai/kimai/tree/main/templates/export/renderer">default templates</a> to <code class="language-plaintext highlighter-rouge">var/export/</code> 
-as starting point and rename it afterwards.</p>
+<h3 id="how-to-start">How to start</h3>
 
-<p>You can translate the button for your template, by adding its name to the export translation file, eg. <code class="language-plaintext highlighter-rouge">translations/export.en.xlf</code>.
-Internally for each template a new ExportRenderer service is registered, called <code class="language-plaintext highlighter-rouge">exporter_renderer.filename_EXT_twig</code> (see <code class="language-plaintext highlighter-rouge">ExportServiceCompilerPass</code>).</p>
+<p>Copy &amp; paste the <a href="https://github.com/kimai/kimai/blob/main/templates/export/pdf-layout.html.twig">default templates</a> to <code class="language-plaintext highlighter-rouge">var/export/company-template.pdf.twig</code> as starting point.</p>
 
 <h2 id="pdf-templates">PDF Templates</h2>
 
@@ -735,7 +721,7 @@ Internally for each template a new ExportRenderer service is registered, called 
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#difference-between-export-and-invoice" class="nav-link">Difference between export and invoice</a></li><li class="nav-item"><a href="#security-and-privacy" class="nav-link">Security and privacy</a></li><li class="nav-item"><a href="#export-state" class="nav-link">Export state</a></li><li class="nav-item"><a href="#adding-export-templates" class="nav-link">Adding export templates</a></li><li class="nav-item"><a href="#pdf-templates" class="nav-link">PDF Templates</a><ul><li class="nav-item"><a href="#custom-fields" class="nav-link">Custom fields</a></li></ul></li><li class="nav-item"><a href="#permission" class="nav-link">Permission</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#difference-between-export-and-invoice" class="nav-link">Difference between export and invoice</a></li><li class="nav-item"><a href="#security-and-privacy" class="nav-link">Security and privacy</a></li><li class="nav-item"><a href="#export-state" class="nav-link">Export state</a></li><li class="nav-item"><a href="#adding-export-templates" class="nav-link">Adding export templates</a><ul><li class="nav-item"><a href="#how-to-start" class="nav-link">How to start</a></li></ul></li><li class="nav-item"><a href="#pdf-templates" class="nav-link">PDF Templates</a><ul><li class="nav-item"><a href="#custom-fields" class="nav-link">Custom fields</a></li></ul></li><li class="nav-item"><a href="#permission" class="nav-link">Permission</a></li></ul>
         
     </aside>
 
