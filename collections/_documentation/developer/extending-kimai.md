@@ -169,6 +169,7 @@ If you create customer templates, beware of these rules:
 - You should store your templates in `var/export/`, as this directory is not shipped with Kimai and not touched during updates (instead of `templates/export/renderer/`)
 - You can configure different search directories through the config key `kimai.export.documents` if you want to add additional template source directories
 - You can hide the default templates by setting the key `kimai.export.defaults` to an empty array / null
+- You can translate the button for your template, by adding its name to the export translation file, eg. `translations/export.en.xlf`
 
 ## Adding export renderer
 
@@ -220,6 +221,8 @@ final class TimesheetIdRenderer implements RendererInterface
 ```
 
 All you need to do is to register it as a service in the Symfony DI container.
+
+Internally for each template a new ExportRenderer service is registered, called `exporter_renderer.filename_EXT_twig` (see `ExportServiceCompilerPass`).
 
 ### Adding timesheet export renderer
 
