@@ -157,6 +157,19 @@ Every invoice renderer class will be automatically available, after refreshing t
 This "magic" happens in the [InvoiceServiceCompilerPass]({{ site.kimai_v2_file }}/src/DependencyInjection/Compiler/InvoiceServiceCompilerPass.php),
 which finds the classes by the interface `RendererInterface`.
 
+## Export templates
+
+Export documents are searched in two locations:
+
+- `var/export/` - does not exist by default, please create it when you add a new template
+- `templates/export/renderer/` - don't change files in here, will be overwritten with the next update
+
+If you create customer templates, beware of these rules:
+
+- You should store your templates in `var/export/`, as this directory is not shipped with Kimai and not touched during updates (instead of `templates/export/renderer/`)
+- You can configure different search directories through the config key `kimai.export.documents` if you want to add additional template source directories
+- You can hide the default templates by setting the key `kimai.export.defaults` to an empty array / null
+
 ## Adding export renderer
 
 An export renderer is a class implementing `App\Export\RendererInterface` and it is responsible to convert an array of

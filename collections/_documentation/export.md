@@ -35,33 +35,24 @@ For further information read the [timesheet documentation]({% link _documentatio
 
 ## Adding export templates
 
-Since Kimai 1.9 you can add templates for PDF and HTML exports.
+Kimai supports custom PDF and HTML export templates.
 
-Export documents are searched in two locations:
-
-- `var/export/` - does not exist by default, please create it when you add a new template
-- `templates/export/renderer/` - don't change files in here, will be overwritten with the next update
+Those export templates are searched in the location `var/export/`, which does not exist by default, please create it when you add your first template.
 
 Be aware of the following rules:
 
 - HTML templates have the file extension `.html.twig`
 - PDF templates have the file extension `.pdf.twig`
-- Templates are addressed by their filename 
-- You can use every document name only once.
-  - Having `var/export/default.html.twig` and `templates/export/renderer/default.html.twig` will lead to unpredictable results 
-  - Use unique filenames and prefix them with your company name, eg `acme-export.html.twig` 
-- You should store your templates in `var/export/`, as this directory is not shipped with Kimai and not touched during updates
-- You can configure different search directories through the config key `kimai.export.documents` if you want to add additional template source directories 
-- You can hide the default templates by setting the key `kimai.export.defaults` to an empty array / null
+- You can use every template filename only once, as they are used as reference
+- The names `default.html.twig`, `default.pdf.twig`, `default-budget.pdf.twig`, `default-internal.pdf.twig`, `timesheet.pdf.twig` are reserved
+- Use unique filenames and prefix them with your company name, eg `company-export.html.twig` 
  
 After you created a new or updated an existing template, you have to clear the cache to see the results:
 {% include snippets/cache-refresh.md %} 
 
-Please copy & paste one of [default templates]({{ site.kimai_v2_repo }}/tree/main/templates/export/renderer) to `var/export/` 
-as starting point and rename it afterwards.
+### How to start
 
-You can translate the button for your template, by adding its name to the export translation file, eg. `translations/export.en.xlf`.
-Internally for each template a new ExportRenderer service is registered, called `exporter_renderer.filename_EXT_twig` (see `ExportServiceCompilerPass`).   
+Copy & paste the [default templates]({{ site.kimai_v2_repo }}/blob/main/templates/export/pdf-layout.html.twig) to `var/export/company-template.pdf.twig` as starting point.
 
 ## PDF Templates
 
