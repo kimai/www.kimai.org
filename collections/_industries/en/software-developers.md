@@ -2,7 +2,7 @@
 name: Software Developers
 title: "Time Tracking For Software Developers"
 subtitle: "Maximize Your Productivity"
-intro: "Kimai helps organizing your workflow and collecting billable project hours"
+intro: "Maximize team productivity and achieve work-life balance with smart time tracking"
 type: office
 icon: code
 introduction: | 

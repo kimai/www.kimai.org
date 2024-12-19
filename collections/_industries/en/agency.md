@@ -2,7 +2,7 @@
 name: Agencies
 title: "Time Tracking For Agencies"
 subtitle: "The key to profitability"
-intro: "Kimai helps organizing your workflow and collecting billable project hours"
+intro: "Unlock profitability potential in fast-growing agencies with scalable time tracking system"
 type: office
 icon: agency
 introduction: |

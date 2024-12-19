@@ -2,7 +2,7 @@
 name: Lawyers
 title: "Time Tracking for Lawyer"
 subtitle: "Focus on billable hours, not complicated timesheets"
-intro: "Kimai helps organizing your workflow and collecting billable project hours"
+intro: "Ditch complex timesheets and focus on delivering exceptional legal services with modern time tracking solutions"
 type: office
 icon: lawyer
 introduction: |

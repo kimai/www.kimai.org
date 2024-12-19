@@ -2,7 +2,7 @@
 name: Consultants
 title: "Time Tracking For Consultants"
 subtitle: "Maximize billable hours & efficiency"
-intro: "Kimai helps organizing your workflow and collecting billable project hours"
+intro: "Boost profitability and client value delivery through strategic time tracking for consultancy excellence"
 type: office
 icon: consulting
 introduction: |
