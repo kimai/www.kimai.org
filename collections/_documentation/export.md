@@ -31,8 +31,6 @@ You need to activate the checkbox before creating the export, to automatically s
 
 For further information read the [timesheet documentation]({% link _documentation/timesheet.md %}).
 
-***
-
 ## Adding export templates
 
 Kimai supports custom PDF and HTML export templates.
