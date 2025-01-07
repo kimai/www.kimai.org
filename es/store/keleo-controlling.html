@@ -558,7 +558,33 @@ then either the directory has a wrong name (must be <strong>var/plugins/WorkCont
                 <div class="tab-pane fade" id="store-changelog" role="tabpanel">
                     <h2 id="compatibility">Registro de cambios</h2>
                     
-                    <p><strong>Version 1.16.1</strong></p>
+                    <p><strong>Version 1.17.0</strong></p>
+
+<p>Compatibility: requires minimum Kimai 2.25.0</p>
+
+<ul>
+  <li>API:
+    <ul>
+      <li>[BC break] fix route names for /request/approve/reject (added /absences prefix)</li>
+      <li>[BC break] new calendar route for absences and public-holidays (those were previously the main routes)</li>
+      <li>[BC break] new return structure for GET /absences and /public-holidays</li>
+      <li>added route to fetch all registered absence types</li>
+    </ul>
+  </li>
+  <li>Fix multiple redirects in public holiday management</li>
+  <li>Fallback: “Import from Google public holiday calendar” if <code class="language-plaintext highlighter-rouge">Yasumi</code> is not available (caused by a timezone error on some PHP installations)</li>
+</ul>
+
+<p><strong>Version 1.16.2</strong></p>
+
+<p>Compatibility: requires minimum Kimai 2.25.0</p>
+
+<ul>
+  <li>Fix: only the first 10 absences were shown</li>
+  <li>Fix: statistics were calculated from approved absences only</li>
+</ul>
+
+<p><strong>Version 1.16.1</strong></p>
 
 <p>Compatibility: requires minimum Kimai 2.25.0</p>
 
