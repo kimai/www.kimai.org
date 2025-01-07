@@ -1,3 +1,22 @@
+**Version 1.17.0**
+
+Compatibility: requires minimum Kimai 2.25.0
+
+- API: 
+  - [BC break] fix route names for /request/approve/reject (added /absences prefix)
+  - [BC break] new calendar route for absences and public-holidays (those were previously the main routes)
+  - [BC break] new return structure for GET /absences and /public-holidays
+  - added route to fetch all registered absence types
+- Fix multiple redirects in public holiday management
+- Fallback: "Import from Google public holiday calendar" if `Yasumi` is not available (caused by a timezone error on some PHP installations)
+
+**Version 1.16.2**
+
+Compatibility: requires minimum Kimai 2.25.0
+
+- Fix: only the first 10 absences were shown
+- Fix: statistics were calculated from approved absences only
+
 **Version 1.16.1**
 
 Compatibility: requires minimum Kimai 2.25.0
