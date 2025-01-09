@@ -269,7 +269,7 @@ feature:
         description: "Kimai unterstützt externe Identitätsanbieter und Anmeldung via LDAP und SAML über mehrere Provider (wie Google Workspace, Azure AD oder Authentik). Zwei-Faktor-Authentifizierung über TOTP-Tokens ist optional möglich."
     reporting:
         name: "Berichte und Auswertungen"
-        description: "Analyse der erfassten Zeiten, Kunden, Projekte und Aktivitäten. Auswertung nach Benutzer, Kunden, Projekten, Aktivitäten, Tags, Zeiträumen und vielem mehr."
+        description: "Analyse der erfassten Zeiten anhand von Benutzern, Kunden, Projekten, Aktivitäten, Tags, Zeiträumen und mehr."
     mobile-ready:
         name: "Mobil einsetzbar"
         description: "Das Layout ist vollständig responsiv und für den Desktop und mobilen Einsatz konzipiert. Jeder Benutzer kann die anzuzeigenden Datenspalten konfigurieren, z. B. um horizontales Scrollen auf kleinen Geräten zu verhindern."
@@ -284,7 +284,7 @@ feature:
         description: "Kimai kann in jede Sprache lokalisiert werden und ist bereits in mehr als 30 Sprachen übersetzt."
     teams:
         name: "Teams"
-        description: "Mit Teams teilen sie Ihre Benutzer in logische Gruppen ein, denen Kunden und Projekte zugewiesen werden können, was die Sichtbarkeit und den Zugang für andere Benutzer einschränkt."
+        description: "Teams teilen Ihre Benutzer in Gruppen ein. Schränken Sie den Zugriff auf Daten ein, indem Sie Ihren Teams Kunden und Projekte zuweisen."
     customers:
         name: "Kunden"
         description: "Verwalten Sie Ihre Kunden und legen Sie Adresse, Kontakte, Land, Währung, Sichtbarkeit (zur Archivierung) und viele weitere Felder fest."
@@ -293,13 +293,13 @@ feature:
         description: "Verwalten Sie Projekte für jeden Kunden mit Auftragsnummer, Budget und Sichtbarkeit (zur Archivierung)."
     activities:
         name: "Tätigkeiten"
-        description: "Tätigkeiten werden Zeiteinträgen zugewiesen und können zur Auswertung und Filterung verwendet werden. Tätigkeiten können global sein, keine Duplizierung notwendig, wenn mehrere Projekte dieselbe Tätigkeit nutzen."
+        description: "Tätigkeiten werden Zeiteinträgen zugewiesen und können zur Auswertung und Filterung verwendet werden. Tätigkeiten können global sein, keine Duplikate notwendig, wenn mehrere Projekte dieselbe Tätigkeit nutzen."
     invoices:
         name: "Rechnungen"
         description: "Verschiedene Rechnungsvorlagen, Möglichkeiten zur Gruppierung von Einträgen, konfigurierbare Rechnungsnummern und verschiedene Formate wie PDF und DOCX."
     export:
         name: "Daten Export"
-        description: "Stundenzettel können zur Verwendung in anderen Programmen oder zur gemeinsamen Nutzung in verschiedenen Formaten exportiert werden. Exportierte Datensätze werden gesperrt und vor weiteren Änderungen geschützt."
+        description: "Stundenzettel können in verschiedenen Formaten exportiert werden. Exportierte Datensätze werden gesperrt und vor weiteren Änderungen geschützt."
     expenses:
         name: "Ausgaben"
         description: "Behalten Sie den Überblick über Ihre Ausgaben. Diese Ausgaben können kategorisiert und in Ihre Rechnungen aufgenommen werden. Die Spesen- und Ausgabenverwaltung ist als kostenpflichtiges Plugin verfügbar."
@@ -308,10 +308,10 @@ feature:
         description: "Kimai unterstützt die Zwei-Faktor Authentifizierung mit TOTP Tokens: sichern Sie Ihre Benutzer Accounts noch heute ab!"
     saml:
         name: "SAML"
-        description: "Die können Benutzer über SAML (Single Sign-On, auch bekannt als SSO) anmelden bzw. registrieren und dafür Ihren vorhandenen Identitätsanbieter wie Google Workspace, Authentik oder Azure Active Directory nutzen."
+        description: "Benutzer können sich mit SAML anmelden bzw. registrieren und dafür Ihren vorhandenen Identitätsanbieter wie Google Workspace, Authentik oder Azure Active Directory nutzen."
     api:
         name: "JSON API"
-        description: "Mit einer umfangreichen JSON-API zum Lesen und Schreiben von Daten, so dass externe Anwendungen und Ihre benutzerdefinierten Tools mit Ihrem bevorzugten Time-Tracker kommunizieren können."
+        description: "Mit einer umfangreichen JSON API zum Lesen und Schreiben von Daten, so dass externe Anwendungen mit Ihrem bevorzugten Time-Tracker kommunizieren können."
     ldap:
         name: "LDAP"
         description: "Verbinden Sie Kimai mit Ihrem Unternehmensverzeichnisserver (LDAP oder Active Directory) und nutzen Sie Ihre vorhandene Authentifizierungsinfrastruktur."
@@ -332,7 +332,7 @@ feature:
         description: "Kimai verwendet eine lokalisierte Version des 24-Stunden-Formats. Aber wenn Sie an das AM/PM-Format gewöhnt sind, können Sie das konfigurieren."
     time-clock:
         name: "Stechuhr"
-        description: "Wollen Sie manuelle Zeiten, also willkürliche Stundenzettelaufzeichnungen, verhindern? Wechseln Sie in den Stechuhr Modus, der nur „Punch-In“- und „Punch-Out“-Aufnahmen zulässt."
+        description: "Wollen Sie verhindern, das Ihre Benutzer manuelle Zeiteinträge erstellen? Wechseln Sie in den Stechuhr Modus, der nur „Punch-In“- und „Punch-Out“-Aufnahmen zulässt."
     duration-only:
         name: "Nur Dauer"
         description: "Wenn Ihre lokalen Gesetze verlangen, dass Sie nur die Dauer anstelle von Start- und Enddatum und Uhrzeit anzeigen, können Sie diesen Modus global aktivieren."
@@ -368,7 +368,7 @@ feature:
         description: "Ich respektieren Ihre und die Privatsphäre und Daten ihrer Nutzer. Dies ist nicht einfach nur eine Floskel der Datenschutzbestimmung, so führe ich mein Business. Ich verkaufe keine Daten. Ich befolge die DSGVO und werde jede Frage über involvierte Auftragsdatenverarbeiter beantworten."
     security:
         name: "Sicherheit in Kimai"
-        description: "Kimai setzt auf bewährte Verfahren im Anwendungsdesign, um typische Angriffsszenarien zu verhindern. Automatisierte Sicherheitskontrollen sind für jede Software-Entwicklung entscheidend, um die Zeit von der Fehlererstellung bis zur Fehlererkennung zu verkürzen. Diese Scans laufen bei jeder Codeänderung, jedes einzelne mal."
+        description: "Kimai setzt auf bewährte Verfahren im Anwendungsdesign, um typische Angriffsszenarien zu verhindern. Automatisierte Sicherheitskontrollen sind für jede Software-Entwicklung entscheidend, um die Zeit von der Erstellung bis zur Fehlererkennung zu verkürzen. Diese Scans laufen bei jeder Codeänderung, jedes einzelne mal."
         points:
             security_1: Sicheres Passwort Hashing mit Argon2 oder Sodium
             security_2: Konfigurierbare Benutzerrollen, die den Zugriff einschränken
