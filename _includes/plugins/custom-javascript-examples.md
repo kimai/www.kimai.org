@@ -143,7 +143,7 @@ Set a custom browser title:
 document.title = 'My fancy company';
 ```
 
-Add IDs to all <h3> header of your custom news page (allowing to use jump anchor links):
+Add IDs to all h3 header of your custom news page (allowing to use jump anchor links):
 ```javascript
 document.addEventListener('kimai.initialized', function (event) {
     if (document.getElementById('custom-content-news') !== null) {
