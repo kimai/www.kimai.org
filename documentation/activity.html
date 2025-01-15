@@ -813,6 +813,23 @@ Even though she has a higher internal cost of 45 â‚¬ / hour, her work earns 85 â
   <li>Empty: Shows all activities regardless of visibility</li>
 </ul>
 
+<h3 id="permissions">Permissions</h3>
+
+<p>Activities follow a hierarchical permission model:</p>
+
+<p><strong>Global activities</strong></p>
+<ul>
+  <li>Available to all users when no team is assigned</li>
+  <li>Only accessible by team members when a team is assigned</li>
+</ul>
+
+<p><strong>Project-specific activities</strong></p>
+<ul>
+  <li>Inherit permissions from their linked project and customer</li>
+  <li>Accessible to all users if no teams are assigned at any level (activity, project, customer)</li>
+  <li>When a team is assigned to the activity, only team members can use it, while also respecting the project and customer teams</li>
+</ul>
+
 <h2 id="filter-and-search">Filter and search</h2>
 
 <p>Available filters:</p>
@@ -880,7 +897,7 @@ This would find all entries with the custom field <code class="language-plaintex
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#activity-types" class="nav-link">Activity types</a><ul><li class="nav-item"><a href="#project-specific-activities" class="nav-link">Project specific activities</a></li><li class="nav-item"><a href="#global-activities" class="nav-link">Global activities</a></li><li class="nav-item"><a href="#changing-the-activity-type" class="nav-link">Changing the activity type</a></li></ul></li><li class="nav-item"><a href="#managing-activities" class="nav-link">Managing activities</a><ul><li class="nav-item"><a href="#colors" class="nav-link">Colors</a></li><li class="nav-item"><a href="#billable" class="nav-link">Billable</a></li><li class="nav-item"><a href="#budgets" class="nav-link">Budgets</a></li><li class="nav-item"><a href="#budget-type" class="nav-link">Budget type</a></li><li class="nav-item"><a href="#money-budget" class="nav-link">Money budget</a></li><li class="nav-item"><a href="#time-budget" class="nav-link">Time budget</a></li><li class="nav-item"><a href="#prices" class="nav-link">Prices</a></li><li class="nav-item"><a href="#edit-price-screen" class="nav-link">Edit price screen</a></li><li class="nav-item"><a href="#pricing-example" class="nav-link">Pricing example</a></li><li class="nav-item"><a href="#visibility" class="nav-link">Visibility</a></li></ul></li><li class="nav-item"><a href="#filter-and-search" class="nav-link">Filter and search</a></li><li class="nav-item"><a href="#deleting-an-activity" class="nav-link">Deleting an activity</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#activity-types" class="nav-link">Activity types</a><ul><li class="nav-item"><a href="#project-specific-activities" class="nav-link">Project specific activities</a></li><li class="nav-item"><a href="#global-activities" class="nav-link">Global activities</a></li><li class="nav-item"><a href="#changing-the-activity-type" class="nav-link">Changing the activity type</a></li></ul></li><li class="nav-item"><a href="#managing-activities" class="nav-link">Managing activities</a><ul><li class="nav-item"><a href="#colors" class="nav-link">Colors</a></li><li class="nav-item"><a href="#billable" class="nav-link">Billable</a></li><li class="nav-item"><a href="#budgets" class="nav-link">Budgets</a></li><li class="nav-item"><a href="#budget-type" class="nav-link">Budget type</a></li><li class="nav-item"><a href="#money-budget" class="nav-link">Money budget</a></li><li class="nav-item"><a href="#time-budget" class="nav-link">Time budget</a></li><li class="nav-item"><a href="#prices" class="nav-link">Prices</a></li><li class="nav-item"><a href="#edit-price-screen" class="nav-link">Edit price screen</a></li><li class="nav-item"><a href="#pricing-example" class="nav-link">Pricing example</a></li><li class="nav-item"><a href="#visibility" class="nav-link">Visibility</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul></li><li class="nav-item"><a href="#filter-and-search" class="nav-link">Filter and search</a></li><li class="nav-item"><a href="#deleting-an-activity" class="nav-link">Deleting an activity</a></li></ul>
         
     </aside>
 

@@ -627,11 +627,23 @@
 The teamleads have access to all contents and timesheets of the team. 
 Every content object can be linked to an arbitrary amount of teams.</p>
 
+<h2 id="limit-access-with-teams">Limit access with teams</h2>
+
 <p>If you want to limit the access to Kimai functionality instead of content, 
 please read the <a href="/documentation/permissions.html">permissions documentation</a>.</p>
 
 <div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i><p>Once a team is assigned to a customer or project, access to this object and its children is limited.</p>
 </div>
+
+<p>Some examples how team assignments work:</p>
+
+<ul>
+  <li>A customer without a team is visible to all users</li>
+  <li>A project without a team, whose customer has no team is visible to all users</li>
+  <li>A project without a team, whose customer is linked to Team B is only visible to all members of Team B</li>
+</ul>
+
+<p>Please review the permission docs for customer, project and activity.</p>
 
 <h2 id="permission-details">Permission details</h2>
 
@@ -682,7 +694,7 @@ please read the <a href="/documentation/permissions.html">permissions documentat
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#permission-details" class="nav-link">Permission details</a></li><li class="nav-item"><a href="#create-a-team" class="nav-link">Create a team</a></li><li class="nav-item"><a href="#filter-and-search" class="nav-link">Filter and search</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#limit-access-with-teams" class="nav-link">Limit access with teams</a></li><li class="nav-item"><a href="#permission-details" class="nav-link">Permission details</a></li><li class="nav-item"><a href="#create-a-team" class="nav-link">Create a team</a></li><li class="nav-item"><a href="#filter-and-search" class="nav-link">Filter and search</a></li></ul>
         
     </aside>
 
