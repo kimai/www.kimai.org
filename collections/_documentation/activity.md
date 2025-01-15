@@ -75,6 +75,19 @@ The visibility filter has three states:
 - No: Shows activities hidden by their visibility setting
 - Empty: Shows all activities regardless of visibility
 
+### Permissions
+
+Activities follow a hierarchical permission model:
+
+**Global activities**
+- Available to all users when no team is assigned
+- Only accessible by team members when a team is assigned
+
+**Project-specific activities**
+- Inherit permissions from their linked project and customer
+- Accessible to all users if no teams are assigned at any level (activity, project, customer)
+- When a team is assigned to the activity, only team members can use it, while also respecting the project and customer teams
+
 ## Filter and search
 
 Available filters:

@@ -9,10 +9,20 @@ A team consists of teamleads and regular team members.
 The teamleads have access to all contents and timesheets of the team. 
 Every content object can be linked to an arbitrary amount of teams.
 
+## Limit access with teams
+
 If you want to limit the access to Kimai functionality instead of content, 
 please read the [permissions documentation]({% link _documentation/permissions.md %}).
 
-{% alert warning %}Once a team is assigned to a customer or project, access to this object and its children is limited.{% endalert %}
+{% alert warning %} Once a team is assigned to a customer or project, access to this object and its children is limited.{% endalert %}
+
+Some examples how team assignments work:
+
+- A customer without a team is visible to all users
+- A project without a team, whose customer has no team is visible to all users
+- A project without a team, whose customer is linked to Team B is only visible to all members of Team B
+
+Please review the permission docs for customer, project and activity.
 
 ## Permission details
 
