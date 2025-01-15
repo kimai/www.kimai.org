@@ -664,7 +664,7 @@ You have to create one global activity and grab the ID from the URL, replace <co
     <span class="kd">const</span> <span class="nx">activity</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">srcElement</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#timesheet_edit_form_activity</span><span class="dl">'</span><span class="p">);</span>
     <span class="k">if </span><span class="p">(</span><span class="nx">activity</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">activity</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">5095</span><span class="dl">'</span><span class="p">;</span> 
-        <span class="nx">activity</span><span class="p">.</span><span class="nf">dispatchEvent</span><span class="p">(</span><span class="k">new</span> <span class="nc">Event</span><span class="p">(</span><span class="dl">'</span><span class="s1">change</span><span class="dl">'</span><span class="p">));</span>
+        <span class="nx">activity</span><span class="p">.</span><span class="nf">dispatchEvent</span><span class="p">(</span><span class="k">new</span> <span class="nc">Event</span><span class="p">(</span><span class="dl">'</span><span class="s1">change</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">bubbles</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}));</span>
         <span class="kd">const</span> <span class="nx">activityRow</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">srcElement</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">.timesheet_edit_form_row_activity</span><span class="dl">'</span><span class="p">);</span>
         <span class="k">if </span><span class="p">(</span><span class="nx">activityRow</span> <span class="o">!==</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">activityRow</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">contains</span><span class="p">(</span><span class="dl">'</span><span class="s1">d-none</span><span class="dl">'</span><span class="p">))</span> <span class="p">{</span>
             <span class="nx">activityRow</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">d-none</span><span class="dl">'</span><span class="p">);</span>
@@ -706,7 +706,7 @@ You have to create one global activity and grab the ID from the URL, replace <co
     <span class="kd">const</span> <span class="nx">activity</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">srcElement</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#timesheet_edit_form_activity</span><span class="dl">'</span><span class="p">);</span>
     <span class="k">if </span><span class="p">(</span><span class="nx">activity</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">activity</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">6451</span><span class="dl">'</span><span class="p">;</span> 
-        <span class="nx">activity</span><span class="p">.</span><span class="nf">dispatchEvent</span><span class="p">(</span><span class="k">new</span> <span class="nc">Event</span><span class="p">(</span><span class="dl">'</span><span class="s1">change</span><span class="dl">'</span><span class="p">));</span>
+        <span class="nx">activity</span><span class="p">.</span><span class="nf">dispatchEvent</span><span class="p">(</span><span class="k">new</span> <span class="nc">Event</span><span class="p">(</span><span class="dl">'</span><span class="s1">change</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">bubbles</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}));</span>
     <span class="p">}</span>
 <span class="p">});</span>
 </code></pre></div></div>
@@ -799,6 +799,37 @@ You have to create one global activity and grab the ID from the URL, replace <co
         <span class="k">if </span><span class="p">(</span><span class="nx">label</span> <span class="o">!==</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">label</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">contains</span><span class="p">(</span><span class="dl">'</span><span class="s1">required</span><span class="dl">'</span><span class="p">))</span> <span class="p">{</span> <span class="nx">label</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">required</span><span class="dl">'</span><span class="p">);</span> <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">});</span>
+</code></pre></div></div>
+
+<p>Change the “create timesheet” UI, add a button, select a customer on click (note: change the <code class="language-plaintext highlighter-rouge">'1'</code> to an existing customer ID):</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(function() { document.addEventListener('show.bs.modal', function () {
+    const customerSelection = document.getElementById('timesheet_edit_form_customer');
+    if (customerSelection === null) {
+        return;
+    }
+
+    const rowSelect = customerSelection.parentElement;
+
+    const box = document.createElement('div');
+    box.classList.add('mt-2');
+
+    const hint = document.createElement('span');
+    hint.textContent = 'Suggestions:';
+    hint.classList.add('me-2');
+
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.classList.add('btn', 'btn-white', 'fw-normal');
+    btn.textContent = 'Customer #1';
+    btn.addEventListener('click', () =&gt; {
+        customerSelection.value = '1'; /* insert a valid customer ID here */
+        customerSelection.dispatchEvent(new Event('change', { bubbles: true }));
+    });
+
+    box.appendChild(hint);
+    box.appendChild(btn);
+    rowSelect.appendChild(box);
+}); })();
 </code></pre></div></div>
 
 <h2 id="css">CSS</h2>
