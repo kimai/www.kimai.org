@@ -17,7 +17,7 @@ document.addEventListener('show.bs.modal', (e) => {
     const activity = e.srcElement.querySelector('#timesheet_edit_form_activity');
     if (activity !== null) {
         activity.value = '5095'; 
-        activity.dispatchEvent(new Event('change'));
+        activity.dispatchEvent(new Event('change', { bubbles: true }));
         const activityRow = e.srcElement.querySelector('.timesheet_edit_form_row_activity');
         if (activityRow !== null && !activityRow.classList.contains('d-none')) {
             activityRow.classList.add('d-none');
@@ -63,7 +63,7 @@ document.addEventListener('show.bs.modal', (e) => {
     const activity = e.srcElement.querySelector('#timesheet_edit_form_activity');
     if (activity !== null) {
         activity.value = '6451'; 
-        activity.dispatchEvent(new Event('change'));
+        activity.dispatchEvent(new Event('change', { bubbles: true }));
     }
 });
 ```
@@ -166,4 +166,36 @@ document.addEventListener('show.bs.modal', (e) => {
         if (label !== null && !label.classList.contains('required')) { label.classList.add('required'); }
     }
 });
+```
+
+Change the "create timesheet" UI, add a button, select a customer on click (note: change the `'1'` to an existing customer ID): 
+```
+(function() { document.addEventListener('show.bs.modal', function () {
+    const customerSelection = document.getElementById('timesheet_edit_form_customer');
+    if (customerSelection === null) {
+        return;
+    }
+
+    const rowSelect = customerSelection.parentElement;
+
+    const box = document.createElement('div');
+    box.classList.add('mt-2');
+
+    const hint = document.createElement('span');
+    hint.textContent = 'Suggestions:';
+    hint.classList.add('me-2');
+
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.classList.add('btn', 'btn-white', 'fw-normal');
+    btn.textContent = 'Customer #1';
+    btn.addEventListener('click', () => {
+        customerSelection.value = '1'; /* insert a valid customer ID here */
+        customerSelection.dispatchEvent(new Event('change', { bubbles: true }));
+    });
+
+    box.appendChild(hint);
+    box.appendChild(btn);
+    rowSelect.appendChild(box);
+}); })();
 ```
