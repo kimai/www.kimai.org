@@ -14,11 +14,11 @@ At Kimai, we believe in quality over quantity, prioritizing honest numbers over 
 
 ## Here’s 5 Facts about Kimai's privacy-first approach:
 
-1. 700,000 timesheets were deleted We've removed data from inactive accounts, adhering to our principle of data minimization.
-2. 17,000 unused clouds were cleared Abandoned cloud instances have been deleted, ensuring we don't unnecessarily retain or misuse dormant user data.
-3. Zero fake numbers Without external investors pushing for inflated metrics, we stay true to our values and present only genuine growth.
-4. Germany-exclusive hosting All Kimai services are hosted in Germany, providing robust data protection under stringent European laws.
-5. GDPR compliance We've built our platform with privacy at its core, ensuring full compliance with the General Data Protection Regulation.
+1. 700,000 timesheets were deleted:  We've removed data from inactive accounts, adhering to our principle of data minimization.
+2. 17,000 unused clouds were cleared: Abandoned cloud instances have been deleted, ensuring we don't unnecessarily retain or misuse dormant user data.
+3. Zero fake numbers: Without external investors pushing for inflated metrics, we stay true to our values and present only genuine growth.
+4. Germany-exclusive hosting: All Kimai services are hosted in Germany, providing robust data protection under stringent European laws.
+5. GDPR compliance: We've built our platform with privacy at its core, ensuring full compliance with the General Data Protection Regulation.
 
 ## Why this matters
 
