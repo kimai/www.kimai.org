@@ -13,8 +13,8 @@ You can find the [full documentation at GitHub]({{ page.github }}).
 I cannot help with windows installs, this is only for Linux and Mac:
 
 ```bash
-curl -LO https://github.com/kevinpapst/kimai2-console/releases/latest/download/kimai.phar
-curl -LO https://github.com/kevinpapst/kimai2-console/releases/latest/download/kimai.phar.sha1
+curl -LO https://github.com/kimai/cli/releases/latest/download/kimai.phar
+curl -LO https://github.com/kimai/cli/releases/latest/download/kimai.phar.sha1
 sha1sum --check kimai.phar.sha1
 rm kimai.phar.sha1
 chmod +x kimai.phar

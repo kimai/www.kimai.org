@@ -1,3 +1,11 @@
+**Version 1.18.0**
+
+Compatibility: requires minimum Kimai 2.28.0
+
+- Remove the `New` state from approval workflow for new entries
+- Auto approve `sickness`
+- Pre-check all absences in `new` and `requested` state, so people find the batch-actions easier
+
 **Version 1.17.0**
 
 Compatibility: requires minimum Kimai 2.25.0

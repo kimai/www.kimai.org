@@ -62,6 +62,12 @@ The visibility filter in the toolbar has three state:
 - Visible: No (all projects that are exclusively invisible by their own visibility state)
 - Visible "empty" (all projects: not filtering on their own or the customers visibility)
 
+### Permissions
+
+- Inherit permissions from their linked customer
+- Accessible to all users if no teams are assigned at customer and project level
+- If a team is assigned to the project, only team members can use it, while also respecting the customer teams
+
 ## Filter and search 
 
 The search supports filtering by the fields:
