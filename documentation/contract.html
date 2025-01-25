@@ -737,6 +737,15 @@ If you add a timesheet on the same day, it calculates as overtime.</p>
 <p>Will not influence the working time in any way.
 This booking is only there for information purposes.</p>
 
+<h2 id="limit-timesheets-to-working-days">Limit timesheets to working days</h2>
+
+<p>There is a validation that can be activated in [System &gt; Settings], which helps to restrict timesheets to contractual working days.
+Once activated, users cannot create timesheets for days without active contract setting.
+So a user who works Monday to Thursday cannot create timesheets for Fridays.</p>
+
+<p>In order to help with exceptions, there is a permission called <code class="language-plaintext highlighter-rouge">workdays_override_timesheet</code>, which allows to override this validation.
+This permission should be granted to employees e.g. from HR department.</p>
+
 <h2 id="permissions">Permissions</h2>
 
 <table class="table permissions">
@@ -811,7 +820,7 @@ This booking is only there for information purposes.</p>
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#user-interface" class="nav-link">User interface</a></li><li class="nav-item"><a href="#summary" class="nav-link">Summary</a></li><li class="nav-item"><a href="#working-times" class="nav-link">Working times</a></li><li class="nav-item"><a href="#lock-a-month" class="nav-link">Lock a month</a></li><li class="nav-item"><a href="#changing-a-work-contract" class="nav-link">Changing a work contract</a></li><li class="nav-item"><a href="#manual-bookings" class="nav-link">Manual bookings</a><ul><li class="nav-item"><a href="#account-working-times" class="nav-link">Account working times</a></li><li class="nav-item"><a href="#holidays" class="nav-link">Holidays</a></li></ul></li><li class="nav-item"><a href="#how-calculations-work" class="nav-link">How calculations work</a><ul><li class="nav-item"><a href="#public-holidays" class="nav-link">Public holidays</a></li><li class="nav-item"><a href="#holidays-1" class="nav-link">Holidays</a></li><li class="nav-item"><a href="#sickness" class="nav-link">Sickness</a></li><li class="nav-item"><a href="#other" class="nav-link">Other</a></li><li class="nav-item"><a href="#time-off" class="nav-link">Time-Off</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#user-interface" class="nav-link">User interface</a></li><li class="nav-item"><a href="#summary" class="nav-link">Summary</a></li><li class="nav-item"><a href="#working-times" class="nav-link">Working times</a></li><li class="nav-item"><a href="#lock-a-month" class="nav-link">Lock a month</a></li><li class="nav-item"><a href="#changing-a-work-contract" class="nav-link">Changing a work contract</a></li><li class="nav-item"><a href="#manual-bookings" class="nav-link">Manual bookings</a><ul><li class="nav-item"><a href="#account-working-times" class="nav-link">Account working times</a></li><li class="nav-item"><a href="#holidays" class="nav-link">Holidays</a></li></ul></li><li class="nav-item"><a href="#how-calculations-work" class="nav-link">How calculations work</a><ul><li class="nav-item"><a href="#public-holidays" class="nav-link">Public holidays</a></li><li class="nav-item"><a href="#holidays-1" class="nav-link">Holidays</a></li><li class="nav-item"><a href="#sickness" class="nav-link">Sickness</a></li><li class="nav-item"><a href="#other" class="nav-link">Other</a></li><li class="nav-item"><a href="#time-off" class="nav-link">Time-Off</a></li></ul></li><li class="nav-item"><a href="#limit-timesheets-to-working-days" class="nav-link">Limit timesheets to working days</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
         
         <ul class="nav">
             <li>
