@@ -49,7 +49,7 @@ The import dialog provides a worldwide location database (in English only):
 
 {% alert warning %}The imported data has been calculated automatically, is not subject to any liability and needs to be verified after import.{% endalert %}
 
-## Manual editing public holidays
+## Editing public holidays
 
 By editing single public holidays you can:
 - Change full-day to half-day or vice-versa
@@ -58,7 +58,7 @@ By editing single public holidays you can:
 
 ## Permissions
 
-Public holidays can be edited at `Employment contract > Public holidays`.
+Public holidays can be edited at `Administration > Public holidays`.
 
 | Permission Name       | Description                                                                                        |
 |-----------------------|----------------------------------------------------------------------------------------------------|
