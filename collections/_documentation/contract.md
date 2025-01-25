@@ -114,6 +114,15 @@ Adds the amount of configured hours as working time.
 Will not influence the working time in any way.
 This booking is only there for information purposes.
 
+## Limit timesheets to working days
+
+There is a validation that can be activated in [System > Settings], which helps to restrict timesheets to contractual working days.
+Once activated, users cannot create timesheets for days without active contract setting.
+So a user who works Monday to Thursday cannot create timesheets for Fridays.
+
+In order to help with exceptions, there is a permission called `workdays_override_timesheet`, which allows to override this validation.
+This permission should be granted to employees e.g. from HR department.
+
 ## Permissions
 
 {% include documentation/permissions-contract.md %}
