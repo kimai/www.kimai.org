@@ -167,17 +167,18 @@
 <p>New documentation available as <a href="https://youtu.be/7ZHRBY0pZKI">explanation video</a>.</p>
 
 <ul>
-  <li>Fixes only the first 10 absences were shown</li>
-  <li>Fixed statistics were calculated from approved absences only</li>
-  <li>Fixed rejection and approval messages</li>
-  <li>Removed the <code class="language-plaintext highlighter-rouge">New</code> state from approval workflow</li>
   <li>Auto approve <code class="language-plaintext highlighter-rouge">sickness</code> entries</li>
+  <li>Removed the <code class="language-plaintext highlighter-rouge">New</code> state: new absences will be automatically <code class="language-plaintext highlighter-rouge">Requested</code>
+</li>
   <li>Pre-check all absences to simplify batch-action usage</li>
   <li>API: prepend <code class="language-plaintext highlighter-rouge">/absences</code> to <code class="language-plaintext highlighter-rouge">/request</code>, <code class="language-plaintext highlighter-rouge">/approve</code>, <code class="language-plaintext highlighter-rouge">/reject</code> routes</li>
   <li>API: new calendar route for absences and public-holidays</li>
   <li>API: new structure for GET <code class="language-plaintext highlighter-rouge">/absences</code> and <code class="language-plaintext highlighter-rouge">/public-holidays</code>
 </li>
   <li>API: new route to fetch registered absence types</li>
+  <li>Fixes only the first 10 absences were shown</li>
+  <li>Fixed statistics were calculated from approved absences only</li>
+  <li>Fixed rejection and approval messages</li>
 </ul>
 
 <p><strong>Other updates</strong></p>
