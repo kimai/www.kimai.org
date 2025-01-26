@@ -12,7 +12,7 @@ We've officially joined your favorite socials to bring you even more of what you
 **Where you can find us**
 
 Follow us on 
-[Facebook](https://www.facebook.com/people/Kimai/61557684102167/), 
+[Facebook](https://www.facebook.com/profile.php?id=61570597485256), 
 [Instagram](https://www.instagram.com/kimai_org),
 [YouTube](https://www.youtube.com/@kimai_org), 
 [Twitter / X](https://twitter.com/kimai_org), and
