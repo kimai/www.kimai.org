@@ -1,0 +1,43 @@
+<section class="container position-relative zindex-3">
+    <div class="d-none d-lg-block" style="margin-top: -428px;"></div>
+    <div class=" d-lg-none" style="margin-top: -370px;"></div>
+    <div class="swiper" data-swiper-options='{
+          "slidesPerView": 1,
+          "spaceBetween": 24,
+          "pagination": {
+            "el": ".swiper-pagination",
+            "clickable": true
+          },
+          "breakpoints": {
+            "560": {
+              "slidesPerView": 2
+            },
+            "960": {
+              "slidesPerView": 3
+            }
+          }
+        }'>
+        <div class="swiper-wrapper">
+            {% for teaser in site.data.teaser %}
+            {% assign id = teaser.name %}
+            {% assign name = site.data[page.lang].translation.section-teaser[id].title %}
+            <div class="swiper-slide">
+                <span class="position-absolute top-0 start-0 w-100 h-100 zindex-1" style="background: linear-gradient(180deg, rgba(17, 24, 39, 0.00) 65.56%, #111827 95.3%);"></span>
+                <div class="position-absolute bottom-0 w-100 zindex-2 p-4">
+                    <div class="px-md-3">
+                        <h3 class="h4 text-white mb-0">{{ name }}</h3>
+                        <div class="card-portfolio-meta d-flex align-items-center justify-content-between">
+                            <span class="text-white fs-xs text-truncate opacity-70 pe-3">{{ site.data[page.lang].translation.section-teaser[id].description }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-img">
+                    <img src="/images/screenshots/{{ teaser.image }}" alt="{{ name }}">
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="swiper-pagination position-relative bottom-0 pt-2 pt-md-3 mt-4"></div>
+    </div>
+</section>

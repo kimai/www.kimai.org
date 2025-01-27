@@ -23,7 +23,7 @@ The configuration dialog will show up: enter the `domain` of your Kimai installa
 
 ![Configuration](https://raw.githubusercontent.com/Keleo/kimai2-grandtotal/master/grandtotal-kimai-login.png "Configure the plugin")
 
-For testing you can use `https://demo.kimai.org`, the username `susan_super` and the API password `api_kitten`.
+For testing you can use `https://demo.kimai.org`, the username `susan_super` and the API password `token`.
 
 ### Configuration
 

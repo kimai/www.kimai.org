@@ -1,0 +1,29 @@
+---
+layout: page
+title_centered: true
+---
+{% assign pages = ''  %}
+{% assign pages = pages | append: '|site-notice,' | append: site.data[page.lang].translation.site-notice.name  %}
+{% assign pages = pages | append: '|privacy-policy,' | append: site.data[page.lang].translation.privacy-policy.name  %}
+{% assign pages = pages | append: '|terms-cloud,' | append: site.data[page.lang].translation.terms-cloud.name  %}
+{% assign pages = pages | append: '|terms-plugins,' | append: site.data[page.lang].translation.terms-plugins.name  %}
+{% assign pages = pages | append: '|terms-gdpr,' | append: site.data[page.lang].translation.terms-gdpr.name  %}
+{% assign pages = pages | append: '|trademark,' | append: site.data[page.lang].translation.trademark.name  %}
+{% assign pages = pages | split: '|' %}
+<ul class="nav nav-tabs justify-content-center my-5" id="nav-tab" role="tablist">
+    {% for menuEntry in pages %}
+        {% unless menuEntry == '' %}
+        {% assign tmp = menuEntry | split: ',' %}
+        <li class="nav-item" role="presentation">
+            {% include link-translated-menu.html language=page.lang item=tmp.first class="nav-link" title=tmp.last active=true %}
+        </li>
+    {% endunless %}
+    {% endfor %}
+</ul>
+<div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" role="tabpanel">
+
+        {{ content }}
+
+    </div>
+</div>

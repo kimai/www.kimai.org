@@ -1,0 +1,9 @@
+{% assign _title = site.data[page.lang].translation.login %}
+{% if include.title != nil %}
+    {% assign _title = include.title %}
+{% endif %}
+{% assign _classes = '' %}
+{% if include.classes != nil %}
+    {% assign _classes = include.classes %}
+{% endif %}
+<a href="{{- site.cloud.url }}{% if page.lang == 'de' %}/de{% endif -%}/auth/" class="{{ _classes }}">{{ _title }}</a>

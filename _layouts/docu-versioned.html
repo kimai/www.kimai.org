@@ -3,10 +3,9 @@ layout: documentation
 ---
 
 {% assign docs_page = site.documentation | where: "slug", page.slug | first %}
-{% capture versioned %}
+{% alert danger %}
 You are viewing an older version of this documentation page. A newer version is available <a href="{{ docs_page.url }}">here</a>.
-{% endcapture %}
-{% include alert.html type="danger" alert=versioned %}
+{% endalert %}
 
 {{ content }}
 

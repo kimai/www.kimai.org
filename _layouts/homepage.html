@@ -1,0 +1,40 @@
+---
+layout: base
+---
+
+<main class="page-wrapper">
+
+    {% include pages/homepage-hero.html %}
+
+    {% include section-compare-os-saas.html %}
+
+    <div class="mt-5 container gx-5">
+        {% assign testimonials = site.data.testimonials | where_exp: "item", "item.tags contains 'FeaturedShort'" %}
+        {% if page.lang == 'de' %}
+            {% assign testimonials = testimonials | where_exp: "item", "item.tags contains 'German'" %}
+        {% else %}
+            {% assign testimonials = testimonials | where_exp: "item", "item.tags contains 'English'" %}
+        {% endif %}
+        {% assign testimonials = testimonials | sample: 3 %}
+        {% include testimonials-horizontal.html testimonials=testimonials %}
+    </div>
+
+    {% assign features = 'auth,reporting,invoices,api' | split: ',' %}
+    {% include section-features-images.html features=features %}
+
+    {% assign testimonials = site.data.testimonials | where_exp: "item", "item.tags contains 'SliderHomepage'" | sample: 5 %}
+    {% include testimonials-slider.html testimonials=testimonials %}
+
+    {% include section-features.html %}
+
+{% comment %}
+    {% include section-numbers.html %}
+
+    {% include section-latest-news.html %}
+{% endcomment %}
+
+    {% include cta-begin-journey.html %}
+
+</main>
+
+{% include footer.html %}

@@ -1,9 +1,13 @@
-You can test the Plugin in the [Plugin demo]({% link _pages/demo.md %}).
-
-## Features 
 
 {% include plugins/custom-content.md %}
 
-#### Custom CSS plugin  
+**Alternative**
 
-If you only want to add some custom stylesheets, you can have a look at the free [Custom CSS plugin]({% link _store/keleo-css-custom-bundle.md %}).
+If you only want to add some custom CSS stylesheets, you can have a look at this free item instead:
+{% include link-translated-shop.html item="keleo-css-custom-bundle" %}
+
+## Storage
+
+This bundle stores contents in the directory `var/data/custom-content-bundle/`.
+
+Make sure the data directory is writable by your webserver and included in your backups.

@@ -1,0 +1,46 @@
+<main class="page-wrapper">
+{% include header-navigation.html %}
+
+{% assign header_title = site.data[page.lang].translation.time-tracking-terms.name %}
+{% assign header_subtitle = site.data[page.lang].translation.time-tracking-terms.subtitle %}
+{% assign header_intro = site.data[page.lang].translation.time-tracking-terms.intro %}
+{% assign header_image = "/images/industry/time-tracking-terms.webp" %}
+{% comment %}https://www.pexels.com/photo/assorted-books-on-book-shelves-1370295/{% endcomment %}
+{% include hero-large-image.html image=header_image title=header_title subtitle=header_subtitle intro=header_intro %}
+
+{% assign englishOrGerman = 'en' %}
+{% if page.lang == 'de' %}
+    {% assign englishOrGerman = 'de' %}
+{% endif %}
+
+    <section class="container mt-2 mt-md-4 mt-lg-5 mb-5">
+        {% assign current = "" %}
+        {% assign lps = site.keywords | where: "lang", englishOrGerman | sort: "keyword" %}
+        {% for lp in lps %}
+        {% assign first_letter = lp.keyword | upcase | truncate: 1, '' %}
+        {% unless first_letter == current %}
+            <h2 class="bg-faded-primary p-3 mt-3">{{ first_letter }}</h2>
+        {% endunless %}
+        <div class="row g-4 pb-5">
+            <div class="col px-3">
+                {% if lp.icon %}
+                <div class="card d-table border-0 p-3 mx-auto mb-4">
+                    <i class="{{ lp.icon | icon }} bx-lg"></i>
+                </div>
+                {% endif %}
+                <h3 class="h5 mb-3">{{ lp.keyword }}</h3>
+                {% if lp.intro %}
+                <p>{{ lp.intro }}</p>
+                {% endif %}
+                <div class="mt-4">
+                    <a href="{{ lp.url | full_url: englishOrGerman }}" class="btn btn-secondary">{{ lp.keyword }}</a>
+                </div>
+            </div>
+            {% assign current = first_letter %}
+        </div>
+        {% endfor %}
+    </section>
+
+</main>
+
+{% include footer.html %}

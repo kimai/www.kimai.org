@@ -1,17 +1,8 @@
-
-# {{ site.data[page.lang].translation.demo.title }}
-
 {% assign introduction = site.data[page.lang].translation.demo.introduction %}
-{% include alert.html icon="fas fa-desktop" alert=introduction %}
+{% assign title = site.data[page.lang].translation.demo.title %}
 
-{{ site.data[page.lang].translation.demo.choose }}
+{% include hero-text-round-dark.html title=title intro=introduction %}
 
-{% include pages/demo-boxes.html %}
+{% include pages/demo.html %}
 
-{{ site.data[page.lang].translation.demo.reinstall }}
-
-## {{ site.data[page.lang].translation.demo.user }}
-
-{{ site.data[page.lang].translation.demo.accounts }}
-
-{% include pages/demo-users.md %}
+{% include cta-begin-journey.html %}

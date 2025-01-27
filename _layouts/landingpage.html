@@ -1,0 +1,44 @@
+---
+layout: base
+---
+{% assign pagetitle = page.title %}
+{% if site.data[page.lang].translation[page.slug].title != nil %}
+    {% assign pagetitle = site.data[page.lang].translation[page.slug].title %}
+{% endif %}
+{% assign subtitle = nil %}
+{% if page.subtitle != nil %}
+    {% assign subtitle = page.subtitle %}
+{% endif %}
+{% if site.data[page.lang].translation[page.slug].subtitle != nil %}
+    {% assign subtitle = site.data[page.lang].translation[page.slug].subtitle %}
+{% endif %}
+
+<main class="page-wrapper">
+    {% include header-navigation.html %}
+
+    <section class="container py-5 my-1 my-md-4 my-lg-5">
+        <div class="row">
+            <div class="col-lg-12 mb-4 mb-lg-0">
+                <div class="pe-lg-4 me-lg-3 pe-xl-0 me-xl-0">
+                    <div class="m-auto w-50 text-center mb-4 pb-4">
+                        <p class="small">{{ site.data[page.lang].translation.slogan }}</p>
+                        <h2 class="h1 mb-4">{{ pagetitle }} ✨</h2>
+                        {% if subtitle != nil %}
+                        <p class="mb-4">{{ subtitle }}</p>
+                        {% endif %}
+                    </div>
+                    <div class="mb-0">
+                        <div class="lp-content mb-5 px-xl-5 px-md-3 px-1 {% if page.centered != nil and page.centered %} text-center{% endif %}">
+                            {{ content }}
+                        </div>
+
+                        {% include cta-begin-journey.html %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+{% include footer.html %}

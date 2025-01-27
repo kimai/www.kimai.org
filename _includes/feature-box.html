@@ -1,0 +1,25 @@
+{% assign feature = include.feature %}
+{% assign feature_key = feature.name %}
+{% assign feature_documentation = feature.documentation %}
+{% assign lang_replacer = page.lang | append: '/' %}
+{% if page.lang == 'en' %}
+{% assign lang_replacer = '' %}
+{% endif %}
+{% assign feature_documentation = feature.documentation | replace: '%language%', lang_replacer %}
+{% assign feature_title = site.data[page.lang].translation.feature[feature_key].name %}
+{% assign feature_description = site.data[page.lang].translation.feature[feature_key].description %}
+<div class="card card-hover bg-secondary border-0 mb-4">
+    <div class="card-body d-flex align-items-start">
+        <div class="flex-shrink-0 bg-light rounded-3 p-3">
+            <i class="{{ feature.icon | icon }} fs-2" title="{{ feature_title }}"></i>
+        </div>
+        <div class="ps-4">
+            <h3 class="h5 pb-2 mb-1">{{ feature_title }}</h3>
+            <p class="pb-2 mb-1">{{ feature_description }}</p>
+            <a href="{% link {{ feature_documentation }} %}" class="btn btn-link stretched-link px-0">
+                {{ site.data[page.lang].translation.read-more }}
+                <i class="bx bx-right-arrow-alt fs-xl ms-2"></i>
+            </a>
+        </div>
+    </div>
+</div>

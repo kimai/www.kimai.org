@@ -1,45 +1,41 @@
-{% for group in include.navigation %}
-    {% if group[0] != 'slug' and group[0] != 'skip' %}
-        {% assign group_key = group[0] %}
-        {% assign group_setting = group[1] %}
-        {% if include.navigation.skip == nil and group_setting.skip == nil %}
-            {% assign size = 6 %}
-            {% assign group_name = site.data[page.lang].translation.menu.menu-documentation[group_key].name %}
-            {% assign group_desc = site.data[page.lang].translation.menu.menu-documentation[group_key].description %}
-            <div class="col-sm-{{ size }}{% if size != 12 %} col-12{% endif %}">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="text-wrap p-lg-6 text-center">
-                            <div class="mt-2 mb-3">
-                                <i class="{{ group_setting.icon }} fa-5x"></i>
-                            </div>
-
-                            <h2 class="mt-0 mb-4">
-                                {{ group_name }}
-                            </h2>
-
-                            <p class="empty-subtitle text-muted mb-3">
-                                {{ group_desc }}
-                            </p>
-
-                            <div class="btn-list d-flex justify-content-center mt-auto">
-                                {% for p in group_setting.pages %}
-                                    {% if p != "-" %}
-                                        {% assign doc = site.documentation | where: "slug", p | first %}
-                                        <a class="btn btn-primary" href="{{ doc.url }}">
-                                            {% if doc.navigation != nil %}
-                                                {{ doc.navigation }}
-                                            {% else %}
-                                                {{ doc.title }}
-                                            {% endif %}
-                                        </a>
-                                    {% endif %}
-                                {% endfor %}
+{% assign doc_chapter = site.data.menu-documentation[include.navigation] %}
+{% for group in doc_chapter.chapter %}
+    {% assign group_key = group.id %}
+    {% assign group_name = group.name %}
+    {% assign group_desc = group.description %}
+    <div class="card mb-4">
+        <div class="row g-0 align-items-center">
+            <div class="col-sm-3 col-xl-2 mt-2 mt-sm-0">
+                <div class="steps">
+                    <div class="step justify-content-center">
+                        <div class="step-number text-primary">
+                            <div class="step-number-inner">
+                                <i class="{{ group.icon }} fs-1"></i>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        {% endif %}
-    {% endif %}
+            <div class="col-sm-9 col-xl-10">
+                <div class="card-body">
+                    <h5 class="card-title">{{ group_name }}</h5>
+                    <p class="card-text fs-sm">{{ group_desc }}</p>
+                    <div class="lh-lg">
+                    {% for p in group.pages %}
+                        {% if p != "-" %}
+                            {% assign doc = site.documentation | find: "slug", p %}
+                            <a class="btn btn-sm btn-primary mb-1" href="{{ doc.url }}">
+                                {% if doc.navigation != nil %}
+                                {{ doc.navigation }}
+                                {% else %}
+                                {{ doc.title }}
+                                {% endif %}
+                            </a>
+                        {% endif %}
+                    {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endfor %}

@@ -1,52 +1,138 @@
-<footer class="footer footer-transparent d-print-none bg-white mt-4 pt-5">
-    <div class="container-xl">
+{% assign is_light = false %}
+{% assign is_dark = true %}
+{% assign text_class = '' %}
+{% if page.footer_light != nil %}
+    {% assign is_light = page.footer_light %}
+{% endif %}
+{% if include.light != nil %}
+    {% assign is_light = include.light %}
+{% endif %}
+{% if is_light %}
+    {% assign is_dark = false %}
+    {% assign text_class = 'text-dark' %}
+{% else %}
+    {% assign text_class = 'text-white' %}
+{% endif %}
+{% assign englishOrGerman = 'en' %}
+{% if page.lang == 'de' %}
+    {% assign englishOrGerman = 'de' %}
+{% endif %}
+<footer class="footer {% if is_dark %}bg-dark {% endif %}pt-5 pb-4">
+    <div class="container pt-1 pt-md-3 pt-lg-4 pt-xl-5">
         <div class="row">
-            <div class="col-md-3 col-lg-2 col-6">
-                <p class="text-uppercase fw-bold">Kimai</p>
-                <ul class="list-unstyled">
-                    <li>
-                        {% include link-translated-menu.html item="index" language=page.lang class="link-secondary" %}
-                    </li>
-                    <li>
-                        {% include link-translated-menu.html item="about" language=page.lang class="link-secondary" %}
-                    </li>
-                    <li>
-                        {% include link-translated-menu.html item="donate" language=page.lang class="link-secondary" %}
-                    </li>
-                </ul>
+            <div class="col-md-5 col-xl-4 mb-4 mb-md-5 mb-lg-0">
+                <div class="d-flex align-items-center pb-3 mb-1">
+                    <div class="navbar-brand {{ text_class}} p-0 pe-1 me-0">
+                        Kimai
+                    </div>
+                    <hr class="vr mt-2 mx-3" style="height: 26px;">
+                    <div class="{{ text_class}} fw-semibold ps-1">{{ site.data[page.lang].translation.slogan }}</div>
+                </div>
+                <p class="text-body fs-sm pb-1 pb-md-2 pb-lg-2 mb-2">
+                    {{ site.data[page.lang].translation.footer }}
+                </p>
+                <div class="d-flex flex-column flex-sm-row flex-lg-column align-items-sm-center align-items-lg-start justify-content-between pb-1 pb-md-2 pb-lg-3 mb-3">
+                    <div class="position-relative">
+                        <div class="dropdown">
+                            <button type="button" class="form-select" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-globe top-50 start-0 text-body me-2"></i>
+                                {{ site.language_names[page.lang] }}
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                {% for lang in site.languages %}
+                                    <a dir="{% if site.rtl contains lang %}rtl{% else %}ltr{% endif %}" href="{% include link-language-domain.html language=lang %}" class="dropdown-item{% if lang == page.lang %} active{% endif %}" title="{{ site.data[lang].translation.index.title }}">{{ site.language_names[lang] }}</a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    {% comment %}
+                    <div class="d-flex pt-4 pt-sm-0 pt-lg-4 mt-lg-3">
+                        {% include section-social-links.html %}
+                    </div>
+                    {% endcomment %}
+                </div>
             </div>
-            <div class="col-md-3 col-lg-2 col-6">
-                <p class="text-uppercase fw-bold">News</p>
-                <ul class="list-unstyled">
-                    <li>
-                        {% include link-translated-menu.html item="blog" language=page.lang class="link-secondary" %}
-                    </li>
-                    <li>
-                        <a href="https://twitter.com/kimai_org" target="_blank" class="link-secondary">Twitter</a>
-                    </li>
-                    <li>
-                        <a href="https://phpc.social/@kimai" target="_blank" class="link-secondary">Mastodon</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-3 col-lg-2 col-6">
-                <p class="text-uppercase fw-bold">Support</p>
-                <ul class="list-unstyled">
-                    <li>
-                        <a href="{{ site.kimai_v2_repo }}" target="_blank" class="link-secondary">GitHub</a>
-                    </li>
-                    <li>
-                        <a href="{{ site.kimai_v2_repo }}/discussions" target="_blank" class="link-secondary">{{ site.data[page.lang].translation.ask-question }}</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-3 col-lg-6 col-6 text-end d-none d-sm-block">
-                <img src="/images/kimai_logo.png" class="img-fluid" style="max-height: 120px;" alt="Kimai logo">
+            <div class="col-md-7 offset-xl-1">
+                <div id="footer-links" class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <h6 class="fs-lg mb-1 mb-md-2">
+                            <span class="d-none d-md-block">Company</span>
+                            <a href="#tools" class="d-block {{ text_class}} dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Company</a>
+                        </h6>
+                        <div id="tools" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    {% include link-translated-menu.html item="about" language=page.lang class="nav-link fs-sm fw-medium px-0 py-1" %}
+                                </li>
+                                <li class="nav-item">
+                                    {% include link-translated-menu.html item="features" language=page.lang class="nav-link fs-sm fw-medium px-0 py-1" %}
+                                </li>
+                                <li class="nav-item">
+                                    {% include link-translated-menu.html item="support" language=page.lang class="nav-link fs-sm fw-medium px-0 py-1" %}
+                                </li>
+                                <li class="nav-item">
+                                    {% include link-translated-menu.html item="reviews" language=page.lang class="nav-link fs-sm fw-medium px-0 py-1" %}
+                                </li>
+                                <li class="nav-item">
+                                    {% include link-translated-menu.html type="landingpage" item="discount-codes" language=englishOrGerman class="nav-link fs-sm fw-medium px-0 py-1" %}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <h6 class="fs-lg mb-1 mb-md-2">
+                            <span class="d-none d-md-block">Kimai {% if page.lang == 'de' %}für{% else %}for{% endif %}</span>
+                            <a href="#landing-kimai-for" class="d-block {{ text_class}} dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Kimai</a>
+                        </h6>
+                        <div id="landing-kimai-for" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    {% include link-translated-menu.html type="landingpage" item="non-profit" language=englishOrGerman class="nav-link fs-sm fw-medium px-0 py-1" %}
+                                </li>
+                                {% assign industries = site.industries | where: "lang", "en"  | where: "featured", true | sort: "name" %}
+                                {% for industry in industries %}
+                                <li class="nav-item">
+                                    <a href="{{ industry.url }}" class="nav-link fs-sm fw-medium px-0 py-1" title="Time-tracking for {{ industry.title }}">{{ industry.name }}</a>
+                                </li>
+                                {% endfor %}
+                                <li class="nav-item">
+                                    {% assign industry_title= site.data[page.lang].translation.industry.more %}
+                                    {% include link-translated-menu.html item="industry" language=page.lang class="nav-link fs-sm fw-medium px-0 py-1" title=industry_title %}
+                                </li>                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <h6 class="fs-lg mb-1 mb-md-2">
+                            <span class="d-none d-md-block">{{ site.data[page.lang].translation.comparison.footer-title }}</span>
+                            <a href="#footer-cmp" class="d-block {{ text_class}} dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">{{ site.data[page.lang].translation.comparison.footer-title }}</a>
+                        </h6>
+                        <div id="footer-cmp" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    {% include link-translated-menu.html item="alternatives" language=page.lang class="nav-link fs-sm fw-medium px-0 py-1" %}
+                                </li>
+                                {% assign tools = site.alternative | where: "lang", "en"  | where: "feature", true | sort: "name" %}
+                                {% for tool in tools %}
+                                    <li class="nav-item">
+                                        <a href="{{ tool.url | full_url: 'en' }}" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to {{ tool.name }}">{{ tool.name }}</a>
+                                    </li>
+                                {% endfor %}
+                                {% if page.lang == 'de' or page.lang == 'en' %}
+                                <li class="nav-item">
+                                    {% include link-translated-menu.html item="time-tracking-terms" language=englishOrGerman class="nav-link fs-sm fw-medium px-0 py-1" %}
+                                </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                    {% comment %}
+                    <div class="d-none d-lg-block col-lg-3 text-end">
+                        <img src="/images/kimai_logo.webp" style="max-height:148px" alt="Kimai">
+                    </div>
+                    {% endcomment %}
+                </div>
             </div>
         </div>
-
-        <div class="row text-center align-items-center flex-row-reverse border-top pt-4 mt-4">
-            {% include footer-links.html %}
-        </div>
+        {% include footer-links.html %}
     </div>
 </footer>

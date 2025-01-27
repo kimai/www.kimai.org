@@ -1,0 +1,16 @@
+<section class="{% if include.background %}bg-secondary {% endif %}border-bottom border-light py-5">
+    <div class="container py-md-3 py-lg-5">
+        <h2 class="h1 text-center pb-2">{{ site.data[page.lang].translation.blog.name }}</h2>
+        <div class="position-relative mx-md-2 px-md-5">
+
+            <button type="button" id="news-prev" class="btn btn-prev btn-icon btn-sm position-absolute top-50 start-0 translate-middle-y mt-n4 d-none d-md-inline-flex" aria-label="Previous">
+                <i class="bx bx-chevron-left"></i>
+            </button>
+            <button type="button" id="news-next" class="btn btn-next btn-icon btn-sm position-absolute top-50 end-0 translate-middle-y mt-n4 d-none d-md-inline-flex" aria-label="Next">
+                <i class="bx bx-chevron-right"></i>
+            </button>
+
+            {% include latest-news.html %}
+        </div>
+    </div>
+</section>

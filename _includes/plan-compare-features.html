@@ -1,0 +1,82 @@
+{% assign starter = site.data.plans.starter %}
+{% assign pro = site.data.plans.pro %}
+<div class="row align-items-center">
+    <div class="col-md-4 text-center text-md-start">
+        <h2 class="h1 mb-4">{{ site.data[page.lang].translation.pricing.included }}</h2>
+    </div>
+    <div class="col-md-8">
+        <div class="row row-cols-1 row-cols-md-2">
+            <div class="col text-md-center pb-2 mb-4">
+                <h3 class="h5 mb-2 mb-md-3">{{ starter.name }}</h3>
+                <ul class="d-md-none list-unstyled">
+                {% for key in site.data.cloud-features.features %}
+                    {% assign feature_title = nil %}
+                    {% if site.data[page.lang].translation.plans[key] != nil %}
+                        {% assign feature_title = site.data[page.lang].translation.plans[key] %}
+                    {% elsif site.data[page.lang].translation.comparison[key] != nil %}
+                        {% assign feature_title = site.data[page.lang].translation.comparison[key] %}
+                    {% endif %}
+                    {% if feature_title != nil %}
+                        <li class="d-flex align-items-center p-2 {% cycle '', 'bg-secondary' %}">
+                            <span class="text-dark fw-medium">{{ feature_title }}:&nbsp;</span>
+                            {% include plan-compare-feature-result.html plan=starter key=key %}
+                        </li>
+                    {% endif %}
+                {% endfor %}
+                </ul>
+            </div>
+            <div class="col text-md-center mb-3">
+                <h3 class="h5 mb-2 mb-md-3">{{ pro.name }}</h3>
+                <ul class="d-md-none list-unstyled">
+                    {% for key in site.data.cloud-features.features %}
+                        {% assign feature_title = nil %}
+                        {% if site.data[page.lang].translation.plans[key] != nil %}
+                            {% assign feature_title = site.data[page.lang].translation.plans[key] %}
+                        {% elsif site.data[page.lang].translation.comparison[key] != nil %}
+                            {% assign feature_title = site.data[page.lang].translation.comparison[key] %}
+                        {% endif %}
+                        {% if feature_title != nil %}
+                            <li class="d-flex align-items-center p-2 {% cycle '', 'bg-secondary' %}">
+                                <span class="text-dark fw-medium">{{ feature_title }}:&nbsp;</span>
+                                <div data-monthly-price="">{% include plan-compare-feature-result.html plan=pro key=key %}</div>
+                                <div data-annual-price="" class="d-none">{% include plan-compare-feature-result.html plan=pro_month key=key %}</div>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="d-none d-md-block pt-5 mt-2 pb-4">
+{% for key in site.data.cloud-features.features %}
+    {% assign feature_title = nil %}
+    {% if site.data[page.lang].translation.plans[key] != nil %}
+        {% assign feature_title = site.data[page.lang].translation.plans[key] %}
+    {% elsif site.data[page.lang].translation.comparison[key] != nil %}
+        {% assign feature_title = site.data[page.lang].translation.comparison[key] %}
+    {% endif %}
+    {% if feature_title != nil %}
+    <div class="row g-0 {% cycle '', 'bg-secondary rounded-3' %}">
+        <div class="col-md-4 text-dark fw-semibold ps-4 pe-2 py-4">{{ feature_title }}</div>
+        <div class="col-md-8 text-center">
+            <div class="row row-cols-2 g-0">
+                <div class="col px-2 py-4">
+                    {% include plan-compare-feature-result.html plan=starter key=key %}
+                </div>
+                <div class="col {% if forloop.first or forloop.last %}position-relative{% endif %} bg-primary px-2 py-4">
+                    <div data-monthly-price="">{% include plan-compare-feature-result.html plan=pro key=key class="text-light" %}</div>
+                    <div data-annual-price="" class="d-none">{% include plan-compare-feature-result.html plan=pro_month key=key class="text-light" %}</div>
+                    {% if forloop.first %}
+                    <span class="position-absolute start-0 bottom-100 w-100 bg-primary rounded-3 rounded-bottom-0" style="height: 2rem;"></span>
+                    {% endif %}
+                    {% if forloop.last %}
+                    <span class="position-absolute start-0 top-100 w-100 bg-primary rounded-3 rounded-top-0" style="height: 2rem;"></span>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+{% endfor %}
+</div>

@@ -1,0 +1,65 @@
+---
+layout: base
+---
+
+<main class="page-wrapper">
+    {% include header-navigation.html dark=true absolute=true %}
+
+    {% assign title=site.data[page.lang].translation.comparison.support %}
+    {% assign intro=site.data[page.lang].translation.support.intro %}
+
+    {% assign subtitle = page.subtitle | default: 'Open Source' %}
+    {% assign title = '<span class="small fs-4 d-block">%subtitle%</span> %title%' | replace: "%subtitle%", subtitle | replace: "%title%", page.keyword %}
+    {% assign intro = page.intro | default: site.data[page.lang].translation.landing_oss.subtitle %}
+    {% assign intro = intro | replace: "%title%", page.keyword | append: ' ✨' %}
+
+    {% include hero-text-round-dark.html title=title intro=intro %}
+
+    <section class="container pt-5 mt-md-2 mt-lg-4 mt-xl-5">
+        <div class="row justify-content-center pt-5">
+            <div class="col-xxl-10 col-xl-11 col-lg-12 pt-sm-2 pt-md-5">
+                <div class="d-sm-flex">
+                    <div class="card w-sm-50 border-0 bg-transparent px-sm-1 px-md-3">
+                        <div class="card-body p-0 pb-2 pb-sm-3 mb-3">
+                            <div class="d-inline-block bg-secondary text-primary rounded-circle fs-3 lh-1 p-3 mb-3">
+                                <i class="bx bx-lock-open-alt"></i>
+                            </div>
+                            <h3 class="fs-5 mb-4">{{ site.data[page.lang].translation.landing_oss.vendor_title }}</h3>
+                            <p>{{ site.data[page.lang].translation.landing_oss.vendor_intro }}</p>
+                        </div>
+                    </div>
+                    <div class="vr text-border d-none d-sm-inline-block m-4"></div>
+                    <div class="card w-sm-50 border-0 bg-transparent px-sm-1 px-md-3">
+                        <div class="card-body p-0 pb-2 pb-sm-3 mb-3">
+                            <div class="d-inline-block bg-secondary text-primary rounded-circle fs-3 lh-1 p-3 mb-3">
+                                <i class="bx bx-search"></i>
+                            </div>
+                            <h3 class="fs-5 mb-4">{{ site.data[page.lang].translation.landing_oss.transparency_title }}</h3>
+                            <p>{{ site.data[page.lang].translation.landing_oss.transparency_intro }}</p>
+                        </div>
+                    </div>
+                </div>
+                <img src="/images/screenshots/this-week-cut.webp" alt="Dashboard" class="rounded-top-4 light-mode-img" style="box-shadow: 0 0 7.5rem rgba(0, 0, 0, .1);">
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-secondary pb-5 mb-md-2 mb-lg-4 mb-xl-5">
+        <div class="container">
+            <div class="row pt-5 pb-1 pb-sm-2 pb-md-3">
+                <h2 class="h1 mt-3 mb-5 text-center">{{ site.data[page.lang].translation.landing_oss.discover }}</h2>
+
+                <div class="lp-content">
+                    {{ content }}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include section-compare-table.html %}
+
+    {% include cta-begin-journey.html %}
+</main>
+
+{% include footer.html %}
+

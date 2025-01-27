@@ -1,0 +1,119 @@
+<section class="bg-dark">
+    <div class="position-relative text-center zindex-5 overflow-hidden pt-4 py-md-5">
+
+        <button type="button" id="hero-prev" class="btn btn-prev btn-icon btn-xl bg-transparent shadow-none position-absolute top-50 start-0 translate-middle-y d-none d-md-inline-flex ms-n3 ms-lg-2" aria-label="Previous">
+            <i class="bx bx-chevron-left fs-1"></i>
+        </button>
+        <button type="button" id="hero-next" class="btn btn-next btn-icon btn-xl bg-transparent shadow-none position-absolute top-50 end-0 translate-middle-y d-none d-md-inline-flex me-n3 me-lg-2" aria-label="Next">
+            <i class="bx bx-chevron-right fs-1"></i>
+        </button>
+
+        <div class="container text-center pb-xl-5">
+            <div class="row justify-content-center">
+                <div class="col-xl-8 col-lg-9 col-md-10 col-11">
+                    <div class="swiper pt-5 pb-4 py-md-5" data-swiper-options='{
+                  "effect": "fade",
+                  "speed": 750,
+                  "autoplay": {
+                    "delay": 5500,
+                    "disableOnInteraction": false
+                  },
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "clickable": true
+                  },
+                  "navigation": {
+                    "prevEl": "#hero-prev",
+                    "nextEl": "#hero-next"
+                  }
+                }'>
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide">
+                                <h2 class="display-2 from-start mb-lg-4">{{ site.data[page.lang].translation.cta.best-features.question }}</h2>
+                                <div class="from-end">
+                                    <p class="fs-xl text-light opacity-70 pb-2 mb-lg-5">{{ site.data[page.lang].translation.cta.best-features.answer }}</p>
+                                </div>
+                                <div class="scale-up delay-1">
+                                    {% assign btnText = site.data[page.lang].translation.cta.best-features.button %}
+                                    {% include link-translated-menu.html language=page.lang item="store" class="btn btn-primary shadow-primary btn-lg" title=btnText %}
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <h2 class="display-2 from-start mb-lg-4">{{ site.data[page.lang].translation.cta.tech-support.question }}</h2>
+                                <div class="from-end">
+                                    <p class="fs-xl text-light opacity-70 pb-2 mb-lg-5">{{ site.data[page.lang].translation.cta.tech-support.answer }}</p>
+                                </div>
+                                <div class="scale-up delay-1">
+                                    <a href="{% link _store/keleo-installation-support.md %}" class="btn btn-primary shadow-primary btn-lg">{{ site.data[page.lang].translation.cta.tech-support.button }}</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-pagination position-relative d-md-none pt-2 mt-5"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-secondary pb-md-2 pb-lg-5">
+    <div class="d-none d-lg-block" style="margin-top: -60px; padding-top: 60px;"></div>
+    <div class="container pb-4 pt-5">
+        <h2 class="h1 text-center text-md-start mb-lg-4 pt-1 pt-md-4">{{ site.data[page.lang].translation.section-features.title }}</h2>
+        <div class="row align-items-center pb-5 mb-lg-2">
+            <div class="col-md-8 text-center text-md-start">
+                <p class="fs-lg text-muted mb-md-0">{{ site.data[page.lang].translation.section-features.subtitle }}</p>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2">
+            {% assign features = site.data.feature %}
+            {% for feature in features %}
+                {% assign feature_key = feature.name %}
+                {% assign feature_icon = feature.icon | default: 'clock' %}
+                {% assign feature_documentation = feature.documentation %}
+                {% assign lang_replacer = page.lang | append: '/' %}
+                {% if page.lang == 'en' %}
+                    {% assign lang_replacer = '' %}
+                {% endif %}
+                {% assign feature_documentation = feature.documentation | replace: '%language%', lang_replacer %}
+                {% assign feature_title = site.data[page.lang].translation.feature[feature_key].name %}
+                {% assign feature_description = site.data[page.lang].translation.feature[feature_key].description %}
+
+                <div class="col py-4 my-2 my-sm-3">
+                    {% if feature_documentation != nil and feature_documentation != '' %}
+                        <a href="{% link {{ feature_documentation }} %}" class="card card-hover h-100 border-0 shadow-sm text-decoration-none pt-5 px-sm-3 px-md-0 px-lg-3 pb-sm-3 pb-md-0 pb-lg-3 me-xl-2">
+                            <div class="card-body pt-3">
+                                <div class="d-inline-block bg-primary shadow-primary rounded-3 position-absolute top-0 translate-middle-y p-3">
+                                    <i class="{{ feature_icon | icon }} fs-3 text-white"></i>
+                                </div>
+                                <h2 class="h4 d-inline-flex align-items-center">
+                                    {{ feature_title }}
+                                    <i class="bx bx-right-arrow-circle text-primary fs-3 ms-2"></i>
+                                </h2>
+                                <p class="fs-sm text-body mb-0">{{ feature_description }}</p>
+                            </div>
+                        </a>
+                    {% else %}
+                        <div class="card card-hover h-100 border-0 shadow-sm text-decoration-none pt-5 px-sm-3 px-md-0 px-lg-3 pb-sm-3 pb-md-0 pb-lg-3 me-xl-2">
+                            <div class="card-body pt-3">
+                                <div class="d-inline-block bg-primary shadow-primary rounded-3 position-absolute top-0 translate-middle-y p-3">
+                                    <i class="{{ feature_icon | icon }} fs-3 text-white"></i>
+                                </div>
+                                <h2 class="h4 d-inline-flex align-items-center">
+                                    {{ feature_title }}
+                                </h2>
+                                <p class="fs-sm text-body mb-0">{{ feature_description }}</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% include section-newsletter.html %}

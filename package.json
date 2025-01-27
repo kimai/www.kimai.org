@@ -1,11 +1,10 @@
 {
     "homepage": "https://github.com/kimai/www.kimai.org",
-    "license": "MIT",
     "maintainers": [
         {
             "name": "Kevin Papst",
-            "email": "kpapst@gmx.net",
-            "url": "https://www.kevinpapst.de"
+            "email": "support@kimai.org",
+            "url": "https://www.kimai.org"
         }
     ],
     "name": "www.kimai.org",
@@ -18,28 +17,53 @@
         "dev": "webpack --mode=development",
         "build": "webpack --mode=production"
     },
-    "browserslist": [
-        "defaults"
-    ],
-    "packageManager": "yarn@3.2.1",
     "devDependencies": {
-        "@babel/core": "^7.19.6",
-        "@babel/eslint-parser": "^7.18.2",
-        "@babel/preset-env": "^7.19.4",
-        "@fortawesome/fontawesome-free": "^5.15",
-        "@tabler/core": "1.0.0-beta16",
-        "core-js": "^3.6",
-        "css-loader": "^6.7.1",
-        "eslint": "^8.19.0",
-        "eslint-webpack-plugin": "^3.2.0",
-        "mini-css-extract-plugin": "^2.6.1",
-        "node-sass": "^7.0",
-        "rtlcss-webpack-plugin": "^4.0.7",
-        "sass": "^1.55.0",
-        "sass-loader": "^13.1.0",
-        "style-loader": "^3.3.1",
-        "webpack": "^5.74.0",
-        "webpack-cli": "^4.10.0",
-        "webpack-notifier": "^1.13"
+        "@babel/eslint-parser": "^7",
+        "@babel/preset-env": "^7",
+        "@rollup/plugin-babel": "^6",
+        "@rollup/plugin-node-resolve": "^15",
+        "@rollup/plugin-terser": "^0",
+        "autoprefixer": "^10",
+        "browser-sync": "^3",
+        "css-loader": "^6",
+        "cssnano": "^6",
+        "eslint": "^8",
+        "eslint-config-prettier": "^9",
+        "eslint-plugin-prettier": "^5",
+        "eslint-webpack-plugin": "^3",
+        "fs-extra": "^11",
+        "html-validate": "^8",
+        "mini-css-extract-plugin": "^2",
+        "npm-run-all": "^4",
+        "npmlog": "^7",
+        "postcss": "^8",
+        "prettier": "^3",
+        "rollup": "^3",
+        "rtlcss-webpack-plugin": "^4",
+        "sass": "^1",
+        "sass-loader": "^13",
+        "stylelint": "^15",
+        "stylelint-config-twbs-bootstrap": "^11",
+        "webpack": "^5",
+        "webpack-cli": "^5"
+    },
+    "dependencies": {
+        "@lottiefiles/lottie-player": "^2",
+        "bootstrap": "^5",
+        "boxicons": "^2",
+        "cleave.js": "^1",
+        "compression-webpack-plugin": "^11",
+        "imagesloaded": "^5",
+        "img-comparison-slider": "^8",
+        "jarallax": "^2",
+        "lightgallery": "^2",
+        "nouislider": "^15",
+        "parallax-js": "^3",
+        "prismjs": "^1",
+        "rellax": "^1",
+        "shufflejs": "^6",
+        "smooth-scroll": "^16",
+        "swiper": "^8",
+        "vanilla-tilt": "^1"
     }
 }

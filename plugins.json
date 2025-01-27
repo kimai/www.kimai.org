@@ -10,19 +10,20 @@ permalink: /plugins.json
         {%- assign translation = site.data['en'].store.items[product.slug] -%}
         {%- assign settings = site.data.store[product.slug] -%}
         {%- assign minimumVersion = nil -%}
-        {%- for version in settings.bundle.versions -%}
-            {%- assign startsVersion = version[1] | slice: 0, 2 -%}
-            {%- if startsVersion == '2.' -%}
-                {%- assign minimumVersion = version[1] -%}
-            {%- endif -%}
-        {%- endfor -%}
+        {%- if site.data.store.releases[settings.bundle.name] != nil -%}
+            {%- for version in site.data.store.releases[settings.bundle.name].versions -%}
+                {%- assign startsVersion = version[1] | slice: 0, 2 -%}
+                {%- if startsVersion == '2.' -%}
+                    {%- assign minimumVersion = version[1] -%}
+                {%- endif -%}
+            {%- endfor -%}
+        {%- endif -%}
         {%- assign developer = site.data.developer[settings.developer] -%}
-        "name": "{{ product.title }}",
+        "name": "{{ translation.title }}",
         "url": "{{ product.url | absolute_url }}",
-        {%- if settings.lemonsqueezy != nil %}
-        "buy": "{{ settings.lemonsqueezy }}",
-        {%- elsif settings.gumroad != nil %}
-        "buy": "https://gum.co/{{ settings.gumroad }}",{%- endif %}
+        {%- if settings.shop != nil %}
+        "buy": "{{ settings.shop }}",
+        {%- endif %}
         "developer": {
             "name": "{{ developer.name }}",
             "homepage": {% if developer.homepage %}"{{ developer.homepage }}"{% else %}null{% endif %}

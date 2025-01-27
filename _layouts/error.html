@@ -1,17 +1,17 @@
 ---
-layout: base
+layout: default
 ---
+{% assign error = site.data[page.lang].translation[page.error] %}
 
-<div class="page-content">
-	<div class="container text-center">
-		{% assign error = site.data.errors[page.error] %}
-		<div class="display-1 text-muted mb-5"><i class="si si-exclamation"></i> {{ error.name }}</div>
+<section class="container d-flex flex-column h-100 align-items-center position-relative zindex-5 pt-5 pb-5">
+    <div class="text-center pt-5 pb-3">
 
-		<h1 class="h2 mb-3">Oops! You just found an error page 😢</h1>
-		<p class="h4 text-muted font-weight-normal mt-5 mb-7">{{ error.description }}</p>
-
-		<a class="btn btn-primary" href="javascript:history.back()">
-			<i class="fas fa-arrow-left"></i> Go back
-		</a>
-	</div>
-</div>
+        <h1 class="visually-hidden">{{ error.name }}</h1>
+        <h2 class="display-5">😳 {{ site.data[page.lang].translation.error.title }} 👻</h2>
+        <p class="fs-xl pb-3 pb-md-0 mb-md-5">{{ error.description }}</p>
+        <a href="/" class="btn btn-lg btn-primary shadow-primary w-sm-auto w-100">
+            <i class="bx bx-home-alt me-2 ms-n1 lead"></i>
+            {{ site.data[page.lang].translation.error.back }}
+        </a>
+    </div>
+</section>

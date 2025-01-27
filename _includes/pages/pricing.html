@@ -1,0 +1,32 @@
+<section class="bg-dark py-4">
+    <div class="container pb-2 py-lg-3 text-center">
+        <h1 class="mb-4">{{ site.data[page.lang].translation.pricing.name }}</h1>
+        <p class="text-body fs-lg pb-3 mb-3">{{ site.data[page.lang].translation.pricing.subtitle }}</p>
+    </div>
+    <div style="height: 250px;"></div>
+</section>
+
+<div class="price-switch-wrapper">
+    <section class="container mb-5 pt-md-1 pt-lg-4 pt-xl-5" style="margin-top: -300px;">
+        {% include pricing-plans.html %}
+        <p class="my-3 text-muted text-center">
+            {{ site.data[page.lang].translation.pricing.tax_exclusive }}
+            {{ site.data[page.lang].translation.pricing.cancellation }}
+        </p>
+    </section>
+
+    <section class="container mb-5 pt-md-1 pt-lg-2 pt-xl-3">
+        {% assign testimonials = site.data.testimonials | where_exp: "item", "item.tags contains 'FeaturedShort'" %}
+        {% if page.lang == 'de' %}
+            {% assign testimonials = testimonials | where_exp: "item", "item.tags contains 'German'" %}
+        {% else %}
+            {% assign testimonials = testimonials | where_exp: "item", "item.tags contains 'English'" %}
+        {% endif %}
+        {% assign testimonials = testimonials | sample: 3 %}
+        {% include testimonials-horizontal.html testimonials=testimonials %}
+    </section>
+
+    <section class="container mb-5 pt-md-1 pt-lg-4 pt-xl-5">
+        {% include plan-compare-features.html %}
+    </section>
+</div>

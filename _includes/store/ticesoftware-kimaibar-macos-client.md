@@ -16,10 +16,10 @@ Get more information about KimaiBar on <a href="https://kimaibar.app">kimaibar.a
 ### App Screens
 
 <p>
-    <img src="/images/marketplace/ticesoftware-kimaibar-macos-client1.png" width="45%" style="margin:0 10px">
-    <img src="/images/marketplace/ticesoftware-kimaibar-macos-client2.png" width="45%" style="margin:0 10px">
+    <img src="/images/marketplace/ticesoftware-kimaibar-macos-client1.webp" width="45%" style="margin:0 10px">
+    <img src="/images/marketplace/ticesoftware-kimaibar-macos-client2.webp" width="45%" style="margin:0 10px">
 </p>    
 <p>
-    <img src="/images/marketplace/ticesoftware-kimaibar-macos-client3.png" width="45%" style="margin:0 10px">
-    <img src="/images/marketplace/ticesoftware-kimaibar-macos-client4.png" width="45%" style="margin:0 10px">
+    <img src="/images/marketplace/ticesoftware-kimaibar-macos-client3.webp" width="45%" style="margin:0 10px">
+    <img src="/images/marketplace/ticesoftware-kimaibar-macos-client4.webp" width="45%" style="margin:0 10px">
 </p>

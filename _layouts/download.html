@@ -1,12 +1,96 @@
 ---
-layout: page
+layout: base
 ---
 
-<div class="row">
-    <div class="col-sm-12 col-lg-8 pe-4">
-        <h2>{{ site.data[page.lang].translation.menu.default.download.header }}</h2>
-        {{ content }}
-    </div>
-    {% include card-cloud.html %}
-</div>
+<main class="page-wrapper">
+    {% include header-navigation.html %}
+
+    {% assign header_title = site.data[page.lang].translation.download.title %}
+    {% assign header_subtitle = site.data[page.lang].translation.download.subtitle %}
+    {% assign header_intro = site.data[page.lang].translation.oss-cloud-compare.intro %}
+    {% assign header_image = "/images/layout/downloads.webp" %}
+    {% include hero-large-image.html image=header_image title=header_title subtitle=header_subtitle intro=header_intro %}
+
+    <section class="container mt-2 mt-md-4 mt-lg-5">
+        <p class="fs-lg text-muted text-center pb-4 mb-2 mb-lg-3">{{ site.data[page.lang].translation.download.intro }}</p>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 justify-content-center g-4 pb-xl-3">
+            <div class="col text-center border-end px-3">
+                <div class="card d-table border-0 p-3 mx-auto mb-4">
+                    <i class="bx bxs-cloud-upload bx-lg"></i>
+                </div>
+                <h3 class="h5 mb-3">Hetzner Cloud</h3>
+                <p>{{ site.data[page.lang].translation.install.caddy-docker }}</p>
+                <div class="text-center mt-4">
+                    <a href="{% link _documentation/hosting-hetzner-cloud.md %}" class="btn btn-secondary w-75">{{ site.data[page.lang].translation.documentation.name }}</a>
+                </div>
+            </div>
+            <div class="col text-center border-end px-3">
+                <div class="card d-table border-0 p-3 mx-auto mb-4">
+                    <i class="bx bx-cloud bx-lg"></i>
+                </div>
+                <h3 class="h5 mb-3">Kimai Cloud</h3>
+                <p>{{ site.data[page.lang].translation.install.cloud }}</p>
+                <div class="text-center mt-4">
+                    {% include link-cloud-start.html classes="btn btn-success w-75" %}
+                </div>
+            </div>
+            <div class="col text-center px-3">
+                <div class="card d-table border-0 p-3 mx-auto mb-4">
+                    <i class="bx bxl-digitalocean bx-lg"></i>
+                </div>
+                <h3 class="h5 mb-3">DigitalOcean</h3>
+                <p>{{ site.data[page.lang].translation.install.caddy-docker }}</p>
+                <div class="text-center mt-4">
+                    <a href="{% link _documentation/hosting-digital-ocean.md %}" class="btn btn-secondary w-75">{{ site.data[page.lang].translation.documentation.name }}</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container py-5 mb-2 mb-md-4 mb-lg-5">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 justify-content-center g-4 pb-xl-3">
+            <div class="col text-center border-end px-3">
+                <div class="card d-table border-0 p-3 mx-auto mb-4">
+                    <i class="bx bx-terminal bx-lg"></i>
+                </div>
+                <h3 class="h5 mb-3">SSH</h3>
+                <p>{{ site.data[page.lang].translation.install.ssh }}</p>
+                <div class="text-center mt-4">
+                    <a href="{% link _documentation/installation.md %}" class="btn btn-secondary w-75">{{ site.data[page.lang].translation.documentation.name }}</a>
+                </div>
+            </div>
+            <div class="col text-center border-end px-3">
+                <div class="card d-table border-0 p-3 mx-auto mb-4">
+                    <i class="bx bxl-docker bx-lg"></i>
+                </div>
+                <h3 class="h5 mb-3">Docker</h3>
+                <p>{{ site.data[page.lang].translation.install.docker }}</p>
+                <div class="text-center mt-4">
+                    <a href="{% link _documentation/docker/docker.md %}" class="btn btn-secondary w-75">{{ site.data[page.lang].translation.documentation.name }}</a>
+                </div>
+            </div>
+            <div class="col text-center border-0 px-3">
+                <div class="card d-table border-0 p-3 mx-auto mb-4">
+                    <i class="bx bxl-kubernetes bx-lg"></i>
+                </div>
+                <h3 class="h5 mb-3">Kubernetes</h3>
+                <p>{{ site.data[page.lang].translation.install.kubernetes }}</p>
+                <div class="text-center mt-4">
+                    <a href="{% link _documentation/docker/kubernetes.md %}" class="btn btn-secondary w-75">{{ site.data[page.lang].translation.documentation.name }}</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container py-5 my-1 my-md-4 my-lg-5">
+        <div class="row">
+            {{ content }}
+        </div>
+    </section>
+
+</main>
+
+{% include section-newsletter.html background=true %}
+
+{% include footer.html %}
 

@@ -1,71 +1,47 @@
 {% assign products = include.products | default: site.data.store %}
-
-<div class="card mb-3">
-	<table class="table card-table table-vcenter">
-		{% for product in products %}
-			{% assign featured = false %}
-		    {% assign iconSize = "fa-2x" %}
-			{% assign imageSize = 'class="h-4"' %}
-			{% assign isNew = false %}
-			{% assign settings = site.data.store[product.slug] %}
-			{% if settings.new != nil and settings.new %}
-			    {% assign isNew = true %}
-			{% endif %}
-			{% if settings.featured %}
-				{% assign featured = true %}
-		    	{% assign iconSize = "fa-3x" %}
-				{% assign imageSize = 'style="width: 15rem"' %}
-			{% endif %}
-			{% assign icon = settings.icon | default: "fas fa-question" %}
-			{% assign developer = site.data.developer[settings.developer] %}
-			{% assign translation = site.data[page.lang].store.items[product.slug] %}
-			<tr{% if featured %} class="featured-article"{% endif %}>
-				<td class="text-center product-icon">
-					{% if settings.image != nil %}
-					<img src="{{ settings.image }}" alt="Logo" {{ imageSize }}>
-					{% else %}
-					<i class="{{ icon }} {{ iconSize }}"></i>
-					{% endif %}
-				</td>
-				{% if featured %}
-					<td>
-						<h4 class="mb-2">
-							<a href="{{ product.url | absolute_url }}">{{ translation.title }}</a>
-
-							{% if isNew %}
-							<span class="badge bg-green badge-md">{{ site.data[page.lang].translation.new-badge }}</span>
-							{% endif %}
-						</h4>
-
-						<div class="row text-muted">
-							<div class="col-lg-12">
-							{{ translation.intro }}
-							</div>
-						</div>
-					</td>
-				{% else %}
-					<td>
-						<a href="{{ product.url | absolute_url }}">{{ translation.title }}</a>
-
-						{% if isNew %}
-						<span class="badge bg-green badge-sm">{{ site.data[page.lang].translation.new-badge }}</span>
-						{% endif %}
-					</td>
-				{% endif %}
-				<td class="text-end text-nowrap">
-					<strong>
-						{% if settings.subscription != nil %}
-							{{ settings.subscription }}
-						{% elsif settings.price == nil %}
-                            <i class="far fa-comments fa-lg"></i>
-                        {% elsif settings.price == 0 %}
-                            {{ site.data[page.lang].translation.free-badge }}
-						{% else %}
-							{{ settings.price }}
-						{% endif %}
-					</strong>
-				</td>
-			</tr>
-		{% endfor %}
-	</table>
-</div>
+<ul class="list-unstyled mb-0">
+{% for product in products %}
+{% assign featured = false %}
+{% assign isNew = false %}
+{% assign settings = site.data.store[product.slug] %}
+{% if settings.new != nil and settings.new %}
+    {% assign isNew = true %}
+{% endif %}
+{% if settings.featured %}
+    {% assign featured = true %}
+{% endif %}
+{% assign icon = settings.icon %}
+{% assign developer = site.data.developer[settings.developer] %}
+{% assign translation = site.data[page.lang].store.items[product.slug] %}
+{% if settings.disabled == nil %}
+<li class="mb-4">
+    <p class="h4 mb-2">
+        <a href="{{ product.url }}">{{ translation.title }}</a>
+    </p>
+    <div class="d-flex text-muted pt-1">
+        <div class="fs-sm pe-3 me-0 me-md-3 flex-fill">
+            {{ translation.intro }}
+            <br>
+            <a href="{{ product.url }}" class="btn btn-outline-secondary mt-3">{{ site.data[page.lang].translation.read-more }}</a>
+        </div>
+        <p class="fs-sm fw-semibold text-primary mb-0 text-nowrap d-none d-md-block">
+            <a href="{{ product.url }}">
+            {% if settings.subscription != nil %}
+            <i class="bx bx-cart fs-3"></i>
+            {% elsif settings.price == nil %}
+            <i class="bx bx-comment fs-4"></i>
+            {% elsif settings.price == 0 %}
+            <i class="bx bx-gift fs-3"></i>
+            {% else %}
+            <i class="bx bx-cart fs-3"></i>
+            {% endif %}
+            </a>
+        </p>
+    </div>
+    {% unless forloop.last %}
+    <hr class="my-4">
+    {% endunless %}
+</li>
+{% endif %}
+{% endfor %}
+</ul>

@@ -8,9 +8,6 @@ items:
     cloudrizon-kimai-mobile-app-android:
         title: Kimai móvel (Android)
         intro: O Kimai móvel é um aplicativo que permite uma utilização mais conveniente no seu dispositivo Android
-    derpilzcc-readonly-access-bundle:
-        title: Acesso de leitura apenas
-        intro: Um plug-in que permite a criação de um usuário com apenas permissão de leitura que pode ler as horas registradas para uma determinada empresa.
     district09-archive-timesheets-command-bundle:
         title: Comando para arquivar os quadros de horários
         intro: Um plug-in que permite que você arquive os quadros de horários mais antigos anteriores a um determinado período de tempo determinado usando um comando.
@@ -81,7 +78,7 @@ items:
         title: Formato fixo de dados para fatura (por idioma)
         intro: Um plug-in que permite definir um idioma global para os formatos de dados das faturas
     kiosk-barcode-bundle:
-        title: Modo quiosque com suporte a código de barras e RFID
+        title: Modo de quiosque com suporte para código de barras, RFID e Web NFC
         intro: Rastreamento de tempo presencial num ambiente onde o usuário não tenha acesso ao Kimai (ex. num armazém) usando um leitor de código de barras ou RFID para iniciar e interromper o quadro de horário.
     lockdown-per-user-bundle:
         title: Bloqueio da configuração por usuário
@@ -98,30 +95,6 @@ items:
     maximiliangross-easy-backup-bundle:
         title: Backup fácil
         intro: Com apenas um clique você cria um backup completo do seu ambiente Kimai
-    mr-software-android-offline-tracker:
-        title: Aplicativo Android para rastreio offline
-        intro: Aplicativo Android para o rastreio offline com o Kimai
-    mr-software-controlling-bundle:
-        title: Controle (lei alemã, verificação do tempo de intervalo, horas extras)
-        intro: Verifica se um dos seus usuários violou a lei alemã do tempo de intervalo + comparação do tempo de trabalho nominal e real + visão de horas extras
-    mr-software-hasworked-bundle:
-        title: HasWorked (notifica os usuários caso eles não registrem os tempos)
-        intro: Envia uma notificação por e-mail aos usuários caso eles não tenham nenhuma entrada no dia atual
-    mr-software-ios-offline-tracker:
-        title: Aplicativo iOS para o rastreio offline
-        intro: Aplicativo iOS para o rastreio offline com o Kimai
-    mr-software-period-insert-bundle:
-        title: Inserção de período
-        intro: Cria um quadro de horário por faixa de data
-    mr-software-recordbook-bundle:
-        title: Livro de registro para estagiários
-        intro: Um plug-in para o Kimai que gera um livro de registros para os estagiários.
-    mr-software-sickday-bundle:
-        title: Dia de folga (doença)
-        intro: Um plug-in para o Kimai que registra os dias de folga por doença dos usuários.
-    mr-software-vacation-bundle:
-        title: Férias (férias + feriados oficiais e locais)
-        intro: Um plug-in para o Kimai que adiciona o fluxo completo para férias + feriados nacionais e locais
     neontribe-chrome-plugin:
         title: ChromePlugin para o Kimai Bridge
         intro: Um plugin que permite que o tempo seja registrado a partir dos bilhetes do ChromePlugin numa instância Kimai.
@@ -131,9 +104,6 @@ items:
     umws-applewatch-app:
         title: Aplicativo Apple Watch
         intro: Monitora os seus horários do Kimai direto no seu pulso!
-    vettersolutions-shared-project-timesheets-bundle:
-        title: Projetos compartilhados dos quadros de horários
-        intro: Compartilhe os seus projetos de quadro de horário com qualquer um!
     cloudrizon-kimai-mobile-app-ios:
         title: Kimai Móvel (iOS)
         intro: Acesse o Kimai a partir do seu dispositivo iOS com o Kimai móvel
@@ -142,236 +112,163 @@ items:
         intro: Acompanhe o seu tempo com o aplicativo nativo da barra de menus do macOS, KimaiBar e receba lembretes parados.
     owlysk-codetimer:
         title: CodeTimer ferramenta para o desktop
-        intro: Ferramenta desktop para o Kimai.
+        intro: Ferramenta desktop para o Kimai
+    helsinkisystems-budgetwatcher:
+        title: Observador orçamental
+        intro: Seja notificado sempre que haja uso de um determinado valor do orçamento dos seus projetos
+    controlling:
+        title: 'Horário de trabalho, férias, doença, feriados'
+        intro: 'Gerenciamento de funcionários: Horas de trabalho e horas extras. Férias, doença e descanso remunerado. Gerenciamento de feriados e integração de calendários. Aprovações mensais com PDF.'
+    helsinkisystems-lexoffice:
+        title: Sincronização de faturas Lexoffice
+        intro: Sempre que uma fatura é criada no Kimai, esse plugin cria automaticamente uma fatura do Lexoffice.
+    simonschaufi-customer-email-report-bundle:
+        title: Relatório de e-mail do cliente
+        intro: Envie aos clientes um relatório por e-mail sobre o seu horário de trabalho
+    lnngyn-period-insert-bundle:
+        title: Inserir período
+        intro: Gerar entradas para um determinado período de tempo.
+    customer-portal:
+        intro: Compartilhe estatísticas de clientes e projetos e planilhas de horas com qualquer pessoa usando uma URL secreta, opcionalmente protegido por senha.
+        title: Portal do cliente
 screenshots:
     katjaglass-approval-bundle4:
-        title: Visualização do administrador
         description: Os administradores têm as mesmas permissões que os líderes das equipes, e podem também, localizar todos os colegas na visão geral e ter a opção de desfazer uma aprovação
     audit-trail-bundle0:
-        title: Registros auditáveis
         description: A página com um resumo de todos os registros do rastro da auditoria
     expenses-bundle3:
         description: As despesas são categorizadas para ter uma melhor visão geral e opções para a filtragem
-        title: Categoria das despesas
     expenses-bundle4:
-        title: Edição das categorias
         description: É possível definir um nome, fator de custo e um texto com uma breve ajuda para cada categoria
     invoice-bundle0:
-        title: Configuração da fatura
         description: Novas configurações para o formato do modelo de exportação e de idiomas
     kiosk-barcode-bundle2:
         description: Este novo código de barras agora pode ser impresso e distribuído com os seus usuários
-        title: Códigos do usuário
     kiosk-barcode-bundle3:
-        title: Leitor USB
         description: O modo de autenticação via 'código de barras com um leitor USB' mostra uma tela como esta, o campo da entrada é pré-selecionado e o leitor o envia depois que encontrar um código
     maximiliangross-easy-backup-bundle0:
         description: Uma nova página de administração com os backups
-        title: Administração do backup
-    mr-software-controlling-bundle0:
-        title: Item do menu
-        description: Os administradores vêem um resumo de todos os horários de trabalho de todos os usuários
-    mr-software-recordbook-bundle0:
-        title: Exemplo do PDF
-        description: Exemplo do PDF
-    mr-software-recordbook-bundle1:
-        title: Pré-visualização do download
-        description: Os estagiários vêem as semanas e podem baixar o PDF
-    mr-software-sickday-bundle0:
-        title: Item do menu
-        description: Os administradores vêem um resumo de todos os dias de licença médica
-    mr-software-vacation-bundle0:
-        title: Item do menu
-        description: Configurações do plug-in
     cloudrizon-kimai-mobile-app-android0:
-        title: Tela inicial
         description: Tela inicial do aplicativo
     cloudrizon-kimai-mobile-app-android1:
-        title: Quadros de horários
         description: Visualização simplificada para todos os registros dos seus quadros de horários
     cloudrizon-kimai-mobile-app-android2:
-        title: Áreas de trabalho
         description: Permitir a configuração e a alternância entre diversas instâncias do Kimai
     katjaglass-approval-bundle0:
-        title: Tela do usuário para aprovação semanal
         description: Exibe detalhes da semana como tempo de trabalho, tempo esperado e ações como enviar para aprovação
     katjaglass-approval-bundle1:
-        title: Tela para líderes de equipes — mostra uma visão geral
         description: Tela com o panorama das aprovações abertas anteriormente dos membros da equipes correspondentes, de si mesmo e da visão geral da conclusão da semana atual
     katjaglass-approval-bundle2:
-        title: Histórico de aprovação para aquela semana
         description: O histórico de aprovação que inclui todos os comentários, pode ser visto pelo líder da equipe ou pelos usuários
     katjaglass-approval-bundle3:
-        title: Aprova ou nega uma semana
         description: Os líderes das equipes podem aprovar ou negar uma semana
     audit-trail-bundle1:
-        title: Visualização detalhada da auditoria
         description: Um rastro da auditoria pode parecer assim, cada alteração será registrada e você poderá ver mais entradas numa linha de tempo do objeto
     audit-trail-bundle2:
-        title: Acesso ao histórico de alteração
         description: Você acessa um registro detalhado da auditoria a partir da página de listagem ou a partir da listagem das "Ações" da tabela dos dados de cada item
     keleo-css-custom-bundle0:
-        title: Administração do CSS personalizado
         description: A nova página de administração com todas as regras pré-fabricadas disponíveis
     keleo-css-custom-bundle1:
-        title: Quadro de horário
         description: A visão do quadro de horário antes da utilização das regras
     keleo-css-custom-bundle2:
-        title: Quadro de horário personalizado
         description: Visualização do quadro de horário com regras personalizadas ativas para destacar e esconder os registros que se sobrepõem
     custom-content-bundle0:
-        title: Mensagem de aviso
         description: A mensagem de aviso é exibido em cada página para os usuários que se autenticaram
     custom-content-bundle1:
-        title: Javascript
         description: O javascript é executado em todas as páginas para os usuários que se autenticaram
     custom-content-bundle2:
-        title: Mensagem de aviso
         description: Você pode inserir títulos em formato de marcação
     custom-content-bundle3:
-        title: Página de notícias
         description: A página de notícias está vinculada ao menu do usuário e exibe a sua mensagem com o formato que você escolheu
     custom-fields-bundle0:
-        title: Administração de campos personalizados
         description: A página da listagem mostra todos os tipos de itens disponíveis e a configuração dos seus campos personalizados
     custom-fields-bundle1:
-        title: Crie campos personalizados (cliente)
         description: Uma caixa de diálogo para criar um novo campo personalizado para clientes
     custom-fields-bundle2:
-        title: Edite um campo personalizado (projeto)
         description: Editando um campo personalizado já existente para projetos (tipo booleano, consulte o valor predefinido)
     custom-fields-bundle3:
-        title: Todos os quadros de horários
         description: A listagem do quadro de horários, exibindo o campo personalizado visível chamado "Localização"
     custom-fields-bundle4:
-        title: Edição do quadro de horários
         description: Editando um registro do quadro de horários com um novo campo personalizado da lista de escolha
     expenses-bundle0:
-        title: Administração das despesas
         description: Uma lista organizada com todos os registros de despesas
     expenses-bundle1:
-        title: Busca por despesas
         description: As suas despesas podem ser filtradas com a busca encontrada nas diversas telas do Kimai
     expenses-bundle2:
-        title: Edição das despesas
         description: A edição ou a criação de uma nova despesa permite que você insira mais informações nestes campos
     invoice-bundle1:
-        title: Configuração da fatura
         description: Captura de tela detalhada das novas configurações da fatura para o formato do idioma e do modelo de exportação
     keleo-invoice-format-fixation-bundle0:
-        title: Configuração do idioma
         description: Configure a formatação do idioma para todas as configurações da fatura
     kiosk-barcode-bundle0:
-        title: Listagem do usuário
         description: Exibe a lista de todos os usuários com os tipos de código de configuração individual de cada autenticação
     kiosk-barcode-bundle1:
-        title: Configuração
         description: Configure o plug-in do seu quiosque para atender as suas necessidades, o modo de login e do formato do código dependem um do outro
     kiosk-barcode-bundle4:
-        title: Tela de autenticação
         description: A tela de autenticação com a lista opcional dos usuários sendo ativada
     kiosk-barcode-bundle5:
-        title: Leitor webcam
         description: O modo de autenticação via 'código de barras com uma webcam' mostrará o vídeo da câmera fará a leitura constante do código de barras
     kiosk-barcode-bundle6:
-        title: Autenticação
         description: Faz a leitura de um código já existente para que o usuário inicie um novo quadro de horários
     kiosk-barcode-bundle7:
-        title: Desconectar
         description: Ou quando um quadro de horários já estiver em execução, ele será interrompido
     task-management-bundle0:
-        title: Administração de tarefas
         description: Uma nova página de administração com uma visão geral de todas as tarefas com rastreamento de tempo, condição geral e atribuições rastreadas
     task-management-bundle1:
-        title: Edite uma tarefa
         description: É possível registrar estes campos quando for criar ou atualizar uma tarefa
     task-management-bundle2:
-        title: Ferramenta de tarefa
         description: O novo painel principal das ferramentas para a atribuição das tarefas pendentes
     translation-bundle0:
-        title: Administração de tradução
         description: Uma nova página de administração com uma visão geral de todas as traduções que foram alteradas
     translation-bundle1:
-        title: Tela para adicionar traduções
         description: Uma caixa de diálogo que permite encontrar um texto através do seu conteúdo
     translation-bundle2:
-        title: Tela de edição
         description: Caixa de edição de diálogo que permite personalizar a sua tradução
-    mr-software-controlling-bundle1:
-        title: Item do menu
-        description: Os administradores e os usuários podem consultar o tempo de intervalo
-    mr-software-controlling-bundle2:
-        title: Item do menu
-        description: Os administradores e os usuários podem ver as faltas
-    mr-software-controlling-bundle3:
-        title: Item do menu
-        description: Os administradores podem bloquear os meses
-    mr-software-hasworked-bundle0:
-        title: Notificações via e-mail
-        description: Os usuários recebem notificações via e-mail
-    mr-software-hasworked-bundle1:
-        title: Visão geral
-        description: Execute um comando e os usuários serão notificados
-    mr-software-period-insert-bundle0:
-        title: Tela de inserção por período
-        description: Um formulário para criar valores para os registros que serão criados
-    mr-software-sickday-bundle1:
-        title: Item do menu
-        description: Os administradores pode navegar rapidamente pelo quadro de horários (dias de licença médica) dos usuários
-    mr-software-sickday-bundle2:
-        title: Item do menu
-        description: Requer um PDF ao criar um novo dia de licença médica
-    mr-software-vacation-bundle1:
-        title: Item do menu
-        description: Os administradores podem ver o histórico das férias
-    mr-software-vacation-bundle2:
-        title: Item do menu
-        description: Os administradores podem editar os dias de folga pela quantidade
-    mr-software-vacation-bundle3:
-        title: Item do menu
-        description: Os administradores podem ver um resumo de todos os dias de folga
-    mr-software-vacation-bundle4:
-        title: Item do menu
-        description: Os administradores podem configurar feriados nacionais/locais
-    mr-software-vacation-bundle5:
-        title: Item do menu
-        description: Os administradores podem ver todos os pedidos de férias
     pcsg-recurring-budget-bundle0:
-        title: Configurações do projeto
         description: Configurações do projeto para orçamento recorrente.
     pcsg-recurring-budget-bundle1:
-        title: Comando CLI
         description: Saída do comando CLI que credita orçamentos e faz o cálculo das estatísticas do projeto.
     pcsg-recurring-budget-bundle2:
-        title: Exportação do PDF
         description: Exemplo de exportação de um resumo mensal do orçamento em PDF.
     pcsg-recurring-budget-bundle5:
-        title: E-mail com as estatísticas orçamentárias
         description: Um exemplo de um e-mail com as estatísticas orçamentárias enviado à equipe do projeto após um intervalo orçamental completo.
     pcsg-recurring-budget-bundle3:
-        title: Visão geral dos orçamentos do projeto
         description: Lista todos os projetos com seus respectivos orçamentos disponíveis atualmente (tempo ou dinheiro) e o total dos orçamentos.
     pcsg-recurring-budget-bundle4:
-        title: Histórico dos orçamentos do projeto
         description: Lista todos os intervalos orçamentais que foram concluídos e mostra as estatísticas para cada um deles.
     ticesoftware-kimaibar-macos-client4:
-        title: Conectar-se com Kimai
         description: Conecte o seu servidor Kimai e seja dono dos seus dados.
     ticesoftware-kimaibar-macos-client1:
-        title: KimaiBar
         description: Controle de tempo inteligente na sua barra do menu
     ticesoftware-kimaibar-macos-client2:
-        title: Ocioso ou em uma chamada?
         description: Jamais se esqueça de pausar o cronômetro ou de continuá-lo.
     ticesoftware-kimaibar-macos-client3:
-        title: Alternar projetos
         description: Alterne para tarefas mais recentes com um único clique ou adicione novas.
     owlysk-codetimer-screen1:
-        title: Ferramenta CodeTimer para o desktop
         description: Ferramenta desktop para o Kimai.
     owlysk-codetimer-screen2:
-        title: Ferramenta CodeTimer para o desktop
         description: Ferramenta desktop para o Kimai.
     owlysk-codetimer-screen3:
-        title: Ferramenta CodeTimer para o desktop
         description: Ferramenta desktop para o Kimai.
+    controlling-bundle0:
+        description: Lista de todos os feriados e grupos, com a possibilidade de importar e editar as férias
+    controlling-bundle1:
+        description: Há uma grande lista de países e regiões para os quais você pode importar os feriados por ano
+    controlling-bundle2:
+        description: Para cada usuário, um alvo por hora pode ser armazenado por semana. Além disso, você pode configurar o grupo de férias, o primeiro dia de trabalho e a quantidade de feriados.
+    controlling-bundle3:
+        description: O resumo mostra o alvo e as horas reais por mês e por ano, incluindo outra linha para reservas manuais
+    controlling-bundle4:
+        description: As reservas manuais permitem o ajuste da conta de horas, por exemplo, para transportar horas do ano anterior ou para escrever as horas pagas
+    controlling-bundle5:
+        description: Avaliação diária de horas trabalhadas e devida, incluindo a exposição de todas as ausências (feriado, doença, etc.), com a opção de fechamento de fim de mês
+    controlling-bundle6:
+        description: O usuário selecionado não tem configurações de contrato salvas no perfil e o Kimai pode, portanto, apenas exibir as horas trabalhadas
+    simonschaufi-customer-email-report-bundle0:
+        description: Administração do cliente com a exibição da nova configuração do plug-in
+    simonschaufi-customer-email-report-bundle1:
+        description: Relatório diário como um e-mail responsivo para o cliente
+    lnngyn-period-insert-bundle0:
+        description: Página de inserção do período para gerar registros na planilha de horas
+    lnngyn-period-insert-bundle1:
+        description: Página de inserção de período, disponível nos modos de duração e inserção de controle de tempo

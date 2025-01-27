@@ -12,14 +12,15 @@
 {% endfor %}
 {% if versions.size > 0 %}
     <div class="dropdown">
-        <a class="btn  btn-ghost-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Older versions
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
             {% for v in versions %}
             <a class="dropdown-item" href="{{ paths[forloop.index0] }}">Kimai {{ v }}</a>
             {% endfor %}
-            <a class="dropdown-item" href="/documentation/{{ page.slug }}.html">{{ site.kimai_v2_version }} (latest version)</a>
+            {% assign actual_doc = site.documentation | find: "slug", page.slug %}
+            <a class="dropdown-item" href="{% link {{ actual_doc.path }} %}">{{ site.kimai_v2_version }} (latest version)</a>
         </div>
     </div>
 {% endif %}

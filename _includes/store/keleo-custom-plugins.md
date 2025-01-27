@@ -6,7 +6,7 @@ For example if you want to:
 - send regular reports to your customers
 - generate additional statistics for the work of your users and projects
 
-Please contact me via [support@kimai.org](mailto:support@kimai.org) for any inquiry.
+Please contact me via [{{ site.support_email }}](mailto:{{ site.support_email }}) for any inquiry.
 
 ### Pricing
  

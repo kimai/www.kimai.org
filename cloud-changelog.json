@@ -1,0 +1,16 @@
+---
+layout: none
+sitemap: false
+permalink: /cloud-changelog.json
+---
+{%- assign changes = site.changelogs | reverse -%}
+[
+    {% for changelog in changes limit: 5 %}
+    {
+        "title": "{{ changelog.title }}",
+        "content": {{ changelog.content | trim | jsonify }},
+        "url": "{{ changelog.url | absolute_url }}",
+        "date": "{{ changelog.date|date_to_xmlschema }}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+]

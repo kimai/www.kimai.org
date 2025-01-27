@@ -1,51 +1,11 @@
 
 <div class="col-sm-12 col-lg-4">
     <div class="card card-link card-link-pop">
-        <div class="ribbon ribbon-top bg-yellow">
-            <i class="far fa-star fa-2x"></i>
-        </div>
-        <div class="card-body text-center">
+        <div class="card-body">
             <h3 class="card-title">{{ site.data[page.lang].translation.cloud-title }}</h3>
-            <ul class="list-unstyled lh-lg">
-                <li>
-                    {{ site.data[page.lang].translation.cloud-feature-ssl }}
-                    <i class="fas fa-check text-success"></i>
-                </li>
-                <li>
-                    {{ site.data[page.lang].translation.cloud-feature-hosting }}
-                    <i class="fas fa-check text-success"></i>
-                </li>
-                <li>
-                    {{ site.data[page.lang].translation.cloud-feature-backups }}
-                    <i class="fas fa-check text-success"></i>
-                </li>
-                <li>
-                    {{ site.data[page.lang].translation.cloud-plugin-fields }}
-                    <i class="fas fa-check text-success"></i>
-                </li>
-                <li>
-                    {{ site.data[page.lang].translation.cloud-plugin-tasks }}
-                    <i class="fas fa-check text-success"></i>
-                </li>
-                <li>
-                    {{ site.data[page.lang].translation.cloud-plugin-expenses }}
-                    <i class="fas fa-check text-success"></i>
-                </li>
-                <li>
-                    {{ site.data[page.lang].translation.cloud-plugin-audit }}
-                    <i class="fas fa-check text-success"></i>
-                </li>
-                <li>
-                    <br>
-                    {{ site.data[page.lang].translation.cloud-free-plan }}
-                </li>
-            </ul>
+            {% include list-cloud-features.html %}
             <div class="text-center mt-4">
-                {% assign cloud_url = "https://www.kimai.cloud/start-trial" %}
-                {% if page.lang == "de" %}
-                    {% assign cloud_url = "https://www.kimai.cloud/de/testphase-beginnen" %}
-                {% endif %}
-                <a href="{{ cloud_url }}" class="btn btn-danger w-100">{{ site.data[page.lang].translation.cloud-call-to-action }}</a>
+                {% include link-cloud-start.html classes="btn btn-danger w-100" %}
             </div>
         </div>
     </div>

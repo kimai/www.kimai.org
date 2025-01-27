@@ -1,0 +1,15 @@
+{%- assign targetUrl = site.language_base[include.language] -%}
+{%- if include.url != nil -%}
+{%- assign targetUrl = targetUrl | append: include.url -%}
+{%- if site.custom_domain[include.language] -%}
+{%- assign replacer = '/' | append: include.language | append: '/' -%}
+{%- assign targetUrl = targetUrl | replace: replacer , '/' -%}
+{%- endif -%}
+{%- else -%}
+{%- unless site.custom_domain[include.language] -%}
+{%- if include.language != 'en' -%}
+{%- assign targetUrl = targetUrl | append: '/' | append: include.language | append: '/' -%}
+{%- endif -%}
+{%- endunless -%}
+{%- endif -%}
+{{- targetUrl -}}

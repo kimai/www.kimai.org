@@ -1,0 +1,118 @@
+---
+layout: base
+---
+{% assign homepage = site.pages | where: 'lang', page.lang | find: 'slug', 'index' %}
+{% assign features = site.pages | where: 'lang', page.lang | find: 'slug', 'features' %}
+
+<main class="page-wrapper">
+    {% include header-navigation.html %}
+
+    <section class="container pt-4 pb-5 mb-lg-5">
+
+        <nav class="d-md-none pb-3 mb-2 mb-lg-3" aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item">
+                    <a href="{{ homepage.url }}"><i class="bx bx-home-alt fs-lg me-1"></i>{{ site.data[page.lang].translation.index.name }}</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="{% link _pages/industry.html %}">{{ site.data[page.lang].translation.industries.name }}</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
+            </ol>
+        </nav>
+
+        <div class="row row-cols-1 row-cols-md-2 g-0 pb-2">
+            <div class="col order-md-2 position-relative bg-position-center bg-size-cover bg-repeat-0 zindex-2" style="background-image: url({{ page.image.url }}); border-radius: .5rem .5rem .5rem 0;">
+                <div style="height: 250px;"></div>
+            </div>
+
+            <div class="col order-md-1">
+                <nav class="d-none d-md-block py-3 mb-2 mb-lg-3" aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item">
+                            <a href="{{ homepage.url }}"><i class="bx bx-home-alt fs-lg me-1"></i>{{ site.data[page.lang].translation.index.name }}</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="{% link _pages/industry.html %}">{{ site.data[page.lang].translation.industries.name }}</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
+                    </ol>
+                </nav>
+
+                <div class="bg-secondary rounded-3 p-4 p-lg-5 mt-n2 mt-md-0 me-md-n2">
+                    <div class="px-sm-3 px-xl-4 pt-4 py-md-3 py-lg-4 py-xl-5">
+                        <h1 class="pb-2 pb-xxl-3">{{ page.title }}</h1>
+                        <h3>{{ page.subtitle }}</h3>
+                        <div class="pb-2 mb-4 mb-xxl-5">{{ page.introduction|markdownify }}</div>
+                        <div class="d-xxl-flex align-items-center">
+                            {% include link-cloud-start.html classes="btn btn-success shadow-success btn-lg" %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container pb-5 mb-md-2 mb-lg-5">
+        <div class="row">
+            <div class="col-lg-4 text-center text-lg-start pb-3 pb-lg-0 mb-4 mb-lg-0">
+                <h2 class="h1 mb-lg-4">{{ page.features.title }}</h2>
+                <div class="pb-4 mb-0 mb-lg-3">{{ page.features.introduction|markdownify }}</div>
+                <a href="{{ features.url }}" class="btn btn-primary shadow-primary btn-lg">{{
+                    site.data[page.lang].translation.features.name }}</a>
+            </div>
+            <div class="col-xl-7 col-lg-8 offset-xl-1">
+                <div class="row row-cols-1 row-cols-md-2">
+                    <div class="col">
+                        {% for name in page.features.list %}
+                        {% assign features = site.data.feature | where_exp: "feature", "feature.name == name" %}
+                        {% for feature in features %}
+                        {% include feature-box.html feature=feature %}
+                        {% endfor %}
+                        {% assign mod = forloop.index1 | modulo: 2 %}
+                        {% if mod == 0 %}
+                    </div>
+                    <div class="col">
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% assign testimonial_tag = page.testimonials.tag %}
+    {% assign testimonial_title = page.testimonials.title %}
+    {% assign testimonial_intro = page.testimonials.introduction %}
+    {% assign testimonials = site.data.testimonials | where_exp: "item", "item.tags contains testimonial_tag" | sample: 5 %}
+    {% include testimonials-horizontal-swipe.html testimonials=testimonials title=testimonial_title introduction=testimonial_intro language=page.lang %}
+
+    <section class="container pt-5 mb-1 mb-md-4 mb-lg-5">
+        <div class="row pb-xl-3">
+            <div class="col-xl-5 col-md-6">
+                <h2 class="h1 pb-4 mb-1 mb-lg-3">{{ page.about.title }}</h2>
+            </div>
+            <div class="col-md-6 pb-2 pb-md-0 mb-4 mb-md-0">
+                {{ page.about.introduction|markdownify }}
+            </div>
+        </div>
+    </section>
+
+
+    <section class="container py-5 my-1 my-md-4 my-lg-5">
+        <div class="row">
+            <div class="col-lg-12 mb-4 mb-lg-0">
+                <div class="pe-lg-4 me-lg-3 pe-xl-0 me-xl-0">
+                    <div class="mb-0">
+                        {% assign cta_question = page.cta.question %}
+                        {% assign cta_title = page.cta.title|newline_to_br %}
+                        {% include cta-customizable.html question=cta_question title=cta_title %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+{% include footer.html %}

@@ -1,0 +1,5 @@
+{% assign price = include.amount | times: 1.0 %}
+{% assign price = 100 | divided_by: price %}
+{% assign price = 1 | divided_by: price %}
+{% assign price = price | round: 2 %}
+€ {{ price | round: 2 }}

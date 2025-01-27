@@ -10,12 +10,7 @@ This behavior might not be desired if you export invoice data e.g. to JSON and u
 This bundle adds one new configuration to the "Invoice settings", which can be configured via the global `Settings` 
 screen or from the invoice screen directly.
 
-
-{% capture alert_note %}
+{% alert warning %}
 The [enhanced invoicing plugin]({% link _store/keleo-invoice-bundle.md %}) offers the same features and more. 
-Do not mix these two plugins
-{% endcapture %}
-
-{% assign alert_note = alert_note| markdownify %}
-
-{% include alert.html type="warning" alert=alert_note %}
+Do not mix these two plugins!
+{% endalert %}

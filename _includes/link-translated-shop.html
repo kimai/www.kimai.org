@@ -1,0 +1,18 @@
+{%- if include.item != nil -%}
+    {%- assign language = include.language | default: page.lang -%}
+    {%- assign menu = site.store | where: "slug", include.item | find: "lang", language -%}
+    {%- assign class = '' -%}
+    {%- if include.class != nil -%}
+        {%- assign class = include.class -%}
+    {%- endif -%}
+    <a href="{{ menu.url }}"{% if include.target != nil %} target="{{ include.target }}"{% endif %}{% if class != '' %} class="{{ class }}"{% endif %}>
+        {%- if include.title != nil -%}
+            {{- include.title -}}
+        {%- elsif site.data[page.lang].store.items[menu.slug] != nil -%}
+            {{- site.data[page.lang].store.items[menu.slug].title -}}
+        {%- else -%}
+            {{- menu.title -}}
+        {%- endif -%}
+    </a>
+{%- endif -%}
+

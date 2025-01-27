@@ -1,6 +1,0 @@
-{% assign chapter = site.documentation | where: "slug", include.chapter | first %}
-{% capture documentation_link %}
-[{{ site.data[page.lang].translation.full-documentation }}]({{ chapter.url }})
-{% endcapture %}
-{% assign documentation_link = documentation_link| markdownify %}
-{% include alert.html icon="fas fa-book" alert=documentation_link %}
