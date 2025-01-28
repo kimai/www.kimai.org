@@ -147,17 +147,19 @@ webserver directly.
 ### Netcup
 
 Regardless of which shared hosting package you have, there is only 128M available in the console by default. As a result, the PHP setting `memory_limit` must be increased manually for each console command.
+You can do that by prefixing `php -d memory_limit=-1`.
 
 - Clone Kimai: `git clone -b {{ site.kimai_v2_version }} --depth 1 {{ site.kimai_v2_repo }}.git`
 - Switch to the Kimai directory: `cd kimai`
 - Install composer: `curl -sS https://getcomposer.org/installer | /usr/bin/php`
-- Install dependencies: `COMPOSER_MEMORY_LIMIT=512M php -d memory_limit=512M php composer.phar install {{ site.kimai_v2_composer_flags }}`
+- Install dependencies: `COMPOSER_MEMORY_LIMIT=-1 php -d memory_limit=-1 composer.phar install {{ site.kimai_v2_composer_flags }}`
 - configure your .env file, eg. `nano .env`
 - install kimai: `php bin/console kimai:install -n`
 - reload config: `php bin/console kimai:reload`
 - Configure Netcup (using the customer controlpanel) to use "/kimai/public" as root folder for the domain (or subdomain) of your choice and add SSL (Letsencrypt) for this domain
 
-See issues [#1620]({{ site.kimai_v2_repo }}/issues/1620) and [#4816]({{ site.kimai_v2_repo }}/issues/4816).
+
+See issues [#1620]({{ site.kimai_v2_repo }}/issues/1620), [#4816]({{ site.kimai_v2_repo }}/issues/4816) and [#5322]({{ site.kimai_v2_repo }}/issues/5322).
 
 ### HostEurope
 
