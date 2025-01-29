@@ -1,5 +1,5 @@
 ---
-title: CodeTimer
+title: CodeTimer Desktop
 type: client
 lang: zh_Hant
 permalink: "/zh_Hant/store/owlysk-codetimer.html"
