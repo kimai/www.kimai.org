@@ -802,34 +802,90 @@ You have to create one global activity and grab the ID from the URL, replace <co
 </code></pre></div></div>
 
 <p>Change the “create timesheet” UI, add a button, select a customer on click (note: change the <code class="language-plaintext highlighter-rouge">'1'</code> to an existing customer ID):</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(function() { document.addEventListener('show.bs.modal', function () {
-    const customerSelection = document.getElementById('timesheet_edit_form_customer');
-    if (customerSelection === null) {
-        return;
-    }
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span> 
+    <span class="nb">document</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">show.bs.modal</span><span class="dl">'</span><span class="p">,</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">customerSelection</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">timesheet_edit_form_customer</span><span class="dl">'</span><span class="p">);</span>
+        <span class="k">if </span><span class="p">(</span><span class="nx">customerSelection</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+    
+        <span class="kd">const</span> <span class="nx">rowSelect</span> <span class="o">=</span> <span class="nx">customerSelection</span><span class="p">.</span><span class="nx">parentElement</span><span class="p">;</span>
+    
+        <span class="kd">const</span> <span class="nx">box</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">div</span><span class="dl">'</span><span class="p">);</span>
+        <span class="nx">box</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">mt-2</span><span class="dl">'</span><span class="p">);</span>
+    
+        <span class="kd">const</span> <span class="nx">hint</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">span</span><span class="dl">'</span><span class="p">);</span>
+        <span class="nx">hint</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Suggestions:</span><span class="dl">'</span><span class="p">;</span>
+        <span class="nx">hint</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">me-2</span><span class="dl">'</span><span class="p">);</span>
+    
+        <span class="kd">const</span> <span class="nx">btn</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">button</span><span class="dl">'</span><span class="p">);</span>
+        <span class="nx">btn</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">button</span><span class="dl">'</span><span class="p">;</span>
+        <span class="nx">btn</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">btn</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">btn-white</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">fw-normal</span><span class="dl">'</span><span class="p">);</span>
+        <span class="nx">btn</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Customer #1</span><span class="dl">'</span><span class="p">;</span>
+        <span class="nx">btn</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="nx">customerSelection</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">1</span><span class="dl">'</span><span class="p">;</span> <span class="cm">/* insert a valid customer ID here */</span>
+            <span class="nx">customerSelection</span><span class="p">.</span><span class="nf">dispatchEvent</span><span class="p">(</span><span class="k">new</span> <span class="nc">Event</span><span class="p">(</span><span class="dl">'</span><span class="s1">change</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">bubbles</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}));</span>
+        <span class="p">});</span>
+    
+        <span class="nx">box</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">hint</span><span class="p">);</span>
+        <span class="nx">box</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">btn</span><span class="p">);</span>
+        <span class="nx">rowSelect</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">box</span><span class="p">);</span>
+    <span class="p">});</span> 
+<span class="p">})();</span>
+</code></pre></div></div>
 
-    const rowSelect = customerSelection.parentElement;
+<p>Upon activity selection, load the Activity via API and display the value of the custom-field called <code class="language-plaintext highlighter-rouge">foo</code> beneath the activity box.</p>
 
-    const box = document.createElement('div');
-    box.classList.add('mt-2');
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">show.bs.modal</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">customFieldName</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">foo</span><span class="dl">'</span><span class="p">;</span>
+        <span class="kd">const</span> <span class="nx">activitySelect</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">srcElement</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#timesheet_edit_form_activity</span><span class="dl">'</span><span class="p">);</span>
+        <span class="k">if </span><span class="p">(</span><span class="nx">activitySelect</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
 
-    const hint = document.createElement('span');
-    hint.textContent = 'Suggestions:';
-    hint.classList.add('me-2');
+        <span class="nx">activitySelect</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">change</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="nx">kimai</span><span class="p">.</span><span class="nf">getPlugin</span><span class="p">(</span><span class="dl">'</span><span class="s1">api</span><span class="dl">'</span><span class="p">).</span><span class="nf">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/activities/</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span> <span class="p">{},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kd">let</span> <span class="nx">newContent</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+                <span class="k">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">f</span> <span class="k">of</span> <span class="nx">data</span><span class="p">.</span><span class="nx">metaFields</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">if </span><span class="p">(</span><span class="nx">f</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="nx">customFieldName</span> <span class="o">&amp;&amp;</span> <span class="nx">f</span><span class="p">.</span><span class="nx">value</span> <span class="o">!==</span> <span class="dl">''</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="nx">newContent</span> <span class="o">=</span> <span class="nx">f</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
 
-    const btn = document.createElement('button');
-    btn.type = 'button';
-    btn.classList.add('btn', 'btn-white', 'fw-normal');
-    btn.textContent = 'Customer #1';
-    btn.addEventListener('click', () =&gt; {
-        customerSelection.value = '1'; /* insert a valid customer ID here */
-        customerSelection.dispatchEvent(new Event('change', { bubbles: true }));
-    });
+                <span class="kd">const</span> <span class="nx">activityTextId</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">timesheet_edit_form_activity_</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">customFieldName</span><span class="p">;</span>
+                <span class="kd">let</span> <span class="nx">activityText</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="nx">activityTextId</span><span class="p">);</span>
 
-    box.appendChild(hint);
-    box.appendChild(btn);
-    rowSelect.appendChild(box);
-}); })();
+                <span class="k">if </span><span class="p">(</span><span class="nx">newContent</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">if </span><span class="p">(</span><span class="nx">activityText</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="nx">activityText</span><span class="p">.</span><span class="nx">parentElement</span><span class="p">.</span><span class="nf">remove</span><span class="p">();</span>
+                    <span class="p">}</span>
+                    <span class="k">return</span><span class="p">;</span>
+                <span class="p">}</span>
+                
+                <span class="k">if </span><span class="p">(</span><span class="nx">activityText</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="kd">const</span> <span class="nx">rowSelect</span> <span class="o">=</span> <span class="nx">activitySelect</span><span class="p">.</span><span class="nx">parentElement</span><span class="p">;</span>
+
+                    <span class="kd">const</span> <span class="nx">box</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">div</span><span class="dl">'</span><span class="p">);</span>
+                    <span class="nx">box</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">mt-2</span><span class="dl">'</span><span class="p">);</span>
+
+                    <span class="kd">const</span> <span class="nx">hint</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">span</span><span class="dl">'</span><span class="p">);</span>
+                    <span class="nx">hint</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Foo:</span><span class="dl">'</span><span class="p">;</span>
+                    <span class="nx">hint</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">me-2</span><span class="dl">'</span><span class="p">);</span>
+
+                    <span class="nx">activityText</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">span</span><span class="dl">'</span><span class="p">);</span>
+                    <span class="nx">activityText</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="nx">activityTextId</span><span class="p">;</span>
+
+                    <span class="nx">box</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">hint</span><span class="p">);</span>
+                    <span class="nx">box</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">activityText</span><span class="p">);</span>
+                    <span class="nx">rowSelect</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">box</span><span class="p">);</span>
+                <span class="p">}</span>
+                
+                <span class="nx">activityText</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">newContent</span><span class="p">;</span> 
+            <span class="p">});</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+<span class="p">})();</span>
 </code></pre></div></div>
 
 <h2 id="css">CSS</h2>
