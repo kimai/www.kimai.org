@@ -752,6 +752,22 @@ Xou can add a CSS rule to your twig template:</p>
 <p>More information available in the <a href="https://mpdf.github.io/paging/different-page-sizes.html">MDPF documentation</a> and the
 full list of available sizes <a href="https://mpdf.github.io/reference/mpdf-functions/construct.html">can be found here</a> (check <code class="language-plaintext highlighter-rouge">format</code>).</p>
 
+<h2 id="embedding-images">Embedding images</h2>
+
+<p>The best way to embed an image is abase64 encoded PNG image:</p>
+
+<ul>
+  <li>Convert your image to PNG</li>
+  <li>Encode the image file with <code class="language-plaintext highlighter-rouge">base64</code>, e.g. with the bash command <code class="language-plaintext highlighter-rouge">base64 -i image-file.png</code> or some <a href="https://www.base64-image.de/">online</a> <a href="https://base64.guru/converter/encode/image">tool</a>
+</li>
+  <li>Save the base64 string as Twig variable</li>
+  <li>Add the img tag to your template</li>
+</ul>
+
+<div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span> <span class="k">set</span> <span class="nv">logo</span> <span class="o">=</span> <span class="s1">'A-VERY-LONG-STRING-HERE=='</span> <span class="cp">%}</span>
+<span class="nt">&lt;img</span> <span class="na">style=</span><span class="s">"height: 150px;margin: 10px;"</span> <span class="na">src=</span><span class="s">"data:image/png;base64,</span><span class="cp">{{</span> <span class="nv">logo</span> <span class="cp">}}</span><span class="s">"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
                 </div>
                 
 
@@ -789,6 +805,7 @@ full list of available sizes <a href="https://mpdf.github.io/reference/mpdf-func
 <li class="nav-item"><a href="#font-debugging" class="nav-link">Font debugging</a></li>
 <li class="nav-item"><a href="#custom-fonts" class="nav-link">Custom fonts</a></li>
 <li class="nav-item"><a href="#page-size" class="nav-link">Page size</a></li>
+<li class="nav-item"><a href="#embedding-images" class="nav-link">Embedding images</a></li>
 </ul>
         
         <ul class="nav">
