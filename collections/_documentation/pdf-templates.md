@@ -140,3 +140,17 @@ Available sizes are:
 
 More information available in the [MDPF documentation](https://mpdf.github.io/paging/different-page-sizes.html) and the
 full list of available sizes [can be found here](https://mpdf.github.io/reference/mpdf-functions/construct.html) (check `format`).
+
+## Embedding images
+
+The best way to embed an image is abase64 encoded PNG image:
+
+- Convert your image to PNG
+- Encode the image file with `base64`, e.g. with the bash command `base64 -i image-file.png` or some [online](https://www.base64-image.de/) [tool](https://base64.guru/converter/encode/image)
+- Save the base64 string as Twig variable
+- Add the img tag to your template
+
+```twig
+{% raw %}{% set logo = 'A-VERY-LONG-STRING-HERE==' %}
+<img style="height: 150px;margin: 10px;" src="data:image/png;base64,{{ logo }}" />{% endraw %}
+```
