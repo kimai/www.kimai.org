@@ -40,14 +40,55 @@ these configurations in your template:
 {%- set option = pdfContext.setOption('PDFAauto', true) -%}{% endraw %} 
 ```
 
-## Available fonts
+## Fonts
+
+### Available fonts
 
 The PDF engine comes with many fonts that can be used without the need for installing fonts in your computer system.
 
 - Defaults: `times`, `serif`, `helvetica`, `sans`, `sans`, `courier`, `monospace`
 - Built-in: `dejavusanscondensed`, `dejavusans`, `dejavuserif`, `dejavuserifcondensed`, `dejavusansmono`, `freesans`, `freeserif`, `freemono`, `ocrb`, `abyssinicasil`, `aboriginalsans`, `jomolhari`, `taiheritagepro`, `aegean`, `aegyptus`, `akkadian`, `quivira`, `lannaalif`, `daibannasilbook`, `garuda`, `khmeros`, `dhyana`, `tharlon`, `padaukbook`, `zawgyi-one`, `ayar`, `taameydavidclm`, `mph2bdamase`, `briyaz`, `lateef`, `sun-exta`, `unbatang`
 
-## Missing character
+
+### Default fonts
+
+If you want to use another default font, you can easily change the font for the entire document by adding a bit of CSS:
+
+```twig
+{% raw %}
+<style type="text/css">
+body { font-family: Helvetica, Dejavu, Arial, sans-serif; }
+</style>{% endraw %} 
+```
+
+### Custom fonts
+
+If you want to use a custom font in your PDF, you can configure it like that:
+
+```twig
+{% raw %}{%- set fontData = pdfContext.setOption('fonts', {
+'demo': {
+    'R': 'Demo-Regular.ttf',
+    'B': 'Demo-Bold.ttf',
+    'I': 'Demo-Italic.ttf',
+    'BI': 'Demo-BoldItalic.ttf'
+}
+}) -%}
+<style>
+body { 
+    font-family: 'demo', sans-serif;
+}
+</style>{% endraw %} 
+```
+
+The font files must be stored in the directory `var/data/fonts/` within the Kimai directory, in this case it would be:
+
+- `var/data/fonts/Demo-Regular.ttf`
+- `var/data/fonts/Demo-Bold.ttf`
+- `var/data/fonts/Demo-Italic.ttf`
+- `var/data/fonts/Demo-BoldItalic.ttf`
+
+### Missing character
 
 The default font used in the PDFs does not support certain character ranges, which will usually result in the ☐ box symbol, that symbolizes any character that is not available in the used font.
 Unfortunately it is still not out of the box possible to render or display right-to-left, cyrillic and asian languages in PDFs.
@@ -62,7 +103,7 @@ Activate them in your template by using e.g. this CSS: `body { font-family: sun-
 - **Cyrillic** works with `times`, `sans`, `courier`, `helvetica`, `serif`, `monospace`, `mono`, `dejavusanscondensed`, `dejavusans`, `dejavuserif`, `dejavusansmono`, `freesans`, `freeserif`, `freemono`, `quivira`, `mph2bdamase`, `sun-exta`, `unbatang`
 - **Japanese** works with `sun-exta` and `unbatang`, which can be downloaded from [here](https://www.alanwood.net/downloads/index.html) (if missing on your system)
 
-## Font debugging
+### Font debugging
 
 You can use the following template to debug fonts. Replace the sentence `The quick brown fox jumps over the lazy dog` with the text you want to test.
 
@@ -89,33 +130,6 @@ You can use the following template to debug fonts. Replace the sentence `The qui
 </body>
 </html>{% endraw %}
 ```
-
-## Custom fonts
-
-If you want to use a custom font in your PDF, you can configure it like that:
-
-```twig
-{% raw %}{%- set fontData = pdfContext.setOption('fonts', {
-'demo': {
-    'R': 'Demo-Regular.ttf',
-    'B': 'Demo-Bold.ttf',
-    'I': 'Demo-Italic.ttf',
-    'BI': 'Demo-BoldItalic.ttf'
-}
-}) -%}
-<style>
-body { 
-    font-family: 'demo', sans-serif;
-}
-</style>{% endraw %} 
-```
-
-The font files must be stored in the directory `var/data/fonts/` within the Kimai directory, in this case it would be:
-
-- `var/data/fonts/Demo-Regular.ttf`
-- `var/data/fonts/Demo-Bold.ttf`
-- `var/data/fonts/Demo-Italic.ttf`
-- `var/data/fonts/Demo-BoldItalic.ttf`
 
 ## Page size
 
