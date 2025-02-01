@@ -638,7 +638,9 @@ these configurations in your template:</p>
 <span class="cp">{%</span><span class="o">-</span> <span class="k">set</span> <span class="nv">option</span> <span class="o">=</span> <span class="nv">pdfContext.setOption</span><span class="p">(</span><span class="s1">'PDFAauto'</span><span class="p">,</span> <span class="kp">true</span><span class="p">)</span> <span class="o">-</span><span class="cp">%}</span> 
 </code></pre></div></div>
 
-<h2 id="available-fonts">Available fonts</h2>
+<h2 id="fonts">Fonts</h2>
+
+<h3 id="available-fonts">Available fonts</h3>
 
 <p>The PDF engine comes with many fonts that can be used without the need for installing fonts in your computer system.</p>
 
@@ -649,56 +651,17 @@ these configurations in your template:</p>
 </li>
 </ul>
 
-<h2 id="missing-character">Missing character</h2>
+<h3 id="default-fonts">Default fonts</h3>
 
-<p>The default font used in the PDFs does not support certain character ranges, which will usually result in the ☐ box symbol, that symbolizes any character that is not available in the used font.
-Unfortunately it is still not out of the box possible to render or display right-to-left, cyrillic and asian languages in PDFs.
-Please read the relevant <a href="https://mpdf.github.io/fonts-languages/fonts-in-mpdf-7-x.html">MPDF documentation</a> about fonts and them the chapter about all <a href="https://mpdf.github.io/fonts-languages/available-fonts-v6.html">available fonts</a>.
-As last resort (and only after trying the below hints) read these Adobe <a href="https://helpx.adobe.com/acrobat/using/asian-cyrillic-right-to-left.html">docs</a> and try the downloadable font pack for
-<a href="https://helpx.adobe.com/in/acrobat/kb/windows-font-packs-32-bit-reader.html#Requirements">Windows</a> and <a href="https://helpx.adobe.com/in/acrobat/kb/macintosh-font-packs--acrobat---reader-.html">macOS</a>.</p>
+<p>If you want to use another default font, you can easily change the font for the entire document by adding a bit of CSS:</p>
 
-<p>The following font/language combinations were successfully used by the community.
-Activate them in your template by using e.g. this CSS: <code class="language-plaintext highlighter-rouge">body { font-family: sun-exta, unbatang, sans-serif; }</code></p>
-
-<ul>
-  <li>
-<strong>Hebrew</strong> works with <code class="language-plaintext highlighter-rouge">helvetica</code>, <code class="language-plaintext highlighter-rouge">sans</code>, <code class="language-plaintext highlighter-rouge">dejavusanscondensed</code>, <code class="language-plaintext highlighter-rouge">dejavusans</code>, <code class="language-plaintext highlighter-rouge">freesans</code>, <code class="language-plaintext highlighter-rouge">freeserif</code>, <code class="language-plaintext highlighter-rouge">freemono</code>, <code class="language-plaintext highlighter-rouge">quivira</code>, <code class="language-plaintext highlighter-rouge">mph2bdamase</code>, <code class="language-plaintext highlighter-rouge">sun-exta</code>
-</li>
-  <li>
-<strong>Cyrillic</strong> works with <code class="language-plaintext highlighter-rouge">times</code>, <code class="language-plaintext highlighter-rouge">sans</code>, <code class="language-plaintext highlighter-rouge">courier</code>, <code class="language-plaintext highlighter-rouge">helvetica</code>, <code class="language-plaintext highlighter-rouge">serif</code>, <code class="language-plaintext highlighter-rouge">monospace</code>, <code class="language-plaintext highlighter-rouge">mono</code>, <code class="language-plaintext highlighter-rouge">dejavusanscondensed</code>, <code class="language-plaintext highlighter-rouge">dejavusans</code>, <code class="language-plaintext highlighter-rouge">dejavuserif</code>, <code class="language-plaintext highlighter-rouge">dejavusansmono</code>, <code class="language-plaintext highlighter-rouge">freesans</code>, <code class="language-plaintext highlighter-rouge">freeserif</code>, <code class="language-plaintext highlighter-rouge">freemono</code>, <code class="language-plaintext highlighter-rouge">quivira</code>, <code class="language-plaintext highlighter-rouge">mph2bdamase</code>, <code class="language-plaintext highlighter-rouge">sun-exta</code>, <code class="language-plaintext highlighter-rouge">unbatang</code>
-</li>
-  <li>
-<strong>Japanese</strong> works with <code class="language-plaintext highlighter-rouge">sun-exta</code> and <code class="language-plaintext highlighter-rouge">unbatang</code>, which can be downloaded from <a href="https://www.alanwood.net/downloads/index.html">here</a> (if missing on your system)</li>
-</ul>
-
-<h2 id="font-debugging">Font debugging</h2>
-
-<p>You can use the following template to debug fonts. Replace the sentence <code class="language-plaintext highlighter-rouge">The quick brown fox jumps over the lazy dog</code> with the text you want to test.</p>
-
-<div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="o">-</span> <span class="k">set</span> <span class="nv">defaultFonts</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'times'</span><span class="p">,</span> <span class="s1">'serif'</span><span class="p">,</span> <span class="s1">'helvetica'</span><span class="p">,</span> <span class="s1">'sans'</span><span class="p">,</span> <span class="s1">'sans'</span><span class="p">,</span> <span class="s1">'courier'</span><span class="p">,</span> <span class="s1">'monospace'</span><span class="p">,</span> <span class="s1">'mono'</span><span class="p">]</span> <span class="o">-</span><span class="cp">%}</span>
-<span class="cp">{%</span><span class="o">-</span> <span class="k">set</span> <span class="nv">builtInFonts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"dejavusanscondensed"</span><span class="p">,</span> <span class="s2">"dejavusans"</span><span class="p">,</span> <span class="s2">"dejavuserif"</span><span class="p">,</span> <span class="s2">"dejavuserifcondensed"</span><span class="p">,</span> <span class="s2">"dejavusansmono"</span><span class="p">,</span> <span class="s2">"freesans"</span><span class="p">,</span> <span class="s2">"freeserif"</span><span class="p">,</span> <span class="s2">"freemono"</span><span class="p">,</span> <span class="s2">"ocrb"</span><span class="p">,</span> <span class="s2">"abyssinicasil"</span><span class="p">,</span> <span class="s2">"aboriginalsans"</span><span class="p">,</span> <span class="s2">"jomolhari"</span><span class="p">,</span> <span class="s2">"taiheritagepro"</span><span class="p">,</span> <span class="s2">"aegean"</span><span class="p">,</span> <span class="s2">"aegyptus"</span><span class="p">,</span> <span class="s2">"akkadian"</span><span class="p">,</span> <span class="s2">"quivira"</span><span class="p">,</span> <span class="s2">"lannaalif"</span><span class="p">,</span> <span class="s2">"daibannasilbook"</span><span class="p">,</span> <span class="s2">"garuda"</span><span class="p">,</span> <span class="s2">"khmeros"</span><span class="p">,</span> <span class="s2">"dhyana"</span><span class="p">,</span> <span class="s2">"tharlon"</span><span class="p">,</span> <span class="s2">"padaukbook"</span><span class="p">,</span> <span class="s2">"zawgyi-one"</span><span class="p">,</span> <span class="s2">"ayar"</span><span class="p">,</span> <span class="s2">"taameydavidclm"</span><span class="p">,</span> <span class="s2">"mph2bdamase"</span><span class="p">,</span> <span class="s2">"xbriyaz"</span><span class="p">,</span> <span class="s2">"lateef"</span><span class="p">,</span> <span class="s2">"sun-exta"</span><span class="p">,</span> <span class="s2">"unbatang"</span><span class="p">]</span> <span class="o">-</span><span class="cp">%}</span>
-<span class="cp">{%</span><span class="o">-</span> <span class="k">set</span> <span class="nv">fontData</span> <span class="o">=</span> <span class="nv">pdfContext.setOption</span><span class="p">(</span><span class="s1">'fonts'</span><span class="p">,</span> <span class="nv">customFonts</span><span class="p">)</span> <span class="o">-</span><span class="cp">%}</span>
-<span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="nt">&lt;html&gt;</span>
-<span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;title&gt;</span>Font Demo<span class="nt">&lt;/title&gt;</span>
-<span class="nt">&lt;/head&gt;</span>
-<span class="nt">&lt;body&gt;</span>
-    <span class="nt">&lt;h2&gt;</span>Default PDF fonts<span class="nt">&lt;/h2&gt;</span>
-    <span class="cp">{%</span> <span class="k">for</span> <span class="nv">fontName</span> <span class="ow">in</span> <span class="nv">defaultFonts</span> <span class="cp">%}</span>
-        <span class="nt">&lt;p</span> <span class="na">style=</span><span class="s">"font-family: </span><span class="cp">{{</span> <span class="nv">fontName</span> <span class="cp">}}</span><span class="s">"</span><span class="nt">&gt;</span>The quick brown fox jumps over the lazy dog (<span class="cp">{{</span> <span class="nv">fontName</span> <span class="cp">}}</span>)<span class="nt">&lt;/p&gt;</span>
-    <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
-    <span class="nt">&lt;pagebreak</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;h2&gt;</span>Built-In fonts<span class="nt">&lt;/h2&gt;</span>
-    <span class="cp">{%</span> <span class="k">for</span> <span class="nv">fontName</span> <span class="ow">in</span> <span class="nv">builtInFonts</span> <span class="cp">%}</span>
-        <span class="nt">&lt;p</span> <span class="na">style=</span><span class="s">"font-family: </span><span class="cp">{{</span> <span class="nv">fontName</span> <span class="cp">}}</span><span class="s">"</span><span class="nt">&gt;</span>The quick brown fox jumps over the lazy dog (<span class="cp">{{</span> <span class="nv">fontName</span> <span class="cp">}}</span>)<span class="nt">&lt;/p&gt;</span>
-    <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
-<span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
+<div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;style </span><span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
+<span class="nt">body</span> <span class="p">{</span> <span class="nl">font-family</span><span class="p">:</span> <span class="n">Helvetica</span><span class="p">,</span> <span class="n">Dejavu</span><span class="p">,</span> <span class="n">Arial</span><span class="p">,</span> <span class="nb">sans-serif</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span> 
 </code></pre></div></div>
 
-<h2 id="custom-fonts">Custom fonts</h2>
+<h3 id="custom-fonts">Custom fonts</h3>
 
 <p>If you want to use a custom font in your PDF, you can configure it like that:</p>
 
@@ -725,6 +688,55 @@ Activate them in your template by using e.g. this CSS: <code class="language-pla
   <li><code class="language-plaintext highlighter-rouge">var/data/fonts/Demo-Italic.ttf</code></li>
   <li><code class="language-plaintext highlighter-rouge">var/data/fonts/Demo-BoldItalic.ttf</code></li>
 </ul>
+
+<h3 id="missing-character">Missing character</h3>
+
+<p>The default font used in the PDFs does not support certain character ranges, which will usually result in the ☐ box symbol, that symbolizes any character that is not available in the used font.
+Unfortunately it is still not out of the box possible to render or display right-to-left, cyrillic and asian languages in PDFs.
+Please read the relevant <a href="https://mpdf.github.io/fonts-languages/fonts-in-mpdf-7-x.html">MPDF documentation</a> about fonts and them the chapter about all <a href="https://mpdf.github.io/fonts-languages/available-fonts-v6.html">available fonts</a>.
+As last resort (and only after trying the below hints) read these Adobe <a href="https://helpx.adobe.com/acrobat/using/asian-cyrillic-right-to-left.html">docs</a> and try the downloadable font pack for
+<a href="https://helpx.adobe.com/in/acrobat/kb/windows-font-packs-32-bit-reader.html#Requirements">Windows</a> and <a href="https://helpx.adobe.com/in/acrobat/kb/macintosh-font-packs--acrobat---reader-.html">macOS</a>.</p>
+
+<p>The following font/language combinations were successfully used by the community.
+Activate them in your template by using e.g. this CSS: <code class="language-plaintext highlighter-rouge">body { font-family: sun-exta, unbatang, sans-serif; }</code></p>
+
+<ul>
+  <li>
+<strong>Hebrew</strong> works with <code class="language-plaintext highlighter-rouge">helvetica</code>, <code class="language-plaintext highlighter-rouge">sans</code>, <code class="language-plaintext highlighter-rouge">dejavusanscondensed</code>, <code class="language-plaintext highlighter-rouge">dejavusans</code>, <code class="language-plaintext highlighter-rouge">freesans</code>, <code class="language-plaintext highlighter-rouge">freeserif</code>, <code class="language-plaintext highlighter-rouge">freemono</code>, <code class="language-plaintext highlighter-rouge">quivira</code>, <code class="language-plaintext highlighter-rouge">mph2bdamase</code>, <code class="language-plaintext highlighter-rouge">sun-exta</code>
+</li>
+  <li>
+<strong>Cyrillic</strong> works with <code class="language-plaintext highlighter-rouge">times</code>, <code class="language-plaintext highlighter-rouge">sans</code>, <code class="language-plaintext highlighter-rouge">courier</code>, <code class="language-plaintext highlighter-rouge">helvetica</code>, <code class="language-plaintext highlighter-rouge">serif</code>, <code class="language-plaintext highlighter-rouge">monospace</code>, <code class="language-plaintext highlighter-rouge">mono</code>, <code class="language-plaintext highlighter-rouge">dejavusanscondensed</code>, <code class="language-plaintext highlighter-rouge">dejavusans</code>, <code class="language-plaintext highlighter-rouge">dejavuserif</code>, <code class="language-plaintext highlighter-rouge">dejavusansmono</code>, <code class="language-plaintext highlighter-rouge">freesans</code>, <code class="language-plaintext highlighter-rouge">freeserif</code>, <code class="language-plaintext highlighter-rouge">freemono</code>, <code class="language-plaintext highlighter-rouge">quivira</code>, <code class="language-plaintext highlighter-rouge">mph2bdamase</code>, <code class="language-plaintext highlighter-rouge">sun-exta</code>, <code class="language-plaintext highlighter-rouge">unbatang</code>
+</li>
+  <li>
+<strong>Japanese</strong> works with <code class="language-plaintext highlighter-rouge">sun-exta</code> and <code class="language-plaintext highlighter-rouge">unbatang</code>, which can be downloaded from <a href="https://www.alanwood.net/downloads/index.html">here</a> (if missing on your system)</li>
+</ul>
+
+<h3 id="font-debugging">Font debugging</h3>
+
+<p>You can use the following template to debug fonts. Replace the sentence <code class="language-plaintext highlighter-rouge">The quick brown fox jumps over the lazy dog</code> with the text you want to test.</p>
+
+<div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="o">-</span> <span class="k">set</span> <span class="nv">defaultFonts</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'times'</span><span class="p">,</span> <span class="s1">'serif'</span><span class="p">,</span> <span class="s1">'helvetica'</span><span class="p">,</span> <span class="s1">'sans'</span><span class="p">,</span> <span class="s1">'sans'</span><span class="p">,</span> <span class="s1">'courier'</span><span class="p">,</span> <span class="s1">'monospace'</span><span class="p">,</span> <span class="s1">'mono'</span><span class="p">]</span> <span class="o">-</span><span class="cp">%}</span>
+<span class="cp">{%</span><span class="o">-</span> <span class="k">set</span> <span class="nv">builtInFonts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"dejavusanscondensed"</span><span class="p">,</span> <span class="s2">"dejavusans"</span><span class="p">,</span> <span class="s2">"dejavuserif"</span><span class="p">,</span> <span class="s2">"dejavuserifcondensed"</span><span class="p">,</span> <span class="s2">"dejavusansmono"</span><span class="p">,</span> <span class="s2">"freesans"</span><span class="p">,</span> <span class="s2">"freeserif"</span><span class="p">,</span> <span class="s2">"freemono"</span><span class="p">,</span> <span class="s2">"ocrb"</span><span class="p">,</span> <span class="s2">"abyssinicasil"</span><span class="p">,</span> <span class="s2">"aboriginalsans"</span><span class="p">,</span> <span class="s2">"jomolhari"</span><span class="p">,</span> <span class="s2">"taiheritagepro"</span><span class="p">,</span> <span class="s2">"aegean"</span><span class="p">,</span> <span class="s2">"aegyptus"</span><span class="p">,</span> <span class="s2">"akkadian"</span><span class="p">,</span> <span class="s2">"quivira"</span><span class="p">,</span> <span class="s2">"lannaalif"</span><span class="p">,</span> <span class="s2">"daibannasilbook"</span><span class="p">,</span> <span class="s2">"garuda"</span><span class="p">,</span> <span class="s2">"khmeros"</span><span class="p">,</span> <span class="s2">"dhyana"</span><span class="p">,</span> <span class="s2">"tharlon"</span><span class="p">,</span> <span class="s2">"padaukbook"</span><span class="p">,</span> <span class="s2">"zawgyi-one"</span><span class="p">,</span> <span class="s2">"ayar"</span><span class="p">,</span> <span class="s2">"taameydavidclm"</span><span class="p">,</span> <span class="s2">"mph2bdamase"</span><span class="p">,</span> <span class="s2">"xbriyaz"</span><span class="p">,</span> <span class="s2">"lateef"</span><span class="p">,</span> <span class="s2">"sun-exta"</span><span class="p">,</span> <span class="s2">"unbatang"</span><span class="p">]</span> <span class="o">-</span><span class="cp">%}</span>
+<span class="cp">{%</span><span class="o">-</span> <span class="k">set</span> <span class="nv">fontData</span> <span class="o">=</span> <span class="nv">pdfContext.setOption</span><span class="p">(</span><span class="s1">'fonts'</span><span class="p">,</span> <span class="nv">customFonts</span><span class="p">)</span> <span class="o">-</span><span class="cp">%}</span>
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Font Demo<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Default PDF fonts<span class="nt">&lt;/h2&gt;</span>
+    <span class="cp">{%</span> <span class="k">for</span> <span class="nv">fontName</span> <span class="ow">in</span> <span class="nv">defaultFonts</span> <span class="cp">%}</span>
+        <span class="nt">&lt;p</span> <span class="na">style=</span><span class="s">"font-family: </span><span class="cp">{{</span> <span class="nv">fontName</span> <span class="cp">}}</span><span class="s">"</span><span class="nt">&gt;</span>The quick brown fox jumps over the lazy dog (<span class="cp">{{</span> <span class="nv">fontName</span> <span class="cp">}}</span>)<span class="nt">&lt;/p&gt;</span>
+    <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+    <span class="nt">&lt;pagebreak</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Built-In fonts<span class="nt">&lt;/h2&gt;</span>
+    <span class="cp">{%</span> <span class="k">for</span> <span class="nv">fontName</span> <span class="ow">in</span> <span class="nv">builtInFonts</span> <span class="cp">%}</span>
+        <span class="nt">&lt;p</span> <span class="na">style=</span><span class="s">"font-family: </span><span class="cp">{{</span> <span class="nv">fontName</span> <span class="cp">}}</span><span class="s">"</span><span class="nt">&gt;</span>The quick brown fox jumps over the lazy dog (<span class="cp">{{</span> <span class="nv">fontName</span> <span class="cp">}}</span>)<span class="nt">&lt;/p&gt;</span>
+    <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
 
 <h2 id="page-size">Page size</h2>
 
@@ -800,10 +812,15 @@ full list of available sizes <a href="https://mpdf.github.io/reference/mpdf-func
 <li class="nav-item"><a href="#setting-options" class="nav-link">Setting options</a></li>
 <li class="nav-item"><a href="#changing-the-filename" class="nav-link">Changing the filename</a></li>
 <li class="nav-item"><a href="#pdfa-compliance" class="nav-link">PDF/A compliance</a></li>
+<li class="nav-item">
+<a href="#fonts" class="nav-link">Fonts</a><ul>
 <li class="nav-item"><a href="#available-fonts" class="nav-link">Available fonts</a></li>
+<li class="nav-item"><a href="#default-fonts" class="nav-link">Default fonts</a></li>
+<li class="nav-item"><a href="#custom-fonts" class="nav-link">Custom fonts</a></li>
 <li class="nav-item"><a href="#missing-character" class="nav-link">Missing character</a></li>
 <li class="nav-item"><a href="#font-debugging" class="nav-link">Font debugging</a></li>
-<li class="nav-item"><a href="#custom-fonts" class="nav-link">Custom fonts</a></li>
+</ul>
+</li>
 <li class="nav-item"><a href="#page-size" class="nav-link">Page size</a></li>
 <li class="nav-item"><a href="#embedding-images" class="nav-link">Embedding images</a></li>
 </ul>
