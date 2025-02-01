@@ -42,6 +42,8 @@ these configurations in your template:
 
 ## Fonts
 
+You can change the used font for your PDF templates. 
+
 ### Available fonts
 
 The PDF engine comes with many fonts that can be used without the need for installing fonts in your computer system.
@@ -49,14 +51,12 @@ The PDF engine comes with many fonts that can be used without the need for insta
 - Defaults: `times`, `serif`, `helvetica`, `sans`, `sans`, `courier`, `monospace`
 - Built-in: `dejavusanscondensed`, `dejavusans`, `dejavuserif`, `dejavuserifcondensed`, `dejavusansmono`, `freesans`, `freeserif`, `freemono`, `ocrb`, `abyssinicasil`, `aboriginalsans`, `jomolhari`, `taiheritagepro`, `aegean`, `aegyptus`, `akkadian`, `quivira`, `lannaalif`, `daibannasilbook`, `garuda`, `khmeros`, `dhyana`, `tharlon`, `padaukbook`, `zawgyi-one`, `ayar`, `taameydavidclm`, `mph2bdamase`, `briyaz`, `lateef`, `sun-exta`, `unbatang`
 
-
 ### Default fonts
 
 If you want to use another default font, you can easily change the font for the entire document by adding a bit of CSS:
 
 ```twig
-{% raw %}
-<style type="text/css">
+{% raw %}<style type="text/css">
 body { font-family: Helvetica, Dejavu, Arial, sans-serif; }
 </style>{% endraw %} 
 ```
