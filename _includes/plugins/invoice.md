@@ -42,4 +42,4 @@ This plugins ships renderer for other invoice template formats, such as:
 - XML: with the file extension `.xml.twig`
 - PlainText: with the file extension `.txt.twig`
 
-You can find pre-made templates for these renderer at https://github.com/kimai/invoice-templates/tree/main/data-transfer 
+You can find pre-made templates for these renderer at [this GitHub repository](https://github.com/kimai/invoice-templates/tree/main/data-transfer) 
