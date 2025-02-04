@@ -970,10 +970,11 @@ otherwise the records will not be rendered at all. In that case only the global 
 
 <p>Spreadsheet templates are powered by <a href="https://github.com/PHPOffice/PhpSpreadsheet">PhpSpreadsheet</a>.</p>
 
-<p><strong>Important:</strong> within the first 100 rows you MUST-HAVE the template row for timesheet entries, which means there must be
-a value starting with <code class="language-plaintext highlighter-rouge">${entry.</code> in one of the first 10 columns, otherwise no timesheet records will be rendered!</p>
+<p><strong>Important:</strong> within the first 100 rows of the <strong>active spreadsheet</strong> you MUST-HAVE the template row for timesheet entries, which means there must be
+a value starting with <code class="language-plaintext highlighter-rouge">${entry.</code> in one of the first 10 columns, otherwise no timesheet records will be rendered.</p>
 
-<p>If you don’t have that, you will see the error <code class="language-plaintext highlighter-rouge">Invalid invoice document, no template row found.</code>.</p>
+<p>If you don’t have that, you will see the error <code class="language-plaintext highlighter-rouge">Invalid invoice document, no template row found.</code>.
+This error might also happen if you have multiple sheets in your spreadsheet, and save the file while the active sheet is one without the <code class="language-plaintext highlighter-rouge">${entry.</code> placeholder.</p>
 
 <p><em>Check the default templates if that doesn’t make sense to you ;-)</em></p>
 
