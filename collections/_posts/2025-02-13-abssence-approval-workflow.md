@@ -3,7 +3,7 @@ title: "New absence approval workflow"
 date: "2025-02-13 10:00:00 +0200"
 image: /images/blog/absence-approval-workflow.webp
 author: valentina
-tags: [On-Premise]
+tags: [General]
 excerpt: "Kimai has released a major update that makes absence management for teams easier with an approval workflow."
 ---
 
