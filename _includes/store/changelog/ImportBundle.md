@@ -1,3 +1,10 @@
+**Version 2.18.0**
+
+Compatibility: requires minimum Kimai 2.21.0
+
+- Support: Project number via `projectnumber` for Project importer
+- Support: Customer number via `customernumber` for Customer importer (also possible via `account`)
+
 **Version 2.17.0**
 
 Compatibility: requires minimum Kimai 2.21.0

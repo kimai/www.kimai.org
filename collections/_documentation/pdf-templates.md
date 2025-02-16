@@ -40,14 +40,55 @@ these configurations in your template:
 {%- set option = pdfContext.setOption('PDFAauto', true) -%}{% endraw %} 
 ```
 
-## Available fonts
+## Fonts
+
+You can change the used font for your PDF templates. 
+
+### Available fonts
 
 The PDF engine comes with many fonts that can be used without the need for installing fonts in your computer system.
 
 - Defaults: `times`, `serif`, `helvetica`, `sans`, `sans`, `courier`, `monospace`
 - Built-in: `dejavusanscondensed`, `dejavusans`, `dejavuserif`, `dejavuserifcondensed`, `dejavusansmono`, `freesans`, `freeserif`, `freemono`, `ocrb`, `abyssinicasil`, `aboriginalsans`, `jomolhari`, `taiheritagepro`, `aegean`, `aegyptus`, `akkadian`, `quivira`, `lannaalif`, `daibannasilbook`, `garuda`, `khmeros`, `dhyana`, `tharlon`, `padaukbook`, `zawgyi-one`, `ayar`, `taameydavidclm`, `mph2bdamase`, `briyaz`, `lateef`, `sun-exta`, `unbatang`
 
-## Missing character
+### Default fonts
+
+If you want to use another default font, you can easily change the font for the entire document by adding a bit of CSS:
+
+```twig
+{% raw %}<style type="text/css">
+body { font-family: Helvetica, Dejavu, Arial, sans-serif; }
+</style>{% endraw %} 
+```
+
+### Custom fonts
+
+If you want to use a custom font in your PDF, you can configure it like that:
+
+```twig
+{% raw %}{%- set fontData = pdfContext.setOption('fonts', {
+'demo': {
+    'R': 'Demo-Regular.ttf',
+    'B': 'Demo-Bold.ttf',
+    'I': 'Demo-Italic.ttf',
+    'BI': 'Demo-BoldItalic.ttf'
+}
+}) -%}
+<style>
+body { 
+    font-family: 'demo', sans-serif;
+}
+</style>{% endraw %} 
+```
+
+The font files must be stored in the directory `var/data/fonts/` within the Kimai directory, in this case it would be:
+
+- `var/data/fonts/Demo-Regular.ttf`
+- `var/data/fonts/Demo-Bold.ttf`
+- `var/data/fonts/Demo-Italic.ttf`
+- `var/data/fonts/Demo-BoldItalic.ttf`
+
+### Missing character
 
 The default font used in the PDFs does not support certain character ranges, which will usually result in the ☐ box symbol, that symbolizes any character that is not available in the used font.
 Unfortunately it is still not out of the box possible to render or display right-to-left, cyrillic and asian languages in PDFs.
@@ -62,7 +103,7 @@ Activate them in your template by using e.g. this CSS: `body { font-family: sun-
 - **Cyrillic** works with `times`, `sans`, `courier`, `helvetica`, `serif`, `monospace`, `mono`, `dejavusanscondensed`, `dejavusans`, `dejavuserif`, `dejavusansmono`, `freesans`, `freeserif`, `freemono`, `quivira`, `mph2bdamase`, `sun-exta`, `unbatang`
 - **Japanese** works with `sun-exta` and `unbatang`, which can be downloaded from [here](https://www.alanwood.net/downloads/index.html) (if missing on your system)
 
-## Font debugging
+### Font debugging
 
 You can use the following template to debug fonts. Replace the sentence `The quick brown fox jumps over the lazy dog` with the text you want to test.
 
@@ -90,33 +131,6 @@ You can use the following template to debug fonts. Replace the sentence `The qui
 </html>{% endraw %}
 ```
 
-## Custom fonts
-
-If you want to use a custom font in your PDF, you can configure it like that:
-
-```twig
-{% raw %}{%- set fontData = pdfContext.setOption('fonts', {
-'demo': {
-    'R': 'Demo-Regular.ttf',
-    'B': 'Demo-Bold.ttf',
-    'I': 'Demo-Italic.ttf',
-    'BI': 'Demo-BoldItalic.ttf'
-}
-}) -%}
-<style>
-body { 
-    font-family: 'demo', sans-serif;
-}
-</style>{% endraw %} 
-```
-
-The font files must be stored in the directory `var/data/fonts/` within the Kimai directory, in this case it would be:
-
-- `var/data/fonts/Demo-Regular.ttf`
-- `var/data/fonts/Demo-Bold.ttf`
-- `var/data/fonts/Demo-Italic.ttf`
-- `var/data/fonts/Demo-BoldItalic.ttf`
-
 ## Page size
 
 Want to display the PDF in a different size, e.g. because your customer expects `US-Letter` and not the standard size `DIN-A4`?
@@ -140,3 +154,17 @@ Available sizes are:
 
 More information available in the [MDPF documentation](https://mpdf.github.io/paging/different-page-sizes.html) and the
 full list of available sizes [can be found here](https://mpdf.github.io/reference/mpdf-functions/construct.html) (check `format`).
+
+## Embedding images
+
+The best way to embed an image is abase64 encoded PNG image:
+
+- Convert your image to PNG
+- Encode the image file with `base64`, e.g. with the bash command `base64 -i image-file.png` or some [online](https://www.base64-image.de/) [tool](https://base64.guru/converter/encode/image)
+- Save the base64 string as Twig variable
+- Add the img tag to your template
+
+```twig
+{% raw %}{% set logo = 'A-VERY-LONG-STRING-HERE==' %}
+<img style="height: 150px;margin: 10px;" src="data:image/png;base64,{{ logo }}" />{% endraw %}
+```

@@ -1,0 +1,25 @@
+{%- assign rating = 0 %}
+{%- for testimonial in site.data.testimonials %}
+    {% assign rating = rating | plus: testimonial.rating %}
+{% endfor %}
+{%- assign amount = site.data.testimonials | size %}
+{%- assign amountFloat = amount | times: 1.0 %}
+{%- assign value = rating | divided_by: amountFloat -%}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Kimai",
+    "applicationCategory": "BusinessApplication",
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": {{ value | round: 2 }},
+        "ratingCount": {{ amount }}
+    },
+    "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "EUR"
+    }
+}
+</script>

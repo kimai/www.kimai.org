@@ -169,33 +169,90 @@ document.addEventListener('show.bs.modal', (e) => {
 ```
 
 Change the "create timesheet" UI, add a button, select a customer on click (note: change the `'1'` to an existing customer ID): 
+```javascript
+(function() { 
+    document.addEventListener('show.bs.modal', function () {
+        const customerSelection = document.getElementById('timesheet_edit_form_customer');
+        if (customerSelection === null) {
+            return;
+        }
+    
+        const rowSelect = customerSelection.parentElement;
+    
+        const box = document.createElement('div');
+        box.classList.add('mt-2');
+    
+        const hint = document.createElement('span');
+        hint.textContent = 'Suggestions:';
+        hint.classList.add('me-2');
+    
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.classList.add('btn', 'btn-white', 'fw-normal');
+        btn.textContent = 'Customer #1';
+        btn.addEventListener('click', () => {
+            customerSelection.value = '1'; /* insert a valid customer ID here */
+            customerSelection.dispatchEvent(new Event('change', { bubbles: true }));
+        });
+    
+        box.appendChild(hint);
+        box.appendChild(btn);
+        rowSelect.appendChild(box);
+    }); 
+})();
 ```
-(function() { document.addEventListener('show.bs.modal', function () {
-    const customerSelection = document.getElementById('timesheet_edit_form_customer');
-    if (customerSelection === null) {
-        return;
-    }
 
-    const rowSelect = customerSelection.parentElement;
+Upon activity selection, load the Activity via API and display the value of the custom-field called `foo` beneath the activity box.
 
-    const box = document.createElement('div');
-    box.classList.add('mt-2');
+```javascript
+(function() {
+    document.addEventListener('show.bs.modal', (e) => {
+        const customFieldName = 'foo';
+        const activitySelect = e.srcElement.querySelector('#timesheet_edit_form_activity');
+        if (activitySelect === null) {
+            return;
+        }
 
-    const hint = document.createElement('span');
-    hint.textContent = 'Suggestions:';
-    hint.classList.add('me-2');
+        activitySelect.addEventListener('change', (e) => {
+            kimai.getPlugin('api').get('/api/activities/' + e.target.value, {}, function(data) {
+                let newContent = null;
+                for (const f of data.metaFields) {
+                    if (f.name === customFieldName && f.value !== '') {
+                        newContent = f.value;
+                    }
+                }
 
-    const btn = document.createElement('button');
-    btn.type = 'button';
-    btn.classList.add('btn', 'btn-white', 'fw-normal');
-    btn.textContent = 'Customer #1';
-    btn.addEventListener('click', () => {
-        customerSelection.value = '1'; /* insert a valid customer ID here */
-        customerSelection.dispatchEvent(new Event('change', { bubbles: true }));
+                const activityTextId = 'timesheet_edit_form_activity_' + customFieldName;
+                let activityText = document.getElementById(activityTextId);
+
+                if (newContent === null) {
+                    if (activityText !== null) {
+                        activityText.parentElement.remove();
+                    }
+                    return;
+                }
+                
+                if (activityText === null) {
+                    const rowSelect = activitySelect.parentElement;
+
+                    const box = document.createElement('div');
+                    box.classList.add('mt-2');
+
+                    const hint = document.createElement('span');
+                    hint.textContent = 'Foo:';
+                    hint.classList.add('me-2');
+
+                    activityText = document.createElement('span');
+                    activityText.id = activityTextId;
+
+                    box.appendChild(hint);
+                    box.appendChild(activityText);
+                    rowSelect.appendChild(box);
+                }
+                
+                activityText.textContent = newContent; 
+            });
+        });
     });
-
-    box.appendChild(hint);
-    box.appendChild(btn);
-    rowSelect.appendChild(box);
-}); })();
+})();
 ```

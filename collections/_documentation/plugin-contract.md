@@ -16,6 +16,7 @@ See these videos:
 
 - {% include youtube-video-link.md id="workcontract" %}
 - {% include youtube-video-link.md id="public_holiday" %}
+- {% include youtube-video-link.md id="absence_approval_workflow" %}
 
 ## Import from MR Plugins
 

@@ -2,7 +2,7 @@
 title: "New work times plugin"
 date: "2023-08-27 20:00:00 +0200"
 author: kevinpapst
-tags: [General]
+tags: [On-Premise]
 image: /images/blog/cover-work-contract.webp
 ---
 

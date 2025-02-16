@@ -1,3 +1,11 @@
+**Version 1.19.0**
+
+Compatibility: requires minimum Kimai 2.28.0
+
+- Allow to switch between Google and Yasumi provider for public holidays
+- Do not send emails to deactivated users (both user and supervisor)
+- Link from user profile to absence screen
+
 **Version 1.18.0**
 
 Compatibility: requires minimum Kimai 2.28.0

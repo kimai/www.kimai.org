@@ -12,29 +12,29 @@ You will have to delete the imported customers if you plan to re-import a file.
 
 Supported attributes (field names are case-insensitive):
 
-| Customer attribute | Supported field names |  
-|--------------------|-----------------------|
-| Name               | customer, name        |
-| Account            | account               |
-| Company name       | company               |
-| Description        | description           |
-| E-Mail             | email                 |
-| Country            | country               |
-| Vat-ID             | tax                   |
-| Address            | address               |
-| Contact            | contact               |
-| Currency           | currency              |
-| Timezone           | timezone              |
-| Phone              | phone                 |
-| Mobile             | mobile                | 
-| Fax                | fax                   |
-| Homepage           | homepage              |
-| Color              | color                 |
-| Budget             | budget                |
-| Time budget        | timebudget            |
-| Budget type        | budgettype            |
-| Visible            | visible               |
-| Meta fields        | meta.xxx              |
+| Customer attribute        | Supported field names   |  
+|---------------------------|-------------------------|
+| Name                      | customer, name          |
+| Account / Customer number | account, customernumber |
+| Company name              | company                 |
+| Description               | description             |
+| E-Mail                    | email                   |
+| Country                   | country                 |
+| Vat-ID                    | tax                     |
+| Address                   | address                 |
+| Contact                   | contact                 |
+| Currency                  | currency                |
+| Timezone                  | timezone                |
+| Phone                     | phone                   |
+| Mobile                    | mobile                  | 
+| Fax                       | fax                     |
+| Homepage                  | homepage                |
+| Color                     | color                   |
+| Budget                    | budget                  |
+| Time budget               | timebudget              |
+| Budget type               | budgettype              |
+| Visible                   | visible                 |
+| Meta fields               | meta.xxx                |
 {: .table }
 
 ### Example
@@ -67,6 +67,7 @@ Supported attributes (field names are case-insensitive):
 | End date          | enddate               |
 | Start date        | startdate             |
 | Order number      | ordernumber           | 
+| Project number    | projectnumber         | 
 | Order date        | orderdate             |
 | Color             | color                 |
 | Budget            | budget                |

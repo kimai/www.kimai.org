@@ -319,12 +319,15 @@ Find out more about PHPWord templates [here](https://phpword.readthedocs.io/en/l
 
 Spreadsheet templates are powered by [PhpSpreadsheet](https://github.com/PHPOffice/PhpSpreadsheet).
 
-**Important:** within the first 100 rows you MUST-HAVE the template row for timesheet entries, which means there must be
-a value starting with `${entry.` in one of the first 10 columns, otherwise no timesheet records will be rendered!
+**Important:** within the first 100 rows of the **active spreadsheet** you MUST-HAVE the template row for timesheet entries, which means there must be
+a value starting with `${entry.` in one of the first 10 columns, otherwise no timesheet records will be rendered. 
+
+If you don't have that, you will see the error `Invalid invoice document, no template row found.`.
+This error might also happen if you have multiple sheets in your spreadsheet, and save the file while the active sheet is one without the `${entry.` placeholder.  
 
 _Check the default templates if that doesn't make sense to you ;-)_
 
-This row will then be cloned for every timesheet entry.
+The row containing the `${entry.` template will be cloned for every timesheet entry.
 
 See below in `Template variables` to find out which variables you can use.
 

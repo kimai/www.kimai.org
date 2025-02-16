@@ -1,3 +1,10 @@
+**Version 2.12.0**
+
+Compatibility: requires minimum Kimai 2.25.0
+
+- Capture user field `supervisor`
+- Fix several missing translations
+
 **Version 2.10.0**
 
 Compatibility: requires minimum Kimai 2.21.0
