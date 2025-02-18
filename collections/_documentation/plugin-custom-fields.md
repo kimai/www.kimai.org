@@ -85,6 +85,17 @@ If you want to use custom roles, you have to follow the documented rules for rol
 
 So a role name like `Manager` does not work, it must be `ROLE_MANAGER`.
 
+### Customer, Project and Activity
+
+You cannot limit the visibility of fields by `Customer`, `Project` or `Activity` when creating a new timesheet.
+Because at the moment the form is opened, it is unknown which `Customer`, `Project` and `Activity` the user chooses.
+
+The same can applies to the custom fields:
+- `Project`, if there is no pre-selection (e.g. creation with the `Customer` detail screen)
+- `Activity`, if there is no pre-selection (e.g. creation with the `Project` detail screen) 
+
+Once you open an existing record, you can now see the custom field, as its visibility can be detected.
+
 ## Permissions
 
 | Permission Name         | Description                                         |
