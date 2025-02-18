@@ -783,6 +783,19 @@ If you want to use custom roles, you have to follow the documented rules for rol
 
 <p>So a role name like <code class="language-plaintext highlighter-rouge">Manager</code> does not work, it must be <code class="language-plaintext highlighter-rouge">ROLE_MANAGER</code>.</p>
 
+<h3 id="customer-project-and-activity">Customer, Project and Activity</h3>
+
+<p>You cannot limit the visibility of fields by <code class="language-plaintext highlighter-rouge">Customer</code>, <code class="language-plaintext highlighter-rouge">Project</code> or <code class="language-plaintext highlighter-rouge">Activity</code> when creating a new timesheet.
+Because at the moment the form is opened, it is unknown which <code class="language-plaintext highlighter-rouge">Customer</code>, <code class="language-plaintext highlighter-rouge">Project</code> and <code class="language-plaintext highlighter-rouge">Activity</code> the user chooses.</p>
+
+<p>The same can applies to the custom fields:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Project</code>, if there is no pre-selection (e.g. creation with the <code class="language-plaintext highlighter-rouge">Customer</code> detail screen)</li>
+  <li><code class="language-plaintext highlighter-rouge">Activity</code>, if there is no pre-selection (e.g. creation with the <code class="language-plaintext highlighter-rouge">Project</code> detail screen)</li>
+</ul>
+
+<p>Once you open an existing record, you can now see the custom field, as its visibility can be detected.</p>
+
 <h2 id="permissions">Permissions</h2>
 
 <table class="table">
@@ -820,7 +833,7 @@ If you want to use custom roles, you have to follow the documented rules for rol
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#field-types" class="nav-link">Field types</a><ul><li class="nav-item"><a href="#checkbox" class="nav-link">Checkbox</a></li><li class="nav-item"><a href="#choice-list" class="nav-link">Choice-list</a></li><li class="nav-item"><a href="#invoice-template" class="nav-link">Invoice template</a></li><li class="nav-item"><a href="#auto-tags" class="nav-link">Auto-Tags</a></li></ul></li><li class="nav-item"><a href="#default-value" class="nav-link">Default value</a></li><li class="nav-item"><a href="#visibility" class="nav-link">Visibility</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#field-types" class="nav-link">Field types</a><ul><li class="nav-item"><a href="#checkbox" class="nav-link">Checkbox</a></li><li class="nav-item"><a href="#choice-list" class="nav-link">Choice-list</a></li><li class="nav-item"><a href="#invoice-template" class="nav-link">Invoice template</a></li><li class="nav-item"><a href="#auto-tags" class="nav-link">Auto-Tags</a></li></ul></li><li class="nav-item"><a href="#default-value" class="nav-link">Default value</a></li><li class="nav-item"><a href="#visibility" class="nav-link">Visibility</a><ul><li class="nav-item"><a href="#customer-project-and-activity" class="nav-link">Customer, Project and Activity</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
         
     </aside>
 
