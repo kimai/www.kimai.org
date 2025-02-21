@@ -624,12 +624,14 @@
                 <div id="documentation-content">
                     <p>Projects in Kimai are assigned to customers and are linked to activities, which are then used for time-records.</p>
 
-<h2 id="creating-a-project">Creating a project</h2>
+<p>The project administration can be found at <code class="language-plaintext highlighter-rouge">Administration &gt; Projects</code>.</p>
+
+<h2 id="create-a-project">Create a project</h2>
 
 <p>There is a configuration (can be configured at <a href="/documentation/configurations.html">System &gt; Settings</a>), which allows to copy teams of the current user to newly created projects. 
 This is mostly useful when teamleads manage their own projects and should have immediate access to them after creation.</p>
 
-<h2 id="managing-projects">Managing projects</h2>
+<h2 id="manage-projects">Manage projects</h2>
 
 <h3 id="colors">Colors</h3>
 
@@ -779,21 +781,14 @@ Even though she has a higher internal cost of 45 € / hour, her work earns 85 �
 
 <p>Please note:</p>
 <ul>
-  <li>all currently linked objects will still show the project in the dropdown as pre-selected option
+  <li>All currently linked objects will still show the project in the dropdown as pre-selected option
     <ul>
-      <li>you can still change the project on timesheet records and activities, which used it before</li>
-      <li>you cannot create new activities for this project</li>
-      <li>you cannot create new timesheet records for this project</li>
+      <li>You can still change the project on timesheet records and activities, which used it before</li>
+      <li>You cannot create new activities for this project</li>
+      <li>You cannot create new timesheet records for this project</li>
     </ul>
   </li>
-  <li>you can still access the hidden entries by changing the visibility filter on the toolbars</li>
-</ul>
-
-<p>The visibility filter in the toolbar has three state:</p>
-<ul>
-  <li>Visible: Yes (all projects that are “really” visible, meaning: the project and linked customer are visible)</li>
-  <li>Visible: No (all projects that are exclusively invisible by their own visibility state)</li>
-  <li>Visible “empty” (all projects: not filtering on their own or the customers visibility)</li>
+  <li>You can still access invisible projects by changing the visibility filter on the listing view</li>
 </ul>
 
 <h3 id="permissions">Permissions</h3>
@@ -804,7 +799,33 @@ Even though she has a higher internal cost of 45 € / hour, her work earns 85 �
   <li>If a team is assigned to the project, only team members can use it, while also respecting the customer teams</li>
 </ul>
 
-<h2 id="filter-and-search">Filter and search</h2>
+<h2 id="project-listing">Project listing</h2>
+
+<figure class="d-block figure mb-3" style="max-width: 700px">
+    <img src="/images/documentation/project-filter.webp" class="figure-img img-fluid rounded" />
+    <figcaption class="figure-caption">Project toolbar filter</figcaption>
+</figure>
+
+<p>The <strong>Visible</strong> filter in the toolbar has three states:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Yes</code> - all visible projects: the project itself and its customer are visible</li>
+  <li><code class="language-plaintext highlighter-rouge">No</code> - all projects that are exclusively invisible by their own visibility state</li>
+  <li><code class="language-plaintext highlighter-rouge">Both</code> - all projects: not filtering on their own or the customer visibility</li>
+</ul>
+
+<h3 id="invisible-projects">Invisible projects</h3>
+
+<p>Projects can be invisible or inactive (due to end or start date). By default, only visible projects will be shown.
+But you can use the project filter to show all or only invisible projects.</p>
+
+<p>Invisible projects will be highlighted in the listing table:</p>
+
+<figure class="d-block figure mb-3" style="max-width: 700px">
+    <img src="/images/documentation/project-listing-visibility.webp" class="figure-img img-fluid rounded" />
+    <figcaption class="figure-caption">Visible and invisible projects in the project listing</figcaption>
+</figure>
+
+<h3 id="filter-and-search">Filter and search</h3>
 
 <p>The search supports filtering by the fields:</p>
 <ul>
@@ -847,11 +868,12 @@ This would find all entries with the custom field <code class="language-plaintex
   <li>The <code class="language-plaintext highlighter-rouge">*</code> search term (e.g. <code class="language-plaintext highlighter-rouge">location:*</code>) will find all entries that have any value in the <code class="language-plaintext highlighter-rouge">location</code> field (basically the opposite of <code class="language-plaintext highlighter-rouge">~</code>)</li>
 </ul>
 
-<h2 id="deleting-a-project">Deleting a project</h2>
+<h3 id="delete-a-project">Delete a project</h3>
 
-<p>Projects can be deleted from the Project listing view via <code class="language-plaintext highlighter-rouge">Administration &gt; Projects</code>.</p>
+<p>Projects can be deleted from the <code class="language-plaintext highlighter-rouge">Project listing</code> view.</p>
 
-<p>Usually it is not a good idea to delete a used project, consider to switch the visibility instead to hide it.</p>
+<div class="alert alert-danger d-flex" role="alert"><i class="bx bx-info-circle lead me-3"></i><p>Usually it is not a good idea to delete a project that was used before, as all linked activities and especially timesheets will be deleted as well. Consider to switch the visibility instead to hide it.</p>
+</div>
 
 <p>Right-click on a row (or open the action dropdown at the end of it) to see all available actions for the selected project.
 The last action in the list is <code class="language-plaintext highlighter-rouge">Delete</code> - once you click it you wil get a feedback screen which either tells you that the
@@ -871,7 +893,7 @@ the attached timesheets to another project.</p>
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#creating-a-project" class="nav-link">Creating a project</a></li><li class="nav-item"><a href="#managing-projects" class="nav-link">Managing projects</a><ul><li class="nav-item"><a href="#colors" class="nav-link">Colors</a></li><li class="nav-item"><a href="#start-date--end-date" class="nav-link">Start date / end date</a></li><li class="nav-item"><a href="#billable" class="nav-link">Billable</a></li><li class="nav-item"><a href="#budgets" class="nav-link">Budgets</a></li><li class="nav-item"><a href="#budget-type" class="nav-link">Budget type</a></li><li class="nav-item"><a href="#money-budget" class="nav-link">Money budget</a></li><li class="nav-item"><a href="#time-budget" class="nav-link">Time budget</a></li><li class="nav-item"><a href="#prices" class="nav-link">Prices</a></li><li class="nav-item"><a href="#edit-price-screen" class="nav-link">Edit price screen</a></li><li class="nav-item"><a href="#pricing-example" class="nav-link">Pricing example</a></li><li class="nav-item"><a href="#visibility" class="nav-link">Visibility</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul></li><li class="nav-item"><a href="#filter-and-search" class="nav-link">Filter and search</a></li><li class="nav-item"><a href="#deleting-a-project" class="nav-link">Deleting a project</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#create-a-project" class="nav-link">Create a project</a></li><li class="nav-item"><a href="#manage-projects" class="nav-link">Manage projects</a><ul><li class="nav-item"><a href="#colors" class="nav-link">Colors</a></li><li class="nav-item"><a href="#start-date--end-date" class="nav-link">Start date / end date</a></li><li class="nav-item"><a href="#billable" class="nav-link">Billable</a></li><li class="nav-item"><a href="#budgets" class="nav-link">Budgets</a></li><li class="nav-item"><a href="#budget-type" class="nav-link">Budget type</a></li><li class="nav-item"><a href="#money-budget" class="nav-link">Money budget</a></li><li class="nav-item"><a href="#time-budget" class="nav-link">Time budget</a></li><li class="nav-item"><a href="#prices" class="nav-link">Prices</a></li><li class="nav-item"><a href="#edit-price-screen" class="nav-link">Edit price screen</a></li><li class="nav-item"><a href="#pricing-example" class="nav-link">Pricing example</a></li><li class="nav-item"><a href="#visibility" class="nav-link">Visibility</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul></li><li class="nav-item"><a href="#project-listing" class="nav-link">Project listing</a><ul><li class="nav-item"><a href="#invisible-projects" class="nav-link">Invisible projects</a></li><li class="nav-item"><a href="#filter-and-search" class="nav-link">Filter and search</a></li><li class="nav-item"><a href="#delete-a-project" class="nav-link">Delete a project</a></li></ul></li></ul>
         
     </aside>
 
