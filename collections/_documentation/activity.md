@@ -3,15 +3,19 @@ title: Activities
 description: Activities in Kimai
 ---
 
-Activities describe the type of work performed during a time-record.
+Activities (usually) describe the type of work performed.
 
-## Activity types
+The activity administration can be found at `Administration > Activities`.
 
-Kimai supports two activity types: `global` and `project specific`.
+## Create an activity
 
-### Project specific activities
+You can create activities from the `activity listing` page or from a `project detail` page.
 
-These activities are linked to one project and can only be selected when working on that specific project.
+Kimai supports two activity types: `global` and `project specific` activities.
+
+### Project specific
+
+Project specific activities are linked to one project and can only be selected when working on that specific project.
 
 ### Global activities
 
@@ -24,7 +28,7 @@ The choice of activities depends on your industry and workflow requirements.
 
 Projects have a configuration flag to disallow global activity usage. 
 
-### Changing the activity type
+### Change activity type
 
 Once created, activities have limited type modification options:
 - Project specific activities can be converted to global by clearing the project dropdown
@@ -41,7 +45,7 @@ If you need to change an activity's assignment nevertheless, follow these steps:
 4. Use batch-update to assign the new activity
 5. Delete the old activity once no timesheets use it
 
-## Managing activities
+## Manage activities
 
 ### Colors
 
@@ -88,7 +92,25 @@ Activities follow a hierarchical permission model:
 - Accessible to all users if no teams are assigned at any level (activity, project, customer)
 - When a team is assigned to the activity, only team members can use it, while also respecting the project and customer teams
 
-## Filter and search
+## Activity listing
+
+{% include docs-image.html src="/images/documentation/activity-filter.webp" title="Activity toolbar filter" width="700px" %}
+
+The **Visible** filter in the toolbar has three states:
+- `Yes` - all visible activities: the activity itself and (if non-global) its project and customer are visible
+- `No` - all activities that are exclusively invisible by their own visibility state
+- `Both` - all activities: not filtering on their own or its project and customer visibility
+
+### Invisible activities
+
+Activities can be invisible. By default, only visible activities will be shown.
+But you can use the activity filter to show all or only invisible activities.
+
+Invisible activity will be highlighted in the listing table:
+
+{% include docs-image.html src="/images/documentation/listing-invisible-entry.webp" title="Visible and invisible activities in the activity listing" width="700px" %}
+
+### Filter and search
 
 Available filters:
 - `customer`
@@ -102,9 +124,11 @@ Free text search applies to:
 
 {% include snippets/search-custom-field.md %}
 
-## Deleting an activity
+### Delete an activity
 
-Delete activities via `Administration > Activities`. Consider using visibility settings instead of deletion for used activities.
+Activities can be deleted from the `Activity listing` view.
+
+{% alert danger %}Usually it is not a good idea to delete an activity that was used before, as all linked timesheets will be deleted as well. Consider to switch the visibility instead to hide it.{% endalert %}
 
 Use the row context menu to access the delete option. The system will either:
 - Confirm safe deletion for unused activities

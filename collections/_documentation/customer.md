@@ -5,13 +5,15 @@ description: Customers in Kimai
 
 Customers in Kimai are used to manage project and activities, which are then used for time-records.
 
-It is best-practice to have a customer for your own company, to track times for administrative and other internal work.
+The customer administration can be found at `Administration > Customers`.
+
+{% alert info %}It is best-practice to have a customer for your own company, to track times for administrative and other internal work.{% endalert %}
  
-## Creating a customer
+## Create a customer
 
 Default values for new customers can be configured at [System > Settings]({% link _documentation/configurations.md %}). 
 
-## Managing customers
+## Manage customers
 
 ### Colors
 
@@ -66,7 +68,25 @@ The visibility filter in the toolbar has three state:
 - Accessible to all users if no teams are assigned
 - If a team is assigned to the project, only team members can use it
 
-## Filter and search 
+## Customer listing
+
+{% include docs-image.html src="/images/documentation/customer-filter.webp" title="Customer toolbar filter" width="700px" %}
+
+The **Visible** filter in the toolbar has three states:
+- `Yes` - all visible customer
+- `No` - all invisible customer
+- `Both` - all customer
+
+### Invisible customers
+
+Customers can be invisible. By default, only visible customers will be shown.
+But you can use the customer filter to show all or only invisible customers.
+
+Invisible customers will be highlighted in the listing table:
+
+{% include docs-image.html src="/images/documentation/listing-invisible-entry.webp" title="Visible and invisible customers in the customer listing" width="700px" %}
+
+### Filter and search 
 
 The search supports filtering by the fields:
 - `visibility`
@@ -82,11 +102,11 @@ Besides these filters, you can query for a free search term, which will be searc
 
 {% include snippets/search-custom-field.md %}
 
-## Deleting a customer
+### Delete a customer
 
-Customers can be deleted from the Customer listing view via `Administration > Customers`.
+Customers can be deleted from the `Customer listing` view.
 
-Usually it is not a good idea to delete a used customer, consider to switch the visibility instead to hide it.
+{% alert danger %}Usually it is not a good idea to delete a customer that was used before, as all linked projects, activities and timesheets will be deleted as well. Consider to switch the visibility instead to hide it.{% endalert %}
 
 Right-click on a row (or open the action dropdown at the end of it) to see all available actions for the selected customer.
 The last action in the list is `Delete` - once you click it you wil get a feedback screen which either tells you that the
