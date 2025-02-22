@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="ta" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#4188c9">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="robots" content="index,follow">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+<title>காட் பற்றி – Kimai</title>
+<meta name="description" content="டைம்-டிராக்கர் கிமாய் மற்றும் அதன் டெவலப்பரின் வரலாறு பற்றி அறியவும்.">
+<meta property="og:description" content="டைம்-டிராக்கர் கிமாய் மற்றும் அதன் டெவலப்பரின் வரலாறு பற்றி அறியவும்.">
+<meta name="twitter:description" content="டைம்-டிராக்கர் கிமாய் மற்றும் அதன் டெவலப்பரின் வரலாறு பற்றி அறியவும்.">
+<link type="application/atom+xml" rel="alternate" href="https://www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
+<meta property="og:locale" content="ta">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kimai Time-Tracking">
+<meta property="og:image" content="https://www.kimai.org/images/social-preview.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kimai Time-Tracking">
+<meta name="twitter:site" content="@kimai_org">
+<meta name="twitter:image" content="https://www.kimai.org/images/social-preview.webp">
+<link rel="alternate" hreflang="en" href="https://www.kimai.org/en/about.html">
+<link rel="alternate" hreflang="cs" href="https://www.kimai.org/cs/about.html">
+<link rel="alternate" hreflang="de" href="https://www.kimai.org/de/about.html">
+<link rel="alternate" hreflang="es" href="https://www.kimai.org/es/about.html">
+<link rel="alternate" hreflang="fr" href="https://www.kimai.org/fr/about.html">
+<link rel="alternate" hreflang="he" href="https://www.kimai.co.il/about.html">
+<link rel="alternate" hreflang="hr" href="https://www.kimai.org/hr/about.html">
+<link rel="alternate" hreflang="it" href="https://www.kimai.org/it/about.html">
+<link rel="alternate" hreflang="nl" href="https://www.kimai.org/nl/about.html">
+<link rel="alternate" hreflang="pl" href="https://www.kimai.org/pl/about.html">
+<link rel="alternate" hreflang="pt" href="https://www.kimai.org/pt/about.html">
+<link rel="alternate" hreflang="pt-br" href="https://www.kimai.org/pt_BR/about.html">
+<link rel="alternate" hreflang="ru" href="https://www.kimai.org/ru/about.html">
+<link rel="alternate" hreflang="sk" href="https://www.kimai.org/sk/about.html">
+<link rel="alternate" hreflang="sv" href="https://www.kimai.org/sv/about.html">
+<link rel="alternate" hreflang="ta" href="https://www.kimai.org/ta/about.html">
+<link rel="alternate" hreflang="uk" href="https://www.kimai.org/uk/about.html">
+<link rel="alternate" hreflang="zh-hans" href="https://www.kimai.org/zh_Hans/about.html">
+<link rel="alternate" hreflang="zh-hant" href="https://www.kimai.tw/about.html">
+<link href="/assets/build/main.css?v6" rel="stylesheet" />
+
+</head>
+<body class="">
+
+<main class="page-wrapper">
+    
+
+
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand-lg    bg-light navbar-sticky">
+    <div class="container px-3">
+        
+        <a href="/ta/" class="navbar-brand pe-3">
+        <img src="/images/kimai_logo_48.webp" style="height:36px;width:36px;" alt="கிமாய் - திறந்த மூல நேர -கண்காணிப்பு"> Kimai
+        </a>
+        <div id="navbarNav" class="offcanvas offcanvas-end">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title">Menu</h5>
+                <button type="button" class="btn-close " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    
+                    <li class="nav-item">
+                        <a href="/ta/demo.html" class="nav-link">செயற்காட்சி</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/ta/pricing" class="nav-link">விலை</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">சமூகம்</a>
+                        <ul class="dropdown-menu">
+                            
+                            <li><a href="/ta/store/" class="dropdown-item"><i class="bx bx-extension me-2"></i>செருகுநிரல்கள்</a></li>
+                            <li><a href="/ta/download.html" class="dropdown-item"><i class="bx bxl-docker me-2"></i>நிறுவல்</a></li>
+                            <li><a href="/blog/" class="dropdown-item"><i class="bx bx-news me-2"></i>வலைப்பதிவு</a></li>
+                            <li><a href="https://github.com/kimai/kimai/discussions" target="_blank" class="dropdown-item"><i class="bx bx-chat me-2"></i>மன்றம்</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">ஆவணப்படுத்துதல்</a>
+                        <ul class="dropdown-menu">
+                            
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-manual.html" class="dropdown-item">
+                                <i class="bx bx-book me-2"></i>
+                                
+                                பயனர் கையேடு
+                            </a></li>
+                            
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/cloud.html" class="dropdown-item">
+                                <i class="bx bx-cloud me-2"></i>
+                                
+                                முகில்
+                            </a></li>
+                            
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-on-premise.html" class="dropdown-item">
+                                <i class="bx bx-server me-2"></i>
+                                
+                                ஆன்-ப்ரைமிச்
+                            </a></li>
+                            
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-developer.html" class="dropdown-item">
+                                <i class="bx bx-code-alt me-2"></i>
+                                
+                                உருவாக்குநர்
+                            </a></li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="pe-lg-1 ms-auto me-2">
+            
+
+
+
+<a href="https://www.kimai.cloud/auth/" class="btn btn-sm fs-sm d-none d-md-inline-flex me-2 btn-outline-secondary">புகுபதிவு</a>
+
+            
+
+
+
+<a href="https://www.kimai.cloud/auth/registration" class="btn btn-success btn-sm fs-sm d-inline-flex">இலவசமாகத் தொடங்குங்கள்</a>
+
+        </div>
+        <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</header>
+
+
+    
+<section class="container mb-5 pt-md-1 pt-lg-4 pt-xl-5">
+    <div class="mt-4 py-2 pb-sm-3 pb-md-4 pb-lg-5 mx-auto text-center" style="max-width: 46.625rem;">
+        <h1 class="h1 mb-4">
+            காட் பற்றி
+        </h1>
+        <p class="mb-4">ஒரு பொழுதுபோக்கு திட்டமாகத் தொடங்கியது இப்போது உலகின் முன்னணி திறந்த மூல நேர கண்காணிப்பு பயன்பாடாகும். அதன் வரலாற்றைப் பார்ப்போம்.</p>
+    </div>
+
+    <div class="steps steps-center steps-sm steps-horizontal-lg" style="--si-steps-number-size-sm: 1.5rem; --si-steps-number-inner-size-sm: 1rem; --si-steps-number-bg: rgba(99,102,241,.2); --si-steps-number-inner-bg: #6366f1;">
+
+        <div class="step">
+            <div class="step-number"><div class="step-number-inner"></div></div>
+            <div class="step-body">
+                <h3 class="mb-3">2018</h3>
+                <p class="mb-0">கிமாய் மறு எழுதுதல் சமூகத்திற்குள் செல்வதைக் கண்டறிந்துள்ளது, தரவு இடம்பெயர்வு பணிகள், தத்தெடுப்பு அதிகரித்து வருகிறது.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number"><div class="step-number-inner"></div></div>
+            <div class="step-body">
+                <h3 class="mb-3">2019</h3>
+                <p class="mb-0">கட்டண திறந்த மூல மென்பொருளுக்கான வட்டியை ஆய்வு செய்ய முதல் செருகுநிரல்கள் உருவாக்கப்பட்டன.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number"><div class="step-number-inner"></div></div>
+            <div class="step-body">
+                <h3 class="mb-3">2020</h3>
+                <p class="mb-0">கிமாய் சந்தா அடிப்படையிலான சாசாக வழங்கப்படுகிறது, ஒரு இலவச மற்றும் இரண்டு கட்டண திட்டங்களுடன்.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number"><div class="step-number-inner"></div></div>
+            <div class="step-body">
+                <h3 class="mb-3">2023</h3>
+                <p class="mb-0">அனைத்து கடின உழைப்பும் இறுதியாக பலனளித்தன, கிமாய் இப்போது எனது 100% முழுநேர வேலை. மிக்க நன்றி!</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="container mb-5 py-md-3 py-lg-4 py-xl-5">
+    <img src="/images/kimai_logo.webp" class="float-sm-end" style="margin-left: 20px" alt="Kimai logo">
+    <p>கிமாய் ஒரு நீண்ட வரலாற்றைக் கொண்ட நேர கண்காணிப்பு மென்பொருள், முதல் பதிப்பு 2006 இல் மீண்டும் வெளியிடப்பட்டது. இதை நான் ஏன் குறிப்பிடுகிறேன்? ஏனென்றால், பல திட்டங்கள் வருவதையும், அதன்பிறகு செல்வதையும் நான் கண்டிருக்கிறேன் - நான் சொல்லும்போது என்னை நம்புங்கள்: கிமாய் தங்குவதற்கு இங்கே இருக்கிறார். நான் வேடிக்கைக்காக கிமாயை வளர்த்துக் கொள்ள பல ஆண்டுகள் செலவிட்டேன், இன்று கிமாய் எனது வணிகம், அதை மேம்படுத்துவதற்கு நான் ஒருபோதும் உந்துதல் பெற்றதில்லை.</p>
+
+<p>நான் ஒரு நோக்கத்திற்காக கிமாயை உருவாக்குகிறேன்: வேலை நேரத்திற்கு பதிவு செய்ய, நிர்வகிக்க, மதிப்பீடு மற்றும் கணக்கில். கிமாய் வரம்பற்ற பயனர்கள், வாடிக்கையாளர்கள், திட்டங்கள் மற்றும் நேர உள்ளீடுகளை ஆதரிக்கிறது, எனவே உங்கள் எல்லா அணிகளையும் ஒரு சுலபமாக பயன்படுத்தக்கூடிய நிறுவலில் நிர்வகிக்கலாம். கிமாய் டசன் கணக்கான மொழிகளில் மொழிபெயர்க்கப்பட்டுள்ளது மற்றும் இணைய அணுகல் மற்றும் உலாவி கொண்ட எந்த சாதனத்திலும் இயங்குகிறது, உங்கள் மொபைல் சாதனத்தில் கூட நீங்கள் நகரும் போது பதிலளிக்கக்கூடிய வடிவமைப்பிற்கு நன்றி.</p>
+
+<p>தனிப்பயனாக்கக்கூடிய விலைப்பட்டியல் வார்ப்புருக்கள் மூலம், உங்கள் உலாவியில் நேரடியாக உங்கள் டைம்சீட்களிலிருந்து விலைப்பட்டியல் உருவாக்கலாம். கிமாயை பல வழிகளில் நீட்டிக்க முடியும், குறிப்பாக செயலில் உள்ள சமூகத்தால் உருவாக்கப்பட்ட பல செருகுநிரல்கள் மூலமாக.</p>
+
+<p>நீங்கள் ஒரு ஃப்ரீலான்சர், ஒரு சிறிய அமைப்பு அல்லது நூற்றுக்கணக்கான ஊழியர்களைக் கொண்ட ஒரு நிறுவனமாக இருந்தாலும், உங்கள் வணிகத்தை நிர்வகிக்க கிமாய் உங்களுக்கு உதவ முடியும். தயவுசெய்து உங்கள் சொந்த மனதை உருவாக்கி, டெமோ நிறுவல்களின் உதவியுடன் கிமாயை சோதிக்கவும்.</p>
+
+</section>
+
+<section class="bg-secondary pb-5 pt-md-1 pt-lg-4 pt-xl-5">
+    <div class="container py-2 py-md-3 py-lg-4 py-xl-5">
+        <div class="row justify-content-center pb-sm-3 pb-md-4 pb-lg-5">
+            <div class="col-md-10 col-lg-8 text-center">
+                <h2 class="h1 mb-4">கிமாய் கட்டுவது யார்?</h2>
+                <p>கிமாய் மற்றும் முகில் ஆகியவை வியன்னாவிலிருந்து (ஆச்திரியா) ஒரு சுயாதீனமான மென்பொருள்-மேம்பட்ட கெவின் உருவாக்கி இயக்கப்படுகின்றன.</p>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 gx-3 gx-lg-4 pb-sm-3 pb-md-4 pb-lg-5">
+            <div class="col-md-4">
+                <div class="position-relative d-flex h-100">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 rounded-3 bg-size-cover bg-repeat-0 bg-position-center" style="background-image: url(/images/kevin-papst.webp);"></div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <figure class="card position-relative border-0 shadow-sm py-3 p-0 p-lg-4 mt-4 mb-0 ms-xl-5">
+                    <span class="btn btn-icon btn-primary btn-lg shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4 ms-lg-5">
+                        <i class="bx bxs-quote-left"></i>
+                    </span>
+                    <div class="card-body mt-2 mb-0">
+                        <p class="fs-lg">
+                        
+                            </p>
+<p>திறந்த மூல தயாரிப்புடன் ஒரு வாழ்க்கையை உருவாக்குவது எப்போதுமே எனது கனவு. கிமாய் மூலம், எனது வாடிக்கையாளர்களுக்கு அதிக மதிப்பை வழங்கும் ஒரு மென்பொருளை என்னால் உருவாக்க முடிந்தது, மேலும் அதன் வளர்ச்சி ஒவ்வொரு நாளும் என்னை இயக்குகிறது.</p>
+
+<p>பல ஆண்டுகளாக பெரிய சமூகத்திற்கு அவர்களின் விசுவாசத்திற்கு எனது சிறப்பு நன்றி, நான் கிமாயின் அடுத்த 10 ஆண்டுகளை எதிர்பார்க்கிறேன்</p>
+
+                        
+                        
+                    </div>
+                    <figcaption class="card-footer border-0 d-sm-flex pt-0 mt-n3 mt-lg-0">
+                        <div class="d-flex align-items-center border-end-sm pe-sm-4 me-sm-4">
+                            <img src="/images/kevin-papst.webp" width="48" class="d-md-none rounded-circle" alt="Ralph Edwards">
+                            <div class="ps-3 ps-md-0">
+                                <h5 class="fw-semibold lh-base mb-0">Kevin Papst</h5>
+                                <span class="fs-sm text-muted">Building Kimai since 2009</span>
+                            </div>
+                        </div>
+                        <p class="d-block my-1 ms-5 mt-sm-0 ms-sm-0">
+                            
+                            <a href="https://www.kevinpapst.de" class="btn btn-icon btn-secondary btn-dribbble btn-lg me-1" role="button" target="_blank">
+                                <i class="bx bx-home"></i>
+                            </a>
+                            
+                            
+                            <a href="https://twitter.com/keleo" class="btn btn-icon btn-secondary btn-twitter btn-lg me-1" role="button" target="_blank">
+                                <i class="bx bxl-twitter"></i>
+                            </a>
+                            
+                            
+                            <a href="https://github.com/sponsors/kevinpapst" class="btn btn-icon btn-secondary btn-github btn-lg me-1" role="button" target="_blank">
+                                <i class="bx bxl-github"></i>
+                            </a>
+                            
+                            
+                            <a href="https://www.paypal.me/kevinpapst" class="btn btn-icon btn-secondary btn-linkedin btn-lg me-1" role="button" target="_blank">
+                                <i class="bx bxl-paypal"></i>
+                            </a>
+                            
+                            
+                            <a href="https://www.amazon.de/hz/wishlist/ls/MY4BEJ8I4CI9/" class="btn btn-icon btn-secondary btn-stack-overflow btn-lg me-1" role="button" target="_blank">
+                                <i class="bx bxl-amazon"></i>
+                            </a>
+                            
+                        </p>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-4">
+                <div class="feature">
+                    <p class="fs-5">ஒத்துழைப்பு</p>
+                    <p>இலவச ஆதரவுடன் வரும் வசதியை வாடிக்கையாளர்கள் பாராட்டுகிறார்கள், பரிமாற்றம் எனது பணியின் முக்கிய பகுதியாகும். கிதுபில் சமூக ஈடுபாட்டை நான் விரும்புகிறேன், ஒத்துழைப்பு மற்றும் சுறுசுறுப்பான வேலை. உங்கள் கருத்தை அடிப்படையாகக் கொண்ட நிலையான முன்னேற்றம் இந்த பயணத்தை ஒரு அசாதாரண அனுபவமாக ஆக்குகிறது.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature">
+                    <p class="fs-5">தொழில்நுட்பம்</p>
+                    <p>டெவலப்பராக, புதிய தொழில்நுட்பங்களை சோதிப்பதை நான் விரும்புகிறேன். இது கிமாயுடன் நீங்கள் தொடர்பு கொள்ளும் முறையை மேம்படுத்தினால், நான் அதை ஒரு வெற்றி-வெற்றி நிலைமை என்று அழைக்கிறேன். இடைமுகம் மற்றும் UX எனக்கு முக்கியமானவை, ஏனெனில் மென்பொருள் பயன்படுத்த எளிதாக இருக்க வேண்டும். பாதுகாப்பு என்பது இயல்புநிலை தேவை மற்றும் திறந்த மூல மென்பொருள் பல வணிகங்களுக்கு ஒரு முக்கியமான செய் காரணியாகும்.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature">
+                    <p class="fs-5">வேலையில் மகிழ்ச்சி</p>
+                    <p>கிமாயின் வளர்ச்சி என்பது நான் விரும்பும் தொழிலின் சிறந்த கலவையாகும், அதன் எல்லையற்ற கல்வியின் சாத்தியக்கூறுகள் மற்றும் எனது குடும்பத்தை ஆதரிக்க பணம் சம்பாதிக்க வேண்டிய தேவை. கிமாய்க்கு நன்றி, நான் என் மனைவி மற்றும் குழந்தையுடன் அதிக நேரம் செலவிட முடியும், இது நீங்கள் கற்பனை செய்யக்கூடிய சிறந்த உந்துதலாகும்.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pb-5 pt-md-1 pt-lg-4 pt-xl-5 mb-5">
+    <div class="container py-2 py-md-3 py-lg-4 py-xl-5">
+        <div class="mt-4 py-2 pb-sm-3 pb-md-4 pb-lg-5 mx-auto text-center" style="max-width: 46.625rem;">
+            <h2 class="h1 mb-4">இது எப்படி தொடங்கியது</h2>
+            <p class="mb-4">கிமாய் ஒரு நீண்ட வரலாற்றைக் கொண்டுள்ளது மற்றும் 2006 முதல் உள்ளது, இது எவ்வாறு தொடங்கியது என்பதற்கான சுருக்கமான கண்ணோட்டம் இங்கே.</p>
+        </div>
+
+        <div class="steps steps-center steps-sm steps-horizontal-lg" style="--si-steps-number-size-sm: 1.5rem; --si-steps-number-inner-size-sm: 1rem; --si-steps-number-bg: rgba(99,102,241,.2); --si-steps-number-inner-bg: #6366f1;">
+            <div class="step">
+                <div class="step-number"><div class="step-number-inner"></div></div>
+                <div class="step-body">
+                    <h3 class="mb-3">2006</h3>
+                    <p class="mb-0">கிமாயின் முதல் பதிப்பு வெளியிடப்பட்டு மெதுவாக வளர்ந்து வரும் பயனர் மற்றும் உருவாக்குபவர் தளத்தைப் பெறுகிறது.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number"><div class="step-number-inner"></div></div>
+                <div class="step-body">
+                    <h3 class="mb-3">2009</h3>
+                    <p class="mb-0">அசல் டெவலப்பரான டோர்ச்டன் கிமாயை மூட விரும்புகிறார். கெவின் உள்ளே நுழைந்து பராமரிப்பாளராகிறார்.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number"><div class="step-number-inner"></div></div>
+                <div class="step-body">
+                    <h3 class="mb-3">2014</h3>
+                    <p class="mb-0">கிமாய் 1 இன் கடைசி வெளியீடு உருவாக்கப்பட்டது, மேம்பாட்டு ச்டால்கள் மற்றும் அதிக செயல்பாடு இல்லை.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container py-2 py-md-3 py-lg-4 py-xl-5">
+        <p>கிமாய் ஒரு நீண்ட வரலாற்றைக் கொண்டுள்ளது, மேலும் 2006 ஆம் ஆண்டில் டார்ச்டன் ஆல்ட்சின் குழு அதை உருவாக்கத் தொடங்கிய காலத்திற்கு முன்னால் இருந்தது. இந்தச் சொல் அதிகாரப்பூர்வமாகக் கண்டுபிடிக்கப்படாத ஒரு நேரத்தில் இது ஒரு பதிலளிக்கக்கூடிய வடிவமைப்பைக் கொண்டிருந்தது (நிறைய சாவாச்கிரிப்ட் மேசிக்கத்திற்கு நன்றி).
+ 2009 ஆம் ஆண்டில் கிமாயின் வளர்ச்சியை நான் ஏற்றுக்கொண்டேன், டார்ச்டன் நேரம் இல்லாததால் அதைத் தடுக்க விரும்பினார், மேலும் பிற திறந்த மூல ஆர்வலர்களின் உதவியுடன் பல ஆண்டுகளாகக் கிமாயை பராமரித்து நீட்டித்துள்ளார்.</p>
+
+<p>இதற்கிடையில், பி.எச்.பி சமூகம் பெரும் முன்னேற்றம் கண்டது, அதே நேரத்தில் கிமாய் அதன் வரலாறு காரணமாக மேலும் பின்தங்கியிருந்தது. தளத்திற்கு பல தொழில்நுட்ப பலவீனங்கள் இருந்தன, மேலும் பல வருட வளர்ச்சிக்குப் பிறகு, குறியீடு தளத்தைப் பராமரிப்பது கடினமாகிவிட்டது.
+ நவீன கட்டமைப்போடு கிமாயை மீண்டும் எழுதுவதற்கான சிந்தனை சில காலமாக இருந்தது, இது சமூக கோரிக்கைகளால் இயக்கப்படுகிறது, ஆனால் இந்த யோசனையை முன்னோக்கி தள்ள யாருக்கும் ஆதாரங்கள் இல்லை. 2017 ஆம் ஆண்டின் இறுதியில், பல காரணிகள் ஒன்றிணைந்தன, அடுத்த படிமலர்ச்சி படியான “கிமாய் 2” ஐ உருவாக்கத் தொடங்குவதற்கான தருணத்தை நான் கைப்பற்றினேன்.</p>
+
+<p>அசல் கிமாய் முதன்முதலில் 2006 இல் வெளியிடப்பட்டது மற்றும் உலகெங்கிலும் உள்ள பலரால் பயன்படுத்தப்பட்டது, அதைப் பற்றியும் அதன் சிறந்த சமூகத்திலும் நான் பெருமைப்படுகிறேன். கிமாய்க்கு பங்களித்த அனைவருக்கும் நன்றி தெரிவிக்க விரும்புகிறேன்.</p>
+
+        <p>
+            <a href="/blog/tags-version-1.html" class="btn btn-outline-primary">
+                பழைய % தலைப்பு % செய்திகளின் காப்பகத்தை இங்கே காணலாம்
+                <i class="bx bx-right-arrow-alt ms-1 fs-lg"></i>
+            </a>
+        </p>
+    </div>
+</section>
+
+<section class="container mb-5">
+    <div class="position-relative bg-dark rounded-3 overflow-hidden px-3 py-5">
+        <span class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(255, 255, 255, .05)"></span>
+        <div class="position-relative zindex-5 text-center my-xl-3 py-1 py-md-4 py-lg-5">
+            <p class="lead text-light opacity-70 mb-3">தொடங்கத் தயாரா?</p>
+            <h2 class="h1 text-light pb-3 pb-lg-0 mb-lg-5">உங்கள் நேரத்தைக் கண்காணிப்பதைத் தொடங்குங்கள்</h2>
+            
+            
+            
+
+
+
+<a href="https://www.kimai.cloud/auth/registration" class="btn btn-success btn-lg">இலவசமாகத் தொடங்குங்கள்</a>
+
+        </div>
+    </div>
+</section>
+
+
+</main>
+
+
+
+
+
+
+
+
+
+<footer class="footer bg-dark pt-5 pb-4">
+    <div class="container pt-1 pt-md-3 pt-lg-4 pt-xl-5">
+        <div class="row">
+            <div class="col-md-5 col-xl-4 mb-4 mb-md-5 mb-lg-0">
+                <div class="d-flex align-items-center pb-3 mb-1">
+                    <div class="navbar-brand text-white p-0 pe-1 me-0">
+                        Kimai
+                    </div>
+                    <hr class="vr mt-2 mx-3" style="height: 26px;">
+                    <div class="text-white fw-semibold ps-1">#1 திறந்த மூல நேர கண்காணிப்பு</div>
+                </div>
+                <p class="text-body fs-sm pb-1 pb-md-2 pb-lg-2 mb-2">
+                    நேர கண்காணிப்பு எளிதானது. அனைத்து அளவிலான அணிகளுக்கும் ஒரு திறந்த மூல தீர்வு-சுய-ஓச்ட் அல்லது சாச்.
+                </p>
+                <div class="d-flex flex-column flex-sm-row flex-lg-column align-items-sm-center align-items-lg-start justify-content-between pb-1 pb-md-2 pb-lg-3 mb-3">
+                    <div class="position-relative">
+                        <div class="dropdown">
+                            <button type="button" class="form-select" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-globe top-50 start-0 text-body me-2"></i>
+                                தமிழ்
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/cs/" class="dropdown-item" title="Kimai - Open Source sledování času">Čeština</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/de/" class="dropdown-item" title="Kimai - Open Source Zeiterfassung">Deutsch</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org" class="dropdown-item" title="Kimai - Open Source time-tracker">English</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/es/" class="dropdown-item" title="Página de inicio de Kimai">Español</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/fr/" class="dropdown-item" title="Kimai - Suivi du temps à code ouvert">Français</a>
+                                
+                                    <a dir="rtl" href="https://www.kimai.co.il" class="dropdown-item" title="Kimai - מעקב שעות בקוד פתוח">עברית</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/hr/" class="dropdown-item" title="Kimai – Program otvorenog koda za evidentiranje vremena">Hrvatski</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/it/" class="dropdown-item" title="Kimai: time-tracker open source">Italiano</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/nl/" class="dropdown-item" title="Kimai - Open Source tijdregistratie">Dutch</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/pl/" class="dropdown-item" title="Kimai - Otwarte oprogramowanie do śledzenia czasu">Polski</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/pt/" class="dropdown-item" title="Kimai - Rastreador de tempo de código aberto">Português</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/pt_BR/" class="dropdown-item" title="Kimai - Rastreador de tempo de código aberto">Português (Brasil)</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/ru/" class="dropdown-item" title="Kimai - регистратор времени с открытым исходным кодом">Русский</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/sk/" class="dropdown-item" title="Kimai - Open Source sledovanie času">Slovenčina</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/sv/" class="dropdown-item" title="Kimai - öppen källkod tidsspårare">Svenska</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/ta/" class="dropdown-item active" title="கிமாய் - திறந்த மூல நேர -கண்காணிப்பு">தமிழ்</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/uk/" class="dropdown-item" title="Kimai — реєстратор часу з відкритим сирцевим кодом">Українська</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/zh_Hans/" class="dropdown-item" title="Kimai - 开源时间跟踪器">中文（中国）</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.tw" class="dropdown-item" title="Kimai —— 開放源始碼的工時追蹤工具">中文（繁體）</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-md-7 offset-xl-1">
+                <div id="footer-links" class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <h6 class="fs-lg mb-1 mb-md-2">
+                            <span class="d-none d-md-block">Company</span>
+                            <a href="#tools" class="d-block text-white dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Company</a>
+                        </h6>
+                        <div id="tools" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/ta/about.html" class="nav-link fs-sm fw-medium px-0 py-1">காட் பற்றி</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/ta/features.html" class="nav-link fs-sm fw-medium px-0 py-1">நற்பொருத்தங்கள்</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/ta/support.html" class="nav-link fs-sm fw-medium px-0 py-1">உதவி</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/ta/reviews" class="nav-link fs-sm fw-medium px-0 py-1">மதிப்புரைகள்</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/en/kimai-discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">தள்ளுபடி குறியீடுகள்</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <h6 class="fs-lg mb-1 mb-md-2">
+                            <span class="d-none d-md-block">Kimai for</span>
+                            <a href="#landing-kimai-for" class="d-block text-white dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Kimai</a>
+                        </h6>
+                        <div id="landing-kimai-for" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/en/time-tracking-non-profit.html" class="nav-link fs-sm fw-medium px-0 py-1">இலாப நோக்கற்ற</a>
+                                </li>
+                                
+                                
+                                <li class="nav-item">
+                                    <a href="/en/agency-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Time-tracking for Time Tracking For Agencies">Agencies</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/consultants-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Time-tracking for Time Tracking For Consultants">Consultants</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/software-developers-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Time-tracking for Time Tracking For Software Developers">Software Developers</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    
+                                    <a href="/en/industry" class="nav-link fs-sm fw-medium px-0 py-1">மேலும் தொழில்கள்</a>
+                                </li>                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <h6 class="fs-lg mb-1 mb-md-2">
+                            <span class="d-none d-md-block">ஒப்பிடுக</span>
+                            <a href="#footer-cmp" class="d-block text-white dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">ஒப்பிடுக</a>
+                        </h6>
+                        <div id="footer-cmp" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/ta/compare/" class="nav-link fs-sm fw-medium px-0 py-1">நேர-கண்காணிப்பாளரை ஒப்பிடுக</a>
+                                </li>
+                                
+                                
+                                    <li class="nav-item">
+                                        <a href="https://www.kimai.org/en/clockify-alternative" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to Clockify">Clockify</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="https://www.kimai.org/en/openproject-alternative" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to OpenProject">OpenProject</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="https://www.kimai.org/en/toggl-alternative" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to toggl track">toggl track</a>
+                                    </li>
+                                
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="d-md-flex align-items-center justify-content-between pt-sm-2 pt-md-4 pt-lg-5 pb-2 mt-4 ">
+    <ul class="nav order-md-1 ms-md-0 mb-3 mb-md-0">
+        <li class="nav-item">
+            <a href="/ta/site-notice.html" class="nav-link fs-sm fw-medium">தள அறிவிப்பு</a>
+        </li>
+        <li class="nav-item">
+            <a href="/ta/privacy-policy.html" class="nav-link fs-sm fw-medium">தனியுரிமைக் கொள்கை</a>
+        </li>
+        <li class="nav-item">
+            <a href="/ta/terms-cloud.html" class="nav-link fs-sm fw-medium">விதிமுறைகள்</a>
+        </li>
+    </ul>
+    <div class="nav order-md-2 mb-3 mb-md-0">
+        
+    <a target="_blank" href="https://github.com/kimai/kimai" class="btn btn-icon btn-secondary btn-github rounded-circle me-3" aria-label="GitHub">
+        <i class="bx bxl-github"></i>
+    </a>
+
+    <a target="_blank" href="https://www.youtube.com/@kimai_org" class="btn btn-icon btn-secondary btn-youtube rounded-circle me-3" aria-label="YouTube">
+        <i class="bx bxl-youtube"></i>
+    </a>
+
+    <a target="_blank" href="https://www.linkedin.com/company/kimai-timetracker/" class="btn btn-icon btn-secondary btn-linkedin rounded-circle me-3" aria-label="LinkedIn">
+        <i class="bx bxl-linkedin"></i>
+    </a>
+
+    <a target="_blank" href="https://www.instagram.com/kimai_org" class="btn btn-icon btn-secondary btn-instagram rounded-circle me-3" aria-label="Instagram">
+        <i class="bx bxl-instagram"></i>
+    </a>
+
+    <a target="_blank" href="https://twitter.com/kimai_org" class="btn btn-icon btn-secondary btn-twitter rounded-circle me-3" aria-label="Twitter">
+        <i class="bx bxl-twitter"></i>
+    </a>
+
+    <a target="_blank" href="https://www.facebook.com/kimai.time.tracker" class="btn btn-icon btn-secondary btn-facebook rounded-circle me-3" aria-label="Facebook">
+        <i class="bx bxl-facebook"></i>
+    </a>
+
+    <a target="_blank" href="https://phpc.social/@kimai" class="btn btn-icon btn-secondary btn-messenger rounded-circle me-3" aria-label="Mastodon">
+        <i class="bx bxl-mastodon"></i>
+    </a>
+
+
+    </div>
+    <ul class="nav order-md-3">
+        <li class="nav-item">
+            <a href="https://uptime.kimai.cloud/" target="_blank" class="nav-link fs-sm fw-medium">நிலை</a>
+        </li>
+    </ul>
+    
+</div>
+
+    </div>
+</footer>
+
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js?v1"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
+
+</body>
+</html>
