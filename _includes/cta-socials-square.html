@@ -1,0 +1,46 @@
+{% comment %}TODO translate once used outside the blog{% endcomment %}
+
+<section class="container text-center py-5 my-2 my-md-4 my-lg-5">
+    <h2 class="h1 mb-4">Our Social Networks</h2>
+    <p class="fs-lg text-muted pb-2 mb-5">Follow us and keep up to date with the freshest news!</p>
+    <div class="swiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden" data-swiper-options='{
+          "slidesPerView": 2,
+          "pagination": {
+            "el": ".swiper-pagination",
+            "clickable": true
+          },
+          "breakpoints": {
+            "500": {
+              "slidesPerView": 3
+            },
+            "650": {
+              "slidesPerView": 4
+            },
+            "900": {
+              "slidesPerView": 5
+            },
+            "1100": {
+              "slidesPerView": 7
+            }
+          }
+        }'>
+        <div class="swiper-wrapper" aria-live="polite">
+
+            {% for social in site.data.socials %}
+            <div class="swiper-slide" style="width: 185px;" role="group" aria-label="{{ forloop.index }} / {{ forloop.length }}">
+                <div class="position-relative text-center border-end mx-n1">
+                    <a target="_blank" href="{{ social.url }}" class="btn btn-icon btn-secondary {{ social.button }} btn-lg stretched-link" aria-label="{{ social.name }}">
+                        <i class="bx bxl-{{ social.icon }}"></i>
+                    </a>
+                    <div class="pt-4">
+                        <h6 class="mb-1">{{ social.name }}</h6>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+        <!-- Pagination (bullets) -->
+        <div class="swiper-pagination position-relative bottom-0 pt-3 mt-4 swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal swiper-pagination-lock"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1" aria-current="true"></span></div>
+        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+</section>
