@@ -20,7 +20,7 @@ Private or reserved ranges are not allowed.
 The maximum allowed number of IPs is 5.
 
 After saving, you will see a message that the changes are pending. Our system should apply the new rules within 10 minutes.
-If the "changes pending" message does not disappear within 1 hour, please [contact the support]({{ site.cloud.support }}).
+If the "changes pending" message does not disappear within 1 hour, please [contact the support](mailto:{{ site.cloud.support_email }}).
 
 ### Removing IPs
 

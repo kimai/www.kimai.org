@@ -15,7 +15,7 @@ The self-management screen at `Invoice > Templates > Documents/Upload` allows yo
 
 ### Twig templates
 
-If you want to use Twig templates for HTML or PDF format, you have to [contact the support]({{ site.cloud.support }}).
+If you want to use Twig templates for HTML or PDF format, you have to [contact the support](mailto:{{ site.cloud.support_email }}).
 Due to security measurements, all Twig templates need to be verified by the development team prior to upload.
 Please ZIP and mail them to our support email at [support@kimai.cloud](mailto:{{ site.cloud.support_email }}).
 
