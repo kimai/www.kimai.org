@@ -14,6 +14,9 @@ layout: default
 {% if developer.purchase_details %}
     {% assign purchase_details = developer.purchase_details %}
 {% endif %}
+{% if settings.purchase_details == false %}
+    {% assign purchase_details = nil %}
+{% endif %}
 {% assign documentation = nil %}
 {% if settings.documentation %}
     {% assign documentation = settings.documentation %}
