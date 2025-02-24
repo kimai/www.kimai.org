@@ -41,7 +41,11 @@ To remove all links to Personio in Kimai, the following command can be used:
 ```bash
 bin/console kimai:bundle:personio-sync:reset-sync-state
 ```
-  
+
+## Recommendations
+
+While using the Kimai sync of time accounting entries into Personio it is recommended to remove the rights for all users to modify their time accounting entries. This can be done by modifing the default employee role within Personio.
+
 ## Support
 
 If you need help setting this plugin up or have any feature requests our commercial support is available at [hello@unicorn-development.de](mailto:hello@unicorn-development.de)
