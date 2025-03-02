@@ -48,24 +48,19 @@
                                 <i class="bx bx-home"></i>
                             </a>
                             {% endif %}
-                            {% if author.twitter %}
-                            <a href="{{ author.twitter }}" class="btn btn-icon btn-secondary btn-twitter btn-lg me-1" role="button" target="_blank">
-                                <i class="bx bxl-twitter"></i>
+                            {% if author.mastodon %}
+                            <a href="{{ author.mastodon }}" class="btn btn-icon btn-secondary btn-messenger btn-lg me-1" role="button" target="_blank">
+                                <i class="bx bxl-mastodon"></i>
                             </a>
                             {% endif %}
-                            {% if author.github_donate %}
-                            <a href="{{ author.github_donate }}" class="btn btn-icon btn-secondary btn-github btn-lg me-1" role="button" target="_blank">
+                            {% if author.linkedin %}
+                            <a href="{{ author.linkedin }}" class="btn btn-icon btn-secondary btn-linkedin btn-lg me-1" role="button" target="_blank">
+                                <i class="bx bxl-linkedin"></i>
+                            </a>
+                            {% endif %}
+                            {% if author.github %}
+                            <a href="{{ author.github }}" class="btn btn-icon btn-secondary btn-github btn-lg me-1" role="button" target="_blank">
                                 <i class="bx bxl-github"></i>
-                            </a>
-                            {% endif %}
-                            {% if author.paypal %}
-                            <a href="{{ author.paypal }}" class="btn btn-icon btn-secondary btn-linkedin btn-lg me-1" role="button" target="_blank">
-                                <i class="bx bxl-paypal"></i>
-                            </a>
-                            {% endif %}
-                            {% if author.amazon %}
-                            <a href="{{ author.amazon }}" class="btn btn-icon btn-secondary btn-stack-overflow btn-lg me-1" role="button" target="_blank">
-                                <i class="bx bxl-amazon"></i>
                             </a>
                             {% endif %}
                         </p>
