@@ -46,4 +46,6 @@ and compare your countries GDP per capita (IMF estimate) with the below table.
 The discount applies permanently to the first order.
 If you cancel and want to order again after a break, no new discount will be granted.
 
-If you [contact me](mailto:support@kimai.cloud), don't forget to add proof like your company registration.
+When you [contact](mailto:{{ site.support_email }}), don't forget to attach proof (such as the company registration).
+The email must also be sent from the company domain. Discounts from Gmail accounts in combination with anonymous
+company registrations cannot be accepted.

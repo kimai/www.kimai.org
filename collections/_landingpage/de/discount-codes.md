@@ -46,7 +46,6 @@ und vergleichen Sie das Pro-Kopf-BIP Ihres Landes (IMF Estimate) mit der unten s
 Der Rabatt gilt dauerhaft auf die Erstbestellung. 
 Sollten Sie kündigen und nach einer Pause wieder neu bestellen wollen, dann wird hierfür kein neuer Rabatt gewährt. 
 
-Wenn Du [Kontakt aufnimmst](mailto:support@kimai.cloud), vergiss nicht Nachweise (wie der Unternehmensregistrierung) beizufügen.
-
-
- 
+Wenn Du [Kontakt aufnimmst](mailto:{{ site.support_email }}), vergiss nicht Nachweise (wie der Unternehmensregistrierung) beizufügen.
+Die Email muss zudem von der Unternehmens-Domain gesendet werden. Rabatte von Gmail Konten in Kombination mit anonymen 
+Unternehmensregistrierungen können nicht angenommen werden.
