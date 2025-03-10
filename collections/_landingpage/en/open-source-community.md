@@ -44,15 +44,15 @@ features:
     - 
         title: Built As Open-source
         text: Kimai was designed and built as an open-source time tracker.
-        image: /assets/img/landing/digital-agency/icons/idea.svg
+        image: /images/layout/landingpage/idea.svg
     - 
         title: Community Reviewed
         text: Kimai improves with the help of its community on GitHub. 
-        image: /assets/img/landing/digital-agency/icons/award.svg
+        image: /images/layout/landingpage/award.svg
     - 
         title: Supports Other Projects
         text: Kimai reinvests time and money into the open-source community.
-        image: /assets/img/landing/digital-agency/icons/team.svg
+        image: /images/layout/landingpage/team.svg
 ---
 
 Kimai also contributes to other open-source projects and supports initiatives through platforms like [Open Collective](https://opencollective.com/kimai), helping fresh ideas develop.

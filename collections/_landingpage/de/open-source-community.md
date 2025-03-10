@@ -44,15 +44,15 @@ features:
     -
         title: Als Open-Source gebaut
         text: Kimai wurde als Open-Source-Zeiterfassungstool entworfen und gebaut.
-        image: /assets/img/landing/digital-agency/icons/idea.svg
+        image: /images/layout/landingpage/idea.svg
     -
         title: Von der Community überprüft
         text: Kimai verbessert sich mit Hilfe seiner Community auf GitHub.
-        image: /assets/img/landing/digital-agency/icons/award.svg
+        image: /images/layout/landingpage/award.svg
     -
         title: Unterstützt andere Projekte
         text: Kimai investiert Zeit und Geld in die Open-Source-Community.
-        image: /assets/img/landing/digital-agency/icons/team.svg
+        image: /images/layout/landingpage/team.svg
 ---
 
 Kimai trägt auch zu anderen Open-Source-Projekten bei und unterstützt Initiativen über Plattformen wie [Open Collective](https://opencollective.com/kimai), um die Entwicklung neuer Ideen zu fördern.
