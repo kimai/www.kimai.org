@@ -1,8 +1,15 @@
 {% comment %}TODO translate once used outside the blog{% endcomment %}
+{% if page.lang == 'de' %}
+    {% assign title = 'Unsere sozialen Netzwerke' %}
+    {% assign subtitle = 'Folgen Sie uns und bleiben Sie auf dem Laufenden mit den neuesten Nachrichten!' %}
+{% else %}
+    {% assign title = 'Our Social Networks' %}
+    {% assign subtitle = 'Follow us and keep up to date with the freshest news!' %}
+{% endif %}
 
 <section class="container text-center py-5 my-2 my-md-4 my-lg-5">
-    <h2 class="h1 mb-4">Our Social Networks</h2>
-    <p class="fs-lg text-muted pb-2 mb-5">Follow us and keep up to date with the freshest news!</p>
+    <h2 class="h1 mb-4">{{ title }}</h2>
+    <p class="fs-lg text-muted pb-2 mb-5">{{ subtitle }}</p>
     <div class="swiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden" data-swiper-options='{
           "slidesPerView": 2,
           "pagination": {
