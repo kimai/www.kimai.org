@@ -20,7 +20,7 @@
               "slidesPerView": 5
             },
             "1100": {
-              "slidesPerView": 7
+              "slidesPerView": {{ site.data.socials.size }}
             }
           }
         }'>
@@ -29,7 +29,7 @@
             {% for social in site.data.socials %}
             <div class="swiper-slide" style="width: 185px;" role="group" aria-label="{{ forloop.index }} / {{ forloop.length }}">
                 <div class="position-relative text-center border-end mx-n1">
-                    <a target="_blank" href="{{ social.url }}" class="btn btn-icon btn-secondary {{ social.button }} btn-lg stretched-link" aria-label="{{ social.name }}">
+                    <a target="_blank" href="{{ social.url }}" class="btn btn-icon btn-secondary btn-{{ social.button }} btn-lg stretched-link" aria-label="{{ social.name }}">
                         <i class="bx bxl-{{ social.icon }}"></i>
                     </a>
                     <div class="pt-4">
