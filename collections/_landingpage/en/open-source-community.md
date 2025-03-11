@@ -55,6 +55,9 @@ features:
         image: /images/layout/landingpage/team.svg
 ---
 
+Kimai is an open-source time-tracking solution built with the idea of collaboration in mind. 
+Designed from the ground up as an open-source project, Kimai continues to develop with hundreds of involved developers, thousands of users, and community members from around the world.
+
 Kimai also contributes to other open-source projects and supports initiatives through platforms like [Open Collective](https://opencollective.com/kimai), helping fresh ideas develop.
 
 This open-source commitment delivers benefits to everyone. 

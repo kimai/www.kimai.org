@@ -55,6 +55,9 @@ features:
         image: /images/layout/landingpage/team.svg
 ---
 
+Kimai ist eine Open-Source-Lösung für die Zeiterfassung, bei deren Entwicklung die Idee der Zusammenarbeit im Vordergrund stand.
+Kimai wurde von Anfang an als Open-Source-Projekt konzipiert und wird mit Hunderten von beteiligten Entwicklern, Tausenden von Nutzern und Community-Mitgliedern aus der ganzen Welt weiterentwickelt.
+
 Kimai trägt auch zu anderen Open-Source-Projekten bei und unterstützt Initiativen über Plattformen wie [Open Collective](https://opencollective.com/kimai), um die Entwicklung neuer Ideen zu fördern.
 
 Dieses Open-Source-Engagement bringt Vorteile für alle.
