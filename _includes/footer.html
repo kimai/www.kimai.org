@@ -65,6 +65,9 @@
                                     {% include link-translated-menu.html item="about" language=page.lang class="nav-link fs-sm fw-medium px-0 py-1" %}
                                 </li>
                                 <li class="nav-item">
+                                    {% include link-translated-menu.html type="landingpage" item="open-source-community" language=englishOrGerman class="nav-link fs-sm fw-medium px-0 py-1" %}
+                                </li>
+                                <li class="nav-item">
                                     {% include link-translated-menu.html item="features" language=page.lang class="nav-link fs-sm fw-medium px-0 py-1" %}
                                 </li>
                                 <li class="nav-item">
@@ -98,7 +101,8 @@
                                 <li class="nav-item">
                                     {% assign industry_title= site.data[page.lang].translation.industry.more %}
                                     {% include link-translated-menu.html item="industry" language=page.lang class="nav-link fs-sm fw-medium px-0 py-1" title=industry_title %}
-                                </li>                            </ul>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-4">
