@@ -25,7 +25,7 @@ Alle Rabattcodes, die Sie auf Rabattcode-Websites finden, sind gefälscht und fu
 
 ### Kaufkraftparität
 
-Ich biete PPP-Rabatte (Purchasing Power Parity) für Länder an, die ein geringeres BIP als mein Heimatland Österreich haben.
+Ich biete PPP-Rabatte (Purchasing Power Parity) für den **Plugin-Kauf** in Ländern an, die ein geringeres BIP als mein Heimatland Österreich haben.
 Um herauszufinden, ob Sie für einen Rabatt in Frage kommen, gehen Sie auf diese [Wikipedia-Seite](https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)_per_capita),
 und vergleichen Sie das Pro-Kopf-BIP Ihres Landes (IMF Estimate) mit der unten stehenden Tabelle.
 

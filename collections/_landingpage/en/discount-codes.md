@@ -25,7 +25,7 @@ All discount codes found on discount code websites are fake and will not work.
 
 ### Purchasing Power Parity
 
-I offer PPP discounts for countries that have a lower GDP than my home country of Austria.
+I offer PPP discounts for **plugin purchases** in countries that have a lower GDP than my home country of Austria.
 To find out if you are eligible for a discount, go to this [Wikipedia page](https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)_per_capita), 
 and compare your countries GDP per capita (IMF estimate) with the below table. 
 
