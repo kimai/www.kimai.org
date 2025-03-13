@@ -1,4 +1,4 @@
-A Kimai plugin that automatically adds a recurring money or time budget to your projects with a custom interval. Set
+Automatically add a recurring money or time budget to your projects with a custom interval. Set
 up your projects to receive a fixed amount of budget on a regular basis (e.g. 05:00 hours every month). Ideal for
 contracts with a regular budget bonus (e.g. maintenance agreements, SLAs etc.).
 
