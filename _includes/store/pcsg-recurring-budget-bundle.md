@@ -14,7 +14,7 @@ contracts with a regular budget bonus (e.g. maintenance agreements, SLAs etc.).
 
 ## Requirements
 
-* Kimai, **v2.20.0** or higher
+* Kimai 2.20.0 or higher
 * The ability to execute cronjobs on your server; this is required for executing the Kimai command that calculates
   project budgets on a regular basis
 
