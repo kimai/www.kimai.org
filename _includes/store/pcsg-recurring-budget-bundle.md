@@ -1,5 +1,7 @@
-Set up your projects to receive a fixed amount of budget on a regular basis (e.g. 05:00 hours every month). 
-Ideal for contracts with a regular budget bonus (e.g. maintenance agreements, SLAs etc.).
+Automatically add a recurring money or time budget to your projects with a custom interval. Set
+up your projects to receive a fixed amount of budget on a regular basis (e.g. 05:00 hours every month). Ideal for
+contracts with a regular budget bonus (e.g. maintenance agreements, SLAs etc.).
+
 
 ## Features
 * Automatic budget credits on a per-project basis (time or money)
@@ -7,13 +9,13 @@ Ideal for contracts with a regular budget bonus (e.g. maintenance agreements, SL
 * Detailed budget history view for all projects and budget intervals in the Kimai backend
 * Current budget view for all projects in the Kimai backend
 * Export budget summaries for specific time periods with all budget details for your documents or your customers
-* Send budget summary emails to project team leads each budget interval
-* Available translations: English, German
+* Automatic budget expiration: You can now configure your projects to expire unused budget after a set amount of intervals
+* Recalculate budget intervals via frontend: The budgets history view now offers the option to recalculate a budget interval directly
 
 ## Requirements
 
-* Kimai v1.16 or higher
-* The ability to execute cronjobs on your server; this is required for executing the command that calculates
+* Kimai 2.20.0 or higher
+* The ability to execute cronjobs on your server; this is required for executing the Kimai command that calculates
   project budgets on a regular basis
 
 ## Usage
@@ -65,7 +67,7 @@ bin/console recurring-budget:calculate --help
 
 This plugin provides two new overview tables in the Kimai main menu.
 
-**Project budgets**
+1. Project budgets
 
 Lists all projects with their **currently available (time or money) budgets and total budgets**. It also shows the budget
 credited for each budget interval.
@@ -76,7 +78,7 @@ project. Currently, it only reads the team lead of the first team in the list.
 This view is ideal for companies with multiple projects and project leads. It easily shows where the budget is positive
 and additional work may need to be done.
 
-**Project budgets history**
+2. Project budgets history
 
 Lists all **completed budget intervals** and shows statistics for each of them. Here you can track the history of budget
 credits, how much of a project budget was used and how much was remaining for each interval.
@@ -85,7 +87,7 @@ credits, how much of a project budget was used and how much was remaining for ea
 
 This plugin extends the Kimai export functionality with two views.
 
-In the `Export` menu you have the new "Customer budget" dropdown. Here you have two options:
+In the "Export" menu you have the new "Customer budget" dropdown. Here you have two options:
 
 1. PDF - Complete
 2. PDF - Without rates
@@ -100,4 +102,4 @@ This is intended for your internal documents or as information for you customers
 
 ## Support
 
-If you require support for the usage or setup of this plugin or find any bugs please contact [support@pcsg.de](mailto:support@pcsg.de).
+If you require support for the usage or setup of this plugin or find any bugs please contact [support@pcsg.de](mailto:support@pcsg.de)!
