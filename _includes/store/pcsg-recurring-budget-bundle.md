@@ -9,9 +9,8 @@ contracts with a regular budget bonus (e.g. maintenance agreements, SLAs etc.).
 * Detailed budget history view for all projects and budget intervals in the Kimai backend
 * Current budget view for all projects in the Kimai backend
 * Export budget summaries for specific time periods with all budget details for your documents or your customers
-* **NEW for Kimai 2**
-  * Automatic budget expiration: You can now configure your projects to expire unused budget after a set amount of intervals
-  * Recalculate budget intervals via frontend: The budgets history view now offers the option to recalculate a budget interval directly
+* Automatic budget expiration: You can now configure your projects to expire unused budget after a set amount of intervals
+* Recalculate budget intervals via frontend: The budgets history view now offers the option to recalculate a budget interval directly
 
 ## Requirements
 
