@@ -1,3 +1,9 @@
+**Version 1.20.0**
+
+Compatibility: requires minimum Kimai 2.30.0
+
+- Configure a project, which is exclusively used for attendance tracking
+
 **Version 1.19.0**
 
 Compatibility: requires minimum Kimai 2.28.0
