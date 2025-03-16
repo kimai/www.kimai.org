@@ -12,14 +12,13 @@
 <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
-<title>Changelog Kimai Cloud</title>
-<meta name="description" content="Overview of all Kimai cloud updates and when they were installed.">
+<title>Cloud-Update 118 – Kimai</title>
 <link type="application/atom+xml" rel="alternate" href="https://www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
 <meta property="og:locale" content="en">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Kimai Time-Tracking">
 <meta property="og:image" content="https://www.kimai.org/images/social-preview.webp">
-<meta property="og:description" content="Overview of all Kimai cloud updates and when they were installed.">
+<meta property="og:description" content="">
 <link href="/assets/build/main.css?v6" rel="stylesheet" />
 
 </head>
@@ -38,16 +37,16 @@
 
 
 
-<header class="header navbar navbar-expand-lg position-absolute navbar-dark   navbar-sticky">
+<header class="header navbar navbar-expand-lg    bg-light navbar-sticky">
     <div class="container px-3">
         
         <a href="/" class="navbar-brand pe-3">
         <img src="/images/kimai_logo_48.webp" style="height:36px;width:36px;" alt="Kimai - Open Source time-tracker"> Kimai
         </a>
-        <div id="navbarNav" class="offcanvas offcanvas-end bg-dark">
+        <div id="navbarNav" class="offcanvas offcanvas-end">
             <div class="offcanvas-header border-bottom">
                 <h5 class="offcanvas-title">Menu</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <button type="button" class="btn-close " data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -116,7 +115,7 @@
 
 
 
-<a href="https://www.kimai.cloud/auth/" class="btn btn-sm fs-sm d-none d-md-inline-flex me-2 btn-outline-light">Login</a>
+<a href="https://www.kimai.cloud/auth/" class="btn btn-sm fs-sm d-none d-md-inline-flex me-2 btn-outline-secondary">Login</a>
 
             
 
@@ -132,383 +131,66 @@
 </header>
 
 
-    
+    <section class="container mt-4 pt-lg-2 pb-3">
+    <h1 class="pb-3" style="max-width: 970px;">Cloud-Update 118</h1>
+    <div class="d-flex flex-md-row flex-column align-items-md-center justify-content-md-between mb-3">
+        <div class="d-flex align-items-center flex-wrap text-muted mb-md-0 mb-4">
+            <div class="fs-xs border-end pe-3 me-3 mb-2">
+                
+                    <span class="badge bg-faded-primary text-primary fs-base">Changelog</span>
+                
+            </div>
+            <div class="fs-sm pe-3 me-3 mb-2">16 Mar 2025</div>
+        </div>
+    </div>
+</section>
 
+<section class="container mb-5 pb-2 py-mg-4">
+    <div class="row gy-4">
+        <div class="col-lg-8">
+            <p><strong>Features</strong></p>
+<ul>
+  <li>Support <code class="language-plaintext highlighter-rouge">natural</code> and <code class="language-plaintext highlighter-rouge">decimal</code> duration in Excel export (configurable by a user preference)</li>
+  <li>Order timesheet listing by <code class="language-plaintext highlighter-rouge">user</code>, <code class="language-plaintext highlighter-rouge">exported</code> and <code class="language-plaintext highlighter-rouge">billable</code> field</li>
+  <li>Allow to edit <code class="language-plaintext highlighter-rouge">internal rate</code> in timesheet form</li>
+  <li>Pass date-range from monthly overview report to export and timesheet filter URL</li>
+  <li>Allow access to user roles in custom javascript</li>
+</ul>
 
-<section class="position-relative pt-5 bg-dark">
+<p><strong>Kiosk</strong></p>
+<ul>
+  <li>Add “#kiosk-auth” to login screen for custom CSS rules</li>
+  <li>Order users by Alias</li>
+</ul>
 
-    <div class="container position-relative zindex-2 pt-5 pb-2 pb-md-0">
+<p><strong>Work Contract</strong></p>
+<ul>
+  <li>Fix UTC timezone issue in working-time approval PDF</li>
+</ul>
 
-        <div class="row justify-content-center pt-3 mt-3">
-            <div class="col-xl-6 col-lg-7 col-md-8 col-sm-10 text-center">
-                <h1 class="mb-4">Changelog Kimai Cloud</h1>
-                <p class="text-body fs-lg pb-3 mb-3">Overview of all Kimai cloud updates and when they were installed.</p>
+        </div>
+        <div class="col-lg-4 position-relative">
+            <div class="sticky-top ms-xl-5 ms-lg-4 ps-xxl-4" style="top: 105px !important;">
+                <div class="jarallax mb-lg-5 mb-4 pb-4" data-jarallax data-speed="0.35" style="height: 200px">
+                    <div class="jarallax-img" style="background-image: url(/images/blog/cloud-update.webp);"></div>
+                </div>
+
+                <h6>Share this post:</h6>
+                <div class="mb-4 pb-lg-3">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.kimai.org/blog/2025/cloud-update-118&amp;title=Cloud-Update%20118" class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2" aria-label="LinkedIn">
+                        <i class="bx bxl-linkedin"></i>
+                    </a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.kimai.org/blog/2025/cloud-update-118" class="btn btn-icon btn-secondary btn-facebook me-2 mb-2" aria-label="Facebook">
+                        <i class="bx bxl-facebook"></i>
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?text=https://www.kimai.org/blog/2025/cloud-update-118" class="btn btn-icon btn-secondary btn-twitter me-2 mb-2" aria-label="Twitter">
+                        <i class="bx bxl-twitter"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-
-    <div class="d-flex position-absolute top-100 start-0 w-100 overflow-hidden mt-n5" style="color: #0b0f19;">
-        <div class="position-relative start-50 translate-middle-x flex-shrink-0 mt-n5 mt-md-n3 mt-lg-n1" style="width: 3788px;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="3788" height="144" viewbox="0 0 3788 144"><path fill="currentColor" d="M0,0h3788.7c-525,90.2-1181.7,143.9-1894.3,143.9S525,90.2,0,0z"></path></svg>
-        </div>
-    </div>
 </section>
-
-
-<section class="container py-5 my-md-2 my-lg-4 my-xl-5">
-    <div class="row justify-content-center pt-5 pb-1 pb-sm-2 pb-md-3">
-
-        <table class="table">
-            <thead>
-            <tr>
-                <th style="max-width: 200px">Date</th>
-                <th>Title</th>
-            </tr>
-            </thead>
-            <tbody>
-            
-            
-            <tr>
-                <td style="max-width: 200px">16 Mar 2025</td>
-                <td><a href="/blog/2025/cloud-update-118">Cloud-Update 118</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">23 Feb 2025</td>
-                <td><a href="/blog/2025/cloud-update-117">Cloud-Update 117</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">09 Feb 2025</td>
-                <td><a href="/blog/2025/cloud-update-116">Cloud-Update 116</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">26 Jan 2025</td>
-                <td><a href="/blog/2025/cloud-update-115">Cloud-Update 115</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">08 Dec 2024</td>
-                <td><a href="/blog/2024/cloud-update-114">Cloud-Update 114</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">26 Oct 2024</td>
-                <td><a href="/blog/2024/cloud-update-113">Cloud-Update 113</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">05 Oct 2024</td>
-                <td><a href="/blog/2024/cloud-update-112">Cloud-Update 112</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">22 Sep 2024</td>
-                <td><a href="/blog/2024/cloud-update-111">Cloud Update 111</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">16 Sep 2024</td>
-                <td><a href="/blog/2024/cloud-update-110">Cloud Update 110</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">08 Aug 2024</td>
-                <td><a href="/blog/2024/cloud-update-109">Cloud Update 109</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">16 Jun 2024</td>
-                <td><a href="/blog/2024/cloud-update-108">Cloud Update 108</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">25 May 2024</td>
-                <td><a href="/blog/2024/cloud-update-107">Cloud Update 107</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">03 May 2024</td>
-                <td><a href="/blog/2024/cloud-update-106">Cloud Update 106</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">20 Apr 2024</td>
-                <td><a href="/blog/2024/cloud-update-105">Cloud Update 105</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">07 Apr 2024</td>
-                <td><a href="/blog/2024/cloud-update-104">Cloud Update 104</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">24 Mar 2024</td>
-                <td><a href="/blog/2024/cloud-update-103">Cloud Update 103</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">25 Feb 2024</td>
-                <td><a href="/blog/2024/cloud-update-102">Cloud Update 102</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">04 Feb 2024</td>
-                <td><a href="/blog/2024/cloud-update-101">Cloud Update 101</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">21 Jan 2024</td>
-                <td><a href="/blog/2024/cloud-update-100">Cloud Update 100</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">11 Jan 2024</td>
-                <td><a href="/blog/2024/cloud-update-99">Cloud Update 99</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">27 Dec 2023</td>
-                <td><a href="/blog/2023/cloud-update-98">Cloud Update 98</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">02 Dec 2023</td>
-                <td><a href="/blog/2023/cloud-update-97">Cloud Update</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">20 Nov 2023</td>
-                <td><a href="/blog/2023/cloud-update-96">Cloud Update</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">10 Nov 2023</td>
-                <td><a href="/blog/2023/cloud-update-95">Cloud-Update</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">01 Nov 2023</td>
-                <td><a href="/blog/2023/cloud-update-2-2-1">Cloud-Update</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">20 Oct 2023</td>
-                <td><a href="/blog/2023/cloud-update-2-1-0">Cloud-Update</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">23 Sep 2023</td>
-                <td><a href="/blog/2023/cloud-update-2-0-35">Cloud-Update</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">12 Sep 2023</td>
-                <td><a href="/blog/2023/cloud-update-2-0-33">Cloud-Update</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">09 Sep 2023</td>
-                <td><a href="/blog/2023/cloud-update-2-0-31">Cloud-Update</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">04 Jul 2023</td>
-                <td><a href="/blog/2023/cloud-update-2-0-27">Cloud-Update</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">10 Jun 2023</td>
-                <td><a href="/blog/2023/cloud-update-2-0-26">Cloud-Update</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">27 May 2023</td>
-                <td><a href="/blog/2023/cloud-update-2-0-24">Cloud-Update</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">17 May 2023</td>
-                <td><a href="/blog/2023/cloud-updates-2-0-21">Cloud-Update</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">09 May 2023</td>
-                <td><a href="/blog/2023/cloud-update-2-0-18">Cloud-Update</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">02 May 2023</td>
-                <td><a href="/blog/2023/cloud-update-2-0-17">Cloud-Update</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">25 Apr 2023</td>
-                <td><a href="/blog/2023/cloud-update-2-0-15">Cloud-Update</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">05 Apr 2023</td>
-                <td><a href="/blog/2023/cloud-update-2-0-14">Cloud-Update</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">30 Mar 2023</td>
-                <td><a href="/blog/2023/cloud-update-2-0-13">Cloud-Update</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">24 Mar 2023</td>
-                <td><a href="/blog/2023/cloud-update-2-0-12">Cloud-Update</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">21 Mar 2023</td>
-                <td><a href="/blog/2023/cloud-update-2-0-11">Cloud-Update</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">15 Mar 2023</td>
-                <td><a href="/blog/2023/cloud-update-2-0-10">Cloud-Update</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">08 Mar 2023</td>
-                <td><a href="/blog/2023/cloud-update-2-0-7">Cloud-Update</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">02 Mar 2023</td>
-                <td><a href="/blog/2023/cloud-update-2-0-4">Cloud-Update</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">24 Feb 2023</td>
-                <td><a href="/blog/2023/server-maintenance">Server maintenance</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">22 Feb 2023</td>
-                <td><a href="/blog/2023/cloud-update-2-0-2">Cloud-Update</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">18 Nov 2022</td>
-                <td><a href="/blog/2022/maintenance-18-20-november">Maintenance 18-20 November</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">30 Oct 2022</td>
-                <td><a href="/blog/2022/updates-end-of-october-2022">Updates end of October 2022</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">22 Sep 2022</td>
-                <td><a href="/blog/2022/new-features-september-2022">New features - September 2022</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">13 Jul 2022</td>
-                <td><a href="/blog/2022/new-features-july-2022">New features July 2022</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">31 May 2022</td>
-                <td><a href="/blog/2022/new-features-in-june-2022">New features in June 2022</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">05 Apr 2022</td>
-                <td><a href="/blog/2022/cloud-updates-april-2022">Cloud Updates - April 2022</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">12 Mar 2022</td>
-                <td><a href="/blog/2022/cloud-updates-march-2022">Cloud Updates - March 2022</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">30 Jan 2022</td>
-                <td><a href="/blog/2022/cloud-updates-january-2022">Cloud Updates - January 2022</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">15 Dec 2021</td>
-                <td><a href="/blog/2021/cloud-updates-december-2021">Cloud Updates - December 2021</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">29 Nov 2021</td>
-                <td><a href="/blog/2021/cloud-updates-november-2021">Cloud Updates - November 2021</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">21 May 2021</td>
-                <td><a href="/blog/2021/cloud-update-on-21-23-may-2021">Cloud update on 21 - 23 May 2021</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">23 Apr 2021</td>
-                <td><a href="/blog/2021/scheduled-maintenance-24-25-april">Scheduled maintenance 24.-25 April</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">16 Feb 2021</td>
-                <td><a href="/blog/2021/cloud-updates-week-07-february-2021">Cloud Updates - Week 07 - February 2021</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">06 Nov 2020</td>
-                <td><a href="/blog/2020/cloud-update-on-7-8-nov-2020">Cloud update on 7-8 Nov. 2020</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">08 May 2020</td>
-                <td><a href="/blog/2020/updating-cloud-instances-to-1-9">Updating cloud instances to 1.9</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">26 Apr 2020</td>
-                <td><a href="/blog/2020/updating-cloud-instances-to-1-8">Updating cloud instances to 1.8</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">01 Mar 2020</td>
-                <td><a href="/blog/2020/updating-cloud-instances-to-1-7">Updating cloud instances to 1.7</a></td>
-            </tr>
-            
-            <tr>
-                <td style="max-width: 200px">25 Nov 2019</td>
-                <td><a href="/blog/2019/updating-cloud-instances-to-1-6">Updating cloud instances to 1.6</a></td>
-            </tr>
-            
-            </tbody>
-        </table>
-
-    </div>
-</section>
-
-
-<section class="container mb-5">
-    <div class="position-relative bg-dark rounded-3 overflow-hidden px-3 py-5">
-        <span class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(255, 255, 255, .05)"></span>
-        <div class="position-relative zindex-5 text-center my-xl-3 py-1 py-md-4 py-lg-5">
-            <p class="lead text-light opacity-70 mb-3">Ready to get started?</p>
-            <h2 class="h1 text-light pb-3 pb-lg-0 mb-lg-5">Start your time-tracking now</h2>
-            
-            
-            
-
-
-
-<a href="https://www.kimai.cloud/auth/registration" class="btn btn-success btn-lg">Start for free</a>
-
-        </div>
-    </div>
-</section>
-
-
 
 </main>
 
