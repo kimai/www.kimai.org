@@ -36,7 +36,7 @@
         </div>
         <div class="card-footer d-flex align-items-center fs-sm text-muted py-4">
             {% unless settings.price == nil and settings.subscription == nil %}
-            <div class="d-flex align-items-center me-4">
+            <div class="d-flex align-items-center me-4 text-nowrap">
             {% if settings.subscription != nil %}
                 <i class="bx bx-cart fs-xl me-1"></i>
                 {{ settings.subscription }}
@@ -49,7 +49,7 @@
             {% endif %}
             </div>
             {% endunless %}
-            <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center text-nowrap text-truncate">
                 <i class="bx bx-user fs-xl me-1"></i>
                 {{ developer.name }}
             </div>
