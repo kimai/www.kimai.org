@@ -1,3 +1,9 @@
+**Version 2.21.0**
+
+Compatibility: requires minimum Kimai 2.30.0
+
+- Fix timezone issue in approvals and PDF
+
 **Version 1.20.0**
 
 Compatibility: requires minimum Kimai 2.30.0

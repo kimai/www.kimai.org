@@ -1,3 +1,11 @@
+**Version 2.13.0**
+
+Compatibility: requires minimum Kimai 2.30.0
+
+- Use non-deprecated API to fetch timesheets
+- Add "#kiosk-auth" to login screen for easier custom CSS rules
+- Order users by Alias
+
 **Version 2.12.0**
 
 Compatibility: requires minimum Kimai 2.25.0
