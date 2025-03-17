@@ -1,9 +1,9 @@
-{% assign _title = site.data[page.lang].translation.cloud-call-to-action %}
-{% if include.title != nil %}
+{%- assign _title = site.data[page.lang].translation.cloud-call-to-action -%}
+{%- if include.title != nil -%}
     {% assign _title = include.title %}
-{% endif %}
-{% assign _classes = '' %}
-{% if include.classes != nil %}
+{%- endif -%}
+{%- assign _classes = '' -%}
+{%- if include.classes != nil -%}
     {% assign _classes = include.classes %}
-{% endif %}
+{%- endif -%}
 <a href="{{ page.lang | url_cloud_register }}" class="{{ _classes }}">{{ _title }}</a>
