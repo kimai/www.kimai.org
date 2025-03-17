@@ -1,7 +1,7 @@
 ---
 title: "Managing Easter Holidays: A Guide for Business Owners & Project Managers"
 date: "2025-03-17 11:00:00 +0200"
-image: /images/blog/managing-easter-holidays.png
+image: /images/blog/managing-easter-holidays.webp
 author: valentina
 tags: [General]
 excerpt: "Managing holidays is crucial to maintain productivity and ensuring smooth operations"
