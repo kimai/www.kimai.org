@@ -10,8 +10,12 @@ permalink: /plugins.json
         {%- assign translation = site.data['en'].store.items[product.slug] -%}
         {%- assign settings = site.data.store[product.slug] -%}
         {%- assign minimumVersion = nil -%}
+        {%- assign latestRelease = nil -%}
         {%- if site.data.store.releases[settings.bundle.name] != nil -%}
             {%- for version in site.data.store.releases[settings.bundle.name].versions -%}
+                {%- if latestRelease == nil -%}
+                    {%- assign latestRelease = version[0] -%}
+                {%- endif -%}
                 {%- assign startsVersion = version[1] | slice: 0, 2 -%}
                 {%- if startsVersion == '2.' -%}
                     {%- assign minimumVersion = version[1] -%}
@@ -29,6 +33,7 @@ permalink: /plugins.json
             "homepage": {% if developer.homepage %}"{{ developer.homepage }}"{% else %}null{% endif %}
         },
         "minimum_version": {% if minimumVersion == nil %}null{% else %}"{{ minimumVersion }}"{% endif %},
+        "latest_release": {% if latestRelease == nil %}null{% else %}"{{ latestRelease }}"{% endif %},
         "bundle": {% if settings.bundle %}"{{ settings.bundle.name }}"{% else %}null{% endif %},
         "featured": {% if product.type == 'featured' %}true{% else %}false{% endif %},
         "icon": "{{ settings.icon | default: "fas fa-question" }}",
