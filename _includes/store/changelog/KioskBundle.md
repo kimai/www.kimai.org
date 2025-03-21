@@ -1,3 +1,9 @@
+**Version 2.13.1**
+
+Compatibility: requires minimum Kimai 2.30.0
+
+- Fix error on empty code in login form
+
 **Version 2.13.0**
 
 Compatibility: requires minimum Kimai 2.30.0
