@@ -65,8 +65,8 @@ Mit Einrichtung des Kundenkontos kommt ein Nutzungsvertrag über den Dienst des 
 
 (5) Während der Testphase kann der Kunde alle Funktionen des Dienstes kostenfrei nutzen. Ist der Kunde vom Dienst des Anbieters überzeugt, kann er jederzeit in einen kostenpflichtigen Tarif wechseln.
 
-(6) Nach Ablauf der Testphase stellt der Anbieter den Dienst als kostenfreies Vertragsverhältnis mit eingeschränkter Funktionalität zur Verfügung.
-Dieses Vertragsverhältnis kann jede Partei fristlos ordentlich kündigen.
+(6) Nach Ablauf der Testphase wird der Zugang zum Dienst gesperrt. Eine weitere Nutzung des Dienstes ist nur nach Abschluss eines kostenpflichtigen Tarifs möglich.
+Der Kundenaccount inkl. aller Daten wird nach Ablauf von 4 Wochen gelöscht, wenn kein kostenpflichtiger Vertrag abgeschlossen wird.
 
 (7) Für die mit dem Anbieter geschlossenen Verträge besteht kein Verbraucher-Widerrufsrecht, da der Anbieter seinen Dienst ausschließlich gegenüber Unternehmern anbietet.
 
@@ -308,15 +308,18 @@ Die vorstehenden Bestimmungen gelten entsprechend für den Fall, dass sich Regel
 
 ### Änderungsverlauf
 
-**Version 1.2 (26. Mär 2021)**
+**Version 1.3 (24. März 2025)**
+- Klarstellung §3. (6): nach Ablauf der Testphase existiert kein kostenloser Tarif  
+
+**Version 1.2 (26. März 2021)**
 - Englische Übersetzung zu Informationszwecken hinzugefügt
 
-**Version 1.1 (01. Jan 2021)**
+**Version 1.1 (01. Januar 2021)**
 - § 1. (1) - Ersetzung `Kevin Papst mit Sitz in München` durch `Kevin Papst mit Sitz in Österreich`
 - § 16. (1) - Ersetzung `dem Recht der Bundesrepublik Deutschland` durch `dem Recht von Österreich`
 - § 16. (2) - Ersetzung `Geschäftssitz des Anbieters (derzeit München)` durch `Geschäftssitz des Anbieters`
 
-**Version 1.0 (05. Okt 2019)**  
+**Version 1.0 (05. Oktober 2019)**  
 Initiale Version
 
 
@@ -404,8 +407,8 @@ With the creation of the customer account, a usage contract for the service of t
 
 (5) During the test phase, the customer can use all functions of the service free of charge. If the Customer is convinced of the Provider's service, he may switch to a chargeable tariff at any time.
 
-(6) After expiration of the test phase, the Provider shall make the Service available as a free contractual relationship with limited functionality.
-Either party may terminate this contractual relationship without notice.
+(6) After expiration of the test phase, access to the service will be blocked. Further use of the service is only possible after concluding a paid plan.
+The customer account including all data will be deleted after 4 weeks if no paid contract is concluded.
 
 (7) There is no consumer right of revocation for the contracts concluded with the Provider, as the Provider offers its service exclusively to entrepreneurs.
 
@@ -647,6 +650,9 @@ Instead, the parties shall work towards agreeing on a substitute provision which
 The above provisions shall apply mutatis mutandis in the event that provisions prove to be incomplete.
 
 ### Change history
+
+**Version 1.3 (24. März 2025)**
+- Clarification §3. (6): after expiration of test phase exists no free plan
 
 **Version 1.2 (26. Mar 2021)**
 - Added english translation for informational purposes
