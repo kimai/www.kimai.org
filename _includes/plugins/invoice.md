@@ -22,7 +22,7 @@ You could generate the same PDF using the export function in Kimai, but that req
 
 The used "export template" for this feature can be configured. 
 
-This feature needs to be activated by choosing an export template. 
+This feature needs to be activated by choosing an export template at [System > Settings > Invoices]({% link _documentation/configurations.md %}). 
 By selecting the empty entry it can be deactivated again. 
 
 ### Data format language
@@ -36,7 +36,7 @@ Without choosing a language the default behaviour is used.
 
 ### Additional formats
 
-This plugins ships renderer for other invoice template formats, such as:
+The plugins ships renderer for other invoice template formats, such as:
 
 - JSON: with the file extension `.json.twig`
 - XML: with the file extension `.xml.twig`
