@@ -1,3 +1,10 @@
+**Version 4.4.0**
+
+Compatibility: requires minimum Kimai 2.25.0
+
+- Fix design for empty project list
+- Fix too many timesheets shown for customer portals with empty project list
+
 **Version 4.3.0**
 
 Compatibility: requires minimum Kimai 2.25.0

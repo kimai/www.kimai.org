@@ -1,3 +1,9 @@
+**Version 2.5.0**
+
+Compatibility: requires minimum Kimai 2.5.0
+
+- Do not remove line breaks in CSS and Javascript to support inline comments
+
 **Version 2.4.0**
 
 Compatibility: requires minimum Kimai 2.5.0
