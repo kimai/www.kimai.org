@@ -345,7 +345,7 @@
     <ul>
       <li>Expected working hours per day of the week: Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday</li>
       <li>Vacation entitlement per user for the calendar year</li>
-      <li>The “starting day” limits the working hours calculation from that date until “now”</li>
+      <li>The <code class="language-plaintext highlighter-rouge">starting</code> and <code class="language-plaintext highlighter-rouge">ending</code> day limit the working hours calculation</li>
     </ul>
   </li>
   <li>You can <a href="/documentation/plugin-contract.html">import data from the MR plugins</a> (Controlling, Sickday, Vacation)</li>
@@ -356,9 +356,7 @@
 
 <p>These features will be added in the future, but there is no guarantee when or in which order.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Settings
-  - Last day of work for a user, to stop calculating afterwards
-- Absence calendar
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Absence calendar
     - Display all users / teams
     - Allow export as ical (or similar format) for use in external calendars (e.g. Outlook)
 - Monthly contract PDF
@@ -379,7 +377,6 @@ If I decide to add one of these feature, it will be moved to the “Roadmap” s
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Settings
   - Allow to reach a configurable amount of negative hours for time-off ([#159](https://github.com/kimai/Paid-plugins/issues/159))
-- Preview of the "locked month" PDF without actually closing the month as email
 - Prevent that certain days can be booked for vacation
 - Add first start- and last end-time as begin and end times to the PDF
 - Working times
@@ -416,9 +413,6 @@ If I decide to add one of these feature, it will be moved to the “Roadmap” s
 - Holidays
   - Lockdown method for vacations (define periods where no vacations can be booked)
   - Automatic calculation of holidays according to the working-time duration (e.g. 30 days per year for a 40h week) 
-- Contracts 
-  - Multiple working contracts per user (configured with start and end time)
-  - Define arbitrary date ranges with attached working-time profiles
 </code></pre></div></div>
 
 
