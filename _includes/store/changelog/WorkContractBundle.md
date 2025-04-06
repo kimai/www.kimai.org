@@ -1,3 +1,10 @@
+**Version 1.22.0**
+
+Compatibility: requires minimum Kimai 2.32.0
+
+- Unlock approved months (with new permission `unlock_times_contract`)
+- Fix: Validate entire lock period for pending absences
+
 **Version 1.21.0**
 
 Compatibility: requires minimum Kimai 2.30.0
