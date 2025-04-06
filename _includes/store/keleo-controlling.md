@@ -28,7 +28,7 @@
 - Per user contract settings
   - Expected working hours per day of the week: Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday
   - Vacation entitlement per user for the calendar year
-  - The "starting day" limits the working hours calculation from that date until "now"  
+  - The `starting` and `ending` day limit the working hours calculation  
 - You can [import data from the MR plugins]({% link _documentation/plugin-contract.md %}) (Controlling, Sickday, Vacation)
 - The user calendar will show all absences (sickness, vacation...) and public-holidays
 
@@ -37,8 +37,6 @@
 These features will be added in the future, but there is no guarantee when or in which order.
 
 ```
-- Settings
-  - Last day of work for a user, to stop calculating afterwards
 - Absence calendar
     - Display all users / teams
     - Allow export as ical (or similar format) for use in external calendars (e.g. Outlook)
@@ -61,7 +59,6 @@ If I decide to add one of these feature, it will be moved to the "Roadmap" secti
 ```
 - Settings
   - Allow to reach a configurable amount of negative hours for time-off ([#159](https://github.com/kimai/Paid-plugins/issues/159))
-- Preview of the "locked month" PDF without actually closing the month as email
 - Prevent that certain days can be booked for vacation
 - Add first start- and last end-time as begin and end times to the PDF
 - Working times
@@ -98,7 +95,4 @@ If I decide to add one of these feature, it will be moved to the "Roadmap" secti
 - Holidays
   - Lockdown method for vacations (define periods where no vacations can be booked)
   - Automatic calculation of holidays according to the working-time duration (e.g. 30 days per year for a 40h week) 
-- Contracts 
-  - Multiple working contracts per user (configured with start and end time)
-  - Define arbitrary date ranges with attached working-time profiles
 ```
