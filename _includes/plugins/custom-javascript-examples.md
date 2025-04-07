@@ -140,7 +140,8 @@ document.addEventListener('show.bs.modal', (e) => {
 
 Set a custom browser title:
 ```javascript
-document.body.attributes['data-title'].value = 'My fancy company';
+document.title = document.body.attributes['data-title'].value = 'My fancy company';
+
 ```
 
 Add IDs to all h3 header of your custom news page (allowing to use jump anchor links):
