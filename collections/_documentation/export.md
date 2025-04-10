@@ -31,6 +31,18 @@ You need to activate the checkbox before creating the export, to automatically s
 
 For further information read the [timesheet documentation]({% link _documentation/timesheet.md %}).
 
+## Time format
+
+Kimai knows both the `natural` and `decimal` notation for times and both versions have their Pros and Cons:
+- the `natural` format (e.g. 1:15) is usually easier to understand
+- the `decimal` format (e.g. 1.25) is better for calculations
+
+As a user, you can decide which version you want to use by going to your own [user preferences]({% link _documentation/user-preferences.md %}): in the upper right corner click your username and then `Preferences`.
+
+There is a toggle called `Use decimal duration in export` that switches between the two versions:
+
+{% include docs-image.html src="/images/documentation/export-time-format.webp" title="Time format toggle" width="400px" %}
+
 ## Adding export templates
 
 Kimai supports custom PDF and HTML export templates.
