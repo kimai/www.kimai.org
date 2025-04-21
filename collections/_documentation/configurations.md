@@ -128,15 +128,21 @@ These are the existing rounding modes:
 - `Country` - default value for the "create customer" form
 - `Currency` - default value for the "create customer" form
 - `Display of entries in selection lists` - the display of a customer in dropdown fields
+- `Customer number format` - format for automatically generated project numbers, allowed replacers are `{cc}`
+- `Allow multiple usages of the same number` - whether the same number can be used on multiple customers
 
 ## Project
 
 - `Display of entries in selection lists` - the display of a project in dropdown fields
 - `Take over teams from the logged-in user when creating new entries` - if this is active, all teams of the currently logged-in users will be copied over to new created project, therefor extending the visibility of the current user (and all his teams) to the new project
+- `Project number format` - format for automatically generated project numbers, allowed replacers are `{pc}`
+- `Allow multiple usages of the same number` - whether the same number can be used on multiple projects
 
 ## Activity
 
 - `Display of entries in selection lists` - the display of an activity in dropdown fields
+- `Activity number format` - format for automatically generated activity numbers, allowed replacers are `{ac}`
+- `Allow multiple usages of the same number` - whether the same number can be used on multiple activities
 
 ## User
 
