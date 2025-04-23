@@ -661,26 +661,86 @@ This will be used for every recorded timesheet that is created using the kiosk m
   <tbody>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">Login mode</code></td>
-      <td>whether to use camera or usb mode</td>
+      <td>Which login mode should be used</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Allow Camera-switch</code></td>
+      <td>Requires browser-access approval in the used device</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Hide entered/scanned code </code></td>
+      <td>The browsers password manager needs to be disabled</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Placeholder for input field</code></td>
+      <td>Some text, which will be displayed in the login input field (e.g. for assisting your users)</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">Code format</code></td>
-      <td>you have to decide which code format you want to use</td>
+      <td>Use <code class="language-plaintext highlighter-rouge">Freestyle</code> for everything except barcodes, for which you need to select the used barcode type</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">Barcode includes readable code</code></td>
-      <td>whether the barcode in the user profile will include the human readable code</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">Duration to display confirmation dialog (in seconds)</code></td>
-      <td>how long the start/stop screens will be shown after a successful scan</td>
+      <td>Whether the barcode in the user profile will include the human readable code</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">Activity</code></td>
-      <td>the non-global activity that will be used to track the times</td>
+      <td>The non-global activity that will be used to track the times</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Hide logo on confirmation page</code></td>
+      <td>Do not display the logo (Kimai/Your Company) on the login screens</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Show "not logged in" users on login screen</code></td>
+      <td>Show all active users that do not have a running timesheet (hides System-Accounts)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Show "logged in" users on login screen</code></td>
+      <td>Show all active users that have a running timesheet (hides System-Accounts)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Save client IP for new timesheets</code></td>
+      <td>Stores the Client IP in a custom-field if activated</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Duration of confirmation dialog</code></td>
+      <td>How long the start/stop screens will be shown after a successful scan (in seconds)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Play a short sound for logins and logouts</code></td>
+      <td>On successful login and logout a short sound will be played</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Prevent page reload in login process</code></td>
+      <td>If enabled, the reload of the submitted login page will be prevented</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Stop only kiosk activities when clocking out</code></td>
+      <td>If enabled, all “non-kiosk activities” will not be stopped for the user when clocking out</td>
     </tr>
   </tbody>
 </table>
+
+<h2 id="login-modes">Login modes</h2>
+
+<h3 id="free-input-eg-keyboard">Free Input (e.g. keyboard)</h3>
+
+<p>A free text input field where a user can manually enter a code, like a personal code.</p>
+
+<p>Also used in combination with Web NFC or similar tokens.</p>
+
+<h3 id="barcode-via-usb-scanner">Barcode via USB scanner</h3>
+
+<p>A text input field, which will submit the scanned barcode.</p>
+
+<h3 id="barcode-via-device-camera">Barcode via device camera</h3>
+
+<p>Opens a camera screen on the website and then a javascript tool tries to find a barcode on the scanned area.</p>
+
+<p>Needs the <code class="language-plaintext highlighter-rouge">Code format</code> to be configured correctly.</p>
+
+<p>This mode has limitations and should ONLY be used for test purposes. Use a dedicated barcode scanner for production usage.</p>
 
 <h2 id="permissions">Permissions</h2>
 
@@ -729,7 +789,7 @@ This will be used for every recorded timesheet that is created using the kiosk m
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#configuration" class="nav-link">Configuration</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#configuration" class="nav-link">Configuration</a></li><li class="nav-item"><a href="#login-modes" class="nav-link">Login modes</a><ul><li class="nav-item"><a href="#free-input-eg-keyboard" class="nav-link">Free Input (e.g. keyboard)</a></li><li class="nav-item"><a href="#barcode-via-usb-scanner" class="nav-link">Barcode via USB scanner</a></li><li class="nav-item"><a href="#barcode-via-device-camera" class="nav-link">Barcode via device camera</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
         
     </aside>
 
