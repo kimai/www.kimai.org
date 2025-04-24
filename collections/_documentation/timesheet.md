@@ -82,7 +82,7 @@ The export state can be set manually or via the [invoice]({% link _documentation
 
 ## Billable vs. not billable
 
-Since version 1.14 you can define whether a timesheet record is billable or not.
+You can define whether a timesheet record is billable or not.
 
 Non-billable timesheets are excluded from [invoices]({% link _documentation/invoices.md %}) and budget calculations.
 

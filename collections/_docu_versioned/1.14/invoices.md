@@ -73,9 +73,9 @@ For further information read the [timesheet documentation]({% link _documentatio
 
 ## Billable items only
 
-Only billable items will be included in invoices (since version 1.10). 
+Only billable items will be included in invoices. 
 By default, every timesheet records is billable.
-Since version 1.14 users can set the billable flag on individual timesheets.  
+Users can set the billable flag on individual timesheets.  
 
 [Expense items]({% link _store/keleo-expenses-bundle.md %}) have a configurable billable flag per item and only the ones marked as billable (refundable) will be included. 
 

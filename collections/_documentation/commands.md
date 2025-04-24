@@ -9,7 +9,7 @@ Please run `bin/console` to see all available commands.
 
 ## Stopping all timesheets
 
-Since version 1.19.7 you can stop all running timesheets with the call of one command:
+You can stop all running timesheets with the call of one command:
 
 ```bash
 bin/console kimai:timesheet:stop-all
