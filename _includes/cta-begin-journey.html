@@ -5,8 +5,6 @@
         <div class="position-relative zindex-5 text-center my-xl-3 py-1 py-md-4 py-lg-5">
             <p class="lead text-light opacity-70 mb-3">{{ site.data[page.lang].translation.cta.get-started.question }}</p>
             <h2 class="h1 text-light pb-3 pb-lg-0 mb-lg-5">{{ site.data[page.lang].translation.cta.get-started.answer }}</h2>
-            {% assign install_support_btn = site.data[page.lang].translation.cta.get-started.button %}
-            {% comment %}{% include link-translated-shop.html item="installation-support" class="btn btn-secondary btn-lg" title=install_support_btn %}{% endcomment %}
             {% include link-cloud-start.html classes="btn btn-success btn-lg" %}
         </div>
     </div>

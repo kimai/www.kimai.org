@@ -10,8 +10,8 @@ This documentation covers the necessary steps to migrate from Kimai 1 to Kimai 2
 Read the [version documentation]({% link _documentation/versions.md %}) before, to understand if you need this migration guide.
 
 {% alert %}
-You can <a href="{% link _store/keleo-installation-support.md %}">get professional support</a> if you are not sure about performing the upgrade yourself.
-{% endalert %}
+You can <a href="{% link _pages/support.html %}">get professional support</a> if you are not sure about performing the upgrade yourself.
+{% endalert %} 
 
 ## Introduction
 
@@ -81,7 +81,7 @@ The connection will use the charset `latin1` and the default table prefix `kimai
 ### Problems and solution
 
 Kimai 1 was written a long time ago, when MySQL was lacking proper UTF8 support and foreign keys.
-While [migrating dozens of customers installations]({% link _store/keleo-installation-support.md %}) I stumbled upon some recurring problems,
+While [migrating dozens of customers installations]({% link _pages/support.html %}) I stumbled upon some recurring problems,
 that can be solved with some SQL commands.
 
 You can either fix the problems manually as described below, or you let the importer handle all these problems by using the

@@ -13,7 +13,7 @@ If you can't manage to get Kimai up and running, it is very likely not an issue 
 The following configurations are meant to give you a first idea how your config could look like, 
 they either might be incompatible with your exact setup or might need further tweaking to work.
 
-I don't offer free support for such situations, but you can contact me about [paid installation support]({% link _store/keleo-installation-support.md %}). 
+I don't offer free support for such situations, but you can contact me about [paid installation support]({% link _pages/support.html %}). 
 
 ## Nginx
 

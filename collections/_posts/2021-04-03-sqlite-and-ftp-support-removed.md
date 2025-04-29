@@ -75,7 +75,7 @@ In short the steps are: create mysql database structure, export from sqlite and 
 - Import the prepared file into MySQL
     - You should deactivate foreign keys during the import via `SET FOREIGN_KEY_CHECKS=0;`
 
-If you need help with the transition, I offer [paid migration support]({% link _store/keleo-installation-support.md %}).
+If you need help with the transition, I offer [paid migration support]({% link _pages/support.html %}).
 
 ### Data migration via Ruby
 

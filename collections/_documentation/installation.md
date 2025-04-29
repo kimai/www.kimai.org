@@ -129,7 +129,7 @@ You have two choices:
 If you don't have the technical background for managing a server yourself and need to rely on a shared hosting package,
 it is better to stop hosting business critical software yourself!
 If you thought about switching to a managed server before (they are affordable these days)
-you can contact me, [I offer paid setup support]({% link _store/keleo-installation-support.md %}).
+you can contact me, [I offer paid setup support]({% link _pages/support.html %}).
 {% endalert %}
  
 ### Ansible

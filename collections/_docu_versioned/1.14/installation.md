@@ -95,7 +95,7 @@ Read [this issue]({{ site.kimai_v2_repo }}/issues/743) if you have further quest
 
 How to install Kimai at shared hosting companies. Please share our insights if you have managed to get it up and running with another company!
 
-If you can't find the correct version, ask your hoster! Or [let us help you]({% link _store/keleo-installation-support.md %}).
+If you can't find the correct version, ask your hoster! Or [let us help you]({% link _pages/support.html %}).
 
 ### Ionos / 1&1
 
@@ -117,7 +117,7 @@ If you can't find the correct version, ask your hoster! Or [let us help you]({% 
 
 ### Strato 
 
-Strato has a special setup of PHP, you need to find the proper version first.
+Strato has a special setup of PHP, you need to find the proper version first. 
 
 - PHP-Directory: `/opt/RZphp{major}{minor}/bin/php-cli` (Shared Hosting)
 - PHP-Directory: `/usr/bin/php{major}{minor}` (Managed Server)

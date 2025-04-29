@@ -37,7 +37,7 @@ It might still run on private hosts or by some brave hosters that ship an unsupp
 But you shouldn't, and it is strongly advised against. 
 
 Kimai v1 is - as a software without maintenance since years and running with a PHP version that is not supported - a potential risk in your IT infrastructure.
-If you do NOT know how to upgrade, [get in touch]({% link _store/keleo-installation-support.md %}), it is about time!
+If you do NOT know how to upgrade, [get in touch]({% link _pages/support.html %}), it is about time!
 
 The legacy version repo was archived at `https://github.com/kimai/kimai1`.
 

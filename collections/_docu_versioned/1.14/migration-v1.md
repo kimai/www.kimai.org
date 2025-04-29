@@ -7,7 +7,7 @@ canonical: /documentation/migration-v1.html
 This documentation covers all necessary steps to migrate from Kimai 1 to Kimai 2.
 
 {% alert %}
-You can <a href="{% link _store/keleo-installation-support.md %}">get professional support</a> if you are not sure about performing the upgrade yourself. 
+You can <a href="{% link _pages/support.html %}">get professional support</a> if you are not sure about performing the upgrade yourself. 
 {% endalert %}
 
 ## Introduction
@@ -73,10 +73,10 @@ That will drop the configured Kimai database schema and re-create it, before imp
 The connection will use the charset `latin1` and the default table prefix `kimai_` for reading data. Imported users can login with the password `test123` and all customer will have the country `CH` and the currency `CHF` assigned.
 
 ### Problems and solution
-
+ 
 Kimai 1 was written a long time ago, when MySQL was lacking proper UTF8 support and foreign keys (in shared hostings).
-While [migrating dozens of customers installations]({% link _store/keleo-installation-support.md %}) I stumbled upon some recurring problems, 
-that can be solved with some SQL commands.  
+While [migrating dozens of customers installations]({% link _pages/support.html %}) I stumbled upon some recurring problems, 
+that can be solved with some SQL commands.
 
 {% alert warning %}Be aware, depending on your Kimai 1 version the field names might be different in the following snippets{% endalert %} 
 
