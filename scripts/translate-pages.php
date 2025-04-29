@@ -10,6 +10,11 @@ chdir($realpath);
 $config = Yaml::parseFile(__DIR__ . '/../_config.yml');
 
 $languages = $config['languages'];
+// english is the base language, do not touch it
+$key = array_search('en', $languages, true);
+if ($key !== false) {
+    unset($languages[$key]);
+}
 // while working on a specific translation, use this one:
 //$languages = ['ta'];
 
@@ -55,6 +60,9 @@ foreach ($multiLanguagePaths as $path => $settings)
     foreach ($files as $file) {
         $baseFileName = basename($file);
         foreach ($languages as $language) {
+            if ($language === 'en') {
+                continue;
+            }
             $langPath = $basePath . '/' . $language;
             $langTargetFile = $langPath . '/' . $baseFileName;
             $relTarget = $language . '/' . $baseFileName;
