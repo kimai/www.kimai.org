@@ -377,6 +377,8 @@
     - Include: manual bookings
 - Finalize year
   - Allow automatic adjustments of time and holiday account of next year, e.g. from a list-overview
+- API 
+  - Methods to write absences (e.g. when using a HR tool for holiday planning)
 </code></pre></div></div>
 
 <h2 id="ideas">Ideas</h2>
@@ -385,23 +387,17 @@
 If you need one of these features, do not rely on them being added, but contact me upfront to discuss your needs.
 If I decide to add one of these feature, it will be moved to the “Roadmap” section.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Settings
-  - Allow to reach a configurable amount of negative hours for time-off ([#159](https://github.com/kimai/Paid-plugins/issues/159))
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Configurable amount of allowed negative hours for time-off: https://github.com/kimai/Paid-plugins/issues/159
 - Prevent that certain days can be booked for vacation
 - Add first start- and last end-time as begin and end times to the PDF
-- Working times
-  - Allow to configure a [dedicated project](https://github.com/kevinpapst/kimai-plugins/discussions/112) that will be exclusively used for calculating attendance time 
-  - Allow to configure a dedicated project that will be ignored when calculating the attendance time
+- Configure a dedicated project that will be ignored when calculating the attendance time
+- Close/Approve months partially, in case there is a change in the contract within the month
 - Validations
   - Configure if timesheets should be prohibited during absence (type)
   - Configurable rule to deactivate time-records on public holidays
-- API 
-  - Methods to write absences (e.g. when using a HR tool for holiday planning)
 - Management view for all users
   - showing statistics for absences
   - pending holidays (approved), used holidays, available
-- Monthly approvals
-  - Allow to close months partially, in case there is a change in the contract within the month
 - Absences
   - Add holiday for multiple users (e.g. for forced company vacations)
   - Types of absences (Workaround: use comment field)
@@ -409,9 +405,8 @@ If I decide to add one of these feature, it will be moved to the “Roadmap” s
     - Show type in PDF
     - paid/not paid
   - Sum of sickness and other days on Absence screen
-- Breaks (Pause)
+- Break times
   - Support calculation of breaks (e.g. display in calendar)
-  - Use all breaks between first entry of the day and last entry of the day as pause
 - Dashboard
   - Existing widgets do not show public holidays, sickness, vacation ... make it configurable or create new widgets that include these hours/days
   - Widgets for total numbers, to show "status" more prominent
