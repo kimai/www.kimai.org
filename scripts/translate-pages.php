@@ -1,12 +1,16 @@
 <?php
 
+include_once __DIR__ . '/../vendor/autoload.php';
+
+use Symfony\Component\Yaml\Yaml;
+
 $realpath = realpath(__DIR__ . '/..');
 chdir($realpath);
 
-// once development is over, switch back to the list of all currently active languages
-$languages = ['cs', 'de', 'es', 'fr', 'he', 'hr', 'it', 'nl', 'pl', 'pt', 'pt_BR', 'ru', 'sk', 'sv', 'ta', 'uk', 'zh_Hans', 'zh_Hant'];
+$config = Yaml::parseFile(__DIR__ . '/../_config.yml');
 
-// currently working on:
+$languages = $config['languages'];
+// while working on a specific translation, use this one:
 //$languages = ['ta'];
 
 $multiLanguagePaths = [
