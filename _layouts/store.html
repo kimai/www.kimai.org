@@ -12,10 +12,10 @@ layout: base
             <div class="row">
                 <div class="col-xl-5 d-flex flex-column">
                     <h1 class="display-3 mb-4">
-                        {{ site.data[page.lang].translation.store-hero-title | replace: ':', ":<br>" }}
+                        {{ site.data[page.lang].translation.store.title | replace: ':', ":<br>" }}
                     </h1>
                     <p class="fs-lg mb-5">
-                        {{ site.data[page.lang].translation.store-hero-intro }}
+                        {{ site.data[page.lang].translation.store.subtitle }}
                     </p>
                     <div class="d-flex align-items-center mt-auto mb-3 mb-lg-0 pb-4 pb-lg-0 pb-xl-5 ps-3">
                         {% assign testimonials = site.data.testimonials | where_exp: "item", "item.tags contains 'Faces'" | where_exp: "item", "item.avatar != ''" | sample: 5 %}

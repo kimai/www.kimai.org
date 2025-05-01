@@ -264,7 +264,7 @@ layout: default
                 {% if changelog != nil %}
                 <li class="nav-item">
                     <a href="#store-changelog" class="nav-link" data-bs-toggle="tab" role="tab">
-                        {{ site.data[page.lang].translation.changelog }}
+                        {{ site.data[page.lang].translation.changelogs.name }}
                     </a>
                 </li>
                 {% endif %}
@@ -327,7 +327,7 @@ layout: default
 
                 {% if changelog != nil %}
                 <div class="tab-pane fade" id="store-changelog" role="tabpanel">
-                    <h2 id="compatibility">{{ site.data[page.lang].translation.changelog }}</h2>
+                    <h2 id="compatibility">{{ site.data[page.lang].translation.changelogs.name }}</h2>
                     {% capture changelog_md -%}
                     {%- include {{ changelog }} -%}
                     {%- endcapture %}
