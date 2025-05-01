@@ -7,10 +7,8 @@ description: Kiosk mode with support for Barcode, RFID, Web NFC
 
 ## Configuration
 
-You have to **configure the bundle before you can use it** - you reach the configuration via:
-- the `Plugin` screen (`Preferences` in action dropdown behind the plugin)
-- the Kiosk administration (cogs icon in the upper right)
-- the System configuration (`Kiosk & Barcode` section)
+You have to **configure the bundle before you can use it**. 
+You reach the configuration via `System` > `Settings` > `Kiosk mode`.
 
 The following configurations are available:
 
@@ -40,6 +38,13 @@ The following configurations are available:
 A free text input field where a user can manually enter a code, like a personal code. 
 
 Also used in combination with Web NFC or similar tokens.
+
+### Web NFC
+
+Uses the Web NFC Browser API, which as of writing these docs does not work in all browsers.
+
+Modern mobile devices with up-to-date Chrome based browsers support it.
+Also some Kiosk browsers have support, that needs to be enabled.
 
 ### Barcode via USB scanner
 
