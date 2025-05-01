@@ -33,7 +33,7 @@ layout: base
                 {% if tool.image != nil %}
                 <div class="col-md-12 offset-xl-1 d-flex mt-lg-4 mb-4">
                     <div class="align-self-start ms-xl-0 ms-md-4 p-lg-4 p-sm-3 p-2 rounded-4 overflow-hidden" style="background: linear-gradient(153.32deg, rgba(255, 255, 255, .3) -65.62%, rgba(255, 255, 255, .1) 83.28%); box-shadow: 0 .25rem 1.5rem -.0625rem rgba(0, 0, 0, .2); backdrop-filter: blur(25px);">
-                        <img src="{{ tool.image }}" width="200" alt="Logo" class="rounded-4" style="box-shadow: 0 0 7.5rem rgba(0, 0, 0, .1);">
+                        <img src="{{ tool.image }}" width="500" alt="Logo" class="rounded-4" style="box-shadow: 0 0 7.5rem rgba(0, 0, 0, .1);">
                     </div>
                 </div>
                 {% endif %}
@@ -148,6 +148,7 @@ layout: base
                                     </div>
                                 </div>
                                 {% endfor %}
+                                {% comment %}
                                 <div class="row g-0 {% cycle ' bg-secondary rounded-3', '' %}">
                                     <div class="col-md-4 text-dark fw-semibold ps-4 pe-2 py-4">
                                         Pricing: 1 user / month
@@ -188,6 +189,7 @@ layout: base
                                         </div>
                                     </div>
                                 </div>
+                                {% endcomment %}
                             </div>
                             <p class="text-muted mt-3">
                                 Please note that the above information were manually compiled from the {{ tool.name }} website.

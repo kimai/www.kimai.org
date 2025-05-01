@@ -1,7 +1,7 @@
 ---
 title: "Compare Kimai vs. Open Project - the best alternative for Open project time-tracking"
 name: OpenProject
-image: /images/logos/clock-regular.svg
+image: /images/logos/generic.webp
 feature: true
 is_oss: true
 on_premise: true

@@ -1,7 +1,7 @@
 ---
 title: "Compare Kimai vs. Traggo: which open-source time-tracker fits your needs?"
 name: Traggo
-image: /images/logos/clock-regular.svg
+image: /images/logos/generic.webp
 feature: false
 is_oss: true
 on_premise: true

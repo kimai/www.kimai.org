@@ -28,5 +28,4 @@ Wenn Du einen gemeinnützigen Verein bzw. eine Organisation repräsentierst,
 dann registriere Dich mit einer offiziellen E-Mail-Adresse des Vereins und verfasse eine kurze Support-Nachricht. 
 Der Tarif wird nach manueller Prüfung freigeschaltet.
 
-Es wäre toll, wenn ich Euer Logo und den Namen als Referenz auf [www.kimai.cloud](https://www.kimai.cloud) 
-und [www.kimai.org](https://www.kimai.org) nutzen dürfte.
+Im Gegenzug würde ich um eine Bewertung mit Eurem Logo und Namen bitten, um diese als Referenz (u.a. auf [www.kimai.org](https://www.kimai.org)) anzugeben.

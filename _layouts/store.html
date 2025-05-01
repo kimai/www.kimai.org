@@ -43,6 +43,8 @@ layout: base
             {% assign products = site.store | where: "lang", page.lang | where_exp:"product", "product.type == 'featured'" | sort: 'order', 'last' %}
             {% include store-list-cards.html products=products %}
         </article>
+
+        {% comment %}
         <article class="mb-5 pt-3">
             <header class="d-flex align-items-center justify-content-between mb-5">
                 <span class="badge bg-success shadow-info fs-base fw-normal">Support</span>
@@ -50,25 +52,13 @@ layout: base
             {% assign products = site.store | where: "lang", page.lang | where_exp:"product", "product.type == 'support'" | sort: 'title' %}
             {% include store-list-cards.html products=products %}
         </article>
-        <article class="mb-5 pt-3">
-            <header class="d-flex align-items-center justify-content-between mb-5">
-                <span class="badge bg-info shadow-info fs-base fw-normal">{{ site.data[page.lang].translation.store-category-apps }}</span>
-            </header>
-            {% assign products = site.store | where: "lang", page.lang | where_exp:"product", "product.type == 'app'" | sort: 'title' %}
-            {% include store-list-cards.html products=products %}
-        </article>
+        {% endcomment %}
+
         <article class="mb-5 pt-3">
             <header class="d-flex align-items-center justify-content-between mb-5">
                 <span class="badge bg-warning shadow-info fs-base fw-normal">{{ site.data[page.lang].translation.store-category-plugins }}</span>
             </header>
             {% assign products = site.store | where: "lang", page.lang | where_exp:"product", "product.type == 'plugin'" | sort: 'title' %}
-            {% include store-list-cards.html products=products %}
-        </article>
-        <article class="mb-5 pt-3">
-            <header class="d-flex align-items-center justify-content-between mb-5">
-                <span class="badge bg-danger shadow-info fs-base fw-normal">{{ site.data[page.lang].translation.store-category-client }}</span>
-            </header>
-            {% assign products = site.store | where: "lang", page.lang | where_exp:"product", "product.type == 'client'" %}
             {% include store-list-cards.html products=products %}
         </article>
     </section>

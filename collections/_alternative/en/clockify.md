@@ -1,7 +1,7 @@
 ---
 title: "Compare Kimai vs. Clockify - the best Clockify alternative"
 name: Clockify
-image: /images/logos/clock-regular.svg
+image: /images/logos/generic.webp
 feature: true
 is_oss: false
 on_premise: false

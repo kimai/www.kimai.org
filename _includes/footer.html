@@ -55,23 +55,10 @@
             <div class="col-md-7 offset-xl-1">
                 <div id="footer-links" class="row">
                     <div class="col-12 col-md-6 col-lg-4">
-                        <h6 class="fs-lg mb-1 mb-md-2">
-                            <span class="d-none d-md-block">Company</span>
-                            <a href="#tools" class="d-block {{ text_class}} dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Company</a>
-                        </h6>
                         <div id="tools" class="collapse d-md-block" data-bs-parent="#footer-links">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    {% include link-translated-menu.html item="about" language=page.lang class="nav-link fs-sm fw-medium px-0 py-1" %}
-                                </li>
-                                <li class="nav-item">
-                                    {% include link-translated-menu.html type="landingpage" item="open-source-community" language=englishOrGerman class="nav-link fs-sm fw-medium px-0 py-1" %}
-                                </li>
-                                <li class="nav-item">
                                     {% include link-translated-menu.html item="features" language=page.lang class="nav-link fs-sm fw-medium px-0 py-1" %}
-                                </li>
-                                <li class="nav-item">
-                                    {% include link-translated-menu.html item="support" language=page.lang class="nav-link fs-sm fw-medium px-0 py-1" %}
                                 </li>
                                 <li class="nav-item">
                                     {% include link-translated-menu.html item="reviews" language=page.lang class="nav-link fs-sm fw-medium px-0 py-1" %}
@@ -79,53 +66,46 @@
                                 <li class="nav-item">
                                     {% include link-translated-menu.html type="landingpage" item="discount-codes" language=englishOrGerman class="nav-link fs-sm fw-medium px-0 py-1" %}
                                 </li>
+                                {% if page.lang == 'de' or page.lang == 'en' %}
+                                <li class="nav-item">
+                                    {% include link-translated-menu.html item="time-tracking-terms" language=englishOrGerman class="nav-link fs-sm fw-medium px-0 py-1" %}
+                                </li>
+                                {% endif %}
                             </ul>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                        <h6 class="fs-lg mb-1 mb-md-2">
-                            <span class="d-none d-md-block">Kimai {% if page.lang == 'de' %}für{% else %}for{% endif %}</span>
-                            <a href="#landing-kimai-for" class="d-block {{ text_class}} dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">Kimai</a>
-                        </h6>
                         <div id="landing-kimai-for" class="collapse d-md-block" data-bs-parent="#footer-links">
                             <ul class="nav flex-column">
-                                <li class="nav-item">
-                                    {% include link-translated-menu.html type="landingpage" item="non-profit" language=englishOrGerman class="nav-link fs-sm fw-medium px-0 py-1" %}
-                                </li>
                                 {% assign industries = site.industries | where: "lang", "en"  | where: "featured", true | sort: "name" %}
                                 {% for industry in industries %}
                                 <li class="nav-item">
-                                    <a href="{{ industry.url }}" class="nav-link fs-sm fw-medium px-0 py-1" title="Time-tracking for {{ industry.title }}">{{ industry.name }}</a>
+                                    <a href="{{ industry.url }}" class="nav-link fs-sm fw-medium px-0 py-1" title="{{ industry.title }}">{{ industry.name }}</a>
                                 </li>
                                 {% endfor %}
                                 <li class="nav-item">
-                                    {% assign industry_title= site.data[page.lang].translation.industry.more %}
+                                    {% include link-translated-menu.html type="landingpage" item="non-profit" language=englishOrGerman class="nav-link fs-sm fw-medium px-0 py-1" %}
+                                </li>
+                                <li class="nav-item">
+                                    {% assign industry_title=site.data[page.lang].translation.industry.more %}
                                     {% include link-translated-menu.html item="industry" language=page.lang class="nav-link fs-sm fw-medium px-0 py-1" title=industry_title %}
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                        <h6 class="fs-lg mb-1 mb-md-2">
-                            <span class="d-none d-md-block">{{ site.data[page.lang].translation.comparison.footer-title }}</span>
-                            <a href="#footer-cmp" class="d-block {{ text_class}} dropdown-toggle d-md-none py-2" data-bs-toggle="collapse">{{ site.data[page.lang].translation.comparison.footer-title }}</a>
-                        </h6>
                         <div id="footer-cmp" class="collapse d-md-block" data-bs-parent="#footer-links">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
                                     {% include link-translated-menu.html item="alternatives" language=page.lang class="nav-link fs-sm fw-medium px-0 py-1" %}
                                 </li>
                                 {% assign tools = site.alternative | where: "lang", "en"  | where: "feature", true | sort: "name" %}
+                                {% assign compareWith = site.data[page.lang].translation.comparison.compare_with %}
                                 {% for tool in tools %}
                                     <li class="nav-item">
-                                        <a href="{{ tool.url | full_url: 'en' }}" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai to {{ tool.name }}">{{ tool.name }}</a>
+                                        <a href="{{ tool.url | full_url: 'en' }}" class="nav-link fs-sm fw-medium px-0 py-1" title="{{ compareWith | replace: "%name%", tool.name }}">{{ tool.name }}</a>
                                     </li>
                                 {% endfor %}
-                                {% if page.lang == 'de' or page.lang == 'en' %}
-                                <li class="nav-item">
-                                    {% include link-translated-menu.html item="time-tracking-terms" language=englishOrGerman class="nav-link fs-sm fw-medium px-0 py-1" %}
-                                </li>
-                                {% endif %}
                             </ul>
                         </div>
                     </div>

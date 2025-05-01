@@ -27,9 +27,15 @@
 {% if page.navi_absolute != nil %}
     {% assign is_absolute = page.navi_absolute %}
 {% endif %}
+{% assign englishOrGerman = 'en' %}
+{% if page.lang == 'de' %}
+    {% assign englishOrGerman = 'de' %}
+{% endif %}
+{% assign homepage = site.pages | where: "slug", "index" | find: "lang", page.lang %}
+{% assign store = site.pages | where: "slug", "store" | find: "lang", page.lang %}
+{% assign documentation = site.pages | where: "slug", "documentation" | find: "lang", page.lang %}
 <header class="header navbar navbar-expand-lg {% if is_absolute %}position-absolute{% endif %} {% if is_dark %}navbar-dark{% endif %} {% if is_bg_dark %}bg-dark{% endif %} {% if is_light %}bg-light{% endif %} navbar-sticky">
     <div class="container px-3">
-        {% assign homepage = site.pages | where: 'lang', page.lang | find: 'slug', 'index' %}
         <a href="{{ homepage.url }}" class="navbar-brand pe-3">
         <img src="/images/kimai_logo_48.webp" style="height:36px;width:36px;" alt="{{ site.data[page.lang].translation.index.title }}"> Kimai
         </a>
@@ -40,29 +46,38 @@
             </div>
             <div class="offcanvas-body">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    {% assign demo = site.pages | where: "slug", "demo" | find: "lang", page.lang %}
-                    <li class="nav-item{% if page.url contains demo.url %} active{% endif %}">
-                        <a href="{{ demo.url }}" class="nav-link">{{ site.data[page.lang].translation.demo.name }}</a>
-                    </li>
-                    {% assign pricing = site.pages | where: "slug", "pricing" | find: "lang", page.lang %}
-                    <li class="nav-item{% if page.url contains pricing.url %} active{% endif %}">
-                        <a href="{{ pricing.url }}" class="nav-link">{{ site.data[page.lang].translation.pricing.name }}</a>
-                    </li>
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">{{ site.data[page.lang].translation.community.name }}</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">{{ site.data[page.lang].translation.product.name }}</a>
                         <ul class="dropdown-menu">
-                            {% assign store = site.pages | where: "slug", "store" | find: "lang", page.lang %}
-                            <li><a href="{{ store.url }}" class="dropdown-item"><i class="bx bx-extension me-2"></i>{{ site.data[page.lang].translation.store.name }}</a></li>
-                            <li>{% include link-translated-menu.html item="download" language=page.lang class="dropdown-item" icon="bx bxl-docker me-2" %}</li>
-                            <li>{% include link-translated-menu.html item="blog" language="en" class="dropdown-item" icon="bx bx-news me-2" %}</li>
-                            <li><a href="{{ site.kimai_v2_forum }}" target="_blank" class="dropdown-item"><i class="bx bx-chat me-2"></i>{{ site.data[page.lang].translation.forum.name }}</a></li>
+                            <li>{% include link-translated-menu.html item="about" language=page.lang class="dropdown-item" %}</li>
+                            <li>{% include link-translated-menu.html type="landingpage" item="open-source-community" language=englishOrGerman class="dropdown-item" %}</li>
+                            <li class="dropdown-divider"></li>
+                            <li>{% include link-translated-menu.html item="integrations" language=page.lang class="dropdown-item" %}</li>
+                            <li>{% include link-translated-menu.html item="demo" language=page.lang class="dropdown-item" %}</li>
+                            <li class="dropdown-divider"></li>
+                            <li>{% include link-translated-menu.html item="blog" language="en" class="dropdown-item" %}</li>
+                            <li>{% include link-translated-menu.html item="support" language=page.lang class="dropdown-item" %}</li>
                         </ul>
                     </li>
-                    {% assign documentation = site.pages | where: "slug", "documentation" | find: "lang", page.lang %}
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">{{ site.data[page.lang].translation.hosted.name }}</a>
+                        <ul class="dropdown-menu">
+                            <li>{% include link-translated-menu.html item="pricing" language=page.lang class="dropdown-item" %}</li>
+                            <li>{% include link-translated-menu.html item="changelogs" language=page.lang class="dropdown-item" %}</li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">{{ site.data[page.lang].translation.onpremise.name }}</a>
+                        <ul class="dropdown-menu">
+                            <li>{% include link-translated-menu.html item="download" language=page.lang class="dropdown-item" %}</li>
+                            <li>{% include link-translated-menu.html item="store" language=page.lang class="dropdown-item" %}</li>
+                            <li><a href="{{ site.kimai_v2_forum }}" target="_blank" class="dropdown-item">{{ site.data[page.lang].translation.forum.name }}</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">{{ site.data[page.lang].translation.documentation.name }}</a>
                         <ul class="dropdown-menu">
-                            {% for group in site.data.menu-documentation %}
+                        {% for group in site.data.menu-documentation %}
                             {% assign docs_config = group[1] %}
                             {% assign docs_page = site.documentation | find: "slug", docs_config.slug %}
                             <li><a href="{{ docs_page.url | full_url: 'en' }}" class="dropdown-item">
@@ -70,7 +85,7 @@
                                 {% assign tkey = docu- | append: docs_config.translation %}
                                 {{ site.data[page.lang].translation[tkey].name }}
                             </a></li>
-                            {% endfor %}
+                        {% endfor %}
                         </ul>
                     </li>
                 </ul>

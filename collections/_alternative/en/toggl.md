@@ -1,7 +1,7 @@
 ---
 title: "Compare Kimai vs. Toggle: Which time-tracker fits your needs?"
 name: toggl track
-image: /images/logos/clock-regular.svg
+image: /images/logos/generic.webp
 feature: true
 is_oss: false
 on_premise: false
