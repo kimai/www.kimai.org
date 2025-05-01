@@ -17,7 +17,7 @@
                     </div>
                     <div class="card-footer border-0 p-0">
                         {% assign install_support_btn = site.data[page.lang].translation.support.premium_cta %}
-                        {% include link-translated-shop.html item="installation-support" class="btn btn-lg btn-primary" title=install_support_btn %}
+                        <a href="#support-call" class="btn btn-lg btn-primary">{{ install_support_btn }}</a>
                     </div>
                 </div>
                 <div class="vr text-border d-none d-sm-inline-block m-4"></div>
@@ -51,7 +51,101 @@
     </div>
 </section>
 
-{% include section-support-calendar.html %}
+<section class="py-5 my-md-2 my-lg-4 my-xl-5 ">
+    <div class="container">
+        <div class="row justify-content-center pt-5 pb-1 pb-sm-2 pb-md-3">
+            <h3 class="mb-4" id="support-call">{{ site.data[page.lang].translation.support.calendar }}</h3>
+            <p class="pb-2 pb-sm-3 mb-3">{{ site.data[page.lang].translation.support.calendar_intro }}</p>
+            <p class="pb-2 pb-sm-3 mb-3">{{ site.data[page.lang].translation.support.calendar_refund }}</p>
+            <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0RQYAA682fRAAewrP23tQCXli416WKTICy84PEwhUDUNpfCrJXF9D72VfuKHDM8dnAumEsyEkj?gv=true" style="border: 0" width="100%" height="750" frameborder="0"></iframe>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 my-md-2 my-lg-4 my-xl-5 bg-secondary">
+    <div class="container">
+        <div class="row justify-content-center pt-5 pb-1 pb-sm-2 pb-md-3">
+            <h3 class="mb-4" id="installation-support">{{ site.data[page.lang].store.items.installation-support.title }}</h3>
+            <p class="pb-2 pb-sm-3 mb-3">{{ site.data[page.lang].store.items.installation-support.intro }}</p>
+{% capture html %}
+{% if page.lang == 'de' %}
+Auch wenn alle notwendigen Schritte dokumentiert sind, können sie bei Nutzern ohne Erfahrung mit Serversystemen zu Problemen führen.
+In über 25 Jahren Berufserfahrung habe ich viele verschiedene Serversysteme kennengelernt und weiß, dass es nicht immer einfach ist, neue Software in eine bestehende Umgebung zu integrieren.
+
+Wenn du den Kimai-Entwickler für die Installation oder ein Update beauftragen möchtest, [nimm bitte per E-Mail Kontakt auf](mailto:{{ site.support_email }}).
+
+**Benötigte Informationen**
+
+Je nach Art deines Setups benötige ich möglicherweise unterschiedliche Zugangsdaten und Informationen. Dazu können gehören:
+- SSH-Zugangsdaten und Benutzerkonto
+- Zugang zur Datenbank und das zugehörige Konto
+- Eine vorbereitete Domain mit SSL-Zertifikat
+- Zugang zum Webinterface deines Hosting-Anbieters
+
+Wenn du einen Shared Hoster nutzt und mit diesen Begriffen nichts anfangen kannst – kein Problem, schreib mir einfach eine E-Mail.
+
+**Preise**
+- Updates dauern in der Regel 30–60 Minuten
+- Die Migration von Kimai v1 dauert etwa 2 Stunden
+- Eine Neuinstallation dauert ca. 1–2 Stunden (je nach Setup/Hoster)
+- Ich biete einen regelmäßigen Update-Service an, damit du immer die neueste Kimai-Version verwendest
+{% else %}
+Although all necessary steps are documented, they may cause problems for users who are not familiar with server systems.
+In 25+ years of work experience I have seen a lot of different server systems and know that it is not always easy to integrate new software into your existing setup.
+
+If you want to hire the Kimai developer for installation or updates, please [get in touch via email](mailto:{{ site.support_email }}).
+
+**Required information**
+
+Depending on the type of setup, I might ask you for different types of credentials and information. These might be:
+
+- SSH connection details and user account
+- the database connection and account
+- a prepared domain with SSL certificate
+- login to your hosters web interface
+
+If you use a shared hoster and don't know what all that means, don't worry - just drop me an email.
+
+**Pricing**
+
+- Updates take roughly 30-60 minutes
+- Migration from Kimai v1 takes around 2 hours
+- Installation takes around 1-2 hours (depending on your setup / hoster)
+- I offer a recurring update service, so you always have the latest version of Kimai
+{% endif %}
+{% endcapture %}
+{{ html | markdownify | replace: '<ul>', '<ul class="ms-5">' }}
+        </div>
+    </div>
+</section>
+
+<section class="py-5 my-md-2 my-lg-4 my-xl-5">
+    <div class="container">
+        <div class="row justify-content-center pb-1 pb-sm-2 pb-md-3">
+            <h3 class="mb-4" id="custom-plugins">{{ site.data[page.lang].store.items.custom-plugins.title }}</h3>
+            <p class="pb-2 pb-sm-3 mb-3">{{ site.data[page.lang].store.items.custom-plugins.intro }}</p>
+{% capture html %}
+{% if page.lang == 'de' %}
+Bitte kontaktiere mich unter [{{ site.support_email }}](mailto:{{ site.support_email }}), wenn du:
+- regelmäßig Statistiken an deine Kunden senden möchtest
+- zusätzliche Auswertungen für die Arbeit deiner Nutzer und Projekte benötigst
+- deine Rechnungssoftware mit Kimai verbinden willst
+- dich über ein Kiosk-Terminal anmelden möchtest
+- oder andere ausgefallene Ideen hast, wie sich deine Zeiterfassung noch besser gestalten lässt
+{% else %}
+Please contact me via [{{ site.support_email }}](mailto:{{ site.support_email }}) if you want to:
+
+- send regular statistics to your customers
+- generate additional reports for the work of your users and projects
+- connect your invoicing software with Kimai
+- login with your kiosk terminal
+- or have other funky ideas how to make your time-tracking experience even better
+{% endif %}
+{% endcapture %}
+{{ html | markdownify | replace: '<ul>', '<ul class="ms-5">' }}
+        </div>
+    </div>
+</section>
 
 <div class="pt-5">
     {% include section-contact-colored.html %}
