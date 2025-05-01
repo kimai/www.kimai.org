@@ -642,12 +642,8 @@ This will be used for every recorded timesheet that is created using the kiosk m
 
 <h2 id="configuration">Configuration</h2>
 
-<p>You have to <strong>configure the bundle before you can use it</strong> - you reach the configuration via:</p>
-<ul>
-  <li>the <code class="language-plaintext highlighter-rouge">Plugin</code> screen (<code class="language-plaintext highlighter-rouge">Preferences</code> in action dropdown behind the plugin)</li>
-  <li>the Kiosk administration (cogs icon in the upper right)</li>
-  <li>the System configuration (<code class="language-plaintext highlighter-rouge">Kiosk &amp; Barcode</code> section)</li>
-</ul>
+<p>You have to <strong>configure the bundle before you can use it</strong>. 
+You reach the configuration via <code class="language-plaintext highlighter-rouge">System</code> &gt; <code class="language-plaintext highlighter-rouge">Settings</code> &gt; <code class="language-plaintext highlighter-rouge">Kiosk mode</code>.</p>
 
 <p>The following configurations are available:</p>
 
@@ -730,6 +726,13 @@ This will be used for every recorded timesheet that is created using the kiosk m
 
 <p>Also used in combination with Web NFC or similar tokens.</p>
 
+<h3 id="web-nfc">Web NFC</h3>
+
+<p>Uses the Web NFC Browser API, which as of writing these docs does not work in all browsers.</p>
+
+<p>Modern mobile devices with up-to-date Chrome based browsers support it.
+Also some Kiosk browsers have support, that needs to be enabled.</p>
+
 <h3 id="barcode-via-usb-scanner">Barcode via USB scanner</h3>
 
 <p>A text input field, which will submit the scanned barcode.</p>
@@ -789,7 +792,7 @@ This will be used for every recorded timesheet that is created using the kiosk m
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#configuration" class="nav-link">Configuration</a></li><li class="nav-item"><a href="#login-modes" class="nav-link">Login modes</a><ul><li class="nav-item"><a href="#free-input-eg-keyboard" class="nav-link">Free Input (e.g. keyboard)</a></li><li class="nav-item"><a href="#barcode-via-usb-scanner" class="nav-link">Barcode via USB scanner</a></li><li class="nav-item"><a href="#barcode-via-device-camera" class="nav-link">Barcode via device camera</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#configuration" class="nav-link">Configuration</a></li><li class="nav-item"><a href="#login-modes" class="nav-link">Login modes</a><ul><li class="nav-item"><a href="#free-input-eg-keyboard" class="nav-link">Free Input (e.g. keyboard)</a></li><li class="nav-item"><a href="#web-nfc" class="nav-link">Web NFC</a></li><li class="nav-item"><a href="#barcode-via-usb-scanner" class="nav-link">Barcode via USB scanner</a></li><li class="nav-item"><a href="#barcode-via-device-camera" class="nav-link">Barcode via device camera</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
         
     </aside>
 
