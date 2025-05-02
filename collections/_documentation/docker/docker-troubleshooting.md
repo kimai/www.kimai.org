@@ -4,6 +4,16 @@ description: Troubleshooting your Kimai docker image
 canonical: /documentation/docker-troubleshooting.html
 ---
 
+## Running commands
+
+The Kimai working directory in Docker is `/opt/kimai/` so the usual commands across the documentation need to be prefixed.
+
+For example clearing the cache is
+
+```bash
+docker exec -ti kimai-test /opt/kimai/bin/console kimai:reload --env=prod
+```
+
 ## Logging
 
 When Kimai runs inside the docker container, logging is reconfigured to use `stderr` which can be seen within the docker container logs.
