@@ -551,7 +551,16 @@
             <div>
                 
                 <div id="documentation-content">
-                    <h2 id="logging">Logging</h2>
+                    <h2 id="running-commands">Running commands</h2>
+
+<p>The Kimai working directory in Docker is <code class="language-plaintext highlighter-rouge">/opt/kimai/</code> so the usual commands across the documentation need to be prefixed.</p>
+
+<p>For example clearing the cache is</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker <span class="nb">exec</span> <span class="nt">-ti</span> kimai-test /opt/kimai/bin/console kimai:reload <span class="nt">--env</span><span class="o">=</span>prod
+</code></pre></div></div>
+
+<h2 id="logging">Logging</h2>
 
 <p>When Kimai runs inside the docker container, logging is reconfigured to use <code class="language-plaintext highlighter-rouge">stderr</code> which can be seen within the docker container logs.
 See <a href="https://docs.docker.com/config/containers/logging/">View container logs</a> on how to access them.</p>
@@ -599,7 +608,7 @@ We keep the older tags available for those who do not wish to upgrade, but if yo
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#logging" class="nav-link">Logging</a></li><li class="nav-item"><a href="#docker-behind-a-reverse-proxy" class="nav-link">Docker behind a reverse proxy</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li><li class="nav-item"><a href="#older-version" class="nav-link">Older version</a></li><li class="nav-item"><a href="#allowed-memory-size-exhausted" class="nav-link">Allowed memory size exhausted</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#running-commands" class="nav-link">Running commands</a></li><li class="nav-item"><a href="#logging" class="nav-link">Logging</a></li><li class="nav-item"><a href="#docker-behind-a-reverse-proxy" class="nav-link">Docker behind a reverse proxy</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li><li class="nav-item"><a href="#older-version" class="nav-link">Older version</a></li><li class="nav-item"><a href="#allowed-memory-size-exhausted" class="nav-link">Allowed memory size exhausted</a></li></ul>
         
     </aside>
 

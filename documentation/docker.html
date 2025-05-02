@@ -678,6 +678,15 @@ Any issues with the container rather than the application itself can be raised <
 
 <p>If you are happy with Kimai, you can now set up your Docker installation using <a href="/documentation/docker-compose.html">Docker Compose</a>.</p>
 
+<h2 id="running-commands">Running commands</h2>
+
+<p>The Kimai working directory in Docker is <code class="language-plaintext highlighter-rouge">/opt/kimai/</code> so the usual commands across the documentation need to be prefixed.</p>
+
+<p>For example clearing the cache is</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker <span class="nb">exec</span> <span class="nt">-ti</span> kimai-test /opt/kimai/bin/console kimai:reload <span class="nt">--env</span><span class="o">=</span>prod
+</code></pre></div></div>
+
                 </div>
                 
 
@@ -691,7 +700,7 @@ Any issues with the container rather than the application itself can be raised <
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#available-tags" class="nav-link">Available tags</a></li><li class="nav-item"><a href="#environment-variables" class="nav-link">Environment variables</a></li><li class="nav-item"><a href="#quick-test-setup" class="nav-link">Quick test setup</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#available-tags" class="nav-link">Available tags</a></li><li class="nav-item"><a href="#environment-variables" class="nav-link">Environment variables</a></li><li class="nav-item"><a href="#quick-test-setup" class="nav-link">Quick test setup</a></li><li class="nav-item"><a href="#running-commands" class="nav-link">Running commands</a></li></ul>
         
     </aside>
 
