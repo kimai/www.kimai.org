@@ -762,16 +762,81 @@ users can edit their records until the fifth day of the month (because invoices 
   <li><code class="language-plaintext highlighter-rouge">Country</code> - default value for the “create customer” form</li>
   <li><code class="language-plaintext highlighter-rouge">Currency</code> - default value for the “create customer” form</li>
   <li><code class="language-plaintext highlighter-rouge">Display of entries in selection lists</code> - the display of a customer in dropdown fields</li>
-  <li><code class="language-plaintext highlighter-rouge">Customer number format</code> - format for automatically generated project numbers, allowed replacers are <code class="language-plaintext highlighter-rouge">{cc}</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Customer number format</code> - format for automatically generated project numbers, allowed replacers are <code class="language-plaintext highlighter-rouge">{cc}</code>, <code class="language-plaintext highlighter-rouge">{Y}</code>, <code class="language-plaintext highlighter-rouge">{y}</code>, <code class="language-plaintext highlighter-rouge">{M}</code>, <code class="language-plaintext highlighter-rouge">{m}</code>, <code class="language-plaintext highlighter-rouge">{D}</code>, <code class="language-plaintext highlighter-rouge">{d}</code>, <code class="language-plaintext highlighter-rouge">{YY}</code>, <code class="language-plaintext highlighter-rouge">{yy}</code>, <code class="language-plaintext highlighter-rouge">{MM}</code>, <code class="language-plaintext highlighter-rouge">{DD}</code></li>
   <li><code class="language-plaintext highlighter-rouge">Allow multiple usages of the same number</code> - whether the same number can be used on multiple customers</li>
 </ul>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Replacer</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{Y}</code></td>
+      <td>Year 4 digits</td>
+      <td>2025</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{y}</code></td>
+      <td>Year 2 digits</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{M}</code></td>
+      <td>Month with leading zero</td>
+      <td>04 or 10</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{m}</code></td>
+      <td>Month 1 or 2 digits</td>
+      <td>4 or 10</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{D}</code></td>
+      <td>Day with leading zero</td>
+      <td>04 or 23</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{d}</code></td>
+      <td>Day 1 or 2 digits</td>
+      <td>4 or 23</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{YY}</code></td>
+      <td>Like {y}, but incrementing until an unused number will be found</td>
+      <td>2027</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{yy}</code></td>
+      <td>Like {y}, but incrementing until an unused number will be found</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{MM}</code></td>
+      <td>Like {y}, but incrementing until an unused number will be found</td>
+      <td>07</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{DD}</code></td>
+      <td>Like {y}, but incrementing until an unused number will be found</td>
+      <td>27</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The same rules as <a href="/documentation/invoices.html">Invoice number format</a> apply here:<br />
+You can use increment (for configuring a start value)) and decrement (for adjusting the calculated value) and length formatter.</p>
 
 <h2 id="project">Project</h2>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">Display of entries in selection lists</code> - the display of a project in dropdown fields</li>
   <li><code class="language-plaintext highlighter-rouge">Take over teams from the logged-in user when creating new entries</code> - if this is active, all teams of the currently logged-in users will be copied over to new created project, therefor extending the visibility of the current user (and all his teams) to the new project</li>
-  <li><code class="language-plaintext highlighter-rouge">Project number format</code> - format for automatically generated project numbers, allowed replacers are <code class="language-plaintext highlighter-rouge">{pc}</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Project number format</code> - format for automatically generated project numbers, allowed replacers are <code class="language-plaintext highlighter-rouge">{pc}</code>, <code class="language-plaintext highlighter-rouge">{Y}</code>, <code class="language-plaintext highlighter-rouge">{y}</code>, <code class="language-plaintext highlighter-rouge">{M}</code>, <code class="language-plaintext highlighter-rouge">{m}</code>, <code class="language-plaintext highlighter-rouge">{D}</code>, <code class="language-plaintext highlighter-rouge">{d}</code>, <code class="language-plaintext highlighter-rouge">{YY}</code>, <code class="language-plaintext highlighter-rouge">{yy}</code>, <code class="language-plaintext highlighter-rouge">{MM}</code>, <code class="language-plaintext highlighter-rouge">{DD}</code> (see above at <code class="language-plaintext highlighter-rouge">Customer</code>)</li>
   <li><code class="language-plaintext highlighter-rouge">Allow multiple usages of the same number</code> - whether the same number can be used on multiple projects</li>
 </ul>
 
@@ -779,7 +844,7 @@ users can edit their records until the fifth day of the month (because invoices 
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">Display of entries in selection lists</code> - the display of an activity in dropdown fields</li>
-  <li><code class="language-plaintext highlighter-rouge">Activity number format</code> - format for automatically generated activity numbers, allowed replacers are <code class="language-plaintext highlighter-rouge">{ac}</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Activity number format</code> - format for automatically generated activity numbers, allowed replacers are <code class="language-plaintext highlighter-rouge">{ac}</code>, <code class="language-plaintext highlighter-rouge">{Y}</code>, <code class="language-plaintext highlighter-rouge">{y}</code>, <code class="language-plaintext highlighter-rouge">{M}</code>, <code class="language-plaintext highlighter-rouge">{m}</code>, <code class="language-plaintext highlighter-rouge">{D}</code>, <code class="language-plaintext highlighter-rouge">{d}</code>, <code class="language-plaintext highlighter-rouge">{YY}</code>, <code class="language-plaintext highlighter-rouge">{yy}</code>, <code class="language-plaintext highlighter-rouge">{MM}</code>, <code class="language-plaintext highlighter-rouge">{DD}</code> (see above at <code class="language-plaintext highlighter-rouge">Customer</code>)</li>
   <li><code class="language-plaintext highlighter-rouge">Allow multiple usages of the same number</code> - whether the same number can be used on multiple activities</li>
 </ul>
 
