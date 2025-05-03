@@ -128,20 +128,37 @@ These are the existing rounding modes:
 - `Country` - default value for the "create customer" form
 - `Currency` - default value for the "create customer" form
 - `Display of entries in selection lists` - the display of a customer in dropdown fields
-- `Customer number format` - format for automatically generated project numbers, allowed replacers are `{cc}`
+- `Customer number format` - format for automatically generated project numbers, allowed replacers are `{cc}`, `{Y}`, `{y}`, `{M}`, `{m}`, `{D}`, `{d}`, `{YY}`, `{yy}`, `{MM}`, `{DD}`
 - `Allow multiple usages of the same number` - whether the same number can be used on multiple customers
+
+| Replacer | Description                                                     | Example  |
+|----------|-----------------------------------------------------------------|----------|
+| `{Y}`    | Year 4 digits                                                   | 2025     |
+| `{y}`    | Year 2 digits                                                   | 25       |
+| `{M}`    | Month with leading zero                                         | 04 or 10 |
+| `{m}`    | Month 1 or 2 digits                                             | 4 or 10  |
+| `{D}`    | Day with leading zero                                           | 04 or 23 |
+| `{d}`    | Day 1 or 2 digits                                               | 4 or 23  |
+| `{YY}`   | Like {y}, but incrementing until an unused number will be found | 2027     |
+| `{yy}`   | Like {y}, but incrementing until an unused number will be found | 27       |
+| `{MM}`   | Like {y}, but incrementing until an unused number will be found | 07       |
+| `{DD}`   | Like {y}, but incrementing until an unused number will be found | 27       |
+{: .table }
+
+The same rules as [Invoice number format]({% link _documentation/invoices.md %}) apply here:  
+You can use increment (for configuring a start value)) and decrement (for adjusting the calculated value) and length formatter.
 
 ## Project
 
 - `Display of entries in selection lists` - the display of a project in dropdown fields
 - `Take over teams from the logged-in user when creating new entries` - if this is active, all teams of the currently logged-in users will be copied over to new created project, therefor extending the visibility of the current user (and all his teams) to the new project
-- `Project number format` - format for automatically generated project numbers, allowed replacers are `{pc}`
+- `Project number format` - format for automatically generated project numbers, allowed replacers are `{pc}`, `{Y}`, `{y}`, `{M}`, `{m}`, `{D}`, `{d}`, `{YY}`, `{yy}`, `{MM}`, `{DD}` (see above at `Customer`)
 - `Allow multiple usages of the same number` - whether the same number can be used on multiple projects
 
 ## Activity
 
 - `Display of entries in selection lists` - the display of an activity in dropdown fields
-- `Activity number format` - format for automatically generated activity numbers, allowed replacers are `{ac}`
+- `Activity number format` - format for automatically generated activity numbers, allowed replacers are `{ac}`, `{Y}`, `{y}`, `{M}`, `{m}`, `{D}`, `{d}`, `{YY}`, `{yy}`, `{MM}`, `{DD}` (see above at `Customer`)
 - `Allow multiple usages of the same number` - whether the same number can be used on multiple activities
 
 ## User
