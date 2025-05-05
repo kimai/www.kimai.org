@@ -2,8 +2,6 @@ KimTrack is your sleek, native desktop companion for Kimai—right in your menu 
 
 Enjoy one-click start/stop and instant project switching, backed by intelligent idle detection and fully customizable preferences to make every second count.
 
----
-<p></p>
 
 ### Key Features
 
@@ -29,9 +27,6 @@ Enjoy one-click start/stop and instant project switching, backed by intelligent 
   Tailor notifications, idle rules, and display options. Your time-tracking, your way.
 
 
----
-<p></p>
-
 ### Installation & Activation
 
 1. **Download & Install**  
@@ -49,8 +44,6 @@ Enjoy one-click start/stop and instant project switching, backed by intelligent 
 4. **Customize & Go**  
    Head to **Settings** to choose your theme, set idle rules, and tailor notifications.
 
----
-<p></p>
 
 ### Frequently Asked Questions
 
@@ -62,21 +55,3 @@ A: Absolutely! Just enter your API URL and Bearer Token, and you’re good to go
 
 **Q: Is my data secure?**  
 A: Yes! KimTrack uses secure API calls to sync your data with your Kimai instance. Your information is safe and private on your device.
-
-
-<!-- ### App Screens
-
-<p>
-    <img src="/images/marketplace/ticesoftware-kimaibar-macos-client1.webp" width="45%" style="margin:0 10px">
-    <img src="/images/marketplace/ticesoftware-kimaibar-macos-client2.webp" width="45%" style="margin:0 10px">
-</p>    
-<p>
-    <img src="/images/marketplace/ticesoftware-kimaibar-macos-client3.webp" width="45%" style="margin:0 10px">
-    <img src="/images/marketplace/ticesoftware-kimaibar-macos-client4.webp" width="45%" style="margin:0 10px">
-</p> -->
-
-
-
-<!-- KimaiTrack is the time tracking solution running in your menu bar.
-
-Check your running time and quickly start and stop your timer directly from your menu bar. Switch to other projects without hassle with just another click on one of your recent activities. KimaiBar detects when you are idle for a certain time and asks you, what to do with the time when you come back. -->
