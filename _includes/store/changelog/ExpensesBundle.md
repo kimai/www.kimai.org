@@ -1,3 +1,9 @@
+**Version 2.19.0**
+
+Compatibility: requires minimum Kimai 2.25.0
+
+- Do never return export items, if export query included tags
+
 **Version 2.18.0**
 
 Compatibility: requires minimum Kimai 2.25.0

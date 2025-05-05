@@ -3,7 +3,7 @@
 Compatibility: requires minimum Kimai 2.25.0
 
 - Fix switching between single-line and multi-line entries
-- Fix saving multi-line entrie
+- Fix saving multi-line entries
 
 **Version 2.6.0**
 
