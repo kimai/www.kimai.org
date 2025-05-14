@@ -45,11 +45,17 @@ You can right-click the row or use the action menu at the end of the monthly row
 
 Whether a month is locked (closed black lock) or not (open orange lock) is indicated by the icon in front of the row.
 
-Locking a month will lock all days of the year before the chosen date.
+Locking a month will lock all days of the year before the chosen date:  
 If previous months were not locked, they will be locked automatically as well.
 
-**Be aware:** No one (neither the user nor an admin) will be able to create or edit times for any locked period! 
-Locking a month is a final decision.
+### Unlock a month
+
+Unlocking a month should be avoided in general, but if you have to adjust an already locked month, someone with the permission `unlock_times_contract` can unlock it.
+
+You can right-click the row of the locked month or use the action menu at the end of the monthly row to unlock the selected month.
+
+Unlocking a month will unlock all locked days of the year after the chosen date:  
+If later months were locked, they will be unlocked automatically as well.
 
 ## Changing a work contract
 
