@@ -658,11 +658,17 @@
 
 <p>Whether a month is locked (closed black lock) or not (open orange lock) is indicated by the icon in front of the row.</p>
 
-<p>Locking a month will lock all days of the year before the chosen date.
+<p>Locking a month will lock all days of the year before the chosen date:<br />
 If previous months were not locked, they will be locked automatically as well.</p>
 
-<p><strong>Be aware:</strong> No one (neither the user nor an admin) will be able to create or edit times for any locked period! 
-Locking a month is a final decision.</p>
+<h3 id="unlock-a-month">Unlock a month</h3>
+
+<p>Unlocking a month should be avoided in general, but if you have to adjust an already locked month, someone with the permission <code class="language-plaintext highlighter-rouge">unlock_times_contract</code> can unlock it.</p>
+
+<p>You can right-click the row of the locked month or use the action menu at the end of the monthly row to unlock the selected month.</p>
+
+<p>Unlocking a month will unlock all locked days of the year after the chosen date:<br />
+If later months were locked, they will be unlocked automatically as well.</p>
 
 <h2 id="changing-a-work-contract">Changing a work contract</h2>
 
@@ -820,7 +826,7 @@ This permission should be granted to employees e.g. from HR department.</p>
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#user-interface" class="nav-link">User interface</a></li><li class="nav-item"><a href="#summary" class="nav-link">Summary</a></li><li class="nav-item"><a href="#working-times" class="nav-link">Working times</a></li><li class="nav-item"><a href="#lock-a-month" class="nav-link">Lock a month</a></li><li class="nav-item"><a href="#changing-a-work-contract" class="nav-link">Changing a work contract</a></li><li class="nav-item"><a href="#manual-bookings" class="nav-link">Manual bookings</a><ul><li class="nav-item"><a href="#account-working-times" class="nav-link">Account working times</a></li><li class="nav-item"><a href="#holidays" class="nav-link">Holidays</a></li></ul></li><li class="nav-item"><a href="#how-calculations-work" class="nav-link">How calculations work</a><ul><li class="nav-item"><a href="#public-holidays" class="nav-link">Public holidays</a></li><li class="nav-item"><a href="#holidays-1" class="nav-link">Holidays</a></li><li class="nav-item"><a href="#sickness" class="nav-link">Sickness</a></li><li class="nav-item"><a href="#other" class="nav-link">Other</a></li><li class="nav-item"><a href="#time-off" class="nav-link">Time-Off</a></li></ul></li><li class="nav-item"><a href="#limit-timesheets-to-working-days" class="nav-link">Limit timesheets to working days</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#user-interface" class="nav-link">User interface</a></li><li class="nav-item"><a href="#summary" class="nav-link">Summary</a></li><li class="nav-item"><a href="#working-times" class="nav-link">Working times</a></li><li class="nav-item"><a href="#lock-a-month" class="nav-link">Lock a month</a><ul><li class="nav-item"><a href="#unlock-a-month" class="nav-link">Unlock a month</a></li></ul></li><li class="nav-item"><a href="#changing-a-work-contract" class="nav-link">Changing a work contract</a></li><li class="nav-item"><a href="#manual-bookings" class="nav-link">Manual bookings</a><ul><li class="nav-item"><a href="#account-working-times" class="nav-link">Account working times</a></li><li class="nav-item"><a href="#holidays" class="nav-link">Holidays</a></li></ul></li><li class="nav-item"><a href="#how-calculations-work" class="nav-link">How calculations work</a><ul><li class="nav-item"><a href="#public-holidays" class="nav-link">Public holidays</a></li><li class="nav-item"><a href="#holidays-1" class="nav-link">Holidays</a></li><li class="nav-item"><a href="#sickness" class="nav-link">Sickness</a></li><li class="nav-item"><a href="#other" class="nav-link">Other</a></li><li class="nav-item"><a href="#time-off" class="nav-link">Time-Off</a></li></ul></li><li class="nav-item"><a href="#limit-timesheets-to-working-days" class="nav-link">Limit timesheets to working days</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
         
         <ul class="nav">
             <li>
