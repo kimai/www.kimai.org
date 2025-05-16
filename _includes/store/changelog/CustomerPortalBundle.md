@@ -1,3 +1,9 @@
+**Version 4.5.0**
+
+Compatibility: requires minimum Kimai 2.25.0
+
+- Fix statistics issue with overflowing entries on month start/end
+
 **Version 4.4.0**
 
 Compatibility: requires minimum Kimai 2.25.0

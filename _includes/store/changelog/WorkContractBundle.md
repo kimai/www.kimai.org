@@ -1,3 +1,15 @@
+**Version 1.23.1**
+
+Compatibility: requires minimum Kimai 2.32.0
+
+- Fix API absence calendar call
+
+**Version 1.23.0**
+
+Compatibility: requires minimum Kimai 2.32.0
+
+- Added API parameter to fetch all/open/approved absences
+
 **Version 1.22.0**
 
 Compatibility: requires minimum Kimai 2.32.0

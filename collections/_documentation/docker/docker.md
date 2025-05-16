@@ -103,3 +103,13 @@ This will run the latest production build and make it accessible at <http://loca
     ```
 
 If you are happy with Kimai, you can now set up your Docker installation using [Docker Compose]({% link _documentation/docker/docker-compose.md %}).
+
+## Running commands
+
+The Kimai working directory in Docker is `/opt/kimai/` so the usual commands across the documentation need to be prefixed.
+
+For example clearing the cache is 
+
+```bash
+docker exec -ti kimai-test /opt/kimai/bin/console kimai:reload --env=prod
+```

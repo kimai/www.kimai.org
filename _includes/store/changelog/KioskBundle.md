@@ -1,3 +1,10 @@
+**Version 2.13.2**
+
+Compatibility: requires minimum Kimai 2.30.0
+
+- Hide System-Accounts from login screen
+- Use translation from Kimai core for navigation
+
 **Version 2.13.1**
 
 Compatibility: requires minimum Kimai 2.30.0
