@@ -11,7 +11,7 @@ Enjoy one-click start/stop and instant project switching, backed by intelligent 
 - **Native Desktop App**  
   Enjoy a lightweight, responsive interface on **macOS**, **Windows**, or **Linux**—no browser tabs required. Access all your time-tracking features directly from your menu bar for a seamless experience.
 
-- **Seamless Kimai API Integration**  
+- **Seamless Kimai Sync**
   All you data is synced with your Kimai instance in real-time. Just track your time and let KimTrack handle the rest.
 
 - **Smart Idle Detection**  
@@ -29,13 +29,14 @@ Enjoy one-click start/stop and instant project switching, backed by intelligent 
 
 ### Installation & Activation
 
+> **Note:** You need an internet connection to use KimTrack.
+
 1. **Download & Install**  
    Get the installer for your OS from the [download page](https://github.com/playmoweb/kimtrack).
 
 2. **Activate Your License**  
    - Open KimTrack and click **“Browse your license”**  
    - Select the license file you received via email  
-   *(Internet connection required)*
 
 3. **Connect to Kimai**  
    - Enter your **API URL** (e.g. `https://your-kimai.example.com/`)  
