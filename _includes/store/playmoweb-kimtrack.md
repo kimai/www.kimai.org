@@ -6,7 +6,7 @@ Enjoy one-click start/stop and instant project switching, backed by intelligent 
 ### Key Features
 
 - **One-Click Setup**  
-  Get started in seconds. Just download, install, and enter your Kimai API URL and Bearer Token.
+  Get started in seconds. Just download, install, and enter your Kimai API URL and API Token.
 
 - **Native Desktop App**  
   Enjoy a lightweight, responsive interface on **macOS**, **Windows**, or **Linux**—no browser tabs required. Access all your time-tracking features directly from your menu bar for a seamless experience.
@@ -39,8 +39,8 @@ Enjoy one-click start/stop and instant project switching, backed by intelligent 
    - Select the license file you received via email  
 
 3. **Connect to Kimai**  
-   - Enter your **API URL** (e.g. `https://your-kimai.example.com/`)  
-   - Paste your **Bearer Token** (found under **Profile → API Access** in Kimai)
+   - Enter your **API URL** (e.g. `https://foobar.kimai.cloud/api/`)  
+   - Paste your **API Token** (create one in your **Profile → API Access** in Kimai)
 
 4. **Customize & Go**  
    Head to **Settings** to choose your theme, set idle rules, and tailor notifications.
@@ -52,7 +52,7 @@ Enjoy one-click start/stop and instant project switching, backed by intelligent 
 A: Our support team is just an email away at [contact@playmoweb.com](mailto:contact@playmoweb.com) or open an issue on [GitHub](https://github.com/playmoweb/kimtrack/issues).
 
 **Q: Can I use KimTrack with any Kimai instance?**  
-A: Absolutely! Just enter your API URL and Bearer Token, and you’re good to go.
+A: Absolutely! Both Kimai Cloud and On-Premise installations are supported. Just enter your API URL and API Token, and you’re good to go.
 
 **Q: Is my data secure?**  
 A: Yes! KimTrack uses secure API calls to sync your data with your Kimai instance. Your information is safe and private on your device.
