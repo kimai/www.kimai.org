@@ -1,3 +1,9 @@
+**Version 2.20.0**
+
+Compatibility: requires minimum Kimai 2.34.0
+
+- Better search logic, including negated search terms
+
 **Version 2.19.0**
 
 Compatibility: requires minimum Kimai 2.25.0
