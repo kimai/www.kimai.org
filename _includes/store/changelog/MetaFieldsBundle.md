@@ -1,3 +1,9 @@
+**Version 2.11.0**
+
+Compatibility: requires minimum Kimai 2.34.0
+
+- Support meta-fields for the `Weekly hours` screen
+
 **Version 2.10.0**
 
 Compatibility: requires minimum Kimai 2.25.0
