@@ -435,7 +435,7 @@ layout: default
                     </h3>
                     <div class="accordion-collapse collapse" id="q-{{ forloop.index }}" data-bs-parent="#faq">
                         <div class="accordion-body fs-sm pt-0">
-                            <p>{{ detail.content }}</p>
+                            <p>{{ detail.content|markdownify }}</p>
                         </div>
                     </div>
                 </div>
