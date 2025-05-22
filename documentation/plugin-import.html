@@ -632,207 +632,181 @@
 
 <p>Supported formats: CSV and JSON</p>
 
+<p>Attributes names are case-sensitive, and fields with a ✅ are mandatory.</p>
+
+<p>Examples are included within the plugin and can be downloaded from the importer screen.</p>
+
 <h2 id="customer">Customer</h2>
 
 <p>Customers will not be updated, if you import the same file multiple-times, you will end up with several customers with the same name.
 You will have to delete the imported customers if you plan to re-import a file.</p>
 
-<p>Supported attributes (field names are case-insensitive):</p>
-
 <table class="table">
   <thead>
     <tr>
-      <th>Customer attribute</th>
-      <th>Supported field names</th>
+      <th>Attribute</th>
+      <th>Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Name</td>
-      <td>customer, name</td>
+      <td>Customer ✅</td>
+      <td>Customer name (alternative attribute name: <code class="language-plaintext highlighter-rouge">Name</code>)</td>
     </tr>
     <tr>
-      <td>Account / Customer number</td>
-      <td>account, customernumber</td>
+      <td>Account</td>
+      <td>Account/Customer number  (alternative attribute name: <code class="language-plaintext highlighter-rouge">CustomerNumber</code>)</td>
     </tr>
     <tr>
+      <td>Company</td>
       <td>Company name</td>
-      <td>company</td>
     </tr>
     <tr>
       <td>Description</td>
-      <td>description</td>
-    </tr>
-    <tr>
-      <td>E-Mail</td>
-      <td>email</td>
+      <td>Description</td>
     </tr>
     <tr>
       <td>Country</td>
-      <td>country</td>
+      <td>Country</td>
     </tr>
     <tr>
+      <td>Tax</td>
       <td>Vat-ID</td>
-      <td>tax</td>
     </tr>
     <tr>
       <td>Address</td>
-      <td>address</td>
+      <td>Address</td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td>E-Mail</td>
     </tr>
     <tr>
       <td>Contact</td>
-      <td>contact</td>
+      <td>Contact</td>
     </tr>
     <tr>
       <td>Currency</td>
-      <td>currency</td>
+      <td>Currency</td>
     </tr>
     <tr>
       <td>Timezone</td>
-      <td>timezone</td>
+      <td>Timezone</td>
     </tr>
     <tr>
       <td>Phone</td>
-      <td>phone</td>
+      <td>Phone</td>
     </tr>
     <tr>
       <td>Mobile</td>
-      <td>mobile</td>
+      <td>Mobile</td>
     </tr>
     <tr>
       <td>Fax</td>
-      <td>fax</td>
+      <td>Fax</td>
     </tr>
     <tr>
       <td>Homepage</td>
-      <td>homepage</td>
+      <td>Homepage</td>
     </tr>
     <tr>
       <td>Color</td>
-      <td>color</td>
+      <td>Color</td>
     </tr>
     <tr>
       <td>Budget</td>
-      <td>budget</td>
+      <td>Budget</td>
     </tr>
     <tr>
+      <td>TimeBudget</td>
       <td>Time budget</td>
-      <td>timebudget</td>
     </tr>
     <tr>
+      <td>BudgetType</td>
       <td>Budget type</td>
-      <td>budgettype</td>
     </tr>
     <tr>
       <td>Visible</td>
-      <td>visible</td>
+      <td>Whether the customer is visible or not (supported values: <code class="language-plaintext highlighter-rouge">1</code> or <code class="language-plaintext highlighter-rouge">0</code>)</td>
     </tr>
     <tr>
-      <td>Meta fields</td>
       <td>meta.xxx</td>
+      <td>Custom fields, e.g. <code class="language-plaintext highlighter-rouge">meta.foo</code> for a custom field with the internal name <code class="language-plaintext highlighter-rouge">foo</code></td>
     </tr>
   </tbody>
 </table>
-
-<h3 id="example">Example</h3>
-
-<p>A minimum CSV file (using semicolon as delimiter):</p>
-<pre><code class="language-csv">Name;Company
-Acme,Acme university Ltd.
-</code></pre>
-
-<p>A multi column-example:</p>
-
-<pre><code class="language-csv">Name,Company,Account,Description,Phone,Timezone,Meta.XYZ
-Acme,Acme university Ltd.,12367800,A longer comment to talk about the project,0011234567890,Europe/Berlin,hello foo 123
-</code></pre>
 
 <h2 id="projects">Projects</h2>
 
 <p>Projects will not be updated, if you import the same file multiple-times, you will end up with several projects with the same name and customer.
 You will have to delete the imported projects if you plan to re-import a file.</p>
 
-<p>Supported attributes (field names are case-insensitive):</p>
-
 <table class="table">
   <thead>
     <tr>
-      <th>Project attribute</th>
-      <th>Supported field names</th>
+      <th>Attribute</th>
+      <th>Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Name</td>
-      <td>project, name</td>
+      <td>Project ✅</td>
+      <td>Project name (alternative attribute name: <code class="language-plaintext highlighter-rouge">Name</code>)</td>
     </tr>
     <tr>
+      <td>Customer ✅</td>
       <td>Customer name</td>
-      <td>customer</td>
     </tr>
     <tr>
       <td>Description</td>
-      <td>description</td>
+      <td>Description</td>
     </tr>
     <tr>
+      <td>EndDate</td>
       <td>End date</td>
-      <td>enddate</td>
     </tr>
     <tr>
+      <td>StartDate</td>
       <td>Start date</td>
-      <td>startdate</td>
     </tr>
     <tr>
+      <td>OrderNumber</td>
       <td>Order number</td>
-      <td>ordernumber</td>
     </tr>
     <tr>
+      <td>ProjectNumber</td>
       <td>Project number</td>
-      <td>projectnumber</td>
     </tr>
     <tr>
+      <td>OrderDate</td>
       <td>Order date</td>
-      <td>orderdate</td>
     </tr>
     <tr>
       <td>Color</td>
-      <td>color</td>
+      <td>Color</td>
     </tr>
     <tr>
       <td>Budget</td>
-      <td>budget</td>
+      <td>Budget</td>
     </tr>
     <tr>
+      <td>TimeBudget</td>
       <td>Time budget</td>
-      <td>timebudget</td>
     </tr>
     <tr>
+      <td>BudgetType</td>
       <td>Budget type</td>
-      <td>budgettype</td>
     </tr>
     <tr>
       <td>Visible</td>
-      <td>visible</td>
+      <td>Whether the project is visible or not (supported values: <code class="language-plaintext highlighter-rouge">1</code> or <code class="language-plaintext highlighter-rouge">0</code>)</td>
     </tr>
     <tr>
-      <td>Meta fields</td>
       <td>meta.xxx</td>
+      <td>Custom fields, e.g. <code class="language-plaintext highlighter-rouge">meta.foo</code> for a custom field with the internal name <code class="language-plaintext highlighter-rouge">foo</code></td>
     </tr>
   </tbody>
 </table>
-
-<h3 id="example-1">Example</h3>
-
-<p>A minimum CSV example file (using semicolon as delimiter):</p>
-<pre><code class="language-csv">Name;Customer
-Test project;Test customer
-</code></pre>
-
-<p>A multi column-example:</p>
-
-<pre><code class="language-csv">Name,Customer,Description,OrderNumber,OrderDate,Meta.XYZ
-My great project,Acme university,A longer comment to talk about the project,1234567890,2019-08-29,hello foo 123
-</code></pre>
 
 <h2 id="timesheets">Timesheets</h2>
 
@@ -849,112 +823,76 @@ My great project,Acme university,A longer comment to talk about the project,1234
   <thead>
     <tr>
       <th>Attribute</th>
-      <th>Required</th>
-      <th>Supported field names</th>
       <th>Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Date</td>
-      <td>x</td>
-      <td> </td>
-      <td>Date in the format: <code class="language-plaintext highlighter-rouge">YYYY-MM-DD</code></td>
+      <td>Date ✅</td>
+      <td>Date in the format: <code class="language-plaintext highlighter-rouge">YYYY-MM-DD</code> (e.g. <code class="language-plaintext highlighter-rouge">2020-05-04</code>)</td>
     </tr>
     <tr>
-      <td>From</td>
-      <td>x</td>
-      <td> </td>
-      <td>Start time in the format: <code class="language-plaintext highlighter-rouge">HH:MM:SS</code></td>
+      <td>From ✅</td>
+      <td>Start time in the format: <code class="language-plaintext highlighter-rouge">HH:MM:SS</code> (24 hour format, e.g. <code class="language-plaintext highlighter-rouge">15:50:00</code>)</td>
     </tr>
     <tr>
-      <td>To</td>
-      <td>x</td>
-      <td> </td>
-      <td>End time in the format: <code class="language-plaintext highlighter-rouge">HH:MM:SS</code></td>
+      <td>To ✅</td>
+      <td>End time in the format: <code class="language-plaintext highlighter-rouge">HH:MM:SS</code> (24 hour format, e.g. <code class="language-plaintext highlighter-rouge">17:21:44</code>)</td>
     </tr>
     <tr>
-      <td>User</td>
-      <td>x</td>
-      <td> </td>
-      <td>Username</td>
+      <td>Email ✅</td>
+      <td>User email (Kimai will try to match by email first)</td>
     </tr>
     <tr>
-      <td>Email</td>
-      <td>x</td>
-      <td> </td>
-      <td>User email</td>
+      <td>User ✅</td>
+      <td>Username (will only be used if <code class="language-plaintext highlighter-rouge">Email</code> does not match</td>
     </tr>
     <tr>
-      <td>Project</td>
-      <td>x</td>
-      <td> </td>
+      <td>Project ✅</td>
       <td>Name of the project as string</td>
     </tr>
     <tr>
-      <td>Customer</td>
-      <td>x</td>
-      <td> </td>
+      <td>Customer ✅</td>
       <td>Name of the customer as string</td>
     </tr>
     <tr>
-      <td>Activity</td>
-      <td>x</td>
-      <td> </td>
+      <td>Activity ✅</td>
       <td>Name of the activity as string</td>
     </tr>
     <tr>
       <td>Duration</td>
-      <td> </td>
-      <td> </td>
-      <td>Timesheet duration in seconds (if skipped, will be calculated from start and end times)</td>
+      <td>Timesheet duration in seconds (will be calculated from start and end time if not given)</td>
     </tr>
     <tr>
       <td>Tags</td>
-      <td> </td>
-      <td> </td>
       <td>Comma separated list of tag-names</td>
     </tr>
     <tr>
       <td>Exported</td>
-      <td> </td>
-      <td> </td>
-      <td>Whether the timesheet should be marked as exported or not (supported values: 1 or 0)</td>
+      <td>Whether the timesheet should be marked as exported or not (supported values: <code class="language-plaintext highlighter-rouge">1</code> means exported and <code class="language-plaintext highlighter-rouge">0</code> means new)</td>
     </tr>
     <tr>
       <td>Rate</td>
-      <td> </td>
-      <td> </td>
-      <td>The rate as a float without currency</td>
+      <td>The rate as a float without currency (will be calculated if not given, e.g. <code class="language-plaintext highlighter-rouge">123.50€</code> = <code class="language-plaintext highlighter-rouge">123.50</code>)</td>
     </tr>
     <tr>
       <td>HourlyRate</td>
-      <td> </td>
-      <td> </td>
-      <td>The hourly rate as a float without currency</td>
+      <td>The hourly rate as a float without currency (will be calculated if not given, e.g. <code class="language-plaintext highlighter-rouge">123.50€</code> = <code class="language-plaintext highlighter-rouge">123.50</code>)</td>
     </tr>
     <tr>
       <td>InternalRate</td>
-      <td> </td>
-      <td> </td>
-      <td>The internal rate as a float without currency</td>
+      <td>The internal rate as a float without currency (will be calculated if not given, e.g. <code class="language-plaintext highlighter-rouge">123.50€</code> = <code class="language-plaintext highlighter-rouge">123.50</code>)</td>
     </tr>
     <tr>
       <td>FixedRate</td>
-      <td> </td>
-      <td> </td>
       <td>The fixed rate as a float without currency</td>
     </tr>
     <tr>
       <td>Billable</td>
-      <td> </td>
-      <td> </td>
-      <td>Whether the entry should be marked as billable or not (supported values: 1 or 0)</td>
+      <td>Whether the entry should be marked as billable or not (supported values: <code class="language-plaintext highlighter-rouge">1</code> or <code class="language-plaintext highlighter-rouge">0</code>)</td>
     </tr>
     <tr>
       <td>Description</td>
-      <td> </td>
-      <td> </td>
       <td>Description of the entry as string</td>
     </tr>
   </tbody>
@@ -966,30 +904,11 @@ My great project,Acme university,A longer comment to talk about the project,1234
 The user timezone is used when importing the timesheets. 
 If you import users from different timezones, you need to create the users upfront manually.</p>
 
-<h3 id="example-2">Example</h3>
-
-<pre><code class="language-csv">"Date","From","To","Duration","Rate","User","Email","Customer","Project","Activity","Description","Exported","Tags","Hourly rate","Fixed rate"
-"2020-05-04","15:50:00","17:51:00","7260","231.92","John Smith","user@example.com","Customer LLC","My project", "Testing","some work has been done","0","foo,bar","115.00","0"
-</code></pre>
-
-<ul>
-  <li>Date: format <code class="language-plaintext highlighter-rouge">Y-m-d</code></li>
-  <li>From and To: should be given in 24h format</li>
-  <li>Duration: in seconds</li>
-  <li>Rate: A floating number of the rate without currency (optional, otherwise Kimai tries to calculate it) e.g. 123.50€ = “123.50”</li>
-  <li>Hourly Rate: A floating number for the hourly rate (optional, otherwise Kimai tries to calculate it)</li>
-  <li>Fixed Rate: A floating number for the fixed rate of this record (optional)</li>
-  <li>Customer, Project and Activity: will be matched by name</li>
-  <li>User: will be matched by username or email</li>
-  <li>Exported: can be <code class="language-plaintext highlighter-rouge">0</code> or <code class="language-plaintext highlighter-rouge">1</code> (0 = new, 1 = exported)</li>
-  <li>Tags: comma separated list of tag names</li>
-</ul>
-
 <h2 id="clockify-timesheet">Clockify (Timesheet)</h2>
 
 <p>Want to switch from Clockify to Kimai? Export the data in Clockify, open it in Excel and export it as CSV file.</p>
 
-<p>The following CSV structure is expected. Import will not work if one of these columns is missing:</p>
+<p>The following CSV structure is expected, each column is ✅ mandatory. Import will not work if one of these columns is missing:</p>
 
 <table class="table">
   <thead>
@@ -1078,7 +997,7 @@ If you import users from different timezones, you need to create the users upfro
 
 <p>Want to switch from Toggl Track to Kimai? Export the data in toggl as CSV file.</p>
 
-<p>The following CSV structure is expected. Import will not work if one of these columns is missing:</p>
+<p>The following CSV structure is expected, each column is ✅ mandatory. Import will not work if one of these columns is missing:</p>
 
 <table class="table">
   <thead>
@@ -1203,7 +1122,7 @@ Kimai only supports imports for GT exports from the languages english and german
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#customer" class="nav-link">Customer</a><ul><li class="nav-item"><a href="#example" class="nav-link">Example</a></li></ul></li><li class="nav-item"><a href="#projects" class="nav-link">Projects</a><ul><li class="nav-item"><a href="#example-1" class="nav-link">Example</a></li></ul></li><li class="nav-item"><a href="#timesheets" class="nav-link">Timesheets</a><ul><li class="nav-item"><a href="#user-handling" class="nav-link">User handling</a></li><li class="nav-item"><a href="#example-2" class="nav-link">Example</a></li></ul></li><li class="nav-item"><a href="#clockify-timesheet" class="nav-link">Clockify (Timesheet)</a></li><li class="nav-item"><a href="#toggl-track-timesheet" class="nav-link">toggl track (Timesheet)</a></li><li class="nav-item"><a href="#grandtotal-customer" class="nav-link">Grandtotal (Customer)</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#customer" class="nav-link">Customer</a></li><li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li><li class="nav-item"><a href="#timesheets" class="nav-link">Timesheets</a><ul><li class="nav-item"><a href="#user-handling" class="nav-link">User handling</a></li></ul></li><li class="nav-item"><a href="#clockify-timesheet" class="nav-link">Clockify (Timesheet)</a></li><li class="nav-item"><a href="#toggl-track-timesheet" class="nav-link">toggl track (Timesheet)</a></li><li class="nav-item"><a href="#grandtotal-customer" class="nav-link">Grandtotal (Customer)</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
         
     </aside>
 
