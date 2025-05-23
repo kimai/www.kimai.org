@@ -1,6 +1,6 @@
 ---
 title: Apple Watch app
-type: app
+type: app_deprecated
 lang: zh_Hant
 permalink: "/zh_Hant/store/umws-applewatch-app.html"
 ---

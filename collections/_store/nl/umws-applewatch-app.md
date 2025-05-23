@@ -1,6 +1,6 @@
 ---
 title: Apple Watch app
-type: app
+type: app_deprecated
 lang: nl
 permalink: /nl/store/umws-applewatch-app.html
 ---
