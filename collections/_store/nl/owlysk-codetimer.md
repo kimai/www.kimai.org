@@ -1,6 +1,6 @@
 ---
 title: CodeTimer Desktop
-type: client
+type: desktop
 lang: nl
 permalink: "/nl/store/owlysk-codetimer.html"
 ---

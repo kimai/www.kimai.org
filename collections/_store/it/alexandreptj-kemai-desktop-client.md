@@ -1,6 +1,6 @@
 ---
 title: Kemai - Desktop client
-type: client
+type: desktop
 lang: it
 permalink: "/it/store/alexandreptj-kemai-desktop-client.html"
 ---

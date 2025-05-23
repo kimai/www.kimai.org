@@ -1,6 +1,6 @@
 ---
 title: KimTrack
-type: client
+type: desktop
 lang: ru
 permalink: "/ru/store/playmoweb-kimtrack.html"
 ---

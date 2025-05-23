@@ -1,6 +1,6 @@
 ---
 title: CodeTimer Desktop
-type: client
+type: desktop
 lang: ru
 permalink: "/ru/store/owlysk-codetimer.html"
 ---

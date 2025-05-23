@@ -1,6 +1,6 @@
 ---
 title: Eon Timer
-type: client
+type: desktop
 lang: es
 permalink: "/es/store/eon-timer.html"
 ---

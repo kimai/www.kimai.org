@@ -1,6 +1,6 @@
 ---
 title: macOS menu bar app
-type: client
+type: desktop
 lang: zh_Hant
 permalink: "/zh_Hant/store/ticesoftware-kimaibar-macos-client.html"
 ---

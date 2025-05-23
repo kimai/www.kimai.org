@@ -1,6 +1,6 @@
 ---
 title: KimTrack
-type: client
+type: desktop
 lang: zh_Hant
 permalink: "/zh_Hant/store/playmoweb-kimtrack.html"
 ---

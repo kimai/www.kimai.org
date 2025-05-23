@@ -1,6 +1,6 @@
 ---
 title: Eon Timer
-type: client
+type: desktop
 lang: zh_Hant
 permalink: "/zh_Hant/store/eon-timer.html"
 ---
