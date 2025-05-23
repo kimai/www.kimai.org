@@ -4,7 +4,7 @@ slug: custom-fields-bundle
 type: featured
 order: 20
 lang: he
-permalink: /he/store/keleo-custom-fields-bundle.html
+permalink: "/he/store/keleo-custom-fields-bundle.html"
 ---
 
 {% include store/keleo-custom-fields-bundle.md %}

@@ -4,7 +4,7 @@ slug: invoice-bundle
 type: featured
 order: 80
 lang: sk
-permalink: /sk/store/keleo-invoice-bundle.html
+permalink: "/sk/store/keleo-invoice-bundle.html"
 ---
 
 {% include store/keleo-invoice-bundle.md %}

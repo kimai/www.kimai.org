@@ -2,7 +2,7 @@
 title: Kimai Mobile
 type: app 
 lang: nl
-permalink: /nl/store/cloudrizon-kimai-mobile-app-android.html
+permalink: "/nl/store/cloudrizon-kimai-mobile-app-android.html"
 ---
 
 {% include store/cloudrizon-kimai-mobile-app-android.md %}

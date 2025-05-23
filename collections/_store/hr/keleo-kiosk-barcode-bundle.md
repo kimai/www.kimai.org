@@ -4,7 +4,7 @@ slug: kiosk-barcode-bundle
 type: featured
 order: 40
 lang: hr
-permalink: /hr/store/keleo-kiosk-barcode-bundle.html
+permalink: "/hr/store/keleo-kiosk-barcode-bundle.html"
 ---
 
 {% include store/keleo-kiosk-barcode-bundle.md %}

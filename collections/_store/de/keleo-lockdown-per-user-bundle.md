@@ -3,7 +3,7 @@ title: Lockdown per user settings
 slug: lockdown-per-user-bundle
 type: plugin
 lang: de
-permalink: /de/store/keleo-lockdown-per-user-bundle.html
+permalink: "/de/store/keleo-lockdown-per-user-bundle.html"
 ---
 
 {% include store/keleo-lockdown-per-user-bundle.md %}

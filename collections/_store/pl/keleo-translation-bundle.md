@@ -4,7 +4,7 @@ slug: translation-bundle
 type: featured
 order: 70
 lang: pl
-permalink: /pl/store/keleo-translation-bundle.html
+permalink: "/pl/store/keleo-translation-bundle.html"
 ---
 
 {% include store/keleo-translation-bundle.md %}

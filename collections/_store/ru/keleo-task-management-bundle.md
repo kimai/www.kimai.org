@@ -4,7 +4,7 @@ slug: task-management-bundle
 type: featured
 order: 60
 lang: ru
-permalink: /ru/store/keleo-task-management-bundle.html
+permalink: "/ru/store/keleo-task-management-bundle.html"
 ---
 
 {% include store/keleo-task-management-bundle.md %}

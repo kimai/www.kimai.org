@@ -4,7 +4,7 @@ slug: custom-content-bundle
 type: featured
 order: 90
 lang: es
-permalink: /es/store/keleo-custom-content-bundle.html
+permalink: "/es/store/keleo-custom-content-bundle.html"
 ---
 
 {% include store/keleo-custom-content-bundle.md %}

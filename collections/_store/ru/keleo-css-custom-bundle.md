@@ -2,7 +2,7 @@
 title: Custom CSS
 type: plugin
 lang: ru
-permalink: /ru/store/keleo-css-custom-bundle.html
+permalink: "/ru/store/keleo-css-custom-bundle.html"
 ---
 
 {% include store/keleo-css-custom-bundle.md %}
