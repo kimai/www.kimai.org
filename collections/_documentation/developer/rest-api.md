@@ -6,11 +6,9 @@ related:
 - rest-api-examples
 ---
 
-Read the Swagger documentation of the Kimai API in your Kimai installation at `/api/doc`.
+Read the API documentation in your Kimai installation at `/api/doc`.
 For example, you can have a look at the API docs for the demo installation at [https://demo.kimai.org/api/doc](https://demo.kimai.org/api/doc).
 You need to authenticate to see them, credentials can be [found here]({% link _pages/demo.md %}).
-
-Or you can export the JSON collection by visiting `/api/doc.json`. Save the result in a file, which can be imported with Postman.
 
 ## Authentication
 
@@ -32,12 +30,11 @@ Each token has the following fields:
 - **expiration date** which is optional - if set, this token won't work from the configured date on
 - **last usage** will be updated once a minute, when used - helps to identify obsolete tokens
 
-## Swagger file
+## Open API definition
 
-The API calls can be exported in a Swagger file format, which can be imported into your tool of choice.
-You find the link in the API docs (the URL is `api/doc.json`).
+The API calls can be exported in a Open API definition format, which can be imported into your tool of choice.
 
-To use the API with Postman, the simplest approach is to export the swagger file and import it with Postman. 
+There is option to export the file in the API docs UI at `/api/doc`.
 
 ## Data types
 
