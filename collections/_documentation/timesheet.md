@@ -63,13 +63,70 @@ Click "Edit" and confirm that you want to edit all the selected records.
 
 You will see a new "Batch Update" page with various options to update all the selected timesheets.
 
-## Duration format
+## Time input
+
+The `begin` and `end` time input fields accept various formats, to allow correct and also speed typing.
+
+- Leave the `end` field empty, if you want to record a duration greater than 24:00 hours
+- Conversion between 12 and 24 hour format happens automatically when leaving the field
+
+Here are some examples of valid user inputs and how Kimai will interpret them:
+
+| User Input | Resulting value: 12-hour | Resulting value: 24-hour |
+|------------|--------------------------|--------------------------|
+| 0          | 12:00 AM                 | 0:00                     |
+| 7          | 7:00 AM                  | 7:00                     |
+| 12         | 12:00 PM                 | 12:00                    |
+| 17         | 5:00 PM                  | 17:00                    |
+| 545        | 5:45 AM                  | 5:45                     |
+| 1645       | 4:45 PM                  | 16:45                    |
+| 845am      | 8:45 AM                  | 8:45                     |
+| 1245pm     | 12:45 PM                 | 12:45                    |
+| 1245 pm    | 12:45 PM                 | 12:45                    |
+| 12:45 pm   | 12:45 PM                 | 12:45                    |
+| 13:45 PM   | 1:45 PM                  | 1:45                     |
+| 13:45 AM   | 1:45 PM                  | 13:45                    |
+| 1045       | 10:45 AM                 | 10:45                    |
+| 2:15       | 2:15 AM                  | 2:15                     |
+| 13:15      | 1:15 PM                  | 13:15                    |
+| 2:15 PM    | 2:15 PM                  | 14:15                    |
+| 2:15 AM    | 2:15 PM                  | 2:15                     |
+| :          | 12:00 AM                 | 0:00                     |
+| :1         | 12:01 AM                 | 0:01                     |
+| 1:1        | 1:01 AM                  | 1:01                     |
+| 19:1       | 7:01 PM                  | 19:01                    |
+| :1 PM      | 12:01 PM                 | 12:01                    |
+| 0:1pm      | 12:01 PM                 | 12:01                    |
+
+
+## Duration
+
+The `duration` field provides several easy ways to change its value, the most obvious one being the dropdown next to it. 
+
+**Important**
+
+- Using `0` or `00:00` as duration will stop the entry with a duration of zero seconds
+- To create a running entry the `end` and `duration` field needs to be empty
+
+**Change the duration**
+
+The `duration` field can be changed by using your keyboard:
+
+- `ArrowUp` key to increase the duration either 5 minutes or 1 hour, depending on the cursor position
+- `ArrowDown` key to decrease the duration either 5 minutes or 1 hour, depending on the cursor position
+- `PageUp` key to increase the duration by 1 hour
+- `PageDown` key to decrease the duration by 1 hour
+- `Home` key to set the duration to 00:00
+- `End` key to set the duration to 08:00
+
+**Input format** 
 
 Please read the full documentation about accepted inputs for the [duration format]({% link _documentation/duration-format.md %}).
 
-Important:
-- using `0` or `00:00` as duration will also stop the entry with a duration of zero seconds
-- to create a running entry the `end` and `duration` field needs to be empty
+Short version: 
+- The main format is `time span`, as example `2:30`
+- The other option is `decimal input` where a value like `2.5` will be converted to `2:30`
+- You can also use `time periods` format, where `2h30m`  will be converted to `2:30` 
 
 ## Exported records
 
