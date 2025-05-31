@@ -103,6 +103,7 @@ kimai:
         mapping:
             - { saml: $Email, kimai: email }
             - { saml: $FirstName $LastName, kimai: alias }
+            - { saml: SAML User, kimai: title }
         roles:
             resetOnLogin: true
             attribute: Roles
@@ -115,7 +116,16 @@ A brief description of the available fields:
 - `activate` (bool) activates the SAML authentication flow
 - `provider` (string) this is a free string, whose ONLY use-case is to show an icon: you have to define a name from the [fontawesome brand icons](https://fontawesome.com/v5/search?o=r&m=free&f=brands), e.g. `microsoft`, `google`, `aws`)
 - `title` (string) the name of the Login button in the authentication screen
-- `mapping` (array) an array of attributes that will be synced with Kimai. The `kimai` value (`email` and `alias`) are the names in Kimai, the `saml` key (`$Email` and `$FirstName $LastName`) are the attributes from the SAML response. You can assign static values to every user (like `title` = `SAML User`) or you fetch one or more values from the SAML message (`$Email` refers to the SAML attribute `Email` and `$FirstName $LastName` refers to the two SAML attributes `$FirstName` and `$LastName`).
+- `mapping` (array) an array of attributes that will be synced with Kimai. 
+    - The `kimai` value (`email` and `alias`) are the names in Kimai
+    - The `saml` key (`$Email` and `$FirstName $LastName`) are the attributes from the SAML response. 
+    - You can assign static values to every user (like `title` = `SAML User`) 
+    - You can fetch one value from the SAML message: `$Email` refers to the SAML attribute `Email` 
+    - You can fetch multiple values from the SAML message: `$FirstName $LastName` refers to the two SAML attributes `$FirstName` and `$LastName`
+    - If any of those attributes are missing, an authentication exception will be thrown, which is a typical source of frustration
+    - You can make the SAML attributes optional by using two `$$`, for example the optional field `title` could be fetched from the SAML attribute `Title` with `$$Title` 
+      - If the optional SAML attribute `Title` is missing, it will be ignored
+      - If you manually configured the title, it will not be overwritten if the SAML attribute `Title` is missing
 - `roles` (array) settings related to the user roles syncing
     - `resetOnLogin` (bool) if `true` all user roles will be reset upon login and synced with the SAML roles, if `false` you can configure user roles in Kimai and only the mapped ones will be forced when the user logs-in (other roles will stick with the user) - config exists since 1.22.0 
     - `attribute` (string) the SAML attribute whose values are used for syncing the groups
@@ -128,7 +138,7 @@ If you have troubles with your certificate you can [use this online tool](https:
 {% alert warning %}Every user needs a username and email address, you cannot activate SAML without a mapping for the email. The username cannot be set from SAML attributes, but will always be taken from the SAML request.{% endalert %}
 
 ### Multiline Certificate - x509cert
-
+ 
 The certificate looks like this:
 
 ```
