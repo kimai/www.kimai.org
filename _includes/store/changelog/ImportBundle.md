@@ -1,3 +1,11 @@
+**Version 2.19.0**
+
+Compatibility: requires minimum Kimai 2.35.0
+
+- Timesheet importer: support custom-field import
+- Customer importer: update existing customers instead of creating duplicates (identify by name)
+- Project importer: update existing customers and projects instead of creating duplicates (identify by name)
+
 **Version 2.18.0**
 
 Compatibility: requires minimum Kimai 2.21.0

@@ -1,3 +1,10 @@
+**Version 1.24.0**
+
+Compatibility: requires minimum Kimai 2.32.0
+
+- Added API endpoint to create absences
+- Improved API documentation
+
 **Version 1.23.1**
 
 Compatibility: requires minimum Kimai 2.32.0
