@@ -90,6 +90,7 @@ This will import timesheets and create these elements on the fly:
 | FixedRate    | The fixed rate as a float without currency                                                                         |
 | Billable     | Whether the entry should be marked as billable or not (supported values: `1` or `0`)                               |
 | Description  | Description of the entry as string                                                                                 |
+| meta.xxx     | Custom fields, e.g. `meta.foo` for a custom field with the internal name `foo`                                     |
 {: .table }
 
 ### User handling
