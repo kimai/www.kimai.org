@@ -1,3 +1,9 @@
+**Version 2.21.0**
+
+Compatibility: requires minimum Kimai 2.34.0
+
+- Improve API docs
+
 **Version 2.20.0**
 
 Compatibility: requires minimum Kimai 2.34.0
