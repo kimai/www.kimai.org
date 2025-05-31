@@ -688,14 +688,177 @@ Click “Edit” and confirm that you want to edit all the selected records.</p>
 
 <p>You will see a new “Batch Update” page with various options to update all the selected timesheets.</p>
 
-<h2 id="duration-format">Duration format</h2>
+<h2 id="time-input">Time input</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">begin</code> and <code class="language-plaintext highlighter-rouge">end</code> time input fields accept various formats, to allow correct and also speed typing.</p>
+
+<ul>
+  <li>Leave the <code class="language-plaintext highlighter-rouge">end</code> field empty, if you want to record a duration greater than 24:00 hours</li>
+  <li>Conversion between 12 and 24 hour format happens automatically when leaving the field</li>
+</ul>
+
+<p>Here are some examples of valid user inputs and how Kimai will interpret them:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>User Input</th>
+      <th>Resulting value: 12-hour</th>
+      <th>Resulting value: 24-hour</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>12:00 AM</td>
+      <td>0:00</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>7:00 AM</td>
+      <td>7:00</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>12:00 PM</td>
+      <td>12:00</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>5:00 PM</td>
+      <td>17:00</td>
+    </tr>
+    <tr>
+      <td>545</td>
+      <td>5:45 AM</td>
+      <td>5:45</td>
+    </tr>
+    <tr>
+      <td>1645</td>
+      <td>4:45 PM</td>
+      <td>16:45</td>
+    </tr>
+    <tr>
+      <td>845am</td>
+      <td>8:45 AM</td>
+      <td>8:45</td>
+    </tr>
+    <tr>
+      <td>1245pm</td>
+      <td>12:45 PM</td>
+      <td>12:45</td>
+    </tr>
+    <tr>
+      <td>1245 pm</td>
+      <td>12:45 PM</td>
+      <td>12:45</td>
+    </tr>
+    <tr>
+      <td>12:45 pm</td>
+      <td>12:45 PM</td>
+      <td>12:45</td>
+    </tr>
+    <tr>
+      <td>13:45 PM</td>
+      <td>1:45 PM</td>
+      <td>1:45</td>
+    </tr>
+    <tr>
+      <td>13:45 AM</td>
+      <td>1:45 PM</td>
+      <td>13:45</td>
+    </tr>
+    <tr>
+      <td>1045</td>
+      <td>10:45 AM</td>
+      <td>10:45</td>
+    </tr>
+    <tr>
+      <td>2:15</td>
+      <td>2:15 AM</td>
+      <td>2:15</td>
+    </tr>
+    <tr>
+      <td>13:15</td>
+      <td>1:15 PM</td>
+      <td>13:15</td>
+    </tr>
+    <tr>
+      <td>2:15 PM</td>
+      <td>2:15 PM</td>
+      <td>14:15</td>
+    </tr>
+    <tr>
+      <td>2:15 AM</td>
+      <td>2:15 PM</td>
+      <td>2:15</td>
+    </tr>
+    <tr>
+      <td>:</td>
+      <td>12:00 AM</td>
+      <td>0:00</td>
+    </tr>
+    <tr>
+      <td>:1</td>
+      <td>12:01 AM</td>
+      <td>0:01</td>
+    </tr>
+    <tr>
+      <td>1:1</td>
+      <td>1:01 AM</td>
+      <td>1:01</td>
+    </tr>
+    <tr>
+      <td>19:1</td>
+      <td>7:01 PM</td>
+      <td>19:01</td>
+    </tr>
+    <tr>
+      <td>:1 PM</td>
+      <td>12:01 PM</td>
+      <td>12:01</td>
+    </tr>
+    <tr>
+      <td>0:1pm</td>
+      <td>12:01 PM</td>
+      <td>12:01</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="duration">Duration</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">duration</code> field provides several easy ways to change its value, the most obvious one being the dropdown next to it.</p>
+
+<p><strong>Important</strong></p>
+
+<ul>
+  <li>Using <code class="language-plaintext highlighter-rouge">0</code> or <code class="language-plaintext highlighter-rouge">00:00</code> as duration will stop the entry with a duration of zero seconds</li>
+  <li>To create a running entry the <code class="language-plaintext highlighter-rouge">end</code> and <code class="language-plaintext highlighter-rouge">duration</code> field needs to be empty</li>
+</ul>
+
+<p><strong>Change the duration</strong></p>
+
+<p>The <code class="language-plaintext highlighter-rouge">duration</code> field can be changed by using your keyboard:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">ArrowUp</code> key to increase the duration either 5 minutes or 1 hour, depending on the cursor position</li>
+  <li><code class="language-plaintext highlighter-rouge">ArrowDown</code> key to decrease the duration either 5 minutes or 1 hour, depending on the cursor position</li>
+  <li><code class="language-plaintext highlighter-rouge">PageUp</code> key to increase the duration by 1 hour</li>
+  <li><code class="language-plaintext highlighter-rouge">PageDown</code> key to decrease the duration by 1 hour</li>
+  <li><code class="language-plaintext highlighter-rouge">Home</code> key to set the duration to 00:00</li>
+  <li><code class="language-plaintext highlighter-rouge">End</code> key to set the duration to 08:00</li>
+</ul>
+
+<p><strong>Input format</strong></p>
 
 <p>Please read the full documentation about accepted inputs for the <a href="/documentation/duration-format.html">duration format</a>.</p>
 
-<p>Important:</p>
+<p>Short version:</p>
 <ul>
-  <li>using <code class="language-plaintext highlighter-rouge">0</code> or <code class="language-plaintext highlighter-rouge">00:00</code> as duration will also stop the entry with a duration of zero seconds</li>
-  <li>to create a running entry the <code class="language-plaintext highlighter-rouge">end</code> and <code class="language-plaintext highlighter-rouge">duration</code> field needs to be empty</li>
+  <li>The main format is <code class="language-plaintext highlighter-rouge">time span</code>, as example <code class="language-plaintext highlighter-rouge">2:30</code></li>
+  <li>The other option is <code class="language-plaintext highlighter-rouge">decimal input</code> where a value like <code class="language-plaintext highlighter-rouge">2.5</code> will be converted to <code class="language-plaintext highlighter-rouge">2:30</code></li>
+  <li>You can also use <code class="language-plaintext highlighter-rouge">time periods</code> format, where <code class="language-plaintext highlighter-rouge">2h30m</code>  will be converted to <code class="language-plaintext highlighter-rouge">2:30</code></li>
 </ul>
 
 <h2 id="exported-records">Exported records</h2>
@@ -795,7 +958,7 @@ This would find all entries with the custom field <code class="language-plaintex
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#starting-and-stopping-records" class="nav-link">Starting and stopping records</a><ul><li class="nav-item"><a href="#re-start-timesheet-records" class="nav-link">Re-start timesheet records</a></li><li class="nav-item"><a href="#start-new-records" class="nav-link">Start new records</a></li><li class="nav-item"><a href="#stop-records" class="nav-link">Stop records</a></li></ul></li><li class="nav-item"><a href="#batch-update" class="nav-link">Batch update</a></li><li class="nav-item"><a href="#duration-format" class="nav-link">Duration format</a></li><li class="nav-item"><a href="#exported-records" class="nav-link">Exported records</a></li><li class="nav-item"><a href="#billable-vs-not-billable" class="nav-link">Billable vs. not billable</a></li><li class="nav-item"><a href="#filter-and-search" class="nav-link">Filter and search</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#starting-and-stopping-records" class="nav-link">Starting and stopping records</a><ul><li class="nav-item"><a href="#re-start-timesheet-records" class="nav-link">Re-start timesheet records</a></li><li class="nav-item"><a href="#start-new-records" class="nav-link">Start new records</a></li><li class="nav-item"><a href="#stop-records" class="nav-link">Stop records</a></li></ul></li><li class="nav-item"><a href="#batch-update" class="nav-link">Batch update</a></li><li class="nav-item"><a href="#time-input" class="nav-link">Time input</a></li><li class="nav-item"><a href="#duration" class="nav-link">Duration</a></li><li class="nav-item"><a href="#exported-records" class="nav-link">Exported records</a></li><li class="nav-item"><a href="#billable-vs-not-billable" class="nav-link">Billable vs. not billable</a></li><li class="nav-item"><a href="#filter-and-search" class="nav-link">Filter and search</a></li></ul>
         
         <ul class="nav">
             <li>
