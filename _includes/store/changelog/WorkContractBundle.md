@@ -1,3 +1,9 @@
+**Version 1.25.0**
+
+Compatibility: requires minimum Kimai 2.32.0
+
+- Do not allow importing empty public holiday selection
+
 **Version 1.24.0**
 
 Compatibility: requires minimum Kimai 2.32.0
