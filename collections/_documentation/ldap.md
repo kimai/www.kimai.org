@@ -311,6 +311,36 @@ The rule is: either manage all roles in Kimai or in LDAP, mixing is not possible
 
 Another simple solution to debug the generated queries is to start your OpenLDAP with `sudo /usr/libexec/slapd -d256`.
 
+### OpenLDAP with encryption
+
+Certain versions of Kimai / PHP/ Docker might fail to connect using **StartTLS**, in which case you should try to switch to **SSL** instead.
+
+**StartTLS**
+```yaml
+  ldap:
+      activate: true
+      connection:
+          host: ldap.server
+          port: 389
+          useStartTls: true
+          username: cn=user,dc=example,dc=org
+          password: password
+```
+
+**SSL**
+```yaml
+  ldap:
+      activate: true
+      connection:
+          host: ldap.server
+          port: 636
+          username: cn=user,dc=example,dc=org
+          password: password
+```
+
+While the error message `Failed to search LDAP: 0x5b (Connect error; (unknown error code)): ldap.server:389` is pretty generic,
+it is worth testing, [if you have a similar problem](https://github.com/kimai/kimai/issues/5487#issuecomment-2939382969).
+
 ### Minimal OpenLDAP
 
 A minimal setup with a local OpenLDAP with roles sync.
