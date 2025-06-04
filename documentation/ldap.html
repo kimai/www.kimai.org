@@ -914,6 +914,34 @@ demote or promote a User permanently to another role in Kimai.</p>
 
 <p>Another simple solution to debug the generated queries is to start your OpenLDAP with <code class="language-plaintext highlighter-rouge">sudo /usr/libexec/slapd -d256</code>.</p>
 
+<h3 id="openldap-with-encryption">OpenLDAP with encryption</h3>
+
+<p>Certain versions of Kimai / PHP/ Docker might fail to connect using <strong>StartTLS</strong>, in which case you should try to switch to <strong>SSL</strong> instead.</p>
+
+<p><strong>StartTLS</strong></p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="na">ldap</span><span class="pi">:</span>
+      <span class="na">activate</span><span class="pi">:</span> <span class="kc">true</span>
+      <span class="na">connection</span><span class="pi">:</span>
+          <span class="na">host</span><span class="pi">:</span> <span class="s">ldap.server</span>
+          <span class="na">port</span><span class="pi">:</span> <span class="m">389</span>
+          <span class="na">useStartTls</span><span class="pi">:</span> <span class="kc">true</span>
+          <span class="na">username</span><span class="pi">:</span> <span class="s">cn=user,dc=example,dc=org</span>
+          <span class="na">password</span><span class="pi">:</span> <span class="s">password</span>
+</code></pre></div></div>
+
+<p><strong>SSL</strong></p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="na">ldap</span><span class="pi">:</span>
+      <span class="na">activate</span><span class="pi">:</span> <span class="kc">true</span>
+      <span class="na">connection</span><span class="pi">:</span>
+          <span class="na">host</span><span class="pi">:</span> <span class="s">ldap.server</span>
+          <span class="na">port</span><span class="pi">:</span> <span class="m">636</span>
+          <span class="na">username</span><span class="pi">:</span> <span class="s">cn=user,dc=example,dc=org</span>
+          <span class="na">password</span><span class="pi">:</span> <span class="s">password</span>
+</code></pre></div></div>
+
+<p>While the error message <code class="language-plaintext highlighter-rouge">Failed to search LDAP: 0x5b (Connect error; (unknown error code)): ldap.server:389</code> is pretty generic,
+it is worth testing, <a href="https://github.com/kimai/kimai/issues/5487#issuecomment-2939382969">if you have a similar problem</a>.</p>
+
 <h3 id="minimal-openldap">Minimal OpenLDAP</h3>
 
 <p>A minimal setup with a local OpenLDAP with roles sync.
@@ -1089,6 +1117,7 @@ in the volumes section of my docker-compose file:</p>
 </li>
 <li class="nav-item">
 <a href="#examples" class="nav-link">Examples</a><ul>
+<li class="nav-item"><a href="#openldap-with-encryption" class="nav-link">OpenLDAP with encryption</a></li>
 <li class="nav-item"><a href="#minimal-openldap" class="nav-link">Minimal OpenLDAP</a></li>
 <li class="nav-item"><a href="#openldap-with-group-sync" class="nav-link">OpenLDAP with group sync</a></li>
 <li class="nav-item"><a href="#connect-to-active-directory" class="nav-link">Connect to Active Directory</a></li>
