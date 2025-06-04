@@ -18,4 +18,4 @@ Users require the `view_other_absence` permission to see the `Absence calendar` 
 | Permission Name          | Description                                                                                                                                                  |
 |--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | view_other_absence       | View a calendar screen, showcasing absences of all users (that you can see). By default given to: `User`, `Teamlead`, `Administrator`, `Super Administrator` |
-
+{: .table }
