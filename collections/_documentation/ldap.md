@@ -334,6 +334,7 @@ Certain versions of Kimai / PHP/ Docker might fail to connect using **StartTLS**
       connection:
           host: ldap.server
           port: 636
+          useSsl: true
           username: cn=user,dc=example,dc=org
           password: password
 ```
