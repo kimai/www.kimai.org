@@ -1,1 +1,5 @@
+{%- if include.title != nil -%}
 <a class="btn btn-secondary px-3" href="#"><i class="{{ include.icon | icon }} pe-2"></i>{{ include.title|default('') }}</a>
+{%- else -%}
+<a class="btn btn-secondary px-3" href="#"><i class="{{ include.icon | icon }}"></i></a>
+{%- endif -%}

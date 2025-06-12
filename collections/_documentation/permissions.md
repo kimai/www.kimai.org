@@ -88,27 +88,28 @@ For example: exported timesheet records cannot be edited, even if a user has the
  
 ### Others
 
-| Permission name               | Description                                                                                                                                    |
-|-------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Export**                    |                                                                                                                                                |
-| create_export                 | See [export]({% link _documentation/export.md %}) screen and create export documents from the selected timesheet data                          |
-| **Reporting**                 |                                                                                                                                                |
-| view_other_reporting          | Gives access to the reports of other users                                                                                                     |
-| view_reporting                | Gives access to the [reporting]({% link _documentation/reporting.md %}) screen                                                                 |
-| **Tags**                      |                                                                                                                                                |
-| delete_tag                    | Delete existing tags                                                                                                                           |
-| manage_tag                    | Edit existing and create new tags in the administration                                                                                        |
-| view_tag                      | Gives access to the [tags]({% link _documentation/tags.md %}) administration                                                                   |
-| **Teams**                     |                                                                                                                                                |
-| create_team                   | Create new teams                                                                                                                               |
-| delete_team                   | Delete existing teams                                                                                                                          |
-| edit_team                     | Edit team assignments                                                                                                                          |
-| view_team                     | See [teams]({% link _documentation/teams.md %}) administration                                                                                 |
-| view_team_member              | View the teamleads and members for the teams of the current user                                                                               |
-| **Other**                     |                                                                                                                                                |
-| plugins                       | Access the plugin administration                                                                                                               |
-| role_permissions              | **SECURITY ALERT**: view and change permissions for user roles, create and delete user roles - `System-Admins` will always own that permission |
-| system_configuration          | Configure global Kimai settings                                                                                                                |
-| system_information            | Enter the system-information (about) screen                                                                                                    |
-| view_all_data                 | **SECURITY ALERT**: Allows to see all data (disables team permissions) - `System-Admins` will always own that permission                       |
+| Permission name          | Description                                                                                                                                    |
+|--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Export**               |                                                                                                                                                |
+| create_export            | See [export]({% link _documentation/export.md %}) screen and create export documents from the selected timesheet data                          |
+| create_export_template   | Create, edit and delete CSV and Excel [export templates]({% link _documentation/export.md %})                                                  |
+| **Reporting**            |                                                                                                                                                |
+| view_other_reporting     | Gives access to the reports of other users                                                                                                     |
+| view_reporting           | Gives access to the [reporting]({% link _documentation/reporting.md %}) screen                                                                 |
+| **Tags**                 |                                                                                                                                                |
+| delete_tag               | Delete existing tags                                                                                                                           |
+| manage_tag               | Edit existing and create new tags in the administration                                                                                        |
+| view_tag                 | Gives access to the [tags]({% link _documentation/tags.md %}) administration                                                                   |
+| **Teams**                |                                                                                                                                                |
+| create_team              | Create new teams                                                                                                                               |
+| delete_team              | Delete existing teams                                                                                                                          |
+| edit_team                | Edit team assignments                                                                                                                          |
+| view_team                | See [teams]({% link _documentation/teams.md %}) administration                                                                                 |
+| view_team_member         | View the teamleads and members for the teams of the current user                                                                               |
+| **Other**                |                                                                                                                                                |
+| plugins                  | Access the plugin administration                                                                                                               |
+| role_permissions         | **SECURITY ALERT**: view and change permissions for user roles, create and delete user roles - `System-Admins` will always own that permission |
+| system_configuration     | Configure global Kimai settings                                                                                                                |
+| system_information       | Enter the system-information (about) screen                                                                                                    |
+| view_all_data            | **SECURITY ALERT**: Allows to see all data (disables team permissions) - `System-Admins` will always own that permission                       |
 {: .table .permissions }

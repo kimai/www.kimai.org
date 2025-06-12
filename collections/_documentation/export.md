@@ -11,16 +11,7 @@ There are a couple of differences in these two Kimai modules, the most important
 
 - Invoices can only be created for a dedicated customer, where an export can be created without selecting a customer
 - Invoices do more calculation (e.g. tax) 
-- Invoices support self-created templates in more formats (e.g. XLSX, ODS, DOCX)
-
-## Security and privacy
-
-Giving a user the permission `create_export` to export data, allows him to see most time related data in Kimai 
-(like customer, projects, activities, rates, time worked per user and more).
-
-The "mark as export" checkbox is only available for users with the `edit_export_other_timesheet` [permission]({% link _documentation/permissions.md %}).
-
-{% alert danger %}The export extension does not check all available permissions, as this would defeat the purpose of an export. If your users shall not see rates, do not give them the 'create_export' permission.{% endalert %}
+- Invoices support templates in more formats (e.g. XLSX, ODS, DOCX)
 
 ## Export state
 
@@ -45,32 +36,52 @@ There is a toggle called `Use decimal duration in export` that switches between 
 
 ## Adding export templates
 
+### CSV and XLSX
+
+Kimai supports custom CSV and Excel templates. 
+You can create them with the UI: after filtering timesheets, you will see the list of export buttons. 
+Next to them is the {% include demo-action-button.html icon="create" %} button, which will open the modal to create a new template.
+
+{% include docs-image.html src="/images/documentation/export-add-template.webp" title="Add export template" width="400px" %}
+
+These templates allow you to select:
+- the exported file `type` (here `CSV` or `Excel`)
+- the `language` for header translations, which uses the request language if not configured
+- the `columns` that should be exported
+
+{% include docs-image.html src="/images/documentation/export-create-template.webp" title="Edit export template form" width="800px" %}
+
+After creating the template, the respective CSV/Excel button will become a dropdown and you can select your template for the export.
+
+{% include docs-image.html src="/images/documentation/export-select-template.webp" title="Select template for export" width="400px" %}
+
+When you hover such a template, you can edit and delete it from the dropdown. 
+
+### PDF and HTML
+
 Kimai supports custom PDF and HTML export templates.
 
-Those export templates are searched in the location `var/export/`, which does not exist by default, please create it when you add your first template.
+**How to create your first template**
+- Copy & paste the [default templates]({{ site.kimai_v2_repo }}/blob/main/templates/export/pdf-layout.html.twig)
+- Read the dedicated chapter about [PDF templates]({% link _documentation/pdf-templates.md %})
+- Adjust the template to your needs and add it to Kimai 
+
+{% alert info %}
+- **Cloud** users have to send their template to the support via `{{ site.cloud.support_email }}`
+- **OnPremise** users need to store their export templates in the directory `var/export/` (you might have to create it on first use)
+{% endalert %}
 
 Be aware of the following rules:
 
 - HTML templates have the file extension `.html.twig`
 - PDF templates have the file extension `.pdf.twig`
-- You can use every template filename only once, as they are used as reference
-- The names `default.html.twig`, `default.pdf.twig`, `default-budget.pdf.twig`, `default-internal.pdf.twig`, `timesheet.pdf.twig` are reserved
 - Use unique filenames and prefix them with your company name, eg `company-export.html.twig` 
- 
-After you created a new or updated an existing template, you have to clear the cache to see the results:
-{% include snippets/cache-refresh.md %} 
+- The names `default.html.twig`, `default.pdf.twig`, `default-budget.pdf.twig`, `default-internal.pdf.twig`, `timesheet.pdf.twig` are reserved
+- After updating an existing template, you have to [clear the cache]({% link _documentation/cache.md %}) to see the results
 
-### How to start
+**How to access custom fields in PDF templates**
 
-Copy & paste the [default templates]({{ site.kimai_v2_repo }}/blob/main/templates/export/pdf-layout.html.twig) to `var/export/company-template.pdf.twig` as starting point.
-
-## PDF Templates
-
-There is so much to say about PDF templates, that there is a dedicated page about [PDF templates]({% link _documentation/pdf-templates.md %}).
- 
-### Custom fields
-
-You can access custom fields with:
+You can access custom fields with `entry.metaField('name')` and you should always safeguard the call in case of a missing custom-field:
 
 ```twig
 {% raw %}{% set cf = entry.metaField('example') %}
@@ -79,8 +90,11 @@ You can access custom fields with:
 {% endif %}{% endraw %}
 ```
 
-## Permission
+## Permissions
 
-The export page is visible to users who own the `create_export` permission.
+- The export page is visible to users who own the `create_export` permission
+- The `create_export_template` permission controls if you can create, edit and delete CSV and Excel export templates
+- The export does **not always** respect permissions like `view_rate_other_timesheet` and `view_rate_own_timesheet`
+- The "mark as export" checkbox is only available for users with the `edit_export_other_timesheet` [permission]({% link _documentation/permissions.md %})
 
-The export does **not** respect permissions like `view_rate_other_timesheet` and `view_rate_own_timesheet`. 
+{% alert danger %}The export extension does not check all available permissions, as this would defeat the purpose of an export. If your users shall not see rates, do not give them the 'create_export' permission.{% endalert %}
