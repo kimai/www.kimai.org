@@ -626,18 +626,8 @@
 <ul>
   <li>Invoices can only be created for a dedicated customer, where an export can be created without selecting a customer</li>
   <li>Invoices do more calculation (e.g. tax)</li>
-  <li>Invoices support self-created templates in more formats (e.g. XLSX, ODS, DOCX)</li>
+  <li>Invoices support templates in more formats (e.g. XLSX, ODS, DOCX)</li>
 </ul>
-
-<h2 id="security-and-privacy">Security and privacy</h2>
-
-<p>Giving a user the permission <code class="language-plaintext highlighter-rouge">create_export</code> to export data, allows him to see most time related data in Kimai 
-(like customer, projects, activities, rates, time worked per user and more).</p>
-
-<p>The “mark as export” checkbox is only available for users with the <code class="language-plaintext highlighter-rouge">edit_export_other_timesheet</code> <a href="/documentation/permissions.html">permission</a>.</p>
-
-<div class="alert alert-danger d-flex" role="alert"><i class="bx bx-info-circle lead me-3"></i><p>The export extension does not check all available permissions, as this would defeat the purpose of an export. If your users shall not see rates, do not give them the ‘create_export’ permission.</p>
-</div>
 
 <h2 id="export-state">Export state</h2>
 
@@ -667,45 +657,69 @@ These records cannot be edited any longer by regular users and are excluded by d
 
 <h2 id="adding-export-templates">Adding export templates</h2>
 
+<h3 id="csv-and-xlsx">CSV and XLSX</h3>
+
+<p>Kimai supports custom CSV and Excel templates. 
+You can create them with the UI: after filtering timesheets, you will see the list of export buttons. 
+Next to them is the <a class="btn btn-secondary px-3" href="#"><i class="bx bx-plus"></i></a> button, which will open the modal to create a new template.</p>
+
+<figure class="d-block figure mb-3" style="max-width: 400px">
+    <img src="/images/documentation/export-add-template.webp" class="figure-img img-fluid rounded" />
+    <figcaption class="figure-caption">Add export template</figcaption>
+</figure>
+
+<p>These templates allow you to select:</p>
+<ul>
+  <li>the exported file <code class="language-plaintext highlighter-rouge">type</code> (here <code class="language-plaintext highlighter-rouge">CSV</code> or <code class="language-plaintext highlighter-rouge">Excel</code>)</li>
+  <li>the <code class="language-plaintext highlighter-rouge">language</code> for header translations, which uses the request language if not configured</li>
+  <li>the <code class="language-plaintext highlighter-rouge">columns</code> that should be exported</li>
+</ul>
+
+<figure class="d-block figure mb-3" style="max-width: 800px">
+    <img src="/images/documentation/export-create-template.webp" class="figure-img img-fluid rounded" />
+    <figcaption class="figure-caption">Edit export template form</figcaption>
+</figure>
+
+<p>After creating the template, the respective CSV/Excel button will become a dropdown and you can select your template for the export.</p>
+
+<figure class="d-block figure mb-3" style="max-width: 400px">
+    <img src="/images/documentation/export-select-template.webp" class="figure-img img-fluid rounded" />
+    <figcaption class="figure-caption">Select template for export</figcaption>
+</figure>
+
+<p>When you hover such a template, you can edit and delete it from the dropdown.</p>
+
+<h3 id="pdf-and-html">PDF and HTML</h3>
+
 <p>Kimai supports custom PDF and HTML export templates.</p>
 
-<p>Those export templates are searched in the location <code class="language-plaintext highlighter-rouge">var/export/</code>, which does not exist by default, please create it when you add your first template.</p>
+<p><strong>How to create your first template</strong></p>
+<ul>
+  <li>Copy &amp; paste the <a href="https://github.com/kimai/kimai/blob/main/templates/export/pdf-layout.html.twig">default templates</a></li>
+  <li>Read the dedicated chapter about <a href="/documentation/pdf-templates.html">PDF templates</a></li>
+  <li>Adjust the template to your needs and add it to Kimai</li>
+</ul>
+
+<div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i>
+<ul>
+  <li><strong>Cloud</strong> users have to send their template to the support via <code class="language-plaintext highlighter-rouge">support@kimai.cloud</code></li>
+  <li><strong>OnPremise</strong> users need to store their export templates in the directory <code class="language-plaintext highlighter-rouge">var/export/</code> (you might have to create it on first use)</li>
+</ul>
+</div>
 
 <p>Be aware of the following rules:</p>
 
 <ul>
   <li>HTML templates have the file extension <code class="language-plaintext highlighter-rouge">.html.twig</code></li>
   <li>PDF templates have the file extension <code class="language-plaintext highlighter-rouge">.pdf.twig</code></li>
-  <li>You can use every template filename only once, as they are used as reference</li>
-  <li>The names <code class="language-plaintext highlighter-rouge">default.html.twig</code>, <code class="language-plaintext highlighter-rouge">default.pdf.twig</code>, <code class="language-plaintext highlighter-rouge">default-budget.pdf.twig</code>, <code class="language-plaintext highlighter-rouge">default-internal.pdf.twig</code>, <code class="language-plaintext highlighter-rouge">timesheet.pdf.twig</code> are reserved</li>
   <li>Use unique filenames and prefix them with your company name, eg <code class="language-plaintext highlighter-rouge">company-export.html.twig</code></li>
+  <li>The names <code class="language-plaintext highlighter-rouge">default.html.twig</code>, <code class="language-plaintext highlighter-rouge">default.pdf.twig</code>, <code class="language-plaintext highlighter-rouge">default-budget.pdf.twig</code>, <code class="language-plaintext highlighter-rouge">default-internal.pdf.twig</code>, <code class="language-plaintext highlighter-rouge">timesheet.pdf.twig</code> are reserved</li>
+  <li>After updating an existing template, you have to <a href="/documentation/cache.html">clear the cache</a> to see the results</li>
 </ul>
 
-<p>After you created a new or updated an existing template, you have to clear the cache to see the results:</p>
-<div class="card border-primary mb-3">
-                       <p class="card-title bg-faded-primary p-1 mb-1"><strong><i class="bx bxs-info-circle ms-2 me-2 text-primary fs-5"></i>How to reload Kimai cache</strong></p>
-                       <div class="card-body card-note m-0 pt-3 px-3">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/console kimai:reload --env=prod
-</code></pre></div></div>
+<p><strong>How to access custom fields in PDF templates</strong></p>
 
-<p>It is not advised, but in case the above command fails you could try:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm -r var/cache/prod/*
-</code></pre></div></div>
-</div>
-                   </div>
-
-<h3 id="how-to-start">How to start</h3>
-
-<p>Copy &amp; paste the <a href="https://github.com/kimai/kimai/blob/main/templates/export/pdf-layout.html.twig">default templates</a> to <code class="language-plaintext highlighter-rouge">var/export/company-template.pdf.twig</code> as starting point.</p>
-
-<h2 id="pdf-templates">PDF Templates</h2>
-
-<p>There is so much to say about PDF templates, that there is a dedicated page about <a href="/documentation/pdf-templates.html">PDF templates</a>.</p>
-
-<h3 id="custom-fields">Custom fields</h3>
-
-<p>You can access custom fields with:</p>
+<p>You can access custom fields with <code class="language-plaintext highlighter-rouge">entry.metaField('name')</code> and you should always safeguard the call in case of a missing custom-field:</p>
 
 <div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span> <span class="k">set</span> <span class="nv">cf</span> <span class="o">=</span> <span class="nv">entry.metaField</span><span class="p">(</span><span class="s1">'example'</span><span class="p">)</span> <span class="cp">%}</span>
 <span class="cp">{%</span> <span class="k">if</span> <span class="nv">cf</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">null</span> <span class="ow">and</span> <span class="nv">cf.value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">null</span> <span class="cp">%}</span>
@@ -713,11 +727,17 @@ These records cannot be edited any longer by regular users and are excluded by d
 <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
 </code></pre></div></div>
 
-<h2 id="permission">Permission</h2>
+<h2 id="permissions">Permissions</h2>
 
-<p>The export page is visible to users who own the <code class="language-plaintext highlighter-rouge">create_export</code> permission.</p>
+<ul>
+  <li>The export page is visible to users who own the <code class="language-plaintext highlighter-rouge">create_export</code> permission</li>
+  <li>The <code class="language-plaintext highlighter-rouge">create_export_template</code> permission controls if you can create, edit and delete CSV and Excel export templates</li>
+  <li>The export does <strong>not always</strong> respect permissions like <code class="language-plaintext highlighter-rouge">view_rate_other_timesheet</code> and <code class="language-plaintext highlighter-rouge">view_rate_own_timesheet</code></li>
+  <li>The “mark as export” checkbox is only available for users with the <code class="language-plaintext highlighter-rouge">edit_export_other_timesheet</code> <a href="/documentation/permissions.html">permission</a></li>
+</ul>
 
-<p>The export does <strong>not</strong> respect permissions like <code class="language-plaintext highlighter-rouge">view_rate_other_timesheet</code> and <code class="language-plaintext highlighter-rouge">view_rate_own_timesheet</code>.</p>
+<div class="alert alert-danger d-flex" role="alert"><i class="bx bx-info-circle lead me-3"></i><p>The export extension does not check all available permissions, as this would defeat the purpose of an export. If your users shall not see rates, do not give them the ‘create_export’ permission.</p>
+</div>
 
                 </div>
                 
@@ -732,7 +752,7 @@ These records cannot be edited any longer by regular users and are excluded by d
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#difference-between-export-and-invoice" class="nav-link">Difference between export and invoice</a></li><li class="nav-item"><a href="#security-and-privacy" class="nav-link">Security and privacy</a></li><li class="nav-item"><a href="#export-state" class="nav-link">Export state</a></li><li class="nav-item"><a href="#time-format" class="nav-link">Time format</a></li><li class="nav-item"><a href="#adding-export-templates" class="nav-link">Adding export templates</a><ul><li class="nav-item"><a href="#how-to-start" class="nav-link">How to start</a></li></ul></li><li class="nav-item"><a href="#pdf-templates" class="nav-link">PDF Templates</a><ul><li class="nav-item"><a href="#custom-fields" class="nav-link">Custom fields</a></li></ul></li><li class="nav-item"><a href="#permission" class="nav-link">Permission</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#difference-between-export-and-invoice" class="nav-link">Difference between export and invoice</a></li><li class="nav-item"><a href="#export-state" class="nav-link">Export state</a></li><li class="nav-item"><a href="#time-format" class="nav-link">Time format</a></li><li class="nav-item"><a href="#adding-export-templates" class="nav-link">Adding export templates</a><ul><li class="nav-item"><a href="#csv-and-xlsx" class="nav-link">CSV and XLSX</a></li><li class="nav-item"><a href="#pdf-and-html" class="nav-link">PDF and HTML</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
         
     </aside>
 
