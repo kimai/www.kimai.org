@@ -9,7 +9,7 @@
 | api-token_other_profile       | Change the API token for other users                                                                           |
 | edit_other_profile            | **SECURITY ALERT**: edit the profile for another user                                                          |
 | hourly-rate_other_profile     | Edit other (users specific) hourly rate                                                                        |
-| password_other_profile        | Change the password for another user                                                                           |
+| password_other_profile        | **SECURITY ALERT**: Change the password for another user                                                       |
 | preferences_other_profile     | Change the preferences for another user                                                                        |
 | roles_other_profile           | **SECURITY ALERT**: change roles for other users                                                               |
 | supervisor_other_profile      | Change the supervisor for the selected profile                                                                 |
