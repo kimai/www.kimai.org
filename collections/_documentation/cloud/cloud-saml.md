@@ -38,10 +38,10 @@ If you are using another IDP and want to use Kimai: please get in touch, I am op
     - Select the `Name-ID`: "Basic Information > Primary Email"
 - On page 4 `Attributes` you have to define the `User attribute` mapping like this (**correct case is important, and you need to configure all attributes, even if you do not use them**):
     - `Basic Information > Primary email` → `Email`
-    - `Basic Information > First name` → `FirstName`
-    - `Basic Information > Last name` → `LastName`
-    - `Employee Details > Employee ID` → `AccountNumber`
-    - `Employee Details > Title` → `Title`
+    - `Basic Information > First name` → `FirstName` (optional)
+    - `Basic Information > Last name` → `LastName` (optional)
+    - `Employee Details > Employee ID` → `AccountNumber` (optional)
+    - `Employee Details > Title` → `Title` (optional)
 - Back on the overview page: activate the new application for your users
 - The last configuration step takes care of the `User role` mapping, which can be defined in two ways:
     - Using Google Groups (recommended):
@@ -71,28 +71,34 @@ This screenshot is a showcase of the attribute mapping including groups:
 
 ## <span id="microsoft-saml"></span> Microsoft SAML
 
-### <span id="microsoft-azure"></span> Azure AD Configuration
+### <span id="microsoft-azure"></span> Entra ID (ex. Azure AD) Configuration
 
 - Sign in to the [Azure portal](https://portal.azure.com/).
-- Select the **Azure Active Directory** service from the navigation.
+- Select the **Microsoft Entra ID** service from the navigation.
 - Navigate to **Enterprise Applications** and then select **New application**.
-- In the "Browse Azure AD Gallery" section, type **Azure AD SAML Toolkit** in the search box and select it.
-- Enter the application name to "Kimai-Cloud", hit the "Creat" button add wait for the app to be added.
+- In the "Browse Microsoft Entra Gallery" section, search for **Microsoft Entra SAML Toolkit** and select it.
+- Enter the application name to "Kimai-Cloud", hit the `Create` button add wait for the app to be added.
 - On the "Overview" page select "Assign user and groups" and add all users that should have access to Kimai.
 - Back on the "Overview" page select "Set up single sign on" and choose **SAML** as your choice.
 - Edit the **Basic SAML Configuration** and add the required **URLs**:
-    - Identifier (Entity ID): `https://timetracking.example.com/auth/saml/metadata`
-    - Reply URL (Assertion Consumer Service URL): `https://timetracking.example.com/auth/saml/acs`
-    - Sign on URL: `https://timetracking.example.com/`
+    - Replace `foo.kimai.cloud` in the following examples with your cloud domain
+    - Identifier (Entity ID): `https://foo.kimai.cloud/auth/saml/metadata`
+    - Reply URL (Assertion Consumer Service URL): `https://foo.kimai.cloud/auth/saml/acs`
+    - Sign on URL: `https://foo.kimai.cloud/`
+    - Relay State (Optional) - skip this one
+    - Logout Url (Optional) - skip this one
 - After saving the URLs: edit the **Attributes & Claims** and configure required settings (see screenshot below):
     - Change `Source attribute` of the `Unique User Identifier (Name ID)` to `user.mail`
     - Select `Add a group claim` with the settings `All groups` and the Source attribute `Group ID`
-    - Select `Add new claim` with Name: `displayname`, Namespace: `http://schemas.xmlsoap.org/ws/2005/05/identity/claims`, Source attribute: `user.displayname`
-    - Select `Add new claim` with Name: `employeeid`, Namespace: `http://schemas.xmlsoap.org/ws/2005/05/identity/claims`, Source attribute: `user.employeeid`
-- Return to the **SAML-based Sign-on** page and download **Certificate (Base64)** from the "SAML Signing Certificate" section. Edit the `Kimai Cloud.cer` file and copy&paste the content into the Cloud configuration field `X.509 Certificate`.
+    - Now you can add optional attributes, which Kimai supports (from the `http://schemas.xmlsoap.org/ws/2005/05/identity/claims` namespace): 
+      - Select `Add new claim` with Name: `givenname`, Source attribute: `user.givenname` (optional)
+      - Select `Add new claim` with Name: `surname`, Source attribute: `user.surname` (optional)
+      - Select `Add new claim` with Name: `displayname`, Source attribute: `user.displayname` (optional)
+      - Select `Add new claim` with Name: `employeeid`, Source attribute: `user.employeeid` (optional)
+- Return to the **Set up Single Sign-On with SAML** page and download **Certificate (Base64)** from the "SAML Signing Certificate" section. Edit the `Kimai Cloud.cer` file and copy&paste the content into the Cloud configuration field `X.509 Certificate`.
 - Copy the values of **Set up Kimai-Cloud** into the Cloud configuration:
     - Login URL: `Login URL`
-    - Azure AD Identifier: `Azure AD Identifier (SAML Entity ID)`
+    - Microsoft Entra Identifier: `Azure AD Identifier (SAML Entity ID)`
 
 **Configure "Attributes & Claims":**
 {% include docs-image.html src="/images/documentation/cloud/saml-azure-attributes.webp" title="Azure - Attributes & Claims" width="800px" %}
