@@ -305,10 +305,13 @@
             <div>
                 
                 <div id="documentation-content">
-                    <p>Users of your Kimai-Cloud can authenticate using an identity provider that supports SSO (Single Sign-On) via SAML.
-You find the configuration after login at: <strong>My Kimai-Cloud &gt; SSO Authentication</strong>.</p>
+                    <div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i><p>This feature is <strong>available for annual PRO subscriptions</strong>, check the feature comparison page for more details.</p>
+</div>
 
-<p>Currently, the following provider are supported:</p>
+<p>Users of your Kimai-Cloud can authenticate using an identity provider that supports SSO (Single Sign-On) via SAML.
+You find the configuration after login at: <strong><a href="https://www.kimai.cloud/go/my-site">My Kimai-Cloud</a> &gt; SSO Authentication</strong>.</p>
+
+<p>Currently, the following providers are supported:</p>
 
 <ul>
   <li><a href="#google-saml">Google Workspace</a></li>
@@ -316,14 +319,21 @@ You find the configuration after login at: <strong>My Kimai-Cloud &gt; SSO Authe
   <li><a href="#keycloak-saml">Keycloak</a></li>
 </ul>
 
-<p>If you are using another IDP and want to use Kimai: please get in touch, I am open for your ideas.</p>
-
-<h2 id="important-to-know">Important to know</h2>
+<p><strong>Important to know</strong></p>
 
 <ul>
   <li>Existing cloud users will be upgraded to SAML logins, after their first SAML login (if identifier matches)</li>
   <li>SAML users cannot log in with password</li>
-  <li>Without configured role mapping, every SAML user will only own the <code class="language-plaintext highlighter-rouge">User</code> role (previous Admins will be downgraded on every login)</li>
+  <li>Without configured role mapping, every SAML user will only own the <code class="language-plaintext highlighter-rouge">User</code> role (even Admins will be downgraded on every login)</li>
+</ul>
+
+<p><strong>Further settings</strong></p>
+
+<p>The SSO configuration includes three settings, which can be de-/activated via toggles (checkboxes):</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Activate SSO Login</code> - this toggles the login via SSO button</li>
+  <li><code class="language-plaintext highlighter-rouge">Activate regular login with username</code> - this toggles the username/password form (can be deactivated if every user logs in with SSO)</li>
+  <li><code class="language-plaintext highlighter-rouge">Reset assigned user roles during login</code> - if activated user roles will be removed upon login: custom role assignments are only temporary until the next login</li>
 </ul>
 
 <h2 id="-google-saml"><span id="google-saml"></span> Google SAML</h2>
@@ -501,12 +511,6 @@ You find the configuration after login at: <strong>My Kimai-Cloud &gt; SSO Authe
   <li><code class="language-plaintext highlighter-rouge">Employee Details &gt; Title</code> → <code class="language-plaintext highlighter-rouge">Title</code></li>
 </ul>
 
-<h2 id="costs">Costs</h2>
-
-<p>There are <strong>no additional costs</strong> involved with the SAML SSO login.</p>
-
-<p>Instead this feature is <strong>only available for certain plans</strong>, check the feature comparison before subscribing to a plan.</p>
-
                 </div>
                 
 
@@ -520,7 +524,7 @@ You find the configuration after login at: <strong>My Kimai-Cloud &gt; SSO Authe
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#important-to-know" class="nav-link">Important to know</a></li><li class="nav-item"><a href="#-google-saml" class="nav-link"> Google SAML</a><ul><li class="nav-item"><a href="#-workspace-configuration" class="nav-link"> Workspace configuration</a></li><li class="nav-item"><a href="#-cloud-configuration" class="nav-link"> Cloud configuration</a></li></ul></li><li class="nav-item"><a href="#-microsoft-saml" class="nav-link"> Microsoft SAML</a><ul><li class="nav-item"><a href="#-entra-id-ex-azure-ad-configuration" class="nav-link"> Entra ID (ex. Azure AD) Configuration</a></li><li class="nav-item"><a href="#-cloud-configuration-1" class="nav-link"> Cloud configuration</a></li></ul></li><li class="nav-item"><a href="#-keycloak-saml" class="nav-link"> Keycloak SAML</a></li><li class="nav-item"><a href="#costs" class="nav-link">Costs</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#-google-saml" class="nav-link"> Google SAML</a><ul><li class="nav-item"><a href="#-workspace-configuration" class="nav-link"> Workspace configuration</a></li><li class="nav-item"><a href="#-cloud-configuration" class="nav-link"> Cloud configuration</a></li></ul></li><li class="nav-item"><a href="#-microsoft-saml" class="nav-link"> Microsoft SAML</a><ul><li class="nav-item"><a href="#-entra-id-ex-azure-ad-configuration" class="nav-link"> Entra ID (ex. Azure AD) Configuration</a></li><li class="nav-item"><a href="#-cloud-configuration-1" class="nav-link"> Cloud configuration</a></li></ul></li><li class="nav-item"><a href="#-keycloak-saml" class="nav-link"> Keycloak SAML</a></li></ul>
         
     </aside>
 
