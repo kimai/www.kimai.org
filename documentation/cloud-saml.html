@@ -352,10 +352,10 @@ You find the configuration after login at: <strong>My Kimai-Cloud &gt; SSO Authe
   <li>On page 4 <code class="language-plaintext highlighter-rouge">Attributes</code> you have to define the <code class="language-plaintext highlighter-rouge">User attribute</code> mapping like this (<strong>correct case is important, and you need to configure all attributes, even if you do not use them</strong>):
     <ul>
       <li><code class="language-plaintext highlighter-rouge">Basic Information &gt; Primary email</code> → <code class="language-plaintext highlighter-rouge">Email</code></li>
-      <li><code class="language-plaintext highlighter-rouge">Basic Information &gt; First name</code> → <code class="language-plaintext highlighter-rouge">FirstName</code></li>
-      <li><code class="language-plaintext highlighter-rouge">Basic Information &gt; Last name</code> → <code class="language-plaintext highlighter-rouge">LastName</code></li>
-      <li><code class="language-plaintext highlighter-rouge">Employee Details &gt; Employee ID</code> → <code class="language-plaintext highlighter-rouge">AccountNumber</code></li>
-      <li><code class="language-plaintext highlighter-rouge">Employee Details &gt; Title</code> → <code class="language-plaintext highlighter-rouge">Title</code></li>
+      <li><code class="language-plaintext highlighter-rouge">Basic Information &gt; First name</code> → <code class="language-plaintext highlighter-rouge">FirstName</code> (optional)</li>
+      <li><code class="language-plaintext highlighter-rouge">Basic Information &gt; Last name</code> → <code class="language-plaintext highlighter-rouge">LastName</code> (optional)</li>
+      <li><code class="language-plaintext highlighter-rouge">Employee Details &gt; Employee ID</code> → <code class="language-plaintext highlighter-rouge">AccountNumber</code> (optional)</li>
+      <li><code class="language-plaintext highlighter-rouge">Employee Details &gt; Title</code> → <code class="language-plaintext highlighter-rouge">Title</code> (optional)</li>
     </ul>
   </li>
   <li>Back on the overview page: activate the new application for your users</li>
@@ -412,36 +412,45 @@ You find the configuration after login at: <strong>My Kimai-Cloud &gt; SSO Authe
 
 <h2 id="-microsoft-saml"><span id="microsoft-saml"></span> Microsoft SAML</h2>
 
-<h3 id="-azure-ad-configuration"><span id="microsoft-azure"></span> Azure AD Configuration</h3>
+<h3 id="-entra-id-ex-azure-ad-configuration"><span id="microsoft-azure"></span> Entra ID (ex. Azure AD) Configuration</h3>
 
 <ul>
   <li>Sign in to the <a href="https://portal.azure.com/">Azure portal</a>.</li>
-  <li>Select the <strong>Azure Active Directory</strong> service from the navigation.</li>
+  <li>Select the <strong>Microsoft Entra ID</strong> service from the navigation.</li>
   <li>Navigate to <strong>Enterprise Applications</strong> and then select <strong>New application</strong>.</li>
-  <li>In the “Browse Azure AD Gallery” section, type <strong>Azure AD SAML Toolkit</strong> in the search box and select it.</li>
-  <li>Enter the application name to “Kimai-Cloud”, hit the “Creat” button add wait for the app to be added.</li>
+  <li>In the “Browse Microsoft Entra Gallery” section, search for <strong>Microsoft Entra SAML Toolkit</strong> and select it.</li>
+  <li>Enter the application name to “Kimai-Cloud”, hit the <code class="language-plaintext highlighter-rouge">Create</code> button add wait for the app to be added.</li>
   <li>On the “Overview” page select “Assign user and groups” and add all users that should have access to Kimai.</li>
   <li>Back on the “Overview” page select “Set up single sign on” and choose <strong>SAML</strong> as your choice.</li>
   <li>Edit the <strong>Basic SAML Configuration</strong> and add the required <strong>URLs</strong>:
     <ul>
-      <li>Identifier (Entity ID): <code class="language-plaintext highlighter-rouge">https://timetracking.example.com/auth/saml/metadata</code></li>
-      <li>Reply URL (Assertion Consumer Service URL): <code class="language-plaintext highlighter-rouge">https://timetracking.example.com/auth/saml/acs</code></li>
-      <li>Sign on URL: <code class="language-plaintext highlighter-rouge">https://timetracking.example.com/</code></li>
+      <li>Replace <code class="language-plaintext highlighter-rouge">foo.kimai.cloud</code> in the following examples with your cloud domain</li>
+      <li>Identifier (Entity ID): <code class="language-plaintext highlighter-rouge">https://foo.kimai.cloud/auth/saml/metadata</code></li>
+      <li>Reply URL (Assertion Consumer Service URL): <code class="language-plaintext highlighter-rouge">https://foo.kimai.cloud/auth/saml/acs</code></li>
+      <li>Sign on URL: <code class="language-plaintext highlighter-rouge">https://foo.kimai.cloud/</code></li>
+      <li>Relay State (Optional) - skip this one</li>
+      <li>Logout Url (Optional) - skip this one</li>
     </ul>
   </li>
   <li>After saving the URLs: edit the <strong>Attributes &amp; Claims</strong> and configure required settings (see screenshot below):
     <ul>
       <li>Change <code class="language-plaintext highlighter-rouge">Source attribute</code> of the <code class="language-plaintext highlighter-rouge">Unique User Identifier (Name ID)</code> to <code class="language-plaintext highlighter-rouge">user.mail</code></li>
       <li>Select <code class="language-plaintext highlighter-rouge">Add a group claim</code> with the settings <code class="language-plaintext highlighter-rouge">All groups</code> and the Source attribute <code class="language-plaintext highlighter-rouge">Group ID</code></li>
-      <li>Select <code class="language-plaintext highlighter-rouge">Add new claim</code> with Name: <code class="language-plaintext highlighter-rouge">displayname</code>, Namespace: <code class="language-plaintext highlighter-rouge">http://schemas.xmlsoap.org/ws/2005/05/identity/claims</code>, Source attribute: <code class="language-plaintext highlighter-rouge">user.displayname</code></li>
-      <li>Select <code class="language-plaintext highlighter-rouge">Add new claim</code> with Name: <code class="language-plaintext highlighter-rouge">employeeid</code>, Namespace: <code class="language-plaintext highlighter-rouge">http://schemas.xmlsoap.org/ws/2005/05/identity/claims</code>, Source attribute: <code class="language-plaintext highlighter-rouge">user.employeeid</code></li>
+      <li>Now you can add optional attributes, which Kimai supports (from the <code class="language-plaintext highlighter-rouge">http://schemas.xmlsoap.org/ws/2005/05/identity/claims</code> namespace):
+        <ul>
+          <li>Select <code class="language-plaintext highlighter-rouge">Add new claim</code> with Name: <code class="language-plaintext highlighter-rouge">givenname</code>, Source attribute: <code class="language-plaintext highlighter-rouge">user.givenname</code> (optional)</li>
+          <li>Select <code class="language-plaintext highlighter-rouge">Add new claim</code> with Name: <code class="language-plaintext highlighter-rouge">surname</code>, Source attribute: <code class="language-plaintext highlighter-rouge">user.surname</code> (optional)</li>
+          <li>Select <code class="language-plaintext highlighter-rouge">Add new claim</code> with Name: <code class="language-plaintext highlighter-rouge">displayname</code>, Source attribute: <code class="language-plaintext highlighter-rouge">user.displayname</code> (optional)</li>
+          <li>Select <code class="language-plaintext highlighter-rouge">Add new claim</code> with Name: <code class="language-plaintext highlighter-rouge">employeeid</code>, Source attribute: <code class="language-plaintext highlighter-rouge">user.employeeid</code> (optional)</li>
+        </ul>
+      </li>
     </ul>
   </li>
-  <li>Return to the <strong>SAML-based Sign-on</strong> page and download <strong>Certificate (Base64)</strong> from the “SAML Signing Certificate” section. Edit the <code class="language-plaintext highlighter-rouge">Kimai Cloud.cer</code> file and copy&amp;paste the content into the Cloud configuration field <code class="language-plaintext highlighter-rouge">X.509 Certificate</code>.</li>
+  <li>Return to the <strong>Set up Single Sign-On with SAML</strong> page and download <strong>Certificate (Base64)</strong> from the “SAML Signing Certificate” section. Edit the <code class="language-plaintext highlighter-rouge">Kimai Cloud.cer</code> file and copy&amp;paste the content into the Cloud configuration field <code class="language-plaintext highlighter-rouge">X.509 Certificate</code>.</li>
   <li>Copy the values of <strong>Set up Kimai-Cloud</strong> into the Cloud configuration:
     <ul>
       <li>Login URL: <code class="language-plaintext highlighter-rouge">Login URL</code></li>
-      <li>Azure AD Identifier: <code class="language-plaintext highlighter-rouge">Azure AD Identifier (SAML Entity ID)</code></li>
+      <li>Microsoft Entra Identifier: <code class="language-plaintext highlighter-rouge">Azure AD Identifier (SAML Entity ID)</code></li>
     </ul>
   </li>
 </ul>
@@ -511,7 +520,7 @@ You find the configuration after login at: <strong>My Kimai-Cloud &gt; SSO Authe
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#important-to-know" class="nav-link">Important to know</a></li><li class="nav-item"><a href="#-google-saml" class="nav-link"> Google SAML</a><ul><li class="nav-item"><a href="#-workspace-configuration" class="nav-link"> Workspace configuration</a></li><li class="nav-item"><a href="#-cloud-configuration" class="nav-link"> Cloud configuration</a></li></ul></li><li class="nav-item"><a href="#-microsoft-saml" class="nav-link"> Microsoft SAML</a><ul><li class="nav-item"><a href="#-azure-ad-configuration" class="nav-link"> Azure AD Configuration</a></li><li class="nav-item"><a href="#-cloud-configuration-1" class="nav-link"> Cloud configuration</a></li></ul></li><li class="nav-item"><a href="#-keycloak-saml" class="nav-link"> Keycloak SAML</a></li><li class="nav-item"><a href="#costs" class="nav-link">Costs</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#important-to-know" class="nav-link">Important to know</a></li><li class="nav-item"><a href="#-google-saml" class="nav-link"> Google SAML</a><ul><li class="nav-item"><a href="#-workspace-configuration" class="nav-link"> Workspace configuration</a></li><li class="nav-item"><a href="#-cloud-configuration" class="nav-link"> Cloud configuration</a></li></ul></li><li class="nav-item"><a href="#-microsoft-saml" class="nav-link"> Microsoft SAML</a><ul><li class="nav-item"><a href="#-entra-id-ex-azure-ad-configuration" class="nav-link"> Entra ID (ex. Azure AD) Configuration</a></li><li class="nav-item"><a href="#-cloud-configuration-1" class="nav-link"> Cloud configuration</a></li></ul></li><li class="nav-item"><a href="#-keycloak-saml" class="nav-link"> Keycloak SAML</a></li><li class="nav-item"><a href="#costs" class="nav-link">Costs</a></li></ul>
         
     </aside>
 
