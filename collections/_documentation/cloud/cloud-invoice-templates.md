@@ -2,18 +2,18 @@
 title: Invoice templates
 description: As paying customer you can upload your own invoice template for Kimai 
 ---
- 
-As a paying customer, you can use your own custom invoice templates to render them in your corporate design.
 
-Kimai supports multiple invoice formats, the most important ones being DOCX (Word), XSLX (Excel), ODS (eg. Open Office) and PDF.
-There are more formats supported, please [read the full documentation]({% link _documentation/invoices.md %})
-for all the details.
+{% alert info %}This feature is **available for paid subscriptions**, check the feature comparison page for more details.{% endalert %}
+
+You can use your own custom invoice templates to render them in your corporate design.
+
+Kimai supports multiple invoice formats, the most important ones being PDF, DOCX (Word), XSLX (Excel) and ODS (OpenOffice).
 
 ## Uploading templates
 
 The self-management screen at `Invoice > Templates > Documents/Upload` allows you to upload files in the formats DOCX, ODS, XLSX.
 
-### Twig templates
+### PDF templates (Twig)
 
 If you want to use Twig templates for HTML or PDF format, you have to [contact the support](mailto:{{ site.cloud.support_email }}).
 Due to security measurements, all Twig templates need to be verified by the development team prior to upload.
@@ -21,11 +21,4 @@ Please ZIP and mail them to our support email at [support@kimai.cloud](mailto:{{
 
 ## Further documentation
 
-Please read the [invoice documentation]({% link _documentation/invoices.md %}) to find out how to create your
-own invoice template.
-
-## Limitation & Costs
-
-There are **no additional costs** involved, they are included in your **paid plan**.
-
-Adding invoice templates to a free cloud is **not possible**.
+Please read the [invoice documentation]({% link _documentation/invoices.md %}) to find out how to create your own invoice template.

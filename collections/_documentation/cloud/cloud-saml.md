@@ -3,22 +3,29 @@ title: Single Sign-On (SAML)
 description: Log-in to your Kimai-Cloud with your company credentials
 ---
 
-Users of your Kimai-Cloud can authenticate using an identity provider that supports SSO (Single Sign-On) via SAML.
-You find the configuration after login at: **My Kimai-Cloud > SSO Authentication**.
+{% alert info %}This feature is **available for annual PRO subscriptions**, check the feature comparison page for more details.{% endalert %}
 
-Currently, the following provider are supported:
+Users of your Kimai-Cloud can authenticate using an identity provider that supports SSO (Single Sign-On) via SAML.
+You find the configuration after login at: **[My Kimai-Cloud]({{ site.cloud.my_cloud }}) > SSO Authentication**.
+
+Currently, the following providers are supported:
 
 - [Google Workspace](#google-saml)
 - [Microsoft Azure AD](#microsoft-saml)
 - [Keycloak](#keycloak-saml)
 
-If you are using another IDP and want to use Kimai: please get in touch, I am open for your ideas.
-
-## Important to know
+**Important to know**
 
 - Existing cloud users will be upgraded to SAML logins, after their first SAML login (if identifier matches)
 - SAML users cannot log in with password
-- Without configured role mapping, every SAML user will only own the `User` role (previous Admins will be downgraded on every login)
+- Without configured role mapping, every SAML user will only own the `User` role (even Admins will be downgraded on every login)
+
+**Further settings**
+
+The SSO configuration includes three settings, which can be de-/activated via toggles (checkboxes):
+- `Activate SSO Login` - this toggles the login via SSO button
+- `Activate regular login with username` - this toggles the username/password form (can be deactivated if every user logs in with SSO)
+- `Reset assigned user roles during login` - if activated user roles will be removed upon login: custom role assignments are only temporary until the next login
 
 ## <span id="google-saml"></span> Google SAML
 
@@ -127,9 +134,3 @@ Then make sure to define the `User attribute` mapping like this (**correct case 
 - `Basic Information > Last name` → `LastName`
 - `Employee Details > Employee ID` → `AccountNumber`
 - `Employee Details > Title` → `Title`
-
-## Costs
-
-There are **no additional costs** involved with the SAML SSO login. 
-
-Instead this feature is **only available for certain plans**, check the feature comparison before subscribing to a plan.  

@@ -3,6 +3,8 @@ title: IP access restriction
 description: Limit access to your Kimai-Cloud by configuring IP access restrictions. 
 ---
 
+{% alert info %}This feature is **available for annual PRO subscriptions**, check the feature comparison page for more details.{% endalert %}
+
 With the help of this function you can restrict the accessibility of your time tracking for up to 5 different IPv4 addresses.
 As soon as an IP has been stored, only access from this IP is allowed.
 Access from any other IP is answered with an error page.
@@ -27,10 +29,3 @@ If the "changes pending" message does not disappear within 1 hour, please [conta
 You can delete an IP by clearing the row, it will be removed after the form is saved.
 
 To restore public access, simply remove all stored IP addresses (empty all rows).
-
-## Costs
-
-There are **no additional costs** for the IP access restriction feature.
-
-Instead this feature is **only available for certain plans**, check the feature comparison before subscribing to a plan.  
-
