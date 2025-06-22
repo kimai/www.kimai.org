@@ -162,7 +162,7 @@
                         
                         <a href="/documentation/weekly-times.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-weekly-times">
                             
-                            Weekly working hours
+                            Weekly hours
                             
                         </a>
                         
@@ -379,7 +379,7 @@
                         
                         <a href="/documentation/plugin-task-management.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-plugin-task-management">
                             
-                            Task management
+                            Tasks
                             
                         </a>
                         
@@ -439,7 +439,7 @@
                         
                         <a href="/documentation/plugin-audit-trail.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-plugin-audit-trail">
                             
-                            Audit trail logs
+                            Audit logs
                             
                         </a>
                         
@@ -1755,6 +1755,43 @@ This would find all entries with the custom field <code class="language-plaintex
   <li>The <code class="language-plaintext highlighter-rouge">*</code> search term (e.g. <code class="language-plaintext highlighter-rouge">location:*</code>) will find all entries that have any value in the <code class="language-plaintext highlighter-rouge">location</code> field (basically the opposite of <code class="language-plaintext highlighter-rouge">~</code>)</li>
 </ul>
 
+<h2 id="permissions">Permissions</h2>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">create_invoice</code></td>
+      <td>Create a new invoice</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">delete_invoice</code></td>
+      <td>Allows to delete invoices (please read docs why you shouldn’t)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">manage_invoice_template</code></td>
+      <td>Administrate invoice templates</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">upload_invoice_template</code></td>
+      <td>Allows to upload custom invoice templates</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">view_invoice</code></td>
+      <td>Gives access to the invoice history and allows to download existing invoices</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i>
+<p>Read how to assign these permissions to your user roles in the <a href="/documentation/permissions.html">permission documentation</a>.</p>
+</div>
+
 
                 </div>
                 
@@ -1779,7 +1816,7 @@ This would find all entries with the custom field <code class="language-plaintex
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#invoice-number-format" class="nav-link">Invoice number format</a><ul><li class="nav-item"><a href="#incrementing-the-invoice-counter" class="nav-link">Incrementing the invoice counter</a></li><li class="nav-item"><a href="#decrementing-the-invoice-counter" class="nav-link">Decrementing the invoice counter</a></li><li class="nav-item"><a href="#examples" class="nav-link">Examples</a></li></ul></li><li class="nav-item"><a href="#invoice-state" class="nav-link">Invoice state</a><ul><li class="nav-item"><a href="#deleting-invoices" class="nav-link">Deleting invoices</a></li></ul></li><li class="nav-item"><a href="#export-state" class="nav-link">Export state</a></li><li class="nav-item"><a href="#billable-items-only" class="nav-link">Billable items only</a></li><li class="nav-item"><a href="#invoice-document" class="nav-link">Invoice document</a><ul><li class="nav-item"><a href="#create-your-own-invoice-document" class="nav-link">Create your own invoice document</a></li><li class="nav-item"><a href="#more-invoice-templates" class="nav-link">More invoice templates</a></li><li class="nav-item"><a href="#twig-templates" class="nav-link">Twig templates</a></li><li class="nav-item"><a href="#pdf-templates" class="nav-link">PDF templates</a></li><li class="nav-item"><a href="#docx-templates" class="nav-link">Docx templates</a></li><li class="nav-item"><a href="#spreadsheets-ods-and-xlsx" class="nav-link">Spreadsheets (ODS and XLSX)</a></li></ul></li><li class="nav-item"><a href="#template-variables" class="nav-link">Template variables</a><ul><li class="nav-item"><a href="#global-variables" class="nav-link">Global variables</a></li><li class="nav-item"><a href="#timesheet-entry-variables" class="nav-link">Timesheet entry variables</a></li><li class="nav-item"><a href="#customer-variables" class="nav-link">Customer variables</a></li><li class="nav-item"><a href="#project-variables" class="nav-link">Project variables</a></li><li class="nav-item"><a href="#activity-variables" class="nav-link">Activity variables</a></li><li class="nav-item"><a href="#uploading-invoice-documents" class="nav-link">Uploading invoice documents</a></li></ul></li><li class="nav-item"><a href="#filter-and-search-in-the-invoice-archive" class="nav-link">Filter and search in the invoice archive</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#invoice-number-format" class="nav-link">Invoice number format</a><ul><li class="nav-item"><a href="#incrementing-the-invoice-counter" class="nav-link">Incrementing the invoice counter</a></li><li class="nav-item"><a href="#decrementing-the-invoice-counter" class="nav-link">Decrementing the invoice counter</a></li><li class="nav-item"><a href="#examples" class="nav-link">Examples</a></li></ul></li><li class="nav-item"><a href="#invoice-state" class="nav-link">Invoice state</a><ul><li class="nav-item"><a href="#deleting-invoices" class="nav-link">Deleting invoices</a></li></ul></li><li class="nav-item"><a href="#export-state" class="nav-link">Export state</a></li><li class="nav-item"><a href="#billable-items-only" class="nav-link">Billable items only</a></li><li class="nav-item"><a href="#invoice-document" class="nav-link">Invoice document</a><ul><li class="nav-item"><a href="#create-your-own-invoice-document" class="nav-link">Create your own invoice document</a></li><li class="nav-item"><a href="#more-invoice-templates" class="nav-link">More invoice templates</a></li><li class="nav-item"><a href="#twig-templates" class="nav-link">Twig templates</a></li><li class="nav-item"><a href="#pdf-templates" class="nav-link">PDF templates</a></li><li class="nav-item"><a href="#docx-templates" class="nav-link">Docx templates</a></li><li class="nav-item"><a href="#spreadsheets-ods-and-xlsx" class="nav-link">Spreadsheets (ODS and XLSX)</a></li></ul></li><li class="nav-item"><a href="#template-variables" class="nav-link">Template variables</a><ul><li class="nav-item"><a href="#global-variables" class="nav-link">Global variables</a></li><li class="nav-item"><a href="#timesheet-entry-variables" class="nav-link">Timesheet entry variables</a></li><li class="nav-item"><a href="#customer-variables" class="nav-link">Customer variables</a></li><li class="nav-item"><a href="#project-variables" class="nav-link">Project variables</a></li><li class="nav-item"><a href="#activity-variables" class="nav-link">Activity variables</a></li><li class="nav-item"><a href="#uploading-invoice-documents" class="nav-link">Uploading invoice documents</a></li></ul></li><li class="nav-item"><a href="#filter-and-search-in-the-invoice-archive" class="nav-link">Filter and search in the invoice archive</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
         
         <ul class="nav">
             <li>

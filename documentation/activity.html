@@ -161,7 +161,7 @@
                         
                         <a href="/documentation/weekly-times.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-weekly-times">
                             
-                            Weekly working hours
+                            Weekly hours
                             
                         </a>
                         
@@ -378,7 +378,7 @@
                         
                         <a href="/documentation/plugin-task-management.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-plugin-task-management">
                             
-                            Task management
+                            Tasks
                             
                         </a>
                         
@@ -438,7 +438,7 @@
                         
                         <a href="/documentation/plugin-audit-trail.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-plugin-audit-trail">
                             
-                            Audit trail logs
+                            Audit logs
                             
                         </a>
                         
@@ -813,7 +813,7 @@ Even though she has a higher internal cost of 45 â‚¬ / hour, her work earns 85 â
   <li>Empty: Shows all activities regardless of visibility</li>
 </ul>
 
-<h3 id="permissions">Permissions</h3>
+<h3 id="access-permissions">Access permissions</h3>
 
 <p>Activities follow a hierarchical permission model:</p>
 
@@ -913,6 +913,116 @@ This would find all entries with the custom field <code class="language-plaintex
   <li>Show activity statistics and prompt for timesheet reassignment</li>
 </ul>
 
+<h2 id="permissions">Permissions</h2>
+
+<p><strong>Admin</strong></p>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">budget_activity</code></td>
+      <td>Allows to see the budget (monetary) reports for activities of assigned projects/customers</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">time_activity</code></td>
+      <td>Allows to see the budget (time) reports for activities of assigned projects/customers</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">create_activity</code></td>
+      <td>Create a new activity</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">delete_activity</code></td>
+      <td>Delete activities</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">edit_activity</code></td>
+      <td>Edit existing activities</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">permissions_activity</code></td>
+      <td>Allows to edit the teams for assigned activities</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">view_activity</code></td>
+      <td>Allows access to the activity administration</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>If you are a Teamleader, whose team is assigned to this activity</strong></p>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">budget_teamlead_activity</code></td>
+      <td>Allow team leaders to see the budget (money) reports for activities of assigned projects/customers</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">time_teamlead_activity</code></td>
+      <td>Allow team leaders to see the budget (time) reports for activities of assigned projects/customers</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">edit_teamlead_activity</code></td>
+      <td>Allow team leaders to edit activities for assigned projects/customers</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">permissions_teamlead_activity</code></td>
+      <td>Allow team leaders to edit the teams for assigned activities</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">view_teamlead_activity</code></td>
+      <td>Allow team leaders to access activity administration</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>If you are a member of a team, that is assigned to this activity</strong></p>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">budget_team_activity</code></td>
+      <td>Allows team-members to see the budget (money) reports for activities of assigned projects/customers</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">time_team_activity</code></td>
+      <td>Allows team-members to see the budget (time) reports for activities of assigned projects/customers</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">edit_team_activity</code></td>
+      <td>Allows team-members to edit activities of assigned projects/customers</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">view_team_activity</code></td>
+      <td>Allows team-members to access activity administration</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i>
+<p>Read how to assign these permissions to your user roles in the <a href="/documentation/permissions.html">permission documentation</a>.</p>
+</div>
+
+
                 </div>
                 
 
@@ -926,7 +1036,7 @@ This would find all entries with the custom field <code class="language-plaintex
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#create-an-activity" class="nav-link">Create an activity</a><ul><li class="nav-item"><a href="#project-specific" class="nav-link">Project specific</a></li><li class="nav-item"><a href="#global-activities" class="nav-link">Global activities</a></li><li class="nav-item"><a href="#change-activity-type" class="nav-link">Change activity type</a></li></ul></li><li class="nav-item"><a href="#manage-activities" class="nav-link">Manage activities</a><ul><li class="nav-item"><a href="#colors" class="nav-link">Colors</a></li><li class="nav-item"><a href="#billable" class="nav-link">Billable</a></li><li class="nav-item"><a href="#budgets" class="nav-link">Budgets</a></li><li class="nav-item"><a href="#budget-type" class="nav-link">Budget type</a></li><li class="nav-item"><a href="#money-budget" class="nav-link">Money budget</a></li><li class="nav-item"><a href="#time-budget" class="nav-link">Time budget</a></li><li class="nav-item"><a href="#prices" class="nav-link">Prices</a></li><li class="nav-item"><a href="#edit-price-screen" class="nav-link">Edit price screen</a></li><li class="nav-item"><a href="#pricing-example" class="nav-link">Pricing example</a></li><li class="nav-item"><a href="#visibility" class="nav-link">Visibility</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul></li><li class="nav-item"><a href="#activity-listing" class="nav-link">Activity listing</a><ul><li class="nav-item"><a href="#invisible-activities" class="nav-link">Invisible activities</a></li><li class="nav-item"><a href="#filter-and-search" class="nav-link">Filter and search</a></li><li class="nav-item"><a href="#delete-an-activity" class="nav-link">Delete an activity</a></li></ul></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#create-an-activity" class="nav-link">Create an activity</a><ul><li class="nav-item"><a href="#project-specific" class="nav-link">Project specific</a></li><li class="nav-item"><a href="#global-activities" class="nav-link">Global activities</a></li><li class="nav-item"><a href="#change-activity-type" class="nav-link">Change activity type</a></li></ul></li><li class="nav-item"><a href="#manage-activities" class="nav-link">Manage activities</a><ul><li class="nav-item"><a href="#colors" class="nav-link">Colors</a></li><li class="nav-item"><a href="#billable" class="nav-link">Billable</a></li><li class="nav-item"><a href="#budgets" class="nav-link">Budgets</a></li><li class="nav-item"><a href="#budget-type" class="nav-link">Budget type</a></li><li class="nav-item"><a href="#money-budget" class="nav-link">Money budget</a></li><li class="nav-item"><a href="#time-budget" class="nav-link">Time budget</a></li><li class="nav-item"><a href="#prices" class="nav-link">Prices</a></li><li class="nav-item"><a href="#edit-price-screen" class="nav-link">Edit price screen</a></li><li class="nav-item"><a href="#pricing-example" class="nav-link">Pricing example</a></li><li class="nav-item"><a href="#visibility" class="nav-link">Visibility</a></li><li class="nav-item"><a href="#access-permissions" class="nav-link">Access permissions</a></li></ul></li><li class="nav-item"><a href="#activity-listing" class="nav-link">Activity listing</a><ul><li class="nav-item"><a href="#invisible-activities" class="nav-link">Invisible activities</a></li><li class="nav-item"><a href="#filter-and-search" class="nav-link">Filter and search</a></li><li class="nav-item"><a href="#delete-an-activity" class="nav-link">Delete an activity</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
         
     </aside>
 

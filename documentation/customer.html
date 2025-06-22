@@ -161,7 +161,7 @@
                         
                         <a href="/documentation/weekly-times.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-weekly-times">
                             
-                            Weekly working hours
+                            Weekly hours
                             
                         </a>
                         
@@ -378,7 +378,7 @@
                         
                         <a href="/documentation/plugin-task-management.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-plugin-task-management">
                             
-                            Task management
+                            Tasks
                             
                         </a>
                         
@@ -438,7 +438,7 @@
                         
                         <a href="/documentation/plugin-audit-trail.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-plugin-audit-trail">
                             
-                            Audit trail logs
+                            Audit logs
                             
                         </a>
                         
@@ -793,11 +793,11 @@ Even though she has a higher internal cost of 45 € / hour, her work earns 85 �
   <li>Visible “empty” (all customers, not filtering on their visibility)</li>
 </ul>
 
-<h3 id="permissions">Permissions</h3>
+<h3 id="access-permissions">Access permissions</h3>
 
 <ul>
   <li>Accessible to all users if no teams are assigned</li>
-  <li>If a team is assigned to the project, only team members can use it</li>
+  <li>If one or more teams are assigned to the customer, only member of these teams can use it</li>
 </ul>
 
 <h2 id="customer-listing">Customer listing</h2>
@@ -884,6 +884,140 @@ The last action in the list is <code class="language-plaintext highlighter-rouge
 customer is unused and can be safely deleted, or it will show you quick stats of the customer and then ask you to re-assign
 the attached timesheets to another customer.</p>
 
+<h2 id="permissions">Permissions</h2>
+
+<p><strong>Admin</strong></p>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">budget_customer</code></td>
+      <td>Allows to see the budget (money) reports for the customer</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">time_customer</code></td>
+      <td>Allows to see the budget (time) reports for the customer</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">comments_customer</code></td>
+      <td>Allows to see the comment section for customers</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">create_customer</code></td>
+      <td>Create new customers</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">delete_customer</code></td>
+      <td>Delete existing customers</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">details_customer</code></td>
+      <td>View customer details (account number, vat, rates, meta-fields, assigned teams &amp; users)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">edit_customer</code></td>
+      <td>Edit existing customers</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">permissions_customer</code></td>
+      <td>Allows to edit the teams for assigned customers</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">view_customer</code></td>
+      <td>Allows access to the customer administration</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>If you are a Teamleader, whose team is assigned to this customer</strong></p>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">budget_teamlead_customer</code></td>
+      <td>Allow team leaders to see the budget (money) reports for assigned customers</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">time_teamlead_customer</code></td>
+      <td>Allow team leaders to see the budget (time) reports for assigned customers</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">comments_teamlead_customer</code></td>
+      <td>Allow team leaders to see the comment section for customers</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">details_teamlead_customer</code></td>
+      <td>Allow team leaders to see customer detail</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">edit_teamlead_customer</code></td>
+      <td>Allow team leaders to edit assigned customers</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">permissions_teamlead_customer</code></td>
+      <td>Allow team leaders to edit the teams for assigned customers</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">view_teamlead_customer</code></td>
+      <td>Allow team leaders to access project administration</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>If you are a member of a team, that is assigned to this customer</strong></p>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">budget_team_customer</code></td>
+      <td>Allows team-members to see the budget (money) reports for assigned customers</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">time_team_customer</code></td>
+      <td>Allows team-members to see the budget (time) reports for assigned customers</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">comments_team_customer</code></td>
+      <td>Allows team-members to see the comment section for customers</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">details_team_customer</code></td>
+      <td>Allows team-members to see customer details</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">edit_team_customer</code></td>
+      <td>Allows team-members to edit assigned customers</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">view_team_customer</code></td>
+      <td>Allows team-members to access project administration</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i>
+<p>Read how to assign these permissions to your user roles in the <a href="/documentation/permissions.html">permission documentation</a>.</p>
+</div>
+
+
                 </div>
                 
 
@@ -897,7 +1031,7 @@ the attached timesheets to another customer.</p>
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#create-a-customer" class="nav-link">Create a customer</a></li><li class="nav-item"><a href="#manage-customers" class="nav-link">Manage customers</a><ul><li class="nav-item"><a href="#colors" class="nav-link">Colors</a></li><li class="nav-item"><a href="#currency" class="nav-link">Currency</a></li><li class="nav-item"><a href="#billable" class="nav-link">Billable</a></li><li class="nav-item"><a href="#budgets" class="nav-link">Budgets</a></li><li class="nav-item"><a href="#budget-type" class="nav-link">Budget type</a></li><li class="nav-item"><a href="#money-budget" class="nav-link">Money budget</a></li><li class="nav-item"><a href="#time-budget" class="nav-link">Time budget</a></li><li class="nav-item"><a href="#prices" class="nav-link">Prices</a></li><li class="nav-item"><a href="#edit-price-screen" class="nav-link">Edit price screen</a></li><li class="nav-item"><a href="#pricing-example" class="nav-link">Pricing example</a></li><li class="nav-item"><a href="#visibility" class="nav-link">Visibility</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul></li><li class="nav-item"><a href="#customer-listing" class="nav-link">Customer listing</a><ul><li class="nav-item"><a href="#invisible-customers" class="nav-link">Invisible customers</a></li><li class="nav-item"><a href="#filter-and-search" class="nav-link">Filter and search</a></li><li class="nav-item"><a href="#delete-a-customer" class="nav-link">Delete a customer</a></li></ul></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#create-a-customer" class="nav-link">Create a customer</a></li><li class="nav-item"><a href="#manage-customers" class="nav-link">Manage customers</a><ul><li class="nav-item"><a href="#colors" class="nav-link">Colors</a></li><li class="nav-item"><a href="#currency" class="nav-link">Currency</a></li><li class="nav-item"><a href="#billable" class="nav-link">Billable</a></li><li class="nav-item"><a href="#budgets" class="nav-link">Budgets</a></li><li class="nav-item"><a href="#budget-type" class="nav-link">Budget type</a></li><li class="nav-item"><a href="#money-budget" class="nav-link">Money budget</a></li><li class="nav-item"><a href="#time-budget" class="nav-link">Time budget</a></li><li class="nav-item"><a href="#prices" class="nav-link">Prices</a></li><li class="nav-item"><a href="#edit-price-screen" class="nav-link">Edit price screen</a></li><li class="nav-item"><a href="#pricing-example" class="nav-link">Pricing example</a></li><li class="nav-item"><a href="#visibility" class="nav-link">Visibility</a></li><li class="nav-item"><a href="#access-permissions" class="nav-link">Access permissions</a></li></ul></li><li class="nav-item"><a href="#customer-listing" class="nav-link">Customer listing</a><ul><li class="nav-item"><a href="#invisible-customers" class="nav-link">Invisible customers</a></li><li class="nav-item"><a href="#filter-and-search" class="nav-link">Filter and search</a></li><li class="nav-item"><a href="#delete-a-customer" class="nav-link">Delete a customer</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
         
     </aside>
 

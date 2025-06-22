@@ -162,7 +162,7 @@
                         
                         <a href="/documentation/weekly-times.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-weekly-times">
                             
-                            Weekly working hours
+                            Weekly hours
                             
                         </a>
                         
@@ -379,7 +379,7 @@
                         
                         <a href="/documentation/plugin-task-management.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-plugin-task-management">
                             
-                            Task management
+                            Tasks
                             
                         </a>
                         
@@ -439,7 +439,7 @@
                         
                         <a href="/documentation/plugin-audit-trail.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-plugin-audit-trail">
                             
-                            Audit trail logs
+                            Audit logs
                             
                         </a>
                         
@@ -924,6 +924,155 @@ This would find all entries with the custom field <code class="language-plaintex
   <li>The <code class="language-plaintext highlighter-rouge">*</code> search term (e.g. <code class="language-plaintext highlighter-rouge">location:*</code>) will find all entries that have any value in the <code class="language-plaintext highlighter-rouge">location</code> field (basically the opposite of <code class="language-plaintext highlighter-rouge">~</code>)</li>
 </ul>
 
+<h2 id="permissions">Permissions</h2>
+
+<p><strong>Admin</strong></p>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">edit_exported_timesheet</code></td>
+      <td>Edit and delete timesheet records which were exported</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">lockdown_grace_timesheet</code></td>
+      <td>All records in the last lockdown period can be edited, even after the grace period ended</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">lockdown_override_timesheet</code></td>
+      <td>None of the lockdown rules apply</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Permissions for your own timesheets</strong></p>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">create_own_timesheet</code></td>
+      <td>Create a new timesheet record with the dialog</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">delete_own_timesheet</code></td>
+      <td>Delete own timesheet records</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">edit_export_own_timesheet</code></td>
+      <td>Set the export state for your own timesheet record</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">edit_billable_own_timesheet</code></td>
+      <td>Set the billable state for your own timesheet record</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">edit_own_timesheet</code></td>
+      <td>Edit own timesheet records</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">edit_rate_own_timesheet</code></td>
+      <td>Edit the rates for own timesheet records (fixed, hourly and total)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">export_own_timesheet</code></td>
+      <td>Export your own timesheet in the timesheet panel</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">start_own_timesheet</code></td>
+      <td>Create a running timesheet record (restart and create)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">stop_own_timesheet</code></td>
+      <td>Stop the own running timesheets records</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">view_own_timesheet</code></td>
+      <td>Allows access to the own timesheet views</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">view_rate_own_timesheet</code></td>
+      <td>View the rates for own timesheet records (fixed, hourly and total)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">weekly_own_timesheet</code></td>
+      <td>Gives access to the <code class="language-plaintext highlighter-rouge">Weekly hours</code> screen</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Permissions for timesheets of other users</strong></p>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">create_other_timesheet</code></td>
+      <td>Create a new timesheet record in the name of another user</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">delete_other_timesheet</code></td>
+      <td>Delete timesheets of other users</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">edit_export_other_timesheet</code></td>
+      <td>Set the export state for other users timesheet records</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">edit_billable_other_timesheet</code></td>
+      <td>Set the billable state for other users timesheet record</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">edit_other_timesheet</code></td>
+      <td>Edit existing records of other users</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">edit_rate_other_timesheet</code></td>
+      <td>Edit the rates for other users timesheet records (fixed, hourly and total)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">export_other_timesheet</code></td>
+      <td>Export timesheet in the timesheet admin panel</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">start_other_timesheet</code></td>
+      <td>Start <em>running</em> timesheet records for other users</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">stop_other_timesheet</code></td>
+      <td>Stop <em>running</em> timesheet records of other users</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">view_other_timesheet</code></td>
+      <td>Allows access to the timesheet admin panel, listing records for all users</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">view_rate_other_timesheet</code></td>
+      <td>View the rates for other users timesheet records (fixed, hourly and total)</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i>
+<p>Read how to assign these permissions to your user roles in the <a href="/documentation/permissions.html">permission documentation</a>.</p>
+</div>
+
 
                 </div>
                 
@@ -944,7 +1093,7 @@ This would find all entries with the custom field <code class="language-plaintex
                     
                     
                     <li>
-                        <a href="/documentation/weekly-times.html">Weekly working hours</a> &ndash; Manage your time records in quick and easy weekly spreadsheet-like view.
+                        <a href="/documentation/weekly-times.html">Weekly hours</a> &ndash; Manage your time records in quick and easy weekly spreadsheet-like view.
                     </li>
                     
                 </ul>
@@ -958,7 +1107,7 @@ This would find all entries with the custom field <code class="language-plaintex
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#starting-and-stopping-records" class="nav-link">Starting and stopping records</a><ul><li class="nav-item"><a href="#re-start-timesheet-records" class="nav-link">Re-start timesheet records</a></li><li class="nav-item"><a href="#start-new-records" class="nav-link">Start new records</a></li><li class="nav-item"><a href="#stop-records" class="nav-link">Stop records</a></li></ul></li><li class="nav-item"><a href="#batch-update" class="nav-link">Batch update</a></li><li class="nav-item"><a href="#time-input" class="nav-link">Time input</a></li><li class="nav-item"><a href="#duration" class="nav-link">Duration</a></li><li class="nav-item"><a href="#exported-records" class="nav-link">Exported records</a></li><li class="nav-item"><a href="#billable-vs-not-billable" class="nav-link">Billable vs. not billable</a></li><li class="nav-item"><a href="#filter-and-search" class="nav-link">Filter and search</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#starting-and-stopping-records" class="nav-link">Starting and stopping records</a><ul><li class="nav-item"><a href="#re-start-timesheet-records" class="nav-link">Re-start timesheet records</a></li><li class="nav-item"><a href="#start-new-records" class="nav-link">Start new records</a></li><li class="nav-item"><a href="#stop-records" class="nav-link">Stop records</a></li></ul></li><li class="nav-item"><a href="#batch-update" class="nav-link">Batch update</a></li><li class="nav-item"><a href="#time-input" class="nav-link">Time input</a></li><li class="nav-item"><a href="#duration" class="nav-link">Duration</a></li><li class="nav-item"><a href="#exported-records" class="nav-link">Exported records</a></li><li class="nav-item"><a href="#billable-vs-not-billable" class="nav-link">Billable vs. not billable</a></li><li class="nav-item"><a href="#filter-and-search" class="nav-link">Filter and search</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
         
         <ul class="nav">
             <li>

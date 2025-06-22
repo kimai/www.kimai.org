@@ -161,7 +161,7 @@
                         
                         <a href="/documentation/weekly-times.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-weekly-times">
                             
-                            Weekly working hours
+                            Weekly hours
                             
                         </a>
                         
@@ -378,7 +378,7 @@
                         
                         <a href="/documentation/plugin-task-management.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-plugin-task-management">
                             
-                            Task management
+                            Tasks
                             
                         </a>
                         
@@ -438,7 +438,7 @@
                         
                         <a href="/documentation/plugin-audit-trail.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-plugin-audit-trail">
                             
-                            Audit trail logs
+                            Audit logs
                             
                         </a>
                         
@@ -747,32 +747,30 @@ Also some Kiosk browsers have support, that needs to be enabled.</p>
 
 <h2 id="permissions">Permissions</h2>
 
-<p>This bundle introduces new permissions, which limit access to certain functions:</p>
-
-<table class="table">
+<table class="table permissions">
   <thead>
     <tr>
-      <th>Permission Name</th>
+      <th>Name</th>
       <th>Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">kiosk_admin</code></td>
-      <td>whether the current user can see the Kiosk administration and assign codes</td>
+      <td>Grant access to the <code class="language-plaintext highlighter-rouge">Kiosk</code> administration to assign user codes at <code class="language-plaintext highlighter-rouge">Administration &gt; Kiosk mode</code></td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">kiosk_own_profile</code></td>
-      <td>configure codes and user specific kiosk settings (eg. start and end time) for own account</td>
+      <td>Configure codes and user specific kiosk settings (eg. start and end time) for own account</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">kiosk_other_profile</code></td>
-      <td>configure codes and user specific kiosk settings (eg. start and end time) for other accounts</td>
+      <td>Configure codes and user specific kiosk settings (eg. start and end time) for other accounts</td>
     </tr>
   </tbody>
 </table>
 
-<p>By default, these are granted to each user with the role <code class="language-plaintext highlighter-rouge">ROLE_SUPER_ADMIN</code>.</p>
+<p>By default, these are assigned to each user with the role <code class="language-plaintext highlighter-rouge">ROLE_SUPER_ADMIN</code>.</p>
 
 <div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i>
 <p>Read how to assign these permissions to your user roles in the <a href="/documentation/permissions.html">permission documentation</a>.</p>

@@ -162,7 +162,7 @@
                         
                         <a href="/documentation/weekly-times.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-weekly-times">
                             
-                            Weekly working hours
+                            Weekly hours
                             
                         </a>
                         
@@ -379,7 +379,7 @@
                         
                         <a href="/documentation/plugin-task-management.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-plugin-task-management">
                             
-                            Task management
+                            Tasks
                             
                         </a>
                         
@@ -439,7 +439,7 @@
                         
                         <a href="/documentation/plugin-audit-trail.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-plugin-audit-trail">
                             
-                            Audit trail logs
+                            Audit logs
                             
                         </a>
                         
@@ -808,6 +808,135 @@ deactivated users which can be reactivated by editing them and checking the <cod
 <p>The timezone is a user-specific setting and every user can have its own timezone setting.
 Don’t mix this up with the system specific configuration for new customers.</p>
 
+<h2 id="permissions">Permissions</h2>
+
+<p><strong>Admin</strong></p>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">view_user</code></td>
+      <td>View the <code class="language-plaintext highlighter-rouge">Users</code> screen at <code class="language-plaintext highlighter-rouge">System &gt; Users</code> - attention <code class="language-plaintext highlighter-rouge">System-Admins</code> will always own that permission</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">create_user</code></td>
+      <td>Create new users</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">delete_user</code></td>
+      <td><strong>SECURITY ALERT</strong> - delete existing users</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Permissions for the own user account</strong></p>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">api-token_own_profile</code></td>
+      <td>Change the own API token</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">edit_own_profile</code></td>
+      <td>Edit own user profile/account</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">hourly-rate_own_profile</code></td>
+      <td>Edit the own (user specific) hourly rate</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">password_own_profile</code></td>
+      <td>Change own password (should be deactivated when <a href="{% link _documentation/ldap.md %}">LDAP</a> is used)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">preferences_own_profile</code></td>
+      <td>Allows a user to edit the own preferences</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">roles_own_profile</code></td>
+      <td><strong>SECURITY ALERT</strong> - change the own user roles</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">supervisor_own_profile</code></td>
+      <td>Change the supervisor for the own profile</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">teams_own_profile</code></td>
+      <td>Edit team assignments in own user profile</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">view_own_profile</code></td>
+      <td>View own user profile and statistics</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Permissions for profiles of other user accounts</strong></p>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">api-token_other_profile</code></td>
+      <td>Change the API token for other users</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">edit_other_profile</code></td>
+      <td><strong>SECURITY ALERT</strong> - edit the profile for another user</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">hourly-rate_other_profile</code></td>
+      <td>Edit other (users specific) hourly rate</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">password_other_profile</code></td>
+      <td><strong>SECURITY ALERT</strong> - Change the password for another user</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">preferences_other_profile</code></td>
+      <td>Change the preferences for another user</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">roles_other_profile</code></td>
+      <td><strong>SECURITY ALERT</strong> - change roles for other users</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">supervisor_other_profile</code></td>
+      <td>Change the supervisor for the selected profile</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">teams_other_profile</code></td>
+      <td>Edit team assignments in other user profile</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">view_other_profile</code></td>
+      <td>View other user profiles</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i>
+<p>Read how to assign these permissions to your user roles in the <a href="/documentation/permissions.html">permission documentation</a>.</p>
+</div>
+
 
                 </div>
                 
@@ -832,7 +961,7 @@ Don’t mix this up with the system specific configuration for new customers.</p
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#avatars" class="nav-link">Avatars</a></li><li class="nav-item"><a href="#deactivated-users" class="nav-link">Deactivated users</a></li><li class="nav-item"><a href="#system-accounts" class="nav-link">System accounts</a></li><li class="nav-item"><a href="#username--user-id" class="nav-link">Username / User-ID</a></li><li class="nav-item"><a href="#supervisor" class="nav-link">Supervisor</a></li><li class="nav-item"><a href="#staff-number" class="nav-link">Staff number</a></li><li class="nav-item"><a href="#filter-and-search" class="nav-link">Filter and search</a></li><li class="nav-item"><a href="#user-registration" class="nav-link">User registration</a></li><li class="nav-item"><a href="#password-reset" class="nav-link">Password reset</a></li><li class="nav-item"><a href="#login" class="nav-link">Login</a></li><li class="nav-item"><a href="#two-factor-authentication" class="nav-link">Two-Factor authentication</a></li><li class="nav-item"><a href="#troubleshooting" class="nav-link">Troubleshooting</a><ul><li class="nav-item"><a href="#cannot-create-user" class="nav-link">Cannot create user</a></li><li class="nav-item"><a href="#recorded-times-are-wrong" class="nav-link">Recorded times are wrong</a></li></ul></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#avatars" class="nav-link">Avatars</a></li><li class="nav-item"><a href="#deactivated-users" class="nav-link">Deactivated users</a></li><li class="nav-item"><a href="#system-accounts" class="nav-link">System accounts</a></li><li class="nav-item"><a href="#username--user-id" class="nav-link">Username / User-ID</a></li><li class="nav-item"><a href="#supervisor" class="nav-link">Supervisor</a></li><li class="nav-item"><a href="#staff-number" class="nav-link">Staff number</a></li><li class="nav-item"><a href="#filter-and-search" class="nav-link">Filter and search</a></li><li class="nav-item"><a href="#user-registration" class="nav-link">User registration</a></li><li class="nav-item"><a href="#password-reset" class="nav-link">Password reset</a></li><li class="nav-item"><a href="#login" class="nav-link">Login</a></li><li class="nav-item"><a href="#two-factor-authentication" class="nav-link">Two-Factor authentication</a></li><li class="nav-item"><a href="#troubleshooting" class="nav-link">Troubleshooting</a><ul><li class="nav-item"><a href="#cannot-create-user" class="nav-link">Cannot create user</a></li><li class="nav-item"><a href="#recorded-times-are-wrong" class="nav-link">Recorded times are wrong</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
         
         <ul class="nav">
             <li>

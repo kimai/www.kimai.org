@@ -161,7 +161,7 @@
                         
                         <a href="/documentation/weekly-times.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-weekly-times">
                             
-                            Weekly working hours
+                            Weekly hours
                             
                         </a>
                         
@@ -378,7 +378,7 @@
                         
                         <a href="/documentation/plugin-task-management.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-plugin-task-management">
                             
-                            Task management
+                            Tasks
                             
                         </a>
                         
@@ -438,7 +438,7 @@
                         
                         <a href="/documentation/plugin-audit-trail.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-plugin-audit-trail">
                             
-                            Audit trail logs
+                            Audit logs
                             
                         </a>
                         
@@ -655,7 +655,7 @@ These records cannot be edited any longer by regular users and are excluded by d
     <figcaption class="figure-caption">Time format toggle</figcaption>
 </figure>
 
-<h2 id="adding-export-templates">Adding export templates</h2>
+<h2 id="export-templates">Export templates</h2>
 
 <h3 id="csv-and-xlsx">CSV and XLSX</h3>
 
@@ -729,15 +729,37 @@ Next to them is the <a class="btn btn-secondary px-3" href="#"><i class="bx bx-p
 
 <h2 id="permissions">Permissions</h2>
 
+<div class="alert alert-danger d-flex" role="alert"><i class="bx bx-info-circle lead me-3"></i><p>The export extension does not check all available permissions, as this would defeat the purpose of an export. If your users shall not see rates, do not give them the “create_export” permission.</p>
+</div>
+
 <ul>
-  <li>The export page is visible to users who own the <code class="language-plaintext highlighter-rouge">create_export</code> permission</li>
-  <li>The <code class="language-plaintext highlighter-rouge">create_export_template</code> permission controls if you can create, edit and delete CSV and Excel export templates</li>
-  <li>The export does <strong>not always</strong> respect permissions like <code class="language-plaintext highlighter-rouge">view_rate_other_timesheet</code> and <code class="language-plaintext highlighter-rouge">view_rate_own_timesheet</code></li>
+  <li>The export does <strong>not</strong> guarantee to respect permissions like <code class="language-plaintext highlighter-rouge">view_rate_other_timesheet</code> and <code class="language-plaintext highlighter-rouge">view_rate_own_timesheet</code></li>
   <li>The “mark as export” checkbox is only available for users with the <code class="language-plaintext highlighter-rouge">edit_export_other_timesheet</code> <a href="/documentation/permissions.html">permission</a></li>
 </ul>
 
-<div class="alert alert-danger d-flex" role="alert"><i class="bx bx-info-circle lead me-3"></i><p>The export extension does not check all available permissions, as this would defeat the purpose of an export. If your users shall not see rates, do not give them the ‘create_export’ permission.</p>
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">create_export</code></td>
+      <td>See the <code class="language-plaintext highlighter-rouge">Export</code> page at <code class="language-plaintext highlighter-rouge">Time Tracking &gt; Export</code> and create export documents from the selected timesheet data</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">create_export_template</code></td>
+      <td>Create, edit and delete <code class="language-plaintext highlighter-rouge">Export templates</code> (CSV and Excel)</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i>
+<p>Read how to assign these permissions to your user roles in the <a href="/documentation/permissions.html">permission documentation</a>.</p>
 </div>
+
 
                 </div>
                 
@@ -752,7 +774,7 @@ Next to them is the <a class="btn btn-secondary px-3" href="#"><i class="bx bx-p
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#difference-between-export-and-invoice" class="nav-link">Difference between export and invoice</a></li><li class="nav-item"><a href="#export-state" class="nav-link">Export state</a></li><li class="nav-item"><a href="#time-format" class="nav-link">Time format</a></li><li class="nav-item"><a href="#adding-export-templates" class="nav-link">Adding export templates</a><ul><li class="nav-item"><a href="#csv-and-xlsx" class="nav-link">CSV and XLSX</a></li><li class="nav-item"><a href="#pdf-and-html" class="nav-link">PDF and HTML</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#difference-between-export-and-invoice" class="nav-link">Difference between export and invoice</a></li><li class="nav-item"><a href="#export-state" class="nav-link">Export state</a></li><li class="nav-item"><a href="#time-format" class="nav-link">Time format</a></li><li class="nav-item"><a href="#export-templates" class="nav-link">Export templates</a><ul><li class="nav-item"><a href="#csv-and-xlsx" class="nav-link">CSV and XLSX</a></li><li class="nav-item"><a href="#pdf-and-html" class="nav-link">PDF and HTML</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
         
     </aside>
 

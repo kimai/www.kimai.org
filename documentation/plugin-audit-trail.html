@@ -12,7 +12,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
-<title>Audit trail logs – Kimai</title>
+<title>Audit logs – Kimai</title>
 <meta name="description" content="Logging entity changes in Kimai">
 <link type="application/atom+xml" rel="alternate" href="https://www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
 <meta property="og:locale" content="en">
@@ -161,7 +161,7 @@
                         
                         <a href="/documentation/weekly-times.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-weekly-times">
                             
-                            Weekly working hours
+                            Weekly hours
                             
                         </a>
                         
@@ -378,7 +378,7 @@
                         
                         <a href="/documentation/plugin-task-management.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-plugin-task-management">
                             
-                            Task management
+                            Tasks
                             
                         </a>
                         
@@ -438,7 +438,7 @@
                         
                         <a href="/documentation/plugin-audit-trail.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2  active" id="docnavi-plugin-audit-trail">
                             
-                            Audit trail logs
+                            Audit logs
                             
                         </a>
                         
@@ -587,7 +587,7 @@
 
         <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 pt-4 mb-n3">
             <div class="me-4">
-                <h1 class="pb-1">Audit trail logs</h1>
+                <h1 class="pb-1">Audit logs</h1>
                 
                 <p class="text-muted fs-lg mb-2">Logging entity changes in Kimai</p>
                 
@@ -652,58 +652,56 @@
 <p>When logged in as <code class="language-plaintext highlighter-rouge">SUPER_ADMIN</code>, you will now see the overview page at <code class="language-plaintext highlighter-rouge">/en/audit/</code> and the items audit log screens
 in the “action” dropdown menus of the above items.</p>
 
+<p>Please note: own timesheet via <code class="language-plaintext highlighter-rouge">audit_own_timesheet</code> are only available in the <code class="language-plaintext highlighter-rouge">All times</code> page, audit logs <strong>cannot</strong> be accessed via <code class="language-plaintext highlighter-rouge">My times</code>.</p>
+
 <h2 id="permissions">Permissions</h2>
 
-<p>This bundle introduces new permissions, which limit access to certain functions:</p>
-
-<table class="table">
+<table class="table permissions">
   <thead>
     <tr>
-      <th>Permission Name</th>
+      <th>Name</th>
       <th>Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>audit_logs</td>
-      <td>see the audit log page with all entries</td>
+      <td><code class="language-plaintext highlighter-rouge">audit_logs</code></td>
+      <td>Grant access to the <code class="language-plaintext highlighter-rouge">Audit logs</code> page with all entries at <code class="language-plaintext highlighter-rouge">Administration &gt; Audit logs</code></td>
     </tr>
     <tr>
-      <td>audit_customer</td>
+      <td><code class="language-plaintext highlighter-rouge">audit_customer</code></td>
       <td>see all changes for customers</td>
     </tr>
     <tr>
-      <td>audit_project</td>
+      <td><code class="language-plaintext highlighter-rouge">audit_project</code></td>
       <td>see all changes for projects</td>
     </tr>
     <tr>
-      <td>audit_activity</td>
+      <td><code class="language-plaintext highlighter-rouge">audit_activity</code></td>
       <td>see all changes for activities</td>
     </tr>
     <tr>
-      <td>audit_user</td>
+      <td><code class="language-plaintext highlighter-rouge">audit_user</code></td>
       <td>see all changes for users</td>
     </tr>
     <tr>
-      <td>audit_configuration</td>
+      <td><code class="language-plaintext highlighter-rouge">audit_configuration</code></td>
       <td>see all changes for system configurations</td>
     </tr>
     <tr>
-      <td>audit_invoice</td>
+      <td><code class="language-plaintext highlighter-rouge">audit_invoice</code></td>
       <td>see all changes for invoices</td>
     </tr>
     <tr>
-      <td>audit_own_timesheet</td>
+      <td><code class="language-plaintext highlighter-rouge">audit_own_timesheet</code></td>
       <td>see all changes for own timesheet records</td>
     </tr>
     <tr>
-      <td>audit_other_timesheet</td>
+      <td><code class="language-plaintext highlighter-rouge">audit_other_timesheet</code></td>
       <td>see all changes in other users timesheet records (only via team timesheets)</td>
     </tr>
   </tbody>
 </table>
-
-<p>Please note: <code class="language-plaintext highlighter-rouge">audit_own_timesheet</code> are only available via team timesheets, audit logs are <strong>not</strong> shown in user timesheet panel</p>
 
 <p>By default, these are assigned to each user with the role <code class="language-plaintext highlighter-rouge">ROLE_SUPER_ADMIN</code>.</p>
 

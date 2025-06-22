@@ -161,7 +161,7 @@
                         
                         <a href="/documentation/weekly-times.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-weekly-times">
                             
-                            Weekly working hours
+                            Weekly hours
                             
                         </a>
                         
@@ -378,7 +378,7 @@
                         
                         <a href="/documentation/plugin-task-management.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-plugin-task-management">
                             
-                            Task management
+                            Tasks
                             
                         </a>
                         
@@ -438,7 +438,7 @@
                         
                         <a href="/documentation/plugin-audit-trail.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-plugin-audit-trail">
                             
-                            Audit trail logs
+                            Audit logs
                             
                         </a>
                         
@@ -645,15 +645,12 @@ There are four pre-defined roles in Kimai, which have a customizable set of ACLs
   </tbody>
 </table>
 
-<div class="alert alert-danger d-flex" role="alert"><i class="bx bx-info-circle lead me-3"></i>
-<p>Every user is automatically member of the ROLE_USER, this behaviour cannot be changed.</p>
-
-<p>That means, that every role and user owns all permissions from the <code class="language-plaintext highlighter-rouge">ROLE_USER</code>.</p>
+<div class="alert alert-danger d-flex" role="alert"><i class="bx bx-info-circle lead me-3"></i><p>Every user is automatically member of the <code class="language-plaintext highlighter-rouge">ROLE_USER</code> (this cannot be changed), which means that every user owns all permissions from the <code class="language-plaintext highlighter-rouge">ROLE_USER</code>.</p>
 </div>
 
 <h3 id="creating-roles">Creating roles</h3>
 
-<p>If the pre-defined roles are not sufficient for your use-case and you need more roles, you can create new ones.</p>
+<p>If the pre-defined roles are not enough for your use-case and you need more roles, you can create new ones.</p>
 
 <p>Every user with the permission <code class="language-plaintext highlighter-rouge">role_permissions</code> can create new user roles. 
 There is a button that will open a new modal, to enter a role name. This new role will show up in the table after saving.</p>
@@ -671,94 +668,109 @@ Clicking the <code class="language-plaintext highlighter-rouge">Yes</code> and <
 
 <p>If a user has multiple roles, then access is granted as soon as one of these roles own the permission.</p>
 
-<p><strong>Be aware</strong>
-There are other business rules which might limit access to certain functions, so permissions are not the only checks in place.
-For example: exported timesheet records cannot be edited, even if a user has the <code class="language-plaintext highlighter-rouge">edit_own_timesheet</code> or <code class="language-plaintext highlighter-rouge">edit_other_timesheet</code> permission.</p>
+<p><strong>Be aware</strong>: tother business rules might limit access to certain functions, permissions are not the only checks in place.
+For example, exported timesheet records cannot be edited, even if a user owns the <code class="language-plaintext highlighter-rouge">edit_own_timesheet</code> or <code class="language-plaintext highlighter-rouge">edit_other_timesheet</code> permission.</p>
 
 <h3 id="activity">Activity</h3>
+
+<p><strong>Admin</strong></p>
 
 <table class="table permissions">
   <thead>
     <tr>
-      <th>Permission Name</th>
+      <th>Name</th>
       <th>Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong>Administrator</strong></td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>budget_activity</td>
+      <td><code class="language-plaintext highlighter-rouge">budget_activity</code></td>
       <td>Allows to see the budget (monetary) reports for activities of assigned projects/customers</td>
     </tr>
     <tr>
-      <td>time_activity</td>
+      <td><code class="language-plaintext highlighter-rouge">time_activity</code></td>
       <td>Allows to see the budget (time) reports for activities of assigned projects/customers</td>
     </tr>
     <tr>
-      <td>create_activity</td>
+      <td><code class="language-plaintext highlighter-rouge">create_activity</code></td>
       <td>Create a new activity</td>
     </tr>
     <tr>
-      <td>delete_activity</td>
+      <td><code class="language-plaintext highlighter-rouge">delete_activity</code></td>
       <td>Delete activities</td>
     </tr>
     <tr>
-      <td>edit_activity</td>
+      <td><code class="language-plaintext highlighter-rouge">edit_activity</code></td>
       <td>Edit existing activities</td>
     </tr>
     <tr>
-      <td>permissions_activity</td>
+      <td><code class="language-plaintext highlighter-rouge">permissions_activity</code></td>
       <td>Allows to edit the teams for assigned activities</td>
     </tr>
     <tr>
-      <td>view_activity</td>
+      <td><code class="language-plaintext highlighter-rouge">view_activity</code></td>
       <td>Allows access to the activity administration</td>
     </tr>
+  </tbody>
+</table>
+
+<p><strong>If you are a Teamleader, whose team is assigned to this activity</strong></p>
+
+<table class="table permissions">
+  <thead>
     <tr>
-      <td><strong>Teamlead</strong></td>
-      <td> </td>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+  <tbody>
     <tr>
-      <td>budget_teamlead_activity</td>
+      <td><code class="language-plaintext highlighter-rouge">budget_teamlead_activity</code></td>
       <td>Allow team leaders to see the budget (money) reports for activities of assigned projects/customers</td>
     </tr>
     <tr>
-      <td>time_teamlead_activity</td>
+      <td><code class="language-plaintext highlighter-rouge">time_teamlead_activity</code></td>
       <td>Allow team leaders to see the budget (time) reports for activities of assigned projects/customers</td>
     </tr>
     <tr>
-      <td>edit_teamlead_activity</td>
+      <td><code class="language-plaintext highlighter-rouge">edit_teamlead_activity</code></td>
       <td>Allow team leaders to edit activities for assigned projects/customers</td>
     </tr>
     <tr>
-      <td>permissions_teamlead_activity</td>
+      <td><code class="language-plaintext highlighter-rouge">permissions_teamlead_activity</code></td>
       <td>Allow team leaders to edit the teams for assigned activities</td>
     </tr>
     <tr>
-      <td>view_teamlead_activity</td>
+      <td><code class="language-plaintext highlighter-rouge">view_teamlead_activity</code></td>
       <td>Allow team leaders to access activity administration</td>
     </tr>
+  </tbody>
+</table>
+
+<p><strong>If you are a member of a team, that is assigned to this activity</strong></p>
+
+<table class="table permissions">
+  <thead>
     <tr>
-      <td><strong>Team member</strong></td>
-      <td> </td>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+  <tbody>
     <tr>
-      <td>budget_team_activity</td>
+      <td><code class="language-plaintext highlighter-rouge">budget_team_activity</code></td>
       <td>Allows team-members to see the budget (money) reports for activities of assigned projects/customers</td>
     </tr>
     <tr>
-      <td>time_team_activity</td>
+      <td><code class="language-plaintext highlighter-rouge">time_team_activity</code></td>
       <td>Allows team-members to see the budget (time) reports for activities of assigned projects/customers</td>
     </tr>
     <tr>
-      <td>edit_team_activity</td>
+      <td><code class="language-plaintext highlighter-rouge">edit_team_activity</code></td>
       <td>Allows team-members to edit activities of assigned projects/customers</td>
     </tr>
     <tr>
-      <td>view_team_activity</td>
+      <td><code class="language-plaintext highlighter-rouge">view_team_activity</code></td>
       <td>Allows team-members to access activity administration</td>
     </tr>
   </tbody>
@@ -766,112 +778,128 @@ For example: exported timesheet records cannot be edited, even if a user has the
 
 <h3 id="customer">Customer</h3>
 
+<p><strong>Admin</strong></p>
+
 <table class="table permissions">
   <thead>
     <tr>
-      <th>Permission Name</th>
+      <th>Name</th>
       <th>Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong>Administrator</strong></td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>budget_customer</td>
+      <td><code class="language-plaintext highlighter-rouge">budget_customer</code></td>
       <td>Allows to see the budget (money) reports for the customer</td>
     </tr>
     <tr>
-      <td>time_customer</td>
+      <td><code class="language-plaintext highlighter-rouge">time_customer</code></td>
       <td>Allows to see the budget (time) reports for the customer</td>
     </tr>
     <tr>
-      <td>comments_customer</td>
+      <td><code class="language-plaintext highlighter-rouge">comments_customer</code></td>
       <td>Allows to see the comment section for customers</td>
     </tr>
     <tr>
-      <td>create_customer</td>
+      <td><code class="language-plaintext highlighter-rouge">create_customer</code></td>
       <td>Create new customers</td>
     </tr>
     <tr>
-      <td>delete_customer</td>
+      <td><code class="language-plaintext highlighter-rouge">delete_customer</code></td>
       <td>Delete existing customers</td>
     </tr>
     <tr>
-      <td>details_customer</td>
+      <td><code class="language-plaintext highlighter-rouge">details_customer</code></td>
       <td>View customer details (account number, vat, rates, meta-fields, assigned teams &amp; users)</td>
     </tr>
     <tr>
-      <td>edit_customer</td>
+      <td><code class="language-plaintext highlighter-rouge">edit_customer</code></td>
       <td>Edit existing customers</td>
     </tr>
     <tr>
-      <td>permissions_customer</td>
+      <td><code class="language-plaintext highlighter-rouge">permissions_customer</code></td>
       <td>Allows to edit the teams for assigned customers</td>
     </tr>
     <tr>
-      <td>view_customer</td>
+      <td><code class="language-plaintext highlighter-rouge">view_customer</code></td>
       <td>Allows access to the customer administration</td>
     </tr>
+  </tbody>
+</table>
+
+<p><strong>If you are a Teamleader, whose team is assigned to this customer</strong></p>
+
+<table class="table permissions">
+  <thead>
     <tr>
-      <td><strong>Teamlead</strong></td>
-      <td> </td>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+  <tbody>
     <tr>
-      <td>budget_teamlead_customer</td>
+      <td><code class="language-plaintext highlighter-rouge">budget_teamlead_customer</code></td>
       <td>Allow team leaders to see the budget (money) reports for assigned customers</td>
     </tr>
     <tr>
-      <td>time_teamlead_customer</td>
+      <td><code class="language-plaintext highlighter-rouge">time_teamlead_customer</code></td>
       <td>Allow team leaders to see the budget (time) reports for assigned customers</td>
     </tr>
     <tr>
-      <td>comments_teamlead_customer</td>
+      <td><code class="language-plaintext highlighter-rouge">comments_teamlead_customer</code></td>
       <td>Allow team leaders to see the comment section for customers</td>
     </tr>
     <tr>
-      <td>details_teamlead_customer</td>
+      <td><code class="language-plaintext highlighter-rouge">details_teamlead_customer</code></td>
       <td>Allow team leaders to see customer detail</td>
     </tr>
     <tr>
-      <td>edit_teamlead_customer</td>
+      <td><code class="language-plaintext highlighter-rouge">edit_teamlead_customer</code></td>
       <td>Allow team leaders to edit assigned customers</td>
     </tr>
     <tr>
-      <td>permissions_teamlead_customer</td>
+      <td><code class="language-plaintext highlighter-rouge">permissions_teamlead_customer</code></td>
       <td>Allow team leaders to edit the teams for assigned customers</td>
     </tr>
     <tr>
-      <td>view_teamlead_customer</td>
+      <td><code class="language-plaintext highlighter-rouge">view_teamlead_customer</code></td>
       <td>Allow team leaders to access project administration</td>
     </tr>
+  </tbody>
+</table>
+
+<p><strong>If you are a member of a team, that is assigned to this customer</strong></p>
+
+<table class="table permissions">
+  <thead>
     <tr>
-      <td><strong>Team member</strong></td>
-      <td> </td>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+  <tbody>
     <tr>
-      <td>budget_team_customer</td>
+      <td><code class="language-plaintext highlighter-rouge">budget_team_customer</code></td>
       <td>Allows team-members to see the budget (money) reports for assigned customers</td>
     </tr>
     <tr>
-      <td>time_team_customer</td>
+      <td><code class="language-plaintext highlighter-rouge">time_team_customer</code></td>
       <td>Allows team-members to see the budget (time) reports for assigned customers</td>
     </tr>
     <tr>
-      <td>comments_team_customer</td>
+      <td><code class="language-plaintext highlighter-rouge">comments_team_customer</code></td>
       <td>Allows team-members to see the comment section for customers</td>
     </tr>
     <tr>
-      <td>details_team_customer</td>
+      <td><code class="language-plaintext highlighter-rouge">details_team_customer</code></td>
       <td>Allows team-members to see customer details</td>
     </tr>
     <tr>
-      <td>edit_team_customer</td>
+      <td><code class="language-plaintext highlighter-rouge">edit_team_customer</code></td>
       <td>Allows team-members to edit assigned customers</td>
     </tr>
     <tr>
-      <td>view_team_customer</td>
+      <td><code class="language-plaintext highlighter-rouge">view_team_customer</code></td>
       <td>Allows team-members to access project administration</td>
     </tr>
   </tbody>
@@ -879,112 +907,128 @@ For example: exported timesheet records cannot be edited, even if a user has the
 
 <h3 id="project">Project</h3>
 
+<p><strong>Admin</strong></p>
+
 <table class="table permissions">
   <thead>
     <tr>
-      <th>Permission Name</th>
+      <th>Name</th>
       <th>Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong>Administrator</strong></td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>budget_project</td>
+      <td><code class="language-plaintext highlighter-rouge">budget_project</code></td>
       <td>Allows to see the budget (money) reports for projects</td>
     </tr>
     <tr>
-      <td>time_project</td>
+      <td><code class="language-plaintext highlighter-rouge">time_project</code></td>
       <td>Allows to see the budget (time) reports for projects</td>
     </tr>
     <tr>
-      <td>comments_project</td>
+      <td><code class="language-plaintext highlighter-rouge">comments_project</code></td>
       <td>Allows to see the comment section for projects</td>
     </tr>
     <tr>
-      <td>create_project</td>
+      <td><code class="language-plaintext highlighter-rouge">create_project</code></td>
       <td>Create a new project</td>
     </tr>
     <tr>
-      <td>delete_project</td>
+      <td><code class="language-plaintext highlighter-rouge">delete_project</code></td>
       <td>Delete existing projects</td>
     </tr>
     <tr>
-      <td>details_project</td>
+      <td><code class="language-plaintext highlighter-rouge">details_project</code></td>
       <td>View project details (Order number &amp; date, start and end date, rates, assigned teams &amp; users)</td>
     </tr>
     <tr>
-      <td>edit_project</td>
+      <td><code class="language-plaintext highlighter-rouge">edit_project</code></td>
       <td>Edit existing projects</td>
     </tr>
     <tr>
-      <td>permissions_project</td>
+      <td><code class="language-plaintext highlighter-rouge">permissions_project</code></td>
       <td>Allows to edit the teams for assigned projects</td>
     </tr>
     <tr>
-      <td>view_project</td>
+      <td><code class="language-plaintext highlighter-rouge">view_project</code></td>
       <td>Allows access to the project administration</td>
     </tr>
+  </tbody>
+</table>
+
+<p><strong>If you are a Teamleader, whose team is assigned to this project</strong></p>
+
+<table class="table permissions">
+  <thead>
     <tr>
-      <td><strong>Teamlead</strong></td>
-      <td> </td>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+  <tbody>
     <tr>
-      <td>budget_teamlead_project</td>
+      <td><code class="language-plaintext highlighter-rouge">budget_teamlead_project</code></td>
       <td>Allow team leaders to see the budget (money) reports for assigned projects or projects of assigned customers</td>
     </tr>
     <tr>
-      <td>time_teamlead_project</td>
+      <td><code class="language-plaintext highlighter-rouge">time_teamlead_project</code></td>
       <td>Allow team leaders to see the budget (time) reports for assigned projects or projects of assigned customers</td>
     </tr>
     <tr>
-      <td>comments_teamlead_project</td>
+      <td><code class="language-plaintext highlighter-rouge">comments_teamlead_project</code></td>
       <td>Allow team leaders to see the comment section for project</td>
     </tr>
     <tr>
-      <td>details_teamlead_project</td>
+      <td><code class="language-plaintext highlighter-rouge">details_teamlead_project</code></td>
       <td>Allow team leaders to see project details</td>
     </tr>
     <tr>
-      <td>edit_teamlead_project</td>
+      <td><code class="language-plaintext highlighter-rouge">edit_teamlead_project</code></td>
       <td>Allow team leaders to edit assigned projects or projects for assigned customers</td>
     </tr>
     <tr>
-      <td>permissions_teamlead_project</td>
+      <td><code class="language-plaintext highlighter-rouge">permissions_teamlead_project</code></td>
       <td>Allow team leaders to edit the teams for assigned projects or projects of assigned customers</td>
     </tr>
     <tr>
-      <td>view_teamlead_project</td>
+      <td><code class="language-plaintext highlighter-rouge">view_teamlead_project</code></td>
       <td>Allow team leaders to access projects administration</td>
     </tr>
+  </tbody>
+</table>
+
+<p><strong>If you are a member of a team, that is assigned to this project</strong></p>
+
+<table class="table permissions">
+  <thead>
     <tr>
-      <td><strong>Team member</strong></td>
-      <td> </td>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+  <tbody>
     <tr>
-      <td>budget_team_project</td>
+      <td><code class="language-plaintext highlighter-rouge">budget_team_project</code></td>
       <td>Allows team-members to see the budget (money) reports for assigned projects or projects of assigned customers</td>
     </tr>
     <tr>
-      <td>time_team_project</td>
+      <td><code class="language-plaintext highlighter-rouge">time_team_project</code></td>
       <td>Allows team-members to see the budget (time) reports for assigned projects or projects of assigned customers</td>
     </tr>
     <tr>
-      <td>comments_team_project</td>
+      <td><code class="language-plaintext highlighter-rouge">comments_team_project</code></td>
       <td>Allows team-members to see the comment section for project</td>
     </tr>
     <tr>
-      <td>details_team_project</td>
+      <td><code class="language-plaintext highlighter-rouge">details_team_project</code></td>
       <td>Allows team-members to see project details</td>
     </tr>
     <tr>
-      <td>edit_team_project</td>
+      <td><code class="language-plaintext highlighter-rouge">edit_team_project</code></td>
       <td>Allows team-members to edit assigned projects or projects for assigned customers</td>
     </tr>
     <tr>
-      <td>view_team_project</td>
+      <td><code class="language-plaintext highlighter-rouge">view_team_project</code></td>
       <td>Allows team-members to access projects administration</td>
     </tr>
   </tbody>
@@ -992,238 +1036,349 @@ For example: exported timesheet records cannot be edited, even if a user has the
 
 <h3 id="timesheet">Timesheet</h3>
 
+<p><strong>Admin</strong></p>
+
 <table class="table permissions">
   <thead>
     <tr>
-      <th>Permission Name</th>
+      <th>Name</th>
       <th>Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong>Timesheet</strong></td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>edit_exported_timesheet</td>
+      <td><code class="language-plaintext highlighter-rouge">edit_exported_timesheet</code></td>
       <td>Edit and delete timesheet records which were exported</td>
     </tr>
     <tr>
-      <td>lockdown_grace_timesheet</td>
+      <td><code class="language-plaintext highlighter-rouge">lockdown_grace_timesheet</code></td>
       <td>All records in the last lockdown period can be edited, even after the grace period ended</td>
     </tr>
     <tr>
-      <td>lockdown_override_timesheet</td>
+      <td><code class="language-plaintext highlighter-rouge">lockdown_override_timesheet</code></td>
       <td>None of the lockdown rules apply</td>
     </tr>
+  </tbody>
+</table>
+
+<p><strong>Permissions for your own timesheets</strong></p>
+
+<table class="table permissions">
+  <thead>
     <tr>
-      <td><strong>Timesheet (other)</strong></td>
-      <td> </td>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+  <tbody>
     <tr>
-      <td>create_other_timesheet</td>
-      <td>Create a new timesheet record in the name of another user</td>
-    </tr>
-    <tr>
-      <td>delete_other_timesheet</td>
-      <td>Delete timesheets of other users</td>
-    </tr>
-    <tr>
-      <td>edit_export_other_timesheet</td>
-      <td>Set the export state for other users timesheet records</td>
-    </tr>
-    <tr>
-      <td>edit_billable_other_timesheet</td>
-      <td>Set the billable state for other users timesheet record (since 1.18.3)</td>
-    </tr>
-    <tr>
-      <td>edit_other_timesheet</td>
-      <td>Edit existing records of other users</td>
-    </tr>
-    <tr>
-      <td>edit_rate_other_timesheet</td>
-      <td>Edit the rates for other users timesheet records (fixed, hourly and total)</td>
-    </tr>
-    <tr>
-      <td>export_other_timesheet</td>
-      <td>Export timesheet in the timesheet admin panel</td>
-    </tr>
-    <tr>
-      <td>start_other_timesheet</td>
-      <td>Start <em>running</em> timesheet records for other users</td>
-    </tr>
-    <tr>
-      <td>stop_other_timesheet</td>
-      <td>Stop <em>running</em> timesheet records of other users</td>
-    </tr>
-    <tr>
-      <td>view_other_timesheet</td>
-      <td>Allows access to the timesheet admin panel, listing records for all users</td>
-    </tr>
-    <tr>
-      <td>view_rate_other_timesheet</td>
-      <td>View the rates for other users timesheet records (fixed, hourly and total)</td>
-    </tr>
-    <tr>
-      <td><strong>Timesheet (own)</strong></td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>create_own_timesheet</td>
+      <td><code class="language-plaintext highlighter-rouge">create_own_timesheet</code></td>
       <td>Create a new timesheet record with the dialog</td>
     </tr>
     <tr>
-      <td>delete_own_timesheet</td>
+      <td><code class="language-plaintext highlighter-rouge">delete_own_timesheet</code></td>
       <td>Delete own timesheet records</td>
     </tr>
     <tr>
-      <td>edit_export_own_timesheet</td>
+      <td><code class="language-plaintext highlighter-rouge">edit_export_own_timesheet</code></td>
       <td>Set the export state for your own timesheet record</td>
     </tr>
     <tr>
-      <td>edit_billable_own_timesheet</td>
-      <td>Set the billable state for your own timesheet record (since 1.18.3)</td>
+      <td><code class="language-plaintext highlighter-rouge">edit_billable_own_timesheet</code></td>
+      <td>Set the billable state for your own timesheet record</td>
     </tr>
     <tr>
-      <td>edit_own_timesheet</td>
+      <td><code class="language-plaintext highlighter-rouge">edit_own_timesheet</code></td>
       <td>Edit own timesheet records</td>
     </tr>
     <tr>
-      <td>edit_rate_own_timesheet</td>
+      <td><code class="language-plaintext highlighter-rouge">edit_rate_own_timesheet</code></td>
       <td>Edit the rates for own timesheet records (fixed, hourly and total)</td>
     </tr>
     <tr>
-      <td>export_own_timesheet</td>
+      <td><code class="language-plaintext highlighter-rouge">export_own_timesheet</code></td>
       <td>Export your own timesheet in the timesheet panel</td>
     </tr>
     <tr>
-      <td>start_own_timesheet</td>
+      <td><code class="language-plaintext highlighter-rouge">start_own_timesheet</code></td>
       <td>Create a running timesheet record (restart and create)</td>
     </tr>
     <tr>
-      <td>stop_own_timesheet</td>
+      <td><code class="language-plaintext highlighter-rouge">stop_own_timesheet</code></td>
       <td>Stop the own running timesheets records</td>
     </tr>
     <tr>
-      <td>view_own_timesheet</td>
+      <td><code class="language-plaintext highlighter-rouge">view_own_timesheet</code></td>
       <td>Allows access to the own timesheet views</td>
     </tr>
     <tr>
-      <td>view_rate_own_timesheet</td>
+      <td><code class="language-plaintext highlighter-rouge">view_rate_own_timesheet</code></td>
       <td>View the rates for own timesheet records (fixed, hourly and total)</td>
     </tr>
     <tr>
-      <td>weekly_own_timesheet</td>
-      <td>Gives access to the <a href="/documentation/weekly-times.html">weekly working hours</a> screen</td>
+      <td><code class="language-plaintext highlighter-rouge">weekly_own_timesheet</code></td>
+      <td>Gives access to the <code class="language-plaintext highlighter-rouge">Weekly hours</code> screen</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Permissions for timesheets of other users</strong></p>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">create_other_timesheet</code></td>
+      <td>Create a new timesheet record in the name of another user</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">delete_other_timesheet</code></td>
+      <td>Delete timesheets of other users</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">edit_export_other_timesheet</code></td>
+      <td>Set the export state for other users timesheet records</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">edit_billable_other_timesheet</code></td>
+      <td>Set the billable state for other users timesheet record</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">edit_other_timesheet</code></td>
+      <td>Edit existing records of other users</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">edit_rate_other_timesheet</code></td>
+      <td>Edit the rates for other users timesheet records (fixed, hourly and total)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">export_other_timesheet</code></td>
+      <td>Export timesheet in the timesheet admin panel</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">start_other_timesheet</code></td>
+      <td>Start <em>running</em> timesheet records for other users</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">stop_other_timesheet</code></td>
+      <td>Stop <em>running</em> timesheet records of other users</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">view_other_timesheet</code></td>
+      <td>Allows access to the timesheet admin panel, listing records for all users</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">view_rate_other_timesheet</code></td>
+      <td>View the rates for other users timesheet records (fixed, hourly and total)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="export">Export</h3>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">create_export</code></td>
+      <td>See the <code class="language-plaintext highlighter-rouge">Export</code> page at <code class="language-plaintext highlighter-rouge">Time Tracking &gt; Export</code> and create export documents from the selected timesheet data</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">create_export_template</code></td>
+      <td>Create, edit and delete <code class="language-plaintext highlighter-rouge">Export templates</code> (CSV and Excel)</td>
     </tr>
   </tbody>
 </table>
 
 <h3 id="user">User</h3>
 
+<p><strong>Admin</strong></p>
+
 <table class="table permissions">
   <thead>
     <tr>
-      <th>Permission Name</th>
+      <th>Name</th>
       <th>Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong>User</strong></td>
-      <td> </td>
+      <td><code class="language-plaintext highlighter-rouge">view_user</code></td>
+      <td>View the <code class="language-plaintext highlighter-rouge">Users</code> screen at <code class="language-plaintext highlighter-rouge">System &gt; Users</code> - attention <code class="language-plaintext highlighter-rouge">System-Admins</code> will always own that permission</td>
     </tr>
     <tr>
-      <td>create_user</td>
+      <td><code class="language-plaintext highlighter-rouge">create_user</code></td>
       <td>Create new users</td>
     </tr>
     <tr>
-      <td>delete_user</td>
-      <td><strong>SECURITY ALERT</strong>: Delete existing users</td>
+      <td><code class="language-plaintext highlighter-rouge">delete_user</code></td>
+      <td><strong>SECURITY ALERT</strong> - delete existing users</td>
     </tr>
+  </tbody>
+</table>
+
+<p><strong>Permissions for the own user account</strong></p>
+
+<table class="table permissions">
+  <thead>
     <tr>
-      <td>view_user</td>
-      <td>Access the User administration and see the list of all users - <code class="language-plaintext highlighter-rouge">System-Admins</code> will always own that permission</td>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+  <tbody>
     <tr>
-      <td><strong>User profile (other)</strong></td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>api-token_other_profile</td>
-      <td>Change the API token for other users</td>
-    </tr>
-    <tr>
-      <td>edit_other_profile</td>
-      <td><strong>SECURITY ALERT</strong>: edit the profile for another user</td>
-    </tr>
-    <tr>
-      <td>hourly-rate_other_profile</td>
-      <td>Edit other (users specific) hourly rate</td>
-    </tr>
-    <tr>
-      <td>password_other_profile</td>
-      <td><strong>SECURITY ALERT</strong>: Change the password for another user</td>
-    </tr>
-    <tr>
-      <td>preferences_other_profile</td>
-      <td>Change the preferences for another user</td>
-    </tr>
-    <tr>
-      <td>roles_other_profile</td>
-      <td><strong>SECURITY ALERT</strong>: change roles for other users</td>
-    </tr>
-    <tr>
-      <td>supervisor_other_profile</td>
-      <td>Change the supervisor for the selected profile</td>
-    </tr>
-    <tr>
-      <td>teams_other_profile</td>
-      <td>Edit team assignments in other user profile</td>
-    </tr>
-    <tr>
-      <td>view_other_profile</td>
-      <td>View other user profiles</td>
-    </tr>
-    <tr>
-      <td><strong>User profile (own)</strong></td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>api-token_own_profile</td>
+      <td><code class="language-plaintext highlighter-rouge">api-token_own_profile</code></td>
       <td>Change the own API token</td>
     </tr>
     <tr>
-      <td>edit_own_profile</td>
+      <td><code class="language-plaintext highlighter-rouge">edit_own_profile</code></td>
       <td>Edit own user profile/account</td>
     </tr>
     <tr>
-      <td>hourly-rate_own_profile</td>
+      <td><code class="language-plaintext highlighter-rouge">hourly-rate_own_profile</code></td>
       <td>Edit the own (user specific) hourly rate</td>
     </tr>
     <tr>
-      <td>password_own_profile</td>
-      <td>Change own password (should be deactivated when <a href="/documentation/ldap.html">LDAP</a> is used)</td>
+      <td><code class="language-plaintext highlighter-rouge">password_own_profile</code></td>
+      <td>Change own password (should be deactivated when <a href="{% link _documentation/ldap.md %}">LDAP</a> is used)</td>
     </tr>
     <tr>
-      <td>preferences_own_profile</td>
+      <td><code class="language-plaintext highlighter-rouge">preferences_own_profile</code></td>
       <td>Allows a user to edit the own preferences</td>
     </tr>
     <tr>
-      <td>roles_own_profile</td>
-      <td><strong>SECURITY ALERT</strong>: change the own user roles</td>
+      <td><code class="language-plaintext highlighter-rouge">roles_own_profile</code></td>
+      <td><strong>SECURITY ALERT</strong> - change the own user roles</td>
     </tr>
     <tr>
-      <td>supervisor_own_profile</td>
+      <td><code class="language-plaintext highlighter-rouge">supervisor_own_profile</code></td>
       <td>Change the supervisor for the own profile</td>
     </tr>
     <tr>
-      <td>teams_own_profile</td>
+      <td><code class="language-plaintext highlighter-rouge">teams_own_profile</code></td>
       <td>Edit team assignments in own user profile</td>
     </tr>
     <tr>
-      <td>view_own_profile</td>
+      <td><code class="language-plaintext highlighter-rouge">view_own_profile</code></td>
       <td>View own user profile and statistics</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Permissions for profiles of other user accounts</strong></p>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">api-token_other_profile</code></td>
+      <td>Change the API token for other users</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">edit_other_profile</code></td>
+      <td><strong>SECURITY ALERT</strong> - edit the profile for another user</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">hourly-rate_other_profile</code></td>
+      <td>Edit other (users specific) hourly rate</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">password_other_profile</code></td>
+      <td><strong>SECURITY ALERT</strong> - Change the password for another user</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">preferences_other_profile</code></td>
+      <td>Change the preferences for another user</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">roles_other_profile</code></td>
+      <td><strong>SECURITY ALERT</strong> - change roles for other users</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">supervisor_other_profile</code></td>
+      <td>Change the supervisor for the selected profile</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">teams_other_profile</code></td>
+      <td>Edit team assignments in other user profile</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">view_other_profile</code></td>
+      <td>View other user profiles</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="teams">Teams</h3>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">view_team</code></td>
+      <td>View the <code class="language-plaintext highlighter-rouge">Teams</code> administration at <code class="language-plaintext highlighter-rouge">System &gt; Teams</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">create_team</code></td>
+      <td>Create new teams</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">delete_team</code></td>
+      <td>Delete existing teams</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">edit_team</code></td>
+      <td>Edit team assignments</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">view_team_member</code></td>
+      <td>View team leader and members for the teams of the current user</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="tags">Tags</h3>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">view_tag</code></td>
+      <td>View the <code class="language-plaintext highlighter-rouge">Tags</code> administration at <code class="language-plaintext highlighter-rouge">Administration &gt; Tags</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">delete_tag</code></td>
+      <td>Delete existing tags</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">manage_tag</code></td>
+      <td>Edit existing and create new tags in the administration</td>
     </tr>
   </tbody>
 </table>
@@ -1233,34 +1388,30 @@ For example: exported timesheet records cannot be edited, even if a user has the
 <table class="table permissions">
   <thead>
     <tr>
-      <th>Permission Name</th>
+      <th>Name</th>
       <th>Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong>Invoice</strong></td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>create_invoice</td>
+      <td><code class="language-plaintext highlighter-rouge">create_invoice</code></td>
       <td>Create a new invoice</td>
     </tr>
     <tr>
-      <td>delete_invoice</td>
-      <td>Allows to delete invoices, please <a href="/documentation/invoices.html">read docs why you shouldn’t</a></td>
+      <td><code class="language-plaintext highlighter-rouge">delete_invoice</code></td>
+      <td>Allows to delete invoices (please read docs why you shouldn’t)</td>
     </tr>
     <tr>
-      <td>manage_invoice_template</td>
+      <td><code class="language-plaintext highlighter-rouge">manage_invoice_template</code></td>
       <td>Administrate invoice templates</td>
     </tr>
     <tr>
-      <td>upload_invoice_template</td>
+      <td><code class="language-plaintext highlighter-rouge">upload_invoice_template</code></td>
       <td>Allows to upload custom invoice templates</td>
     </tr>
     <tr>
-      <td>view_invoice</td>
-      <td>Gives access to the <a href="/documentation/invoices.html">list of all invoices</a> and allows to download existing invoices</td>
+      <td><code class="language-plaintext highlighter-rouge">view_invoice</code></td>
+      <td>Gives access to the invoice history and allows to download existing invoices</td>
     </tr>
   </tbody>
 </table>
@@ -1270,46 +1421,46 @@ For example: exported timesheet records cannot be edited, even if a user has the
 <table class="table permissions">
   <thead>
     <tr>
-      <th>Permission Name</th>
+      <th>Name</th>
       <th>Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>absence</td>
-      <td>View and access the Absence screen.</td>
+      <td><code class="language-plaintext highlighter-rouge">absence</code></td>
+      <td>View the <code class="language-plaintext highlighter-rouge">Absence</code> screen at <code class="language-plaintext highlighter-rouge">Employment contract &gt; Absence</code></td>
     </tr>
     <tr>
-      <td>edit_own_absence</td>
-      <td>Edit the own absences.</td>
+      <td><code class="language-plaintext highlighter-rouge">edit_own_absence</code></td>
+      <td>Edit the own absences</td>
     </tr>
     <tr>
-      <td>edit_other_absence</td>
-      <td>Edit other users absences.</td>
+      <td><code class="language-plaintext highlighter-rouge">edit_other_absence</code></td>
+      <td>Edit other users absences</td>
     </tr>
     <tr>
-      <td>delete_own_absence</td>
-      <td>Delete the own absence entries.</td>
+      <td><code class="language-plaintext highlighter-rouge">delete_own_absence</code></td>
+      <td>Delete the own absence entries</td>
     </tr>
     <tr>
-      <td>delete_other_absence</td>
-      <td>Delete other users absence entries.</td>
+      <td><code class="language-plaintext highlighter-rouge">delete_other_absence</code></td>
+      <td>Delete other users absence entries</td>
     </tr>
     <tr>
-      <td>view_other_absence</td>
-      <td>Switch the user in the<code class="language-plaintext highlighter-rouge">Absence</code> screen. Also influences the visibility of absence entries in the calendar.</td>
+      <td><code class="language-plaintext highlighter-rouge">view_other_absence</code></td>
+      <td>Switch the user in the<code class="language-plaintext highlighter-rouge">Absence</code> screen. Also influences the visibility of absence entries in the calendar</td>
     </tr>
     <tr>
-      <td>approve_own_absence</td>
-      <td>Approve own absence requests.</td>
+      <td><code class="language-plaintext highlighter-rouge">approve_own_absence</code></td>
+      <td>Approve own absence requests</td>
     </tr>
     <tr>
-      <td>approve_other_absence</td>
-      <td>Approve absence requests of team members (or whose supervisor is not set).</td>
+      <td><code class="language-plaintext highlighter-rouge">approve_other_absence</code></td>
+      <td>Approve absence requests of team members (or whose supervisor is not set)</td>
     </tr>
     <tr>
-      <td>approval_other_absence</td>
-      <td>Request an approval on behalf of another user.</td>
+      <td><code class="language-plaintext highlighter-rouge">approval_other_absence</code></td>
+      <td>Request an approval on behalf of another user</td>
     </tr>
   </tbody>
 </table>
@@ -1319,42 +1470,353 @@ For example: exported timesheet records cannot be edited, even if a user has the
 <table class="table permissions">
   <thead>
     <tr>
-      <th>Permission Name</th>
+      <th>Name</th>
       <th>Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>contract_other_profile</td>
+      <td><code class="language-plaintext highlighter-rouge">contract_other_profile</code></td>
       <td>Allow to see and change the contract settings of other users</td>
     </tr>
     <tr>
-      <td>hours_own_profile</td>
+      <td><code class="language-plaintext highlighter-rouge">hours_own_profile</code></td>
       <td>View the <code class="language-plaintext highlighter-rouge">Employment contract</code> menu and the own “Working times”</td>
     </tr>
     <tr>
-      <td>hours_other_profile</td>
+      <td><code class="language-plaintext highlighter-rouge">hours_other_profile</code></td>
       <td>View the <code class="language-plaintext highlighter-rouge">Employment contract</code> menu. Switch the user in the <code class="language-plaintext highlighter-rouge">Working Contract</code> screen</td>
     </tr>
     <tr>
-      <td>view_booking_contract</td>
+      <td><code class="language-plaintext highlighter-rouge">view_booking_contract</code></td>
       <td>View working-time details (PDF, Manual bookings)</td>
     </tr>
     <tr>
-      <td>approve_times_contract</td>
+      <td><code class="language-plaintext highlighter-rouge">approve_times_contract</code></td>
       <td>Approve monthly timesheets</td>
     </tr>
     <tr>
-      <td>unlock_times_contract</td>
+      <td><code class="language-plaintext highlighter-rouge">unlock_times_contract</code></td>
       <td>Re-open an already locked month</td>
     </tr>
     <tr>
-      <td>create_booking_contract</td>
+      <td><code class="language-plaintext highlighter-rouge">create_booking_contract</code></td>
       <td>Allows to create manual time bookings</td>
     </tr>
     <tr>
-      <td>workdays_override_timesheet</td>
-      <td>Allows to create timesheets on non-working days (this rule must be activated in <a href="/documentation/configurations.html">System &gt; Settings</a></td>
+      <td><code class="language-plaintext highlighter-rouge">workdays_override_timesheet</code></td>
+      <td>Allows to create timesheets on non-working days, if this restriction is activated in <code class="language-plaintext highlighter-rouge">System &gt; Settings</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="customer-portal">Customer portal</h3>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">customer_portal</code></td>
+      <td>Show the <code class="language-plaintext highlighter-rouge">Customer portal</code> menu at <code class="language-plaintext highlighter-rouge">Administration &gt; Customer portal</code> and create/edit/delete all shared URLs</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="custom-fields">Custom fields</h3>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">configure_meta_fields</code></td>
+      <td>View the <code class="language-plaintext highlighter-rouge">Custom fields</code> screen at <code class="language-plaintext highlighter-rouge">System &gt; Custom fields</code> and administrate all custom field definitions</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="public-holidays">Public holidays</h3>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">edit_public_holidays</code></td>
+      <td>Grant access to the <code class="language-plaintext highlighter-rouge">Public holidays</code> page to configure and import public holidays at <code class="language-plaintext highlighter-rouge">Administration &gt; Public holidays</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="tasks">Tasks</h3>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">task_edit_own</code></td>
+      <td>Create and edit tasks that are assigned to the currently logged-in user</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">task_edit_other</code></td>
+      <td>Allows to edit all tasks that are visible to the user, create new unassigned tasks, assign team and user, remove assignment and close tasks which are assigned to another user</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">task_assign</code></td>
+      <td>Self-assign a pending task by the currently logged-in user, required to see the <code class="language-plaintext highlighter-rouge">Pending tasks</code> widget on the dashboard</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">task_start</code></td>
+      <td>Start a task - only possible if task is assigned to the current user</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">task_start_all</code></td>
+      <td>Start any task</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">task_close</code></td>
+      <td>Close a task, only possible if task is assigned to the current user or the user owns the <code class="language-plaintext highlighter-rouge">task_edit_other</code> permission</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">task_delete</code></td>
+      <td>Delete any existing task</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">task_view</code></td>
+      <td>Gives access to the task administration and task reports</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">task_details</code></td>
+      <td>See Task details</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">task_team_view</code></td>
+      <td>See the tasks of all team members</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="translations">Translations</h3>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">edit_translation</code></td>
+      <td>Allows to translate labels, menus and more at <code class="language-plaintext highlighter-rouge">System &gt; Translations</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="audit-logs">Audit logs</h3>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">audit_logs</code></td>
+      <td>Grant access to the <code class="language-plaintext highlighter-rouge">Audit logs</code> page with all entries at <code class="language-plaintext highlighter-rouge">Administration &gt; Audit logs</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">audit_customer</code></td>
+      <td>see all changes for customers</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">audit_project</code></td>
+      <td>see all changes for projects</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">audit_activity</code></td>
+      <td>see all changes for activities</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">audit_user</code></td>
+      <td>see all changes for users</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">audit_configuration</code></td>
+      <td>see all changes for system configurations</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">audit_invoice</code></td>
+      <td>see all changes for invoices</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">audit_own_timesheet</code></td>
+      <td>see all changes for own timesheet records</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">audit_other_timesheet</code></td>
+      <td>see all changes in other users timesheet records (only via team timesheets)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="custom-content">Custom content</h3>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">edit_custom_content</code></td>
+      <td>Grant access to the <code class="language-plaintext highlighter-rouge">Custom content</code> administration at <code class="language-plaintext highlighter-rouge">System &gt; Custom content</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">js_custom_content</code></td>
+      <td>edit the additional javascript</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">css_custom_content</code></td>
+      <td>Edit the additional stylesheet</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">alert_custom_content</code></td>
+      <td>Edit the page wide warning message</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">news_custom_content</code></td>
+      <td>Edit the additional news page</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="expenses">Expenses</h3>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">view_expense</code></td>
+      <td>Grant access to the <code class="language-plaintext highlighter-rouge">Expenses</code> page</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">edit_expense</code></td>
+      <td>Edit existing expenses</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">edit_expense_cost</code></td>
+      <td>Edit the cost of a single expense (deactivate this, if you want to provide default costs via the category)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">export_expense</code></td>
+      <td>Export expenses</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">create_expense</code></td>
+      <td>Create new expenses</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">delete_expense</code></td>
+      <td>Delete existing expenses</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">manage_expense_category</code></td>
+      <td>Manage expense types</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">edit_exported_expense</code></td>
+      <td>Allow to edit and delete exported expenses</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="importer">Importer</h3>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">importer</code></td>
+      <td>Grant access to the <code class="language-plaintext highlighter-rouge">Importer</code> to load CSV and JSON files at <code class="language-plaintext highlighter-rouge">System &gt; Importer</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="kiosk">Kiosk</h3>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">kiosk_admin</code></td>
+      <td>Grant access to the <code class="language-plaintext highlighter-rouge">Kiosk</code> administration to assign user codes at <code class="language-plaintext highlighter-rouge">Administration &gt; Kiosk mode</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">kiosk_own_profile</code></td>
+      <td>Configure codes and user specific kiosk settings (eg. start and end time) for own account</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">kiosk_other_profile</code></td>
+      <td>Configure codes and user specific kiosk settings (eg. start and end time) for other accounts</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="reporting">Reporting</h3>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">view_reporting</code></td>
+      <td>Grant access to the <code class="language-plaintext highlighter-rouge">Reporting</code> screen</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">view_other_reporting</code></td>
+      <td>Grant access to the reports of other users</td>
     </tr>
   </tbody>
 </table>
@@ -1364,101 +1826,38 @@ For example: exported timesheet records cannot be edited, even if a user has the
 <table class="table permissions">
   <thead>
     <tr>
-      <th>Permission name</th>
+      <th>Name</th>
       <th>Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong>Export</strong></td>
-      <td> </td>
+      <td><code class="language-plaintext highlighter-rouge">api_access</code></td>
+      <td>Grant access to use the JSON API via API token authentication</td>
     </tr>
     <tr>
-      <td>create_export</td>
-      <td>See <a href="/documentation/export.html">export</a> screen and create export documents from the selected timesheet data</td>
-    </tr>
-    <tr>
-      <td>create_export_template</td>
-      <td>Create, edit and delete CSV and Excel <a href="/documentation/export.html">export templates</a></td>
-    </tr>
-    <tr>
-      <td><strong>Reporting</strong></td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>view_other_reporting</td>
-      <td>Gives access to the reports of other users</td>
-    </tr>
-    <tr>
-      <td>view_reporting</td>
-      <td>Gives access to the <a href="/documentation/reporting.html">reporting</a> screen</td>
-    </tr>
-    <tr>
-      <td><strong>Tags</strong></td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>delete_tag</td>
-      <td>Delete existing tags</td>
-    </tr>
-    <tr>
-      <td>manage_tag</td>
-      <td>Edit existing and create new tags in the administration</td>
-    </tr>
-    <tr>
-      <td>view_tag</td>
-      <td>Gives access to the <a href="/documentation/tags.html">tags</a> administration</td>
-    </tr>
-    <tr>
-      <td><strong>Teams</strong></td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>create_team</td>
-      <td>Create new teams</td>
-    </tr>
-    <tr>
-      <td>delete_team</td>
-      <td>Delete existing teams</td>
-    </tr>
-    <tr>
-      <td>edit_team</td>
-      <td>Edit team assignments</td>
-    </tr>
-    <tr>
-      <td>view_team</td>
-      <td>See <a href="/documentation/teams.html">teams</a> administration</td>
-    </tr>
-    <tr>
-      <td>view_team_member</td>
-      <td>View the teamleads and members for the teams of the current user</td>
-    </tr>
-    <tr>
-      <td><strong>Other</strong></td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>plugins</td>
+      <td><code class="language-plaintext highlighter-rouge">plugins</code></td>
       <td>Access the plugin administration</td>
     </tr>
     <tr>
-      <td>role_permissions</td>
-      <td><strong>SECURITY ALERT</strong>: view and change permissions for user roles, create and delete user roles - <code class="language-plaintext highlighter-rouge">System-Admins</code> will always own that permission</td>
+      <td><code class="language-plaintext highlighter-rouge">role_permissions</code></td>
+      <td><strong>SECURITY ALERT</strong> - view and change permissions for user roles, create and delete user roles - <code class="language-plaintext highlighter-rouge">System-Admins</code> will always own that permission</td>
     </tr>
     <tr>
-      <td>system_configuration</td>
+      <td><code class="language-plaintext highlighter-rouge">system_configuration</code></td>
       <td>Configure global Kimai settings</td>
     </tr>
     <tr>
-      <td>system_information</td>
+      <td><code class="language-plaintext highlighter-rouge">system_information</code></td>
       <td>Enter the system-information (about) screen</td>
     </tr>
     <tr>
-      <td>view_all_data</td>
-      <td><strong>SECURITY ALERT</strong>: Allows to see all data (disables team permissions) - <code class="language-plaintext highlighter-rouge">System-Admins</code> will always own that permission</td>
+      <td><code class="language-plaintext highlighter-rouge">view_all_data</code></td>
+      <td><strong>SECURITY ALERT</strong> - allows to see all data (disables team permissions) - <code class="language-plaintext highlighter-rouge">System-Admins</code> will always own that permission</td>
     </tr>
   </tbody>
 </table>
+
 
                 </div>
                 
@@ -1473,7 +1872,7 @@ For example: exported timesheet records cannot be edited, even if a user has the
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#roles" class="nav-link">Roles</a><ul><li class="nav-item"><a href="#creating-roles" class="nav-link">Creating roles</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a><ul><li class="nav-item"><a href="#activity" class="nav-link">Activity</a></li><li class="nav-item"><a href="#customer" class="nav-link">Customer</a></li><li class="nav-item"><a href="#project" class="nav-link">Project</a></li><li class="nav-item"><a href="#timesheet" class="nav-link">Timesheet</a></li><li class="nav-item"><a href="#user" class="nav-link">User</a></li><li class="nav-item"><a href="#invoice" class="nav-link">Invoice</a></li><li class="nav-item"><a href="#absences" class="nav-link">Absences</a></li><li class="nav-item"><a href="#working-times" class="nav-link">Working times</a></li><li class="nav-item"><a href="#others" class="nav-link">Others</a></li></ul></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#roles" class="nav-link">Roles</a><ul><li class="nav-item"><a href="#creating-roles" class="nav-link">Creating roles</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a><ul><li class="nav-item"><a href="#activity" class="nav-link">Activity</a></li><li class="nav-item"><a href="#customer" class="nav-link">Customer</a></li><li class="nav-item"><a href="#project" class="nav-link">Project</a></li><li class="nav-item"><a href="#timesheet" class="nav-link">Timesheet</a></li><li class="nav-item"><a href="#export" class="nav-link">Export</a></li><li class="nav-item"><a href="#user" class="nav-link">User</a></li><li class="nav-item"><a href="#teams" class="nav-link">Teams</a></li><li class="nav-item"><a href="#tags" class="nav-link">Tags</a></li><li class="nav-item"><a href="#invoice" class="nav-link">Invoice</a></li><li class="nav-item"><a href="#absences" class="nav-link">Absences</a></li><li class="nav-item"><a href="#working-times" class="nav-link">Working times</a></li><li class="nav-item"><a href="#customer-portal" class="nav-link">Customer portal</a></li><li class="nav-item"><a href="#custom-fields" class="nav-link">Custom fields</a></li><li class="nav-item"><a href="#public-holidays" class="nav-link">Public holidays</a></li><li class="nav-item"><a href="#tasks" class="nav-link">Tasks</a></li><li class="nav-item"><a href="#translations" class="nav-link">Translations</a></li><li class="nav-item"><a href="#audit-logs" class="nav-link">Audit logs</a></li><li class="nav-item"><a href="#custom-content" class="nav-link">Custom content</a></li><li class="nav-item"><a href="#expenses" class="nav-link">Expenses</a></li><li class="nav-item"><a href="#importer" class="nav-link">Importer</a></li><li class="nav-item"><a href="#kiosk" class="nav-link">Kiosk</a></li><li class="nav-item"><a href="#reporting" class="nav-link">Reporting</a></li><li class="nav-item"><a href="#others" class="nav-link">Others</a></li></ul></li></ul>
         
     </aside>
 
