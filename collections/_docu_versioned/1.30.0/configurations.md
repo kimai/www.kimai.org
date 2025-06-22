@@ -58,7 +58,7 @@ Users with the `edit_other_timesheet` [permission]({% link _documentation/permis
 `start` and `end` time in the `Admin > Timesheets` screen. If your country has work regulations that should limit access to this data,
 make sure to remove this permission for persons without special access regulations (e.g. your HR department).
 
-## Weekly working hours
+## Weekly hours
 
 - `Number of entries taken over from previous weeks` - defines the maximum number of "recent activity" rows that will be pre-filled in new weeks.
 You can deactivate that feature by setting the value to 0. 

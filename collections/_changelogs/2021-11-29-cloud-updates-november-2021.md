@@ -14,9 +14,9 @@ This update focused on many small detail improvements to make your daily workflo
 
 One big new feature stands out in this update: the form for recording weekly working hours.
 
-### Recording weekly working hours
+### Recording weekly hours
 
-All users will see the new menu item "Weekly working hours". With the help of this form, you will be able to record the working hours of an entire week within a very short time. It should be noted here that the start time of each entry will be the same and the form is primarily intended to make recording easier for certain user groups and/or to make life easier for companies that already record only the duration of work (but not the time). 
+All users will see the new menu item "Weekly hours". With the help of this form, you will be able to record the working hours of an entire week within a very short time. It should be noted here that the start time of each entry will be the same and the form is primarily intended to make recording easier for certain user groups and/or to make life easier for companies that already record only the duration of work (but not the time). 
 
 If you do not want to use this form, please revoke the permission `weekly_own_timesheet` for the corresponding user roles (at least "User"). If you have question about this, [please contact the support](/support-center/request).
 
