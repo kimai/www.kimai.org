@@ -558,3 +558,7 @@ Besides these filters, you can query for a free search term, which will be searc
 - `customer company`
 
 {% include snippets/search-custom-field.md %}
+ 
+## Permissions
+
+{% include documentation/permissions.md id="invoice" howto=true %}

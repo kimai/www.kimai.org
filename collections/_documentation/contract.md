@@ -131,6 +131,4 @@ This permission should be granted to employees e.g. from HR department.
 
 ## Permissions
 
-{% include documentation/permissions-contract.md %}
-
-{% include snippets/store-howto-permissions.md %}
+{% include documentation/permissions.md id="work_contract" howto=true %}

@@ -33,3 +33,7 @@ The linked timesheet records are NOT touched.
 
 You can query for a free search term, which will be searched in the fields:
 - `name`
+
+## Permissions
+
+{% include documentation/permissions.md id="tags" howto=true %}

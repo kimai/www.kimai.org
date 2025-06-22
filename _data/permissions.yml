@@ -1,0 +1,286 @@
+activity_admin:
+    name: Admin
+    permissions:
+        budget_activity: Allows to see the budget (monetary) reports for activities of assigned projects/customers
+        time_activity: Allows to see the budget (time) reports for activities of assigned projects/customers
+        create_activity: Create a new activity
+        delete_activity: Delete activities
+        edit_activity: Edit existing activities
+        permissions_activity: Allows to edit the teams for assigned activities
+        view_activity: Allows access to the activity administration
+activity_team_leader:
+    name: If you are a Teamleader, whose team is assigned to this activity
+    permissions:
+        budget_teamlead_activity: Allow team leaders to see the budget (money) reports for activities of assigned projects/customers
+        time_teamlead_activity: Allow team leaders to see the budget (time) reports for activities of assigned projects/customers
+        edit_teamlead_activity: Allow team leaders to edit activities for assigned projects/customers
+        permissions_teamlead_activity: Allow team leaders to edit the teams for assigned activities
+        view_teamlead_activity: Allow team leaders to access activity administration
+activity_team_member:
+    name: If you are a member of a team, that is assigned to this activity
+    permissions:
+        budget_team_activity: Allows team-members to see the budget (money) reports for activities of assigned projects/customers
+        time_team_activity: Allows team-members to see the budget (time) reports for activities of assigned projects/customers
+        edit_team_activity: Allows team-members to edit activities of assigned projects/customers
+        view_team_activity: Allows team-members to access activity administration
+customer_admin:
+    name: Admin
+    permissions:
+        budget_customer: Allows to see the budget (money) reports for the customer
+        time_customer: Allows to see the budget (time) reports for the customer
+        comments_customer: Allows to see the comment section for customers
+        create_customer: Create new customers
+        delete_customer: Delete existing customers
+        details_customer: View customer details (account number, vat, rates, meta-fields, assigned teams & users)
+        edit_customer: Edit existing customers
+        permissions_customer: Allows to edit the teams for assigned customers
+        view_customer: Allows access to the customer administration
+customer_team_leader:
+    name: If you are a Teamleader, whose team is assigned to this customer
+    permissions:
+        budget_teamlead_customer: Allow team leaders to see the budget (money) reports for assigned customers
+        time_teamlead_customer: Allow team leaders to see the budget (time) reports for assigned customers
+        comments_teamlead_customer: Allow team leaders to see the comment section for customers
+        details_teamlead_customer: Allow team leaders to see customer detail
+        edit_teamlead_customer: Allow team leaders to edit assigned customers
+        permissions_teamlead_customer: Allow team leaders to edit the teams for assigned customers
+        view_teamlead_customer: Allow team leaders to access project administration
+customer_team_member:
+    name: If you are a member of a team, that is assigned to this customer
+    permissions:
+        budget_team_customer: Allows team-members to see the budget (money) reports for assigned customers
+        time_team_customer: Allows team-members to see the budget (time) reports for assigned customers
+        comments_team_customer: Allows team-members to see the comment section for customers
+        details_team_customer: Allows team-members to see customer details
+        edit_team_customer: Allows team-members to edit assigned customers
+        view_team_customer: Allows team-members to access project administration
+project_admin:
+    name: Admin
+    permissions:
+        budget_project: Allows to see the budget (money) reports for projects
+        time_project: Allows to see the budget (time) reports for projects
+        comments_project: Allows to see the comment section for projects
+        create_project: Create a new project
+        delete_project: Delete existing projects
+        details_project: View project details (Order number & date, start and end date, rates, assigned teams & users)
+        edit_project: Edit existing projects
+        permissions_project: Allows to edit the teams for assigned projects
+        view_project: Allows access to the project administration
+project_team_leader:
+    name: If you are a Teamleader, whose team is assigned to this project
+    permissions:
+        budget_teamlead_project: Allow team leaders to see the budget (money) reports for assigned projects or projects of assigned customers
+        time_teamlead_project: Allow team leaders to see the budget (time) reports for assigned projects or projects of assigned customers
+        comments_teamlead_project: Allow team leaders to see the comment section for project
+        details_teamlead_project: Allow team leaders to see project details
+        edit_teamlead_project: Allow team leaders to edit assigned projects or projects for assigned customers
+        permissions_teamlead_project: Allow team leaders to edit the teams for assigned projects or projects of assigned customers
+        view_teamlead_project: Allow team leaders to access projects administration
+project_team_member:
+    name: If you are a member of a team, that is assigned to this project
+    permissions:
+        budget_team_project: Allows team-members to see the budget (money) reports for assigned projects or projects of assigned customers
+        time_team_project: Allows team-members to see the budget (time) reports for assigned projects or projects of assigned customers
+        comments_team_project: Allows team-members to see the comment section for project
+        details_team_project: Allows team-members to see project details
+        edit_team_project: Allows team-members to edit assigned projects or projects for assigned customers
+        view_team_project: Allows team-members to access projects administration
+timesheet:
+    name: Admin
+    permissions:
+        edit_exported_timesheet: Edit and delete timesheet records which were exported
+        lockdown_grace_timesheet: All records in the last lockdown period can be edited, even after the grace period ended
+        lockdown_override_timesheet: None of the lockdown rules apply
+timesheet_own:
+    name: Permissions for your own timesheets
+    permissions:
+        create_own_timesheet: Create a new timesheet record with the dialog
+        delete_own_timesheet: Delete own timesheet records
+        edit_export_own_timesheet: Set the export state for your own timesheet record
+        edit_billable_own_timesheet: Set the billable state for your own timesheet record
+        edit_own_timesheet: Edit own timesheet records
+        edit_rate_own_timesheet: Edit the rates for own timesheet records (fixed, hourly and total)
+        export_own_timesheet: Export your own timesheet in the timesheet panel
+        start_own_timesheet: Create a running timesheet record (restart and create)
+        stop_own_timesheet: Stop the own running timesheets records
+        view_own_timesheet: Allows access to the own timesheet views
+        view_rate_own_timesheet: View the rates for own timesheet records (fixed, hourly and total)
+        weekly_own_timesheet: Gives access to the `Weekly hours` screen
+timesheet_other:
+    name: Permissions for timesheets of other users
+    permissions:
+        create_other_timesheet: Create a new timesheet record in the name of another user
+        delete_other_timesheet: Delete timesheets of other users
+        edit_export_other_timesheet: Set the export state for other users timesheet records
+        edit_billable_other_timesheet: Set the billable state for other users timesheet record
+        edit_other_timesheet: Edit existing records of other users
+        edit_rate_other_timesheet: Edit the rates for other users timesheet records (fixed, hourly and total)
+        export_other_timesheet: Export timesheet in the timesheet admin panel
+        start_other_timesheet: Start _running_ timesheet records for other users
+        stop_other_timesheet: Stop _running_ timesheet records of other users
+        view_other_timesheet: Allows access to the timesheet admin panel, listing records for all users
+        view_rate_other_timesheet: View the rates for other users timesheet records (fixed, hourly and total)
+export:
+    name: Export
+    permissions:
+        create_export: See the `Export` page at `Time Tracking > Export` and create export documents from the selected timesheet data
+        create_export_template: Create, edit and delete `Export templates` (CSV and Excel)
+user:
+    name: Admin
+    permissions:
+        view_user: View the `Users` screen at `System > Users` - attention `System-Admins` will always own that permission
+        create_user: Create new users
+        delete_user: "**SECURITY ALERT** - delete existing users"
+user_own_profile:
+    name: Permissions for the own user account
+    permissions:
+        api-token_own_profile: Change the own API token
+        edit_own_profile: Edit own user profile/account
+        hourly-rate_own_profile: Edit the own (user specific) hourly rate
+        password_own_profile: Change own password (should be deactivated when [LDAP]({% link _documentation/ldap.md %}) is used)
+        preferences_own_profile: Allows a user to edit the own preferences
+        roles_own_profile: "**SECURITY ALERT** - change the own user roles"
+        supervisor_own_profile: Change the supervisor for the own profile
+        teams_own_profile: Edit team assignments in own user profile
+        view_own_profile: View own user profile and statistics
+user_other_profile:
+    name: Permissions for profiles of other user accounts
+    permissions:
+        api-token_other_profile: Change the API token for other users
+        edit_other_profile: "**SECURITY ALERT** - edit the profile for another user"
+        hourly-rate_other_profile: Edit other (users specific) hourly rate
+        password_other_profile: "**SECURITY ALERT** - Change the password for another user"
+        preferences_other_profile: Change the preferences for another user
+        roles_other_profile: "**SECURITY ALERT** - change roles for other users"
+        supervisor_other_profile: Change the supervisor for the selected profile
+        teams_other_profile: Edit team assignments in other user profile
+        view_other_profile: View other user profiles
+teams:
+    name: Teams
+    permissions:
+        view_team: View the `Teams` administration at `System > Teams`
+        create_team: Create new teams
+        delete_team: Delete existing teams
+        edit_team: Edit team assignments
+        view_team_member: View team leader and members for the teams of the current user
+tags:
+    name: Tags
+    permissions:
+        view_tag: View the `Tags` administration at `Administration > Tags`
+        delete_tag: Delete existing tags
+        manage_tag: Edit existing and create new tags in the administration
+invoice:
+    name: Invoices
+    permissions:
+        create_invoice: Create a new invoice
+        delete_invoice: Allows to delete invoices (please read docs why you shouldn't)
+        manage_invoice_template: Administrate invoice templates
+        upload_invoice_template: Allows to upload custom invoice templates
+        view_invoice: Gives access to the invoice history and allows to download existing invoices
+absences:
+    name: Absences
+    permissions:
+        absence: View the `Absence` screen at `Employment contract > Absence`
+        edit_own_absence: Edit the own absences
+        edit_other_absence: Edit other users absences
+        delete_own_absence: Delete the own absence entries
+        delete_other_absence: Delete other users absence entries
+        view_other_absence: Switch the user in the`Absence` screen. Also influences the visibility of absence entries in the calendar
+        approve_own_absence: Approve own absence requests
+        approve_other_absence: Approve absence requests of team members (or whose supervisor is not set)
+        approval_other_absence: Request an approval on behalf of another user
+work_contract:
+    name: Work contract
+    permissions:
+        contract_other_profile: Allow to see and change the contract settings of other users
+        hours_own_profile: View the `Employment contract` menu and the own "Working times"
+        hours_other_profile: View the `Employment contract` menu. Switch the user in the `Working Contract` screen
+        view_booking_contract: View working-time details (PDF, Manual bookings)
+        approve_times_contract: Approve monthly timesheets
+        unlock_times_contract: Re-open an already locked month
+        create_booking_contract: Allows to create manual time bookings
+        workdays_override_timesheet: Allows to create timesheets on non-working days, if this restriction is activated in `System > Settings`
+customer_portal:
+    name: Customer portal
+    permissions:
+        customer_portal: Show the `Customer portal` menu at `Administration > Customer portal` and create/edit/delete all shared URLs
+meta_fields:
+    name: Custom fields
+    permissions:
+        configure_meta_fields: View the `Custom fields` screen at `System > Custom fields` and administrate all custom field definitions
+public_holidays:
+    name: Public holidays
+    permissions:
+        edit_public_holidays: Grant access to the `Public holidays` page to configure and import public holidays at `Administration > Public holidays`
+tasks:
+    name: Tasks
+    permissions:
+        task_edit_own: Create and edit tasks that are assigned to the currently logged-in user
+        task_edit_other: Allows to edit all tasks that are visible to the user, create new unassigned tasks, assign team and user, remove assignment and close tasks which are assigned to another user
+        task_assign: Self-assign a pending task by the currently logged-in user, required to see the `Pending tasks` widget on the dashboard
+        task_start: Start a task - only possible if task is assigned to the current user
+        task_start_all: Start any task
+        task_close: Close a task, only possible if task is assigned to the current user or the user owns the `task_edit_other` permission
+        task_delete: Delete any existing task
+        task_view: Gives access to the task administration and task reports
+        task_details: See Task details
+        task_team_view: See the tasks of all team members
+translations:
+    name: Translations
+    permissions:
+        edit_translation: Allows to translate labels, menus and more at `System > Translations`
+audit:
+    name: Audit logs
+    permissions:
+        audit_logs: Grant access to the `Audit logs` page with all entries at `Administration > Audit logs`
+        audit_customer: see all changes for customers
+        audit_project: see all changes for projects
+        audit_activity: see all changes for activities
+        audit_user: see all changes for users
+        audit_configuration: see all changes for system configurations
+        audit_invoice: see all changes for invoices
+        audit_own_timesheet: see all changes for own timesheet records
+        audit_other_timesheet: see all changes in other users timesheet records (only via team timesheets)
+custom_content:
+    name: Custom content
+    permissions:
+        edit_custom_content: Grant access to the `Custom content` administration at `System > Custom content`
+        js_custom_content: edit the additional javascript
+        css_custom_content: Edit the additional stylesheet
+        alert_custom_content: Edit the page wide warning message
+        news_custom_content: Edit the additional news page
+expenses:
+    name: Expenses
+    permissions:
+        view_expense: Grant access to the `Expenses` page
+        edit_expense: Edit existing expenses
+        edit_expense_cost: Edit the cost of a single expense (deactivate this, if you want to provide default costs via the category)
+        export_expense: Export expenses
+        create_expense: Create new expenses
+        delete_expense: Delete existing expenses
+        manage_expense_category: Manage expense types
+        edit_exported_expense: Allow to edit and delete exported expenses
+importer:
+    name: Importer
+    permissions:
+        importer: Grant access to the `Importer` to load CSV and JSON files at `System > Importer`
+kiosk:
+    name: Kiosk
+    permissions:
+        kiosk_admin: Grant access to the `Kiosk` administration to assign user codes at `Administration > Kiosk mode`
+        kiosk_own_profile: Configure codes and user specific kiosk settings (eg. start and end time) for own account
+        kiosk_other_profile: Configure codes and user specific kiosk settings (eg. start and end time) for other accounts
+reporting:
+    name: Reporting
+    permissions:
+        view_reporting: Grant access to the `Reporting` screen
+        view_other_reporting: Grant access to the reports of other users
+other:
+    name: Others
+    permissions:
+        api_access: Grant access to use the JSON API via API token authentication
+        plugins: Access the plugin administration
+        role_permissions: "**SECURITY ALERT** - view and change permissions for user roles, create and delete user roles - `System-Admins` will always own that permission"
+        system_configuration: Configure global Kimai settings
+        system_information: Enter the system-information (about) screen
+        view_all_data: "**SECURITY ALERT** - allows to see all data (disables team permissions) - `System-Admins` will always own that permission"

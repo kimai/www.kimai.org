@@ -34,7 +34,7 @@ There is a toggle called `Use decimal duration in export` that switches between 
 
 {% include docs-image.html src="/images/documentation/export-time-format.webp" title="Time format toggle" width="400px" %}
 
-## Adding export templates
+## Export templates
 
 ### CSV and XLSX
 
@@ -92,9 +92,10 @@ You can access custom fields with `entry.metaField('name')` and you should alway
 
 ## Permissions
 
-- The export page is visible to users who own the `create_export` permission
-- The `create_export_template` permission controls if you can create, edit and delete CSV and Excel export templates
-- The export does **not always** respect permissions like `view_rate_other_timesheet` and `view_rate_own_timesheet`
+{% alert danger %}The export extension does not check all available permissions, as this would defeat the purpose of an export. If your users shall not see rates, do not give them the "create_export" permission.{% endalert %}
+ 
+- The export does **not** guarantee to respect permissions like `view_rate_other_timesheet` and `view_rate_own_timesheet`
 - The "mark as export" checkbox is only available for users with the `edit_export_other_timesheet` [permission]({% link _documentation/permissions.md %})
 
-{% alert danger %}The export extension does not check all available permissions, as this would defeat the purpose of an export. If your users shall not see rates, do not give them the 'create_export' permission.{% endalert %}
+{% include documentation/permissions.md id="export" howto=true %}
+ 

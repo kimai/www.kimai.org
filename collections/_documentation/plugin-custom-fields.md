@@ -98,11 +98,4 @@ Once you open an existing record, you can now see the custom field, as its visib
 
 ## Permissions
 
-| Permission Name         | Description                                         |
-|-------------------------|-----------------------------------------------------|
-| `configure_meta_fields` | allows to administrate the custom field definitions |
-{: .table }
-
-By default, these are assigned to each user with the role `ROLE_SUPER_ADMIN`.
-
-{% include snippets/store-howto-permissions.md %}
+{% include documentation/permissions.md id="meta_fields" howto=true super_admin=true %}

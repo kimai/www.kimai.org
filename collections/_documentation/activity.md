@@ -133,3 +133,9 @@ Activities can be deleted from the `Activity listing` view.
 Use the row context menu to access the delete option. The system will either:
 - Confirm safe deletion for unused activities
 - Show activity statistics and prompt for timesheet reassignment
+
+## Permissions
+
+{% include documentation/permissions.md id="activity_admin" title=true %}
+{% include documentation/permissions.md id="activity_team_leader" title=true %}
+{% include documentation/permissions.md id="activity_team_member" title=true howto=true %}

@@ -59,10 +59,5 @@ By editing single public holidays you can:
 - Add new custom holidays
 
 ## Permissions
-
-| Permission Name         | Description                                                                                        |
-|-------------------------|----------------------------------------------------------------------------------------------------|
-| `edit_public_holidays`  | Allows to configure public holidays. By default given to `Administrator` and `Super Administrator` |
-{: .table }
-
-{% include snippets/store-howto-permissions.md %}
+ 
+{% include documentation/permissions.md id="public_holidays" howto=true %}

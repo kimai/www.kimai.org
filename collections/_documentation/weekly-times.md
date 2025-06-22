@@ -50,3 +50,4 @@ Users require additionally the permissions `view_own_timesheet` and `edit_own_ti
 The last check is if the current time-tracking mode (see [System > Settings]({% link _documentation/configurations.md %})) 
 allows `editing the duration` or `editing the end` (which is not true for the punch-mode).
 
+If you own the permission `view_other_timesheet` you can switch the user.

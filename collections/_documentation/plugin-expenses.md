@@ -89,23 +89,9 @@ The free search term will query the field:
 
 ## Permissions
 
-| Permission Name            | Description                                                                                                |
-|----------------------------|------------------------------------------------------------------------------------------------------------|
-| `view_expense`             | allows access to the expenses screen                                                                       |
-| `edit_expense`             | edit existing expenses                                                                                     |
-| `edit_expense_cost`        | edit the cost of a single expense (deactivate this, if you want to provide default costs via the category) |
-| `export_expense`           | export expenses                                                                                            |
-| `create_expense`           | create new expenses                                                                                        |
-| `delete_expense`           | delete existing expenses                                                                                   |
-| `manage_expense_category`  | manage expense types                                                                                       | 
-| `edit_exported_expense`    | allow to edit and delete exported expenses                                                                 | 
-{: .table }
-
-Pre-defined permissions are assigned to all default user roles.
-
-The following restrictions are in place for accessing other user's data:
+The following restrictions are in place for accessing another user's data:
 - can only be seen by users who own the `view_other_timesheet`
 - users that own the `view_expense` permission but NOT `view_other_timesheet` will only see own expenses
 - the visible data for non-admin users (permission `view_all_data`) is limited by team assignments
 
-{% include snippets/store-howto-permissions.md %}
+{% include documentation/permissions.md id="expenses" howto=true all_roles=true %}

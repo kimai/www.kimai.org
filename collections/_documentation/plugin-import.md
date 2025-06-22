@@ -174,11 +174,4 @@ Kimai only supports imports for GT exports from the languages english and german
 
 ## Permissions
 
-| Permission Name | Description                                           |
-|-----------------|-------------------------------------------------------|
-| `importer`      | access the administration screen to import CSV files  |
-{: .table }
-
-By default, these are assigned to each user with the role `ROLE_SUPER_ADMIN`.
-
-{% include snippets/store-howto-permissions.md %}
+{% include documentation/permissions.md id="importer" howto=true super_admin=true %}

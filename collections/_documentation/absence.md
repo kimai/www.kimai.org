@@ -77,6 +77,4 @@ This fills up entire days and can be entered as date-range.
 
 ## Permissions
 
-{% include documentation/permissions-absence.md %}
-
-{% include snippets/store-howto-permissions.md %}
+{% include documentation/permissions.md id="absences" howto=true %}

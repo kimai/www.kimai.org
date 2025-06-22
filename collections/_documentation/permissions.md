@@ -25,15 +25,13 @@ There are four pre-defined roles in Kimai, which have a customizable set of ACLs
 | System-Admin   | Has permissions to manage everything in Kimai, from content to timesheets to users, plugins and system configurations. Technical name: `ROLE_SUPER_ADMIN` |
 {: .table }
 
-{% alert danger %}
-Every user is automatically member of the ROLE_USER, this behaviour cannot be changed. 
-
-That means, that every role and user owns all permissions from the `ROLE_USER`. 
-{% endalert %}
+{% alert danger -%}
+Every user is automatically member of the `ROLE_USER` (this cannot be changed), which means that every user owns all permissions from the `ROLE_USER`. 
+{%- endalert %}
 
 ### Creating roles
 
-If the pre-defined roles are not sufficient for your use-case and you need more roles, you can create new ones.
+If the pre-defined roles are not enough for your use-case and you need more roles, you can create new ones.
 
 Every user with the permission `role_permissions` can create new user roles. 
 There is a button that will open a new modal, to enter a role name. This new role will show up in the table after saving.
@@ -50,66 +48,107 @@ Clicking the `Yes` and `No` labels in the table toggles the selected permission 
 
 If a user has multiple roles, then access is granted as soon as one of these roles own the permission.
 
-**Be aware**
-There are other business rules which might limit access to certain functions, so permissions are not the only checks in place.
-For example: exported timesheet records cannot be edited, even if a user has the `edit_own_timesheet` or `edit_other_timesheet` permission.
- 
+**Be aware**: tother business rules might limit access to certain functions, permissions are not the only checks in place.
+For example, exported timesheet records cannot be edited, even if a user owns the `edit_own_timesheet` or `edit_other_timesheet` permission.
+
 ### Activity
 
-{% include documentation/permissions-activity.md %}
+{% include documentation/permissions.md id="activity_admin" title=true %}
+{% include documentation/permissions.md id="activity_team_leader" title=true %}
+{% include documentation/permissions.md id="activity_team_member" title=true %}
 
 ### Customer
 
-{% include documentation/permissions-customer.md %}
+{% include documentation/permissions.md id="customer_admin" title=true %}
+{% include documentation/permissions.md id="customer_team_leader" title=true %}
+{% include documentation/permissions.md id="customer_team_member" title=true %}
 
 ### Project
 
-{% include documentation/permissions-project.md %}
+{% include documentation/permissions.md id="project_admin" title=true %}
+{% include documentation/permissions.md id="project_team_leader" title=true %}
+{% include documentation/permissions.md id="project_team_member" title=true %}
 
 ### Timesheet
 
-{% include documentation/permissions-timesheet.md %}
+{% include documentation/permissions.md id="timesheet" title=true %}
+{% include documentation/permissions.md id="timesheet_own" title=true %}
+{% include documentation/permissions.md id="timesheet_other" title=true %}
+
+### Export
+
+{% include documentation/permissions.md id="export" %}
 
 ### User
 
-{% include documentation/permissions-user.md %}
+{% include documentation/permissions.md id="user" title=true %}
+{% include documentation/permissions.md id="user_own_profile" title=true %}
+{% include documentation/permissions.md id="user_other_profile" title=true %}
+
+### Teams
+
+{% include documentation/permissions.md id="teams" %}
+
+### Tags
+
+{% include documentation/permissions.md id="tags" %}
 
 ### Invoice
 
-{% include documentation/permissions-invoice.md %}
+{% include documentation/permissions.md id="invoice" %}
 
 ### Absences
 
-{% include documentation/permissions-absence.md %}
+{% include documentation/permissions.md id="absences" %}
 
 ### Working times
 
-{% include documentation/permissions-contract.md %}
+{% include documentation/permissions.md id="work_contract" %}
  
+### Customer portal
+
+{% include documentation/permissions.md id="customer_portal" %}
+ 
+### Custom fields
+
+{% include documentation/permissions.md id="meta_fields" %}
+ 
+### Public holidays
+
+{% include documentation/permissions.md id="public_holidays" %}
+
+### Tasks
+
+{% include documentation/permissions.md id="tasks" %}
+
+### Translations
+
+{% include documentation/permissions.md id="translations" %}
+
+### Audit logs
+
+{% include documentation/permissions.md id="audit" %}
+
+### Custom content
+
+{% include documentation/permissions.md id="custom_content" %}
+
+### Expenses
+
+{% include documentation/permissions.md id="expenses" %}
+
+### Importer
+
+{% include documentation/permissions.md id="importer" %}
+
+### Kiosk
+
+{% include documentation/permissions.md id="kiosk" %}
+
+### Reporting
+
+{% include documentation/permissions.md id="reporting" %}
+
 ### Others
 
-| Permission name          | Description                                                                                                                                    |
-|--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Export**               |                                                                                                                                                |
-| create_export            | See [export]({% link _documentation/export.md %}) screen and create export documents from the selected timesheet data                          |
-| create_export_template   | Create, edit and delete CSV and Excel [export templates]({% link _documentation/export.md %})                                                  |
-| **Reporting**            |                                                                                                                                                |
-| view_other_reporting     | Gives access to the reports of other users                                                                                                     |
-| view_reporting           | Gives access to the [reporting]({% link _documentation/reporting.md %}) screen                                                                 |
-| **Tags**                 |                                                                                                                                                |
-| delete_tag               | Delete existing tags                                                                                                                           |
-| manage_tag               | Edit existing and create new tags in the administration                                                                                        |
-| view_tag                 | Gives access to the [tags]({% link _documentation/tags.md %}) administration                                                                   |
-| **Teams**                |                                                                                                                                                |
-| create_team              | Create new teams                                                                                                                               |
-| delete_team              | Delete existing teams                                                                                                                          |
-| edit_team                | Edit team assignments                                                                                                                          |
-| view_team                | See [teams]({% link _documentation/teams.md %}) administration                                                                                 |
-| view_team_member         | View the teamleads and members for the teams of the current user                                                                               |
-| **Other**                |                                                                                                                                                |
-| plugins                  | Access the plugin administration                                                                                                               |
-| role_permissions         | **SECURITY ALERT**: view and change permissions for user roles, create and delete user roles - `System-Admins` will always own that permission |
-| system_configuration     | Configure global Kimai settings                                                                                                                |
-| system_information       | Enter the system-information (about) screen                                                                                                    |
-| view_all_data            | **SECURITY ALERT**: Allows to see all data (disables team permissions) - `System-Admins` will always own that permission                       |
-{: .table .permissions }
+{% include documentation/permissions.md id="other" %}

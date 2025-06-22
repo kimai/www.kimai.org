@@ -42,11 +42,4 @@ The edit dialog allows to change your custom translation:
 
 ## Permissions
 
-| Permission Name     | Description                                                                               |
-|---------------------|-------------------------------------------------------------------------------------------|
-| `edit_translation`  | access the translation screen and allow all actions: create, edit and delete translations |
-{: .table }
-
-By default, these are assigned to each user with the role `ROLE_SUPER_ADMIN`.
-
-{% include snippets/store-howto-permissions.md %}
+{% include documentation/permissions.md id="translations" howto=true super_admin=true %}

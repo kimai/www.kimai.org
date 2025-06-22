@@ -112,3 +112,9 @@ Right-click on a row (or open the action dropdown at the end of it) to see all a
 The last action in the list is `Delete` - once you click it you wil get a feedback screen which either tells you that the
 customer is unused and can be safely deleted, or it will show you quick stats of the customer and then ask you to re-assign
 the attached timesheets to another customer.
+
+## Permissions
+
+{% include documentation/permissions.md id="customer_admin" title=true %}
+{% include documentation/permissions.md id="customer_team_leader" title=true %}
+{% include documentation/permissions.md id="customer_team_member" title=true howto=true %}

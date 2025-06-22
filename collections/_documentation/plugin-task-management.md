@@ -1,5 +1,5 @@
 ---
-title: Task management
+title: Tasks
 description: Manage your tasks / todo lists, use user and team assignments and track times for them
 ---
 
@@ -53,30 +53,17 @@ This widget has the following UI elements (if permissions are set for the user):
 
 Visible for all user with `task_start` and either one of `task_assign` or `task_team_view` permission.
 
+## Close a task
+
+Closing a task means the work is finished.
+
+The task will be removed from the `My tasks` widget only after it is reloaded (until then it can be reopened).
+
 ## Permissions
 
-This bundle introduces new permissions, which limit access to certain functions:
-
-| Permission        | Description                                                                                                                                                                                                                 |
-|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `task_edit_own`   | Create and edit tasks that are assigned to the currently logged-in user.                                                                                                                                                    |
-| `task_edit_other` | Allows to edit all tasks that are visible to the user. Create new unassigned tasks, assign team and user. Remove assignment and close tasks which are assigned to another user (stops running records).                     |
-| `task_assign`     | Self-assign a pending task by the currently logged-in user. Required to see the "Pending tasks" widget on the dashboard.                                                                                                    |
-| `task_start`      | Start a task. Only possible if task is assigned to the current user.                                                                                                                                                        | 
-| `task_start_all`  | Start any task.                                                                                                                                                                                                             |                                                                                                                                                                                                             
-| `task_close`      | Close a task. Possible if task is assigned to the current user or the user owns the `task_edit_other` permission. The task will be removed from the "My tasks" widget after it is reloaded (until then it can be reopened). |
-| `task_delete`     | Delete any existing task.                                                                                                                                                                                                   |
-| `task_view`       | Gives access to the task administration and task reports                                                                                                                                                                    |
-| `task_details`    | See Task details                                                                                                                                                                                                            |
-| `task_team_view`  | See the tasks of all team members                                                                                                                                                                                           |
-{: .table }
-
-{% include snippets/store-howto-permissions.md %}
-
-The following restrictions are in place for accessing other user's data:
+The following restrictions are in place for accessing another user's data:
 - can only be seen by users who own the `view_other_timesheet`
 - users that own the `task_view` permission but NOT `view_other_timesheet` will only see own/assigned tasks
 - the visible data for non-admin users (permission `view_all_data`) is limited by team assignments
 
-A pre-configured permission set for all default user roles is applied by the plugin.
-Please adjust them to your needs in "User > Role & permissions" administration.
+{% include documentation/permissions.md id="tasks" howto=true all_roles=true %}

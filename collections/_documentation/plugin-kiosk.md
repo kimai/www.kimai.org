@@ -60,15 +60,4 @@ This mode has limitations and should ONLY be used for test purposes. Use a dedic
 
 ## Permissions
 
-This bundle introduces new permissions, which limit access to certain functions:
-
-| Permission Name         | Description                                                                                  |
-|-------------------------|----------------------------------------------------------------------------------------------|
-| `kiosk_admin`           | whether the current user can see the Kiosk administration and assign codes                   |
-| `kiosk_own_profile`     | configure codes and user specific kiosk settings (eg. start and end time) for own account    |
-| `kiosk_other_profile`   | configure codes and user specific kiosk settings (eg. start and end time) for other accounts |
-{: .table }
-
-By default, these are granted to each user with the role `ROLE_SUPER_ADMIN`.
-
-{% include snippets/store-howto-permissions.md %}
+{% include documentation/permissions.md id="kiosk" howto=true super_admin=true %}

@@ -60,8 +60,4 @@ You can change the language (here `/en/`) to your required wished language, e.g.
 
 ## Permissions
 
-{% include documentation/permissions-customer-portal.md %}
-
-By default, these are assigned to each user with the role `ROLE_SUPER_ADMIN`.
-
-{% include snippets/store-howto-permissions.md %}
+{% include documentation/permissions.md id="customer_portal" howto=true super_admin=true %}

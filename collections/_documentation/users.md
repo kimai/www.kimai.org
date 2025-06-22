@@ -148,3 +148,8 @@ Please read the [user preferences documentation]({% link _documentation/user-pre
 The timezone is a user-specific setting and every user can have its own timezone setting.
 Don't mix this up with the system specific configuration for new customers.
 
+## Permissions
+
+{% include documentation/permissions.md id="user" title=true %}
+{% include documentation/permissions.md id="user_own_profile" title=true %}
+{% include documentation/permissions.md id="user_other_profile" title=true howto=true %}

@@ -160,3 +160,9 @@ Besides these filters, you can query for a free search term, which will be searc
 - `description`
 
 {% include snippets/search-custom-field.md %}
+
+## Permissions
+
+{% include documentation/permissions.md id="timesheet" title=true %}
+{% include documentation/permissions.md id="timesheet_own" title=true %}
+{% include documentation/permissions.md id="timesheet_other" title=true howto=true %}

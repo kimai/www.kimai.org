@@ -51,3 +51,7 @@ Team creation is limited to the user roles `System-Admin` and `Administrator`.
 
 You can query for a free search term, which will be searched in the fields:
 - `name`
+
+## Permissions
+
+{% include documentation/permissions.md id="teams" howto=true %}

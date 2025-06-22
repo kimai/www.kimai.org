@@ -29,15 +29,4 @@ That's how the **alert / warning message** looks like. You can even include _mar
 
 ## Permissions
 
-| Permission Name         | Description                                     |
-|-------------------------|-------------------------------------------------|
-| `edit_custom_content`   | show the "custom content" administration screen |
-| `js_custom_content`     | edit the additional javascript                  |
-| `css_custom_content`    | edit the additional stylesheet                  |
-| `alert_custom_content`  | edit the page wide warning message              |
-| `news_custom_content`   | edit the additional news page                   |
-{: .table }
-
-By default, these are assigned to each user with the role `ROLE_SUPER_ADMIN`.
-
-{% include snippets/store-howto-permissions.md %}
+{% include documentation/permissions.md id="custom_content" howto=true super_admin=true %}
