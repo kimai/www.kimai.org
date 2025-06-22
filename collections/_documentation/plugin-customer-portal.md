@@ -3,7 +3,7 @@ title: Customer Portal
 description: Share client and project statistics and timesheets with anyone using a secret URL, optionally password protected.
 ---
 
-## Sharing a customer
+## Sharing customer data
 
 Sharing a customer shows all recorded timesheets.
 
@@ -22,7 +22,7 @@ You can activate the following options to show further customer details:
   - Budget statistics
   - Time-Budget
 
-## Sharing a project
+## Sharing project data
 
 Sharing a project shows all recorded timesheets.
 
@@ -60,9 +60,9 @@ You can change the language (here `/en/`) to your required wished language, e.g.
 
 ## Permissions
 
-| Permission Name      | Description                        |
-|----------------------|------------------------------------|
-| customer_portal      | edit all shared URLs               |
+| Permission Name      | Description                                          |
+|----------------------|------------------------------------------------------|
+| customer_portal      | Show the `Customer portal` menu edit all shared URLs |
 {: .table }
 
 By default, these are assigned to each user with the role `ROLE_SUPER_ADMIN`.
