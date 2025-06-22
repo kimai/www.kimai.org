@@ -64,9 +64,9 @@ That's how the **alert / warning message** looks like. You can even include _mar
 
 ## Permissions
 
-| Permission Name      | Description                                     |
-|----------------------|-------------------------------------------------|
-| edit_custom_content  | show the "custom content" administration screen |
+| Permission Name       | Description                                     |
+|-----------------------|-------------------------------------------------|
+| `edit_custom_content` | show the "custom content" administration screen |
 {: .table }
 
 By default, these are assigned to each user with the role `ROLE_SUPER_ADMIN`.
