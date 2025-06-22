@@ -44,7 +44,7 @@ The edit dialog allows to change your custom translation:
 
 | Permission Name     | Description                                                                               |
 |---------------------|-------------------------------------------------------------------------------------------|
-| edit_translation    | access the translation screen and allow all actions: create, edit and delete translations |
+| `edit_translation`  | access the translation screen and allow all actions: create, edit and delete translations |
 {: .table }
 
 By default, these are assigned to each user with the role `ROLE_SUPER_ADMIN`.

@@ -59,11 +59,11 @@ Please note:
   - You cannot create new timesheet records for this project 
 - You can still access invisible projects by changing the visibility filter on the listing view
 
-### Permissions
+### Access permissions
 
 - Inherit permissions from their linked customer
 - Accessible to all users if no teams are assigned at customer and project level
-- If a team is assigned to the project, only team members can use it, while also respecting the customer teams
+- If one or more teams are assigned to the project, only members of these teams can use it, while also respecting the customer teams
 
 ## Project listing
 

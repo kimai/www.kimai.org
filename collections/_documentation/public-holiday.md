@@ -8,7 +8,9 @@ related:
 
 {% include youtube-video.html id="public_holiday" %}
 
-Public holidays are considered in employee working time calculations:
+Public holidays can be edited at `Administration > Public holidays`.
+
+Public holidays can are considered in employee working time calculations:
 
 - If a public holiday falls on a weekday that is a regular working day for the employee, their expected working hours for that day are fulfilled automatically
 - Any timesheet entries recorded on a public holiday are counted as overtime
@@ -58,11 +60,9 @@ By editing single public holidays you can:
 
 ## Permissions
 
-Public holidays can be edited at `Administration > Public holidays`.
-
-| Permission Name       | Description                                                                                        |
-|-----------------------|----------------------------------------------------------------------------------------------------|
-| edit_public_holidays  | Allows to configure public holidays. By default given to `Administrator` and `Super Administrator` |
+| Permission Name         | Description                                                                                        |
+|-------------------------|----------------------------------------------------------------------------------------------------|
+| `edit_public_holidays`  | Allows to configure public holidays. By default given to `Administrator` and `Super Administrator` |
 {: .table }
 
 {% include snippets/store-howto-permissions.md %}

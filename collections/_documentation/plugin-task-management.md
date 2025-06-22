@@ -71,8 +71,6 @@ This bundle introduces new permissions, which limit access to certain functions:
 | `task_team_view`  | See the tasks of all team members                                                                                                                                                                                           |
 {: .table }
 
-A pre-configured permission set for all default user roles is applied by the plugin, please adjust them to your needs.
-
 {% include snippets/store-howto-permissions.md %}
 
 The following restrictions are in place for accessing other user's data:

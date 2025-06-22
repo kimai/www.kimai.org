@@ -60,10 +60,7 @@ You can change the language (here `/en/`) to your required wished language, e.g.
 
 ## Permissions
 
-| Permission Name      | Description                                          |
-|----------------------|------------------------------------------------------|
-| customer_portal      | Show the `Customer portal` menu edit all shared URLs |
-{: .table }
+{% include documentation/permissions-customer-portal.md %}
 
 By default, these are assigned to each user with the role `ROLE_SUPER_ADMIN`.
 

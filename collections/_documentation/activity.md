@@ -79,7 +79,7 @@ The visibility filter has three states:
 - No: Shows activities hidden by their visibility setting
 - Empty: Shows all activities regardless of visibility
 
-### Permissions
+### Access permissions
 
 Activities follow a hierarchical permission model:
 

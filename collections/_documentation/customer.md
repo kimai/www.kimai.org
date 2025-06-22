@@ -63,10 +63,10 @@ The visibility filter in the toolbar has three state:
 - Visible: No (all customers that are invisible)
 - Visible "empty" (all customers, not filtering on their visibility)
 
-### Permissions
+### Access permissions
 
 - Accessible to all users if no teams are assigned
-- If a team is assigned to the project, only team members can use it
+- If one or more teams are assigned to the customer, only member of these teams can use it
 
 ## Customer listing
 
