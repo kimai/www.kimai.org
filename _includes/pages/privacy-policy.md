@@ -62,7 +62,6 @@ Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom
 
 Im Falle datenschutzrechtlicher Verstöße steht dem Betroffenen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.
 Zuständige Aufsichtsbehörde in datenschutzrechtlichen Fragen ist der Landesdatenschutzbeauftragte des Bundeslandes, in dem unser Unternehmen seinen Sitz hat.
-Eine Liste der Datenschutzbeauftragten sowie deren Kontaktdaten können folgendem Link entnommen werden: [https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html](https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html)
 
 ## Recht auf Datenübertragbarkeit
 
@@ -202,6 +201,7 @@ Bei den eingesetzten Dienstleistern, welche Subprozessor bzw. Unterauftragsverar
  
 ### Änderungsverlauf
 
+- **23.06.2025**: Entfernung der URL zur Liste deutscher Datenschutzbehörden
 - **18.03.2024**: Änderung "Sendinblue Frankreich" zu "Brevo Deutschland", Simple Analytics aus Transparenzgründen aufgenommen
 - **14.11.2023**: Recaptcha Verifizierung via Subprozessor "Google" wieder hinzugefügt
 - **25.04.2021**: Recaptcha Verifizierung via Subprozessor "Google" entfernt
@@ -272,9 +272,8 @@ The data processed before we receive your request may still be legally processed
 
 ## Right to file complaints with regulatory authorities 
 
-If there has been a breach of data protection legislation, the person affected may file a complaint with the competent regulatory authorities. 
-The competent regulatory authority for matters related to data protection legislation is the data protection officer of the German state in which our company is headquartered. 
-A list of data protection officers and their contact details can be found at the following link: [https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html](https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html)
+If there has been a breach of data protection legislation, the person affected may file a complaint with the competent regulatory authorities.
+The competent regulatory authority for data protection issues is the state data protection officer of the federal state in which our company is based.
 
 ## Right to data portability
 
@@ -415,6 +414,7 @@ We are using the following service providers (also called sub-processors) to ass
 
 ### Change history
 
+- **23.06.2025**: Removed URL of German data protection authorities and replaced "German" with "of the federal state in which our company is based"
 - **18.03.2024**: Replaced "Sendinblue France" with "Brevo Germany", added Simple Analytics for transparency reasons
 - **14.11.2023**: Recaptcha verification via Subprocessor "Google" re-added
 - **25.04.2021**: Recaptcha verification via Subprocessor "Google" removed
