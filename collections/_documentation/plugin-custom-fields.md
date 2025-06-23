@@ -77,8 +77,9 @@ this input field only appears after saving the new custom-field and then re-open
 
 ## Visibility
 
-You can limit visibility to [user roles]({% link _documentation/permissions.md %}). 
-If you want to use custom roles, you have to follow the documented rules for role naming:
+You can limit visibility to one [user role]({% link _documentation/permissions.md %}). 
+
+If you want to use a custom role, you have to follow the documented rules for role naming:
 - Completely uppercase
 - Starting with `ROLE_`
 - For the default roles, you have to use the technical name, e.g. `ROLE_TEAMLEAD` instead of the translated name `Teamlead`
