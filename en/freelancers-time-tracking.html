@@ -1,0 +1,884 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#4188c9">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="robots" content="index,follow">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+<title>Time tracking for successful freelancers – Kimai</title>
+<meta name="description" content="Maximise your income as a solopreneur">
+<link type="application/atom+xml" rel="alternate" href="https://www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
+<meta property="og:locale" content="en">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kimai Time-Tracking">
+<meta property="og:image" content="https://www.kimai.org/images/social-preview.webp">
+<meta property="og:description" content="Maximise your income as a solopreneur">
+<link href="/assets/build/main.css?v6" rel="stylesheet" />
+
+</head>
+<body class="">
+
+
+
+
+<main class="page-wrapper">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand-lg    bg-light navbar-sticky">
+    <div class="container px-3">
+        <a href="/" class="navbar-brand pe-3">
+        <img src="/images/kimai_logo_48.webp" style="height:36px;width:36px;" alt="Kimai - Open Source time-tracker"> Kimai
+        </a>
+        <div id="navbarNav" class="offcanvas offcanvas-end">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title">Menu</h5>
+                <button type="button" class="btn-close " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Product</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/en/about.html" class="dropdown-item">About Kimai</a></li>
+                            <li><a href="/en/open-source-community" class="dropdown-item">Open Source</a></li>
+                            <li class="dropdown-divider">
+                            <li><a href="/en/integrations" class="dropdown-item">Apps &amp; Integrations</a></li>
+                            <li><a href="/en/demo.html" class="dropdown-item">Demo</a></li>
+                            <li class="dropdown-divider">
+                            <li><a href="/blog/" class="dropdown-item">Blog</a></li>
+                            <li><a href="/en/support.html" class="dropdown-item">Support</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Cloud</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/en/pricing" class="dropdown-item">Pricing</a></li>
+                            <li><a href="/en/changelog" class="dropdown-item">Changelog</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Self hosting</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/en/download.html" class="dropdown-item">Installation</a></li>
+                            <li><a href="/store/" class="dropdown-item">Plugins</a></li>
+                            <li><a href="https://github.com/kimai/kimai/discussions" target="_blank" class="dropdown-item">Forum</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Documentation</a>
+                        <ul class="dropdown-menu">
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-manual.html" class="dropdown-item">
+                                <i class="bx bx-book me-2"></i>
+                                
+                                User manual
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/cloud.html" class="dropdown-item">
+                                <i class="bx bx-cloud me-2"></i>
+                                
+                                Cloud
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-on-premise.html" class="dropdown-item">
+                                <i class="bx bx-server me-2"></i>
+                                
+                                On-Premise
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-developer.html" class="dropdown-item">
+                                <i class="bx bx-code-alt me-2"></i>
+                                
+                                Developer
+                            </a></li>
+                        
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="pe-lg-1 ms-auto me-2">
+            
+
+
+
+<a href="https://www.kimai.cloud/auth/" class="btn btn-sm fs-sm d-none d-md-inline-flex me-2 btn-outline-secondary">Login</a>
+
+            <a href="https://www.kimai.cloud/auth/registration" class="btn btn-success btn-sm fs-sm d-inline-flex">Start for free</a>
+
+        </div>
+        <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</header>
+
+
+    <section class="container pt-4 pb-5 mb-lg-5">
+
+        <nav class="d-md-none pb-3 mb-2 mb-lg-3" aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item">
+                    <a href="/"><i class="bx bx-home-alt fs-lg me-1"></i>Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="/en/industry">Industries</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Time tracking for successful freelancers</li>
+            </ol>
+        </nav>
+
+        <div class="row row-cols-1 row-cols-md-2 g-0 pb-2">
+            <div class="col order-md-2 position-relative bg-position-center bg-size-cover bg-repeat-0 zindex-2" style="background-image: url(/images/industry/freelancers.webp); border-radius: .5rem .5rem .5rem 0;">
+                <div style="height: 250px;"></div>
+            </div>
+
+            <div class="col order-md-1">
+                <nav class="d-none d-md-block py-3 mb-2 mb-lg-3" aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item">
+                            <a href="/"><i class="bx bx-home-alt fs-lg me-1"></i>Home</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="/en/industry">Industries</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">Time tracking for successful freelancers</li>
+                    </ol>
+                </nav>
+
+                <div class="bg-secondary rounded-3 p-4 p-lg-5 mt-n2 mt-md-0 me-md-n2">
+                    <div class="px-sm-3 px-xl-4 pt-4 py-md-3 py-lg-4 py-xl-5">
+                        <h1 class="pb-2 pb-xxl-3">Time tracking for successful freelancers</h1>
+                        <h3></h3>
+                        <div class="pb-2 mb-4 mb-xxl-5">
+<p>When freelancing is a new chapter in your life, you have to try out new roles and face new challenges. One of these is time management and balancing the hours you work with the profitability of your projects. Balancing multiple projects requires analysis, both for you and your clients.</p>
+
+<p>But there are tools out there to help freelancers, contractors, digital nomads and solopreneurs track their billable hours, bill clients without pulling your hair out, manage your hourly rates and expenses, etc.</p>
+
+<p>It lets you focus on what you love - and get paid what you really deserve. Let’s see how with Kimai as a time tracking tool for freelancers.</p>
+</div>
+                        <div class="d-xxl-flex align-items-center">
+                            <a href="https://www.kimai.cloud/auth/registration" class="btn btn-success shadow-success btn-lg">Start for free</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container pb-5 mb-md-2 mb-lg-5">
+        <div class="row">
+            <div class="col-lg-4 text-center text-lg-start pb-3 pb-lg-0 mb-4 mb-lg-0">
+                <h2 class="h1 mb-lg-4">Features loved by freelancers </h2>
+                <div class="pb-4 mb-0 mb-lg-3">
+<p>Kimai is designed to help solopreneurs streamline their workflow. Whether you’re juggling multiple clients or managing a variety of projects, Kimai provides the tools you need to stay organised and profitable.</p>
+</div>
+                <a href="/en/features.html" class="btn btn-primary shadow-primary btn-lg">Features</a>
+            </div>
+            <div class="col-xl-7 col-lg-8 offset-xl-1">
+                <div class="row row-cols-1 row-cols-md-2">
+                    <div class="col">
+                        
+                        
+                        
+                        
+
+
+
+
+
+
+
+<div class="card card-hover bg-secondary border-0 mb-4">
+    <div class="card-body d-flex align-items-start">
+        <div class="flex-shrink-0 bg-light rounded-3 p-3">
+            <i class="bx bx-receipt fs-2" title="Expenses"></i>
+        </div>
+        <div class="ps-4">
+            <h3 class="h5 pb-2 mb-1">Expenses</h3>
+            <p class="pb-2 mb-1">Buy the plugin and keep track of expenses based on customer, project and activity — for categorization and inclusion in your invoices.</p>
+            <a href="/store/expenses-bundle.html" class="btn btn-link stretched-link px-0">
+                Read more
+                <i class="bx bx-right-arrow-alt fs-xl ms-2"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+                        
+                        
+                        
+                    </div>
+                    <div class="col">
+                        
+                        
+                        
+                        
+                        
+
+
+
+
+
+
+
+<div class="card card-hover bg-secondary border-0 mb-4">
+    <div class="card-body d-flex align-items-start">
+        <div class="flex-shrink-0 bg-light rounded-3 p-3">
+            <i class="bx bxs-file-pdf fs-2" title="Invoicing"></i>
+        </div>
+        <div class="ps-4">
+            <h3 class="h5 pb-2 mb-1">Invoicing</h3>
+            <p class="pb-2 mb-1">Configurable invoice templates, options for entry grouping, configurable invoice numbers, and multiple formats like PDF and DOCX.</p>
+            <a href="/documentation/invoices.html" class="btn btn-link stretched-link px-0">
+                Read more
+                <i class="bx bx-right-arrow-alt fs-xl ms-2"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+                        
+                        
+                        
+                    </div>
+                    <div class="col">
+                        
+                        
+                        
+                        
+                        
+
+
+
+
+
+
+
+<div class="card card-hover bg-secondary border-0 mb-4">
+    <div class="card-body d-flex align-items-start">
+        <div class="flex-shrink-0 bg-light rounded-3 p-3">
+            <i class="bx bxs-widget fs-2" title="Statistics"></i>
+        </div>
+        <div class="ps-4">
+            <h3 class="h5 pb-2 mb-1">Statistics</h3>
+            <p class="pb-2 mb-1">Your dashboard will show you several statistics about recorded times and the amount of collected data. And we can always add more charts!</p>
+            <a href="/documentation/dashboard.html" class="btn btn-link stretched-link px-0">
+                Read more
+                <i class="bx bx-right-arrow-alt fs-xl ms-2"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+                        
+                        
+                        
+                    </div>
+                    <div class="col">
+                        
+                        
+                        
+                        
+                        
+
+
+
+
+
+
+
+<div class="card card-hover bg-secondary border-0 mb-4">
+    <div class="card-body d-flex align-items-start">
+        <div class="flex-shrink-0 bg-light rounded-3 p-3">
+            <i class="bx bx-share-alt fs-2" title="Customer Portal"></i>
+        </div>
+        <div class="ps-4">
+            <h3 class="h5 pb-2 mb-1">Customer Portal</h3>
+            <p class="pb-2 mb-1">Share client and project statistics and timesheets with anyone using a secret URL, optionally password protected.</p>
+            <a href="/documentation/plugin-customer-portal.html" class="btn btn-link stretched-link px-0">
+                Read more
+                <i class="bx bx-right-arrow-alt fs-xl ms-2"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+                        
+                        
+                        
+                    </div>
+                    <div class="col">
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    
+    
+    
+    
+<section class="bg-secondary py-5 mb-2 mb-md-4 mb-lg-5">
+    <div class="container pt-lg-4 mt-1">
+        <h2 class="h1 text-center pb-2 pb-md-3 pb-xl-4">What other professionals share about time tracking with Kimai</h2>
+        
+            <p class="mb-5">Don't just take our word for it. Here's what other freelancers say:
+</p>
+        
+    </div>
+    <div class="pb-lg-3 px-2 px-sm-0">
+        <div class="swiper" data-swiper-options='{
+                "slidesPerView": 1,
+                "centeredSlides": true,
+                "spaceBetween": 8,
+                "loop": true,
+                "pagination": {
+                    "el": ".swiper-pagination",
+                    "clickable": true
+                },
+                "breakpoints": {
+                    "500": {
+                        "slidesPerView": 2,
+                        "spaceBetween": 24
+                    },
+                    "1000": {
+                        "slidesPerView": 4,
+                        "spaceBetween": 24
+                    },
+                    "1500": {
+                        "slidesPerView": 6,
+                        "spaceBetween": 24
+                    }
+                }
+            }'>
+            <div class="swiper-wrapper">
+                
+                <div class="swiper-slide h-auto pt-4">
+                    <figure class="d-flex flex-column h-100 px-2 px-sm-0 mb-0">
+                        <div class="card h-100 position-relative border-0 shadow-sm pt-4">
+                            <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
+                                <i class="bx bxs-quote-left"></i>
+                            </span>
+                            <div class="card-body pb-3 mb-0">
+                                <div class="mb-0">
+                                    
+                                        <p><mark>I love how I can combine time tracking, expense tracking, and invoicing into one app</mark> without features hidden behind nagging subscriptions. I can click one button to invoice my clients now! Seriously a godsend. Also, the clean UI is well thought-out and simple to learn. Highly recommend this one!</p>
+
+                                    
+                                </div>
+                            </div>
+                            <div class="card-footer border-0 text-nowrap pt-0">
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                
+                                
+                            </div>
+                        </div>
+                        <figcaption class="d-flex align-items-center ps-4 pt-4">
+                            
+                            <img src="/images/testimonials/isaac-mailach.webp" width="48" class="rounded" alt="Isaac Mailach">
+                            
+                            <div class="ps-3">
+                                <h6 class="fs-sm fw-semibold mb-0">Isaac Mailach</h6>
+                                <span class="fs-xs text-muted">Media Composer and Studio Cellist</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+                
+                <div class="swiper-slide h-auto pt-4">
+                    <figure class="d-flex flex-column h-100 px-2 px-sm-0 mb-0">
+                        <div class="card h-100 position-relative border-0 shadow-sm pt-4">
+                            <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
+                                <i class="bx bxs-quote-left"></i>
+                            </span>
+                            <div class="card-body pb-3 mb-0">
+                                <div class="mb-0">
+                                    
+                                        <p>Nice and easy tool, let’s you track your hours and export / create invoices easily. Also you can add expenses. <mark>Top notch support on questions you might have</mark>. Loving it</p>
+
+                                    
+                                </div>
+                            </div>
+                            <div class="card-footer border-0 text-nowrap pt-0">
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                
+                                
+                            </div>
+                        </div>
+                        <figcaption class="d-flex align-items-center ps-4 pt-4">
+                            
+                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855"></path></svg>
+                            
+                            <div class="ps-3">
+                                <h6 class="fs-sm fw-semibold mb-0">Matthias Schöpfer</h6>
+                                <span class="fs-xs text-muted">Freelancer</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+                
+                <div class="swiper-slide h-auto pt-4">
+                    <figure class="d-flex flex-column h-100 px-2 px-sm-0 mb-0">
+                        <div class="card h-100 position-relative border-0 shadow-sm pt-4">
+                            <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
+                                <i class="bx bxs-quote-left"></i>
+                            </span>
+                            <div class="card-body pb-3 mb-0">
+                                <div class="mb-0">
+                                    
+                                        <p>I’ve always preferred self-hosting services, but when I discovered Kimai, I saw the value in their free cloud plan. Wanting to support the developers (being a developer myself), I upgraded to the paid version, and it’s been worth every penny.</p>
+
+<p>Recently, I made a mistake that almost wiped out all my data. Despite my plan not officially including support, Kimai’s team was there for me. <mark>They responded quickly and had my issue resolved within half an hour, saving me from a potential disaster.</mark></p>
+
+<p>As a freelancer, Kimai has become an essential tool for managing clients, projects, and tasks. It lets me track time accurately and create professional invoices effortlessly. For anyone looking to stay organized and efficient, I highly recommend Kimai.</p>
+
+                                    
+                                </div>
+                            </div>
+                            <div class="card-footer border-0 text-nowrap pt-0">
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                
+                                
+                            </div>
+                        </div>
+                        <figcaption class="d-flex align-items-center ps-4 pt-4">
+                            
+                            <img src="/images/testimonials/panagiotis-ntinis.webp" width="48" class="rounded" alt="Panagiotis Ntinis">
+                            
+                            <div class="ps-3">
+                                <h6 class="fs-sm fw-semibold mb-0">Panagiotis Ntinis</h6>
+                                <span class="fs-xs text-muted">Backend Developer</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+                
+                <div class="swiper-slide h-auto pt-4">
+                    <figure class="d-flex flex-column h-100 px-2 px-sm-0 mb-0">
+                        <div class="card h-100 position-relative border-0 shadow-sm pt-4">
+                            <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
+                                <i class="bx bxs-quote-left"></i>
+                            </span>
+                            <div class="card-body pb-3 mb-0">
+                                <div class="mb-0">
+                                    
+                                        <p>It is a great app, I will say I am not using it yet all its future, but to track my working hours it is working like magic.
+Customer service is also helpful and fast-responding, I recommend it to any new freelancer, because of its suitable price!.
+Thank you</p>
+
+                                    
+                                </div>
+                            </div>
+                            <div class="card-footer border-0 text-nowrap pt-0">
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                
+                                
+                                <i class="bx bx-star text-muted opacity-75"></i>
+                                
+                            </div>
+                        </div>
+                        <figcaption class="d-flex align-items-center ps-4 pt-4">
+                            
+                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855"></path></svg>
+                            
+                            <div class="ps-3">
+                                <h6 class="fs-sm fw-semibold mb-0">Wafa</h6>
+                                <span class="fs-xs text-muted"></span>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+                
+                <div class="swiper-slide h-auto pt-4">
+                    <figure class="d-flex flex-column h-100 px-2 px-sm-0 mb-0">
+                        <div class="card h-100 position-relative border-0 shadow-sm pt-4">
+                            <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
+                                <i class="bx bxs-quote-left"></i>
+                            </span>
+                            <div class="card-body pb-3 mb-0">
+                                <div class="mb-0">
+                                    
+                                        <p>Kimai is a fantastic product and it’s finished and polished in almost a maniacal way. Fantastic UI and UX, every feature well thought and finished, great support and a rare focus on privacy and security. Top notch!</p>
+
+                                    
+                                </div>
+                            </div>
+                            <div class="card-footer border-0 text-nowrap pt-0">
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                
+                                
+                            </div>
+                        </div>
+                        <figcaption class="d-flex align-items-center ps-4 pt-4">
+                            
+                            <img src="/images/testimonials/mikael-janssens.webp" width="48" class="rounded" alt="Mikaël Janssens">
+                            
+                            <div class="ps-3">
+                                <h6 class="fs-sm fw-semibold mb-0">Mikaël Janssens</h6>
+                                <span class="fs-xs text-muted">Freelancer</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+                
+            </div>
+
+            <div class="swiper-pagination position-relative pt-1 pt-sm-3 mt-5 swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
+                <span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1" aria-current="true"></span>
+                <span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 4"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 5"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 6"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 7"></span>
+</div>
+            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+</div>
+    </div>
+</section>
+
+
+    <section class="container pt-5 mb-1 mb-md-4 mb-lg-5">
+        <div class="row pb-xl-3">
+            <div class="col-xl-5 col-md-6">
+                <h2 class="h1 pb-4 mb-1 mb-lg-3">First steps to better time management</h2>
+            </div>
+            <div class="col-md-6 pb-2 pb-md-0 mb-4 mb-md-0">
+                <p>Are you ready to experience the benefits of Kimai? We offer a free trial so you can explore all the features before you decide which time tracking software is best for you as an independent professional.</p>
+
+<p>Sign up today, start tracking your time with literally one click and have a more organised day!</p>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="container py-5 my-1 my-md-4 my-lg-5">
+        <div class="row">
+            <div class="col-lg-12 mb-4 mb-lg-0">
+                <div class="pe-lg-4 me-lg-3 pe-xl-0 me-xl-0">
+                    <div class="mb-0">
+                        
+                        
+                        
+<section class="container mb-5">
+    <div class="position-relative bg-dark rounded-3 overflow-hidden px-3 py-5">
+        <span class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(255, 255, 255, .05)"></span>
+        <div class="position-relative zindex-5 text-center my-xl-3 py-1 py-md-4 py-lg-5">
+            
+            <p class="lead text-light opacity-70 mb-3"></p>
+            
+            <h2 class="h1 text-light pb-3 pb-lg-0 mb-lg-5">Ready to get the most of your time as a freelancer?</h2>
+            <a href="https://www.kimai.cloud/auth/registration" class="btn btn-success btn-lg">Start for free</a>
+
+        </div>
+    </div>
+</section>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+
+
+
+
+
+
+
+
+<footer class="footer bg-dark pt-5 pb-4">
+    <div class="container pt-1 pt-md-3 pt-lg-4 pt-xl-5">
+        <div class="row">
+            <div class="col-md-5 col-xl-4 mb-4 mb-md-5 mb-lg-0">
+                <div class="d-flex align-items-center pb-3 mb-1">
+                    <div class="navbar-brand text-white p-0 pe-1 me-0">
+                        Kimai
+                    </div>
+                    <hr class="vr mt-2 mx-3" style="height: 26px;">
+                    <div class="text-white fw-semibold ps-1">#1 Open-Source Time-Tracking</div>
+                </div>
+                <p class="text-body fs-sm pb-1 pb-md-2 pb-lg-2 mb-2">
+                    Time tracking made easy. An open-source solution for teams of all sizes - self-hosted or SaaS.
+                </p>
+                <div class="d-flex flex-column flex-sm-row flex-lg-column align-items-sm-center align-items-lg-start justify-content-between pb-1 pb-md-2 pb-lg-3 mb-3">
+                    <div class="position-relative">
+                        <div class="dropdown">
+                            <button type="button" class="form-select" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-globe top-50 start-0 text-body me-2"></i>
+                                English
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/cs/" class="dropdown-item" title="Kimai - Open Source sledování času">Čeština</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/de/" class="dropdown-item" title="Kimai – Open-Source Zeiterfassung">Deutsch</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org" class="dropdown-item active" title="Kimai - Open Source time-tracker">English</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/es/" class="dropdown-item" title="Página de inicio de Kimai">Español</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/fr/" class="dropdown-item" title="Kimai - Suivi du temps à code ouvert">Français</a>
+                                
+                                    <a dir="rtl" href="https://www.kimai.co.il" class="dropdown-item" title="Kimai - מעקב שעות בקוד פתוח">עברית</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/hr/" class="dropdown-item" title="Kimai – Program otvorenog koda za evidentiranje vremena">Hrvatski</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/it/" class="dropdown-item" title="Kimai: time-tracker open source">Italiano</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/nl/" class="dropdown-item" title="Kimai - Open Source tijdregistratie">Dutch</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/pl/" class="dropdown-item" title="Kimai - Otwarte oprogramowanie do śledzenia czasu">Polski</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/pt/" class="dropdown-item" title="Kimai - Rastreador de tempo de código aberto">Português</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/pt_BR/" class="dropdown-item" title="Kimai - Rastreador de tempo de código aberto">Português (Brasil)</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/ru/" class="dropdown-item" title="Kimai - регистратор времени с открытым исходным кодом">Русский</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/sk/" class="dropdown-item" title="Kimai - Open Source sledovanie času">Slovenčina</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/sv/" class="dropdown-item" title="Kimai - öppen källkod tidsspårare">Svenska</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/ta/" class="dropdown-item" title="கிமாய் - திறந்த மூல நேர -கண்காணிப்பு">தமிழ்</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/uk/" class="dropdown-item" title="Kimai — реєстратор часу з відкритим сирцевим кодом">Українська</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/zh_Hans/" class="dropdown-item" title="Kimai - 开源时间跟踪器">中文（中国）</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.tw" class="dropdown-item" title="Kimai —— 開放源始碼的工時追蹤工具">中文（繁體）</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-md-7 offset-xl-1">
+                <div id="footer-links" class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="tools" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/en/features.html" class="nav-link fs-sm fw-medium px-0 py-1">Features</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/en/reviews" class="nav-link fs-sm fw-medium px-0 py-1">Reviews</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/en/kimai-discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">Discount codes</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/time-tracking-terms" class="nav-link fs-sm fw-medium px-0 py-1">Time Tracking Terms</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="landing-kimai-for" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                
+                                
+                                <li class="nav-item">
+                                    <a href="/en/agency-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Time Tracking For Agencies">Agencies</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/consultants-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Time Tracking For Consultants">Consultants</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/freelancers-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Time tracking for successful freelancers">Freelancer</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/software-developers-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Time Tracking For Software Developers">Software Developers</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/time-tracking-non-profit.html" class="nav-link fs-sm fw-medium px-0 py-1">Non-Profits</a>
+                                </li>
+                                <li class="nav-item">
+                                    
+                                    <a href="/en/industry" class="nav-link fs-sm fw-medium px-0 py-1">More industries</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="footer-cmp" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/en/compare/" class="nav-link fs-sm fw-medium px-0 py-1">Kimai alternatives</a>
+                                </li>
+                                
+                                
+                                
+                                    <li class="nav-item">
+                                        <a href="https://www.kimai.org/en/clockify-alternative" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai with Clockify">Clockify</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="https://www.kimai.org/en/openproject-alternative" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai with OpenProject">OpenProject</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="https://www.kimai.org/en/toggl-alternative" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai with toggl track">toggl track</a>
+                                    </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="d-md-flex align-items-center justify-content-between pt-sm-2 pt-md-4 pt-lg-5 pb-2 mt-4 ">
+    <ul class="nav order-md-1 ms-md-0 mb-3 mb-md-0">
+        <li class="nav-item">
+            <a href="/en/site-notice.html" class="nav-link fs-sm fw-medium">Site notice</a>
+        </li>
+        <li class="nav-item">
+            <a href="/en/privacy-policy.html" class="nav-link fs-sm fw-medium">Privacy policy</a>
+        </li>
+        <li class="nav-item">
+            <a href="/en/terms-cloud.html" class="nav-link fs-sm fw-medium">Terms</a>
+        </li>
+    </ul>
+    <div class="nav order-md-2 mb-3 mb-md-0">
+        
+    <a target="_blank" href="https://github.com/kimai/kimai" class="btn btn-icon btn-secondary btn-github rounded-circle me-3" aria-label="GitHub">
+        <i class="bx bxl-github"></i>
+    </a>
+
+    <a target="_blank" href="https://www.youtube.com/@kimai_org" class="btn btn-icon btn-secondary btn-youtube rounded-circle me-3" aria-label="YouTube">
+        <i class="bx bxl-youtube"></i>
+    </a>
+
+    <a target="_blank" href="https://www.linkedin.com/company/kimai-timetracker/" class="btn btn-icon btn-secondary btn-linkedin rounded-circle me-3" aria-label="LinkedIn">
+        <i class="bx bxl-linkedin"></i>
+    </a>
+
+    <a target="_blank" href="https://www.instagram.com/kimai_org" class="btn btn-icon btn-secondary btn-instagram rounded-circle me-3" aria-label="Instagram">
+        <i class="bx bxl-instagram"></i>
+    </a>
+
+    <a target="_blank" href="https://www.facebook.com/kimai.time.tracker" class="btn btn-icon btn-secondary btn-facebook rounded-circle me-3" aria-label="Facebook">
+        <i class="bx bxl-facebook"></i>
+    </a>
+
+    <a target="_blank" href="https://phpc.social/@kimai" class="btn btn-icon btn-secondary btn-messenger rounded-circle me-3" aria-label="Mastodon">
+        <i class="bx bxl-mastodon"></i>
+    </a>
+
+
+    </div>
+    <ul class="nav order-md-3">
+        <li class="nav-item">
+            <a href="https://uptime.kimai.cloud/" target="_blank" class="nav-link fs-sm fw-medium">Status</a>
+        </li>
+    </ul>
+    
+</div>
+
+    </div>
+</footer>
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js?v1"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
+
+</body>
+</html>
