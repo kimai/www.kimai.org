@@ -47,14 +47,14 @@ Example: to get a three digit long string with year counter use `{cy,3}`, which 
 
 {% alert warning %}
 1. Characters outside the replacer **cannot** include `{` and `}`.  
-2. The invoice number is unique in Kimai and you cannot generate an invoice with the same invoice number twice. Kimai will try to avoid that automatically by incrementing the counter, but if that is impossible, you'll see an error message.
+2. The invoice number is unique in Kimai, and you cannot generate an invoice with the same invoice number twice. Kimai will try to avoid that automatically by incrementing the counter, but if that is impossible, you'll see an error message.
 3. You can change the format at [System > Settings]({% link _documentation/configurations.md %}).
 {% endalert %}
 
 ### Incrementing the invoice counter
 
 It is possible to increment the counter by adding a number to the result.
-For evaluated counters, Kimai takes the amount of found invoices and adds 1, but you can replace `+1` with an addition like `+3`.
+For evaluated counters, Kimai takes the number of found invoices and adds 1, but you can replace `+1` with an addition like `+3`.
 This works for the following replacer: `{c}` and `{cy}` and `{cm}` and `{cd}` and `{cc}` and `{ccy}` and `{ccm}` and `{ccd}`.
 
 Simply use the plus (`+`) after the replacer, eg. `{cy+72}`. This also works in combination with the length formatter, eg.: `{cy+72,3}`
@@ -62,7 +62,7 @@ Simply use the plus (`+`) after the replacer, eg. `{cy+72}`. This also works in 
 ### Decrementing the invoice counter
 
 You can decrement the counter subtracting a number from the result.
-For evaluated counters, Kimai takes the amount of found invoices and adds `+1`, but you can replace `+1` with a subtraction like `-12`.
+For evaluated counters, Kimai takes the number of found invoices and adds `+1`, but you can replace `+1` with a subtraction like `-12`.
 This works for the following replacer: `{c}` and `{cy}` and `{cm}` and `{cd}` and `{cc}` and `{ccy}` and `{ccm}` and `{ccd}`.
 
 Simply use the minus (`-`) after the replacer, eg. `{cy-72}`. This also works in combination with the length formatter, eg.: `{cy-72,3}`
@@ -70,7 +70,7 @@ Simply use the minus (`-`) after the replacer, eg. `{cy-72}`. This also works in
 ### Examples
 
 Assume you already wrote 72 invoices this year (before you started to use Kimai), and your counter is an incrementing number
-per year, which is prefixed with the four digit year:
+per year, which is prefixed with the four-digit year:
 - `{Y}/{cy+73,3}` would result in `2020/073` for your first invoice
 
 Assume that you want to change your invoice numbering and reset it to zero, you already wrote 72 invoices this year, and your counter is an incrementing number per year that should be prefixed with the four digit year:
@@ -86,18 +86,24 @@ Invoices can have multiple states:
 
 ### Deleting invoices
 
-Invoices should not be deleted, because this can cause all kinds of weird problems in Kimai (depending on your invoice number format).
+Invoices should not be deleted, because this can cause problems in Kimai (depending on your invoice number format).
 
 You should instead "cancel" invalid invoices. Many users fear legal issues if they don't have consecutive invoice numbers, 
-please clarify that with your accountant - this is often not a legal requirement. Instead it is a completely regular workflow, 
+please clarify that with your accountant - this is often not a legal requirement. Instead, it is a completely regular workflow 
 that invoices get canceled (the used invoice number will not be released).
 
-If you insist on deleting invoices, do NOT delete them if you already created invoices afterwards.
-This will cause troubles with your invoice counter, as Kimai is calculating invoice numbers from the amount of entries in the database.
-By deleting invoices you lower the amount of invoices in the database, and the next invoice number might be one that you already used.
+If you insist on deleting invoices, do NOT delete them if you already created invoices afterward.
+This will cause troubles with your invoice counter, as Kimai is calculating invoice numbers from the number of entries in the database.
+By deleting invoices, you lower the number of invoices in the database, and the next invoice number might be one that was already used.
 
-Invoice deletion is disabled by default, because of all known problems with deletion. 
-You can activate it enabling the [permissions]({% link _documentation/permissions.md %}) called `delete_invoice`.  
+Invoice deletion is therefor disabled by default, but you can activate it with the `delete_invoice` [permissions]({% link _documentation/permissions.md %}).  
+
+### Cancel invoices
+
+It is important to understand, that Kimai does not keep track of the items that were included in an invoice.
+
+By canceling an invoice, you do **not** reset the "export state" of the timesheets, 
+but have to filter for already exported records if you want to re-create the invoice with the same timesheets. 
 
 ## Export state
 
@@ -108,13 +114,13 @@ You need to tick the "mark as export" checkbox before saving the invoice, to aut
 
 The "mark as export" checkbox is only available for users with the `edit_export_other_timesheet` [permission]({% link _documentation/permissions.md %}).
 
-For further information read the [timesheet documentation]({% link _documentation/timesheet.md %}).
+For further information, read the [timesheet documentation]({% link _documentation/timesheet.md %}).
 
 ## Billable items only
 
 Only billable items will be included in invoices.
 
-By default, every timesheet records is billable, but users can set the billable flag on individual timesheets.
+By default, every timesheet record is billable, but users can set the billable flag on individual timesheets.
 
 [Expense items]({% link _store/keleo-expenses-bundle.md %}) have a configurable billable flag per item and only the ones marked as billable (refundable) will be included.
 
@@ -173,7 +179,7 @@ After you changed an invoice template, you have to [clear the cache]({% link _do
 
 ### More invoice templates 
 
-There is a place where the community can share invoice templates. Please do so, if you created a nice looking an re-usable template yourself!
+There is a place where the community can share invoice templates. Please do so, if you created a nice looking and re-usable template yourself!
 
 The repository for all templates is [https://github.com/kimai/invoice-templates](https://github.com/kimai/invoice-templates) and it includes installation notes
 
@@ -272,7 +278,7 @@ Want to use a **timesheet custom-field** in your template?
 ``` 
 Please be aware:
 - you can access timesheet custom fields only if you use the "sum calculation" standard, which creates one invoice line item per timesheet.
-- if you group timesheets e.g. by project, you loose access to their custom fields.
+- if you group timesheets, e.g., by project, you lose access to their custom fields.
 - entries could be of type "expense" or other types (depending on your used plugins), you can test that with `{% raw %}{% if line['entry.type'] == 'timesheet' '%}{% endraw %}` 
 
 Want to use a **customer custom-field** in your template?
