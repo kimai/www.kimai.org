@@ -79,31 +79,32 @@ Assume that you want to change your invoice numbering and reset it to zero, you 
 ## Invoice state
 
 Invoices can have multiple states:
-- `New` - the invoice was just created
-- `Waiting for payment` - the invoice was sent to the customer
-- `Invoice paid` - the invoice was paid (you have to choose a payment date)
-- `Canceled` - the invoice was accidentally created
-
-### Deleting invoices
-
-Invoices should not be deleted, because this can cause problems in Kimai (depending on your invoice number format).
-
-You should instead "cancel" invalid invoices. Many users fear legal issues if they don't have consecutive invoice numbers, 
-please clarify that with your accountant - this is often not a legal requirement. Instead, it is a completely regular workflow 
-that invoices get canceled (the used invoice number will not be released).
-
-If you insist on deleting invoices, do NOT delete them if you already created invoices afterward.
-This will cause troubles with your invoice counter, as Kimai is calculating invoice numbers from the number of entries in the database.
-By deleting invoices, you lower the number of invoices in the database, and the next invoice number might be one that was already used.
-
-Invoice deletion is therefor disabled by default, but you can activate it with the `delete_invoice` [permissions]({% link _documentation/permissions.md %}).  
+- `New` invoices were just created
+- `Waiting for payment` means the invoice was sent to the customer
+- `Invoice paid` flags the invoice for its final state (you have to choose a payment date)
+- `Canceled` invoices were accidentally created or required changes after creation
 
 ### Cancel invoices
 
 It is important to understand, that Kimai does not keep track of the items that were included in an invoice.
 
-By canceling an invoice, you do **not** reset the "export state" of the timesheets, 
-but have to filter for already exported records if you want to re-create the invoice with the same timesheets. 
+By canceling an invoice, you do **not** reset the "export state" of the timesheets,
+but have to filter for already exported records if you want to re-create the invoice with the same timesheets.
+
+Canceled invoices stay in the system and the invoice number will be kept for bookkeeping.
+
+### Deleting invoices
+
+Invoices should not be deleted, because this can cause problems in Kimai (depending on your invoice number format).
+
+You should instead "cancel" invalid invoices. Some users fear legal issues if they don't have consecutive invoice numbers, 
+but this is often not a legal requirement (please clarify with your accountant).
+
+If you still insist on deleting invoices, do **not** delete them if you already created invoices afterward.
+This will cause troubles with your invoice counter, as Kimai is calculating invoice numbers from the number of entries in the database.
+By deleting invoices, you lower the number of invoices in the database, and the next invoice number might be one that was already used.
+
+Invoice deletion is therefor disabled by default, but you can activate it with the `delete_invoice` [permissions]({% link _documentation/permissions.md %}).  
 
 ## Export state
 
@@ -115,7 +116,7 @@ You need to tick the "mark as export" checkbox before saving the invoice, to aut
 The "mark as export" checkbox is only available for users with the `edit_export_other_timesheet` [permission]({% link _documentation/permissions.md %}).
 
 For further information, read the [timesheet documentation]({% link _documentation/timesheet.md %}).
-
+ 
 ## Billable items only
 
 Only billable items will be included in invoices.
