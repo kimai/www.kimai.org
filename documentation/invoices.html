@@ -706,32 +706,33 @@ per year, which is prefixed with the four-digit year:</p>
 
 <p>Invoices can have multiple states:</p>
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">New</code> - the invoice was just created</li>
-  <li><code class="language-plaintext highlighter-rouge">Waiting for payment</code> - the invoice was sent to the customer</li>
-  <li><code class="language-plaintext highlighter-rouge">Invoice paid</code> - the invoice was paid (you have to choose a payment date)</li>
-  <li><code class="language-plaintext highlighter-rouge">Canceled</code> - the invoice was accidentally created</li>
+  <li><code class="language-plaintext highlighter-rouge">New</code> invoices were just created</li>
+  <li><code class="language-plaintext highlighter-rouge">Waiting for payment</code> means the invoice was sent to the customer</li>
+  <li><code class="language-plaintext highlighter-rouge">Invoice paid</code> flags the invoice for its final state (you have to choose a payment date)</li>
+  <li><code class="language-plaintext highlighter-rouge">Canceled</code> invoices were accidentally created or required changes after creation</li>
 </ul>
-
-<h3 id="deleting-invoices">Deleting invoices</h3>
-
-<p>Invoices should not be deleted, because this can cause problems in Kimai (depending on your invoice number format).</p>
-
-<p>You should instead “cancel” invalid invoices. Many users fear legal issues if they don’t have consecutive invoice numbers, 
-please clarify that with your accountant - this is often not a legal requirement. Instead, it is a completely regular workflow 
-that invoices get canceled (the used invoice number will not be released).</p>
-
-<p>If you insist on deleting invoices, do NOT delete them if you already created invoices afterward.
-This will cause troubles with your invoice counter, as Kimai is calculating invoice numbers from the number of entries in the database.
-By deleting invoices, you lower the number of invoices in the database, and the next invoice number might be one that was already used.</p>
-
-<p>Invoice deletion is therefor disabled by default, but you can activate it with the <code class="language-plaintext highlighter-rouge">delete_invoice</code> <a href="/documentation/permissions.html">permissions</a>.</p>
 
 <h3 id="cancel-invoices">Cancel invoices</h3>
 
 <p>It is important to understand, that Kimai does not keep track of the items that were included in an invoice.</p>
 
-<p>By canceling an invoice, you do <strong>not</strong> reset the “export state” of the timesheets, 
+<p>By canceling an invoice, you do <strong>not</strong> reset the “export state” of the timesheets,
 but have to filter for already exported records if you want to re-create the invoice with the same timesheets.</p>
+
+<p>Canceled invoices stay in the system and the invoice number will be kept for bookkeeping.</p>
+
+<h3 id="deleting-invoices">Deleting invoices</h3>
+
+<p>Invoices should not be deleted, because this can cause problems in Kimai (depending on your invoice number format).</p>
+
+<p>You should instead “cancel” invalid invoices. Some users fear legal issues if they don’t have consecutive invoice numbers, 
+but this is often not a legal requirement (please clarify with your accountant).</p>
+
+<p>If you still insist on deleting invoices, do <strong>not</strong> delete them if you already created invoices afterward.
+This will cause troubles with your invoice counter, as Kimai is calculating invoice numbers from the number of entries in the database.
+By deleting invoices, you lower the number of invoices in the database, and the next invoice number might be one that was already used.</p>
+
+<p>Invoice deletion is therefor disabled by default, but you can activate it with the <code class="language-plaintext highlighter-rouge">delete_invoice</code> <a href="/documentation/permissions.html">permissions</a>.</p>
 
 <h2 id="export-state">Export state</h2>
 
@@ -1822,7 +1823,7 @@ This would find all entries with the custom field <code class="language-plaintex
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#invoice-number-format" class="nav-link">Invoice number format</a><ul><li class="nav-item"><a href="#incrementing-the-invoice-counter" class="nav-link">Incrementing the invoice counter</a></li><li class="nav-item"><a href="#decrementing-the-invoice-counter" class="nav-link">Decrementing the invoice counter</a></li><li class="nav-item"><a href="#examples" class="nav-link">Examples</a></li></ul></li><li class="nav-item"><a href="#invoice-state" class="nav-link">Invoice state</a><ul><li class="nav-item"><a href="#deleting-invoices" class="nav-link">Deleting invoices</a></li><li class="nav-item"><a href="#cancel-invoices" class="nav-link">Cancel invoices</a></li></ul></li><li class="nav-item"><a href="#export-state" class="nav-link">Export state</a></li><li class="nav-item"><a href="#billable-items-only" class="nav-link">Billable items only</a></li><li class="nav-item"><a href="#invoice-document" class="nav-link">Invoice document</a><ul><li class="nav-item"><a href="#create-your-own-invoice-document" class="nav-link">Create your own invoice document</a></li><li class="nav-item"><a href="#more-invoice-templates" class="nav-link">More invoice templates</a></li><li class="nav-item"><a href="#twig-templates" class="nav-link">Twig templates</a></li><li class="nav-item"><a href="#pdf-templates" class="nav-link">PDF templates</a></li><li class="nav-item"><a href="#docx-templates" class="nav-link">Docx templates</a></li><li class="nav-item"><a href="#spreadsheets-ods-and-xlsx" class="nav-link">Spreadsheets (ODS and XLSX)</a></li></ul></li><li class="nav-item"><a href="#template-variables" class="nav-link">Template variables</a><ul><li class="nav-item"><a href="#global-variables" class="nav-link">Global variables</a></li><li class="nav-item"><a href="#timesheet-entry-variables" class="nav-link">Timesheet entry variables</a></li><li class="nav-item"><a href="#customer-variables" class="nav-link">Customer variables</a></li><li class="nav-item"><a href="#project-variables" class="nav-link">Project variables</a></li><li class="nav-item"><a href="#activity-variables" class="nav-link">Activity variables</a></li><li class="nav-item"><a href="#uploading-invoice-documents" class="nav-link">Uploading invoice documents</a></li></ul></li><li class="nav-item"><a href="#filter-and-search-in-the-invoice-archive" class="nav-link">Filter and search in the invoice archive</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#invoice-number-format" class="nav-link">Invoice number format</a><ul><li class="nav-item"><a href="#incrementing-the-invoice-counter" class="nav-link">Incrementing the invoice counter</a></li><li class="nav-item"><a href="#decrementing-the-invoice-counter" class="nav-link">Decrementing the invoice counter</a></li><li class="nav-item"><a href="#examples" class="nav-link">Examples</a></li></ul></li><li class="nav-item"><a href="#invoice-state" class="nav-link">Invoice state</a><ul><li class="nav-item"><a href="#cancel-invoices" class="nav-link">Cancel invoices</a></li><li class="nav-item"><a href="#deleting-invoices" class="nav-link">Deleting invoices</a></li></ul></li><li class="nav-item"><a href="#export-state" class="nav-link">Export state</a></li><li class="nav-item"><a href="#billable-items-only" class="nav-link">Billable items only</a></li><li class="nav-item"><a href="#invoice-document" class="nav-link">Invoice document</a><ul><li class="nav-item"><a href="#create-your-own-invoice-document" class="nav-link">Create your own invoice document</a></li><li class="nav-item"><a href="#more-invoice-templates" class="nav-link">More invoice templates</a></li><li class="nav-item"><a href="#twig-templates" class="nav-link">Twig templates</a></li><li class="nav-item"><a href="#pdf-templates" class="nav-link">PDF templates</a></li><li class="nav-item"><a href="#docx-templates" class="nav-link">Docx templates</a></li><li class="nav-item"><a href="#spreadsheets-ods-and-xlsx" class="nav-link">Spreadsheets (ODS and XLSX)</a></li></ul></li><li class="nav-item"><a href="#template-variables" class="nav-link">Template variables</a><ul><li class="nav-item"><a href="#global-variables" class="nav-link">Global variables</a></li><li class="nav-item"><a href="#timesheet-entry-variables" class="nav-link">Timesheet entry variables</a></li><li class="nav-item"><a href="#customer-variables" class="nav-link">Customer variables</a></li><li class="nav-item"><a href="#project-variables" class="nav-link">Project variables</a></li><li class="nav-item"><a href="#activity-variables" class="nav-link">Activity variables</a></li><li class="nav-item"><a href="#uploading-invoice-documents" class="nav-link">Uploading invoice documents</a></li></ul></li><li class="nav-item"><a href="#filter-and-search-in-the-invoice-archive" class="nav-link">Filter and search in the invoice archive</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
         
         <ul class="nav">
             <li>
