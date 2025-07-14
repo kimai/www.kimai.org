@@ -12,7 +12,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
-<title>Webserver configuration – Kimai</title>
+<title>Webserver & Proxy Configuration – Kimai</title>
 <meta name="description" content="How to install Kimai on your server with git, composer and SSH or FTP">
 <link type="application/atom+xml" rel="alternate" href="https://www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
 <meta property="og:locale" content="en">
@@ -292,7 +292,7 @@
                         
                         <a href="/documentation/webserver-configuration.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2  active" id="docnavi-webserver-configuration">
                             
-                            Webserver
+                            Webserver & Proxy
                             
                         </a>
                         
@@ -533,7 +533,7 @@
 
         <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 pt-4 mb-n3">
             <div class="me-4">
-                <h1 class="pb-1">Webserver configuration</h1>
+                <h1 class="pb-1">Webserver & Proxy Configuration</h1>
                 
                 <p class="text-muted fs-lg mb-2">How to install Kimai on your server with git, composer and SSH or FTP</p>
                 
@@ -576,6 +576,10 @@
 they either might be incompatible with your exact setup or might need further tweaking to work.</p>
 
 <p>I don’t offer free support for such situations, but you can contact me about <a href="/en/support.html">paid installation support</a>.</p>
+
+<h2 id="subdirectory-usage">Subdirectory usage</h2>
+
+<p>Kimai was made to be hosted on the domain level, so running it inside a subdirectory is not supported.</p>
 
 <h2 id="nginx">Nginx</h2>
 
@@ -751,8 +755,25 @@ Here you can select <code class="language-plaintext highlighter-rouge">All verbs
 
 <h2 id="reverse-proxy">Reverse proxy</h2>
 
-<p>When you want to run Kimai behind a proxy, you have to provide all necessary <code class="language-plaintext highlighter-rouge">X-Forwarded-*</code> headers.
-Here is an example of a nginx proxy configuration, which terminates SSL on <code class="language-plaintext highlighter-rouge">kimai2.local</code> and forwards the request to Kimai running at <code class="language-plaintext highlighter-rouge">http://127.0.0.1:8010/</code>:</p>
+<p>When you want to run Kimai behind a proxy, you have to provide all necessary <code class="language-plaintext highlighter-rouge">X-Forwarded-*</code> headers.</p>
+
+<h3 id="nginx-proxy-manager">Nginx Proxy Manager</h3>
+
+<p>Here is a very short example for the <code class="language-plaintext highlighter-rouge">Nginx Proxy Manager</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>location / {
+    proxy_pass http://192.168.0.170:8001; # ← replace with actual internal IP:port of Kimai app
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_set_header X-Forwarded-Host $host;
+    proxy_set_header X-Forwarded-Port 30022;
+}
+</code></pre></div></div>
+
+<p>This is a larger example of a nginx proxy configuration, which terminates SSL on <code class="language-plaintext highlighter-rouge">kimai2.local</code> and forwards the request 
+to Kimai running at <code class="language-plaintext highlighter-rouge">http://127.0.0.1:8010/</code>:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>server {
     listen 443 ssl;
@@ -765,15 +786,15 @@ Here is an example of a nginx proxy configuration, which terminates SSL on <code
     ssl_prefer_server_ciphers   on;
 
     location / {
-          proxy_pass http://127.0.0.1:8010/;
-
-          proxy_set_header  Host $http_host;
-          proxy_set_header  X-Real-IP $remote_addr;
-          proxy_set_header  X-Forwarded-Host $host:$server_port;
-          proxy_set_header  X-Forwarded-Server $host;
-          proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
-          proxy_set_header  X-Forwarded-Proto $scheme;
-          proxy_set_header  X-Forwarded-Port $server_port;
+        proxy_pass http://127.0.0.1:8010/;
+        
+        proxy_set_header  Host $http_host;
+        proxy_set_header  X-Real-IP $remote_addr;
+        proxy_set_header  X-Forwarded-Host $host:$server_port;
+        proxy_set_header  X-Forwarded-Server $host;
+        proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header  X-Forwarded-Proto $scheme;
+        proxy_set_header  X-Forwarded-Port $server_port;
     }
     # Redirect HTTP to HTTPS, in case an invalid (plain HTTP) request was sent to port 443
     error_page 497 https://$host:$server_port$request_uri;
@@ -792,10 +813,6 @@ when generating URLs for links and redirects.</p>
 <p>or set it in your Kimai server definition (here nginx syntax):</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fastcgi_param TRUSTED_PROXIES "127.0.0.1,kimai2.local,localhost";
 </code></pre></div></div>
-
-<h3 id="subdirectory-usage">Subdirectory usage</h3>
-
-<p>Kimai was made to be hosted on the domain level, so running it inside a subdirectory is not supported.</p>
 
 <h2 id="links">Links</h2>
 
@@ -817,7 +834,7 @@ when generating URLs for links and redirects.</p>
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#nginx" class="nav-link">Nginx</a></li><li class="nav-item"><a href="#apache" class="nav-link">Apache</a><ul><li class="nav-item"><a href="#kimai-htaccess" class="nav-link">Kimai .htaccess</a></li><li class="nav-item"><a href="#create-virtualhost" class="nav-link">Create VirtualHost</a></li><li class="nav-item"><a href="#activate-required-modules-php--rewrite" class="nav-link">Activate required modules PHP &amp; Rewrite</a></li></ul></li><li class="nav-item"><a href="#iis-on-windows-or-azure" class="nav-link">IIS on Windows or Azure</a></li><li class="nav-item"><a href="#reverse-proxy" class="nav-link">Reverse proxy</a><ul><li class="nav-item"><a href="#subdirectory-usage" class="nav-link">Subdirectory usage</a></li></ul></li><li class="nav-item"><a href="#links" class="nav-link">Links</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#subdirectory-usage" class="nav-link">Subdirectory usage</a></li><li class="nav-item"><a href="#nginx" class="nav-link">Nginx</a></li><li class="nav-item"><a href="#apache" class="nav-link">Apache</a><ul><li class="nav-item"><a href="#kimai-htaccess" class="nav-link">Kimai .htaccess</a></li><li class="nav-item"><a href="#create-virtualhost" class="nav-link">Create VirtualHost</a></li><li class="nav-item"><a href="#activate-required-modules-php--rewrite" class="nav-link">Activate required modules PHP &amp; Rewrite</a></li></ul></li><li class="nav-item"><a href="#iis-on-windows-or-azure" class="nav-link">IIS on Windows or Azure</a></li><li class="nav-item"><a href="#reverse-proxy" class="nav-link">Reverse proxy</a><ul><li class="nav-item"><a href="#nginx-proxy-manager" class="nav-link">Nginx Proxy Manager</a></li></ul></li><li class="nav-item"><a href="#links" class="nav-link">Links</a></li></ul>
         
     </aside>
 
