@@ -1,6 +1,6 @@
 ---
-title: Webserver configuration
-navigation: Webserver
+title: Webserver & Proxy Configuration
+navigation: Webserver & Proxy
 description: How to install Kimai on your server with git, composer and SSH or FTP
 ---
 
@@ -14,6 +14,10 @@ The following configurations are meant to give you a first idea how your config 
 they either might be incompatible with your exact setup or might need further tweaking to work.
 
 I don't offer free support for such situations, but you can contact me about [paid installation support]({% link _pages/support.html %}). 
+
+## Subdirectory usage
+
+Kimai was made to be hosted on the domain level, so running it inside a subdirectory is not supported.
 
 ## Nginx
 
@@ -63,7 +67,7 @@ server {
 }
 ```
 
-Read the [Ubuntu setup guide]({% link _documentation/fresh-ubuntu-18.md %}) to find out more. 
+Read the [Ubuntu setup guide]({% link _documentation/fresh-ubuntu-18.md %}) to find out more.
 
 ## Apache
 
@@ -188,7 +192,25 @@ This is important, as the API requires those methods: you would not be able to u
 ## Reverse proxy
 
 When you want to run Kimai behind a proxy, you have to provide all necessary `X-Forwarded-*` headers.
-Here is an example of a nginx proxy configuration, which terminates SSL on `kimai2.local` and forwards the request to Kimai running at `http://127.0.0.1:8010/`:  
+
+### Nginx Proxy Manager
+
+Here is a very short example for the `Nginx Proxy Manager`.
+
+```
+location / {
+    proxy_pass http://192.168.0.170:8001; # ← replace with actual internal IP:port of Kimai app
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_set_header X-Forwarded-Host $host;
+    proxy_set_header X-Forwarded-Port 30022;
+}
+```
+
+This is a larger example of a nginx proxy configuration, which terminates SSL on `kimai2.local` and forwards the request 
+to Kimai running at `http://127.0.0.1:8010/`:  
 
 ```
 server {
@@ -202,15 +224,15 @@ server {
     ssl_prefer_server_ciphers   on;
 
     location / {
-          proxy_pass http://127.0.0.1:8010/;
-
-          proxy_set_header  Host $http_host;
-          proxy_set_header  X-Real-IP $remote_addr;
-          proxy_set_header  X-Forwarded-Host $host:$server_port;
-          proxy_set_header  X-Forwarded-Server $host;
-          proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
-          proxy_set_header  X-Forwarded-Proto $scheme;
-          proxy_set_header  X-Forwarded-Port $server_port;
+        proxy_pass http://127.0.0.1:8010/;
+        
+        proxy_set_header  Host $http_host;
+        proxy_set_header  X-Real-IP $remote_addr;
+        proxy_set_header  X-Forwarded-Host $host:$server_port;
+        proxy_set_header  X-Forwarded-Server $host;
+        proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header  X-Forwarded-Proto $scheme;
+        proxy_set_header  X-Forwarded-Port $server_port;
     }
     # Redirect HTTP to HTTPS, in case an invalid (plain HTTP) request was sent to port 443
     error_page 497 https://$host:$server_port$request_uri;
@@ -231,10 +253,6 @@ or set it in your Kimai server definition (here nginx syntax):
 ```
 fastcgi_param TRUSTED_PROXIES "127.0.0.1,kimai2.local,localhost";
 ```
-
-### Subdirectory usage
-
-Kimai was made to be hosted on the domain level, so running it inside a subdirectory is not supported.
 
 ## Links
 
