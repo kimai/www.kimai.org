@@ -1,3 +1,16 @@
+**Version 2.14.0**
+
+Compatibility: requires minimum Kimai 2.34.0
+
+- Fetch user on-demand: fix Kiosk shows "unknown user"
+- Support for Tasks and Task custom-fields
+- Support for Expenses and Expense custom-fields
+- Always show customer next to project
+- Translate and unify all object names with Kimai core
+- Show translated name of system-configuration
+- Always save the system-configuration name within the audit log
+- Replace deprecated twig filter
+
 **Version 2.13.0**
 
 Compatibility: requires minimum Kimai 2.34.0
