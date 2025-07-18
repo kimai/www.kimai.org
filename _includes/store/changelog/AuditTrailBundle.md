@@ -1,3 +1,9 @@
+**Version 2.14.1**
+
+Compatibility: requires minimum Kimai 2.34.0
+
+- Fix Plugin if `ExpenseBundle` is not available
+
 **Version 2.14.0**
 
 Compatibility: requires minimum Kimai 2.34.0
