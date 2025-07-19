@@ -2,7 +2,6 @@
 title: Task planning
 slug: task-management-bundle
 type: featured
-order: 60
 lang: cs
 permalink: "/cs/store/keleo-task-management-bundle.html"
 ---

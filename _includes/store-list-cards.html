@@ -31,7 +31,15 @@
         </div>
         <div class="px-4 pb-3">
             {% for tag in settings.tags %}
-            <span class="badge bg-secondary zindex-2 me-2 text-capitalize">{{ tag }}</span>
+                {% if tag != 'plugin' and (tag != product.type or tag == 'featured') %}
+                    {% assign badge_class = 'secondary' %}
+                    {% if tag == 'cloud' %}
+                        {% assign badge_class = 'warning' %}
+                    {% elsif tag == 'featured' %}
+                        {% assign badge_class = 'primary' %}
+                    {% endif %}
+                    <span class="badge bg-{{ badge_class }} zindex-2 me-2 text-capitalize">{{ tag }}</span>
+                {% endif %}
             {% endfor %}
         </div>
         <div class="card-footer d-flex align-items-center fs-sm text-muted py-4">

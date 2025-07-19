@@ -1,8 +1,7 @@
 ---
 title: Custom content
 slug: custom-content-bundle
-type: featured
-order: 90
+type: plugin
 lang: he
 permalink: "/he/store/keleo-custom-content-bundle.html"
 ---

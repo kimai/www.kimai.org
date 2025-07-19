@@ -1,8 +1,7 @@
 ---
 title: Translations
 slug: translation-bundle
-type: featured
-order: 70
+type: plugin
 lang: pl
 permalink: "/pl/store/keleo-translation-bundle.html"
 ---
