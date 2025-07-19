@@ -35,7 +35,6 @@ permalink: /plugins.json
         "minimum_version": {% if minimumVersion == nil %}null{% else %}"{{ minimumVersion }}"{% endif %},
         "latest_release": {% if latestRelease == nil %}null{% else %}"{{ latestRelease }}"{% endif %},
         "bundle": {% if settings.bundle %}"{{ settings.bundle.name }}"{% else %}null{% endif %},
-        "featured": {% if product.type == 'featured' %}true{% else %}false{% endif %},
         "icon": "{{ settings.icon | default: "fas fa-question" }}",
         "description": "{{ translation.intro }}",
         "new": {% if settings.new %}true{% else %}false{% endif %},
