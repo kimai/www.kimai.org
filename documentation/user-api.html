@@ -617,7 +617,23 @@
             <div>
                 
                 <div id="documentation-content">
-                    <h2 id="bearer-token">Bearer token</h2>
+                    <h2 id="how-to-create-an-api-token">How to create an API token</h2>
+
+<p>First open your API credentials page:</p>
+
+<figure class="d-block figure mb-3" style="max-width: 300px">
+    <img src="/images/documentation/api_access.webp" class="figure-img img-fluid rounded" />
+    <figcaption class="figure-caption">Open API access from your personal user menu</figcaption>
+</figure>
+
+<p>Then you select <code class="language-plaintext highlighter-rouge">Create</code> to create one API token:</p>
+
+<figure class="d-block figure mb-3" style="max-width: 800px">
+    <img src="/images/documentation/api_access_detail.webp" class="figure-img img-fluid rounded" />
+    <figcaption class="figure-caption">Create an API token for Kimai</figcaption>
+</figure>
+
+<h2 id="bearer-token">Bearer token</h2>
 
 <p>When calling the API you have to submit the additional <code class="language-plaintext highlighter-rouge">Authorization</code> header with every call:</p>
 
@@ -627,9 +643,10 @@
 
 <h2 id="api-base-url">API Base URL</h2>
 
-<p>Application will also ask for your Kimai base URL.</p>
+<p>All application will also ask for your Kimai base URL.</p>
 
-<p>This is usually the URL you use to access Kimai in your browser, e.g. <code class="language-plaintext highlighter-rouge">https://demo.kimai.org</code>.</p>
+<p>While your API is available under <code class="language-plaintext highlighter-rouge">/api</code> or as complete URL <code class="language-plaintext highlighter-rouge">https://demo.kimai.org/api</code>, 
+the base URL is what you use to access Kimai in your browser: <code class="language-plaintext highlighter-rouge">https://demo.kimai.org</code>.</p>
 
 <p>Do not include the trailing slash:</p>
 
@@ -637,6 +654,7 @@
   <li>Wrong: <code class="language-plaintext highlighter-rouge">https://demo.kimai.org/</code></li>
   <li>Correct: <code class="language-plaintext highlighter-rouge">https://demo.kimai.org</code></li>
 </ul>
+
 
                 </div>
                 
@@ -651,7 +669,7 @@
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#bearer-token" class="nav-link">Bearer token</a></li><li class="nav-item"><a href="#api-base-url" class="nav-link">API Base URL</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#how-to-create-an-api-token" class="nav-link">How to create an API token</a></li><li class="nav-item"><a href="#bearer-token" class="nav-link">Bearer token</a></li><li class="nav-item"><a href="#api-base-url" class="nav-link">API Base URL</a></li></ul>
         
     </aside>
 
