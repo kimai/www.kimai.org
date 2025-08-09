@@ -1,3 +1,21 @@
+**Version 2.15.0**
+
+Compatibility: requires minimum Kimai 2.36.0
+
+- Added `group by day` setting for login and logoff screen to show entire week (turned on by default)
+- Show `working time summary` in an additional tab in the welcome screen
+- Always show the entire week (ascending order) in the welcome screen
+- Support showing `Break times` in the welcome screen
+- Change the default login mode to `Keyboard` (might need config change after update to `Scanner`)
+- Detect if `barcode` is used and only then display barcode related system configurations
+- New input mode to differentiate between `external scanner` and `keyboard only` usage
+- Always assume `Keyboard` if no barcode is used
+- Copy user-code into clipboard upon click in listing page
+- Improve API definitions
+- Remove unused `Active` column in user listing
+- Use translation from core
+- Use non-deprecated method (bump required Kimai version)
+
 **Version 2.14.0**
 
 Compatibility: requires minimum Kimai 2.34.0

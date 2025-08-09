@@ -1,3 +1,13 @@
+**Version 2.16.0**
+
+Compatibility: requires minimum Kimai 2.38.0
+
+- Better markdown support in task details page: 
+  - Support for header via `#`, `##`, `###`
+  - Updated styles for blockquotes and striped tables
+  - Added code highlighting
+- Fix deprecation
+
 **Version 2.15.0**
 
 Compatibility: requires minimum Kimai 2.34.0

@@ -1,3 +1,10 @@
+**Version 2.22.0**
+
+Compatibility: requires minimum Kimai 2.34.0
+
+- Prevent unwanted date changes on unedited value
+- Compatibility with 3.0 interface changes
+
 **Version 2.21.0**
 
 Compatibility: requires minimum Kimai 2.34.0

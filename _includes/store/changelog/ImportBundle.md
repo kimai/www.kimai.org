@@ -1,3 +1,14 @@
+**Version 2.20.0**
+
+Compatibility: requires minimum Kimai 2.36.0
+
+- Switch default separator to comma `,`
+- Support `e-mail` in addition to `email` as column name
+- Use `User` column for `User identifier`
+- Use `Username` and `Name` columns for `User alias`
+- Support `break` column
+- Fix invalid reported plugin version (previous 2.35)
+
 **Version 2.19.0**
 
 Compatibility: requires minimum Kimai 2.35.0

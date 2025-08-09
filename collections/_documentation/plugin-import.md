@@ -77,10 +77,11 @@ This will import timesheets and create these elements on the fly:
 | From ✅       | Start time in the format: `HH:MM:SS` (24 hour format, e.g. `15:50:00`)                                             |
 | To ✅         | End time in the format: `HH:MM:SS` (24 hour format, e.g. `17:21:44`)                                               |
 | Email ✅      | User email (Kimai will try to match by email first)                                                                |
-| User ✅       | Username (will only be used if `Email` does not match                                                              |
+| User ✅       | User-Identifier (will be used if `Email` does not match                                                            |
 | Project ✅    | Name of the project as string                                                                                      |
 | Customer ✅   | Name of the customer as string                                                                                     |
 | Activity ✅   | Name of the activity as string                                                                                     |
+| Username     | Alias of the user                                                                                                  |
 | Duration     | Timesheet duration in seconds (will be calculated from start and end time if not given)                            |
 | Tags         | Comma separated list of tag-names                                                                                  |
 | Exported     | Whether the timesheet should be marked as exported or not (supported values: `1` means exported and `0` means new) |
@@ -90,6 +91,7 @@ This will import timesheets and create these elements on the fly:
 | FixedRate    | The fixed rate as a float without currency                                                                         |
 | Billable     | Whether the entry should be marked as billable or not (supported values: `1` or `0`)                               |
 | Description  | Description of the entry as string                                                                                 |
+| Break        | Duration of the pause in seconds                                                                                   |
 | meta.xxx     | Custom fields, e.g. `meta.foo` for a custom field with the internal name `foo`                                     |
 {: .table }
 
