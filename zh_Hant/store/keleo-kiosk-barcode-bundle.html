@@ -576,7 +576,27 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
                 <div class="tab-pane fade" id="store-changelog" role="tabpanel">
                     <h2 id="compatibility">變更記錄</h2>
                     
-                    <p><strong>Version 2.14.0</strong></p>
+                    <p><strong>Version 2.15.0</strong></p>
+
+<p>Compatibility: requires minimum Kimai 2.36.0</p>
+
+<ul>
+  <li>Added <code class="language-plaintext highlighter-rouge">group by day</code> setting for login and logoff screen to show entire week (turned on by default)</li>
+  <li>Show <code class="language-plaintext highlighter-rouge">working time summary</code> in an additional tab in the welcome screen</li>
+  <li>Always show the entire week (ascending order) in the welcome screen</li>
+  <li>Support showing <code class="language-plaintext highlighter-rouge">Break times</code> in the welcome screen</li>
+  <li>Change the default login mode to <code class="language-plaintext highlighter-rouge">Keyboard</code> (might need config change after update to <code class="language-plaintext highlighter-rouge">Scanner</code>)</li>
+  <li>Detect if <code class="language-plaintext highlighter-rouge">barcode</code> is used and only then display barcode related system configurations</li>
+  <li>New input mode to differentiate between <code class="language-plaintext highlighter-rouge">external scanner</code> and <code class="language-plaintext highlighter-rouge">keyboard only</code> usage</li>
+  <li>Always assume <code class="language-plaintext highlighter-rouge">Keyboard</code> if no barcode is used</li>
+  <li>Copy user-code into clipboard upon click in listing page</li>
+  <li>Improve API definitions</li>
+  <li>Remove unused <code class="language-plaintext highlighter-rouge">Active</code> column in user listing</li>
+  <li>Use translation from core</li>
+  <li>Use non-deprecated method (bump required Kimai version)</li>
+</ul>
+
+<p><strong>Version 2.14.0</strong></p>
 
 <p>Compatibility: requires minimum Kimai 2.34.0</p>
 
