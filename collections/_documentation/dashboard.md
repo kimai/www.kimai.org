@@ -3,21 +3,18 @@ title: Dashboard
 description: Dashboard widgets and statistic information
 ---
 
-The Kimai dashboard displays (so called) `widgets`.
-The ones shipped by default can be changed, re-ordered or completely removed.
+The Kimai dashboard displays so-called `widgets`, which can be reordered, added, or removed.
 
-## User specific widgets
+Each user can configure their own dashboard directly via the frontend—no special permissions are required for editing your personal layout.
 
-The dashboard can be configured directly by the user via the frontend, every user can have an own set of widgets.
+However, some widgets may require specific permissions (for example, those showing project budgets). As a result, different user roles may see different sets of available widgets.
 
-Some widget might require certain permissions to access the data, so different user roles see different widgets.
+## Editing the Dashboard
 
-## Editing the Dashboard 
+Click the {% include demo-action-button.html icon="preferences" title="Preferences" %} button in the top-right corner to switch to edit mode.
 
-Upon clicking the {% include demo-action-button.html icon="preferences" title="Preferences" %} button in the top right corner, you can configure the dashboard.
+- Removing widgets: If you delete a widget from the dashboard, you must manually click the Save button to apply the change.
+- Reordering widgets: If you reoder widget on the dashboard, you must manually click the Save button to apply the change.
+- Adding widgets: When you add a widget, all pending changes are saved automatically.
 
-When you delete a widget from the Dashboard, you have to manually click the save button.
-
-If you add a widget to the page it will immediately save this change.
-
-Rearranging widgets is possible, but not all possible combinations will appear as it did in the edit mode. 
+> Note: The arrangement of widgets in edit mode may look slightly different from how it appears in the normal display mode. This is expected.
