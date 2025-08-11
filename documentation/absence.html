@@ -638,9 +638,9 @@ The supervisor is a setting in the <a href="/documentation/users.html">users pro
 
 <ul>
   <li>Vacation days need to be approved</li>
-  <li>Vacation days can be full days or half days</li>
+  <li>Vacation days can be full days or half-days</li>
   <li>Vacation days count as working time, so they will be added to your daily working time</li>
-  <li>The time to you daily working time depends on the expected working hours for that day</li>
+  <li>Your daily working time depends on the expected working hours for that day</li>
   <li>You can book ranges of holidays</li>
   <li>Days without expected working hours will be ignored when creating ranges</li>
 </ul>
@@ -653,10 +653,12 @@ The supervisor is a setting in the <a href="/documentation/users.html">users pro
   <li>Sickness days are auto-approved</li>
   <li>Sickness days can be entered as date-range</li>
   <li>A sickness entry will always fill up the daily working time</li>
-  <li>If you already entered working-time the same day, sickness will fill up the remaining open time</li>
-  <li>There are no “half-day” entries available, because a half-day of sickness means: there needs to at least one time-entry with 50% of the expected working-time
+  <li>If you have already entered working-time the same day, sickness will fill up the remaining open time</li>
+  <li>There are no “half-day” entries available, because a half-day of sickness means, that there needs to at least one time-entry with 50% of the expected working-time. Example:
     <ul>
-      <li>example: 8h are expected, the users enters a timesheet of 4h, the user adds a sickness entry, this entry will fill up the remaining 4h</li>
+      <li>The expected working-time for the day is 8h</li>
+      <li>The users entered a timesheet of 4h</li>
+      <li>The user now adds a sickness entry: this will fill up the remaining 4h</li>
     </ul>
   </li>
 </ul>
@@ -676,7 +678,7 @@ The supervisor is a setting in the <a href="/documentation/users.html">users pro
 
 <h2 id="other-absences">Other absences</h2>
 
-<p>Other absences are all kind of reasons, that do not fit into any other absence category.</p>
+<p>Other absences could be all kinds of reasons that do not fit into any other absence category.</p>
 
 <ul>
   <li>Other absences need to be approved</li>
@@ -690,6 +692,15 @@ The supervisor is a setting in the <a href="/documentation/users.html">users pro
 <h3 id="unpaid-holiday">Unpaid holiday</h3>
 
 <p>This fills up entire days and can be entered as date-range.</p>
+
+<h2 id="creating-absences-for-next-year">Creating absences for next year</h2>
+
+<p>You can always only select absences for the currently selected year. 
+If you want to create absence requests in advance for next year, you have to change the selected year by:</p>
+<ul>
+  <li>clicking on the year dropdown and selecting the correct entry</li>
+  <li>clicking on the <a class="btn btn-secondary px-3" href="#"><i class="bx bxs-chevron-right"></i></a> button to move to the next year</li>
+</ul>
 
 <h2 id="permissions">Permissions</h2>
 
@@ -773,7 +784,7 @@ The supervisor is a setting in the <a href="/documentation/users.html">users pro
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#email-notification" class="nav-link">Email notification</a></li><li class="nav-item"><a href="#approval-workflow" class="nav-link">Approval workflow</a></li><li class="nav-item"><a href="#holiday" class="nav-link">Holiday</a></li><li class="nav-item"><a href="#sickness" class="nav-link">Sickness</a><ul><li class="nav-item"><a href="#my-child-is-sick" class="nav-link">My child is sick</a></li></ul></li><li class="nav-item"><a href="#time-off" class="nav-link">Time-Off</a></li><li class="nav-item"><a href="#other-absences" class="nav-link">Other absences</a><ul><li class="nav-item"><a href="#parental-leave" class="nav-link">Parental leave</a></li><li class="nav-item"><a href="#unpaid-holiday" class="nav-link">Unpaid holiday</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#email-notification" class="nav-link">Email notification</a></li><li class="nav-item"><a href="#approval-workflow" class="nav-link">Approval workflow</a></li><li class="nav-item"><a href="#holiday" class="nav-link">Holiday</a></li><li class="nav-item"><a href="#sickness" class="nav-link">Sickness</a><ul><li class="nav-item"><a href="#my-child-is-sick" class="nav-link">My child is sick</a></li></ul></li><li class="nav-item"><a href="#time-off" class="nav-link">Time-Off</a></li><li class="nav-item"><a href="#other-absences" class="nav-link">Other absences</a><ul><li class="nav-item"><a href="#parental-leave" class="nav-link">Parental leave</a></li><li class="nav-item"><a href="#unpaid-holiday" class="nav-link">Unpaid holiday</a></li></ul></li><li class="nav-item"><a href="#creating-absences-for-next-year" class="nav-link">Creating absences for next year</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
         
         <ul class="nav">
             <li>
