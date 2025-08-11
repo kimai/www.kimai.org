@@ -32,9 +32,9 @@ There are 2 phases that each absence has to go through:
 When you are eligible for holidays, meaning that your contract settings have a value for `holidays`, you can add holidays here.
 
 - Vacation days need to be approved
-- Vacation days can be full days or half days
+- Vacation days can be full days or half-days
 - Vacation days count as working time, so they will be added to your daily working time
-- The time to you daily working time depends on the expected working hours for that day
+- Your daily working time depends on the expected working hours for that day
 - You can book ranges of holidays
 - Days without expected working hours will be ignored when creating ranges
 
@@ -45,9 +45,11 @@ Everyone can enter sickness entries.
 - Sickness days are auto-approved
 - Sickness days can be entered as date-range
 - A sickness entry will always fill up the daily working time
-- If you already entered working-time the same day, sickness will fill up the remaining open time
-- There are no "half-day" entries available, because a half-day of sickness means: there needs to at least one time-entry with 50% of the expected working-time
-  - example: 8h are expected, the users enters a timesheet of 4h, the user adds a sickness entry, this entry will fill up the remaining 4h
+- If you have already entered working-time the same day, sickness will fill up the remaining open time
+- There are no "half-day" entries available, because a half-day of sickness means, that there needs to at least one time-entry with 50% of the expected working-time. Example:
+  - The expected working-time for the day is 8h
+  - The users entered a timesheet of 4h
+  - The user now adds a sickness entry: this will fill up the remaining 4h
 
 ### My child is sick
 
@@ -62,7 +64,7 @@ PTO (personal time-off) entries are for informational purpose, they do NOT influ
 
 ## Other absences
 
-Other absences are all kind of reasons, that do not fit into any other absence category. 
+Other absences could be all kinds of reasons that do not fit into any other absence category. 
 
 - Other absences need to be approved
 - Always entered as a duration  
@@ -74,6 +76,13 @@ This fills up entire days and can be entered as date-range.
 ### Unpaid holiday
 
 This fills up entire days and can be entered as date-range.
+
+## Creating absences for next year
+
+You can always only select absences for the currently selected year. 
+If you want to create absence requests in advance for next year, you have to change the selected year by:
+- clicking on the year dropdown and selecting the correct entry
+- clicking on the {% include demo-action-button.html icon="next" %} button to move to the next year
 
 ## Permissions
 
