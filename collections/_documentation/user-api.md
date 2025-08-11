@@ -21,7 +21,7 @@ When calling the API you have to submit the additional `Authorization` header wi
 
 ## API Base URL
 
-All application will also ask for your Kimai base URL.
+All applications will also ask for your Kimai base URL.
 
 While your API is available under `/api` or as complete URL `https://demo.kimai.org/api`, 
 the base URL is what you use to access Kimai in your browser: `https://demo.kimai.org`.
