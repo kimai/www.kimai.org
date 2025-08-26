@@ -1,3 +1,9 @@
+**Version 2.21.0**
+
+Compatibility: requires minimum Kimai 2.36.0
+
+- Show correct filesize and row limitation in help label and error message
+
 **Version 2.20.0**
 
 Compatibility: requires minimum Kimai 2.36.0
