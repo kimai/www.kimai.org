@@ -76,10 +76,10 @@ demo:
     accounts: "Ces comptes sont disponibles pour vos tests. Vous pouvez également créer votre propre utilisateur test dans le formulaire d'inscription de chaque démo."
     role_user: Utilisateur
     role_teamlead: Chef d'équipe
-    role_admin: Administrator
+    role_admin: Administrateur
     role_super: Super-Admin
     empty-description: La version actuelle avec des plugins en vedette, sans données.
-    plugins-description: Version en développement avec  plugins  et  données de démonstration.
+    plugins-description: Version de développement avec plugins et données de démonstration.
     plugins-title: En vedette
     stable-title: Noyau
     empty-title: Module d'extension
@@ -96,7 +96,7 @@ download:
     subtitle: Téléchargement et Installation
 hosted:
     name: Cloud
-    title: Kimai-Cloud – Utilisez Kimai directement sans configuration. Hébergement gratuit de Kimai !
+    title: Kimai-Cloud — Utilisez Kimai directement sans configuration. Hébergement Kimai sans souci !
 about:
     name: À propos de Kimai
     description: Qu'est-ce qui se cache derrière l'application de suivi du temps Kimai ? Apprenez-en plus sur elle, son histoire et son développeur.
@@ -114,13 +114,13 @@ store:
     name: Plugins
     title: Plugins pour Kimai
     subtitle: Améliorez Kimai avec notre large sélection de plugins. Choisissez parmi des dizaines d'applications et d'extensions dans l'écosystème Kimai et améliorez votre suivi des temps.
-    description: Les plugins pour Kimai enrichissent votre expérience de suivi du temps avec des fonctionnalités supplémentaires.
+    description: Les plugins pour Kimai enrichissent votre expérience de suivi du temps grâce à des fonctionnalités supplémentaires
 blog:
     name: Blog
     description: "Actualités sur le système open-source de suivi du temps Kimai"
     subtitle: Nouvelles de l'équipe de développement Kimai
     title: Nouveautés de Kimai
-    archive-link: Trouvez ici les anciennes actualités sur %topic%.
+    archive-link: Retrouvez ici les anciennes actualités sur le sujet %topic%
 documentation:
     name: Documentation
     description: "Informations de support, manuel d'utilisation et autres documents pour le système d'enregistrement des temps Kimai"
@@ -134,11 +134,11 @@ features:
 docu-developer:
     name: Développeur
 docu-onpremise:
-    name: Auto-hébergement
+    name: Sur site
 docu-manual:
     name: Manuel de l'utilisateur
 alternatives:
-    name: Kimai alternatives
+    name: Alternatives à Kimai
     description: Kimai est la meilleure application open source de suivi du temps disponible, non seulement pour les équipes axées sur les projets. Découvrez comment Kimai se compare aux solutions de suivi du temps alternatives afin que vous puissiez choisir la bonne pour votre organisation.
 feature:
     mobile-ready:
@@ -155,7 +155,7 @@ feature:
         description: "Kimai peut être localisé dans n'importe quelle langue et est déjà traduit dans plus de 30 langues."
     teams:
         name: "Équipes"
-        description: "Des équipes peuvent être créées pour regrouper vos utilisateurs en groupes logiques tels que des départements ou des groupes de pairs liés à un projet.Les clients et les projets peuvent être affectés à ces équipes, ce qui limitera la visibilité et l’accès pour les autres utilisateurs."
+        description: "Teams regroupe les utilisateurs en groupes logiques, tels que des services. Limitez l'accès aux données en affectant des clients et des projets à vos équipes."
     customers:
         name: "Clients"
         description: "Gérez vos clients et définissez l’adresse, les contacts, le pays, la devise, la visibilité (pour l’archivage) et de nombreux autres champs."
@@ -164,22 +164,22 @@ feature:
         description: "Gérez les projets pour chaque client avec le numéro de commande, le budget et la visibilité (pour l’archivage)."
     activities:
         name: "Activités"
-        description: "Les activités sont utilisées pour attribuer l’unité de travail aux entrées de la feuille de temps. Gérez les activités pour chaque projet avec le numéro de commande, le budget et la visibilité (pour l’archivage). Les activités peuvent être globales, plus de duplication nécessaire si plusieurs projets partagent la même unité de travail."
+        description: "Les activités permettent d'attribuer l'unité de travail aux entrées de la feuille de temps. Gérez les activités pour chaque projet avec le numéro de commande, le budget et la visibilité (pour l'archivage) ou créez des activités globales pour éviter les doublons."
     invoices:
         name: "Facturation"
-        description: "Différents modèles de factures, des options de regroupement des entrées, des numéros de factures configurables, et vous pouvez ajouter vos propres modèles au format PDF, DOCX, HTML, XLSX et ODS."
+        description: "Modèles de factures configurables, options de regroupement des entrées, numéros de factures configurables et formats multiples tels que PDF et DOCX."
     export:
         name: "Export des données"
-        description: "Les données des feuilles de temps peuvent être exportées vers d'autres programmes, ou partagées avec différents départements au format XLSX (Excel), PDF, CSV et HTML. Les enregistrements exportés peuvent en outre être verrouillés et protégés contre toute modification ultérieure."
+        description: "Les données des feuilles de temps peuvent être exportées et partagées aux formats XLSX, PDF, CSV et HTML. Les enregistrements exportés peuvent être verrouillés et protégés contre toute modification ultérieure."
     expenses:
         name: "Dépenses"
         description: "Achetez le greffon et gardez la trace des dépenses en fonction du client, du projet et de l'activité – pour les catégoriser et les inclure dans vos factures."
     saml:
         name: "SAML"
-        description: "Connectez-vous et enregistrez les utilisateurs via SAML (single sign-on ou SSO) et réutilisez votre fournisseur d'identité existant, comme Google Workspace, Authentik ou Azure Active Directory."
+        description: "Connectez-vous et enregistrez les utilisateurs avec SAML via votre fournisseur d'identité SSO existant, tel que Google Workspace, Authentik ou Azure Active Directory."
     api:
         name: "JSON API"
-        description: "Avec une API JSON, les applications externes peuvent communiquer avec votre chronomètre préféré !"
+        description: "Comprend une API JSON complète pour la lecture et l'écriture de données, afin que les applications externes et les outils personnalisés puissent communiquer avec Kimai."
     ldap:
         name: "LDAP"
         description: "Connectez Kimai avec le serveur d’annuaire de votre entreprise (LDAP ou Active directory) et utilisez votre infrastructure d’authentification existante."
@@ -200,7 +200,7 @@ feature:
         description: "Kimai utilise une version localisée du format 24 heures. Mais si vous êtes habitué·e au format am/pm, vous pouvez le configurer."
     time-clock:
         name: "Horloge"
-        description: "Vous ne voulez pas que vos utilisateurs enregistrent des fiches de temps arbitraires ? Passez au mode horloge, qui n’autorise que les enregistrements “punch in” et “punch out”. Plus besoin d’indiquer manuellement les heures de début et de fin."
+        description: "Vous ne voulez pas que vos utilisateurs enregistrent des feuilles de temps arbitraires ? Passez en mode horloge, qui n'autorise que les enregistrements « pointage à l'arrivée » et « pointage au départ »."
     duration-only:
         name: "Durée uniquement"
         description: "Si votre législation locale vous oblige à n’afficher que les durées au lieu des dates de début et de fin, vous pouvez activer ce mode globalement."
@@ -226,50 +226,50 @@ feature:
         name: Authentification à deux facteurs (2FA)
         description: "Kimai prend en charge l'authentification à deux facteurs avec des jetons TOTP : sécurisez vos comptes d'utilisateur dès aujourd'hui !"
     auth:
-        description: "Kimai prend en charge les fournisseurs d'identité externes et la connexion via LDAP et SAML avec plusieurs fournisseurs (comme Google Workspace, Azure AD ou Authentik). De plus, l'authentification à deux facteurs peut être activée via des jetons TOTP."
+        description: "Kimai prend en charge les fournisseurs d'identité externes et la connexion via LDAP et SAML auprès de plusieurs fournisseurs (tels que Google Workspace, Azure AD ou Authentik). L'authentification à deux facteurs via des jetons TOTP est disponible en option."
         name: Authentification et sécurité
     reporting:
-        description: Analyse des temps enregistrés, des clients, des projets et des activités. Évaluation selon les utilisateurs, les clients, les projets, les activités, les balises, les périodes de temps, et bien plus encore.
+        description: Analyse des temps enregistrés par les utilisateurs, les clients, les projets, les activités, les balises, les périodes, etc.
         name: Rapports et analyses
     dark-mode:
         description: Parce que toutes les applications ont besoin d'un mode sombre, ce qui aide à réduire la fatigue oculaire le soir ou dans les environnements sombres.
         name: Mode sombre
     customer-portal:
-        description: Partagez les statistiques et feuilles de temps des clients et projets avec n’importe qui grâce à une URL secrète, éventuellement protégée par un mot de passe.
-        name: Customer Portal
+        description: Partagez les statistiques relatives aux clients et aux projets ainsi que les feuilles de temps avec n'importe qui à l'aide d'une URL secrète, protégée par mot de passe si vous le souhaitez.
+        name: Portail client
     no-limits:
-        description: "Votre logiciel SaaS inclut toujours des limites ? Pas Kimai : il n’y a aucune limite. Vous ne payez que pour le nombre d’utilisateurs actifs. Je ne vous limite pas et je ne facture pas les utilisateurs inactifs. Vous pouvez créer un nombre illimité d’utilisateurs, de clients, de projets, d’activités, de feuilles de temps et plus encore."
-        name: Ne connait aucune limites
+        description: "Votre logiciel SaaS comporte toujours des limites ? Pas Kimai : il n'y a aucune limite. Vous ne payez que pour le nombre d'utilisateurs actifs. Je ne vous impose aucune limite et je ne facture pas les utilisateurs inactifs. Vous pouvez créer un nombre illimité d'utilisateurs, de clients, de projets, d'activités, de feuilles de temps et plus encore."
+        name: Ne connaît aucune limite
     security:
         points:
-            security_5: In-depth code reviews
-            security_3: CSRF and XSS protection
-            security_6: Automated code test with a code coverage above 90%
-            security_4: Continuous integration with thousands of checks
-            security_1: Secure password hashing with Argon2 or Sodium
-            security_2: Granular user-roles restricting access
-        description: Kimai implements best-practices in application design to prevent common attacks. Automated security controls are critical to any software development workflow to reduce the amount of time from defect creation to defect detection. These scans run on every code change, every time.
-        name: Security in Kimai
+            security_5: Révisions approfondies du code
+            security_3: Protection CSRF et XSS
+            security_6: Test automatisé du code avec une couverture supérieure à 90 %
+            security_4: Intégration continue avec des milliers de vérifications
+            security_1: Hachage sécurisé des mots de passe avec Argon2 ou Sodium
+            security_2: Rôles utilisateur granulaires limitant l'accès
+        description: Kimai met en œuvre les meilleures pratiques en matière de conception d'applications afin de prévenir les attaques courantes. Les contrôles de sécurité automatisés sont essentiels à tout processus de développement logiciel afin de réduire le temps entre la création et la détection des défauts. Ces analyses sont effectuées à chaque modification du code, à chaque fois.
+        name: Sécurité dans Kimai
     security-cloud:
         points:
-            security_3: No multi-tenancy, each customer has their own database
-            security_1: All connections secured via TLS (SSL)
-            security_2: Best-practice security, firewalls and brute-force prevention
-            security_6: Code runs in tightly restricted domain environments
-            security_4: Servers are hosted in a data center in the EU
-            security_5: Critical services are not accessible to the outside world
-        name: Security in the platform
-        description: Software is only as secure as the system it runs on. I take a defense-in-depth approach with server and network infrastructure. Customers on the hosted platform are secured through multiple layers of protection.
+            security_3: Pas de multi-location, chaque client dispose de sa propre base de données
+            security_1: Toutes les connexions sécurisées via TLS (SSL)
+            security_2: Meilleures pratiques en matière de sécurité, pare-feu et prévention des attaques par force brute
+            security_6: Le code s'exécute dans des environnements de domaine strictement restreints
+            security_4: Les serveurs sont hébergés dans un centre de données situé dans l'UE
+            security_5: Les services essentiels ne sont pas accessibles au monde extérieur
+        name: Sécurité de la plateforme
+        description: La sécurité d'un logiciel dépend de celle du système sur lequel il fonctionne. J'adopte une approche de défense en profondeur pour l'infrastructure des serveurs et du réseau. Les clients de la plateforme hébergée bénéficient d'une sécurité renforcée grâce à plusieurs niveaux de protection.
     privacy:
         name: La confidentialité avant tout
-        description: I respect your and your users privacy and data. No, this is not yet another boring introduction into a Privacy policy - that's how I run this business. I don't sell data. I follow the GDPR and will answer any question about involved sub-processors.
+        description: "Je respecte votre vie privée et celle de vos utilisateurs, ainsi que vos données. Non, ce n'est pas une énième introduction ennuyeuse à une politique de confidentialité : c'est ainsi que je gère mon entreprise. Je ne vends pas de données. Je respecte le RGPD et je répondrai à toutes vos questions concernant les sous-traitants impliqués."
 install:
     alert-vps: À ce stade, il n'est pas possible d'installer Kimai en téléchargeant un fichier ZIP et en téléchargeant les fichiers sur votre serveur Web. Cela est dû au fait que Composer doit être exécuté en ligne de commande. Cela ne signifie pas nécessairement que vous avez besoin d'un VPS. Certains hôtes partagés vous donnent un accès SSH, grâce auquel vous devriez être en mesure d'installer Composer et Kimai sans problème.
-    ssh: La méthode recommandée installe Kimai directement sur votre serveur.
+    ssh: Cette méthode installe Kimai directement sur votre serveur.
     cloud: Pas besoin d'installer Kimai, vous pouvez commencer à l'utiliser dès maintenant.
     docker: Utilisez notre image Docker pour installer et mettre à jour facilement le conteneur Kimai.
     kubernetes: Vous pouvez déployer Kimai sur Kubernetes en utilisant nos Helm-Charts.
-    caddy-docker: Using Docker-Compose and Caddy as reverse-proxy with SSL support.
+    caddy-docker: Utilisation de Docker-Compose et Caddy comme proxy inverse avec prise en charge SSL.
 newsletter:
     field-required: Cette case ne peut pas être laissée vide.
     captcha-help: Désolés pour le Captcha, nous savons que c'est ennuyeux !
@@ -283,7 +283,7 @@ newsletter:
     email-help: Indiquez votre adresse courriel pour vous abonner.
 developer:
     kevinpapst:
-        intro: Responsable du projet et développeur principal depuis 2009. Entièrement concentré sur la réussite de Kimai. Est disponible pour l'assistance, les installations et le développement de plugins personnalisés.
+        intro: "J'ai toujours rêvé de gagner ma vie grâce à un produit open source. Avec Kimai, j'ai pu développer un logiciel qui apporte une grande valeur ajoutée à mes clients et dont le développement me motive chaque jour.\n\nJe tiens à remercier tout particulièrement la formidable communauté pour sa fidélité au fil des ans. Je me réjouis à l'idée des 10 prochaines années de Kimai 🚀"
 price-contract: À la demande
 full-documentation: Documentation complète disponible ici (en anglais seulement)
 contact-developer: Si vous avez des questions, veuillez utiliser les informations de contact suivantes pour contacter directement le développeur.
@@ -316,7 +316,7 @@ history:
     year-2023: Le travail acharné porte enfin ses fruits, et Kimai est maintenant mon travail à temps plein à 100 %. Merci !
     year-2014: La dernière version de Kimai 1 sort, le développement s'arrête et il n'y a plus beaucoup d'activité.
     year-2006: La première version de Kimai est publiée et gagne progressivement une base d'utilisateurs et de développeurs de plus en plus grande.
-    intro: Ce qui a commencé comme un projet de loisir est maintenant l'application de suivi du temps open source leader dans le monde. Plongeons dans son histoire.
+    intro: Ce qui a commencé comme un projet amateur est aujourd'hui l'application open source de suivi du temps la plus utilisée au monde. Revenons sur son histoire.
     year-2018: La refonte de Kimai se fait une place dans la communauté, les migrations de données fonctionnent, l'adoption est en hausse.
     current: |
         Kimai est un logiciel de suivi du temps qui a une longue histoire. La première version a été publiée en 2006. Pourquoi en parle-t-on ? Parce que nous avons vu de nombreux programmes aller et venir au cours de la dernière décennie - faites-nous confiance quand nous disons :nous resterons sur le marché. Nous n'avons jamais vécu de Kimai, c'est le plaisir qui nous motive à améliorer Kimai. Nous pensons que c'est l'une des principales raisons du succès de Kimai.
@@ -327,15 +327,13 @@ history:
 
         Nous pourrions maintenant écrire beaucoup plus sur ses caractéristiques et les avantages qu'il vous apportera - que vous soyez indépendant, une petite organisation ou une entreprise de plusieurs centaines d'employés - mais nous pensons plutôt que l'essayer par vous-même vaut bien plus que mille mots de notre part :Alors, soyez notre invité et testez Kimai en ligne avec notre Installation de démo. Si vous préférez les choses concrètes, nous avons compilé une liste des principales fonctionnalités.
     past: |
-        Kimai a une longue histoire et était bien en avance sur son temps lorsque l'équipe de Torsten Höltge a commencé à le développer en 2006. Il a été conçu de manière responsive (merci beaucoup à la magie de Javascript) à une époque où ce mot n'était même pas encore officiellement inventé.
+        Kimai a une longue histoire et était très en avance sur son temps lorsque l'équipe de Torsten Höltge a commencé à le développer en 2006. Il avait un design réactif (grâce à beaucoup de magie Javascript) à une époque où le mot n'avait même pas encore été officiellement inventé.
+        J'ai repris le développement de Kimai en 2009 lorsque Torsten a voulu y mettre fin par manque de temps, et j'ai maintenu et étendu Kimai pendant plusieurs années avec l'aide d'autres passionnés d'open source.
 
-        Il a voulu l'arrêter pour des raisons personnelles et par manque de temps, lorsque le projet a été repris par Kevin. Avec l'aide d'autres volontaires du logiciel libre, Kevin a pu le maintenir en vie et le prolonger pendant plusieurs années.
+        Entre-temps, la communauté PHP faisait de grands progrès, tandis que Kimai prenait de plus en plus de retard en raison de son histoire. La base présentait de nombreuses faiblesses techniques et, après de nombreuses années de développement, le code source devenait de plus en plus difficile à maintenir.
+        L'idée de réécrire Kimai avec des frameworks modernes existait depuis un certain temps, également motivée par les demandes de la communauté, mais personne n'avait les ressources nécessaires pour faire avancer cette idée. À la fin de 2017, plusieurs facteurs se sont conjugués et j'ai saisi l'occasion pour commencer à développer la prochaine étape évolutive, « Kimai 2 ».
 
-        Pendant ce temps, la communauté PHP faisait de grands progrès, tandis que l'histoire technique de Kimai - construite sur de nombreux scripts PHP individuels, qui devaient tous être accessibles au public - prenait de plus en plus de retard. La base de données présentait quelques inconvénients majeurs, tels qu'une extensibilité limitée et une conception problématique. Après de nombreuses années de développement, le code est devenue de plus en plus difficile à maintenir et la logique s'est répandue de façon incontrôlée dans les scripts, les classes et la couche frontale.
-
-        C'est pourquoi, il y a eu l'idée de réécrire Kimai avec des frameworks modernes pendant très longtemps, également motivée par les demandes de la communauté, mais nous n'avons pas eu le temps de faire avancer ces idées. Fin 2017, Symfony 4.0 est sorti en même temps qu'une pile de construction frontale moderne appelée _Webpack-Encore_. Puis Kevin a saisi l'occasion et a commencé à développer la prochaine étape de l'évolution : Kimai 2 est né.
-
-        Le première version de Kimai a plus de 13 ans et est utilisée par des gens du monde entier. Nous en sommes fiers, ainsi que de sa grande communauté. Nous tenons donc à remercier tous ceux qui ont contribué à Kimai.
+        Le Kimai original a été lancé en 2006 et a été utilisé par de nombreuses personnes à travers le monde. J'en suis fier, tout comme je suis fier de sa formidable communauté. Je tiens à remercier tous ceux qui ont contribué à Kimai.
 store-hero-counter: '%number% clients sont déjà avec nous'
 cta:
     tech-support:
@@ -358,7 +356,7 @@ highlight:
         oss: Code source ouvert
         versions: Cloud et On-Premise
         gdpr: Conforme au RGPD (Règlement Général sur la Protection des Données)
-        european: Independent and European 🇪🇺 – built in Austria 🇦🇹 and hosted in Germany 🇩🇪 with a strong commitment to data protection, transparency and open-source quality.
+        european: Indépendant et européen 🇪🇺 – développé en Autriche 🇦🇹 et hébergé en Allemagne 🇩🇪, avec un engagement fort en faveur de la protection des données, de la transparence et de la qualité open source.
 description: Description
 oss-cloud-compare:
     saas: Hébergé pour vous
@@ -397,7 +395,7 @@ comparison:
     alternatives: Alternatives à Kimai
     finding: Trouver la bonne solution de suivi du temps
     use_case: Chaque cas d'utilisation, chaque entreprise et chaque flux de travail sont différents. Vos besoins doivent être évalués avant de décider d'une solution de suivi des temps. Voici une comparaison de quelques alternatives populaires à Kimai pour vous aider à trouver la solution la plus adaptée à vos besoins.
-    compare_with: Compare Kimai with %name%
+    compare_with: Comparez Kimai avec %name%
 support:
     name: "Support"
     description: "Besoin de support ? Trouvez de l'aide pour l'utilisation, l'installation ou la mise à jour de Kimai."
@@ -428,21 +426,21 @@ support:
 docu-cloud:
     name: Cloud
 landing_oss:
-    version_cloud: 'Get up and running in seconds, leave the hosting and update to me, you take care of your core business. Make sure your team is ready for the future, with a modern time tracking solution. All plugins are available in the cloud at no extra cost.'
-    transparency_intro: 'With closed source software, you have only the vendor''s claims that they''re keeping the software secure and adhering to standards. The visibility of the code behind open source software means you can see for yourself. You can always see my responses to the community, the release schedule and milestones, and every commit and pull request review.'
+    version_cloud: 'Soyez opérationnel en quelques secondes, confiez-moi l''hébergement et les mises à jour, et concentrez-vous sur votre cœur de métier. Assurez-vous que votre équipe est prête pour l''avenir grâce à une solution moderne de suivi du temps. Tous les plugins sont disponibles dans le cloud sans frais supplémentaires.'
+    transparency_intro: 'Avec les logiciels à code source fermé, vous ne disposez que des affirmations du fournisseur selon lesquelles il assure la sécurité du logiciel et respecte les normes. La visibilité du code derrière les logiciels open source vous permet de vous en rendre compte par vous-même. Vous pouvez toujours consulter mes réponses à la communauté, le calendrier de publication et les étapes importantes, ainsi que chaque commit et chaque examen de pull request.'
     version_choose: 'Quel Kimai vous faut-il ?'
-    vendor_title: 'No vendor lock-in'
-    vendor_intro: 'Vendor lock-in can cost a lot, not just in cash but also in hours. With Kimai, you can host it yourself, have me host it for you, or fork it and change it. You''re never locked into a hosted product, and all of your data is easy to export so that if you ever decide Kimai isn''t for you anymore, your data is still yours (the same applies to the paid plans, I offer data export upon cancellation).'
+    vendor_title: 'Aucune dépendance vis-à-vis d''un fournisseur'
+    vendor_intro: 'La dépendance vis-à-vis d''un fournisseur peut coûter cher, non seulement en argent, mais aussi en temps. Avec Kimai, vous pouvez l''héberger vous-même, me demander de l''héberger pour vous, ou le modifier. Vous n''êtes jamais lié à un produit hébergé, et toutes vos données sont faciles à exporter. Ainsi, si vous décidez que Kimai ne vous convient plus, vos données vous appartiennent toujours (il en va de même pour les forfaits payants, je propose l''exportation des données en cas d''annulation).'
     transparency_title: Toujours transparent
     subtitle: Kimai est le logiciel open source %title% qu’il vous faut
-    version_onpremise: 'I take care of the software, you take care about the hosting, updates and security. And if you don''t want to do it yourself, there is always support available at your fingertips. You buy the plugins relevant to you in an annual update subscription.'
+    version_onpremise: 'Je m''occupe du logiciel, vous vous occupez de l''hébergement, des mises à jour et de la sécurité. Et si vous ne souhaitez pas le faire vous-même, une assistance est toujours à votre disposition. Vous achetez les plugins qui vous intéressent dans le cadre d''un abonnement annuel aux mises à jour.'
     discover: Découvrez Kimai
 plans:
     tls_included: Certificat SSL gratuit
     ip_whitelist: Restriction d'accès IP
     billable_hours: Heures facturables ou non
-    max_users: Users
-    work_contract: "Working hour account"
+    max_users: Utilisateurs
+    work_contract: "Compte des heures travaillées"
     all_from_plan: Toutes les fonctionnalités de '%plan%'
     backup_frequency: Fréquence de sauvegarde
     priority_features: Demandes d’évolution prioritaires
@@ -453,7 +451,7 @@ plans:
     custom_css: Règles CSS personnalisées
     task_management: Gestion des tâches
     ip_restriction: Limitation d'accès par adresse IP
-    expense: Expense tracking
+    expense: Suivi des dépenses
     timetracking: 'Suivi des temps projet'
     email_support: Assistance par e-mail
     absences: Jours fériés, congés, absences maladie
@@ -461,7 +459,7 @@ plans:
     automatic_upgrades: Mises à jour automatiques
     server_maintenance: Maintenance des serveurs
     github_support: Forum communautaire
-    audit_logs: Audit Logging
+    audit_logs: Journaux d'audit
     custom_domain: Domaine personnalisé avec SSL
     saml: Single Sign-On avec SAML
     translation: 'Traductions sur-mesure'
@@ -469,7 +467,7 @@ plans:
     custom_fields: Champs personnalisés
     daily_backups: Sauvegardes quotidiennes à télécharger
     export_templates: 'Exports basés sur des modèles PDF'
-    kiosk: 'Kiosk Modus'
+    kiosk: 'Mode kiosque'
     backup_weekly: Hebdomadaire
     backup_daily: Quotidien
 pricing:
@@ -481,14 +479,14 @@ pricing:
     included: 'Qu''est-ce qui est inclus ?'
     not_available: Non disponible
     subtitle: Ces abonnements sont disponibles pour les clients hébergés
-    cancellation: You can cancel your subscription at any time up to one day before the end of the subscription period.
-    tax_exclusive: All prices are exclusive of taxes.
+    cancellation: Vous pouvez résilier votre abonnement à tout moment jusqu'à un jour avant la fin de la période d'abonnement.
+    tax_exclusive: Tous les prix s'entendent hors taxes.
 non-profit:
-    name: Bénévols
+    name: Non commercial
     eligible: En savoir plus
-    testimonial-title: Non-profits trust on Kimai
+    testimonial-title: Les organisations à but non lucratif font confiance à Kimai
     testimonial-intro: Et j'ai aussi hâte de pouvoir soutenir votre organisation.
-    intro: Time-tracking for Non-Profit Organizations, cheap and reliable
+    intro: Suivi du temps pour les organisations à but non lucratif, économique et fiable
 discount-codes:
     name: Codes de réduction
 faq:
@@ -497,19 +495,19 @@ faq:
 login: Connexion
 store-payment-methods: Moyens de paiement disponibles
 404:
-    name: Not found (404)
+    name: Introuvable (404)
     description: Nous sommes désolés mais nous avons modifié notre page récemment et certains liens peuvent maintenant être brisés.
 500:
-    name: Server error (500)
+    name: Erreur serveur (500)
     description: Nous sommes désolés mais votre demande ne respecte pas la syntaxe et ne peut être traitée.
 400:
-    name: Bad request (400)
+    name: Mauvaise requête (400)
     description: Nous sommes désolés mais votre demande ne respecte pas la syntaxe et ne peut être traitée.
 error:
     title: Ooops !
     back: Retourner à la page d'accueil
 503:
-    name: Temporarily unavailable (503)
+    name: Temporairement indisponible (503)
     description: Nous sommes désolés, notre serveur est actuellement en maintenance. On revient bientôt !
 cloud:
     status: Statut
@@ -518,10 +516,10 @@ theme:
     light: Clair
 licenses: Licences
 roadmap: Feuille de route
-purchase-power-parity: 'Vous ne pouvez pas payer ? Contactez nous pour bénéficier d''une réduction PPP.'
+purchase-power-parity: 'Vous ne pouvez pas payer ? Demandez une réduction PPP.'
 reviews:
     leave: Laissez un avis
-    name: Reviews
+    name: Avis
     subtitle: "Des milliers d'entreprises utilisent Kimai tous les jours pour suivre leurs temps.\nVoici le témoignage de certaines d'entre elles …"
 store-plugins-onpremise: Les plugins sont à destination des installations on-premise, les utilisateurs de l'offre hébergée dans le cloud ont accès aux plugins signalés par %cloud%
 community:
@@ -535,48 +533,48 @@ terms-cloud:
     title: Conditions d'utilisation
     name: Termes
 terms-gdpr:
-    name: Data Processing
+    name: Traitement des données
 industries:
     name: Industries
 industry:
     name: Suivi du temps pour tous les business
-    intro: You can improve the productivity of your employees with the Kimai time recording software.
+    intro: Vous pouvez améliorer la productivité de vos employés grâce au logiciel d'enregistrement du temps de travail Kimai.
     title: Suivi du temps pour chaque industries
-    subtitle: Gardez vos projets sur la bonne voie avec Kimai.
-    office: For office workers
+    subtitle: Gardez vos projets sur la bonne voie avec Kimai
+    office: Pour les employés de bureau
     more: Plus d'industries
 terms-plugins:
-    name: Plugin licence
+    name: Licence du plugin
 start-trial:
     step_2_title: Choisissez un nom de Cloud
     step_2_text: Après l’activation du compte, vous devez créer votre instance Kimai Cloud en choisissant un nom (de sous-domaine).
     name: Démarrez votre essai gratuit de 30 jours de Kimai
     subtitle: Votre propre système de suivi de temps en 3 étapes. Essayez Kimai pendant 30 jours, gratuitement et sans risque.
-    video_subtitle: 'Aussi simple que ça : En 45 secondes, votre propre suivi de temps!'
+    video_subtitle: 'C''est aussi simple que ça : en 45 secondes, vous pouvez commencer à suivre votre temps de travail !'
     step_1_title: Créer un compte
     step_3_title: Lancer le suivi du temps
     step_1_text: Créez votre compte avec votre compte Google ou votre adresse e-mail et mot de passe, ce dernier devra être vérifié via un lien envoyé par email.
     title: Commencer l'essai gratuit
-    step_3_text: Après un court instant, votre Kimai Cloud sera prêt à être utilisé. Vous pouvez maintenant vous connecter et commencer le suivi du temps.
+    step_3_text: Après quelques instants, votre Kimai-Cloud est prêt à être utilisé. Vous pouvez désormais vous connecter et commencer à enregistrer votre temps de travail.
 cloud-cta:
-    days_30: Inscrivez vous pour votre essai gratuit de 30 jours.
+    days_30: Inscrivez-vous pour bénéficier d'un essai gratuit de 30 jours
 time-tracking-terms:
-    subtitle: Explanations of common terms
-    title: Time Tracking Terms
-    intro: Take a look behind the scenes of time recording and learn more about the frequently used terms in Kimai
-    name: Time Tracking Terms
+    subtitle: Explications des termes courants
+    title: Termes relatifs au suivi du temps
+    intro: Découvrez les coulisses de l'enregistrement du temps et apprenez-en davantage sur les termes fréquemment utilisés dans Kimai
+    name: Termes relatifs au suivi du temps
 changelogs:
-    name: Changelog
+    name: Journal des modifications
     title: Journal des modifications Kimai Could
-    intro: Aperçu de toutes les mises à jour de Kimai Cloud et leur date d'installation.
+    intro: Aperçu de toutes les mises à jour du cloud Kimai et de leur date d'installation.
 open-source-community:
     name: Open Source
 onpremise:
-    name: Hébergement autonome
+    name: Auto-hébergement
 product:
     name: Produit
 integrations:
     name: Applications & Intégrations
-    subtitle: Connectez Kimai à vos outils préférés — des applications de bureau aux clients mobiles, outils en ligne de commande, et plus encore — et suivez votre temps où que vous travailliez.
+    subtitle: Connectez Kimai à vos outils préférés (applications de bureau, clients mobiles, outils CLI, etc.) et suivez votre temps de travail où que vous soyez.
     title: Applications et intégrations pour Kimai
 store-category-desktop: Applications du bureau
