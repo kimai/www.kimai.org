@@ -599,14 +599,6 @@
 
 <p>The rest of this guide requires you to log in to the server using a terminal with SSH. Refer to <a href="https://docs.hetzner.com/robot/storage-box/access/access-ssh-rsync-borg" target="_blank" class="external-link">Access with SSH/rsync/BorgBackup</a> for more information. You can find the public IP in the listing of the servers in your project.</p>
 
-<h2 id="install-docker-compose">Install Docker Compose</h2>
-
-<p>The Hetzner Docker app image doesn’t have Docker compose installed. Install it with the following commands:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt update <span class="o">&amp;&amp;</span> apt <span class="nt">-y</span> upgrade
-apt <span class="nb">install </span>docker-compose-plugin
-</code></pre></div></div>
-
 <h2 id="clone-configuration-repository">Clone configuration repository</h2>
 
 <p>Docker Compose, Kimai, and Caddy require a series of folders and configuration files. 
@@ -764,7 +756,7 @@ docker compose up <span class="nt">-d</span>
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#create-a-server" class="nav-link">Create a server</a></li><li class="nav-item"><a href="#log-in-to-your-server" class="nav-link">Log in to your server</a></li><li class="nav-item"><a href="#install-docker-compose" class="nav-link">Install Docker Compose</a></li><li class="nav-item"><a href="#clone-configuration-repository" class="nav-link">Clone configuration repository</a></li><li class="nav-item"><a href="#default-folders-and-files" class="nav-link">Default folders and files</a><ul><li class="nav-item"><a href="#create-docker-volume" class="nav-link">Create Docker volume</a></li></ul></li><li class="nav-item"><a href="#set-up-dns" class="nav-link">Set up DNS</a></li><li class="nav-item"><a href="#open-ports" class="nav-link">Open ports</a></li><li class="nav-item"><a href="#configure-kimai" class="nav-link">Configure Kimai</a></li><li class="nav-item"><a href="#the-docker-compose-file" class="nav-link">The Docker Compose file</a></li><li class="nav-item"><a href="#configure-caddy" class="nav-link">Configure Caddy</a></li><li class="nav-item"><a href="#start-docker-compose" class="nav-link">Start Docker Compose</a></li><li class="nav-item"><a href="#test-your-setup" class="nav-link">Test your setup</a></li><li class="nav-item"><a href="#stop-kimai-and-caddy" class="nav-link">Stop Kimai and Caddy</a></li><li class="nav-item"><a href="#updating" class="nav-link">Updating</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#create-a-server" class="nav-link">Create a server</a></li><li class="nav-item"><a href="#log-in-to-your-server" class="nav-link">Log in to your server</a></li><li class="nav-item"><a href="#clone-configuration-repository" class="nav-link">Clone configuration repository</a></li><li class="nav-item"><a href="#default-folders-and-files" class="nav-link">Default folders and files</a><ul><li class="nav-item"><a href="#create-docker-volume" class="nav-link">Create Docker volume</a></li></ul></li><li class="nav-item"><a href="#set-up-dns" class="nav-link">Set up DNS</a></li><li class="nav-item"><a href="#open-ports" class="nav-link">Open ports</a></li><li class="nav-item"><a href="#configure-kimai" class="nav-link">Configure Kimai</a></li><li class="nav-item"><a href="#the-docker-compose-file" class="nav-link">The Docker Compose file</a></li><li class="nav-item"><a href="#configure-caddy" class="nav-link">Configure Caddy</a></li><li class="nav-item"><a href="#start-docker-compose" class="nav-link">Start Docker Compose</a></li><li class="nav-item"><a href="#test-your-setup" class="nav-link">Test your setup</a></li><li class="nav-item"><a href="#stop-kimai-and-caddy" class="nav-link">Stop Kimai and Caddy</a></li><li class="nav-item"><a href="#updating" class="nav-link">Updating</a></li></ul>
         
     </aside>
 
