@@ -799,90 +799,146 @@ You have to create one global activity and grab the ID from the URL, replace <co
 </code></pre></div></div>
 
 <p>Change the “create timesheet” UI, add a button, select a customer on click (note: change the <code class="language-plaintext highlighter-rouge">'1'</code> to an existing customer ID):</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span> 
-    <span class="nb">document</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">show.bs.modal</span><span class="dl">'</span><span class="p">,</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
-        <span class="kd">const</span> <span class="nx">customerSelection</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">timesheet_edit_form_customer</span><span class="dl">'</span><span class="p">);</span>
-        <span class="k">if </span><span class="p">(</span><span class="nx">customerSelection</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">return</span><span class="p">;</span>
-        <span class="p">}</span>
-    
-        <span class="kd">const</span> <span class="nx">rowSelect</span> <span class="o">=</span> <span class="nx">customerSelection</span><span class="p">.</span><span class="nx">parentElement</span><span class="p">;</span>
-    
-        <span class="kd">const</span> <span class="nx">box</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">div</span><span class="dl">'</span><span class="p">);</span>
-        <span class="nx">box</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">mt-2</span><span class="dl">'</span><span class="p">);</span>
-    
-        <span class="kd">const</span> <span class="nx">hint</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">span</span><span class="dl">'</span><span class="p">);</span>
-        <span class="nx">hint</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Suggestions:</span><span class="dl">'</span><span class="p">;</span>
-        <span class="nx">hint</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">me-2</span><span class="dl">'</span><span class="p">);</span>
-    
-        <span class="kd">const</span> <span class="nx">btn</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">button</span><span class="dl">'</span><span class="p">);</span>
-        <span class="nx">btn</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">button</span><span class="dl">'</span><span class="p">;</span>
-        <span class="nx">btn</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">btn</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">btn-white</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">fw-normal</span><span class="dl">'</span><span class="p">);</span>
-        <span class="nx">btn</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Customer #1</span><span class="dl">'</span><span class="p">;</span>
-        <span class="nx">btn</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">customerSelection</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">1</span><span class="dl">'</span><span class="p">;</span> <span class="cm">/* insert a valid customer ID here */</span>
-            <span class="nx">customerSelection</span><span class="p">.</span><span class="nf">dispatchEvent</span><span class="p">(</span><span class="k">new</span> <span class="nc">Event</span><span class="p">(</span><span class="dl">'</span><span class="s1">change</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">bubbles</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}));</span>
-        <span class="p">});</span>
-    
-        <span class="nx">box</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">hint</span><span class="p">);</span>
-        <span class="nx">box</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">btn</span><span class="p">);</span>
-        <span class="nx">rowSelect</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">box</span><span class="p">);</span>
-    <span class="p">});</span> 
-<span class="p">})();</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">show.bs.modal</span><span class="dl">'</span><span class="p">,</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">customerSelection</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">timesheet_edit_form_customer</span><span class="dl">'</span><span class="p">);</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">customerSelection</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">const</span> <span class="nx">rowSelect</span> <span class="o">=</span> <span class="nx">customerSelection</span><span class="p">.</span><span class="nx">parentElement</span><span class="p">;</span>
+
+    <span class="kd">const</span> <span class="nx">box</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">div</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">box</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">mt-2</span><span class="dl">'</span><span class="p">);</span>
+
+    <span class="kd">const</span> <span class="nx">hint</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">span</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">hint</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Suggestions:</span><span class="dl">'</span><span class="p">;</span>
+    <span class="nx">hint</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">me-2</span><span class="dl">'</span><span class="p">);</span>
+
+    <span class="kd">const</span> <span class="nx">btn</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">button</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">btn</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">button</span><span class="dl">'</span><span class="p">;</span>
+    <span class="nx">btn</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">btn</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">btn-white</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">fw-normal</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">btn</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Customer #1</span><span class="dl">'</span><span class="p">;</span>
+    <span class="nx">btn</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">customerSelection</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">1</span><span class="dl">'</span><span class="p">;</span> <span class="cm">/* insert a valid customer ID here */</span>
+        <span class="nx">customerSelection</span><span class="p">.</span><span class="nf">dispatchEvent</span><span class="p">(</span><span class="k">new</span> <span class="nc">Event</span><span class="p">(</span><span class="dl">'</span><span class="s1">change</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">bubbles</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}));</span>
+    <span class="p">});</span>
+
+    <span class="nx">box</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">hint</span><span class="p">);</span>
+    <span class="nx">box</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">btn</span><span class="p">);</span>
+    <span class="nx">rowSelect</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">box</span><span class="p">);</span>
+<span class="p">});</span> 
 </code></pre></div></div>
 
 <p>Upon activity selection, load the Activity via API and display the value of the custom-field called <code class="language-plaintext highlighter-rouge">foo</code> beneath the activity box.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nb">document</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">show.bs.modal</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="kd">const</span> <span class="nx">customFieldName</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">foo</span><span class="dl">'</span><span class="p">;</span>
-        <span class="kd">const</span> <span class="nx">activitySelect</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">srcElement</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#timesheet_edit_form_activity</span><span class="dl">'</span><span class="p">);</span>
-        <span class="k">if </span><span class="p">(</span><span class="nx">activitySelect</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">return</span><span class="p">;</span>
-        <span class="p">}</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">show.bs.modal</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">customFieldName</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">foo</span><span class="dl">'</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">activitySelect</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">srcElement</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#timesheet_edit_form_activity</span><span class="dl">'</span><span class="p">);</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">activitySelect</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
 
-        <span class="nx">activitySelect</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">change</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">kimai</span><span class="p">.</span><span class="nf">getPlugin</span><span class="p">(</span><span class="dl">'</span><span class="s1">api</span><span class="dl">'</span><span class="p">).</span><span class="nf">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/activities/</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span> <span class="p">{},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-                <span class="kd">let</span> <span class="nx">newContent</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
-                <span class="k">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">f</span> <span class="k">of</span> <span class="nx">data</span><span class="p">.</span><span class="nx">metaFields</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="k">if </span><span class="p">(</span><span class="nx">f</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="nx">customFieldName</span> <span class="o">&amp;&amp;</span> <span class="nx">f</span><span class="p">.</span><span class="nx">value</span> <span class="o">!==</span> <span class="dl">''</span><span class="p">)</span> <span class="p">{</span>
-                        <span class="nx">newContent</span> <span class="o">=</span> <span class="nx">f</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
-                    <span class="p">}</span>
+    <span class="nx">activitySelect</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">change</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">kimai</span><span class="p">.</span><span class="nf">getPlugin</span><span class="p">(</span><span class="dl">'</span><span class="s1">api</span><span class="dl">'</span><span class="p">).</span><span class="nf">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/activities/</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span> <span class="p">{},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">let</span> <span class="nx">newContent</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+            <span class="k">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">f</span> <span class="k">of</span> <span class="nx">data</span><span class="p">.</span><span class="nx">metaFields</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if </span><span class="p">(</span><span class="nx">f</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="nx">customFieldName</span> <span class="o">&amp;&amp;</span> <span class="nx">f</span><span class="p">.</span><span class="nx">value</span> <span class="o">!==</span> <span class="dl">''</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">newContent</span> <span class="o">=</span> <span class="nx">f</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
                 <span class="p">}</span>
+            <span class="p">}</span>
 
-                <span class="kd">const</span> <span class="nx">activityTextId</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">timesheet_edit_form_activity_</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">customFieldName</span><span class="p">;</span>
-                <span class="kd">let</span> <span class="nx">activityText</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="nx">activityTextId</span><span class="p">);</span>
+            <span class="kd">const</span> <span class="nx">activityTextId</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">timesheet_edit_form_activity_</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">customFieldName</span><span class="p">;</span>
+            <span class="kd">let</span> <span class="nx">activityText</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="nx">activityTextId</span><span class="p">);</span>
 
-                <span class="k">if </span><span class="p">(</span><span class="nx">newContent</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="k">if </span><span class="p">(</span><span class="nx">activityText</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
-                        <span class="nx">activityText</span><span class="p">.</span><span class="nx">parentElement</span><span class="p">.</span><span class="nf">remove</span><span class="p">();</span>
-                    <span class="p">}</span>
-                    <span class="k">return</span><span class="p">;</span>
+            <span class="k">if </span><span class="p">(</span><span class="nx">newContent</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if </span><span class="p">(</span><span class="nx">activityText</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">activityText</span><span class="p">.</span><span class="nx">parentElement</span><span class="p">.</span><span class="nf">remove</span><span class="p">();</span>
                 <span class="p">}</span>
-                
-                <span class="k">if </span><span class="p">(</span><span class="nx">activityText</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="kd">const</span> <span class="nx">rowSelect</span> <span class="o">=</span> <span class="nx">activitySelect</span><span class="p">.</span><span class="nx">parentElement</span><span class="p">;</span>
+                <span class="k">return</span><span class="p">;</span>
+            <span class="p">}</span>
+            
+            <span class="k">if </span><span class="p">(</span><span class="nx">activityText</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kd">const</span> <span class="nx">rowSelect</span> <span class="o">=</span> <span class="nx">activitySelect</span><span class="p">.</span><span class="nx">parentElement</span><span class="p">;</span>
 
-                    <span class="kd">const</span> <span class="nx">box</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">div</span><span class="dl">'</span><span class="p">);</span>
-                    <span class="nx">box</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">mt-2</span><span class="dl">'</span><span class="p">);</span>
+                <span class="kd">const</span> <span class="nx">box</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">div</span><span class="dl">'</span><span class="p">);</span>
+                <span class="nx">box</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">mt-2</span><span class="dl">'</span><span class="p">);</span>
 
-                    <span class="kd">const</span> <span class="nx">hint</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">span</span><span class="dl">'</span><span class="p">);</span>
-                    <span class="nx">hint</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Foo:</span><span class="dl">'</span><span class="p">;</span>
-                    <span class="nx">hint</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">me-2</span><span class="dl">'</span><span class="p">);</span>
+                <span class="kd">const</span> <span class="nx">hint</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">span</span><span class="dl">'</span><span class="p">);</span>
+                <span class="nx">hint</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Foo:</span><span class="dl">'</span><span class="p">;</span>
+                <span class="nx">hint</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">me-2</span><span class="dl">'</span><span class="p">);</span>
 
-                    <span class="nx">activityText</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">span</span><span class="dl">'</span><span class="p">);</span>
-                    <span class="nx">activityText</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="nx">activityTextId</span><span class="p">;</span>
+                <span class="nx">activityText</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">span</span><span class="dl">'</span><span class="p">);</span>
+                <span class="nx">activityText</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="nx">activityTextId</span><span class="p">;</span>
 
-                    <span class="nx">box</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">hint</span><span class="p">);</span>
-                    <span class="nx">box</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">activityText</span><span class="p">);</span>
-                    <span class="nx">rowSelect</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">box</span><span class="p">);</span>
-                <span class="p">}</span>
-                
-                <span class="nx">activityText</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">newContent</span><span class="p">;</span> 
-            <span class="p">});</span>
+                <span class="nx">box</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">hint</span><span class="p">);</span>
+                <span class="nx">box</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">activityText</span><span class="p">);</span>
+                <span class="nx">rowSelect</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">box</span><span class="p">);</span>
+            <span class="p">}</span>
+            
+            <span class="nx">activityText</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">newContent</span><span class="p">;</span> 
         <span class="p">});</span>
     <span class="p">});</span>
-<span class="p">})();</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h3 id="timesheet-custom-field-depends-on-customer-selection">Timesheet custom field depends on customer selection</h3>
+
+<p>This advanced example uses two custom field, one on customer level and one on timesheet level.
+Upon customer selection, the custom-field in the timesheet changes and show the list of entries from the customer as selection.</p>
+
+<ol>
+  <li>Create a custom field for customer with the internal name <code class="language-plaintext highlighter-rouge">foo</code> and the type being “Text (multi row)”</li>
+  <li>Edit a customer and add at least two rows to the new custom field “foo” with some string in each row, e.g. “hello” and “world”</li>
+  <li>Now add a custom field for timesheet with the internal name <code class="language-plaintext highlighter-rouge">foo_data</code> with type “Text (single row)”</li>
+</ol>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">show.bs.modal</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">fooInput</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#timesheet_edit_form_metaFields_foo_data_value</span><span class="dl">'</span><span class="p">);</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">fooInput</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#timesheet_edit_form_customer</span><span class="dl">'</span><span class="p">).</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">change</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="kd">const</span> <span class="nx">customerId</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+            <span class="nx">kimai</span><span class="p">.</span><span class="nf">getPlugin</span><span class="p">(</span><span class="dl">'</span><span class="s1">api</span><span class="dl">'</span><span class="p">).</span><span class="nf">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/customers/</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">customerId</span><span class="p">,</span> <span class="p">{},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kd">let</span> <span class="nx">value</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+                <span class="k">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">entry</span> <span class="k">of</span> <span class="nx">data</span><span class="p">.</span><span class="nx">metaFields</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">if </span><span class="p">(</span><span class="nx">entry</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">foo</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="nx">value</span> <span class="o">=</span> <span class="nx">entry</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+                        <span class="k">break</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+
+                <span class="c1">// make sure that we remove the currently attached list from the input</span>
+                <span class="nx">fooInput</span><span class="p">.</span><span class="nf">removeAttribute</span><span class="p">(</span><span class="dl">'</span><span class="s1">list</span><span class="dl">'</span><span class="p">);</span>
+
+                <span class="k">if </span><span class="p">(</span><span class="nx">value</span> <span class="o">===</span> <span class="kc">null</span> <span class="o">||</span> <span class="nx">value</span> <span class="o">===</span> <span class="dl">''</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">return</span><span class="p">;</span>
+                <span class="p">}</span>
+
+                <span class="c1">// prepare the datalist element</span>
+                <span class="kd">const</span> <span class="nx">listId</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">list_foo_</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">customerId</span><span class="p">;</span>
+                <span class="kd">const</span> <span class="nx">dataList</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">datalist</span><span class="dl">'</span><span class="p">);</span>
+                <span class="nx">dataList</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="nx">listId</span><span class="p">;</span>
+
+                <span class="kd">const</span> <span class="nx">lines</span> <span class="o">=</span> <span class="nx">value</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="sr">/</span><span class="se">\r?\n</span><span class="sr">/</span><span class="p">);</span>
+                <span class="nx">lines</span><span class="p">.</span><span class="nf">forEach</span><span class="p">(</span><span class="nx">line</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                    <span class="kd">const</span> <span class="nx">option</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">option</span><span class="dl">"</span><span class="p">);</span>
+                    <span class="nx">option</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">line</span><span class="p">.</span><span class="nf">trim</span><span class="p">();</span>
+                    <span class="k">if </span><span class="p">(</span><span class="nx">option</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="nx">dataList</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">option</span><span class="p">);</span>
+                    <span class="p">}</span>
+                    <span class="c1">// in case a users switches the customer back and forth, the element might already exist in DOM</span>
+                    <span class="k">if </span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="nx">listId</span><span class="p">)</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="nx">listId</span><span class="p">).</span><span class="nf">replaceWith</span><span class="p">(</span><span class="nx">dataList</span><span class="p">)</span>
+                    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                        <span class="nx">fooInput</span><span class="p">.</span><span class="nx">parentElement</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">dataList</span><span class="p">)</span>
+                    <span class="p">}</span>
+                <span class="p">});</span>
+
+                <span class="c1">// switch the list attribute to use the list of the last selected customer</span>
+                <span class="nx">fooInput</span><span class="p">.</span><span class="nf">setAttribute</span><span class="p">(</span><span class="dl">'</span><span class="s1">list</span><span class="dl">'</span><span class="p">,</span> <span class="nx">listId</span><span class="p">);</span>
+            <span class="p">});</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+<span class="p">});</span>
 </code></pre></div></div>
 
 <h2 id="css">CSS</h2>
@@ -1030,7 +1086,9 @@ You have to create one global activity and grab the ID from the URL, replace <co
         <ul class="nav" id="jumpToNav">
 <li class="nav-item"><a href="#news-page" class="nav-link">News page</a></li>
 <li class="nav-item"><a href="#alert" class="nav-link">Alert</a></li>
-<li class="nav-item"><a href="#javascript" class="nav-link">Javascript</a></li>
+<li class="nav-item">
+<a href="#javascript" class="nav-link">Javascript</a><ul><li class="nav-item"><a href="#timesheet-custom-field-depends-on-customer-selection" class="nav-link">Timesheet custom field depends on customer selection</a></li></ul>
+</li>
 <li class="nav-item"><a href="#css" class="nav-link">CSS</a></li>
 <li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li>
 </ul>
