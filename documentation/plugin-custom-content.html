@@ -644,7 +644,8 @@
 
 <h2 id="javascript">Javascript</h2>
 
-<p>Make your tables horizontal scrollable if they are too wide:</p>
+<p><strong>Make your tables horizontal scrollable if they are too wide</strong></p>
+
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">scrollableTable</span><span class="p">()</span> <span class="p">{</span>
     <span class="p">[].</span><span class="nx">slice</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nf">querySelectorAll</span><span class="p">(</span><span class="dl">'</span><span class="s1">div.dataTables_wrapper</span><span class="dl">'</span><span class="p">)).</span><span class="nf">map</span><span class="p">((</span><span class="nx">element</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">element</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">overflowX</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">scroll</span><span class="dl">'</span><span class="p">;</span>
@@ -654,12 +655,14 @@
 <span class="nb">document</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">kimai.reloadedContent</span><span class="dl">'</span><span class="p">,</span> <span class="nx">scrollableTable</span><span class="p">);</span>
 </code></pre></div></div>
 
-<p>Remove the activity from the timesheet form.
-You have to create one global activity and grab the ID from the URL, replace <code class="language-plaintext highlighter-rouge">5095</code> in the code with your new ID:</p>
+<p><strong>Remove activity from the timesheet form</strong></p>
+
+<p>You have to create one global activity and grab the ID from the URL, replace <code class="language-plaintext highlighter-rouge">1</code> in the code with your new ID:</p>
+
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">show.bs.modal</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="kd">const</span> <span class="nx">activity</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">srcElement</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#timesheet_edit_form_activity</span><span class="dl">'</span><span class="p">);</span>
     <span class="k">if </span><span class="p">(</span><span class="nx">activity</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">activity</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">5095</span><span class="dl">'</span><span class="p">;</span> 
+        <span class="nx">activity</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">1</span><span class="dl">'</span><span class="p">;</span> <span class="cm">/* insert you ID here */</span>
         <span class="nx">activity</span><span class="p">.</span><span class="nf">dispatchEvent</span><span class="p">(</span><span class="k">new</span> <span class="nc">Event</span><span class="p">(</span><span class="dl">'</span><span class="s1">change</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">bubbles</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}));</span>
         <span class="kd">const</span> <span class="nx">activityRow</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">srcElement</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">.timesheet_edit_form_row_activity</span><span class="dl">'</span><span class="p">);</span>
         <span class="k">if </span><span class="p">(</span><span class="nx">activityRow</span> <span class="o">!==</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">activityRow</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">contains</span><span class="p">(</span><span class="dl">'</span><span class="s1">d-none</span><span class="dl">'</span><span class="p">))</span> <span class="p">{</span>
@@ -669,7 +672,10 @@ You have to create one global activity and grab the ID from the URL, replace <co
 <span class="p">});</span>
 </code></pre></div></div>
 
-<p>Make the header fixed at the screen top and remove that stickyness from the table headers (both are not possible right now):</p>
+<p><strong>Make the header fixed at the screen top</strong></p>
+
+<p>And remove that stickyness from the table headers, both at the same time are currently not possible.</p>
+
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">stickyHeader</span><span class="p">()</span> <span class="p">{</span>
     <span class="p">[].</span><span class="nx">slice</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nf">querySelectorAll</span><span class="p">(</span><span class="dl">'</span><span class="s1">thead.sticky-top</span><span class="dl">'</span><span class="p">)).</span><span class="nf">map</span><span class="p">((</span><span class="nx">element</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">element</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">toggle</span><span class="p">(</span><span class="dl">'</span><span class="s1">sticky-top</span><span class="dl">'</span><span class="p">);</span>
@@ -683,7 +689,8 @@ You have to create one global activity and grab the ID from the URL, replace <co
 <span class="nb">document</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">kimai.reloadedContent</span><span class="dl">'</span><span class="p">,</span> <span class="nx">stickyHeader</span><span class="p">);</span>
 </code></pre></div></div>
 
-<p>Hide the dashboard edit button (for all non super-admins only):</p>
+<p><strong>Show the dashboard edit button only for super-admins</strong></p>
+
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">kimai.initialized</span><span class="dl">'</span><span class="p">,</span> <span class="nf">function </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if </span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">detail</span><span class="p">.</span><span class="nx">kimai</span><span class="p">.</span><span class="nf">getUser</span><span class="p">().</span><span class="nf">isSuperAdmin</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">section.dashboard</span><span class="dl">'</span><span class="p">)</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
         <span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">.page-header</span><span class="dl">'</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nf">setProperty</span><span class="p">(</span><span class="dl">"</span><span class="s2">display</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">none</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">important</span><span class="dl">"</span><span class="p">);</span>
@@ -691,23 +698,28 @@ You have to create one global activity and grab the ID from the URL, replace <co
 <span class="p">});</span>
 </code></pre></div></div>
 
-<p>React on global events and utilize the Kimai Javascript API:</p>
+<p><strong>React on global events and utilize the Kimai Javascript API</strong></p>
+
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">kimai.initialized</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
     <span class="nf">alert</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">detail</span><span class="p">.</span><span class="nx">kimai</span><span class="p">.</span><span class="nf">getTranslation</span><span class="p">().</span><span class="nf">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">confirm</span><span class="dl">'</span><span class="p">));</span>
 <span class="p">});</span>
 </code></pre></div></div>
 
-<p>Select an Activity e.g. to simulate a global default activity. The ID <code class="language-plaintext highlighter-rouge">6451</code> is the Activity ID to be selected (should be global).</p>
+<p><strong>Select an Activity e.g. to simulate a global default activity</strong></p>
+
+<p>The ID <code class="language-plaintext highlighter-rouge">1</code> is the Activity ID to be selected (should be global).</p>
+
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">show.bs.modal</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="kd">const</span> <span class="nx">activity</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">srcElement</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#timesheet_edit_form_activity</span><span class="dl">'</span><span class="p">);</span>
     <span class="k">if </span><span class="p">(</span><span class="nx">activity</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">activity</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">6451</span><span class="dl">'</span><span class="p">;</span> 
+        <span class="nx">activity</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">1</span><span class="dl">'</span><span class="p">;</span> <span class="cm">/* Insert your ID here */</span> 
         <span class="nx">activity</span><span class="p">.</span><span class="nf">dispatchEvent</span><span class="p">(</span><span class="k">new</span> <span class="nc">Event</span><span class="p">(</span><span class="dl">'</span><span class="s1">change</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">bubbles</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}));</span>
     <span class="p">}</span>
 <span class="p">});</span>
 </code></pre></div></div>
 
-<p>Set the “activity description” upon selection as “timesheet description”:</p>
+<p><strong>Set “activity description” upon selection as “timesheet description”</strong></p>
+
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">show.bs.modal</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="kd">const</span> <span class="nx">desc</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">srcElement</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#timesheet_edit_form_description</span><span class="dl">'</span><span class="p">);</span>
     <span class="k">if </span><span class="p">(</span><span class="nx">desc</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
@@ -720,7 +732,8 @@ You have to create one global activity and grab the ID from the URL, replace <co
 <span class="p">});</span>
 </code></pre></div></div>
 
-<p>Make the timesheet description field mandatory:</p>
+<p><strong>Make the timesheet description field mandatory</strong></p>
+
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">show.bs.modal</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="kd">const</span> <span class="nx">desc</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">srcElement</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#timesheet_edit_form_description</span><span class="dl">'</span><span class="p">);</span>
     <span class="k">if </span><span class="p">(</span><span class="nx">desc</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
@@ -731,14 +744,16 @@ You have to create one global activity and grab the ID from the URL, replace <co
 <span class="p">});</span>
 </code></pre></div></div>
 
-<p>Always deactivate the export checkbox:</p>
+<p><strong>Always deactivate the export checkbox</strong></p>
+
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">kimai.initialized</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">const</span> <span class="nx">ec</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">markAsExportedCheck</span><span class="dl">'</span><span class="p">);</span>
     <span class="k">if </span><span class="p">(</span><span class="nx">ec</span> <span class="o">!==</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="nx">ec</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span> <span class="p">{</span> <span class="nx">ec</span><span class="p">.</span><span class="nx">checked</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">markAsExported</span><span class="dl">'</span><span class="p">).</span><span class="nx">value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="p">}</span>
 <span class="p">});</span>
 </code></pre></div></div>
 
-<p>Deactivate a certain field by ID in a modal if the current user is not an Admin or SuperAdmin:</p>
+<p><strong>Deactivate a certain field by ID in a modal if the current user is not an Admin or SuperAdmin</strong></p>
+
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">deactivateField</span><span class="p">(</span><span class="nx">source</span><span class="p">,</span> <span class="nx">selector</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">const</span> <span class="nx">field</span> <span class="o">=</span> <span class="nx">source</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="nx">selector</span><span class="p">);</span>
     <span class="k">if </span><span class="p">(</span><span class="nx">field</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span> <span class="nx">field</span><span class="p">.</span><span class="nx">disabled</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="k">if </span><span class="p">(</span><span class="nx">field</span><span class="p">.</span><span class="nx">tomselect</span><span class="p">)</span> <span class="p">{</span> <span class="nx">field</span><span class="p">.</span><span class="nx">tomselect</span><span class="p">.</span><span class="nf">disable</span><span class="p">();</span> <span class="p">}</span> <span class="p">}</span>
@@ -753,29 +768,36 @@ You have to create one global activity and grab the ID from the URL, replace <co
 <span class="p">});</span>
 </code></pre></div></div>
 
-<p>Automatically login with SAML:</p>
+<p><strong>Automatically login with SAML</strong></p>
+
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">body.login-page #social-login-button</span><span class="dl">'</span><span class="p">)?.</span><span class="nf">click</span><span class="p">();</span>
 </code></pre></div></div>
 
-<p>Always expand extended timesheet settings:</p>
+<p><strong>Always expand extended timesheet settings</strong></p>
+
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">show.bs.modal</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> 
     <span class="nx">e</span><span class="p">.</span><span class="nx">srcElement</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#timesheet_extended_settings button[data-bs-toggle]</span><span class="dl">'</span><span class="p">)?.</span><span class="nf">click</span><span class="p">();</span> 
 <span class="p">});</span>
 </code></pre></div></div>
 
-<p>Always set a static time in the timesheet screen:</p>
+<p><strong>Always set a static time in the timesheet screen</strong></p>
+
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">show.bs.modal</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="kd">const</span> <span class="nx">time</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">srcElement</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#timesheet_edit_form_begin_time</span><span class="dl">'</span><span class="p">);</span>
     <span class="k">if </span><span class="p">(</span><span class="nx">time</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span> <span class="nx">time</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">01:00</span><span class="dl">'</span><span class="p">;</span> <span class="p">}</span>
 <span class="p">});</span>
 </code></pre></div></div>
 
-<p>Set a custom browser title:</p>
+<p><strong>Set a custom browser title</strong></p>
+
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">attributes</span><span class="p">[</span><span class="dl">'</span><span class="s1">data-title</span><span class="dl">'</span><span class="p">].</span><span class="nx">value</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">My fancy company</span><span class="dl">'</span><span class="p">;</span>
 
 </code></pre></div></div>
 
-<p>Add IDs to all h3 header of your custom news page (allowing to use jump anchor links):</p>
+<p><strong>Add IDs to all H3 header of your custom news page</strong></p>
+
+<p>Allowing to use jump anchor links.</p>
+
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">kimai.initialized</span><span class="dl">'</span><span class="p">,</span> <span class="nf">function </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if </span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">custom-content-news</span><span class="dl">'</span><span class="p">)</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
         <span class="kd">const</span> <span class="nx">headings</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelectorAll</span><span class="p">(</span><span class="dl">'</span><span class="s1">#custom-content-news .markdown h3</span><span class="dl">'</span><span class="p">);</span>
@@ -787,7 +809,8 @@ You have to create one global activity and grab the ID from the URL, replace <co
 <span class="p">});</span>
 </code></pre></div></div>
 
-<p>Make the tags field mandatory:</p>
+<p><strong>Mandatory tags field</strong></p>
+
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">show.bs.modal</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="kd">const</span> <span class="nx">field</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">srcElement</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#timesheet_edit_form_tags</span><span class="dl">'</span><span class="p">);</span>
     <span class="k">if </span><span class="p">(</span><span class="nx">field</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
@@ -798,7 +821,10 @@ You have to create one global activity and grab the ID from the URL, replace <co
 <span class="p">});</span>
 </code></pre></div></div>
 
-<p>Change the “create timesheet” UI, add a button, select a customer on click (note: change the <code class="language-plaintext highlighter-rouge">'1'</code> to an existing customer ID):</p>
+<p><strong>Add a button to the “create timesheet” UI to select a customer on click</strong></p>
+
+<p>Note: change the <code class="language-plaintext highlighter-rouge">'1'</code> to an existing customer ID</p>
+
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">show.bs.modal</span><span class="dl">'</span><span class="p">,</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">const</span> <span class="nx">customerSelection</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">timesheet_edit_form_customer</span><span class="dl">'</span><span class="p">);</span>
     <span class="k">if </span><span class="p">(</span><span class="nx">customerSelection</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
@@ -829,7 +855,7 @@ You have to create one global activity and grab the ID from the URL, replace <co
 <span class="p">});</span> 
 </code></pre></div></div>
 
-<p>Upon activity selection, load the Activity via API and display the value of the custom-field called <code class="language-plaintext highlighter-rouge">foo</code> beneath the activity box.</p>
+<p><strong>Show activity custom-field beneath field upon selection</strong></p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">show.bs.modal</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="kd">const</span> <span class="nx">customFieldName</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">foo</span><span class="dl">'</span><span class="p">;</span>
@@ -881,7 +907,7 @@ You have to create one global activity and grab the ID from the URL, replace <co
 <span class="p">});</span>
 </code></pre></div></div>
 
-<h3 id="timesheet-custom-field-depends-on-customer-selection">Timesheet custom field depends on customer selection</h3>
+<p><strong>Timesheet custom-field list depends on customer selection</strong></p>
 
 <p>This advanced example uses two custom field, one on customer level and one on timesheet level.
 Upon customer selection, the custom-field in the timesheet changes and show the list of entries from the customer as selection.</p>
@@ -1086,9 +1112,7 @@ Upon customer selection, the custom-field in the timesheet changes and show the 
         <ul class="nav" id="jumpToNav">
 <li class="nav-item"><a href="#news-page" class="nav-link">News page</a></li>
 <li class="nav-item"><a href="#alert" class="nav-link">Alert</a></li>
-<li class="nav-item">
-<a href="#javascript" class="nav-link">Javascript</a><ul><li class="nav-item"><a href="#timesheet-custom-field-depends-on-customer-selection" class="nav-link">Timesheet custom field depends on customer selection</a></li></ul>
-</li>
+<li class="nav-item"><a href="#javascript" class="nav-link">Javascript</a></li>
 <li class="nav-item"><a href="#css" class="nav-link">CSS</a></li>
 <li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li>
 </ul>
