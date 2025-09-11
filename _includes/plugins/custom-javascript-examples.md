@@ -171,89 +171,144 @@ document.addEventListener('show.bs.modal', (e) => {
 
 Change the "create timesheet" UI, add a button, select a customer on click (note: change the `'1'` to an existing customer ID): 
 ```javascript
-(function() { 
-    document.addEventListener('show.bs.modal', function () {
-        const customerSelection = document.getElementById('timesheet_edit_form_customer');
-        if (customerSelection === null) {
-            return;
-        }
-    
-        const rowSelect = customerSelection.parentElement;
-    
-        const box = document.createElement('div');
-        box.classList.add('mt-2');
-    
-        const hint = document.createElement('span');
-        hint.textContent = 'Suggestions:';
-        hint.classList.add('me-2');
-    
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.classList.add('btn', 'btn-white', 'fw-normal');
-        btn.textContent = 'Customer #1';
-        btn.addEventListener('click', () => {
-            customerSelection.value = '1'; /* insert a valid customer ID here */
-            customerSelection.dispatchEvent(new Event('change', { bubbles: true }));
-        });
-    
-        box.appendChild(hint);
-        box.appendChild(btn);
-        rowSelect.appendChild(box);
-    }); 
-})();
+document.addEventListener('show.bs.modal', function () {
+    const customerSelection = document.getElementById('timesheet_edit_form_customer');
+    if (customerSelection === null) {
+        return;
+    }
+
+    const rowSelect = customerSelection.parentElement;
+
+    const box = document.createElement('div');
+    box.classList.add('mt-2');
+
+    const hint = document.createElement('span');
+    hint.textContent = 'Suggestions:';
+    hint.classList.add('me-2');
+
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.classList.add('btn', 'btn-white', 'fw-normal');
+    btn.textContent = 'Customer #1';
+    btn.addEventListener('click', () => {
+        customerSelection.value = '1'; /* insert a valid customer ID here */
+        customerSelection.dispatchEvent(new Event('change', { bubbles: true }));
+    });
+
+    box.appendChild(hint);
+    box.appendChild(btn);
+    rowSelect.appendChild(box);
+}); 
 ```
 
 Upon activity selection, load the Activity via API and display the value of the custom-field called `foo` beneath the activity box.
 
 ```javascript
-(function() {
-    document.addEventListener('show.bs.modal', (e) => {
-        const customFieldName = 'foo';
-        const activitySelect = e.srcElement.querySelector('#timesheet_edit_form_activity');
-        if (activitySelect === null) {
-            return;
-        }
+document.addEventListener('show.bs.modal', (e) => {
+    const customFieldName = 'foo';
+    const activitySelect = e.srcElement.querySelector('#timesheet_edit_form_activity');
+    if (activitySelect === null) {
+        return;
+    }
 
-        activitySelect.addEventListener('change', (e) => {
-            kimai.getPlugin('api').get('/api/activities/' + e.target.value, {}, function(data) {
-                let newContent = null;
-                for (const f of data.metaFields) {
-                    if (f.name === customFieldName && f.value !== '') {
-                        newContent = f.value;
-                    }
+    activitySelect.addEventListener('change', (e) => {
+        kimai.getPlugin('api').get('/api/activities/' + e.target.value, {}, function(data) {
+            let newContent = null;
+            for (const f of data.metaFields) {
+                if (f.name === customFieldName && f.value !== '') {
+                    newContent = f.value;
                 }
+            }
 
-                const activityTextId = 'timesheet_edit_form_activity_' + customFieldName;
-                let activityText = document.getElementById(activityTextId);
+            const activityTextId = 'timesheet_edit_form_activity_' + customFieldName;
+            let activityText = document.getElementById(activityTextId);
 
-                if (newContent === null) {
-                    if (activityText !== null) {
-                        activityText.parentElement.remove();
-                    }
-                    return;
+            if (newContent === null) {
+                if (activityText !== null) {
+                    activityText.parentElement.remove();
                 }
-                
-                if (activityText === null) {
-                    const rowSelect = activitySelect.parentElement;
+                return;
+            }
+            
+            if (activityText === null) {
+                const rowSelect = activitySelect.parentElement;
 
-                    const box = document.createElement('div');
-                    box.classList.add('mt-2');
+                const box = document.createElement('div');
+                box.classList.add('mt-2');
 
-                    const hint = document.createElement('span');
-                    hint.textContent = 'Foo:';
-                    hint.classList.add('me-2');
+                const hint = document.createElement('span');
+                hint.textContent = 'Foo:';
+                hint.classList.add('me-2');
 
-                    activityText = document.createElement('span');
-                    activityText.id = activityTextId;
+                activityText = document.createElement('span');
+                activityText.id = activityTextId;
 
-                    box.appendChild(hint);
-                    box.appendChild(activityText);
-                    rowSelect.appendChild(box);
-                }
-                
-                activityText.textContent = newContent; 
-            });
+                box.appendChild(hint);
+                box.appendChild(activityText);
+                rowSelect.appendChild(box);
+            }
+            
+            activityText.textContent = newContent; 
         });
     });
-})();
+});
+```
+
+### Timesheet custom field depends on customer selection
+
+This advanced example uses two custom field, one on customer level and one on timesheet level.
+Upon customer selection, the custom-field in the timesheet changes and show the list of entries from the customer as selection.
+
+1. Create a custom field for customer with the internal name `foo` and the type being "Text (multi row)"
+2. Edit a customer and add at least two rows to the new custom field "foo" with some string in each row, e.g. "hello" and "world"
+3. Now add a custom field for timesheet with the internal name `foo_data` with type "Text (single row)"
+
+```javascript
+document.addEventListener('show.bs.modal', (e) => {
+    const fooInput = e.target.querySelector('#timesheet_edit_form_metaFields_foo_data_value');
+    if (fooInput !== null) {
+        e.target.querySelector('#timesheet_edit_form_customer').addEventListener('change', (e) => {
+            const customerId = e.target.value;
+            kimai.getPlugin('api').get('/api/customers/' + customerId, {}, function(data) {
+                let value = null;
+                for (const entry of data.metaFields) {
+                    if (entry.name === "foo") {
+                        value = entry.value;
+                        break;
+                    }
+                }
+
+                // make sure that we remove the currently attached list from the input
+                fooInput.removeAttribute('list');
+
+                if (value === null || value === '') {
+                    return;
+                }
+
+                // prepare the datalist element
+                const listId = 'list_foo_' + customerId;
+                const dataList = document.createElement('datalist');
+                dataList.id = listId;
+
+                const lines = value.split(/\r?\n/);
+                lines.forEach(line => {
+                    const option = document.createElement("option");
+                    option.value = line.trim();
+                    if (option.value) {
+                        dataList.appendChild(option);
+                    }
+                    // in case a users switches the customer back and forth, the element might already exist in DOM
+                    if (document.getElementById(listId) !== null) {
+                        document.getElementById(listId).replaceWith(dataList)
+                    } else {
+                        fooInput.parentElement.appendChild(dataList)
+                    }
+                });
+
+                // switch the list attribute to use the list of the last selected customer
+                fooInput.setAttribute('list', listId);
+            });
+        });
+    }
+});
 ```
