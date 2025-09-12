@@ -1,4 +1,4 @@
-**KimaiClock** is a macOS menu bar app that lets you track your Kimai 2 tasks directly from your desktop.  
+**KimaiClock** is a macOS menu bar app that lets you track your time with Kimai directly from your desktop.  
 
 ## Features
 * ⏱️ Start/stop tasks from the menu bar  
