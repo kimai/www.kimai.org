@@ -32,7 +32,7 @@ brew untap foraum-gmbh/foraum
 ```
 
 ## Usage
-Open the app, connect your Kimai server in Settings, and start tracking tasks right from the menu bar.  
+Open the app, connect your Kimai server in Settings, and start tracking time right from the menu bar.  
 
 ## Support
 Need help? Create a GitHub issue or contact us: [support@foraum.de](mailto:support@foraum.de)  
