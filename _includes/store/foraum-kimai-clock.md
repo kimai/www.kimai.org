@@ -35,4 +35,4 @@ brew untap foraum-gmbh/foraum
 Open the app, connect your Kimai server in Settings, and start tracking time right from the menu bar.  
 
 ## Support
-Need help? Create a GitHub issue or contact us: [support@foraum.de](mailto:support@foraum.de)  
+Need help? Create a [GitHub issue](https://github.com/foraum-gmbh/kimai-clock/issues) or contact us via email: [support@foraum.de](mailto:support@foraum.de)  
