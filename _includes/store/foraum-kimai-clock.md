@@ -2,7 +2,7 @@
 
 ## Features
 * ⏱️ Start/stop timesheets from the menu bar  
-* 📊 Quick access to recent tasks  
+* 📊 Quick access to recent logged time entries  
 * 📓 English and German localization  
 * ⚡ Lightweight, fast, and Apple-notarized  
 * 🌙 Dark mode support  
