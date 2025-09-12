@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#4188c9">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="robots" content="index,follow">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+<title>KimaiClock</title>
+<link type="application/atom+xml" rel="alternate" href="https://www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
+<meta property="og:locale" content="ru">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kimai Time-Tracking">
+<meta property="og:image" content="https://www.kimai.org/images/social-preview.webp">
+<meta property="og:description" content="">
+<link rel="alternate" hreflang="cs" href="https://www.kimai.org/cs/store/foraum-kimai-clock.html">
+<link rel="alternate" hreflang="de" href="https://www.kimai.org/de/store/foraum-kimai-clock.html">
+<link rel="alternate" hreflang="es" href="https://www.kimai.org/es/store/foraum-kimai-clock.html">
+<link rel="alternate" hreflang="en" href="https://www.kimai.org/store/foraum-kimai-clock.html">
+<link rel="alternate" hreflang="fr" href="https://www.kimai.org/fr/store/foraum-kimai-clock.html">
+<link rel="alternate" hreflang="he" href="https://www.kimai.co.il/store/foraum-kimai-clock.html">
+<link rel="alternate" hreflang="hr" href="https://www.kimai.org/hr/store/foraum-kimai-clock.html">
+<link rel="alternate" hreflang="it" href="https://www.kimai.org/it/store/foraum-kimai-clock.html">
+<link rel="alternate" hreflang="nl" href="https://www.kimai.org/nl/store/foraum-kimai-clock.html">
+<link rel="alternate" hreflang="pl" href="https://www.kimai.org/pl/store/foraum-kimai-clock.html">
+<link rel="alternate" hreflang="pt" href="https://www.kimai.org/pt/store/foraum-kimai-clock.html">
+<link rel="alternate" hreflang="pt-br" href="https://www.kimai.org/pt_BR/store/foraum-kimai-clock.html">
+<link rel="alternate" hreflang="ru" href="https://www.kimai.org/ru/store/foraum-kimai-clock.html">
+<link rel="alternate" hreflang="sk" href="https://www.kimai.org/sk/store/foraum-kimai-clock.html">
+<link rel="alternate" hreflang="sv" href="https://www.kimai.org/sv/store/foraum-kimai-clock.html">
+<link rel="alternate" hreflang="ta" href="https://www.kimai.org/ta/store/foraum-kimai-clock.html">
+<link rel="alternate" hreflang="uk" href="https://www.kimai.org/uk/store/foraum-kimai-clock.html">
+<link rel="alternate" hreflang="zh-hans" href="https://www.kimai.org/zh_Hans/store/foraum-kimai-clock.html">
+<link rel="alternate" hreflang="zh-hant" href="https://www.kimai.tw/store/foraum-kimai-clock.html">
+<link href="/assets/build/main.css?v6" rel="stylesheet" />
+
+</head>
+<body class="">
+
+<main class="page-wrapper">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand-lg    bg-light navbar-sticky">
+    <div class="container px-3">
+        <a href="/ru/" class="navbar-brand pe-3">
+        <img src="/images/kimai_logo_48.webp" style="height:36px;width:36px;" alt="Kimai - регистратор времени с открытым исходным кодом"> Kimai
+        </a>
+        <div id="navbarNav" class="offcanvas offcanvas-end">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title">Menu</h5>
+                <button type="button" class="btn-close " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Product</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/ru/about.html" class="dropdown-item">О Kimai</a></li>
+                            <li><a href="/en/open-source-community" class="dropdown-item">Open Source</a></li>
+                            <li class="dropdown-divider">
+                            <li><a href="/ru/integrations" class="dropdown-item">Apps &amp; Integrations</a></li>
+                            <li><a href="/ru/demo.html" class="dropdown-item">Демо-версия</a></li>
+                            <li class="dropdown-divider">
+                            <li><a href="/blog/" class="dropdown-item">Новости</a></li>
+                            <li><a href="/ru/support.html" class="dropdown-item">Поддержка</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Облако</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/ru/pricing" class="dropdown-item">Pricing</a></li>
+                            <li><a href="/en/changelog" class="dropdown-item">Changelog</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Self hosting</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/ru/download.html" class="dropdown-item">Скачать</a></li>
+                            <li><a href="/ru/store/" class="dropdown-item">магазин</a></li>
+                            <li><a href="https://github.com/kimai/kimai/discussions" target="_blank" class="dropdown-item">Forum</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Документация</a>
+                        <ul class="dropdown-menu">
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-manual.html" class="dropdown-item">
+                                <i class="bx bx-book me-2"></i>
+                                
+                                Руководство пользователя
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/cloud.html" class="dropdown-item">
+                                <i class="bx bx-cloud me-2"></i>
+                                
+                                Kimai-Cloud
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-on-premise.html" class="dropdown-item">
+                                <i class="bx bx-server me-2"></i>
+                                
+                                Самостоятельное размещение
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-developer.html" class="dropdown-item">
+                                <i class="bx bx-code-alt me-2"></i>
+                                
+                                Разработчик
+                            </a></li>
+                        
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="pe-lg-1 ms-auto me-2">
+            
+
+
+
+<a href="https://www.kimai.cloud/auth/" class="btn btn-sm fs-sm d-none d-md-inline-flex me-2 btn-outline-secondary">Login</a>
+
+            <a href="https://www.kimai.cloud/auth/registration" class="btn btn-success btn-sm fs-sm d-inline-flex">Начните бесплатно</a>
+
+        </div>
+        <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</header>
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="bg-dark pt-2 pt-lg-3 pb-lg-5">
+    <div class="container position-relative zindex-5">
+
+        <div class="d-flex pt-3 pb-4 py-sm-4 pt-lg-5">
+        
+        </div>
+
+        <h1>KimaiClock</h1>
+        <p class="fs-lg text-light opacity-70">macOS menu bar app to track time with Kimai</p>
+
+        
+        <div class="d-flex align-items-center">
+            <img src="/images/marketplace/foraum.webp" class="rounded-circle" width="60" alt="Foraum GmbH">
+            <div class="ps-3">
+                <div class="text-light opacity-80 mb-1">Предлагает</div>
+                <h6>Foraum GmbH</h6>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container pt-5 mt-2 mt-lg-4 mt-xl-5">
+    <div class="row" id="buy-item-card">
+
+        <aside class="col-lg-4 col-md-5 offset-xl-1 order-md-2 mb-5">
+            <div style="margin-top: -96px;"></div>
+            <div class="position-sticky top-0 pt-5">
+                <div class="pt-5 mt-md-3">
+                    <div class="card shadow-sm p-sm-3">
+                        <div class="card-body">
+                            
+
+                            <div class="h2 d-flex align-items-center mb-4">
+                                <span class="text-nowrap">бесплатно</span>
+                                <small class="text-muted fs-xl fw-normal ms-2">
+                                    
+                                    
+                                </small>
+                            </div>
+
+                            
+
+                            <div class="row align-items-center mb-3">
+                                <a class="btn btn-success btn-lg w-100 btn-buy" href="https://github.com/foraum-gmbh/releases" target="_blank"><i class="bx bxl-github me-2"></i> Скачать</a>
+                            </div>
+
+                            
+
+                            
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Content -->
+        <div class="col-xl-7 col-lg-8 col-md-7 order-md-1 mb-5">
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <a href="#store-info" class="nav-link active" data-bs-toggle="tab" role="tab">
+                        <i class="bx bx-home-alt opacity-70 me-2"></i>
+                        Описание
+                    </a>
+                </li>
+                
+                
+                
+                
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="store-info" role="tabpanel">
+
+                    <p><strong>KimaiClock</strong> is a macOS menu bar app that lets you track your time with Kimai directly from your desktop.</p>
+
+<h2 id="features">Features</h2>
+<ul>
+  <li>⏱️ Start/stop timesheets from the menu bar</li>
+  <li>📊 Quick access to recent logged time entries</li>
+  <li>📓 English and German localization</li>
+  <li>⚡ Lightweight, fast, and Apple-notarized</li>
+  <li>🌙 Dark mode support</li>
+</ul>
+
+<h2 id="download-and-install">Download and install</h2>
+<p>Clone from <a href="https://github.com/foraum-gmbh/kimai-clock">GitHub</a> or download the latest <code class="language-plaintext highlighter-rouge">.dmg</code> from the <a href="https://github.com/Foraum-GmbH/kimai-clock/releases">Releases page</a>.</p>
+
+<h3 id="homebrew-recommended">Homebrew (recommended)</h3>
+<p>KimaiClock can also be installed via our own Homebrew tap:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># add company tap</span>
+brew tap foraum-gmbh/foraum https://github.com/Foraum-GmbH/homebrew-foraum
+
+<span class="c"># install cask from company tap</span>
+brew <span class="nb">install</span> <span class="nt">--cask</span> foraum-gmbh/foraum/kimai-clock
+</code></pre></div></div>
+
+<p>To remove KimaiClock and untap the repository:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># uninstall the app</span>
+brew uninstall <span class="nt">--cask</span> foraum-gmbh/foraum/kimai-clock
+
+<span class="c"># remove the company tap</span>
+brew untap foraum-gmbh/foraum
+</code></pre></div></div>
+
+<h2 id="usage">Usage</h2>
+<p>Open the app, connect your Kimai server in Settings, and start tracking time right from the menu bar.</p>
+
+<h2 id="support">Support</h2>
+<p>Need help? Create a <a href="https://github.com/foraum-gmbh/kimai-clock/issues">GitHub issue</a> or contact us via email: <a href="mailto:support@foraum.de">support@foraum.de</a></p>
+
+
+
+                    
+                </div>
+
+                
+
+                
+
+                
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="mb-5 pt-md-3 pt-lg-4 pt-xl-5">
+    <h2 class="h1 pt-lg-2 pt-xl-3 mb-5 text-center">Скриншоты</h2>
+    <div class="pb-2 pb-sm-3 pb-md-4">
+        <div class="swiper" data-swiper-options='{
+            "loop": true,
+            "grabCursor": false,
+            "centeredSlides": true,
+            "autoplay": {
+              "delay": 0,
+              "disableOnInteraction": false
+            },
+            "freeMode": true,
+            "speed": 38000,
+            "freeModeMomentum": false,
+            "breakpoints": {
+              "0": {
+                "slidesPerView": 1,
+                "spaceBetween": 8
+              },
+              "500": {
+                "spaceBetween": 16
+              },
+              "768": {
+                "slidesPerView": 2,
+                "spaceBetween": 24
+              }
+            }
+          }'>
+            <div class="swiper-wrapper">
+                
+                    
+                    
+                    <div class="swiper-slide pb-3">
+                        <figure class="figure">
+                            <img src="/images/marketplace/foraum-kimai-clock-hero-image.webp" class="figure-img" alt="Screenshot">
+                            
+                            <figcaption class="figure-caption text-center">KimaiClock in the macOS menu bar</figcaption>
+                            
+                        </figure>
+                    </div>
+                
+
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section class="container py-lg-4 py-xl-5 mt-3 mb-5">
+    <div class="row g-0 bg-dark bg-repeat-0 bg-position-center border rounded-3 overflow-hidden" style="background-image: url(/images/layout/author-pattern.svg);">
+        <div class="col-md-5 bg-repeat-0 bg-position-top-center bg-size-cover" style="background-image: url(/images/marketplace/foraum.webp); min-height: 350px;"></div>
+        <div class="col-md-7 py-xl-5 px-4">
+            <div class="py-5 mx-auto" style="max-width: 530px;">
+                <div class="fs-xl text-light opacity-50 mb-2">Предлагает</div>
+                <h2 class="h1 text-light mb-4">Foraum GmbH</h2>
+                <p class="text-light opacity-70 pb-4">
+                    Online platform for deals and a discussion forum on all topics, with a focus on tech and gaming
+                </p>
+
+                <div class="mb-4">
+                    Если у вас возникли вопросы, пожалуйста, используйте следующую контактную информацию, чтобы связаться с разработчиком напрямую.
+                </div>
+                <div class="d-flex flex-column flex-sm-row flex-wrap">
+                    
+                    <a href="https://foraum.de" class="btn btn-behance me-sm-4 mb-3 mb-sm-0">
+                        <i class="bx bx-home fs-xl me-2"></i>
+                        Homepage
+                    </a>
+                    
+                    
+                    <a href="mailto:support@foraum.de" class="btn btn-blogger me-sm-4 mb-3 mb-sm-0">
+                        <i class="bx bx-envelope fs-xl me-2"></i>
+                        Email
+                    </a>
+                    
+                    
+                    <a href="https://github.com/foraum-gmbh" class="btn btn-github me-sm-4 mb-3 mb-sm-0">
+                        <i class="bx bxl-github fs-xl me-2"></i>
+                        GitHub
+                    </a>
+                    
+                    <br>
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+</main>
+
+
+
+
+
+
+
+
+
+<footer class="footer bg-dark pt-5 pb-4">
+    <div class="container pt-1 pt-md-3 pt-lg-4 pt-xl-5">
+        <div class="row">
+            <div class="col-md-5 col-xl-4 mb-4 mb-md-5 mb-lg-0">
+                <div class="d-flex align-items-center pb-3 mb-1">
+                    <div class="navbar-brand text-white p-0 pe-1 me-0">
+                        Kimai
+                    </div>
+                    <hr class="vr mt-2 mx-3" style="height: 26px;">
+                    <div class="text-white fw-semibold ps-1">Простой учет времени</div>
+                </div>
+                <p class="text-body fs-sm pb-1 pb-md-2 pb-lg-2 mb-2">
+                    Бесплатное и простое в использовании учетное время для фрилансеров, агентств и компаний. Kimai - это свободное программное обеспечение, доступное для самостоятельного хостинга и в виде SaaS.
+                </p>
+                <div class="d-flex flex-column flex-sm-row flex-lg-column align-items-sm-center align-items-lg-start justify-content-between pb-1 pb-md-2 pb-lg-3 mb-3">
+                    <div class="position-relative">
+                        <div class="dropdown">
+                            <button type="button" class="form-select" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-globe top-50 start-0 text-body me-2"></i>
+                                Русский
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/cs/" class="dropdown-item" title="Kimai - Open Source sledování času">Čeština</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/de/" class="dropdown-item" title="Kimai – Open-Source Zeiterfassung">Deutsch</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org" class="dropdown-item" title="Kimai - Open Source time-tracker">English</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/es/" class="dropdown-item" title="Kimai - Tracker de tiempo abierto">Español</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/fr/" class="dropdown-item" title="Kimai - Suivi du temps à code ouvert">Français</a>
+                                
+                                    <a dir="rtl" href="https://www.kimai.co.il" class="dropdown-item" title="Kimai - מעקב שעות בקוד פתוח">עברית</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/hr/" class="dropdown-item" title="Kimai – Program otvorenog koda za evidentiranje vremena">Hrvatski</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/it/" class="dropdown-item" title="Kimai: time-tracker open source">Italiano</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/nl/" class="dropdown-item" title="Kimai - Open Source tijdregistratie">Dutch</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/pl/" class="dropdown-item" title="Kimai - Otwarte oprogramowanie do śledzenia czasu">Polski</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/pt/" class="dropdown-item" title="Kimai - Rastreador de tempo de código aberto">Português</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/pt_BR/" class="dropdown-item" title="Kimai - Rastreador de tempo de código aberto">Português (Brasil)</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/ru/" class="dropdown-item active" title="Kimai - регистратор времени с открытым исходным кодом">Русский</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/sk/" class="dropdown-item" title="Kimai - Open Source sledovanie času">Slovenčina</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/sv/" class="dropdown-item" title="Kimai - öppen källkod tidsspårare">Svenska</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/ta/" class="dropdown-item" title="கிமாய் - திறந்த மூல நேர -கண்காணிப்பு">தமிழ்</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/uk/" class="dropdown-item" title="Kimai — реєстратор часу з відкритим сирцевим кодом">Українська</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/zh_Hans/" class="dropdown-item" title="Kimai - 开源时间跟踪器">中文（中国）</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.tw" class="dropdown-item" title="Kimai —— 開放源始碼的工時追蹤工具">中文（繁體）</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-md-7 offset-xl-1">
+                <div id="footer-links" class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="tools" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/ru/features.html" class="nav-link fs-sm fw-medium px-0 py-1">Особенности</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/ru/reviews" class="nav-link fs-sm fw-medium px-0 py-1">Reviews</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/en/kimai-discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">Discount codes</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="landing-kimai-for" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                
+                                
+                                <li class="nav-item">
+                                    <a href="/en/agency-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Time Tracking For Agencies">Agencies</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/consultants-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Time Tracking For Consultants">Consultants</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/freelancers-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Time tracking for successful freelancers">Freelancer</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/software-developers-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Time Tracking For Software Developers">Software Developers</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/time-tracking-non-profit.html" class="nav-link fs-sm fw-medium px-0 py-1">Non-Profits</a>
+                                </li>
+                                <li class="nav-item">
+                                    
+                                    <a href="/en/industry" class="nav-link fs-sm fw-medium px-0 py-1">More industries</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="footer-cmp" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/ru/compare/" class="nav-link fs-sm fw-medium px-0 py-1">Kimai alternatives</a>
+                                </li>
+                                
+                                
+                                
+                                    <li class="nav-item">
+                                        <a href="https://www.kimai.org/en/clockify-alternative" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai with Clockify">Clockify</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="https://www.kimai.org/en/openproject-alternative" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai with OpenProject">OpenProject</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="https://www.kimai.org/en/toggl-alternative" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai with toggl track">toggl track</a>
+                                    </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="d-md-flex align-items-center justify-content-between pt-sm-2 pt-md-4 pt-lg-5 pb-2 mt-4 ">
+    <ul class="nav order-md-1 ms-md-0 mb-3 mb-md-0">
+        <li class="nav-item">
+            <a href="/ru/site-notice.html" class="nav-link fs-sm fw-medium">Уведомление на сайте</a>
+        </li>
+        <li class="nav-item">
+            <a href="/ru/privacy-policy.html" class="nav-link fs-sm fw-medium">Политика конфиденциальности</a>
+        </li>
+        <li class="nav-item">
+            <a href="/ru/terms-cloud.html" class="nav-link fs-sm fw-medium">Terms</a>
+        </li>
+    </ul>
+    <div class="nav order-md-2 mb-3 mb-md-0">
+        
+    <a target="_blank" href="https://github.com/kimai/kimai" class="btn btn-icon btn-secondary btn-github rounded-circle me-3" aria-label="GitHub">
+        <i class="bx bxl-github"></i>
+    </a>
+
+    <a target="_blank" href="https://www.youtube.com/@kimai_org" class="btn btn-icon btn-secondary btn-youtube rounded-circle me-3" aria-label="YouTube">
+        <i class="bx bxl-youtube"></i>
+    </a>
+
+    <a target="_blank" href="https://www.linkedin.com/company/kimai-timetracker/" class="btn btn-icon btn-secondary btn-linkedin rounded-circle me-3" aria-label="LinkedIn">
+        <i class="bx bxl-linkedin"></i>
+    </a>
+
+    <a target="_blank" href="https://www.instagram.com/kimai_org" class="btn btn-icon btn-secondary btn-instagram rounded-circle me-3" aria-label="Instagram">
+        <i class="bx bxl-instagram"></i>
+    </a>
+
+    <a target="_blank" href="https://www.facebook.com/kimai.time.tracker" class="btn btn-icon btn-secondary btn-facebook rounded-circle me-3" aria-label="Facebook">
+        <i class="bx bxl-facebook"></i>
+    </a>
+
+    <a target="_blank" href="https://phpc.social/@kimai" class="btn btn-icon btn-secondary btn-messenger rounded-circle me-3" aria-label="Mastodon">
+        <i class="bx bxl-mastodon"></i>
+    </a>
+
+
+    </div>
+    <ul class="nav order-md-3">
+        <li class="nav-item">
+            <a href="https://uptime.kimai.cloud/" target="_blank" class="nav-link fs-sm fw-medium">Status</a>
+        </li>
+    </ul>
+    
+</div>
+
+    </div>
+</footer>
+
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js?v1"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
+
+</body>
+</html>
