@@ -568,6 +568,17 @@
 
 <p>SAML authentication with Keycloak accounts has proven to work with the following configurations.</p>
 
+<p>Screenshots might be outdated, please check the text version below each image.</p>
+
+<h3 id="important-settings">Important settings</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">singleSignOnService.url</code>: <code class="language-plaintext highlighter-rouge">https://{keycloak-domain}/realms/{realm}/protocol/saml</code></li>
+  <li>In Kimai: <code class="language-plaintext highlighter-rouge">kimai.saml.connection.idp.x509cert</code> = value from IdP <code class="language-plaintext highlighter-rouge">ds:X509Certificate</code></li>
+  <li>In Kimai: <code class="language-plaintext highlighter-rouge">kimai.saml.connection.security.authnRequestsSigned: true</code></li>
+  <li>In Keycloak: enable <strong>Force name ID format</strong></li>
+</ul>
+
 <h3 id="add-a-client-for-kimai-saml">Add a client for Kimai SAML</h3>
 
 <figure class="d-block figure mb-3" style="max-width: 800px">
@@ -587,9 +598,35 @@
     <figcaption class="figure-caption">Deactivate *Client Signature Required* (2)</figcaption>
 </figure>
 
+<h3 id="certificates">Certificates</h3>
+
+<ul>
+  <li>
+    <p><strong>IdP certificate</strong>: Obtain the <code class="language-plaintext highlighter-rouge">ds:X509Certificate</code> from Keycloak’s SAML descriptor:<br />
+<code class="language-plaintext highlighter-rouge">https://{keycloak-domain}/realms/{realm}/protocol/saml/descriptor</code><br />
+⚠️ Do <em>not</em> use the RS256 realm key from Realm Settings.</p>
+  </li>
+  <li>
+    <p><strong>SP keys</strong>: In Kimai config, set:</p>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">sp.privateKey</code> → private key generated in Keycloak (<em>Clients → Kimai → Keys</em>)</li>
+      <li><code class="language-plaintext highlighter-rouge">sp.x509cert</code> → corresponding public key</li>
+    </ul>
+  </li>
+</ul>
+
 <h3 id="create-user-attributes">Create user attributes</h3>
 
-<p>Which will then be mapped on the Kimai user attributes:</p>
+<p>Keycloak client mappers (inside the <code class="language-plaintext highlighter-rouge">{client}-dedicated</code> scope)</p>
+
+<p>Remove the default <code class="language-plaintext highlighter-rouge">role list</code>, then add:</p>
+
+<ul>
+  <li><strong>X500 email</strong> → <code class="language-plaintext highlighter-rouge">SAML Attribute Name: Email</code>, <code class="language-plaintext highlighter-rouge">SAML Attribute NameFormat: Unspecified</code></li>
+  <li><strong>X500 surname</strong> → <code class="language-plaintext highlighter-rouge">SAML Attribute Name: LastName</code>, <code class="language-plaintext highlighter-rouge">SAML Attribute NameFormat: Unspecified</code></li>
+  <li><strong>X500 givenName</strong> → <code class="language-plaintext highlighter-rouge">SAML Attribute Name: FirstName</code>, <code class="language-plaintext highlighter-rouge">SAML Attribute NameFormat: Unspecified</code></li>
+  <li><strong>Role list</strong> → <code class="language-plaintext highlighter-rouge">Role attribute name: Roles</code>, <code class="language-plaintext highlighter-rouge">SAML Attribute NameFormat: Unspecified</code>, <code class="language-plaintext highlighter-rouge">Single Role Attribute: On</code></li>
+</ul>
 
 <figure class="d-block figure mb-3" style="max-width: 1000px">
     <img src="/images/documentation/keycloak-saml-4.webp" class="figure-img img-fluid rounded" />
@@ -611,13 +648,23 @@
     <figcaption class="figure-caption">Kimai user attributes (X500 Email)</figcaption>
 </figure>
 
-<h3 id="adjust-client-scopes">Adjust Client Scopes</h3>
+<h3 id="client-scopes--roles">Client Scopes / Roles</h3>
+
+<p>Make sure to map unique Keycloak roles to Kimai roles.<br />
+If you reuse the same Keycloak role, the last mapping wins.</p>
 
 <ul>
   <li>Go to Configuration -&gt; Client Scopes -&gt; role_list</li>
   <li>Select Tab “Mappers”, edit “role_list”</li>
   <li>Set” Single Role Attribute” to “ON”</li>
 </ul>
+
+<p>Example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{ saml: Admins, kimai: ROLE_SUPER_ADMIN }
+{ saml: Management, kimai: ROLE_ADMIN }
+{ saml: Teamlead, kimai: ROLE_TEAMLEAD }
+</code></pre></div></div>
 
 <h3 id="configure-localyaml">Configure local.yaml</h3>
 
@@ -635,34 +682,35 @@
             <span class="na">resetOnLogin</span><span class="pi">:</span> <span class="kc">true</span>
             <span class="na">attribute</span><span class="pi">:</span> <span class="s">Roles</span>
             <span class="na">mapping</span><span class="pi">:</span>
-                <span class="pi">-</span> <span class="pi">{</span> <span class="nv">saml</span><span class="pi">:</span> <span class="nv">Admins</span><span class="pi">,</span> <span class="nv">kimai</span><span class="pi">:</span> <span class="nv">ROLE_ADMIN</span> <span class="pi">}</span>
-                <span class="pi">-</span> <span class="pi">{</span> <span class="nv">saml</span><span class="pi">:</span> <span class="nv">Management</span><span class="pi">,</span> <span class="nv">kimai</span><span class="pi">:</span> <span class="nv">ROLE_TEAMLEAD</span> <span class="pi">}</span>
+                <span class="pi">-</span> <span class="pi">{</span> <span class="nv">saml</span><span class="pi">:</span> <span class="nv">Admins</span><span class="pi">,</span> <span class="nv">kimai</span><span class="pi">:</span> <span class="nv">ROLE_SUPER_ADMIN</span> <span class="pi">}</span>
+                <span class="pi">-</span> <span class="pi">{</span> <span class="nv">saml</span><span class="pi">:</span> <span class="nv">Management</span><span class="pi">,</span> <span class="nv">kimai</span><span class="pi">:</span> <span class="nv">ROLE_ADMIN</span> <span class="pi">}</span>
+                <span class="pi">-</span> <span class="pi">{</span> <span class="nv">saml</span><span class="pi">:</span> <span class="nv">Teamlead</span><span class="pi">,</span> <span class="nv">kimai</span><span class="pi">:</span> <span class="nv">ROLE_TEAMLEAD</span> <span class="pi">}</span>
         <span class="na">connection</span><span class="pi">:</span>
             <span class="c1"># You SAML provider, here an example for Keycloak</span>
             <span class="na">idp</span><span class="pi">:</span>
-                <span class="na">entityId</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://keycloak.domain.de/auth/realms/Firmenrealm'</span>
+                <span class="na">entityId</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://example.com/realms/master'</span>
                 <span class="na">singleSignOnService</span><span class="pi">:</span>
-                    <span class="na">url</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://keycloak.domain.de/auth/realms/Firmenrealm/protocol/saml'</span>
+                    <span class="na">url</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://example.com/realms/master/protocol/saml'</span>
                     <span class="na">binding</span><span class="pi">:</span> <span class="s1">'</span><span class="s">urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect'</span>
-                <span class="c1">#    url: 'https://127.0.0.1:8010/logout' binding: 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect'</span>
-                <span class="na">x509cert</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Get</span><span class="nv"> </span><span class="s">your</span><span class="nv"> </span><span class="s">Keycloak</span><span class="nv"> </span><span class="s">certificate</span><span class="nv"> </span><span class="s">at</span><span class="nv"> </span><span class="s">Realm</span><span class="nv"> </span><span class="s">Settings</span><span class="nv"> </span><span class="s">--&gt;</span><span class="nv"> </span><span class="s">Keys</span><span class="nv"> </span><span class="s">--&gt;</span><span class="nv"> </span><span class="s">RS256</span><span class="nv"> </span><span class="s">--&gt;</span><span class="nv"> </span><span class="s">Certificate</span><span class="nv"> </span><span class="s">'</span>
-            <span class="c1"># Your Kimai instance, replace https://127.0.0.1:8010 with your base URL</span>
+                <span class="na">x509cert</span><span class="pi">:</span> <span class="s1">'</span><span class="s">cert</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">https://{keycloak-domain}/realms/{realm}/protocol/saml/descriptor</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">ds:X509Certificate'</span>
+           <span class="c1"># Your Kimai instance, replace https://127.0.0.1:8010 with your base URL</span>
             <span class="na">sp</span><span class="pi">:</span>
                 <span class="na">entityId</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Kimai2'</span>
                 <span class="na">assertionConsumerService</span><span class="pi">:</span>
-                    <span class="na">url</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://kimai.domain.de/auth/saml/acs'</span>
+                    <span class="na">url</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://example.com/auth/saml/acs'</span>
                     <span class="na">binding</span><span class="pi">:</span> <span class="s1">'</span><span class="s">urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST'</span>
                 <span class="na">singleLogoutService</span><span class="pi">:</span>
-                    <span class="na">url</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://kimai.domain.de/auth/saml/logout'</span>
+                    <span class="na">url</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://example.com/auth/saml/logout'</span>
                     <span class="na">binding</span><span class="pi">:</span> <span class="s1">'</span><span class="s">urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect'</span>
-                <span class="c1">#privateKey: ''</span>
+                <span class="na">privateKey</span><span class="pi">:</span> <span class="s1">'</span><span class="s">private</span><span class="nv"> </span><span class="s">key</span><span class="nv"> </span><span class="s">generated</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">Keycloak</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">Clients</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">Kimai</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">Keys'</span>
+                <span class="na">x509cert</span><span class="pi">:</span> <span class="s1">'</span><span class="s">public</span><span class="nv"> </span><span class="s">key</span><span class="nv"> </span><span class="s">generated</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">Keycloak</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">Clients</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">Kimai</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">Keys'</span>
             <span class="c1"># only set baseurl, if auto-detection doesn't work</span>
-            <span class="c1">#baseurl: 'https://kimai.domain.de/auth/saml/'</span>
+            <span class="na">baseurl</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://example.com/auth/saml/'</span>
             <span class="na">strict</span><span class="pi">:</span> <span class="kc">true</span>
             <span class="na">debug</span><span class="pi">:</span> <span class="kc">true</span>
             <span class="na">security</span><span class="pi">:</span>
                 <span class="na">nameIdEncrypted</span><span class="pi">:</span> <span class="kc">false</span>
-                <span class="na">authnRequestsSigned</span><span class="pi">:</span> <span class="kc">false</span>
+                <span class="na">authnRequestsSigned</span><span class="pi">:</span> <span class="kc">true</span>
                 <span class="na">logoutRequestSigned</span><span class="pi">:</span> <span class="kc">false</span>
                 <span class="na">logoutResponseSigned</span><span class="pi">:</span> <span class="kc">false</span>
                 <span class="na">wantMessagesSigned</span><span class="pi">:</span> <span class="kc">false</span>
@@ -702,7 +750,7 @@
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#add-a-client-for-kimai-saml" class="nav-link">Add a client for Kimai SAML</a></li><li class="nav-item"><a href="#configure-the-client" class="nav-link">Configure the client</a></li><li class="nav-item"><a href="#create-user-attributes" class="nav-link">Create user attributes</a></li><li class="nav-item"><a href="#adjust-client-scopes" class="nav-link">Adjust Client Scopes</a></li><li class="nav-item"><a href="#configure-localyaml" class="nav-link">Configure local.yaml</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#important-settings" class="nav-link">Important settings</a></li><li class="nav-item"><a href="#add-a-client-for-kimai-saml" class="nav-link">Add a client for Kimai SAML</a></li><li class="nav-item"><a href="#configure-the-client" class="nav-link">Configure the client</a></li><li class="nav-item"><a href="#certificates" class="nav-link">Certificates</a></li><li class="nav-item"><a href="#create-user-attributes" class="nav-link">Create user attributes</a></li><li class="nav-item"><a href="#client-scopes--roles" class="nav-link">Client Scopes / Roles</a></li><li class="nav-item"><a href="#configure-localyaml" class="nav-link">Configure local.yaml</a></li></ul>
         
     </aside>
 
