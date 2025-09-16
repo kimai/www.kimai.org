@@ -8,6 +8,15 @@ Go back to general [SAML configuration]({% link _documentation/saml.md %}) for K
 
 SAML authentication with Keycloak accounts has proven to work with the following configurations.
 
+Screenshots might be outdated, please check the text version below each image. 
+
+### Important settings
+
+- `singleSignOnService.url`: `https://{keycloak-domain}/realms/{realm}/protocol/saml`
+- In Kimai: `kimai.saml.connection.idp.x509cert` = value from IdP `ds:X509Certificate`
+- In Kimai: `kimai.saml.connection.security.authnRequestsSigned: true`
+- In Keycloak: enable **Force name ID format**
+
 ### Add a client for Kimai SAML
 
 {% include docs-image.html src="/images/documentation/keycloak-saml-1.webp" title="Add a client" width="800px" %}
@@ -17,20 +26,50 @@ SAML authentication with Keycloak accounts has proven to work with the following
 {% include docs-image.html src="/images/documentation/keycloak-saml-2.webp" title="Deactivate *Client Signature Required* (1)" width="900px" %}
 {% include docs-image.html src="/images/documentation/keycloak-saml-3.webp" title="Deactivate *Client Signature Required* (2)" width="900px" %}
 
+### Certificates
+
+- **IdP certificate**: Obtain the `ds:X509Certificate` from Keycloak’s SAML descriptor:  
+  `https://{keycloak-domain}/realms/{realm}/protocol/saml/descriptor`  
+  ⚠️ Do *not* use the RS256 realm key from Realm Settings.
+
+- **SP keys**: In Kimai config, set:
+    - `sp.privateKey` → private key generated in Keycloak (*Clients → Kimai → Keys*)
+    - `sp.x509cert` → corresponding public key
+
 ### Create user attributes
 
-Which will then be mapped on the Kimai user attributes:
+Keycloak client mappers (inside the `{client}-dedicated` scope)
+
+Remove the default `role list`, then add:
+
+- **X500 email** → `SAML Attribute Name: Email`, `SAML Attribute NameFormat: Unspecified`
+- **X500 surname** → `SAML Attribute Name: LastName`, `SAML Attribute NameFormat: Unspecified`
+- **X500 givenName** → `SAML Attribute Name: FirstName`, `SAML Attribute NameFormat: Unspecified`
+- **Role list** → `Role attribute name: Roles`, `SAML Attribute NameFormat: Unspecified`, `Single Role Attribute: On`
 
 {% include docs-image.html src="/images/documentation/keycloak-saml-4.webp" title="Kimai user attributes (listing)" width="1000px" %}
 {% include docs-image.html src="/images/documentation/keycloak-saml-5.webp" title="Kimai user attributes (X500 GivenName)" width="700px" %}
 {% include docs-image.html src="/images/documentation/keycloak-saml-6.webp" title="Kimai user attributes (X500 Surname)" width="700px" %}
 {% include docs-image.html src="/images/documentation/keycloak-saml-7.webp" title="Kimai user attributes (X500 Email)" width="700px" %}
 
-### Adjust Client Scopes
+### Client Scopes / Roles
+
+Make sure to map unique Keycloak roles to Kimai roles.  
+If you reuse the same Keycloak role, the last mapping wins.
 
 - Go to Configuration -> Client Scopes -> role_list
 - Select Tab "Mappers", edit "role_list"
 - Set" Single Role Attribute" to "ON"
+
+Example:
+
+```
+{ saml: Admins, kimai: ROLE_SUPER_ADMIN }
+{ saml: Management, kimai: ROLE_ADMIN }
+{ saml: Teamlead, kimai: ROLE_TEAMLEAD }
+```
+
+
 
 ### Configure local.yaml
 
@@ -49,34 +88,35 @@ kimai:
             resetOnLogin: true
             attribute: Roles
             mapping:
-                - { saml: Admins, kimai: ROLE_ADMIN }
-                - { saml: Management, kimai: ROLE_TEAMLEAD }
+                - { saml: Admins, kimai: ROLE_SUPER_ADMIN }
+                - { saml: Management, kimai: ROLE_ADMIN }
+                - { saml: Teamlead, kimai: ROLE_TEAMLEAD }
         connection:
             # You SAML provider, here an example for Keycloak
             idp:
-                entityId: 'https://keycloak.domain.de/auth/realms/Firmenrealm'
+                entityId: 'https://example.com/realms/master'
                 singleSignOnService:
-                    url: 'https://keycloak.domain.de/auth/realms/Firmenrealm/protocol/saml'
+                    url: 'https://example.com/realms/master/protocol/saml'
                     binding: 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect'
-                #    url: 'https://127.0.0.1:8010/logout' binding: 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect'
-                x509cert: 'Get your Keycloak certificate at Realm Settings --> Keys --> RS256 --> Certificate '
-            # Your Kimai instance, replace https://127.0.0.1:8010 with your base URL
+                x509cert: 'cert from https://{keycloak-domain}/realms/{realm}/protocol/saml/descriptor > ds:X509Certificate'
+           # Your Kimai instance, replace https://127.0.0.1:8010 with your base URL
             sp:
                 entityId: 'Kimai2'
                 assertionConsumerService:
-                    url: 'https://kimai.domain.de/auth/saml/acs'
+                    url: 'https://example.com/auth/saml/acs'
                     binding: 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST'
                 singleLogoutService:
-                    url: 'https://kimai.domain.de/auth/saml/logout'
+                    url: 'https://example.com/auth/saml/logout'
                     binding: 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect'
-                #privateKey: ''
+                privateKey: 'private key generated in the Keycloak > Clients > Kimai > Keys'
+                x509cert: 'public key generated in the Keycloak > Clients > Kimai > Keys'
             # only set baseurl, if auto-detection doesn't work
-            #baseurl: 'https://kimai.domain.de/auth/saml/'
+            baseurl: 'https://example.com/auth/saml/'
             strict: true
             debug: true
             security:
                 nameIdEncrypted: false
-                authnRequestsSigned: false
+                authnRequestsSigned: true
                 logoutRequestSigned: false
                 logoutResponseSigned: false
                 wantMessagesSigned: false
