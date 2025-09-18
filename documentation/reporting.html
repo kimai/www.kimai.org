@@ -640,6 +640,16 @@ The available users to choose from are either all (if the user owns the permissi
 <div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i><p>Plugins can ship their own reports, the following list contains the reports shipped in default installations.</p>
 </div>
 
+<h2 id="faq-user-does-not-show-up-in-the-report">FAQ: User does not show up in the report</h2>
+
+<p>There are a few reasons why a user might not show up in a report:</p>
+
+<ul>
+  <li>You are not allowed to see that user. Switch to an Admin account to verify.</li>
+  <li>The user account is <code class="language-plaintext highlighter-rouge">deactivated</code>. The user does not show up in the dropdown, but the data should still be reported for the selected period.</li>
+  <li>The user account is flagged as <code class="language-plaintext highlighter-rouge">System-Account</code>. Edit the user profile to verify: you can’t set these flags for your own user account!</li>
+</ul>
+
 <h2 id="single-user">Single user</h2>
 
 <h3 id="weekly-view-for-one-user">Weekly view for one user</h3>
@@ -778,7 +788,7 @@ links to invoice and export screen.</p>
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#single-user" class="nav-link">Single user</a><ul><li class="nav-item"><a href="#weekly-view-for-one-user" class="nav-link">Weekly view for one user</a></li><li class="nav-item"><a href="#monthly-view-for-one-user" class="nav-link">Monthly view for one user</a></li><li class="nav-item"><a href="#yearly-view-for-one-user" class="nav-link">Yearly view for one user</a></li></ul></li><li class="nav-item"><a href="#list-of-users" class="nav-link">List of users</a><ul><li class="nav-item"><a href="#weekly-view-for-all-users" class="nav-link">Weekly view for all users</a></li><li class="nav-item"><a href="#monthly-view-for-all-users" class="nav-link">Monthly view for all users</a></li><li class="nav-item"><a href="#yearly-view-for-all-users" class="nav-link">Yearly view for all users</a></li></ul></li><li class="nav-item"><a href="#projects" class="nav-link">Projects</a><ul><li class="nav-item"><a href="#project-overview" class="nav-link">Project overview</a></li><li class="nav-item"><a href="#project-details" class="nav-link">Project details</a></li><li class="nav-item"><a href="#monthly-report" class="nav-link">Monthly report</a></li><li class="nav-item"><a href="#inactive-projects" class="nav-link">Inactive projects</a></li></ul></li><li class="nav-item"><a href="#customers" class="nav-link">Customers</a><ul><li class="nav-item"><a href="#projects-by-month-activity-and-user" class="nav-link">Projects by month, activity and user</a></li></ul></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#faq-user-does-not-show-up-in-the-report" class="nav-link">FAQ: User does not show up in the report</a></li><li class="nav-item"><a href="#single-user" class="nav-link">Single user</a><ul><li class="nav-item"><a href="#weekly-view-for-one-user" class="nav-link">Weekly view for one user</a></li><li class="nav-item"><a href="#monthly-view-for-one-user" class="nav-link">Monthly view for one user</a></li><li class="nav-item"><a href="#yearly-view-for-one-user" class="nav-link">Yearly view for one user</a></li></ul></li><li class="nav-item"><a href="#list-of-users" class="nav-link">List of users</a><ul><li class="nav-item"><a href="#weekly-view-for-all-users" class="nav-link">Weekly view for all users</a></li><li class="nav-item"><a href="#monthly-view-for-all-users" class="nav-link">Monthly view for all users</a></li><li class="nav-item"><a href="#yearly-view-for-all-users" class="nav-link">Yearly view for all users</a></li></ul></li><li class="nav-item"><a href="#projects" class="nav-link">Projects</a><ul><li class="nav-item"><a href="#project-overview" class="nav-link">Project overview</a></li><li class="nav-item"><a href="#project-details" class="nav-link">Project details</a></li><li class="nav-item"><a href="#monthly-report" class="nav-link">Monthly report</a></li><li class="nav-item"><a href="#inactive-projects" class="nav-link">Inactive projects</a></li></ul></li><li class="nav-item"><a href="#customers" class="nav-link">Customers</a><ul><li class="nav-item"><a href="#projects-by-month-activity-and-user" class="nav-link">Projects by month, activity and user</a></li></ul></li></ul>
         
     </aside>
 
