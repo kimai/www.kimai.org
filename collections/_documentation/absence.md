@@ -25,11 +25,11 @@ There are 2 phases that each absence has to go through:
 - New absence: moves the absence to the `Requested` list and sends an email to the supervisor to ask for confirmation
   - Approval by the supervisor: the absence will be moved to the `Approved` list and an email is sent to the user to confirm the approval 
   - Rejection by the supervisor: the absence will be moved back to the `New` list and an email is sent to the user to inform about the rejection 
-- Approved absences: can still be deleted, until they are locked by the 
+- Approved absences: can still be deleted, until they are locked 
 
 ## Holiday
 
-When you are eligible for holidays, meaning that your contract settings have a value for `holidays`, you can add holidays here.
+When you are eligible for holidays, meaning that your contract settings have a value for `Holidays per year`, you can schedule your vacations here.
 
 - Vacation days need to be approved
 - Vacation days can be full days or half-days
