@@ -1,0 +1,112 @@
+---
+layout: base
+---
+{% assign homepage = site.pages | where: 'lang', page.lang | find: 'slug', 'index' %}
+{% assign features = site.pages | where: 'lang', page.lang | find: 'slug', 'features' %}
+
+<main class="page-wrapper">
+    {% include header-navigation.html %}
+
+    <section class="container pt-4 pb-2 mb-lg-5">
+
+        <nav class="d-md-none pb-3 mb-2 mb-lg-3" aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item">
+                    <a href="{{ homepage.url }}"><i class="bx bx-home-alt fs-lg me-1"></i>{{ site.data[page.lang].translation.index.name }}</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="{% link _pages/stories.html %}">{{ site.data[page.lang].translation.stories.name }}</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
+            </ol>
+        </nav>
+
+        <div class="row row-cols-1 row-cols-md-2 g-0 pb-2">
+            <div class="col order-md-2 position-relative bg-position-center bg-size-cover bg-repeat-0 zindex-2" style="background-image: url({{ page.image }}); border-radius: .5rem .5rem .5rem 0;">
+                <div style="height: 250px;"></div>
+            </div>
+
+            <div class="col order-md-1">
+                <nav class="d-none d-md-block py-3 mb-2 mb-lg-3" aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item">
+                            <a href="{{ homepage.url }}"><i class="bx bx-home-alt fs-lg me-1"></i>{{ site.data[page.lang].translation.index.name }}</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="{% link _pages/stories.html %}">{{ site.data[page.lang].translation.stories.name }}</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
+                    </ol>
+                </nav>
+
+                <div class="bg-secondary rounded-3 p-4 p-lg-5 mt-n2 mt-md-0 me-md-n2">
+                    <div class="px-sm-3 px-xl-4 pt-4 py-md-3 py-lg-4 py-xl-5">
+                        <h1 class="pb-2 pb-xxl-3"><i>{{ page.teaser }}</i></h1>
+                        <div class="pb-2 mb-4 mb-xxl-5">
+                            {{ site.data[page.lang].translation.stories.company }}: <strong>{{ page.company }}</strong>
+                            <br>
+                            {{ page.position }}: <strong>{{ page.person }}</strong>
+                            <br>
+                            {{ site.data[page.lang].translation.stories.industry }}: <strong>{{ page.industry }}</strong>
+                            <br>
+                            {{ site.data[page.lang].translation.stories.employees }}: <strong>{{ page.size }}</strong>
+                            <br>
+                            {{ site.data[page.lang].translation.stories.since }}: <strong>{{ page.since }}</strong>
+                            <br>
+                            Homepage: <strong><a href="{{ page.url }}" target="_blank">{{ page.homepage }}</a></strong>
+                            <br>
+                            {{ site.data[page.lang].translation.stories.location }}: <strong>{{ page.location }}</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% assign splitted = content|split: "<!-- PARTS -->" %}
+
+    <section class="container pt-5 mb-1 mb-md-4 mb-lg-5">
+        <div class="row pb-xl-3">
+            <div class="col-md-9 pe-lg-5">
+                <h2 class="h1 pb-4 mb-1 mb-lg-3">{{ page.subtitle }}</h2>
+                {{ splitted[0] }}
+            </div>
+            <div class="col-md-3 pb-2 pb-md-0 mb-4 mb-md-0">
+                <div class="card card-body border-0 position-relative">
+                    <span class="position-absolute top-0 start-0 w-100 h-100 bg-gradient-primary opacity-10 rounded-3"></span>
+                    <div class="position-relative zindex-2">
+                        <h3 class="h5">{{ site.data[page.lang].translation.stories.wins }}</h3>
+                        <ul class="ps-4 mb-0">
+                            {% for win in page.wins %}
+                            <li class="pb-3 mb-1">{{ win }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include stories-interviewee.html %}
+    <section class="container pt-5 mb-1 mb-md-4 mb-lg-5">
+        <div class="row pb-xl-3">
+            <div class="col">
+                {{ splitted[1] }}
+            </div>
+        </div>
+    </section>
+
+    <section class="container py-5 my-1 my-md-4 my-lg-5">
+        <div class="row">
+            <div class="col-lg-12 mb-4 mb-lg-0">
+                <div class="pe-lg-4 me-lg-3 pe-xl-0 me-xl-0">
+                    <div class="mb-0">
+                        {% include cta-cloud.html %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+{% include footer.html %}

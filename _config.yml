@@ -168,6 +168,8 @@ collections:
         output: true
     changelogs:
         output: true
+    stories:
+        output: true
 
 defaults:
     -
@@ -258,13 +260,6 @@ defaults:
             lang: en
     -
         scope:
-            path: "_customers/en/"
-        values:
-            layout: customer
-            permalink: "/en/customers/:title"
-            lang: en
-    -
-        scope:
             path: "_changelogs/"
         values:
             layout: changelogs
@@ -273,6 +268,13 @@ defaults:
             author: kevinpapst
             image: /images/blog/cloud-update.webp
             tags: [Changelog]
+    -
+        scope:
+            path: "_stories/en/"
+        values:
+            layout: story
+            permalink: "/en/stories/:title"
+            lang: en
 
 markdown: kramdown
 kramdown:
