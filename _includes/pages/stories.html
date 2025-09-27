@@ -37,7 +37,11 @@
 
     <section class="container mt-2 mb-5">
         <div class="row row-cols-1 row-cols-xs-1 row-cols-lg-2 justify-content-center g-4 pb-xl-3">
-            {% assign entries = site.stories %}
+            {% assign englishOrGerman = 'en' %}
+            {% if page.lang == 'de' %}
+                {% assign englishOrGerman = 'de' %}
+            {% endif %}
+            {% assign entries = site.stories | where: "lang", englishOrGerman %}
             {% for entry in entries %}
             <div class="col text-center px-3">
                 <div class="card d-table border-0 p-3 mx-auto mb-4">
