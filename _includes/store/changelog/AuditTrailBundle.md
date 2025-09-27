@@ -1,3 +1,15 @@
+**Version 2.15.1**
+
+Compatibility: requires minimum Kimai 2.34.0
+
+- Fix deprecations for PHP 8.4
+
+**Version 2.15.0**
+
+Compatibility: requires minimum Kimai 2.34.0
+
+- Support `null` for all Twig filters for potential deleted items
+
 **Version 2.14.1**
 
 Compatibility: requires minimum Kimai 2.34.0

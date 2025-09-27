@@ -1,3 +1,9 @@
+**Version 2.23.0**
+
+Compatibility: requires minimum Kimai 2.40.0
+
+- Refactor PDF renderer for compatibility with next major release
+
 **Version 2.22.0**
 
 Compatibility: requires minimum Kimai 2.34.0
