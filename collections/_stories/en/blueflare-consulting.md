@@ -81,14 +81,14 @@ This detailed approach extends beyond external clients. blueflare tracks everyth
 The three-tier structure of Kimai (Client → Project → Activity) enables precise project scoping: 
 "When we scope a project, we can then have our project, and on a per-activity basis, we can say, 'we're going to spend X amount of time on workshops, X amount of time on reporting.'"
 
-
 **The real numbers: quantified results**
 
 Starting with Kimai from day one makes traditional before/after comparisons impossible, but Dietmar's colleague using Excel provides a stark contrast. 
 The manual approach consumes two hours weekly just organizing time entries – time that blueflare reclaims for actual client work.
 
-"Saving that time allowed or opened up the time to do other, if I can say, more important things—building the business, working on client work," Dietmar emphasizes.
+> Saving that time allowed to do more important things – building the business
 
+"Saving that time allowed or opened up the time to do other, if I can say, more important things—building the business, working on client work," Dietmar emphasizes.
 
 **The evolution: why cloud migration made sense**
 
@@ -96,20 +96,19 @@ Dietmar executed a strategic shift to [Kimai Cloud]({{ page.lang | url_cloud_reg
 "At the beginning, there was more time to do updates and backups. 
 Being an engineer and being a hacker, we like to do things ourselves," he admits. "But I've gotten to a point where time is an issue. I don't want to have to spend time doing manual backups and updates."
 
-This isn't about technical inability – it's about strategic time allocation. Every hour spent on server maintenance is an hour not spent protecting clients or growing the business.
-
-> Saving that time allowed to do more important things – building the business
+This isn't about technical inability – it's about strategic time allocation. 
+Every hour spent on server maintenance is an hour not spent protecting clients or growing the business.
 
 **The true effects: recommendations and results**
 
-Dietmar's enthusiasm for Kimai extends beyond his own company. He's already recommended it to his Excel-struggling colleague and expressed amazement at consultancies operating without time tracking: "There are a couple of organizations that I've encountered that also do consultancy-type work and they don't do time tracking, and I have no idea how they manage their organizations."
+Dietmar's enthusiasm for Kimai extends beyond his own company. He's already recommended it to his Excel-struggling colleague and expressed amazement at consultancies operating without time tracking: 
+"There are a couple of organizations that I've encountered that also do consultancy-type work and they don't do time tracking, and I have no idea how they manage their organizations."
 
 The granularity and expandability particularly impressed him: "The option to have additional plugins and to have that expandability is great and we are planning on making use of that in the future as well."
 
+**Summary**
 
 Blueflare’s story illuminates a crucial insight for agency founders and freelancers: time tracking isn't just about billing accuracy – it's about business intelligence.
 
-When you can demonstrate to clients exactly how their investment was used, when you can optimize internal processes based on real data, and when you can eliminate administrative overhead that steals focus from core work, time tracking transforms from necessary evil to competitive advantage.
-
-
-
+When you can demonstrate to clients exactly how their investment was used, when you can optimize internal processes based on real data, 
+and when you can eliminate administrative overhead that steals focus from core work, time tracking transforms from necessary evil to competitive advantage.
