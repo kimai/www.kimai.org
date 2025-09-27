@@ -1,8 +1,13 @@
 ---
 layout: base
 ---
-{% assign homepage = site.pages | where: 'lang', page.lang | find: 'slug', 'index' %}
-{% assign features = site.pages | where: 'lang', page.lang | find: 'slug', 'features' %}
+{% assign englishOrGerman = 'en' %}
+{% if page.lang == 'de' %}
+    {% assign englishOrGerman = 'de' %}
+{% endif %}
+{% assign homepage = site.pages | where: 'lang', englishOrGerman | find: 'slug', 'index' %}
+{% assign features = site.pages | where: 'lang', englishOrGerman | find: 'slug', 'features' %}
+{% assign stories = site.pages | where: 'lang', englishOrGerman | find: 'slug', 'stories' %}
 
 <main class="page-wrapper">
     {% include header-navigation.html %}
@@ -15,7 +20,7 @@ layout: base
                     <a href="{{ homepage.url }}"><i class="bx bx-home-alt fs-lg me-1"></i>{{ site.data[page.lang].translation.index.name }}</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="{% link _pages/stories.html %}">{{ site.data[page.lang].translation.stories.name }}</a>
+                    <a href="{{ stories.url }}">{{ site.data[page.lang].translation.stories.name }}</a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
             </ol>
@@ -33,7 +38,7 @@ layout: base
                             <a href="{{ homepage.url }}"><i class="bx bx-home-alt fs-lg me-1"></i>{{ site.data[page.lang].translation.index.name }}</a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a href="{% link _pages/stories.html %}">{{ site.data[page.lang].translation.stories.name }}</a>
+                            <a href="{{ stories.url }}">{{ site.data[page.lang].translation.stories.name }}</a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
                     </ol>
