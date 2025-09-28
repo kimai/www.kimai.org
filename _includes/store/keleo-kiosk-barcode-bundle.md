@@ -51,6 +51,52 @@ And you need a bunch of NFC tokens:
 
 - NFC tags: [NFC Tag Shop](https://www.nfc-tag-shop.de/NFC-Anhaenger-ABS-40-x-32-mm-NTAG213-180-Byte-blau/68199) 
 
+## Android-Kiosk Configuration
+
+When using Android-Kiosk with an Android tablet, there are some important considerations for NFC functionality:
+
+### NFC Scanning Differences
+
+There are important differences between how NFC is handled in different environments:
+
+- **Chrome/Web browsers with JavaScript NFC**: Scans and returns the NFC chip ID
+- **Android-Kiosk app**: Scans and returns the chip's stored value (the actual data written to the chip)
+
+This difference is crucial when setting up your NFC tokens, as you need to ensure the stored value matches what your Kimai configuration expects.
+
+### Resolving NFC Scan Issues
+
+If you experience NFC scanning issues with Android-Kiosk, the following solutions can help:
+
+#### Screen Stay-On Configuration
+
+The "Screen on while device plugged in" setting can cause NFC scanning problems. This setting maps to the global `stay_on_while_plugged_in` setting (bitmask):
+
+- `1` = AC power
+- `2` = USB power  
+- `4` = Wireless charging
+- Combine values to enable multiple power sources (e.g., `7` = AC+USB+Wireless)
+
+**Check current setting:**
+```bash
+adb shell settings get global stay_on_while_plugged_in
+```
+- If it prints nothing or `0`, the feature is off
+- Otherwise you'll see a number like `1`, `2`, `3`, `4`, or `7`
+
+**Enable for all power sources (recommended):**
+```bash
+adb shell settings put global stay_on_while_plugged_in 7
+```
+
+**Verify the change:**
+```bash
+adb shell settings get global stay_on_while_plugged_in
+```
+
+#### Refresh Configuration
+
+To avoid issues where "scanning NFC works, but not inputting in input field", configure Android-Kiosk to refresh on idle every 30 minutes. This helps maintain proper NFC input functionality over extended periods.
 
 ## Licenses
 
