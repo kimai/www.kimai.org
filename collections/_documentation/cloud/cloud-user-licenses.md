@@ -26,7 +26,11 @@ Here's a breakdown of how the licensing works:
 
 ### Purchasing Additional Licenses
 
-- If you lack sufficient licenses to activate an existing account or create a new one, you can purchase additional licenses through the [My Cloud](https://www.kimai.cloud/my-cloud/) portal.
+If your subscription does not include enough licenses, you can purchase additional ones at any time through the [My Cloud](https://www.kimai.cloud/my-cloud/) portal.
+
+The additional licenses will be billed immediately, but only for the remaining time of your current payment period:
+- New licenses are always aligned with your existing subscription period.
+- For example, if you add a license to an annual subscription that is already 6 months old, you will only be charged for the remaining 6 months.
 
 ## Deprecated Metered Plans
 
