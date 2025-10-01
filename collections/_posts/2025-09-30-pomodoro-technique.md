@@ -1,7 +1,7 @@
 ---
 title: "The Pomodoro Technique: Simple Focus, Maximum Results"
 date: "2025-09-30 12:00:00 +0200"
-image: /images/blog/time-blocking-basics.webp
+image: /images/blog/pomodoro.webp
 author: valentina
 tags: [General]
 cta: cloud
