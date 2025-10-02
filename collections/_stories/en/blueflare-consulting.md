@@ -2,6 +2,7 @@
 title: "blueflare Consulting"
 teaser: We are effectively selling our time
 subtitle: An Interview with blueflare Consulting
+intro: How a cybersecurity consultancy builds strong client relationships through strategic billing transparency
 company: blueflare Consulting
 homepage: blueflare.co.za
 url: https://blueflare.co.za
@@ -10,7 +11,8 @@ logo: /images/stories/blueflare-logo.webp
 image: /images/stories/blueflare.webp
 person: Dietmar Marggraff
 photo: /images/stories/blueflare-marggraf.webp
-quote: "“Criminals don’t discriminate,” Dietmar explains with the matter-of-fact tone of someone who’s seen digital chaos firsthand. “Here in South Africa, we are targeted daily. Whoever needs our help, we are willing to assist, whoever needs help.“"
+quote: "Dietmar Marggraff is a consultant at blueflare with top skills in web development, cybersecurity and penetration testing"
+quote2: "“*Saving that time allowed or opened up the time to do other, if I can say, more important things—building the business, working on client work*,“ Dietmar emphasizes."
 position: Founder
 industry: Cyber Security
 size: 2+
@@ -34,9 +36,9 @@ Meet Dietmar Marggraff: a consultant at blueflare with top skills in web develop
 He is a full-time guardian against cyber threats. 
 From his base in South Africa – one of the world's most cyber-targeted countries – Dietmar runs [blueflare](https://blueflare.co.za/) Consulting, a specialized cybersecurity firm that protects the infrastructure we all depend on.
 
-<!-- PARTS -->
+“Criminals don’t discriminate,” Dietmar explains with the matter-of-fact tone of someone who’s seen digital chaos firsthand. “Here in South Africa, we are targeted daily. Whoever needs our help, we are willing to assist, whoever needs help.“
 
-## How a cybersecurity consultancy builds strong client relationships through strategic billing transparency
+<!-- PARTS -->
 
 **The consulting paradox: selling time while racing against tt**
 
@@ -67,14 +69,10 @@ True to his cybersecurity roots, he added a VPN layer so Kimai isn't directly ex
 
 What makes Dietmar's Kimai implementation compelling isn't just the time saved – it's how he transformed client relationships through radical transparency.
 
-> We're not just exporting the amount of time spent, but also what we did in that time
-
 "We're not just exporting the amount of time spent, but also what we did in that time," Dietmar explains. 
 His custom invoice setup shows clients exactly how their money was invested: 15 minutes spent doing this, 30 minutes spent doing that, a workshop for 2 hours and so on…
 
 This detailed approach extends beyond external clients. blueflare tracks everything as a project – even internal activities like sales, marketing, and project management. 
-
-> Everything we do is a project
 
 "Everything we do is a project, even this interview," Dietmar notes with a smile.
 
@@ -86,9 +84,7 @@ The three-tier structure of Kimai (Client → Project → Activity) enables prec
 Starting with Kimai from day one makes traditional before/after comparisons impossible, but Dietmar's colleague using Excel provides a stark contrast. 
 The manual approach consumes two hours weekly just organizing time entries – time that blueflare reclaims for actual client work.
 
-> Saving that time allowed to do more important things – building the business
-
-"Saving that time allowed or opened up the time to do other, if I can say, more important things—building the business, working on client work," Dietmar emphasizes.
+<!-- PARTS -->
 
 **The evolution: why cloud migration made sense**
 

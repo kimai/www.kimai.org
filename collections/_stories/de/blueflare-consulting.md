@@ -2,6 +2,7 @@
 title: "blueflare Consulting"
 teaser: Wir verkaufen im Grunde genommen unsere Zeit
 subtitle: Ein Interview mit blueflare Consulting
+intro: Wie eine Cybersecurity-Beratung durch strategische Abrechnungs-Transparenz starke Kundenbeziehungen aufbaut
 company: blueflare Consulting
 homepage: blueflare.co.za
 url: https://blueflare.co.za
@@ -10,7 +11,8 @@ logo: /images/stories/blueflare-logo.webp
 image: /images/stories/blueflare.webp
 person: Dietmar Marggraff
 photo: /images/stories/blueflare-marggraf.webp
-quote: "“Kriminelle machen keine Unterschiede“, erklärt Dietmar mit dem nüchternen Tonfall von jemandem, der digitales Chaos hautnah erlebt hat. “Hier in Südafrika sind wir täglich Zielscheibe. Wer auch immer unsere Hilfe braucht – wir sind bereit zu unterstützen.“"
+quote: "Dietmar Marggraff ist Berater bei blueflare und verfügt über Top-Kenntnisse in Webentwicklung, Cybersecurity und Penetration Testing."
+quote2: "“*Die eingesparte Zeit erlaubte es uns, wenn ich so sagen darf, wichtigere Dinge zu tun – das Geschäft aufzubauen, an Kundenprojekten zu arbeiten*“, betont Dietmar."
 position: Gründer
 industry: Cyber Security
 size: 2+
@@ -34,9 +36,9 @@ Sie bieten operative und informative Sicherheitsdienstleistungen für Unternehme
 Lernen Sie Dietmar Marggraff kennen: ein Vollzeit-Wächter gegen Cyber-Bedrohungen. 
 Von seiner Basis in Südafrika – einem der weltweit am stärksten von Cyberangriffen betroffenen Länder – führt Dietmar [blueflare Consulting](https://blueflare.co.za/), eine spezialisierte Cybersecurity-Firma, die die Infrastruktur schützt, von der wir alle abhängen.
 
-<!-- PARTS -->
+“Kriminelle machen keine Unterschiede“, erklärt Dietmar mit dem nüchternen Tonfall von jemandem, der digitales Chaos hautnah erlebt hat. “Hier in Südafrika sind wir täglich Zielscheibe. Wer auch immer unsere Hilfe braucht – wir sind bereit zu unterstützen.“
 
-## Wie eine Cybersecurity-Beratung durch strategische Abrechnungs-Transparenz starke Kundenbeziehungen aufbaut
+<!-- PARTS -->
 
 **Das Beratungs-Paradox: Zeit verkaufen, während die Uhr tickt**
 
@@ -67,14 +69,10 @@ Seinen Cybersecurity-Wurzeln treu, baute er zusätzlich eine VPN-Ebene ein, soda
 
 Das wirklich Überzeugende an Dietmars Kimai-Einsatz ist nicht nur die eingesparte Zeit – sondern wie er durch radikale Transparenz die Kundenbeziehungen transformierte.
 
-> Wir exportieren nicht nur die aufgewendete Zeit, sondern auch, was wir getan haben
-
 "Wir exportieren nicht nur die aufgewendete Zeit, sondern auch, was wir getan haben," erklärt Dietmar. 
 Sein individuelles Rechnungsformat zeigt den Kunden genau, wofür ihr Geld eingesetzt wurde: 15 Minuten hier, 30 Minuten dort, ein Workshop über 2 Stunden und so weiter.
 
 Dieser detailreiche Ansatz gilt nicht nur für externe Kunden. blueflare erfasst alles als Projekt – selbst interne Aktivitäten wie Vertrieb, Marketing oder Projektmanagement. 
-
-> Alles, was wir machen, ist ein Projekt
 
 "Alles, was wir machen, ist ein Projekt, sogar dieses Interview", sagt Dietmar lächelnd.
 
@@ -86,9 +84,7 @@ Die dreistufige Struktur von Kimai (Kunde → Projekt → Aktivität) ermöglich
 Da Kimai seit Tag eins eingesetzt wird, sind klassische Vorher/Nachher-Vergleiche nicht möglich. 
 Doch der manuelle Excel-Ansatz eines Kollegen liefert einen deutlichen Kontrast: zwei Stunden wöchentlich gingen nur fürs Sortieren von Zeiteinträgen verloren – Zeit, die blueflare hingegen für Kundenarbeit zurückgewinnt.
 
-> Die eingesparte Zeit erlaubte es uns, wichtigere Dinge zu tun – das Geschäft aufzubauen
-
-"Die eingesparte Zeit erlaubte es uns, wenn ich so sagen darf, wichtigere Dinge zu tun – das Geschäft aufzubauen, an Kundenprojekten zu arbeiten", betont Dietmar.
+<!-- PARTS -->
 
 **Die Weiterentwicklung: Warum Cloud-Migration Sinn macht**
 

@@ -91,11 +91,43 @@ layout: base
             </div>
         </div>
     </section>
+
     {% include stories-interviewee.html %}
+
     <section class="container pt-5 mb-1 mb-md-4 mb-lg-5">
         <div class="row pb-xl-3">
             <div class="col">
                 {{ splitted[1] }}
+            </div>
+        </div>
+    </section>
+
+    <section class="container pt-5 mb-1 mb-md-4 mb-lg-5">
+        <div class="row w-lg-50 w-md-75 w-100 m-auto pb-xl-3">
+            <div class="col">
+                <div class="card position-relative border-0 shadow-sm pt-4">
+                    <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
+                      <i class="bx bxs-quote-left"></i>
+                    </span>
+                    <div class="card-body pb-3 mb-0">
+                        <p class="mb-0">{{ page.quote2|markdownify }}</p>
+                        <div class="d-flex align-items-center pt-4">
+                            <img src="{{ page.photo }}" width="58" class="rounded-circle" alt="{{ page.person }}">
+                            <div class="ps-3">
+                                <h6 class="fs-sm fw-semibold mb-0">{{ page.person }}</h6>
+                                <span class="fs-xs text-muted">{{ page.position }} &ndash; {{ page.company }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container pt-5 mb-1 mb-md-4 mb-lg-5">
+        <div class="row pb-xl-3">
+            <div class="col">
+                {{ splitted[2] }}
             </div>
         </div>
     </section>

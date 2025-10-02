@@ -2,6 +2,7 @@
 title: "Waldorfschule Heilbronn"
 teaser: Keine Excel-Tabellen, sondern ein funktionierendes System
 subtitle: Ein Interview mit einer Freien Schule aus Deutschland
+intro: Wie eine Freie Schule aus Deutschland ihre Mitarbeiterinnen und Mitarbeiter auf ein einfaches und schnelles Zeiterfassungssystem umgestellt hat
 company: Verein für Waldorfpädagogik Unterland e.V.
 homepage: www.waldorfschule-hn.de
 url: http://www.waldorfschule-hn.de
@@ -10,6 +11,7 @@ image: /images/stories/waldorfcampus-unterricht.webp
 person: Jörg Hartmann
 photo: /images/stories/waldorfcampus-hartmann.webp
 quote: "Jörg Hartmann fing seine Karriere als Lehrer an und ist aktuell Geschäftsführer des Vereins für Waldorfpädagogik."
+quote2: "„*Je länger wir Kimai nutzen, desto zufriedener ist das Kollegium*“, zieht Hartmann eine positive Bilanz. „*Kimai läuft einfach stabil und ohne Probleme*.“"
 position: Geschäftsführer & Schulleiter
 industry: Bildung
 size: 100+
@@ -29,7 +31,7 @@ wins:
 * 150 Mitarbeiter – fast 40 Lehrer, über 40 Erzieher sowie Reinigungspersonal, Haustechnik, Auszubildende und mehr
 * 380–400 Schüler in der Schule, 130–140 Kinder in den Kindertagesstätten
 
-**Beschreibung der Organisation im Kasten mit Foto:**
+**Beschreibung der Organisation**
 
 Die Waldorfschule Heilbronn ist eine freie, gemeinnützige Bildungseinrichtung, die Schule und Kindertagesstätte unter einem Dach vereint.
 Als freier Bildungsträger steht sie allen Kindern offen – unabhängig von Nationalität, Religion oder Herkunft – und bereitet sie auf staatlich anerkannte Abschlüsse vor. 
@@ -43,8 +45,6 @@ Als Geschäftsführer des Trägervereins der Waldorfschule trägt Hartmann die V
 „*Wir haben hier Kinder von 0 bis 19 – sie kommen in die Krippe, werden hier betreut, besuchen den Kindergarten, gehen dann mit sechs oder sieben Jahren in die Schule und machen idealerweise hier ihr Abitur*."
 
 <!-- PARTS -->
-
-### Wie eine Freie Schule aus Deutschland ihre Mitarbeiterinnen und Mitarbeiter auf ein einfaches und schnelles Zeiterfassungssystem umgestellt hat und welche (unerwarteten) Erfolge daraus kamen
 
 **Das Excel-Chaos, das nicht funktionierte**
 
@@ -89,7 +89,7 @@ Mittlerweile hängen etwa zehn solcher Geräte auf dem gesamten Campus.
 Der Kioskmodus erwies sich als entscheidender Erfolgsfaktor: 
 „*Das ist für die Mitarbeitenden einfach zu bedienen und trotzdem haben sie genug Autonomie, um eigene Arbeitszeiten und sogar Homeoffice-Einträge vorzunehmen*."
 
-> Durch die Souveränität und Zuverlässigkeit von Kimai wächst das Vertrauen vom Kollegium in das System
+Durch die Souveränität und Zuverlässigkeit von Kimai wächst das Vertrauen vom Kollegium in das System.
 
 **Die wahren Gewinner**
 
@@ -103,11 +103,9 @@ Der Unterschied ist enorm:
 Auch für ihn als Geschäftsführer hat sich der Arbeitsalltag stark vereinfacht: 
 „*Früher gab es Papierlisten für Stundenkräfte, die ausgegeben, per Hand ausgefüllt und zurückgegeben wurden. Heute sehe ich die Liste im System, die geleisteten Stunden sind sofort einsehbar – und die vorbereitende Lohnbuchhaltung ist in wenigen Minuten erledigt*."
 
+<!-- PARTS -->
+
 **Der Ausblick**
-
-„*Je länger wir Kimai nutzen, desto zufriedener ist das Kollegium*", zieht Hartmann eine positive Bilanz. *„Kimai läuft einfach stabil und ohne Probleme*."
-
-> Kimai läuft einfach stabil und ohne Probleme
 
 Das System ist mittlerweile so fest in den Arbeitsalltag integriert, dass man sich schwer vorstellen kann, wie man ohne es arbeiten sollte. 
 Der anfängliche Widerstand hat sich in Wertschätzung verwandelt – besonders da die Mitarbeitenden die Transparenz und Kontrolle des vertrauensvollen Systems sehr schätzen.
@@ -120,4 +118,4 @@ Mit der vertrauensbasierten Einführung einer Open-Source-Lösung hat der Waldor
 
 Für Führungskräfte, die ihre Teams im Excel-Chaos versinken sehen, bietet Jörg Hartmanns Weg eine hoffnungsvolle Botschaft: 
 
-> Mit dem richtigen Ansatz können auch skeptische Gemeinschaften eine befreiende Digitalisierung willkommen heißen.
+„*Mit dem richtigen Ansatz können auch skeptische Gemeinschaften eine befreiende Digitalisierung willkommen heißen*."

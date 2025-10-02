@@ -2,6 +2,7 @@
 title: "Waldorfschule Heilbronn"
 teaser: Not some Excel spreadsheets, but a system that actually works
 subtitle: An Interview with a Free School from Germany
+intro: How a Free School in Germany switched its staff to a simple and fast time-tracking system
 company: Association for Waldorf Education Unterland e.V.
 homepage: www.waldorfschule-hn.de
 url: http://www.waldorfschule-hn.de
@@ -10,6 +11,7 @@ image: /images/stories/waldorfcampus-unterricht.webp
 person: Jörg Hartmann
 photo: /images/stories/waldorfcampus-hartmann.webp
 quote: "Jörg Hartmann began his career as a teacher and is currently the managing director of the Association for Waldorf Education."
+quote2: "“*The longer we use Kimai, the more satisfied the staff are*,” Hartmann summarizes. “*Kimai simply runs smoothly and without problems*.”"
 position: Principal
 industry: Education
 size: 100+
@@ -43,8 +45,6 @@ As managing director of the Waldorf School association, Jörg is responsible for
 *"We have children here from 0 to 19 – they start in the nursery, are cared for here, go to kindergarten, then enter school at six or seven, and ideally graduate here with their Abitur."*
 
 <!-- PARTS -->
-
-### How a Free School in Germany switched its staff to a simple and fast time-tracking system – and which (unexpected) successes came from it
 
 **The Excel chaos that didn’t work**
 
@@ -89,7 +89,7 @@ Today, around ten such devices are distributed across the campus.
 The kiosk mode turned out to be a key factor: 
 “*It’s simple for staff to use, but at the same time gives them enough autonomy to enter their own working hours, even for home office.*”
 
-> Through Kimai’s reliability and stability, the staff’s trust in the system continues to grow.
+“*Through Kimai’s reliability and stability, the staff’s trust in the system continues to grow.*”
 
 **The true winners**
 
@@ -103,11 +103,9 @@ The difference is huge:
 For him as managing director, daily work has also become much simpler: 
 “*Previously we had lists of staff on paper – handed out, filled out by hand, and returned. Today I see the list in the system, the recorded hours are immediately visible – and the preliminary payroll is done in just a few minutes.*”
 
+<!-- PARTS -->
+
 **Looking ahead**
-
-“*The longer we use Kimai, the more satisfied the staff are,” Hartmann summarizes. “Kimai simply runs smoothly and without problems*.”
-
-> Kimai simply runs smoothly and without problems
 
 The system is now so firmly anchored in daily practice that it is hard to imagine working without it. 
 Initial resistance has turned into appreciation – especially because employees value the transparency and control of a trust-based system.
@@ -120,4 +118,4 @@ With the trust-based introduction of an open-source system, the school has prove
 
 For managers who see their teams drowning in Excel chaos, Hartmann’s story carries an encouraging message: 
 
-> With the right approach, even skeptical communities can embrace the liberation of digitalization
+“*With the right approach, even skeptical communities can embrace the liberation of digitalization*."
