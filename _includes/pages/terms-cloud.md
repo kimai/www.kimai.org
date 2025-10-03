@@ -1,6 +1,8 @@
 {% if page.lang == 'de' %}
 
-(1) Anbieter der unter der Internetadresse kimai.cloud (im folgenden "Webseite") angebotenen Leistungen (im folgenden "Dienst", "Kimai") ist Kevin Papst mit Sitz in Österreich (im folgenden "Anbieter"). Die vollständige Anschrift ist dem Impressum zu entnehmen.
+## § 1. Definition
+
+(1) Anbieter der unter der Internetadresse www.kimai.org und www.kimai.cloud (im folgenden "Webseite") angebotenen Leistungen (im folgenden "Dienst", "Kimai") ist Kevin Papst mit Sitz in Österreich (im folgenden "Anbieter"). Die vollständige Anschrift ist dem Impressum zu entnehmen.
 
 (2) Der Anbieter bietet seinen Dienst ausschließlich unternehmerischen Kunden an. Der Anbieter schließt keine Verträge mit Verbrauchern.
 Verbraucher ist jede natürliche Person, die ein Rechtsgeschäft zu Zwecken abschließt, die überwiegend weder ihrer gewerblichen noch ihrer selbständigen beruflichen Tätigkeit zugerechnet werden kann.
@@ -15,7 +17,7 @@ Es gelten ausschließlich die AGB des Anbieters; andere Bedingungen werden nicht
 
 ## § 2. Leistungsumfang
 
-Der Anbieter bietet Kunden auf der Webseite kimai.cloud ein Zeiterfassungssystem und damit verbundene Services (Support, Updates, Wartung) an. Der Leistungsumfang der Software ist auf der Seite www.kimai.cloud dargestellt.
+Der Anbieter bietet Kunden auf der Webseite ein Zeiterfassungssystem und damit verbundene Services (Support, Updates, Wartung) an. Der Leistungsumfang der Software ist auf der Webseite dargestellt.
 
 (1) Gegenstand der angebotenen Leistungen sind die Funktionalitäten der Internetplattform im Bereich der Zeiterfassung in ihrer jeweils installierten Version; diese können, je nach Softwareversion und abonnierten Leistungspaketen z.B. Zeit- und Ausgabenerfassung umfassen (gemeinsam "vertragsgegenständliche Leistungen").
 
@@ -23,7 +25,7 @@ Der Anbieter bietet Kunden auf der Webseite kimai.cloud ein Zeiterfassungssystem
 Der Anbieter behält sich daher ausdrücklich das Recht vor, die Internetplattform während der Vertragslaufzeit weiter zu entwickeln. Im Rahmen der Weiterentwicklungen kann der Anbieter z.B., das Frontend in seinem Erscheinungsbild verändern sowie Funktionalitäten modifizieren, hinzufügen und entfernen sowie Designs, Eingabemasken und weitere Bestandteile von Front- und Backend anpassen (zusammenfassend "Plattformupdates").
 Ein kundenseitiger Anspruch auf Plattformupdates besteht ebenso nicht, wie ein Anspruch auf Weiternutzung einer bestimmten Version der Internetplattform. Der Kunde kann aus durchgeführten Plattformupdates keine Ansprüche gegen den Anbieter ableiten, soweit durch Plattformupdates von ihm gebuchte Funktionalitäten nicht entfallen oder wesentlich eingeschränkt werden und er dadurch im Rahmen der Plattformnutzung keine unzumutbaren Nachteile erleidet.
 
-(3) Stellt der Anbieter zusätzlich zu dem Serviceangebot unentgeltlich Software oder Services unentgeltlich bereit, erfolgt dies unter dem Vorbehalt jederzeitigen Widerrufs und stellt keine Verbindlichkeit für die Zukunft dar.
+(3) Stellt der Anbieter zusätzlich zu dem Serviceangebot unentgeltlich Software oder Services bereit, erfolgt dies unter dem Vorbehalt jederzeitigen Widerrufs und stellt keine Verbindlichkeit für die Zukunft dar.
 
 (4) Der Anbieter stellt seine Leistungen ausschließlich seinem jeweiligen Kunden zur Verfügung; der Kunde wird diese Leistungen seinerseits keinem Dritten überlassen, auch nicht in Teilen oder auf Zeit, es sei denn, dass dies mit dem Anbieter vereinbart wurde.
 Mitarbeiter des Kunden gelten nicht als Dritte; als "Mitarbeiter" im Sinne dieser Bedingungen gelten auch sonstige Vertragspartner des Kunden, etwa Freiberufler, deren Zeiten der Kunde erfasst.
@@ -42,7 +44,7 @@ Zur Nutzung sind daher ein internetfähiges Endgerät und eine Internetverbindun
 ## § 3. Registrierung, Testphase, Vertragsschluss
 
 (1) Voraussetzung für den Abschluss eines Vertrages über die Nutzung der Internetplattform ist die Registrierung durch den Kunden.
-Mit der Registrierung sichert der Kunde zu, Unternehmer im Sinne des § 14 BGB zu sein und in dieser Eigenschaft die Registrierung auf der Internetplattform durchzuführen. Ein Verstoß gegen vorgenannte Zusicherung berechtigt den Anbieter unbeschadet seiner weiteren Rechte, den Nutzungsvertrag mit dem Kunden fristlos aus wichtigem Grund zu kündigen.
+Mit der Registrierung sichert der Kunde zu, Unternehmer im Sinne des UGB (Unternehmensgesetzbuch Österreich) zu sein und in dieser Eigenschaft die Registrierung auf der Internetplattform durchzuführen. Ein Verstoß gegen vorgenannte Zusicherung berechtigt den Anbieter unbeschadet seiner weiteren Rechte, den Nutzungsvertrag mit dem Kunden fristlos aus wichtigem Grund zu kündigen.
 Der Kunde darf die Registrierung nur durch eine vertretungsberechtigte Person, bzw. ein vertretungsberechtigtes Organ vornehmen.
 
 (2) Zur Einrichtung des Kundenkontos (im folgenden "Registrierung") erhebt der Anbieter den Namen, die E-Mail-Adresse und ein Passwort.
@@ -58,7 +60,7 @@ Die Löschung der Daten gilt zugleich als fristlose Kündigung aus wichtigem Gru
 
 Sofern die Registrierung über einen der Dienstanbieter "Google" oder "GitHub" durchgeführt wurde, wird kein "Double Opt-In" vom Anbieter durchgeführt.
 
-(3) Der Anbieter bestätigt die Einrichtung des Kundenkontos auf dem Bildschirm sowie per E-Mail, welche die Vertragskonditionen einschließlich dieser AGB enthält.
+(3) Der Anbieter bestätigt die Einrichtung des Kundenkontos auf dem Bildschirm sowie per E-Mail.
 Mit Einrichtung des Kundenkontos kommt ein Nutzungsvertrag über den Dienst des Anbieters zustande.
 
 (4) Der Anbieter führt ein Kundenkonto kostenfrei mit einer Laufzeit von 30 Tagen ab dessen Einrichtung (im folgenden "Testphase").
@@ -81,7 +83,7 @@ Der Kunde sichert zu, dass er volljährig ist und dass er – sofern er den Tari
 (3) Der Wechsel zu einem größeren Tarif (Upgrade) ist jederzeit mit Wirkung für die Zukunft möglich.
 Mit dem Datum des Upgrades wird der laufende Abrechnungszeitraum anteilig abgerechnet und es beginnt eine neue Laufzeit mit dem größeren Tarif.
 Bereits getätigte Zahlungen für den kleineren Tarif werden anteilig auf den größeren Tarif angerechnet.
-Ergänzend zu den Leistungsmerkmalen des gewählten Tarifs, welche unter www.kimai.cloud/de/funktionen aufgeführt sind, gelten die Bestimmungen dieser AGB.
+Ergänzend zu den Leistungsmerkmalen des gewählten Tarifs, welche auf der Webseite aufgeführt sind, gelten die Bestimmungen dieser AGB.
 
 (4) Der Wechsel zu einem kleineren Tarif (Downgrade) ist zum Ablauf der gebuchten Laufzeit möglich.
 Nach einem Downgrade steht in der Regel nur noch eine geringere Anzahl von Funktionen zur Verfügung.
@@ -105,14 +107,14 @@ Ein wichtiger Grund liegt insbesondere dann vor, wenn der Kunde:
 
 - mit einer vereinbarten Zahlung in Verzug befindet und diese auch auf eine Mahnung mit angemessener Fristsetzung, die maximal 30 (dreißig) Tage beträgt, hin nicht unverzüglich begleicht oder
 - gegen eine Verpflichtung aus diesen AGB verstößt und den Verstoß auf Abmahnung durch den Anbieter hin nicht unverzüglich abstellt oder
-- sich nicht in seiner Funktion als Unternehmer im Sinne des § 14 BGB registriert hat
+- sich nicht in seiner Funktion als Unternehmer im Sinne des §1 UGB registriert hat
 
 (6) Der Anspruch des Kunden auf Erstattung von Nutzungsgebühren, welche er im Voraus bezahlt hat, ist ausgeschlossen, es sei denn, der Kunde kündigt aus einem wichtigen Grund, den der Anbieter zu vertreten hat.
 Der Anspruch des Kunden auf Erstattung von Nutzungsgebühren, welche er im Voraus bezahlt hat, ist in jedem Fall ausgeschlossen, wenn der Anbieter den Vertrag aus einem wichtigem Grund kündigt, den der Kunde zu vertreten hat.
 
 ## § 6. Preise, Zahlungsbedingungen, Abrechnung
 
-(1) Es gelten grundsätzlich die auf der Webseite www.kimai.cloud/de/preise angeführten Preise, sofern kein individuelles Angebot vorliegt.
+(1) Es gelten grundsätzlich die auf der Webseite angeführten Preise, sofern kein individuelles Angebot vorliegt.
 Alle Preisangaben verstehen sich netto zuzüglich der zum Zahlungszeitpunkt jeweils gültigen Umsatzsteuer, soweit nicht ausdrücklich anderweitig ausgewiesen.
 
 (2) Alle Entgelte werden mit Beginn der vereinbarten Vertragslaufzeit fällig. Verlängert sich das Vertragsverhältnis, so werden die Entgelte für den Verlängerungszeitraum mit dessen Beginn fällig.
@@ -130,11 +132,15 @@ Der Kunde ist dazu verpflichtet, die jeweilige Steuernummer anzugeben.
 
 (7) Der Anbieter kann seine Leistungen zurückbehalten und den Zugang zum Kundenkonto sperren, soweit der Kunde mit der Begleichung fälliger Entgelte in Verzug ist.
 
-(8) Bei dem Anbieter werden die Kosten monatlich gemäß der Anzahl der registrierten Nutzer und dem ausgewählten Tarif ermittelt.
+(8) Die Abrechnung erfolgt gemäß dem jeweils vereinbarten Tarifmodell:
 
-(9) Die Abrechnungsperiode beträgt immer den jeweiligen Vormonat.
-Die erstellte Rechnung enthält eine detaillierte Auflistung aller Leistungen, kann automatisch per Mail zugesendet werden und in der Accountverwaltung abgerufen werden.
-Es werden alle registrierten Benutzer der jeweiligen Kimai Instanz verrechnet, unabhängig davon ob diese Benutzer aktiv oder deaktiviert sind.
+(a) Bei Verträgen die vor 2024 (Tarife "Plus" und "Premium") abgeschlossen wurden, werden die Kosten monatlich gemäß der Anzahl der registrierten Nutzer und dem ausgewählten Tarif ermittelt. Die Abrechnungsperiode beträgt immer den jeweiligen Vormonat.
+Es werden alle registrierten Benutzer der jeweiligen Kimai Instanz verrechnet, unabhängig davon, ob diese Benutzer aktiv oder deaktiviert sind.  
+
+(b) Bei Verträgen die nach 2024 abgeschlossen wurden, gilt die Vorauszahlungspflicht. Die vereinbarte Anzahl an Lizenzen wird zu Beginn der jeweiligen Abrechnungsperiode im Voraus berechnet. Der Kunde kann während einer laufenden Abrechnungsperiode zusätzliche Lizenzen erwerben; diese werden anteilig bis zum Ende der laufenden Periode berechnet. Eine Reduzierung der Lizenzanzahl ist ausschließlich zum Ende einer Abrechnungsperiode möglich und wirkt sich auf die darauffolgende Abrechnungsperiode aus.
+Es wird für jeden aktivierten Benutzer eine Lizenz benötigt.
+
+(9) Die erstellte Rechnung enthält eine detaillierte Auflistung aller Leistungen, kann automatisch per Mail zugesendet werden und in der Accountverwaltung abgerufen werden. 
 
 (10) Die Bezahlung der Rechnung erfolgt gemäß der im jeweiligen Land und für den Kunden verfügbaren Zahlungsart.
 
@@ -174,6 +180,8 @@ Weitere Informationen zum Datenschutz sind der gesonderten Datenschutzerklärung
 (1) Der Kunde räumt dem Anbieter für die Zwecke der Vertragsdurchführung das Recht ein, die für den Kunden zu speichernden Daten vervielfältigen zu dürfen, soweit dies zur Erbringung der nach diesem Vertrag geschuldeten Leistungen erforderlich ist. Der Anbieter ist auch berechtigt, die Daten in einem Ausfallsystem bzw. separaten Ausfallrechenzentrum vorzuhalten. Zur Beseitigung von Störungen ist der Anbieter ferner berechtigt, Änderungen an der Struktur der Daten oder dem Datenformat vorzunehmen.
 
 (2) Der Anbieter ist berechtigt, die im Konto hinterlegte E-Mail Adresse des Kunden zu nutzen, um den Kunden über Neuerungen der Leistungen und Dienste, Änderungen von AGB und Status-Mitteilungen zu informieren.
+Der Anbieter ist außerdem berechtigt, dem Kunden eine begrenzte Anzahl von („Onboarding“) E-Mails mit Anleitungen und Erläuterungen zur Nutzung der Plattform zu senden, was hauptsächlich während der Testphase geschieht.
+Der Kunde kann dem Erhalt dieser Onboarding-E-Mails jederzeit widersprechen bzw. sich von diesen Mitteilungen abmelden.
 
 (3) Wenn ein Konto durch den Kunden oder durch den Anbieter gekündigt wird, werden die Daten des Kontos unwiderruflich gelöscht. Eine Wiederherstellung ist nicht möglich. Ausnahmen von der Löschung bestehen für Daten, die gesetzlichen Aufbewahrungsfristen unterliegen.
 
@@ -308,6 +316,14 @@ Die vorstehenden Bestimmungen gelten entsprechend für den Fall, dass sich Regel
 
 ### Änderungsverlauf
 
+**Version 1.4 (03. Oktober 2025)**
+- Ergänzung das www.kimai.org und www.kimai.cloud Teil des Serviceangebots sind
+- URLs entfernt und durch das Wort `Webseite` ersetzt
+- Ersetzung von `§14 BGB` (Deutschland) durch `§1 UGB` (Österreich)
+- Entfernung §3 (3) Bestätigungsemail enthält nicht mehr diese AGBs
+- Aufteilung § 6. (8) um (a) Verträge vor 2024 und (b) Verträge nach 2024
+- Ergänzung § 9. (2) um den Hinweis auf Onboarding E-Mails
+
 **Version 1.3 (24. März 2025)**
 - Klarstellung §3. (6): nach Ablauf der Testphase existiert kein kostenloser Tarif  
 
@@ -342,7 +358,9 @@ Initiale Version
 This is a translation for information purposes only. Only the original declaration, [which is available in German]({% link _pages/de/terms-cloud.md %}), is legally valid.
 {% endalert %}
 
-(1) Provider of the services (hereinafter "service", "Kimai") offered at the Internet address kimai.cloud (hereinafter "website") is Kevin Papst with registered office in Austria (hereinafter "Provider"). The complete address can be found in the imprint.
+## § 1. Definition
+
+(1) Provider of the services (hereinafter "service", "Kimai") offered at the Internet address www.kimai.org and www.kimai.cloud (hereinafter "website") is Kevin Papst with registered office in Austria (hereinafter "Provider"). The complete address can be found in the imprint.
 
 (2) The Provider offers its service exclusively to entrepreneurial customers. The Provider does not conclude any contracts with consumers.
 A consumer is any natural person who enters into a legal transaction for purposes that are predominantly neither commercial nor self-employed.
@@ -357,7 +375,7 @@ Only the terms and conditions of the provider apply; other conditions do not bec
 
 ## § 2. Scope of services
 
-The Provider offers a time recording system and related services (support, updates, maintenance) to Customers on the kimai.cloud website. The scope of services of the software is shown on the page www.kimai.cloud.
+The provider offers customers a time tracking system and related services (support, updates, maintenance) on the website. The scope of services provided by the software is described on the website.
 
 (1) The subject of the services offered are the functionalities of the Internet platform in the area of time recording in their respective installed version; depending on the software version and subscribed service packages, these may include, for example, time and expense recording (collectively "contractual services").
 
@@ -384,13 +402,13 @@ An Internet-capable end device and an Internet connection are therefore required
 ## § 3. Registration, test phase, conclusion of contract
 
 (1) The prerequisite for the conclusion of a contract on the use of the Internet platform is registration by the customer.
-By registering, the customer warrants that he is an entrepreneur within the meaning of Section 14 of the German Civil Code (BGB) and that he is registering on the Internet platform in this capacity. A violation of the aforementioned assurance entitles the provider, without prejudice to his other rights, to terminate the user agreement with the customer without notice for good cause.
+By registering, the customer warrants that he is an entrepreneur within the meaning of the UGB (Austrian Company Code) and that he is registering on the Internet platform in this capacity. A violation of the aforementioned assurance entitles the provider, without prejudice to his other rights, to terminate the user agreement with the customer without notice for good cause.
 The customer may only carry out the registration by a person authorized to represent the customer or by a body authorized to represent the customer.
 
 (2) To set up the customer account (hereinafter referred to as "registration"), the Provider collects the name, e-mail address and a password.
 With these data (e-mail address and password), the customer can log into his customer account after successful registration. Alternatively, a login can be performed via the service providers "Google" or "GitHub". In this case, personal data such as "user name", "full name" and "user picture" are transferred to the service by the respective service provider.
 
-By clicking on the registration button, the customer makes an offer to enter into the usage agreement in accordance with the provisions of these GTC.
+By clicking on the registration button, the customer makes an offer to enter into the usage agreement in accordance with the provisions of these TOS.
 A claim on the part of the customer to the conclusion of the user contract does not exist.
 
 In order to avoid misuse, the provider sends a confirmation link to the e-mail address provided during registration, unless the registration was made via one of the mentioned service providers.
@@ -400,14 +418,14 @@ The deletion of the data shall also be deemed termination without notice for cau
 
 If the registration was carried out via one of the service providers "Google" or "GitHub", no "double opt-in" will be carried out by the Provider.
 
-(3) The provider confirms the creation of the customer account on the screen as well as by e-mail, which contains the contract conditions including these GTC.
+(3) The provider confirms the creation of the customer account on the screen as well as by e-mail.
 With the creation of the customer account, a usage contract for the service of the provider is concluded.
 
 (4) The Provider shall maintain a customer account free of charge for a period of 30 days from its establishment (hereinafter referred to as the "test phase").
 
 (5) During the test phase, the customer can use all functions of the service free of charge. If the Customer is convinced of the Provider's service, he may switch to a chargeable tariff at any time.
 
-(6) After expiration of the test phase, access to the service will be blocked. Further use of the service is only possible after concluding a paid plan.
+(6) After expiration of the test phase, access to the service will be blocked. Further use of the service is only possible after concluding a paid tariff.
 The customer account including all data will be deleted after 4 weeks if no paid contract is concluded.
 
 (7) There is no consumer right of revocation for the contracts concluded with the Provider, as the Provider offers its service exclusively to entrepreneurs.
@@ -423,7 +441,7 @@ The Customer warrants that he/she is of legal age and that - if he/she wishes to
 (3) The change to a larger tariff (upgrade) is possible at any time with effect for the future.
 On the date of the upgrade, the current billing period shall be billed on a pro rata basis and a new term shall begin with the larger rate.
 Payments already made for the smaller tariff will be credited pro rata to the larger tariff.
-In addition to the features of the selected rate, which are listed at www.kimai.cloud/features, the provisions of these GTC shall apply.
+In addition to the features of the selected rate, which are listed on the website, the provisions of these TOS shall apply.
 
 (4) The change to a smaller tariff (downgrade) is possible at the end of the booked term.
 After a downgrade, only a smaller number of functions is generally available.
@@ -446,15 +464,15 @@ In the event of extraordinary termination of this user agreement for good cause,
 Good cause shall be deemed to exist in particular if the customer:
 
 - is in arrears with an agreed payment and does not settle this immediately even after a reminder with a reasonable deadline, which is a maximum of 30 (thirty) days, or
-- violates any obligation arising from these GTC and does not immediately remedy the violation after receiving a warning from the Provider, or
-- has not registered in his capacity as an entrepreneur in the sense of § 14 BGB.
+- violates any obligation arising from these TOS and does not immediately remedy the violation after receiving a warning from the Provider, or
+- has not registered in his capacity as an entrepreneur in the sense of §1 UGB.
 
 (6) The Customer's claim for reimbursement of usage fees paid in advance is excluded, unless the Customer cancels the contract for an important reason for which the Provider is responsible.
 The customer's claim for reimbursement of usage fees, which he has paid in advance, is excluded in any case, if the provider terminates the contract for an important reason, for which the customer is responsible.
 
 ## § 6. Prices, terms of payment, billing
 
-(1) In principle, the prices listed on the website www.kimai.cloud/pricing shall apply, unless an individual offer has been made.
+(1) In principle, the prices listed on the website shall apply, unless an individual offer has been made.
 All prices are net plus the value-added tax valid at the time of payment, unless expressly stated otherwise.
 
 (2) All fees are due at the beginning of the agreed contractual period. If the contractual relationship is extended, the fees for the extension period shall become due at the beginning of the extension period.
@@ -472,11 +490,15 @@ The customer is obliged to indicate the respective tax number.
 
 (7) The Provider may withhold its services and block access to the Customer's account insofar as the Customer is in default with the payment of due fees.
 
-(8) In the case of the Provider, the costs are determined monthly according to the number of registered users and the selected tariff.
+(8) Billing is based on the agreed tariff model:
 
-(9) The billing period is always the respective previous month.
-The generated invoice contains a detailed list of all services, can be sent automatically by mail and can be accessed in the account management.
+(a) For contracts concluded before 2024 (Plus and Premium tariffs), costs are determined monthly according to the number of registered users and the selected tariff. The billing period is always the respective previous month.
 All registered users of the respective Kimai instance will be charged, regardless of whether these users are active or deactivated.
+
+(b) For contracts concluded after 2024, advance payment is required. The agreed number of licences will be invoiced in advance at the beginning of the respective billing period. The customer may purchase additional licences during a current billing period; these will be charged pro rata until the end of the current period. A reduction in the number of licences is only possible at the end of a billing period and will take effect in the following billing period.
+One licence is required for each activated user.
+
+(9) The generated invoice contains a detailed list of all services, can be sent automatically by mail and can be accessed in the account management.
 
 (10) The payment of the invoice will be made according to the payment method available in the respective country and for the customer.
 
@@ -515,7 +537,9 @@ Further information on data protection can be found in the separate data protect
 
 (1) The Customer grants the Provider the right to duplicate the data to be stored for the Customer for the purpose of performing the contract, to the extent that this is necessary to provide the services owed under this contract. The Provider shall also be entitled to keep the data in a failover system or separate failover computer center. In order to eliminate malfunctions, the Provider shall also be entitled to make changes to the structure of the data or the data format.
 
-(2) The Provider is entitled to use the Customer's e-mail address stored in the account to inform the Customer about innovations to the services and benefits, changes to GTC and status notifications.
+(2) The Provider is entitled to use the Customer's e-mail address stored in the account to inform the Customer about innovations to the services and benefits, changes to TOS and status notifications.
+The Provider is also entitled to send the Customer a limited number of ("onboarding") emails containing guidance and explanations on the use of the platform, which will mainly happen during the trial period. 
+The Customer may object to receiving these onboarding emails or unsubscribe from such communications at any time.
 
 (3) If an account is terminated by the customer or by the provider, the account data will be irrevocably deleted. A recovery is not possible. Exceptions to the deletion exist for data that is subject to statutory retention periods.
 
@@ -530,7 +554,7 @@ Further information on data protection can be found in the separate data protect
 - temporary blocking of the service for the purpose of implementing technical improvements, eliminating errors and malfunctions, etc.
 - Restriction of the right of use due to default of payment by the customer
 
-In the event of permanent restriction of access, a claim for reduction or a right to extraordinary termination shall only exist if this restriction affects essential rights and obligations within the meaning of the GTC and this leads to a threat to the purpose of the contract.
+In the event of permanent restriction of access, a claim for reduction or a right to extraordinary termination shall only exist if this restriction affects essential rights and obligations within the meaning of the TOS and this leads to a threat to the purpose of the contract.
 
 (4) The Customer shall notify the Provider immediately of any service failures or other technical errors in order to enable immediate troubleshooting. In this respect, the customer shall have a duty to cooperate and mitigate damages.
 
@@ -568,7 +592,7 @@ In the event of permanent restriction of access, a claim for reduction or a righ
 
 (13) The Customer is entitled to create employee accesses to his Customer Account for third parties (hereinafter referred to as "Employees") in accordance with the service packages booked by him. The Customer shall remain the sole contractual partner of the Provider. A contractual relationship between the Employees and the Provider shall not be established.
 
-(14) The Customer is liable to the Provider for the conduct of the employees to whom he grants access to his Customer Account. Violations of customer obligations from these GTC by such employees are attributed to the customer. The customer is responsible to the provider for ensuring that these employees behave in accordance with the contract and do not violate these GTC, laws and/or the rights of third parties in connection with the use of the contractual services. Violations of these provisions by the employees will be attributed to the customer, the customer is in these cases the claimant of the provider.
+(14) The Customer is liable to the Provider for the conduct of the employees to whom he grants access to his Customer Account. Violations of customer obligations from these TOS by such employees are attributed to the customer. The customer is responsible to the provider for ensuring that these employees behave in accordance with the contract and do not violate these TOS, laws and/or the rights of third parties in connection with the use of the contractual services. Violations of these provisions by the employees will be attributed to the customer, the customer is in these cases the claimant of the provider.
 
 In case of violation of these Terms and Conditions by the Customer, the Provider shall withdraw the Customer's right to continue using the system without reimbursement of any costs.
 
@@ -622,13 +646,13 @@ The Software and all documentation shall remain the property of the Provider.
 
 Should the Provider make adjustments or enhancements to the Software for the Customer during the execution of this Agreement, all resulting copyrights and rights of use to the developments shall remain with the Provider.
 
-### § 15. Changes to the GTC
+### § 15. Changes to the TOS
 
-The Provider reserves the right to adapt or change the GTC. The customer will be informed about changes to the GTC in text form. For this purpose, the amended GTC will be sent to the e-mail address provided by the customer during registration.
+The Provider reserves the right to adapt or change the TOS. The customer will be informed about changes to the TOS in text form. For this purpose, the amended TOS will be sent to the e-mail address provided by the customer during registration.
 
-If the customer does not object to the amended GTC within two weeks after receipt of the notification, the amended GTC shall be deemed accepted.
+If the customer does not object to the amended TOS within two weeks after receipt of the notification, the amended TOS shall be deemed accepted.
 
-If the customer exercises his right of objection, the provider is entitled to terminate this contract properly in accordance with the provisions of § 5 of these GTC (e-mail is sufficient). The notice period is seven days.
+If the customer exercises his right of objection, the provider is entitled to terminate this contract properly in accordance with the provisions of § 5 of these TOS (e-mail is sufficient). The notice period is seven days.
 
 ### § 16. Final provisions
 
@@ -645,13 +669,22 @@ international private law and the UN Convention on Contracts for the Internation
 
 (6) The Customer warrants that its use of the system and all data entered or uploaded comply with all applicable laws and regulations and do not violate the rights of third parties.
 
-(7) Should individual provisions of these GTC or of contracts or agreements made between the parties be wholly or partially invalid or unenforceable or become invalid or unenforceable after the conclusion of the contract, the validity of the remaining provisions shall remain unaffected.
+(7) Should individual provisions of these TOS or of contracts or agreements made between the parties be wholly or partially invalid or unenforceable or become invalid or unenforceable after the conclusion of the contract, the validity of the remaining provisions shall remain unaffected.
 Instead, the parties shall work towards agreeing on a substitute provision which comes closest to the invalid or unenforceable provision in terms of its effects in a legally permissible and economic manner.
 The above provisions shall apply mutatis mutandis in the event that provisions prove to be incomplete.
 
 ### Change history
 
-**Version 1.3 (24. März 2025)**
+**Version 1.4 (03. October 2025)**
+- Addition of www.kimai.org and www.kimai.cloud as part of the service offering
+- URLs removed and replaced with the word ‘website’
+- Replacement of ‘§14 BGB’ (Germany) with ‘§1 UGB’ (Austria)
+- Removal of §3 (3) Confirmation email no longer contains these terms and conditions
+- Division of § 6. (8) into (a) contracts before 2024 and (b) contracts after 2024
+- Addition to § 9. (2) with reference to onboarding emails
+- Replaced abbreviation `GTC` (General Terms and Conditions) with `TOS` (Terms of Service)
+
+**Version 1.3 (24. March 2025)**
 - Clarification §3. (6): after expiration of test phase exists no free plan
 
 **Version 1.2 (26. Mar 2021)**
