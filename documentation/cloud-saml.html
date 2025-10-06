@@ -501,6 +501,8 @@ You find the configuration after login at: <strong><a href="https://www.kimai.cl
 
 <p>Start by setting up your Keycloak following the <a href="/documentation/saml-keycloak.html">Keycloak docs</a>.</p>
 
+<p>There is one difference though: the cloud does not activate <code class="language-plaintext highlighter-rouge">authnRequestsSigned</code>, which means you have to deactivate <code class="language-plaintext highlighter-rouge">Client signature required</code>.</p>
+
 <p>Then make sure to define the <code class="language-plaintext highlighter-rouge">User attribute</code> mapping like this (<strong>correct case is important, and you need to configure all attributes, even if you do not use them</strong>):</p>
 
 <ul>

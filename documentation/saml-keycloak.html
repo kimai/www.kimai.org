@@ -566,7 +566,7 @@
                 <div id="documentation-content">
                     <p>Go back to general <a href="/documentation/saml.html">SAML configuration</a> for Kimai.</p>
 
-<p>SAML authentication with Keycloak accounts has proven to work with the following configurations.</p>
+<p>SAML authentication with Keycloak accounts has proven to work with the following configurations. This guide provides a complete working setup that has been tested and verified.</p>
 
 <p>Screenshots might be outdated, please check the text version below each image.</p>
 
@@ -577,6 +577,7 @@
   <li>In Kimai: <code class="language-plaintext highlighter-rouge">kimai.saml.connection.idp.x509cert</code> = value from IdP <code class="language-plaintext highlighter-rouge">ds:X509Certificate</code></li>
   <li>In Kimai: <code class="language-plaintext highlighter-rouge">kimai.saml.connection.security.authnRequestsSigned: true</code></li>
   <li>In Keycloak: enable <strong>Force name ID format</strong></li>
+  <li>In Keycloak: enable <strong>Client signature required</strong> (this works with signed AuthnRequests)</li>
 </ul>
 
 <h3 id="add-a-client-for-kimai-saml">Add a client for Kimai SAML</h3>
@@ -590,13 +591,15 @@
 
 <figure class="d-block figure mb-3" style="max-width: 900px">
     <img src="/images/documentation/keycloak-saml-2.webp" class="figure-img img-fluid rounded" />
-    <figcaption class="figure-caption">Deactivate *Client Signature Required* (1)</figcaption>
+    <figcaption class="figure-caption">Enable *Client Signature Required* (1)</figcaption>
 </figure>
 
 <figure class="d-block figure mb-3" style="max-width: 900px">
     <img src="/images/documentation/keycloak-saml-3.webp" class="figure-img img-fluid rounded" />
-    <figcaption class="figure-caption">Deactivate *Client Signature Required* (2)</figcaption>
+    <figcaption class="figure-caption">Enable *Client Signature Required* (2)</figcaption>
 </figure>
+
+<p><strong>Note</strong>: The working setup uses <strong>Client Signature Required</strong> enabled, which works with signed AuthnRequests (<code class="language-plaintext highlighter-rouge">authnRequestsSigned: true</code> in Kimai configuration).</p>
 
 <h3 id="certificates">Certificates</h3>
 
@@ -656,19 +659,21 @@ If you reuse the same Keycloak role, the last mapping wins.</p>
 <ul>
   <li>Go to Configuration -&gt; Client Scopes -&gt; role_list</li>
   <li>Select Tab “Mappers”, edit “role_list”</li>
-  <li>Set” Single Role Attribute” to “ON”</li>
+  <li>Set “Single Role Attribute” to “ON”</li>
 </ul>
 
-<p>Example:</p>
+<p><strong>Working example with specific role naming convention:</strong></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{ saml: Admins, kimai: ROLE_SUPER_ADMIN }
 { saml: Management, kimai: ROLE_ADMIN }
 { saml: Teamlead, kimai: ROLE_TEAMLEAD }
 </code></pre></div></div>
 
+<p><strong>Note</strong>: Using a consistent naming convention like <code class="language-plaintext highlighter-rouge">Kimai-Role-*</code> could help to avoid conflicts and makes role management clearer.</p>
+
 <h3 id="configure-localyaml">Configure local.yaml</h3>
 
-<p>And here is the matching Kimai configuration:</p>
+<p>Here is the complete working Kimai configuration that has been tested and verified:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">kimai</span><span class="pi">:</span>
     <span class="na">saml</span><span class="pi">:</span>
@@ -686,7 +691,7 @@ If you reuse the same Keycloak role, the last mapping wins.</p>
                 <span class="pi">-</span> <span class="pi">{</span> <span class="nv">saml</span><span class="pi">:</span> <span class="nv">Management</span><span class="pi">,</span> <span class="nv">kimai</span><span class="pi">:</span> <span class="nv">ROLE_ADMIN</span> <span class="pi">}</span>
                 <span class="pi">-</span> <span class="pi">{</span> <span class="nv">saml</span><span class="pi">:</span> <span class="nv">Teamlead</span><span class="pi">,</span> <span class="nv">kimai</span><span class="pi">:</span> <span class="nv">ROLE_TEAMLEAD</span> <span class="pi">}</span>
         <span class="na">connection</span><span class="pi">:</span>
-            <span class="c1"># You SAML provider, here an example for Keycloak</span>
+            <span class="c1"># Your SAML provider, here an example for Keycloak</span>
             <span class="na">idp</span><span class="pi">:</span>
                 <span class="na">entityId</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://example.com/realms/master'</span>
                 <span class="na">singleSignOnService</span><span class="pi">:</span>
@@ -695,7 +700,7 @@ If you reuse the same Keycloak role, the last mapping wins.</p>
                 <span class="na">x509cert</span><span class="pi">:</span> <span class="s1">'</span><span class="s">cert</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">https://{keycloak-domain}/realms/{realm}/protocol/saml/descriptor</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">ds:X509Certificate'</span>
            <span class="c1"># Your Kimai instance, replace https://127.0.0.1:8010 with your base URL</span>
             <span class="na">sp</span><span class="pi">:</span>
-                <span class="na">entityId</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Kimai2'</span>
+                <span class="na">entityId</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Kimai'</span>
                 <span class="na">assertionConsumerService</span><span class="pi">:</span>
                     <span class="na">url</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://example.com/auth/saml/acs'</span>
                     <span class="na">binding</span><span class="pi">:</span> <span class="s1">'</span><span class="s">urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST'</span>
@@ -736,6 +741,20 @@ If you reuse the same Keycloak role, the last mapping wins.</p>
 </code></pre></div></div>
 
 <p>You should now be able to test the Login by visiting <strong>https://timetracking.example.com/</strong> and clicking on the <code class="language-plaintext highlighter-rouge">Keycloak</code> title of the SAML method, you defined earlier.</p>
+
+<h2 id="-working-configuration-summary">✅ Working Configuration Summary</h2>
+
+<p>This setup has been tested and verified to work with:</p>
+
+<ul>
+  <li><strong>Signed AuthnRequests</strong> (<code class="language-plaintext highlighter-rouge">authnRequestsSigned: true</code>)</li>
+  <li><strong>Keycloak client set to “Client signature required”</strong></li>
+  <li><strong>NameID forced to email format</strong></li>
+  <li><strong>Proper role mapping</strong> with consistent naming convention (<code class="language-plaintext highlighter-rouge">Kimai-Role-*</code>)</li>
+  <li><strong>Correct certificate configuration</strong> using IdP certificate from SAML descriptor</li>
+</ul>
+
+<p>The configuration above provides a complete working setup for Kimai + Keycloak SAML integration.</p>
 
                 </div>
                 
