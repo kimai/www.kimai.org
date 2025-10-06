@@ -134,3 +134,5 @@ Then make sure to define the `User attribute` mapping like this (**correct case 
 - `Basic Information > Last name` → `LastName`
 - `Employee Details > Employee ID` → `AccountNumber`
 - `Employee Details > Title` → `Title`
+
+Important: Edit the SAML capabilities and set the `Name ID format` to `email`. 

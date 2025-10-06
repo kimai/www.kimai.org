@@ -14,6 +14,9 @@ module Jekyll
                 elsif style == 'danger'
                     @icon = 'info-circle'
                     @style = style
+                elsif style == 'success'
+                    @icon = nil
+                    @style = style
                 end
             end
             super
@@ -23,7 +26,11 @@ module Jekyll
             site      = context.registers[:site]
             converter = site.find_converter_instance(Jekyll::Converters::Markdown)
             output = converter.convert(super(context))
-            return "<div class=\"alert alert-#{@style} d-flex\" role=\"alert\"><i class=\"bx bx-#{@icon} lead me-3\"></i>#{output}</div>"
+            if @icon.nil?
+                return "<div class=\"alert alert-#{@style} d-flex\" role=\"alert\">#{output}</div>"
+            else
+                return "<div class=\"alert alert-#{@style} d-flex\" role=\"alert\"><i class=\"bx bx-#{@icon} lead me-3\"></i>#{output}</div>"
+            end
         end
     end
 
