@@ -72,9 +72,7 @@ If you reuse the same Keycloak role, the last mapping wins.
 { saml: Teamlead, kimai: ROLE_TEAMLEAD }
 ```
 
-**Note**: Using a consistent naming convention like `Kimai-Role-*` helps avoid conflicts and makes role management clearer.
-
-
+**Note**: Using a consistent naming convention like `Kimai-Role-*` could help to avoid conflicts and makes role management clearer.
 
 ### Configure local.yaml
 
