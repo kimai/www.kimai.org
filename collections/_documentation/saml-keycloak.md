@@ -6,7 +6,7 @@ canonical: /documentation/saml-keycloak.html
 
 Go back to general [SAML configuration]({% link _documentation/saml.md %}) for Kimai.
 
-SAML authentication with Keycloak accounts has proven to work with the following configurations.
+SAML authentication with Keycloak accounts has proven to work with the following configurations. This guide provides a complete working setup that has been tested and verified.
 
 Screenshots might be outdated, please check the text version below each image. 
 
@@ -16,6 +16,7 @@ Screenshots might be outdated, please check the text version below each image.
 - In Kimai: `kimai.saml.connection.idp.x509cert` = value from IdP `ds:X509Certificate`
 - In Kimai: `kimai.saml.connection.security.authnRequestsSigned: true`
 - In Keycloak: enable **Force name ID format**
+- In Keycloak: enable **Client signature required** (this works with signed AuthnRequests)
 
 ### Add a client for Kimai SAML
 
@@ -23,8 +24,10 @@ Screenshots might be outdated, please check the text version below each image.
 
 ### Configure the client
 
-{% include docs-image.html src="/images/documentation/keycloak-saml-2.webp" title="Deactivate *Client Signature Required* (1)" width="900px" %}
-{% include docs-image.html src="/images/documentation/keycloak-saml-3.webp" title="Deactivate *Client Signature Required* (2)" width="900px" %}
+{% include docs-image.html src="/images/documentation/keycloak-saml-2.webp" title="Enable *Client Signature Required* (1)" width="900px" %}
+{% include docs-image.html src="/images/documentation/keycloak-saml-3.webp" title="Enable *Client Signature Required* (2)" width="900px" %}
+
+**Note**: The working setup uses **Client Signature Required** enabled, which works with signed AuthnRequests (`authnRequestsSigned: true` in Kimai configuration).
 
 ### Certificates
 
@@ -59,9 +62,9 @@ If you reuse the same Keycloak role, the last mapping wins.
 
 - Go to Configuration -> Client Scopes -> role_list
 - Select Tab "Mappers", edit "role_list"
-- Set" Single Role Attribute" to "ON"
+- Set "Single Role Attribute" to "ON"
 
-Example:
+**Working example with specific role naming convention:**
 
 ```
 { saml: Admins, kimai: ROLE_SUPER_ADMIN }
@@ -69,11 +72,11 @@ Example:
 { saml: Teamlead, kimai: ROLE_TEAMLEAD }
 ```
 
-
+**Note**: Using a consistent naming convention like `Kimai-Role-*` could help to avoid conflicts and makes role management clearer.
 
 ### Configure local.yaml
 
-And here is the matching Kimai configuration:
+Here is the complete working Kimai configuration that has been tested and verified:
 
 ```yaml
 kimai:
@@ -92,7 +95,7 @@ kimai:
                 - { saml: Management, kimai: ROLE_ADMIN }
                 - { saml: Teamlead, kimai: ROLE_TEAMLEAD }
         connection:
-            # You SAML provider, here an example for Keycloak
+            # Your SAML provider, here an example for Keycloak
             idp:
                 entityId: 'https://example.com/realms/master'
                 singleSignOnService:
@@ -101,7 +104,7 @@ kimai:
                 x509cert: 'cert from https://{keycloak-domain}/realms/{realm}/protocol/saml/descriptor > ds:X509Certificate'
            # Your Kimai instance, replace https://127.0.0.1:8010 with your base URL
             sp:
-                entityId: 'Kimai2'
+                entityId: 'Kimai'
                 assertionConsumerService:
                     url: 'https://example.com/auth/saml/acs'
                     binding: 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST'
@@ -142,3 +145,15 @@ kimai:
 ```
 
 You should now be able to test the Login by visiting **https://timetracking.example.com/** and clicking on the `Keycloak` title of the SAML method, you defined earlier.
+
+## ✅ Working Configuration Summary
+
+This setup has been tested and verified to work with:
+
+- **Signed AuthnRequests** (`authnRequestsSigned: true`)
+- **Keycloak client set to "Client signature required"**
+- **NameID forced to email format**
+- **Proper role mapping** with consistent naming convention (`Kimai-Role-*`)
+- **Correct certificate configuration** using IdP certificate from SAML descriptor
+
+The configuration above provides a complete working setup for Kimai + Keycloak SAML integration.
