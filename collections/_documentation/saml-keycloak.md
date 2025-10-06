@@ -67,9 +67,9 @@ If you reuse the same Keycloak role, the last mapping wins.
 **Working example with specific role naming convention:**
 
 ```
-{ saml: Kimai-Role-Super-Admin, kimai: ROLE_SUPER_ADMIN }
-{ saml: Kimai-Role-Admin, kimai: ROLE_ADMIN }
-{ saml: Kimai-Role-Teamlead, kimai: ROLE_TEAMLEAD }
+{ saml: Admins, kimai: ROLE_SUPER_ADMIN }
+{ saml: Management, kimai: ROLE_ADMIN }
+{ saml: Teamlead, kimai: ROLE_TEAMLEAD }
 ```
 
 **Note**: Using a consistent naming convention like `Kimai-Role-*` helps avoid conflicts and makes role management clearer.
@@ -93,30 +93,30 @@ kimai:
             resetOnLogin: true
             attribute: Roles
             mapping:
-                - { saml: Kimai-Role-Super-Admin, kimai: ROLE_SUPER_ADMIN }
-                - { saml: Kimai-Role-Admin, kimai: ROLE_ADMIN }
-                - { saml: Kimai-Role-Teamlead, kimai: ROLE_TEAMLEAD }
+                - { saml: Admins, kimai: ROLE_SUPER_ADMIN }
+                - { saml: Management, kimai: ROLE_ADMIN }
+                - { saml: Teamlead, kimai: ROLE_TEAMLEAD }
         connection:
             # Your SAML provider, here an example for Keycloak
             idp:
-                entityId: 'https://myauth.com/realms/master'
+                entityId: 'https://example.com/realms/master'
                 singleSignOnService:
-                    url: 'https://myauth.com/realms/master/protocol/saml'
+                    url: 'https://example.com/realms/master/protocol/saml'
                     binding: 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect'
                 x509cert: 'cert from https://{keycloak-domain}/realms/{realm}/protocol/saml/descriptor > ds:X509Certificate'
-           # Your Kimai instance, replace with your base URL
+           # Your Kimai instance, replace https://127.0.0.1:8010 with your base URL
             sp:
-                entityId: 'Kimai2'
+                entityId: 'Kimai'
                 assertionConsumerService:
-                    url: 'https://mykimai.com/auth/saml/acs'
+                    url: 'https://example.com/auth/saml/acs'
                     binding: 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST'
                 singleLogoutService:
-                    url: 'https://mykimai.com/auth/saml/logout'
+                    url: 'https://example.com/auth/saml/logout'
                     binding: 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect'
-                privateKey: 'private key generated in the Keycloak > Clients > Kimai2 > Keys'
-                x509cert: 'public key generated in the Keycloak > Clients > Kimai2 > Keys'
+                privateKey: 'private key generated in the Keycloak > Clients > Kimai > Keys'
+                x509cert: 'public key generated in the Keycloak > Clients > Kimai > Keys'
             # only set baseurl, if auto-detection doesn't work
-            baseurl: 'https://mykimai.com/auth/saml/'
+            baseurl: 'https://example.com/auth/saml/'
             strict: true
             debug: true
             security:
@@ -135,15 +135,15 @@ kimai:
             contactPerson:
                 technical:
                     givenName: 'Kimai Admin'
-                    emailAddress: 'kimai-tech@mykimai.com'
+                    emailAddress: 'kimai-tech@example.com'
                 support:
                     givenName: 'Kimai Support'
-                    emailAddress: 'kimai-support@mykimai.com'
+                    emailAddress: 'kimai-support@example.com'
             organization:
                 en:
-                    name: 'MyKimai'
-                    displayname: 'MyKimai'
-                    url: 'https://mykimai.com'
+                    name: 'Kimai'
+                    displayname: 'Kimai'
+                    url: 'https://www.kimai.org'
 ```
 
 You should now be able to test the Login by visiting **https://timetracking.example.com/** and clicking on the `Keycloak` title of the SAML method, you defined earlier.
