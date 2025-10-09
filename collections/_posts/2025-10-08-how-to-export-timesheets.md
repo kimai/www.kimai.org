@@ -5,7 +5,7 @@ image: /images/blog/how-to-export-timesheets.webp
 author: valentina
 tags: [General]
 cta: cloud
-excerpt: "Can't focus for more than 5 minutes? Try Pomodoro, a technique that aims to improve that."
+excerpt: "Exporting timesheets became even better with larger and faster exports and customizable templates."
 ---
 
 Managing and exporting timesheets can be challenging. The work is detailed, repetitive, and often time-sensitive. 
