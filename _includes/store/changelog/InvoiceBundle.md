@@ -1,3 +1,9 @@
+**Version 2.3.0**
+
+Compatibility: requires minimum Kimai 2.27.0
+
+- Fix compatibility with new export templates in Kimai 2.40
+
 **Version 2.2.0**
 
 Compatibility: requires minimum Kimai 2.27.0
