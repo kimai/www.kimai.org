@@ -1,11 +1,17 @@
 **KimaiClock** is a macOS menu bar app that lets you track your time with Kimai directly from your desktop.  
 
 ## Features
-* ⏱️ Start/stop timesheets from the menu bar  
-* 📊 Quick access to recent logged time entries  
-* 📓 English and German localization  
-* ⚡ Lightweight, fast, and Apple-notarized  
-* 🌙 Dark mode support  
+* ⏱️ Start & stop timesheets from the menu bar
+* 📊 View and resume recent tasks
+* 🔔 Idle detection reminders
+* 🔔 App launch reminders (VS Code, PhpStorm, Xcode, …)
+* 📡 Automatically sync timesheets with Kimai server
+* 📓 English & German localization
+* 🔒 Secure, Apple-notarized build
+* ⚡ Lightweight & fast
+* 📦 No third party dependency
+* 🌙 Dark mode support
+* 📨 Actively maintained
 
 ## Download and install
 Clone from [GitHub](https://github.com/foraum-gmbh/kimai-clock) or download the latest `.dmg` from the [Releases page](https://github.com/Foraum-GmbH/kimai-clock/releases).  
