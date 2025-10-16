@@ -127,6 +127,8 @@ This screenshot is a showcase of the attribute mapping including groups:
 
 Start by setting up your Keycloak following the [Keycloak docs]({% link _documentation/saml-keycloak.md %}). 
 
+There is one difference though: the cloud does not activate `authnRequestsSigned`, which means you have to deactivate `Client signature required`. 
+
 Then make sure to define the `User attribute` mapping like this (**correct case is important, and you need to configure all attributes, even if you do not use them**):
 
 - `Basic Information > Primary email` → `Email`
@@ -134,3 +136,5 @@ Then make sure to define the `User attribute` mapping like this (**correct case 
 - `Basic Information > Last name` → `LastName`
 - `Employee Details > Employee ID` → `AccountNumber`
 - `Employee Details > Title` → `Title`
+
+Important: Edit the SAML capabilities and set the `Name ID format` to `email`. 

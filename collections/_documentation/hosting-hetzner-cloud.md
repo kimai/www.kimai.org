@@ -27,15 +27,6 @@ You can change most of the settings to suit your needs, but as this guide uses D
 
 The rest of this guide requires you to log in to the server using a terminal with SSH. Refer to [Access with SSH/rsync/BorgBackup](https://docs.hetzner.com/robot/storage-box/access/access-ssh-rsync-borg){:target="_blank" .external-link} for more information. You can find the public IP in the listing of the servers in your project.
 
-## Install Docker Compose
-
-The Hetzner Docker app image doesn't have Docker compose installed. Install it with the following commands:
- 
-```bash
-apt update && apt -y upgrade
-apt install docker-compose-plugin
-```
-
 ## Clone configuration repository
 
 Docker Compose, Kimai, and Caddy require a series of folders and configuration files. 

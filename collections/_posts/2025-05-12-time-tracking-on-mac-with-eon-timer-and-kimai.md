@@ -4,7 +4,7 @@ date: "2025-05-12 10:00:00 +0200"
 image: /images/blog/time-tracking-mac-eon-timer.webp
 author: valentina
 tags: [General]
-excerpt: "Good news for Apple fans: Eon Timer now seamlessly integrates with Kimai, bringing native, menu-bar time tracking to your MacOS workflow. Let's talk about time tracking in the Mac environment."
+excerpt: "Good news for Apple fans: Eon Timer now seamlessly integrates with Kimai, bringing native, menu-bar time tracking to your MacOS workflow."
 ---
 
 We have news for Apple fans: [Eon Timer now integrates seamlessly with Kimai]({% link _store/eon-timer.md %}), bringing native, menu-bar time tracking to your MacOS workflow. 

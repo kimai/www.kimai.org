@@ -1,0 +1,62 @@
+<main class="page-wrapper">
+    {% include header-navigation.html absolute=true light=false %}
+
+    <section class="position-relative py-5">
+        <div class="position-absolute top-0 start-0 w-100 bg-position-bottom-center bg-size-cover bg-repeat-0" style="background-image: url(/images/layout/landingpage/hero-bg.svg);">
+            <div class="d-lg-none" style="height: 400px;"></div>
+            <div class="d-none d-lg-block" style="height: 500px;"></div>
+        </div>
+        <div class="container position-relative zindex-2 py-lg-4 pt-xxl-5">
+            <div class="row">
+                <div class="col-lg-6 d-flex flex-column">
+                    <h1 class="display-3 mb-4">
+                        {{ site.data[page.lang].translation.stories.name }}
+                    </h1>
+                    <p class="fs-lg mb-5">
+                        {{ site.data[page.lang].translation.stories.subtitle }}
+                        {{ site.data[page.lang].translation.stories.intro }}
+                    </p>
+                    <div class="d-flex align-items-center mt-3 mb-3 mb-lg-0 pb-4 pb-lg-0 pb-xl-5 ps-3">
+                        {% assign testimonials = site.data.testimonials | where_exp: "item", "item.tags contains 'Faces'" | where_exp: "item", "item.avatar != ''" | sample: 5 %}
+                        {% include testimonials-avatars.html testimonials=testimonials %}
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row d-none d-lg-flex">
+                        <div class="col">
+                            {% comment %}
+                            https://unsplash.com/de/fotos/frau-im-blauen-tanktop-steht-neben-weisser-wand-TXxiFuQLBKQ
+                            {% endcomment %}
+                            <img src="/images/stories/header.webp" class="d-block rounded-3 mb-3 mb-lg-4" alt="{{ site.data[page.lang].translation.stories.name }}" style="max-height: 600px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mt-2 mb-5">
+        <div class="row row-cols-1 row-cols-xs-1 row-cols-lg-2 justify-content-center g-4 pb-xl-3">
+            {% assign englishOrGerman = 'en' %}
+            {% if page.lang == 'de' %}
+                {% assign englishOrGerman = 'de' %}
+            {% endif %}
+            {% assign entries = site.stories | where: "lang", englishOrGerman %}
+            {% for entry in entries %}
+            <div class="col text-center px-3">
+                <div class="card d-table border-0 p-3 mx-auto mb-4">
+                    <a href="{{ entry.url }}"><img src="{{ entry.image }}" class="card-img" alt="{{ entry.title }}" style="height: 300px; width: 500px; object-fit: cover"></a>
+                </div>
+                <h3 class="h5 mb-3">{{ entry.company }}</h3>
+                <p>{{ entry.teaser }}</p>
+                <div class="text-center mt-4">
+                    <a href="{{ entry.url }}" class="btn btn-secondary w-75 text-wrap">{{ entry.subtitle }}</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+</main>
+
+{% include footer.html %}

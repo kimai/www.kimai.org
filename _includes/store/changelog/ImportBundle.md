@@ -1,3 +1,9 @@
+**Version 2.22.0**
+
+Compatibility: requires minimum Kimai 2.36.0
+
+- Skip unsupported array values during project/customer JSON import
+
 **Version 2.21.0**
 
 Compatibility: requires minimum Kimai 2.36.0

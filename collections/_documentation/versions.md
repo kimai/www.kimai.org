@@ -5,15 +5,13 @@ description: Differentiate the available and past Kimai versions
 canonical: /documentation/versions.html
 ---
 
-Some people struggle to understand the versioning of Kimai.
-That usually happens, when the app number and version number are mixed.
+Some users get confused about Kimai version numbers, especially when the application name and the version number are mixed up.
 
-There are two distinct Kimai versions with totally different code bases.
-So the app name might sometimes contain the number 1 or 2. 
-This usually relates to the "original" Kimai, which we call `Kimai 1` sometimes (see the last image on this page).
+There are two completely different generations of Kimai, each with its own code base:
+- Kimai 2: the modern and actively maintained version. Sometimes we explicitly call it `Kimai 2` to distinguish it from the legacy Kimai. However, throughout this documentation, when we say `Kimai`, we always mean Kimai 2.
+- Kimai 1: the historical version, which is no longer maintained.
 
-The modern Kimai is sometimes called `Kimai 2`, but only if we need to differentiate between the original and the current Kimai.
-We use it on this page to explain this concept, but whenever we say `Kimai` we mean `Kimai 2`.
+Below you find a list of Kimai releases, ordered from the newest to the oldest version.
 
 The following list is ordered from youngest to oldest version.
 
@@ -27,6 +25,13 @@ That means there are multiple major versions existing, which combined from the a
 - `Kimai 2 - v2.0.22`
 - `Kimai 1.30`
 - `Kimai 2.0.22`
+
+### Detect my version
+
+There are two places where you can easily see, which Kimai version you are running:
+
+- In the Web UI, go to `System > Doctor` and in the upper status bar you see the version in the green label
+- On the command line you can call `bin/console kimai:version`
 
 ### 2.0
 
