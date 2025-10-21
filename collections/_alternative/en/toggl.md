@@ -20,7 +20,7 @@ export: true
 saml: true
 support: false
 backup_frequency: false
-tls_included: false
+tls_included: true
 custom_domain: 'costs'
 automatic_upgrades: false
 server_maintenance: false
