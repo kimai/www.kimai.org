@@ -759,13 +759,37 @@ Your user account might be migrated to a new username, which is used during the 
 
 <p>Please check the username in your user profile and use it for API authentication.</p>
 
-<h3 id="proxy-and-http-vs-https">Proxy and http vs https</h3>
+<h3 id="proxy-and-url-mismatch">Proxy and URL mismatch</h3>
 
-<p><strong>Error:</strong><br />
-The response was received at <code class="language-plaintext highlighter-rouge">http://kimai-test.example.com/auth/saml/acs</code> instead of <code class="language-plaintext highlighter-rouge">https://kimai-test.example.com/auth/saml/acs</code></p>
+<p><strong>Error:</strong>
+“The response was received at <code class="language-plaintext highlighter-rouge">**http:**//kimai-test.example.com/auth/saml/acs</code> instead of <code class="language-plaintext highlighter-rouge">**https:**//kimai-test.example.com/auth/saml/acs</code></p>
 
-<p><strong>Solution:</strong><br />
-Use the <code class="language-plaintext highlighter-rouge">baseurl</code> configuration and set it to <code class="language-plaintext highlighter-rouge">https://kimai-test.example.com/auth/saml/</code> (and flush the cache!)</p>
+<p>or</p>
+
+<p>“The response was received at <code class="language-plaintext highlighter-rouge">https://kimai-test.example.com**:8001**/auth/saml/acs</code> instead of <code class="language-plaintext highlighter-rouge">https://kimai-test.example.com/auth/saml/acs</code>”</p>
+
+<p><strong>Solution:</strong>
+This could have multiple root causes:</p>
+
+<ol>
+  <li>You’ve configured the <code class="language-plaintext highlighter-rouge">baseurl</code> incorrectly. It should be <code class="language-plaintext highlighter-rouge">https://kimai-test.example.com/auth/saml/</code> (don’t forget flush the cache!)</li>
+  <li>You’ve misconfigured the <code class="language-plaintext highlighter-rouge">TRUSTED_PROXIES</code> property. Make sure it’s configured correctly.</li>
+  <li>Your proxy is not setting the <code class="language-plaintext highlighter-rouge">X-Forwarded-...</code> headers. Make sure your proxy is setting all the headers <code class="language-plaintext highlighter-rouge">X-Forwarded-Proto</code>, <code class="language-plaintext highlighter-rouge">X-Forwarded-Host</code>, <code class="language-plaintext highlighter-rouge">X-Forwarded-For</code> and <code class="language-plaintext highlighter-rouge">X-Forwarded-Port</code>
+    <ul>
+      <li>e.g. the proxy Caddy does not set the <code class="language-plaintext highlighter-rouge">X-Forwarded-Port</code> header by default (<a href="https://github.com/kimai/kimai/discussions/5658#discussioncomment-14749244">GitHub Discussion</a>)</li>
+    </ul>
+  </li>
+</ol>
+
+<p>To make Caddy set the <code class="language-plaintext highlighter-rouge">X-Forwarded-Port</code> header add it with the <code class="language-plaintext highlighter-rouge">header_up</code> config in your Caddyfile as follows:</p>
+
+<our-domain> {
+  reverse_proxy kimai:8001 {
+    header_up X-Forwarded-Port {http.request.local.port}
+  }
+}
+
+</our-domain>
 
                 </div>
                 
@@ -805,7 +829,7 @@ Use the <code class="language-plaintext highlighter-rouge">baseurl</code> config
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#installation" class="nav-link">Installation</a></li><li class="nav-item"><a href="#configuration-details" class="nav-link">Configuration details</a><ul><li class="nav-item"><a href="#multiline-certificate---x509cert" class="nav-link">Multiline Certificate - x509cert</a></li></ul></li><li class="nav-item"><a href="#identity-provider" class="nav-link">Identity provider</a><ul><li class="nav-item"><a href="#google-workspace" class="nav-link">Google Workspace</a></li><li class="nav-item"><a href="#azure" class="nav-link">Azure</a></li><li class="nav-item"><a href="#keycloak" class="nav-link">Keycloak</a></li><li class="nav-item"><a href="#authentik" class="nav-link">Authentik</a></li></ul></li><li class="nav-item"><a href="#known-limitations" class="nav-link">Known limitations</a></li><li class="nav-item"><a href="#using-saml-only" class="nav-link">Using SAML only</a></li><li class="nav-item"><a href="#troubleshooting" class="nav-link">Troubleshooting</a><ul><li class="nav-item"><a href="#api-access-does-not-work-after-changing-to-saml" class="nav-link">API access does not work after changing to SAML</a></li><li class="nav-item"><a href="#proxy-and-http-vs-https" class="nav-link">Proxy and http vs https</a></li></ul></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#installation" class="nav-link">Installation</a></li><li class="nav-item"><a href="#configuration-details" class="nav-link">Configuration details</a><ul><li class="nav-item"><a href="#multiline-certificate---x509cert" class="nav-link">Multiline Certificate - x509cert</a></li></ul></li><li class="nav-item"><a href="#identity-provider" class="nav-link">Identity provider</a><ul><li class="nav-item"><a href="#google-workspace" class="nav-link">Google Workspace</a></li><li class="nav-item"><a href="#azure" class="nav-link">Azure</a></li><li class="nav-item"><a href="#keycloak" class="nav-link">Keycloak</a></li><li class="nav-item"><a href="#authentik" class="nav-link">Authentik</a></li></ul></li><li class="nav-item"><a href="#known-limitations" class="nav-link">Known limitations</a></li><li class="nav-item"><a href="#using-saml-only" class="nav-link">Using SAML only</a></li><li class="nav-item"><a href="#troubleshooting" class="nav-link">Troubleshooting</a><ul><li class="nav-item"><a href="#api-access-does-not-work-after-changing-to-saml" class="nav-link">API access does not work after changing to SAML</a></li><li class="nav-item"><a href="#proxy-and-url-mismatch" class="nav-link">Proxy and URL mismatch</a></li></ul></li></ul>
         
         <ul class="nav">
             <li>
