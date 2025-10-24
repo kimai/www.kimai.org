@@ -761,35 +761,32 @@ Your user account might be migrated to a new username, which is used during the 
 
 <h3 id="proxy-and-url-mismatch">Proxy and URL mismatch</h3>
 
-<p><strong>Error:</strong>
-“The response was received at <code class="language-plaintext highlighter-rouge">**http:**//kimai-test.example.com/auth/saml/acs</code> instead of <code class="language-plaintext highlighter-rouge">**https:**//kimai-test.example.com/auth/saml/acs</code></p>
+<p>The error messages can vary, depending on your setup. Bot protocol and port are important to consider!</p>
 
-<p>or</p>
+<p><strong>Errors</strong></p>
 
-<p>“The response was received at <code class="language-plaintext highlighter-rouge">https://kimai-test.example.com**:8001**/auth/saml/acs</code> instead of <code class="language-plaintext highlighter-rouge">https://kimai-test.example.com/auth/saml/acs</code>”</p>
+<ul>
+  <li>The response was received at <code class="language-plaintext highlighter-rouge">http://kimai-test.example.com/auth/saml/acs</code> instead of <code class="language-plaintext highlighter-rouge">https://kimai-test.example.com/auth/saml/acs</code></li>
+  <li>The response was received at <code class="language-plaintext highlighter-rouge">https://kimai-test.example.com:8001/auth/saml/acs</code> instead of <code class="language-plaintext highlighter-rouge">https://kimai-test.example.com/auth/saml/acs</code></li>
+</ul>
 
-<p><strong>Solution:</strong>
-This could have multiple root causes:</p>
+<p><strong>Solutions</strong></p>
+
+<p>As there are multiple possible causes, we need to look at multiple configurations:</p>
 
 <ol>
-  <li>You’ve configured the <code class="language-plaintext highlighter-rouge">baseurl</code> incorrectly. It should be <code class="language-plaintext highlighter-rouge">https://kimai-test.example.com/auth/saml/</code> (don’t forget flush the cache!)</li>
-  <li>You’ve misconfigured the <code class="language-plaintext highlighter-rouge">TRUSTED_PROXIES</code> property. Make sure it’s configured correctly.</li>
-  <li>Your proxy is not setting the <code class="language-plaintext highlighter-rouge">X-Forwarded-...</code> headers. Make sure your proxy is setting all the headers <code class="language-plaintext highlighter-rouge">X-Forwarded-Proto</code>, <code class="language-plaintext highlighter-rouge">X-Forwarded-Host</code>, <code class="language-plaintext highlighter-rouge">X-Forwarded-For</code> and <code class="language-plaintext highlighter-rouge">X-Forwarded-Port</code>
-    <ul>
-      <li>e.g. the proxy Caddy does not set the <code class="language-plaintext highlighter-rouge">X-Forwarded-Port</code> header by default (<a href="https://github.com/kimai/kimai/discussions/5658#discussioncomment-14749244">GitHub Discussion</a>)</li>
-    </ul>
-  </li>
+  <li>You’ve configured the <code class="language-plaintext highlighter-rouge">baseurl</code> incorrectly. It should be <code class="language-plaintext highlighter-rouge">https://kimai-test.example.com/auth/saml/</code> (donflush the cache after changing it)</li>
+  <li>You’ve misconfigured the <code class="language-plaintext highlighter-rouge">TRUSTED_PROXIES</code> property. Make sure it’s configured correctly, e.g. include Dockers internal network IPs!</li>
+  <li>Your proxy is not setting the <code class="language-plaintext highlighter-rouge">X-Forwarded-*</code> headers. Make sure your proxy is setting all the headers <code class="language-plaintext highlighter-rouge">X-Forwarded-Proto</code>, <code class="language-plaintext highlighter-rouge">X-Forwarded-Host</code>, <code class="language-plaintext highlighter-rouge">X-Forwarded-For</code> and <code class="language-plaintext highlighter-rouge">X-Forwarded-Port</code>. E.g. the proxy Caddy does not set the <code class="language-plaintext highlighter-rouge">X-Forwarded-Port</code> header by default (<a href="https://github.com/kimai/kimai/discussions/5658#discussioncomment-14749244">see here</a>)</li>
 </ol>
 
 <p>To make Caddy set the <code class="language-plaintext highlighter-rouge">X-Forwarded-Port</code> header add it with the <code class="language-plaintext highlighter-rouge">header_up</code> config in your Caddyfile as follows:</p>
-
-<our-domain> {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;our-domain&gt; {
   reverse_proxy kimai:8001 {
     header_up X-Forwarded-Port {http.request.local.port}
   }
 }
-
-</our-domain>
+</code></pre></div></div>
 
                 </div>
                 
