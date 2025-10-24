@@ -1,0 +1,44 @@
+**KimaiClock** is a macOS menu bar app that lets you track your time with Kimai directly from your desktop.  
+
+## Features
+* ⏱️ Start & stop timesheets from the menu bar
+* 📊 View and resume recent tasks
+* 🔔 Idle detection reminders
+* 🔔 App launch reminders (VS Code, PhpStorm, Xcode, …)
+* 📡 Automatically sync timesheets with Kimai server
+* 📓 English & German localization
+* 🔒 Secure, Apple-notarized build
+* ⚡ Lightweight & fast
+* 📦 No third party dependency
+* 🌙 Dark mode support
+* 📨 Actively maintained
+
+## Download and install
+Clone from [GitHub](https://github.com/foraum-gmbh/kimai-clock) or download the latest `.dmg` from the [Releases page](https://github.com/Foraum-GmbH/kimai-clock/releases).  
+
+### Homebrew (recommended)
+KimaiClock can also be installed via our own Homebrew tap:
+
+```bash
+# add company tap
+brew tap foraum-gmbh/foraum https://github.com/Foraum-GmbH/homebrew-foraum
+
+# install cask from company tap
+brew install --cask foraum-gmbh/foraum/kimai-clock
+```
+
+To remove KimaiClock and untap the repository:
+
+```bash
+# uninstall the app
+brew uninstall --cask foraum-gmbh/foraum/kimai-clock
+
+# remove the company tap
+brew untap foraum-gmbh/foraum
+```
+
+## Usage
+Open the app, connect your Kimai server in Settings, and start tracking time right from the menu bar.  
+
+## Support
+Need help? Create a [GitHub issue](https://github.com/foraum-gmbh/kimai-clock/issues) or contact us via email: [support@foraum.de](mailto:support@foraum.de)  

@@ -1,3 +1,18 @@
+**Version 2.16.1**
+
+Compatibility: requires minimum Kimai 2.36.0
+
+- Fix configuration problem after adding and then removing all screensaver days from config
+
+**Version 2.16.0**
+
+Compatibility: requires minimum Kimai 2.36.0
+
+- Show company name next to logo
+- Added Screensaver
+- Fix NFC button in "Android Kiosk" app
+- Unified URLs to merge all under /auth/kiosk/* (old URLs keep working)
+
 **Version 2.15.0**
 
 Compatibility: requires minimum Kimai 2.36.0

@@ -19,6 +19,14 @@ The available users to choose from are either all (if the user owns the permissi
 
 {% alert %}Plugins can ship their own reports, the following list contains the reports shipped in default installations.{% endalert %}
 
+## FAQ: User does not show up in the report
+
+There are a few reasons why a user might not show up in a report:
+
+- You are not allowed to see that user. Switch to an Admin account to verify.
+- The user account is `deactivated`. The user does not show up in the dropdown, but the data should still be reported for the selected period.
+- The user account is flagged as `System-Account`. Edit the user profile to verify: you can't set these flags for your own user account!
+
 ## Single user
 
 ### Weekly view for one user

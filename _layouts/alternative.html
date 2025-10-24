@@ -25,7 +25,7 @@ layout: base
                             {{ tool.name }} alternative
                         </h1>
                         <p class="mb-4 mx-md-0 mx-auto pb-xl-3 pb-lg-2 fs-lg" style="max-width: 30.5rem;">
-                            Kimai is the #1 open-source time-tracking alternative for {{ tool.name }}.
+                            Kimai is the #1 open-source <a href="{% include link-language-menu.html language=page.lang item="alternatives" %}">time-tracking alternative</a> for {{ tool.name }}.
                             See how Kimai measures up to {{ tool.name }}, so you can choose the right solution for your business.
                         </p>
                     </div>
@@ -49,13 +49,12 @@ layout: base
         <div class="row">
             <div class="col-lg-12 mb-4 mb-lg-0">
                 <div class="pe-lg-4 me-lg-3 pe-xl-0 me-xl-0">
-                    <h2 class="h1 mb-4">Why you should choose Kimai over {{ page.name }}</h2>
                     <div class="mb-0">
 
                         <section class="overflow-hidden pt-md-2 pt-lg-3">
                             <div class="d-flex flex-column flex-md-row flex-md-nowrap align-items-start">
                                 <div class="col-12 ps-0 pe-lg-4 mb-5 mb-md-0">
-                                    <div class="row lp-content">
+                                    <div class="lp-content">
                                         {{ content }}
                                     </div>
                                 </div>
@@ -197,6 +196,7 @@ layout: base
                             </p>
                         </section>
 
+                        {% if page.kimai_footer == nil %}
                         <section class="my-md-3 my-lg-5">
                             <h2 class="my-5">Kimai is open source</h2>
                             <p>
@@ -218,7 +218,6 @@ layout: base
                             </p>
                             <p>
                                 Additionally, for businesses aiming to integrate other applications, Kimai comes equipped with a robust API to facilitate such integrations seamlessly.
-                            </p>
                             </p>
                             {% if tool.on_premise == false %}
                             <p>
@@ -245,6 +244,7 @@ layout: base
                                 Its ease of use, integration capabilities, and commitment to data security and privacy make it a top choice for businesses seeking an efficient time-tracking software.
                             </p>
                         </section>
+                        {% endif %}
 
                         {% include cta-begin-journey.html %}
 

@@ -1,3 +1,17 @@
+**Version 1.27.0**
+
+Compatibility: requires minimum Kimai 2.32.0
+
+- Fix: Absences on the last day of the month weren't approved
+- Fix: Public holidays on the last day of the month were ignored in calculation
+
+**Version 1.26.0**
+
+Compatibility: requires minimum Kimai 2.32.0
+
+- Fix a timezone issue in approval dialog
+- Unlock absences in combination with the month
+
 **Version 1.25.0**
 
 Compatibility: requires minimum Kimai 2.32.0
