@@ -191,10 +191,28 @@ Your user account might be migrated to a new username, which is used during the 
 
 Please check the username in your user profile and use it for API authentication.
 
-### Proxy and http vs https
+### Proxy and URL mismatch
 
-**Error:**  
-The response was received at `http://kimai-test.example.com/auth/saml/acs` instead of `https://kimai-test.example.com/auth/saml/acs`
+**Error:**
+"The response was received at `**http:**//kimai-test.example.com/auth/saml/acs` instead of `**https:**//kimai-test.example.com/auth/saml/acs`
 
-**Solution:**  
-Use the `baseurl` configuration and set it to `https://kimai-test.example.com/auth/saml/` (and flush the cache!)
+or
+
+"The response was received at `https://kimai-test.example.com**:8001**/auth/saml/acs` instead of `https://kimai-test.example.com/auth/saml/acs`"
+
+**Solution:**
+This could have multiple root causes:
+
+1. You've configured the `baseurl` incorrectly. It should be `https://kimai-test.example.com/auth/saml/` (don't forget flush the cache!)
+2. You've misconfigured the `TRUSTED_PROXIES` property. Make sure it's configured correctly.
+3. Your proxy is not setting the `X-Forwarded-...` headers. Make sure your proxy is setting all the headers `X-Forwarded-Proto`, `X-Forwarded-Host`, `X-Forwarded-For` and `X-Forwarded-Port`
+   * e.g. the proxy Caddy does not set the `X-Forwarded-Port` header by default ([GitHub Discussion](https://github.com/kimai/kimai/discussions/5658#discussioncomment-14749244))
+  
+To make Caddy set the `X-Forwarded-Port` header add it with the `header_up` config in your Caddyfile as follows:
+
+<our-domain> {
+  reverse_proxy kimai:8001 {
+    header_up X-Forwarded-Port {http.request.local.port}
+  }
+}
+
