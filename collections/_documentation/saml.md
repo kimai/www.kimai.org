@@ -193,7 +193,7 @@ Please check the username in your user profile and use it for API authentication
 
 ### Proxy and URL mismatch
 
-The error messages can vary, depending on your setup. Bot protocol and port are important to consider!
+The error messages can vary, depending on your setup. Both protocol and port are important to consider!
 
 **Errors**
 
@@ -204,7 +204,7 @@ The error messages can vary, depending on your setup. Bot protocol and port are 
 
 As there are multiple possible causes, we need to look at multiple configurations:
 
-1. You've configured the `baseurl` incorrectly. It should be `https://kimai-test.example.com/auth/saml/` (donflush the cache after changing it)
+1. You've configured the `baseurl` incorrectly. It should be `https://kimai-test.example.com/auth/saml/` (flush the cache after changing it)
 2. You've misconfigured the `TRUSTED_PROXIES` property. Make sure it's configured correctly, e.g. include Dockers internal network IPs!
 3. Your proxy is not setting the `X-Forwarded-*` headers. Make sure your proxy is setting all the headers `X-Forwarded-Proto`, `X-Forwarded-Host`, `X-Forwarded-For` and `X-Forwarded-Port`. E.g. the proxy Caddy does not set the `X-Forwarded-Port` header by default ([see here](https://github.com/kimai/kimai/discussions/5658#discussioncomment-14749244))
 
