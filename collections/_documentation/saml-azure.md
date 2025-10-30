@@ -21,17 +21,15 @@ Please check the following steps to set up an enterprise application using the S
 This documentation is available in other languages as well [in the Microsoft documentation](https://docs.microsoft.com/en-us/azure/active-directory/saas-apps/saml-toolkit-tutorial#adding-azure-ad-saml-toolkit-from-the-gallery)
 
 - Sign in to the Azure portal. 
-- On the left navigation pane, select the **Azure Active Directory** service.
+- On the left navigation pane, select the **Microsoft Entra ID** service.
 - Navigate to **Enterprise Applications** and then select **All Applications**.
 - To add new application, select **New application**.
-- In the Add from the gallery section, type **Azure AD SAML Toolkit** in the search box.
-- Select **Azure AD SAML Toolkit** from the results panel and then add the app.
-- On the left navigation panel, select the **Azure Active Directory** service.
-- Navigate to **App registrations** and then select **All Applications**.
-- Please click on the newly created application **Azure AD SAML Toolkit** and then select **Branding** on the left navigation bar to change the name of the application to "Kimai".  
-**Note**: The name of the application has no technical effect, but could be displayed to users during login.
-- Click on **Overview** on the left navigation panel. Now click on the value under **Managed application in local directory**: 
-{% include docs-image.html src="/images/documentation/azure-saml-pic1.webp" title="Managed applications" width="900px" %}
+- In the Add from the gallery section, type **Microsoft Entra SAML Toolkit** in the search box.
+- Select **Microsoft Entra SAML Toolkit** from the results panel and then add the app with the name "Kimai".
+  **Note**: The name of the application has no technical effect, but could be displayed to users during login.
+- On the left navigation panel, select the **Microsoft Entra ID** service.
+- Navigate to **Enterprise Applications** and search for the app you just created
+{% include docs-image.html src="/images/documentation/azure-saml-pic1.webp" title="Find Kimai enterprise app" width="900px" %}
 - Now navigate to **Single sign-on** on the left navigation and choose **SAML** as your choice: 
 {% include docs-image.html src="/images/documentation/azure-saml-pic2.webp" title="Select SAML" width="900px" %}
 - Edit the **Basic SAML Configuration** at the top and add the required **URLs**:
