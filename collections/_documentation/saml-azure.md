@@ -29,6 +29,7 @@ This documentation is available in other languages as well [in the Microsoft doc
   **Note**: The name of the application has no technical effect, but could be displayed to users during login.
 - On the left navigation panel, select the **Microsoft Entra ID** service.
 - Navigate to **Enterprise Applications** and search for the app you just created
+{% include docs-image.html src="/images/documentation/azure-saml-pic1.png" title="Find Kimai enterprise app" width="900px" %}
 - Now navigate to **Single sign-on** on the left navigation and choose **SAML** as your choice: 
 {% include docs-image.html src="/images/documentation/azure-saml-pic2.webp" title="Select SAML" width="900px" %}
 - Edit the **Basic SAML Configuration** at the top and add the required **URLs**:
