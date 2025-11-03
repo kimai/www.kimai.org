@@ -15,7 +15,7 @@ Screenshots might be outdated, please check the text version below each image.
 - `singleSignOnService.url`: `https://{keycloak-domain}/realms/{realm}/protocol/saml`
 - In Kimai: `kimai.saml.connection.idp.x509cert` = value from IdP `ds:X509Certificate`
 - In Kimai: `kimai.saml.connection.security.authnRequestsSigned: true`
-- In Kimai: Configure the Property `TRUSTED_PROXIES=`, when using a reverse proxy to prevent issues while logging in.
+- In Kimai: Configure the `TRUSTED_PROXIES` setting, when using a [reverse proxy]({% link _documentation/webserver-configuration.md %}) to prevent login issues
 - In Keycloak: enable **Force name ID format**
 - In Keycloak: enable **Client signature required** (this works with signed AuthnRequests)
 
