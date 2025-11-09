@@ -17,12 +17,16 @@ tags:
 
 Timai is a modern, native iOS app for Kimai, developed by Dr. Thomas Entner.
 
-It connects to your existing, self-hosted Kimai instance using the official API and focuses on fast and distraction-free time tracking on iPhone.
+It connects to your existing, self-hosted Kimai instance using the official API and focuses on fast and distraction-free time tracking on iPhone and iPad.
 
-**Features**
+**Key Features**
 
-- Connect to your own Kimai server using API token
-- Start, stop and manage timesheets on the go
-- Native iOS UI designed for everyday use
-- Open-source and privacy-friendly
-- Optimized for self-hosted Kimai setups
+- Live timer with Lock Screen and Dynamic Island integration
+- Full timesheet management (view, add, edit, delete)
+- Visual project budgets and progress indicators
+- Offline support with automatic synchronization
+- Multi-instance support for multiple Kimai servers
+- App lock using Face ID or Touch ID
+- German and English localization
+- Clean native SwiftUI interface for iPhone and iPad
+- Secure login via Kimai v2 API token (stored in iOS Keychain)
