@@ -5,4 +5,3 @@ lang: en
 ---
 
 {% include store/drthomasentner-timai.md %}
-  
