@@ -330,12 +330,57 @@
 
 <p>This bundle has the following features:</p>
 
-<ul>
+<ol>
+  <li>Parallel e-invoice creation next to the normal invoice flow</li>
   <li>Automatic generation of a PDF with all contained timesheets</li>
   <li>Configuration of a global language, which is used to format all invoices data (money, date, time).</li>
+</ol>
+
+<h3 id="e-invoices">E-Invoices</h3>
+
+<p>Support for EU e-invoices with the following profiles is added:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">EN16931</code> (CII)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">EN16931</code> (UBL)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">XRechnung 3.0</code> (CII)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">XRechnung 3.0</code> (UBL)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">Zugferd</code> (PDF/A hybrid)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">Factur-X</code> (PDF/A hybrid)</li>
 </ul>
 
-<p>You configure both settings via the global <a href="/documentation/configurations.html">System &gt; Settings</a> screen or from the “Invoice settings” screen.</p>
+<p>The e-invoice XML is always generated side by side to the original invoice document, no matter if that is PDF or e.g. Word, and it can be downloaded. 
+If a hybrid format is chosen, the invoice document must be a PDF. 
+The invoice will then be generated as a <code class="language-plaintext highlighter-rouge">PDF/A-3 + associated files + additional XMP RDF</code> (for ZUGFeRD and Factur-X).</p>
+
+<p>Kimai supports the following payment types (numbers are the official IDs):</p>
+<ul>
+  <li>58: SEPA Credit Transfer</li>
+  <li>59: SEPA Direct Debit</li>
+  <li>30: Credit Transfer</li>
+  <li>49: Direct Debit</li>
+  <li>42: Payment To Bank Account</li>
+  <li>48: Card Payment</li>
+  <li>10: Cash</li>
+</ul>
+
+<p>The document type is hard-coded to <code class="language-plaintext highlighter-rouge">Commercial invoice (380)</code> and can currently not be changed.</p>
+
+<p>You can configure the following fields for every invoice template:</p>
+<ul>
+  <li>E-Invoice profile type</li>
+  <li>Payment type</li>
+  <li>Account or card-holder</li>
+  <li>IBAN or card number</li>
+</ul>
+
+<p><img src="/images/blog/e-invoicing-eu-setting.webp" alt="E-Invoice Settings" class="image"></p>
 
 <h3 id="automatic-timesheet-pdf">Automatic timesheet PDF</h3>
 
@@ -355,8 +400,7 @@ and the list of all contained timesheets (on the following pages).</p>
 
 <p>The used “export template” for this feature can be configured.</p>
 
-<p>This feature needs to be activated by choosing an export template at <a href="/documentation/configurations.html">System &gt; Settings &gt; Invoices</a>. 
-By selecting the empty entry it can be deactivated again.</p>
+<p>This feature needs to be activated at <a href="/documentation/configurations.html">System &gt; Settings &gt; Invoices</a>.</p>
 
 <h3 id="data-format-language">Data format language</h3>
 
@@ -367,9 +411,12 @@ Or if you translate your invoice to english for cross-country sales but still wa
 
 <p>Without choosing a language the default behaviour is used.</p>
 
+<p>This feature needs to be activated by choosing a locale at <a href="/documentation/configurations.html">System &gt; Settings &gt; Invoices</a>.
+You can deactivate it by using the empty dropdown field.</p>
+
 <h3 id="additional-formats">Additional formats</h3>
 
-<p>The plugins ships renderer for other invoice template formats, such as:</p>
+<p>The plugins adds renderer for other invoice template formats, such as:</p>
 
 <ul>
   <li>JSON: with the file extension <code class="language-plaintext highlighter-rouge">.json.twig</code>
