@@ -50,11 +50,3 @@ You need a Kiosk application, which makes sure that users always see the login s
 And you need a bunch of NFC tokens:
 
 - NFC tags: [NFC Tag Shop](https://www.nfc-tag-shop.de/NFC-Anhaenger-ABS-40-x-32-mm-NTAG213-180-Byte-blau/68199) 
-
-
-## Licenses
-
-The following libraries are used when using barcodes with the Kiosk mode: 
-
-- Barcode scanning: https://github.com/ericblade/quagga2 (Version: 0.0.18, License: MIT)
-- Barcode generation: https://github.com/metafloor/bwip-js (Version: 2.0.6, License: MIT)
