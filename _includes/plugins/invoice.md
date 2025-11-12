@@ -29,8 +29,6 @@ Kimai supports the following payment types (numbers are the official IDs):
 - 48: Card Payment
 - 10: Cash
 
-The document type is hard-coded to `Commercial invoice (380)` and can currently not be changed. 
-
 You can configure the following fields for every invoice template:
 - E-Invoice profile type
 - Payment type
@@ -38,6 +36,13 @@ You can configure the following fields for every invoice template:
 - IBAN or card number
 
 ![E-Invoice Settings]({% link /images/blog/e-invoicing-eu-setting.webp %}){:class="image"}
+
+**Important to know**:
+- The document type is `Commercial invoice (380)` and can currently not be changed
+- Every item that is a timesheet will be added with the unit code `HUR` for "hour"
+- Every item that is a NOT timesheet will be added with the unit code `H87` for "piece"
+- The line amount is the decimal duration for everything that is not fixed priced
+- Fixed price line items will use the reported amount, which varies between grouping and item type 
 
 ### Automatic timesheet PDF
 
