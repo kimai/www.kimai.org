@@ -641,8 +641,6 @@ The invoice will then be generated as a <code class="language-plaintext highligh
   <li>10: Cash</li>
 </ul>
 
-<p>The document type is hard-coded to <code class="language-plaintext highlighter-rouge">Commercial invoice (380)</code> and can currently not be changed.</p>
-
 <p>You can configure the following fields for every invoice template:</p>
 <ul>
   <li>E-Invoice profile type</li>
@@ -652,6 +650,15 @@ The invoice will then be generated as a <code class="language-plaintext highligh
 </ul>
 
 <p><img src="/images/blog/e-invoicing-eu-setting.webp" alt="E-Invoice Settings" class="image" /></p>
+
+<p><strong>Important to know</strong>:</p>
+<ul>
+  <li>The document type is <code class="language-plaintext highlighter-rouge">Commercial invoice (380)</code> and can currently not be changed</li>
+  <li>Every item that is a timesheet will be added with the unit code <code class="language-plaintext highlighter-rouge">HUR</code> for “hour”</li>
+  <li>Every item that is a NOT timesheet will be added with the unit code <code class="language-plaintext highlighter-rouge">H87</code> for “piece”</li>
+  <li>The line amount is the decimal duration for everything that is not fixed priced</li>
+  <li>Fixed price line items will use the reported amount, which varies between grouping and item type</li>
+</ul>
 
 <h3 id="automatic-timesheet-pdf">Automatic timesheet PDF</h3>
 
