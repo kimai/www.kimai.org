@@ -1,3 +1,21 @@
+**Version 2.5.0**
+
+Compatibility: requires minimum Kimai 2.41.0
+
+- Added help labels to explain details
+- Added "Extended" profile
+- Removed Zugferd / Factur-X profiles (before: always using EN16931 CII, afterwards: when using a PDF template, the selected profile will be used)
+- Removed exotic payment methods
+
+**Version 2.4.0**
+
+Compatibility: requires minimum Kimai 2.41.0
+
+- Added support for E-Invoices
+- EN16931 (CII + UBL)
+- X-Rechnung 3.0 (CII + UBL)
+- Zugferd, Factur-X
+
 **Version 2.3.0**
 
 Compatibility: requires minimum Kimai 2.27.0

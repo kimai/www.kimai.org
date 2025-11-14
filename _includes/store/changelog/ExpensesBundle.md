@@ -1,3 +1,9 @@
+**Version 2.24.0**
+
+Compatibility: requires minimum Kimai 2.41.0
+
+- Use improved invoice calculator logic
+
 **Version 2.23.0**
 
 Compatibility: requires minimum Kimai 2.40.0
