@@ -59,10 +59,6 @@ kimai:
             default:
                 begin: 15
                 end: 15
-
-admin_lte:
-    options:
-        default_avatar: build/apple-touch-icon.png
 ```
 
 The `local.yaml` file will be imported as last configuration file, so you can overwrite any setting from the `config/packages/` directory.
