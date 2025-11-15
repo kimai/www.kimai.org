@@ -1,5 +1,6 @@
 {% assign introduction = site.data[page.lang].translation.changelogs.intro %}
 {% assign title = site.data[page.lang].translation.changelogs.title %}
+{% assign changelogs = site.changelogs | reverse %}
 
 {% include hero-text-round-dark.html title=title intro=introduction %}
 
@@ -9,16 +10,23 @@
         <table class="table">
             <thead>
             <tr>
-                <th style="max-width: 200px">Date</th>
+                <th style="min-width: 140px; max-width: 200px">Date</th>
                 <th>Title</th>
             </tr>
             </thead>
             <tbody>
-            {% assign changelogs = site.changelogs | reverse %}
             {% for changelog in changelogs %}
             <tr>
                 <td style="max-width: 200px">{{ changelog.date | date_to_string }}</td>
-                <td><a href="{{ changelog.url }}">{{ changelog.title }}</a></td>
+                <td>
+                    <a href="{{ changelog.url }}" class="text-decoration-none">
+                        {%- if changelog.intro != nil %}
+                            {{ changelog.intro|strip_html }}
+                        {% else %}
+                            {{ changelog.title }}
+                        {% endif -%}
+                    </a>
+                </td>
             </tr>
             {% endfor %}
             </tbody>
