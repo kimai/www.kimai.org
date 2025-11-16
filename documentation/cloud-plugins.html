@@ -12,14 +12,14 @@
 <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
-<title>Supported countries – Kimai</title>
-<meta name="description" content="We can currently provide services to custoemrs from the following countries">
+<title>Plugins – Kimai</title>
+<meta name="description" content="All available plugins and why they cannot be extended">
 <link type="application/atom+xml" rel="alternate" href="https://www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
 <meta property="og:locale" content="en">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Kimai Time-Tracking">
 <meta property="og:image" content="https://www.kimai.org/images/social-preview.webp">
-<meta property="og:description" content="We can currently provide services to custoemrs from the following countries">
+<meta property="og:description" content="All available plugins and why they cannot be extended">
 <link href="/assets/build/main.css?v6" rel="stylesheet" />
 
 </head>
@@ -226,7 +226,7 @@
                         
                         
                         
-                        <a href="/documentation/cloud-countries.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2  active" id="docnavi-cloud-countries">
+                        <a href="/documentation/cloud-countries.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-cloud-countries">
                             
                             Supported countries
                             
@@ -266,7 +266,7 @@
                         
                         
                         
-                        <a href="/documentation/cloud-plugins.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-cloud-plugins">
+                        <a href="/documentation/cloud-plugins.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2  active" id="docnavi-cloud-plugins">
                             
                             Plugins
                             
@@ -287,7 +287,7 @@
 </aside>
 <script>
     document.addEventListener("DOMContentLoaded", function(event) {
-        const dpm = document.getElementById('docnavi-cloud-countries');
+        const dpm = document.getElementById('docnavi-cloud-plugins');
         if (dpm !== null) {
             dpm.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
         }
@@ -298,9 +298,9 @@
 
         <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 pt-4 mb-n3">
             <div class="me-4">
-                <h1 class="pb-1">Supported countries</h1>
+                <h1 class="pb-1">Plugins</h1>
                 
-                <p class="text-muted fs-lg mb-2">We can currently provide services to custoemrs from the following countries</p>
+                <p class="text-muted fs-lg mb-2">All available plugins and why they cannot be extended</p>
                 
             </div>
             
@@ -315,82 +315,116 @@
             <div>
                 
                 <div id="documentation-content">
-                    <p>If your country is not listed in the <code class="language-plaintext highlighter-rouge">Country</code> dropdown, it still might be available for purchase, please check the list below.</p>
+                    <div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i><p>TL;DR - The cloud has a fixed set of plugins and new ones cannot be installed</p>
+</div>
 
-<h2 id="allowed-countries">Allowed countries</h2>
+<h2 id="available-plugins-in-the-kimai-cloud">Available Plugins in the Kimai Cloud</h2>
 
-<p>All EU countries are supported. You need to provide your VAT ID for reverse-charge invoices.</p>
+<p>The Kimai Cloud provides a curated set of plugins that are fully tested, maintained, and supported by us.</p>
 
+<p>The following extensions are currently available:</p>
 <ul>
-  <li>AT = Austria</li>
-  <li>BE = Belgium</li>
-  <li>BG = Bulgaria</li>
-  <li>CY = Cyprus</li>
-  <li>CZ = Czech</li>
-  <li>DE = Germany</li>
-  <li>DK = Denmark</li>
-  <li>EE = Estonia</li>
-  <li>ES = Spain</li>
-  <li>FI = Finland</li>
-  <li>FR = France</li>
-  <li>GR = Greece</li>
-  <li>HR = Croatia</li>
-  <li>HU = Hungary</li>
-  <li>IE = Ireland</li>
-  <li>IT = Italy</li>
-  <li>LT = Lithuania</li>
-  <li>LU = Luxembourg</li>
-  <li>LV = Latvia - Lettland</li>
-  <li>MT = Malta</li>
-  <li>NL = Netherlands</li>
-  <li>PL = Poland</li>
-  <li>PT = Portugal</li>
-  <li>RO = Romania</li>
-  <li>SE = Sweden</li>
-  <li>SI = Slovenia</li>
-  <li>SK = Slovakia</li>
+  <li><a href="/store/audit-trail-bundle.html">Audit trail logs</a></li>
+  <li><a href="/store/custom-content-bundle.html">Custom content</a></li>
+  <li><a href="/store/custom-fields-bundle.html">Custom fields</a></li>
+  <li><a href="/store/customer-portal.html">Customer Portal</a></li>
+  <li><a href="/store/expenses-bundle.html">Expense management</a></li>
+  <li><a href="/store/keleo-importer-bundle.html">Importer (CSV and JSON)</a></li>
+  <li><a href="/store/invoice-bundle.html">E-Invoice Plus</a></li>
+  <li><a href="/store/kiosk-barcode-bundle.html">Kiosk mode with support for Barcode, RFID, Web NFC</a></li>
+  <li><a href="/store/task-management-bundle.html">Task planning</a></li>
+  <li><a href="/store/translation-bundle.html">Translations</a></li>
+  <li><a href="/store/controlling.html">Working hours, vacation, sickness, public holidays</a></li>
 </ul>
 
-<p>Subscriptions are also possible for customers from the following countries:</p>
+<p>These plugins cover all features we support for cloud use.</p>
 
+<h2 id="why-other-plugins-cannot-be-added-to-the-cloud">Why other plugins cannot be added to the Cloud</h2>
+
+<p>A common question is whether additional plugins from the <a href="/store/">Kimai Marketplace</a> or third-party developers can be installed.
+This is not possible in the Cloud, and the following sections explain why.</p>
+
+<h3 id="feature-overlap--product-consistency">Feature Overlap &amp; Product Consistency</h3>
+
+<p>Most unavailable plugins provide functionality that is already covered by existing Cloud plugins, or they conflict with how the Cloud is designed to work.</p>
+
+<p>To keep the product stable and consistent, we must avoid overlapping or conflicting features.</p>
+
+<h3 id="licensing-restrictions">Licensing Restrictions</h3>
+
+<p>Many plugins are not developed by us, but by external developers or companies.</p>
 <ul>
-  <li>AU = Australia</li>
-  <li>CA = Canada</li>
-  <li>CH = Switzerland</li>
-  <li>IS = Iceland</li>
-  <li>NO = Norway</li>
-  <li>NZ = New Zealand</li>
-  <li>SG = Singapore</li>
-  <li>US = United States of America</li>
-  <li>ZA = South Africa</li>
+  <li>We cannot automatically transfer their licenses to the Cloud.</li>
+  <li>In many cases, the license does not allow redistribution or SaaS hosting.</li>
+  <li>Some plugins do not provide clear or commercially usable licensing terms at all.</li>
 </ul>
 
-<h2 id="countries-with-b2b-only">Countries with B2B only</h2>
+<p>Because of this, we cannot include these plugins in the Cloud.</p>
 
-<p>Customers from the following countries need to provide a document that proves they are a B2B customer (usually Tax ID, or company registration):</p>
+<h3 id="missing-cloud-required-apis">Missing Cloud-Required APIs</h3>
 
+<p>The Kimai Cloud relies on specific APIs and integrations that ensure secure, scalable, and reliable operation.
+Many third-party plugins do not support these Cloud-required APIs, which can lead to errors, incompatibilities, or data issues.</p>
+
+<p>To guarantee the reliability of the Cloud, every component must fully support this infrastructure.</p>
+
+<h3 id="support--maintainability">Support &amp; Maintainability</h3>
+
+<p>If we offer a plugin in the Cloud, we must be able to:</p>
 <ul>
-  <li>GB = United Kingdom</li>
-  <li>CO = Columbia</li>
-  <li>TR = Turkey</li>
+  <li>Provide support</li>
+  <li>Fix bugs</li>
+  <li>Maintain compatibility with future Kimai versions</li>
 </ul>
 
-<h2 id="unsupported-countries">Unsupported countries</h2>
-
-<p>Due to international tax regulations, we currently cannot provide service in those countries:</p>
-
+<p>This is not possible for third-party plugins:</p>
 <ul>
-  <li>IL = Israel</li>
-  <li>PK = Pakistan</li>
-  <li>UY = Uruguay</li>
-  <li>RS = Serbia</li>
-  <li>LI = Liechtenstein</li>
-  <li>IN = India</li>
+  <li>We do not know their code</li>
+  <li>We cannot debug or fix their issues</li>
+  <li>We would depend on another developer’s release cycle, which might take days, weeks, or months</li>
 </ul>
 
-<h2 id="other-countries">Other countries</h2>
+<p>We cannot build a reliable cloud service on components we cannot maintain ourselves.</p>
 
-<p>Customers from countries that are not listed here should open a support request to clarify the situation.</p>
+<h3 id="security--code-quality">Security &amp; Code Quality</h3>
+
+<p>Security is one of the most important aspects of the Kimai Cloud.</p>
+
+<p>Since third-party plugins are not developed by us:</p>
+<ul>
+  <li>We cannot review their source code</li>
+  <li>We cannot guarantee their security</li>
+  <li>We cannot take responsibility if a plugin contains vulnerabilities</li>
+</ul>
+
+<p>Even well-written software can contain security issues.
+Allowing external code in the Cloud would introduce risks that could affect all customers.</p>
+
+<p>For this reason, we only accept code that we fully control, audit, and maintain.</p>
+
+<h3 id="reliability--operational-stability">Reliability &amp; Operational Stability</h3>
+
+<p>To run the Cloud reliably, all components must behave predictably under all circumstances.</p>
+
+<p>A third-party plugin might:</p>
+<ul>
+  <li>Contain bugs</li>
+  <li>Break during Kimai updates</li>
+  <li>Cause performance or memory issues</li>
+  <li>Interrupt critical business processes</li>
+</ul>
+
+<p>Because we cannot fix or maintain external code, a single plugin could jeopardize the stability of the entire Cloud.</p>
+
+<h3 id="delivering-the-best-possible-experience">Delivering the Best Possible Experience</h3>
+
+<p>Our goal is to deliver the best possible quality, stability, and security to all Cloud customers.</p>
+
+<p>Therefore, we follow one clear principle:</p>
+
+<p>Every part of the Cloud must come from a single responsible source — so everything works together seamlessly.</p>
+
+<p>The plugins available in the Cloud are optimized specifically for this environment and continuously updated, tested, and maintained.</p>
 
                 </div>
                 
@@ -405,7 +439,7 @@
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#allowed-countries" class="nav-link">Allowed countries</a></li><li class="nav-item"><a href="#countries-with-b2b-only" class="nav-link">Countries with B2B only</a></li><li class="nav-item"><a href="#unsupported-countries" class="nav-link">Unsupported countries</a></li><li class="nav-item"><a href="#other-countries" class="nav-link">Other countries</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#available-plugins-in-the-kimai-cloud" class="nav-link">Available Plugins in the Kimai Cloud</a></li><li class="nav-item"><a href="#why-other-plugins-cannot-be-added-to-the-cloud" class="nav-link">Why other plugins cannot be added to the Cloud</a><ul><li class="nav-item"><a href="#feature-overlap--product-consistency" class="nav-link">Feature Overlap &amp; Product Consistency</a></li><li class="nav-item"><a href="#licensing-restrictions" class="nav-link">Licensing Restrictions</a></li><li class="nav-item"><a href="#missing-cloud-required-apis" class="nav-link">Missing Cloud-Required APIs</a></li><li class="nav-item"><a href="#support--maintainability" class="nav-link">Support &amp; Maintainability</a></li><li class="nav-item"><a href="#security--code-quality" class="nav-link">Security &amp; Code Quality</a></li><li class="nav-item"><a href="#reliability--operational-stability" class="nav-link">Reliability &amp; Operational Stability</a></li><li class="nav-item"><a href="#delivering-the-best-possible-experience" class="nav-link">Delivering the Best Possible Experience</a></li></ul></li></ul>
         
     </aside>
 
