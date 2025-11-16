@@ -23,6 +23,7 @@ users with the permission `system_configuration` (by default [ROLE_SUPER_ADMIN](
 - `Minute selection for From & To` - steps counter for the "begin time" and "end time" dropdown-menu in the timesheet forms
 - `Minute selection for Duration` - steps counter for the "duration" dropdown-menu in the timesheet forms
 - `Maximum duration of a timesheet record` - maximum duration of a timesheet record in minutes, before update/stop is rejected (eg. to prevent users from booking a whole day). Can be deactivated by setting it to 0.
+- `Break` - Activates break time tracking (a beta feature of Kimai)
 
 ### Time-tracking modes
 
@@ -91,16 +92,16 @@ More examples:
 ## Time rounding
 
 - `Rounding mode` - see below
-- `Rounding of the start time` - in minutes, zero (0) deactivates this config 
-- `Rounding of the end time` - in minutes, zero (0) deactivates this config
-- `Rounding of the duration` - in minutes, zero (0) deactivates this config
-- `Days of the week when rounding will be applied` - on all other days, the real recorded values will be used
+- `Rounding of the start time` - in minutes, zero (0) deactivates this config (recommended 1) 
+- `Rounding of the end time` - in minutes, zero (0) deactivates this config (recommended 1)
+- `Rounding of the duration` - in minutes, zero (0) deactivates this config (recommended 3, 6, 9, 12 or 15) [read this chapter]({% link _documentation/rounding.md %})
+- `Days of the week when rounding will be applied` - on all other days, the real recorded values will be used (recommended: all days of the week)
 
 Rounding rules are used to round the `begin` and `end` times and the `duration` for timesheet records:
 
 - The `end` date of timesheet records will be used to match the day (think of overnight entries)
 - If you set one of `begin`, `end`, `duration` to 0 no rounding will be applied for that field, the exact time (including seconds) is used for calculation
-- The values of the rules are minutes (not the minute of an hour), so 5 for "begin" means we round down to the previous multiple of five
+- The values of the rules are minutes (not the minute of an hour), so 5 for `begin` means we round down to the previous multiple of five
 - Rounding rules will be applied on stopped timesheet records only, so you might see an un-rounded value for the start time and duration until you stop the record
 
 These are the existing rounding modes:
@@ -112,7 +113,6 @@ These are the existing rounding modes:
 ## Invoices
 
 - `Invoice number format` - read more at [invoices]({% link _documentation/invoices.md %})
-- `Simple search` - displays a shorter search form, removing some fields which are used less often
 
 ## Authentication
 
@@ -133,6 +133,7 @@ These are the existing rounding modes:
 
 | Replacer | Description                                                     | Example  |
 |----------|-----------------------------------------------------------------|----------|
+| `{cc}`   | Customer counter                                                | 1        |
 | `{Y}`    | Year 4 digits                                                   | 2025     |
 | `{y}`    | Year 2 digits                                                   | 25       |
 | `{M}`    | Month with leading zero                                         | 04 or 10 |
@@ -152,8 +153,23 @@ You can use increment (for configuring a start value)) and decrement (for adjust
 
 - `Display of entries in selection lists` - the display of a project in dropdown fields
 - `Take over teams from the logged-in user when creating new entries` - if this is active, all teams of the currently logged-in users will be copied over to new created project, therefor extending the visibility of the current user (and all his teams) to the new project
-- `Project number format` - format for automatically generated project numbers, allowed replacers are `{pc}`, `{Y}`, `{y}`, `{M}`, `{m}`, `{D}`, `{d}`, `{YY}`, `{yy}`, `{MM}`, `{DD}` (see above at `Customer`)
+- `Project number format` - format for automatically generated project numbers, allowed replacers are `{pc}`, `{Y}`, `{y}`, `{M}`, `{m}`, `{D}`, `{d}`, `{YY}`, `{yy}`, `{MM}`, `{DD}`
 - `Allow multiple usages of the same number` - whether the same number can be used on multiple projects
+
+| Replacer | Description                                                     | Example  |
+|----------|-----------------------------------------------------------------|----------|
+| `{pc}`   | Project counter                                                 | 1        |
+| `{Y}`    | Year 4 digits                                                   | 2025     |
+| `{y}`    | Year 2 digits                                                   | 25       |
+| `{M}`    | Month with leading zero                                         | 04 or 10 |
+| `{m}`    | Month 1 or 2 digits                                             | 4 or 10  |
+| `{D}`    | Day with leading zero                                           | 04 or 23 |
+| `{d}`    | Day 1 or 2 digits                                               | 4 or 23  |
+| `{YY}`   | Like {y}, but incrementing until an unused number will be found | 2027     |
+| `{yy}`   | Like {y}, but incrementing until an unused number will be found | 27       |
+| `{MM}`   | Like {y}, but incrementing until an unused number will be found | 07       |
+| `{DD}`   | Like {y}, but incrementing until an unused number will be found | 27       |
+{: .table }
 
 ## Activity
 
@@ -161,11 +177,28 @@ You can use increment (for configuring a start value)) and decrement (for adjust
 - `Activity number format` - format for automatically generated activity numbers, allowed replacers are `{ac}`, `{Y}`, `{y}`, `{M}`, `{m}`, `{D}`, `{d}`, `{YY}`, `{yy}`, `{MM}`, `{DD}` (see above at `Customer`)
 - `Allow multiple usages of the same number` - whether the same number can be used on multiple activities
 
+| Replacer | Description                                                     | Example  |
+|----------|-----------------------------------------------------------------|----------|
+| `{ac}`   | Activity counter                                                | 1        |
+| `{Y}`    | Year 4 digits                                                   | 2025     |
+| `{y}`    | Year 2 digits                                                   | 25       |
+| `{M}`    | Month with leading zero                                         | 04 or 10 |
+| `{m}`    | Month 1 or 2 digits                                             | 4 or 10  |
+| `{D}`    | Day with leading zero                                           | 04 or 23 |
+| `{d}`    | Day 1 or 2 digits                                               | 4 or 23  |
+| `{YY}`   | Like {y}, but incrementing until an unused number will be found | 2027     |
+| `{yy}`   | Like {y}, but incrementing until an unused number will be found | 27       |
+| `{MM}`   | Like {y}, but incrementing until an unused number will be found | 07       |
+| `{DD}`   | Like {y}, but incrementing until an unused number will be found | 27       |
+{: .table }
+
 ## User
 
 - `Timezone` - default value for the "create user" form
-- `Country` - default value for the "create user" form
+- `Language` - default value for the "create user" form
+- `Design` - default value for the "create user" form
 - `Currency` - ONLY used to display the users hourly rate
+- `Allow the use of URLs for avatar images` - if activated, you can use a URL for a user avatar image 
 
 ## Theme
 
@@ -188,12 +221,8 @@ The default color palette is:
 - `End of visible time range` - the end time of the calendars week and day view (default: 24:00)
 - `Slot duration for week- and day view` - defines the duration for each calendar slot (row) in the week and day views, format: hh:mm:ss (default: 00:30:00 = 30 minutes)
 - `Amount of entries for drag&drop` - amount of rows per drag & drop box (0 = deactivated) 
+- `Copies data when adding via drag and drop` - when activated, form details will be populated from last entry  
 - `Display of the titles of calendar entries` - which data should be displayed in the title of each calendar entry
-
-Not editable right now:
-
-- `day_limit` - defined the max amount of items to be displayed for one day in the monthly view (default: 4) 
-- `businessHours.days` - defines your working days, which will be highlighted in the weekly and daily view. counting starts with sunday and the index 0, so 1 = monday, ..., 6 = saturday. (default: 1-5 / monday to friday)
 
 ## My company
 
