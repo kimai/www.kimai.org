@@ -638,6 +638,7 @@ global tick-tack clock will be replaced with a dropdown.</li>
   <li><code class="language-plaintext highlighter-rouge">Minute selection for From &amp; To</code> - steps counter for the “begin time” and “end time” dropdown-menu in the timesheet forms</li>
   <li><code class="language-plaintext highlighter-rouge">Minute selection for Duration</code> - steps counter for the “duration” dropdown-menu in the timesheet forms</li>
   <li><code class="language-plaintext highlighter-rouge">Maximum duration of a timesheet record</code> - maximum duration of a timesheet record in minutes, before update/stop is rejected (eg. to prevent users from booking a whole day). Can be deactivated by setting it to 0.</li>
+  <li><code class="language-plaintext highlighter-rouge">Break</code> - Activates break time tracking (a beta feature of Kimai)</li>
 </ul>
 
 <h3 id="time-tracking-modes">Time-tracking modes</h3>
@@ -718,10 +719,10 @@ users can edit their records until the fifth day of the month (because invoices 
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">Rounding mode</code> - see below</li>
-  <li><code class="language-plaintext highlighter-rouge">Rounding of the start time</code> - in minutes, zero (0) deactivates this config</li>
-  <li><code class="language-plaintext highlighter-rouge">Rounding of the end time</code> - in minutes, zero (0) deactivates this config</li>
-  <li><code class="language-plaintext highlighter-rouge">Rounding of the duration</code> - in minutes, zero (0) deactivates this config</li>
-  <li><code class="language-plaintext highlighter-rouge">Days of the week when rounding will be applied</code> - on all other days, the real recorded values will be used</li>
+  <li><code class="language-plaintext highlighter-rouge">Rounding of the start time</code> - in minutes, zero (0) deactivates this config (recommended 1)</li>
+  <li><code class="language-plaintext highlighter-rouge">Rounding of the end time</code> - in minutes, zero (0) deactivates this config (recommended 1)</li>
+  <li><code class="language-plaintext highlighter-rouge">Rounding of the duration</code> - in minutes, zero (0) deactivates this config (recommended 3, 6, 9, 12 or 15) <a href="/documentation/rounding.html">read this chapter</a></li>
+  <li><code class="language-plaintext highlighter-rouge">Days of the week when rounding will be applied</code> - on all other days, the real recorded values will be used (recommended: all days of the week)</li>
 </ul>
 
 <p>Rounding rules are used to round the <code class="language-plaintext highlighter-rouge">begin</code> and <code class="language-plaintext highlighter-rouge">end</code> times and the <code class="language-plaintext highlighter-rouge">duration</code> for timesheet records:</p>
@@ -729,7 +730,7 @@ users can edit their records until the fifth day of the month (because invoices 
 <ul>
   <li>The <code class="language-plaintext highlighter-rouge">end</code> date of timesheet records will be used to match the day (think of overnight entries)</li>
   <li>If you set one of <code class="language-plaintext highlighter-rouge">begin</code>, <code class="language-plaintext highlighter-rouge">end</code>, <code class="language-plaintext highlighter-rouge">duration</code> to 0 no rounding will be applied for that field, the exact time (including seconds) is used for calculation</li>
-  <li>The values of the rules are minutes (not the minute of an hour), so 5 for “begin” means we round down to the previous multiple of five</li>
+  <li>The values of the rules are minutes (not the minute of an hour), so 5 for <code class="language-plaintext highlighter-rouge">begin</code> means we round down to the previous multiple of five</li>
   <li>Rounding rules will be applied on stopped timesheet records only, so you might see an un-rounded value for the start time and duration until you stop the record</li>
 </ul>
 
@@ -745,7 +746,6 @@ users can edit their records until the fifth day of the month (because invoices 
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">Invoice number format</code> - read more at <a href="/documentation/invoices.html">invoices</a></li>
-  <li><code class="language-plaintext highlighter-rouge">Simple search</code> - displays a shorter search form, removing some fields which are used less often</li>
 </ul>
 
 <h2 id="authentication">Authentication</h2>
@@ -778,6 +778,11 @@ users can edit their records until the fifth day of the month (because invoices 
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{cc}</code></td>
+      <td>Customer counter</td>
+      <td>1</td>
+    </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">{Y}</code></td>
       <td>Year 4 digits</td>
@@ -839,9 +844,76 @@ You can use increment (for configuring a start value)) and decrement (for adjust
 <ul>
   <li><code class="language-plaintext highlighter-rouge">Display of entries in selection lists</code> - the display of a project in dropdown fields</li>
   <li><code class="language-plaintext highlighter-rouge">Take over teams from the logged-in user when creating new entries</code> - if this is active, all teams of the currently logged-in users will be copied over to new created project, therefor extending the visibility of the current user (and all his teams) to the new project</li>
-  <li><code class="language-plaintext highlighter-rouge">Project number format</code> - format for automatically generated project numbers, allowed replacers are <code class="language-plaintext highlighter-rouge">{pc}</code>, <code class="language-plaintext highlighter-rouge">{Y}</code>, <code class="language-plaintext highlighter-rouge">{y}</code>, <code class="language-plaintext highlighter-rouge">{M}</code>, <code class="language-plaintext highlighter-rouge">{m}</code>, <code class="language-plaintext highlighter-rouge">{D}</code>, <code class="language-plaintext highlighter-rouge">{d}</code>, <code class="language-plaintext highlighter-rouge">{YY}</code>, <code class="language-plaintext highlighter-rouge">{yy}</code>, <code class="language-plaintext highlighter-rouge">{MM}</code>, <code class="language-plaintext highlighter-rouge">{DD}</code> (see above at <code class="language-plaintext highlighter-rouge">Customer</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">Project number format</code> - format for automatically generated project numbers, allowed replacers are <code class="language-plaintext highlighter-rouge">{pc}</code>, <code class="language-plaintext highlighter-rouge">{Y}</code>, <code class="language-plaintext highlighter-rouge">{y}</code>, <code class="language-plaintext highlighter-rouge">{M}</code>, <code class="language-plaintext highlighter-rouge">{m}</code>, <code class="language-plaintext highlighter-rouge">{D}</code>, <code class="language-plaintext highlighter-rouge">{d}</code>, <code class="language-plaintext highlighter-rouge">{YY}</code>, <code class="language-plaintext highlighter-rouge">{yy}</code>, <code class="language-plaintext highlighter-rouge">{MM}</code>, <code class="language-plaintext highlighter-rouge">{DD}</code></li>
   <li><code class="language-plaintext highlighter-rouge">Allow multiple usages of the same number</code> - whether the same number can be used on multiple projects</li>
 </ul>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Replacer</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{pc}</code></td>
+      <td>Project counter</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{Y}</code></td>
+      <td>Year 4 digits</td>
+      <td>2025</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{y}</code></td>
+      <td>Year 2 digits</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{M}</code></td>
+      <td>Month with leading zero</td>
+      <td>04 or 10</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{m}</code></td>
+      <td>Month 1 or 2 digits</td>
+      <td>4 or 10</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{D}</code></td>
+      <td>Day with leading zero</td>
+      <td>04 or 23</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{d}</code></td>
+      <td>Day 1 or 2 digits</td>
+      <td>4 or 23</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{YY}</code></td>
+      <td>Like {y}, but incrementing until an unused number will be found</td>
+      <td>2027</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{yy}</code></td>
+      <td>Like {y}, but incrementing until an unused number will be found</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{MM}</code></td>
+      <td>Like {y}, but incrementing until an unused number will be found</td>
+      <td>07</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{DD}</code></td>
+      <td>Like {y}, but incrementing until an unused number will be found</td>
+      <td>27</td>
+    </tr>
+  </tbody>
+</table>
 
 <h2 id="activity">Activity</h2>
 
@@ -851,12 +923,81 @@ You can use increment (for configuring a start value)) and decrement (for adjust
   <li><code class="language-plaintext highlighter-rouge">Allow multiple usages of the same number</code> - whether the same number can be used on multiple activities</li>
 </ul>
 
+<table class="table">
+  <thead>
+    <tr>
+      <th>Replacer</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{ac}</code></td>
+      <td>Activity counter</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{Y}</code></td>
+      <td>Year 4 digits</td>
+      <td>2025</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{y}</code></td>
+      <td>Year 2 digits</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{M}</code></td>
+      <td>Month with leading zero</td>
+      <td>04 or 10</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{m}</code></td>
+      <td>Month 1 or 2 digits</td>
+      <td>4 or 10</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{D}</code></td>
+      <td>Day with leading zero</td>
+      <td>04 or 23</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{d}</code></td>
+      <td>Day 1 or 2 digits</td>
+      <td>4 or 23</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{YY}</code></td>
+      <td>Like {y}, but incrementing until an unused number will be found</td>
+      <td>2027</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{yy}</code></td>
+      <td>Like {y}, but incrementing until an unused number will be found</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{MM}</code></td>
+      <td>Like {y}, but incrementing until an unused number will be found</td>
+      <td>07</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{DD}</code></td>
+      <td>Like {y}, but incrementing until an unused number will be found</td>
+      <td>27</td>
+    </tr>
+  </tbody>
+</table>
+
 <h2 id="user">User</h2>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">Timezone</code> - default value for the “create user” form</li>
-  <li><code class="language-plaintext highlighter-rouge">Country</code> - default value for the “create user” form</li>
+  <li><code class="language-plaintext highlighter-rouge">Language</code> - default value for the “create user” form</li>
+  <li><code class="language-plaintext highlighter-rouge">Design</code> - default value for the “create user” form</li>
   <li><code class="language-plaintext highlighter-rouge">Currency</code> - ONLY used to display the users hourly rate</li>
+  <li><code class="language-plaintext highlighter-rouge">Allow the use of URLs for avatar images</code> - if activated, you can use a URL for a user avatar image</li>
 </ul>
 
 <h2 id="theme">Theme</h2>
@@ -891,14 +1032,8 @@ supporting simple lists and other HTML content. It will only be rendered in <cod
   <li><code class="language-plaintext highlighter-rouge">End of visible time range</code> - the end time of the calendars week and day view (default: 24:00)</li>
   <li><code class="language-plaintext highlighter-rouge">Slot duration for week- and day view</code> - defines the duration for each calendar slot (row) in the week and day views, format: hh:mm:ss (default: 00:30:00 = 30 minutes)</li>
   <li><code class="language-plaintext highlighter-rouge">Amount of entries for drag&amp;drop</code> - amount of rows per drag &amp; drop box (0 = deactivated)</li>
+  <li><code class="language-plaintext highlighter-rouge">Copies data when adding via drag and drop</code> - when activated, form details will be populated from last entry</li>
   <li><code class="language-plaintext highlighter-rouge">Display of the titles of calendar entries</code> - which data should be displayed in the title of each calendar entry</li>
-</ul>
-
-<p>Not editable right now:</p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">day_limit</code> - defined the max amount of items to be displayed for one day in the monthly view (default: 4)</li>
-  <li><code class="language-plaintext highlighter-rouge">businessHours.days</code> - defines your working days, which will be highlighted in the weekly and daily view. counting starts with sunday and the index 0, so 1 = monday, …, 6 = saturday. (default: 1-5 / monday to friday)</li>
 </ul>
 
 <h2 id="my-company">My company</h2>
