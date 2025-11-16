@@ -3,18 +3,15 @@ manual:
     icon: bx bx-book
     translation: docu-manual
     chapter:
-        -   id: manual
+        -
+            id: manual
             icon: bx bx-book
-            name: Using Kimai
+            name: User Guide
             description: Kimai user manual, explaining the UI and all available screens
-            pages: [ timesheet, weekly-times, calendar, invoices, export, reporting, customer, project, activity, tags, users, user-preferences, permissions, teams, configurations, doctor, contract, public-holiday, absence, dashboard ]
-        -   id: plugins
-            icon: bx bx-plug
-            name: Additional features
-            description: User documentation for features provided by (paid) plugins
-            pages: [ plugin-custom-fields, plugin-expenses, plugin-task-management, plugin-custom-css, plugin-custom-content, plugin-translation, plugin-invoice, plugin-import, plugin-audit-trail, plugin-kiosk, plugin-customer-portal ]
-        -   id: tips
-            name: Tips and Tricks
+            pages: [timesheet, weekly-times, calendar, invoices, export, reporting, customer, project, activity, tags, users, user-preferences, permissions, teams, configurations, doctor, contract, public-holiday, absence, dashboard, plugin-custom-fields, plugin-expenses, plugin-task-management, plugin-custom-css, plugin-custom-content, plugin-translation, plugin-invoice, plugin-import, plugin-audit-trail, plugin-kiosk, plugin-customer-portal]
+        -
+            id: tips
+            name: Advanced Topics
             description: Articles that explain basic functionality in Kimai
             icon: bx bx-bulb
             pages: [ initial-setup, rates, billable, pdf-templates, keyboard-shortcuts, i18n-am-pm, duration-format, "-", homescreen, user-api ]
@@ -23,12 +20,14 @@ cloud:
     icon: bx bx-cloud
     translation: docu-cloud
     chapter:
-        -   id: cloud
+        -
+            id: cloud
             icon: bx bxs-cloud
             name: Cloud management
             description: Manage your Kimai Cloud account
-            pages: [ cloud-backups, cloud-custom-domain, cloud-ip-restriction, cloud-saml, cloud-invoice-templates ]
-        -   id: faq
+            pages: [cloud-backups, cloud-custom-domain, cloud-ip-restriction, cloud-saml, cloud-invoice-templates]
+        -
+            id: faq
             icon: bx bx-question-mark
             name: FAQ
             description: Answers to frequent questions about Kimai Cloud
@@ -38,58 +37,68 @@ on-premise:
     icon: bx bx-server
     translation: onpremise
     chapter:
-        -   id: recommended
+        -
+            id: recommended
             icon: bx bxs-cloud-upload
             name: "Cloud setups"
             description: This is the recommended way for most users / companies
-            pages: [ hosting-hetzner-cloud, hosting-digital-ocean ]
-        -   id: docker
+            pages: [hosting-hetzner-cloud, hosting-digital-ocean]
+        -
+            id: docker
             icon: bx bxl-docker
             name: Using Docker
             description: Running and updating containerized Kimai images
-            pages: [ docker, docker-compose, kubernetes, building-docker, docker-troubleshooting ]
-        -   id: installation
+            pages: [docker, docker-compose, kubernetes, building-docker, docker-troubleshooting]
+        -
+            id: installation
             icon: bx bx-wrench
             name: "Setup with SSH"
             description: Manage Kimai via SSH on your own server
-            pages: [ installation, updates, cache, plugin-management ]
-        -   id: hosting
+            pages: [installation, updates, cache, plugin-management]
+        -
+            id: hosting
             icon: bx bx-wrench
             name: "Other setups"
             description: There are many ways how you could install and host Kimai
-            pages: [ fresh-ubuntu-22, webserver-configuration, synology, shared-hosting, hosting-1-click ]
-        -   id: on-premise
+            pages: [fresh-ubuntu-22, webserver-configuration, synology, shared-hosting, hosting-1-click]
+        -
+            id: on-premise
             icon: bx bx-server
             name: DevOps
             description: Manage and configure your Kimai installation
-            pages: [ backups, local-yaml, emails, logging, commands, faq-onpremise, migration-v1, versions ]
-        -   id: auth
+            pages: [backups, local-yaml, emails, logging, commands, faq-onpremise, migration-v1, versions]
+        -
+            id: auth
             icon: bx bx-lock
             name: Authenticator
             description: Log in to Kimai using external identity provider
-            pages: [ ldap, saml, saml-azure, saml-google, saml-keycloak, saml-authentik, saml-adfs ]
-        -   id: pluginsonpremise
+            pages: [ldap, saml, saml-azure, saml-google, saml-keycloak, saml-authentik, saml-adfs]
+        -
+            id: pluginsonpremise
             icon: bx bx-plug
             name: Plugins
             description: Plugin functionality available to onpremise installations
-            pages: [ plugin-contract ]
+            pages: [plugin-contract]
 developer:
     slug: chapter-developer
     icon: bx bx-code-alt
     translation: docu-developer
     chapter:
-        -   id: api
+        -
+            id: api
             icon: bx bx-code
             name: JSON API
             description: Use the JSON API to fetch and create data in Kimai
-            pages: [ rest-api, rest-api-examples, api-pagination ]
-        -   id: developer
+            pages: [rest-api, rest-api-examples, api-pagination]
+        -
+            id: developer
             icon: bx bx-git-branch
             name: Create plugins
             description: Creating custom plugins, extending Kimai, using internal APIs
-            pages: [ developers, extending-kimai, plugins, translations, meta-fields, theme, store, migration-v2 ]
-        -   id: extend
+            pages: [developers, extending-kimai, plugins, translations, meta-fields, theme, store, migration-v2]
+        -
+            id: extend
             icon: bx bxs-balloon
             name: Technical background
             description: Background info and technical correlations
-            pages: [ bughunter, permission-structure, sql-examples, redis ]
+            pages: [bughunter, permission-structure, sql-examples, redis]
