@@ -13,3 +13,5 @@ It connects to your existing, self-hosted Kimai instance using the official API 
 - German and English localization
 - Clean native SwiftUI interface for iPhone and iPad
 - Secure login via Kimai v2 API token (stored in iOS Keychain)
+
+Feedback, bug reports and feature requests can be [shared at Github](https://github.com/entttom/timai).
