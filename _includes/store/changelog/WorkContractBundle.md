@@ -1,3 +1,11 @@
+**Version 1.28.0**
+
+Compatibility: requires minimum Kimai 2.32.0
+
+- Allow to request an absence again for the same day, if it was rejected before
+- Count planned/future time-offs, to show the correct amount in the overtime account
+- Do not count rejected entries for any absence type statistic
+
 **Version 1.27.0**
 
 Compatibility: requires minimum Kimai 2.32.0
