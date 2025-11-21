@@ -12,15 +12,14 @@
 <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
-<title>Docker Compose – Kimai</title>
-<meta name="description" content="Running Kimai with Docker compose">
+<title>Lemonsqueezy Invoices – Kimai</title>
+<meta name="description" content="How to generate invoices for your plugin subscriptions from Lemonsqueezy">
 <link type="application/atom+xml" rel="alternate" href="https://www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
 <meta property="og:locale" content="en">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Kimai Time-Tracking">
 <meta property="og:image" content="https://www.kimai.org/images/social-preview.webp">
-<meta property="og:description" content="Running Kimai with Docker compose">
-<link rel="canonical" href="https://www.kimai.org/documentation/docker-compose.html" />
+<meta property="og:description" content="How to generate invoices for your plugin subscriptions from Lemonsqueezy">
 <link href="/assets/build/main.css?v6" rel="stylesheet" />
 
 </head>
@@ -187,7 +186,7 @@
                         
                         
                         
-                        <a href="/documentation/docker-compose.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2  active" id="docnavi-docker-compose">
+                        <a href="/documentation/docker-compose.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-docker-compose">
                             
                             Docker Compose
                             
@@ -512,7 +511,7 @@
                         
                         
                         
-                        <a href="/documentation/lemonsqueezy.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-lemonsqueezy">
+                        <a href="/documentation/lemonsqueezy.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2  active" id="docnavi-lemonsqueezy">
                             
                             Lemonsqueezy Invoices
                             
@@ -533,7 +532,7 @@
 </aside>
 <script>
     document.addEventListener("DOMContentLoaded", function(event) {
-        const dpm = document.getElementById('docnavi-docker-compose');
+        const dpm = document.getElementById('docnavi-lemonsqueezy');
         if (dpm !== null) {
             dpm.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
         }
@@ -544,9 +543,9 @@
 
         <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 pt-4 mb-n3">
             <div class="me-4">
-                <h1 class="pb-1">Docker Compose</h1>
+                <h1 class="pb-1">Lemonsqueezy Invoices</h1>
                 
-                <p class="text-muted fs-lg mb-2">Running Kimai with Docker compose</p>
+                <p class="text-muted fs-lg mb-2">How to generate invoices for your plugin subscriptions from Lemonsqueezy</p>
                 
             </div>
             
@@ -561,321 +560,37 @@
             <div>
                 
                 <div id="documentation-content">
-                    <p>Several docker-compose example files that use the latest Kimai version.</p>
+                    <p>LemonSqueezy allows customers to generate invoices for orders and subscription payments. 
+Customers can generate invoices through the “<a href="https://app.lemonsqueezy.com/my-orders">My Orders</a>” page in the customer portal, specifically within the billing history section for subscription payments.</p>
 
-<h2 id="apache-prod">Apache (prod)</h2>
+<p>To do this, log in to your account at <a href="https://app.lemonsqueezy.com/my-orders">https://app.lemonsqueezy.com/my-orders</a> using the email associated with the purchase, 
+navigate to the relevant order or subscription, and access the invoice from the billing history.</p>
 
-<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>services:
+<p>See this <a href="https://docs.lemonsqueezy.com/help/orders/generate-invoice">Lemonsqueezy documentation</a> for more details.</p>
 
-  sqldb:
-    image: mysql:8.3
-    volumes:
-      - mysql:/var/lib/mysql
-    environment:
-      - MYSQL_DATABASE=kimai
-      - MYSQL_USER=kimaiuser
-      - MYSQL_PASSWORD=kimaipassword
-      - MYSQL_ROOT_PASSWORD=changemeplease
-    command: --default-storage-engine innodb
-    restart: unless-stopped
-    healthcheck:
-      test: mysqladmin -p$$MYSQL_ROOT_PASSWORD ping -h localhost
-      interval: 20s
-      start_period: 10s
-      timeout: 10s
-      retries: 3
+<h3 id="screenshots">Screenshots</h3>
 
-  kimai:
-    image: kimai/kimai2:apache
-    volumes:
-      - data:/opt/kimai/var/data
-      - plugins:/opt/kimai/var/plugins
-    ports:
-      - 8001:8001
-    environment:
-      - ADMINMAIL=admin@kimai.local
-      - ADMINPASS=changemeplease
-      - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&amp;serverVersion=8.3.0"
-    restart: unless-stopped
+<p>Select the plugin and click the subscription:</p>
 
-volumes:
-  data:
-  mysql:
-  plugins:
-</code></pre></div></div>
+<figure class="d-block figure mb-3">
+    <img src="/images/documentation/lemonsqueezy-invoice-1.webp" class="figure-img img-fluid rounded" />
+    <figcaption class="figure-caption">My orders page</figcaption>
+</figure>
 
-<h2 id="environment-variables">Environment variables</h2>
+<p>Click an entry in the “billing history” to generate an invoice for the selected row:</p>
 
-<p>Instead of hardcoding your credentials and/or duplicating them in several places, you can also use a <code class="language-plaintext highlighter-rouge">.env</code> file like that:</p>
+<figure class="d-block figure mb-3">
+    <img src="/images/documentation/lemonsqueezy-invoice-2.webp" class="figure-img img-fluid rounded" />
+    <figcaption class="figure-caption">Billing history</figcaption>
+</figure>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DATABASE_NAME=kimai
-DATABASE_USER=kimaiuser
-DATABASE_PASSWORD=kimaipassword
-DATABASE_ROOT_PASSWORD=changemeplease
-ADMIN_EMAIL=admin@kimai.local
-ADMIN_PASSWORD=changemeplease
-</code></pre></div></div>
+<p>Fill in your company details and click “Generate invoice”:</p>
 
-<p>And then reference those from your <code class="language-plaintext highlighter-rouge">docker-compose.yaml</code>:</p>
+<figure class="d-block figure mb-3" style="max-width: 50%">
+    <img src="/images/documentation/lemonsqueezy-invoice-3.webp" class="figure-img img-fluid rounded" />
+    <figcaption class="figure-caption">Invoice generation</figcaption>
+</figure>
 
-<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>services:
-
-  sqldb:
-    image: mysql:8.3
-    volumes:
-      - mysql:/var/lib/mysql
-    environment:
-      - MYSQL_DATABASE=${DATABASE_NAME}
-      - MYSQL_USER=${DATABASE_USER}
-      - MYSQL_PASSWORD=${DATABASE_PASSWORD}
-      - MYSQL_ROOT_PASSWORD=${DATABASE_ROOT_PASSWORD}
-    command: --default-storage-engine innodb
-    restart: unless-stopped
-    healthcheck:
-      test: mysqladmin -p$$MYSQL_ROOT_PASSWORD ping -h localhost
-      interval: 20s
-      start_period: 10s
-      timeout: 10s
-      retries: 3
-
-  kimai:
-    image: kimai/kimai2:apache
-    volumes:
-      - data:/opt/kimai/var/data
-      - plugins:/opt/kimai/var/plugins
-    ports:
-      - 8001:8001
-    environment:
-      - ADMINMAIL=${ADMIN_EMAIL}
-      - ADMINPASS=${ADMIN_PASSWORD}
-      - "DATABASE_URL=mysql://${DATABASE_USER}:${DATABASE_PASSWORD}@sqldb/${DATABASE_NAME}?charset=utf8mb4&amp;serverVersion=8.3.0"
-    restart: unless-stopped
-
-volumes:
-  data:
-  mysql:
-  plugins:
-</code></pre></div></div>
-
-<h2 id="caddy-reverse-proxy">Caddy Reverse Proxy</h2>
-
-<p>Kimai has extensive examples of using Caddy as reverse proxy in frontend of Kimai.</p>
-
-<p>See <a href="/documentation/hosting-hetzner-cloud.html">Hetzner Cloud</a> and <a href="/documentation/hosting-digital-ocean.html">Digital Ocean</a> docs.</p>
-
-<h2 id="installing-plugins">Installing plugins</h2>
-
-<p>When using plugins, you can either use a <a href="https://docs.docker.com/engine/storage/volumes/">volume</a> or a <a href="https://docs.docker.com/engine/storage/bind-mounts/">bind mount</a>.
-As plugin are accessed read-only by Kimai, you can use both methods.</p>
-
-<p>Using a volume:</p>
-
-<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>services:
-    [...]
-
-  kimai:
-    image: kimai/kimai2:apache
-    volumes:
-      - data:/opt/kimai/var/data
-      - plugins:/opt/kimai/var/plugins
-    [...]
-
-volumes:
-  data:
-  plugins:
-</code></pre></div></div>
-
-<p>Or using a bind mount, pointing to the local filesystem at <code class="language-plaintext highlighter-rouge">/home/kimai/plugins</code>:</p>
-
-<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>services:
-
-  sqldb:
-    [...]
-
-  kimai:
-    image: kimai/kimai2:apache
-    volumes:
-      - data:/opt/kimai/var/data
-      - /home/kimai/plugins:/opt/kimai/var/plugins
-    [...]
-
-volumes:
-  data:
-</code></pre></div></div>
-
-<p>Once the Docker container is running up, you need to step into the container and install the plugin:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker <span class="nb">exec</span> <span class="nt">-ti</span> kimai /opt/kimai/bin/console cache:clear <span class="nt">--env</span><span class="o">=</span>prod
-docker <span class="nb">exec</span> <span class="nt">-ti</span> kimai /opt/kimai/bin/console kimai:bundle:workcontract:install
-</code></pre></div></div>
-
-<h2 id="using-a-localyaml">Using a local.yaml</h2>
-
-<p>This requires a new mount, e.g. mounting the local file <code class="language-plaintext highlighter-rouge">/home/kimai/local.yaml</code> into the correct location inside the image.</p>
-
-<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>services:
-    [...]
-
-  kimai:
-    image: kimai/kimai2:apache
-    volumes:
-      - data:/opt/kimai/var/data
-      - plugins:/opt/kimai/var/plugins
-      - /home/kimai/local.yaml:/opt/kimai/config/packages/local.yaml
-      
-    [...]
-
-volumes:
-  data:
-  plugins:
-</code></pre></div></div>
-
-<h2 id="fpm-and-nginx">FPM and nginx</h2>
-
-<p>Listed here are example setups for running the image(s).
-If you’d like to contribute a new one them please <a href="https://github.com/kimai/www.kimai.org/edit/main/_documentation/docker/docker-compose.md">raise a PR for this page</a>.</p>
-
-<div class="alert alert-danger d-flex" role="alert"><i class="bx bx-info-circle lead me-3"></i>
-<p>Be aware that the below image <a href="https://github.com/tobybatch/nginx-fpm-reverse-proxy">tobybatch/nginx-fpm-reverse-proxy</a> is only meant as example.
-It is not made for production usage. Use your existing reverse proxy instead!</p>
-</div>
-
-<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>services:
-
-  sqldb:
-    image: mysql:8.3
-    volumes:
-      - mysql:/var/lib/mysql
-    environment:
-      - MYSQL_DATABASE=kimai
-      - MYSQL_USER=kimaiuser
-      - MYSQL_PASSWORD=kimaipassword
-      - MYSQL_ROOT_PASSWORD=changemeplease
-    command: --default-storage-engine innodb
-    restart: unless-stopped
-    healthcheck:
-      test: mysqladmin -p$$MYSQL_ROOT_PASSWORD ping -h localhost
-      interval: 20s
-      start_period: 10s
-      timeout: 10s
-      retries: 3
-
-  nginx:
-    image: tobybatch/nginx-fpm-reverse-proxy
-    ports:
-      - 8001:80
-    volumes:
-      - public:/opt/kimai/public:ro
-    restart: unless-stopped
-    depends_on:
-      - kimai
-    healthcheck:
-      test:  wget --spider http://nginx/health || exit 1
-      interval: 20s
-      start_period: 10s
-      timeout: 10s
-      retries: 3
-
-  kimai:
-    image: kimai/kimai2:latest
-    environment:
-      - ADMINMAIL=admin@kimai.local
-      - ADMINPASS=changemeplease
-      - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&amp;serverVersion=8.3.0"
-    volumes:
-      - public:/opt/kimai/public
-      - plugins:/opt/kimai/var/plugins
-      <span class="c"># - data:/opt/kimai/var/data</span>
-      <span class="c"># - ./ldap.conf:/etc/openldap/ldap.conf:z</span>
-      <span class="c"># - ./ROOT-CA.pem:/etc/ssl/certs/ROOT-CA.pem:z</span>
-    restart: unless-stopped
-
-volumes:
-    data:
-    public:
-    mysql:
-    plugins:
-</code></pre></div></div>
-
-<h2 id="updating-kimai">Updating Kimai</h2>
-
-<p>The usual update step is simple: stop, pull latest version, restart.</p>
-
-<p>This example is based on the <code class="language-plaintext highlighter-rouge">Apache</code> image used with the <code class="language-plaintext highlighter-rouge">Docker compose</code> plugin:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Pull latest version</span>
-docker compose pull
-<span class="c"># Stop and remove older version</span>
-docker compose down
-<span class="c"># Start the container</span>
-docker compose up <span class="nt">-d</span>
-</code></pre></div></div>
-
-<h3 id="fpm-image">FPM image</h3>
-
-<p>The FPM image will need to be upgraded with a manual step.
-Because the FPM image will have a HTTP proxy (e.g. caddy or nginx) serving the static assets the <code class="language-plaintext highlighter-rouge">public</code> directory is mounted into that container. This is done via volumes:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">services</span><span class="pi">:</span>
-    <span class="na">kimai</span><span class="pi">:</span>
-        <span class="na">image</span><span class="pi">:</span> <span class="s">kimai/kimai2:latest</span>
-        <span class="s">...</span>
-        <span class="na">volumes</span><span class="pi">:</span>
-            <span class="pi">-</span> <span class="s">public:/opt/kimai/public</span>
-        <span class="s">...</span>
-    <span class="na">nginx</span><span class="pi">:</span>
-        <span class="s">...</span>
-        <span class="s">volumes</span><span class="err">:</span>
-            <span class="pi">-</span> <span class="s">public:/opt/kimai/public:ro</span>
-    <span class="s">...</span>
-</code></pre></div></div>
-
-<p>When the Kimai image is updated, and the container is restarted any new assets in the public directory are never included.
-These will be things like CSS files, images and especially version specific javascript code!
-To fix this you need to copy the newer files from a fresh image over the top.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># You might need to use `docker volume ls | grep kimai` to find the name of your Kimai "public" volume</span>
-docker run <span class="nt">--rm</span> <span class="nt">-ti</span> <span class="nt">-v</span> kimai_public:/public <span class="nt">--entrypoint</span> /bin/bash kimai/kimai2
-<span class="c">#                      ^^^^^^^^^^^^ -&gt; Kimai public volume</span>
-<span class="nb">cp</span> <span class="nt">-r</span> /opt/kimai/public /
-<span class="nb">exit</span>
-</code></pre></div></div>
-
-<p>Now you’ll need to tell the running kimai to update its assets:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker-compose <span class="nb">exec </span>kimai /opt/kimai/bin/console assets:install
-</code></pre></div></div>
-
-<h2 id="apache-dev">Apache (dev)</h2>
-
-<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>services:
-
-  sqldb:
-    image: mysql:8.3
-    environment:
-      - MYSQL_DATABASE=kimai
-      - MYSQL_USER=kimaiuser
-      - MYSQL_PASSWORD=kimaipassword
-      - MYSQL_ROOT_PASSWORD=changemeplease
-    command: --default-storage-engine innodb
-    restart: unless-stopped
-    healthcheck:
-      test: mysqladmin -p$$MYSQL_ROOT_PASSWORD ping -h localhost
-      interval: 20s
-      start_period: 10s
-      timeout: 10s
-      retries: 3
-
-  kimai:
-    image: kimai/kimai2:apache-dev
-    ports:
-      - 8001:8001
-    environment:
-      - ADMINMAIL=admin@kimai.local
-      - ADMINPASS=changemeplease
-      - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&amp;serverVersion=8.3.0"
-    restart: unless-stopped
-</code></pre></div></div>
 
                 </div>
                 
@@ -890,7 +605,7 @@ docker run <span class="nt">--rm</span> <span class="nt">-ti</span> <span class=
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#apache-prod" class="nav-link">Apache (prod)</a></li><li class="nav-item"><a href="#environment-variables" class="nav-link">Environment variables</a></li><li class="nav-item"><a href="#caddy-reverse-proxy" class="nav-link">Caddy Reverse Proxy</a></li><li class="nav-item"><a href="#installing-plugins" class="nav-link">Installing plugins</a></li><li class="nav-item"><a href="#using-a-localyaml" class="nav-link">Using a local.yaml</a></li><li class="nav-item"><a href="#fpm-and-nginx" class="nav-link">FPM and nginx</a></li><li class="nav-item"><a href="#updating-kimai" class="nav-link">Updating Kimai</a><ul><li class="nav-item"><a href="#fpm-image" class="nav-link">FPM image</a></li></ul></li><li class="nav-item"><a href="#apache-dev" class="nav-link">Apache (dev)</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#screenshots" class="nav-link">Screenshots</a></li></ul>
         
     </aside>
 
