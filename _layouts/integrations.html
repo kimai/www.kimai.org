@@ -21,7 +21,7 @@ layout: base
                 <div class="col-xl-7">
                     <div class="d-none d-xl-block mx-auto me-lg-0" style="max-width: 648px;">
                         <div class="align-self-end ms-xl-0 ms-md-4 p-lg-4 p-sm-3 p-2 rounded-4 overflow-hidden" style="background: linear-gradient(153.32deg, rgba(255, 255, 255, .3) -65.62%, rgba(255, 255, 255, .1) 83.28%); box-shadow: 0 .25rem 1.5rem -.0625rem rgba(0, 0, 0, .2); backdrop-filter: blur(25px);">
-                            <img src="/images/layout/integrations.webp" alt="Integrations" class="rounded-4" style="box-shadow: 0 0 7.5rem rgba(0, 0, 0, .1);">
+                            <img src="{{ page.image }}" alt="Integrations" class="rounded-4" style="box-shadow: 0 0 7.5rem rgba(0, 0, 0, .1);">
                         </div>
                     </div>
                 </div>
@@ -31,29 +31,7 @@ layout: base
 
     <section class="container mb-lg-4 pb-5 pt-3">
 
-        <article class="mb-5 pt-3">
-            <header class="d-flex align-items-center justify-content-between mb-5">
-                <span class="badge bg-success shadow-info fs-base fw-normal">{{ site.data[page.lang].translation.store-category-apps }}</span>
-            </header>
-            {% assign products = site.store | where: "lang", page.lang | where_exp:"product", "product.type == 'app'" | sort: 'title' %}
-            {% include store-list-cards.html products=products %}
-        </article>
-
-        <article class="mb-5 pt-3">
-            <header class="d-flex align-items-center justify-content-between mb-5">
-                <span class="badge bg-primary shadow-info fs-base fw-normal">{{ site.data[page.lang].translation.store-category-desktop }}</span>
-            </header>
-            {% assign products = site.store | where: "lang", page.lang | where_exp:"product", "product.type == 'desktop'" | sort: 'title' %}
-            {% include store-list-cards.html products=products %}
-        </article>
-
-        <article class="mb-5 pt-3">
-            <header class="d-flex align-items-center justify-content-between mb-5">
-                <span class="badge bg-warning shadow-info fs-base fw-normal">{{ site.data[page.lang].translation.store-category-client }}</span>
-            </header>
-            {% assign products = site.store | where: "lang", page.lang | where_exp:"product", "product.type == 'client'" %}
-            {% include store-list-cards.html products=products %}
-        </article>
+        {{ content }}
 
     </section>
 
