@@ -8,10 +8,9 @@ icon: university
 introduction: |
     Managing time in higher education brings unique challenges, including lecture and class scheduling, research project tracking, student and faculty time allocation, and time consuming administrative tasks. 
     Effective time tracking solutions can help streamline these processes, allowing educators and researchers to focus on their core responsibilities.
-image:
-    url: "/images/industry/university-academic.webp"
-    original: "https://www.pexels.com/photo/vienna-university-building-19977208/"
-    license: "https://www.pexels.com/license/"
+image: "/images/industry/university-academic.webp"
+image_source: "https://www.pexels.com/photo/vienna-university-building-19977208/"
+image_license: "https://www.pexels.com/license/"
 features:
     title: "Features for institution-wide time management"
     introduction: |

@@ -10,10 +10,9 @@ introduction: |
     But there are tools out there to help freelancers, contractors, digital nomads and solopreneurs track their billable hours, bill clients without pulling your hair out, manage your hourly rates and expenses, etc.
 
     It lets you focus on what you love - and get paid what you really deserve. Let's see how with Kimai as a time tracking tool for freelancers.
-image:
-    url: "/images/industry/freelancers.webp"
-    original: "Photo by KATRIN BOLOVTSOVA from Pexels: https://www.pexels.com/photo/woman-looking-at-dog-in-room-4680380/"
-    license: "https://www.pexels.com/license/"
+image: "/images/industry/freelancers.webp"
+image_source: "https://www.pexels.com/photo/woman-looking-at-dog-in-room-4680380/"
+image_license: "https://www.pexels.com/license/"
 features:
     title: "Features loved by freelancers "
     introduction: "Kimai is designed to help solopreneurs streamline their workflow. Whether you're juggling multiple clients or managing a variety of projects, Kimai provides the tools you need to stay organised and profitable."

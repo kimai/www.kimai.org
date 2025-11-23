@@ -9,10 +9,9 @@ introduction: |
     In the fast-paced world of legal services, time is your most valuable asset. Law firms, independent attorneys, and legal teams need a time tracking solution tailored to the unique demands of their profession. At Kimai, we understand that your focus should be on delivering exceptional legal services — not on battling complex timesheets.
 
     Manual hour logging, endless spreadsheets, and complicated export processes take valuable time away from providing expert legal counsel. Discover how efficient time tracking can help you focus on what truly matters.
-image:
-    url: "/images/industry/lawyer.webp"
-    original: "https://www.pexels.com/photo/a-person-signing-a-document-8730975/"
-    license: "https://www.pexels.com/license/"
+image: "/images/industry/lawyer.webp"
+image_source: "https://www.pexels.com/photo/a-person-signing-a-document-8730975/"
+image_license: "https://www.pexels.com/license/"
 features:
     title: "Kimai features loved by law firms"
     introduction: "Kimai is designed specifically with legal professionals in mind. We've created a time tracking tool that speaks your language – simple, reliable, GDPR compliant, and focused on making your workday smoother."
