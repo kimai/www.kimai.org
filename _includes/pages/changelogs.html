@@ -19,13 +19,7 @@
             <tr>
                 <td style="max-width: 200px">{{ changelog.date | date_to_string }}</td>
                 <td>
-                    <a href="{{ changelog.url }}" class="text-decoration-none">
-                        {%- if changelog.intro != nil %}
-                            {{ changelog.intro|strip_html }}
-                        {% else %}
-                            {{ changelog.title }}
-                        {% endif -%}
-                    </a>
+                    <a href="{{ changelog.url }}" class="text-decoration-none">{{ changelog.title }}</a>
                 </td>
             </tr>
             {% endfor %}
