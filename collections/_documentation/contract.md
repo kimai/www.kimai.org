@@ -129,6 +129,17 @@ So a user who works Monday to Thursday cannot create timesheets for Fridays.
 In order to help with exceptions, there is a permission called `workdays_override_timesheet`, which allows to override this validation.
 This permission should be granted to employees e.g. from HR department.
 
+## Carry over your time balance to the next year
+
+{% include youtube-video.html id="roll_over_work_balance" %}
+
+At the end of the current year (or begin of the new year) and once you figured out the final balance of an employees time account, 
+you have to roll over the hours to the next year:
+
+- Go `Employment contract > Working Times`
+- Click on the year dropdown and select the correct entry or click on the {% include demo-action-button.html icon="next" %} button to move to the next year
+- Scroll down and create a `Manual booking` (see above)
+
 ## Permissions
 
 {% include documentation/permissions.md id="work_contract" howto=true %}

@@ -79,6 +79,8 @@ This fills up entire days and can be entered as date-range.
 
 ## Creating absences for next year
 
+{% include youtube-video.html id="vacation_next_year" %}
+
 You can always only select absences for the currently selected year. 
 If you want to create absence requests in advance for next year, you have to change the selected year by:
 - clicking on the year dropdown and selecting the correct entry
