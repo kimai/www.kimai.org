@@ -20,11 +20,9 @@ Der gesamte Prozess geschieht über die Microsoft Graph API, ohne manuelles Eing
 
 ## Was ist enthalten?
 
-- ein neuer Konsolenbefehl `ms-teams:sync-folders`
-- automatische Erstellung von Kunden- und Projektordnern
+- ein neuer Konsolenbefehl `ms-teams:sync-folders` für die Erstellung von Kunden- und Projektordnern
 - Validierung Ihrer Teams-Konfiguration (Team ID, Ordnerpfad)
-- Status-Überprüfung („Configuration looks good.“)
-- Unterstützung für `.env.local`-Variablen:
+- Unterstützung für `.env`-Variablen:
     - `GRAPH_TENANT_ID`
     - `GRAPH_CLIENT_ID`
     - `GRAPH_CLIENT_SECRET`
@@ -41,14 +39,20 @@ Cronjobs sind optional – das Plugin kann auch manuell über den Befehl ausgef�
 
 ## Einrichtungsschritte nach der Installation
 
-1. Fügen Sie in Ihrer Kimai-Installation eine `.env.local` Datei hinzu:
+1. Fügen Sie in Ihrer Kimai-Installation eine `.env` Datei hinzu:
 
 ```
 GRAPH_TENANT_ID=
 GRAPH_CLIENT_ID=
 GRAPH_CLIENT_SECRET=
 ```
-
+Wenn Sie Docker verwenden, fügen Sie die Variablen in Ihrer `docker-compose.yml` Datei hinzu oder setzen Sie die folgende Flags
+```
+-e GRAPH_TENANT_ID=''
+-e GRAPH_CLIENT_ID=''
+-e GRAPH_CLIENT_SECRET=''
+```
+beim Starten des Containers.
 
 2. Konfigurieren Sie unter  
    **Kimai → System → Microsoft Teams**  
@@ -61,7 +65,7 @@ bin/console ms-teams:sync-folders
 ```
 
 
-Damit werden Kunden- und Projektordner mit Ihrem Microsoft-Team synchronisiert.
+Damit werden Kunden- und Projektordner mit Ihrem Microsoft-Team erstellt, solange Sie noch nicht existieren.
 
 {% else %}
 
@@ -86,11 +90,9 @@ Everything is handled via the Microsoft Graph API without manual interaction.
 
 ## What's included?
 
-- a new console command `ms-teams:sync-folders`
-- automatic creation of customer and project folders
+- a new console command `ms-teams:sync-folders` for creation of customer and project folders
 - configuration validation (Team ID, folder path)
-- status check ("Configuration looks good.")
-- support for `.env.local` variables:
+- support for `.env` variables:
     - `GRAPH_TENANT_ID`
     - `GRAPH_CLIENT_ID`
     - `GRAPH_CLIENT_SECRET`
@@ -107,13 +109,20 @@ Cronjobs are optional — the sync command may also run manually.
 
 ## Setup steps after Installation
 
-1. Create a `.env.local` file inside your Kimai installation and add:
+1. Create a `.env` file inside your Kimai installation and add:
 
 ```
 GRAPH_TENANT_ID=
 GRAPH_CLIENT_ID=
 GRAPH_CLIENT_SECRET=
 ```
+If you are using Docker, add the variables to your `docker-compose.yml` file or set the following flags
+```
+-e GRAPH_TENANT_ID=''
+-e GRAPH_CLIENT_ID=''
+-e GRAPH_CLIENT_SECRET=''
+```
+when starting the container.
 
 2. Configure the desired team and folder path under:  
    **Kimai → System → Microsoft Teams**
@@ -124,5 +133,5 @@ GRAPH_CLIENT_SECRET=
 bin/console ms-teams:sync-folders
 ```
 
-This synchronizes all customer and project folders with your selected Microsoft Team.
+This creates all customer and project folders with your selected Microsoft Team.
 {% endif %}
