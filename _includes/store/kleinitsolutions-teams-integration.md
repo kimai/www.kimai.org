@@ -32,7 +32,7 @@ Der gesamte Prozess geschieht über die Microsoft Graph API, ohne manuelles Eing
 Sie benötigen:
 
 - eine gültige Azure-App-Registrierung
-- die Möglichkeit, Umgebungsvariablen in `.env.local` zu setzen
+- die Möglichkeit, Umgebungsvariablen in `.env` zu setzen
 - Zugriff auf Microsoft Graph API
 
 Cronjobs sind optional – das Plugin kann auch manuell über den Befehl ausgeführt werden.
@@ -102,7 +102,7 @@ Everything is handled via the Microsoft Graph API without manual interaction.
 You need:
 
 - a valid Azure App Registration
-- the ability to set environment variables via `.env.local`
+- the ability to set environment variables via `.env`
 - access to Microsoft Graph API
 
 Cronjobs are optional — the sync command may also run manually.
