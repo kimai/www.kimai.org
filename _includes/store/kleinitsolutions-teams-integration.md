@@ -35,8 +35,6 @@ Sie benötigen:
 - die Möglichkeit, Umgebungsvariablen in `.env` zu setzen
 - Zugriff auf Microsoft Graph API
 
-Cronjobs sind optional – das Plugin kann auch manuell über den Befehl ausgeführt werden.
-
 ## Einrichtungsschritte nach der Installation
 
 1. Fügen Sie in Ihrer Kimai-Installation eine `.env` Datei hinzu:
@@ -105,7 +103,6 @@ You need:
 - the ability to set environment variables via `.env`
 - access to Microsoft Graph API
 
-Cronjobs are optional — the sync command may also run manually.
 
 ## Setup steps after Installation
 
