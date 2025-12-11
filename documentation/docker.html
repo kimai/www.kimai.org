@@ -649,16 +649,18 @@ Any issues with the container rather than the application itself can be raised <
      <span class="nt">-e</span> <span class="nv">MYSQL_USER</span><span class="o">=</span>kimai <span class="se">\</span>
      <span class="nt">-e</span> <span class="nv">MYSQL_PASSWORD</span><span class="o">=</span>kimai <span class="se">\</span>
      <span class="nt">-e</span> <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>kimai <span class="se">\</span>
-     <span class="nt">-p</span> 3399:3306 <span class="nt">-d</span> mysql
+     <span class="nt">-p</span> 3456:3306 <span class="nt">-d</span> mysql
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Start Kimai</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> docker run <span class="nt">--rm</span> <span class="nt">--name</span> kimai-test <span class="se">\</span>
+     <span class="nt">-d</span> <span class="se">\</span>
      <span class="nt">-ti</span> <span class="se">\</span>
      <span class="nt">-p</span> 8001:8001 <span class="se">\</span>
-     <span class="nt">-e</span> <span class="nv">DATABASE_URL</span><span class="o">=</span>mysql://kimai:kimai@<span class="k">${</span><span class="nv">HOSTNAME</span><span class="k">}</span>:3399/kimai?charset<span class="o">=</span>utf8mb4&amp;serverVersion<span class="o">=</span>8.3.0 <span class="se">\</span>
+     <span class="nt">-e</span> <span class="nv">APP_ENV</span><span class="o">=</span><span class="s2">"prod"</span> <span class="se">\</span>
+     <span class="nt">-e</span> <span class="nv">DATABASE_URL</span><span class="o">=</span><span class="s2">"mysql://kimai:kimai@host.docker.internal:3456/kimai?charset=utf8mb4&amp;serverVersion=9.5.0"</span> <span class="se">\</span>
      kimai/kimai2:apache
 </code></pre></div>    </div>
 
