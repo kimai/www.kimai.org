@@ -51,11 +51,12 @@ Subscriptions are also possible for customers from the following countries:
 
 ## Countries with B2B only
 
-Customers from the following countries need to provide a document that proves they are a B2B customer (usually Tax ID, or company registration):
+Customers from the following countries need to provide a document, proving that are a B2B customer (usually Tax ID, or company registration):
 
 - GB = United Kingdom
 - CO = Columbia
 - TR = Turkey
+- UA = Ukraine
 
 ## Unsupported countries
 
@@ -67,6 +68,7 @@ Due to international tax regulations, we currently cannot provide service in tho
 - RS = Serbia
 - LI = Liechtenstein
 - IN = India
+- XK = Kosovo
 
 ## Other countries
 
