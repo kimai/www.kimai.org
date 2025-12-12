@@ -41,7 +41,7 @@ The files in `translations/` as a quick overview:
 - `flashmessages` - success and error messages (alerts), which will be shown after submitting data
 - `invoice-calculator` - invoice calculator types (see `Adding invoice calculator` in [developers]({% link _documentation/developer/developers.md %})-section)
 - `invoice-numbergenerator` - invoice calculator (see `Adding invoice-number generator ` in [developers]({% link _documentation/developer/developers.md %})-section)
-- `invoice-renderer` - holds translations of all invoice templates ([read more]({% link _documentation/invoices.md %}))
+- `invoice-renderer` - holds translations of all invoice templates ([read more]({% link _documentation/invoice-templates.md %}))
 - `messages` - most of the visible application translations (like menu, buttons and forms)
 - `plugins` - the plugin screen
 - `system-configuration` - all system configuration, which can be changed through the UI

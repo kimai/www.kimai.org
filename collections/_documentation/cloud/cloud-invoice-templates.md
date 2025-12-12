@@ -21,4 +21,4 @@ Please ZIP and mail them to our support email at [support@kimai.cloud](mailto:{{
 
 ## Further documentation
 
-Please read the [invoice documentation]({% link _documentation/invoices.md %}) to find out how to create your own invoice template.
+Please read the [documentation]({% link _documentation/invoice-templates.md %}) to find out how to create your own invoice template.

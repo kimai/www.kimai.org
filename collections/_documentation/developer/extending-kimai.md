@@ -118,7 +118,7 @@ Widgets are referenced by their ID.
 
 ### Adding documents for invoice rendering
 
-In the config `kimai.invoice.documents`, you can add a list of directories with the locations of your invoice document templates ([read more]({% link _documentation/invoices.md %})).
+In the config `kimai.invoice.documents`, you can add a list of directories with the locations of your invoice templates ([read more]({% link _documentation/invoice-templates.md %})).
 
 ### Adding invoice calculator
 
