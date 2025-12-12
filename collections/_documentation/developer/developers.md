@@ -6,16 +6,79 @@ canonical: /documentation/developers.html
 
 This page is for all developers who want to contribute to Kimai. You rock!
 
-# Setting up your environment
+## Development installation
 
-All you need is:
+### Docker Compose
+
+```dockerfile
+services:
+
+  sqldb:
+    image: mysql:8.3
+    environment:
+      - MYSQL_DATABASE=kimai
+      - MYSQL_USER=kimaiuser
+      - MYSQL_PASSWORD=kimaipassword
+      - MYSQL_ROOT_PASSWORD=changemeplease
+    command: --default-storage-engine innodb
+    restart: unless-stopped
+    healthcheck:
+      test: mysqladmin -p$$MYSQL_ROOT_PASSWORD ping -h localhost
+      interval: 20s
+      start_period: 10s
+      timeout: 10s
+      retries: 3
+
+  kimai:
+    image: kimai/kimai2:apache-dev
+    ports:
+      - 8001:8001
+    environment:
+      - ADMINMAIL=admin@kimai.local
+      - ADMINPASS=changemeplease
+      - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&serverVersion=8.3.0"
+    restart: unless-stopped
+```
+
+### Docker
+
+1. Start a database
+
+    ```bash
+    docker run --rm --name kimai-mysql-dev \
+        -e MYSQL_DATABASE=kimai \
+        -e MYSQL_USER=kimai \
+        -e MYSQL_PASSWORD=kimai \
+        -e MYSQL_ROOT_PASSWORD=kimai \
+        -p 3457:3306 -d mysql
+    ```
+2. Start Kimai
+
+    ```bash
+    docker run --rm --name kimai-dev \
+        -d \
+        -ti \
+        -p 8001:8001 \
+        -e APP_ENV="dev" \
+        -e DATABASE_URL="mysql://kimai:kimai@host.docker.internal:3457/kimai?charset=utf8mb4&serverVersion=9.5.0" \
+        kimai/kimai2:dev
+    ```
+3. Import development fixtures and users
+
+    ```bash
+    docker exec -ti kimai-dev /opt/kimai/bin/console kimai:reset:dev
+    ```
+
+For more docker commands, read the [Docker chapter]({% link _documentation/docker/docker.md %})
+
+### Native
+
+You need:
 
 - a recent PHP version, best is 8.3+
 - some standard PHP extensions, see composer file for more infos
 - a MariaDB 11.1+ or MySQL 8.3+ instance
 - [Composer](https://getcomposer.org/download/) and `git`
-
-## Development installation
 
 Clone the repository and install all dependencies:
 
@@ -50,6 +113,15 @@ Its totally up to you how to achieve that, I can recommend the [Symfony local we
 symfony serve --port=8010
 ```
 
+If you want to test with an empty installation, erase the database and re-create an empty schema:
+
+```bash
+bin/console doctrine:schema:drop --force
+bin/console doctrine:schema:create
+```
+
+## Development data
+
 You can now log in with these accounts:
 
 | Username       | Password | API Key | Role                |
@@ -63,14 +135,7 @@ You can now log in with these accounts:
 {: .table }
 
 Demo data can always be deleted by dropping the schema and re-creating it.
-The `kimai:reset:dev` command will do that automatically and can always be executed later on to reset your dev database and cache.
-
-If you want to test with an empty installation, erase the database and re-create an empty schema:
-
-```bash
-bin/console doctrine:schema:drop --force
-bin/console doctrine:schema:create
-```
+The `kimai:reset:dev` command will do that automatically and can always be executed later on to reset your database and cache.
 
 ## Frontend dependencies
 

@@ -301,34 +301,6 @@ Now you'll need to tell the running kimai to update its assets:
 docker-compose exec kimai /opt/kimai/bin/console assets:install
 ```
 
-## Apache (dev)
+## Development
 
-```dockerfile
-services:
-
-  sqldb:
-    image: mysql:8.3
-    environment:
-      - MYSQL_DATABASE=kimai
-      - MYSQL_USER=kimaiuser
-      - MYSQL_PASSWORD=kimaipassword
-      - MYSQL_ROOT_PASSWORD=changemeplease
-    command: --default-storage-engine innodb
-    restart: unless-stopped
-    healthcheck:
-      test: mysqladmin -p$$MYSQL_ROOT_PASSWORD ping -h localhost
-      interval: 20s
-      start_period: 10s
-      timeout: 10s
-      retries: 3
-
-  kimai:
-    image: kimai/kimai2:apache-dev
-    ports:
-      - 8001:8001
-    environment:
-      - ADMINMAIL=admin@kimai.local
-      - ADMINPASS=changemeplease
-      - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&serverVersion=8.3.0"
-    restart: unless-stopped
-```
+If you want to start a development image, please switch to the [developer docs]({% link _documentation/developer/developers.md %})
