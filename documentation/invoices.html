@@ -13,13 +13,13 @@
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
 <title>Invoices – Kimai</title>
-<meta name="description" content="Create invoices directly within Kimai from timesheet data in several formats">
+<meta name="description" content="Create invoices within Kimai in several file formats">
 <link type="application/atom+xml" rel="alternate" href="https://www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
 <meta property="og:locale" content="en">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Invoices">
 <meta property="og:image" content="https://www.kimai.org/images/social-preview.webp">
-<meta property="og:description" content="Create invoices directly within Kimai from timesheet data in several formats">
+<meta property="og:description" content="Create invoices within Kimai in several file formats">
 <link rel="canonical" href="https://www.kimai.org/documentation/invoices.html" />
 <link href="/assets/build/main.css?v6" rel="stylesheet" />
 
@@ -507,6 +507,16 @@
                         
                         
                         
+                        <a href="/documentation/invoice-templates.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-invoice-templates">
+                            
+                            Invoice templates
+                            
+                        </a>
+                        
+                        
+                        
+                        
+                        
                         <a href="/documentation/pdf-templates.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-pdf-templates">
                             
                             PDF templates
@@ -593,7 +603,7 @@
             <div class="me-4">
                 <h1 class="pb-1">Invoices</h1>
                 
-                <p class="text-muted fs-lg mb-2">Create invoices directly within Kimai from timesheet data in several formats</p>
+                <p class="text-muted fs-lg mb-2">Create invoices within Kimai in several file formats</p>
                 
             </div>
             
@@ -630,6 +640,62 @@
 <div class="youtube-wrapper" style="max-width: 560px;">
     <iframe width="100%" height="315" src="https://www.youtube.com/embed/wrXqR4uhN-Q" title="Your first Kimai invoice" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 </div>
+
+<h2 id="export-flag">Export flag</h2>
+
+<p>Invoices and exports share the <code class="language-plaintext highlighter-rouge">export</code> flag, which is used to mark timesheet records as processed.
+These records cannot be edited any longer by regular users and are excluded by default from further invoices and exports.</p>
+
+<p>For further information, read the <a href="/documentation/timesheet.html">timesheet documentation</a>.</p>
+
+<h2 id="billable-items-only">Billable items only</h2>
+
+<p>Only billable items will be included in invoices.</p>
+
+<p>By default, every timesheet record is billable, but users can set the billable flag on individual timesheets.</p>
+
+<p><a href="/store/expenses-bundle.html">Expense items</a> have a configurable billable flag per item and only the ones marked as billable (refundable) will be included.</p>
+
+<h2 id="invoice-state">Invoice state</h2>
+
+<p>Invoices can have multiple states:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">New</code> invoices were just created</li>
+  <li><code class="language-plaintext highlighter-rouge">Waiting for payment</code> means the invoice was sent to the customer</li>
+  <li><code class="language-plaintext highlighter-rouge">Invoice paid</code> flags the invoice for its final state (you have to choose a payment date)</li>
+  <li><code class="language-plaintext highlighter-rouge">Canceled</code> invoices were accidentally created or required changes after creation</li>
+</ul>
+
+<h3 id="cancel-invoices">Cancel invoices</h3>
+
+<p>It is important to understand, that Kimai does not keep track of the items that were included in an invoice.</p>
+
+<p>By canceling an invoice, you do <strong>not</strong> reset the <code class="language-plaintext highlighter-rouge">export</code> state of the timesheets,
+but have to filter for already exported records if you want to re-create the invoice with the same timesheets.</p>
+
+<p>Canceled invoices stay in the system and the invoice number will be kept for bookkeeping.</p>
+
+<h3 id="deleting-invoices">Deleting invoices</h3>
+
+<p>Invoices should not be deleted, because this can cause problems in Kimai (depending on your invoice number format).</p>
+
+<p>You should instead “cancel” invalid invoices. Some users fear legal issues if they don’t have consecutive invoice numbers, 
+but this is often not a legal requirement (please clarify with your accountant).</p>
+
+<p>If you still insist on deleting invoices, do <strong>not</strong> delete them if you already created invoices afterward.
+This will cause troubles with your invoice counter, as Kimai is calculating invoice numbers from the number of entries in the database.
+By deleting invoices, you lower the number of invoices in the database, and the next invoice number might be one that was already used.</p>
+
+<p>Invoice deletion is therefor disabled by default, but you can activate it with the <code class="language-plaintext highlighter-rouge">delete_invoice</code> <a href="/documentation/permissions.html">permissions</a>.</p>
+
+<h2 id="invoice-templates">Invoice templates</h2>
+
+<ul>
+  <li>Read how to <a href="/documentation/invoice-templates.html">create your own invoice template</a></li>
+  <li>The community shares re-usable invoices templates at <a href="https://github.com/kimai/invoice-templates">https://github.com/kimai/invoice-templates</a></li>
+  <li>Due to security restrictions, you can only upload the formats <code class="language-plaintext highlighter-rouge">DOCX</code>, <code class="language-plaintext highlighter-rouge">ODS</code>, <code class="language-plaintext highlighter-rouge">XLSX</code></li>
+  <li>Cloud customers <a href="/documentation/cloud-invoice-templates.html">need to send customer Twig templates</a> to the support</li>
+</ul>
 
 <h2 id="invoice-number-format">Invoice number format</h2>
 
@@ -674,9 +740,10 @@ Example: to get a three digit long string with year counter use <code class="lan
   <li>The invoice number is unique in Kimai, and you cannot generate an invoice with the same invoice number twice. Kimai will try to avoid that automatically by incrementing the counter, but if that is impossible, you’ll see an error message.</li>
   <li>You can change the format at <a href="/documentation/configurations.html">System &gt; Settings</a>.</li>
 </ol>
+
 </div>
 
-<h3 id="incrementing-the-invoice-counter">Incrementing the invoice counter</h3>
+<h3 id="increment-counter">Increment counter</h3>
 
 <p>It is possible to increment the counter by adding a number to the result.
 For evaluated counters, Kimai takes the number of found invoices and adds 1, but you can replace <code class="language-plaintext highlighter-rouge">+1</code> with an addition like <code class="language-plaintext highlighter-rouge">+3</code>.
@@ -684,7 +751,7 @@ This works for the following replacer: <code class="language-plaintext highlight
 
 <p>Simply use the plus (<code class="language-plaintext highlighter-rouge">+</code>) after the replacer, eg. <code class="language-plaintext highlighter-rouge">{cy+72}</code>. This also works in combination with the length formatter, eg.: <code class="language-plaintext highlighter-rouge">{cy+72,3}</code></p>
 
-<h3 id="decrementing-the-invoice-counter">Decrementing the invoice counter</h3>
+<h3 id="decrement-counter">Decrement counter</h3>
 
 <p>You can decrement the counter subtracting a number from the result.
 For evaluated counters, Kimai takes the number of found invoices and adds <code class="language-plaintext highlighter-rouge">+1</code>, but you can replace <code class="language-plaintext highlighter-rouge">+1</code> with a subtraction like <code class="language-plaintext highlighter-rouge">-12</code>.
@@ -705,1023 +772,9 @@ per year, which is prefixed with the four-digit year:</p>
   <li><code class="language-plaintext highlighter-rouge">{Y}/{cy-72,3}</code> would result in <code class="language-plaintext highlighter-rouge">2020/001</code> for your first invoice</li>
 </ul>
 
-<h2 id="invoice-state">Invoice state</h2>
+<h2 id="invoice-archive">Invoice archive</h2>
 
-<p>Invoices can have multiple states:</p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">New</code> invoices were just created</li>
-  <li><code class="language-plaintext highlighter-rouge">Waiting for payment</code> means the invoice was sent to the customer</li>
-  <li><code class="language-plaintext highlighter-rouge">Invoice paid</code> flags the invoice for its final state (you have to choose a payment date)</li>
-  <li><code class="language-plaintext highlighter-rouge">Canceled</code> invoices were accidentally created or required changes after creation</li>
-</ul>
-
-<h3 id="cancel-invoices">Cancel invoices</h3>
-
-<p>It is important to understand, that Kimai does not keep track of the items that were included in an invoice.</p>
-
-<p>By canceling an invoice, you do <strong>not</strong> reset the “export state” of the timesheets,
-but have to filter for already exported records if you want to re-create the invoice with the same timesheets.</p>
-
-<p>Canceled invoices stay in the system and the invoice number will be kept for bookkeeping.</p>
-
-<h3 id="deleting-invoices">Deleting invoices</h3>
-
-<p>Invoices should not be deleted, because this can cause problems in Kimai (depending on your invoice number format).</p>
-
-<p>You should instead “cancel” invalid invoices. Some users fear legal issues if they don’t have consecutive invoice numbers, 
-but this is often not a legal requirement (please clarify with your accountant).</p>
-
-<p>If you still insist on deleting invoices, do <strong>not</strong> delete them if you already created invoices afterward.
-This will cause troubles with your invoice counter, as Kimai is calculating invoice numbers from the number of entries in the database.
-By deleting invoices, you lower the number of invoices in the database, and the next invoice number might be one that was already used.</p>
-
-<p>Invoice deletion is therefor disabled by default, but you can activate it with the <code class="language-plaintext highlighter-rouge">delete_invoice</code> <a href="/documentation/permissions.html">permissions</a>.</p>
-
-<h2 id="export-state">Export state</h2>
-
-<p>Invoices and exports share the export state, which is used to mark timesheet records as processed.
-These records cannot be edited any longer by regular users and are excluded by default from further invoices and exports.</p>
-
-<p>You need to tick the “mark as export” checkbox before saving the invoice, to automatically set the export state on all filtered timesheet records.</p>
-
-<p>The “mark as export” checkbox is only available for users with the <code class="language-plaintext highlighter-rouge">edit_export_other_timesheet</code> <a href="/documentation/permissions.html">permission</a>.</p>
-
-<p>For further information, read the <a href="/documentation/timesheet.html">timesheet documentation</a>.</p>
-
-<h2 id="billable-items-only">Billable items only</h2>
-
-<p>Only billable items will be included in invoices.</p>
-
-<p>By default, every timesheet record is billable, but users can set the billable flag on individual timesheets.</p>
-
-<p><a href="/store/expenses-bundle.html">Expense items</a> have a configurable billable flag per item and only the ones marked as billable (refundable) will be included.</p>
-
-<hr />
-
-<h2 id="invoice-document">Invoice document</h2>
-
-<p>The invoice system currently supports the following formats:</p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">PDF</code>
-    <ul>
-      <li>through the use of Twig templates</li>
-      <li>filename must end with <code class="language-plaintext highlighter-rouge">.pdf.twig</code></li>
-      <li>Pro: no need for additional software</li>
-      <li>Contra: you have to understand HTML, Twig and the MPDF library</li>
-      <li><strong>the recommended invoice document format</strong></li>
-    </ul>
-  </li>
-  <li><code class="language-plaintext highlighter-rouge">HTML</code>
-    <ul>
-      <li>through the use of Twig templates</li>
-      <li>filename must end with <code class="language-plaintext highlighter-rouge">.html.twig</code></li>
-      <li>Pro: no need for additional software, print or convert to PDF from your browser (if supported)</li>
-      <li>Contra: you have to understand HTML and Twig</li>
-    </ul>
-  </li>
-  <li><code class="language-plaintext highlighter-rouge">DOCX</code>
-    <ul>
-      <li>OOXML - Open Office XML Text</li>
-      <li>Microsoft Word 2007-2013 XML</li>
-      <li>filename must end with <code class="language-plaintext highlighter-rouge">.docx</code></li>
-      <li>Pro: simple customization and possibility to edit the invoice later on</li>
-      <li>Contra: Non-free software required</li>
-    </ul>
-  </li>
-  <li><code class="language-plaintext highlighter-rouge">ODS</code>
-    <ul>
-      <li>Open Document Spreadsheet or OASIS, is the OpenOffice.org XML file format for spreadsheets supported by OpenOffice, LibreOffice, StarCalc, Microsoft and others</li>
-      <li>file extension: filename must end with <code class="language-plaintext highlighter-rouge">.ods</code></li>
-      <li>Pro: open format, good for exporting and creating enhanced reports with an office software package</li>
-      <li>Contra: not ideal format for invoices (harder to customize)</li>
-    </ul>
-  </li>
-  <li><code class="language-plaintext highlighter-rouge">XLSX</code>
-    <ul>
-      <li>Microsoft Excel™ 2007 shipped with a new file format, namely Microsoft Office Open XML SpreadsheetML, and Excel 2010 extended this still further with new features.</li>
-      <li>file extension: filename must end with <code class="language-plaintext highlighter-rouge">.xlsx</code></li>
-      <li>Pro: good for creating enhanced reports with an office software package</li>
-      <li>Contra: Non-free software required, not ideal format for invoices</li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="create-your-own-invoice-document">Create your own invoice document</h3>
-
-<p>Invoice documents are searched in two locations:</p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">var/invoices/</code> - does not exist by default, please create it when you add a new document</li>
-  <li><code class="language-plaintext highlighter-rouge">templates/invoice/renderer/</code> - don’t change files in here, will be overwritten with the next update</li>
-</ul>
-
-<p>Be aware of the following rules:</p>
-
-<ul>
-  <li>Documents are addressed by their filename without extension (e.g. <code class="language-plaintext highlighter-rouge">kimai.html.twig</code> results in <code class="language-plaintext highlighter-rouge">kimai</code>)</li>
-  <li>You can use every document name only once: so having <code class="language-plaintext highlighter-rouge">kimai.html.twig</code> and <code class="language-plaintext highlighter-rouge">kimai.docx</code> will lead to unpredictable results (the first file to be found takes precedence)</li>
-  <li>Kimai looks for templates in <code class="language-plaintext highlighter-rouge">var/invoices/</code> first, so you can overwrite default templates</li>
-  <li>You should store your templates in <code class="language-plaintext highlighter-rouge">var/invoices/</code>, as this directory is not shipped with Kimai and not touched during updates</li>
-  <li>You can <a href="/documentation/local-yaml.html">configure different search directories</a> through the config key <code class="language-plaintext highlighter-rouge">kimai.invoice.documents</code> if you want to add additional template source directories</li>
-</ul>
-
-<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i><p>Do NOT change the default templates, but copy the file and save it (with a new filename) at var/invoices/</p>
-</div>
-
-<p>After you changed an invoice template, you have to <a href="/documentation/cache.html">clear the cache</a> to see the results.</p>
-
-<h3 id="more-invoice-templates">More invoice templates</h3>
-
-<p>There is a place where the community can share invoice templates. Please do so, if you created a nice looking and re-usable template yourself!</p>
-
-<p>The repository for all templates is <a href="https://github.com/kimai/invoice-templates">https://github.com/kimai/invoice-templates</a> and it includes installation notes</p>
-
-<h3 id="twig-templates">Twig templates</h3>
-
-<p>Generally speaking, you have two main variables in your template which you should use:</p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">entries</code> which is an array of arrays, with the first level representing the invoice items and the second level being <code class="language-plaintext highlighter-rouge">Timesheet entry variables</code> (see below)</li>
-  <li><code class="language-plaintext highlighter-rouge">invoice</code> which is an array of variables (see <code class="language-plaintext highlighter-rouge">Template variables</code> below), just with a different syntax for access, e.g.: <code class="language-plaintext highlighter-rouge">{{ invoice['invoice.due_date'] }}</code> instead of <code class="language-plaintext highlighter-rouge">${invoice.due_date}</code></li>
-  <li><strong>Attention</strong>: accessing the <code class="language-plaintext highlighter-rouge">model</code> variable (instance of <code class="language-plaintext highlighter-rouge">App\Model\InvoiceModel</code>) directly is deprecated and will be removed in the future (no BC promise given!)</li>
-</ul>
-
-<p>Please see the <a href="https://github.com/kimai/kimai/blob/main/templates/invoice/renderer">default templates</a> at
-GitHub to find out which variables can be used.</p>
-
-<p>Use this debug template to find out which variables are available:</p>
-<div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="nt">&lt;html&gt;</span>
-<span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;title&gt;</span><span class="cp">{{</span> <span class="nv">invoice</span><span class="p">[</span><span class="s1">'invoice.number'</span><span class="p">]</span> <span class="cp">}}</span>-<span class="cp">{{</span> <span class="nv">invoice</span><span class="p">[</span><span class="s1">'customer.company'</span><span class="p">]</span><span class="o">|</span><span class="nf">default</span><span class="p">(</span><span class="nv">invoice</span><span class="p">[</span><span class="s1">'customer.name'</span><span class="p">])</span><span class="o">|</span><span class="nf">u</span><span class="err">.</span><span class="nv">snake</span> <span class="cp">}}</span><span class="nt">&lt;/title&gt;</span>
-    <span class="nt">&lt;style </span><span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
-        <span class="cp">{{</span> <span class="nv">encore_entry_css_source</span><span class="p">(</span><span class="s1">'invoice-pdf'</span><span class="p">)</span><span class="o">|</span><span class="nf">raw</span> <span class="cp">}}</span>
-    <span class="nt">&lt;/style&gt;</span>
-<span class="nt">&lt;/head&gt;</span>
-<span class="nt">&lt;body&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"wrapper"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;h3&gt;</span>The following list of variables is available for this invoice:<span class="nt">&lt;/h3&gt;</span>
-    <span class="nt">&lt;p&gt;</span>Please note, that the available variables will change depending on your search. E.g. the <span class="cp">{{</span> <span class="s1">'{{ project }}'</span> <span class="cp">}}</span> variables are only available if you selected a project in your search filter.<span class="nt">&lt;/p&gt;</span>
-    <span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"items"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;tr&gt;</span>
-            <span class="nt">&lt;th&gt;</span>Variable<span class="nt">&lt;/th&gt;</span>
-            <span class="nt">&lt;th&gt;</span>Value<span class="nt">&lt;/th&gt;</span>
-        <span class="nt">&lt;/tr&gt;</span>
-        <span class="cp">{%</span> <span class="k">for</span> <span class="nv">name</span><span class="p">,</span> <span class="nv">value</span> <span class="ow">in</span> <span class="nv">invoice</span> <span class="cp">%}</span>
-            <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"</span><span class="cp">{{</span> <span class="nv">cycle</span><span class="p">([</span><span class="s1">'odd'</span><span class="p">,</span> <span class="s1">'even'</span><span class="p">],</span> <span class="nv">loop.index0</span><span class="p">)</span> <span class="cp">}}</span><span class="s">"</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;td&gt;</span><span class="cp">{{</span> <span class="s2">"{{ invoice['"</span> <span class="err">~</span> <span class="nv">name</span> <span class="err">~</span> <span class="s2">"'] }}"</span> <span class="cp">}}</span><span class="nt">&lt;/td&gt;</span>
-                <span class="nt">&lt;td&gt;</span><span class="cp">{{</span> <span class="nv">invoice</span><span class="p">[</span><span class="nv">name</span><span class="p">]</span> <span class="cp">}}</span><span class="nt">&lt;/td&gt;</span>
-            <span class="nt">&lt;/tr&gt;</span>
-        <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
-    <span class="nt">&lt;/table&gt;</span>
-    <span class="nt">&lt;h3&gt;</span>The following list is available for all timesheet entries, which can be rendered like this:<span class="nt">&lt;/h3&gt;</span>
-    <span class="nt">&lt;pre&gt;</span>
-    <span class="cp">{{</span> <span class="s1">'{%'</span> <span class="cp">}}</span> for entry in entries <span class="cp">{{</span> <span class="s1">'%}'</span> <span class="cp">}}</span>
-    <span class="ni">&amp;lt;</span>ul<span class="ni">&amp;gt;</span>
-        <span class="cp">{{</span> <span class="s1">'{%'</span> <span class="cp">}}</span> for name, value in entry <span class="cp">{{</span> <span class="s1">'%}'</span> <span class="cp">}}</span>
-            <span class="ni">&amp;lt;</span>li<span class="ni">&amp;gt;</span><span class="cp">{{</span> <span class="s1">'{{ name }}'</span> <span class="cp">}}</span>: <span class="cp">{{</span> <span class="s1">'{{ value }}'</span> <span class="cp">}}</span><span class="ni">&amp;lt;</span>/li<span class="ni">&amp;gt;</span>
-        <span class="cp">{{</span> <span class="s1">'{%'</span> <span class="cp">}}</span> endfor <span class="cp">{{</span> <span class="s1">'%}'</span> <span class="cp">}}</span>
-    <span class="ni">&amp;lt;</span>/ul<span class="ni">&amp;gt;</span>
-    <span class="cp">{{</span> <span class="s1">'{%'</span> <span class="cp">}}</span> endfor <span class="cp">{{</span> <span class="s1">'%}'</span> <span class="cp">}}</span>
-    <span class="nt">&lt;/pre&gt;</span>
-    <span class="nt">&lt;p&gt;</span>The table below contains only the first timesheet record:<span class="nt">&lt;/p&gt;</span>
-    <span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"items"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;tr&gt;</span>
-            <span class="nt">&lt;th&gt;</span>Variable<span class="nt">&lt;/th&gt;</span>
-            <span class="nt">&lt;th&gt;</span>Value<span class="nt">&lt;/th&gt;</span>
-        <span class="nt">&lt;/tr&gt;</span>
-        <span class="cp">{%</span> <span class="k">for</span> <span class="nv">entry</span> <span class="ow">in</span> <span class="nv">entries</span><span class="o">|</span><span class="nf">slice</span><span class="p">(</span><span class="nv">1</span><span class="p">)</span> <span class="cp">%}</span>
-            <span class="cp">{%</span> <span class="k">for</span> <span class="nv">name</span><span class="p">,</span> <span class="nv">value</span> <span class="ow">in</span> <span class="nv">entry</span> <span class="cp">%}</span>
-                <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"</span><span class="cp">{{</span> <span class="nv">cycle</span><span class="p">([</span><span class="s1">'odd'</span><span class="p">,</span> <span class="s1">'even'</span><span class="p">],</span> <span class="nv">loop.index0</span><span class="p">)</span> <span class="cp">}}</span><span class="s">"</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;td&gt;</span><span class="cp">{{</span> <span class="s2">"{{ entry['"</span> <span class="err">~</span> <span class="nv">name</span> <span class="err">~</span> <span class="s2">"'] }}"</span> <span class="cp">}}</span><span class="nt">&lt;/td&gt;</span>
-                    <span class="nt">&lt;td&gt;</span><span class="cp">{{</span> <span class="nv">value</span> <span class="cp">}}</span><span class="nt">&lt;/td&gt;</span>
-                <span class="nt">&lt;/tr&gt;</span>
-            <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
-        <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
-    <span class="nt">&lt;/table&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
-</code></pre></div></div>
-
-<p>Want to include an image in your template? Use the <code class="language-plaintext highlighter-rouge">asset</code> tag for referencing relative URLs (this example points to the directory <code class="language-plaintext highlighter-rouge">public/images/my-logo.png</code>):</p>
-
-<div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"</span><span class="cp">{{</span> <span class="nv">asset</span><span class="p">(</span><span class="s1">'images/my-logo.png'</span><span class="p">)</span> <span class="cp">}}</span><span class="s">"</span><span class="nt">&gt;</span>
-</code></pre></div></div>
-
-<p>But the safest way is to host your images on your own domain:</p>
-
-<div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://www.example.com/images/my-logo.png"</span><span class="nt">&gt;</span>
-</code></pre></div></div>
-
-<p>Due to security reasons, multiple twig functions and filters are disabled in the invoice renderer.
-Therefor you cannot for example use <code class="language-plaintext highlighter-rouge">include</code> or <code class="language-plaintext highlighter-rouge">embed</code> to include other templates.</p>
-
-<h4 id="custom-fields">Custom fields</h4>
-
-<p>Iterating above all entries (line items) in the invoice with <code class="language-plaintext highlighter-rouge">{% for line in entries %}</code> 
-allows access to your custom fields.</p>
-
-<p>Want to use a <strong>timesheet custom-field</strong> in your template?</p>
-<div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span> <span class="k">if</span> <span class="nv">line</span><span class="p">[</span><span class="s1">'entry.meta.foo'</span><span class="p">]</span> <span class="ow">is</span> <span class="nb">defined</span> <span class="cp">%}</span>
-    Foo: <span class="cp">{{</span> <span class="nv">line</span><span class="p">[</span><span class="s1">'entry.meta.foo'</span><span class="p">]</span> <span class="cp">}}</span>
-<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
-</code></pre></div></div>
-<p>Please be aware:</p>
-<ul>
-  <li>you can access timesheet custom fields only if you use the “sum calculation” standard, which creates one invoice line item per timesheet.</li>
-  <li>if you group timesheets, e.g., by project, you lose access to their custom fields.</li>
-  <li>entries could be of type “expense” or other types (depending on your used plugins), you can test that with <code class="language-plaintext highlighter-rouge">{% if line['entry.type'] == 'timesheet' '%}</code></li>
-</ul>
-
-<p>Want to use a <strong>customer custom-field</strong> in your template?</p>
-<div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span> <span class="k">if</span> <span class="nv">invoice</span><span class="p">[</span><span class="s1">'customer.meta.foo'</span><span class="p">]</span> <span class="ow">is</span> <span class="nb">defined</span> <span class="cp">%}</span>
-    Foo: <span class="cp">{{</span> <span class="nv">invoice</span><span class="p">[</span><span class="s1">'customer.meta.foo'</span><span class="p">]</span> <span class="cp">}}</span>
-<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
-</code></pre></div></div>
-
-<p>Want to use a <strong>project custom-field</strong> in your template?</p>
-<div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span> <span class="k">if</span> <span class="nv">line</span><span class="p">[</span><span class="s1">'entry.project.meta.foo'</span><span class="p">]</span> <span class="ow">is</span> <span class="nb">defined</span> <span class="cp">%}</span>
-    Foo: <span class="cp">{{</span> <span class="nv">line</span><span class="p">[</span><span class="s1">'entry.project.meta.foo'</span><span class="p">]</span> <span class="cp">}}</span>
-<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
-</code></pre></div></div>
-
-<p>Want to use a <strong>user preference</strong> in your template?</p>
-<div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span> <span class="k">if</span> <span class="nv">line</span><span class="p">[</span><span class="s1">'entry.user_preference.foo'</span><span class="p">]</span> <span class="ow">is</span> <span class="nb">defined</span> <span class="cp">%}</span>
-    Foo: <span class="cp">{{</span> <span class="nv">line</span><span class="p">[</span><span class="s1">'entry.user_preference.foo'</span><span class="p">]</span> <span class="cp">}}</span>
-<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
-</code></pre></div></div>
-
-<h3 id="pdf-templates">PDF templates</h3>
-
-<p>There is so much to say about PDF templates, that there is a dedicated page about <a href="/documentation/pdf-templates.html">PDF templates</a>.</p>
-
-<h3 id="docx-templates">Docx templates</h3>
-
-<p>Docx templates are processed by <a href="https://github.com/PHPOffice/PHPWord">PHPWord</a> and its <code class="language-plaintext highlighter-rouge">TemplateProcessor</code>.</p>
-
-<p><strong>Important:</strong> You have to add the variable <code class="language-plaintext highlighter-rouge">${entry.row}</code> in the table row that will be duplicated for each entry,
-otherwise the records will not be rendered at all. In that case only the global values will be replaced!</p>
-
-<p>The row containing this variable will be cloned for every included (timesheet) record.</p>
-
-<p>The variable <code class="language-plaintext highlighter-rouge">${entry.row}</code> will be removed during the rendering process, it will not show up in your generated invoices.</p>
-
-<p>See below in <code class="language-plaintext highlighter-rouge">Template variables</code> to find out which variables you can use in your template.</p>
-
-<p>Find out more about PHPWord templates <a href="https://phpword.readthedocs.io/en/latest/templates-processing.html">here</a>.</p>
-
-<h3 id="spreadsheets-ods-and-xlsx">Spreadsheets (ODS and XLSX)</h3>
-
-<p>Spreadsheet templates are powered by <a href="https://github.com/PHPOffice/PhpSpreadsheet">PhpSpreadsheet</a>.</p>
-
-<p><strong>Important:</strong> within the first 100 rows of the <strong>active spreadsheet</strong> you MUST-HAVE the template row for timesheet entries, which means there must be
-a value starting with <code class="language-plaintext highlighter-rouge">${entry.</code> in one of the first 10 columns, otherwise no timesheet records will be rendered.</p>
-
-<p>If you don’t have that, you will see the error <code class="language-plaintext highlighter-rouge">Invalid invoice document, no template row found.</code>.
-This error might also happen if you have multiple sheets in your spreadsheet, and save the file while the active sheet is one without the <code class="language-plaintext highlighter-rouge">${entry.</code> placeholder.</p>
-
-<p><em>Check the default templates if that doesn’t make sense to you ;-)</em></p>
-
-<p>The row containing the <code class="language-plaintext highlighter-rouge">${entry.</code> template will be cloned for every timesheet entry.</p>
-
-<p>See below in <code class="language-plaintext highlighter-rouge">Template variables</code> to find out which variables you can use.</p>
-
-<h2 id="template-variables">Template variables</h2>
-
-<p>Be aware, that the following list of variables is working for the “document” based formats (ODS, XLSX, DOCX).</p>
-
-<p>Twig rendering is different, you have to access the variables with <code class="language-plaintext highlighter-rouge">{{ invoice['xxx.yyy'] }}</code> instead of <code class="language-plaintext highlighter-rouge">${xxx.yyy}</code>.</p>
-
-<p>Date variables have equivalents with the suffix <code class="language-plaintext highlighter-rouge">_process</code>, so you can use them in combination with the Twig filter for date formatting e.g. <code class="language-plaintext highlighter-rouge">|date('d. m. Y.')</code>.
-So you can either use the pre-formatted date value or you can convert it yourself.
-The example <code class="language-plaintext highlighter-rouge">{{ invoice['invoice.due_date'] }}</code> would then be converted to <code class="language-plaintext highlighter-rouge">{{ invoice['invoice.due_date_process']|date('d. m. Y.') }}</code>.</p>
-
-<h3 id="global-variables">Global variables</h3>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Key</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>${invoice.due_date}</td>
-      <td>The due date for the invoice payment formatted in the requested locale</td>
-    </tr>
-    <tr>
-      <td>${invoice.due_date_process}</td>
-      <td>The due date for the invoice payment, to be formatted with the twig filter <code class="language-plaintext highlighter-rouge">date()</code></td>
-    </tr>
-    <tr>
-      <td>${invoice.date}</td>
-      <td>The creation date of this invoice</td>
-    </tr>
-    <tr>
-      <td>${invoice.date_process}</td>
-      <td>The creation date of this invoice, to be formatted with the twig filter <code class="language-plaintext highlighter-rouge">date()</code></td>
-    </tr>
-    <tr>
-      <td>${invoice.number}</td>
-      <td>The generated invoice number</td>
-    </tr>
-    <tr>
-      <td>${invoice.currency}</td>
-      <td>The invoice currency</td>
-    </tr>
-    <tr>
-      <td>${invoice.currency_symbol}</td>
-      <td>The invoice currency as symbol (if available)</td>
-    </tr>
-    <tr>
-      <td>${invoice.total_time}</td>
-      <td>The total working time (entries with a fixed rate are always calculated with 1)</td>
-    </tr>
-    <tr>
-      <td>${invoice.duration_decimal}</td>
-      <td>The total working time as decimal value</td>
-    </tr>
-    <tr>
-      <td>${invoice.language}</td>
-      <td>The invoices language as two character code</td>
-    </tr>
-    <tr>
-      <td>${invoice.total}</td>
-      <td>The invoices total (including tax) with currency</td>
-    </tr>
-    <tr>
-      <td>${invoice.total_nc}</td>
-      <td>The invoices total (including tax) without currency</td>
-    </tr>
-    <tr>
-      <td>${invoice.total_plain}</td>
-      <td>The invoices total (including tax) as unformatted value</td>
-    </tr>
-    <tr>
-      <td>${invoice.subtotal}</td>
-      <td>The invoices subtotal (excluding tax) with currency</td>
-    </tr>
-    <tr>
-      <td>${invoice.subtotal_nc}</td>
-      <td>The invoices subtotal (excluding tax) without currency</td>
-    </tr>
-    <tr>
-      <td>${invoice.subtotal_plain}</td>
-      <td>The invoices subtotal (excluding tax) as unformatted value</td>
-    </tr>
-    <tr>
-      <td>${invoice.currency}</td>
-      <td>The invoices currency as string (like EUR or USD)</td>
-    </tr>
-    <tr>
-      <td>${invoice.vat}</td>
-      <td>The VAT in percent for this invoice</td>
-    </tr>
-    <tr>
-      <td>${invoice.tax}</td>
-      <td>The tax of the invoice amount with currency</td>
-    </tr>
-    <tr>
-      <td>${invoice.tax_nc}</td>
-      <td>The tax of the invoice amount without currency</td>
-    </tr>
-    <tr>
-      <td>${invoice.tax_plain}</td>
-      <td>The tax of the invoice amount as unformatted value</td>
-    </tr>
-    <tr>
-      <td>${invoice.tax_hide}</td>
-      <td>A boolean flag indicating if the tax field should be hidden (only applies if tax = 0)</td>
-    </tr>
-    <tr>
-      <td>${template.name}</td>
-      <td>The invoice name, as configured in your template</td>
-    </tr>
-    <tr>
-      <td>${template.company}</td>
-      <td>The company name, as configured in your template</td>
-    </tr>
-    <tr>
-      <td>${template.address}</td>
-      <td>The invoicing address, as configured in your template</td>
-    </tr>
-    <tr>
-      <td>${template.title}</td>
-      <td>The invoice title, as configured in your template</td>
-    </tr>
-    <tr>
-      <td>${template.payment_terms}</td>
-      <td>Your payment terms, might be multiple lines</td>
-    </tr>
-    <tr>
-      <td>${template.due_days}</td>
-      <td>The amount of days for the payment, starting with the day of creating the invoice</td>
-    </tr>
-    <tr>
-      <td>${template.vat_id}</td>
-      <td>The Vat ID for this invoice</td>
-    </tr>
-    <tr>
-      <td>${template.contact}</td>
-      <td>Extended contact information, might be multiple lines</td>
-    </tr>
-    <tr>
-      <td>${template.payment_details}</td>
-      <td>Extended payment details like bank accounts, might be multiple lines</td>
-    </tr>
-    <tr>
-      <td>${query.begin}</td>
-      <td>The query begin as formatted short date</td>
-    </tr>
-    <tr>
-      <td>${query.begin_process}</td>
-      <td>The query begin, to be formatted with the twig filter <code class="language-plaintext highlighter-rouge">date()</code></td>
-    </tr>
-    <tr>
-      <td>${query.end}</td>
-      <td>The query end as formatted short date</td>
-    </tr>
-    <tr>
-      <td>${query.end_process}</td>
-      <td>The query end, to be formatted with the twig filter <code class="language-plaintext highlighter-rouge">date()</code></td>
-    </tr>
-    <tr>
-      <td>${query.month}</td>
-      <td>The month for this query (begin date) <strong>DEPRECATED</strong></td>
-    </tr>
-    <tr>
-      <td>${query.month_number}</td>
-      <td>The numerical value for the month (with leading zero) <strong>DEPRECATED</strong></td>
-    </tr>
-    <tr>
-      <td>${query.day}</td>
-      <td>The day for the queries begin as numerical value with leading zero <strong>DEPRECATED</strong></td>
-    </tr>
-    <tr>
-      <td>${query.year}</td>
-      <td>The year for this query (begin date) <strong>DEPRECATED</strong></td>
-    </tr>
-    <tr>
-      <td>${query.begin_month}</td>
-      <td>The month for the queries begin date</td>
-    </tr>
-    <tr>
-      <td>${query.begin_month_number}</td>
-      <td>The numerical value for the month of the queries begin date with leading zero</td>
-    </tr>
-    <tr>
-      <td>${query.begin_day}</td>
-      <td>The day for the queries begin as numerical value with leading zero</td>
-    </tr>
-    <tr>
-      <td>${query.begin_year}</td>
-      <td>The year for the queries begin date</td>
-    </tr>
-    <tr>
-      <td>${query.end_month}</td>
-      <td>The month for the queries end date</td>
-    </tr>
-    <tr>
-      <td>${query.end_month_number}</td>
-      <td>The numerical value for the month of the queries end date with leading zero</td>
-    </tr>
-    <tr>
-      <td>${query.end_day}</td>
-      <td>The day for the queries end as numerical value with leading zero</td>
-    </tr>
-    <tr>
-      <td>${query.end_year}</td>
-      <td>The year for the queries end date</td>
-    </tr>
-    <tr>
-      <td>${query.activity.name}</td>
-      <td>Activity name (only if exactly one activity was filtered)</td>
-    </tr>
-    <tr>
-      <td>${query.activity.comment}</td>
-      <td>Activity comment/description (only if exactly one activity was filtered)</td>
-    </tr>
-    <tr>
-      <td>${query.project.name}</td>
-      <td>Project name (only if exactly one project was filtered)</td>
-    </tr>
-    <tr>
-      <td>${query.project.comment}</td>
-      <td>Project comment/description (only if exactly one project was filtered)</td>
-    </tr>
-    <tr>
-      <td>${query.project.order_number}</td>
-      <td>Project Order-Number (only if exactly one project was filtered)</td>
-    </tr>
-    <tr>
-      <td>${user.display}</td>
-      <td>The current users display name</td>
-    </tr>
-    <tr>
-      <td>${user.email}</td>
-      <td>The current users email</td>
-    </tr>
-    <tr>
-      <td>${user.name}</td>
-      <td>The current users name</td>
-    </tr>
-    <tr>
-      <td>${user.alias}</td>
-      <td>The current users alias</td>
-    </tr>
-    <tr>
-      <td>${user.title}</td>
-      <td>The current users title</td>
-    </tr>
-    <tr>
-      <td>${user.see_others}</td>
-      <td>A boolean indicating if the current user can see other users items</td>
-    </tr>
-    <tr>
-      <td>${user.meta.X}</td>
-      <td>The current users <a href="/documentation/user-preferences.html">preference</a> named <code class="language-plaintext highlighter-rouge">X</code></td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="timesheet-entry-variables">Timesheet entry variables</h3>
-
-<p>For each timesheet record you can use these variables:</p>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Key</th>
-      <th>Description</th>
-      <th>Example</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>${entry.row}</td>
-      <td>An empty string, used as template row for docx</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>${entry.description}</td>
-      <td>The entries description</td>
-      <td><em>foo bar</em></td>
-    </tr>
-    <tr>
-      <td>${entry.description_safe}</td>
-      <td>The entries description. If that is empty the activity name will be used.</td>
-      <td><em>foo bar</em></td>
-    </tr>
-    <tr>
-      <td>${entry.amount}</td>
-      <td>DEPRECATED (do not use): The decimal duration for this entry. If this is a fixed rate entry, it contains the formatted amount.</td>
-      <td>2.78</td>
-    </tr>
-    <tr>
-      <td>${entry.rate}</td>
-      <td>The rate for one unit of the entry (normally one hour) with currency</td>
-      <td>1.100,01 EUR</td>
-    </tr>
-    <tr>
-      <td>${entry.rate_nc}</td>
-      <td>The rate for one unit of the entry without currency</td>
-      <td>1100,01</td>
-    </tr>
-    <tr>
-      <td>${entry.rate_plain}</td>
-      <td>The rate for one unit of the entry as unformatted value</td>
-      <td>1100.01</td>
-    </tr>
-    <tr>
-      <td>${entry.total}</td>
-      <td>The total rate for this entry with currency</td>
-      <td>1.278,33 EUR</td>
-    </tr>
-    <tr>
-      <td>${entry.total_nc}</td>
-      <td>The total rate for this entry without currency</td>
-      <td>1.278,33</td>
-    </tr>
-    <tr>
-      <td>${entry.total_plain}</td>
-      <td>The total rate as unformatted value</td>
-      <td>1278.33</td>
-    </tr>
-    <tr>
-      <td>${entry.currency}</td>
-      <td>The currency for this record as string (like EUR or USD)</td>
-      <td>EUR</td>
-    </tr>
-    <tr>
-      <td>${entry.duration}</td>
-      <td>The duration in seconds</td>
-      <td>10020</td>
-    </tr>
-    <tr>
-      <td>${entry.duration_format}</td>
-      <td>The duration in human-readable format</td>
-      <td>02:47</td>
-    </tr>
-    <tr>
-      <td>${entry.duration_decimal}</td>
-      <td>The duration in decimal format (with localized separator)</td>
-      <td>2.78</td>
-    </tr>
-    <tr>
-      <td>${entry.duration_minutes}</td>
-      <td>The duration in minutes with no decimals</td>
-      <td>167</td>
-    </tr>
-    <tr>
-      <td>${entry.begin}</td>
-      <td>The begin date (format depends on the users language)</td>
-      <td>27.10.2018</td>
-    </tr>
-    <tr>
-      <td>${entry.begin_time}</td>
-      <td>The formatted time for the begin of this entry</td>
-      <td>14:57</td>
-    </tr>
-    <tr>
-      <td>${entry.begin_timestamp}</td>
-      <td>The timestamp for the begin of this entry</td>
-      <td>1542016273</td>
-    </tr>
-    <tr>
-      <td>${entry.end}</td>
-      <td>The begin date  (format depends on the users language)</td>
-      <td>27.10.2018</td>
-    </tr>
-    <tr>
-      <td>${entry.end_time}</td>
-      <td>The formatted time for the end of this entry</td>
-      <td>17:44</td>
-    </tr>
-    <tr>
-      <td>${entry.end_timestamp}</td>
-      <td>The timestamp for the end of this entry</td>
-      <td>1542016273</td>
-    </tr>
-    <tr>
-      <td>${entry.date}</td>
-      <td>The start date when this record was created</td>
-      <td>27.10.2018</td>
-    </tr>
-    <tr>
-      <td>${entry.date_process}</td>
-      <td>The start date of this record, to be formatted with the twig filter <code class="language-plaintext highlighter-rouge">date()</code></td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>${entry.week}</td>
-      <td>The start week number when this record was created</td>
-      <td>39</td>
-    </tr>
-    <tr>
-      <td>${entry.weekyear}</td>
-      <td>The corresponding year to the week number</td>
-      <td>2018</td>
-    </tr>
-    <tr>
-      <td>${entry.user_id}</td>
-      <td>The user ID</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>${entry.user_name}</td>
-      <td>The username</td>
-      <td>susan_super</td>
-    </tr>
-    <tr>
-      <td>${entry.user_alias}</td>
-      <td>The user alias</td>
-      <td>Susan Miller</td>
-    </tr>
-    <tr>
-      <td>${entry.user_preference.foo}</td>
-      <td>The user preference called <code class="language-plaintext highlighter-rouge">foo</code></td>
-      <td>bar</td>
-    </tr>
-    <tr>
-      <td>${entry.activity}</td>
-      <td>Activity name</td>
-      <td>Post production</td>
-    </tr>
-    <tr>
-      <td>${entry.activity_id}</td>
-      <td>Activity ID</td>
-      <td>124</td>
-    </tr>
-    <tr>
-      <td>${entry.project}</td>
-      <td>Project name</td>
-      <td>Nemesis</td>
-    </tr>
-    <tr>
-      <td>${entry.project_id}</td>
-      <td>Project ID</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <td>${entry.customer}</td>
-      <td>Customer name</td>
-      <td>Acme Studios</td>
-    </tr>
-    <tr>
-      <td>${entry.customer_id}</td>
-      <td>Customer ID</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>${entry.meta.foo}</td>
-      <td>The <a href="/documentation/plugin-custom-fields.html">meta field</a> with the internal name <code class="language-plaintext highlighter-rouge">foo</code> (must be in lowercase letters, e.g. <code class="language-plaintext highlighter-rouge">FOO</code> will be available as <code class="language-plaintext highlighter-rouge">${entry.meta.foo}</code>. Only available if the field is visible.</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>${entry.tags}</td>
-      <td>Comma separated list of all tags</td>
-      <td>foo, bar</td>
-    </tr>
-    <tr>
-      <td>${entry.type}</td>
-      <td>The type of this entry (plugins can add custom types)</td>
-      <td>timesheet</td>
-    </tr>
-    <tr>
-      <td>${entry.category}</td>
-      <td>The category of this entry (plugins can add custom types)</td>
-      <td>work</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="customer-variables">Customer variables</h3>
-
-<p>Variables for the customer who is receiving the invoice:</p>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Key</th>
-      <th>Description (highlighted words are the names in the UI)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>${customer.id}</td>
-      <td>The internal customer ID (do not display that on your invoices)</td>
-    </tr>
-    <tr>
-      <td>${customer.name}</td>
-      <td>The customer <code class="language-plaintext highlighter-rouge">name</code></td>
-    </tr>
-    <tr>
-      <td>${customer.comment}</td>
-      <td>The <code class="language-plaintext highlighter-rouge">description</code> of this customer</td>
-    </tr>
-    <tr>
-      <td>${customer.address}</td>
-      <td>The customer <code class="language-plaintext highlighter-rouge">address</code></td>
-    </tr>
-    <tr>
-      <td>${customer.contact}</td>
-      <td>Usually the name of the customer <code class="language-plaintext highlighter-rouge">contact</code> person</td>
-    </tr>
-    <tr>
-      <td>${customer.company}</td>
-      <td>The <code class="language-plaintext highlighter-rouge">company name</code></td>
-    </tr>
-    <tr>
-      <td>${customer.vat}</td>
-      <td>The customer <code class="language-plaintext highlighter-rouge">Vat ID</code></td>
-    </tr>
-    <tr>
-      <td>${customer.number}</td>
-      <td>The customer <code class="language-plaintext highlighter-rouge">account</code> number</td>
-    </tr>
-    <tr>
-      <td>${customer.country}</td>
-      <td>The <code class="language-plaintext highlighter-rouge">country</code> of the customer location</td>
-    </tr>
-    <tr>
-      <td>${customer.homepage}</td>
-      <td>A URL to the customer <code class="language-plaintext highlighter-rouge">homepage</code></td>
-    </tr>
-    <tr>
-      <td>${customer.phone}</td>
-      <td>The customers <code class="language-plaintext highlighter-rouge">phone</code> number</td>
-    </tr>
-    <tr>
-      <td>${customer.mobile}</td>
-      <td>The customers <code class="language-plaintext highlighter-rouge">mobile</code> number</td>
-    </tr>
-    <tr>
-      <td>${customer.email}</td>
-      <td>The customers <code class="language-plaintext highlighter-rouge">email</code> address</td>
-    </tr>
-    <tr>
-      <td>${customer.fax}</td>
-      <td>The customers <code class="language-plaintext highlighter-rouge">fax</code> number</td>
-    </tr>
-    <tr>
-      <td>${customer.meta.foo}</td>
-      <td>The customer <a href="/documentation/plugin-custom-fields.html">meta field</a> with the internal name <code class="language-plaintext highlighter-rouge">foo</code> (must be in lowercase letters, e.g. <code class="language-plaintext highlighter-rouge">FOO</code> will be available as <code class="language-plaintext highlighter-rouge">${customer.meta.foo}</code>. Only available if the field is visible.</td>
-    </tr>
-    <tr>
-      <td>${customer.budget_open}</td>
-      <td>The open monetary budget for this customer at the end date of your filter query (formatted with currency)</td>
-    </tr>
-    <tr>
-      <td>${customer.budget_open_plain}</td>
-      <td>The open monetary budget for this customer at the end date of your filter query (plain float value)</td>
-    </tr>
-    <tr>
-      <td>${customer.time_budget_open}</td>
-      <td>The open time budget for this customer at the end date of your filter query (formatted)</td>
-    </tr>
-    <tr>
-      <td>${customer.time_budget_open_plain}</td>
-      <td>The open time budget for this customer at the end date of your filter query (integer value = seconds)</td>
-    </tr>
-    <tr>
-      <td>${customer.invoice_text}</td>
-      <td>The configurable invoice text for that customer</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="project-variables">Project variables</h3>
-
-<p>The following variables exist, if projects could be found in the filtered data:</p>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Key</th>
-      <th>Description (highlighted words are the names in the UI)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>${project.id}</td>
-      <td>The internal project ID (do not display that on your invoices)</td>
-    </tr>
-    <tr>
-      <td>${project.name}</td>
-      <td>The project <code class="language-plaintext highlighter-rouge">name</code></td>
-    </tr>
-    <tr>
-      <td>${project.comment}</td>
-      <td>The <code class="language-plaintext highlighter-rouge">description</code> of this project</td>
-    </tr>
-    <tr>
-      <td>${project.order_number}</td>
-      <td>The project <code class="language-plaintext highlighter-rouge">order number</code></td>
-    </tr>
-    <tr>
-      <td>${project.start_date}</td>
-      <td>The <code class="language-plaintext highlighter-rouge">Project start</code> date-time</td>
-    </tr>
-    <tr>
-      <td>${project.end_date}</td>
-      <td>The <code class="language-plaintext highlighter-rouge">Project end</code> date-time</td>
-    </tr>
-    <tr>
-      <td>${project.order_date}</td>
-      <td>Projects <code class="language-plaintext highlighter-rouge">order date</code>-time</td>
-    </tr>
-    <tr>
-      <td>${project.budget_money}</td>
-      <td>Projects budget including currency</td>
-    </tr>
-    <tr>
-      <td>${project.budget_money_nc}</td>
-      <td>The projects budget without currency</td>
-    </tr>
-    <tr>
-      <td>${project.budget_money_plain}</td>
-      <td>The projects budget as unformatted value</td>
-    </tr>
-    <tr>
-      <td>${project.budget_time}</td>
-      <td>The projects time-budget as seconds</td>
-    </tr>
-    <tr>
-      <td>${project.budget_time_decimal}</td>
-      <td>The projects time-budget in decimal format (with localized separator)</td>
-    </tr>
-    <tr>
-      <td>${project.budget_time_minutes}</td>
-      <td>The projects time-budget in minutes with no decimals</td>
-    </tr>
-    <tr>
-      <td>${project.number}</td>
-      <td>The project number</td>
-    </tr>
-    <tr>
-      <td>${project.invoice_text}</td>
-      <td>The project invoice-text</td>
-    </tr>
-    <tr>
-      <td>${project.meta.foo}</td>
-      <td>The project <a href="/documentation/plugin-custom-fields.html">meta field</a> with the internal name <code class="language-plaintext highlighter-rouge">foo</code> (must be in lowercase letters, e.g. <code class="language-plaintext highlighter-rouge">FOO</code> will be available as <code class="language-plaintext highlighter-rouge">${project.meta.foo}</code>. Only available if the field is visible.</td>
-    </tr>
-    <tr>
-      <td>${project.budget_open}</td>
-      <td>The open monetary budget for this project at the end date of your filter query (formatted with currency)</td>
-    </tr>
-    <tr>
-      <td>${project.budget_open_plain}</td>
-      <td>The open monetary budget for this project at the end date of your filter query (plain float value)</td>
-    </tr>
-    <tr>
-      <td>${project.time_budget_open}</td>
-      <td>The open time budget for this project at the end date of your filter query (formatted)</td>
-    </tr>
-    <tr>
-      <td>${project.time_budget_open_plain}</td>
-      <td>The open time budget for this project at the end date of your filter query (integer value = seconds)</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>If more than one project was found, you will have further variables (same list as above) called <code class="language-plaintext highlighter-rouge">${project.1.name}</code>, <code class="language-plaintext highlighter-rouge">${project.2.name}</code> and so on.
-The order is not guaranteed, so it is not recommended relying on those variables. 
-If your template relies on a <code class="language-plaintext highlighter-rouge">{$project.X}</code> variable, it is recommended to limit the invoice data with the project search filter.</p>
-
-<h3 id="activity-variables">Activity variables</h3>
-
-<p>The following variables exist, if activities could be found in the filtered data:</p>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Key</th>
-      <th>Description (highlighted words are the names in the UI)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>${activity.id}</td>
-      <td>The internal activity ID (do not display that on your invoices)</td>
-    </tr>
-    <tr>
-      <td>${activity.name}</td>
-      <td>The activity <code class="language-plaintext highlighter-rouge">name</code></td>
-    </tr>
-    <tr>
-      <td>${activity.comment}</td>
-      <td>The <code class="language-plaintext highlighter-rouge">description</code> of this activity</td>
-    </tr>
-    <tr>
-      <td>${activity.number}</td>
-      <td>The activity number</td>
-    </tr>
-    <tr>
-      <td>${activity.invoice_text}</td>
-      <td>The activity invoice-text</td>
-    </tr>
-    <tr>
-      <td>${activity.meta.foo}</td>
-      <td>The activity <a href="/documentation/plugin-custom-fields.html">meta field</a> with the internal name <code class="language-plaintext highlighter-rouge">foo</code> (must be in lowercase letters, e.g. <code class="language-plaintext highlighter-rouge">FOO</code> will be available as <code class="language-plaintext highlighter-rouge">${activity.meta.foo}</code>. Only available if the field is visible.</td>
-    </tr>
-    <tr>
-      <td>${activity.budget_open}</td>
-      <td>The open monetary budget for this activity at the end date of your filter query (formatted with currency)</td>
-    </tr>
-    <tr>
-      <td>${activity.budget_open_plain}</td>
-      <td>The open monetary budget for this activity at the end date of your filter query (plain float value)</td>
-    </tr>
-    <tr>
-      <td>${activity.time_budget_open}</td>
-      <td>The open time budget for this activity at the end date of your filter query (formatted)</td>
-    </tr>
-    <tr>
-      <td>${activity.time_budget_open_plain}</td>
-      <td>The open time budget for this activity at the end date of your filter query (integer value = seconds)</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>If more than one activity was found, you will have further variables (same list as above) called <code class="language-plaintext highlighter-rouge">${activity.1.name}</code>, <code class="language-plaintext highlighter-rouge">${activity.2.name}</code> and so on.
-The order is not guaranteed, so it is not recommended relying on those variables.
-If your template relies on a <code class="language-plaintext highlighter-rouge">{activity.X}</code> variable, it is recommended to limit the invoice data with the activity search filter.</p>
-
-<h3 id="uploading-invoice-documents">Uploading invoice documents</h3>
-
-<p>You can upload invoice documents via the UI at <code class="language-plaintext highlighter-rouge">/en/invoice/document_upload</code>.</p>
-
-<p>Due to security restrictions currently only the upload of the following formats is allowed: <code class="language-plaintext highlighter-rouge">DOCX</code>, <code class="language-plaintext highlighter-rouge">ODS</code>, <code class="language-plaintext highlighter-rouge">XLSX</code>.</p>
-
-<p>There is a known bug in LibreOffice which exports DOCX files with a wrong mime-type. These files will not be accepted
-by Kimai with the error <code class="language-plaintext highlighter-rouge">This file type is not allowed</code> (<a href="https://github.com/kimai/kimai/issues/1916">read this issue</a> for more information).
-The workaround is to change the document with another word processor: Apple pages, Google Drive and Microsoft 365 Online Office will export the DOCX files with the correct mimetype.</p>
-
-<h2 id="filter-and-search-in-the-invoice-archive">Filter and search in the invoice archive</h2>
+<p>All invoices will be stored in the <code class="language-plaintext highlighter-rouge">Invoice history</code> listing page.</p>
 
 <p>The search supports filtering by the fields:</p>
 <ul>
@@ -1812,6 +865,11 @@ This would find all entries with the custom field <code class="language-plaintex
                     
                     
                     <li>
+                        <a href="/documentation/invoice-templates.html">Invoice templates</a> &ndash; Creating custom invoice templates for
+                    </li>
+                    
+                    
+                    <li>
                         <a href="/documentation/plugin-invoice.html">Invoice</a> &ndash; Enhanced invoice features
                     </li>
                     
@@ -1826,7 +884,7 @@ This would find all entries with the custom field <code class="language-plaintex
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#invoice-number-format" class="nav-link">Invoice number format</a><ul><li class="nav-item"><a href="#incrementing-the-invoice-counter" class="nav-link">Incrementing the invoice counter</a></li><li class="nav-item"><a href="#decrementing-the-invoice-counter" class="nav-link">Decrementing the invoice counter</a></li><li class="nav-item"><a href="#examples" class="nav-link">Examples</a></li></ul></li><li class="nav-item"><a href="#invoice-state" class="nav-link">Invoice state</a><ul><li class="nav-item"><a href="#cancel-invoices" class="nav-link">Cancel invoices</a></li><li class="nav-item"><a href="#deleting-invoices" class="nav-link">Deleting invoices</a></li></ul></li><li class="nav-item"><a href="#export-state" class="nav-link">Export state</a></li><li class="nav-item"><a href="#billable-items-only" class="nav-link">Billable items only</a></li><li class="nav-item"><a href="#invoice-document" class="nav-link">Invoice document</a><ul><li class="nav-item"><a href="#create-your-own-invoice-document" class="nav-link">Create your own invoice document</a></li><li class="nav-item"><a href="#more-invoice-templates" class="nav-link">More invoice templates</a></li><li class="nav-item"><a href="#twig-templates" class="nav-link">Twig templates</a></li><li class="nav-item"><a href="#pdf-templates" class="nav-link">PDF templates</a></li><li class="nav-item"><a href="#docx-templates" class="nav-link">Docx templates</a></li><li class="nav-item"><a href="#spreadsheets-ods-and-xlsx" class="nav-link">Spreadsheets (ODS and XLSX)</a></li></ul></li><li class="nav-item"><a href="#template-variables" class="nav-link">Template variables</a><ul><li class="nav-item"><a href="#global-variables" class="nav-link">Global variables</a></li><li class="nav-item"><a href="#timesheet-entry-variables" class="nav-link">Timesheet entry variables</a></li><li class="nav-item"><a href="#customer-variables" class="nav-link">Customer variables</a></li><li class="nav-item"><a href="#project-variables" class="nav-link">Project variables</a></li><li class="nav-item"><a href="#activity-variables" class="nav-link">Activity variables</a></li><li class="nav-item"><a href="#uploading-invoice-documents" class="nav-link">Uploading invoice documents</a></li></ul></li><li class="nav-item"><a href="#filter-and-search-in-the-invoice-archive" class="nav-link">Filter and search in the invoice archive</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#export-flag" class="nav-link">Export flag</a></li><li class="nav-item"><a href="#billable-items-only" class="nav-link">Billable items only</a></li><li class="nav-item"><a href="#invoice-state" class="nav-link">Invoice state</a><ul><li class="nav-item"><a href="#cancel-invoices" class="nav-link">Cancel invoices</a></li><li class="nav-item"><a href="#deleting-invoices" class="nav-link">Deleting invoices</a></li></ul></li><li class="nav-item"><a href="#invoice-templates" class="nav-link">Invoice templates</a></li><li class="nav-item"><a href="#invoice-number-format" class="nav-link">Invoice number format</a><ul><li class="nav-item"><a href="#increment-counter" class="nav-link">Increment counter</a></li><li class="nav-item"><a href="#decrement-counter" class="nav-link">Decrement counter</a></li><li class="nav-item"><a href="#examples" class="nav-link">Examples</a></li></ul></li><li class="nav-item"><a href="#invoice-archive" class="nav-link">Invoice archive</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
         
         <ul class="nav">
             <li>
