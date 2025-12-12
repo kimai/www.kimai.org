@@ -624,34 +624,74 @@
 
 <p>The customer administration can be found at <code class="language-plaintext highlighter-rouge">Administration &gt; Customers</code>.</p>
 
-<div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i><p>It is best-practice to have a customer for your own company, to track times for administrative and other internal work.</p>
+<div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i>
+<p>It is best-practice to have a customer for your own company, to track times for administrative and other internal work.<br />
+If you want to use the invoice system, you will have to configure an “invoice issuer”, which is usually your own company.</p>
 </div>
 
 <h2 id="create-a-customer">Create a customer</h2>
 
 <p>Default values for new customers can be configured at <a href="/documentation/configurations.html">System &gt; Settings</a>.</p>
 
+<p>The name of the customer does not have to be the real company name, it is used in dropdowns and other UI fields. 
+There is another field under “Invoice settings” for the full company name.</p>
+
 <h2 id="manage-customers">Manage customers</h2>
+
+<p>The following attributes are available for every custom:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Account number</code> - Internal number identifying the customer, also available in invoices and exports</li>
+  <li><code class="language-plaintext highlighter-rouge">Vat-ID</code> - Will be used in invoicing</li>
+  <li><code class="language-plaintext highlighter-rouge">Contact</code> - Name of the main contact for this customer</li>
+  <li><code class="language-plaintext highlighter-rouge">E-mail</code> - Contact address</li>
+  <li><code class="language-plaintext highlighter-rouge">Homepage</code> - URL of the customers webpage</li>
+  <li><code class="language-plaintext highlighter-rouge">Mobile</code> - Phone number of the contact</li>
+  <li><code class="language-plaintext highlighter-rouge">Phone</code> - Company phone number</li>
+  <li><code class="language-plaintext highlighter-rouge">Fax</code> - For the old-school companies</li>
+</ul>
 
 <h3 id="colors">Colors</h3>
 
-<p>Each customer can be assigned its own color, for easier identification in timesheet listing.</p>
+<p>Each customer can be assigned a color, for easier identification in timesheet listing.</p>
 
-<p>If a project or an activity linked to the customer does not have its own color, the customers color will be used.
+<p>If a project or an activity linked to the customer does not have a color, the customers color will be used.
 The default color code is <code class="language-plaintext highlighter-rouge">#d2d6de</code>.</p>
 
 <h3 id="currency">Currency</h3>
 
-<p>The customer currency is used when displaying the recorded entries in the timesheet.</p>
+<p>The customer currency is used when displaying time-entries with their rates.</p>
 
-<p>It is also used for printing invoices, which is the reason while the invoice screen needs one applied customer filter 
-before any data will be shown.</p>
+<p>It is also used for printing invoices, which is the reason why the invoice module can 
+always only work with one customer at a time.</p>
 
 <h3 id="billable">Billable</h3>
 
 <p>The <code class="language-plaintext highlighter-rouge">Billable</code> configuration of a Customer defines whether new timesheet (in <code class="language-plaintext highlighter-rouge">Automatic</code> mode) will be billable.</p>
 
 <p>Please read the <a href="/documentation/billable.html">billable documentation</a> to understand the <code class="language-plaintext highlighter-rouge">billable</code> flag.</p>
+
+<h3 id="address">Address</h3>
+
+<p>Each address consists of the following fields, which will be used in invoices:</p>
+
+<ul>
+  <li>Company name</li>
+  <li>Address line 1 / 2 / 3</li>
+  <li>Postcode</li>
+  <li>City</li>
+  <li>Country</li>
+  <li>Timezone (currently unused)</li>
+</ul>
+
+<h3 id="invoice-settings">Invoice settings</h3>
+
+<ul>
+  <li>Each customer has a default <code class="language-plaintext highlighter-rouge">invoice template</code>, which will be pre-selected in the invoice screen for the customer</li>
+  <li>If no <code class="language-plaintext highlighter-rouge">invoice template</code> is selected, the first used template will be assigned as default template for the customer</li>
+  <li>The field <code class="language-plaintext highlighter-rouge">Buyer reference</code> is used in electronic-invoicing and identifies the customer (either as sender or receiver)</li>
+  <li>The <code class="language-plaintext highlighter-rouge">Billing information</code> is a free text field, whose content can be displayed on the invoice</li>
+</ul>
 
 <h3 id="budgets">Budgets</h3>
 
@@ -1034,7 +1074,7 @@ the attached timesheets to another customer.</p>
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#create-a-customer" class="nav-link">Create a customer</a></li><li class="nav-item"><a href="#manage-customers" class="nav-link">Manage customers</a><ul><li class="nav-item"><a href="#colors" class="nav-link">Colors</a></li><li class="nav-item"><a href="#currency" class="nav-link">Currency</a></li><li class="nav-item"><a href="#billable" class="nav-link">Billable</a></li><li class="nav-item"><a href="#budgets" class="nav-link">Budgets</a></li><li class="nav-item"><a href="#budget-type" class="nav-link">Budget type</a></li><li class="nav-item"><a href="#money-budget" class="nav-link">Money budget</a></li><li class="nav-item"><a href="#time-budget" class="nav-link">Time budget</a></li><li class="nav-item"><a href="#prices" class="nav-link">Prices</a></li><li class="nav-item"><a href="#edit-price-screen" class="nav-link">Edit price screen</a></li><li class="nav-item"><a href="#pricing-example" class="nav-link">Pricing example</a></li><li class="nav-item"><a href="#visibility" class="nav-link">Visibility</a></li><li class="nav-item"><a href="#access-permissions" class="nav-link">Access permissions</a></li></ul></li><li class="nav-item"><a href="#customer-listing" class="nav-link">Customer listing</a><ul><li class="nav-item"><a href="#invisible-customers" class="nav-link">Invisible customers</a></li><li class="nav-item"><a href="#filter-and-search" class="nav-link">Filter and search</a></li><li class="nav-item"><a href="#delete-a-customer" class="nav-link">Delete a customer</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#create-a-customer" class="nav-link">Create a customer</a></li><li class="nav-item"><a href="#manage-customers" class="nav-link">Manage customers</a><ul><li class="nav-item"><a href="#colors" class="nav-link">Colors</a></li><li class="nav-item"><a href="#currency" class="nav-link">Currency</a></li><li class="nav-item"><a href="#billable" class="nav-link">Billable</a></li><li class="nav-item"><a href="#address" class="nav-link">Address</a></li><li class="nav-item"><a href="#invoice-settings" class="nav-link">Invoice settings</a></li><li class="nav-item"><a href="#budgets" class="nav-link">Budgets</a></li><li class="nav-item"><a href="#budget-type" class="nav-link">Budget type</a></li><li class="nav-item"><a href="#money-budget" class="nav-link">Money budget</a></li><li class="nav-item"><a href="#time-budget" class="nav-link">Time budget</a></li><li class="nav-item"><a href="#prices" class="nav-link">Prices</a></li><li class="nav-item"><a href="#edit-price-screen" class="nav-link">Edit price screen</a></li><li class="nav-item"><a href="#pricing-example" class="nav-link">Pricing example</a></li><li class="nav-item"><a href="#visibility" class="nav-link">Visibility</a></li><li class="nav-item"><a href="#access-permissions" class="nav-link">Access permissions</a></li></ul></li><li class="nav-item"><a href="#customer-listing" class="nav-link">Customer listing</a><ul><li class="nav-item"><a href="#invisible-customers" class="nav-link">Invisible customers</a></li><li class="nav-item"><a href="#filter-and-search" class="nav-link">Filter and search</a></li><li class="nav-item"><a href="#delete-a-customer" class="nav-link">Delete a customer</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
         
     </aside>
 
