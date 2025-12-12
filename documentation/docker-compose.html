@@ -846,36 +846,9 @@ docker run <span class="nt">--rm</span> <span class="nt">-ti</span> <span class=
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker-compose <span class="nb">exec </span>kimai /opt/kimai/bin/console assets:install
 </code></pre></div></div>
 
-<h2 id="apache-dev">Apache (dev)</h2>
+<h2 id="development">Development</h2>
 
-<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>services:
-
-  sqldb:
-    image: mysql:8.3
-    environment:
-      - MYSQL_DATABASE=kimai
-      - MYSQL_USER=kimaiuser
-      - MYSQL_PASSWORD=kimaipassword
-      - MYSQL_ROOT_PASSWORD=changemeplease
-    command: --default-storage-engine innodb
-    restart: unless-stopped
-    healthcheck:
-      test: mysqladmin -p$$MYSQL_ROOT_PASSWORD ping -h localhost
-      interval: 20s
-      start_period: 10s
-      timeout: 10s
-      retries: 3
-
-  kimai:
-    image: kimai/kimai2:apache-dev
-    ports:
-      - 8001:8001
-    environment:
-      - ADMINMAIL=admin@kimai.local
-      - ADMINPASS=changemeplease
-      - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&amp;serverVersion=8.3.0"
-    restart: unless-stopped
-</code></pre></div></div>
+<p>If you want to start a development image, please switch to the <a href="/documentation/developers.html">developer docs</a></p>
 
                 </div>
                 
@@ -890,7 +863,7 @@ docker run <span class="nt">--rm</span> <span class="nt">-ti</span> <span class=
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#apache-prod" class="nav-link">Apache (prod)</a></li><li class="nav-item"><a href="#environment-variables" class="nav-link">Environment variables</a></li><li class="nav-item"><a href="#caddy-reverse-proxy" class="nav-link">Caddy Reverse Proxy</a></li><li class="nav-item"><a href="#installing-plugins" class="nav-link">Installing plugins</a></li><li class="nav-item"><a href="#using-a-localyaml" class="nav-link">Using a local.yaml</a></li><li class="nav-item"><a href="#fpm-and-nginx" class="nav-link">FPM and nginx</a></li><li class="nav-item"><a href="#updating-kimai" class="nav-link">Updating Kimai</a><ul><li class="nav-item"><a href="#fpm-image" class="nav-link">FPM image</a></li></ul></li><li class="nav-item"><a href="#apache-dev" class="nav-link">Apache (dev)</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#apache-prod" class="nav-link">Apache (prod)</a></li><li class="nav-item"><a href="#environment-variables" class="nav-link">Environment variables</a></li><li class="nav-item"><a href="#caddy-reverse-proxy" class="nav-link">Caddy Reverse Proxy</a></li><li class="nav-item"><a href="#installing-plugins" class="nav-link">Installing plugins</a></li><li class="nav-item"><a href="#using-a-localyaml" class="nav-link">Using a local.yaml</a></li><li class="nav-item"><a href="#fpm-and-nginx" class="nav-link">FPM and nginx</a></li><li class="nav-item"><a href="#updating-kimai" class="nav-link">Updating Kimai</a><ul><li class="nav-item"><a href="#fpm-image" class="nav-link">FPM image</a></li></ul></li><li class="nav-item"><a href="#development" class="nav-link">Development</a></li></ul>
         
     </aside>
 
