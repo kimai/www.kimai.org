@@ -7,6 +7,10 @@ This bundle has the following features:
 
 ### E-Invoices
 
+The data for the "invoice sender" is pulled from the `Invoice issuer` company, which is configured in the invoice template.  
+That means you need to [create a customer]({% link _documentation/customer.md %}) for your own company and add all the 
+required attributes like `Company name`, `Vat ID` and the `address fields`.
+
 Support for EU e-invoices with the following profiles is added:
 
 - `EN16931` (CII)
