@@ -38,6 +38,11 @@ There is option to export the file in the API docs UI at `/api/doc`.
 
 ## Data types
 
+### Order
+
+The order of attributes is NOT guaranteed and therefor not stable. 
+Always use the attribute name instead of querying them via index. 
+
 ### Default values
 
 The API does not promise any BC on any default value. This is especially true for optional booleans (see below). 
