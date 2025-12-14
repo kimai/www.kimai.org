@@ -412,7 +412,7 @@
                         
                         <a href="/documentation/plugin-invoice.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-plugin-invoice">
                             
-                            Invoice
+                            Invoice+
                             
                         </a>
                         
@@ -656,6 +656,36 @@ These records cannot be edited any longer by regular users and are excluded by d
 
 <p><a href="/store/expenses-bundle.html">Expense items</a> have a configurable billable flag per item and only the ones marked as billable (refundable) will be included.</p>
 
+<h2 id="invoice-templates">Invoice templates</h2>
+
+<p>You need an invoice template to create an invoice. 
+The invoice template is a set of attributes, that defines the invoice settings, like sending company and tax rate.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Name</code> - Internal name to identify the template</li>
+  <li><code class="language-plaintext highlighter-rouge">Title</code> - UTitle of the rendered invoice (usually something like “Invoice”)</li>
+  <li><code class="language-plaintext highlighter-rouge">Invoice issuer</code> - Data for the “invoice sender” is pulled from this company: you need to <a href="/documentation/customer.html">create a customer</a> for your own company and configure all attributes like <code class="language-plaintext highlighter-rouge">Company name</code>, <code class="language-plaintext highlighter-rouge">Vat ID</code> and <code class="language-plaintext highlighter-rouge">address</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Terms of payment</code> - Free text field to clarify payment details</li>
+  <li><code class="language-plaintext highlighter-rouge">Contact</code> - Free text field to store contact details</li>
+  <li><code class="language-plaintext highlighter-rouge">Bank account</code> - Human readable payment details (like bank name and account number)</li>
+  <li><code class="language-plaintext highlighter-rouge">Tax rate</code> - Tax rate of this invoice</li>
+  <li><code class="language-plaintext highlighter-rouge">Payment term in days</code> - Duration until this invoice needs to be paid in (in days)</li>
+  <li><code class="language-plaintext highlighter-rouge">Language</code> - Language for translations (only works in PDF and HTML invoices)</li>
+  <li><code class="language-plaintext highlighter-rouge">Invoicenumber-Generator</code> - Which logic to use when generating the invoice number</li>
+  <li><code class="language-plaintext highlighter-rouge">Invoice template</code> - The renderer of the invoice (default or custom template)</li>
+  <li><code class="language-plaintext highlighter-rouge">Grouping of invoice lines</code> - How invoice items are grouped</li>
+  <li><code class="language-plaintext highlighter-rouge">E-Invoicing</code> - Read the <a href="/documentation/plugin-invoice.html">Invoice+ plugin</a> docs (OnPremise customer need to <a href="/store/invoice-bundle.html">purchase the plugin</a>)</li>
+</ul>
+
+<p>Further information are available:</p>
+
+<ul>
+  <li>Read how to <a href="/documentation/invoice-templates.html">create your own invoice template</a></li>
+  <li>The community shares re-usable invoices templates at <a href="https://github.com/kimai/invoice-templates">https://github.com/kimai/invoice-templates</a></li>
+  <li>Due to security restrictions, you can only upload the formats <code class="language-plaintext highlighter-rouge">DOCX</code>, <code class="language-plaintext highlighter-rouge">ODS</code>, <code class="language-plaintext highlighter-rouge">XLSX</code></li>
+  <li>Cloud customers <a href="/documentation/cloud-invoice-templates.html">need to send customer Twig templates</a> to the support</li>
+</ul>
+
 <h2 id="invoice-state">Invoice state</h2>
 
 <p>Invoices can have multiple states:</p>
@@ -687,15 +717,6 @@ This will cause troubles with your invoice counter, as Kimai is calculating invo
 By deleting invoices, you lower the number of invoices in the database, and the next invoice number might be one that was already used.</p>
 
 <p>Invoice deletion is therefor disabled by default, but you can activate it with the <code class="language-plaintext highlighter-rouge">delete_invoice</code> <a href="/documentation/permissions.html">permissions</a>.</p>
-
-<h2 id="invoice-templates">Invoice templates</h2>
-
-<ul>
-  <li>Read how to <a href="/documentation/invoice-templates.html">create your own invoice template</a></li>
-  <li>The community shares re-usable invoices templates at <a href="https://github.com/kimai/invoice-templates">https://github.com/kimai/invoice-templates</a></li>
-  <li>Due to security restrictions, you can only upload the formats <code class="language-plaintext highlighter-rouge">DOCX</code>, <code class="language-plaintext highlighter-rouge">ODS</code>, <code class="language-plaintext highlighter-rouge">XLSX</code></li>
-  <li>Cloud customers <a href="/documentation/cloud-invoice-templates.html">need to send customer Twig templates</a> to the support</li>
-</ul>
 
 <h2 id="invoice-number-format">Invoice number format</h2>
 
@@ -870,7 +891,7 @@ This would find all entries with the custom field <code class="language-plaintex
                     
                     
                     <li>
-                        <a href="/documentation/plugin-invoice.html">Invoice</a> &ndash; Enhanced invoice features
+                        <a href="/documentation/plugin-invoice.html">Invoice+</a> &ndash; Enhanced invoice features
                     </li>
                     
                 </ul>
@@ -884,7 +905,7 @@ This would find all entries with the custom field <code class="language-plaintex
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#export-flag" class="nav-link">Export flag</a></li><li class="nav-item"><a href="#billable-items-only" class="nav-link">Billable items only</a></li><li class="nav-item"><a href="#invoice-state" class="nav-link">Invoice state</a><ul><li class="nav-item"><a href="#cancel-invoices" class="nav-link">Cancel invoices</a></li><li class="nav-item"><a href="#deleting-invoices" class="nav-link">Deleting invoices</a></li></ul></li><li class="nav-item"><a href="#invoice-templates" class="nav-link">Invoice templates</a></li><li class="nav-item"><a href="#invoice-number-format" class="nav-link">Invoice number format</a><ul><li class="nav-item"><a href="#increment-counter" class="nav-link">Increment counter</a></li><li class="nav-item"><a href="#decrement-counter" class="nav-link">Decrement counter</a></li><li class="nav-item"><a href="#examples" class="nav-link">Examples</a></li></ul></li><li class="nav-item"><a href="#invoice-archive" class="nav-link">Invoice archive</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#export-flag" class="nav-link">Export flag</a></li><li class="nav-item"><a href="#billable-items-only" class="nav-link">Billable items only</a></li><li class="nav-item"><a href="#invoice-templates" class="nav-link">Invoice templates</a></li><li class="nav-item"><a href="#invoice-state" class="nav-link">Invoice state</a><ul><li class="nav-item"><a href="#cancel-invoices" class="nav-link">Cancel invoices</a></li><li class="nav-item"><a href="#deleting-invoices" class="nav-link">Deleting invoices</a></li></ul></li><li class="nav-item"><a href="#invoice-number-format" class="nav-link">Invoice number format</a><ul><li class="nav-item"><a href="#increment-counter" class="nav-link">Increment counter</a></li><li class="nav-item"><a href="#decrement-counter" class="nav-link">Decrement counter</a></li><li class="nav-item"><a href="#examples" class="nav-link">Examples</a></li></ul></li><li class="nav-item"><a href="#invoice-archive" class="nav-link">Invoice archive</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
         
         <ul class="nav">
             <li>
