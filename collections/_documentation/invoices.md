@@ -11,7 +11,6 @@ Kimai allows creating invoices from timesheet data in several formats.
 
 {% include youtube-video.html id="first_invoice" %}
 
-
 ## Export flag
 
 Invoices and exports share the `export` flag, which is used to mark timesheet records as processed.
@@ -27,6 +26,31 @@ By default, every timesheet record is billable, but users can set the billable f
 
 [Expense items]({% link _store/keleo-expenses-bundle.md %}) have a configurable billable flag per item and only the ones marked as billable (refundable) will be included.
 
+## Invoice templates
+
+You need an invoice template to create an invoice. 
+The invoice template is a set of attributes, that defines the invoice settings, like sending company and tax rate.  
+
+- `Name` - Internal name to identify the template
+- `Title` - UTitle of the rendered invoice (usually something like "Invoice")
+- `Invoice issuer` - Data for the "invoice sender" is pulled from this company: you need to [create a customer]({% link _documentation/customer.md %}) for your own company and configure all attributes like `Company name`, `Vat ID` and `address`
+- `Terms of payment` - Free text field to clarify payment details
+- `Contact` - Free text field to store contact details
+- `Bank account` - Human readable payment details (like bank name and account number)
+- `Tax rate` - Tax rate of this invoice
+- `Payment term in days` - Duration until this invoice needs to be paid in (in days)
+- `Language` - Language for translations (only works in PDF and HTML invoices)
+- `Invoicenumber-Generator` - Which logic to use when generating the invoice number
+- `Invoice template` - The renderer of the invoice (default or custom template)
+- `Grouping of invoice lines` - How invoice items are grouped
+- `E-Invoicing` - Read the [Invoice+ plugin]({% link _documentation/plugin-invoice.md %}) docs (OnPremise customer need to [purchase the plugin]({% link _store/keleo-invoice-bundle.md %}))
+
+Further information are available: 
+
+- Read how to [create your own invoice template]({% link _documentation/invoice-templates.md %})
+- The community shares re-usable invoices templates at [https://github.com/kimai/invoice-templates](https://github.com/kimai/invoice-templates)
+- Due to security restrictions, you can only upload the formats `DOCX`, `ODS`, `XLSX`
+- Cloud customers [need to send customer Twig templates]({% link _documentation/cloud/cloud-invoice-templates.md %}) to the support
 
 ## Invoice state
 
@@ -57,13 +81,6 @@ This will cause troubles with your invoice counter, as Kimai is calculating invo
 By deleting invoices, you lower the number of invoices in the database, and the next invoice number might be one that was already used.
 
 Invoice deletion is therefor disabled by default, but you can activate it with the `delete_invoice` [permissions]({% link _documentation/permissions.md %}).  
-
-## Invoice templates
-
-- Read how to [create your own invoice template]({% link _documentation/invoice-templates.md %})
-- The community shares re-usable invoices templates at [https://github.com/kimai/invoice-templates](https://github.com/kimai/invoice-templates)
-- Due to security restrictions, you can only upload the formats `DOCX`, `ODS`, `XLSX`
-- Cloud customers [need to send customer Twig templates]({% link _documentation/cloud/cloud-invoice-templates.md %}) to the support
 
 ## Invoice number format
 
