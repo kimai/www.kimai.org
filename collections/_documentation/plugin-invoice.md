@@ -1,5 +1,5 @@
 ---
-title: Invoice
+title: Invoice+
 description: Enhanced invoice features
 ---
 
