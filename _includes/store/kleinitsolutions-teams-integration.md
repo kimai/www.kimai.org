@@ -20,8 +20,6 @@ Designed for companies relying on Teams as their primary collaboration hub, this
 
 ### 1. Requirements
 - Kimai 2.43+
-- PHP 8.1+
-- Composer
 - Azure App Registration: Tenant ID, Client ID, Client Secret
 
 ### 2. Upload the Plugin
