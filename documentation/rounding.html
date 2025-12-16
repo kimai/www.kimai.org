@@ -617,7 +617,9 @@
             <div>
                 
                 <div id="documentation-content">
-                    <p>Time tracking and invoicing operate on two fundamentally different mathematical bases:</p>
+                    <h2 id="why-do-we-round-at-all">Why do we round at all?</h2>
+
+<p>Time tracking and invoicing operate on two fundamentally different mathematical bases:</p>
 
 <ul>
   <li><strong>Time</strong> is measured in <strong>base 60</strong></li>
@@ -626,14 +628,13 @@
 
 <p>At first glance this does not seem important, but when a system needs to combine <em>measured time</em> with <em>decimal invoices</em>, rounding becomes unavoidable.</p>
 
-<p>This page explains why rounding is necessary, why the results might sometimes look unintuitive, and why the behavior in Kimai creates <strong>mathematically correct</strong> invoices that comply with accounting and e-invoicing standards.</p>
-
-<h2 id="why-does-rounding-happen-at-all">Why does rounding happen at all?</h2>
+<p>This page explains why rounding is necessary, why there are different ways with different results and why you should configure the correct behavior for you, 
+so Kimai can create (mathematically) <strong>correct</strong> invoices that comply with accounting and e-invoicing standards.</p>
 
 <h3 id="time-base-60">Time: base 60</h3>
 
 <p>Time entries are stored in seconds.
-A minute has 60 seconds, an hour has 60 minutes. All divisions in this system produce repeating decimals when converted into decimal hours.</p>
+A minute has 60 seconds, an hour has 60 minutes. Divisions in this system often produce repeating decimals when converted into decimal hours.</p>
 
 <p><strong>Example:</strong></p>
 
@@ -649,21 +650,73 @@ The smallest allowed monetary unit is:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.01 (one cent)
 </code></pre></div></div>
 
-<h3 id="the-problem">The problem</h3>
+<h2 id="should-i-round-my-times">Should I round my times?</h2>
 
-<p>Decimal hours allow only two decimal places:</p>
+<p>The general answer is: for most businesses <strong>yes</strong>.</p>
+
+<p>But not in the way most people think. Humans tend to round to multiples of 5 — often 10 — because it feels natural.
+However, when it comes to time-tracking and converting durations into decimal hours, rounding to 5 or 10 minutes
+<strong>creates repeating decimals</strong> (e.g., 10 minutes = 0.16666… hours), which can lead to unexpected results in invoices or reports.</p>
+
+<p>To avoid this problem, it is recommended to round your recorded working time to a multiple of 3 minutes.</p>
+
+<p><strong>Why 3?</strong></p>
+
+<p>Because 3 minutes is 1/20 of an hour = exactly 0.05 hours. No repeating decimals. Common and reliable duration roundings are therefore:</p>
+
+<ul>
+  <li>3 minutes = 0.05 h</li>
+  <li>6 minutes = 0.1 h</li>
+  <li>15 minutes = 0.25 h</li>
+</ul>
+
+<p>These values help you <strong>avoid all decimal rounding issues</strong> and are widely used in many industries because they simplify both time-tracking and invoicing.</p>
+
+<p>Of course, Kimai supports exact second-based tracking for businesses that need precise timestamps; rounding rules simply ensure that your invoice totals always remain predictable, consistent, and compliant.</p>
+
+<h2 id="selecting-the-rounding-mode">Selecting the rounding mode</h2>
+
+<ul>
+  <li>Go to <a href="/documentation/configurations.html">System &gt; Settings</a></li>
+  <li>Go to <code class="language-plaintext highlighter-rouge">Invoice</code></li>
+  <li>Select the <code class="language-plaintext highlighter-rouge">Rate rounding</code> mode
+    <ul>
+      <li>The <code class="language-plaintext highlighter-rouge">classic</code> mode, feels most natural but can lead to small rounding issues</li>
+      <li>The <code class="language-plaintext highlighter-rouge">decimal</code> mode rounds duration to a multiple of 36 second, safe but can be unintuitive</li>
+    </ul>
+  </li>
+</ul>
+
+<p>There are other rules to define how the timesheet start and end times and the duration should be rounded. 
+Those settings are available at the same settings screen at <code class="language-plaintext highlighter-rouge">Time rounding</code>.</p>
+
+<h2 id="rounding-classic">Rounding: CLASSIC</h2>
+
+<p>This mode is available, as it is the most intuitive one. 
+Due to potential rounding issues, it is recommended to round the <code class="language-plaintext highlighter-rouge">duration</code> with a multiple of <code class="language-plaintext highlighter-rouge">3</code> minutes.</p>
+
+<ul>
+  <li><strong>Calculate</strong> with unrounded seconds</li>
+  <li>Uses <strong>4 decimals</strong> to calculate rates</li>
+  <li><strong>Displays</strong> rounded decimal hours with <strong>2 decimals</strong></li>
+  <li>Can produce mismatch between displayed duration and monetary total</li>
+</ul>
+
+<p>Use this, if you never experienced rounding issues. It is the <code class="language-plaintext highlighter-rouge">default</code> rounding mode.</p>
+
+<h2 id="rounding-decimal">Rounding: DECIMAL</h2>
+
+<p>Decimal hours are displayed with two decimal places on invoices:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.0833333… rounds to 0.08 hours
 </code></pre></div></div>
 
-<p>But if you <strong>calculate money using the unrounded duration</strong>, yet <strong>display only the rounded duration</strong>, you create an accounting mismatch.</p>
+<p>But if you <strong>calculate money using the unrounded duration</strong>, yet <strong>display only the rounded duration</strong>, you create a mismatch.
+This can cause (in certain circumstances) invoice validation issues.</p>
 
-<p>This was the behavior in older Kimai versions and caused in certain circumstances real invoice validation issues.</p>
-
-<h2 id="the-fundamental-constraint">The fundamental constraint</h2>
 <h3 id="001-hours--36-seconds"><strong>0.01 hours = 36 seconds</strong></h3>
 
-<p>To stay compatible with decimal invoices, Kimai must convert time into the smallest possible unit that works for both systems:</p>
+<p>To stay compatible with decimal invoices, Kimai can convert time into the smallest possible unit that works for both systems:</p>
 
 <ul>
   <li>The smallest monetary step is <strong>0.01</strong></li>
@@ -682,19 +735,11 @@ The smallest allowed monetary unit is:</p>
 
 <p>This ensures your invoice is mathematically correct and fully compatible with tax authorities and e-invoicing systems.</p>
 
-<h2 id="why-does-the-rounding-feel-wrong-for-small-durations">Why does the rounding feel “wrong” for small durations?</h2>
-
-<p>A real example from a user question:</p>
-
-<blockquote>
-  <p>“5 minutes used to result in 5€, now it shows 4.8€. Why?”</p>
-</blockquote>
+<h3 id="expectation-vs-reality">Expectation vs Reality</h3>
 
 <p>Let’s compare the <strong>intuitive</strong> calculation vs. the <strong>decimal</strong> calculation.</p>
 
-<h3 id="-the-intuitive-but-incorrect-expectation">❌ The intuitive but incorrect expectation</h3>
-
-<p>Many people still think in “base 60” units:</p>
+<p>The intuitive expectation stems from thinking in “base 60” units:</p>
 
 <ul>
   <li>1 hour = 60€</li>
@@ -702,38 +747,36 @@ The smallest allowed monetary unit is:</p>
   <li>60€ / 12 = <strong>5€</strong></li>
 </ul>
 
-<p>But invoices do <strong>not</strong> work this way and this method ignores decimal rounding.</p>
-
-<h3 id="-the-correct-decimal-calculation">✔ The correct decimal calculation</h3>
+<p>But this method ignores decimal rounding, which looks like this:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>5 minutes = 300 seconds
 300 / 3600 = 0.083333… rounds to 0.08 hours
 60€ × 0.08 = 4.8€
 </code></pre></div></div>
 
-<p>This is how proper decimal invoicing works.</p>
+<p>This is how <strong>decimal rounding</strong> works.</p>
 
-<h3 id="showing-008h-on-the-invoice-but-charging-5-is-incorrect">Showing <code class="language-plaintext highlighter-rouge">0.08h</code> on the invoice, but charging <code class="language-plaintext highlighter-rouge">5€</code> is <strong>incorrect</strong></h3>
+<p>Showing <code class="language-plaintext highlighter-rouge">0.08h</code> on the invoice, but charging <code class="language-plaintext highlighter-rouge">5€</code> is <strong>incorrect</strong>.</p>
 
-<p>This inconsistency:</p>
+<p>This inconsistency can:</p>
 
 <ul>
-  <li>violates accounting rules</li>
-  <li>can make clients reject invoices</li>
-  <li>leads to automatic validation errors in e-invoices</li>
+  <li>violate accounting rules</li>
+  <li>make clients reject invoices</li>
+  <li>lead to automatic validation errors in e-invoices</li>
 </ul>
 
-<p>Kimai must prevent this.</p>
+<p>Decimal rounding prevent this.</p>
 
-<h2 id="example-5-minutes-loss-and-10-minutes-gain">Example: 5 minutes (loss) and 10 minutes (gain)</h2>
+<h3 id="examples">Examples</h3>
 
-<h3 id="5-minutes">5 minutes:</h3>
+<p><strong>5 minutes (loss)</strong></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>300 sec / 3600 = 0.083333… rounds to 0.08
 60€ × 0.08 = 4.8€
 </code></pre></div></div>
 
-<h3 id="10-minutes">10 minutes:</h3>
+<p><strong>10 minutes (gain)</strong></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>600 sec / 3600 = 0.166666… rounds to 0.17
 60€ × 0.17 = 10.2€
@@ -742,75 +785,22 @@ The smallest allowed monetary unit is:</p>
 <p>As you see:</p>
 
 <ul>
-  <li>Sometimes rounding means you “lose” a few cents</li>
+  <li>Sometimes this rounding means you “lose” a few cents</li>
   <li>Sometimes you “gain” a few cents</li>
-  <li>Over time, these effects usually cancel out</li>
+  <li>Over time, these effects should cancel out</li>
 </ul>
 
-<p>This is normal behavior in any decimal-based billing system.</p>
-
-<h2 id="why-the-new-method-is-better">Why the new method is better</h2>
-
-<p>Older versions of Kimai:</p>
+<h3 id="summary">Summary</h3>
 
 <ul>
-  <li><strong>Displayed</strong> rounded decimal hours</li>
-  <li><strong>Calculated</strong> with full unrounded seconds</li>
-  <li>Produced mismatches between displayed duration and monetary total</li>
-  <li>Caused rounding inconsistencies when many entries were merged</li>
-  <li>Broke e-invoice validation rules</li>
-</ul>
-
-<p>The new approach:</p>
-
-<ul>
-  <li>Converts all durations into <strong>decimal-compatible seconds</strong> (multiples of 36)</li>
-  <li>Ensures: <strong>displayed hours × rate = displayed money</strong></li>
-  <li>Completely eliminates hidden rounding differences</li>
-  <li>Produces mathematically and legally correct invoices</li>
-</ul>
-
-<p>This is the only approach aligned with accounting principles.</p>
-
-<h2 id="should-i-round-my-recorded-working-time">Should I round my recorded working time?</h2>
-
-<p>For many businesses: <strong>yes</strong>.</p>
-
-<p>But not in the way most people think. Humans tend to round to multiples of 5 — often 10 — because it feels natural.
-However, when it comes to time-tracking and converting durations into decimal hours, rounding to 5 or 10 minutes 
-<strong>creates repeating decimals</strong> (e.g., 10 minutes = 0.16666… hours), which can lead to unexpected results in invoices or reports.</p>
-
-<p>To avoid this problem, it is recommended to round your recorded working time to a multiple of 3 minutes.</p>
-
-<p><strong>Why 3?</strong></p>
-
-<p>Because 3 minutes is 1/20 of an hour = exactly 0.05 hours. No repeating decimals.</p>
-
-<p>Even better is rounding to 6 minutes (0.1 hours) or 15 minutes (0.25 hours), which also convert into clean decimals without fractions.</p>
-
-<p>Common and reliable duration roundings are therefore:</p>
-<ul>
-  <li>3 minutes = 0.05 h</li>
-  <li>6 minutes = 0.1 h</li>
-  <li>15 minutes = 0.25 h</li>
-</ul>
-
-<p>These values help you <strong>avoid all decimal rounding issues</strong> and are widely used in many industries because they simplify both time-tracking and invoicing.</p>
-
-<p>Of course, Kimai supports exact second-based tracking for businesses that need precise timestamps; rounding rules simply ensure that your invoice totals always remain predictable, consistent, and compliant.</p>
-
-<h2 id="summary">Summary</h2>
-
-<ul>
-  <li>Time is base 60, money is base 100 which is incompatible by design</li>
+  <li>Time is base 60, money is base 100 - conversion can lead to rounding issues</li>
   <li>Decimal hours have only 2 decimals with the smallest unit = <strong>0.01h = 36 seconds</strong></li>
-  <li>Kimai rounds durations to multiples of 36 seconds</li>
-  <li>This guarantees: <strong>displayed duration × hourly rate = displayed total</strong></li>
-  <li>The new rounding is mathematically correct and required for valid invoices</li>
-  <li>Small deviations for very short entries are expected and normal</li>
+  <li>Rounding durations to multiples of 36 seconds guarantees: <strong>displayed duration × hourly rate = total rate</strong></li>
+  <li>Completely eliminates hidden rounding differences</li>
 </ul>
 
-<p>Even if certain examples feel unintuitive at first, the new rounding system ensures that your invoices are consistent, compliant, and correct.</p>
+<p>Even if certain examples feel unintuitive at first, this rounding system ensures that your invoices are consistent and always compliant.</p>
+
 
                 </div>
                 
@@ -825,7 +815,7 @@ However, when it comes to time-tracking and converting durations into decimal ho
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#why-does-rounding-happen-at-all" class="nav-link">Why does rounding happen at all?</a><ul><li class="nav-item"><a href="#time-base-60" class="nav-link">Time: base 60</a></li><li class="nav-item"><a href="#money-base-100" class="nav-link">Money: base 100</a></li><li class="nav-item"><a href="#the-problem" class="nav-link">The problem</a></li></ul></li><li class="nav-item"><a href="#the-fundamental-constraint" class="nav-link">The fundamental constraint</a><ul><li class="nav-item"><a href="#001-hours--36-seconds" class="nav-link">0.01 hours = 36 seconds</a></li></ul></li><li class="nav-item"><a href="#why-does-the-rounding-feel-wrong-for-small-durations" class="nav-link">Why does the rounding feel “wrong” for small durations?</a><ul><li class="nav-item"><a href="#-the-intuitive-but-incorrect-expectation" class="nav-link">❌ The intuitive but incorrect expectation</a></li><li class="nav-item"><a href="#-the-correct-decimal-calculation" class="nav-link">✔ The correct decimal calculation</a></li><li class="nav-item"><a href="#showing-008h-on-the-invoice-but-charging-5-is-incorrect" class="nav-link">Showing 0.08h on the invoice, but charging 5€ is incorrect</a></li></ul></li><li class="nav-item"><a href="#example-5-minutes-loss-and-10-minutes-gain" class="nav-link">Example: 5 minutes (loss) and 10 minutes (gain)</a><ul><li class="nav-item"><a href="#5-minutes" class="nav-link">5 minutes:</a></li><li class="nav-item"><a href="#10-minutes" class="nav-link">10 minutes:</a></li></ul></li><li class="nav-item"><a href="#why-the-new-method-is-better" class="nav-link">Why the new method is better</a></li><li class="nav-item"><a href="#should-i-round-my-recorded-working-time" class="nav-link">Should I round my recorded working time?</a></li><li class="nav-item"><a href="#summary" class="nav-link">Summary</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#why-do-we-round-at-all" class="nav-link">Why do we round at all?</a><ul><li class="nav-item"><a href="#time-base-60" class="nav-link">Time: base 60</a></li><li class="nav-item"><a href="#money-base-100" class="nav-link">Money: base 100</a></li></ul></li><li class="nav-item"><a href="#should-i-round-my-times" class="nav-link">Should I round my times?</a></li><li class="nav-item"><a href="#selecting-the-rounding-mode" class="nav-link">Selecting the rounding mode</a></li><li class="nav-item"><a href="#rounding-classic" class="nav-link">Rounding: CLASSIC</a></li><li class="nav-item"><a href="#rounding-decimal" class="nav-link">Rounding: DECIMAL</a><ul><li class="nav-item"><a href="#001-hours--36-seconds" class="nav-link">0.01 hours = 36 seconds</a></li><li class="nav-item"><a href="#expectation-vs-reality" class="nav-link">Expectation vs Reality</a></li><li class="nav-item"><a href="#examples" class="nav-link">Examples</a></li><li class="nav-item"><a href="#summary" class="nav-link">Summary</a></li></ul></li></ul>
         
     </aside>
 
