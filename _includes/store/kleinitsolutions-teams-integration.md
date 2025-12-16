@@ -1,134 +1,135 @@
-{% if page.lang == 'de' %}
-## Microsoft Teams Integration für Kimai
+# Microsoft Teams Integration for Kimai
+Seamlessly connect Kimai with Microsoft Teams
 
-Ein Kimai-Plugin zur automatischen Erstellung von Kunden- und Projektordnern in einem ausgewählten Microsoft-Team.  
-Basierend auf Ihren Kundendaten und Projekten in Kimai legt das Plugin die entsprechenden Ordnerstrukturen im gewünschten Team an – vollständig automatisiert und zuverlässig.
+## Overview
+The Microsoft Teams Integration Plugin enhances Kimai by synchronizing your customer and project structure directly into Microsoft Teams.
+Whenever you create customers or projects in Kimai, the plugin can generate matching teams and channels — ensuring consistent organization across both systems.
 
-Optimieren Sie Ihre Dokumentenablage, reduzieren Sie manuellen Aufwand und stellen Sie sicher, dass Ihre Teams immer den passenden Ordner zur richtigen Zeit haben.
+Designed for companies relying on Teams as their primary collaboration hub, this plugin streamlines document management, improves team alignment, and reduces manual setup time.
 
-Perfekt für Agenturen, IT-Dienstleister und Unternehmen, die Microsoft Teams als zentrale Arbeitsplattform nutzen.
+## Key Features
+- Automated creation of customer and project structures inside a chosen Microsoft Teams Tenant
+- Fully integrated with Microsoft Graph API
+- Central configuration directly within Kimai
+- Live configuration and credentials health check
+- Secure Azure AD authentication
+- Works seamlessly with standard Microsoft Teams environments
+- Ideal for agencies, IT service providers, and project-based teams
 
-## Automatische Ordnerstrukturen in Microsoft Teams
+## Installation Guide
 
-Das Plugin erstellt automatisch:
+### 1. Requirements
+- Kimai 2.43+
+- Azure App Registration: Tenant ID, Client ID, Client Secret
 
-- Kundenordner
-- Projektordner
-- Strukturierte Ablagen unterhalb eines von Ihnen definierten Basisordners
+### 2. Upload the Plugin
+Extract the ZIP purchased from the shop and upload it to:
 
-Der gesamte Prozess geschieht über die Microsoft Graph API, ohne manuelles Eingreifen.
+```
+/your-kimai/var/plugins/TeamsIntegrationBundle/
+```
 
-## Was ist enthalten?
+### 3. Install Azure App Registration
+1. Go to the [Azure Portal](https://portal.azure.com/).
+2. Navigate to **Azure Entra → App registrations → New registration**.
+3. Name your app (e.g., "Kimai Teams Integration").
+4. Set **Supported account types** to "Accounts in this organizational directory only".
+5. Click **Register**.
+6. After registration, note down the **Application (client) ID** and **Directory (tenant) ID**.
+7. Go to **Certificates & secrets → New client secret**. Add a description and set an expiration. Click **Add** and copy the secret value.
+8. Navigate to **API permissions → Add a permission → Microsoft Graph → Application permissions**.
+9. Add the following permissions:
+    - `Group.ReadWrite.All`
+    - `User.ReadBasic.All`
+    - `TeamSettings.ReadWrite.All`
+10. Click **Grant admin consent for [Your Organization]** and confirm.
+11. Your Azure App Registration is now set up.
 
-- ein neuer Konsolenbefehl `ms-teams:sync-folders` für die Erstellung von Kunden- und Projektordnern
-- Validierung Ihrer Teams-Konfiguration (Team ID, Ordnerpfad)
-- Unterstützung für `.env`-Variablen:
-    - `GRAPH_TENANT_ID`
-    - `GRAPH_CLIENT_ID`
-    - `GRAPH_CLIENT_SECRET`
-
-## Systemvoraussetzungen
-
-Sie benötigen:
-
-- eine gültige Azure-App-Registrierung
-- die Möglichkeit, Umgebungsvariablen in `.env` zu setzen
-- Zugriff auf Microsoft Graph API
-
-## Einrichtungsschritte nach der Installation
-
-1. Fügen Sie in Ihrer Kimai-Installation eine `.env` Datei hinzu:
+### 4. Add Required Environment Variables
+These variables are necessary for the plugin to authenticate with Microsoft Graph API.
+#### 4.1 For Non-Docker Users
+Create `.env` in the main Kimai directory:
 
 ```
 GRAPH_TENANT_ID=
 GRAPH_CLIENT_ID=
 GRAPH_CLIENT_SECRET=
 ```
-Wenn Sie Docker verwenden, fügen Sie die Variablen in Ihrer `docker-compose.yml` Datei hinzu oder setzen Sie die folgende Flags
-```
--e GRAPH_TENANT_ID=''
--e GRAPH_CLIENT_ID=''
--e GRAPH_CLIENT_SECRET=''
-```
-beim Starten des Containers.
-
-2. Konfigurieren Sie unter  
-   **Kimai → System → Microsoft Teams**  
-   das gewünschte Team und den Ordnerpfad.
-
-3. Führen Sie bei Bedarf den Konsolenbefehl aus:
-
-```
-bin/console ms-teams:sync-folders
+#### 4.2 For Docker Users
+Add the following lines to your `docker-compose.yml` under the `kimai` service:
+```yaml
+environment:
+  - GRAPH_TENANT_ID=your_tenant_id
+  - GRAPH_CLIENT_ID=your_client_id
+  - GRAPH_CLIENT_SECRET=your_client_secret
 ```
 
-
-Damit werden Kunden- und Projektordner mit Ihrem Microsoft-Team erstellt, solange Sie noch nicht existieren.
-
-{% else %}
-
-## Microsoft Teams Integration for Kimai
-
-A Kimai plugin that automatically creates customer and project folders inside a selected Microsoft Team.  
-Based on your Kimai customer and project data, the plugin generates the corresponding folder structure within the chosen Team — fully automated and reliable.
-
-Optimize your document organization, reduce manual work, and ensure your team always has the correct folder at the right time.
-
-Perfect for agencies, IT service providers, and organizations using Microsoft Teams as their main collaboration platform.
-
-## Automated folder structure in Microsoft Teams
-
-The plugin automatically creates:
-
-- customer folders
-- project folders
-- structured subfolders inside a chosen base directory
-
-Everything is handled via the Microsoft Graph API without manual interaction.
-
-## What's included?
-
-- a new console command `ms-teams:sync-folders` for creation of customer and project folders
-- configuration validation (Team ID, folder path)
-- support for `.env` variables:
-    - `GRAPH_TENANT_ID`
-    - `GRAPH_CLIENT_ID`
-    - `GRAPH_CLIENT_SECRET`
-
-## System Requirements
-
-You need:
-
-- a valid Azure App Registration
-- the ability to set environment variables via `.env`
-- access to Microsoft Graph API
+Replace `your_tenant_id`, `your_client_id`, and `your_client_secret` with the actual values from your Azure App Registration.
 
 
-## Setup steps after Installation
-
-1. Create a `.env` file inside your Kimai installation and add:
+### 5. Clear Cache
 
 ```
-GRAPH_TENANT_ID=
-GRAPH_CLIENT_ID=
-GRAPH_CLIENT_SECRET=
-```
-If you are using Docker, add the variables to your `docker-compose.yml` file or set the following flags
-```
--e GRAPH_TENANT_ID=''
--e GRAPH_CLIENT_ID=''
--e GRAPH_CLIENT_SECRET=''
-```
-when starting the container.
-
-2. Configure the desired team and folder path under:  
-   **Kimai → System → Microsoft Teams**
-
-3. Run the sync command if needed:
-
-```
-bin/console ms-teams:sync-folders
+bin/console kimai:reload
 ```
 
-This creates all customer and project folders with your selected Microsoft Team.
-{% endif %}
+Restart PHP-FPM if necessary.
+
+### 6. Configure your instance
+Lokk below for configuration details.
+
+### Optional: 7. Create Teams and Channels
+To create teams and channels for existing customers and projects, run:
+
+```bash
+bin/console ms-teams:initialize
+```
+#### Please note:
+- This command will create teams and channels for all existing customers and projectes, which do not yet have a corresponding team or channel in Microsoft Teams.
+- Make sure your Azure App has the necessary permissions and that the environment variables are correctly set before running this command.
+- This operation may take some time depending on the number of customers and projects in your Kimai instance.
+- Review the created teams and channels in Microsoft Teams to ensure they have been set up as expected.
+- **It is possible that you have to run this command multiple times if there are failures due to rate limiting or other transient issues.**
+
+
+## Configuration in Kimai
+
+Go to:
+
+**Kimai → System → MS Teams**
+
+Here you configure **exactly where** Kimai will create customer and project folders inside Microsoft Teams.
+
+### Settings:
+
+| Setting                            | Description                                                                                                    | Default                    |
+|------------------------------------|----------------------------------------------------------------------------------------------------------------|----------------------------|
+| **Admin user for Microsoft Teams** | The default user which is the owner of every team and channel.                                                 | `none`                     |
+| **Admin user for Kimai**           | The default user which is the owner of every team created in Kimai by the plugin                               | `none`                     |
+| **Customer**                       |
+| **Name template for the team**     | Template for naming the Microsoft Teams and Kimai Teams, optinal variables are `{name}` and `{id}`             | `{name}`                   |
+| **Description template for the team**| Template for the description of the Microsoft Teams and Kimai Teams, optinal variables are `{name}` and `{id}` | `Team for Customer {name}` |
+| **Archive teams for deleted customers** | If enabled, teams will be archived instead of deleted when a customer is removed in Kimai.                     | `false`                    |
+| **Project**                        |
+| **Name template for the channel**  | Template for naming the Microsoft Teams channels and Kimai Teams, optinal variables are `{name}` and `{id}`    | `{name}`                   |
+| **Archive channels for deleted projects** | If enabled, channels will be archived instead of deleted when a project is removed in Kimai.                   | `false`                    |
+
+
+Azure credentials are taken from `.env`.
+
+## Configuration Health Check
+The plugin validates:
+- Azure credentials
+- Access token generation
+
+On success:
+
+```
+Configuration looks good.
+```
+
+
+## Support
+All support is provided by Klein IT Solutions:
+
+**Email:** [support@klein-it.solutions](mailto:support@klein-it.solutions)
