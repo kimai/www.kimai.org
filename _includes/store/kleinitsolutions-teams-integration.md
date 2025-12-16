@@ -104,17 +104,17 @@ Here you configure **exactly where** Kimai will create customer and project fold
 
 ### Settings:
 
-| Setting                            | Description                                                                                                    | Default           |
-|------------------------------------|----------------------------------------------------------------------------------------------------------------|-------------------|
-| **Admin user for Microsoft Teams** | The default user which is the owner of every team and channel.                                                 | `none`            |
-| **Admin user for Kimai**           | The default user which is the owner of every team created in Kimai by the plugin                               | `none`            |
+| Setting                            | Description                                                                                                    | Default                    |
+|------------------------------------|----------------------------------------------------------------------------------------------------------------|----------------------------|
+| **Admin user for Microsoft Teams** | The default user which is the owner of every team and channel.                                                 | `none`                     |
+| **Admin user for Kimai**           | The default user which is the owner of every team created in Kimai by the plugin                               | `none`                     |
 | **Customer**                       |
-| **Name template for the team**     | Template for naming the Microsoft Teams and Kimai Teams, optinal variables are `{name}` and `{id}`             | `{name}`          |
+| **Name template for the team**     | Template for naming the Microsoft Teams and Kimai Teams, optinal variables are `{name}` and `{id}`             | `{name}`                   |
 | **Description template for the team**| Template for the description of the Microsoft Teams and Kimai Teams, optinal variables are `{name}` and `{id}` | `Team for Customer {name}` |
-| **Archive teams for deleted customers** | If enabled, teams will be archived instead of deleted when a customer is removed in Kimai.                     | `unchecked`       |
+| **Archive teams for deleted customers** | If enabled, teams will be archived instead of deleted when a customer is removed in Kimai.                     | `false`                    |
 | **Project**                        |
-| **Name template for the channel**  | Template for naming the Microsoft Teams channels and Kimai Teams, optinal variables are `{name}` and `{id}`    | `{name}`          |
-| **Archive channels for deleted projects** | If enabled, channels will be archived instead of deleted when a project is removed in Kimai.                   | `unchecked`       |
+| **Name template for the channel**  | Template for naming the Microsoft Teams channels and Kimai Teams, optinal variables are `{name}` and `{id}`    | `{name}`                   |
+| **Archive channels for deleted projects** | If enabled, channels will be archived instead of deleted when a project is removed in Kimai.                   | `false`                    |
 
 
 Azure credentials are taken from `.env`.
@@ -130,19 +130,6 @@ On success:
 Configuration looks good.
 ```
 
-## Updating
-Replace the folder with a new version and run:
-
-```
-bin/console kimai:reload
-```
-
-## Uninstallation
-
-```
-rm -rf var/plugins/TeamsIntegrationBundle
-bin/console kimai:reload
-```
 
 ## Support
 All support is provided by Klein IT Solutions:
