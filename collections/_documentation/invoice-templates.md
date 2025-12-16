@@ -260,23 +260,16 @@ The example `{% raw %}{{ invoice['invoice.due_date'] }}{% endraw %}` would then 
 | ${invoice.tax_nc}             | The tax of the invoice amount without currency                                          |
 | ${invoice.tax_plain}          | The tax of the invoice amount as unformatted value                                      |
 | ${invoice.tax_hide}           | A boolean flag indicating if the tax field should be hidden (only applies if tax = 0)   |
-| ${template.name}              | The invoice name, as configured in your template                                        |
-| ${template.company}           | The company name, as configured in your template                                        |
-| ${template.address}           | The invoicing address, as configured in your template                                   |
-| ${template.title}             | The invoice title, as configured in your template                                       |
+| ${template.name}              | The invoice template (for internal use, usually not needed)                             |
+| ${template.title}             | The invoice document title                                                              |
 | ${template.payment_terms}     | Your payment terms, might be multiple lines                                             |
 | ${template.due_days}          | The amount of days for the payment, starting with the day of creating the invoice       |
-| ${template.vat_id}            | The Vat ID for this invoice                                                             |
 | ${template.contact}           | Extended contact information, might be multiple lines                                   |
-| ${template.payment_details}   | Extended payment details like bank accounts, might be multiple lines                    |
+| ${template.payment_details}   | Payment details like bank accounts (free text, might be multiple lines)                 |
 | ${query.begin}                | The query begin as formatted short date                                                 |
 | ${query.begin_process}        | The query begin, to be formatted with the twig filter `date()`                          |
 | ${query.end}                  | The query end as formatted short date                                                   |
 | ${query.end_process}          | The query end, to be formatted with the twig filter `date()`                            |
-| ${query.month}                | The month for this query (begin date) **DEPRECATED**                                    |
-| ${query.month_number}         | The numerical value for the month (with leading zero) **DEPRECATED**                    |
-| ${query.day}                  | The day for the queries begin as numerical value with leading zero **DEPRECATED**       |
-| ${query.year}                 | The year for this query (begin date) **DEPRECATED**                                     |
 | ${query.begin_month}          | The month for the queries begin date                                                    |
 | ${query.begin_month_number}   | The numerical value for the month of the queries begin date with leading zero           |
 | ${query.begin_day}            | The day for the queries begin as numerical value with leading zero                      |
@@ -296,10 +289,10 @@ The example `{% raw %}{{ invoice['invoice.due_date'] }}{% endraw %}` would then 
 | ${user.alias}                 | The current users alias                                                                 |
 | ${user.title}                 | The current users title                                                                 |
 | ${user.see_others}            | A boolean indicating if the current user can see other users items                      |
-| ${user.meta.X}                | The current users [preference]({% link _documentation/user-preferences.md %}) named `X` |
+| ${user.meta.X}                | The current [users preference]({% link _documentation/user-preferences.md %}) named `X` |
 {: .table }
 
-### Timesheet entry variables
+### Timesheet entries
 
 For each timesheet record you can use these variables:
 
@@ -346,35 +339,67 @@ For each timesheet record you can use these variables:
 | ${entry.category}            | The category of this entry (plugins can add custom types)                                                                                                                                                                    | work            |
 {: .table }
 
-### Customer variables
+### Invoice issuer
+
+Variables for the issuer of the invoice:
+
+| Key                       | Description (highlighted words are the names in the UI)                                                                                                                                                                                  |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ${issuer.id}              | The internal customer ID (do not display that on your invoices)                                                                                                                                                                          |
+| ${issuer.name}            | The customer `name`                                                                                                                                                                                                                      |
+| ${issuer.comment}         | The `description` of this customer                                                                                                                                                                                                       |
+| ${issuer.address_line1}   | Customer address: Line 1                                                                                                                                                                                                                 |
+| ${issuer.address_line2}   | Customer address: Line 2                                                                                                                                                                                                                 |
+| ${issuer.address_line3}   | Customer address: Line 3                                                                                                                                                                                                                 |
+| ${issuer.postcode}        | Customer address: Post Code                                                                                                                                                                                                              |
+| ${issuer.city}            | Customer address: City                                                                                                                                                                                                                   |
+| ${issuer.contact}         | Usually the name of the customer `contact` person                                                                                                                                                                                        |
+| ${issuer.company}         | The `company name`                                                                                                                                                                                                                       |
+| ${issuer.vat_id}          | The customer `Vat ID`                                                                                                                                                                                                                    |
+| ${issuer.number}          | The customer `account` number                                                                                                                                                                                                            |
+| ${issuer.country}         | The `country` of the customer location, as 2-letter code                                                                                                                                                                                 |
+| ${issuer.country_name}    | The translated `country` name                                                                                                                                                                                                            |
+| ${issuer.homepage}        | A URL to the customer `homepage`                                                                                                                                                                                                         |
+| ${issuer.phone}           | The customers `phone` number                                                                                                                                                                                                             |
+| ${issuer.mobile}          | The customers `mobile` number                                                                                                                                                                                                            |
+| ${issuer.email}           | The customers `email` address                                                                                                                                                                                                            |
+| ${issuer.fax}             | The customers `fax` number                                                                                                                                                                                                               |
+| ${issuer.invoice_text}    | The configurable invoice text for that customer                                                                                                                                                                                          |
+| ${issuer.buyer_reference} | Buyer reference, used in e-invoicing                                                                                                                                                                                                     |
+| ${issuer.meta.foo}        | The customer [meta field]({% link _documentation/plugin-custom-fields.md %}) with the internal name `foo` (must be in lowercase letters, e.g. `FOO` will be available as `${customer.meta.foo}`. Only available if the field is visible. |
+{: .table }
+
+### Customer
 
 Variables for the customer who is receiving the invoice:
 
-| Key                                | Description (highlighted words are the names in the UI)                                                                                                                                                                                  |
-|------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ${customer.id}                     | The internal customer ID (do not display that on your invoices)                                                                                                                                                                          |
-| ${customer.name}                   | The customer `name`                                                                                                                                                                                                                      |
-| ${customer.comment}                | The `description` of this customer                                                                                                                                                                                                       |
-| ${customer.address}                | The customer `address`                                                                                                                                                                                                                   |
-| ${customer.contact}                | Usually the name of the customer `contact` person                                                                                                                                                                                        |
-| ${customer.company}                | The `company name`                                                                                                                                                                                                                       |
-| ${customer.vat}                    | The customer `Vat ID`                                                                                                                                                                                                                    |
-| ${customer.number}                 | The customer `account` number                                                                                                                                                                                                            |
-| ${customer.country}                | The `country` of the customer location                                                                                                                                                                                                   |
-| ${customer.homepage}               | A URL to the customer `homepage`                                                                                                                                                                                                         |
-| ${customer.phone}                  | The customers `phone` number                                                                                                                                                                                                             |
-| ${customer.mobile}                 | The customers `mobile` number                                                                                                                                                                                                            |
-| ${customer.email}                  | The customers `email` address                                                                                                                                                                                                            |
-| ${customer.fax}                    | The customers `fax` number                                                                                                                                                                                                               |
-| ${customer.meta.foo}               | The customer [meta field]({% link _documentation/plugin-custom-fields.md %}) with the internal name `foo` (must be in lowercase letters, e.g. `FOO` will be available as `${customer.meta.foo}`. Only available if the field is visible. |
-| ${customer.budget_open}            | The open monetary budget for this customer at the end date of your filter query (formatted with currency)                                                                                                                                |
-| ${customer.budget_open_plain}      | The open monetary budget for this customer at the end date of your filter query (plain float value)                                                                                                                                      |
-| ${customer.time_budget_open}       | The open time budget for this customer at the end date of your filter query (formatted)                                                                                                                                                  |
-| ${customer.time_budget_open_plain} | The open time budget for this customer at the end date of your filter query (integer value = seconds)                                                                                                                                    |
-| ${customer.invoice_text}           | The configurable invoice text for that customer                                                                                                                                                                                          |
+| Key                         | Description (highlighted words are the names in the UI)                                                                                                                                                                                  |
+|-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ${customer.id}              | The internal customer ID (do not display that on your invoices)                                                                                                                                                                          |
+| ${customer.name}            | The customer `name`                                                                                                                                                                                                                      |
+| ${customer.comment}         | The `description` of this customer                                                                                                                                                                                                       |
+| ${customer.address_line1}   | Customer address: Line 1                                                                                                                                                                                                                 |
+| ${customer.address_line2}   | Customer address: Line 2                                                                                                                                                                                                                 |
+| ${customer.address_line3}   | Customer address: Line 3                                                                                                                                                                                                                 |
+| ${customer.postcode}        | Customer address: Post Code                                                                                                                                                                                                              |
+| ${customer.city}            | Customer address: City                                                                                                                                                                                                                   |
+| ${customer.contact}         | Usually the name of the customer `contact` person                                                                                                                                                                                        |
+| ${customer.company}         | The `company name`                                                                                                                                                                                                                       |
+| ${customer.vat_id}          | The customer `Vat ID`                                                                                                                                                                                                                    |
+| ${customer.number}          | The customer `account` number                                                                                                                                                                                                            |
+| ${customer.country}         | The `country` of the customer location, as 2-letter code                                                                                                                                                                                 |
+| ${customer.country_name}    | The translated `country` name                                                                                                                                                                                                            |
+| ${customer.homepage}        | A URL to the customer `homepage`                                                                                                                                                                                                         |
+| ${customer.phone}           | The customers `phone` number                                                                                                                                                                                                             |
+| ${customer.mobile}          | The customers `mobile` number                                                                                                                                                                                                            |
+| ${customer.email}           | The customers `email` address                                                                                                                                                                                                            |
+| ${customer.fax}             | The customers `fax` number                                                                                                                                                                                                               |
+| ${customer.invoice_text}    | The configurable invoice text for that customer                                                                                                                                                                                          |
+| ${customer.buyer_reference} | Buyer reference, used in e-invoicing                                                                                                                                                                                                     |
+| ${customer.meta.foo}        | The customer [meta field]({% link _documentation/plugin-custom-fields.md %}) with the internal name `foo` (must be in lowercase letters, e.g. `FOO` will be available as `${customer.meta.foo}`. Only available if the field is visible. |
 {: .table }
 
-### Project variables
+### Project
 
 The following variables exist, if projects could be found in the filtered data:
 
@@ -396,17 +421,13 @@ The following variables exist, if projects could be found in the filtered data:
 | ${project.number}                 | The project number                                                                                                                                                                                                                     |
 | ${project.invoice_text}           | The project invoice-text                                                                                                                                                                                                               |
 | ${project.meta.foo}               | The project [meta field]({% link _documentation/plugin-custom-fields.md %}) with the internal name `foo` (must be in lowercase letters, e.g. `FOO` will be available as `${project.meta.foo}`. Only available if the field is visible. |
-| ${project.budget_open}            | The open monetary budget for this project at the end date of your filter query (formatted with currency)                                                                                                                               |
-| ${project.budget_open_plain}      | The open monetary budget for this project at the end date of your filter query (plain float value)                                                                                                                                     |
-| ${project.time_budget_open}       | The open time budget for this project at the end date of your filter query (formatted)                                                                                                                                                 |
-| ${project.time_budget_open_plain} | The open time budget for this project at the end date of your filter query (integer value = seconds)                                                                                                                                   |
 {: .table }
 
 If more than one project was found, you will have further variables (same list as above) called `${project.1.name}`, `${project.2.name}` and so on.
 The order is not guaranteed, so it is not recommended relying on those variables. 
 If your template relies on a `{$project.X}` variable, it is recommended to limit the invoice data with the project search filter. 
 
-### Activity variables
+### Activity
 
 The following variables exist, if activities could be found in the filtered data:
 
@@ -418,17 +439,13 @@ The following variables exist, if activities could be found in the filtered data
 | ${activity.number}                 | The activity number                                                                                                                                                                                                                      |
 | ${activity.invoice_text}           | The activity invoice-text                                                                                                                                                                                                                |
 | ${activity.meta.foo}               | The activity [meta field]({% link _documentation/plugin-custom-fields.md %}) with the internal name `foo` (must be in lowercase letters, e.g. `FOO` will be available as `${activity.meta.foo}`. Only available if the field is visible. |
-| ${activity.budget_open}            | The open monetary budget for this activity at the end date of your filter query (formatted with currency)                                                                                                                                |
-| ${activity.budget_open_plain}      | The open monetary budget for this activity at the end date of your filter query (plain float value)                                                                                                                                      |
-| ${activity.time_budget_open}       | The open time budget for this activity at the end date of your filter query (formatted)                                                                                                                                                  |
-| ${activity.time_budget_open_plain} | The open time budget for this activity at the end date of your filter query (integer value = seconds)                                                                                                                                    |
 {: .table }
 
 If more than one activity was found, you will have further variables (same list as above) called `${activity.1.name}`, `${activity.2.name}` and so on.
 The order is not guaranteed, so it is not recommended relying on those variables.
 If your template relies on a `{activity.X}` variable, it is recommended to limit the invoice data with the activity search filter.
 
-### Uploading invoice documents
+### Uploading invoice templates
 
 You can upload invoice documents via the UI at `/en/invoice/document_upload`.
 
