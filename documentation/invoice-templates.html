@@ -957,19 +957,11 @@ The example <code class="language-plaintext highlighter-rouge">{{ invoice['invoi
     </tr>
     <tr>
       <td>${template.name}</td>
-      <td>The invoice name, as configured in your template</td>
-    </tr>
-    <tr>
-      <td>${template.company}</td>
-      <td>The company name, as configured in your template</td>
-    </tr>
-    <tr>
-      <td>${template.address}</td>
-      <td>The invoicing address, as configured in your template</td>
+      <td>The invoice template (for internal use, usually not needed)</td>
     </tr>
     <tr>
       <td>${template.title}</td>
-      <td>The invoice title, as configured in your template</td>
+      <td>The invoice document title</td>
     </tr>
     <tr>
       <td>${template.payment_terms}</td>
@@ -980,16 +972,12 @@ The example <code class="language-plaintext highlighter-rouge">{{ invoice['invoi
       <td>The amount of days for the payment, starting with the day of creating the invoice</td>
     </tr>
     <tr>
-      <td>${template.vat_id}</td>
-      <td>The Vat ID for this invoice</td>
-    </tr>
-    <tr>
       <td>${template.contact}</td>
       <td>Extended contact information, might be multiple lines</td>
     </tr>
     <tr>
       <td>${template.payment_details}</td>
-      <td>Extended payment details like bank accounts, might be multiple lines</td>
+      <td>Payment details like bank accounts (free text, might be multiple lines)</td>
     </tr>
     <tr>
       <td>${query.begin}</td>
@@ -1006,22 +994,6 @@ The example <code class="language-plaintext highlighter-rouge">{{ invoice['invoi
     <tr>
       <td>${query.end_process}</td>
       <td>The query end, to be formatted with the twig filter <code class="language-plaintext highlighter-rouge">date()</code></td>
-    </tr>
-    <tr>
-      <td>${query.month}</td>
-      <td>The month for this query (begin date) <strong>DEPRECATED</strong></td>
-    </tr>
-    <tr>
-      <td>${query.month_number}</td>
-      <td>The numerical value for the month (with leading zero) <strong>DEPRECATED</strong></td>
-    </tr>
-    <tr>
-      <td>${query.day}</td>
-      <td>The day for the queries begin as numerical value with leading zero <strong>DEPRECATED</strong></td>
-    </tr>
-    <tr>
-      <td>${query.year}</td>
-      <td>The year for this query (begin date) <strong>DEPRECATED</strong></td>
     </tr>
     <tr>
       <td>${query.begin_month}</td>
@@ -1101,12 +1073,12 @@ The example <code class="language-plaintext highlighter-rouge">{{ invoice['invoi
     </tr>
     <tr>
       <td>${user.meta.X}</td>
-      <td>The current users <a href="/documentation/user-preferences.html">preference</a> named <code class="language-plaintext highlighter-rouge">X</code></td>
+      <td>The current <a href="/documentation/user-preferences.html">users preference</a> named <code class="language-plaintext highlighter-rouge">X</code></td>
     </tr>
   </tbody>
 </table>
 
-<h3 id="timesheet-entry-variables">Timesheet entry variables</h3>
+<h3 id="timesheet-entries">Timesheet entries</h3>
 
 <p>For each timesheet record you can use these variables:</p>
 
@@ -1317,7 +1289,110 @@ The example <code class="language-plaintext highlighter-rouge">{{ invoice['invoi
   </tbody>
 </table>
 
-<h3 id="customer-variables">Customer variables</h3>
+<h3 id="invoice-issuer">Invoice issuer</h3>
+
+<p>Variables for the issuer of the invoice:</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Description (highlighted words are the names in the UI)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>${issuer.id}</td>
+      <td>The internal customer ID (do not display that on your invoices)</td>
+    </tr>
+    <tr>
+      <td>${issuer.name}</td>
+      <td>The customer <code class="language-plaintext highlighter-rouge">name</code></td>
+    </tr>
+    <tr>
+      <td>${issuer.comment}</td>
+      <td>The <code class="language-plaintext highlighter-rouge">description</code> of this customer</td>
+    </tr>
+    <tr>
+      <td>${issuer.address_line1}</td>
+      <td>Customer address: Line 1</td>
+    </tr>
+    <tr>
+      <td>${issuer.address_line2}</td>
+      <td>Customer address: Line 2</td>
+    </tr>
+    <tr>
+      <td>${issuer.address_line3}</td>
+      <td>Customer address: Line 3</td>
+    </tr>
+    <tr>
+      <td>${issuer.postcode}</td>
+      <td>Customer address: Post Code</td>
+    </tr>
+    <tr>
+      <td>${issuer.city}</td>
+      <td>Customer address: City</td>
+    </tr>
+    <tr>
+      <td>${issuer.contact}</td>
+      <td>Usually the name of the customer <code class="language-plaintext highlighter-rouge">contact</code> person</td>
+    </tr>
+    <tr>
+      <td>${issuer.company}</td>
+      <td>The <code class="language-plaintext highlighter-rouge">company name</code></td>
+    </tr>
+    <tr>
+      <td>${issuer.vat_id}</td>
+      <td>The customer <code class="language-plaintext highlighter-rouge">Vat ID</code></td>
+    </tr>
+    <tr>
+      <td>${issuer.number}</td>
+      <td>The customer <code class="language-plaintext highlighter-rouge">account</code> number</td>
+    </tr>
+    <tr>
+      <td>${issuer.country}</td>
+      <td>The <code class="language-plaintext highlighter-rouge">country</code> of the customer location, as 2-letter code</td>
+    </tr>
+    <tr>
+      <td>${issuer.country_name}</td>
+      <td>The translated <code class="language-plaintext highlighter-rouge">country</code> name</td>
+    </tr>
+    <tr>
+      <td>${issuer.homepage}</td>
+      <td>A URL to the customer <code class="language-plaintext highlighter-rouge">homepage</code></td>
+    </tr>
+    <tr>
+      <td>${issuer.phone}</td>
+      <td>The customers <code class="language-plaintext highlighter-rouge">phone</code> number</td>
+    </tr>
+    <tr>
+      <td>${issuer.mobile}</td>
+      <td>The customers <code class="language-plaintext highlighter-rouge">mobile</code> number</td>
+    </tr>
+    <tr>
+      <td>${issuer.email}</td>
+      <td>The customers <code class="language-plaintext highlighter-rouge">email</code> address</td>
+    </tr>
+    <tr>
+      <td>${issuer.fax}</td>
+      <td>The customers <code class="language-plaintext highlighter-rouge">fax</code> number</td>
+    </tr>
+    <tr>
+      <td>${issuer.invoice_text}</td>
+      <td>The configurable invoice text for that customer</td>
+    </tr>
+    <tr>
+      <td>${issuer.buyer_reference}</td>
+      <td>Buyer reference, used in e-invoicing</td>
+    </tr>
+    <tr>
+      <td>${issuer.meta.foo}</td>
+      <td>The customer <a href="/documentation/plugin-custom-fields.html">meta field</a> with the internal name <code class="language-plaintext highlighter-rouge">foo</code> (must be in lowercase letters, e.g. <code class="language-plaintext highlighter-rouge">FOO</code> will be available as <code class="language-plaintext highlighter-rouge">${customer.meta.foo}</code>. Only available if the field is visible.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="customer">Customer</h3>
 
 <p>Variables for the customer who is receiving the invoice:</p>
 
@@ -1342,8 +1417,24 @@ The example <code class="language-plaintext highlighter-rouge">{{ invoice['invoi
       <td>The <code class="language-plaintext highlighter-rouge">description</code> of this customer</td>
     </tr>
     <tr>
-      <td>${customer.address}</td>
-      <td>The customer <code class="language-plaintext highlighter-rouge">address</code></td>
+      <td>${customer.address_line1}</td>
+      <td>Customer address: Line 1</td>
+    </tr>
+    <tr>
+      <td>${customer.address_line2}</td>
+      <td>Customer address: Line 2</td>
+    </tr>
+    <tr>
+      <td>${customer.address_line3}</td>
+      <td>Customer address: Line 3</td>
+    </tr>
+    <tr>
+      <td>${customer.postcode}</td>
+      <td>Customer address: Post Code</td>
+    </tr>
+    <tr>
+      <td>${customer.city}</td>
+      <td>Customer address: City</td>
     </tr>
     <tr>
       <td>${customer.contact}</td>
@@ -1354,7 +1445,7 @@ The example <code class="language-plaintext highlighter-rouge">{{ invoice['invoi
       <td>The <code class="language-plaintext highlighter-rouge">company name</code></td>
     </tr>
     <tr>
-      <td>${customer.vat}</td>
+      <td>${customer.vat_id}</td>
       <td>The customer <code class="language-plaintext highlighter-rouge">Vat ID</code></td>
     </tr>
     <tr>
@@ -1363,7 +1454,11 @@ The example <code class="language-plaintext highlighter-rouge">{{ invoice['invoi
     </tr>
     <tr>
       <td>${customer.country}</td>
-      <td>The <code class="language-plaintext highlighter-rouge">country</code> of the customer location</td>
+      <td>The <code class="language-plaintext highlighter-rouge">country</code> of the customer location, as 2-letter code</td>
+    </tr>
+    <tr>
+      <td>${customer.country_name}</td>
+      <td>The translated <code class="language-plaintext highlighter-rouge">country</code> name</td>
     </tr>
     <tr>
       <td>${customer.homepage}</td>
@@ -1386,33 +1481,21 @@ The example <code class="language-plaintext highlighter-rouge">{{ invoice['invoi
       <td>The customers <code class="language-plaintext highlighter-rouge">fax</code> number</td>
     </tr>
     <tr>
-      <td>${customer.meta.foo}</td>
-      <td>The customer <a href="/documentation/plugin-custom-fields.html">meta field</a> with the internal name <code class="language-plaintext highlighter-rouge">foo</code> (must be in lowercase letters, e.g. <code class="language-plaintext highlighter-rouge">FOO</code> will be available as <code class="language-plaintext highlighter-rouge">${customer.meta.foo}</code>. Only available if the field is visible.</td>
-    </tr>
-    <tr>
-      <td>${customer.budget_open}</td>
-      <td>The open monetary budget for this customer at the end date of your filter query (formatted with currency)</td>
-    </tr>
-    <tr>
-      <td>${customer.budget_open_plain}</td>
-      <td>The open monetary budget for this customer at the end date of your filter query (plain float value)</td>
-    </tr>
-    <tr>
-      <td>${customer.time_budget_open}</td>
-      <td>The open time budget for this customer at the end date of your filter query (formatted)</td>
-    </tr>
-    <tr>
-      <td>${customer.time_budget_open_plain}</td>
-      <td>The open time budget for this customer at the end date of your filter query (integer value = seconds)</td>
-    </tr>
-    <tr>
       <td>${customer.invoice_text}</td>
       <td>The configurable invoice text for that customer</td>
+    </tr>
+    <tr>
+      <td>${customer.buyer_reference}</td>
+      <td>Buyer reference, used in e-invoicing</td>
+    </tr>
+    <tr>
+      <td>${customer.meta.foo}</td>
+      <td>The customer <a href="/documentation/plugin-custom-fields.html">meta field</a> with the internal name <code class="language-plaintext highlighter-rouge">foo</code> (must be in lowercase letters, e.g. <code class="language-plaintext highlighter-rouge">FOO</code> will be available as <code class="language-plaintext highlighter-rouge">${customer.meta.foo}</code>. Only available if the field is visible.</td>
     </tr>
   </tbody>
 </table>
 
-<h3 id="project-variables">Project variables</h3>
+<h3 id="project">Project</h3>
 
 <p>The following variables exist, if projects could be found in the filtered data:</p>
 
@@ -1488,22 +1571,6 @@ The example <code class="language-plaintext highlighter-rouge">{{ invoice['invoi
       <td>${project.meta.foo}</td>
       <td>The project <a href="/documentation/plugin-custom-fields.html">meta field</a> with the internal name <code class="language-plaintext highlighter-rouge">foo</code> (must be in lowercase letters, e.g. <code class="language-plaintext highlighter-rouge">FOO</code> will be available as <code class="language-plaintext highlighter-rouge">${project.meta.foo}</code>. Only available if the field is visible.</td>
     </tr>
-    <tr>
-      <td>${project.budget_open}</td>
-      <td>The open monetary budget for this project at the end date of your filter query (formatted with currency)</td>
-    </tr>
-    <tr>
-      <td>${project.budget_open_plain}</td>
-      <td>The open monetary budget for this project at the end date of your filter query (plain float value)</td>
-    </tr>
-    <tr>
-      <td>${project.time_budget_open}</td>
-      <td>The open time budget for this project at the end date of your filter query (formatted)</td>
-    </tr>
-    <tr>
-      <td>${project.time_budget_open_plain}</td>
-      <td>The open time budget for this project at the end date of your filter query (integer value = seconds)</td>
-    </tr>
   </tbody>
 </table>
 
@@ -1511,7 +1578,7 @@ The example <code class="language-plaintext highlighter-rouge">{{ invoice['invoi
 The order is not guaranteed, so it is not recommended relying on those variables. 
 If your template relies on a <code class="language-plaintext highlighter-rouge">{$project.X}</code> variable, it is recommended to limit the invoice data with the project search filter.</p>
 
-<h3 id="activity-variables">Activity variables</h3>
+<h3 id="activity">Activity</h3>
 
 <p>The following variables exist, if activities could be found in the filtered data:</p>
 
@@ -1547,22 +1614,6 @@ If your template relies on a <code class="language-plaintext highlighter-rouge">
       <td>${activity.meta.foo}</td>
       <td>The activity <a href="/documentation/plugin-custom-fields.html">meta field</a> with the internal name <code class="language-plaintext highlighter-rouge">foo</code> (must be in lowercase letters, e.g. <code class="language-plaintext highlighter-rouge">FOO</code> will be available as <code class="language-plaintext highlighter-rouge">${activity.meta.foo}</code>. Only available if the field is visible.</td>
     </tr>
-    <tr>
-      <td>${activity.budget_open}</td>
-      <td>The open monetary budget for this activity at the end date of your filter query (formatted with currency)</td>
-    </tr>
-    <tr>
-      <td>${activity.budget_open_plain}</td>
-      <td>The open monetary budget for this activity at the end date of your filter query (plain float value)</td>
-    </tr>
-    <tr>
-      <td>${activity.time_budget_open}</td>
-      <td>The open time budget for this activity at the end date of your filter query (formatted)</td>
-    </tr>
-    <tr>
-      <td>${activity.time_budget_open_plain}</td>
-      <td>The open time budget for this activity at the end date of your filter query (integer value = seconds)</td>
-    </tr>
   </tbody>
 </table>
 
@@ -1570,7 +1621,7 @@ If your template relies on a <code class="language-plaintext highlighter-rouge">
 The order is not guaranteed, so it is not recommended relying on those variables.
 If your template relies on a <code class="language-plaintext highlighter-rouge">{activity.X}</code> variable, it is recommended to limit the invoice data with the activity search filter.</p>
 
-<h3 id="uploading-invoice-documents">Uploading invoice documents</h3>
+<h3 id="uploading-invoice-templates">Uploading invoice templates</h3>
 
 <p>You can upload invoice documents via the UI at <code class="language-plaintext highlighter-rouge">/en/invoice/document_upload</code>.</p>
 
@@ -1608,7 +1659,7 @@ The workaround is to change the document with another word processor: Apple page
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#create-a-template" class="nav-link">Create a template</a><ul><li class="nav-item"><a href="#pre-made-templates" class="nav-link">Pre-made templates</a></li><li class="nav-item"><a href="#pdf-templates" class="nav-link">PDF templates</a></li><li class="nav-item"><a href="#twig-templates-html" class="nav-link">Twig templates (HTML)</a></li><li class="nav-item"><a href="#docx-templates" class="nav-link">Docx templates</a></li><li class="nav-item"><a href="#spreadsheets-ods-and-xlsx" class="nav-link">Spreadsheets (ODS and XLSX)</a></li></ul></li><li class="nav-item"><a href="#template-variables" class="nav-link">Template variables</a><ul><li class="nav-item"><a href="#global-variables" class="nav-link">Global variables</a></li><li class="nav-item"><a href="#timesheet-entry-variables" class="nav-link">Timesheet entry variables</a></li><li class="nav-item"><a href="#customer-variables" class="nav-link">Customer variables</a></li><li class="nav-item"><a href="#project-variables" class="nav-link">Project variables</a></li><li class="nav-item"><a href="#activity-variables" class="nav-link">Activity variables</a></li><li class="nav-item"><a href="#uploading-invoice-documents" class="nav-link">Uploading invoice documents</a></li></ul></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#create-a-template" class="nav-link">Create a template</a><ul><li class="nav-item"><a href="#pre-made-templates" class="nav-link">Pre-made templates</a></li><li class="nav-item"><a href="#pdf-templates" class="nav-link">PDF templates</a></li><li class="nav-item"><a href="#twig-templates-html" class="nav-link">Twig templates (HTML)</a></li><li class="nav-item"><a href="#docx-templates" class="nav-link">Docx templates</a></li><li class="nav-item"><a href="#spreadsheets-ods-and-xlsx" class="nav-link">Spreadsheets (ODS and XLSX)</a></li></ul></li><li class="nav-item"><a href="#template-variables" class="nav-link">Template variables</a><ul><li class="nav-item"><a href="#global-variables" class="nav-link">Global variables</a></li><li class="nav-item"><a href="#timesheet-entries" class="nav-link">Timesheet entries</a></li><li class="nav-item"><a href="#invoice-issuer" class="nav-link">Invoice issuer</a></li><li class="nav-item"><a href="#customer" class="nav-link">Customer</a></li><li class="nav-item"><a href="#project" class="nav-link">Project</a></li><li class="nav-item"><a href="#activity" class="nav-link">Activity</a></li><li class="nav-item"><a href="#uploading-invoice-templates" class="nav-link">Uploading invoice templates</a></li></ul></li></ul>
         
         <ul class="nav">
             <li>
