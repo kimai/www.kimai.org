@@ -113,6 +113,7 @@ These are the existing rounding modes:
 ## Invoices
 
 - `Invoice number format` - read more at [invoices]({% link _documentation/invoices.md %})
+- `Rounding mode` - read more at [Rounding]({% link _documentation/rounding.md %})
 
 ## Authentication
 
