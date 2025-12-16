@@ -290,84 +290,192 @@
             <div class="tab-content">
                 <div class="tab-pane fade show active" id="store-info" role="tabpanel">
 
-                    
-<h2 id="microsoft-teams-integration-für-kimai">Microsoft Teams Integration für Kimai</h2>
+                    <h1 id="microsoft-teams-integration-for-kimai">Microsoft Teams Integration for Kimai</h1>
+<p>Seamlessly connect Kimai with Microsoft Teams</p>
 
-<p>Ein Kimai-Plugin zur automatischen Erstellung von Kunden- und Projektordnern in einem ausgewählten Microsoft-Team.<br>
-Basierend auf Ihren Kundendaten und Projekten in Kimai legt das Plugin die entsprechenden Ordnerstrukturen im gewünschten Team an – vollständig automatisiert und zuverlässig.</p>
+<h2 id="overview">Overview</h2>
+<p>The Microsoft Teams Integration Plugin enhances Kimai by synchronizing your customer and project structure directly into Microsoft Teams.
+Whenever you create customers or projects in Kimai, the plugin can generate matching teams and channels — ensuring consistent organization across both systems.</p>
 
-<p>Optimieren Sie Ihre Dokumentenablage, reduzieren Sie manuellen Aufwand und stellen Sie sicher, dass Ihre Teams immer den passenden Ordner zur richtigen Zeit haben.</p>
+<p>Designed for companies relying on Teams as their primary collaboration hub, this plugin streamlines document management, improves team alignment, and reduces manual setup time.</p>
 
-<p>Perfekt für Agenturen, IT-Dienstleister und Unternehmen, die Microsoft Teams als zentrale Arbeitsplattform nutzen.</p>
-
-<h2 id="automatische-ordnerstrukturen-in-microsoft-teams">Automatische Ordnerstrukturen in Microsoft Teams</h2>
-
-<p>Das Plugin erstellt automatisch:</p>
-
+<h2 id="key-features">Key Features</h2>
 <ul>
-  <li>Kundenordner</li>
-  <li>Projektordner</li>
-  <li>Strukturierte Ablagen unterhalb eines von Ihnen definierten Basisordners</li>
+  <li>Automated creation of customer and project structures inside a chosen Microsoft Teams Tenant</li>
+  <li>Fully integrated with Microsoft Graph API</li>
+  <li>Central configuration directly within Kimai</li>
+  <li>Live configuration and credentials health check</li>
+  <li>Secure Azure AD authentication</li>
+  <li>Works seamlessly with standard Microsoft Teams environments</li>
+  <li>Ideal for agencies, IT service providers, and project-based teams</li>
 </ul>
 
-<p>Der gesamte Prozess geschieht über die Microsoft Graph API, ohne manuelles Eingreifen.</p>
+<h2 id="installation-guide">Installation Guide</h2>
 
-<h2 id="was-ist-enthalten">Was ist enthalten?</h2>
-
+<h3 id="1-requirements">1. Requirements</h3>
 <ul>
-  <li>ein neuer Konsolenbefehl <code class="language-plaintext highlighter-rouge">ms-teams:sync-folders</code> für die Erstellung von Kunden- und Projektordnern</li>
-  <li>Validierung Ihrer Teams-Konfiguration (Team ID, Ordnerpfad)</li>
-  <li>Unterstützung für <code class="language-plaintext highlighter-rouge">.env</code>-Variablen:
+  <li>Kimai 2.43+</li>
+  <li>Azure App Registration: Tenant ID, Client ID, Client Secret</li>
+</ul>
+
+<h3 id="2-upload-the-plugin">2. Upload the Plugin</h3>
+<p>Extract the ZIP purchased from the shop and upload it to:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/your-kimai/var/plugins/TeamsIntegrationBundle/
+</code></pre></div></div>
+
+<h3 id="3-install-azure-app-registration">3. Install Azure App Registration</h3>
+<ol>
+  <li>Go to the <a href="https://portal.azure.com/">Azure Portal</a>.</li>
+  <li>Navigate to <strong>Azure Entra → App registrations → New registration</strong>.</li>
+  <li>Name your app (e.g., “Kimai Teams Integration”).</li>
+  <li>Set <strong>Supported account types</strong> to “Accounts in this organizational directory only”.</li>
+  <li>Click <strong>Register</strong>.</li>
+  <li>After registration, note down the <strong>Application (client) ID</strong> and <strong>Directory (tenant) ID</strong>.</li>
+  <li>Go to <strong>Certificates &amp; secrets → New client secret</strong>. Add a description and set an expiration. Click <strong>Add</strong> and copy the secret value.</li>
+  <li>Navigate to <strong>API permissions → Add a permission → Microsoft Graph → Application permissions</strong>.</li>
+  <li>Add the following permissions:
     <ul>
-      <li><code class="language-plaintext highlighter-rouge">GRAPH_TENANT_ID</code></li>
-      <li><code class="language-plaintext highlighter-rouge">GRAPH_CLIENT_ID</code></li>
-      <li><code class="language-plaintext highlighter-rouge">GRAPH_CLIENT_SECRET</code></li>
+      <li><code class="language-plaintext highlighter-rouge">Group.ReadWrite.All</code></li>
+      <li><code class="language-plaintext highlighter-rouge">User.ReadBasic.All</code></li>
+      <li><code class="language-plaintext highlighter-rouge">TeamSettings.ReadWrite.All</code></li>
     </ul>
   </li>
-</ul>
-
-<h2 id="systemvoraussetzungen">Systemvoraussetzungen</h2>
-
-<p>Sie benötigen:</p>
-
-<ul>
-  <li>eine gültige Azure-App-Registrierung</li>
-  <li>die Möglichkeit, Umgebungsvariablen in <code class="language-plaintext highlighter-rouge">.env</code> zu setzen</li>
-  <li>Zugriff auf Microsoft Graph API</li>
-</ul>
-
-<h2 id="einrichtungsschritte-nach-der-installation">Einrichtungsschritte nach der Installation</h2>
-
-<ol>
-  <li>Fügen Sie in Ihrer Kimai-Installation eine <code class="language-plaintext highlighter-rouge">.env</code> Datei hinzu:</li>
+  <li>Click <strong>Grant admin consent for [Your Organization]</strong> and confirm.</li>
+  <li>Your Azure App Registration is now set up.</li>
 </ol>
+
+<h3 id="4-add-required-environment-variables">4. Add Required Environment Variables</h3>
+<p>These variables are necessary for the plugin to authenticate with Microsoft Graph API.</p>
+<h4 id="41-for-non-docker-users">4.1 For Non-Docker Users</h4>
+<p>Create <code class="language-plaintext highlighter-rouge">.env</code> in the main Kimai directory:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GRAPH_TENANT_ID=
 GRAPH_CLIENT_ID=
 GRAPH_CLIENT_SECRET=
 </code></pre></div></div>
-<p>Wenn Sie Docker verwenden, fügen Sie die Variablen in Ihrer <code class="language-plaintext highlighter-rouge">docker-compose.yml</code> Datei hinzu oder setzen Sie die folgende Flags</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-e GRAPH_TENANT_ID=''
--e GRAPH_CLIENT_ID=''
--e GRAPH_CLIENT_SECRET=''
-</code></pre></div></div>
-<p>beim Starten des Containers.</p>
-
-<ol>
-  <li>
-    <p>Konfigurieren Sie unter<br>
-<strong>Kimai → System → Microsoft Teams</strong><br>
-das gewünschte Team und den Ordnerpfad.</p>
-  </li>
-  <li>
-    <p>Führen Sie bei Bedarf den Konsolenbefehl aus:</p>
-  </li>
-</ol>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/console ms-teams:sync-folders
+<h4 id="42-for-docker-users">4.2 For Docker Users</h4>
+<p>Add the following lines to your <code class="language-plaintext highlighter-rouge">docker-compose.yml</code> under the <code class="language-plaintext highlighter-rouge">kimai</code> service:</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">environment</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">GRAPH_TENANT_ID=your_tenant_id</span>
+  <span class="pi">-</span> <span class="s">GRAPH_CLIENT_ID=your_client_id</span>
+  <span class="pi">-</span> <span class="s">GRAPH_CLIENT_SECRET=your_client_secret</span>
 </code></pre></div></div>
 
-<p>Damit werden Kunden- und Projektordner mit Ihrem Microsoft-Team erstellt, solange Sie noch nicht existieren.</p>
+<p>Replace <code class="language-plaintext highlighter-rouge">your_tenant_id</code>, <code class="language-plaintext highlighter-rouge">your_client_id</code>, and <code class="language-plaintext highlighter-rouge">your_client_secret</code> with the actual values from your Azure App Registration.</p>
+
+<h3 id="5-clear-cache">5. Clear Cache</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/console kimai:reload
+</code></pre></div></div>
+
+<p>Restart PHP-FPM if necessary.</p>
+
+<h3 id="6-configure-your-instance">6. Configure your instance</h3>
+<p>Lokk below for configuration details.</p>
+
+<h3 id="optional-7-create-teams-and-channels">Optional: 7. Create Teams and Channels</h3>
+<p>To create teams and channels for existing customers and projects, run:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/console ms-teams:initialize
+</code></pre></div></div>
+<h4 id="please-note">Please note:</h4>
+<ul>
+  <li>This command will create teams and channels for all existing customers and projectes, which do not yet have a corresponding team or channel in Microsoft Teams.</li>
+  <li>Make sure your Azure App has the necessary permissions and that the environment variables are correctly set before running this command.</li>
+  <li>This operation may take some time depending on the number of customers and projects in your Kimai instance.</li>
+  <li>Review the created teams and channels in Microsoft Teams to ensure they have been set up as expected.</li>
+  <li><strong>It is possible that you have to run this command multiple times if there are failures due to rate limiting or other transient issues.</strong></li>
+</ul>
+
+<h2 id="configuration-in-kimai">Configuration in Kimai</h2>
+
+<p>Go to:</p>
+
+<p><strong>Kimai → System → MS Teams</strong></p>
+
+<p>Here you configure <strong>exactly where</strong> Kimai will create customer and project folders inside Microsoft Teams.</p>
+
+<h3 id="settings">Settings:</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Setting</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Admin user for Microsoft Teams</strong></td>
+      <td>The default user which is the owner of every team and channel.</td>
+      <td><code class="language-plaintext highlighter-rouge">none</code></td>
+    </tr>
+    <tr>
+      <td><strong>Admin user for Kimai</strong></td>
+      <td>The default user which is the owner of every team created in Kimai by the plugin</td>
+      <td><code class="language-plaintext highlighter-rouge">none</code></td>
+    </tr>
+    <tr>
+      <td><strong>Customer</strong></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><strong>Name template for the team</strong></td>
+      <td>Template for naming the Microsoft Teams and Kimai Teams, optinal variables are <code class="language-plaintext highlighter-rouge">{name}</code> and <code class="language-plaintext highlighter-rouge">{id}</code>
+</td>
+      <td><code class="language-plaintext highlighter-rouge">{name}</code></td>
+    </tr>
+    <tr>
+      <td><strong>Description template for the team</strong></td>
+      <td>Template for the description of the Microsoft Teams and Kimai Teams, optinal variables are <code class="language-plaintext highlighter-rouge">{name}</code> and <code class="language-plaintext highlighter-rouge">{id}</code>
+</td>
+      <td><code class="language-plaintext highlighter-rouge">Team for Customer {name}</code></td>
+    </tr>
+    <tr>
+      <td><strong>Archive teams for deleted customers</strong></td>
+      <td>If enabled, teams will be archived instead of deleted when a customer is removed in Kimai.</td>
+      <td><code class="language-plaintext highlighter-rouge">false</code></td>
+    </tr>
+    <tr>
+      <td><strong>Project</strong></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><strong>Name template for the channel</strong></td>
+      <td>Template for naming the Microsoft Teams channels and Kimai Teams, optinal variables are <code class="language-plaintext highlighter-rouge">{name}</code> and <code class="language-plaintext highlighter-rouge">{id}</code>
+</td>
+      <td><code class="language-plaintext highlighter-rouge">{name}</code></td>
+    </tr>
+    <tr>
+      <td><strong>Archive channels for deleted projects</strong></td>
+      <td>If enabled, channels will be archived instead of deleted when a project is removed in Kimai.</td>
+      <td><code class="language-plaintext highlighter-rouge">false</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Azure credentials are taken from <code class="language-plaintext highlighter-rouge">.env</code>.</p>
+
+<h2 id="configuration-health-check">Configuration Health Check</h2>
+<p>The plugin validates:</p>
+<ul>
+  <li>Azure credentials</li>
+  <li>Access token generation</li>
+</ul>
+
+<p>On success:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Configuration looks good.
+</code></pre></div></div>
+
+<h2 id="support">Support</h2>
+<p>All support is provided by Klein IT Solutions:</p>
+
+<p><strong>Email:</strong> <a href="mailto:support@klein-it.solutions">support@klein-it.solutions</a></p>
 
 
 
@@ -388,8 +496,8 @@ das gewünschte Team und den Ordnerpfad.</p>
                             <tbody>
                             
                             <tr>
-                                <td>1.0.0</td>
-                                <td>2.44.0</td>
+                                <td>1.1.0</td>
+                                <td>2.43.0</td>
                             </tr>
                             
                             </tbody>
