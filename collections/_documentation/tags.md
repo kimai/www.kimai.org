@@ -15,7 +15,7 @@ Kimai supports two tagging modes:
 - free tagging: users can assign any number of tags to each timesheet entry
 - predefined: users can only select tags from a pre-defined list (since 1.8)
 
-The mode can be switched in the `Theme` section at [System > Settings]({% link _documentation/configurations.md %}).
+The mode can be switched in the `Theme` section at [System → Settings]({% link _documentation/configurations.md %}).
 
 ## Tag administration
 

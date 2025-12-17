@@ -10,7 +10,7 @@ It is best-practice to have a customer for your own company, to track times for 
  
 ## Creating a customer
 
-Default values for new customers can be configured at [System > Settings]({% link _documentation/configurations.md %}). 
+Default values for new customers can be configured at [System → Settings]({% link _documentation/configurations.md %}). 
 
 ## Managing customers
 

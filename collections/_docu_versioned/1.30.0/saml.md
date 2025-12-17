@@ -167,7 +167,7 @@ To change such an account back to "password login", you need to update the `auth
 
 ## Using SAML only
 
-If SAML is activated, you can turn off the login form entirely by unchecking the `Login form` configuration under `Authentication` at [System > Settings]({% link _documentation/configurations.md %}).
+If SAML is activated, you can turn off the login form entirely by unchecking the `Login form` configuration under `Authentication` at [System → Settings]({% link _documentation/configurations.md %}).
 
 ## Troubleshooting
 

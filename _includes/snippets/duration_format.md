@@ -22,5 +22,5 @@ The `{{ fieldName }}` field supports entering data in the following formats:
 
 #### Duration drop-down
 
-If activated in [System > Settings]({% link _documentation/configurations.md %}), the duration field has a dropdown.
+If activated in [System → Settings]({% link _documentation/configurations.md %}), the duration field has a dropdown.
 The drop-down allows for simple selection of a duration, which will be entered in `Time span` format. 

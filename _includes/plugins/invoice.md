@@ -64,7 +64,7 @@ You could generate the same PDF using the export function in Kimai, but that req
 
 The used "export template" for this feature can be configured. 
 
-This feature needs to be activated at [System > Settings > Invoices]({% link _documentation/configurations.md %}). 
+To activate this features go to `Invoices` at [System → Settings]({% link _documentation/configurations.md %}). 
 
 ### Data format language
 
@@ -75,7 +75,7 @@ Or if you translate your invoice to english for cross-country sales but still wa
 
 Without choosing a language the default behaviour is used. 
 
-This feature needs to be activated by choosing a locale at [System > Settings > Invoices]({% link _documentation/configurations.md %}).
+To activate this feature go to `Invoices` at [System → Settings]({% link _documentation/configurations.md %}) and select a locale.
 You can deactivate it by using the empty dropdown field.
 
 ### Additional formats

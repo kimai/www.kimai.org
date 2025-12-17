@@ -122,7 +122,7 @@ This booking is only there for information purposes.
 
 ## Limit timesheets to working days
 
-There is a validation that can be activated in [System > Settings], which helps to restrict timesheets to contractual working days.
+There is a validation that can be activated in [System → Settings], which helps to restrict timesheets to contractual working days.
 Once activated, users cannot create timesheets for days without active contract setting.
 So a user who works Monday to Thursday cannot create timesheets for Fridays.
 

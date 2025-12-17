@@ -97,7 +97,7 @@ This will import timesheets and create these elements on the fly:
 
 ### User handling
 
-If Kimai creates new users on the fly, make sure that you configured the default timezone for new users at [System > Settings]({% link _documentation/configurations.md %}) before the import.
+If Kimai creates new users on the fly, make sure that you configured the default timezone for new users at [System → Settings]({% link _documentation/configurations.md %}) before the import.
 The user timezone is used when importing the timesheets. 
 If you import users from different timezones, you need to create the users upfront manually.
 

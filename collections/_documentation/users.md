@@ -14,7 +14,7 @@ Access to certain features within Kimai are handled by the [permission system]({
 There are two types of user avatars:
 
 - `Auto generated avatar` - a circle with colored background and username initials inside
-- `Image URL` - a user can configure an avatar URL in their profile (feature needs to be activated in [System > Settings]({% link _documentation/configurations.md %}))
+- `Image URL` - a user can configure an avatar URL in their profile (feature needs to be activated in [System → Settings]({% link _documentation/configurations.md %}))
 
 ## Deactivated users
 
@@ -82,14 +82,14 @@ Besides these filters, you can query for a free search term, which will be searc
 User registration is disabled by default, as most Kimai installations are available through the public internet.
 
 If your Kimai installation is protected otherwise (e.g. internal network or other authentication mechanism) you can
-activate it through [System > Settings]({% link _documentation/configurations.md %}). The self-registration is then available via a link in the login screen.
+activate it through [System → Settings]({% link _documentation/configurations.md %}). The self-registration is then available via a link in the login screen.
 
 If someone registers a new account with email, username and password an confirmation email will be sent, including a link that needs to be clicked before the account will be activated.
 As this feature requires an email to work, you have to enable [email support]({% link _documentation/emails.md %}) to use it.
 
 ## Password reset
 
-The reset password function is enabled by default, you can deactivate it through [System > Settings]({% link _documentation/configurations.md %}).
+The reset password function is enabled by default, you can deactivate it through [System → Settings]({% link _documentation/configurations.md %}).
 
 A user can reach it via a link from the login screen. After entering username or email-address, an email with a confirmation link will be sent.
 This link needs to be clicked, afterwards the user can enter a new password.

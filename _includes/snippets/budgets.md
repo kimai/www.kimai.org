@@ -1,6 +1,6 @@
 Budgets help you to watch your progress and to stay within contract boundaries.
 
-If the [System > Settings]({% link _documentation/configurations.md %}) configuration `Allow overbooking of stored budgets` is not active,
+If the [System → Settings]({% link _documentation/configurations.md %}) configuration `Allow overbooking of stored budgets` is not active,
 Kimai will prevent that records will be created, which would go beyond your configured budgets.
 
 Currently, the visibility of budgets cannot be limited independently. So if you want to show progress to your users, 

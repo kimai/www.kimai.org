@@ -50,7 +50,7 @@ All of them involve that you switch to `My times` and find the record (usually t
 
 An administrator can fix the problem by opening the `All times` view and filtering the user.
 
-Administrators can also configure the duration for this check or deactivate it entirely at [System > Settings > Timesheet]({% link _documentation/configurations.md %}).
+Administrators can configure this max. duration by changing the setting `Timesheet → Maximum duration of a timesheet` at [System → Settings]({% link _documentation/configurations.md %}).
 
 ## Batch update
 

@@ -14,7 +14,7 @@ If you want to use the invoice system, you will have to configure an "invoice is
  
 ## Create a customer
 
-Default values for new customers can be configured at [System > Settings]({% link _documentation/configurations.md %}). 
+Default values for new customers can be configured at [System → Settings]({% link _documentation/configurations.md %}). 
 
 The name of the customer does not have to be the real company name, it is used in dropdowns and other UI fields. 
 There is another field under "Invoice settings" for the full company name. 

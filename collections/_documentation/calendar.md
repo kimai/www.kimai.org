@@ -20,7 +20,7 @@ The calendar allows managing entries by using drag & drop:
 - for creating entries (can be deactivated by System Admins)
 - for moving entries across times and days 
 
-Drag & Drop is globally deactivated if the time-tracking mode (see [System > Settings]({% link _documentation/configurations.md %})) 
+Drag & Drop is globally deactivated if the time-tracking mode (see [System → Settings]({% link _documentation/configurations.md %})) 
 does not allow to edit the start-time (e.g. punch in-out mode deactivates drag & drop).
 
 ## Editing timesheets
@@ -54,7 +54,7 @@ The recent activities drag & drop is also switched to the account currently disp
 
 ## Calendar configurations
 
-The look and feel of the calendar can be customized via [System > Settings]({% link _documentation/configurations.md %}).
+The look and feel of the calendar can be customized via [System → Settings]({% link _documentation/configurations.md %}).
 
 ## Initial view (user preference)
 

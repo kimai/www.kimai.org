@@ -75,7 +75,7 @@ You have to reload the configurations by [rebuilding the cache]({% link _documen
 
 ## Available configurations
 
-Many of the available configurations can be configured through [System > Settings]({% link _documentation/configurations.md %}),
+Many of the available configurations can be configured through [System → Settings]({% link _documentation/configurations.md %}),
 all configuration which can be set through the UI will not be described here.
 
 Examples for all available configuration can be found in `config/packages/kimai.yaml`. 
@@ -160,7 +160,7 @@ kimai:
 
 ### Multiple time-rounding rules
 
-At [System > Settings]({% link _documentation/configurations.md %}) you can configure one rounding rule. 
+At [System → Settings]({% link _documentation/configurations.md %}) you can configure one rounding rule. 
 The local.yaml allows adding multiple rules (e.g. weekend has different rounding rules).
 You can define as many rules as you want ("default" is only an example) and every matching rule will be applied (be careful with overlapping rules).
 

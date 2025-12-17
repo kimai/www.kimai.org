@@ -120,7 +120,7 @@ Example: to get a three digit long string with year counter use `{cy,3}`, which 
 {% alert warning %}
 1. Characters outside the replacer **cannot** include `{` and `}`.
 2. The invoice number is unique in Kimai, and you cannot generate an invoice with the same invoice number twice. Kimai will try to avoid that automatically by incrementing the counter, but if that is impossible, you'll see an error message.
-3. You can change the format at [System > Settings]({% link _documentation/configurations.md %}).
+3. You can change the format at [System → Settings]({% link _documentation/configurations.md %}).
    {% endalert %}
 
 ### Increment counter

@@ -8,7 +8,7 @@ Projects in Kimai are assigned to customers and are linked to activities, which 
 
 ## Creating a project
 
-There is a configuration (can be configured at [System > Settings]({% link _documentation/configurations.md %}) - added with 1.28), which allows to copy teams of the current user to newly created projects. 
+There is a configuration (can be configured at [System → Settings]({% link _documentation/configurations.md %}) - added with 1.28), which allows to copy teams of the current user to newly created projects. 
 This is mostly useful when teamleads manage their own projects and should have immediate access to them after creation.
 
 ## Managing projects

@@ -60,7 +60,7 @@ Of course, Kimai supports exact second-based tracking for businesses that need p
 
 ## Selecting the rounding mode
 
-- Go to [System > Settings]({% link _documentation/configurations.md %})
+- Go to [System → Settings]({% link _documentation/configurations.md %})
 - Go to `Invoice`
 - Select the `Rate rounding` mode
     - The `classic` mode, feels most natural but can lead to small rounding issues
