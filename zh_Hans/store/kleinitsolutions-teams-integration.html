@@ -291,9 +291,11 @@
                 <div class="tab-pane fade show active" id="store-info" role="tabpanel">
 
                     <h1 id="microsoft-teams-integration-for-kimai">Microsoft Teams Integration for Kimai</h1>
+
 <p>Seamlessly connect Kimai with Microsoft Teams</p>
 
 <h2 id="overview">Overview</h2>
+
 <p>The Microsoft Teams Integration Plugin enhances Kimai by synchronizing your customer and project structure directly into Microsoft Teams.
 Whenever you create customers or projects in Kimai, the plugin can generate matching teams and channels — ensuring consistent organization across both systems.</p>
 
@@ -301,6 +303,7 @@ Whenever you create customers or projects in Kimai, the plugin can generate matc
 
 <h2 id="key-features">Key Features</h2>
 <ul>
+  <li>
   <li>Automated creation of customer and project structures inside a chosen Microsoft Teams Tenant</li>
   <li>Fully integrated with Microsoft Graph API</li>
   <li>Central configuration directly within Kimai</li>
@@ -313,18 +316,21 @@ Whenever you create customers or projects in Kimai, the plugin can generate matc
 <h2 id="installation-guide">Installation Guide</h2>
 
 <h3 id="1-requirements">1. Requirements</h3>
+
 <ul>
   <li>Kimai 2.43+</li>
   <li>Azure App Registration: Tenant ID, Client ID, Client Secret</li>
 </ul>
 
 <h3 id="2-upload-the-plugin">2. Upload the Plugin</h3>
+
 <p>Extract the ZIP purchased from the shop and upload it to:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/your-kimai/var/plugins/TeamsIntegrationBundle/
 </code></pre></div></div>
 
 <h3 id="3-install-azure-app-registration">3. Install Azure App Registration</h3>
+
 <ol>
   <li>Go to the <a href="https://portal.azure.com/">Azure Portal</a>.</li>
   <li>Navigate to <strong>Azure Entra → App registrations → New registration</strong>.</li>
@@ -346,15 +352,20 @@ Whenever you create customers or projects in Kimai, the plugin can generate matc
 </ol>
 
 <h3 id="4-add-required-environment-variables">4. Add Required Environment Variables</h3>
+
 <p>These variables are necessary for the plugin to authenticate with Microsoft Graph API.</p>
+
 <h4 id="41-for-non-docker-users">4.1 For Non-Docker Users</h4>
+
 <p>Create <code class="language-plaintext highlighter-rouge">.env</code> in the main Kimai directory:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GRAPH_TENANT_ID=
 GRAPH_CLIENT_ID=
 GRAPH_CLIENT_SECRET=
 </code></pre></div></div>
+
 <h4 id="42-for-docker-users">4.2 For Docker Users</h4>
+
 <p>Add the following lines to your <code class="language-plaintext highlighter-rouge">docker-compose.yml</code> under the <code class="language-plaintext highlighter-rouge">kimai</code> service:</p>
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">environment</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="s">GRAPH_TENANT_ID=your_tenant_id</span>
@@ -372,16 +383,18 @@ GRAPH_CLIENT_SECRET=
 <p>Restart PHP-FPM if necessary.</p>
 
 <h3 id="6-configure-your-instance">6. Configure your instance</h3>
-<p>Lokk below for configuration details.</p>
+
+<p>Look below for configuration details.</p>
 
 <h3 id="optional-7-create-teams-and-channels">Optional: 7. Create Teams and Channels</h3>
 <p>To create teams and channels for existing customers and projects, run:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/console ms-teams:initialize
 </code></pre></div></div>
+
 <h4 id="please-note">Please note:</h4>
 <ul>
-  <li>This command will create teams and channels for all existing customers and projectes, which do not yet have a corresponding team or channel in Microsoft Teams.</li>
+  <li>This command will create teams and channels for all existing customers and projects, which do not yet have a corresponding team or channel in Microsoft Teams.</li>
   <li>Make sure your Azure App has the necessary permissions and that the environment variables are correctly set before running this command.</li>
   <li>This operation may take some time depending on the number of customers and projects in your Kimai instance.</li>
   <li>Review the created teams and channels in Microsoft Teams to ensure they have been set up as expected.</li>
@@ -398,7 +411,7 @@ GRAPH_CLIENT_SECRET=
 
 <h3 id="settings">Settings:</h3>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Setting</th>
