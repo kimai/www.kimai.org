@@ -67,10 +67,9 @@ Of course, Kimai supports exact second-based tracking for businesses that need p
     - The `decimal` mode rounds duration to a multiple of 36 second, safe but can be unintuitive
 
 There are other rules to define how the timesheet start and end times and the duration should be rounded. 
-Those are available at the same settings screen at `Time rounding`.
+The rounding issues discussed in this article always originate from the **duration of a timesheet**.
 
-The rounding issues discussed in this article always originate from the duration of a timesheet.
-Therefore, the relevant configuration to check and adjust is `System → Settings → Time rounding → Rounding of the duration`.
+The relevant configuration to check and adjust is `Time rounding → Rounding of the duration` at [System → Settings]({% link _documentation/configurations.md %}).
 
 ## Rounding: CLASSIC 
 
