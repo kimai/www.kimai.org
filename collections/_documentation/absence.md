@@ -16,6 +16,16 @@ When managing absences, emails including the type of absence/comment/action/user
 Notification emails will be sent to the user and the supervisor (if one is configured).
 The supervisor is a setting in the [users profile]({% link _documentation/users.md %}).
 
+### Setup your teams 
+
+To ensure the workflow functions properly, you need to set up your teams in a specific way.
+
+Create a team for each department or organisational unit.
+- Add the supervisor as the team lead.
+- Add each subordinate as a team lead.
+
+This setup is required because otherwise the supervisor might not be able to see the user in the dropdown menu.
+
 ## Approval workflow
 
 {% include youtube-video.html id="absence_approval_workflow" %}
