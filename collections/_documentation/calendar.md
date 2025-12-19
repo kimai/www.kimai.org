@@ -52,6 +52,9 @@ If you are able to switch the account, if depends on the following permissions i
 
 The recent activities drag & drop is also switched to the account currently displayed.
 
+If you do not see the dropdown, despite having the permission `view_other_timesheet`, you likely cannot see any other user.
+Whether you see another user depends on your team assignments.
+
 ## Calendar configurations
 
 The look and feel of the calendar can be customized via [System → Settings]({% link _documentation/configurations.md %}).
