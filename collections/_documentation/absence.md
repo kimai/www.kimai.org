@@ -96,6 +96,22 @@ If you want to create absence requests in advance for next year, you have to cha
 - clicking on the year dropdown and selecting the correct entry
 - clicking on the {% include demo-action-button.html icon="next" %} button to move to the next year
 
+## Carry over absences into the new year
+
+While this video talks about your time balance, the workflow is the same.
+
+{% include youtube-video.html id="roll_over_work_balance" %}
+
+- Switch to the next year
+- Go to "Manual bookings: Holiday"
+- Open it and click "Create"
+  - Select the 01. January and
+  - Enter the remaining days from the previous year  
+  - Enter a comment like "Remaining vacations from previous year"
+  - Save
+
+Switch back to the previous year and remember to lock the entire year. 
+
 ## Permissions
 
 {% include documentation/permissions.md id="absences" howto=true %}
