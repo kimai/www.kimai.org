@@ -8,6 +8,8 @@ description: Using tags to group timesheet entries
 Kimai supports tagging timesheet records, which allows you to create arbitrary logical structures, 
 which can be used to filter records in exports/invoices and reports.
 
+{% include youtube-video.html id="timesheets" chapter="tagging" %}
+
 ### Tagging modes
 
 Kimai supports two tagging modes: 

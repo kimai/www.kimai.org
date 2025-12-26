@@ -14,6 +14,8 @@ If you have multiple entries for the same day, there will be multiple rows for t
 The nature of this form is simple and fast "duration tracking". That means start and end time do not matter and therefor 
 all entries start at the same time. 
 
+{% include youtube-video.html id="timesheets" chapter="weekly_hours" %}
+ 
 ## Managing records 
 
 New users, without any previous timesheet, will see 3 empty rows. 

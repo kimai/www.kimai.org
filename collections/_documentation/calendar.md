@@ -10,6 +10,8 @@ related:
 Kimai provides a calendar view, which allows management of your timesheet entries in a calendar format, where you 
 can choose between a monthly, weekly and daily view.
 
+{% include youtube-video.html id="timesheets" chapter="calendar" %}
+
 ## Context-menu
 
 All calendar entries offer a context-menu with several options (like `Duplicate` or `Delete`), right at your fingertip. 

@@ -10,6 +10,8 @@ related:
 
 ## Starting and stopping records
 
+{% include youtube-video.html id="timesheets" %}
+ 
 ### Re-start timesheet records
 - Click one of your **last activities** in the modal, opened through the upper toolbar - this will start a record for the same customer/project & activity "now"
 - Click the **restart** action from one of the records in your timesheet - this will start a record for the same customer/project & activity "now" and copy description and tags
