@@ -751,7 +751,7 @@ You can do that by prefixing <code class="language-plaintext highlighter-rouge">
 <ul>
   <li>Clone Kimai: <code class="language-plaintext highlighter-rouge">git clone -b 2.45.0 --depth 1 https://github.com/kimai/kimai.git</code></li>
   <li>Switch to the Kimai directory: <code class="language-plaintext highlighter-rouge">cd kimai</code></li>
-  <li>Install composer: <code class="language-plaintext highlighter-rouge">curl -sS https://getcomposer.org/installer | /usr/bin/php</code></li>
+  <li>Install composer: <code class="language-plaintext highlighter-rouge">curl -sS https://getcomposer.org/installer | /usr/bin/php</code>. This command might not work depending on the configured PHP version. Since Kimai currently requires at least PHP 8.1, in case the configured CLI PHP version is below 8.1, the installation or rather the post-install scripts and all following commands will fail.</li>
   <li>Install dependencies: <code class="language-plaintext highlighter-rouge">COMPOSER_MEMORY_LIMIT=-1 php -d memory_limit=-1 composer.phar install --no-dev --optimize-autoloader</code></li>
   <li>configure your .env file, eg. <code class="language-plaintext highlighter-rouge">nano .env</code></li>
   <li>install kimai: <code class="language-plaintext highlighter-rouge">php bin/console kimai:install -n</code></li>
@@ -759,7 +759,16 @@ You can do that by prefixing <code class="language-plaintext highlighter-rouge">
   <li>Configure Netcup (using the customer controlpanel) to use “/kimai/public” as root folder for the domain (or subdomain) of your choice and add SSL (Letsencrypt) for this domain</li>
 </ul>
 
-<p>See issues <a href="https://github.com/kimai/kimai/issues/1620">#1620</a>, <a href="https://github.com/kimai/kimai/issues/4816">#4816</a> and <a href="https://github.com/kimai/kimai/issues/5322">#5322</a>.</p>
+<p>If the commands fail due to an invalid (lower than expected) PHP version, refer to <a href="https://helpcenter.netcup.com/en/wiki/web-hosting/php-shell">Netcup’s knowledge base article</a>.
+Alternatively, you can take a look at the already installed PHP versions with <code class="language-plaintext highlighter-rouge">ls /usr/local/</code> and execute all scripts with the specific version.
+As time of writing the latest version available was PHP 8.3 (<code class="language-plaintext highlighter-rouge">/usr/local/php83/bin/php</code>), so the following commands were prefixed with it:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">COMPOSER_MEMORY_LIMIT</span><span class="o">=</span><span class="nt">-1</span> /usr/local/php83/bin/php <span class="nt">-d</span> <span class="nv">memory_limit</span><span class="o">=</span><span class="nt">-1</span> composer.phar <span class="nb">install</span> <span class="nt">--no-dev</span> <span class="nt">--optimize-autoloader</span>
+/usr/local/php83/bin/php <span class="nt">-d</span> <span class="nv">memory_limit</span><span class="o">=</span><span class="nt">-1</span> bin/console kimai:install <span class="nt">-n</span>
+/usr/local/php83/bin/php <span class="nt">-d</span> <span class="nv">memory_limit</span><span class="o">=</span><span class="nt">-1</span> bin/console kimai:reload
+</code></pre></div></div>
+
+<p>See issues: <a href="https://github.com/kimai/kimai/issues/1620">#1620</a>, <a href="https://github.com/kimai/kimai/issues/4816">#4816</a>, <a href="https://github.com/kimai/kimai/issues/5322">#5322</a>, <a href="https://github.com/kimai/kimai/discussions/5750">#5750</a>.</p>
 
 <h3 id="hosteurope">HostEurope</h3>
 
