@@ -151,15 +151,24 @@ You can do that by prefixing `php -d memory_limit=-1`.
 
 - Clone Kimai: `git clone -b {{ site.kimai_v2_version }} --depth 1 {{ site.kimai_v2_repo }}.git`
 - Switch to the Kimai directory: `cd kimai`
-- Install composer: `curl -sS https://getcomposer.org/installer | /usr/bin/php`
+- Install composer: `curl -sS https://getcomposer.org/installer | /usr/bin/php`. This command might not work depending on the configured PHP version. Since Kimai currently requires at least PHP 8.1, in case the configured CLI PHP version is below 8.1, the installation or rather the post-install scripts and all following commands will fail.
 - Install dependencies: `COMPOSER_MEMORY_LIMIT=-1 php -d memory_limit=-1 composer.phar install {{ site.kimai_v2_composer_flags }}`
 - configure your .env file, eg. `nano .env`
 - install kimai: `php bin/console kimai:install -n`
 - reload config: `php bin/console kimai:reload`
 - Configure Netcup (using the customer controlpanel) to use "/kimai/public" as root folder for the domain (or subdomain) of your choice and add SSL (Letsencrypt) for this domain
 
+If the commands fail due to an invalid (lower than expected) PHP version, refer to [Netcup's knowledge base article](https://helpcenter.netcup.com/en/wiki/web-hosting/php-shell).
+Alternatively, you can take a look at the already installed PHP versions with `ls /usr/local/` and execute all scripts with the specific version.
+As time of writing the latest version available was PHP 8.3 (`/usr/local/php83/bin/php`), so the following commands were prefixed with it:
 
-See issues [#1620]({{ site.kimai_v2_repo }}/issues/1620), [#4816]({{ site.kimai_v2_repo }}/issues/4816) and [#5322]({{ site.kimai_v2_repo }}/issues/5322).
+```bash
+COMPOSER_MEMORY_LIMIT=-1 /usr/local/php83/bin/php -d memory_limit=-1 composer.phar install --no-dev --optimize-autoloader
+/usr/local/php83/bin/php -d memory_limit=-1 bin/console kimai:install -n
+/usr/local/php83/bin/php -d memory_limit=-1 bin/console kimai:reload
+```
+
+See issues: [#1620]({{ site.kimai_v2_repo }}/issues/1620), [#4816]({{ site.kimai_v2_repo }}/issues/4816), [#5322]({{ site.kimai_v2_repo }}/issues/5322), [#5750]({{ site.kimai_v2_repo }}/discussions/5750).
 
 ### HostEurope
 
