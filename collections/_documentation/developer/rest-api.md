@@ -1,14 +1,14 @@
 ---
-title: Quickstart for Kimai API (JSON / REST)
+title: Start using the Kimai API
 navigation: Kimai API
-description: Access your time-tracking data via the JSON API with Kimai
+description: Access your time-tracking data with the Kimai JSON API
 related:
-- rest-api-examples
+    - rest-api-examples
 ---
 
-Read the API documentation in your Kimai installation at `/api/doc`.
-For example, you can have a look at the API docs for the demo installation at [https://demo.kimai.org/api/doc](https://demo.kimai.org/api/doc).
-You need to authenticate to see them, credentials can be [found here]({% link _pages/demo.md %}).
+- Read the API documentation in your Kimai installation at `/api/doc`.
+- You can preview the API docs at the demo installation at [https://demo.kimai.org/api/doc](https://demo.kimai.org/api/doc).
+- You need to be authenticated to see the API docs, credentials can be [found here]({% link _pages/demo.md %}).
 
 ## Authentication
 
