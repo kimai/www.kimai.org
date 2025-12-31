@@ -12,14 +12,14 @@
 <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
-<title>API examples – Kimai</title>
-<meta name="description" content="Some examples how to access the Kimai PAI with different languages">
+<title>Using the API to import CSV data with PHP – Kimai</title>
+<meta name="description" content="Demo application that uses a CSV oparse and the Kimai API to import local data">
 <link type="application/atom+xml" rel="alternate" href="https://www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
 <meta property="og:locale" content="en">
 <meta property="og:type" content="website">
-<meta property="og:title" content="API examples">
+<meta property="og:title" content="Using the API to import CSV data with PHP">
 <meta property="og:image" content="https://www.kimai.org/images/social-preview.webp">
-<meta property="og:description" content="Some examples how to access the Kimai PAI with different languages">
+<meta property="og:description" content="Demo application that uses a CSV oparse and the Kimai API to import local data">
 <link href="/assets/build/main.css?v6" rel="stylesheet" />
 
 </head>
@@ -159,9 +159,26 @@
                         
                         
                         
+                        <a href="/documentation/api-pagination.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-api-pagination">
+                            
+                            Pagination
+                            
+                        </a>
+                        
+                        
+                    </div>
+                    
+                    
+                    
+                    <p class="fs-lg mb-1 text-white fw-bold">API Examples</p>
+                    <div class="list-group list-group-flush mb-4 me-n4 border-start">
+                        
+                        
+                        
+                        
                         <a href="/documentation/rest-api-examples.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2  active" id="docnavi-rest-api-examples">
                             
-                            Examples
+                            Importing a CSV file
                             
                         </a>
                         
@@ -169,9 +186,29 @@
                         
                         
                         
-                        <a href="/documentation/api-pagination.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-api-pagination">
+                        <a href="/documentation/api-example-javascript.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-api-example-javascript">
                             
-                            Pagination
+                            jQuery Demo
+                            
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/documentation/api-example-sync.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-api-example-sync">
+                            
+                            Sync to a local DB
+                            
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/documentation/api-example-user.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-api-example-user">
+                            
+                            Onboarding users
                             
                         </a>
                         
@@ -335,9 +372,9 @@
 
         <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 pt-4 mb-n3">
             <div class="me-4">
-                <h1 class="pb-1">API examples</h1>
+                <h1 class="pb-1">Using the API to import CSV data with PHP</h1>
                 
-                <p class="text-muted fs-lg mb-2">Some examples how to access the Kimai PAI with different languages</p>
+                <p class="text-muted fs-lg mb-2">Demo application that uses a CSV oparse and the Kimai API to import local data</p>
                 
             </div>
             
@@ -365,19 +402,9 @@
             <div>
                 
                 <div id="documentation-content">
-                    <h2 id="sync-your-kimai-data-via-api-to-a-local-database">Sync your Kimai data via API to a local database</h2>
+                    <p>This example application uses the API to import a list of customers, projects and activities from a CSV file.</p>
 
-<p>Tired of exporting Excel to import it into Power BI?</p>
-
-<p>Use this script and let it run every night to sync the delta from last night: <a href="https://github.com/kimai/api-sync">https://github.com/kimai/api-sync</a>.</p>
-
-<p>Then point your BI solution to the local database.</p>
-
-<h2 id="using-the-api-to-import-csv-data-with-php">Using the API to import CSV data with PHP</h2>
-
-<p>This example uses the API to import a list of customers, projects and activities from a CSV file.</p>
-
-<p>First create the following <code class="language-plaintext highlighter-rouge">composer.json</code> file and run <code class="language-plaintext highlighter-rouge">composer install</code> afterwards.</p>
+<p>First create the following <code class="language-plaintext highlighter-rouge">composer.json</code> file and run <code class="language-plaintext highlighter-rouge">composer install</code> afterward.</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kimai/api_demo"</span><span class="p">,</span><span class="w">
@@ -535,140 +562,6 @@ DEMO,Hello world,I see you
 DEMO,Hello world,Testing the API
 </code></pre></div></div>
 
-<h2 id="calling-the-api-with-javascript">Calling the API with Javascript</h2>
-
-<p>If you develop your own <a href="/documentation/plugins.html">plugin</a> and need to use the API for logged-in user, 
-then you don’t have to care about authentication, Kimai will handle it for you.</p>
-
-<p>Copy &amp; paste this code into a new <code class="language-plaintext highlighter-rouge">api.html</code> file and open it in your browser.
-You can execute some sample requests and see the JSON result.</p>
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!doctype html&gt;</span>
-<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;head&gt;</span>
-	<span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
-	<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1, shrink-to-fit=no"</span><span class="nt">&gt;</span>
-	<span class="nt">&lt;title&gt;</span>Kimai - API demo<span class="nt">&lt;/title&gt;</span>
-	<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"</span><span class="nt">&gt;</span>
-	<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://getbootstrap.com/docs/4.3/examples/floating-labels/floating-labels.css"</span><span class="nt">&gt;</span>
-	<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css"</span><span class="nt">&gt;</span>
-	<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.min.css"</span><span class="nt">&gt;</span>
-	<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://code.jquery.com/jquery-3.3.1.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-	<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-	<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-	<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-	<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-json.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-	<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-	<span class="nt">&lt;style&gt;</span>
-		<span class="nt">body</span> <span class="p">{</span> <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span> <span class="p">}</span>
-		<span class="nc">.codePreview</span> <span class="p">{</span> <span class="nl">margin-top</span><span class="p">:</span> <span class="m">30px</span><span class="p">;</span> <span class="p">}</span>
-	<span class="nt">&lt;/style&gt;</span>
-	<span class="nt">&lt;script&gt;</span>
-        <span class="kd">function</span> <span class="nf">callKimaiApi</span><span class="p">(</span><span class="nx">method</span><span class="p">,</span> <span class="nx">successHandler</span><span class="p">,</span> <span class="nx">errorHandler</span><span class="p">)</span> <span class="p">{</span>
-            <span class="kd">var</span> <span class="nx">domain</span> <span class="o">=</span> <span class="nf">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#inputDomain</span><span class="dl">'</span><span class="p">).</span><span class="nf">val</span><span class="p">();</span>
-            <span class="kd">var</span> <span class="nx">token</span> <span class="o">=</span> <span class="nf">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#inputToken</span><span class="dl">'</span><span class="p">).</span><span class="nf">val</span><span class="p">();</span>
-            <span class="nx">$</span><span class="p">.</span><span class="nf">ajax</span><span class="p">({</span>
-                <span class="na">url</span><span class="p">:</span> <span class="nx">domain</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">/api/</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">method</span><span class="p">,</span>
-                <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span>
-                <span class="na">beforeSend</span><span class="p">:</span> <span class="nf">function </span><span class="p">(</span><span class="nx">request</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="nx">request</span><span class="p">.</span><span class="nf">setRequestHeader</span><span class="p">(</span><span class="dl">'</span><span class="s1">Authorization</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Bearer </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">token</span><span class="p">);</span>
-                <span class="p">},</span>
-                <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-                    <span class="dl">'</span><span class="s1">Authorization</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Bearer </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">token</span><span class="p">,</span>
-                <span class="p">},</span>
-                <span class="na">success</span><span class="p">:</span> <span class="nx">successHandler</span><span class="p">,</span>
-                <span class="na">error</span><span class="p">:</span> <span class="nx">errorHandler</span>
-            <span class="p">});</span>
-        <span class="p">}</span>
-
-        <span class="nf">$</span><span class="p">(</span><span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
-            <span class="nf">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#loginForm</span><span class="dl">'</span><span class="p">).</span><span class="nf">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">submit</span><span class="dl">'</span><span class="p">,</span> <span class="nf">function </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nx">event</span><span class="p">.</span><span class="nf">preventDefault</span><span class="p">();</span>
-                <span class="nx">event</span><span class="p">.</span><span class="nf">stopPropagation</span><span class="p">();</span>
-                <span class="nf">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#loginButton</span><span class="dl">'</span><span class="p">).</span><span class="nf">text</span><span class="p">(</span><span class="dl">'</span><span class="s1">Loading...</span><span class="dl">'</span><span class="p">);</span>
-                <span class="nf">callKimaiApi</span><span class="p">(</span><span class="dl">'</span><span class="s1">version</span><span class="dl">'</span><span class="p">,</span> <span class="nf">function </span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
-                        <span class="nf">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#loginButton</span><span class="dl">'</span><span class="p">).</span><span class="nf">text</span><span class="p">(</span><span class="dl">'</span><span class="s1">Success</span><span class="dl">'</span><span class="p">);</span>
-                        <span class="nf">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">.secret</span><span class="dl">'</span><span class="p">).</span><span class="nf">attr</span><span class="p">(</span><span class="dl">'</span><span class="s1">style</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">display:block</span><span class="dl">'</span><span class="p">);</span>
-                        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-                    <span class="p">},</span> <span class="nf">function </span><span class="p">(</span><span class="nx">xhr</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-                        <span class="nf">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#loginButton</span><span class="dl">'</span><span class="p">).</span><span class="nf">text</span><span class="p">(</span><span class="dl">'</span><span class="s1">Try again!</span><span class="dl">'</span><span class="p">);</span>
-                        <span class="nf">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">.secret</span><span class="dl">'</span><span class="p">).</span><span class="nf">attr</span><span class="p">(</span><span class="dl">'</span><span class="s1">style</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">display:none</span><span class="dl">'</span><span class="p">);</span>
-                        <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">xhr</span><span class="p">);</span>
-                        <span class="nf">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">Error occured, see console for details</span><span class="dl">'</span><span class="p">);</span>
-                    <span class="p">}</span>
-                <span class="p">);</span>
-                <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-            <span class="p">});</span>
-
-            <span class="nf">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">button[data-api]</span><span class="dl">'</span><span class="p">).</span><span class="nf">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="nf">function </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nx">event</span><span class="p">.</span><span class="nf">preventDefault</span><span class="p">();</span>
-                <span class="nx">event</span><span class="p">.</span><span class="nf">stopPropagation</span><span class="p">();</span>
-
-                <span class="kd">var</span> <span class="nx">apiMethod</span> <span class="o">=</span> <span class="nf">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nf">attr</span><span class="p">(</span><span class="dl">'</span><span class="s1">data-api</span><span class="dl">'</span><span class="p">);</span>
-                <span class="kd">var</span> <span class="nx">breakAttr</span> <span class="o">=</span> <span class="nf">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nf">attr</span><span class="p">(</span><span class="dl">'</span><span class="s1">data-attribute-break</span><span class="dl">'</span><span class="p">);</span>
-                <span class="nf">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#loginButton</span><span class="dl">'</span><span class="p">).</span><span class="nf">text</span><span class="p">(</span><span class="dl">'</span><span class="s1">Loading...</span><span class="dl">'</span><span class="p">);</span>
-
-                <span class="nf">callKimaiApi</span><span class="p">(</span>
-                    <span class="nx">apiMethod</span><span class="p">,</span> 
-                    <span class="nf">function </span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
-                        <span class="nf">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#loginButton</span><span class="dl">'</span><span class="p">).</span><span class="nf">text</span><span class="p">(</span><span class="dl">'</span><span class="s1">Success!</span><span class="dl">'</span><span class="p">);</span>
-                        <span class="kd">var</span> <span class="nx">jsonBeauty</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nf">stringify</span><span class="p">(</span><span class="nx">result</span><span class="p">).</span><span class="nf">trim</span><span class="p">();</span>
-                        <span class="k">if </span><span class="p">(</span><span class="nx">breakAttr</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">true</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
-                            <span class="nx">jsonBeauty</span> <span class="o">=</span> <span class="nx">jsonBeauty</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="dl">'</span><span class="s1">","</span><span class="dl">'</span><span class="p">).</span><span class="nf">join</span><span class="p">(</span><span class="dl">'</span><span class="s1">",</span><span class="dl">'</span> <span class="o">+</span> <span class="dl">"</span><span class="se">\n</span><span class="dl">"</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">"</span><span class="dl">'</span><span class="p">);</span>
-                        <span class="p">}</span>
-                        <span class="nx">jsonBeauty</span> <span class="o">=</span> <span class="nx">jsonBeauty</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="dl">'</span><span class="s1">},{</span><span class="dl">'</span><span class="p">).</span><span class="nf">join</span><span class="p">(</span><span class="dl">'</span><span class="s1">},</span><span class="dl">'</span> <span class="o">+</span> <span class="dl">"</span><span class="se">\n</span><span class="dl">"</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">{</span><span class="dl">'</span><span class="p">);</span>
-                        <span class="nf">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#apiResult</span><span class="dl">'</span><span class="p">).</span><span class="nf">text</span><span class="p">(</span><span class="nx">jsonBeauty</span><span class="p">);</span>
-                        <span class="nf">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">.codePreview</span><span class="dl">'</span><span class="p">).</span><span class="nf">attr</span><span class="p">(</span><span class="dl">'</span><span class="s1">style</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">display:block</span><span class="dl">'</span><span class="p">);</span>
-                        <span class="nx">Prism</span><span class="p">.</span><span class="nf">highlightElement</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">apiResult</span><span class="dl">'</span><span class="p">));</span>
-                        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-                    <span class="p">},</span> <span class="nf">function </span><span class="p">(</span><span class="nx">xhr</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-                        <span class="nf">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#loginButton</span><span class="dl">'</span><span class="p">).</span><span class="nf">text</span><span class="p">(</span><span class="dl">'</span><span class="s1">Sorry, that failed :-(</span><span class="dl">'</span><span class="p">);</span>
-                        <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">xhr</span><span class="p">);</span>
-                        <span class="nf">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">Error occured, see console for details</span><span class="dl">'</span><span class="p">);</span>
-                    <span class="p">}</span>
-                <span class="p">);</span>
-                <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-            <span class="p">});</span>
-        <span class="p">});</span>
-	<span class="nt">&lt;/script&gt;</span>
-<span class="nt">&lt;/head&gt;</span>
-<span class="nt">&lt;body&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
-	<span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">"loginForm"</span> <span class="na">class=</span><span class="s">"form-signin"</span><span class="nt">&gt;</span>
-		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"text-center mb-4"</span><span class="nt">&gt;</span>
-			<span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"h3 mb-3 font-weight-normal"</span><span class="nt">&gt;</span>Kimai <span class="ni">&amp;ndash;</span> API Demo<span class="nt">&lt;/h1&gt;</span>
-			<span class="nt">&lt;p&gt;</span>Please provide your API URL and token below<span class="nt">&lt;/p&gt;</span>
-		<span class="nt">&lt;/div&gt;</span>
-		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-label-group"</span><span class="nt">&gt;</span>
-			<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"url"</span> <span class="na">id=</span><span class="s">"inputDomain"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">placeholder=</span><span class="s">"https://www.example.com/"</span> <span class="na">required</span>
-				   <span class="na">autofocus</span> <span class="na">value=</span><span class="s">"https://demo.kimai.org"</span><span class="nt">&gt;</span>
-			<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"inputDomain"</span><span class="nt">&gt;</span>Kimai base URL (domain + port)<span class="nt">&lt;/label&gt;</span>
-		<span class="nt">&lt;/div&gt;</span>
-		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-label-group"</span><span class="nt">&gt;</span>
-			<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"inputToken"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">placeholder=</span><span class="s">"API Token"</span> <span class="na">required</span> <span class="na">value=</span><span class="s">"api_kitten_super"</span><span class="nt">&gt;</span>
-			<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"inputToken"</span><span class="nt">&gt;</span>API Token<span class="nt">&lt;/label&gt;</span>
-		<span class="nt">&lt;/div&gt;</span>
-		<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-lg btn-primary btn-block"</span> <span class="na">id=</span><span class="s">"loginButton"</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Sign in<span class="nt">&lt;/button&gt;</span>
-	<span class="nt">&lt;/form&gt;</span>
-	<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row secret"</span> <span class="na">style=</span><span class="s">"display:none"</span><span class="nt">&gt;</span>
-		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm text-center"</span><span class="nt">&gt;</span>
-			<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span> <span class="na">data-api=</span><span class="s">"ping"</span> <span class="na">data-attribute-break=</span><span class="s">"true"</span><span class="nt">&gt;</span>Ping<span class="nt">&lt;/button&gt;</span>
-			<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-secondary"</span> <span class="na">data-api=</span><span class="s">"version"</span> <span class="na">data-attribute-break=</span><span class="s">"true"</span><span class="nt">&gt;</span>Version<span class="nt">&lt;/button&gt;</span>
-			<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-secondary"</span> <span class="na">data-api=</span><span class="s">"plugins"</span> <span class="na">data-attribute-break=</span><span class="s">"true"</span><span class="nt">&gt;</span>Plugins<span class="nt">&lt;/button&gt;</span>
-			<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span> <span class="na">data-api=</span><span class="s">"timesheets"</span> <span class="na">data-attribute-break=</span><span class="s">"false"</span><span class="nt">&gt;</span>Timesheet<span class="nt">&lt;/button&gt;</span>
-			<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span> <span class="na">data-api=</span><span class="s">"activities"</span> <span class="na">data-attribute-break=</span><span class="s">"false"</span><span class="nt">&gt;</span>Activities<span class="nt">&lt;/button&gt;</span>
-			<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span> <span class="na">data-api=</span><span class="s">"projects"</span> <span class="na">data-attribute-break=</span><span class="s">"false"</span><span class="nt">&gt;</span>Projects<span class="nt">&lt;/button&gt;</span>
-			<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span> <span class="na">data-api=</span><span class="s">"customers"</span> <span class="na">data-attribute-break=</span><span class="s">"false"</span><span class="nt">&gt;</span>Customers<span class="nt">&lt;/button&gt;</span>
-		<span class="nt">&lt;/div&gt;</span>
-	<span class="nt">&lt;/div&gt;</span>
-	<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row codePreview"</span> <span class="na">style=</span><span class="s">"display:none"</span><span class="nt">&gt;</span>
-		<span class="nt">&lt;pre</span> <span class="na">class=</span><span class="s">"language-json line-numbers"</span> <span class="na">style=</span><span class="s">"white-space: pre-line"</span><span class="nt">&gt;</span>
-			<span class="nt">&lt;code</span> <span class="na">id=</span><span class="s">"apiResult"</span><span class="nt">&gt;&lt;/code&gt;</span>
-		<span class="nt">&lt;/pre&gt;</span>
-	<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
-</code></pre></div></div>
 
                 </div>
                 
@@ -679,7 +572,12 @@ You can execute some sample requests and see the JSON result.</p>
                     
                     
                     <li>
-                        <a href="/documentation/rest-api.html">Quickstart for Kimai API (JSON / REST)</a> &ndash; Access your time-tracking data via the JSON API with Kimai
+                        <a href="/documentation/rest-api.html">Start using the Kimai API</a> &ndash; Access your time-tracking data with the Kimai JSON API
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="/documentation/rest-api-examples.html">Using the API to import CSV data with PHP</a> &ndash; Demo application that uses a CSV oparse and the Kimai API to import local data
                     </li>
                     
                 </ul>
@@ -693,7 +591,7 @@ You can execute some sample requests and see the JSON result.</p>
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#sync-your-kimai-data-via-api-to-a-local-database" class="nav-link">Sync your Kimai data via API to a local database</a></li><li class="nav-item"><a href="#using-the-api-to-import-csv-data-with-php" class="nav-link">Using the API to import CSV data with PHP</a></li><li class="nav-item"><a href="#calling-the-api-with-javascript" class="nav-link">Calling the API with Javascript</a></li></ul>
+        
         
         <ul class="nav">
             <li>

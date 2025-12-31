@@ -12,14 +12,14 @@
 <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
-<title>Using Redis for caching – Kimai</title>
-<meta name="description" content="Using Redis as caching instance for Kimai">
+<title>Sync your Kimai data via API to a local database</title>
+<meta name="description" content="Full example application, syncing all data to a local source for integrated reporting">
 <link type="application/atom+xml" rel="alternate" href="https://www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
 <meta property="og:locale" content="en">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Using Redis for caching">
+<meta property="og:title" content="Sync your Kimai data via API to a local database">
 <meta property="og:image" content="https://www.kimai.org/images/social-preview.webp">
-<meta property="og:description" content="Using Redis as caching instance for Kimai">
+<meta property="og:description" content="Full example application, syncing all data to a local source for integrated reporting">
 <link href="/assets/build/main.css?v6" rel="stylesheet" />
 
 </head>
@@ -196,7 +196,7 @@
                         
                         
                         
-                        <a href="/documentation/api-example-sync.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-api-example-sync">
+                        <a href="/documentation/api-example-sync.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2  active" id="docnavi-api-example-sync">
                             
                             Sync to a local DB
                             
@@ -340,7 +340,7 @@
                         
                         
                         
-                        <a href="/documentation/redis.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2  active" id="docnavi-redis">
+                        <a href="/documentation/redis.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-redis">
                             
                             Using Redis for caching
                             
@@ -361,7 +361,7 @@
 </aside>
 <script>
     document.addEventListener("DOMContentLoaded", function(event) {
-        const dpm = document.getElementById('docnavi-redis');
+        const dpm = document.getElementById('docnavi-api-example-sync');
         if (dpm !== null) {
             dpm.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
         }
@@ -372,9 +372,9 @@
 
         <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 pt-4 mb-n3">
             <div class="me-4">
-                <h1 class="pb-1">Using Redis for caching</h1>
+                <h1 class="pb-1">Sync your Kimai data via API to a local database</h1>
                 
-                <p class="text-muted fs-lg mb-2">Using Redis as caching instance for Kimai</p>
+                <p class="text-muted fs-lg mb-2">Full example application, syncing all data to a local source for integrated reporting</p>
                 
             </div>
             
@@ -389,74 +389,75 @@
             <div>
                 
                 <div id="documentation-content">
-                    <p>Please note: the text below is only a “note to myself” for future use-cases. 
-This is not a documentation on how to setup caching with Kimai and redis</p>
+                    <p>Tired of exporting Excel to import it into Power BI?</p>
 
-<h2 id="activate-redis">Activate Redis</h2>
+<p>Use this script and let it run every night to sync the delta from last night: <a href="https://github.com/kimai/api-sync">https://github.com/kimai/api-sync</a>.</p>
 
-<p>If you want to use Redis as caching instance, you have to change your <code class="language-plaintext highlighter-rouge">local.yaml</code> and add the following lines:</p>
+<p>Then point your BI solution to the local database.</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">framework</span><span class="pi">:</span>
-    <span class="na">cache</span><span class="pi">:</span>
-        <span class="na">app</span><span class="pi">:</span> <span class="s">cache.adapter.redis</span>
-        <span class="na">system</span><span class="pi">:</span> <span class="s">cache.adapter.redis</span>
-        <span class="na">default_redis_provider</span><span class="pi">:</span> <span class="s">redis://:password@host</span>
-        <span class="na">pools</span><span class="pi">:</span>
-            <span class="na">app.cache.redis</span><span class="pi">:</span>
-                <span class="na">adapter</span><span class="pi">:</span> <span class="s">cache.adapter.redis</span>
-                <span class="na">public</span><span class="pi">:</span> <span class="kc">false</span>
-                <span class="na">default_lifetime</span><span class="pi">:</span> <span class="m">120</span>
-            <span class="na">doctrine.result_cache_pool</span><span class="pi">:</span>
-                <span class="na">adapter</span><span class="pi">:</span> <span class="s">app.cache.redis</span>
-            <span class="na">doctrine.system_cache_pool</span><span class="pi">:</span>
-                <span class="na">adapter</span><span class="pi">:</span> <span class="s">app.cache.redis</span>
+<h2 id="requirements">Requirements</h2>
+
+<ul>
+  <li>Requires PHP &gt;= 8.1.3</li>
+  <li>MySQL 8</li>
+  <li>GIT</li>
+  <li>Composer (siehe https://getcomposer.org/download/)</li>
+</ul>
+
+<h2 id="installation">Installation</h2>
+
+<ul>
+  <li>Clone the repo: <code class="language-plaintext highlighter-rouge">git clone git@github.com:kimai/api-sync.git kimai-api-sync</code></li>
+  <li>Create the database and then the necessary tables, structure can be found in <code class="language-plaintext highlighter-rouge">database.sql</code></li>
+  <li>Execute <code class="language-plaintext highlighter-rouge">php composer.phar install --optimize-autoloader -n</code></li>
+  <li>Edit <code class="language-plaintext highlighter-rouge">configuration.php</code> and adjust settings to your needs</li>
+</ul>
+
+<h2 id="usage">Usage</h2>
+
+<p>The sync script can be run with <code class="language-plaintext highlighter-rouge">php sync.php</code> and it has two optional parameters:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">--modified="2024-01-01 12:00:00"</code> - only sync timesheets, which were changed after a certain date-time, format: <code class="language-plaintext highlighter-rouge">YYYY-MM-DD HH:mm:SS</code></li>
+  <li><code class="language-plaintext highlighter-rouge">--timesheets</code> - only sync timesheets</li>
+</ul>
+
+<p>If <code class="language-plaintext highlighter-rouge">--modified</code> is skipped, only the latest 24 hours will be synced</p>
+
+<h2 id="initial-sync">Initial sync</h2>
+
+<p>For the initial sync you should choose a date far in the past, so all non-synced timesheets will be fetched:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php sync.php --modified="2020-12-31 00:00:00"
 </code></pre></div></div>
 
-<p>Change the connection URL in <code class="language-plaintext highlighter-rouge">default_redis_provider</code> to your Redis server.</p>
+<h2 id="cronjob">Cronjob</h2>
 
-<h2 id="connection-string-for-redis">Connection string for Redis</h2>
+<p>Now you can easily fetch latest changes via cronjob.</p>
 
-<p>A Data Source Name (DSN) for this adapter must use the following format:</p>
+<p>If you installed the project into <code class="language-plaintext highlighter-rouge">/opt/kimai-api-sync/</code> and want to sync once a night you might want to use something like:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>redis://[user:pass@][ip|host|socket[:port]][/db-index]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>17 3 * * * /usr/bin/php /opt/kimai-api-sync/sync.php --modified="2020-12-31 00:00:00" --timesheets &gt;&gt; /var/log/kimai-api-sync.log 2&gt;&amp;1
 </code></pre></div></div>
-
-<p>The user can be skipped if your Redis is password protected with <code class="language-plaintext highlighter-rouge">requirepass</code> (see example above).</p>
-
-<h2 id="development">Development</h2>
-
-<p>If you are using Kimai in <code class="language-plaintext highlighter-rouge">dev</code> environment, you have to add these additional configs as well:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">doctrine</span><span class="pi">:</span>
-    <span class="na">orm</span><span class="pi">:</span>
-        <span class="na">metadata_cache_driver</span><span class="pi">:</span>
-            <span class="na">type</span><span class="pi">:</span> <span class="s">service</span>
-            <span class="na">id</span><span class="pi">:</span> <span class="s">doctrine.system_cache_provider</span>
-        <span class="na">query_cache_driver</span><span class="pi">:</span>
-            <span class="na">type</span><span class="pi">:</span> <span class="s">service</span>
-            <span class="na">id</span><span class="pi">:</span> <span class="s">doctrine.system_cache_provider</span>
-        <span class="na">result_cache_driver</span><span class="pi">:</span>
-            <span class="na">type</span><span class="pi">:</span> <span class="s">service</span>
-            <span class="na">id</span><span class="pi">:</span> <span class="s">doctrine.result_cache_provider</span>
-
-<span class="na">services</span><span class="pi">:</span>
-    <span class="na">doctrine.result_cache_provider</span><span class="pi">:</span>
-        <span class="na">class</span><span class="pi">:</span> <span class="s">Symfony\Component\Cache\DoctrineProvider</span>
-        <span class="na">public</span><span class="pi">:</span> <span class="kc">false</span>
-        <span class="na">arguments</span><span class="pi">:</span>
-            <span class="pi">-</span> <span class="s1">'</span><span class="s">@doctrine.result_cache_pool'</span>
-    <span class="na">doctrine.system_cache_provider</span><span class="pi">:</span>
-        <span class="na">class</span><span class="pi">:</span> <span class="s">Symfony\Component\Cache\DoctrineProvider</span>
-        <span class="na">public</span><span class="pi">:</span> <span class="kc">false</span>
-        <span class="na">arguments</span><span class="pi">:</span>
-            <span class="pi">-</span> <span class="s1">'</span><span class="s">@doctrine.system_cache_pool'</span>
-</code></pre></div></div>
-
-<p>This is needed, because Doctrine cache is normally only active in <code class="language-plaintext highlighter-rouge">prod</code> (see config/packages/prod/doctrine.yaml).</p>
 
                 </div>
                 
 
+                
+                <h2 id="related-articles" class="fs-4 mt-5">Related articles</h2>
+                <ul>
+                    
+                    
+                    <li>
+                        <a href="/documentation/rest-api.html">Start using the Kimai API</a> &ndash; Access your time-tracking data with the Kimai JSON API
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="/documentation/rest-api-examples.html">Using the API to import CSV data with PHP</a> &ndash; Demo application that uses a CSV oparse and the Kimai API to import local data
+                    </li>
+                    
+                </ul>
                 
             </div>
         </div>
@@ -467,7 +468,13 @@ This is not a documentation on how to setup caching with Kimai and redis</p>
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#activate-redis" class="nav-link">Activate Redis</a></li><li class="nav-item"><a href="#connection-string-for-redis" class="nav-link">Connection string for Redis</a></li><li class="nav-item"><a href="#development" class="nav-link">Development</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#requirements" class="nav-link">Requirements</a></li><li class="nav-item"><a href="#installation" class="nav-link">Installation</a></li><li class="nav-item"><a href="#usage" class="nav-link">Usage</a></li><li class="nav-item"><a href="#initial-sync" class="nav-link">Initial sync</a></li><li class="nav-item"><a href="#cronjob" class="nav-link">Cronjob</a></li></ul>
+        
+        <ul class="nav">
+            <li>
+                <a href="#related-articles" class="nav-link">Related articles</a>
+            </li>
+        </ul>
         
     </aside>
 

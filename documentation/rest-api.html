@@ -12,14 +12,14 @@
 <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
-<title>Quickstart for Kimai API (JSON / REST)</title>
-<meta name="description" content="Access your time-tracking data via the JSON API with Kimai">
+<title>Start using the Kimai API</title>
+<meta name="description" content="Access your time-tracking data with the Kimai JSON API">
 <link type="application/atom+xml" rel="alternate" href="https://www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
 <meta property="og:locale" content="en">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Quickstart for Kimai API (JSON / REST)">
+<meta property="og:title" content="Start using the Kimai API">
 <meta property="og:image" content="https://www.kimai.org/images/social-preview.webp">
-<meta property="og:description" content="Access your time-tracking data via the JSON API with Kimai">
+<meta property="og:description" content="Access your time-tracking data with the Kimai JSON API">
 <link href="/assets/build/main.css?v6" rel="stylesheet" />
 
 </head>
@@ -159,9 +159,26 @@
                         
                         
                         
+                        <a href="/documentation/api-pagination.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-api-pagination">
+                            
+                            Pagination
+                            
+                        </a>
+                        
+                        
+                    </div>
+                    
+                    
+                    
+                    <p class="fs-lg mb-1 text-white fw-bold">API Examples</p>
+                    <div class="list-group list-group-flush mb-4 me-n4 border-start">
+                        
+                        
+                        
+                        
                         <a href="/documentation/rest-api-examples.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-rest-api-examples">
                             
-                            Examples
+                            Importing a CSV file
                             
                         </a>
                         
@@ -169,9 +186,29 @@
                         
                         
                         
-                        <a href="/documentation/api-pagination.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-api-pagination">
+                        <a href="/documentation/api-example-javascript.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-api-example-javascript">
                             
-                            Pagination
+                            jQuery Demo
+                            
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/documentation/api-example-sync.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-api-example-sync">
+                            
+                            Sync to a local DB
+                            
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/documentation/api-example-user.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-api-example-user">
+                            
+                            Onboarding users
                             
                         </a>
                         
@@ -335,9 +372,9 @@
 
         <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 pt-4 mb-n3">
             <div class="me-4">
-                <h1 class="pb-1">Quickstart for Kimai API (JSON / REST)</h1>
+                <h1 class="pb-1">Start using the Kimai API</h1>
                 
-                <p class="text-muted fs-lg mb-2">Access your time-tracking data via the JSON API with Kimai</p>
+                <p class="text-muted fs-lg mb-2">Access your time-tracking data with the Kimai JSON API</p>
                 
             </div>
             
@@ -365,9 +402,11 @@
             <div>
                 
                 <div id="documentation-content">
-                    <p>Read the API documentation in your Kimai installation at <code class="language-plaintext highlighter-rouge">/api/doc</code>.
-For example, you can have a look at the API docs for the demo installation at <a href="https://demo.kimai.org/api/doc">https://demo.kimai.org/api/doc</a>.
-You need to authenticate to see them, credentials can be <a href="/en/demo.html">found here</a>.</p>
+                    <ul>
+  <li>Read the API documentation in your Kimai installation at <code class="language-plaintext highlighter-rouge">/api/doc</code>.</li>
+  <li>You can preview the API docs at the demo installation at <a href="https://demo.kimai.org/api/doc">https://demo.kimai.org/api/doc</a>.</li>
+  <li>You need to be authenticated to see the API docs, credentials can be <a href="/en/demo.html">found here</a>.</li>
+</ul>
 
 <h2 id="authentication">Authentication</h2>
 
@@ -456,7 +495,7 @@ Providing any other value, including <code class="language-plaintext highlighter
                     
                     
                     <li>
-                        <a href="/documentation/rest-api-examples.html">API examples</a> &ndash; Some examples how to access the Kimai PAI with different languages
+                        <a href="/documentation/rest-api-examples.html">Using the API to import CSV data with PHP</a> &ndash; Demo application that uses a CSV oparse and the Kimai API to import local data
                     </li>
                     
                 </ul>
