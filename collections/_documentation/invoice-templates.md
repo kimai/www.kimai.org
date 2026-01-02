@@ -75,91 +75,33 @@ There is so much to say about PDF templates, that there is a dedicated page abou
 Twig templates are used to generate HTML and PDF files.
 
 Generally speaking, you have two main variables in your template which you should use:
-- `entries` which is an array of arrays, with the first level representing the invoice items and the second level being `Timesheet entry variables` (see below)
-- `invoice` which is an array of variables (see `Template variables` below), just with a different syntax for access, e.g.: `{% raw %}{{ invoice['invoice.due_date'] }}{% endraw %}` instead of `{% raw %}${invoice.due_date}{% endraw %}` 
-- **Attention**: accessing the `model` variable (instance of `App\Model\InvoiceModel`) directly is deprecated and will be removed in the future (no BC promise given!)
+- `invoice` which is an array of variables (see `Global variables` below) 
+- `entries` which is an array of arrays, representing the invoice items and their `Invoice items`
 
-Please see the [default templates]({{ site.kimai_v2_file }}/templates/invoice/renderer) at
-GitHub to find out which variables can be used.
+**Attention**: accessing the `model` variable (instance of `App\Model\InvoiceModel`) directly is deprecated and will be removed in the future (no BC promise given!)
 
-Use this debug template to find out which variables are available:
-```twig
-{% raw %}<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>{{ invoice['invoice.number'] }}-{{ invoice['customer.company']|default(invoice['customer.name'])|u.snake }}</title>
-    <style type="text/css">
-        {{ encore_entry_css_source('invoice-pdf')|raw }}
-    </style>
-</head>
-<body>
-<div class="wrapper">
-    <h3>The following list of variables is available for this invoice:</h3>
-    <p>Please note, that the available variables will change depending on your search. E.g. the {{ '{{ project }}' }} variables are only available if you selected a project in your search filter.</p>
-    <table class="items">
-        <tr>
-            <th>Variable</th>
-            <th>Value</th>
-        </tr>
-        {% for name, value in invoice %}
-            <tr class="{{ cycle(['odd', 'even'], loop.index0) }}">
-                <td>{{ "{{ invoice['" ~ name ~ "'] }}" }}</td>
-                <td>{{ invoice[name] }}</td>
-            </tr>
-        {% endfor %}
-    </table>
-    <h3>The following list is available for all timesheet entries, which can be rendered like this:</h3>
-    <pre>
-    {{ '{%' }} for entry in entries {{ '%}' }}
-    &lt;ul&gt;
-        {{ '{%' }} for name, value in entry {{ '%}' }}
-            &lt;li&gt;{{ '{{ name }}' }}: {{ '{{ value }}' }}&lt;/li&gt;
-        {{ '{%' }} endfor {{ '%}' }}
-    &lt;/ul&gt;
-    {{ '{%' }} endfor {{ '%}' }}
-    </pre>
-    <p>The table below contains only the first timesheet record:</p>
-    <table class="items">
-        <tr>
-            <th>Variable</th>
-            <th>Value</th>
-        </tr>
-        {% for entry in entries|slice(1) %}
-            {% for name, value in entry %}
-                <tr class="{{ cycle(['odd', 'even'], loop.index0) }}">
-                    <td>{{ "{{ entry['" ~ name ~ "'] }}" }}</td>
-                    <td>{{ value }}</td>
-                </tr>
-            {% endfor %}
-        {% endfor %}
-    </table>
-</div>
-</body>
-</html>{% endraw %}
-```
+Please see the [default templates]({{ site.kimai_v2_file }}/templates/invoice/renderer) at GitHub to find out which variables can be used.
 
 Want to include an image in your template? Use the `asset` tag for referencing relative URLs (this example points to the directory `public/images/my-logo.png`):
 
 ```twig
 {% raw %}<img src="{{ asset('images/my-logo.png') }}">{% endraw %}
 ```
-
+ 
 But the safest way is to host your images on your own domain:
 
 ```twig
 {% raw %}<img src="https://www.example.com/images/my-logo.png">{% endraw %}
 ```
 
-Due to security reasons, multiple twig functions and filters are disabled in the invoice renderer.
-Therefor you cannot for example use `include` or `embed` to include other templates.
+Due to security reasons, most twig functions and filters are disabled in the invoice renderer.
+Therefor you cannot use `include` or `embed` to include other templates.
 
 After you changed a twig template, you have to [clear the cache]({% link _documentation/cache.md %}) to see the results.
 
 #### Custom fields
 
-Iterating above all entries (line items) in the invoice with `{% raw %}{% for line in entries %}{% endraw %}` 
-allows access to your custom fields.
+Iterating above all entries (line items) in the invoice with `{% raw %}{% for line in entries %}{% endraw %}` allows access to your custom fields.
 
 Want to use a **timesheet custom-field** in your template?
 ```twig
@@ -236,191 +178,206 @@ The example `{% raw %}{{ invoice['invoice.due_date'] }}{% endraw %}` would then 
 
 ### Global variables
 
-| Key                           | Description                                                                             |
-|-------------------------------|-----------------------------------------------------------------------------------------|
-| ${invoice.due_date}           | The due date for the invoice payment formatted in the requested locale                  |
-| ${invoice.due_date_process}   | The due date for the invoice payment, to be formatted with the twig filter `date()`     |
-| ${invoice.date}               | The creation date of this invoice                                                       |
-| ${invoice.date_process}       | The creation date of this invoice, to be formatted with the twig filter `date()`        |
-| ${invoice.number}             | The generated invoice number                                                            |
-| ${invoice.currency}           | The invoice currency                                                                    |
-| ${invoice.currency_symbol}    | The invoice currency as symbol (if available)                                           |
-| ${invoice.total_time}         | The total working time (entries with a fixed rate are always calculated with 1)         |
-| ${invoice.duration_decimal}   | The total working time as decimal value                                                 |
-| ${invoice.language}           | The invoices language as two character code                                             |
-| ${invoice.total}              | The invoices total (including tax) with currency                                        |
-| ${invoice.total_nc}           | The invoices total (including tax) without currency                                     |
-| ${invoice.total_plain}        | The invoices total (including tax) as unformatted value                                 |
-| ${invoice.subtotal}           | The invoices subtotal (excluding tax) with currency                                     |
-| ${invoice.subtotal_nc}        | The invoices subtotal (excluding tax) without currency                                  |
-| ${invoice.subtotal_plain}     | The invoices subtotal (excluding tax) as unformatted value                              |
-| ${invoice.currency}           | The invoices currency as string (like EUR or USD)                                       |
-| ${invoice.vat}                | The VAT in percent for this invoice                                                     |
-| ${invoice.tax}                | The tax of the invoice amount with currency                                             |
-| ${invoice.tax_nc}             | The tax of the invoice amount without currency                                          |
-| ${invoice.tax_plain}          | The tax of the invoice amount as unformatted value                                      |
-| ${invoice.tax_hide}           | A boolean flag indicating if the tax field should be hidden (only applies if tax = 0)   |
-| ${template.name}              | The invoice template (for internal use, usually not needed)                             |
-| ${template.title}             | The invoice document title                                                              |
-| ${template.payment_terms}     | Your payment terms, might be multiple lines                                             |
-| ${template.due_days}          | The amount of days for the payment, starting with the day of creating the invoice       |
-| ${template.contact}           | Extended contact information, might be multiple lines                                   |
-| ${template.payment_details}   | Payment details like bank accounts (free text, might be multiple lines)                 |
-| ${query.begin}                | The query begin as formatted short date                                                 |
-| ${query.begin_process}        | The query begin, to be formatted with the twig filter `date()`                          |
-| ${query.end}                  | The query end as formatted short date                                                   |
-| ${query.end_process}          | The query end, to be formatted with the twig filter `date()`                            |
-| ${query.begin_month}          | The month for the queries begin date                                                    |
-| ${query.begin_month_number}   | The numerical value for the month of the queries begin date with leading zero           |
-| ${query.begin_day}            | The day for the queries begin as numerical value with leading zero                      |
-| ${query.begin_year}           | The year for the queries begin date                                                     |
-| ${query.end_month}            | The month for the queries end date                                                      |
-| ${query.end_month_number}     | The numerical value for the month of the queries end date with leading zero             |
-| ${query.end_day}              | The day for the queries end as numerical value with leading zero                        |
-| ${query.end_year}             | The year for the queries end date                                                       |
-| ${query.activity.name}        | Activity name (only if exactly one activity was filtered)                               |
-| ${query.activity.comment}     | Activity comment/description (only if exactly one activity was filtered)                |
-| ${query.project.name}         | Project name (only if exactly one project was filtered)                                 |
-| ${query.project.comment}      | Project comment/description (only if exactly one project was filtered)                  |
-| ${query.project.order_number} | Project Order-Number (only if exactly one project was filtered)                         |
-| ${user.display}               | The current users display name                                                          |
-| ${user.email}                 | The current users email                                                                 |
-| ${user.name}                  | The current users name                                                                  |
-| ${user.alias}                 | The current users alias                                                                 |
-| ${user.title}                 | The current users title                                                                 |
-| ${user.see_others}            | A boolean indicating if the current user can see other users items                      |
-| ${user.meta.X}                | The current [users preference]({% link _documentation/user-preferences.md %}) named `X` |
+| Twig                                    | Document (DOCX, XLSX, ODS)      | Description                                                                                           |
+|-----------------------------------------|---------------------------------|-------------------------------------------------------------------------------------------------------|
+| `invoice['invoice.due_date']`           | `${invoice.due_date}`           | The due date for the invoice payment formatted in the requested locale                                |
+| `invoice['invoice.due_date_process']`   | `${invoice.due_date_process}`   | The due date for the invoice payment, to be formatted with the twig filter `date()`                   |
+| `invoice['invoice.date']`               | `${invoice.date}`               | The creation date of this invoice                                                                     |
+| `invoice['invoice.date_process']`       | `${invoice.date_process}`       | The creation date of this invoice, to be formatted with the twig filter `date()`                      |
+| `invoice['invoice.number']`             | `${invoice.number}`             | The generated invoice number                                                                          |
+| `invoice['invoice.currency']`           | `${invoice.currency}`           | The invoice currency                                                                                  |
+| `invoice['invoice.currency_symbol']`    | `${invoice.currency_symbol}`    | The invoice currency as symbol (if available)                                                         |
+| `invoice['invoice.total_time']`         | `${invoice.total_time}`         | The total working time (entries with a fixed rate are always calculated with 1)                       |
+| `invoice['invoice.duration_decimal']`   | `${invoice.duration_decimal}`   | The total working time as decimal value                                                               |
+| `invoice['invoice.language']`           | `${invoice.language}`           | The invoices language as two character code                                                           |
+| `invoice['invoice.total']`              | `${invoice.total}`              | The invoices total (including tax) with currency                                                      |
+| `invoice['invoice.total_nc']`           | `${invoice.total_nc}`           | The invoices total (including tax) without currency                                                   |
+| `invoice['invoice.total_plain']`        | `${invoice.total_plain}`        | The invoices total (including tax) as unformatted value                                               |
+| `invoice['invoice.subtotal']`           | `${invoice.subtotal}`           | The invoices subtotal (excluding tax) with currency                                                   |
+| `invoice['invoice.subtotal_nc']`        | `${invoice.subtotal_nc}`        | The invoices subtotal (excluding tax) without currency                                                |
+| `invoice['invoice.subtotal_plain']`     | `${invoice.subtotal_plain}`     | The invoices subtotal (excluding tax) as unformatted value                                            |
+| `invoice['invoice.currency']`           | `${invoice.currency}`           | The invoices currency as string (like EUR or USD)                                                     |
+| `invoice['invoice.vat']`                | `${invoice.vat}`                | **Deprecated** The VAT in percent for this invoice                                                    |
+| `invoice['invoice.tax']`                | `${invoice.tax}`                | **Deprecated** The tax of the invoice amount with currency                                            |
+| `invoice['invoice.tax_nc']`             | `${invoice.tax_nc}`             | **Deprecated** The tax of the invoice amount without currency                                         |
+| `invoice['invoice.tax_plain']`          | `${invoice.tax_plain}`          | **Deprecated** The tax of the invoice amount as unformatted value                                     |
+| `invoice['invoice.tax_hide']`           | `${invoice.tax_hide}`           | **Deprecated** A boolean flag indicating if the tax field should be hidden (only applies if tax = 0)  |
+| `invoice['template.name']`              | `${template.name}`              | The invoice template (for internal use, usually not needed)                                           |
+| `invoice['template.title']`             | `${template.title}`             | The invoice document title                                                                            |
+| `invoice['template.payment_terms']`     | `${template.payment_terms}`     | Your payment terms, might be multiple lines                                                           |
+| `invoice['template.due_days']`          | `${template.due_days}`          | The amount of days for the payment, starting with the day of creating the invoice                     |
+| `invoice['template.contact']`           | `${template.contact}`           | Extended contact information, might be multiple lines                                                 |
+| `invoice['template.payment_details']`   | `${template.payment_details}`   | Payment details like bank accounts (free text, might be multiple lines)                               |
+| `invoice['query.begin']`                | `${query.begin}`                | The query begin as formatted short date                                                               |
+| `invoice['query.begin_process']`        | `${query.begin_process}`        | The query begin, to be formatted with the twig filter `date()`                                        |
+| `invoice['query.end']`                  | `${query.end}`                  | The query end as formatted short date                                                                 |
+| `invoice['query.end_process']`          | `${query.end_process}`          | The query end, to be formatted with the twig filter `date()`                                          |
+| `invoice['query.begin_month']`          | `${query.begin_month}`          | The month for the queries begin date                                                                  |
+| `invoice['query.begin_month_number']`   | `${query.begin_month_number}`   | The numerical value for the month of the queries begin date with leading zero                         |
+| `invoice['query.begin_day']`            | `${query.begin_day}`            | The day for the queries begin as numerical value with leading zero                                    |
+| `invoice['query.begin_year']`           | `${query.begin_year}`           | The year for the queries begin date                                                                   |
+| `invoice['query.end_month']`            | `${query.end_month}`            | The month for the queries end date                                                                    |
+| `invoice['query.end_month_number']`     | `${query.end_month_number}`     | The numerical value for the month of the queries end date with leading zero                           |
+| `invoice['query.end_day']`              | `${query.end_day}`              | The day for the queries end as numerical value with leading zero                                      |
+| `invoice['query.end_year']`             | `${query.end_year}`             | The year for the queries end date                                                                     |
+| `invoice['query.activity.name']`        | `${query.activity.name}`        | Activity name (only if exactly one activity was filtered)                                             |
+| `invoice['query.activity.comment']`     | `${query.activity.comment}`     | Activity comment/description (only if exactly one activity was filtered)                              |
+| `invoice['query.project.name']`         | `${query.project.name}`         | Project name (only if exactly one project was filtered)                                               |
+| `invoice['query.project.comment']`      | `${query.project.comment}`      | Project comment/description (only if exactly one project was filtered)                                |
+| `invoice['query.project.order_number']` | `${query.project.order_number}` | Project Order-Number (only if exactly one project was filtered)                                       |
+| `invoice['user.display']`               | `${user.display}`               | The current users display name                                                                        |
+| `invoice['user.email']`                 | `${user.email}`                 | The current users email                                                                               |
+| `invoice['user.name']`                  | `${user.name}`                  | The current users name                                                                                |
+| `invoice['user.alias']`                 | `${user.alias}`                 | The current users alias                                                                               |
+| `invoice['user.title']`                 | `${user.title}`                 | The current users title                                                                               |
+| `invoice['user.see_others']`            | `${user.see_others}`            | A boolean indicating if the current user can see other users items                                    |
+| `invoice['user.meta.X']`                | `${user.meta.X}`                | The current [users preference]({% link _documentation/user-preferences.md %}) named `X`               |
 {: .table }
 
-### Timesheet entries
+### Tax Rows
 
-For each timesheet record you can use these variables:
+Tax rows are only available in Twig. You can loop all tax rows with `{% raw %}{% for tax in invoice['invoice.tax_rows'] %}{% endraw %}`.
 
-| Key                          | Description                                                                                                                                                                                                                  | Example         |
-|------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|
-| ${entry.row}                 | An empty string, used as template row for docx                                                                                                                                                                               |                 |
-| ${entry.description}         | The entries description                                                                                                                                                                                                      | _foo bar_       |
-| ${entry.description_safe}    | The entries description. If that is empty the activity name will be used.                                                                                                                                                    | _foo bar_       |
-| ${entry.amount}              | DEPRECATED (do not use): The decimal duration for this entry. If this is a fixed rate entry, it contains the formatted amount.                                                                                               | 2.78            |
-| ${entry.rate}                | The rate for one unit of the entry (normally one hour) with currency                                                                                                                                                         | 1.100,01 EUR    |
-| ${entry.rate_nc}             | The rate for one unit of the entry without currency                                                                                                                                                                          | 1100,01         |
-| ${entry.rate_plain}          | The rate for one unit of the entry as unformatted value                                                                                                                                                                      | 1100.01         |
-| ${entry.total}               | The total rate for this entry with currency                                                                                                                                                                                  | 1.278,33 EUR    |
-| ${entry.total_nc}            | The total rate for this entry without currency                                                                                                                                                                               | 1.278,33        |
-| ${entry.total_plain}         | The total rate as unformatted value                                                                                                                                                                                          | 1278.33         |
-| ${entry.currency}            | The currency for this record as string (like EUR or USD)                                                                                                                                                                     | EUR             |
-| ${entry.duration}            | The duration in seconds                                                                                                                                                                                                      | 10020           |
-| ${entry.duration_format}     | The duration in human-readable format                                                                                                                                                                                        | 02:47           |
-| ${entry.duration_decimal}    | The duration in decimal format (with localized separator)                                                                                                                                                                    | 2.78            |
-| ${entry.duration_minutes}    | The duration in minutes with no decimals                                                                                                                                                                                     | 167             |
-| ${entry.begin}               | The begin date (format depends on the users language)                                                                                                                                                                        | 27.10.2018      |
-| ${entry.begin_time}          | The formatted time for the begin of this entry                                                                                                                                                                               | 14:57           |
-| ${entry.begin_timestamp}     | The timestamp for the begin of this entry                                                                                                                                                                                    | 1542016273      |
-| ${entry.end}                 | The begin date  (format depends on the users language)                                                                                                                                                                       | 27.10.2018      |
-| ${entry.end_time}            | The formatted time for the end of this entry                                                                                                                                                                                 | 17:44           |
-| ${entry.end_timestamp}       | The timestamp for the end of this entry                                                                                                                                                                                      | 1542016273      |
-| ${entry.date}                | The start date when this record was created                                                                                                                                                                                  | 27.10.2018      |
-| ${entry.date_process}        | The start date of this record, to be formatted with the twig filter `date()`                                                                                                                                                 |
-| ${entry.week}                | The start week number when this record was created                                                                                                                                                                           | 39              |
-| ${entry.weekyear}            | The corresponding year to the week number                                                                                                                                                                                    | 2018            |
-| ${entry.user_id}             | The user ID                                                                                                                                                                                                                  | 1               |
-| ${entry.user_name}           | The username                                                                                                                                                                                                                 | susan_super     |
-| ${entry.user_alias}          | The user alias                                                                                                                                                                                                               | Susan Miller    |
-| ${entry.user_preference.foo} | The user preference called `foo`                                                                                                                                                                                             | bar             |
-| ${entry.activity}            | Activity name                                                                                                                                                                                                                | Post production |
-| ${entry.activity_id}         | Activity ID                                                                                                                                                                                                                  | 124             |
-| ${entry.project}             | Project name                                                                                                                                                                                                                 | Nemesis         |
-| ${entry.project_id}          | Project ID                                                                                                                                                                                                                   | 10              |
-| ${entry.customer}            | Customer name                                                                                                                                                                                                                | Acme Studios    |
-| ${entry.customer_id}         | Customer ID                                                                                                                                                                                                                  | 3               |
-| ${entry.meta.foo}            | The [meta field]({% link _documentation/plugin-custom-fields.md %}) with the internal name `foo` (must be in lowercase letters, e.g. `FOO` will be available as `${entry.meta.foo}`. Only available if the field is visible. |                 |
-| ${entry.tags}                | Comma separated list of all tags                                                                                                                                                                                             | foo, bar        |
-| ${entry.type}                | The type of this entry (plugins can add custom types)                                                                                                                                                                        | timesheet       |
-| ${entry.category}            | The category of this entry (plugins can add custom types)                                                                                                                                                                    | work            |
+| Twig              | Description                                                                                                                 |
+|-------------------|-----------------------------------------------------------------------------------------------------------------------------|
+| `tax['show']`     | Whether the row should be displayed                                                                                         |
+| `tax['name']`     | Name of the Tax rule (should be translated with the `trans` filter)                                                         |
+| `tax['rate']`     | The tax rate between 0 and 99                                                                                               |
+| `tax['note']`     | An empty or non-empty string like "Reverse charge" or the Tax exempt message (should be translated with the `trans` filter) |
+| `tax['amount']`   | Tax amount (should be used in combination with the `money` filter                                                           |
+| `tax['currency']` | The tax currency                                                                                                            |
+| `tax['counter']`  | And ID that you can use to create footnotes for the `note`                                                                  |
+{: .table }
+
+### Invoice items (timesheets)
+
+You can loop all invoice items in Twig with `{% raw %}{% for item in entries %}{% endraw %}`. For all other formats see docs above.
+
+| Twig                                | Document (DOCX, XLSX, ODS)     | Description                                                                                                                                                                                                                  | Example         |
+|-------------------------------------|--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|
+| -                                   | `${entry.row}`                 | An empty string, only used as template row for DOCX                                                                                                                                                                          |                 |
+| `item['entry.description']`         | `${entry.description}`         | The entries description                                                                                                                                                                                                      | _foo bar_       |
+| `item['entry.description_safe']`    | `${entry.description_safe}`    | The entries description. If that is empty the activity name will be used.                                                                                                                                                    | _foo bar_       |
+| `item['entry.amount']`              | `${entry.amount}`              | DEPRECATED (do not use): The decimal duration for this entry. If this is a fixed rate entry, it contains the formatted amount.                                                                                               | 2.78            |
+| `item['entry.rate']`                | `${entry.rate}`                | The rate for one unit of the entry (normally one hour) with currency                                                                                                                                                         | 1.100,01 EUR    |
+| `item['entry.rate_nc']`             | `${entry.rate_nc}`             | The rate for one unit of the entry without currency                                                                                                                                                                          | 1100,01         |
+| `item['entry.rate_plain']`          | `${entry.rate_plain}`          | The rate for one unit of the entry as unformatted value                                                                                                                                                                      | 1100.01         |
+| `item['entry.total']`               | `${entry.total}`               | The total rate for this entry with currency                                                                                                                                                                                  | 1.278,33 EUR    |
+| `item['entry.total_nc']`            | `${entry.total_nc}`            | The total rate for this entry without currency                                                                                                                                                                               | 1.278,33        |
+| `item['entry.total_plain']`         | `${entry.total_plain}`         | The total rate as unformatted value                                                                                                                                                                                          | 1278.33         |
+| `item['entry.currency']`            | `${entry.currency}`            | The currency for this record as string (like EUR or USD)                                                                                                                                                                     | EUR             |
+| `item['entry.duration']`            | `${entry.duration}`            | The duration in seconds                                                                                                                                                                                                      | 10020           |
+| `item['entry.duration_format']`     | `${entry.duration_format}`     | The duration in human-readable format                                                                                                                                                                                        | 02:47           |
+| `item['entry.duration_decimal']`    | `${entry.duration_decimal}`    | The duration in decimal format (with localized separator)                                                                                                                                                                    | 2.78            |
+| `item['entry.duration_minutes']`    | `${entry.duration_minutes}`    | The duration in minutes with no decimals                                                                                                                                                                                     | 167             |
+| `item['entry.begin']`               | `${entry.begin}`               | The begin date (format depends on the users language)                                                                                                                                                                        | 27.10.2018      |
+| `item['entry.begin_time']`          | `${entry.begin_time}`          | The formatted time for the begin of this entry                                                                                                                                                                               | 14:57           |
+| `item['entry.begin_timestamp']`     | `${entry.begin_timestamp}`     | The timestamp for the begin of this entry                                                                                                                                                                                    | 1542016273      |
+| `item['entry.end']`                 | `${entry.end}`                 | The begin date  (format depends on the users language)                                                                                                                                                                       | 27.10.2018      |
+| `item['entry.end_time']`            | `${entry.end_time}`            | The formatted time for the end of this entry                                                                                                                                                                                 | 17:44           |
+| `item['entry.end_timestamp']`       | `${entry.end_timestamp}`       | The timestamp for the end of this entry                                                                                                                                                                                      | 1542016273      |
+| `item['entry.date']`                | `${entry.date}`                | The start date when this record was created                                                                                                                                                                                  | 27.10.2018      |
+| `item['entry.date_process']`        | `${entry.date_process}`        | The start date of this record, to be formatted with the twig filter `date()`                                                                                                                                                 |
+| `item['entry.week']`                | `${entry.week}`                | The start week number when this record was created                                                                                                                                                                           | 39              |
+| `item['entry.weekyear']`            | `${entry.weekyear}`            | The corresponding year to the week number                                                                                                                                                                                    | 2018            |
+| `item['entry.user_id']`             | `${entry.user_id}`             | The user ID                                                                                                                                                                                                                  | 1               |
+| `item['entry.user_name']`           | `${entry.user_name}`           | The username                                                                                                                                                                                                                 | susan_super     |
+| `item['entry.user_alias']`          | `${entry.user_alias}`          | The user alias                                                                                                                                                                                                               | Susan Miller    |
+| `item['entry.user_preference.foo']` | `${entry.user_preference.foo}` | The user preference called `foo`                                                                                                                                                                                             | bar             |
+| `item['entry.activity']`            | `${entry.activity}`            | Activity name                                                                                                                                                                                                                | Post production |
+| `item['entry.activity_id']`         | `${entry.activity_id}`         | Activity ID                                                                                                                                                                                                                  | 124             |
+| `item['entry.project']`             | `${entry.project}`             | Project name                                                                                                                                                                                                                 | Nemesis         |
+| `item['entry.project_id']`          | `${entry.project_id}`          | Project ID                                                                                                                                                                                                                   | 10              |
+| `item['entry.customer']`            | `${entry.customer}`            | Customer name                                                                                                                                                                                                                | Acme Studios    |
+| `item['entry.customer_id']`         | `${entry.customer_id}`         | Customer ID                                                                                                                                                                                                                  | 3               |
+| `item['entry.meta.foo']`            | `${entry.meta.foo}`            | The [meta field]({% link _documentation/plugin-custom-fields.md %}) with the internal name `foo` (must be in lowercase letters, e.g. `FOO` will be available as `${entry.meta.foo}`. Only available if the field is visible. |                 |
+| `item['entry.tags']`                | `${entry.tags}`                | Comma separated list of all tags                                                                                                                                                                                             | foo, bar        |
+| `item['entry.type']`                | `${entry.type}`                | The type of this entry (plugins can add custom types)                                                                                                                                                                        | timesheet       |
+| `item['entry.category']`            | `${entry.category}`            | The category of this entry (plugins can add custom types)                                                                                                                                                                    | work            |
 {: .table }
 
 ### Invoice issuer
 
-Variables for the issuer of the invoice:
+The invoice issuer is the company sending the invoice.
 
-| Key                       | Description (highlighted words are the names in the UI)                                                                                                                                                                                  |
-|---------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ${issuer.id}              | The internal customer ID (do not display that on your invoices)                                                                                                                                                                          |
-| ${issuer.name}            | The customer `name`                                                                                                                                                                                                                      |
-| ${issuer.comment}         | The `description` of this customer                                                                                                                                                                                                       |
-| ${issuer.address_line1}   | Customer address: Line 1                                                                                                                                                                                                                 |
-| ${issuer.address_line2}   | Customer address: Line 2                                                                                                                                                                                                                 |
-| ${issuer.address_line3}   | Customer address: Line 3                                                                                                                                                                                                                 |
-| ${issuer.postcode}        | Customer address: Post Code                                                                                                                                                                                                              |
-| ${issuer.city}            | Customer address: City                                                                                                                                                                                                                   |
-| ${issuer.contact}         | Usually the name of the customer `contact` person                                                                                                                                                                                        |
-| ${issuer.company}         | The `company name`                                                                                                                                                                                                                       |
-| ${issuer.vat_id}          | The customer `Vat ID`                                                                                                                                                                                                                    |
-| ${issuer.number}          | The customer `account` number                                                                                                                                                                                                            |
-| ${issuer.country}         | The `country` of the customer location, as 2-letter code                                                                                                                                                                                 |
-| ${issuer.country_name}    | The translated `country` name                                                                                                                                                                                                            |
-| ${issuer.homepage}        | A URL to the customer `homepage`                                                                                                                                                                                                         |
-| ${issuer.phone}           | The customers `phone` number                                                                                                                                                                                                             |
-| ${issuer.mobile}          | The customers `mobile` number                                                                                                                                                                                                            |
-| ${issuer.email}           | The customers `email` address                                                                                                                                                                                                            |
-| ${issuer.fax}             | The customers `fax` number                                                                                                                                                                                                               |
-| ${issuer.invoice_text}    | The configurable invoice text for that customer                                                                                                                                                                                          |
-| ${issuer.buyer_reference} | Buyer reference, used in e-invoicing                                                                                                                                                                                                     |
-| ${issuer.meta.foo}        | The customer [meta field]({% link _documentation/plugin-custom-fields.md %}) with the internal name `foo` (must be in lowercase letters, e.g. `FOO` will be available as `${customer.meta.foo}`. Only available if the field is visible. |
+| Twig                                | Document (DOCX, XLSX, ODS)   | Description (highlighted words are the names in the UI)                                                                                                                                                                                  |
+|-------------------------------------|------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `invoice['issuer.id']`              | `${issuer.id}`               | The internal customer ID (do not display that on your invoices)                                                                                                                                                                          |
+| `invoice['issuer.name']`            | `${issuer.name}`             | The customer `name`                                                                                                                                                                                                                      |
+| `invoice['issuer.comment']`         | `${issuer.comment}`          | The `description` of this customer                                                                                                                                                                                                       |
+| `invoice['issuer.address_line1']`   | `${issuer.address_line1}`    | Customer address: Line 1                                                                                                                                                                                                                 |
+| `invoice['issuer.address_line2']`   | `${issuer.address_line2}`    | Customer address: Line 2                                                                                                                                                                                                                 |
+| `invoice['issuer.address_line3']`   | `${issuer.address_line3}`    | Customer address: Line 3                                                                                                                                                                                                                 |
+| `invoice['issuer.postcode']`        | `${issuer.postcode}`         | Customer address: Post Code                                                                                                                                                                                                              |
+| `invoice['issuer.city']`            | `${issuer.city}`             | Customer address: City                                                                                                                                                                                                                   |
+| `invoice['issuer.contact']`         | `${issuer.contact}`          | Usually the name of the customer `contact` person                                                                                                                                                                                        |
+| `invoice['issuer.company']`         | `${issuer.company}`          | The `company name`                                                                                                                                                                                                                       |
+| `invoice['issuer.vat_id']`          | `${issuer.vat_id}`           | The customer `Vat ID`                                                                                                                                                                                                                    |
+| `invoice['issuer.number']`          | `${issuer.number}`           | The customer `account` number                                                                                                                                                                                                            |
+| `invoice['issuer.country']`         | `${issuer.country}`          | The `country` of the customer location, as 2-letter code                                                                                                                                                                                 |
+| `invoice['issuer.country_name']`    | `${issuer.country_name}`     | The translated `country` name                                                                                                                                                                                                            |
+| `invoice['issuer.homepage']`        | `${issuer.homepage}`         | A URL to the customer `homepage`                                                                                                                                                                                                         |
+| `invoice['issuer.phone']`           | `${issuer.phone}`            | The customers `phone` number                                                                                                                                                                                                             |
+| `invoice['issuer.mobile']`          | `${issuer.mobile}`           | The customers `mobile` number                                                                                                                                                                                                            |
+| `invoice['issuer.email']`           | `${issuer.email}`            | The customers `email` address                                                                                                                                                                                                            |
+| `invoice['issuer.fax']`             | `${issuer.fax}`              | The customers `fax` number                                                                                                                                                                                                               |
+| `invoice['issuer.invoice_text']`    | `${issuer.invoice_text}`     | The configurable invoice text for that customer                                                                                                                                                                                          |
+| `invoice['issuer.buyer_reference']` | `${issuer.buyer_reference}`  | Buyer reference, used in e-invoicing                                                                                                                                                                                                     |
+| `invoice['issuer.meta.foo']`        | `${issuer.meta.foo}`         | The customer [meta field]({% link _documentation/plugin-custom-fields.md %}) with the internal name `foo` (must be in lowercase letters, e.g. `FOO` will be available as `${customer.meta.foo}`. Only available if the field is visible. |
 {: .table }
 
 ### Customer
 
-Variables for the customer who is receiving the invoice:
+The customer is the company receiving the invoice.
 
-| Key                         | Description (highlighted words are the names in the UI)                                                                                                                                                                                  |
-|-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ${customer.id}              | The internal customer ID (do not display that on your invoices)                                                                                                                                                                          |
-| ${customer.name}            | The customer `name`                                                                                                                                                                                                                      |
-| ${customer.comment}         | The `description` of this customer                                                                                                                                                                                                       |
-| ${customer.address_line1}   | Customer address: Line 1                                                                                                                                                                                                                 |
-| ${customer.address_line2}   | Customer address: Line 2                                                                                                                                                                                                                 |
-| ${customer.address_line3}   | Customer address: Line 3                                                                                                                                                                                                                 |
-| ${customer.postcode}        | Customer address: Post Code                                                                                                                                                                                                              |
-| ${customer.city}            | Customer address: City                                                                                                                                                                                                                   |
-| ${customer.contact}         | Usually the name of the customer `contact` person                                                                                                                                                                                        |
-| ${customer.company}         | The `company name`                                                                                                                                                                                                                       |
-| ${customer.vat_id}          | The customer `Vat ID`                                                                                                                                                                                                                    |
-| ${customer.number}          | The customer `account` number                                                                                                                                                                                                            |
-| ${customer.country}         | The `country` of the customer location, as 2-letter code                                                                                                                                                                                 |
-| ${customer.country_name}    | The translated `country` name                                                                                                                                                                                                            |
-| ${customer.homepage}        | A URL to the customer `homepage`                                                                                                                                                                                                         |
-| ${customer.phone}           | The customers `phone` number                                                                                                                                                                                                             |
-| ${customer.mobile}          | The customers `mobile` number                                                                                                                                                                                                            |
-| ${customer.email}           | The customers `email` address                                                                                                                                                                                                            |
-| ${customer.fax}             | The customers `fax` number                                                                                                                                                                                                               |
-| ${customer.invoice_text}    | The configurable invoice text for that customer                                                                                                                                                                                          |
-| ${customer.buyer_reference} | Buyer reference, used in e-invoicing                                                                                                                                                                                                     |
-| ${customer.meta.foo}        | The customer [meta field]({% link _documentation/plugin-custom-fields.md %}) with the internal name `foo` (must be in lowercase letters, e.g. `FOO` will be available as `${customer.meta.foo}`. Only available if the field is visible. |
+| Twig                                  | Document (DOCX, XLSX, ODS)    | Description (highlighted words are the names in the UI)                                                                                                                                                                                  |
+|---------------------------------------|-------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `invoice['customer.id']`              | `${customer.id}`              | The internal customer ID (do not display that on your invoices)                                                                                                                                                                          |
+| `invoice['customer.name']`            | `${customer.name}`            | The customer `name`                                                                                                                                                                                                                      |
+| `invoice['customer.comment']`         | `${customer.comment}`         | The `description` of this customer                                                                                                                                                                                                       |
+| `invoice['customer.address_line1']`   | `${customer.address_line1}`   | Customer address: Line 1                                                                                                                                                                                                                 |
+| `invoice['customer.address_line2']`   | `${customer.address_line2}`   | Customer address: Line 2                                                                                                                                                                                                                 |
+| `invoice['customer.address_line3']`   | `${customer.address_line3}`   | Customer address: Line 3                                                                                                                                                                                                                 |
+| `invoice['customer.postcode']`        | `${customer.postcode}`        | Customer address: Post Code                                                                                                                                                                                                              |
+| `invoice['customer.city']`            | `${customer.city}`            | Customer address: City                                                                                                                                                                                                                   |
+| `invoice['customer.contact']`         | `${customer.contact}`         | Usually the name of the customer `contact` person                                                                                                                                                                                        |
+| `invoice['customer.company']`         | `${customer.company}`         | The `company name`                                                                                                                                                                                                                       |
+| `invoice['customer.vat_id']`          | `${customer.vat_id}`          | The customer `Vat ID`                                                                                                                                                                                                                    |
+| `invoice['customer.number']`          | `${customer.number}`          | The customer `account` number                                                                                                                                                                                                            |
+| `invoice['customer.country']`         | `${customer.country}`         | The `country` of the customer location, as 2-letter code                                                                                                                                                                                 |
+| `invoice['customer.country_name']`    | `${customer.country_name}`    | The translated `country` name                                                                                                                                                                                                            |
+| `invoice['customer.homepage']`        | `${customer.homepage}`        | A URL to the customer `homepage`                                                                                                                                                                                                         |
+| `invoice['customer.phone']`           | `${customer.phone}`           | The customers `phone` number                                                                                                                                                                                                             |
+| `invoice['customer.mobile']`          | `${customer.mobile}`          | The customers `mobile` number                                                                                                                                                                                                            |
+| `invoice['customer.email']`           | `${customer.email}`           | The customers `email` address                                                                                                                                                                                                            |
+| `invoice['customer.fax']`             | `${customer.fax}`             | The customers `fax` number                                                                                                                                                                                                               |
+| `invoice['customer.invoice_text']`    | `${customer.invoice_text}`    | The configurable invoice text for that customer                                                                                                                                                                                          |
+| `invoice['customer.buyer_reference']` | `${customer.buyer_reference}` | Buyer reference, used in e-invoicing                                                                                                                                                                                                     |
+| `invoice['customer.meta.foo']`        | `${customer.meta.foo}`        | The customer [meta field]({% link _documentation/plugin-custom-fields.md %}) with the internal name `foo` (must be in lowercase letters, e.g. `FOO` will be available as `${customer.meta.foo}`. Only available if the field is visible. |
 {: .table }
 
 ### Project
 
 The following variables exist, if projects could be found in the filtered data:
 
-| Key                               | Description (highlighted words are the names in the UI)                                                                                                                                                                                |
-|-----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ${project.id}                     | The internal project ID (do not display that on your invoices)                                                                                                                                                                         |
-| ${project.name}                   | The project `name`                                                                                                                                                                                                                     |
-| ${project.comment}                | The `description` of this project                                                                                                                                                                                                      |
-| ${project.order_number}           | The project `order number`                                                                                                                                                                                                             |
-| ${project.start_date}             | The `Project start` date-time                                                                                                                                                                                                          |
-| ${project.end_date}               | The `Project end` date-time                                                                                                                                                                                                            |
-| ${project.order_date}             | Projects `order date`-time                                                                                                                                                                                                             |
-| ${project.budget_money}           | Projects budget including currency                                                                                                                                                                                                     |
-| ${project.budget_money_nc}        | The projects budget without currency                                                                                                                                                                                                   |
-| ${project.budget_money_plain}     | The projects budget as unformatted value                                                                                                                                                                                               |
-| ${project.budget_time}            | The projects time-budget as seconds                                                                                                                                                                                                    |
-| ${project.budget_time_decimal}    | The projects time-budget in decimal format (with localized separator)                                                                                                                                                                  |
-| ${project.budget_time_minutes}    | The projects time-budget in minutes with no decimals                                                                                                                                                                                   |
-| ${project.number}                 | The project number                                                                                                                                                                                                                     |
-| ${project.invoice_text}           | The project invoice-text                                                                                                                                                                                                               |
-| ${project.meta.foo}               | The project [meta field]({% link _documentation/plugin-custom-fields.md %}) with the internal name `foo` (must be in lowercase letters, e.g. `FOO` will be available as `${project.meta.foo}`. Only available if the field is visible. |
+| Twig                                     | Document (DOCX, XLSX, ODS)       | Description (highlighted words are the names in the UI)                                                                                                                                                                                |
+|------------------------------------------|----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `invoice['project.id']`                  | `${project.id}`                  | The internal project ID (do not display that on your invoices)                                                                                                                                                                         |
+| `invoice['project.name']`                | `${project.name}`                | The project `name`                                                                                                                                                                                                                     |
+| `invoice['project.comment']`             | `${project.comment}`             | The `description` of this project                                                                                                                                                                                                      |
+| `invoice['project.order_number']`        | `${project.order_number}`        | The project `order number`                                                                                                                                                                                                             |
+| `invoice['project.start_date']`          | `${project.start_date}`          | The `Project start` date-time                                                                                                                                                                                                          |
+| `invoice['project.end_date']`            | `${project.end_date}`            | The `Project end` date-time                                                                                                                                                                                                            |
+| `invoice['project.order_date']`          | `${project.order_date}`          | Projects `order date`-time                                                                                                                                                                                                             |
+| `invoice['project.budget_money']`        | `${project.budget_money}`        | Projects budget including currency                                                                                                                                                                                                     |
+| `invoice['project.budget_money_nc']`     | `${project.budget_money_nc}`     | The projects budget without currency                                                                                                                                                                                                   |
+| `invoice['project.budget_money_plain']`  | `${project.budget_money_plain}`  | The projects budget as unformatted value                                                                                                                                                                                               |
+| `invoice['project.budget_time']`         | `${project.budget_time}`         | The projects time-budget as seconds                                                                                                                                                                                                    |
+| `invoice['project.budget_time_decimal']` | `${project.budget_time_decimal}` | The projects time-budget in decimal format (with localized separator)                                                                                                                                                                  |
+| `invoice['project.budget_time_minutes']` | `${project.budget_time_minutes}` | The projects time-budget in minutes with no decimals                                                                                                                                                                                   |
+| `invoice['project.number']`              | `${project.number}`              | The project number                                                                                                                                                                                                                     |
+| `invoice['project.invoice_text']`        | `${project.invoice_text}`        | The project invoice-text                                                                                                                                                                                                               |
+| `invoice['project.meta.foo']`            | `${project.meta.foo}`            | The project [meta field]({% link _documentation/plugin-custom-fields.md %}) with the internal name `foo` (must be in lowercase letters, e.g. `FOO` will be available as `${project.meta.foo}`. Only available if the field is visible. |
 {: .table }
 
 If more than one project was found, you will have further variables (same list as above) called `${project.1.name}`, `${project.2.name}` and so on.
@@ -431,14 +388,14 @@ If your template relies on a `{$project.X}` variable, it is recommended to limit
 
 The following variables exist, if activities could be found in the filtered data:
 
-| Key                                | Description (highlighted words are the names in the UI)                                                                                                                                                                                  |
-|------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ${activity.id}                     | The internal activity ID (do not display that on your invoices)                                                                                                                                                                          |
-| ${activity.name}                   | The activity `name`                                                                                                                                                                                                                      |
-| ${activity.comment}                | The `description` of this activity                                                                                                                                                                                                       |
-| ${activity.number}                 | The activity number                                                                                                                                                                                                                      |
-| ${activity.invoice_text}           | The activity invoice-text                                                                                                                                                                                                                |
-| ${activity.meta.foo}               | The activity [meta field]({% link _documentation/plugin-custom-fields.md %}) with the internal name `foo` (must be in lowercase letters, e.g. `FOO` will be available as `${activity.meta.foo}`. Only available if the field is visible. |
+| Twig                               | Document (DOCX, XLSX, ODS)   | Description (highlighted words are the names in the UI)                                                                                                                                                                                  |
+|------------------------------------|------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `invoice['activity.id']`           | `${activity.id}`             | The internal activity ID (do not display that on your invoices)                                                                                                                                                                          |
+| `invoice['activity.name']`         | `${activity.name}`           | The activity `name`                                                                                                                                                                                                                      |
+| `invoice['activity.comment']`      | `${activity.comment}`        | The `description` of this activity                                                                                                                                                                                                       |
+| `invoice['activity.number']`       | `${activity.number}`         | The activity number                                                                                                                                                                                                                      |
+| `invoice['activity.invoice_text']` | `${activity.invoice_text}`   | The activity invoice-text                                                                                                                                                                                                                |
+| `invoice['activity.meta.foo']`     | `${activity.meta.foo}`       | The activity [meta field]({% link _documentation/plugin-custom-fields.md %}) with the internal name `foo` (must be in lowercase letters, e.g. `FOO` will be available as `${activity.meta.foo}`. Only available if the field is visible. |
 {: .table }
 
 If more than one activity was found, you will have further variables (same list as above) called `${activity.1.name}`, `${activity.2.name}` and so on.
@@ -454,3 +411,63 @@ Due to security restrictions currently only the upload of the following formats 
 There is a known bug in LibreOffice which exports DOCX files with a wrong mime-type. These files will not be accepted
 by Kimai with the error `This file type is not allowed` ([read this issue]({{ site.kimai_v2_repo }}/issues/1916) for more information).
 The workaround is to change the document with another word processor: Apple pages, Google Drive and Microsoft 365 Online Office will export the DOCX files with the correct mimetype.
+
+### Twig debug template
+
+Use this debug template to find out which variables are available:
+
+```twig
+{% raw %}<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ invoice['invoice.number'] }}-{{ invoice['customer.company']|default(invoice['customer.name'])|u.snake }}</title>
+    <style type="text/css">
+        {{ encore_entry_css_source('invoice-pdf')|raw }}
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <h3>The following list of variables is available for this invoice:</h3>
+    <p>Please note, that the available variables will change depending on your search. E.g. the {{ '{{ project }}' }} variables are only available if you selected a project in your search filter.</p>
+    <table class="items">
+        <tr>
+            <th>Variable</th>
+            <th>Value</th>
+        </tr>
+        {% for name, value in invoice %}
+            <tr class="{{ cycle(['odd', 'even'], loop.index0) }}">
+                <td>{{ "{{ invoice['" ~ name ~ "'] }}" }}</td>
+                <td>{{ invoice[name] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <h3>The following list is available for all timesheet entries, which can be rendered like this:</h3>
+    <pre>
+    {{ '{%' }} for entry in entries {{ '%}' }}
+    &lt;ul&gt;
+        {{ '{%' }} for name, value in entry {{ '%}' }}
+            &lt;li&gt;{{ '{{ name }}' }}: {{ '{{ value }}' }}&lt;/li&gt;
+        {{ '{%' }} endfor {{ '%}' }}
+    &lt;/ul&gt;
+    {{ '{%' }} endfor {{ '%}' }}
+    </pre>
+    <p>The table below contains only the first timesheet record:</p>
+    <table class="items">
+        <tr>
+            <th>Variable</th>
+            <th>Value</th>
+        </tr>
+        {% for entry in entries|slice(1) %}
+            {% for name, value in entry %}
+                <tr class="{{ cycle(['odd', 'even'], loop.index0) }}">
+                    <td>{{ "{{ entry['" ~ name ~ "'] }}" }}</td>
+                    <td>{{ value }}</td>
+                </tr>
+            {% endfor %}
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>{% endraw %}
+```
