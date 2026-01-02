@@ -702,69 +702,13 @@
 
 <p>Generally speaking, you have two main variables in your template which you should use:</p>
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">entries</code> which is an array of arrays, with the first level representing the invoice items and the second level being <code class="language-plaintext highlighter-rouge">Timesheet entry variables</code> (see below)</li>
-  <li><code class="language-plaintext highlighter-rouge">invoice</code> which is an array of variables (see <code class="language-plaintext highlighter-rouge">Template variables</code> below), just with a different syntax for access, e.g.: <code class="language-plaintext highlighter-rouge">{{ invoice['invoice.due_date'] }}</code> instead of <code class="language-plaintext highlighter-rouge">${invoice.due_date}</code></li>
-  <li><strong>Attention</strong>: accessing the <code class="language-plaintext highlighter-rouge">model</code> variable (instance of <code class="language-plaintext highlighter-rouge">App\Model\InvoiceModel</code>) directly is deprecated and will be removed in the future (no BC promise given!)</li>
+  <li><code class="language-plaintext highlighter-rouge">invoice</code> which is an array of variables (see <code class="language-plaintext highlighter-rouge">Global variables</code> below)</li>
+  <li><code class="language-plaintext highlighter-rouge">entries</code> which is an array of arrays, representing the invoice items and their <code class="language-plaintext highlighter-rouge">Invoice items</code></li>
 </ul>
 
-<p>Please see the <a href="https://github.com/kimai/kimai/blob/main/templates/invoice/renderer">default templates</a> at
-GitHub to find out which variables can be used.</p>
+<p><strong>Attention</strong>: accessing the <code class="language-plaintext highlighter-rouge">model</code> variable (instance of <code class="language-plaintext highlighter-rouge">App\Model\InvoiceModel</code>) directly is deprecated and will be removed in the future (no BC promise given!)</p>
 
-<p>Use this debug template to find out which variables are available:</p>
-<div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="nt">&lt;html&gt;</span>
-<span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;title&gt;</span><span class="cp">{{</span> <span class="nv">invoice</span><span class="p">[</span><span class="s1">'invoice.number'</span><span class="p">]</span> <span class="cp">}}</span>-<span class="cp">{{</span> <span class="nv">invoice</span><span class="p">[</span><span class="s1">'customer.company'</span><span class="p">]</span><span class="o">|</span><span class="nf">default</span><span class="p">(</span><span class="nv">invoice</span><span class="p">[</span><span class="s1">'customer.name'</span><span class="p">])</span><span class="o">|</span><span class="nf">u</span><span class="err">.</span><span class="nv">snake</span> <span class="cp">}}</span><span class="nt">&lt;/title&gt;</span>
-    <span class="nt">&lt;style </span><span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
-        <span class="cp">{{</span> <span class="nv">encore_entry_css_source</span><span class="p">(</span><span class="s1">'invoice-pdf'</span><span class="p">)</span><span class="o">|</span><span class="nf">raw</span> <span class="cp">}}</span>
-    <span class="nt">&lt;/style&gt;</span>
-<span class="nt">&lt;/head&gt;</span>
-<span class="nt">&lt;body&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"wrapper"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;h3&gt;</span>The following list of variables is available for this invoice:<span class="nt">&lt;/h3&gt;</span>
-    <span class="nt">&lt;p&gt;</span>Please note, that the available variables will change depending on your search. E.g. the <span class="cp">{{</span> <span class="s1">'{{ project }}'</span> <span class="cp">}}</span> variables are only available if you selected a project in your search filter.<span class="nt">&lt;/p&gt;</span>
-    <span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"items"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;tr&gt;</span>
-            <span class="nt">&lt;th&gt;</span>Variable<span class="nt">&lt;/th&gt;</span>
-            <span class="nt">&lt;th&gt;</span>Value<span class="nt">&lt;/th&gt;</span>
-        <span class="nt">&lt;/tr&gt;</span>
-        <span class="cp">{%</span> <span class="k">for</span> <span class="nv">name</span><span class="p">,</span> <span class="nv">value</span> <span class="ow">in</span> <span class="nv">invoice</span> <span class="cp">%}</span>
-            <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"</span><span class="cp">{{</span> <span class="nv">cycle</span><span class="p">([</span><span class="s1">'odd'</span><span class="p">,</span> <span class="s1">'even'</span><span class="p">],</span> <span class="nv">loop.index0</span><span class="p">)</span> <span class="cp">}}</span><span class="s">"</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;td&gt;</span><span class="cp">{{</span> <span class="s2">"{{ invoice['"</span> <span class="err">~</span> <span class="nv">name</span> <span class="err">~</span> <span class="s2">"'] }}"</span> <span class="cp">}}</span><span class="nt">&lt;/td&gt;</span>
-                <span class="nt">&lt;td&gt;</span><span class="cp">{{</span> <span class="nv">invoice</span><span class="p">[</span><span class="nv">name</span><span class="p">]</span> <span class="cp">}}</span><span class="nt">&lt;/td&gt;</span>
-            <span class="nt">&lt;/tr&gt;</span>
-        <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
-    <span class="nt">&lt;/table&gt;</span>
-    <span class="nt">&lt;h3&gt;</span>The following list is available for all timesheet entries, which can be rendered like this:<span class="nt">&lt;/h3&gt;</span>
-    <span class="nt">&lt;pre&gt;</span>
-    <span class="cp">{{</span> <span class="s1">'{%'</span> <span class="cp">}}</span> for entry in entries <span class="cp">{{</span> <span class="s1">'%}'</span> <span class="cp">}}</span>
-    <span class="ni">&amp;lt;</span>ul<span class="ni">&amp;gt;</span>
-        <span class="cp">{{</span> <span class="s1">'{%'</span> <span class="cp">}}</span> for name, value in entry <span class="cp">{{</span> <span class="s1">'%}'</span> <span class="cp">}}</span>
-            <span class="ni">&amp;lt;</span>li<span class="ni">&amp;gt;</span><span class="cp">{{</span> <span class="s1">'{{ name }}'</span> <span class="cp">}}</span>: <span class="cp">{{</span> <span class="s1">'{{ value }}'</span> <span class="cp">}}</span><span class="ni">&amp;lt;</span>/li<span class="ni">&amp;gt;</span>
-        <span class="cp">{{</span> <span class="s1">'{%'</span> <span class="cp">}}</span> endfor <span class="cp">{{</span> <span class="s1">'%}'</span> <span class="cp">}}</span>
-    <span class="ni">&amp;lt;</span>/ul<span class="ni">&amp;gt;</span>
-    <span class="cp">{{</span> <span class="s1">'{%'</span> <span class="cp">}}</span> endfor <span class="cp">{{</span> <span class="s1">'%}'</span> <span class="cp">}}</span>
-    <span class="nt">&lt;/pre&gt;</span>
-    <span class="nt">&lt;p&gt;</span>The table below contains only the first timesheet record:<span class="nt">&lt;/p&gt;</span>
-    <span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"items"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;tr&gt;</span>
-            <span class="nt">&lt;th&gt;</span>Variable<span class="nt">&lt;/th&gt;</span>
-            <span class="nt">&lt;th&gt;</span>Value<span class="nt">&lt;/th&gt;</span>
-        <span class="nt">&lt;/tr&gt;</span>
-        <span class="cp">{%</span> <span class="k">for</span> <span class="nv">entry</span> <span class="ow">in</span> <span class="nv">entries</span><span class="o">|</span><span class="nf">slice</span><span class="p">(</span><span class="nv">1</span><span class="p">)</span> <span class="cp">%}</span>
-            <span class="cp">{%</span> <span class="k">for</span> <span class="nv">name</span><span class="p">,</span> <span class="nv">value</span> <span class="ow">in</span> <span class="nv">entry</span> <span class="cp">%}</span>
-                <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"</span><span class="cp">{{</span> <span class="nv">cycle</span><span class="p">([</span><span class="s1">'odd'</span><span class="p">,</span> <span class="s1">'even'</span><span class="p">],</span> <span class="nv">loop.index0</span><span class="p">)</span> <span class="cp">}}</span><span class="s">"</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;td&gt;</span><span class="cp">{{</span> <span class="s2">"{{ entry['"</span> <span class="err">~</span> <span class="nv">name</span> <span class="err">~</span> <span class="s2">"'] }}"</span> <span class="cp">}}</span><span class="nt">&lt;/td&gt;</span>
-                    <span class="nt">&lt;td&gt;</span><span class="cp">{{</span> <span class="nv">value</span> <span class="cp">}}</span><span class="nt">&lt;/td&gt;</span>
-                <span class="nt">&lt;/tr&gt;</span>
-            <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
-        <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
-    <span class="nt">&lt;/table&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
-</code></pre></div></div>
+<p>Please see the <a href="https://github.com/kimai/kimai/blob/main/templates/invoice/renderer">default templates</a> at GitHub to find out which variables can be used.</p>
 
 <p>Want to include an image in your template? Use the <code class="language-plaintext highlighter-rouge">asset</code> tag for referencing relative URLs (this example points to the directory <code class="language-plaintext highlighter-rouge">public/images/my-logo.png</code>):</p>
 
@@ -776,15 +720,14 @@ GitHub to find out which variables can be used.</p>
 <div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://www.example.com/images/my-logo.png"</span><span class="nt">&gt;</span>
 </code></pre></div></div>
 
-<p>Due to security reasons, multiple twig functions and filters are disabled in the invoice renderer.
-Therefor you cannot for example use <code class="language-plaintext highlighter-rouge">include</code> or <code class="language-plaintext highlighter-rouge">embed</code> to include other templates.</p>
+<p>Due to security reasons, most twig functions and filters are disabled in the invoice renderer.
+Therefor you cannot use <code class="language-plaintext highlighter-rouge">include</code> or <code class="language-plaintext highlighter-rouge">embed</code> to include other templates.</p>
 
 <p>After you changed a twig template, you have to <a href="/documentation/cache.html">clear the cache</a> to see the results.</p>
 
 <h4 id="custom-fields">Custom fields</h4>
 
-<p>Iterating above all entries (line items) in the invoice with <code class="language-plaintext highlighter-rouge">{% for line in entries %}</code> 
-allows access to your custom fields.</p>
+<p>Iterating above all entries (line items) in the invoice with <code class="language-plaintext highlighter-rouge">{% for line in entries %}</code> allows access to your custom fields.</p>
 
 <p>Want to use a <strong>timesheet custom-field</strong> in your template?</p>
 <div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span> <span class="k">if</span> <span class="nv">line</span><span class="p">[</span><span class="s1">'entry.meta.foo'</span><span class="p">]</span> <span class="ow">is</span> <span class="nb">defined</span> <span class="cp">%}</span>
@@ -862,427 +805,563 @@ The example <code class="language-plaintext highlighter-rouge">{{ invoice['invoi
 <table class="table">
   <thead>
     <tr>
-      <th>Key</th>
+      <th>Twig</th>
+      <th>Document (DOCX, XLSX, ODS)</th>
       <th>Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>${invoice.due_date}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['invoice.due_date']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${invoice.due_date}</code></td>
       <td>The due date for the invoice payment formatted in the requested locale</td>
     </tr>
     <tr>
-      <td>${invoice.due_date_process}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['invoice.due_date_process']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${invoice.due_date_process}</code></td>
       <td>The due date for the invoice payment, to be formatted with the twig filter <code class="language-plaintext highlighter-rouge">date()</code></td>
     </tr>
     <tr>
-      <td>${invoice.date}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['invoice.date']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${invoice.date}</code></td>
       <td>The creation date of this invoice</td>
     </tr>
     <tr>
-      <td>${invoice.date_process}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['invoice.date_process']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${invoice.date_process}</code></td>
       <td>The creation date of this invoice, to be formatted with the twig filter <code class="language-plaintext highlighter-rouge">date()</code></td>
     </tr>
     <tr>
-      <td>${invoice.number}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['invoice.number']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${invoice.number}</code></td>
       <td>The generated invoice number</td>
     </tr>
     <tr>
-      <td>${invoice.currency}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['invoice.currency']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${invoice.currency}</code></td>
       <td>The invoice currency</td>
     </tr>
     <tr>
-      <td>${invoice.currency_symbol}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['invoice.currency_symbol']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${invoice.currency_symbol}</code></td>
       <td>The invoice currency as symbol (if available)</td>
     </tr>
     <tr>
-      <td>${invoice.total_time}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['invoice.total_time']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${invoice.total_time}</code></td>
       <td>The total working time (entries with a fixed rate are always calculated with 1)</td>
     </tr>
     <tr>
-      <td>${invoice.duration_decimal}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['invoice.duration_decimal']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${invoice.duration_decimal}</code></td>
       <td>The total working time as decimal value</td>
     </tr>
     <tr>
-      <td>${invoice.language}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['invoice.language']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${invoice.language}</code></td>
       <td>The invoices language as two character code</td>
     </tr>
     <tr>
-      <td>${invoice.total}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['invoice.total']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${invoice.total}</code></td>
       <td>The invoices total (including tax) with currency</td>
     </tr>
     <tr>
-      <td>${invoice.total_nc}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['invoice.total_nc']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${invoice.total_nc}</code></td>
       <td>The invoices total (including tax) without currency</td>
     </tr>
     <tr>
-      <td>${invoice.total_plain}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['invoice.total_plain']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${invoice.total_plain}</code></td>
       <td>The invoices total (including tax) as unformatted value</td>
     </tr>
     <tr>
-      <td>${invoice.subtotal}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['invoice.subtotal']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${invoice.subtotal}</code></td>
       <td>The invoices subtotal (excluding tax) with currency</td>
     </tr>
     <tr>
-      <td>${invoice.subtotal_nc}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['invoice.subtotal_nc']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${invoice.subtotal_nc}</code></td>
       <td>The invoices subtotal (excluding tax) without currency</td>
     </tr>
     <tr>
-      <td>${invoice.subtotal_plain}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['invoice.subtotal_plain']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${invoice.subtotal_plain}</code></td>
       <td>The invoices subtotal (excluding tax) as unformatted value</td>
     </tr>
     <tr>
-      <td>${invoice.currency}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['invoice.currency']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${invoice.currency}</code></td>
       <td>The invoices currency as string (like EUR or USD)</td>
     </tr>
     <tr>
-      <td>${invoice.vat}</td>
-      <td>The VAT in percent for this invoice</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['invoice.vat']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${invoice.vat}</code></td>
+      <td><strong>Deprecated</strong> The VAT in percent for this invoice</td>
     </tr>
     <tr>
-      <td>${invoice.tax}</td>
-      <td>The tax of the invoice amount with currency</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['invoice.tax']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${invoice.tax}</code></td>
+      <td><strong>Deprecated</strong> The tax of the invoice amount with currency</td>
     </tr>
     <tr>
-      <td>${invoice.tax_nc}</td>
-      <td>The tax of the invoice amount without currency</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['invoice.tax_nc']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${invoice.tax_nc}</code></td>
+      <td><strong>Deprecated</strong> The tax of the invoice amount without currency</td>
     </tr>
     <tr>
-      <td>${invoice.tax_plain}</td>
-      <td>The tax of the invoice amount as unformatted value</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['invoice.tax_plain']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${invoice.tax_plain}</code></td>
+      <td><strong>Deprecated</strong> The tax of the invoice amount as unformatted value</td>
     </tr>
     <tr>
-      <td>${invoice.tax_hide}</td>
-      <td>A boolean flag indicating if the tax field should be hidden (only applies if tax = 0)</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['invoice.tax_hide']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${invoice.tax_hide}</code></td>
+      <td><strong>Deprecated</strong> A boolean flag indicating if the tax field should be hidden (only applies if tax = 0)</td>
     </tr>
     <tr>
-      <td>${template.name}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['template.name']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${template.name}</code></td>
       <td>The invoice template (for internal use, usually not needed)</td>
     </tr>
     <tr>
-      <td>${template.title}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['template.title']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${template.title}</code></td>
       <td>The invoice document title</td>
     </tr>
     <tr>
-      <td>${template.payment_terms}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['template.payment_terms']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${template.payment_terms}</code></td>
       <td>Your payment terms, might be multiple lines</td>
     </tr>
     <tr>
-      <td>${template.due_days}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['template.due_days']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${template.due_days}</code></td>
       <td>The amount of days for the payment, starting with the day of creating the invoice</td>
     </tr>
     <tr>
-      <td>${template.contact}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['template.contact']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${template.contact}</code></td>
       <td>Extended contact information, might be multiple lines</td>
     </tr>
     <tr>
-      <td>${template.payment_details}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['template.payment_details']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${template.payment_details}</code></td>
       <td>Payment details like bank accounts (free text, might be multiple lines)</td>
     </tr>
     <tr>
-      <td>${query.begin}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['query.begin']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${query.begin}</code></td>
       <td>The query begin as formatted short date</td>
     </tr>
     <tr>
-      <td>${query.begin_process}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['query.begin_process']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${query.begin_process}</code></td>
       <td>The query begin, to be formatted with the twig filter <code class="language-plaintext highlighter-rouge">date()</code></td>
     </tr>
     <tr>
-      <td>${query.end}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['query.end']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${query.end}</code></td>
       <td>The query end as formatted short date</td>
     </tr>
     <tr>
-      <td>${query.end_process}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['query.end_process']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${query.end_process}</code></td>
       <td>The query end, to be formatted with the twig filter <code class="language-plaintext highlighter-rouge">date()</code></td>
     </tr>
     <tr>
-      <td>${query.begin_month}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['query.begin_month']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${query.begin_month}</code></td>
       <td>The month for the queries begin date</td>
     </tr>
     <tr>
-      <td>${query.begin_month_number}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['query.begin_month_number']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${query.begin_month_number}</code></td>
       <td>The numerical value for the month of the queries begin date with leading zero</td>
     </tr>
     <tr>
-      <td>${query.begin_day}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['query.begin_day']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${query.begin_day}</code></td>
       <td>The day for the queries begin as numerical value with leading zero</td>
     </tr>
     <tr>
-      <td>${query.begin_year}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['query.begin_year']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${query.begin_year}</code></td>
       <td>The year for the queries begin date</td>
     </tr>
     <tr>
-      <td>${query.end_month}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['query.end_month']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${query.end_month}</code></td>
       <td>The month for the queries end date</td>
     </tr>
     <tr>
-      <td>${query.end_month_number}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['query.end_month_number']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${query.end_month_number}</code></td>
       <td>The numerical value for the month of the queries end date with leading zero</td>
     </tr>
     <tr>
-      <td>${query.end_day}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['query.end_day']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${query.end_day}</code></td>
       <td>The day for the queries end as numerical value with leading zero</td>
     </tr>
     <tr>
-      <td>${query.end_year}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['query.end_year']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${query.end_year}</code></td>
       <td>The year for the queries end date</td>
     </tr>
     <tr>
-      <td>${query.activity.name}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['query.activity.name']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${query.activity.name}</code></td>
       <td>Activity name (only if exactly one activity was filtered)</td>
     </tr>
     <tr>
-      <td>${query.activity.comment}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['query.activity.comment']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${query.activity.comment}</code></td>
       <td>Activity comment/description (only if exactly one activity was filtered)</td>
     </tr>
     <tr>
-      <td>${query.project.name}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['query.project.name']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${query.project.name}</code></td>
       <td>Project name (only if exactly one project was filtered)</td>
     </tr>
     <tr>
-      <td>${query.project.comment}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['query.project.comment']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${query.project.comment}</code></td>
       <td>Project comment/description (only if exactly one project was filtered)</td>
     </tr>
     <tr>
-      <td>${query.project.order_number}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['query.project.order_number']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${query.project.order_number}</code></td>
       <td>Project Order-Number (only if exactly one project was filtered)</td>
     </tr>
     <tr>
-      <td>${user.display}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['user.display']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${user.display}</code></td>
       <td>The current users display name</td>
     </tr>
     <tr>
-      <td>${user.email}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['user.email']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${user.email}</code></td>
       <td>The current users email</td>
     </tr>
     <tr>
-      <td>${user.name}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['user.name']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${user.name}</code></td>
       <td>The current users name</td>
     </tr>
     <tr>
-      <td>${user.alias}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['user.alias']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${user.alias}</code></td>
       <td>The current users alias</td>
     </tr>
     <tr>
-      <td>${user.title}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['user.title']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${user.title}</code></td>
       <td>The current users title</td>
     </tr>
     <tr>
-      <td>${user.see_others}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['user.see_others']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${user.see_others}</code></td>
       <td>A boolean indicating if the current user can see other users items</td>
     </tr>
     <tr>
-      <td>${user.meta.X}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['user.meta.X']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${user.meta.X}</code></td>
       <td>The current <a href="/documentation/user-preferences.html">users preference</a> named <code class="language-plaintext highlighter-rouge">X</code></td>
     </tr>
   </tbody>
 </table>
 
-<h3 id="timesheet-entries">Timesheet entries</h3>
+<h3 id="tax-rows">Tax Rows</h3>
 
-<p>For each timesheet record you can use these variables:</p>
+<p>Tax rows are only available in Twig. You can loop all tax rows with <code class="language-plaintext highlighter-rouge">{% for tax in invoice['invoice.tax_rows'] %}</code>.</p>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Key</th>
+      <th>Twig</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">tax['show']</code></td>
+      <td>Whether the row should be displayed</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">tax['name']</code></td>
+      <td>Name of the Tax rule (should be translated with the <code class="language-plaintext highlighter-rouge">trans</code> filter)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">tax['rate']</code></td>
+      <td>The tax rate between 0 and 99</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">tax['note']</code></td>
+      <td>An empty or non-empty string like “Reverse charge” or the Tax exempt message (should be translated with the <code class="language-plaintext highlighter-rouge">trans</code> filter)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">tax['amount']</code></td>
+      <td>Tax amount (should be used in combination with the <code class="language-plaintext highlighter-rouge">money</code> filter</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">tax['currency']</code></td>
+      <td>The tax currency</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">tax['counter']</code></td>
+      <td>And ID that you can use to create footnotes for the <code class="language-plaintext highlighter-rouge">note</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="invoice-items-timesheets">Invoice items (timesheets)</h3>
+
+<p>You can loop all invoice items in Twig with <code class="language-plaintext highlighter-rouge">{% for item in entries %}</code>. For all other formats see docs above.</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Twig</th>
+      <th>Document (DOCX, XLSX, ODS)</th>
       <th>Description</th>
       <th>Example</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>${entry.row}</td>
-      <td>An empty string, used as template row for docx</td>
+      <td>-</td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.row}</code></td>
+      <td>An empty string, only used as template row for DOCX</td>
       <td> </td>
     </tr>
     <tr>
-      <td>${entry.description}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.description']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.description}</code></td>
       <td>The entries description</td>
       <td><em>foo bar</em></td>
     </tr>
     <tr>
-      <td>${entry.description_safe}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.description_safe']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.description_safe}</code></td>
       <td>The entries description. If that is empty the activity name will be used.</td>
       <td><em>foo bar</em></td>
     </tr>
     <tr>
-      <td>${entry.amount}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.amount']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.amount}</code></td>
       <td>DEPRECATED (do not use): The decimal duration for this entry. If this is a fixed rate entry, it contains the formatted amount.</td>
       <td>2.78</td>
     </tr>
     <tr>
-      <td>${entry.rate}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.rate']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.rate}</code></td>
       <td>The rate for one unit of the entry (normally one hour) with currency</td>
       <td>1.100,01 EUR</td>
     </tr>
     <tr>
-      <td>${entry.rate_nc}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.rate_nc']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.rate_nc}</code></td>
       <td>The rate for one unit of the entry without currency</td>
       <td>1100,01</td>
     </tr>
     <tr>
-      <td>${entry.rate_plain}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.rate_plain']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.rate_plain}</code></td>
       <td>The rate for one unit of the entry as unformatted value</td>
       <td>1100.01</td>
     </tr>
     <tr>
-      <td>${entry.total}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.total']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.total}</code></td>
       <td>The total rate for this entry with currency</td>
       <td>1.278,33 EUR</td>
     </tr>
     <tr>
-      <td>${entry.total_nc}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.total_nc']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.total_nc}</code></td>
       <td>The total rate for this entry without currency</td>
       <td>1.278,33</td>
     </tr>
     <tr>
-      <td>${entry.total_plain}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.total_plain']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.total_plain}</code></td>
       <td>The total rate as unformatted value</td>
       <td>1278.33</td>
     </tr>
     <tr>
-      <td>${entry.currency}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.currency']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.currency}</code></td>
       <td>The currency for this record as string (like EUR or USD)</td>
       <td>EUR</td>
     </tr>
     <tr>
-      <td>${entry.duration}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.duration']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.duration}</code></td>
       <td>The duration in seconds</td>
       <td>10020</td>
     </tr>
     <tr>
-      <td>${entry.duration_format}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.duration_format']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.duration_format}</code></td>
       <td>The duration in human-readable format</td>
       <td>02:47</td>
     </tr>
     <tr>
-      <td>${entry.duration_decimal}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.duration_decimal']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.duration_decimal}</code></td>
       <td>The duration in decimal format (with localized separator)</td>
       <td>2.78</td>
     </tr>
     <tr>
-      <td>${entry.duration_minutes}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.duration_minutes']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.duration_minutes}</code></td>
       <td>The duration in minutes with no decimals</td>
       <td>167</td>
     </tr>
     <tr>
-      <td>${entry.begin}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.begin']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.begin}</code></td>
       <td>The begin date (format depends on the users language)</td>
       <td>27.10.2018</td>
     </tr>
     <tr>
-      <td>${entry.begin_time}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.begin_time']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.begin_time}</code></td>
       <td>The formatted time for the begin of this entry</td>
       <td>14:57</td>
     </tr>
     <tr>
-      <td>${entry.begin_timestamp}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.begin_timestamp']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.begin_timestamp}</code></td>
       <td>The timestamp for the begin of this entry</td>
       <td>1542016273</td>
     </tr>
     <tr>
-      <td>${entry.end}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.end']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.end}</code></td>
       <td>The begin date  (format depends on the users language)</td>
       <td>27.10.2018</td>
     </tr>
     <tr>
-      <td>${entry.end_time}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.end_time']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.end_time}</code></td>
       <td>The formatted time for the end of this entry</td>
       <td>17:44</td>
     </tr>
     <tr>
-      <td>${entry.end_timestamp}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.end_timestamp']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.end_timestamp}</code></td>
       <td>The timestamp for the end of this entry</td>
       <td>1542016273</td>
     </tr>
     <tr>
-      <td>${entry.date}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.date']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.date}</code></td>
       <td>The start date when this record was created</td>
       <td>27.10.2018</td>
     </tr>
     <tr>
-      <td>${entry.date_process}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.date_process']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.date_process}</code></td>
       <td>The start date of this record, to be formatted with the twig filter <code class="language-plaintext highlighter-rouge">date()</code></td>
       <td> </td>
     </tr>
     <tr>
-      <td>${entry.week}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.week']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.week}</code></td>
       <td>The start week number when this record was created</td>
       <td>39</td>
     </tr>
     <tr>
-      <td>${entry.weekyear}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.weekyear']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.weekyear}</code></td>
       <td>The corresponding year to the week number</td>
       <td>2018</td>
     </tr>
     <tr>
-      <td>${entry.user_id}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.user_id']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.user_id}</code></td>
       <td>The user ID</td>
       <td>1</td>
     </tr>
     <tr>
-      <td>${entry.user_name}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.user_name']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.user_name}</code></td>
       <td>The username</td>
       <td>susan_super</td>
     </tr>
     <tr>
-      <td>${entry.user_alias}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.user_alias']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.user_alias}</code></td>
       <td>The user alias</td>
       <td>Susan Miller</td>
     </tr>
     <tr>
-      <td>${entry.user_preference.foo}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.user_preference.foo']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.user_preference.foo}</code></td>
       <td>The user preference called <code class="language-plaintext highlighter-rouge">foo</code></td>
       <td>bar</td>
     </tr>
     <tr>
-      <td>${entry.activity}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.activity']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.activity}</code></td>
       <td>Activity name</td>
       <td>Post production</td>
     </tr>
     <tr>
-      <td>${entry.activity_id}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.activity_id']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.activity_id}</code></td>
       <td>Activity ID</td>
       <td>124</td>
     </tr>
     <tr>
-      <td>${entry.project}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.project']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.project}</code></td>
       <td>Project name</td>
       <td>Nemesis</td>
     </tr>
     <tr>
-      <td>${entry.project_id}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.project_id']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.project_id}</code></td>
       <td>Project ID</td>
       <td>10</td>
     </tr>
     <tr>
-      <td>${entry.customer}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.customer']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.customer}</code></td>
       <td>Customer name</td>
       <td>Acme Studios</td>
     </tr>
     <tr>
-      <td>${entry.customer_id}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.customer_id']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.customer_id}</code></td>
       <td>Customer ID</td>
       <td>3</td>
     </tr>
     <tr>
-      <td>${entry.meta.foo}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.meta.foo']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.meta.foo}</code></td>
       <td>The <a href="/documentation/plugin-custom-fields.html">meta field</a> with the internal name <code class="language-plaintext highlighter-rouge">foo</code> (must be in lowercase letters, e.g. <code class="language-plaintext highlighter-rouge">FOO</code> will be available as <code class="language-plaintext highlighter-rouge">${entry.meta.foo}</code>. Only available if the field is visible.</td>
       <td> </td>
     </tr>
     <tr>
-      <td>${entry.tags}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.tags']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.tags}</code></td>
       <td>Comma separated list of all tags</td>
       <td>foo, bar</td>
     </tr>
     <tr>
-      <td>${entry.type}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.type']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.type}</code></td>
       <td>The type of this entry (plugins can add custom types)</td>
       <td>timesheet</td>
     </tr>
     <tr>
-      <td>${entry.category}</td>
+      <td><code class="language-plaintext highlighter-rouge">item['entry.category']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${entry.category}</code></td>
       <td>The category of this entry (plugins can add custom types)</td>
       <td>work</td>
     </tr>
@@ -1291,102 +1370,125 @@ The example <code class="language-plaintext highlighter-rouge">{{ invoice['invoi
 
 <h3 id="invoice-issuer">Invoice issuer</h3>
 
-<p>Variables for the issuer of the invoice:</p>
+<p>The invoice issuer is the company sending the invoice.</p>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Key</th>
+      <th>Twig</th>
+      <th>Document (DOCX, XLSX, ODS)</th>
       <th>Description (highlighted words are the names in the UI)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>${issuer.id}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['issuer.id']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${issuer.id}</code></td>
       <td>The internal customer ID (do not display that on your invoices)</td>
     </tr>
     <tr>
-      <td>${issuer.name}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['issuer.name']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${issuer.name}</code></td>
       <td>The customer <code class="language-plaintext highlighter-rouge">name</code></td>
     </tr>
     <tr>
-      <td>${issuer.comment}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['issuer.comment']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${issuer.comment}</code></td>
       <td>The <code class="language-plaintext highlighter-rouge">description</code> of this customer</td>
     </tr>
     <tr>
-      <td>${issuer.address_line1}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['issuer.address_line1']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${issuer.address_line1}</code></td>
       <td>Customer address: Line 1</td>
     </tr>
     <tr>
-      <td>${issuer.address_line2}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['issuer.address_line2']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${issuer.address_line2}</code></td>
       <td>Customer address: Line 2</td>
     </tr>
     <tr>
-      <td>${issuer.address_line3}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['issuer.address_line3']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${issuer.address_line3}</code></td>
       <td>Customer address: Line 3</td>
     </tr>
     <tr>
-      <td>${issuer.postcode}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['issuer.postcode']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${issuer.postcode}</code></td>
       <td>Customer address: Post Code</td>
     </tr>
     <tr>
-      <td>${issuer.city}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['issuer.city']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${issuer.city}</code></td>
       <td>Customer address: City</td>
     </tr>
     <tr>
-      <td>${issuer.contact}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['issuer.contact']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${issuer.contact}</code></td>
       <td>Usually the name of the customer <code class="language-plaintext highlighter-rouge">contact</code> person</td>
     </tr>
     <tr>
-      <td>${issuer.company}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['issuer.company']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${issuer.company}</code></td>
       <td>The <code class="language-plaintext highlighter-rouge">company name</code></td>
     </tr>
     <tr>
-      <td>${issuer.vat_id}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['issuer.vat_id']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${issuer.vat_id}</code></td>
       <td>The customer <code class="language-plaintext highlighter-rouge">Vat ID</code></td>
     </tr>
     <tr>
-      <td>${issuer.number}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['issuer.number']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${issuer.number}</code></td>
       <td>The customer <code class="language-plaintext highlighter-rouge">account</code> number</td>
     </tr>
     <tr>
-      <td>${issuer.country}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['issuer.country']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${issuer.country}</code></td>
       <td>The <code class="language-plaintext highlighter-rouge">country</code> of the customer location, as 2-letter code</td>
     </tr>
     <tr>
-      <td>${issuer.country_name}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['issuer.country_name']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${issuer.country_name}</code></td>
       <td>The translated <code class="language-plaintext highlighter-rouge">country</code> name</td>
     </tr>
     <tr>
-      <td>${issuer.homepage}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['issuer.homepage']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${issuer.homepage}</code></td>
       <td>A URL to the customer <code class="language-plaintext highlighter-rouge">homepage</code></td>
     </tr>
     <tr>
-      <td>${issuer.phone}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['issuer.phone']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${issuer.phone}</code></td>
       <td>The customers <code class="language-plaintext highlighter-rouge">phone</code> number</td>
     </tr>
     <tr>
-      <td>${issuer.mobile}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['issuer.mobile']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${issuer.mobile}</code></td>
       <td>The customers <code class="language-plaintext highlighter-rouge">mobile</code> number</td>
     </tr>
     <tr>
-      <td>${issuer.email}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['issuer.email']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${issuer.email}</code></td>
       <td>The customers <code class="language-plaintext highlighter-rouge">email</code> address</td>
     </tr>
     <tr>
-      <td>${issuer.fax}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['issuer.fax']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${issuer.fax}</code></td>
       <td>The customers <code class="language-plaintext highlighter-rouge">fax</code> number</td>
     </tr>
     <tr>
-      <td>${issuer.invoice_text}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['issuer.invoice_text']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${issuer.invoice_text}</code></td>
       <td>The configurable invoice text for that customer</td>
     </tr>
     <tr>
-      <td>${issuer.buyer_reference}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['issuer.buyer_reference']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${issuer.buyer_reference}</code></td>
       <td>Buyer reference, used in e-invoicing</td>
     </tr>
     <tr>
-      <td>${issuer.meta.foo}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['issuer.meta.foo']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${issuer.meta.foo}</code></td>
       <td>The customer <a href="/documentation/plugin-custom-fields.html">meta field</a> with the internal name <code class="language-plaintext highlighter-rouge">foo</code> (must be in lowercase letters, e.g. <code class="language-plaintext highlighter-rouge">FOO</code> will be available as <code class="language-plaintext highlighter-rouge">${customer.meta.foo}</code>. Only available if the field is visible.</td>
     </tr>
   </tbody>
@@ -1394,102 +1496,125 @@ The example <code class="language-plaintext highlighter-rouge">{{ invoice['invoi
 
 <h3 id="customer">Customer</h3>
 
-<p>Variables for the customer who is receiving the invoice:</p>
+<p>The customer is the company receiving the invoice.</p>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Key</th>
+      <th>Twig</th>
+      <th>Document (DOCX, XLSX, ODS)</th>
       <th>Description (highlighted words are the names in the UI)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>${customer.id}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['customer.id']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${customer.id}</code></td>
       <td>The internal customer ID (do not display that on your invoices)</td>
     </tr>
     <tr>
-      <td>${customer.name}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['customer.name']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${customer.name}</code></td>
       <td>The customer <code class="language-plaintext highlighter-rouge">name</code></td>
     </tr>
     <tr>
-      <td>${customer.comment}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['customer.comment']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${customer.comment}</code></td>
       <td>The <code class="language-plaintext highlighter-rouge">description</code> of this customer</td>
     </tr>
     <tr>
-      <td>${customer.address_line1}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['customer.address_line1']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${customer.address_line1}</code></td>
       <td>Customer address: Line 1</td>
     </tr>
     <tr>
-      <td>${customer.address_line2}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['customer.address_line2']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${customer.address_line2}</code></td>
       <td>Customer address: Line 2</td>
     </tr>
     <tr>
-      <td>${customer.address_line3}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['customer.address_line3']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${customer.address_line3}</code></td>
       <td>Customer address: Line 3</td>
     </tr>
     <tr>
-      <td>${customer.postcode}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['customer.postcode']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${customer.postcode}</code></td>
       <td>Customer address: Post Code</td>
     </tr>
     <tr>
-      <td>${customer.city}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['customer.city']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${customer.city}</code></td>
       <td>Customer address: City</td>
     </tr>
     <tr>
-      <td>${customer.contact}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['customer.contact']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${customer.contact}</code></td>
       <td>Usually the name of the customer <code class="language-plaintext highlighter-rouge">contact</code> person</td>
     </tr>
     <tr>
-      <td>${customer.company}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['customer.company']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${customer.company}</code></td>
       <td>The <code class="language-plaintext highlighter-rouge">company name</code></td>
     </tr>
     <tr>
-      <td>${customer.vat_id}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['customer.vat_id']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${customer.vat_id}</code></td>
       <td>The customer <code class="language-plaintext highlighter-rouge">Vat ID</code></td>
     </tr>
     <tr>
-      <td>${customer.number}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['customer.number']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${customer.number}</code></td>
       <td>The customer <code class="language-plaintext highlighter-rouge">account</code> number</td>
     </tr>
     <tr>
-      <td>${customer.country}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['customer.country']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${customer.country}</code></td>
       <td>The <code class="language-plaintext highlighter-rouge">country</code> of the customer location, as 2-letter code</td>
     </tr>
     <tr>
-      <td>${customer.country_name}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['customer.country_name']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${customer.country_name}</code></td>
       <td>The translated <code class="language-plaintext highlighter-rouge">country</code> name</td>
     </tr>
     <tr>
-      <td>${customer.homepage}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['customer.homepage']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${customer.homepage}</code></td>
       <td>A URL to the customer <code class="language-plaintext highlighter-rouge">homepage</code></td>
     </tr>
     <tr>
-      <td>${customer.phone}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['customer.phone']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${customer.phone}</code></td>
       <td>The customers <code class="language-plaintext highlighter-rouge">phone</code> number</td>
     </tr>
     <tr>
-      <td>${customer.mobile}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['customer.mobile']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${customer.mobile}</code></td>
       <td>The customers <code class="language-plaintext highlighter-rouge">mobile</code> number</td>
     </tr>
     <tr>
-      <td>${customer.email}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['customer.email']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${customer.email}</code></td>
       <td>The customers <code class="language-plaintext highlighter-rouge">email</code> address</td>
     </tr>
     <tr>
-      <td>${customer.fax}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['customer.fax']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${customer.fax}</code></td>
       <td>The customers <code class="language-plaintext highlighter-rouge">fax</code> number</td>
     </tr>
     <tr>
-      <td>${customer.invoice_text}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['customer.invoice_text']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${customer.invoice_text}</code></td>
       <td>The configurable invoice text for that customer</td>
     </tr>
     <tr>
-      <td>${customer.buyer_reference}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['customer.buyer_reference']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${customer.buyer_reference}</code></td>
       <td>Buyer reference, used in e-invoicing</td>
     </tr>
     <tr>
-      <td>${customer.meta.foo}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['customer.meta.foo']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${customer.meta.foo}</code></td>
       <td>The customer <a href="/documentation/plugin-custom-fields.html">meta field</a> with the internal name <code class="language-plaintext highlighter-rouge">foo</code> (must be in lowercase letters, e.g. <code class="language-plaintext highlighter-rouge">FOO</code> will be available as <code class="language-plaintext highlighter-rouge">${customer.meta.foo}</code>. Only available if the field is visible.</td>
     </tr>
   </tbody>
@@ -1502,73 +1627,90 @@ The example <code class="language-plaintext highlighter-rouge">{{ invoice['invoi
 <table class="table">
   <thead>
     <tr>
-      <th>Key</th>
+      <th>Twig</th>
+      <th>Document (DOCX, XLSX, ODS)</th>
       <th>Description (highlighted words are the names in the UI)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>${project.id}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['project.id']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${project.id}</code></td>
       <td>The internal project ID (do not display that on your invoices)</td>
     </tr>
     <tr>
-      <td>${project.name}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['project.name']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${project.name}</code></td>
       <td>The project <code class="language-plaintext highlighter-rouge">name</code></td>
     </tr>
     <tr>
-      <td>${project.comment}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['project.comment']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${project.comment}</code></td>
       <td>The <code class="language-plaintext highlighter-rouge">description</code> of this project</td>
     </tr>
     <tr>
-      <td>${project.order_number}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['project.order_number']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${project.order_number}</code></td>
       <td>The project <code class="language-plaintext highlighter-rouge">order number</code></td>
     </tr>
     <tr>
-      <td>${project.start_date}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['project.start_date']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${project.start_date}</code></td>
       <td>The <code class="language-plaintext highlighter-rouge">Project start</code> date-time</td>
     </tr>
     <tr>
-      <td>${project.end_date}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['project.end_date']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${project.end_date}</code></td>
       <td>The <code class="language-plaintext highlighter-rouge">Project end</code> date-time</td>
     </tr>
     <tr>
-      <td>${project.order_date}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['project.order_date']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${project.order_date}</code></td>
       <td>Projects <code class="language-plaintext highlighter-rouge">order date</code>-time</td>
     </tr>
     <tr>
-      <td>${project.budget_money}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['project.budget_money']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${project.budget_money}</code></td>
       <td>Projects budget including currency</td>
     </tr>
     <tr>
-      <td>${project.budget_money_nc}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['project.budget_money_nc']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${project.budget_money_nc}</code></td>
       <td>The projects budget without currency</td>
     </tr>
     <tr>
-      <td>${project.budget_money_plain}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['project.budget_money_plain']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${project.budget_money_plain}</code></td>
       <td>The projects budget as unformatted value</td>
     </tr>
     <tr>
-      <td>${project.budget_time}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['project.budget_time']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${project.budget_time}</code></td>
       <td>The projects time-budget as seconds</td>
     </tr>
     <tr>
-      <td>${project.budget_time_decimal}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['project.budget_time_decimal']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${project.budget_time_decimal}</code></td>
       <td>The projects time-budget in decimal format (with localized separator)</td>
     </tr>
     <tr>
-      <td>${project.budget_time_minutes}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['project.budget_time_minutes']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${project.budget_time_minutes}</code></td>
       <td>The projects time-budget in minutes with no decimals</td>
     </tr>
     <tr>
-      <td>${project.number}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['project.number']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${project.number}</code></td>
       <td>The project number</td>
     </tr>
     <tr>
-      <td>${project.invoice_text}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['project.invoice_text']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${project.invoice_text}</code></td>
       <td>The project invoice-text</td>
     </tr>
     <tr>
-      <td>${project.meta.foo}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['project.meta.foo']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${project.meta.foo}</code></td>
       <td>The project <a href="/documentation/plugin-custom-fields.html">meta field</a> with the internal name <code class="language-plaintext highlighter-rouge">foo</code> (must be in lowercase letters, e.g. <code class="language-plaintext highlighter-rouge">FOO</code> will be available as <code class="language-plaintext highlighter-rouge">${project.meta.foo}</code>. Only available if the field is visible.</td>
     </tr>
   </tbody>
@@ -1585,33 +1727,40 @@ If your template relies on a <code class="language-plaintext highlighter-rouge">
 <table class="table">
   <thead>
     <tr>
-      <th>Key</th>
+      <th>Twig</th>
+      <th>Document (DOCX, XLSX, ODS)</th>
       <th>Description (highlighted words are the names in the UI)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>${activity.id}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['activity.id']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${activity.id}</code></td>
       <td>The internal activity ID (do not display that on your invoices)</td>
     </tr>
     <tr>
-      <td>${activity.name}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['activity.name']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${activity.name}</code></td>
       <td>The activity <code class="language-plaintext highlighter-rouge">name</code></td>
     </tr>
     <tr>
-      <td>${activity.comment}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['activity.comment']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${activity.comment}</code></td>
       <td>The <code class="language-plaintext highlighter-rouge">description</code> of this activity</td>
     </tr>
     <tr>
-      <td>${activity.number}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['activity.number']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${activity.number}</code></td>
       <td>The activity number</td>
     </tr>
     <tr>
-      <td>${activity.invoice_text}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['activity.invoice_text']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${activity.invoice_text}</code></td>
       <td>The activity invoice-text</td>
     </tr>
     <tr>
-      <td>${activity.meta.foo}</td>
+      <td><code class="language-plaintext highlighter-rouge">invoice['activity.meta.foo']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${activity.meta.foo}</code></td>
       <td>The activity <a href="/documentation/plugin-custom-fields.html">meta field</a> with the internal name <code class="language-plaintext highlighter-rouge">foo</code> (must be in lowercase letters, e.g. <code class="language-plaintext highlighter-rouge">FOO</code> will be available as <code class="language-plaintext highlighter-rouge">${activity.meta.foo}</code>. Only available if the field is visible.</td>
     </tr>
   </tbody>
@@ -1630,6 +1779,65 @@ If your template relies on a <code class="language-plaintext highlighter-rouge">
 <p>There is a known bug in LibreOffice which exports DOCX files with a wrong mime-type. These files will not be accepted
 by Kimai with the error <code class="language-plaintext highlighter-rouge">This file type is not allowed</code> (<a href="https://github.com/kimai/kimai/issues/1916">read this issue</a> for more information).
 The workaround is to change the document with another word processor: Apple pages, Google Drive and Microsoft 365 Online Office will export the DOCX files with the correct mimetype.</p>
+
+<h3 id="twig-debug-template">Twig debug template</h3>
+
+<p>Use this debug template to find out which variables are available:</p>
+
+<div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span><span class="cp">{{</span> <span class="nv">invoice</span><span class="p">[</span><span class="s1">'invoice.number'</span><span class="p">]</span> <span class="cp">}}</span>-<span class="cp">{{</span> <span class="nv">invoice</span><span class="p">[</span><span class="s1">'customer.company'</span><span class="p">]</span><span class="o">|</span><span class="nf">default</span><span class="p">(</span><span class="nv">invoice</span><span class="p">[</span><span class="s1">'customer.name'</span><span class="p">])</span><span class="o">|</span><span class="nf">u</span><span class="err">.</span><span class="nv">snake</span> <span class="cp">}}</span><span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;style </span><span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
+        <span class="cp">{{</span> <span class="nv">encore_entry_css_source</span><span class="p">(</span><span class="s1">'invoice-pdf'</span><span class="p">)</span><span class="o">|</span><span class="nf">raw</span> <span class="cp">}}</span>
+    <span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"wrapper"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h3&gt;</span>The following list of variables is available for this invoice:<span class="nt">&lt;/h3&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Please note, that the available variables will change depending on your search. E.g. the <span class="cp">{{</span> <span class="s1">'{{ project }}'</span> <span class="cp">}}</span> variables are only available if you selected a project in your search filter.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"items"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Variable<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Value<span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+        <span class="cp">{%</span> <span class="k">for</span> <span class="nv">name</span><span class="p">,</span> <span class="nv">value</span> <span class="ow">in</span> <span class="nv">invoice</span> <span class="cp">%}</span>
+            <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"</span><span class="cp">{{</span> <span class="nv">cycle</span><span class="p">([</span><span class="s1">'odd'</span><span class="p">,</span> <span class="s1">'even'</span><span class="p">],</span> <span class="nv">loop.index0</span><span class="p">)</span> <span class="cp">}}</span><span class="s">"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;td&gt;</span><span class="cp">{{</span> <span class="s2">"{{ invoice['"</span> <span class="err">~</span> <span class="nv">name</span> <span class="err">~</span> <span class="s2">"'] }}"</span> <span class="cp">}}</span><span class="nt">&lt;/td&gt;</span>
+                <span class="nt">&lt;td&gt;</span><span class="cp">{{</span> <span class="nv">invoice</span><span class="p">[</span><span class="nv">name</span><span class="p">]</span> <span class="cp">}}</span><span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;/tr&gt;</span>
+        <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+    <span class="nt">&lt;/table&gt;</span>
+    <span class="nt">&lt;h3&gt;</span>The following list is available for all timesheet entries, which can be rendered like this:<span class="nt">&lt;/h3&gt;</span>
+    <span class="nt">&lt;pre&gt;</span>
+    <span class="cp">{{</span> <span class="s1">'{%'</span> <span class="cp">}}</span> for entry in entries <span class="cp">{{</span> <span class="s1">'%}'</span> <span class="cp">}}</span>
+    <span class="ni">&amp;lt;</span>ul<span class="ni">&amp;gt;</span>
+        <span class="cp">{{</span> <span class="s1">'{%'</span> <span class="cp">}}</span> for name, value in entry <span class="cp">{{</span> <span class="s1">'%}'</span> <span class="cp">}}</span>
+            <span class="ni">&amp;lt;</span>li<span class="ni">&amp;gt;</span><span class="cp">{{</span> <span class="s1">'{{ name }}'</span> <span class="cp">}}</span>: <span class="cp">{{</span> <span class="s1">'{{ value }}'</span> <span class="cp">}}</span><span class="ni">&amp;lt;</span>/li<span class="ni">&amp;gt;</span>
+        <span class="cp">{{</span> <span class="s1">'{%'</span> <span class="cp">}}</span> endfor <span class="cp">{{</span> <span class="s1">'%}'</span> <span class="cp">}}</span>
+    <span class="ni">&amp;lt;</span>/ul<span class="ni">&amp;gt;</span>
+    <span class="cp">{{</span> <span class="s1">'{%'</span> <span class="cp">}}</span> endfor <span class="cp">{{</span> <span class="s1">'%}'</span> <span class="cp">}}</span>
+    <span class="nt">&lt;/pre&gt;</span>
+    <span class="nt">&lt;p&gt;</span>The table below contains only the first timesheet record:<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"items"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Variable<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Value<span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+        <span class="cp">{%</span> <span class="k">for</span> <span class="nv">entry</span> <span class="ow">in</span> <span class="nv">entries</span><span class="o">|</span><span class="nf">slice</span><span class="p">(</span><span class="nv">1</span><span class="p">)</span> <span class="cp">%}</span>
+            <span class="cp">{%</span> <span class="k">for</span> <span class="nv">name</span><span class="p">,</span> <span class="nv">value</span> <span class="ow">in</span> <span class="nv">entry</span> <span class="cp">%}</span>
+                <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"</span><span class="cp">{{</span> <span class="nv">cycle</span><span class="p">([</span><span class="s1">'odd'</span><span class="p">,</span> <span class="s1">'even'</span><span class="p">],</span> <span class="nv">loop.index0</span><span class="p">)</span> <span class="cp">}}</span><span class="s">"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;td&gt;</span><span class="cp">{{</span> <span class="s2">"{{ entry['"</span> <span class="err">~</span> <span class="nv">name</span> <span class="err">~</span> <span class="s2">"'] }}"</span> <span class="cp">}}</span><span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;td&gt;</span><span class="cp">{{</span> <span class="nv">value</span> <span class="cp">}}</span><span class="nt">&lt;/td&gt;</span>
+                <span class="nt">&lt;/tr&gt;</span>
+            <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+        <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+    <span class="nt">&lt;/table&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
 
                 </div>
                 
@@ -1659,7 +1867,7 @@ The workaround is to change the document with another word processor: Apple page
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#create-a-template" class="nav-link">Create a template</a><ul><li class="nav-item"><a href="#pre-made-templates" class="nav-link">Pre-made templates</a></li><li class="nav-item"><a href="#pdf-templates" class="nav-link">PDF templates</a></li><li class="nav-item"><a href="#twig-templates-html" class="nav-link">Twig templates (HTML)</a></li><li class="nav-item"><a href="#docx-templates" class="nav-link">Docx templates</a></li><li class="nav-item"><a href="#spreadsheets-ods-and-xlsx" class="nav-link">Spreadsheets (ODS and XLSX)</a></li></ul></li><li class="nav-item"><a href="#template-variables" class="nav-link">Template variables</a><ul><li class="nav-item"><a href="#global-variables" class="nav-link">Global variables</a></li><li class="nav-item"><a href="#timesheet-entries" class="nav-link">Timesheet entries</a></li><li class="nav-item"><a href="#invoice-issuer" class="nav-link">Invoice issuer</a></li><li class="nav-item"><a href="#customer" class="nav-link">Customer</a></li><li class="nav-item"><a href="#project" class="nav-link">Project</a></li><li class="nav-item"><a href="#activity" class="nav-link">Activity</a></li><li class="nav-item"><a href="#uploading-invoice-templates" class="nav-link">Uploading invoice templates</a></li></ul></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#create-a-template" class="nav-link">Create a template</a><ul><li class="nav-item"><a href="#pre-made-templates" class="nav-link">Pre-made templates</a></li><li class="nav-item"><a href="#pdf-templates" class="nav-link">PDF templates</a></li><li class="nav-item"><a href="#twig-templates-html" class="nav-link">Twig templates (HTML)</a></li><li class="nav-item"><a href="#docx-templates" class="nav-link">Docx templates</a></li><li class="nav-item"><a href="#spreadsheets-ods-and-xlsx" class="nav-link">Spreadsheets (ODS and XLSX)</a></li></ul></li><li class="nav-item"><a href="#template-variables" class="nav-link">Template variables</a><ul><li class="nav-item"><a href="#global-variables" class="nav-link">Global variables</a></li><li class="nav-item"><a href="#tax-rows" class="nav-link">Tax Rows</a></li><li class="nav-item"><a href="#invoice-items-timesheets" class="nav-link">Invoice items (timesheets)</a></li><li class="nav-item"><a href="#invoice-issuer" class="nav-link">Invoice issuer</a></li><li class="nav-item"><a href="#customer" class="nav-link">Customer</a></li><li class="nav-item"><a href="#project" class="nav-link">Project</a></li><li class="nav-item"><a href="#activity" class="nav-link">Activity</a></li><li class="nav-item"><a href="#uploading-invoice-templates" class="nav-link">Uploading invoice templates</a></li><li class="nav-item"><a href="#twig-debug-template" class="nav-link">Twig debug template</a></li></ul></li></ul>
         
         <ul class="nav">
             <li>
