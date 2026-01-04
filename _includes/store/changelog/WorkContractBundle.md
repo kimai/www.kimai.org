@@ -1,3 +1,13 @@
+**Version 1.29.0**
+
+Compatibility: requires minimum Kimai 2.32.0
+
+- New configuration to deactivate half-day vacation bookings
+- New API endpoint to lock months
+- Absence form: remove all fields except comment when editing an existing entry
+- Fix: editing a vacation comment failed, if all holidays were taken
+- Use HttpClient to read public holidays from Google (fixes calls behind proxies)
+
 **Version 1.28.0**
 
 Compatibility: requires minimum Kimai 2.32.0

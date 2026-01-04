@@ -1,3 +1,21 @@
+**Version 2.6.1**
+
+Compatibility: requires minimum Kimai 2.45.0
+
+- Fix `XRechnung 3.0 (UBL)` generates CII syntax
+
+**Version 2.6.0**
+
+Compatibility: requires minimum Kimai 2.45.0
+
+- Added `Tax status` (Standard, Reverse charge, Exempt) field to Customer
+- Added `Tax exemption reason` (free text) field to Customer
+- Support for `Reverse Charge` and `Tax exempt` invoices
+- Added `Peppol` profile
+  - Currently only supports Vat-IDs in `cbc:EndpointID`
+  - And only for the countries: Austria, Belgium, Bulgaria, Cyprus, Czech, Germany, Estonia, France, Greece, Croatia, Hungary, Ireland, Lithuania, Luxembourg, Latvia, Malta, Netherlands, Poland, Portugal, Romania, Sweden, Slovenia, Slovakia, Turkey, United Kingdom
+  - Beta: this needs testing and feedback!
+
 **Version 2.5.0**
 
 Compatibility: requires minimum Kimai 2.41.0

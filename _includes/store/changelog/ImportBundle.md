@@ -1,3 +1,10 @@
+**Version 2.22.1**
+
+Compatibility: requires minimum Kimai 2.36.0
+
+- Better theme support with Kimai 2.49
+- Fix deprecations
+
 **Version 2.22.0**
 
 Compatibility: requires minimum Kimai 2.36.0
