@@ -686,17 +686,17 @@ You can deactivate that feature by setting the value to 0.</li>
 
 <h2 id="lockdown-period">Lockdown period</h2>
 
+<p>The lockdown period (if activated) will <strong>prevent your users from changing or creating timesheet records in the past</strong>.</p>
+
+<p>It consists of a <code class="language-plaintext highlighter-rouge">start</code> and <code class="language-plaintext highlighter-rouge">end</code> date and a <code class="language-plaintext highlighter-rouge">grace</code> period.
+The lockdown feature will only be activated if both <code class="language-plaintext highlighter-rouge">start</code> and <code class="language-plaintext highlighter-rouge">end</code> fields are configured with a <a href="https://www.php.net/manual/en/datetime.formats.php#datetime.formats.relative">relative date format</a>.</p>
+
 <ul>
   <li><code class="language-plaintext highlighter-rouge">Lockdown period start</code> - a PHP date-format string <code class="language-plaintext highlighter-rouge">relative to now</code> and you will likely want to configure a start of a month like <code class="language-plaintext highlighter-rouge">first day of last month 00:00:00</code> or <code class="language-plaintext highlighter-rouge">first day of -2 month 00:00:00</code></li>
   <li><code class="language-plaintext highlighter-rouge">Lockdown period end</code> - a PHP date-format string <code class="language-plaintext highlighter-rouge">relative to now</code> and you will likely want to configure the end of a month like <code class="language-plaintext highlighter-rouge">last day of last month 23:59:59</code>, <code class="language-plaintext highlighter-rouge">last day of -2 month 23:59:59</code> or <code class="language-plaintext highlighter-rouge">first day of this month 00:00:00</code></li>
   <li><code class="language-plaintext highlighter-rouge">Time zone</code> - the timezone will be used to calculate the dates (might be important if you have users across multiple timezones, if empty the timezone of the current user is used</li>
   <li><code class="language-plaintext highlighter-rouge">Lockdown grace period end (PHP relative date to lockdown period end)</code> - relative to the lockdown end (the end date will always be appended, but it could still be overwritten by using the <code class="language-plaintext highlighter-rouge">of</code> modifier), most users will likely want to use a relative period like <code class="language-plaintext highlighter-rouge">+12 hours</code>, <code class="language-plaintext highlighter-rouge">+10 days</code> or <code class="language-plaintext highlighter-rouge">+3 weeks</code></li>
 </ul>
-
-<p>The lockdown period (if activated) will prevent your users from changing timesheet records in the past.</p>
-
-<p>It consists of a <code class="language-plaintext highlighter-rouge">start</code> and <code class="language-plaintext highlighter-rouge">end</code> date and a <code class="language-plaintext highlighter-rouge">grace</code> period.
-The lockdown feature will only be activated if both <code class="language-plaintext highlighter-rouge">start</code> and <code class="language-plaintext highlighter-rouge">end</code> fields are configured with a <a href="https://www.php.net/manual/en/datetime.formats.php#datetime.formats.relative">relative date format</a>.</p>
 
 <p>These rules apply:</p>
 <ul>
