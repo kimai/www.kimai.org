@@ -630,13 +630,9 @@
             <div>
                 
                 <div id="documentation-content">
-                    <p>The user preferences can be accessed via any user profile (eg. in the upper right corner for your own user) and from <code class="language-plaintext highlighter-rouge">System &gt; Users</code> (needs <code class="language-plaintext highlighter-rouge">view_user</code> permission) for every user.</p>
+                    <p>The user preferences can be accessed via any user profile (e.g. in the upper right corner for your own user) and from <code class="language-plaintext highlighter-rouge">System &gt; Users</code> (needs <code class="language-plaintext highlighter-rouge">view_user</code> permission) for every user.</p>
 
-<p>These settings can be edited by:</p>
-<ul>
-  <li>the user itself, when owning the <code class="language-plaintext highlighter-rouge">preferences_own_profile</code> permission</li>
-  <li>every users owning the <code class="language-plaintext highlighter-rouge">preferences_other_profile</code> <a href="/documentation/permissions.html">permission</a></li>
-</ul>
+<h2 id="preferences">Preferences</h2>
 
 <h3 id="hourly-rate">Hourly rate</h3>
 
@@ -667,7 +663,7 @@ If you change the timezone while a record is running, it will only influence the
 
 <p>Which language should be used as the primary source for translations (if a specific translation for your language is missing, the fallback will always be English).</p>
 
-<h3 id="format-for-time-date-and-currency">Format for time, date and currency</h3>
+<h3 id="time-date-and-currency-format">Time, date and currency format</h3>
 
 <p>The format that is used to render dates, time, money, numbers and currencies.</p>
 
@@ -683,6 +679,7 @@ This is the place to change between these two days.</p>
 <ul>
   <li>Bright: Default bright background and dark menu background</li>
   <li>Dark: Dark background and dark menu background</li>
+  <li>Automatic:</li>
 </ul>
 
 <h3 id="update-browser-title">Update browser title</h3>
@@ -726,9 +723,13 @@ on mobile devices will be replaced by a link to the calendar.</p>
 
 <p>If activated, the personal timesheet visually groups and shows statistics for all records within one day.</p>
 
-<h3 id="use-decimal-duration-in-export">Use decimal duration in export</h3>
+<h2 id="permissions">Permissions</h2>
 
-<p>If activated, the export templates render durations as decimal number instead of the human-readable clock format (e.g. <code class="language-plaintext highlighter-rouge">1.5</code> instead of <code class="language-plaintext highlighter-rouge">01:30 h</code>).</p>
+<p>The user preferences can be edited by:</p>
+<ul>
+  <li>the user itself, when owning the <code class="language-plaintext highlighter-rouge">preferences_own_profile</code> permission</li>
+  <li>every user owning the <code class="language-plaintext highlighter-rouge">preferences_other_profile</code> <a href="/documentation/permissions.html">permission</a></li>
+</ul>
 
                 </div>
                 
@@ -753,7 +754,7 @@ on mobile devices will be replaced by a link to the calendar.</p>
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#hourly-rate" class="nav-link">Hourly rate</a></li><li class="nav-item"><a href="#internal-rate" class="nav-link">Internal rate</a></li><li class="nav-item"><a href="#timezone" class="nav-link">Timezone</a></li><li class="nav-item"><a href="#language" class="nav-link">Language</a></li><li class="nav-item"><a href="#format-for-time-date-and-currency" class="nav-link">Format for time, date and currency</a></li><li class="nav-item"><a href="#first-day-of-the-week" class="nav-link">First day of the week</a></li><li class="nav-item"><a href="#design" class="nav-link">Design</a></li><li class="nav-item"><a href="#update-browser-title" class="nav-link">Update browser title</a></li><li class="nav-item"><a href="#initial-calendar-view" class="nav-link">Initial calendar view</a></li><li class="nav-item"><a href="#initial-view-after-login" class="nav-link">Initial view after login</a></li><li class="nav-item"><a href="#favorites" class="nav-link">Favorites</a></li><li class="nav-item"><a href="#show-daily-statistics-in-timesheet" class="nav-link">Show daily statistics in timesheet</a></li><li class="nav-item"><a href="#use-decimal-duration-in-export" class="nav-link">Use decimal duration in export</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#preferences" class="nav-link">Preferences</a><ul><li class="nav-item"><a href="#hourly-rate" class="nav-link">Hourly rate</a></li><li class="nav-item"><a href="#internal-rate" class="nav-link">Internal rate</a></li><li class="nav-item"><a href="#timezone" class="nav-link">Timezone</a></li><li class="nav-item"><a href="#language" class="nav-link">Language</a></li><li class="nav-item"><a href="#time-date-and-currency-format" class="nav-link">Time, date and currency format</a></li><li class="nav-item"><a href="#first-day-of-the-week" class="nav-link">First day of the week</a></li><li class="nav-item"><a href="#design" class="nav-link">Design</a></li><li class="nav-item"><a href="#update-browser-title" class="nav-link">Update browser title</a></li><li class="nav-item"><a href="#initial-calendar-view" class="nav-link">Initial calendar view</a></li><li class="nav-item"><a href="#initial-view-after-login" class="nav-link">Initial view after login</a></li><li class="nav-item"><a href="#favorites" class="nav-link">Favorites</a></li><li class="nav-item"><a href="#show-daily-statistics-in-timesheet" class="nav-link">Show daily statistics in timesheet</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
         
         <ul class="nav">
             <li>
