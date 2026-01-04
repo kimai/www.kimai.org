@@ -556,7 +556,19 @@ then either the directory has a wrong name (must be <strong>var/plugins/WorkCont
                 <div class="tab-pane fade" id="store-changelog" role="tabpanel">
                     <h2 id="compatibility">Journal des modifications</h2>
                     
-                    <p><strong>Version 1.28.0</strong></p>
+                    <p><strong>Version 1.29.0</strong></p>
+
+<p>Compatibility: requires minimum Kimai 2.32.0</p>
+
+<ul>
+  <li>New configuration to deactivate half-day vacation bookings</li>
+  <li>New API endpoint to lock months</li>
+  <li>Absence form: remove all fields except comment when editing an existing entry</li>
+  <li>Fix: editing a vacation comment failed, if all holidays were taken</li>
+  <li>Use HttpClient to read public holidays from Google (fixes calls behind proxies)</li>
+</ul>
+
+<p><strong>Version 1.28.0</strong></p>
 
 <p>Compatibility: requires minimum Kimai 2.32.0</p>
 

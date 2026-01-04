@@ -336,53 +336,9 @@
   <li>Configuration of a global language, which is used to format all invoices data (money, date, time).</li>
 </ol>
 
-<h3 id="e-invoices">E-Invoices</h3>
+<h2 id="e-invoices">E-Invoices</h2>
 
-<p>The data for the “invoice sender” is pulled from the <code class="language-plaintext highlighter-rouge">Invoice issuer</code> company, which is configured in the invoice template.<br>
-That means you need to <a href="/documentation/customer.html">create a customer</a> for your own company and add all the 
-required attributes like <code class="language-plaintext highlighter-rouge">Company name</code>, <code class="language-plaintext highlighter-rouge">Vat ID</code> and the <code class="language-plaintext highlighter-rouge">address fields</code>.</p>
-
-<p>Support for EU e-invoices with the following profiles is added:</p>
-
-<ul>
-  <li>
-<code class="language-plaintext highlighter-rouge">EN16931</code> (CII)</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">EN16931</code> (UBL)</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">XRechnung 3.0</code> (CII)</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">XRechnung 3.0</code> (UBL)</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">Zugferd</code> (PDF/A hybrid)</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">Factur-X</code> (PDF/A hybrid)</li>
-</ul>
-
-<p>The e-invoice XML is always generated side by side to the original invoice document, no matter if that is PDF or e.g. Word, and it can be downloaded. 
-If a hybrid format is chosen, the invoice document must be a PDF. 
-The invoice will then be generated as a <code class="language-plaintext highlighter-rouge">PDF/A-3 + associated files + additional XMP RDF</code> (for ZUGFeRD and Factur-X).</p>
-
-<p>Kimai supports the following payment types (numbers are the official IDs):</p>
-<ul>
-  <li>58: SEPA Credit Transfer</li>
-  <li>59: SEPA Direct Debit</li>
-  <li>30: Credit Transfer</li>
-  <li>49: Direct Debit</li>
-  <li>42: Payment To Bank Account</li>
-  <li>48: Card Payment</li>
-  <li>10: Cash</li>
-</ul>
-
-<p>You can configure the following fields for every invoice template:</p>
-<ul>
-  <li>E-Invoice profile type</li>
-  <li>Payment type</li>
-  <li>Account or card-holder</li>
-  <li>IBAN or card number</li>
-</ul>
-
-<p><img src="/images/blog/e-invoicing-eu-setting.webp" alt="E-Invoice Settings" class="image"></p>
+<p>Electronic invoices are limited to supported for EU formats.</p>
 
 <p><strong>Important to know</strong>:</p>
 <ul>
@@ -393,7 +349,94 @@ The invoice will then be generated as a <code class="language-plaintext highligh
   <li>Fixed price line items will use the reported amount, which varies between grouping and item type</li>
 </ul>
 
-<h3 id="automatic-timesheet-pdf">Automatic timesheet PDF</h3>
+<h2 id="customer">Customer</h2>
+
+<p>The data for the “invoice sender” is pulled from the <code class="language-plaintext highlighter-rouge">Invoice issuer</code> company, which is configured in the invoice template.<br>
+That means you need to <a href="/documentation/customer.html">create a customer</a> for your own company and add all the 
+required attributes like <code class="language-plaintext highlighter-rouge">Company name</code>, <code class="language-plaintext highlighter-rouge">Vat ID</code> and the <code class="language-plaintext highlighter-rouge">address fields</code>.</p>
+
+<p>The customer also has these fields, that influence the invoice:</p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">Buyer reference</code> - free text info that identifies the customer as sender or receiver</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">Invoice template</code> - which template will be used when creating an invoice for the customer</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">Tax status</code> - possible values: <code class="language-plaintext highlighter-rouge">Taxable</code>, <code class="language-plaintext highlighter-rouge">Reverse charge</code>, <code class="language-plaintext highlighter-rouge">Exempt</code>
+</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">Tax exemption reason</code> - required free text field in case <code class="language-plaintext highlighter-rouge">Tax status</code> is <code class="language-plaintext highlighter-rouge">Exempt</code>
+</li>
+</ul>
+
+<h2 id="invoice-template">Invoice template</h2>
+
+<p>You can configure the following fields for every invoice template:</p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">E-Invoice</code> profile type (see below)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">Payment type</code> (see below)</li>
+  <li><code class="language-plaintext highlighter-rouge">Account or card-holder</code></li>
+  <li><code class="language-plaintext highlighter-rouge">IBAN or card number</code></li>
+</ul>
+
+<p><img src="/images/blog/e-invoicing-eu-setting.webp" alt="E-Invoice Settings" class="image"></p>
+
+<h3 id="profiles">Profiles</h3>
+
+<p>Support for EU e-invoices with the following profiles is added:</p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">EN16931</code> (CII)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">EN16931</code> (UBL)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">Extended</code> (CII)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">Extended</code> (UBL)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">Peppol</code> (UBL) <strong>beta</strong>
+</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">XRechnung 3.0</code> (CII)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">XRechnung 3.0</code> (UBL)</li>
+</ul>
+
+<p>Kimai also support generating hybrid formats:</p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">ZUGFeRD</code> (PDF/A)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">Factur-X</code> (PDF/A</li>
+</ul>
+
+<p>The e-invoice XML is always generated side by side to the original invoice document, no matter if that is PDF or e.g. Word, and the XML can be downloaded. 
+If a hybrid format is chosen, the invoice document must be a PDF. 
+The invoice will then be generated as a <code class="language-plaintext highlighter-rouge">PDF/A-3 + associated files + additional XMP RDF</code> (for <code class="language-plaintext highlighter-rouge">ZUGFeRD</code> and <code class="language-plaintext highlighter-rouge">Factur-X</code>).</p>
+
+<h3 id="payment-type">Payment type</h3>
+
+<p>Kimai supports the following payment types (numbers are the official IDs):</p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">SEPA Credit Transfer</code> (58)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">SEPA Direct Debit</code> (59)</li>
+</ul>
+
+<h3 id="peppol">Peppol</h3>
+
+<p>Peppol is in <strong>BETA</strong> status: this needs testing and feedback!</p>
+
+<ul>
+  <li>Currently only supports Vat-IDs in <code class="language-plaintext highlighter-rouge">cbc:EndpointID</code>
+</li>
+  <li>Limited to these countries: Austria, Belgium, Bulgaria, Cyprus, Czech, Germany, Estonia, France, Greece, Croatia, Hungary, Ireland, Lithuania, Luxembourg, Latvia, Malta, Netherlands, Poland, Portugal, Romania, Sweden, Slovenia, Slovakia, Turkey, United Kingdom</li>
+</ul>
+
+<h2 id="automatic-timesheet-pdf">Automatic timesheet PDF</h2>
 
 <p>When creating a new invoice, another PDF will be created, which contains a summary grouped-by-project (on the first page) 
 and the list of all contained timesheets (on the following pages).</p>
@@ -413,7 +456,7 @@ and the list of all contained timesheets (on the following pages).</p>
 
 <p>To activate this features go to <code class="language-plaintext highlighter-rouge">Invoices</code> at <a href="/documentation/configurations.html">System → Settings</a>.</p>
 
-<h3 id="data-format-language">Data format language</h3>
+<h2 id="data-format-language">Data format language</h2>
 
 <p>In the core system of Kimai, you configure the language for an invoice via its template. Then this language is used for translations and also for the formatting of data.</p>
 
@@ -425,7 +468,7 @@ Or if you translate your invoice to english for cross-country sales but still wa
 <p>To activate this feature go to <code class="language-plaintext highlighter-rouge">Invoices</code> at <a href="/documentation/configurations.html">System → Settings</a> and select a locale.
 You can deactivate it by using the empty dropdown field.</p>
 
-<h3 id="additional-formats">Additional formats</h3>
+<h2 id="additional-formats">Additional formats</h2>
 
 <p>The plugins adds renderer for other invoice template formats, such as:</p>
 
@@ -544,7 +587,33 @@ And you probably need to prefix them with <code class="language-plaintext highli
                 <div class="tab-pane fade" id="store-changelog" role="tabpanel">
                     <h2 id="compatibility">Histórico de alterações</h2>
                     
-                    <p><strong>Version 2.5.0</strong></p>
+                    <p><strong>Version 2.6.1</strong></p>
+
+<p>Compatibility: requires minimum Kimai 2.45.0</p>
+
+<ul>
+  <li>Fix <code class="language-plaintext highlighter-rouge">XRechnung 3.0 (UBL)</code> generates CII syntax</li>
+</ul>
+
+<p><strong>Version 2.6.0</strong></p>
+
+<p>Compatibility: requires minimum Kimai 2.45.0</p>
+
+<ul>
+  <li>Added <code class="language-plaintext highlighter-rouge">Tax status</code> (Standard, Reverse charge, Exempt) field to Customer</li>
+  <li>Added <code class="language-plaintext highlighter-rouge">Tax exemption reason</code> (free text) field to Customer</li>
+  <li>Support for <code class="language-plaintext highlighter-rouge">Reverse Charge</code> and <code class="language-plaintext highlighter-rouge">Tax exempt</code> invoices</li>
+  <li>Added <code class="language-plaintext highlighter-rouge">Peppol</code> profile
+    <ul>
+      <li>Currently only supports Vat-IDs in <code class="language-plaintext highlighter-rouge">cbc:EndpointID</code>
+</li>
+      <li>And only for the countries: Austria, Belgium, Bulgaria, Cyprus, Czech, Germany, Estonia, France, Greece, Croatia, Hungary, Ireland, Lithuania, Luxembourg, Latvia, Malta, Netherlands, Poland, Portugal, Romania, Sweden, Slovenia, Slovakia, Turkey, United Kingdom</li>
+      <li>Beta: this needs testing and feedback!</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Version 2.5.0</strong></p>
 
 <p>Compatibility: requires minimum Kimai 2.41.0</p>
 
