@@ -7,7 +7,7 @@ This bundle has the following features:
 
 ## E-Invoices
 
-Electronic invoices are limited to supported for EU formats.
+Electronic invoicing is limited to commonly used EU formats.
 
 **Important to know**:
 - The document type is `Commercial invoice (380)` and can currently not be changed
