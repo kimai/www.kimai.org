@@ -12,6 +12,21 @@ The project administration can be found at `Administration > Projects`.
 There is a configuration (can be configured at [System → Settings]({% link _documentation/configurations.md %})), which allows to copy teams of the current user to newly created projects. 
 This is mostly useful when teamleads manage their own projects and should have immediate access to them after creation.
 
+### Copy a project
+
+In the listing page you can open the context menu of any project and click "Create copy".
+
+By copying a project, you will create a new project, whose name is applied the string ` [COPY]` and in addition to that, the following happens:
+
+- A new project number will be created
+- The start of the project is set to the end of the copied project
+- The end of the new project is empty
+- Assigned teams will be assigned to new the project 
+- Rates for the project will be created and attached to the new project
+- Custom field content will be duplicated and saved for the new project
+- ALL project specific activities will be copied and linked to the new project (their names will not be changed)
+- Activity specific rates will be applied to the new activities
+
 ## Manage projects
 
 ### Colors
