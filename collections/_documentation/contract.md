@@ -6,9 +6,13 @@ related:
 - public-holiday
 ---
 
+This screen and the `Contract` menu can be seen by any user that has active contract settings and the ones that own the `contract_other_profile` permission (see `Permissions` below).
+
 {% include youtube-video.html id="workcontract" %}
 
-This screen and the `Contract` menu can be seen by any user that has active contract settings and the ones that own the `contract_other_profile` permission (see `Permissions` below).
+Please be aware that Kimai expects hours to be recorded for every day, regardless of what is scheduled.
+The core system does not recognise absences, so even holiday days or public holidays are expected to have working time for that day.
+The duration of the absence (e.g. a full day for a public holiday) is then counted as working time, which compensates for the expected time.
 
 ## User interface
 
