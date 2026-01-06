@@ -27,7 +27,17 @@ Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden.
 **Welche Rechte haben Sie bezüglich Ihrer Daten?**
 
 Sie haben jederzeit das Recht unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten.
-Sie haben außerdem ein Recht, die Berichtigung, Sperrung oder Löschung dieser Daten zu verlangen.
+
+Ihnen stehen gemäß DSGVO folgende Rechte zu:
+- Recht auf Auskunft (Art. 15 DSGVO)
+- Recht auf Berichtigung (Art. 16 DSGVO)
+- Recht auf Löschung („Recht auf Vergessenwerden“) (Art. 17 DSGVO)
+- Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)
+- Recht auf Datenübertragbarkeit (Art. 20 DSGVO)
+- Recht auf Widerspruch (Art. 21 DSGVO)
+
+Wir nutzen keine Verfahren zur automatisierten Entscheidungsfindung oder zum Profiling.
+
 Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit unter der im Impressum angegebenen Adresse an uns wenden.
 Des Weiteren steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.
 
@@ -201,7 +211,7 @@ Bei den eingesetzten Dienstleistern, welche Subprozessor bzw. Unterauftragsverar
  
 ### Änderungsverlauf
 
-- **06.01.2026**: Sortierung der Subprozessoren 
+- **06.01.2026**: Sortierung der Subprozessoren, Nennung der 8 Rechte gemäß DGVO
 - **23.06.2025**: Entfernung der URL zur Liste deutscher Datenschutzbehörden
 - **18.03.2024**: Änderung "Sendinblue Frankreich" zu "Brevo Deutschland", Simple Analytics aus Transparenzgründen aufgenommen
 - **14.11.2023**: Recaptcha Verifizierung via Subprozessor "Google" wieder hinzugefügt
@@ -239,8 +249,18 @@ Other data can is used to analyze how visitors use the site.
 
 **What rights do you have regarding your data?**
 
-You always have the right to request information about your stored data, its origin, its recipients, and the purpose of its collection at no charge. 
-You also have the right to request that it be corrected, blocked, or deleted. 
+You always have the right to request information about your stored data, its origin, its recipients, and the purpose of its collection at no charge.
+
+You have the following rights under the GDPR:
+- Right to access (Art. 15 GDPR)
+- Right to rectification (Art. 16 GDPR)
+- Right to erasure ("Right to be forgotten") (Art. 17 GDPR)
+- Right to restriction of processing (Art. 18 GDPR)
+- Right to data portability (Art. 20 GDPR)
+- Right to object (Art. 21 GDPR)
+
+We do not use automated decision-making or profiling processes.
+
 You can contact us at any time using the address given in the legal notice if you have further questions about the issue of privacy and data protection. 
 You may also, of course, file a complaint with the competent regulatory authorities.
 
@@ -415,7 +435,7 @@ We are using the following service providers (also called sub-processors) to ass
 
 ### Change history
 
-- **06.01.2026**: Sort subprocessors
+- **06.01.2026**: Sort subprocessors, mention 8 rights under the GDPR
 - **23.06.2025**: Removed URL of German data protection authorities and replaced "German" with "of the federal state in which our company is based"
 - **18.03.2024**: Replaced "Sendinblue France" with "Brevo Germany", added Simple Analytics for transparency reasons
 - **14.11.2023**: Recaptcha verification via Subprocessor "Google" re-added
