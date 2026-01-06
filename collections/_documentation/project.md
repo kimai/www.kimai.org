@@ -12,7 +12,7 @@ The project administration can be found at `Administration > Projects`.
 There is a configuration (can be configured at [System → Settings]({% link _documentation/configurations.md %})), which allows to copy teams of the current user to newly created projects. 
 This is mostly useful when teamleads manage their own projects and should have immediate access to them after creation.
 
-### Copy a project
+## Copy a project
 
 In the listing page you can open the context menu of any project and click "Create copy".
 
