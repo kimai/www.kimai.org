@@ -90,7 +90,7 @@ Nach einem Downgrade steht in der Regel nur noch eine geringere Anzahl von Funkt
 
 ## § 5. Vertragslaufzeit
 
-(1) Der Nutzungsvertrag wird auf unbestimmte Dauer geschlossen. Er besteht unabhängig von etwaigen Abonnements.
+(1) Der Nutzungsvertrag wird auf unbestimmte Dauer geschlossen und beginnt mit der erfolgreichen Registrierung des Nutzers. Er besteht unabhängig von etwaigen Abonnements.
 Die Beendigung eines oder auch aller laufender Abonnements berührt das Bestehen des Nutzungsvertrages nicht.
 
 (2) Das Vertragsverhältnis verlängert sich jeweils um den ursprünglich vereinbarten Zeitraum, solange keine Partei kündigt oder die Vertragskonditionen einvernehmlich angepasst werden.
@@ -158,8 +158,11 @@ Maßgeblich für die Verzugsberechnung ist die Gutschrift des Rechnungsbetrages 
 Der Anbieter wird dem Kunden eine solche Änderung in Textform (E-Mail reicht) bekanntgeben. Der Kunde stimmt einer Übertragung des Vertrages bereits jetzt vorab zu.
 
 (2) Der Anbieter ist berechtigt, seine Leistungsverpflichtungen aus dem Nutzungsvertrag auf Dritte zu übertragen oder Subunternehmer einzuschalten und Forderungen gegenüber dem Kunden an Dritte zu übertragen. Gegenüber dem Kunden bleibt der Anbieter dabei für die vertragsgemäße Leistungserbringung verantwortlich.
+Der Anbieter informiert den Kunden über jede beabsichtigte Änderung in Bezug auf die Hinzuziehung oder die Ersetzung von Subunternehmern, einschließlich Datenübermittlungen in Drittländer.
 
 (3) Eine Übertragung von Rechten und Pflichten aus diesem Vertrag durch den Kunden auf Dritte ist nur mit vorheriger ausdrücklicher Zustimmung des Anbieters zulässig.
+
+(4) Der Anbieter unterstützt den Kunden im Rahmen der technischen Möglichkeiten bei der Beantwortung von Anträgen auf Wahrnehmung von Betroffenenrechten (z. B. Auskunft, Berichtigung, Löschung).
 
 ## § 8. Datenschutz
 
@@ -172,6 +175,8 @@ Der Anbieter wird dem Kunden eine solche Änderung in Textform (E-Mail reicht) b
 (4) Der Kunde hat in verschiedenen Bereichen des Dienstes die Möglichkeit, personenbezogene Daten von Dritten zu verarbeiten. Dies betrifft inbesondere Namen und E-Mail-Adressen seiner Mitarbeiter, für die er Lizenzen anlegt, und Namen und Anschriften seiner Leistungsempfänger, für die er Projekte anlegt. Der Kunde garantiert gegenüber dem Anbieter, dass er mit dem Dienst nur solche Daten verarbeiten wird, zu deren Verarbeitung er berechtigt ist; diese Garantie gibt er auch für seine Mitarbeiter und alle sonstigen Personen ab, denen er Zugang zu dem Dienst gewährt.
 
 (5) Der Kunde stellt den Anbieter frei von sämtlichen Ansprüchen, die Dritte gegenüber dem Anbieter erheben im Zusammenhang mit der Verarbeitung ihrer personenenbezogenen Daten durch den Kunden, es sei denn, dass der Kunde eine solche Geltendmachung nicht zu vertreten hat. Der Freistellungsanspruch umfasst auch die erforderlichen Kosten für eine angemessene Anspruchsprüfung und Rechtsverteidigung.
+
+(6) Der Anbieter informiert den Kunden unverzüglich über die registrierte E-Mail-Adresse, nachdem er von einer Verletzung des Schutzes personenbezogener Daten Kenntnis erlangt hat.
 
 Weitere Informationen zum Datenschutz sind der gesonderten Datenschutzerklärung zu entnehmen.
 
@@ -316,16 +321,22 @@ Die vorstehenden Bestimmungen gelten entsprechend für den Fall, dass sich Regel
 
 ### Änderungsverlauf
 
+**Version 1.5 (06. Januar 2026)**
+- § 5 (1): Klarstellung des Vertragsbeginns
+- § 7 (2): Ergänzung der Informationspflicht bei Änderung von Unterauftragsverarbeitern
+- § 7 (4): Hinzugefügt: Unterstützungspflicht bei Anfragen zu Betroffenenrechten (z. B. DSGVO)
+- § 8 (6): Festlegung des Meldewegs bei Verletzungen des Schutzes personenbezogener Daten
+
 **Version 1.4 (03. Oktober 2025)**
+- § 3 (3): Bestätigungsemail enthält nicht mehr diese AGBs als Anhang
+- § 6 (8): Aufteilung um (a) Verträge vor 2024 und (b) Verträge nach 2024
+- § 9 (2): Ergänzung um den Hinweis auf Onboarding E-Mails
 - Ergänzung das www.kimai.org und www.kimai.cloud Teil des Serviceangebots sind
 - URLs entfernt und durch das Wort `Webseite` ersetzt
 - Ersetzung von `§14 BGB` (Deutschland) durch `§1 UGB` (Österreich)
-- Entfernung §3 (3) Bestätigungsemail enthält nicht mehr diese AGBs
-- Aufteilung § 6. (8) um (a) Verträge vor 2024 und (b) Verträge nach 2024
-- Ergänzung § 9. (2) um den Hinweis auf Onboarding E-Mails
 
 **Version 1.3 (24. März 2025)**
-- Klarstellung §3. (6): nach Ablauf der Testphase existiert kein kostenloser Tarif  
+- §3 (6): Nach Ablauf der Testphase existiert kein kostenloser Tarif  
 
 **Version 1.2 (26. März 2021)**
 - Englische Übersetzung zu Informationszwecken hinzugefügt
@@ -336,7 +347,7 @@ Die vorstehenden Bestimmungen gelten entsprechend für den Fall, dass sich Regel
 - § 16. (2) - Ersetzung `Geschäftssitz des Anbieters (derzeit München)` durch `Geschäftssitz des Anbieters`
 
 **Version 1.0 (05. Oktober 2019)**  
-Initiale Version
+- Initiale Version
 
 
 {% comment %}
@@ -448,7 +459,7 @@ After a downgrade, only a smaller number of functions is generally available.
 
 ## § 5. Term of contract
 
-(1) The contract of use is concluded for an indefinite period. It exists independently of any subscriptions.
+(1) The contract of use is concluded for an indefinite period and begins with the successful registration of the user. It exists independently of any subscriptions.
 The termination of one or all current subscriptions shall not affect the existence of the user contract.
 
 (2) The contractual relationship shall be extended in each case by the originally agreed period of time as long as neither party terminates or the contractual conditions are adjusted by mutual agreement.
@@ -512,12 +523,15 @@ The crediting of the invoice amount to the Provider's bank account shall be deci
 
 ## § 7. Consent to transfer the rights and obligations of the provider to third parties.
 
-(1) The Provider is entitled to transfer rights and obligations arising from the contractual relationship in whole or in part to third parties.  This applies in particular in the event that the service is transferred to another operator.
+(1) The Provider is entitled to transfer rights and obligations arising from the contractual relationship in whole or in part to third parties. This applies in particular in the event that the service is transferred to another operator.
 The Provider shall notify the Customer of such a change in text form (e-mail is sufficient). The customer already agrees in advance to a transfer of the contract.
 
 (2) The Provider is entitled to transfer its service obligations under the User Agreement to third parties or to engage subcontractors and to transfer claims against the Customer to third parties. In doing so, the Provider shall remain responsible to the Customer for the performance of services in accordance with the contract.
+The Provider informs the customer about any intended changes regarding the involvement or replacement of subcontractors, including data transfers to third countries.
 
 (3) A transfer of rights and obligations from this contract by the Customer to third parties is only permitted with the prior express consent of the Provider.
+
+(4) The Provider assists the customer, within the scope of the technical possibilities, in responding to requests for exercising data subject rights (e.g., access, rectification, erasure).
 
 ## § 8. Data protection
 
@@ -530,6 +544,8 @@ The Provider shall notify the Customer of such a change in text form (e-mail is 
 (4) In various areas of the Service, the Customer has the option to process personal data of third parties. This concerns in particular names and e-mail addresses of his employees for whom he creates licenses and names and addresses of his service recipients for whom he creates projects. The Customer warrants to the Provider that it will process with the Service only such data as it is authorized to process; it also provides this warranty for its employees and all other persons to whom it grants access to the Service.
 
 (5) The Customer shall indemnify the Provider against all claims asserted by third parties against the Provider in connection with the processing of their personal data by the Customer, unless the Customer is not responsible for such assertion. The claim for indemnification shall also include the necessary costs for an appropriate examination of the claim and legal defense.
+
+(6) The Provider shall inform the customer via the registered e-mail address without undue delay after becoming aware of a personal data breach.
 
 Further information on data protection can be found in the separate data protection declaration.
 
@@ -675,27 +691,33 @@ The above provisions shall apply mutatis mutandis in the event that provisions p
 
 ### Change history
 
+**Version 1.5 (06. January 2026)**
+- § 5 (1): Clarified the contract start date
+- § 7 (2): Added obligation to inform customers regarding changes to subprocessors
+- § 7 (4): Added provision on assisting customers with data subject rights requests (e.g., GDPR)
+- § 8 (6): Defined the notification channel in the event of a personal data breach
+
 **Version 1.4 (03. October 2025)**
-- Addition of www.kimai.org and www.kimai.cloud as part of the service offering
+- § 3 (3): Confirmation email no longer contains terms and conditions
+- § 6 (8): Division into (a) contracts before 2024 and (b) contracts after 2024
+- § 9 (2): Mention onboarding emails
+- Added www.kimai.org and www.kimai.cloud as part of the service offering
 - URLs removed and replaced with the word ‘website’
-- Replacement of ‘§14 BGB’ (Germany) with ‘§1 UGB’ (Austria)
-- Removal of §3 (3) Confirmation email no longer contains these terms and conditions
-- Division of § 6. (8) into (a) contracts before 2024 and (b) contracts after 2024
-- Addition to § 9. (2) with reference to onboarding emails
+- Replaced ‘§14 BGB’ (Germany) with ‘§1 UGB’ (Austria)
 - Replaced abbreviation `GTC` (General Terms and Conditions) with `TOS` (Terms of Service)
 
 **Version 1.3 (24. March 2025)**
-- Clarification §3. (6): after expiration of test phase exists no free plan
+- § 3 (6): After expiration of test phase exists no free usage plan exists
 
-**Version 1.2 (26. Mar 2021)**
+**Version 1.2 (26. March 2021)**
 - Added english translation for informational purposes
 
-**Version 1.1 (01 Jan 2021)**
-- § 1. (1) - replacement `Kevin Papst with registered office in Munich` by `Kevin Papst with registered office in Austria`
-- § 16. (1) - replacement `the law of the Federal Republic of Germany` by `the law of Austria`
-- § 16. (2) - replacement `business location of the provider (currently Munich)` by `business location of the provider`.
+**Version 1.1 (01. January 2021)**
+- § 1  (1): Replaced `Kevin Papst with registered office in Munich` by `Kevin Papst with registered office in Austria`
+- § 16 (1): Replaced `the law of the Federal Republic of Germany` by `the law of Austria`
+- § 16 (2): Replaced `business location of the provider (currently Munich)` by `business location of the provider`.
 
-**Version 1.0 (05 Oct 2019)**  
-Initial version
+**Version 1.0 (05. October 2019)**  
+- Initial version
 
 {% endif %}
