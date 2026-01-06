@@ -1,3 +1,10 @@
+**Version 4.6.0**
+
+Compatibility: requires minimum Kimai 2.25.0
+
+- Fix compatibility with theme update in Kimai 2.45
+- Flag sensitive parameter in API to prevent them from showing in error logs
+
 **Version 4.5.0**
 
 Compatibility: requires minimum Kimai 2.25.0
