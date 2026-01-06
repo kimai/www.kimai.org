@@ -201,6 +201,7 @@ Bei den eingesetzten Dienstleistern, welche Subprozessor bzw. Unterauftragsverar
  
 ### Änderungsverlauf
 
+- **06.01.2026**: Sortierung der Subprozessoren 
 - **23.06.2025**: Entfernung der URL zur Liste deutscher Datenschutzbehörden
 - **18.03.2024**: Änderung "Sendinblue Frankreich" zu "Brevo Deutschland", Simple Analytics aus Transparenzgründen aufgenommen
 - **14.11.2023**: Recaptcha Verifizierung via Subprozessor "Google" wieder hinzugefügt
@@ -414,6 +415,7 @@ We are using the following service providers (also called sub-processors) to ass
 
 ### Change history
 
+- **06.01.2026**: Sort subprocessors
 - **23.06.2025**: Removed URL of German data protection authorities and replaced "German" with "of the federal state in which our company is based"
 - **18.03.2024**: Replaced "Sendinblue France" with "Brevo Germany", added Simple Analytics for transparency reasons
 - **14.11.2023**: Recaptcha verification via Subprocessor "Google" re-added
