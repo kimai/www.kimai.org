@@ -5,6 +5,8 @@ description: Export your timesheet data with Kimai into several different format
 
 The export module allows you to export filtered timesheet data into several formats.
 
+{% include youtube-video.html id="quicky_export" %}
+
 ## Difference between export and invoice
 
 There are a couple of differences in these two Kimai modules, the most important ones:
