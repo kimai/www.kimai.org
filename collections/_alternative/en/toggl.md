@@ -66,7 +66,7 @@ In this comparison, we’ll focus on the self-hosted version and its strengths:
 
 Kimai's combination of enterprise-level flexibility and open-source freedom makes it one of the best time tracking and invoicing solutions for {{ site.this_year }} — a perfect fit for agencies, software companies, educational institutions, and non-profits.
 
-{% include docs-image.html src="/images/screenshots/screenshot-reporting.webp" title="Reporting feature" width="100%" %}
+{% include image.html src="/images/screenshots/screenshot-reporting.webp" title="Reporting feature" %}
 
 ### Toggl Track: {make-sure-it’s}-free time tracking
 
@@ -114,13 +114,12 @@ If you’re looking for a time tracking solution that grows with you, Kimai is m
 
 👉 Start with Kimai Cloud or On-Premise version, both for free — and see why teams around the world are choosing Kimai.
 
-
 ## Migration from toggl to Kimai
 
 If you are currently using toggl, but looking for a GDPR-compliant or just a cheaper alternative, then Kimai might be the right tool for you. 
 
 Kimai has an CSV importer, that allows to transfer your toggl data. All you have to do is export the data like this:
 
-{% include docs-image.html src="/images/documentation/toggl-export.webp" title="Exporting timesheet with toggl track" width="800px" %}
+{% include image.html src="/images/documentation/toggl-export.webp" title="Exporting timesheet with toggl track" %}
 
 Please read the [importer documentation]({% link _documentation/plugin-import.md %}) to find out more. 

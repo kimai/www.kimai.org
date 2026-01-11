@@ -7,7 +7,7 @@ tags: [General]
 excerpt: "As Christmas approaches, many of us look forward to the joy of the season and a well-deserved break. Let's explore how EU members enjoy their public holidays during this festive time in 2024.?"
 ---
 
-{% include docs-image.html src="/images/blog/christmas-2024.webp" title="Christmas holidays in the EU" %}
+{% include image.html src="/images/blog/christmas-2024.webp" title="Christmas holidays in the EU" %}
 
 
 As Christmas approaches, many of us look forward to the joy of the season and a well-deserved
