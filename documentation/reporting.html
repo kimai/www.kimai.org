@@ -739,7 +739,8 @@ links to invoice and export screen.</p>
 <p>You can change the customer to filter the project list and decide to include projects without budgets and projects without recorded times.</p>
 
 <ul>
-  <li>Required permission: <code class="language-plaintext highlighter-rouge">view_reporting</code> and <code class="language-plaintext highlighter-rouge">budget_project</code></li>
+  <li>Required permissions: <code class="language-plaintext highlighter-rouge">view_reporting</code>, <code class="language-plaintext highlighter-rouge">project_reporting</code>, <code class="language-plaintext highlighter-rouge">budget_project</code></li>
+  <li>Instead of <code class="language-plaintext highlighter-rouge">budget_project</code> you might also use <code class="language-plaintext highlighter-rouge">budget_teamlead_project</code> or <code class="language-plaintext highlighter-rouge">budget_team_project</code>, but then the appropriate team assignments must exist</li>
 </ul>
 
 <h3 id="project-details">Project details</h3>
@@ -747,7 +748,8 @@ links to invoice and export screen.</p>
 <p>Shows all kind of reports for the selected project and sums up the times grouped by various characteristics.</p>
 
 <ul>
-  <li>Required permission: <code class="language-plaintext highlighter-rouge">view_reporting</code> and <code class="language-plaintext highlighter-rouge">details_project</code></li>
+  <li>Required permissions: <code class="language-plaintext highlighter-rouge">view_reporting</code>, <code class="language-plaintext highlighter-rouge">project_reporting</code>, <code class="language-plaintext highlighter-rouge">details_project</code></li>
+  <li>Instead of <code class="language-plaintext highlighter-rouge">details_project</code> you might also use <code class="language-plaintext highlighter-rouge">details_teamlead_project</code> or <code class="language-plaintext highlighter-rouge">details_team_project</code>, but then the appropriate team assignments must exist</li>
 </ul>
 
 <h3 id="monthly-report">Monthly report</h3>
@@ -764,7 +766,8 @@ links to invoice and export screen.</p>
   <li>
     <p>the billable percentage is calculated from the values of the selected month</p>
   </li>
-  <li>Required permission: <code class="language-plaintext highlighter-rouge">view_reporting</code> and <code class="language-plaintext highlighter-rouge">budget_project</code></li>
+  <li>Required permissions: <code class="language-plaintext highlighter-rouge">view_reporting</code>, <code class="language-plaintext highlighter-rouge">project_reporting</code>, <code class="language-plaintext highlighter-rouge">budget_project</code></li>
+  <li>Instead of <code class="language-plaintext highlighter-rouge">budget_project</code> you might also use <code class="language-plaintext highlighter-rouge">budget_teamlead_project</code> or <code class="language-plaintext highlighter-rouge">budget_team_project</code>, but then the appropriate team assignments must exist</li>
 </ul>
 
 <h3 id="inactive-projects">Inactive projects</h3>
@@ -774,7 +777,8 @@ links to invoice and export screen.</p>
 <p>You can change the date that is used to filter inactive projects (date since last timesheet was recorded).</p>
 
 <ul>
-  <li>Required permission: <code class="language-plaintext highlighter-rouge">view_reporting</code> and <code class="language-plaintext highlighter-rouge">budget_project</code></li>
+  <li>Required permissions: <code class="language-plaintext highlighter-rouge">view_reporting</code>, <code class="language-plaintext highlighter-rouge">project_reporting</code>, <code class="language-plaintext highlighter-rouge">budget_project</code></li>
+  <li>Instead of <code class="language-plaintext highlighter-rouge">budget_project</code> you might also use <code class="language-plaintext highlighter-rouge">budget_teamlead_project</code> or <code class="language-plaintext highlighter-rouge">budget_team_project</code>, but then the appropriate team assignments must exist</li>
 </ul>
 
 <h2 id="customers">Customers</h2>
@@ -784,7 +788,7 @@ links to invoice and export screen.</p>
 <p>Groups all project times by activity and user with total times. This report will likely NOT work, if you have too much data in one month.</p>
 
 <ul>
-  <li>Required permission: <code class="language-plaintext highlighter-rouge">view_reporting</code> and <code class="language-plaintext highlighter-rouge">customer_reporting</code></li>
+  <li>Required permissions: <code class="language-plaintext highlighter-rouge">view_reporting</code>, <code class="language-plaintext highlighter-rouge">customer_reporting</code>, <code class="language-plaintext highlighter-rouge">view_other_reporting</code>, <code class="language-plaintext highlighter-rouge">view_other_timesheet</code></li>
 </ul>
 
 
