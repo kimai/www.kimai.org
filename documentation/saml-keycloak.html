@@ -580,7 +580,7 @@
 
 <p>Screenshots might be outdated, please check the text version below each image.</p>
 
-<h3 id="important-settings">Important settings</h3>
+<h2 id="important-settings">Important settings</h2>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">singleSignOnService.url</code>: <code class="language-plaintext highlighter-rouge">https://{keycloak-domain}/realms/{realm}/protocol/saml</code></li>
@@ -591,28 +591,28 @@
   <li>In Keycloak: enable <strong>Client signature required</strong> (this works with signed AuthnRequests)</li>
 </ul>
 
-<h3 id="add-a-client-for-kimai-saml">Add a client for Kimai SAML</h3>
+<h2 id="add-a-client-for-kimai-saml">Add a client for Kimai SAML</h2>
 
 <figure class="d-block figure mb-3" style="max-width: 800px">
-    <img src="/images/documentation/keycloak-saml-1.webp" class="figure-img img-fluid rounded" />
+    <img src="/images/documentation/keycloak-saml-1.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
     <figcaption class="figure-caption">Add a client</figcaption>
 </figure>
 
-<h3 id="configure-the-client">Configure the client</h3>
+<h2 id="configure-the-client">Configure the client</h2>
 
-<figure class="d-block figure mb-3" style="max-width: 900px">
-    <img src="/images/documentation/keycloak-saml-2.webp" class="figure-img img-fluid rounded" />
+<figure class="d-block figure mb-3" style="max-width: 800px">
+    <img src="/images/documentation/keycloak-saml-2.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
     <figcaption class="figure-caption">Enable *Client Signature Required* (1)</figcaption>
 </figure>
 
-<figure class="d-block figure mb-3" style="max-width: 900px">
-    <img src="/images/documentation/keycloak-saml-3.webp" class="figure-img img-fluid rounded" />
+<figure class="d-block figure mb-3" style="max-width: 800px">
+    <img src="/images/documentation/keycloak-saml-3.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
     <figcaption class="figure-caption">Enable *Client Signature Required* (2)</figcaption>
 </figure>
 
 <p><strong>Note</strong>: The working setup uses <strong>Client Signature Required</strong> enabled, which works with signed AuthnRequests (<code class="language-plaintext highlighter-rouge">authnRequestsSigned: true</code> in Kimai configuration).</p>
 
-<h3 id="certificates">Certificates</h3>
+<h2 id="certificates">Certificates</h2>
 
 <ul>
   <li>
@@ -629,7 +629,7 @@
   </li>
 </ul>
 
-<h3 id="create-user-attributes">Create user attributes</h3>
+<h2 id="create-user-attributes">Create user attributes</h2>
 
 <p>Keycloak client mappers (inside the <code class="language-plaintext highlighter-rouge">{client}-dedicated</code> scope)</p>
 
@@ -642,27 +642,27 @@
   <li><strong>Role list</strong> → <code class="language-plaintext highlighter-rouge">Role attribute name: Roles</code>, <code class="language-plaintext highlighter-rouge">SAML Attribute NameFormat: Unspecified</code>, <code class="language-plaintext highlighter-rouge">Single Role Attribute: On</code></li>
 </ul>
 
-<figure class="d-block figure mb-3" style="max-width: 1000px">
-    <img src="/images/documentation/keycloak-saml-4.webp" class="figure-img img-fluid rounded" />
+<figure class="d-block figure mb-3" style="max-width: 800px">
+    <img src="/images/documentation/keycloak-saml-4.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
     <figcaption class="figure-caption">Kimai user attributes (listing)</figcaption>
 </figure>
 
-<figure class="d-block figure mb-3" style="max-width: 700px">
-    <img src="/images/documentation/keycloak-saml-5.webp" class="figure-img img-fluid rounded" />
+<figure class="d-block figure mb-3" style="max-width: 800px">
+    <img src="/images/documentation/keycloak-saml-5.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
     <figcaption class="figure-caption">Kimai user attributes (X500 GivenName)</figcaption>
 </figure>
 
-<figure class="d-block figure mb-3" style="max-width: 700px">
-    <img src="/images/documentation/keycloak-saml-6.webp" class="figure-img img-fluid rounded" />
+<figure class="d-block figure mb-3" style="max-width: 800px">
+    <img src="/images/documentation/keycloak-saml-6.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
     <figcaption class="figure-caption">Kimai user attributes (X500 Surname)</figcaption>
 </figure>
 
-<figure class="d-block figure mb-3" style="max-width: 700px">
-    <img src="/images/documentation/keycloak-saml-7.webp" class="figure-img img-fluid rounded" />
+<figure class="d-block figure mb-3" style="max-width: 800px">
+    <img src="/images/documentation/keycloak-saml-7.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
     <figcaption class="figure-caption">Kimai user attributes (X500 Email)</figcaption>
 </figure>
 
-<h3 id="client-scopes--roles">Client Scopes / Roles</h3>
+<h2 id="client-scopes--roles">Client Scopes / Roles</h2>
 
 <p>Make sure to map unique Keycloak roles to Kimai roles.<br />
 If you reuse the same Keycloak role, the last mapping wins.</p>
@@ -682,7 +682,7 @@ If you reuse the same Keycloak role, the last mapping wins.</p>
 
 <p><strong>Note</strong>: Using a consistent naming convention like <code class="language-plaintext highlighter-rouge">Kimai-Role-*</code> could help to avoid conflicts and makes role management clearer.</p>
 
-<h3 id="configure-localyaml">Configure local.yaml</h3>
+<h2 id="configure-localyaml">Configure local.yaml</h2>
 
 <p>Here is the complete working Kimai configuration that has been tested and verified:</p>
 
@@ -753,7 +753,7 @@ If you reuse the same Keycloak role, the last mapping wins.</p>
 
 <p>You should now be able to test the Login by visiting <strong>https://timetracking.example.com/</strong> and clicking on the <code class="language-plaintext highlighter-rouge">Keycloak</code> title of the SAML method, you defined earlier.</p>
 
-<h2 id="-working-configuration-summary">✅ Working Configuration Summary</h2>
+<h2 id="configuration-summary">Configuration Summary</h2>
 
 <p>This setup has been tested and verified to work with:</p>
 
@@ -780,7 +780,7 @@ If you reuse the same Keycloak role, the last mapping wins.</p>
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#important-settings" class="nav-link">Important settings</a></li><li class="nav-item"><a href="#add-a-client-for-kimai-saml" class="nav-link">Add a client for Kimai SAML</a></li><li class="nav-item"><a href="#configure-the-client" class="nav-link">Configure the client</a></li><li class="nav-item"><a href="#certificates" class="nav-link">Certificates</a></li><li class="nav-item"><a href="#create-user-attributes" class="nav-link">Create user attributes</a></li><li class="nav-item"><a href="#client-scopes--roles" class="nav-link">Client Scopes / Roles</a></li><li class="nav-item"><a href="#configure-localyaml" class="nav-link">Configure local.yaml</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#important-settings" class="nav-link">Important settings</a></li><li class="nav-item"><a href="#add-a-client-for-kimai-saml" class="nav-link">Add a client for Kimai SAML</a></li><li class="nav-item"><a href="#configure-the-client" class="nav-link">Configure the client</a></li><li class="nav-item"><a href="#certificates" class="nav-link">Certificates</a></li><li class="nav-item"><a href="#create-user-attributes" class="nav-link">Create user attributes</a></li><li class="nav-item"><a href="#client-scopes--roles" class="nav-link">Client Scopes / Roles</a></li><li class="nav-item"><a href="#configure-localyaml" class="nav-link">Configure local.yaml</a></li><li class="nav-item"><a href="#configuration-summary" class="nav-link">Configuration Summary</a></li></ul>
         
     </aside>
 

@@ -12,14 +12,13 @@
 <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
-<title>User licenses – Kimai</title>
-<meta name="description" content="How the seat-based licensing works in Kimai-Cloud">
+<title>Can I change my Kimai Cloud domain?</title>
 <link type="application/atom+xml" rel="alternate" href="https://www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
 <meta property="og:locale" content="en">
 <meta property="og:type" content="website">
-<meta property="og:title" content="User licenses">
+<meta property="og:title" content="Can I change my Kimai Cloud domain?">
 <meta property="og:image" content="https://www.kimai.org/images/social-preview.webp">
-<meta property="og:description" content="How the seat-based licensing works in Kimai-Cloud">
+<meta property="og:description" content="">
 <link href="/assets/build/main.css?v6" rel="stylesheet" />
 
 </head>
@@ -216,7 +215,7 @@
                         
                         
                         
-                        <a href="/documentation/cloud-user-licenses.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2  active" id="docnavi-cloud-user-licenses">
+                        <a href="/documentation/cloud-user-licenses.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-cloud-user-licenses">
                             
                             User licenses
                             
@@ -226,7 +225,7 @@
                         
                         
                         
-                        <a href="/documentation/cloud-domain.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-cloud-domain">
+                        <a href="/documentation/cloud-domain.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2  active" id="docnavi-cloud-domain">
                             
                             Change the cloud domain
                             
@@ -297,7 +296,7 @@
 </aside>
 <script>
     document.addEventListener("DOMContentLoaded", function(event) {
-        const dpm = document.getElementById('docnavi-cloud-user-licenses');
+        const dpm = document.getElementById('docnavi-cloud-domain');
         if (dpm !== null) {
             dpm.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
         }
@@ -308,9 +307,7 @@
 
         <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 mb-n3">
             <div class="me-4">
-                <h1 class="pb-1">User licenses</h1>
-                
-                <p class="text-muted fs-lg mb-2">How the seat-based licensing works in Kimai-Cloud</p>
+                <h1 class="pb-1">Can I change my Kimai Cloud domain?</h1>
                 
             </div>
             
@@ -325,58 +322,76 @@
             <div>
                 
                 <div id="documentation-content">
-                    <p>Kimai uses a <strong>per-seat licensing model</strong>, where each active user account consumes one license. 
-However, the system is designed with fairness in mind, so deactivated accounts do not consume licenses.</p>
+                    <p><strong>Short answer:</strong> No.</p>
 
-<p>Here’s a breakdown of how the licensing works:</p>
+<p><strong>Long answer:</strong> No — and there are no exceptions, <strong>but workarounds</strong>.</p>
 
-<h2 id="licensing-rules">Licensing Rules</h2>
+<p>When you register for Kimai Cloud, you choose a subdomain (for example <code class="language-plaintext highlighter-rouge">example.kimai.cloud</code>).<br />
+This subdomain is <strong>permanently bound</strong> to your Kimai instance and <strong>cannot be changed later</strong>.</p>
+
+<p>This is not a policy decision or a missing feature — it is a <strong>technical limitation</strong> of how Kimai Cloud is provisioned and operated. Once an instance is created, the subdomain becomes an integral part of its infrastructure and identity. Renaming it is technically not possible without recreating the entire instance.</p>
+
+<p>For this reason, we clearly state <strong>during registration</strong> that the selected subdomain cannot be changed afterward:</p>
+
+<figure class="d-block figure mb-3" style="max-width: 800px">
+    <img src="/images/documentation/cloud/domain-registration.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
+    <figcaption class="figure-caption">Selecting a cloud domain during registration</figcaption>
+</figure>
+
+<p>Please make sure to choose your subdomain carefully. Even small details like using <code class="language-plaintext highlighter-rouge">test</code>, <code class="language-plaintext highlighter-rouge">demo</code>, or temporary names cannot be corrected later.</p>
+
+<blockquote>
+  <p>“But I accidentally used <code class="language-plaintext highlighter-rouge">test</code> in the name…”</p>
+</blockquote>
+
+<p>We understand that this can be frustrating. Unfortunately, even in this case, the subdomain <strong>cannot be renamed</strong>.</p>
+
+<p>There is no manual intervention, support override, or paid exception that would allow changing an existing Kimai Cloud subdomain.</p>
+
+<h2 id="alternative-solutions">Alternative solutions</h2>
+
+<p>While the original subdomain cannot be changed, you have the following options:</p>
+
+<h3 id="option-1-custom-domain-recommended">Option 1: Custom domain (recommended)</h3>
+
+<p>If you are on the <strong>annual Pro subscription</strong>, you can configure a <strong>custom domain</strong>.</p>
+
+<p>Instead of using<br />
+<code class="language-plaintext highlighter-rouge">example.kimai.cloud</code><br />
+you can access your Kimai instance via<br />
+<code class="language-plaintext highlighter-rouge">time.example.com</code> or <code class="language-plaintext highlighter-rouge">kimai.example.com</code>.</p>
+
+<p>This is the <strong>best solution</strong> if you want a professional or branded URL without recreating your instance.</p>
+
+<p>→ See: <a href="/documentation/cloud-custom-domain.html">Custom domain documentation</a></p>
+
+<h3 id="option-2-create-a-new-instance-and-migrate-your-data">Option 2: Create a new instance and migrate your data</h3>
+
+<p>If a custom domain is not an option, you can recreate your Kimai Cloud instance with a new subdomain and move your data manually.</p>
+
+<p>Steps:</p>
+
+<ol>
+  <li>Export your timesheets from the existing instance as CSV (<a href="/documentation/export.html">Timesheets → Export</a>)</li>
+  <li>Create a new Kimai Cloud instance with the correct subdomain</li>
+  <li>Import the data into the new instance (<a href="/documentation/plugin-import.html">System → Importer</a>)</li>
+</ol>
+
+<p>Please note:</p>
 
 <ul>
-  <li><strong>Active users</strong>: Each active user consumes one license.</li>
-  <li><strong>Deactivated users</strong>: Do not consume a license. This allows the license to be reassigned to another user.</li>
+  <li>This is a <strong>manual workaround</strong></li>
+  <li>Settings, and configuration must be recreated</li>
+  <li>The original instance and its subdomain remain unchanged</li>
 </ul>
 
-<h3 id="managing-user-accounts">Managing User Accounts</h3>
+<h2 id="summary">Summary</h2>
 
 <ul>
-  <li>When a user leaves the company, you can deactivate their account, freeing up the license for another user.</li>
-  <li>If a deactivated user is reactivated, they will once again consume a license. Reactivation is only possible if there are available licenses.</li>
-  <li>New user accounts can only be created if there are free licenses available.</li>
+  <li>A Kimai Cloud subdomain <strong>cannot be changed</strong></li>
+  <li>This is due to <strong>technical constraints</strong>, not policy</li>
+  <li>Use a <strong>custom domain</strong> or <strong>recreate the instance</strong> if the current name is unsuitable</li>
 </ul>
-
-<h3 id="before-subscription-purchase">Before Subscription Purchase</h3>
-
-<ul>
-  <li>When registering for a plan, the system displays the minimum number of licenses you need to purchase based on your current number of active users.</li>
-  <li>If you see more licenses than necessary, you can deactivate any extra accounts and reload the page to adjust the displayed license count.</li>
-</ul>
-
-<h3 id="purchasing-additional-licenses">Purchasing Additional Licenses</h3>
-
-<p>If your subscription does not include enough licenses, you can purchase additional ones at any time through the <a href="https://www.kimai.cloud/my-cloud/">My Cloud</a> portal.</p>
-
-<p>The additional licenses will be billed immediately, but only for the remaining time of your current payment period:</p>
-<ul>
-  <li>New licenses are always aligned with your existing subscription period.</li>
-  <li>For example, if you add a license to an annual subscription that is already 6 months old, you will only be charged for the remaining 6 months.</li>
-</ul>
-
-<h2 id="deprecated-metered-plans">Deprecated Metered Plans</h2>
-
-<p>For users still on the deprecated <strong>metered plans</strong> (<code class="language-plaintext highlighter-rouge">Plus</code> and <code class="language-plaintext highlighter-rouge">Premium</code>), which are no longer available to new customers, billing is based on usage:</p>
-<ul>
-  <li><strong>Active users incur charges</strong>.</li>
-  <li><strong>Deactivated users incur charges</strong> if they were active within the last month. This includes:
-    <ul>
-      <li>Users who registered within the last month.</li>
-      <li>Users who logged in within the last month.</li>
-      <li>Users who made time bookings within the last month (or later).</li>
-    </ul>
-  </li>
-</ul>
-
-<p>This system ensures flexibility in managing user accounts while maintaining fairness in licensing costs.</p>
 
                 </div>
                 
@@ -391,7 +406,7 @@ However, the system is designed with fairness in mind, so deactivated accounts d
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#licensing-rules" class="nav-link">Licensing Rules</a><ul><li class="nav-item"><a href="#managing-user-accounts" class="nav-link">Managing User Accounts</a></li><li class="nav-item"><a href="#before-subscription-purchase" class="nav-link">Before Subscription Purchase</a></li><li class="nav-item"><a href="#purchasing-additional-licenses" class="nav-link">Purchasing Additional Licenses</a></li></ul></li><li class="nav-item"><a href="#deprecated-metered-plans" class="nav-link">Deprecated Metered Plans</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#alternative-solutions" class="nav-link">Alternative solutions</a><ul><li class="nav-item"><a href="#option-1-custom-domain-recommended" class="nav-link">Option 1: Custom domain (recommended)</a></li><li class="nav-item"><a href="#option-2-create-a-new-instance-and-migrate-your-data" class="nav-link">Option 2: Create a new instance and migrate your data</a></li></ul></li><li class="nav-item"><a href="#summary" class="nav-link">Summary</a></li></ul>
         
     </aside>
 
