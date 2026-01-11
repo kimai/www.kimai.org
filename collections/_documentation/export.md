@@ -51,7 +51,7 @@ These templates allow you to select:
 - the `language` for header translations, which uses the request language if not configured
 - the `columns` that should be exported
 
-{% include docs-image.html src="/images/documentation/export-create-template.webp" title="Edit export template form" width="800px" %}
+{% include docs-image.html src="/images/documentation/export-create-template.webp" title="Edit export template form" %}
 
 After creating the template, the respective CSV/Excel button will become a dropdown and you can select your template for the export.
 

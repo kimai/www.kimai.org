@@ -126,7 +126,7 @@ In my words:
 
 All in all: I do not consider this to be a security risk, but a UX improvement. Finally, this screenshot:
 
-{% include docs-image.html src="/images/documentation/bughunter/google-password-change.webp" title="Google allows to change my password, without asking for the current password" width="700px" %}
+{% include docs-image.html src="/images/documentation/bughunter/google-password-change.webp" title="Google allows to change my password, without asking for the current password" %}
 
 [^1]: https://www.consilium.europa.eu/en/policies/cybersecurity/
 [^2]: https://www.bsi.bund.de/DE/Themen/Regulierte-Wirtschaft/Weitere_regulierte_Unternehmen/Anbieter_digitaler_Dienste/Meldungen/meldungen_node.html

@@ -94,7 +94,7 @@ Activities follow a hierarchical permission model:
 
 ## Activity listing
 
-{% include docs-image.html src="/images/documentation/activity-filter.webp" title="Activity toolbar filter" width="700px" %}
+{% include docs-image.html src="/images/documentation/activity-filter.webp" title="Activity toolbar filter" %}
 
 The **Visible** filter in the toolbar has three states:
 - `Yes` - all visible activities: the activity itself and (if non-global) its project and customer are visible
@@ -108,7 +108,7 @@ But you can use the activity filter to show all or only invisible activities.
 
 Invisible activity will be highlighted in the listing table:
 
-{% include docs-image.html src="/images/documentation/listing-invisible-entry.webp" title="Visible and invisible activities in the activity listing" width="700px" %}
+{% include docs-image.html src="/images/documentation/listing-invisible-entry.webp" title="Visible and invisible activities in the activity listing" %}
 
 ### Filter and search
 

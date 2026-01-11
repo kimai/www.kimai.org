@@ -29,11 +29,11 @@ This documentation is available in other languages as well [in the Microsoft doc
   **Note**: The name of the application has no technical effect, but could be displayed to users during login.
 - On the left navigation panel, select the **Microsoft Entra ID** service.
 - Navigate to **Enterprise Applications** and search for the app you just created
-{% include docs-image.html src="/images/documentation/azure-saml-pic1.webp" title="Find Kimai enterprise app" width="900px" %}
+{% include docs-image.html src="/images/documentation/azure-saml-pic1.webp" title="Find Kimai enterprise app" %}
 - Now navigate to **Single sign-on** on the left navigation and choose **SAML** as your choice: 
-{% include docs-image.html src="/images/documentation/azure-saml-pic2.webp" title="Select SAML" width="900px" %}
+{% include docs-image.html src="/images/documentation/azure-saml-pic2.webp" title="Select SAML" %}
 - Edit the **Basic SAML Configuration** at the top and add the required **URLs**:
-{% include docs-image.html src="/images/documentation/azure-saml-pic3.webp" title="Basic SAML configuration" width="900px" %}
+{% include docs-image.html src="/images/documentation/azure-saml-pic3.webp" title="Basic SAML configuration" %}
 
 | Setting                                    | Value                                               |
 |--------------------------------------------|-----------------------------------------------------|
@@ -44,11 +44,11 @@ This documentation is available in other languages as well [in the Microsoft doc
 {: .table }
 
 - Edit the **User Attributes & Claims** and ensure the following settings:
-{% include docs-image.html src="/images/documentation/azure-saml-pic4.webp" title="User Attributes & Claims" width="900px" %}
+{% include docs-image.html src="/images/documentation/azure-saml-pic4.webp" title="User Attributes & Claims" %}
 - Return to the **Single Sign-On** (visible in the left navigation panel) and download **Certificate (Base64)**:
-{% include docs-image.html src="/images/documentation/azure-saml-pic6.webp" title="Download Certificate" width="900px" %}
+{% include docs-image.html src="/images/documentation/azure-saml-pic6.webp" title="Download Certificate" %}
 - Copy the three values of **Set up Kimai**, as we will need them to configure Kimai:
-{% include docs-image.html src="/images/documentation/azure-saml-pic7.webp" title="Copy Azure URLs" width="900px" %}
+{% include docs-image.html src="/images/documentation/azure-saml-pic7.webp" title="Copy Azure URLs" %}
 
 ### Kimai Configuration
 
@@ -142,7 +142,7 @@ The example values for the group mapping from above:
 ```
 
 would lead with this Azure configuration
-{% include docs-image.html src="/images/documentation/azure-saml-groups.webp" title="Group IDs" width="900px" %}
+{% include docs-image.html src="/images/documentation/azure-saml-groups.webp" title="Group IDs" %}
 
 to this configuration:
 ```

@@ -23,4 +23,4 @@ Click an entry in the "billing history" to generate an invoice for the selected 
 
 Fill in your company details and click "Generate invoice":
 
-{% include docs-image.html src="/images/documentation/lemonsqueezy-invoice-3.webp" title="Invoice generation" width="50%" %}
+{% include docs-image.html src="/images/documentation/lemonsqueezy-invoice-3.webp" title="Invoice generation" %}

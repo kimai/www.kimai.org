@@ -45,7 +45,7 @@ After a month is over and the employee working-times were verified for correctne
 
 You can right-click the row or use the action menu at the end of the monthly row to lock the selected month:
 
-{% include docs-image.html src="/images/documentation/contract-lock-month.webp" title="Lock a month by choosing from the context menu" width="700px" %}
+{% include docs-image.html src="/images/documentation/contract-lock-month.webp" title="Lock a month by choosing from the context menu" %}
 
 Whether a month is locked (closed black lock) or not (open orange lock) is indicated by the icon in front of the row.
 

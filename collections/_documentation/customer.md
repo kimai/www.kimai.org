@@ -105,7 +105,7 @@ The visibility filter in the toolbar has three state:
 
 ## Customer listing
 
-{% include docs-image.html src="/images/documentation/customer-filter.webp" title="Customer toolbar filter" width="700px" %}
+{% include docs-image.html src="/images/documentation/customer-filter.webp" title="Customer toolbar filter" %}
 
 The **Visible** filter in the toolbar has three states:
 - `Yes` - all visible customer
@@ -119,7 +119,7 @@ But you can use the customer filter to show all or only invisible customers.
 
 Invisible customers will be highlighted in the listing table:
 
-{% include docs-image.html src="/images/documentation/listing-invisible-entry.webp" title="Visible and invisible customers in the customer listing" width="700px" %}
+{% include docs-image.html src="/images/documentation/listing-invisible-entry.webp" title="Visible and invisible customers in the customer listing" %}
 
 ### Filter and search 
 

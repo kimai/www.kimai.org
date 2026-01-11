@@ -21,12 +21,12 @@ Screenshots might be outdated, please check the text version below each image.
 
 ## Add a client for Kimai SAML
 
-{% include docs-image.html src="/images/documentation/keycloak-saml-1.webp" title="Add a client" width="800px" %}
+{% include docs-image.html src="/images/documentation/keycloak-saml-1.webp" title="Add a client" %}
 
 ## Configure the client
 
-{% include docs-image.html src="/images/documentation/keycloak-saml-2.webp" title="Enable *Client Signature Required* (1)" width="900px" %}
-{% include docs-image.html src="/images/documentation/keycloak-saml-3.webp" title="Enable *Client Signature Required* (2)" width="900px" %}
+{% include docs-image.html src="/images/documentation/keycloak-saml-2.webp" title="Enable *Client Signature Required* (1)" %}
+{% include docs-image.html src="/images/documentation/keycloak-saml-3.webp" title="Enable *Client Signature Required* (2)" %}
 
 **Note**: The working setup uses **Client Signature Required** enabled, which works with signed AuthnRequests (`authnRequestsSigned: true` in Kimai configuration).
 
@@ -51,10 +51,10 @@ Remove the default `role list`, then add:
 - **X500 givenName** → `SAML Attribute Name: FirstName`, `SAML Attribute NameFormat: Unspecified`
 - **Role list** → `Role attribute name: Roles`, `SAML Attribute NameFormat: Unspecified`, `Single Role Attribute: On`
 
-{% include docs-image.html src="/images/documentation/keycloak-saml-4.webp" title="Kimai user attributes (listing)" width="1000px" %}
-{% include docs-image.html src="/images/documentation/keycloak-saml-5.webp" title="Kimai user attributes (X500 GivenName)" width="700px" %}
-{% include docs-image.html src="/images/documentation/keycloak-saml-6.webp" title="Kimai user attributes (X500 Surname)" width="700px" %}
-{% include docs-image.html src="/images/documentation/keycloak-saml-7.webp" title="Kimai user attributes (X500 Email)" width="700px" %}
+{% include docs-image.html src="/images/documentation/keycloak-saml-4.webp" title="Kimai user attributes (listing)" %}
+{% include docs-image.html src="/images/documentation/keycloak-saml-5.webp" title="Kimai user attributes (X500 GivenName)" %}
+{% include docs-image.html src="/images/documentation/keycloak-saml-6.webp" title="Kimai user attributes (X500 Surname)" %}
+{% include docs-image.html src="/images/documentation/keycloak-saml-7.webp" title="Kimai user attributes (X500 Email)" %}
 
 ## Client Scopes / Roles
 

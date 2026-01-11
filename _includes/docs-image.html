@@ -1,5 +1,5 @@
 {% if include.src %}
-<figure class="d-block figure mb-3"{% if include.width %} style="max-width: {{ include.width }}"{% endif %}>
+<figure class="d-block figure mb-3" style="max-width: {% if include.width %}{{ include.width }}{% else %}800px{% endif %}">
     <img src="{{ include.src }}"{% if include.alt %} alt="{{ include.alt }}"{% endif %} class="figure-img img-fluid rounded border border-primary border-3 p-2">
     <figcaption class="figure-caption">{{ include.title }}</figcaption>
 </figure>

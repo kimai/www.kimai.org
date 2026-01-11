@@ -14,7 +14,7 @@ This is not a policy decision or a missing feature — it is a **technical limit
 
 For this reason, we clearly state **during registration** that the selected subdomain cannot be changed afterward:
 
-{% include docs-image.html src="/images/documentation/cloud/domain-registration.webp" title="Selecting a cloud domain during registration" width="800px" %}
+{% include docs-image.html src="/images/documentation/cloud/domain-registration.webp" title="Selecting a cloud domain during registration" %}
 
 Please make sure to choose your subdomain carefully. Even small details like using `test`, `demo`, or temporary names cannot be corrected later.
 
