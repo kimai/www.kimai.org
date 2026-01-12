@@ -17,7 +17,7 @@ position: Gründer
 industry: Cyber Security
 size: 2+
 since: 2024
-location: Johannesburg, Südafrike
+location: Johannesburg, Südafrika
 version: cloud
 wins:
     - 8+ Stunden monatlich bei der Zeitabrechnungs-Administration eingespart
