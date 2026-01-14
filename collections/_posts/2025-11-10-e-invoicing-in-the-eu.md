@@ -81,7 +81,7 @@ So, you want to avoid fines and keep your accountant happy? Here’s what every 
 
 With the [new plugin]({% link _store/keleo-invoice-bundle.md %}) and soon in the Cloud, Kimai supports e-invoicing, so you can stop worrying about invoice formats and start focusing on your business.
 
-![E-Invoice Profiles]({% link /images/blog/e-invoicing-eu-profiles.webp %}){:class="image"}
+{% include image.html src="/images/blog/e-invoicing-eu-profiles.webp" title="E-Invoice Profiles" %}
 
 The supported profiles are:
 - EN16931 - CII (XML)
@@ -102,16 +102,11 @@ Additional features for e-invoicing:
 Kimai starts with a minimal set of features, which should already most day to day use-cases.
 That's why you can currently (only) configure a few typical payment types and your payment account: 
 
-![E-Invoice Settings]({% link /images/blog/e-invoicing-eu-setting.webp %}){:class="image"}
+{% include image.html src="/images/blog/e-invoicing-eu-setting.webp" title="E-Invoice settings" %}
 
 Supported payment types and their official IDs:
 - 58: SEPA Credit Transfer
 - 59: SEPA Direct Debit
-- 30: Credit Transfer
-- 49: Direct Debit
-- 42: Payment To Bank Account
-- 48: Card Payment
-- 10: Cash
 
 ### Final thoughts
 

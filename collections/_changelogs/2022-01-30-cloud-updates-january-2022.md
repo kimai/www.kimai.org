@@ -34,7 +34,7 @@ This feature is only available for paying customers.
 
 Each of these functions is only active if the corresponding configuration is not empty:
 
-![Invoice configurations](https://www.kimai.org/images/marketplace/invoice-configuration.png)
+![Invoice configurations](https://www.kimai.org/images/marketplace/invoice-configuration.webp)
 
 More documentation is available at [https://www.kimai.org/documentation/plugin-invoice.html](https://www.kimai.org/documentation/plugin-invoice.html).
 
