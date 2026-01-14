@@ -369,6 +369,11 @@ required attributes like <code class="language-plaintext highlighter-rouge">Comp
 </li>
 </ul>
 
+<figure class="d-block figure mb-3" style="max-width: 100%">
+    <img src="/images/blog/e-invoicing-eu-customer.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2">
+    <figcaption class="figure-caption">Customer invoice settings</figcaption>
+</figure>
+
 <h2 id="invoice-template">Invoice template</h2>
 
 <p>You can configure the following fields for every invoice template:</p>
@@ -381,7 +386,10 @@ required attributes like <code class="language-plaintext highlighter-rouge">Comp
   <li><code class="language-plaintext highlighter-rouge">IBAN or card number</code></li>
 </ul>
 
-<p><img src="/images/blog/e-invoicing-eu-setting.webp" alt="E-Invoice Settings" class="image"></p>
+<figure class="d-block figure mb-3" style="max-width: 100%">
+    <img src="/images/blog/e-invoicing-eu-setting.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2">
+    <figcaption class="figure-caption">E-Invoice Settings</figcaption>
+</figure>
 
 <h3 id="profiles">Profiles</h3>
 
@@ -412,6 +420,11 @@ required attributes like <code class="language-plaintext highlighter-rouge">Comp
 <code class="language-plaintext highlighter-rouge">Factur-X</code> (PDF/A</li>
 </ul>
 
+<figure class="d-block figure mb-3" style="max-width: 100%">
+    <img src="/images/blog/e-invoicing-eu-profiles.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2">
+    <figcaption class="figure-caption">Supported E-Invoice Profiles</figcaption>
+</figure>
+
 <p>The e-invoice XML is always generated side by side to the original invoice document, no matter if that is PDF or e.g. Word, and the XML can be downloaded. 
 If a hybrid format is chosen, the invoice document must be a PDF. 
 The invoice will then be generated as a <code class="language-plaintext highlighter-rouge">PDF/A-3 + associated files + additional XMP RDF</code> (for <code class="language-plaintext highlighter-rouge">ZUGFeRD</code> and <code class="language-plaintext highlighter-rouge">Factur-X</code>).</p>
@@ -419,6 +432,7 @@ The invoice will then be generated as a <code class="language-plaintext highligh
 <h3 id="payment-type">Payment type</h3>
 
 <p>Kimai supports the following payment types (numbers are the official IDs):</p>
+
 <ul>
   <li>
 <code class="language-plaintext highlighter-rouge">SEPA Credit Transfer</code> (58)</li>
@@ -451,8 +465,6 @@ and the list of all contained timesheets (on the following pages).</p>
   <li>creating the export</li>
   <li>renaming the file to match the invoice</li>
 </ul>
-
-<p>The used “export template” for this feature can be configured.</p>
 
 <p>To activate this features go to <code class="language-plaintext highlighter-rouge">Invoices</code> at <a href="/documentation/configurations.html">System → Settings</a>.</p>
 
@@ -735,7 +747,7 @@ And you probably need to prefix them with <code class="language-plaintext highli
                     
                     <div class="swiper-slide pb-3">
                         <figure class="figure">
-                            <img src="/images/marketplace/invoice-fullscreen.webp" class="figure-img" alt="Screenshot">
+                            <img src="/images/marketplace/invoice-configuration.webp" class="figure-img" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">Le nuove impostazioni di configurazione per il modello di esportazione e la formattazione del linguaggio</figcaption>
                             
@@ -746,9 +758,27 @@ And you probably need to prefix them with <code class="language-plaintext highli
                     
                     <div class="swiper-slide pb-3">
                         <figure class="figure">
-                            <img src="/images/marketplace/invoice-configuration.webp" class="figure-img" alt="Screenshot">
+                            <img src="/images/blog/e-invoicing-eu-profiles.webp" class="figure-img" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">Nuove impostazioni di fatturazione per la formattazione del linguaggio e il modello di esportazione</figcaption>
+                            
+                        </figure>
+                    </div>
+                
+                    
+                    
+                    <div class="swiper-slide pb-3">
+                        <figure class="figure">
+                            <img src="/images/blog/e-invoicing-eu-setting.webp" class="figure-img" alt="Screenshot">
+                            
+                        </figure>
+                    </div>
+                
+                    
+                    
+                    <div class="swiper-slide pb-3">
+                        <figure class="figure">
+                            <img src="/images/blog/e-invoicing-eu-customer.webp" class="figure-img" alt="Screenshot">
                             
                         </figure>
                     </div>
