@@ -28,6 +28,8 @@ The customer also has these fields, that influence the invoice:
 - `Tax status` - possible values: `Taxable`, `Reverse charge`, `Exempt`
 - `Tax exemption reason` - required free text field in case `Tax status` is `Exempt` 
 
+{% include image.html src="/images/blog/e-invoicing-eu-customer.webp" title="Customer invoice settings" %}
+
 ## Invoice template
 
 You can configure the following fields for every invoice template:
@@ -36,7 +38,7 @@ You can configure the following fields for every invoice template:
 - `Account or card-holder`
 - `IBAN or card number`
 
-![E-Invoice Settings]({% link /images/blog/e-invoicing-eu-setting.webp %}){:class="image"}
+{% include image.html src="/images/blog/e-invoicing-eu-setting.webp" title="E-Invoice Settings" %}
 
 ### Profiles
 
@@ -53,6 +55,8 @@ Kimai also support generating hybrid formats:
 - `ZUGFeRD` (PDF/A)
 - `Factur-X` (PDF/A
 
+{% include image.html src="/images/blog/e-invoicing-eu-profiles.webp" title="Supported E-Invoice Profiles" %}
+
 The e-invoice XML is always generated side by side to the original invoice document, no matter if that is PDF or e.g. Word, and the XML can be downloaded. 
 If a hybrid format is chosen, the invoice document must be a PDF. 
 The invoice will then be generated as a `PDF/A-3 + associated files + additional XMP RDF` (for `ZUGFeRD` and `Factur-X`). 
@@ -60,9 +64,9 @@ The invoice will then be generated as a `PDF/A-3 + associated files + additional
 ### Payment type
 
 Kimai supports the following payment types (numbers are the official IDs):
+
 - `SEPA Credit Transfer` (58)
 - `SEPA Direct Debit` (59)
-
 
 ### Peppol
 
@@ -84,8 +88,6 @@ You could generate the same PDF using the export function in Kimai, but that req
 - filtering the exact same timesheets
 - creating the export 
 - renaming the file to match the invoice
-
-The used "export template" for this feature can be configured. 
 
 To activate this features go to `Invoices` at [System → Settings]({% link _documentation/configurations.md %}). 
 
