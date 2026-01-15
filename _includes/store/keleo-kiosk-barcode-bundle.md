@@ -21,9 +21,38 @@ You can test it in the ["Plugins" demo](https://www.kimai.org/demo/).
 
 {% include plugins/kiosk.md %}
 
-### Hardware
+## Hardware
 
-**Self-built setups**
+The Kiosk does not come specialized hardware. Instead, it follows the Open-Source philosophy and lets you choose what works best for you.
+
+We have tried various ways and all of them work.
+Our own use-case could be best solved with a NFC tablet, so this is what we would recommend in most cases.  
+
+### Meeting-Room Tablet
+
+Tablet which can be wall- and VESA mounted, has WLAN and only needs a tiny AC adapter. The NFC reader is on the front, so users can easily scan their tokens.
+
+Can be purchased at [AllNet DE](https://shop.allnet.de/detail/index/sarticle/338037) [AllNet AT](https://shop.allnet.de/displaysdigital-signage/stationaere-displays-mit-android-od.-linux/rockchip-rk3288/323023/allnet-meetingraum-rgb-led-tablet-10-zoll-rk3288-android-10-und-nfc) (this only works if you switch to the AT Shop through the dropdown in the header of the Shop).
+
+### Landi 15.6" Display System
+
+PoE, WiFi, IP55-rated for dust and water resistance, Bluetooth, 4GB/32GB, SD Card, USB-TypeC, USB-A, RS232/RJ22, RJ45, Android 13.0  
+
+Can be purchased at [Etiden](https://www.etiden.com/DE/86305-00-landi.html). 
+
+### Kiosk application
+
+The Android tablets need a Kiosk application, which makes sure that users always see the login screen:
+
+- Kiosk application: [Android Kiosk](https://www.android-kiosk.com/)
+
+### NFC Toke
+
+And you need a bunch of NFC tokens:
+
+- NFC tags: [NFC Tag Shop](https://www.nfc-tag-shop.de/NFC-Anhaenger-ABS-40-x-32-mm-NTAG213-180-Byte-blau/68199) 
+
+### Self-built setups
 
 This is NOT a hardware recommendation, but more an idea for possible use-cases.
 
@@ -36,17 +65,3 @@ I tried the linked products and even though all scanner are rather cheap, they w
 - [Barcode scanner](https://amzn.to/2Q9KWAy) classic hand-held version
 
 Above are affiliate links for Amazon (Germany) where I bought them myself. 
-
-**Meeting-Room Tablet with NFC**
-
-This proposal contains a tablet which can be wall- and VESA mounted, has WLAN and only needs a tiny AC adapter. The NFC reader is on the front, so users can easily scan their tokens.
-
-- Meeting room tablet: [AllNet DE](https://shop.allnet.de/detail/index/sarticle/338037) [AllNet AT](https://shop.allnet.de/displaysdigital-signage/stationaere-displays-mit-android-od.-linux/rockchip-rk3288/323023/allnet-meetingraum-rgb-led-tablet-10-zoll-rk3288-android-10-und-nfc) (this only works if you switch to the AT Shop through the dropdown in the header of the Shop)
- 
-You need a Kiosk application, which makes sure that users always see the login screen:
-
-- Kiosk application: [Android Kiosk](https://www.android-kiosk.com/)
-
-And you need a bunch of NFC tokens:
-
-- NFC tags: [NFC Tag Shop](https://www.nfc-tag-shop.de/NFC-Anhaenger-ABS-40-x-32-mm-NTAG213-180-Byte-blau/68199) 
