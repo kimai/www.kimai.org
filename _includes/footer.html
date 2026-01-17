@@ -13,10 +13,6 @@
 {% else %}
     {% assign text_class = 'text-white' %}
 {% endif %}
-{% assign englishOrGerman = 'en' %}
-{% if page.lang == 'de' %}
-    {% assign englishOrGerman = 'de' %}
-{% endif %}
 <footer class="footer {% if is_dark %}bg-dark {% endif %}pt-5 pb-4">
     <div class="container pt-1 pt-md-3 pt-lg-4 pt-xl-5">
         <div class="row">
@@ -67,11 +63,11 @@
                                     {% include link-translated-menu.html item="reviews" language=page.lang class="nav-link fs-sm fw-medium px-0 py-1" %}
                                 </li>
                                 <li class="nav-item">
-                                    {% include link-translated-menu.html type="landingpage" item="discount-codes" language=englishOrGerman class="nav-link fs-sm fw-medium px-0 py-1" %}
+                                    {% include link-translated-menu.html type="landingpage" item="discount-codes" language=english_german class="nav-link fs-sm fw-medium px-0 py-1" %}
                                 </li>
                                 {% if page.lang == 'de' or page.lang == 'en' %}
                                 <li class="nav-item">
-                                    {% include link-translated-menu.html item="time-tracking-terms" language=englishOrGerman class="nav-link fs-sm fw-medium px-0 py-1" %}
+                                    {% include link-translated-menu.html item="time-tracking-terms" language=english_german class="nav-link fs-sm fw-medium px-0 py-1" %}
                                 </li>
                                 {% endif %}
                             </ul>
@@ -87,7 +83,7 @@
                                 </li>
                                 {% endfor %}
                                 <li class="nav-item">
-                                    {% include link-translated-menu.html type="landingpage" item="non-profit" language=englishOrGerman class="nav-link fs-sm fw-medium px-0 py-1" %}
+                                    {% include link-translated-menu.html type="landingpage" item="non-profit" language=english_german class="nav-link fs-sm fw-medium px-0 py-1" %}
                                 </li>
                                 <li class="nav-item">
                                     {% assign industry_title=site.data[page.lang].translation.industry.more %}

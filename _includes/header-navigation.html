@@ -27,10 +27,6 @@
 {% if page.navi_absolute != nil %}
     {% assign is_absolute = page.navi_absolute %}
 {% endif %}
-{% assign englishOrGerman = 'en' %}
-{% if page.lang == 'de' %}
-    {% assign englishOrGerman = 'de' %}
-{% endif %}
 {% assign homepage = site.pages | where: "slug", "index" | find: "lang", page.lang %}
 {% assign store = site.pages | where: "slug", "store" | find: "lang", page.lang %}
 {% assign documentation = site.pages | where: "slug", "documentation" | find: "lang", page.lang %}
@@ -50,7 +46,7 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">{{ site.data[page.lang].translation.product.name }}</a>
                         <ul class="dropdown-menu">
                             <li>{% include link-translated-menu.html item="about" language=page.lang class="dropdown-item" %}</li>
-                            <li>{% include link-translated-menu.html type="landingpage" item="open-source-community" language=englishOrGerman class="dropdown-item" %}</li>
+                            <li>{% include link-translated-menu.html type="landingpage" item="open-source-community" language=english_german class="dropdown-item" %}</li>
                             <li class="dropdown-divider"></li>
                             <li>{% include link-translated-menu.html item="integrations" language=page.lang class="dropdown-item" %}</li>
                             <li>{% include link-translated-menu.html item="demo" language=page.lang class="dropdown-item" %}</li>

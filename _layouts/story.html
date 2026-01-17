@@ -1,13 +1,9 @@
 ---
 layout: base
 ---
-{% assign englishOrGerman = 'en' %}
-{% if page.lang == 'de' %}
-    {% assign englishOrGerman = 'de' %}
-{% endif %}
-{% assign homepage = site.pages | where: 'lang', englishOrGerman | find: 'slug', 'index' %}
-{% assign features = site.pages | where: 'lang', englishOrGerman | find: 'slug', 'features' %}
-{% assign stories = site.pages | where: 'lang', englishOrGerman | find: 'slug', 'stories' %}
+{% assign homepage = site.pages | where: 'lang', english_german | find: 'slug', 'index' %}
+{% assign features = site.pages | where: 'lang', english_german | find: 'slug', 'features' %}
+{% assign stories = site.pages | where: 'lang', english_german | find: 'slug', 'stories' %}
 
 <main class="page-wrapper">
     {% include header-navigation.html %}

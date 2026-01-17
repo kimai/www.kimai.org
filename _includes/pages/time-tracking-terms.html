@@ -7,15 +7,9 @@
 {% assign header_image = "/images/industry/time-tracking-terms.webp" %}
 {% comment %}https://www.pexels.com/photo/assorted-books-on-book-shelves-1370295/{% endcomment %}
 {% include hero-large-image.html image=header_image title=header_title subtitle=header_subtitle intro=header_intro %}
-
-{% assign englishOrGerman = 'en' %}
-{% if page.lang == 'de' %}
-    {% assign englishOrGerman = 'de' %}
-{% endif %}
-
     <section class="container mt-2 mt-md-4 mt-lg-5 mb-5">
         {% assign current = "" %}
-        {% assign lps = site.keywords | where: "lang", englishOrGerman | sort: "keyword" %}
+        {% assign lps = site.keywords | where: "lang", english_german | sort: "keyword" %}
         {% for lp in lps %}
         {% assign first_letter = lp.keyword | upcase | truncate: 1, '' %}
         {% unless first_letter == current %}
@@ -33,7 +27,7 @@
                 <p>{{ lp.intro }}</p>
                 {% endif %}
                 <div class="mt-4">
-                    <a href="{{ lp.url | full_url: englishOrGerman }}" class="btn btn-secondary">{{ lp.keyword }}</a>
+                    <a href="{{ lp.url | full_url: english_german }}" class="btn btn-secondary">{{ lp.keyword }}</a>
                 </div>
             </div>
             {% assign current = first_letter %}
