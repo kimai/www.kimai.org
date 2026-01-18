@@ -1,0 +1,922 @@
+<!doctype html>
+<html lang="zh_Hans" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#4188c9">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="robots" content="index,follow">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+<title>Changelog Kimai Cloud</title>
+<meta name="description" content="Overview of all Kimai cloud updates and when they were installed.">
+<link type="application/atom+xml" rel="alternate" href="https://www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
+<meta property="og:locale" content="zh_Hans">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Changelog Kimai Cloud">
+<meta property="og:image" content="https://www.kimai.org/images/social-preview.webp">
+<meta property="og:description" content="Overview of all Kimai cloud updates and when they were installed.">
+<link rel="alternate" hreflang="en" href="https://www.kimai.org/en/changelog">
+<link rel="alternate" hreflang="cs" href="https://www.kimai.org/cs/changelog">
+<link rel="alternate" hreflang="de" href="https://www.kimai.org/de/changelog">
+<link rel="alternate" hreflang="es" href="https://www.kimai.org/es/changelog">
+<link rel="alternate" hreflang="fr" href="https://www.kimai.org/fr/changelog">
+<link rel="alternate" hreflang="he" href="https://www.kimai.co.il/changelog">
+<link rel="alternate" hreflang="hr" href="https://www.kimai.org/hr/changelog">
+<link rel="alternate" hreflang="it" href="https://www.kimai.org/it/changelog">
+<link rel="alternate" hreflang="nl" href="https://www.kimai.org/nl/changelog">
+<link rel="alternate" hreflang="pl" href="https://www.kimai.org/pl/changelog">
+<link rel="alternate" hreflang="pt" href="https://www.kimai.org/pt/changelog">
+<link rel="alternate" hreflang="pt-br" href="https://www.kimai.org/pt_BR/changelog">
+<link rel="alternate" hreflang="ru" href="https://www.kimai.org/ru/changelog">
+<link rel="alternate" hreflang="sk" href="https://www.kimai.org/sk/changelog">
+<link rel="alternate" hreflang="sv" href="https://www.kimai.org/sv/changelog">
+<link rel="alternate" hreflang="ta" href="https://www.kimai.org/ta/changelog">
+<link rel="alternate" hreflang="uk" href="https://www.kimai.org/uk/changelog">
+<link rel="alternate" hreflang="zh-hans" href="https://www.kimai.org/zh_Hans/changelog">
+<link rel="alternate" hreflang="zh-hant" href="https://www.kimai.tw/changelog">
+<link href="/assets/build/main.css?v6" rel="stylesheet" />
+
+</head>
+<body class="">
+
+<main class="page-wrapper">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand-lg position-absolute navbar-dark   navbar-sticky">
+    <div class="container px-3">
+        <a href="/zh_Hans/" class="navbar-brand pe-3">
+        <img src="/images/kimai_logo_48.webp" style="height:36px;width:36px;" alt="Kimai - 开源时间跟踪器"> Kimai
+        </a>
+        <div id="navbarNav" class="offcanvas offcanvas-end bg-dark">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title">Menu</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Product</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/zh_Hans/about.html" class="dropdown-item">关于 Kimai</a></li>
+                            <li><a href="/en/open-source-community" class="dropdown-item">Open Source</a></li>
+                            <li class="dropdown-divider">
+                            </li>
+<li><a href="/zh_Hans/integrations" class="dropdown-item">应用和集成</a></li>
+                            <li><a href="/zh_Hans/demo.html" class="dropdown-item">演示</a></li>
+                            <li class="dropdown-divider">
+                            </li>
+<li><a href="/zh_Hans/blog/" class="dropdown-item">新闻</a></li>
+                            <li><a href="/zh_Hans/support.html" class="dropdown-item">技术支持</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Cloud</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/zh_Hans/pricing" class="dropdown-item">Pricing</a></li>
+                            <li><a href="/zh_Hans/changelog" class="dropdown-item">变更记录</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Self hosting</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/zh_Hans/download.html" class="dropdown-item">下载</a></li>
+                            <li><a href="/zh_Hans/store/" class="dropdown-item">插件</a></li>
+                            <li><a href="https://github.com/kimai/kimai/discussions" target="_blank" class="dropdown-item">Forum <i class="bx bx-link-external me-2"></i></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">文档</a>
+                        <ul class="dropdown-menu">
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-manual.html" class="dropdown-item">
+                                <i class="bx bx-book me-2"></i>
+                                
+                                用户手册
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/cloud.html" class="dropdown-item">
+                                <i class="bx bx-cloud me-2"></i>
+                                
+                                云
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-on-premise.html" class="dropdown-item">
+                                <i class="bx bx-server me-2"></i>
+                                
+                                Self hosting
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-developer.html" class="dropdown-item">
+                                <i class="bx bx-code-alt me-2"></i>
+                                
+                                开发者
+                            </a></li>
+                        
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="pe-lg-1 ms-auto me-2">
+            
+
+
+
+<a href="https://www.kimai.cloud/auth/" class="btn btn-sm fs-sm d-none d-md-inline-flex me-2 btn-outline-light">登录</a>
+
+            <a href="https://www.kimai.cloud/auth/registration" class="btn btn-success btn-sm fs-sm d-inline-flex">免费开始</a>
+
+        </div>
+        <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</header>
+
+
+    
+
+
+
+<section class="position-relative pt-5 bg-dark">
+
+    <div class="container position-relative zindex-2 pt-5 pb-2 pb-md-0">
+
+        <div class="row justify-content-center pt-3 mt-3">
+            <div class="col-xl-6 col-lg-7 col-md-8 col-sm-10 text-center">
+                <h1 class="mb-4">Changelog Kimai Cloud</h1>
+                <p class="text-body fs-lg pb-3 mb-3">Overview of all Kimai cloud updates and when they were installed.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex position-absolute top-100 start-0 w-100 overflow-hidden mt-n5" style="color: #0b0f19;">
+        <div class="position-relative start-50 translate-middle-x flex-shrink-0 mt-n5 mt-md-n3 mt-lg-n1" style="width: 3788px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="3788" height="144" viewbox="0 0 3788 144"><path fill="currentColor" d="M0,0h3788.7c-525,90.2-1181.7,143.9-1894.3,143.9S525,90.2,0,0z"></path></svg>
+        </div>
+    </div>
+</section>
+
+
+<section class="container py-5 my-md-2 my-lg-4 my-xl-5">
+    <div class="row justify-content-center pt-5 pb-1 pb-sm-2 pb-md-3">
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th style="min-width: 140px; max-width: 200px">Date</th>
+                <th>Title</th>
+            </tr>
+            </thead>
+            <tbody>
+            
+            <tr>
+                <td style="max-width: 200px">04 Jan 2026</td>
+                <td>
+                    <a href="/en/changelog/2026/cloud-update-125" class="text-decoration-none">Automatic theme switch, reverse charge and tax exempt invoices, Peppol support</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">22 Nov 2025</td>
+                <td>
+                    <a href="/en/changelog/2025/cloud-update-124" class="text-decoration-none">Support for EU e-invoicing, structured customer addresses, and refined API pagination</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">28 Sep 2025</td>
+                <td>
+                    <a href="/en/changelog/2025/cloud-update-123" class="text-decoration-none">Configurable PDF exports, unlock absences, new API method to update user-preferences</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">09 Aug 2025</td>
+                <td>
+                    <a href="/en/changelog/2025/cloud-update-122" class="text-decoration-none">Break times beta, Audit-Logs for Tasks and Expenses, Kiosk displays working-time summary</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">15 Jun 2025</td>
+                <td>
+                    <a href="/en/changelog/2025/cloud-update-121" class="text-decoration-none">Configurable CSV/XLSX export templates, improved time- and duration-input, API to create absences, new API docs layout</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">03 May 2025</td>
+                <td>
+                    <a href="/en/changelog/2025/cloud-update-120" class="text-decoration-none">Improved absence API endpoint, more replacer for customer/project/activity, Tamil translations</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">06 Apr 2025</td>
+                <td>
+                    <a href="/en/changelog/2025/cloud-update-119" class="text-decoration-none">Unlock approved months, updated Custom-Portal, improved work-contract calculation</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">16 Mar 2025</td>
+                <td>
+                    <a href="/en/changelog/2025/cloud-update-118" class="text-decoration-none">Cloud-Update 118</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">23 Feb 2025</td>
+                <td>
+                    <a href="/en/changelog/2025/cloud-update-117" class="text-decoration-none">Cloud-Update 117</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">09 Feb 2025</td>
+                <td>
+                    <a href="/en/changelog/2025/cloud-update-116" class="text-decoration-none">Cloud-Update 116</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">26 Jan 2025</td>
+                <td>
+                    <a href="/en/changelog/2025/cloud-update-115" class="text-decoration-none">Cloud-Update 115</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">08 Dec 2024</td>
+                <td>
+                    <a href="/en/changelog/2024/cloud-update-114" class="text-decoration-none">Cloud-Update 114</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">26 Oct 2024</td>
+                <td>
+                    <a href="/en/changelog/2024/cloud-update-113" class="text-decoration-none">Cloud-Update 113</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">05 Oct 2024</td>
+                <td>
+                    <a href="/en/changelog/2024/cloud-update-112" class="text-decoration-none">Cloud-Update 112</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">22 Sep 2024</td>
+                <td>
+                    <a href="/en/changelog/2024/cloud-update-111" class="text-decoration-none">Cloud Update 111</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">16 Sep 2024</td>
+                <td>
+                    <a href="/en/changelog/2024/cloud-update-110" class="text-decoration-none">Cloud Update 110</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">08 Aug 2024</td>
+                <td>
+                    <a href="/en/changelog/2024/cloud-update-109" class="text-decoration-none">Cloud Update 109</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">16 Jun 2024</td>
+                <td>
+                    <a href="/en/changelog/2024/cloud-update-108" class="text-decoration-none">Cloud Update 108</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">25 May 2024</td>
+                <td>
+                    <a href="/en/changelog/2024/cloud-update-107" class="text-decoration-none">Cloud Update 107</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">03 May 2024</td>
+                <td>
+                    <a href="/en/changelog/2024/cloud-update-106" class="text-decoration-none">Cloud Update 106</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">20 Apr 2024</td>
+                <td>
+                    <a href="/en/changelog/2024/cloud-update-105" class="text-decoration-none">Cloud Update 105</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">07 Apr 2024</td>
+                <td>
+                    <a href="/en/changelog/2024/cloud-update-104" class="text-decoration-none">Cloud Update 104</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">24 Mar 2024</td>
+                <td>
+                    <a href="/en/changelog/2024/cloud-update-103" class="text-decoration-none">Cloud Update 103</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">25 Feb 2024</td>
+                <td>
+                    <a href="/en/changelog/2024/cloud-update-102" class="text-decoration-none">Cloud Update 102</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">04 Feb 2024</td>
+                <td>
+                    <a href="/en/changelog/2024/cloud-update-101" class="text-decoration-none">Cloud Update 101</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">21 Jan 2024</td>
+                <td>
+                    <a href="/en/changelog/2024/cloud-update-100" class="text-decoration-none">Cloud Update 100</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">11 Jan 2024</td>
+                <td>
+                    <a href="/en/changelog/2024/cloud-update-99" class="text-decoration-none">Cloud Update 99</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">27 Dec 2023</td>
+                <td>
+                    <a href="/en/changelog/2023/cloud-update-98" class="text-decoration-none">Cloud Update 98</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">02 Dec 2023</td>
+                <td>
+                    <a href="/en/changelog/2023/cloud-update-97" class="text-decoration-none">Cloud Update</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">20 Nov 2023</td>
+                <td>
+                    <a href="/en/changelog/2023/cloud-update-96" class="text-decoration-none">Cloud Update</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">10 Nov 2023</td>
+                <td>
+                    <a href="/en/changelog/2023/cloud-update-95" class="text-decoration-none">Cloud-Update</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">01 Nov 2023</td>
+                <td>
+                    <a href="/en/changelog/2023/cloud-update-2-2-1" class="text-decoration-none">Cloud-Update</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">20 Oct 2023</td>
+                <td>
+                    <a href="/en/changelog/2023/cloud-update-2-1-0" class="text-decoration-none">Cloud-Update</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">23 Sep 2023</td>
+                <td>
+                    <a href="/en/changelog/2023/cloud-update-2-0-35" class="text-decoration-none">Cloud-Update</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">12 Sep 2023</td>
+                <td>
+                    <a href="/en/changelog/2023/cloud-update-2-0-33" class="text-decoration-none">Cloud-Update</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">09 Sep 2023</td>
+                <td>
+                    <a href="/en/changelog/2023/cloud-update-2-0-31" class="text-decoration-none">Cloud-Update</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">04 Jul 2023</td>
+                <td>
+                    <a href="/en/changelog/2023/cloud-update-2-0-27" class="text-decoration-none">Cloud-Update</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">10 Jun 2023</td>
+                <td>
+                    <a href="/en/changelog/2023/cloud-update-2-0-26" class="text-decoration-none">Cloud-Update</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">27 May 2023</td>
+                <td>
+                    <a href="/en/changelog/2023/cloud-update-2-0-24" class="text-decoration-none">Cloud-Update</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">17 May 2023</td>
+                <td>
+                    <a href="/en/changelog/2023/cloud-updates-2-0-21" class="text-decoration-none">Cloud-Update</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">09 May 2023</td>
+                <td>
+                    <a href="/en/changelog/2023/cloud-update-2-0-18" class="text-decoration-none">Cloud-Update</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">02 May 2023</td>
+                <td>
+                    <a href="/en/changelog/2023/cloud-update-2-0-17" class="text-decoration-none">Cloud-Update</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">25 Apr 2023</td>
+                <td>
+                    <a href="/en/changelog/2023/cloud-update-2-0-15" class="text-decoration-none">Cloud-Update</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">05 Apr 2023</td>
+                <td>
+                    <a href="/en/changelog/2023/cloud-update-2-0-14" class="text-decoration-none">Cloud-Update</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">30 Mar 2023</td>
+                <td>
+                    <a href="/en/changelog/2023/cloud-update-2-0-13" class="text-decoration-none">Cloud-Update</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">24 Mar 2023</td>
+                <td>
+                    <a href="/en/changelog/2023/cloud-update-2-0-12" class="text-decoration-none">Cloud-Update</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">21 Mar 2023</td>
+                <td>
+                    <a href="/en/changelog/2023/cloud-update-2-0-11" class="text-decoration-none">Cloud-Update</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">15 Mar 2023</td>
+                <td>
+                    <a href="/en/changelog/2023/cloud-update-2-0-10" class="text-decoration-none">Cloud-Update</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">08 Mar 2023</td>
+                <td>
+                    <a href="/en/changelog/2023/cloud-update-2-0-7" class="text-decoration-none">Cloud-Update</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">02 Mar 2023</td>
+                <td>
+                    <a href="/en/changelog/2023/cloud-update-2-0-4" class="text-decoration-none">Cloud-Update</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">24 Feb 2023</td>
+                <td>
+                    <a href="/en/changelog/2023/server-maintenance" class="text-decoration-none">Server maintenance</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">22 Feb 2023</td>
+                <td>
+                    <a href="/en/changelog/2023/cloud-update-2-0-2" class="text-decoration-none">Cloud-Update</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">18 Nov 2022</td>
+                <td>
+                    <a href="/en/changelog/2022/maintenance-18-20-november" class="text-decoration-none">Maintenance 18-20 November</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">30 Oct 2022</td>
+                <td>
+                    <a href="/en/changelog/2022/updates-end-of-october-2022" class="text-decoration-none">Updates end of October 2022</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">22 Sep 2022</td>
+                <td>
+                    <a href="/en/changelog/2022/new-features-september-2022" class="text-decoration-none">New features - September 2022</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">13 Jul 2022</td>
+                <td>
+                    <a href="/en/changelog/2022/new-features-july-2022" class="text-decoration-none">New features July 2022</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">31 May 2022</td>
+                <td>
+                    <a href="/en/changelog/2022/new-features-in-june-2022" class="text-decoration-none">New features in June 2022</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">05 Apr 2022</td>
+                <td>
+                    <a href="/en/changelog/2022/cloud-updates-april-2022" class="text-decoration-none">Cloud Updates - April 2022</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">12 Mar 2022</td>
+                <td>
+                    <a href="/en/changelog/2022/cloud-updates-march-2022" class="text-decoration-none">Cloud Updates - March 2022</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">30 Jan 2022</td>
+                <td>
+                    <a href="/en/changelog/2022/cloud-updates-january-2022" class="text-decoration-none">Cloud Updates - January 2022</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">15 Dec 2021</td>
+                <td>
+                    <a href="/en/changelog/2021/cloud-updates-december-2021" class="text-decoration-none">Cloud Updates - December 2021</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">29 Nov 2021</td>
+                <td>
+                    <a href="/en/changelog/2021/cloud-updates-november-2021" class="text-decoration-none">Cloud Updates - November 2021</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">21 May 2021</td>
+                <td>
+                    <a href="/en/changelog/2021/cloud-update-on-21-23-may-2021" class="text-decoration-none">Cloud update on 21 - 23 May 2021</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">23 Apr 2021</td>
+                <td>
+                    <a href="/en/changelog/2021/scheduled-maintenance-24-25-april" class="text-decoration-none">Scheduled maintenance 24.-25 April</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">16 Feb 2021</td>
+                <td>
+                    <a href="/en/changelog/2021/cloud-updates-week-07-february-2021" class="text-decoration-none">Cloud Updates - Week 07 - February 2021</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">06 Nov 2020</td>
+                <td>
+                    <a href="/en/changelog/2020/cloud-update-on-7-8-nov-2020" class="text-decoration-none">Cloud update on 7-8 Nov. 2020</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">08 May 2020</td>
+                <td>
+                    <a href="/en/changelog/2020/updating-cloud-instances-to-1-9" class="text-decoration-none">Updating cloud instances to 1.9</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">26 Apr 2020</td>
+                <td>
+                    <a href="/en/changelog/2020/updating-cloud-instances-to-1-8" class="text-decoration-none">Updating cloud instances to 1.8</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">01 Mar 2020</td>
+                <td>
+                    <a href="/en/changelog/2020/updating-cloud-instances-to-1-7" class="text-decoration-none">Updating cloud instances to 1.7</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="max-width: 200px">25 Nov 2019</td>
+                <td>
+                    <a href="/en/changelog/2019/updating-cloud-instances-to-1-6" class="text-decoration-none">Updating cloud instances to 1.6</a>
+                </td>
+            </tr>
+            
+            </tbody>
+        </table>
+
+    </div>
+</section>
+
+
+<section class="container mb-5">
+    <div class="position-relative bg-dark rounded-3 overflow-hidden px-3 py-5">
+        <span class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(255, 255, 255, .05)"></span>
+        <div class="position-relative zindex-5 text-center my-xl-3 py-1 py-md-4 py-lg-5">
+            <p class="lead text-light opacity-70 mb-3">准备好开始了吗？</p>
+            <h2 class="h1 text-light pb-3 pb-lg-0 mb-lg-5">立即开始您的时间跟踪之旅</h2>
+            <a href="https://www.kimai.cloud/auth/registration" class="btn btn-success btn-lg">免费开始</a>
+
+        </div>
+    </div>
+</section>
+
+
+
+</main>
+
+<footer class="footer bg-dark pt-5 pb-4">
+    <div class="container pt-1 pt-md-3 pt-lg-4 pt-xl-5">
+        <div class="row">
+            <div class="col-md-5 col-xl-4 mb-4 mb-md-5 mb-lg-0">
+                <div class="d-flex align-items-center pb-3 mb-1">
+                    <div class="navbar-brand text-white p-0 pe-1 me-0">
+                        Kimai
+                    </div>
+                    <hr class="vr mt-2 mx-3" style="height: 26px;">
+                    <div class="text-white fw-semibold ps-1">#1 开源的追踪工时工具</div>
+                </div>
+                <p class="text-body fs-sm pb-1 pb-md-2 pb-lg-2 mb-2">
+                    自由且易于使用的时间跟踪工具，适用于自由职业者、机构和公司。Kimai是一款开源软件，可供自行托管和作为SaaS使用。
+                </p>
+                <div class="d-flex flex-column flex-sm-row flex-lg-column align-items-sm-center align-items-lg-start justify-content-between pb-1 pb-md-2 pb-lg-3 mb-3">
+                    <div class="position-relative">
+                        <div class="dropdown">
+                            <button type="button" class="form-select" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-globe top-50 start-0 text-body me-2"></i>
+                                中文（中国）
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/cs/" class="dropdown-item" title="Kimai - Open Source sledování času">Čeština</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/de/" class="dropdown-item" title="Kimai – Open-Source Zeiterfassung">Deutsch</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org" class="dropdown-item" title="Kimai - Open Source time-tracker">English</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/es/" class="dropdown-item" title="Kimai - Tracker de tiempo abierto">Español</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/fr/" class="dropdown-item" title="Kimai - Suivi du temps à code ouvert">Français</a>
+                                
+                                    <a dir="rtl" href="https://www.kimai.co.il" class="dropdown-item" title="Kimai - מעקב שעות בקוד פתוח">עברית</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/hr/" class="dropdown-item" title="Kimai – Program otvorenog koda za evidentiranje vremena">Hrvatski</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/it/" class="dropdown-item" title="Kimai: time-tracker open source">Italiano</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/nl/" class="dropdown-item" title="Kimai - Open Source tijdregistratie">Dutch</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/pl/" class="dropdown-item" title="Kimai - Otwarte oprogramowanie do śledzenia czasu">Polski</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/pt/" class="dropdown-item" title="Kimai - Rastreador de tempo de código aberto">Português</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/pt_BR/" class="dropdown-item" title="Kimai - Rastreador de tempo de código aberto">Português (Brasil)</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/ru/" class="dropdown-item" title="Kimai - регистратор времени с открытым исходным кодом">Русский</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/sk/" class="dropdown-item" title="Kimai - Open Source sledovanie času">Slovenčina</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/sv/" class="dropdown-item" title="Kimai - öppen källkod tidsspårare">Svenska</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/ta/" class="dropdown-item" title="கிமாய் - திறந்த மூல நேர -கண்காணிப்பு">தமிழ்</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/uk/" class="dropdown-item" title="Kimai — реєстратор часу з відкритим сирцевим кодом">Українська</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/zh_Hans/" class="dropdown-item active" title="Kimai - 开源时间跟踪器">中文（中国）</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.tw" class="dropdown-item" title="Kimai —— 開放源始碼的工時追蹤工具">中文（繁體）</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-md-7 offset-xl-1">
+                <div id="footer-links" class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="tools" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/zh_Hans/features.html" class="nav-link fs-sm fw-medium px-0 py-1">功能特点</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/zh_Hans/stories/" class="nav-link fs-sm fw-medium px-0 py-1">Success Stories</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/zh_Hans/reviews" class="nav-link fs-sm fw-medium px-0 py-1">Reviews</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/en/kimai-discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">Discount codes</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="landing-kimai-for" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                
+                                
+                                <li class="nav-item">
+                                    <a href="/en/agency-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Time Tracking For Agencies">Agencies</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/consultants-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Time Tracking For Consultants">Consultants</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/freelancers-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Time tracking for successful freelancers">Freelancer</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/software-developers-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Time Tracking For Software Developers">Software Developers</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/time-tracking-non-profit.html" class="nav-link fs-sm fw-medium px-0 py-1">Non-Profits</a>
+                                </li>
+                                <li class="nav-item">
+                                    
+                                    <a href="/en/industry" class="nav-link fs-sm fw-medium px-0 py-1">More industries</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="footer-cmp" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/zh_Hans/compare/" class="nav-link fs-sm fw-medium px-0 py-1">Kimai alternatives</a>
+                                </li>
+                                
+                                
+                                
+                                    <li class="nav-item">
+                                        <a href="https://www.kimai.org/en/clockify-alternative" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai with Clockify">Clockify</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="https://www.kimai.org/en/openproject-alternative" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai with OpenProject">OpenProject</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="https://www.kimai.org/en/toggl-alternative" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai with toggl track">toggl track</a>
+                                    </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="d-md-flex align-items-center justify-content-between pt-sm-2 pt-md-4 pt-lg-5 pb-2 mt-4 ">
+    <ul class="nav order-md-1 ms-md-0 mb-3 mb-md-0">
+        <li class="nav-item">
+            <a href="/zh_Hans/site-notice.html" class="nav-link fs-sm fw-medium">网站公告</a>
+        </li>
+        <li class="nav-item">
+            <a href="/zh_Hans/privacy-policy.html" class="nav-link fs-sm fw-medium">隐私策略</a>
+        </li>
+        <li class="nav-item">
+            <a href="/zh_Hans/terms-cloud.html" class="nav-link fs-sm fw-medium">Terms</a>
+        </li>
+    </ul>
+    <div class="nav order-md-2 mb-3 mb-md-0">
+        
+    <a target="_blank" href="https://github.com/kimai/kimai" class="btn btn-icon btn-secondary btn-github rounded-circle me-3" aria-label="GitHub">
+        <i class="bx bxl-github"></i>
+    </a>
+
+    <a target="_blank" href="https://www.youtube.com/@kimai_org" class="btn btn-icon btn-secondary btn-youtube rounded-circle me-3" aria-label="YouTube">
+        <i class="bx bxl-youtube"></i>
+    </a>
+
+    <a target="_blank" href="https://www.linkedin.com/company/kimai-timetracker/" class="btn btn-icon btn-secondary btn-linkedin rounded-circle me-3" aria-label="LinkedIn">
+        <i class="bx bxl-linkedin"></i>
+    </a>
+
+    <a target="_blank" href="https://www.instagram.com/kimai_org" class="btn btn-icon btn-secondary btn-instagram rounded-circle me-3" aria-label="Instagram">
+        <i class="bx bxl-instagram"></i>
+    </a>
+
+    <a target="_blank" href="https://www.facebook.com/kimai.time.tracker" class="btn btn-icon btn-secondary btn-facebook rounded-circle me-3" aria-label="Facebook">
+        <i class="bx bxl-facebook"></i>
+    </a>
+
+    <a target="_blank" href="https://phpc.social/@kimai" class="btn btn-icon btn-secondary btn-messenger rounded-circle me-3" aria-label="Mastodon">
+        <i class="bx bxl-mastodon"></i>
+    </a>
+
+
+    </div>
+    <ul class="nav order-md-3">
+        <li class="nav-item">
+            <a href="https://uptime.kimai.cloud/" target="_blank" class="nav-link fs-sm fw-medium">Status</a>
+        </li>
+    </ul>
+    
+</div>
+
+    </div>
+</footer>
+
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js?v1"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
+
+</body>
+</html>
