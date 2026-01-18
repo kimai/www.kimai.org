@@ -9,8 +9,8 @@ The release 1.16 was published in November 2021.
 
 ### Attention before upgrading 
 
-Remember that [release 1.15]({% link _posts/2021-09-17-kimai-release-1-15.md %}): 
-- [dropped support for PHP 7.2 and added support for PHP 8]({% link _posts/2021-05-31-php8-support-php72-dropped.md %})
+Remember that [release 1.15]({% link _posts/en/2021-09-17-kimai-release-1-15.md %}): 
+- [dropped support for PHP 7.2 and added support for PHP 8]({% link _posts/en/2021-05-31-php8-support-php72-dropped.md %})
 - LDAP & SAML config structure changed
 
 ### List of notable changes

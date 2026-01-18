@@ -58,7 +58,7 @@ Instagram? Then don't sacrifice your focused work time for non-urgent requests.
 Below is an example of how a marketer can use time blocking to organise his daily schedule in his
 calendar.
 
-![How time blocking could look like in your calendar]({% link /images/blog/time-blocking-calendar.webp %}){:class="image"}
+{% include image.html src="/images/blog/time-blocking-calendar.webp" title="How time blocking could look like in your calendar" %}
 
 ## What Brings Time Blocking to the Next Level
 

@@ -22,7 +22,7 @@ Every summer, managers everywhere face the same existential questions:
 - Who will approve the approver’s vacation?
 - Why does everyone suddenly remember they have “unspent leave” on the hottest day of the year?
 
-![Who approves my vacation days?]({% link /images/blog/absence-management-who-approves.webp %}){:class="image"}
+{% include image.html src="/images/blog/absence-management-who-approves.webp" title="Who approves my vacation days?" %}
 
 The truth is, manual absence management is a recipe for confusion, lost productivity, and
 endless email chains. That’s why smart teams use digital tools to streamline the process. One
@@ -48,9 +48,9 @@ Watch this quick video tutorial on how to request summer vacations in Kimai and 
 
 Want to add some humor to your summer absence management?
 
-![Wen your approval request gets declined after your vacation started]({% link /images/blog/absence-management-declined-too-late.webp %}){:class="image"}
+{% include image.html src="/images/blog/absence-management-declined-too-late.webp" title="When your approval request gets declined after your vacation started" %}
 
-![When your approval request is approved]({% link /images/blog/absence-management-approved.webp %}){:class="image"}
+{% include image.html src="/images/blog/absence-management-approved.webp" title="When your approval request is approved" %}
 
 ## First steps to the better organised vacation season 
 

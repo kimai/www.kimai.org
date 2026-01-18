@@ -11,16 +11,16 @@ The release 1.13 was published, containing a lot of bugfixes and some new featur
 
 New configurations available for the "duration selector" and "start and end date minute dropdown":
 
-![Configuration](/images/documentation/timesheet/minute_configuration.webp "Configuration values to influence timesheet dropdowns"){:height="150px"}
+{% include image.html src="/images/documentation/timesheet/minute_configuration.webp" title="Configuration values to influence timesheet dropdowns" %}
 
 Default setting is to match your rounding rules. So when you have a rounding rule, that rounds the "duration" to 15 minutes you will see the new duration dropdown:
 
-![Configuration](/images/documentation/timesheet/duration_selector.webp "The new duration select dropdown"){:height="300px"}
+{% include image.html src="/images/documentation/timesheet/duration_selector.webp" title="The new duration select dropdown" %}
 
 If your rounding rule keep "From" and "To" as they are, you can still configure the minute selector to show ten minute 
 steps for "From" and "To" (see first screenshot) and you will get a shorter dropdown::
  
-![Configuration](/images/documentation/timesheet/minute_selector.webp "Minute selects support steps as well"){:height="300px"}
+{% include image.html src="/images/documentation/timesheet/minute_selector.webp" title="Minute selects support steps as well" %}
 
 As additional improvement, the duration field now accepts more formats and can interpret decimal as well.
 
@@ -33,21 +33,22 @@ Now all forms that are changed, cause the modal to display a warning message whe
 closed by using the "Save" or "Close" button.
 
 The message appears at the top of form, below the modals title:
-![Warning message](/images/documentation/modal_close.webp "Warning message prevents that changed forms will be accidentally closed"){:height="150px"}
+
+{% include image.html src="/images/documentation/modal_close.webp" title="Warning message prevents that changed forms will be accidentally closed" %}
 
 ### List actions for last items
 
 The action dropdown in long lists were partially hidden for the last iotems in the list, if the action menu was rather long.
 Thanks to Philipp these menus now appear as "drop-ups" and all entries can be selected: 
 
-![Configuration](/images/news/1-13-dropup.webp "List actions appear as drop-up"){:height="400px"}
+{% include image.html src="/images/news/1-13-dropup.webp" title="List actions appear as drop-up" %}
 
 ### Lockdown configuration
 
 The timesheet lockdown period is somewhat complicated to configure, if you are unfamiliar with the syntax of PHP datetime.
 To help with the process, the configuration screen now shows the calculated results of your configuration below the config boxes:
     
-![Warning message](/images/documentation/lockdown_configuration.webp "Rendered lockdown configuration values"){:height="250px"}
+{% include image.html src="/images/documentation/lockdown_configuration.webp" title="Rendered lockdown configuration values" %}
 
 ### Invoices
 

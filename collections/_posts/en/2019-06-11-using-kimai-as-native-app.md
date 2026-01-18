@@ -27,7 +27,7 @@ nativefier --icon touch-icon-192x192.png --name "Kimai 2 - Demo" "https://demo.k
 
 ## How it looks
 
-![Kimai native app screenshot]({% link /images/news/kimai-native-app.webp %}){:class="image"}
+{% include image.html src="/images/news/kimai-native-app.webp" title="Kimai native app screenshot" %}
 
 And that's it already. You will have a new directory with an executable inside.
 

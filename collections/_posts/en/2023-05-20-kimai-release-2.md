@@ -17,7 +17,7 @@ And now it is finally time to make it official: Kimai 2.0 is available for every
 
 This release is the result of almost 1.5 years work and received hundreds of visible and invisible changes.
 Hundreds of hours went into the improvement of Kimai itself, the website and documentation. 
-Read the [detailed list in this post]({% link _posts/2022-12-31-next-major-release-preview.md %}), here are some:
+Read the [detailed list in this post]({% link _posts/en/2022-12-31-next-major-release-preview.md %}), here are some:
 
 - New and improved UI design (e.g. buttons with labels, inline search, dark mode, right-to-left support)
 - Two-factor authentication 2FA with TOTP tokens (e.g. Google Authenticator app)
@@ -90,6 +90,6 @@ Please [contact me](mailto:{{ site.cloud.support_email }}) to discuss the detail
 ## Upgrading Plugins
 
 Old plugins are no longer compatible.
-So please [read this post]({% link _posts/2023-05-19-plugin-upgrades-v2.md %}) if you are using Kimai 1 plugins. 
+So please [read this post]({% link _posts/en/2023-05-19-plugin-upgrades-v2.md %}) if you are using Kimai 1 plugins. 
  
 Cloud users do not need to worry about this.

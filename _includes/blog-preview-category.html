@@ -1,19 +1,21 @@
-{% assign tag = include.tag %}
+{% assign tag_page = site.blog_tags | filter_slug_lang: include.tag %}
+{% assign tag = tag_page.display_tag %}
 {% assign limit = include.limit %}
 <div class="d-flex align-items-center justify-content-between my-2 pb-1 pb-md-3">
-    <h2 class="mb-3">{{ tag }}</h2>
+    <h2 class="mb-3">{{ tag_page.title }}</h2>
     <div class="nav flex-nowrap ms-sm-4 ms-3">
-        <a href="{% link _blog_tags/{{ tag | slugify  }}.html %}" class="btn btn-dark rounded-pill py-1 px-3" aria-label="View all">
-            View all
+        <a href="{% link _blog_tags/{{ english_german }}/{{ tag | slugify  }}.html %}" class="btn btn-dark rounded-pill py-1 px-3" aria-label="{{ site.data[page.lang].translation.blog.archive-tags }}">
+            {{ site.data[page.lang].translation.blog.archive-tags }}
             <i class="bx bx-right-arrow-alt fs-4"></i>
         </a>
     </div>
 </div>
 <div class="masonry-grid row row-cols-lg-3 row-cols-md-2 row-cols-1 g-4 shuffle mb-5">
-    {% for post in site.tags[tag] limit: limit %}
+{% assign tagged_posts = site.tags[tag] | filter_page_lang %}
+{% for post in tagged_posts limit: limit %}
     {% assign image = '/images/blog/cover-fallback.webp' %}
     {% if post.image != nil %}
-    {% assign image = post.image %}
+        {% assign image = post.image %}
     {% endif %}
     <div class="masonry-grid-item col pb-2 pb-lg-3 shuffle-item shuffle-item--visible {% if forloop.index0 == 2 %}d-md-none d-lg-block{% endif %}">
         <article class="card bg-transparent border-0">
@@ -40,5 +42,5 @@
             </div>
         </article>
     </div>
-    {% endfor %}
+{% endfor %}
 </div>

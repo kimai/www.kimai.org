@@ -41,8 +41,7 @@ Here's how to use Pomodoro in your working day:
    social media—your brain needs real rest.
 4. **Repeat the Cycle** After 4 sessions (about 2 hours), take a longer 15-30 minute break.
 
-
-![A day in pomodoros]({% link /images/blog/pomodoro-day.webp %}){:class="image"}
+{% include image.html src="/images/blog/pomodoro-day.webp" title="A day in pomodoros" %}
 
 ## Why People Fail to Use Pomodoro (And How to Succeed)
 

@@ -36,7 +36,7 @@ If you haven't received an email by the end of May 2023, please [contact me](mai
 ## Subscription model
 
 Most of the plugins will be moved to a subscription model.
-Several months ago I [wrote]({% link _posts/2022-12-31-next-major-release-preview.md %}): 
+Several months ago I [wrote]({% link _posts/en/2022-12-31-next-major-release-preview.md %}): 
 
 > While some of you might not like that announcement, I hope that most will understand it: plugin distribution will switch (at least partially) to a subscription model.
 > This is not about maximising profit, I would not share so much of my code and time for free otherwise.

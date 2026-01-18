@@ -25,8 +25,13 @@ layout: base
     <section class="container mb-5 pt-5 pb-lg-5" dir="ltr">
         <div class="tab-content pb-3">
             <div class="tab-pane fade show active" id="tag-{{ tag | slugify }}" role="tabpanel">
-                {% for post in site.posts %}
+                {% assign posts = site.posts | where: "lang", "en" %}
+                {% for post in posts %}
                     {% if post.tags contains tag %}
+                        {% assign tmp = site.posts | where: "lang", page.lang | where: "slug", post.slug %}
+                        {% if tmp != nil %}
+                            {% assign post = tmp %}
+                        {% endif %}
                         {% include card-blog-single.html post=post %}
                     {% endif %}
                 {% endfor %}

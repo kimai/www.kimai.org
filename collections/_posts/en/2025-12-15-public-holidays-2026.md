@@ -1,5 +1,5 @@
 ---
-title: "Public Holidays 2026: How to Set Up Your Time Tracking System Correctly"
+title: "Public Holidays 2026: How to Set Up Kimai Correctly"
 date: "2025-12-15 09:00:00 +0200"
 image: /images/blog/public-holidays-2026.webp
 author: valentina
@@ -11,7 +11,7 @@ excerpt: "This guide walks you through public holiday management for 2026, expla
 As companies prepare their HR and time tracking systems for the new year, one question always appears:  
 “Do we really need to record public holidays in our time tracking system if no one works on those days?”. The short answer: yes, absolutely.
 
-And with many people now searching for terms like <em>public holidays Germany 2026</em>, <em>public holiday calendar Europe 2026</em>, and <em>how to track public holidays in HR systems</em>, having the right setup matters more than ever.
+And with many people now searching for terms like **public holidays Germany 2026**, **public holiday calendar Europe 2026**, and **how to track public holidays in HR systems**, having the right setup matters more than ever.
 
 This guide walks you through public holiday management for 2026, explains why it’s essential for compliance, and shows how to set it up in Kimai.
 

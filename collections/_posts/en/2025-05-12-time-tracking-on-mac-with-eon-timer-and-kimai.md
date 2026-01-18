@@ -30,7 +30,7 @@ menu bar, without ever interrupting your flow.
 - Privacy and Control: Your data stays with you-especially important for professionals handling sensitive client information.
 - Clean, Minimalist Interface: Following Mac standards, Eon’s interface is distraction-free, letting you focus on your work, not your tools. [Just take a look at the screenshots]({% link _store/eon-timer.md %}).
 
-![A running timer!]({% link /images/marketplace/eon_timer-screen2.webp %}){:class="image"}
+{% include image.html src="/images/marketplace/eon_timer-screen2.webp" title="A running timer!" %}
 
 ## Time Tracking Isn't Over when you've Logged Time
 

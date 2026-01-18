@@ -143,6 +143,9 @@ rtl:
     - he
 
 collections:
+    posts:
+        output: true
+        permalink: "/:lang/blog/:year/:title"
     documentation:
         output: true
         permalink: "/:collection/:name.html"
@@ -168,8 +171,10 @@ collections:
         output: true
     blog_tags:
         output: true
+        permalink: "/:lang/blog/tags-:name.html"
     changelogs:
         output: true
+        permalink: "/:lang/changelog/:year/:title"
     stories:
         output: true
 
@@ -179,10 +184,20 @@ defaults:
             path: ""
             type: posts
         values:
-            permalink: "/blog/:year/:title/"
             layout: post
             author: kevinpapst
+    -
+        scope:
+            path: "_posts/en/"
+            type: posts
+        values:
             lang: en
+    -
+        scope:
+            path: "_posts/de/"
+            type: posts
+        values:
+            lang: de
     -
         scope:
             path: ""
@@ -265,7 +280,6 @@ defaults:
             path: "_changelogs/"
         values:
             layout: changelogs
-            permalink: "/blog/:year/:title"
             lang: en
             author: kevinpapst
             image: /images/blog/cloud-update.webp
@@ -284,6 +298,22 @@ defaults:
             layout: story
             permalink: "/de/stories/:title"
             lang: de
+    -
+        scope:
+            path: ""
+            type: "blog_tags"
+        values:
+            layout: blog-tags
+    -
+        scope:
+            path: "_blog_tags/de/"
+        values:
+            lang: de
+    -
+        scope:
+            path: "_blog_tags/en/"
+        values:
+            lang: en
 
 markdown: kramdown
 kramdown:

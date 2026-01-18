@@ -15,7 +15,8 @@ If you’re setting up time tracking for your business or for your team, this is
 A timesheet is a document or a digital form used to record and report the hours worked by an employee, including specific projects, tasks, or activities performed during their working time. 
 
 That’s an example of a weekly timesheet created in Kimai.
-![Weekly hours]({% link /images/screenshots/this-week-cut.webp %}){:class="image"}
+
+{% include image.html src="/images/screenshots/this-week-cut.webp" title="Weekly hours" %}
 
 ### How to fill out timesheets? How do timesheets work?
 
@@ -60,7 +61,7 @@ If you’re doing business in the EU, you need to be aware: as of 2024, time tra
 The EU Time Tracking legislation requires accurate records of employee work hours. 
 Kimai’s compliant features — like [audit trails]({% link _store/keleo-audit-trail-bundle.md %}) and GDPR-friendly data handling — make compliance easy.
 
-Learn more on our blog post on [EU Time Tracking Law]({% link _posts/2024-11-11-eu-time-tracking-law.md %})
+Learn more on our blog post on [EU Time Tracking Law]({% link _posts/en/2024-11-11-eu-time-tracking-law.md %})
 
 ### How can time tracking help with project management?
 
@@ -69,7 +70,7 @@ By tracking time spent on each task or project, you get real data for estimating
 
 No more guessing if you’ll hit your deadlines or budgets, no more unrealistic time estimates!
 
-![We don't leave on time!]({% link /images/memes/leaving-office-on-time.webp %}){:class="image"}
+{% include image.html src="/images/memes/leaving-office-on-time.webp" title="We don't leave on time!" %}
 
 ### What’s the best time tracking app or timesheet solution for business?
 
@@ -105,6 +106,6 @@ Your time tracking set up successfully? Want to make timesheet reminders fun?
 
 Use this meme picture to nudge your team (and lighten the mood).
 
-![Time for a new reminder!]({% link /images/memes/mrbean-reminder-timesheets.webp %}){:class="image"}
+{% include image.html src="/images/memes/mrbean-reminder-timesheets.webp" title="Time for a new reminder!" %}
 
 Found this guide helpful? Follow us for more clarity about time in your business!

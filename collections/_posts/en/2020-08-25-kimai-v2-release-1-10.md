@@ -128,7 +128,7 @@ All of you guys rock big times ❤️ thanks for being part of the Kimai communi
 - fix required fields in API [\#1718]({{ site.kimai_v2_repo }}/pull/1718) ([kevinpapst](https://github.com/kevinpapst))
 - allow to change PDF export layout via code [\#1684]({{ site.kimai_v2_repo }}/pull/1684) ([kevinpapst](https://github.com/kevinpapst))
 - fixed multilineIndent [\#1669]({{ site.kimai_v2_repo }}/pull/1669) ([kevinpapst](https://github.com/kevinpapst))
-- Users with view\_rate\_own\_timesheet can view all users revenue in dashboard [\#1913]({{ site.kimai_v2_repo }}/issues/1913)
+- Users with view\_rate\_own\_timesheet can see all users revenue in dashboard [\#1913]({{ site.kimai_v2_repo }}/issues/1913)
 - invoice language [\#1910]({{ site.kimai_v2_repo }}/issues/1910)
 - use configured language for non-twig invoice templates [\#1924]({{ site.kimai_v2_repo }}/pull/1924) ([kevinpapst](https://github.com/kevinpapst))
 - query widget data with user if requested [\#1917]({{ site.kimai_v2_repo }}/pull/1917) ([kevinpapst](https://github.com/kevinpapst))

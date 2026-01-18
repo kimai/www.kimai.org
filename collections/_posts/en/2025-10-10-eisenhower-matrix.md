@@ -79,7 +79,7 @@ This is where most people fail. They convince themselves everything is both urge
 
 For your first days with Eisenhower Matrix print out this template, write down and categorise your tasks.
 
-![Eisenhower Matrix]({% link /images/blog/eisenhower-matrix-illustration.webp %}){:class="image"}
+{% include image.html src="/images/blog/eisenhower-matrix-illustration.webp" title="Eisenhower Matrix" %}
 
 ## Where Most People Struggle
 

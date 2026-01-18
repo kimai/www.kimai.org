@@ -27,9 +27,7 @@
 {% if page.navi_absolute != nil %}
     {% assign is_absolute = page.navi_absolute %}
 {% endif %}
-{% assign homepage = site.pages | where: "slug", "index" | find: "lang", page.lang %}
-{% assign store = site.pages | where: "slug", "store" | find: "lang", page.lang %}
-{% assign documentation = site.pages | where: "slug", "documentation" | find: "lang", page.lang %}
+{% assign homepage = site.pages | filter_slug_lang: "index" %}
 <header class="header navbar navbar-expand-lg {% if is_absolute %}position-absolute{% endif %} {% if is_dark %}navbar-dark{% endif %} {% if is_bg_dark %}bg-dark{% endif %} {% if is_light %}bg-light{% endif %} navbar-sticky">
     <div class="container px-3">
         <a href="{{ homepage.url }}" class="navbar-brand pe-3">
@@ -46,12 +44,12 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">{{ site.data[page.lang].translation.product.name }}</a>
                         <ul class="dropdown-menu">
                             <li>{% include link-translated-menu.html item="about" language=page.lang class="dropdown-item" %}</li>
-                            <li>{% include link-translated-menu.html type="landingpage" item="open-source-community" language=english_german class="dropdown-item" %}</li>
+                            <li>{% include link-translated-menu.html type="landingpage" item="open-source-community" language=page.lang class="dropdown-item" %}</li>
                             <li class="dropdown-divider"></li>
                             <li>{% include link-translated-menu.html item="integrations" language=page.lang class="dropdown-item" %}</li>
                             <li>{% include link-translated-menu.html item="demo" language=page.lang class="dropdown-item" %}</li>
                             <li class="dropdown-divider"></li>
-                            <li>{% include link-translated-menu.html item="blog" language="en" class="dropdown-item" %}</li>
+                            <li>{% include link-translated-menu.html item="blog" language=page.lang class="dropdown-item" %}</li>
                             <li>{% include link-translated-menu.html item="support" language=page.lang class="dropdown-item" %}</li>
                         </ul>
                     </li>

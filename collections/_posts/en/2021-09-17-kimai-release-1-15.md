@@ -9,8 +9,8 @@ The release 1.15 was published in September 2021.
 
 ### Attention before upgrading 
 
-- Support for [PHP 7.2 was dropped and PHP 8 support was added]({% link _posts/2021-05-31-php8-support-php72-dropped.md %})!
-- Remember that [release 1.14]({% link _posts/2021-05-21-kimai-v2-release-1-14.md %}) dropped SQLite and the FTP package (see [announcement]({% link _posts/2021-04-03-sqlite-and-ftp-support-removed.md %})).
+- Support for [PHP 7.2 was dropped and PHP 8 support was added]({% link _posts/en/2021-05-31-php8-support-php72-dropped.md %})!
+- Remember that [release 1.14]({% link _posts/en/2021-05-21-kimai-v2-release-1-14.md %}) dropped SQLite and the FTP package (see [announcement]({% link _posts/en/2021-04-03-sqlite-and-ftp-support-removed.md %})).
 - Updating the database might take quite a while, depending on the amount of timesheet entries (~1 minute per 100k records).
 - API: Due to team structure changes, it was impossible to keep the (writing) API structure. Please adjust your code accordingly!
 

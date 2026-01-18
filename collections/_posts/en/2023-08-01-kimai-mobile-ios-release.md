@@ -37,7 +37,7 @@ Since its launch, [Kimai Mobile](https://www.kimaimobile.com/) has already recei
 Cloudrizon GmbH remains dedicated to improving the application by adding new features and enhancing its overall stability, delivering an ever evolving and exceptional user experience. 
 Stay informed about upcoming features by checking the [website](https://www.kimaimobile.com/features/).  
 
-![Kimai Mobile app screenshot]({% link /images/news/Kimai-Mobile-with-offline.webp %}){:class="image"}
+{% include image.html src="/images/news/Kimai-Mobile-with-offline.webp" title="Kimai Mobile app screenshot" %}
 
 ### The perfect time management companion  
 

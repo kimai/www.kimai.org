@@ -45,7 +45,7 @@ This is how you can go beyond the default export templates and create custom exp
 2. Give it a name and select your preferred file type (CSV, Excel, or PDF).
 3. Choose the language, specific data columns, and any filters relevant to your report.
 
-![Edit export template form]({% link /images/documentation/export-create-template.webp %}){:class="image"}
+{% include image.html src="/images/blog/export-create-template.webp" title="Edit export template" %}
 
 Need a short summary with total hours and rates? Or a detailed breakdown per project and user? 
 Kimai makes it easy to design your perfect report — once, and reuse it anytime.

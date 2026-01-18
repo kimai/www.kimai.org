@@ -19,7 +19,7 @@ Not everyone will like it (as it is always with relaunches) and the new website 
 
 So say goodbye to:
 
-![Old website design]({% link /images/news/old-website.webp %}){:class="image"}
+{% include image.html src="/images/news/old-website.webp" title="Old website design" %}
 
 And the next posts will be more about Kimai v2 and less about us ;-)
 

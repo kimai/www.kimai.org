@@ -7,7 +7,7 @@ tags: [Cloud]
 excerpt: "You know that the big IT corporations say *data is gold*, do you? We believe it's important to protect you!"
 ---
 
-Last week, we hit a significant milestone at Kimai - [our 3 millionth timesheet]({% link _posts/2025-01-09-thank-you-3-million.md %})! 
+Last week, we hit a significant milestone at Kimai - [our 3 millionth timesheet]({% link _posts/en/2025-01-09-thank-you-3-million.md %})! 
 
 This achievement is even more meaningful because it represents genuine, active usage. We've actually processed more, but we don't count the ones from inactive accounts. 
 At Kimai, we believe in quality over quantity, prioritizing honest numbers over inflated statistics.
