@@ -25,7 +25,8 @@ layout: base
                             {{ tool.name }} alternative
                         </h1>
                         <p class="mb-4 mx-md-0 mx-auto pb-xl-3 pb-lg-2 fs-lg" style="max-width: 30.5rem;">
-                            Kimai is the #1 open-source <a href="{% include link-language-menu.html language=page.lang item="alternatives" %}">time-tracking alternative</a> for {{ tool.name }}.
+                            {% assign alt_page = site.pages | filter_slug_lang: "alternatives" %}
+                            Kimai is the #1 open-source <a href="{{ alt_page.url }}">time-tracking alternative</a> for {{ tool.name }}.
                             See how Kimai measures up to {{ tool.name }}, so you can choose the right solution for your business.
                         </p>
                     </div>
