@@ -579,12 +579,10 @@ Any issues with the container rather than the application itself can be raised <
 
 <p>The <strong>Docker Hub repo</strong>, where you find the auto-building prod and dev containers for Kimai is: <a href="https://hub.docker.com/r/kimai/kimai2">https://hub.docker.com/r/kimai/kimai2</a></p>
 
-<h2 id="available-tags">Available tags</h2>
+<h2 id="available-images">Available images</h2>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache</code>: the latest Kimai version bundled in an Apache container, needs a reverse proxy only</li>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm</code>: the latest Kimai version bundled in PHP-FPM Alpine container (smaller image, but <a href="/documentation/docker-compose.html">needs extra setup steps</a>)</li>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:latest</code>: same as <code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm</code></li>
   <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:dev</code>: development image based on Apache, only to be used locally with debug mode and more</li>
 </ul>
 
@@ -592,23 +590,6 @@ Any issues with the container rather than the application itself can be raised <
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-x.xx.x</code>: version specific release (Apache container)</li>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-x.xx.x</code>: version specific release (PHP-FPM container)</li>
-</ul>
-
-<p>The following tags are deprecated and will not receive updates anymore, replace them:</p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-prod</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:apache</code></li>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-latest</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:apache</code></li>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-prod</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm</code></li>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-latest</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm</code></li>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:prod</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm</code></li>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-dev</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:dev</code></li>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-dev</code>: no replacement</li>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-x.xx.x-dev</code>: no replacement</li>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-x.xx.x-dev</code>: no replacement</li>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-x.xx.x-prod</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-x.xx.x</code></li>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-x.xx.x-prod</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-x.xx.x</code></li>
 </ul>
 
 <h2 id="environment-variables">Environment variables</h2>
@@ -699,6 +680,32 @@ Any issues with the container rather than the application itself can be raised <
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker <span class="nb">exec</span> <span class="nt">-ti</span> kimai-test /opt/kimai/bin/console kimai:reload <span class="nt">--env</span><span class="o">=</span>prod
 </code></pre></div></div>
 
+<h2 id="deprecated-images">Deprecated images</h2>
+
+<p>The following tags are still available, but will stop receiving updates after the next major release, replace them ASAP:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm</code>: the latest Kimai version bundled in PHP-FPM Alpine container (smaller image, but <a href="/documentation/docker-compose.html">needs extra setup steps</a>)</li>
+  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:latest</code>: same as <code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm</code></li>
+</ul>
+
+<p>The following tags are deprecated and will not receive updates anymore, replace them:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-x.xx.x</code>: version specific release (PHP-FPM container)</li>
+  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-prod</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:apache</code></li>
+  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-latest</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:apache</code></li>
+  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-prod</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm</code></li>
+  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-latest</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm</code></li>
+  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:prod</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm</code></li>
+  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-dev</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:dev</code></li>
+  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-dev</code>: no replacement</li>
+  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-x.xx.x-dev</code>: no replacement</li>
+  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-x.xx.x-dev</code>: no replacement</li>
+  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-x.xx.x-prod</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-x.xx.x</code></li>
+  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-x.xx.x-prod</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-x.xx.x</code></li>
+</ul>
+
                 </div>
                 
 
@@ -712,7 +719,7 @@ Any issues with the container rather than the application itself can be raised <
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#available-tags" class="nav-link">Available tags</a></li><li class="nav-item"><a href="#environment-variables" class="nav-link">Environment variables</a></li><li class="nav-item"><a href="#quick-test-setup" class="nav-link">Quick test setup</a></li><li class="nav-item"><a href="#running-commands" class="nav-link">Running commands</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#available-images" class="nav-link">Available images</a></li><li class="nav-item"><a href="#environment-variables" class="nav-link">Environment variables</a></li><li class="nav-item"><a href="#quick-test-setup" class="nav-link">Quick test setup</a></li><li class="nav-item"><a href="#running-commands" class="nav-link">Running commands</a></li><li class="nav-item"><a href="#deprecated-images" class="nav-link">Deprecated images</a></li></ul>
         
     </aside>
 
