@@ -48,11 +48,11 @@
                                     {% include link-translated-menu.html item="reviews" language=page.lang class="nav-link fs-sm fw-medium px-0 py-1" %}
                                 </li>
                                 <li class="nav-item">
-                                    {% include link-translated-menu.html type="landingpage" item="discount-codes" language=english_german class="nav-link fs-sm fw-medium px-0 py-1" %}
+                                    {% include link-translated-menu.html type="landingpage" item="discount-codes" language=page.lang class="nav-link fs-sm fw-medium px-0 py-1" %}
                                 </li>
                                 {% if page.lang == 'de' or page.lang == 'en' %}
                                 <li class="nav-item">
-                                    {% include link-translated-menu.html item="time-tracking-terms" language=english_german class="nav-link fs-sm fw-medium px-0 py-1" %}
+                                    {% include link-translated-menu.html item="time-tracking-terms" language=page.lang class="nav-link fs-sm fw-medium px-0 py-1" %}
                                 </li>
                                 {% endif %}
                             </ul>
@@ -68,7 +68,7 @@
                                 </li>
                                 {% endfor %}
                                 <li class="nav-item">
-                                    {% include link-translated-menu.html type="landingpage" item="non-profit" language=english_german class="nav-link fs-sm fw-medium px-0 py-1" %}
+                                    {% include link-translated-menu.html type="landingpage" item="non-profit" language=page.lang class="nav-link fs-sm fw-medium px-0 py-1" %}
                                 </li>
                                 <li class="nav-item">
                                     {% assign industry_title=site.data[page.lang].translation.industry.more %}
