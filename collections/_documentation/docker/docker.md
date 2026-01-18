@@ -9,31 +9,14 @@ Any issues with the container rather than the application itself can be raised [
 
 The **Docker Hub repo**, where you find the auto-building prod and dev containers for Kimai is: [https://hub.docker.com/r/kimai/kimai2](https://hub.docker.com/r/kimai/kimai2)
 
-## Available tags
+## Available images
 
 - `kimai/kimai2:apache`: the latest Kimai version bundled in an Apache container, needs a reverse proxy only
-- `kimai/kimai2:fpm`: the latest Kimai version bundled in PHP-FPM Alpine container (smaller image, but [needs extra setup steps]({% link _documentation/docker/docker-compose.md %})) 
-- `kimai/kimai2:latest`: same as `kimai/kimai2:fpm`
 - `kimai/kimai2:dev`: development image based on Apache, only to be used locally with debug mode and more 
 
 Each new release creates tag names containing the Kimai release number:
 
 - `kimai/kimai2:apache-x.xx.x`: version specific release (Apache container)  
-- `kimai/kimai2:fpm-x.xx.x`: version specific release (PHP-FPM container)
-
-The following tags are deprecated and will not receive updates anymore, replace them:
-
-- `kimai/kimai2:apache-prod`: replaced by `kimai/kimai2:apache` 
-- `kimai/kimai2:apache-latest`: replaced by `kimai/kimai2:apache` 
-- `kimai/kimai2:fpm-prod`: replaced by `kimai/kimai2:fpm`
-- `kimai/kimai2:fpm-latest`: replaced by `kimai/kimai2:fpm` 
-- `kimai/kimai2:prod`: replaced by `kimai/kimai2:fpm`
-- `kimai/kimai2:apache-dev`: replaced by `kimai/kimai2:dev`  
-- `kimai/kimai2:fpm-dev`: no replacement
-- `kimai/kimai2:apache-x.xx.x-dev`: no replacement
-- `kimai/kimai2:fpm-x.xx.x-dev`: no replacement 
-- `kimai/kimai2:apache-x.xx.x-prod`: replaced by `kimai/kimai2:apache-x.xx.x` 
-- `kimai/kimai2:fpm-x.xx.x-prod`: replaced by `kimai/kimai2:fpm-x.xx.x` 
 
 ## Environment variables
 
@@ -115,3 +98,25 @@ For example clearing the cache is
 ```bash
 docker exec -ti kimai-test /opt/kimai/bin/console kimai:reload --env=prod
 ```
+
+## Deprecated images 
+
+The following tags are still available, but will stop receiving updates after the next major release, replace them ASAP:
+
+- `kimai/kimai2:fpm`: the latest Kimai version bundled in PHP-FPM Alpine container (smaller image, but [needs extra setup steps]({% link _documentation/docker/docker-compose.md %}))
+- `kimai/kimai2:latest`: same as `kimai/kimai2:fpm`
+
+The following tags are deprecated and will not receive updates anymore, replace them:
+
+- `kimai/kimai2:fpm-x.xx.x`: version specific release (PHP-FPM container)
+- `kimai/kimai2:apache-prod`: replaced by `kimai/kimai2:apache`
+- `kimai/kimai2:apache-latest`: replaced by `kimai/kimai2:apache`
+- `kimai/kimai2:fpm-prod`: replaced by `kimai/kimai2:fpm`
+- `kimai/kimai2:fpm-latest`: replaced by `kimai/kimai2:fpm`
+- `kimai/kimai2:prod`: replaced by `kimai/kimai2:fpm`
+- `kimai/kimai2:apache-dev`: replaced by `kimai/kimai2:dev`
+- `kimai/kimai2:fpm-dev`: no replacement
+- `kimai/kimai2:apache-x.xx.x-dev`: no replacement
+- `kimai/kimai2:fpm-x.xx.x-dev`: no replacement
+- `kimai/kimai2:apache-x.xx.x-prod`: replaced by `kimai/kimai2:apache-x.xx.x`
+- `kimai/kimai2:fpm-x.xx.x-prod`: replaced by `kimai/kimai2:fpm-x.xx.x` 
