@@ -1,25 +1,13 @@
-{% assign is_light = false %}
-{% assign is_dark = true %}
-{% assign text_class = '' %}
-{% if include.light != nil %}
-    {% assign is_light = include.light %}
-{% endif %}
-{% if is_light %}
-    {% assign is_dark = false %}
-    {% assign text_class = 'text-dark' %}
-{% else %}
-    {% assign text_class = 'text-white' %}
-{% endif %}
-<footer class="footer {% if is_dark %}bg-dark {% endif %}pt-5 pb-4">
+<footer class="footer bg-dark pt-5 pb-4">
     <div class="container pt-1 pt-md-3 pt-lg-4 pt-xl-5">
         <div class="row">
             <div class="col-md-5 col-xl-4 mb-4 mb-md-5 mb-lg-0">
                 <div class="d-flex align-items-center pb-3 mb-1">
-                    <div class="navbar-brand {{ text_class}} p-0 pe-1 me-0">
+                    <div class="navbar-brand text-white p-0 pe-1 me-0">
                         Kimai
                     </div>
                     <hr class="vr mt-2 mx-3" style="height: 26px;">
-                    <div class="{{ text_class}} fw-semibold ps-1">{{ site.data[page.lang].translation.slogan }}</div>
+                    <div class="text-white fw-semibold ps-1">{{ site.data[page.lang].translation.slogan }}</div>
                 </div>
                 <p class="text-body fs-sm pb-1 pb-md-2 pb-lg-2 mb-2">
                     {{ site.data[page.lang].translation.footer }}
