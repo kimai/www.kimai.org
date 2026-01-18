@@ -163,12 +163,16 @@ collections:
         permalink: "/store/:title.html"
     alternative:
         output: true
+        permalink: "/:lang/:title-alternative"
     keywords:
         output: true
+        permalink: ":lang/open-source-:title"
     landingpage:
         output: true
+        permalink: "/:lang/:title"
     industries:
         output: true
+        permalink: "/:lang/:title-time-tracking"
     blog_tags:
         output: true
         permalink: "/:lang/blog/tags-:name.html"
@@ -177,6 +181,7 @@ collections:
         permalink: "/:lang/changelog/:year/:title"
     stories:
         output: true
+        permalink: "/:lang/stories/:title"
 
 defaults:
     -
@@ -186,16 +191,10 @@ defaults:
         values:
             layout: post
             author: kevinpapst
-    -
-        scope:
-            path: "_posts/en/"
-            type: posts
-        values:
             lang: en
     -
         scope:
             path: "_posts/de/"
-            type: posts
         values:
             lang: de
     -
@@ -238,12 +237,18 @@ defaults:
             lang: en
     -
         scope:
-            path: "_alternative/en/"
+            path: ""
             type: alternative
         values:
             layout: alternative
             lang: en
-            permalink: "/en/:title-alternative"
+    -
+        scope:
+            path: ""
+            type: keywords
+        values:
+            layout: keyword
+            lang: en
     -
         scope:
             path: "_keywords/de/"
@@ -251,33 +256,27 @@ defaults:
             lang: de
     -
         scope:
-            path: "_keywords/en/"
+            path: ""
+            type: landingpage
         values:
+            layout: landingpage
             lang: en
     -
         scope:
             path: "_landingpage/de/"
         values:
-            layout: landingpage
-            permalink: "/de/:title"
             lang: de
     -
         scope:
-            path: "_landingpage/en/"
-        values:
-            layout: landingpage
-            permalink: "/en/:title"
-            lang: en
-    -
-        scope:
-            path: "_industries/en/"
+            path: ""
+            type: industries
         values:
             layout: industry
-            permalink: "/en/:title-time-tracking"
             lang: en
     -
         scope:
-            path: "_changelogs/"
+            path: ""
+            type: changelogs
         values:
             layout: changelogs
             lang: en
@@ -286,34 +285,28 @@ defaults:
             tags: [Changelog]
     -
         scope:
-            path: "_stories/en/"
+            path: ""
+            type: stories
         values:
             layout: story
-            permalink: "/en/stories/:title"
             lang: en
     -
         scope:
             path: "_stories/de/"
         values:
-            layout: story
-            permalink: "/de/stories/:title"
             lang: de
     -
         scope:
             path: ""
-            type: "blog_tags"
+            type: blog_tags
         values:
             layout: blog-tags
+            lang: en
     -
         scope:
             path: "_blog_tags/de/"
         values:
             lang: de
-    -
-        scope:
-            path: "_blog_tags/en/"
-        values:
-            lang: en
 
 markdown: kramdown
 kramdown:

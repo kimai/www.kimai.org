@@ -2,8 +2,6 @@
 title: "Open-Source Stundennachweis"
 keyword: "Stundennachweise"
 intro: "Ein Stundennachweis ist ein Dokument, das die geleisteten Arbeitsstunden eines Mitarbeiters mit Datum, Beginn, Ende und Dauer der täglichen Arbeitszeit detailliert auflistet."
-permalink: "/de/open-source-stundennachweis"
-layout: keyword
 ---
 
 ### Kimai: Die Open-Source Lösung für die digitale Erfassung von Stundennachweisen

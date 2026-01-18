@@ -2,8 +2,6 @@
 title: "Open-Source Zeiterfassung"
 keyword: "Zeiterfassung"
 intro: "Zeiterfassung ist die systematische Dokumentation und Aufzeichnung von Arbeitszeiten, Pausen und Abwesenheiten der Mitarbeiter mittels manueller oder elektronischer Methoden."
-permalink: "/de/open-source-zeiterfassung"
-layout: keyword
 ---
 
 Willkommen in der Welt, in der Zeiterfassung und Innovation aufeinandertreffen - Kimai steht an der Spitze der Open-Source Zeiterfassung für projektbasierte Teams!
