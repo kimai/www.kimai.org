@@ -2,7 +2,7 @@
     <i class="{{ include.icon | icon }} bx-lg"></i>
 </div>
 <h3 class="h5 mb-3">{{ include.title }}</h3>
-<p class="px-5">{{ include.description|raw }}</p>
+<p class="px-5">{{ include.description }}</p>
 <div class="text-center mt-4">
     <a href="{{ include.url }}" class="btn btn-{{ include.color }} w-50" target="_blank">{{ site.data[page.lang].translation.access-demo }}</a>
     {% capture demo_id %}<span id="demo_box_{{ include.id }}">?</span>{% endcapture %}
