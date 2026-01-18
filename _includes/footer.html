@@ -1,9 +1,6 @@
 {% assign is_light = false %}
 {% assign is_dark = true %}
 {% assign text_class = '' %}
-{% if page.footer_light != nil %}
-    {% assign is_light = page.footer_light %}
-{% endif %}
 {% if include.light != nil %}
     {% assign is_light = include.light %}
 {% endif %}
