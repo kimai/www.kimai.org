@@ -43,10 +43,7 @@ und vergleichen Sie das Pro-Kopf-BIP Ihres Landes (IMF Estimate) mit der unten s
 | < 45.000       | 5 %      |
 {: .table }
 
-Der Rabatt gilt dauerhaft auf die Erstbestellung. 
-Sollten Sie kündigen und nach einer Pause wieder neu bestellen wollen, dann wird hierfür kein neuer Rabatt gewährt. 
-
-Dieses Angebot gilt nur für Unternehmen mit weniger als 20 Mitarbeitern.
+Der Rabatt gilt dauerhaft. Dieses Angebot gilt nur für Unternehmen mit weniger als 100 Mitarbeitern.
 
 Wenn Du [Kontakt aufnimmst](mailto:{{ site.support_email }}), vergiss nicht Nachweise (wie der Unternehmensregistrierung) beizufügen.
 Die Email muss zudem von der Unternehmens-Domain gesendet werden. Rabatte von Gmail Konten in Kombination mit anonymen 
