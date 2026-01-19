@@ -17,6 +17,8 @@ There are a couple of differences in these two Kimai modules, the most important
 
 ## Export state
 
+{% include youtube-video.html id="exports_invoices" chapter="export" %}
+
 Invoices and exports share the export state, which is used to mark timesheet records as processed. 
 These records cannot be edited any longer by regular users and are excluded by default from further invoices and exports.
  
