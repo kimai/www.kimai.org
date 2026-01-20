@@ -1,6 +1,7 @@
 ---
 title: "Sunsetting FPM docker images"
 date: "2026-01-16 16:00:00 +0200"
+image: /images/blog/sunset-fpm-images.webp
 tags: [On-Premise]
 excerpt: "Due to continuing issues with the FPM docker images, we are deprecating their usage."
 cta: cloud
