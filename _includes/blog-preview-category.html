@@ -4,7 +4,7 @@
 <div class="d-flex align-items-center justify-content-between my-2 pb-1 pb-md-3">
     <h2 class="mb-3">{{ tag_page.title }}</h2>
     <div class="nav flex-nowrap ms-sm-4 ms-3">
-        <a href="{% link _blog_tags/{{ english_german }}/{{ tag | slugify  }}.html %}" class="btn btn-dark rounded-pill py-1 px-3" aria-label="{{ site.data[page.lang].translation.blog.archive-tags }}">
+        <a href="{{ tag_page.url }}" class="btn btn-dark rounded-pill py-1 px-3" aria-label="{{ site.data[page.lang].translation.blog.archive-tags }}">
             {{ site.data[page.lang].translation.blog.archive-tags }}
             <i class="bx bx-right-arrow-alt fs-4"></i>
         </a>
