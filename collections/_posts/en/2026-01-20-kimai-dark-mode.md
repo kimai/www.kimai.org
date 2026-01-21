@@ -2,7 +2,8 @@
 title: "Are You More Light Side or Dark Side? Discover Kimai Dark Mode"
 date: "2026-01-20 13:00:00 +0200"
 image: /images/blog/dark-mode.webp
-tags: [On-Premise]
+author: valentina
+tags: [general]
 excerpt: "Why dark mode matters and how to set up your design preferences in Kimai Time Tracker."
 cta: cloud
 ---
