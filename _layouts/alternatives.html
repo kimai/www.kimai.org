@@ -47,15 +47,11 @@ layout: base
                 </div>
             </div>
             <div class="row align-items-center justify-content-center py-4 py-md-5 my-1 my-sm-3 my-md-0 my-xl-3">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 pb-xl-3">
+                <div class="row row-cols-1 row-cols-sm-2 g-4 pb-xl-3">
                     {% assign tools = site.alternative | where_exp: "alt", "alt.lang == 'en'" | sort: slug %}
                     {% for tool in tools %}
-                    <div class="col text-center">
-                        <h3 class="h5 mb-2 mb-lg-0">{{ tool.name }}</h3>
-                        <div class="card d-table border-0 rounded-circle shadow-sm p-3 mx-auto mb-4">
-                            <img src="{{ tool.image }}" width="32" alt="Icon">
-                        </div>
-                        <a href="{{ tool.url }}" class="btn btn-primary">Kimai vs. {{ tool.name }}</a>
+                    <div class="col text-{% cycle 'end', 'start' %}">
+                        <a href="{{ tool.url }}" class="btn btn-outline-secondary btn-lg w-50">{{ tool.name }}</a>
                     </div>
                     {% endfor %}
                 </div>
