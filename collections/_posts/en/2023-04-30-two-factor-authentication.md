@@ -3,7 +3,7 @@ title: "Two-Factor authentication"
 date: "2023-04-30 18:00:00 +0200"
 image: /images/blog/cover-cloud.webp
 author: kevinpapst
-tags: [Cloud]
+tags: [cloud]
 ---
 
 From today, you can enable two-factor authentication using TOTP (time-based one-time password) tokens.

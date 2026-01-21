@@ -3,7 +3,7 @@ title: "Next major release"
 date: "2022-12-31 20:00:00 +0200"
 image: /images/blog/cover-16.webp
 author: kevinpapst
-tags: [On-Premise]
+tags: [on-premise]
 ---
 
 Wooohooo 😀 I am super excited to share this update, as I was working on it for more than one year now!!! 🎉

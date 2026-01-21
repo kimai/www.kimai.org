@@ -3,7 +3,7 @@ title: "The power of time tracking for software developers"
 date: "2024-12-16 12:00:00 +0200"
 image: /images/blog/software-developers.webp
 author: valentina
-tags: [General]
+tags: [general]
 excerpt: "Let’s face it: the life of a software developer often feels like a never-ending cycle of meetings, memes about burnout, overtime, and the classic struggles with project managers, testers, customers etc. Sound familiar?"
 ---
 

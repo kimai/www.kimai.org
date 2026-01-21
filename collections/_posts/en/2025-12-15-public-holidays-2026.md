@@ -3,7 +3,7 @@ title: "Public Holidays 2026: How to Set Up Kimai Correctly"
 date: "2025-12-15 09:00:00 +0200"
 image: /images/blog/public-holidays-2026.webp
 author: valentina
-tags: [General]
+tags: [general]
 cta: cloud
 excerpt: "This guide walks you through public holiday management for 2026, explains why it’s essential for compliance, and shows how to set it up in Kimai."
 ---

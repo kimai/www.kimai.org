@@ -2,7 +2,7 @@
 title: "Release 1.3 - Searching"
 date: "2019-09-12 12:00:00 +0200"
 author: kevinpapst
-tags: [On-Premise]
+tags: [on-premise]
 ---
 
 Being agile means releasing early and often to get quick feedback. So this time I took only two weeks for a new release, 

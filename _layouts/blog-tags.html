@@ -1,23 +1,57 @@
 ---
 layout: base
 ---
-{% assign tag = page.display_tag %}
+{% assign homepage = site.pages | filter_slug_lang: 'index' %}
+{% assign blog = site.pages | filter_slug_lang: 'blog' %}
+{% assign tag = page.slug %}
 
 <main class="page-wrapper">
     {% include header-navigation.html %}
 
-    <section class="container mt-4 pt-lg-2 pb-4">
-        <div class="row gy-4 align-items-end mb-2 pb-md-3">
-            <div class="col-lg-8 col-md-6">
-                <h1 class="mb-0">
-                    <i class="bx bxs-hot 1 me-1 text-gradient-primary"></i>
-                    {{ page.title }}
-                </h1>
+    <section class="container pt-4 pb-2 mb-lg-5">
+
+        <nav class="d-md-none pb-3 mb-2 mb-lg-3" aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item">
+                    <a href="{{ homepage.url }}"><i class="bx bx-home-alt fs-lg me-1"></i>{{ site.data[page.lang].translation.index.name }}</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="{{ blog.url }}">{{ site.data[page.lang].translation.blog.name }}</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">{{ page.display_tag }}</li>
+            </ol>
+        </nav>
+
+        <div class="row row-cols-1 row-cols-md-2 g-0 pb-2">
+            <div class="col order-md-2 position-relative bg-position-center bg-size-cover bg-repeat-0 zindex-2" style="background-image: url({{ page.image | default: "/images/stories/header.webp" }}); border-radius: .5rem .5rem .5rem 0;">
+                <div style="height: 250px;"></div>
             </div>
-            <div class="col-lg-4 col-md-6 text-end">
-                <a href="{{ '/feed.xml' | full_url: 'en' }}" class="btn btn-link btn-icon rounded-circle my-1 me-2" aria-label="RSS Feed">
-                    <i class="bx bx-rss"></i>
-                </a>
+
+            <div class="col order-md-1">
+                <nav class="d-none d-md-block py-3 mb-2 mb-lg-3" aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item">
+                            <a href="{{ homepage.url }}"><i class="bx bx-home-alt fs-lg me-1"></i>{{ site.data[page.lang].translation.index.name }}</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="{{ blog.url }}">{{ site.data[page.lang].translation.blog.name }}</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">{{ page.display_tag }}</li>
+                    </ol>
+                </nav>
+
+                <div class="bg-secondary rounded-3 p-4 p-lg-5 mt-n2 mt-md-0 me-md-n2">
+                    <div class="px-sm-3 px-xl-4 pt-4 py-md-3 py-lg-4">
+                        <h1 class="pb-2 pb-xxl-3"><i>{{ page.title }}</i></h1>
+                        <div class="pb-2">
+                            <p>{{ page.subtitle }}</p>
+                            <div class="align-items-center mt-5">
+                                <p>{{ site.data[page.lang].translation.blog.category-pages }}</p>
+                                {% include blog-tag-buttons.html class="success" %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -25,13 +59,9 @@ layout: base
     <section class="container mb-5 pt-5 pb-lg-5" dir="ltr">
         <div class="tab-content pb-3">
             <div class="tab-pane fade show active" id="tag-{{ tag | slugify }}" role="tabpanel">
-                {% assign posts = site.posts | where: "lang", "en" %}
+                {% assign posts = site.posts | filter_page_lang %}
                 {% for post in posts %}
                     {% if post.tags contains tag %}
-                        {% assign tmp = site.posts | where: "lang", page.lang | where: "slug", post.slug %}
-                        {% if tmp != nil %}
-                            {% assign post = tmp %}
-                        {% endif %}
                         {% include card-blog-single.html post=post %}
                     {% endif %}
                 {% endfor %}

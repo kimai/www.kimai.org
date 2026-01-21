@@ -3,7 +3,7 @@ title: "10 Questions on Time Tracking and Timesheets Employers Ask"
 date: "2025-04-23 14:00:00 +0200"
 image: /images/blog/questions-and-answers.webp
 author: valentina
-tags: [General]
+tags: [general]
 excerpt: "We answer the most common — and sometimes secretly Googled — questions about time tracking and timesheets from business owners and decision-makers."
 ---
 

@@ -2,7 +2,7 @@
 title: "Release 1.6 - Permissions & Invoices"
 date: "2019-11-26 18:00:00 +0200"
 author: kevinpapst
-tags: [On-Premise]
+tags: [on-premise]
 ---
 
 The next release is out, as always containing various bugfixes and some exciting new features:

@@ -3,7 +3,7 @@ title: "Absence Management: How to Survive the Vacation Tsunami"
 date: "2025-06-25 10:00:00 +0200"
 image: /images/blog/absence-management-in-summer.webp
 author: valentina
-tags: [General]
+tags: [general]
 excerpt: "Survival guide for team leaders and business owners."
 ---
 

@@ -2,7 +2,7 @@
 title: "Happy Birthday Kimai"
 date: "2011-01-05 11:34:00 +0200"
 author: kevinpapst
-tags: [Version 1]
+tags: [version-1]
 ---
 
 Oh what a shame, we all forgot our own birthday... Okay, I have to admit I didn't knew the date - but Torsten told me that Kimai is now 4 years old ;)

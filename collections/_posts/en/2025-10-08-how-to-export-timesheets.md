@@ -3,7 +3,7 @@ title: "How to Export Timesheets in Kimai"
 date: "2025-10-08 10:00:00 +0200"
 image: /images/blog/how-to-export-timesheets.webp
 author: valentina
-tags: [General]
+tags: [general]
 cta: cloud
 excerpt: "Exporting timesheets became even better with larger and faster exports and customizable templates."
 ---

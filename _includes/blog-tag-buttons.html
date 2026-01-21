@@ -1,0 +1,9 @@
+{% for tags in site.tags %}
+{% if tags[0] != "version-1" %}
+{% assign tag_page = site.blog_tags | filter_slug_lang: tags[0] %}
+<a href="{{ tag_page.url }}" class="btn btn-{{ include.class | default: 'success' }} rounded-pill py-1 px-3 me-2" aria-label="{{ site.data[page.lang].translation.blog.archive-tags }}">
+    {{ tag_page.display_tag }}
+    <i class="bx bx-right-arrow-alt fs-4"></i>
+</a>
+{% endif %}
+{% endfor %}

@@ -3,7 +3,7 @@ title: "Black Friday for On-Premise users"
 date: "2024-11-29 06:00:00 +0200"
 image: /images/blog/black-friday.webp
 author: valentina
-tags: [On-Premise]
+tags: [on-premise]
 excerpt: "At Kimai, we've always believed in fair and accessible pricing. So here is our Black Friday offer: Kimai's PPP Discount for plugin users!"
 ---
 

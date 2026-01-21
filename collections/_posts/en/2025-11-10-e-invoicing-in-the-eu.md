@@ -3,7 +3,7 @@ title: "E-invoicing in the EU: Is Your Business Ready?"
 date: "2025-11-10 12:00:00 +0200"
 image: /images/blog/e-invoicing-eu.webp
 author: valentina
-tags: [General]
+tags: [general]
 cta: cloud
 excerpt: "If you’re a business owner or self-employed professional working in an EU country, it is crucial that you understand E-Invoicing."
 ---

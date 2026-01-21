@@ -3,7 +3,7 @@ title: "New feature: custom domain"
 date: "2021-06-16 22:00:00 +0200"
 image: /images/blog/cover-cloud.webp
 author: kevinpapst
-tags: [Cloud]
+tags: [cloud]
 ---
 
 Today a new feature was released for all paying customers: support for own domains.

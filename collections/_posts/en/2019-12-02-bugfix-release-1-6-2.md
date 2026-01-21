@@ -2,7 +2,7 @@
 title: "Release 1.6.2 - Important bugfixes"
 date: "2019-12-02 09:00:00 +0200"
 author: kevinpapst
-tags: [On-Premise]
+tags: [on-premise]
 ---
 
 A second bugfix was released for the 1.6 series, including some new invoice features as well.

@@ -2,7 +2,7 @@
 title: "Release 1.25 - Keyboard shortcuts"
 date: "2022-09-20 10:00:00 +0200"
 author: kevinpapst
-tags: [On-Premise]
+tags: [on-premise]
 ---
 
 The release 1.25 was published in September 2022.

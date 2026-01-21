@@ -3,7 +3,7 @@ title: "Website now available in Tamil"
 date: "2025-02-26 10:00:00 +0200"
 image: /images/blog/tamil-website.webp
 author: valentina
-tags: [General]
+tags: [general]
 excerpt: "A new website translation is live: கிமாய் வலைத்தளம் தமிழில் பேசுகிறது :)"
 ---
 

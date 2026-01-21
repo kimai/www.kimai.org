@@ -3,7 +3,7 @@ title: "Kimai Mobile iOS release"
 date: "2023-08-01 20:00:00 +0200"
 author: cloudrizon
 image: /images/blog/cover-kimai-mobile.webp
-tags: [General]
+tags: [general]
 ---
 
 Kimai Mobile for iOS was launched by Cloudrizon GmbH: a game-changing time tracking application

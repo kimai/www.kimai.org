@@ -3,7 +3,7 @@ title: "The Pomodoro Technique: Simple Focus, Maximum Results"
 date: "2025-09-30 12:00:00 +0200"
 image: /images/blog/pomodoro.webp
 author: valentina
-tags: [General]
+tags: [general]
 cta: cloud
 excerpt: "Can't focus for more than 5 minutes? Try Pomodoro, a technique that aims to improve that."
 ---

@@ -3,7 +3,7 @@ title: "The Eisenhower Matrix: Master Task Prioritisation"
 date: "2025-10-12 10:00:00 +0200"
 image: /images/blog/eisenhower-matrix.webp
 author: valentina
-tags: [General]
+tags: [general]
 cta: cloud
 excerpt: "Can't focus for more than 5 minutes? Try Pomodoro, a technique that aims to improve that."
 ---

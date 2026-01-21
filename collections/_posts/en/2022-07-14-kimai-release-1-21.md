@@ -2,7 +2,7 @@
 title: "Release 1.21 - Budget graph"
 date: "2022-07-14 10:00:00 +0200"
 author: kevinpapst
-tags: [On-Premise]
+tags: [on-premise]
 ---
 
 The release 1.21 was published in July 2022.

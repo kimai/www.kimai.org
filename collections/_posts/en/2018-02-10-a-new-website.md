@@ -3,7 +3,7 @@ title:  "A new website for Kimai"
 date:   2018-02-10
 author: kevinpapst
 image: /images/blog/cover-developer.webp
-tags: [On-Premise]
+tags: [on-premise]
 ---
 
 When I started to work on the next major release Kimai v2 a couple of weeks ago, I had the urge to start that new era with a fresh website for Kimai. 

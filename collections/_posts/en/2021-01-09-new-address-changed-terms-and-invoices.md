@@ -3,7 +3,7 @@ title: "New address - changed terms and invoices"
 date: "2021-01-09 21:00:00 +0200"
 image: /images/blog/cover-cloud.webp
 author: kevinpapst
-tags: [Cloud]
+tags: [cloud]
 ---
 
 Dear Kimai Cloud customers, today I want to inform you about an update on changed billing regulations and an adjustment in the terms and conditions.

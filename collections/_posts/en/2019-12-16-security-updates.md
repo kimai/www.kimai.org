@@ -3,7 +3,7 @@ title: "Security updates"
 date: "2019-12-16 19:08:00 +0200"
 image: /images/blog/cover-cloud.webp
 author: kevinpapst
-tags: [Cloud]
+tags: [cloud]
 ---
 
 Some recent improvements were introduced to further strengthen the security of the Kimai cloud. This blog post is short and includes only technical information, we wanted to share it nevertheless, as we feel that our users should be informed which steps we take to protect your data.

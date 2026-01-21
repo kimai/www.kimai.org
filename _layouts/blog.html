@@ -23,9 +23,19 @@ layout: base
     </section>
 
     <section class="container mb-5 pt-5 pb-lg-5" dir="ltr">
-        {% include blog-preview-category.html tag="general" limit=6 %}
-        {% include blog-preview-category.html tag="cloud" limit=3 %}
-        {% include blog-preview-category.html tag="on-premise" limit=3 %}
+        <div class="d-flex align-items-center justify-content-between my-2 pb-1 pb-md-4">
+            <h3 class="mb-3">{{ site.data[page.lang].translation.blog.categories }}</h3>
+            <div class="nav flex-nowrap ms-sm-4 ms-3">
+            {% include blog-tag-buttons.html %}
+            </div>
+        </div>
+        {% include blog-preview.html tag="general" limit=15 %}
+        <div class="d-flex align-items-center justify-content-between my-2 pb-1 pb-md-3">
+            <h4 class="mb-3">{{ site.data[page.lang].translation.blog.category-pages }}</h4>
+            <div class="nav flex-nowrap ms-sm-4 ms-3">
+            {% include blog-tag-buttons.html %}
+            </div>
+        </div>
     </section>
 
     {% include section-newsletter.html background=true %}

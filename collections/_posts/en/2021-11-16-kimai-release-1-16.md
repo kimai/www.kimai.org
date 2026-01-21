@@ -2,7 +2,7 @@
 title: "Release 1.16 - Weekly working times form"
 date: "2021-11-16 10:00:00 +0200"
 author: kevinpapst
-tags: [On-Premise]
+tags: [on-premise]
 ---
 
 The release 1.16 was published in November 2021. 

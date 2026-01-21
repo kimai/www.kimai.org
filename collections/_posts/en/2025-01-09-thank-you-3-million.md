@@ -3,7 +3,7 @@ title: "3 million cloud timesheets"
 date: "2025-01-09 15:00:00 +0200"
 image: /images/blog/thank-you-3million.webp
 author: valentina
-tags: [Cloud]
+tags: [cloud]
 excerpt: "Happy to share that we just hit a major milestone at Kimai: the creation of the 3,000,000th timesheet in the cloud yesterday! 🎉"
 ---
 

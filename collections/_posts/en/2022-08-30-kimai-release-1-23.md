@@ -2,7 +2,7 @@
 title: "Release 1.23 - Budget validation"
 date: "2022-08-30 10:00:00 +0200"
 author: kevinpapst
-tags: [On-Premise]
+tags: [on-premise]
 ---
 
 The release 1.23 was published in August 2022.

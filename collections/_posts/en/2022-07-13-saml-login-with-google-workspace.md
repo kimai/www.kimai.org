@@ -3,7 +3,7 @@ title: "SAML Login with Google Workspace"
 date: "2022-07-13 20:00:00 +0200"
 image: /images/blog/cover-cloud.webp
 author: kevinpapst
-tags: [Cloud]
+tags: [cloud]
 ---
 
 For paying corporate customers, there is now a new way for employees to log in to the cloud.

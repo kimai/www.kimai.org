@@ -3,7 +3,7 @@ title: "5 Facts About Kimai's Privacy-First Approach"
 date: "2025-01-16 10:00:00 +0200"
 image: /images/blog/privacy-playbook.webp
 author: valentina
-tags: [Cloud]
+tags: [cloud]
 excerpt: "You know that the big IT corporations say *data is gold*, do you? We believe it's important to protect you!"
 ---
 

@@ -3,7 +3,7 @@ title: "Time Blocking: The Productivity Method That Actually Works"
 date: "2025-09-22 12:00:00 +0200"
 image: /images/blog/time-blocking-basics.webp
 author: valentina
-tags: [General]
+tags: [general]
 cta: cloud
 excerpt: "Fix your chaotic world of reactive productivity with time blocking."
 ---

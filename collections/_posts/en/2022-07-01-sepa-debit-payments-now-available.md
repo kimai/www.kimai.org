@@ -3,7 +3,7 @@ title: "SEPA Debit payments now available"
 date: "2022-07-01 20:00:00 +0200"
 image: /images/blog/cover-cloud.webp
 author: kevinpapst
-tags: [Cloud]
+tags: [cloud]
 ---
 
 Customers located in the EU or with European bank accounts can now pay their cloud bill via SEPA direct debit.

@@ -3,7 +3,7 @@ title: "Who has the longest public holidays on Christmas"
 date: "2024-12-19 09:00:00 +0200"
 image: /images/blog/christmas-2024-cover.webp
 author: valentina
-tags: [General]
+tags: [general]
 excerpt: "As Christmas approaches, many of us look forward to the joy of the season and a well-deserved break. Let's explore how EU members enjoy their public holidays during this festive time in 2024.?"
 ---
 

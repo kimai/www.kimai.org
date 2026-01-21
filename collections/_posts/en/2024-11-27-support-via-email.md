@@ -3,7 +3,7 @@ title: "Support service update"
 date: "2024-11-27 10:00:00 +0200"
 image: /images/blog/support-email.webp
 author: valentina
-tags: [General]
+tags: [general]
 excerpt: "Kimai's support got a makeover: while our customer Mathias only needed help once for a forgotten password, you can now reach our helpdesk via email!"
 cta: support
 ---

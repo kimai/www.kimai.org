@@ -2,7 +2,7 @@
 title: "Release 1.18 - Export report data"
 date: "2022-03-12 14:00:00 +0200"
 author: kevinpapst
-tags: [On-Premise]
+tags: [on-premise]
 ---
 
 The releases 1.18.x were published between February and March 2022.

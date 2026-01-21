@@ -3,7 +3,7 @@ title: "Pricing comparison - Time-Tracking SaaS 2026"
 date: "2025-12-05 12:00:00 +0200"
 image: /images/blog/price-comparison.webp
 author: valentina
-tags: [General]
+tags: [general]
 cta: cloud
 excerpt: "Here you’ll find clear summaries of the ten most popular time tracking apps for teams, along with their prices. There is also a side-by-side price comparison table showing the cost for one user versus fifty users per year. Dive in!"
 ---

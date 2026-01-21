@@ -2,7 +2,7 @@
 title: "Release 1.13 - Duration input and dropdown"
 date: "2021-02-06 08:00:00 +0200"
 author: kevinpapst
-tags: [On-Premise]
+tags: [on-premise]
 ---
 
 The release 1.13 was published, containing a lot of bugfixes and some new features. 

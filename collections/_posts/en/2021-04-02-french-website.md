@@ -2,7 +2,7 @@
 title: "Website translated to french"
 date: "2021-04-02 08:00:00 +0200"
 author: kevinpapst
-tags: [On-Premise]
+tags: [on-premise]
 ---
 
 A quickie news for all the French-speaking users out there:
