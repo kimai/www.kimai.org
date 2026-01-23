@@ -33,6 +33,7 @@ task-management-bundle: false
 translation-bundle: false
 controlling: false
 kimai_footer: false
+last_check: '2024-11-19'
 ---
 
 ## Kimai vs Toggl: Which Time Tracking Software Fits Your Team Best in {{ site.this_year }}?
@@ -120,6 +121,6 @@ If you are currently using toggl, but looking for a GDPR-compliant or just a che
 
 Kimai has an CSV importer, that allows to transfer your toggl data. All you have to do is export the data like this:
 
-{% include image.html src="/images/documentation/toggl-export.webp" title="Exporting timesheet with toggl track" %}
+{% include image.html src="/images/alternatives/toggl-export.webp" title="Exporting timesheet with toggl track" %}
 
 Please read the [importer documentation]({% link _documentation/plugin-import.md %}) to find out more. 

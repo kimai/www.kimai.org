@@ -31,6 +31,7 @@ expenses-bundle: false
 task-management-bundle: false
 translation-bundle: false
 controlling: false
+last_check: '2024-11-19'
 ---
 
 Traggo is another open-source time-tracker. 
