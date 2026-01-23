@@ -40,22 +40,35 @@ There is a toggle called `Use decimal duration in export` that switches between 
 
 ## Export templates
 
-### CSV and XLSX
+Kimai supports customizable PDF, Excel and CSV templates.
 
-Kimai supports custom CSV and Excel templates. 
 You can create them with the UI: after filtering timesheets, you will see the list of export buttons. 
 Next to them is the {% include demo-action-button.html icon="create" %} button, which will open the modal to create a new template.
 
 {% include docs-image.html src="/images/documentation/export-add-template.webp" title="Add export template" width="400px" %}
 
 These templates allow you to select:
-- the exported file `type` (here `CSV` or `Excel`)
+- the exported file `type` (here `PDF`, `CSV` or `Excel`)
 - the `language` for header translations, which uses the request language if not configured
 - the `columns` that should be exported
 
+Some fields are specific for the export format.
+
+**PDF**
+
+- Title
+- Summary (export summary on the first page of the PDF)
+- Font (a list of fonts)
+- Page size (A4, A5, A6, Legal, Letter)
+- Orientation (Portrait or Landscape)
+
+**CSV**
+
+- Separator (Comma or Semicolon)
+
 {% include docs-image.html src="/images/documentation/export-create-template.webp" title="Edit export template form" %}
 
-After creating the template, the respective CSV/Excel button will become a dropdown and you can select your template for the export.
+After creating the template, the respective buttons will become a dropdown and you can select your template for the export.
 
 {% include docs-image.html src="/images/documentation/export-select-template.webp" title="Select template for export" width="400px" %}
 
@@ -63,7 +76,7 @@ When you hover such a template, you can edit and delete it from the dropdown.
 
 ### PDF and HTML
 
-Kimai supports custom PDF and HTML export templates.
+Kimai supports custom PDF and HTML export templates. This is an advance topic, only for very specific use-cases.
 
 **How to create your first template**
 - Copy & paste the [default templates]({{ site.kimai_v2_repo }}/blob/main/templates/export/pdf-layout.html.twig)
