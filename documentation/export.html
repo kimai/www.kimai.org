@@ -678,10 +678,9 @@ These records cannot be edited any longer by regular users and are excluded by d
 
 <h2 id="export-templates">Export templates</h2>
 
-<h3 id="csv-and-xlsx">CSV and XLSX</h3>
+<p>Kimai supports customizable PDF, Excel and CSV templates.</p>
 
-<p>Kimai supports custom CSV and Excel templates. 
-You can create them with the UI: after filtering timesheets, you will see the list of export buttons. 
+<p>You can create them with the UI: after filtering timesheets, you will see the list of export buttons. 
 Next to them is the <a class="btn btn-secondary px-3" href="#"><i class="bx bx-plus"></i></a> button, which will open the modal to create a new template.</p>
 
 <figure class="d-block figure mb-3" style="max-width: 400px">
@@ -691,9 +690,27 @@ Next to them is the <a class="btn btn-secondary px-3" href="#"><i class="bx bx-p
 
 <p>These templates allow you to select:</p>
 <ul>
-  <li>the exported file <code class="language-plaintext highlighter-rouge">type</code> (here <code class="language-plaintext highlighter-rouge">CSV</code> or <code class="language-plaintext highlighter-rouge">Excel</code>)</li>
+  <li>the exported file <code class="language-plaintext highlighter-rouge">type</code> (here <code class="language-plaintext highlighter-rouge">PDF</code>, <code class="language-plaintext highlighter-rouge">CSV</code> or <code class="language-plaintext highlighter-rouge">Excel</code>)</li>
   <li>the <code class="language-plaintext highlighter-rouge">language</code> for header translations, which uses the request language if not configured</li>
   <li>the <code class="language-plaintext highlighter-rouge">columns</code> that should be exported</li>
+</ul>
+
+<p>Some fields are specific for the export format.</p>
+
+<p><strong>PDF</strong></p>
+
+<ul>
+  <li>Title</li>
+  <li>Summary (export summary on the first page of the PDF)</li>
+  <li>Font (a list of fonts)</li>
+  <li>Page size (A4, A5, A6, Legal, Letter)</li>
+  <li>Orientation (Portrait or Landscape)</li>
+</ul>
+
+<p><strong>CSV</strong></p>
+
+<ul>
+  <li>Separator (Comma or Semicolon)</li>
 </ul>
 
 <figure class="d-block figure mb-3" style="max-width: 800px">
@@ -701,7 +718,7 @@ Next to them is the <a class="btn btn-secondary px-3" href="#"><i class="bx bx-p
     <figcaption class="figure-caption">Edit export template form</figcaption>
 </figure>
 
-<p>After creating the template, the respective CSV/Excel button will become a dropdown and you can select your template for the export.</p>
+<p>After creating the template, the respective buttons will become a dropdown and you can select your template for the export.</p>
 
 <figure class="d-block figure mb-3" style="max-width: 400px">
     <img src="/images/documentation/export-select-template.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
@@ -712,7 +729,7 @@ Next to them is the <a class="btn btn-secondary px-3" href="#"><i class="bx bx-p
 
 <h3 id="pdf-and-html">PDF and HTML</h3>
 
-<p>Kimai supports custom PDF and HTML export templates.</p>
+<p>Kimai supports custom PDF and HTML export templates. This is an advance topic, only for very specific use-cases.</p>
 
 <p><strong>How to create your first template</strong></p>
 <ul>
@@ -795,7 +812,7 @@ Next to them is the <a class="btn btn-secondary px-3" href="#"><i class="bx bx-p
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#difference-between-export-and-invoice" class="nav-link">Difference between export and invoice</a></li><li class="nav-item"><a href="#export-state" class="nav-link">Export state</a></li><li class="nav-item"><a href="#time-format" class="nav-link">Time format</a></li><li class="nav-item"><a href="#export-templates" class="nav-link">Export templates</a><ul><li class="nav-item"><a href="#csv-and-xlsx" class="nav-link">CSV and XLSX</a></li><li class="nav-item"><a href="#pdf-and-html" class="nav-link">PDF and HTML</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#difference-between-export-and-invoice" class="nav-link">Difference between export and invoice</a></li><li class="nav-item"><a href="#export-state" class="nav-link">Export state</a></li><li class="nav-item"><a href="#time-format" class="nav-link">Time format</a></li><li class="nav-item"><a href="#export-templates" class="nav-link">Export templates</a><ul><li class="nav-item"><a href="#pdf-and-html" class="nav-link">PDF and HTML</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
         
     </aside>
 
