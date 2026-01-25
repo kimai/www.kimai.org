@@ -603,7 +603,7 @@ If you run into issues with this documentation, please <a href="https://github.c
   <li>Create/use a SSH user through the manitu configuration menu</li>
   <li>Login with the SSH user</li>
   <li><code class="language-plaintext highlighter-rouge">cd ../../web</code> to change to the root directory of the web space</li>
-  <li><code class="language-plaintext highlighter-rouge">git clone -b 2.46.0 --depth 1 https://github.com/kimai/kimai.git</code></li>
+  <li><code class="language-plaintext highlighter-rouge">git clone -b 2.47.0 --depth 1 https://github.com/kimai/kimai.git</code></li>
   <li><code class="language-plaintext highlighter-rouge">cd kimai/</code></li>
   <li><code class="language-plaintext highlighter-rouge">composer install --no-dev --optimize-autoloader</code></li>
   <li>Create a DB through the hosters configuration menu (called: <code class="language-plaintext highlighter-rouge">Datenbanken</code>)</li>
@@ -718,7 +718,7 @@ Typically, the root can be found at <code class="language-plaintext highlighter-
 </code></pre></div>    </div>
   </li>
   <li>Install composer: <code class="language-plaintext highlighter-rouge">curl -sS https://getcomposer.org/installer | /opt/plesk/php/8.1/bin/php</code></li>
-  <li>Clone Kimai: <code class="language-plaintext highlighter-rouge">git clone -b 2.46.0 --depth 1 https://github.com/kimai/kimai.git</code></li>
+  <li>Clone Kimai: <code class="language-plaintext highlighter-rouge">git clone -b 2.47.0 --depth 1 https://github.com/kimai/kimai.git</code></li>
   <li>Enter Kimai directory: <code class="language-plaintext highlighter-rouge">cd kimai</code></li>
   <li>Install composer packages: <code class="language-plaintext highlighter-rouge">/opt/plesk/php/8.1/bin/php ../composer.phar install --no-dev --optimize-autoloader</code></li>
   <li>Configure <code class="language-plaintext highlighter-rouge">.env</code> file to have correct database credentials</li>
@@ -749,7 +749,7 @@ and <code class="language-plaintext highlighter-rouge">ServerAlias</code> are se
 You can do that by prefixing <code class="language-plaintext highlighter-rouge">php -d memory_limit=-1</code>.</p>
 
 <ul>
-  <li>Clone Kimai: <code class="language-plaintext highlighter-rouge">git clone -b 2.46.0 --depth 1 https://github.com/kimai/kimai.git</code></li>
+  <li>Clone Kimai: <code class="language-plaintext highlighter-rouge">git clone -b 2.47.0 --depth 1 https://github.com/kimai/kimai.git</code></li>
   <li>Switch to the Kimai directory: <code class="language-plaintext highlighter-rouge">cd kimai</code></li>
   <li>Install composer: <code class="language-plaintext highlighter-rouge">curl -sS https://getcomposer.org/installer | /usr/bin/php</code>. This command might not work depending on the configured PHP version. Since Kimai currently requires at least PHP 8.1, in case the configured CLI PHP version is below 8.1, the installation or rather the post-install scripts and all following commands will fail.</li>
   <li>Install dependencies: <code class="language-plaintext highlighter-rouge">COMPOSER_MEMORY_LIMIT=-1 php -d memory_limit=-1 composer.phar install --no-dev --optimize-autoloader</code></li>
