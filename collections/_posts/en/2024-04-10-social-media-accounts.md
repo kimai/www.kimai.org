@@ -16,7 +16,7 @@ Follow us on
 [Instagram](https://www.instagram.com/kimai_org),
 [YouTube](https://www.youtube.com/@kimai_org), 
 [Twitter / X](https://twitter.com/kimai_org), and
-[LinkedIn](https://www.linkedin.com/company/kimai-timetracker/) 
+[LinkedIn](https://www.linkedin.com/company/kimai-org/) 
 for software updates, demos, behind-the-scenes content, a quick laugh, special offers, and more!
 
 Stay connected and be part of our online community. Let's continue the journey together!
