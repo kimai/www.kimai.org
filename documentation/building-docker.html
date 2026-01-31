@@ -602,7 +602,7 @@ Use this image in production and see the <a href="/documentation/docker-compose.
 <p>This allows over releases of Kimai to be built.  You can specify anything that would be passed to a git clone command.</p>
 
 <ul>
-  <li>A tag or release, e.g. <code class="language-plaintext highlighter-rouge">KIMAI=2.47.0</code></li>
+  <li>A tag or release, e.g. <code class="language-plaintext highlighter-rouge">KIMAI=2.48.0</code></li>
   <li>A branch name, e.g. <code class="language-plaintext highlighter-rouge">KIMAI=main</code></li>
 </ul>
 
@@ -618,12 +618,12 @@ Use this image in production and see the <a href="/documentation/docker-compose.
 
 <p>Build a dev image of Kimai that uses the apache bundled web server:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker build <span class="nt">--target</span><span class="o">=</span>dev <span class="nt">--build-arg</span> <span class="nv">KIMAI</span><span class="o">=</span>2.47.0 <span class="nt">--build-arg</span> <span class="nv">BASE</span><span class="o">=</span>apache <span class="nb">.</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker build <span class="nt">--target</span><span class="o">=</span>dev <span class="nt">--build-arg</span> <span class="nv">KIMAI</span><span class="o">=</span>2.48.0 <span class="nt">--build-arg</span> <span class="nv">BASE</span><span class="o">=</span>apache <span class="nb">.</span>
 </code></pre></div></div>
 
 <p>Build a prod, FPM image of Kimai, localised for the UK</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker build <span class="nt">--target</span><span class="o">=</span>prod <span class="nt">--build-arg</span> <span class="nv">KIMAI</span><span class="o">=</span>2.47.0 <span class="nt">--build-arg</span> <span class="nv">BASE</span><span class="o">=</span>fpm <span class="nt">--build-arg</span> <span class="nv">TZ</span><span class="o">=</span>Europe/London <span class="nb">.</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker build <span class="nt">--target</span><span class="o">=</span>prod <span class="nt">--build-arg</span> <span class="nv">KIMAI</span><span class="o">=</span>2.48.0 <span class="nt">--build-arg</span> <span class="nv">BASE</span><span class="o">=</span>fpm <span class="nt">--build-arg</span> <span class="nv">TZ</span><span class="o">=</span>Europe/London <span class="nb">.</span>
 </code></pre></div></div>
 
 <h2 id="extending-the-image">Extending the image</h2>
