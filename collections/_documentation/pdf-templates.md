@@ -171,6 +171,5 @@ The best way to embed an image is a base64 encoded PNG image:
 
 It is also possible to include images via absolute URLs like
 ```twig
-{% raw %}{% set logo = 'A-VERY-LONG-STRING-HERE==' %}
-<img style="height: 150px;margin: 10px;" src="https://www.kimai.org/images/kimai_logo.png" />{% endraw %}
+<img style="height: 150px;margin: 10px;" src="https://www.kimai.org/images/kimai_logo.png" />
 ```
