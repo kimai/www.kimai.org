@@ -1,3 +1,17 @@
+**Version 1.30.1**
+
+Compatibility: requires minimum Kimai 2.48.0
+
+- Fix "monthly timesheet PDF" has a closing parenthesis after the personnel number
+
+**Version 1.30.0**
+
+Compatibility: requires minimum Kimai 2.48.0
+
+- Configure if absences/sickness/vacation/public holidays count toward or reduce the expected working-time
+- Use new styles and icons from core
+- New API endpoint: check if a date is locked
+
 **Version 1.29.0**
 
 Compatibility: requires minimum Kimai 2.32.0

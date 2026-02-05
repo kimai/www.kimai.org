@@ -1,3 +1,10 @@
+**Version 2.7.0**
+
+Compatibility: requires minimum Kimai 2.48.0
+
+- Use new `Strict` Twig SecurityPolicy when rendering the invoice timesheet PDF
+- Use `timesheet` translation key for timesheet download button
+
 **Version 2.6.1**
 
 Compatibility: requires minimum Kimai 2.45.0
