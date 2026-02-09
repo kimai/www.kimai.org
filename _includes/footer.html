@@ -85,9 +85,10 @@
                                 </li>
                                 {% assign tools = site.alternative | where: "lang", "en" | where: "feature", true | sort: "name" %}
                                 {% assign compareWith = site.data[page.lang].translation.comparison.compare_with %}
+                                {% assign alternativeTo = site.data[page.lang].translation.comparison.alternative %}
                                 {% for tool in tools %}
                                     <li class="nav-item">
-                                        <a href="{{ tool.url | full_url: 'en' }}" class="nav-link fs-sm fw-medium px-0 py-1" title="{{ compareWith | replace: "%name%", tool.name }}">{{ tool.name }}</a>
+                                        <a href="{{ tool.url | full_url: 'en' }}" class="nav-link fs-sm fw-medium px-0 py-1" title="{{ compareWith | replace: "%name%", tool.name }}">{{ alternativeTo | replace: "%product%", tool.name }}</a>
                                     </li>
                                 {% endfor %}
                             </ul>
