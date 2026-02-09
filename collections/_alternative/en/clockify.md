@@ -6,7 +6,7 @@ feature: true
 is_oss: false
 on_premise: false
 cloud: true
-location: "unknown"
+location: "USA"
 premium_plan: ""
 price_1_month: ""
 price_50_year: ""
