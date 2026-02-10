@@ -36,8 +36,6 @@ kimai_footer: false
 last_check: '2024-11-19'
 ---
 
-## Kimai vs Toggl: Which Time Tracking Software Fits Your Team Best in {{ site.this_year }}?
-
 Choosing the right time tracking software can make a huge difference in productivity, transparency, and billing accuracy of a freelancer, an agency, or a business owner managing a big team.
 
 When selecting a time tracking tool, most users consider:
