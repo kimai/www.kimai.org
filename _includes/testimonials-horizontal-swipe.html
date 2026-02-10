@@ -3,7 +3,7 @@
     <div class="container pt-lg-4 mt-1">
         <h2 class="h1 text-center pb-2 pb-md-3 pb-xl-4">{{ title }}</h2>
         {% if include.introduction %}
-            <p class="mb-5">{{ include.introduction }}</p>
+            <p class="mb-5 text-center">{{ include.introduction }}</p>
         {% endif %}
     </div>
     <div class="pb-lg-3 px-2 px-sm-0">
@@ -41,10 +41,16 @@
                             </span>
                             <div class="card-body pb-3 mb-0">
                                 <div class="mb-0">
+                                    {% assign testimonial_text = testimonial.text %}
                                     {% if include.language and testimonial.translations[include.language] %}
-                                        {{ testimonial.translations[include.language] | markdownify }}
-                                    {% else %}
-                                        {{ testimonial.text | markdownify }}
+                                        {% assign testimonial_text = testimonial.translations[include.language] %}
+                                    {% endif %}
+
+                                    {{ testimonial_text | slice: 0, 750 | markdownify }}
+
+                                    {% assign title_length = testimonial_text | size %}
+                                    {% if title_length > 750 %}
+                                        ...
                                     {% endif %}
                                 </div>
                             </div>

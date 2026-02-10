@@ -1,49 +1,35 @@
-<section class="position-relative py-5{% if include.background %} bg-secondary{% endif %}">
-    <div class="container position-relative zindex-5 pb-md-4 pt-md-2 pt-lg-3 pb-lg-5">
-        <div class="row justify-content-center text-center pb-3 mb-sm-2 mb-lg-3">
-            <div class="col-xl-6 col-lg-7 col-md-9">
-                <h2 class="h1 mb-lg-4">{{ site.data[page.lang].translation.section-features.title }}</h2>
-                <p class="fs-lg text-muted mb-0">{{ site.data[page.lang].translation.section-features.subtitle }}</p>
+{% if page.features == nil %}
+    {% assign feature_list = 'api,customer-portal,teams,saml,invoices,reporting' | split: ',' %}
+    {% assign feature_title = "Kimai features most used" %}
+    {% assign feature_intro = "Not all time tracking tools are created equal. The best solutions for agencies offer a specialized set of features to streamline your workflows." %}
+{% else %}
+    {% assign feature_list = page.features.list %}
+    {% assign feature_title = page.features.title %}
+    {% assign feature_intro = page.features.introduction %}
+{% endif %}
+<section class="container pb-5 mb-md-2 mb-lg-5">
+    <div class="row">
+        <div class="col-lg-4 text-center text-lg-start pb-3 pb-lg-0 mb-4 mb-lg-0">
+            <h2 class="h1 mb-lg-4">{{ feature_title }}</h2>
+            <div class="pb-4 mb-0 mb-lg-3">{{ feature_intro|markdownify }}</div>
+            <a href="{{ features.url }}" class="btn btn-primary shadow-primary btn-lg">{{ site.data[page.lang].translation.features.name }}</a>
+        </div>
+        <div class="col-xl-7 col-lg-8 offset-xl-1">
+            <div class="row row-cols-1 row-cols-md-2">
+                <div class="col">
+                {% for name in feature_list %}
+                    {% assign features = site.data.feature | where_exp: "feature", "feature.name == name" %}
+                    {% for feature in features %}
+                        {% include feature-box.html feature=feature %}
+                    {% endfor %}
+                    {% assign mod = forloop.index1 | modulo: 2 %}
+                    {% if mod == 0 %}
+                </div>
+                <div class="col">
+                    {% endif %}
+                {% endfor %}
+                </div>
             </div>
         </div>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-0 pb-xl-3">
-            {% assign features = site.data.feature | where_exp: "feature", "feature.featured" %}
-            {% for feature in features %}
-                {% assign feature_key = feature.name %}
-                {% assign feature_documentation = feature.documentation %}
-                {% assign lang_replacer = page.lang | append: '/' %}
-                {% if page.lang == 'en' %}
-                    {% assign lang_replacer = '' %}
-                {% endif %}
-                {% assign feature_documentation = feature.documentation | replace: '%language%', lang_replacer %}
-                {% assign feature_title = site.data[page.lang].translation.feature[feature_key].name %}
-                {% assign feature_description = site.data[page.lang].translation.feature[feature_key].description %}
-                <div class="col position-relative">
-                    <div class="card border-0 bg-transparent rounded-0 p-md-1 p-xl-3">
-                        <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
-                            {% if feature_documentation != nil and feature_documentation != '' %}
-                                <a href="{% link {{ feature_documentation }} %}" title="{{ feature_title }}"><i class="{{ feature.icon | icon }} fs-2"></i></a>
-                            {% else %}
-                                <i class="{{ feature.icon | icon }} fs-2" title="{{ feature_title }}"></i>
-                            {% endif %}
-                        </div>
-                        <div class="card-body text-center">
-                            {% if feature_documentation != nil and feature_documentation != '' %}
-                                <h3 class="h5 pb-1 mb-2"><a href="{% link {{ feature_documentation }} %}">{{ feature_title }}</a></h3>
-                            {% else %}
-                                <h3 class="h5 pb-1 mb-2">{{ feature_title }}</h3>
-                            {% endif %}
-                            <p class="mb-0">{{ feature_description }}</p>
-                        </div>
-                    </div>
-                    <hr class="position-absolute top-0 end-0 w-1 h-100 d-none d-sm-block">
-                    <hr class="position-absolute top-100 start-0 w-100 d-none d-sm-block">
-                </div>
-            {% endfor %}
-        </div>
-    </div>
-    <div class="mb-xl-3 text-center">
-        {% assign more = site.data[page.lang].translation.read-more %}
-        {% include link-translated-menu.html item="features" language=page.lang class="btn btn-lg btn-outline-primary" %}
     </div>
 </section>
