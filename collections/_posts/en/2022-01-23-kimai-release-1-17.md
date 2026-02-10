@@ -7,7 +7,7 @@ tags: [on-premise]
 
 The release 1.17 was published in January 2022.
 
-**This is the last release with [support for PHP 7.3 / 7.4](https://www.kimai.org/blog/2021/sunsetting-php-7/).**
+**This is the last release with [support for PHP 7.3 / 7.4]({% link _posts/en/2021-12-06-sunsetting-php-7.md %}).**
 
 There have been 10 minor releases between the release [1.16]({% link _posts/en/2021-11-16-kimai-release-1-16.md %}) and this one. 
 You should use the "watch feature" in the Github repository to be notified ASAP of these updates.
@@ -19,7 +19,7 @@ In the meantime 3 new plugins were released:
 
 ### Attention before upgrading 
 
-This is the last release with [support for PHP 7](https://www.kimai.org/blog/2021/sunsetting-php-7/).
+This is the last release with [support for PHP 7]({% link _posts/en/2021-12-06-sunsetting-php-7.md %}).
 If not yet done: please upgrade to PHP 8 soon.
 
 Release 1.15 changed the config structure for LDAP & SAML and also [dropped support for PHP 7.2]({% link _posts/en/2021-05-31-php8-support-php72-dropped.md %}).

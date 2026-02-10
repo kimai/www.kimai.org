@@ -83,9 +83,9 @@ kimai:
                     emailAddress: 'kimai-support@example.com'
             organization:
                 en:
-                    name: 'Kimai'
-                    displayname: 'Kimai'
-                    url: 'https://www.kimai.org'
+                    name: 'Acme'
+                    displayname: 'Acme'
+                    url: 'https://www.example.com'
 ```  
 
 After changing the configuration you need to [re-build the cache]({% link _documentation/cache.md %}).

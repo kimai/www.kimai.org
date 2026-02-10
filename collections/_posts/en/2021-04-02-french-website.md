@@ -2,12 +2,12 @@
 title: "Website translated to french"
 date: "2021-04-02 08:00:00 +0200"
 author: kevinpapst
-tags: [on-premise]
+tags: [general]
 ---
 
 A quickie news for all the French-speaking users out there:
 
-> The Kimai website is now translated to french and available at: [https://www.kimai.org/fr/](https://www.kimai.org/fr/)
+> The Kimai website is now translated to french and available at: [www.kimai.org/fr/]({% link _pages/fr/index.html %})
 
 There is a language switcher in the upper right corner of the websites desktop version and links in the dropdown menu of the mobile version.
 

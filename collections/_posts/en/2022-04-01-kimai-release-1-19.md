@@ -7,7 +7,7 @@ tags: [on-premise]
 
 The releases 1.19.x were published in April 2022.
 
-**You are lucky, despite announcing otherwise is release still supports PHP 7.3 and PHP 7.4. [But be warned: it's only tested with 7.4 and developed with 8.1](https://www.kimai.org/blog/2021/sunsetting-php-7/).**
+**You are lucky, despite announcing otherwise is release still supports PHP 7.3 and PHP 7.4. [But be warned: it's only tested with 7.4 and developed with 8.1]({% link _posts/en/2021-12-06-sunsetting-php-7.md %}).**
 
 ## Highlights
 

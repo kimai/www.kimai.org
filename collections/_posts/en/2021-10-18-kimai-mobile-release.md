@@ -15,7 +15,7 @@ All data about logging time at Kimai Mobile saves only at self-hosted Kimai Serv
 
 says one of the beta-testers, a freelancer. 
 
-[Kimai Mobile](http://www.kimaimobile.com) is the perfect supplement for Kimai Time Tracker Server and is ideal for multi-project jobs. 
+[Kimai Mobile](https://www.kimaimobile.com) is the perfect supplement for Kimai Time Tracker Server and is ideal for multi-project jobs. 
 Now Kimai Mobile provides the general functionality: time log, filters, and calendar. 
 
 Soon the application will be available for iOS as well. 

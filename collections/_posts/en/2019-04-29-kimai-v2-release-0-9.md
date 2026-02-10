@@ -5,10 +5,8 @@ author: kevinpapst
 tags: [on-premise]
 ---
 
-Two month are longer than expected for this release, but a lot changed in the background. These will be announced in a 
-couple of weeks, and until then: update to 0.9, enjoy time-tracking and let me know [what you think]({{ site.kimai_v2_repo }}/issues) about this version.
-
-If you enjoy the new release, here is the [donation page](https://www.kimai.org/donate/). 
+Two month are longer than expected for this release, but a lot changed in the background. 
+These will be announced in a couple of weeks, and until then: update to 0.9, enjoy time-tracking and let me know [what you think]({{ site.kimai_v2_repo }}/issues) about this version.
 
 [Full Changelog]({{ site.kimai_v2_repo }}/compare/0.8.1..0.9)
 

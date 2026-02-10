@@ -55,7 +55,7 @@ document.querySelector('div.login-box-body a.btn-block')?.click();
 ### Alert
 
 ```markdown
-That's how the **alert / warning message** looks like. You can even include _markdown_ and [links](/en/custom-content-news) !
+That's how the **alert / warning message** looks like. You can even include _markdown_ and [links](https://www.example.com) !
 ```
 
 ### CSS / Stylesheet

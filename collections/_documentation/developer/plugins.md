@@ -119,7 +119,7 @@ A minimal `composer.json` could look like this:
 {
     "name": "foo/your-bundle",
     "description": "A simple demo plugin for Kimai, which actually does nothing",
-    "homepage": "https://www.kimai.org/",
+    "homepage": "https://www.example.com/",
     "type": "kimai-plugin",
     "version": "0.1",
     "license": "MIT",
@@ -127,7 +127,7 @@ A minimal `composer.json` could look like this:
         {
             "name": "Kevin Papst",
             "email": "kpapst@gmx.net",
-            "homepage": "https://www.kimai.org"
+            "homepage": "https://www.kevinpapst.de"
         }
     ],
     "extra": {

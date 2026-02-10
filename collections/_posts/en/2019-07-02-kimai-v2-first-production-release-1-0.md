@@ -12,8 +12,6 @@ who want to add Kimai to their one-click installations and they don't want to su
 
 I am really excited about this release and the new stuff, that will follow in the next days. Please stay tuned! 
    
-If you enjoy the new release, here is the [donation page](https://www.kimai.org/donate/). 
-
 [Full Changelog]({{ site.kimai_v2_repo }}/compare/0.9..1.0)
 
 **Upgrade from 0.9:**

@@ -15,7 +15,7 @@ It could be as simple as:
 - Mount a tablet to the wall in your entrance room
 - Let your users check-in & check-out when entering the building by scanning their tokens
 
-You can test it in the ["Plugins" demo](https://www.kimai.org/demo/).
+You can test it in the ["Plugins" demo]({% link _pages/demo.md %}).
 
 ## Features
 

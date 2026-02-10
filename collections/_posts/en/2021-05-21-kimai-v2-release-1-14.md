@@ -10,7 +10,7 @@ Sorry for the late posting, but some bugs popped up that needed to be fixed befo
 
 **Attention**  
 This release includes a critical backward compatibility break: 
-dropped SQLite support and FTP installation package (see [announcement](https://www.kimai.org/blog/2021/sqlite-and-ftp-support-removed/)).
+dropped SQLite support and FTP installation package (see [announcement]({% link _posts/en/2021-04-03-sqlite-and-ftp-support-removed.md %})).
 
 ### List of notable changes
 

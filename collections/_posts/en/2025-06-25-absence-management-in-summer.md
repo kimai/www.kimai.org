@@ -58,6 +58,6 @@ Want to add some humor to your summer absence management?
 
 If you want to learn more:
 - Video tutorial: [Absence approval workflow in Kimai](https://www.youtube.com/watch?v=7ZHRBY0pZKI&t=56s)
-- Blog: [Managing Easter Holidays](https://www.kimai.org/blog/2025/managing-easter-holidays/)
-- Info: [Kimai Features Overview](https://www.kimai.org/en/features.html)
+- Blog: [Managing Easter Holidays]({% link _posts/en/2025-03-17-managing-easter-holidays.md %})
+- Info: [Kimai Features Overview]({% link _pages/features.html %})
 

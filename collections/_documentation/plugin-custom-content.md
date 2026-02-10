@@ -16,7 +16,7 @@ Deactivate the news: if the title is empty, the menu will be hidden.
 ## Alert
 
 ```markdown
-That's how the **alert / warning message** looks like. You can even include _markdown_ and [links](/en/custom-content-news) !
+That's how the **alert / warning message** looks like. You can even include _markdown_ and [links](https://www.example.com) !
 ```
 
 ## Javascript

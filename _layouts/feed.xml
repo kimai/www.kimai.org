@@ -9,7 +9,7 @@
         >
     <channel>
         <title xml:lang="en">{{ site.feed_title }}</title>
-        <atom:link type="application/atom+xml" href="http://www.kimai.org/feed.xml" rel="self"/>
+        <atom:link type="application/atom+xml" href="{% link feed.xml %}" rel="self"/>
         <link>https://www.kimai.org/</link>
         <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
         <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
@@ -17,7 +17,7 @@
         <description>{{ site.data[page.lang].translation.footer }}</description>
         <image>
             <description>Kimai Logo</description>
-            <url>https://www.kimai.org/images/apple-touch-icon.png</url>
+            <url>{% link images/apple-touch-icon.png %}</url>
             <title>{{ site.feed_title }}</title>
             <link>https://www.kimai.org/</link>
             <width>184</width>

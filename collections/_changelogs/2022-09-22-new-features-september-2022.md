@@ -11,7 +11,7 @@ In case of any question or problem, please contact [our support](https://www.kim
 **Features**
 
 - New: added a brand new importer for Customer, Project and Timesheet in JSON and CSV format
-- New: [keyboard shortcuts](https://www.kimai.org/documentation/keyboard-shortcuts.html) for the most important actions
+- New: [keyboard shortcuts]({% link _documentation/keyboard-shortcuts.md %}) for the most important actions
 - Project: allow to restrict usage of global activities for projects
 - Calendar: configurable calendar drag and drop behavior (whether to copy description and tags)
 - Weekly-Hours: order by project name
