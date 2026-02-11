@@ -1,13 +1,12 @@
 ---
 title: "Compare Kimai vs. Clockodo: Which time-tracker fits your needs?"
 name: Clockodo
-image: /images/logos/generic.webp
 feature: true
 is_oss: false
 on_premise: false
 cloud: true
 # see https://toggl.com/legal/track/sub-processors/
-location: "United States"
+location: "USA"
 premium_plan: ""
 price_1_month: "€ 20"
 price_50_year: "€ 10.800"
@@ -32,10 +31,11 @@ expenses-bundle: false
 task-management-bundle: false
 translation-bundle: false
 controlling: false
-kimai_footer: false
 comparison: false 
 last_check: '2025-10-15'
 ---
+
+## Clockodo: a German time-tracking solution
 
 Clockodo has established itself as a popular time-tracking solution, particularly in German-speaking markets. 
 It offers an intuitive interface and solid features for businesses managing their time tracking needs, including flexible absence workflow.
@@ -79,7 +79,9 @@ Kimai provides all the core features you expect from a modern time-tracking syst
 
 ## Migrating from Clockodo to Kimai
 
-We understand that your historical time tracking data is valuable, which is why Kimai offers a robust CSV importer. You can export your data from Clockodo in standard CSV format and import all your projects, clients, and time entries into Kimai within minutes. You'll maintain complete control over your data while gaining access to a more flexible, affordable, and privacy-focused platform.
+We understand that your historical time tracking data is valuable, which is why Kimai offers a robust CSV importer. You can export your data from Clockodo in standard CSV format and import all your projects, clients, and time entries into Kimai within minutes. 
+
+You'll maintain complete control over your data while gaining access to a more flexible, affordable, and privacy-focused platform.
 
 {% include image.html src="/images/alternatives/clockodo-export.webp" title="Exporting timesheet with Clockodo" %}
 
@@ -89,6 +91,8 @@ Please read the [importer documentation]({% link _documentation/plugin-import.md
 
 Clockodo is a capable time-tracking solution, but it comes with trade-offs: cloud-only deployment, limited customization options, and reliance on external infrastructure for data protection. 
 For German-speaking organizations that prioritize data sovereignty, GDPR compliance, and regulatory adherence, Kimai offers a compelling alternative.
+
 Kimai combines the reliability and feature-richness you need with the transparency, flexibility, and European data protection standards you deserve. 
 Whether you're a growing startup, an established agency, or a medium-sized enterprise, Kimai delivers a modern time-tracking platform built for the European workplace.
+
 Make the switch today and experience open-source time tracking that respects your data and your regulatory requirements.

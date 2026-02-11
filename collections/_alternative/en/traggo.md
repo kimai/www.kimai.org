@@ -1,12 +1,10 @@
 ---
 title: "Compare Kimai vs. Traggo: which open-source time-tracker fits your needs?"
 name: Traggo
-image: /images/logos/generic.webp
 feature: false
 is_oss: true
 on_premise: true
 cloud: false
-location: "unknown"
 premium_plan: ""
 price_1_month: ""
 price_50_year: ""
@@ -34,7 +32,7 @@ controlling: false
 last_check: '2024-11-19'
 ---
 
-Traggo is another open-source time-tracker. 
+## Traggo is another open-source time-tracker 
 
 It is a young project, created in Go in 2019 and development seems to have already stalled.
 In 2021 there was code activity in 3 days, in 2022 in 4 days and in 2023 in 2 days.

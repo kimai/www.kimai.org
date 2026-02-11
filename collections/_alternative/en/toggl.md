@@ -1,13 +1,12 @@
 ---
 title: "Compare Kimai vs. Toggle: Which time-tracker fits your needs?"
 name: toggl track
-image: /images/logos/generic.webp
 feature: true
 is_oss: false
 on_premise: false
 cloud: true
 # see https://toggl.com/legal/track/sub-processors/
-location: "United States"
+location: "USA"
 premium_plan: ""
 price_1_month: "€ 20"
 price_50_year: "€ 10.800"
@@ -32,40 +31,8 @@ expenses-bundle: false
 task-management-bundle: false
 translation-bundle: false
 controlling: false
-kimai_footer: false
 last_check: '2024-11-19'
 ---
-
-Choosing the right time tracking software can make a huge difference in productivity, transparency, and billing accuracy of a freelancer, an agency, or a business owner managing a big team.
-
-When selecting a time tracking tool, most users consider:
-
-- Features: Does it cover everything from tracking and reporting to invoicing and project management?
-- Price: Is it affordable (or even free) for the size of your team?
-- Flexibility: Can it adapt to your current workflow, integrations, and tech stack?
-- Accessibility: Does it support both desktop and mobile platforms, and can it be self-hosted or cloud-based?
-- Scalability: Will it still fit your needs as your business grows?
-
-The year {{ site.this_year }} also brings focus on data privacy, automation, and team transparency in time management tools. At the same time the market offers a range of solutions for every use case, from solopreneurs to large enterprise teams, and you can always find the solution that best fits your needs.
-
-Let’s explore the best time tracking tools for {{ site.this_year }} and see how Kimai compares with Toggl Track — two popular choices among professionals and successful teams worldwide.
-
-## Kimai: #1 Open Source Time Tracking System
-
-Kimai is a fully open-source time tracking solution designed to be flexible and scalable in the long term. It can be self-hosted on your own server, giving you full control over your data and configuration. Alternatively, it is available as a cloud solution with flexible subscription plans.
-
-In this comparison, we’ll focus on the self-hosted version and its strengths:
-
-- Simple, clean interface
-- Free forever and open source — no hidden limitations or paid upgrades required
-- Powerful feature set including time tracking, expense management, project reports, and invoicing
-- Unlimited users and projects even on the free self-hosted version
-- Integrations & plugins for extended functionality (API, authentication, automation tools)
-- Perfect for teams that value data privacy and want to stay independent from vendor lock-ins, made in Austria, hosted in Germany
-
-Kimai's combination of enterprise-level flexibility and open-source freedom makes it one of the best time tracking and invoicing solutions for {{ site.this_year }} — a perfect fit for agencies, software companies, educational institutions, and non-profits.
-
-{% include image.html src="/images/screenshots/screenshot-reporting.webp" title="Reporting feature" %}
 
 ### Toggl Track: {make-sure-it’s}-free time tracking
 
@@ -84,23 +51,18 @@ It offers individuals and small teams a user-friendly interface and quick setup.
 * Advanced reporting, team management, and billing features require paid plans starting from 9 Euro per user monthly
 * No self-hosted option available — data stored on Toggl’s servers
 
-{% alert warning %}
-While Toggle OÜ is originally from Estonia, **Toggl Inc. is located in the USA**.  
-Due to U.S. regulations such as the CLOUD Act, data hosted with U.S.-based providers may be subject to access requests by U.S. authorities — which can pose privacy concerns for organizations operating under EU data protection standards.  
-{% endalert %}
-
 Toggl Track is a solid entry-level tool, but as soon as your team scales, you might hit feature walls or sharp price increases that make open-source alternatives like Kimai more attractive.
 
 ### Kimai vs. Toggl quick comparison
 
-| *Feature*           | *Kimai (On-Premise)*         | *Toggl Track*                               |
-|---------------------|------------------------------|---------------------------------------------|
-| ***Pricing***       | *Free*                       | *Free (limited), Paid from \~€9/user/month* |
-| ***Hosting***       | *Self-hosted*                | *Cloud only*                                |
-| ***Users***         | *Unlimited*                  | *Up to 5 (free plan)*                       |
-| ***Invoicing***     | ✅ *Built-in*                 | ❌ *Only with integrations*                  |
-| ***Customization*** | *High (plugins, API)*        | *Limited*                                   |
-| ***Data privacy***  | *Full control (self-hosted)* | *Managed by Toggl*                          |
+| Feature           | Kimai (On-Premise)         | Toggl Track                               |
+|-------------------|----------------------------|-------------------------------------------|
+| **Pricing**       | Free                       | Free (limited), Paid from \~€9/user/month |
+| **Hosting**       | Self-hosted                | Cloud only                                |
+| **Users**         | Unlimited                  | Up to 5 (free plan)                       |
+| **Invoicing**     | ✅ Built-in                 | ❌ Only with integrations                  |
+| **Customization** | High (plugins, API)        | Limited                                   |
+| **Data privacy**  | Full control (self-hosted) | Managed by Toggl                          |
 {: .table }
 
 ## Final Thoughts

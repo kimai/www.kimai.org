@@ -1,15 +1,13 @@
 ---
 title: "Compare Kimai vs. Clockin - the best Clockin alternative"
 name: Clockin
-image: /images/logos/generic.webp
 feature: true
 is_oss: false
 on_premise: false
 cloud: true
-location: "Germany"
 premium_plan: ""
-price_1_month: "from €3.99/user/monthly"
-price_50_year: "from €2.394/user"
+price_1_month: "from €3.99"
+price_50_year: "from €2,394.00"
 max_customers: 'unlimited'
 max_projects: 'unlimited'
 max_activities: 'unlimited'
@@ -33,10 +31,6 @@ translation-bundle: false
 controlling: false
 last_check: '2026-01-19'
 ---
-
-Kimai is an open-source time-tracking solution designed for teams and businesses seeking flexibility and control over their time tracking infrastructure. 
-Discover why **more than {{ site.kimai_customers }} companies worldwide trust Kimai** for their time tracking needs and find out how it compares to Clockin's offerings. 
-Whether you're evaluating a new time tracking app, analyzing Clockin pricing options, or planning a Clockin migration, Kimai provides a compelling alternative with superior features and cost savings.
 
 ### Why you should choose Kimai over Clockin
 

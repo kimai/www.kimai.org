@@ -1,12 +1,10 @@
 ---
 title: "Compare Kimai vs. Open Project - the best alternative for Open project time-tracking"
 name: OpenProject
-image: /images/logos/generic.webp
 feature: true
 is_oss: true
 on_premise: true
 cloud: true
-location: "Data stored in EU/Germany on request."
 premium_plan: Professional
 price_1_month: € 10.95
 price_50_year: € 6,570.00
@@ -33,6 +31,8 @@ translation-bundle: false
 controlling: false
 last_check: '2024-11-19'
 ---
+
+## OpenProject: open source project management 
 
 OpenProject is an open source project management software for optimizing the collaboration of separated teams. 
 It takes into account the entire project lifecycle. 

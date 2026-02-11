@@ -51,6 +51,10 @@ These templates allow you to select:
 - the exported file `type` (here `PDF`, `CSV` or `Excel`)
 - the `language` for header translations, which uses the request language if not configured
 - the `columns` that should be exported
+- whether they can be used by **every logged-in user** with `Allow access for all users`
+
+Activating the `Allow access for all users` setting means that the new template can be selected in the `My times` and `All times` views for exporting data. 
+However, be careful: this does not check permissions. For example, adding a rate column will render this column visible to all users, even if they do not have permission to see rates.
 
 Some fields are specific for the export format.
 
@@ -74,9 +78,9 @@ After creating the template, the respective buttons will become a dropdown and y
 
 When you hover such a template, you can edit and delete it from the dropdown. 
 
-### PDF and HTML
+### PDF and HTML (for developer)
 
-Kimai supports custom PDF and HTML export templates. This is an advance topic, only for very specific use-cases.
+Kimai supports custom PDF and HTML export twig templates. This is an advance topic, only for very specific use-cases.
 
 **How to create your first template**
 - Copy & paste the [default templates]({{ site.kimai_v2_repo }}/blob/main/templates/export/pdf-layout.html.twig)

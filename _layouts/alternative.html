@@ -31,13 +31,25 @@ layout: base
                         </p>
                     </div>
                 </div>
-                {% if tool.image != nil %}
-                <div class="col-md-12 offset-xl-1 d-flex mt-lg-4 mb-4">
-                    <div class="align-self-start ms-xl-0 ms-md-4 p-lg-4 p-sm-3 p-2 rounded-4 overflow-hidden" style="background: linear-gradient(153.32deg, rgba(255, 255, 255, .3) -65.62%, rgba(255, 255, 255, .1) 83.28%); box-shadow: 0 .25rem 1.5rem -.0625rem rgba(0, 0, 0, .2); backdrop-filter: blur(25px);">
-                        <img src="{{ tool.image }}" width="500" alt="Logo" class="rounded-4" style="box-shadow: 0 0 7.5rem rgba(0, 0, 0, .1);">
+                {% assign image = tool.image | default: '/images/alternatives/background.webp' %}
+                <div class="col-md-12 d-flex mt-lg-4 mb-4 p-lg-4 p-sm-3 p-2">
+                    <div class="align-self-start ms-xl-0 ms-md-4 p-lg-4 p-sm-3 p-2 rounded-4 overflow-hidden d-none d-md-flex" style="background: linear-gradient(153.32deg, rgba(255, 255, 255, .3) -65.62%, rgba(255, 255, 255, .1) 83.28%); box-shadow: 0 .25rem 1.5rem -.0625rem rgba(0, 0, 0, .2); backdrop-filter: blur(25px);">
+                        {% if tool.comparison != false %}
+                            <a href="#compare-features">
+                                <img src="{{ image }}" width="700" alt="Logo" class="rounded-4" style="box-shadow: 0 0 7.5rem rgba(0, 0, 0, .1);">
+                            </a>
+                        {% else %}
+                            <img src="{{ image }}" width="700" alt="Logo" class="rounded-4" style="box-shadow: 0 0 7.5rem rgba(0, 0, 0, .1);">
+                        {% endif %}
+                        <span style="position: absolute;top: 50px;left: 100px;color: #fff;font-size: 5em;font-weight: 900;" class="d-none d-md-flex">
+                        {{ tool.name }}
+                        <br>
+                        vs.
+                        <br>
+                        Kimai
+                        </span>
                     </div>
                 </div>
-                {% endif %}
             </div>
         </div>
         <span class="position-absolute bottom-0 start-0 w-100">
@@ -51,19 +63,77 @@ layout: base
             <div class="col-lg-12 mb-4 mb-lg-0">
                 <div class="pe-lg-4 me-lg-3 pe-xl-0 me-xl-0">
                     <div class="mb-0">
-
                         <section class="overflow-hidden pt-md-2 pt-lg-3">
                             <div class="d-flex flex-column flex-md-row flex-md-nowrap align-items-start">
                                 <div class="col-12 ps-0 pe-lg-4 mb-5 mb-md-0">
                                     <div class="lp-content">
-
                                         <h2>Kimai vs {{ tool.name }}: Which time tracking software fits your team best in {{ site.this_year }}?</h2>
+{% capture general_introduction -%}
+Kimai is the #1 open-source time-tracking solution designed for teams and businesses seeking flexibility and control over their time tracking infrastructure.
+Discover why **more than {{ site.kimai_customers }} companies worldwide trust Kimai** for their time tracking needs and find out how it compares to {{ tool.name }}'s offerings.
+Whether you're evaluating a new time tracking app, analyzing {{ tool.name }} pricing options, or planning a {{ tool.name }} migration, Kimai provides a compelling alternative with superior features and cost savings.
 
+Choosing the right time tracking software can make a huge difference in productivity, transparency, and billing accuracy of a freelancer, an agency, or a business owner managing a big team.
+
+{% include image.html src="/images/screenshots/screenshot-reporting.webp" title="Reporting feature" %}
+
+When selecting a time tracking tool, most users consider:
+
+- Features: Does it cover everything from tracking and reporting to invoicing and project management?
+- Price: Is it affordable (or even free) for the size of your team?
+- Flexibility: Can it adapt to your current workflow, integrations, and tech stack?
+- Accessibility: Does it support both desktop and mobile platforms, and can it be self-hosted or cloud-based?
+- Scalability: Will it still fit your needs as your business grows?
+
+The year {{ site.this_year }} also brings focus on data privacy, automation, and team transparency in time management tools. At the same time the market offers a range of solutions for every use case, from solopreneurs to large enterprise teams, and you can always find the solution that best fits your needs.
+
+Let’s explore the best time tracking tools for {{ site.this_year }} and see how Kimai compares with Toggl Track — two popular choices among professionals and successful teams worldwide.
+{% endcapture %}
+
+{{ general_introduction | markdownify }}
+
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include section-features.html %}
+
+    <section class="container py-5 my-1 my-md-4 my-lg-5">
+        <div class="row">
+            <div class="col-lg-12 mb-4 mb-lg-0">
+                <div class="pe-lg-4 me-lg-3 pe-xl-0 me-xl-0">
+                    <div class="mb-0">
+                        <section class="overflow-hidden pt-md-2 pt-lg-3">
+                            <div class="d-flex flex-column flex-md-row flex-md-nowrap align-items-start">
+                                <div class="col-12 ps-0 pe-lg-4 mb-5 mb-md-0">
+                                    <div class="lp-content">
                                         {{ content }}
                                     </div>
                                 </div>
                             </div>
                         </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% assign testimonial_tag = page.testimonials.tag | default: "WallOfLove" %}
+    {% assign testimonial_intro = "At Kimai, we've designed our time tracking platform to meet the needs of agencies, teams, and freelancers. Our intuitive interface and powerful features help companies like yours work smarter and more profitably. You can now “listen” to the reviews of the real users." %}
+    {% assign testimonials = site.data.testimonials | where_exp: "item", "item.tags contains testimonial_tag" | sample: 10 %}
+    {% include testimonials-horizontal-swipe.html testimonials=testimonials introduction=testimonial_intro language=page.lang %}
+
+    <section class="container py-5 my-1 my-md-4 my-lg-5">
+        <div class="row">
+            <div class="col-lg-12 mb-4 mb-lg-0">
+                <div class="pe-lg-4 me-lg-3 pe-xl-0 me-xl-0">
+                    <div class="mb-0">
 
                         <section class="my-md-3 my-lg-5">
                             <h3 class="mb-5">All your time-tracking needs in one platform</h3>
@@ -76,7 +146,7 @@ layout: base
                         </section>
 
                         {% if tool.comparison != false %}
-                        <section class="py-5 my-md-3 my-lg-5">
+                        <section class="py-5 my-md-3 my-lg-5" id="compare-features">
                             <div class="row align-items-center">
                                 <div class="col-md-4 text-center text-md-start">
                                     <h2 class="h1 mb-4">See the difference</h2>
@@ -204,45 +274,47 @@ layout: base
                         </section>
                         {% endif %}
 
-                        {% if page.kimai_footer == nil %}
                         <section class="my-md-3 my-lg-5">
-                            <h2 class="my-5">Kimai is open source</h2>
+                            <h2 class="mt-5 mb-4">Kimai is open source</h2>
                             <p>
-                            {% if tool.oss == false %}
-                                {{ tool.name }} is a proprietary software, which includes a platform risk.
-                                Relying solely on a software vendor for code tweaks and feature implementations can feel and often is limiting.
-                                Not so with Kimai, the open-source fairy tale.
-                            {% else %}
-                                Kimai is the #1 open-source time-tracking software.
+                                Kimai is #1 open-source time-tracking software, providing unparalleled transparency and flexibility.
+                                By choosing Kimai, you’re investing in a secure, cost-efficient solution with complete control over your data and the ability to customize it exactly as your team needs.
+                            </p>
+                            {% if tool.is_oss == false %}
+                                {% alert warning -%}
+                                    {{ tool.name }} is a proprietary software, which includes a platform risk.
+                                    Relying solely on a software vendor for code tweaks and feature implementations can feel and often is limiting.
+                                {%- endalert %}
                             {% endif %}
-                            With it, you're not only investing in a more secure and cost-efficient solution, but you're also embracing unparalleled transparency and flexibility.
                             </p>
 
-                            <h2 class="my-5">Host the on-premise edition</h2>
+                            <h2 class="mt-5 mb-4">Self-host with complete control</h2>
                             <p>
-                                Kimai prioritizes data privacy and information security, providing an option for self-hosting via its open-source/on-premise edition.
-                                Choosing on-premises software like Kimai ensures a height level of security, allowing businesses to adhere to stringent data protection regulations with confidence.
-                                Beyond its security features, Kimai offers the adaptability to customize to specific needs, providing a degree of control over data processing and storage that's sometimes elusive in cloud solutions.
-                            </p>
-                            <p>
-                                Additionally, for businesses aiming to integrate other applications, Kimai comes equipped with a robust API to facilitate such integrations seamlessly.
+                                Kimai offers a self-hosted edition that puts data privacy to the front.
+                                With on-premises deployment, you maintain complete control over your sensitive business information, ensure compliance with stringent data protection regulations, and achieve a level of security that's often challenging with cloud-only solutions.
+                                Plus, Kimai's API allows seamless integration with your existing tools and workflows.
                             </p>
                             {% if tool.on_premise == false %}
-                            <p>
-                                <strong>
-                                    {{ tool.name }} does not offer an on-premises solution.
-                                </strong>
-
-                            </p>
+                                {% alert info -%}
+                                    Unlike {{ tool.name }}, which only operates in the cloud, Kimai gives you the flexibility to choose your deployment model.
+                                {%- endalert %}
                             {% endif %}
 
-                            <h2 class="my-5">Data protection</h2>
+                            <h2 class="mt-5 mb-4">EU-based data protection</h2>
                             <p>
                                 If you decide to go with the cloud edition, you can be sure that your data is safe.
                                 With the headquarters located in Austria (EU), it is GDPR-compliant by default and all data is stored in Germany (Hetzner Cloud, Falkenstein).
+                                <a href="{% link _posts/en/2025-01-16-privacy-facts.md %}">Learn more about our privacy-first approach</a>
                             </p>
+                            {% if tool.location != nil %}
+                                {% alert warning -%}
+                                    {{ tool.name }} is located in the {{ tool.location }}.
+                                    Due to U.S. regulations such as the CLOUD Act, data hosted with U.S.-based providers may be subject to access requests by U.S. authorities — which
+                                    can pose privacy concerns for organizations operating under EU data protection standards.
+                                {%- endalert %}
+                            {% endif %}
 
-                            <h2 class="my-5">Conclusion</h2>
+                            <h2 class="mt-5 mb-4">Conclusion</h2>
                             <p>
                                 In today's digital age, data security is paramount.
                                 Kimai promises secure data protection and state-of-the-art encryption, ensuring that your business's sensitive information remains confidential.
@@ -252,7 +324,6 @@ layout: base
                                 Its ease of use, integration capabilities, and commitment to data security and privacy make it a top choice for businesses seeking an efficient time-tracking software.
                             </p>
                         </section>
-                        {% endif %}
 
                         {% include cta-begin-journey.html %}
 
@@ -265,4 +336,3 @@ layout: base
 </main>
 
 {% include footer.html %}
-
