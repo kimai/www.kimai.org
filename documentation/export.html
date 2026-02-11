@@ -693,7 +693,11 @@ Next to them is the <a class="btn btn-secondary px-3" href="#"><i class="bx bx-p
   <li>the exported file <code class="language-plaintext highlighter-rouge">type</code> (here <code class="language-plaintext highlighter-rouge">PDF</code>, <code class="language-plaintext highlighter-rouge">CSV</code> or <code class="language-plaintext highlighter-rouge">Excel</code>)</li>
   <li>the <code class="language-plaintext highlighter-rouge">language</code> for header translations, which uses the request language if not configured</li>
   <li>the <code class="language-plaintext highlighter-rouge">columns</code> that should be exported</li>
+  <li>whether they can be used by <strong>every logged-in user</strong> with <code class="language-plaintext highlighter-rouge">Allow access for all users</code></li>
 </ul>
+
+<p>Activating the <code class="language-plaintext highlighter-rouge">Allow access for all users</code> setting means that the new template can be selected in the <code class="language-plaintext highlighter-rouge">My times</code> and <code class="language-plaintext highlighter-rouge">All times</code> views for exporting data. 
+However, be careful: this does not check permissions. For example, adding a rate column will render this column visible to all users, even if they do not have permission to see rates.</p>
 
 <p>Some fields are specific for the export format.</p>
 
@@ -727,9 +731,9 @@ Next to them is the <a class="btn btn-secondary px-3" href="#"><i class="bx bx-p
 
 <p>When you hover such a template, you can edit and delete it from the dropdown.</p>
 
-<h3 id="pdf-and-html">PDF and HTML</h3>
+<h3 id="pdf-and-html-for-developer">PDF and HTML (for developer)</h3>
 
-<p>Kimai supports custom PDF and HTML export templates. This is an advance topic, only for very specific use-cases.</p>
+<p>Kimai supports custom PDF and HTML export twig templates. This is an advance topic, only for very specific use-cases.</p>
 
 <p><strong>How to create your first template</strong></p>
 <ul>
@@ -812,7 +816,7 @@ Next to them is the <a class="btn btn-secondary px-3" href="#"><i class="bx bx-p
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#difference-between-export-and-invoice" class="nav-link">Difference between export and invoice</a></li><li class="nav-item"><a href="#export-state" class="nav-link">Export state</a></li><li class="nav-item"><a href="#time-format" class="nav-link">Time format</a></li><li class="nav-item"><a href="#export-templates" class="nav-link">Export templates</a><ul><li class="nav-item"><a href="#pdf-and-html" class="nav-link">PDF and HTML</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#difference-between-export-and-invoice" class="nav-link">Difference between export and invoice</a></li><li class="nav-item"><a href="#export-state" class="nav-link">Export state</a></li><li class="nav-item"><a href="#time-format" class="nav-link">Time format</a></li><li class="nav-item"><a href="#export-templates" class="nav-link">Export templates</a><ul><li class="nav-item"><a href="#pdf-and-html-for-developer" class="nav-link">PDF and HTML (for developer)</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
         
     </aside>
 
