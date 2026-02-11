@@ -1,0 +1,39 @@
+{% assign settings = site.data.store[page.slug] %}
+{% assign translation = site.data[page.lang].store.items[page.slug] %}
+{% assign developer = site.data.developer[settings.developer] %}
+{% assign pricing = settings.subscription | default: settings.price | default: 0 %}
+{% assign pricing = pricing | replace: ' €', '' %}
+{% assign DOMAIN = site.language_base[page.lang] -%}
+<script data-rh="true" type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "{{ translation.title | default: page.title }} – Kimai",
+        "inLanguage": "{{ page.lang }}"
+    }
+</script>
+<script data-rh="true" type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "sku": "{{ page.slug }}",
+        "name":"{{ translation.title | default: page.title }}",
+        "description": "{{ translation.intro }}",
+        "url": "{{ page.url | absolute_url }}",
+        "image": [
+            "{{ DOMAIN }}{% link images/apple-touch-icon.png %}"
+        ],
+        "brand": {
+            "@type": "Brand",
+            "name": "{{ developer.name }}"
+        },
+        "offers":{
+            "@type": "Offer",
+            "priceCurrency": "EUR",
+            "price": 677,
+            "availability": "http://schema.org/InStock",
+            "itemCondition": "https://schema.org/NewCondition",
+            "url":"{{ page.url }}"
+        }
+    }
+</script>
