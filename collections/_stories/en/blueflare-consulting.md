@@ -5,14 +5,14 @@ subtitle: An Interview with blueflare Consulting
 intro: How a cybersecurity consultancy builds strong client relationships through strategic billing transparency
 company: blueflare Consulting
 homepage: blueflare.co.za
-url: https://blueflare.co.za
+homepage_url: https://blueflare.co.za
 logo: /images/stories/blueflare-logo.webp
 #https://unsplash.com/de/fotos/zwei-frauen-mit-blick-auf-die-uberwachungskamera-oben-auf-der-struktur-montiert-fPxOowbR6ls
 image: /images/stories/blueflare.webp
 person: Dietmar Marggraff
 photo: /images/stories/blueflare-marggraf.webp
 quote: "Dietmar Marggraff is a consultant at blueflare with top skills in web development, cybersecurity and penetration testing"
-quote2: "“*Saving that time allowed or opened up the time to do other, if I can say, more important things—building the business, working on client work*,“ Dietmar emphasizes."
+quote2: "Saving that time allowed or opened up the time to do other, if I can say, more important things—building the business, working on client work."
 position: Founder
 industry: Cyber Security
 size: 2+
@@ -25,6 +25,11 @@ wins:
     - Weekly reports for clients are generated and sent in under 2 minutes
     - "Agency Rule: One hour saved on administration is one hour earned on consulting"
 ---
+
+**TL;DR**
+
+Blueflare Consulting leverages detailed activity records with Kimai to provide radical transparency while eliminating administrative overhead.
+This strategic decision allows them to focus on their core mission of protecting organizations from cyber threats without facing administrative complications.
 
 **About the Organization:**  
 Blueflare Consulting is a South-African company which empowers clients to manage cybersecurity. 
@@ -50,11 +55,6 @@ jumping between multiple client projects daily while maintaining precision in bi
 This journey-based approach creates a complex time management puzzle. One day might include: client check-ins, penetration testing scoping, meetings and workshops.
 
 Without proper tracking, these fragments of billable time disappear into administrative chaos – exactly what happened to Dietmar's colleague who was drowning in Excel spreadsheets, spending two hours weekly just sorting out time entries.
-
-{% alert success %}  
-Blueflare Consulting leverages detailed activity records with Kimai to provide radical transparency while eliminating administrative overhead. 
-This strategic decision allows them to focus on their core mission of protecting organizations from cyber threats without facing administrative complications.
-{% endalert %}
 
 **The "From day one" decision**
 
