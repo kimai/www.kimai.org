@@ -42,10 +42,8 @@ layout: base
 
                 <div class="bg-secondary rounded-3 p-4 p-lg-5 mt-n2 mt-md-0 me-md-n2">
                     <div class="px-sm-3 px-xl-4 pt-4 py-md-3 py-lg-4 py-xl-5">
-                        <h1 class="pb-2 pb-xxl-3"><i>{{ page.teaser }}</i></h1>
+                        <h1 class="pb-2 pb-xxl-3">{{ page.title }}</h1>
                         <div class="pb-2 mb-4 mb-xxl-5">
-                            {{ site.data[page.lang].translation.stories.company }}: <strong>{{ page.company }}</strong>
-                            <br>
                             {{ page.position }}: <strong>{{ page.person }}</strong>
                             <br>
                             {{ site.data[page.lang].translation.stories.industry }}: <strong>{{ page.industry }}</strong>
@@ -54,7 +52,7 @@ layout: base
                             <br>
                             {{ site.data[page.lang].translation.stories.since }}: <strong>{{ page.since }}</strong>
                             <br>
-                            Homepage: <strong><a href="{{ page.url }}" target="_blank">{{ page.homepage }}</a></strong>
+                            Homepage: <strong><a href="{{ page.homepage_url }}" target="_blank">{{ page.homepage }}</a></strong>
                             <br>
                             {{ site.data[page.lang].translation.stories.location }}: <strong>{{ page.location }}</strong>
                         </div>

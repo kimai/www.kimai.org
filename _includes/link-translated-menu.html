@@ -22,6 +22,9 @@
         {%- else -%}
             {{- menu.title -}}
         {%- endif -%}
+        {%- if include.icon_after != nil -%}
+        <i class="{{ include.icon_after }}"></i>
+        {%- endif -%}
     </a>
 {%- endif -%}
 

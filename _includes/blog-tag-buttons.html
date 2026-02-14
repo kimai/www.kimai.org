@@ -1,3 +1,4 @@
+{% include link-translated-menu.html item="stories" language=page.lang class="btn btn-success rounded-pill py-1 px-3 me-2" icon_after="bx bx-right-arrow-alt fs-4" %}
 {% for tags in site.tags %}
 {% if tags[0] != "version-1" %}
 {% assign tag_page = site.blog_tags | filter_slug_lang: tags[0] %}

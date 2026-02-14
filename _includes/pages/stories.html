@@ -41,12 +41,11 @@
             {% for entry in entries %}
             <div class="col text-center px-3">
                 <div class="card d-table border-0 p-3 mx-auto mb-4">
-                    <a href="{{ entry.url }}"><img src="{{ entry.image }}" class="card-img" alt="{{ entry.title }}" style="height: 300px; width: 500px; object-fit: cover"></a>
-                </div>
-                <h3 class="h5 mb-3">{{ entry.company }}</h3>
-                <p>{{ entry.teaser }}</p>
-                <div class="text-center mt-4">
-                    <a href="{{ entry.url }}" class="btn btn-secondary w-75 text-wrap">{{ entry.subtitle }}</a>
+                    <a href="{{ entry.url }}"><img src="{{ entry.image }}" class="card-img" alt="{{ entry.title }}" style="height: 300px; max-width: 600px; object-fit: cover"></a>
+                    <h5 class="p-3 mx-auto ">{{ entry.intro }}</h5>
+                    <div class="text-center mt-4">
+                        <a href="{{ entry.url }}" class="btn btn-secondary w-75 text-wrap">{{ entry.subtitle }}</a>
+                    </div>
                 </div>
             </div>
             {% endfor %}
