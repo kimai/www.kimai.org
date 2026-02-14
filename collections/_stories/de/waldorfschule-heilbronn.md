@@ -1,20 +1,20 @@
 ---
 title: "Waldorfschule Heilbronn"
 teaser: Keine Excel-Tabellen, sondern ein funktionierendes System
-subtitle: Ein Interview mit einer Freien Schule aus Deutschland
+subtitle: Ein Interview mit Waldorfschule Heilbronn
 intro: Wie eine Freie Schule aus Deutschland ihre Mitarbeiterinnen und Mitarbeiter auf ein einfaches und schnelles Zeiterfassungssystem umgestellt hat
 company: Verein für Waldorfpädagogik Unterland e.V.
 homepage: www.waldorfschule-hn.de
-url: http://www.waldorfschule-hn.de
+homepage_url: http://www.waldorfschule-hn.de
 logo: /images/stories/waldorfcampus-heilbronn.svg
 image: /images/stories/waldorfcampus-unterricht.webp
 person: Jörg Hartmann
 photo: /images/stories/waldorfcampus-hartmann.webp
 quote: "Jörg Hartmann fing seine Karriere als Lehrer an und ist aktuell Geschäftsführer des Vereins für Waldorfpädagogik."
-quote2: "„*Je länger wir Kimai nutzen, desto zufriedener ist das Kollegium*“, zieht Hartmann eine positive Bilanz. „*Kimai läuft einfach stabil und ohne Probleme*.“"
+quote2: "Je länger wir Kimai nutzen, desto zufriedener ist das Kollegium. Kimai läuft einfach stabil und ohne Probleme."
 position: Geschäftsführer & Schulleiter
 industry: Bildung
-size: 100+
+size: 150+
 since: 2023
 location: Heilbronn, Deutschland
 version: onpremise
@@ -25,6 +25,12 @@ wins:
     - Ausgewogene Arbeitsbelastung unter den Lehrern
     - Kostenersparnisse von mehreren Tausend Euro durch fixe Open-Source-Lösung
 ---
+
+**TL;DR**
+
+Die Open-Source-Lösung ermöglichte erhebliche Verbesserungen durch eine bequeme und transparente Arbeitszeiterfassung, ohne große Kosten zu verursachen.
+Besonders die Möglichkeit, schnell Einträge über Handy oder spezielle Zeiterfassungsterminals zu machen, fand hohe Akzeptanz im Kollegium.
+Bei administrativen Aufgaben profitierte die Organisation von enormen Zeit- und Kostenersparnissen durch die effiziente Erfassung, Verwaltung, Auswertung und Abrechnung von Arbeitszeiten mit Kimai.
 
 **Die Zahlen des Unternehmens**
 
@@ -54,12 +60,6 @@ Vor Kimai stand der Waldorf-Campus vor einem Problem, das viele Bildungseinricht
 Die Erfahrungen von Jörg Hartmann in anderen Organisationen zeigten ihm, was nach Verbesserung verlangt: 
 „*Top-down-Zeiterfassungssysteme, bei denen ich als Mitarbeiter wirklich nur stempeln konnte, aber keine Einsicht hatte und auch nichts selbst ändern konnte*." 
 Für eine nach Gemeinschaft und Vertrauen lebende Waldorfschule war ein solches System inakzeptabel.
-
-{% alert success %}
-Die Open-Source-Lösung ermöglichte erhebliche Verbesserungen durch eine bequeme und transparente Arbeitszeiterfassung, ohne große Kosten zu verursachen. 
-Besonders die Möglichkeit, schnell Einträge über Handy oder spezielle Zeiterfassungsterminals zu machen, fand hohe Akzeptanz im Kollegium. 
-Bei administrativen Aufgaben profitierte die Organisation von enormen Zeit- und Kostenersparnissen durch die effiziente Erfassung, Verwaltung, Auswertung und Abrechnung von Arbeitszeiten mit Kimai.
-{% endalert %}
 
 **Der Weg von Auswahl zu Implementierung**
 

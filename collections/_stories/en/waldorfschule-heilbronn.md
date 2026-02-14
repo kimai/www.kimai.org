@@ -1,20 +1,20 @@
 ---
 title: "Waldorfschule Heilbronn"
 teaser: Not some Excel spreadsheets, but a system that actually works
-subtitle: An Interview with a Free School from Germany
+subtitle: An Interview with Waldorfschule Heilbronn
 intro: How a Free School in Germany switched its staff to a simple and fast time-tracking system
 company: Association for Waldorf Education Unterland e.V.
 homepage: www.waldorfschule-hn.de
-url: http://www.waldorfschule-hn.de
+homepage_url: http://www.waldorfschule-hn.de
 logo: /images/stories/waldorfcampus-heilbronn.svg
 image: /images/stories/waldorfcampus-unterricht.webp
 person: Jörg Hartmann
 photo: /images/stories/waldorfcampus-hartmann.webp
 quote: "Jörg Hartmann began his career as a teacher and is currently the managing director of the Association for Waldorf Education."
-quote2: "“*The longer we use Kimai, the more satisfied the staff are*,” Hartmann summarizes. “*Kimai simply runs smoothly and without problems*.”"
+quote2: "The longer we use Kimai, the more satisfied the staff are. Kimai simply runs smoothly and without problems."
 position: Principal
 industry: Education
-size: 100+
+size: 150+
 since: 2023
 location: Heilbronn, Germany
 version: onpremise
@@ -25,6 +25,12 @@ wins:
     - Improved workload balancing among teachers
     - Cost savings of several thousand Euros through a fixed-price open-source solution
 ---
+
+**TL;DR**  
+
+The open-source solution made substantial improvements possible through convenient and transparent time tracking, without high costs.
+The option to quickly log entries via mobile phone or Kiosk terminals was especially well received by staff.
+On the administrative side, the school benefited from enormous time and cost savings due to efficient recording, management, evaluation, and billing of working hours with Kimai.
 
 **Key Figures**
 
@@ -54,12 +60,6 @@ Before Kimai, the Waldorf campus faced a problem familiar to many organisations 
 His experience in other organizations showed him what needs to be fixed: 
 *“Top-down time-tracking systems, where as an employee I could only punch the clock, but had no insight and no ability to change anything myself*.” 
 For a Waldorf school, which lives by principles of community and trust, such a system was unacceptable.
-
-{% alert success %}
-The open-source solution made substantial improvements possible through convenient and transparent time tracking, without high costs. 
-The option to quickly log entries via mobile phone or Kiosk terminals was especially well received by staff. 
-On the administrative side, the school benefited from enormous time and cost savings due to efficient recording, management, evaluation, and billing of working hours with Kimai.
-{% endalert %}
 
 **From selection to implementation**
 
