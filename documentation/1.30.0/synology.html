@@ -567,7 +567,7 @@
             <a class="dropdown-item" href="/documentation/1.30.0/synology.html">Kimai 1.30.0</a>
             
             
-            <a class="dropdown-item" href="/documentation/synology.html">2.48.0 (latest version)</a>
+            <a class="dropdown-item" href="/documentation/synology.html">2.49.0 (latest version)</a>
         </div>
     </div>
 
@@ -763,7 +763,7 @@ Be extremely careful, a wrong command can destroy your Synology … you know: wi
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /volume1/web/kimai/
 git fetch <span class="nt">--tags</span>
-git checkout 2.48.0
+git checkout 2.49.0
 php81 composer <span class="nb">install</span> <span class="nt">--no-dev</span> <span class="nt">--optimize-autoloader</span>
 php81 bin/console kimai:update
 <span class="nb">chown</span> <span class="nt">-R</span> :http <span class="nb">.</span>
@@ -776,11 +776,11 @@ php81 bin/console kimai:update
 <h3 id="update-without-git">Update without git</h3>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /volume1/web/
-wget https://github.com/kimai/kimai/archive/refs/tags/2.48.0.zip
+wget https://github.com/kimai/kimai/archive/refs/tags/2.49.0.zip
 7z x 
-<span class="nb">cp </span>kimai2/.env kimai-2.48.0/
-<span class="nb">cp</span> <span class="nt">-R</span> kimai2/var/invoices kimai-2.48.0/var/
-<span class="nb">cd </span>kimai-2.48.0/
+<span class="nb">cp </span>kimai2/.env kimai-2.49.0/
+<span class="nb">cp</span> <span class="nt">-R</span> kimai2/var/invoices kimai-2.49.0/var/
+<span class="nb">cd </span>kimai-2.49.0/
 </code></pre></div></div>
 
 <p>Then <a href="https://getcomposer.org/download/">download and install composer</a>, followed by the installation:</p>
@@ -793,7 +793,7 @@ php81 bin/console kimai:update
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /volume1/web/
 <span class="nb">mv </span>kimai kimai-backup
-<span class="nb">mv </span>kimai-2.48.0 kimai
+<span class="nb">mv </span>kimai-2.49.0 kimai
 </code></pre></div></div>
 <div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i>
 <p>Important: Finally execute the version specific tasks from the <a href="https://github.com/kimai/kimai/blob/main/UPGRADING.md">UPGRADING</a> guide.</p>
