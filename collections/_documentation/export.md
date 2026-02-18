@@ -53,8 +53,14 @@ These templates allow you to select:
 - the `columns` that should be exported
 - whether they can be used by **every logged-in user** with `Allow access for all users`
 
-Activating the `Allow access for all users` setting means that the new template can be selected in the `My times` and `All times` views for exporting data. 
-However, be careful: this does not check permissions. For example, adding a rate column will render this column visible to all users, even if they do not have permission to see rates.
+### Share with your users
+
+Enabling the `Allow access for all users` setting makes the new template available in the `My times` and `All times` views for exporting data.
+
+⚠️ **Important:** These views do not check user permissions.  
+For example, if you add a rate column to the template, the rates will be visible to all users — even if they normally do not have permission to see rate information.
+
+### Format specifications
 
 Some fields are specific for the export format.
 
@@ -97,7 +103,7 @@ Be aware of the following rules:
 - HTML templates have the file extension `.html.twig`
 - PDF templates have the file extension `.pdf.twig`
 - Use unique filenames and prefix them with your company name, eg `company-export.html.twig` 
-- The names `default.html.twig`, `default.pdf.twig`, `default-budget.pdf.twig`, `default-internal.pdf.twig`, `timesheet.pdf.twig` are reserved
+- The name `timesheet.html.twig`, `timesheet.pdf.twig`, `default.pdf.twig`, `default.html.twig` are reserved
 - After updating an existing template, you have to [clear the cache]({% link _documentation/cache.md %}) to see the results
 
 **How to access custom fields in PDF templates**
