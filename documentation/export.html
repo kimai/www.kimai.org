@@ -696,8 +696,14 @@ Next to them is the <a class="btn btn-secondary px-3" href="#"><i class="bx bx-p
   <li>whether they can be used by <strong>every logged-in user</strong> with <code class="language-plaintext highlighter-rouge">Allow access for all users</code></li>
 </ul>
 
-<p>Activating the <code class="language-plaintext highlighter-rouge">Allow access for all users</code> setting means that the new template can be selected in the <code class="language-plaintext highlighter-rouge">My times</code> and <code class="language-plaintext highlighter-rouge">All times</code> views for exporting data. 
-However, be careful: this does not check permissions. For example, adding a rate column will render this column visible to all users, even if they do not have permission to see rates.</p>
+<h3 id="share-with-your-users">Share with your users</h3>
+
+<p>Enabling the <code class="language-plaintext highlighter-rouge">Allow access for all users</code> setting makes the new template available in the <code class="language-plaintext highlighter-rouge">My times</code> and <code class="language-plaintext highlighter-rouge">All times</code> views for exporting data.</p>
+
+<p>⚠️ <strong>Important:</strong> These views do not check user permissions.<br />
+For example, if you add a rate column to the template, the rates will be visible to all users — even if they normally do not have permission to see rate information.</p>
+
+<h3 id="format-specifications">Format specifications</h3>
 
 <p>Some fields are specific for the export format.</p>
 
@@ -755,7 +761,7 @@ However, be careful: this does not check permissions. For example, adding a rate
   <li>HTML templates have the file extension <code class="language-plaintext highlighter-rouge">.html.twig</code></li>
   <li>PDF templates have the file extension <code class="language-plaintext highlighter-rouge">.pdf.twig</code></li>
   <li>Use unique filenames and prefix them with your company name, eg <code class="language-plaintext highlighter-rouge">company-export.html.twig</code></li>
-  <li>The names <code class="language-plaintext highlighter-rouge">default.html.twig</code>, <code class="language-plaintext highlighter-rouge">default.pdf.twig</code>, <code class="language-plaintext highlighter-rouge">default-budget.pdf.twig</code>, <code class="language-plaintext highlighter-rouge">default-internal.pdf.twig</code>, <code class="language-plaintext highlighter-rouge">timesheet.pdf.twig</code> are reserved</li>
+  <li>The name <code class="language-plaintext highlighter-rouge">timesheet.html.twig</code>, <code class="language-plaintext highlighter-rouge">timesheet.pdf.twig</code>, <code class="language-plaintext highlighter-rouge">default.pdf.twig</code>, <code class="language-plaintext highlighter-rouge">default.html.twig</code> are reserved</li>
   <li>After updating an existing template, you have to <a href="/documentation/cache.html">clear the cache</a> to see the results</li>
 </ul>
 
@@ -816,7 +822,7 @@ However, be careful: this does not check permissions. For example, adding a rate
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#difference-between-export-and-invoice" class="nav-link">Difference between export and invoice</a></li><li class="nav-item"><a href="#export-state" class="nav-link">Export state</a></li><li class="nav-item"><a href="#time-format" class="nav-link">Time format</a></li><li class="nav-item"><a href="#export-templates" class="nav-link">Export templates</a><ul><li class="nav-item"><a href="#pdf-and-html-for-developer" class="nav-link">PDF and HTML (for developer)</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#difference-between-export-and-invoice" class="nav-link">Difference between export and invoice</a></li><li class="nav-item"><a href="#export-state" class="nav-link">Export state</a></li><li class="nav-item"><a href="#time-format" class="nav-link">Time format</a></li><li class="nav-item"><a href="#export-templates" class="nav-link">Export templates</a><ul><li class="nav-item"><a href="#share-with-your-users" class="nav-link">Share with your users</a></li><li class="nav-item"><a href="#format-specifications" class="nav-link">Format specifications</a></li><li class="nav-item"><a href="#pdf-and-html-for-developer" class="nav-link">PDF and HTML (for developer)</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
         
     </aside>
 
