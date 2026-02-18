@@ -18,7 +18,7 @@ industry: Websitedesign und Hosting
 size: 4+
 since: 2021
 location: Zürich, Schweiz
-version: onpremise
+version: cloud
 wins:
     - 100% positive Kundenfeedbacks für strukturierte Stundenübersichten
     - Große Zeitersparnisse in Projektcontrolling, Rechnungserstellung, Zeiterfassung und Lohnabrechnung
@@ -46,12 +46,12 @@ Ein Jahr später, als sein Unternehmen immer mehr Kunden gewann, stand er vor ei
 Wie erfasst man Arbeitszeiten und Projektkosten effizient, wenn das Team wächst und die Kundenprojekte komplexer werden? „Ohne Zeiterfassung gibt es keinen Lohn. 
 Wir hatten Excel-Listen, wo wir Start- und Endzeit eingetragen haben. Das war mühsam und fehleranfällig. Am Ende des Monats war es jedes Mal ein Kampf, alles zusammenzurechnen."
 
-Mit mehren verwalteten Domains und einem Team aus drei Fachleuten brauchte AlpineLink eine Lösung, die mehr konnte als Excel-Tabellen. 
+Mit mehreren verwalteten Domains und einem Team aus drei Fachleuten brauchte AlpineLink eine Lösung, die mehr konnte als Excel-Tabellen. 
 Die manuelle Zeiterfassung kostete nicht nur Zeit, sondern führte auch zu Ungenauigkeiten bei der Abrechnung – ein kritisches Problem für ein Unternehmen, das auf Stundenbasis arbeitet.
 
 **Von Kimai On-Premise zu Kimai Cloud**
 
-Laurin begann seine Kimai-Reise mit der Self-Hosted-Version. „Ich habe nach einer selbst gehosteten Zeiterfassungslösung gesucht, weil ich möchte, dass die Daten bei mir bleiben", erklärt er. 
+Laurin begann seine Kimai-Reise mit der Self-Hosted-Version. „Ich habe nach einer selbst gehosteten Zeiterfassungslösung gesucht, weil ich möchte, dass die Daten bei mir bleiben“, erklärt er. 
 Als technikaffiner Unternehmer schätzte er die Kontrolle über seine Daten. 
 Sein Team bestand aus Selbstständigen, die die einfache Arbeitszeiteintragung genossen, und Laurin war mit seinem On-Premise-Zeiterfassungssystem zufrieden.
 
