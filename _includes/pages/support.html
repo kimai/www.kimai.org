@@ -16,9 +16,15 @@
                         {{ site.data[page.lang].translation.support.premium_intro | markdownify }}
                     </div>
                     <div class="card-footer border-0 p-0 text-center m-0 w-100">
+                        {% assign install_support_btn = site.data[page.lang].translation.support.get_in_touch %}
+                        <a href="mailto:{{ site.support_email }}" class="btn btn-lg btn-primary">{{ install_support_btn }}</a>
+                    </div>
+                    {% comment %}
+                    <div class="card-footer border-0 p-0 text-center m-0 w-100">
                         {% assign install_support_btn = site.data[page.lang].translation.support.premium_cta %}
                         <a href="#support-call" class="btn btn-lg btn-primary">{{ install_support_btn }}</a>
                     </div>
+                    {% endcomment %}
                 </div>
                 <div class="vr text-border d-none d-sm-inline-block m-4"></div>
                 <div class="card w-sm-33 border-0 bg-transparent text-center px-sm-1 px-md-3 mt-4">
@@ -51,6 +57,7 @@
     </div>
 </section>
 
+{% comment %}
 <section class="py-5 my-md-2 my-lg-4 my-xl-5 ">
     <div class="container">
         <div class="row justify-content-center pt-5 pb-1 pb-sm-2 pb-md-3">
@@ -61,6 +68,7 @@
         </div>
     </div>
 </section>
+{% endcomment %}
 
 <section class="py-5 my-md-2 my-lg-4 my-xl-5 bg-secondary">
     <div class="container">
