@@ -560,36 +560,30 @@
             <div>
                 
                 <div id="documentation-content">
-                    <p>You need to back up the following files and directories:</p>
+                    <p>You need to back up the following files and directories (not all might exist in your system):</p>
+
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">.env</code></li>
+  <li><code class="language-plaintext highlighter-rouge">.env</code> and <code class="language-plaintext highlighter-rouge">.env.local</code></li>
   <li><code class="language-plaintext highlighter-rouge">config/packages/local.yaml</code></li>
-  <li><code class="language-plaintext highlighter-rouge">var/</code></li>
-  <li>and possible customized files</li>
+  <li><code class="language-plaintext highlighter-rouge">var/data/</code></li>
+  <li><code class="language-plaintext highlighter-rouge">var/export/</code></li>
+  <li><code class="language-plaintext highlighter-rouge">var/invoices/</code></li>
+  <li><code class="language-plaintext highlighter-rouge">var/packages/</code></li>
+  <li><code class="language-plaintext highlighter-rouge">var/plugins/</code></li>
 </ul>
 
 <h2 id="database-backup">Database backup</h2>
 
-<p>You should always create a full backup of the database.</p>
+<p>You should always create a <strong>full backup</strong> of the Kimai database.</p>
 
-<p>The required database tables are:</p>
+<p>I hope you don’t share the database with another applications, because the list of tables depends on the used plugins.</p>
+
+<p>The required database tables are at least:</p>
 <ul>
   <li>All tables with prefix <code class="language-plaintext highlighter-rouge">kimai2_</code></li>
   <li>All tables with prefix <code class="language-plaintext highlighter-rouge">bundle_migration_</code></li>
   <li>The table <code class="language-plaintext highlighter-rouge">migration_versions</code></li>
 </ul>
-
-<p>There might be more depending on the used plugins.</p>
-
-<h2 id="version-information">Version information</h2>
-
-<p>Record your Kimai version:</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/console kimai:version
-git rev-parse HEAD
-</code></pre></div></div>
-
-<p>In most cases you don’t need these versions. 
-But it’s good to have the information in the unlikely case of a problem while restoring the backup.</p>
 
 <h2 id="create-a-database-backup">Create a database backup</h2>
 
@@ -604,7 +598,7 @@ But it’s good to have the information in the unlikely case of a problem while 
   <li>Install Kimai <a href="/documentation/installation.html">as documented</a> in the <strong>exact same version</strong>, which you used when you created the backup</li>
   <li>Make sure it works</li>
   <li>Restore the database backup in an empty database</li>
-  <li>Replace the file with the ones from your backup (e.g. <code class="language-plaintext highlighter-rouge">var/</code>, <code class="language-plaintext highlighter-rouge">.env</code>, <code class="language-plaintext highlighter-rouge">local.yaml</code>=</li>
+  <li>Restore the files: <code class="language-plaintext highlighter-rouge">var/data/</code>, <code class="language-plaintext highlighter-rouge">.env</code>, <code class="language-plaintext highlighter-rouge">local.yaml</code></li>
   <li>Point <code class="language-plaintext highlighter-rouge">.env</code> to your imported database</li>
 </ul>
 
@@ -627,20 +621,13 @@ But it’s good to have the information in the unlikely case of a problem while 
 
 <p>Run the plugin installation commands.</p>
 
-<h2 id="pitfall-version-change">Pitfall version change</h2>
+<h2 id="common-mistakes">Common mistakes</h2>
 
 <p>You restored Kimai (as documented above), but have problems when accessing it?</p>
 
-<p>Maybe you have missed an upgrade steps, which you would have done when executing a <a href="/documentation/updates.html">normal upgrade</a>.</p>
+<p>That’s likely because you installed different versions and forgot to execute the <a href="/documentation/updates.html">database upgrade</a>.</p>
 
 <p>Please check the <a href="https://github.com/kimai/kimai/blob/main/UPGRADING.md">UPGRADING</a> guide and make sure you executed all version specific tasks.</p>
-
-<h3 id="database">Database</h3>
-
-<p>If Kimai does not load (e.g. you only see a white screen, maybe some pages work) the database could be the reason.
-This problem can happen when you install a different (newer) version that has a different database structure then your backup.</p>
-
-<p>Run the <a href="/documentation/updates.html">upgrade commands</a>.</p>
 
 <h3 id="configuration">Configuration</h3>
 
@@ -682,12 +669,14 @@ It will store the database, your environment file, the installed plugins and gen
 <span class="nb">mkdir</span> <span class="nt">-p</span> <span class="nv">$BACKUP_TMP_DIR</span>
 <span class="nb">mkdir</span> <span class="nt">-p</span> <span class="nv">$BACKUP_TMP_DIR</span>/var/data/
 <span class="nb">mkdir</span> <span class="nt">-p</span> <span class="nv">$BACKUP_TMP_DIR</span>/var/plugins/
+<span class="nb">mkdir</span> <span class="nt">-p</span> <span class="nv">$BACKUP_TMP_DIR</span>/var/packages/
 
 mysqldump <span class="nt">--defaults-file</span><span class="o">=</span><span class="nv">$CONNECTION_CONFIG</span> <span class="nt">--single-transaction</span> <span class="nt">--no-tablespaces</span> <span class="nt">-u</span> kimai2 <span class="nt">-h</span> 127.0.0.1 kimai2 <span class="o">&gt;</span> <span class="nv">$BACKUP_TMP_DIR</span>/kimai2-<span class="nv">$DATE</span>.sql
 
-<span class="nb">cp</span> <span class="nv">$KIMAI_DIR</span>/.env <span class="nv">$BACKUP_TMP_DIR</span>/
+<span class="nb">cp</span> <span class="nv">$KIMAI_DIR</span>/.env<span class="k">*</span> <span class="nv">$BACKUP_TMP_DIR</span>/
 <span class="nb">cp</span> <span class="nt">-R</span> <span class="nv">$KIMAI_DIR</span>/var/data/<span class="k">*</span> <span class="nv">$BACKUP_TMP_DIR</span>/var/data/
 <span class="nb">cp</span> <span class="nt">-R</span> <span class="nv">$KIMAI_DIR</span>/var/plugins/<span class="k">*</span> <span class="nv">$BACKUP_TMP_DIR</span>/var/plugins/
+<span class="nb">cp</span> <span class="nt">-R</span> <span class="nv">$KIMAI_DIR</span>/var/packages/<span class="k">*</span> <span class="nv">$BACKUP_TMP_DIR</span>/var/packages/
 
 <span class="k">if</span> <span class="o">[[</span> <span class="nt">-d</span> <span class="s2">"</span><span class="nv">$KIMAI_DIR</span><span class="s2">/var/invoices/"</span> <span class="o">]]</span><span class="p">;</span>
 <span class="k">then
@@ -725,7 +714,7 @@ zip <span class="nt">-r</span> <span class="nv">$BACKUP_STORAGE_DIR</span>/<span
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#database-backup" class="nav-link">Database backup</a></li><li class="nav-item"><a href="#version-information" class="nav-link">Version information</a></li><li class="nav-item"><a href="#create-a-database-backup" class="nav-link">Create a database backup</a></li><li class="nav-item"><a href="#restore" class="nav-link">Restore</a></li><li class="nav-item"><a href="#pitfall-version-change" class="nav-link">Pitfall version change</a><ul><li class="nav-item"><a href="#database" class="nav-link">Database</a></li><li class="nav-item"><a href="#configuration" class="nav-link">Configuration</a></li></ul></li><li class="nav-item"><a href="#backup-script" class="nav-link">Backup script</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#database-backup" class="nav-link">Database backup</a></li><li class="nav-item"><a href="#create-a-database-backup" class="nav-link">Create a database backup</a></li><li class="nav-item"><a href="#restore" class="nav-link">Restore</a></li><li class="nav-item"><a href="#common-mistakes" class="nav-link">Common mistakes</a><ul><li class="nav-item"><a href="#configuration" class="nav-link">Configuration</a></li></ul></li><li class="nav-item"><a href="#backup-script" class="nav-link">Backup script</a></li></ul>
         
     </aside>
 
