@@ -3,33 +3,26 @@ title: Backups
 description: How to backup and restore your Kimai installation
 ---
 
-You need to back up the following files and directories:
-- `.env`
+You need to back up the following files and directories (not all might exist in your system):
+
+- `.env` and `.env.local`
 - `config/packages/local.yaml`
-- `var/`
-- and possible customized files
+- `var/data/`
+- `var/export/`
+- `var/invoices/`
+- `var/packages/`
+- `var/plugins/`
 
 ## Database backup
 
-You should always create a full backup of the database.
+You should always create a **full backup** of the Kimai database. 
 
-The required database tables are:
+I hope you don't share the database with another applications, because the list of tables depends on the used plugins.
+
+The required database tables are at least: 
 - All tables with prefix `kimai2_`
 - All tables with prefix `bundle_migration_`
 - The table `migration_versions`
-
-There might be more depending on the used plugins.
-
-## Version information
-
-Record your Kimai version:
-```bash
-bin/console kimai:version
-git rev-parse HEAD
-```
-
-In most cases you don't need these versions. 
-But it's good to have the information in the unlikely case of a problem while restoring the backup.  
 
 ## Create a database backup
 
@@ -44,7 +37,7 @@ mysqldump --single-transaction -u kimai2 -p -h 127.0.0.1 kimai2 > ~/kimai2-`date
 - Install Kimai [as documented]({% link _documentation/installation.md %}) in the **exact same version**, which you used when you created the backup
 - Make sure it works
 - Restore the database backup in an empty database
-- Replace the file with the ones from your backup (e.g. `var/`, `.env`, `local.yaml`=
+- Restore the files: `var/data/`, `.env`, `local.yaml`
 - Point `.env` to your imported database
 
 Now refresh your cache:
@@ -55,20 +48,13 @@ Now run the [upgrade commands]({% link _documentation/updates.md %}) and come ba
 
 Run the plugin installation commands. 
 
-## Pitfall version change
+## Common mistakes
 
 You restored Kimai (as documented above), but have problems when accessing it?
 
-Maybe you have missed an upgrade steps, which you would have done when executing a [normal upgrade]({% link _documentation/updates.md %}).
+That's likely because you installed different versions and forgot to execute the [database upgrade]({% link _documentation/updates.md %}).
 
 Please check the [UPGRADING]({{ site.kimai_v2_file }}/UPGRADING.md) guide and make sure you executed all version specific tasks.
-
-### Database
-
-If Kimai does not load (e.g. you only see a white screen, maybe some pages work) the database could be the reason.
-This problem can happen when you install a different (newer) version that has a different database structure then your backup.
-
-Run the [upgrade commands]({% link _documentation/updates.md %}).
 
 ### Configuration
 
@@ -114,12 +100,14 @@ mkdir -p $BACKUP_STORAGE_DIR
 mkdir -p $BACKUP_TMP_DIR
 mkdir -p $BACKUP_TMP_DIR/var/data/
 mkdir -p $BACKUP_TMP_DIR/var/plugins/
+mkdir -p $BACKUP_TMP_DIR/var/packages/
 
 mysqldump --defaults-file=$CONNECTION_CONFIG --single-transaction --no-tablespaces -u kimai2 -h 127.0.0.1 kimai2 > $BACKUP_TMP_DIR/kimai2-$DATE.sql
 
-cp $KIMAI_DIR/.env $BACKUP_TMP_DIR/
+cp $KIMAI_DIR/.env* $BACKUP_TMP_DIR/
 cp -R $KIMAI_DIR/var/data/* $BACKUP_TMP_DIR/var/data/
 cp -R $KIMAI_DIR/var/plugins/* $BACKUP_TMP_DIR/var/plugins/
+cp -R $KIMAI_DIR/var/packages/* $BACKUP_TMP_DIR/var/packages/
 
 if [[ -d "$KIMAI_DIR/var/invoices/" ]];
 then
