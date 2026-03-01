@@ -1,7 +1,6 @@
 ---
 title: "Compare Kimai vs. Clockin - the best Clockin alternative"
 name: Clockin
-feature: true
 is_oss: false
 on_premise: false
 cloud: true
