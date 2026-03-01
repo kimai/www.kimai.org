@@ -17,8 +17,8 @@
         "@context": "https://schema.org/",
         "@type": "Product",
         "sku": "{{ page.slug }}",
-        "name":"{{ translation.title | default: page.title }}",
-        "description": "{{ translation.intro }}",
+        "name":"{{ translation.title | default: page.title | replace: '"', "'" }}",
+        "description": "{{ translation.intro | replace: '"', "'" }}",
         "url": "{{ page.url | absolute_url }}",
         "image": [
             "{{ DOMAIN }}{% link images/apple-touch-icon.png %}"
