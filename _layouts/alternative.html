@@ -306,7 +306,7 @@ Let’s explore the best time tracking tools for {{ site.this_year }} and see ho
                                 With the headquarters located in Austria (EU), it is GDPR-compliant by default and all data is stored in Germany (Hetzner Cloud, Falkenstein).
                                 <a href="{% link _posts/en/2025-01-16-privacy-facts.md %}">Learn more about our privacy-first approach</a>
                             </p>
-                            {% if tool.location != nil %}
+                            {% if tool.location == "USA" %}
                                 {% alert warning -%}
                                     {{ tool.name }} is located in the {{ tool.location }}.
                                     Due to U.S. regulations such as the CLOUD Act, data hosted with U.S.-based providers may be subject to access requests by U.S. authorities — which
