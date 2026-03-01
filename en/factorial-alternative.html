@@ -1,0 +1,3135 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#4188c9">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="robots" content="index,follow">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+<title>Compare Kimai vs. Factorial: Which time-tracker fits your needs?</title>
+<link type="application/atom+xml" rel="alternate" href="https://www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
+<meta property="og:locale" content="en">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Compare Kimai vs. Factorial: Which time-tracker fits your needs?">
+<meta property="og:image" content="https://www.kimai.org/images/social-preview.webp">
+<meta property="og:description" content="">
+<link href="/assets/build/main.css?v6" rel="stylesheet" />
+
+</head>
+<body class="">
+
+
+
+
+
+
+
+
+<main class="page-wrapper">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand-lg    bg-light navbar-sticky">
+    <div class="container px-3">
+        <a href="/" class="navbar-brand pe-3">
+        <img src="/images/kimai_logo_48.webp" style="height:36px;width:36px;" alt="Kimai - Open Source time-tracker"> Kimai
+        </a>
+        <div id="navbarNav" class="offcanvas offcanvas-end">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title">Menu</h5>
+                <button type="button" class="btn-close " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Product</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/en/about.html" class="dropdown-item">About Kimai</a></li>
+                            <li><a href="/en/open-source-community" class="dropdown-item">Open Source</a></li>
+                            <li class="dropdown-divider">
+                            <li><a href="/en/integrations" class="dropdown-item">Apps &amp; Integrations</a></li>
+                            <li><a href="/en/demo.html" class="dropdown-item">Demo</a></li>
+                            <li class="dropdown-divider">
+                            <li><a href="/en/blog/" class="dropdown-item">Blog</a></li>
+                            <li><a href="/en/support.html" class="dropdown-item">Support</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Cloud</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/en/pricing" class="dropdown-item">Pricing</a></li>
+                            <li><a href="/en/changelog" class="dropdown-item">Changelog</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Self hosting</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/en/download.html" class="dropdown-item">Installation</a></li>
+                            <li><a href="/store/" class="dropdown-item">Plugins</a></li>
+                            <li><a href="https://github.com/kimai/kimai/discussions" target="_blank" class="dropdown-item">Forum <i class="bx bx-link-external me-2"></i></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Documentation</a>
+                        <ul class="dropdown-menu">
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-manual.html" class="dropdown-item">
+                                <i class="bx bx-book me-2"></i>
+                                
+                                User manual
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/cloud.html" class="dropdown-item">
+                                <i class="bx bx-cloud me-2"></i>
+                                
+                                Cloud
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-on-premise.html" class="dropdown-item">
+                                <i class="bx bx-server me-2"></i>
+                                
+                                Self hosting
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-developer.html" class="dropdown-item">
+                                <i class="bx bx-code-alt me-2"></i>
+                                
+                                Developer
+                            </a></li>
+                        
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="pe-lg-1 ms-auto me-2">
+            
+
+
+
+<a href="https://www.kimai.cloud/auth/" class="btn btn-sm fs-sm d-none d-md-inline-flex me-2 btn-outline-secondary">Login</a>
+
+            <a href="https://www.kimai.cloud/auth/registration" class="btn btn-success btn-sm fs-sm d-inline-flex">Start for free</a>
+
+        </div>
+        <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</header>
+
+
+    <section class="position-relative pt-5 overflow-hidden">
+        <span class="position-absolute top-0 start-0 d-dark-mode-none d-block w-100 h-100 bg-secondary"></span>
+        <span class="position-absolute top-0 start-0 d-dark-mode-block d-none w-100 h-100" style="background: radial-gradient(84.79% 172.9% at 73.31% 31.4%, rgba(99, 135, 241, .1) 0%, rgba(218, 70, 239, .05) 52.47%, rgba(99, 135, 241, .1) 100%);"></span>
+        <div class="container position-relative pt-xl-5 pt-md-3 zindex-5">
+            <div class="row justify-content-md-start justify-content-center flex-md-nowrap pt-lg-5 pt-4">
+                <div class="col-xl-7 col-md-7 col-sm-10 d-flex flex-column justify-content-between mb-md-5 mb-md-4 mb-3 pb-xl-5 pb-lg-4">
+                    <div class="text-md-start text-center">
+                        <h1 class="display-4 mb-lg-4 mb-3">
+                            <small class="fs-2">Best open source</small><br>
+                            Factorial alternative
+                        </h1>
+                        <p class="mb-4 mx-md-0 mx-auto pb-xl-3 pb-lg-2 fs-lg" style="max-width: 30.5rem;">
+                            
+                            Kimai is the #1 open-source <a href="/en/compare/">time-tracking alternative</a> for Factorial.
+                            Learn how Kimai measures up to Factorial, so you can choose the right solution for your business.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-md-12 d-flex mt-lg-4 mb-4 p-lg-4 p-sm-3 p-2">
+                    <div class="align-self-start ms-xl-0 ms-md-4 p-lg-4 p-sm-3 p-2 rounded-4 overflow-hidden d-none d-md-flex" style="background: linear-gradient(153.32deg, rgba(255, 255, 255, .3) -65.62%, rgba(255, 255, 255, .1) 83.28%); box-shadow: 0 .25rem 1.5rem -.0625rem rgba(0, 0, 0, .2); backdrop-filter: blur(25px);">
+                        
+                            <a href="#compare-features">
+                                <img src="/images/alternatives/background.webp" width="700" alt="Logo" class="rounded-4" style="box-shadow: 0 0 7.5rem rgba(0, 0, 0, .1);">
+                            </a>
+                        
+                        <span style="position: absolute;top: 50px;left: 100px;color: #fff;font-size: 5em;font-weight: 900;" class="d-none d-md-flex">
+                        Factorial
+                        <br>
+                        vs.
+                        <br>
+                        Kimai
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span class="position-absolute bottom-0 start-0 w-100">
+          <span class="d-dark-mode-none d-block w-100 h-100 py-xl-5 pt-lg-4 pt-md-0 pt-4 pb-5 bg-light"></span>
+          <span class="d-dark-mode-block d-none w-100 h-100 py-xl-5 pt-lg-4 pt-md-0 pt-4 pb-5 bg-dark"></span>
+        </span>
+    </section>
+
+    <section class="container py-5 my-1 my-md-4 my-lg-5">
+        <div class="row">
+            <div class="col-lg-12 mb-4 mb-lg-0">
+                <div class="pe-lg-4 me-lg-3 pe-xl-0 me-xl-0">
+                    <div class="mb-0">
+                        <section class="overflow-hidden pt-md-2 pt-lg-3">
+                            <div class="d-flex flex-column flex-md-row flex-md-nowrap align-items-start">
+                                <div class="col-12 ps-0 pe-lg-4 mb-5 mb-md-0">
+                                    <div class="lp-content">
+                                        <h2>Kimai vs Factorial: Which time tracking software fits your team best in 2026?</h2>
+
+
+<p>Kimai is the #1 open-source time-tracking solution designed for teams and businesses seeking flexibility and control over their time tracking infrastructure.
+Discover why <strong>more than 5000 companies worldwide trust Kimai</strong> for their time tracking needs and find out how it compares to Factorial’s offerings.
+Whether you’re evaluating a new time tracking app, analyzing Factorial pricing options, or planning a Factorial migration, Kimai provides a compelling alternative with superior features and cost savings.</p>
+
+<p>Choosing the right time tracking software can make a huge difference in productivity, transparency, and billing accuracy of a freelancer, an agency, or a business owner managing a big team.</p>
+
+<figure class="d-block figure mb-3" style="max-width: 100%">
+    <img src="/images/screenshots/screenshot-reporting.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2">
+    <figcaption class="figure-caption">Reporting feature</figcaption>
+</figure>
+
+<p>When selecting a time tracking tool, most users consider:</p>
+
+<ul>
+  <li>Features: Does it cover everything from tracking and reporting to invoicing and project management?</li>
+  <li>Price: Is it affordable (or even free) for the size of your team?</li>
+  <li>Flexibility: Can it adapt to your current workflow, integrations, and tech stack?</li>
+  <li>Accessibility: Does it support both desktop and mobile platforms, and can it be self-hosted or cloud-based?</li>
+  <li>Scalability: Will it still fit your needs as your business grows?</li>
+</ul>
+
+<p>The year 2026 also brings focus on data privacy, automation, and team transparency in time management tools. At the same time the market offers a range of solutions for every use case, from solopreneurs to large enterprise teams, and you can always find the solution that best fits your needs.</p>
+
+<p>Let’s explore the best time tracking tools for 2026 and see how Kimai compares with Toggl Track — two popular choices among professionals and successful teams worldwide.</p>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+<section class="container pb-5 mb-md-2 mb-lg-5">
+    <div class="row">
+        <div class="col-lg-4 text-center text-lg-start pb-3 pb-lg-0 mb-4 mb-lg-0">
+            <h2 class="h1 mb-lg-4">Kimai features most used</h2>
+            <div class="pb-4 mb-0 mb-lg-3">
+<p>Not all time tracking tools are created equal. The best solutions for agencies offer a specialized set of features to streamline your workflows.</p>
+</div>
+            <a href="" class="btn btn-primary shadow-primary btn-lg">Features</a>
+        </div>
+        <div class="col-xl-7 col-lg-8 offset-xl-1">
+            <div class="row row-cols-1 row-cols-md-2">
+                <div class="col">
+                
+                    
+                    
+                        
+
+
+
+
+
+
+
+<div class="card card-hover bg-secondary border-0 mb-4">
+    <div class="card-body d-flex align-items-start">
+        <div class="flex-shrink-0 bg-light rounded-3 p-3">
+            <i class="bx bx-code-curly fs-2" title="JSON API"></i>
+        </div>
+        <div class="ps-4">
+            <h3 class="h5 pb-2 mb-1">JSON API</h3>
+            <p class="pb-2 mb-1">Featuring an extensive JSON API for reading and writing data, so external apps and custom tools can communicate with Kimai.</p>
+            <a href="/documentation/rest-api.html" class="btn btn-link stretched-link px-0">
+                Read more
+                <i class="bx bx-right-arrow-alt fs-xl ms-2"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+                    
+                    
+                    
+                </div>
+                <div class="col">
+                    
+                
+                    
+                    
+                        
+
+
+
+
+
+
+
+<div class="card card-hover bg-secondary border-0 mb-4">
+    <div class="card-body d-flex align-items-start">
+        <div class="flex-shrink-0 bg-light rounded-3 p-3">
+            <i class="bx bx-share-alt fs-2" title="Customer Portal"></i>
+        </div>
+        <div class="ps-4">
+            <h3 class="h5 pb-2 mb-1">Customer Portal</h3>
+            <p class="pb-2 mb-1">Share client and project statistics and timesheets with anyone using a secret URL, optionally password protected.</p>
+            <a href="/documentation/plugin-customer-portal.html" class="btn btn-link stretched-link px-0">
+                Read more
+                <i class="bx bx-right-arrow-alt fs-xl ms-2"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+                    
+                    
+                    
+                </div>
+                <div class="col">
+                    
+                
+                    
+                    
+                        
+
+
+
+
+
+
+
+<div class="card card-hover bg-secondary border-0 mb-4">
+    <div class="card-body d-flex align-items-start">
+        <div class="flex-shrink-0 bg-light rounded-3 p-3">
+            <i class="bx bx-select-multiple fs-2" title="Teams"></i>
+        </div>
+        <div class="ps-4">
+            <h3 class="h5 pb-2 mb-1">Teams</h3>
+            <p class="pb-2 mb-1">Teams connects users into logical groups, like departments. Limit access to data by assigning customers and projects to your teams.</p>
+            <a href="/documentation/teams.html" class="btn btn-link stretched-link px-0">
+                Read more
+                <i class="bx bx-right-arrow-alt fs-xl ms-2"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+                    
+                    
+                    
+                </div>
+                <div class="col">
+                    
+                
+                    
+                    
+                        
+
+
+
+
+
+
+
+<div class="card card-hover bg-secondary border-0 mb-4">
+    <div class="card-body d-flex align-items-start">
+        <div class="flex-shrink-0 bg-light rounded-3 p-3">
+            <i class="bx bx-key fs-2" title="SAML"></i>
+        </div>
+        <div class="ps-4">
+            <h3 class="h5 pb-2 mb-1">SAML</h3>
+            <p class="pb-2 mb-1">Log in and register users with SAML via your existing SSO identity provider, like Google Workspace, Authentik or Azure Active Directory.</p>
+            <a href="/documentation/saml.html" class="btn btn-link stretched-link px-0">
+                Read more
+                <i class="bx bx-right-arrow-alt fs-xl ms-2"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+                    
+                    
+                    
+                </div>
+                <div class="col">
+                    
+                
+                    
+                    
+                        
+
+
+
+
+
+
+
+<div class="card card-hover bg-secondary border-0 mb-4">
+    <div class="card-body d-flex align-items-start">
+        <div class="flex-shrink-0 bg-light rounded-3 p-3">
+            <i class="bx bxs-file-pdf fs-2" title="Invoicing"></i>
+        </div>
+        <div class="ps-4">
+            <h3 class="h5 pb-2 mb-1">Invoicing</h3>
+            <p class="pb-2 mb-1">Configurable invoice templates, options for entry grouping, configurable invoice numbers, and multiple formats like PDF and DOCX.</p>
+            <a href="/documentation/invoices.html" class="btn btn-link stretched-link px-0">
+                Read more
+                <i class="bx bx-right-arrow-alt fs-xl ms-2"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+                    
+                    
+                    
+                </div>
+                <div class="col">
+                    
+                
+                    
+                    
+                        
+
+
+
+
+
+
+
+<div class="card card-hover bg-secondary border-0 mb-4">
+    <div class="card-body d-flex align-items-start">
+        <div class="flex-shrink-0 bg-light rounded-3 p-3">
+            <i class="bx bx-bar-chart fs-2" title="Reports and analyses"></i>
+        </div>
+        <div class="ps-4">
+            <h3 class="h5 pb-2 mb-1">Reports and analyses</h3>
+            <p class="pb-2 mb-1">Analysis of recorded times by users, customers, projects, activities, tags, time periods and more.</p>
+            <a href="/documentation/reporting.html" class="btn btn-link stretched-link px-0">
+                Read more
+                <i class="bx bx-right-arrow-alt fs-xl ms-2"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+                    
+                    
+                    
+                </div>
+                <div class="col">
+                    
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <section class="container py-5 my-1 my-md-4 my-lg-5">
+        <div class="row">
+            <div class="col-lg-12 mb-4 mb-lg-0">
+                <div class="pe-lg-4 me-lg-3 pe-xl-0 me-xl-0">
+                    <div class="mb-0">
+                        <section class="overflow-hidden pt-md-2 pt-lg-3">
+                            <div class="d-flex flex-column flex-md-row flex-md-nowrap align-items-start">
+                                <div class="col-12 ps-0 pe-lg-4 mb-5 mb-md-0">
+                                    <div class="lp-content">
+                                        
+
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    
+    
+    
+<section class="bg-secondary py-5 mb-2 mb-md-4 mb-lg-5">
+    <div class="container pt-lg-4 mt-1">
+        <h2 class="h1 text-center pb-2 pb-md-3 pb-xl-4">What users say about Kimai</h2>
+        
+            <p class="mb-5 text-center">At Kimai, we've designed our time tracking platform to meet the needs of agencies, teams, and freelancers. Our intuitive interface and powerful features help companies like yours work smarter and more profitably. You can now “listen” to the reviews of the real users.</p>
+        
+    </div>
+    <div class="pb-lg-3 px-2 px-sm-0">
+        <div class="swiper" data-swiper-options='{
+                "slidesPerView": 1,
+                "centeredSlides": true,
+                "spaceBetween": 8,
+                "loop": true,
+                "pagination": {
+                    "el": ".swiper-pagination",
+                    "clickable": true
+                },
+                "breakpoints": {
+                    "500": {
+                        "slidesPerView": 2,
+                        "spaceBetween": 24
+                    },
+                    "1000": {
+                        "slidesPerView": 4,
+                        "spaceBetween": 24
+                    },
+                    "1500": {
+                        "slidesPerView": 6,
+                        "spaceBetween": 24
+                    }
+                }
+            }'>
+            <div class="swiper-wrapper">
+                
+                <div class="swiper-slide h-auto pt-4">
+                    <figure class="d-flex flex-column h-100 px-2 px-sm-0 mb-0">
+                        <div class="card h-100 position-relative border-0 shadow-sm pt-4">
+                            <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
+                                <i class="bx bxs-quote-left"></i>
+                            </span>
+                            <div class="card-body pb-3 mb-0">
+                                <div class="mb-0">
+                                    
+                                    
+
+                                    <p>We started using self-hosted Kimai - and it works perfectly! We especially like integration with Google Workspace, which is very convenient.</p>
+
+
+                                    
+                                    
+                                </div>
+                            </div>
+                            <div class="card-footer border-0 text-nowrap pt-0">
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                
+                                
+                            </div>
+                        </div>
+                        <figcaption class="d-flex align-items-center ps-4 pt-4">
+                            
+                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855"></path></svg>
+                            
+                            <div class="ps-3">
+                                <h6 class="fs-sm fw-semibold mb-0">Karol Antczak</h6>
+                                <span class="fs-xs text-muted">CTO</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+                
+                <div class="swiper-slide h-auto pt-4">
+                    <figure class="d-flex flex-column h-100 px-2 px-sm-0 mb-0">
+                        <div class="card h-100 position-relative border-0 shadow-sm pt-4">
+                            <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
+                                <i class="bx bxs-quote-left"></i>
+                            </span>
+                            <div class="card-body pb-3 mb-0">
+                                <div class="mb-0">
+                                    
+                                    
+
+                                    <p>Kimai is a fantastic product and it’s finished and polished in almost a maniacal way. Fantastic UI and UX, every feature well thought and finished, great support and a rare focus on privacy and security. Top notch!</p>
+
+
+                                    
+                                    
+                                </div>
+                            </div>
+                            <div class="card-footer border-0 text-nowrap pt-0">
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                
+                                
+                            </div>
+                        </div>
+                        <figcaption class="d-flex align-items-center ps-4 pt-4">
+                            
+                            <img src="/images/testimonials/mikael-janssens.webp" width="48" class="rounded" alt="Mikaël Janssens">
+                            
+                            <div class="ps-3">
+                                <h6 class="fs-sm fw-semibold mb-0">Mikaël Janssens</h6>
+                                <span class="fs-xs text-muted">Freelancer</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+                
+                <div class="swiper-slide h-auto pt-4">
+                    <figure class="d-flex flex-column h-100 px-2 px-sm-0 mb-0">
+                        <div class="card h-100 position-relative border-0 shadow-sm pt-4">
+                            <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
+                                <i class="bx bxs-quote-left"></i>
+                            </span>
+                            <div class="card-body pb-3 mb-0">
+                                <div class="mb-0">
+                                    
+                                    
+
+                                    <p>We use Kimai as a self-hosted instance to manage working times, vacation and illness-days for ~40 employees. We love open source software and the passion Kevin Papst puts into that tool is a real gamechanger for us. There are a lot of features and settings to adjust, but it’s not too complicated to maintain the whole system. Hopefully Kimai will be our mate for the next years to support our own story as a company, that is developing impactful and open source software!</p>
+
+
+                                    
+                                    
+                                </div>
+                            </div>
+                            <div class="card-footer border-0 text-nowrap pt-0">
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                
+                                
+                            </div>
+                        </div>
+                        <figcaption class="d-flex align-items-center ps-4 pt-4">
+                            
+                            <img src="/images/testimonials/tuer-an-tuer-daniel.webp" width="48" class="rounded" alt="Daniel Kehne">
+                            
+                            <div class="ps-3">
+                                <h6 class="fs-sm fw-semibold mb-0">Daniel Kehne</h6>
+                                <span class="fs-xs text-muted">Founder &amp; CEO</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+                
+                <div class="swiper-slide h-auto pt-4">
+                    <figure class="d-flex flex-column h-100 px-2 px-sm-0 mb-0">
+                        <div class="card h-100 position-relative border-0 shadow-sm pt-4">
+                            <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
+                                <i class="bx bxs-quote-left"></i>
+                            </span>
+                            <div class="card-body pb-3 mb-0">
+                                <div class="mb-0">
+                                    
+                                    
+
+                                    <p>When I started to identify a time reporting software for our medium size enterprise (~30 people distributed all over United States and Canada) in the software service industry for onsite and remote services, I had several programs in my mind. In my specification I had the following things to be covered</p>
+<ul>
+  <li>Customer related time reporting</li>
+  <li>Project related time reporting</li>
+  <li>Time approval</li>
+  <li>Various hierarchies in user and access levels</li>
+  <li>Open data interface for potential interfaces to other software packages (such as various payroll software packages for Canada and US, ERP for invoicing)</li>
+  <li>Time budget for hourly packages</li>
+  <li>Time reporting to customers with time budget</li>
+  <li>The data is mine and I always want to have access to it</li>
+  <li>I would like to cr</li>
+</ul>
+
+
+                                    
+                                    
+                                        ...
+                                    
+                                </div>
+                            </div>
+                            <div class="card-footer border-0 text-nowrap pt-0">
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                
+                                
+                            </div>
+                        </div>
+                        <figcaption class="d-flex align-items-center ps-4 pt-4">
+                            
+                            <img src="/images/testimonials/frank.webp" width="48" class="rounded" alt="Frank">
+                            
+                            <div class="ps-3">
+                                <h6 class="fs-sm fw-semibold mb-0">Frank</h6>
+                                <span class="fs-xs text-muted">Service</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+                
+                <div class="swiper-slide h-auto pt-4">
+                    <figure class="d-flex flex-column h-100 px-2 px-sm-0 mb-0">
+                        <div class="card h-100 position-relative border-0 shadow-sm pt-4">
+                            <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
+                                <i class="bx bxs-quote-left"></i>
+                            </span>
+                            <div class="card-body pb-3 mb-0">
+                                <div class="mb-0">
+                                    
+                                    
+
+                                    <p>We use Kimai for project time tracking with our partner organizations.
+<mark>We particularly appreciate its clarity, evaluability, and ease of use.</mark>
+As an NGO, we also appreciate Kimai’s strong focus on this sector. The support is excellent. We are very satisfied.</p>
+
+
+                                    
+                                    
+                                </div>
+                            </div>
+                            <div class="card-footer border-0 text-nowrap pt-0">
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                
+                                
+                            </div>
+                        </div>
+                        <figcaption class="d-flex align-items-center ps-4 pt-4">
+                            
+                            <img src="/images/testimonials/johannes-mertens.webp" width="48" class="rounded" alt="Johannes Mertens">
+                            
+                            <div class="ps-3">
+                                <h6 class="fs-sm fw-semibold mb-0">Johannes Mertens</h6>
+                                <span class="fs-xs text-muted">Entwickler</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+                
+                <div class="swiper-slide h-auto pt-4">
+                    <figure class="d-flex flex-column h-100 px-2 px-sm-0 mb-0">
+                        <div class="card h-100 position-relative border-0 shadow-sm pt-4">
+                            <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
+                                <i class="bx bxs-quote-left"></i>
+                            </span>
+                            <div class="card-body pb-3 mb-0">
+                                <div class="mb-0">
+                                    
+                                    
+
+                                    <p>I have been using Kimai cloud for more than 1 year, and <mark>I am very satisfied about it</mark> ! It became easier for me to send monthly reports to my clients and to track my time spent on the projects I’m working on. Thank you very much !</p>
+
+
+                                    
+                                    
+                                </div>
+                            </div>
+                            <div class="card-footer border-0 text-nowrap pt-0">
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                
+                                
+                            </div>
+                        </div>
+                        <figcaption class="d-flex align-items-center ps-4 pt-4">
+                            
+                            <img src="/images/testimonials/christoph-van-bracht.webp" width="48" class="rounded" alt="Christoph van Bracht">
+                            
+                            <div class="ps-3">
+                                <h6 class="fs-sm fw-semibold mb-0">Christoph van Bracht</h6>
+                                <span class="fs-xs text-muted">Geschäftsführer</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+                
+                <div class="swiper-slide h-auto pt-4">
+                    <figure class="d-flex flex-column h-100 px-2 px-sm-0 mb-0">
+                        <div class="card h-100 position-relative border-0 shadow-sm pt-4">
+                            <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
+                                <i class="bx bxs-quote-left"></i>
+                            </span>
+                            <div class="card-body pb-3 mb-0">
+                                <div class="mb-0">
+                                    
+                                    
+
+                                    <p>Super fast response from support with efficient assistance. Simply MEGA! Thank you very much!</p>
+
+
+                                    
+                                    
+                                </div>
+                            </div>
+                            <div class="card-footer border-0 text-nowrap pt-0">
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                
+                                
+                            </div>
+                        </div>
+                        <figcaption class="d-flex align-items-center ps-4 pt-4">
+                            
+                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855"></path></svg>
+                            
+                            <div class="ps-3">
+                                <h6 class="fs-sm fw-semibold mb-0">mj</h6>
+                                <span class="fs-xs text-muted">Executive Assistant</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+                
+                <div class="swiper-slide h-auto pt-4">
+                    <figure class="d-flex flex-column h-100 px-2 px-sm-0 mb-0">
+                        <div class="card h-100 position-relative border-0 shadow-sm pt-4">
+                            <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
+                                <i class="bx bxs-quote-left"></i>
+                            </span>
+                            <div class="card-body pb-3 mb-0">
+                                <div class="mb-0">
+                                    
+                                    
+
+                                    <p>We have been using Kimai for many years, initially as a standalone solution on our own server, but for the past three years now in the kimai.cloud. 
+With its structured layout, Kimai meets the time tracking requirements we have as an architecture firm and can flexibly map all of our processes, which is not possible with many time tracking systems. 
+We remain impressed by its reliability, constant maintenance and improvement, and direct, personal service, combined with absolutely fair pricing. <mark>We can (and already have) highly recommend kimai.cloud!</mark></p>
+
+
+                                    
+                                    
+                                </div>
+                            </div>
+                            <div class="card-footer border-0 text-nowrap pt-0">
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                
+                                
+                            </div>
+                        </div>
+                        <figcaption class="d-flex align-items-center ps-4 pt-4">
+                            
+                            <img src="/images/testimonials/bela-schwier.webp" width="48" class="rounded" alt="Bela Schwier">
+                            
+                            <div class="ps-3">
+                                <h6 class="fs-sm fw-semibold mb-0">Bela Schwier</h6>
+                                <span class="fs-xs text-muted">Geschäftsführer</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+                
+                <div class="swiper-slide h-auto pt-4">
+                    <figure class="d-flex flex-column h-100 px-2 px-sm-0 mb-0">
+                        <div class="card h-100 position-relative border-0 shadow-sm pt-4">
+                            <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
+                                <i class="bx bxs-quote-left"></i>
+                            </span>
+                            <div class="card-body pb-3 mb-0">
+                                <div class="mb-0">
+                                    
+                                    
+
+                                    <p>Kimai is my most beloved business tool!</p>
+
+<p>My real world problem would be automating this sequence I do: prepare a “time only” “invoice” pdf in kimai and send it zapier, create an e-invoice in “Fatture in Cloud” with the timesheet attached (can’t use kimai, e-invoice mandatory).’</p>
+
+
+                                    
+                                    
+                                </div>
+                            </div>
+                            <div class="card-footer border-0 text-nowrap pt-0">
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                
+                                
+                            </div>
+                        </div>
+                        <figcaption class="d-flex align-items-center ps-4 pt-4">
+                            
+                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855"></path></svg>
+                            
+                            <div class="ps-3">
+                                <h6 class="fs-sm fw-semibold mb-0">Marco Cosatto</h6>
+                                <span class="fs-xs text-muted">IT Advisor &amp; Security Analyst</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+                
+                <div class="swiper-slide h-auto pt-4">
+                    <figure class="d-flex flex-column h-100 px-2 px-sm-0 mb-0">
+                        <div class="card h-100 position-relative border-0 shadow-sm pt-4">
+                            <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
+                                <i class="bx bxs-quote-left"></i>
+                            </span>
+                            <div class="card-body pb-3 mb-0">
+                                <div class="mb-0">
+                                    
+                                    
+
+                                    <p>We have been using Kimai in our electrical company for the past two years, and we are currently transitioning to a fully paperless process with <em>Kimai only</em> for managing timesheets. Our employees adapted quickly, as we developed a customized workflow tailored to our business needs. Thanks to Kimai, we’ve reduced the time spent processing timesheets for our 20 employees, as well as managing project reports (construction reports, work reports, daily customer reports), from around 10 hours per week to just 2 hours. <mark>We also underwent a payroll tax audit without any issues</mark>; the only requirement is the employee’s signature on the timesheet. The developer of Kimai is also very receptive to useful feature suggestions, which makes me co</p>
+
+
+                                    
+                                    
+                                        ...
+                                    
+                                </div>
+                            </div>
+                            <div class="card-footer border-0 text-nowrap pt-0">
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                
+                                
+                            </div>
+                        </div>
+                        <figcaption class="d-flex align-items-center ps-4 pt-4">
+                            
+                            <img src="/images/testimonials/christoph-empl.webp" width="48" class="rounded" alt="Christoph Empl">
+                            
+                            <div class="ps-3">
+                                <h6 class="fs-sm fw-semibold mb-0">Christoph Empl</h6>
+                                <span class="fs-xs text-muted">CEO</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+                
+            </div>
+
+            <div class="swiper-pagination position-relative pt-1 pt-sm-3 mt-5 swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
+                <span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1" aria-current="true"></span>
+                <span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 4"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 5"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 6"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 7"></span>
+</div>
+            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+</div>
+    </div>
+</section>
+
+
+    <section class="container py-5 my-1 my-md-4 my-lg-5">
+        <div class="row">
+            <div class="col-lg-12 mb-4 mb-lg-0">
+                <div class="pe-lg-4 me-lg-3 pe-xl-0 me-xl-0">
+                    <div class="mb-0">
+
+                        <section class="my-md-3 my-lg-5">
+                            <h3 class="mb-5">All your time-tracking needs in one platform</h3>
+                            <p>
+                                Time is money, and tracking it effectively has become a necessity for project-based teams.
+                                Kimai is a powerful time-tracker that's been the favorite of many businesses worldwide.
+                                But how does it stack up against Factorial?
+                                Dive into this comprehensive comparison to find out why businesses are choosing Kimai over Factorial
+                            </p>
+                        </section>
+
+                        
+                        <section class="py-5 my-md-3 my-lg-5" id="compare-features">
+                            <div class="row align-items-center">
+                                <div class="col-md-4 text-center text-md-start">
+                                    <h2 class="h1 mb-4">See the difference</h2>
+                                    <p class="fs-lg mb-5 mb-md-0">Compare Kimai vs. Factorial: choose the options that make the most sense for your business.</p>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="row row-cols-1 row-cols-md-3">
+                                        <div class="col text-md-center pb-2 mb-4">
+                                            <h3 class="h5 mb-2 mb-md-3">Kimai <br>On-Premise</h3>
+                                            <ul class="d-md-none list-unstyled">
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    Open source software
+
+: </span>
+                                                    
+    <i class="bx bx-check lead text-primary"></i>
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2 ">
+                                                    <span class="text-dark fw-medium">
+    Available on-premises
+
+: </span>
+                                                    
+    <i class="bx bx-check lead text-primary"></i>
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    Available in the cloud
+
+: </span>
+                                                    
+    <i class="bx bx-x lead text-muted"></i>
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2 ">
+                                                    <span class="text-dark fw-medium">
+    Server location
+
+: </span>
+                                                    
+    Your choice
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    Max. customers
+
+: </span>
+                                                    
+    Unlimited
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2 ">
+                                                    <span class="text-dark fw-medium">
+    Max. projects
+
+: </span>
+                                                    
+    Unlimited
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    Max. activities
+
+: </span>
+                                                    
+    Unlimited
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2 ">
+                                                    <span class="text-dark fw-medium">
+    JSON API
+
+: </span>
+                                                    
+    <i class="bx bx-check lead text-primary"></i>
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    Invoicing
+
+: </span>
+                                                    
+    <i class="bx bx-check lead text-primary"></i>
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2 ">
+                                                    <span class="text-dark fw-medium">
+    Data export
+
+: </span>
+                                                    
+    <i class="bx bx-check lead text-primary"></i>
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    SAML
+
+: </span>
+                                                    
+    <i class="bx bx-check lead text-primary"></i>
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2 ">
+                                                    <span class="text-dark fw-medium">
+    Support
+
+: </span>
+                                                    
+    Forum (GitHub)
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    Backups
+
+: </span>
+                                                    
+    <i class="bx bx-x lead text-muted"></i>
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2 ">
+                                                    <span class="text-dark fw-medium">
+    TLS Certificate
+
+: </span>
+                                                    
+    Additional costs
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    Custom domain
+
+: </span>
+                                                    
+    Additional costs
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2 ">
+                                                    <span class="text-dark fw-medium">
+    Automatic upgrades
+
+: </span>
+                                                    
+    <i class="bx bx-x lead text-muted"></i>
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    Server maintenance
+
+: </span>
+                                                    
+    <i class="bx bx-x lead text-muted"></i>
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2 ">
+                                                    <span class="text-dark fw-medium">
+    IP access restriction
+
+: </span>
+                                                    
+    <i class="bx bx-x lead text-muted"></i>
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    Custom content
+
+: </span>
+                                                    
+    Paid plugin
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2 ">
+                                                    <span class="text-dark fw-medium">
+    Audit trail logs
+
+: </span>
+                                                    
+    Paid plugin
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    Custom fields
+
+: </span>
+                                                    
+    Paid plugin
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2 ">
+                                                    <span class="text-dark fw-medium">
+    Expense management
+
+: </span>
+                                                    
+    Paid plugin
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    Task planning
+
+: </span>
+                                                    
+    Paid plugin
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2 ">
+                                                    <span class="text-dark fw-medium">
+    Translations
+
+: </span>
+                                                    
+    Paid plugin
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    Working hours, vacation, sickness, public holidays
+
+: </span>
+                                                    
+    Paid plugin
+
+
+                                                </li>
+                                                
+                                            </ul>
+                                            <a href="/documentation/installation.html" class="btn btn-outline-primary w-100 w-md-auto">Install</a>
+                                        </div>
+                                        <div class="col text-md-center pb-2 mb-4">
+                                            <h3 class="h5 mb-2 mb-md-3">Kimai <br>Cloud</h3>
+                                            <ul class="d-md-none list-unstyled">
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2 ">
+                                                    <span class="text-dark fw-medium">
+    Open source software
+
+: </span>
+                                                    
+    <i class="bx bx-check lead text-light"></i>
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    Available on-premises
+
+: </span>
+                                                    
+    <i class="bx bx-x lead text-light opacity-50"></i>
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2 ">
+                                                    <span class="text-dark fw-medium">
+    Available in the cloud
+
+: </span>
+                                                    
+    <i class="bx bx-check lead text-light"></i>
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    Server location
+
+: </span>
+                                                    
+    Hetzner Cloud<br>Germany (Falkenstein)
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2 ">
+                                                    <span class="text-dark fw-medium">
+    Max. customers
+
+: </span>
+                                                    
+    Unlimited
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    Max. projects
+
+: </span>
+                                                    
+    Unlimited
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2 ">
+                                                    <span class="text-dark fw-medium">
+    Max. activities
+
+: </span>
+                                                    
+    Unlimited
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    JSON API
+
+: </span>
+                                                    
+    <i class="bx bx-check lead text-light"></i>
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2 ">
+                                                    <span class="text-dark fw-medium">
+    Invoicing
+
+: </span>
+                                                    
+    <i class="bx bx-check lead text-light"></i>
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    Data export
+
+: </span>
+                                                    
+    <i class="bx bx-check lead text-light"></i>
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2 ">
+                                                    <span class="text-dark fw-medium">
+    SAML
+
+: </span>
+                                                    
+    <i class="bx bx-check lead text-light"></i>
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    Support
+
+: </span>
+                                                    
+    Email, Forum
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2 ">
+                                                    <span class="text-dark fw-medium">
+    Backups
+
+: </span>
+                                                    
+    Daily
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    TLS Certificate
+
+: </span>
+                                                    
+    <i class="bx bx-check lead text-light"></i>
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2 ">
+                                                    <span class="text-dark fw-medium">
+    Custom domain
+
+: </span>
+                                                    
+    <i class="bx bx-check lead text-light"></i>
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    Automatic upgrades
+
+: </span>
+                                                    
+    <i class="bx bx-check lead text-light"></i>
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2 ">
+                                                    <span class="text-dark fw-medium">
+    Server maintenance
+
+: </span>
+                                                    
+    <i class="bx bx-check lead text-light"></i>
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    IP access restriction
+
+: </span>
+                                                    
+    <i class="bx bx-check lead text-light"></i>
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2 ">
+                                                    <span class="text-dark fw-medium">
+    Custom content
+
+: </span>
+                                                    
+    <i class="bx bx-check lead text-light"></i>
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    Audit trail logs
+
+: </span>
+                                                    
+    <i class="bx bx-check lead text-light"></i>
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2 ">
+                                                    <span class="text-dark fw-medium">
+    Custom fields
+
+: </span>
+                                                    
+    <i class="bx bx-check lead text-light"></i>
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    Expense management
+
+: </span>
+                                                    
+    <i class="bx bx-check lead text-light"></i>
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2 ">
+                                                    <span class="text-dark fw-medium">
+    Task planning
+
+: </span>
+                                                    
+    <i class="bx bx-check lead text-light"></i>
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    Translations
+
+: </span>
+                                                    
+    <i class="bx bx-check lead text-light"></i>
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2 ">
+                                                    <span class="text-dark fw-medium">
+    Working hours, vacation, sickness, public holidays
+
+: </span>
+                                                    
+    <i class="bx bx-check lead text-light"></i>
+
+
+                                                </li>
+                                                
+                                            </ul>
+                                            <a href="https://www.kimai.cloud/auth/registration" class="btn btn-outline-primary w-100 w-md-auto">Get started</a>
+
+                                        </div>
+                                        <div class="col text-md-center mb-3">
+                                            <h3 class="h5 mb-2 mb-md-3">Factorial <br class="d-none d-md-block">
+</h3>
+                                            <ul class="d-md-none list-unstyled">
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    Open source software
+
+: </span>
+                                                    
+    <i class="bx bx-x lead text-muted"></i>
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2 ">
+                                                    <span class="text-dark fw-medium">
+    Available on-premises
+
+: </span>
+                                                    
+    <i class="bx bx-x lead text-muted"></i>
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    Available in the cloud
+
+: </span>
+                                                    
+    
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2 ">
+                                                    <span class="text-dark fw-medium">
+    Server location
+
+: </span>
+                                                    
+    
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    Max. customers
+
+: </span>
+                                                    
+    
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2 ">
+                                                    <span class="text-dark fw-medium">
+    Max. projects
+
+: </span>
+                                                    
+    
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    Max. activities
+
+: </span>
+                                                    
+    
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2 ">
+                                                    <span class="text-dark fw-medium">
+    JSON API
+
+: </span>
+                                                    
+    
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    Invoicing
+
+: </span>
+                                                    
+    
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2 ">
+                                                    <span class="text-dark fw-medium">
+    Data export
+
+: </span>
+                                                    
+    
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    SAML
+
+: </span>
+                                                    
+    
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2 ">
+                                                    <span class="text-dark fw-medium">
+    Support
+
+: </span>
+                                                    
+    
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    Backups
+
+: </span>
+                                                    
+    
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2 ">
+                                                    <span class="text-dark fw-medium">
+    TLS Certificate
+
+: </span>
+                                                    
+    
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    Custom domain
+
+: </span>
+                                                    
+    
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2 ">
+                                                    <span class="text-dark fw-medium">
+    Automatic upgrades
+
+: </span>
+                                                    
+    
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    Server maintenance
+
+: </span>
+                                                    
+    
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2 ">
+                                                    <span class="text-dark fw-medium">
+    IP access restriction
+
+: </span>
+                                                    
+    
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    Custom content
+
+: </span>
+                                                    
+    
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2 ">
+                                                    <span class="text-dark fw-medium">
+    Audit trail logs
+
+: </span>
+                                                    
+    
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    Custom fields
+
+: </span>
+                                                    
+    
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2 ">
+                                                    <span class="text-dark fw-medium">
+    Expense management
+
+: </span>
+                                                    
+    
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    Task planning
+
+: </span>
+                                                    
+    
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2 ">
+                                                    <span class="text-dark fw-medium">
+    Translations
+
+: </span>
+                                                    
+    
+
+
+                                                </li>
+                                                
+                                                
+                                                <li class="d-flex align-items-center p-2  bg-secondary">
+                                                    <span class="text-dark fw-medium">
+    Working hours, vacation, sickness, public holidays
+
+: </span>
+                                                    
+    
+
+
+                                                </li>
+                                                
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-none d-md-block pt-5 mt-2 pb-4">
+                                
+                                <div class="row g-0  bg-secondary rounded-3">
+                                    <div class="col-md-4 text-dark fw-semibold ps-4 pe-2 py-4">
+    Open source software
+
+</div>
+                                    <div class="col-md-8 text-center">
+                                        <div class="row row-cols-3 g-0">
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    <i class="bx bx-check lead text-primary"></i>
+
+
+                                            </div>
+                                            <div class="col position-relative bg-primary px-2 py-4">
+                                                <span class="text-light opacity-80">
+                                                
+                                                
+    <i class="bx bx-check lead text-light"></i>
+
+
+                                                </span>
+                                                
+                                                <span class="position-absolute start-0 bottom-100 w-100 bg-primary rounded-3 rounded-bottom-0" style="height: 2rem;"></span>
+                                                
+                                            </div>
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    <i class="bx bx-x lead text-muted"></i>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row g-0 ">
+                                    <div class="col-md-4 text-dark fw-semibold ps-4 pe-2 py-4">
+    Available on-premises
+
+</div>
+                                    <div class="col-md-8 text-center">
+                                        <div class="row row-cols-3 g-0">
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    <i class="bx bx-check lead text-primary"></i>
+
+
+                                            </div>
+                                            <div class="col position-relative bg-primary px-2 py-4">
+                                                <span class="text-light opacity-80">
+                                                
+                                                
+    <i class="bx bx-x lead text-light opacity-50"></i>
+
+
+                                                </span>
+                                                
+                                            </div>
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    <i class="bx bx-x lead text-muted"></i>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row g-0  bg-secondary rounded-3">
+                                    <div class="col-md-4 text-dark fw-semibold ps-4 pe-2 py-4">
+    Available in the cloud
+
+</div>
+                                    <div class="col-md-8 text-center">
+                                        <div class="row row-cols-3 g-0">
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    <i class="bx bx-x lead text-muted"></i>
+
+
+                                            </div>
+                                            <div class="col position-relative bg-primary px-2 py-4">
+                                                <span class="text-light opacity-80">
+                                                
+                                                
+    <i class="bx bx-check lead text-light"></i>
+
+
+                                                </span>
+                                                
+                                            </div>
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row g-0 ">
+                                    <div class="col-md-4 text-dark fw-semibold ps-4 pe-2 py-4">
+    Server location
+
+</div>
+                                    <div class="col-md-8 text-center">
+                                        <div class="row row-cols-3 g-0">
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    Your choice
+
+
+                                            </div>
+                                            <div class="col position-relative bg-primary px-2 py-4">
+                                                <span class="text-light opacity-80">
+                                                
+                                                
+    Hetzner Cloud<br>Germany (Falkenstein)
+
+
+                                                </span>
+                                                
+                                            </div>
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row g-0  bg-secondary rounded-3">
+                                    <div class="col-md-4 text-dark fw-semibold ps-4 pe-2 py-4">
+    Max. customers
+
+</div>
+                                    <div class="col-md-8 text-center">
+                                        <div class="row row-cols-3 g-0">
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    Unlimited
+
+
+                                            </div>
+                                            <div class="col position-relative bg-primary px-2 py-4">
+                                                <span class="text-light opacity-80">
+                                                
+                                                
+    Unlimited
+
+
+                                                </span>
+                                                
+                                            </div>
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row g-0 ">
+                                    <div class="col-md-4 text-dark fw-semibold ps-4 pe-2 py-4">
+    Max. projects
+
+</div>
+                                    <div class="col-md-8 text-center">
+                                        <div class="row row-cols-3 g-0">
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    Unlimited
+
+
+                                            </div>
+                                            <div class="col position-relative bg-primary px-2 py-4">
+                                                <span class="text-light opacity-80">
+                                                
+                                                
+    Unlimited
+
+
+                                                </span>
+                                                
+                                            </div>
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row g-0  bg-secondary rounded-3">
+                                    <div class="col-md-4 text-dark fw-semibold ps-4 pe-2 py-4">
+    Max. activities
+
+</div>
+                                    <div class="col-md-8 text-center">
+                                        <div class="row row-cols-3 g-0">
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    Unlimited
+
+
+                                            </div>
+                                            <div class="col position-relative bg-primary px-2 py-4">
+                                                <span class="text-light opacity-80">
+                                                
+                                                
+    Unlimited
+
+
+                                                </span>
+                                                
+                                            </div>
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row g-0 ">
+                                    <div class="col-md-4 text-dark fw-semibold ps-4 pe-2 py-4">
+    JSON API
+
+</div>
+                                    <div class="col-md-8 text-center">
+                                        <div class="row row-cols-3 g-0">
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    <i class="bx bx-check lead text-primary"></i>
+
+
+                                            </div>
+                                            <div class="col position-relative bg-primary px-2 py-4">
+                                                <span class="text-light opacity-80">
+                                                
+                                                
+    <i class="bx bx-check lead text-light"></i>
+
+
+                                                </span>
+                                                
+                                            </div>
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row g-0  bg-secondary rounded-3">
+                                    <div class="col-md-4 text-dark fw-semibold ps-4 pe-2 py-4">
+    Invoicing
+
+</div>
+                                    <div class="col-md-8 text-center">
+                                        <div class="row row-cols-3 g-0">
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    <i class="bx bx-check lead text-primary"></i>
+
+
+                                            </div>
+                                            <div class="col position-relative bg-primary px-2 py-4">
+                                                <span class="text-light opacity-80">
+                                                
+                                                
+    <i class="bx bx-check lead text-light"></i>
+
+
+                                                </span>
+                                                
+                                            </div>
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row g-0 ">
+                                    <div class="col-md-4 text-dark fw-semibold ps-4 pe-2 py-4">
+    Data export
+
+</div>
+                                    <div class="col-md-8 text-center">
+                                        <div class="row row-cols-3 g-0">
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    <i class="bx bx-check lead text-primary"></i>
+
+
+                                            </div>
+                                            <div class="col position-relative bg-primary px-2 py-4">
+                                                <span class="text-light opacity-80">
+                                                
+                                                
+    <i class="bx bx-check lead text-light"></i>
+
+
+                                                </span>
+                                                
+                                            </div>
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row g-0  bg-secondary rounded-3">
+                                    <div class="col-md-4 text-dark fw-semibold ps-4 pe-2 py-4">
+    SAML
+
+</div>
+                                    <div class="col-md-8 text-center">
+                                        <div class="row row-cols-3 g-0">
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    <i class="bx bx-check lead text-primary"></i>
+
+
+                                            </div>
+                                            <div class="col position-relative bg-primary px-2 py-4">
+                                                <span class="text-light opacity-80">
+                                                
+                                                
+    <i class="bx bx-check lead text-light"></i>
+
+
+                                                </span>
+                                                
+                                            </div>
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row g-0 ">
+                                    <div class="col-md-4 text-dark fw-semibold ps-4 pe-2 py-4">
+    Support
+
+</div>
+                                    <div class="col-md-8 text-center">
+                                        <div class="row row-cols-3 g-0">
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    Forum (GitHub)
+
+
+                                            </div>
+                                            <div class="col position-relative bg-primary px-2 py-4">
+                                                <span class="text-light opacity-80">
+                                                
+                                                
+    Email, Forum
+
+
+                                                </span>
+                                                
+                                            </div>
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row g-0  bg-secondary rounded-3">
+                                    <div class="col-md-4 text-dark fw-semibold ps-4 pe-2 py-4">
+    Backups
+
+</div>
+                                    <div class="col-md-8 text-center">
+                                        <div class="row row-cols-3 g-0">
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    <i class="bx bx-x lead text-muted"></i>
+
+
+                                            </div>
+                                            <div class="col position-relative bg-primary px-2 py-4">
+                                                <span class="text-light opacity-80">
+                                                
+                                                
+    Daily
+
+
+                                                </span>
+                                                
+                                            </div>
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row g-0 ">
+                                    <div class="col-md-4 text-dark fw-semibold ps-4 pe-2 py-4">
+    TLS Certificate
+
+</div>
+                                    <div class="col-md-8 text-center">
+                                        <div class="row row-cols-3 g-0">
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    Additional costs
+
+
+                                            </div>
+                                            <div class="col position-relative bg-primary px-2 py-4">
+                                                <span class="text-light opacity-80">
+                                                
+                                                
+    <i class="bx bx-check lead text-light"></i>
+
+
+                                                </span>
+                                                
+                                            </div>
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row g-0  bg-secondary rounded-3">
+                                    <div class="col-md-4 text-dark fw-semibold ps-4 pe-2 py-4">
+    Custom domain
+
+</div>
+                                    <div class="col-md-8 text-center">
+                                        <div class="row row-cols-3 g-0">
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    Additional costs
+
+
+                                            </div>
+                                            <div class="col position-relative bg-primary px-2 py-4">
+                                                <span class="text-light opacity-80">
+                                                
+                                                
+    <i class="bx bx-check lead text-light"></i>
+
+
+                                                </span>
+                                                
+                                            </div>
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row g-0 ">
+                                    <div class="col-md-4 text-dark fw-semibold ps-4 pe-2 py-4">
+    Automatic upgrades
+
+</div>
+                                    <div class="col-md-8 text-center">
+                                        <div class="row row-cols-3 g-0">
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    <i class="bx bx-x lead text-muted"></i>
+
+
+                                            </div>
+                                            <div class="col position-relative bg-primary px-2 py-4">
+                                                <span class="text-light opacity-80">
+                                                
+                                                
+    <i class="bx bx-check lead text-light"></i>
+
+
+                                                </span>
+                                                
+                                            </div>
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row g-0  bg-secondary rounded-3">
+                                    <div class="col-md-4 text-dark fw-semibold ps-4 pe-2 py-4">
+    Server maintenance
+
+</div>
+                                    <div class="col-md-8 text-center">
+                                        <div class="row row-cols-3 g-0">
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    <i class="bx bx-x lead text-muted"></i>
+
+
+                                            </div>
+                                            <div class="col position-relative bg-primary px-2 py-4">
+                                                <span class="text-light opacity-80">
+                                                
+                                                
+    <i class="bx bx-check lead text-light"></i>
+
+
+                                                </span>
+                                                
+                                            </div>
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row g-0 ">
+                                    <div class="col-md-4 text-dark fw-semibold ps-4 pe-2 py-4">
+    IP access restriction
+
+</div>
+                                    <div class="col-md-8 text-center">
+                                        <div class="row row-cols-3 g-0">
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    <i class="bx bx-x lead text-muted"></i>
+
+
+                                            </div>
+                                            <div class="col position-relative bg-primary px-2 py-4">
+                                                <span class="text-light opacity-80">
+                                                
+                                                
+    <i class="bx bx-check lead text-light"></i>
+
+
+                                                </span>
+                                                
+                                            </div>
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row g-0  bg-secondary rounded-3">
+                                    <div class="col-md-4 text-dark fw-semibold ps-4 pe-2 py-4">
+    Custom content
+
+</div>
+                                    <div class="col-md-8 text-center">
+                                        <div class="row row-cols-3 g-0">
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    Paid plugin
+
+
+                                            </div>
+                                            <div class="col position-relative bg-primary px-2 py-4">
+                                                <span class="text-light opacity-80">
+                                                
+                                                
+    <i class="bx bx-check lead text-light"></i>
+
+
+                                                </span>
+                                                
+                                            </div>
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row g-0 ">
+                                    <div class="col-md-4 text-dark fw-semibold ps-4 pe-2 py-4">
+    Audit trail logs
+
+</div>
+                                    <div class="col-md-8 text-center">
+                                        <div class="row row-cols-3 g-0">
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    Paid plugin
+
+
+                                            </div>
+                                            <div class="col position-relative bg-primary px-2 py-4">
+                                                <span class="text-light opacity-80">
+                                                
+                                                
+    <i class="bx bx-check lead text-light"></i>
+
+
+                                                </span>
+                                                
+                                            </div>
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row g-0  bg-secondary rounded-3">
+                                    <div class="col-md-4 text-dark fw-semibold ps-4 pe-2 py-4">
+    Custom fields
+
+</div>
+                                    <div class="col-md-8 text-center">
+                                        <div class="row row-cols-3 g-0">
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    Paid plugin
+
+
+                                            </div>
+                                            <div class="col position-relative bg-primary px-2 py-4">
+                                                <span class="text-light opacity-80">
+                                                
+                                                
+    <i class="bx bx-check lead text-light"></i>
+
+
+                                                </span>
+                                                
+                                            </div>
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row g-0 ">
+                                    <div class="col-md-4 text-dark fw-semibold ps-4 pe-2 py-4">
+    Expense management
+
+</div>
+                                    <div class="col-md-8 text-center">
+                                        <div class="row row-cols-3 g-0">
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    Paid plugin
+
+
+                                            </div>
+                                            <div class="col position-relative bg-primary px-2 py-4">
+                                                <span class="text-light opacity-80">
+                                                
+                                                
+    <i class="bx bx-check lead text-light"></i>
+
+
+                                                </span>
+                                                
+                                            </div>
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row g-0  bg-secondary rounded-3">
+                                    <div class="col-md-4 text-dark fw-semibold ps-4 pe-2 py-4">
+    Task planning
+
+</div>
+                                    <div class="col-md-8 text-center">
+                                        <div class="row row-cols-3 g-0">
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    Paid plugin
+
+
+                                            </div>
+                                            <div class="col position-relative bg-primary px-2 py-4">
+                                                <span class="text-light opacity-80">
+                                                
+                                                
+    <i class="bx bx-check lead text-light"></i>
+
+
+                                                </span>
+                                                
+                                            </div>
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row g-0 ">
+                                    <div class="col-md-4 text-dark fw-semibold ps-4 pe-2 py-4">
+    Translations
+
+</div>
+                                    <div class="col-md-8 text-center">
+                                        <div class="row row-cols-3 g-0">
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    Paid plugin
+
+
+                                            </div>
+                                            <div class="col position-relative bg-primary px-2 py-4">
+                                                <span class="text-light opacity-80">
+                                                
+                                                
+    <i class="bx bx-check lead text-light"></i>
+
+
+                                                </span>
+                                                
+                                            </div>
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row g-0  bg-secondary rounded-3">
+                                    <div class="col-md-4 text-dark fw-semibold ps-4 pe-2 py-4">
+    Working hours, vacation, sickness, public holidays
+
+</div>
+                                    <div class="col-md-8 text-center">
+                                        <div class="row row-cols-3 g-0">
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    Paid plugin
+
+
+                                            </div>
+                                            <div class="col position-relative bg-primary px-2 py-4">
+                                                <span class="text-light opacity-80">
+                                                
+                                                
+    <i class="bx bx-check lead text-light"></i>
+
+
+                                                </span>
+                                                
+                                            </div>
+                                            <div class="col px-2 py-4">
+                                                
+                                                
+    
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                            <p class="text-muted mt-3">
+                                Please note that the above information were manually compiled on 2026-02-24 from the Factorial website.
+                                For the comparison, the best matching plans were chosen.
+                                Prices are subject to change.
+                                For the most current pricing, please visit the respective websites.
+                            </p>
+                        </section>
+                        
+
+                        <section class="my-md-3 my-lg-5">
+                            <h2 class="mt-5 mb-4">Kimai is open source</h2>
+                            <p>
+                                Kimai is #1 open-source time-tracking software, providing unparalleled transparency and flexibility.
+                                By choosing Kimai, you’re investing in a secure, cost-efficient solution with complete control over your data and the ability to customize it exactly as your team needs.
+                            </p>
+                            
+                                <div class="alert alert-warning d-flex" role="alert">
+<i class="bx bx-alarm-exclamation lead me-3"></i><p>Factorial is a proprietary software, which includes a platform risk.
+                                    Relying solely on a software vendor for code tweaks and feature implementations can feel and often is limiting.</p>
+</div>
+                            
+                            
+
+                            <h2 class="mt-5 mb-4">Self-host with complete control</h2>
+                            <p>
+                                Kimai offers a self-hosted edition that puts data privacy to the front.
+                                With on-premises deployment, you maintain complete control over your sensitive business information, ensure compliance with stringent data protection regulations, and achieve a level of security that's often challenging with cloud-only solutions.
+                                Plus, Kimai's API allows seamless integration with your existing tools and workflows.
+                            </p>
+                            
+                                <div class="alert alert-info d-flex" role="alert">
+<i class="bx bx-message-rounded-detail lead me-3"></i><p>Unlike Factorial, which only operates in the cloud, Kimai gives you the flexibility to choose your deployment model.</p>
+</div>
+                            
+
+                            <h2 class="mt-5 mb-4">EU-based data protection</h2>
+                            <p>
+                                If you decide to go with the cloud edition, you can be sure that your data is safe.
+                                With the headquarters located in Austria (EU), it is GDPR-compliant by default and all data is stored in Germany (Hetzner Cloud, Falkenstein).
+                                <a href="/en/blog/2025/privacy-facts">Learn more about our privacy-first approach</a>
+                            </p>
+                            
+
+                            <h2 class="mt-5 mb-4">Conclusion</h2>
+                            <p>
+                                In today's digital age, data security is paramount.
+                                Kimai promises secure data protection and state-of-the-art encryption, ensuring that your business's sensitive information remains confidential.
+                            </p>
+                            <p>
+                                Kimai offers a well-rounded solution that caters to a variety of workflows and use-cases for most project-based teams and companies.
+                                Its ease of use, integration capabilities, and commitment to data security and privacy make it a top choice for businesses seeking an efficient time-tracking software.
+                            </p>
+                        </section>
+
+                        
+<section class="container mb-5">
+    <div class="position-relative bg-dark rounded-3 overflow-hidden px-3 py-5">
+        <span class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(255, 255, 255, .05)"></span>
+        <div class="position-relative zindex-5 text-center my-xl-3 py-1 py-md-4 py-lg-5">
+            <p class="lead text-light opacity-70 mb-3">Ready to get started?</p>
+            <h2 class="h1 text-light pb-3 pb-lg-0 mb-lg-5">Start your time-tracking now</h2>
+            <a href="https://www.kimai.cloud/auth/registration" class="btn btn-success btn-lg">Start for free</a>
+
+        </div>
+    </div>
+</section>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer bg-dark pt-5 pb-4">
+    <div class="container pt-1 pt-md-3 pt-lg-4 pt-xl-5">
+        <div class="row">
+            <div class="col-md-5 col-xl-4 mb-4 mb-md-5 mb-lg-0">
+                <div class="d-flex align-items-center pb-3 mb-1">
+                    <div class="navbar-brand text-white p-0 pe-1 me-0">
+                        Kimai
+                    </div>
+                    <hr class="vr mt-2 mx-3" style="height: 26px;">
+                    <div class="text-white fw-semibold ps-1">#1 Open-Source Time-Tracking</div>
+                </div>
+                <p class="text-body fs-sm pb-1 pb-md-2 pb-lg-2 mb-2">
+                    Time tracking made easy. An open-source solution for teams of all sizes - self-hosted or SaaS.
+                </p>
+                <div class="d-flex flex-column flex-sm-row flex-lg-column align-items-sm-center align-items-lg-start justify-content-between pb-1 pb-md-2 pb-lg-3 mb-3">
+                    <div class="position-relative">
+                        <div class="dropdown">
+                            <button type="button" class="form-select" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-globe top-50 start-0 text-body me-2"></i>
+                                English
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/cs/" class="dropdown-item" title="Kimai - Open Source sledování času">Čeština</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/de/" class="dropdown-item" title="Kimai – Open-Source Zeiterfassung">Deutsch</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org" class="dropdown-item active" title="Kimai - Open Source time-tracker">English</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/es/" class="dropdown-item" title="Kimai - Tracker de tiempo abierto">Español</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/fr/" class="dropdown-item" title="Kimai - Suivi du temps à code ouvert">Français</a>
+                                
+                                    <a dir="rtl" href="https://www.kimai.co.il" class="dropdown-item" title="Kimai - מעקב שעות בקוד פתוח">עברית</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/hr/" class="dropdown-item" title="Kimai – Program otvorenog koda za evidentiranje vremena">Hrvatski</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/it/" class="dropdown-item" title="Kimai: time-tracker open source">Italiano</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/nl/" class="dropdown-item" title="Kimai - Open Source tijdregistratie">Dutch</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/pl/" class="dropdown-item" title="Kimai - Otwarte oprogramowanie do śledzenia czasu">Polski</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/pt/" class="dropdown-item" title="Kimai - Rastreador de tempo de código aberto">Português</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/pt_BR/" class="dropdown-item" title="Kimai - Rastreador de tempo de código aberto">Português (Brasil)</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/ru/" class="dropdown-item" title="Kimai - регистратор времени с открытым исходным кодом">Русский</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/sk/" class="dropdown-item" title="Kimai - Open Source sledovanie času">Slovenčina</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/sv/" class="dropdown-item" title="Kimai - öppen källkod tidsspårare">Svenska</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/ta/" class="dropdown-item" title="கிமாய் - திறந்த மூல நேர -கண்காணிப்பு">தமிழ்</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/uk/" class="dropdown-item" title="Kimai — реєстратор часу з відкритим сирцевим кодом">Українська</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/zh_Hans/" class="dropdown-item" title="Kimai - 开源时间跟踪器">中文（中国）</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.tw" class="dropdown-item" title="Kimai —— 開放源始碼的工時追蹤工具">中文（繁體）</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-md-7 offset-xl-1">
+                <div id="footer-links" class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="tools" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/en/features.html" class="nav-link fs-sm fw-medium px-0 py-1">Features</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/en/stories/" class="nav-link fs-sm fw-medium px-0 py-1">Success Stories</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/en/reviews" class="nav-link fs-sm fw-medium px-0 py-1">Reviews</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/en/kimai-discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">Discount codes</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/time-tracking-terms" class="nav-link fs-sm fw-medium px-0 py-1">Time Tracking Terms</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="landing-kimai-for" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                
+                                
+                                <li class="nav-item">
+                                    <a href="/en/agency-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Time Tracking For Agencies">Agencies</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/consultants-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Time Tracking For Consultants">Consultants</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/freelancers-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Time tracking for successful freelancers">Freelancer</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/software-developers-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Time Tracking For Software Developers">Software Developers</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/time-tracking-non-profit.html" class="nav-link fs-sm fw-medium px-0 py-1">Non-Profits</a>
+                                </li>
+                                <li class="nav-item">
+                                    
+                                    <a href="/en/industry" class="nav-link fs-sm fw-medium px-0 py-1">More industries</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="footer-cmp" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/en/compare/" class="nav-link fs-sm fw-medium px-0 py-1">Compare time tracker</a>
+                                </li>
+                                
+                                
+                                
+                                
+                                    <li class="nav-item">
+                                        <a href="https://www.kimai.org/en/clockify-alternative" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai with Clockify">Clockify alternative</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="https://www.kimai.org/en/clockodo-alternative" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai with Clockodo">Clockodo alternative</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="https://www.kimai.org/en/harvest-alternative" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai with Harvest">Harvest alternative</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="https://www.kimai.org/en/toggl-alternative" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai with toggl track">toggl track alternative</a>
+                                    </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="d-md-flex align-items-center justify-content-between pt-sm-2 pt-md-4 pt-lg-5 pb-2 mt-4 ">
+    <ul class="nav order-md-1 ms-md-0 mb-3 mb-md-0">
+        <li class="nav-item">
+            <a href="/en/site-notice.html" class="nav-link fs-sm fw-medium">Site notice</a>
+        </li>
+        <li class="nav-item">
+            <a href="/en/privacy-policy.html" class="nav-link fs-sm fw-medium">Privacy policy</a>
+        </li>
+        <li class="nav-item">
+            <a href="/en/terms-cloud.html" class="nav-link fs-sm fw-medium">Terms</a>
+        </li>
+    </ul>
+    <div class="nav order-md-2 mb-3 mb-md-0">
+        
+    <a target="_blank" href="https://github.com/kimai/kimai" class="btn btn-icon btn-secondary btn-github rounded-circle me-3" aria-label="GitHub">
+        <i class="bx bxl-github"></i>
+    </a>
+
+    <a target="_blank" href="https://www.youtube.com/@kimai_org" class="btn btn-icon btn-secondary btn-youtube rounded-circle me-3" aria-label="YouTube">
+        <i class="bx bxl-youtube"></i>
+    </a>
+
+    <a target="_blank" href="https://www.linkedin.com/company/kimai-org/" class="btn btn-icon btn-secondary btn-linkedin rounded-circle me-3" aria-label="LinkedIn">
+        <i class="bx bxl-linkedin"></i>
+    </a>
+
+    <a target="_blank" href="https://www.instagram.com/kimai_org" class="btn btn-icon btn-secondary btn-instagram rounded-circle me-3" aria-label="Instagram">
+        <i class="bx bxl-instagram"></i>
+    </a>
+
+    <a target="_blank" href="https://www.facebook.com/kimai.time.tracker" class="btn btn-icon btn-secondary btn-facebook rounded-circle me-3" aria-label="Facebook">
+        <i class="bx bxl-facebook"></i>
+    </a>
+
+    <a target="_blank" href="https://phpc.social/@kimai" class="btn btn-icon btn-secondary btn-messenger rounded-circle me-3" aria-label="Mastodon">
+        <i class="bx bxl-mastodon"></i>
+    </a>
+
+
+    </div>
+    <ul class="nav order-md-3">
+        <li class="nav-item">
+            <a href="https://uptime.kimai.cloud/" target="_blank" class="nav-link fs-sm fw-medium">Status</a>
+        </li>
+    </ul>
+    
+</div>
+
+    </div>
+</footer>
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js?v1"></script>
+
+<script async defer src="https://sa.kimai.org/latest.js"></script>
+<noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
+
+</body>
+</html>
