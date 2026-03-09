@@ -1,6 +1,6 @@
 ---
 title: "Kimai support emails are now handled by Mailbox.org"
-date: "2026-01-20 13:00:00 +0200"
+date: "2026-03-09 12:00:00 +0200"
 image: /images/blog/mailbox-migration.webp
 author: valentina
 tags: [general]
