@@ -465,5 +465,9 @@ rewrite ^/blog/2020/updating-cloud-instances-to-1-8$ /en/changelog/2020/updating
 rewrite ^/blog/2020/updating-cloud-instances-to-1-7$ /en/changelog/2020/updating-cloud-instances-to-1-7 permanent;
 rewrite ^/blog/2019/updating-cloud-instances-to-1-6$ /en/changelog/2019/updating-cloud-instances-to-1-6 permanent;
 
+# Redirect moved blog pages
+rewrite ^/blog/2025/managing-easter-holidays/$ /en/blog/2025/managing-easter-holidays permanent;
+rewrite ^/en/blog/2025/managing-easter-holidays$ /en/blog/2026/managing-easter-holidays permanent;
+
 # Redirect remaining /blog/{year}/{slug} URLs to /en/blog/{year}/{slug}
 rewrite "^/blog/([0-9]{4})/([a-z0-9-]+)/?$" /en/blog/$1/$2 permanent;
