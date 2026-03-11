@@ -1,10 +1,12 @@
 ---
 title: "Managing Easter Holidays: A Guide for Business Owners & Project Managers"
-date: "2025-03-17 11:00:00 +0200"
+date: "2026-03-11 12:00:00 +0200"
 image: /images/blog/managing-easter-holidays.webp
 author: valentina
 tags: [general]
 excerpt: "Managing holidays is crucial to maintain productivity and ensuring smooth operations"
+redirect_from:
+
 ---
 
 Easter is a time of celebration and well-earned rest in many countries. As a business owner, project
@@ -30,20 +32,15 @@ check the official holiday calendar for each location where your team works.
 
 ### Easter Celebration Duration in European Countries
 
-The length of Easter celebrations varies across Europe, with some countries observing longer periods than others.
+The length of Easter celebrations varies across Europe, with some countries observing longer periods than others. Some European nations have extended celebrations. 
+In Germany, for example, Easter can last up to two weeks in some regions, with schools typically taking a two-week break. 
+In 2026, Easter school holidays in Germany run from 30 March to 10 or 11 April depending on the state, surrounding Good Friday on 3 April and Easter Monday on 6 April, both of which are public holidays in all states. In Austria, Easter school holidays start in facr on 28 March and last till 6 April 2026.
 
-Some European nations have extended celebrations. In Germany, for example, Easter can last up to two
-weeks in some regions, with schools typically taking a two-week break. In 2025, Easter holidays in
-Germany will run from 18 to 21 April, including Easter Sunday and Easter Monday. In Austria, schools will
-have an Easter break from 12 to 21 April.
+In France, Easter school celebrations also last up to two weeks, though the exact dates are staggered across three regional zones. In 2026, Zone A (Lyon, Bordeaux and others) has Easter holidays from 4 to 20 April; Zone B (Lille, Nantes, Strasbourg and others) from 11 to 27 April; and Zone C (Paris, Toulouse and others) from 18 April to 4 May.
 
-In France, Easter celebrations can also last up to two weeks, with many schools closing for spring break
-during this period. In Spain, Holy Week is celebrated for a whole week, starting on Palm Sunday and
-ending on Easter Monday.
+In Spain, Holy Week is celebrated for a whole week, starting on Palm Sunday and ending on Easter Monday. In 2026, Semana Santa school holidays run from 30 March to 6 April, with Easter Sunday falling on 5 April.
 
-Some countries have moderate celebrations, for example UK, Italy and Netherlands. In the United
-Kingdom Easter celebrations typically last for four days, from Good Friday to Easter Monday.
-Sweden, Poland are used to shorter celebrations with Easter Monday as a public holiday.
+Some countries have more moderate celebrations. In the United Kingdom, Easter school holidays for most schools in England and Wales run from 30 March to 10 April 2026, with Good Friday on 3 April and Easter Monday on 6 April both observed as bank holidays.
 
 ### Planning for Easter: Tips
 
@@ -59,9 +56,14 @@ When managing international teams across Europe during Easter, consider these va
 lengths, for example plan for potential two-week absences in countries with longer Easter breaks,
 like Germany and France.
 
-### Check your public holidays management system for 2026
+### Check your public holidays management system for 2027
 
-Make sure you are prepared for the holiday season and the list of public holidays was set up at the
-beginning of the year. If you haven’t yet tried Kimai’s [public holidays management plugin]({% link _store/keleo-controlling.md %}) yet, request it now.
+Make sure you are prepared for the holiday season and that the list of public holidays was set up at the beginning of the year.
+
+If your team uses Kimai Cloud to manage time, you can find an explanation on how to import the list of public holidays in this video tutorial.
+
+{% include youtube-video.html id="working_contracts_setup_and_absences" chapter="public_holiday" %}
+
+If you use an on-premises solution based on Kimai, you will need the [public holidays management plugin]({% link _store/keleo-controlling.md %}).
 
 It can also be tested in the [demo]({% link _pages/demo.md %}) and is included in {% include link-cloud-start.html title="our cloud" %}. 
