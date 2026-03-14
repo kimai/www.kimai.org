@@ -5,8 +5,6 @@ image: /images/blog/managing-easter-holidays.webp
 author: valentina
 tags: [general]
 excerpt: "Managing holidays is crucial to maintain productivity and ensuring smooth operations"
-redirect_from:
-
 ---
 
 Easter is a time of celebration and well-earned rest in many countries. As a business owner, project
