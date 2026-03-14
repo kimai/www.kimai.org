@@ -84,7 +84,7 @@ Popular examples are:
 
 Manual bookings can be used to increase or reduce the users available holidays.
 
-Popular examples are:
+Examples are:
 - adding a positive amount of days => taking over holiday from the last year
 - removing a negative amount of days => old holidays which were not taken on time expired
 
