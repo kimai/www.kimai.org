@@ -35,30 +35,6 @@ Contains the entire year with the following information:
   - a public holiday 
   - any kind of absence
 
-## How absences affect expected working time
-
-Kimai supports two calculation modes:
-- Absences count as worked time and compensate the expected working time for the day (default setting)
-- Absences reduce the expected working time for the day
-
-The mode can be configured individually for each absence type in [System → Settings]({% link _documentation/configurations.md %}), depending on your industry requirements.
-
-The selected mode affects the calculation of total expected and worked hours for each month, which can be relevant for payroll or PTO calculations.
-
-**Absences compensate expected working time for the day**
-
-In this mode, every configured working day is calculated with its full expected hours.
-This means Kimai assumes that hours must be accounted for on every day, regardless of whether the day is a public holiday, sick leave, or vacation.
-
-The duration of the absence is then counted as worked time and offsets the expected time.
-For example: if a working day has 8 expected hours, a full vacation day will count as 8 hours worked.
-
-**Absences reduce the expected working time for the day**
-
-In this mode, an absence reduces the expected working time for the day by the duration of the absence.
-
-For example: a full vacation day reduces the expected working time for that day to 0, and the worked time will also be 0.
-
 ## Lock a month
 
 After a month is over and the employee working-times were verified for correctness, the month should be "locked".
@@ -163,6 +139,12 @@ you have to roll over the hours to the next year:
 - Go `Employment contract > Working Times`
 - Click on the year dropdown and select the correct entry or click on the {% include demo-action-button.html icon="next" %} button to move to the next year
 - Scroll down and create a `Manual booking` (see above)
+
+## Video
+
+There is older video available, explaining more details, but be warned: it also has a few outdated information bits.
+
+{% include youtube-video.html id="workcontract" %}
 
 ## Permissions
 
