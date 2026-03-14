@@ -657,6 +657,32 @@ The supervisor is a setting in the <a href="/documentation/users.html">users pro
   <li>Approved absences: can still be deleted, until they are locked</li>
 </ul>
 
+<h2 id="how-absences-affect-expected-working-time">How absences affect expected working time</h2>
+
+<p>Kimai supports two calculation modes:</p>
+<ol>
+  <li>Absences count as worked time and compensate the expected working time for the day (default setting)</li>
+  <li>Absences reduce the expected working time for the day</li>
+</ol>
+
+<p>The mode can be configured individually for each absence type in <a href="/documentation/configurations.html">System → Settings</a>, depending on your industry requirements.</p>
+
+<p>The selected mode affects the calculation of total expected and worked hours for each month, which can be relevant for payroll or PTO calculations.</p>
+
+<p><strong>1. Absences compensate expected working time for the day</strong></p>
+
+<p>In this mode, every configured working day is calculated with its full expected hours.
+This means Kimai assumes that hours must be accounted for on every day, regardless of whether the day is a public holiday, sick leave, or vacation.</p>
+
+<p>The duration of the absence is then counted as worked time and offsets the expected time.
+For example: if a working day has 8 expected hours, a full vacation day will count as 8 hours worked.</p>
+
+<p><strong>2. Absences reduce the expected working time for the day</strong></p>
+
+<p>In this mode, an absence reduces the expected working time for the day by the duration of the absence.</p>
+
+<p>For example: a full vacation day reduces the expected working time for that day to 0, and the worked time will also be 0.</p>
+
 <h2 id="holiday">Holiday</h2>
 
 <p>When you are eligible for holidays, meaning that your contract settings have a value for <code class="language-plaintext highlighter-rouge">Holidays per year</code>, you can schedule your vacations here.</p>
@@ -836,7 +862,7 @@ If you want to create absence requests in advance for next year, you have to cha
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#email-notification" class="nav-link">Email notification</a><ul><li class="nav-item"><a href="#setup-your-teams" class="nav-link">Setup your teams</a></li></ul></li><li class="nav-item"><a href="#approval-workflow" class="nav-link">Approval workflow</a></li><li class="nav-item"><a href="#holiday" class="nav-link">Holiday</a></li><li class="nav-item"><a href="#sickness" class="nav-link">Sickness</a><ul><li class="nav-item"><a href="#my-child-is-sick" class="nav-link">My child is sick</a></li></ul></li><li class="nav-item"><a href="#time-off" class="nav-link">Time-Off</a></li><li class="nav-item"><a href="#other-absences" class="nav-link">Other absences</a><ul><li class="nav-item"><a href="#parental-leave" class="nav-link">Parental leave</a></li><li class="nav-item"><a href="#unpaid-holiday" class="nav-link">Unpaid holiday</a></li></ul></li><li class="nav-item"><a href="#creating-absences-for-next-year" class="nav-link">Creating absences for next year</a></li><li class="nav-item"><a href="#carry-over-absences-into-the-new-year" class="nav-link">Carry over absences into the new year</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#email-notification" class="nav-link">Email notification</a><ul><li class="nav-item"><a href="#setup-your-teams" class="nav-link">Setup your teams</a></li></ul></li><li class="nav-item"><a href="#approval-workflow" class="nav-link">Approval workflow</a></li><li class="nav-item"><a href="#how-absences-affect-expected-working-time" class="nav-link">How absences affect expected working time</a></li><li class="nav-item"><a href="#holiday" class="nav-link">Holiday</a></li><li class="nav-item"><a href="#sickness" class="nav-link">Sickness</a><ul><li class="nav-item"><a href="#my-child-is-sick" class="nav-link">My child is sick</a></li></ul></li><li class="nav-item"><a href="#time-off" class="nav-link">Time-Off</a></li><li class="nav-item"><a href="#other-absences" class="nav-link">Other absences</a><ul><li class="nav-item"><a href="#parental-leave" class="nav-link">Parental leave</a></li><li class="nav-item"><a href="#unpaid-holiday" class="nav-link">Unpaid holiday</a></li></ul></li><li class="nav-item"><a href="#creating-absences-for-next-year" class="nav-link">Creating absences for next year</a></li><li class="nav-item"><a href="#carry-over-absences-into-the-new-year" class="nav-link">Carry over absences into the new year</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
         
         <ul class="nav">
             <li>
