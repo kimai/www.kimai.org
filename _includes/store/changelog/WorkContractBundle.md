@@ -1,3 +1,9 @@
+**Version 1.33.0**
+
+Compatibility: requires minimum Kimai 2.49.0
+
+- Added monthly absence report
+
 **Version 1.32.0**
 
 Compatibility: requires minimum Kimai 2.49.0
