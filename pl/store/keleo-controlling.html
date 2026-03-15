@@ -390,6 +390,11 @@
       <li>Export absences per user to Excel</li>
     </ul>
   </li>
+  <li>It adds new reports
+    <ul>
+      <li>Show absences for all users or selected teams in a monthly grid</li>
+    </ul>
+  </li>
   <li>And it adds the new <a href="/documentation/public-holiday.html">Public holiday</a> management view
     <ul>
       <li>Allows to create different groups (e.g. for different countries or states) and add public holidays to each of them</li>
@@ -411,60 +416,63 @@
 
 <h2 id="roadmap">Roadmap</h2>
 
-<p>These features will be added in the future, but there is no guarantee when or in which order.</p>
+<p>Please have a look at <a href="https://github.com/kimai/Paid-plugins/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22working%20times%22">this GitHub list of feature requests for the plugin</a>.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Absence calendar
-    - Display all users / teams
-    - Allow export as ical (or similar format) for use in external calendars (e.g. Outlook)
+<p>Please share your votes and input in these existing issues. The features will be added in the future, but there is no guarantee when or in which order.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Yearly overview for all users (or selected teams)
+    - Pending absence requests
+    - Available and used vacation days
+    - Sum of sickness and other days on Absence screen
+    - Time account stats
+    - Finalize year (automated manual bookings for next year)
 - Monthly contract PDF
     - Include: total working time sum
     - Include: total holiday sum
     - Include: holidays at start of month sum
     - Include: start of month working-time sum
     - Include: manual bookings
-- Finalize year
-  - Allow automatic adjustments of time and holiday account of next year, e.g. from a list-overview
-- API 
-  - Methods to write absences (e.g. when using a HR tool for holiday planning)
+- API: method to create absences
+- Pause / Break times configuration and validation
 </code></pre></div></div>
 
 <h2 id="ideas">Ideas</h2>
 
-<p>This list is a collection of feature wishes from users, which might or might not be added. 
+<p>This list is a collection of feature requests from users, which might or might not be added. 
 If you need one of these features, do not rely on them being added, but contact me upfront to discuss your needs.
 If I decide to add one of these feature, it will be moved to the “Roadmap” section.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Configurable amount of allowed negative hours for time-off: https://github.com/kimai/Paid-plugins/issues/159
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Allow export of absences in ical format (or similar format) for use in external calendars (e.g. Outlook)
+- Configurable amount of allowed negative hours for time-off: https://github.com/kimai/Paid-plugins/issues/159
 - Prevent that certain days can be booked for vacation
 - Add first start- and last end-time as begin and end times to the PDF
 - Configure a dedicated project that will be ignored when calculating the attendance time
 - Close/Approve months partially, in case there is a change in the contract within the month
 - Validations
-  - Configure if timesheets should be prohibited during absence (type)
-  - Configurable rule to deactivate time-records on public holidays
+    - Configure if timesheets should be prohibited during absence (type)
+    - Configurable rule to deactivate time-records on public holidays
 - Management view for all users
-  - showing statistics for absences
-  - pending holidays (approved), used holidays, available
+    - showing statistics for absences
+    - pending holidays (approved), used holidays, available
 - Absences
-  - Add holiday for multiple users (e.g. for forced company vacations)
-  - Types of absences (Workaround: use comment field)
-    - Configurable for sickness and other
-    - Show type in PDF
-    - paid/not paid
-  - Sum of sickness and other days on Absence screen
+    - Add holiday for multiple users (e.g. for forced company vacations)
+    - Types of absences (Workaround: use comment field)
+        - Configurable for sickness and other
+        - Show type in PDF
+        - paid/not paid
 - Break times
-  - Support calculation of breaks (e.g. display in calendar)
+    - Support calculation of breaks (e.g. display in calendar)
 - Dashboard
-  - Existing widgets do not show public holidays, sickness, vacation ... make it configurable or create new widgets that include these hours/days
-  - Widgets for total numbers, to show "status" more prominent
+    - Existing widgets do not show public holidays, sickness, vacation ... make it configurable or create new widgets that include these hours/days
+    - Widgets for total numbers, to show "status" more prominent
 - Working time requirements (Arbeitszeitvorgaben)
-  - Maximum working time (per day, in one session) and breaks
-  - Configure fixed rules per country
-  - Allow one custom rule
-  - Configure default rule (country or custom) per user
+    - Maximum working time (per day, in one session) and breaks
+    - Configure fixed rules per country
+    - Allow one custom rule
+    - Configure default rule (country or custom) per user
 - Holidays
-  - Lockdown method for vacations (define periods where no vacations can be booked)
-  - Automatic calculation of holidays according to the working-time duration (e.g. 30 days per year for a 40h week) 
+    - Lockdown method for vacations (define periods where no vacations can be booked)
+    - Automatic calculation of holidays according to the working-time duration (e.g. 30 days per year for a 40h week) 
 </code></pre></div></div>
 
 
@@ -590,7 +598,15 @@ then either the directory has a wrong name (must be <strong>var/plugins/WorkCont
                 <div class="tab-pane fade" id="store-changelog" role="tabpanel">
                     <h2 id="compatibility">Changelog</h2>
                     
-                    <p><strong>Version 1.32.0</strong></p>
+                    <p><strong>Version 1.33.0</strong></p>
+
+<p>Compatibility: requires minimum Kimai 2.49.0</p>
+
+<ul>
+  <li>Added monthly absence report</li>
+</ul>
+
+<p><strong>Version 1.32.0</strong></p>
 
 <p>Compatibility: requires minimum Kimai 2.49.0</p>
 
