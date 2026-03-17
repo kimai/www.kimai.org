@@ -8,7 +8,7 @@ related:
 
 This screen and the `Contract` menu can be seen by any user that has active contract settings and the ones that own the `contract_other_profile` permission (see `Permissions` below).
 
-{% include youtube-video.html id="workcontract" %}
+{% include youtube-video.html id="working_contracts_setup_and_absences" %}
 
 ## User interface
 
