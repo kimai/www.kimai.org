@@ -16,7 +16,7 @@ When managing absences, emails including the type of absence/comment/action/user
 Notification emails will be sent to the user and the supervisor (if one is configured).
 The supervisor is a setting in the [users profile]({% link _documentation/users.md %}).
 
-### Setup your teams 
+### Set up your teams 
 
 To ensure the workflow functions properly, you need to set up your teams in a specific way.
 
@@ -110,6 +110,13 @@ This fills up entire days and can be entered as date-range.
 ### Unpaid holiday
 
 This fills up entire days and can be entered as date-range.
+
+## Absence calendar
+
+There is a monthly report available, showing all approved absences at [Report → Absence calendar]({% link _documentation/reporting.md %}).
+
+The required [permission]({% link _documentation/permissions.md %}) to see that report is `absence`.
+To see absences of other users you require `view_other_absence` and `view_other_reporting`.
 
 ## Creating absences for next year
 
