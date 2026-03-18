@@ -75,6 +75,7 @@
 
 <script src="/assets/build/main.js?v1"></script>
 {% if jekyll.environment == "production" %}
+<script defer src="https://u.kimai.org/script.js" data-website-id="{{ site.website_id[page.lang] }}"></script>
 <script async defer src="https://sa.kimai.org/latest.js"></script>
 <noscript><img src="https://sa.kimai.org/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
 {% endif %}
