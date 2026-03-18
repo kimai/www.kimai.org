@@ -9,7 +9,8 @@ layout: default
         <div class="d-flex align-items-center flex-wrap text-muted mb-md-0 mb-4">
             <div class="fs-xs border-end pe-3 me-3 mb-2">
                 {% for tag in page.tags %}
-                    <span class="badge bg-faded-primary text-primary fs-base">{{ tag }}</span>
+                    {% assign tag_page = site.blog_tags | filter_slug_lang: tag %}
+                    <span class="badge bg-faded-primary text-primary fs-base">{{ tag_page.display_tag }}</span>
                 {% endfor %}
             </div>
             <div class="fs-sm pe-3 me-3 mb-2">{{ page.date | date_to_string }}</div>

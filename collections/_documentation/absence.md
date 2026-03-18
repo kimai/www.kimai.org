@@ -16,7 +16,7 @@ When managing absences, emails including the type of absence/comment/action/user
 Notification emails will be sent to the user and the supervisor (if one is configured).
 The supervisor is a setting in the [users profile]({% link _documentation/users.md %}).
 
-### Setup your teams 
+### Set up your teams 
 
 To ensure the workflow functions properly, you need to set up your teams in a specific way.
 
@@ -36,6 +36,30 @@ There are 2 phases that each absence has to go through:
   - Approval by the supervisor: the absence will be moved to the `Approved` list and an email is sent to the user to confirm the approval 
   - Rejection by the supervisor: the absence will be moved back to the `New` list and an email is sent to the user to inform about the rejection 
 - Approved absences: can still be deleted, until they are locked 
+
+## How absences affect expected working time
+
+Kimai supports two calculation modes:
+1. Absences count as worked time and compensate the expected working time for the day (default setting)
+2. Absences reduce the expected working time for the day
+
+The mode can be configured individually for each absence type in [System → Settings]({% link _documentation/configurations.md %}), depending on your industry requirements.
+
+The selected mode affects the calculation of total expected and worked hours for each month, which can be relevant for payroll or PTO calculations.
+
+**1. Absences compensate expected working time for the day**
+
+In this mode, every configured working day is calculated with its full expected hours.
+This means Kimai assumes that hours must be accounted for on every day, regardless of whether the day is a public holiday, sick leave, or vacation.
+
+The duration of the absence is then counted as worked time and offsets the expected time.
+For example: if a working day has 8 expected hours, a full vacation day will count as 8 hours worked.
+
+**2. Absences reduce the expected working time for the day**
+
+In this mode, an absence reduces the expected working time for the day by the duration of the absence.
+
+For example: a full vacation day reduces the expected working time for that day to 0, and the worked time will also be 0.
 
 ## Holiday
 
@@ -86,6 +110,13 @@ This fills up entire days and can be entered as date-range.
 ### Unpaid holiday
 
 This fills up entire days and can be entered as date-range.
+
+## Absence calendar
+
+There is a monthly report available, showing all approved absences at [Report → Absence calendar]({% link _documentation/reporting.md %}).
+
+The required [permission]({% link _documentation/permissions.md %}) to see that report is `absence`.
+To see absences of other users you require `view_other_absence` and `view_other_reporting`.
 
 ## Creating absences for next year
 

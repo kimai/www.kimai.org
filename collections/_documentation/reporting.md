@@ -90,13 +90,15 @@ links to invoice and export screen.
 
 You can change the customer to filter the project list and decide to include projects without budgets and projects without recorded times.
 
-- Required permission: `view_reporting` and `budget_project`
+- Required permissions: `view_reporting`, `project_reporting`, `budget_project`
+- Instead of `budget_project` you might also use `budget_teamlead_project` or `budget_team_project`, but then the appropriate team assignments must exist
 
 ### Project details
 
 Shows all kind of reports for the selected project and sums up the times grouped by various characteristics.
 
-- Required permission: `view_reporting` and `details_project`
+- Required permissions: `view_reporting`, `project_reporting`, `details_project` 
+- Instead of `details_project` you might also use `details_teamlead_project` or `details_team_project`, but then the appropriate team assignments must exist
 
 ### Monthly report
 
@@ -110,7 +112,8 @@ The displayed values are shown for the selected month:
 - working hours and revenue are shown for the selected month
 - the billable percentage is calculated from the values of the selected month
 
-- Required permission: `view_reporting` and `budget_project`
+- Required permissions: `view_reporting`, `project_reporting`, `budget_project`
+- Instead of `budget_project` you might also use `budget_teamlead_project` or `budget_team_project`, but then the appropriate team assignments must exist
 
 ### Inactive projects
 
@@ -118,7 +121,8 @@ Display a reporting of all inactive projects, layout is the same as the `Project
 
 You can change the date that is used to filter inactive projects (date since last timesheet was recorded).
 
-- Required permission: `view_reporting` and `budget_project`
+- Required permissions: `view_reporting`, `project_reporting`, `budget_project`
+- Instead of `budget_project` you might also use `budget_teamlead_project` or `budget_team_project`, but then the appropriate team assignments must exist
 
 ## Customers
 
@@ -126,5 +130,5 @@ You can change the date that is used to filter inactive projects (date since las
 
 Groups all project times by activity and user with total times. This report will likely NOT work, if you have too much data in one month. 
 
-- Required permission: `view_reporting` and `customer_reporting`
+- Required permissions: `view_reporting`, `customer_reporting`, `view_other_reporting`, `view_other_timesheet`
 

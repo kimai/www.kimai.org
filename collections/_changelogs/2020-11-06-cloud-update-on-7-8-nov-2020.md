@@ -30,5 +30,5 @@ Here is a list of the most important changes, that you can look out for:
 
 We love and live the open source idea and therefore try to publish everything we do. A complete list of all changes can be found on these pages:
 
-- Version 1.10: https://www.kimai.org/blog/2020/kimai-v2-release-1-10/
-- Version 1.11: https://www.kimai.org/blog/2020/kimai-v2-release-1-11/
+- [Version 1.10]({% link _posts/en/2020-08-25-kimai-v2-release-1-10.md %})
+- [Version 1.11]({% link _posts/en/2020-11-05-kimai-v2-release-1-11.md %})

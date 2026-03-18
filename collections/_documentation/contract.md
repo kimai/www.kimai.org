@@ -8,11 +8,7 @@ related:
 
 This screen and the `Contract` menu can be seen by any user that has active contract settings and the ones that own the `contract_other_profile` permission (see `Permissions` below).
 
-{% include youtube-video.html id="workcontract" %}
-
-Please be aware that Kimai expects hours to be recorded for every day, regardless of what is scheduled.
-The core system does not recognise absences, so even holiday days or public holidays are expected to have working time for that day.
-The duration of the absence (e.g. a full day for a public holiday) is then counted as working time, which compensates for the expected time.
+{% include youtube-video.html id="working_contracts_setup_and_absences" %}
 
 ## User interface
 
@@ -45,7 +41,7 @@ After a month is over and the employee working-times were verified for correctne
 
 You can right-click the row or use the action menu at the end of the monthly row to lock the selected month:
 
-{% include docs-image.html src="/images/documentation/contract-lock-month.webp" title="Lock a month by choosing from the context menu" width="700px" %}
+{% include docs-image.html src="/images/documentation/contract-lock-month.webp" title="Lock a month by choosing from the context menu" %}
 
 Whether a month is locked (closed black lock) or not (open orange lock) is indicated by the icon in front of the row.
 
@@ -88,7 +84,7 @@ Popular examples are:
 
 Manual bookings can be used to increase or reduce the users available holidays.
 
-Popular examples are:
+Examples are:
 - adding a positive amount of days => taking over holiday from the last year
 - removing a negative amount of days => old holidays which were not taken on time expired
 
@@ -126,7 +122,7 @@ This booking is only there for information purposes.
 
 ## Limit timesheets to working days
 
-There is a validation that can be activated in [System → Settings], which helps to restrict timesheets to contractual working days.
+There is a validation that can be activated in [System → Settings]({% link _documentation/configurations.md %}), which helps to restrict timesheets to contractual working days.
 Once activated, users cannot create timesheets for days without active contract setting.
 So a user who works Monday to Thursday cannot create timesheets for Fridays.
 
@@ -143,6 +139,12 @@ you have to roll over the hours to the next year:
 - Go `Employment contract > Working Times`
 - Click on the year dropdown and select the correct entry or click on the {% include demo-action-button.html icon="next" %} button to move to the next year
 - Scroll down and create a `Manual booking` (see above)
+
+## Video
+
+There is older video available, explaining more details, but be warned: it also has a few outdated information bits.
+
+{% include youtube-video.html id="workcontract" %}
 
 ## Permissions
 

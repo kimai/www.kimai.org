@@ -82,7 +82,7 @@ Please note:
 
 ## Project listing
 
-{% include docs-image.html src="/images/documentation/project-filter.webp" title="Project toolbar filter" width="700px" %}
+{% include docs-image.html src="/images/documentation/project-filter.webp" title="Project toolbar filter" %}
 
 The **Visible** filter in the toolbar has three states:
 - `Yes` - all visible projects: the project itself and its customer are visible
@@ -96,7 +96,7 @@ But you can use the project filter to show all or only invisible projects.
 
 Invisible projects will be highlighted in the listing table:
 
-{% include docs-image.html src="/images/documentation/project-listing-visibility.webp" title="Visible and invisible projects in the project listing" width="700px" %}
+{% include docs-image.html src="/images/documentation/project-listing-visibility.webp" title="Visible and invisible projects in the project listing" %}
 
 ### Filter and search 
 

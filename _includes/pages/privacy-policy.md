@@ -211,9 +211,10 @@ Bei den eingesetzten Dienstleistern, welche Subprozessor bzw. Unterauftragsverar
  
 ### Änderungsverlauf
 
-- **06.01.2026**: Sortierung der Subprozessoren, Nennung der 8 Rechte gemäß DGVO
+- **21.02.2026**: Neuer Provider "Mailbox" für Support-Emails (vorher: Google), Korrektur Stripe Kontakt (vorher: USA, jetzt: EU), Kategorisierung Subprozessoren 
+- **06.01.2026**: Nennung der 8 Rechte gemäß DSGVO
 - **23.06.2025**: Entfernung der URL zur Liste deutscher Datenschutzbehörden
-- **18.03.2024**: Änderung "Sendinblue Frankreich" zu "Brevo Deutschland", Simple Analytics aus Transparenzgründen aufgenommen
+- **18.03.2024**: Änderung "Sendinblue Frankreich" zu "Brevo Deutschland", Simple Analytics aufgenommen
 - **14.11.2023**: Recaptcha Verifizierung via Subprozessor "Google" wieder hinzugefügt
 - **25.04.2021**: Recaptcha Verifizierung via Subprozessor "Google" entfernt
 - **01.01.2021**: Änderung der Kontaktdaten nach Umzug von Deutschland nach Österreich
@@ -435,9 +436,10 @@ We are using the following service providers (also called sub-processors) to ass
 
 ### Change history
 
-- **06.01.2026**: Sort subprocessors, mention 8 rights under the GDPR
+- **21.02.2026**: New provider “Mailbox” for support emails (previously: Google), correction Stripe contact (previously: USA, now: EU)
+- **06.01.2026**: Mention 8 rights under the GDPR
 - **23.06.2025**: Removed URL of German data protection authorities and replaced "German" with "of the federal state in which our company is based"
-- **18.03.2024**: Replaced "Sendinblue France" with "Brevo Germany", added Simple Analytics for transparency reasons
+- **18.03.2024**: Replaced "Sendinblue France" with "Brevo Germany", added Simple Analytics
 - **14.11.2023**: Recaptcha verification via Subprocessor "Google" re-added
 - **25.04.2021**: Recaptcha verification via Subprocessor "Google" removed
 - **01.01.2021**: Change of contact details after moving from Germany to Austria

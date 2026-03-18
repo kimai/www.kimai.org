@@ -88,26 +88,26 @@ kimai:
 
 ### ADFS Setup
 
-{% include docs-image.html src="/images/documentation/adfs-saml-pic1.webp" title="Add Relying Party Trust" width="1000px" %}
-{% include docs-image.html src="/images/documentation/adfs-saml-pic2.webp" title="Select Data Source 1" width="1000px" %}
-{% include docs-image.html src="/images/documentation/adfs-saml-pic3.webp" title="Specific Display Name" width="1000px" %}
-{% include docs-image.html src="/images/documentation/adfs-saml-pic4.webp" title="Choose Access Control Policy" width="1000px" %}
-{% include docs-image.html src="/images/documentation/adfs-saml-pic5.webp" title="Ready to Add Trust" width="1000px" %}
-{% include docs-image.html src="/images/documentation/adfs-saml-pic6.webp" title="Edit Claim Issuance Policy" width="1000px" %}
+{% include docs-image.html src="/images/documentation/adfs-saml-pic1.webp" title="Add Relying Party Trust" %}
+{% include docs-image.html src="/images/documentation/adfs-saml-pic2.webp" title="Select Data Source 1" %}
+{% include docs-image.html src="/images/documentation/adfs-saml-pic3.webp" title="Specific Display Name" %}
+{% include docs-image.html src="/images/documentation/adfs-saml-pic4.webp" title="Choose Access Control Policy" %}
+{% include docs-image.html src="/images/documentation/adfs-saml-pic5.webp" title="Ready to Add Trust" %}
+{% include docs-image.html src="/images/documentation/adfs-saml-pic6.webp" title="Edit Claim Issuance Policy" %}
 
 **Rule Template for Attributes**
 
-{% include docs-image.html src="/images/documentation/adfs-saml-pic7.webp" title="Send LDAP Attributes as Claims" width="1000px" %}
-{% include docs-image.html src="/images/documentation/adfs-saml-pic8.webp" title="Edit Rule - Attributes" width="1000px" %}
+{% include docs-image.html src="/images/documentation/adfs-saml-pic7.webp" title="Send LDAP Attributes as Claims" %}
+{% include docs-image.html src="/images/documentation/adfs-saml-pic8.webp" title="Edit Rule - Attributes" %}
 
 **Rule Template for Groups**
 
-{% include docs-image.html src="/images/documentation/adfs-saml-pic9.webp" title="Send Group Memberships as a Claim" width="1000px" %}
-{% include docs-image.html src="/images/documentation/adfs-saml-pic10.webp" title="Configure Claim Rule for Groups" width="1000px" %}
+{% include docs-image.html src="/images/documentation/adfs-saml-pic9.webp" title="Send Group Memberships as a Claim" %}
+{% include docs-image.html src="/images/documentation/adfs-saml-pic10.webp" title="Configure Claim Rule for Groups" %}
 
 **Apply Claim Issuance Policy**
 
-{% include docs-image.html src="/images/documentation/adfs-saml-pic11.webp" title="Apply Claim Issuance Policy" width="1000px" %}
+{% include docs-image.html src="/images/documentation/adfs-saml-pic11.webp" title="Apply Claim Issuance Policy" %}
 
 ### Test
 You should now be able to test the Login by visiting **https://timetracking.example.com/** and clicking on the `Login With ADFS` title of the SAML method, you defined earlier.

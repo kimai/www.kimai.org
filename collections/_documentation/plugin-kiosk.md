@@ -8,7 +8,7 @@ description: Kiosk mode with support for Barcode, RFID, Web NFC
 ## Configuration
 
 You have to **configure the bundle before you can use it**. 
-You reach the configuration via `System` > `Settings` > `Kiosk mode`.
+You reach the configuration via `System` → `Settings` → `Kiosk mode`.
 
 The following configurations are available:
 

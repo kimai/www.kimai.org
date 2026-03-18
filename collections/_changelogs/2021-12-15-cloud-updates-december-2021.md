@@ -18,7 +18,7 @@ This feature is only available for paying customers.
 
 The new "Translations" menu contains a listing page with form, which allows to translate your UI. Now you can adapt every visible translation to your business needs. 
 
-More documentation is available at [https://www.kimai.org/documentation/plugin-translation.html](https://www.kimai.org/documentation/plugin-translation.html).
+More documentation is available [here]({% link _documentation/plugin-translation.md %}).
 
 ### Further changes 
 

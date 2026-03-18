@@ -20,7 +20,7 @@ if ($key !== false) {
 
 $multiLanguagePaths = [
     '_pages' => [
-        'skip' => ['documentation.md', 'industry.html', 'time-tracking-terms.html', 'changelogs.html'],
+        'skip' => ['documentation.md', 'industry.html', 'time-tracking-terms.html'],
         'permalink' => '/:language/:original',
         'remove' => ['redirect_from'],
         'overwrite' => true,

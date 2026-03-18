@@ -53,33 +53,7 @@ layout: base
         </div>
     </section>
 
-    <section class="container pb-5 mb-md-2 mb-lg-5">
-        <div class="row">
-            <div class="col-lg-4 text-center text-lg-start pb-3 pb-lg-0 mb-4 mb-lg-0">
-                <h2 class="h1 mb-lg-4">{{ page.features.title }}</h2>
-                <div class="pb-4 mb-0 mb-lg-3">{{ page.features.introduction|markdownify }}</div>
-                <a href="{{ features.url }}" class="btn btn-primary shadow-primary btn-lg">{{
-                    site.data[page.lang].translation.features.name }}</a>
-            </div>
-            <div class="col-xl-7 col-lg-8 offset-xl-1">
-                <div class="row row-cols-1 row-cols-md-2">
-                    <div class="col">
-                        {% for name in page.features.list %}
-                        {% assign features = site.data.feature | where_exp: "feature", "feature.name == name" %}
-                        {% for feature in features %}
-                        {% include feature-box.html feature=feature %}
-                        {% endfor %}
-                        {% assign mod = forloop.index1 | modulo: 2 %}
-                        {% if mod == 0 %}
-                    </div>
-                    <div class="col">
-                        {% endif %}
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    {% include section-features.html %}
 
     {% assign testimonial_tag = page.testimonials.tag %}
     {% assign testimonial_title = page.testimonials.title %}

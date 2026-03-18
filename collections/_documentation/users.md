@@ -9,6 +9,10 @@ related:
 A user can be part of a [team]({% link _documentation/teams.md %}), which can limit/extend the visibility of data.
 Access to certain features within Kimai are handled by the [permission system]({% link _documentation/permissions.md %}), which is configurable through user roles.
 
+## Create users
+
+{% include youtube-video.html id="create_users" %}
+
 ## Avatars
 
 There are two types of user avatars:

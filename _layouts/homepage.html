@@ -26,7 +26,7 @@ shopping: kimai
     {% assign testimonials = site.data.testimonials | where_exp: "item", "item.tags contains 'SliderHomepage'" | sample: 5 %}
     {% include testimonials-slider.html testimonials=testimonials %}
 
-    {% include section-features.html %}
+    {% include section-features-homepage.html %}
 
 {% comment %}
     {% include section-numbers.html %}

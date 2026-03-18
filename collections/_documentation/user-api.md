@@ -11,7 +11,7 @@ First open your API credentials page:
 
 Then you select `Create` to create one API token:
 
-{% include docs-image.html src="/images/documentation/api_access_detail.webp" title="Create an API token for Kimai" width="800px" %}
+{% include docs-image.html src="/images/documentation/api_access_detail.webp" title="Create an API token for Kimai" %}
 
 ## Bearer token
  

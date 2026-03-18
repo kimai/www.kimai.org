@@ -95,9 +95,9 @@ kimai:
                     emailAddress: 'kimai-support@example.com'
             organization:
                 en:
-                    name: 'Kimai'
-                    displayname: 'Kimai'
-                    url: 'https://www.kimai.org'
+                    name: 'Acme'
+                    displayname: 'Acme'
+                    url: 'https://www.example.com'
 ```
 
 You should now be able to test the Login by visiting **https://timetracking.example.com/** and clicking on the `Keycloak` title of the SAML method, you defined earlier.
