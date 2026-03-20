@@ -168,10 +168,11 @@ Die Nutzung von YouTube erfolgt im Interesse einer ansprechenden Darstellung uns
 Weitere Informationen zum Umgang mit Nutzerdaten finden Sie in der [Datenschutzerklärung von YouTube](https://www.google.de/intl/de/policies/privacy).
 Dies stellt ein berechtigtes Interesse im Sinne von Art. 6 Abs. 1 lit. f DSGVO dar.
 
-**Webseiten Analyse**
+**Simple Analytics**
 
-Um Informationen über besuchte Seiten zu erhalten, verwenden wir ein selbst gehostetes [Umami](https://umami.is/).
+Um wichtige Informationen über das Verhalten unserer Besucher zu erhalten, verwenden wir Simple Analytics.
 Diese Analysesoftware gibt uns nur einen Einblick in unsere Besucher im Allgemeinen, aber nicht in einzelne Personen, da sie keine Besucher verfolgt und keine personenbezogenen Daten speichert.
+In der [Dokumentation](https://docs.simpleanalytics.com/what-we-collect) erfahren Sie, was Simple Analytics sammelt (und vor allem, was nicht).
 
 **Google Fonts**
 
@@ -393,10 +394,11 @@ YouTube is used to help make the website appealing and transfer knowledge about 
 Further information about handling user data, can be found in the data protection declaration of YouTube under [https://policies.google.com/privacy](https://policies.google.com/privacy).
 This constitutes a justified interest pursuant to Art. 6 (1) (f) DSGVO.
 
-**Website Analytics**
+**Simple Analytics**
 
-To gather important information about our visitors’ behavior, we use a self-hosted [Umami](https://umami.is/).
-This analytics software provides us with insights into our visitors in general, but not into individual users, as it does not track visitors or store any personal data.
+To get critical information about the behavior of our visitors, we use Simple Analytics.
+This analytics software gives us insight about our visitors only in general, but not about individuals per say, as it does not track visitors and does not store any personal identifiable information.
+[Go to their documentation](https://docs.simpleanalytics.com/what-we-collect) to find out what Simple Analytics collects (and most importantly what they don't).
 
 **Google Fonts**
 

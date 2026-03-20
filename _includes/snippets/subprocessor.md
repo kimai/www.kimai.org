@@ -23,6 +23,9 @@ Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland
 
 #### {% if page.lang == 'de' %}Webseiten Besucher{% else %}Website visitors{% endif %}
 
+**Simple Analytics**: Anonymous website statistics, [Link](https://simpleanalytics.com), [Privacy policy](https://dashboard.simpleanalytics.com/privacy-policy)  
+Simple Analytics B.V., Jacob van Lennepstraat 78 H, 1053 HM Amsterdam, Netherlands
+
 **Google**: YouTube Videos, Re-captcha verification, Webfonts [Link](https://www.google.com), [Privacy policy](https://policies.google.com/privacy)  
 Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland
 
