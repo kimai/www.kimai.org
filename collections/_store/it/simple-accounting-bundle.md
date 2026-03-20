@@ -1,7 +1,8 @@
 ---
 title: Simple Accounting Bundle
 type: plugin
-lang: en
+lang: it
+permalink: "/it/store/simple-accounting-bundle.html"
 ---
 {% include store/simple-accounting-bundle.md %}
 

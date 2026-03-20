@@ -1,4 +1,6 @@
-A Kimai plugin that adds a "Simple Accounting" layer to your projects. It allows you to track billable work vs. invoiced amounts and add manual adjustments (Simple Entries) to calculate a **Real Remaining Balance**.
+Adds a "Simple Accounting" layer to your projects. 
+
+It allows you to track billable work vs. invoiced amounts and add manual adjustments (Simple Entries) to calculate the **Remaining Balance**.
 
 ### Features
 
@@ -9,8 +11,3 @@ A Kimai plugin that adds a "Simple Accounting" layer to your projects. It allows
 - **Date Management**: Every simple entry tracks its own date and time.
 - **Multi-language**: Fully translated into English and Spanish.
 - **Responsive**: Fully compatible with mobile view.
-
-### Installation
-
-1. Download or clone into `var/plugins/SimpleAccountingBundle`.
-2. Clear cache with `bin/console kimai:reload`.
