@@ -89,7 +89,7 @@ Usually you set-up a password to access the app settings and to exit the app and
 Type: Paid  
 Download: [Google Play](https://play.google.com/store/apps/details?id=de.ozerov.fully) 
 
-#### Required setup steps
+**Required setup steps**
 
 This app does not submit the scanned code automatically, but you can easily fix it by adding a bit of 
 Javascript code (only available in paid "Plus" version).
