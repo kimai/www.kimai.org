@@ -115,6 +115,8 @@ This fills up entire days and can be entered as date-range.
 
 There is a monthly report available, showing all approved absences at [Report → Absence calendar]({% link _documentation/reporting.md %}).
 
+{% include docs-image.html src="/images/documentation/absence-calendar.webp" title="Absence calendar" %}
+
 The required [permission]({% link _documentation/permissions.md %}) to see that report is `absence`.
 To see absences of other users you require `view_other_absence` and `view_other_reporting`.
 

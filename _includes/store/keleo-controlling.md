@@ -21,7 +21,7 @@
   - Automatically adds the times absent to the user's timesheet based on their daily working time
   - Export absences per user to Excel
 - It adds new reports
-  - Show absences for all users or selected teams in a monthly grid
+  - Show absences for all users or selected teams in a monthly grid (Absence calendar)
 - And it adds the new [Public holiday]({% link _documentation/public-holiday.md %}) management view
   - Allows to create different groups (e.g. for different countries or states) and add public holidays to each of them 
   - Import and manual creation of public (local) holidays
