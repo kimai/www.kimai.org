@@ -46,7 +46,7 @@ The Android tablets need a Kiosk application, which makes sure that users always
 
 - Kiosk application: [Android Kiosk](https://www.android-kiosk.com/)
 
-### NFC Toke
+### NFC Token
 
 And you need a bunch of NFC tokens:
 
