@@ -733,34 +733,40 @@ You reach the configuration via <code class="language-plaintext highlighter-roug
 
 <h2 id="login-modes">Login modes</h2>
 
-<h3 id="free-input-eg-keyboard">Free Input (e.g. keyboard)</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Barcode via device camera</code>:</li>
+</ul>
 
-<p>A free text input field where a user can manually enter a code, like a personal code.</p>
+<h3 id="keyboard-input">Keyboard input</h3>
 
-<p>Also used in combination with Web NFC or similar tokens.</p>
+<p>A free “text” input field with no further interactive logic. 
+The idea is to add a keyboard or num-pad and the users enters his code and then submits the form (via enter).</p>
 
-<h3 id="web-nfc">Web NFC</h3>
+<p>Could be used in combination with any external reader that acts as “virtual keyboard” and is able to submit the code including the code for ENTER.</p>
 
-<p>Uses the Web NFC Browser API, which as of writing these docs does not work in all browsers.</p>
+<h3 id="external-scanner">External scanner</h3>
 
-<p>Modern mobile devices with up-to-date Chrome based browsers support it.
-Also some Kiosk browsers have support, that needs to be enabled.</p>
+<p>Uses the Web NFC Browser API (check if your browser supports it).</p>
+
+<p>Modern mobile devices with up-to-date Chrome based browsers support Web NFC.
+Also some Kiosk browsers have support, that needs to be enabled (see below).</p>
 
 <h3 id="barcode-via-usb-scanner">Barcode via USB scanner</h3>
 
-<p>A text input field, which will submit the scanned barcode.</p>
+<p>Receives codes from an attached USB barcode reader.</p>
+
+<p>A simple “text” input field, which relies in the scanner to send the code including ENTER.</p>
 
 <h3 id="barcode-via-device-camera">Barcode via device camera</h3>
 
-<p>Opens a camera screen on the website and then a javascript tool tries to find a barcode on the scanned area.</p>
+<p>Tries to read the barcode via an attached camera and javascript. 
+Needs the <code class="language-plaintext highlighter-rouge">Code format</code> to be configured correctly.</p>
 
-<p>Needs the <code class="language-plaintext highlighter-rouge">Code format</code> to be configured correctly.</p>
+<p><strong>THIS MODE IS DEPRECATED AND SHOULD NOT BE USED ANY LONGER.</strong></p>
 
-<p>This mode has limitations and should ONLY be used for test purposes. Use a dedicated barcode scanner for production usage.</p>
+<p>It has severe limitations and should ONLY be used for test purposes. Use a dedicated barcode scanner for production usage.</p>
 
-<h2 id="android-kiosk-configuration">Android-Kiosk Configuration</h2>
-
-<p>When using Android-Kiosk with an Android tablet, there are some important considerations for NFC functionality:</p>
+<h3 id="faq">FAQ</h3>
 
 <h3 id="nfc-scanning-differences">NFC Scanning Differences</h3>
 
@@ -768,16 +774,78 @@ Also some Kiosk browsers have support, that needs to be enabled.</p>
 
 <ul>
   <li><strong>Chrome/Web browsers with JavaScript NFC</strong>: Scans and returns the NFC chip ID</li>
-  <li><strong>Android-Kiosk app</strong>: Scans and returns the chip’s stored value (the actual data written to the chip)</li>
+  <li><strong>Kiosk Browser</strong>: Scans and returns the chip’s stored value (the actual data written to the chip)</li>
 </ul>
 
 <p>This difference is crucial when setting up your NFC tokens, as you need to ensure the stored value matches what your Kimai configuration expects.</p>
 
-<h3 id="resolving-nfc-scan-issues">Resolving NFC Scan Issues</h3>
+<h2 id="kiosk-apps-for-android">Kiosk apps for Android</h2>
+
+<p>Many Kiosk apps exists and we did not test all of them. 
+Most important requirement is support for Web NFC, in case you use NFC tokens.</p>
+
+<p>Those apps all work the same way: they restrict access to a configured URL, in our case to the “Kimai Kiosk Login page”.</p>
+
+<p>Usually you set-up a password to access the app settings and to exit the app and get back to your Tablet, e.g. for accessing the system settings.</p>
+
+<h3 id="fully-kiosk-browser">Fully Kiosk Browser</h3>
+
+<p>Type: Paid<br />
+Download: <a href="https://play.google.com/store/apps/details?id=de.ozerov.fully">Google Play</a></p>
+
+<h4 id="required-setup-steps">Required setup steps</h4>
+
+<p>This app does not submit the scanned code automatically, but you can easily fix it by adding a bit of 
+Javascript code (only available in paid “Plus” version).</p>
+
+<p><strong>Inject Javascript</strong></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if </span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">pathname</span><span class="p">.</span><span class="nf">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">/auth/kiosk/code</span><span class="dl">'</span><span class="p">)</span> <span class="o">===</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="kd">const</span> <span class="nx">field</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">barcode_login_form_code</span><span class="dl">'</span><span class="p">);</span>
+    <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">field</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="kd">let</span> <span class="nx">timer</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    
+    <span class="nx">field</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">input</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// stop running timer</span>
+        <span class="k">if </span><span class="p">(</span><span class="nx">timer</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nf">clearTimeout</span><span class="p">(</span><span class="nx">timer</span><span class="p">);</span>
+        <span class="p">}</span>
+        
+        <span class="c1">// start a new timer, submit 800ms after the last char was typed</span>
+        <span class="nx">timer</span> <span class="o">=</span> <span class="nf">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">if </span><span class="p">(</span><span class="nx">field</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kd">var</span> <span class="nx">btn</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">button[type="submit"]</span><span class="dl">'</span><span class="p">);</span>
+                <span class="k">if </span><span class="p">(</span><span class="nx">btn</span><span class="p">)</span> <span class="p">{</span> <span class="nx">btn</span><span class="p">.</span><span class="nf">click</span><span class="p">();</span> <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">},</span> <span class="mi">800</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="allnet-fullscreen-browser">ALLNET Fullscreen Browser</h3>
+
+<p>Type: Free<br />
+Download: <a href="https://play.google.com/store/apps/details?id=de.allnet.allnetfullscreenbrowser">Google Play</a></p>
+
+<h3 id="kiosk-browser">Kiosk Browser</h3>
+
+<p>Type: Paid<br />
+This app also calls itself “Android Kiosk” sometimes.</p>
+
+<p>Download: <a href="https://www.android-kiosk.com/">www.android-kiosk.com</a></p>
+
+<p><strong>Resolving NFC Scan Issues</strong></p>
 
 <p>If you experience NFC scanning issues with Android-Kiosk, the following solutions can help:</p>
 
-<h4 id="screen-stay-on-configuration">Screen Stay-On Configuration</h4>
+<p><strong><em>Screen Stay-On Configuration</em></strong></p>
 
 <p>The “Screen on while device plugged in” setting can cause NFC scanning problems. This setting maps to the global <code class="language-plaintext highlighter-rouge">stay_on_while_plugged_in</code> setting (bitmask):</p>
 
@@ -804,9 +872,10 @@ Also some Kiosk browsers have support, that needs to be enabled.</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>adb shell settings get global stay_on_while_plugged_in
 </code></pre></div></div>
 
-<h4 id="refresh-configuration">Refresh Configuration</h4>
+<p><strong>Refresh Configuration</strong></p>
 
-<p>To avoid issues where “scanning NFC works, but not inputting in input field”, configure Android-Kiosk to refresh on idle every 30 minutes. This helps maintain proper NFC input functionality over extended periods.</p>
+<p>To avoid issues where “scanning NFC works, but not inputting in input field”, configure Android-Kiosk to refresh on idle every 30 minutes. 
+This helps maintain proper NFC input functionality over extended periods.</p>
 
 <h2 id="permissions">Permissions</h2>
 
@@ -861,7 +930,7 @@ Also some Kiosk browsers have support, that needs to be enabled.</p>
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#configuration" class="nav-link">Configuration</a></li><li class="nav-item"><a href="#login-modes" class="nav-link">Login modes</a><ul><li class="nav-item"><a href="#free-input-eg-keyboard" class="nav-link">Free Input (e.g. keyboard)</a></li><li class="nav-item"><a href="#web-nfc" class="nav-link">Web NFC</a></li><li class="nav-item"><a href="#barcode-via-usb-scanner" class="nav-link">Barcode via USB scanner</a></li><li class="nav-item"><a href="#barcode-via-device-camera" class="nav-link">Barcode via device camera</a></li></ul></li><li class="nav-item"><a href="#android-kiosk-configuration" class="nav-link">Android-Kiosk Configuration</a><ul><li class="nav-item"><a href="#nfc-scanning-differences" class="nav-link">NFC Scanning Differences</a></li><li class="nav-item"><a href="#resolving-nfc-scan-issues" class="nav-link">Resolving NFC Scan Issues</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li><li class="nav-item"><a href="#credits" class="nav-link">Credits</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#configuration" class="nav-link">Configuration</a></li><li class="nav-item"><a href="#login-modes" class="nav-link">Login modes</a><ul><li class="nav-item"><a href="#keyboard-input" class="nav-link">Keyboard input</a></li><li class="nav-item"><a href="#external-scanner" class="nav-link">External scanner</a></li><li class="nav-item"><a href="#barcode-via-usb-scanner" class="nav-link">Barcode via USB scanner</a></li><li class="nav-item"><a href="#barcode-via-device-camera" class="nav-link">Barcode via device camera</a></li><li class="nav-item"><a href="#faq" class="nav-link">FAQ</a></li><li class="nav-item"><a href="#nfc-scanning-differences" class="nav-link">NFC Scanning Differences</a></li></ul></li><li class="nav-item"><a href="#kiosk-apps-for-android" class="nav-link">Kiosk apps for Android</a><ul><li class="nav-item"><a href="#fully-kiosk-browser" class="nav-link">Fully Kiosk Browser</a></li><li class="nav-item"><a href="#allnet-fullscreen-browser" class="nav-link">ALLNET Fullscreen Browser</a></li><li class="nav-item"><a href="#kiosk-browser" class="nav-link">Kiosk Browser</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li><li class="nav-item"><a href="#credits" class="nav-link">Credits</a></li></ul>
         
     </aside>
 
