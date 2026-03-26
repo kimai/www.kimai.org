@@ -1,0 +1,27 @@
+
+<section class="container">
+    <div class="bg-secondary rounded-3 py-5 px-3 px-sm-4 px-md-0">
+        <h2 class="text-center pt-md-1 pt-lg-3 pt-xl-4 pb-4 mt-xl-1 mb-2">{{ site.data[page.lang].translation.faq.subtitle }}</h2>
+        <div class="row justify-content-center pb-lg-4 pb-xl-5">
+            <div class="col-xl-8 col-lg-9 col-md-10 pb-md-2">
+                <div class="accordion" id="faq">
+
+                    {% for faq in site.data.faq[include.type] %}
+                    <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button shadow-none rounded-3 {% if forloop.first == false %}collapsed{% endif %}" type="button" data-bs-toggle="collapse" data-bs-target="#q-{{ forloop.index }}" aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}" aria-controls="q-1">{{ faq.question }}</button>
+                        </h3>
+                        <div class="accordion-collapse collapse {% if forloop.first %}show{% endif %}" id="q-{{ forloop.index }}" data-bs-parent="#faq">
+                            <div class="accordion-body fs-sm pt-0">
+                                <p>{{ faq.answer | markdownify }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
