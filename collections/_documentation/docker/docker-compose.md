@@ -203,90 +203,11 @@ volumes:
   plugins:
 ```
 
-## FPM and nginx
-
-Listed here are example setups for running the image(s).
-If you'd like to contribute a new one them please [raise a PR for this page](https://github.com/kimai/www.kimai.org/edit/main/_documentation/docker/docker-compose.md).
+## FPM (deprecated)
 
 {% alert danger %}
-Be aware that the below image [tobybatch/nginx-fpm-reverse-proxy](https://github.com/tobybatch/nginx-fpm-reverse-proxy) is only meant as example.
-It is not made for production usage. Use your existing reverse proxy instead! 
+Be aware: the FPM image with a reverse proxy for serving the `public` assets is [not supported any longer]({% link _posts/en/2026-01-16-sunset-fpm-docker-images.md %}).  
 {% endalert %}
-
-```dockerfile
-services:
-
-  sqldb:
-    image: mysql:8.3
-    volumes:
-      - mysql:/var/lib/mysql
-    environment:
-      - MYSQL_DATABASE=kimai
-      - MYSQL_USER=kimaiuser
-      - MYSQL_PASSWORD=kimaipassword
-      - MYSQL_ROOT_PASSWORD=changemeplease
-    command: --default-storage-engine innodb
-    restart: unless-stopped
-    healthcheck:
-      test: mysqladmin -p$$MYSQL_ROOT_PASSWORD ping -h localhost
-      interval: 20s
-      start_period: 10s
-      timeout: 10s
-      retries: 3
-
-  nginx:
-    image: tobybatch/nginx-fpm-reverse-proxy
-    ports:
-      - 8001:80
-    volumes:
-      - public:/opt/kimai/public:ro
-    restart: unless-stopped
-    depends_on:
-      - kimai
-    healthcheck:
-      test:  wget --spider http://nginx/health || exit 1
-      interval: 20s
-      start_period: 10s
-      timeout: 10s
-      retries: 3
-
-  kimai:
-    image: kimai/kimai2:latest
-    environment:
-      - ADMINMAIL=admin@kimai.local
-      - ADMINPASS=changemeplease
-      - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&serverVersion=8.3.0"
-    volumes:
-      - public:/opt/kimai/public
-      - plugins:/opt/kimai/var/plugins
-      # - data:/opt/kimai/var/data
-      # - ./ldap.conf:/etc/openldap/ldap.conf:z
-      # - ./ROOT-CA.pem:/etc/ssl/certs/ROOT-CA.pem:z
-    restart: unless-stopped
-
-volumes:
-    data:
-    public:
-    mysql:
-    plugins:
-```
-
-## Updating Kimai
-
-The usual update step is simple: stop, pull latest version, restart.
-
-This example is based on the `Apache` image used with the `Docker compose` plugin:
-
-```bash
-# Pull latest version
-docker compose pull
-# Stop and remove older version
-docker compose down
-# Start the container
-docker compose up -d
-```
-
-### FPM image
 
 The FPM image will need to be upgraded with a manual step.
 Because the FPM image will have a HTTP proxy (e.g. caddy or nginx) serving the static assets the `public` directory is mounted into that container. This is done via volumes:
