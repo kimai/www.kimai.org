@@ -11,7 +11,7 @@ The **Docker Hub repo**, where you find the auto-building prod and dev container
 
 ## Available images
 
-- `kimai/kimai2:apache`: the latest Kimai version bundled in an Apache container, needs a reverse proxy only
+- `kimai/kimai2:stable` and `kimai/kimai2:apache`: the latest Kimai version bundled in an Apache container
 - `kimai/kimai2:dev`: development image based on Apache, only to be used locally with debug mode and more 
 
 Each new release creates tag names containing the Kimai release number:
