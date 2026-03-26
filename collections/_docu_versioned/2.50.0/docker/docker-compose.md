@@ -6,7 +6,7 @@ canonical: /documentation/docker-compose.html
 
 Several docker-compose example files that use the latest Kimai version.
 
-## Installation
+## Apache (prod)
 
 ```dockerfile
 services:
@@ -50,21 +50,6 @@ volumes:
   data:
   mysql:
   plugins:
-```
-
-## Updating Kimai
-
-The usual update step is simple: stop, pull latest version, restart.
-
-This example is based on the `Apache` image, using the `apache` plugin:
-
-```bash
-# Pull latest version
-docker compose pull
-# Stop and remove older version
-docker compose down
-# Start the container
-docker compose up -d
 ```
 
 ## Environment variables
