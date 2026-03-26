@@ -12,15 +12,15 @@
 <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
-<title>Docker – Kimai</title>
-<meta name="description" content="Running Kimai inside docker">
+<title>Docker Compose – Kimai</title>
+<meta name="description" content="Running Kimai with Docker compose">
 <link type="application/atom+xml" rel="alternate" href="https://www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
 <meta property="og:locale" content="en">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Docker">
+<meta property="og:title" content="Docker Compose">
 <meta property="og:image" content="https://www.kimai.org/images/social-preview.webp">
-<meta property="og:description" content="Running Kimai inside docker">
-<link rel="canonical" href="https://www.kimai.org/documentation/docker.html" />
+<meta property="og:description" content="Running Kimai with Docker compose">
+<link rel="canonical" href="https://www.kimai.org/documentation/docker-compose.html" />
 <link href="/assets/build/main.css?v6" rel="stylesheet" />
 
 </head>
@@ -177,7 +177,7 @@
                         
                         
                         
-                        <a href="/documentation/docker.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2  active" id="docnavi-docker">
+                        <a href="/documentation/docker.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-docker">
                             
                             Docker
                             
@@ -187,7 +187,7 @@
                         
                         
                         
-                        <a href="/documentation/docker-compose.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-docker-compose">
+                        <a href="/documentation/docker-compose.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2  active" id="docnavi-docker-compose">
                             
                             Docker Compose
                             
@@ -533,7 +533,7 @@
 </aside>
 <script>
     document.addEventListener("DOMContentLoaded", function(event) {
-        const dpm = document.getElementById('docnavi-docker');
+        const dpm = document.getElementById('docnavi-docker-compose');
         if (dpm !== null) {
             dpm.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
         }
@@ -544,9 +544,9 @@
 
         <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 mb-n3">
             <div class="me-4">
-                <h1 class="pb-1">Docker</h1>
+                <h1 class="pb-1">Docker Compose</h1>
                 
-                <p class="text-muted fs-lg mb-2">Running Kimai inside docker</p>
+                <p class="text-muted fs-lg mb-2">Running Kimai with Docker compose</p>
                 
             </div>
             
@@ -560,10 +560,10 @@
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
             
-            <a class="dropdown-item" href="/documentation/1.14/docker.html">Kimai 1.14</a>
+            <a class="dropdown-item" href="/documentation/2.50.0/docker/docker-compose.html">Kimai 2.50.0</a>
             
             
-            <a class="dropdown-item" href="/documentation/docker.html">2.52.0 (latest version)</a>
+            <a class="dropdown-item" href="/documentation/docker-compose.html">2.52.0 (latest version)</a>
         </div>
     </div>
 
@@ -574,137 +574,309 @@
             <div>
                 
                 <div id="documentation-content">
-                    <p>We offer Kimai Docker images, both for development and a docker-compose setup suitable for running in a production environment.
-Any issues with the container rather than the application itself can be raised <a href="https://github.com/kimai/kimai/issues/new?template=docker.yml">here</a>.</p>
+                    
+<div class="alert alert-danger d-flex" role="alert"><i class="bx bx-info-circle lead me-3"></i>
+<p>You are viewing an older version of this documentation page. A newer version is available <a href="/documentation/docker-compose.html">here</a>.</p>
+</div>
 
-<p>The <strong>Docker Hub repo</strong>, where you find the auto-building prod and dev containers for Kimai is: <a href="https://hub.docker.com/r/kimai/kimai2">https://hub.docker.com/r/kimai/kimai2</a></p>
+<p>Several docker-compose example files that use the latest Kimai version.</p>
 
-<h2 id="available-images">Available images</h2>
+<h2 id="apache-prod">Apache (prod)</h2>
 
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:stable</code> and <code class="language-plaintext highlighter-rouge">kimai/kimai2:apache</code>: the latest Kimai version bundled in an Apache container</li>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:dev</code>: development image based on Apache, only to be used locally with debug mode and more</li>
-</ul>
+<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>services:
 
-<p>Each new release creates tag names containing the Kimai release number:</p>
+  sqldb:
+    image: mysql:8.3
+    volumes:
+      - mysql:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=kimai
+      - MYSQL_USER=kimaiuser
+      - MYSQL_PASSWORD=kimaipassword
+      - MYSQL_ROOT_PASSWORD=changemeplease
+    command: --default-storage-engine innodb
+    restart: unless-stopped
+    healthcheck:
+      test: mysqladmin -uroot -p$$MYSQL_ROOT_PASSWORD ping -h 127.0.0.1 --silent
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 30s
 
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-x.xx.x</code>: version specific release (Apache container)</li>
-</ul>
+  kimai:
+    image: kimai/kimai2:stable
+    depends_on:
+      sqldb:
+        condition: service_healthy
+        restart: true
+    volumes:
+      - data:/opt/kimai/var/data
+      - plugins:/opt/kimai/var/plugins
+    ports:
+      - 8001:8001
+    environment:
+      - ADMINMAIL=admin@kimai.local
+      - ADMINPASS=changemeplease
+      - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&amp;serverVersion=8.3.0"
+    restart: unless-stopped
+
+volumes:
+  data:
+  mysql:
+  plugins:
+</code></pre></div></div>
 
 <h2 id="environment-variables">Environment variables</h2>
 
-<p>The Kimai image supports the following environment variables:</p>
+<p>Instead of hardcoding your credentials and/or duplicating them in several places, you can also use a <code class="language-plaintext highlighter-rouge">.env</code> file like that:</p>
 
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">DATABASE_URL</code> - Default “mysql://kimai:kimai@127.0.0.1:3306/kimai?charset=utf8mb4&amp;serverVersion=5.7.40”</li>
-  <li><code class="language-plaintext highlighter-rouge">APP_SECRET</code> - Default: “change_this_to_something_unique”</li>
-  <li><code class="language-plaintext highlighter-rouge">TRUSTED_PROXIES</code> - Default: “nginx,localhost,127.0.0.1”</li>
-  <li><code class="language-plaintext highlighter-rouge">MAILER_FROM</code> - Default: “kimai@example.com”</li>
-  <li><code class="language-plaintext highlighter-rouge">MAILER_URL</code> - Default: “null://localhost”</li>
-  <li><code class="language-plaintext highlighter-rouge">ADMINMAIL</code> - Email for the new <code class="language-plaintext highlighter-rouge">admin</code> user (will be created if not existing)</li>
-  <li><code class="language-plaintext highlighter-rouge">ADMINPASS</code> - Password for the new <code class="language-plaintext highlighter-rouge">admin</code> user (will be created if not existing)</li>
-  <li><code class="language-plaintext highlighter-rouge">memory_limit</code> - Default: “256M”, the <a href="https://php.net/memory-limit">maximum amount of memory</a> a script may consume</li>
-</ul>
-
-<p>It is possible to set the user that FPM or Apache run as. If the user does not exist a new user called www-kimai is created and the server is then run under that user. Note these must be numbers, not names.</p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">USER_ID=1000</code></li>
-  <li><code class="language-plaintext highlighter-rouge">GROUP_ID=1000</code></li>
-</ul>
-
-<h2 id="quick-test-setup">Quick test setup</h2>
-
-<p>This will run the latest production build and make it accessible at <a href="http://localhost:8001">http://localhost:8001</a>.</p>
-
-<div class="alert alert-danger d-flex" role="alert"><i class="bx bx-info-circle lead me-3"></i><p>This setup is NOT intended for production use. It’s temporary and entered data will disappear when the containers are removed (see last point).</p>
-</div>
-
-<ol>
-  <li>
-    <p>Start a database</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> docker run <span class="nt">--rm</span> <span class="nt">--name</span> kimai-mysql-testing <span class="se">\</span>
-     <span class="nt">-e</span> <span class="nv">MYSQL_DATABASE</span><span class="o">=</span>kimai <span class="se">\</span>
-     <span class="nt">-e</span> <span class="nv">MYSQL_USER</span><span class="o">=</span>kimai <span class="se">\</span>
-     <span class="nt">-e</span> <span class="nv">MYSQL_PASSWORD</span><span class="o">=</span>kimai <span class="se">\</span>
-     <span class="nt">-e</span> <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>kimai <span class="se">\</span>
-     <span class="nt">-p</span> 3456:3306 <span class="nt">-d</span> mysql
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Start Kimai</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> docker run <span class="nt">--rm</span> <span class="nt">--name</span> kimai-test <span class="se">\</span>
-     <span class="nt">-d</span> <span class="se">\</span>
-     <span class="nt">-ti</span> <span class="se">\</span>
-     <span class="nt">-p</span> 8001:8001 <span class="se">\</span>
-     <span class="nt">-e</span> <span class="nv">APP_ENV</span><span class="o">=</span><span class="s2">"prod"</span> <span class="se">\</span>
-     <span class="nt">-e</span> <span class="nv">DATABASE_URL</span><span class="o">=</span><span class="s2">"mysql://kimai:kimai@host.docker.internal:3456/kimai?charset=utf8mb4&amp;serverVersion=9.5.0"</span> <span class="se">\</span>
-     kimai/kimai2:apache
-</code></pre></div>    </div>
-
-    <p>If you’re getting a “Connection refused” or similar errors, try changing <code class="language-plaintext highlighter-rouge">${HOSTNAME}</code> to <code class="language-plaintext highlighter-rouge">host.docker.internal</code>. 
- Alternatively, you can start the container with the flag <code class="language-plaintext highlighter-rouge">--network="host"</code> (more infos <a href="https://stackoverflow.com/questions/24319662/from-inside-of-a-docker-container-how-do-i-connect-to-the-localhost-of-the-mach">here</a>).</p>
-  </li>
-  <li>
-    <p>Add a user using the terminal</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> docker <span class="nb">exec</span> <span class="nt">-ti</span> kimai-test <span class="se">\</span>
-     /opt/kimai/bin/console kimai:user:create admin admin@example.com ROLE_SUPER_ADMIN
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Stop the containers</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> docker stop kimai-mysql-testing kimai-test
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>When you are finished testing Kimai, you can remove the test containers</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> docker <span class="nb">rm </span>kimai-mysql-testing kimai-test
-</code></pre></div>    </div>
-  </li>
-</ol>
-
-<p>If you are happy with Kimai, you can now set up your Docker installation using <a href="/documentation/docker-compose.html">Docker Compose</a>.</p>
-
-<h2 id="running-commands">Running commands</h2>
-
-<p>The Kimai working directory in Docker is <code class="language-plaintext highlighter-rouge">/opt/kimai/</code> so the usual commands across the documentation need to be prefixed.</p>
-
-<p>For example clearing the cache is</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker <span class="nb">exec</span> <span class="nt">-ti</span> kimai-test /opt/kimai/bin/console kimai:reload <span class="nt">--env</span><span class="o">=</span>prod
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DATABASE_NAME=kimai
+DATABASE_USER=kimaiuser
+DATABASE_PASSWORD=kimaipassword
+DATABASE_ROOT_PASSWORD=changemeplease
+ADMIN_EMAIL=admin@kimai.local
+ADMIN_PASSWORD=changemeplease
 </code></pre></div></div>
 
-<h2 id="deprecated-images">Deprecated images</h2>
+<p>And then reference those from your <code class="language-plaintext highlighter-rouge">docker-compose.yaml</code>:</p>
 
-<p>The following tags are still available, but will stop receiving updates after the next major release, replace them ASAP:</p>
+<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>services:
 
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm</code>: the latest Kimai version bundled in PHP-FPM Alpine container (smaller image, but <a href="/documentation/docker-compose.html">needs extra setup steps</a>)</li>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:latest</code>: same as <code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm</code></li>
-</ul>
+  sqldb:
+    image: mysql:8.3
+    volumes:
+      - mysql:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=${DATABASE_NAME}
+      - MYSQL_USER=${DATABASE_USER}
+      - MYSQL_PASSWORD=${DATABASE_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${DATABASE_ROOT_PASSWORD}
+    command: --default-storage-engine innodb
+    restart: unless-stopped
+    healthcheck:
+      test: mysqladmin -p$$MYSQL_ROOT_PASSWORD ping -h localhost
+      interval: 20s
+      start_period: 10s
+      timeout: 10s
+      retries: 3
 
-<p>The following tags are deprecated and will not receive updates anymore, replace them:</p>
+  kimai:
+    image: kimai/kimai2:apache
+    depends_on:
+      sqldb:
+        condition: service_healthy
+        restart: true
+    volumes:
+      - data:/opt/kimai/var/data
+      - plugins:/opt/kimai/var/plugins
+    ports:
+      - 8001:8001
+    environment:
+      - ADMINMAIL=${ADMIN_EMAIL}
+      - ADMINPASS=${ADMIN_PASSWORD}
+      - "DATABASE_URL=mysql://${DATABASE_USER}:${DATABASE_PASSWORD}@sqldb/${DATABASE_NAME}?charset=utf8mb4&amp;serverVersion=8.3.0"
+    restart: unless-stopped
 
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-x.xx.x</code>: version specific release (PHP-FPM container)</li>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-prod</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:apache</code></li>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-latest</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:apache</code></li>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-prod</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm</code></li>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-latest</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm</code></li>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:prod</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm</code></li>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-dev</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:dev</code></li>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-dev</code>: no replacement</li>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-x.xx.x-dev</code>: no replacement</li>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-x.xx.x-dev</code>: no replacement</li>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-x.xx.x-prod</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-x.xx.x</code></li>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-x.xx.x-prod</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-x.xx.x</code></li>
-</ul>
+volumes:
+  data:
+  mysql:
+  plugins:
+</code></pre></div></div>
+
+<h2 id="caddy-reverse-proxy">Caddy Reverse Proxy</h2>
+
+<p>Kimai has extensive examples of using Caddy as reverse proxy in frontend of Kimai.</p>
+
+<p>See <a href="/documentation/hosting-hetzner-cloud.html">Hetzner Cloud</a> and <a href="/documentation/hosting-digital-ocean.html">Digital Ocean</a> docs.</p>
+
+<h2 id="installing-plugins">Installing plugins</h2>
+
+<p>When using plugins, you can either use a <a href="https://docs.docker.com/engine/storage/volumes/">volume</a> or a <a href="https://docs.docker.com/engine/storage/bind-mounts/">bind mount</a>.
+As plugin are accessed read-only by Kimai, you can use both methods.</p>
+
+<p>Using a volume:</p>
+
+<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>services:
+    [...]
+
+  kimai:
+    image: kimai/kimai2:apache
+    volumes:
+      - data:/opt/kimai/var/data
+      - plugins:/opt/kimai/var/plugins
+    [...]
+
+volumes:
+  data:
+  plugins:
+</code></pre></div></div>
+
+<p>Or using a bind mount, pointing to the local filesystem at <code class="language-plaintext highlighter-rouge">/home/kimai/plugins</code>:</p>
+
+<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>services:
+
+  sqldb:
+    [...]
+
+  kimai:
+    image: kimai/kimai2:apache
+    volumes:
+      - data:/opt/kimai/var/data
+      - /home/kimai/plugins:/opt/kimai/var/plugins
+    [...]
+
+volumes:
+  data:
+</code></pre></div></div>
+
+<p>Once the Docker container is running up, you need to step into the container and install the plugin:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker <span class="nb">exec</span> <span class="nt">-ti</span> kimai /opt/kimai/bin/console cache:clear <span class="nt">--env</span><span class="o">=</span>prod
+docker <span class="nb">exec</span> <span class="nt">-ti</span> kimai /opt/kimai/bin/console kimai:bundle:workcontract:install
+</code></pre></div></div>
+
+<h2 id="using-a-localyaml">Using a local.yaml</h2>
+
+<p>This requires a new mount, e.g. mounting the local file <code class="language-plaintext highlighter-rouge">/home/kimai/local.yaml</code> into the correct location inside the image.</p>
+
+<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>services:
+    [...]
+
+  kimai:
+    image: kimai/kimai2:apache
+    volumes:
+      - data:/opt/kimai/var/data
+      - plugins:/opt/kimai/var/plugins
+      - /home/kimai/local.yaml:/opt/kimai/config/packages/local.yaml
+      
+    [...]
+
+volumes:
+  data:
+  plugins:
+</code></pre></div></div>
+
+<h2 id="fpm-and-nginx">FPM and nginx</h2>
+
+<p>Listed here are example setups for running the image(s).
+If you’d like to contribute a new one them please <a href="https://github.com/kimai/www.kimai.org/edit/main/_documentation/docker/docker-compose.md">raise a PR for this page</a>.</p>
+
+<div class="alert alert-danger d-flex" role="alert"><i class="bx bx-info-circle lead me-3"></i>
+<p>Be aware that the below image <a href="https://github.com/tobybatch/nginx-fpm-reverse-proxy">tobybatch/nginx-fpm-reverse-proxy</a> is only meant as example.
+It is not made for production usage. Use your existing reverse proxy instead!</p>
+</div>
+
+<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>services:
+
+  sqldb:
+    image: mysql:8.3
+    volumes:
+      - mysql:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=kimai
+      - MYSQL_USER=kimaiuser
+      - MYSQL_PASSWORD=kimaipassword
+      - MYSQL_ROOT_PASSWORD=changemeplease
+    command: --default-storage-engine innodb
+    restart: unless-stopped
+    healthcheck:
+      test: mysqladmin -p$$MYSQL_ROOT_PASSWORD ping -h localhost
+      interval: 20s
+      start_period: 10s
+      timeout: 10s
+      retries: 3
+
+  nginx:
+    image: tobybatch/nginx-fpm-reverse-proxy
+    ports:
+      - 8001:80
+    volumes:
+      - public:/opt/kimai/public:ro
+    restart: unless-stopped
+    depends_on:
+      - kimai
+    healthcheck:
+      test:  wget --spider http://nginx/health || exit 1
+      interval: 20s
+      start_period: 10s
+      timeout: 10s
+      retries: 3
+
+  kimai:
+    image: kimai/kimai2:latest
+    environment:
+      - ADMINMAIL=admin@kimai.local
+      - ADMINPASS=changemeplease
+      - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&amp;serverVersion=8.3.0"
+    volumes:
+      - public:/opt/kimai/public
+      - plugins:/opt/kimai/var/plugins
+      <span class="c"># - data:/opt/kimai/var/data</span>
+      <span class="c"># - ./ldap.conf:/etc/openldap/ldap.conf:z</span>
+      <span class="c"># - ./ROOT-CA.pem:/etc/ssl/certs/ROOT-CA.pem:z</span>
+    restart: unless-stopped
+
+volumes:
+    data:
+    public:
+    mysql:
+    plugins:
+</code></pre></div></div>
+
+<h2 id="updating-kimai">Updating Kimai</h2>
+
+<p>The usual update step is simple: stop, pull latest version, restart.</p>
+
+<p>This example is based on the <code class="language-plaintext highlighter-rouge">Apache</code> image used with the <code class="language-plaintext highlighter-rouge">Docker compose</code> plugin:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Pull latest version</span>
+docker compose pull
+<span class="c"># Stop and remove older version</span>
+docker compose down
+<span class="c"># Start the container</span>
+docker compose up <span class="nt">-d</span>
+</code></pre></div></div>
+
+<h3 id="fpm-image">FPM image</h3>
+
+<p>The FPM image will need to be upgraded with a manual step.
+Because the FPM image will have a HTTP proxy (e.g. caddy or nginx) serving the static assets the <code class="language-plaintext highlighter-rouge">public</code> directory is mounted into that container. This is done via volumes:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">services</span><span class="pi">:</span>
+    <span class="na">kimai</span><span class="pi">:</span>
+        <span class="na">image</span><span class="pi">:</span> <span class="s">kimai/kimai2:latest</span>
+        <span class="s">...</span>
+        <span class="na">volumes</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">public:/opt/kimai/public</span>
+        <span class="s">...</span>
+    <span class="na">nginx</span><span class="pi">:</span>
+        <span class="s">...</span>
+        <span class="s">volumes</span><span class="err">:</span>
+            <span class="pi">-</span> <span class="s">public:/opt/kimai/public:ro</span>
+    <span class="s">...</span>
+</code></pre></div></div>
+
+<p>When the Kimai image is updated, and the container is restarted any new assets in the public directory are never included.
+These will be things like CSS files, images and especially version specific javascript code!
+To fix this you need to copy the newer files from a fresh image over the top.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># You might need to use `docker volume ls | grep kimai` to find the name of your Kimai "public" volume</span>
+docker run <span class="nt">--rm</span> <span class="nt">-ti</span> <span class="nt">-v</span> kimai_public:/public <span class="nt">--entrypoint</span> /bin/bash kimai/kimai2
+<span class="c">#                      ^^^^^^^^^^^^ -&gt; Kimai public volume</span>
+<span class="nb">cp</span> <span class="nt">-r</span> /opt/kimai/public /
+<span class="nb">exit</span>
+</code></pre></div></div>
+
+<p>Now you’ll need to tell the running kimai to update its assets:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker-compose <span class="nb">exec </span>kimai /opt/kimai/bin/console assets:install
+</code></pre></div></div>
+
+<h2 id="development">Development</h2>
+
+<p>If you want to start a development image, please switch to the <a href="/documentation/developers.html">developer docs</a></p>
+
+
 
                 </div>
                 
@@ -719,7 +891,7 @@ Any issues with the container rather than the application itself can be raised <
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#available-images" class="nav-link">Available images</a></li><li class="nav-item"><a href="#environment-variables" class="nav-link">Environment variables</a></li><li class="nav-item"><a href="#quick-test-setup" class="nav-link">Quick test setup</a></li><li class="nav-item"><a href="#running-commands" class="nav-link">Running commands</a></li><li class="nav-item"><a href="#deprecated-images" class="nav-link">Deprecated images</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#apache-prod" class="nav-link">Apache (prod)</a></li><li class="nav-item"><a href="#environment-variables" class="nav-link">Environment variables</a></li><li class="nav-item"><a href="#caddy-reverse-proxy" class="nav-link">Caddy Reverse Proxy</a></li><li class="nav-item"><a href="#installing-plugins" class="nav-link">Installing plugins</a></li><li class="nav-item"><a href="#using-a-localyaml" class="nav-link">Using a local.yaml</a></li><li class="nav-item"><a href="#fpm-and-nginx" class="nav-link">FPM and nginx</a></li><li class="nav-item"><a href="#updating-kimai" class="nav-link">Updating Kimai</a><ul><li class="nav-item"><a href="#fpm-image" class="nav-link">FPM image</a></li></ul></li><li class="nav-item"><a href="#development" class="nav-link">Development</a></li></ul>
         
     </aside>
 
