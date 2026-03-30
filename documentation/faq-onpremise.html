@@ -560,30 +560,70 @@
             <div>
                 
                 <div id="documentation-content">
-                    <h2 id="i-have-a-problem">I have a problem</h2>
+                    <div class="accordion" id="faq_on_premise">
+    
+    <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+        <h2 class="accordion-header">
+            <button class="accordion-button shadow-none rounded-3 " type="button" data-bs-toggle="collapse" data-bs-target="#faq_on_premise_q1" aria-expanded="true" aria-controls="q-1">I have a problem</button>
+        </h2>
+        <div class="accordion-collapse collapse show" id="faq_on_premise_q1" data-bs-parent="#faq_on_premise">
+            <div class="accordion-body fs-sm pt-0">
+                
+                <p><p>Please check your logfile at <code class="language-plaintext highlighter-rouge">var/log/prod.log</code>. Many problems reveal themselves after checking it.</p>
 
-<p>Please check your logfile at <code class="language-plaintext highlighter-rouge">var/log/prod.log</code>. Many problems reveal themselves after checking it.</p>
-
-<p>If that doesn’t help, open a new discussion at <a href="https://github.com/kimai/kimai/discussions/">GitHub</a> and we try to find a solution.
+<p>If that doesn’t help, open a new discussion in our Community Forum (see <a href="/en/support">Support page</a>) and we try to find a solution.
 Please include the last ~ 20-50 lines of the log file, which were written around the time the error happened.</p>
-
-<h2 id="kimai-is-slow">Kimai is slow</h2>
-
-<p>There are many factors that influence the performance of Kimai, the most important one is the server Kimai runs on.
+</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+        <h2 class="accordion-header">
+            <button class="accordion-button shadow-none rounded-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq_on_premise_q2" aria-expanded="false" aria-controls="q-1">Kimai is slow</button>
+        </h2>
+        <div class="accordion-collapse collapse " id="faq_on_premise_q2" data-bs-parent="#faq_on_premise">
+            <div class="accordion-body fs-sm pt-0">
+                
+                <p><p>There are many factors that influence the performance of Kimai, the most important one is the server Kimai runs on.
 Shared hosts aren’t known for their good performance, especially running modern PHP projects like Kimai that load a large amount of files per request.</p>
 
-<p>The second factor is your PHP configuration, which can lead to massively decreased performance when not tuned for production usage.</p>
+<p>The second factor is your PHP configuration, which can lead to massively decreased performance when not tuned for production usage.
+Double check and <a href="https://tideways.com/profiler/blog/fine-tune-your-opcache-configuration-to-avoid-caching-suprises">optimize your OPcache settings</a>.</p>
+</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+        <h2 class="accordion-header">
+            <button class="accordion-button shadow-none rounded-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq_on_premise_q3" aria-expanded="false" aria-controls="q-1">Changed configs/templates do not load</button>
+        </h2>
+        <div class="accordion-collapse collapse " id="faq_on_premise_q3" data-bs-parent="#faq_on_premise">
+            <div class="accordion-body fs-sm pt-0">
+                
+                <p><p>Kimai is built on top of Symfony, a framework that optimizes its speed by caching most files.
+Therefor, if you are running Kimai in <code class="language-plaintext highlighter-rouge">production</code>, you have to <strong>clear the cache</strong> before changes will show up.</p>
+</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+        <h2 class="accordion-header">
+            <button class="accordion-button shadow-none rounded-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq_on_premise_q4" aria-expanded="false" aria-controls="q-1">Can I install Kimai via FTP?</button>
+        </h2>
+        <div class="accordion-collapse collapse " id="faq_on_premise_q4" data-bs-parent="#faq_on_premise">
+            <div class="accordion-body fs-sm pt-0">
+                
+                <p><p>Sorry, no chance. You either have to find a hoster that offers SSH access, or you use the <a href="/en/pricing">SaaS version of Kimai</a>.</p>
+</p>
+            </div>
+        </div>
+    </div>
+    
+</div>
 
-<p>Please <a href="https://github.com/kimai/kimai/issues/1584#issuecomment-604048869">read this issue</a>.</p>
-
-<h2 id="changed-configstemplates-do-not-load">Changed configs/templates do not load</h2>
-
-<p>Kimai is built on top of Symfony, a framework that optimizes its speed by caching most files.
-Therefor, if you are running Kimai in <code class="language-plaintext highlighter-rouge">production</code>, you have to <a href="/documentation/cache.html">clear the cache</a> before changes will show up.</p>
-
-<h2 id="i-have-only-ftp-available">I have only FTP available</h2>
-
-<p>Sorry, no chance. You either have to find a hoster that offers SSH access, or you use the <a href="https://www.kimai.cloud">SaaS version of Kimai</a>.</p>
 
                 </div>
                 
@@ -595,12 +635,6 @@ Therefor, if you are running Kimai in <code class="language-plaintext highlighte
     </div>
 </main>
 
-
-    <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
-        <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#i-have-a-problem" class="nav-link">I have a problem</a></li><li class="nav-item"><a href="#kimai-is-slow" class="nav-link">Kimai is slow</a></li><li class="nav-item"><a href="#changed-configstemplates-do-not-load" class="nav-link">Changed configs/templates do not load</a></li><li class="nav-item"><a href="#i-have-only-ftp-available" class="nav-link">I have only FTP available</a></li></ul>
-        
-    </aside>
 
 
 
