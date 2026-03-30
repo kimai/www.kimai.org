@@ -1,0 +1,15 @@
+<div class="accordion" id="faq_{{ include.type }}">
+    {% for faq in site.data.faq[include.type] %}
+    <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+        <h2 class="accordion-header">
+            <button class="accordion-button shadow-none rounded-3 {% if forloop.first == false %}collapsed{% endif %}" type="button" data-bs-toggle="collapse" data-bs-target="#faq_{{ include.type }}_q{{ forloop.index }}" aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}" aria-controls="q-1">{{ faq.question }}</button>
+        </h2>
+        <div class="accordion-collapse collapse {% if forloop.first %}show{% endif %}" id="faq_{{ include.type }}_q{{ forloop.index }}" data-bs-parent="#faq_{{ include.type }}">
+            <div class="accordion-body fs-sm pt-0">
+                {% capture answer %}{{ faq.answer }}{% endcapture %}
+                <p>{{ answer | markdownify }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
