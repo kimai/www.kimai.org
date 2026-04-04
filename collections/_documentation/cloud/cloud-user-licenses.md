@@ -26,7 +26,7 @@ Here's a breakdown of how the licensing works:
 
 ### Purchasing additional licenses
 
-If your subscription does not include enough licenses, you can purchase additional ones at any time through the [My Cloud](https://www.kimai.cloud/my-cloud/) portal.
+If your subscription does not include enough licenses, you can purchase additional ones at any time through the [My Cloud]({{ site.cloud.my_cloud }}) portal.
 
 The additional licenses will be billed immediately, but only for the remaining time of your current payment period:
 - New licenses are always aligned with your existing subscription period.

@@ -40,6 +40,6 @@ I am grateful for the mostly positive feedback and to all my users, most especia
 > 
 > Super excited for what is to come! I am heads-down building new API tokens, vacation approval workflow and a working-time management view, while so much more is already on the roadmap.
 > 
-> Thank you for joining me on this [journey](https://www.kimai.cloud/my-cloud/)!
+> Thank you for joining me on this [journey]({{ site.cloud.my_cloud }})!
 
  
