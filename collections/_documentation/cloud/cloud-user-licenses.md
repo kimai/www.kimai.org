@@ -28,16 +28,16 @@ Here's a breakdown of how the licensing works:
 
 If your subscription does not include enough licenses, you can purchase additional ones at any time through the [My Cloud]({{ site.cloud.my_cloud }}) portal.
 
-The additional licenses will be billed immediately, but only for the remaining time of your current payment period:
+Additional licenses are billed immediately, but only for the remaining time in your current billing period:
 - New licenses are always aligned with your existing subscription period.
 - For example, if you add a license to an annual subscription that is already 6 months old, you will only be charged for the remaining 6 months.
 
 ### Reducing licenses
 
-If some of your currently licensed accounts were deactivated, you can lower the amount of licenses with the next payment period.
+If you need fewer licenses, you must first deactivate the corresponding user accounts in your cloud.
+After that, you can reduce the number of licenses through the [My Cloud]({{ site.cloud.my_cloud }}) portal.
 
-This is currently not possible in the self-checkout, so please [write a short email to the support](mailto:{{ site.cloud.support_email }}).
-Make sure to deactivate the unused accounts before.
+The reduced license count will take effect at the beginning of the next billing period.
 
 ## Deprecated metered plans
 
