@@ -1,4 +1,9 @@
 
+Format numbers in a monospaced variant, to improve readability / simpler scanning.
+```css
+.date, .time, .money { font-variant-numeric: tabular-nums; }
+```
+
 Hiding a menu:
 ```css
 ul.sidebar-menu li#calendar { display:none; }
