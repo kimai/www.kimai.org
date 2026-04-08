@@ -1,3 +1,10 @@
+**Version 2.17.0**
+
+Compatibility: requires minimum Kimai 2.36.0
+
+- New sound effects for clock in- and out
+- Added HTML IDs for simpler custom styling
+
 **Version 2.16.1**
 
 Compatibility: requires minimum Kimai 2.36.0
