@@ -3,6 +3,7 @@ layout: base
 ---
 {% assign homepage = site.pages | where: 'lang', page.lang | find: 'slug', 'index' %}
 {% assign features = site.pages | where: 'lang', page.lang | find: 'slug', 'features' %}
+{% assign translated = site.data[page.lang].translation.industries[page.slug] %}
 
 <main class="page-wrapper">
     {% include header-navigation.html %}
@@ -17,7 +18,7 @@ layout: base
                 <li class="breadcrumb-item">
                     <a href="{% link _pages/industry.html %}">{{ site.data[page.lang].translation.industries.name }}</a>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
+                <li class="breadcrumb-item active" aria-current="page">{{ translated.title }}</li>
             </ol>
         </nav>
 
@@ -35,15 +36,15 @@ layout: base
                         <li class="breadcrumb-item">
                             <a href="{% link _pages/industry.html %}">{{ site.data[page.lang].translation.industries.name }}</a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
+                        <li class="breadcrumb-item active" aria-current="page">{{ translated.title }}</li>
                     </ol>
                 </nav>
 
                 <div class="bg-secondary rounded-3 p-4 p-lg-5 mt-n2 mt-md-0 me-md-n2">
                     <div class="px-sm-3 px-xl-4 pt-4 py-md-3 py-lg-4 py-xl-5">
-                        <h1 class="pb-2 pb-xxl-3">{{ page.title }}</h1>
-                        <h3>{{ page.subtitle }}</h3>
-                        <div class="pb-2 mb-4 mb-xxl-5">{{ page.introduction|markdownify }}</div>
+                        <h1 class="pb-2 pb-xxl-3">{{ translated.title }}</h1>
+                        <h3>{{ translated.subtitle }}</h3>
+                        <div class="pb-2 mb-4 mb-xxl-5">{{ translated.introduction|markdownify }}</div>
                         <div class="d-xxl-flex align-items-center">
                             {% include link-cloud-start.html classes="btn btn-success shadow-success btn-lg" %}
                         </div>
@@ -53,21 +54,25 @@ layout: base
         </div>
     </section>
 
-    {% include section-features.html %}
+    {% assign features_list = page.features %}
+    {% assign features_title = translated.features.title %}
+    {% assign features_introduction = translated.features.introduction %}
 
-    {% assign testimonial_tag = page.testimonials.tag %}
-    {% assign testimonial_title = page.testimonials.title %}
-    {% assign testimonial_intro = page.testimonials.introduction %}
+    {% include section-features.html features_list=features_list features_title=features_title features_introduction=features_introduction %}
+
+    {% assign testimonial_tag = page.testimonials %}
+    {% assign testimonial_title = translated.testimonials.title %}
+    {% assign testimonial_intro = translated.testimonials.introduction %}
     {% assign testimonials = site.data.testimonials | where_exp: "item", "item.tags contains testimonial_tag" | sample: 5 %}
     {% include testimonials-horizontal-swipe.html testimonials=testimonials title=testimonial_title introduction=testimonial_intro language=page.lang %}
 
     <section class="container pt-5 mb-1 mb-md-4 mb-lg-5">
         <div class="row pb-xl-3">
             <div class="col-xl-5 col-md-6">
-                <h2 class="h1 pb-4 mb-1 mb-lg-3">{{ page.about.title }}</h2>
+                <h2 class="h1 pb-4 mb-1 mb-lg-3">{{ translated.about.title }}</h2>
             </div>
             <div class="col-md-6 pb-2 pb-md-0 mb-4 mb-md-0">
-                {{ page.about.introduction|markdownify }}
+                {{ translated.about.introduction|markdownify }}
             </div>
         </div>
     </section>
@@ -78,8 +83,8 @@ layout: base
             <div class="col-lg-12 mb-4 mb-lg-0">
                 <div class="pe-lg-4 me-lg-3 pe-xl-0 me-xl-0">
                     <div class="mb-0">
-                        {% assign cta_question = page.cta.question %}
-                        {% assign cta_title = page.cta.title|newline_to_br %}
+                        {% assign cta_question = translated.cta.question %}
+                        {% assign cta_title = translated.cta.title|newline_to_br %}
                         {% include cta-customizable.html question=cta_question title=cta_title %}
                     </div>
                 </div>

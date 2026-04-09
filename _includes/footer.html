@@ -67,7 +67,7 @@
                                 {% assign industries = site.industries | where: "lang", "en" | where: "featured", true | sort: "name" %}
                                 {% for industry in industries %}
                                 <li class="nav-item">
-                                    <a href="{{ industry.url }}" class="nav-link fs-sm fw-medium px-0 py-1" title="{{ industry.title }}">{{ industry.name }}</a>
+                                    <a href="{{ industry.url }}" class="nav-link fs-sm fw-medium px-0 py-1" title="{{ industry.title }}">{{ site.data[page.lang].translation.industries[industry.slug].name }}</a>
                                 </li>
                                 {% endfor %}
                                 <li class="nav-item">

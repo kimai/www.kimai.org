@@ -2,6 +2,10 @@
     {% assign feature_list = 'api,customer-portal,teams,saml,invoices,reporting' | split: ',' %}
     {% assign feature_title = "Kimai features most used" %}
     {% assign feature_intro = "Not all time tracking tools are created equal. The best solutions for agencies offer a specialized set of features to streamline your workflows." %}
+{% else if include.features_list is not nil %}
+    {% assign feature_list = include.features_list %}
+    {% assign feature_title = include.features_title %}
+    {% assign feature_intro = include.features_introduction %}
 {% else %}
     {% assign feature_list = page.features.list %}
     {% assign feature_title = page.features.title %}

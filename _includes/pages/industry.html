@@ -20,16 +20,17 @@
                 <a href="{% link _landingpage/en/non-profit.md %}" class="btn btn-secondary w-75">{{ site.data[page.lang].translation.read-more }}</a>
             </div>
         </div>
-        {% assign industries = site.industries %}
+        {% assign industries = site.industries | where: "lang", "en" | sort: "name" %}
         {% for industry in industries %}
+            {% assign translated = site.data[page.lang].translation.industries[industry.slug] %}
         <div class="col text-center px-3">
             <div class="card d-table border-0 p-3 mx-auto mb-4">
                 <i class="{{ industry.icon | icon }} bx-lg"></i>
             </div>
-            <h3 class="h5 mb-3">{{ industry.name }}</h3>
-            <p>{{ industry.intro }}</p>
+            <h3 class="h5 mb-3">{{ translated.name }}</h3>
+            <p>{{ translated.intro }}</p>
             <div class="text-center mt-4">
-                <a href="{{ industry.url }}" class="btn btn-secondary w-75 text-wrap">{{ industry.title }}</a>
+                <a href="{{ industry.url }}" class="btn btn-secondary w-75 text-wrap">{{ translated.title }}</a>
             </div>
         </div>
         {% endfor %}
