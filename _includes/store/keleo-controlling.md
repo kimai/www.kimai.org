@@ -11,7 +11,7 @@
   - Manual bookings (adjust the time account with plus or minus hours)
   - Overview of the entire year with results per day, the ability to close a month, download result PDF and more
   - See if a user has overtimes or minus hours (since first day in company, per year/month/day)
-  - Monthly approvals (per user) with PDF handouts that contain the working-hour details for the entire month
+  - Monthly approvals (per user) with PDF handouts that contain the working-hour details for the entire month (lock and unlock months)
   - See if your users have missing days (no times entered on days where they had to work)
 - It adds the [Absence]({% link _documentation/absence.md %}) view, which allows to
   - Create holidays (half-days possible)
