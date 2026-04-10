@@ -1,3 +1,12 @@
+**Version 1.34.0**
+
+Compatibility: requires minimum Kimai 2.49.0
+
+- Absence report
+  - Show public holidays
+  - New permission `view_team_absence` to show all team member to regular user
+  - Mark non-working days (light grey background)
+
 **Version 1.33.0**
 
 Compatibility: requires minimum Kimai 2.49.0
