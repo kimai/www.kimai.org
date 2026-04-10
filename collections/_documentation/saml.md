@@ -171,6 +171,10 @@ For Keycloak, please check the [Keycloak SAML documentation]({% link _documentat
 
 For Authentik, please check the [Authentik SAML documentation]({% link _documentation/saml-authentik.md %})
 
+### Zitadel
+
+We don't have documentation about it yet, but [Vasili wrote a blog article about his journey](https://blog.vasi.li/setting-up-saml-for-kimai-time-tracker-using-zitadel-idp/). 
+
 ## Known limitations
 
 A manually registered user can log in via SAML, but his account is then migrated to **SAML only**,

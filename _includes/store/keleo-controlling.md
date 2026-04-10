@@ -11,7 +11,7 @@
   - Manual bookings (adjust the time account with plus or minus hours)
   - Overview of the entire year with results per day, the ability to close a month, download result PDF and more
   - See if a user has overtimes or minus hours (since first day in company, per year/month/day)
-  - Monthly approvals (per user) with PDF handouts that contain the working-hour details for the entire month
+  - Monthly approvals (per user) with PDF handouts that contain the working-hour details for the entire month (lock and unlock months)
   - See if your users have missing days (no times entered on days where they had to work)
 - It adds the [Absence]({% link _documentation/absence.md %}) view, which allows to
   - Create holidays (half-days possible)
@@ -20,6 +20,8 @@
   - Create other absences (e.g. unpaid leave)
   - Automatically adds the times absent to the user's timesheet based on their daily working time
   - Export absences per user to Excel
+- It adds new reports
+  - Show absences for all users or selected teams in a monthly grid (Absence calendar)
 - And it adds the new [Public holiday]({% link _documentation/public-holiday.md %}) management view
   - Allows to create different groups (e.g. for different countries or states) and add public holidays to each of them 
   - Import and manual creation of public (local) holidays
@@ -34,60 +36,63 @@
 
 ## Roadmap
 
-These features will be added in the future, but there is no guarantee when or in which order.
+Please have a look at [this GitHub list of feature requests for the plugin](https://github.com/kimai/Paid-plugins/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22working%20times%22).
+
+Please share your votes and input in these existing issues. The features will be added in the future, but there is no guarantee when or in which order.
 
 ```
-- Absence calendar
-    - Display all users / teams
-    - Allow export as ical (or similar format) for use in external calendars (e.g. Outlook)
+- Yearly overview for all users (or selected teams)
+    - Pending absence requests
+    - Available and used vacation days
+    - Sum of sickness and other days on Absence screen
+    - Time account stats
+    - Finalize year (automated manual bookings for next year)
 - Monthly contract PDF
     - Include: total working time sum
     - Include: total holiday sum
     - Include: holidays at start of month sum
     - Include: start of month working-time sum
     - Include: manual bookings
-- Finalize year
-  - Allow automatic adjustments of time and holiday account of next year, e.g. from a list-overview
-- API 
-  - Methods to write absences (e.g. when using a HR tool for holiday planning)
+- API: method to create absences
+- Pause / Break times configuration and validation
 ```
 
 ## Ideas 
 
-This list is a collection of feature wishes from users, which might or might not be added. 
+This list is a collection of feature requests from users, which might or might not be added. 
 If you need one of these features, do not rely on them being added, but contact me upfront to discuss your needs.
 If I decide to add one of these feature, it will be moved to the "Roadmap" section.
 
 ```
+- Allow export of absences in ical format (or similar format) for use in external calendars (e.g. Outlook)
 - Configurable amount of allowed negative hours for time-off: https://github.com/kimai/Paid-plugins/issues/159
 - Prevent that certain days can be booked for vacation
 - Add first start- and last end-time as begin and end times to the PDF
 - Configure a dedicated project that will be ignored when calculating the attendance time
 - Close/Approve months partially, in case there is a change in the contract within the month
 - Validations
-  - Configure if timesheets should be prohibited during absence (type)
-  - Configurable rule to deactivate time-records on public holidays
+    - Configure if timesheets should be prohibited during absence (type)
+    - Configurable rule to deactivate time-records on public holidays
 - Management view for all users
-  - showing statistics for absences
-  - pending holidays (approved), used holidays, available
+    - showing statistics for absences
+    - pending holidays (approved), used holidays, available
 - Absences
-  - Add holiday for multiple users (e.g. for forced company vacations)
-  - Types of absences (Workaround: use comment field)
-    - Configurable for sickness and other
-    - Show type in PDF
-    - paid/not paid
-  - Sum of sickness and other days on Absence screen
+    - Add holiday for multiple users (e.g. for forced company vacations)
+    - Types of absences (Workaround: use comment field)
+        - Configurable for sickness and other
+        - Show type in PDF
+        - paid/not paid
 - Break times
-  - Support calculation of breaks (e.g. display in calendar)
+    - Support calculation of breaks (e.g. display in calendar)
 - Dashboard
-  - Existing widgets do not show public holidays, sickness, vacation ... make it configurable or create new widgets that include these hours/days
-  - Widgets for total numbers, to show "status" more prominent
+    - Existing widgets do not show public holidays, sickness, vacation ... make it configurable or create new widgets that include these hours/days
+    - Widgets for total numbers, to show "status" more prominent
 - Working time requirements (Arbeitszeitvorgaben)
-  - Maximum working time (per day, in one session) and breaks
-  - Configure fixed rules per country
-  - Allow one custom rule
-  - Configure default rule (country or custom) per user
+    - Maximum working time (per day, in one session) and breaks
+    - Configure fixed rules per country
+    - Allow one custom rule
+    - Configure default rule (country or custom) per user
 - Holidays
-  - Lockdown method for vacations (define periods where no vacations can be booked)
-  - Automatic calculation of holidays according to the working-time duration (e.g. 30 days per year for a 40h week) 
+    - Lockdown method for vacations (define periods where no vacations can be booked)
+    - Automatic calculation of holidays according to the working-time duration (e.g. 30 days per year for a 40h week) 
 ```

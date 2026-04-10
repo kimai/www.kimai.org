@@ -12,7 +12,7 @@ More info about this desktop plugins:
 
 Most important steps, without details:
 
-- Install [Kimai](https://www.kimai.org/) on a server, and create an API password
+- Install Kimai on a server, and create an API password
 - Download and setup [kimai-cmd](https://github.com/infeeeee/kimai2-cmd)
 - Link kimai-cmd to path
 - Install Argos/Kargos/xbar

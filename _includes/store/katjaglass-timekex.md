@@ -4,7 +4,8 @@ This WebApplication is designed to allow the tracking of working hours in Excel 
 
 ![Screenshot of login screen](https://raw.githubusercontent.com/KatjaGlassConsulting/TimeKex/main/docs/img/timesheet_to_kimai_01.gif)
 
-[Kimai](https://www.kimai.org/) is an open-source free time-tracking application which comes with a lot of functionality and capabilities. There might be situations where the times should be tracked in Excel and finally be uploaded to Kimai. TimeKex is designed to support this process.
+Kimai is an open-source free time-tracking application which comes with a lot of functionality and capabilities. There might be situations where the times should be tracked in Excel and finally be uploaded to Kimai. 
+TimeKex is designed to support this process.
 
 The documentation of TimeKex as well as a running demonstration instance is available [here](https://katjaglassconsulting.github.io/TimeKex/).
 

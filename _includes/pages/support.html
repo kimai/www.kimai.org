@@ -16,9 +16,15 @@
                         {{ site.data[page.lang].translation.support.premium_intro | markdownify }}
                     </div>
                     <div class="card-footer border-0 p-0 text-center m-0 w-100">
+                        {% assign install_support_btn = site.data[page.lang].translation.support.get_in_touch %}
+                        <a href="mailto:{{ site.support_email }}" class="btn btn-lg btn-primary">{{ install_support_btn }}</a>
+                    </div>
+                    {% comment %}
+                    <div class="card-footer border-0 p-0 text-center m-0 w-100">
                         {% assign install_support_btn = site.data[page.lang].translation.support.premium_cta %}
                         <a href="#support-call" class="btn btn-lg btn-primary">{{ install_support_btn }}</a>
                     </div>
+                    {% endcomment %}
                 </div>
                 <div class="vr text-border d-none d-sm-inline-block m-4"></div>
                 <div class="card w-sm-33 border-0 bg-transparent text-center px-sm-1 px-md-3 mt-4">
@@ -51,6 +57,7 @@
     </div>
 </section>
 
+{% comment %}
 <section class="py-5 my-md-2 my-lg-4 my-xl-5 ">
     <div class="container">
         <div class="row justify-content-center pt-5 pb-1 pb-sm-2 pb-md-3">
@@ -61,6 +68,7 @@
         </div>
     </div>
 </section>
+{% endcomment %}
 
 <section class="py-5 my-md-2 my-lg-4 my-xl-5 bg-secondary">
     <div class="container">
@@ -82,13 +90,12 @@ Je nach Art deines Setups benötige ich möglicherweise unterschiedliche Zugangs
 - Eine vorbereitete Domain mit SSL-Zertifikat
 - Zugang zum Webinterface deines Hosting-Anbieters
 
-Wenn du einen Shared Hoster nutzt und mit diesen Begriffen nichts anfangen kannst – kein Problem, schreib mir einfach eine E-Mail.
+Wenn Du mit diesen Begriffen nichts anfangen kannst – kein Problem, schreib mir einfach eine E-Mail.
 
 **Preise**
 - Updates dauern in der Regel 30–60 Minuten
 - Die Migration von Kimai v1 dauert etwa 2 Stunden
 - Eine Neuinstallation dauert ca. 1–2 Stunden (je nach Setup/Hoster)
-- Ich biete einen regelmäßigen Update-Service an, damit du immer die neueste Kimai-Version verwendest
 {% else %}
 Although all necessary steps are documented, they may cause problems for users who are not familiar with server systems.
 In 25+ years of work experience I have seen a lot of different server systems and know that it is not always easy to integrate new software into your existing setup.
@@ -101,17 +108,16 @@ Depending on the type of setup, I might ask you for different types of credentia
 
 - SSH connection details and user account
 - the database connection and account
-- a prepared domain with SSL certificate
+- a prepared domain with SSL-Certificate
 - login to your hosters web interface
 
-If you use a shared hoster and don't know what all that means, don't worry - just drop me an email.
+If you don't know what all that means, don't worry - just drop me an email.
 
 **Pricing**
 
 - Updates take roughly 30-60 minutes
 - Migration from Kimai v1 takes around 2 hours
 - Installation takes around 1-2 hours (depending on your setup / hoster)
-- I offer a recurring update service, so you always have the latest version of Kimai
 {% endif %}
 {% endcapture %}
 {{ html | markdownify | replace: '<ul>', '<ul class="ms-5">' }}

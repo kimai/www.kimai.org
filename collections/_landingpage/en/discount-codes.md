@@ -43,10 +43,7 @@ and compare your countries GDP per capita (IMF estimate) with the below table.
 | < 45.000       | 5 %      |
 {: .table }
 
-The discount applies permanently to the first order.
-If you cancel and want to order again after a break, no new discount will be granted.
-
-This offer only applies to companies with less than 20 employees.  
+The discount applies permanently. This offer only applies to companies with less than 100 employees.  
 
 When you [contact](mailto:{{ site.support_email }}), don't forget to attach proof (such as the company registration).
 The email must also be sent from the company domain. Discounts from Gmail accounts in combination with anonymous

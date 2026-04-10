@@ -1,3 +1,10 @@
+**Version 2.17.0**
+
+Compatibility: requires minimum Kimai 2.38.0
+
+- Remove usage of "Toasts"
+- Improved UX for dashboard widgets on open/close task
+
 **Version 2.16.1**
 
 Compatibility: requires minimum Kimai 2.38.0

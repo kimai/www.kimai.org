@@ -9,7 +9,7 @@ description: How to update Kimai to the next release version
 4. Some tweaks might be necessary to run the commands listed below, read the [installation documentation]({% link _documentation/installation.md %}) for more information.
 
 {% note "Upgrading from 1.30 (or lower) to 2.0" %}
-You need to do a hard cache flush. And as [plugins are incompatible]({% link _posts/2023-05-19-plugin-upgrades-v2.md %}), they must be removed before updating the system.
+You need to do a hard cache flush. And as [plugins are incompatible]({% link _posts/en/2023-05-19-plugin-upgrades-v2.md %}), they must be removed before updating the system.
   
 ```bash
 rm -r var/cache/*

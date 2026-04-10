@@ -13,26 +13,33 @@ Here's a breakdown of how the licensing works:
 - **Active users**: Each active user consumes one license.
 - **Deactivated users**: Do not consume a license. This allows the license to be reassigned to another user.
 
-### Managing User Accounts
+### Managing user accounts
 
 - When a user leaves the company, you can deactivate their account, freeing up the license for another user.
 - If a deactivated user is reactivated, they will once again consume a license. Reactivation is only possible if there are available licenses.
 - New user accounts can only be created if there are free licenses available.
 
-### Before Subscription Purchase
+### Before starting a subscription
 
 - When registering for a plan, the system displays the minimum number of licenses you need to purchase based on your current number of active users.
 - If you see more licenses than necessary, you can deactivate any extra accounts and reload the page to adjust the displayed license count.
 
-### Purchasing Additional Licenses
+### Purchasing additional licenses
 
-If your subscription does not include enough licenses, you can purchase additional ones at any time through the [My Cloud](https://www.kimai.cloud/my-cloud/) portal.
+If your subscription does not include enough licenses, you can purchase additional ones at any time through the [My Cloud]({{ site.cloud.my_cloud }}) portal.
 
-The additional licenses will be billed immediately, but only for the remaining time of your current payment period:
+Additional licenses are billed immediately, but only for the remaining time in your current billing period:
 - New licenses are always aligned with your existing subscription period.
 - For example, if you add a license to an annual subscription that is already 6 months old, you will only be charged for the remaining 6 months.
 
-## Deprecated Metered Plans
+### Reducing licenses
+
+If you need fewer licenses, you must first deactivate the corresponding user accounts in your cloud.
+After that, you can reduce the number of licenses through the [My Cloud]({{ site.cloud.my_cloud }}) portal.
+
+The reduced license count will take effect at the beginning of the next billing period.
+
+## Deprecated metered plans
 
 For users still on the deprecated **metered plans** (`Plus` and `Premium`), which are no longer available to new customers, billing is based on usage:
 - **Active users incur charges**.

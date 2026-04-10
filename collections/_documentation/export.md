@@ -17,6 +17,8 @@ There are a couple of differences in these two Kimai modules, the most important
 
 ## Export state
 
+{% include youtube-video.html id="exports_invoices" chapter="export" %}
+
 Invoices and exports share the export state, which is used to mark timesheet records as processed. 
 These records cannot be edited any longer by regular users and are excluded by default from further invoices and exports.
  
@@ -38,30 +40,53 @@ There is a toggle called `Use decimal duration in export` that switches between 
 
 ## Export templates
 
-### CSV and XLSX
+Kimai supports customizable PDF, Excel and CSV templates.
 
-Kimai supports custom CSV and Excel templates. 
 You can create them with the UI: after filtering timesheets, you will see the list of export buttons. 
 Next to them is the {% include demo-action-button.html icon="create" %} button, which will open the modal to create a new template.
 
 {% include docs-image.html src="/images/documentation/export-add-template.webp" title="Add export template" width="400px" %}
 
 These templates allow you to select:
-- the exported file `type` (here `CSV` or `Excel`)
+- the exported file `type` (here `PDF`, `CSV` or `Excel`)
 - the `language` for header translations, which uses the request language if not configured
 - the `columns` that should be exported
+- whether they can be used by **every logged-in user** with `Allow access for all users`
+
+### Share with your users
+
+Enabling the `Allow access for all users` setting makes the new template available in the `My times` and `All times` views for exporting data.
+
+⚠️ **Important:** These views do not check user permissions.  
+For example, if you add a rate column to the template, the rates will be visible to all users — even if they normally do not have permission to see rate information.
+
+### Format specifications
+
+Some fields are specific for the export format.
+
+**PDF**
+
+- Title
+- Summary (export summary on the first page of the PDF)
+- Font (a list of fonts)
+- Page size (A4, A5, A6, Legal, Letter)
+- Orientation (Portrait or Landscape)
+
+**CSV**
+
+- Separator (Comma or Semicolon)
 
 {% include docs-image.html src="/images/documentation/export-create-template.webp" title="Edit export template form" %}
 
-After creating the template, the respective CSV/Excel button will become a dropdown and you can select your template for the export.
+After creating the template, the respective buttons will become a dropdown and you can select your template for the export.
 
 {% include docs-image.html src="/images/documentation/export-select-template.webp" title="Select template for export" width="400px" %}
 
 When you hover such a template, you can edit and delete it from the dropdown. 
 
-### PDF and HTML
+### PDF and HTML (for developer)
 
-Kimai supports custom PDF and HTML export templates.
+Kimai supports custom PDF and HTML export twig templates. This is an advance topic, only for very specific use-cases.
 
 **How to create your first template**
 - Copy & paste the [default templates]({{ site.kimai_v2_repo }}/blob/main/templates/export/pdf-layout.html.twig)
@@ -78,7 +103,7 @@ Be aware of the following rules:
 - HTML templates have the file extension `.html.twig`
 - PDF templates have the file extension `.pdf.twig`
 - Use unique filenames and prefix them with your company name, eg `company-export.html.twig` 
-- The names `default.html.twig`, `default.pdf.twig`, `default-budget.pdf.twig`, `default-internal.pdf.twig`, `timesheet.pdf.twig` are reserved
+- The name `timesheet.html.twig`, `timesheet.pdf.twig`, `default.pdf.twig`, `default.html.twig` are reserved
 - After updating an existing template, you have to [clear the cache]({% link _documentation/cache.md %}) to see the results
 
 **How to access custom fields in PDF templates**

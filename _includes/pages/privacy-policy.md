@@ -168,11 +168,10 @@ Die Nutzung von YouTube erfolgt im Interesse einer ansprechenden Darstellung uns
 Weitere Informationen zum Umgang mit Nutzerdaten finden Sie in der [Datenschutzerklärung von YouTube](https://www.google.de/intl/de/policies/privacy).
 Dies stellt ein berechtigtes Interesse im Sinne von Art. 6 Abs. 1 lit. f DSGVO dar.
 
-**Simple Analytics**
+**Webseiten Analyse**
 
-Um wichtige Informationen über das Verhalten unserer Besucher zu erhalten, verwenden wir Simple Analytics.
+Um Informationen über besuchte Seiten zu erhalten, verwenden wir ein selbst gehostetes [Umami](https://umami.is/).
 Diese Analysesoftware gibt uns nur einen Einblick in unsere Besucher im Allgemeinen, aber nicht in einzelne Personen, da sie keine Besucher verfolgt und keine personenbezogenen Daten speichert.
-In der [Dokumentation](https://docs.simpleanalytics.com/what-we-collect) erfahren Sie, was Simple Analytics sammelt (und vor allem, was nicht).
 
 **Google Fonts**
 
@@ -211,9 +210,10 @@ Bei den eingesetzten Dienstleistern, welche Subprozessor bzw. Unterauftragsverar
  
 ### Änderungsverlauf
 
-- **06.01.2026**: Sortierung der Subprozessoren, Nennung der 8 Rechte gemäß DGVO
+- **21.02.2026**: Neuer Provider "Mailbox" für Support-Emails (vorher: Google), Korrektur Stripe Kontakt (vorher: USA, jetzt: EU), Kategorisierung Subprozessoren 
+- **06.01.2026**: Nennung der 8 Rechte gemäß DSGVO
 - **23.06.2025**: Entfernung der URL zur Liste deutscher Datenschutzbehörden
-- **18.03.2024**: Änderung "Sendinblue Frankreich" zu "Brevo Deutschland", Simple Analytics aus Transparenzgründen aufgenommen
+- **18.03.2024**: Änderung "Sendinblue Frankreich" zu "Brevo Deutschland", Simple Analytics aufgenommen
 - **14.11.2023**: Recaptcha Verifizierung via Subprozessor "Google" wieder hinzugefügt
 - **25.04.2021**: Recaptcha Verifizierung via Subprozessor "Google" entfernt
 - **01.01.2021**: Änderung der Kontaktdaten nach Umzug von Deutschland nach Österreich
@@ -393,11 +393,10 @@ YouTube is used to help make the website appealing and transfer knowledge about 
 Further information about handling user data, can be found in the data protection declaration of YouTube under [https://policies.google.com/privacy](https://policies.google.com/privacy).
 This constitutes a justified interest pursuant to Art. 6 (1) (f) DSGVO.
 
-**Simple Analytics**
+**Website Analytics**
 
-To get critical information about the behavior of our visitors, we use Simple Analytics.
-This analytics software gives us insight about our visitors only in general, but not about individuals per say, as it does not track visitors and does not store any personal identifiable information.
-[Go to their documentation](https://docs.simpleanalytics.com/what-we-collect) to find out what Simple Analytics collects (and most importantly what they don't).
+To gather important information about our visitors’ behavior, we use a self-hosted [Umami](https://umami.is/).
+This analytics software provides us with insights into our visitors in general, but not into individual users, as it does not track visitors or store any personal data.
 
 **Google Fonts**
 
@@ -435,9 +434,10 @@ We are using the following service providers (also called sub-processors) to ass
 
 ### Change history
 
-- **06.01.2026**: Sort subprocessors, mention 8 rights under the GDPR
+- **21.02.2026**: New provider “Mailbox” for support emails (previously: Google), correction Stripe contact (previously: USA, now: EU)
+- **06.01.2026**: Mention 8 rights under the GDPR
 - **23.06.2025**: Removed URL of German data protection authorities and replaced "German" with "of the federal state in which our company is based"
-- **18.03.2024**: Replaced "Sendinblue France" with "Brevo Germany", added Simple Analytics for transparency reasons
+- **18.03.2024**: Replaced "Sendinblue France" with "Brevo Germany", added Simple Analytics
 - **14.11.2023**: Recaptcha verification via Subprocessor "Google" re-added
 - **25.04.2021**: Recaptcha verification via Subprocessor "Google" removed
 - **01.01.2021**: Change of contact details after moving from Germany to Austria

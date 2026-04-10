@@ -15,7 +15,7 @@ It could be as simple as:
 - Mount a tablet to the wall in your entrance room
 - Let your users check-in & check-out when entering the building by scanning their tokens
 
-You can test it in the ["Plugins" demo](https://www.kimai.org/demo/).
+You can test it in the ["Plugins" demo]({% link _pages/demo.md %}).
 
 ## Features
 
@@ -46,7 +46,7 @@ The Android tablets need a Kiosk application, which makes sure that users always
 
 - Kiosk application: [Android Kiosk](https://www.android-kiosk.com/)
 
-### NFC Toke
+### NFC Token
 
 And you need a bunch of NFC tokens:
 

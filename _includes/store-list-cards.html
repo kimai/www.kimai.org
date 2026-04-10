@@ -31,14 +31,16 @@
         </div>
         <div class="px-4 pb-3">
             {% for tag in settings.tags %}
-                {% if tag != 'plugin' and (tag != product.type or tag == 'featured') %}
-                    {% assign badge_class = 'secondary' %}
-                    {% if tag == 'cloud' %}
-                        {% assign badge_class = 'warning' %}
-                    {% elsif tag == 'featured' %}
-                        {% assign badge_class = 'primary' %}
+                {% if tag != 'plugin' %}
+                    {% if tag != product.type or tag == 'featured' %}
+                        {% assign badge_class = 'secondary' %}
+                        {% if tag == 'cloud' %}
+                            {% assign badge_class = 'warning' %}
+                        {% elsif tag == 'featured' %}
+                            {% assign badge_class = 'primary' %}
+                        {% endif %}
+                        <span class="badge bg-{{ badge_class }} zindex-2 me-2 text-capitalize">{{ tag }}</span>
                     {% endif %}
-                    <span class="badge bg-{{ badge_class }} zindex-2 me-2 text-capitalize">{{ tag }}</span>
                 {% endif %}
             {% endfor %}
         </div>

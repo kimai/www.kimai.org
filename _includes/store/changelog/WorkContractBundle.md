@@ -1,3 +1,37 @@
+**Version 1.33.0**
+
+Compatibility: requires minimum Kimai 2.49.0
+
+- Added monthly absence report
+
+**Version 1.32.0**
+
+Compatibility: requires minimum Kimai 2.49.0
+
+- Fix: Month could not be approved if rejected absences existed for that period
+
+**Version 1.31.0**
+
+Compatibility: requires minimum Kimai 2.49.0
+
+- Fix: "half public holiday and half-day absences" caused to reduce only by 75%
+- Fix: calculations between absences with and without duration could mis-calculate depending on creation order
+- Added missing icons for annual listing page
+
+**Version 1.30.1**
+
+Compatibility: requires minimum Kimai 2.48.0
+
+- Fix "monthly timesheet PDF" has a closing parenthesis after the personnel number
+
+**Version 1.30.0**
+
+Compatibility: requires minimum Kimai 2.48.0
+
+- Configure if absences/sickness/vacation/public holidays count toward or reduce the expected working-time
+- Use new styles and icons from core
+- New API endpoint: check if a date is locked
+
 **Version 1.29.0**
 
 Compatibility: requires minimum Kimai 2.32.0

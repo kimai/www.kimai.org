@@ -23,7 +23,7 @@ The new menu "Custom content" replaces the recently introduced function "Custom 
 - Global alert
 - Custom content for news/instructions etc. with markdown support
 
-More documentation is available at [https://www.kimai.org/documentation/plugin-custom-content.html](https://www.kimai.org/documentation/plugin-custom-content.html).
+More documentation is available [here]({% link _documentation/plugin-custom-content.md %}).
 
 ### Invoice extensions 
 
@@ -34,9 +34,9 @@ This feature is only available for paying customers.
 
 Each of these functions is only active if the corresponding configuration is not empty:
 
-![Invoice configurations](https://www.kimai.org/images/marketplace/invoice-configuration.webp)
+![Invoice configurations]({% link images/marketplace/invoice-configuration.webp %})
 
-More documentation is available at [https://www.kimai.org/documentation/plugin-invoice.html](https://www.kimai.org/documentation/plugin-invoice.html).
+More documentation is available [here]({% link _documentation/plugin-invoice.md %}).
 
 ### Further changes 
 

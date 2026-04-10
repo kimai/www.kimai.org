@@ -5,14 +5,14 @@ subtitle: Ein Interview mit blueflare Consulting
 intro: Wie eine Cybersecurity-Beratung durch strategische Abrechnungs-Transparenz starke Kundenbeziehungen aufbaut
 company: blueflare Consulting
 homepage: blueflare.co.za
-url: https://blueflare.co.za
+homepage_url: https://blueflare.co.za
 logo: /images/stories/blueflare-logo.webp
 #https://unsplash.com/de/fotos/zwei-frauen-mit-blick-auf-die-uberwachungskamera-oben-auf-der-struktur-montiert-fPxOowbR6ls
 image: /images/stories/blueflare.webp
 person: Dietmar Marggraff
 photo: /images/stories/blueflare-marggraf.webp
 quote: "Dietmar Marggraff ist Berater bei blueflare und verfügt über Top-Kenntnisse in Webentwicklung, Cybersecurity und Penetration Testing."
-quote2: "“*Die eingesparte Zeit erlaubte es uns, wenn ich so sagen darf, wichtigere Dinge zu tun – das Geschäft aufzubauen, an Kundenprojekten zu arbeiten*“, betont Dietmar."
+quote2: "Die eingesparte Zeit erlaubte es uns, wenn ich so sagen darf, wichtigere Dinge zu tun – das Geschäft aufzubauen, an Kundenprojekten zu arbeiten."
 position: Gründer
 industry: Cyber Security
 size: 2+
@@ -25,6 +25,11 @@ wins:
     - Wöchentliche Reports für Kunden werden in unter 2 Minuten erstellt und versendet
     - "Agentur-Regel: Eine Stunde, die bei Administration gespart wird, ist eine Stunde, die in Beratung investiert werden kann"
 ---
+
+**TL;DR**
+
+blueflare Consulting nutzt detaillierte Aufzeichnungen mit Kimai On-Premise, um radikale Transparenz zu schaffen und gleichzeitig administrativen Overhead zu eliminieren.
+Diese strategische Entscheidung erlaubt es ihnen, sich auf ihre Kernaufgabe zu konzentrieren: Organisationen vor Cyber-Bedrohungen zu schützen – ohne administrative Hürden.
 
 **Über die Organisation**
 
@@ -50,11 +55,6 @@ Dietmars Team steht vor der klassischen Beratungs-Herausforderung: täglich zwis
 Dieser Reise-Ansatz erzeugt ein komplexes Zeitmanagement-Puzzle. Ein Arbeitstag kann bestehen aus: Kunden-Check-ins, der Abgrenzung von Penetration Tests, Meetings und Workshops.
 
 Ohne saubere Zeiterfassung verschwinden diese abrechenbaren Zeitfragmente im administrativen Chaos – genau das passierte einem Kollegen von Dietmar, der in Excel-Tabellen ertrank und wöchentlich zwei Stunden damit verbrachte, Zeiteinträge zu sortieren.
-
-{% alert success %}  
-blueflare Consulting nutzt detaillierte Aufzeichnungen mit Kimai On-Premise, um radikale Transparenz zu schaffen und gleichzeitig administrativen Overhead zu eliminieren. 
-Diese strategische Entscheidung erlaubt es ihnen, sich auf ihre Kernaufgabe zu konzentrieren: Organisationen vor Cyber-Bedrohungen zu schützen – ohne administrative Hürden.
-{% endalert %}
 
 **Die „Von Tag eins“-Entscheidung**
 
