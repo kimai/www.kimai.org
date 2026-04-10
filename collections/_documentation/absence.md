@@ -118,7 +118,9 @@ There is a monthly report available, showing all approved absences at [Report â†
 {% include docs-image.html src="/images/documentation/absence-calendar.webp" title="Absence calendar" %}
 
 The required [permission]({% link _documentation/permissions.md %}) to see that report is `absence`.
-To see absences of other users you require `view_other_absence` and `view_other_reporting`.
+To see absences of other users you require `view_other_absence` (e.g. other team members) and `view_other_reporting` (to select other teams).
+
+There is also `view_team_absence` which you can assign to the regular User role, so they can see absences of all team members.
 
 ## Creating absences for next year
 
