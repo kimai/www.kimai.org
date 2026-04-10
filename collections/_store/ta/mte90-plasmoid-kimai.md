@@ -1,7 +1,8 @@
 ---
 title: Plasmoid-Kimai
 type: client
-lang: en
+lang: ta
+permalink: "/ta/store/mte90-plasmoid-kimai.html"
 ---
 
 {% include store/mte90-plasmoid-kimai.md %}
