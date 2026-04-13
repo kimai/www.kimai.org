@@ -59,8 +59,13 @@ shopping: article
 {% if settings.subscription != nil and settings.subscription != 0 %}
     {% assign buyTitle = site.data[page.lang].translation.store-buy-button %}
     {% assign pricing = settings.subscription %}
-    {% assign perYear = site.data[page.lang].translation.per-year %}
-    {% assign buySubTitle = site.data[page.lang].translation.price-without-vat | append: ' (' | append: perYear | append: ')' %}
+    {% if settings.subscription_period != nil and settings.subscription_period == 'month' %}
+        {% assign perMonth = site.data[page.lang].translation.per-month %}
+        {% assign buySubTitle = site.data[page.lang].translation.price-without-vat | append: ' (' | append: perMonth | append: ')' %}
+    {% else %}
+        {% assign perYear = site.data[page.lang].translation.per-year %}
+        {% assign buySubTitle = site.data[page.lang].translation.price-without-vat | append: ' (' | append: perYear | append: ')' %}
+    {% endif %}
 {% elsif settings.price == nil %}
     {% assign pricing = site.data[page.lang].translation.price-contract %}
 {% elsif settings.price != nil and settings.price != 0 %}
