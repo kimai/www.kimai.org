@@ -658,42 +658,6 @@
   <li>Save a running record after setting an end date (deactivated if the timeclock-mode is active)</li>
 </ul>
 
-<h4 id="problem-cannot-be-stopped">Problem: cannot be stopped</h4>
-
-<p>Kimai has a few rules in place, which could prevent to stop a running timesheet, e.g.:</p>
-
-<ul>
-  <li>prevent excessive long timesheets from being accidentally created</li>
-  <li>prevent a timesheet to be stopped before it was started, which can happen if you create a running timesheet with a start date in the future</li>
-</ul>
-
-<p>When a user tries to stop such a timesheet, a warning like one of the following will be shown:</p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">End date must not be earlier then start date</code></li>
-  <li><code class="language-plaintext highlighter-rouge">An empty duration is not allowed</code></li>
-  <li><code class="language-plaintext highlighter-rouge">Maximum 08:00 hours allowed</code></li>
-</ul>
-
-<figure class="d-block figure mb-3" style="max-width: 350px">
-    <img src="/images/documentation/timesheet/timesheet-excessive-duration.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
-    <figcaption class="figure-caption">How such a warning will look like</figcaption>
-</figure>
-
-<p>You have several options to solve this problem. 
-All of them involve that you switch to <code class="language-plaintext highlighter-rouge">My times</code> and find the record (usually the last one created):</p>
-
-<ul>
-  <li>Edit the record and set a different start date</li>
-  <li>Edit the record and set a different end date</li>
-  <li>Edit the record and set a shorter duration</li>
-  <li>Delete the record from the listing</li>
-</ul>
-
-<p>An administrator can fix the problem by opening the <code class="language-plaintext highlighter-rouge">All times</code> view and filtering the user.</p>
-
-<p>Administrators can configure this max. duration by changing the setting <code class="language-plaintext highlighter-rouge">Timesheet → Maximum duration of a timesheet</code> at <a href="/documentation/configurations.html">System → Settings</a>.</p>
-
 <h2 id="batch-update">Batch update</h2>
 
 <p>You can change many timesheets at once, by using the “Batch update mode”. 
@@ -941,6 +905,55 @@ This would find all entries with the custom field <code class="language-plaintex
   <li>The <code class="language-plaintext highlighter-rouge">*</code> search term (e.g. <code class="language-plaintext highlighter-rouge">location:*</code>) will find all entries that have any value in the <code class="language-plaintext highlighter-rouge">location</code> field (basically the opposite of <code class="language-plaintext highlighter-rouge">~</code>)</li>
 </ul>
 
+<h2 id="problems--solutions">Problems &amp; Solutions</h2>
+
+<h3 id="a-record-cannot-be-edited">A record cannot be edited</h3>
+
+<p>There are several possible reasons why a record cannot be edited:</p>
+
+<ul>
+  <li>The record has already been exported. In that case, editing is only possible if the required permissions for exported entries are granted.</li>
+  <li>The global lockdown mode is active. Check the “Lockdown period” setting under <a href="/documentation/configurations.html">System → Settings</a>.</li>
+  <li>The user’s first working day is set in the future. Please review the user’s working contract and adjust the start date if necessary.</li>
+  <li>A future working month is locked. In that case, editing records would affect existing calculations, so all relevant future months must be unlocked first.</li>
+</ul>
+
+<h3 id="record-cannot-be-stopped">Record cannot be stopped</h3>
+
+<p>Kimai has a few rules in place, which could prevent to stop a running timesheet, e.g.:</p>
+
+<ul>
+  <li>prevent excessive long timesheets from being accidentally created</li>
+  <li>prevent a timesheet to be stopped before it was started, which can happen if you create a running timesheet with a start date in the future</li>
+</ul>
+
+<p>When a user tries to stop such a timesheet, a warning like one of the following will be shown:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">End date must not be earlier then start date</code></li>
+  <li><code class="language-plaintext highlighter-rouge">An empty duration is not allowed</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Maximum 08:00 hours allowed</code></li>
+</ul>
+
+<figure class="d-block figure mb-3" style="max-width: 350px">
+    <img src="/images/documentation/timesheet/timesheet-excessive-duration.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
+    <figcaption class="figure-caption">How such a warning will look like</figcaption>
+</figure>
+
+<p>You have several options to solve this problem.
+All of them involve that you switch to <code class="language-plaintext highlighter-rouge">My times</code> and find the record (usually the last one created):</p>
+
+<ul>
+  <li>Edit the record and set a different start date</li>
+  <li>Edit the record and set a different end date</li>
+  <li>Edit the record and set a shorter duration</li>
+  <li>Delete the record from the listing</li>
+</ul>
+
+<p>An administrator can fix the problem by opening the <code class="language-plaintext highlighter-rouge">All times</code> view and filtering the user.</p>
+
+<p>Administrators can configure this max. duration by changing the setting <code class="language-plaintext highlighter-rouge">Timesheet → Maximum duration of a timesheet</code> at <a href="/documentation/configurations.html">System → Settings</a>.</p>
+
 <h2 id="permissions">Permissions</h2>
 
 <p><strong>Admin</strong></p>
@@ -1124,7 +1137,7 @@ This would find all entries with the custom field <code class="language-plaintex
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#starting-and-stopping-records" class="nav-link">Starting and stopping records</a><ul><li class="nav-item"><a href="#re-start-timesheet-records" class="nav-link">Re-start timesheet records</a></li><li class="nav-item"><a href="#start-new-records" class="nav-link">Start new records</a></li><li class="nav-item"><a href="#stop-records" class="nav-link">Stop records</a></li></ul></li><li class="nav-item"><a href="#batch-update" class="nav-link">Batch update</a></li><li class="nav-item"><a href="#time-input" class="nav-link">Time input</a></li><li class="nav-item"><a href="#duration" class="nav-link">Duration</a></li><li class="nav-item"><a href="#exported-records" class="nav-link">Exported records</a></li><li class="nav-item"><a href="#billable-vs-not-billable" class="nav-link">Billable vs. not billable</a></li><li class="nav-item"><a href="#filter-and-search" class="nav-link">Filter and search</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#starting-and-stopping-records" class="nav-link">Starting and stopping records</a><ul><li class="nav-item"><a href="#re-start-timesheet-records" class="nav-link">Re-start timesheet records</a></li><li class="nav-item"><a href="#start-new-records" class="nav-link">Start new records</a></li><li class="nav-item"><a href="#stop-records" class="nav-link">Stop records</a></li></ul></li><li class="nav-item"><a href="#batch-update" class="nav-link">Batch update</a></li><li class="nav-item"><a href="#time-input" class="nav-link">Time input</a></li><li class="nav-item"><a href="#duration" class="nav-link">Duration</a></li><li class="nav-item"><a href="#exported-records" class="nav-link">Exported records</a></li><li class="nav-item"><a href="#billable-vs-not-billable" class="nav-link">Billable vs. not billable</a></li><li class="nav-item"><a href="#filter-and-search" class="nav-link">Filter and search</a></li><li class="nav-item"><a href="#problems--solutions" class="nav-link">Problems &amp; Solutions</a><ul><li class="nav-item"><a href="#a-record-cannot-be-edited" class="nav-link">A record cannot be edited</a></li><li class="nav-item"><a href="#record-cannot-be-stopped" class="nav-link">Record cannot be stopped</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
         
         <ul class="nav">
             <li>
