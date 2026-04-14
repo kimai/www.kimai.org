@@ -27,33 +27,6 @@ related:
 - Click the **stop** action in the running record in your timesheet
 - Save a running record after setting an end date (deactivated if the timeclock-mode is active)
 
-#### Problem: cannot be stopped
-
-Kimai has a few rules in place, which could prevent to stop a running timesheet, e.g.:
-
-- prevent excessive long timesheets from being accidentally created
-- prevent a timesheet to be stopped before it was started, which can happen if you create a running timesheet with a start date in the future
-
-When a user tries to stop such a timesheet, a warning like one of the following will be shown:
-
-- `End date must not be earlier then start date`
-- `An empty duration is not allowed`
-- `Maximum 08:00 hours allowed`
-
-{% include docs-image.html src="/images/documentation/timesheet/timesheet-excessive-duration.webp" title="How such a warning will look like" width="350px" %}
-
-You have several options to solve this problem. 
-All of them involve that you switch to `My times` and find the record (usually the last one created):
-
-- Edit the record and set a different start date
-- Edit the record and set a different end date
-- Edit the record and set a shorter duration
-- Delete the record from the listing
-
-An administrator can fix the problem by opening the `All times` view and filtering the user.
-
-Administrators can configure this max. duration by changing the setting `Timesheet → Maximum duration of a timesheet` at [System → Settings]({% link _documentation/configurations.md %}).
-
 ## Batch update
 
 You can change many timesheets at once, by using the "Batch update mode". 
@@ -162,6 +135,43 @@ Besides these filters, you can query for a free search term, which will be searc
 - `description`
 
 {% include snippets/search-custom-field.md %}
+## Problems & Solutions
+
+### A record cannot be edited
+
+There are several possible reasons why a record cannot be edited:
+
+- The record has already been exported. In that case, editing is only possible if the required permissions for exported entries are granted.
+- The global lockdown mode is active. Check the "Lockdown period" setting under [System → Settings]({% link _documentation/configurations.md %}).
+- The user's first working day is set in the future. Please review the user's working contract and adjust the start date if necessary.
+- A future working month is locked. In that case, editing records would affect existing calculations, so all relevant future months must be unlocked first.
+
+### Record cannot be stopped
+
+Kimai has a few rules in place, which could prevent to stop a running timesheet, e.g.:
+
+- prevent excessive long timesheets from being accidentally created
+- prevent a timesheet to be stopped before it was started, which can happen if you create a running timesheet with a start date in the future
+
+When a user tries to stop such a timesheet, a warning like one of the following will be shown:
+
+- `End date must not be earlier then start date`
+- `An empty duration is not allowed`
+- `Maximum 08:00 hours allowed`
+
+{% include docs-image.html src="/images/documentation/timesheet/timesheet-excessive-duration.webp" title="How such a warning will look like" width="350px" %}
+
+You have several options to solve this problem.
+All of them involve that you switch to `My times` and find the record (usually the last one created):
+
+- Edit the record and set a different start date
+- Edit the record and set a different end date
+- Edit the record and set a shorter duration
+- Delete the record from the listing
+
+An administrator can fix the problem by opening the `All times` view and filtering the user.
+
+Administrators can configure this max. duration by changing the setting `Timesheet → Maximum duration of a timesheet` at [System → Settings]({% link _documentation/configurations.md %}).
 
 ## Permissions
 
