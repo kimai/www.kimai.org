@@ -92,10 +92,11 @@ For the full article checkout the [Google Bughunter University](https://bughunte
 >
 > We believe that attackers with this degree of access are firmly outside the security model of contemporary browsers and operating systems, and will be able to extract comparable information from the records persisted in system memory or in the filesystem using off-the-shelf tools; they may also simply modify the system to place a keylogger or other malicious software that collects passwords or cookies, or injects malicious scripts onto every visited page.
 
-### CSV Excel Formula injection
+### CSV Formula injection
 
 Kimai does have a couple of code pieces in place to prevent simple `Dynamic Data Exchange` or `DDE payload` attacks. 
-But in general I consider this to be a problem of Excel and not Kimai.
+CSV is a text format. If tools treat CSV files as more, its their responsibility to handle all content. 
+In other words: I consider potential formula injection attacks through CSV files as a problem of Excel and not Kimai.
 
 A shortened version of [Google Bughunter University](https://bughunters.google.com/learn/invalid-reports/google-products/4965108570390528/csv-formula-injection):
 
