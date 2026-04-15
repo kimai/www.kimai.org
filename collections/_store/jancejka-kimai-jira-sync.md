@@ -4,4 +4,4 @@ type: plugin
 lang: en
 ---
 
-{% include store/kimai-jira-sync.md %}
+{% include store/jancejka-kimai-jira-sync.md %}
