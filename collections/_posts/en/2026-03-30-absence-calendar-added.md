@@ -56,8 +56,6 @@ What the Absence Calendar includes:
 
 - All absence types visible in one place
 - Filter by team or user group
-- Coverage gap detection
-- Connected to the approval workflow
 - Works for teams of all sizes
 
 Take a look at this example.
