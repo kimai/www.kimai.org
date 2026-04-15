@@ -63,6 +63,10 @@ You should have a strong reasoning to change the username, e.g. think about API 
 
 The supervisor setting is used notifications, e.g. work-contract related features, approval workflows and such.
 
+Any user role can be configured as supervisor, while normally it is advised that this is at least a Teamlead.
+
+It is not possible for a `System account` (see above) to become supervisor.
+
 ## Staff number
 
 The staff/account number appears in Exports and can be used to link users from your HR software to Kimai. 
