@@ -719,37 +719,32 @@ It is therefore necessary to lock all months (see above) in which the old employ
 
 <h2 id="how-calculations-work">How calculations work</h2>
 
-<p>All calculations are only done up until NOW.
-That means adding a holiday tomorrow will not change your hour account.</p>
+<p>Kimai only calculates working time up to the current moment.
+This means that adding a holiday for tomorrow, or any other future absence, will not affect your hour balance yet.</p>
 
-<h3 id="public-holidays">Public holidays</h3>
+<p>Please read the chapter <a href="/documentation/absence.html">“How absences affect expected working time”</a> to understand why the <code class="language-plaintext highlighter-rouge">Working times</code> view may show different totals than <code class="language-plaintext highlighter-rouge">My times</code> for the same year.</p>
 
-<p>Adds the amount of configured working time as working time.
-If you add a timesheet on the same day, it calculates as overtime.</p>
+<p>In short: depending on the configured absence calculation mode, the reported annual working time can be significantly higher than the hours recorded in timesheets.</p>
 
-<h3 id="holidays-1">Holidays</h3>
+<h3 id="absences-compensate-expected-working-time">Absences compensate expected working time</h3>
 
-<p>Adds the amount of configured working time as working time.
-If you add a timesheet on the same day, it calculates as overtime.</p>
-
-<h3 id="sickness">Sickness</h3>
-
-<p>Fills up the working day to match the expected working time.</p>
-
-<p>Examples:</p>
 <ul>
-  <li>8 hours are expected and you already logged 2 hours, then 6 hours will be filled-up</li>
-  <li>8 hours are expected and no time is logged, then 8 hours will be added</li>
+  <li><strong>Public holidays</strong> — The configured working time for that day is added as worked time. If you create a timesheet on the same day, it is counted as overtime.</li>
+  <li><strong>Vacation</strong> — The configured working time for that day is added as worked time. If you create a timesheet on the same day, it is counted as overtime.</li>
+  <li><strong>Sickness</strong> — Fills up the remaining working time for the day until the expected duration is reached. For example, if the expected time is 8 hours and 2 hours have already been recorded, the sickness absence adds 6 hours.</li>
+  <li><strong>Other</strong> — The configured absence duration is added as worked time.</li>
+  <li><strong>Time-Off</strong> — Does not affect working time calculations. This entry is for informational purposes only.</li>
 </ul>
 
-<h3 id="other">Other</h3>
+<h3 id="absences-reduce-expected-working-time">Absences reduce expected working time</h3>
 
-<p>Adds the amount of configured hours as working time.</p>
-
-<h3 id="time-off">Time-Off</h3>
-
-<p>Will not influence the working time in any way.
-This booking is only there for information purposes.</p>
+<ul>
+  <li><strong>Public holidays</strong> — Reduces the expected working time for that day to 0. If you create a timesheet on the same day, it is counted as overtime.</li>
+  <li><strong>Vacation</strong> — Reduces the expected working time by the duration of the absence. A full-day vacation reduces it to 0. A half-day vacation reduces it accordingly. If you create a timesheet on the same day, it is counted as overtime.</li>
+  <li><strong>Sickness</strong> — Reduces the remaining expected working time for that day. Either to 0 or for example, if the expected time is 8 hours and 2 hours have already been recorded, the remaining 6 hours are removed from the expected time.</li>
+  <li><strong>Other</strong> — Reduces the expected working time by the configured absence duration.</li>
+  <li><strong>Time-Off</strong> — Does not affect working time calculations. This entry is for informational purposes only.</li>
+</ul>
 
 <h2 id="limit-timesheets-to-working-days">Limit timesheets to working days</h2>
 
@@ -861,7 +856,7 @@ you have to roll over the hours to the next year:</p>
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#user-interface" class="nav-link">User interface</a></li><li class="nav-item"><a href="#summary" class="nav-link">Summary</a></li><li class="nav-item"><a href="#working-times" class="nav-link">Working times</a></li><li class="nav-item"><a href="#lock-a-month" class="nav-link">Lock a month</a><ul><li class="nav-item"><a href="#unlock-a-month" class="nav-link">Unlock a month</a></li></ul></li><li class="nav-item"><a href="#changing-a-work-contract" class="nav-link">Changing a work contract</a></li><li class="nav-item"><a href="#manual-bookings" class="nav-link">Manual bookings</a><ul><li class="nav-item"><a href="#account-working-times" class="nav-link">Account working times</a></li><li class="nav-item"><a href="#holidays" class="nav-link">Holidays</a></li></ul></li><li class="nav-item"><a href="#how-calculations-work" class="nav-link">How calculations work</a><ul><li class="nav-item"><a href="#public-holidays" class="nav-link">Public holidays</a></li><li class="nav-item"><a href="#holidays-1" class="nav-link">Holidays</a></li><li class="nav-item"><a href="#sickness" class="nav-link">Sickness</a></li><li class="nav-item"><a href="#other" class="nav-link">Other</a></li><li class="nav-item"><a href="#time-off" class="nav-link">Time-Off</a></li></ul></li><li class="nav-item"><a href="#limit-timesheets-to-working-days" class="nav-link">Limit timesheets to working days</a></li><li class="nav-item"><a href="#carry-over-your-time-balance-to-the-next-year" class="nav-link">Carry over your time balance to the next year</a></li><li class="nav-item"><a href="#video" class="nav-link">Video</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#user-interface" class="nav-link">User interface</a></li><li class="nav-item"><a href="#summary" class="nav-link">Summary</a></li><li class="nav-item"><a href="#working-times" class="nav-link">Working times</a></li><li class="nav-item"><a href="#lock-a-month" class="nav-link">Lock a month</a><ul><li class="nav-item"><a href="#unlock-a-month" class="nav-link">Unlock a month</a></li></ul></li><li class="nav-item"><a href="#changing-a-work-contract" class="nav-link">Changing a work contract</a></li><li class="nav-item"><a href="#manual-bookings" class="nav-link">Manual bookings</a><ul><li class="nav-item"><a href="#account-working-times" class="nav-link">Account working times</a></li><li class="nav-item"><a href="#holidays" class="nav-link">Holidays</a></li></ul></li><li class="nav-item"><a href="#how-calculations-work" class="nav-link">How calculations work</a><ul><li class="nav-item"><a href="#absences-compensate-expected-working-time" class="nav-link">Absences compensate expected working time</a></li><li class="nav-item"><a href="#absences-reduce-expected-working-time" class="nav-link">Absences reduce expected working time</a></li></ul></li><li class="nav-item"><a href="#limit-timesheets-to-working-days" class="nav-link">Limit timesheets to working days</a></li><li class="nav-item"><a href="#carry-over-your-time-balance-to-the-next-year" class="nav-link">Carry over your time balance to the next year</a></li><li class="nav-item"><a href="#video" class="nav-link">Video</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
         
         <ul class="nav">
             <li>
