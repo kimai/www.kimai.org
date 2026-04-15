@@ -22,3 +22,7 @@ The plugin repository is available at:
 
 - **Free** for **one project**
 - **Subscription** required for **multiple projects**
+
+## Buy license for multiple projects
+
+Subscribe (79 € / year) at [Lemon Squeezy](https://witcher.lemonsqueezy.com/checkout/buy/04e1eaf8-8595-4272-b30a-597ff53a2988).
