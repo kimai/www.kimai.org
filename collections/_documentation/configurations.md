@@ -225,12 +225,6 @@ The default color palette is:
 - `Copies data when adding via drag and drop` - when activated, form details will be populated from last entry  
 - `Display of the titles of calendar entries` - which data should be displayed in the title of each calendar entry
 
-## My company
+{% include documentation/configurations.md id="my_company" title=true %}
+{% include documentation/configurations.md id="controlling" title=true %}
 
-Kimai offers some configuration settings to adapt the branding to your company:
-
-- `Logo URL` - an absolute URL to an image, which  replaces the company name in login screen
-- `Company name` - replace the application name with your `company` name (approx. 15-20 character)
-- `Financial year` - starts on **first of January** by default 
-
-If you don't set a `Logo URL` but use a value in `Company name`, this will be used in the login screen.

@@ -139,6 +139,10 @@ There is older video available, explaining more details, but be warned: it also 
 
 {% include youtube-video.html id="workcontract" %}
 
+## Settings
+
+{% include documentation/configurations.md id="controlling" howto=true %}
+
 ## Permissions
 
 {% include documentation/permissions.md id="work_contract" howto=true %}
