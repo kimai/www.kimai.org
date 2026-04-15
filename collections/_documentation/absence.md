@@ -39,27 +39,30 @@ There are 2 phases that each absence has to go through:
 
 ## How absences affect expected working time
 
-Kimai supports two calculation modes:
-1. Absences count as worked time and compensate the expected working time for the day (default setting)
-2. Absences reduce the expected working time for the day
+Kimai supports two calculation modes for absences:
 
-The mode can be configured individually for each absence type in [System → Settings]({% link _documentation/configurations.md %}), depending on your industry requirements.
+1. **Absences count as worked time and compensate the expected working time for the day** (default)
+2. **Absences reduce the expected working time for the day**
 
-The selected mode affects the calculation of total expected and worked hours for each month, which can be relevant for payroll or PTO calculations.
+The selected mode affects how total expected hours and worked hours are calculated for each month. This can be relevant for payroll, overtime, and PTO calculations.
 
-**1. Absences compensate expected working time for the day**
+You can configure the mode individually for each absence type in [System → Settings]({% link _documentation/configurations.md %}), depending on your company rules and industry requirements.
 
-In this mode, every configured working day is calculated with its full expected hours.
-This means Kimai assumes that hours must be accounted for on every day, regardless of whether the day is a public holiday, sick leave, or vacation.
+### 1. Absences compensate expected working time for the day
 
-The duration of the absence is then counted as worked time and offsets the expected time.
-For example: if a working day has 8 expected hours, a full vacation day will count as 8 hours worked.
+In this mode, every scheduled working day keeps its full expected number of hours.
 
-**2. Absences reduce the expected working time for the day**
+This means Kimai assumes that time must be accounted for on every working day, regardless of whether the employee is working, on vacation, sick, or absent due to a public holiday.
 
-In this mode, an absence reduces the expected working time for the day by the duration of the absence.
+The absence duration is then counted as worked time and offsets the expected time.
 
-For example: a full vacation day reduces the expected working time for that day to 0, and the worked time will also be 0.
+Example: if a working day has **8 expected hours**, a full vacation day will count as **8 worked hours**.
+
+### 2. Absences reduce the expected working time for the day
+
+In this mode, an absence reduces the expected working time for the affected day by the duration of the absence.
+
+Example: if a working day has **8 expected hours**, a full vacation day reduces the expected working time for that day to **0 hours**, and the worked time will also be **0 hours**.
 
 ## Holiday
 
