@@ -64,55 +64,57 @@ In this mode, an absence reduces the expected working time for the affected day 
 
 Example: if a working day has **8 expected hours**, a full vacation day reduces the expected working time for that day to **0 hours**, and the worked time will also be **0 hours**.
 
-## Holiday
+## Absence types
+
+Please read the chapter ["How calculations work"]({% link _documentation/contract.md %}) to understand how your `Working times` are calculated.
+
+### Holiday / Vacation
 
 When you are eligible for holidays, meaning that your contract settings have a value for `Holidays per year`, you can schedule your vacations here.
 
 - Vacation days need to be approved
 - Vacation days can be full days or half-days
-- Vacation days count as working time, so they will be added to your daily working time
-- Your daily working time depends on the expected working hours for that day
 - You can book ranges of holidays
-- Days without expected working hours will be ignored when creating ranges
+- Days without expected working hours will be ignored when creating vacations
 
-## Sickness
+### Sickness
 
 Everyone can enter sickness entries. 
 
 - Sickness days are auto-approved
 - Sickness days can be entered as date-range
-- A sickness entry will always fill up the daily working time
+- Sickness entries will always account for the (remaining) daily working time
 - If you have already entered working-time the same day, sickness will fill up the remaining open time
 - There are no "half-day" entries available, because a half-day of sickness means, that there needs to at least one time-entry with 50% of the expected working-time. Example:
   - The expected working-time for the day is 8h
   - The users entered a timesheet of 4h
   - The user now adds a sickness entry: this will fill up the remaining 4h
 
-### My child is sick
+**My child is sick**
 
-Use the drop-down next to the "Report sickness" button and select the "Sickness of a child" category.
+Use the drop-down next to the "Report sickness" button and select the `Sickness of a relative` category.
 
-## Time-Off
+### Time-Off
 
-PTO (personal time-off) entries are for informational purpose, they do NOT influence your daily time by themselves.
+PTO (personal time-off) entries are for informational purpose, they do NOT influence your actual workimg time by themselves.
 
-- Time-Off need to be approved
-- Kimai automatically reduces your working time account for that period (because you do not record working-time during your PTO)
+- Time-Off needs to be approved
+- Kimai reduces your working time account for that period, because you do not record working-time during your PTO
 
-## Other absences
+### Other absences
 
-Other absences could be all kinds of reasons that do not fit into any other absence category. 
+Please add everything that does not fit the other categories in `Other absences`. 
 
-- Other absences need to be approved
-- Always entered as a duration  
+- The type `Other absences` needs to be approved
+- Can be a date range or a duration  
 
-### Parental leave
+**Parental leave**
 
-This fills up entire days and can be entered as date-range.
+Parental leaves always cover a date-range of full days.
 
-### Unpaid holiday
+**Unpaid holidays**
 
-This fills up entire days and can be entered as date-range.
+Unpaid holidays cover a date-range of full days.
 
 ## Absence calendar
 
