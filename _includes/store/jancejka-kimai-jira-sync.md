@@ -1,5 +1,3 @@
-# Kimai Jira Sync
-
 KimaiJiraSync is an integration plugin for Kimai 2 and Atlassian Jira.
 
 It automatically synchronizes worklogs from Kimai to Jira whenever a timesheet entry is created, updated or deleted. It also supports importing open Jira tasks into Kimai as activities, helping teams keep project and reporting workflows aligned across both systems.
