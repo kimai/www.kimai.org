@@ -686,27 +686,29 @@ The supervisor is a setting in the <a href="/documentation/users.html">users pro
 
 <p>Example: if a working day has <strong>8 expected hours</strong>, a full vacation day reduces the expected working time for that day to <strong>0 hours</strong>, and the worked time will also be <strong>0 hours</strong>.</p>
 
-<h2 id="holiday">Holiday</h2>
+<h2 id="absence-types">Absence types</h2>
+
+<p>Please read the chapter <a href="/documentation/contract.html">“How calculations work”</a> to understand how your <code class="language-plaintext highlighter-rouge">Working times</code> are calculated.</p>
+
+<h3 id="holiday--vacation">Holiday / Vacation</h3>
 
 <p>When you are eligible for holidays, meaning that your contract settings have a value for <code class="language-plaintext highlighter-rouge">Holidays per year</code>, you can schedule your vacations here.</p>
 
 <ul>
   <li>Vacation days need to be approved</li>
   <li>Vacation days can be full days or half-days</li>
-  <li>Vacation days count as working time, so they will be added to your daily working time</li>
-  <li>Your daily working time depends on the expected working hours for that day</li>
   <li>You can book ranges of holidays</li>
-  <li>Days without expected working hours will be ignored when creating ranges</li>
+  <li>Days without expected working hours will be ignored when creating vacations</li>
 </ul>
 
-<h2 id="sickness">Sickness</h2>
+<h3 id="sickness">Sickness</h3>
 
 <p>Everyone can enter sickness entries.</p>
 
 <ul>
   <li>Sickness days are auto-approved</li>
   <li>Sickness days can be entered as date-range</li>
-  <li>A sickness entry will always fill up the daily working time</li>
+  <li>Sickness entries will always account for the (remaining) daily working time</li>
   <li>If you have already entered working-time the same day, sickness will fill up the remaining open time</li>
   <li>There are no “half-day” entries available, because a half-day of sickness means, that there needs to at least one time-entry with 50% of the expected working-time. Example:
     <ul>
@@ -717,35 +719,35 @@ The supervisor is a setting in the <a href="/documentation/users.html">users pro
   </li>
 </ul>
 
-<h3 id="my-child-is-sick">My child is sick</h3>
+<p><strong>My child is sick</strong></p>
 
-<p>Use the drop-down next to the “Report sickness” button and select the “Sickness of a child” category.</p>
+<p>Use the drop-down next to the “Report sickness” button and select the <code class="language-plaintext highlighter-rouge">Sickness of a relative</code> category.</p>
 
-<h2 id="time-off">Time-Off</h2>
+<h3 id="time-off">Time-Off</h3>
 
-<p>PTO (personal time-off) entries are for informational purpose, they do NOT influence your daily time by themselves.</p>
-
-<ul>
-  <li>Time-Off need to be approved</li>
-  <li>Kimai automatically reduces your working time account for that period (because you do not record working-time during your PTO)</li>
-</ul>
-
-<h2 id="other-absences">Other absences</h2>
-
-<p>Other absences could be all kinds of reasons that do not fit into any other absence category.</p>
+<p>PTO (personal time-off) entries are for informational purpose, they do NOT influence your actual workimg time by themselves.</p>
 
 <ul>
-  <li>Other absences need to be approved</li>
-  <li>Always entered as a duration</li>
+  <li>Time-Off needs to be approved</li>
+  <li>Kimai reduces your working time account for that period, because you do not record working-time during your PTO</li>
 </ul>
 
-<h3 id="parental-leave">Parental leave</h3>
+<h3 id="other-absences">Other absences</h3>
 
-<p>This fills up entire days and can be entered as date-range.</p>
+<p>Please add everything that does not fit the other categories in <code class="language-plaintext highlighter-rouge">Other absences</code>.</p>
 
-<h3 id="unpaid-holiday">Unpaid holiday</h3>
+<ul>
+  <li>The type <code class="language-plaintext highlighter-rouge">Other absences</code> needs to be approved</li>
+  <li>Can be a date range or a duration</li>
+</ul>
 
-<p>This fills up entire days and can be entered as date-range.</p>
+<p><strong>Parental leave</strong></p>
+
+<p>Parental leaves always cover a date-range of full days.</p>
+
+<p><strong>Unpaid holidays</strong></p>
+
+<p>Unpaid holidays cover a date-range of full days.</p>
 
 <h2 id="absence-calendar">Absence calendar</h2>
 
@@ -883,7 +885,7 @@ If you want to create absence requests in advance for next year, you have to cha
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#email-notification" class="nav-link">Email notification</a><ul><li class="nav-item"><a href="#set-up-your-teams" class="nav-link">Set up your teams</a></li></ul></li><li class="nav-item"><a href="#approval-workflow" class="nav-link">Approval workflow</a></li><li class="nav-item"><a href="#how-absences-affect-expected-working-time" class="nav-link">How absences affect expected working time</a><ul><li class="nav-item"><a href="#1-absences-compensate-expected-working-time-for-the-day" class="nav-link">1. Absences compensate expected working time for the day</a></li><li class="nav-item"><a href="#2-absences-reduce-the-expected-working-time-for-the-day" class="nav-link">2. Absences reduce the expected working time for the day</a></li></ul></li><li class="nav-item"><a href="#holiday" class="nav-link">Holiday</a></li><li class="nav-item"><a href="#sickness" class="nav-link">Sickness</a><ul><li class="nav-item"><a href="#my-child-is-sick" class="nav-link">My child is sick</a></li></ul></li><li class="nav-item"><a href="#time-off" class="nav-link">Time-Off</a></li><li class="nav-item"><a href="#other-absences" class="nav-link">Other absences</a><ul><li class="nav-item"><a href="#parental-leave" class="nav-link">Parental leave</a></li><li class="nav-item"><a href="#unpaid-holiday" class="nav-link">Unpaid holiday</a></li></ul></li><li class="nav-item"><a href="#absence-calendar" class="nav-link">Absence calendar</a></li><li class="nav-item"><a href="#creating-absences-for-next-year" class="nav-link">Creating absences for next year</a></li><li class="nav-item"><a href="#carry-over-absences-into-the-new-year" class="nav-link">Carry over absences into the new year</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#email-notification" class="nav-link">Email notification</a><ul><li class="nav-item"><a href="#set-up-your-teams" class="nav-link">Set up your teams</a></li></ul></li><li class="nav-item"><a href="#approval-workflow" class="nav-link">Approval workflow</a></li><li class="nav-item"><a href="#how-absences-affect-expected-working-time" class="nav-link">How absences affect expected working time</a><ul><li class="nav-item"><a href="#1-absences-compensate-expected-working-time-for-the-day" class="nav-link">1. Absences compensate expected working time for the day</a></li><li class="nav-item"><a href="#2-absences-reduce-the-expected-working-time-for-the-day" class="nav-link">2. Absences reduce the expected working time for the day</a></li></ul></li><li class="nav-item"><a href="#absence-types" class="nav-link">Absence types</a><ul><li class="nav-item"><a href="#holiday--vacation" class="nav-link">Holiday / Vacation</a></li><li class="nav-item"><a href="#sickness" class="nav-link">Sickness</a></li><li class="nav-item"><a href="#time-off" class="nav-link">Time-Off</a></li><li class="nav-item"><a href="#other-absences" class="nav-link">Other absences</a></li></ul></li><li class="nav-item"><a href="#absence-calendar" class="nav-link">Absence calendar</a></li><li class="nav-item"><a href="#creating-absences-for-next-year" class="nav-link">Creating absences for next year</a></li><li class="nav-item"><a href="#carry-over-absences-into-the-new-year" class="nav-link">Carry over absences into the new year</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
         
         <ul class="nav">
             <li>
