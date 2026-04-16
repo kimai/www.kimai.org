@@ -161,6 +161,8 @@ Configure the database connection and adjust the settings to your needs (compare
 DATABASE_URL=mysql://kimai:my-super-secret-password@127.0.0.1:3306/kimai?charset=utf8mb4&serverVersion=10.6.12-MariaDB
 ```
 
+The `TRUSTED_HOSTS` setting is important to prevent "HTTP Host header attacks".
+
 Then execute the Kimai installation:
 ```bash
 bin/console kimai:install -n
