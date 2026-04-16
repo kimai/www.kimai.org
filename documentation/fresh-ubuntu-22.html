@@ -715,6 +715,8 @@ vim .env
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DATABASE_URL=mysql://kimai:my-super-secret-password@127.0.0.1:3306/kimai?charset=utf8mb4&amp;serverVersion=10.6.12-MariaDB
 </code></pre></div></div>
 
+<p>The <code class="language-plaintext highlighter-rouge">TRUSTED_HOSTS</code> setting is important to prevent “HTTP Host header attacks”.</p>
+
 <p>Then execute the Kimai installation:</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/console kimai:install <span class="nt">-n</span>
 bin/console kimai:user:create admin admin@example.com ROLE_SUPER_ADMIN

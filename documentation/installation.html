@@ -634,8 +634,9 @@
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer <span class="nb">install</span> <span class="nt">--no-dev</span> <span class="nt">--optimize-autoloader</span>
 </code></pre></div></div>
 
-<p>Configure the database connection and server version in the <code class="language-plaintext highlighter-rouge">.env</code> file:</p>
+<p>Configure the <code class="language-plaintext highlighter-rouge">DATABASE_URL</code> (database connection and server version) and <code class="language-plaintext highlighter-rouge">TRUSTED_HOSTS</code> (the domain name you use for Kimai) in the <code class="language-plaintext highlighter-rouge">.env</code> file:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DATABASE_URL=mysql://user:password@127.0.0.1:3306/database?charset=utf8mb4&amp;serverVersion=11.1.2-MariaDB
+TRUSTED_HOSTS=kimai.example.com
 </code></pre></div></div>
 <p>Fetch the exact serverVersion by running <code class="language-plaintext highlighter-rouge">mysql --version</code> and copy&amp;paste the entire version.</p>
 
