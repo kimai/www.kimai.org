@@ -2,7 +2,7 @@
 {% if page.lang == 'de' %}
 
 {% alert info %}
-Diese Lizenz gilt für die von Kevin Papst angebotenen kommerziellen Kimai-Plugins (sofern nicht anders angegeben)
+Lizenz- und Nutzungsbedingungen für kommerzielle Kimai-Plugins (gilt für alle Plugin von Kevin Papst, sofern nicht anders angegeben)
 {% endalert %}
 
 1. Die Plugin-Lizenz gewährt Ihnen, dem Käufer, eine nicht-exklusive, weltweite Lizenz zur Nutzung des digitalen Werks (Gegenstand), das Sie erworben haben. Lesen Sie den Rest dieser Lizenz für die Details, die für Ihre Nutzung des Objekts gelten.
@@ -41,11 +41,11 @@ Diese Lizenz gilt für die von Kevin Papst angebotenen kommerziellen Kimai-Plugi
 
 15. Der Autor des Objekts bleibt Eigentümer des Objekts, gewährt Ihnen jedoch die Lizenz zu diesen Bedingungen. Diese Lizenz gilt zwischen dem Autor des Artikels und Ihnen.
 
-**Häufig gestellte Fragen**
+## {{ site.data[page.lang].translation['faq'].subtitle }}
 
 - Die Plugins werden mit jährlichen Lizenzen für den Erhalt von Updates verkauft. Wenn Sie ein Abonnement kündigen, können Sie die letzte Version, die vor dem Ende unseres Abonnements veröffentlicht wurde, weiter verwenden.
 - Sie dürfen eine Plugin-Lizenz in einer zusätzlichen Test-/Entwicklungsumgebung verwenden
-- Sie dürfen eine Plugin-Lizenz kaufen und den ursprünglichen Lizenzschlüssel an einen Kunden weiterverkaufen
+- Sie dürfen eine Plugin-Lizenz kaufen und den ursprünglichen Lizenzschlüssel an einen Kunden weiterverkaufen, dürfen das Plugin dann aber nicht selbst weiterverwenden
 - Sie sind nicht berechtigt, eine Plugin-Lizenz für mehrere Kunden zu verwenden
 - Sie sind nicht berechtigt, das Plugin in einer SaaS-Umgebung zu verwenden
 - Wenn Sie für Ihre Kunden hosten, benötigt jeder Kunde eine eigene Lizenz
@@ -58,7 +58,7 @@ This is a translation for information purposes only. Only the original declarati
 {% endalert %}
 
 {% alert info %}
-This license applies to all Kimai plugins offered by Kevin Papst (unless licensed otherwise)
+License and Terms of Use for Commercial Kimai Plugins (applies to all plugins by Kevin Papst, unless otherwise stated)
 {% endalert %}
 
 
@@ -98,11 +98,11 @@ This license applies to all Kimai plugins offered by Kevin Papst (unless license
 
 15. The author of the Item retains ownership of the Item but grants you the license on these terms. This license is between the author of the Item and you.
 
-**Frequently asked questions**
+## {{ site.data[page.lang].translation['faq'].subtitle }}
 
 - The plugins are sold with annual licenses for receiving updates. If you cancel a subscription, you can keep on using the latest version which was released before the end of our subscription.
 - You are allowed to use a plugin license in one additional test/development environment
-- You are allowed to buy a plugin license and resell the original license key to one customer
+- You may purchase a plugin license and resell the original license key to a customer, but you may not continue to use the plugin yourself
 - You are not allowed to use one plugin license for multiple customers
 - You are not allowed to use the plugin in any kind of SaaS environment
 - If you are hosting for your customers, every customer needs its own license
