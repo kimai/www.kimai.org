@@ -1,12 +1,9 @@
 ---
-layout: base
+layout: default
 ---
 {% assign homepage = site.pages | where: 'lang', page.lang | find: 'slug', 'index' %}
 {% assign features = site.pages | where: 'lang', page.lang | find: 'slug', 'features' %}
 {% assign translated = site.data[page.lang].translation.industries[page.slug] %}
-
-<main class="page-wrapper">
-    {% include header-navigation.html %}
 
     <section class="container pt-4 pb-5 mb-lg-5">
 
@@ -91,8 +88,4 @@ layout: base
             </div>
         </div>
     </section>
-
-</main>
-
-{% include footer.html %}
 

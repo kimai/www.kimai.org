@@ -6,6 +6,9 @@
 {% if include.light != nil %}
     {% assign is_light = include.light %}
 {% endif %}
+{% if page.navi_light != nil %}
+    {% assign is_light = page.navi_light %}
+{% endif %}
 {% if page.navi_dark != nil %}
     {% assign is_dark = page.navi_dark %}
 {% endif %}
