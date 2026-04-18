@@ -95,6 +95,7 @@
 
 
 
+
 <header class="header navbar navbar-expand-lg    bg-light navbar-sticky">
     <div class="container px-3">
         <a href="/nl/" class="navbar-brand pe-3">
@@ -296,12 +297,6 @@
                     </a>
                 </li>
                 
-                <li class="nav-item">
-                    <a href="#store-installation" class="nav-link" data-bs-toggle="tab" role="tab">
-                        Installatie
-                    </a>
-                </li>
-                
                 
                 
                 
@@ -320,106 +315,6 @@
                     
                 </div>
 
-                
-                <div class="tab-pane fade" id="store-installation" role="tabpanel">
-                    <h2 id="installation">Installatie</h2>
-                    
-    
-    <h3>Bestanden kopiëren</h3>
-
-    <p>
-        Extract the ZIP file and upload the included directory and all files to your Kimai installation to the new directory:
-    </p>
-
-
-<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">var/plugins/Plasmoid-Kimai - KDE integration/</code></pre></figure>
-
-
-    
-    <p>Or you can clone it directly to the <code class="language-plaintext highlighter-rouge">var/plugins/</code> directory of your Kimai installation:</p>
-
-
-<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">cd kimai/var/plugins/
-git clone https://github.com/Mte90/plasmoid-kimai Plasmoid-Kimai - KDE integration</code></pre></figure>
-
-    
-
-    <p>The file structure needs to look like this afterwards:</p>
-
-
-<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">var/plugins/
-├── Plasmoid-Kimai - KDE integration
-│   ├── Plasmoid-Kimai - KDE integration.php
-|   └ ... more files and directories follow here ...</code></pre></figure>
-
-
-    <h3>Cache wissen</h3>
-
-    <p>
-        After uploading the files, Kimai needs to know about the new plugin. It will be found once the <a href="/documentation/updates.html">cache was re-built</a>.
-        Call these commands from the Kimai directory:
-    </p>
-
-    <div class="card border-primary mb-3">
-                       <p class="card-title bg-faded-primary p-1 mb-1"><strong><i class="bx bxs-info-circle ms-2 me-2 text-primary fs-5"></i>How to reload Kimai cache</strong></p>
-                       <div class="card-body card-note m-0 pt-3 px-3">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/console kimai:reload --env=prod
-</code></pre></div></div>
-
-<p>It is not advised, but in case the above command fails you could try:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm -r var/cache/prod/*
-</code></pre></div></div>
-</div>
-                   </div>
-
-
-    <p>You might have to set file permissions afterwards:</p>
-
-<div class="card border-primary mb-3">
-                       <p class="card-title bg-faded-primary p-1 mb-1"><strong><i class="bx bxs-info-circle ms-2 me-2 text-primary fs-5"></i>Adjust file permission</strong></p>
-                       <div class="card-body card-note m-0 pt-3 px-3">
-<p>You have to allow PHP (your webserver process) to write to <code class="language-plaintext highlighter-rouge">var/</code> and it subdirectories.</p>
-
-<p>Here is an example for Debian/Ubuntu, to be executed inside the Kimai directory:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chown -R :www-data .
-chmod -R g+r .
-chmod -R g+rw var/
-</code></pre></div></div>
-
-<p>You might not need these commands in a shared-hosting environment.
-And you probably need to prefix them with <code class="language-plaintext highlighter-rouge">sudo</code> and/or the group might be called different from <code class="language-plaintext highlighter-rouge">www-data</code>.</p>
-</div>
-                   </div>
-
-
-    
-
-    
-
-
-
-                    <h3>Updates</h3>
-                    
-    
-
-    <p>Updating the plugin works exactly like the installation:</p>
-    <ul>
-        <li>Delete the directory <code class="language-plaintext highlighter-rouge">var/plugins/Plasmoid-Kimai - KDE integration/</code>
-        </li>
-<li>
-            Execute all installation steps again:
-            <ul>
-                <li>Bestanden kopiëren</li>
-                <li>Cache wissen</li>
-            </ul>
-        </li>
-    </ul>
-
-
-
-                </div>
                 
 
                 
