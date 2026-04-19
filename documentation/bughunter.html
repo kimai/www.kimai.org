@@ -12,11 +12,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
-<title>Bughunter – Kimai</title>
+<title>Vulnerability disclosure policy – Kimai</title>
 <link type="application/atom+xml" rel="alternate" href="https://www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
 <meta property="og:locale" content="en">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Bughunter">
+<meta property="og:title" content="Vulnerability disclosure policy">
 <meta property="og:image" content="https://www.kimai.org/images/social-preview.webp">
 <meta property="og:description" content="">
 <link href="/assets/build/main.css?v6" rel="stylesheet" />
@@ -311,7 +311,7 @@
                         
                         <a href="/documentation/bughunter.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2  active" id="docnavi-bughunter">
                             
-                            Bughunter
+                            Vulnerability disclosure policy
                             
                         </a>
                         
@@ -371,7 +371,7 @@
 
         <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 mb-n3">
             <div class="me-4">
-                <h1 class="pb-1">Bughunter</h1>
+                <h1 class="pb-1">Vulnerability disclosure policy</h1>
                 
             </div>
             
@@ -399,63 +399,87 @@
             <div>
                 
                 <div id="documentation-content">
-                    <h2 id="reporting">Reporting</h2>
+                    <p>This document describes how security vulnerabilities are handled for Kimai.</p>
+
+<h2 id="reporting-a-vulnerability">Reporting a vulnerability</h2>
+
+<p>Please do not report security vulnerabilities in the public issue tracker. Instead, use one of the following channels:</p>
 
 <ul>
-  <li>You can report any security related vulnerability via email to <a href="mailto:support@kimai.org">support@kimai.org</a>, in the <a href="https://github.com/kimai/kimai/security/advisories">advisory section at GitHub</a> or at <a href="https://vuldb.com/">VulDB.com</a>.</li>
-  <li>If you post the advisory on any other platform, I will read them, but I will not respond there.</li>
-  <li>You can expect that your message will be answered in 24-72 hours.</li>
-  <li>I will work as fast as I can to fix the problem and publish a bugfix release / security update. Depending on the size of the required fixes, this might take a couple of hours or a couple of days.</li>
-  <li>If you try to ask for money BEFORE sharing details of a report, you won’t get a reply and your email will be blocked.</li>
+  <li>Email: <a href="mailto:support@kimai.org">support@kimai.org</a></li>
+  <li>GitHub Security Advisory: <a href="https://github.com/kimai/kimai/security/advisories">github.com/kimai/kimai/security/advisories</a></li>
 </ul>
 
-<h2 id="rewards">Rewards</h2>
+<p>Reports submitted to other platforms will not receive a response, even if they are read.</p>
 
-<p>This is an open-source project and I cannot offer a financial bug bounty program.
-The community including myself is grateful for any (discrete) disclosure of vulnerabilities!</p>
+<p>You can expect an acknowledgment within 1–3 working days. The time to release a fix varies depending on the severity and complexity of the issue — from a few hours to several weeks.</p>
 
-<p>You will be mentioned in the release notes if your issue is valid and a fix is shipped. 
-And if you want to be mentioned on social media, I will happily do so as well.</p>
+<blockquote>
+  <p><strong>Note:</strong> Requesting payment or a bounty before sharing vulnerability details will result in the report being dismissed and the sender blocked.</p>
+</blockquote>
 
-<h2 id="testing">Testing</h2>
+<h2 id="bug-bounty--rewards">Bug bounty &amp; rewards</h2>
 
-<p>Make a good faith effort to avoid privacy violations, destruction of data, and interruption or degradation of our service.
-Only interact with accounts you own or with explicit permission of the account holder.</p>
+<p>Kimai is an open-source project and does not offer a financial bug bounty program.</p>
 
-<h3 id="exclusions">Exclusions</h3>
-
-<p>YOU MAY NOT TEST AGAINST SERVERS YOU DO NOT HAVE EXPLICIT PERMISSION TO TEST.</p>
-
-<p>While researching, please refrain from:</p>
+<p>Valid, responsibly disclosed vulnerabilities are rewarded with:</p>
 
 <ul>
-  <li>Denial of service</li>
+  <li>Credit in the release notes</li>
+  <li>Optional mention on social media, on request</li>
+</ul>
+
+<p>The community is genuinely grateful for responsible and discreet disclosures.</p>
+
+<h2 id="testing-guidelines">Testing guidelines</h2>
+
+<p>Make a good-faith effort to avoid privacy violations, data loss, and service disruption. Only test against accounts you own or have explicit written permission to access.</p>
+
+<blockquote>
+  <p><strong>Warning:</strong> Do not test against Kimai Cloud or demo installations without prior written consent.</p>
+</blockquote>
+
+<h3 id="permitted">Permitted</h3>
+
+<ul>
+  <li>Testing on your own self-hosted Kimai instance</li>
+  <li>Testing in environments you own or have explicit written permission to access</li>
+</ul>
+
+<h3 id="not-permitted">Not permitted</h3>
+
+<ul>
+  <li>Denial-of-service attacks</li>
   <li>Spamming</li>
-  <li>Social engineering (including phishing)</li>
+  <li>Social engineering or phishing</li>
+  <li>Testing against third-party infrastructure without consent</li>
 </ul>
 
-<p>Do not pentest Kimai-Cloud or Demo installations without prior consent.</p>
+<p>EU and German law may require service operators to report certain attacks to authorities, even without malicious intent. Prior written consent protects both parties.<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup><sup id="fnref:2"><a href="#fn:2" class="footnote" rel="footnote" role="doc-noteref">2</a></sup></p>
 
-<p>There are EU <sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup> and German<sup id="fnref:2"><a href="#fn:2" class="footnote" rel="footnote" role="doc-noteref">2</a></sup> laws that require service owners to report certain attacks to the authorities.
-This makes it difficult to cooperate in scenarios without prior written consent.</p>
+<h2 id="automated-and-low-quality-reports">Automated and low-quality reports</h2>
 
-<h2 id="i-havent-heard-back-from-you">I haven’t heard back from you</h2>
+<p>We receive a high volume of automated or templated reports that show no familiarity with Kimai or its codebase. These reports are not reviewed.</p>
 
-<p>You have sent a report and did not receive an answer?
-Then you are very likely one of those thousands of “ethical hackers” or “independent security researchers” who are sending out automated emails to every domain they can find. 
-You did not bother to check the bigger picture, you maybe even send an invalid report. Please use your knowledge for the greater good, not to intimidate business/domain owners.</p>
+<p>To be considered, a report should:</p>
 
-<p>I am not going to waste my time with your “beg report”, as I receive dozens of them every week, and I am not going to answer personally.</p>
+<ul>
+  <li>Clearly identify the affected component or endpoint</li>
+  <li>Describe the vulnerability and its potential impact</li>
+  <li>Include reproduction steps or a proof of concept</li>
+  <li>AI-generated reports must be reviewed and validated by a human before submission. Posting raw LLM output, even if technically accurate, will not be credited unless a human researcher is available to answer follow-up questions.</li>
+</ul>
 
-<h2 id="common-reports">Common reports</h2>
+<p>Reports that do not meet these criteria, or that demand payment before sharing details, will not receive a response.</p>
 
-<p>Some answers to the most common reports that I receive from independent security researchers, which I do <strong>not</strong> consider
-to be security issues in Kimai or behavior that needs to be addressed.</p>
+<h2 id="not-security-issues">Not security issues</h2>
+
+<p>This is an incomplete list of issues that are not considered vulnerabilities in Kimai or behavior that needs to be addressed.</p>
 
 <h3 id="no-dmarc-record-found">No DMARC record found</h3>
 
 <p>Not only does this not qualify (read why <a href="https://dmarcreport.com/blog/no-dmarc-record-found-bug-bounty-is-a-beg-bounty/">at dmarcreport.com</a>), 
-but we are indeed using DMARC, DKIM and SPF in combination to protect our email domain.</p>
+but we are indeed using DMARC, DKIM and SPF in combination to protect our email domains.</p>
 
 <h3 id="misconfigured-spf">Misconfigured SPF</h3>
 
@@ -565,7 +589,7 @@ so please follow the link.</p>
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#reporting" class="nav-link">Reporting</a></li><li class="nav-item"><a href="#rewards" class="nav-link">Rewards</a></li><li class="nav-item"><a href="#testing" class="nav-link">Testing</a><ul><li class="nav-item"><a href="#exclusions" class="nav-link">Exclusions</a></li></ul></li><li class="nav-item"><a href="#i-havent-heard-back-from-you" class="nav-link">I haven’t heard back from you</a></li><li class="nav-item"><a href="#common-reports" class="nav-link">Common reports</a><ul><li class="nav-item"><a href="#no-dmarc-record-found" class="nav-link">No DMARC record found</a></li><li class="nav-item"><a href="#misconfigured-spf" class="nav-link">Misconfigured SPF</a></li><li class="nav-item"><a href="#missing-certificate-authority-authorization-rule" class="nav-link">Missing Certificate Authority Authorization Rule</a></li><li class="nav-item"><a href="#website-framing" class="nav-link">Website framing</a></li><li class="nav-item"><a href="#back-button-that-keeps-working-after-logout" class="nav-link">“Back” button that keeps working after logout</a></li><li class="nav-item"><a href="#csv-formula-injection" class="nav-link">CSV Formula injection</a></li><li class="nav-item"><a href="#logout-works-without-csrf-token" class="nav-link">Logout works without CSRF token</a></li><li class="nav-item"><a href="#unverified-password-change" class="nav-link">Unverified Password Change</a></li></ul></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#reporting-a-vulnerability" class="nav-link">Reporting a vulnerability</a></li><li class="nav-item"><a href="#bug-bounty--rewards" class="nav-link">Bug bounty &amp; rewards</a></li><li class="nav-item"><a href="#testing-guidelines" class="nav-link">Testing guidelines</a><ul><li class="nav-item"><a href="#permitted" class="nav-link">Permitted</a></li><li class="nav-item"><a href="#not-permitted" class="nav-link">Not permitted</a></li></ul></li><li class="nav-item"><a href="#automated-and-low-quality-reports" class="nav-link">Automated and low-quality reports</a></li><li class="nav-item"><a href="#not-security-issues" class="nav-link">Not security issues</a><ul><li class="nav-item"><a href="#no-dmarc-record-found" class="nav-link">No DMARC record found</a></li><li class="nav-item"><a href="#misconfigured-spf" class="nav-link">Misconfigured SPF</a></li><li class="nav-item"><a href="#missing-certificate-authority-authorization-rule" class="nav-link">Missing Certificate Authority Authorization Rule</a></li><li class="nav-item"><a href="#website-framing" class="nav-link">Website framing</a></li><li class="nav-item"><a href="#back-button-that-keeps-working-after-logout" class="nav-link">“Back” button that keeps working after logout</a></li><li class="nav-item"><a href="#csv-formula-injection" class="nav-link">CSV Formula injection</a></li><li class="nav-item"><a href="#logout-works-without-csrf-token" class="nav-link">Logout works without CSRF token</a></li><li class="nav-item"><a href="#unverified-password-change" class="nav-link">Unverified Password Change</a></li></ul></li></ul>
         
     </aside>
 
