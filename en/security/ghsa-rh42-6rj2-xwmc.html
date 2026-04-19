@@ -202,7 +202,7 @@ In affected versions, a crafted invoice template could include the hashed API to
   <li>The practical impact is limited because <a href="/en/blog/2026/removing-api-passwords">API passwords are deprecated</a> and the leaked value is a hash, not a reusable plaintext token</li>
   <li>Only a <strong>System-Admin</strong> (with the permission <code class="language-plaintext highlighter-rouge">upload_invoice_template</code>) could upload such crafted templates.</li>
   <li>
-<strong>Kimai Cloud is not affected</strong> because Twig invoice template upload is not available there</li>
+<strong>Kimai Cloud is not affected</strong> because Twig templates have to pass a manual review process</li>
 </ul>
 
 <h2 id="solution">Solution</h2>

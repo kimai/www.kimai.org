@@ -203,6 +203,8 @@ In affected versions, an authenticated user with sufficient permissions and acce
   <li>A malicious template could read sensitive values from the request, session, and user objects</li>
   <li>Exposed data could include secrets such as <code class="language-plaintext highlighter-rouge">APP_SECRET</code>, database configuration, password hashes, and session-related information</li>
   <li>Export templates can only be uploaded via direct filesystem access and is usually only possible for System-Admins</li>
+  <li>
+<strong>Kimai Cloud is not affected</strong> because Twig templates have to pass a manual review process</li>
 </ul>
 
 <h2 id="solution">Solution</h2>
