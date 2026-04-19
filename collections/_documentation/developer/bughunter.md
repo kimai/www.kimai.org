@@ -48,13 +48,14 @@ I am not going to waste my time with your "beg report", as I receive dozens of t
 
 ## Common reports
 
-Some answers to the most common reports that I receive from independent security researchers, which I do **not** consider
-to be security issues in Kimai or behavior that needs to be addressed.
+## Not security issues
+
+This is an incomplete list of issues that are not considered vulnerabilities in Kimai or behavior that needs to be addressed.
 
 ### No DMARC record found
 
 Not only does this not qualify (read why [at dmarcreport.com](https://dmarcreport.com/blog/no-dmarc-record-found-bug-bounty-is-a-beg-bounty/)), 
-but we are indeed using DMARC, DKIM and SPF in combination to protect our email domain.
+but we are indeed using DMARC, DKIM and SPF in combination to protect our email domains.
 
 ### Misconfigured SPF
 
