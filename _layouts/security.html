@@ -1,0 +1,53 @@
+---
+layout: page
+---
+
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item">
+        <a href="/"><i class="bx bx-home-alt fs-lg me-1"></i>Home</a>
+    </li>
+    <li class="breadcrumb-item">
+        <a href="{% link _documentation/developer/bughunter.md %}">Security</a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">
+        Kimai Advisory
+        {% if page.cve_id != nil %}{{ page.cve_id }}{% else %}{{ page.ghsa_id }}{% endif %}
+    </li>
+</ol>
+
+<h2>Affected versions</h2>
+
+<ul>
+    <li>Affected versions: <strong>{{ page.affected_version }}</strong></li>
+    <li>Patched version: <strong>{{ page.patched_version }}</strong></li>
+    <li>Advisory published: <strong>{{ page.date | date_to_string }}</strong></li>
+</ul>
+
+<h2>Severity</h2>
+<p>
+    Severity: <strong>{{ page.severity | capitalize }}</strong>
+</p>
+
+<p>
+{% if page.cve_id != nil %}
+    The Common Vulnerabilities and Exposures (CVE) project has assigned the name <strong>{{ page.cve_id }}</strong> to this issue.
+{% else %}
+    We have not requested an official CVE ID for this security advisory.
+{% endif %}
+</p>
+
+
+<h2>Vulnerability</h2>
+
+{{ content }}
+
+<h2>Credits</h2>
+
+<ul>
+    <li>Reported by: {{ page.author }}</li>
+    <li>Patched by: {{ page.published }}</li>
+</ul>
+
+<p>
+    First reported in GitHub advisory: <a href="https://github.com/kimai/kimai/security/advisories/{{ page.ghsa_id }}" target="_blank">{{ page.ghsa_id }}</a>
+</p>

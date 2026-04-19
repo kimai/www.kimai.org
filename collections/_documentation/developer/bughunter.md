@@ -1,5 +1,5 @@
 ---
-title: Vulnerability disclosure policy
+title: Security advisories
 ---
 
 This document describes how security vulnerabilities are handled for Kimai.
@@ -60,6 +60,24 @@ To be considered, a report should:
 - AI-generated reports must be reviewed and validated by a human before submission. Posting raw LLM output, even if technically accurate, will not be credited unless a human researcher is available to answer follow-up questions.
 
 Reports that do not meet these criteria, or that demand payment before sharing details, will not receive a response.
+
+## Severity levels
+
+We rate security issues using four severity levels: `Low`, `Medium`, `High`, and `Critical`.
+
+Our GitHub advisories may include CVSS scores for reference, but we do not rely on CVSS as the primary basis for grading vulnerabilities. 
+In our view, CVSS does not adequately capture all the factors and context involved in assessing real-world impact.
+
+Any issue that requires direct filesystem access or a **System-Admin** account to exploit is unlikely to be rated higher than `Medium`, as these preconditions significantly limit the realistic attack surface.
+ 
+## Published vulnerabilities
+ 
+You can subscribe to all advisories via [Atom RSS Feed]({% link security.xml %}).
+
+{% assign advisories = site.security | reverse -%}
+{% for advisory in advisories -%}
+- <span style="font-variant-numeric: tabular-nums;">{{ advisory.date | date: "%Y-%m-%d" }}</span>: [{{ advisory.title }}]({{ advisory.url }})
+{% endfor %}
 
 ## Not security issues
 

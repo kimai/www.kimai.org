@@ -201,6 +201,9 @@ collections:
     changelogs:
         output: true
         permalink: "/:lang/changelog/:year/:title"
+    security:
+        output: true
+        permalink: "/:lang/security/:slug"
     stories:
         output: true
         permalink: "/:lang/stories/:title"
@@ -305,6 +308,13 @@ defaults:
             author: kevinpapst
             image: /images/blog/cloud-update.webp
             tags: [Changelog]
+    -
+        scope:
+            path: ""
+            type: security
+        values:
+            layout: security
+            lang: en
     -
         scope:
             path: ""
