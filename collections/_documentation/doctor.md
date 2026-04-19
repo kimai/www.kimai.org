@@ -1,6 +1,6 @@
 ---
 title: Doctor
-description: Shows relevant system information
+description: Shows relevant system information, not available for Cloud users.
 canonical: /documentation/doctor.html
 ---
 
