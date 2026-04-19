@@ -27,6 +27,7 @@ This issue affected Twig-based rendering of uploaded invoice templates.
 - Successful exploitation could lead to arbitrary command execution
 - This turned an authenticated template upload capability into a high-impact server compromise risk
 - Exploitation required an System-Admin or someone with equivalent template upload capabilities
+- **Kimai Cloud is not affected** because Twig templates have to pass a manual review process
 
 ## Solution
 
