@@ -12,11 +12,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
-<title>Vulnerability disclosure policy – Kimai</title>
+<title>Security advisories – Kimai</title>
 <link type="application/atom+xml" rel="alternate" href="https://www.kimai.org/feed.xml" title="Kimai Time-Tracking" />
 <meta property="og:locale" content="en">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Vulnerability disclosure policy">
+<meta property="og:title" content="Security advisories">
 <meta property="og:image" content="https://www.kimai.org/images/social-preview.webp">
 <meta property="og:description" content="">
 <link href="/assets/build/main.css?v6" rel="stylesheet" />
@@ -311,7 +311,7 @@
                         
                         <a href="/documentation/bughunter.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2  active" id="docnavi-bughunter">
                             
-                            Vulnerability disclosure policy
+                            Security advisories
                             
                         </a>
                         
@@ -371,7 +371,7 @@
 
         <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 mb-n3">
             <div class="me-4">
-                <h1 class="pb-1">Vulnerability disclosure policy</h1>
+                <h1 class="pb-1">Security advisories</h1>
                 
             </div>
             
@@ -471,6 +471,32 @@
 </ul>
 
 <p>Reports that do not meet these criteria, or that demand payment before sharing details, will not receive a response.</p>
+
+<h2 id="severity-levels">Severity levels</h2>
+
+<p>We rate security issues using four severity levels: <code class="language-plaintext highlighter-rouge">Low</code>, <code class="language-plaintext highlighter-rouge">Medium</code>, <code class="language-plaintext highlighter-rouge">High</code>, and <code class="language-plaintext highlighter-rouge">Critical</code>.</p>
+
+<p>Our GitHub advisories may include CVSS scores for reference, but we do not rely on CVSS as the primary basis for grading vulnerabilities. 
+In our view, CVSS does not adequately capture all the factors and context involved in assessing real-world impact.</p>
+
+<p>Any issue that requires direct filesystem access or a <strong>System-Admin</strong> account to exploit is unlikely to be rated higher than <code class="language-plaintext highlighter-rouge">Medium</code>, as these preconditions significantly limit the realistic attack surface.</p>
+
+<h2 id="published-vulnerabilities">Published vulnerabilities</h2>
+
+<p>You can subscribe to all advisories via <a href="/security.xml">Atom RSS Feed</a>.</p>
+
+<ul>
+  <li><span style="font-variant-numeric: tabular-nums;">2026-04-16</span>: <a href="/en/security/ghsa-jrc6-fmhw-fpq2">Username enumeration via timing, using deprecated API authentication</a></li>
+  <li><span style="font-variant-numeric: tabular-nums;">2026-04-14</span>: <a href="/en/security/ghsa-qh43-xrjm-4ggp">User Preferences API allows standard users to modify: hourly_rate, internal_rate</a></li>
+  <li><span style="font-variant-numeric: tabular-nums;">2026-04-14</span>: <a href="/en/security/ghsa-g82g-m9vx-vhjg">Stored XSS via incomplete HTML attribute escaping in Team-Member widget</a></li>
+  <li><span style="font-variant-numeric: tabular-nums;">2026-04-11</span>: <a href="/en/security/ghsa-rh42-6rj2-xwmc">API password hash leakage via invoice Twig template</a></li>
+  <li><span style="font-variant-numeric: tabular-nums;">2026-04-11</span>: <a href="/en/security/ghsa-3jp4-mhh4-gcgr">Open-redirect via unvalidated RelayState in SAML ACS handler</a></li>
+  <li><span style="font-variant-numeric: tabular-nums;">2026-03-04</span>: <a href="/en/security/ghsa-v33r-r6h2-8wr7">API invoice endpoint missing customer-level access control (IDOR)</a></li>
+  <li><span style="font-variant-numeric: tabular-nums;">2026-01-18</span>: <a href="/en/security/ghsa-jg2j-2w24-54cg">Authenticated server-side template injection (SSTI)</a></li>
+  <li><span style="font-variant-numeric: tabular-nums;">2024-09-17</span>: <a href="/en/security/ghsa-534c-hcr7-67jg">XXE leading to local file read</a></li>
+  <li><span style="font-variant-numeric: tabular-nums;">2024-03-27</span>: <a href="/en/security/ghsa-cj3c-5xpm-cx94">API returns timesheet entries a user shouldn’t be authorized to view</a></li>
+  <li><span style="font-variant-numeric: tabular-nums;">2023-10-27</span>: <a href="/en/security/ghsa-fjhg-96cp-6fcw">Authenticated SSTI to RCE by uploading a malicious twig file</a></li>
+</ul>
 
 <h2 id="not-security-issues">Not security issues</h2>
 
@@ -589,7 +615,7 @@ so please follow the link.</p>
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#reporting-a-vulnerability" class="nav-link">Reporting a vulnerability</a></li><li class="nav-item"><a href="#bug-bounty--rewards" class="nav-link">Bug bounty &amp; rewards</a></li><li class="nav-item"><a href="#testing-guidelines" class="nav-link">Testing guidelines</a><ul><li class="nav-item"><a href="#permitted" class="nav-link">Permitted</a></li><li class="nav-item"><a href="#not-permitted" class="nav-link">Not permitted</a></li></ul></li><li class="nav-item"><a href="#automated-and-low-quality-reports" class="nav-link">Automated and low-quality reports</a></li><li class="nav-item"><a href="#not-security-issues" class="nav-link">Not security issues</a><ul><li class="nav-item"><a href="#no-dmarc-record-found" class="nav-link">No DMARC record found</a></li><li class="nav-item"><a href="#misconfigured-spf" class="nav-link">Misconfigured SPF</a></li><li class="nav-item"><a href="#missing-certificate-authority-authorization-rule" class="nav-link">Missing Certificate Authority Authorization Rule</a></li><li class="nav-item"><a href="#website-framing" class="nav-link">Website framing</a></li><li class="nav-item"><a href="#back-button-that-keeps-working-after-logout" class="nav-link">“Back” button that keeps working after logout</a></li><li class="nav-item"><a href="#csv-formula-injection" class="nav-link">CSV Formula injection</a></li><li class="nav-item"><a href="#logout-works-without-csrf-token" class="nav-link">Logout works without CSRF token</a></li><li class="nav-item"><a href="#unverified-password-change" class="nav-link">Unverified Password Change</a></li></ul></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#reporting-a-vulnerability" class="nav-link">Reporting a vulnerability</a></li><li class="nav-item"><a href="#bug-bounty--rewards" class="nav-link">Bug bounty &amp; rewards</a></li><li class="nav-item"><a href="#testing-guidelines" class="nav-link">Testing guidelines</a><ul><li class="nav-item"><a href="#permitted" class="nav-link">Permitted</a></li><li class="nav-item"><a href="#not-permitted" class="nav-link">Not permitted</a></li></ul></li><li class="nav-item"><a href="#automated-and-low-quality-reports" class="nav-link">Automated and low-quality reports</a></li><li class="nav-item"><a href="#severity-levels" class="nav-link">Severity levels</a></li><li class="nav-item"><a href="#published-vulnerabilities" class="nav-link">Published vulnerabilities</a></li><li class="nav-item"><a href="#not-security-issues" class="nav-link">Not security issues</a><ul><li class="nav-item"><a href="#no-dmarc-record-found" class="nav-link">No DMARC record found</a></li><li class="nav-item"><a href="#misconfigured-spf" class="nav-link">Misconfigured SPF</a></li><li class="nav-item"><a href="#missing-certificate-authority-authorization-rule" class="nav-link">Missing Certificate Authority Authorization Rule</a></li><li class="nav-item"><a href="#website-framing" class="nav-link">Website framing</a></li><li class="nav-item"><a href="#back-button-that-keeps-working-after-logout" class="nav-link">“Back” button that keeps working after logout</a></li><li class="nav-item"><a href="#csv-formula-injection" class="nav-link">CSV Formula injection</a></li><li class="nav-item"><a href="#logout-works-without-csrf-token" class="nav-link">Logout works without CSRF token</a></li><li class="nav-item"><a href="#unverified-password-change" class="nav-link">Unverified Password Change</a></li></ul></li></ul>
         
     </aside>
 
