@@ -471,3 +471,8 @@ rewrite ^/en/blog/2025/managing-easter-holidays$ /en/blog/2026/managing-easter-h
 
 # Redirect remaining /blog/{year}/{slug} URLs to /en/blog/{year}/{slug}
 rewrite "^/blog/([0-9]{4})/([a-z0-9-]+)/?$" /en/blog/$1/$2 permanent;
+
+# security subdirectory without content
+rewrite ^/en/security$ /documentation/bughunter.html permanent;
+rewrite ^/en/security/$ /documentation/bughunter.html permanent;
+rewrite ^/en/blog/2026/kimai-cve-2026-23626-authenticated-server-side-template-injection /en/security/ghsa-jg2j-2w24-54cg permanent;
