@@ -14,12 +14,16 @@ can choose between a monthly, weekly and daily view.
 
 ## Context-menu
 
-All calendar entries offer a context-menu with several options (like `Duplicate` or `Delete`), right at your fingertip. 
+All calendar entries offer a context-menu with several options (like `Duplicate` or `Delete`), _right at your fingertip_. 
+
+### Delete a timesheet
+
+You can right-click every entry and delete it from the context-menu.
 
 ## Drag & Drop
 
 The calendar allows managing entries by using drag & drop: 
-- for creating entries (can be deactivated by System Admins)
+- for creating entries (can be deactivated by System Admins) from your recent activities
 - for moving entries across times and days 
 
 Drag & Drop is globally deactivated if the time-tracking mode (see [System → Settings]({% link _documentation/configurations.md %})) 
@@ -39,10 +43,6 @@ There are a couple of ways you can create a new timesheet record in the calendar
 - When you click and drag the selection, you open a "create timesheet" form for a completed timesheet (week and day view)
 - Drag & drop existing entries (like recent activities) from the left side into the calendar (month, week and day view)
 
-## Delete a timesheet
-
-You can right-click every entry and delete it from the context-menu.
-
 ## Switching user
 
 You can switch the account whose data is displayed, if your user owns the permission `view_other_timesheet`.
@@ -57,11 +57,10 @@ The recent activities drag & drop is also switched to the account currently disp
 If you cannot see the dropdown despite having the `view_other_timesheet` permission, it is likely that you cannot see any other users.
 Whether or not you can see another user depends on your team assignments: you need to be the [team lead to see your team members]({% link _documentation/teams.md %}).
 
-## Calendar configurations
+## Configurations
 
-The look and feel of the calendar can be customized via [System → Settings]({% link _documentation/configurations.md %}).
+The global look and feel of the calendar can be customized via [System → Settings]({% link _documentation/configurations.md %}).
 
-## Initial view (user preference)
+### User preference
 
 A user can change the initial view for the calendar, see [user preferences]({% link _documentation/user-preferences.md %}).
-
