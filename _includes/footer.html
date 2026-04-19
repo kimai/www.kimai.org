@@ -53,11 +53,9 @@
                                 <li class="nav-item">
                                     {% include link-translated-menu.html type="landingpage" item="discount-codes" language=page.lang class="nav-link fs-sm fw-medium px-0 py-1" %}
                                 </li>
-                                {% if page.lang == 'de' or page.lang == 'en' %}
                                 <li class="nav-item">
-                                    {% include link-translated-menu.html item="time-tracking-terms" language=page.lang class="nav-link fs-sm fw-medium px-0 py-1" %}
+                                    {% include link-translated-menu.html item="newsletter" language=page.lang class="nav-link fs-sm fw-medium px-0 py-1" %}
                                 </li>
-                                {% endif %}
                             </ul>
                         </div>
                     </div>
@@ -94,6 +92,11 @@
                                         <a href="{{ tool.url | full_url: 'en' }}" class="nav-link fs-sm fw-medium px-0 py-1" title="{{ compareWith | replace: "%name%", tool.name }}">{{ alternativeTo | replace: "%product%", tool.name }}</a>
                                     </li>
                                 {% endfor %}
+                                {% if page.lang == 'de' or page.lang == 'en' %}
+                                <li class="nav-item">
+                                    {% include link-translated-menu.html item="time-tracking-terms" language=page.lang class="nav-link fs-sm fw-medium px-0 py-1" %}
+                                </li>
+                                {% endif %}
                             </ul>
                         </div>
                     </div>
