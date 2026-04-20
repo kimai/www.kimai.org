@@ -1,5 +1,5 @@
-{% assign title=site.data[page.lang].translation.newsletter.name %}
-{% assign intro=site.data[page.lang].translation.newsletter.introduction %}
+{% assign title=site.data[page.lang].translation.newsletter.page_title %}
+{% assign intro=site.data[page.lang].translation.newsletter.page_intro %}
 
 {% include hero-text-round-dark.html title=title intro=intro %}
 
