@@ -11,8 +11,14 @@ First the Kimai specific filter:
 ```
 #/etc/fail2ban/filter.d/kimai2.conf
 [Definition]
-failregex = fail2ban.ERROR: <HOST> \[.*\] \[.*\]$
+failregex = ^\[.*?\] fail2ban\.ERROR: <HOST> \[\]
 ```
+
+If that doesn't match, you could try this regexp instead:
+```
+failregex = fail2ban.ERROR: <HOST>
+```
+
 
 And the additional jail.local for Kimai:
 ```
