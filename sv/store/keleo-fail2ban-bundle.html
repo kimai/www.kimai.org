@@ -330,7 +330,11 @@ Having said that, here are some possible rules for your <code class="language-pl
 <p>First the Kimai specific filter:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#/etc/fail2ban/filter.d/kimai2.conf
 [Definition]
-failregex = fail2ban.ERROR: &lt;HOST&gt; \[.*\] \[.*\]$
+failregex = ^\[.*?\] fail2ban\.ERROR: &lt;HOST&gt; \[\]
+</code></pre></div></div>
+
+<p>If that doesn’t match, you could try this regexp instead:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>failregex = fail2ban.ERROR: &lt;HOST&gt;
 </code></pre></div></div>
 
 <p>And the additional jail.local for Kimai:</p>
