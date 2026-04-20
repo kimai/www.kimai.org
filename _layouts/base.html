@@ -51,6 +51,111 @@
 {%- if page.canonical != nil %}
 <link rel="canonical" href="{{ DOMAIN }}{{ page.canonical }}" />
 {%- endif %}
+<script id="language-chooser-config" type="application/json">
+{
+  "cookieName": "kimai_preferred_lang",
+  "paramName": "preferred_lang",
+  "currentLang": {{ page.lang | jsonify }},
+  "languages": {{ site.languages | jsonify }},
+  "languageNames": {{ site.language_names | jsonify }},
+  "homepageUrls": {
+    {%- for lang in site.languages -%}
+    {%- capture homepage_url -%}{% include link-language-domain.html language=lang %}{%- endcapture -%}
+    {{- lang | jsonify -}}: {{- homepage_url | strip | jsonify -}}{%- unless forloop.last -%},{%- endunless -%}
+    {%- endfor -%}
+  }
+}
+</script>
+<script>
+(() => {
+  const config = document.getElementById('language-chooser-config');
+
+  if (!config) { return; }
+
+  const data = JSON.parse(config.textContent);
+  const languages = new Set(Array.isArray(data.languages) ? data.languages : []);
+  const cookieName = data.cookieName;
+  const paramName = data.paramName;
+  const currentLang = data.currentLang;
+  const isDocumentationPage = window.location.pathname.startsWith('/documentation/');
+  const aliases = new Map();
+  const addAlias = (value, target) => {
+    aliases.set(value.toLowerCase(), target);
+    aliases.set(value.replace('_', '-').toLowerCase(), target);
+  };
+
+  for (const lang of languages) {
+    addAlias(lang, lang);
+  }
+
+  const normalizeLanguage = (value) => {
+    if (typeof value !== 'string') {
+      return null;
+    }
+
+    const trimmed = value.trim();
+
+    if (trimmed === '') {
+      return null;
+    }
+
+    const exact = aliases.get(trimmed.toLowerCase()) || aliases.get(trimmed.replace('_', '-').toLowerCase());
+
+    if (exact) {
+      return exact;
+    }
+
+    const lowerValue = trimmed.replace('_', '-').toLowerCase();
+
+    if (lowerValue.startsWith('zh')) {
+      if (/(^zh-(hant|tw|hk|mo)$)/.test(lowerValue)) {
+        return languages.has('zh_Hant') ? 'zh_Hant' : null;
+      }
+
+      if (/(^zh-(hans|cn|sg)$)/.test(lowerValue)) {
+        return languages.has('zh_Hans') ? 'zh_Hans' : null;
+      }
+    }
+
+    if (lowerValue === 'pt-br' || lowerValue.startsWith('pt-br')) {
+      return languages.has('pt_BR') ? 'pt_BR' : null;
+    }
+
+    const baseLanguage = lowerValue.split('-')[0];
+    const fallback = aliases.get(baseLanguage);
+
+    return fallback && languages.has(fallback) ? fallback : null;
+  };
+  const getCookieValue = (name) => {
+    const prefix = name + '=';
+
+    for (const part of document.cookie.split(';')) {
+      const value = part.trim();
+
+      if (value.startsWith(prefix)) {
+        return decodeURIComponent(value.slice(prefix.length));
+      }
+    }
+
+    return null;
+  };
+  const cookieValue = normalizeLanguage(getCookieValue(cookieName));
+  const paramValue = normalizeLanguage(new URLSearchParams(window.location.search).get(paramName));
+  const browserLanguages = Array.isArray(navigator.languages) && navigator.languages.length > 0
+    ? navigator.languages
+    : [navigator.language];
+  const browserValue = browserLanguages
+    .map((value) => normalizeLanguage(value))
+    .find((value) => value !== null);
+
+  if (isDocumentationPage || cookieValue || paramValue || browserValue === currentLang) {
+    document.documentElement.classList.add('lang-chooser-suppressed');
+    return;
+  }
+
+  document.documentElement.classList.add('show-language-chooser');
+})()
+</script>
 {%- if page.lang != nil %}
 {%- assign langPages = site[page.collection] | where: "slug", page.slug -%}
 {%- if langPages and langPages.size > 1 %}
@@ -66,6 +171,7 @@
 </head>
 <body class="{{ page.body-class }}">
 
+{% include language-chooser.html %}
 {{ content }}
 
 <a href="#top" class="btn-scroll-top" data-scroll>

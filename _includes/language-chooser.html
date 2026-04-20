@@ -1,0 +1,31 @@
+<section
+    id="language-chooser"
+    class="language-chooser"
+    aria-labelledby="language-chooser-title"
+>
+    <div class="container py-1">
+        <button
+            type="button"
+            class="language-chooser__close btn btn-link"
+            data-language-chooser-confirm
+            aria-label="Stay on this page"
+        >
+            <i class="bx bx-x" aria-hidden="true"></i>
+        </button>
+        <form id="language-chooser-form" class="language-chooser__inner" novalidate>
+            <div class="language-chooser__copy">
+                <p id="language-chooser-title" class="language-chooser__title mb-1">Choose your language</p>
+                <p class="language-chooser__text mb-0">Select your preferred language for Kimai.</p>
+            </div>
+            <div class="language-chooser__controls">
+                <label class="visually-hidden" for="language-chooser-select">Language</label>
+                <select id="language-chooser-select" class="form-select">
+                    {% for lang in site.languages %}
+                        <option value="{{ lang }}"{% if lang == page.lang %} selected{% endif %}>{{ site.language_names[lang] }}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit" class="btn btn-primary">Switch language</button>
+            </div>
+        </form>
+    </div>
+</section>

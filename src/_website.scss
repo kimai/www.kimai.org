@@ -75,6 +75,100 @@
     border-bottom: 1px solid #c6c6c6;
 }
 
+.language-chooser {
+    display: none;
+    background: #0f172a;
+    color: #fff;
+    position: relative;
+}
+
+.show-language-chooser .language-chooser {
+    display: block;
+}
+
+.show-language-chooser header.header.position-absolute,
+.show-language-chooser header.header.navbar-sticky,
+.show-language-chooser header.header.navbar-stuck {
+    position: relative !important;
+    top: auto;
+    left: auto;
+    width: auto;
+    animation: none;
+}
+
+.language-chooser[hidden] {
+    display: none !important;
+}
+
+.language-chooser__inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.language-chooser__copy {
+    flex: 1 1 18rem;
+}
+
+.language-chooser__title {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.language-chooser__text {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+}
+
+.language-chooser__controls {
+    display: flex;
+    flex: 1 1 24rem;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.language-chooser__controls .form-select {
+    max-width: 20rem;
+}
+
+.language-chooser__close {
+    position: absolute;
+    top: 1rem;
+    right: 0.75rem;
+    z-index: 1;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.5rem;
+    line-height: 1;
+    padding: 0.25rem;
+    text-decoration: none;
+}
+
+.language-chooser__close:hover,
+.language-chooser__close:focus {
+    color: #fff;
+}
+
+@include media-breakpoint-down(md) {
+    .language-chooser__controls,
+    .language-chooser__inner {
+        align-items: stretch;
+    }
+
+    .language-chooser__controls {
+        justify-content: stretch;
+    }
+
+    .language-chooser__controls .form-select,
+    .language-chooser__controls .btn {
+        width: 100%;
+        max-width: none;
+    }
+}
+
 /* store items */
 .btn-buy {
     --si-btn-font-size: 1.2rem;
