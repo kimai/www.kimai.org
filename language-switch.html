@@ -1,0 +1,68 @@
+---
+title: Kimai - Free Time-Tracking App (open-source)
+layout: none
+lang: en
+permalink: /index.html
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting…</title>
+    <script>
+        (function () {
+            var available = [
+                {% for language in site.languages %}'{{ language }}',
+                {% endfor %}
+            ];
+
+            var fallback = 'en';
+
+            var aliases = {
+                'pt-BR': 'pt_BR', 'pt-br': 'pt_BR',
+                'zh':    'zh_Hans', 'zh-CN': 'zh_Hans', 'zh-cn': 'zh_Hans',
+                'zh-SG': 'zh_Hans', 'zh-sg': 'zh_Hans',
+                'zh-Hans': 'zh_Hans', 'zh-hans': 'zh_Hans',
+                'zh-TW': 'zh_Hant', 'zh-tw': 'zh_Hant',
+                'zh-HK': 'zh_Hant', 'zh-hk': 'zh_Hant',
+                'zh-MO': 'zh_Hant', 'zh-mo': 'zh_Hant',
+                'zh-Hant': 'zh_Hant', 'zh-hant': 'zh_Hant'
+            };
+
+            function normalizeLocale(locale) {
+                locale = locale.trim();
+                if (!locale) return '';
+                if (aliases[locale]) return aliases[locale];
+                return locale.replace('-', '_');
+            }
+
+            function detect() {
+                var langs = navigator.languages && navigator.languages.length
+                    ? navigator.languages
+                    : (navigator.language ? [navigator.language] : []);
+
+                for (var i = 0; i < langs.length; i++) {
+                    var locale = normalizeLocale(langs[i]);
+                    if (!locale || locale === '*') continue;
+
+                    if (available.indexOf(locale) !== -1) return locale;
+
+                    var base = locale.split('_')[0];
+                    if (available.indexOf(base) !== -1) return base;
+                }
+
+                return fallback;
+            }
+
+            var lang = detect();
+            if (available.indexOf(lang) === -1) lang = 'en';
+
+            window.location.replace('/' + encodeURIComponent(lang) + '/');
+        })();
+    </script>
+    <noscript>
+        <meta http-equiv="refresh" content="0; url=/en/">
+    </noscript>
+</head>
+<body></body>
+</html>
