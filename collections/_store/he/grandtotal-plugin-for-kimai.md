@@ -2,7 +2,7 @@
 title: Grandtotal sync
 type: client
 lang: he
-permalink: "/he/store/keleo-grandtotal-plugin-for-kimai.html"
+permalink: "/he/store/grandtotal-plugin-for-kimai.html"
 ---
 
 {% include store/grandtotal-plugin-for-kimai.md %}

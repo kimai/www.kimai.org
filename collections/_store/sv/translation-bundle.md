@@ -2,7 +2,7 @@
 title: Translations
 type: plugin
 lang: sv
-permalink: "/sv/store/keleo-translation-bundle.html"
+permalink: "/sv/store/translation-bundle.html"
 ---
 
 {% include store/translation-bundle.md %}

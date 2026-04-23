@@ -1,6 +1,6 @@
 ---
 title: "Zeiterfassung für Non-Profit Organisationen"
-permalink: /de/zeiterfassung-non-profit.html
+permalink: /de/non-profit
 ---
 
 Heute sage ich Danke an die vielen NGOs und NPOs:

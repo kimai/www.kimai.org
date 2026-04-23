@@ -2,7 +2,7 @@
 title: Kiosk mode with support for Barcode, RFID, Web NFC
 type: featured
 lang: pt
-permalink: "/pt/store/keleo-kiosk-barcode-bundle.html"
+permalink: "/pt/store/kiosk-barcode-bundle.html"
 ---
 
 {% include store/kiosk-barcode-bundle.md %}

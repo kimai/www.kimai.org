@@ -2,7 +2,7 @@
 title: Console client (PHAR)
 type: client
 lang: it
-permalink: "/it/store/keleo-console-phar.html"
+permalink: "/it/store/console-phar.html"
 ---
 
 {% include store/console-phar.md %}

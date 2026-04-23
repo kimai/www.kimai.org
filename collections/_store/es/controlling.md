@@ -2,7 +2,7 @@
 title: Work contract & Controlling
 type: featured
 lang: es
-permalink: "/es/store/keleo-controlling.html"
+permalink: "/es/store/controlling.html"
 ---
 
 {% include store/controlling.md %}

@@ -2,7 +2,7 @@
 title: Task planning
 type: featured
 lang: nl
-permalink: "/nl/store/keleo-task-management-bundle.html"
+permalink: "/nl/store/task-management-bundle.html"
 ---
 
 {% include store/task-management-bundle.md %}

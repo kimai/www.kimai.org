@@ -2,7 +2,7 @@
 title: Lockdown per user settings
 type: plugin
 lang: ta
-permalink: "/ta/store/keleo-lockdown-per-user-bundle.html"
+permalink: "/ta/store/lockdown-per-user-bundle.html"
 ---
 
 {% include store/lockdown-per-user-bundle.md %}
