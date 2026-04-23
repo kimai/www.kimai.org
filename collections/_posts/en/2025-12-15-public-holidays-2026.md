@@ -124,7 +124,7 @@ Prepare your system for the start of the year according to this checklist:
 ## Public Holiday Management in Kimai
 
 Managing public holidays manually — especially for countries like Germany with regional differences — can be time-consuming and error-prone. 
-The [Working Contract Plugin]({% link _store/{{ page.lang }}/keleo-controlling.md %}) is one of the simplest solutions.
+The [Working Contract Plugin]({% link _store/{{ page.lang }}/controlling.md %}) is one of the simplest solutions.
 
 Watch this short video tutorial to learn how to check the list of public holidays for the next year:
 
@@ -140,4 +140,4 @@ With the plugin you get:
 
 Try it now in the [Kimai Demo]({% link _pages/{{ page.lang }}/demo.md %}),  
 set it up in your {% include link-cloud-start.html title="Kimai Cloud" %},  
-or learn more on the [Working Contract Plugin]({% link _store/{{ page.lang }}/keleo-controlling.md %}) page.
+or learn more on the [Working Contract Plugin]({% link _store/{{ page.lang }}/controlling.md %}) page.

@@ -24,7 +24,7 @@ Only billable items will be included in invoices.
 
 By default, every timesheet record is billable, but users can set the billable flag on individual timesheets.
 
-[Expense items]({% link _store/{{ page.lang }}/keleo-expenses-bundle.md %}) have a configurable billable flag per item and only the ones marked as billable (refundable) will be included.
+[Expense items]({% link _store/{{ page.lang }}/expenses-bundle.md %}) have a configurable billable flag per item and only the ones marked as billable (refundable) will be included.
 
 ## Invoice templates
 
@@ -43,7 +43,7 @@ The invoice template is a set of attributes, that defines the invoice settings, 
 - `Invoicenumber-Generator` - Which logic to use when generating the invoice number
 - `Invoice template` - The renderer of the invoice (default or custom template)
 - `Grouping of invoice lines` - How invoice items are grouped
-- `E-Invoicing` - Read the [Invoice+ plugin]({% link _documentation/plugin-invoice.md %}) docs (OnPremise customer need to [purchase the plugin]({% link _store/{{ page.lang }}/keleo-invoice-bundle.md %}))
+- `E-Invoicing` - Read the [Invoice+ plugin]({% link _documentation/plugin-invoice.md %}) docs (OnPremise customer need to [purchase the plugin]({% link _store/{{ page.lang }}/invoice-bundle.md %}))
 
 Further information are available: 
 

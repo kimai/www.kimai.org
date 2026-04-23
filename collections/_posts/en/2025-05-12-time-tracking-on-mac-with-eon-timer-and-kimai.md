@@ -38,7 +38,7 @@ Time tracking is just the beginning. Here’s 5 examples how you can go way beyo
 
 - Invoicing: Automatically generate and customize invoices based on your tracked time. Avoid manual calculations and save your time.
 - Project & Client Management: Organize your work by customers and projects, track budgets, assign activities, and keep everything in one place.
-- Expense Tracking: [Log expenses]({% link _store/{{ page.lang }}/keleo-expenses-bundle.md %}) per customer, project, or activity, and include them in your invoices for a complete financial overview.
+- Expense Tracking: [Log expenses]({% link _store/{{ page.lang }}/expenses-bundle.md %}) per customer, project, or activity, and include them in your invoices for a complete financial overview.
 - Reports & Analytics: Dive into detailed statistics and reports, see where your time (and money) goes, analyze by user, project, tag, or time period.
 - Team Collaboration: Manage teams, permissions, and roles. Whether you’re solo or running a team, a group of contractors or an entire company, better time management could bring you to the next level.
 - 

@@ -62,6 +62,6 @@ If your team uses Kimai Cloud to manage time, you can find an explanation on how
 
 {% include youtube-video.html id="working_contracts_setup_and_absences" chapter="public_holiday" %}
 
-If you use an on-premises solution based on Kimai, you will need the [public holidays management plugin]({% link _store/{{ page.lang }}/keleo-controlling.md %}).
+If you use an on-premises solution based on Kimai, you will need the [public holidays management plugin]({% link _store/{{ page.lang }}/controlling.md %}).
 
 It can also be tested in the [demo]({% link _pages/{{ page.lang }}/demo.md %}) and is included in {% include link-cloud-start.html title="our cloud" %}. 

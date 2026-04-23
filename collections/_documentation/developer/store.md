@@ -34,12 +34,12 @@ Let's assume your developer prefix is `acme` and your item name is `foo`.
         versions:
             - [ "2.0", "2.0" ]
     ```
-3. Copy and paste `collections/_store/en/keleo-custom-content-bundle.md` to `collections/_store/en/acme-foo.md` and change:
+3. Copy and paste `collections/_store/en/custom-content-bundle.md` to `collections/_store/en/acme-foo.md` and change:
     ```
     title: Foo
     type: plugin
     ```
-    You also need to replace `{% raw %}{% include store/keleo-custom-content-bundle.md %}{% endraw %}` with some introductory text for your new item.
+    You also need to replace `{% raw %}{% include store/custom-content-bundle.md %}{% endraw %}` with some introductory text for your new item.
 4. Create a translation for your plugin in `_data/en/store.yaml`:
     ```yaml
     items:

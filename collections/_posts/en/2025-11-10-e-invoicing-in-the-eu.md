@@ -79,7 +79,7 @@ So, you want to avoid fines and keep your accountant happy? Here’s what every 
 
 ### Kimai’s new E-Invoicing feature: compliance made easy
 
-With the [new plugin]({% link _store/{{ page.lang }}/keleo-invoice-bundle.md %}) and soon in the Cloud, Kimai supports e-invoicing, so you can stop worrying about invoice formats and start focusing on your business.
+With the [new plugin]({% link _store/{{ page.lang }}/invoice-bundle.md %}) and soon in the Cloud, Kimai supports e-invoicing, so you can stop worrying about invoice formats and start focusing on your business.
 
 {% include image.html src="/images/blog/e-invoicing-eu-profiles.webp" title="E-Invoice Profiles" %}
 
@@ -112,6 +112,6 @@ Supported payment types and their official IDs:
 
 E-invoicing is here to stay, and it’s quickly becoming a must for businesses in the EU. 
 With Kimai’s new e-invoicing features, you can simplify compliance, save time, and focus on what you do best: running your business (and maybe even enjoying it).
-On-Premise user can [purchase the plugin in the store]({% link _store/{{ page.lang }}/keleo-invoice-bundle.md %}).
+On-Premise user can [purchase the plugin in the store]({% link _store/{{ page.lang }}/invoice-bundle.md %}).
 
 Ready to join? Try Kimai Cloud for free today and make e-invoicing one less thing to worry about.

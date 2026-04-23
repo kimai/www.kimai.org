@@ -39,7 +39,7 @@ So the decision for you to upgrade is more complicated than necessary.
 
 ## Solution: the plugin that takes care of all your needs
 
-I have been working on a new plugin for a while now, which is called [Working hours, vacation, illness (controlling)]({% link _store/{{ page.lang }}/keleo-controlling.md %}).
+I have been working on a new plugin for a while now, which is called [Working hours, vacation, illness (controlling)]({% link _store/{{ page.lang }}/controlling.md %}).
 
 This plugin offers most of the features from the combination of their Controlling & Vacation & Sickday plugins.
 And of top of that is much cheaper than the combination of all three plugins.
@@ -56,7 +56,7 @@ It is perfectly integrated with Kimai and offers a lot of exciting features.
 There is a free demo available and a long list of planned features.
 
 This first version of the plugin concentrated on the most important features, following the 80-20 rule, the features that most of you need are already there.
-And I will continue to add more features in the future, that is a promise and [described in detail on the shop page]({% link _store/{{ page.lang }}/keleo-controlling.md %})!
+And I will continue to add more features in the future, that is a promise and [described in detail on the shop page]({% link _store/{{ page.lang }}/controlling.md %})!
 
 If you are a user of the MR plugins, I would be happy if you could give the new plugin a try and let me know what you think about it.
 

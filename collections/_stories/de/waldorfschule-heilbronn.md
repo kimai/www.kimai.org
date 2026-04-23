@@ -83,7 +83,7 @@ Der Durchbruch kam durch die praktische Erfahrung:
 „*Als dem Kollegium klar wurde, dass das Eintragen der Zeiten genauso einfach oder sogar einfacher ist als in den Excel-Tabellen und dass sie das von überall aus erledigen können – vom Handy oder über Zeiterfassungsterminals – änderte sich die Haltung nach und nach*."
 
 Ein besonderes Highlight war die kreative Lösung des IT-Administrators, der maßgeschneiderte Zeiterfassungsterminals entwickelte. 
-„*Er hat kleine Holzkästchen genommen, einen Raspberry Pi und einen Touchscreen eingebaut – jetzt läuft Kimai im [Kiosk-Modus]({% link _store/de/keleo-kiosk-barcode-bundle.md %})*", erklärt Jörg Hartmann.
+„*Er hat kleine Holzkästchen genommen, einen Raspberry Pi und einen Touchscreen eingebaut – jetzt läuft Kimai im [Kiosk-Modus]({% link _store/de/kiosk-barcode-bundle.md %})*", erklärt Jörg Hartmann.
 
 Mittlerweile hängen etwa zehn solcher Geräte auf dem gesamten Campus. 
 Der Kioskmodus erwies sich als entscheidender Erfolgsfaktor: 
