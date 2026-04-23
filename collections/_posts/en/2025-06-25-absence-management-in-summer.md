@@ -58,5 +58,5 @@ Want to add some humor to your summer absence management?
 
 If you want to learn more:
 - Video tutorial: [Absence approval workflow in Kimai](https://www.youtube.com/watch?v=7ZHRBY0pZKI&t=56s)
-- Info: [Kimai Features Overview]({% link _pages/features.html %})
+- Info: [Kimai Features Overview]({% link _pages/{{ page.lang }}/features.html %})
 

@@ -10,14 +10,14 @@ This documentation covers the necessary steps to migrate from Kimai 1 to Kimai 2
 Read the [version documentation]({% link _documentation/versions.md %}) before, to understand if you need this migration guide.
 
 {% alert %}
-You can <a href="{% link _pages/support.html %}">get professional support</a> if you are not sure about performing the upgrade yourself.
+You can <a href="{% link _pages/{{ page.lang }}/support.html %}">get professional support</a> if you are not sure about performing the upgrade yourself.
 {% endalert %} 
 
 ## Introduction
 
 Before starting with the migration, please read the following FAQs:
 
-- You need to install the [importer plugin]({% link _store/keleo-importer-bundle.md %}) (which ships the command for migrating the data)
+- You need to install the [importer plugin]({% link _store/{{ page.lang }}/keleo-importer-bundle.md %}) (which ships the command for migrating the data)
 - Data from the existing v1 installation is only read and will never be changed
 - Data can only be imported from a Kimai installation with at least `v1.0.1` and database revision `1388` (check your `configuration` table)
 - User-specific rates are not yet supported in Kimai 2, but
@@ -41,7 +41,7 @@ Before starting with the migration, please read the following FAQs:
 ## Install Kimai
 
 Please read the [installation docs]({% link _documentation/installation.md %}) first and execute the installation.
-You can install it on the same server, but you have to meet the server requirements (see [downloads page]({% link _pages/download.md %})).
+You can install it on the same server, but you have to meet the server requirements (see [downloads page]({% link _pages/{{ page.lang }}/download.md %})).
 
 The other option is to dump the old database and import it in the new server. The import does not need a running Kimai installation, but only the data!
 
@@ -81,7 +81,7 @@ The connection will use the charset `latin1` and the default table prefix `kimai
 ### Problems and solution
 
 Kimai 1 was written a long time ago, when MySQL was lacking proper UTF8 support and foreign keys.
-While [migrating dozens of customers installations]({% link _pages/support.html %}) I stumbled upon some recurring problems,
+While [migrating dozens of customers installations]({% link _pages/{{ page.lang }}/support.html %}) I stumbled upon some recurring problems,
 that can be solved with some SQL commands.
 
 You can either fix the problems manually as described below, or you let the importer handle all these problems by using the

@@ -70,7 +70,7 @@ Each address consists of the following fields, which will be used in invoices:
 
 ### Budgets
 
-{% include snippets/budgets.md permission="customer" %} 
+{% include documentation/budgets.md permission="customer" %} 
 
 ### Prices
 

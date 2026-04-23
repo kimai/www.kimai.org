@@ -5,7 +5,7 @@ description: How to list your Kimai extension in the Marketplace
 ---
 
 If you create a plugin or any other kind of software around Kimai, 
-which you want to see listed in the [Store]({% link _pages/store.html %}), follow these short guidelines.
+which you want to see listed in the [Store]({% link _pages/{{ page.lang }}/store.html %}), follow these short guidelines.
 
 The website is generated with [Jekyll](https://jekyllrb.com) and [managed at GitHub]({{ site.kimai_v2_website }}).
 It is translated to many languages, and there is a little more work required than just adding a markdown page. 
@@ -34,7 +34,7 @@ Let's assume your developer prefix is `acme` and your item name is `foo`.
         versions:
             - [ "2.0", "2.0" ]
     ```
-3. Copy and paste `_store/keleo-custom-content-bundle.md` to `_store/acme-foo.md` and change:
+3. Copy and paste `collections/_store/en/keleo-custom-content-bundle.md` to `collections/_store/en/acme-foo.md` and change:
     ```
     title: Foo
     type: plugin
@@ -82,7 +82,7 @@ kevinpapst:
 
 ## Product information
 
-Create a new markdown file in the [_store directory]({{ site.kimai_v2_website }}/tree/main/_store/), follow the filename pattern:
+Create a new markdown file in the [collections/_store/en directory]({{ site.kimai_v2_website }}/tree/main/collections/_store/en/), follow the filename pattern:
 `company-short-descriptive-name.md`
 
 Within the Jekyll [Front Matter](https://jekyllrb.com/docs/front-matter/) you have the following attributes available:
@@ -104,4 +104,4 @@ Within the Jekyll [Front Matter](https://jekyllrb.com/docs/front-matter/) you ha
 - `features` - array with up to 6 features (short description with approx. 5 words each, currently only shown in the list view if `featured` is `true`) (optional) 
 - `tags` - array with up to 4 tag, try to stay in the range of existing tags if applicable (optional)
 
-A full example can be seen in the file [keleo-css-custom-bundle.md]({{ site.kimai_v2_website }}/tree/main/_store/keleo-css-custom-bundle.md).
+A full example can be seen in the file [keleo-css-custom-bundle.md]({{ site.kimai_v2_website }}/tree/main/collections/_store/en/keleo-css-custom-bundle.md).

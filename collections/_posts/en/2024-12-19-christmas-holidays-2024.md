@@ -27,4 +27,4 @@ just one public holiday.
 
 As you prepare for the holiday season, don’t forget to prepare the list of public holidays for 2025 in your time-tracking system.
 
-If you haven’t yet tried Kimai’s [public holidays management plugin]({% link _store/keleo-controlling.md %}) yet, request it now.
+If you haven’t yet tried Kimai’s [public holidays management plugin]({% link _store/{{ page.lang }}/keleo-controlling.md %}) yet, request it now.

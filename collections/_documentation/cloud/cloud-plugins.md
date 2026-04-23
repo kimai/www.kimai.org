@@ -18,7 +18,7 @@ The following extensions are currently available:
 {%- for tag in settings.tags -%}
 {%- assign translation = site.data[page.lang].store.items[product.slug] -%}
     {%- if tag == 'cloud' %}
-- [{{ translation.title | default: product.title }}]({% link _store/{{ product.name }} %})
+- [{{ translation.title | default: product.title }}]({% link _store/{{ page.lang }}/{{ product.name }} %})
     {%- endif -%}
 {%- endfor -%}
 {%- endfor %}
@@ -27,7 +27,7 @@ These plugins cover all features we support for cloud use.
 
 ## Why other plugins cannot be added to the Cloud
 
-A common question is whether additional plugins from the [Kimai Marketplace]({% link _pages/store.html %}) or third-party developers can be installed.
+A common question is whether additional plugins from the [Kimai Marketplace]({% link _pages/{{ page.lang }}/store.html %}) or third-party developers can be installed.
 This is not possible in the Cloud, and the following sections explain why.
 
 ### Feature Overlap & Product Consistency

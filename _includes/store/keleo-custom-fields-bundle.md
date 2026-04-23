@@ -1,6 +1,6 @@
 
 Allows configuration of additional (custom) fields for:
-`Timesheets`, `Customers`, `Projects`, `Activities`, `Invoices`, `User`, `Expenses` (see [plugin]({% link _store/keleo-expenses-bundle.md %})).
+`Timesheets`, `Customers`, `Projects`, `Activities`, `Invoices`, `User`, `Expenses` (see [plugin]({% link _store/{{ page.lang }}/keleo-expenses-bundle.md %})).
 
 ## Features
 

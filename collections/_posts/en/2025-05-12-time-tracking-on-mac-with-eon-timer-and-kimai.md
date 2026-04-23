@@ -7,7 +7,7 @@ tags: [general]
 excerpt: "Good news for Apple fans: Eon Timer now seamlessly integrates with Kimai, bringing native, menu-bar time tracking to your MacOS workflow."
 ---
 
-We have news for Apple fans: [Eon Timer now integrates seamlessly with Kimai]({% link _store/eon-timer.md %}), bringing native, menu-bar time tracking to your MacOS workflow. 
+We have news for Apple fans: [Eon Timer now integrates seamlessly with Kimai]({% link _store/{{ page.lang }}/eon-timer.md %}), bringing native, menu-bar time tracking to your MacOS workflow. 
 Let's talk about time tracking in the Mac environment.
 
 MacOS is more than just an operating system - it's a workspace designed for people who value clarity, efficiency and smart solutions. 
@@ -28,7 +28,7 @@ menu bar, without ever interrupting your flow.
 - Instant Sync: Time tracked in Eon is automatically synced with your Kimai instance-cloud or on-premise, so your records are always up to date.
 - Project and Activity Selection: Easily switch between projects and activities, or add notes to your entries, all from the menu bar.
 - Privacy and Control: Your data stays with you-especially important for professionals handling sensitive client information.
-- Clean, Minimalist Interface: Following Mac standards, Eon’s interface is distraction-free, letting you focus on your work, not your tools. [Just take a look at the screenshots]({% link _store/eon-timer.md %}).
+- Clean, Minimalist Interface: Following Mac standards, Eon’s interface is distraction-free, letting you focus on your work, not your tools. [Just take a look at the screenshots]({% link _store/{{ page.lang }}/eon-timer.md %}).
 
 {% include image.html src="/images/marketplace/eon_timer-screen2.webp" title="A running timer!" %}
 
@@ -38,7 +38,7 @@ Time tracking is just the beginning. Here’s 5 examples how you can go way beyo
 
 - Invoicing: Automatically generate and customize invoices based on your tracked time. Avoid manual calculations and save your time.
 - Project & Client Management: Organize your work by customers and projects, track budgets, assign activities, and keep everything in one place.
-- Expense Tracking: [Log expenses]({% link _store/keleo-expenses-bundle.md %}) per customer, project, or activity, and include them in your invoices for a complete financial overview.
+- Expense Tracking: [Log expenses]({% link _store/{{ page.lang }}/keleo-expenses-bundle.md %}) per customer, project, or activity, and include them in your invoices for a complete financial overview.
 - Reports & Analytics: Dive into detailed statistics and reports, see where your time (and money) goes, analyze by user, project, tag, or time period.
 - Team Collaboration: Manage teams, permissions, and roles. Whether you’re solo or running a team, a group of contractors or an entire company, better time management could bring you to the next level.
 - 

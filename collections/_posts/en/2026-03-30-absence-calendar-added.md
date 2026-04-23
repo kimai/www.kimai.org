@@ -68,4 +68,4 @@ Take a look at this example.
 
 # Ready to start with pain-free absence management?
 
-Try all the features of Kimai Absence Management including [Absence Calendar]({% link _documentation/absence.md %}) in [our Demo]({% link _pages/demo.md %}) or during your free 30-days trial.
+Try all the features of Kimai Absence Management including [Absence Calendar]({% link _documentation/absence.md %}) in [our Demo]({% link _pages/{{ page.lang }}/demo.md %}) or during your free 30-days trial.

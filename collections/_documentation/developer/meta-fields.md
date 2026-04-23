@@ -14,7 +14,7 @@ Kimai supports custom fields for the following object types:
 
 {% alert %}
 Below you find the documentation, how a developer can create custom fields.   
-Most users will prefer to use the [Custom fields plugin]({% link _store/keleo-custom-fields-bundle.md %}).
+Most users will prefer to use the [Custom fields plugin]({% link _store/{{ page.lang }}/keleo-custom-fields-bundle.md %}).
 {% endalert %}
 
 ## Custom fields

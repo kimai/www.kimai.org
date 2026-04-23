@@ -25,7 +25,7 @@ All settings are kept in user-preferences, so you can set them with the `PATCH /
 
 **Contract Types**
 
-Please note that some contract types are only available with the [Working contract plugin]({% link _store/keleo-controlling.md %}) or the `Pro` cloud plan. 
+Please note that some contract types are only available with the [Working contract plugin]({% link _store/{{ page.lang }}/keleo-controlling.md %}) or the `Pro` cloud plan. 
 
 **Type "month" - Total monthly hours**
 

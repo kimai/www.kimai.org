@@ -6,7 +6,7 @@ canonical: /documentation/hosting-1-click.html
 ---
 
 {% include snippets/unsupported-installation-warning.md %}
-{% include snippets/self-hosting-warning.md %}
+{% include documentation/self-hosting-warning.md %}
 
 The following platforms adopted Kimai to be compatible with their one-click installation systems.
 

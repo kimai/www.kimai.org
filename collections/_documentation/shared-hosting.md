@@ -5,7 +5,7 @@ canonical: /documentation/shared-hosting.html
 ---
 
 {% include snippets/unsupported-installation-warning.md %}
-{% include snippets/self-hosting-warning.md %}
+{% include documentation/self-hosting-warning.md %}
 
 ### Uberspace
 

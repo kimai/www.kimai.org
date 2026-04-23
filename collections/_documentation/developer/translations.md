@@ -20,7 +20,7 @@ You can also click the little image in the table below for your language. Thank 
  
 All translations in Kimai are managed at Weblate and should be changed there exclusively! Do not chang ethe source files of Kimai.
 
-If you want to change certain keys in your installation, you can use the [Translation plugin]({% link _store/keleo-translation-bundle.md %}) for that.
+If you want to change certain keys in your installation, you can use the [Translation plugin]({% link _store/{{ page.lang }}/keleo-translation-bundle.md %}) for that.
 
 {% alert %}The following documentation is not meant for end-users or translators. It is a technical documentation for the folks working on the Kimai code.{% endalert %}
 

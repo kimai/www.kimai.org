@@ -10,7 +10,7 @@ Kimai Mobile for iOS was launched by Cloudrizon GmbH: a game-changing time track
 
 ## The new iOS application
 
-Cloudrizon GmbH is excited to announce that [Kimai Mobile]({% link _store/cloudrizon-kimai-mobile-app-ios.md %}) is now available for the first time in the [Apple Store](https://apps.apple.com/us/app/kimai-mobile/id1563933145). 
+Cloudrizon GmbH is excited to announce that [Kimai Mobile]({% link _store/{{ page.lang }}/cloudrizon-kimai-mobile-app-ios.md %}) is now available for the first time in the [Apple Store](https://apps.apple.com/us/app/kimai-mobile/id1563933145). 
 Kimai Mobile is a time tracking application that seamlessly integrates with Kimai Time Tracker Server. 
 The App offers users the convenience of managing multiple workspaces simultaneously, enabling efficient time logging for various projects and clients. All time tracking data is securely saved on the self-hosted Kimai Server, ensuring data privacy and accessibility.  
 

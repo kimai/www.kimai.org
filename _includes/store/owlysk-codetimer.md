@@ -14,7 +14,7 @@ The application integrates with your Kimai installation through the API interfac
 
 **Desktop Integration**
 As a desktop client, CodeTimer provides convenient access to your time-tracking functions without the need to open your web browser. 
-This functionality mirrors the user experience offered by Clockify's desktop application, making it familiar for users [migrating from other time-tracking solutions]({% link _store/keleo-importer-bundle.md %}).
+This functionality mirrors the user experience offered by Clockify's desktop application, making it familiar for users [migrating from other time-tracking solutions]({% link _store/{{ page.lang }}/keleo-importer-bundle.md %}).
 
 ## Setup Requirements
 To get started with CodeTimer, you'll need:
@@ -22,4 +22,4 @@ To get started with CodeTimer, you'll need:
 - Your personal Kimai API token
 - A compatible operating system (Windows, macOS, or Linux)
 
-If you are using an Android device, there is also a [CodeTimer Mobile]({% link _store/owlysk-codetimer-mobile.md %}) application available. 
+If you are using an Android device, there is also a [CodeTimer Mobile]({% link _store/{{ page.lang }}/owlysk-codetimer-mobile.md %}) application available. 

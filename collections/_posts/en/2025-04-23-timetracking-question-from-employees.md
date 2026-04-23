@@ -59,7 +59,7 @@ Using a tool like Kimai, with features like audit trails and GDPR compliance, he
 If you’re doing business in the EU, you need to be aware: as of 2024, time tracking is mandatory for most employers.
 
 The EU Time Tracking legislation requires accurate records of employee work hours. 
-Kimai’s compliant features — like [audit trails]({% link _store/keleo-audit-trail-bundle.md %}) and GDPR-friendly data handling — make compliance easy.
+Kimai’s compliant features — like [audit trails]({% link _store/{{ page.lang }}/keleo-audit-trail-bundle.md %}) and GDPR-friendly data handling — make compliance easy.
 
 Learn more on our blog post on [EU Time Tracking Law]({% link _posts/en/2024-11-11-eu-time-tracking-law.md %})
 
@@ -96,9 +96,9 @@ As your needs grow, explore features like reporting, integrations, and plugins.
 {% include youtube-video.html id="cloud_introduction" %}
 
 Explore more:
-- [Kimai Features]({% link _pages/features.html %})
-- [Kimai Plugins]({% link _pages/store.html %})
-- [Kimai Documentation]({% link _pages/documentation.md %})
+- [Kimai Features]({% link _pages/{{ page.lang }}/features.html %})
+- [Kimai Plugins]({% link _pages/{{ page.lang }}/store.html %})
+- [Kimai Documentation]({% link _pages/{{ page.lang }}/documentation.md %})
 
 ## Notes & Next Steps
 
