@@ -1,7 +1,7 @@
 ---
 title: Importer
 type: plugin
-lang: en 
+lang: en
 ---
 
 {% include store/keleo-importer-bundle.md %}
