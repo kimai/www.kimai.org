@@ -450,8 +450,6 @@ kimai:
 ```
 {% alert warning %}You need to configure the attributes in lower-case, otherwise they won't be processed.{% endalert %}
 
-The LDAP code is based on [the work](https://github.com/Maks3w/FR3DLdapBundle) by @Maks3w , thanks for sharing!
-
 ### Structure example
 
 There is an article explaining an [example Open LDAP structure for Kimai]({% link _documentation/ldap-example.md %}), that could be used.
