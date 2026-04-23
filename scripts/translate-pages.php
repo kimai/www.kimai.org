@@ -40,7 +40,6 @@ $multiLanguagePaths = [
     */
     '_store' => [
         'skip' => ['v1.md'],
-        'permalink' => '/:language/store/:basename',
         'remove' => ['redirect_from'],
         'overwrite' => true,
         'exclude_existing' => [],
