@@ -124,11 +124,11 @@ rewrite ^/pt/donate.html$ /pt/about.html permanent;
 rewrite ^/pt_BR/donate.html$ /pt_BR/about.html permanent;
 rewrite ^/ru/donate.html$ /ru/about.html permanent;
 rewrite ^/site-notice/$ /en/site-notice.html permanent;
-rewrite ^/apps/$ /store/ permanent;
-rewrite ^/kimai-mobile/$ /store/ permanent;
-rewrite ^/v1/extensions.html$ /store/ permanent;
-rewrite ^/v1/kimai-mobile.html$ /store/ permanent;
-rewrite ^/v1/apps.html$ /store/ permanent;
+rewrite ^/apps/$ /en/store/ permanent;
+rewrite ^/kimai-mobile/$ /en/store/ permanent;
+rewrite ^/v1/extensions.html$ /en/store/ permanent;
+rewrite ^/v1/kimai-mobile.html$ /en/store/ permanent;
+rewrite ^/v1/apps.html$ /en/store/ permanent;
 rewrite ^/sv/donate.html$ /sv/about.html permanent;
 rewrite ^/uk/donate.html$ /uk/about.html permanent;
 rewrite ^/store/hmr-it-hasworked-bundle.html$ /en/blog/2023/controlling-plugin-mr-software/ permanent;
@@ -151,10 +151,10 @@ rewrite ^/pt_BR/store/mr-software-period-insert-bundle.html$ /en/blog/2023/contr
 rewrite ^/pt_BR/store/mr-software-hasworked-bundle.html$ /en/blog/2023/controlling-plugin-mr-software/ permanent;
 rewrite ^/pt/store/mr-software-hasworked-bundle.html$ /en/blog/2023/controlling-plugin-mr-software/ permanent;
 rewrite ^/he/store/mr-software-period-insert-bundle.html$ /en/blog/2023/controlling-plugin-mr-software/ permanent;
-rewrite ^/store/hmr-it-android-offline-tracker.html$ /store/cloudrizon-kimai-mobile-app-android.html permanent;
-rewrite ^/store/mr-software-android-offline-tracker.html$ /store/cloudrizon-kimai-mobile-app-android.html permanent;
-rewrite ^/store/hmr-it-ios-offline-tracker.html$ /store/cloudrizon-kimai-mobile-app-ios.html permanent;
-rewrite ^/store/mr-software-ios-offline-tracker.html$ /store/cloudrizon-kimai-mobile-app-ios.html permanent;
+rewrite ^/store/hmr-it-android-offline-tracker.html$ /en/store/cloudrizon-kimai-mobile-app-android.html permanent;
+rewrite ^/store/mr-software-android-offline-tracker.html$ /en/store/cloudrizon-kimai-mobile-app-android.html permanent;
+rewrite ^/store/hmr-it-ios-offline-tracker.html$ /en/store/cloudrizon-kimai-mobile-app-ios.html permanent;
+rewrite ^/store/mr-software-ios-offline-tracker.html$ /en/store/cloudrizon-kimai-mobile-app-ios.html permanent;
 rewrite ^/cs/store/hmr-it-android-offline-tracker.html$ /cs/store/cloudrizon-kimai-mobile-app-android.html permanent;
 rewrite ^/cs/store/mr-software-android-offline-tracker.html$ /cs/store/cloudrizon-kimai-mobile-app-android.html permanent;
 rewrite ^/cs/store/hmr-it-ios-offline-tracker.html$ /cs/store/cloudrizon-kimai-mobile-app-ios.html permanent;
@@ -205,17 +205,17 @@ rewrite ^/hr/store/hmr-it-sickday-bundle.html$ /hr/store/keleo-controlling.html 
 rewrite ^/hr/store/mr-software-sickday-bundle.html$ /hr/store/keleo-controlling.html permanent;
 rewrite ^/hr/store/hmr-it-vacation-bundle.html$ /hr/store/keleo-controlling.html permanent;
 rewrite ^/hr/store/mr-software-vacation-bundle.html$ /hr/store/keleo-controlling.html permanent;
-rewrite ^/store/hmr-it-controlling-bundle.html$ /store/controlling.html permanent;
-rewrite ^/store/mr-software-controlling-bundle.html$ /store/controlling.html permanent;
-rewrite ^/store/hmr-it-sickday-bundle.html$ /store/controlling.html permanent;
-rewrite ^/store/mr-software-sickday-bundle.html$ /store/controlling.html permanent;
-rewrite ^/store/hmr-it-vacation-bundle.html$ /store/controlling.html permanent;
-rewrite ^/store/mr-software-vacation-bundle.html$ /store/controlling.html permanent;
-rewrite ^/store/work-contract-bundle.html$ /store/controlling.html permanent;
-rewrite ^/store/kevinpapst-custom-plugins.html$ /store/custom-plugins.html permanent;
-rewrite ^/v1/expenses.html$ /store/expenses-bundle.html permanent;
-rewrite ^/store/keleo-installation-support.html$ /store/installation-support.html permanent;
-rewrite ^/store/keleo-kiosk-barcode-bundle.html$ /store/kiosk-barcode-bundle.html permanent;
+rewrite ^/store/hmr-it-controlling-bundle.html$ /en/store/controlling.html permanent;
+rewrite ^/store/mr-software-controlling-bundle.html$ /en/store/controlling.html permanent;
+rewrite ^/store/hmr-it-sickday-bundle.html$ /en/store/controlling.html permanent;
+rewrite ^/store/mr-software-sickday-bundle.html$ /en/store/controlling.html permanent;
+rewrite ^/store/hmr-it-vacation-bundle.html$ /en/store/controlling.html permanent;
+rewrite ^/store/mr-software-vacation-bundle.html$ /en/store/controlling.html permanent;
+rewrite ^/store/work-contract-bundle.html$ /en/store/controlling.html permanent;
+rewrite ^/store/kevinpapst-custom-plugins.html$ /en/store/custom-plugins.html permanent;
+rewrite ^/v1/expenses.html$ /en/store/expenses-bundle.html permanent;
+rewrite ^/store/keleo-installation-support.html$ /en/store/installation-support.html permanent;
+rewrite ^/store/keleo-kiosk-barcode-bundle.html$ /en/store/kiosk-barcode-bundle.html permanent;
 rewrite ^/pt/store/hmr-it-android-offline-tracker.html$ /pt/store/cloudrizon-kimai-mobile-app-android.html permanent;
 rewrite ^/pt/store/mr-software-android-offline-tracker.html$ /pt/store/cloudrizon-kimai-mobile-app-android.html permanent;
 rewrite ^/pt/store/hmr-it-ios-offline-tracker.html$ /pt/store/cloudrizon-kimai-mobile-app-ios.html permanent;
@@ -286,7 +286,7 @@ rewrite ^/pt/store/mr-software-period-insert-bundle.html$ /en/blog/2023/controll
 rewrite ^/uk/store/mr-software-period-insert-bundle.html$ /en/blog/2023/controlling-plugin-mr-software/ permanent;
 rewrite ^/hr/store/mr-software-period-insert-bundle.html$ /en/blog/2023/controlling-plugin-mr-software/ permanent;
 # renamed to customer-portal
-rewrite ^/store/vettersolutions-shared-project-timesheets-bundle.html$ /store/customer-portal.html permanent;
+rewrite ^/store/vettersolutions-shared-project-timesheets-bundle.html$ /en/store/customer-portal.html permanent;
 rewrite ^/cs/store/vettersolutions-shared-project-timesheets-bundle.html$ /cs/store/customer-portal.html permanent;
 rewrite ^/cs/store/vettersolutions-shared-project-timesheets-bundle.html$ /cs/store/customer-portal.html permanent;
 rewrite ^/de/store/vettersolutions-shared-project-timesheets-bundle.html$ /de/store/customer-portal.html permanent;
@@ -305,7 +305,7 @@ rewrite ^/sv/store/vettersolutions-shared-project-timesheets-bundle.html$ /sv/st
 rewrite ^/uk/store/vettersolutions-shared-project-timesheets-bundle.html$ /uk/store/customer-portal.html permanent;
 rewrite ^/zh_Hans/store/vettersolutions-shared-project-timesheets-bundle.html$ /zh_Hans/store/customer-portal.html permanent;
 rewrite ^/zh_Hant/store/vettersolutions-shared-project-timesheets-bundle.html$ /zh_Hant/store/customer-portal.html permanent;
-rewrite ^/store/derpilzcc-readonly-access-bundle.html$ /store/customer-portal.html permanent;
+rewrite ^/store/derpilzcc-readonly-access-bundle.html$ /en/store/customer-portal.html permanent;
 rewrite ^/cs/store/derpilzcc-readonly-access-bundle.html$ /cs/store/customer-portal.html permanent;
 rewrite ^/de/store/derpilzcc-readonly-access-bundle.html$ /de/store/customer-portal.html permanent;
 rewrite ^/es/store/derpilzcc-readonly-access-bundle.html$ /es/store/customer-portal.html permanent;
@@ -324,7 +324,7 @@ rewrite ^/uk/store/derpilzcc-readonly-access-bundle.html$ /uk/store/customer-por
 rewrite ^/zh_Hans/store/derpilzcc-readonly-access-bundle.html$ /zh_Hans/store/customer-portal.html permanent;
 rewrite ^/zh_Hant/store/derpilzcc-readonly-access-bundle.html$ /zh_Hant/store/customer-portal.html permanent;
 # old pages that were moved or merged
-rewrite ^/blog/2014/kimai-apps/$ /store/ permanent;
+rewrite ^/blog/2014/kimai-apps/$ /en/store/ permanent;
 rewrite ^/cs/documentation/$ /documentation/ permanent;
 rewrite ^/de/dokumentation/$ /documentation/ permanent;
 rewrite ^/es/documentation/$ /documentation/ permanent;
@@ -476,3 +476,7 @@ rewrite "^/blog/([0-9]{4})/([a-z0-9-]+)/?$" /en/blog/$1/$2 permanent;
 rewrite ^/en/security$ /documentation/bughunter.html permanent;
 rewrite ^/en/security/$ /documentation/bughunter.html permanent;
 rewrite ^/en/blog/2026/kimai-cve-2026-23626-authenticated-server-side-template-injection /en/security/ghsa-jg2j-2w24-54cg permanent;
+
+# Redirect /store/ to /en/store/
+rewrite ^/store/?$ /en/store/ permanent;
+rewrite ^/store/(.+)$ /en/store/$1 permanent;
