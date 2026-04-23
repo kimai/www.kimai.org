@@ -1,6 +1,5 @@
 ---
 title: Download
-lang: it
 permalink: /it/download.html
 layout: download
 ---

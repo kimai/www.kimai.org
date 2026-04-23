@@ -1,6 +1,5 @@
 ---
 title: Kimai - Documentation
-lang: en
 layout: documentation
 permalink: /documentation/
 toc: false

@@ -1,7 +1,6 @@
 ---
 title: TimeKex - Importing timesheet Excel files
 type: client
-lang: cs
 ---
 
 {% include store/katjaglass-timekex.md %}

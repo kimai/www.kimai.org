@@ -1,6 +1,5 @@
 ---
 title: Reviews
-lang: ru
 layout: default
 navi_dark: false
 navi_absolute: true

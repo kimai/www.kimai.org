@@ -1,6 +1,5 @@
 ---
 title: Pricing
-lang: pt
 layout: default
 bg_dark: true
 navi_dark: true

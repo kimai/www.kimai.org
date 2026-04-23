@@ -1,7 +1,6 @@
 ---
 title: "Press & Media"
 layout: default
-lang: sv
 permalink: /sv/press-media
 navi_dark: true
 navi_absolute: true

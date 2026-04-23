@@ -1,6 +1,5 @@
 ---
 title: Demo
-lang: sv
 layout: default
 navi_dark: true
 navi_absolute: true
