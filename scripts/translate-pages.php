@@ -24,7 +24,7 @@ $multiLanguagePaths = [
         'permalink' => '/:language/:original',
         'remove' => ['redirect_from'],
         'overwrite' => true,
-        'exclude_existing' => ['de/privacy-policy.md', 'de/site-notice.md', 'de/terms-cloud.md', 'de/terms-gdpr.md', 'de/terms-plugins.md', 'de/trademark.md'],
+        'exclude_existing' => ['de/privacy-policy.md', 'de/site-notice.md', 'de/terms-cloud.md', 'de/terms-gdpr.md', 'de/terms-plugins.md', 'de/trademark-policy.md'],
         'with_content' => true,
         'skip_content' => ['index.html', 'blog.html', 'store.html'],
     ],
