@@ -8,7 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
 
       - name: "Update Kimai version in _config.yml"
         run: scripts/update-version-number.sh "${{ github.event.client_payload.kimai_version }}"
