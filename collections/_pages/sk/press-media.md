@@ -7,4 +7,3 @@ navi_absolute: true
 ---
  
 {% include pages/press-media.md %}
- 
