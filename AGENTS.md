@@ -30,6 +30,7 @@ Important: Jekyll is configured with `collections_dir: "collections"`, so conten
 - Keep changes focused and coherent so the repository owner can review and revert easily if needed.
 - Preserve backward compatibility when touching layouts, includes, or plugins unless the task clearly requires a behavior change.
 - Prefer content or template changes over plugin changes when both are reasonable, but modify `_plugins/` when that is the correct fix.
+- When renaming or moving files and directories, also use `git mv` to keep the change history
 
 ## Generated And Dependency Directories
 
@@ -53,7 +54,7 @@ There is no mandatory verification step for content-only edits. Full builds are 
 Preferred commands:
 
 - Local Jekyll development server: `scripts/start-dev.sh`
-- Direct Jekyll serve: `bundle exec jekyll serve -H 0.0.0.0 --incremental --config _config.yml,_config.dev.yml`
+- Direct Jekyll serve: `bundle exec jekyll serve -H 127.0.0.1 --incremental --config _config.yml,_config.dev.yml`
 - Frontend development build: `npm run dev`
 - Frontend production build: `npm run build`
 
