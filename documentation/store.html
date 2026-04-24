@@ -351,7 +351,7 @@
                     
                     <div class="list-group list-group-flush pb-3 mb-4 mx-n4">
                 
-                    <a href="/" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Kimai Home</a>
+                    <a href="/en/" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Kimai Home</a>
                     <a href="/en/site-notice.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Site notice</a>
                     <a href="/en/privacy-policy.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Privacy policy</a>
                 </div>
@@ -374,7 +374,7 @@
             <div class="me-4">
                 <h1 class="pb-1">Publishing in the Store</h1>
                 
-                <p class="text-muted fs-lg mb-2">How to list your Kimai extension in the Marketplace</p>
+                <p class="text-muted fs-lg mb-2">How to list your Kimai plugin, app or client in the Marketplace</p>
                 
             </div>
             
@@ -389,114 +389,410 @@
             <div>
                 
                 <div id="documentation-content">
-                    <p>If you create a plugin or any other kind of software around Kimai, 
-which you want to see listed in the <a href="/store/">Store</a>, follow these short guidelines.</p>
+                    <p>If you built a plugin, mobile app, desktop client, or another integration around Kimai and want it listed in the 
+<a href="/en/store/">Store</a> or <a href="/en/integrations">Apps &amp; Integrations</a> page, 
+this guide explains the current repository structure.</p>
 
-<p>The website is generated with <a href="https://jekyllrb.com">Jekyll</a> and <a href="https://github.com/kimai/www.kimai.org">managed at GitHub</a>.
-It is translated to many languages, and there is a little more work required than just adding a markdown page. 
-But not much … and it just needs a couple of minutes! You’ll get help at GitHub if something doesn’t work.</p>
-
-<h2 id="adding-a-plugin">Adding a plugin</h2>
-
-<p>Let’s assume your developer prefix is <code class="language-plaintext highlighter-rouge">acme</code> and your item name is <code class="language-plaintext highlighter-rouge">foo</code>.</p>
+<p>Due to the multi-lingual structure of the website, its not enough to add just one store entry but it needs a few files:</p>
 
 <ol>
-  <li>Add your developer/company information to the <code class="language-plaintext highlighter-rouge">_data/developer.yml</code> file (see below <code class="language-plaintext highlighter-rouge">Developer information</code>):
-    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="na">acme</span><span class="pi">:</span>
-   <span class="na">name</span><span class="pi">:</span> <span class="s">Acme company</span>
-   <span class="na">username</span><span class="pi">:</span> <span class="s">acme</span>
-   <span class="na">photo</span><span class="pi">:</span>
-   <span class="na">profile</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#"</span>
-</code></pre></div>    </div>
-  </li>
-  <li>Create a store file definition at <code class="language-plaintext highlighter-rouge">_data/store/acme-foo.yml</code> for your item  (see below <code class="language-plaintext highlighter-rouge">Product information</code>):
-    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="na">developer</span><span class="pi">:</span> <span class="s">acme</span>
- <span class="na">icon</span><span class="pi">:</span> <span class="s">fas fa-home</span>
- <span class="na">price</span><span class="pi">:</span> <span class="m">0</span>
- <span class="na">bundle</span><span class="pi">:</span>
-     <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">FooBundle"</span>
-     <span class="na">clone</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://github.com/acme/foo.git"</span>
-     <span class="na">versions</span><span class="pi">:</span>
-         <span class="pi">-</span> <span class="pi">[</span> <span class="s2">"</span><span class="s">2.0"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">2.0"</span> <span class="pi">]</span>
-</code></pre></div>    </div>
-  </li>
-  <li>Copy and paste <code class="language-plaintext highlighter-rouge">_store/keleo-custom-content-bundle.md</code> to <code class="language-plaintext highlighter-rouge">_store/acme-foo.md</code> and change:
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> title: Foo
- type: plugin
-</code></pre></div>    </div>
-    <p>You also need to replace <code class="language-plaintext highlighter-rouge">{% include store/keleo-custom-content-bundle.md %}</code> with some introductory text for your new item.</p>
-  </li>
-  <li>Create a translation for your plugin in <code class="language-plaintext highlighter-rouge">_data/en/store.yaml</code>:
-    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="na">items</span><span class="pi">:</span>
-   <span class="na">acme-foo</span><span class="pi">:</span>
-       <span class="na">title</span><span class="pi">:</span> <span class="s">Foo — a cool plugin for Kimai</span>
-       <span class="na">intro</span><span class="pi">:</span> <span class="s">A longer introduction between approx. 100 and 180 character</span> 
-</code></pre></div>    </div>
-  </li>
+  <li>developer metadata</li>
+  <li>product metadata</li>
+  <li>one shared content partial (for all language versions)</li>
+  <li>one wrapper page per store locale (you only need to create the <code class="language-plaintext highlighter-rouge">en/</code> version)</li>
+  <li>translated title and intro texts (again, you only need <code class="language-plaintext highlighter-rouge">en/</code> but more are always better)</li>
+  <li>optional screenshots, compatibility data, and changelog files</li>
 </ol>
 
-<p>The translation of the store pages will be done by the Team after merging your content.</p>
+<p>If you follow the steps below and keep the same slug everywhere, the structure becomes straightforward.</p>
 
-<h2 id="developer-information">Developer information</h2>
+<h2 id="before-you-start">Before you start</h2>
 
-<p>The information about yourself or your company comes from the <a href="https://github.com/kimai/www.kimai.org/tree/main/_data/developer.yml">developer.yml</a> file.</p>
-
-<p>It starts by defining your company/developer ID and then adding the following keys:</p>
+<p>Pick two identifiers first:</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">name</code> - your company or personal name (<strong>mandatory</strong>)</li>
-  <li><code class="language-plaintext highlighter-rouge">description</code> - a short self-description in one sentence (<strong>mandatory</strong>)</li>
-  <li><code class="language-plaintext highlighter-rouge">image</code> - full URL to your company logo or avatar (<strong>mandatory</strong>)</li>
+  <li><code class="language-plaintext highlighter-rouge">Developer ID</code> - your company or personal ID in <code class="language-plaintext highlighter-rouge">_data/developer.yml</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Slug</code> - the Store item ID used in filenames, translation keys, and data files</li>
 </ul>
 
-<p>There are more keys available, especially to store contact information.</p>
+<p>Example:</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">homepage</code> - full URL to your website (optional)</li>
-  <li><code class="language-plaintext highlighter-rouge">github</code> - your GitHub organization or profile URL (optional)</li>
-  <li><code class="language-plaintext highlighter-rouge">twitter</code> - full URL to your twitter profile (optional)</li>
+  <li>Developer ID: <code class="language-plaintext highlighter-rouge">acme</code></li>
+  <li>Slug: <code class="language-plaintext highlighter-rouge">acme-foo</code> (should always include your developer ID as prefix)</li>
+  <li>In case its a Plugin, the bundle class: <code class="language-plaintext highlighter-rouge">FooBundle</code></li>
 </ul>
 
-<p>The ID should be built from the lowercased version of your name: use only alphabetical character and remove all special chars and spaces.</p>
+<p>Use the slug consistently in every place. Filename, translation key, include name, and store data file must match.</p>
 
-<p>Use one of the existing developer entries as example, copy &amp; paste and adapt to your needs:</p>
+<h2 id="what-a-store-entry-consists-of">What a Store entry consists of</h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kevinpapst:
-    name: Kevin Papst
-    description: Freelancer, PHP professional and Kimai core developer since 2007
-    image: https://avatars1.githubusercontent.com/u/533162?s=460&amp;v=4
-    homepage: https://www.kevinpapst.de
-    github: https://github.com/kevinpapst
-    twitter: https://twitter.com/keleo
+<p>For a typical plugin entry, you will usually touch these files:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">_data/developer.yml</code></li>
+  <li><code class="language-plaintext highlighter-rouge">_data/store/acme-foo.yml</code></li>
+  <li><code class="language-plaintext highlighter-rouge">_includes/store/acme-foo.md</code></li>
+  <li><code class="language-plaintext highlighter-rouge">collections/_store/en/acme-foo.md</code></li>
+  <li><code class="language-plaintext highlighter-rouge">_data/en/store.yml</code></li>
+</ul>
+
+<p>Optional files:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">collections/_store/&lt;locale&gt;/acme-foo.md</code> for additional locales (use <code class="language-plaintext highlighter-rouge">scripts/translate-pages.php</code> to generate all)</li>
+  <li><code class="language-plaintext highlighter-rouge">_data/&lt;locale&gt;/store.yml</code> for additional translations</li>
+  <li><code class="language-plaintext highlighter-rouge">_data/screenshots.yml</code></li>
+  <li><code class="language-plaintext highlighter-rouge">_data/store/releases/FooBundle.yaml</code></li>
+  <li><code class="language-plaintext highlighter-rouge">_includes/store/changelog/FooBundle.md</code></li>
+  <li>image files in <code class="language-plaintext highlighter-rouge">images/marketplace/</code></li>
+</ul>
+
+<h2 id="step-1-add-the-developer-entry">Step 1: Add the developer entry</h2>
+
+<p>Add yourself or your company to <code class="language-plaintext highlighter-rouge">_data/developer.yml</code>.</p>
+
+<p>Minimal example:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">acme</span><span class="pi">:</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s">Acme GmbH</span>
+    <span class="na">description</span><span class="pi">:</span> <span class="s">Kimai plugin and integration vendor</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">https://example.com/logo.webp</span>
+    <span class="na">homepage</span><span class="pi">:</span> <span class="s">https://example.com</span>
+    <span class="na">github</span><span class="pi">:</span> <span class="s">https://github.com/acme</span>
+    <span class="na">email</span><span class="pi">:</span> <span class="s">hello@example.com</span>
 </code></pre></div></div>
 
-<h2 id="product-information">Product information</h2>
-
-<p>Create a new markdown file in the <a href="https://github.com/kimai/www.kimai.org/tree/main/_store/">_store directory</a>, follow the filename pattern:
-<code class="language-plaintext highlighter-rouge">company-short-descriptive-name.md</code></p>
-
-<p>Within the Jekyll <a href="https://jekyllrb.com/docs/front-matter/">Front Matter</a> you have the following attributes available:</p>
+<p>Important notes:</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">name</code> - a name for your Store entry will be used in the list view and in the title of the detail screen (<strong>mandatory</strong>)</li>
-  <li><code class="language-plaintext highlighter-rouge">intro</code> - a descriptive sentence for this entry will be used in the detail screen (<strong>mandatory</strong>)</li>
-  <li><code class="language-plaintext highlighter-rouge">developer</code> - your company/developer ID (<strong>mandatory</strong>)</li>
-  <li><code class="language-plaintext highlighter-rouge">date</code> - date of the last release (<strong>mandatory</strong>)</li>
-  <li><code class="language-plaintext highlighter-rouge">image</code> - product image (optional)</li>
-  <li><code class="language-plaintext highlighter-rouge">icon</code> - fontawesome icon class (optional, but should be given when no image is supplied - a fallback icon will be used if not given)</li>
-  <li><code class="language-plaintext highlighter-rouge">price</code> - the item price (optional, if not given explain pricing structure in the full-text)</li>
-  <li><code class="language-plaintext highlighter-rouge">version</code> - last release version (optional)</li>
-  <li><code class="language-plaintext highlighter-rouge">download</code> - full URL to the download if available (optional)</li>
-  <li><code class="language-plaintext highlighter-rouge">documentation</code> - slug to your (optional) documentation page</li>
-  <li><code class="language-plaintext highlighter-rouge">github</code> - full URL to the GitHub project (optional)</li>
-  <li><code class="language-plaintext highlighter-rouge">screenshot</code> - full URL to an image / screenshot (optional)</li>
-  <li><code class="language-plaintext highlighter-rouge">new</code> - indicates that the Store item is new, represents a visible state in the shop (set to <code class="language-plaintext highlighter-rouge">true</code> - this will be removed after a while) (optional)</li>
-  <li><code class="language-plaintext highlighter-rouge">featured</code> - a boolean indicating if this item will be featured in the Store (decision is done by the project maintainer)</li>
-  <li><code class="language-plaintext highlighter-rouge">features</code> - array with up to 6 features (short description with approx. 5 words each, currently only shown in the list view if <code class="language-plaintext highlighter-rouge">featured</code> is <code class="language-plaintext highlighter-rouge">true</code>) (optional)</li>
-  <li><code class="language-plaintext highlighter-rouge">tags</code> - array with up to 4 tag, try to stay in the range of existing tags if applicable (optional)</li>
+  <li><code class="language-plaintext highlighter-rouge">name</code>, <code class="language-plaintext highlighter-rouge">description</code>, and <code class="language-plaintext highlighter-rouge">image</code> should be treated as required for Store entries</li>
+  <li><code class="language-plaintext highlighter-rouge">image</code> can be a local image path like <code class="language-plaintext highlighter-rouge">/images/...</code> or a full remote URL</li>
+  <li><code class="language-plaintext highlighter-rouge">homepage</code>, <code class="language-plaintext highlighter-rouge">github</code>, <code class="language-plaintext highlighter-rouge">email</code>, <code class="language-plaintext highlighter-rouge">twitter</code>, <code class="language-plaintext highlighter-rouge">mastodon</code>, and <code class="language-plaintext highlighter-rouge">youtube</code> are optional</li>
+  <li>paid items can also define <code class="language-plaintext highlighter-rouge">purchase_details</code>, but that is optional and mainly used for the FAQ section on the detail page</li>
 </ul>
 
-<p>A full example can be seen in the file <a href="https://github.com/kimai/www.kimai.org/tree/main/_store/keleo-css-custom-bundle.md">keleo-css-custom-bundle.md</a>.</p>
+<h2 id="step-2-add-the-product-metadata">Step 2: Add the product metadata</h2>
+
+<p>Create <code class="language-plaintext highlighter-rouge">_data/store/acme-foo.yml</code>.</p>
+
+<p>This file controls pricing, buttons, screenshots, documentation links, plugin installation tabs, and badges.</p>
+
+<p>Example for a plugin:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">developer</span><span class="pi">:</span> <span class="s">acme</span>
+<span class="na">icon</span><span class="pi">:</span> <span class="s">fas fa-puzzle-piece</span>
+<span class="na">price</span><span class="pi">:</span> <span class="m">0</span>
+<span class="na">documentation</span><span class="pi">:</span> <span class="s">plugin-foo</span>
+<span class="na">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">plugin</span><span class="pi">]</span>
+<span class="na">bundle</span><span class="pi">:</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">FooBundle"</span>
+    <span class="na">clone</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://github.com/acme/FooBundle.git"</span>
+</code></pre></div></div>
+
+<p>Example for a paid plugin:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">developer</span><span class="pi">:</span> <span class="s">acme</span>
+<span class="na">icon</span><span class="pi">:</span> <span class="s">fas fa-puzzle-piece</span>
+<span class="na">subscription</span><span class="pi">:</span> <span class="s">49 €</span>
+<span class="na">shop</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://example.com/buy/foo"</span>
+<span class="na">documentation</span><span class="pi">:</span> <span class="s">plugin-foo</span>
+<span class="na">changelog</span><span class="pi">:</span> <span class="kc">true</span>
+<span class="na">demo</span><span class="pi">:</span> <span class="kc">true</span>
+<span class="na">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">plugin</span><span class="pi">,</span> <span class="nv">cloud</span><span class="pi">]</span>
+<span class="na">bundle</span><span class="pi">:</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">FooBundle"</span>
+</code></pre></div></div>
+
+<h3 id="common-keys-in-_datastoreslugyml">Common keys in <code class="language-plaintext highlighter-rouge">_data/store/&lt;slug&gt;.yml</code></h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">developer</code> - your developer ID from <code class="language-plaintext highlighter-rouge">_data/developer.yml</code></li>
+  <li><code class="language-plaintext highlighter-rouge">icon</code> - icon class shown in the listing and fallback areas</li>
+  <li><code class="language-plaintext highlighter-rouge">tags</code> - badges such as <code class="language-plaintext highlighter-rouge">plugin</code>, <code class="language-plaintext highlighter-rouge">app</code>, <code class="language-plaintext highlighter-rouge">desktop</code>, <code class="language-plaintext highlighter-rouge">client</code>, <code class="language-plaintext highlighter-rouge">cloud</code>, <code class="language-plaintext highlighter-rouge">featured</code></li>
+  <li><code class="language-plaintext highlighter-rouge">price</code> - one-time price, or <code class="language-plaintext highlighter-rouge">0</code> for free items</li>
+  <li><code class="language-plaintext highlighter-rouge">subscription</code> - recurring price label like <code class="language-plaintext highlighter-rouge">49 €</code></li>
+  <li><code class="language-plaintext highlighter-rouge">subscription_period</code> - optional. default: annual payment, allowed values: <code class="language-plaintext highlighter-rouge">month</code></li>
+  <li><code class="language-plaintext highlighter-rouge">shop</code> - checkout URL for paid items</li>
+  <li><code class="language-plaintext highlighter-rouge">download</code> - download URL for free downloads</li>
+  <li><code class="language-plaintext highlighter-rouge">github</code> - repository URL; if no explicit <code class="language-plaintext highlighter-rouge">download</code> exists, the page links to GitHub releases</li>
+  <li><code class="language-plaintext highlighter-rouge">email</code> - contact fallback if there is no direct download or checkout</li>
+  <li><code class="language-plaintext highlighter-rouge">play-store</code> - Android store link</li>
+  <li><code class="language-plaintext highlighter-rouge">app-store</code> - Apple App Store link</li>
+  <li><code class="language-plaintext highlighter-rouge">documentation</code> - slug of a documentation page under <code class="language-plaintext highlighter-rouge">collections/_documentation/</code></li>
+  <li><code class="language-plaintext highlighter-rouge">demo</code> - set to <code class="language-plaintext highlighter-rouge">true</code> to show the demo tab</li>
+  <li><code class="language-plaintext highlighter-rouge">changelog</code> - set to <code class="language-plaintext highlighter-rouge">true</code> to show a changelog tab</li>
+  <li><code class="language-plaintext highlighter-rouge">screenshots</code> - screenshot IDs from <code class="language-plaintext highlighter-rouge">_data/screenshots.yml</code></li>
+  <li><code class="language-plaintext highlighter-rouge">screenshot</code> - direct image URLs, usually only used for simple cases</li>
+  <li><code class="language-plaintext highlighter-rouge">new</code> - legacy field that may be used for temporary highlighting</li>
+</ul>
+
+<h3 id="plugin-specific-bundle-block">Plugin-specific <code class="language-plaintext highlighter-rouge">bundle</code> block</h3>
+
+<p>If your item is a Kimai plugin and should show installation instructions, add a <code class="language-plaintext highlighter-rouge">bundle</code> section:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">bundle</span><span class="pi">:</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">FooBundle"</span>
+    <span class="na">clone</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://github.com/acme/FooBundle.git"</span>
+    <span class="na">command</span><span class="pi">:</span> <span class="s2">"</span><span class="s">kimai:bundle:foo:install"</span>
+    <span class="na">assets</span><span class="pi">:</span> <span class="kc">true</span>
+</code></pre></div></div>
+
+<p>Available keys:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">name</code> - bundle directory and class name, for example <code class="language-plaintext highlighter-rouge">FooBundle</code></li>
+  <li><code class="language-plaintext highlighter-rouge">clone</code> - optional Git clone URL shown in the installation tab</li>
+  <li><code class="language-plaintext highlighter-rouge">command</code> - optional install or migration command shown in the installation tab</li>
+  <li><code class="language-plaintext highlighter-rouge">assets</code> - set to <code class="language-plaintext highlighter-rouge">true</code> when <code class="language-plaintext highlighter-rouge">bin/console assets:install</code> is required</li>
+</ul>
+
+<p>Important:</p>
+
+<ul>
+  <li>compatibility versions are no longer stored here</li>
+  <li>do not put <code class="language-plaintext highlighter-rouge">title</code> or <code class="language-plaintext highlighter-rouge">intro</code> into this file, they belong in the locale translation files</li>
+  <li>the old <code class="language-plaintext highlighter-rouge">bundle.versions</code> structure is obsolete</li>
+  <li>legacy top-level flags like <code class="language-plaintext highlighter-rouge">cloud</code> should not be used for new entries; use badges in <code class="language-plaintext highlighter-rouge">tags</code> instead</li>
+</ul>
+
+<h2 id="step-3-add-the-shared-content-partial">Step 3: Add the shared content partial</h2>
+
+<p>Create <code class="language-plaintext highlighter-rouge">_includes/store/acme-foo.md</code>.</p>
+
+<p>This file contains the actual Store description and is reused by every locale wrapper page.</p>
+
+<p>Minimal example:</p>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FooBundle adds feature X, Y, and Z to Kimai.
+
+<span class="gu">## Features</span>
+<span class="p">
+-</span> First important feature
+<span class="p">-</span> Second important feature
+<span class="p">-</span> Third important feature
+</code></pre></div></div>
+
+<p>If your item already has a dedicated plugin documentation page, the Store description can stay short and link to that page.</p>
+
+<h2 id="step-4-add-the-store-page-wrapper">Step 4: Add the Store page wrapper</h2>
+
+<p>Create the English wrapper page at <code class="language-plaintext highlighter-rouge">collections/_store/en/acme-foo.md</code>.</p>
+
+<p>Example:</p>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">Foo</span>
+<span class="na">type</span><span class="pi">:</span> <span class="s">plugin</span>
+<span class="nn">---</span>
+
+{% include store/acme-foo.md %}
+</code></pre></div></div>
+
+<p>The wrapper page is intentionally tiny.</p>
+
+<p>The frontmatter now only contains:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">title</code> - mostly a fallback title</li>
+  <li><code class="language-plaintext highlighter-rouge">type</code> - controls where the item appears</li>
+</ul>
+
+<p>Current <code class="language-plaintext highlighter-rouge">type</code> values used in the repository:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">plugin</code> - normal plugin listing</li>
+  <li><code class="language-plaintext highlighter-rouge">featured</code> - featured plugin listing on the main store page</li>
+  <li><code class="language-plaintext highlighter-rouge">app</code> - mobile apps</li>
+  <li><code class="language-plaintext highlighter-rouge">desktop</code> - desktop applications</li>
+  <li><code class="language-plaintext highlighter-rouge">client</code> - other clients and integrations</li>
+</ul>
+
+<p>If you are unsure, use <code class="language-plaintext highlighter-rouge">plugin</code> for Kimai plugins.</p>
+
+<p>Important:</p>
+
+<ul>
+  <li>featured placement is currently controlled by <code class="language-plaintext highlighter-rouge">type: featured</code></li>
+  <li>a <code class="language-plaintext highlighter-rouge">featured: true</code> flag inside <code class="language-plaintext highlighter-rouge">_data/store/&lt;slug&gt;.yml</code> is not enough on its own</li>
+</ul>
+
+<h2 id="step-5-add-translated-list-texts">Step 5: Add translated list texts</h2>
+
+<p>The title and short intro shown in listings and headers come from <code class="language-plaintext highlighter-rouge">_data/&lt;locale&gt;/store.yml</code>, not from the markdown frontmatter.</p>
+
+<p>At minimum, add the English entry to <code class="language-plaintext highlighter-rouge">_data/en/store.yml</code>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">items</span><span class="pi">:</span>
+    <span class="na">acme-foo</span><span class="pi">:</span>
+        <span class="na">title</span><span class="pi">:</span> <span class="s">Foo</span>
+        <span class="na">intro</span><span class="pi">:</span> <span class="s">Short summary of your item in one sentence.</span>
+</code></pre></div></div>
+
+<p>If you also want the item to show up with localized text in German, add the same key to <code class="language-plaintext highlighter-rouge">_data/de/store.yml</code>.</p>
+
+<p>Current repository reality:</p>
+
+<ul>
+  <li>Store translation files exist for many locales</li>
+  <li>every Store locale currently also has its own wrapper page under <code class="language-plaintext highlighter-rouge">collections/_store/&lt;locale&gt;/</code></li>
+  <li>for external contributors, English is the minimum sensible starting point</li>
+</ul>
+
+<p>If you want your item to appear in additional locales immediately, create the matching wrapper pages and add the translated <code class="language-plaintext highlighter-rouge">title</code> and <code class="language-plaintext highlighter-rouge">intro</code> to the corresponding <code class="language-plaintext highlighter-rouge">_data/&lt;locale&gt;/store.yml</code> files.</p>
+
+<h2 id="step-6-add-locale-wrapper-pages-when-needed">Step 6: Add locale wrapper pages when needed</h2>
+
+<p>All existing Store items currently have wrapper pages for all active Store locales.</p>
+
+<p>Each wrapper page looks the same except for the path, for example:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">collections/_store/de/acme-foo.md</code></li>
+  <li><code class="language-plaintext highlighter-rouge">collections/_store/fr/acme-foo.md</code></li>
+  <li><code class="language-plaintext highlighter-rouge">collections/_store/zh_Hans/acme-foo.md</code></li>
+</ul>
+
+<p>The content can stay identical:</p>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">Foo</span>
+<span class="na">type</span><span class="pi">:</span> <span class="s">plugin</span>
+<span class="nn">---</span>
+
+{% include store/acme-foo.md %}
+</code></pre></div></div>
+
+<p>The localized title and intro still come from <code class="language-plaintext highlighter-rouge">_data/&lt;locale&gt;/store.yml</code>.</p>
+
+<h2 id="step-7-add-screenshots">Step 7: Add screenshots</h2>
+
+<p>If your item has screenshots, there are two parts:</p>
+
+<ol>
+  <li>add image files, preferably in <code class="language-plaintext highlighter-rouge">images/marketplace/</code></li>
+  <li>register the screenshot IDs in <code class="language-plaintext highlighter-rouge">_data/screenshots.yml</code></li>
+</ol>
+
+<p>Example:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">acme-foo0</span><span class="pi">:</span>
+    <span class="na">src</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/images/marketplace/acme/foo-0.webp"</span>
+<span class="na">acme-foo1</span><span class="pi">:</span>
+    <span class="na">src</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/images/marketplace/acme/foo-1.webp"</span>
+</code></pre></div></div>
+
+<p>Then reference them in <code class="language-plaintext highlighter-rouge">_data/store/acme-foo.yml</code>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">screenshots</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">acme-foo0</span>
+    <span class="pi">-</span> <span class="s">acme-foo1</span>
+</code></pre></div></div>
+
+<p>Optional localized captions are stored in <code class="language-plaintext highlighter-rouge">_data/&lt;locale&gt;/store.yml</code>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">screenshots</span><span class="pi">:</span>
+    <span class="na">acme-foo0</span><span class="pi">:</span>
+        <span class="na">description</span><span class="pi">:</span> <span class="s">Main dashboard of FooBundle</span>
+    <span class="na">acme-foo1</span><span class="pi">:</span>
+        <span class="na">description</span><span class="pi">:</span> <span class="s">Configuration screen</span>
+</code></pre></div></div>
+
+<h2 id="step-8-add-compatibility-and-changelog-data">Step 8: Add compatibility and changelog data</h2>
+
+<p>If your plugin should display compatibility information or a changelog tab, add release metadata.</p>
+
+<p>Compatibility file:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">_data/store/releases/FooBundle.yaml</code></li>
+</ul>
+
+<p>Example:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">versions</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="pi">[</span><span class="nv">1.2.0</span><span class="pi">,</span> <span class="nv">2.54.0</span><span class="pi">]</span>
+    <span class="pi">-</span> <span class="pi">[</span><span class="nv">1.1.0</span><span class="pi">,</span> <span class="nv">2.50.0</span><span class="pi">]</span>
+</code></pre></div></div>
+
+<p>Optional changelog include:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">_includes/store/changelog/FooBundle.md</code></li>
+</ul>
+
+<p>Then enable the tab in <code class="language-plaintext highlighter-rouge">_data/store/acme-foo.yml</code>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">changelog</span><span class="pi">:</span> <span class="kc">true</span>
+<span class="na">bundle</span><span class="pi">:</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">FooBundle"</span>
+</code></pre></div></div>
+
+<p>Notes:</p>
+
+<ul>
+  <li>the old <code class="language-plaintext highlighter-rouge">bundle.versions</code> key is no longer used</li>
+  <li>compatibility data lives in <code class="language-plaintext highlighter-rouge">_data/store/releases/</code></li>
+  <li>changelog content lives in <code class="language-plaintext highlighter-rouge">_includes/store/changelog/</code></li>
+  <li>some Kimai-maintained plugins update this data through <code class="language-plaintext highlighter-rouge">scripts/update-bundles.php</code></li>
+</ul>
+
+<h2 id="full-example">Full example</h2>
+
+<p>For a new free plugin called <code class="language-plaintext highlighter-rouge">acme-foo</code>, the minimal useful file set is:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>_data/developer.yml
+_data/store/acme-foo.yml
+_data/en/store.yml
+_includes/store/acme-foo.md
+collections/_store/en/acme-foo.md
+</code></pre></div></div>
+
+<p>A more complete Store entry usually also includes:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>collections/_store/de/acme-foo.md
+_data/de/store.yml
+_data/screenshots.yml
+images/marketplace/acme/foo-0.webp
+_data/store/releases/FooBundle.yaml
+_includes/store/changelog/FooBundle.md
+</code></pre></div></div>
+
+<h2 id="what-changed-compared-to-the-old-workflow">What changed compared to the old workflow</h2>
+
+<p>The following parts of older instructions are no longer correct:</p>
+
+<ul>
+  <li>product metadata is not stored in markdown frontmatter anymore</li>
+  <li>wrapper pages now only contain <code class="language-plaintext highlighter-rouge">title</code>, <code class="language-plaintext highlighter-rouge">type</code>, and the include call</li>
+  <li><code class="language-plaintext highlighter-rouge">title</code> and <code class="language-plaintext highlighter-rouge">intro</code> come from <code class="language-plaintext highlighter-rouge">_data/&lt;locale&gt;/store.yml</code></li>
+  <li>compatibility versions no longer belong in <code class="language-plaintext highlighter-rouge">_data/store/&lt;slug&gt;.yml</code></li>
+  <li><code class="language-plaintext highlighter-rouge">bundle.versions</code> has been replaced by <code class="language-plaintext highlighter-rouge">_data/store/releases/&lt;Bundle&gt;.yaml</code></li>
+  <li>screenshots are now typically managed via <code class="language-plaintext highlighter-rouge">_data/screenshots.yml</code></li>
+  <li>one shared include in <code class="language-plaintext highlighter-rouge">_includes/store/&lt;slug&gt;.md</code> is the central place for the long description</li>
+  <li>Store entries are now spread across data files, include files, locale files, and optional release metadata</li>
+</ul>
+
+<h2 id="tips-for-first-time-contributors">Tips for first-time contributors</h2>
+
+<ul>
+  <li>start with English first</li>
+  <li>copy an existing item with a similar type, then rename all occurrences of the slug</li>
+  <li>keep the same slug everywhere</li>
+  <li>prefer <code class="language-plaintext highlighter-rouge">webp</code> for new local images</li>
+  <li>if you add a plugin, include the <code class="language-plaintext highlighter-rouge">bundle.name</code> so the installation tab can be generated</li>
+  <li>if you do not want to add translations for all locales yourself, mention that in the pull request</li>
+</ul>
+
+<p>If you are unsure which existing entry is closest to your case, use one of these as a template:</p>
+
+<ul>
+  <li>free plugin: <code class="language-plaintext highlighter-rouge">keleo-importer-bundle</code></li>
+  <li>paid plugin: <code class="language-plaintext highlighter-rouge">task-management-bundle</code></li>
+  <li>desktop client: <code class="language-plaintext highlighter-rouge">owlysk-codetimer</code></li>
+  <li>mobile app: <code class="language-plaintext highlighter-rouge">drthomasentner-timai</code></li>
+  <li>saas: <code class="language-plaintext highlighter-rouge">kloudshift-klockshift</code></li>
+</ul>
 
                 </div>
                 
@@ -511,7 +807,7 @@ But not much … and it just needs a couple of minutes! You’ll get help at Git
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#adding-a-plugin" class="nav-link">Adding a plugin</a></li><li class="nav-item"><a href="#developer-information" class="nav-link">Developer information</a></li><li class="nav-item"><a href="#product-information" class="nav-link">Product information</a></li></ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#before-you-start" class="nav-link">Before you start</a></li><li class="nav-item"><a href="#what-a-store-entry-consists-of" class="nav-link">What a Store entry consists of</a></li><li class="nav-item"><a href="#step-1-add-the-developer-entry" class="nav-link">Step 1: Add the developer entry</a></li><li class="nav-item"><a href="#step-2-add-the-product-metadata" class="nav-link">Step 2: Add the product metadata</a><ul><li class="nav-item"><a href="#common-keys-in-_datastoreslugyml" class="nav-link">Common keys in _data/store/&lt;slug&gt;.yml</a></li><li class="nav-item"><a href="#plugin-specific-bundle-block" class="nav-link">Plugin-specific bundle block</a></li></ul></li><li class="nav-item"><a href="#step-3-add-the-shared-content-partial" class="nav-link">Step 3: Add the shared content partial</a></li><li class="nav-item"><a href="#step-4-add-the-store-page-wrapper" class="nav-link">Step 4: Add the Store page wrapper</a></li><li class="nav-item"><a href="#step-5-add-translated-list-texts" class="nav-link">Step 5: Add translated list texts</a></li><li class="nav-item"><a href="#step-6-add-locale-wrapper-pages-when-needed" class="nav-link">Step 6: Add locale wrapper pages when needed</a></li><li class="nav-item"><a href="#step-7-add-screenshots" class="nav-link">Step 7: Add screenshots</a></li><li class="nav-item"><a href="#step-8-add-compatibility-and-changelog-data" class="nav-link">Step 8: Add compatibility and changelog data</a></li><li class="nav-item"><a href="#full-example" class="nav-link">Full example</a></li><li class="nav-item"><a href="#what-changed-compared-to-the-old-workflow" class="nav-link">What changed compared to the old workflow</a></li><li class="nav-item"><a href="#tips-for-first-time-contributors" class="nav-link">Tips for first-time contributors</a></li></ul>
         
     </aside>
 
