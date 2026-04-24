@@ -31,6 +31,10 @@ jobs:
           ruby-version: '3.1' # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           cache-version: 0 # Increment this number if you need to re-download cached gems
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
       - name: Build with Jekyll
         run: bundle exec jekyll build
         env:
@@ -55,6 +59,8 @@ jobs:
           find _site/zh_Hant -type f -exec sed -i'' 's/\/zh_Hant\//\//g' {} +
           find _site/zh_Hant -type f -exec sed -i'' 's/href="\/documentation\//href="https:\/\/www.kimai.org\/documentation\//g' {} +
           find _site/zh_Hant -type f -exec sed -i'' 's/href="\/en\//href="https:\/\/www.kimai.org\/en\//g' {} +
+      - name: Build documentation search index
+        run: bash scripts/build-search-index.sh _site
       - name: Commit to branch
         uses: JamesIves/github-pages-deploy-action@v4
         with:

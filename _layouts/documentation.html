@@ -37,8 +37,8 @@ layout: base
             </a>
             <span class="badge bg-warning">{{ chapter_title }}</span>
         </div>
-        <div class="d-flex align-items-center w-100">
-            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 6.75rem;">
+        <div class="docs-header-nav d-flex align-items-center w-100" style="padding-left: 6.75rem;">
+            <ul class="docs-primary-nav navbar-nav d-none d-lg-flex">
                 {% for group in site.data.menu-documentation %}
                     {% assign docs_config = group[1] %}
                     {% assign docs_page = site.documentation | where: "slug", docs_config.slug | first %}
@@ -50,6 +50,29 @@ layout: base
                     </li>
                 {% endfor %}
             </ul>
+            <div class="docs-toolbar d-none d-xl-flex" data-pagefind-ignore="all">
+                <div class="docs-search-panel" data-doc-search>
+                    <label class="form-label visually-hidden" for="documentation-search">Search documentation</label>
+                    <input
+                        id="documentation-search"
+                        class="form-control"
+                        type="search"
+                        autocomplete="off"
+                        spellcheck="false"
+                        placeholder="Search the documentation"
+                        aria-describedby="documentation-search-status"
+                        data-doc-search-input
+                    >
+                    <div
+                        id="documentation-search-results"
+                        class="docs-search-results card border-0 shadow-sm"
+                        role="listbox"
+                        aria-label="Documentation search results"
+                        data-doc-search-results
+                    ></div>
+                    <div id="documentation-search-status" class="visually-hidden" aria-live="polite" data-doc-search-status></div>
+                </div>
+            </div>
             <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -126,53 +149,60 @@ layout: base
     });
 </script>
 <main class="docs-container">
-    <div class="container-fluid px-xxl-5 px-lg-4 pt-4 pt-lg-5 pb-2 pb-lg-4">
-
-        <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 mb-n3">
-            <div class="me-4">
-                <h1 class="pb-1">{{ page.title }}</h1>
-                {% if page.description != nil %}
-                <p class="text-muted fs-lg mb-2">{{ page.description }}</p>
-                {% endif %}
-            </div>
-            {% include docs-version-chooser.html %}
-        </div>
-
-        <div class="markdown py-5 ps-lg-2 ps-xxl-0">
-            <div>
-                {% comment %} THE id "documentation-content" MAY NEVER BE DELETED, IT IS USED IN KIMAI TO REMOTE FETCH THE ARTICLE {% endcomment %}
-                <div id="documentation-content">
-                    {{ content }}
+    <div class="container-fluid px-xxl-3 px-lg-2 pt-4 pt-lg-5 pb-2 pb-lg-4">
+        <div class="docs-layout">
+            <div class="docs-article"{% if page.collection == 'documentation' and page.search != false %} data-pagefind-body{% endif %}>
+                <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 mb-n3 gap-4">
+                    <div class="me-4">
+                        <h1 class="pb-1" data-pagefind-meta="title" data-pagefind-weight="10.0">{{ page.title }}</h1>
+                        {% if page.description != nil %}
+                        <p class="text-muted fs-lg mb-2" data-pagefind-meta="description">{{ page.description }}</p>
+                        {% endif %}
+                    </div>
+                    <div class="d-none d-lg-flex">
+                    {% include docs-version-chooser.html %}
+                    </div>
                 </div>
-                {% comment %} THE id "documentation-content" MAY NEVER BE DELETED, IT IS USED IN KIMAI TO REMOTE FETCH THE ARTICLE {% endcomment %}
 
-                {% if page.related != nil %}
-                <h2 id="related-articles" class="fs-4 mt-5">Related articles</h2>
-                <ul>
-                    {% for p in page.related %}
-                    {% assign doc = site.documentation | where: "slug", p | first %}
-                    <li>
-                        <a href="{{ doc.url }}">{{ doc.title }}</a> &ndash; {{ doc.description }}
-                    </li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
+                <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+                    <div>
+                        {% comment %} THE id "documentation-content" MAY NEVER BE DELETED, IT IS USED IN KIMAI TO REMOTE FETCH THE ARTICLE {% endcomment %}
+                        <div id="documentation-content">
+                            {{ content }}
+                        </div>
+                        {% comment %} THE id "documentation-content" MAY NEVER BE DELETED, IT IS USED IN KIMAI TO REMOTE FETCH THE ARTICLE {% endcomment %}
+
+                        {% if page.related != nil %}
+                        <div data-pagefind-ignore="all">
+                            <h2 id="related-articles" class="fs-4 mt-5">Related articles</h2>
+                            <ul>
+                                {% for p in page.related %}
+                                {% assign doc = site.documentation | where: "slug", p | first %}
+                                <li>
+                                    <a href="{{ doc.url }}">{{ doc.title }}</a> &ndash; {{ doc.description }}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
             </div>
-        </div>
 
+            {% if page.toc == nil or page.toc == true %}
+                <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
+                    <h3 class="fs-lg mt-2">Jump to</h3>
+                    {% include toc.html html=content sanitize=true h_min=2 h_max=3 class="nav" id="jumpToNav" item_class="nav-item" anchor_class="nav-link" %}
+                    {% if page.related != nil %}
+                    <ul class="nav">
+                        <li>
+                            <a href="#related-articles" class="nav-link">Related articles</a>
+                        </li>
+                    </ul>
+                    {% endif %}
+                </aside>
+            {% endif %}
+        </div>
     </div>
 </main>
-
-{% if page.toc == nil or page.toc == true %}
-    <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
-        <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        {% include toc.html html=content sanitize=true h_min=2 h_max=3 class="nav" id="jumpToNav" item_class="nav-item" anchor_class="nav-link" %}
-        {% if page.related != nil %}
-        <ul class="nav">
-            <li>
-                <a href="#related-articles" class="nav-link">Related articles</a>
-            </li>
-        </ul>
-        {% endif %}
-    </aside>
-{% endif %}
+<script type="module" src="/assets/js/documentation-search.js?v1"></script>
