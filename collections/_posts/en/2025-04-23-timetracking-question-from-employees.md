@@ -27,7 +27,7 @@ The details required can vary by company, but the goal is always to capture wher
 
 ### Are timesheets just for tracking attendance?
 
-Not at all! While [timesheets]({% link _keywords/en/timesheet.md %}) in particular and time tracking in general do help track attendance, their real value is in showing how work hours are distributed across projects, clients, or departments. 
+Not at all! While [timesheets]({% link _keywords/en/open-source-timesheet.md %}) in particular and time tracking in general do help track attendance, their real value is in showing how work hours are distributed across projects, clients, or departments. 
 
 This helps you see which projects are taking up the most time, which clients are most demanding, and where you might need to adjust resources. 
 In short: timesheets are about smarter business decisions, not just clock-watching.
@@ -42,7 +42,7 @@ prevent it? Use reliable time tracking software. Regular reviews and a culture o
 Kimai has several protection features, like:
 - punch-in and out mode: prevent that users enter times, but can only start and stop timesheets
 - rules to prevent future timesheets: users cannot track when they are actively working, but not upfront
-- a separate Kiosk plugin, which allows separate hardware devices to act as [time-tracker]({% link _keywords/en/time-tracker.md %}) via Barcode or NFC tokens
+- a separate Kiosk plugin, which allows separate hardware devices to act as [time-tracker]({% link _keywords/en/open-source-time-tracker.md %}) via Barcode or NFC tokens
 
 Remember at the same time: trust is good!
 
