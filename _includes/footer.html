@@ -84,7 +84,7 @@
                                 <li class="nav-item">
                                     {% include link-translated-menu.html item="alternatives" language=page.lang class="nav-link fs-sm fw-medium px-0 py-1" %}
                                 </li>
-                                {% assign tools = site.alternative | where: "lang", "en" | where: "feature", true | sort: "name" %}
+                                {% assign tools = site.alternatives | where: "lang", "en" | where: "feature", true | sort: "name" %}
                                 {% assign compareWith = site.data[page.lang].translation.comparison.compare_with %}
                                 {% assign alternativeTo = site.data[page.lang].translation.comparison.alternative %}
                                 {% for tool in tools %}

@@ -183,9 +183,9 @@ collections:
     store:
         output: true
         permalink: "/:lang/store/:title.html"
-    alternative:
+    alternatives:
         output: true
-        permalink: "/:lang/:title-alternative"
+        permalink: "/:lang/alternatives/:title"
     keywords:
         output: true
         permalink: ":lang/open-source-:title"
@@ -254,7 +254,7 @@ defaults:
     -
         scope:
             path: ""
-            type: alternative
+            type: alternatives
         values:
             layout: alternative
     -
