@@ -61,7 +61,7 @@ Activities can have individual colors for better visual identification. The colo
 
 ### Budgets
 
-{% include snippets/budgets.md permission="activity" %}
+{% include documentation/budgets.md permission="activity" %}
 
 ### Prices
 

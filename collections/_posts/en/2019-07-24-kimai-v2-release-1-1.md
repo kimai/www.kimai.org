@@ -7,7 +7,7 @@ tags: [on-premise]
 
 I'd like to publish new features more often, so lets see if I can keep on releasing quicker in the future.
 
-Since the last release I published the first [paid plugins]({% link _pages/store.html %}), which might be interesting for some companies.
+Since the last release I published the first [paid plugins]({% link _pages/{{ page.lang }}/store.html %}), which might be interesting for some companies.
 Maybe you want to support further Kimai development with a purchase?!
 
 You know [how to update]({%link _documentation/updates.md %}), right? And now enjoy the latest features 😄

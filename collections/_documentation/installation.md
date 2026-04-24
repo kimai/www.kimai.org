@@ -9,7 +9,7 @@ related:
   - webserver-configuration
 ---
 
-{% include snippets/self-hosting-warning.md %}
+{% include documentation/self-hosting-warning.md %}
 
 ## Server requirements
 
@@ -130,7 +130,7 @@ You have two choices:
 If you don't have the technical background for managing a server yourself and need to rely on a shared hosting package,
 it is better to stop hosting business critical software yourself!
 If you thought about switching to a managed server before (they are affordable these days)
-you can contact me, [I offer paid setup support]({% link _pages/support.html %}).
+you can contact me, [I offer paid setup support]({% link _pages/{{ page.lang }}/support.html %}).
 {% endalert %}
  
 ### Ansible

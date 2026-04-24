@@ -24,7 +24,7 @@ $multiLanguagePaths = [
         'permalink' => '/:language/:original',
         'remove' => ['redirect_from'],
         'overwrite' => true,
-        'exclude_existing' => ['de/privacy-policy.md', 'de/site-notice.md', 'de/terms-cloud.md', 'de/terms-gdpr.md', 'de/terms-plugins.md', 'de/trademark.md'],
+        'exclude_existing' => ['de/privacy-policy.md', 'de/site-notice.md', 'de/terms-cloud.md', 'de/terms-gdpr.md', 'de/terms-plugins.md', 'de/trademark-policy.md'],
         'with_content' => true,
         'skip_content' => ['index.html', 'blog.html', 'store.html'],
     ],
@@ -40,7 +40,6 @@ $multiLanguagePaths = [
     */
     '_store' => [
         'skip' => ['v1.md'],
-        'permalink' => '/:language/store/:basename',
         'remove' => ['redirect_from'],
         'overwrite' => true,
         'exclude_existing' => [],
@@ -52,7 +51,7 @@ $multiLanguagePaths = [
 foreach ($multiLanguagePaths as $path => $settings)
 {
     $basePath = $realpath . '/collections/' . $path;
-    $files = glob($basePath . '/*.{md,html}', GLOB_BRACE);
+    $files = glob($basePath . '/en/*.{md,html}', GLOB_BRACE);
     $includePath = str_replace('_', '', $path);
     $contentTarget = $realpath . '/_includes/' . $includePath;
     $createPermalink = array_key_exists('permalink', $settings);
@@ -153,7 +152,7 @@ foreach ($multiLanguagePaths as $path => $settings)
 }
 
 /*
-$basePath = realpath(__DIR__ . '/_store/');
+$basePath = realpath(__DIR__ . '/../collections/_store/en/');
 
 $english = [];
 foreach (glob($basePath . '/*.md', GLOB_BRACE) as $file) {

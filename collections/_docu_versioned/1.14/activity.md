@@ -36,7 +36,7 @@ If that is not defined as well, Kimai will fallback to the customer color and fi
 
 ## Budgets
 
-{% include snippets/budgets.md %}
+{% include documentation/budgets.md %}
 
 ## Visibility
  

@@ -47,7 +47,7 @@ layout: base
             </div>
             <div class="row align-items-center justify-content-center py-4 py-md-5 my-1 my-sm-3 my-md-0 my-xl-3">
                 <div class="row row-cols-1 row-cols-sm-2 g-4 pb-xl-3">
-                    {% assign tools = site.alternative | where_exp: "alt", "alt.lang == 'en'" | sort: slug %}
+                    {% assign tools = site.alternatives | where_exp: "alt", "alt.lang == 'en'" | sort: slug %}
                     {% for tool in tools %}
                     <div class="col text-{% cycle 'end', 'start' %}">
                         <a href="{{ tool.url }}" class="btn btn-outline-secondary btn-lg w-50">{{ tool.name }}</a>

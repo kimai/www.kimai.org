@@ -11,6 +11,6 @@ This bundle adds one new configuration to the "Invoice settings", which can be c
 screen or from the invoice screen directly.
 
 {% alert warning %}
-The [enhanced invoicing plugin]({% link _store/keleo-invoice-bundle.md %}) offers the same features and more. 
+The [enhanced invoicing plugin]({% link _store/{{ page.lang }}/invoice-bundle.md %}) offers the same features and more. 
 Do not mix these two plugins!
 {% endalert %}

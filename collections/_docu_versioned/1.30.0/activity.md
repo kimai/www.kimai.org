@@ -62,7 +62,7 @@ If that is not defined as well, Kimai will fall back to the customer color and f
 
 ### Budgets
 
-{% include snippets/budgets.md permission="activity" %} 
+{% include documentation/budgets.md permission="activity" %} 
 
 ### Rates
 

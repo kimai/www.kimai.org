@@ -1,6 +1,5 @@
 ---
 title: Demo
-lang: zh_Hant
 layout: default
 navi_dark: true
 navi_absolute: true

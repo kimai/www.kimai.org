@@ -53,7 +53,7 @@ Start and end-date are inclusive, so both dates will be included when filtering 
 
 ### Budgets
 
-{% include snippets/budgets.md permission="project" %} 
+{% include documentation/budgets.md permission="project" %} 
 
 ### Prices
 

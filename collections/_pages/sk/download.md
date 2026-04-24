@@ -1,6 +1,5 @@
 ---
 title: Download
-lang: sk
 permalink: /sk/download.html
 layout: download
 ---

@@ -26,7 +26,7 @@ This release is the result of over one year and more than 500 commits.
 Hundreds of hours went into Kimai core, the website & documentation, all plugins and so many other tasks around Kimai in general. 
 The details of core changes can be seen in [#2902](https://github.com/kimai/kimai/pull/2902).
 
-You can test the new version at the [Demo sites]({% link _pages/demo.md %}).
+You can test the new version at the [Demo sites]({% link _pages/{{ page.lang }}/demo.md %}).
 
 ## Detailed changelog
 
@@ -53,7 +53,7 @@ You can test the new version at the [Demo sites]({% link _pages/demo.md %}).
 - Configurable customer number format (formats very limited on purpose right now) - see #3373
 - Auto numbering for new customers
 - Link to timesheet export from project detail
-- Extracted importer logic to a [new importer bundle]({% link _store/keleo-importer-bundle.md %})
+- Extracted importer logic to a [new importer bundle]({% link _store/{{ page.lang }}/keleo-importer-bundle.md %})
 - Plugins need to be updated, most are not yet compatible
 
 **Notable code changes**
@@ -107,5 +107,5 @@ I know you have questions, I don't have all the answers yet. But as soon as I ha
 For now, I want to thank you all for your support and for using Kimai.
 And I am really looking forward to your feedback on the new version 🙈😁
 
-Oh, and did you notice: I added a newsletter form to the website (on the [News page]({% link _pages/blog.html %})). 
+Oh, and did you notice: I added a newsletter form to the website (on the [News page]({% link _pages/{{ page.lang }}/blog.html %})). 
 Please do me a favor and subscribe - I want to give this medium a try and test how well it works. 

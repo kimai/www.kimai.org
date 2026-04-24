@@ -1,6 +1,5 @@
 ---
 title: "Kimai Discount and Coupon Codes"
-permalink: /en/kimai-discount-codes
 centered: true
 ---
 

@@ -166,7 +166,7 @@ Failed to parse time string (14/04/2023 9:00) at position 0 (1): Unexpected char
 
 ## Grandtotal (Customer)
 
-There is a [plugin for Mac invoicing software Grandtotal]({% link _store/keleo-grandtotal-plugin-for-kimai.md %}), which adds support for Kimai.
+There is a [plugin for Mac invoicing software Grandtotal]({% link _store/{{ page.lang }}/grandtotal-plugin-for-kimai.md %}), which adds support for Kimai.
 
 In case your leading system for customers is Grandtotal, you can import customers from a Grandtotal CSV export into Kimai.
 Grandtotal calls CSV exports `Numbers` in the export screen.

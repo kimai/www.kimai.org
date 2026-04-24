@@ -182,13 +182,13 @@ collections:
         permalink: "/:path.html"
     store:
         output: true
-        permalink: "/store/:title.html"
-    alternative:
+        permalink: "/:lang/store/:title.html"
+    alternatives:
         output: true
-        permalink: "/:lang/:title-alternative"
+        permalink: "/:lang/alternatives/:title"
     keywords:
         output: true
-        permalink: ":lang/open-source-:title"
+        permalink: "/:lang/:title"
     landingpage:
         output: true
         permalink: "/:lang/:title"
@@ -216,26 +216,18 @@ defaults:
         values:
             layout: post
             author: kevinpapst
-            lang: en
-    -
-        scope:
-            path: "_posts/de/"
-        values:
-            lang: de
     -
         scope:
             path: ""
             type: pages
         values:
             layout: page
-            lang: en
     -
         scope:
             path: ""
             type: error
         values:
             layout: error
-            lang: en
             sitemap: false
             robots: noindex,follow
     -
@@ -259,45 +251,30 @@ defaults:
             type: store
         values:
             layout: store-item
-            lang: en
     -
         scope:
             path: ""
-            type: alternative
+            type: alternatives
         values:
             layout: alternative
-            lang: en
     -
         scope:
             path: ""
             type: keywords
         values:
             layout: keyword
-            lang: en
-    -
-        scope:
-            path: "_keywords/de/"
-        values:
-            lang: de
     -
         scope:
             path: ""
             type: landingpage
         values:
             layout: landingpage
-            lang: en
-    -
-        scope:
-            path: "_landingpage/de/"
-        values:
-            lang: de
     -
         scope:
             path: ""
             type: industries
         values:
             layout: industry
-            lang: en
     -
         scope:
             path: ""
@@ -321,24 +298,12 @@ defaults:
             type: stories
         values:
             layout: story
-            lang: en
-    -
-        scope:
-            path: "_stories/de/"
-        values:
-            lang: de
     -
         scope:
             path: ""
             type: blog_tags
         values:
             layout: blog-tags
-            lang: en
-    -
-        scope:
-            path: "_blog_tags/de/"
-        values:
-            lang: de
 
 markdown: kramdown
 kramdown:

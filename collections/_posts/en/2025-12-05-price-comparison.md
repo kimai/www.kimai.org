@@ -134,7 +134,6 @@ If you compare price, features, and flexibility, Kimai offers one of the stronge
 
 *Learn more about Kimai and compare it with other tools:*
 
-- [Kimai alternatives]({% link _pages/alternatives.html %})
-- [Kimai pricing]({% link _pages/pricing.md %})
-- [Quick demo access]({% link _pages/demo.md %})
-
+- [Kimai alternatives]({% link _pages/{{ page.lang }}/alternatives.html %})
+- [Kimai pricing]({% link _pages/{{ page.lang }}/pricing.md %})
+- [Quick demo access]({% link _pages/{{ page.lang }}/demo.md %})

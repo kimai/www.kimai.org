@@ -13,9 +13,9 @@ There have been 10 minor releases between the release [1.16]({% link _posts/en/2
 You should use the "watch feature" in the Github repository to be notified ASAP of these updates.
 
 In the meantime 3 new plugins were released:
-- [Translation]({% link _store/keleo-translation-bundle.md %}) - translate and/or change the labels of visible UI elements
-- [Custom content]({% link _store/keleo-custom-content-bundle.md %}) - allows adding custom CSS, Javascript, a global warning message and a new content page
-- [Invoice]({% link _store/keleo-invoice-bundle.md %}) - enhanced invoicing features, that should not be part of the core system
+- [Translation]({% link _store/{{ page.lang }}/translation-bundle.md %}) - translate and/or change the labels of visible UI elements
+- [Custom content]({% link _store/{{ page.lang }}/custom-content-bundle.md %}) - allows adding custom CSS, Javascript, a global warning message and a new content page
+- [Invoice]({% link _store/{{ page.lang }}/invoice-bundle.md %}) - enhanced invoicing features, that should not be part of the core system
 
 ### Attention before upgrading 
 

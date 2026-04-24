@@ -68,7 +68,7 @@ As you can only lock complete months, it is currently only possible to change th
 
 ## Manual bookings
 
-Attention: perform tests on a separate test account (or the [demo environment]({% link _pages/demo.md %})).
+Attention: perform tests on a separate test account (or the [demo environment]({% link _pages/{{ page.lang }}/demo.md %})).
 
 You cannot delete manual bookings, so if you accidentally added wrong values, simply create an opposite booking and add something like "compensation for test booking" in the description.
 

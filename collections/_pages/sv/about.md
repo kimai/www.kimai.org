@@ -1,6 +1,5 @@
 ---
 title: "About Kimai"
-lang: sv
 layout: default
 permalink: /sv/about.html
 ---

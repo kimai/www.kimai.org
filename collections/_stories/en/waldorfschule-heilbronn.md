@@ -83,7 +83,7 @@ The breakthrough came with practical experience:
 “*When staff realized that entering their times was just as easy – or even easier – than in Excel, and that they could do it from anywhere – phone or tracking terminals – their attitude gradually began to shift.*”
 
 A special highlight was the invention of the IT administrator, who built custom-made terminals: 
-“*He took small wooden boxes, added a Raspberry Pi and a touchscreen – now it runs Kimai in [Kiosk mode]({% link _store/keleo-kiosk-barcode-bundle.md %})*” Hartmann explains.
+“*He took small wooden boxes, added a Raspberry Pi and a touchscreen – now it runs Kimai in [Kiosk mode]({% link _store/{{ page.lang }}/kiosk-barcode-bundle.md %})*” Hartmann explains.
 
 Today, around ten such devices are distributed across the campus. 
 The kiosk mode turned out to be a key factor: 

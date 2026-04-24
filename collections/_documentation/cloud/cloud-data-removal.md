@@ -6,7 +6,7 @@ description: We protect your privacy by deleting unused data after a certain per
 I do not make money from your private data, and for data minimisation reasons,
 **unused free accounts** will be irretrievably deleted after a waiting period of a few weeks.
 
-See the [Terms of service]({% link _pages/terms-cloud.md %}) for the exact duration.
+See the [Terms of service]({% link _pages/{{ page.lang }}/terms-cloud.md %}) for the exact duration.
 
 ## Why data is deleted
 

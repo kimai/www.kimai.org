@@ -18,8 +18,8 @@ UI:
 Integration:
 - Portable executable for all three platforms
 - Installer forWwindows
-- Generate output for [Rainmeter (Windows)]({% link _store/infeeeee-kimai2-cmd-rainmeter.md %})
-- Generate output for [Argos/Kargos/Bitbar (Gnome, Kde, Mac)]({% link _store/infeeeee-kimai2-cmd-argos.md %})
+- Generate output for [Rainmeter (Windows)]({% link _store/{{ page.lang }}/infeeeee-kimai2-cmd-rainmeter.md %})
+- Generate output for [Argos/Kargos/Bitbar (Gnome, Kde, Mac)]({% link _store/{{ page.lang }}/infeeeee-kimai2-cmd-argos.md %})
 
 Requests for integrations with other softwares are welcomed! Just open an issue and show an example output, what you need.
 
