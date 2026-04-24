@@ -1,6 +1,5 @@
 ---
 title: "Kimai is part of the Open-Source Community"
-permalink: /en/open-source-community
 layout: landingpage-images
 logos: 
     logo1: /images/landinpages/open-source-community/github.png

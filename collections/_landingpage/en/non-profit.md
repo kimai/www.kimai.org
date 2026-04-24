@@ -1,6 +1,5 @@
 ---
 title: "Time-tracking for Non-Profit Organizations"
-permalink: /en/non-profit
 ---
 
 Today I want to say thank you to the many NGOs and NPOs:
