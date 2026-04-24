@@ -56,10 +56,10 @@
                         <ul class="dropdown-menu">
                             <li><a href="/en/about.html" class="dropdown-item">About Kimai</a></li>
                             <li><a href="/en/open-source-community" class="dropdown-item">Open Source</a></li>
-                            <li class="dropdown-divider">
-                            <li><a href="/en/integrations" class="dropdown-item">Apps &amp; Integrations</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="/en/integrations" class="dropdown-item">Apps & Integrations</a></li>
                             <li><a href="/en/demo.html" class="dropdown-item">Demo</a></li>
-                            <li class="dropdown-divider">
+                            <li class="dropdown-divider"></li>
                             <li><a href="/en/blog/" class="dropdown-item">Blog</a></li>
                             <li><a href="/en/support.html" class="dropdown-item">Support</a></li>
                         </ul>
@@ -175,14 +175,14 @@
 <p>New configurations available for the “duration selector” and “start and end date minute dropdown”:</p>
 
 <figure class="d-block figure mb-3" style="max-width: 100%">
-    <img src="/images/documentation/timesheet/minute_configuration.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2">
+    <img src="/images/documentation/timesheet/minute_configuration.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
     <figcaption class="figure-caption">Configuration values to influence timesheet dropdowns</figcaption>
 </figure>
 
 <p>Default setting is to match your rounding rules. So when you have a rounding rule, that rounds the “duration” to 15 minutes you will see the new duration dropdown:</p>
 
 <figure class="d-block figure mb-3" style="max-width: 100%">
-    <img src="/images/documentation/timesheet/duration_selector.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2">
+    <img src="/images/documentation/timesheet/duration_selector.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
     <figcaption class="figure-caption">The new duration select dropdown</figcaption>
 </figure>
 
@@ -190,7 +190,7 @@
 steps for “From” and “To” (see first screenshot) and you will get a shorter dropdown::</p>
 
 <figure class="d-block figure mb-3" style="max-width: 100%">
-    <img src="/images/documentation/timesheet/minute_selector.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2">
+    <img src="/images/documentation/timesheet/minute_selector.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
     <figcaption class="figure-caption">Minute selects support steps as well</figcaption>
 </figure>
 
@@ -207,7 +207,7 @@ closed by using the “Save” or “Close” button.</p>
 <p>The message appears at the top of form, below the modals title:</p>
 
 <figure class="d-block figure mb-3" style="max-width: 100%">
-    <img src="/images/documentation/modal_close.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2">
+    <img src="/images/documentation/modal_close.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
     <figcaption class="figure-caption">Warning message prevents that changed forms will be accidentally closed</figcaption>
 </figure>
 
@@ -217,7 +217,7 @@ closed by using the “Save” or “Close” button.</p>
 Thanks to Philipp these menus now appear as “drop-ups” and all entries can be selected:</p>
 
 <figure class="d-block figure mb-3" style="max-width: 100%">
-    <img src="/images/news/1-13-dropup.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2">
+    <img src="/images/news/1-13-dropup.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
     <figcaption class="figure-caption">List actions appear as drop-up</figcaption>
 </figure>
 
@@ -227,7 +227,7 @@ Thanks to Philipp these menus now appear as “drop-ups” and all entries can b
 To help with the process, the configuration screen now shows the calculated results of your configuration below the config boxes:</p>
 
 <figure class="d-block figure mb-3" style="max-width: 100%">
-    <img src="/images/documentation/lockdown_configuration.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2">
+    <img src="/images/documentation/lockdown_configuration.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
     <figcaption class="figure-caption">Rendered lockdown configuration values</figcaption>
 </figure>
 
@@ -271,57 +271,39 @@ Austrian matches german by now in most cases, but has some translations for the 
 <p><strong>Implemented enhancements:</strong></p>
 
 <ul>
-  <li>Add in Dashboard links to My Team Projects &amp; Budget <a href="https://github.com/kimai/kimai/issues/2196">#2196</a>
-</li>
-  <li>More mobile friendly hour/minute set value. <a href="https://github.com/kimai/kimai/issues/2044">#2044</a>
-</li>
-  <li>Give modals static backdrop <a href="https://github.com/kimai/kimai/issues/1794">#1794</a>
-</li>
-  <li>duration input should be more flexible about values entered <a href="https://github.com/kimai/kimai/issues/1702">#1702</a>
-</li>
-  <li>Time selector should match time rounding <a href="https://github.com/kimai/kimai/issues/1701">#1701</a>
-</li>
-  <li>When entering time record, the “duration” field it pre-filled with 00:00 and has to be deleted before being filled <a href="https://github.com/kimai/kimai/issues/1667">#1667</a>
-</li>
+  <li>Add in Dashboard links to My Team Projects &amp; Budget <a href="https://github.com/kimai/kimai/issues/2196">#2196</a></li>
+  <li>More mobile friendly hour/minute set value. <a href="https://github.com/kimai/kimai/issues/2044">#2044</a></li>
+  <li>Give modals static backdrop <a href="https://github.com/kimai/kimai/issues/1794">#1794</a></li>
+  <li>duration input should be more flexible about values entered <a href="https://github.com/kimai/kimai/issues/1702">#1702</a></li>
+  <li>Time selector should match time rounding <a href="https://github.com/kimai/kimai/issues/1701">#1701</a></li>
+  <li>When entering time record, the “duration” field it pre-filled with 00:00 and has to be deleted before being filled <a href="https://github.com/kimai/kimai/issues/1667">#1667</a></li>
   <li>added de_AT and pt as languages <a href="https://github.com/kimai/kimai/pull/2292">#2292</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
   <li>improve API validation error messages <a href="https://github.com/kimai/kimai/pull/2278">#2278</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
   <li>show calculated lockdown date in config screen <a href="https://github.com/kimai/kimai/pull/2274">#2274</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
   <li>Improved duration selector <a href="https://github.com/kimai/kimai/pull/2264">#2264</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
   <li>Added event for recent activities <a href="https://github.com/kimai/kimai/pull/2254">#2254</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
-  <li>Translations update from Weblate <a href="https://github.com/kimai/kimai/pull/2253">#2253</a>, <a href="https://github.com/kimai/kimai/pull/2226">#2226</a>, <a href="https://github.com/kimai/kimai/pull/2195">#2195</a>
-</li>
+  <li>Translations update from Weblate <a href="https://github.com/kimai/kimai/pull/2253">#2253</a>, <a href="https://github.com/kimai/kimai/pull/2226">#2226</a>, <a href="https://github.com/kimai/kimai/pull/2195">#2195</a></li>
   <li>fix deprecations <a href="https://github.com/kimai/kimai/pull/2225">#2225</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
   <li>simplify html timesheet exporter <a href="https://github.com/kimai/kimai/pull/2224">#2224</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
   <li>Export context <a href="https://github.com/kimai/kimai/pull/2216">#2216</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
   <li>Fix dropdowns on the bottom of a page <a href="https://github.com/kimai/kimai/pull/2212">#2212</a> (<a href="https://github.com/strouble">strouble</a>)</li>
   <li>replace “freelancer” invoice template with pdf version <a href="https://github.com/kimai/kimai/pull/2289">#2289</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
-  <li>Term “Umsatzsteuer” change to “Mehrwertsteuer” for Swiss customers <a href="https://github.com/kimai/kimai/issues/2230">#2230</a>
-</li>
+  <li>Term “Umsatzsteuer” change to “Mehrwertsteuer” for Swiss customers <a href="https://github.com/kimai/kimai/issues/2230">#2230</a></li>
 </ul>
 
 <p><strong>Fixed bugs:</strong></p>
 
 <ul>
-  <li>Calendar Drag and Drop-Box ist visible on printer-view <a href="https://github.com/kimai/kimai/issues/2258">#2258</a>
-</li>
-  <li>Dashboard timechart starts at 2022 <a href="https://github.com/kimai/kimai/issues/2235">#2235</a>
-</li>
-  <li>Dashboard My working hours chart shows incorrect date on 01/01/2021 <a href="https://github.com/kimai/kimai/issues/2232">#2232</a>
-</li>
-  <li>Template disappeared all of a sudden <a href="https://github.com/kimai/kimai/issues/2213">#2213</a>
-</li>
-  <li>Week 53 not showing <a href="https://github.com/kimai/kimai/issues/2204">#2204</a>
-</li>
-  <li>Timezone UTC and calendar <a href="https://github.com/kimai/kimai/issues/2155">#2155</a>
-</li>
-  <li>I can still delete a time entry from a locked period <a href="https://github.com/kimai/kimai/issues/2121">#2121</a>
-</li>
-  <li>Rounding problem (forcing error) when prohibiting time overlaps <a href="https://github.com/kimai/kimai/issues/1963">#1963</a>
-</li>
-  <li>Rounding changes end time on timesheet entry edit <a href="https://github.com/kimai/kimai/issues/1959">#1959</a>
-</li>
-  <li>When exporting with decimals, sums that are in the thousands don’t show correctly. <a href="https://github.com/kimai/kimai/issues/1659">#1659</a>
-</li>
+  <li>Calendar Drag and Drop-Box ist visible on printer-view <a href="https://github.com/kimai/kimai/issues/2258">#2258</a></li>
+  <li>Dashboard timechart starts at 2022 <a href="https://github.com/kimai/kimai/issues/2235">#2235</a></li>
+  <li>Dashboard My working hours chart shows incorrect date on 01/01/2021 <a href="https://github.com/kimai/kimai/issues/2232">#2232</a></li>
+  <li>Template disappeared all of a sudden <a href="https://github.com/kimai/kimai/issues/2213">#2213</a></li>
+  <li>Week 53 not showing <a href="https://github.com/kimai/kimai/issues/2204">#2204</a></li>
+  <li>Timezone UTC and calendar <a href="https://github.com/kimai/kimai/issues/2155">#2155</a></li>
+  <li>I can still delete a time entry from a locked period <a href="https://github.com/kimai/kimai/issues/2121">#2121</a></li>
+  <li>Rounding problem (forcing error) when prohibiting time overlaps <a href="https://github.com/kimai/kimai/issues/1963">#1963</a></li>
+  <li>Rounding changes end time on timesheet entry edit <a href="https://github.com/kimai/kimai/issues/1959">#1959</a></li>
+  <li>When exporting with decimals, sums that are in the thousands don’t show correctly. <a href="https://github.com/kimai/kimai/issues/1659">#1659</a></li>
   <li>prevent duplicate if overlapping records are disabled <a href="https://github.com/kimai/kimai/pull/2311">#2311</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
   <li>do not break excel invoice templates with replacer inside formulas <a href="https://github.com/kimai/kimai/pull/2272">#2272</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
   <li>improve permission checks for timesheets with activated lockdown <a href="https://github.com/kimai/kimai/pull/2271">#2271</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
@@ -342,7 +324,7 @@ Austrian matches german by now in most cases, but has some translations for the 
             <div class="sticky-top ms-xl-5 ms-lg-4 ps-xxl-4" style="top: 105px !important;">
                 <h6>Share this post:</h6>
                 <div class="mb-4 pb-lg-3">
-                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.kimai.org/en/blog/2021/kimai-v2-release-1-13&amp;title=Release%201.13%20-%20Duration%20input%20and%20dropdown" class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.kimai.org/en/blog/2021/kimai-v2-release-1-13&title=Release 1.13 - Duration input and dropdown" class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2" aria-label="LinkedIn">
                         <i class="bx bxl-linkedin"></i>
                     </a>
                     <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.kimai.org/en/blog/2021/kimai-v2-release-1-13" class="btn btn-icon btn-secondary btn-facebook me-2 mb-2" aria-label="Facebook">
@@ -484,7 +466,7 @@ Austrian matches german by now in most cases, but has some translations for the 
                                     <a href="/en/reviews" class="nav-link fs-sm fw-medium px-0 py-1">Reviews</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/en/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Press &amp; Media</a>
+                                    <a href="/en/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Press & Media</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="/en/kimai-discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">Discount codes</a>

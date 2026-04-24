@@ -56,10 +56,10 @@
                         <ul class="dropdown-menu">
                             <li><a href="/en/about.html" class="dropdown-item">About Kimai</a></li>
                             <li><a href="/en/open-source-community" class="dropdown-item">Open Source</a></li>
-                            <li class="dropdown-divider">
-                            <li><a href="/en/integrations" class="dropdown-item">Apps &amp; Integrations</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="/en/integrations" class="dropdown-item">Apps & Integrations</a></li>
                             <li><a href="/en/demo.html" class="dropdown-item">Demo</a></li>
-                            <li class="dropdown-divider">
+                            <li class="dropdown-divider"></li>
                             <li><a href="/en/blog/" class="dropdown-item">Blog</a></li>
                             <li><a href="/en/support.html" class="dropdown-item">Support</a></li>
                         </ul>
@@ -177,12 +177,9 @@ You should use the “watch feature” in the Github repository to be notified A
 
 <p>In the meantime 3 new plugins were released:</p>
 <ul>
-  <li>
-<a href="/store/translation-bundle.html">Translation</a> - translate and/or change the labels of visible UI elements</li>
-  <li>
-<a href="/store/custom-content-bundle.html">Custom content</a> - allows adding custom CSS, Javascript, a global warning message and a new content page</li>
-  <li>
-<a href="/store/invoice-bundle.html">Invoice</a> - enhanced invoicing features, that should not be part of the core system</li>
+  <li><a href="/store/translation-bundle.html">Translation</a> - translate and/or change the labels of visible UI elements</li>
+  <li><a href="/store/custom-content-bundle.html">Custom content</a> - allows adding custom CSS, Javascript, a global warning message and a new content page</li>
+  <li><a href="/store/invoice-bundle.html">Invoice</a> - enhanced invoicing features, that should not be part of the core system</li>
 </ul>
 
 <h3 id="attention-before-upgrading">Attention before upgrading</h3>
@@ -194,7 +191,7 @@ If not yet done: please upgrade to PHP 8 soon.</p>
 
 <h3 id="security-issues">Security issues</h3>
 
-<p>Some possible CSRF and XSS attacks were found and patched. Thanks for the disclosure go out to <a href="https://github.com/haxatron" class="user-mention">@haxatron</a> and <a href="https://github.com/asura-n" class="user-mention">@asura-n</a> and <a href="https://github.com/noobpk" class="user-mention">@noobpk</a>.</p>
+<p>Some possible CSRF and XSS attacks were found and patched. Thanks for the disclosure go out to @haxatron and @asura-n and @noobpk.</p>
 
 <p>If you use Kimai in a multi-user environment, you are urged to update as soon as possible.</p>
 
@@ -224,87 +221,49 @@ If not yet done: please upgrade to PHP 8 soon.</p>
 <h3 id="implemented-enhancements">Implemented enhancements</h3>
 
 <ul>
-  <li>improve permission handling for quick entry controller <a href="https://github.com/kimai/kimai/pull/3081">#3081</a>
-</li>
-  <li>Invoice events <a href="https://github.com/kimai/kimai/pull/3079">#3079</a>
-</li>
-  <li>Invoice meta fields <a href="https://github.com/kimai/kimai/pull/3077">#3077</a>
-</li>
-  <li>Bugfixes <a href="https://github.com/kimai/kimai/pull/3078">#3078</a>
-</li>
-  <li>shrink prod error messages <a href="https://github.com/kimai/kimai/pull/3091">#3091</a>
-</li>
-  <li>new export template <a href="https://github.com/kimai/kimai/pull/3082">#3082</a>
-</li>
-  <li>Translations update from Hosted Weblate <a href="https://github.com/kimai/kimai/pull/2951">#2951</a>, <a href="https://github.com/kimai/kimai/pull/3013">#3013</a>, <a href="https://github.com/kimai/kimai/pull/3032">#3032</a>, <a href="https://github.com/kimai/kimai/pull/3048">#3048</a>
-</li>
-  <li>weekly hours form: allow to configure the amount of recent activity rows in an empty week <a href="https://github.com/kimai/kimai/pull/3026">#3026</a>
-</li>
-  <li>added comment field to invoice <a href="https://github.com/kimai/kimai/pull/3045">#3045</a>
-</li>
-  <li>improve export permission checks <a href="https://github.com/kimai/kimai/pull/3027">#3027</a>
-</li>
-  <li>new invoice template variables for budgets <a href="https://github.com/kimai/kimai/pull/3005">#3005</a>
-</li>
-  <li>new command to work with translation files <a href="https://github.com/kimai/kimai/pull/2993">#2993</a>
-</li>
-  <li>cleanup duplicate translation ids <a href="https://github.com/kimai/kimai/pull/3001">#3001</a>
-</li>
-  <li>improve translation test <a href="https://github.com/kimai/kimai/pull/2998">#2998</a>
-</li>
-  <li>prevent that lock files will be committed in PRs <a href="https://github.com/kimai/kimai/pull/2983">#2983</a> and <a href="https://github.com/kimai/kimai/pull/2992">#2992</a>
-</li>
-  <li>allow to delete invoice documents from within kimai <a href="https://github.com/kimai/kimai/pull/2968">#2968</a>
-</li>
-  <li>improve export filename <a href="https://github.com/kimai/kimai/pull/2958">#2958</a>
-</li>
-  <li>include calendar week in week chooser <a href="https://github.com/kimai/kimai/pull/2933">#2933</a>
-</li>
-  <li>bump dependencies <a href="https://github.com/kimai/kimai/pull/3089">#3089</a>
-</li>
-  <li>code improvements <a href="https://github.com/kimai/kimai/pull/3088">#3088</a>
-</li>
-  <li>phpstan improvements <a href="https://github.com/kimai/kimai/pull/3092">#3092</a>
-</li>
+  <li>improve permission handling for quick entry controller <a href="https://github.com/kimai/kimai/pull/3081">#3081</a></li>
+  <li>Invoice events <a href="https://github.com/kimai/kimai/pull/3079">#3079</a></li>
+  <li>Invoice meta fields <a href="https://github.com/kimai/kimai/pull/3077">#3077</a></li>
+  <li>Bugfixes <a href="https://github.com/kimai/kimai/pull/3078">#3078</a></li>
+  <li>shrink prod error messages <a href="https://github.com/kimai/kimai/pull/3091">#3091</a></li>
+  <li>new export template <a href="https://github.com/kimai/kimai/pull/3082">#3082</a></li>
+  <li>Translations update from Hosted Weblate <a href="https://github.com/kimai/kimai/pull/2951">#2951</a>, <a href="https://github.com/kimai/kimai/pull/3013">#3013</a>, <a href="https://github.com/kimai/kimai/pull/3032">#3032</a>, <a href="https://github.com/kimai/kimai/pull/3048">#3048</a></li>
+  <li>weekly hours form: allow to configure the amount of recent activity rows in an empty week <a href="https://github.com/kimai/kimai/pull/3026">#3026</a></li>
+  <li>added comment field to invoice <a href="https://github.com/kimai/kimai/pull/3045">#3045</a></li>
+  <li>improve export permission checks <a href="https://github.com/kimai/kimai/pull/3027">#3027</a></li>
+  <li>new invoice template variables for budgets <a href="https://github.com/kimai/kimai/pull/3005">#3005</a></li>
+  <li>new command to work with translation files <a href="https://github.com/kimai/kimai/pull/2993">#2993</a></li>
+  <li>cleanup duplicate translation ids <a href="https://github.com/kimai/kimai/pull/3001">#3001</a></li>
+  <li>improve translation test <a href="https://github.com/kimai/kimai/pull/2998">#2998</a></li>
+  <li>prevent that lock files will be committed in PRs <a href="https://github.com/kimai/kimai/pull/2983">#2983</a> and <a href="https://github.com/kimai/kimai/pull/2992">#2992</a></li>
+  <li>allow to delete invoice documents from within kimai <a href="https://github.com/kimai/kimai/pull/2968">#2968</a></li>
+  <li>improve export filename <a href="https://github.com/kimai/kimai/pull/2958">#2958</a></li>
+  <li>include calendar week in week chooser <a href="https://github.com/kimai/kimai/pull/2933">#2933</a></li>
+  <li>bump dependencies <a href="https://github.com/kimai/kimai/pull/3089">#3089</a></li>
+  <li>code improvements <a href="https://github.com/kimai/kimai/pull/3088">#3088</a></li>
+  <li>phpstan improvements <a href="https://github.com/kimai/kimai/pull/3092">#3092</a></li>
 </ul>
 
 <h3 id="fixed-bugs">Fixed bugs</h3>
 
 <ul>
-  <li>Import from Kimai v1:  This timesheet is already exported <a href="https://github.com/kimai/kimai/issues/3061">#3061</a>
-</li>
-  <li>fix working time widget (dashboard) with “first day of week” = sunday <a href="https://github.com/kimai/kimai/issues/3047">#3047</a>
-</li>
-  <li>Fix projects are not filtered after submit <a href="https://github.com/kimai/kimai/issues/3016">#3016</a>
-</li>
-  <li>Fix invoice budget calculation <a href="https://github.com/kimai/kimai/issues/3024">#3024</a>
-</li>
-  <li>Fix “filter user timesheet” action display <a href="https://github.com/kimai/kimai/issues/3018">#3018</a>
-</li>
-  <li>fix selection of customer/project/activity in multi-step forms <a href="https://github.com/kimai/kimai/issues/2989">#2989</a>
-</li>
-  <li>more csrf protection for invoice and search <a href="https://github.com/kimai/kimai/issues/2984">#2984</a>
-</li>
-  <li>fix invoice create and search <a href="https://github.com/kimai/kimai/issues/2990">#2990</a>
-</li>
-  <li>fix HTML forms (two opening &lt;form&gt; tags) <a href="https://github.com/kimai/kimai/issues/2972">#2972</a>
-</li>
-  <li>fix deleting invoice documents <a href="https://github.com/kimai/kimai/issues/2980">#2980</a>
-</li>
-  <li>CSRF Tokens are not properly refreshed on some form submissions <a href="https://github.com/kimai/kimai/issues/2947">#2947</a> <a href="https://github.com/kimai/kimai/issues/2948">#2948</a>
-</li>
-  <li>escape customer, project and activity name in javascript <a href="https://github.com/kimai/kimai/issues/2959">#2959</a>
-</li>
-  <li>escape data in calendar popover <a href="https://github.com/kimai/kimai/issues/2960">#2960</a>
-</li>
-  <li>make sure that markdown uses safe mode <a href="https://github.com/kimai/kimai/issues/2961">#2961</a>
-</li>
-  <li>improve permission handling in invoice screen <a href="https://github.com/kimai/kimai/issues/2965">#2965</a>
-</li>
-  <li>drop default value to prevent error when server version is not set <a href="https://github.com/kimai/kimai/issues/2769">#2769</a> <a href="https://github.com/kimai/kimai/issues/2796">#2796</a> <a href="https://github.com/kimai/kimai/issues/2943">#2943</a>
-</li>
-  <li>Filtering the administrative project list by Visible=Both results in 500 Server Error <a href="https://github.com/kimai/kimai/issues/2941">#2941</a>
-</li>
+  <li>Import from Kimai v1:  This timesheet is already exported <a href="https://github.com/kimai/kimai/issues/3061">#3061</a></li>
+  <li>fix working time widget (dashboard) with “first day of week” = sunday <a href="https://github.com/kimai/kimai/issues/3047">#3047</a></li>
+  <li>Fix projects are not filtered after submit <a href="https://github.com/kimai/kimai/issues/3016">#3016</a></li>
+  <li>Fix invoice budget calculation <a href="https://github.com/kimai/kimai/issues/3024">#3024</a></li>
+  <li>Fix “filter user timesheet” action display <a href="https://github.com/kimai/kimai/issues/3018">#3018</a></li>
+  <li>fix selection of customer/project/activity in multi-step forms <a href="https://github.com/kimai/kimai/issues/2989">#2989</a></li>
+  <li>more csrf protection for invoice and search <a href="https://github.com/kimai/kimai/issues/2984">#2984</a></li>
+  <li>fix invoice create and search <a href="https://github.com/kimai/kimai/issues/2990">#2990</a></li>
+  <li>fix HTML forms (two opening &lt;form&gt; tags) <a href="https://github.com/kimai/kimai/issues/2972">#2972</a></li>
+  <li>fix deleting invoice documents <a href="https://github.com/kimai/kimai/issues/2980">#2980</a></li>
+  <li>CSRF Tokens are not properly refreshed on some form submissions <a href="https://github.com/kimai/kimai/issues/2947">#2947</a> <a href="https://github.com/kimai/kimai/issues/2948">#2948</a></li>
+  <li>escape customer, project and activity name in javascript <a href="https://github.com/kimai/kimai/issues/2959">#2959</a></li>
+  <li>escape data in calendar popover <a href="https://github.com/kimai/kimai/issues/2960">#2960</a></li>
+  <li>make sure that markdown uses safe mode <a href="https://github.com/kimai/kimai/issues/2961">#2961</a></li>
+  <li>improve permission handling in invoice screen <a href="https://github.com/kimai/kimai/issues/2965">#2965</a></li>
+  <li>drop default value to prevent error when server version is not set <a href="https://github.com/kimai/kimai/issues/2769">#2769</a> <a href="https://github.com/kimai/kimai/issues/2796">#2796</a> <a href="https://github.com/kimai/kimai/issues/2943">#2943</a></li>
+  <li>Filtering the administrative project list by Visible=Both results in 500 Server Error <a href="https://github.com/kimai/kimai/issues/2941">#2941</a></li>
 </ul>
 
         </div>
@@ -312,7 +271,7 @@ If not yet done: please upgrade to PHP 8 soon.</p>
             <div class="sticky-top ms-xl-5 ms-lg-4 ps-xxl-4" style="top: 105px !important;">
                 <h6>Share this post:</h6>
                 <div class="mb-4 pb-lg-3">
-                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.kimai.org/en/blog/2022/kimai-release-1-17&amp;title=Release%201.17%20-%20A%20bit%20of%20everything" class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.kimai.org/en/blog/2022/kimai-release-1-17&title=Release 1.17 - A bit of everything" class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2" aria-label="LinkedIn">
                         <i class="bx bxl-linkedin"></i>
                     </a>
                     <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.kimai.org/en/blog/2022/kimai-release-1-17" class="btn btn-icon btn-secondary btn-facebook me-2 mb-2" aria-label="Facebook">
@@ -454,7 +413,7 @@ If not yet done: please upgrade to PHP 8 soon.</p>
                                     <a href="/en/reviews" class="nav-link fs-sm fw-medium px-0 py-1">Reviews</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/en/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Press &amp; Media</a>
+                                    <a href="/en/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Press & Media</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="/en/kimai-discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">Discount codes</a>

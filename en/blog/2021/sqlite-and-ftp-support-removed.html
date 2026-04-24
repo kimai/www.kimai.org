@@ -56,10 +56,10 @@
                         <ul class="dropdown-menu">
                             <li><a href="/en/about.html" class="dropdown-item">About Kimai</a></li>
                             <li><a href="/en/open-source-community" class="dropdown-item">Open Source</a></li>
-                            <li class="dropdown-divider">
-                            <li><a href="/en/integrations" class="dropdown-item">Apps &amp; Integrations</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="/en/integrations" class="dropdown-item">Apps & Integrations</a></li>
                             <li><a href="/en/demo.html" class="dropdown-item">Demo</a></li>
-                            <li class="dropdown-divider">
+                            <li class="dropdown-divider"></li>
                             <li><a href="/en/blog/" class="dropdown-item">Blog</a></li>
                             <li><a href="/en/support.html" class="dropdown-item">Support</a></li>
                         </ul>
@@ -228,15 +228,11 @@ If you know more, <a href="https://github.com/kimai/kimai/discussions">please op
 full inserts (including column names).</p>
 
 <ul>
-  <li>Go to <code class="language-plaintext highlighter-rouge">File</code> &gt; <code class="language-plaintext highlighter-rouge">Export</code> &gt; <code class="language-plaintext highlighter-rouge">Database to SQL file...</code>
-</li>
-  <li>Choose <code class="language-plaintext highlighter-rouge">Select All</code>
-</li>
-  <li>Select <code class="language-plaintext highlighter-rouge">Keep column names in INSERT INTO</code>
-</li>
+  <li>Go to <code class="language-plaintext highlighter-rouge">File</code> &gt; <code class="language-plaintext highlighter-rouge">Export</code> &gt; <code class="language-plaintext highlighter-rouge">Database to SQL file...</code></li>
+  <li>Choose <code class="language-plaintext highlighter-rouge">Select All</code></li>
+  <li>Select <code class="language-plaintext highlighter-rouge">Keep column names in INSERT INTO</code></li>
   <li>Choose <code class="language-plaintext highlighter-rouge">Export data only</code> in dropdown</li>
-  <li>Hit <code class="language-plaintext highlighter-rouge">Save</code>
-</li>
+  <li>Hit <code class="language-plaintext highlighter-rouge">Save</code></li>
 </ul>
 
 <h3 id="manual-migration">Manual migration</h3>
@@ -244,20 +240,17 @@ full inserts (including column names).</p>
 <p>In short the steps are: create mysql database structure, export from sqlite and import into mysql:</p>
 
 <ul>
-  <li>Use the sqlite console with its <code class="language-plaintext highlighter-rouge">.dump</code> command to export the data, more at <a href="https://www.sqlitetutorial.net/sqlite-dump/">https://www.sqlitetutorial.net/sqlite-dump/</a>
-</li>
+  <li>Use the sqlite console with its <code class="language-plaintext highlighter-rouge">.dump</code> command to export the data, more at <a href="https://www.sqlitetutorial.net/sqlite-dump/">https://www.sqlitetutorial.net/sqlite-dump/</a></li>
   <li>Re-Install Kimai with MySQL, so the database structure is properly setup
     <ul>
       <li>Edit <code class="language-plaintext highlighter-rouge">.env</code> and adjust <code class="language-plaintext highlighter-rouge">DATABASE_URL</code> to a MySQL URL (eg. <code class="language-plaintext highlighter-rouge">DATABASE_URL=mysql://user:password@127.0.0.1:3306/database</code>)</li>
-      <li>Run <code class="language-plaintext highlighter-rouge">bin/console kimai:install -n</code>
-</li>
+      <li>Run <code class="language-plaintext highlighter-rouge">bin/console kimai:install -n</code></li>
     </ul>
   </li>
   <li>Open the dumped SQLite file and adjust it (only leave the INSERT commands, remove everything else)</li>
   <li>Import the prepared file into MySQL
     <ul>
-      <li>You should deactivate foreign keys during the import via <code class="language-plaintext highlighter-rouge">SET FOREIGN_KEY_CHECKS=0;</code>
-</li>
+      <li>You should deactivate foreign keys during the import via <code class="language-plaintext highlighter-rouge">SET FOREIGN_KEY_CHECKS=0;</code></li>
     </ul>
   </li>
 </ul>
@@ -269,12 +262,10 @@ full inserts (including column names).</p>
 <p>You need to have an empty Kimai MySQL database first:</p>
 <ul>
   <li>edit <code class="language-plaintext highlighter-rouge">.env</code> and point to a MySQL database</li>
-  <li>run the installer <code class="language-plaintext highlighter-rouge">bin/console kimai:install -n</code>
-</li>
+  <li>run the installer <code class="language-plaintext highlighter-rouge">bin/console kimai:install -n</code></li>
   <li>copy &amp; paste the script below (save as <code class="language-plaintext highlighter-rouge">Rakefile</code>) and adjust the credentials and file location</li>
   <li>install the required ruby gems</li>
-  <li>run the script <code class="language-plaintext highlighter-rouge">rake</code>
-</li>
+  <li>run the script <code class="language-plaintext highlighter-rouge">rake</code></li>
 </ul>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>require 'sequel'
@@ -297,11 +288,11 @@ task :migrate do
 end
 </code></pre></div></div>
 
-<p>Thanks <a href="https://github.com/sixtyfive" class="user-mention">@sixtyfive</a> for this script, works like a charm!</p>
+<p>Thanks @sixtyfive for this script, works like a charm!</p>
 
 <h4 id="ubuntu">Ubuntu</h4>
 
-<p>Update from <a href="https://github.com/kosli" class="user-mention">@kosli</a> who mentioned <a href="https://github.com/kimai/kimai/issues/2484#issuecomment-814349874">here</a> that 
+<p>Update from @kosli who mentioned <a href="https://github.com/kimai/kimai/issues/2484#issuecomment-814349874">here</a> that 
 using the above script on Ubuntu requires the packages <code class="language-plaintext highlighter-rouge">ruby-sequel ruby-mysql2 ruby-sqlite3</code>.
 With these packages installed the script needs to be changed from <code class="language-plaintext highlighter-rouge">Sequel.mysql</code> to <code class="language-plaintext highlighter-rouge">Sequel.mysql2</code>.</p>
 
@@ -340,7 +331,7 @@ working Kimai with MySQL database and migrated data from SQLite.</p>
             <div class="sticky-top ms-xl-5 ms-lg-4 ps-xxl-4" style="top: 105px !important;">
                 <h6>Share this post:</h6>
                 <div class="mb-4 pb-lg-3">
-                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.kimai.org/en/blog/2021/sqlite-and-ftp-support-removed&amp;title=Removing%20SQLite%20support%20and%20FTP%20installation" class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.kimai.org/en/blog/2021/sqlite-and-ftp-support-removed&title=Removing SQLite support and FTP installation" class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2" aria-label="LinkedIn">
                         <i class="bx bxl-linkedin"></i>
                     </a>
                     <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.kimai.org/en/blog/2021/sqlite-and-ftp-support-removed" class="btn btn-icon btn-secondary btn-facebook me-2 mb-2" aria-label="Facebook">
@@ -482,7 +473,7 @@ working Kimai with MySQL database and migrated data from SQLite.</p>
                                     <a href="/en/reviews" class="nav-link fs-sm fw-medium px-0 py-1">Reviews</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/en/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Press &amp; Media</a>
+                                    <a href="/en/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Press & Media</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="/en/kimai-discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">Discount codes</a>

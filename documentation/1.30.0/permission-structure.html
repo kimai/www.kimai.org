@@ -403,8 +403,7 @@
                 
                 <div id="documentation-content">
                     
-<div class="alert alert-danger d-flex" role="alert">
-<i class="bx bx-info-circle lead me-3"></i>
+<div class="alert alert-danger d-flex" role="alert"><i class="bx bx-info-circle lead me-3"></i>
 <p>You are viewing an older version of this documentation page. A newer version is available <a href="/documentation/permission-structure.html">here</a>.</p>
 </div>
 
@@ -426,18 +425,15 @@ It can be considered bad practice, as it can lead to problems with future update
 <p>Before you learn to configure the permission system, you have to understand the three involved config types:</p>
 
 <ol>
-  <li>
-<code class="language-plaintext highlighter-rouge">Permission sets</code> - a re-usable mapping of a free choosable name (e.g. <code class="language-plaintext highlighter-rouge">TEST</code>) to a list of:
+  <li><code class="language-plaintext highlighter-rouge">Permission sets</code> - a re-usable mapping of a free choosable name (e.g. <code class="language-plaintext highlighter-rouge">TEST</code>) to a list of:
     <ul>
       <li>one or more “permission names” (e.g. <code class="language-plaintext highlighter-rouge">test</code>)</li>
       <li>one or more “permission sets” (linking other sets can be achieved by prepending an <code class="language-plaintext highlighter-rouge">@</code>, e.g. <code class="language-plaintext highlighter-rouge">@TEST</code>)</li>
       <li>one or more “negated permission names” (prepend an <code class="language-plaintext highlighter-rouge">!</code> to negate a permission, e.g. <code class="language-plaintext highlighter-rouge">!test</code>)</li>
     </ul>
   </li>
-  <li>
-<code class="language-plaintext highlighter-rouge">Permission maps</code> - a mapping of a role name to a list of “permission sets” (no <code class="language-plaintext highlighter-rouge">@</code> required here, e.g. <code class="language-plaintext highlighter-rouge">TEST</code>)</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">Permissions</code> - a mapping of a role name to a list of:
+  <li><code class="language-plaintext highlighter-rouge">Permission maps</code> - a mapping of a role name to a list of “permission sets” (no <code class="language-plaintext highlighter-rouge">@</code> required here, e.g. <code class="language-plaintext highlighter-rouge">TEST</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">Permissions</code> - a mapping of a role name to a list of:
     <ul>
       <li>one or more “permission names” (e.g. <code class="language-plaintext highlighter-rouge">test</code>)</li>
       <li>one or more “negated permission names” (e.g. <code class="language-plaintext highlighter-rouge">!test</code>)</li>
@@ -476,10 +472,8 @@ and the two <code class="language-plaintext highlighter-rouge">permission sets</
 <p>At this step the roles have the following permissions:</p>
 
 <ul>
-  <li>
-<code class="language-plaintext highlighter-rouge">ROLE_USER</code> - view_own_timesheet, start_own_timesheet, my_profile, other_profiles</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">ROLE_ADMIN</code> - view_own_timesheet, start_own_timesheet, my_profile, show_roles, other_profiles, view_activity, create_activity</li>
+  <li><code class="language-plaintext highlighter-rouge">ROLE_USER</code> - view_own_timesheet, start_own_timesheet, my_profile, other_profiles</li>
+  <li><code class="language-plaintext highlighter-rouge">ROLE_ADMIN</code> - view_own_timesheet, start_own_timesheet, my_profile, show_roles, other_profiles, view_activity, create_activity</li>
 </ul>
 
 <p>As last step, the list of <code class="language-plaintext highlighter-rouge">permission names</code> will be merged with the list of previously calculated permissions.
@@ -488,10 +482,8 @@ We removed the permission “other_profiles” from the user-role “ROLE_USER�
 <p>At the end the system calculated the final list of permissions:</p>
 
 <ul>
-  <li>
-<code class="language-plaintext highlighter-rouge">ROLE_USER</code> - view_own_timesheet, start_own_timesheet, my_profile</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">ROLE_ADMIN</code> - view_own_timesheet, start_own_timesheet, my_profile, show_roles, other_profiles, view_activity, create_activity, delete_activity</li>
+  <li><code class="language-plaintext highlighter-rouge">ROLE_USER</code> - view_own_timesheet, start_own_timesheet, my_profile</li>
+  <li><code class="language-plaintext highlighter-rouge">ROLE_ADMIN</code> - view_own_timesheet, start_own_timesheet, my_profile, show_roles, other_profiles, view_activity, create_activity, delete_activity</li>
 </ul>
 
 <p>Yes, that could have been easier ;-) but I wanted to demonstrate all possibilities!</p>
@@ -563,17 +555,7 @@ Therefor it is <strong>not</strong> recommended to overwrite any existing <code 
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav">
-<li class="nav-item"><a href="#plugin-permissions" class="nav-link">Plugin permissions</a></li>
-<li class="nav-item">
-<a href="#permission-configuration-in-localyaml" class="nav-link">Permission configuration in local.yaml</a><ul>
-<li class="nav-item"><a href="#understanding-permission-structure" class="nav-link">Understanding permission structure</a></li>
-<li class="nav-item"><a href="#changing-permissions" class="nav-link">Changing permissions</a></li>
-<li class="nav-item"><a href="#existing-sets" class="nav-link">Existing sets</a></li>
-<li class="nav-item"><a href="#existing-maps" class="nav-link">Existing maps</a></li>
-</ul>
-</li>
-</ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#plugin-permissions" class="nav-link">Plugin permissions</a></li><li class="nav-item"><a href="#permission-configuration-in-localyaml" class="nav-link">Permission configuration in local.yaml</a><ul><li class="nav-item"><a href="#understanding-permission-structure" class="nav-link">Understanding permission structure</a></li><li class="nav-item"><a href="#changing-permissions" class="nav-link">Changing permissions</a></li><li class="nav-item"><a href="#existing-sets" class="nav-link">Existing sets</a></li><li class="nav-item"><a href="#existing-maps" class="nav-link">Existing maps</a></li></ul></li></ul>
         
     </aside>
 

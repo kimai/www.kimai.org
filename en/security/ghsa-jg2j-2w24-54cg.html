@@ -62,10 +62,10 @@
                         <ul class="dropdown-menu">
                             <li><a href="/en/about.html" class="dropdown-item">About Kimai</a></li>
                             <li><a href="/en/open-source-community" class="dropdown-item">Open Source</a></li>
-                            <li class="dropdown-divider">
-                            <li><a href="/en/integrations" class="dropdown-item">Apps &amp; Integrations</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="/en/integrations" class="dropdown-item">Apps & Integrations</a></li>
                             <li><a href="/en/demo.html" class="dropdown-item">Demo</a></li>
-                            <li class="dropdown-divider">
+                            <li class="dropdown-divider"></li>
                             <li><a href="/en/blog/" class="dropdown-item">Blog</a></li>
                             <li><a href="/en/support.html" class="dropdown-item">Support</a></li>
                         </ul>
@@ -167,12 +167,9 @@
 <h2>Affected versions</h2>
 
 <ul>
-    <li>Affected versions: <strong>&lt;=2.45.0</strong>
-</li>
-    <li>Patched version: <strong>2.46.0</strong>
-</li>
-    <li>Advisory published: <strong>18 Jan 2026</strong>
-</li>
+    <li>Affected versions: <strong><=2.45.0</strong></li>
+    <li>Patched version: <strong>2.46.0</strong></li>
+    <li>Advisory published: <strong>18 Jan 2026</strong></li>
 </ul>
 
 <h2>Severity</h2>
@@ -203,8 +200,7 @@ In affected versions, an authenticated user with sufficient permissions and acce
   <li>A malicious template could read sensitive values from the request, session, and user objects</li>
   <li>Exposed data could include secrets such as <code class="language-plaintext highlighter-rouge">APP_SECRET</code>, database configuration, password hashes, and session-related information</li>
   <li>Export templates can only be uploaded via direct filesystem access and is usually only possible for System-Admins</li>
-  <li>
-<strong>Kimai Cloud is not affected</strong> because Twig templates have to pass a manual review process</li>
+  <li><strong>Kimai Cloud is not affected</strong> because Twig templates have to pass a manual review process</li>
 </ul>
 
 <h2 id="solution">Solution</h2>
@@ -313,7 +309,7 @@ In affected versions, an authenticated user with sufficient permissions and acce
                                     <a href="/en/reviews" class="nav-link fs-sm fw-medium px-0 py-1">Reviews</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/en/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Press &amp; Media</a>
+                                    <a href="/en/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Press & Media</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="/en/kimai-discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">Discount codes</a>

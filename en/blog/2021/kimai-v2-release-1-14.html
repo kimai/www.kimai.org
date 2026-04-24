@@ -56,10 +56,10 @@
                         <ul class="dropdown-menu">
                             <li><a href="/en/about.html" class="dropdown-item">About Kimai</a></li>
                             <li><a href="/en/open-source-community" class="dropdown-item">Open Source</a></li>
-                            <li class="dropdown-divider">
-                            <li><a href="/en/integrations" class="dropdown-item">Apps &amp; Integrations</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="/en/integrations" class="dropdown-item">Apps & Integrations</a></li>
                             <li><a href="/en/demo.html" class="dropdown-item">Demo</a></li>
-                            <li class="dropdown-divider">
+                            <li class="dropdown-divider"></li>
                             <li><a href="/en/blog/" class="dropdown-item">Blog</a></li>
                             <li><a href="/en/support.html" class="dropdown-item">Support</a></li>
                         </ul>
@@ -140,7 +140,7 @@
     
 
 <section class="container mt-4 pt-lg-2 pb-3">
-    <h1 class="pb-3" style="max-width: 970px;">Release 1.14 - Reports, invoices &amp; search bookmark</h1>
+    <h1 class="pb-3" style="max-width: 970px;">Release 1.14 - Reports, invoices & search bookmark</h1>
     <div class="d-flex flex-md-row flex-column align-items-md-center justify-content-md-between mb-3">
         <div class="d-flex align-items-center flex-wrap text-muted mb-md-0 mb-4">
             <div class="fs-xs border-end pe-3 me-3 mb-2">
@@ -171,7 +171,7 @@
             <p>The release 1.14.3 was just published, after the major release was already released on the 23th of April.
 Sorry for the late posting, but some bugs popped up that needed to be fixed before this announcement.</p>
 
-<p><strong>Attention</strong><br>
+<p><strong>Attention</strong><br />
 This release includes a critical backward compatibility break: 
 dropped SQLite support and FTP installation package (see <a href="/en/blog/2021/sqlite-and-ftp-support-removed">announcement</a>).</p>
 
@@ -254,36 +254,21 @@ Advice: Do not rely on CSV for data exchange if you use Excel, export XSLX inste
 <p><strong>Implemented enhancements:</strong></p>
 
 <ul>
-  <li>Tags in invoices <a href="https://github.com/kimai/kimai/issues/2525">#2525</a>
-</li>
-  <li>Monthly view for all users <a href="https://github.com/kimai/kimai/issues/2460">#2460</a>
-</li>
-  <li>Invoices -&gt; new field to save the date when the invoice was payed <a href="https://github.com/kimai/kimai/issues/2449">#2449</a>
-</li>
-  <li>More columns for the spreadsheet exporter <a href="https://github.com/kimai/kimai/issues/2355">#2355</a>
-</li>
-  <li>Projects: Make data field “time budget” available in “eye” function of list view <a href="https://github.com/kimai/kimai/issues/2343">#2343</a>
-</li>
-  <li>Reporting: Not only for users, also for projects <a href="https://github.com/kimai/kimai/issues/2265">#2265</a>
-</li>
-  <li>Calendar: add day-total per day on the calendar-view  <a href="https://github.com/kimai/kimai/issues/2252">#2252</a>
-</li>
-  <li>Batch generation of invoices for all customers <a href="https://github.com/kimai/kimai/issues/2178">#2178</a>
-</li>
-  <li>allow time entry for reporting / initial view <a href="https://github.com/kimai/kimai/issues/2131">#2131</a>
-</li>
-  <li>Calendar: provide possibility to delete a time entry in the calendar view <a href="https://github.com/kimai/kimai/issues/2124">#2124</a>
-</li>
-  <li>Disallow reports for inactive users <a href="https://github.com/kimai/kimai/issues/2048">#2048</a>
-</li>
-  <li>Listexport of generated Invoices from a certain state <a href="https://github.com/kimai/kimai/issues/1955">#1955</a>
-</li>
-  <li>User - restrict permission on changing Name, Title, and Profile Image <a href="https://github.com/kimai/kimai/issues/1935">#1935</a>
-</li>
-  <li>change select box for colors <a href="https://github.com/kimai/kimai/issues/1919">#1919</a>
-</li>
-  <li>Display a “time/budget”-bar on the projects overview <a href="https://github.com/kimai/kimai/issues/1912">#1912</a>
-</li>
+  <li>Tags in invoices <a href="https://github.com/kimai/kimai/issues/2525">#2525</a></li>
+  <li>Monthly view for all users <a href="https://github.com/kimai/kimai/issues/2460">#2460</a></li>
+  <li>Invoices -&gt; new field to save the date when the invoice was payed <a href="https://github.com/kimai/kimai/issues/2449">#2449</a></li>
+  <li>More columns for the spreadsheet exporter <a href="https://github.com/kimai/kimai/issues/2355">#2355</a></li>
+  <li>Projects: Make data field “time budget” available in “eye” function of list view <a href="https://github.com/kimai/kimai/issues/2343">#2343</a></li>
+  <li>Reporting: Not only for users, also for projects <a href="https://github.com/kimai/kimai/issues/2265">#2265</a></li>
+  <li>Calendar: add day-total per day on the calendar-view  <a href="https://github.com/kimai/kimai/issues/2252">#2252</a></li>
+  <li>Batch generation of invoices for all customers <a href="https://github.com/kimai/kimai/issues/2178">#2178</a></li>
+  <li>allow time entry for reporting / initial view <a href="https://github.com/kimai/kimai/issues/2131">#2131</a></li>
+  <li>Calendar: provide possibility to delete a time entry in the calendar view <a href="https://github.com/kimai/kimai/issues/2124">#2124</a></li>
+  <li>Disallow reports for inactive users <a href="https://github.com/kimai/kimai/issues/2048">#2048</a></li>
+  <li>Listexport of generated Invoices from a certain state <a href="https://github.com/kimai/kimai/issues/1955">#1955</a></li>
+  <li>User - restrict permission on changing Name, Title, and Profile Image <a href="https://github.com/kimai/kimai/issues/1935">#1935</a></li>
+  <li>change select box for colors <a href="https://github.com/kimai/kimai/issues/1919">#1919</a></li>
+  <li>Display a “time/budget”-bar on the projects overview <a href="https://github.com/kimai/kimai/issues/1912">#1912</a></li>
   <li>Support tags in invoices <a href="https://github.com/kimai/kimai/pull/2526">#2526</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
   <li>show daily sum in calendar week and day view <a href="https://github.com/kimai/kimai/pull/2519">#2519</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
   <li>added activity events for plugins <a href="https://github.com/kimai/kimai/pull/2516">#2516</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
@@ -318,18 +303,12 @@ Advice: Do not rely on CSV for data exchange if you use Excel, export XSLX inste
 <p><strong>Fixed bugs:</strong></p>
 
 <ul>
-  <li>The dates in the header row of the table on the Reporting page are not in the correct format for English (US) <a href="https://github.com/kimai/kimai/issues/2492">#2492</a>
-</li>
-  <li>The table Reporting page does not respect the user’s First day of the week setting <a href="https://github.com/kimai/kimai/issues/2475">#2475</a>
-</li>
-  <li>API Timesheets collection fails with error 500 instead of 404 <a href="https://github.com/kimai/kimai/issues/2466">#2466</a>
-</li>
-  <li>The calendar view on the DateRangePicker does not respect the user’s First day of the week setting <a href="https://github.com/kimai/kimai/issues/2459">#2459</a>
-</li>
-  <li>Cleaning Dashboard from projects out of date <a href="https://github.com/kimai/kimai/issues/2390">#2390</a>
-</li>
-  <li>Unreadable dirty modal notice <a href="https://github.com/kimai/kimai/issues/2370">#2370</a>
-</li>
+  <li>The dates in the header row of the table on the Reporting page are not in the correct format for English (US) <a href="https://github.com/kimai/kimai/issues/2492">#2492</a></li>
+  <li>The table Reporting page does not respect the user’s First day of the week setting <a href="https://github.com/kimai/kimai/issues/2475">#2475</a></li>
+  <li>API Timesheets collection fails with error 500 instead of 404 <a href="https://github.com/kimai/kimai/issues/2466">#2466</a></li>
+  <li>The calendar view on the DateRangePicker does not respect the user’s First day of the week setting <a href="https://github.com/kimai/kimai/issues/2459">#2459</a></li>
+  <li>Cleaning Dashboard from projects out of date <a href="https://github.com/kimai/kimai/issues/2390">#2390</a></li>
+  <li>Unreadable dirty modal notice <a href="https://github.com/kimai/kimai/issues/2370">#2370</a></li>
   <li>Fix calendar view for drag&amp;drop entries with tags in dropdown-mode <a href="https://github.com/kimai/kimai/pull/2520">#2520</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
   <li>fix sunday being first day of week <a href="https://github.com/kimai/kimai/pull/2483">#2483</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
   <li>fix api 404 on page parameter <a href="https://github.com/kimai/kimai/pull/2468">#2468</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
@@ -343,7 +322,7 @@ Advice: Do not rely on CSV for data exchange if you use Excel, export XSLX inste
             <div class="sticky-top ms-xl-5 ms-lg-4 ps-xxl-4" style="top: 105px !important;">
                 <h6>Share this post:</h6>
                 <div class="mb-4 pb-lg-3">
-                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.kimai.org/en/blog/2021/kimai-v2-release-1-14&amp;title=Release%201.14%20-%20Reports,%20invoices%20&amp;%20search%20bookmark" class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.kimai.org/en/blog/2021/kimai-v2-release-1-14&title=Release 1.14 - Reports, invoices & search bookmark" class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2" aria-label="LinkedIn">
                         <i class="bx bxl-linkedin"></i>
                     </a>
                     <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.kimai.org/en/blog/2021/kimai-v2-release-1-14" class="btn btn-icon btn-secondary btn-facebook me-2 mb-2" aria-label="Facebook">
@@ -485,7 +464,7 @@ Advice: Do not rely on CSV for data exchange if you use Excel, export XSLX inste
                                     <a href="/en/reviews" class="nav-link fs-sm fw-medium px-0 py-1">Reviews</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/en/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Press &amp; Media</a>
+                                    <a href="/en/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Press & Media</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="/en/kimai-discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">Discount codes</a>

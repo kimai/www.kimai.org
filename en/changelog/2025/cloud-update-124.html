@@ -56,10 +56,10 @@
                         <ul class="dropdown-menu">
                             <li><a href="/en/about.html" class="dropdown-item">About Kimai</a></li>
                             <li><a href="/en/open-source-community" class="dropdown-item">Open Source</a></li>
-                            <li class="dropdown-divider">
-                            <li><a href="/en/integrations" class="dropdown-item">Apps &amp; Integrations</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="/en/integrations" class="dropdown-item">Apps & Integrations</a></li>
                             <li><a href="/en/demo.html" class="dropdown-item">Demo</a></li>
-                            <li class="dropdown-divider">
+                            <li class="dropdown-divider"></li>
                             <li><a href="/en/blog/" class="dropdown-item">Blog</a></li>
                             <li><a href="/en/support.html" class="dropdown-item">Support</a></li>
                         </ul>
@@ -186,10 +186,8 @@
 
 <ul>
   <li>The customer address was previously stored in a single text field. Due to requirements for e-invoicing, the address must now be split into separate fields: <code class="language-plaintext highlighter-rouge">address line 1/2/3</code>, <code class="language-plaintext highlighter-rouge">city</code>, <code class="language-plaintext highlighter-rouge">postcode</code> and <code class="language-plaintext highlighter-rouge">country</code>. These fields have been added to the customer entity. <strong>Please update the customer records you actively maintain and adjust your API integrations to use the new fields.</strong> The old combined address field will be removed in a future release.</li>
-  <li>
-<strong>Invoice templates must now be linked to a customer.</strong> The linked customer’s data is used to populate the sender details (name, address, and tax number). The previously configurable fields (address, company name, VAT ID) are no longer editable in the UI and serve only as a fallback until a customer account is linked.</li>
-  <li>
-<a href="https://www.kimai.org/documentation/api-pagination.html">Paginated API calls</a> are now limited to a maximum of <strong>500 items per page</strong>. Currently, this affects only the timesheet endpoint.</li>
+  <li><strong>Invoice templates must now be linked to a customer.</strong> The linked customer’s data is used to populate the sender details (name, address, and tax number). The previously configurable fields (address, company name, VAT ID) are no longer editable in the UI and serve only as a fallback until a customer account is linked.</li>
+  <li><a href="https://www.kimai.org/documentation/api-pagination.html">Paginated API calls</a> are now limited to a maximum of <strong>500 items per page</strong>. Currently, this affects only the timesheet endpoint.</li>
 </ul>
 
         </div>
@@ -201,7 +199,7 @@
 
                 <h6>Share this post:</h6>
                 <div class="mb-4 pb-lg-3">
-                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.kimai.org/en/changelog/2025/cloud-update-124&amp;title=Support%20for%20EU%20e-invoicing,%20structured%20customer%20addresses,%20and%20refined%20API%20pagination" class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.kimai.org/en/changelog/2025/cloud-update-124&title=Support for EU e-invoicing, structured customer addresses, and refined API pagination" class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2" aria-label="LinkedIn">
                         <i class="bx bxl-linkedin"></i>
                     </a>
                     <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.kimai.org/en/changelog/2025/cloud-update-124" class="btn btn-icon btn-secondary btn-facebook me-2 mb-2" aria-label="Facebook">
@@ -300,7 +298,7 @@
                                     <a href="/en/reviews" class="nav-link fs-sm fw-medium px-0 py-1">Reviews</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/en/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Press &amp; Media</a>
+                                    <a href="/en/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Press & Media</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="/en/kimai-discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">Discount codes</a>

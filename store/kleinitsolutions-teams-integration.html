@@ -113,10 +113,10 @@
                         <ul class="dropdown-menu">
                             <li><a href="/en/about.html" class="dropdown-item">About Kimai</a></li>
                             <li><a href="/en/open-source-community" class="dropdown-item">Open Source</a></li>
-                            <li class="dropdown-divider">
-                            <li><a href="/en/integrations" class="dropdown-item">Apps &amp; Integrations</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="/en/integrations" class="dropdown-item">Apps & Integrations</a></li>
                             <li><a href="/en/demo.html" class="dropdown-item">Demo</a></li>
-                            <li class="dropdown-divider">
+                            <li class="dropdown-divider"></li>
                             <li><a href="/en/blog/" class="dropdown-item">Blog</a></li>
                             <li><a href="/en/support.html" class="dropdown-item">Support</a></li>
                         </ul>
@@ -338,7 +338,7 @@ Whenever you create customers or projects in Kimai, the plugin can generate matc
 
 <h2 id="key-features">Key Features</h2>
 <ul>
-  <li>
+  <li></li>
   <li>Automated creation of customer and project structures inside a chosen Microsoft Teams Tenant</li>
   <li>Fully integrated with Microsoft Graph API</li>
   <li>Central configuration directly within Kimai</li>
@@ -472,14 +472,12 @@ GRAPH_CLIENT_SECRET=
     </tr>
     <tr>
       <td><strong>Name template for the team</strong></td>
-      <td>Template for naming the Microsoft Teams and Kimai Teams, optinal variables are <code class="language-plaintext highlighter-rouge">{name}</code> and <code class="language-plaintext highlighter-rouge">{id}</code>
-</td>
+      <td>Template for naming the Microsoft Teams and Kimai Teams, optinal variables are <code class="language-plaintext highlighter-rouge">{name}</code> and <code class="language-plaintext highlighter-rouge">{id}</code></td>
       <td><code class="language-plaintext highlighter-rouge">{name}</code></td>
     </tr>
     <tr>
       <td><strong>Description template for the team</strong></td>
-      <td>Template for the description of the Microsoft Teams and Kimai Teams, optinal variables are <code class="language-plaintext highlighter-rouge">{name}</code> and <code class="language-plaintext highlighter-rouge">{id}</code>
-</td>
+      <td>Template for the description of the Microsoft Teams and Kimai Teams, optinal variables are <code class="language-plaintext highlighter-rouge">{name}</code> and <code class="language-plaintext highlighter-rouge">{id}</code></td>
       <td><code class="language-plaintext highlighter-rouge">Team for Customer {name}</code></td>
     </tr>
     <tr>
@@ -494,8 +492,7 @@ GRAPH_CLIENT_SECRET=
     </tr>
     <tr>
       <td><strong>Name template for the channel</strong></td>
-      <td>Template for naming the Microsoft Teams channels and Kimai Teams, optinal variables are <code class="language-plaintext highlighter-rouge">{name}</code> and <code class="language-plaintext highlighter-rouge">{id}</code>
-</td>
+      <td>Template for naming the Microsoft Teams channels and Kimai Teams, optinal variables are <code class="language-plaintext highlighter-rouge">{name}</code> and <code class="language-plaintext highlighter-rouge">{id}</code></td>
       <td><code class="language-plaintext highlighter-rouge">{name}</code></td>
     </tr>
     <tr>
@@ -631,8 +628,7 @@ And you probably need to prefix them with <code class="language-plaintext highli
 
         <p>This will create the required database tables and update them to the latest version.</p>
 
-<div class="alert alert-warning d-flex" role="alert">
-<i class="bx bx-alarm-exclamation lead me-3"></i>
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i>
 <p>If you see an error like <code class="language-plaintext highlighter-rouge">There are no commands defined in the "kimai:bundle:XYZ" namespace.</code>,
 then either the directory has a wrong name (must be <strong>var/plugins/TeamsIntegrationBundle/</strong>) or you forgot to clear the cache (look above).</p>
 </div>
@@ -649,16 +645,14 @@ then either the directory has a wrong name (must be <strong>var/plugins/TeamsInt
     <p>Updating the plugin works exactly like the installation:</p>
     <ul>
         <li>Delete the directory <code class="language-plaintext highlighter-rouge">var/plugins/TeamsIntegrationBundle/</code>
-        </li>
-<li>
+        <li>
             Execute all installation steps again:
             <ul>
                 <li>Copy files</li>
                 <li>Clear cache</li>
                 <li>Update database with <code class="language-plaintext highlighter-rouge">bin/console ms-teams:sync-folders</code>
                 
-            </li>
-</ul>
+            </ul>
         </li>
     </ul>
 
@@ -748,7 +742,7 @@ then either the directory has a wrong name (must be <strong>var/plugins/TeamsInt
                 <div class="fs-xl text-light opacity-50 mb-2">Offered by</div>
                 <h2 class="h1 text-light mb-4">Klein IT Solutions</h2>
                 <p class="text-light opacity-70 pb-4">
-                    Software &amp; IT Solutions
+                    Software & IT Solutions
                 </p>
 
                 <div class="mb-4">
@@ -869,7 +863,7 @@ then either the directory has a wrong name (must be <strong>var/plugins/TeamsInt
                                     <a href="/en/reviews" class="nav-link fs-sm fw-medium px-0 py-1">Reviews</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/en/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Press &amp; Media</a>
+                                    <a href="/en/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Press & Media</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="/en/kimai-discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">Discount codes</a>

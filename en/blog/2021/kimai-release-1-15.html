@@ -56,10 +56,10 @@
                         <ul class="dropdown-menu">
                             <li><a href="/en/about.html" class="dropdown-item">About Kimai</a></li>
                             <li><a href="/en/open-source-community" class="dropdown-item">Open Source</a></li>
-                            <li class="dropdown-divider">
-                            <li><a href="/en/integrations" class="dropdown-item">Apps &amp; Integrations</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="/en/integrations" class="dropdown-item">Apps & Integrations</a></li>
                             <li><a href="/en/demo.html" class="dropdown-item">Demo</a></li>
-                            <li class="dropdown-divider">
+                            <li class="dropdown-divider"></li>
                             <li><a href="/en/blog/" class="dropdown-item">Blog</a></li>
                             <li><a href="/en/support.html" class="dropdown-item">Support</a></li>
                         </ul>
@@ -140,7 +140,7 @@
     
 
 <section class="container mt-4 pt-lg-2 pb-3">
-    <h1 class="pb-3" style="max-width: 970px;">Release 1.15 - Project detail report &amp; Monthly budgets</h1>
+    <h1 class="pb-3" style="max-width: 970px;">Release 1.15 - Project detail report & Monthly budgets</h1>
     <div class="d-flex flex-md-row flex-column align-items-md-center justify-content-md-between mb-3">
         <div class="d-flex align-items-center flex-wrap text-muted mb-md-0 mb-4">
             <div class="fs-xs border-end pe-3 me-3 mb-2">
@@ -186,8 +186,7 @@
 <ul>
   <li>SAML users: activate it by setting the <code class="language-plaintext highlighter-rouge">kimai.saml.activate: true</code> config key</li>
   <li>LDAP users: activate it by setting the <code class="language-plaintext highlighter-rouge">kimai.ldap.activate: true</code> config key</li>
-  <li>LDAP and SAML users need to remove the complete <code class="language-plaintext highlighter-rouge">security</code> section from their <code class="language-plaintext highlighter-rouge">local.yaml</code>
-</li>
+  <li>LDAP and SAML users need to remove the complete <code class="language-plaintext highlighter-rouge">security</code> section from their <code class="language-plaintext highlighter-rouge">local.yaml</code></li>
 </ul>
 
 <h3 id="list-of-notable-changes">List of notable changes</h3>
@@ -207,8 +206,7 @@
 <ul>
   <li>Self-registration is disabled by default</li>
   <li>Self-registration now always requires email confirmation</li>
-  <li>Removed the YearChart widget and the related configs named <code class="language-plaintext highlighter-rouge">userRecapThisYear</code>, <code class="language-plaintext highlighter-rouge">userRecapLastYear</code>, <code class="language-plaintext highlighter-rouge">userRecapTwoYears</code>, <code class="language-plaintext highlighter-rouge">userRecapThreeYears</code>
-</li>
+  <li>Removed the YearChart widget and the related configs named <code class="language-plaintext highlighter-rouge">userRecapThisYear</code>, <code class="language-plaintext highlighter-rouge">userRecapLastYear</code>, <code class="language-plaintext highlighter-rouge">userRecapTwoYears</code>, <code class="language-plaintext highlighter-rouge">userRecapThreeYears</code></li>
 </ul>
 
 <h3 id="security-issues">Security issues</h3>
@@ -239,209 +237,110 @@
 <h3 id="implemented-enhancements">Implemented enhancements</h3>
 
 <ul>
-  <li>Cumbersome position of “End” button for active timesheet entry since Kimai 1.14 <a href="https://github.com/kimai/kimai/issues/2693">#2693</a>
-</li>
-  <li>DragAndDrop 10 RecentActivities configurable <a href="https://github.com/kimai/kimai/issues/2646">#2646</a>
-</li>
-  <li>Wrong version number for 1.14.3 <a href="https://github.com/kimai/kimai/issues/2582">#2582</a>
-</li>
-  <li>Optionally hide Username/Password and Login button <a href="https://github.com/kimai/kimai/issues/2458">#2458</a>
-</li>
-  <li>Explain missing time period in timesheet export <a href="https://github.com/kimai/kimai/issues/2091">#2091</a>
-</li>
-  <li>store search in session <a href="https://github.com/kimai/kimai/issues/2735">#2735</a>
-</li>
-  <li>datatable sorting <a href="https://github.com/kimai/kimai/issues/2734">#2734</a>
-</li>
-  <li>Added search modal for timesheet export <a href="https://github.com/kimai/kimai/issues/2728">#2728</a>
-</li>
-  <li>Login screen UI <a href="https://github.com/kimai/kimai/issues/2711">#2711</a>
-</li>
-  <li>Fixes for 1.15 <a href="https://github.com/kimai/kimai/issues/2704">#2704</a>
-</li>
-  <li>Support multiple teamleads in each team <a href="https://github.com/kimai/kimai/issues/2702">#2702</a>
-</li>
-  <li>move supported languages logic to service <a href="https://github.com/kimai/kimai/issues/2701">#2701</a>
-</li>
-  <li>Classical cleanup PR <a href="https://github.com/kimai/kimai/issues/2700">#2700</a>
-</li>
-  <li>improved play and stop button if only one record is allowed <a href="https://github.com/kimai/kimai/issues/2692">#2692</a>
-</li>
-  <li>allow to merge multiple Kimai 1 installations <a href="https://github.com/kimai/kimai/issues/2691">#2691</a>
-</li>
-  <li>allow 65535 character in meta fields <a href="https://github.com/kimai/kimai/issues/2690">#2690</a>
-</li>
-  <li>monthly budgets and report <a href="https://github.com/kimai/kimai/issues/2684">#2684</a>
-</li>
-  <li>added account number field to user <a href="https://github.com/kimai/kimai/issues/2671">#2671</a>
-</li>
-  <li>Bugfixes <a href="https://github.com/kimai/kimai/issues/2669">#2669</a>
-</li>
-  <li>better readability for drag and drop boxes <a href="https://github.com/kimai/kimai/issues/2659">#2659</a>
-</li>
-  <li>improve permission checks for report access <a href="https://github.com/kimai/kimai/issues/2658">#2658</a>
-</li>
-  <li>Configurable print export <a href="https://github.com/kimai/kimai/issues/2657">#2657</a>
-</li>
-  <li>Project detail report <a href="https://github.com/kimai/kimai/issues/2651">#2651</a>
-</li>
-  <li>refactor configurations <a href="https://github.com/kimai/kimai/issues/2626">#2626</a>
-</li>
-  <li>Improve color choice and name validation <a href="https://github.com/kimai/kimai/issues/2622">#2622</a>
-</li>
-  <li>added setting to limit the maximum length of a timesheet record <a href="https://github.com/kimai/kimai/issues/2612">#2612</a>
-</li>
-  <li>removed soft_limit setting <a href="https://github.com/kimai/kimai/issues/2611">#2611</a>
-</li>
-  <li>Refactor authentication system <a href="https://github.com/kimai/kimai/issues/2602">#2602</a>
-</li>
-  <li>allow to configure timezone for the lockdown period <a href="https://github.com/kimai/kimai/issues/2593">#2593</a>
-</li>
-  <li>Lint container <a href="https://github.com/kimai/kimai/issues/2591">#2591</a>
-</li>
-  <li>feat: adds support for setting description by http params <a href="https://github.com/kimai/kimai/issues/2580">#2580</a> <a href="https://github.com/tobybatch" class="user-mention">@tobybatch</a>
-</li>
-  <li>limit amount of items in calendar drag and drop boxes <a href="https://github.com/kimai/kimai/issues/2291">#2291</a>
-</li>
-  <li>Support for PHP 8 <a href="https://github.com/kimai/kimai/issues/2158">#2158</a>
-</li>
-  <li>Add a calendar configuration event <a href="https://github.com/kimai/kimai/issues/2698">#2698</a> <a href="https://github.com/Jelle-S" class="user-mention">@Jelle-S</a>
-</li>
-  <li>customer-name as part of the invoice number <a href="https://github.com/kimai/kimai/issues/2640">#2640</a>
-</li>
-  <li>Translations update from Weblate <a href="https://github.com/kimai/kimai/issues/2739">#2739</a>, <a href="https://github.com/kimai/kimai/issues/2672">#2672</a>, <a href="https://github.com/kimai/kimai/issues/2665">#2665</a>, <a href="https://github.com/kimai/kimai/issues/2613">#2613</a>, <a href="https://github.com/kimai/kimai/issues/2577">#2577</a>, <a href="https://github.com/kimai/kimai/issues/2717">#2717</a>, <a href="https://github.com/kimai/kimai/issues/2661">#2661</a> <a href="https://github.com/weblate" class="user-mention">@weblate</a>
-</li>
-  <li>Copy the billable status when restarting timesheet <a href="https://github.com/kimai/kimai/issues/2778">#2778</a> <a href="https://github.com/Guillaume-Duc-95" class="user-mention">@Guillaume-Duc-95</a>
-</li>
-  <li>Translations update from Weblate <a href="https://github.com/kimai/kimai/issues/2781">#2781</a> <a href="https://github.com/weblate" class="user-mention">@weblate</a>
-</li>
-  <li>added customer number in invoice export <a href="https://github.com/kimai/kimai/issues/2775">#2775</a>
-</li>
-  <li>updated changelog to clarify required LDAP changes <a href="https://github.com/kimai/kimai/issues/2772">#2772</a>
-</li>
-  <li>export budget and timeBudget <a href="https://github.com/kimai/kimai/issues/2812">#2812</a>
-</li>
-  <li>removed subtitle <a href="https://github.com/kimai/kimai/issues/2811">#2811</a>
-</li>
-  <li>Translations update from Weblate @<a href="https://github.com/kimai/kimai/issues/2791">#2791</a> <a href="https://github.com/milotype" class="user-mention">@milotype</a> <a href="https://github.com/dansamara" class="user-mention">@dansamara</a> <a href="https://github.com/bittin" class="user-mention">@bittin</a>
-</li>
-  <li>added croatian language <a href="https://github.com/kimai/kimai/issues/2817">#2817</a> - thanks <a href="https://github.com/milotype" class="user-mention">@milotype</a>
-</li>
-  <li>set security options on cookies <a href="https://github.com/kimai/kimai/issues/2825">#2825</a> - thanks <a href="https://github.com/nareshsarnala" class="user-mention">@nareshsarnala</a>
-</li>
-  <li>In create screen make option to make Billable status to not billable <a href="https://github.com/kimai/kimai/issues/2779">#2779</a>
-</li>
-  <li>Make billable field batch editable <a href="https://github.com/kimai/kimai/issues/2694">#2694</a>
-</li>
-  <li>Timesheet uncheck billable by default <a href="https://github.com/kimai/kimai/issues/2625">#2625</a>
-</li>
-  <li>API: Add customer number to customer collection <a href="https://github.com/kimai/kimai/issues/2358">#2358</a>
-</li>
-  <li>improve billable flag <a href="https://github.com/kimai/kimai/issues/2851">#2851</a>
-</li>
-  <li>refactor system configuration title and wording <a href="https://github.com/kimai/kimai/issues/2847">#2847</a>
-</li>
-  <li>Translations update from Weblate <a href="https://github.com/kimai/kimai/issues/2823">#2823</a> <a href="https://github.com/weblate" class="user-mention">@weblate</a>
-</li>
-  <li>improve summary rows layout in reports <a href="https://github.com/kimai/kimai/issues/2861">#2861</a>
-</li>
+  <li>Cumbersome position of “End” button for active timesheet entry since Kimai 1.14 <a href="https://github.com/kimai/kimai/issues/2693">#2693</a></li>
+  <li>DragAndDrop 10 RecentActivities configurable <a href="https://github.com/kimai/kimai/issues/2646">#2646</a></li>
+  <li>Wrong version number for 1.14.3 <a href="https://github.com/kimai/kimai/issues/2582">#2582</a></li>
+  <li>Optionally hide Username/Password and Login button <a href="https://github.com/kimai/kimai/issues/2458">#2458</a></li>
+  <li>Explain missing time period in timesheet export <a href="https://github.com/kimai/kimai/issues/2091">#2091</a></li>
+  <li>store search in session <a href="https://github.com/kimai/kimai/issues/2735">#2735</a></li>
+  <li>datatable sorting <a href="https://github.com/kimai/kimai/issues/2734">#2734</a></li>
+  <li>Added search modal for timesheet export <a href="https://github.com/kimai/kimai/issues/2728">#2728</a></li>
+  <li>Login screen UI <a href="https://github.com/kimai/kimai/issues/2711">#2711</a></li>
+  <li>Fixes for 1.15 <a href="https://github.com/kimai/kimai/issues/2704">#2704</a></li>
+  <li>Support multiple teamleads in each team <a href="https://github.com/kimai/kimai/issues/2702">#2702</a></li>
+  <li>move supported languages logic to service <a href="https://github.com/kimai/kimai/issues/2701">#2701</a></li>
+  <li>Classical cleanup PR <a href="https://github.com/kimai/kimai/issues/2700">#2700</a></li>
+  <li>improved play and stop button if only one record is allowed <a href="https://github.com/kimai/kimai/issues/2692">#2692</a></li>
+  <li>allow to merge multiple Kimai 1 installations <a href="https://github.com/kimai/kimai/issues/2691">#2691</a></li>
+  <li>allow 65535 character in meta fields <a href="https://github.com/kimai/kimai/issues/2690">#2690</a></li>
+  <li>monthly budgets and report <a href="https://github.com/kimai/kimai/issues/2684">#2684</a></li>
+  <li>added account number field to user <a href="https://github.com/kimai/kimai/issues/2671">#2671</a></li>
+  <li>Bugfixes <a href="https://github.com/kimai/kimai/issues/2669">#2669</a></li>
+  <li>better readability for drag and drop boxes <a href="https://github.com/kimai/kimai/issues/2659">#2659</a></li>
+  <li>improve permission checks for report access <a href="https://github.com/kimai/kimai/issues/2658">#2658</a></li>
+  <li>Configurable print export <a href="https://github.com/kimai/kimai/issues/2657">#2657</a></li>
+  <li>Project detail report <a href="https://github.com/kimai/kimai/issues/2651">#2651</a></li>
+  <li>refactor configurations <a href="https://github.com/kimai/kimai/issues/2626">#2626</a></li>
+  <li>Improve color choice and name validation <a href="https://github.com/kimai/kimai/issues/2622">#2622</a></li>
+  <li>added setting to limit the maximum length of a timesheet record <a href="https://github.com/kimai/kimai/issues/2612">#2612</a></li>
+  <li>removed soft_limit setting <a href="https://github.com/kimai/kimai/issues/2611">#2611</a></li>
+  <li>Refactor authentication system <a href="https://github.com/kimai/kimai/issues/2602">#2602</a></li>
+  <li>allow to configure timezone for the lockdown period <a href="https://github.com/kimai/kimai/issues/2593">#2593</a></li>
+  <li>Lint container <a href="https://github.com/kimai/kimai/issues/2591">#2591</a></li>
+  <li>feat: adds support for setting description by http params <a href="https://github.com/kimai/kimai/issues/2580">#2580</a> @tobybatch</li>
+  <li>limit amount of items in calendar drag and drop boxes <a href="https://github.com/kimai/kimai/issues/2291">#2291</a></li>
+  <li>Support for PHP 8 <a href="https://github.com/kimai/kimai/issues/2158">#2158</a></li>
+  <li>Add a calendar configuration event <a href="https://github.com/kimai/kimai/issues/2698">#2698</a> @Jelle-S</li>
+  <li>customer-name as part of the invoice number <a href="https://github.com/kimai/kimai/issues/2640">#2640</a></li>
+  <li>Translations update from Weblate <a href="https://github.com/kimai/kimai/issues/2739">#2739</a>, <a href="https://github.com/kimai/kimai/issues/2672">#2672</a>, <a href="https://github.com/kimai/kimai/issues/2665">#2665</a>, <a href="https://github.com/kimai/kimai/issues/2613">#2613</a>, <a href="https://github.com/kimai/kimai/issues/2577">#2577</a>, <a href="https://github.com/kimai/kimai/issues/2717">#2717</a>, <a href="https://github.com/kimai/kimai/issues/2661">#2661</a> @weblate</li>
+  <li>Copy the billable status when restarting timesheet <a href="https://github.com/kimai/kimai/issues/2778">#2778</a> @Guillaume-Duc-95</li>
+  <li>Translations update from Weblate <a href="https://github.com/kimai/kimai/issues/2781">#2781</a> @weblate</li>
+  <li>added customer number in invoice export <a href="https://github.com/kimai/kimai/issues/2775">#2775</a></li>
+  <li>updated changelog to clarify required LDAP changes <a href="https://github.com/kimai/kimai/issues/2772">#2772</a></li>
+  <li>export budget and timeBudget <a href="https://github.com/kimai/kimai/issues/2812">#2812</a></li>
+  <li>removed subtitle <a href="https://github.com/kimai/kimai/issues/2811">#2811</a></li>
+  <li>Translations update from Weblate @<a href="https://github.com/kimai/kimai/issues/2791">#2791</a> @milotype @dansamara @bittin</li>
+  <li>added croatian language <a href="https://github.com/kimai/kimai/issues/2817">#2817</a> - thanks @milotype</li>
+  <li>set security options on cookies <a href="https://github.com/kimai/kimai/issues/2825">#2825</a> - thanks @nareshsarnala</li>
+  <li>In create screen make option to make Billable status to not billable <a href="https://github.com/kimai/kimai/issues/2779">#2779</a></li>
+  <li>Make billable field batch editable <a href="https://github.com/kimai/kimai/issues/2694">#2694</a></li>
+  <li>Timesheet uncheck billable by default <a href="https://github.com/kimai/kimai/issues/2625">#2625</a></li>
+  <li>API: Add customer number to customer collection <a href="https://github.com/kimai/kimai/issues/2358">#2358</a></li>
+  <li>improve billable flag <a href="https://github.com/kimai/kimai/issues/2851">#2851</a></li>
+  <li>refactor system configuration title and wording <a href="https://github.com/kimai/kimai/issues/2847">#2847</a></li>
+  <li>Translations update from Weblate <a href="https://github.com/kimai/kimai/issues/2823">#2823</a> @weblate</li>
+  <li>improve summary rows layout in reports <a href="https://github.com/kimai/kimai/issues/2861">#2861</a></li>
 </ul>
 
 <h3 id="fixed-bugs">Fixed bugs</h3>
 
 <ul>
-  <li>Bug in activities API <a href="https://github.com/kimai/kimai/issues/2765">#2765</a>
-</li>
-  <li>No update to 1.14.3 it stops by 1.14.1 <a href="https://github.com/kimai/kimai/issues/2759">#2759</a>
-</li>
-  <li>Kimai2 Migrations conflict with MySQL ANSI_QUOTES mode <a href="https://github.com/kimai/kimai/issues/2751">#2751</a>
-</li>
-  <li>Exported XLS - cell format <a href="https://github.com/kimai/kimai/issues/2744">#2744</a>
-</li>
-  <li>Changing public folder path <a href="https://github.com/kimai/kimai/issues/2742">#2742</a>
-</li>
-  <li>copy entries not working if overlapping timentries are disabled <a href="https://github.com/kimai/kimai/issues/2731">#2731</a>
-</li>
-  <li>update problem <a href="https://github.com/kimai/kimai/issues/2706">#2706</a>
-</li>
-  <li>Tag colour defaults to grey on editing <a href="https://github.com/kimai/kimai/issues/2649">#2649</a>
-</li>
-  <li>Version reporting mismatch on upgrade: 1.14.1 or 1.14.3? <a href="https://github.com/kimai/kimai/issues/2648">#2648</a>
-</li>
-  <li>Calendar is cut off at the bottom of the browser <a href="https://github.com/kimai/kimai/issues/2609">#2609</a>
-</li>
-  <li>Reassigning activity to other customer/project does not adapt timesheet entries <a href="https://github.com/kimai/kimai/issues/2576">#2576</a>
-</li>
-  <li>CSV importer adds only first missing customer, assigning all other projects to that new customer <a href="https://github.com/kimai/kimai/issues/2479">#2479</a>
-</li>
-  <li>using the same tag multiple times in csv not resolved <a href="https://github.com/kimai/kimai/issues/2318">#2318</a>
-</li>
-  <li>Small color bug with projects <a href="https://github.com/kimai/kimai/issues/2200">#2200</a>
-</li>
-  <li>Api fixes <a href="https://github.com/kimai/kimai/issues/2766">#2766</a>
-</li>
-  <li>fix duplicating timesheet if allow overlapping is deactivated <a href="https://github.com/kimai/kimai/issues/2732">#2732</a>
-</li>
-  <li>prevent email or username becoming non-unique <a href="https://github.com/kimai/kimai/issues/2730">#2730</a>
-</li>
-  <li>fix team edit with deactivated users <a href="https://github.com/kimai/kimai/issues/2716">#2716</a>
-</li>
-  <li>fix user stats in profile for first year <a href="https://github.com/kimai/kimai/issues/2712">#2712</a>
-</li>
-  <li>Ldap <a href="https://github.com/kimai/kimai/issues/2689">#2689</a>
-</li>
-  <li>LDAP: fixing issues for re-authenticating users <a href="https://github.com/kimai/kimai/issues/2681">#2681</a>
-</li>
-  <li>make sure that timezone is properly validated <a href="https://github.com/kimai/kimai/issues/2663">#2663</a>
-</li>
-  <li>bugfixes and improvements <a href="https://github.com/kimai/kimai/issues/2660">#2660</a>
-</li>
-  <li>Bugfixes <a href="https://github.com/kimai/kimai/issues/2655">#2655</a>
-</li>
-  <li>fix url under certain environments <a href="https://github.com/kimai/kimai/issues/2621">#2621</a>
-</li>
-  <li>fix datepicker appears out of screen <a href="https://github.com/kimai/kimai/issues/2610">#2610</a>
-</li>
-  <li>Whitespace on line endings in created docx invoices <a href="https://github.com/kimai/kimai/issues/2748">#2748</a> <a href="https://github.com/Input-BDF" class="user-mention">@Input-BDF</a>
-</li>
-  <li>Fix division by zero in report <a href="https://github.com/kimai/kimai/issues/2782">#2782</a>
-</li>
-  <li>Cleanup required directories, check configured data directory, do not check for freetype support <a href="https://github.com/kimai/kimai/issues/2782">#2782</a>
-</li>
-  <li>remove duplicate statistic events <a href="https://github.com/kimai/kimai/issues/2776">#2776</a>
-</li>
-  <li>fix api doc <a href="https://github.com/teams" class="user-mention">@teams</a> <a href="https://github.com/kimai/kimai/issues/2773">#2773</a>
-</li>
-  <li>Prevent expired / future projects from being displayed in the dashboard for normal users <a href="https://github.com/kimai/kimai/issues/2721">#2721</a>
-</li>
-  <li>Dashboard: Anzahl Kunden - Anzahl Projekte kann für Teamleiter nicht ausgeblendet werden <a href="https://github.com/kimai/kimai/issues/2718">#2718</a>
-</li>
-  <li>Editing timesheet record with a rate factor applied, keeps applying the factor with each edit. <a href="https://github.com/kimai/kimai/issues/1988">#1988</a>
-</li>
-  <li>do not apply rate factor multiple times <a href="https://github.com/kimai/kimai/issues/2807">#2807</a>
-</li>
-  <li>allow to customize dashboard permissions for latest row <a href="https://github.com/kimai/kimai/issues/2806">#2806</a>
-</li>
-  <li>hide not started projects in widget <a href="https://github.com/kimai/kimai/issues/2805">#2805</a>
-</li>
-  <li>respect customer visibility in project-overview report <a href="https://github.com/kimai/kimai/issues/2804">#2804</a>
-</li>
-  <li>fix open budget calculation <a href="https://github.com/kimai/kimai/issues/2821">#2821</a> - thanks <a href="https://github.com/diamondq" class="user-mention">@diamondq</a>
-</li>
-  <li>Small typo leads to broken update <a href="https://github.com/kimai/kimai/issues/2839">#2839</a>
-</li>
-  <li>Wrong version number for 1.15.4 <a href="https://github.com/kimai/kimai/issues/2831">#2831</a>
-</li>
-  <li>Custom fields on timesheet copy not visible <a href="https://github.com/kimai/kimai/issues/2842">#2842</a>
-</li>
-  <li>Not able to update from 1.14.3 to 1.15.4 <a href="https://github.com/kimai/kimai/issues/2837">#2837</a>
-</li>
-  <li>fix missing meta fields in duplicate timesheet action <a href="https://github.com/kimai/kimai/issues/2845">#2845</a>
-</li>
-  <li>improve sunday FDOW handling <a href="https://github.com/kimai/kimai/issues/2862">#2862</a>
-</li>
-  <li>make sure that minute_increment is not zero <a href="https://github.com/kimai/kimai/issues/2860">#2860</a>
-</li>
+  <li>Bug in activities API <a href="https://github.com/kimai/kimai/issues/2765">#2765</a></li>
+  <li>No update to 1.14.3 it stops by 1.14.1 <a href="https://github.com/kimai/kimai/issues/2759">#2759</a></li>
+  <li>Kimai2 Migrations conflict with MySQL ANSI_QUOTES mode <a href="https://github.com/kimai/kimai/issues/2751">#2751</a></li>
+  <li>Exported XLS - cell format <a href="https://github.com/kimai/kimai/issues/2744">#2744</a></li>
+  <li>Changing public folder path <a href="https://github.com/kimai/kimai/issues/2742">#2742</a></li>
+  <li>copy entries not working if overlapping timentries are disabled <a href="https://github.com/kimai/kimai/issues/2731">#2731</a></li>
+  <li>update problem <a href="https://github.com/kimai/kimai/issues/2706">#2706</a></li>
+  <li>Tag colour defaults to grey on editing <a href="https://github.com/kimai/kimai/issues/2649">#2649</a></li>
+  <li>Version reporting mismatch on upgrade: 1.14.1 or 1.14.3? <a href="https://github.com/kimai/kimai/issues/2648">#2648</a></li>
+  <li>Calendar is cut off at the bottom of the browser <a href="https://github.com/kimai/kimai/issues/2609">#2609</a></li>
+  <li>Reassigning activity to other customer/project does not adapt timesheet entries <a href="https://github.com/kimai/kimai/issues/2576">#2576</a></li>
+  <li>CSV importer adds only first missing customer, assigning all other projects to that new customer <a href="https://github.com/kimai/kimai/issues/2479">#2479</a></li>
+  <li>using the same tag multiple times in csv not resolved <a href="https://github.com/kimai/kimai/issues/2318">#2318</a></li>
+  <li>Small color bug with projects <a href="https://github.com/kimai/kimai/issues/2200">#2200</a></li>
+  <li>Api fixes <a href="https://github.com/kimai/kimai/issues/2766">#2766</a></li>
+  <li>fix duplicating timesheet if allow overlapping is deactivated <a href="https://github.com/kimai/kimai/issues/2732">#2732</a></li>
+  <li>prevent email or username becoming non-unique <a href="https://github.com/kimai/kimai/issues/2730">#2730</a></li>
+  <li>fix team edit with deactivated users <a href="https://github.com/kimai/kimai/issues/2716">#2716</a></li>
+  <li>fix user stats in profile for first year <a href="https://github.com/kimai/kimai/issues/2712">#2712</a></li>
+  <li>Ldap <a href="https://github.com/kimai/kimai/issues/2689">#2689</a></li>
+  <li>LDAP: fixing issues for re-authenticating users <a href="https://github.com/kimai/kimai/issues/2681">#2681</a></li>
+  <li>make sure that timezone is properly validated <a href="https://github.com/kimai/kimai/issues/2663">#2663</a></li>
+  <li>bugfixes and improvements <a href="https://github.com/kimai/kimai/issues/2660">#2660</a></li>
+  <li>Bugfixes <a href="https://github.com/kimai/kimai/issues/2655">#2655</a></li>
+  <li>fix url under certain environments <a href="https://github.com/kimai/kimai/issues/2621">#2621</a></li>
+  <li>fix datepicker appears out of screen <a href="https://github.com/kimai/kimai/issues/2610">#2610</a></li>
+  <li>Whitespace on line endings in created docx invoices <a href="https://github.com/kimai/kimai/issues/2748">#2748</a> @Input-BDF</li>
+  <li>Fix division by zero in report <a href="https://github.com/kimai/kimai/issues/2782">#2782</a></li>
+  <li>Cleanup required directories, check configured data directory, do not check for freetype support <a href="https://github.com/kimai/kimai/issues/2782">#2782</a></li>
+  <li>remove duplicate statistic events <a href="https://github.com/kimai/kimai/issues/2776">#2776</a></li>
+  <li>fix api doc @teams <a href="https://github.com/kimai/kimai/issues/2773">#2773</a></li>
+  <li>Prevent expired / future projects from being displayed in the dashboard for normal users <a href="https://github.com/kimai/kimai/issues/2721">#2721</a></li>
+  <li>Dashboard: Anzahl Kunden - Anzahl Projekte kann für Teamleiter nicht ausgeblendet werden <a href="https://github.com/kimai/kimai/issues/2718">#2718</a></li>
+  <li>Editing timesheet record with a rate factor applied, keeps applying the factor with each edit. <a href="https://github.com/kimai/kimai/issues/1988">#1988</a></li>
+  <li>do not apply rate factor multiple times <a href="https://github.com/kimai/kimai/issues/2807">#2807</a></li>
+  <li>allow to customize dashboard permissions for latest row <a href="https://github.com/kimai/kimai/issues/2806">#2806</a></li>
+  <li>hide not started projects in widget <a href="https://github.com/kimai/kimai/issues/2805">#2805</a></li>
+  <li>respect customer visibility in project-overview report <a href="https://github.com/kimai/kimai/issues/2804">#2804</a></li>
+  <li>fix open budget calculation <a href="https://github.com/kimai/kimai/issues/2821">#2821</a> - thanks @diamondq</li>
+  <li>Small typo leads to broken update <a href="https://github.com/kimai/kimai/issues/2839">#2839</a></li>
+  <li>Wrong version number for 1.15.4 <a href="https://github.com/kimai/kimai/issues/2831">#2831</a></li>
+  <li>Custom fields on timesheet copy not visible <a href="https://github.com/kimai/kimai/issues/2842">#2842</a></li>
+  <li>Not able to update from 1.14.3 to 1.15.4 <a href="https://github.com/kimai/kimai/issues/2837">#2837</a></li>
+  <li>fix missing meta fields in duplicate timesheet action <a href="https://github.com/kimai/kimai/issues/2845">#2845</a></li>
+  <li>improve sunday FDOW handling <a href="https://github.com/kimai/kimai/issues/2862">#2862</a></li>
+  <li>make sure that minute_increment is not zero <a href="https://github.com/kimai/kimai/issues/2860">#2860</a></li>
 </ul>
 
         </div>
@@ -449,7 +348,7 @@
             <div class="sticky-top ms-xl-5 ms-lg-4 ps-xxl-4" style="top: 105px !important;">
                 <h6>Share this post:</h6>
                 <div class="mb-4 pb-lg-3">
-                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.kimai.org/en/blog/2021/kimai-release-1-15&amp;title=Release%201.15%20-%20Project%20detail%20report%20&amp;%20Monthly%20budgets" class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.kimai.org/en/blog/2021/kimai-release-1-15&title=Release 1.15 - Project detail report & Monthly budgets" class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2" aria-label="LinkedIn">
                         <i class="bx bxl-linkedin"></i>
                     </a>
                     <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.kimai.org/en/blog/2021/kimai-release-1-15" class="btn btn-icon btn-secondary btn-facebook me-2 mb-2" aria-label="Facebook">
@@ -591,7 +490,7 @@
                                     <a href="/en/reviews" class="nav-link fs-sm fw-medium px-0 py-1">Reviews</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/en/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Press &amp; Media</a>
+                                    <a href="/en/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Press & Media</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="/en/kimai-discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">Discount codes</a>

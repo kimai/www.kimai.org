@@ -56,10 +56,10 @@
                         <ul class="dropdown-menu">
                             <li><a href="/en/about.html" class="dropdown-item">About Kimai</a></li>
                             <li><a href="/en/open-source-community" class="dropdown-item">Open Source</a></li>
-                            <li class="dropdown-divider">
-                            <li><a href="/en/integrations" class="dropdown-item">Apps &amp; Integrations</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="/en/integrations" class="dropdown-item">Apps & Integrations</a></li>
                             <li><a href="/en/demo.html" class="dropdown-item">Demo</a></li>
-                            <li class="dropdown-divider">
+                            <li class="dropdown-divider"></li>
                             <li><a href="/en/blog/" class="dropdown-item">Blog</a></li>
                             <li><a href="/en/support.html" class="dropdown-item">Support</a></li>
                         </ul>
@@ -193,7 +193,7 @@
 <h3 id="security-issues">Security issues</h3>
 
 <p>Some possible CSRF and XSS attacks were found and patched. Thanks for the disclosure go out to the huntr.dev community, especially
-to <a href="https://github.com/Haxatron" class="user-mention">@Haxatron</a> and <a href="https://github.com/Asura-N" class="user-mention">@Asura-N</a> and <a href="https://github.com/tdozbun-reno" class="user-mention">@tdozbun-reno</a> and <a href="https://github.com/noobpk" class="user-mention">@noobpk</a>.</p>
+to @Haxatron and @Asura-N and @tdozbun-reno and @noobpk.</p>
 
 <p>If you use Kimai in a multi-user environment, you are urged to update as soon as possible.</p>
 
@@ -221,100 +221,56 @@ to <a href="https://github.com/Haxatron" class="user-mention">@Haxatron</a> and 
 <h3 id="implemented-enhancements">Implemented enhancements</h3>
 
 <ul>
-  <li>Extend orderNumber string to 50 characters (#2824) <a href="https://github.com/kimai/kimai/pull/2828">#2828</a> - thanks <a href="https://github.com/iusgit" class="user-mention">@iusgit</a>
-</li>
-  <li>Extend length of project orderNumber string <a href="https://github.com/kimai/kimai/issues/2824">#2824</a>
-</li>
-  <li>default team for new users <a href="https://github.com/kimai/kimai/issues/2802">#2802</a>
-</li>
-  <li>Update “Preview”/ “Save” buttons after invoice template (re)selection <a href="https://github.com/kimai/kimai/issues/2749">#2749</a>
-</li>
-  <li>Reporting - choose which type of times <a href="https://github.com/kimai/kimai/issues/2575">#2575</a>
-</li>
-  <li>improve error handling during invoice generation <a href="https://github.com/kimai/kimai/pull/2932">#2932</a>
-</li>
-  <li>submit invoice search after changing the template <a href="https://github.com/kimai/kimai/pull/2931">#2931</a>
-</li>
-  <li>added new invoice status: canceled <a href="https://github.com/kimai/kimai/pull/2922">#2922</a>
-</li>
+  <li>Extend orderNumber string to 50 characters (#2824) <a href="https://github.com/kimai/kimai/pull/2828">#2828</a> - thanks @iusgit</li>
+  <li>Extend length of project orderNumber string <a href="https://github.com/kimai/kimai/issues/2824">#2824</a></li>
+  <li>default team for new users <a href="https://github.com/kimai/kimai/issues/2802">#2802</a></li>
+  <li>Update “Preview”/ “Save” buttons after invoice template (re)selection <a href="https://github.com/kimai/kimai/issues/2749">#2749</a></li>
+  <li>Reporting - choose which type of times <a href="https://github.com/kimai/kimai/issues/2575">#2575</a></li>
+  <li>improve error handling during invoice generation <a href="https://github.com/kimai/kimai/pull/2932">#2932</a></li>
+  <li>submit invoice search after changing the template <a href="https://github.com/kimai/kimai/pull/2931">#2931</a></li>
+  <li>added new invoice status: canceled <a href="https://github.com/kimai/kimai/pull/2922">#2922</a></li>
   <li>Translations update from Weblate <a href="https://github.com/kimai/kimai/pull/2915">#2915</a> <a href="https://github.com/kimai/kimai/pull/2850">#2850</a> (<a href="https://github.com/weblate">weblate</a>)</li>
-  <li>added resname for tool compatibility <a href="https://github.com/kimai/kimai/pull/2912">#2912</a>
-</li>
-  <li>change data filter on project month report <a href="https://github.com/kimai/kimai/pull/2911">#2911</a>
-</li>
-  <li>Fetch user preferences via API <a href="https://github.com/kimai/kimai/pull/2905">#2905</a>
-</li>
-  <li>optimizations <a href="https://github.com/kimai/kimai/pull/2904">#2904</a>
-</li>
-  <li>prevent empty migration warning <a href="https://github.com/kimai/kimai/pull/2901">#2901</a>
-</li>
-  <li>composer upgrade <a href="https://github.com/kimai/kimai/pull/2900">#2900</a>
-</li>
-  <li>added invoice replacer for currently logged-in user <a href="https://github.com/kimai/kimai/pull/2899">#2899</a>
-</li>
-  <li>activate bleeding edge rules for phpstan and fix problems <a href="https://github.com/kimai/kimai/pull/2898">#2898</a>
-</li>
-  <li>fix weekly view day format <a href="https://github.com/kimai/kimai/pull/2893">#2893</a>
-</li>
-  <li>simplify building theme independent plugins <a href="https://github.com/kimai/kimai/pull/2888">#2888</a>
-</li>
-  <li>include roles and teams in user create form <a href="https://github.com/kimai/kimai/pull/2849">#2849</a>
-</li>
-  <li>Weekly “quick-entry” form <a href="https://github.com/kimai/kimai/pull/2793">#2793</a>
-</li>
-  <li>allow to set 24 hour format as user preference <a href="https://github.com/kimai/kimai/pull/2789">#2789</a>
-</li>
-  <li>added ProjectConstraint to add dynamic project validation <a href="https://github.com/kimai/kimai/pull/2747">#2747</a> thanks <a href="https://github.com/pkaltenboeck" class="user-mention">@pkaltenboeck</a>
-</li>
-  <li>PDF memory optimizations <a href="https://github.com/kimai/kimai/pull/2736">#2736</a>
-</li>
-  <li>workflow to trigger event for docker build <a href="https://github.com/kimai/kimai/pull/2882">#2882</a> thanks <a href="https://github.com/Apfelwurm" class="user-mention">@Apfelwurm</a>
-</li>
-  <li>include calendar week in week chooser <a href="https://github.com/kimai/kimai/pull/2933">#2933</a>
-</li>
-  <li>improve export filename <a href="https://github.com/kimai/kimai/pull/2958">#2958</a>
-</li>
-  <li>allow to delete invoice documents from within kimai <a href="https://github.com/kimai/kimai/pull/2968">#2968</a>
-</li>
+  <li>added resname for tool compatibility <a href="https://github.com/kimai/kimai/pull/2912">#2912</a></li>
+  <li>change data filter on project month report <a href="https://github.com/kimai/kimai/pull/2911">#2911</a></li>
+  <li>Fetch user preferences via API <a href="https://github.com/kimai/kimai/pull/2905">#2905</a></li>
+  <li>optimizations <a href="https://github.com/kimai/kimai/pull/2904">#2904</a></li>
+  <li>prevent empty migration warning <a href="https://github.com/kimai/kimai/pull/2901">#2901</a></li>
+  <li>composer upgrade <a href="https://github.com/kimai/kimai/pull/2900">#2900</a></li>
+  <li>added invoice replacer for currently logged-in user <a href="https://github.com/kimai/kimai/pull/2899">#2899</a></li>
+  <li>activate bleeding edge rules for phpstan and fix problems <a href="https://github.com/kimai/kimai/pull/2898">#2898</a></li>
+  <li>fix weekly view day format <a href="https://github.com/kimai/kimai/pull/2893">#2893</a></li>
+  <li>simplify building theme independent plugins <a href="https://github.com/kimai/kimai/pull/2888">#2888</a></li>
+  <li>include roles and teams in user create form <a href="https://github.com/kimai/kimai/pull/2849">#2849</a></li>
+  <li>Weekly “quick-entry” form <a href="https://github.com/kimai/kimai/pull/2793">#2793</a></li>
+  <li>allow to set 24 hour format as user preference <a href="https://github.com/kimai/kimai/pull/2789">#2789</a></li>
+  <li>added ProjectConstraint to add dynamic project validation <a href="https://github.com/kimai/kimai/pull/2747">#2747</a> thanks @pkaltenboeck</li>
+  <li>PDF memory optimizations <a href="https://github.com/kimai/kimai/pull/2736">#2736</a></li>
+  <li>workflow to trigger event for docker build <a href="https://github.com/kimai/kimai/pull/2882">#2882</a> thanks @Apfelwurm</li>
+  <li>include calendar week in week chooser <a href="https://github.com/kimai/kimai/pull/2933">#2933</a></li>
+  <li>improve export filename <a href="https://github.com/kimai/kimai/pull/2958">#2958</a></li>
+  <li>allow to delete invoice documents from within kimai <a href="https://github.com/kimai/kimai/pull/2968">#2968</a></li>
 </ul>
 
 <h3 id="fixed-bugs">Fixed bugs</h3>
 
 <ul>
-  <li>Time records marked as exported even when invoice is not saved due to duplicate invoice numbers <a href="https://github.com/kimai/kimai/issues/2917">#2917</a>
-</li>
-  <li>Error on Install: “Call to undefined method Doctrine\DBAL\Statement::fetchAll()” <a href="https://github.com/kimai/kimai/issues/2885">#2885</a>
-</li>
-  <li>Request via API with X-AUTH-USER invalidates all other sessions for the (LDAP) user <a href="https://github.com/kimai/kimai/issues/2873">#2873</a> thanks <a href="https://github.com/handcode" class="user-mention">@handcode</a>
-</li>
-  <li>improve csrf handling <a href="https://github.com/kimai/kimai/pull/2936">#2936</a>
-</li>
-  <li>link to doctor <a href="https://github.com/kimai/kimai/pull/2930">#2930</a>
-</li>
-  <li>do not reset password for LDAP and SAML users unless needed <a href="https://github.com/kimai/kimai/pull/2916">#2916</a>
-</li>
-  <li>use token in invoice delete route <a href="https://github.com/kimai/kimai/pull/2889">#2889</a>
-</li>
-  <li>fixes for new quick-entry week form <a href="https://github.com/kimai/kimai/pull/2887">#2887</a>
-</li>
-  <li>optional csrf token name, fixes detail pages for teamleads  <a href="https://github.com/kimai/kimai/issues/2941">#2941</a>
-</li>
-  <li>Filtering the administrative project list by Visible=Both results in 500 Server Error <a href="https://github.com/kimai/kimai/issues/2941">#2941</a>
-</li>
-  <li>drop default value to prevent error when server version is not set <a href="https://github.com/kimai/kimai/issues/2769">#2769</a> <a href="https://github.com/kimai/kimai/issues/2796">#2796</a> <a href="https://github.com/kimai/kimai/issues/2943">#2943</a>
-</li>
-  <li>csrf tokens for multiple actions - thanks <a href="https://github.com/haxatron" class="user-mention">@haxatron</a>
-</li>
-  <li>CSRF Tokens are not properly refreshed on some form submissions <a href="https://github.com/kimai/kimai/issues/2947">#2947</a> <a href="https://github.com/kimai/kimai/issues/2948">#2948</a> - thanks <a href="https://github.com/tdozbun-reno" class="user-mention">@tdozbun-reno</a>
-</li>
-  <li>escape customer, project and activity name in javascript <a href="https://github.com/kimai/kimai/issues/2959">#2959</a>
-</li>
-  <li>escape data in calendar popover <a href="https://github.com/kimai/kimai/issues/2960">#2960</a>
-</li>
-  <li>make sure that markdown uses safe mode <a href="https://github.com/kimai/kimai/issues/2961">#2961</a>
-</li>
-  <li>improve permission handling in invoice screen <a href="https://github.com/kimai/kimai/issues/2965">#2965</a>
-</li>
+  <li>Time records marked as exported even when invoice is not saved due to duplicate invoice numbers <a href="https://github.com/kimai/kimai/issues/2917">#2917</a></li>
+  <li>Error on Install: “Call to undefined method Doctrine\DBAL\Statement::fetchAll()” <a href="https://github.com/kimai/kimai/issues/2885">#2885</a></li>
+  <li>Request via API with X-AUTH-USER invalidates all other sessions for the (LDAP) user <a href="https://github.com/kimai/kimai/issues/2873">#2873</a> thanks @handcode</li>
+  <li>improve csrf handling <a href="https://github.com/kimai/kimai/pull/2936">#2936</a></li>
+  <li>link to doctor <a href="https://github.com/kimai/kimai/pull/2930">#2930</a></li>
+  <li>do not reset password for LDAP and SAML users unless needed <a href="https://github.com/kimai/kimai/pull/2916">#2916</a></li>
+  <li>use token in invoice delete route <a href="https://github.com/kimai/kimai/pull/2889">#2889</a></li>
+  <li>fixes for new quick-entry week form <a href="https://github.com/kimai/kimai/pull/2887">#2887</a></li>
+  <li>optional csrf token name, fixes detail pages for teamleads  <a href="https://github.com/kimai/kimai/issues/2941">#2941</a></li>
+  <li>Filtering the administrative project list by Visible=Both results in 500 Server Error <a href="https://github.com/kimai/kimai/issues/2941">#2941</a></li>
+  <li>drop default value to prevent error when server version is not set <a href="https://github.com/kimai/kimai/issues/2769">#2769</a> <a href="https://github.com/kimai/kimai/issues/2796">#2796</a> <a href="https://github.com/kimai/kimai/issues/2943">#2943</a></li>
+  <li>csrf tokens for multiple actions - thanks @haxatron</li>
+  <li>CSRF Tokens are not properly refreshed on some form submissions <a href="https://github.com/kimai/kimai/issues/2947">#2947</a> <a href="https://github.com/kimai/kimai/issues/2948">#2948</a> - thanks @tdozbun-reno</li>
+  <li>escape customer, project and activity name in javascript <a href="https://github.com/kimai/kimai/issues/2959">#2959</a></li>
+  <li>escape data in calendar popover <a href="https://github.com/kimai/kimai/issues/2960">#2960</a></li>
+  <li>make sure that markdown uses safe mode <a href="https://github.com/kimai/kimai/issues/2961">#2961</a></li>
+  <li>improve permission handling in invoice screen <a href="https://github.com/kimai/kimai/issues/2965">#2965</a></li>
 </ul>
 
         </div>
@@ -322,7 +278,7 @@ to <a href="https://github.com/Haxatron" class="user-mention">@Haxatron</a> and 
             <div class="sticky-top ms-xl-5 ms-lg-4 ps-xxl-4" style="top: 105px !important;">
                 <h6>Share this post:</h6>
                 <div class="mb-4 pb-lg-3">
-                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.kimai.org/en/blog/2021/kimai-release-1-16&amp;title=Release%201.16%20-%20Weekly%20working%20times%20form" class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.kimai.org/en/blog/2021/kimai-release-1-16&title=Release 1.16 - Weekly working times form" class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2" aria-label="LinkedIn">
                         <i class="bx bxl-linkedin"></i>
                     </a>
                     <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.kimai.org/en/blog/2021/kimai-release-1-16" class="btn btn-icon btn-secondary btn-facebook me-2 mb-2" aria-label="Facebook">
@@ -464,7 +420,7 @@ to <a href="https://github.com/Haxatron" class="user-mention">@Haxatron</a> and 
                                     <a href="/en/reviews" class="nav-link fs-sm fw-medium px-0 py-1">Reviews</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/en/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Press &amp; Media</a>
+                                    <a href="/en/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Press & Media</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="/en/kimai-discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">Discount codes</a>

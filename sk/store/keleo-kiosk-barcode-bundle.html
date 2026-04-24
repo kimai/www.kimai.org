@@ -113,10 +113,10 @@
                         <ul class="dropdown-menu">
                             <li><a href="/sk/about.html" class="dropdown-item">Informácie o Kimai</a></li>
                             <li><a href="/en/open-source-community" class="dropdown-item">Open Source</a></li>
-                            <li class="dropdown-divider">
-                            <li><a href="/sk/integrations" class="dropdown-item">Apps &amp; Integrations</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="/sk/integrations" class="dropdown-item">Apps & Integrations</a></li>
                             <li><a href="/sk/demo.html" class="dropdown-item">Demo</a></li>
-                            <li class="dropdown-divider">
+                            <li class="dropdown-divider"></li>
                             <li><a href="/sk/blog/" class="dropdown-item">Novinky</a></li>
                             <li><a href="/sk/support.html" class="dropdown-item">Podpora</a></li>
                         </ul>
@@ -411,17 +411,14 @@ attendance time through punch-in (coming) and punch-out (leaving) mode.</p>
     <ul>
       <li><code class="language-plaintext highlighter-rouge">Code 128</code></li>
       <li><code class="language-plaintext highlighter-rouge">Code 39</code></li>
-      <li>
-<code class="language-plaintext highlighter-rouge">UPC-A</code> (scanner needs to transmit check digit)</li>
+      <li><code class="language-plaintext highlighter-rouge">UPC-A</code> (scanner needs to transmit check digit)</li>
       <li><code class="language-plaintext highlighter-rouge">Code 2 of 5</code></li>
       <li><code class="language-plaintext highlighter-rouge">Code 2 of 5 interleaved</code></li>
-      <li>
-<code class="language-plaintext highlighter-rouge">Codabar</code> (scanner needs to transmit start &amp; stop digits)</li>
+      <li><code class="language-plaintext highlighter-rouge">Codabar</code> (scanner needs to transmit start &amp; stop digits)</li>
     </ul>
   </li>
   <li>Optional: show active / inactive users in login screen</li>
-  <li>Many CSS classes to customize the look with <a href="/documentation/plugin-custom-content.html">Custom CSS</a>
-</li>
+  <li>Many CSS classes to customize the look with <a href="/documentation/plugin-custom-content.html">Custom CSS</a></li>
 </ul>
 
 <p>You need to configure <strong>a non-global activity</strong> for starting the record via this plugin.
@@ -451,8 +448,7 @@ Our own use-case could be best solved with a NFC tablet, so this is what we woul
 <p>The Android tablets need a Kiosk application, which makes sure that users always see the login screen:</p>
 
 <ul>
-  <li>Kiosk application: <a href="https://www.android-kiosk.com/">Android Kiosk</a>
-</li>
+  <li>Kiosk application: <a href="https://www.android-kiosk.com/">Android Kiosk</a></li>
 </ul>
 
 <h3 id="nfc-token">NFC Token</h3>
@@ -460,8 +456,7 @@ Our own use-case could be best solved with a NFC tablet, so this is what we woul
 <p>And you need a bunch of NFC tokens:</p>
 
 <ul>
-  <li>NFC tags: <a href="https://www.nfc-tag-shop.de/NFC-Anhaenger-ABS-40-x-32-mm-NTAG213-180-Byte-blau/68199">NFC Tag Shop</a>
-</li>
+  <li>NFC tags: <a href="https://www.nfc-tag-shop.de/NFC-Anhaenger-ABS-40-x-32-mm-NTAG213-180-Byte-blau/68199">NFC Tag Shop</a></li>
 </ul>
 
 <h3 id="self-built-setups">Self-built setups</h3>
@@ -471,16 +466,11 @@ Our own use-case could be best solved with a NFC tablet, so this is what we woul
 <p>I tried the linked products and even though all scanner are rather cheap, they work without problems.</p>
 
 <ul>
-  <li>
-<a href="https://amzn.to/2Ye8LeK">Raspberry PI</a> setup with <a href="https://amzn.to/321jg6k">touch screen</a> (eg. for wall mount)</li>
-  <li>
-<a href="https://amzn.to/3aM5yby">RFID scanner</a> by Neuftech (desktop version)</li>
-  <li>
-<a href="https://amzn.to/3hfwDpK">RFID scanner</a> by KKMoon (desktop version)</li>
-  <li>
-<a href="https://amzn.to/3g6HzEU">Barcode scanner</a> which can also scan codes from mobile phones (desktop version)</li>
-  <li>
-<a href="https://amzn.to/2Q9KWAy">Barcode scanner</a> classic hand-held version</li>
+  <li><a href="https://amzn.to/2Ye8LeK">Raspberry PI</a> setup with <a href="https://amzn.to/321jg6k">touch screen</a> (eg. for wall mount)</li>
+  <li><a href="https://amzn.to/3aM5yby">RFID scanner</a> by Neuftech (desktop version)</li>
+  <li><a href="https://amzn.to/3hfwDpK">RFID scanner</a> by KKMoon (desktop version)</li>
+  <li><a href="https://amzn.to/3g6HzEU">Barcode scanner</a> which can also scan codes from mobile phones (desktop version)</li>
+  <li><a href="https://amzn.to/2Q9KWAy">Barcode scanner</a> classic hand-held version</li>
 </ul>
 
 <p>Above are affiliate links for Amazon (Germany) where I bought them myself.</p>
@@ -568,8 +558,7 @@ And you probably need to prefix them with <code class="language-plaintext highli
 
         <p>This will create the required database tables and update them to the latest version.</p>
 
-<div class="alert alert-warning d-flex" role="alert">
-<i class="bx bx-alarm-exclamation lead me-3"></i>
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i>
 <p>If you see an error like <code class="language-plaintext highlighter-rouge">There are no commands defined in the "kimai:bundle:XYZ" namespace.</code>,
 then either the directory has a wrong name (must be <strong>var/plugins/KioskBundle/</strong>) or you forgot to clear the cache (look above).</p>
 </div>
@@ -594,17 +583,14 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
     <p>Updating the plugin works exactly like the installation:</p>
     <ul>
         <li>Delete the directory <code class="language-plaintext highlighter-rouge">var/plugins/KioskBundle/</code>
-        </li>
-<li>
+        <li>
             Execute all installation steps again:
             <ul>
                 <li>Kopírovať súbory</li>
                 <li>Vymazať cache</li>
                 <li>Update database with <code class="language-plaintext highlighter-rouge">bin/console kimai:bundle:kiosk:install</code>
                 
-                </li>
-<li>Update assets with <code class="language-plaintext highlighter-rouge">bin/console assets:install</code>
-</li>
+                <li>Update assets with <code class="language-plaintext highlighter-rouge">bin/console assets:install</code></li>
                 
             </ul>
         </li>
@@ -779,8 +765,7 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
   <li>Added: show kiosk codes as user profile tab</li>
   <li>Added: permission <code class="language-plaintext highlighter-rouge">kiosk_enabled</code> to allow disabling Kiosk for entire user roles</li>
   <li>Added: print barcode on click to the image</li>
-  <li>Changed: removed <code class="language-plaintext highlighter-rouge">barcode_own_profile</code> and <code class="language-plaintext highlighter-rouge">barcode_other_profile</code> permissions, replaced by <code class="language-plaintext highlighter-rouge">kiosk_own_profile</code> and <code class="language-plaintext highlighter-rouge">kiosk_other_profile</code>
-</li>
+  <li>Changed: removed <code class="language-plaintext highlighter-rouge">barcode_own_profile</code> and <code class="language-plaintext highlighter-rouge">barcode_other_profile</code> permissions, replaced by <code class="language-plaintext highlighter-rouge">kiosk_own_profile</code> and <code class="language-plaintext highlighter-rouge">kiosk_other_profile</code></li>
 </ul>
 
 <p><strong>Version 2.6.0</strong></p>
@@ -990,9 +975,8 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
                     </h3>
                     <div class="accordion-collapse collapse" id="q-1" data-bs-parent="#faq">
                         <div class="accordion-body fs-sm pt-0">
-                            <p></p>
-<p>All paid plugins are annual subscriptions. Read more about the exact <a href="/en/terms-plugins.html">license details here</a>.</p>
-
+                            <p><p>All paid plugins are annual subscriptions. Read more about the exact <a href="/en/terms-plugins.html">license details here</a>.</p>
+</p>
                         </div>
                     </div>
                 </div>
@@ -1003,9 +987,8 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
                     </h3>
                     <div class="accordion-collapse collapse" id="q-2" data-bs-parent="#faq">
                         <div class="accordion-body fs-sm pt-0">
-                            <p></p>
-<p>You can buy the plugin via the Marketplace <strong>LemonSqueezy</strong> and pay with Credit Card or PayPal for immediate access. You can also <a href="mailto:support@kimai.org">get in touch</a> and pay with wire transfer or SEPA, but you will have to wait a few days before getting access to the plugin.</p>
-
+                            <p><p>You can buy the plugin via the Marketplace <strong>LemonSqueezy</strong> and pay with Credit Card or PayPal for immediate access. You can also <a href="mailto:support@kimai.org">get in touch</a> and pay with wire transfer or SEPA, but you will have to wait a few days before getting access to the plugin.</p>
+</p>
                         </div>
                     </div>
                 </div>
@@ -1016,9 +999,8 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
                     </h3>
                     <div class="accordion-collapse collapse" id="q-3" data-bs-parent="#faq">
                         <div class="accordion-body fs-sm pt-0">
-                            <p></p>
-<p>Basic support is included and I am happy to help occasionally with simple issues. Larger support-questions, bug-reports and feature-requests will be answered in this <a href="https://github.com/kimai/Paid-plugins" target="_blank">Github repository</a>. Customers who bought a plugin <strong>including</strong> support can write to <a href="mailto:support@kimai.org">support@kimai.org</a>.</p>
-
+                            <p><p>Basic support is included and I am happy to help occasionally with simple issues. Larger support-questions, bug-reports and feature-requests will be answered in this <a href="https://github.com/kimai/Paid-plugins" target="_blank">Github repository</a>. Customers who bought a plugin <strong>including</strong> support can write to <a href="mailto:support@kimai.org">support@kimai.org</a>.</p>
+</p>
                         </div>
                     </div>
                 </div>
@@ -1029,9 +1011,8 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
                     </h3>
                     <div class="accordion-collapse collapse" id="q-4" data-bs-parent="#faq">
                         <div class="accordion-body fs-sm pt-0">
-                            <p></p>
-<p>If you purchase a plugin subscription, you’ll receive all updates, bugfixes, and support for one year. After the subscription ends, your plugin will continue to work without any restrictions – you can keep using the last version you downloaded. This model is known as a <strong>perpetual fallback license</strong>. However, access to future updates, new features, and compatibility fixes require an active subscription.</p>
-
+                            <p><p>If you purchase a plugin subscription, you’ll receive all updates, bugfixes, and support for one year. After the subscription ends, your plugin will continue to work without any restrictions – you can keep using the last version you downloaded. This model is known as a <strong>perpetual fallback license</strong>. However, access to future updates, new features, and compatibility fixes require an active subscription.</p>
+</p>
                         </div>
                     </div>
                 </div>
@@ -1042,9 +1023,8 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
                     </h3>
                     <div class="accordion-collapse collapse" id="q-5" data-bs-parent="#faq">
                         <div class="accordion-body fs-sm pt-0">
-                            <p></p>
-<p>No, refunds are not available. Kimai plugins are delivered as digital downloads and cannot be returned once the source code has been accessed. Additionally, payment providers charge non-refundable transaction fees, even if a refund were issued. For these reasons, all sales are final. The same applies for subscriptions that were not canceled in time. Please try the demo versions or contact us before purchase if you’re unsure whether a plugin fits your needs.</p>
-
+                            <p><p>No, refunds are not available. Kimai plugins are delivered as digital downloads and cannot be returned once the source code has been accessed. Additionally, payment providers charge non-refundable transaction fees, even if a refund were issued. For these reasons, all sales are final. The same applies for subscriptions that were not canceled in time. Please try the demo versions or contact us before purchase if you’re unsure whether a plugin fits your needs.</p>
+</p>
                         </div>
                     </div>
                 </div>
@@ -1194,7 +1174,7 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
                                     <a href="/sk/reviews" class="nav-link fs-sm fw-medium px-0 py-1">Reviews</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/sk/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Press &amp; Media</a>
+                                    <a href="/sk/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Press & Media</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="/en/kimai-discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">Discount codes</a>

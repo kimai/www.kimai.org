@@ -56,10 +56,10 @@
                         <ul class="dropdown-menu">
                             <li><a href="/en/about.html" class="dropdown-item">About Kimai</a></li>
                             <li><a href="/en/open-source-community" class="dropdown-item">Open Source</a></li>
-                            <li class="dropdown-divider">
-                            <li><a href="/en/integrations" class="dropdown-item">Apps &amp; Integrations</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="/en/integrations" class="dropdown-item">Apps & Integrations</a></li>
                             <li><a href="/en/demo.html" class="dropdown-item">Demo</a></li>
-                            <li class="dropdown-divider">
+                            <li class="dropdown-divider"></li>
                             <li><a href="/en/blog/" class="dropdown-item">Blog</a></li>
                             <li><a href="/en/support.html" class="dropdown-item">Support</a></li>
                         </ul>
@@ -181,7 +181,7 @@
 <p>Allows reassigning of timesheet records from “delete user” dialog, so historical data can be moved to a backup account upon user deletion:</p>
 
 <figure class="d-block figure mb-3" style="max-width: 100%">
-    <img src="/images/documentation/user/delete_user_reassign.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2">
+    <img src="/images/documentation/user/delete_user_reassign.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
     <figcaption class="figure-caption">Confirm reassignment</figcaption>
 </figure>
 
@@ -199,8 +199,7 @@
 <ul>
   <li>all clients and donors who help me to keep up the work for Kimai</li>
   <li>the developers who contributed their time</li>
-  <li>the translators in our <a href="http://hosted.weblate.org/projects/kimai/">Weblate community</a>
-</li>
+  <li>the translators in our <a href="http://hosted.weblate.org/projects/kimai/">Weblate community</a></li>
   <li>everyone else contributing at GitHub, too many to name you all</li>
 </ul>
 
@@ -217,10 +216,8 @@
 <p><strong>Implemented enhancements:</strong></p>
 
 <ul>
-  <li>Consolidation of items in the search function between time recording and expenses <a href="https://github.com/kimai/kimai/issues/2118">#2118</a>
-</li>
-  <li>Dashboard &gt; My Teams &gt; displayed without order <a href="https://github.com/kimai/kimai/issues/1773">#1773</a>
-</li>
+  <li>Consolidation of items in the search function between time recording and expenses <a href="https://github.com/kimai/kimai/issues/2118">#2118</a></li>
+  <li>Dashboard &gt; My Teams &gt; displayed without order <a href="https://github.com/kimai/kimai/issues/1773">#1773</a></li>
   <li>allow custom export repositories <a href="https://github.com/kimai/kimai/pull/2182">#2182</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
   <li>helper function for invoice templates <a href="https://github.com/kimai/kimai/pull/2168">#2168</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
   <li>allow to reassign timesheet from delete user dialog <a href="https://github.com/kimai/kimai/pull/2159">#2159</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
@@ -237,30 +234,18 @@
 <p><strong>Fixed bugs:</strong></p>
 
 <ul>
-  <li>support mysqli in connection string <a href="https://github.com/kimai/kimai/issues/2190">#2190</a>
-</li>
-  <li>API Auth fail with GET activities/:id/rates <a href="https://github.com/kimai/kimai/issues/2160">#2160</a>
-</li>
-  <li>reporting translation issue <a href="https://github.com/kimai/kimai/issues/2154">#2154</a>
-</li>
-  <li>Project directory detected wrong. Symlinks <a href="https://github.com/kimai/kimai/issues/2145">#2145</a>
-</li>
-  <li>500 server error while exporting timesheets - Kimai v2 <a href="https://github.com/kimai/kimai/issues/2144">#2144</a>
-</li>
-  <li>Error 500 for AJAX GET when selecting clients/projects after update to 1.11.1 <a href="https://github.com/kimai/kimai/issues/2142">#2142</a>
-</li>
-  <li>Calendar view after logging time shows resume activity <a href="https://github.com/kimai/kimai/issues/2105">#2105</a>
-</li>
-  <li>Ex- and import with timelogs crossing day-edges results in inconsistent state <a href="https://github.com/kimai/kimai/issues/2086">#2086</a>
-</li>
-  <li>Daterange picker does not work correctly with Sunday being first day of week <a href="https://github.com/kimai/kimai/issues/2078">#2078</a>
-</li>
-  <li>Restart last activity fails if last entry was deleted <a href="https://github.com/kimai/kimai/issues/2036">#2036</a>
-</li>
-  <li>Invoice creation from command line: All but the first invoice have wrong styling <a href="https://github.com/kimai/kimai/issues/1973">#1973</a>
-</li>
-  <li>Failed to assign teams in future projects <a href="https://github.com/kimai/kimai/issues/1653">#1653</a>
-</li>
+  <li>support mysqli in connection string <a href="https://github.com/kimai/kimai/issues/2190">#2190</a></li>
+  <li>API Auth fail with GET activities/:id/rates <a href="https://github.com/kimai/kimai/issues/2160">#2160</a></li>
+  <li>reporting translation issue <a href="https://github.com/kimai/kimai/issues/2154">#2154</a></li>
+  <li>Project directory detected wrong. Symlinks <a href="https://github.com/kimai/kimai/issues/2145">#2145</a></li>
+  <li>500 server error while exporting timesheets - Kimai v2 <a href="https://github.com/kimai/kimai/issues/2144">#2144</a></li>
+  <li>Error 500 for AJAX GET when selecting clients/projects after update to 1.11.1 <a href="https://github.com/kimai/kimai/issues/2142">#2142</a></li>
+  <li>Calendar view after logging time shows resume activity <a href="https://github.com/kimai/kimai/issues/2105">#2105</a></li>
+  <li>Ex- and import with timelogs crossing day-edges results in inconsistent state <a href="https://github.com/kimai/kimai/issues/2086">#2086</a></li>
+  <li>Daterange picker does not work correctly with Sunday being first day of week <a href="https://github.com/kimai/kimai/issues/2078">#2078</a></li>
+  <li>Restart last activity fails if last entry was deleted <a href="https://github.com/kimai/kimai/issues/2036">#2036</a></li>
+  <li>Invoice creation from command line: All but the first invoice have wrong styling <a href="https://github.com/kimai/kimai/issues/1973">#1973</a></li>
+  <li>Failed to assign teams in future projects <a href="https://github.com/kimai/kimai/issues/1653">#1653</a></li>
   <li>suppress notice for tempnam <a href="https://github.com/kimai/kimai/pull/2166">#2166</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
   <li>fixed broken test <a href="https://github.com/kimai/kimai/pull/2151">#2151</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
   <li>Re-order search form <a href="https://github.com/kimai/kimai/pull/2120">#2120</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
@@ -275,7 +260,7 @@
             <div class="sticky-top ms-xl-5 ms-lg-4 ps-xxl-4" style="top: 105px !important;">
                 <h6>Share this post:</h6>
                 <div class="mb-4 pb-lg-3">
-                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.kimai.org/en/blog/2020/kimai-v2-release-1-12&amp;title=Release%201.12%20-%20Bugs,%20bugs,%20bugs" class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.kimai.org/en/blog/2020/kimai-v2-release-1-12&title=Release 1.12 - Bugs, bugs, bugs" class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2" aria-label="LinkedIn">
                         <i class="bx bxl-linkedin"></i>
                     </a>
                     <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.kimai.org/en/blog/2020/kimai-v2-release-1-12" class="btn btn-icon btn-secondary btn-facebook me-2 mb-2" aria-label="Facebook">
@@ -417,7 +402,7 @@
                                     <a href="/en/reviews" class="nav-link fs-sm fw-medium px-0 py-1">Reviews</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/en/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Press &amp; Media</a>
+                                    <a href="/en/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Press & Media</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="/en/kimai-discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">Discount codes</a>

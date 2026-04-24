@@ -275,7 +275,7 @@
                         
                         <a href="/documentation/permissions.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-permissions">
                             
-                            Roles &amp; Permissions
+                            Roles & Permissions
                             
                         </a>
                         
@@ -639,8 +639,7 @@
                 
                 <div id="documentation-content">
                     
-<div class="alert alert-danger d-flex" role="alert">
-<i class="bx bx-info-circle lead me-3"></i>
+<div class="alert alert-danger d-flex" role="alert"><i class="bx bx-info-circle lead me-3"></i>
 <p>You are viewing an older version of this documentation page. A newer version is available <a href="/documentation/reporting.html">here</a>.</p>
 </div>
 
@@ -649,12 +648,9 @@ Each user can configure a personal default reporting screen (since Kimai 1.14) i
 
 <p>There are two kind of report types:</p>
 <ul>
-  <li>
-<code class="language-plaintext highlighter-rouge">Rounded times</code> - uses the (rounded) duration, which will be used in invoice and exports as well</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">Real times</code> - displays the real tracked times (like the dashboard working time widget) and NOT the rounded times, records which are passing midnight will be split into the two entries</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">Working times</code> - Like <code class="language-plaintext highlighter-rouge">Real times</code> with the difference that entries will not be split at midnight, but calculated for the day of the start time</li>
+  <li><code class="language-plaintext highlighter-rouge">Rounded times</code> - uses the (rounded) duration, which will be used in invoice and exports as well</li>
+  <li><code class="language-plaintext highlighter-rouge">Real times</code> - displays the real tracked times (like the dashboard working time widget) and NOT the rounded times, records which are passing midnight will be split into the two entries</li>
+  <li><code class="language-plaintext highlighter-rouge">Working times</code> - Like <code class="language-plaintext highlighter-rouge">Real times</code> with the difference that entries will not be split at midnight, but calculated for the day of the start time</li>
 </ul>
 
 <h2 id="permissions">Permissions</h2>
@@ -662,14 +658,10 @@ Each user can configure a personal default reporting screen (since Kimai 1.14) i
 <p>The following <a href="/documentation/permissions.html">permissions</a> are generally relevant for all reporting views:</p>
 
 <ul>
-  <li>
-<code class="language-plaintext highlighter-rouge">view_reporting</code> - to be able to see the report menu</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">view_other_timesheet</code> - for choosing users</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">view_other_reporting</code> - for seeing reports with other users</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">view_all_data</code> - see all user (otherwise team member)</li>
+  <li><code class="language-plaintext highlighter-rouge">view_reporting</code> - to be able to see the report menu</li>
+  <li><code class="language-plaintext highlighter-rouge">view_other_timesheet</code> - for choosing users</li>
+  <li><code class="language-plaintext highlighter-rouge">view_other_reporting</code> - for seeing reports with other users</li>
+  <li><code class="language-plaintext highlighter-rouge">view_all_data</code> - see all user (otherwise team member)</li>
 </ul>
 
 <p>If the current user owns the <code class="language-plaintext highlighter-rouge">view_other_timesheet</code> permission the displayed username will be replaced by a user select box.
@@ -686,10 +678,8 @@ The available users to choose from are either all (if the user owns the permissi
 <p>You can change the displayed calendar week and (if the user owns the <code class="language-plaintext highlighter-rouge">view_other_timesheet</code> permissions) the user to display the report for.</p>
 
 <ul>
-  <li>Required permission: <code class="language-plaintext highlighter-rouge">view_reporting</code>
-</li>
-  <li>Type of report: <code class="language-plaintext highlighter-rouge">Real times</code>
-</li>
+  <li>Required permission: <code class="language-plaintext highlighter-rouge">view_reporting</code></li>
+  <li>Type of report: <code class="language-plaintext highlighter-rouge">Real times</code></li>
 </ul>
 
 <h3 id="monthly-view-for-one-user">Monthly view for one user</h3>
@@ -699,10 +689,8 @@ The available users to choose from are either all (if the user owns the permissi
 <p>You can change the displayed month and (if the user owns the <code class="language-plaintext highlighter-rouge">view_other_timesheet</code> permissions) the user to display the report for.</p>
 
 <ul>
-  <li>Required permission: <code class="language-plaintext highlighter-rouge">view_reporting</code>
-</li>
-  <li>Type of report: <code class="language-plaintext highlighter-rouge">Real times</code>
-</li>
+  <li>Required permission: <code class="language-plaintext highlighter-rouge">view_reporting</code></li>
+  <li>Type of report: <code class="language-plaintext highlighter-rouge">Real times</code></li>
 </ul>
 
 <h3 id="monthly-view-for-all-users">Monthly view for all users</h3>
@@ -712,10 +700,8 @@ The available users to choose from are either all (if the user owns the permissi
 <p>You can change the displayed month.</p>
 
 <ul>
-  <li>Required permission: <code class="language-plaintext highlighter-rouge">view_reporting</code> and <code class="language-plaintext highlighter-rouge">view_other_timesheet</code> and <code class="language-plaintext highlighter-rouge">view_other_reporting</code>
-</li>
-  <li>Type of report: <code class="language-plaintext highlighter-rouge">Real times</code>
-</li>
+  <li>Required permission: <code class="language-plaintext highlighter-rouge">view_reporting</code> and <code class="language-plaintext highlighter-rouge">view_other_timesheet</code> and <code class="language-plaintext highlighter-rouge">view_other_reporting</code></li>
+  <li>Type of report: <code class="language-plaintext highlighter-rouge">Real times</code></li>
 </ul>
 
 <h2 id="extending-the-reports">Extending the reports</h2>
@@ -762,17 +748,7 @@ Make sure to include an <code class="language-plaintext highlighter-rouge">@Secu
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav">
-<li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li>
-<li class="nav-item">
-<a href="#available-reports" class="nav-link">Available reports</a><ul>
-<li class="nav-item"><a href="#weekly-view-for-one-user" class="nav-link">Weekly view for one user</a></li>
-<li class="nav-item"><a href="#monthly-view-for-one-user" class="nav-link">Monthly view for one user</a></li>
-<li class="nav-item"><a href="#monthly-view-for-all-users" class="nav-link">Monthly view for all users</a></li>
-</ul>
-</li>
-<li class="nav-item"><a href="#extending-the-reports" class="nav-link">Extending the reports</a></li>
-</ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li><li class="nav-item"><a href="#available-reports" class="nav-link">Available reports</a><ul><li class="nav-item"><a href="#weekly-view-for-one-user" class="nav-link">Weekly view for one user</a></li><li class="nav-item"><a href="#monthly-view-for-one-user" class="nav-link">Monthly view for one user</a></li><li class="nav-item"><a href="#monthly-view-for-all-users" class="nav-link">Monthly view for all users</a></li></ul></li><li class="nav-item"><a href="#extending-the-reports" class="nav-link">Extending the reports</a></li></ul>
         
     </aside>
 

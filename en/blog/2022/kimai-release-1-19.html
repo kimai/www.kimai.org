@@ -56,10 +56,10 @@
                         <ul class="dropdown-menu">
                             <li><a href="/en/about.html" class="dropdown-item">About Kimai</a></li>
                             <li><a href="/en/open-source-community" class="dropdown-item">Open Source</a></li>
-                            <li class="dropdown-divider">
-                            <li><a href="/en/integrations" class="dropdown-item">Apps &amp; Integrations</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="/en/integrations" class="dropdown-item">Apps & Integrations</a></li>
                             <li><a href="/en/demo.html" class="dropdown-item">Demo</a></li>
-                            <li class="dropdown-divider">
+                            <li class="dropdown-divider"></li>
                             <li><a href="/en/blog/" class="dropdown-item">Blog</a></li>
                             <li><a href="/en/support.html" class="dropdown-item">Support</a></li>
                         </ul>
@@ -208,60 +208,38 @@
 <h3 id="implemented-enhancements">Implemented enhancements</h3>
 
 <ul>
-  <li>Default option of the “Billable” attribute for each defined activity <a href="https://github.com/kimai/kimai/pull/3200">#3200</a>, <a href="https://github.com/kimai/kimai/issues/2594">#2594</a>
-</li>
-  <li>Added new report: month grouped by project, activity and user <a href="https://github.com/kimai/kimai/pull/3255">#3255</a>
-</li>
-  <li>Show user account number in report export <a href="https://github.com/kimai/kimai/pull/3224">#3224</a>
-</li>
-  <li>Support more complex metafield queries <a href="https://github.com/kimai/kimai/pull/3228">#3228</a>
-</li>
-  <li>Login redirects to homepage if already being logged-in <a href="https://github.com/kimai/kimai/pull/3255">#3255</a>
-</li>
-  <li>Translations update from Hosted Weblate <a href="https://github.com/kimai/kimai/pull/3208">#3208</a>, <a href="https://github.com/kimai/kimai/pull/3194">#3194</a>, <a href="https://github.com/kimai/kimai/pull/3235">#3235</a>, <a href="https://github.com/kimai/kimai/pull/3221">#3221</a>, <a href="https://github.com/kimai/kimai/pull/3263">#3263</a>
-</li>
+  <li>Default option of the “Billable” attribute for each defined activity <a href="https://github.com/kimai/kimai/pull/3200">#3200</a>, <a href="https://github.com/kimai/kimai/issues/2594">#2594</a></li>
+  <li>Added new report: month grouped by project, activity and user <a href="https://github.com/kimai/kimai/pull/3255">#3255</a></li>
+  <li>Show user account number in report export <a href="https://github.com/kimai/kimai/pull/3224">#3224</a></li>
+  <li>Support more complex metafield queries <a href="https://github.com/kimai/kimai/pull/3228">#3228</a></li>
+  <li>Login redirects to homepage if already being logged-in <a href="https://github.com/kimai/kimai/pull/3255">#3255</a></li>
+  <li>Translations update from Hosted Weblate <a href="https://github.com/kimai/kimai/pull/3208">#3208</a>, <a href="https://github.com/kimai/kimai/pull/3194">#3194</a>, <a href="https://github.com/kimai/kimai/pull/3235">#3235</a>, <a href="https://github.com/kimai/kimai/pull/3221">#3221</a>, <a href="https://github.com/kimai/kimai/pull/3263">#3263</a></li>
 </ul>
 
 <h3 id="internals">Internals</h3>
 
 <ul>
-  <li>Kimai API billable switch missing <a href="https://github.com/kimai/kimai/issues/2705">#2705</a>
-</li>
-  <li>Better default button label for non-translated renderer <a href="https://github.com/kimai/kimai/pull/3204">#3204</a>
-</li>
-  <li>Improved logic to extract configuration from string <a href="https://github.com/kimai/kimai/pull/3244">#3244</a>
-</li>
-  <li>Allow arbitrary string length for system configurations <a href="https://github.com/kimai/kimai/pull/3243">#3243</a>
-</li>
-  <li>Added interface for saml config <a href="https://github.com/kimai/kimai/pull/3249">#3249</a>
-</li>
-  <li>Added event to extend the detail pages from plugins <a href="https://github.com/kimai/kimai/pull/3209">#3209</a>
-</li>
+  <li>Kimai API billable switch missing <a href="https://github.com/kimai/kimai/issues/2705">#2705</a></li>
+  <li>Better default button label for non-translated renderer <a href="https://github.com/kimai/kimai/pull/3204">#3204</a></li>
+  <li>Improved logic to extract configuration from string <a href="https://github.com/kimai/kimai/pull/3244">#3244</a></li>
+  <li>Allow arbitrary string length for system configurations <a href="https://github.com/kimai/kimai/pull/3243">#3243</a></li>
+  <li>Added interface for saml config <a href="https://github.com/kimai/kimai/pull/3249">#3249</a></li>
+  <li>Added event to extend the detail pages from plugins <a href="https://github.com/kimai/kimai/pull/3209">#3209</a></li>
 </ul>
 
 <h3 id="fixed-bugs">Fixed bugs</h3>
 
 <ul>
-  <li>Avatar size differences for image URL / no image URL set <a href="https://github.com/kimai/kimai/issues/3180">#3180</a>
-</li>
-  <li>SVG avatars not shown in top bar <a href="https://github.com/kimai/kimai/issues/3163">#3163</a>
-</li>
-  <li>Fixed truncated comments: customer, project, activity, task <a href="https://github.com/kimai/kimai/pull/3204">#3204</a>
-</li>
-  <li>Fixed avatar image size when using images <a href="https://github.com/kimai/kimai/pull/3204">#3204</a>
-</li>
-  <li>Billable of time-records created from recent acitivities in calendar view <a href="https://github.com/kimai/kimai/issues/3218">#3218</a>
-</li>
-  <li>Fix billable calculation on timesheet restart <a href="https://github.com/kimai/kimai/pull/3225">#3225</a>
-</li>
-  <li>Fix relative times in budget calculation in export <a href="https://github.com/kimai/kimai/pull/3216">#3216</a>
-</li>
-  <li>Fixed null issue in project dropdown with activated order number <a href="https://github.com/kimai/kimai/pull/3244">#3244</a>
-</li>
-  <li>Fix budget validation for entries that are moved to another moth <a href="https://github.com/kimai/kimai/pull/3255">#3255</a>
-</li>
-  <li>Invoice: fix amount should be decimal if decimal template is used <a href="https://github.com/kimai/kimai/pull/3255">#3255</a>
-</li>
+  <li>Avatar size differences for image URL / no image URL set <a href="https://github.com/kimai/kimai/issues/3180">#3180</a></li>
+  <li>SVG avatars not shown in top bar <a href="https://github.com/kimai/kimai/issues/3163">#3163</a></li>
+  <li>Fixed truncated comments: customer, project, activity, task <a href="https://github.com/kimai/kimai/pull/3204">#3204</a></li>
+  <li>Fixed avatar image size when using images <a href="https://github.com/kimai/kimai/pull/3204">#3204</a></li>
+  <li>Billable of time-records created from recent acitivities in calendar view <a href="https://github.com/kimai/kimai/issues/3218">#3218</a></li>
+  <li>Fix billable calculation on timesheet restart <a href="https://github.com/kimai/kimai/pull/3225">#3225</a></li>
+  <li>Fix relative times in budget calculation in export <a href="https://github.com/kimai/kimai/pull/3216">#3216</a></li>
+  <li>Fixed null issue in project dropdown with activated order number <a href="https://github.com/kimai/kimai/pull/3244">#3244</a></li>
+  <li>Fix budget validation for entries that are moved to another moth <a href="https://github.com/kimai/kimai/pull/3255">#3255</a></li>
+  <li>Invoice: fix amount should be decimal if decimal template is used <a href="https://github.com/kimai/kimai/pull/3255">#3255</a></li>
 </ul>
 
         </div>
@@ -269,7 +247,7 @@
             <div class="sticky-top ms-xl-5 ms-lg-4 ps-xxl-4" style="top: 105px !important;">
                 <h6>Share this post:</h6>
                 <div class="mb-4 pb-lg-3">
-                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.kimai.org/en/blog/2022/kimai-release-1-19&amp;title=Release%201.19%20-%20Billable%20default%20option" class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.kimai.org/en/blog/2022/kimai-release-1-19&title=Release 1.19 - Billable default option" class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2" aria-label="LinkedIn">
                         <i class="bx bxl-linkedin"></i>
                     </a>
                     <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.kimai.org/en/blog/2022/kimai-release-1-19" class="btn btn-icon btn-secondary btn-facebook me-2 mb-2" aria-label="Facebook">
@@ -411,7 +389,7 @@
                                     <a href="/en/reviews" class="nav-link fs-sm fw-medium px-0 py-1">Reviews</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/en/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Press &amp; Media</a>
+                                    <a href="/en/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Press & Media</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="/en/kimai-discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">Discount codes</a>

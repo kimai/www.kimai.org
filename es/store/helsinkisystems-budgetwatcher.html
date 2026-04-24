@@ -113,10 +113,10 @@
                         <ul class="dropdown-menu">
                             <li><a href="/es/about.html" class="dropdown-item">Acerca de Kimai</a></li>
                             <li><a href="/en/open-source-community" class="dropdown-item">Código abierto</a></li>
-                            <li class="dropdown-divider">
+                            <li class="dropdown-divider"></li>
                             <li><a href="/es/integrations" class="dropdown-item">Aplicaciones e integraciones</a></li>
                             <li><a href="/es/demo.html" class="dropdown-item">Demo</a></li>
-                            <li class="dropdown-divider">
+                            <li class="dropdown-divider"></li>
                             <li><a href="/es/blog/" class="dropdown-item">Blog</a></li>
                             <li><a href="/es/support.html" class="dropdown-item">Soporte</a></li>
                         </ul>
@@ -454,8 +454,7 @@ And you probably need to prefix them with <code class="language-plaintext highli
 
         <p>This will create the required database tables and update them to the latest version.</p>
 
-<div class="alert alert-warning d-flex" role="alert">
-<i class="bx bx-alarm-exclamation lead me-3"></i>
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i>
 <p>If you see an error like <code class="language-plaintext highlighter-rouge">There are no commands defined in the "kimai:bundle:XYZ" namespace.</code>,
 then either the directory has a wrong name (must be <strong>var/plugins/BudgetWatcherBundle/</strong>) or you forgot to clear the cache (look above).</p>
 </div>
@@ -472,16 +471,14 @@ then either the directory has a wrong name (must be <strong>var/plugins/BudgetWa
     <p>Updating the plugin works exactly like the installation:</p>
     <ul>
         <li>Delete the directory <code class="language-plaintext highlighter-rouge">var/plugins/BudgetWatcherBundle/</code>
-        </li>
-<li>
+        <li>
             Execute all installation steps again:
             <ul>
                 <li>Copiar archivos</li>
                 <li>Borrar caché</li>
                 <li>Update database with <code class="language-plaintext highlighter-rouge">bin/console kimai:bundle:budgetwatcher:install</code>
                 
-            </li>
-</ul>
+            </ul>
         </li>
     </ul>
 

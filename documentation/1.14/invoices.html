@@ -275,7 +275,7 @@
                         
                         <a href="/documentation/permissions.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-permissions">
                             
-                            Roles &amp; Permissions
+                            Roles & Permissions
                             
                         </a>
                         
@@ -639,8 +639,7 @@
                 
                 <div id="documentation-content">
                     
-<div class="alert alert-danger d-flex" role="alert">
-<i class="bx bx-info-circle lead me-3"></i>
+<div class="alert alert-danger d-flex" role="alert"><i class="bx bx-info-circle lead me-3"></i>
 <p>You are viewing an older version of this documentation page. A newer version is available <a href="/documentation/invoices.html">here</a>.</p>
 </div>
 
@@ -653,49 +652,27 @@ You can mix arbitrary characters and the allowed replacer from the list below.
 All examples represent the date <code class="language-plaintext highlighter-rouge">2019-07-09</code> (2019, July 9th):</p>
 
 <ul>
-  <li>
-<code class="language-plaintext highlighter-rouge">{date}</code> - shortcut for <code class="language-plaintext highlighter-rouge">ymd</code>. Example: <code class="language-plaintext highlighter-rouge">190709</code> (default format before Kimai 1.9)</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{c}</code> - counter for invoices of all times, starting from 1</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{cy}</code> - counter for invoices this year, starting from 1</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{cm}</code> - counter for invoices this month, starting from 1</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{cd}</code> - counter for invoices this day, starting from 1</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{Y}</code> -  full numeric representation of a year (4 digits). Example: <code class="language-plaintext highlighter-rouge">2019</code>
-</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{y}</code> - two digit representation of a year. Example: <code class="language-plaintext highlighter-rouge">19</code>
-</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{M}</code> - numeric representation of a month, with leading zeros. Example: <code class="language-plaintext highlighter-rouge">07</code>
-</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{m}</code> - numeric representation of a month, without leading zeros. Example: <code class="language-plaintext highlighter-rouge">7</code>
-</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{D}</code> - day of the month, 2 digits with leading zeros. Example: <code class="language-plaintext highlighter-rouge">09</code>
-</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{d}</code> - day of the month without leading zeros. Example: <code class="language-plaintext highlighter-rouge">9</code>
-</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{cc}</code> - per customer invoice counter for all times, starting from 1 (since 1.10)</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{ccy}</code> - per customer invoice counter for this year, starting from 1 (since 1.10)</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{ccm}</code> - per customer invoice counter for this month, starting from 1 (since 1.10)</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">{ccd}</code> - per customer invoice counter for this day, starting from 1 (since 1.10)</li>
+  <li><code class="language-plaintext highlighter-rouge">{date}</code> - shortcut for <code class="language-plaintext highlighter-rouge">ymd</code>. Example: <code class="language-plaintext highlighter-rouge">190709</code> (default format before Kimai 1.9)</li>
+  <li><code class="language-plaintext highlighter-rouge">{c}</code> - counter for invoices of all times, starting from 1</li>
+  <li><code class="language-plaintext highlighter-rouge">{cy}</code> - counter for invoices this year, starting from 1</li>
+  <li><code class="language-plaintext highlighter-rouge">{cm}</code> - counter for invoices this month, starting from 1</li>
+  <li><code class="language-plaintext highlighter-rouge">{cd}</code> - counter for invoices this day, starting from 1</li>
+  <li><code class="language-plaintext highlighter-rouge">{Y}</code> -  full numeric representation of a year (4 digits). Example: <code class="language-plaintext highlighter-rouge">2019</code></li>
+  <li><code class="language-plaintext highlighter-rouge">{y}</code> - two digit representation of a year. Example: <code class="language-plaintext highlighter-rouge">19</code></li>
+  <li><code class="language-plaintext highlighter-rouge">{M}</code> - numeric representation of a month, with leading zeros. Example: <code class="language-plaintext highlighter-rouge">07</code></li>
+  <li><code class="language-plaintext highlighter-rouge">{m}</code> - numeric representation of a month, without leading zeros. Example: <code class="language-plaintext highlighter-rouge">7</code></li>
+  <li><code class="language-plaintext highlighter-rouge">{D}</code> - day of the month, 2 digits with leading zeros. Example: <code class="language-plaintext highlighter-rouge">09</code></li>
+  <li><code class="language-plaintext highlighter-rouge">{d}</code> - day of the month without leading zeros. Example: <code class="language-plaintext highlighter-rouge">9</code></li>
+  <li><code class="language-plaintext highlighter-rouge">{cc}</code> - per customer invoice counter for all times, starting from 1 (since 1.10)</li>
+  <li><code class="language-plaintext highlighter-rouge">{ccy}</code> - per customer invoice counter for this year, starting from 1 (since 1.10)</li>
+  <li><code class="language-plaintext highlighter-rouge">{ccm}</code> - per customer invoice counter for this month, starting from 1 (since 1.10)</li>
+  <li><code class="language-plaintext highlighter-rouge">{ccd}</code> - per customer invoice counter for this day, starting from 1 (since 1.10)</li>
 </ul>
 
 <p>Each replacer (x) can be combined with a length formatter, which will prepend (X) leading zeros, eg. <code class="language-plaintext highlighter-rouge">{x,X}</code>. 
 Example: to get a three digit long string with year counter use <code class="language-plaintext highlighter-rouge">{cy,3}</code>, which results in <code class="language-plaintext highlighter-rouge">001</code> for the first invoice of the year.</p>
 
-<div class="alert alert-warning d-flex" role="alert">
-<i class="bx bx-alarm-exclamation lead me-3"></i>
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i>
 <p>Characters outside the replacer may <strong>not</strong> include <code class="language-plaintext highlighter-rouge">{</code> and <code class="language-plaintext highlighter-rouge">}</code>.</p>
 </div>
 
@@ -722,14 +699,12 @@ This works for the following replacer: <code class="language-plaintext highlight
 <p>Assume you already wrote 72 invoices this year (before you started to use Kimai), and your counter is an incrementing number 
 per year, which is prefixed with the four digit year:</p>
 <ul>
-  <li>
-<code class="language-plaintext highlighter-rouge">{Y}/{cy+73,3}</code> would result in <code class="language-plaintext highlighter-rouge">2020/073</code> for your first invoice</li>
+  <li><code class="language-plaintext highlighter-rouge">{Y}/{cy+73,3}</code> would result in <code class="language-plaintext highlighter-rouge">2020/073</code> for your first invoice</li>
 </ul>
 
 <p>Assume that you want to change your invoice numbering and reset it to zero, you already wrote 72 invoices this year, and your counter is an incrementing number per year that should be prefixed with the four digit year:</p>
 <ul>
-  <li>
-<code class="language-plaintext highlighter-rouge">{Y}/{cy-72,3}</code> would result in <code class="language-plaintext highlighter-rouge">2020/001</code> for your first invoice</li>
+  <li><code class="language-plaintext highlighter-rouge">{Y}/{cy-72,3}</code> would result in <code class="language-plaintext highlighter-rouge">2020/001</code> for your first invoice</li>
 </ul>
 
 <h2 id="export-state">Export state</h2>
@@ -754,64 +729,52 @@ Users can set the billable flag on individual timesheets.</p>
 <p>The invoice system currently supports the following formats:</p>
 
 <ul>
-  <li>
-<code class="language-plaintext highlighter-rouge">HTML</code>
+  <li><code class="language-plaintext highlighter-rouge">HTML</code>
     <ul>
       <li>through the use of Twig templates</li>
-      <li>filename must end with <code class="language-plaintext highlighter-rouge">.html.twig</code>
-</li>
+      <li>filename must end with <code class="language-plaintext highlighter-rouge">.html.twig</code></li>
       <li>Pro: no need for additional software, print or convert to PDF from your browser (if supported)</li>
       <li>Contra: you have to understand HTML and Twig</li>
       <li><strong>the recommended invoice document format</strong></li>
     </ul>
   </li>
-  <li>
-<code class="language-plaintext highlighter-rouge">PDF</code> (since Kimai 1.9)
+  <li><code class="language-plaintext highlighter-rouge">PDF</code> (since Kimai 1.9)
     <ul>
       <li>through the use of Twig templates</li>
-      <li>filename must end with <code class="language-plaintext highlighter-rouge">.pdf.twig</code>
-</li>
+      <li>filename must end with <code class="language-plaintext highlighter-rouge">.pdf.twig</code></li>
       <li>Pro: no need for additional software</li>
       <li>Contra: you have to understand HTML, Twig and the MPDF library</li>
     </ul>
   </li>
-  <li>
-<code class="language-plaintext highlighter-rouge">DOCX</code>
+  <li><code class="language-plaintext highlighter-rouge">DOCX</code>
     <ul>
       <li>OOXML - Open Office XML Text</li>
       <li>Microsoft Word 2007-2013 XML</li>
-      <li>filename must end with <code class="language-plaintext highlighter-rouge">.docx</code>
-</li>
+      <li>filename must end with <code class="language-plaintext highlighter-rouge">.docx</code></li>
       <li>Pro: simple customization and possibility to edit the invoice later on</li>
       <li>Contra: Non-free software required</li>
     </ul>
   </li>
-  <li>
-<code class="language-plaintext highlighter-rouge">ODS</code>
+  <li><code class="language-plaintext highlighter-rouge">ODS</code>
     <ul>
       <li>Open Document Spreadsheet or OASIS, is the OpenOffice.org XML file format for spreadsheets supported by OpenOffice, LibreOffice, StarCalc, Microsoft and others</li>
-      <li>file extension: filename must end with <code class="language-plaintext highlighter-rouge">.ods</code>
-</li>
+      <li>file extension: filename must end with <code class="language-plaintext highlighter-rouge">.ods</code></li>
       <li>Pro: open format, good for exporting and creating enhanced reports with an office software package</li>
       <li>Contra: not ideal format for invoices (harder to customize)</li>
     </ul>
   </li>
-  <li>
-<code class="language-plaintext highlighter-rouge">XLSX</code>
+  <li><code class="language-plaintext highlighter-rouge">XLSX</code>
     <ul>
       <li>Microsoft Excel™ 2007 shipped with a new file format, namely Microsoft Office Open XML SpreadsheetML, and Excel 2010 extended this still further with new features.</li>
-      <li>file extension: filename must end with <code class="language-plaintext highlighter-rouge">.xlsx</code>
-</li>
+      <li>file extension: filename must end with <code class="language-plaintext highlighter-rouge">.xlsx</code></li>
       <li>Pro: good for creating enhanced reports with an office software package</li>
       <li>Contra: Non-free software required, not ideal format for invoices</li>
     </ul>
   </li>
-  <li>
-<code class="language-plaintext highlighter-rouge">CSV</code>
+  <li><code class="language-plaintext highlighter-rouge">CSV</code>
     <ul>
       <li>Comma-separated file with UTF-8 encoding and double-quotes around each field</li>
-      <li>filename must end with <code class="language-plaintext highlighter-rouge">.csv</code>
-</li>
+      <li>filename must end with <code class="language-plaintext highlighter-rouge">.csv</code></li>
       <li>Pro: good for exporting and creating enhanced reports with an office software package</li>
       <li>Contra: only row based information possible (meta information can’t be used properly), UTF-8 is not properly supported when using Excel (see <a href="https://github.com/kimai/kimai/issues/1537">this issue</a>)</li>
     </ul>
@@ -825,10 +788,8 @@ Users can set the billable flag on individual timesheets.</p>
 <p>Invoice documents are searched in two locations:</p>
 
 <ul>
-  <li>
-<code class="language-plaintext highlighter-rouge">var/invoices/</code> - does not exist by default, please create it when you add a new document</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">templates/invoice/renderer/</code> - don’t change files in here, will be overwritten with the next update</li>
+  <li><code class="language-plaintext highlighter-rouge">var/invoices/</code> - does not exist by default, please create it when you add a new document</li>
+  <li><code class="language-plaintext highlighter-rouge">templates/invoice/renderer/</code> - don’t change files in here, will be overwritten with the next update</li>
 </ul>
 
 <p>Be aware of the following rules:</p>
@@ -843,8 +804,7 @@ Users can set the billable flag on individual timesheets.</p>
   <li>New or updated templates can be uploaded via the UI</li>
 </ul>
 
-<div class="alert alert-warning d-flex" role="alert">
-<i class="bx bx-alarm-exclamation lead me-3"></i><p>Do NOT change the default templates, but copy the file and save it (with a new filename) at var/invoices/</p>
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i><p>Do NOT change the default templates, but copy the file and save it (with a new filename) at var/invoices/</p>
 </div>
 
 <p>After you changed an invoice template, you have to <a href="/documentation/cache.html">clear the cache</a> to see the results:</p>
@@ -1071,23 +1031,19 @@ Twig templates are rendered actively, it is up to the developer to calculate wha
     </tr>
     <tr>
       <td>${query.month}</td>
-      <td>The month for this query (begin date) <strong>DEPRECATED</strong>
-</td>
+      <td>The month for this query (begin date) <strong>DEPRECATED</strong></td>
     </tr>
     <tr>
       <td>${query.month_number}</td>
-      <td>The numerical value for the month (with leading zero) <strong>DEPRECATED</strong>
-</td>
+      <td>The numerical value for the month (with leading zero) <strong>DEPRECATED</strong></td>
     </tr>
     <tr>
       <td>${query.day}</td>
-      <td>The day for the queries begin as numerical value with leading zero <strong>DEPRECATED</strong>
-</td>
+      <td>The day for the queries begin as numerical value with leading zero <strong>DEPRECATED</strong></td>
     </tr>
     <tr>
       <td>${query.year}</td>
-      <td>The year for this query (begin date) <strong>DEPRECATED</strong>
-</td>
+      <td>The year for this query (begin date) <strong>DEPRECATED</strong></td>
     </tr>
     <tr>
       <td>${query.begin_month}</td>
@@ -1139,8 +1095,7 @@ Twig templates are rendered actively, it is up to the developer to calculate wha
     </tr>
     <tr>
       <td>${user.meta.X}</td>
-      <td>The current users <a href="/documentation/user-preferences.html">preference</a> named <code class="language-plaintext highlighter-rouge">X</code>
-</td>
+      <td>The current users <a href="/documentation/user-preferences.html">preference</a> named <code class="language-plaintext highlighter-rouge">X</code></td>
     </tr>
   </tbody>
 </table>
@@ -1547,37 +1502,7 @@ The invoice template that will be used for every invoice is <code class="languag
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav">
-<li class="nav-item">
-<a href="#invoice-number-format" class="nav-link">Invoice number format</a><ul>
-<li class="nav-item"><a href="#incrementing-the-invoice-counter" class="nav-link">Incrementing the invoice counter</a></li>
-<li class="nav-item"><a href="#decrementing-the-invoice-counter" class="nav-link">Decrementing the invoice counter</a></li>
-<li class="nav-item"><a href="#examples" class="nav-link">Examples</a></li>
-</ul>
-</li>
-<li class="nav-item"><a href="#export-state" class="nav-link">Export state</a></li>
-<li class="nav-item"><a href="#billable-items-only" class="nav-link">Billable items only</a></li>
-<li class="nav-item">
-<a href="#invoice-document" class="nav-link">Invoice document</a><ul>
-<li class="nav-item"><a href="#create-your-own-invoice-document" class="nav-link">Create your own invoice document</a></li>
-<li class="nav-item"><a href="#uploading-invoice-documents" class="nav-link">Uploading invoice documents</a></li>
-<li class="nav-item"><a href="#twig-templates" class="nav-link">Twig templates</a></li>
-<li class="nav-item"><a href="#pdf-templates" class="nav-link">PDF templates</a></li>
-<li class="nav-item"><a href="#docx-templates" class="nav-link">Docx templates</a></li>
-<li class="nav-item"><a href="#spreadsheets-ods-xlsx-and-csv" class="nav-link">Spreadsheets (ODS, XLSX and CSV)</a></li>
-</ul>
-</li>
-<li class="nav-item">
-<a href="#template-variables" class="nav-link">Template variables</a><ul>
-<li class="nav-item"><a href="#global-variables" class="nav-link">Global variables</a></li>
-<li class="nav-item"><a href="#customer-variables" class="nav-link">Customer variables</a></li>
-<li class="nav-item"><a href="#timesheet-entry-variables" class="nav-link">Timesheet entry variables</a></li>
-<li class="nav-item"><a href="#project-variables" class="nav-link">Project variables</a></li>
-<li class="nav-item"><a href="#activity-variables" class="nav-link">Activity variables</a></li>
-</ul>
-</li>
-<li class="nav-item"><a href="#create-invoices-with-cronjobs" class="nav-link">Create invoices with cronjobs</a></li>
-</ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#invoice-number-format" class="nav-link">Invoice number format</a><ul><li class="nav-item"><a href="#incrementing-the-invoice-counter" class="nav-link">Incrementing the invoice counter</a></li><li class="nav-item"><a href="#decrementing-the-invoice-counter" class="nav-link">Decrementing the invoice counter</a></li><li class="nav-item"><a href="#examples" class="nav-link">Examples</a></li></ul></li><li class="nav-item"><a href="#export-state" class="nav-link">Export state</a></li><li class="nav-item"><a href="#billable-items-only" class="nav-link">Billable items only</a></li><li class="nav-item"><a href="#invoice-document" class="nav-link">Invoice document</a><ul><li class="nav-item"><a href="#create-your-own-invoice-document" class="nav-link">Create your own invoice document</a></li><li class="nav-item"><a href="#uploading-invoice-documents" class="nav-link">Uploading invoice documents</a></li><li class="nav-item"><a href="#twig-templates" class="nav-link">Twig templates</a></li><li class="nav-item"><a href="#pdf-templates" class="nav-link">PDF templates</a></li><li class="nav-item"><a href="#docx-templates" class="nav-link">Docx templates</a></li><li class="nav-item"><a href="#spreadsheets-ods-xlsx-and-csv" class="nav-link">Spreadsheets (ODS, XLSX and CSV)</a></li></ul></li><li class="nav-item"><a href="#template-variables" class="nav-link">Template variables</a><ul><li class="nav-item"><a href="#global-variables" class="nav-link">Global variables</a></li><li class="nav-item"><a href="#customer-variables" class="nav-link">Customer variables</a></li><li class="nav-item"><a href="#timesheet-entry-variables" class="nav-link">Timesheet entry variables</a></li><li class="nav-item"><a href="#project-variables" class="nav-link">Project variables</a></li><li class="nav-item"><a href="#activity-variables" class="nav-link">Activity variables</a></li></ul></li><li class="nav-item"><a href="#create-invoices-with-cronjobs" class="nav-link">Create invoices with cronjobs</a></li></ul>
         
     </aside>
 

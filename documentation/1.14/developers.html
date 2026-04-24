@@ -404,8 +404,7 @@
                 
                 <div id="documentation-content">
                     
-<div class="alert alert-danger d-flex" role="alert">
-<i class="bx bx-info-circle lead me-3"></i>
+<div class="alert alert-danger d-flex" role="alert"><i class="bx bx-info-circle lead me-3"></i>
 <p>You are viewing an older version of this documentation page. A newer version is available <a href="/documentation/developers.html">here</a>.</p>
 </div>
 
@@ -417,8 +416,7 @@
 
 <ul>
   <li>PHP &gt;= 7.2.9</li>
-  <li>PHP extensions: <code class="language-plaintext highlighter-rouge">pdo-mysql</code>, <code class="language-plaintext highlighter-rouge">intl</code>, <code class="language-plaintext highlighter-rouge">zip</code>, <code class="language-plaintext highlighter-rouge">gd</code>, <code class="language-plaintext highlighter-rouge">mbstring</code>, <code class="language-plaintext highlighter-rouge">xml</code>
-</li>
+  <li>PHP extensions: <code class="language-plaintext highlighter-rouge">pdo-mysql</code>, <code class="language-plaintext highlighter-rouge">intl</code>, <code class="language-plaintext highlighter-rouge">zip</code>, <code class="language-plaintext highlighter-rouge">gd</code>, <code class="language-plaintext highlighter-rouge">mbstring</code>, <code class="language-plaintext highlighter-rouge">xml</code></li>
   <li>a MariaDB or MySQL instance</li>
   <li><a href="https://getcomposer.org/download/">Composer</a></li>
 </ul>
@@ -686,14 +684,12 @@ composer kimai:tests-integration
 <ul>
   <li>a widget implementing <code class="language-plaintext highlighter-rouge">\App\Widget\WidgetInterface</code>
     <ul>
-      <li>or for the lazy folks extending <code class="language-plaintext highlighter-rouge">\App\Widget\Type\AbstractWidgetType</code>
-</li>
+      <li>or for the lazy folks extending <code class="language-plaintext highlighter-rouge">\App\Widget\Type\AbstractWidgetType</code></li>
     </ul>
   </li>
   <li>a widget renderer implementing <code class="language-plaintext highlighter-rouge">\App\Widget\WidgetRendererInterface</code>
     <ul>
-      <li>if you want to use twig to render your widget, extend <code class="language-plaintext highlighter-rouge">\App\Widget\Renderer\AbstractTwigRenderer</code>
-</li>
+      <li>if you want to use twig to render your widget, extend <code class="language-plaintext highlighter-rouge">\App\Widget\Renderer\AbstractTwigRenderer</code></li>
     </ul>
   </li>
 </ul>
@@ -758,7 +754,7 @@ which finds the classes by the interface <code class="language-plaintext highlig
 <p>An export renderer is a class implementing <code class="language-plaintext highlighter-rouge">App\Export\RendererInterface</code> and it is responsible to convert an array of
 <code class="language-plaintext highlighter-rouge">Timesheet</code> objects into a downloadable/printable document.</p>
 
-<p>Every export renderer class will be automatically available when refreshing the application cache, thanks to the<br>
+<p>Every export renderer class will be automatically available when refreshing the application cache, thanks to the<br />
 <a href="https://github.com/kimai/kimai/blob/main/src/DependencyInjection/Compiler/ExportServiceCompilerPass.php">ExportServiceCompilerPass</a>.</p>
 
 <p>Each renderer is represented by a “button” below the datatable on the export screen.</p>
@@ -1004,40 +1000,7 @@ By doing so, you register the permission in the system and they become available
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav">
-<li class="nav-item"><a href="#development-installation" class="nav-link">Development installation</a></li>
-<li class="nav-item"><a href="#frontend-dependencies" class="nav-link">Frontend dependencies</a></li>
-<li class="nav-item"><a href="#localyaml" class="nav-link">local.yaml</a></li>
-<li class="nav-item"><a href="#tests-suites-with-phpunit" class="nav-link">Tests suites with PHPUnit</a></li>
-<li class="nav-item"><a href="#static-code-analysis-via-phpstan" class="nav-link">Static code analysis via PHPStan</a></li>
-<li class="nav-item"><a href="#coding-styles" class="nav-link">Coding styles</a></li>
-<li class="nav-item"><a href="#translations" class="nav-link">Translations</a></li>
-<li class="nav-item"><a href="#extending-the-navigation-bar" class="nav-link">Extending the navigation bar</a></li>
-<li class="nav-item">
-<a href="#extending-the-dashboard-with-widgets" class="nav-link">Extending the dashboard with widgets</a><ul>
-<li class="nav-item"><a href="#adding-new-widget-types" class="nav-link">Adding new widget types</a></li>
-<li class="nav-item"><a href="#display-widgets-in-your-template" class="nav-link">Display widgets in your template</a></li>
-</ul>
-</li>
-<li class="nav-item">
-<a href="#invoices" class="nav-link">Invoices</a><ul>
-<li class="nav-item"><a href="#adding-documents-for-invoice-rendering" class="nav-link">Adding documents for invoice rendering</a></li>
-<li class="nav-item"><a href="#adding-invoice-calculator" class="nav-link">Adding invoice calculator</a></li>
-<li class="nav-item"><a href="#adding-invoice-number-generator" class="nav-link">Adding invoice-number generator</a></li>
-<li class="nav-item"><a href="#adding-invoice-renderer" class="nav-link">Adding invoice renderer</a></li>
-</ul>
-</li>
-<li class="nav-item">
-<a href="#adding-export-renderer" class="nav-link">Adding export renderer</a><ul><li class="nav-item"><a href="#adding-timesheet-export-renderer" class="nav-link">Adding timesheet export renderer</a></li></ul>
-</li>
-<li class="nav-item"><a href="#adding-timesheet-calculator" class="nav-link">Adding timesheet calculator</a></li>
-<li class="nav-item"><a href="#adding-custom-fields-meta-fields" class="nav-link">Adding custom fields (meta fields)</a></li>
-<li class="nav-item"><a href="#adding-userpreference" class="nav-link">Adding UserPreference</a></li>
-<li class="nav-item"><a href="#adding-custom-meta-tags-stylesheets-or-javascript" class="nav-link">Adding custom meta tags, stylesheets or javascript</a></li>
-<li class="nav-item"><a href="#adding-permissions" class="nav-link">Adding permissions</a></li>
-<li class="nav-item"><a href="#adding-system-configuration" class="nav-link">Adding system configuration</a></li>
-<li class="nav-item"><a href="#adding-api-methods" class="nav-link">Adding API methods</a></li>
-</ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#development-installation" class="nav-link">Development installation</a></li><li class="nav-item"><a href="#frontend-dependencies" class="nav-link">Frontend dependencies</a></li><li class="nav-item"><a href="#localyaml" class="nav-link">local.yaml</a></li><li class="nav-item"><a href="#tests-suites-with-phpunit" class="nav-link">Tests suites with PHPUnit</a></li><li class="nav-item"><a href="#static-code-analysis-via-phpstan" class="nav-link">Static code analysis via PHPStan</a></li><li class="nav-item"><a href="#coding-styles" class="nav-link">Coding styles</a></li><li class="nav-item"><a href="#translations" class="nav-link">Translations</a></li><li class="nav-item"><a href="#extending-the-navigation-bar" class="nav-link">Extending the navigation bar</a></li><li class="nav-item"><a href="#extending-the-dashboard-with-widgets" class="nav-link">Extending the dashboard with widgets</a><ul><li class="nav-item"><a href="#adding-new-widget-types" class="nav-link">Adding new widget types</a></li><li class="nav-item"><a href="#display-widgets-in-your-template" class="nav-link">Display widgets in your template</a></li></ul></li><li class="nav-item"><a href="#invoices" class="nav-link">Invoices</a><ul><li class="nav-item"><a href="#adding-documents-for-invoice-rendering" class="nav-link">Adding documents for invoice rendering</a></li><li class="nav-item"><a href="#adding-invoice-calculator" class="nav-link">Adding invoice calculator</a></li><li class="nav-item"><a href="#adding-invoice-number-generator" class="nav-link">Adding invoice-number generator</a></li><li class="nav-item"><a href="#adding-invoice-renderer" class="nav-link">Adding invoice renderer</a></li></ul></li><li class="nav-item"><a href="#adding-export-renderer" class="nav-link">Adding export renderer</a><ul><li class="nav-item"><a href="#adding-timesheet-export-renderer" class="nav-link">Adding timesheet export renderer</a></li></ul></li><li class="nav-item"><a href="#adding-timesheet-calculator" class="nav-link">Adding timesheet calculator</a></li><li class="nav-item"><a href="#adding-custom-fields-meta-fields" class="nav-link">Adding custom fields (meta fields)</a></li><li class="nav-item"><a href="#adding-userpreference" class="nav-link">Adding UserPreference</a></li><li class="nav-item"><a href="#adding-custom-meta-tags-stylesheets-or-javascript" class="nav-link">Adding custom meta tags, stylesheets or javascript</a></li><li class="nav-item"><a href="#adding-permissions" class="nav-link">Adding permissions</a></li><li class="nav-item"><a href="#adding-system-configuration" class="nav-link">Adding system configuration</a></li><li class="nav-item"><a href="#adding-api-methods" class="nav-link">Adding API methods</a></li></ul>
         
     </aside>
 

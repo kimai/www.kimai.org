@@ -56,10 +56,10 @@
                         <ul class="dropdown-menu">
                             <li><a href="/en/about.html" class="dropdown-item">About Kimai</a></li>
                             <li><a href="/en/open-source-community" class="dropdown-item">Open Source</a></li>
-                            <li class="dropdown-divider">
-                            <li><a href="/en/integrations" class="dropdown-item">Apps &amp; Integrations</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="/en/integrations" class="dropdown-item">Apps & Integrations</a></li>
                             <li><a href="/en/demo.html" class="dropdown-item">Demo</a></li>
-                            <li class="dropdown-divider">
+                            <li class="dropdown-divider"></li>
                             <li><a href="/en/blog/" class="dropdown-item">Blog</a></li>
                             <li><a href="/en/support.html" class="dropdown-item">Support</a></li>
                         </ul>
@@ -173,23 +173,20 @@ so I hope nobody is stressed by decreasing the time between releases.</p>
 
 <p>In the meantime a couple of new addons were added to the Marketplace:</p>
 <ul>
-  <li>the <a href="/store/infeeeee-kimai2-cmd.html">command line tools</a>
-</li>
-  <li>and the <a href="/store/infeeeee-kimai2-cmd-argos.html">argos client</a>
-</li>
+  <li>the <a href="/store/infeeeee-kimai2-cmd.html">command line tools</a></li>
+  <li>and the <a href="/store/infeeeee-kimai2-cmd-argos.html">argos client</a></li>
 </ul>
 
 <p>Thanks to all of you, especially:</p>
 <ul>
   <li>all clients and donators, you guys rock and help me to keep up the work for Kimai!!!</li>
   <li>the developers who contributed their time and the plugins to the community</li>
-  <li>the guys at Cloudron, which now <a href="https://cloudron.io/store/org.kimai.cloudronapp.html">support Kimai 2</a>
-</li>
+  <li>the guys at Cloudron, which now <a href="https://cloudron.io/store/org.kimai.cloudronapp.html">support Kimai 2</a></li>
   <li>everyone else contributing at GitHub, too many to name you all …</li>
 </ul>
 
 <p>This release is mainly about the new introduced <a href="/documentation/teams.html">team permissions</a>.
-Also about invoice refactoring and an improved export dialog.<br>
+Also about invoice refactoring and an improved export dialog.<br />
 Oh and did you know, Kimai is now translated to Korean?! Still waiting for a contribution from the community in India.</p>
 
 <blockquote>
@@ -201,30 +198,18 @@ Oh and did you know, Kimai is now translated to Korean?! Still waiting for a con
 <p><strong>Implemented enhancements:</strong></p>
 
 <ul>
-  <li>wants to Edit Weekend Day and Another role in my user <a href="https://github.com/kimai/kimai/issues/1048">#1048</a>
-</li>
-  <li>Hide inactive users <a href="https://github.com/kimai/kimai/issues/1047">#1047</a>
-</li>
-  <li>Format ${query.month} as a number <a href="https://github.com/kimai/kimai/issues/1025">#1025</a>
-</li>
-  <li>Change/Set Currency Globally for Customers, Users, etc. <a href="https://github.com/kimai/kimai/issues/1017">#1017</a>
-</li>
-  <li>auto copy current values if autocopy flag is set for fields created though metafields <a href="https://github.com/kimai/kimai/issues/1015">#1015</a>
-</li>
-  <li>API [POST] User <a href="https://github.com/kimai/kimai/issues/977">#977</a>
-</li>
-  <li>Minor: Currency upon NewProject <a href="https://github.com/kimai/kimai/issues/972">#972</a>
-</li>
-  <li>Minor: Currency upon NewProject <a href="https://github.com/kimai/kimai/issues/972">#972</a>
-</li>
-  <li>Better visualization of active time-recordings and start-stop <a href="https://github.com/kimai/kimai/issues/961">#961</a>
-</li>
-  <li>Template variable with decimal time entry (with “dirty” self-made solutions) <a href="https://github.com/kimai/kimai/issues/955">#955</a>
-</li>
-  <li>Configurable default date-range for initial filter in export, invoice and team-timesheets <a href="https://github.com/kimai/kimai/issues/887">#887</a>
-</li>
-  <li>Exporting - Minutes output or a Summery of hours when filtering <a href="https://github.com/kimai/kimai/issues/882">#882</a>
-</li>
+  <li>wants to Edit Weekend Day and Another role in my user <a href="https://github.com/kimai/kimai/issues/1048">#1048</a></li>
+  <li>Hide inactive users <a href="https://github.com/kimai/kimai/issues/1047">#1047</a></li>
+  <li>Format ${query.month} as a number <a href="https://github.com/kimai/kimai/issues/1025">#1025</a></li>
+  <li>Change/Set Currency Globally for Customers, Users, etc. <a href="https://github.com/kimai/kimai/issues/1017">#1017</a></li>
+  <li>auto copy current values if autocopy flag is set for fields created though metafields <a href="https://github.com/kimai/kimai/issues/1015">#1015</a></li>
+  <li>API [POST] User <a href="https://github.com/kimai/kimai/issues/977">#977</a></li>
+  <li>Minor: Currency upon NewProject <a href="https://github.com/kimai/kimai/issues/972">#972</a></li>
+  <li>Minor: Currency upon NewProject <a href="https://github.com/kimai/kimai/issues/972">#972</a></li>
+  <li>Better visualization of active time-recordings and start-stop <a href="https://github.com/kimai/kimai/issues/961">#961</a></li>
+  <li>Template variable with decimal time entry (with “dirty” self-made solutions) <a href="https://github.com/kimai/kimai/issues/955">#955</a></li>
+  <li>Configurable default date-range for initial filter in export, invoice and team-timesheets <a href="https://github.com/kimai/kimai/issues/887">#887</a></li>
+  <li>Exporting - Minutes output or a Summery of hours when filtering <a href="https://github.com/kimai/kimai/issues/882">#882</a></li>
   <li>added API functions to save meta fields <a href="https://github.com/kimai/kimai/pull/1063">#1063</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
   <li>improve invoice handling for different rates <a href="https://github.com/kimai/kimai/pull/1058">#1058</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
   <li>support creating new roles <a href="https://github.com/kimai/kimai/pull/1050">#1050</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
@@ -250,22 +235,14 @@ Oh and did you know, Kimai is now translated to Korean?! Still waiting for a con
 <p><strong>Fixed bugs:</strong></p>
 
 <ul>
-  <li>whole team vanishes if single user is deleted <a href="https://github.com/kimai/kimai/issues/1052">#1052</a>
-</li>
-  <li>Failing redirect <a href="https://github.com/kimai/kimai/issues/1049">#1049</a>
-</li>
-  <li>edit team leads to empty modal <a href="https://github.com/kimai/kimai/issues/1040">#1040</a>
-</li>
-  <li>Failed to create database schema : General error: 1709 Index column size too large. The maximum column size is 767 bytes. <a href="https://github.com/kimai/kimai/issues/1028">#1028</a>
-</li>
-  <li>Wrong quantity / unit price for fixed rate entries during invoice generation <a href="https://github.com/kimai/kimai/issues/1008">#1008</a>
-</li>
-  <li>Import failes during activities <a href="https://github.com/kimai/kimai/issues/999">#999</a>
-</li>
-  <li>Dashboard incorrect timezone (histogram only) <a href="https://github.com/kimai/kimai/issues/987">#987</a>
-</li>
-  <li>${invoice.total_time} sums up time and fixed rate entities <a href="https://github.com/kimai/kimai/issues/959">#959</a>
-</li>
+  <li>whole team vanishes if single user is deleted <a href="https://github.com/kimai/kimai/issues/1052">#1052</a></li>
+  <li>Failing redirect <a href="https://github.com/kimai/kimai/issues/1049">#1049</a></li>
+  <li>edit team leads to empty modal <a href="https://github.com/kimai/kimai/issues/1040">#1040</a></li>
+  <li>Failed to create database schema : General error: 1709 Index column size too large. The maximum column size is 767 bytes. <a href="https://github.com/kimai/kimai/issues/1028">#1028</a></li>
+  <li>Wrong quantity / unit price for fixed rate entries during invoice generation <a href="https://github.com/kimai/kimai/issues/1008">#1008</a></li>
+  <li>Import failes during activities <a href="https://github.com/kimai/kimai/issues/999">#999</a></li>
+  <li>Dashboard incorrect timezone (histogram only) <a href="https://github.com/kimai/kimai/issues/987">#987</a></li>
+  <li>${invoice.total_time} sums up time and fixed rate entities <a href="https://github.com/kimai/kimai/issues/959">#959</a></li>
   <li>fix empty user language <a href="https://github.com/kimai/kimai/pull/1054">#1054</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
   <li>do not delete team if linked entity is deleted <a href="https://github.com/kimai/kimai/pull/1053">#1053</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
   <li>fix team opens in modal <a href="https://github.com/kimai/kimai/pull/1041">#1041</a> (<a href="https://github.com/kevinpapst">kevinpapst</a>)</li>
@@ -278,24 +255,15 @@ Oh and did you know, Kimai is now translated to Korean?! Still waiting for a con
 <p><strong>Closed issues:</strong></p>
 
 <ul>
-  <li>Failed to get Password Recovery mail <a href="https://github.com/kimai/kimai/issues/1060">#1060</a>
-</li>
-  <li>team user permission <a href="https://github.com/kimai/kimai/issues/1045">#1045</a>
-</li>
-  <li>installation problem <a href="https://github.com/kimai/kimai/issues/1022">#1022</a>
-</li>
-  <li>Unable to install version 1.1 <a href="https://github.com/kimai/kimai/issues/1020">#1020</a>
-</li>
-  <li>Database Settings <a href="https://github.com/kimai/kimai/issues/1019">#1019</a>
-</li>
-  <li>Filter by tags not working by via the REST API <a href="https://github.com/kimai/kimai/issues/1016">#1016</a>
-</li>
-  <li>Add default API passwords in the demo installation to the documentation <a href="https://github.com/kimai/kimai/issues/1007">#1007</a>
-</li>
-  <li>How to add a logo to the login screen? <a href="https://github.com/kimai/kimai/issues/990">#990</a>
-</li>
-  <li>Feature Suggestion: Document How To record login/logoff events <a href="https://github.com/kimai/kimai/issues/911">#911</a>
-</li>
+  <li>Failed to get Password Recovery mail <a href="https://github.com/kimai/kimai/issues/1060">#1060</a></li>
+  <li>team user permission <a href="https://github.com/kimai/kimai/issues/1045">#1045</a></li>
+  <li>installation problem <a href="https://github.com/kimai/kimai/issues/1022">#1022</a></li>
+  <li>Unable to install version 1.1 <a href="https://github.com/kimai/kimai/issues/1020">#1020</a></li>
+  <li>Database Settings <a href="https://github.com/kimai/kimai/issues/1019">#1019</a></li>
+  <li>Filter by tags not working by via the REST API <a href="https://github.com/kimai/kimai/issues/1016">#1016</a></li>
+  <li>Add default API passwords in the demo installation to the documentation <a href="https://github.com/kimai/kimai/issues/1007">#1007</a></li>
+  <li>How to add a logo to the login screen? <a href="https://github.com/kimai/kimai/issues/990">#990</a></li>
+  <li>Feature Suggestion: Document How To record login/logoff events <a href="https://github.com/kimai/kimai/issues/911">#911</a></li>
 </ul>
 
 <p><strong>Merged pull requests:</strong></p>
@@ -309,7 +277,7 @@ Oh and did you know, Kimai is now translated to Korean?! Still waiting for a con
             <div class="sticky-top ms-xl-5 ms-lg-4 ps-xxl-4" style="top: 105px !important;">
                 <h6>Share this post:</h6>
                 <div class="mb-4 pb-lg-3">
-                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.kimai.org/en/blog/2019/kimai-v2-release-1-2&amp;title=Release%201.2%20-%20Teams" class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.kimai.org/en/blog/2019/kimai-v2-release-1-2&title=Release 1.2 - Teams" class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2" aria-label="LinkedIn">
                         <i class="bx bxl-linkedin"></i>
                     </a>
                     <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.kimai.org/en/blog/2019/kimai-v2-release-1-2" class="btn btn-icon btn-secondary btn-facebook me-2 mb-2" aria-label="Facebook">
@@ -451,7 +419,7 @@ Oh and did you know, Kimai is now translated to Korean?! Still waiting for a con
                                     <a href="/en/reviews" class="nav-link fs-sm fw-medium px-0 py-1">Reviews</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/en/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Press &amp; Media</a>
+                                    <a href="/en/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Press & Media</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="/en/kimai-discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">Discount codes</a>

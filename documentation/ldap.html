@@ -293,7 +293,7 @@
                         
                         <a href="/documentation/webserver-configuration.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-webserver-configuration">
                             
-                            Webserver &amp; Proxy
+                            Webserver & Proxy
                             
                         </a>
                         
@@ -593,10 +593,8 @@ updated on each following login.</p>
 </code></pre></div></div>
 <p>you have to install the PHP LDAP extension first:</p>
 <ul>
-  <li>e.g. on Ubuntu with <code class="language-plaintext highlighter-rouge">apt-get install php-ldap</code>
-</li>
-  <li>or with the PHP version prefixed <code class="language-plaintext highlighter-rouge">apt-get install php8.1-ldap</code>
-</li>
+  <li>e.g. on Ubuntu with <code class="language-plaintext highlighter-rouge">apt-get install php-ldap</code></li>
+  <li>or with the PHP version prefixed <code class="language-plaintext highlighter-rouge">apt-get install php8.1-ldap</code></li>
   <li>FPM and CLI PHP use different configs, use <code class="language-plaintext highlighter-rouge">php -m</code> to verify that the module is really loaded</li>
 </ul>
 
@@ -780,8 +778,7 @@ Find out more about the settings in the <a href="https://docs.laminas.dev/lamina
 
 <ul>
   <li>if <code class="language-plaintext highlighter-rouge">bindRequiredDn</code> is active, a <code class="language-plaintext highlighter-rouge">search</code> is executed to find the users DN by the given username</li>
-  <li>the authentication is checked with a <code class="language-plaintext highlighter-rouge">bind</code>
-</li>
+  <li>the authentication is checked with a <code class="language-plaintext highlighter-rouge">bind</code></li>
   <li>if the <code class="language-plaintext highlighter-rouge">bind</code> was successful:
     <ul>
       <li>another <code class="language-plaintext highlighter-rouge">bind</code> using the service account (connection.username/connection.password) is executed and under that scope:
@@ -801,16 +798,14 @@ if your LDAP is not available (only one LDAP server can be configured).</p>
 
 <p>When using LDAP you should:</p>
 <ul>
-  <li>Disable the “<a href="/documentation/users.html">Password reset</a>” function via <a href="/documentation/configurations.html">System → Settings</a>
-</li>
+  <li>Disable the “<a href="/documentation/users.html">Password reset</a>” function via <a href="/documentation/configurations.html">System → Settings</a></li>
   <li>Disable the <code class="language-plaintext highlighter-rouge">password_own_profile</code> and <code class="language-plaintext highlighter-rouge">password_other_profile</code> <a href="/documentation/permissions.html">permissions</a> for LDAP user (at least the normal user role)</li>
 </ul>
 
 <p>There is no auto-cleanup available:</p>
 <ul>
   <li>If you delete users in LDAP, you have to delete or disable this account in Kimai manually</li>
-  <li>If you deactivate users in LDAP, you can configure an attribute mapping to set the user deactivated flag via <code class="language-plaintext highlighter-rouge">setEnabled()</code>
-</li>
+  <li>If you deactivate users in LDAP, you can configure an attribute mapping to set the user deactivated flag via <code class="language-plaintext highlighter-rouge">setEnabled()</code></li>
 </ul>
 
 <h3 id="user-attributes">User attributes</h3>
@@ -827,18 +822,14 @@ if your LDAP is not available (only one LDAP server can be configured).</p>
                 <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_attr</span><span class="pi">:</span> <span class="nv">mail</span><span class="pi">,</span> <span class="nv">user_method</span><span class="pi">:</span> <span class="nv">setEmail</span> <span class="pi">}</span>
                 <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_attr</span><span class="pi">:</span> <span class="nv">cn</span><span class="pi">,</span> <span class="nv">user_method</span><span class="pi">:</span> <span class="nv">setAlias</span> <span class="pi">}</span>
 </code></pre></div></div>
-<div class="alert alert-warning d-flex" role="alert">
-<i class="bx bx-alarm-exclamation lead me-3"></i><p>You need to configure the attributes in lower-case, otherwise they won’t be processed.</p>
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i><p>You need to configure the attributes in lower-case, otherwise they won’t be processed.</p>
 </div>
 
 <p>In this example we tell Kimai to sync the following fields:</p>
 <ul>
-  <li>
-<code class="language-plaintext highlighter-rouge">uid</code> will be the username in Kimai (will fail with a 500 if not unique)</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">mail</code> will be the account email address (read “known limitations” below)</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">cn</code> will be used for the display name in Kimai</li>
+  <li><code class="language-plaintext highlighter-rouge">uid</code> will be the username in Kimai (will fail with a 500 if not unique)</li>
+  <li><code class="language-plaintext highlighter-rouge">mail</code> will be the account email address (read “known limitations” below)</li>
+  <li><code class="language-plaintext highlighter-rouge">cn</code> will be used for the display name in Kimai</li>
 </ul>
 
 <p>Available methods on the User entity are: <code class="language-plaintext highlighter-rouge">setUsername(string)</code>, <code class="language-plaintext highlighter-rouge">setEmail(string)</code>, <code class="language-plaintext highlighter-rouge">setAlias(string)</code>, <code class="language-plaintext highlighter-rouge">setAvatar(url)</code>, <code class="language-plaintext highlighter-rouge">setTitle(string)</code>, <code class="language-plaintext highlighter-rouge">setLanguage(string)</code>, <code class="language-plaintext highlighter-rouge">setTimezone(string)</code>, <code class="language-plaintext highlighter-rouge">setAccountNumber(string)</code>.
@@ -849,8 +840,7 @@ Its unlikely that you will need those, but they also exist: <code class="languag
 <p>Kimai can use your LDAP groups and map them to <a href="/documentation/users.html">user roles</a>.
 If configured, it will execute another <code class="language-plaintext highlighter-rouge">search</code> against your LDAP after authentication and importing the user attributes.</p>
 
-<div class="alert alert-warning d-flex" role="alert">
-<i class="bx bx-alarm-exclamation lead me-3"></i><p>Every user automatically owns the ROLE_USER role, you don’t have to create a mapping for it.</p>
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i><p>Every user automatically owns the ROLE_USER role, you don’t have to create a mapping for it.</p>
 </div>
 
 <p>Assuming this <code class="language-plaintext highlighter-rouge">role</code> configuration:</p>
@@ -873,14 +863,12 @@ group names from the result-sets attribute <code class="language-plaintext highl
 <p>After finding a list of group names, they will be converted to Kimai roles:</p>
 <ul>
   <li>first step is to lookup in <code class="language-plaintext highlighter-rouge">groups</code> mapping, if there is a match in <code class="language-plaintext highlighter-rouge">ldap_value</code> and uses the <code class="language-plaintext highlighter-rouge">role</code> value without further processing</li>
-  <li>if no mapping was found, the group name will be UPPERCASED and prefixed with <code class="language-plaintext highlighter-rouge">ROLE_</code> =&gt; e.g. <code class="language-plaintext highlighter-rouge">admin</code> will become <code class="language-plaintext highlighter-rouge">ROLE_ADMIN</code>
-</li>
+  <li>if no mapping was found, the group name will be UPPERCASED and prefixed with <code class="language-plaintext highlighter-rouge">ROLE_</code> =&gt; e.g. <code class="language-plaintext highlighter-rouge">admin</code> will become <code class="language-plaintext highlighter-rouge">ROLE_ADMIN</code></li>
 </ul>
 
 <p>These converted names will be validated and <a href="/documentation/users.html">only existing roles</a> will pass to the user profile.</p>
 
-<div class="alert alert-info d-flex" role="alert">
-<i class="bx bx-message-rounded-detail lead me-3"></i><p>Remove the entire ‘role’ configuration block to deactivate role sync!</p>
+<div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i><p>Remove the entire ‘role’ configuration block to deactivate role sync!</p>
 </div>
 
 <h2 id="known-limitations">Known limitations</h2>
@@ -911,15 +899,14 @@ in the internal user database won’t be permanent.</p>
 
 <p>If you configured the group sync, the assigned user roles in Kimai will be overwritten on login.</p>
 
-<p>Roles are not merged, but replaced during authentication, so you cannot<br>
+<p>Roles are not merged, but replaced during authentication, so you cannot<br />
 demote or promote a User permanently to another role in Kimai.</p>
 
 <p>The rule is: either manage all roles in Kimai or in LDAP, mixing is not possible.</p>
 
 <h2 id="examples">Examples</h2>
 
-<div class="alert alert-info d-flex" role="alert">
-<i class="bx bx-message-rounded-detail lead me-3"></i><p>Before you start to configure your LDAP, switch to ‘dev’ environment and tail ‘var/log/dev.log’.</p>
+<div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i><p>Before you start to configure your LDAP, switch to ‘dev’ environment and tail ‘var/log/dev.log’.</p>
 </div>
 
 <p>Another simple solution to debug the generated queries is to start your OpenLDAP with <code class="language-plaintext highlighter-rouge">sudo /usr/libexec/slapd -d256</code>.</p>
@@ -1053,11 +1040,8 @@ the new account would have been promoted into these roles.</p>
                 <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_value</span><span class="pi">:</span> <span class="nv">Sysadmins</span><span class="pi">,</span> <span class="nv">role</span><span class="pi">:</span> <span class="nv">ROLE_SUPER_ADMIN</span> <span class="pi">}</span>
                 <span class="pi">-</span> <span class="pi">{</span> <span class="nv">ldap_value</span><span class="pi">:</span> <span class="nv">Users</span><span class="pi">,</span> <span class="nv">role</span><span class="pi">:</span> <span class="nv">ROLE_USER</span> <span class="pi">}</span>
 </code></pre></div></div>
-<div class="alert alert-warning d-flex" role="alert">
-<i class="bx bx-alarm-exclamation lead me-3"></i><p>You need to configure the attributes in lower-case, otherwise they won’t be processed.</p>
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i><p>You need to configure the attributes in lower-case, otherwise they won’t be processed.</p>
 </div>
-
-<p>The LDAP code is based on <a href="https://github.com/Maks3w/FR3DLdapBundle">the work</a> by <a href="https://github.com/Maks3w" class="user-mention">@Maks3w</a> , thanks for sharing!</p>
 
 <h3 id="structure-example">Structure example</h3>
 
@@ -1109,39 +1093,7 @@ in the volumes section of my docker-compose file:</p>
 
     <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
         <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav">
-<li class="nav-item">
-<a href="#installation" class="nav-link">Installation</a><ul><li class="nav-item"><a href="#activate-ldap-authentication" class="nav-link">Activate LDAP authentication</a></li></ul>
-</li>
-<li class="nav-item">
-<a href="#user-synchronization" class="nav-link">User synchronization</a><ul>
-<li class="nav-item"><a href="#user-attributes" class="nav-link">User attributes</a></li>
-<li class="nav-item"><a href="#groups--roles-import" class="nav-link">Groups / Roles import</a></li>
-</ul>
-</li>
-<li class="nav-item">
-<a href="#known-limitations" class="nav-link">Known limitations</a><ul>
-<li class="nav-item"><a href="#missing-email-address" class="nav-link">Missing email address</a></li>
-<li class="nav-item"><a href="#profile-changes-will-be-overwritten" class="nav-link">Profile changes will be overwritten</a></li>
-<li class="nav-item"><a href="#role-changes-will-be-overwritten" class="nav-link">Role changes will be overwritten</a></li>
-</ul>
-</li>
-<li class="nav-item">
-<a href="#examples" class="nav-link">Examples</a><ul>
-<li class="nav-item"><a href="#openldap-with-encryption" class="nav-link">OpenLDAP with encryption</a></li>
-<li class="nav-item"><a href="#minimal-openldap" class="nav-link">Minimal OpenLDAP</a></li>
-<li class="nav-item"><a href="#openldap-with-group-sync" class="nav-link">OpenLDAP with group sync</a></li>
-<li class="nav-item"><a href="#connect-to-active-directory" class="nav-link">Connect to Active Directory</a></li>
-<li class="nav-item"><a href="#structure-example" class="nav-link">Structure example</a></li>
-</ul>
-</li>
-<li class="nav-item">
-<a href="#troubleshooting--logging" class="nav-link">Troubleshooting / Logging</a><ul>
-<li class="nav-item"><a href="#connecting-with-ip-v6" class="nav-link">Connecting with IP v6</a></li>
-<li class="nav-item"><a href="#ldaps-and-self-signed-tls-certificate" class="nav-link">LDAPS and self-signed TLS certificate</a></li>
-</ul>
-</li>
-</ul>
+        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#installation" class="nav-link">Installation</a><ul><li class="nav-item"><a href="#activate-ldap-authentication" class="nav-link">Activate LDAP authentication</a></li></ul></li><li class="nav-item"><a href="#user-synchronization" class="nav-link">User synchronization</a><ul><li class="nav-item"><a href="#user-attributes" class="nav-link">User attributes</a></li><li class="nav-item"><a href="#groups--roles-import" class="nav-link">Groups / Roles import</a></li></ul></li><li class="nav-item"><a href="#known-limitations" class="nav-link">Known limitations</a><ul><li class="nav-item"><a href="#missing-email-address" class="nav-link">Missing email address</a></li><li class="nav-item"><a href="#profile-changes-will-be-overwritten" class="nav-link">Profile changes will be overwritten</a></li><li class="nav-item"><a href="#role-changes-will-be-overwritten" class="nav-link">Role changes will be overwritten</a></li></ul></li><li class="nav-item"><a href="#examples" class="nav-link">Examples</a><ul><li class="nav-item"><a href="#openldap-with-encryption" class="nav-link">OpenLDAP with encryption</a></li><li class="nav-item"><a href="#minimal-openldap" class="nav-link">Minimal OpenLDAP</a></li><li class="nav-item"><a href="#openldap-with-group-sync" class="nav-link">OpenLDAP with group sync</a></li><li class="nav-item"><a href="#connect-to-active-directory" class="nav-link">Connect to Active Directory</a></li><li class="nav-item"><a href="#structure-example" class="nav-link">Structure example</a></li></ul></li><li class="nav-item"><a href="#troubleshooting--logging" class="nav-link">Troubleshooting / Logging</a><ul><li class="nav-item"><a href="#connecting-with-ip-v6" class="nav-link">Connecting with IP v6</a></li><li class="nav-item"><a href="#ldaps-and-self-signed-tls-certificate" class="nav-link">LDAPS and self-signed TLS certificate</a></li></ul></li></ul>
         
     </aside>
 

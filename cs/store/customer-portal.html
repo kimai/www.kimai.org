@@ -113,10 +113,10 @@
                         <ul class="dropdown-menu">
                             <li><a href="/cs/about.html" class="dropdown-item">Informace o Kimai</a></li>
                             <li><a href="/en/open-source-community" class="dropdown-item">Open Source</a></li>
-                            <li class="dropdown-divider">
-                            <li><a href="/cs/integrations" class="dropdown-item">Apps &amp; Integrations</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="/cs/integrations" class="dropdown-item">Apps & Integrations</a></li>
                             <li><a href="/cs/demo.html" class="dropdown-item">Demo</a></li>
-                            <li class="dropdown-divider">
+                            <li class="dropdown-divider"></li>
                             <li><a href="/cs/blog/" class="dropdown-item">Blog</a></li>
                             <li><a href="/cs/support.html" class="dropdown-item">Podpora</a></li>
                         </ul>
@@ -452,8 +452,7 @@ And you probably need to prefix them with <code class="language-plaintext highli
 
         <p>This will create the required database tables and update them to the latest version.</p>
 
-<div class="alert alert-warning d-flex" role="alert">
-<i class="bx bx-alarm-exclamation lead me-3"></i>
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i>
 <p>If you see an error like <code class="language-plaintext highlighter-rouge">There are no commands defined in the "kimai:bundle:XYZ" namespace.</code>,
 then either the directory has a wrong name (must be <strong>var/plugins/CustomerPortalBundle/</strong>) or you forgot to clear the cache (look above).</p>
 </div>
@@ -470,16 +469,14 @@ then either the directory has a wrong name (must be <strong>var/plugins/Customer
     <p>Updating the plugin works exactly like the installation:</p>
     <ul>
         <li>Delete the directory <code class="language-plaintext highlighter-rouge">var/plugins/CustomerPortalBundle/</code>
-        </li>
-<li>
+        <li>
             Execute all installation steps again:
             <ul>
                 <li>Kopírovat soubory</li>
                 <li>Vymazat mezipaměť</li>
                 <li>Update database with <code class="language-plaintext highlighter-rouge">bin/console kimai:bundle:customer-portal:install</code>
                 
-            </li>
-</ul>
+            </ul>
         </li>
     </ul>
 
@@ -553,8 +550,7 @@ then either the directory has a wrong name (must be <strong>var/plugins/Customer
 
 <ul>
   <li>Move “Customer Portal” to “Administration” menu</li>
-  <li>Use new database table <code class="language-plaintext highlighter-rouge">kimai2_customer_portals</code>
-</li>
+  <li>Use new database table <code class="language-plaintext highlighter-rouge">kimai2_customer_portals</code></li>
   <li>Automatic migration of existing URL shares and database cleanup</li>
   <li>Move statistics card above timesheets</li>
   <li>Fix: broken customer statistics (customer portals with budget display for customer without budget)</li>
@@ -746,7 +742,7 @@ then either the directory has a wrong name (must be <strong>var/plugins/Customer
                                     <a href="/cs/reviews" class="nav-link fs-sm fw-medium px-0 py-1">Reviews</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/cs/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Press &amp; Media</a>
+                                    <a href="/cs/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Press & Media</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="/en/kimai-discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">Discount codes</a>

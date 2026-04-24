@@ -56,10 +56,10 @@
                         <ul class="dropdown-menu">
                             <li><a href="/en/about.html" class="dropdown-item">About Kimai</a></li>
                             <li><a href="/en/open-source-community" class="dropdown-item">Open Source</a></li>
-                            <li class="dropdown-divider">
-                            <li><a href="/en/integrations" class="dropdown-item">Apps &amp; Integrations</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="/en/integrations" class="dropdown-item">Apps & Integrations</a></li>
                             <li><a href="/en/demo.html" class="dropdown-item">Demo</a></li>
-                            <li class="dropdown-divider">
+                            <li class="dropdown-divider"></li>
                             <li><a href="/en/blog/" class="dropdown-item">Blog</a></li>
                             <li><a href="/en/support.html" class="dropdown-item">Support</a></li>
                         </ul>
@@ -183,8 +183,7 @@ The biggest changes, which I want to present right away are:</p>
   <li>Real remember me mode</li>
   <li>Store column visibility server side</li>
   <li>Upgraded the entire frontend stack and reduced JS and CSS footprint (main app from 1.2MB to 350kB, calendar from 760kB to 210kB)</li>
-  <li>Re-licensed under the terms of the <a href="https://www.gnu.org/licenses/agpl-3.0.en.html">AGPL v3</a>
-</li>
+  <li>Re-licensed under the terms of the <a href="https://www.gnu.org/licenses/agpl-3.0.en.html">AGPL v3</a></li>
 </ul>
 
 <p>This release is the result of over one year and more than 500 commits. 
@@ -203,8 +202,7 @@ The details of core changes can be seen in <a href="https://github.com/kimai/kim
   <li>Updated to Symfony 6 and upgraded all composer packages to the latest release</li>
   <li>Store column visibility server side</li>
   <li>Sticky “column profiles” per device (for desktop and mobile, with different sets of columns)</li>
-  <li>Two-factor login 2FA with <a href="https://symfony.com/bundles/SchebTwoFactorBundle/6.x/providers/totp.html">TOTP</a>
-</li>
+  <li>Two-factor login 2FA with <a href="https://symfony.com/bundles/SchebTwoFactorBundle/6.x/providers/totp.html">TOTP</a></li>
   <li>True “Remember me” mode</li>
   <li>New “welcome” wizard for first time users</li>
   <li>Context menu in all listings (and for calendar entries) with the option to hide the “actions dropdown” column</li>
@@ -214,25 +212,21 @@ The details of core changes can be seen in <a href="https://github.com/kimai/kim
   <li>Confirm edit dialogs with keyboard shortcut</li>
   <li>Added project action buttons in project detail report</li>
   <li>Tags (if less than 500 registered) and user with colored dots in dropdowns</li>
-  <li>API pagination header (fixes #1536) - see <a href="/documentation/api-pagination.html">docs</a>
-</li>
+  <li>API pagination header (fixes #1536) - see <a href="/documentation/api-pagination.html">docs</a></li>
   <li>New API endpoints for item actions</li>
   <li>Customer number must be unique</li>
   <li>Configurable customer number format (formats very limited on purpose right now) - see #3373</li>
   <li>Auto numbering for new customers</li>
   <li>Link to timesheet export from project detail</li>
-  <li>Extracted importer logic to a <a href="/store/keleo-importer-bundle.html">new importer bundle</a>
-</li>
+  <li>Extracted importer logic to a <a href="/store/keleo-importer-bundle.html">new importer bundle</a></li>
   <li>Plugins need to be updated, most are not yet compatible</li>
 </ul>
 
 <p><strong>Notable code changes</strong></p>
 
 <ul>
-  <li>Plugin developers: read the <a href="/documentation/migration-v2.html">migration guide</a>
-</li>
-  <li>Upgrade to new Symfony Security System - <strong>LDAP untested!</strong>
-</li>
+  <li>Plugin developers: read the <a href="/documentation/migration-v2.html">migration guide</a></li>
+  <li>Upgrade to new Symfony Security System - <strong>LDAP untested!</strong></li>
   <li>Removed Sweetalert2 in favor of Bootstrap Toasts &amp; Modals</li>
   <li>Removed <code class="language-plaintext highlighter-rouge">gd</code> extension requirement</li>
   <li>Removed third-party mailer packages</li>
@@ -241,8 +235,7 @@ The details of core changes can be seen in <a href="https://github.com/kimai/kim
   <li>Migrated from daterangepicker to litepicker (dependency free and without locale files)</li>
   <li>Removed jQuery</li>
   <li>Deleted settings for <a href="https://github.com/kimai/kimai/discussions/3446">Random colors</a> and limited colors (default true for both now)</li>
-  <li>Deleted setting <code class="language-plaintext highlighter-rouge">OFF</code> for <code class="language-plaintext highlighter-rouge">Minute selection for Duration</code>
-</li>
+  <li>Deleted setting <code class="language-plaintext highlighter-rouge">OFF</code> for <code class="language-plaintext highlighter-rouge">Minute selection for Duration</code></li>
   <li>Replaced all annotations (Symfony and Doctrine) with attributes</li>
   <li>Removed “invoice template” meta field support from invoice command (use template via customer!)</li>
 </ul>
@@ -290,7 +283,7 @@ Please do me a favor and subscribe - I want to give this medium a try and test h
             <div class="sticky-top ms-xl-5 ms-lg-4 ps-xxl-4" style="top: 105px !important;">
                 <h6>Share this post:</h6>
                 <div class="mb-4 pb-lg-3">
-                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.kimai.org/en/blog/2022/next-major-release-preview&amp;title=Next%20major%20release" class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.kimai.org/en/blog/2022/next-major-release-preview&title=Next major release" class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2" aria-label="LinkedIn">
                         <i class="bx bxl-linkedin"></i>
                     </a>
                     <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.kimai.org/en/blog/2022/next-major-release-preview" class="btn btn-icon btn-secondary btn-facebook me-2 mb-2" aria-label="Facebook">
@@ -432,7 +425,7 @@ Please do me a favor and subscribe - I want to give this medium a try and test h
                                     <a href="/en/reviews" class="nav-link fs-sm fw-medium px-0 py-1">Reviews</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/en/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Press &amp; Media</a>
+                                    <a href="/en/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Press & Media</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="/en/kimai-discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">Discount codes</a>
