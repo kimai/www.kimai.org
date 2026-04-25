@@ -4,20 +4,23 @@ description: Running Kimai inside docker
 canonical: /documentation/docker.html
 ---
 
-We offer Kimai Docker images, both for development and a docker-compose setup suitable for running in a production environment.
-Any issues with the container rather than the application itself can be raised [here]({{ site.kimai_v2_docker }}/issues/new?template=docker.yml).
+We offer Kimai Docker images for both development and production use, including a ready-to-use docker-compose setup.
 
-The **Docker Hub repo**, where you find the auto-building prod and dev containers for Kimai is: [https://hub.docker.com/r/kimai/kimai2](https://hub.docker.com/r/kimai/kimai2)
+For issues with the container itself (rather than the application), please [open a ticket here]({{ site.kimai_v2_docker }}/issues/new?template=docker.yml).
+
+The official **Docker Hub repository** with auto-built production and development images is available at:
+[https://hub.docker.com/r/kimai/kimai2](https://hub.docker.com/r/kimai/kimai2)
 
 ## Available images
 
-- `kimai/kimai2:stable` and `kimai/kimai2:apache`: the latest Kimai version bundled in an Apache container
-- `kimai/kimai2:dev`: development image based on Apache, only to be used locally with debug mode and more 
+- `kimai/kimai2:stable` – the latest stable Kimai release
+- `kimai/kimai2:dev` – development image intended for local use only, with debug mode enabled
 
-Each new release creates tag names containing the Kimai release number:
+Since the internal technical stack is an implementation detail irrelevant to end users, the following image name has been deprecated. 
+It will remain available for backwards compatibility until further notice:
 
-- `kimai/kimai2:apache-x.xx.x`: version specific release (Apache container)  
-
+- `kimai/kimai2:apache` – **deprecated**; please use `kimai/kimai2:stable` instead
+ 
 ## Environment variables
 
 The Kimai image supports the following environment variables:
@@ -31,7 +34,7 @@ The Kimai image supports the following environment variables:
 - `ADMINPASS` - Password for the new `admin` user (will be created if not existing)
 - `memory_limit` - Default: "256M", the [maximum amount of memory](https://php.net/memory-limit) a script may consume
 
-It is possible to set the user that FPM or Apache run as. If the user does not exist a new user called www-kimai is created and the server is then run under that user. Note these must be numbers, not names.
+It is possible to set the user that Apache run as. If the user does not exist a new user called `www-kimai` is created and the server is then run under that user. Note these must be numbers, not names.
 
 - `USER_ID=1000`
 - `GROUP_ID=1000`

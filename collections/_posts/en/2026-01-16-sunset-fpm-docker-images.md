@@ -44,8 +44,8 @@ We created that image in the past, when we didn't know enough about Docker and t
 
 ## Resolution
 
-Switch to using the Apache tag `kimai/kimai2:apache`.
+Switch to using the Apache tag `kimai/kimai2:stable`.
 
 This might require changes in your setup, depending on your (reverse proxy) integration.
 
-Read more in our [Docker Compose docs]({% link _documentation/docker/docker-compose.md %}). 
+Read more in our [Docker docs]({% link _documentation/docker/docker.md %}). 
