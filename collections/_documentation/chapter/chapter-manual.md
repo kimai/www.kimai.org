@@ -2,6 +2,7 @@
 title: User manual
 description: Use Kimai, the UI and all the available features
 toc: false
+search: false
 ---
 
 <div class="row row-cards row-deck">

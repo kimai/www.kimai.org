@@ -90,8 +90,16 @@ div.highlighter-rouge {
     margin-bottom: 1.5rem;
 }
 
+.side-nav .nav {
+    margin-right:0;
+}
 .side-nav .nav ul {
     list-style-type: none;
+}
+
+.side-nav.side-nav-end .nav-link {
+    --si-side-nav-link-padding-y: 0.15rem;
+    padding-right: 0;
 }
 
 pre[class=highlight], figure[class=highlight] pre
@@ -301,4 +309,118 @@ pre {
     border-bottom: 1px solid #0b0f19;
     padding-bottom: 8px;
     margin-top: 10px;
+}
+.docs-header-nav {
+    gap: 1.5rem;
+    min-width: 0;
+}
+
+.docs-layout {
+    min-width: 0;
+}
+
+.docs-article {
+    min-width: 0;
+}
+
+.docs-toolbar {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 0 0 20rem;
+    width: 20rem;
+    min-width: 20rem;
+    max-width: 20rem;
+    overflow: visible;
+    margin-left: auto;
+}
+
+.docs-search-panel {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+}
+
+.docs-search-panel .form-control {
+    width: 100%;
+    min-width: 0;
+}
+
+.docs-primary-nav {
+    flex: 1 1 auto;
+    min-width: 0;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+
+.docs-search-results {
+    display: none;
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    width: 42rem;
+    min-width: 42rem;
+    max-width: min(42rem, calc(100vw - 2rem));
+    z-index: 1080;
+    max-height: min(70vh, 34rem);
+    overflow-y: auto;
+}
+
+.docs-search-results.is-visible {
+    display: block;
+}
+
+.docs-search-results .list-group-item {
+    padding: 1rem 1.25rem;
+}
+
+.docs-search-results mark {
+    padding: 0;
+    background: transparent;
+    color: var(--si-primary);
+    font-weight: 600;
+}
+
+.docs-search-subresults {
+    display: grid;
+    gap: 0.375rem;
+}
+
+.docs-search-subresult {
+    display: block;
+    font-size: 0.875rem;
+}
+
+@media (min-width: 1400px) {
+    .docs-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 17rem;
+        gap: 2rem;
+        align-items: start;
+    }
+
+    .docs-toc {
+        position: sticky;
+        top: 6rem;
+        align-self: start;
+        height: fit-content;
+        padding-top: 0;
+        width: 17rem;
+        max-height: calc(100vh - 7rem);
+        overflow-y: auto;
+    }
+}
+
+@media (min-width: 576px) {
+    .docs-toolbar {
+        align-items: flex-end;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .docs-search-results {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
 }
