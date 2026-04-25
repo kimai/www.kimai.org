@@ -98,7 +98,7 @@ As your needs grow, explore features like reporting, integrations, and plugins.
 Explore more:
 - [Kimai Features]({% link _pages/{{ page.lang }}/features.html %})
 - [Kimai Plugins]({% link _pages/{{ page.lang }}/store.html %})
-- [Kimai Documentation]({% link _pages/{{ page.lang }}/documentation.md %})
+- [Kimai Documentation]({% link _pages/en/documentation.md %})
 
 ## Notes & Next Steps
 
