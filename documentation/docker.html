@@ -600,22 +600,25 @@
                     <div>
                         
                         <div id="documentation-content">
-                            <p>We offer Kimai Docker images, both for development and a docker-compose setup suitable for running in a production environment.
-Any issues with the container rather than the application itself can be raised <a href="https://github.com/kimai/kimai/issues/new?template=docker.yml">here</a>.</p>
+                            <p>We offer Kimai Docker images for both development and production use, including a ready-to-use docker-compose setup.</p>
 
-<p>The <strong>Docker Hub repo</strong>, where you find the auto-building prod and dev containers for Kimai is: <a href="https://hub.docker.com/r/kimai/kimai2">https://hub.docker.com/r/kimai/kimai2</a></p>
+<p>For issues with the container itself (rather than the application), please <a href="https://github.com/kimai/kimai/issues/new?template=docker.yml">open a ticket here</a>.</p>
+
+<p>The official <strong>Docker Hub repository</strong> with auto-built production and development images is available at:
+<a href="https://hub.docker.com/r/kimai/kimai2">https://hub.docker.com/r/kimai/kimai2</a></p>
 
 <h2 id="available-images">Available images</h2>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:stable</code> and <code class="language-plaintext highlighter-rouge">kimai/kimai2:apache</code>: the latest Kimai version bundled in an Apache container</li>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:dev</code>: development image based on Apache, only to be used locally with debug mode and more</li>
+  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:stable</code> – the latest stable Kimai release</li>
+  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:dev</code> – development image intended for local use only, with debug mode enabled</li>
 </ul>
 
-<p>Each new release creates tag names containing the Kimai release number:</p>
+<p>Since the internal technical stack is an implementation detail irrelevant to end users, the following image name has been deprecated. 
+It will remain available for backwards compatibility until further notice:</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-x.xx.x</code>: version specific release (Apache container)</li>
+  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache</code> – <strong>deprecated</strong>; please use <code class="language-plaintext highlighter-rouge">kimai/kimai2:stable</code> instead</li>
 </ul>
 
 <h2 id="environment-variables">Environment variables</h2>
@@ -633,7 +636,7 @@ Any issues with the container rather than the application itself can be raised <
   <li><code class="language-plaintext highlighter-rouge">memory_limit</code> - Default: “256M”, the <a href="https://php.net/memory-limit">maximum amount of memory</a> a script may consume</li>
 </ul>
 
-<p>It is possible to set the user that FPM or Apache run as. If the user does not exist a new user called www-kimai is created and the server is then run under that user. Note these must be numbers, not names.</p>
+<p>It is possible to set the user that Apache run as. If the user does not exist a new user called <code class="language-plaintext highlighter-rouge">www-kimai</code> is created and the server is then run under that user. Note these must be numbers, not names.</p>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">USER_ID=1000</code></li>
