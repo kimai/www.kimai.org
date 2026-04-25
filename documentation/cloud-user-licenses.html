@@ -44,8 +44,8 @@
             </a>
             <span class="badge bg-warning">Kimai-Cloud</span>
         </div>
-        <div class="d-flex align-items-center w-100">
-            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 6.75rem;">
+        <div class="docs-header-nav d-flex align-items-center w-100" style="padding-left: 6.75rem;">
+            <ul class="docs-primary-nav navbar-nav d-none d-lg-flex">
                 
                     
                     
@@ -84,6 +84,29 @@
                     </li>
                 
             </ul>
+            <div class="docs-toolbar d-none d-xl-flex" data-pagefind-ignore="all">
+                <div class="docs-search-panel" data-doc-search>
+                    <label class="form-label visually-hidden" for="documentation-search">Search documentation</label>
+                    <input
+                        id="documentation-search"
+                        class="form-control"
+                        type="search"
+                        autocomplete="off"
+                        spellcheck="false"
+                        placeholder="Search the documentation"
+                        aria-describedby="documentation-search-status"
+                        data-doc-search-input
+                    >
+                    <div
+                        id="documentation-search-results"
+                        class="docs-search-results card border-0 shadow-sm"
+                        role="listbox"
+                        aria-label="Documentation search results"
+                        data-doc-search-results
+                    ></div>
+                    <div id="documentation-search-status" class="visually-hidden" aria-live="polite" data-doc-search-status></div>
+                </div>
+            </div>
             <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -304,28 +327,31 @@
     });
 </script>
 <main class="docs-container">
-    <div class="container-fluid px-xxl-5 px-lg-4 pt-4 pt-lg-5 pb-2 pb-lg-4">
+    <div class="container-fluid px-xxl-3 px-lg-2 pt-4 pt-lg-5 pb-2 pb-lg-4">
+        <div class="docs-layout">
+            <div class="docs-article" data-pagefind-body>
+                <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 mb-n3 gap-4">
+                    <div class="me-4">
+                        <h1 class="pb-1" data-pagefind-meta="title" data-pagefind-weight="10.0">User licenses</h1>
+                        
+                        <p class="text-muted fs-lg mb-2" data-pagefind-meta="description">How the seat-based licensing works in Kimai-Cloud</p>
+                        
+                    </div>
+                    <div class="d-none d-lg-flex">
+                    
 
-        <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 mb-n3">
-            <div class="me-4">
-                <h1 class="pb-1">User licenses</h1>
-                
-                <p class="text-muted fs-lg mb-2">How the seat-based licensing works in Kimai-Cloud</p>
-                
-            </div>
-            
 
 
 
 
+                    </div>
+                </div>
 
-        </div>
-
-        <div class="markdown py-5 ps-lg-2 ps-xxl-0">
-            <div>
-                
-                <div id="documentation-content">
-                    <p>Kimai uses a <strong>per-seat licensing model</strong>, where each active user account consumes one license. 
+                <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+                    <div>
+                        
+                        <div id="documentation-content">
+                            <p>Kimai uses a <strong>per-seat licensing model</strong>, where each active user account consumes one license. 
 However, the system is designed with fairness in mind, so deactivated accounts do not consume licenses.</p>
 
 <p>Here’s a breakdown of how the licensing works:</p>
@@ -385,23 +411,25 @@ After that, you can reduce the number of licenses through the <a href="https://w
 
 <p>This system ensures flexibility in managing user accounts while maintaining fairness in licensing costs.</p>
 
+                        </div>
+                        
+
+                        
+                    </div>
                 </div>
-                
-
-                
             </div>
-        </div>
 
+            
+                <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
+                    <h3 class="fs-lg mt-2">Jump to</h3>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#licensing-rules" class="nav-link">Licensing Rules</a><ul><li class="nav-item"><a href="#managing-user-accounts" class="nav-link">Managing user accounts</a></li><li class="nav-item"><a href="#before-starting-a-subscription" class="nav-link">Before starting a subscription</a></li><li class="nav-item"><a href="#purchasing-additional-licenses" class="nav-link">Purchasing additional licenses</a></li><li class="nav-item"><a href="#reducing-licenses" class="nav-link">Reducing licenses</a></li></ul></li><li class="nav-item"><a href="#deprecated-metered-plans" class="nav-link">Deprecated metered plans</a></li></ul>
+                    
+                </aside>
+            
+        </div>
     </div>
 </main>
-
-
-    <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
-        <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#licensing-rules" class="nav-link">Licensing Rules</a><ul><li class="nav-item"><a href="#managing-user-accounts" class="nav-link">Managing user accounts</a></li><li class="nav-item"><a href="#before-starting-a-subscription" class="nav-link">Before starting a subscription</a></li><li class="nav-item"><a href="#purchasing-additional-licenses" class="nav-link">Purchasing additional licenses</a></li><li class="nav-item"><a href="#reducing-licenses" class="nav-link">Reducing licenses</a></li></ul></li><li class="nav-item"><a href="#deprecated-metered-plans" class="nav-link">Deprecated metered plans</a></li></ul>
-        
-    </aside>
-
+<script type="module" src="/assets/js/documentation-search.js?v1"></script>
 
 
 <a href="#top" class="btn-scroll-top" data-scroll>

@@ -45,8 +45,8 @@
             </a>
             <span class="badge bg-warning">Developer</span>
         </div>
-        <div class="d-flex align-items-center w-100">
-            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 6.75rem;">
+        <div class="docs-header-nav d-flex align-items-center w-100" style="padding-left: 6.75rem;">
+            <ul class="docs-primary-nav navbar-nav d-none d-lg-flex">
                 
                     
                     
@@ -85,6 +85,29 @@
                     </li>
                 
             </ul>
+            <div class="docs-toolbar d-none d-xl-flex" data-pagefind-ignore="all">
+                <div class="docs-search-panel" data-doc-search>
+                    <label class="form-label visually-hidden" for="documentation-search">Search documentation</label>
+                    <input
+                        id="documentation-search"
+                        class="form-control"
+                        type="search"
+                        autocomplete="off"
+                        spellcheck="false"
+                        placeholder="Search the documentation"
+                        aria-describedby="documentation-search-status"
+                        data-doc-search-input
+                    >
+                    <div
+                        id="documentation-search-results"
+                        class="docs-search-results card border-0 shadow-sm"
+                        role="listbox"
+                        aria-label="Documentation search results"
+                        data-doc-search-results
+                    ></div>
+                    <div id="documentation-search-status" class="visually-hidden" aria-live="polite" data-doc-search-status></div>
+                </div>
+            </div>
             <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -369,16 +392,18 @@
     });
 </script>
 <main class="docs-container">
-    <div class="container-fluid px-xxl-5 px-lg-4 pt-4 pt-lg-5 pb-2 pb-lg-4">
-
-        <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 mb-n3">
-            <div class="me-4">
-                <h1 class="pb-1">Developers</h1>
-                
-                <p class="text-muted fs-lg mb-2">Developer documentation - run, develop, extend and build for Kimai</p>
-                
-            </div>
-            
+    <div class="container-fluid px-xxl-3 px-lg-2 pt-4 pt-lg-5 pb-2 pb-lg-4">
+        <div class="docs-layout">
+            <div class="docs-article">
+                <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 mb-n3 gap-4">
+                    <div class="me-4">
+                        <h1 class="pb-1" data-pagefind-meta="title" data-pagefind-weight="10.0">Developers</h1>
+                        
+                        <p class="text-muted fs-lg mb-2" data-pagefind-meta="description">Developer documentation - run, develop, extend and build for Kimai</p>
+                        
+                    </div>
+                    <div class="d-none d-lg-flex">
+                    
 
 
 
@@ -397,13 +422,14 @@
     </div>
 
 
-        </div>
+                    </div>
+                </div>
 
-        <div class="markdown py-5 ps-lg-2 ps-xxl-0">
-            <div>
-                
-                <div id="documentation-content">
-                    
+                <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+                    <div>
+                        
+                        <div id="documentation-content">
+                            
 <div class="alert alert-danger d-flex" role="alert"><i class="bx bx-info-circle lead me-3"></i>
 <p>You are viewing an older version of this documentation page. A newer version is available <a href="/documentation/developers.html">here</a>.</p>
 </div>
@@ -987,23 +1013,25 @@ By doing so, you register the permission in the system and they become available
 
 
 
+                        </div>
+                        
+
+                        
+                    </div>
                 </div>
-                
-
-                
             </div>
-        </div>
 
+            
+                <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
+                    <h3 class="fs-lg mt-2">Jump to</h3>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#development-installation" class="nav-link">Development installation</a></li><li class="nav-item"><a href="#frontend-dependencies" class="nav-link">Frontend dependencies</a></li><li class="nav-item"><a href="#localyaml" class="nav-link">local.yaml</a></li><li class="nav-item"><a href="#tests-suites-with-phpunit" class="nav-link">Tests suites with PHPUnit</a></li><li class="nav-item"><a href="#static-code-analysis-via-phpstan" class="nav-link">Static code analysis via PHPStan</a></li><li class="nav-item"><a href="#coding-styles" class="nav-link">Coding styles</a></li><li class="nav-item"><a href="#translations" class="nav-link">Translations</a></li><li class="nav-item"><a href="#extending-the-navigation-bar" class="nav-link">Extending the navigation bar</a></li><li class="nav-item"><a href="#extending-the-dashboard-with-widgets" class="nav-link">Extending the dashboard with widgets</a><ul><li class="nav-item"><a href="#adding-new-widget-types" class="nav-link">Adding new widget types</a></li><li class="nav-item"><a href="#display-widgets-in-your-template" class="nav-link">Display widgets in your template</a></li></ul></li><li class="nav-item"><a href="#invoices" class="nav-link">Invoices</a><ul><li class="nav-item"><a href="#adding-documents-for-invoice-rendering" class="nav-link">Adding documents for invoice rendering</a></li><li class="nav-item"><a href="#adding-invoice-calculator" class="nav-link">Adding invoice calculator</a></li><li class="nav-item"><a href="#adding-invoice-number-generator" class="nav-link">Adding invoice-number generator</a></li><li class="nav-item"><a href="#adding-invoice-renderer" class="nav-link">Adding invoice renderer</a></li></ul></li><li class="nav-item"><a href="#adding-export-renderer" class="nav-link">Adding export renderer</a><ul><li class="nav-item"><a href="#adding-timesheet-export-renderer" class="nav-link">Adding timesheet export renderer</a></li></ul></li><li class="nav-item"><a href="#adding-timesheet-calculator" class="nav-link">Adding timesheet calculator</a></li><li class="nav-item"><a href="#adding-custom-fields-meta-fields" class="nav-link">Adding custom fields (meta fields)</a></li><li class="nav-item"><a href="#adding-userpreference" class="nav-link">Adding UserPreference</a></li><li class="nav-item"><a href="#adding-custom-meta-tags-stylesheets-or-javascript" class="nav-link">Adding custom meta tags, stylesheets or javascript</a></li><li class="nav-item"><a href="#adding-permissions" class="nav-link">Adding permissions</a></li><li class="nav-item"><a href="#adding-system-configuration" class="nav-link">Adding system configuration</a></li><li class="nav-item"><a href="#adding-api-methods" class="nav-link">Adding API methods</a></li></ul>
+                    
+                </aside>
+            
+        </div>
     </div>
 </main>
-
-
-    <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
-        <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#development-installation" class="nav-link">Development installation</a></li><li class="nav-item"><a href="#frontend-dependencies" class="nav-link">Frontend dependencies</a></li><li class="nav-item"><a href="#localyaml" class="nav-link">local.yaml</a></li><li class="nav-item"><a href="#tests-suites-with-phpunit" class="nav-link">Tests suites with PHPUnit</a></li><li class="nav-item"><a href="#static-code-analysis-via-phpstan" class="nav-link">Static code analysis via PHPStan</a></li><li class="nav-item"><a href="#coding-styles" class="nav-link">Coding styles</a></li><li class="nav-item"><a href="#translations" class="nav-link">Translations</a></li><li class="nav-item"><a href="#extending-the-navigation-bar" class="nav-link">Extending the navigation bar</a></li><li class="nav-item"><a href="#extending-the-dashboard-with-widgets" class="nav-link">Extending the dashboard with widgets</a><ul><li class="nav-item"><a href="#adding-new-widget-types" class="nav-link">Adding new widget types</a></li><li class="nav-item"><a href="#display-widgets-in-your-template" class="nav-link">Display widgets in your template</a></li></ul></li><li class="nav-item"><a href="#invoices" class="nav-link">Invoices</a><ul><li class="nav-item"><a href="#adding-documents-for-invoice-rendering" class="nav-link">Adding documents for invoice rendering</a></li><li class="nav-item"><a href="#adding-invoice-calculator" class="nav-link">Adding invoice calculator</a></li><li class="nav-item"><a href="#adding-invoice-number-generator" class="nav-link">Adding invoice-number generator</a></li><li class="nav-item"><a href="#adding-invoice-renderer" class="nav-link">Adding invoice renderer</a></li></ul></li><li class="nav-item"><a href="#adding-export-renderer" class="nav-link">Adding export renderer</a><ul><li class="nav-item"><a href="#adding-timesheet-export-renderer" class="nav-link">Adding timesheet export renderer</a></li></ul></li><li class="nav-item"><a href="#adding-timesheet-calculator" class="nav-link">Adding timesheet calculator</a></li><li class="nav-item"><a href="#adding-custom-fields-meta-fields" class="nav-link">Adding custom fields (meta fields)</a></li><li class="nav-item"><a href="#adding-userpreference" class="nav-link">Adding UserPreference</a></li><li class="nav-item"><a href="#adding-custom-meta-tags-stylesheets-or-javascript" class="nav-link">Adding custom meta tags, stylesheets or javascript</a></li><li class="nav-item"><a href="#adding-permissions" class="nav-link">Adding permissions</a></li><li class="nav-item"><a href="#adding-system-configuration" class="nav-link">Adding system configuration</a></li><li class="nav-item"><a href="#adding-api-methods" class="nav-link">Adding API methods</a></li></ul>
-        
-    </aside>
-
+<script type="module" src="/assets/js/documentation-search.js?v1"></script>
 
 
 <a href="#top" class="btn-scroll-top" data-scroll>

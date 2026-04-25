@@ -45,8 +45,8 @@
             </a>
             <span class="badge bg-warning">On-Premise</span>
         </div>
-        <div class="d-flex align-items-center w-100">
-            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 6.75rem;">
+        <div class="docs-header-nav d-flex align-items-center w-100" style="padding-left: 6.75rem;">
+            <ul class="docs-primary-nav navbar-nav d-none d-lg-flex">
                 
                     
                     
@@ -85,6 +85,29 @@
                     </li>
                 
             </ul>
+            <div class="docs-toolbar d-none d-xl-flex" data-pagefind-ignore="all">
+                <div class="docs-search-panel" data-doc-search>
+                    <label class="form-label visually-hidden" for="documentation-search">Search documentation</label>
+                    <input
+                        id="documentation-search"
+                        class="form-control"
+                        type="search"
+                        autocomplete="off"
+                        spellcheck="false"
+                        placeholder="Search the documentation"
+                        aria-describedby="documentation-search-status"
+                        data-doc-search-input
+                    >
+                    <div
+                        id="documentation-search-results"
+                        class="docs-search-results card border-0 shadow-sm"
+                        role="listbox"
+                        aria-label="Documentation search results"
+                        data-doc-search-results
+                    ></div>
+                    <div id="documentation-search-status" class="visually-hidden" aria-live="polite" data-doc-search-status></div>
+                </div>
+            </div>
             <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -540,16 +563,18 @@
     });
 </script>
 <main class="docs-container">
-    <div class="container-fluid px-xxl-5 px-lg-4 pt-4 pt-lg-5 pb-2 pb-lg-4">
-
-        <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 mb-n3">
-            <div class="me-4">
-                <h1 class="pb-1">Installation</h1>
-                
-                <p class="text-muted fs-lg mb-2">How to install Kimai on your server with git, composer and SSH or FTP</p>
-                
-            </div>
-            
+    <div class="container-fluid px-xxl-3 px-lg-2 pt-4 pt-lg-5 pb-2 pb-lg-4">
+        <div class="docs-layout">
+            <div class="docs-article" data-pagefind-body>
+                <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 mb-n3 gap-4">
+                    <div class="me-4">
+                        <h1 class="pb-1" data-pagefind-meta="title" data-pagefind-weight="10.0">Installation</h1>
+                        
+                        <p class="text-muted fs-lg mb-2" data-pagefind-meta="description">How to install Kimai on your server with git, composer and SSH or FTP</p>
+                        
+                    </div>
+                    <div class="d-none d-lg-flex">
+                    
 
 
 
@@ -568,13 +593,14 @@
     </div>
 
 
-        </div>
+                    </div>
+                </div>
 
-        <div class="markdown py-5 ps-lg-2 ps-xxl-0">
-            <div>
-                
-                <div id="documentation-content">
-                    <div class="card border-primary mb-3">
+                <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+                    <div>
+                        
+                        <div id="documentation-content">
+                            <div class="card border-primary mb-3">
                        <p class="card-title bg-faded-primary p-1 mb-1"><strong><i class="bx bxs-info-circle ms-2 me-2 text-primary fs-5"></i>Self-hosting knowledge prerequisites</strong></p>
                        <div class="card-body card-note m-0 pt-3 px-3">
 <p>Self-hosting Kimai requires technical knowledge, including:</p>
@@ -836,54 +862,58 @@ with its permission structure, especially when using server software, can be tri
 <p>But this has NOTHING to do with Kimai and we might not be able to help you in such situations … it is your system and
 responsibility, be aware that wrong permissions might break Kimai and can also lead to security problems.</p>
 
+                        </div>
+                        
+
+                        
+                        <div data-pagefind-ignore="all">
+                            <h2 id="related-articles" class="fs-4 mt-5">Related articles</h2>
+                            <ul>
+                                
+                                
+                                <li>
+                                    <a href="/documentation/shared-hosting.html">Shared hosting</a> &ndash; How to install Kimai in a shared hosting environment
+                                </li>
+                                
+                                
+                                <li>
+                                    <a href="/documentation/hosting-1-click.html">1-click deployments and hosted platforms</a> &ndash; Kimai can be hosted on various systems and many hosting companies support 1-click installations for Kimai directly.
+                                </li>
+                                
+                                
+                                <li>
+                                    <a href="/documentation/fresh-ubuntu-22.html">Install Kimai on Ubuntu 22.04</a> &ndash; How to install Kimai on a brand new Ubuntu 22.04 with database, webserver and SSL certificate
+                                </li>
+                                
+                                
+                                <li>
+                                    <a href="/documentation/webserver-configuration.html">Webserver & Proxy Configuration</a> &ndash; How to install Kimai on your server with git, composer and SSH or FTP
+                                </li>
+                                
+                            </ul>
+                        </div>
+                        
+                    </div>
                 </div>
-                
-
-                
-                <h2 id="related-articles" class="fs-4 mt-5">Related articles</h2>
-                <ul>
-                    
-                    
-                    <li>
-                        <a href="/documentation/shared-hosting.html">Shared hosting</a> &ndash; How to install Kimai in a shared hosting environment
-                    </li>
-                    
-                    
-                    <li>
-                        <a href="/documentation/hosting-1-click.html">1-click deployments and hosted platforms</a> &ndash; Kimai can be hosted on various systems and many hosting companies support 1-click installations for Kimai directly.
-                    </li>
-                    
-                    
-                    <li>
-                        <a href="/documentation/fresh-ubuntu-22.html">Install Kimai on Ubuntu 22.04</a> &ndash; How to install Kimai on a brand new Ubuntu 22.04 with database, webserver and SSL certificate
-                    </li>
-                    
-                    
-                    <li>
-                        <a href="/documentation/webserver-configuration.html">Webserver & Proxy Configuration</a> &ndash; How to install Kimai on your server with git, composer and SSH or FTP
-                    </li>
-                    
-                </ul>
-                
             </div>
-        </div>
 
+            
+                <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
+                    <h3 class="fs-lg mt-2">Jump to</h3>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#server-requirements" class="nav-link">Server requirements</a></li><li class="nav-item"><a href="#install-kimai-with-ssh" class="nav-link">Install Kimai with SSH</a><ul><li class="nav-item"><a href="#file-permissions" class="nav-link">File permissions</a></li><li class="nav-item"><a href="#create-your-first-user" class="nav-link">Create your first user</a></li><li class="nav-item"><a href="#configure-documentroot" class="nav-link">Configure DocumentRoot</a></li></ul></li><li class="nav-item"><a href="#other-installation-methods" class="nav-link">Other installation methods</a><ul><li class="nav-item"><a href="#docker" class="nav-link">Docker</a></li><li class="nav-item"><a href="#kubernetes" class="nav-link">Kubernetes</a></li><li class="nav-item"><a href="#shared-hosting" class="nav-link">Shared hosting</a></li><li class="nav-item"><a href="#1-click-installations" class="nav-link">1-click installations</a></li><li class="nav-item"><a href="#plesk" class="nav-link">Plesk</a></li><li class="nav-item"><a href="#ftp-installation" class="nav-link">FTP installation</a></li><li class="nav-item"><a href="#ansible" class="nav-link">Ansible</a></li></ul></li><li class="nav-item"><a href="#installation-faq" class="nav-link">Installation FAQ</a><ul><li class="nav-item"><a href="#column-table_name-in-where-clause-is-ambiguous" class="nav-link">Column ‘TABLE_NAME’ in where clause is ambiguous</a></li><li class="nav-item"><a href="#mysql-server-has-gone-away" class="nav-link">MySQL server has gone away</a></li><li class="nav-item"><a href="#malformed-parameter-url" class="nav-link">Malformed parameter “url”</a></li><li class="nav-item"><a href="#which-user-to-use-www-data-httpd-or-your-own" class="nav-link">Which user to use, www-data, httpd or your own?</a></li><li class="nav-item"><a href="#memory-limit" class="nav-link">Memory limit</a></li><li class="nav-item"><a href="#internal-server-error-500" class="nav-link">Internal Server Error 500</a></li><li class="nav-item"><a href="#still-doesnt-work" class="nav-link">Still doesn’t work?</a></li></ul></li></ul>
+                    
+                    <ul class="nav">
+                        <li>
+                            <a href="#related-articles" class="nav-link">Related articles</a>
+                        </li>
+                    </ul>
+                    
+                </aside>
+            
+        </div>
     </div>
 </main>
-
-
-    <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
-        <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#server-requirements" class="nav-link">Server requirements</a></li><li class="nav-item"><a href="#install-kimai-with-ssh" class="nav-link">Install Kimai with SSH</a><ul><li class="nav-item"><a href="#file-permissions" class="nav-link">File permissions</a></li><li class="nav-item"><a href="#create-your-first-user" class="nav-link">Create your first user</a></li><li class="nav-item"><a href="#configure-documentroot" class="nav-link">Configure DocumentRoot</a></li></ul></li><li class="nav-item"><a href="#other-installation-methods" class="nav-link">Other installation methods</a><ul><li class="nav-item"><a href="#docker" class="nav-link">Docker</a></li><li class="nav-item"><a href="#kubernetes" class="nav-link">Kubernetes</a></li><li class="nav-item"><a href="#shared-hosting" class="nav-link">Shared hosting</a></li><li class="nav-item"><a href="#1-click-installations" class="nav-link">1-click installations</a></li><li class="nav-item"><a href="#plesk" class="nav-link">Plesk</a></li><li class="nav-item"><a href="#ftp-installation" class="nav-link">FTP installation</a></li><li class="nav-item"><a href="#ansible" class="nav-link">Ansible</a></li></ul></li><li class="nav-item"><a href="#installation-faq" class="nav-link">Installation FAQ</a><ul><li class="nav-item"><a href="#column-table_name-in-where-clause-is-ambiguous" class="nav-link">Column ‘TABLE_NAME’ in where clause is ambiguous</a></li><li class="nav-item"><a href="#mysql-server-has-gone-away" class="nav-link">MySQL server has gone away</a></li><li class="nav-item"><a href="#malformed-parameter-url" class="nav-link">Malformed parameter “url”</a></li><li class="nav-item"><a href="#which-user-to-use-www-data-httpd-or-your-own" class="nav-link">Which user to use, www-data, httpd or your own?</a></li><li class="nav-item"><a href="#memory-limit" class="nav-link">Memory limit</a></li><li class="nav-item"><a href="#internal-server-error-500" class="nav-link">Internal Server Error 500</a></li><li class="nav-item"><a href="#still-doesnt-work" class="nav-link">Still doesn’t work?</a></li></ul></li></ul>
-        
-        <ul class="nav">
-            <li>
-                <a href="#related-articles" class="nav-link">Related articles</a>
-            </li>
-        </ul>
-        
-    </aside>
-
+<script type="module" src="/assets/js/documentation-search.js?v1"></script>
 
 
 <a href="#top" class="btn-scroll-top" data-scroll>

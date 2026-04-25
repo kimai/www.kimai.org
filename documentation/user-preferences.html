@@ -44,8 +44,8 @@
             </a>
             <span class="badge bg-warning">User manual</span>
         </div>
-        <div class="d-flex align-items-center w-100">
-            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 6.75rem;">
+        <div class="docs-header-nav d-flex align-items-center w-100" style="padding-left: 6.75rem;">
+            <ul class="docs-primary-nav navbar-nav d-none d-lg-flex">
                 
                     
                     
@@ -84,6 +84,29 @@
                     </li>
                 
             </ul>
+            <div class="docs-toolbar d-none d-xl-flex" data-pagefind-ignore="all">
+                <div class="docs-search-panel" data-doc-search>
+                    <label class="form-label visually-hidden" for="documentation-search">Search documentation</label>
+                    <input
+                        id="documentation-search"
+                        class="form-control"
+                        type="search"
+                        autocomplete="off"
+                        spellcheck="false"
+                        placeholder="Search the documentation"
+                        aria-describedby="documentation-search-status"
+                        data-doc-search-input
+                    >
+                    <div
+                        id="documentation-search-results"
+                        class="docs-search-results card border-0 shadow-sm"
+                        role="listbox"
+                        aria-label="Documentation search results"
+                        data-doc-search-results
+                    ></div>
+                    <div id="documentation-search-status" class="visually-hidden" aria-live="polite" data-doc-search-status></div>
+                </div>
+            </div>
             <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -596,16 +619,18 @@
     });
 </script>
 <main class="docs-container">
-    <div class="container-fluid px-xxl-5 px-lg-4 pt-4 pt-lg-5 pb-2 pb-lg-4">
-
-        <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 mb-n3">
-            <div class="me-4">
-                <h1 class="pb-1">User preferences</h1>
-                
-                <p class="text-muted fs-lg mb-2">Settings that change the users personal Kimai experience</p>
-                
-            </div>
-            
+    <div class="container-fluid px-xxl-3 px-lg-2 pt-4 pt-lg-5 pb-2 pb-lg-4">
+        <div class="docs-layout">
+            <div class="docs-article" data-pagefind-body>
+                <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 mb-n3 gap-4">
+                    <div class="me-4">
+                        <h1 class="pb-1" data-pagefind-meta="title" data-pagefind-weight="10.0">User preferences</h1>
+                        
+                        <p class="text-muted fs-lg mb-2" data-pagefind-meta="description">Settings that change the users personal Kimai experience</p>
+                        
+                    </div>
+                    <div class="d-none d-lg-flex">
+                    
 
 
 
@@ -624,13 +649,14 @@
     </div>
 
 
-        </div>
+                    </div>
+                </div>
 
-        <div class="markdown py-5 ps-lg-2 ps-xxl-0">
-            <div>
-                
-                <div id="documentation-content">
-                    <p>The user preferences can be accessed via any user profile (e.g. in the upper right corner for your own user) and from <code class="language-plaintext highlighter-rouge">System &gt; Users</code> (needs <code class="language-plaintext highlighter-rouge">view_user</code> permission) for every user.</p>
+                <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+                    <div>
+                        
+                        <div id="documentation-content">
+                            <p>The user preferences can be accessed via any user profile (e.g. in the upper right corner for your own user) and from <code class="language-plaintext highlighter-rouge">System &gt; Users</code> (needs <code class="language-plaintext highlighter-rouge">view_user</code> permission) for every user.</p>
 
 <h2 id="preferences">Preferences</h2>
 
@@ -731,39 +757,43 @@ on mobile devices will be replaced by a link to the calendar.</p>
   <li>every user owning the <code class="language-plaintext highlighter-rouge">preferences_other_profile</code> <a href="/documentation/permissions.html">permission</a></li>
 </ul>
 
+                        </div>
+                        
+
+                        
+                        <div data-pagefind-ignore="all">
+                            <h2 id="related-articles" class="fs-4 mt-5">Related articles</h2>
+                            <ul>
+                                
+                                
+                                <li>
+                                    <a href="/documentation/users.html">Users</a> &ndash; User, roles and the authentication, registration and security system in Kimai
+                                </li>
+                                
+                            </ul>
+                        </div>
+                        
+                    </div>
                 </div>
-                
-
-                
-                <h2 id="related-articles" class="fs-4 mt-5">Related articles</h2>
-                <ul>
-                    
-                    
-                    <li>
-                        <a href="/documentation/users.html">Users</a> &ndash; User, roles and the authentication, registration and security system in Kimai
-                    </li>
-                    
-                </ul>
-                
             </div>
-        </div>
 
+            
+                <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
+                    <h3 class="fs-lg mt-2">Jump to</h3>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#preferences" class="nav-link">Preferences</a><ul><li class="nav-item"><a href="#hourly-rate" class="nav-link">Hourly rate</a></li><li class="nav-item"><a href="#internal-rate" class="nav-link">Internal rate</a></li><li class="nav-item"><a href="#timezone" class="nav-link">Timezone</a></li><li class="nav-item"><a href="#language" class="nav-link">Language</a></li><li class="nav-item"><a href="#time-date-and-currency-format" class="nav-link">Time, date and currency format</a></li><li class="nav-item"><a href="#first-day-of-the-week" class="nav-link">First day of the week</a></li><li class="nav-item"><a href="#design" class="nav-link">Design</a></li><li class="nav-item"><a href="#update-browser-title" class="nav-link">Update browser title</a></li><li class="nav-item"><a href="#initial-calendar-view" class="nav-link">Initial calendar view</a></li><li class="nav-item"><a href="#initial-view-after-login" class="nav-link">Initial view after login</a></li><li class="nav-item"><a href="#favorites" class="nav-link">Favorites</a></li><li class="nav-item"><a href="#show-daily-statistics-in-timesheet" class="nav-link">Show daily statistics in timesheet</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+                    
+                    <ul class="nav">
+                        <li>
+                            <a href="#related-articles" class="nav-link">Related articles</a>
+                        </li>
+                    </ul>
+                    
+                </aside>
+            
+        </div>
     </div>
 </main>
-
-
-    <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
-        <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#preferences" class="nav-link">Preferences</a><ul><li class="nav-item"><a href="#hourly-rate" class="nav-link">Hourly rate</a></li><li class="nav-item"><a href="#internal-rate" class="nav-link">Internal rate</a></li><li class="nav-item"><a href="#timezone" class="nav-link">Timezone</a></li><li class="nav-item"><a href="#language" class="nav-link">Language</a></li><li class="nav-item"><a href="#time-date-and-currency-format" class="nav-link">Time, date and currency format</a></li><li class="nav-item"><a href="#first-day-of-the-week" class="nav-link">First day of the week</a></li><li class="nav-item"><a href="#design" class="nav-link">Design</a></li><li class="nav-item"><a href="#update-browser-title" class="nav-link">Update browser title</a></li><li class="nav-item"><a href="#initial-calendar-view" class="nav-link">Initial calendar view</a></li><li class="nav-item"><a href="#initial-view-after-login" class="nav-link">Initial view after login</a></li><li class="nav-item"><a href="#favorites" class="nav-link">Favorites</a></li><li class="nav-item"><a href="#show-daily-statistics-in-timesheet" class="nav-link">Show daily statistics in timesheet</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
-        
-        <ul class="nav">
-            <li>
-                <a href="#related-articles" class="nav-link">Related articles</a>
-            </li>
-        </ul>
-        
-    </aside>
-
+<script type="module" src="/assets/js/documentation-search.js?v1"></script>
 
 
 <a href="#top" class="btn-scroll-top" data-scroll>

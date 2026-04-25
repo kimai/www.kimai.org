@@ -45,8 +45,8 @@
             </a>
             <span class="badge bg-warning">User manual</span>
         </div>
-        <div class="d-flex align-items-center w-100">
-            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 6.75rem;">
+        <div class="docs-header-nav d-flex align-items-center w-100" style="padding-left: 6.75rem;">
+            <ul class="docs-primary-nav navbar-nav d-none d-lg-flex">
                 
                     
                     
@@ -85,6 +85,29 @@
                     </li>
                 
             </ul>
+            <div class="docs-toolbar d-none d-xl-flex" data-pagefind-ignore="all">
+                <div class="docs-search-panel" data-doc-search>
+                    <label class="form-label visually-hidden" for="documentation-search">Search documentation</label>
+                    <input
+                        id="documentation-search"
+                        class="form-control"
+                        type="search"
+                        autocomplete="off"
+                        spellcheck="false"
+                        placeholder="Search the documentation"
+                        aria-describedby="documentation-search-status"
+                        data-doc-search-input
+                    >
+                    <div
+                        id="documentation-search-results"
+                        class="docs-search-results card border-0 shadow-sm"
+                        role="listbox"
+                        aria-label="Documentation search results"
+                        data-doc-search-results
+                    ></div>
+                    <div id="documentation-search-status" class="visually-hidden" aria-live="polite" data-doc-search-status></div>
+                </div>
+            </div>
             <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -597,16 +620,18 @@
     });
 </script>
 <main class="docs-container">
-    <div class="container-fluid px-xxl-5 px-lg-4 pt-4 pt-lg-5 pb-2 pb-lg-4">
-
-        <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 mb-n3">
-            <div class="me-4">
-                <h1 class="pb-1">Calendar</h1>
-                
-                <p class="text-muted fs-lg mb-2">Manage your timesheet records in a calendar view</p>
-                
-            </div>
-            
+    <div class="container-fluid px-xxl-3 px-lg-2 pt-4 pt-lg-5 pb-2 pb-lg-4">
+        <div class="docs-layout">
+            <div class="docs-article">
+                <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 mb-n3 gap-4">
+                    <div class="me-4">
+                        <h1 class="pb-1" data-pagefind-meta="title" data-pagefind-weight="10.0">Calendar</h1>
+                        
+                        <p class="text-muted fs-lg mb-2" data-pagefind-meta="description">Manage your timesheet records in a calendar view</p>
+                        
+                    </div>
+                    <div class="d-none d-lg-flex">
+                    
 
 
 
@@ -625,13 +650,14 @@
     </div>
 
 
-        </div>
+                    </div>
+                </div>
 
-        <div class="markdown py-5 ps-lg-2 ps-xxl-0">
-            <div>
-                
-                <div id="documentation-content">
-                    
+                <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+                    <div>
+                        
+                        <div id="documentation-content">
+                            
 <div class="alert alert-danger d-flex" role="alert"><i class="bx bx-info-circle lead me-3"></i>
 <p>You are viewing an older version of this documentation page. A newer version is available <a href="/documentation/calendar.html">here</a>.</p>
 </div>
@@ -689,44 +715,48 @@ can choose between a monthly, weekly and daily view.</p>
 
 
 
+                        </div>
+                        
+
+                        
+                        <div data-pagefind-ignore="all">
+                            <h2 id="related-articles" class="fs-4 mt-5">Related articles</h2>
+                            <ul>
+                                
+                                
+                                <li>
+                                    <a href="/documentation/timesheet.html">Timesheet</a> &ndash; View and manage your time-tracking data in the timesheet view
+                                </li>
+                                
+                                
+                                <li>
+                                    <a href="/documentation/weekly-times.html">Weekly hours</a> &ndash; Manage your time records in quick and easy weekly spreadsheet-like view.
+                                </li>
+                                
+                            </ul>
+                        </div>
+                        
+                    </div>
                 </div>
-                
-
-                
-                <h2 id="related-articles" class="fs-4 mt-5">Related articles</h2>
-                <ul>
-                    
-                    
-                    <li>
-                        <a href="/documentation/timesheet.html">Timesheet</a> &ndash; View and manage your time-tracking data in the timesheet view
-                    </li>
-                    
-                    
-                    <li>
-                        <a href="/documentation/weekly-times.html">Weekly hours</a> &ndash; Manage your time records in quick and easy weekly spreadsheet-like view.
-                    </li>
-                    
-                </ul>
-                
             </div>
-        </div>
 
+            
+                <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
+                    <h3 class="fs-lg mt-2">Jump to</h3>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#editing-timesheets" class="nav-link">Editing timesheets</a></li><li class="nav-item"><a href="#creating-timesheets" class="nav-link">Creating timesheets</a></li><li class="nav-item"><a href="#delete-a-timesheet" class="nav-link">Delete a timesheet</a></li><li class="nav-item"><a href="#switching-user" class="nav-link">Switching user</a></li><li class="nav-item"><a href="#calendar-configurations" class="nav-link">Calendar configurations</a></li><li class="nav-item"><a href="#user-preferences" class="nav-link">User preferences</a></li></ul>
+                    
+                    <ul class="nav">
+                        <li>
+                            <a href="#related-articles" class="nav-link">Related articles</a>
+                        </li>
+                    </ul>
+                    
+                </aside>
+            
+        </div>
     </div>
 </main>
-
-
-    <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
-        <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#editing-timesheets" class="nav-link">Editing timesheets</a></li><li class="nav-item"><a href="#creating-timesheets" class="nav-link">Creating timesheets</a></li><li class="nav-item"><a href="#delete-a-timesheet" class="nav-link">Delete a timesheet</a></li><li class="nav-item"><a href="#switching-user" class="nav-link">Switching user</a></li><li class="nav-item"><a href="#calendar-configurations" class="nav-link">Calendar configurations</a></li><li class="nav-item"><a href="#user-preferences" class="nav-link">User preferences</a></li></ul>
-        
-        <ul class="nav">
-            <li>
-                <a href="#related-articles" class="nav-link">Related articles</a>
-            </li>
-        </ul>
-        
-    </aside>
-
+<script type="module" src="/assets/js/documentation-search.js?v1"></script>
 
 
 <a href="#top" class="btn-scroll-top" data-scroll>

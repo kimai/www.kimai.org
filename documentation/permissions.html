@@ -44,8 +44,8 @@
             </a>
             <span class="badge bg-warning">User manual</span>
         </div>
-        <div class="d-flex align-items-center w-100">
-            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 6.75rem;">
+        <div class="docs-header-nav d-flex align-items-center w-100" style="padding-left: 6.75rem;">
+            <ul class="docs-primary-nav navbar-nav d-none d-lg-flex">
                 
                     
                     
@@ -84,6 +84,29 @@
                     </li>
                 
             </ul>
+            <div class="docs-toolbar d-none d-xl-flex" data-pagefind-ignore="all">
+                <div class="docs-search-panel" data-doc-search>
+                    <label class="form-label visually-hidden" for="documentation-search">Search documentation</label>
+                    <input
+                        id="documentation-search"
+                        class="form-control"
+                        type="search"
+                        autocomplete="off"
+                        spellcheck="false"
+                        placeholder="Search the documentation"
+                        aria-describedby="documentation-search-status"
+                        data-doc-search-input
+                    >
+                    <div
+                        id="documentation-search-results"
+                        class="docs-search-results card border-0 shadow-sm"
+                        role="listbox"
+                        aria-label="Documentation search results"
+                        data-doc-search-results
+                    ></div>
+                    <div id="documentation-search-status" class="visually-hidden" aria-live="polite" data-doc-search-status></div>
+                </div>
+            </div>
             <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -596,28 +619,31 @@
     });
 </script>
 <main class="docs-container">
-    <div class="container-fluid px-xxl-5 px-lg-4 pt-4 pt-lg-5 pb-2 pb-lg-4">
+    <div class="container-fluid px-xxl-3 px-lg-2 pt-4 pt-lg-5 pb-2 pb-lg-4">
+        <div class="docs-layout">
+            <div class="docs-article" data-pagefind-body>
+                <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 mb-n3 gap-4">
+                    <div class="me-4">
+                        <h1 class="pb-1" data-pagefind-meta="title" data-pagefind-weight="10.0">Roles & Permissions</h1>
+                        
+                        <p class="text-muted fs-lg mb-2" data-pagefind-meta="description">Configure the permission system which is based on user roles</p>
+                        
+                    </div>
+                    <div class="d-none d-lg-flex">
+                    
 
-        <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 mb-n3">
-            <div class="me-4">
-                <h1 class="pb-1">Roles & Permissions</h1>
-                
-                <p class="text-muted fs-lg mb-2">Configure the permission system which is based on user roles</p>
-                
-            </div>
-            
 
 
 
 
+                    </div>
+                </div>
 
-        </div>
-
-        <div class="markdown py-5 ps-lg-2 ps-xxl-0">
-            <div>
-                
-                <div id="documentation-content">
-                    <p>Kimai provides a flexible permission system, which is based on <strong>user roles</strong> and <strong>permissions</strong>, 
+                <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+                    <div>
+                        
+                        <div id="documentation-content">
+                            <p>Kimai provides a flexible permission system, which is based on <strong>user roles</strong> and <strong>permissions</strong>, 
 which can be turned on and off for these roles. You need the <code class="language-plaintext highlighter-rouge">role_permissions</code> permission to access the <code class="language-plaintext highlighter-rouge">Roles</code> screen.</p>
 
 <p>This permission system limits access to the functionality of Kimai.</p>
@@ -1883,23 +1909,25 @@ For example, exported timesheet records cannot be edited, even if a user owns th
 </table>
 
 
+                        </div>
+                        
+
+                        
+                    </div>
                 </div>
-                
-
-                
             </div>
-        </div>
 
+            
+                <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
+                    <h3 class="fs-lg mt-2">Jump to</h3>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#roles" class="nav-link">Roles</a><ul><li class="nav-item"><a href="#creating-roles" class="nav-link">Creating roles</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a><ul><li class="nav-item"><a href="#activity" class="nav-link">Activity</a></li><li class="nav-item"><a href="#customer" class="nav-link">Customer</a></li><li class="nav-item"><a href="#project" class="nav-link">Project</a></li><li class="nav-item"><a href="#timesheet" class="nav-link">Timesheet</a></li><li class="nav-item"><a href="#export" class="nav-link">Export</a></li><li class="nav-item"><a href="#user" class="nav-link">User</a></li><li class="nav-item"><a href="#teams" class="nav-link">Teams</a></li><li class="nav-item"><a href="#tags" class="nav-link">Tags</a></li><li class="nav-item"><a href="#invoice" class="nav-link">Invoice</a></li><li class="nav-item"><a href="#absences" class="nav-link">Absences</a></li><li class="nav-item"><a href="#working-times" class="nav-link">Working times</a></li><li class="nav-item"><a href="#customer-portal" class="nav-link">Customer portal</a></li><li class="nav-item"><a href="#custom-fields" class="nav-link">Custom fields</a></li><li class="nav-item"><a href="#public-holidays" class="nav-link">Public holidays</a></li><li class="nav-item"><a href="#tasks" class="nav-link">Tasks</a></li><li class="nav-item"><a href="#translations" class="nav-link">Translations</a></li><li class="nav-item"><a href="#audit-logs" class="nav-link">Audit logs</a></li><li class="nav-item"><a href="#custom-content" class="nav-link">Custom content</a></li><li class="nav-item"><a href="#expenses" class="nav-link">Expenses</a></li><li class="nav-item"><a href="#importer" class="nav-link">Importer</a></li><li class="nav-item"><a href="#kiosk" class="nav-link">Kiosk</a></li><li class="nav-item"><a href="#reporting" class="nav-link">Reporting</a></li><li class="nav-item"><a href="#others" class="nav-link">Others</a></li></ul></li></ul>
+                    
+                </aside>
+            
+        </div>
     </div>
 </main>
-
-
-    <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
-        <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#roles" class="nav-link">Roles</a><ul><li class="nav-item"><a href="#creating-roles" class="nav-link">Creating roles</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a><ul><li class="nav-item"><a href="#activity" class="nav-link">Activity</a></li><li class="nav-item"><a href="#customer" class="nav-link">Customer</a></li><li class="nav-item"><a href="#project" class="nav-link">Project</a></li><li class="nav-item"><a href="#timesheet" class="nav-link">Timesheet</a></li><li class="nav-item"><a href="#export" class="nav-link">Export</a></li><li class="nav-item"><a href="#user" class="nav-link">User</a></li><li class="nav-item"><a href="#teams" class="nav-link">Teams</a></li><li class="nav-item"><a href="#tags" class="nav-link">Tags</a></li><li class="nav-item"><a href="#invoice" class="nav-link">Invoice</a></li><li class="nav-item"><a href="#absences" class="nav-link">Absences</a></li><li class="nav-item"><a href="#working-times" class="nav-link">Working times</a></li><li class="nav-item"><a href="#customer-portal" class="nav-link">Customer portal</a></li><li class="nav-item"><a href="#custom-fields" class="nav-link">Custom fields</a></li><li class="nav-item"><a href="#public-holidays" class="nav-link">Public holidays</a></li><li class="nav-item"><a href="#tasks" class="nav-link">Tasks</a></li><li class="nav-item"><a href="#translations" class="nav-link">Translations</a></li><li class="nav-item"><a href="#audit-logs" class="nav-link">Audit logs</a></li><li class="nav-item"><a href="#custom-content" class="nav-link">Custom content</a></li><li class="nav-item"><a href="#expenses" class="nav-link">Expenses</a></li><li class="nav-item"><a href="#importer" class="nav-link">Importer</a></li><li class="nav-item"><a href="#kiosk" class="nav-link">Kiosk</a></li><li class="nav-item"><a href="#reporting" class="nav-link">Reporting</a></li><li class="nav-item"><a href="#others" class="nav-link">Others</a></li></ul></li></ul>
-        
-    </aside>
-
+<script type="module" src="/assets/js/documentation-search.js?v1"></script>
 
 
 <a href="#top" class="btn-scroll-top" data-scroll>

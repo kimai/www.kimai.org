@@ -44,8 +44,8 @@
             </a>
             <span class="badge bg-warning">User manual</span>
         </div>
-        <div class="d-flex align-items-center w-100">
-            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 6.75rem;">
+        <div class="docs-header-nav d-flex align-items-center w-100" style="padding-left: 6.75rem;">
+            <ul class="docs-primary-nav navbar-nav d-none d-lg-flex">
                 
                     
                     
@@ -84,6 +84,29 @@
                     </li>
                 
             </ul>
+            <div class="docs-toolbar d-none d-xl-flex" data-pagefind-ignore="all">
+                <div class="docs-search-panel" data-doc-search>
+                    <label class="form-label visually-hidden" for="documentation-search">Search documentation</label>
+                    <input
+                        id="documentation-search"
+                        class="form-control"
+                        type="search"
+                        autocomplete="off"
+                        spellcheck="false"
+                        placeholder="Search the documentation"
+                        aria-describedby="documentation-search-status"
+                        data-doc-search-input
+                    >
+                    <div
+                        id="documentation-search-results"
+                        class="docs-search-results card border-0 shadow-sm"
+                        role="listbox"
+                        aria-label="Documentation search results"
+                        data-doc-search-results
+                    ></div>
+                    <div id="documentation-search-status" class="visually-hidden" aria-live="polite" data-doc-search-status></div>
+                </div>
+            </div>
             <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -596,28 +619,31 @@
     });
 </script>
 <main class="docs-container">
-    <div class="container-fluid px-xxl-5 px-lg-4 pt-4 pt-lg-5 pb-2 pb-lg-4">
-
-        <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 mb-n3">
-            <div class="me-4">
-                <h1 class="pb-1">Public holiday</h1>
-                
-                <p class="text-muted fs-lg mb-2">Configure public holidays for your employees with working contracts.</p>
-                
-            </div>
-            
-
-
-
-
-
-        </div>
-
-        <div class="markdown py-5 ps-lg-2 ps-xxl-0">
-            <div>
-                
-                <div id="documentation-content">
+    <div class="container-fluid px-xxl-3 px-lg-2 pt-4 pt-lg-5 pb-2 pb-lg-4">
+        <div class="docs-layout">
+            <div class="docs-article" data-pagefind-body>
+                <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 mb-n3 gap-4">
+                    <div class="me-4">
+                        <h1 class="pb-1" data-pagefind-meta="title" data-pagefind-weight="10.0">Public holiday</h1>
+                        
+                        <p class="text-muted fs-lg mb-2" data-pagefind-meta="description">Configure public holidays for your employees with working contracts.</p>
+                        
+                    </div>
+                    <div class="d-none d-lg-flex">
                     
+
+
+
+
+
+                    </div>
+                </div>
+
+                <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+                    <div>
+                        
+                        <div id="documentation-content">
+                            
 <div class="youtube-wrapper" style="max-width: 560px;">
     <iframe width="100%" height="315" src="https://www.youtube.com/embed/zuPZiZmb-0s" title="Public holiday management" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 </div>
@@ -705,44 +731,48 @@
 </div>
 
 
+                        </div>
+                        
+
+                        
+                        <div data-pagefind-ignore="all">
+                            <h2 id="related-articles" class="fs-4 mt-5">Related articles</h2>
+                            <ul>
+                                
+                                
+                                <li>
+                                    <a href="/documentation/absence.html">Absence</a> &ndash; Managing absences
+                                </li>
+                                
+                                
+                                <li>
+                                    <a href="/documentation/contract.html">Working times</a> &ndash; Contract management and working times
+                                </li>
+                                
+                            </ul>
+                        </div>
+                        
+                    </div>
                 </div>
-                
-
-                
-                <h2 id="related-articles" class="fs-4 mt-5">Related articles</h2>
-                <ul>
-                    
-                    
-                    <li>
-                        <a href="/documentation/absence.html">Absence</a> &ndash; Managing absences
-                    </li>
-                    
-                    
-                    <li>
-                        <a href="/documentation/contract.html">Working times</a> &ndash; Contract management and working times
-                    </li>
-                    
-                </ul>
-                
             </div>
-        </div>
 
+            
+                <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
+                    <h3 class="fs-lg mt-2">Jump to</h3>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#public-holiday-groups" class="nav-link">Public holiday groups</a><ul><li class="nav-item"><a href="#default-group" class="nav-link">Default group</a></li><li class="nav-item"><a href="#multiple-locations" class="nav-link">Multiple locations</a></li></ul></li><li class="nav-item"><a href="#managing-public-holidays" class="nav-link">Managing public holidays</a><ul><li class="nav-item"><a href="#creating-holidays" class="nav-link">Creating holidays</a></li><li class="nav-item"><a href="#import-feature" class="nav-link">Import feature</a></li></ul></li><li class="nav-item"><a href="#editing-public-holidays" class="nav-link">Editing public holidays</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+                    
+                    <ul class="nav">
+                        <li>
+                            <a href="#related-articles" class="nav-link">Related articles</a>
+                        </li>
+                    </ul>
+                    
+                </aside>
+            
+        </div>
     </div>
 </main>
-
-
-    <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
-        <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#public-holiday-groups" class="nav-link">Public holiday groups</a><ul><li class="nav-item"><a href="#default-group" class="nav-link">Default group</a></li><li class="nav-item"><a href="#multiple-locations" class="nav-link">Multiple locations</a></li></ul></li><li class="nav-item"><a href="#managing-public-holidays" class="nav-link">Managing public holidays</a><ul><li class="nav-item"><a href="#creating-holidays" class="nav-link">Creating holidays</a></li><li class="nav-item"><a href="#import-feature" class="nav-link">Import feature</a></li></ul></li><li class="nav-item"><a href="#editing-public-holidays" class="nav-link">Editing public holidays</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
-        
-        <ul class="nav">
-            <li>
-                <a href="#related-articles" class="nav-link">Related articles</a>
-            </li>
-        </ul>
-        
-    </aside>
-
+<script type="module" src="/assets/js/documentation-search.js?v1"></script>
 
 
 <a href="#top" class="btn-scroll-top" data-scroll>

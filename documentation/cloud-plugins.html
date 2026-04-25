@@ -44,8 +44,8 @@
             </a>
             <span class="badge bg-warning">Kimai-Cloud</span>
         </div>
-        <div class="d-flex align-items-center w-100">
-            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 6.75rem;">
+        <div class="docs-header-nav d-flex align-items-center w-100" style="padding-left: 6.75rem;">
+            <ul class="docs-primary-nav navbar-nav d-none d-lg-flex">
                 
                     
                     
@@ -84,6 +84,29 @@
                     </li>
                 
             </ul>
+            <div class="docs-toolbar d-none d-xl-flex" data-pagefind-ignore="all">
+                <div class="docs-search-panel" data-doc-search>
+                    <label class="form-label visually-hidden" for="documentation-search">Search documentation</label>
+                    <input
+                        id="documentation-search"
+                        class="form-control"
+                        type="search"
+                        autocomplete="off"
+                        spellcheck="false"
+                        placeholder="Search the documentation"
+                        aria-describedby="documentation-search-status"
+                        data-doc-search-input
+                    >
+                    <div
+                        id="documentation-search-results"
+                        class="docs-search-results card border-0 shadow-sm"
+                        role="listbox"
+                        aria-label="Documentation search results"
+                        data-doc-search-results
+                    ></div>
+                    <div id="documentation-search-status" class="visually-hidden" aria-live="polite" data-doc-search-status></div>
+                </div>
+            </div>
             <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -304,28 +327,31 @@
     });
 </script>
 <main class="docs-container">
-    <div class="container-fluid px-xxl-5 px-lg-4 pt-4 pt-lg-5 pb-2 pb-lg-4">
+    <div class="container-fluid px-xxl-3 px-lg-2 pt-4 pt-lg-5 pb-2 pb-lg-4">
+        <div class="docs-layout">
+            <div class="docs-article" data-pagefind-body>
+                <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 mb-n3 gap-4">
+                    <div class="me-4">
+                        <h1 class="pb-1" data-pagefind-meta="title" data-pagefind-weight="10.0">Plugins</h1>
+                        
+                        <p class="text-muted fs-lg mb-2" data-pagefind-meta="description">All available plugins and why they cannot be extended</p>
+                        
+                    </div>
+                    <div class="d-none d-lg-flex">
+                    
 
-        <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 mb-n3">
-            <div class="me-4">
-                <h1 class="pb-1">Plugins</h1>
-                
-                <p class="text-muted fs-lg mb-2">All available plugins and why they cannot be extended</p>
-                
-            </div>
-            
 
 
 
 
+                    </div>
+                </div>
 
-        </div>
-
-        <div class="markdown py-5 ps-lg-2 ps-xxl-0">
-            <div>
-                
-                <div id="documentation-content">
-                    <div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i><p>TL;DR - The cloud has a fixed set of plugins and new ones cannot be installed</p>
+                <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+                    <div>
+                        
+                        <div id="documentation-content">
+                            <div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i><p>TL;DR - The cloud has a fixed set of plugins and new ones cannot be installed</p>
 </div>
 
 <h2 id="available-plugins-in-the-kimai-cloud">Available Plugins in the Kimai Cloud</h2>
@@ -436,23 +462,25 @@ Allowing external code in the Cloud would introduce risks that could affect all 
 
 <p>The plugins available in the Cloud are optimized specifically for this environment and continuously updated, tested, and maintained.</p>
 
+                        </div>
+                        
+
+                        
+                    </div>
                 </div>
-                
-
-                
             </div>
-        </div>
 
+            
+                <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
+                    <h3 class="fs-lg mt-2">Jump to</h3>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#available-plugins-in-the-kimai-cloud" class="nav-link">Available Plugins in the Kimai Cloud</a></li><li class="nav-item"><a href="#why-other-plugins-cannot-be-added-to-the-cloud" class="nav-link">Why other plugins cannot be added to the Cloud</a><ul><li class="nav-item"><a href="#feature-overlap--product-consistency" class="nav-link">Feature Overlap &amp; Product Consistency</a></li><li class="nav-item"><a href="#licensing-restrictions" class="nav-link">Licensing Restrictions</a></li><li class="nav-item"><a href="#missing-cloud-required-apis" class="nav-link">Missing Cloud-Required APIs</a></li><li class="nav-item"><a href="#support--maintainability" class="nav-link">Support &amp; Maintainability</a></li><li class="nav-item"><a href="#security--code-quality" class="nav-link">Security &amp; Code Quality</a></li><li class="nav-item"><a href="#reliability--operational-stability" class="nav-link">Reliability &amp; Operational Stability</a></li><li class="nav-item"><a href="#delivering-the-best-possible-experience" class="nav-link">Delivering the Best Possible Experience</a></li></ul></li></ul>
+                    
+                </aside>
+            
+        </div>
     </div>
 </main>
-
-
-    <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
-        <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#available-plugins-in-the-kimai-cloud" class="nav-link">Available Plugins in the Kimai Cloud</a></li><li class="nav-item"><a href="#why-other-plugins-cannot-be-added-to-the-cloud" class="nav-link">Why other plugins cannot be added to the Cloud</a><ul><li class="nav-item"><a href="#feature-overlap--product-consistency" class="nav-link">Feature Overlap &amp; Product Consistency</a></li><li class="nav-item"><a href="#licensing-restrictions" class="nav-link">Licensing Restrictions</a></li><li class="nav-item"><a href="#missing-cloud-required-apis" class="nav-link">Missing Cloud-Required APIs</a></li><li class="nav-item"><a href="#support--maintainability" class="nav-link">Support &amp; Maintainability</a></li><li class="nav-item"><a href="#security--code-quality" class="nav-link">Security &amp; Code Quality</a></li><li class="nav-item"><a href="#reliability--operational-stability" class="nav-link">Reliability &amp; Operational Stability</a></li><li class="nav-item"><a href="#delivering-the-best-possible-experience" class="nav-link">Delivering the Best Possible Experience</a></li></ul></li></ul>
-        
-    </aside>
-
+<script type="module" src="/assets/js/documentation-search.js?v1"></script>
 
 
 <a href="#top" class="btn-scroll-top" data-scroll>

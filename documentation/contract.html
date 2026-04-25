@@ -44,8 +44,8 @@
             </a>
             <span class="badge bg-warning">User manual</span>
         </div>
-        <div class="d-flex align-items-center w-100">
-            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 6.75rem;">
+        <div class="docs-header-nav d-flex align-items-center w-100" style="padding-left: 6.75rem;">
+            <ul class="docs-primary-nav navbar-nav d-none d-lg-flex">
                 
                     
                     
@@ -84,6 +84,29 @@
                     </li>
                 
             </ul>
+            <div class="docs-toolbar d-none d-xl-flex" data-pagefind-ignore="all">
+                <div class="docs-search-panel" data-doc-search>
+                    <label class="form-label visually-hidden" for="documentation-search">Search documentation</label>
+                    <input
+                        id="documentation-search"
+                        class="form-control"
+                        type="search"
+                        autocomplete="off"
+                        spellcheck="false"
+                        placeholder="Search the documentation"
+                        aria-describedby="documentation-search-status"
+                        data-doc-search-input
+                    >
+                    <div
+                        id="documentation-search-results"
+                        class="docs-search-results card border-0 shadow-sm"
+                        role="listbox"
+                        aria-label="Documentation search results"
+                        data-doc-search-results
+                    ></div>
+                    <div id="documentation-search-status" class="visually-hidden" aria-live="polite" data-doc-search-status></div>
+                </div>
+            </div>
             <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -596,28 +619,31 @@
     });
 </script>
 <main class="docs-container">
-    <div class="container-fluid px-xxl-5 px-lg-4 pt-4 pt-lg-5 pb-2 pb-lg-4">
+    <div class="container-fluid px-xxl-3 px-lg-2 pt-4 pt-lg-5 pb-2 pb-lg-4">
+        <div class="docs-layout">
+            <div class="docs-article" data-pagefind-body>
+                <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 mb-n3 gap-4">
+                    <div class="me-4">
+                        <h1 class="pb-1" data-pagefind-meta="title" data-pagefind-weight="10.0">Working times</h1>
+                        
+                        <p class="text-muted fs-lg mb-2" data-pagefind-meta="description">Contract management and working times</p>
+                        
+                    </div>
+                    <div class="d-none d-lg-flex">
+                    
 
-        <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 mb-n3">
-            <div class="me-4">
-                <h1 class="pb-1">Working times</h1>
-                
-                <p class="text-muted fs-lg mb-2">Contract management and working times</p>
-                
-            </div>
-            
 
 
 
 
+                    </div>
+                </div>
 
-        </div>
-
-        <div class="markdown py-5 ps-lg-2 ps-xxl-0">
-            <div>
-                
-                <div id="documentation-content">
-                    <p>This screen and the <code class="language-plaintext highlighter-rouge">Contract</code> menu can be seen by any user that has active contract settings and the ones that own the <code class="language-plaintext highlighter-rouge">contract_other_profile</code> permission (see <code class="language-plaintext highlighter-rouge">Permissions</code> below).</p>
+                <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+                    <div>
+                        
+                        <div id="documentation-content">
+                            <p>This screen and the <code class="language-plaintext highlighter-rouge">Contract</code> menu can be seen by any user that has active contract settings and the ones that own the <code class="language-plaintext highlighter-rouge">contract_other_profile</code> permission (see <code class="language-plaintext highlighter-rouge">Permissions</code> below).</p>
 
 <div class="youtube-wrapper" style="max-width: 560px;">
     <iframe width="100%" height="315" src="https://www.youtube.com/embed/Ed11R3d4Eng" title="Set Up Working Time &amp; Absences" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
@@ -837,44 +863,48 @@ you have to roll over the hours to the next year:</p>
 </div>
 
 
+                        </div>
+                        
+
+                        
+                        <div data-pagefind-ignore="all">
+                            <h2 id="related-articles" class="fs-4 mt-5">Related articles</h2>
+                            <ul>
+                                
+                                
+                                <li>
+                                    <a href="/documentation/absence.html">Absence</a> &ndash; Managing absences
+                                </li>
+                                
+                                
+                                <li>
+                                    <a href="/documentation/public-holiday.html">Public holiday</a> &ndash; Configure public holidays for your employees with working contracts.
+                                </li>
+                                
+                            </ul>
+                        </div>
+                        
+                    </div>
                 </div>
-                
-
-                
-                <h2 id="related-articles" class="fs-4 mt-5">Related articles</h2>
-                <ul>
-                    
-                    
-                    <li>
-                        <a href="/documentation/absence.html">Absence</a> &ndash; Managing absences
-                    </li>
-                    
-                    
-                    <li>
-                        <a href="/documentation/public-holiday.html">Public holiday</a> &ndash; Configure public holidays for your employees with working contracts.
-                    </li>
-                    
-                </ul>
-                
             </div>
-        </div>
 
+            
+                <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
+                    <h3 class="fs-lg mt-2">Jump to</h3>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#user-interface" class="nav-link">User interface</a></li><li class="nav-item"><a href="#summary" class="nav-link">Summary</a></li><li class="nav-item"><a href="#working-times" class="nav-link">Working times</a></li><li class="nav-item"><a href="#lock-a-month" class="nav-link">Lock a month</a><ul><li class="nav-item"><a href="#unlock-a-month" class="nav-link">Unlock a month</a></li></ul></li><li class="nav-item"><a href="#changing-a-work-contract" class="nav-link">Changing a work contract</a></li><li class="nav-item"><a href="#manual-bookings" class="nav-link">Manual bookings</a><ul><li class="nav-item"><a href="#account-working-times" class="nav-link">Account working times</a></li><li class="nav-item"><a href="#holidays" class="nav-link">Holidays</a></li></ul></li><li class="nav-item"><a href="#how-calculations-work" class="nav-link">How calculations work</a><ul><li class="nav-item"><a href="#absences-compensate-expected-working-time" class="nav-link">Absences compensate expected working time</a></li><li class="nav-item"><a href="#absences-reduce-expected-working-time" class="nav-link">Absences reduce expected working time</a></li></ul></li><li class="nav-item"><a href="#limit-timesheets-to-working-days" class="nav-link">Limit timesheets to working days</a></li><li class="nav-item"><a href="#carry-over-your-time-balance-to-the-next-year" class="nav-link">Carry over your time balance to the next year</a></li><li class="nav-item"><a href="#video" class="nav-link">Video</a></li><li class="nav-item"><a href="#settings" class="nav-link">Settings</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+                    
+                    <ul class="nav">
+                        <li>
+                            <a href="#related-articles" class="nav-link">Related articles</a>
+                        </li>
+                    </ul>
+                    
+                </aside>
+            
+        </div>
     </div>
 </main>
-
-
-    <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
-        <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#user-interface" class="nav-link">User interface</a></li><li class="nav-item"><a href="#summary" class="nav-link">Summary</a></li><li class="nav-item"><a href="#working-times" class="nav-link">Working times</a></li><li class="nav-item"><a href="#lock-a-month" class="nav-link">Lock a month</a><ul><li class="nav-item"><a href="#unlock-a-month" class="nav-link">Unlock a month</a></li></ul></li><li class="nav-item"><a href="#changing-a-work-contract" class="nav-link">Changing a work contract</a></li><li class="nav-item"><a href="#manual-bookings" class="nav-link">Manual bookings</a><ul><li class="nav-item"><a href="#account-working-times" class="nav-link">Account working times</a></li><li class="nav-item"><a href="#holidays" class="nav-link">Holidays</a></li></ul></li><li class="nav-item"><a href="#how-calculations-work" class="nav-link">How calculations work</a><ul><li class="nav-item"><a href="#absences-compensate-expected-working-time" class="nav-link">Absences compensate expected working time</a></li><li class="nav-item"><a href="#absences-reduce-expected-working-time" class="nav-link">Absences reduce expected working time</a></li></ul></li><li class="nav-item"><a href="#limit-timesheets-to-working-days" class="nav-link">Limit timesheets to working days</a></li><li class="nav-item"><a href="#carry-over-your-time-balance-to-the-next-year" class="nav-link">Carry over your time balance to the next year</a></li><li class="nav-item"><a href="#video" class="nav-link">Video</a></li><li class="nav-item"><a href="#settings" class="nav-link">Settings</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
-        
-        <ul class="nav">
-            <li>
-                <a href="#related-articles" class="nav-link">Related articles</a>
-            </li>
-        </ul>
-        
-    </aside>
-
+<script type="module" src="/assets/js/documentation-search.js?v1"></script>
 
 
 <a href="#top" class="btn-scroll-top" data-scroll>

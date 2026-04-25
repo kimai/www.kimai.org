@@ -45,8 +45,8 @@
             </a>
             <span class="badge bg-warning">On-Premise</span>
         </div>
-        <div class="d-flex align-items-center w-100">
-            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 6.75rem;">
+        <div class="docs-header-nav d-flex align-items-center w-100" style="padding-left: 6.75rem;">
+            <ul class="docs-primary-nav navbar-nav d-none d-lg-flex">
                 
                     
                     
@@ -85,6 +85,29 @@
                     </li>
                 
             </ul>
+            <div class="docs-toolbar d-none d-xl-flex" data-pagefind-ignore="all">
+                <div class="docs-search-panel" data-doc-search>
+                    <label class="form-label visually-hidden" for="documentation-search">Search documentation</label>
+                    <input
+                        id="documentation-search"
+                        class="form-control"
+                        type="search"
+                        autocomplete="off"
+                        spellcheck="false"
+                        placeholder="Search the documentation"
+                        aria-describedby="documentation-search-status"
+                        data-doc-search-input
+                    >
+                    <div
+                        id="documentation-search-results"
+                        class="docs-search-results card border-0 shadow-sm"
+                        role="listbox"
+                        aria-label="Documentation search results"
+                        data-doc-search-results
+                    ></div>
+                    <div id="documentation-search-status" class="visually-hidden" aria-live="polite" data-doc-search-status></div>
+                </div>
+            </div>
             <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -540,28 +563,31 @@
     });
 </script>
 <main class="docs-container">
-    <div class="container-fluid px-xxl-5 px-lg-4 pt-4 pt-lg-5 pb-2 pb-lg-4">
+    <div class="container-fluid px-xxl-3 px-lg-2 pt-4 pt-lg-5 pb-2 pb-lg-4">
+        <div class="docs-layout">
+            <div class="docs-article" data-pagefind-body>
+                <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 mb-n3 gap-4">
+                    <div class="me-4">
+                        <h1 class="pb-1" data-pagefind-meta="title" data-pagefind-weight="10.0">Shared hosting</h1>
+                        
+                        <p class="text-muted fs-lg mb-2" data-pagefind-meta="description">How to install Kimai in a shared hosting environment</p>
+                        
+                    </div>
+                    <div class="d-none d-lg-flex">
+                    
 
-        <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 mb-n3">
-            <div class="me-4">
-                <h1 class="pb-1">Shared hosting</h1>
-                
-                <p class="text-muted fs-lg mb-2">How to install Kimai in a shared hosting environment</p>
-                
-            </div>
-            
 
 
 
 
+                    </div>
+                </div>
 
-        </div>
-
-        <div class="markdown py-5 ps-lg-2 ps-xxl-0">
-            <div>
-                
-                <div id="documentation-content">
-                    <div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i>
+                <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+                    <div>
+                        
+                        <div id="documentation-content">
+                            <div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i>
 <p>Hosting Kimai this way is neither officially recommended nor supported. But in the best interest of the community, this quick-starter is provided to help you set up Kimai.<br />
 If you run into issues with this documentation, please <a href="https://github.com/kimai/kimai/discussions" class="external-link">share your updates</a> to improve it for the next person 🔥</p>
 </div>
@@ -794,23 +820,25 @@ As time of writing the latest version available was PHP 8.3 (<code class="langua
 
 <p>You need a <code class="language-plaintext highlighter-rouge">v2</code> plan to use Kimai, as they do not support PHP &gt; 8.0 on CLI (SSH) for long-term customers on the “old” plans (like “Business XXL plan”).</p>
 
+                        </div>
+                        
+
+                        
+                    </div>
                 </div>
-                
-
-                
             </div>
-        </div>
 
+            
+                <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
+                    <h3 class="fs-lg mt-2">Jump to</h3>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#uberspace" class="nav-link">Uberspace</a></li><li class="nav-item"><a href="#manitu" class="nav-link">Manitu</a></li><li class="nav-item"><a href="#ionos--11" class="nav-link">Ionos / 1&amp;1</a></li><li class="nav-item"><a href="#domainfactory" class="nav-link">Domainfactory</a></li><li class="nav-item"><a href="#all-inkl" class="nav-link">All-Inkl</a></li><li class="nav-item"><a href="#strato" class="nav-link">Strato</a></li><li class="nav-item"><a href="#plesk" class="nav-link">Plesk</a></li><li class="nav-item"><a href="#netcup" class="nav-link">Netcup</a></li><li class="nav-item"><a href="#hosteurope" class="nav-link">HostEurope</a></li><li class="nav-item"><a href="#alfahosting" class="nav-link">Alfahosting</a></li></ul>
+                    
+                </aside>
+            
+        </div>
     </div>
 </main>
-
-
-    <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
-        <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#uberspace" class="nav-link">Uberspace</a></li><li class="nav-item"><a href="#manitu" class="nav-link">Manitu</a></li><li class="nav-item"><a href="#ionos--11" class="nav-link">Ionos / 1&amp;1</a></li><li class="nav-item"><a href="#domainfactory" class="nav-link">Domainfactory</a></li><li class="nav-item"><a href="#all-inkl" class="nav-link">All-Inkl</a></li><li class="nav-item"><a href="#strato" class="nav-link">Strato</a></li><li class="nav-item"><a href="#plesk" class="nav-link">Plesk</a></li><li class="nav-item"><a href="#netcup" class="nav-link">Netcup</a></li><li class="nav-item"><a href="#hosteurope" class="nav-link">HostEurope</a></li><li class="nav-item"><a href="#alfahosting" class="nav-link">Alfahosting</a></li></ul>
-        
-    </aside>
-
+<script type="module" src="/assets/js/documentation-search.js?v1"></script>
 
 
 <a href="#top" class="btn-scroll-top" data-scroll>

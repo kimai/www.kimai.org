@@ -45,8 +45,8 @@
             </a>
             <span class="badge bg-warning">On-Premise</span>
         </div>
-        <div class="d-flex align-items-center w-100">
-            <ul class="navbar-nav d-none d-lg-flex" style="padding-left: 6.75rem;">
+        <div class="docs-header-nav d-flex align-items-center w-100" style="padding-left: 6.75rem;">
+            <ul class="docs-primary-nav navbar-nav d-none d-lg-flex">
                 
                     
                     
@@ -85,6 +85,29 @@
                     </li>
                 
             </ul>
+            <div class="docs-toolbar d-none d-xl-flex" data-pagefind-ignore="all">
+                <div class="docs-search-panel" data-doc-search>
+                    <label class="form-label visually-hidden" for="documentation-search">Search documentation</label>
+                    <input
+                        id="documentation-search"
+                        class="form-control"
+                        type="search"
+                        autocomplete="off"
+                        spellcheck="false"
+                        placeholder="Search the documentation"
+                        aria-describedby="documentation-search-status"
+                        data-doc-search-input
+                    >
+                    <div
+                        id="documentation-search-results"
+                        class="docs-search-results card border-0 shadow-sm"
+                        role="listbox"
+                        aria-label="Documentation search results"
+                        data-doc-search-results
+                    ></div>
+                    <div id="documentation-search-status" class="visually-hidden" aria-live="polite" data-doc-search-status></div>
+                </div>
+            </div>
             <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -540,16 +563,18 @@
     });
 </script>
 <main class="docs-container">
-    <div class="container-fluid px-xxl-5 px-lg-4 pt-4 pt-lg-5 pb-2 pb-lg-4">
-
-        <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 mb-n3">
-            <div class="me-4">
-                <h1 class="pb-1">Installation</h1>
-                
-                <p class="text-muted fs-lg mb-2">How to install Kimai on your server with git, composer and SSH or FTP</p>
-                
-            </div>
-            
+    <div class="container-fluid px-xxl-3 px-lg-2 pt-4 pt-lg-5 pb-2 pb-lg-4">
+        <div class="docs-layout">
+            <div class="docs-article">
+                <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 mb-n3 gap-4">
+                    <div class="me-4">
+                        <h1 class="pb-1" data-pagefind-meta="title" data-pagefind-weight="10.0">Installation</h1>
+                        
+                        <p class="text-muted fs-lg mb-2" data-pagefind-meta="description">How to install Kimai on your server with git, composer and SSH or FTP</p>
+                        
+                    </div>
+                    <div class="d-none d-lg-flex">
+                    
 
 
 
@@ -568,13 +593,14 @@
     </div>
 
 
-        </div>
+                    </div>
+                </div>
 
-        <div class="markdown py-5 ps-lg-2 ps-xxl-0">
-            <div>
-                
-                <div id="documentation-content">
-                    
+                <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+                    <div>
+                        
+                        <div id="documentation-content">
+                            
 <div class="alert alert-danger d-flex" role="alert"><i class="bx bx-info-circle lead me-3"></i>
 <p>You are viewing an older version of this documentation page. A newer version is available <a href="/documentation/installation.html">here</a>.</p>
 </div>
@@ -899,23 +925,25 @@ responsibility, be aware that wrong permissions might break Kimai and can also l
 
 
 
+                        </div>
+                        
+
+                        
+                    </div>
                 </div>
-                
-
-                
             </div>
-        </div>
 
+            
+                <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
+                    <h3 class="fs-lg mt-2">Jump to</h3>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#recommended-setup" class="nav-link">Recommended setup</a><ul><li class="nav-item"><a href="#file-permissions" class="nav-link">File permissions</a></li><li class="nav-item"><a href="#create-your-first-user" class="nav-link">Create your first user</a></li><li class="nav-item"><a href="#webserver" class="nav-link">Webserver</a></li></ul></li><li class="nav-item"><a href="#docker" class="nav-link">Docker</a></li><li class="nav-item"><a href="#hosting-and-1-click-installations" class="nav-link">Hosting and 1-click installations</a><ul><li class="nav-item"><a href="#yunohost" class="nav-link">YunoHost</a></li><li class="nav-item"><a href="#cloudron" class="nav-link">Cloudron</a></li><li class="nav-item"><a href="#vesta-control-panel" class="nav-link">Vesta Control Panel</a></li><li class="nav-item"><a href="#cloudjiffy" class="nav-link">Cloudjiffy</a></li></ul></li><li class="nav-item"><a href="#shared-hosting" class="nav-link">Shared hosting</a><ul><li class="nav-item"><a href="#ionos--11" class="nav-link">Ionos / 1&amp;1</a></li><li class="nav-item"><a href="#domainfactory" class="nav-link">Domainfactory</a></li><li class="nav-item"><a href="#strato" class="nav-link">Strato</a></li><li class="nav-item"><a href="#plesk" class="nav-link">Plesk</a></li><li class="nav-item"><a href="#netcup" class="nav-link">Netcup</a></li></ul></li><li class="nav-item"><a href="#ftp-installation" class="nav-link">FTP installation</a></li><li class="nav-item"><a href="#ansible" class="nav-link">Ansible</a></li><li class="nav-item"><a href="#kubernetes" class="nav-link">Kubernetes</a></li><li class="nav-item"><a href="#installation-faq" class="nav-link">Installation FAQ</a><ul><li class="nav-item"><a href="#sqlstatehy000-2006-mysql-server-has-gone-away" class="nav-link">SQLSTATE[HY000] [2006] MySQL server has gone away</a></li><li class="nav-item"><a href="#malformed-parameter-url" class="nav-link">Malformed parameter “url”</a></li><li class="nav-item"><a href="#which-user-to-use-www-data-httpd-or-your-own" class="nav-link">Which user to use, www-data, httpd or your own?</a></li><li class="nav-item"><a href="#troubleshoot" class="nav-link">Troubleshoot</a></li></ul></li></ul>
+                    
+                </aside>
+            
+        </div>
     </div>
 </main>
-
-
-    <aside class="side-nav side-nav-end d-none d-xxl-block position-fixed top-0 end-0 vh-100 py-5" style="width: 20rem;">
-        <h3 class="fs-lg mt-5 pt-5">Jump to</h3>
-        <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#recommended-setup" class="nav-link">Recommended setup</a><ul><li class="nav-item"><a href="#file-permissions" class="nav-link">File permissions</a></li><li class="nav-item"><a href="#create-your-first-user" class="nav-link">Create your first user</a></li><li class="nav-item"><a href="#webserver" class="nav-link">Webserver</a></li></ul></li><li class="nav-item"><a href="#docker" class="nav-link">Docker</a></li><li class="nav-item"><a href="#hosting-and-1-click-installations" class="nav-link">Hosting and 1-click installations</a><ul><li class="nav-item"><a href="#yunohost" class="nav-link">YunoHost</a></li><li class="nav-item"><a href="#cloudron" class="nav-link">Cloudron</a></li><li class="nav-item"><a href="#vesta-control-panel" class="nav-link">Vesta Control Panel</a></li><li class="nav-item"><a href="#cloudjiffy" class="nav-link">Cloudjiffy</a></li></ul></li><li class="nav-item"><a href="#shared-hosting" class="nav-link">Shared hosting</a><ul><li class="nav-item"><a href="#ionos--11" class="nav-link">Ionos / 1&amp;1</a></li><li class="nav-item"><a href="#domainfactory" class="nav-link">Domainfactory</a></li><li class="nav-item"><a href="#strato" class="nav-link">Strato</a></li><li class="nav-item"><a href="#plesk" class="nav-link">Plesk</a></li><li class="nav-item"><a href="#netcup" class="nav-link">Netcup</a></li></ul></li><li class="nav-item"><a href="#ftp-installation" class="nav-link">FTP installation</a></li><li class="nav-item"><a href="#ansible" class="nav-link">Ansible</a></li><li class="nav-item"><a href="#kubernetes" class="nav-link">Kubernetes</a></li><li class="nav-item"><a href="#installation-faq" class="nav-link">Installation FAQ</a><ul><li class="nav-item"><a href="#sqlstatehy000-2006-mysql-server-has-gone-away" class="nav-link">SQLSTATE[HY000] [2006] MySQL server has gone away</a></li><li class="nav-item"><a href="#malformed-parameter-url" class="nav-link">Malformed parameter “url”</a></li><li class="nav-item"><a href="#which-user-to-use-www-data-httpd-or-your-own" class="nav-link">Which user to use, www-data, httpd or your own?</a></li><li class="nav-item"><a href="#troubleshoot" class="nav-link">Troubleshoot</a></li></ul></li></ul>
-        
-    </aside>
-
+<script type="module" src="/assets/js/documentation-search.js?v1"></script>
 
 
 <a href="#top" class="btn-scroll-top" data-scroll>
