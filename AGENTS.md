@@ -4,7 +4,8 @@
 
 This file guides AI coding agents working in the `www.kimai.org` repository.
 
-The repository contains the source for the public Kimai website. It is a Jekyll site with custom plugins, a webpack-based frontend asset pipeline, and a multilingual content setup.
+The repository contains the source for the public Kimai website. 
+It is a Jekyll site with custom plugins, a webpack-based frontend asset pipeline, and a multilingual content setup.
 
 Agents are allowed to work across the full repository: content, templates, includes, layouts, frontend assets, custom Jekyll plugins, repo structure, and workflow improvements.
 
@@ -92,6 +93,15 @@ Routing and domain rules matter:
 - English is the primary base language
 - `he` and `zh_Hant` currently have custom-domain behavior configured in `_config.yml`
 - Those custom domains are part of an SEO test, so agents should avoid casual routing, canonical, permalink, or domain-logic changes without understanding the impact
+
+## Writing Style
+
+- American English, second person (you)
+- Gender-neutral (they/them)
+- Use contractions (it's, don't, you're)
+- Avoid: "just", "obviously", "easy", "simply"
+- Realistic examples (no foo/bar placeholders)
+- Write for non-native English speakers: use simple vocabulary, avoid idioms, and complex sentence structures
 
 ## Images And Assets
 
