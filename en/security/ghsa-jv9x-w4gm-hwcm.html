@@ -186,14 +186,15 @@
 
 <h2>Vulnerability</h2>
 
-<p>The Team API endpoints use <code class="language-plaintext highlighter-rouge">#[IsGranted('edit_team')]</code> instead of <code class="language-plaintext highlighter-rouge">#[IsGranted('edit', 'team')]</code>, causing Symfony TeamVoter to abstain from voting. 
-This removes entity-level ownership checks on team operations, allowing any user with the edit_team permission to modify any team, not just teams they are authorized to manage.</p>
+<p>The Team API endpoints use <code class="language-plaintext highlighter-rouge">#[IsGranted('edit_team')]</code> instead of <code class="language-plaintext highlighter-rouge">#[IsGranted('edit', 'team')]</code>, causing TeamVoter to abstain from voting. 
+This removes entity-level ownership checks on team operations, allowing any user with the <code class="language-plaintext highlighter-rouge">edit_team</code> permission to modify any team, not just teams they are authorized to manage.</p>
 
 <h2 id="info">Info</h2>
 
 <p>The team association endpoints in <code class="language-plaintext highlighter-rouge">src/API/TeamController.php</code> use <code class="language-plaintext highlighter-rouge">#[IsGranted('edit_team')]</code> with a single argument. 
-The controller at <code class="language-plaintext highlighter-rouge">src/Controller/TeamController.php</code> correctly uses <code class="language-plaintext highlighter-rouge">#[IsGranted('edit', 'team')]</code> with two arguments, passing the $team parameter as the subject.
-When <code class="language-plaintext highlighter-rouge">edit_team</code> is passed as the attribute, <code class="language-plaintext highlighter-rouge">TeamVoter::supportsAttribute()</code> returns false because it only recognizes <code class="language-plaintext highlighter-rouge">view</code>, <code class="language-plaintext highlighter-rouge">edit</code>, and <code class="language-plaintext highlighter-rouge">delete</code>. 
+The controller at <code class="language-plaintext highlighter-rouge">src/Controller/TeamController.php</code> correctly uses <code class="language-plaintext highlighter-rouge">#[IsGranted('edit', 'team')]</code> with two arguments, passing the requested Team as the subject.</p>
+
+<p>When <code class="language-plaintext highlighter-rouge">edit_team</code> is passed as the attribute, <code class="language-plaintext highlighter-rouge">TeamVoter::supportsAttribute()</code> returns false because it only recognizes <code class="language-plaintext highlighter-rouge">view</code>, <code class="language-plaintext highlighter-rouge">edit</code>, and <code class="language-plaintext highlighter-rouge">delete</code>. 
 The voter abstains entirely. Only <code class="language-plaintext highlighter-rouge">RolePermissionVoter</code> fires, which checks the role-level permission without any entity-level ownership validation.</p>
 
 <p>In default configuration, only <code class="language-plaintext highlighter-rouge">ROLE_ADMIN</code> and <code class="language-plaintext highlighter-rouge">ROLE_SUPER_ADMIN</code> have <code class="language-plaintext highlighter-rouge">edit_team</code>, making the missing check less critical. 
@@ -201,6 +202,8 @@ The vulnerability becomes exploitable if an administrator grants <code class="la
 In that scenario, the lower-privilege user could modify any team’s membership, customer assignments, project assignments, and activity assignments without being a member or teamlead of that team.</p>
 
 <h2 id="solution">Solution</h2>
+
+<p>The Team API endpoints correctly use <code class="language-plaintext highlighter-rouge">#[IsGranted('edit', 'team')]</code> and <code class="language-plaintext highlighter-rouge">#[IsGranted('delete', 'team')]</code> syntax.</p>
 
 <p>Users should update to <code class="language-plaintext highlighter-rouge">2.54.0</code> or newer.</p>
 

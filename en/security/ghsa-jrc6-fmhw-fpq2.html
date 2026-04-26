@@ -204,6 +204,8 @@ In affected versions, requests for existing usernames took measurably longer tha
 
 <h2 id="solution">Solution</h2>
 
+<p>Invalid logins triggers a “fake” password hashing and adds a random delay to the response, making it impossible to distinguish wrong passwords from unknown user accounts.</p>
+
 <p>Users should update to <code class="language-plaintext highlighter-rouge">2.54.0</code> or newer.</p>
 
 <p>Administrators can block HTTP requests that include the <code class="language-plaintext highlighter-rouge">X-AUTH-USER</code> and <code class="language-plaintext highlighter-rouge">X-AUTH-TOKEN</code> header in their webserver.</p>
