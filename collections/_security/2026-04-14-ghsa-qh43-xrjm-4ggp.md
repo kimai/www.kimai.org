@@ -28,4 +28,6 @@ This issue was caused by the API accepting and persisting restricted preference 
 
 ## Solution
 
+The API does not allow updating disabled user preferences. 
+
 Users should update to `2.53.0` or newer.
