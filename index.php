@@ -15,6 +15,7 @@
 
 $availableLanguages = [
 
+    'ca',
     'cs',
     'de',
     'en',
