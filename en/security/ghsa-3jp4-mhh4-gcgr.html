@@ -189,7 +189,7 @@
 <p>Kimai’s SAML authentication flow accepted the <code class="language-plaintext highlighter-rouge">RelayState</code> parameter as a redirect target without sufficiently validating the destination. 
 In affected versions, a successful SAML login could therefore redirect users to an attacker-controlled URL.</p>
 
-<p>The issue requires SAML to be enabled and depends on a malicious or manipulated <code class="language-plaintext highlighter-rouge">RelayState</code> value being supplied during the authentication flow.</p>
+<p>The issue requires SAML to be enabled and depends on a malicious or manipulated <code class="language-plaintext highlighter-rouge">RelayState</code> value being supplied during the authentication flow (e.g. a manipulated URL sent via email).</p>
 
 <h2 id="info">Info</h2>
 

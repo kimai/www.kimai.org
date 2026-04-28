@@ -204,11 +204,14 @@ In affected versions, requests for existing usernames took measurably longer tha
 
 <h2 id="solution">Solution</h2>
 
-<p>Invalid logins triggers a “fake” password hashing and adds a random delay to the response, making it impossible to distinguish wrong passwords from unknown user accounts.</p>
+<p>Invalid logins triggers a “fake” password hashing, making it impossible to distinguish wrong passwords from unknown user accounts.
+Rate limiting was added to failed logins.</p>
 
 <p>Users should update to <code class="language-plaintext highlighter-rouge">2.54.0</code> or newer.</p>
 
 <p>Administrators can block HTTP requests that include the <code class="language-plaintext highlighter-rouge">X-AUTH-USER</code> and <code class="language-plaintext highlighter-rouge">X-AUTH-TOKEN</code> header in their webserver.</p>
+
+<p>Additional note: authenticated logins add a random delay to the response and trigger a deprecation notice, to drive users to finally switch to API tokens.</p>
 
 
 <h2>Credits</h2>

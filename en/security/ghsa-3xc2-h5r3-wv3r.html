@@ -205,7 +205,7 @@ When an administrator later exported timesheets to XLSX, the formula was written
 
 <h2 id="solution">Solution</h2>
 
-<p>The fix rejects formula trigger characters in tag names and routes string values through <code class="language-plaintext highlighter-rouge">TextCell</code> so that user-supplied strings can no longer be promoted to formula cells during export.</p>
+<p>Kimai now (1) rejects formula trigger characters in tag names and (2) uses <code class="language-plaintext highlighter-rouge">TextCell</code> for all strings, so that user-supplied content can no longer be promoted to formula cells during export.</p>
 
 <p>Users should update to <code class="language-plaintext highlighter-rouge">2.54.0</code> or newer.</p>
 
