@@ -26,11 +26,11 @@ Important: Jekyll is configured with `collections_dir: "collections"`, so conten
 
 ## Working Rules
 
-- Agents may make broad changes when useful, including restructuring the website and improving multilingual workflows.
-- Prefer solving problems properly over preserving incidental structure.
-- Keep changes focused and coherent so the repository owner can review and revert easily if needed.
-- Preserve backward compatibility when touching layouts, includes, or plugins unless the task clearly requires a behavior change.
-- Prefer content or template changes over plugin changes when both are reasonable, but modify `_plugins/` when that is the correct fix.
+- Agents may make broad changes when useful, including restructuring the website and improving multilingual workflows
+- Prefer solving problems properly over preserving incidental structure
+- Keep changes focused and coherent so the repository owner can review and revert easily if needed
+- Preserve backward compatibility when touching layouts, includes, or plugins unless the task clearly requires a behavior change
+- Prefer content or template changes over plugin changes when both are reasonable, but modify `_plugins/` when that is the correct fix
 - When renaming or moving files and directories, also use `git mv` to keep the change history
 
 ## Generated And Dependency Directories
@@ -80,12 +80,12 @@ Before replacing script-based behavior with manual edits, check whether an exist
 
 ## Multilingual Rules
 
-- English is the main website language and should be treated as the default source language unless the existing workflow for a section says otherwise.
-- German content may also be authored directly when appropriate.
-- Do not create or rewrite translations unless the task asks for it or the workflow clearly requires it.
-- It is acceptable to edit only the requested language.
-- When changing English source content that likely affects translated pages, note the translation follow-up in the final handoff if translations were not updated.
-- Respect the locale layout already used in `collections/`.
+- English is the main website language and should be treated as the default source language unless the existing workflow for a section says otherwise
+- German content may also be authored directly when appropriate
+- Do not create or rewrite translations unless the task asks for it or the workflow clearly requires it
+- It is acceptable to edit only the requested language
+- When changing English source content that likely affects translated pages, note the translation follow-up in the final handoff if translations were not updated
+- Respect the locale layout already used in `collections/`
 
 Routing and domain rules matter:
 
@@ -105,35 +105,23 @@ Routing and domain rules matter:
 
 ## Images And Assets
 
-- Prefer `webp` for new image assets unless there is a clear reason not to.
-- Place images in the established repo locations and follow existing naming patterns nearby.
-- Preserve the Bootstrap/theme-based visual system unless the task explicitly calls for design changes.
+- Prefer `webp` for new image assets unless there is a clear reason not to
+- Place images in the established repo locations and follow existing naming patterns nearby
+- Preserve the Bootstrap/theme-based visual system unless the task explicitly calls for design changes
 
 ## Safe Change Boundaries
 
 The owner reviews all changes before commit, so agents do not need extra approval layers inside the repository. Still, use normal engineering judgment:
 
-- Do not touch generated output just to satisfy a task that should be solved in source files.
-- Do not make speculative dependency updates.
-- Do not rewrite unrelated content while touching a page.
-- Do not change deployment or server behavior incidentally while working on content or UI unless that is part of the requested fix.
+- Do not touch generated output just to satisfy a task that should be solved in source files
+- Do not make dependency updates without human confirmation
+- Do not rewrite unrelated content while touching a page
+- Do not change deployment or server behavior incidentally while working on content or UI unless that is part of the requested fix
 
 ## Branching And Commits
 
-Work is usually done directly on `main`.
-
-When preparing changes:
+Work is done directly on `main` unless prompted otherwise.
 
 - Keep edits reviewable
 - Prefer small, focused diffs
 - Mention skipped verification when relevant
-- Mention which locales were changed when working on multilingual content
-
-## Areas To Expand Later
-
-The following sections are intentionally left lightweight for now and can be expanded later:
-
-- Content structure conventions and required frontmatter by collection
-- Editorial and marketing tone rules
-- Source-of-truth rules for product facts, marketplace data, and documentation
-- Additional locale-specific SEO constraints
