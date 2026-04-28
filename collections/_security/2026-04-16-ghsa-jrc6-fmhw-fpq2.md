@@ -27,8 +27,11 @@ This issue affected the [legacy API password authentication mechanism that has a
 
 ## Solution
 
-Invalid logins triggers a "fake" password hashing and adds a random delay to the response, making it impossible to distinguish wrong passwords from unknown user accounts.
+Invalid logins triggers a "fake" password hashing, making it impossible to distinguish wrong passwords from unknown user accounts.
+Rate limiting was added to failed logins.
 
 Users should update to `2.54.0` or newer.
 
 Administrators can block HTTP requests that include the `X-AUTH-USER` and `X-AUTH-TOKEN` header in their webserver.
+
+Additional note: authenticated logins add a random delay to the response and trigger a deprecation notice, to drive users to finally switch to API tokens.

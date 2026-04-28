@@ -27,6 +27,6 @@ This issue affected the escaping logic used for user-controlled content in HTML 
 
 ## Solution
 
-Usernames do not allow special characters and the generated HTML is sanitized.
+Usernames do not allow special characters, the generated HTML is sanitized and escaped.
 
 Users should update to `2.53.0` or newer.
