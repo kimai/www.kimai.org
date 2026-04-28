@@ -33,6 +33,25 @@ Important: Jekyll is configured with `collections_dir: "collections"`, so conten
 - Prefer content or template changes over plugin changes when both are reasonable, but modify `_plugins/` when that is the correct fix
 - When renaming or moving files and directories, also use `git mv` to keep the change history
 
+## Collections
+
+Most collections map to a specific content type and often use locale subdirectories such as `en/` and `de/`. The main exceptions are versioned docs, which use release-number directories, and technical collections such as `_error`, `_security`, and `_changelogs`.
+
+- `collections/_alternatives` - competitor comparison landing pages such as "Kimai vs. Clockify"; currently English-focused
+- `collections/_blog_tags` - rendered tag/category archive pages for the blog, for example `cloud`, `general`, and `on-premise`
+- `collections/_changelogs` - Kimai Cloud update, maintenance, and rollout announcements; date-based entries that are also shown inside customer environments
+- `collections/_docu_versioned` - archived documentation for older Kimai releases, organized by version directory such as `1.30.0/` or `2.13.0/`
+- `collections/_documentation` - the current documentation set, including user manual, cloud docs, developer docs, Docker docs, and on-premise installation/operation guides
+- `collections/_error` - static error pages such as `400`, `404`, `500`, and `503`, including locale-specific variants used by webserver configuration
+- `collections/_industries` - industry-specific SEO landing pages such as agency, freelancer, lawyer, and university use cases
+- `collections/_keywords` - keyword-targeted SEO landing pages for important search phrases such as `open-source-time-tracker`
+- `collections/_landingpage` - campaign and audience-specific landing pages such as non-profit, discount-code, and community offers
+- `collections/_pages` - the main site pages for each locale, including homepage, pricing, support, legal pages, and section index pages
+- `collections/_posts` - blog posts published under localized blog routes; currently organized primarily in English and German
+- `collections/_security/` - security advisory pages published under `/security/`; these are linked from the bughunter documentation page
+- `collections/_store` - marketplace entries for plugins, bundles, integrations, apps, and other Kimai ecosystem add-ons; heavily translated across locales
+- `collections/_stories` - customer stories and case studies with company background, quotes, results, and product usage details
+
 ## Generated And Dependency Directories
 
 Never edit or commit generated or dependency-managed directories unless the task explicitly requires dependency updates:
