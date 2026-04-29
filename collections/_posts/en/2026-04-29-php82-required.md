@@ -4,7 +4,7 @@ date: "2026-04-13 12:00:00 +0200"
 image: /images/blog/sunset-php-81.webp
 author: kevinpapst
 tags: [on-premise]
-excerpt: "The latest release of Kimai, our open-source time-tracking app, is here — and it's a meaningful one."
+excerpt: "The latest release of Kimai, our open-source time-tracking app, is here — and it comes with a new PHP requirement."
 ---
 
 The latest release of Kimai, our open-source time-tracking app, is here. 
