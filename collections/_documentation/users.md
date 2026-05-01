@@ -1,6 +1,6 @@
 ---
 title: Users
-description: User, roles and the authentication, registration and security system in Kimai
+description: User, roles and the authentication system in Kimai
 canonical: /documentation/users.html
 related:
 - user-preferences
@@ -85,22 +85,12 @@ Besides these filters, you can query for a free search term, which will be searc
 
 {% include snippets/search-custom-field.md %}
 
-## User registration
-
-User registration is disabled by default, as most Kimai installations are available through the public internet.
-
-If your Kimai installation is protected otherwise (e.g. internal network or other authentication mechanism) you can
-activate it through [System → Settings]({% link _documentation/configurations.md %}). The self-registration is then available via a link in the login screen.
-
-If someone registers a new account with email, username and password an confirmation email will be sent, including a link that needs to be clicked before the account will be activated.
-As this feature requires an email to work, you have to enable [email support]({% link _documentation/emails.md %}) to use it.
-
 ## Password reset
 
 The reset password function is enabled by default, you can deactivate it through [System → Settings]({% link _documentation/configurations.md %}).
 
 A user can reach it via a link from the login screen. After entering username or email-address, an email with a confirmation link will be sent.
-This link needs to be clicked, afterwards the user can enter a new password.
+This link needs to be clicked, afterward the user can enter a new password.
 
 You can configure two settings to influence the security:
 
