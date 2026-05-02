@@ -14,6 +14,9 @@ Enjoy one-click start/stop and instant project switching, backed by intelligent 
 - **Seamless Kimai Sync**
   All you data is synced with your Kimai instance in real-time. Just track your time and let KimTrack handle the rest.
 
+- **Integrated MCP Server**
+  Equipped with a built-in Model Context Protocol (MCP) server, allowing AI agents direct access to your Kimai data. Streamline your workflows by enabling intelligent assistants to interact with your time tracking seamlessly.
+
 - **Smart Idle Detection**  
   Automatically pauses when you’re away—then lets you review or discard idle periods. Customize timeout and notification behavior to suit your workflow.
 
