@@ -183,7 +183,7 @@ docker exec -ti kimai /opt/kimai/bin/console kimai:bundle:workcontract:install
 
 ## Using a local.yaml
 
-This requires a new mount, e.g. mounting the local file `/home/kimai/local.yaml` into the correct location inside the image.  
+This requires a new mount, e.g. mounting the local file `/home/kimai/local.yaml` into the correct location inside the container.  
 
 ```dockerfile
 services:
