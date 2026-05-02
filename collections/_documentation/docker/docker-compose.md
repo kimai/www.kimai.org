@@ -8,7 +8,7 @@ Several docker-compose example files that use the latest Kimai version.
 
 ## Installation
 
-```dockerfile
+```yaml
 services:
 
   sqldb:
@@ -58,7 +58,7 @@ The usual update step is simple: stop, pull latest version, restart.
 
 This example is based on the `Apache` image, using the `apache` plugin:
 
-```bash
+```sh
 # Pull latest version
 docker compose pull
 # Stop and remove older version
@@ -71,7 +71,7 @@ docker compose up -d
 
 Instead of hardcoding your credentials and/or duplicating them in several places, you can also use a `.env` file like that:
 
-```
+```env
 DATABASE_NAME=kimai
 DATABASE_USER=kimaiuser
 DATABASE_PASSWORD=kimaipassword
@@ -82,7 +82,7 @@ ADMIN_PASSWORD=changemeplease
 
 And then reference those from your `docker-compose.yaml`:
 
-```dockerfile
+```yaml
 services:
 
   sqldb:
@@ -139,7 +139,7 @@ As plugin are accessed read-only by Kimai, you can use both methods.
 
 Using a volume:
 
-```dockerfile
+```yaml
 services:
     [...]
 
@@ -157,7 +157,7 @@ volumes:
 
 Or using a bind mount, pointing to the local filesystem at `/home/kimai/plugins`:
 
-```dockerfile
+```yaml
 services:
 
   sqldb:
@@ -185,7 +185,7 @@ docker exec -ti kimai /opt/kimai/bin/console kimai:bundle:workcontract:install
 
 This requires a new mount, e.g. mounting the local file `/home/kimai/local.yaml` into the correct location inside the container.  
 
-```dockerfile
+```yaml
 services:
     [...]
 
@@ -231,7 +231,7 @@ When the Kimai image is updated, and the container is restarted any new assets i
 These will be things like CSS files, images and especially version specific javascript code!
 To fix this you need to copy the newer files from a fresh image over the top.
 
-```bash
+```sh
 # You might need to use `docker volume ls | grep kimai` to find the name of your Kimai "public" volume
 docker run --rm -ti -v kimai_public:/public --entrypoint /bin/bash kimai/kimai2
 #                      ^^^^^^^^^^^^ -> Kimai public volume
