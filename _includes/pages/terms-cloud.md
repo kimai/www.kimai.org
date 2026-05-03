@@ -68,7 +68,10 @@ Mit Einrichtung des Kundenkontos kommt ein Nutzungsvertrag über den Dienst des 
 (5) Während der Testphase kann der Kunde alle Funktionen des Dienstes kostenfrei nutzen. Ist der Kunde vom Dienst des Anbieters überzeugt, kann er jederzeit in einen kostenpflichtigen Tarif wechseln.
 
 (6) Nach Ablauf der Testphase wird der Zugang zum Dienst gesperrt. Eine weitere Nutzung des Dienstes ist nur nach Abschluss eines kostenpflichtigen Tarifs möglich.
-Der Kundenaccount inkl. aller Daten wird nach Ablauf von 4 Wochen gelöscht, wenn kein kostenpflichtiger Vertrag abgeschlossen wird.
+Der Kundenaccount inkl. aller Daten wird nach Ablauf von spätestens 4 Wochen gelöscht, wenn kein kostenpflichtiger Vertrag abgeschlossen wird. 
+
+Hat sich der Kunde während der Testphase zu keinem Zeitpunkt in der Zeiterfassung angemeldet und wurden zudem keine Zeiterfassungseinträge angelegt, ist der Anbieter berechtigt, den Kundenaccount einschließlich aller gespeicherten Daten unmittelbar nach Ablauf der Testphase zu löschen. 
+In diesem Fall ist erkennbar, dass der Kunde die vertragstypische Hauptleistung des Dienstes nicht in Anspruch genommen hat; der Anbieter ist daher im Sinne des Grundsatzes der Datenminimierung gemäß DSGVO zur frühzeitigen Löschung berechtigt.
 
 (7) Für die mit dem Anbieter geschlossenen Verträge besteht kein Verbraucher-Widerrufsrecht, da der Anbieter seinen Dienst ausschließlich gegenüber Unternehmern anbietet.
 
@@ -321,6 +324,9 @@ Die vorstehenden Bestimmungen gelten entsprechend für den Fall, dass sich Regel
 
 ### Änderungsverlauf
 
+**Version 1.6 (03. Mai 2026)**
+- § 3 (6): Vorzeitige Löschung ungenutzter Testaccounts
+
 **Version 1.5 (06. Januar 2026)**
 - § 5 (1): Klarstellung des Vertragsbeginns
 - § 7 (2): Ergänzung der Informationspflicht bei Änderung von Unterauftragsverarbeitern
@@ -436,8 +442,11 @@ With the creation of the customer account, a usage contract for the service of t
 
 (5) During the test phase, the customer can use all functions of the service free of charge. If the Customer is convinced of the Provider's service, he may switch to a chargeable tariff at any time.
 
-(6) After expiration of the test phase, access to the service will be blocked. Further use of the service is only possible after concluding a paid tariff.
-The customer account including all data will be deleted after 4 weeks if no paid contract is concluded.
+(6) Upon expiry of the trial period, access to the Service will be suspended. Continued use of the Service is only possible upon conclusion of a paid subscription.
+The customer account, including all data, will be deleted no later than four (4) weeks after the end of the trial period if no paid contract is concluded.
+
+If, during the trial period, the customer has at no time logged into the time tracking system and no time entries have been created, the provider is entitled to delete the customer account, including all stored data, immediately upon expiry of the trial period.
+In such case, it is evident that the customer has not made use of the contractual core functionality of the Service; the provider is therefore entitled to delete unused accounts at an early stage in accordance with the principle of data minimization under the GDPR.
 
 (7) There is no consumer right of revocation for the contracts concluded with the Provider, as the Provider offers its service exclusively to entrepreneurs.
 
@@ -690,6 +699,9 @@ Instead, the parties shall work towards agreeing on a substitute provision which
 The above provisions shall apply mutatis mutandis in the event that provisions prove to be incomplete.
 
 ### Change history
+
+**Version 1.6 (03. May 2026)**
+- § 3 (6): Early deletion of unused trial accounts 
 
 **Version 1.5 (06. January 2026)**
 - § 5 (1): Clarified the contract start date
