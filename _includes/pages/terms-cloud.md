@@ -154,7 +154,7 @@ Maßgeblich für die Verzugsberechnung ist die Gutschrift des Rechnungsbetrages 
 
 ## § 7. Zustimmung zur Übertragung der Rechte und Pflichten des Anbieters auf Dritte
 
-(1) Der Anbieter ist berechtigt, Rechte und Pflichten aus dem Vertragsverhältnis ganz oder teilweise auf Dritte zu übertragen.  Dies gilt insbesondere für den Fall, dass der Dienst auf einen anderen Betreiber übertragen wird.
+(1) Der Anbieter ist berechtigt, Rechte und Pflichten aus dem Vertragsverhältnis ganz oder teilweise auf Dritte zu übertragen. Dies gilt insbesondere für den Fall, dass der Dienst auf einen anderen Betreiber übertragen wird.
 Der Anbieter wird dem Kunden eine solche Änderung in Textform (E-Mail reicht) bekanntgeben. Der Kunde stimmt einer Übertragung des Vertrages bereits jetzt vorab zu.
 
 (2) Der Anbieter ist berechtigt, seine Leistungsverpflichtungen aus dem Nutzungsvertrag auf Dritte zu übertragen oder Subunternehmer einzuschalten und Forderungen gegenüber dem Kunden an Dritte zu übertragen. Gegenüber dem Kunden bleibt der Anbieter dabei für die vertragsgemäße Leistungserbringung verantwortlich.
