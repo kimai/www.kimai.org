@@ -89,6 +89,8 @@ Wenn die SSL- bzw. TLS-Verschlüsselung aktiviert ist, können die Daten, die Si
 Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung und ggf. ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten.
 Hierzu sowie zu weiteren Fragen zum Thema personenbezogene Daten können Sie sich jederzeit unter der im Impressum angegebenen Adresse an uns wenden.
 
+Personenbezogene Daten werden gelöscht, wenn sie für die Zwecke der Verarbeitung nicht mehr erforderlich sind, insbesondere wenn während einer Testphase keine Nutzung des Dienstes erfolgt.
+
 ## Datenerfassung auf unserer Website
 
 **Cookies**
@@ -311,6 +313,8 @@ If SSL or TLS encryption is activated, the data you transfer to us cannot be rea
 
 As permitted by law, you have the right to be provided at any time with information free of charge about any of your personal data that is stored as well as its origin, the recipient and the purpose for which it has been processed. 
 You also have the right to have this data corrected, blocked or deleted. You can contact us at any time using the address given in our legal notice if you have further questions on the topic of personal data.
+
+Personal data will be deleted when it is no longer necessary for the purposes of processing, particularly if the service is not used during a trial period.
 
 ## Data collection 
 
