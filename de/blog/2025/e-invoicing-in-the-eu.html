@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#4188c9">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="robots" content="index,follow">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+<title>E-Invoicing in der EU: Ist Ihr Unternehmen bereit? – Kimai</title>
+<link type="application/atom+xml" rel="alternate" href="/de/feed.xml" title="Kimai Time-Tracking" />
+<meta property="og:locale" content="de">
+<meta property="og:type" content="website">
+<meta property="og:title" content="E-Invoicing in der EU: Ist Ihr Unternehmen bereit?">
+<meta property="og:image" content="https://www.kimai.org/images/blog/de/e-invoicing-eu.webp">
+<meta property="og:description" content="">
+<link rel="alternate" hreflang="en" href="https://www.kimai.org/en/blog/2025/e-invoicing-in-the-eu">
+<link rel="alternate" hreflang="de" href="https://www.kimai.org/de/blog/2025/e-invoicing-in-the-eu">
+<link href="/assets/build/main.css?v7" rel="stylesheet" />
+
+</head>
+<body class="">
+
+<main class="page-wrapper">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand-lg    bg-light navbar-sticky">
+    <div class="container px-3">
+        <a href="/de/" class="navbar-brand pe-3">
+        <img src="/images/kimai_logo_48.webp" style="height:36px;width:36px;" alt="Kimai – Open-Source Zeiterfassung"> Kimai
+        </a>
+        <div id="navbarNav" class="offcanvas offcanvas-end">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title">Menu</h5>
+                <button type="button" class="btn-close " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Produkt</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/de/about.html" class="dropdown-item">Über Kimai</a></li>
+                            <li><a href="/de/open-source-community" class="dropdown-item">Open Source</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="/de/integrations" class="dropdown-item">Apps und Integrationen</a></li>
+                            <li><a href="/de/demo.html" class="dropdown-item">Demo</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="/de/blog/" class="dropdown-item">Blog</a></li>
+                            <li><a href="/de/support.html" class="dropdown-item">Support</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Cloud</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/de/pricing" class="dropdown-item">Preise</a></li>
+                            <li><a href="/de/changelog" class="dropdown-item">Änderungen</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Selber hosten</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/de/download.html" class="dropdown-item">Installation</a></li>
+                            <li><a href="/de/store/" class="dropdown-item">Plugins</a></li>
+                            <li><a href="https://github.com/kimai/kimai/discussions" target="_blank" class="dropdown-item">Forum <i class="bx bx-link-external me-2"></i></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Dokumentation</a>
+                        <ul class="dropdown-menu">
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-manual.html" class="dropdown-item">
+                                <i class="bx bx-book me-2"></i>
+                                
+                                Benutzerhandbuch
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/cloud.html" class="dropdown-item">
+                                <i class="bx bx-cloud me-2"></i>
+                                
+                                Cloud
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-on-premise.html" class="dropdown-item">
+                                <i class="bx bx-server me-2"></i>
+                                
+                                Selber hosten
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-developer.html" class="dropdown-item">
+                                <i class="bx bx-code-alt me-2"></i>
+                                
+                                Entwickler
+                            </a></li>
+                        
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="pe-lg-1 ms-auto me-2">
+            
+
+
+
+<a href="https://www.kimai.cloud/de/auth/" class="btn btn-sm fs-sm d-none d-md-inline-flex me-2 btn-outline-secondary">Anmelden</a>
+
+            <a href="https://www.kimai.cloud/de/auth/registrierung" class="btn btn-success btn-sm fs-sm d-inline-flex">Kostenlos starten</a>
+
+        </div>
+        <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</header>
+
+
+    
+
+<section class="container mt-4 pt-lg-2 pb-3">
+    <h1 class="pb-3" style="max-width: 970px;">E-Invoicing in der EU: Ist Ihr Unternehmen bereit?</h1>
+    <div class="d-flex flex-md-row flex-column align-items-md-center justify-content-md-between mb-3">
+        <div class="d-flex align-items-center flex-wrap text-muted mb-md-0 mb-4">
+            <div class="fs-xs border-end pe-3 me-3 mb-2">
+                
+                    
+                    <span class="badge bg-faded-primary text-primary fs-base">General</span>
+                
+            </div>
+            <div class="fs-sm pe-3 me-3 mb-2">10 Nov 2025</div>
+        </div>
+        <div class="d-flex align-items-center position-relative ps-md-3 pe-lg-5 mb-2">
+            <img src="/images/valentina.webp" class="rounded-circle" width="60" alt="Avatar">
+            <div class="ps-3">
+                <h6 class="mb-1">Valentina</h6>
+                
+                <a href="https://www.linkedin.com/in/ivalentina/" target="_blank" rel="author" class="fw-semibold stretched-link">@ivalentina</a>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="container mb-5 pb-2 py-mg-4">
+    <div class="row gy-4">
+        <div class="col-lg-9">
+            <p>Wenn Sie als Unternehmer oder Selbständiger in einem EU-Land tätig sind, ist es entscheidend, dass Sie E-Invoicing verstehen und wissen, ob Sie compliant sind.
+Lesen Sie unseren Leitfaden, um herauszufinden, wann Sie sich vorbereiten sollten und wie Sie die richtige Lösung finden.</p>
+
+<h3 id="die-rechtliche-grundlage-warum-e-invoicing-in-der-eu-zur-pflicht-wird">Die rechtliche Grundlage: Warum E-Invoicing in der EU zur Pflicht wird</h3>
+
+<p>Fangen wir mit dem Gesetz an, denn nichts klingt überzeugender als eine neue Richtlinie, wenn es um eine „dringende geschäftliche Priorität” geht.
+Die EU-Richtlinie 2014/55/EU verpflichtet alle Unternehmen und öffentlichen Einrichtungen in den Mitgliedstaaten, elektronische Rechnungen zu empfangen und zu verarbeiten, die dem europäischen Standard EN 16931 entsprechen.
+Dies bildet die Grundlage für E-Invoicing bei allen Transaktionen zwischen Unternehmen und der öffentlichen Hand.</p>
+
+<p>Aber es kommt noch mehr! Die EU-Initiative „Mehrwertsteuer im digitalen Zeitalter” (ViDA) wird die Anforderungen weiter verschärfen.
+Unter ViDA wird E-Invoicing für alle grenzüberschreitenden B2B-Transaktionen innerhalb der EU verpflichtend, und Rechnungen müssen innerhalb von zwei Werktagen nach Ausstellung an die zuständige Steuerbehörde gemeldet werden.
+Das bedeutet: Papierrechnungen werden bald die Ausnahme statt die Regel sein, und die Mitgliedstaaten können eigene Pflichten für das E-Invoicing bei inländischen Transaktionen einführen – ohne Brüssel um Erlaubnis zu fragen.</p>
+
+<p>Unternehmen werden daher strukturierte, maschinenlesbare E-Rechnungen erstellen und Transaktionsdaten nahezu in Echtzeit an Steuerbehörden melden müssen.
+Ziel dieses Wandels ist es, ein standardisiertes, interoperables System für die digitale Rechnungsstellung in der EU zu schaffen, den Verwaltungsaufwand zu reduzieren und den grenzüberschreitenden Handel zu erleichtern.</p>
+
+<p><em>Kurzfassung für alle, die sie brauchen:</em></p>
+
+<ul>
+  <li>B2B E-Invoicing wird schnell zur Pflicht, mit nationalen Einführungen, die sich vor dem EU-weiten ViDA-Stichtag beschleunigen</li>
+  <li>Ihr Unternehmen benötigt ein Tool zur Erstellung strukturierter, maschinenlesbarer E-Rechnungen</li>
+</ul>
+
+<h3 id="was-ist-e-invoicing-und-warum-ist-es-wichtig">Was ist E-Invoicing und warum ist es wichtig?</h3>
+
+<p>E-Invoicing ist der Austausch von Rechnungen in einem strukturierten digitalen Format (denken Sie an XML, nicht nur PDFs),
+das eine automatische Verarbeitung sowohl durch Unternehmen als auch durch Steuerbehörden ermöglicht.
+Das sorgt für schnellere Zahlungen, weniger Fehler und – am wichtigsten – hält Sie auf der richtigen Seite des Gesetzes.</p>
+
+<p>Warum sollte Sie das als Unternehmer interessieren?</p>
+
+<ul>
+  <li>Gesetzliche Anforderung: Nichteinhaltung kann zu Bußgeldern führen (und niemand möchte einen Brief vom Finanzamt)</li>
+  <li>Effizienz: Auf Wiedersehen manuelle Eingabe, hallo schnellere Zahlungszyklen</li>
+  <li>Kosteneinsparungen: Kein Papier, keine Portokosten, keine Papierstaus mehr</li>
+  <li>Compliance: Jederzeit prüfbereit</li>
+</ul>
+
+<h3 id="wer-muss-sich-vorbereiten">Wer muss sich vorbereiten?</h3>
+
+<p>Wenn Sie andere Unternehmen (B2B) oder Behörden (B2G) in der EU in Rechnung stellen, sind Sie entweder bereits betroffen oder werden es bald sein.
+Auch wenn Ihr Land noch nicht auf den E-Invoicing-Abzug gedrückt hat: ViDA kommt für alle – beginnen Sie jetzt mit der Vorbereitung.</p>
+
+<p>E-Invoicing-Regeln und Zeitpläne unterscheiden sich in der EU. Hier ein kurzer Überblick für zehn Länder (Stand Oktober 2025) als Beispiele:</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Land</th>
+      <th>E-Invoicing-Pflicht &amp; Zeitplan</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Deutschland</td>
+      <td>E-Rechnungen empfangen (EN 16931) ab Jan. 2025 Pflicht; Ausstellungspflicht für Großunternehmen bis 2027, vollständig bis 2028</td>
+    </tr>
+    <tr>
+      <td>Österreich</td>
+      <td>B2G E-Invoicing verpflichtend; UBL, CII, ebInterface; PEPPOL unterstützt</td>
+    </tr>
+    <tr>
+      <td>Finnland</td>
+      <td>Obligatorisches B2G E-Invoicing seit 2019</td>
+    </tr>
+    <tr>
+      <td>Frankreich</td>
+      <td>Stufenweiser B2B-Rollout über PEPPOL/Chorus Pro; ab Jan. 2025 für mittlere Unternehmen gestartet, alle bis Sept. 2026</td>
+    </tr>
+    <tr>
+      <td>Italien</td>
+      <td>Obligatorisches B2B E-Invoicing seit 2019 über SdI; Kleinstunternehmen ab Jan. 2024 einbezogen</td>
+    </tr>
+    <tr>
+      <td>Spanien</td>
+      <td>B2B E-Invoicing-Pflicht über FACe-Plattform, 2024 gestartet</td>
+    </tr>
+    <tr>
+      <td>Portugal</td>
+      <td>B2G E-Invoicing für alle Unternehmen einschließlich KMU verpflichtend</td>
+    </tr>
+    <tr>
+      <td>Polen</td>
+      <td>Obligatorisches B2B E-Invoicing ab Feb. 2026 über das Nationale Elektronische Rechnungssystem (KSeF)</td>
+    </tr>
+    <tr>
+      <td>Griechenland</td>
+      <td>B2G E-Invoicing ab Juni 2024 verpflichtend (EN 16931); B2B-Pflicht ab Juli 2025 über myDATA erwartet</td>
+    </tr>
+    <tr>
+      <td>Belgien</td>
+      <td>B2B E-Invoicing für inländische Transaktionen ab Jan. 2026 verpflichtend; Echtzeit-Reporting bis 2028</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Wichtiger Hinweis: Viele andere EU-Länder haben freiwillige oder branchenspezifische E-Invoicing-Anforderungen. Überprüfen Sie immer Ihre lokalen Vorschriften für die neuesten Details!</em></p>
+
+<p><em>Diese Tabelle wurde im Oktober 2025 erstellt und gegengeprüft; spätere Änderungen sind möglich</em></p>
+
+<h3 id="so-werden-sie-compliant-und-behalten-den-verstand">So werden Sie compliant (und behalten den Verstand)</h3>
+
+<p>Sie möchten Bußgelder vermeiden und Ihren Buchhalter glücklich halten? Das sollte jeder kluge Unternehmer tun:</p>
+
+<ul>
+  <li>Die richtige E-Invoicing-Lösung recherchieren und wählen: Weil niemand gern stundenlang Softwarefunktionen vergleicht und Nutzerbewertungen liest – aber es trotzdem tun muss.</li>
+  <li>Empfänger-Zustimmung einholen: Ja, Sie müssen noch sicherstellen, dass Ihre Kunden mit E-Rechnungen einverstanden sind – zumindest bis ViDA es universell macht.</li>
+  <li>Ihr Team testen und schulen: Nichts signalisiert „reibungsloser Übergang” wie ein Team, das weiß, was eine XML-Datei ist (und keine Angst hat, sie zu benutzen).</li>
+  <li>Datenintegrität und Sicherheit gewährleisten: Cyberkriminelle lieben Rechnungen. Stellen Sie sicher, dass Ihre Daten sicher gespeichert sind – für die unvermeidlichen Prüfungen.</li>
+  <li>Nationale Standards einhalten: EN 16931 ist die EU-Grundlage, aber Ihr Land hat möglicherweise eigene Besonderheiten. Natürlich.</li>
+</ul>
+
+<h3 id="kimais-neues-e-invoicing-feature-compliance-leicht-gemacht">Kimais neues E-Invoicing-Feature: Compliance leicht gemacht</h3>
+
+<p>Mit dem <a href="/de/store/invoice-bundle.html">neuen Plugin</a> und bald auch in der Cloud unterstützt Kimai E-Invoicing – damit Sie sich keine Gedanken mehr über Rechnungsformate machen müssen und sich auf Ihr Geschäft konzentrieren können.</p>
+
+<figure class="d-block figure mb-3" style="max-width: 100%">
+    <img src="/images/blog/e-invoicing-eu-profiles.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
+    <figcaption class="figure-caption">E-Rechnungs-Profile</figcaption>
+</figure>
+
+<p>Die unterstützten Profile sind:</p>
+<ul>
+  <li>EN16931 - CII (XML)</li>
+  <li>EN16931 - UBL (XML)</li>
+  <li>XRechnung 3.0 - CII (XML)</li>
+  <li>XRechnung 3.0 - UBL (XML)</li>
+  <li>Zugferd (PDF/A Hybrid mit eingebettetem XML)</li>
+  <li>Factur-X (PDF/A Hybrid mit eingebettetem XML)</li>
+</ul>
+
+<p>Wesentliche Funktionen für EU-Unternehmen:</p>
+
+<ul>
+  <li>Automatische E-Rechnungserstellung: Rechnungen als PDF per Plugin oder in Kimai Cloud erstellen; die erforderlichen maschinenlesbaren Daten werden automatisch erstellt und/oder hinzugefügt</li>
+  <li>Konfigurierbare Rechnungsvorlagen: Rechnungen an länderspezifische Anforderungen und Kundenpräferenzen anpassen, benutzerdefinierte Felder wie Standort, Pausen hinzufügen, im gewünschten Format exportieren</li>
+  <li>Mehrsprachige und Mehrwährungsunterstützung: Ideal für grenzüberschreitendes Geschäft</li>
+</ul>
+
+<p>Zusätzliche Funktionen für E-Invoicing:</p>
+
+<p>Kimai startet mit einem minimalen Funktionsumfang, der bereits die meisten Alltagsanwendungen abdecken sollte.
+Deshalb können Sie derzeit (nur) einige typische Zahlungsarten und Ihr Zahlungskonto konfigurieren:</p>
+
+<figure class="d-block figure mb-3" style="max-width: 100%">
+    <img src="/images/blog/e-invoicing-eu-setting.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
+    <figcaption class="figure-caption">E-Rechnungs-Einstellungen</figcaption>
+</figure>
+
+<p>Unterstützte Zahlungsarten und ihre offiziellen IDs:</p>
+<ul>
+  <li>58: SEPA-Überweisung</li>
+  <li>59: SEPA-Lastschrift</li>
+</ul>
+
+<h3 id="fazit">Fazit</h3>
+
+<p>E-Invoicing ist gekommen, um zu bleiben, und wird für Unternehmen in der EU schnell zur Pflicht.
+Mit Kimais neuen E-Invoicing-Funktionen können Sie Compliance vereinfachen, Zeit sparen und sich auf das konzentrieren, was Sie am besten können: Ihr Unternehmen führen (und vielleicht sogar genießen).
+On-Premise-Nutzer können <a href="/de/store/invoice-bundle.html">das Plugin im Store erwerben</a>.</p>
+
+<p>Bereit mitzumachen? Testen Sie Kimai Cloud noch heute kostenlos und machen Sie E-Invoicing zu einer Sorge weniger.</p>
+
+        </div>
+        <div class="col-lg-3 position-relative">
+            <div class="sticky-top ms-xl-5 ms-lg-4 ps-xxl-4" style="top: 105px !important;">
+                <h6>Diesen Beitrag teilen:</h6>
+                <div class="mb-4 pb-lg-3">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.kimai.org/de/blog/2025/e-invoicing-in-the-eu&title=E-Invoicing in der EU: Ist Ihr Unternehmen bereit?" class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2" aria-label="LinkedIn">
+                        <i class="bx bxl-linkedin"></i>
+                    </a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.kimai.org/de/blog/2025/e-invoicing-in-the-eu" class="btn btn-icon btn-secondary btn-facebook me-2 mb-2" aria-label="Facebook">
+                        <i class="bx bxl-facebook"></i>
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?text=https://www.kimai.org/de/blog/2025/e-invoicing-in-the-eu" class="btn btn-icon btn-secondary btn-twitter me-2 mb-2" aria-label="Twitter">
+                        <i class="bx bxl-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    
+<section class="container mb-5">
+    <div class="position-relative bg-dark rounded-3 overflow-hidden px-3 py-5">
+        <span class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(255, 255, 255, .05)"></span>
+        <div class="position-relative zindex-5 text-center my-xl-3 py-1 py-md-4 py-lg-5">
+            <p class="lead text-light opacity-70 mb-3">Bereit loszulegen?</p>
+            <h2 class="h1 text-light pb-3 pb-lg-0 mb-lg-5">Starte jetzt damit Zeiten zu erfassen</h2>
+            <a href="https://www.kimai.cloud/de/auth/registrierung" class="btn btn-success btn-lg">Kostenlos starten</a>
+
+        </div>
+    </div>
+</section>
+
+
+
+</main>
+
+<footer class="footer bg-dark pt-5 pb-4">
+    <div class="container pt-1 pt-md-3 pt-lg-4 pt-xl-5">
+        <div class="row">
+            <div class="col-md-5 col-xl-4 mb-4 mb-md-5 mb-lg-0">
+                <div class="d-flex align-items-center pb-3 mb-1">
+                    <div class="navbar-brand text-white p-0 pe-1 me-0">
+                        Kimai
+                    </div>
+                    <hr class="vr mt-2 mx-3" style="height: 26px;">
+                    <div class="text-white fw-semibold ps-1">#1 Open-Source Zeiterfassung</div>
+                </div>
+                <p class="text-body fs-sm pb-1 pb-md-2 pb-lg-2 mb-2">
+                    Zeiterfassung leicht gemacht. Eine Open-Source-Lösung für Teams jeder Größe - selbst gehostet oder als SaaS.
+                </p>
+                <div class="d-flex flex-column flex-sm-row flex-lg-column align-items-sm-center align-items-lg-start justify-content-between pb-1 pb-md-2 pb-lg-3 mb-3">
+                    <div class="position-relative">
+                        <div class="dropdown">
+                            <button type="button" class="form-select" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-globe top-50 start-0 text-body me-2"></i>
+                                Deutsch
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/ca/" class="dropdown-item" title="Kimai - Seguidor de temps de codi obert">Català</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/cs/" class="dropdown-item" title="Kimai - Open Source sledování času">Čeština</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/de/" class="dropdown-item active" title="Kimai – Open-Source Zeiterfassung">Deutsch</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/en/" class="dropdown-item" title="Kimai - Open Source time-tracker">English</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/es/" class="dropdown-item" title="Kimai - Tracker de tiempo abierto">Español</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/fr/" class="dropdown-item" title="Kimai - Suivi du temps à code ouvert">Français</a>
+                                
+                                    <a dir="rtl" href="https://www.kimai.co.il" class="dropdown-item" title="Kimai - מעקב שעות בקוד פתוח">עברית</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/hr/" class="dropdown-item" title="Kimai – Program otvorenog koda za evidentiranje vremena">Hrvatski</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/it/" class="dropdown-item" title="Kimai: time-tracker open source">Italiano</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/nl/" class="dropdown-item" title="Kimai - Open Source tijdregistratie">Dutch</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/pl/" class="dropdown-item" title="Kimai - Otwarte oprogramowanie do śledzenia czasu">Polski</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/pt/" class="dropdown-item" title="Kimai - Rastreador de tempo de código aberto">Português</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/pt_BR/" class="dropdown-item" title="Kimai - Rastreador de tempo de código aberto">Português (Brasil)</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/ru/" class="dropdown-item" title="Kimai - регистратор времени с открытым исходным кодом">Русский</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/sk/" class="dropdown-item" title="Kimai - Open Source sledovanie času">Slovenčina</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/sv/" class="dropdown-item" title="Kimai - öppen källkod tidsspårare">Svenska</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/ta/" class="dropdown-item" title="கிமாய் - திறந்த மூல நேர -கண்காணிப்பு">தமிழ்</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/uk/" class="dropdown-item" title="Kimai — реєстратор часу з відкритим сирцевим кодом">Українська</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/zh_Hans/" class="dropdown-item" title="Kimai - 开源时间跟踪器">中文（中国）</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.tw" class="dropdown-item" title="Kimai —— 開放源始碼的工時追蹤工具">中文（繁體）</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-md-7 offset-xl-1">
+                <div id="footer-links" class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="tools" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/de/features.html" class="nav-link fs-sm fw-medium px-0 py-1">Funktionen</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/stories/" class="nav-link fs-sm fw-medium px-0 py-1">Erfolgsgeschichten</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/reviews" class="nav-link fs-sm fw-medium px-0 py-1">Bewertungen</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Presse & Medien</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">Rabatt-Codes</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/newsletter" class="nav-link fs-sm fw-medium px-0 py-1">Newsletter</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="landing-kimai-for" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                
+                                
+                                <li class="nav-item">
+                                    <a href="/en/agency-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Agency">Agenturen</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/consultants-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Consultants">Berater</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/freelancers-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Freelancers">Freiberufler</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/software-developers-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Software Developers">Softwareentwickler</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/de/non-profit" class="nav-link fs-sm fw-medium px-0 py-1">Gemeinnützige Organisationen</a>
+                                </li>
+                                <li class="nav-item">
+                                    
+                                    <a href="/en/industry" class="nav-link fs-sm fw-medium px-0 py-1">Weitere Branchen</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="footer-cmp" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/de/alternatives/" class="nav-link fs-sm fw-medium px-0 py-1">Vergleiche Zeiterfassungen</a>
+                                </li>
+                                
+                                
+                                
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternatives/clockify" class="nav-link fs-sm fw-medium px-0 py-1" title="Vergleiche Kimai mit Clockify">Clockify Alternative</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternatives/clockodo" class="nav-link fs-sm fw-medium px-0 py-1" title="Vergleiche Kimai mit Clockodo">Clockodo Alternative</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternatives/harvest" class="nav-link fs-sm fw-medium px-0 py-1" title="Vergleiche Kimai mit Harvest">Harvest Alternative</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternatives/toggl" class="nav-link fs-sm fw-medium px-0 py-1" title="Vergleiche Kimai mit toggl track">toggl track Alternative</a>
+                                    </li>
+                                
+                                
+                                <li class="nav-item">
+                                    <a href="/de/time-tracking-terms" class="nav-link fs-sm fw-medium px-0 py-1">Zeiterfassungsbegriffe</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="d-md-flex align-items-center justify-content-between pt-sm-2 pt-md-4 pt-lg-5 pb-2 mt-4 ">
+    <ul class="nav order-md-1 ms-md-0 mb-3 mb-md-0">
+        <li class="nav-item">
+            <a href="/de/site-notice.html" class="nav-link fs-sm fw-medium">Impressum</a>
+        </li>
+        <li class="nav-item">
+            <a href="/de/privacy-policy.html" class="nav-link fs-sm fw-medium">Datenschutz</a>
+        </li>
+        <li class="nav-item">
+            <a href="/de/terms-cloud.html" class="nav-link fs-sm fw-medium">AGB</a>
+        </li>
+    </ul>
+    <div class="nav order-md-2 mb-3 mb-md-0">
+        
+    <a target="_blank" href="https://github.com/kimai/kimai" class="btn btn-icon btn-secondary btn-github rounded-circle me-3" aria-label="GitHub">
+        <i class="bx bxl-github"></i>
+    </a>
+
+    <a target="_blank" href="https://www.youtube.com/@kimai_org" class="btn btn-icon btn-secondary btn-youtube rounded-circle me-3" aria-label="YouTube">
+        <i class="bx bxl-youtube"></i>
+    </a>
+
+    <a target="_blank" href="https://www.linkedin.com/company/kimai-org/" class="btn btn-icon btn-secondary btn-linkedin rounded-circle me-3" aria-label="LinkedIn">
+        <i class="bx bxl-linkedin"></i>
+    </a>
+
+    <a target="_blank" href="https://www.instagram.com/kimai_org" class="btn btn-icon btn-secondary btn-instagram rounded-circle me-3" aria-label="Instagram">
+        <i class="bx bxl-instagram"></i>
+    </a>
+
+    <a target="_blank" href="https://www.facebook.com/kimai.time.tracker" class="btn btn-icon btn-secondary btn-facebook rounded-circle me-3" aria-label="Facebook">
+        <i class="bx bxl-facebook"></i>
+    </a>
+
+    <a target="_blank" href="https://phpc.social/@kimai" class="btn btn-icon btn-secondary btn-messenger rounded-circle me-3" aria-label="Mastodon">
+        <i class="bx bxl-mastodon"></i>
+    </a>
+
+
+    </div>
+    <ul class="nav order-md-3">
+        <li class="nav-item">
+            <a href="https://uptime.kimai.cloud/" target="_blank" class="nav-link fs-sm fw-medium">Status</a>
+        </li>
+    </ul>
+    
+</div>
+
+    </div>
+</footer>
+
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js?v1"></script>
+
+<script defer src="https://u.kimai.org/script.js" data-website-id="e26bef12-9527-43bc-83fd-660e237f3526"></script>
+
+</body>
+</html>

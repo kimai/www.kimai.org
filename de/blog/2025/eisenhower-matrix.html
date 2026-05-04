@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#4188c9">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="robots" content="index,follow">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+<title>Die Eisenhower-Matrix: Aufgaben meisterhaft priorisieren – Kimai</title>
+<link type="application/atom+xml" rel="alternate" href="/de/feed.xml" title="Kimai Time-Tracking" />
+<meta property="og:locale" content="de">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Die Eisenhower-Matrix: Aufgaben meisterhaft priorisieren">
+<meta property="og:image" content="https://www.kimai.org/images/blog/de/eisenhower-matrix.webp">
+<meta property="og:description" content="">
+<link rel="alternate" hreflang="en" href="https://www.kimai.org/en/blog/2025/eisenhower-matrix">
+<link rel="alternate" hreflang="de" href="https://www.kimai.org/de/blog/2025/eisenhower-matrix">
+<link href="/assets/build/main.css?v7" rel="stylesheet" />
+
+</head>
+<body class="">
+
+<main class="page-wrapper">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand-lg    bg-light navbar-sticky">
+    <div class="container px-3">
+        <a href="/de/" class="navbar-brand pe-3">
+        <img src="/images/kimai_logo_48.webp" style="height:36px;width:36px;" alt="Kimai – Open-Source Zeiterfassung"> Kimai
+        </a>
+        <div id="navbarNav" class="offcanvas offcanvas-end">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title">Menu</h5>
+                <button type="button" class="btn-close " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Produkt</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/de/about.html" class="dropdown-item">Über Kimai</a></li>
+                            <li><a href="/de/open-source-community" class="dropdown-item">Open Source</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="/de/integrations" class="dropdown-item">Apps und Integrationen</a></li>
+                            <li><a href="/de/demo.html" class="dropdown-item">Demo</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="/de/blog/" class="dropdown-item">Blog</a></li>
+                            <li><a href="/de/support.html" class="dropdown-item">Support</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Cloud</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/de/pricing" class="dropdown-item">Preise</a></li>
+                            <li><a href="/de/changelog" class="dropdown-item">Änderungen</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Selber hosten</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/de/download.html" class="dropdown-item">Installation</a></li>
+                            <li><a href="/de/store/" class="dropdown-item">Plugins</a></li>
+                            <li><a href="https://github.com/kimai/kimai/discussions" target="_blank" class="dropdown-item">Forum <i class="bx bx-link-external me-2"></i></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Dokumentation</a>
+                        <ul class="dropdown-menu">
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-manual.html" class="dropdown-item">
+                                <i class="bx bx-book me-2"></i>
+                                
+                                Benutzerhandbuch
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/cloud.html" class="dropdown-item">
+                                <i class="bx bx-cloud me-2"></i>
+                                
+                                Cloud
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-on-premise.html" class="dropdown-item">
+                                <i class="bx bx-server me-2"></i>
+                                
+                                Selber hosten
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-developer.html" class="dropdown-item">
+                                <i class="bx bx-code-alt me-2"></i>
+                                
+                                Entwickler
+                            </a></li>
+                        
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="pe-lg-1 ms-auto me-2">
+            
+
+
+
+<a href="https://www.kimai.cloud/de/auth/" class="btn btn-sm fs-sm d-none d-md-inline-flex me-2 btn-outline-secondary">Anmelden</a>
+
+            <a href="https://www.kimai.cloud/de/auth/registrierung" class="btn btn-success btn-sm fs-sm d-inline-flex">Kostenlos starten</a>
+
+        </div>
+        <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</header>
+
+
+    
+
+<section class="container mt-4 pt-lg-2 pb-3">
+    <h1 class="pb-3" style="max-width: 970px;">Die Eisenhower-Matrix: Aufgaben meisterhaft priorisieren</h1>
+    <div class="d-flex flex-md-row flex-column align-items-md-center justify-content-md-between mb-3">
+        <div class="d-flex align-items-center flex-wrap text-muted mb-md-0 mb-4">
+            <div class="fs-xs border-end pe-3 me-3 mb-2">
+                
+                    
+                    <span class="badge bg-faded-primary text-primary fs-base">General</span>
+                
+            </div>
+            <div class="fs-sm pe-3 me-3 mb-2">12 Oct 2025</div>
+        </div>
+        <div class="d-flex align-items-center position-relative ps-md-3 pe-lg-5 mb-2">
+            <img src="/images/valentina.webp" class="rounded-circle" width="60" alt="Avatar">
+            <div class="ps-3">
+                <h6 class="mb-1">Valentina</h6>
+                
+                <a href="https://www.linkedin.com/in/ivalentina/" target="_blank" rel="author" class="fw-semibold stretched-link">@ivalentina</a>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="container mb-5 pb-2 py-mg-4">
+    <div class="row gy-4">
+        <div class="col-lg-9">
+            <p>Ihr Kalender ist mit Back-to-Back-Meetings vollgepackt.
+Dringende Nachrichten unterbrechen ständig Ihre Versuche, sich auf wichtige Projekte zu konzentrieren.
+Trotz langer Arbeitszeiten bleiben kritische Aufgaben unerledigt.
+Das ist die alltägliche Herausforderung bei der Verwaltung konkurrierender Prioritäten in der heutigen Arbeitswelt.
+Die Eisenhower-Matrix bietet eine Lösung – ein bewährtes Entscheidungsrahmenwerk, das Ihnen hilft, zwischen dringenden Aufgaben und wichtiger Arbeit zu unterscheiden, damit Sie Ihre Zeit dort einsetzen können, wo sie wirklich zählt.</p>
+
+<h2 id="was-ist-die-eisenhower-matrix">Was ist die Eisenhower-Matrix?</h2>
+
+<p>Die Eisenhower-Matrix, auch als Dringlichkeits-Wichtigkeits-Matrix bekannt, ist ein einfaches, aber wirkungsvolles Priorisierungsrahmenwerk, das Ihnen hilft zu entscheiden, was Ihre Aufmerksamkeit verdient und was nicht.
+Benannt nach Präsident Dwight D. Eisenhower, der bekanntlich sagte: „Was wichtig ist, ist selten dringend, und was dringend ist, ist selten wichtig”, unterteilt diese Methode Ihre Aufgaben anhand von zwei Kriterien in vier Quadranten: Dringlichkeit und Wichtigkeit.</p>
+
+<p>Stellen Sie es sich als Filter für Ihre To-do-Liste vor.
+Anstatt alles als gleich kritisch zu behandeln (Spoiler: ist es nicht), kategorisieren Sie Aufgaben, um klügere Entscheidungen darüber zu treffen, wo Ihre Zeit tatsächlich hingeht.</p>
+
+<h2 id="die-vier-quadranten-erklärt">Die vier Quadranten erklärt</h2>
+
+<p><strong>Quadrant 1: dringend und wichtig (Zuerst erledigen)</strong></p>
+
+<p>Das sind echte Krisen und Fristen, die sofortige Aufmerksamkeit erfordern.
+Zum Beispiel: Serverabstürze, Kundennotfälle, kritische Fristen oder dringende Teamkonflikte.</p>
+
+<p>Die Falle? Ausschließlich in diesem Quadranten zu leben führt zu Burnout.
+Wenn sich alles wie eine Krise anfühlt, stimmt etwas mit Ihrem Planungsprozess nicht.</p>
+
+<p><strong>Quadrant 2: wichtig, aber nicht dringend (Einplanen)</strong></p>
+
+<p>Hier geschieht die Magie. Strategische Planung, Beziehungsaufbau, Kompetenzentwicklung, vorausschauende Wartung und langfristige Projekte leben hier.
+Diese Aufgaben schreien nicht nach Aufmerksamkeit, aber sie bestimmen Ihren zukünftigen Erfolg.</p>
+
+<p>Die Realität? Die meisten Menschen vernachlässigen Quadrant 2, weil nichts brennt.
+Doch genau dieser Quadrant unterscheidet reaktive Mitarbeiter von proaktiven Führungskräften.</p>
+
+<p><strong>Quadrant 3: dringend, aber nicht wichtig (Delegieren)</strong></p>
+
+<p>Diese Aufgaben erzeugen die Illusion von Produktivität.
+Sie fühlen sich dringend an – die pingenden Benachrichtigungen, die als Meetings getarnten Unterbrechungen, die „schnellen” Anfragen, die nicht Ihre Verantwortung sind.
+Aber sie bringen Ihre Ziele nicht voran.</p>
+
+<p>Die Lösung? Delegieren Sie sie.
+Wenn Sie Teammanager oder Unternehmer sind, ist das Ihre Chance, Ihr Team zu stärken und gleichzeitig Ihre Zeit zurückzugewinnen.</p>
+
+<p><strong>Quadrant 4: weder dringend noch wichtig (Eliminieren)</strong></p>
+
+<p>Endloses Scrollen durch Slack-Kanäle, Meetings beiwohnen, die eine E-Mail hätten sein können, perfektionistisches Bearbeiten ohne Mehrwert.
+Diese Aufgaben verdienen eine Behandlung: Löschen.</p>
+
+<h2 id="so-wenden-sie-die-eisenhower-matrix-wirklich-an">So wenden Sie die Eisenhower-Matrix wirklich an</h2>
+
+<p><strong>Schritt 1: Alle Aufgaben auflisten</strong></p>
+
+<p>Listen Sie alles auf, was gerade Ihre Aufmerksamkeit beansprucht.
+Einschließlich der E-Mail, die Sie meiden, des Projektvorschlags, der Teamüberprüfung und ja, auch des gemeinsamen Laufwerks, in dem niemand etwas findet.</p>
+
+<p><strong>Schritt 2: Ehrlich bei der Kategorisierung sein</strong></p>
+
+<p>Hier scheitern die meisten Menschen. Sie überreden sich, dass alles sowohl dringend ALS AUCH wichtig ist. Das stimmt nicht. Fragen Sie sich:</p>
+
+<ul>
+  <li>Was passiert, wenn ich das heute nicht tue? Diese Woche?</li>
+  <li>Stimmt das mit meinen Hauptzielen überein?</li>
+  <li>Bin ich die einzige Person, die das tun kann?</li>
+  <li>Würde das in 6 Monaten noch eine Rolle spielen?</li>
+</ul>
+
+<p><strong>Schritt 3: Nach Quadranten handeln</strong></p>
+
+<ul>
+  <li><strong>Quadrant 1:</strong> Sofort Zeit blockieren. Diese Aufgaben können wirklich nicht warten.</li>
+  <li><strong>Quadrant 2:</strong> Konkrete Zeitblöcke im Kalender einplanen. Behandeln Sie diese Termine mit sich selbst genauso ernst wie Kundenmeetings. Das ist Ihr Wettbewerbsvorteil.</li>
+  <li><strong>Quadrant 3:</strong> Delegieren mit klaren Anweisungen. Für Unternehmer und Teammanager ist effektives Delegieren nicht nur hilfreich – es ist essenziell für das Wachstum.</li>
+  <li><strong>Quadrant 4:</strong> Löschen, auf unbestimmte Zeit verschieben oder automatisieren. Seien Sie konsequent. Ihre Zeit ist Ihre wertvollste Ressource.</li>
+</ul>
+
+<p>Für Ihre ersten Tage mit der Eisenhower-Matrix: Drucken Sie diese Vorlage aus, schreiben Sie Ihre Aufgaben auf und kategorisieren Sie sie.</p>
+
+<figure class="d-block figure mb-3" style="max-width: 100%">
+    <img src="/images/blog/eisenhower-matrix-illustration.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
+    <figcaption class="figure-caption">Eisenhower-Matrix</figcaption>
+</figure>
+
+<h2 id="wo-die-meisten-menschen-scheitern">Wo die meisten Menschen scheitern</h2>
+
+<p><strong>Das „Alles ist dringend”-Syndrom</strong></p>
+
+<p>Wenn Ihr gesamtes Team jede Anfrage als dringend behandelt, brauchen Sie klare Grenzen. Legen Sie eindeutige Kriterien fest, was einen echten Notfall ausmacht.
+Setzen Sie Kommunikationsrichtlinien – nicht jede Frage braucht eine sofortige Slack-Antwort.</p>
+
+<p><strong>Die Delegationsangst</strong></p>
+
+<p>Viele Manager und Unternehmer haben Schwierigkeiten, Quadrant-3-Aufgaben zu delegieren, weil „es schneller geht, wenn ich es selbst mache”. Kurzfristig vielleicht.
+Langfristig bauen Sie einen Engpass mit sich selbst im Mittelpunkt.</p>
+
+<p><strong>Quadrant 2 unterschätzen</strong></p>
+
+<p>Strategische Arbeit hat keine eingebauten Fristen, daher ist es leicht, sie aufzuschieben.
+Aber Quadrant 2 zu vernachlässigen ist der Grund, warum Sie ständig im Feuerwehrmodus in Quadrant 1 sind.</p>
+
+<p><strong>Die Eisenhower-Matrix auf die nächste Stufe bringen</strong></p>
+
+<p>Wir freuen uns, dass Sie genug Motivation haben, einen weiteren Schritt zu wagen!
+Hier ist das Geheimnis, das die meisten Produktivitätsartikel nicht verraten:
+Aufgaben zu kategorisieren ist nur die halbe Miete.
+Um die Eisenhower-Matrix wirklich zu meistern, müssen Sie tracken, wie Sie Ihre Zeit tatsächlich verbringen – nicht nur, wie Sie es planen.</p>
+
+<p>Hier wird Zeiterfassung mit Tools wie Kimai zu Ihrer Stärke.</p>
+
+<p><strong>Ihre Kategorien in der Realität überprüfen</strong></p>
+
+<p>Sie haben diesen Bericht als „Wichtig, aber nicht dringend” eingestuft und 2 Stunden dafür eingeplant.
+Aber wenn Sie Ihre Zeit tracken, stellen Sie fest, dass er tatsächlich 4 Stunden dauerte – wegen ständiger Unterbrechungen.
+Sie können diese Zeitdaten nutzen, um Ihren Quadrant 2 besser zu schützen.</p>
+
+<p><strong>Versteckte Zeitdiebe identifizieren</strong></p>
+
+<p>Tracking zeigt die Lücke zwischen Wahrnehmung und Realität.
+Die „kurze” morgendliche E-Mail-Prüfung, von der Sie dachten, sie dauere 15 Minuten?
+Sie frisst tatsächlich eine Stunde Ihrer produktivsten Zeit.
+Die „kurzen” täglichen Stand-ups? Sie greifen in Ihre Fokuszeit ein.</p>
+
+<p><strong>Ihre Prioritäten beweisen</strong></p>
+
+<p>Für Unternehmer und Freelancer liefert Zeiterfassung konkrete Daten für Kundengespräche.
+Statt vager Diskussionen über „zu beschäftigt sein”, haben Sie Fakten: „Laut meinen Zeitdaten erforderte dieses Projekt 15 Stunden in Quadrant 1 und 2, während die Bearbeitung dringender Anfragen weitere 8 Stunden meiner Woche in Anspruch nahm.”</p>
+
+<p><strong>Team-Kapazitäten optimieren</strong></p>
+
+<p>Teammanager können Zeiterfassung nutzen, um zu analysieren, wie ihr Team die Zeit auf die vier Quadranten verteilt.
+Stecken Ihre besten Mitarbeiter in Quadrant-3-Aufgaben fest, die automatisiert oder umverteilt werden könnten?
+Die Daten zeigen Engpässe, bevor sie zu Krisen werden.</p>
+
+<p><strong>Erweiterte Erkenntnisse für Manager und Unternehmer</strong></p>
+
+<p>Wenn Sie für ein Team verantwortlich sind oder ein Unternehmen führen, eröffnet die Eisenhower-Matrix kombiniert mit Zeiterfassung strategische Vorteile:</p>
+
+<ul>
+  <li>Arbeitslastanalyse</li>
+  <li>Ressourcenallokation</li>
+  <li>Balance zwischen abrechenbaren und nicht-abrechenbaren Stunden</li>
+  <li>Historische Daten für die Planung</li>
+  <li>Team-Performance-Muster</li>
+</ul>
+
+<h2 id="ihre-ersten-schritte-zu-einer-intelligenteren-priorisierung">Ihre ersten Schritte zu einer intelligenteren Priorisierung</h2>
+
+<p>Bereit, aufzuhören beschäftigt zu sein, und stattdessen produktiv zu werden?
+So gehen Sie vor:</p>
+
+<ol>
+  <li>Wählen Sie die morgigen Aufgaben und kategorisieren Sie sie in die vier Quadranten</li>
+  <li>Tracken Sie Ihre tatsächliche Zeit mit Kimai, während Sie jede Aufgabe bearbeiten. Das schafft Ihre Grundlage der Realität</li>
+  <li>Vergleichen Sie am Ende der Woche Ihre Absichten mit der Realität. Welcher Quadrant hat die meiste Ihrer Zeit beansprucht? Steckten Sie in Quadrant 3 fest, obwohl Sie sich auf Quadrant 2 konzentrieren wollten?</li>
+  <li>Nutzen Sie Ihre Erkenntnisse, um Quadrant-2-Zeit nächste Woche besser zu schützen. Setzen Sie klarere Grenzen bei Quadrant-3-Aufgaben. Eliminieren Sie Quadrant 4 vollständig</li>
+</ol>
+
+<p>Die Eisenhower-Matrix wird nicht auf magische Weise mehr Stunden in Ihren Tag zaubern, aber sie hilft Ihnen, die Stunden, die Sie haben, in Arbeit zu investieren, die wirklich zählt.
+Kombiniert mit präziser Zeiterfassung haben Sie sowohl das Rahmenwerk für bessere Entscheidungen als auch die Daten, um zu beweisen, dass sie funktionieren.</p>
+
+        </div>
+        <div class="col-lg-3 position-relative">
+            <div class="sticky-top ms-xl-5 ms-lg-4 ps-xxl-4" style="top: 105px !important;">
+                <h6>Diesen Beitrag teilen:</h6>
+                <div class="mb-4 pb-lg-3">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.kimai.org/de/blog/2025/eisenhower-matrix&title=Die Eisenhower-Matrix: Aufgaben meisterhaft priorisieren" class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2" aria-label="LinkedIn">
+                        <i class="bx bxl-linkedin"></i>
+                    </a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.kimai.org/de/blog/2025/eisenhower-matrix" class="btn btn-icon btn-secondary btn-facebook me-2 mb-2" aria-label="Facebook">
+                        <i class="bx bxl-facebook"></i>
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?text=https://www.kimai.org/de/blog/2025/eisenhower-matrix" class="btn btn-icon btn-secondary btn-twitter me-2 mb-2" aria-label="Twitter">
+                        <i class="bx bxl-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    
+<section class="container mb-5">
+    <div class="position-relative bg-dark rounded-3 overflow-hidden px-3 py-5">
+        <span class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(255, 255, 255, .05)"></span>
+        <div class="position-relative zindex-5 text-center my-xl-3 py-1 py-md-4 py-lg-5">
+            <p class="lead text-light opacity-70 mb-3">Bereit loszulegen?</p>
+            <h2 class="h1 text-light pb-3 pb-lg-0 mb-lg-5">Starte jetzt damit Zeiten zu erfassen</h2>
+            <a href="https://www.kimai.cloud/de/auth/registrierung" class="btn btn-success btn-lg">Kostenlos starten</a>
+
+        </div>
+    </div>
+</section>
+
+
+
+</main>
+
+<footer class="footer bg-dark pt-5 pb-4">
+    <div class="container pt-1 pt-md-3 pt-lg-4 pt-xl-5">
+        <div class="row">
+            <div class="col-md-5 col-xl-4 mb-4 mb-md-5 mb-lg-0">
+                <div class="d-flex align-items-center pb-3 mb-1">
+                    <div class="navbar-brand text-white p-0 pe-1 me-0">
+                        Kimai
+                    </div>
+                    <hr class="vr mt-2 mx-3" style="height: 26px;">
+                    <div class="text-white fw-semibold ps-1">#1 Open-Source Zeiterfassung</div>
+                </div>
+                <p class="text-body fs-sm pb-1 pb-md-2 pb-lg-2 mb-2">
+                    Zeiterfassung leicht gemacht. Eine Open-Source-Lösung für Teams jeder Größe - selbst gehostet oder als SaaS.
+                </p>
+                <div class="d-flex flex-column flex-sm-row flex-lg-column align-items-sm-center align-items-lg-start justify-content-between pb-1 pb-md-2 pb-lg-3 mb-3">
+                    <div class="position-relative">
+                        <div class="dropdown">
+                            <button type="button" class="form-select" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-globe top-50 start-0 text-body me-2"></i>
+                                Deutsch
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/ca/" class="dropdown-item" title="Kimai - Seguidor de temps de codi obert">Català</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/cs/" class="dropdown-item" title="Kimai - Open Source sledování času">Čeština</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/de/" class="dropdown-item active" title="Kimai – Open-Source Zeiterfassung">Deutsch</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/en/" class="dropdown-item" title="Kimai - Open Source time-tracker">English</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/es/" class="dropdown-item" title="Kimai - Tracker de tiempo abierto">Español</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/fr/" class="dropdown-item" title="Kimai - Suivi du temps à code ouvert">Français</a>
+                                
+                                    <a dir="rtl" href="https://www.kimai.co.il" class="dropdown-item" title="Kimai - מעקב שעות בקוד פתוח">עברית</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/hr/" class="dropdown-item" title="Kimai – Program otvorenog koda za evidentiranje vremena">Hrvatski</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/it/" class="dropdown-item" title="Kimai: time-tracker open source">Italiano</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/nl/" class="dropdown-item" title="Kimai - Open Source tijdregistratie">Dutch</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/pl/" class="dropdown-item" title="Kimai - Otwarte oprogramowanie do śledzenia czasu">Polski</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/pt/" class="dropdown-item" title="Kimai - Rastreador de tempo de código aberto">Português</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/pt_BR/" class="dropdown-item" title="Kimai - Rastreador de tempo de código aberto">Português (Brasil)</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/ru/" class="dropdown-item" title="Kimai - регистратор времени с открытым исходным кодом">Русский</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/sk/" class="dropdown-item" title="Kimai - Open Source sledovanie času">Slovenčina</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/sv/" class="dropdown-item" title="Kimai - öppen källkod tidsspårare">Svenska</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/ta/" class="dropdown-item" title="கிமாய் - திறந்த மூல நேர -கண்காணிப்பு">தமிழ்</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/uk/" class="dropdown-item" title="Kimai — реєстратор часу з відкритим сирцевим кодом">Українська</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.org/zh_Hans/" class="dropdown-item" title="Kimai - 开源时间跟踪器">中文（中国）</a>
+                                
+                                    <a dir="ltr" href="https://www.kimai.tw" class="dropdown-item" title="Kimai —— 開放源始碼的工時追蹤工具">中文（繁體）</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-md-7 offset-xl-1">
+                <div id="footer-links" class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="tools" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/de/features.html" class="nav-link fs-sm fw-medium px-0 py-1">Funktionen</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/stories/" class="nav-link fs-sm fw-medium px-0 py-1">Erfolgsgeschichten</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/reviews" class="nav-link fs-sm fw-medium px-0 py-1">Bewertungen</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Presse & Medien</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">Rabatt-Codes</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/newsletter" class="nav-link fs-sm fw-medium px-0 py-1">Newsletter</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="landing-kimai-for" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                
+                                
+                                <li class="nav-item">
+                                    <a href="/en/agency-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Agency">Agenturen</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/consultants-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Consultants">Berater</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/freelancers-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Freelancers">Freiberufler</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/software-developers-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Software Developers">Softwareentwickler</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/de/non-profit" class="nav-link fs-sm fw-medium px-0 py-1">Gemeinnützige Organisationen</a>
+                                </li>
+                                <li class="nav-item">
+                                    
+                                    <a href="/en/industry" class="nav-link fs-sm fw-medium px-0 py-1">Weitere Branchen</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="footer-cmp" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/de/alternatives/" class="nav-link fs-sm fw-medium px-0 py-1">Vergleiche Zeiterfassungen</a>
+                                </li>
+                                
+                                
+                                
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternatives/clockify" class="nav-link fs-sm fw-medium px-0 py-1" title="Vergleiche Kimai mit Clockify">Clockify Alternative</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternatives/clockodo" class="nav-link fs-sm fw-medium px-0 py-1" title="Vergleiche Kimai mit Clockodo">Clockodo Alternative</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternatives/harvest" class="nav-link fs-sm fw-medium px-0 py-1" title="Vergleiche Kimai mit Harvest">Harvest Alternative</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternatives/toggl" class="nav-link fs-sm fw-medium px-0 py-1" title="Vergleiche Kimai mit toggl track">toggl track Alternative</a>
+                                    </li>
+                                
+                                
+                                <li class="nav-item">
+                                    <a href="/de/time-tracking-terms" class="nav-link fs-sm fw-medium px-0 py-1">Zeiterfassungsbegriffe</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="d-md-flex align-items-center justify-content-between pt-sm-2 pt-md-4 pt-lg-5 pb-2 mt-4 ">
+    <ul class="nav order-md-1 ms-md-0 mb-3 mb-md-0">
+        <li class="nav-item">
+            <a href="/de/site-notice.html" class="nav-link fs-sm fw-medium">Impressum</a>
+        </li>
+        <li class="nav-item">
+            <a href="/de/privacy-policy.html" class="nav-link fs-sm fw-medium">Datenschutz</a>
+        </li>
+        <li class="nav-item">
+            <a href="/de/terms-cloud.html" class="nav-link fs-sm fw-medium">AGB</a>
+        </li>
+    </ul>
+    <div class="nav order-md-2 mb-3 mb-md-0">
+        
+    <a target="_blank" href="https://github.com/kimai/kimai" class="btn btn-icon btn-secondary btn-github rounded-circle me-3" aria-label="GitHub">
+        <i class="bx bxl-github"></i>
+    </a>
+
+    <a target="_blank" href="https://www.youtube.com/@kimai_org" class="btn btn-icon btn-secondary btn-youtube rounded-circle me-3" aria-label="YouTube">
+        <i class="bx bxl-youtube"></i>
+    </a>
+
+    <a target="_blank" href="https://www.linkedin.com/company/kimai-org/" class="btn btn-icon btn-secondary btn-linkedin rounded-circle me-3" aria-label="LinkedIn">
+        <i class="bx bxl-linkedin"></i>
+    </a>
+
+    <a target="_blank" href="https://www.instagram.com/kimai_org" class="btn btn-icon btn-secondary btn-instagram rounded-circle me-3" aria-label="Instagram">
+        <i class="bx bxl-instagram"></i>
+    </a>
+
+    <a target="_blank" href="https://www.facebook.com/kimai.time.tracker" class="btn btn-icon btn-secondary btn-facebook rounded-circle me-3" aria-label="Facebook">
+        <i class="bx bxl-facebook"></i>
+    </a>
+
+    <a target="_blank" href="https://phpc.social/@kimai" class="btn btn-icon btn-secondary btn-messenger rounded-circle me-3" aria-label="Mastodon">
+        <i class="bx bxl-mastodon"></i>
+    </a>
+
+
+    </div>
+    <ul class="nav order-md-3">
+        <li class="nav-item">
+            <a href="https://uptime.kimai.cloud/" target="_blank" class="nav-link fs-sm fw-medium">Status</a>
+        </li>
+    </ul>
+    
+</div>
+
+    </div>
+</footer>
+
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js?v1"></script>
+
+<script defer src="https://u.kimai.org/script.js" data-website-id="e26bef12-9527-43bc-83fd-660e237f3526"></script>
+
+</body>
+</html>
