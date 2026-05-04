@@ -1,7 +1,7 @@
 rewrite ^/hr/o-programu-kimai.html$ /hr/about.html permanent;
 rewrite ^/fr/apropos-kimai.html$ /fr/about.html permanent;
 rewrite ^/de/ueber-kimai.html$ /de/about.html permanent;
-rewrite ^/plugins/news/rss.php$ /feed.xml permanent;
+rewrite ^/plugins/news/rss.php$ /en/feed.xml permanent;
 rewrite ^/en/compare/openproject.html$ /en/alternatives/openproject permanent;
 rewrite ^/en/alternative-to-openproject$ /en/alternatives/openproject permanent;
 rewrite ^/en/alternative-to-clockify$ /en/alternatives/clockify permanent;
@@ -301,3 +301,5 @@ rewrite ^/store/(.+)$ /en/store/$1 permanent;
 rewrite ^/compare/?$ /en/alternatives/ permanent;
 rewrite ^/(cs|de|en|es|fr|he|hr|it|nl|pl|pt|pt_BR|ru|sk|sv|ta|uk|zh_Hans|zh_Hant)/compare/?$ /$1/alternatives/ permanent;
 rewrite ^/(cs|de|en|es|fr|he|hr|it|nl|pl|pt|pt_BR|ru|sk|sv|ta|uk|zh_Hans|zh_Hant)/([^/]+)-alternative/?$ /$1/alternatives/$2 permanent;
+
+rewrite ^/feed.xml$ /en/feed.xml permanent;

@@ -9,7 +9,7 @@
         >
     <channel>
         <title xml:lang="en">{{ site.feed_title }}</title>
-        <atom:link type="application/atom+xml" href="{% link feed.xml %}" rel="self"/>
+        <atom:link type="application/atom+xml" href="{{ page.url | full_url: page.lang }}" rel="self"/>
         <link>https://www.kimai.org/</link>
         <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
         <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
