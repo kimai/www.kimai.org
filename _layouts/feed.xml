@@ -23,7 +23,7 @@
             <width>184</width>
             <height>184</height>
         </image>
-        {% assign lang_posts = site.posts | filter_page_lang %}
+        {% assign lang_posts = site.posts | where: "lang", english_german %}
         {% for post in lang_posts limit: 10 %}
             <item>
                 <title>{{ post.title | xml_escape}}</title>
