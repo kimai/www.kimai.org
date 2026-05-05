@@ -16,8 +16,6 @@
 # (de -> en -> de) and Regenerator#existing_file_modified? recurses indefinitely
 # (SystemStackError).
 
-Translated with DeepL.com (free version)
-
 if ENV["JEKYLL_ENV"] == "development"
   Jekyll::Hooks.register :site, :post_read do |site|
     regenerator = site.regenerator
@@ -27,10 +25,17 @@ if ENV["JEKYLL_ENV"] == "development"
 
     posts       = site.collections["posts"].docs
     by_basename = posts.group_by { |doc| File.basename(doc.relative_path) }
+    pages       = site.collections["pages"].docs
 
-    blog_pages = site.collections["pages"].docs.select do |page|
+    blog_pages = pages.select do |page|
       page.relative_path.match?(%r{_pages/[^/]+/blog\.html\z})
     end
+
+    data_dependencies = {
+      "_data/feature.yml" => pages.select do |page|
+        page.relative_path.match?(%r{_pages/[^/]+/features\.html\z})
+      end
+    }
 
     # Etwaige zyklische deps aus einer frueheren Plugin-Version aus
     # .jekyll-metadata wegraeumen, damit modified? unten nicht hineinlaeuft.
@@ -56,6 +61,15 @@ if ENV["JEKYLL_ENV"] == "development"
 
     if any_post_modified
       blog_pages.each do |page|
+        regenerator.force(page.path)
+        forced << page.path
+      end
+    end
+
+    data_dependencies.each do |source_path, dependent_pages|
+      next unless regenerator.modified?(site.in_source_dir(source_path))
+
+      dependent_pages.each do |page|
         regenerator.force(page.path)
         forced << page.path
       end
