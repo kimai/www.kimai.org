@@ -1,0 +1,69 @@
+# Extends the --incremental builder to include cross-language relationships that Jekyll does not
+# recognize on its own:
+#   1. Language siblings: edit _posts/de/<slug>.md => _posts/en/<slug>.md
+#      (and all other languages with the same filename) are rebuilt.
+#   2. Blog index pages: edit any post => all
+#      _pages/<lang>/blog.html are rebuilt.
+#
+# The additionally enforced paths are inserted into the watcher log,
+# so they appear below the “Regenerating: ...” line.
+#
+# Active only in JEKYLL_ENV=development.
+#
+# Implementation: Determine which posts have changed per build and mark their siblings
+# or the blog index pages via Regenerator#force. Deliberately NO
+# add_dependency, because that creates a cycle between siblings
+# (de -> en -> de) and Regenerator#existing_file_modified? recurses indefinitely
+# (SystemStackError).
+
+Translated with DeepL.com (free version)
+
+if ENV["JEKYLL_ENV"] == "development"
+  Jekyll::Hooks.register :site, :post_read do |site|
+    regenerator = site.regenerator
+
+    # Erstbuild: keine Metadata vorhanden, Jekyll baut sowieso alles.
+    next if regenerator.metadata.empty?
+
+    posts       = site.collections["posts"].docs
+    by_basename = posts.group_by { |doc| File.basename(doc.relative_path) }
+
+    blog_pages = site.collections["pages"].docs.select do |page|
+      page.relative_path.match?(%r{_pages/[^/]+/blog\.html\z})
+    end
+
+    # Etwaige zyklische deps aus einer frueheren Plugin-Version aus
+    # .jekyll-metadata wegraeumen, damit modified? unten nicht hineinlaeuft.
+    (posts + blog_pages).each do |doc|
+      meta = regenerator.metadata[doc.path]
+      meta["deps"] = [] if meta && meta["deps"].any?
+    end
+
+    forced            = []
+    any_post_modified = false
+
+    posts.each do |post|
+      next unless regenerator.modified?(post.path)
+      any_post_modified = true
+
+      siblings = by_basename[File.basename(post.relative_path)] || []
+      siblings.each do |sibling|
+        next if sibling.equal?(post)
+        regenerator.force(sibling.path)
+        forced << sibling.path
+      end
+    end
+
+    if any_post_modified
+      blog_pages.each do |page|
+        regenerator.force(page.path)
+        forced << page.path
+      end
+    end
+
+    prefix = "#{site.source}/"
+    forced.uniq.each do |path|
+      Jekyll.logger.info "", path.sub(prefix, "")
+    end
+  end
+end
