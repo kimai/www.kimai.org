@@ -76,7 +76,7 @@ You can subscribe to all advisories via [Atom RSS Feed]({% link security.xml %})
 
 {% assign advisories = site.security | reverse -%}
 {% for advisory in advisories -%}
-- <span style="font-variant-numeric: tabular-nums;">{{ advisory.date | date: "%Y-%m-%d" }}</span>: [{{ advisory.title }}]({{ advisory.url }})
+- {{ advisory.date | date: "%Y-%m-%d" }}: [{{ advisory.title }}]({{ advisory.url }})
 {% endfor %}
 
 ## Not security issues

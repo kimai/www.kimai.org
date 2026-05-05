@@ -9,7 +9,7 @@ related:
 
 {% alert danger %}
 This documentation is outdated.
-Please upgrade and use <a href="{% link _documentation/fresh-ubuntu-22.md %}">Ubuntu 22.04 LTS</a> instead.
+Please upgrade and use [Ubuntu 22.04 LTS]({% link _documentation/fresh-ubuntu-22.md %}) instead.
 {% endalert %}
 
 {% include documentation/self-hosting-warning.md %}

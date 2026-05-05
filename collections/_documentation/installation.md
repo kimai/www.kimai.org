@@ -13,32 +13,13 @@ related:
 
 ## Server requirements
 
-<ul class="list-unstyled mb-4 px-4 px-lg-0">
-    <li class="d-flex align-items-center pb-1 mb-2">
-        <i class="bx bxl-php fs-xl text-primary me-3"></i>
-        {{ "PHP 8.1+ with the extensions: `mbstring`, `gd`, `intl`, `json`, `pdo`, `tokenizer`, `xml`, `zip`" | markdownify | replace: "<p>", "" | replace: "</p>", "" }}
-    </li>
-    <li class="d-flex align-items-center pb-1 mb-2">
-        <i class="bx bx-data fs-xl text-primary me-3"></i>
-        Database: MariaDB or MySQL
-    </li>
-    <li class="d-flex align-items-center pb-1 mb-2">
-        <i class="bx bx-server fs-xl text-primary me-3"></i>
-        Webserver (NGINX, or Apache with mod_rewrite)
-    </li>
-    <li class="d-flex align-items-center pb-1 mb-2">
-        <i class="bx bx-window fs-xl text-primary me-3"></i>
-        A modern web browser
-    </li>
-    <li class="d-flex align-items-center pb-1 mb-2">
-        <i class="{{ 'preferences' | icon }} fs-xl text-primary me-3"></i>
-        A free subdomain (use in subdirectory is not supported)
-    </li>
-    <li class="d-flex align-items-center pb-1 mb-2">
-        <i class="bx bx-wrench fs-xl text-primary me-3"></i>
-        You need to install Git and <a class="mx-1" href="https://getcomposer.org/doc/00-intro.md" target="_blank">Composer</a> if you haven't already
-    </li>
-</ul>
+- PHP: 8.2+ with the extensions: `mbstring`, `gd`, `intl`, `json`, `pdo`, `tokenizer`, `xml`, `zip`
+- Database: MariaDB or MySQL
+- Webserver: (NGINX, or Apache with mod_rewrite)
+- Modern web browser
+- Free subdomain (use in subdirectory is not supported)
+- Git (to fetch the code)
+- Composer (to install PHP dependencies)
 
 ## Install Kimai with SSH
 

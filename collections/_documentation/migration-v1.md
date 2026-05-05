@@ -10,7 +10,7 @@ This documentation covers the necessary steps to migrate from Kimai 1 to Kimai 2
 Read the [version documentation]({% link _documentation/versions.md %}) before, to understand if you need this migration guide.
 
 {% alert %}
-You can <a href="{% link _pages/{{ page.lang }}/support.html %}">get professional support</a> if you are not sure about performing the upgrade yourself.
+You can [get professional support]({% link _pages/{{ page.lang }}/support.html %}) if you are not sure about performing the upgrade yourself.
 {% endalert %} 
 
 ## Introduction

@@ -10,9 +10,13 @@ You find the configuration after login at: **[My Kimai-Cloud]({{ site.cloud.my_c
 
 Currently, the following providers are supported:
 
-- [Google Workspace](#google-saml)
-- [Microsoft Azure AD](#microsoft-saml)
-- [Keycloak](#keycloak-saml)
+- Google Workspace
+- Microsoft Entra (Azure AD)
+- Keycloak
+- Auth0
+- Authentik
+
+See below for integration details.
 
 **Important to know**
 
@@ -27,9 +31,9 @@ The SSO configuration includes three settings, which can be de-/activated via to
 - `Activate regular login with username` - this toggles the username/password form (can be deactivated if every user logs in with SSO)
 - `Reset assigned user roles during login` - if activated user roles will be removed upon login: custom role assignments are only temporary until the next login
 
-## <span id="google-saml"></span> Google SAML
+## Google SAML
 
-### <span id="google-workspace"></span> Workspace configuration
+### Workspace configuration
 
 - Go to https://admin.google.com/ac/apps/unified
 - Choose "Add app" followed by "Add custom SAML app"
@@ -72,13 +76,13 @@ This screenshot is a showcase of the attribute mapping including groups:
 
 {% include docs-image.html src="/images/documentation/cloud/saml-google-attributes.webp" title="Google - SAMl attribute mapping" %}
 
-### <span id="google-cloud"></span> Cloud configuration
+### Cloud configuration
 
 {% include docs-image.html src="/images/documentation/cloud/saml-google-cloud.webp" title="Google - Cloud configuration" %}
 
-## <span id="microsoft-saml"></span> Microsoft SAML
+## Microsoft SAML
 
-### <span id="microsoft-azure"></span> Entra ID (ex. Azure AD) Configuration
+### Entra ID (ex. Azure AD) Configuration
 
 - Sign in to the [Azure portal](https://portal.azure.com/).
 - Select the **Microsoft Entra ID** service from the navigation.
@@ -119,11 +123,11 @@ This screenshot is a showcase of the attribute mapping including groups:
 - Copy & paste the `Object Id` of each group into the Cloud configuration (see screenshot below).
   {% include docs-image.html src="/images/documentation/cloud/saml-azure-groups.webp" title="Azure - Groups" %}
 
-### <span id="microsoft-cloud"></span> Cloud configuration
+### Cloud configuration
 
 {% include docs-image.html src="/images/documentation/cloud/saml-azure-cloud.webp" title="Azure - Cloud configuration" %}
 
-## <span id="keycloak-saml"></span> Keycloak SAML
+## Keycloak SAML
 
 Start by setting up your Keycloak following the [Keycloak docs]({% link _documentation/saml-keycloak.md %}). 
 

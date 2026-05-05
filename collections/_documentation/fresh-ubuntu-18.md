@@ -7,7 +7,7 @@ canonical: /documentation/fresh-ubuntu-18.html
 
 {% alert danger %}
 This documentation is outdated and does not work with the latest Kimai version.
-Please upgrade and use <a href="{% link _documentation/fresh-ubuntu-20.md %}">Ubuntu 20.04 LTS</a> instead.
+Please upgrade and use [Ubuntu 20.04 LTS]({% link _documentation/fresh-ubuntu-20.md %}) instead.
 {% endalert %}
 
 This is a collection of snippets to help you with setting up a fresh Ubuntu 18.04 server for using with Kimai.
