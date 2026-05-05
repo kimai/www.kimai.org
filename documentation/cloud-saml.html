@@ -360,10 +360,14 @@ You find the configuration after login at: <strong><a href="https://www.kimai.cl
 <p>Currently, the following providers are supported:</p>
 
 <ul>
-  <li><a href="#google-saml">Google Workspace</a></li>
-  <li><a href="#microsoft-saml">Microsoft Azure AD</a></li>
-  <li><a href="#keycloak-saml">Keycloak</a></li>
+  <li>Google Workspace</li>
+  <li>Microsoft Entra (Azure AD)</li>
+  <li>Keycloak</li>
+  <li>Auth0</li>
+  <li>Authentik</li>
 </ul>
+
+<p>See below for integration details.</p>
 
 <p><strong>Important to know</strong></p>
 
@@ -382,9 +386,9 @@ You find the configuration after login at: <strong><a href="https://www.kimai.cl
   <li><code class="language-plaintext highlighter-rouge">Reset assigned user roles during login</code> - if activated user roles will be removed upon login: custom role assignments are only temporary until the next login</li>
 </ul>
 
-<h2 id="-google-saml"><span id="google-saml"></span> Google SAML</h2>
+<h2 id="google-saml">Google SAML</h2>
 
-<h3 id="-workspace-configuration"><span id="google-workspace"></span> Workspace configuration</h3>
+<h3 id="workspace-configuration">Workspace configuration</h3>
 
 <ul>
   <li>Go to https://admin.google.com/ac/apps/unified</li>
@@ -459,16 +463,16 @@ You find the configuration after login at: <strong><a href="https://www.kimai.cl
     <figcaption class="figure-caption">Google - SAMl attribute mapping</figcaption>
 </figure>
 
-<h3 id="-cloud-configuration"><span id="google-cloud"></span> Cloud configuration</h3>
+<h3 id="cloud-configuration">Cloud configuration</h3>
 
 <figure class="d-block figure mb-3" style="max-width: 800px">
     <img src="/images/documentation/cloud/saml-google-cloud.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
     <figcaption class="figure-caption">Google - Cloud configuration</figcaption>
 </figure>
 
-<h2 id="-microsoft-saml"><span id="microsoft-saml"></span> Microsoft SAML</h2>
+<h2 id="microsoft-saml">Microsoft SAML</h2>
 
-<h3 id="-entra-id-ex-azure-ad-configuration"><span id="microsoft-azure"></span> Entra ID (ex. Azure AD) Configuration</h3>
+<h3 id="entra-id-ex-azure-ad-configuration">Entra ID (ex. Azure AD) Configuration</h3>
 
 <ul>
   <li>Sign in to the <a href="https://portal.azure.com/">Azure portal</a>.</li>
@@ -536,14 +540,14 @@ You find the configuration after login at: <strong><a href="https://www.kimai.cl
     <figcaption class="figure-caption">Azure - Groups</figcaption>
 </figure>
 
-<h3 id="-cloud-configuration-1"><span id="microsoft-cloud"></span> Cloud configuration</h3>
+<h3 id="cloud-configuration-1">Cloud configuration</h3>
 
 <figure class="d-block figure mb-3" style="max-width: 800px">
     <img src="/images/documentation/cloud/saml-azure-cloud.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
     <figcaption class="figure-caption">Azure - Cloud configuration</figcaption>
 </figure>
 
-<h2 id="-keycloak-saml"><span id="keycloak-saml"></span> Keycloak SAML</h2>
+<h2 id="keycloak-saml">Keycloak SAML</h2>
 
 <p>Start by setting up your Keycloak following the <a href="/documentation/saml-keycloak.html">Keycloak docs</a>.</p>
 
@@ -572,7 +576,7 @@ You find the configuration after login at: <strong><a href="https://www.kimai.cl
             
                 <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
                     <h3 class="fs-lg mt-2">Jump to</h3>
-                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#-google-saml" class="nav-link"> Google SAML</a><ul><li class="nav-item"><a href="#-workspace-configuration" class="nav-link"> Workspace configuration</a></li><li class="nav-item"><a href="#-cloud-configuration" class="nav-link"> Cloud configuration</a></li></ul></li><li class="nav-item"><a href="#-microsoft-saml" class="nav-link"> Microsoft SAML</a><ul><li class="nav-item"><a href="#-entra-id-ex-azure-ad-configuration" class="nav-link"> Entra ID (ex. Azure AD) Configuration</a></li><li class="nav-item"><a href="#-cloud-configuration-1" class="nav-link"> Cloud configuration</a></li></ul></li><li class="nav-item"><a href="#-keycloak-saml" class="nav-link"> Keycloak SAML</a></li></ul>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#google-saml" class="nav-link">Google SAML</a><ul><li class="nav-item"><a href="#workspace-configuration" class="nav-link">Workspace configuration</a></li><li class="nav-item"><a href="#cloud-configuration" class="nav-link">Cloud configuration</a></li></ul></li><li class="nav-item"><a href="#microsoft-saml" class="nav-link">Microsoft SAML</a><ul><li class="nav-item"><a href="#entra-id-ex-azure-ad-configuration" class="nav-link">Entra ID (ex. Azure AD) Configuration</a></li><li class="nav-item"><a href="#cloud-configuration-1" class="nav-link">Cloud configuration</a></li></ul></li><li class="nav-item"><a href="#keycloak-saml" class="nav-link">Keycloak SAML</a></li></ul>
                     
                 </aside>
             
