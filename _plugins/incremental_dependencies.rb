@@ -4,6 +4,8 @@
 #      (and all other languages with the same filename) are rebuilt.
 #   2. Blog index pages: edit any post => all
 #      _pages/<lang>/blog.html are rebuilt.
+#   3. Story index pages: edit _stories/<lang>/<slug>.md =>
+#      _pages/<lang>/stories.html is rebuilt.
 #
 # The additionally enforced paths are inserted into the watcher log,
 # so they appear below the “Regenerating: ...” line.
@@ -24,11 +26,17 @@ if ENV["JEKYLL_ENV"] == "development"
     next if regenerator.metadata.empty?
 
     posts       = site.collections["posts"].docs
+    stories     = site.collections["stories"].docs
     by_basename = posts.group_by { |doc| File.basename(doc.relative_path) }
     pages       = site.collections["pages"].docs
 
     blog_pages = pages.select do |page|
       page.relative_path.match?(%r{_pages/[^/]+/blog\.html\z})
+    end
+
+    stories_pages_by_lang = pages.each_with_object({}) do |page, memo|
+      match = page.relative_path.match(%r{_pages/([^/]+)/stories\.html\z})
+      memo[match[1]] = page if match
     end
 
     data_dependencies = {
@@ -64,6 +72,19 @@ if ENV["JEKYLL_ENV"] == "development"
         regenerator.force(page.path)
         forced << page.path
       end
+    end
+
+    stories.each do |story|
+      next unless regenerator.modified?(story.path)
+
+      match = story.relative_path.match(%r{_stories/([^/]+)/.+\.(?:md|markdown)\z})
+      next unless match
+
+      stories_page = stories_pages_by_lang[match[1]]
+      next unless stories_page
+
+      regenerator.force(stories_page.path)
+      forced << stories_page.path
     end
 
     data_dependencies.each do |source_path, dependent_pages|
