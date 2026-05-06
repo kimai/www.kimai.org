@@ -107,3 +107,6 @@ Die Geschichte von blueflare zeigt eine entscheidende Erkenntnis für Agenturgr�
 
 Wenn man Kunden zeigen kann, wie genau ihre Investition eingesetzt wurde, wenn man interne Prozesse auf Basis echter Daten optimiert und wenn man Administration eliminiert, 
 die vom Kerngeschäft ablenkt – dann wird Zeiterfassung vom notwendigen Übel zum Wettbewerbsvorteil.
+
+Wir danken Dietmar Marggraff herzlich für das Interview und wünschen blueflare weiterhin viel Erfolg!
+

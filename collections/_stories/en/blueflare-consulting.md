@@ -107,3 +107,5 @@ Blueflare’s story illuminates a crucial insight for agency founders and freela
 
 When you can demonstrate to clients exactly how their investment was used, when you can optimize internal processes based on real data, 
 and when you can eliminate administrative overhead that steals focus from core work, time tracking transforms from necessary evil to competitive advantage.
+
+We sincerely thank Dietmar Marggraff for the interview and wish blueflare continued success!

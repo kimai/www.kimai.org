@@ -62,45 +62,45 @@ For a Waldorf school, which lives by principles of community and trust, such a s
 
 **From selection to implementation**
 
-“*Every other solution was simply brutally expensive,”* explains Hartmann about why they chose Kimai. 
+“Every other solution was simply brutally expensive,”* explains Hartmann about why they chose Kimai. 
 While other providers charged per employee, the open-source character of Kimai offered a decisive benefit: 
-*“You only have to install it once, and then you can use it long term with any number of employees. The only cost is for running the server.*”
+*“You only have to install it once, and then you can use it long term with any number of employees. The only cost is for running the server.”
 
 The rollout was not without resistance. 
-“*There was actually a lot of pushback from teachers,*” Jörg admits, “*many were holding on to their half-filled Excel spreadsheets."* 
+“There was actually a lot of pushback from teachers,*” Jörg admits, “many were holding on to their half-filled Excel spreadsheets."* 
 Acceptance also varied: while office staff and educators took up the system relatively quickly, teachers were more reluctant. 
-“*Among teachers, time tracking is still cautious – in some cases not used at all,*” Hartmann concedes.
+“Among teachers, time tracking is still cautious – in some cases not used at all,*” Hartmann concedes.
 
-But his approach was based on trust: “*Each employee should log into the time-tracking system themselves and also be able to make their own changes*.”
+But his approach was based on trust: “Each employee should log into the time-tracking system themselves and also be able to make their own changes*.”
 
 **A trust-based implementation strategy**
 
 Instead of enforcing the system, Jörg relied on communication and demonstration: 
-“*We had a staff meeting with all educators and teachers where I presented Kimai using a projector.*”
+“We had a staff meeting with all educators and teachers where I presented Kimai using a projector.”
 
 The breakthrough came with practical experience: 
-“*When staff realized that entering their times was just as easy – or even easier – than in Excel, and that they could do it from anywhere – phone or tracking terminals – their attitude gradually began to shift.*”
+“When staff realized that entering their times was just as easy – or even easier – than in Excel, and that they could do it from anywhere – phone or tracking terminals – their attitude gradually began to shift.”
 
 A special highlight was the invention of the IT administrator, who built custom-made terminals: 
-“*He took small wooden boxes, added a Raspberry Pi and a touchscreen – now it runs Kimai in [Kiosk mode]({% link _store/{{ page.lang }}/kiosk-barcode-bundle.md %})*” Hartmann explains.
+“He took small wooden boxes, added a Raspberry Pi and a touchscreen – now it runs Kimai in [Kiosk mode]({% link _store/{{ page.lang }}/kiosk-barcode-bundle.md %})*” Hartmann explains.
 
 Today, around ten such devices are distributed across the campus. 
 The kiosk mode turned out to be a key factor: 
-“*It’s simple for staff to use, but at the same time gives them enough autonomy to enter their own working hours, even for home office.*”
+“It’s simple for staff to use, but at the same time gives them enough autonomy to enter their own working hours, even for home office.”
 
-“*Through Kimai’s reliability and stability, the staff’s trust in the system continues to grow.*”
+“Through Kimai’s reliability and stability, the staff’s trust in the system continues to grow.”
 
 **The true winners**
 
 While individual employees save about 15–20 minutes a week, the biggest advantage lies with the management teams. 
 Hartmann vividly describes the situation of his predecessor: 
-“*She easily spent two to three full days per daycare year dealing with these Excel tables – hours of copy & paste with 50 to 60 staff members.*”
+“She easily spent two to three full days per daycare year dealing with these Excel tables – hours of copy & paste with 50 to 60 staff members.”
 
 The difference is huge: 
-“*Today, if I need an hour report, I just click on the person’s name – and the data is right there.*”
+“Today, if I need an hour report, I just click on the person’s name – and the data is right there.”
 
 For him as managing director, daily work has also become much simpler: 
-“*Previously we had lists of staff on paper – handed out, filled out by hand, and returned. Today I see the list in the system, the recorded hours are immediately visible – and the preliminary payroll is done in just a few minutes.*”
+“Previously we had lists of staff on paper – handed out, filled out by hand, and returned. Today I see the list in the system, the recorded hours are immediately visible – and the preliminary payroll is done in just a few minutes.”
 
 <!-- PARTS -->
 
@@ -110,11 +110,13 @@ The system is now so firmly anchored in daily practice that it is hard to imagin
 Initial resistance has turned into appreciation – especially because employees value the transparency and control of a trust-based system.
 
 Hartmann’s most important advice: 
-“*Plan a good structure in advance. We should have thought more clearly about which tasks should be selectable in the system in order to get precise evaluations later.*”
+“Plan a good structure in advance. We should have thought more clearly about which tasks should be selectable in the system in order to get precise evaluations later.”
 
 The story of the Waldorf School Heilbronn shows how modern schools can keep balance when administrative pressure grows, without pushing their educational mission aside. 
 With the trust-based introduction of an open-source system, the school has proven: efficiency and community values strengthen each other.
 
 For managers who see their teams drowning in Excel chaos, Hartmann’s story carries an encouraging message: 
 
-“*With the right approach, even skeptical communities can embrace the liberation of digitalization*."
+“With the right approach, even skeptical communities can embrace the liberation of digitalization."
+
+A big thank-you to Jörg Hartmann for the valuable insights — continued success with Waldorfschule Heilbronn!

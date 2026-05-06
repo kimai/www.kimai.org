@@ -45,48 +45,48 @@ Waldorfschule Heilbronn eine innovative Bildungsinstitution mit über 40-jährig
 
 **Der Lehrer, der Zeit in Vertrauen verwandelte**
 
-Jörg Hartmann, ein Mann, der seinen Weg „*ganz klassisch in der Rolle des Pädagogen*" begann, leitet heute eine innovative Bildungseinrichtung – die Waldorfschule Heilbronn. 
+Jörg Hartmann, ein Mann, der seinen Weg „ganz klassisch in der Rolle des Pädagogen*" begann, leitet heute eine innovative Bildungseinrichtung – die Waldorfschule Heilbronn. 
 Als Geschäftsführer des Trägervereins der Waldorfschule trägt Hartmann die Verantwortung für ein beeindruckendes Bildungsökosystem, das vom Kleinkindalter bis zum Abitur reicht.
-„*Wir haben hier Kinder von 0 bis 19 – sie kommen in die Krippe, werden hier betreut, besuchen den Kindergarten, gehen dann mit sechs oder sieben Jahren in die Schule und machen idealerweise hier ihr Abitur*."
+„Wir haben hier Kinder von 0 bis 19 – sie kommen in die Krippe, werden hier betreut, besuchen den Kindergarten, gehen dann mit sechs oder sieben Jahren in die Schule und machen idealerweise hier ihr Abitur."
 
 <!-- PARTS -->
 
 **Das Excel-Chaos, das nicht funktionierte**
 
 Vor Kimai stand der Waldorf-Campus vor einem Problem, das viele Bildungseinrichtungen weltweit kennen: ein Zeiterfassungssystem, das nur auf dem Papier existierte.
-„*Es gab irgendwelche Excel-Listen, die theoretisch ausgefüllt werden sollten, aber niemand hatte wirklich einen Überblick darüber*," erinnert sich Jörg Hartmann.
+„Es gab irgendwelche Excel-Listen, die theoretisch ausgefüllt werden sollten, aber niemand hatte wirklich einen Überblick darüber*," erinnert sich Jörg Hartmann.
 
 Die Erfahrungen von Jörg Hartmann in anderen Organisationen zeigten ihm, was nach Verbesserung verlangt: 
-„*Top-down-Zeiterfassungssysteme, bei denen ich als Mitarbeiter wirklich nur stempeln konnte, aber keine Einsicht hatte und auch nichts selbst ändern konnte*." 
+„Top-down-Zeiterfassungssysteme, bei denen ich als Mitarbeiter wirklich nur stempeln konnte, aber keine Einsicht hatte und auch nichts selbst ändern konnte." 
 Für eine nach Gemeinschaft und Vertrauen lebende Waldorfschule war ein solches System inakzeptabel.
 
 **Der Weg von Auswahl zu Implementierung**
 
-„*Jede andere Lösung war einfach brutal teuer*", erklärt Jörg Hartmann, warum aus allen Angeboten genau Kimai gewählt wurde.
+„Jede andere Lösung war einfach brutal teuer*", erklärt Jörg Hartmann, warum aus allen Angeboten genau Kimai gewählt wurde.
 Während andere Anbieter pro Mitarbeiter abrechneten, bot Kimai als Open-Source-Lösung einen entscheidenden Vorteil: 
-„*Man muss es nur einmal installieren und kann es dann mit beliebig vielen Mitarbeitern dauerhaft betreiben*. *Die Kosten laufen für den kompletten Server.*"
+„Man muss es nur einmal installieren und kann es dann mit beliebig vielen Mitarbeitern dauerhaft betreiben*. *Die Kosten laufen für den kompletten Server.*"
 
 Die Einführung verlief nicht ohne Widerstand. 
-„*Es gab tatsächlich viel Gegenwind aus dem Lehrerkollegium*", gibt Jörg Hartmann offen zu, „*viele hingen an ihren halb ausgefüllten Excel-Tabellen*." 
+„Es gab tatsächlich viel Gegenwind aus dem Lehrerkollegium*", gibt Jörg Hartmann offen zu, „viele hingen an ihren halb ausgefüllten Excel-Tabellen." 
 Die Akzeptanz war zudem unterschiedlich: Während Büroangestellte und Erzieher das System relativ schnell annahmen, blieben die Lehrer zurückhaltender. 
-„*Bei Lehrern ist Zeiterfassung noch sehr verhalten – teilweise wird sie gar nicht genutzt*", räumt der Geschäftsführer ein.
+„Bei Lehrern ist Zeiterfassung noch sehr verhalten – teilweise wird sie gar nicht genutzt*", räumt der Geschäftsführer ein.
 
-Doch seine Strategie basierte auf Vertrauen: „*Jeder Mitarbeiter soll sich in sein Zeiterfassungssystem einloggen und auch Änderungen selbst vornehmen können*."
+Doch seine Strategie basierte auf Vertrauen: „Jeder Mitarbeiter soll sich in sein Zeiterfassungssystem einloggen und auch Änderungen selbst vornehmen können."
 
 **Die vertrauensbasierte Umsetzungsstrategie**
 
 Statt die Einführung mit Zwang durchzusetzen, setzte Jörg auf Kommunikation und praktische Demonstration: 
-„*Es gab eine Sitzung im Kollegium mit allen Erzieherinnen und Lehrern, bei der ich Kimai per Beamer vorgestellt habe*."
+„Es gab eine Sitzung im Kollegium mit allen Erzieherinnen und Lehrern, bei der ich Kimai per Beamer vorgestellt habe."
 
 Der Durchbruch kam durch die praktische Erfahrung: 
-„*Als dem Kollegium klar wurde, dass das Eintragen der Zeiten genauso einfach oder sogar einfacher ist als in den Excel-Tabellen und dass sie das von überall aus erledigen können – vom Handy oder über Zeiterfassungsterminals – änderte sich die Haltung nach und nach*."
+„Als dem Kollegium klar wurde, dass das Eintragen der Zeiten genauso einfach oder sogar einfacher ist als in den Excel-Tabellen und dass sie das von überall aus erledigen können – vom Handy oder über Zeiterfassungsterminals – änderte sich die Haltung nach und nach."
 
 Ein besonderes Highlight war die kreative Lösung des IT-Administrators, der maßgeschneiderte Zeiterfassungsterminals entwickelte. 
-„*Er hat kleine Holzkästchen genommen, einen Raspberry Pi und einen Touchscreen eingebaut – jetzt läuft Kimai im [Kiosk-Modus]({% link _store/de/kiosk-barcode-bundle.md %})*", erklärt Jörg Hartmann.
+„Er hat kleine Holzkästchen genommen, einen Raspberry Pi und einen Touchscreen eingebaut – jetzt läuft Kimai im [Kiosk-Modus]({% link _store/de/kiosk-barcode-bundle.md %})*", erklärt Jörg Hartmann.
 
 Mittlerweile hängen etwa zehn solcher Geräte auf dem gesamten Campus. 
 Der Kioskmodus erwies sich als entscheidender Erfolgsfaktor: 
-„*Das ist für die Mitarbeitenden einfach zu bedienen und trotzdem haben sie genug Autonomie, um eigene Arbeitszeiten und sogar Homeoffice-Einträge vorzunehmen*."
+„Das ist für die Mitarbeitenden einfach zu bedienen und trotzdem haben sie genug Autonomie, um eigene Arbeitszeiten und sogar Homeoffice-Einträge vorzunehmen."
 
 Durch die Souveränität und Zuverlässigkeit von Kimai wächst das Vertrauen vom Kollegium in das System.
 
@@ -94,13 +94,13 @@ Durch die Souveränität und Zuverlässigkeit von Kimai wächst das Vertrauen vo
 
 Während einzelne Mitarbeiter etwa 15 bis 20 Minuten pro Woche sparen, liegen die größten Vorteile bei den Leitungsteams. 
 Hartmann beschreibt anschaulich die Situation seiner Vorgängerin: 
-„*Sie saß sicher zwei bis drei volle Tage pro Kita-Jahr mit diesen Excel-Tabellen – stundenlanges Copy & Paste bei 50 oder 60 Mitarbeitern*."
+„Sie saß sicher zwei bis drei volle Tage pro Kita-Jahr mit diesen Excel-Tabellen – stundenlanges Copy & Paste bei 50 oder 60 Mitarbeitern."
 
 Der Unterschied ist enorm: 
-„*Heute, wenn ich die Stundenabrechnung brauche, klicke ich einfach auf den Namen – und habe die Daten sofort*."
+„Heute, wenn ich die Stundenabrechnung brauche, klicke ich einfach auf den Namen – und habe die Daten sofort."
 
 Auch für ihn als Geschäftsführer hat sich der Arbeitsalltag stark vereinfacht: 
-„*Früher gab es Papierlisten für Stundenkräfte, die ausgegeben, per Hand ausgefüllt und zurückgegeben wurden. Heute sehe ich die Liste im System, die geleisteten Stunden sind sofort einsehbar – und die vorbereitende Lohnbuchhaltung ist in wenigen Minuten erledigt*."
+„Früher gab es Papierlisten für Stundenkräfte, die ausgegeben, per Hand ausgefüllt und zurückgegeben wurden. Heute sehe ich die Liste im System, die geleisteten Stunden sind sofort einsehbar – und die vorbereitende Lohnbuchhaltung ist in wenigen Minuten erledigt."
 
 <!-- PARTS -->
 
@@ -109,12 +109,15 @@ Auch für ihn als Geschäftsführer hat sich der Arbeitsalltag stark vereinfacht
 Das System ist mittlerweile so fest in den Arbeitsalltag integriert, dass man sich schwer vorstellen kann, wie man ohne es arbeiten sollte. 
 Der anfängliche Widerstand hat sich in Wertschätzung verwandelt – besonders da die Mitarbeitenden die Transparenz und Kontrolle des vertrauensvollen Systems sehr schätzen.
 
-JörgnHartmanns wichtigster Rat: 
-„*Man sollte vorher eine gute Struktur planen. Wir hätten uns klarer überlegen sollen, welche Tätigkeiten im System auswählbar sein sollen, um später präzise Auswertungen zu ermöglichen*."
+Jörg Hartmanns wichtigster Rat: 
+„Man sollte vorher eine gute Struktur planen. Wir hätten uns klarer überlegen sollen, welche Tätigkeiten im System auswählbar sein sollen, um später präzise Auswertungen zu ermöglichen."
 
 Die Geschichte der Waldorfschule Heilbronn zeigt, wie moderne Bildungsorganisationen Balance finden können, wenn administrativer Druck wächst, ohne dass die pädagogische Mission in den Hintergrund tritt. 
 Mit der vertrauensbasierten Einführung einer Open-Source-Lösung hat der Waldorf-Campus bewiesen: Effizienz und Gemeinschaftswerte ergänzen und stärken sich gegenseitig.
 
 Für Führungskräfte, die ihre Teams im Excel-Chaos versinken sehen, bietet Jörg Hartmanns Weg eine hoffnungsvolle Botschaft: 
 
-„*Mit dem richtigen Ansatz können auch skeptische Gemeinschaften eine befreiende Digitalisierung willkommen heißen*."
+„Mit dem richtigen Ansatz können auch skeptische Gemeinschaften eine befreiende Digitalisierung willkommen heißen."
+
+Danke, Jörg Hartmann, für das inspirierende Gespräch und alles Gute für die Zukunft von Waldorfschule Heilbronn!
+
