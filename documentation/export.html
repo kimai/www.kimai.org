@@ -13,13 +13,13 @@
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
 <title>Export – Kimai</title>
-<meta name="description" content="Export your timesheet data with Kimai into several different formats">
+<meta name="description" content="Export filtered timesheet data from Kimai as PDF, XLSX, CSV, or HTML">
 <link type="application/atom+xml" rel="alternate" href="/en/feed.xml" title="Kimai Time-Tracking" />
 <meta property="og:locale" content="en">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Export">
 <meta property="og:image" content="https://www.kimai.org/images/social-preview.webp">
-<meta property="og:description" content="Export your timesheet data with Kimai into several different formats">
+<meta property="og:description" content="Export filtered timesheet data from Kimai as PDF, XLSX, CSV, or HTML">
 <link href="/assets/build/main.css?v7" rel="stylesheet" />
 
 </head>
@@ -626,7 +626,7 @@
                     <div class="me-4">
                         <h1 class="pb-1" data-pagefind-meta="title" data-pagefind-weight="10.0">Export</h1>
                         
-                        <p class="text-muted fs-lg mb-2" data-pagefind-meta="description">Export your timesheet data with Kimai into several different formats</p>
+                        <p class="text-muted fs-lg mb-2" data-pagefind-meta="description">Export filtered timesheet data from Kimai as PDF, XLSX, CSV, or HTML</p>
                         
                     </div>
                     <div class="d-none d-lg-flex">
@@ -656,20 +656,71 @@
                     <div>
                         
                         <div id="documentation-content">
-                            <p>The export module allows you to export filtered timesheet data into several formats.</p>
+                            <p>The export screen lets you download filtered timesheet data in different formats.
+You can use it for a quick customer report, an internal Excel analysis, or a CSV file for another system.</p>
+
+<p>You can find it at <code class="language-plaintext highlighter-rouge">Time Tracking &gt; Export</code>.</p>
 
 <div class="youtube-wrapper" style="max-width: 560px;">
     <iframe width="100%" height="315" src="https://www.youtube.com/embed/zJ9a6ELQ6VU" title="How to export timesheets" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 </div>
 
-<h2 id="difference-between-export-and-invoice">Difference between export and invoice</h2>
+<h2 id="export-vs-invoice">Export vs. invoice</h2>
 
-<p>There are a couple of differences in these two Kimai modules, the most important ones:</p>
+<p>Both features work with timesheet data, but they serve different goals:</p>
 
 <ul>
-  <li>Invoices can only be created for a dedicated customer, where an export can be created without selecting a customer</li>
-  <li>Invoices do more calculation (e.g. tax)</li>
-  <li>Invoices support templates in more formats (e.g. XLSX, ODS, DOCX)</li>
+  <li>Use <strong>export</strong> when you want to download filtered timesheet data in a reusable file format</li>
+  <li>Use <strong>invoice</strong> when you need a billing document with calculations like taxes and invoice numbers</li>
+  <li>Exports can be created without selecting one dedicated customer</li>
+  <li>Invoices are always customer-based</li>
+</ul>
+
+<p>Supported output formats:</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Module</th>
+      <th>Formats</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Export</td>
+      <td>PDF, XLSX (Excel), CSV, HTML (print view)</td>
+    </tr>
+    <tr>
+      <td>Invoice</td>
+      <td>PDF, HTML, XLSX (Excel), ODS (OpenDocument), DOCX (Word)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>If you need automation or integration, you can also <a href="/documentation/rest-api.html">use the API to export data</a>.</p>
+
+<h2 id="how-export-works">How export works</h2>
+
+<p>The workflow is always the same:</p>
+
+<ol>
+  <li>Open <code class="language-plaintext highlighter-rouge">Time Tracking &gt; Export</code></li>
+  <li>Filter the timesheet records you want to include</li>
+  <li>Choose a built-in format or one of your saved templates</li>
+  <li>Download the file</li>
+</ol>
+
+<p>Always use your custom template instead of choosing the default column setup, which can change over time.</p>
+
+<h2 id="supported-formats">Supported formats</h2>
+
+<p>Kimai supports these export formats:</p>
+
+<ul>
+  <li><strong>PDF</strong> for a fixed, easy-to-share document</li>
+  <li><strong>XLSX (Excel)</strong> for calculations, pivots, and internal reporting</li>
+  <li><strong>CSV</strong> for importing data into accounting, BI, or other business systems</li>
+  <li><strong>HTML</strong> for a browser-friendly print view that you can review or save as PDF</li>
 </ul>
 
 <h2 id="export-state">Export state</h2>
@@ -678,96 +729,105 @@
     <iframe width="100%" height="315" src="https://www.youtube.com/embed/saNH0SX3UW8?start=68" title="Create Reports &amp; Invoices" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 </div>
 
-<p>Invoices and exports share the export state, which is used to mark timesheet records as processed. 
-These records cannot be edited any longer by regular users and are excluded by default from further invoices and exports.</p>
+<p>Invoices and exports share the same export state.
+It is used to mark timesheet records as processed.</p>
 
-<p>You need to activate the checkbox before creating the export, to automatically set the export state on all filtered timesheet records.</p>
+<p>Exported records:</p>
 
-<p>For further information read the <a href="/documentation/timesheet.html">timesheet documentation</a>.</p>
-
-<h2 id="time-format">Time format</h2>
-
-<p>Kimai knows both the <code class="language-plaintext highlighter-rouge">natural</code> and <code class="language-plaintext highlighter-rouge">decimal</code> notation for times and both versions have their Pros and Cons:</p>
 <ul>
-  <li>the <code class="language-plaintext highlighter-rouge">natural</code> format (e.g. 1:15) is usually easier to understand</li>
-  <li>the <code class="language-plaintext highlighter-rouge">decimal</code> format (e.g. 1.25) is better for calculations</li>
+  <li>are locked for regular users</li>
+  <li>are excluded by default from later exports and invoices</li>
+  <li>can be marked automatically during export</li>
 </ul>
 
-<p>As a user, you can decide which version you want to use by going to your own <a href="/documentation/user-preferences.html">user preferences</a>: in the upper right corner click your username and then <code class="language-plaintext highlighter-rouge">Preferences</code>.</p>
+<p>To set that state automatically, enable the checkbox before creating the export.</p>
 
-<p>There is a toggle called <code class="language-plaintext highlighter-rouge">Use decimal duration in export</code> that switches between the two versions:</p>
+<p>For more details, read the <a href="/documentation/timesheet.html">timesheet documentation</a>.</p>
 
-<figure class="d-block figure mb-3" style="max-width: 400px">
-    <img src="/images/documentation/export-time-format.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
-    <figcaption class="figure-caption">Time format toggle</figcaption>
-</figure>
+<h2 id="reusable-export-templates">Reusable export templates</h2>
 
-<h2 id="export-templates">Export templates</h2>
+<p>Kimai includes ready-to-use export buttons and also supports reusable templates for recurring exports.
+This is useful if you often need the same columns, language, or file format.
+The template editor is meant for reusable PDF, XLSX and CSV exports.
+If you want to change the layout of PDF or HTML exports, use custom Twig templates instead.</p>
 
-<p>Kimai supports customizable PDF, Excel and CSV templates.</p>
-
-<p>You can create them with the UI: after filtering timesheets, you will see the list of export buttons. 
-Next to them is the <a class="btn btn-secondary px-3" href="#"><i class="bx bx-plus"></i></a> button, which will open the modal to create a new template.</p>
+<p>After filtering timesheets, you will see the export buttons.
+Next to them is the <a class="btn btn-secondary px-3" href="#"><i class="bx bx-plus"></i></a> button, which opens the template dialog.</p>
 
 <figure class="d-block figure mb-3" style="max-width: 400px">
     <img src="/images/documentation/export-add-template.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
     <figcaption class="figure-caption">Add export template</figcaption>
 </figure>
 
-<p>These templates allow you to select:</p>
+<p>In the template, you can define:</p>
+
 <ul>
-  <li>the exported file <code class="language-plaintext highlighter-rouge">type</code> (here <code class="language-plaintext highlighter-rouge">PDF</code>, <code class="language-plaintext highlighter-rouge">CSV</code> or <code class="language-plaintext highlighter-rouge">Excel</code>)</li>
-  <li>the <code class="language-plaintext highlighter-rouge">language</code> for header translations, which uses the request language if not configured</li>
+  <li>the exported file <code class="language-plaintext highlighter-rouge">type</code> such as <code class="language-plaintext highlighter-rouge">PDF</code>, <code class="language-plaintext highlighter-rouge">CSV</code> or <code class="language-plaintext highlighter-rouge">Excel</code></li>
+  <li>the <code class="language-plaintext highlighter-rouge">language</code> for translated column headers</li>
   <li>the <code class="language-plaintext highlighter-rouge">columns</code> that should be exported</li>
-  <li>whether they can be used by <strong>every logged-in user</strong> with <code class="language-plaintext highlighter-rouge">Allow access for all users</code></li>
+  <li>whether the template is shared with all users through <code class="language-plaintext highlighter-rouge">Allow access for all users</code></li>
 </ul>
 
-<h3 id="share-with-your-users">Share with your users</h3>
+<p>The selected language controls header translations.
+If you do not set one, Kimai uses the current request language.</p>
 
-<p>Enabling the <code class="language-plaintext highlighter-rouge">Allow access for all users</code> setting makes the new template available in the <code class="language-plaintext highlighter-rouge">My times</code> and <code class="language-plaintext highlighter-rouge">All times</code> views for exporting data.</p>
+<h3 id="create-a-template">Create a template</h3>
 
-<p>⚠️ <strong>Important:</strong> These views do not check user permissions.<br />
-For example, if you add a rate column to the template, the rates will be visible to all users — even if they normally do not have permission to see rate information.</p>
+<ol>
+  <li>Filter the data you want to export</li>
+  <li>Click the <a class="btn btn-secondary px-3" href="#"><i class="bx bx-plus"></i></a> button</li>
+  <li>Enter a name for the template</li>
+  <li>Choose the file type and columns</li>
+  <li>Save the template</li>
+</ol>
 
-<h3 id="format-specifications">Format specifications</h3>
-
-<p>Some fields are specific for the export format.</p>
-
-<p><strong>PDF</strong></p>
-
-<ul>
-  <li>Title</li>
-  <li>Summary (export summary on the first page of the PDF)</li>
-  <li>Font (a list of fonts)</li>
-  <li>Page size (A4, A5, A6, Legal, Letter)</li>
-  <li>Orientation (Portrait or Landscape)</li>
-</ul>
-
-<p><strong>CSV</strong></p>
-
-<ul>
-  <li>Separator (Comma or Semicolon)</li>
-</ul>
+<p>The export button for that format will then show a dropdown, so you can reuse the template later.</p>
 
 <figure class="d-block figure mb-3" style="max-width: 800px">
     <img src="/images/documentation/export-create-template.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
     <figcaption class="figure-caption">Edit export template form</figcaption>
 </figure>
 
-<p>After creating the template, the respective buttons will become a dropdown and you can select your template for the export.</p>
-
 <figure class="d-block figure mb-3" style="max-width: 400px">
     <img src="/images/documentation/export-select-template.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
     <figcaption class="figure-caption">Select template for export</figcaption>
 </figure>
 
-<p>When you hover such a template, you can edit and delete it from the dropdown.</p>
+<p>When you hover a saved template in the dropdown, you can edit or delete it.</p>
 
-<h3 id="pdf-and-html-for-developer">PDF and HTML (for developer)</h3>
+<h3 id="pdf-option">PDF option</h3>
 
-<p>Kimai supports custom PDF and HTML export twig templates. This is an advance topic, only for very specific use-cases.</p>
+<ul>
+  <li>Title</li>
+  <li>Summary (export column summary on the first page of the PDF)</li>
+  <li>Font (pick one from the built-in list of fonts)</li>
+  <li>Page size (A4, A5, A6, Legal, Letter)</li>
+  <li>Orientation (Portrait or Landscape)</li>
+</ul>
 
-<p><strong>How to create your first template</strong></p>
+<h3 id="csv-option">CSV option</h3>
+
+<p>CSV templates support an additional setting:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Separator</code> with comma or semicolon</li>
+</ul>
+
+<h3 id="share-templates-with-care">Share templates with care</h3>
+
+<p>Enabling <code class="language-plaintext highlighter-rouge">Allow access for all users</code> makes the template available in <code class="language-plaintext highlighter-rouge">My times</code> and <code class="language-plaintext highlighter-rouge">All times</code>.</p>
+
+<div class="alert alert-danger d-flex" role="alert"><i class="bx bx-info-circle lead me-3"></i>
+<p>These export views do not re-check every sensitive permission.
+If a shared template contains rate columns, all users who can use that template will see those rates, even if they normally do not have permission to view them.</p>
+</div>
+
+<h2 id="custom-pdf-and-html-templates">Custom PDF and HTML templates</h2>
+
+<p>If you need your own branding, layout, or special formatting, you can create custom Twig templates for PDF and HTML exports.
+This is an advanced topic and usually only needed for company-specific workflows.</p>
+
+<p>How to create your first template:</p>
 <ul>
   <li>Copy &amp; paste the <a href="https://github.com/kimai/kimai/blob/main/templates/export/pdf-layout.html.twig">default templates</a></li>
   <li>Read the dedicated chapter about <a href="/documentation/pdf-templates.html">PDF templates</a></li>
@@ -777,7 +837,7 @@ For example, if you add a rate column to the template, the rates will be visible
 <div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i>
 <ul>
   <li><strong>Cloud</strong> users have to send their template to the support via <code class="language-plaintext highlighter-rouge">support@kimai.cloud</code></li>
-  <li><strong>OnPremise</strong> users need to store their export templates in the directory <code class="language-plaintext highlighter-rouge">var/export/</code> (you might have to create it on first use)</li>
+  <li><strong>OnPremise</strong> users store their export templates in the directory <code class="language-plaintext highlighter-rouge">var/export/</code> (you might have to create it on first use)</li>
 </ul>
 </div>
 
@@ -786,14 +846,15 @@ For example, if you add a rate column to the template, the rates will be visible
 <ul>
   <li>HTML templates have the file extension <code class="language-plaintext highlighter-rouge">.html.twig</code></li>
   <li>PDF templates have the file extension <code class="language-plaintext highlighter-rouge">.pdf.twig</code></li>
-  <li>Use unique filenames and prefix them with your company name, eg <code class="language-plaintext highlighter-rouge">company-export.html.twig</code></li>
-  <li>The name <code class="language-plaintext highlighter-rouge">timesheet.html.twig</code>, <code class="language-plaintext highlighter-rouge">timesheet.pdf.twig</code>, <code class="language-plaintext highlighter-rouge">default.pdf.twig</code>, <code class="language-plaintext highlighter-rouge">default.html.twig</code> are reserved</li>
+  <li>Use unique filenames and prefix them with your company name, for example <code class="language-plaintext highlighter-rouge">company-export.html.twig</code></li>
+  <li>The names <code class="language-plaintext highlighter-rouge">timesheet.html.twig</code>, <code class="language-plaintext highlighter-rouge">timesheet.pdf.twig</code>, <code class="language-plaintext highlighter-rouge">default.pdf.twig</code>, and <code class="language-plaintext highlighter-rouge">default.html.twig</code> are reserved</li>
   <li>After updating an existing template, you have to <a href="/documentation/cache.html">clear the cache</a> to see the results</li>
 </ul>
 
-<p><strong>How to access custom fields in PDF templates</strong></p>
+<h3 id="access-custom-fields-in-pdf-templates">Access custom fields in PDF templates</h3>
 
-<p>You can access custom fields with <code class="language-plaintext highlighter-rouge">entry.metaField('name')</code> and you should always safeguard the call in case of a missing custom-field:</p>
+<p>You can access custom fields with <code class="language-plaintext highlighter-rouge">entry.metaField('name')</code>.
+Always protect the call in case the custom field does not exist:</p>
 
 <div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span> <span class="k">set</span> <span class="nv">cf</span> <span class="o">=</span> <span class="nv">entry.metaField</span><span class="p">(</span><span class="s1">'example'</span><span class="p">)</span> <span class="cp">%}</span>
 <span class="cp">{%</span> <span class="k">if</span> <span class="nv">cf</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">null</span> <span class="ow">and</span> <span class="nv">cf.value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">null</span> <span class="cp">%}</span>
@@ -801,9 +862,47 @@ For example, if you add a rate column to the template, the rates will be visible
 <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
 </code></pre></div></div>
 
+<h3 id="time-format">Time format</h3>
+
+<blockquote>
+  <p>The following information is partly outdated, as you define the duration type in your custom export template.
+This toggle and behaviour will be removed in the future.</p>
+
+  <p>Only the default templates still use this user-based setting.
+For recurring workflows, define the required duration output directly in your custom template instead of relying on the default templates.</p>
+</blockquote>
+
+<p>Kimai supports both <code class="language-plaintext highlighter-rouge">natural</code> and <code class="language-plaintext highlighter-rouge">decimal</code> duration formats:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">natural</code> format such as <code class="language-plaintext highlighter-rouge">1:15</code> is usually easier to read</li>
+  <li><code class="language-plaintext highlighter-rouge">decimal</code> format such as <code class="language-plaintext highlighter-rouge">1.25</code> is better for calculations</li>
+</ul>
+
+<p>You can choose the format in your <a href="/documentation/user-preferences.html">user preferences</a>.
+Open your username menu in the top right and select <code class="language-plaintext highlighter-rouge">Preferences</code>.</p>
+
+<p>The setting <code class="language-plaintext highlighter-rouge">Use decimal duration in export</code> switches between the two versions:</p>
+
+<figure class="d-block figure mb-3" style="max-width: 400px">
+    <img src="/images/documentation/export-time-format.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
+    <figcaption class="figure-caption">Time format toggle</figcaption>
+</figure>
+
+<h2 id="automation-and-integrations">Automation and integrations</h2>
+
+<p>If you need exports outside the UI, Kimai also supports:</p>
+
+<ul>
+  <li>the <a href="/documentation/rest-api.html">REST API</a> for integrations and custom workflows</li>
+  <li>the <a href="/documentation/commands.html#create-exports-with-cronjobs">command line exporter</a> for scheduled or scripted exports</li>
+</ul>
+
 <h2 id="permissions">Permissions</h2>
 
-<div class="alert alert-danger d-flex" role="alert"><i class="bx bx-info-circle lead me-3"></i><p>The export extension does not check all available permissions, as this would defeat the purpose of an export. If your users shall not see rates, do not give them the “create_export” permission.</p>
+<div class="alert alert-danger d-flex" role="alert"><i class="bx bx-info-circle lead me-3"></i>
+<p>The export feature does not respect every view permission.
+If users must not see rates or other sensitive columns, do not grant them <code class="language-plaintext highlighter-rouge">create_export</code> and do not share such templates with them.</p>
 </div>
 
 <ul>
@@ -846,7 +945,7 @@ For example, if you add a rate column to the template, the rates will be visible
             
                 <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
                     <h3 class="fs-lg mt-2">Jump to</h3>
-                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#difference-between-export-and-invoice" class="nav-link">Difference between export and invoice</a></li><li class="nav-item"><a href="#export-state" class="nav-link">Export state</a></li><li class="nav-item"><a href="#time-format" class="nav-link">Time format</a></li><li class="nav-item"><a href="#export-templates" class="nav-link">Export templates</a><ul><li class="nav-item"><a href="#share-with-your-users" class="nav-link">Share with your users</a></li><li class="nav-item"><a href="#format-specifications" class="nav-link">Format specifications</a></li><li class="nav-item"><a href="#pdf-and-html-for-developer" class="nav-link">PDF and HTML (for developer)</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#export-vs-invoice" class="nav-link">Export vs. invoice</a></li><li class="nav-item"><a href="#how-export-works" class="nav-link">How export works</a></li><li class="nav-item"><a href="#supported-formats" class="nav-link">Supported formats</a></li><li class="nav-item"><a href="#export-state" class="nav-link">Export state</a></li><li class="nav-item"><a href="#reusable-export-templates" class="nav-link">Reusable export templates</a><ul><li class="nav-item"><a href="#create-a-template" class="nav-link">Create a template</a></li><li class="nav-item"><a href="#pdf-option" class="nav-link">PDF option</a></li><li class="nav-item"><a href="#csv-option" class="nav-link">CSV option</a></li><li class="nav-item"><a href="#share-templates-with-care" class="nav-link">Share templates with care</a></li></ul></li><li class="nav-item"><a href="#custom-pdf-and-html-templates" class="nav-link">Custom PDF and HTML templates</a><ul><li class="nav-item"><a href="#access-custom-fields-in-pdf-templates" class="nav-link">Access custom fields in PDF templates</a></li><li class="nav-item"><a href="#time-format" class="nav-link">Time format</a></li></ul></li><li class="nav-item"><a href="#automation-and-integrations" class="nav-link">Automation and integrations</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
                     
                 </aside>
             
