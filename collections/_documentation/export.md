@@ -1,98 +1,141 @@
 ---
 title: Export
-description: Export your timesheet data with Kimai into several different formats
+description: Export filtered timesheet data from Kimai as PDF, XLSX, CSV, or HTML
 ---
 
-The export module allows you to export filtered timesheet data into several formats.
+The export screen lets you download filtered timesheet data in different formats.
+You can use it for a quick customer report, an internal Excel analysis, or a CSV file for another system.
+
+You can find it at `Time Tracking > Export`.
 
 {% include youtube-video.html id="quicky_export" %}
 
-## Difference between export and invoice
+## Export vs. invoice
 
-There are a couple of differences in these two Kimai modules, the most important ones:
+Both features work with timesheet data, but they serve different goals:
 
-- Invoices can only be created for a dedicated customer, where an export can be created without selecting a customer
-- Invoices do more calculation (e.g. tax) 
-- Supported templates / output formats:
-  - Invoices: PDF, HTML, XLSX (Excel), ODS (Open Document), DOCX (Word) 
-  - Export: PDF, XLSX (Excel), CSV, HTML (aka print) 
-- Please note: you can also [use the API to export data]({% link _documentation/developer/rest-api.md %}) for advanced use-cases 
+- Use **export** when you want to download filtered timesheet data in a reusable file format
+- Use **invoice** when you need a billing document with calculations like taxes and invoice numbers
+- Exports can be created without selecting one dedicated customer
+- Invoices are always customer-based
+
+Supported output formats:
+
+| Module  | Formats                                                  |
+|---------|----------------------------------------------------------|
+| Export  | PDF, XLSX (Excel), CSV, HTML (print view)                |
+| Invoice | PDF, HTML, XLSX (Excel), ODS (OpenDocument), DOCX (Word) |
+{: .table }
+
+If you need automation or integration, you can also [use the API to export data]({% link _documentation/developer/rest-api.md %}).
+
+## How export works
+
+The workflow is always the same:
+
+1. Open `Time Tracking > Export`
+2. Filter the timesheet records you want to include
+3. Choose a built-in format or one of your saved templates
+4. Download the file
+
+Always use your custom template instead of choosing the default column setup, which can change over time.
 
 ## Supported formats
 
-The export module Export supports: 
+Kimai supports these export formats:
 
-- PDF - for sending to your clients
-- XLSX (Excel) - for internal usage, calculations and reports
-- CSV - for import in other systems
-- HTML (aka print) - to visually check the export, configure and the print it (e.g. to PDF)
+- **PDF** for a fixed, easy-to-share document
+- **XLSX (Excel)** for calculations, pivots, and internal reporting
+- **CSV** for importing data into accounting, BI, or other business systems
+- **HTML** for a browser-friendly print view that you can review or save as PDF
 
 ## Export state
 
 {% include youtube-video.html id="exports_invoices" chapter="export" %}
 
-Invoices and exports share the export state, which is used to mark timesheet records as processed. 
-These records cannot be edited any longer by regular users and are excluded by default from further invoices and exports.
- 
-You need to activate the checkbox before creating the export, to automatically set the export state on all filtered timesheet records.
+Invoices and exports share the same export state.
+It is used to mark timesheet records as processed.
 
-For further information read the [timesheet documentation]({% link _documentation/timesheet.md %}).
+Exported records:
 
-## Export templates
+- are locked for regular users
+- are excluded by default from later exports and invoices
+- can be marked automatically during export
 
-Kimai supports customizable PDF, Excel and CSV templates.
+To set that state automatically, enable the checkbox before creating the export.
 
-You can create them with the UI: after filtering timesheets, you will see the list of export buttons. 
-Next to them is the {% include demo-action-button.html icon="create" %} button, which will open the modal to create a new template.
+For more details, read the [timesheet documentation]({% link _documentation/timesheet.md %}).
+
+## Reusable export templates
+
+Kimai includes ready-to-use export buttons and also supports reusable templates for recurring exports.
+This is useful if you often need the same columns, language, or file format.
+The template editor is meant for reusable PDF, XLSX and CSV exports.
+If you want to change the layout of PDF or HTML exports, use custom Twig templates instead.
+
+After filtering timesheets, you will see the export buttons.
+Next to them is the {% include demo-action-button.html icon="create" %} button, which opens the template dialog.
 
 {% include docs-image.html src="/images/documentation/export-add-template.webp" title="Add export template" width="400px" %}
 
-These templates allow you to select:
-- the exported file `type` (here `PDF`, `CSV` or `Excel`)
-- the `language` for header translations, which uses the request language if not configured
+In the template, you can define:
+
+- the exported file `type` such as `PDF`, `CSV` or `Excel`
+- the `language` for translated column headers
 - the `columns` that should be exported
-- whether they can be used by **every logged-in user** with `Allow access for all users`
+- whether the template is shared with all users through `Allow access for all users`
 
-### Share with your users
+The selected language controls header translations.
+If you do not set one, Kimai uses the current request language.
 
-Enabling the `Allow access for all users` setting makes the new template available in the `My times` and `All times` views for exporting data.
+### Create a template
 
-⚠️ **Important:** These views do not check user permissions.  
-For example, if you add a rate column to the template, the rates will be visible to all users — even if they normally do not have permission to see rate information.
+1. Filter the data you want to export
+2. Click the {% include demo-action-button.html icon="create" %} button
+3. Enter a name for the template
+4. Choose the file type and columns
+5. Save the template
 
-### Format specifications
-
-Some fields are specific for the export format.
-
-**PDF**
-
-- Title
-- Summary (export summary on the first page of the PDF)
-- Font (a list of fonts)
-- Page size (A4, A5, A6, Legal, Letter)
-- Orientation (Portrait or Landscape)
-
-**CSV**
-
-- Separator (Comma or Semicolon)
+The export button for that format will then show a dropdown, so you can reuse the template later.
 
 {% include docs-image.html src="/images/documentation/export-create-template.webp" title="Edit export template form" %}
 
-After creating the template, the respective buttons will become a dropdown and you can select your template for the export.
-
 {% include docs-image.html src="/images/documentation/export-select-template.webp" title="Select template for export" width="400px" %}
 
-When you hover such a template, you can edit and delete it from the dropdown. 
+When you hover a saved template in the dropdown, you can edit or delete it.
 
-### Customizable with code
+### PDF option
 
-Kimai supports custom PDF and HTML export twig templates. This is an advance topic, only for very specific use-cases (e.g. 
-when you want to use your own layout or a custom branding).
+- Title
+- Summary (export column summary on the first page of the PDF)
+- Font (pick one from the built-in list of fonts)
+- Page size (A4, A5, A6, Legal, Letter)
+- Orientation (Portrait or Landscape)
 
-**How to create your first template**
+### CSV option
+
+CSV templates support an additional setting:
+
+- `Separator` with comma or semicolon
+
+### Share templates with care
+
+Enabling `Allow access for all users` makes the template available in `My times` and `All times`.
+
+{% alert danger %}
+These export views do not re-check every sensitive permission.
+If a shared template contains rate columns, all users who can use that template will see those rates, even if they normally do not have permission to view them.
+{% endalert %}
+
+## Custom PDF and HTML templates
+
+If you need your own branding, layout, or special formatting, you can create custom Twig templates for PDF and HTML exports.
+This is an advanced topic and usually only needed for company-specific workflows.
+
+How to create your first template:
 - Copy & paste the [default templates]({{ site.kimai_v2_repo }}/blob/main/templates/export/pdf-layout.html.twig)
 - Read the dedicated chapter about [PDF templates]({% link _documentation/pdf-templates.md %})
-- Adjust the template to your needs and add it to Kimai 
+- Adjust the template to your needs and add it to Kimai
 
 {% alert info %}
 - **Cloud** users have to send their template to the support via `{{ site.cloud.support_email }}`
@@ -103,13 +146,14 @@ Be aware of the following rules:
 
 - HTML templates have the file extension `.html.twig`
 - PDF templates have the file extension `.pdf.twig`
-- Use unique filenames and prefix them with your company name, eg `company-export.html.twig` 
-- The name `timesheet.html.twig`, `timesheet.pdf.twig`, `default.pdf.twig`, `default.html.twig` are reserved
+- Use unique filenames and prefix them with your company name, for example `company-export.html.twig`
+- The names `timesheet.html.twig`, `timesheet.pdf.twig`, `default.pdf.twig`, and `default.html.twig` are reserved
 - After updating an existing template, you have to [clear the cache]({% link _documentation/cache.md %}) to see the results
 
-**How to access custom fields in PDF templates**
+### Access custom fields in PDF templates
 
-You can access custom fields with `entry.metaField('name')` and you should always safeguard the call in case of a missing custom-field:
+You can access custom fields with `entry.metaField('name')`.
+Always protect the call in case the custom field does not exist:
 
 ```twig
 {% raw %}{% set cf = entry.metaField('example') %}
@@ -120,25 +164,37 @@ You can access custom fields with `entry.metaField('name')` and you should alway
 
 ### Time format
 
-> The following information is partly outdated, as you define the duration type in your custom export template. 
+> The following information is partly outdated, as you define the duration type in your custom export template.
 > This toggle and behaviour will be removed in the future.
 >
-> Only the default templates still use the following user-based setting, it is highly recommended to configure
-> the required columns in your custom template definition and not rely on the default templates for your workflows.
+> Only the default templates still use this user-based setting.
+> For recurring workflows, define the required duration output directly in your custom template instead of relying on the default templates.
 
-Kimai knows both the `natural` and `decimal` notation for times and both versions have their Pros and Cons:
-- the `natural` format (e.g. 1:15) is usually easier to understand
-- the `decimal` format (e.g. 1.25) is better for calculations
+Kimai supports both `natural` and `decimal` duration formats:
 
-As a user, you can decide which version you want to use by going to your own [user preferences]({% link _documentation/user-preferences.md %}): in the upper right corner click your username and then `Preferences`.
+- `natural` format such as `1:15` is usually easier to read
+- `decimal` format such as `1.25` is better for calculations
 
-There is a toggle called `Use decimal duration in export` that switches between the two versions:
+You can choose the format in your [user preferences]({% link _documentation/user-preferences.md %}).
+Open your username menu in the top right and select `Preferences`.
+
+The setting `Use decimal duration in export` switches between the two versions:
 
 {% include docs-image.html src="/images/documentation/export-time-format.webp" title="Time format toggle" width="400px" %}
 
+## Automation and integrations
+
+If you need exports outside the UI, Kimai also supports:
+
+- the [REST API]({% link _documentation/developer/rest-api.md %}) for integrations and custom workflows
+- the [command line exporter]({% link _documentation/commands.md %}#create-exports-with-cronjobs) for scheduled or scripted exports
+
 ## Permissions
 
-{% alert danger %}The export extension does not check all available permissions, as this would defeat the purpose of an export. If your users shall not see rates, do not give them the "create_export" permission.{% endalert %}
+{% alert danger %}
+The export feature does not respect every view permission.
+If users must not see rates or other sensitive columns, do not grant them `create_export` and do not share such templates with them.
+{% endalert %}
  
 - The export does **not** guarantee to respect permissions like `view_rate_other_timesheet` and `view_rate_own_timesheet`
 - The "mark as export" checkbox is only available for users with the `edit_export_other_timesheet` [permission]({% link _documentation/permissions.md %})
