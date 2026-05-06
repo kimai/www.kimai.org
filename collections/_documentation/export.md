@@ -13,7 +13,19 @@ There are a couple of differences in these two Kimai modules, the most important
 
 - Invoices can only be created for a dedicated customer, where an export can be created without selecting a customer
 - Invoices do more calculation (e.g. tax) 
-- Invoices support templates in more formats (e.g. XLSX, ODS, DOCX)
+- Supported templates / output formats:
+  - Invoices: PDF, HTML, XLSX (Excel), ODS (Open Document), DOCX (Word) 
+  - Export: PDF, XLSX (Excel), CSV, HTML (aka print) 
+- Please note: you can also [use the API to export data]({% link _documentation/developer/rest-api.md %}) for advanced use-cases 
+
+## Supported formats
+
+The export module Export supports: 
+
+- PDF - for sending to your clients
+- XLSX (Excel) - for internal usage, calculations and reports
+- CSV - for import in other systems
+- HTML (aka print) - to visually check the export, configure and the print it (e.g. to PDF)
 
 ## Export state
 
@@ -25,18 +37,6 @@ These records cannot be edited any longer by regular users and are excluded by d
 You need to activate the checkbox before creating the export, to automatically set the export state on all filtered timesheet records.
 
 For further information read the [timesheet documentation]({% link _documentation/timesheet.md %}).
-
-## Time format
-
-Kimai knows both the `natural` and `decimal` notation for times and both versions have their Pros and Cons:
-- the `natural` format (e.g. 1:15) is usually easier to understand
-- the `decimal` format (e.g. 1.25) is better for calculations
-
-As a user, you can decide which version you want to use by going to your own [user preferences]({% link _documentation/user-preferences.md %}): in the upper right corner click your username and then `Preferences`.
-
-There is a toggle called `Use decimal duration in export` that switches between the two versions:
-
-{% include docs-image.html src="/images/documentation/export-time-format.webp" title="Time format toggle" width="400px" %}
 
 ## Export templates
 
@@ -84,9 +84,10 @@ After creating the template, the respective buttons will become a dropdown and y
 
 When you hover such a template, you can edit and delete it from the dropdown. 
 
-### PDF and HTML (for developer)
+### Customizable with code
 
-Kimai supports custom PDF and HTML export twig templates. This is an advance topic, only for very specific use-cases.
+Kimai supports custom PDF and HTML export twig templates. This is an advance topic, only for very specific use-cases (e.g. 
+when you want to use your own layout or a custom branding).
 
 **How to create your first template**
 - Copy & paste the [default templates]({{ site.kimai_v2_repo }}/blob/main/templates/export/pdf-layout.html.twig)
@@ -95,7 +96,7 @@ Kimai supports custom PDF and HTML export twig templates. This is an advance top
 
 {% alert info %}
 - **Cloud** users have to send their template to the support via `{{ site.cloud.support_email }}`
-- **OnPremise** users need to store their export templates in the directory `var/export/` (you might have to create it on first use)
+- **OnPremise** users store their export templates in the directory `var/export/` (you might have to create it on first use)
 {% endalert %}
 
 Be aware of the following rules:
@@ -116,6 +117,24 @@ You can access custom fields with `entry.metaField('name')` and you should alway
     {{ cf.value }}
 {% endif %}{% endraw %}
 ```
+
+### Time format
+
+> The following information is partly outdated, as you define the duration type in your custom export template. 
+> This toggle and behaviour will be removed in the future.
+>
+> Only the default templates still use the following user-based setting, it is highly recommended to configure
+> the required columns in your custom template definition and not rely on the default templates for your workflows.
+
+Kimai knows both the `natural` and `decimal` notation for times and both versions have their Pros and Cons:
+- the `natural` format (e.g. 1:15) is usually easier to understand
+- the `decimal` format (e.g. 1.25) is better for calculations
+
+As a user, you can decide which version you want to use by going to your own [user preferences]({% link _documentation/user-preferences.md %}): in the upper right corner click your username and then `Preferences`.
+
+There is a toggle called `Use decimal duration in export` that switches between the two versions:
+
+{% include docs-image.html src="/images/documentation/export-time-format.webp" title="Time format toggle" width="400px" %}
 
 ## Permissions
 
