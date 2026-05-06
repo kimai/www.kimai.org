@@ -1,6 +1,5 @@
 ---
 title: "blueflare Consulting"
-teaser: Wir verkaufen im Grunde genommen unsere Zeit
 subtitle: Ein Interview mit blueflare Consulting
 intro: Wie eine Cybersecurity-Beratung durch strategische Abrechnungs-Transparenz starke Kundenbeziehungen aufbaut
 company: blueflare Consulting

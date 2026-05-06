@@ -1,6 +1,5 @@
 ---
 title: "TECH-SUPPORT.KOELN"
-teaser: 
 subtitle: An interview with TECH-SUPPORT.KOELN
 intro: How an IT company is scaling its customer base while cutting administrative time by 50%
 company: TECH-SUPPORT.KOELN

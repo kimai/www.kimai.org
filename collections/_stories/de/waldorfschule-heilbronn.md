@@ -1,6 +1,5 @@
 ---
 title: "Waldorfschule Heilbronn"
-teaser: Keine Excel-Tabellen, sondern ein funktionierendes System
 subtitle: Ein Interview mit Waldorfschule Heilbronn
 intro: Wie eine Freie Schule aus Deutschland ihre Mitarbeiterinnen und Mitarbeiter auf ein einfaches und schnelles Zeiterfassungssystem umgestellt hat
 company: Verein für Waldorfpädagogik Unterland e.V.

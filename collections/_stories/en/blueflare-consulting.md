@@ -1,6 +1,5 @@
 ---
 title: "blueflare Consulting"
-teaser: We are effectively selling our time
 subtitle: An Interview with blueflare Consulting
 intro: How a cybersecurity consultancy builds strong client relationships through strategic billing transparency
 company: blueflare Consulting

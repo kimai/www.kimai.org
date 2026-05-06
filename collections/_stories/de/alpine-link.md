@@ -1,6 +1,5 @@
 ---
 title: "AlpineLink"
-teaser: 
 subtitle: Ein Interview mit AlpineLink
 intro: Wie ein Schweizer Webdesign-Anbieter 100% Kundenzufriedenheit erreicht
 company: AlpineLink GmbH

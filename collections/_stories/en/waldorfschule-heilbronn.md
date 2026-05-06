@@ -1,6 +1,5 @@
 ---
 title: "Waldorfschule Heilbronn"
-teaser: Not some Excel spreadsheets, but a system that actually works
 subtitle: An Interview with Waldorfschule Heilbronn
 intro: How a Free School in Germany switched its staff to a simple and fast time-tracking system
 company: Association for Waldorf Education Unterland e.V.
