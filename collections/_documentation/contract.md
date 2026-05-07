@@ -17,6 +17,8 @@ This screen and the `Contract` menu can be seen by any user that has active cont
 - Working times: the entire working year
 - Manual bookings
 
+{% include youtube-video.html id="working_contract_overview" %}
+
 ## Summary
  
 The summary contains the following information (where each column is one month):

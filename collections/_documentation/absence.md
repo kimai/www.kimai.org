@@ -48,6 +48,8 @@ The selected mode affects how total expected hours and worked hours are calculat
 
 You can configure the mode individually for each absence type in [System → Settings]({% link _documentation/configurations.md %}), depending on your company rules and industry requirements.
 
+{% include youtube-video.html id="working_contract_overview" chapter="absence_calculation_mode" %}
+
 ### 1. Absences compensate expected working time for the day
 
 In this mode, every scheduled working day keeps its full expected number of hours.
