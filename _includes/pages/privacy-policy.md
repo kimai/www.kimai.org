@@ -175,13 +175,6 @@ Dies stellt ein berechtigtes Interesse im Sinne von Art. 6 Abs. 1 lit. f DSGVO d
 Um Informationen über besuchte Seiten zu erhalten, verwenden wir ein selbst gehostetes [Umami](https://umami.is/).
 Diese Analysesoftware gibt uns nur einen Einblick in unsere Besucher im Allgemeinen, aber nicht in einzelne Personen, da sie keine Besucher verfolgt und keine personenbezogenen Daten speichert.
 
-**Google Fonts**
-
-Für die einheitliche Darstellung von Schriftarten verwendet diese Seite die von Google bereitgestellten Webfonts.
-Wenn Sie eine Seite öffnen, lädt Ihr Browser die benötigten Webfonts in Ihren Browser-Cache, um Texte und Schriften korrekt darzustellen.
-Die Verwendung von Google Webfonts erfolgt im Interesse einer einheitlichen und ansprechenden Darstellung unserer Website.
-Dies stellt ein berechtigtes Interesse im Sinne von Art. 6 Abs. 1 lit. f) DSGVO dar.
-
 **Gumroad**
 
 Wenn Sie ein Plugin kaufen möchten und im Shop auf die Schaltfläche „Kaufen“ klicken, werden Sie zur Software-Verkaufsplattform Gumroad weitergeleitet.
@@ -212,6 +205,7 @@ Bei den eingesetzten Dienstleistern, welche Subprozessor bzw. Unterauftragsverar
  
 ### Änderungsverlauf
 
+- **07.05.2026**: Google Fonts entfernt
 - **21.02.2026**: Neuer Provider "Mailbox" für Support-Emails (vorher: Google), Korrektur Stripe Kontakt (vorher: USA, jetzt: EU), Kategorisierung Subprozessoren 
 - **06.01.2026**: Nennung der 8 Rechte gemäß DSGVO
 - **23.06.2025**: Entfernung der URL zur Liste deutscher Datenschutzbehörden
@@ -402,13 +396,6 @@ This constitutes a justified interest pursuant to Art. 6 (1) (f) DSGVO.
 To gather important information about our visitors’ behavior, we use a self-hosted [Umami](https://umami.is/).
 This analytics software provides us with insights into our visitors in general, but not into individual users, as it does not track visitors or store any personal data.
 
-**Google Fonts**
-
-For uniform representation of fonts, this page uses web fonts provided by Google. 
-When you open a page, your browser loads the required web fonts into your browser cache to display texts and fonts correctly.
-The use of Google Web fonts is done in the interest of a uniform and attractive presentation of our website. 
-This constitutes a justified interest pursuant to Art. 6 (1) (f) DSGVO.
-
 **Gumroad**
 
 When you want to buy a plugin and click the "Buy" buttons in the shop, you are redirected to the software selling platform Gumroad.
@@ -438,6 +425,7 @@ We are using the following service providers (also called sub-processors) to ass
 
 ### Change history
 
+- **07.05.2026**: Removed Google Fonts
 - **21.02.2026**: New provider “Mailbox” for support emails (previously: Google), correction Stripe contact (previously: USA, now: EU)
 - **06.01.2026**: Mention 8 rights under the GDPR
 - **23.06.2025**: Removed URL of German data protection authorities and replaced "German" with "of the federal state in which our company is based"
