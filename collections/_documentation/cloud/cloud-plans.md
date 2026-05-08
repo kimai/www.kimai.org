@@ -19,3 +19,8 @@ description: How to upgrade or downgrade your current plan
 
 **Be aware:** Old plans (Plus / Premium) which were deprecated at the end of 2023, need to switch to one of the new plans.
  
+### Cancel your subscription
+
+You may cancel your contract up to the last day before the subscription period renews.
+
+For more information see [Payment]({% link _documentation/cloud/cloud-payment.md %}).

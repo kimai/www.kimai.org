@@ -21,7 +21,7 @@ These are prepaid plans. You select the number of licenses you need and pay for 
 
 If additional licenses are required, you can purchase them at any time. The cost is prorated, meaning you only pay for the remaining time in the current subscription period.
 
-You may cancel your contract up to the last day before the subscription period ends. Once your subscription expires, no further invoices will be issued.
+You may cancel your contract up to the last day before the subscription period renews. Once your subscription expires, no further invoices will be issued.
 
 ### Plus and Premium Plans (Deprecated)
 
