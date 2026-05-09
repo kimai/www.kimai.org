@@ -1,14 +1,13 @@
 ---
 title: Plugins
-description: "All available plugins and why they cannot be extended"
+description: "All available plugins and why additional ones cannot be installed"
 ---
 
-{% alert info %}TL;DR - The cloud has a fixed set of plugins and new ones cannot be installed{% endalert %}
+{% alert info %}TL;DR — The cloud includes a fixed set of plugins. Additional plugins cannot be installed.{% endalert %}
 
+## Available plugins in Kimai Cloud
 
-## Available Plugins in the Kimai Cloud
-
-The Kimai Cloud provides a curated set of plugins that are fully tested, maintained, and supported by us.
+Kimai Cloud provides a curated set of plugins that are fully tested, maintained, and supported by us.
 
 The following extensions are currently available:
 
@@ -25,79 +24,62 @@ The following extensions are currently available:
 
 These plugins cover all features we support for cloud use.
 
-## Why other plugins cannot be added to the Cloud
+## Why additional plugins cannot be added to the Cloud
 
-A common question is whether additional plugins from the [Kimai Marketplace]({% link _pages/{{ page.lang }}/store.html %}) or third-party developers can be installed.
-This is not possible in the Cloud, and the following sections explain why.
+A common question is whether plugins from the [Kimai Marketplace]({% link _pages/{{ page.lang }}/store.html %}) or third-party developers can be installed.
+This is not possible, and the sections below explain why.
 
-### Feature Overlap & Product Consistency
+### Feature overlap and product consistency
 
-Most unavailable plugins provide functionality that is already covered by existing Cloud plugins, or they conflict with how the Cloud is designed to work.
+Most unavailable plugins provide functionality already covered by existing Cloud plugins, or they conflict with how the Cloud is designed to work.
 
 To keep the product stable and consistent, we must avoid overlapping or conflicting features.
 
-### Licensing Restrictions
+### Licensing restrictions
 
-Many plugins are not developed by us, but by external developers or companies.
-* We cannot automatically transfer their licenses to the Cloud.
-* In many cases, the license does not allow redistribution or SaaS hosting.
-* Some plugins do not provide clear or commercially usable licensing terms at all.
+Many plugins are developed by external developers or companies, not by us.
 
-Because of this, we cannot include these plugins in the Cloud.
+We can't automatically extend their licenses to cover the Cloud. In many cases, the license doesn't permit redistribution or SaaS hosting, and some plugins don't provide clear or commercially usable licensing terms at all.
 
-### Missing Cloud-Required APIs
+For these reasons, we can't include such plugins in the Cloud.
 
-The Kimai Cloud relies on specific APIs and integrations that ensure secure, scalable, and reliable operation.
-Many third-party plugins do not support these Cloud-required APIs, which can lead to errors, incompatibilities, or data issues.
+### Missing Cloud-required APIs
 
-To guarantee the reliability of the Cloud, every component must fully support this infrastructure.
+Kimai Cloud relies on specific APIs and integrations that ensure secure, scalable, and reliable operation.
+Many third-party plugins don't support these APIs, which can lead to errors, incompatibilities, or data issues.
 
-### Support & Maintainability
+Every component in the Cloud must fully support this infrastructure.
 
-If we offer a plugin in the Cloud, we must be able to:
-* Provide support
-* Fix bugs
-* Maintain compatibility with future Kimai versions
+### Support and maintainability
 
-This is not possible for third-party plugins:
-* We do not know their code
-* We cannot debug or fix their issues
-* We would depend on another developer’s release cycle, which might take days, weeks, or months
+When we include a plugin in the Cloud, we take on full responsibility for it — providing support, fixing bugs, and maintaining compatibility with future Kimai versions.
 
-We cannot build a reliable cloud service on components we cannot maintain ourselves.
+This isn't possible for third-party plugins: we don't know their code, can't debug or fix their issues, and would be dependent on another developer's release schedule, which could take days, weeks, or months.
 
-### Security & Code Quality
+We can't build a reliable cloud service on components we can't maintain ourselves.
 
-Security is one of the most important aspects of the Kimai Cloud.
+### Security and code quality
 
-Since third-party plugins are not developed by us:
-* We cannot review their source code
-* We cannot guarantee their security
-* We cannot take responsibility if a plugin contains vulnerabilities
+Security is one of the most important aspects of Kimai Cloud.
 
-Even well-written software can contain security issues.
-Allowing external code in the Cloud would introduce risks that could affect all customers.
+Since third-party plugins aren't developed by us, we can't review their source code, guarantee their security, or take responsibility for any vulnerabilities they might contain.
 
-For this reason, we only accept code that we fully control, audit, and maintain.
+Even well-written software can have security issues. Allowing external code in the Cloud would introduce risks that could affect all customers.
 
-### Reliability & Operational Stability
+For this reason, we only include code that we fully control, audit, and maintain.
 
-To run the Cloud reliably, all components must behave predictably under all circumstances.
+### Reliability and operational stability
 
-A third-party plugin might:
-* Contain bugs
-* Break during Kimai updates
-* Cause performance or memory issues
-* Interrupt critical business processes
+All components of the Cloud must behave predictably under all conditions.
 
-Because we cannot fix or maintain external code, a single plugin could jeopardize the stability of the entire Cloud.
+A third-party plugin might contain bugs, break during a Kimai update, cause performance or memory issues, or interrupt critical business processes.
 
-### Delivering the Best Possible Experience
+Because we can't fix or maintain external code, a single problematic plugin could affect the stability of the entire Cloud.
+
+### Our commitment to quality
 
 Our goal is to deliver the best possible quality, stability, and security to all Cloud customers.
 
-Therefore, we follow one clear principle:
+Every part of the Cloud comes from a single responsible source — so everything works together seamlessly.
 
-Every part of the Cloud must come from a single responsible source — so everything works together seamlessly.
-
-The plugins available in the Cloud are optimized specifically for this environment and continuously updated, tested, and maintained.
+The plugins available in the Cloud are optimized specifically for this environment and are continuously updated, tested, and maintained by us.

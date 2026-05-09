@@ -121,6 +121,8 @@ Routing and domain rules matter:
 - Avoid: "just", "obviously", "easy", "simply"
 - Realistic examples (no foo/bar placeholders)
 - Write for non-native English speakers: use simple vocabulary, avoid idioms, and complex sentence structures
+- Use "we" (not "I") when referring to the Kimai team or business in documentation
+- Markdown blockquotes (`>`) may use "I", as they are personal (founder) statements and to visually distinguish them from factual/operational text
 
 ## Images And Assets
 
