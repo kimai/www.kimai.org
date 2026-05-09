@@ -13,14 +13,14 @@
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
 <title>Plugins – Kimai</title>
-<meta name="description" content="All available plugins and why they cannot be extended">
+<meta name="description" content="All available plugins and why additional ones cannot be installed">
 <link type="application/atom+xml" rel="alternate" href="/en/feed.xml" title="Kimai Time-Tracking" />
 <meta property="og:locale" content="en">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Plugins">
 <meta property="og:image" content="https://www.kimai.org/images/social-preview.webp">
-<meta property="og:description" content="All available plugins and why they cannot be extended">
-<link href="/assets/build/main.css?v7" rel="stylesheet" />
+<meta property="og:description" content="All available plugins and why additional ones cannot be installed">
+<link href="/assets/build/main.css?v8" rel="stylesheet" />
 
 </head>
 <body class="">
@@ -334,7 +334,7 @@
                     <div class="me-4">
                         <h1 class="pb-1" data-pagefind-meta="title" data-pagefind-weight="10.0">Plugins</h1>
                         
-                        <p class="text-muted fs-lg mb-2" data-pagefind-meta="description">All available plugins and why they cannot be extended</p>
+                        <p class="text-muted fs-lg mb-2" data-pagefind-meta="description">All available plugins and why additional ones cannot be installed</p>
                         
                     </div>
                     <div class="d-none d-lg-flex">
@@ -351,12 +351,12 @@
                     <div>
                         
                         <div id="documentation-content">
-                            <div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i><p>TL;DR - The cloud has a fixed set of plugins and new ones cannot be installed</p>
+                            <div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i><p>TL;DR — The cloud includes a fixed set of plugins. Additional plugins cannot be installed.</p>
 </div>
 
-<h2 id="available-plugins-in-the-kimai-cloud">Available Plugins in the Kimai Cloud</h2>
+<h2 id="available-plugins-in-kimai-cloud">Available plugins in Kimai Cloud</h2>
 
-<p>The Kimai Cloud provides a curated set of plugins that are fully tested, maintained, and supported by us.</p>
+<p>Kimai Cloud provides a curated set of plugins that are fully tested, maintained, and supported by us.</p>
 
 <p>The following extensions are currently available:</p>
 <ul>
@@ -375,92 +375,65 @@
 
 <p>These plugins cover all features we support for cloud use.</p>
 
-<h2 id="why-other-plugins-cannot-be-added-to-the-cloud">Why other plugins cannot be added to the Cloud</h2>
+<h2 id="why-additional-plugins-cannot-be-added-to-the-cloud">Why additional plugins cannot be added to the Cloud</h2>
 
-<p>A common question is whether additional plugins from the <a href="/en/store/">Kimai Marketplace</a> or third-party developers can be installed.
-This is not possible in the Cloud, and the following sections explain why.</p>
+<p>A common question is whether plugins from the <a href="/en/store/">Kimai Marketplace</a> or third-party developers can be installed.
+This is not possible, and the sections below explain why.</p>
 
-<h3 id="feature-overlap--product-consistency">Feature Overlap &amp; Product Consistency</h3>
+<h3 id="feature-overlap-and-product-consistency">Feature overlap and product consistency</h3>
 
-<p>Most unavailable plugins provide functionality that is already covered by existing Cloud plugins, or they conflict with how the Cloud is designed to work.</p>
+<p>Most unavailable plugins provide functionality already covered by existing Cloud plugins, or they conflict with how the Cloud is designed to work.</p>
 
 <p>To keep the product stable and consistent, we must avoid overlapping or conflicting features.</p>
 
-<h3 id="licensing-restrictions">Licensing Restrictions</h3>
+<h3 id="licensing-restrictions">Licensing restrictions</h3>
 
-<p>Many plugins are not developed by us, but by external developers or companies.</p>
-<ul>
-  <li>We cannot automatically transfer their licenses to the Cloud.</li>
-  <li>In many cases, the license does not allow redistribution or SaaS hosting.</li>
-  <li>Some plugins do not provide clear or commercially usable licensing terms at all.</li>
-</ul>
+<p>Many plugins are developed by external developers or companies, not by us.</p>
 
-<p>Because of this, we cannot include these plugins in the Cloud.</p>
+<p>We can’t automatically extend their licenses to cover the Cloud. In many cases, the license doesn’t permit redistribution or SaaS hosting, and some plugins don’t provide clear or commercially usable licensing terms at all.</p>
 
-<h3 id="missing-cloud-required-apis">Missing Cloud-Required APIs</h3>
+<p>For these reasons, we can’t include such plugins in the Cloud.</p>
 
-<p>The Kimai Cloud relies on specific APIs and integrations that ensure secure, scalable, and reliable operation.
-Many third-party plugins do not support these Cloud-required APIs, which can lead to errors, incompatibilities, or data issues.</p>
+<h3 id="missing-cloud-required-apis">Missing Cloud-required APIs</h3>
 
-<p>To guarantee the reliability of the Cloud, every component must fully support this infrastructure.</p>
+<p>Kimai Cloud relies on specific APIs and integrations that ensure secure, scalable, and reliable operation.
+Many third-party plugins don’t support these APIs, which can lead to errors, incompatibilities, or data issues.</p>
 
-<h3 id="support--maintainability">Support &amp; Maintainability</h3>
+<p>Every component in the Cloud must fully support this infrastructure.</p>
 
-<p>If we offer a plugin in the Cloud, we must be able to:</p>
-<ul>
-  <li>Provide support</li>
-  <li>Fix bugs</li>
-  <li>Maintain compatibility with future Kimai versions</li>
-</ul>
+<h3 id="support-and-maintainability">Support and maintainability</h3>
 
-<p>This is not possible for third-party plugins:</p>
-<ul>
-  <li>We do not know their code</li>
-  <li>We cannot debug or fix their issues</li>
-  <li>We would depend on another developer’s release cycle, which might take days, weeks, or months</li>
-</ul>
+<p>When we include a plugin in the Cloud, we take on full responsibility for it — providing support, fixing bugs, and maintaining compatibility with future Kimai versions.</p>
 
-<p>We cannot build a reliable cloud service on components we cannot maintain ourselves.</p>
+<p>This isn’t possible for third-party plugins: we don’t know their code, can’t debug or fix their issues, and would be dependent on another developer’s release schedule, which could take days, weeks, or months.</p>
 
-<h3 id="security--code-quality">Security &amp; Code Quality</h3>
+<p>We can’t build a reliable cloud service on components we can’t maintain ourselves.</p>
 
-<p>Security is one of the most important aspects of the Kimai Cloud.</p>
+<h3 id="security-and-code-quality">Security and code quality</h3>
 
-<p>Since third-party plugins are not developed by us:</p>
-<ul>
-  <li>We cannot review their source code</li>
-  <li>We cannot guarantee their security</li>
-  <li>We cannot take responsibility if a plugin contains vulnerabilities</li>
-</ul>
+<p>Security is one of the most important aspects of Kimai Cloud.</p>
 
-<p>Even well-written software can contain security issues.
-Allowing external code in the Cloud would introduce risks that could affect all customers.</p>
+<p>Since third-party plugins aren’t developed by us, we can’t review their source code, guarantee their security, or take responsibility for any vulnerabilities they might contain.</p>
 
-<p>For this reason, we only accept code that we fully control, audit, and maintain.</p>
+<p>Even well-written software can have security issues. Allowing external code in the Cloud would introduce risks that could affect all customers.</p>
 
-<h3 id="reliability--operational-stability">Reliability &amp; Operational Stability</h3>
+<p>For this reason, we only include code that we fully control, audit, and maintain.</p>
 
-<p>To run the Cloud reliably, all components must behave predictably under all circumstances.</p>
+<h3 id="reliability-and-operational-stability">Reliability and operational stability</h3>
 
-<p>A third-party plugin might:</p>
-<ul>
-  <li>Contain bugs</li>
-  <li>Break during Kimai updates</li>
-  <li>Cause performance or memory issues</li>
-  <li>Interrupt critical business processes</li>
-</ul>
+<p>All components of the Cloud must behave predictably under all conditions.</p>
 
-<p>Because we cannot fix or maintain external code, a single plugin could jeopardize the stability of the entire Cloud.</p>
+<p>A third-party plugin might contain bugs, break during a Kimai update, cause performance or memory issues, or interrupt critical business processes.</p>
 
-<h3 id="delivering-the-best-possible-experience">Delivering the Best Possible Experience</h3>
+<p>Because we can’t fix or maintain external code, a single problematic plugin could affect the stability of the entire Cloud.</p>
+
+<h3 id="our-commitment-to-quality">Our commitment to quality</h3>
 
 <p>Our goal is to deliver the best possible quality, stability, and security to all Cloud customers.</p>
 
-<p>Therefore, we follow one clear principle:</p>
+<p>Every part of the Cloud comes from a single responsible source — so everything works together seamlessly.</p>
 
-<p>Every part of the Cloud must come from a single responsible source — so everything works together seamlessly.</p>
-
-<p>The plugins available in the Cloud are optimized specifically for this environment and continuously updated, tested, and maintained.</p>
+<p>The plugins available in the Cloud are optimized specifically for this environment and are continuously updated, tested, and maintained by us.</p>
 
                         </div>
                         
@@ -473,7 +446,7 @@ Allowing external code in the Cloud would introduce risks that could affect all 
             
                 <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
                     <h3 class="fs-lg mt-2">Jump to</h3>
-                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#available-plugins-in-the-kimai-cloud" class="nav-link">Available Plugins in the Kimai Cloud</a></li><li class="nav-item"><a href="#why-other-plugins-cannot-be-added-to-the-cloud" class="nav-link">Why other plugins cannot be added to the Cloud</a><ul><li class="nav-item"><a href="#feature-overlap--product-consistency" class="nav-link">Feature Overlap &amp; Product Consistency</a></li><li class="nav-item"><a href="#licensing-restrictions" class="nav-link">Licensing Restrictions</a></li><li class="nav-item"><a href="#missing-cloud-required-apis" class="nav-link">Missing Cloud-Required APIs</a></li><li class="nav-item"><a href="#support--maintainability" class="nav-link">Support &amp; Maintainability</a></li><li class="nav-item"><a href="#security--code-quality" class="nav-link">Security &amp; Code Quality</a></li><li class="nav-item"><a href="#reliability--operational-stability" class="nav-link">Reliability &amp; Operational Stability</a></li><li class="nav-item"><a href="#delivering-the-best-possible-experience" class="nav-link">Delivering the Best Possible Experience</a></li></ul></li></ul>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#available-plugins-in-kimai-cloud" class="nav-link">Available plugins in Kimai Cloud</a></li><li class="nav-item"><a href="#why-additional-plugins-cannot-be-added-to-the-cloud" class="nav-link">Why additional plugins cannot be added to the Cloud</a><ul><li class="nav-item"><a href="#feature-overlap-and-product-consistency" class="nav-link">Feature overlap and product consistency</a></li><li class="nav-item"><a href="#licensing-restrictions" class="nav-link">Licensing restrictions</a></li><li class="nav-item"><a href="#missing-cloud-required-apis" class="nav-link">Missing Cloud-required APIs</a></li><li class="nav-item"><a href="#support-and-maintainability" class="nav-link">Support and maintainability</a></li><li class="nav-item"><a href="#security-and-code-quality" class="nav-link">Security and code quality</a></li><li class="nav-item"><a href="#reliability-and-operational-stability" class="nav-link">Reliability and operational stability</a></li><li class="nav-item"><a href="#our-commitment-to-quality" class="nav-link">Our commitment to quality</a></li></ul></li></ul>
                     
                 </aside>
             

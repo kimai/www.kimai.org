@@ -20,7 +20,7 @@
 <meta property="og:title" content="Payments">
 <meta property="og:image" content="https://www.kimai.org/images/social-preview.webp">
 <meta property="og:description" content="How to pay your Kimai Cloud subscription - payment methods, billing period, trial period and more">
-<link href="/assets/build/main.css?v7" rel="stylesheet" />
+<link href="/assets/build/main.css?v8" rel="stylesheet" />
 
 </head>
 <body class="">
@@ -351,7 +351,7 @@
                     <div>
                         
                         <div id="documentation-content">
-                            <p>You can utilize the test phase and the free plan without providing any payment information. However, this must be done before subscribing to a paid plan.</p>
+                            <p>You can use the trial phase and the free plan without providing any payment information. Payment details are only required when subscribing to a paid plan.</p>
 
 <h2 id="sepa-direct-debit">SEPA Direct Debit</h2>
 
@@ -367,26 +367,24 @@
 
 <p>These are prepaid plans. You select the number of licenses you need and pay for them upfront.</p>
 
-<p>If additional licenses are required, you can purchase them at any time. The cost is prorated, meaning you only pay for the remaining time in the current subscription period.</p>
+<p>If you need additional licenses, you can purchase them at any time. The cost is prorated — you only pay for the remaining time in the current subscription period.</p>
 
-<p>You may cancel your contract up to the last day before the subscription period ends. Once your subscription expires, no further invoices will be issued.</p>
+<p>You may cancel your subscription up to the last day before the renewal date. Once your subscription expires, no further invoices will be issued.</p>
 
 <h3 id="plus-and-premium-plans-deprecated">Plus and Premium Plans (Deprecated)</h3>
 
-<p>These plans were deprecated in January 2024 and are no longer available for new subscriptions. 
-Pricing is based on the plan and the number of registered users. 
-You can adjust the number of users at any time, and billing for Kimai-Cloud occurs <strong>in arrears</strong>: invoices are issued at the end of each billing period.</p>
+<p>These plans were deprecated in January 2024 and are no longer available for new subscriptions.
+Pricing is based on the plan and the number of registered users.
+You can adjust the number of users at any time, and billing occurs <strong>in arrears</strong>: invoices are issued at the end of each billing period.</p>
 
-<p>Refer to “User-Based Billing” below for more details.</p>
-
-<p>If you cancel your contract, a final invoice will be issued after your subscription expires.</p>
+<p>If you cancel your subscription, a final invoice will be issued after it expires.</p>
 
 <h2 id="billing-period">Billing Period</h2>
 
-<p>Billing occurs on a monthly or annual basis, with the billing date corresponding to the date the plan was initially subscribed. 
-For example, if you subscribe to the premium plan on December 26th, subsequent invoices will be issued on the 26th of each month.</p>
+<p>Billing occurs on a monthly or annual basis. The billing date corresponds to the date you first subscribed to the plan.
+For example, if you subscribe on December 26th, subsequent invoices will be issued on the 26th of each month.</p>
 
-<p>If you require billing on specific dates (e.g., the first of the month), please subscribe on that date or contact support for assistance.</p>
+<p>If you need billing on a specific date (e.g., the first of the month), please subscribe on that date or contact support for assistance.</p>
 
 <h2 id="trial-period">Trial Period</h2>
 
@@ -394,33 +392,33 @@ For example, if you subscribe to the premium plan on December 26th, subsequent i
 
 <h2 id="eu-reverse-charge-and-taxes">EU Reverse-Charge and Taxes</h2>
 
-<p>Kimai Cloud operates under “Electronically Provided Services / Data Processing,” applying the <strong>Receiver Location Principle</strong>.</p>
+<p>Kimai Cloud falls under “Electronically Provided Services / Data Processing” and applies the <strong>Receiver Location Principle</strong>.</p>
 
 <ul>
   <li>The tax regulations of Austria apply.</li>
-  <li>A valid VAT ID is necessary to issue an EU reverse-charge invoice.</li>
+  <li>A valid VAT ID is required to issue an EU reverse-charge invoice.</li>
   <li>The tax number you provide will always appear on your invoice.</li>
 </ul>
 
-<p><strong>Kimai Cloud is specifically designed for B2B customers.</strong></p>
+<p><strong>Kimai Cloud is designed for B2B customers.</strong></p>
 
 <ul>
-  <li>Business customers within the EU with a VAT ID will receive reverse-charge invoices.</li>
-  <li>Our business is based in Austria; therefore, Austrian customers will always receive an invoice including tax.</li>
-  <li>Customers from other EU countries without a VAT ID will receive invoices with their local VAT rate (under the OSS / One-Stop Shop program).</li>
+  <li>EU business customers with a VAT ID receive reverse-charge invoices.</li>
+  <li>Our business is based in Austria, so Austrian customers always receive invoices including Austrian VAT.</li>
+  <li>EU customers without a VAT ID receive invoices with their local VAT rate (under the OSS / One-Stop Shop program).</li>
 </ul>
 
-<h2 id="how-payment-data-is-stored">How Payment Data is Stored</h2>
+<h2 id="how-payment-data-is-stored">How payment data is stored</h2>
 
-<p>We partner with “Stripe” to securely manage your payment data. Your payment details (credit card number and CVC/check digits or IBAN for SEPA) are <strong>never</strong> transmitted to Kimai’s server.</p>
+<p>We use Stripe to securely manage your payment data. Your payment details (credit card number and CVC, or IBAN for SEPA) are <strong>never</strong> transmitted to our servers.</p>
 
-<p>Stripe has anonymous access to certain data for informational and fraud prevention purposes:</p>
+<p>Stripe has access to certain non-sensitive data for informational and fraud prevention purposes:</p>
+
 <ul>
-  <li>The card issuer (CC) or bank details (SEPA), including country</li>
-  <li>Expiration date (CC)</li>
-  <li>Last four digits of the card (CC) or IBAN (SEPA)</li>
+  <li>The card issuer (credit card) or bank details (SEPA), including country</li>
+  <li>Expiration date (credit card)</li>
+  <li>Last four digits of the card (credit card) or IBAN (SEPA)</li>
 </ul>
-
 
                         </div>
                         
@@ -433,7 +431,7 @@ For example, if you subscribe to the premium plan on December 26th, subsequent i
             
                 <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
                     <h3 class="fs-lg mt-2">Jump to</h3>
-                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#sepa-direct-debit" class="nav-link">SEPA Direct Debit</a></li><li class="nav-item"><a href="#credit-cards" class="nav-link">Credit Cards</a></li><li class="nav-item"><a href="#payment" class="nav-link">Payment</a><ul><li class="nav-item"><a href="#starter-and-professional-plans" class="nav-link">Starter and Professional Plans</a></li><li class="nav-item"><a href="#plus-and-premium-plans-deprecated" class="nav-link">Plus and Premium Plans (Deprecated)</a></li></ul></li><li class="nav-item"><a href="#billing-period" class="nav-link">Billing Period</a></li><li class="nav-item"><a href="#trial-period" class="nav-link">Trial Period</a></li><li class="nav-item"><a href="#eu-reverse-charge-and-taxes" class="nav-link">EU Reverse-Charge and Taxes</a></li><li class="nav-item"><a href="#how-payment-data-is-stored" class="nav-link">How Payment Data is Stored</a></li></ul>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#sepa-direct-debit" class="nav-link">SEPA Direct Debit</a></li><li class="nav-item"><a href="#credit-cards" class="nav-link">Credit Cards</a></li><li class="nav-item"><a href="#payment" class="nav-link">Payment</a><ul><li class="nav-item"><a href="#starter-and-professional-plans" class="nav-link">Starter and Professional Plans</a></li><li class="nav-item"><a href="#plus-and-premium-plans-deprecated" class="nav-link">Plus and Premium Plans (Deprecated)</a></li></ul></li><li class="nav-item"><a href="#billing-period" class="nav-link">Billing Period</a></li><li class="nav-item"><a href="#trial-period" class="nav-link">Trial Period</a></li><li class="nav-item"><a href="#eu-reverse-charge-and-taxes" class="nav-link">EU Reverse-Charge and Taxes</a></li><li class="nav-item"><a href="#how-payment-data-is-stored" class="nav-link">How payment data is stored</a></li></ul>
                     
                 </aside>
             

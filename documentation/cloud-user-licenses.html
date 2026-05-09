@@ -13,14 +13,14 @@
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
 <title>User licenses – Kimai</title>
-<meta name="description" content="How the seat-based licensing works in Kimai-Cloud">
+<meta name="description" content="How the seat-based licensing works in Kimai Cloud">
 <link type="application/atom+xml" rel="alternate" href="/en/feed.xml" title="Kimai Time-Tracking" />
 <meta property="og:locale" content="en">
 <meta property="og:type" content="website">
 <meta property="og:title" content="User licenses">
 <meta property="og:image" content="https://www.kimai.org/images/social-preview.webp">
-<meta property="og:description" content="How the seat-based licensing works in Kimai-Cloud">
-<link href="/assets/build/main.css?v7" rel="stylesheet" />
+<meta property="og:description" content="How the seat-based licensing works in Kimai Cloud">
+<link href="/assets/build/main.css?v8" rel="stylesheet" />
 
 </head>
 <body class="">
@@ -334,7 +334,7 @@
                     <div class="me-4">
                         <h1 class="pb-1" data-pagefind-meta="title" data-pagefind-weight="10.0">User licenses</h1>
                         
-                        <p class="text-muted fs-lg mb-2" data-pagefind-meta="description">How the seat-based licensing works in Kimai-Cloud</p>
+                        <p class="text-muted fs-lg mb-2" data-pagefind-meta="description">How the seat-based licensing works in Kimai Cloud</p>
                         
                     </div>
                     <div class="d-none d-lg-flex">
@@ -351,65 +351,52 @@
                     <div>
                         
                         <div id="documentation-content">
-                            <p>Kimai uses a <strong>per-seat licensing model</strong>, where each active user account consumes one license. 
-However, the system is designed with fairness in mind, so deactivated accounts do not consume licenses.</p>
+                            <p>Kimai uses a <strong>per-seat licensing model</strong>, where each active user account consumes one license.
+Deactivated accounts do not consume licenses, which keeps the model flexible and fair.</p>
 
-<p>Here’s a breakdown of how the licensing works:</p>
-
-<h2 id="licensing-rules">Licensing Rules</h2>
+<h2 id="licensing-rules">Licensing rules</h2>
 
 <ul>
-  <li><strong>Active users</strong>: Each active user consumes one license.</li>
-  <li><strong>Deactivated users</strong>: Do not consume a license. This allows the license to be reassigned to another user.</li>
+  <li><strong>Active users</strong> each consume one license.</li>
+  <li><strong>Deactivated users</strong> do not consume a license, so the seat can be reassigned to another user.</li>
 </ul>
 
 <h3 id="managing-user-accounts">Managing user accounts</h3>
 
 <ul>
-  <li>When a user leaves the company, you can deactivate their account, freeing up the license for another user.</li>
-  <li>If a deactivated user is reactivated, they will once again consume a license. Reactivation is only possible if there are available licenses.</li>
-  <li>New user accounts can only be created if there are free licenses available.</li>
+  <li>When a user leaves the company, deactivate their account to free up the license for someone else.</li>
+  <li>Reactivating a deactivated user will consume a license again. Reactivation is only possible if a free license is available.</li>
+  <li>New user accounts can only be created if at least one license is available.</li>
 </ul>
 
 <h3 id="before-starting-a-subscription">Before starting a subscription</h3>
 
-<ul>
-  <li>When registering for a plan, the system displays the minimum number of licenses you need to purchase based on your current number of active users.</li>
-  <li>If you see more licenses than necessary, you can deactivate any extra accounts and reload the page to adjust the displayed license count.</li>
-</ul>
+<p>When registering for a plan, the system shows the minimum number of licenses you need based on your current active users.
+If the count is higher than expected, deactivate any unused accounts and reload the page to update the displayed number.</p>
 
 <h3 id="purchasing-additional-licenses">Purchasing additional licenses</h3>
 
-<p>If your subscription does not include enough licenses, you can purchase additional ones at any time through the <a href="https://www.kimai.cloud/go/my-site">My Cloud</a> portal.</p>
+<p>If your subscription doesn’t include enough licenses, you can purchase additional ones at any time through the <a href="https://www.kimai.cloud/go/my-site">My Cloud</a> portal.</p>
 
-<p>Additional licenses are billed immediately, but only for the remaining time in your current billing period:</p>
-<ul>
-  <li>New licenses are always aligned with your existing subscription period.</li>
-  <li>For example, if you add a license to an annual subscription that is already 6 months old, you will only be charged for the remaining 6 months.</li>
-</ul>
+<p>Additional licenses are billed immediately, but only for the remaining time in your current billing period. New licenses are always aligned with your existing subscription period.</p>
+
+<p>For example: if you add a license to an annual subscription that is already 6 months in, you’ll only be charged for the remaining 6 months.</p>
 
 <h3 id="reducing-licenses">Reducing licenses</h3>
 
-<p>If you need fewer licenses, you must first deactivate the corresponding user accounts in your cloud.
-After that, you can reduce the number of licenses through the <a href="https://www.kimai.cloud/go/my-site">My Cloud</a> portal.</p>
+<p>To reduce the number of licenses, first deactivate the corresponding user accounts in your cloud.
+Then adjust the license count through the <a href="https://www.kimai.cloud/go/my-site">My Cloud</a> portal.</p>
 
-<p>The reduced license count will take effect at the beginning of the next billing period.</p>
+<p>The reduced count takes effect at the start of the next billing period.</p>
 
 <h2 id="deprecated-metered-plans">Deprecated metered plans</h2>
 
-<p>For users still on the deprecated <strong>metered plans</strong> (<code class="language-plaintext highlighter-rouge">Plus</code> and <code class="language-plaintext highlighter-rouge">Premium</code>), which are no longer available to new customers, billing is based on usage:</p>
-<ul>
-  <li><strong>Active users incur charges</strong>.</li>
-  <li><strong>Deactivated users incur charges</strong> if they were active within the last month. This includes:
-    <ul>
-      <li>Users who registered within the last month.</li>
-      <li>Users who logged in within the last month.</li>
-      <li>Users who made time bookings within the last month (or later).</li>
-    </ul>
-  </li>
-</ul>
+<p>For customers still on the deprecated <strong>Plus</strong> and <strong>Premium</strong> plans (no longer available to new customers), billing is usage-based:</p>
 
-<p>This system ensures flexibility in managing user accounts while maintaining fairness in licensing costs.</p>
+<ul>
+  <li><strong>Active users</strong> incur charges.</li>
+  <li><strong>Deactivated users</strong> also incur charges if they were active within the last month — meaning they registered, logged in, or created a time entry within that period.</li>
+</ul>
 
                         </div>
                         
@@ -422,7 +409,7 @@ After that, you can reduce the number of licenses through the <a href="https://w
             
                 <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
                     <h3 class="fs-lg mt-2">Jump to</h3>
-                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#licensing-rules" class="nav-link">Licensing Rules</a><ul><li class="nav-item"><a href="#managing-user-accounts" class="nav-link">Managing user accounts</a></li><li class="nav-item"><a href="#before-starting-a-subscription" class="nav-link">Before starting a subscription</a></li><li class="nav-item"><a href="#purchasing-additional-licenses" class="nav-link">Purchasing additional licenses</a></li><li class="nav-item"><a href="#reducing-licenses" class="nav-link">Reducing licenses</a></li></ul></li><li class="nav-item"><a href="#deprecated-metered-plans" class="nav-link">Deprecated metered plans</a></li></ul>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#licensing-rules" class="nav-link">Licensing rules</a><ul><li class="nav-item"><a href="#managing-user-accounts" class="nav-link">Managing user accounts</a></li><li class="nav-item"><a href="#before-starting-a-subscription" class="nav-link">Before starting a subscription</a></li><li class="nav-item"><a href="#purchasing-additional-licenses" class="nav-link">Purchasing additional licenses</a></li><li class="nav-item"><a href="#reducing-licenses" class="nav-link">Reducing licenses</a></li></ul></li><li class="nav-item"><a href="#deprecated-metered-plans" class="nav-link">Deprecated metered plans</a></li></ul>
                     
                 </aside>
             

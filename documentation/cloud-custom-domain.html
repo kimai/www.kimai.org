@@ -13,14 +13,14 @@
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
 <title>Custom domain – Kimai</title>
-<meta name="description" content="Read how to set-up and configure your custom domain">
+<meta name="description" content="How to set up and configure your custom domain">
 <link type="application/atom+xml" rel="alternate" href="/en/feed.xml" title="Kimai Time-Tracking" />
 <meta property="og:locale" content="en">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Custom domain">
 <meta property="og:image" content="https://www.kimai.org/images/social-preview.webp">
-<meta property="og:description" content="Read how to set-up and configure your custom domain">
-<link href="/assets/build/main.css?v7" rel="stylesheet" />
+<meta property="og:description" content="How to set up and configure your custom domain">
+<link href="/assets/build/main.css?v8" rel="stylesheet" />
 
 </head>
 <body class="">
@@ -334,7 +334,7 @@
                     <div class="me-4">
                         <h1 class="pb-1" data-pagefind-meta="title" data-pagefind-weight="10.0">Custom domain</h1>
                         
-                        <p class="text-muted fs-lg mb-2" data-pagefind-meta="description">Read how to set-up and configure your custom domain</p>
+                        <p class="text-muted fs-lg mb-2" data-pagefind-meta="description">How to set up and configure your custom domain</p>
                         
                     </div>
                     <div class="d-none d-lg-flex">
@@ -354,12 +354,12 @@
                             <div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i><p>This feature is <strong>available for annual PRO subscriptions</strong>, check the feature comparison page for more details.</p>
 </div>
 
-<p>Your Kimai-Cloud can be hosted under your own domain name and <strong>SSL certificates are supported</strong> as well.</p>
+<p>Your Kimai Cloud can be hosted under your own domain name, including <strong>SSL certificate support</strong>.</p>
 
-<p>This feature allows to run your time-tracking cloud at a custom-domain (eg. <code class="language-plaintext highlighter-rouge">https://time-tracking.example.com</code>) instead of only using the generic cloud domain (eg. <code class="language-plaintext highlighter-rouge">https://your-name.kimai.cloud</code>).</p>
+<p>This feature lets you run your time-tracking cloud at a custom domain (e.g. <code class="language-plaintext highlighter-rouge">https://time-tracking.example.com</code>) instead of the default cloud domain (e.g. <code class="language-plaintext highlighter-rouge">https://your-name.kimai.cloud</code>).</p>
 
-<p>All you need is your own domain name and access to the DNS settings of that domain.
-You have to create a so-called CNAME (short for “Canonical name”) entry, with your cloud domain as destination.</p>
+<p>All you need is your own domain name and access to its DNS settings.
+You’ll need to create a <code class="language-plaintext highlighter-rouge">CNAME</code> record (short for “Canonical Name”) that points to your Kimai Cloud domain.</p>
 
 <h2 id="configure-your-dns">Configure your DNS</h2>
 
@@ -370,38 +370,38 @@ You have to create a so-called CNAME (short for “Canonical name”) entry, wit
     <figcaption class="figure-caption">Configure your DNS</figcaption>
 </figure>
 
-<p>It is unlikely that you need it in this syntax, but in “technical speech” this would be:</p>
+<p>In standard DNS notation, this looks like:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>time.kevinpapst.de.  IN CNAME kevin.kimai.cloud.
 </code></pre></div></div>
 
-<p>This example shows the custom domain <code class="language-plaintext highlighter-rouge">time.kevinpapst.de</code> configured to point to the Kimai-Cloud domain <code class="language-plaintext highlighter-rouge">kevin.kimai.cloud</code>.
-As you can see: cloud name and subdomain name do not have to match.</p>
+<p>This example shows the custom domain <code class="language-plaintext highlighter-rouge">time.kevinpapst.de</code> pointing to the Kimai Cloud domain <code class="language-plaintext highlighter-rouge">kevin.kimai.cloud</code>.
+The cloud name and subdomain name don’t have to match.</p>
 
-<p>Be aware that a CNAME record can only be used, if your domain already has an A record:</p>
+<p>Note that a CNAME record can only be used alongside an existing A record for the domain:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>www.kevinpapst.de.   IN A     192.168.0.1.
 time.kevinpapst.de.  IN CNAME kevin.kimai.cloud.
 </code></pre></div></div>
 
-<p>You can also point to a top-level domain, it doesn’t have to be a subdomain.</p>
+<p>You can also point a top-level domain — it doesn’t have to be a subdomain.</p>
 
-<h2 id="configure-custom-domain">Configure custom domain</h2>
+<h2 id="configure-your-custom-domain">Configure your custom domain</h2>
 
-<p>In the last step you enter your domain in your profile under <strong>Custom domain</strong>:</p>
+<p>Enter your domain in your profile under <strong>Custom domain</strong>:</p>
 
 <figure class="d-block figure mb-3" style="max-width: 800px">
     <img src="/images/documentation/cloud/custom-domain-form.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
     <figcaption class="figure-caption">Configure your CNAME</figcaption>
 </figure>
 
-<p>It usually takes a couple of hours until our system are able to utilize this new domain, especially if you tested the integration before creating the DNS entry.
-In that case our servers will have to wait until new DNS information are available (the waiting time depends on your TTL).</p>
+<p>It usually takes a few hours for our systems to pick up the new domain, especially if you tested the setup before creating the DNS entry.
+In that case, our servers need to wait for updated DNS information to propagate — how long this takes depends on your TTL setting.</p>
 
-<p>After the custom domain and SSL certificate were successfully activated, you will be informed by email.</p>
+<p>Once the custom domain and SSL certificate are successfully activated, you’ll receive a confirmation by email.</p>
 
 <h2 id="ssl-certificate">SSL certificate</h2>
 
-<p>Kimai-Cloud domains always require the use of SSL.
-After registering the custom domain in our system, an SSL certificate is issued (via LetsEncrypt) on your behalf for this domain.</p>
+<p>Kimai Cloud domains always require SSL.
+After you register your custom domain in our system, an SSL certificate is automatically issued via “Let’s Encrypt” on your behalf.</p>
 
                         </div>
                         
@@ -414,7 +414,7 @@ After registering the custom domain in our system, an SSL certificate is issued 
             
                 <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
                     <h3 class="fs-lg mt-2">Jump to</h3>
-                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#configure-your-dns" class="nav-link">Configure your DNS</a></li><li class="nav-item"><a href="#configure-custom-domain" class="nav-link">Configure custom domain</a></li><li class="nav-item"><a href="#ssl-certificate" class="nav-link">SSL certificate</a></li></ul>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#configure-your-dns" class="nav-link">Configure your DNS</a></li><li class="nav-item"><a href="#configure-your-custom-domain" class="nav-link">Configure your custom domain</a></li><li class="nav-item"><a href="#ssl-certificate" class="nav-link">SSL certificate</a></li></ul>
                     
                 </aside>
             
