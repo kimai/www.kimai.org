@@ -435,33 +435,33 @@
 
 <h3 id="docker-compose">Docker Compose</h3>
 
-<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>services:
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">services</span><span class="pi">:</span>
 
-  sqldb:
-    image: mysql:8.3
-    environment:
-      - MYSQL_DATABASE=kimai
-      - MYSQL_USER=kimaiuser
-      - MYSQL_PASSWORD=kimaipassword
-      - MYSQL_ROOT_PASSWORD=changemeplease
-    command: --default-storage-engine innodb
-    restart: unless-stopped
-    healthcheck:
-      test: mysqladmin -p$$MYSQL_ROOT_PASSWORD ping -h localhost
-      interval: 20s
-      start_period: 10s
-      timeout: 10s
-      retries: 3
+  <span class="na">sqldb</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">mysql:8.3</span>
+    <span class="na">environment</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">MYSQL_DATABASE=kimai</span>
+      <span class="pi">-</span> <span class="s">MYSQL_USER=kimaiuser</span>
+      <span class="pi">-</span> <span class="s">MYSQL_PASSWORD=kimaipassword</span>
+      <span class="pi">-</span> <span class="s">MYSQL_ROOT_PASSWORD=changemeplease</span>
+    <span class="na">command</span><span class="pi">:</span> <span class="s">--default-storage-engine innodb</span>
+    <span class="na">restart</span><span class="pi">:</span> <span class="s">unless-stopped</span>
+    <span class="na">healthcheck</span><span class="pi">:</span>
+      <span class="na">test</span><span class="pi">:</span> <span class="s">mysqladmin -p$$MYSQL_ROOT_PASSWORD ping -h localhost</span>
+      <span class="na">interval</span><span class="pi">:</span> <span class="s">20s</span>
+      <span class="na">start_period</span><span class="pi">:</span> <span class="s">10s</span>
+      <span class="na">timeout</span><span class="pi">:</span> <span class="s">10s</span>
+      <span class="na">retries</span><span class="pi">:</span> <span class="m">3</span>
 
-  kimai:
-    image: kimai/kimai2:apache-dev
-    ports:
-      - 8001:8001
-    environment:
-      - ADMINMAIL=admin@kimai.local
-      - ADMINPASS=changemeplease
-      - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&amp;serverVersion=8.3.0"
-    restart: unless-stopped
+  <span class="na">kimai</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">kimai/kimai2:apache-dev</span>
+    <span class="na">ports</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">8001:8001</span>
+    <span class="na">environment</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">ADMINMAIL=admin@kimai.local</span>
+      <span class="pi">-</span> <span class="s">ADMINPASS=changemeplease</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&amp;serverVersion=8.3.0"</span>
+    <span class="na">restart</span><span class="pi">:</span> <span class="s">unless-stopped</span>
 </code></pre></div></div>
 
 <h3 id="docker">Docker</h3>

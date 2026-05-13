@@ -358,16 +358,16 @@ TimeKex is designed to support this process.</p>
 
 <p>The build and deployed homepage is available via GitHub pages in the <code class="language-plaintext highlighter-rouge">gh-pages</code> branch. The TimeKex application is there available in the <code class="language-plaintext highlighter-rouge">app</code> folder (<a href="https://github.com/KatjaGlassConsulting/TimeKex/tree/gh-pages/app">https://github.com/KatjaGlassConsulting/TimeKex/tree/gh-pages/app</a>). You can download and copy all files from the app for example into kimai/public/timekex. Then you can start TimeKex on this web server using your kimai URL, but inlcude kimekex/index.html in the URL, for example: https://example.kimai.de/timekex/index.html. You must update the configuration to fit your needs. It is very important to update the kimaiAPI. If you host kimai under https://example.kimai.de, then the api would be located at  https://example.kimai.de/api/.</p>
 
-<pre><code class="language-JS">var config = {
-    "kimaiAPI" : "https://demo-stable.kimai.org/api/",
-    "ignoreActivities" : ["Vacation","Public Holiday"],
-    "adminUser" : ["anna_admin","susan_super"],
-    "approval" : false,
-    "overtime" : false,
-    "summary15mins" : false,
-    "breakChecks" : false
-}
-</code></pre>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">kimaiAPI</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">https://demo-stable.kimai.org/api/</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">ignoreActivities</span><span class="dl">"</span> <span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">Vacation</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">Public Holiday</span><span class="dl">"</span><span class="p">],</span>
+    <span class="dl">"</span><span class="s2">adminUser</span><span class="dl">"</span> <span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">anna_admin</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">susan_super</span><span class="dl">"</span><span class="p">],</span>
+    <span class="dl">"</span><span class="s2">approval</span><span class="dl">"</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">overtime</span><span class="dl">"</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">summary15mins</span><span class="dl">"</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">breakChecks</span><span class="dl">"</span> <span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <h3 id="local-development-and-compilation">Local Development and Compilation</h3>
 

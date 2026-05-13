@@ -604,47 +604,47 @@
 
 <h2 id="installation">Installation</h2>
 
-<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>services:
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">services</span><span class="pi">:</span>
 
-  sqldb:
-    image: mysql:8.3
-    volumes:
-      - mysql:/var/lib/mysql
-    environment:
-      - MYSQL_DATABASE=kimai
-      - MYSQL_USER=kimaiuser
-      - MYSQL_PASSWORD=kimaipassword
-      - MYSQL_ROOT_PASSWORD=changemeplease
-    command: --default-storage-engine innodb
-    restart: unless-stopped
-    healthcheck:
-      test: mysqladmin -uroot -p$$MYSQL_ROOT_PASSWORD ping -h 127.0.0.1 --silent
-      interval: 10s
-      timeout: 5s
-      retries: 12
-      start_period: 30s
+  <span class="na">sqldb</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">mysql:8.3</span>
+    <span class="na">volumes</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">mysql:/var/lib/mysql</span>
+    <span class="na">environment</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">MYSQL_DATABASE=kimai</span>
+      <span class="pi">-</span> <span class="s">MYSQL_USER=kimaiuser</span>
+      <span class="pi">-</span> <span class="s">MYSQL_PASSWORD=kimaipassword</span>
+      <span class="pi">-</span> <span class="s">MYSQL_ROOT_PASSWORD=changemeplease</span>
+    <span class="na">command</span><span class="pi">:</span> <span class="s">--default-storage-engine innodb</span>
+    <span class="na">restart</span><span class="pi">:</span> <span class="s">unless-stopped</span>
+    <span class="na">healthcheck</span><span class="pi">:</span>
+      <span class="na">test</span><span class="pi">:</span> <span class="s">mysqladmin -uroot -p$$MYSQL_ROOT_PASSWORD ping -h 127.0.0.1 --silent</span>
+      <span class="na">interval</span><span class="pi">:</span> <span class="s">10s</span>
+      <span class="na">timeout</span><span class="pi">:</span> <span class="s">5s</span>
+      <span class="na">retries</span><span class="pi">:</span> <span class="m">12</span>
+      <span class="na">start_period</span><span class="pi">:</span> <span class="s">30s</span>
 
-  kimai:
-    image: kimai/kimai2:stable
-    depends_on:
-      sqldb:
-        condition: service_healthy
-        restart: true
-    volumes:
-      - data:/opt/kimai/var/data
-      - plugins:/opt/kimai/var/plugins
-    ports:
-      - 8001:8001
-    environment:
-      - ADMINMAIL=admin@kimai.local
-      - ADMINPASS=changemeplease
-      - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&amp;serverVersion=8.3.0"
-    restart: unless-stopped
+  <span class="na">kimai</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">kimai/kimai2:stable</span>
+    <span class="na">depends_on</span><span class="pi">:</span>
+      <span class="na">sqldb</span><span class="pi">:</span>
+        <span class="na">condition</span><span class="pi">:</span> <span class="s">service_healthy</span>
+        <span class="na">restart</span><span class="pi">:</span> <span class="kc">true</span>
+    <span class="na">volumes</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">data:/opt/kimai/var/data</span>
+      <span class="pi">-</span> <span class="s">plugins:/opt/kimai/var/plugins</span>
+    <span class="na">ports</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">8001:8001</span>
+    <span class="na">environment</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">ADMINMAIL=admin@kimai.local</span>
+      <span class="pi">-</span> <span class="s">ADMINPASS=changemeplease</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&amp;serverVersion=8.3.0"</span>
+    <span class="na">restart</span><span class="pi">:</span> <span class="s">unless-stopped</span>
 
-volumes:
-  data:
-  mysql:
-  plugins:
+<span class="na">volumes</span><span class="pi">:</span>
+  <span class="na">data</span><span class="pi">:</span>
+  <span class="na">mysql</span><span class="pi">:</span>
+  <span class="na">plugins</span><span class="pi">:</span>
 </code></pre></div></div>
 
 <h2 id="updating-kimai">Updating Kimai</h2>
@@ -675,47 +675,47 @@ ADMIN_PASSWORD=changemeplease
 
 <p>And then reference those from your <code class="language-plaintext highlighter-rouge">docker-compose.yaml</code>:</p>
 
-<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>services:
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">services</span><span class="pi">:</span>
 
-  sqldb:
-    image: mysql:8.3
-    volumes:
-      - mysql:/var/lib/mysql
-    environment:
-      - MYSQL_DATABASE=${DATABASE_NAME}
-      - MYSQL_USER=${DATABASE_USER}
-      - MYSQL_PASSWORD=${DATABASE_PASSWORD}
-      - MYSQL_ROOT_PASSWORD=${DATABASE_ROOT_PASSWORD}
-    command: --default-storage-engine innodb
-    restart: unless-stopped
-    healthcheck:
-      test: mysqladmin -p$$MYSQL_ROOT_PASSWORD ping -h localhost
-      interval: 20s
-      start_period: 10s
-      timeout: 10s
-      retries: 3
+  <span class="na">sqldb</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">mysql:8.3</span>
+    <span class="na">volumes</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">mysql:/var/lib/mysql</span>
+    <span class="na">environment</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">MYSQL_DATABASE=${DATABASE_NAME}</span>
+      <span class="pi">-</span> <span class="s">MYSQL_USER=${DATABASE_USER}</span>
+      <span class="pi">-</span> <span class="s">MYSQL_PASSWORD=${DATABASE_PASSWORD}</span>
+      <span class="pi">-</span> <span class="s">MYSQL_ROOT_PASSWORD=${DATABASE_ROOT_PASSWORD}</span>
+    <span class="na">command</span><span class="pi">:</span> <span class="s">--default-storage-engine innodb</span>
+    <span class="na">restart</span><span class="pi">:</span> <span class="s">unless-stopped</span>
+    <span class="na">healthcheck</span><span class="pi">:</span>
+      <span class="na">test</span><span class="pi">:</span> <span class="s">mysqladmin -p$$MYSQL_ROOT_PASSWORD ping -h localhost</span>
+      <span class="na">interval</span><span class="pi">:</span> <span class="s">20s</span>
+      <span class="na">start_period</span><span class="pi">:</span> <span class="s">10s</span>
+      <span class="na">timeout</span><span class="pi">:</span> <span class="s">10s</span>
+      <span class="na">retries</span><span class="pi">:</span> <span class="m">3</span>
 
-  kimai:
-    image: kimai/kimai2:apache
-    depends_on:
-      sqldb:
-        condition: service_healthy
-        restart: true
-    volumes:
-      - data:/opt/kimai/var/data
-      - plugins:/opt/kimai/var/plugins
-    ports:
-      - 8001:8001
-    environment:
-      - ADMINMAIL=${ADMIN_EMAIL}
-      - ADMINPASS=${ADMIN_PASSWORD}
-      - "DATABASE_URL=mysql://${DATABASE_USER}:${DATABASE_PASSWORD}@sqldb/${DATABASE_NAME}?charset=utf8mb4&amp;serverVersion=8.3.0"
-    restart: unless-stopped
+  <span class="na">kimai</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">kimai/kimai2:apache</span>
+    <span class="na">depends_on</span><span class="pi">:</span>
+      <span class="na">sqldb</span><span class="pi">:</span>
+        <span class="na">condition</span><span class="pi">:</span> <span class="s">service_healthy</span>
+        <span class="na">restart</span><span class="pi">:</span> <span class="kc">true</span>
+    <span class="na">volumes</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">data:/opt/kimai/var/data</span>
+      <span class="pi">-</span> <span class="s">plugins:/opt/kimai/var/plugins</span>
+    <span class="na">ports</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">8001:8001</span>
+    <span class="na">environment</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">ADMINMAIL=${ADMIN_EMAIL}</span>
+      <span class="pi">-</span> <span class="s">ADMINPASS=${ADMIN_PASSWORD}</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">DATABASE_URL=mysql://${DATABASE_USER}:${DATABASE_PASSWORD}@sqldb/${DATABASE_NAME}?charset=utf8mb4&amp;serverVersion=8.3.0"</span>
+    <span class="na">restart</span><span class="pi">:</span> <span class="s">unless-stopped</span>
 
-volumes:
-  data:
-  mysql:
-  plugins:
+<span class="na">volumes</span><span class="pi">:</span>
+  <span class="na">data</span><span class="pi">:</span>
+  <span class="na">mysql</span><span class="pi">:</span>
+  <span class="na">plugins</span><span class="pi">:</span>
 </code></pre></div></div>
 
 <h2 id="caddy-reverse-proxy">Caddy Reverse Proxy</h2>
@@ -731,37 +731,37 @@ As plugin are accessed read-only by Kimai, you can use both methods.</p>
 
 <p>Using a volume:</p>
 
-<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>services:
-    [...]
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">services</span><span class="pi">:</span>
+    <span class="pi">[</span><span class="nv">...</span><span class="pi">]</span>
 
-  kimai:
-    image: kimai/kimai2:apache
-    volumes:
-      - data:/opt/kimai/var/data
-      - plugins:/opt/kimai/var/plugins
-    [...]
+  <span class="na">kimai</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">kimai/kimai2:apache</span>
+    <span class="na">volumes</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">data:/opt/kimai/var/data</span>
+      <span class="pi">-</span> <span class="s">plugins:/opt/kimai/var/plugins</span>
+    <span class="pi">[</span><span class="nv">...</span><span class="pi">]</span>
 
-volumes:
-  data:
-  plugins:
+<span class="na">volumes</span><span class="pi">:</span>
+  <span class="na">data</span><span class="pi">:</span>
+  <span class="na">plugins</span><span class="pi">:</span>
 </code></pre></div></div>
 
 <p>Or using a bind mount, pointing to the local filesystem at <code class="language-plaintext highlighter-rouge">/home/kimai/plugins</code>:</p>
 
-<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>services:
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">services</span><span class="pi">:</span>
 
-  sqldb:
-    [...]
+  <span class="na">sqldb</span><span class="pi">:</span>
+    <span class="pi">[</span><span class="nv">...</span><span class="pi">]</span>
 
-  kimai:
-    image: kimai/kimai2:apache
-    volumes:
-      - data:/opt/kimai/var/data
-      - /home/kimai/plugins:/opt/kimai/var/plugins
-    [...]
+  <span class="na">kimai</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">kimai/kimai2:apache</span>
+    <span class="na">volumes</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">data:/opt/kimai/var/data</span>
+      <span class="pi">-</span> <span class="s">/home/kimai/plugins:/opt/kimai/var/plugins</span>
+    <span class="pi">[</span><span class="nv">...</span><span class="pi">]</span>
 
-volumes:
-  data:
+<span class="na">volumes</span><span class="pi">:</span>
+  <span class="na">data</span><span class="pi">:</span>
 </code></pre></div></div>
 
 <p>Once the Docker container is running up, you need to step into the container and install the plugin:</p>
@@ -774,21 +774,21 @@ docker <span class="nb">exec</span> <span class="nt">-ti</span> kimai /opt/kimai
 
 <p>This requires a new mount, e.g. mounting the local file <code class="language-plaintext highlighter-rouge">/home/kimai/local.yaml</code> into the correct location inside the image.</p>
 
-<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code>services:
-    [...]
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">services</span><span class="pi">:</span>
+    <span class="pi">[</span><span class="nv">...</span><span class="pi">]</span>
 
-  kimai:
-    image: kimai/kimai2:apache
-    volumes:
-      - data:/opt/kimai/var/data
-      - plugins:/opt/kimai/var/plugins
-      - /home/kimai/local.yaml:/opt/kimai/config/packages/local.yaml
+  <span class="na">kimai</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">kimai/kimai2:apache</span>
+    <span class="na">volumes</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">data:/opt/kimai/var/data</span>
+      <span class="pi">-</span> <span class="s">plugins:/opt/kimai/var/plugins</span>
+      <span class="pi">-</span> <span class="s">/home/kimai/local.yaml:/opt/kimai/config/packages/local.yaml</span>
       
-    [...]
+    <span class="pi">[</span><span class="nv">...</span><span class="pi">]</span>
 
-volumes:
-  data:
-  plugins:
+<span class="na">volumes</span><span class="pi">:</span>
+  <span class="na">data</span><span class="pi">:</span>
+  <span class="na">plugins</span><span class="pi">:</span>
 </code></pre></div></div>
 
 <h2 id="fpm-deprecated">FPM (deprecated)</h2>
