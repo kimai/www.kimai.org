@@ -8,7 +8,7 @@ Several docker-compose example files that use the latest Kimai version.
 
 ## Installation
 
-```dockerfile
+```yaml
 services:
 
   sqldb:
@@ -82,7 +82,7 @@ ADMIN_PASSWORD=changemeplease
 
 And then reference those from your `docker-compose.yaml`:
 
-```dockerfile
+```yaml
 services:
 
   sqldb:
@@ -139,7 +139,7 @@ As plugin are accessed read-only by Kimai, you can use both methods.
 
 Using a volume:
 
-```dockerfile
+```yaml
 services:
     [...]
 
@@ -157,7 +157,7 @@ volumes:
 
 Or using a bind mount, pointing to the local filesystem at `/home/kimai/plugins`:
 
-```dockerfile
+```yaml
 services:
 
   sqldb:
@@ -185,7 +185,7 @@ docker exec -ti kimai /opt/kimai/bin/console kimai:bundle:workcontract:install
 
 This requires a new mount, e.g. mounting the local file `/home/kimai/local.yaml` into the correct location inside the image.  
 
-```dockerfile
+```yaml
 services:
     [...]
 

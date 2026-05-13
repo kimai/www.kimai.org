@@ -26,7 +26,7 @@ This HowTo explains the installation of Kimai on a Synology NAS with **DSM 7+** 
 
 ### Docker-Composer YAML
 
-```dockerfile
+```yaml
 version: '3.5'
 services:
 
