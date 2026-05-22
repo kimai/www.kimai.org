@@ -604,6 +604,8 @@
 
 <h2 id="installation">Installation</h2>
 
+<p>For security reasons, it is crucial that you use unique values for your environment variables.</p>
+
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">services</span><span class="pi">:</span>
 
   <span class="na">sqldb</span><span class="pi">:</span>
@@ -636,7 +638,8 @@
     <span class="na">ports</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="s">8001:8001</span>
     <span class="na">environment</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">ADMINMAIL=admin@kimai.local</span>
+      <span class="pi">-</span> <span class="s">APP_SECRET=IT_IS_IMPORTANT_THAT_YOU_CHANGE_THIS_TO_A_LONG_RANDOM_STRING</span>
+      <span class="pi">-</span> <span class="s">ADMINMAIL=admin@example.com</span>
       <span class="pi">-</span> <span class="s">ADMINPASS=changemeplease</span>
       <span class="pi">-</span> <span class="s2">"</span><span class="s">DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&amp;serverVersion=8.3.0"</span>
     <span class="na">restart</span><span class="pi">:</span> <span class="s">unless-stopped</span>
@@ -669,8 +672,9 @@ docker compose up <span class="nt">-d</span>
 DATABASE_USER=kimaiuser
 DATABASE_PASSWORD=kimaipassword
 DATABASE_ROOT_PASSWORD=changemeplease
-ADMIN_EMAIL=admin@kimai.local
+ADMIN_EMAIL=admin@example.com
 ADMIN_PASSWORD=changemeplease
+APP_SECRET=IT_IS_IMPORTANT_THAT_YOU_CHANGE_THIS_TO_A_LONG_RANDOM_STRING
 </code></pre></div></div>
 
 <p>And then reference those from your <code class="language-plaintext highlighter-rouge">docker-compose.yaml</code>:</p>
@@ -707,6 +711,7 @@ ADMIN_PASSWORD=changemeplease
     <span class="na">ports</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="s">8001:8001</span>
     <span class="na">environment</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">APP_SECRET=${APP_SECRET}</span>
       <span class="pi">-</span> <span class="s">ADMINMAIL=${ADMIN_EMAIL}</span>
       <span class="pi">-</span> <span class="s">ADMINPASS=${ADMIN_PASSWORD}</span>
       <span class="pi">-</span> <span class="s2">"</span><span class="s">DATABASE_URL=mysql://${DATABASE_USER}:${DATABASE_PASSWORD}@sqldb/${DATABASE_NAME}?charset=utf8mb4&amp;serverVersion=8.3.0"</span>
