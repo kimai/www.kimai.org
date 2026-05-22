@@ -8,6 +8,8 @@ Several docker-compose example files that use the latest Kimai version.
 
 ## Installation
 
+For security reasons, it is crucial that you use unique values for your environment variables. 
+
 ```yaml
 services:
 
@@ -41,7 +43,8 @@ services:
     ports:
       - 8001:8001
     environment:
-      - ADMINMAIL=admin@kimai.local
+      - APP_SECRET=IT_IS_IMPORTANT_THAT_YOU_CHANGE_THIS_TO_A_LONG_RANDOM_STRING
+      - ADMINMAIL=admin@example.com
       - ADMINPASS=changemeplease
       - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&serverVersion=8.3.0"
     restart: unless-stopped
@@ -76,8 +79,9 @@ DATABASE_NAME=kimai
 DATABASE_USER=kimaiuser
 DATABASE_PASSWORD=kimaipassword
 DATABASE_ROOT_PASSWORD=changemeplease
-ADMIN_EMAIL=admin@kimai.local
+ADMIN_EMAIL=admin@example.com
 ADMIN_PASSWORD=changemeplease
+APP_SECRET=IT_IS_IMPORTANT_THAT_YOU_CHANGE_THIS_TO_A_LONG_RANDOM_STRING
 ```
 
 And then reference those from your `docker-compose.yaml`:
@@ -115,6 +119,7 @@ services:
     ports:
       - 8001:8001
     environment:
+      - APP_SECRET=${APP_SECRET}
       - ADMINMAIL=${ADMIN_EMAIL}
       - ADMINPASS=${ADMIN_PASSWORD}
       - "DATABASE_URL=mysql://${DATABASE_USER}:${DATABASE_PASSWORD}@sqldb/${DATABASE_NAME}?charset=utf8mb4&serverVersion=8.3.0"

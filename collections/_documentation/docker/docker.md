@@ -26,7 +26,7 @@ It will remain available for backwards compatibility until further notice:
 The Kimai image supports the following environment variables:
 
 - `DATABASE_URL` - Default "mysql://kimai:kimai@127.0.0.1:3306/kimai?charset=utf8mb4&serverVersion=5.7.40"
-- `APP_SECRET` - Default: "change_this_to_something_unique"
+- `APP_SECRET` - You **MUST** set this to a long and unique string
 - `TRUSTED_PROXIES` - Default: "nginx,localhost,127.0.0.1" 
 - `MAILER_FROM` - Default: "kimai@example.com"
 - `MAILER_URL` - Default: "null://localhost"
