@@ -29,6 +29,3 @@ This issue affected Twig-based rendering of uploaded invoice templates.
 - Exploitation required an System-Admin or someone with equivalent template upload capabilities
 - **Kimai Cloud is not affected** because Twig templates have to pass a manual review process
 
-## Solution
-
-Users should update to `2.1.0` or newer.

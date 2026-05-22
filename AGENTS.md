@@ -54,15 +54,12 @@ Most collections map to a specific content type and often use locale subdirector
 
 ## Generated And Dependency Directories
 
-Never edit or commit generated or dependency-managed directories unless the task explicitly requires dependency updates:
+Never edit or commit generated or dependency-managed directories:
 
 - `_site/`
 - `node_modules/`
 - `.jekyll-cache/`
 - `vendor/`
-
-Also avoid incidental edits to lockfiles unless the task is intentionally changing dependencies:
-
 - `package-lock.json`
 - `Gemfile.lock`
 - `composer.lock`
@@ -95,7 +92,12 @@ Committed scripts in `scripts/` should be considered part of the supported workf
 - `scripts/update-plans.php`: fetches and updates Kimai Cloud plan data
 - `scripts/update-version-number.sh`: updates `kimai_v2_version` in `_config.yml`
 
-Before replacing script-based behavior with manual edits, check whether an existing script already owns that workflow.
+- Before replacing script-based behavior with manual edits, check whether an existing script already owns that workflow.
+
+### Generate Security advisories
+
+- Run `./scripts/security-advisory.sh GHSA-xxxx-yyyy-zzzz`: this creates a new `.md` file in `collections/_security/`, e.g. `collections/_security/2026-05-05-ghsa-xxxx-yyyy-zzzz.md`
+- Run the skill `/kimai-security-advisory` with the new `.md` filename as input, e.g. `/kimai-security-advisory collections/_security/2026-05-05-xxxx-yyyy-zzzz.md`
 
 ## Multilingual Rules
 

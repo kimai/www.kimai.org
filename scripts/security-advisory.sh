@@ -45,44 +45,6 @@ if [ -f "$outfile" ]; then
     exit 1
 fi
 
-# Extract a named section from GitHub's markdown description (### Heading)
-extract_section() {
-    local heading="$1"
-    awk -v h="$heading" '
-        /^### / { cur=substr($0,5); sub(/^[[:space:]]+/,"",cur); sub(/[[:space:]]+$/,"",cur); in_s=(tolower(cur)==tolower(h)); next }
-        in_s { print }
-    ' <<< "$description" | sed '/./,$!d' | sed -e 's/[[:space:]]*$//'
-}
-
-summary_text="$(extract_section "Summary")"
-details_text="$(extract_section "Details")"
-impact_text="$(extract_section "Impact")"
-
-# Intro: prefer Summary section, fall back to title
-intro="${summary_text:-$title}"
-
-# Info body: prefer Details, then Impact, then generic fallback
-info_body="${details_text}"
-if [ -n "$impact_text" ]; then
-    if [ -n "$info_body" ]; then
-        info_body="${info_body}
-
-${impact_text}"
-    else
-        info_body="$impact_text"
-    fi
-fi
-if [ -z "$info_body" ]; then
-    info_body="This issue affected Kimai versions ${affected}."
-fi
-
-# Solution text
-if [ -n "$patched" ]; then
-    solution_text="Users should update to \`${patched}\` or newer."
-else
-    solution_text="Users should update to a patched Kimai version."
-fi
-
 cat > "$outfile" <<EOF
 ---
 title: "$(sed 's/"/\\"/g' <<< "$title")"
@@ -97,15 +59,18 @@ published: "${publisher}"
 state: "${state}"
 ---
 
-${intro}
+<INTRO>
 
 ## Info
 
-${info_body}
+<!-- [START] -->
+${description}
+<!-- [END] -->
 
 ## Solution
 
-${solution_text}
+<SOLUTION>
+
 EOF
 
 echo "Created: ${outfile}"

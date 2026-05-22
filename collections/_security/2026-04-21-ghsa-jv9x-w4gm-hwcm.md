@@ -29,5 +29,3 @@ In that scenario, the lower-privilege user could modify any team's membership, c
 ## Solution
 
 The Team API endpoints correctly use `#[IsGranted('edit', 'team')]` and `#[IsGranted('delete', 'team')]` syntax.
-
-Users should update to `2.54.0` or newer.

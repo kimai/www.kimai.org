@@ -6,6 +6,8 @@
 #      _pages/<lang>/blog.html are rebuilt.
 #   3. Story index pages: edit _stories/<lang>/<slug>.md =>
 #      _pages/<lang>/stories.html is rebuilt.
+#   4. Security advisories: edit any _security entry =>
+#      _documentation/developer/bughunter.md is rebuilt.
 #
 # The additionally enforced paths are inserted into the watcher log,
 # so they appear below the “Regenerating: ...” line.
@@ -27,8 +29,10 @@ if ENV["JEKYLL_ENV"] == "development"
 
     posts       = site.collections["posts"].docs
     stories     = site.collections["stories"].docs
+    security    = site.collections["security"].docs
     by_basename = posts.group_by { |doc| File.basename(doc.relative_path) }
     pages       = site.collections["pages"].docs
+    docs        = site.collections["documentation"].docs
 
     blog_pages = pages.select do |page|
       page.relative_path.match?(%r{_pages/[^/]+/blog\.html\z})
@@ -39,18 +43,15 @@ if ENV["JEKYLL_ENV"] == "development"
       memo[match[1]] = page if match
     end
 
+    bughunter_page = docs.find do |doc|
+      doc.relative_path == "_documentation/developer/bughunter.md"
+    end
+
     data_dependencies = {
       "_data/feature.yml" => pages.select do |page|
         page.relative_path.match?(%r{_pages/[^/]+/features\.html\z})
       end
     }
-
-    # Etwaige zyklische deps aus einer frueheren Plugin-Version aus
-    # .jekyll-metadata wegraeumen, damit modified? unten nicht hineinlaeuft.
-    (posts + blog_pages).each do |doc|
-      meta = regenerator.metadata[doc.path]
-      meta["deps"] = [] if meta && meta["deps"].any?
-    end
 
     forced            = []
     any_post_modified = false
@@ -85,6 +86,11 @@ if ENV["JEKYLL_ENV"] == "development"
 
       regenerator.force(stories_page.path)
       forced << stories_page.path
+    end
+
+    if bughunter_page && security.any? { |doc| regenerator.modified?(doc.path) }
+      regenerator.force(bughunter_page.path)
+      forced << bughunter_page.path
     end
 
     data_dependencies.each do |source_path, dependent_pages|

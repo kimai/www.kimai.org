@@ -24,7 +24,3 @@ This issue affected the SAML login flow after successful authentication.
 - After a successful SAML login, a user could be redirected to an attacker-controlled website
 - The issue only affected installations that had SAML authentication enabled
 - Exploitation required control over the SAML flow or an IdP-initiated login scenario with a malicious `RelayState` value
-
-## Solution
-
-Users should update to `2.53.0` or newer.
