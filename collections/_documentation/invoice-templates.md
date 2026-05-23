@@ -78,7 +78,9 @@ Generally speaking, you have two main variables in your template which you shoul
 - `invoice` which is an array of variables (see `Global variables` below) 
 - `entries` which is an array of arrays, representing the invoice items and their `Invoice items`
 
-**Attention**: accessing the `model` variable (instance of `App\Model\InvoiceModel`) directly is deprecated and will be removed in the future (no BC promise given!)
+{% alert danger %}
+**Attention**: accessing the `model` variable (instance of `App\Model\InvoiceModel`) directly is deprecated since 2022 and will be removed in the near future.
+{% endalert %}
 
 Please see the [default templates]({{ site.kimai_v2_file }}/templates/invoice/renderer) at GitHub to find out which variables can be used.
 

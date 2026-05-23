@@ -30,6 +30,7 @@ Adjust settings from any configuration file by adding them in your own configura
 These "environment specific settings" are required so Kimai can boot. They are stored in the `.env` file:
 
 - `DATABASE_URL` - database connection for storing all application data
+- `TRUSTED_HOSTS` - a regexp to match the domain names Kimai is accessible at (e.g. `demo.kimai.org|demo-empty.kimai.org`)
 - `APP_ENV` - environment for the runtime (always use `prod`, other option is `dev` if you want to developfor Kimai)
 - `MAILER_URL` - SMTP connection for emails
 - `MAILER_FROM` - application specific "from" address for all emails

@@ -1,16 +1,16 @@
 ---
 title: Custom domain
-description: Read how to set-up and configure your custom domain
+description: How to set up and configure your custom domain
 ---
 
 {% alert info %}This feature is **available for annual PRO subscriptions**, check the feature comparison page for more details.{% endalert %}
 
-Your Kimai-Cloud can be hosted under your own domain name and **SSL certificates are supported** as well.
+Your Kimai Cloud can be hosted under your own domain name, including **SSL certificate support**.
 
-This feature allows to run your time-tracking cloud at a custom-domain (eg. `https://time-tracking.example.com`) instead of only using the generic cloud domain (eg. `https://your-name.kimai.cloud`).
+This feature lets you run your time-tracking cloud at a custom domain (e.g. `https://time-tracking.example.com`) instead of the default cloud domain (e.g. `https://your-name.kimai.cloud`).
 
-All you need is your own domain name and access to the DNS settings of that domain.
-You have to create a so-called CNAME (short for "Canonical name") entry, with your cloud domain as destination.
+All you need is your own domain name and access to its DNS settings.
+You'll need to create a `CNAME` record (short for "Canonical Name") that points to your Kimai Cloud domain.
 
 ## Configure your DNS
 
@@ -18,34 +18,34 @@ Here is an example screenshot of such a DNS setting:
 
 {% include docs-image.html src="/images/documentation/cloud/custom-domain.webp" title="Configure your DNS" %}
 
-It is unlikely that you need it in this syntax, but in "technical speech" this would be:
+In standard DNS notation, this looks like:
 ```
 time.kevinpapst.de.  IN CNAME kevin.kimai.cloud.
 ```
 
-This example shows the custom domain `time.kevinpapst.de` configured to point to the Kimai-Cloud domain `kevin.kimai.cloud`.
-As you can see: cloud name and subdomain name do not have to match.
+This example shows the custom domain `time.kevinpapst.de` pointing to the Kimai Cloud domain `kevin.kimai.cloud`.
+The cloud name and subdomain name don't have to match.
 
-Be aware that a CNAME record can only be used, if your domain already has an A record:
+Note that a CNAME record can only be used alongside an existing A record for the domain:
 ```
 www.kevinpapst.de.   IN A     192.168.0.1.
 time.kevinpapst.de.  IN CNAME kevin.kimai.cloud.
 ```
 
-You can also point to a top-level domain, it doesn't have to be a subdomain.
+You can also point a top-level domain — it doesn't have to be a subdomain.
 
-## Configure custom domain
+## Configure your custom domain
 
-In the last step you enter your domain in your profile under **Custom domain**:
+Enter your domain in your profile under **Custom domain**:
 
 {% include docs-image.html src="/images/documentation/cloud/custom-domain-form.webp" title="Configure your CNAME" %}
 
-It usually takes a couple of hours until our system are able to utilize this new domain, especially if you tested the integration before creating the DNS entry.
-In that case our servers will have to wait until new DNS information are available (the waiting time depends on your TTL).
+It usually takes a few hours for our systems to pick up the new domain, especially if you tested the setup before creating the DNS entry.
+In that case, our servers need to wait for updated DNS information to propagate — how long this takes depends on your TTL setting.
 
-After the custom domain and SSL certificate were successfully activated, you will be informed by email.
+Once the custom domain and SSL certificate are successfully activated, you'll receive a confirmation by email.
 
 ## SSL certificate
 
-Kimai-Cloud domains always require the use of SSL.
-After registering the custom domain in our system, an SSL certificate is issued (via LetsEncrypt) on your behalf for this domain.
+Kimai Cloud domains always require SSL.
+After you register your custom domain in our system, an SSL certificate is automatically issued via "Let's Encrypt" on your behalf.

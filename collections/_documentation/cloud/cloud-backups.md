@@ -1,29 +1,27 @@
 ---
 title: Backups
-description: As paying cloud customer you receive full backups of your data
+description: As a paying cloud customer you receive full backups of your data
 ---
 
 {% alert info %}This feature is **available for paid subscriptions**, check the feature comparison page for more details.{% endalert %}
 
 The system creates backups of the entire database for each paying customer.
-These backups are available as ZIP archives, you can receive an email after they were generated (can bea activated in your cloud setting).
+These backups are available as ZIP archives. You can receive an email after they are generated — this notification can be activated in your cloud settings.
 
-You are advised to download Backups regularly to have an independent copy of your data.
+We recommend downloading your backups regularly to keep an independent copy of your data.
 
 ## Archive duration
 
 Backups are kept for {{ site.cloud.backup_archive_days }} days before they are removed from our servers.
 
-You are responsible for downloading them as soon as possible.
+Please download them before that period expires.
 
 ## Why backups?
 
-TLDR; It's a copy of your OWN data, which you should always have access to.
+**TL;DR:** It's a copy of your own data, and you should always have access to it.
 
-Wondering why backups are mentioned when you already use a cloud?
-Great question! Your data is secure, replicated in multiple locations, and processes are in place to ensure it is always protected and available.
+You might wonder why backups are relevant when you're already using a cloud service.
+Your data is secure, replicated in multiple locations, and protected by processes designed to keep it available at all times.
 
-It is much more than that: these backups could be used to setup your own Kimai by using them with the on-premise version.
-The hosted service is the best Kimai experience you can get &ndash; and I am confident that there is no reason to use this option.
-But I believe in freedom of choice, respect your data and fight against vendor lock-ins, so I'm offering you this option for your peace of mind.
-
+But there's more to it: these backups can also be used to set up your own Kimai instance using the on-premise version.
+We believe in freedom of choice, respect your data, and stand against vendor lock-in — so we offer this option for your peace of mind.

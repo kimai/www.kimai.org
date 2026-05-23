@@ -1,6 +1,5 @@
 ---
 title: Download
-lang: uk
 permalink: /uk/download.html
 layout: download
 ---

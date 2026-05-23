@@ -1,60 +1,92 @@
 ---
-title: Bughunter
+title: Security advisories
 ---
 
-## Reporting 
+This document describes how security vulnerabilities are handled for Kimai.
 
-- You can report any security related vulnerability via email to [support@kimai.org](mailto:support@kimai.org), in the [advisory section at GitHub](https://github.com/kimai/kimai/security/advisories) or at [VulDB.com](https://vuldb.com/). 
-- If you post the advisory on any other platform, I will read them, but I will not respond there.
-- You can expect that your message will be answered in 24-72 hours.
-- I will work as fast as I can to fix the problem and publish a bugfix release / security update. Depending on the size of the required fixes, this might take a couple of hours or a couple of days.
-- If you try to ask for money BEFORE sharing details of a report, you won't get a reply and your email will be blocked.
+## Reporting a vulnerability
 
-## Rewards
+Please do not report security vulnerabilities in the public issue tracker. Instead, use one of the following channels:
 
-This is an open-source project and I cannot offer a financial bug bounty program.
-The community including myself is grateful for any (discrete) disclosure of vulnerabilities!
+- Email: [support@kimai.org](mailto:support@kimai.org)
+- GitHub Security Advisory: [github.com/kimai/kimai/security/advisories](https://github.com/kimai/kimai/security/advisories)
 
-You will be mentioned in the release notes if your issue is valid and a fix is shipped. 
-And if you want to be mentioned on social media, I will happily do so as well.
+Reports submitted to other platforms will not receive a response, even if they are read.
 
-## Testing
+You can expect an acknowledgment within 1–3 working days. The time to release a fix varies depending on the severity and complexity of the issue — from a few hours to several weeks.
 
-Make a good faith effort to avoid privacy violations, destruction of data, and interruption or degradation of our service.
-Only interact with accounts you own or with explicit permission of the account holder.
+> **Note:** Requesting payment or a bounty before sharing vulnerability details will result in the report being dismissed and the sender blocked.
 
-### Exclusions
+## Bug bounty & rewards
 
-YOU MAY NOT TEST AGAINST SERVERS YOU DO NOT HAVE EXPLICIT PERMISSION TO TEST.
+Kimai is an open-source project and does not offer a financial bug bounty program.
 
-While researching, please refrain from:
+Valid, responsibly disclosed vulnerabilities are rewarded with:
 
-- Denial of service
+- Credit in the release notes
+- Optional mention on social media, on request
+
+The community is genuinely grateful for responsible and discreet disclosures.
+
+## Testing guidelines
+
+Make a good-faith effort to avoid privacy violations, data loss, and service disruption. Only test against accounts you own or have explicit written permission to access.
+
+> Do not test against Kimai Cloud or demo installations without prior written consent.
+
+### Permitted
+
+- Testing on your own self-hosted Kimai instance
+- Testing in environments you own or have explicit written permission to access
+
+### Not permitted
+
+- Denial-of-service attacks
 - Spamming
-- Social engineering (including phishing)
+- Social engineering or phishing
+- Testing against third-party infrastructure without consent
 
-Do not pentest Kimai-Cloud or Demo installations without prior consent.
+EU and German law may require service operators to report certain attacks to authorities, even without malicious intent. Prior written consent protects both parties.
 
-There are EU [^1] and German[^2] laws that require service owners to report certain attacks to the authorities.
-This makes it difficult to cooperate in scenarios without prior written consent.
+## Automated and low-quality reports
 
-## I haven't heard back from you
+We receive a high volume of automated or templated reports that show no familiarity with Kimai or its codebase. These reports are not reviewed.
 
-You have sent a report and did not receive an answer?
-Then you are very likely one of those thousands of "ethical hackers" or "independent security researchers" who are sending out automated emails to every domain they can find. 
-You did not bother to check the bigger picture, you maybe even send an invalid report. Please use your knowledge for the greater good, not to intimidate business/domain owners. 
+To be considered, a report should:
 
-I am not going to waste my time with your "beg report", as I receive dozens of them every week, and I am not going to answer personally.
+- Clearly identify the affected component or endpoint
+- Describe the vulnerability and its potential impact
+- Include reproduction steps or a proof of concept
+- AI-generated reports must be reviewed and validated by a human before submission. Posting raw LLM output, even if technically accurate, will not be credited unless a human researcher is available to answer follow-up questions.
 
-## Common reports
+Reports that do not meet these criteria, or that demand payment before sharing details, will not receive a response.
 
-Some answers to the most common reports that I receive from independent security researchers, which I do **not** consider
-to be security issues in Kimai or behavior that needs to be addressed.
+## Severity levels
+
+We rate security issues using four severity levels: `Low`, `Medium`, `High`, and `Critical`.
+
+Our GitHub advisories may include CVSS scores for reference, but we do not rely on CVSS as the primary basis for grading vulnerabilities. 
+In our view, CVSS does not adequately capture all the factors and context involved in assessing real-world impact.
+
+Any issue that requires direct filesystem access or a **System-Admin** account to exploit is unlikely to be rated higher than `Medium`, as these preconditions significantly limit the realistic attack surface.
+ 
+## Published vulnerabilities
+ 
+You can subscribe to all advisories via [Atom RSS Feed]({% link security.xml %}).
+
+{% assign advisories = site.security | reverse -%}
+{% for advisory in advisories -%}
+- {{ advisory.date | date: "%Y-%m-%d" }}: [{{ advisory.title }}]({{ advisory.url }})
+{% endfor %}
+
+## Not security issues
+
+This is an incomplete list of issues that are not considered vulnerabilities in Kimai or behavior that needs to be addressed.
 
 ### No DMARC record found
 
 Not only does this not qualify (read why [at dmarcreport.com](https://dmarcreport.com/blog/no-dmarc-record-found-bug-bounty-is-a-beg-bounty/)), 
-but we are indeed using DMARC, DKIM and SPF in combination to protect our email domain.
+but we are indeed using DMARC, DKIM and SPF in combination to protect our email domains.
 
 ### Misconfigured SPF
 
@@ -128,6 +160,3 @@ In my words:
 All in all: I do not consider this to be a security risk, but a UX improvement. Finally, this screenshot:
 
 {% include docs-image.html src="/images/documentation/bughunter/google-password-change.webp" title="Google allows to change my password, without asking for the current password" %}
-
-[^1]: https://www.consilium.europa.eu/en/policies/cybersecurity/
-[^2]: https://www.bsi.bund.de/DE/Themen/Regulierte-Wirtschaft/Weitere_regulierte_Unternehmen/Anbieter_digitaler_Dienste/Meldungen/meldungen_node.html

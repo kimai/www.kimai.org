@@ -17,6 +17,8 @@ This screen and the `Contract` menu can be seen by any user that has active cont
 - Working times: the entire working year
 - Manual bookings
 
+{% include youtube-video.html id="working_contract_overview" %}
+
 ## Summary
  
 The summary contains the following information (where each column is one month):
@@ -68,7 +70,7 @@ As you can only lock complete months, it is currently only possible to change th
 
 ## Manual bookings
 
-Attention: perform tests on a separate test account (or the [demo environment]({% link _pages/demo.md %})).
+Attention: perform tests on a separate test account (or the [demo environment]({% link _pages/{{ page.lang }}/demo.md %})).
 
 You cannot delete manual bookings, so if you accidentally added wrong values, simply create an opposite booking and add something like "compensation for test booking" in the description.
 
@@ -90,35 +92,28 @@ Examples are:
 
 ## How calculations work
 
-All calculations are only done up until NOW.
-That means adding a holiday tomorrow will not change your hour account.
+Kimai only calculates working time up to the current moment.
+This means that adding a holiday for tomorrow, or any other future absence, will not affect your hour balance yet.
 
-### Public holidays
+Please read the chapter ["How absences affect expected working time"]({% link _documentation/absence.md %}) to understand why the `Working times` view may show different totals than `My times` for the same year.
 
-Adds the amount of configured working time as working time.
-If you add a timesheet on the same day, it calculates as overtime.
+In short: depending on the configured absence calculation mode, the reported annual working time can be significantly higher than the hours recorded in timesheets.
 
-### Holidays
+### Absences compensate expected working time
 
-Adds the amount of configured working time as working time.
-If you add a timesheet on the same day, it calculates as overtime.
+- **Public holidays** — The configured working time for that day is added as worked time. If you create a timesheet on the same day, it is counted as overtime.
+- **Vacation** — The configured working time for that day is added as worked time. If you create a timesheet on the same day, it is counted as overtime.
+- **Sickness** — Fills up the remaining working time for the day until the expected duration is reached. For example, if the expected time is 8 hours and 2 hours have already been recorded, the sickness absence adds 6 hours.
+- **Other** — The configured absence duration is added as worked time.
+- **Time-Off** — Does not affect working time calculations. This entry is for informational purposes only.
 
-### Sickness
+### Absences reduce expected working time
 
-Fills up the working day to match the expected working time.
-
-Examples:
-- 8 hours are expected and you already logged 2 hours, then 6 hours will be filled-up
-- 8 hours are expected and no time is logged, then 8 hours will be added
-
-### Other
-
-Adds the amount of configured hours as working time.
-
-### Time-Off
-
-Will not influence the working time in any way.
-This booking is only there for information purposes.
+- **Public holidays** — Reduces the expected working time for that day to 0. If you create a timesheet on the same day, it is counted as overtime.
+- **Vacation** — Reduces the expected working time by the duration of the absence. A full-day vacation reduces it to 0. A half-day vacation reduces it accordingly. If you create a timesheet on the same day, it is counted as overtime.
+- **Sickness** — Reduces the remaining expected working time for that day. Either to 0 or for example, if the expected time is 8 hours and 2 hours have already been recorded, the remaining 6 hours are removed from the expected time.
+- **Other** — Reduces the expected working time by the configured absence duration.
+- **Time-Off** — Does not affect working time calculations. This entry is for informational purposes only.
 
 ## Limit timesheets to working days
 
@@ -145,6 +140,10 @@ you have to roll over the hours to the next year:
 There is older video available, explaining more details, but be warned: it also has a few outdated information bits.
 
 {% include youtube-video.html id="workcontract" %}
+
+## Settings
+
+{% include documentation/configurations.md id="controlling" howto=true %}
 
 ## Permissions
 

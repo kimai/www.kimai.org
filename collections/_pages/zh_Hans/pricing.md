@@ -1,6 +1,5 @@
 ---
 title: Pricing
-lang: zh_Hans
 layout: default
 bg_dark: true
 navi_dark: true

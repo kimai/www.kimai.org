@@ -1,6 +1,5 @@
 ---
 title: Download
-lang: hr
 permalink: /hr/download.html
 layout: download
 ---

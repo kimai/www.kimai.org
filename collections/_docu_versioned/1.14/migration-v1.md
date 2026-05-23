@@ -7,7 +7,7 @@ canonical: /documentation/migration-v1.html
 This documentation covers all necessary steps to migrate from Kimai 1 to Kimai 2.
 
 {% alert %}
-You can <a href="{% link _pages/support.html %}">get professional support</a> if you are not sure about performing the upgrade yourself. 
+You can <a href="{% link _pages/{{ page.lang }}/support.html %}">get professional support</a> if you are not sure about performing the upgrade yourself. 
 {% endalert %}
 
 ## Introduction
@@ -37,7 +37,7 @@ Before starting with the migration, please read the following FAQs:
 ## Install Kimai
 
 You have to install Kimai, please read the [documentation]({% link _documentation/installation.md %}) first.
-You can install it on the same server, but remember that you have to meet the server requirements (see [downloads page]({% link _pages/download.md %})).
+You can install it on the same server, but remember that you have to meet the server requirements (see [downloads page]({% link _pages/{{ page.lang }}/download.md %})).
 
 After Kimai 2 runs properly, the actual *migration* takes place, by importing the data from your Kimai 1 database into Kimai 2.
 You have to have SSH access to your server, as you will use a command shipped with Kimai 2, which will pull the data into the configured database from your `.env` file.
@@ -75,7 +75,7 @@ The connection will use the charset `latin1` and the default table prefix `kimai
 ### Problems and solution
  
 Kimai 1 was written a long time ago, when MySQL was lacking proper UTF8 support and foreign keys (in shared hostings).
-While [migrating dozens of customers installations]({% link _pages/support.html %}) I stumbled upon some recurring problems, 
+While [migrating dozens of customers installations]({% link _pages/{{ page.lang }}/support.html %}) I stumbled upon some recurring problems, 
 that can be solved with some SQL commands.
 
 {% alert warning %}Be aware, depending on your Kimai 1 version the field names might be different in the following snippets{% endalert %} 

@@ -15,10 +15,10 @@ The next release is out, as always containing various bugfixes and some exciting
 - Support for PHP 7.4
 
 In the meantime two new addons were added to the marketplace:
-- the [Console client (PHAR)]({% link _store/keleo-console-phar.md %})
-- the [Easy backup]({% link _store/maximiliangross-easy-backup-bundle.md %})
+- the [Console client (PHAR)]({% link _store/{{ page.lang }}/console-phar.md %})
+- the [Easy backup]({% link _store/{{ page.lang }}/maximiliangross-easy-backup-bundle.md %})
 
-**ATTENTION: Users of the [ExpenseBundle]({%link _store/keleo-expenses-bundle.md %}) have to delete it before they upgrade to 1.7, 
+**ATTENTION: Users of the [ExpenseBundle]({%link _store/{{ page.lang }}/expenses-bundle.md %}) have to delete it before they upgrade to 1.7, 
 read [UPGRADING]({{ site.kimai_v2_file }}/UPGRADING.md).**
 
 Thanks to all of you for using and supporting Kimai, especially:

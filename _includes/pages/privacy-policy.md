@@ -89,6 +89,8 @@ Wenn die SSL- bzw. TLS-Verschlüsselung aktiviert ist, können die Daten, die Si
 Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung und ggf. ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten.
 Hierzu sowie zu weiteren Fragen zum Thema personenbezogene Daten können Sie sich jederzeit unter der im Impressum angegebenen Adresse an uns wenden.
 
+Personenbezogene Daten werden gelöscht, wenn sie für die Zwecke der Verarbeitung nicht mehr erforderlich sind, insbesondere wenn während einer Testphase keine Nutzung des Dienstes erfolgt.
+
 ## Datenerfassung auf unserer Website
 
 **Cookies**
@@ -173,13 +175,6 @@ Dies stellt ein berechtigtes Interesse im Sinne von Art. 6 Abs. 1 lit. f DSGVO d
 Um Informationen über besuchte Seiten zu erhalten, verwenden wir ein selbst gehostetes [Umami](https://umami.is/).
 Diese Analysesoftware gibt uns nur einen Einblick in unsere Besucher im Allgemeinen, aber nicht in einzelne Personen, da sie keine Besucher verfolgt und keine personenbezogenen Daten speichert.
 
-**Google Fonts**
-
-Für die einheitliche Darstellung von Schriftarten verwendet diese Seite die von Google bereitgestellten Webfonts.
-Wenn Sie eine Seite öffnen, lädt Ihr Browser die benötigten Webfonts in Ihren Browser-Cache, um Texte und Schriften korrekt darzustellen.
-Die Verwendung von Google Webfonts erfolgt im Interesse einer einheitlichen und ansprechenden Darstellung unserer Website.
-Dies stellt ein berechtigtes Interesse im Sinne von Art. 6 Abs. 1 lit. f) DSGVO dar.
-
 **Gumroad**
 
 Wenn Sie ein Plugin kaufen möchten und im Shop auf die Schaltfläche „Kaufen“ klicken, werden Sie zur Software-Verkaufsplattform Gumroad weitergeleitet.
@@ -210,6 +205,7 @@ Bei den eingesetzten Dienstleistern, welche Subprozessor bzw. Unterauftragsverar
  
 ### Änderungsverlauf
 
+- **07.05.2026**: Google Fonts entfernt
 - **21.02.2026**: Neuer Provider "Mailbox" für Support-Emails (vorher: Google), Korrektur Stripe Kontakt (vorher: USA, jetzt: EU), Kategorisierung Subprozessoren 
 - **06.01.2026**: Nennung der 8 Rechte gemäß DSGVO
 - **23.06.2025**: Entfernung der URL zur Liste deutscher Datenschutzbehörden
@@ -312,6 +308,8 @@ If SSL or TLS encryption is activated, the data you transfer to us cannot be rea
 As permitted by law, you have the right to be provided at any time with information free of charge about any of your personal data that is stored as well as its origin, the recipient and the purpose for which it has been processed. 
 You also have the right to have this data corrected, blocked or deleted. You can contact us at any time using the address given in our legal notice if you have further questions on the topic of personal data.
 
+Personal data will be deleted when it is no longer necessary for the purposes of processing, particularly if the service is not used during a trial period.
+
 ## Data collection 
 
 **Cookies** 
@@ -398,13 +396,6 @@ This constitutes a justified interest pursuant to Art. 6 (1) (f) DSGVO.
 To gather important information about our visitors’ behavior, we use a self-hosted [Umami](https://umami.is/).
 This analytics software provides us with insights into our visitors in general, but not into individual users, as it does not track visitors or store any personal data.
 
-**Google Fonts**
-
-For uniform representation of fonts, this page uses web fonts provided by Google. 
-When you open a page, your browser loads the required web fonts into your browser cache to display texts and fonts correctly.
-The use of Google Web fonts is done in the interest of a uniform and attractive presentation of our website. 
-This constitutes a justified interest pursuant to Art. 6 (1) (f) DSGVO.
-
 **Gumroad**
 
 When you want to buy a plugin and click the "Buy" buttons in the shop, you are redirected to the software selling platform Gumroad.
@@ -434,6 +425,7 @@ We are using the following service providers (also called sub-processors) to ass
 
 ### Change history
 
+- **07.05.2026**: Removed Google Fonts
 - **21.02.2026**: New provider “Mailbox” for support emails (previously: Google), correction Stripe contact (previously: USA, now: EU)
 - **06.01.2026**: Mention 8 rights under the GDPR
 - **23.06.2025**: Removed URL of German data protection authorities and replaced "German" with "of the federal state in which our company is based"

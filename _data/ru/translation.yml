@@ -199,9 +199,6 @@ feature:
     user-profile:
         name: "Профиль пользователя"
         description: "Личная статистика и настройки почасовой оплаты, темы Kimai, пароля и аватара для каждого пользователя."
-    user-registration:
-        name: "Регистрация пользователя"
-        description: "Kimai поддерживает самостоятельную регистрацию пользователей с активацией по электронной почте."
     password-reset:
         name: "Сброс пароля"
         description: "Забыли пароль? Нет проблем, Kimai позаботился о вас, предоставив возможность сброса пароля по электронной почте."
@@ -246,6 +243,12 @@ feature:
     no-limits:
         description: "Your SaaS software always includes limits? Not Kimai: there are no limits. You only pay for the amount of active users. I don't limit you, and I do not charge for inactive users. You can create an unlimited amount of users, customers, projects, activities, timesheets and more."
         name: Knows no limits
+    electronic-invoicing:
+        name: E-Invoices
+        description: Create e-invoices in both XML and PDF/A formats, compliant with EN 16931, XRechnung 3.0, Zugferd/Factur-X, and using CII and UBL syntax
+    eu-hosting:
+        description: Independent and European 🇪🇺 – built in Austria 🇦🇹 and hosted in Germany 🇩🇪
+        name: EU Hosting
 install:
     alert-vps: На данном этапе невозможно установить Kimai, скачав ZIP-файл и загрузив файлы на свой веб-сервер. Это связано с тем, что Composer должен запускаться из командной строки. Это не обязательно означает, что вам нужен VPS. Некоторые виртуальные хосты предоставляют доступ к SSH, через который вы сможете установить Composer и Kimai.
     ssh: Рекомендуемый метод устанавливает Kimai непосредственно на ваш сервер.
@@ -265,6 +268,10 @@ newsletter:
     sendinblue: Мы используем Brevo в качестве нашей маркетинговой платформы. Нажав ниже, чтобы отправить эту форму, вы признаёте, что предоставленная вами информация будет передана Brevo для обработки в соответствии с их %terms%.
     button: ПОДПИСАТЬСЯ
     terms: условиями использования
+    archive: Archive
+    name: Newsletter
+    page_intro: If you're self-hosting Kimai (or just exploring it), don't miss our newsletter. We share news and insights with a community of people who prefer full control over their data.
+    page_title: Self-Host Newsletter
 demo:
     name: 'Демо-версия'
     description: Протестируйте и оцените наш регистратор времени Kimai на сайте, прямо с нашей страницы демо-версии.
@@ -497,7 +504,7 @@ faq:
     intro: These FAQs are provided by the developer of this offer.
     subtitle: Frequently asked questions
 login: Login
-store-payment-methods: Available payment methods
+store-payment-methods: Доступные способы оплаты
 503:
     description: We are sorry, but our server is currently in maintenance and currently not available. We'll be back soon!
     name: Temporarily unavailable (503)
@@ -532,7 +539,7 @@ forum:
     name: Forum
 trademark:
     name: Trademark
-store-license-manager: Please provide a valid email address to access your plugin and manage your licenses.
+store-license-manager: Пожалуйста введите действующий адрес электронной почты чтобы загрузить плагины и управлять лицензиями.
 terms-cloud:
     title: Terms of service
     name: Terms
@@ -721,7 +728,7 @@ time-tracking-terms:
     title: Time Tracking Terms
     intro: Take a look behind the scenes of time recording and learn more about the frequently used terms in Kimai
     name: Time Tracking Terms
-changelogs:
+changelog:
     name: Changelog
     title: Changelog Kimai Cloud
     intro: Overview of all Kimai cloud updates and when they were installed.
@@ -748,7 +755,7 @@ stories:
     employees: Employees
 title: Title
 date: Date
-press:
+press-media:
     intro: We'd love to help. Find brand assets below, or reach out directly — we respond quickly.
     contact_title: Covering Kimai?
     contact_button: Email us

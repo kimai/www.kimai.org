@@ -14,7 +14,7 @@ Before I start with some background information, here is a list of links about K
 
 - You can find the new website for now at [www.kimai.org](https://www.kimai.org)
 - The project is developed at [Github]({{ site.kimai_v2_repo }})
-- We have a [demo site]({% link _pages/demo.md %}) that is waiting for your tests
+- We have a [demo site]({% link _pages/{{ page.lang }}/demo.md %}) that is waiting for your tests
 - After testing, please leave us your [feedback]({{ site.kimai_v2_repo }}/issues/) at GitHub, 
 so we can shape the future development roadmap together
 

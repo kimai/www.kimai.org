@@ -11,7 +11,7 @@ This release was mainly a bugfix version, which improves internals for plugin de
 
 ### Export repositories
 
-Allow custom export repositories: eg. [Expenses]({% link _store/keleo-expenses-bundle.md %}) will be included in the global Export.
+Allow custom export repositories: eg. [Expenses]({% link _store/{{ page.lang }}/expenses-bundle.md %}) will be included in the global Export.
 
 ### Reassign timesheets
 

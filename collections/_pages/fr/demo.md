@@ -1,6 +1,5 @@
 ---
 title: Demo
-lang: fr
 layout: default
 navi_dark: true
 navi_absolute: true

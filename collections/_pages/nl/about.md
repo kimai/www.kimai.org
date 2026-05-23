@@ -1,6 +1,5 @@
 ---
 title: "About Kimai"
-lang: nl
 layout: default
 permalink: /nl/about.html
 ---

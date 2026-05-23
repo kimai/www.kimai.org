@@ -4,7 +4,7 @@ navigation: Webserver & Proxy
 description: How to install Kimai on your server with git, composer and SSH or FTP
 ---
 
-{% include snippets/self-hosting-warning.md %}
+{% include documentation/self-hosting-warning.md %}
 
 If you can't manage to get Kimai up and running, it is very likely not an issue with Kimai.
 - Check your server logs first and the Kimai logs (at `var/logs/` inside the Kimai directory).
@@ -13,7 +13,7 @@ If you can't manage to get Kimai up and running, it is very likely not an issue 
 The following configurations are meant to give you a first idea how your config could look like, 
 they either might be incompatible with your exact setup or might need further tweaking to work.
 
-I don't offer free support for such situations, but you can contact me about [paid installation support]({% link _pages/support.html %}). 
+I don't offer free support for such situations, but you can contact me about [paid installation support]({% link _pages/{{ page.lang }}/support.html %}). 
 
 ## Subdirectory usage
 

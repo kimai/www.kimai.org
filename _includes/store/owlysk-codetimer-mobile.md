@@ -1,4 +1,4 @@
-CodeTimer Mobile is a mobile version of the [CodeTimer Desktop]({% link _store/owlysk-codetimer.md %}) application, designed specifically for Kimai time-tracking.
+CodeTimer Mobile is a mobile version of the [CodeTimer Desktop]({% link _store/{{ page.lang }}/owlysk-codetimer.md %}) application, designed specifically for Kimai time-tracking.
 This lightweight application runs on Android, providing quick and efficient timesheet management directly from your mobile device.
 
 ## Key Features
@@ -14,7 +14,7 @@ The application integrates with your Kimai installation through the API interfac
 
 **Mobile Integration**
 As a mobile client, CodeTimer provides convenient access to your time-tracking functions without the need to open your web browser.
-The functionality mirrors the user experience offered by Clockify's mobile application, making it familiar for users [migrating from other time-tracking solutions]({% link _store/keleo-importer-bundle.md %}).
+The functionality mirrors the user experience offered by Clockify's mobile application, making it familiar for users [migrating from other time-tracking solutions]({% link _store/{{ page.lang }}/keleo-importer-bundle.md %}).
 
 ## Setup Requirements
 To get started with CodeTimer, you'll need:
@@ -22,7 +22,7 @@ To get started with CodeTimer, you'll need:
 - Your personal Kimai API token
 - Android device
 
-If you are using a desktop computer, there is also a [CodeTimer Desktop]({% link _store/owlysk-codetimer.md %}) application available.
+If you are using a desktop computer, there is also a [CodeTimer Desktop]({% link _store/{{ page.lang }}/owlysk-codetimer.md %}) application available.
 
 ## Installation
 

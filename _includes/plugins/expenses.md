@@ -1,3 +1,4 @@
+{% include youtube-video.html id="expenses" %}
 
 - Record all your expenses and show them in a table view
     - The data can be searched- and filtered (see screenshots)

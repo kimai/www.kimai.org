@@ -175,6 +175,6 @@ to the [documentation]({% link _documentation/developer/store.md %}) to find out
 
 ## Links
 
-- Check out the [Store]({% link _pages/store.html %}) to find out more free plugins for code demonstrations
+- Check out the [Store]({% link _pages/{{ page.lang }}/store.html %}) to find out more free plugins for code demonstrations
 - Read the [Symfony bundle documentation](https://symfony.com/doc/current/bundles.html) if this is your first time writing a Symfony bundle
  

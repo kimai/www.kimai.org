@@ -1,6 +1,5 @@
 ---
 title: Reviews
-lang: zh_Hant
 layout: default
 navi_dark: false
 navi_absolute: true

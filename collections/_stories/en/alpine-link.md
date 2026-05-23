@@ -1,6 +1,5 @@
 ---
 title: "AlpineLink"
-teaser: 
 subtitle: An Interview with AlpineLink
 intro: How a Swiss web design provider achieves 100% customer satisfaction
 company: AlpineLink GmbH

@@ -1,3 +1,10 @@
+**Version 2.8.0**
+
+Compatibility: requires minimum Kimai 2.57.0
+
+- E-Invoice: Added the invoice period to `BillingSpecifiedPeriod` (caused a BR-DE-TMP-32 validation warning)
+- E-Invoice: Removed `FormattedIssueDateTime` (causing a CII-DT-207 validation error)
+
 **Version 2.7.0**
 
 Compatibility: requires minimum Kimai 2.48.0

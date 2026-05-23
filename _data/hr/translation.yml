@@ -105,7 +105,7 @@ about:
         content: Korisnici cijene komfor besplatne podrške, a razmjena je bitan dio mog rada. Volim angažman zajednice na GitHubu, suradnju i agilni rad. Kontinuirano unaprjeđenje temelji se na povratnim informacijama i čini ovu suradnju izvanrednim iskustvom.
     technology:
         title: Tehnologija
-        content: Kao razvijatelj, volim testirati nove tehnologije. Ako to poboljšava način na koji interagiraš s Kimaijem, nazvao bih to win-win situacijom. Korisničko sučelje i korisnički doživljaj su mi ključni jer se softver mora moći jednostavno koristiti. Sigurnost je osnovni zahtjev, a softver otvorenog kod je važan čimbenik uspjeha za mnoge tvrtke.
+        content: Kao razvijatelj, volim testirati nove tehnologije. Ako to poboljšava način na koji komuniciraš s Kimaijem, nazvao bih to win-win situacijom. Korisničko sučelje i korisnički doživljaj su mi ključni jer se softver mora moći jednostavno koristiti. Sigurnost je osnovni zahtjev, a softver otvorenog kod je važan čimbenik za uspjeh mnogih tvrtki.
     joy:
         title: Radost u poslu
         content: Razvoj Kimaija idealna je kombinacija struke koju volim, s beskrajnim mogućnostima obrazovanja i potrebom da zarađujem novac kako bih podržao svoju obitelj. Zahvaljujući Kimaiju, mogu provesti više vremena sa svojom suprugom i djetetom, što je vjerojatno najbolja motivacija koja se može zamisliti.
@@ -219,9 +219,6 @@ feature:
     user-profile:
         name: "Korisnički profil"
         description: "Osobna statistika i postavke korisnika za satnicu, Kimai izgeld, lozinku i avatar."
-    user-registration:
-        name: "Registracija korisnika"
-        description: "Kimai podržava samo-registraciju korisnika s aktiviranjem e-mail adrese."
     password-reset:
         name: "Resetiranje lozinke"
         description: "Zaboravio/la si lozinku? Kimai ti pomaže resetirati lozinku putem e-maila."
@@ -266,6 +263,12 @@ feature:
     no-limits:
         description: "Tvoj SaaS softver uvijek uključuje ograničenja? Kimai nema ograničenja. Plaćaš samo za broj aktivnih korisnika. Ne ograničujem i ne naplaćujem neaktivne korisnike. Možeš stvoriti neograničen broj korisnika, kupaca, projekata, aktivnosti, vremenskih tablica i više."
         name: Bez ograničenja
+    electronic-invoicing:
+        name: E-računi
+        description: Stvori e-račune u XML i PDF/A formatima, u skladu s EN 16931, XRechnung 3.0, Zugferd/Factur-X, koristeći CII i UBL sintaksu
+    eu-hosting:
+        description: Neovisno i europsko 🇪🇺 – izgrađeno u Austriji 🇦🇹 i održavano u Njemačkoj 🇩🇪
+        name: EU hosting
 install:
     alert-vps: U ovom trenutku nije moguće instalirati Kimai preuzimanjem ZIP datoteke i učitavanjem datoteka na web server. Moraš imati SSH pristup za tvoj server. To ne znači nužno da trebaš VPS (virtualan privatni server). Neki dijeljeni hostovi pružaju SSH pristup putem kojeg se Composer i Kimai mogu instalirati bez problema.
     ssh: Ovaj način instalira Kimaija izravno na tvoj server.
@@ -284,6 +287,10 @@ newsletter:
     terms: uvjetima korištenja
     title: Ne želiš propustiti nijednu novost?
     introduction: Pretplati se na naš bilten i primaj obavijesti o novim verzijama Kimaija i dodataka.
+    archive: Arhiva
+    name: Bilten
+    page_intro: Ako koristiš vlastiti hosing za Kimai (ili ga samo istražuješ), ne propusti naš bilten. Dijelimo novosti i uvide sa zajednicom ljudi koji preferiraju potpunu kontrolu nad svojim podacima.
+    page_title: Bilten za vlastiti hosting
 developer:
     kevinpapst:
         intro: "Oduvijek sam sanjao o zarađivanju novca s proizvodom otvorenog koda. S programom Kimai sam uspio razviti softver koji pruža veliku vrijednost mojim kupcima i čiji me razvoj pokreće svaki dan.\n\nPosebno se zahvaljujem velikoj zajednici na njihovoj odanosti prijektu tijekom godina i radujem se sljedećim 10 godinama Kimaija 🚀"
@@ -509,7 +516,7 @@ store-payment-methods: Dostupni načini plaćanja
     description: Žao nam je, ali zahtjev sadrži krivu sintaksu i ne može se ispuniti.
 error:
     title: Ups!
-    back: Natrag na početnu web stranicu
+    back: Natrag na početnu web-stranicu
 503:
     name: Privremeno nedostupna stranica (503)
     description: Žao nam je, ali naš se server trenutačno održava te stoga nije dostupan. Uskoro će ponovo raditi!
@@ -567,7 +574,7 @@ industries:
 
             Pogledajmo zašto se uspješne agencije oslanjaju na softver za evidentiranje vremena i koje su ključne funkcije na koje treba obratiti pozornost. Kao primjer ćemo koristit Kimai – jednostavno rješenje razvijeno imajući na umu potrebe agencija.
         intro: Otključaj potencijal profitabilnosti u brzorastućim agencijama uz skalabilni sustav evidentiranja vremena
-        subtitle: Ključ profitabilnosti
+        subtitle: Ključ za profitabilnost
     lawyer:
         about:
             title: Prvi koraci za bolje evidentiranje vremena u odvjetničkom uredu
@@ -703,7 +710,7 @@ industries:
         intro: Povećaj učinkovitost svoje institucije pomoću snažnog evidentiranja vremena
         title: Evidentiranje vremena za akademski sektor
 industry:
-    office: Za uredske radnike
+    office: Za uredske zaposlenike
     name: Evidentiranje vremena za svako poduzeće
     intro: Pomoću Kimai softvera za evidentiranje vremena možeš poboljšati produktivnost tvojih zaposlenika.
     title: Evidentiranje vremena za svaku branšu
@@ -729,7 +736,7 @@ time-tracking-terms:
     title: Pojmovi evidentiranja vremena
     intro: Zaviri iza kulisa evidentiranja vremena i saznaj više o često korištenim pojmovima u Kimaiju
     name: Pojmovi evidentiranja vremena
-changelogs:
+changelog:
     name: Dnevnik promjena
     title: Kimai Cloud dnevnik promjena
     intro: Pregled svih aktualiziranja Kimai oblaka i kada su instalirana.
@@ -756,11 +763,11 @@ stories:
     employees: Zaposlenici
 title: Naslov
 date: Datum
-press:
+press-media:
     intro: Rado bismo pomogli. Pronađi materijale robne marke u nastavku ili nas kontaktiraj izravno – odgovaramo brzo.
     contact_title: Pokriva Kimai?
     contact_button: Pošalji nam e-mail
     name: Mediji
     title: Mediji
     contact_text: Slobodno postavi pitanja putem e-pošte ili zakaži razgovor.
-per-month: per month
+per-month: po mjesecu

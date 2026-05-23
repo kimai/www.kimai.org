@@ -1,11 +1,11 @@
 ---
 title: Supported countries
-description: We can currently provide services to custoemrs from the following countries 
+description: We can currently provide services to customers from the following countries
 ---
 
-If your country is not listed in the `Country` dropdown, it still might be available for purchase, please check the list below.
+If your country is not listed in the `Country` dropdown, it may still be available for purchase — please check the list below.
 
-## Allowed countries 
+## Allowed countries
 
 All EU countries are supported. You need to provide your VAT ID for reverse-charge invoices.
 
@@ -13,7 +13,7 @@ All EU countries are supported. You need to provide your VAT ID for reverse-char
 - BE = Belgium
 - BG = Bulgaria
 - CY = Cyprus
-- CZ = Czech
+- CZ = Czech Republic
 - DE = Germany
 - DK = Denmark
 - EE = Estonia
@@ -27,7 +27,7 @@ All EU countries are supported. You need to provide your VAT ID for reverse-char
 - IT = Italy
 - LT = Lithuania
 - LU = Luxembourg
-- LV = Latvia - Lettland
+- LV = Latvia
 - MT = Malta
 - NL = Netherlands
 - PL = Poland
@@ -37,7 +37,7 @@ All EU countries are supported. You need to provide your VAT ID for reverse-char
 - SI = Slovenia
 - SK = Slovakia
 
-Subscriptions are also possible for customers from the following countries:
+Subscriptions are also available for customers from the following countries:
 
 - AU = Australia
 - CA = Canada
@@ -51,16 +51,16 @@ Subscriptions are also possible for customers from the following countries:
 
 ## Countries with B2B only
 
-Customers from the following countries need to provide a document, proving that are a B2B customer (usually Tax ID, or company registration):
+Customers from the following countries must provide a document proving they are a B2B customer (usually a Tax ID or company registration):
 
 - GB = United Kingdom
-- CO = Columbia
+- CO = Colombia
 - TR = Turkey
 - UA = Ukraine
 
 ## Unsupported countries
 
-Due to international tax regulations, we currently cannot provide service in those countries:
+Due to international tax regulations, we currently cannot provide service in the following countries:
 
 - IL = Israel
 - PK = Pakistan
@@ -72,4 +72,4 @@ Due to international tax regulations, we currently cannot provide service in tho
 
 ## Other countries
 
-Customers from countries that are not listed here should open a support request to clarify the situation.
+Customers from countries not listed here should open a support request to clarify the situation.

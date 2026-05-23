@@ -39,77 +39,84 @@ There are 2 phases that each absence has to go through:
 
 ## How absences affect expected working time
 
-Kimai supports two calculation modes:
-1. Absences count as worked time and compensate the expected working time for the day (default setting)
-2. Absences reduce the expected working time for the day
+Kimai supports two calculation modes for absences:
 
-The mode can be configured individually for each absence type in [System → Settings]({% link _documentation/configurations.md %}), depending on your industry requirements.
+1. **Absences count as worked time and compensate the expected working time for the day** (default)
+2. **Absences reduce the expected working time for the day**
 
-The selected mode affects the calculation of total expected and worked hours for each month, which can be relevant for payroll or PTO calculations.
+The selected mode affects how total expected hours and worked hours are calculated for each month. This can be relevant for payroll, overtime, and PTO calculations.
 
-**1. Absences compensate expected working time for the day**
+You can configure the mode individually for each absence type in [System → Settings]({% link _documentation/configurations.md %}), depending on your company rules and industry requirements.
 
-In this mode, every configured working day is calculated with its full expected hours.
-This means Kimai assumes that hours must be accounted for on every day, regardless of whether the day is a public holiday, sick leave, or vacation.
+{% include youtube-video.html id="working_contract_overview" chapter="absence_calculation_mode" %}
 
-The duration of the absence is then counted as worked time and offsets the expected time.
-For example: if a working day has 8 expected hours, a full vacation day will count as 8 hours worked.
+### 1. Absences compensate expected working time for the day
 
-**2. Absences reduce the expected working time for the day**
+In this mode, every scheduled working day keeps its full expected number of hours.
 
-In this mode, an absence reduces the expected working time for the day by the duration of the absence.
+This means Kimai assumes that time must be accounted for on every working day, regardless of whether the employee is working, on vacation, sick, or absent due to a public holiday.
 
-For example: a full vacation day reduces the expected working time for that day to 0, and the worked time will also be 0.
+The absence duration is then counted as worked time and offsets the expected time.
 
-## Holiday
+Example: if a working day has **8 expected hours**, a full vacation day will count as **8 worked hours**.
+
+### 2. Absences reduce the expected working time for the day
+
+In this mode, an absence reduces the expected working time for the affected day by the duration of the absence.
+
+Example: if a working day has **8 expected hours**, a full vacation day reduces the expected working time for that day to **0 hours**, and the worked time will also be **0 hours**.
+
+## Absence types
+
+Please read the chapter ["How calculations work"]({% link _documentation/contract.md %}) to understand how your `Working times` are calculated.
+
+### Holiday / Vacation
 
 When you are eligible for holidays, meaning that your contract settings have a value for `Holidays per year`, you can schedule your vacations here.
 
 - Vacation days need to be approved
 - Vacation days can be full days or half-days
-- Vacation days count as working time, so they will be added to your daily working time
-- Your daily working time depends on the expected working hours for that day
 - You can book ranges of holidays
-- Days without expected working hours will be ignored when creating ranges
+- Days without expected working hours will be ignored when creating vacations
 
-## Sickness
+### Sickness
 
 Everyone can enter sickness entries. 
 
 - Sickness days are auto-approved
 - Sickness days can be entered as date-range
-- A sickness entry will always fill up the daily working time
+- Sickness entries will always account for the (remaining) daily working time
 - If you have already entered working-time the same day, sickness will fill up the remaining open time
 - There are no "half-day" entries available, because a half-day of sickness means, that there needs to at least one time-entry with 50% of the expected working-time. Example:
   - The expected working-time for the day is 8h
   - The users entered a timesheet of 4h
   - The user now adds a sickness entry: this will fill up the remaining 4h
 
-### My child is sick
+**My child is sick**
 
-Use the drop-down next to the "Report sickness" button and select the "Sickness of a child" category.
+Use the drop-down next to the "Report sickness" button and select the `Sickness of a relative` category.
 
-## Time-Off
+### Time-Off
 
-PTO (personal time-off) entries are for informational purpose, they do NOT influence your daily time by themselves.
+PTO (personal time-off) entries are for informational purpose, they do NOT influence your actual workimg time by themselves.
 
-- Time-Off need to be approved
-- Kimai automatically reduces your working time account for that period (because you do not record working-time during your PTO)
+- Time-Off needs to be approved
+- Kimai reduces your working time account for that period, because you do not record working-time during your PTO
 
-## Other absences
+### Other absences
 
-Other absences could be all kinds of reasons that do not fit into any other absence category. 
+Please add everything that does not fit the other categories in `Other absences`. 
 
-- Other absences need to be approved
-- Always entered as a duration  
+- The type `Other absences` needs to be approved
+- Can be a date range or a duration  
 
-### Parental leave
+**Parental leave**
 
-This fills up entire days and can be entered as date-range.
+Parental leaves always cover a date-range of full days.
 
-### Unpaid holiday
+**Unpaid holidays**
 
-This fills up entire days and can be entered as date-range.
+Unpaid holidays cover a date-range of full days.
 
 ## Absence calendar
 

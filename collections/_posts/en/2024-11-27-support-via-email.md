@@ -22,6 +22,6 @@ Centralizing support requests helps us guarantee quick responses and troubleshoo
 
 For complex questions, we continue to offer screen sharing sessions to help resolve your issues efficiently. 
 
-Please [visit our support page]({% link _pages/support.html %}) if you need an appointment.
+Please [visit our support page]({% link _pages/{{ page.lang }}/support.html %}) if you need an appointment.
 
 And for the technically curious ones: we are using [Zammad - Helpdesk](https://zammad.org/), another successful EU based Open-Source product.  

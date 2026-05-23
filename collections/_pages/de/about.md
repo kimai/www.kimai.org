@@ -1,6 +1,5 @@
 ---
 title: "About Kimai"
-lang: de
 layout: default
 permalink: /de/about.html
 ---

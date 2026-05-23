@@ -1,24 +1,24 @@
 ---
 title: Invoice templates
-description: As paying customer you can upload your own invoice template for Kimai 
+description: As a paying customer you can upload your own invoice template for Kimai
 ---
 
 {% alert info %}This feature is **available for paid subscriptions**, check the feature comparison page for more details.{% endalert %}
 
-You can use your own custom invoice templates to render them in your corporate design.
+You can use your own custom invoice templates to match your corporate design.
 
-Kimai supports multiple invoice formats, the most important ones being PDF, DOCX (Word), XSLX (Excel) and ODS (OpenOffice).
+Kimai supports multiple invoice formats, the most important ones being PDF, DOCX (Word), XLSX (Excel), and ODS (OpenOffice).
 
 ## Uploading templates
 
-The self-management screen at `Invoice > Templates > Documents/Upload` allows you to upload files in the formats DOCX, ODS, XLSX.
+The self-management screen at `Invoice > Templates > Documents/Upload` lets you upload files in the formats DOCX, ODS, and XLSX.
 
 ### PDF templates (Twig)
 
-If you want to use Twig templates for HTML or PDF format, you have to [contact the support](mailto:{{ site.cloud.support_email }}).
-Due to security measurements, all Twig templates need to be verified by the development team prior to upload.
-Please ZIP and mail them to our support email at [support@kimai.cloud](mailto:{{ site.cloud.support_email }}).
+If you want to use Twig templates for HTML or PDF output, you need to [contact support](mailto:{{ site.cloud.support_email }}).
+For security reasons, all Twig templates must be reviewed by the development team before upload.
+Please ZIP your template files and send them to [{{ site.cloud.support_email }}](mailto:{{ site.cloud.support_email }}).
 
 ## Further documentation
 
-Please read the [documentation]({% link _documentation/invoice-templates.md %}) to find out how to create your own invoice template.
+Read the [invoice template documentation]({% link _documentation/invoice-templates.md %}) to learn how to create your own templates.

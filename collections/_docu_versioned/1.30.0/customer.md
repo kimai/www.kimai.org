@@ -34,7 +34,7 @@ before any data will be shown.
 
 ### Budgets
 
-{% include snippets/budgets.md permission="customer" %} 
+{% include documentation/budgets.md permission="customer" %} 
 
 ### Rates
 

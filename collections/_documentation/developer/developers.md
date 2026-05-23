@@ -10,7 +10,7 @@ This page is for all developers who want to contribute to Kimai. You rock!
 
 ### Docker Compose
 
-```dockerfile
+```yaml
 services:
 
   sqldb:

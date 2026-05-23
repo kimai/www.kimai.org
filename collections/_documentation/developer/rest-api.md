@@ -8,7 +8,7 @@ related:
 
 - Read the API documentation in your Kimai installation at `/api/doc`.
 - You can preview the API docs at the demo installation at [https://demo.kimai.org/api/doc](https://demo.kimai.org/api/doc).
-- You need to be authenticated to see the API docs, credentials can be [found here]({% link _pages/demo.md %}).
+- You need to be authenticated to see the API docs, credentials can be [found here]({% link _pages/{{ page.lang }}/demo.md %}).
 
 ## Authentication
 

@@ -12,9 +12,6 @@
                 {% assign feature_key = feature.name %}
                 {% assign feature_documentation = feature.documentation %}
                 {% assign lang_replacer = page.lang | append: '/' %}
-                {% if page.lang == 'en' %}
-                    {% assign lang_replacer = '' %}
-                {% endif %}
                 {% assign feature_documentation = feature.documentation | replace: '%language%', lang_replacer %}
                 {% assign feature_title = site.data[page.lang].translation.feature[feature_key].name %}
                 {% assign feature_description = site.data[page.lang].translation.feature[feature_key].description %}

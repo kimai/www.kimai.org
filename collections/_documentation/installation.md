@@ -9,36 +9,17 @@ related:
   - webserver-configuration
 ---
 
-{% include snippets/self-hosting-warning.md %}
+{% include documentation/self-hosting-warning.md %}
 
 ## Server requirements
 
-<ul class="list-unstyled mb-4 px-4 px-lg-0">
-    <li class="d-flex align-items-center pb-1 mb-2">
-        <i class="bx bxl-php fs-xl text-primary me-3"></i>
-        {{ "PHP 8.1+ with the extensions: `mbstring`, `gd`, `intl`, `json`, `pdo`, `tokenizer`, `xml`, `zip`" | markdownify | replace: "<p>", "" | replace: "</p>", "" }}
-    </li>
-    <li class="d-flex align-items-center pb-1 mb-2">
-        <i class="bx bx-data fs-xl text-primary me-3"></i>
-        Database: MariaDB or MySQL
-    </li>
-    <li class="d-flex align-items-center pb-1 mb-2">
-        <i class="bx bx-server fs-xl text-primary me-3"></i>
-        Webserver (NGINX, or Apache with mod_rewrite)
-    </li>
-    <li class="d-flex align-items-center pb-1 mb-2">
-        <i class="bx bx-window fs-xl text-primary me-3"></i>
-        A modern web browser
-    </li>
-    <li class="d-flex align-items-center pb-1 mb-2">
-        <i class="{{ 'preferences' | icon }} fs-xl text-primary me-3"></i>
-        A free subdomain (use in subdirectory is not supported)
-    </li>
-    <li class="d-flex align-items-center pb-1 mb-2">
-        <i class="bx bx-wrench fs-xl text-primary me-3"></i>
-        You need to install Git and <a class="mx-1" href="https://getcomposer.org/doc/00-intro.md" target="_blank">Composer</a> if you haven't already
-    </li>
-</ul>
+- PHP: 8.2+ with the extensions: `mbstring`, `gd`, `intl`, `json`, `pdo`, `tokenizer`, `xml`, `zip`
+- Database: MariaDB or MySQL
+- Webserver: (NGINX, or Apache with mod_rewrite)
+- Modern web browser
+- Free subdomain (use in subdirectory is not supported)
+- Git (to fetch the code)
+- Composer (to install PHP dependencies)
 
 ## Install Kimai with SSH
 
@@ -56,9 +37,11 @@ Now install all dependencies:
 composer install {{ site.kimai_v2_composer_flags }}
 ```
 
-Configure the database connection and server version in the `.env` file:
+Configure at least the `DATABASE_URL` (database connection and server version), `TRUSTED_HOSTS` (the domain name you use for Kimai) and the `APP_SECRET` (a long and unique string) in the `.env` file:
 ```
 DATABASE_URL=mysql://user:password@127.0.0.1:3306/database?charset=utf8mb4&serverVersion=11.1.2-MariaDB
+TRUSTED_HOSTS=kimai.example.com
+APP_ENV=IT_IS_IMPORTANT_THAT_YOU_CHANGE_THIS_TO_A_LONG_RANDOM_STRING
 ```
 Fetch the exact serverVersion by running `mysql --version` and copy&paste the entire version. 
 
@@ -129,7 +112,7 @@ You have two choices:
 If you don't have the technical background for managing a server yourself and need to rely on a shared hosting package,
 it is better to stop hosting business critical software yourself!
 If you thought about switching to a managed server before (they are affordable these days)
-you can contact me, [I offer paid setup support]({% link _pages/support.html %}).
+you can contact me, [I offer paid setup support]({% link _pages/{{ page.lang }}/support.html %}).
 {% endalert %}
  
 ### Ansible

@@ -1,4 +1,4 @@
-Argos/Kargos/xbar/BitBar script for Kimai. Only usable with [kimai2-cmd]({% link _store/infeeeee-kimai2-cmd.md %}).
+Argos/Kargos/xbar/BitBar script for Kimai. Only usable with [kimai2-cmd]({% link _store/{{ page.lang }}/infeeeee-kimai2-cmd.md %}).
 
 With this script you can start/stop measurements from your desktop.
 

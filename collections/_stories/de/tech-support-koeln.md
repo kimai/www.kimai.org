@@ -1,6 +1,5 @@
 ---
 title: "TECH-SUPPORT.KOELN"
-teaser: 
 subtitle: Ein Interview mit TECH-SUPPORT.KOELN
 intro: Wie ein IT-Unternehmen seine Kundenbasis skaliert und dabei 50% Verwaltungszeit einspart
 company: TECH-SUPPORT.KOELN

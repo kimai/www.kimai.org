@@ -1,3 +1,10 @@
+**Version 2.27.0**
+
+Compatibility: requires minimum Kimai 2.48.0
+
+- Added "export" as batch action
+- Remove `escape` filter from description
+
 **Version 2.26.0**
 
 Compatibility: requires minimum Kimai 2.48.0

@@ -1,58 +1,87 @@
 ---
 title: Data removal
-description: We protect your privacy by deleting unused data after a certain period of time. Only applies to free accounts! 
+description: We protect your privacy by deleting unused data after a certain period of time. This only applies to free accounts!
 ---
 
-I do not make any money from your private data and for data minimisation reasons,
-unused free accounts will be irretrievably deleted after a waiting period!
+We don't make money from your private data, and for data minimization reasons,
+**unused free accounts** are irretrievably deleted after a waiting period of a few weeks.
 
-You can prevent deletion by using your time-tracker at regular intervals.
+See the [Terms of service]({% link _pages/{{ page.lang }}/terms-cloud.md %}) for the exact duration.
 
-### Why data is deleted
+## Why data is deleted
 
-Many people quietly accept that using the internet is a threat to their privacy; that their private information is sold for money and abused by Big Tech.
-Not with me: I don't do that. I fight against it! I do everything I can to protect your privacy.
-One of our strongest weapons in protecting your privacy is deleting your data when you're no longer using it.
+Many people have quietly accepted that using the internet is a threat to their privacy —
+that their personal information is sold for profit and exploited by Big Tech.
 
-I believe that **deleting unused data is the best way to prove to everyone that collecting user accounts is not part of the business**.
-I want to provide you with a safe working environment. Privacy first is one of my top rules.
-There is no investor behind me, so I do not have and do not want to fake numbers with expired accounts! I do make my own rules.
+> Not with me. I don't do that. I fight against it.
+> I do everything I can to protect your privacy.
 
-And one of these rules is: **You must create at least one new timesheet every month.**
+One of the strongest ways to protect your privacy is to delete your data when you're no longer using the product.
 
-If you don't follow this rule, you will receive a warning that "Your cloud is unused - Data deletion is imminent".
-After receiving this email, you have a short timeframe of a few days to log in and enter a timesheet.
-If you fail to do so, your cloud will be irretrievable/permanently deleted.
+> I believe that **deleting unused data is the best way to prove that collecting user accounts is not part of the business**.
+> I want to provide you with a safe working environment. Privacy first is one of my top rules.
+>
+> There is no investor behind me, so I neither have nor want to inflate numbers with expired accounts.
+> I make my own rules — and one of them is: **if a trial account is not used for one month, it will be removed.**
 
-There is no backup of your deleted data, it cannot be restored, even if you want to pay for it.
+The system will warn you about an upcoming deletion with an email titled:
+**"Your cloud is unused — Data deletion is imminent"**
 
-**This process only applies to free users.** Paying customers pay me to host Kimai - their data is protected and will never be touched.
+After receiving this email, you have a short period of a few days to log in and start a subscription to keep your cloud active.
 
-### Missing your login / cloud?
+If you don't, your cloud will be permanently deleted and cannot be restored.
 
-You can ask for details, but unfortunately there is no way I can provide them.
-If you don't use Kimai, your data will be completely deleted (hello GDPR).
-I don't know if you had an account in the past.
-If it is not there, but you are sure it existed, then it has been removed by our privacy processes.
+**This process only applies to free users.**
+Paying customers have their data protected and it will not be affected by this process.
 
-**You can always register a new account and new cloud if you wish.**
-But please make sure that you read the system-emails next time.
-I don't spam, you just get important updates about your cloud.
+## Can you restore my deleted data?
 
-Unsubscribing from our system emails is not only a bad idea, it's a violation of the TOS.
+The short answer: **No.**
 
-### Warning emails
+If you were unaware of this rule and your data was deleted, it is gone.
+That is the entire point of deleting data in a privacy-compliant manner.
 
-Kimai will send you warning emails that your cloud is unused with more information if the following applies:
+There is no backup of deleted data.
+It cannot be restored, even if you offer to pay for it.
 
-- after the trial period has expired and you are on the unpaid plan
-- the last timesheet was created more than 30 days ago
+## Missing your login or cloud?
 
-If you don't need your Kimai cloud anymore, you don't have to do anything: shortly after sending the warning-email,
-your cloud and your account will be completely deleted.
+You can ask for details, but unfortunately there is nothing we can tell you.
 
-### Data protection for paying customer
+If you stop using Kimai, your data is completely deleted — that's GDPR in practice.
 
-Data for paying accounts is secure.
+We don't know whether you had an account in the past.
+If it's no longer there but you're certain it existed, it has been removed by our privacy processes.
 
-Paying customers are protected and their data will never be touched by this process.
+**You're always welcome to register a new account and create a new cloud.**
+
+Please make sure you can receive and read the transactional system emails.
+
+> I don't spam — you will only receive important updates about your cloud.
+
+Unsubscribing from system emails is not only a bad idea — it's also a violation of the Terms of Service.
+
+## Warning emails
+
+Kimai sends warning emails when your cloud is unused, if the following applies:
+
+- The trial period has expired and you're on the unpaid plan
+- The last timesheet was created more than 30 days ago
+
+If you no longer need your Kimai cloud, you don't have to do anything.
+Shortly after the warning email is sent, your cloud and account will be completely deleted.
+
+## Data protection for paying customers
+
+Data for paying accounts is safe.
+
+Paying customers are protected — their data will never be affected by this process while they have an active subscription.
+
+Once a subscription is canceled, the rules above apply as well.
+
+We do **not** keep your data just because you paid us in the past.
+
+We have been asked whether we archive data for years to meet regulatory requirements in certain countries.
+We're happy to do that — but only as a paid service.
+
+If that's not an option for you, please [download your latest backup]({% link _documentation/cloud/cloud-backups.md %}) — it includes your entire cloud.

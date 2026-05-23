@@ -118,7 +118,6 @@ These are the existing rounding modes:
 ## Authentication
 
 - `Login form` - de-/activates the login form. This setting is only available if [SAML]({% link _documentation/saml.md %}) is activated.
-- `User registration` - de-/activates the self-registration. Do NOT activate this, if your Kimai instance is public accessible.
 - `Forgot password` - de-/activates the password reset function, that sends an email with a "reset my password" link 
 - `Forgotten password - seconds before a user can request the next e-mail` - if a password-reset email was sent, you should not allow to request another one too soon (for security reasons) 
 - `Forgotten password - seconds before a reset link expires` - how long a user can use the password reset link, it is recommended to keep this value below 1 day
@@ -203,7 +202,7 @@ You can use increment (for configuring a start value)) and decrement (for adjust
 
 ## Theme
 
-- `Allow markdown-formattings in descriptions and comments` - if activated, contents will be rendered with a markdown engine 
+- `Allow markdown-formattings in descriptions and comments` - if activated, contents will be rendered with a [markdown engine]({% link _documentation/markdown.md %}) 
   supporting simple lists and other HTML content. It will only be rendered in `My times` and not in `Admin > Timesheet` as [security](https://github.com/erusev/parsedown/blob/master/README.md#security) measure.  
 - `Allowed colors` - Comma-separated list of HTML color-codes. Color names can be set by prefixing the color code with a name and the "|" delimiter, e.g: `White|#ffffff,Black|#000000`.
 
@@ -225,12 +224,6 @@ The default color palette is:
 - `Copies data when adding via drag and drop` - when activated, form details will be populated from last entry  
 - `Display of the titles of calendar entries` - which data should be displayed in the title of each calendar entry
 
-## My company
+{% include documentation/configurations.md id="my_company" title=true %}
+{% include documentation/configurations.md id="controlling" title=true %}
 
-Kimai offers some configuration settings to adapt the branding to your company:
-
-- `Logo URL` - an absolute URL to an image, which  replaces the company name in login screen
-- `Company name` - replace the application name with your `company` name (approx. 15-20 character)
-- `Financial year` - starts on **first of January** by default 
-
-If you don't set a `Logo URL` but use a value in `Company name`, this will be used in the login screen.
