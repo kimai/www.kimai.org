@@ -202,7 +202,7 @@ You can use increment (for configuring a start value)) and decrement (for adjust
 
 ## Theme
 
-- `Allow markdown-formattings in descriptions and comments` - if activated, contents will be rendered with a markdown engine 
+- `Allow markdown-formattings in descriptions and comments` - if activated, contents will be rendered with a [markdown engine]({% link _documentation/markdown.md %}) 
   supporting simple lists and other HTML content. It will only be rendered in `My times` and not in `Admin > Timesheet` as [security](https://github.com/erusev/parsedown/blob/master/README.md#security) measure.  
 - `Allowed colors` - Comma-separated list of HTML color-codes. Color names can be set by prefixing the color code with a name and the "|" delimiter, e.g: `White|#ffffff,Black|#000000`.
 
