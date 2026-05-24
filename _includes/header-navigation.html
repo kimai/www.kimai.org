@@ -92,6 +92,7 @@
             {% comment %}
                 {% include link-cloud-login.html classes=downloadBtnClasses %}
             {% endcomment %}
+            {% assign downloadBtnClasses = downloadBtnClasses | append: " px-2" %}
             {% include language-dropdown.html language=page.lang display="locale" button=downloadBtnClasses %}
             {% include link-cloud-start.html classes="btn btn-success btn-sm fs-sm d-inline-flex" %}
         </div>
