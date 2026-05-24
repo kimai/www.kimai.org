@@ -33,6 +33,7 @@ cloud:
     my_cloud: https://www.kimai.cloud/go/my-site
     support_email: support@kimai.cloud
 
+# new languages need > 90% translation coverage
 languages:
     - ca
     - cs
@@ -54,6 +55,15 @@ languages:
     - uk
     - zh_Hans
     - zh_Hant
+
+# those languages are NOT shown in the dropdown
+# these are all languages that were once activated and fell below 75% translation coverage
+languages_disabled:
+    - nl
+    - pl
+    - pt
+    - ru
+    - zh_Hans
 
 date_format:
     ca: "%d/%m/%Y"

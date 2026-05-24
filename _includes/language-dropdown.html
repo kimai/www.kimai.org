@@ -1,0 +1,15 @@
+<div class="dropdown language-dropdown d-inline-block">
+    <button type="button" class="{{ include.button }} dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bx bx-globe top-50 start-0 text-body me-2"></i>
+            {{ site.language_names[include.language] }}
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end">
+        {% for lang in site.languages %}
+            {% unless site.languages_disabled contains lang %}
+            <li>
+                <a dir="{% if site.rtl contains lang %}rtl{% else %}ltr{% endif %}" href="{% include link-language-domain.html language=lang %}" class="dropdown-item{% if lang == include.language %} active{% endif %}"{% if lang == include.language %} aria-current="true"{% endif %} title="{{ site.data[lang].translation.index.title }}">{{ site.language_names[lang] }}</a>
+            </li>
+            {% endunless %}
+        {% endfor %}
+    </ul>
+</div>

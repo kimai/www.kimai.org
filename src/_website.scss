@@ -424,3 +424,26 @@ pre {
         max-width: 100%;
     }
 }
+
+@media (min-width: 992px) {
+    .navbar .language-dropdown::before {
+        content: none;
+    }
+
+    .navbar .language-dropdown > .dropdown-menu,
+    .navbar .language-dropdown:hover > .dropdown-menu {
+        animation: none;
+    }
+
+    .navbar .language-dropdown > .dropdown-menu.show {
+        display: block;
+    }
+
+    .navbar .language-dropdown:hover > .dropdown-menu {
+        display: none;
+    }
+
+    .navbar .language-dropdown:hover > .dropdown-menu.show {
+        display: block;
+    }
+}

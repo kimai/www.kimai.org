@@ -14,17 +14,7 @@
                 </p>
                 <div class="d-flex flex-column flex-sm-row flex-lg-column align-items-sm-center align-items-lg-start justify-content-between pb-1 pb-md-2 pb-lg-3 mb-3">
                     <div class="position-relative">
-                        <div class="dropdown">
-                            <button type="button" class="form-select" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="bx bx-globe top-50 start-0 text-body me-2"></i>
-                                {{ site.language_names[page.lang] }}
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-end">
-                                {% for lang in site.languages %}
-                                    <a dir="{% if site.rtl contains lang %}rtl{% else %}ltr{% endif %}" href="{% include link-language-domain.html language=lang %}" class="dropdown-item{% if lang == page.lang %} active{% endif %}" title="{{ site.data[lang].translation.index.title }}">{{ site.language_names[lang] }}</a>
-                                {% endfor %}
-                            </div>
-                        </div>
+                        {% include language-dropdown.html language=page.lang display="full" button="btn btn-sm fs-sm btn-secondary" %}
                     </div>
                     {% comment %}
                     <div class="d-flex pt-4 pt-sm-0 pt-lg-4 mt-lg-3">
