@@ -27,6 +27,35 @@ if ENV["JEKYLL_ENV"] == "development"
     # Erstbuild: keine Metadata vorhanden, Jekyll baut sowieso alles.
     next if regenerator.metadata.empty?
 
+    source_file_changed = lambda do |path|
+      metadata = regenerator.metadata[path]
+
+      # Neue Quelldateien sind fuer den aktuellen Lauf direkte Aenderungen.
+      next true if metadata.nil?
+
+      File.exist?(path) && !metadata["mtime"].eql?(File.mtime(path))
+    end
+
+    tracked_file_changed = lambda do |path|
+      next false unless File.exist?(path)
+
+      metadata = regenerator.metadata[path]
+      mtime    = File.mtime(path)
+
+      # Jekyll speichert fuer manche Inputs wie _data-Dateien keine Metadata.
+      # Diese pflegen wir hier selbst, damit sie nicht bei jedem Lauf als
+      # "geaendert" gelten.
+      if metadata.nil?
+        regenerator.metadata[path] = { "mtime" => mtime, "deps" => [] }
+        next false
+      end
+
+      next false if metadata["mtime"].eql?(mtime)
+
+      regenerator.metadata[path]["mtime"] = mtime
+      true
+    end
+
     posts       = site.collections["posts"].docs
     stories     = site.collections["stories"].docs
     security    = site.collections["security"].docs
@@ -57,7 +86,7 @@ if ENV["JEKYLL_ENV"] == "development"
     any_post_modified = false
 
     posts.each do |post|
-      next unless regenerator.modified?(post.path)
+      next unless source_file_changed.call(post.path)
       any_post_modified = true
 
       siblings = by_basename[File.basename(post.relative_path)] || []
@@ -76,7 +105,7 @@ if ENV["JEKYLL_ENV"] == "development"
     end
 
     stories.each do |story|
-      next unless regenerator.modified?(story.path)
+      next unless source_file_changed.call(story.path)
 
       match = story.relative_path.match(%r{_stories/([^/]+)/.+\.(?:md|markdown)\z})
       next unless match
@@ -88,13 +117,13 @@ if ENV["JEKYLL_ENV"] == "development"
       forced << stories_page.path
     end
 
-    if bughunter_page && security.any? { |doc| regenerator.modified?(doc.path) }
+    if bughunter_page && security.any? { |doc| source_file_changed.call(doc.path) }
       regenerator.force(bughunter_page.path)
       forced << bughunter_page.path
     end
 
     data_dependencies.each do |source_path, dependent_pages|
-      next unless regenerator.modified?(site.in_source_dir(source_path))
+      next unless tracked_file_changed.call(site.in_source_dir(source_path))
 
       dependent_pages.each do |page|
         regenerator.force(page.path)
