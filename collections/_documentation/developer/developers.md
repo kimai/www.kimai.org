@@ -30,7 +30,7 @@ services:
       retries: 3
 
   kimai:
-    image: kimai/kimai2:apache-dev
+    image: kimai/kimai2:dev
     ports:
       - 8001:8001
     environment:
