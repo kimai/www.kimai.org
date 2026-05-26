@@ -779,16 +779,9 @@ Activate them in your template by using e.g. this CSS: <code class="language-pla
 
 <h2 id="page-size">Page size</h2>
 
-<p>Want to display the PDF in a different size, e.g. because your customer expects <code class="language-plaintext highlighter-rouge">US-Letter</code> and not the standard size <code class="language-plaintext highlighter-rouge">DIN-A4</code>?
-Xou can add a CSS rule to your twig template:</p>
-<div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
-<span class="k">@page</span> <span class="p">{</span> 
-    <span class="py">sheet-size</span><span class="p">:</span> <span class="n">LETTER-L</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">&lt;/style&gt;</span> 
-</code></pre></div></div>
+<p>Want to display the PDF in a different size, e.g. because your customer expects <code class="language-plaintext highlighter-rouge">US-Letter</code> and not the standard size <code class="language-plaintext highlighter-rouge">DIN-A4</code>?</p>
 
-<p>You could also try to set the page-size via <code class="language-plaintext highlighter-rouge">options</code>:</p>
+<p>Please set the page-size via <code class="language-plaintext highlighter-rouge">options</code>:</p>
 <div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="o">-</span> <span class="k">set</span> <span class="nv">option</span> <span class="o">=</span> <span class="nv">pdfContext.setOption</span><span class="p">(</span><span class="s1">'format'</span><span class="p">,</span> <span class="s1">'A4-L'</span><span class="p">)</span> <span class="o">-</span><span class="cp">%}</span>
 </code></pre></div></div>
 
