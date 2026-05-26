@@ -68,11 +68,20 @@ After you locked all previous months, you can safely change the expected working
 
 As you can only lock complete months, it is currently only possible to change the employment contract at the beginning of a month.
 
+**But the contract changes mid-month**
+
+In that case you ca use this workaround: close all previous months first to protect historical data. 
+Leave the current month calculated under the old contract — any difference in hours will appear as overtime or missing hours. 
+Use the Manual Booking feature to correct these discrepancies for the affected period, and add a note referencing the contract change as the reason. 
+Once the new month begins, lock the transition month and update the contract. 
+The new hours will then apply going forward without affecting past records. 
+Keep old months locked — reopening them will cause hours to recalculate under the new contract, corrupting historical data.
+
 ## Manual bookings
 
 Attention: perform tests on a separate test account (or the [demo environment]({% link _pages/{{ page.lang }}/demo.md %})).
 
-You cannot delete manual bookings, so if you accidentally added wrong values, simply create an opposite booking and add something like "compensation for test booking" in the description.
+You cannot delete manual bookings, so if you accidentally added wrong values, simply create an opposite booking and add a note like "compensation for test booking" in the description.
 
 ### Account working times
 
