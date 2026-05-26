@@ -161,7 +161,27 @@ The best way to embed an image is a base64 encoded PNG image:
 <img style="height: 150px;margin: 10px;" src="data:image/png;base64,{{ logo }}" />{% endraw %}
 ```
 
-It is also possible to include images via absolute URLs like
+It is also possible to include images via absolute URLs:
 ```twig
 <img style="height: 150px;margin: 10px;" src="https://www.kimai.org/images/kimai_logo.png" />
 ```
+
+This method has a few limitations, which are in place to prevent SSRF attacks.
+
+The following URLs are blocked:
+
+- the host that runs Kimai
+  - e.g. Kimai runs at `https://kimai.example.com/` then the image src cannot be `https://kimai.example.com/logo.png`
+- any resource that is considered internal, e.g.
+  - `127.0.0.0/8` -  RFC1700 (Loopback)
+  - `10.0.0.0/8` -  RFC1918
+  - `192.168.0.0/16` -  RFC1918
+  - `172.16.0.0/12` -  RFC1918
+  - `169.254.0.0/16` -  RFC3927
+  - `0.0.0.0/8` -  RFC5735
+  - `240.0.0.0/4` -  RFC1112
+  - `::1/128` -  Loopback
+  - `fc00::/7` -  Unique Local Address
+  - `fe80::/10` -  Link Local Address
+  - `::ffff:0:0/96` -  IPv4 translations
+  - `::/128` - Unspecified address
