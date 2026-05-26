@@ -134,16 +134,8 @@ You can use the following template to debug fonts. Replace the sentence `The qui
 ## Page size
 
 Want to display the PDF in a different size, e.g. because your customer expects `US-Letter` and not the standard size `DIN-A4`?
-Xou can add a CSS rule to your twig template:
-```twig
-{% raw %}<style>
-@page { 
-    sheet-size: LETTER-L;
-}
-</style>{% endraw %} 
-```
 
-You could also try to set the page-size via `options`:
+Please set the page-size via `options`:
 ```twig
 {% raw %}{%- set option = pdfContext.setOption('format', 'A4-L') -%}{% endraw %}
 ```
