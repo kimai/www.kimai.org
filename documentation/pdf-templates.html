@@ -809,9 +809,37 @@ full list of available sizes <a href="https://mpdf.github.io/reference/mpdf-func
 <span class="nt">&lt;img</span> <span class="na">style=</span><span class="s">"height: 150px;margin: 10px;"</span> <span class="na">src=</span><span class="s">"data:image/png;base64,</span><span class="cp">{{</span> <span class="nv">logo</span> <span class="cp">}}</span><span class="s">"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<p>It is also possible to include images via absolute URLs like</p>
+<p>It is also possible to include images via absolute URLs:</p>
 <div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">style=</span><span class="s">"height: 150px;margin: 10px;"</span> <span class="na">src=</span><span class="s">"https://www.kimai.org/images/kimai_logo.png"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
+
+<p>This method has a few limitations, which are in place to prevent SSRF attacks.</p>
+
+<p>The following URLs are blocked:</p>
+
+<ul>
+  <li>the host that runs Kimai
+    <ul>
+      <li>e.g. Kimai runs at <code class="language-plaintext highlighter-rouge">https://kimai.example.com/</code> then the image src cannot be <code class="language-plaintext highlighter-rouge">https://kimai.example.com/logo.png</code></li>
+    </ul>
+  </li>
+  <li>any resource that is considered internal, e.g.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">127.0.0.0/8</code> -  RFC1700 (Loopback)</li>
+      <li><code class="language-plaintext highlighter-rouge">10.0.0.0/8</code> -  RFC1918</li>
+      <li><code class="language-plaintext highlighter-rouge">192.168.0.0/16</code> -  RFC1918</li>
+      <li><code class="language-plaintext highlighter-rouge">172.16.0.0/12</code> -  RFC1918</li>
+      <li><code class="language-plaintext highlighter-rouge">169.254.0.0/16</code> -  RFC3927</li>
+      <li><code class="language-plaintext highlighter-rouge">0.0.0.0/8</code> -  RFC5735</li>
+      <li><code class="language-plaintext highlighter-rouge">240.0.0.0/4</code> -  RFC1112</li>
+      <li><code class="language-plaintext highlighter-rouge">::1/128</code> -  Loopback</li>
+      <li><code class="language-plaintext highlighter-rouge">fc00::/7</code> -  Unique Local Address</li>
+      <li><code class="language-plaintext highlighter-rouge">fe80::/10</code> -  Link Local Address</li>
+      <li><code class="language-plaintext highlighter-rouge">::ffff:0:0/96</code> -  IPv4 translations</li>
+      <li><code class="language-plaintext highlighter-rouge">::/128</code> - Unspecified address</li>
+    </ul>
+  </li>
+</ul>
 
                         </div>
                         
