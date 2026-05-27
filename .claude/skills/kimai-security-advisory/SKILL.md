@@ -5,15 +5,24 @@ description: Use when authoring, reviewing, or editing security advisories in `c
 
 # Kimai Security Advisory
 
-Files in `collections/_security/` are public security advisories for the Kimai open-source time-tracking software. 
-Each advisory has a counterpart on GitHub at `https://github.com/kimai/kimai/security/advisories/<ghsa_id>`.
-This skill is only used on private security advisories, so 
+Files in `collections/_security/` are public security advisories for the Kimai open-source time-tracking software.
 
-When working on these files, act as a security researcher who verifies and improves the wording for clarity and accuracy. 
+When working on advisories, act as a security researcher who verifies and improves the wording for clarity and accuracy.
 
-This skill should execute: 
+### Generate Security advisories
 
-- Read the given file
+This skill expects one input, a "GITHUB Security Advisory ID" (later called `GHSA`), which always starts with `GHSA-`.
+If none was given, ask for it.
+
+The <filename> of the markdown file you are working on consist of:
+- a date `YYYY-MM-DD`
+- followed by a `-`
+- the lowercase `GHSA`
+- Example: the GHSA `GHSA-fjhg-96cp-6fcw` results in the filename `2023-10-27-ghsa-fjhg-96cp-6fcw.md`,  including directory this is `collections/_security/2023-10-27-ghsa-fjhg-96cp-6fcw.md`
+- this <filename> is the input for your task
+
+The task:
+- Read the file at <filename> - it contains a pre-formatted raw version of the security advisory
 - Take everything between `<!-- [START] -->` and `<!-- [END] -->` from the `## Info` section as `INPUT`
 - Generate a short `Introduction` from `INPUT` and replace `<INTRO>` with it
 - Generate the `## Info` section from `INPUT` and replace the entire block between and including `<!-- [START] -->` and `<!-- [END] -->` with it
@@ -22,9 +31,9 @@ This skill should execute:
 ## Editorial rules
 
 - Write for non-technical readers
-- Adjust the `title: ` and make it accessible for non-technical users 
+- Adjust the `title: ` and make it accessible for non-technical users
 - The `Introduction` should explain the issue in non-technical terms mostly
-- You might use technical terms in the `## Info` section, do not go into too much detail about the impacted code (unless it is necessary for that issue)  
+- You might use technical terms in the `## Info` section, do not go into too much detail about the impacted code (unless it is necessary for that issue)
 - Write in English, following the writing style: American English, second person, gender-neutral, contractions allowed, avoid "just"/"obviously"/"easy"/"simply", keep vocabulary accessible to non-native speakers
 - Keep advisories short and to the point
 - Focus on aspects that matter inside Kimai: affected components, roles and permissions, configuration, deployment type (OnPremise vs. Cloud)
@@ -40,7 +49,7 @@ Every advisory follows this shape:
 1. **Frontmatter** — pre-generated, do not modify except `title`. Contains: `title`, `date`, `ghsa_id`, `cve_id`, `severity`, `affected_version`, `patched_version`, `author`, `published`, `state`.
 2. **Introduction** — one or two sentences giving a quick overview of the issue and its impact. No heading.
 3. **`## Info`** — detailed explanation, preferably a bullet-point list. Cover the relevant subset of required role or permissions, conditions that trigger the issue, whether OnPremise or Cloud deployments are affected (if both then write "All Kimai installations"), audit-log visibility, and any caveats.
-4. **`## Solution`** — what was changed in Kimai to fix the issue. If you do not know what changed, ask the user before writing this section. 
+4. **`## Solution`** — what was changed in Kimai to fix the issue. If you do not know what changed, ask the user before writing this section.
 
 Optional subsections under `## Info` are only fine when they add clarity (for example `### Why this is not eligible for a CVE`).
 

@@ -97,7 +97,7 @@ Committed scripts in `scripts/` should be considered part of the supported workf
 ### Generate Security advisories
 
 - Run `./scripts/security-advisory.sh GHSA-xxxx-yyyy-zzzz`: this creates a new `.md` file in `collections/_security/`, e.g. `collections/_security/2026-05-05-ghsa-xxxx-yyyy-zzzz.md`
-- Run the skill `/kimai-security-advisory` with the new `.md` filename as input, e.g. `/kimai-security-advisory collections/_security/2026-05-05-xxxx-yyyy-zzzz.md`
+- Run the skill `/kimai-security-advisory` with the GHSA ID as input, e.g. `/kimai-security-advisory GHSA-xxxx-yyyy-zzzz`
 
 ## Multilingual Rules
 
