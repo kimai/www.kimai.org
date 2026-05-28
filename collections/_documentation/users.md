@@ -53,11 +53,11 @@ The username is a system-wide unique identifier which can be used for logging in
 It shouldn't be changed without strong reasoning, but if you want to e.g. activate LDAP or SAML and see that you have to, 
 then a System-Administrator can do so by editing the user profile (editing your own username is not possible).
 
-The field is hidden by default, you have to double-click the user header to show it.  
+The field is hidden by default, you have to double-click the username in the header to show it.
+
+Be aware: you cannot change the username of your own account, it is technically impossible and you need a second account for that.
 
 {% include youtube-video.html id="change_username" %}
-
-You should have a strong reasoning to change the username, e.g. think about API integrations and App logins.
 
 ## Supervisor
 
