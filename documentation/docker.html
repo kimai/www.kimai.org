@@ -610,15 +610,10 @@
 <h2 id="available-images">Available images</h2>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:stable</code> – the latest stable Kimai release</li>
+  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:&lt;major&gt;</code> – recommended: pin a specific major release, e.g <code class="language-plaintext highlighter-rouge">kimai/kimai2:2</code> (will upgrade between <code class="language-plaintext highlighter-rouge">2.0.0</code> up to <code class="language-plaintext highlighter-rouge">2.99.99</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:stable</code> – always the latest stable Kimai release (might bump to a new major release, so be careful)</li>
+  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:&lt;version&gt;</code> – one specific release of Kimai, e.g <code class="language-plaintext highlighter-rouge">kimai/kimai2:2.58.0</code> (not recommended, as you will not receive updates)</li>
   <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:dev</code> – development image intended for local use only, with debug mode enabled</li>
-</ul>
-
-<p>Since the internal technical stack is an implementation detail irrelevant to end users, the following image name has been deprecated. 
-It will remain available for backwards compatibility until further notice:</p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache</code> – <strong>deprecated</strong>; please use <code class="language-plaintext highlighter-rouge">kimai/kimai2:stable</code> instead</li>
 </ul>
 
 <h2 id="environment-variables">Environment variables</h2>
@@ -711,6 +706,13 @@ It will remain available for backwards compatibility until further notice:</p>
 
 <h2 id="deprecated-images">Deprecated images</h2>
 
+<p>Since the internal technical stack is an implementation detail irrelevant to end users, the following image name has been deprecated.
+It will remain available for backwards compatibility until further notice:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache</code> – replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:stable</code></li>
+</ul>
+
 <p>The following tags are still available, but will stop receiving updates after the next major release, replace them ASAP:</p>
 
 <ul>
@@ -721,18 +723,19 @@ It will remain available for backwards compatibility until further notice:</p>
 <p>The following tags are deprecated and will not receive updates anymore, replace them:</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-x.xx.x</code>: version specific release (PHP-FPM container)</li>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-prod</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:apache</code></li>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-latest</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:apache</code></li>
+  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-prod</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:stable</code></li>
+  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-latest</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:stable</code></li>
+  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-dev</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:dev</code></li>
+  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-&lt;version&gt;</code> – replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:&lt;version&gt;</code></li>
+  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-&lt;version&gt;-prod</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-&lt;version&gt;</code></li>
+  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-&lt;version&gt;-dev</code>: no replacement</li>
+  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:prod</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm</code></li>
   <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-prod</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm</code></li>
   <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-latest</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm</code></li>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:prod</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm</code></li>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-dev</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:dev</code></li>
   <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-dev</code>: no replacement</li>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-x.xx.x-dev</code>: no replacement</li>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-x.xx.x-dev</code>: no replacement</li>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-x.xx.x-prod</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:apache-x.xx.x</code></li>
-  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-x.xx.x-prod</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-x.xx.x</code></li>
+  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-&lt;version&gt;</code>: no replacement</li>
+  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-&lt;version&gt;-prod</code>: replaced by <code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-&lt;version&gt;</code></li>
+  <li><code class="language-plaintext highlighter-rouge">kimai/kimai2:fpm-&lt;version&gt;-dev</code>: no replacement</li>
 </ul>
 
                         </div>
