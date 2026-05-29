@@ -18,26 +18,19 @@ layout: page
 <h2>Affected versions</h2>
 
 <ul>
-    <li>Affected versions: <strong>{{ page.affected_version }}</strong></li>
-    <li>Patched version: <strong>{{ page.patched_version }}</strong></li>
-    <li>Advisory published: <strong>{{ page.date | date_to_string }}</strong></li>
+<li>Kimai versions <strong>{{ page.affected_version }}</strong> are affected by this security issue</li>
+<li>The issue has been fixed in Kimai <strong>{{ page.patched_version }}</strong></li>
+<li>Severity: <strong>{{ page.severity | capitalize }}</strong></li>
+<li>
+{% if page.cve_id != nil %}
+    The Common Vulnerabilities and Exposures (CVE) project has assigned the name <strong>{{ page.cve_id }}</strong> to this issue
+{% else %}
+    We have not requested an official CVE ID for this security advisory
+{% endif %}
+</li>
 </ul>
 
-<h2>Severity</h2>
-<p>
-    Severity: <strong>{{ page.severity | capitalize }}</strong>
-</p>
-
-<p>
-{% if page.cve_id != nil %}
-    The Common Vulnerabilities and Exposures (CVE) project has assigned the name <strong>{{ page.cve_id }}</strong> to this issue.
-{% else %}
-    We have not requested an official CVE ID for this security advisory.
-{% endif %}
-</p>
-
-
-<h2>Vulnerability</h2>
+<h2>Description</h2>
 
 {{ content }}
 

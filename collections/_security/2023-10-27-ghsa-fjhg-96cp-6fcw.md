@@ -18,8 +18,6 @@ arbitrary code on the server when the template was rendered.
 Because the vulnerable code path was used during invoice generation, a crafted template could escalate from template 
 injection to remote code execution.
 
-## Info
-
 This issue affected Twig-based rendering of uploaded invoice templates.
 
 - A malicious Twig file could be uploaded and later executed during invoice generation

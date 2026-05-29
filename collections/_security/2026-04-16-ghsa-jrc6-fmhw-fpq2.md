@@ -16,8 +16,6 @@ In affected versions, requests for existing usernames took measurably longer tha
 
 The response body and HTTP status stayed identical, so the leak was limited to request timing only.
 
-## Info
-
 This issue affected the [legacy API password authentication mechanism that has already been deprecated]({% link _posts/en/2026-04-13-removing-api-passwords.md %}).
 
 - The authenticator performed password hash verification only when the requested user existed

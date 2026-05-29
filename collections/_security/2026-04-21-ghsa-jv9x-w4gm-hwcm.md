@@ -14,8 +14,6 @@ state: "published"
 The Team API endpoints use `#[IsGranted('edit_team')]` instead of `#[IsGranted('edit', 'team')]`, causing TeamVoter to abstain from voting. 
 This removes entity-level ownership checks on team operations, allowing any user with the `edit_team` permission to modify any team, not just teams they are authorized to manage.
 
-## Info
-
 The team association endpoints in `src/API/TeamController.php` use `#[IsGranted('edit_team')]` with a single argument. 
 The controller at `src/Controller/TeamController.php` correctly uses `#[IsGranted('edit', 'team')]` with two arguments, passing the requested Team as the subject.
 

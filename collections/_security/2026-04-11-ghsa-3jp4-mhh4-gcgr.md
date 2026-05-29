@@ -16,8 +16,6 @@ In affected versions, a successful SAML login could therefore redirect users to 
 
 The issue requires SAML to be enabled and depends on a malicious or manipulated `RelayState` value being supplied during the authentication flow (e.g. a manipulated URL sent via email).
 
-## Info
-
 This issue affected the SAML login flow after successful authentication.
 
 - Kimai accepted the `RelayState` parameter as a redirect destination without sufficiently validating the target URL

@@ -16,8 +16,6 @@ The client-side HTML escaping logic did not escape quote characters correctly, w
 
 In affected versions, a malicious value stored in the user alias field could execute JavaScript when the generated markup was rendered in the browser.
 
-## Info
-
 This issue affected the escaping logic used for user-controlled content in HTML attributes.
 
 - The vulnerable code path escaped `<`, `>` and `&`, but not single or double quotes

@@ -17,8 +17,6 @@ even though those values were not editable through the normal user interface.
 
 This allowed unprivileged accounts to manipulate business-relevant values that influence future billing and financial calculations.
 
-## Info
-
 This issue was caused by the API accepting and persisting restricted preference values without enforcing the same permission checks as the GUI.
 
 - The regular web form correctly hid these fields from users without the required permissions
