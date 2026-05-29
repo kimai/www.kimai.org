@@ -5,23 +5,15 @@ description: Use when authoring, reviewing, or editing security advisories in `c
 
 # Kimai Security Advisory
 
-Files in `collections/_security/` are public security advisories for the Kimai open-source time-tracking software.
+Files in `collections/_security/` contain security advisories for the Kimai open-source time-tracking software.
 
 When working on advisories, act as a security researcher who verifies and improves the wording for clarity and accuracy.
 
 ### Generate Security advisories
 
-This skill expects one input, a "GITHUB Security Advisory ID" (later called `GHSA`), which always starts with `GHSA-`.
-If none was given, ask for it.
+This skill expects one <filename> as input. If none was given, ask for it.
 
-The <filename> of the markdown file you are working on consist of:
-- a date `YYYY-MM-DD`
-- followed by a `-`
-- the lowercase `GHSA`
-- Example: the GHSA `GHSA-fjhg-96cp-6fcw` results in the filename `2023-10-27-ghsa-fjhg-96cp-6fcw.md`,  including directory this is `collections/_security/2023-10-27-ghsa-fjhg-96cp-6fcw.md`
-- this <filename> is the input for your task
-
-The task:
+The task to perform:
 - Read the file at <filename> - it contains a pre-formatted raw version of the security advisory
 - Take everything between `<!-- [START] -->` and `<!-- [END] -->` from the `## Info` section as `INPUT`
 - Generate a short `Introduction` from `INPUT` and replace `<INTRO>` with it
