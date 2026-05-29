@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
         with:
-            persist-credentials: false
+          persist-credentials: false
 
       - name: "Update Kimai version in _config.yml"
         run: scripts/update-version-number.sh "${{ github.event.client_payload.kimai_version }}"
