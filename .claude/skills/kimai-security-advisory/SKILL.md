@@ -52,5 +52,4 @@ Before reporting the change as done, confirm:
 - The `title` is accessible for the mainly non-technical audience and `severity` in the frontmatter
 - The text is consistent with `affected_version` and `patched_version` from the frontmatter
 - No exploitation steps or code samples were introduced
-- The `## Solution` section ends with `Users should update to `<version>` or newer.` using the value from `patched_version`
 - Cloud-vs-OnPremise applicability is stated when relevant
