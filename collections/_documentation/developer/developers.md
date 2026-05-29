@@ -142,20 +142,20 @@ The `kimai:reset:dev` command will do that automatically and can always be execu
 If you want to make changes to CSS / Javascript, you need:
 
 - [NodeJS](https://www.npmjs.com/)
-- [Yarn Package Manager](https://yarnpkg.com/en/)
+- [PNPM](https://pnpm.io/)
 - [Webpack](https://webpack.js.org/)
 - [Webpack Encore](https://github.com/symfony/webpack-encore)
 
-Please [install Yarn for your OS](https://yarnpkg.com/lang/en/docs/install/) and then:
+Please [install the NPMN](https://pnpm.io/installation) and then:
 
 ```bash
-yarn install
+pnpm install
 ```
 
 To rebuild all assets you have to execute:
 
 ```bash
-yarn run prod
+pnpm run build
 ```
 
 You can find more information [here](https://symfony.com/doc/current/frontend/encore/installation.html) and [here](https://symfony.com/doc/current/frontend.html).
