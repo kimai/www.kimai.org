@@ -13,13 +13,10 @@ The official **Docker Hub repository** with auto-built production and developmen
 
 ## Available images
 
-- `kimai/kimai2:stable` – the latest stable Kimai release
+- `kimai/kimai2:<major>` – recommended: pin a specific major release, e.g `kimai/kimai2:2` (will upgrade between `2.0.0` up to `2.99.99`) 
+- `kimai/kimai2:stable` – always the latest stable Kimai release (might bump to a new major release, so be careful)
+- `kimai/kimai2:<version>` – one specific release of Kimai, e.g `kimai/kimai2:2.58.0` (not recommended, as you will not receive updates)
 - `kimai/kimai2:dev` – development image intended for local use only, with debug mode enabled
-
-Since the internal technical stack is an implementation detail irrelevant to end users, the following image name has been deprecated. 
-It will remain available for backwards compatibility until further notice:
-
-- `kimai/kimai2:apache` – **deprecated**; please use `kimai/kimai2:stable` instead
  
 ## Environment variables
 
@@ -104,6 +101,11 @@ docker exec -ti kimai-test /opt/kimai/bin/console kimai:reload --env=prod
 
 ## Deprecated images 
 
+Since the internal technical stack is an implementation detail irrelevant to end users, the following image name has been deprecated.
+It will remain available for backwards compatibility until further notice:
+
+- `kimai/kimai2:apache` – replaced by `kimai/kimai2:stable`
+
 The following tags are still available, but will stop receiving updates after the next major release, replace them ASAP:
 
 - `kimai/kimai2:fpm`: the latest Kimai version bundled in PHP-FPM Alpine container (smaller image, but [needs extra setup steps]({% link _documentation/docker/docker-compose.md %}))
@@ -111,15 +113,16 @@ The following tags are still available, but will stop receiving updates after th
 
 The following tags are deprecated and will not receive updates anymore, replace them:
 
-- `kimai/kimai2:fpm-x.xx.x`: version specific release (PHP-FPM container)
-- `kimai/kimai2:apache-prod`: replaced by `kimai/kimai2:apache`
-- `kimai/kimai2:apache-latest`: replaced by `kimai/kimai2:apache`
+- `kimai/kimai2:apache-prod`: replaced by `kimai/kimai2:stable`
+- `kimai/kimai2:apache-latest`: replaced by `kimai/kimai2:stable`
+- `kimai/kimai2:apache-dev`: replaced by `kimai/kimai2:dev`
+- `kimai/kimai2:apache-<version>` – replaced by `kimai/kimai2:<version>`
+- `kimai/kimai2:apache-<version>-prod`: replaced by `kimai/kimai2:apache-<version>`
+- `kimai/kimai2:apache-<version>-dev`: no replacement
+- `kimai/kimai2:prod`: replaced by `kimai/kimai2:fpm`
 - `kimai/kimai2:fpm-prod`: replaced by `kimai/kimai2:fpm`
 - `kimai/kimai2:fpm-latest`: replaced by `kimai/kimai2:fpm`
-- `kimai/kimai2:prod`: replaced by `kimai/kimai2:fpm`
-- `kimai/kimai2:apache-dev`: replaced by `kimai/kimai2:dev`
 - `kimai/kimai2:fpm-dev`: no replacement
-- `kimai/kimai2:apache-x.xx.x-dev`: no replacement
-- `kimai/kimai2:fpm-x.xx.x-dev`: no replacement
-- `kimai/kimai2:apache-x.xx.x-prod`: replaced by `kimai/kimai2:apache-x.xx.x`
-- `kimai/kimai2:fpm-x.xx.x-prod`: replaced by `kimai/kimai2:fpm-x.xx.x` 
+- `kimai/kimai2:fpm-<version>`: no replacement
+- `kimai/kimai2:fpm-<version>-prod`: replaced by `kimai/kimai2:fpm-<version>` 
+- `kimai/kimai2:fpm-<version>-dev`: no replacement
