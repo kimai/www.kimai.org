@@ -60,8 +60,7 @@ state: "${state}"
 ---
 
 <INTRO>
-
-## Info
+<DETAILS>
 
 <!-- [START] -->
 ${description}
