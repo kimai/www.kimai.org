@@ -281,31 +281,22 @@
 <h2>Affected versions</h2>
 
 <ul>
-    <li>Affected versions: <strong><= 2.20.1</strong></li>
-    <li>Patched version: <strong>2.21.0</strong></li>
-    <li>Advisory published: <strong>17 Sep 2024</strong></li>
+<li>Kimai versions <strong><= 2.20.1</strong> are affected by this security issue</li>
+<li>The issue has been fixed in Kimai <strong>2.21.0</strong></li>
+<li>Severity: <strong>Medium</strong></li>
+<li>
+
+    The Common Vulnerabilities and Exposures (CVE) project has assigned the name <strong>CVE-2024-45048</strong> to this issue
+
+</li>
 </ul>
 
-<h2>Severity</h2>
-<p>
-    Severity: <strong>Medium</strong>
-</p>
-
-<p>
-
-    The Common Vulnerabilities and Exposures (CVE) project has assigned the name <strong>CVE-2024-45048</strong> to this issue.
-
-</p>
-
-
-<h2>Vulnerability</h2>
+<h2>Description</h2>
 
 <p>Kimai was affected by an XML external entity issue through its use of PHPSpreadsheet for invoice import and export handling.
 In affected versions, a malicious spreadsheet template could trigger XML parsing behavior that allowed local file disclosure during invoice generation.</p>
 
 <p>Exploitation required administrative access to upload a crafted XLSX template, but a successful attack could expose local files and, in edge cases, contribute to more severe outcomes.</p>
-
-<h2 id="info">Info</h2>
 
 <p>This issue was related to spreadsheet template handling in the invoice workflow.</p>
 

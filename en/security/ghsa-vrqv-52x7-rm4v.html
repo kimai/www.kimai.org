@@ -281,34 +281,25 @@
 <h2>Affected versions</h2>
 
 <ul>
-    <li>Affected versions: <strong><= 2.55.0</strong></li>
-    <li>Patched version: <strong>2.56.0</strong></li>
-    <li>Advisory published: <strong>27 Apr 2026</strong></li>
+<li>Kimai versions <strong><= 2.55.0</strong> are affected by this security issue</li>
+<li>The issue has been fixed in Kimai <strong>2.56.0</strong></li>
+<li>Severity: <strong>Low</strong></li>
+<li>
+
+    We have not requested an official CVE ID for this security advisory
+
+</li>
 </ul>
 
-<h2>Severity</h2>
-<p>
-    Severity: <strong>Low</strong>
-</p>
-
-<p>
-
-    We have not requested an official CVE ID for this security advisory.
-
-</p>
-
-
-<h2>Vulnerability</h2>
+<h2>Description</h2>
 
 <p>The Twig sandbox used for invoice and export HTML/PDF templates lets the <code class="language-plaintext highlighter-rouge">config()</code> function read any value from the Kimai system configuration.</p>
 
 <p>A <code class="language-plaintext highlighter-rouge">System-Admin</code> (<code class="language-plaintext highlighter-rouge">ROLE_SUPER_ADMIN</code>) who uploads a crafted invoice template can therefore render server-wide secrets — such as the LDAP bind password or the SAML SP private key — into the generated invoice. 
 The resulting PDF or HTML is then handed to whoever creates an invoice from that template, including lower-privileged users such as teamleads with invoice permissions.</p>
 
-<h2 id="info">Info</h2>
-
 <ul>
-  <li>Affected versions: <code class="language-plaintext highlighter-rouge">&lt;= 2.55.0</code>. The sandbox issue affects both invoice and export HTML/PDF templates.</li>
+  <li>The sandbox issue affects both invoice and export HTML/PDF templates.</li>
   <li>The practical attack vector is invoice templates: they can be uploaded through the Kimai admin UI with the permission <code class="language-plaintext highlighter-rouge">upload_invoice_template</code>, which by default is held only by <code class="language-plaintext highlighter-rouge">System-Admin</code> (<code class="language-plaintext highlighter-rouge">ROLE_SUPER_ADMIN</code>).</li>
   <li>Custom export HTML/PDF templates cannot be uploaded through the UI. Reaching the export side requires direct filesystem access to the Kimai installation, which already implies a much stronger attacker position.</li>
   <li>Secrets become reachable when both conditions are met:

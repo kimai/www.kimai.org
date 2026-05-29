@@ -281,31 +281,20 @@
 <h2>Affected versions</h2>
 
 <ul>
-    <li>Affected versions: <strong>>= 2.27.0, <= 2.53.0</strong></li>
-    <li>Patched version: <strong>2.54.0</strong></li>
-    <li>Advisory published: <strong>26 Apr 2026</strong></li>
+<li>Kimai versions <strong>>= 2.27.0, <= 2.53.0</strong> are affected by this security issue</li>
+<li>The issue has been fixed in Kimai <strong>2.54.0</strong></li>
+<li>Severity: <strong>Medium</strong></li>
+<li>
+
+    The Common Vulnerabilities and Exposures (CVE) project has assigned the name <strong>CVE-2026-42267</strong> to this issue
+
+</li>
 </ul>
 
-<h2>Severity</h2>
-<p>
-    Severity: <strong>Medium</strong>
-</p>
-
-<p>
-
-    The Common Vulnerabilities and Exposures (CVE) project has assigned the name <strong>CVE-2026-42267</strong> to this issue.
-
-</p>
-
-
-<h2>Vulnerability</h2>
+<h2>Description</h2>
 
 <p>Kimai allowed any authenticated user (<code class="language-plaintext highlighter-rouge">ROLE_USER</code>) to create a tag whose name is a spreadsheet formula (for example <code class="language-plaintext highlighter-rouge">=SUM(54+51)</code>) and assign it to a timesheet. 
 When an administrator later exported timesheets to XLSX, the formula was written into the file as a real formula cell and evaluated by Excel or LibreOffice Calc when the export was opened.</p>
-
-<h2 id="info">Info</h2>
-
-<p>This issue affected Kimai versions <code class="language-plaintext highlighter-rouge">&gt;= 2.27.0, &lt;= 2.53.0</code>.</p>
 
 <p>The XLSX export pipeline did not neutralize formula trigger characters in array-valued cells:</p>
 
@@ -314,8 +303,6 @@ When an administrator later exported timesheets to XLSX, the formula was written
   <li>Tag name validation in the API blocked commas but accepted <code class="language-plaintext highlighter-rouge">=</code>, <code class="language-plaintext highlighter-rouge">+</code>, <code class="language-plaintext highlighter-rouge">-</code> and <code class="language-plaintext highlighter-rouge">@</code> — all valid formula prefixes in Excel and LibreOffice Calc.</li>
   <li>OpenSpout silently promotes any string starting with <code class="language-plaintext highlighter-rouge">=</code> to a <code class="language-plaintext highlighter-rouge">FormulaCell</code>, so the exported XLSX contained <code class="language-plaintext highlighter-rouge">&lt;f&gt;SUM(54+51)&lt;/f&gt;</code> instead of literal text.</li>
 </ul>
-
-<p>The vulnerability has been classified as <a href="https://cwe.mitre.org/data/definitions/1236.html">CWE-1236 — Improper Neutralization of Formula Elements in a CSV File</a> and assigned <a href="https://www.cve.org/CVERecord?id=CVE-2026-42267">CVE-2026-42267</a>.</p>
 
 <h2 id="solution">Solution</h2>
 

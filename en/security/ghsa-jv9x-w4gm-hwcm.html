@@ -281,29 +281,20 @@
 <h2>Affected versions</h2>
 
 <ul>
-    <li>Affected versions: <strong>< 2.54.0</strong></li>
-    <li>Patched version: <strong>2.54.0</strong></li>
-    <li>Advisory published: <strong>21 Apr 2026</strong></li>
+<li>Kimai versions <strong>< 2.54.0</strong> are affected by this security issue</li>
+<li>The issue has been fixed in Kimai <strong>2.54.0</strong></li>
+<li>Severity: <strong>Low</strong></li>
+<li>
+
+    The Common Vulnerabilities and Exposures (CVE) project has assigned the name <strong>CVE-2026-41498</strong> to this issue
+
+</li>
 </ul>
 
-<h2>Severity</h2>
-<p>
-    Severity: <strong>Low</strong>
-</p>
-
-<p>
-
-    The Common Vulnerabilities and Exposures (CVE) project has assigned the name <strong>CVE-2026-41498</strong> to this issue.
-
-</p>
-
-
-<h2>Vulnerability</h2>
+<h2>Description</h2>
 
 <p>The Team API endpoints use <code class="language-plaintext highlighter-rouge">#[IsGranted('edit_team')]</code> instead of <code class="language-plaintext highlighter-rouge">#[IsGranted('edit', 'team')]</code>, causing TeamVoter to abstain from voting. 
 This removes entity-level ownership checks on team operations, allowing any user with the <code class="language-plaintext highlighter-rouge">edit_team</code> permission to modify any team, not just teams they are authorized to manage.</p>
-
-<h2 id="info">Info</h2>
 
 <p>The team association endpoints in <code class="language-plaintext highlighter-rouge">src/API/TeamController.php</code> use <code class="language-plaintext highlighter-rouge">#[IsGranted('edit_team')]</code> with a single argument. 
 The controller at <code class="language-plaintext highlighter-rouge">src/Controller/TeamController.php</code> correctly uses <code class="language-plaintext highlighter-rouge">#[IsGranted('edit', 'team')]</code> with two arguments, passing the requested Team as the subject.</p>

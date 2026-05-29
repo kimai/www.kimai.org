@@ -281,29 +281,20 @@
 <h2>Affected versions</h2>
 
 <ul>
-    <li>Affected versions: <strong>>= 2.32.0, <= 2.55</strong></li>
-    <li>Patched version: <strong>2.56</strong></li>
-    <li>Advisory published: <strong>05 May 2026</strong></li>
+<li>Kimai versions <strong>>= 2.32.0, <= 2.55</strong> are affected by this security issue</li>
+<li>The issue has been fixed in Kimai <strong>2.56</strong></li>
+<li>Severity: <strong>Medium</strong></li>
+<li>
+
+    The Common Vulnerabilities and Exposures (CVE) project has assigned the name <strong>CVE-2026-44298</strong> to this issue
+
+</li>
 </ul>
 
-<h2>Severity</h2>
-<p>
-    Severity: <strong>Medium</strong>
-</p>
-
-<p>
-
-    The Common Vulnerabilities and Exposures (CVE) project has assigned the name <strong>CVE-2026-44298</strong> to this issue.
-
-</p>
-
-
-<h2>Vulnerability</h2>
+<h2>Description</h2>
 
 <p>Kimai allowed a <code class="language-plaintext highlighter-rouge">System-Admin</code> (<code class="language-plaintext highlighter-rouge">ROLE_SUPER_ADMIN</code>) with the <code class="language-plaintext highlighter-rouge">upload_invoice_template</code> permission to abuse PDF renderer options from within a sandboxed invoice Twig template.
 In affected versions, a crafted template could pass a malicious <code class="language-plaintext highlighter-rouge">associated_files</code> entry to mPDF and cause the renderer to read a local file from the server and embed its contents into the generated PDF.</p>
-
-<h2 id="info">Info</h2>
 
 <p>This issue affected uploaded invoice templates rendered as PDF documents.</p>
 

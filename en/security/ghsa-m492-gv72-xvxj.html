@@ -281,28 +281,19 @@
 <h2>Affected versions</h2>
 
 <ul>
-    <li>Affected versions: <strong><= 2.57.0</strong></li>
-    <li>Patched version: <strong>2.58.0</strong></li>
-    <li>Advisory published: <strong>22 May 2026</strong></li>
+<li>Kimai versions <strong><= 2.57.0</strong> are affected by this security issue</li>
+<li>The issue has been fixed in Kimai <strong>2.58.0</strong></li>
+<li>Severity: <strong>Low</strong></li>
+<li>
+
+    We have not requested an official CVE ID for this security advisory
+
+</li>
 </ul>
 
-<h2>Severity</h2>
-<p>
-    Severity: <strong>Low</strong>
-</p>
-
-<p>
-
-    We have not requested an official CVE ID for this security advisory.
-
-</p>
-
-
-<h2>Vulnerability</h2>
+<h2>Description</h2>
 
 <p>After a user clicked a password reset link in Kimai and set a new password, the same link could still be used up to 2 times within the next hour.</p>
-
-<h2 id="info">Info</h2>
 
 <ul>
   <li>The issue affects password reset links and the admin “login link” feature generated through <code class="language-plaintext highlighter-rouge">bin/console kimai:user:login-link</code></li>

@@ -281,30 +281,21 @@
 <h2>Affected versions</h2>
 
 <ul>
-    <li>Affected versions: <strong><= 2.55.0</strong></li>
-    <li>Patched version: <strong>2.56.0</strong></li>
-    <li>Advisory published: <strong>27 Apr 2026</strong></li>
+<li>Kimai versions <strong><= 2.55.0</strong> are affected by this security issue</li>
+<li>The issue has been fixed in Kimai <strong>2.56.0</strong></li>
+<li>Severity: <strong>Medium</strong></li>
+<li>
+
+    We have not requested an official CVE ID for this security advisory
+
+</li>
 </ul>
 
-<h2>Severity</h2>
-<p>
-    Severity: <strong>Medium</strong>
-</p>
-
-<p>
-
-    We have not requested an official CVE ID for this security advisory.
-
-</p>
-
-
-<h2>Vulnerability</h2>
+<h2>Description</h2>
 
 <p>Kimai’s <code class="language-plaintext highlighter-rouge">*_other_timesheet</code> permissions grant global access by design. Any user holding them — typically <code class="language-plaintext highlighter-rouge">ROLE_TEAMLEAD</code> — can read, modify, and permanently delete timesheets belonging to any other user in the system, regardless of team membership.</p>
 
 <p>This is documented permission behavior rather than a regression, but the cross-team data destruction (deleted timesheets) and tampering (for example, changed timesheet durations) it allows are addressed by team-scoped enforcement in <code class="language-plaintext highlighter-rouge">2.56.0</code>.</p>
-
-<h2 id="info">Info</h2>
 
 <p>A user holding the relevant permissions — typically <code class="language-plaintext highlighter-rouge">ROLE_TEAMLEAD</code> — can:</p>
 
@@ -320,7 +311,7 @@
 
 <h3 id="why-we-didnt-request-a-cve">Why we didn’t request a CVE</h3>
 
-<p>The behavior described matches the documented permission model. Per the Kimai documentation, the relevant permissions granted to <code class="language-plaintext highlighter-rouge">ROLE_TEAMLEAD</code> are:</p>
+<p>The behavior described matched the documented permission model. Per the Kimai documentation, the relevant permissions granted to <code class="language-plaintext highlighter-rouge">ROLE_TEAMLEAD</code> are:</p>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">edit_other_timesheet</code> — Edit existing records of other users</li>

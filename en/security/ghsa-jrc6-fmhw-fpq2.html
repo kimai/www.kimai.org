@@ -281,31 +281,22 @@
 <h2>Affected versions</h2>
 
 <ul>
-    <li>Affected versions: <strong><=2.53.0</strong></li>
-    <li>Patched version: <strong>2.54.0</strong></li>
-    <li>Advisory published: <strong>16 Apr 2026</strong></li>
+<li>Kimai versions <strong><=2.53.0</strong> are affected by this security issue</li>
+<li>The issue has been fixed in Kimai <strong>2.54.0</strong></li>
+<li>Severity: <strong>Low</strong></li>
+<li>
+
+    We have not requested an official CVE ID for this security advisory
+
+</li>
 </ul>
 
-<h2>Severity</h2>
-<p>
-    Severity: <strong>Low</strong>
-</p>
-
-<p>
-
-    We have not requested an official CVE ID for this security advisory.
-
-</p>
-
-
-<h2>Vulnerability</h2>
+<h2>Description</h2>
 
 <p>Kimai exposed a small timing difference in the legacy API authentication flow that accepted <code class="language-plaintext highlighter-rouge">X-AUTH-USER</code> and <code class="language-plaintext highlighter-rouge">X-AUTH-TOKEN</code> header. 
 In affected versions, requests for existing usernames took measurably longer than requests for unknown usernames, which could allow user enumeration through repeated timing analysis.</p>
 
 <p>The response body and HTTP status stayed identical, so the leak was limited to request timing only.</p>
-
-<h2 id="info">Info</h2>
 
 <p>This issue affected the <a href="/en/blog/2026/removing-api-passwords">legacy API password authentication mechanism that has already been deprecated</a>.</p>
 

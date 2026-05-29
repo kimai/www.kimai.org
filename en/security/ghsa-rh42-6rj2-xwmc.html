@@ -281,29 +281,20 @@
 <h2>Affected versions</h2>
 
 <ul>
-    <li>Affected versions: <strong><= 2.52.0</strong></li>
-    <li>Patched version: <strong>2.53.0</strong></li>
-    <li>Advisory published: <strong>11 Apr 2026</strong></li>
+<li>Kimai versions <strong><= 2.52.0</strong> are affected by this security issue</li>
+<li>The issue has been fixed in Kimai <strong>2.53.0</strong></li>
+<li>Severity: <strong>Low</strong></li>
+<li>
+
+    We have not requested an official CVE ID for this security advisory
+
+</li>
 </ul>
 
-<h2>Severity</h2>
-<p>
-    Severity: <strong>Low</strong>
-</p>
-
-<p>
-
-    We have not requested an official CVE ID for this security advisory.
-
-</p>
-
-
-<h2>Vulnerability</h2>
+<h2>Description</h2>
 
 <p>Kimai allowed invoice Twig templates to access API token related user methods that should not have been exposed in the sandbox.
 In affected versions, a crafted invoice template could include the hashed API token of the user who generated the invoice in the rendered output.</p>
-
-<h2 id="info">Info</h2>
 
 <p>This issue was caused by an incomplete method blocklist in the Twig security policy.</p>
 

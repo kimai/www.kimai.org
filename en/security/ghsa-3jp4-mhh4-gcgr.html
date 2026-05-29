@@ -281,31 +281,22 @@
 <h2>Affected versions</h2>
 
 <ul>
-    <li>Affected versions: <strong><= 2.52.0</strong></li>
-    <li>Patched version: <strong>2.53.0</strong></li>
-    <li>Advisory published: <strong>11 Apr 2026</strong></li>
+<li>Kimai versions <strong><= 2.52.0</strong> are affected by this security issue</li>
+<li>The issue has been fixed in Kimai <strong>2.53.0</strong></li>
+<li>Severity: <strong>Low</strong></li>
+<li>
+
+    We have not requested an official CVE ID for this security advisory
+
+</li>
 </ul>
 
-<h2>Severity</h2>
-<p>
-    Severity: <strong>Low</strong>
-</p>
-
-<p>
-
-    We have not requested an official CVE ID for this security advisory.
-
-</p>
-
-
-<h2>Vulnerability</h2>
+<h2>Description</h2>
 
 <p>Kimai’s SAML authentication flow accepted the <code class="language-plaintext highlighter-rouge">RelayState</code> parameter as a redirect target without sufficiently validating the destination. 
 In affected versions, a successful SAML login could therefore redirect users to an attacker-controlled URL.</p>
 
 <p>The issue requires SAML to be enabled and depends on a malicious or manipulated <code class="language-plaintext highlighter-rouge">RelayState</code> value being supplied during the authentication flow (e.g. a manipulated URL sent via email).</p>
-
-<h2 id="info">Info</h2>
 
 <p>This issue affected the SAML login flow after successful authentication.</p>
 
