@@ -62,8 +62,9 @@ Expenses are automatically included in your invoices, so it may be helpful to di
 
 Twig example:
 
-```
-{% set amount_total = 0 %}
+```twig
+{% raw %}{% set amount_total = 0 %}
+
 {% for entry in entries %}
     {% if entry.type == 'expense' %}
         {% if entry.category == 'Gas' %}
@@ -72,7 +73,7 @@ Twig example:
     {% endif %}
 {% endfor %}
 
-You spent a total of {{ amount_total }} for driving around. 
+You spent a total of {{ amount_total }} for driving around.{% endraw %} 
 ```
 
 ## Budgets
