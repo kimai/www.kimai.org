@@ -57,8 +57,23 @@ In this case, the entered quantity of `74` kilometers is multiplied by the cost 
 
 Expenses are automatically included in your invoices, so it may be helpful to differentiate between expenses and timesheets.
 
-- The invoice template variable `${entry.type}` indicates the type of entry. Its value will be `expense`. This can be used in tools like Excel with `IF` formulas or conditional formatting.
+- The invoice template variable `${entry.type}` indicates the type of entry, which will be `expense`. This can be used in tools like Excel with `IF` formulas or conditional formatting.
 - The variable `${entry.category}` contains the expense category name.
+
+Twig example:
+
+```
+{% set amount_total = 0 %}
+{% for entry in entries %}
+    {% if entry.type == 'expense' %}
+        {% if entry.category == 'Gas' %}
+            {% set amount_total = amount_total + entry.amount %}
+        {% endif %}
+    {% endif %}
+{% endfor %}
+
+You spent a total of {{ amount_total }} for driving around. 
+```
 
 ## Budgets
 
