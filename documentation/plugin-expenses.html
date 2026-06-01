@@ -785,9 +785,24 @@ In that case the <code class="language-plaintext highlighter-rouge">quantity</co
 <p>Expenses are automatically included in your invoices, so it may be helpful to differentiate between expenses and timesheets.</p>
 
 <ul>
-  <li>The invoice template variable <code class="language-plaintext highlighter-rouge">${entry.type}</code> indicates the type of entry. Its value will be <code class="language-plaintext highlighter-rouge">expense</code>. This can be used in tools like Excel with <code class="language-plaintext highlighter-rouge">IF</code> formulas or conditional formatting.</li>
+  <li>The invoice template variable <code class="language-plaintext highlighter-rouge">${entry.type}</code> indicates the type of entry, which will be <code class="language-plaintext highlighter-rouge">expense</code>. This can be used in tools like Excel with <code class="language-plaintext highlighter-rouge">IF</code> formulas or conditional formatting.</li>
   <li>The variable <code class="language-plaintext highlighter-rouge">${entry.category}</code> contains the expense category name.</li>
 </ul>
+
+<p>Twig example:</p>
+
+<div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span> <span class="k">set</span> <span class="nv">amount_total</span> <span class="o">=</span> <span class="nv">0</span> <span class="cp">%}</span>
+
+<span class="cp">{%</span> <span class="k">for</span> <span class="nv">entry</span> <span class="ow">in</span> <span class="nv">entries</span> <span class="cp">%}</span>
+    <span class="cp">{%</span> <span class="k">if</span> <span class="nv">entry.type</span> <span class="o">==</span> <span class="s1">'expense'</span> <span class="cp">%}</span>
+        <span class="cp">{%</span> <span class="k">if</span> <span class="nv">entry.category</span> <span class="o">==</span> <span class="s1">'Gas'</span> <span class="cp">%}</span>
+            <span class="cp">{%</span> <span class="k">set</span> <span class="nv">amount_total</span> <span class="o">=</span> <span class="nv">amount_total</span> <span class="o">+</span> <span class="nv">entry.amount</span> <span class="cp">%}</span>
+        <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
+    <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+
+You spent a total of <span class="cp">{{</span> <span class="nv">amount_total</span> <span class="cp">}}</span> for driving around. 
+</code></pre></div></div>
 
 <h2 id="budgets">Budgets</h2>
 
