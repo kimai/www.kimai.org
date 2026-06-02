@@ -1,5 +1,5 @@
 ---
-title: Lemonsqueezy Invoices
+title: LemonSqueezy Invoices
 description: How to generate invoices for your plugin subscriptions from Lemonsqueezy
 ---
 
