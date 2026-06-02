@@ -25,7 +25,7 @@ Please use it. We believe in you.
 
 Alternatively, if buttons feel like too much commitment, you can simply do nothing. Trial accounts and their data are automatically removed after a short period, as [documented here]({% link _documentation/cloud/cloud-data-removal.md %}).
 
-### How do I know my data is really gone?
+## How do I know my data is really gone?
 
 Simple: if your cloud instance is gone and you can no longer sign in, that's about as definitive a confirmation as it gets. The account is gone. The data is gone.
 
