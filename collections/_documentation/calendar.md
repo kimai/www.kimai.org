@@ -29,6 +29,28 @@ The calendar allows managing entries by using drag & drop:
 Drag & Drop is globally deactivated if the time-tracking mode (see [System → Settings]({% link _documentation/configurations.md %})) 
 does not allow to edit the start-time (e.g. punch in-out mode deactivates drag & drop).
 
+**Why doesn't drag & drop in the calendar copy all fields?**
+
+When you drag and drop a timesheet entry in the calendar, only the **project** and **activity** are carried over — not custom fields or other details. This is intentional and differs from the **Restart** feature.
+
+|                          | Drag & Drop                        | Restart Timesheet            |
+|--------------------------|------------------------------------|------------------------------|
+| **Use case**             | Start working on an activity again | Continue the exact same task |
+| **Copies project**       | ✓                                  | ✓                            |
+| **Copies activity**      | ✓                                  | ✓                            |
+| **Copies custom fields** | ✗                                  | ✓                            |
+| **Copies other fields**  | ✗                                  | ✓                            |
+{: .table}
+
+When to use each feature:
+
+- **Use drag & drop** when you want to log time against a project and activity you've worked on before, but it's a fresh entry — for example, picking up a recurring task at the start of a new day.
+- **Use Restart** when you're genuinely continuing the same piece of work and need all the original details (including custom fields) preserved exactly as they were.
+
+{% alert info %}
+Your system administrator can change this behavior, see `Configurations` below. 
+{% endalert %}
+
 ## Editing timesheets
 
 - By clicking an existing timesheet in the calendar, you open the "edit timesheet" form
