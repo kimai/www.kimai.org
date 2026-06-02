@@ -554,3 +554,39 @@ nelmio_api_doc:
 
 The variable `hostname` can then be changed for the complete collection in Postman.
 Using Postman environments, you can even switch the API location via a simple change of the environments drop-down.
+
+## Adding a wizard
+
+Plugins extend the wizard by listening to the `WizardEvent` 
+and calling `WizardEvent::addWizard()` with their own step.
+This will add the wizard to the end of the existing list of wizards.
+
+You can use `addWizard()` if you need to control the order of the wizards.
+But we advise against it, as you never know what other plugins might do.
+
+Default order numbers:
+- Intro runs at 100
+- Profile runs at 200
+
+```php
+final class WizardSubscriber implements EventSubscriberInterface
+{
+    public static function getSubscribedEvents(): array
+    {
+        return [
+            WizardEvent::class => ['onWizardEvent', 100],
+        ];
+    }
+
+    public function onWizardEvent(WizardEvent $event): void
+    {
+        // "foo_demo" is a unique identifier, prefix yours with a bundle name
+        // "foo_wizard_demo" is a route name
+        
+        $event->addWizard('foo_demo', 'foo_wizard_demo');
+        
+        // this injects the same step in between the default steps "intro" and "profile"
+        //$event->addStep(new WizardStep('foo_demo', 'foo_wizard_demo', 100));
+    }
+}
+```
