@@ -41,7 +41,7 @@ Configure at least the `DATABASE_URL` (database connection and server version), 
 ```
 DATABASE_URL=mysql://user:password@127.0.0.1:3306/database?charset=utf8mb4&serverVersion=11.1.2-MariaDB
 TRUSTED_HOSTS=kimai.example.com
-APP_ENV=IT_IS_IMPORTANT_THAT_YOU_CHANGE_THIS_TO_A_LONG_RANDOM_STRING
+APP_SECRET=IT_IS_IMPORTANT_THAT_YOU_CHANGE_THIS_TO_A_LONG_RANDOM_STRING
 ```
 Fetch the exact serverVersion by running `mysql --version` and copy&paste the entire version. 
 
