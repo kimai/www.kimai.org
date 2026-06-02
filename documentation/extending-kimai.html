@@ -967,6 +967,43 @@ Therefor you have to configure the values used manually.</p>
 <p>The variable <code class="language-plaintext highlighter-rouge">hostname</code> can then be changed for the complete collection in Postman.
 Using Postman environments, you can even switch the API location via a simple change of the environments drop-down.</p>
 
+<h2 id="adding-a-wizard">Adding a wizard</h2>
+
+<p>Plugins extend the wizard by listening to the <code class="language-plaintext highlighter-rouge">WizardEvent</code> 
+and calling <code class="language-plaintext highlighter-rouge">WizardEvent::addWizard()</code> with their own step.
+This will add the wizard to the end of the existing list of wizards.</p>
+
+<p>You can use <code class="language-plaintext highlighter-rouge">addWizard()</code> if you need to control the order of the wizards.
+But we advise against it, as you never know what other plugins might do.</p>
+
+<p>Default order numbers:</p>
+<ul>
+  <li>Intro runs at 100</li>
+  <li>Profile runs at 200</li>
+</ul>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">WizardSubscriber</span> <span class="kd">implements</span> <span class="nc">EventSubscriberInterface</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="n">getSubscribedEvents</span><span class="p">():</span> <span class="kt">array</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="nc">WizardEvent</span><span class="o">::</span><span class="n">class</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'onWizardEvent'</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
+        <span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">onWizardEvent</span><span class="p">(</span><span class="kt">WizardEvent</span> <span class="nv">$event</span><span class="p">):</span> <span class="kt">void</span>
+    <span class="p">{</span>
+        <span class="c1">// "foo_demo" is a unique identifier, prefix yours with a bundle name</span>
+        <span class="c1">// "foo_wizard_demo" is a route name</span>
+        
+        <span class="nv">$event</span><span class="o">-&gt;</span><span class="nf">addWizard</span><span class="p">(</span><span class="s1">'foo_demo'</span><span class="p">,</span> <span class="s1">'foo_wizard_demo'</span><span class="p">);</span>
+        
+        <span class="c1">// this injects the same step in between the default steps "intro" and "profile"</span>
+        <span class="c1">//$event-&gt;addStep(new WizardStep('foo_demo', 'foo_wizard_demo', 100));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
                         </div>
                         
 
@@ -978,7 +1015,7 @@ Using Postman environments, you can even switch the API location via a simple ch
             
                 <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
                     <h3 class="fs-lg mt-2">Jump to</h3>
-                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#extending-the-navigation-bar" class="nav-link">Extending the navigation bar</a></li><li class="nav-item"><a href="#extending-the-dashboard-with-widgets" class="nav-link">Extending the dashboard with widgets</a><ul><li class="nav-item"><a href="#adding-new-widget-types" class="nav-link">Adding new widget types</a></li><li class="nav-item"><a href="#display-widgets-in-your-template" class="nav-link">Display widgets in your template</a></li></ul></li><li class="nav-item"><a href="#invoices" class="nav-link">Invoices</a><ul><li class="nav-item"><a href="#adding-documents-for-invoice-rendering" class="nav-link">Adding documents for invoice rendering</a></li><li class="nav-item"><a href="#adding-invoice-calculator" class="nav-link">Adding invoice calculator</a></li><li class="nav-item"><a href="#adding-invoice-number-generator" class="nav-link">Adding invoice-number generator</a></li><li class="nav-item"><a href="#adding-invoice-renderer" class="nav-link">Adding invoice renderer</a></li></ul></li><li class="nav-item"><a href="#export-templates" class="nav-link">Export templates</a></li><li class="nav-item"><a href="#adding-export-renderer" class="nav-link">Adding export renderer</a><ul><li class="nav-item"><a href="#adding-timesheet-export-renderer" class="nav-link">Adding timesheet export renderer</a></li></ul></li><li class="nav-item"><a href="#adding-timesheet-calculator" class="nav-link">Adding timesheet calculator</a></li><li class="nav-item"><a href="#adding-custom-fields-meta-fields" class="nav-link">Adding custom fields (meta fields)</a></li><li class="nav-item"><a href="#adding-userpreference" class="nav-link">Adding UserPreference</a><ul><li class="nav-item"><a href="#displaying-and-exporting-userpreferences" class="nav-link">Displaying and exporting UserPreferences</a></li></ul></li><li class="nav-item"><a href="#adding-custom-meta-tags-stylesheets-or-javascript" class="nav-link">Adding custom meta tags, stylesheets or javascript</a></li><li class="nav-item"><a href="#adding-permissions" class="nav-link">Adding permissions</a></li><li class="nav-item"><a href="#adding-system-configuration" class="nav-link">Adding system configuration</a></li><li class="nav-item"><a href="#extending-the-reports" class="nav-link">Extending the reports</a></li><li class="nav-item"><a href="#json-api-rest" class="nav-link">JSON API (REST)</a></li><li class="nav-item"><a href="#adding-api-methods" class="nav-link">Adding API methods</a></li><li class="nav-item"><a href="#using-the-swagger-ui" class="nav-link">Using the Swagger UI</a></li><li class="nav-item"><a href="#swagger-file-and-postman" class="nav-link">Swagger file and Postman</a></li></ul>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#extending-the-navigation-bar" class="nav-link">Extending the navigation bar</a></li><li class="nav-item"><a href="#extending-the-dashboard-with-widgets" class="nav-link">Extending the dashboard with widgets</a><ul><li class="nav-item"><a href="#adding-new-widget-types" class="nav-link">Adding new widget types</a></li><li class="nav-item"><a href="#display-widgets-in-your-template" class="nav-link">Display widgets in your template</a></li></ul></li><li class="nav-item"><a href="#invoices" class="nav-link">Invoices</a><ul><li class="nav-item"><a href="#adding-documents-for-invoice-rendering" class="nav-link">Adding documents for invoice rendering</a></li><li class="nav-item"><a href="#adding-invoice-calculator" class="nav-link">Adding invoice calculator</a></li><li class="nav-item"><a href="#adding-invoice-number-generator" class="nav-link">Adding invoice-number generator</a></li><li class="nav-item"><a href="#adding-invoice-renderer" class="nav-link">Adding invoice renderer</a></li></ul></li><li class="nav-item"><a href="#export-templates" class="nav-link">Export templates</a></li><li class="nav-item"><a href="#adding-export-renderer" class="nav-link">Adding export renderer</a><ul><li class="nav-item"><a href="#adding-timesheet-export-renderer" class="nav-link">Adding timesheet export renderer</a></li></ul></li><li class="nav-item"><a href="#adding-timesheet-calculator" class="nav-link">Adding timesheet calculator</a></li><li class="nav-item"><a href="#adding-custom-fields-meta-fields" class="nav-link">Adding custom fields (meta fields)</a></li><li class="nav-item"><a href="#adding-userpreference" class="nav-link">Adding UserPreference</a><ul><li class="nav-item"><a href="#displaying-and-exporting-userpreferences" class="nav-link">Displaying and exporting UserPreferences</a></li></ul></li><li class="nav-item"><a href="#adding-custom-meta-tags-stylesheets-or-javascript" class="nav-link">Adding custom meta tags, stylesheets or javascript</a></li><li class="nav-item"><a href="#adding-permissions" class="nav-link">Adding permissions</a></li><li class="nav-item"><a href="#adding-system-configuration" class="nav-link">Adding system configuration</a></li><li class="nav-item"><a href="#extending-the-reports" class="nav-link">Extending the reports</a></li><li class="nav-item"><a href="#json-api-rest" class="nav-link">JSON API (REST)</a></li><li class="nav-item"><a href="#adding-api-methods" class="nav-link">Adding API methods</a></li><li class="nav-item"><a href="#using-the-swagger-ui" class="nav-link">Using the Swagger UI</a></li><li class="nav-item"><a href="#swagger-file-and-postman" class="nav-link">Swagger file and Postman</a></li><li class="nav-item"><a href="#adding-a-wizard" class="nav-link">Adding a wizard</a></li></ul>
                     
                 </aside>
             
