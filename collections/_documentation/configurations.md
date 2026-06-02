@@ -198,7 +198,8 @@ You can use increment (for configuring a start value)) and decrement (for adjust
 - `Language` - default value for the "create user" form
 - `Design` - default value for the "create user" form
 - `Currency` - ONLY used to display the users hourly rate
-- `Allow the use of URLs for avatar images` - if activated, you can use a URL for a user avatar image 
+- `Allow the use of URLs for avatar images` - if activated, you can use a URL for a user avatar image
+- `Show setup wizard for new users` - if deactivated, new users will not see the setup wizard
 
 ## Theme
 
