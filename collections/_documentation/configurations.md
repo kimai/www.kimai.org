@@ -211,19 +211,7 @@ The default color palette is:
 #c0c0c0,Gray|#808080,Black|#000000,Maroon|#800000,Brown|#a52a2a,Red|#ff0000,Orange|#ffa500,Gold|#ffd700,Yellow|#ffff00,Peach|#ffdab9,Khaki|#f0e68c,Olive|#808000,Lime|#00ff00,Jelly|#9acd32,Green|#008000,Teal|#008080,Aqua|#00ffff,LightBlue|#add8e6,DeepSky|#00bfff,Dodger|#1e90ff,Blue|#0000ff,Navy|#000080,Purple|#800080,Fuchsia|#ff00ff,Violet|#ee82ee,Rose|#ffe4e1,Lavender|#E6E6FA
 ```
 
-## Calendar 
-
-- `Display week numbers` - whether week numbers should be displayed in the monthly view (default: true)
-- `Display weekends` - whether weekends should be displayed (default: true)
-- `Start of normal business hours` - the start time of your working day, which will be highlighted in the weekly and daily view (default: 08:00)
-- `End of normal business hours` - the end time of your working day, which will be highlighted in the weekly and daily view (default: 18:00)
-- `Start of visible time range` - the start time of the calendars week and day view (default: 00:00)
-- `End of visible time range` - the end time of the calendars week and day view (default: 24:00)
-- `Slot duration for week- and day view` - defines the duration for each calendar slot (row) in the week and day views, format: hh:mm:ss (default: 00:30:00 = 30 minutes)
-- `Amount of entries for drag&drop` - amount of rows per drag & drop box (0 = deactivated) 
-- `Copies data when adding via drag and drop` - when activated, form details will be populated from last entry  
-- `Display of the titles of calendar entries` - which data should be displayed in the title of each calendar entry
-
+{% include documentation/configurations.md id="calendar" title=true %}
 {% include documentation/configurations.md id="my_company" title=true %}
 {% include documentation/configurations.md id="controlling" title=true %}
 

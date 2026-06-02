@@ -59,7 +59,7 @@ Whether or not you can see another user depends on your team assignments: you ne
 
 ## Configurations
 
-The global look and feel of the calendar can be customized via [System → Settings]({% link _documentation/configurations.md %}).
+{% include documentation/configurations.md id="calendar" howto=true %}
 
 ### User preference
 
