@@ -1109,6 +1109,25 @@ supporting simple lists and other HTML content. It will only be rendered in <cod
   <li><code class="language-plaintext highlighter-rouge">Allow half days for holidays</code> — Whether users can request half-day absences</li>
 </ul>
 
+<h2 id="kiosk">Kiosk</h2>
+
+<ul class="table">
+  <li><code class="language-plaintext highlighter-rouge">Login mode</code> — Which mode scans the Kiosk code (external scanner for NFC and other e.g. USB scanners, which act as a keyboard)</li>
+  <li><code class="language-plaintext highlighter-rouge">Activity</code> — You can only choose ‘non-global’ activities here. If you see an empty dropdown, you need to create a customer/project/activity combination for Kiosk timesheets. The activity needs to be assigned to the Kiosk project.</li>
+  <li><code class="language-plaintext highlighter-rouge">Placeholder for input field</code> — A short info text that is shown as placeholder in the input field (like: ‘enter your code’ or ‘scan your NFC token’)</li>
+  <li><code class="language-plaintext highlighter-rouge">Duration of confirmation dialog</code> — The confirmation dialog (both coming and going) is shown for the selected amount of seconds</li>
+  <li><code class="language-plaintext highlighter-rouge">Screensaver</code> — Days of the week, when the screensaver should be activated. Between 6 a.m. and 10 p.m., the logo and time are displayed; otherwise, the screen is black.</li>
+  <li><code class="language-plaintext highlighter-rouge">Hide entered/scanned code (the browsers password manager needs to be disabled)</code> — Transforms the text field into a password field. To prevent the browser from asking to store the passwords (codes), you need to disable the password manager.</li>
+  <li><code class="language-plaintext highlighter-rouge">Grouped week view when clocking in and out</code> —</li>
+  <li><code class="language-plaintext highlighter-rouge">Hide logo</code> — Hides the company logo (see System &gt; Preferences &gt; My Company) from the Kiosk screen</li>
+  <li><code class="language-plaintext highlighter-rouge">Show 'not logged in' users on login screen</code> — Show avatars of all user that do not have a running timesheet on the log-in screen</li>
+  <li><code class="language-plaintext highlighter-rouge">Show 'logged in' users on login screen</code> — Show avatars of all user that have a running timesheet on the log-in screen</li>
+  <li><code class="language-plaintext highlighter-rouge">Save client IP for new timesheets</code> — Save the client IP in a timesheet custom-field (can be exported)</li>
+  <li><code class="language-plaintext highlighter-rouge">Play a short sound for logins and logouts</code> — Choose between silence, an audio sound and simple beeps</li>
+  <li><code class="language-plaintext highlighter-rouge">Prevent page reload in login process</code> —</li>
+  <li><code class="language-plaintext highlighter-rouge">Stop only kiosk activities when clocking out</code> — If enabled, all “non-kiosk activities” will not be stopped for the user when clocking out</li>
+</ul>
+
 
                         </div>
                         
@@ -1138,7 +1157,7 @@ supporting simple lists and other HTML content. It will only be rendered in <cod
             
                 <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
                     <h3 class="fs-lg mt-2">Jump to</h3>
-                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#timesheet" class="nav-link">Timesheet</a><ul><li class="nav-item"><a href="#time-tracking-modes" class="nav-link">Time-tracking modes</a></li></ul></li><li class="nav-item"><a href="#weekly-hours" class="nav-link">Weekly hours</a></li><li class="nav-item"><a href="#lockdown-period" class="nav-link">Lockdown period</a><ul><li class="nav-item"><a href="#examples" class="nav-link">Examples</a></li></ul></li><li class="nav-item"><a href="#time-rounding" class="nav-link">Time rounding</a></li><li class="nav-item"><a href="#invoices" class="nav-link">Invoices</a></li><li class="nav-item"><a href="#authentication" class="nav-link">Authentication</a></li><li class="nav-item"><a href="#customer" class="nav-link">Customer</a></li><li class="nav-item"><a href="#project" class="nav-link">Project</a></li><li class="nav-item"><a href="#activity" class="nav-link">Activity</a></li><li class="nav-item"><a href="#user" class="nav-link">User</a></li><li class="nav-item"><a href="#theme" class="nav-link">Theme</a></li><li class="nav-item"><a href="#calendar" class="nav-link">Calendar</a></li><li class="nav-item"><a href="#my-company" class="nav-link">My company</a></li><li class="nav-item"><a href="#employment-contract" class="nav-link">Employment contract</a></li></ul>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#timesheet" class="nav-link">Timesheet</a><ul><li class="nav-item"><a href="#time-tracking-modes" class="nav-link">Time-tracking modes</a></li></ul></li><li class="nav-item"><a href="#weekly-hours" class="nav-link">Weekly hours</a></li><li class="nav-item"><a href="#lockdown-period" class="nav-link">Lockdown period</a><ul><li class="nav-item"><a href="#examples" class="nav-link">Examples</a></li></ul></li><li class="nav-item"><a href="#time-rounding" class="nav-link">Time rounding</a></li><li class="nav-item"><a href="#invoices" class="nav-link">Invoices</a></li><li class="nav-item"><a href="#authentication" class="nav-link">Authentication</a></li><li class="nav-item"><a href="#customer" class="nav-link">Customer</a></li><li class="nav-item"><a href="#project" class="nav-link">Project</a></li><li class="nav-item"><a href="#activity" class="nav-link">Activity</a></li><li class="nav-item"><a href="#user" class="nav-link">User</a></li><li class="nav-item"><a href="#theme" class="nav-link">Theme</a></li><li class="nav-item"><a href="#calendar" class="nav-link">Calendar</a></li><li class="nav-item"><a href="#my-company" class="nav-link">My company</a></li><li class="nav-item"><a href="#employment-contract" class="nav-link">Employment contract</a></li><li class="nav-item"><a href="#kiosk" class="nav-link">Kiosk</a></li></ul>
                     
                     <ul class="nav">
                         <li>
