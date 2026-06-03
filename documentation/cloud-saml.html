@@ -583,6 +583,20 @@ You’ll find the configuration after logging in at: <strong><a href="https://ww
 
 <p>Also edit the SAML capabilities and set the <strong>Name ID format</strong> to <code class="language-plaintext highlighter-rouge">email</code>.</p>
 
+<h2 id="auth0">Auth0</h2>
+
+<p>Customers report successful use of <code class="language-plaintext highlighter-rouge">Auth0</code> as Identity Provider with the following settings:</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"mappings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Email"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"nameIdentifierProbes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"Email"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"nameIdentifierFormat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress“
+}
+</span></code></pre></div></div>
+
                         </div>
                         
 
@@ -594,7 +608,7 @@ You’ll find the configuration after logging in at: <strong><a href="https://ww
             
                 <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
                     <h3 class="fs-lg mt-2">Jump to</h3>
-                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#google-saml" class="nav-link">Google SAML</a><ul><li class="nav-item"><a href="#workspace-configuration" class="nav-link">Workspace configuration</a></li><li class="nav-item"><a href="#cloud-configuration" class="nav-link">Cloud configuration</a></li></ul></li><li class="nav-item"><a href="#microsoft-saml" class="nav-link">Microsoft SAML</a><ul><li class="nav-item"><a href="#entra-id-formerly-azure-ad-configuration" class="nav-link">Entra ID (formerly Azure AD) configuration</a></li><li class="nav-item"><a href="#cloud-configuration-1" class="nav-link">Cloud configuration</a></li></ul></li><li class="nav-item"><a href="#keycloak-saml" class="nav-link">Keycloak SAML</a></li></ul>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#google-saml" class="nav-link">Google SAML</a><ul><li class="nav-item"><a href="#workspace-configuration" class="nav-link">Workspace configuration</a></li><li class="nav-item"><a href="#cloud-configuration" class="nav-link">Cloud configuration</a></li></ul></li><li class="nav-item"><a href="#microsoft-saml" class="nav-link">Microsoft SAML</a><ul><li class="nav-item"><a href="#entra-id-formerly-azure-ad-configuration" class="nav-link">Entra ID (formerly Azure AD) configuration</a></li><li class="nav-item"><a href="#cloud-configuration-1" class="nav-link">Cloud configuration</a></li></ul></li><li class="nav-item"><a href="#keycloak-saml" class="nav-link">Keycloak SAML</a></li><li class="nav-item"><a href="#auth0" class="nav-link">Auth0</a></li></ul>
                     
                 </aside>
             
