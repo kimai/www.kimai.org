@@ -177,6 +177,10 @@ This helps maintain proper NFC input functionality over extended periods.
 
 {% include documentation/permissions.md id="kiosk" howto=true super_admin=true %}
 
+## Configurations
+
+{% include documentation/configurations.md id="kiosk" howto=true %}
+
 ## Credits
 
 The following libraries are used when using barcodes with the Kiosk mode:

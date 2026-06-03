@@ -215,4 +215,5 @@ The default color palette is:
 {% include documentation/configurations.md id="calendar" title=true %}
 {% include documentation/configurations.md id="my_company" title=true %}
 {% include documentation/configurations.md id="controlling" title=true %}
+{% include documentation/configurations.md id="kiosk" title=true %}
 
