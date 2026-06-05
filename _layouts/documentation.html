@@ -115,19 +115,19 @@ layout: base
                     <div class="list-group list-group-flush mb-4 me-n4 border-start">
                         {% for page_slug in group.pages %}
                         {% if page_slug != '-' %}
-                        {% assign docs_page = site.documentation | find: "slug", page_slug %}
-                        {% if docs_page.slug == page.slug %}
-                        {% assign is_active = true %}
-                        {% endif %}
-                        <a href="{{ docs_page.url }}" class="list-group-item ms-2 list-group-item-action border-0 ps-2 {% if docs_page.slug == page.slug %} active{% endif %}" id="docnavi-{{ docs_page.slug }}">
-                            {% if docs_page.navigation != nil %}
-                            {{ docs_page.navigation }}
-                            {% else %}
-                            {{ docs_page.title }}
+                            {% assign docs_page = site.documentation | find: "slug", page_slug %}
+                            {% if docs_page.slug == page.slug %}
+                                {% assign is_active = true %}
                             {% endif %}
-                        </a>
+                            <a href="{{ docs_page.url }}" class="list-group-item ms-2 list-group-item-action border-0 ps-2 {% if docs_page.slug == page.slug %} active{% endif %}" id="docnavi-{{ docs_page.slug }}">
+                                {% if docs_page.navigation != nil %}
+                                {{ docs_page.navigation }}
+                                {% else %}
+                                {{ docs_page.title }}
+                                {% endif %}
+                            </a>
                         {% endif %}
-                        {% endfor %}
+                    {% endfor %}
                     </div>
                     {% endfor %}
                     <div class="list-group list-group-flush pb-3 mb-4 mx-n4">
