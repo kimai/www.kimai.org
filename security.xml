@@ -28,7 +28,8 @@ permalink: /security.xml
             <width>184</width>
             <height>184</height>
         </image>
-        {% for post in site.security limit: 10 %}
+        {% assign advisories = site.security | sort: "date" | reverse %}
+        {% for post in advisories limit: 10 %}
         <item>
             <title>{{ post.title | xml_escape}}</title>
             <link>https://www.kimai.org{{ post.url }}</link>
