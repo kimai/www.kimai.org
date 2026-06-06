@@ -1,54 +1,45 @@
 ---
-title: "Quality of life improvements"
+title: "Quality of life improvements, new API endpoints, improved Tasks management"
 date: "2026-06-06 11:00:00 +0200"
 ---
 
-A lot of small improvements were shipped since our last update information, 
-so we thought it's time to summarize the visible changes of the last weeks.
+Many improvements shipped since our last update. Here's a summary of the most notable changes.
 
 **Improvements**
 
-- Added configuration to define the theme for non-authenticated pages (`Login` or `Kiosk`)
-- Added Catalan translations
-- Added `user` as new filter in the the invoice archive
-- Added `user.account` and `entry.user_account` as invoice template variables
-- Added setting to disable first time wizard for new users
-- Fix: user flag `System-Account` is always editable
-- Fix: new weekly-hours could not be added in weeks with exported timesheets
-- Fix: exporter column styles (duration, internal price and more)
-- Fix: sticky tooltip survives page reload
-- Fix: some dashboard widget links were invisible in dark mode
+- Choose a theme for non-authenticated pages (e.g. Login, Kiosk)
+- Filter invoices by user in the invoice archive
+- Catalan translation added
+- Batch action `Mark as exported` for Expenses
+- Option to skip the first-time wizard for new users
+- Kiosk login page can now be accessed without login
+- Weekly hours can now be added in weeks with already exported timesheets
 
 **API**
 
-- New API endpoints to manage comments for projects and customers
-- New API endpoint to download invoices
-- New API endpoint to save invoice meta-fields
-- API passwords were deprecated two years ago and [are scheduled for removal]({% link _posts/en/2026-04-13-removing-api-passwords.md %}).
+- Manage comments for projects and customers
+- Download invoices
+- Save invoice meta-fields
+- Deprecated API passwords [will be removed soon]({% link _posts/en/2026-04-13-removing-api-passwords.md %})
 
 **Tasks**
 
-- Assign timesheets to task (if they match project and activity)
-- Widgets update ticktack on start/stop/unassign/delete
-- Widgets update duration of active timesheets
-- Open "edit timesheet" form with teamlead permissions if available
-
-**Expenses**
-
-- Added `Mark as exported` batch action
+- Assign timesheets to a task (matching project and activity)
+- Widgets refresh and update main timer on start, stop, unassign and delete
+- Edit timesheets with teamlead permissions if available
 
 **Importer**
 
-- Fix: generator created duplicate customer/project numbers
-- All validations on all import objects must pass before persisting
-- Show errors on failed validations at their respective rows and fields
-- Support for the new structured customer address and more field variations in customer importer
+- All import rows are validated before saving
+- Validation errors shown at the affected row and field
+- Customer importer supports structured addresses and more field variations
+- Fix: duplicate customer/project numbers
 
 **Videos**
 
-We published new videos:
+New video tutorials:
 
 - [Track Expenses](https://www.youtube.com/watch?v=OuHq0tFspuQ)
 - [Working Times](https://www.youtube.com/watch?v=BYkgplGTz4Q) 
 
-Please [follow us on YouTube](https://www.youtube.com/@kimai_org) to stay up to date.
+Follow us [on YouTube](https://www.youtube.com/@kimai_org) to stay up to date.
