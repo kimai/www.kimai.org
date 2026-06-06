@@ -3,7 +3,7 @@ title: "Quality of life improvements, new API endpoints, improved Tasks manageme
 date: "2026-06-06 11:00:00 +0200"
 ---
 
-Many improvements shipped since our last update. Here's a summary of the most notable changes.
+Many improvements were shipped since our last message. Here's a summary of the most notable changes.
 
 **Improvements**
 
