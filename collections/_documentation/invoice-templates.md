@@ -180,60 +180,61 @@ The example `{% raw %}{{ invoice['invoice.due_date'] }}{% endraw %}` would then 
 
 ### Global variables
 
-| Twig                                    | Document (DOCX, XLSX, ODS)      | Description                                                                                           |
-|-----------------------------------------|---------------------------------|-------------------------------------------------------------------------------------------------------|
-| `invoice['invoice.due_date']`           | `${invoice.due_date}`           | The due date for the invoice payment formatted in the requested locale                                |
-| `invoice['invoice.due_date_process']`   | `${invoice.due_date_process}`   | The due date for the invoice payment, to be formatted with the twig filter `date()`                   |
-| `invoice['invoice.date']`               | `${invoice.date}`               | The creation date of this invoice                                                                     |
-| `invoice['invoice.date_process']`       | `${invoice.date_process}`       | The creation date of this invoice, to be formatted with the twig filter `date()`                      |
-| `invoice['invoice.number']`             | `${invoice.number}`             | The generated invoice number                                                                          |
-| `invoice['invoice.currency']`           | `${invoice.currency}`           | The invoice currency                                                                                  |
-| `invoice['invoice.currency_symbol']`    | `${invoice.currency_symbol}`    | The invoice currency as symbol (if available)                                                         |
-| `invoice['invoice.total_time']`         | `${invoice.total_time}`         | The total working time (entries with a fixed rate are always calculated with 1)                       |
-| `invoice['invoice.duration_decimal']`   | `${invoice.duration_decimal}`   | The total working time as decimal value                                                               |
-| `invoice['invoice.language']`           | `${invoice.language}`           | The invoices language as two character code                                                           |
-| `invoice['invoice.total']`              | `${invoice.total}`              | The invoices total (including tax) with currency                                                      |
-| `invoice['invoice.total_nc']`           | `${invoice.total_nc}`           | The invoices total (including tax) without currency                                                   |
-| `invoice['invoice.total_plain']`        | `${invoice.total_plain}`        | The invoices total (including tax) as unformatted value                                               |
-| `invoice['invoice.subtotal']`           | `${invoice.subtotal}`           | The invoices subtotal (excluding tax) with currency                                                   |
-| `invoice['invoice.subtotal_nc']`        | `${invoice.subtotal_nc}`        | The invoices subtotal (excluding tax) without currency                                                |
-| `invoice['invoice.subtotal_plain']`     | `${invoice.subtotal_plain}`     | The invoices subtotal (excluding tax) as unformatted value                                            |
-| `invoice['invoice.currency']`           | `${invoice.currency}`           | The invoices currency as string (like EUR or USD)                                                     |
-| `invoice['invoice.vat']`                | `${invoice.vat}`                | **Deprecated** The VAT in percent for this invoice                                                    |
-| `invoice['invoice.tax']`                | `${invoice.tax}`                | **Deprecated** The tax of the invoice amount with currency                                            |
-| `invoice['invoice.tax_nc']`             | `${invoice.tax_nc}`             | **Deprecated** The tax of the invoice amount without currency                                         |
-| `invoice['invoice.tax_plain']`          | `${invoice.tax_plain}`          | **Deprecated** The tax of the invoice amount as unformatted value                                     |
-| `invoice['invoice.tax_hide']`           | `${invoice.tax_hide}`           | **Deprecated** A boolean flag indicating if the tax field should be hidden (only applies if tax = 0)  |
-| `invoice['template.name']`              | `${template.name}`              | The invoice template (for internal use, usually not needed)                                           |
-| `invoice['template.title']`             | `${template.title}`             | The invoice document title                                                                            |
-| `invoice['template.payment_terms']`     | `${template.payment_terms}`     | Your payment terms, might be multiple lines                                                           |
-| `invoice['template.due_days']`          | `${template.due_days}`          | The amount of days for the payment, starting with the day of creating the invoice                     |
-| `invoice['template.contact']`           | `${template.contact}`           | Extended contact information, might be multiple lines                                                 |
-| `invoice['template.payment_details']`   | `${template.payment_details}`   | Payment details like bank accounts (free text, might be multiple lines)                               |
-| `invoice['query.begin']`                | `${query.begin}`                | The query begin as formatted short date                                                               |
-| `invoice['query.begin_process']`        | `${query.begin_process}`        | The query begin, to be formatted with the twig filter `date()`                                        |
-| `invoice['query.end']`                  | `${query.end}`                  | The query end as formatted short date                                                                 |
-| `invoice['query.end_process']`          | `${query.end_process}`          | The query end, to be formatted with the twig filter `date()`                                          |
-| `invoice['query.begin_month']`          | `${query.begin_month}`          | The month for the queries begin date                                                                  |
-| `invoice['query.begin_month_number']`   | `${query.begin_month_number}`   | The numerical value for the month of the queries begin date with leading zero                         |
-| `invoice['query.begin_day']`            | `${query.begin_day}`            | The day for the queries begin as numerical value with leading zero                                    |
-| `invoice['query.begin_year']`           | `${query.begin_year}`           | The year for the queries begin date                                                                   |
-| `invoice['query.end_month']`            | `${query.end_month}`            | The month for the queries end date                                                                    |
-| `invoice['query.end_month_number']`     | `${query.end_month_number}`     | The numerical value for the month of the queries end date with leading zero                           |
-| `invoice['query.end_day']`              | `${query.end_day}`              | The day for the queries end as numerical value with leading zero                                      |
-| `invoice['query.end_year']`             | `${query.end_year}`             | The year for the queries end date                                                                     |
-| `invoice['query.activity.name']`        | `${query.activity.name}`        | Activity name (only if exactly one activity was filtered)                                             |
-| `invoice['query.activity.comment']`     | `${query.activity.comment}`     | Activity comment/description (only if exactly one activity was filtered)                              |
-| `invoice['query.project.name']`         | `${query.project.name}`         | Project name (only if exactly one project was filtered)                                               |
-| `invoice['query.project.comment']`      | `${query.project.comment}`      | Project comment/description (only if exactly one project was filtered)                                |
-| `invoice['query.project.order_number']` | `${query.project.order_number}` | Project Order-Number (only if exactly one project was filtered)                                       |
-| `invoice['user.display']`               | `${user.display}`               | The current users display name                                                                        |
-| `invoice['user.email']`                 | `${user.email}`                 | The current users email                                                                               |
-| `invoice['user.name']`                  | `${user.name}`                  | The current users name                                                                                |
-| `invoice['user.alias']`                 | `${user.alias}`                 | The current users alias                                                                               |
-| `invoice['user.title']`                 | `${user.title}`                 | The current users title                                                                               |
-| `invoice['user.see_others']`            | `${user.see_others}`            | A boolean indicating if the current user can see other users items                                    |
-| `invoice['user.meta.X']`                | `${user.meta.X}`                | The current [users preference]({% link _documentation/user-preferences.md %}) named `X`               |
+| Twig                                    | Document (DOCX, XLSX, ODS)      | Description                                                                                          |
+|-----------------------------------------|---------------------------------|------------------------------------------------------------------------------------------------------|
+| `invoice['invoice.due_date']`           | `${invoice.due_date}`           | The due date for the invoice payment formatted in the requested locale                               |
+| `invoice['invoice.due_date_process']`   | `${invoice.due_date_process}`   | The due date for the invoice payment, to be formatted with the twig filter `date()`                  |
+| `invoice['invoice.date']`               | `${invoice.date}`               | The creation date of this invoice                                                                    |
+| `invoice['invoice.date_process']`       | `${invoice.date_process}`       | The creation date of this invoice, to be formatted with the twig filter `date()`                     |
+| `invoice['invoice.number']`             | `${invoice.number}`             | The generated invoice number                                                                         |
+| `invoice['invoice.currency']`           | `${invoice.currency}`           | The invoice currency                                                                                 |
+| `invoice['invoice.currency_symbol']`    | `${invoice.currency_symbol}`    | The invoice currency as symbol (if available)                                                        |
+| `invoice['invoice.total_time']`         | `${invoice.total_time}`         | The total working time (entries with a fixed rate are always calculated with 1)                      |
+| `invoice['invoice.duration_decimal']`   | `${invoice.duration_decimal}`   | The total working time as decimal value                                                              |
+| `invoice['invoice.language']`           | `${invoice.language}`           | The invoices language as two character code                                                          |
+| `invoice['invoice.total']`              | `${invoice.total}`              | The invoices total (including tax) with currency                                                     |
+| `invoice['invoice.total_nc']`           | `${invoice.total_nc}`           | The invoices total (including tax) without currency                                                  |
+| `invoice['invoice.total_plain']`        | `${invoice.total_plain}`        | The invoices total (including tax) as unformatted value                                              |
+| `invoice['invoice.subtotal']`           | `${invoice.subtotal}`           | The invoices subtotal (excluding tax) with currency                                                  |
+| `invoice['invoice.subtotal_nc']`        | `${invoice.subtotal_nc}`        | The invoices subtotal (excluding tax) without currency                                               |
+| `invoice['invoice.subtotal_plain']`     | `${invoice.subtotal_plain}`     | The invoices subtotal (excluding tax) as unformatted value                                           |
+| `invoice['invoice.currency']`           | `${invoice.currency}`           | The invoices currency as string (like EUR or USD)                                                    |
+| `invoice['invoice.vat']`                | `${invoice.vat}`                | **Deprecated** The VAT in percent for this invoice                                                   |
+| `invoice['invoice.tax']`                | `${invoice.tax}`                | **Deprecated** The tax of the invoice amount with currency                                           |
+| `invoice['invoice.tax_nc']`             | `${invoice.tax_nc}`             | **Deprecated** The tax of the invoice amount without currency                                        |
+| `invoice['invoice.tax_plain']`          | `${invoice.tax_plain}`          | **Deprecated** The tax of the invoice amount as unformatted value                                    |
+| `invoice['invoice.tax_hide']`           | `${invoice.tax_hide}`           | **Deprecated** A boolean flag indicating if the tax field should be hidden (only applies if tax = 0) |
+| `invoice['template.name']`              | `${template.name}`              | The invoice template (for internal use, usually not needed)                                          |
+| `invoice['template.title']`             | `${template.title}`             | The invoice document title                                                                           |
+| `invoice['template.payment_terms']`     | `${template.payment_terms}`     | Your payment terms, might be multiple lines                                                          |
+| `invoice['template.due_days']`          | `${template.due_days}`          | The amount of days for the payment, starting with the day of creating the invoice                    |
+| `invoice['template.contact']`           | `${template.contact}`           | Extended contact information, might be multiple lines                                                |
+| `invoice['template.payment_details']`   | `${template.payment_details}`   | Payment details like bank accounts (free text, might be multiple lines)                              |
+| `invoice['query.begin']`                | `${query.begin}`                | The query begin as formatted short date                                                              |
+| `invoice['query.begin_process']`        | `${query.begin_process}`        | The query begin, to be formatted with the twig filter `date()`                                       |
+| `invoice['query.end']`                  | `${query.end}`                  | The query end as formatted short date                                                                |
+| `invoice['query.end_process']`          | `${query.end_process}`          | The query end, to be formatted with the twig filter `date()`                                         |
+| `invoice['query.begin_month']`          | `${query.begin_month}`          | The month for the queries begin date                                                                 |
+| `invoice['query.begin_month_number']`   | `${query.begin_month_number}`   | The numerical value for the month of the queries begin date with leading zero                        |
+| `invoice['query.begin_day']`            | `${query.begin_day}`            | The day for the queries begin as numerical value with leading zero                                   |
+| `invoice['query.begin_year']`           | `${query.begin_year}`           | The year for the queries begin date                                                                  |
+| `invoice['query.end_month']`            | `${query.end_month}`            | The month for the queries end date                                                                   |
+| `invoice['query.end_month_number']`     | `${query.end_month_number}`     | The numerical value for the month of the queries end date with leading zero                          |
+| `invoice['query.end_day']`              | `${query.end_day}`              | The day for the queries end as numerical value with leading zero                                     |
+| `invoice['query.end_year']`             | `${query.end_year}`             | The year for the queries end date                                                                    |
+| `invoice['query.activity.name']`        | `${query.activity.name}`        | Activity name (only if exactly one activity was filtered)                                            |
+| `invoice['query.activity.comment']`     | `${query.activity.comment}`     | Activity comment/description (only if exactly one activity was filtered)                             |
+| `invoice['query.project.name']`         | `${query.project.name}`         | Project name (only if exactly one project was filtered)                                              |
+| `invoice['query.project.comment']`      | `${query.project.comment}`      | Project comment/description (only if exactly one project was filtered)                               |
+| `invoice['query.project.order_number']` | `${query.project.order_number}` | Project Order-Number (only if exactly one project was filtered)                                      |
+| `invoice['user.display']`               | `${user.display}`               | The current users display name                                                                       |
+| `invoice['user.email']`                 | `${user.email}`                 | The current users email                                                                              |
+| `invoice['user.name']`                  | `${user.name}`                  | The current users name                                                                               |
+| `invoice['user.alias']`                 | `${user.alias}`                 | The current users alias                                                                              |
+| `invoice['user.title']`                 | `${user.title}`                 | The current users title                                                                              |
+| `invoice['user.account']`               | `${user.account}`               | The current users account number                                                                     |
+| `invoice['user.see_others']`            | `${user.see_others}`            | A boolean indicating if the current user can see other users items                                   |
+| `invoice['user.meta.X']`                | `${user.meta.X}`                | The current [users preference]({% link _documentation/user-preferences.md %}) named `X`              |
 {: .table }
 
 ### Tax Rows
@@ -285,6 +286,7 @@ You can loop all invoice items in Twig with `{% raw %}{% for item in entries %}{
 | `item['entry.user_id']`             | `${entry.user_id}`             | The user ID                                                                                                                                                                                                                  | 1               |
 | `item['entry.user_name']`           | `${entry.user_name}`           | The username                                                                                                                                                                                                                 | susan_super     |
 | `item['entry.user_alias']`          | `${entry.user_alias}`          | The user alias                                                                                                                                                                                                               | Susan Miller    |
+| `item['entry.user_account']`        | `${entry.user_account}`        | The user account number                                                                                                                                                                                                      | Susan Miller    |
 | `item['entry.user_preference.foo']` | `${entry.user_preference.foo}` | The user preference called `foo`                                                                                                                                                                                             | bar             |
 | `item['entry.activity']`            | `${entry.activity}`            | Activity name                                                                                                                                                                                                                | Post production |
 | `item['entry.activity_id']`         | `${entry.activity_id}`         | Activity ID                                                                                                                                                                                                                  | 124             |
