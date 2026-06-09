@@ -204,6 +204,14 @@ The example `{% raw %}{{ invoice['invoice.due_date'] }}{% endraw %}` would then 
 | `invoice['invoice.tax_nc']`             | `${invoice.tax_nc}`             | **Deprecated** The tax of the invoice amount without currency                                        |
 | `invoice['invoice.tax_plain']`          | `${invoice.tax_plain}`          | **Deprecated** The tax of the invoice amount as unformatted value                                    |
 | `invoice['invoice.tax_hide']`           | `${invoice.tax_hide}`           | **Deprecated** A boolean flag indicating if the tax field should be hidden (only applies if tax = 0) |
+| `invoice['invoice.first']`              | `${invoice.first}`              | First day of the invoice period: fully formatted in the invoice locale                               |
+| `invoice['invoice.first_process']`      | `${invoice.first_process}`      | First day of the invoice period DateTime object to be used with date twig filter                     |
+| `invoice['invoice.first_month']`        | `${invoice.first_month}`        | First day of the invoice period: month name in the invoice locale                                    |
+| `invoice['invoice.first_year']`         | `${invoice.first_year}`         | First day of the invoice period: year number with 4 digits                                           |
+| `invoice['invoice.last']`               | `${invoice.last}`               | Last day of the invoice period: fully formatted in the invoice locale                                |
+| `invoice['invoice.last_process']`       | `${invoice.last_process}`       | Last day of the invoice period DateTime object to be used with date twig filter                      |
+| `invoice['invoice.last_month']`         | `${invoice.last_month}`         | Last day of the invoice period: month name in the invoice locale                                     |
+| `invoice['invoice.last_year']`          | `${invoice.last_year}`          | Last day of the invoice period: year number with 4 digits                                            |
 | `invoice['template.name']`              | `${template.name}`              | The invoice template (for internal use, usually not needed)                                          |
 | `invoice['template.title']`             | `${template.title}`             | The invoice document title                                                                           |
 | `invoice['template.payment_terms']`     | `${template.payment_terms}`     | Your payment terms, might be multiple lines                                                          |
