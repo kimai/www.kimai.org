@@ -1,3 +1,16 @@
+**Version 2.26.0**
+
+Compatibility: requires minimum Kimai 2.41.0
+
+- Better customer CSV example
+- Removed customer and project JSON examples
+
+**Version 2.25.0**
+
+Compatibility: requires minimum Kimai 2.41.0
+
+- Show better validation messages
+
 **Version 2.24.0**
 
 Compatibility: requires minimum Kimai 2.41.0
