@@ -967,6 +967,46 @@ The example <code class="language-plaintext highlighter-rouge">{{ invoice['invoi
       <td><strong>Deprecated</strong> A boolean flag indicating if the tax field should be hidden (only applies if tax = 0)</td>
     </tr>
     <tr>
+      <td><code class="language-plaintext highlighter-rouge">invoice['invoice.first']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${invoice.first}</code></td>
+      <td>First day of the invoice period: fully formatted in the invoice locale</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">invoice['invoice.first_process']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${invoice.first_process}</code></td>
+      <td>First day of the invoice period DateTime object to be used with date twig filter</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">invoice['invoice.first_month']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${invoice.first_month}</code></td>
+      <td>First day of the invoice period: month name in the invoice locale</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">invoice['invoice.first_year']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${invoice.first_year}</code></td>
+      <td>First day of the invoice period: year number with 4 digits</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">invoice['invoice.last']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${invoice.last}</code></td>
+      <td>Last day of the invoice period: fully formatted in the invoice locale</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">invoice['invoice.last_process']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${invoice.last_process}</code></td>
+      <td>Last day of the invoice period DateTime object to be used with date twig filter</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">invoice['invoice.last_month']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${invoice.last_month}</code></td>
+      <td>Last day of the invoice period: month name in the invoice locale</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">invoice['invoice.last_year']</code></td>
+      <td><code class="language-plaintext highlighter-rouge">${invoice.last_year}</code></td>
+      <td>Last day of the invoice period: year number with 4 digits</td>
+    </tr>
+    <tr>
       <td><code class="language-plaintext highlighter-rouge">invoice['template.name']</code></td>
       <td><code class="language-plaintext highlighter-rouge">${template.name}</code></td>
       <td>The invoice template (for internal use, usually not needed)</td>
