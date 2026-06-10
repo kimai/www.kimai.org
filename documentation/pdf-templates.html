@@ -674,7 +674,30 @@ Please read the MPdf documentation and check the default PDF templates.</p>
 <div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="o">-</span> <span class="k">set</span> <span class="nv">option</span> <span class="o">=</span> <span class="nv">pdfContext.setOption</span><span class="p">(</span><span class="s1">'name'</span><span class="p">,</span> <span class="s1">'value'</span><span class="p">)</span> <span class="o">-</span><span class="cp">%}</span>
 </code></pre></div></div>
 
+<h2 id="page-setup">Page setup</h2>
+
+<p>Supported options:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">orientation</code> with the value <code class="language-plaintext highlighter-rouge">P</code> = Portrait, <code class="language-plaintext highlighter-rouge">L</code> = Landscape</li>
+  <li><a href="https://mpdf.github.io/reference/mpdf-variables/setautotopmargin.html">Auto Top Margin</a></li>
+  <li><a href="https://mpdf.github.io/reference/mpdf-variables/setautobottommargin.html">Auto Bottom Margin</a></li>
+</ul>
+
+<p><strong>Page margins in millimetres</strong></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">margin_left</code></li>
+  <li><code class="language-plaintext highlighter-rouge">margin_right</code></li>
+  <li><code class="language-plaintext highlighter-rouge">margin_top</code></li>
+  <li><code class="language-plaintext highlighter-rouge">margin_bottom</code></li>
+  <li><code class="language-plaintext highlighter-rouge">margin_header</code></li>
+  <li><code class="language-plaintext highlighter-rouge">margin_footer</code></li>
+</ul>
+
 <h2 id="changing-the-filename">Changing the filename</h2>
+
+<p>Option name: <code class="language-plaintext highlighter-rouge">filename</code></p>
 
 <div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="o">-</span> <span class="k">set</span> <span class="nv">customer</span> <span class="o">=</span> <span class="nv">query.customers</span><span class="o">|</span><span class="nf">length</span> <span class="o">==</span> <span class="nv">1</span> <span class="err">?</span> <span class="nv">query.customers.0</span> <span class="err">:</span> <span class="nb">null</span> <span class="o">-</span><span class="cp">%}</span>
 <span class="cp">{%</span><span class="o">-</span> <span class="k">set</span> <span class="nv">filename</span> <span class="o">=</span> <span class="s1">'ACME_'</span> <span class="err">~</span> <span class="p">(</span><span class="nv">customer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">null</span> <span class="err">?</span> <span class="nv">customer.name</span><span class="o">|</span><span class="nf">replace</span><span class="p">(</span><span class="err">{</span><span class="s1">' '</span><span class="err">:</span> <span class="s1">'-'</span><span class="err">}</span><span class="p">)</span> <span class="err">~</span> <span class="s1">'_'</span> <span class="err">:</span> <span class="s1">''</span><span class="p">)</span> <span class="err">~</span> <span class="nv">query.begin</span><span class="o">|</span><span class="nf">date_format</span><span class="p">(</span><span class="s1">'Y-m'</span><span class="p">)</span> <span class="o">-</span><span class="cp">%}</span>
@@ -683,6 +706,8 @@ Please read the MPdf documentation and check the default PDF templates.</p>
 
 <h2 id="pdfa-compliance">PDF/A compliance</h2>
 
+<p>Option names: <code class="language-plaintext highlighter-rouge">PDFA</code> and <code class="language-plaintext highlighter-rouge">PDFAauto</code></p>
+
 <p>You can create a <a href="https://mpdf.github.io/what-else-can-i-do/pdf-a1-b-compliance.html">PDF/A1-b compliant</a> document by setting
 these configurations in your template:</p>
 
@@ -690,9 +715,75 @@ these configurations in your template:</p>
 <span class="cp">{%</span><span class="o">-</span> <span class="k">set</span> <span class="nv">option</span> <span class="o">=</span> <span class="nv">pdfContext.setOption</span><span class="p">(</span><span class="s1">'PDFAauto'</span><span class="p">,</span> <span class="kp">true</span><span class="p">)</span> <span class="o">-</span><span class="cp">%}</span> 
 </code></pre></div></div>
 
+<h2 id="page-size">Page size</h2>
+
+<p>Want to display the PDF in a different size, e.g. because your customer expects <code class="language-plaintext highlighter-rouge">US-Letter</code> and not the standard size <code class="language-plaintext highlighter-rouge">DIN-A4</code>?</p>
+
+<p>You can set the page-size with the <code class="language-plaintext highlighter-rouge">format</code> option:</p>
+<div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="o">-</span> <span class="k">set</span> <span class="nv">option</span> <span class="o">=</span> <span class="nv">pdfContext.setOption</span><span class="p">(</span><span class="s1">'format'</span><span class="p">,</span> <span class="s1">'A4-L'</span><span class="p">)</span> <span class="o">-</span><span class="cp">%}</span>
+</code></pre></div></div>
+
+<p>Available sizes are:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">A4</code>, <code class="language-plaintext highlighter-rouge">A3</code>, <code class="language-plaintext highlighter-rouge">Letter</code>, <code class="language-plaintext highlighter-rouge">Legal</code>, <code class="language-plaintext highlighter-rouge">Executive</code>, <code class="language-plaintext highlighter-rouge">Folio</code>, <code class="language-plaintext highlighter-rouge">Demy</code>, <code class="language-plaintext highlighter-rouge">Royal</code>, <code class="language-plaintext highlighter-rouge">A</code>, <code class="language-plaintext highlighter-rouge">B</code>, <code class="language-plaintext highlighter-rouge">Ledger</code>, <code class="language-plaintext highlighter-rouge">Tabloid</code> …</li>
+  <li><code class="language-plaintext highlighter-rouge">A4-L</code>, <code class="language-plaintext highlighter-rouge">A3-L</code>, <code class="language-plaintext highlighter-rouge">Letter-L</code>, <code class="language-plaintext highlighter-rouge">Legal-L</code>, <code class="language-plaintext highlighter-rouge">Executive-L</code>, <code class="language-plaintext highlighter-rouge">Folio-L</code> … for landscape</li>
+</ul>
+
+<p>More information available in the <a href="https://mpdf.github.io/paging/different-page-sizes.html">MDPF documentation</a> and the
+full list of available sizes <a href="https://mpdf.github.io/reference/mpdf-functions/construct.html">can be found here</a>.</p>
+
+<h2 id="embedding-images">Embedding images</h2>
+
+<p>The best way to embed an image is a base64 encoded PNG image:</p>
+
+<ul>
+  <li>Convert your image to PNG</li>
+  <li>Encode the image file with <code class="language-plaintext highlighter-rouge">base64</code>, e.g. with the bash command <code class="language-plaintext highlighter-rouge">base64 -i image-file.png</code> or some <a href="https://www.base64-image.de/">online</a> <a href="https://base64.guru/converter/encode/image">tool</a></li>
+  <li>Save the base64 string as Twig variable</li>
+  <li>Add the img tag to your template</li>
+</ul>
+
+<div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span> <span class="k">set</span> <span class="nv">logo</span> <span class="o">=</span> <span class="s1">'A-VERY-LONG-STRING-HERE=='</span> <span class="cp">%}</span>
+<span class="nt">&lt;img</span> <span class="na">style=</span><span class="s">"height: 150px;margin: 10px;"</span> <span class="na">src=</span><span class="s">"data:image/png;base64,</span><span class="cp">{{</span> <span class="nv">logo</span> <span class="cp">}}</span><span class="s">"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>It is also possible to include images via absolute URLs:</p>
+<div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">style=</span><span class="s">"height: 150px;margin: 10px;"</span> <span class="na">src=</span><span class="s">"https://www.kimai.org/images/kimai_logo.png"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>This method has a few limitations, which are in place to prevent SSRF attacks.</p>
+
+<p>The following URLs are blocked:</p>
+
+<ul>
+  <li>the host that runs Kimai
+    <ul>
+      <li>e.g. Kimai runs at <code class="language-plaintext highlighter-rouge">https://kimai.example.com/</code> then the image src cannot be <code class="language-plaintext highlighter-rouge">https://kimai.example.com/logo.png</code></li>
+    </ul>
+  </li>
+  <li>any resource that is considered internal, e.g.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">127.0.0.0/8</code> -  RFC1700 (Loopback)</li>
+      <li><code class="language-plaintext highlighter-rouge">10.0.0.0/8</code> -  RFC1918</li>
+      <li><code class="language-plaintext highlighter-rouge">192.168.0.0/16</code> -  RFC1918</li>
+      <li><code class="language-plaintext highlighter-rouge">172.16.0.0/12</code> -  RFC1918</li>
+      <li><code class="language-plaintext highlighter-rouge">169.254.0.0/16</code> -  RFC3927</li>
+      <li><code class="language-plaintext highlighter-rouge">0.0.0.0/8</code> -  RFC5735</li>
+      <li><code class="language-plaintext highlighter-rouge">240.0.0.0/4</code> -  RFC1112</li>
+      <li><code class="language-plaintext highlighter-rouge">::1/128</code> -  Loopback</li>
+      <li><code class="language-plaintext highlighter-rouge">fc00::/7</code> -  Unique Local Address</li>
+      <li><code class="language-plaintext highlighter-rouge">fe80::/10</code> -  Link Local Address</li>
+      <li><code class="language-plaintext highlighter-rouge">::ffff:0:0/96</code> -  IPv4 translations</li>
+      <li><code class="language-plaintext highlighter-rouge">::/128</code> - Unspecified address</li>
+    </ul>
+  </li>
+</ul>
+
 <h2 id="fonts">Fonts</h2>
 
 <p>You can change the used font for your PDF templates.</p>
+
+<p>Supported options: <code class="language-plaintext highlighter-rouge">default_font</code>, <code class="language-plaintext highlighter-rouge">default_font_size</code>, <code class="language-plaintext highlighter-rouge">fonts'</code></p>
 
 <h3 id="available-fonts">Available fonts</h3>
 
@@ -784,68 +875,20 @@ Activate them in your template by using e.g. this CSS: <code class="language-pla
 <span class="nt">&lt;/html&gt;</span>
 </code></pre></div></div>
 
-<h2 id="page-size">Page size</h2>
+<h2 id="watermarks">Watermarks</h2>
 
-<p>Want to display the PDF in a different size, e.g. because your customer expects <code class="language-plaintext highlighter-rouge">US-Letter</code> and not the standard size <code class="language-plaintext highlighter-rouge">DIN-A4</code>?</p>
-
-<p>Please set the page-size via <code class="language-plaintext highlighter-rouge">options</code>:</p>
-<div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="o">-</span> <span class="k">set</span> <span class="nv">option</span> <span class="o">=</span> <span class="nv">pdfContext.setOption</span><span class="p">(</span><span class="s1">'format'</span><span class="p">,</span> <span class="s1">'A4-L'</span><span class="p">)</span> <span class="o">-</span><span class="cp">%}</span>
-</code></pre></div></div>
-
-<p>Available sizes are:</p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">A4</code>, <code class="language-plaintext highlighter-rouge">A3</code>, <code class="language-plaintext highlighter-rouge">Letter</code>, <code class="language-plaintext highlighter-rouge">Legal</code>, <code class="language-plaintext highlighter-rouge">Executive</code>, <code class="language-plaintext highlighter-rouge">Folio</code>, <code class="language-plaintext highlighter-rouge">Demy</code>, <code class="language-plaintext highlighter-rouge">Royal</code>, <code class="language-plaintext highlighter-rouge">A</code>, <code class="language-plaintext highlighter-rouge">B</code>, <code class="language-plaintext highlighter-rouge">Ledger</code>, <code class="language-plaintext highlighter-rouge">Tabloid</code> …</li>
-  <li><code class="language-plaintext highlighter-rouge">A4-L</code>, <code class="language-plaintext highlighter-rouge">A3-L</code>, <code class="language-plaintext highlighter-rouge">Letter-L</code>, <code class="language-plaintext highlighter-rouge">Legal-L</code>, <code class="language-plaintext highlighter-rouge">Executive-L</code>, <code class="language-plaintext highlighter-rouge">Folio-L</code> … for landscape</li>
-</ul>
-
-<p>More information available in the <a href="https://mpdf.github.io/paging/different-page-sizes.html">MDPF documentation</a> and the
-full list of available sizes <a href="https://mpdf.github.io/reference/mpdf-functions/construct.html">can be found here</a> (check <code class="language-plaintext highlighter-rouge">format</code>).</p>
-
-<h2 id="embedding-images">Embedding images</h2>
-
-<p>The best way to embed an image is a base64 encoded PNG image:</p>
+<p>Read the <a href="https://mpdf.github.io/what-else-can-i-do/watermarks.html">mPDF documentation</a> to understand how to use these options:</p>
 
 <ul>
-  <li>Convert your image to PNG</li>
-  <li>Encode the image file with <code class="language-plaintext highlighter-rouge">base64</code>, e.g. with the bash command <code class="language-plaintext highlighter-rouge">base64 -i image-file.png</code> or some <a href="https://www.base64-image.de/">online</a> <a href="https://base64.guru/converter/encode/image">tool</a></li>
-  <li>Save the base64 string as Twig variable</li>
-  <li>Add the img tag to your template</li>
-</ul>
-
-<div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span> <span class="k">set</span> <span class="nv">logo</span> <span class="o">=</span> <span class="s1">'A-VERY-LONG-STRING-HERE=='</span> <span class="cp">%}</span>
-<span class="nt">&lt;img</span> <span class="na">style=</span><span class="s">"height: 150px;margin: 10px;"</span> <span class="na">src=</span><span class="s">"data:image/png;base64,</span><span class="cp">{{</span> <span class="nv">logo</span> <span class="cp">}}</span><span class="s">"</span> <span class="nt">/&gt;</span>
-</code></pre></div></div>
-
-<p>It is also possible to include images via absolute URLs:</p>
-<div class="language-twig highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">style=</span><span class="s">"height: 150px;margin: 10px;"</span> <span class="na">src=</span><span class="s">"https://www.kimai.org/images/kimai_logo.png"</span> <span class="nt">/&gt;</span>
-</code></pre></div></div>
-
-<p>This method has a few limitations, which are in place to prevent SSRF attacks.</p>
-
-<p>The following URLs are blocked:</p>
-
-<ul>
-  <li>the host that runs Kimai
-    <ul>
-      <li>e.g. Kimai runs at <code class="language-plaintext highlighter-rouge">https://kimai.example.com/</code> then the image src cannot be <code class="language-plaintext highlighter-rouge">https://kimai.example.com/logo.png</code></li>
-    </ul>
-  </li>
-  <li>any resource that is considered internal, e.g.
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">127.0.0.0/8</code> -  RFC1700 (Loopback)</li>
-      <li><code class="language-plaintext highlighter-rouge">10.0.0.0/8</code> -  RFC1918</li>
-      <li><code class="language-plaintext highlighter-rouge">192.168.0.0/16</code> -  RFC1918</li>
-      <li><code class="language-plaintext highlighter-rouge">172.16.0.0/12</code> -  RFC1918</li>
-      <li><code class="language-plaintext highlighter-rouge">169.254.0.0/16</code> -  RFC3927</li>
-      <li><code class="language-plaintext highlighter-rouge">0.0.0.0/8</code> -  RFC5735</li>
-      <li><code class="language-plaintext highlighter-rouge">240.0.0.0/4</code> -  RFC1112</li>
-      <li><code class="language-plaintext highlighter-rouge">::1/128</code> -  Loopback</li>
-      <li><code class="language-plaintext highlighter-rouge">fc00::/7</code> -  Unique Local Address</li>
-      <li><code class="language-plaintext highlighter-rouge">fe80::/10</code> -  Link Local Address</li>
-      <li><code class="language-plaintext highlighter-rouge">::ffff:0:0/96</code> -  IPv4 translations</li>
-      <li><code class="language-plaintext highlighter-rouge">::/128</code> - Unspecified address</li>
-    </ul>
-  </li>
+  <li><code class="language-plaintext highlighter-rouge">watermarkImgBehind</code></li>
+  <li><code class="language-plaintext highlighter-rouge">showWatermarkText</code></li>
+  <li><code class="language-plaintext highlighter-rouge">showWatermarkImage</code></li>
+  <li><code class="language-plaintext highlighter-rouge">watermarkText</code></li>
+  <li><code class="language-plaintext highlighter-rouge">watermarkAngle</code></li>
+  <li><code class="language-plaintext highlighter-rouge">watermarkImage</code></li>
+  <li><code class="language-plaintext highlighter-rouge">watermark_font</code></li>
+  <li><code class="language-plaintext highlighter-rouge">watermarkTextAlpha</code></li>
+  <li><code class="language-plaintext highlighter-rouge">watermarkImageAlpha</code></li>
 </ul>
 
                         </div>
@@ -876,7 +919,7 @@ full list of available sizes <a href="https://mpdf.github.io/reference/mpdf-func
             
                 <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
                     <h3 class="fs-lg mt-2">Jump to</h3>
-                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#setting-options" class="nav-link">Setting options</a></li><li class="nav-item"><a href="#changing-the-filename" class="nav-link">Changing the filename</a></li><li class="nav-item"><a href="#pdfa-compliance" class="nav-link">PDF/A compliance</a></li><li class="nav-item"><a href="#fonts" class="nav-link">Fonts</a><ul><li class="nav-item"><a href="#available-fonts" class="nav-link">Available fonts</a></li><li class="nav-item"><a href="#default-fonts" class="nav-link">Default fonts</a></li><li class="nav-item"><a href="#custom-fonts" class="nav-link">Custom fonts</a></li><li class="nav-item"><a href="#missing-character" class="nav-link">Missing character</a></li><li class="nav-item"><a href="#font-debugging" class="nav-link">Font debugging</a></li></ul></li><li class="nav-item"><a href="#page-size" class="nav-link">Page size</a></li><li class="nav-item"><a href="#embedding-images" class="nav-link">Embedding images</a></li></ul>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#setting-options" class="nav-link">Setting options</a></li><li class="nav-item"><a href="#page-setup" class="nav-link">Page setup</a></li><li class="nav-item"><a href="#changing-the-filename" class="nav-link">Changing the filename</a></li><li class="nav-item"><a href="#pdfa-compliance" class="nav-link">PDF/A compliance</a></li><li class="nav-item"><a href="#page-size" class="nav-link">Page size</a></li><li class="nav-item"><a href="#embedding-images" class="nav-link">Embedding images</a></li><li class="nav-item"><a href="#fonts" class="nav-link">Fonts</a><ul><li class="nav-item"><a href="#available-fonts" class="nav-link">Available fonts</a></li><li class="nav-item"><a href="#default-fonts" class="nav-link">Default fonts</a></li><li class="nav-item"><a href="#custom-fonts" class="nav-link">Custom fonts</a></li><li class="nav-item"><a href="#missing-character" class="nav-link">Missing character</a></li><li class="nav-item"><a href="#font-debugging" class="nav-link">Font debugging</a></li></ul></li><li class="nav-item"><a href="#watermarks" class="nav-link">Watermarks</a></li></ul>
                     
                     <ul class="nav">
                         <li>
