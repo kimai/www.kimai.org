@@ -89,7 +89,7 @@ You can subscribe to all advisories via [Atom RSS Feed]({% link security.xml %})
 
 {% assign advisories = site.security | reverse -%}
 {% for advisory in advisories -%}
-- {{ advisory.date | date: "%Y-%m-%d" }}: [{{ advisory.title }}]({{ advisory.url }})
+- {{ advisory.date | date: "%Y-%m-%d" }}: {% if advisory.severity == 'high' %}⚠️{% elsif advisory.severity == 'critical' %}🚨{% endif %}  [{{ advisory.title }}]({{ advisory.url }})
 {% endfor %}
 
 ## Not security issues
