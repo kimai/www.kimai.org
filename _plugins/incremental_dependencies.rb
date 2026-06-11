@@ -79,6 +79,9 @@ if ENV["JEKYLL_ENV"] == "development"
     data_dependencies = {
       "_data/feature.yml" => pages.select do |page|
         page.relative_path.match?(%r{_pages/[^/]+/features\.html\z})
+      end,
+      "_data/testimonials.yml" => pages.select do |page|
+        page.relative_path.match?(%r{_pages/[^/]+/reviews\.md\z})
       end
     }
 
