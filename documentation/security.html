@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#4188c9">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="robots" content="index,follow">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+<title>Security advisories – Kimai</title>
+<link type="application/atom+xml" rel="alternate" href="/en/feed.xml" title="Kimai Time-Tracking" />
+<meta property="og:locale" content="en">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Security advisories">
+<meta property="og:image" content="https://www.kimai.org/images/social-preview.webp">
+<meta property="og:description" content="">
+<link href="/assets/build/main.css?v9" rel="stylesheet" />
+
+</head>
+<body class="">
+
+
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand bg-light border-bottom border-light shadow" data-scroll-header>
+    <div class="container-fluid pe-lg-4">
+        <div class="d-flex align-items-center">
+            <a href="/" class="navbar-brand flex-shrink-0 py-1 py-lg-2">
+                <img src="/images/apple-touch-icon.png" width="32" alt="Kimai logo" class="me-2">
+                Kimai Docs
+            </a>
+            <span class="badge bg-warning">Developer</span>
+        </div>
+        <div class="docs-header-nav d-flex align-items-center w-100" style="padding-left: 6.75rem;">
+            <ul class="docs-primary-nav navbar-nav d-none d-lg-flex">
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-manual.html" class="nav-link ">
+                            <i class="bx bx-book opacity-70 fs-lg me-1"></i>
+                            User manual
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/cloud.html" class="nav-link ">
+                            <i class="bx bx-cloud opacity-70 fs-lg me-1"></i>
+                            Kimai-Cloud
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-on-premise.html" class="nav-link ">
+                            <i class="bx bx-server opacity-70 fs-lg me-1"></i>
+                            On-Premise
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-developer.html" class="nav-link  active">
+                            <i class="bx bx-code-alt opacity-70 fs-lg me-1"></i>
+                            Developer
+                        </a>
+                    </li>
+                
+            </ul>
+            <div class="docs-toolbar d-none d-xl-flex" data-pagefind-ignore="all">
+                <div class="docs-search-panel" data-doc-search>
+                    <label class="form-label visually-hidden" for="documentation-search">Search documentation</label>
+                    <input
+                        id="documentation-search"
+                        class="form-control"
+                        type="search"
+                        autocomplete="off"
+                        spellcheck="false"
+                        placeholder="Search the documentation"
+                        aria-describedby="documentation-search-status"
+                        data-doc-search-input
+                    >
+                    <div
+                        id="documentation-search-results"
+                        class="docs-search-results card border-0 shadow-sm"
+                        role="listbox"
+                        aria-label="Documentation search results"
+                        data-doc-search-results
+                    ></div>
+                    <div id="documentation-search-status" class="visually-hidden" aria-live="polite" data-doc-search-status></div>
+                </div>
+            </div>
+            <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<aside class="bg-dark">
+    <div id="componentsNav" class="offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100 bg-dark border-end-lg" style="width: 19rem; z-index: 1045;">
+        <div class="offcanvas-header d-none d-lg-flex justify-content-start">
+            <a href="/" class="navbar-brand d-none d-lg-flex py-0">
+                <img src="/images/apple-touch-icon.png" width="26" alt="Kimai logo" class="me-3">
+                Kimai Docs
+            </a>
+        </div>
+        <div class="offcanvas-header d-block d-lg-none border-bottom">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <h5 class="d-lg-none mb-0">Menu</h5>
+                <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#componentsNav" aria-label="Close"></button>
+            </div>
+            <div class="list-group list-group-flush mx-n4">
+                
+                    
+                    
+                    <a href="/documentation/chapter-manual.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-book opacity-70 me-1"></i>
+                        User manual
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/cloud.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-cloud opacity-70 me-1"></i>
+                        Kimai-Cloud
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/chapter-on-premise.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-server opacity-70 me-1"></i>
+                        On-Premise
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/chapter-developer.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-code-alt opacity-70 me-1"></i>
+                        Developer
+                    </a>
+                
+            </div>
+        </div>
+        <div class="offcanvas-body overflow-scroll w-100 p-4">
+            <div class="h-auto docsnavi">
+                
+                    
+                    
+                    
+                    
+                    <p class="fs-lg mb-1 text-white fw-bold">JSON API</p>
+                    <div class="list-group list-group-flush mb-4 me-n4 border-start">
+                        
+                        
+                            
+                            
+                            <a href="/documentation/rest-api.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-rest-api">
+                                
+                                Kimai API
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            
+                            <a href="/documentation/api-pagination.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-api-pagination">
+                                
+                                Pagination
+                                
+                            </a>
+                        
+                    
+                    </div>
+                    
+                    
+                    
+                    <p class="fs-lg mb-1 text-white fw-bold">API Examples</p>
+                    <div class="list-group list-group-flush mb-4 me-n4 border-start">
+                        
+                        
+                            
+                            
+                            <a href="/documentation/rest-api-examples.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-rest-api-examples">
+                                
+                                Importing a CSV file
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            
+                            <a href="/documentation/api-example-javascript.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-api-example-javascript">
+                                
+                                jQuery Demo
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            
+                            <a href="/documentation/api-example-sync.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-api-example-sync">
+                                
+                                Sync to a local DB
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            
+                            <a href="/documentation/api-example-user.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-api-example-user">
+                                
+                                Onboarding users
+                                
+                            </a>
+                        
+                    
+                    </div>
+                    
+                    
+                    
+                    <p class="fs-lg mb-1 text-white fw-bold">Create plugins</p>
+                    <div class="list-group list-group-flush mb-4 me-n4 border-start">
+                        
+                        
+                            
+                            
+                            <a href="/documentation/developers.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-developers">
+                                
+                                Development environment
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            
+                            <a href="/documentation/extending-kimai.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-extending-kimai">
+                                
+                                Extending Kimai
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            
+                            <a href="/documentation/plugins.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-plugins">
+                                
+                                Create plugins
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            
+                            <a href="/documentation/translations.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-translations">
+                                
+                                Translations / i18n
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            
+                            <a href="/documentation/meta-fields.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-meta-fields">
+                                
+                                Custom fields
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            
+                            <a href="/documentation/theme.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-theme">
+                                
+                                Theme
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            
+                            <a href="/documentation/store.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-store">
+                                
+                                Add to store
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            
+                            <a href="/documentation/migration-v2.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-migration-v2">
+                                
+                                Migrate plugins to v2
+                                
+                            </a>
+                        
+                    
+                    </div>
+                    
+                    
+                    
+                    <p class="fs-lg mb-1 text-white fw-bold">Security</p>
+                    <div class="list-group list-group-flush mb-4 me-n4 border-start">
+                        
+                        
+                            
+                            
+                            <a href="/documentation/security.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2  active" id="docnavi-security">
+                                
+                                Security advisories
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            
+                            <a href="/documentation/bughunter.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-bughunter">
+                                
+                                Reporting security issues
+                                
+                            </a>
+                        
+                    
+                    </div>
+                    
+                    
+                    
+                    <p class="fs-lg mb-1 text-white fw-bold">Technical background</p>
+                    <div class="list-group list-group-flush mb-4 me-n4 border-start">
+                        
+                        
+                            
+                            
+                            <a href="/documentation/permission-structure.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-permission-structure">
+                                
+                                Permission structure
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            
+                            <a href="/documentation/sql-examples.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-sql-examples">
+                                
+                                SQL Examples
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            
+                            <a href="/documentation/redis.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-redis">
+                                
+                                Using Redis for caching
+                                
+                            </a>
+                        
+                    
+                    </div>
+                    
+                    <div class="list-group list-group-flush pb-3 mb-4 mx-n4">
+                
+                    <a href="/en/" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Kimai Home</a>
+                    <a href="/en/site-notice.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Site notice</a>
+                    <a href="/en/privacy-policy.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Privacy policy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
+<script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+        const dpm = document.getElementById('docnavi-security');
+        if (dpm !== null) {
+            dpm.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+        }
+    });
+</script>
+<main class="docs-container">
+    <div class="container-fluid px-xxl-3 px-lg-2 pt-4 pt-lg-5 pb-2 pb-lg-4">
+        <div class="docs-layout">
+            <div class="docs-article" data-pagefind-body>
+                <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 mb-n3 gap-4">
+                    <div class="me-4">
+                        <h1 class="pb-1" data-pagefind-meta="title" data-pagefind-weight="10.0">Security advisories</h1>
+                        
+                    </div>
+                    <div class="d-none d-lg-flex">
+                    
+
+
+
+
+
+                    </div>
+                </div>
+
+                <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+                    <div>
+                        
+                        <div id="documentation-content">
+                            <p>This document describes how reported security vulnerabilities are handled for Kimai.</p>
+
+<p>We take every security report seriously and act upon it as soon as possible. 
+If you’re a <strong>security researcher</strong>, please read our <a href="/documentation/bughunter.html">Guidelines</a> about testing and reporting new vulnerabilities before submitting a report.</p>
+
+<p>Upon receiving a new security report, our process looks like this:</p>
+
+<ul>
+  <li>We review the report and, if needed, contact the reporter with follow-up questions</li>
+  <li>We reproduce and verify the reported issue</li>
+  <li>We write regression tests to prevent the issue from reoccurring</li>
+  <li>We fix the vulnerability and create a new Kimai release (noting that security fixes are included)</li>
+  <li>We update the Kimai-Cloud environment</li>
+  <li>We write an advisory for our website that explains the issue in plain language (see the list of published advisories below)</li>
+  <li>We request a CVE ID, if the issue qualifies for one</li>
+  <li>At least two weeks after the patched version has been released, we publish the advisory on our website and on GitHub</li>
+</ul>
+
+<h2 id="severity-levels">Severity levels</h2>
+
+<p>We rate security issues using four severity levels: <code class="language-plaintext highlighter-rouge">Low</code>, <code class="language-plaintext highlighter-rouge">Medium</code>, <code class="language-plaintext highlighter-rouge">High</code>, and <code class="language-plaintext highlighter-rouge">Critical</code>.</p>
+
+<p>Our GitHub advisories may include CVSS scores for reference, but we do not rely on CVSS as the primary basis for grading vulnerabilities. 
+In our view, CVSS does not adequately capture all the factors and context involved in assessing real-world impact.</p>
+
+<p>A rough guideline for how we classify security issues:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Low</code>: read access to data that should not be accessible</li>
+  <li><code class="language-plaintext highlighter-rouge">Medium</code>: write access to data that should not be accessible (e.g. XSS, CSRF)</li>
+  <li><code class="language-plaintext highlighter-rouge">High</code>: permission escalation to admin level, escaping sandboxes, reading filesystem contents</li>
+  <li><code class="language-plaintext highlighter-rouge">Critical</code>: system manipulation, passing authentication flows</li>
+</ul>
+
+<p>We take additional details into account beyond this list. Each advisory is rated as a whole, and we
+particularly consider the permission level required for exploitation.</p>
+
+<p>For example: any issue that requires direct filesystem access or a <strong>System-Admin</strong> account to exploit is unlikely to be
+rated higher than <code class="language-plaintext highlighter-rouge">Medium</code>, as these preconditions significantly limit the realistic attack surface:</p>
+<ul>
+  <li>The <strong>System-Admin</strong> role is the Kimai equivalent of a <strong>root</strong> account and can easily delete all data in the system.</li>
+  <li>Users who already have filesystem access to the server have a variety of options to manipulate the system and do not need Kimai for that.</li>
+</ul>
+
+<h2 id="published-vulnerabilities">Published vulnerabilities</h2>
+
+<p>You can subscribe to all advisories via <a href="/security.xml">Atom RSS Feed</a>.</p>
+
+<ul>
+  <li>2026-05-22:   <a href="/en/security/ghsa-pj8j-p4g4-4vw8">Invoice PDF export could trigger requests to internal network services</a></li>
+  <li>2026-05-22:   <a href="/en/security/ghsa-pgcc-vfmc-7cw5">CSRF attack allowed tricking logged-in users into creating teams and changing access</a></li>
+  <li>2026-05-22:   <a href="/en/security/ghsa-m492-gv72-xvxj">Password reset links stayed valid after the password was changed</a></li>
+  <li>2026-05-19:   <a href="/en/security/ghsa-3q6q-26vg-v97x">Users could create activities and projects outside their access scope</a></li>
+  <li>2026-05-18:   <a href="/en/security/ghsa-j5mc-p8qg-39j7">Signed-in users could tamper with other users’ favorite timesheet bookmarks</a></li>
+  <li>2026-05-05:   <a href="/en/security/ghsa-h5fh-7hwr-97mw">Arbitrary file read in invoice PDF renderer (admin)</a></li>
+  <li>2026-04-28:   <a href="/en/security/ghsa-vrr2-g9gh-c3jc">Timesheets could be assigned to off-limits projects through the API</a></li>
+  <li>2026-04-28:   <a href="/en/security/ghsa-4m8q-55qv-9pwp">Teamlead users could read other users’ timesheets through the API</a></li>
+  <li>2026-04-27:   <a href="/en/security/ghsa-vrqv-52x7-rm4v">Twig function config() leaks secrets via invoice/export templates</a></li>
+  <li>2026-04-27:   <a href="/en/security/ghsa-9g2q-w3w2-vf7q">Missing Voter Check Allows Cross-Team Timesheet Manipulation</a></li>
+  <li>2026-04-26:   <a href="/en/security/ghsa-3xc2-h5r3-wv3r">Formula Injection via tag names in XLSX export</a></li>
+  <li>2026-04-21:   <a href="/en/security/ghsa-jv9x-w4gm-hwcm">Team API Missing Object-Level Authorization</a></li>
+  <li>2026-04-16:   <a href="/en/security/ghsa-jrc6-fmhw-fpq2">Username enumeration via timing, using deprecated API authentication</a></li>
+  <li>2026-04-14:   <a href="/en/security/ghsa-qh43-xrjm-4ggp">User Preferences API allows standard users to modify: hourly_rate, internal_rate</a></li>
+  <li>2026-04-14: ⚠️  <a href="/en/security/ghsa-g82g-m9vx-vhjg">Stored XSS via incomplete HTML attribute escaping in Team-Member widget</a></li>
+  <li>2026-04-11:   <a href="/en/security/ghsa-rh42-6rj2-xwmc">API password hash leakage via invoice Twig template</a></li>
+  <li>2026-04-11:   <a href="/en/security/ghsa-3jp4-mhh4-gcgr">Open-redirect via unvalidated RelayState in SAML ACS handler</a></li>
+  <li>2026-03-04:   <a href="/en/security/ghsa-v33r-r6h2-8wr7">API invoice endpoint missing customer-level access control (IDOR)</a></li>
+  <li>2026-01-18:   <a href="/en/security/ghsa-jg2j-2w24-54cg">Authenticated server-side template injection (SSTI)</a></li>
+  <li>2024-09-17:   <a href="/en/security/ghsa-534c-hcr7-67jg">XXE leading to local file read</a></li>
+  <li>2024-03-27:   <a href="/en/security/ghsa-cj3c-5xpm-cx94">API returns timesheet entries a user shouldn’t be authorized to view</a></li>
+  <li>2023-10-27: ⚠️  <a href="/en/security/ghsa-fjhg-96cp-6fcw">Authenticated SSTI to RCE by uploading a malicious twig file</a></li>
+</ul>
+
+
+                        </div>
+                        
+
+                        
+                    </div>
+                </div>
+            </div>
+
+            
+                <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
+                    <h3 class="fs-lg mt-2">Jump to</h3>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#severity-levels" class="nav-link">Severity levels</a></li><li class="nav-item"><a href="#published-vulnerabilities" class="nav-link">Published vulnerabilities</a></li></ul>
+                    
+                </aside>
+            
+        </div>
+    </div>
+</main>
+<script type="module" src="/assets/js/documentation-search.js?v1"></script>
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js?v1"></script>
+
+<script defer src="https://u.kimai.org/script.js" data-website-id="e26bef12-9527-43bc-83fd-660e237f3526"></script>
+
+</body>
+</html>

@@ -12,11 +12,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
-<title>Security advisories – Kimai</title>
+<title>Reporting security issues – Kimai</title>
 <link type="application/atom+xml" rel="alternate" href="/en/feed.xml" title="Kimai Time-Tracking" />
 <meta property="og:locale" content="en">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Security advisories">
+<meta property="og:title" content="Reporting security issues">
 <meta property="og:image" content="https://www.kimai.org/images/social-preview.webp">
 <meta property="og:description" content="">
 <link href="/assets/build/main.css?v9" rel="stylesheet" />
@@ -326,19 +326,36 @@
                     
                     
                     
-                    <p class="fs-lg mb-1 text-white fw-bold">Technical background</p>
+                    <p class="fs-lg mb-1 text-white fw-bold">Security</p>
                     <div class="list-group list-group-flush mb-4 me-n4 border-start">
                         
                         
                             
                             
-                            <a href="/documentation/bughunter.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2  active" id="docnavi-bughunter">
+                            <a href="/documentation/security.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-security">
                                 
                                 Security advisories
                                 
                             </a>
                         
                     
+                        
+                            
+                            
+                            <a href="/documentation/bughunter.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2  active" id="docnavi-bughunter">
+                                
+                                Reporting security issues
+                                
+                            </a>
+                        
+                    
+                    </div>
+                    
+                    
+                    
+                    <p class="fs-lg mb-1 text-white fw-bold">Technical background</p>
+                    <div class="list-group list-group-flush mb-4 me-n4 border-start">
+                        
                         
                             
                             
@@ -395,7 +412,7 @@
             <div class="docs-article" data-pagefind-body>
                 <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 mb-n3 gap-4">
                     <div class="me-4">
-                        <h1 class="pb-1" data-pagefind-meta="title" data-pagefind-weight="10.0">Security advisories</h1>
+                        <h1 class="pb-1" data-pagefind-meta="title" data-pagefind-weight="10.0">Reporting security issues</h1>
                         
                     </div>
                     <div class="d-none d-lg-flex">
@@ -425,7 +442,9 @@
                     <div>
                         
                         <div id="documentation-content">
-                            <p>This document describes how security vulnerabilities are handled for Kimai.</p>
+                            <p>This document is aimed at security researchers and describes how to report vulnerabilities in Kimai.</p>
+
+<p>If you want to know how we handle security issues and which ones have been reported, visit our <a href="/documentation/security.html">Security advisories</a> page.</p>
 
 <h2 id="reporting-a-vulnerability">Reporting a vulnerability</h2>
 
@@ -497,61 +516,6 @@
 </ul>
 
 <p>Reports that do not meet these criteria, or that demand payment before sharing details, will not receive a response.</p>
-
-<h2 id="severity-levels">Severity levels</h2>
-
-<p>We rate security issues using four severity levels: <code class="language-plaintext highlighter-rouge">Low</code>, <code class="language-plaintext highlighter-rouge">Medium</code>, <code class="language-plaintext highlighter-rouge">High</code>, and <code class="language-plaintext highlighter-rouge">Critical</code>.</p>
-
-<p>Our GitHub advisories may include CVSS scores for reference, but we do not rely on CVSS as the primary basis for grading vulnerabilities. 
-In our view, CVSS does not adequately capture all the factors and context involved in assessing real-world impact.</p>
-
-<p>A rough guideline for how we classify security issues:</p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">Low</code>: read access to data that should not be accessible</li>
-  <li><code class="language-plaintext highlighter-rouge">Medium</code>: write access to data that should not be accessible (e.g. XSS, CSRF)</li>
-  <li><code class="language-plaintext highlighter-rouge">High</code>: permission escalation to admin level, escaping sandboxes, reading filesystem contents</li>
-  <li><code class="language-plaintext highlighter-rouge">Critical</code>: system manipulation, passing authentication flows</li>
-</ul>
-
-<p>We take additional details into account beyond this list. Each advisory is rated as a whole, and we
-particularly consider the permission level required for exploitation.</p>
-
-<p>For example: any issue that requires direct filesystem access or a <strong>System-Admin</strong> account to exploit is unlikely to be
-rated higher than <code class="language-plaintext highlighter-rouge">Medium</code>, as these preconditions significantly limit the realistic attack surface:</p>
-<ul>
-  <li>The <strong>System-Admin</strong> role is the Kimai equivalent of a <strong>root</strong> account and can easily delete all data in the system.</li>
-  <li>Users who already have filesystem access to the server have a variety of options to manipulate the system and do not need Kimai for that.</li>
-</ul>
-
-<h2 id="published-vulnerabilities">Published vulnerabilities</h2>
-
-<p>You can subscribe to all advisories via <a href="/security.xml">Atom RSS Feed</a>.</p>
-
-<ul>
-  <li>2026-05-22:   <a href="/en/security/ghsa-pj8j-p4g4-4vw8">Invoice PDF export could trigger requests to internal network services</a></li>
-  <li>2026-05-22:   <a href="/en/security/ghsa-pgcc-vfmc-7cw5">CSRF attack allowed tricking logged-in users into creating teams and changing access</a></li>
-  <li>2026-05-22:   <a href="/en/security/ghsa-m492-gv72-xvxj">Password reset links stayed valid after the password was changed</a></li>
-  <li>2026-05-19:   <a href="/en/security/ghsa-3q6q-26vg-v97x">Users could create activities and projects outside their access scope</a></li>
-  <li>2026-05-18:   <a href="/en/security/ghsa-j5mc-p8qg-39j7">Signed-in users could tamper with other users’ favorite timesheet bookmarks</a></li>
-  <li>2026-05-05:   <a href="/en/security/ghsa-h5fh-7hwr-97mw">Arbitrary file read in invoice PDF renderer (admin)</a></li>
-  <li>2026-04-28:   <a href="/en/security/ghsa-vrr2-g9gh-c3jc">Timesheets could be assigned to off-limits projects through the API</a></li>
-  <li>2026-04-28:   <a href="/en/security/ghsa-4m8q-55qv-9pwp">Teamlead users could read other users’ timesheets through the API</a></li>
-  <li>2026-04-27:   <a href="/en/security/ghsa-vrqv-52x7-rm4v">Twig function config() leaks secrets via invoice/export templates</a></li>
-  <li>2026-04-27:   <a href="/en/security/ghsa-9g2q-w3w2-vf7q">Missing Voter Check Allows Cross-Team Timesheet Manipulation</a></li>
-  <li>2026-04-26:   <a href="/en/security/ghsa-3xc2-h5r3-wv3r">Formula Injection via tag names in XLSX export</a></li>
-  <li>2026-04-21:   <a href="/en/security/ghsa-jv9x-w4gm-hwcm">Team API Missing Object-Level Authorization</a></li>
-  <li>2026-04-16:   <a href="/en/security/ghsa-jrc6-fmhw-fpq2">Username enumeration via timing, using deprecated API authentication</a></li>
-  <li>2026-04-14:   <a href="/en/security/ghsa-qh43-xrjm-4ggp">User Preferences API allows standard users to modify: hourly_rate, internal_rate</a></li>
-  <li>2026-04-14: ⚠️  <a href="/en/security/ghsa-g82g-m9vx-vhjg">Stored XSS via incomplete HTML attribute escaping in Team-Member widget</a></li>
-  <li>2026-04-11:   <a href="/en/security/ghsa-rh42-6rj2-xwmc">API password hash leakage via invoice Twig template</a></li>
-  <li>2026-04-11:   <a href="/en/security/ghsa-3jp4-mhh4-gcgr">Open-redirect via unvalidated RelayState in SAML ACS handler</a></li>
-  <li>2026-03-04:   <a href="/en/security/ghsa-v33r-r6h2-8wr7">API invoice endpoint missing customer-level access control (IDOR)</a></li>
-  <li>2026-01-18:   <a href="/en/security/ghsa-jg2j-2w24-54cg">Authenticated server-side template injection (SSTI)</a></li>
-  <li>2024-09-17:   <a href="/en/security/ghsa-534c-hcr7-67jg">XXE leading to local file read</a></li>
-  <li>2024-03-27:   <a href="/en/security/ghsa-cj3c-5xpm-cx94">API returns timesheet entries a user shouldn’t be authorized to view</a></li>
-  <li>2023-10-27: ⚠️  <a href="/en/security/ghsa-fjhg-96cp-6fcw">Authenticated SSTI to RCE by uploading a malicious twig file</a></li>
-</ul>
 
 <h2 id="not-security-issues">Not security issues</h2>
 
@@ -658,7 +622,7 @@ so please follow the link.</p>
             
                 <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
                     <h3 class="fs-lg mt-2">Jump to</h3>
-                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#reporting-a-vulnerability" class="nav-link">Reporting a vulnerability</a></li><li class="nav-item"><a href="#bug-bounty--rewards" class="nav-link">Bug bounty &amp; rewards</a></li><li class="nav-item"><a href="#testing-guidelines" class="nav-link">Testing guidelines</a><ul><li class="nav-item"><a href="#permitted" class="nav-link">Permitted</a></li><li class="nav-item"><a href="#not-permitted" class="nav-link">Not permitted</a></li></ul></li><li class="nav-item"><a href="#automated-and-low-quality-reports" class="nav-link">Automated and low-quality reports</a></li><li class="nav-item"><a href="#severity-levels" class="nav-link">Severity levels</a></li><li class="nav-item"><a href="#published-vulnerabilities" class="nav-link">Published vulnerabilities</a></li><li class="nav-item"><a href="#not-security-issues" class="nav-link">Not security issues</a><ul><li class="nav-item"><a href="#no-dmarc-record-found" class="nav-link">No DMARC record found</a></li><li class="nav-item"><a href="#misconfigured-spf" class="nav-link">Misconfigured SPF</a></li><li class="nav-item"><a href="#missing-certificate-authority-authorization-rule" class="nav-link">Missing Certificate Authority Authorization Rule</a></li><li class="nav-item"><a href="#website-framing" class="nav-link">Website framing</a></li><li class="nav-item"><a href="#back-button-that-keeps-working-after-logout" class="nav-link">“Back” button that keeps working after logout</a></li><li class="nav-item"><a href="#csv-formula-injection" class="nav-link">CSV Formula injection</a></li><li class="nav-item"><a href="#logout-works-without-csrf-token" class="nav-link">Logout works without CSRF token</a></li><li class="nav-item"><a href="#unverified-password-change" class="nav-link">Unverified Password Change</a></li></ul></li></ul>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#reporting-a-vulnerability" class="nav-link">Reporting a vulnerability</a></li><li class="nav-item"><a href="#bug-bounty--rewards" class="nav-link">Bug bounty &amp; rewards</a></li><li class="nav-item"><a href="#testing-guidelines" class="nav-link">Testing guidelines</a><ul><li class="nav-item"><a href="#permitted" class="nav-link">Permitted</a></li><li class="nav-item"><a href="#not-permitted" class="nav-link">Not permitted</a></li></ul></li><li class="nav-item"><a href="#automated-and-low-quality-reports" class="nav-link">Automated and low-quality reports</a></li><li class="nav-item"><a href="#not-security-issues" class="nav-link">Not security issues</a><ul><li class="nav-item"><a href="#no-dmarc-record-found" class="nav-link">No DMARC record found</a></li><li class="nav-item"><a href="#misconfigured-spf" class="nav-link">Misconfigured SPF</a></li><li class="nav-item"><a href="#missing-certificate-authority-authorization-rule" class="nav-link">Missing Certificate Authority Authorization Rule</a></li><li class="nav-item"><a href="#website-framing" class="nav-link">Website framing</a></li><li class="nav-item"><a href="#back-button-that-keeps-working-after-logout" class="nav-link">“Back” button that keeps working after logout</a></li><li class="nav-item"><a href="#csv-formula-injection" class="nav-link">CSV Formula injection</a></li><li class="nav-item"><a href="#logout-works-without-csrf-token" class="nav-link">Logout works without CSRF token</a></li><li class="nav-item"><a href="#unverified-password-change" class="nav-link">Unverified Password Change</a></li></ul></li></ul>
                     
                 </aside>
             
