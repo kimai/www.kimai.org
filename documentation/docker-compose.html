@@ -648,7 +648,8 @@
     <span class="na">ports</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="s">8001:8001</span>
     <span class="na">environment</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">APP_SECRET=IT_IS_IMPORTANT_THAT_YOU_CHANGE_THIS_TO_A_LONG_RANDOM_STRING</span>
+      <span class="pi">-</span> <span class="s">APP_SECRET=</span> <span class="c1"># IT IS IMPORTANT THAT YOU CHANGE THIS TO A LONG RANDOM STRING</span>
+      <span class="pi">-</span> <span class="s">TRUSTED_HOSTS=kimai.example.com</span> <span class="c1"># set this to the domain name you use to access Kimai</span>
       <span class="pi">-</span> <span class="s">ADMINMAIL=admin@example.com</span>
       <span class="pi">-</span> <span class="s">ADMINPASS=changemeplease</span>
       <span class="pi">-</span> <span class="s2">"</span><span class="s">DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&amp;serverVersion=8.3.0"</span>
@@ -663,8 +664,6 @@
 <h2 id="updating-kimai">Updating Kimai</h2>
 
 <p>The usual update step is simple: stop, pull latest version, restart.</p>
-
-<p>This example is based on the <code class="language-plaintext highlighter-rouge">Apache</code> image, using the <code class="language-plaintext highlighter-rouge">apache</code> plugin:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Pull latest version</span>
 docker compose pull
@@ -684,7 +683,8 @@ DATABASE_PASSWORD=kimaipassword
 DATABASE_ROOT_PASSWORD=changemeplease
 ADMIN_EMAIL=admin@example.com
 ADMIN_PASSWORD=changemeplease
-APP_SECRET=IT_IS_IMPORTANT_THAT_YOU_CHANGE_THIS_TO_A_LONG_RANDOM_STRING
+TRUSTED_HOSTS=kimai.example.com
+APP_SECRET=your-fantastic-long-random-and-ultra-secure-secret
 </code></pre></div></div>
 
 <p>And then reference those from your <code class="language-plaintext highlighter-rouge">docker-compose.yaml</code>:</p>
@@ -722,6 +722,7 @@ APP_SECRET=IT_IS_IMPORTANT_THAT_YOU_CHANGE_THIS_TO_A_LONG_RANDOM_STRING
       <span class="pi">-</span> <span class="s">8001:8001</span>
     <span class="na">environment</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="s">APP_SECRET=${APP_SECRET}</span>
+      <span class="pi">-</span> <span class="s">TRUSTED_HOSTS=${TRUSTED_HOSTS}</span>
       <span class="pi">-</span> <span class="s">ADMINMAIL=${ADMIN_EMAIL}</span>
       <span class="pi">-</span> <span class="s">ADMINPASS=${ADMIN_PASSWORD}</span>
       <span class="pi">-</span> <span class="s2">"</span><span class="s">DATABASE_URL=mysql://${DATABASE_USER}:${DATABASE_PASSWORD}@sqldb/${DATABASE_NAME}?charset=utf8mb4&amp;serverVersion=8.3.0"</span>
