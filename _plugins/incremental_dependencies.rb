@@ -73,7 +73,7 @@ if ENV["JEKYLL_ENV"] == "development"
     end
 
     bughunter_page = docs.find do |doc|
-      doc.relative_path == "_documentation/developer/bughunter.md"
+      doc.relative_path == "_documentation/developer/security.md"
     end
 
     data_dependencies = {
