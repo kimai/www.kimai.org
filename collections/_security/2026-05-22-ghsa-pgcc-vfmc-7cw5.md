@@ -8,7 +8,6 @@ affected_version: "<=2.57.0"
 patched_version: "2.58.0"
 author: "Mitchell45"
 published: "kevinpapst"
-state: "published"
 ---
 
 Kimai's shortcut for creating a default team could be triggered by a logged-in user opening a malicious web page, without that user meaning to. 

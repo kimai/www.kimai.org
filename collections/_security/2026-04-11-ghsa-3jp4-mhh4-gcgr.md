@@ -8,7 +8,6 @@ affected_version: "<= 2.52.0"
 patched_version: "2.53.0"
 author: "morimori-dev"
 published: "kevinpapst"
-state: "published"
 ---
 
 Kimai's SAML authentication flow accepted the `RelayState` parameter as a redirect target without sufficiently validating the destination. 
