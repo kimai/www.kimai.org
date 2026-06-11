@@ -43,7 +43,8 @@ services:
     ports:
       - 8001:8001
     environment:
-      - APP_SECRET=IT_IS_IMPORTANT_THAT_YOU_CHANGE_THIS_TO_A_LONG_RANDOM_STRING
+      - APP_SECRET= # IT IS IMPORTANT THAT YOU CHANGE THIS TO A LONG RANDOM STRING
+      - TRUSTED_HOSTS=kimai.example.com # set this to the domain name you use to access Kimai
       - ADMINMAIL=admin@example.com
       - ADMINPASS=changemeplease
       - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&serverVersion=8.3.0"
@@ -58,8 +59,6 @@ volumes:
 ## Updating Kimai
 
 The usual update step is simple: stop, pull latest version, restart.
-
-This example is based on the `Apache` image, using the `apache` plugin:
 
 ```bash
 # Pull latest version
@@ -81,7 +80,8 @@ DATABASE_PASSWORD=kimaipassword
 DATABASE_ROOT_PASSWORD=changemeplease
 ADMIN_EMAIL=admin@example.com
 ADMIN_PASSWORD=changemeplease
-APP_SECRET=IT_IS_IMPORTANT_THAT_YOU_CHANGE_THIS_TO_A_LONG_RANDOM_STRING
+TRUSTED_HOSTS=kimai.example.com
+APP_SECRET=your-fantastic-long-random-and-ultra-secure-secret
 ```
 
 And then reference those from your `docker-compose.yaml`:
@@ -120,6 +120,7 @@ services:
       - 8001:8001
     environment:
       - APP_SECRET=${APP_SECRET}
+      - TRUSTED_HOSTS=${TRUSTED_HOSTS}
       - ADMINMAIL=${ADMIN_EMAIL}
       - ADMINPASS=${ADMIN_PASSWORD}
       - "DATABASE_URL=mysql://${DATABASE_USER}:${DATABASE_PASSWORD}@sqldb/${DATABASE_NAME}?charset=utf8mb4&serverVersion=8.3.0"
