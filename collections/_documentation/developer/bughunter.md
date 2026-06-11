@@ -1,11 +1,13 @@
 ---
-title: Security advisories
+title: Reporting security issues
 ---
 
-This document describes how security vulnerabilities are handled for Kimai.
+This document is aimed at security researchers and describes how to report vulnerabilities in Kimai.
+
+If you want to know how we handle security issues and which ones have been reported, visit our [Security advisories]({% link _documentation/developer/security.md %}) page.
 
 ## Reporting a vulnerability
-
+ 
 Please do not report security vulnerabilities in the public issue tracker. Instead, use one of the following channels:
 
 - Email: [support@kimai.org](mailto:support@kimai.org)
@@ -60,37 +62,6 @@ To be considered, a report should:
 - AI-generated reports must be reviewed and validated by a human before submission. Posting raw LLM output, even if technically accurate, will not be credited unless a human researcher is available to answer follow-up questions.
 
 Reports that do not meet these criteria, or that demand payment before sharing details, will not receive a response.
-
-## Severity levels
-
-We rate security issues using four severity levels: `Low`, `Medium`, `High`, and `Critical`.
-
-Our GitHub advisories may include CVSS scores for reference, but we do not rely on CVSS as the primary basis for grading vulnerabilities. 
-In our view, CVSS does not adequately capture all the factors and context involved in assessing real-world impact.
-
-A rough guideline for how we classify security issues:
-
-- `Low`: read access to data that should not be accessible
-- `Medium`: write access to data that should not be accessible (e.g. XSS, CSRF)
-- `High`: permission escalation to admin level, escaping sandboxes, reading filesystem contents
-- `Critical`: system manipulation, passing authentication flows 
-
-We take additional details into account beyond this list. Each advisory is rated as a whole, and we
-particularly consider the permission level required for exploitation.
-
-For example: any issue that requires direct filesystem access or a **System-Admin** account to exploit is unlikely to be
-rated higher than `Medium`, as these preconditions significantly limit the realistic attack surface:
-- The **System-Admin** role is the Kimai equivalent of a **root** account and can easily delete all data in the system.
-- Users who already have filesystem access to the server have a variety of options to manipulate the system and do not need Kimai for that.
-
-## Published vulnerabilities
- 
-You can subscribe to all advisories via [Atom RSS Feed]({% link security.xml %}).
-
-{% assign advisories = site.security | reverse -%}
-{% for advisory in advisories -%}
-- {{ advisory.date | date: "%Y-%m-%d" }}: {% if advisory.severity == 'high' %}⚠️{% elsif advisory.severity == 'critical' %}🚨{% endif %}  [{{ advisory.title }}]({{ advisory.url }})
-{% endfor %}
 
 ## Not security issues
 
