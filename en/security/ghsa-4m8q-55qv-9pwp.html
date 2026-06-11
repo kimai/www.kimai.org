@@ -297,8 +297,8 @@
 By calling the timesheet list endpoint with another user’s ID, a teamlead could retrieve that user’s records without being assigned as teamlead of any team containing the target user.</p>
 
 <ul>
-  <li><strong>Required permission:</strong> <code class="language-plaintext highlighter-rouge">view_other_timesheet</code>, granted by default to <code class="language-plaintext highlighter-rouge">ROLE_TEAMLEAD</code>.</li>
-  <li><strong>Affected endpoint:</strong> <code class="language-plaintext highlighter-rouge">GET /api/timesheets</code> when called with a <code class="language-plaintext highlighter-rouge">user</code> or <code class="language-plaintext highlighter-rouge">users[]</code> parameter.</li>
+  <li>Required permission: <code class="language-plaintext highlighter-rouge">view_other_timesheet</code>, granted by default to <code class="language-plaintext highlighter-rouge">ROLE_TEAMLEAD</code>.</li>
+  <li>Affected endpoint: <code class="language-plaintext highlighter-rouge">GET /api/timesheets</code> when called with a <code class="language-plaintext highlighter-rouge">user</code> or <code class="language-plaintext highlighter-rouge">users[]</code> parameter.</li>
   <li>The per-record endpoint <code class="language-plaintext highlighter-rouge">GET /api/timesheets/{id}</code> already enforced the correct check and was not affected.</li>
   <li>All Kimai installations were affected.</li>
 </ul>

@@ -297,8 +297,8 @@
 Anyone with permission to edit a customer’s invoice text could trigger this behavior by embedding a specially crafted image reference in that field.</p>
 
 <ul>
-  <li><strong>Affected feature:</strong> Invoice PDF preview and generation</li>
-  <li><strong>Required access:</strong> Permission to edit customer records (the customer <em>Invoice Text</em>) and to create invoices, both typically available to admin users only.</li>
+  <li>Affected feature: Invoice PDF preview and generation</li>
+  <li>Required access: Permission to edit customer records (the customer <em>Invoice Text</em>) and to create invoices, both typically available to admin users only.</li>
   <li>The customer invoice text field supports Markdown formatting. When a Markdown image is included in that field, Kimai converts it to HTML and passes it to the PDF rendering engine (mPDF). mPDF then fetches the image URL directly from the application server, without any restriction on which addresses it may contact.</li>
   <li>This allows an attacker to cause the Kimai server to make requests to internal services, metadata endpoints, or attacker-controlled infrastructure — destinations that wouldn’t be reachable from outside the network under normal circumstances.</li>
   <li>All Kimai installations are affected.</li>
@@ -309,8 +309,9 @@ Anyone with permission to edit a customer’s invoice text could trigger this be
 <ul>
   <li>Kimai no longer renders Markdown image syntax. Images are converted to plain links instead, so the PDF renderer doesn’t fetch remote URLs from the customer <em>Invoice Text</em>.</li>
   <li>mPDF now uses a restricted HTTP client (<code class="language-plaintext highlighter-rouge">NoPrivateNetworkHttpClient</code>) that blocks requests to private network addresses, limiting the scope of any remaining image-loading behavior. See the <a href="https://www.kimai.org/documentation/pdf-templates.html#embedding-images">PDF templates documentation</a> for details on which image sources are still supported.</li>
-  <li><strong>Note:</strong> These changes may be a breaking change if your invoice or export templates previously embedded images hosted on the Kimai domain itself or on an internal IP address.</li>
 </ul>
+
+<p><strong>Note:</strong> These changes may be a breaking change if your invoice or export templates previously embedded images hosted on the Kimai domain itself or on an internal IP address.</p>
 
 
 <p>Users should update to <code class="language-plaintext">2.58.0</code> or newer.</p>
