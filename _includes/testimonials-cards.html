@@ -37,7 +37,7 @@
             <div class="test-start">
                 {{ testimonial.text | markdownify }}
             </div>
-            <p class="text-muted fs-xs">{{ testimonial.date | date: "%B %-d, %Y" }}</p>
+            <p class="text-muted fs-xs">{{ testimonial.date | date: site.date_format[page.lang] }}</p>
         </div>
     </div>
 </div>
