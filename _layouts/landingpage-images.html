@@ -38,35 +38,17 @@ layout: base
     </section>
 
     <section class="container mt-3 mb-5 pt-lg-5" id="benefits">
-        <div class="swiper pt-3" data-swiper-options='{
-          "slidesPerView": 1,
-          "pagination": {
-            "el": ".swiper-pagination",
-            "clickable": true
-          },
-          "breakpoints": {
-            "500": {
-              "slidesPerView": 2
-            },
-            "991": {
-              "slidesPerView": {{ page.features.size }}
-            }
-          }
-        }'>
-            <div class="swiper-wrapper pt-4">
+        <div class="row align-items-center pt-4">
 
-                {% for feature in page.features %}
-                <div class="swiper-slide {% unless forloop.last %}border-end-lg{% endunless %} px-2">
-                    <div class="text-center">
-                        <img src="{{ feature.image }}" width="48" alt="{{ feature.text }} logo" class="d-block mb-4 mx-auto">
-                        <h4 class="mb-2 pb-1">{{ feature.title }}</h4>
-                        <p class="mx-auto" style="max-width: 336px;">{{ feature.text }}</p>
-                    </div>
+            {% for feature in page.features %}
+            <div class="col col-xs-12 {% unless forloop.last %}border-end-lg{% endunless %} px-2">
+                <div class="text-center">
+                    <img src="{{ feature.image }}" width="48" alt="{{ feature.text }} logo" class="d-block mb-4 mx-auto">
+                    <h4 class="mb-2 pb-1">{{ feature.title }}</h4>
+                    <p class="mx-auto" style="max-width: 336px;">{{ feature.text }}</p>
                 </div>
-                {% endfor %}
             </div>
-
-            <div class="swiper-pagination position-relative pt-2 pt-sm-3 mt-4"></div>
+            {% endfor %}
         </div>
     </section>
 
