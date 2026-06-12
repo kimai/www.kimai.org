@@ -1,8 +1,14 @@
+$prefix:                    bs- !default;
+
 $pre-padding-y:             0.1rem !default;
 $pre-padding-x:             0.5rem !default;
 $pre-bg:                    #eee !default;
-$enable-dark-mode:          false;
-$success:                   #14873f !default;
+//$success:                   #14873f !default;
+$success:                   #00a63e !default;
+$warning:                   #e3920a !default;
+$danger:                    #e0474c !default;
+$info:                      #14a89a !default;
+$primary:                   #00a63e !default;
 
 $font-weight-normal:        400 !default;
 $font-weight-medium:        500 !default;
@@ -12,3 +18,104 @@ $font-weight-bold:          600 !default;
 $dropdown-link-hover-bg:    #efefef !default;
 $font-weight-normal:        400 !default;
 $display-font-weight:       $font-weight-normal;
+
+$dark:                      #717a71 !default;
+$body-bg-dark:              #717a71 !default;
+
+:root {
+    /* ---- Brand green â€” anchored on the logo radial (#009d39 â†’ #01fd00) ---- */
+    --green-50:  #e8f9ef;
+    --green-100: #c7f0d6;
+    --green-200: #92e3b1;
+    --green-300: #57d287;
+    --green-400: #1fbb60;
+    --green-500: $primary;   /* PRIMARY â€” logo core / default button fill */
+    --green-600: #008a35;   /* hover */
+    --green-700: #006e2b;   /* active / pressed */
+    --green-800: #075524;
+    --green-900: #0a431e;
+
+    /* ---- Warm-neutral grays (de-blued; faint green-leaning undertone) ---- */
+    --gray-0:   #ffffff;
+    --gray-25:  #fafbfa;
+    --gray-50:  #f4f6f4;
+    --gray-100: #e9ece9;
+    --gray-200: #d9ddd9;
+    --gray-300: #c0c6c0;
+    --gray-400: #9aa29a;
+    --gray-500: #717a71;
+    --gray-600: #545d54;
+    --gray-700: #3e453e;
+    --gray-800: #2a302a;
+    --gray-900: #1a1f1a;
+    --gray-950: #0e120e;
+
+    /* ---- Dark surface ---- */
+    --ink-900: #101713;   /* darkest hero / footer ground */
+    --ink-800: #16201a;   /* raised dark card */
+    --ink-700: #1f2a23;   /* dark borders / dividers */
+
+    /* ---- Semantic ramps ---- */
+    --amber-50:  #fdf6e7;
+    --amber-100: #fae9c2;
+    --amber-400: #f0a821;
+    --amber-500: #e3920a;   /* "Cloud" badge / notice */
+    --amber-600: #bd7606;
+    --red-50:  #fdecec;
+    --red-100: #f9d2d3;
+    --red-500: #e0474c;     /* danger / discount tag */
+    --red-600: #c2353a;
+    --teal-50:  #e6f6f4;
+    --teal-500: #14a89a;    /* info â€” a calm teal that harmonizes with green */
+    --teal-600: #0e8579;
+
+    /* ============================================================
+       SEMANTIC ALIASES â€” reach for these, not the raw ramps.
+       ============================================================ */
+
+    /* Brand / primary action */
+    --brand:            var(--green-500);
+    --brand-hover:      var(--green-600);
+    --brand-active:     var(--green-700);
+    --brand-subtle:     var(--green-50);
+    --brand-subtle-2:   var(--green-100);
+    --brand-border:     var(--green-200);
+    --brand-on:         #ffffff;            /* text/icon on a brand fill */
+
+    /* Text */
+    --text-strong:      var(--gray-900);
+    --text-body:        var(--gray-700);
+    --text-muted:       var(--gray-500);
+    --text-subtle:      var(--gray-400);
+    --text-on-dark:     #ffffff;
+    --text-on-dark-mut: #aeb6ae;
+    --text-brand:       var(--green-600);
+    --text-link:        var(--green-600);
+
+    /* Surfaces */
+    --surface-page:     var(--gray-0);
+    --surface-muted:    var(--gray-50);
+    --surface-card:     var(--gray-0);
+    --surface-tint:     var(--green-50);     /* light-green section / eyebrow ground */
+    --surface-dark:     var(--ink-900);
+    --surface-dark-raised: var(--ink-800);
+
+    /* Borders */
+    --border:           var(--gray-200);
+    --border-strong:    var(--gray-300);
+    --border-dark:      var(--ink-700);
+    --border-focus:     var(--green-500);
+
+    /* Semantic states */
+    --success:          var(--green-500);
+    --success-subtle:   var(--green-50);
+    --warning:          var(--amber-500);
+    --warning-subtle:   var(--amber-50);
+    --danger:           var(--red-500);
+    --danger-subtle:    var(--red-50);
+    --info:             var(--teal-500);
+    --info-subtle:      var(--teal-50);
+
+    /* Focus ring */
+    --focus-ring:       0 0 0 3px rgba(0, 166, 62, 0.30);
+}

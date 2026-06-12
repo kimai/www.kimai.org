@@ -1,0 +1,197 @@
+//
+// Card
+// --------------------------------------------------
+
+
+// Header and footer
+
+.card-header,
+.card-footer {
+  width: calc(100% - (var(--#{$prefix}card-spacer-x) * 2));
+  padding: {
+    right: 0;
+    left: 0;
+  }
+  margin: auto;
+}
+
+
+// Header navs
+
+.card-header-tabs,
+.card-header-pills {
+  margin: 0;
+  .nav-item {
+    margin-bottom: 0;
+  }
+  .nav-link.active {
+    background-color: var(--#{$prefix}nav-tabs-link-active-bg);
+    border-color: var(--#{$prefix}nav-tabs-link-active-border-color);
+  }
+
+  &.nav-tabs-alt {
+    margin: {
+      top: calc(var(--#{$prefix}card-cap-padding-y) * -.625);
+      bottom: calc((var(--#{$prefix}card-cap-padding-y) + .0625rem) * -1);
+    }
+    border-bottom: 0;
+  }
+}
+.card-header-pills .nav-link.active {
+  background-color: var(--#{$prefix}nav-pills-link-active-bg);
+}
+
+
+// Hover effect
+
+.card-hover:not(.bg-transparent) {
+  transition: $card-transition;
+  &:hover {
+    transform: translateY(-.25rem);
+    @include box-shadow($box-shadow-sm);
+  }
+  &.shadow-sm:hover {
+    @include box-shadow($box-shadow !important); // stylelint-disable-line declaration-no-important
+  }
+  &.shadow:hover {
+    @include box-shadow($box-shadow-lg !important); // stylelint-disable-line declaration-no-important
+  }
+  &.border-primary:hover {
+    @include box-shadow($box-shadow-primary !important); // stylelint-disable-line declaration-no-important
+  }
+}
+.card-hover {
+  --#{$prefix}card-icon-hover-color: #{$primary};
+
+  .card-img-overlay {
+    z-index: 5;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+  }
+  .card-icon {
+    transition: color .3s ease-in-out;
+  }
+  &:hover {
+    .card-icon {
+      color: var(--#{$prefix}card-icon-hover-color) !important; // stylelint-disable-line declaration-no-important
+    }
+    .card-img-overlay {
+      opacity: 1;
+    }
+  }
+}
+
+.card-hover-primary {
+  transition: $card-transition;
+  &.shadow-sm:hover,
+  &.shadow:hover,
+  &:hover {
+    @include box-shadow($box-shadow-primary !important); // stylelint-disable-line declaration-no-important
+  }
+  .card-title,
+  .card-body,
+  .text-muted,
+  .text-dark,
+  .text-nav,
+  .text-primary,
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4,
+  h5,
+  .h5,
+  h6,
+  .h6 {
+    transition: color .2s ease-in-out;
+  }
+  .border-top,
+  .border-end,
+  .border-bottom,
+  .border-start {
+    transition: border-color .2s ease-in-out;
+  }
+  .bg-secondary {
+    transition: background-color .2s ease-in-out;
+  }
+  &:hover {
+    background-color: var(--#{$prefix}primary) !important; // stylelint-disable-line declaration-no-important
+    border-color: var(--#{$prefix}primary) !important; // stylelint-disable-line declaration-no-important
+    .card-title { color: $white; }
+    .card-body { color: rgba($white, .7); }
+    .text-muted { color: rgba($white, .5) !important; } // stylelint-disable-line declaration-no-important
+    .text-primary { color: $white !important; } // stylelint-disable-line declaration-no-important
+    .border-top,
+    .border-end,
+    .border-bottom,
+    .border-start {
+      border-color: $border-light-color !important; // stylelint-disable-line declaration-no-important
+    }
+    .bg-secondary {
+      background-color: rgba($white, .05) !important; // stylelint-disable-line declaration-no-important
+    }
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4,
+    h5,
+    .h5,
+    h6,
+    .h6 {
+      color: $white !important; // stylelint-disable-line declaration-no-important
+      > a { color: $white !important; } // stylelint-disable-line declaration-no-important
+    }
+    .text-dark:not(.badge.bg-white) { color: $white !important; } // stylelint-disable-line declaration-no-important
+    .text-nav:not(.badge.bg-white) { color: $nav-link-color-dark !important; } // stylelint-disable-line declaration-no-important
+  }
+}
+
+
+// Portfolio card
+
+.card-portfolio {
+  background-color: transparent;
+  border: 0;
+
+  .card-img {
+    @include border-radius(var(--#{$prefix}card-border-radius));
+    overflow: hidden;
+    transform: translateZ(0);
+
+    > img {
+      display: block;
+      transition: transform .35s ease-in-out;
+    }
+  }
+
+  .card-body {
+    padding: {
+      right: 0;
+      left: 0;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .card-portfolio-meta {
+      opacity: 0;
+      transition: opacity .35s ease-in-out;
+    }
+
+    &:hover {
+      .card-img > img {
+        transform: scale(1.05);
+      }
+      .card-portfolio-meta {
+        opacity: 1;
+      }
+    }
+  }
+}
+

@@ -1,0 +1,389 @@
+//
+// Forms
+// --------------------------------------------------
+
+
+// Remove default -webkit search input clear button
+
+/* stylelint-disable selector-no-qualifying-type */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+
+// Remove default -webkit time input icon
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+  background: none;
+}
+/* stylelint-enable selector-no-qualifying-type */
+
+// Select
+
+.form-select {
+  &:focus {
+    @include box-shadow($input-focus-box-shadow);
+  }
+}
+
+
+// Disabled input
+
+.form-control:disabled,
+.form-select:disabled {
+  cursor: not-allowed;
+  box-shadow: none !important; // stylelint-disable-line declaration-no-important
+}
+
+.form-control[readonly],
+.form-control:disabled {
+  box-shadow: none !important; // stylelint-disable-line declaration-no-important
+  &::placeholder {
+    color: $input-disabled-placeholder-color;
+  }
+}
+
+
+// Label
+
+label {
+  font-size: $form-label-font-size;
+}
+.form-floating > label {
+  font-weight: $form-label-font-weight;
+
+  &::after {
+    background-color: transparent !important; // stylelint-disable-line declaration-no-important
+  }
+}
+
+
+// Fix checkbox / radio position inside input group addon
+
+.input-group-text .form-check-input {
+  margin-top: 0;
+}
+
+.form-check-input:focus {
+  box-shadow: none;
+}
+
+
+// Form switch
+
+.form-switch {
+  margin-bottom: $form-switch-margin-bottom;
+
+  .form-check-input {
+    height: $form-switch-height;
+    margin-top: unset;
+    background-color: $form-switch-bg;
+    filter: none;
+    border: unset;
+    &:checked {
+      background-color: $form-switch-checked-bg;
+      @include box-shadow($form-switch-checked-box-shadow);
+    }
+    &:disabled { box-shadow: none; }
+  }
+
+  &.mode-switch,
+  &.price-switch {
+    display: flex;
+    padding-left: 0;
+    margin-bottom: 0;
+    .form-check-label {
+      transition: color .15s ease-in-out;
+      font: {
+        size: $font-size-base;
+        weight: $font-weight-medium;
+      }
+      &:first-of-type {
+        order: 1;
+        margin-right: $spacer * .75;
+        color: $gray-900;
+      }
+      &:last-of-type {
+        order: 3;
+        margin-left: $spacer * .75;
+      }
+    }
+    .form-check-input {
+      order: 2;
+      margin-left: 0;
+      background-color: $form-switch-checked-bg;
+      @include box-shadow($form-switch-checked-box-shadow);
+      &:checked {
+        ~ .form-check-label:first-of-type {
+          color: $body-color;
+        }
+        ~ .form-check-label:last-of-type {
+          color: $gray-900;
+        }
+      }
+    }
+  }
+  &.mode-switch .form-check-input:checked {
+    background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 21 26'><path d='M4 22.1679C7.5318 20.6248 9.99998 17.1006 9.99998 13C9.99998 8.89937 7.5318 5.37521 4 3.8321C5.22493 3.2969 6.5778 3 8.00002 3C13.5229 3 18 7.47715 18 13C18 18.5228 13.5229 23 8.00002 23C6.5778 23 5.22493 22.7031 4 22.1679Z' fill='#{$form-switch-checked-color}'/></svg>"));
+  }
+
+  &.form-switch-success .form-check-input:checked {
+    background-color: $success;
+    @include box-shadow($box-shadow-success);
+  }
+}
+
+
+// Password visibility toggle
+
+.password-toggle {
+  position: relative;
+  .form-control {
+    padding-right: $font-size-base + ($spacer * 2);
+  }
+}
+
+.password-toggle-btn {
+  position: absolute;
+  top: 50%;
+  right: .625rem;
+  padding: $spacer * .5;
+  margin-bottom: 0;
+  font-size: $btn-font-size-lg;
+  line-height: 1;
+  cursor: pointer;
+  transform: translateY(-50%);
+
+  .password-toggle-indicator {
+    color: $gray-600;
+    transition: color .2s ease-in-out;
+    font: {
+      family: $icons-font-family;
+      size: 1.25em;
+      style: normal;
+    }
+    &::before { content: "\ec0d"; }
+    &:hover { color: $gray-800; }
+  }
+
+  .password-toggle-check {
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    width: 1rem;
+    height: 1.25rem;
+    opacity: 0;
+
+    &:checked ~ .password-toggle-indicator::before {
+      content: "\eb0e";
+    }
+  }
+}
+
+
+// Form validation
+
+.valid-tooltip {
+  position: static;
+  color: $form-feedback-tooltip-valid-color;
+  background-color: $form-feedback-tooltip-valid-bg;
+}
+.invalid-tooltip {
+  position: static;
+  color: $form-feedback-tooltip-invalid-color;
+  background-color: $form-feedback-tooltip-invalid-bg;
+}
+
+.was-validated :invalid ~ .invalid-tooltip,
+.is-invalid ~ .invalid-tooltip,
+.was-validated :valid ~ .valid-tooltip,
+.is-valid ~ .valid-tooltip {
+  display: table;
+}
+
+.was-validated :valid:not(:required):not(.btn):not(.form-check-input),
+.is-valid:not(:required):not(.btn):not(.form-check-input) {
+  background-image: none;
+  border-color: $input-border-color !important; // stylelint-disable-line declaration-no-important
+  &:focus {
+    border-color: $input-focus-border-color !important; // stylelint-disable-line declaration-no-important
+    @include box-shadow($input-focus-box-shadow);
+  }
+}
+
+.was-validated .password-toggle .form-control:invalid,
+.was-validated .password-toggle .form-control.is-invalid,
+.was-validated .password-toggle .form-control:valid,
+.was-validated .password-toggle .form-control.is-valid {
+  padding-right: 4rem;
+  + .password-toggle-btn { right: 2.1rem; }
+}
+
+.was-validated .input-group .form-control:invalid,
+.was-validated .input-group .form-control:valid {
+  z-index: 4;
+}
+
+
+// Form-check validation highlighting fix
+
+.was-validated .form-check-input:valid:checked,
+.form-check-input.is-valid:checked {
+  background-color: $form-check-input-checked-bg-color;
+  border-color: $form-check-input-checked-border-color;
+  @include box-shadow(none);
+}
+.was-validated .form-check-input:invalid:checked,
+.form-check-input.is-invalid:checked {
+  background-color: transparent;
+  border-color: $form-check-input-border;
+}
+.was-validated .form-check-input:valid,
+.was-validated .form-check-input.is-valid {
+  border-color: $gray-500;
+  ~ .form-check-label {
+    color: inherit;
+  }
+}
+
+
+// Range slider
+
+.range-slider {
+  --#{$prefix}range-slider-hight: #{$range-slider-height};
+  --#{$prefix}range-slider-bg: #{$range-slider-bg};
+  --#{$prefix}range-slider-connect-bg: #{$range-slider-connect-bg};
+  --#{$prefix}range-slider-handle-size: #{$range-slider-handle-size};
+  --#{$prefix}range-slider-handle-bg: #{$range-slider-handle-bg};
+  --#{$prefix}range-slider-handle-border-radius: 50%;
+  --#{$prefix}range-slider-handle-shadow: #{$range-slider-handle-box-shadow};
+  --#{$prefix}range-slider-pips-color: var(--#{$prefix}body-color);
+  --#{$prefix}range-slider-pips-font-size: #{$range-slider-pips-font-size};
+  --#{$prefix}range-slider-pips-border-width: var(--#{$prefix}border-width);
+  --#{$prefix}range-slider-pips-border-color: #{darken($border-color, 6%)};
+  --#{$prefix}range-slider-tooltip-padding-y: #{$tooltip-padding-y};
+  --#{$prefix}range-slider-tooltip-padding-x: #{$tooltip-padding-x};
+  --#{$prefix}range-slider-tooltip-bg: #{$range-slider-tooltip-bg};
+  --#{$prefix}range-slider-tooltip-color: #{$range-slider-tooltip-color};
+  --#{$prefix}range-slider-tooltip-font-size: #{$range-slider-tooltip-font-size};
+  --#{$prefix}range-slider-tooltip-border-radius: #{$tooltip-border-radius};
+}
+
+.range-slider-ui {
+  height: var(--#{$prefix}range-slider-hight);
+  margin: 0;
+  margin: {
+    top: 3.25rem;
+    right: 0;
+    bottom: 1.75rem;
+    left: 0;
+  }
+  background-color: var(--#{$prefix}range-slider-bg);
+  border: 0;
+  box-shadow: none;
+
+  [data-pips] & {
+    margin-bottom: 3.5rem;
+  }
+
+  /* stylelint-disable selector-class-pattern */
+  .noUi-connect {
+    background-color: var(--#{$prefix}range-slider-connect-bg);
+  }
+
+  .noUi-handle {
+    top: 50%;
+    width: var(--#{$prefix}range-slider-handle-size);
+    height: var(--#{$prefix}range-slider-handle-size);
+    margin-top: calc(var(--#{$prefix}range-slider-handle-size) * -.5);
+    background-color: var(--#{$prefix}range-slider-handle-bg);
+    border: 0;
+    border-radius: var(--#{$prefix}range-slider-handle-border-radius);
+    box-shadow: var(--#{$prefix}range-slider-handle-shadow);
+    &::before,
+    &::after { display: none; }
+    &:focus { outline: none; }
+  }
+
+  .noUi-marker-normal { display: none; }
+  .noUi-marker-horizontal {
+    &.noUi-marker {
+      width: var(--#{$prefix}range-slider-pips-border-width);
+      background-color: var(--#{$prefix}range-slider-pips-border-color);
+    }
+    &.noUi-marker-large { height: .75rem; }
+  }
+  .noUi-value {
+    padding-top: .125rem;
+    font-size: var(--#{$prefix}range-slider-pips-font-size);
+    color: var(--#{$prefix}range-slider-pips-color);
+  }
+
+  .noUi-tooltip {
+    padding: var(--#{$prefix}range-slider-tooltip-padding-y) var(--#{$prefix}range-slider-tooltip-padding-x);
+    font-size: var(--#{$prefix}range-slider-tooltip-font-size);
+    line-height: 1.2;
+    color: var(--#{$prefix}range-slider-tooltip-color);
+    background-color: var(--#{$prefix}range-slider-tooltip-bg);
+    border: 0;
+    @include border-radius(var(--#{$prefix}range-slider-tooltip-border-radius));
+  }
+}
+html:not([dir="rtl"]) .range-slider-ui.noUi-horizontal .noUi-handle {
+  right: calc(var(--#{$prefix}range-slider-handle-size) * -.5);
+}
+/* stylelint-enable selector-class-pattern */
+
+
+// Subscription form status
+
+.subscription-status {
+  display: table;
+  @include border-radius($border-radius-sm);
+  font-size: $font-size-base * .8125;
+  &.status-success,
+  &.status-error {
+    padding: .25rem .5rem;
+    margin-top: .5rem;
+  }
+  &.status-success {
+    color: darken($success, 10%);
+    background-color: rgba($success, .1);
+  }
+  &.status-error {
+    color: $danger;
+    background-color: rgba($danger, .1);
+  }
+}
+
+// Credit card interactive icon
+
+.credit-card-icon {
+  width: 40px;
+  height: 26px;
+
+  /* stylelint-disable declaration-no-important */
+  &.amex {
+    background-position: 0 -52px !important;
+  }
+  &.diners {
+    background-position: 0 -78px !important;
+  }
+  &.discover {
+    background-position: 0 -104px !important;
+  }
+  &.jcb {
+    background-position: 0 -130px !important;
+  }
+  &.mastercard {
+    background-position: 0 -156px !important;
+  }
+  &.visa {
+    background-position: 0 -182px !important;
+  }
+  /* stylelint-enable declaration-no-important */
+}
+

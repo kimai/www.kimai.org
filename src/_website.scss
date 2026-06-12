@@ -1,71 +1,65 @@
-@if $enable-dark-mode {
-/*
-    The dark-mode is globally disabled to reduce file size.
-    But the theme has a few bugs, as it does not consider .bg-dark as 'dark mode'...
- */
-} @else {
-    .bg-dark {
-        --#{$prefix}heading-color: #fff;
-        --#{$prefix}body-color: rgba(255, 255, 255, 0.7);
-        --#{$prefix}navbar-brand-color: #fff;
-        --#{$prefix}navbar-brand-hover-color: #fff;
-        --#{$prefix}border-color: rgba(255, 255, 255, 0.14);
 
-        .list-group-item.active {
-            box-shadow: none;
-        }
+.bg-dark {
+    --#{$prefix}heading-color: #fff;
+    --#{$prefix}body-color: rgba(255, 255, 255, 0.7);
+    --#{$prefix}navbar-brand-color: #fff;
+    --#{$prefix}navbar-brand-hover-color: #fff;
+    --#{$prefix}border-color: rgba(255, 255, 255, 0.14);
 
-        .list-group-item-action {
-            --#{$prefix}list-group-action-color: rgba(255, 255, 255, 0.85);
-        }
-
-        .nav {
-            --#{$prefix}nav-link-color: rgba(255, 255, 255, 0.85);
-        }
-
-        .btn-secondary:not(.bg-white) {
-            --#{$prefix}btn-color: rgba(#{to-rgb($light)}, .85);
-            --#{$prefix}btn-hover-color: #{$light};
-            --#{$prefix}btn-active-color: #{$light};
-            --#{$prefix}btn-border-color: transparent;
-            --#{$prefix}btn-hover-border-color: transparent;
-            --#{$prefix}btn-active-border-color: transparent;
-            --#{$prefix}btn-bg: rgba(#{to-rgb($light)}, .06);
-            --#{$prefix}btn-hover-bg: rgba(#{to-rgb($light)}, .12);
-            --#{$prefix}btn-active-bg: rgba(#{to-rgb($light)}, .12);
-            --#{$prefix}btn-disabled-bg: rgba(#{to-rgb($light)}, .05);
-            --#{$prefix}btn-disabled-border-color: transparent;
-        }
-
-        .btn-prev, .btn-next {
-            --#{$prefix}carousel-nav-btn-bg: #{$carousel-nav-btn-bg-dark};
-            --#{$prefix}carousel-nav-btn-color: #{$carousel-nav-btn-color-dark};
-            --#{$prefix}carousel-nav-btn-box-shadow: none;
-            --#{$prefix}carousel-nav-btn-disabled-color: rgba(#{to-rgb($carousel-nav-btn-color-dark)}, .5);
-        }
-
-        .form-select {
-            color: $input-color-dark;
-            background-color: $input-bg-dark;
-            border-color: $input-border-color-dark;
-            &:focus {
-                border-color: $input-focus-border-color-dark;
-                box-shadow: none;
-            }
-            &:disabled,
-            &[readonly] {
-                background-color: $input-disabled-bg-dark;
-                border-color: $input-disabled-border-color-dark;
-            }
-        }
-
+    .list-group-item.active {
+        box-shadow: none;
     }
 
-    /* Only used on pricing page on a dark background */
-    .form-switch.price-switch {
-        .form-check-label {
-            color: #fff !important;
+    .list-group-item-action {
+        --#{$prefix}list-group-action-color: rgba(255, 255, 255, 0.85);
+    }
+
+    .nav {
+        --#{$prefix}nav-link-color: rgba(255, 255, 255, 0.85);
+    }
+
+    .btn-secondary:not(.bg-white) {
+        --#{$prefix}btn-color: rgba(#{to-rgb($light)}, .85);
+        --#{$prefix}btn-hover-color: #{$light};
+        --#{$prefix}btn-active-color: #{$light};
+        --#{$prefix}btn-border-color: transparent;
+        --#{$prefix}btn-hover-border-color: transparent;
+        --#{$prefix}btn-active-border-color: transparent;
+        --#{$prefix}btn-bg: rgba(#{to-rgb($light)}, .06);
+        --#{$prefix}btn-hover-bg: rgba(#{to-rgb($light)}, .12);
+        --#{$prefix}btn-active-bg: rgba(#{to-rgb($light)}, .12);
+        --#{$prefix}btn-disabled-bg: rgba(#{to-rgb($light)}, .05);
+        --#{$prefix}btn-disabled-border-color: transparent;
+    }
+
+    .btn-prev, .btn-next {
+        --#{$prefix}carousel-nav-btn-bg: #{$carousel-nav-btn-bg-dark};
+        --#{$prefix}carousel-nav-btn-color: #{$carousel-nav-btn-color-dark};
+        --#{$prefix}carousel-nav-btn-box-shadow: none;
+        --#{$prefix}carousel-nav-btn-disabled-color: rgba(#{to-rgb($carousel-nav-btn-color-dark)}, .5);
+    }
+
+    .form-select {
+        color: $input-color-dark;
+        background-color: $input-bg-dark;
+        border-color: $input-border-color-dark;
+        &:focus {
+            border-color: $input-focus-border-color-dark;
+            box-shadow: none;
         }
+        &:disabled,
+        &[readonly] {
+            background-color: $input-disabled-bg-dark;
+            border-color: $input-disabled-border-color-dark;
+        }
+    }
+
+}
+
+/* Only used on pricing page on a dark background */
+.form-switch.price-switch {
+    .form-check-label {
+        color: #fff !important;
     }
 }
 
@@ -77,7 +71,7 @@
 
 /* store items */
 .btn-buy {
-    --si-btn-font-size: 1.2rem;
+    --bs-btn-font-size: 1.2rem;
     text-transform: capitalize;
 }
 
@@ -98,7 +92,7 @@ div.highlighter-rouge {
 }
 
 .side-nav.side-nav-end .nav-link {
-    --si-side-nav-link-padding-y: 0.15rem;
+    --bs-side-nav-link-padding-y: 0.15rem;
     padding-right: 0;
 }
 
@@ -299,6 +293,9 @@ blockquote {
 
 .navbar-nav .nav-link.active {
     pointer-events: unset;
+    background-color: var(--green-100);
+    border-radius: 10px;
+    color: var(--green-900);
 }
 
 pre {
@@ -377,7 +374,7 @@ pre {
 .docs-search-results mark {
     padding: 0;
     background: transparent;
-    color: var(--si-primary);
+    color: var(--bs-primary);
     font-weight: 600;
 }
 
@@ -446,4 +443,9 @@ pre {
     .navbar .language-dropdown:hover > .dropdown-menu.show {
         display: block;
     }
+}
+
+/* Newsletter input */
+input:user-invalid {
+    border-color: $form-feedback-invalid-color;
 }

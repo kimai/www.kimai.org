@@ -1,0 +1,27 @@
+//
+// Modal
+// --------------------------------------------------
+
+
+.modal-content {
+  padding: {
+    right: var(--#{$prefix}modal-padding);
+    left: var(--#{$prefix}modal-padding);
+  }
+}
+
+.modal-header,
+.modal-footer {
+  padding: {
+    right: 0;
+    left: 0;
+  }
+}
+
+.modal-body {
+  margin: {
+    right: calc(var(--#{$prefix}modal-padding) * -1);
+    left: calc(var(--#{$prefix}modal-padding) * -1);
+  }
+}
+

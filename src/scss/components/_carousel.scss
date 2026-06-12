@@ -1,0 +1,345 @@
+//
+// Carousel
+// Based on https://github.com/nolimits4web/swiper
+// --------------------------------------------------
+
+
+// Navigation (Prev / Next) buttons
+
+.btn-prev,
+.btn-next {
+  --#{$prefix}carousel-nav-btn-border-radius: #{$carousel-nav-btn-border-radius};
+  --#{$prefix}carousel-nav-btn-bg: #{$carousel-nav-btn-bg};
+  --#{$prefix}carousel-nav-btn-color: #{$carousel-nav-btn-color};
+  --#{$prefix}carousel-nav-btn-box-shadow: #{$carousel-nav-btn-box-shadow};
+  --#{$prefix}carousel-nav-btn-hover-bg: #{$carousel-nav-btn-hover-bg};
+  --#{$prefix}carousel-nav-btn-hover-color: #{$carousel-nav-btn-hover-color};
+  --#{$prefix}carousel-nav-btn-hover-box-shadow: #{$carousel-nav-btn-hover-box-shadow};
+  --#{$prefix}carousel-nav-btn-disabled-color: rgba(#{to-rgb($carousel-nav-btn-color)}, .5);
+  --#{$prefix}carousel-nav-btn-font-size: #{$font-size-base};
+
+  font-size: var(--#{$prefix}carousel-nav-btn-font-size);
+  color: var(--#{$prefix}carousel-nav-btn-color) !important; // stylelint-disable-line declaration-no-important
+  background-color: var(--#{$prefix}carousel-nav-btn-bg);
+  border: 0;
+  @include border-radius(var(--#{$prefix}carousel-nav-btn-border-radius));
+  @include box-shadow(var(--#{$prefix}carousel-nav-btn-box-shadow));
+  transition: $carousel-nav-btn-transition;
+
+  &:focus {
+    background-color: var(--#{$prefix}carousel-nav-btn-bg);
+    @include box-shadow(var(--#{$prefix}carousel-nav-btn-box-shadow));
+  }
+
+  @if dark-mode {
+    &.bg-white {
+      color: $carousel-nav-btn-color !important; // stylelint-disable-line declaration-no-important
+    }
+  }
+
+  &:not(.bg-transparent):hover {
+    color: var(--#{$prefix}carousel-nav-btn-hover-color) !important; // stylelint-disable-line declaration-no-important
+    background-color: var(--#{$prefix}carousel-nav-btn-hover-bg) !important; // stylelint-disable-line declaration-no-important
+    @include box-shadow(var(--#{$prefix}carousel-nav-btn-hover-box-shadow) !important); // stylelint-disable-line declaration-no-important
+  }
+
+  > i { font-size: 1.5em; }
+  &.btn-sm > i { font-size: 1.25em; }
+  &.btn-lg > i { font-size: 1.75em; }
+  &.btn-xl > i { font-size: 2em; }
+}
+
+.swiper-button-disabled,
+.swiper-button-disabled:disabled {
+  color: var(--#{$prefix}carousel-nav-btn-disabled-color) !important; // stylelint-disable-line declaration-no-important
+  background-color: var(--#{$prefix}carousel-nav-btn-bg);
+  @include box-shadow(var(--#{$prefix}carousel-nav-btn-box-shadow) !important); // stylelint-disable-line declaration-no-important
+  opacity: 1;
+}
+.swiper-button-disabled.shadow-none,
+.swiper-button-disabled:disabled.shadow-none {
+  box-shadow: none !important; // stylelint-disable-line declaration-no-important
+}
+.pagination {
+  .swiper-button-disabled,
+  .swiper-button-disabled:disabled {
+    pointer-events: none;
+    background-color: transparent !important; // stylelint-disable-line declaration-no-important
+    box-shadow: none !important; // stylelint-disable-line declaration-no-important
+  }
+}
+
+.swiper {
+  .btn-prev:not(.position-static),
+  .btn-next:not(.position-static) {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    transform: translateY(-50%);
+  }
+  .btn-prev {
+    left: $spacer * 1.25;
+  }
+  .btn-next {
+    right: $spacer * 1.25;
+  }
+}
+
+.swiper-nav-onhover {
+  .btn-prev,
+  .btn-next {
+    opacity: 0 !important; // stylelint-disable-line declaration-no-important
+  }
+  &:hover .btn-prev,
+  &:hover .btn-next {
+    opacity: 1 !important; // stylelint-disable-line declaration-no-important
+  }
+}
+
+
+// Pagination
+
+// Bullets
+
+.swiper-pagination {
+  --#{$prefix}carousel-pagination-bullet-width: #{$carousel-bullet-width};
+  --#{$prefix}carousel-pagination-bullet-height: #{$carousel-bullet-height};
+  --#{$prefix}carousel-pagination-bullet-spacer: #{$carousel-bullet-spacer};
+  --#{$prefix}carousel-pagination-bullet-border-radius: #{$carousel-bullet-border-radius};
+  --#{$prefix}carousel-pagination-bullet-bg: #{$carousel-bullet-bg};
+  --#{$prefix}carousel-pagination-bullet-active-width: #{$carousel-bullet-active-width};
+  --#{$prefix}carousel-pagination-bullet-active-bg: #{$carousel-bullet-active-bg};
+  --#{$prefix}carousel-pagination-progressbar-height: #{$carousel-progressbar-height};
+  --#{$prefix}carousel-pagination-progressbar-bg: #{$carousel-progressbar-bg};
+  --#{$prefix}carousel-pagination-progressbar-fill-bg: #{$carousel-progressbar-fill-bg};
+
+  bottom: $spacer * 1.25;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.swiper-pagination-lock { display: none; }
+}
+
+.swiper-pagination-bullet {
+  width: var(--#{$prefix}carousel-pagination-bullet-width);
+  height: var(--#{$prefix}carousel-pagination-bullet-height);
+  background-color: var(--#{$prefix}carousel-pagination-bullet-bg);
+  @include border-radius(var(--#{$prefix}carousel-pagination-bullet-border-radius));
+  opacity: 1;
+  transition: $carousel-bullet-transition;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--#{$prefix}carousel-pagination-bullet-active-bg);
+}
+
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: $spacer * 1.25;
+  .swiper-pagination-bullet {
+    margin: {
+      right: calc(var(--#{$prefix}carousel-pagination-bullet-spacer) * .5);
+      left: calc(var(--#{$prefix}carousel-pagination-bullet-spacer) * .5);
+    }
+  }
+  .swiper-pagination-bullet-active {
+    width: var(--#{$prefix}carousel-pagination-bullet-active-width);
+  }
+}
+
+.swiper-vertical > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-vertical {
+  right: $spacer * 1.25;
+  flex-direction: column;
+  .swiper-pagination-bullet {
+    margin: {
+      top: calc(var(--#{$prefix}carousel-pagination-bullet-spacer) * .5);
+      bottom: calc(var(--#{$prefix}carousel-pagination-bullet-spacer) * .5);
+    }
+  }
+  .swiper-pagination-bullet-active {
+    height: var(--#{$prefix}carousel-pagination-bullet-active-width);
+  }
+}
+
+// Progress bar
+
+.swiper-pagination-progressbar {
+  background-color: var(--#{$prefix}carousel-pagination-progressbar-bg);
+
+  .swiper-pagination-progressbar-fill {
+    background-color: var(--#{$prefix}carousel-pagination-progressbar-fill-bg);
+  }
+}
+
+.swiper-horizontal > .swiper-pagination-progressbar,
+.swiper-pagination-progressbar.swiper-pagination-horizontal {
+  height: var(--#{$prefix}carousel-pagination-progressbar-height);
+}
+
+.swiper-vertical > .swiper-pagination-progressbar,
+.swiper-pagination-progressbar.swiper-pagination-vertical {
+  width: var(--#{$prefix}carousel-pagination-progressbar-height);
+}
+
+
+// Pager
+
+.page-link.btn-icon {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: $btn-icon-sm-size;
+  height: $btn-icon-sm-size;
+  padding: 0;
+}
+
+
+// Scrollbar
+
+.swiper-scrollbar {
+  --#{$prefix}carousel-scrollbar-width: #{$carousel-scrollbar-width};
+  --#{$prefix}carousel-scrollbar-bg: #{$carousel-scrollbar-bg};
+  --#{$prefix}carousel-scrollbar-drag-bg: #{$carousel-scrollbar-drag-bg};
+
+  background-color: var(--#{$prefix}carousel-scrollbar-bg);
+}
+
+.swiper-scrollbar-drag {
+  background-color: var(--#{$prefix}carousel-scrollbar-drag-bg);
+}
+
+.swiper-vertical > .swiper-scrollbar {
+  top: 0;
+  width: var(--#{$prefix}carousel-scrollbar-width);
+  height: 100%;
+}
+
+.swiper-horizontal > .swiper-scrollbar {
+  left: 0;
+  width: 100%;
+  height: var(--#{$prefix}carousel-scrollbar-width);
+}
+
+.scrollbar-hover {
+  .swiper-scrollbar {
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+  }
+  &:hover .swiper-scrollbar {
+    opacity: 1;
+  }
+}
+
+
+// Tabs
+
+.swiper-tabs {
+  position: relative;
+  height: 100%;
+}
+
+.swiper-tab {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+
+  &.active {
+    position: relative;
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+
+// Layer animations
+
+.from-top,
+.from-bottom,
+.from-start,
+.from-end,
+.scale-up,
+.scale-down,
+.fade-in {
+  opacity: 0;
+  transition: all .4s .4s ease-in-out;
+  backface-visibility: hidden;
+}
+.from-top {
+  transform: translateY(-2.25rem);
+}
+.from-bottom {
+  transform: translateY(2.25rem);
+}
+.from-start {
+  transform: translateX(-2.25rem);
+}
+.from-end {
+  transform: translateX(2.25rem);
+}
+.scale-up {
+  transform: scale(.85);
+}
+.scale-down {
+  transform: scale(1.15);
+}
+.delay-1 {
+  transition-delay: .5s;
+}
+.delay-2 {
+  transition-delay: .7s;
+}
+.delay-3 {
+  transition-delay: .9s;
+}
+.delay-4 {
+  transition-delay: 1.1s;
+}
+
+.swiper-slide-active {
+  .from-top,
+  .from-bottom {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .from-start,
+  .from-end {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .scale-up,
+  .scale-down {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .fade-in { opacity: 1; }
+}
+
+
+// Mobile app sliders
+
+.mobile-app-slider {
+  max-width: 328px;
+  border-radius: 4rem;
+  @include media-breakpoint-up(md) {
+    max-width: 100%;
+    .swiper-slide {
+      opacity: .8;
+      transition: opacity .3s ease-in-out;
+      &.swiper-slide-active {
+        opacity: 1;
+      }
+    }
+  }
+}
+
