@@ -4,39 +4,42 @@ keyword: "Time Log"
 intro: "A time log is a systematic record that documents the duration spent on various tasks and activities within a specific timeframe, serving as a tool for tracking and analyzing time usage."
 ---
 
-Step into a realm where time logging is being revolutionised - Kimai is at the forefront of open source time log software!
+Ever tried to reconstruct what you did last Tuesday? Most people can barely remember what they had for lunch. And yet, countless professionals attempt this exact feat every Friday afternoon when the time log is due. The result: rounded numbers, educated guesses, and a nagging feeling that something doesn't add up.
 
-### Kimai: Your premier open source time log solution
+A time log should build itself while you work — not require an act of creative writing at the end of the week. That's exactly what Kimai does.
 
-As you sift through available open source time-log solutions, Kimai stands out for its freedom, adaptability and complete ownership.
+### What a time log is for (and what it isn't)
 
-Amidst the many choices of time logging tools, Kimai shines as a beacon of supreme adaptability and mastery. It's the open source time log software that's a cut above for your needs.
+A time log is a record of how working hours were spent. It's not a surveillance tool, and it's not designed to squeeze every last minute of productivity out of people. At its best, a time log provides clarity: where did the time go, which projects absorbed the most effort, and are there patterns worth paying attention to?
 
-### Why choose Kimai as your time log software?
+**Consultants and service providers** use time logs to justify their invoices. A client who receives a detailed breakdown of hours — with dates, tasks, and durations — is far more likely to pay without questions than one who gets a single line item saying "consulting: 40 hours."
 
-Kimai is more than just a time log application; it's an innovator in project management and workforce monitoring. Here are compelling reasons to let Kimai lead your time logging efforts:
+**Project managers** use time logs to compare planned effort against actual effort. If a task was estimated at 10 hours but consistently takes 25, that's not a team performance problem — it's an estimation problem. The time log makes it visible.
 
-#### Tailored flexibility
+**Employees in regulated industries** keep time logs because they have to. Healthcare, government contracting, and legal work all require documented proof of how hours were spent. An accurate time log isn't optional — it's a compliance requirement.
 
-Get a time logging system that's not off-the-shelf, but tailored to your business. With Kimai you get a platform that easily adapts to your operational needs.
+### How Kimai keeps your time log accurate
 
-#### Dynamic features that drive efficiency
+The key to a useful time log is capturing data at the source. That means logging time while you work, not from memory days later. Kimai makes this frictionless: click start when you begin a task, click stop when you're done. The entry is recorded with timestamps, project assignment, and activity type.
 
-- **Streamlined time logging**: Track time effortlessly and focus on the tasks at hand.
-- **Project-Centric Tracking**: Accurately track time down to the task for accurate billing and insightful analysis.
-- **Crystal-clear reporting**: Create reports that shed light on your team's work dynamics and performance.
-- **Granular user permissions**: Create user roles and permissions that align with your organisational hierarchy and security protocols.
-- **Ubiquitous Access**: Kimai is available on all devices, whether desktop, tablet or mobile, ensuring that your time records are always within reach.
-- **Deep Customisation**: Tailor Kimai's functionality to fit seamlessly into your business model.
+For people who prefer to log time after the fact, Kimai offers manual entry and a weekly calendar view where you can fill in blocks of time. Both approaches produce the same structured time log — the difference is whether the clock runs live or you fill in the details later.
 
-#### Powered by community
+Every entry in your time log can carry additional context: a description of what you worked on, custom fields for cost centers or billing codes, and tags for filtering. This turns a bare list of hours into a rich, searchable record.
 
-Kimai thrives on collaboration and has a rich API that syncs with your existing systems for a unified experience.
+### From raw hours to useful insight
 
-The power of open source brings you a vibrant community for unparalleled support, enriched with continuous enhancements, add-ons and solutions. Share knowledge, solve problems and grow together.
+A time log becomes valuable when you look at it in aggregate. Kimai's reporting tools let you slice your time data by customer, project, team member, activity, or time period. Export the results as PDF, Excel, or CSV — whatever your accounting department, client, or project sponsor prefers.
 
-### The best open source time log application for you
+Common questions that a well-kept time log can answer: How profitable is this client? Is the support team spending more time on product A or product B? Did we underestimate development effort on the last three projects? The data is already there — Kimai helps you ask the right questions.
 
-When it comes to time logging, Kimai is more than a software solution - it is a strategic ally that evolves with your business. Take advantage of open source and improve your time log practices.
+### Why open source is the right choice for time logs
 
-Choose Kimai where advanced functionality meets limitless potential.
+Time logs contain detailed information about work patterns, productivity, and resource allocation. That's data you want to control. With Kimai's open-source codebase, you can run the software on your own servers, audit the code for security and privacy, and customize it to match your organization's needs.
+
+Self-hosting means your time log data never leaves your infrastructure. For organizations with strict data residency requirements or those who prefer not to depend on third-party cloud services, this is a decisive advantage.
+
+If managing servers isn't your thing, the Kimai Cloud provides a hosted option on European servers — with the same open-source code and the ability to export your data and move to self-hosting at any time.
+
+### Start logging time, not excuses
+
+Kimai is free to self-host, quick to set up in the cloud, and designed to make time logging a habit rather than a hassle. Try it and see how much easier your week-end reporting becomes when the data is already there.

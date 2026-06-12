@@ -1,45 +1,49 @@
 ---
 title: "Open-Source Timesheet"
 keyword: "Timesheet"
-intro: "Timesheet are documents or digital forms used to record and report the hours worked by an employee, including specific projects, tasks, or activities performed during their working time."
+intro: "Timesheets are documents or digital forms used to record and report the hours worked by an employee, including specific projects, tasks, or activities performed during their working time."
 ---
 
-Welcome to a world where timesheets meet innovation — Kimai is the cutting edge open source timesheet software!
+Nobody loves filling out timesheets. They rank somewhere between expense reports and mandatory compliance training on the list of things people enjoy at work. And yet, timesheets are the backbone of every project-based business. Without them, billing is guesswork, resource planning is fiction, and overtime disputes turn into he-said-she-said arguments.
 
-### The Premier Open Source Timesheet Software
+The good news: timesheets don't have to be painful. Kimai turns them from a dreaded Friday afternoon chore into something that happens almost by itself.
 
-As you evaluate your options, consider the freedom, flexibility, and full control that Kimai offers. 
-It's not just software; it's a game-changer for your business.
+### Why timesheets matter more than you think
 
-In your search for the perfect timesheet solution, you've probably come across numerous options.
-But if you're looking for unparalleled flexibility and control, Kimai is the open source timesheet software stands out as the optimal choice.
+Timesheets aren't bureaucratic busywork. They answer questions that directly affect your bottom line: How many hours went into that client project — and were they billable? Is your team overloaded or underutilized? Did that "quick two-hour fix" actually take twelve?
 
-### Why Kimai beats other timesheet apps
+**Agencies and consultancies** live and die by accurate timesheets. Every unbilled hour is lost revenue. Every overbilled hour is a client trust problem. Kimai tracks time against projects and clients, so invoices reflect reality — not optimistic estimates.
 
-Kimai isn't just another time tracking tool; it's a game changer in project management and employee tracking. Here's why Kimai should be your first choice:
+**Software teams** use timesheets to understand where development time goes. Is the team spending 40% of its time on maintenance? That's a signal. Without timesheet data, it's invisible.
 
-#### Flexibility at your fingertips
+**Freelancers** need timesheets for one simple reason: getting paid. Clients expect detailed breakdowns, and tax authorities want documentation. A clean timesheet beats a shoebox full of sticky notes every time.
 
-With Kimai, you're not just buying software; you're buying a customisable platform that adapts to your business needs. Modify and extend functionality to fit your processes like a glove.
+### How Kimai makes timesheets work
 
-#### Robust features that drive productivity
+The core idea is straightforward: start a timer when you begin working, stop it when you're done. Kimai records the entry with start time, end time, duration, project, and activity. At the end of the week or month, your timesheet is already complete — no reconstruction from memory required.
 
-- **Effortless timesheets**: Track hours with a single click and focus on the work that matters.
-- **Project based organisation**: Assign every second to the right task for accurate billing and reporting.
-- **Transparent reporting**: Create detailed reports that provide insight into your team's productivity.
-- **User Access Levels**: Maintain control with customised user roles and permissions.
-- **Cross-Platform Availability**: Whether you're on a PC, tablet, or smartphone, Kimai is there for you—anytime, anywhere.
-- **Customization at its Core**: Mold Kimai to fit your business like a glove with extensive customization options.
+For teams that prefer logging time after the fact, Kimai supports manual entries too. Fill in your hours at the end of the day, drag and drop entries in the calendar view, or use the quick-entry form to batch-enter a whole week.
 
-#### Community-Driven Excellence
+Timesheet exports come in multiple formats: PDF reports for clients, Excel files for accounting, CSV for further processing. Each export can be customized to show exactly the columns and groupings you need.
 
-Kimai plays well with others and has an extensive API that can manage your employee timesheets, integrating effortlessly with your favorite tools and services.
+### What makes an open-source timesheet different
 
-Plus, being open source means you have a robust community for support, offering updates, plugins, and fixes.
-Get answers, share ideas and move forward with community-validated solutions.
+Most timesheet tools lock you into a subscription. Prices go up, features get paywalled, and your data sits on someone else's servers. When the vendor decides to pivot or shut down, you scramble for alternatives — and your timesheet history may not come with you.
 
-### Your search for a timesheet application ends here
+Kimai is open source. The code is on GitHub, the data is yours, and the software runs on your infrastructure if you want it to. No vendor lock-in, no surprise price hikes, no forced migrations.
 
-When it comes to timesheets, Kimai is more than just software - it is a strategic partner that grows with you.
-Take advantage of open source and improve your time tracking experience.
-Choose Kimai, where functionality meets freedom.
+This matters especially for timesheets because they contain sensitive workforce data: who worked when, how long, on what. With Kimai, you control where that data lives and who can access it.
+
+### From timesheet to business intelligence
+
+A timesheet is a record of what happened. But aggregated over weeks and months, timesheets become a strategic resource. Kimai's reporting tools let you analyze time data across projects, teams, and time periods.
+
+Which projects are profitable? Where do estimates consistently miss the mark? How does your team's capacity compare to demand? The answers are in your timesheets — Kimai helps you find them without a data science degree.
+
+### Cloud or self-hosted: same code, your choice
+
+Kimai Cloud gets you started in minutes — no server setup, no maintenance overhead. The on-premise version gives you full control over your infrastructure. Both run the same codebase, including all commercial plugins.
+
+Switching between them is straightforward. Cloud customers receive regular full backups they can import into a self-hosted instance. Self-hosted users can migrate to the cloud when they're ready to stop managing servers.
+
+Try Kimai for free and see what timesheets look like when they're not a pain.

@@ -4,40 +4,36 @@ keyword: "Stechuhr"
 intro: "Eine Stechuhr ist ein Gerät zur Erfassung von Arbeitszeiten, das den Arbeitsbeginn und das Arbeitsende von Mitarbeitern aufzeichnet und in digitaler Form als Kiosk bezeichnet wird."
 ---
 
-Genug von unflexiblen Stechuhren, die Ihnen Zeit und Nerven rauben?
+Erinnern Sie sich an das metallische Klacken alter Stechuhren? Lochkarte rein, Stempel drauf, fertig. Das Prinzip war genial in seiner Schlichtheit — und genau diese Schlichtheit bringt Kimai ins digitale Zeitalter. Nur ohne Lochkarten, ohne Warteschlangen vor dem Gerät und ohne den Kollegen, der "aus Versehen" für alle mitstempelt.
 
-Entdecken Sie Kimai, die Open-Source Stechuhr, die speziell für die Bedürfnisse moderner Unternehmen entwickelt wurde.
+### Was eine Stechuhr heute können muss
 
-##### Kimai – mehr als nur eine Stechuhr
+Die klassische Stechuhr hatte genau eine Aufgabe: Kommen und Gehen dokumentieren. Das reicht in der modernen Arbeitswelt nicht mehr aus. Heute arbeiten Teams verteilt, im Homeoffice, beim Kunden oder unterwegs. Eine Stechuhr muss deshalb mehr leisten als ein simpler Zeitstempel.
 
-Kimai ist eine einfache, und gleichzeitig mächtige Open-Source Stechuhr für Teams, die ihre Zeiterfassung und Projektmanagement verbessern wollen.
+Wer braucht eine digitale Stechuhr? Im Grunde alle Unternehmen, die gesetzliche Aufzeichnungspflichten erfüllen müssen — und das betrifft seit dem Urteil des Bundesarbeitsgerichts zur Arbeitszeiterfassung praktisch jeden Arbeitgeber in Deutschland. Vom Handwerksbetrieb mit fünf Mitarbeitern bis zum IT-Dienstleister mit verteilten Teams: Arbeitszeiten müssen zuverlässig erfasst werden.
 
-- Effizienzsteigerung: Optimieren Sie Ihre Prozesse und steigern Sie die Produktivität Ihrer Mitarbeiter.
-- Kosteneinsparung: Vermeiden Sie teure Fehlbuchungen, die schnell tausende von Euros kosten können.
-- Verbesserte Planung: Gewinnen Sie eine zuverlässige Grundlage für die Kalkulation und Planung Ihrer Projekte.
+### Kimai als digitale Stechuhr: So funktioniert es
 
-##### Warum Sie Kimai als Ihre Stechuhr wählen sollten
+Kimai verwandelt jedes Gerät mit Browser in eine Stechuhr. Am Büroeingang steht ein Tablet im Kiosk-Modus? Perfekt — Mitarbeiter melden sich per PIN oder Barcode an und stempeln mit einem Fingertipp. Am Schreibtisch reicht ein Klick im Browser. Unterwegs? Die mobile Ansicht funktioniert auf jedem Smartphone.
 
-Kimai ist mehr als eine Open Source Stechuhr; es ist ein Innovationsmotor für Projektmanagement und Zeitprotokollierung.
-Hier sind einige Gründe, warum Kimai Ihre Team-Produktivität steigern kann:
+Der Clou: Während eine klassische Stechuhr nur "Kommen" und "Gehen" kennt, ordnet Kimai die erfasste Zeit direkt Projekten und Tätigkeiten zu. Das spart den mühsamen zweiten Schritt — das nachträgliche Zuordnen von Stunden zu Aufträgen.
 
-##### Flexibilität, die keine Wünsche offenlässt
+### Wer profitiert besonders?
 
-Kimai bietet ein Stechuhrsystem, das sich Ihren betrieblichen Anforderungen perfekt anpasst und ein maßgeschneidertes Zeitmanagement für Projekte ermöglicht.
+**Handwerk und Produktion** stehen oft vor der Herausforderung, dass Mitarbeiter morgens gleichzeitig eintreffen. Kimai im Kiosk-Modus verarbeitet das flüssig — kein Stau vor der Stechuhr, kein Frust am frühen Morgen.
 
-##### Starke Funktionen, die Produktivität ankurbeln
+**Agenturen und Dienstleister** brauchen nicht nur die Anwesenheit, sondern auch die Zuordnung zu Kundenprojekten. Kimai liefert beides in einem Schritt: einstempeln und gleichzeitig das aktive Projekt wählen.
 
-- **Einfache Stechuhr**: Mit einem Klick Arbeitszeit aufzeichnen und sich auf wesentliche Aufgaben konzentrieren.
-- **Projektzentriertes Tracking**: Gewährleistet genaue Abrechnungen und bietet aussagekräftige Berichte & Analysen.
-- **Transparente Berichterstattung**: Erstellen Sie Berichte, die tiefe Einblicke in Leistung und Effizienz bieten.
-- **Detaillierte Benutzerberechtigungen**: Sichern Sie Ihre Daten mit angepassten Rollen und Berechtigungen.
-- **Überall verfügbar**: Kimai gewährleistet, dass Ihre projektbasierte Zeiterfassung immer verfügbar ist.
+**Unternehmen mit Außendienst** profitieren davon, dass Kimai überall funktioniert. Kein VPN nötig, keine spezielle App — der Browser genügt.
 
-Kimai wird durch eine lebendige Open-Source-Gemeinschaft unterstützt, die kontinuierlich zur Verbesserung von Kimai beiträgt.
+### Open Source: Warum das bei einer Stechuhr wichtig ist
 
-##### Ihre Suche nach einer Open-Source Stechuhr hat hier ein Ende
+Bei einer Stechuhr geht es um sensible Daten: Wann kommen und gehen Ihre Mitarbeiter? Das sind Informationen, die auf Ihren Servern bleiben sollten — nicht in einer Cloud, deren Datenschutz-Praktiken Sie nicht kontrollieren können.
 
-Kimai ist mehr als eine Stechuhr - es ist ein Verbündeter, der mit Ihrem Unternehmen wächst.
-Mit Kimai erreicht Ihre Zeiterfassung für projektbasierte Teams ein neues Niveau der Effizienz.
+Kimai ist Open Source. Der komplette Quellcode ist einsehbar, und Sie können die Software auf eigener Infrastruktur betreiben. Wer das nicht möchte, nutzt die gehostete Kimai Cloud — aber auch dort behalten Sie die volle Kontrolle über Ihre Daten und können jederzeit zu einer eigenen Installation wechseln.
 
-Starten Sie jetzt Ihre kostenlose Testversion und erleben Sie die Vorteile der innovativen Open-Source Stechuhr, gerüstet fürs nächste Jahrzehnt!
+### Von der Stechuhr zum Zeitmanagement
+
+Was als digitale Stechuhr beginnt, wächst mit Ihren Anforderungen. Heute stempeln Ihre Mitarbeiter morgens ein und abends aus. Morgen nutzen Sie die erfassten Daten für Projektauswertungen, Rechnungsstellung und Kapazitätsplanung. Kimai wächst mit — ohne dass Sie die Software wechseln müssen.
+
+Testen Sie Kimai kostenlos und erleben Sie, wie sich eine Stechuhr anfühlt, die im 21. Jahrhundert angekommen ist.
