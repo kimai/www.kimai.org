@@ -1,6 +1,6 @@
 ---
 title: "Online Zeiterfassung"
-subtitle: Online
+subtitle: Open Source
 keyword: "Online Zeiterfassung"
 intro: "Die schnelle und kostengünstige Einführung eines skalierbaren Zeiterfassungssystems ist nicht nur für moderne Start-ups unerlässlich - Kimai bietet einen enormen Mehrwert gegen eine geringe Gebühr. Die in der Cloud gehostete Zeiterfassungssoftware Kimai ist sofort verfügbar und steht für Sie bereit, nur wenige Minuten nach der Anmeldung."
 features: ['no-limits', 'privacy', 'security', 'security-cloud'] 
