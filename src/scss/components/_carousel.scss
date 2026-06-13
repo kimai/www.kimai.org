@@ -31,12 +31,6 @@
     @include box-shadow(var(--#{$prefix}carousel-nav-btn-box-shadow));
   }
 
-  @if dark-mode {
-    &.bg-white {
-      color: $carousel-nav-btn-color !important; // stylelint-disable-line declaration-no-important
-    }
-  }
-
   &:not(.bg-transparent):hover {
     color: var(--#{$prefix}carousel-nav-btn-hover-color) !important; // stylelint-disable-line declaration-no-important
     background-color: var(--#{$prefix}carousel-nav-btn-hover-bg) !important; // stylelint-disable-line declaration-no-important
