@@ -11,13 +11,12 @@ layout: base
 {% assign compare_features = compare_features | split: ' ' %}
 
 <main class="page-wrapper">
-    {% include header-navigation.html %}
+    {% include header-navigation.html absolute=true light=false %}
 
     <section class="position-relative pt-5 overflow-hidden">
-        <span class="position-absolute top-0 start-0 d-dark-mode-none d-block w-100 h-100 bg-secondary"></span>
-        <span class="position-absolute top-0 start-0 d-dark-mode-block d-none w-100 h-100" style="background: radial-gradient(84.79% 172.9% at 73.31% 31.4%, rgba(99, 135, 241, .1) 0%, rgba(218, 70, 239, .05) 52.47%, rgba(99, 135, 241, .1) 100%);"></span>
+        <span class="position-absolute top-0 start-0 d-block w-100 h-100 bg-secondary"></span>
         <div class="container position-relative pt-xl-5 pt-md-3 zindex-5">
-            <div class="row justify-content-md-start justify-content-center flex-md-nowrap pt-lg-5 pt-4">
+            <div class="row justify-content-md-start justify-content-center flex-md-nowrap">
                 <div class="col-xl-7 col-md-7 col-sm-10 d-flex flex-column justify-content-between mb-md-5 mb-md-4 mb-3 pb-xl-5 pb-lg-4">
                     <div class="text-md-start text-center">
                         <h1 class="display-4 mb-lg-4 mb-3">
@@ -53,8 +52,7 @@ layout: base
             </div>
         </div>
         <span class="position-absolute bottom-0 start-0 w-100">
-          <span class="d-dark-mode-none d-block w-100 h-100 py-xl-5 pt-lg-4 pt-md-0 pt-4 pb-5 bg-light"></span>
-          <span class="d-dark-mode-block d-none w-100 h-100 py-xl-5 pt-lg-4 pt-md-0 pt-4 pb-5 bg-dark"></span>
+          <span class="d-block w-100 h-100 py-xl-5 pt-lg-4 pt-md-0 pt-4 pb-5 bg-light"></span>
         </span>
     </section>
 
@@ -127,7 +125,7 @@ Let’s explore the best time tracking tools for {{ site.this_year }} and see ho
     {% assign testimonial_tag = page.testimonials.tag | default: "WallOfLove" %}
     {% assign testimonial_intro = "At Kimai, we've designed our time tracking platform to meet the needs of agencies, teams, and freelancers. Our intuitive interface and powerful features help companies like yours work smarter and more profitably. You can now “listen” to the reviews of the real users." %}
     {% assign testimonials = site.data.testimonials | where_exp: "item", "item.tags contains testimonial_tag" | sample: 10 %}
-    {% include testimonials-horizontal-swipe.html testimonials=testimonials introduction=testimonial_intro language=page.lang %}
+    {% include testimonials-horizontal-swipe.html testimonials=testimonials introduction=testimonial_intro %}
 
     <section class="container py-5 my-1 my-md-4 my-lg-5">
         <div class="row">

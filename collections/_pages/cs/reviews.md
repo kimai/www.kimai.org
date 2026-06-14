@@ -1,9 +1,8 @@
 ---
 title: Reviews
-layout: default
-navi_dark: false
-navi_absolute: true
 permalink: /cs/reviews
+cta: cloud
+lang: cs
 ---
 
-{% include pages/reviews.md %} 
+{% include pages/reviews.html %}

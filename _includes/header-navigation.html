@@ -3,6 +3,10 @@
 {% assign is_bg_dark = false %}
 {% assign downloadBtnClasses = "btn btn-sm fs-sm d-none d-md-inline-flex me-2" %}
 {% assign is_absolute = false %}
+{% if page.hero != nil and page.hero != '' %}
+    {% assign is_absolute = true %}
+    {% assign is_light = false %}
+{% endif %}
 {% if include.light != nil %}
     {% assign is_light = include.light %}
 {% endif %}
@@ -46,14 +50,14 @@
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">{{ site.data[page.lang].translation.product.name }}</a>
                         <ul class="dropdown-menu">
-                            <li>{% include link-translated-menu.html item="about" language=page.lang class="dropdown-item" %}</li>
-                            <li>{% include link-translated-menu.html type="landingpage" item="open-source-community" language=page.lang class="dropdown-item" %}</li>
-                            <li class="dropdown-divider"></li>
                             <li>{% include link-translated-menu.html item="integrations" language=page.lang class="dropdown-item" %}</li>
                             <li>{% include link-translated-menu.html item="demo" language=page.lang class="dropdown-item" %}</li>
                             <li class="dropdown-divider"></li>
                             <li>{% include link-translated-menu.html item="blog" language=page.lang class="dropdown-item" %}</li>
                             <li>{% include link-translated-menu.html item="support" language=page.lang class="dropdown-item" %}</li>
+                            <li class="dropdown-divider"></li>
+                            <li>{% include link-translated-menu.html item="about" language=page.lang class="dropdown-item" %}</li>
+                            <li>{% include link-translated-menu.html type="landingpage" item="open-source-community" language=page.lang class="dropdown-item" %}</li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">

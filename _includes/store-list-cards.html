@@ -15,7 +15,7 @@
 {% assign translation = site.data[page.lang].store.items[product.slug] %}
 {% if settings.disabled == nil %}
 <div class="col">
-    <article class="card card-hover h-100 border-0 shadow-sm">
+    <article class="card card-hover h-100 shadow-sm border-primary">
         <a href="{{ product.url }}" class="d-block position-absolute w-100 h-100 top-0 start-0" aria-label="Link to: {{ translation.title }}"></a>
         {% comment %}
         <a href="#" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-2 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" aria-label="Save to Favorites" data-bs-original-title="Save to Favorites">

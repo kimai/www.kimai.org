@@ -28,7 +28,7 @@ layout: base
 {% endif %}
 {% assign icon = 'apple-touch-icon.png' %}
 
-<header class="header navbar navbar-expand bg-light border-bottom border-light shadow" data-scroll-header>
+<header class="header navbar navbar-expand bg-light border-bottom border-light shadow position-sticky top-0" style="z-index: 40" data-scroll-header>
     <div class="container-fluid pe-lg-4">
         <div class="d-flex align-items-center">
             <a href="/" class="navbar-brand flex-shrink-0 py-1 py-lg-2">
@@ -81,7 +81,7 @@ layout: base
 </header>
 
 <aside class="bg-dark">
-    <div id="componentsNav" class="offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100 bg-dark border-end-lg" style="width: 19rem; z-index: 1045;">
+    <div id="componentsNav" class="bg-dark offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100" style="width: 19rem; z-index: 1045;">
         <div class="offcanvas-header d-none d-lg-flex justify-content-start">
             <a href="/" class="navbar-brand d-none d-lg-flex py-0">
                 <img src="/images/{{ icon }}" width="26" alt="Kimai logo" class="me-3">
@@ -111,15 +111,15 @@ layout: base
                     {% for group in doc_chapter.chapter %}
                     {% assign group_key = group.id %}
                     {% assign is_active = false %}
-                    <p class="fs-lg mb-1 text-white fw-bold">{{ group.name }}</p>
-                    <div class="list-group list-group-flush mb-4 me-n4 border-start">
+                    <p class="fs-sm mb-1 text-uppercase text-muted fw-semibold ps-3">{{ group.name }}</p>
+                    <div class="list-group list-group-flush mb-4 me-n4">
                         {% for page_slug in group.pages %}
                         {% if page_slug != '-' %}
                             {% assign docs_page = site.documentation | find: "slug", page_slug %}
                             {% if docs_page.slug == page.slug %}
                                 {% assign is_active = true %}
                             {% endif %}
-                            <a href="{{ docs_page.url }}" class="list-group-item ms-2 list-group-item-action border-0 ps-2 {% if docs_page.slug == page.slug %} active{% endif %}" id="docnavi-{{ docs_page.slug }}">
+                            <a href="{{ docs_page.url }}" class="list-group-item list-group-item-action border-0 {% if docs_page.slug == page.slug %} active{% endif %}" id="docnavi-{{ docs_page.slug }}">
                                 {% if docs_page.navigation != nil %}
                                 {{ docs_page.navigation }}
                                 {% else %}

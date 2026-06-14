@@ -1,0 +1,16 @@
+<section class="container mb-lg-4 pb-5 pt-3">
+    {% alert warning %}{{ site.data[page.lang].translation.store-plugins-onpremise|replace: '%cloud%', '<span class="badge bg-warning zindex-2 mx-2 text-capitalize">Cloud</span>' }}{% endalert %}
+
+    <article class="mb-5 pt-3">
+        {% assign products = site.store | where: "lang", page.lang | where_exp:"product", "product.type == 'featured'" | sort: 'title' %}
+        {% include store-list-cards.html products=products %}
+    </article>
+
+    <article class="mb-5 pt-3">
+        <header class="d-flex align-items-center justify-content-between mb-5">
+            <span class="badge bg-success shadow-info fs-base fw-normal">{{ site.data[page.lang].translation.store-category-plugins }}</span>
+        </header>
+        {% assign products = site.store | where: "lang", page.lang | where_exp:"product", "product.type == 'plugin'" | sort: 'title' %}
+        {% include store-list-cards.html products=products %}
+    </article>
+</section>

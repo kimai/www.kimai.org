@@ -3,7 +3,6 @@
 {% assign pro = site.data.plans.pro %}
 {% assign pro_month = site.data.plans.pro_month %}
 {% assign nonprofit = site.data.plans.nonprofit %}
-{% assign show_nonprofit = false %}
 <div class="">
     <div class="pb-2 pb-lg-3">
         <div class="form-check form-switch price-switch justify-content-center mt-2 mb-4" data-bs-toggle="price">
@@ -14,7 +13,7 @@
     </div>
     <div class="table-responsive-lg">
         <div class="d-flex align-items-center pb-4 flex-wrap">
-            <div class="border rounded-3 rounded-end-0 shadow-sm me-n1 w-100 w-sm-{% if show_nonprofit %}33{% else %}50{% endif %}">
+            <div class="border rounded-3 rounded-end-0 shadow-sm me-n1 w-100 w-sm-50">
                 <div class="card bg-light h-100 border-0 border-end rounded-end-0 py-3 py-sm-4 py-lg-5">
                     <div class="card-body text-center">
                         <h3 class="mb-5">{{ starter.name }}</h3>
@@ -41,7 +40,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-primary position-relative rounded-3 shadow-primary shadow-dark-mode-none zindex-2 p-4 w-100 w-sm-{% if show_nonprofit %}33{% else %}50{% endif %}">
+            <div class="bg-primary position-relative rounded-3 shadow-primary zindex-2 p-4 w-100 w-sm-50">
                 <div class="card bg-transparent border-light py-3 py-sm-4 py-lg-5">
                     <div class="card-body text-light text-center">
                         <h3 class="text-light mb-5">{{ pro.name }}</h3>
@@ -70,30 +69,6 @@
                     </div>
                 </div>
             </div>
-{% if show_nonprofit %}
-            <div class="border rounded-3 rounded-start-0 shadow-sm" style="width: 30%; min-width: 16rem;">
-                <div class="card bg-light h-100 border-0 rounded-start-0 py-3 py-sm-4 py-lg-5">
-                    <div class="card-body text-center">
-                        <h3 class="mb-5">{{ nonprofit.name }}</h3>
-                        <div class="display-5 text-dark mb-1" data-monthly-price="">{% include money.html amount=site.data.plans.nonprofit.price %}</div>
-                        <div class="d-none display-5 text-dark mb-1" data-annual-price=""><s class="text-muted">{% include money.html amount=site.data.plans.nonprofit.price %}</s></div>
-                        <div class="text-muted mb-5">{{ site.data[page.lang].translation.pricing.short_monthly }}</div>
-                        <div class="fs-lg pb-4 mb-3" data-monthly-price="">
-                            <ul class="list-unstyled mt-2">
-                                <li>{{ site.data[page.lang].translation.plans.all_from_plan | replace: '%plan%', pro.name }}</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card-footer border-0 text-center pt-0 pb-4" data-monthly-price="">
-                        {%- assign menu = site.landingpage | where: "slug", 'non-profit' | find: "lang", english_german -%}
-                        <a href="{{ menu.url }}" class="btn btn-outline-primary btn-lg">{{ site.data[page.lang].translation.non-profit.eligible }}</a>
-                    </div>
-                    <div class="d-none card-footer border-0 text-center pt-0 pb-4" data-annual-price="">
-                        <button class="btn btn-secondary btn-lg disabled">{{ site.data[page.lang].translation.pricing.not_available }}</button>
-                    </div>
-                </div>
-            </div>
-{% endif %}
         </div>
     </div>
 </div>

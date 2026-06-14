@@ -61,7 +61,7 @@ layout: default
     {% assign testimonial_title = translated.testimonials.title %}
     {% assign testimonial_intro = translated.testimonials.introduction %}
     {% assign testimonials = site.data.testimonials | where_exp: "item", "item.tags contains testimonial_tag" | sample: 5 %}
-    {% include testimonials-horizontal-swipe.html testimonials=testimonials title=testimonial_title introduction=testimonial_intro language=page.lang %}
+    {% include testimonials-horizontal-swipe.html testimonials=testimonials title=testimonial_title introduction=testimonial_intro %}
 
     <section class="container pt-5 mb-1 mb-md-4 mb-lg-5">
         <div class="row pb-xl-3">
@@ -70,10 +70,12 @@ layout: default
             </div>
             <div class="col-md-6 pb-2 pb-md-0 mb-4 mb-md-0">
                 {{ translated.about.introduction|markdownify }}
+                {% if page.feature_box != nil %}
+                    {% include {{ page.feature_box }} %}
+                {% endif %}
             </div>
         </div>
     </section>
-
 
     <section class="container py-5 my-1 my-md-4 my-lg-5">
         <div class="row">

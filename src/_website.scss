@@ -1,4 +1,6 @@
-
+:root{
+    --brand-icons: #{$green-400};
+}
 .bg-dark {
     --#{$prefix}heading-color: #fff;
     --#{$prefix}body-color: rgba(255, 255, 255, 0.7);
@@ -73,10 +75,6 @@
 .btn-buy {
     --bs-btn-font-size: 1.2rem;
     text-transform: capitalize;
-}
-
-.nav-tabs .nav-link.active {
-    background-color: #737272;
 }
 
 /* apply a default margin to all code blocks */
@@ -291,11 +289,12 @@ blockquote {
     }
 }
 
+/* Documentation sections: User manual, On Premise ... */
 .navbar-nav .nav-link.active {
     pointer-events: unset;
-    background-color: var(--green-100);
+    background-color: $green-100;
     border-radius: 10px;
-    color: var(--green-900);
+    color: $green-900;
 }
 
 pre {

@@ -3,7 +3,16 @@ layout: base
 ---
 {% assign homepage = site.pages | where: 'lang', english_german | find: 'slug', 'index' %}
 {% assign features = site.pages | where: 'lang', english_german | find: 'slug', 'features' %}
-{% assign stories = site.pages | where: 'lang', english_german | find: 'slug', 'stories' %}
+
+{% capture breadcrumb %}
+<li class="breadcrumb-item">
+    <a href="{{ homepage.url }}"><i class="bx bx-home-alt fs-lg me-1"></i>{{ site.data[page.lang].translation.index.name }}</a>
+</li>
+<li class="breadcrumb-item">
+    {% include link-translated-menu.html item="success-story" type="blog_tags" language=english_german %}
+</li>
+<li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
+{% endcapture %}
 
 <main class="page-wrapper">
     {% include header-navigation.html %}
@@ -12,13 +21,7 @@ layout: base
 
         <nav class="d-md-none pb-3 mb-2 mb-lg-3" aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item">
-                    <a href="{{ homepage.url }}"><i class="bx bx-home-alt fs-lg me-1"></i>{{ site.data[page.lang].translation.index.name }}</a>
-                </li>
-                <li class="breadcrumb-item">
-                    <a href="{{ stories.url }}">{{ site.data[page.lang].translation.stories.name }}</a>
-                </li>
-                <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
+                {{ breadcrumb }}
             </ol>
         </nav>
 
@@ -30,13 +33,7 @@ layout: base
             <div class="col order-md-1">
                 <nav class="d-none d-md-block py-3 mb-2 mb-lg-3" aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0">
-                        <li class="breadcrumb-item">
-                            <a href="{{ homepage.url }}"><i class="bx bx-home-alt fs-lg me-1"></i>{{ site.data[page.lang].translation.index.name }}</a>
-                        </li>
-                        <li class="breadcrumb-item">
-                            <a href="{{ stories.url }}">{{ site.data[page.lang].translation.stories.name }}</a>
-                        </li>
-                        <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
+                        {{ breadcrumb }}
                     </ol>
                 </nav>
 
@@ -67,7 +64,7 @@ layout: base
     <section class="container pt-5 mb-1 mb-md-4 mb-lg-5">
         <div class="row pb-xl-3">
             <div class="col-md-9 pe-lg-5">
-                <h2 class="h2 pb-4 mb-1 mb-lg-3">{{ page.intro }}</h2>
+                <h2 class="h2 pb-4 mb-1 mb-lg-3">{{ page.excerpt }}</h2>
                 {{ splitted[0] }}
             </div>
             <div class="col-md-3 pb-2 pb-md-0 mb-4 mb-md-0">
@@ -109,7 +106,7 @@ layout: base
                             <img src="{{ page.photo }}" width="58" class="rounded-circle" alt="{{ page.person }}">
                             <div class="ps-3">
                                 <h6 class="fs-sm fw-semibold mb-0">{{ page.person }}</h6>
-                                <span class="fs-xs text-muted">{{ page.position }} &ndash; {{ page.company }}</span>
+                                <span class="fs-xs text-muted">{{ page.position }} &ndash; {{ page.title }}</span>
                             </div>
                         </div>
                     </div>

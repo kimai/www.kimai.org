@@ -44,7 +44,14 @@
                                         <i class="bx bxs-star text-warning"></i>
                                         {% endfor %}
                                     </div>
-                                    {{ testimonial.text | markdownify }}
+                                    {% assign testimonial_text = testimonial.text %}
+                                    {% if testimonial.translations[page.lang] %}
+                                        {% assign testimonial_text = testimonial.translations[page.lang] %}
+                                    {% elsif testimonial.translations[english_german] %}
+                                        {% assign testimonial_text = testimonial.translations[english_german] %}
+                                    {% endif %}
+
+                                    {{ testimonial_text | markdownify }}
                                 </div>
                                 <div class="card-footer d-flex align-items-center border-0 pt-0">
                                     {% if testimonial.avatar == '' %}

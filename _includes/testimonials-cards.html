@@ -8,10 +8,10 @@
                     {% if testimonial.logo == '' %}
                         {{ site.avatar_fallback }}
                     {% else %}
-                        <img src="/images/testimonials/{{ testimonial.logo }}" width="60" class="rounded-circle" alt="{{ testimonial.name }}">
+                        <img src="/images/testimonials/{{ testimonial.logo }}" width="48" class="rounded-circle" alt="{{ testimonial.name }}">
                     {% endif %}
                 {% else %}
-                    <img src="/images/testimonials/{{ testimonial.avatar }}" width="60" class="rounded-circle" alt="{{ testimonial.name }}">
+                    <img src="/images/testimonials/{{ testimonial.avatar }}" width="48" class="rounded-circle" alt="{{ testimonial.name }}">
                 {% endif %}
                 <div class="ps-3">
                     <h6 class="fw-semibold lh-base mb-0">{{ testimonial.name }}</h6>
@@ -35,7 +35,13 @@
                 {% endfor %}
             </div>
             <div class="test-start">
-                {{ testimonial.text | markdownify }}
+                {% assign testimonial_text = testimonial.text %}
+                {% if testimonial.translations[page.lang] %}
+                    {% assign testimonial_text = testimonial.translations[page.lang] %}
+                {% elsif testimonial.translations[english_german] %}
+                    {% assign testimonial_text = testimonial.translations[english_german] %}
+                {% endif %}
+                {{ testimonial_text | markdownify }}
             </div>
             <p class="text-muted fs-xs">{{ testimonial.date | date: site.date_format[page.lang] }}</p>
         </div>

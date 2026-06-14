@@ -1,0 +1,17 @@
+{% assign columns = include.columns | default: 2 %}
+{% assign features = include.features %}
+<div class="row row-cols-1 row-cols-md-{{ columns }}">
+    <div class="col">
+    {% for name in features %}
+        {% assign definition = site.data.feature | where_exp: "feature", "feature.name == name" %}
+        {% for feature in definition %}
+            {% include feature-box.html feature=feature %}
+        {% endfor %}
+        {% assign mod = forloop.index1 | modulo: columns %}
+        {% if mod == 0 %}
+    </div>
+    <div class="col">
+        {% endif %}
+    {% endfor %}
+    </div>
+</div>

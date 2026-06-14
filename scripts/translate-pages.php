@@ -20,13 +20,13 @@ if ($key !== false) {
 
 $multiLanguagePaths = [
     '_pages' => [
-        'skip' => ['documentation.md', 'industry.html', 'time-tracking-terms.html'],
+        'skip' => ['documentation.md', 'time-tracking-terms.html'],
         'permalink' => '/:language/:original',
         'remove' => ['redirect_from'],
         'overwrite' => true,
         'exclude_existing' => ['de/privacy-policy.md', 'de/site-notice.md', 'de/terms-cloud.md', 'de/terms-gdpr.md', 'de/terms-plugins.md', 'de/trademark-policy.md'],
         'with_content' => true,
-        'skip_content' => ['index.html', 'blog.html', 'store.html', 'feed.xml'],
+        'skip_content' => ['index.html', 'blog.html', 'feed.xml'],
     ],
     /*
     '_error' => [

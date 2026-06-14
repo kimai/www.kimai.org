@@ -6,7 +6,17 @@ layout: base
     {% include header-navigation.html %}
 
     {{ content }}
+
+    {% if page.cta == 'cloud' %}
+        {% include cta-begin-journey.html %}
+    {% elsif page.cta == 'support' %}
+        {% include cta-support.html %}
+    {% endif %}
 </main>
+
+{% if page.newsletter %}
+    {% include section-newsletter.html background=true %}
+{% endif %}
 
 {% include footer.html %}
 

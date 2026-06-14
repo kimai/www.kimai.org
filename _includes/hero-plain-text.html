@@ -1,0 +1,11 @@
+
+<section class="container pt-md-1 pt-lg-4 pt-xl-5">
+    <div class="mt-4 py-2 pb-sm-3 pb-md-4 pb-lg-5 mx-auto text-center" style="max-width: 46.625rem;">
+        <h1 class="h1{% if subtitle %} mb-4{% endif %}">
+            {{ pagetitle }}
+        </h1>
+        {% if subtitle %}
+        <p class="mb-4">{{ subtitle|newline_to_br }}</p>
+        {% endif %}
+    </div>
+</section>
