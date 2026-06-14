@@ -8,6 +8,5 @@ features: ['reporting', 'projects', 'export', 'statistics']
 testimonials: NonProfit
 featured: true
 feature_box: card-nonprofit.html 
-permalink: /de/non-profit
+permalink: /:lang/non-profit
 ---
-   
