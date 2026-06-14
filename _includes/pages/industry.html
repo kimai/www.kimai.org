@@ -7,7 +7,7 @@
 
 <section class="container mt-2 mt-md-4 mt-lg-5 mb-5 w-75 w-lg-50">
     <div class="row row-cols-1 row-cols-xs-1 row-cols-lg-2 justify-content-center g-4 pb-xl-3">
-        {% assign industries = site.industries | where: "lang", "en" | sort: "name" %}
+        {% assign industries = site.industries | where: "lang", page.lang | sort: "name" %}
         {% for industry in industries %}
             {% assign translated = site.data[page.lang].translation.industries[industry.slug] %}
         <div class="col text-center px-3">
